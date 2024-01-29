@@ -1,0 +1,16 @@
+title: 'Single Sign-on'
+template: default
+layout: layout
+revisions: false
+route: '/admin/single-sign-on/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+structure:
+  root: false

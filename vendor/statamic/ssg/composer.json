@@ -1,0 +1,42 @@
+{
+    "name": "statamic/ssg",
+    "type": "statamic-addon",
+    "description": "Static site generator for Statamic 3.",
+    "autoload": {
+        "psr-4": {
+            "Statamic\\StaticSite\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Static Site Generator",
+            "description": "Static Site Generator addon"
+        },
+        "laravel": {
+            "providers": [
+                "Statamic\\StaticSite\\ServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "statamic/cms": "^4.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.0 || ^8.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": true
+        }
+    },
+    "suggest": {
+        "spatie/fork": "Required to generate pages concurrently (^0.0.4)."
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

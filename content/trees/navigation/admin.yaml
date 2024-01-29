@@ -1,0 +1,72 @@
+tree:
+  -
+    id: fb2b22a3-8b3e-4d8a-a6a6-a4d6aaf3d109
+    title: 'Billing and Use'
+    children:
+      -
+        id: f2553bce-1855-45a9-a856-797e334a3f4a
+        entry: cb12e5e5-1e15-47b4-aa41-5f9995282e1a
+      -
+        id: 628bc3df-92f6-47bd-9f7a-d76283acf28b
+        entry: f8f8b50e-f22a-4c92-8845-01e630b6f7d6
+  -
+    id: 4ce1cee2-0a32-4938-a3e6-9b818e524cdb
+    title: 'Account Management'
+    children:
+      -
+        id: ec3607bf-554f-4c79-a277-82e552390c08
+        entry: aa69523a-2f70-40bb-b904-f478b24d6587
+      -
+        id: 1ea5235a-e756-4908-85af-6d5c993885f1
+        entry: b287cffb-096c-4dbd-a4f4-a8a99607e723
+      -
+        id: 7f049cce-b939-4c3f-8bd9-04d56b72b5cb
+        entry: 3da7e352-3754-41f3-b6a7-9e054e038130
+      -
+        id: e2121553-83aa-4ea8-bf48-442e50e59712
+        entry: 99fc5402-2a04-4afc-a248-2973b368033b
+      -
+        id: 83ddd251-32cc-484b-9287-5a8e122889b9
+        entry: c657f85d-8174-4941-9c82-80b794b5d776
+      -
+        id: ce0b6f41-9635-47e0-bbfe-710843a70159
+        entry: 4ac86a5c-028a-4bd7-8b78-e74aa4ee3238
+      -
+        id: 20fdb1fd-9d45-409a-9a3b-3dbe28fbf04a
+        entry: 4f8ff2b3-3a37-4d4e-82db-9de672b7149f
+      -
+        id: 22655a7f-dd17-4b39-924c-1d943b4d7867
+        entry: 1f4c1ebb-ff86-488d-9971-5f5295a00295
+      -
+        id: cd989bec-7d60-4658-939a-fd2e56a22af6
+        entry: 6b49a561-a125-4eb2-a1e7-73c37350265e
+      -
+        id: d1a4dd38-9570-45c2-a7eb-7d881e12e8e0
+        entry: 9dc3e28c-3335-4026-a3d0-6c5dd011b2bc
+      -
+        id: f48f33a3-7139-4372-b970-67765b81f972
+        entry: ed6b3562-8e62-476b-9dcd-b0b1526552eb
+  -
+    id: b7d5e9b1-b4a2-4d33-a7db-0386a2290ef7
+    title: 'Single Sign-on'
+    data:
+      open_collapsed: true
+    children:
+      -
+        id: a9ba1575-e96a-4c16-91c8-eab9f0fe71ff
+        entry: 668eb44f-64ea-41e0-b244-5fb7b336c262
+      -
+        id: 5d0ede59-2991-47c6-bf62-26e79abeb189
+        entry: d327dfe0-9231-4954-8024-b3a171111ae5
+      -
+        id: e25d39e2-78f5-4d93-801a-8f461cb50b5e
+        entry: 58c93fab-b1f4-4d12-8781-6287ae5f121e
+      -
+        id: e6f13da9-3d9e-4b95-a330-204d1a49d909
+        entry: f31f1b7a-09ee-40fd-ba66-7128a4a05be0
+      -
+        id: fcf60e6d-f61d-4c13-ae4b-9e07128a389c
+        entry: 36a39ebd-8189-4116-8c8b-894d1c493608
+      -
+        id: b36d4955-f9a8-4aa6-82f3-bea5a045138d
+        entry: 14b08e52-7066-47c7-8b58-afe8ca107555

@@ -1,0 +1,90 @@
+tree:
+  -
+    id: 7bf5a96b-66fd-4df5-8056-ac09411dd2df
+    title: 'Set Up Amplitude'
+    children:
+      -
+        id: d1b99fe5-418d-4c69-a6dd-b0e40303e8d0
+        entry: 60e0ed22-81d6-4978-8751-cb7e4f6a24f1
+      -
+        id: 2074def5-bdea-4610-aeae-4b95112901ab
+        entry: 5243dcbb-02c5-4ffb-a32b-8c3e50b2b121
+      -
+        id: 814d306c-400d-4800-bfbb-02486d709750
+        entry: a64c1c43-88d3-415d-b895-d27bb6decfd9
+  -
+    id: b888fbc0-820b-47e3-9b06-019592be3e54
+    title: 'Instrument Amplitude'
+    children:
+      -
+        id: c90a535d-bb58-4b7c-ad51-bd43e6144236
+        title: 'Get Data into Amplitude'
+        children:
+          -
+            id: 8a45f3d0-4bdc-4e77-847a-78cc3c76c3f5
+            title: 'SDK Catalog'
+            url: /instrumentation/sdk-catalog
+          -
+            id: ae9efd21-4d93-4d22-b56b-8e23401628da
+            title: 'Source Catalog'
+            url: /data/source-catalog
+      -
+        id: 60f7ce81-ea9b-4e5f-adc7-3e3801691c58
+        entry: 669876e4-a2ae-44d5-bfb2-5def51504a25
+      -
+        id: 1610ffb0-4e7e-40f1-8fe2-0dfb3c48a75d
+        entry: 772dbd47-bee0-4b64-9672-7d09d16cd433
+      -
+        id: fb66467c-e050-4c9e-bdf6-e110f8abf58b
+        entry: 95a8c851-e03e-4b3d-907b-d3381dd46957
+  -
+    id: 8699ae75-d49f-4d84-9090-0bef3527444c
+    title: 'Build a Chart'
+    children:
+      -
+        id: 1e9d8160-632f-4da3-8c74-8915b555bfbd
+        entry: 937c2ebf-0fe4-435e-aa6d-c7c12de968ac
+      -
+        id: 26508ef2-30cc-410d-8833-d311da49065f
+        entry: 1b7d1277-e445-4c19-a784-216b7018abb1
+      -
+        id: 24bd0c80-0269-41b1-94e3-3cbe085d8975
+        entry: 7d2ddd8b-26ba-4c9f-a201-b17179f01e02
+  -
+    id: c87a6d6a-8754-48ec-90d2-a2e0fc39a569
+    title: 'Additional Reading'
+    children:
+      -
+        id: fb32af55-abd2-424e-8912-780ed1aa78db
+        entry: 59166098-ebb1-440c-9f76-e744d92aa49e
+      -
+        id: 8cf18a89-8985-4b9e-89cb-e2922e53f948
+        entry: 4d421b64-f9f4-45c7-b0d6-ea0708c21b78
+      -
+        id: 1537abce-70f8-40d2-9c48-c78dbb12c8fd
+        entry: 01c914d0-cbcb-4cb5-81c8-b4a5cc734a03
+      -
+        id: c4a065f6-a635-49f0-9f93-3b0c209873df
+        entry: 67184865-248e-4d6c-9a46-3e7495c2e072
+      -
+        id: 57a10558-f529-4e2b-a56c-db83729ccfb5
+        entry: df37755a-32f0-4c3b-9589-dd2c71b26a9a
+      -
+        id: 84452bfd-99ec-4057-86e9-da2c6804d2b8
+        entry: 3c450c92-9e04-4996-82ac-2baf0a741845
+  -
+    id: f57e8298-ded9-46b8-89ff-a39e5494d739
+    title: 'Migrate to Amplitude'
+    children:
+      -
+        id: ea9ac7a4-e4b7-4f1a-a755-7d588ef33125
+        entry: 785c609b-7277-401c-9ea6-6c591f6c81c0
+      -
+        id: f21abc1c-2366-46fe-a04b-e4dbc6a8bc43
+        entry: 6aa2684c-8d4c-4cd6-8281-10204eb956d3
+      -
+        id: e0630dee-5829-4470-b0dd-03b07324e3aa
+        entry: ca7e0544-2e99-4552-89d5-649a34c1956f
+      -
+        id: c7e4563b-738a-4275-87ef-47db6b2e3449
+        entry: abf952ae-fdc9-4f51-8691-c0f4ed6a73f4

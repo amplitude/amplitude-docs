@@ -1,0 +1,16 @@
+title: Sources
+template: default
+layout: layout
+revisions: false
+route: '/cdp/sources/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+structure:
+  root: false

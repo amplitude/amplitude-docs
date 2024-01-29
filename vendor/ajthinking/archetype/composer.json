@@ -1,0 +1,58 @@
+{
+    "name": "ajthinking/archetype",
+    "type": "package",
+    "description": "Programmatically edit PHP and Laravel files.",
+    "keywords": [
+        "php",
+        "laravel",
+        "ast",
+        "abstract syntax tree",
+        "php-parser"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anders Jürisoo",
+            "email": "jurisoo@hotmail.com"
+        }
+    ],
+    "require": {
+        "nikic/php-parser": "^4.11"
+    },
+    "require-dev": {
+        "laravel/laravel": "^6.0 || ^7.0 || ^8.0 || ^9.0",
+        "orchestra/testbench": "^4.0 || ^5.0 || ^6.0",
+        "pestphp/pest": "^1.21",
+        "phpstan/phpstan": "^1.6",
+        "phpunit/phpunit": "^8.0 || ^9.5"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": [],
+            "providers": [
+                "Archetype\\ServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Archetype\\": "src/",
+            "Archetype\\Tests\\": "tests/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

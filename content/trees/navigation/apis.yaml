@@ -1,0 +1,85 @@
+tree:
+  -
+    id: 1a5c23e3-2692-4117-a42b-7467b79dbc70
+    entry: b490056f-79d5-43ce-871d-b7c762c5440b
+  -
+    id: 43ddda3a-6552-439e-924a-1e94a15a9392
+    title: 'Analytics APIs'
+    children:
+      -
+        id: b63b598c-4fa3-48eb-99a5-c3d3c4d9dd4e
+        entry: bd6019bc-6556-4d83-ad33-70183a3a42f3
+      -
+        id: 08b17d80-da25-4a60-aa33-e050c1fc13d1
+        entry: 36e53d10-84c3-4099-96cc-85d2149a8ab3
+      -
+        id: 097226d8-cd2c-403a-a59d-b17d4055d8fa
+        entry: 9b143989-b24c-447e-9b24-b31b56c81198
+      -
+        id: c094aa34-7018-4f1d-8665-02dfb11d7d5d
+        entry: f649f2b4-9197-43dd-8935-628a62467838
+      -
+        id: 9f42d742-a9d9-420a-8b42-888ca0d5941c
+        entry: 74643fe3-2402-4eb3-a38a-80313b82e453
+      -
+        id: 1104309e-954e-4f56-8f1b-6e36460daa4b
+        entry: 84983d6c-24a5-4f0c-aebc-89cb22e1ab09
+      -
+        id: 26fc4afc-6418-4999-9fbe-01a556debe53
+        entry: 4189e402-ab32-4288-837f-cea28db379f1
+      -
+        id: 44db0020-13bb-4156-a3cb-0f0194db943c
+        entry: 1a113ef9-06ab-4fa0-b050-6ddfa980d980
+      -
+        id: 15a45c14-ef63-42e8-b27a-20bf40022ef1
+        entry: 4d2cf9ef-beac-4b30-a798-689da9b5417c
+      -
+        id: 005d5fab-df7a-431e-8ff3-f2a4fa797e51
+        entry: 1a944881-9630-4422-9cb7-836651db6ec4
+      -
+        id: b336634e-3e23-4722-adae-04370a8735a1
+        entry: 6ed2b731-5818-41f4-beb9-fb62b70f9581
+      -
+        id: a96b2b7b-23ec-4661-978a-89e227539dfb
+        entry: eafb23af-5ee4-4b2d-abe0-1ea6774ac089
+      -
+        id: 01e12207-4bcf-4202-8f47-bc6992a6d7d0
+        entry: 4c757268-8386-45eb-a4a5-d2184b775a3d
+      -
+        id: 933187dd-da78-40a6-859c-89cdadefb33f
+        entry: e7946941-3125-469b-9102-8f2e136aeb62
+      -
+        id: da297dad-5c39-42bb-9978-d399c03e6baf
+        entry: d8af1ad9-ecaf-49dc-92e6-07c5ca0628e3
+      -
+        id: 0c32b28c-6f45-4bde-9dbc-43fd9e21b3fb
+        entry: 47a3ffb0-471c-49dd-a6f7-76408dc7e5d5
+      -
+        id: c2b615df-c581-43e8-ae9e-711957cd9e74
+        entry: 5e633088-9abe-41f0-8d1b-4a81b82ecd6a
+      -
+        id: fac48902-2c09-433f-ab55-f468d0310c63
+        entry: 19341437-f344-4481-aa23-a0d495ebabcc
+  -
+    id: 2bde7657-5cc2-4281-aeb0-b4c6b701ba89
+    title: 'Experiment APIs'
+    children:
+      -
+        id: ede83b7c-adfd-4b8e-bb35-0788f7f4643a
+        entry: 599fcf45-81ec-43f9-a3a0-a253fd999a34
+      -
+        id: 822bbc9a-a515-4c4c-a601-994b51a1db1c
+        title: 'Management API'
+        children:
+          -
+            id: 2321a74b-54e0-4d3a-8d6b-dcfb5fa1f068
+            entry: f64a356a-2a9a-44e3-a482-f429a565a12c
+          -
+            id: dbb3c7d3-7aa3-4a0d-8f6a-2549b653c4de
+            entry: e082b577-8058-494d-8567-d4ad3ccca149
+          -
+            id: b3d84270-60f2-4543-9021-6652a614ba52
+            entry: bc8ec21e-a8e1-4857-8557-d24143e42865
+          -
+            id: 9de60646-ed35-487a-9f28-7826de47b382
+            entry: 223ccb37-444f-430f-8910-0c1d079aca89

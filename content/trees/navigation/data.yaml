@@ -1,0 +1,117 @@
+tree:
+  -
+    id: 5c207df6-c244-493a-ae56-ba8deaa66fd3
+    title: 'Data Planning'
+    children:
+      -
+        id: 037c12ca-e0a1-41b6-a61b-87269d089de6
+        entry: 1bca668a-d50d-4e07-a0a9-a77016d8d5d3
+      -
+        id: d01f4fba-b773-46d8-accb-2b5393a1f6ca
+        entry: 52bfe4df-5034-4e5d-bfce-81736bf4face
+      -
+        id: 041a701a-fb09-4c3f-9250-452165d66d22
+        entry: 2886ff4d-cb6d-4327-a412-83c4e5c3aff7
+      -
+        id: 3cbd213b-04b6-4b5c-b37e-afacdc938995
+        entry: f01c2196-6c7f-4ec9-9b62-2ed150653399
+      -
+        id: 2f4d2dc0-32b2-47fa-b329-1ca41922750c
+        entry: 73ffabf3-485b-4bb5-84a0-aea900f3dcad
+      -
+        id: ad7ae0df-f870-4385-8714-993cc9d028af
+        entry: 1912398b-4b46-42ce-b63e-44d4f0f01881
+      -
+        id: a2047a94-7fab-43f5-abb8-2b285104c573
+        entry: 0ec04456-9c40-478d-a76e-a45f4c3e0628
+  -
+    id: f24d8210-795f-44de-aaaf-665e1c8db67c
+    title: 'Manage Data'
+    children:
+      -
+        id: 6ac0be64-1583-4943-9867-ac268697694c
+        entry: eabe8de8-fe63-42b8-a93d-eb1d10884b43
+      -
+        id: 0779f92f-a386-49c7-b231-c92046dd3e03
+        title: 'Clean and Fix Data'
+        children:
+          -
+            id: 7bcc4ed0-4197-4fd9-8380-b0bdf91e74a8
+            entry: 9996cae3-403c-44be-9b25-61efb780a3e9
+          -
+            id: 662824ed-25d3-4573-96b5-a01a46561efc
+            entry: 4116b5ac-6eb0-4b39-8b13-470a135f2143
+          -
+            id: b3e4594e-e96a-402f-ac38-99c8d89724dd
+            entry: ea221b5f-e025-4904-9343-245bafb90b65
+          -
+            id: 5ea68126-865b-4ce1-be52-4d122514e67d
+            entry: acd3a1dc-ad94-4730-b859-280c46747eb7
+          -
+            id: ecbdb63f-dc25-44fd-a482-fc46c6bc9392
+            entry: 761569fa-61e0-451b-8c08-4f1d52b8e17e
+          -
+            id: 117426e4-0199-4bd3-a236-74f340015589
+            entry: 1259587d-dfcf-4713-a57a-35b9f5660744
+          -
+            id: 88973ab4-dc04-4a3e-b1c9-a17fc1f336d3
+            entry: 3b46d4e2-2ab2-43e2-bacf-19e133b534cf
+          -
+            id: f2eea3c0-51dc-4c62-910c-26f52fb026f5
+            entry: 4ae538ba-8ca1-4a0f-b93a-f89ce4b42db0
+          -
+            id: 8d1f037f-b546-4963-84a3-8f266118c48e
+            entry: 09910eae-5073-45e2-9f8b-5b8cdb11806a
+          -
+            id: 19247ad4-2bcc-41a6-a36b-7c750a9a4a94
+            entry: 186f35a4-5184-46c4-8a96-16184ad038bb
+          -
+            id: 6dd7ed66-270b-4e42-a6c3-4d17aa9d8f93
+            entry: 34900232-5084-4b90-89aa-0bccbc06a95b
+      -
+        id: e8cc25dc-5440-4548-8c35-17d9c672e4c7
+        title: 'Enrich your Data'
+        children:
+          -
+            id: fe9f9788-bd92-4f42-b9da-fe8609659743
+            entry: c2c4ceb7-94ab-44f8-967a-99ff8f07e800
+          -
+            id: 8fa0a996-04f9-4483-b702-2c293809af77
+            entry: 5062badd-ff0e-4efd-9c1a-d8d0809e6bdd
+          -
+            id: da09feea-cdbd-4acb-a118-0b23e096166c
+            entry: 66b1d5fc-c05b-4418-9cff-0be3286e437f
+          -
+            id: 5393ca67-74d4-4a28-9af4-d00b48c07ca6
+            entry: a47ad425-cbf2-4408-bd10-17f889025d70
+          -
+            id: 5d795727-8fee-4d68-8ad2-ad9ae27c7572
+            entry: ca26cfe2-d99f-498a-8581-6485a736d4bb
+      -
+        id: d92c04ca-7468-483f-90cb-f4ad28d8ee2b
+        entry: dd311a35-601e-4713-b0cd-49fece790c20
+      -
+        id: bd47ee5c-f2c0-4a7b-8616-82d7b1b14ace
+        entry: 59306913-18a3-4948-87c4-877316da591c
+      -
+        id: 7f285103-e43e-496b-bd9b-c2f583ebe078
+        entry: 6389c912-154c-42fe-afea-07db4a295404
+      -
+        id: d76e509e-6038-4c7c-b3cd-efba5b762102
+        entry: 0556731c-f68a-495e-b85f-8e813640d6b0
+      -
+        id: 4b844179-6f1e-45ec-a021-f7fde78f5d5a
+        entry: d15d30d7-05f6-498f-bf9c-9a7432322077
+      -
+        id: 77482cc4-a811-4976-abb6-56b02448ad08
+        entry: ba19562a-4957-464b-be1c-f86926c58289
+  -
+    id: c2f4f77f-a780-4fa5-adc9-cfc5076045d5
+    title: Integrations
+    children:
+      -
+        id: 9bf6f3b5-6182-48c6-9638-f3732692892a
+        entry: ed3743e1-8c1f-4777-aa03-95b07412286d
+      -
+        id: 7158fb4e-4a88-4c09-900c-f3fb6e58dbc1
+        entry: c34ea643-dbea-4798-bb2d-ee976fc0d92c

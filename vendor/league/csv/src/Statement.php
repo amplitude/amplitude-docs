@@ -1,0 +1,175 @@
+<?php
+
+/**
+ * League.Csv (https://csv.thephpleague.com)
+ *
+ * (c) Ignace Nyamagana Butera <nyamsprod@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+declare(strict_types=1);
+
+namespace League\Csv;
+
+use ArrayIterator;
+use CallbackFilterIterator;
+use Iterator;
+use LimitIterator;
+
+use function array_reduce;
+
+use const E_USER_DEPRECATED;
+
+/**
+ * Criteria to filter a {@link TabularDataReader} object.
+ */
+class Statement
+{
+    /** @var array<callable> Callables to filter the iterator. */
+    protected array $where = [];
+    /** @var array<callable> Callables to sort the iterator. */
+    protected array $order_by = [];
+    /** iterator Offset. */
+    protected int $offset = 0;
+    /** iterator maximum length. */
+    protected int $limit = -1;
+
+    /**
+     * @throws Exception
+     */
+    public static function create(callable $where = null, int $offset = 0, int $limit = -1): self
+    {
+        $stmt = new self();
+        if (null !== $where) {
+            $stmt = $stmt->where($where);
+        }
+
+        return $stmt->offset($offset)->limit($limit);
+    }
+
+    /**
+     * Sets the Iterator filter method.
+     */
+    public function where(callable $where): self
+    {
+        $clone = clone $this;
+        $clone->where[] = $where;
+
+        return $clone;
+    }
+
+    /**
+     * Sets an Iterator sorting callable function.
+     */
+    public function orderBy(callable $order_by): self
+    {
+        $clone = clone $this;
+        $clone->order_by[] = $order_by;
+
+        return $clone;
+    }
+
+    /**
+     * Sets LimitIterator Offset.
+     *
+     * @throws Exception if the offset is less than 0
+     */
+    public function offset(int $offset): self
+    {
+        if (0 > $offset) {
+            throw InvalidArgument::dueToInvalidRecordOffset($offset, __METHOD__);
+        }
+
+        if ($offset === $this->offset) {
+            return $this;
+        }
+
+        $clone = clone $this;
+        $clone->offset = $offset;
+
+        return $clone;
+    }
+
+    /**
+     * Sets LimitIterator Count.
+     *
+     * @throws Exception if the limit is less than -1
+     */
+    public function limit(int $limit): self
+    {
+        if (-1 > $limit) {
+            throw InvalidArgument::dueToInvalidLimit($limit, __METHOD__);
+        }
+
+        if ($limit === $this->limit) {
+            return $this;
+        }
+
+        $clone = clone $this;
+        $clone->limit = $limit;
+
+        return $clone;
+    }
+
+    /**
+     * Executes the prepared Statement on the {@link Reader} object.
+     *
+     * @param array<string> $header an optional header to use instead of the CSV document header
+     *
+     * @throws SyntaxError
+     */
+    public function process(TabularDataReader $tabular_data, array $header = []): TabularDataReader
+    {
+        if ([] !== $header) {
+            @trigger_error('Since league\csv 9.12.0: the $header argument is deprecated and will be removed in the next major release; Please use getRecords on the returned TabularDataReader', E_USER_DEPRECATED);
+        }
+
+        if ([] === $header) {
+            $header = $tabular_data->getHeader();
+        }
+
+        $iterator = $this->buildOrderBy(
+            array_reduce($this->where, $this->filter(...), $tabular_data->getRecords($header))
+        );
+        /** @var Iterator<array-key, array<array-key, string|null>> $iterator */
+        $iterator = new LimitIterator($iterator, $this->offset, $this->limit);
+
+        return new ResultSet($iterator, $header);
+    }
+
+    /**
+     * Filters elements of an Iterator using a callback function.
+     */
+    protected function filter(Iterator $iterator, callable $callable): CallbackFilterIterator
+    {
+        return new CallbackFilterIterator($iterator, $callable);
+    }
+
+    /**
+     * Sorts the Iterator.
+     */
+    protected function buildOrderBy(Iterator $iterator): Iterator
+    {
+        if ([] === $this->order_by) {
+            return $iterator;
+        }
+
+        $compare = function (array $record_a, array $record_b): int {
+            foreach ($this->order_by as $callable) {
+                if (0 !== ($cmp = $callable($record_a, $record_b))) {
+                    return $cmp;
+                }
+            }
+
+            return $cmp ?? 0;
+        };
+
+        /** @var ArrayIterator<array-key, array<string|null>> $it */
+        $it = new ArrayIterator([...$iterator]);
+        $it->uasort($compare);
+
+        return $it;
+    }
+}
