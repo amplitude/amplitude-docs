@@ -1,0 +1,18 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: open_collapsed
+            field:
+              default: false
+              type: toggle
+              display: 'Open Collapsed'
+              icon: toggle
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false

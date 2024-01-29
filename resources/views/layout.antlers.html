@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ title ?? site:name }}</title>
+        {{ vite src="resources/js/site.js|resources/css/site.css" }}
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+        <style>
+            [x-cloak] { display: none !important; }
+        </style>
+    </head>
+    <body class="bg-gray-100 font-sans leading-normal text-gray-800">
+        <div class="mx-auto px-2 lg:min-h-screen flex flex-col items-center justify-center">
+            {{ template_content }}
+        </div>
+    </body>
+</html>

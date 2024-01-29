@@ -1,0 +1,131 @@
+tree:
+  -
+    id: da83c43a-14ef-4b1b-bb78-4146e3d230bc
+    title: 'Learn About Amplitude'
+    children:
+      -
+        id: c099ae96-d3f5-4539-8295-42fdc0b9df44
+        title: 'Get Data In'
+        children:
+          -
+            id: 559edb09-b890-4d1b-9f0d-bbd2c9013239
+            entry: 1473fc96-a097-4045-a6f9-43ad3bf5027e
+          -
+            id: 49284ec3-e501-4f62-88d9-c7662397d73c
+            entry: 669876e4-a2ae-44d5-bfb2-5def51504a25
+      -
+        id: c98c674b-7ae9-44d1-bcbf-16659888e125
+        entry: 937c2ebf-0fe4-435e-aa6d-c7c12de968ac
+      -
+        id: 3592a39f-7492-4ed3-a65a-4f21b3381b7c
+        entry: 3bed8b1f-3e50-4a2f-aaf9-148e3663fc89
+      -
+        id: cd49f17e-4f10-4f80-bc57-5fa6bb835d8c
+        entry: 3c450c92-9e04-4996-82ac-2baf0a741845
+      -
+        id: 547390ae-18c8-4c44-8dad-42090f10c2b5
+        entry: 07fcc029-bad9-40ad-9841-f288943fae48
+      -
+        id: b5ac456f-ceb5-403f-b1eb-faa25976040a
+        entry: 01c914d0-cbcb-4cb5-81c8-b4a5cc734a03
+      -
+        id: 494fe302-d49c-4845-81b9-1673e296e058
+        entry: 1b7d1277-e445-4c19-a784-216b7018abb1
+      -
+        id: d74cbf17-40ea-4cbd-b9bf-82084c1f6b1b
+        entry: 60e0ed22-81d6-4978-8751-cb7e4f6a24f1
+      -
+        id: 80e651a3-851b-4f0c-b9f7-4176f24a32d3
+        entry: a64c1c43-88d3-415d-b895-d27bb6decfd9
+      -
+        id: 08e8694a-df5f-4850-bd68-bdfddbdb620f
+        entry: 95a8c851-e03e-4b3d-907b-d3381dd46957
+      -
+        id: d7edee8e-485b-4480-b1f5-d699c4f111f4
+        entry: 59166098-ebb1-440c-9f76-e744d92aa49e
+      -
+        id: 20ab36f3-5843-478b-937e-54b0c17be662
+        entry: 0540d355-59be-49fc-b93d-ac1a256c38af
+      -
+        id: f602f288-4fae-44f3-acdf-671e1139aab8
+        entry: 5243dcbb-02c5-4ffb-a32b-8c3e50b2b121
+      -
+        id: a84e6394-1c95-4dd2-ac5e-c490838abb99
+        entry: df37755a-32f0-4c3b-9589-dd2c71b26a9a
+      -
+        id: dc1472a7-1a2b-48e2-93ab-d26092a24e4d
+        entry: 4fc414f3-cab6-4901-b4d3-55279b786f05
+      -
+        id: c9bf0788-8414-493b-af25-b675e4bac8d9
+        entry: 67184865-248e-4d6c-9a46-3e7495c2e072
+      -
+        id: 0ee68e84-a582-40ea-a3b5-4310c53e2f20
+        entry: 7d2ddd8b-26ba-4c9f-a201-b17179f01e02
+      -
+        id: 4b2af48c-b44c-4c64-9a81-6c5e3e0eb00f
+        entry: a4bd5ca3-8ce3-45b0-b57b-5578695005f6
+      -
+        id: 009ab535-6b63-4440-b58a-73806f9b0b85
+        entry: 937c2ebf-0fe4-435e-aa6d-c7c12de968ac
+      -
+        id: 602c7769-1ca5-4314-9d07-453d732e88dd
+        entry: 772dbd47-bee0-4b64-9672-7d09d16cd433
+      -
+        id: 544a6a18-3d00-40d3-9af2-25b39cec8406
+        entry: d79e04a5-67cb-4278-9fc1-5f924d78ffd3
+      -
+        id: efdac032-b8e7-4d85-87f1-f97f8fbbb190
+        entry: 6351af1c-e7e9-4488-bbe7-34648487d173
+      -
+        id: bc42d6af-8194-4aa1-89fd-1b9d0b170bd7
+        entry: 4d421b64-f9f4-45c7-b0d6-ea0708c21b78
+  -
+    id: affb335c-6d7d-4d1d-924a-f98ef10191cb
+    title: 'Instrument Amplitude'
+    children:
+      -
+        id: 25963d22-b7fe-4e89-b9c2-1ae7c472e778
+        entry: ba956cb4-9ae1-456a-b122-984b491048f6
+      -
+        id: 0cd3d312-4829-4d77-bb8b-d2fa1a1ba98f
+        entry: 3a6981ac-941a-41f4-b82e-3a660c59cf3a
+      -
+        id: cd0f989f-5f7e-417f-be63-9959818eac15
+        entry: 6df75244-a0ff-4649-89f2-e67b3d2a5352
+      -
+        id: 0360288e-9877-4c42-b102-1957472ad854
+        entry: a0da41b8-4d51-4efc-9edf-30e7cf7c7929
+      -
+        id: 94288434-cb65-4cce-b17d-88f33ca9baad
+        entry: e2ab2dce-e4d4-4286-b577-d7009705874b
+      -
+        id: d586024c-89be-4124-bbed-087fc913aeb1
+        entry: 18f5ac3b-003a-4386-86a3-1ffad3ca2429
+      -
+        id: c154f272-f38d-4ffb-b48c-9ea01e3a0f68
+        entry: cae327ea-be74-4783-ab16-09f2848cebca
+      -
+        id: 5300f252-3b21-4c08-9ff9-0a6ad24b59a6
+        entry: 53c7b244-36fd-47b4-8cd7-689dc44fc563
+      -
+        id: 7ea9733b-0373-467e-b3c1-2ae916e53145
+        entry: acd4d43f-b660-4576-bd60-ac30322965a0
+      -
+        id: d9db4678-fd1e-4183-a298-8cd6e6c64631
+        entry: cea4db38-5323-4b0b-b401-8077084a0a0a
+  -
+    id: 27a07869-0b42-4f04-9f6b-ff3e1134dd1f
+    title: 'Migrate to Amplitude'
+    children:
+      -
+        id: 3db589f0-8177-4163-a51c-a6c90a1865cf
+        entry: 785c609b-7277-401c-9ea6-6c591f6c81c0
+      -
+        id: 84cf96ce-fb5a-4849-9989-fa24f8749025
+        entry: 6aa2684c-8d4c-4cd6-8281-10204eb956d3
+      -
+        id: d49db4b1-85e5-459e-bd0f-2a80b653f1a2
+        entry: ca7e0544-2e99-4552-89d5-649a34c1956f
+      -
+        id: 215b78c8-4177-4950-b68b-76486ab7cf4a
+        entry: abf952ae-fdc9-4f51-8691-c0f4ed6a73f4

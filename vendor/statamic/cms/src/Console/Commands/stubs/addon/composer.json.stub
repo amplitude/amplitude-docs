@@ -1,0 +1,19 @@
+{
+    "name": "dummy/package",
+    "autoload": {
+        "psr-4": {
+            "DummyNamespace\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "DummyTitle",
+            "description": "DummyTitle addon"
+        },
+        "laravel": {
+            "providers": [
+                "DummyNamespace\\ServiceProvider"
+            ]
+        }
+    }
+}

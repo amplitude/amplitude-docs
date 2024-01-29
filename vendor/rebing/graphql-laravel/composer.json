@@ -1,0 +1,97 @@
+{
+    "name": "rebing/graphql-laravel",
+    "description": "Laravel wrapper for PHP GraphQL",
+    "keywords": ["framework", "laravel", "graphql", "react"],
+    "authors": [
+        {
+            "name": "Rebing OÜ",
+            "homepage": "http://www.rebing.ee",
+            "role": "Company"
+        },
+        {
+            "name": "Mikk Mihkel Nurges",
+            "email": "mikk.nurges@rebing.ee",
+            "role": "Developer"
+        },
+        {
+            "name": "Folklore",
+            "email": "info@atelierfolklore.ca",
+            "homepage": "http://atelierfolklore.ca"
+        },
+        {
+            "name": "David Mongeau-Petitpas",
+            "email": "dmp@atelierfolklore.ca",
+            "homepage": "http://mongo.ca",
+            "role": "Developer"
+        },
+        {
+            "name": "Markus Podar",
+            "email": "markus@fischer.name",
+            "role": "Developer",
+            "homepage": "https://github.com/mfn"
+        }
+    ],
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": ">= 7.4",
+        "ext-json": "*",
+        "illuminate/contracts": "^6.0|^8.0|^9.0|^10.0",
+        "illuminate/support": "^6.0|^8.0|^9.0|^10.0",
+        "laragraph/utils": "^1",
+        "thecodingmachine/safe": "^1.1|^2.4",
+        "webonyx/graphql-php": "^14.6.4"
+    },
+    "require-dev": {
+        "ext-pdo_sqlite": "*",
+        "friendsofphp/php-cs-fixer": "3.11.0",
+        "laravel/legacy-factories": "^1.0",
+        "mfn/php-cs-fixer-config": "^2",
+        "mockery/mockery": "^1.2",
+        "phpstan/phpstan": "1.8.4",
+        "nunomaduro/larastan": "1.0.3",
+        "orchestra/testbench": "4.0.*|5.0.*|^6.0|^7.0|^8.0",
+        "phpunit/phpunit": "~7.0|~8.0|^9",
+        "thecodingmachine/phpstan-safe-rule": "^1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rebing\\GraphQL\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rebing\\GraphQL\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "phpstan": "phpstan analyse --memory-limit=512M",
+        "phpstan-baseline": "phpstan analyse --memory-limit=512M --generate-baseline",
+        "lint": "php-cs-fixer fix --diff --dry-run",
+        "fix-style": "php-cs-fixer fix",
+        "tests": "phpunit --colors=always --verbose",
+        "tests-all": [
+            "TESTS_ENABLE_LAZYLOAD_TYPES=0 phpunit --colors=always --verbose",
+            "TESTS_ENABLE_LAZYLOAD_TYPES=1 phpunit --colors=always --verbose"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "8.6-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Rebing\\GraphQL\\GraphQLServiceProvider"
+            ],
+            "aliases": {
+                "GraphQL": "Rebing\\GraphQL\\Support\\Facades\\GraphQL"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}
