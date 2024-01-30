@@ -1,0 +1,78 @@
+tree:
+  -
+    id: 6fbf8354-9d43-4535-97d0-92e09a95958b
+    title: Audiences
+    children:
+      -
+        id: 88e5d480-c2b1-4dc2-95b5-2dde5f396054
+        entry: 8dfd33d5-b99e-468d-82e9-548bdc2667bc
+      -
+        id: 430590b1-b761-4b02-8400-b01d1f9a82ba
+        title: Predictions
+        children:
+          -
+            id: 58b42e5d-10a5-4a67-914e-22353fe99fb3
+            entry: 4271240a-42f6-4303-90a3-f0d6b11b8587
+          -
+            id: d601ca0b-77ee-4cc5-b4d0-1365a60d482f
+            entry: e1b61782-4ec1-47a2-a803-0b6385477026
+          -
+            id: 7cdb8da7-465c-4a60-93df-4a1bf12c9c49
+            entry: 8bfa1b80-554b-4ae1-8481-586991e7f726
+      -
+        id: d44d874f-5459-4dc9-b504-d4f31ac105f9
+        title: Recommendations
+        children:
+          -
+            id: da23d043-a9da-4d56-a6a0-a41798e741a3
+            entry: 1367ad78-90fa-465b-be63-45e9102cdcec
+          -
+            id: 66c0d50e-5555-4b36-a88d-60345733227c
+            entry: 81ab19f5-a628-4a08-81f0-97759a5bfa91
+          -
+            id: 1b035a98-89ff-48e7-acfd-d2b704cb5d4f
+            entry: 314e6a98-3da6-4985-9ab3-f58b81646a75
+      -
+        id: 85df322c-396e-4ad8-bf89-2a6e314741b8
+        entry: 8cdc1ed2-7236-4312-ae35-1efdb910c563
+  -
+    id: 56358741-9b04-472f-9313-3eb62747495c
+    title: Sources
+    children:
+      -
+        id: d5e786d3-3ebc-4dc9-9219-5c25d096d5f2
+        title: 'SDK Instrumentation'
+        children:
+          -
+            id: 26decede-90b9-4f11-a7a2-a5ae07833616
+            entry: e5e8c350-b75d-4c43-83a0-833ff186a0be
+          -
+            id: dbcc5813-6bfb-4235-a1ed-55572d3b554d
+            entry: aaef4714-72e1-470d-a8e0-87de6001daf3
+          -
+            id: f0d5476d-227e-4b19-a69d-1b382ef58907
+            entry: 02e1a247-91b8-48ac-aabb-e1ab3b46042f
+      -
+        id: 71c29608-6973-45c0-a354-7a711d340a9a
+        entry: 07896d14-1d29-42a8-a812-5dc97915c3fe
+      -
+        id: 51cedead-a373-4192-8a72-774887c1d0d9
+        entry: a1eb1953-5738-45a4-8a4f-e276692b4089
+      -
+        id: b4f32c83-921d-4ac1-aab3-080e7bb373d4
+        entry: 69cefed6-2b87-4333-8cc6-ba5bac1b41e5
+      -
+        id: 39ecbdb2-a9cd-4934-87f4-9b5369e02db0
+        title: 'Source Catalog'
+        url: /data/source-catalog
+  -
+    id: 2275c22d-081d-4b7c-acf3-527aca41a667
+    title: Destinations
+    children:
+      -
+        id: 7da4f387-11b4-4db2-b4aa-141339df164c
+        entry: b4b879ac-d33b-4e63-b530-ea9a7259b442
+      -
+        id: 94bbb23b-82d0-4995-bd9d-60c2f391e6b9
+        title: 'Destination Catalog'
+        url: /data/destination-catalog

@@ -1,8 +1,8 @@
 ---
-id: a6ac3a1e-b919-4f40-9c22-7d52fe9ebea1
+id: 74c5dd5d-0ef0-44d8-9e68-557ae221b5a2
 blueprint: section
-title: 'Get Started'
+title: CDP
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1706640667
+updated_at: 1706640518
 ---

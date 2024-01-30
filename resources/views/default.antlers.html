@@ -42,6 +42,7 @@ pre code.torchlight .line-number,
 pre code.torchlight .summary-caret {
    margin-right: 1rem;
 }
+
 </style>
 {{if segment_1 == ""}}
 {{nav_title = ""}}
@@ -82,6 +83,12 @@ pre code.torchlight .summary-caret {
 {{/if}}
 {{if segment_2 == "destination-catalog"}}
 {{nav_title = "destination_catalog"}}
+{{/if}}
+{{if segment_1 == "cdp"}}
+{{nav_title = "cdp"}}
+{{/if}}
+{{if segment_2 == "source-catalog"}}
+{{nav_title = "source_catalog"}}
 {{/if}}
 
 

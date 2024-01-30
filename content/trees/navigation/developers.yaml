@@ -4,6 +4,9 @@ tree:
     title: 'Analytics SDKs'
     children:
       -
+        id: 0af95fa9-d61c-4992-90a3-adbdec86cc72
+        entry: 3a6981ac-941a-41f4-b82e-3a660c59cf3a
+      -
         id: 4eb74613-5de2-4e96-8893-ae27a2a90622
         entry: ba956cb4-9ae1-456a-b122-984b491048f6
       -

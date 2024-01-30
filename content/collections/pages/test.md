@@ -9,6 +9,12 @@ updated_at: 1706305675
 ---
 Navigation and UX test for the new combined docs site.
 
+This site brings together Dev Docs and Help Center content into a single location.
+
 The purpose of this test is to examine the navigability of the site using the top and left-side navigations. No effort was made to account for content in these pages.
 
 Minimal effort was paid to the UX of the navigation elements. Bare bones expand / collapse functionality was added. This will be redesigned  during the design phase of this project.
+
+## Request
+
+Please explore the navigation structures on this site. After you explore the site, please complete this five question <a href ="https://forms.gle/1RFN84jLZk76CMVP8" class="text-blue-800" target="_blank">survey</a> about your experience.
