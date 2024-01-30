@@ -203,6 +203,7 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
             'Spatie\\ShikiPhp\\' => 16,
             'Spatie\\LaravelIgnition\\' => 23,
             'Spatie\\Ignition\\' => 16,
+            'Spatie\\Fork\\' => 12,
             'Spatie\\FlareClient\\' => 19,
             'Spatie\\Blink\\' => 13,
             'Spatie\\Backtrace\\' => 17,
@@ -525,6 +526,10 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
         'Spatie\\Ignition\\' => 
         array (
             0 => __DIR__ . '/..' . '/spatie/ignition/src',
+        ),
+        'Spatie\\Fork\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/fork/src',
         ),
         'Spatie\\FlareClient\\' => 
         array (
@@ -6814,6 +6819,10 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
         'Spatie\\FlareClient\\Truncation\\TrimStringsStrategy' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Truncation/TrimStringsStrategy.php',
         'Spatie\\FlareClient\\Truncation\\TruncationStrategy' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Truncation/TruncationStrategy.php',
         'Spatie\\FlareClient\\View' => __DIR__ . '/..' . '/spatie/flare-client-php/src/View.php',
+        'Spatie\\Fork\\Connection' => __DIR__ . '/..' . '/spatie/fork/src/Connection.php',
+        'Spatie\\Fork\\Exceptions\\CouldNotManageTask' => __DIR__ . '/..' . '/spatie/fork/src/Exceptions/CouldNotManageTask.php',
+        'Spatie\\Fork\\Fork' => __DIR__ . '/..' . '/spatie/fork/src/Fork.php',
+        'Spatie\\Fork\\Task' => __DIR__ . '/..' . '/spatie/fork/src/Task.php',
         'Spatie\\Ignition\\Config\\FileConfigManager' => __DIR__ . '/..' . '/spatie/ignition/src/Config/FileConfigManager.php',
         'Spatie\\Ignition\\Config\\IgnitionConfig' => __DIR__ . '/..' . '/spatie/ignition/src/Config/IgnitionConfig.php',
         'Spatie\\Ignition\\Contracts\\BaseSolution' => __DIR__ . '/..' . '/spatie/ignition/src/Contracts/BaseSolution.php',

@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'statamic/statamic',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '79977928f67fe5d0ec6fc58a978ed9d4e91ecf30',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -1247,6 +1247,15 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'spatie/fork' => array(
+            'pretty_version' => '1.2.2',
+            'version' => '1.2.2.0',
+            'reference' => 'c79b4c10ce1c22efb7e90429a5ff30d36c7d8ae3',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/fork',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'spatie/ignition' => array(
             'pretty_version' => '1.12.0',
             'version' => '1.12.0.0',
@@ -1293,9 +1302,9 @@
             'dev_requirement' => false,
         ),
         'statamic/statamic' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '79977928f67fe5d0ec6fc58a978ed9d4e91ecf30',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
