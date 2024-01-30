@@ -1,6 +1,7 @@
 {
     "name": "statamic/statamic",
     "description": "Statamic",
+    "license": "proprietary",
     "keywords": [
         "statamic",
         "cms",
