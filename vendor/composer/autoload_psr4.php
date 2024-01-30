@@ -56,6 +56,7 @@ return array(
     'Spatie\\ShikiPhp\\' => array($vendorDir . '/spatie/shiki-php/src'),
     'Spatie\\LaravelIgnition\\' => array($vendorDir . '/spatie/laravel-ignition/src'),
     'Spatie\\Ignition\\' => array($vendorDir . '/spatie/ignition/src'),
+    'Spatie\\Fork\\' => array($vendorDir . '/spatie/fork/src'),
     'Spatie\\FlareClient\\' => array($vendorDir . '/spatie/flare-client-php/src'),
     'Spatie\\Blink\\' => array($vendorDir . '/spatie/blink/src'),
     'Spatie\\Backtrace\\' => array($vendorDir . '/spatie/backtrace/src'),

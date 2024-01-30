@@ -1,0 +1,56 @@
+{
+    "name": "spatie/fork",
+    "description": "A lightweight solution for running code concurrently in PHP",
+    "keywords": [
+        "spatie",
+        "fork"
+    ],
+    "homepage": "https://github.com/spatie/fork",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brent Roose",
+            "email": "brent@spatie.be",
+            "role": "Developer"
+        },
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "ext-sockets": "*",
+        "ext-pcntl": "*"
+    },
+    "require-dev": {
+        "nesbot/carbon": "^2.66",
+        "pestphp/pest": "^1.23",
+        "phpunit/phpunit": "^9.5",
+        "spatie/ray": "^1.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\Fork\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\Fork\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage-html coverage",
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes --config=.php_cs.php"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
