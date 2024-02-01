@@ -7,12 +7,12 @@
                 <div x-show="open" class="mt-4 absolute border border-2 border-grey-500 top-4 bg-white w-24 p-4">
                     {{children }}
                     <a href="{{url}}">{{title}}</a> <br />
- 
                     {{ /children }}
                 </div>
                 </div>
                 {{else}}
-                <div class="flex-auto mr-4 text-sm"><a href="{{url}}">{{title}}</a></div>
+                <!--{{segment_1}} - {{slug}}-->
+                <div class="flex-auto mr-4 text-sm "><a href="{{url}}" class="{{if segment_1 === slug}}text-green-700{{/if}}">{{title}}</a></div>
                 {{/if}}
 
 

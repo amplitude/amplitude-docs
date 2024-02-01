@@ -1,6 +1,7 @@
 title: 'Data Tables'
 template: default
 layout: layout
+mount: 0cbd21dd-8917-4c02-a2a0-8aad8d4a3bd0
 revisions: false
 route: '/analytics/charts/data-tables/{slug}'
 sort_dir: asc
@@ -14,3 +15,5 @@ preview_targets:
     refresh: true
 structure:
   root: false
+inject:
+  nav_type: charts

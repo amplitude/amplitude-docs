@@ -1,6 +1,7 @@
 title: Lifecycle
 template: default
 layout: layout
+mount: c4858ae8-0592-4ebd-87a5-144cdbb88f2f
 revisions: false
 route: '/analytics/charts/lifecycle/{slug}'
 sort_dir: asc
@@ -14,3 +15,5 @@ preview_targets:
     refresh: true
 structure:
   root: false
+inject:
+  nav_type: charts

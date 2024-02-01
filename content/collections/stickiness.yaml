@@ -1,6 +1,7 @@
 title: Stickiness
 template: default
 layout: layout
+mount: f5763b49-98e0-4cbd-be73-e3d4a4742052
 revisions: false
 route: '/analytics/charts/stickiness/{slug}'
 sort_dir: asc
@@ -14,3 +15,5 @@ preview_targets:
     refresh: true
 structure:
   root: false
+inject:
+  nav_type: charts

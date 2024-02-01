@@ -1,6 +1,7 @@
 title: 'Engagement Matrix'
 template: default
 layout: layout
+mount: 32f7baf3-cdad-485d-a0e4-10af0013c6dc
 revisions: false
 route: '/analytics/charts/engagement-matrix/{slug}'
 sort_dir: asc
@@ -14,3 +15,5 @@ preview_targets:
     refresh: true
 structure:
   root: false
+inject:
+  nav_type: charts

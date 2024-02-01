@@ -1,6 +1,7 @@
 title: Journeys
 template: default
 layout: layout
+mount: 0e500861-f6ce-4f55-a7b2-9601b5fd67fe
 revisions: false
 route: '/analytics/charts/journeys/{slug}'
 sort_dir: asc
@@ -14,3 +15,5 @@ preview_targets:
     refresh: true
 structure:
   root: false
+inject:
+  nav_type: charts

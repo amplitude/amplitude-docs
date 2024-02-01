@@ -44,59 +44,67 @@ pre code.torchlight .summary-caret {
 }
 
 </style>
-{{if segment_1 == ""}}
-{{nav_title = ""}}
-{{/if}}
+{{unless nav_type}}
+    {{if segment_1 == ""}}
+    {{nav_title = ""}}
+    {{/if}}
 
-{{if segment_1 == "get-started-with-amplitude" || "migration"}}
-{{nav_title = "get_started"}}
-{{/if}}
-{{if segment_1 == "data"}}
-{{nav_title = "data"}}
-{{/if}}
-{{if segment_1 == "experiment"}}
-{{nav_title = "experiment"}}
-{{/if}}
-{{if segment_1 == "analytics"}}
-{{nav_title = "analytics"}}
-{{/if}}
-{{if segment_1 == "admin"}}
-{{nav_title = "admin"}}
-{{/if}}
-{{ if segment_1 == "sdks" }}
-{{nav_title = "developers" }}
-{{/if}}
-{{ if segment_1 == "instrumentation" }}
-{{nav_title = "developers" }}
-{{/if}}
-{{ if segment_1 == "experiment-sdks" }}
-{{nav_title = "developers" }}
-{{/if}}
-{{ if segment_1 == "api" }}
-{{nav_title = "apis" }}
-{{/if}}
-{{ if segment_1 == "apis" }}
-{{nav_title = "apis" }}
-{{/if}}
-{{ if segment_1 == "experiment-apis" }}
-{{nav_title = "apis" }}
-{{/if}}
-{{if segment_2 == "destination-catalog"}}
-{{nav_title = "destination_catalog"}}
-{{/if}}
-{{if segment_1 == "cdp"}}
-{{nav_title = "cdp"}}
-{{/if}}
-{{if segment_2 == "source-catalog"}}
-{{nav_title = "source_catalog"}}
-{{/if}}
-
+    {{if segment_1 == "get-started-with-amplitude" || "migration"}}
+    {{nav_title = "get_started"}}
+    {{/if}}
+    {{if segment_1 == "data"}}
+    {{nav_title = "data"}}
+    {{/if}}
+    {{if segment_1 == "experiment"}}
+    {{nav_title = "experiment"}}
+    {{/if}}
+    {{if segment_1 == "analytics"}}
+    {{nav_title = "analytics"}}
+    {{/if}}
+    {{if segment_1 == "admin"}}
+    {{nav_title = "admin"}}
+    {{/if}}
+    {{ if segment_1 == "sdks" }}
+    {{nav_title = "developers" }}
+    {{/if}}
+    {{ if segment_1 == "instrumentation" }}
+    {{nav_title = "developers" }}
+    {{/if}}
+    {{ if segment_1 == "experiment-sdks" }}
+    {{nav_title = "developers" }}
+    {{/if}}
+    {{ if segment_1 == "api" }}
+    {{nav_title = "apis" }}
+    {{/if}}
+    {{ if segment_1 == "apis" }}
+    {{nav_title = "apis" }}
+    {{/if}}
+    {{ if segment_1 == "experiment-apis" }}
+    {{nav_title = "apis" }}
+    {{/if}}
+    {{if segment_2 == "destination-catalog"}}
+    {{nav_title = "destination_catalog"}}
+    {{/if}}
+    {{if segment_1 == "cdp"}}
+    {{nav_title = "cdp"}}
+    {{/if}}
+    {{if segment_2 == "source-catalog"}}
+    {{nav_title = "source_catalog"}}
+    {{/if}}
+{{else}}
+{{nav_title = nav_type}}
+{{/unless}}
 
 
 
 <div class="container prose">
 <div class="w-56 h-100 fixed left-0 top-0 bottom-0 border-solid border-r border-grey-200 hidden lg:block overflow-auto pt-10" x-data="{ open: 'Getting Started' }">
-   {{partial:side-nav :nav_title="nav_title"}}
+   {{ if nav_type }}
+    {{partial:side-nav-charts :nav_title="nav_title"}}
+    {{else}}
+    {{partial:side-nav :nav_title="nav_title"}}
+    {{/if}}
+
 </div>
 <div class="absolute top-0 left-0 lg:left-56 bottom-0 right-0">
    <div class="w-full p-5">
@@ -122,6 +130,20 @@ pre code.torchlight .summary-caret {
                      <span class="ml-4 text-xs text-gray-300 align-middle"><a href="{{edit_url}}" target="_blank">Edit</a></span>
                    </div>
                    {{content | markdown}}
+                   {{if slug == "charts-overview"}}
+                   <div class="flex flex-wrap">
+                    {{collection:charts landing:is="true" sort="sort:asc"}}
+                    <a href="{{url}}">
+                    <div class="flex-none border border-gray-500 rounded size-48 m-8 p-4">
+                        <p>{{title}}</p>
+                    </div>
+                    </a>
+                    {{/collection:charts}}
+
+                    {{/if}}
+
+
+                </div>
                </div>
            </div>
 
