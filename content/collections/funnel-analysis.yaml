@@ -1,6 +1,7 @@
 title: 'Funnel Analysis'
 template: default
 layout: layout
+mount: 945e85b1-de5f-4a40-8e97-37b4e1f0789f
 revisions: false
 route: '/analytics/charts/funnel-analysis/{slug}'
 sort_dir: asc
@@ -14,3 +15,5 @@ preview_targets:
     refresh: true
 structure:
   root: false
+inject:
+  nav_type: charts

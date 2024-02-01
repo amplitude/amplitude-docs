@@ -1,6 +1,7 @@
 title: Charts
 template: default
 layout: layout
+mount: 4f9db02a-f75c-470c-990d-31d6ffb5eebf
 revisions: false
 route: '/analytics/charts/{slug}'
 sort_dir: asc

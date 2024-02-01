@@ -1,6 +1,7 @@
 title: 'Retention Analysis'
 template: default
 layout: layout
+mount: 48f5cae8-750d-4ba1-b99a-eae2e9aa403c
 revisions: false
 route: '/analytics/charts/retention-analysis/{slug}'
 sort_dir: asc
@@ -14,3 +15,5 @@ preview_targets:
     refresh: true
 structure:
   root: false
+inject:
+  nav_type: charts

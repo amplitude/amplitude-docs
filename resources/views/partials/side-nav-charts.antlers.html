@@ -1,0 +1,34 @@
+<style>
+    a {
+        text-decoration: none!important;
+        font-weight: normal!important;
+    }
+    
+    li::marker {
+        content: none!important;
+    }
+    
+    
+    </style>
+    
+    <div x-cloak x-data="{ openItem: null, openSubItem: null }">
+    <ul class="nav" style="font-size:12px">
+        {{if segment_1}}
+        {{ nav :handle="nav_title"}}
+            <li>
+                {{ if url }}
+                <a href="{{url}}" {{if is_current }} style="color: green" x-effect="openItem = '{{parent:title | slugify}}'"{{/if}} >{{title}}</a>
+                {{else}} 
+                <button class="font-semibold antialiased" @click.prevent="openItem = (openItem === '{{title | slugify}}' ? null : '{{title | slugify}}')"style="text-align:left">{{ title }}</button>
+                {{/if}}
+                {{ if children }}
+                    <ul x-show="openItem === '{{title | slugify}}'" x-collapse>
+                        {{ *recursive children* }}
+                    </ul>
+                {{ /if }}
+            </li>
+        {{ /nav }}
+        {{/if}}
+    </ul> 
+    </div>
+    

@@ -1,6 +1,7 @@
 title: 'Revenue LTV'
 template: default
 layout: layout
+mount: a499bf82-ffb0-4a85-9b39-76b38a5e2800
 revisions: false
 route: '/analytics/charts/revenue-ltv/{slug}'
 sort_dir: asc
@@ -14,3 +15,5 @@ preview_targets:
     refresh: true
 structure:
   root: false
+inject:
+  nav_type: charts

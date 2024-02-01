@@ -1,6 +1,7 @@
 title: 'Impact Analysis'
 template: default
 layout: layout
+mount: 174c9363-dd7f-4e03-b7ea-b680633d4a61
 revisions: false
 route: '/analytics/charts/impact-analysis/{slug}'
 sort_dir: asc
@@ -14,3 +15,5 @@ preview_targets:
     refresh: true
 structure:
   root: false
+inject:
+  nav_type: charts
