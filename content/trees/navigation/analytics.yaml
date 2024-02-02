@@ -28,54 +28,6 @@ tree:
         id: e50307c9-f3e3-446a-8208-e33f82a69933
         entry: d1b8f00a-92ba-4950-b0d6-d8e426e6ab45
   -
-    id: 644cd0a0-18d5-4a65-9090-0eec83055fc5
-    title: 'Advanced Chart Topics'
-    children:
-      -
-        id: ccb58097-db7a-4e2f-8195-f36e8fba60e2
-        title: 'Advanced Funnel Analysis Techniques'
-        children:
-          -
-            id: 5cbecde4-b1b5-4ef3-9f7f-65f7eeff25a8
-            entry: 184e04ba-8825-477f-b0c6-7961d312eb62
-          -
-            id: 08c7edaa-628e-4924-8a97-6d23f58e7a4a
-            entry: 33a92119-df7a-4fb5-9096-bc5c96caa727
-          -
-            id: 74aafbf5-3b57-4f21-84a9-0513944403fd
-            entry: 3abf19ba-71ba-4afd-844e-a4d8bf97471a
-          -
-            id: b9bb7c60-49b2-4893-8326-7226e67a3134
-            entry: f7860654-761f-4163-b27a-c2c70f1d202b
-          -
-            id: 68168d2b-3e66-4cab-8cfe-758d62e8e828
-            entry: 73cbe065-372a-46c0-9ddb-7bf1fc1803e0
-          -
-            id: 668eeb5a-c48d-48a9-bc1a-028790dc618b
-            entry: 63e7578e-f1d8-4f68-9b98-e5617e826b63
-          -
-            id: b10fd8ec-31f4-4017-b032-020f0676af0a
-            entry: 7da7de78-2bd2-43c3-9838-e1bb2a56b687
-      -
-        id: c76858aa-9e8d-4e52-a381-c12d115ee9ac
-        title: 'How Amplitude Builds Funnel Analysis Charts'
-        children:
-          -
-            id: 1a894b5e-233d-41d7-b85a-f3f4dcaebcd0
-            entry: ae1f56ee-8f72-45f7-a298-4aa8b61c7a0e
-          -
-            id: 5f0db133-44a9-46a3-bd30-aafe6217d3a0
-            entry: 389fa40a-fe90-45a9-8262-d44c9600ab4a
-          -
-            id: b6c9302d-49b1-43b6-aceb-a690af1dcbe1
-            entry: c46a3244-1305-44d9-ba34-ff1bdc96bea0
-          -
-            id: c3fafac0-5c1b-4b1f-a867-d9617e911c39
-            entry: 365b80da-3375-474c-85a3-b74d75ffee99
-          -
-            id: af3153d0-fb47-472f-a1de-b8936bdd4d67
-            entry: 54971e19-d431-44e9-8efd-3968ea8e1fd6
-  -
     id: ed2f8d4b-3612-4639-b3ac-ea4ce47a1f12
     title: 'Cohorts and User Behavior'
     children:
