@@ -99,10 +99,12 @@ pre code.torchlight .summary-caret {
 
 <div class="container prose">
 <div class="w-56 h-100 fixed left-0 top-0 bottom-0 border-solid border-r border-grey-200 hidden lg:block overflow-auto pt-10" x-data="{ open: 'Getting Started' }">
-   {{ if nav_type }}
+   {{ if segment_1}}
+    {{ if nav_type }}
     {{partial:side-nav-charts :nav_title="nav_title"}}
     {{else}}
     {{partial:side-nav :nav_title="nav_title"}}
+    {{/if}}
     {{/if}}
 
 </div>
