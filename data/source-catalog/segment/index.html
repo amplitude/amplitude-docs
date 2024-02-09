@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Segment</title>
+        <link rel="preload" as="style" href="http://localhost/build/assets/site-3d487ba8.css" /><link rel="modulepreload" href="http://localhost/build/assets/site-4ed993c7.js" /><link rel="stylesheet" href="http://localhost/build/assets/site-3d487ba8.css" /><script type="module" src="http://localhost/build/assets/site-4ed993c7.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+        <style>
+            [x-cloak] { display: none !important; }
+        </style>
+    </head>
+    <body class="bg-gray-100 font-sans leading-normal text-gray-800">
+        <div class="mx-auto px-2 lg:min-h-screen flex flex-col items-center justify-center">
+            <style>
+   /*
+Margin and rounding are personal preferences,
+overflow-x-auto is recommended.
+*/
+pre {
+   border-radius: 0.25rem;
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+   overflow-x: auto;
+}
+
+/*
+Add some vertical padding and expand the width
+to fill its container. The horizontal padding
+comes at the line level so that background
+colors extend edge to edge.
+*/
+pre code.torchlight {
+   display: block;
+   min-width: -webkit-max-content;
+   min-width: -moz-max-content;
+   min-width: max-content;
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+}
+
+/*
+Horizontal line padding to match the vertical
+padding from the code block above.
+*/
+pre code.torchlight .line {
+   padding-left: 1rem;
+   padding-right: 1rem;
+}
+
+/*
+Push the code away from the line numbers and
+summary caret indicators.
+*/
+pre code.torchlight .line-number,
+pre code.torchlight .summary-caret {
+   margin-right: 1rem;
+}
+
+</style>
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+<div class="container prose">
+<div class="w-56 h-100 fixed left-0 top-0 bottom-0 border-solid border-r border-grey-200 hidden lg:block overflow-auto pt-10" x-data="{ open: 'Getting Started' }">
+   
+    
+    <style>
+a {
+    text-decoration: none!important;
+    font-weight: normal!important;
+}
+
+li::marker {
+    content: none!important;
+}
+
+button {
+    font-weight: bold;
+}
+
+ul.nav-level-1, ul.nav-level-2, ul.nav-level-3 {
+    list-style: none;
+    padding: 0;
+}
+
+
+
+
+</style>
+
+
+<div x-cloak x-data="{ lvl1: false, lvl2: false, lvl3: false }" class="nav-level-1">
+    <ul class="nav" style="font-size:12px">
+    
+    
+        <li>
+           <!-- lvl1: back -->
+            
+            <a href="/data" ><- Back</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: adapty -->
+            
+            <a href="/data/source-catalog/adapty" >Adapty</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: adjust -->
+            
+            <a href="/data/source-catalog/adjust" >Adjust</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: adobe-analytics -->
+            
+            <a href="/data/source-catalog/adobe-analytics" >Adobe Analytics</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: adobe-launch -->
+            
+            <a href="/data/source-catalog/adobe-launch" >Adobe Launch</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: airbridge -->
+            
+            <a href="/data/source-catalog/airbridge" >Airbridge</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: amazon-s3-import -->
+            
+            <a href="/data/source-catalog/amazon-s3" >Amazon S3 Import</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: apphud -->
+            
+            <a href="/data/source-catalog/apphud" >Apphud</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: appsflyer -->
+            
+            <a href="/data/source-catalog/appsflyer" >AppsFlyer</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: bento -->
+            
+            <a href="/data/source-catalog/bento" >Bento</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: bigquery-data-import -->
+            
+            <a href="/data/source-catalog/bigquery" >BigQuery Data Import</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: blitzllama -->
+            
+            <a href="/data/source-catalog/blitzllama" >Blitzllama</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: branch -->
+            
+            <a href="/data/source-catalog/branch" >Branch</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: braze -->
+            
+            <a href="/data/source-catalog/braze" >Braze</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: census -->
+            
+            <a href="/data/source-catalog/census" >Census</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: chameleon -->
+            
+            <a href="/data/source-catalog/chameleon" >Chameleon</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: clevertap -->
+            
+            <a href="/data/source-catalog/clevertap" >CleverTap</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: convizit -->
+            
+            <a href="/data/source-catalog/convizit" >Convizit</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: cordial -->
+            
+            <a href="/data/source-catalog/cordial" >Cordial</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: csv -->
+            
+            <a href="/data/source-catalog/csv" >CSV</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: datazoom -->
+            
+            <a href="/data/source-catalog/datazoom" >Datazoom</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: google-cloud-storage-gcs-import -->
+            
+            <a href="/data/source-catalog/google-cloud-storage" >Google Cloud Storage (GCS) Import</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: google-tag-manager -->
+            
+            <a href="/data/source-catalog/google-tag-manager" >Google Tag Manager</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: hightouch -->
+            
+            <a href="/data/source-catalog/hightouch" >Hightouch</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: hubspot -->
+            
+            <a href="/data/source-catalog/hubspot" >HubSpot</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: insider -->
+            
+            <a href="/data/source-catalog/insider" >Insider</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: intercom -->
+            
+            <a href="/data/source-catalog/intercom" >Intercom</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: iterable -->
+            
+            <a href="/data/source-catalog/iterable" >Iterable</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: kochava -->
+            
+            <a href="/data/source-catalog/kochava" >Kochava</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: leanplum -->
+            
+            <a href="/data/source-catalog/leanplum" >Leanplum</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: mailchimp -->
+            
+            <a href="/data/source-catalog/mailchimp" >Mailchimp</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: metarouter -->
+            
+            <a href="/data/source-catalog/metarouter" >MetaRouter</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: moengage -->
+            
+            <a href="/data/source-catalog/moengage" >MoEngage</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: mparticle -->
+            
+            <a href="/data/source-catalog/mparticle" >mParticle</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: nami -->
+            
+            <a href="/data/source-catalog/nami" >Nami</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: onesignal -->
+            
+            <a href="/data/source-catalog/onesignal" >OneSignal</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: optimizely -->
+            
+            <a href="/data/source-catalog/optimizely" >Optimizely</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: qualtrics -->
+            
+            <a href="/data/source-catalog/qualtrics" >Qualtrics</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: radar -->
+            
+            <a href="/data/source-catalog/radar" >Radar</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: revenuecat -->
+            
+            <a href="/data/source-catalog/revenuecat" >RevenueCat</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: rudderstack -->
+            
+            <a href="/data/source-catalog/rudderstack" >Rudderstack</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: salesforce -->
+            
+            <a href="/data/source-catalog/salesforce" >Salesforce</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: segment -->
+            
+            <a href="/data/source-catalog/segment"  style="color: green" x-effect="lvl1 = '">Segment</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: sendgrid -->
+            
+            <a href="/data/source-catalog/sendgrid" >SendGrid</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: singular -->
+            
+            <a href="/data/source-catalog/singular" >Singular</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: snowflake-data-import -->
+            
+            <a href="/data/source-catalog/snowflake" >Snowflake Data Import</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: split -->
+            
+            <a href="/data/source-catalog/split" >Split</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: sprig -->
+            
+            <a href="/data/source-catalog/sprig" >Sprig</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: survicate -->
+            
+            <a href="/data/source-catalog/survicate" >Survicate</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: taplytics -->
+            
+            <a href="/data/source-catalog/taplytics" >Taplytics</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: tealium -->
+            
+            <a href="/data/source-catalog/tealium" >Tealium</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: tribe -->
+            
+            <a href="/data/source-catalog/tribe" >Tribe</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: userflow -->
+            
+            <a href="/data/source-catalog/userflow" >Userflow</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: userguiding -->
+            
+            <a href="/data/source-catalog/userguiding" >Userguiding</a>
+            
+            
+        </li>
+    
+</ul>
+</div>
+
+    
+    
+
+</div>
+<div class="absolute top-0 left-0 lg:left-56 bottom-0 right-0">
+   <div class="w-full p-5">
+       <div class="box-border">
+
+           <div class="box-border flex flex-row flex-nowrap items-center border-solid border-b border-grey-200 h-12 px-4"
+               style="margin-left: -20px; margin-top: -20px;">
+               <div class="flex-auto mr-4 text-sm"><a href="/">Home</a></div>
+               
+               
+                <!--data - get-started-->
+                <div class="flex-auto mr-4 text-sm "><a href="/get-started" class="">Get Started</a></div>
+                
+
+
+               
+               
+                <!--data - data-->
+                <div class="flex-auto mr-4 text-sm "><a href="/data" class="text-green-700">Data</a></div>
+                
+
+
+               
+               
+                <!--data - analytics-->
+                <div class="flex-auto mr-4 text-sm "><a href="/analytics" class="">Analytics</a></div>
+                
+
+
+               
+               
+                <!--data - cdp-->
+                <div class="flex-auto mr-4 text-sm "><a href="/cdp" class="">CDP</a></div>
+                
+
+
+               
+               
+                <!--data - experiment-->
+                <div class="flex-auto mr-4 text-sm "><a href="/experiment" class="">Experiment</a></div>
+                
+
+
+               
+               
+                <!--data - admin-->
+                <div class="flex-auto mr-4 text-sm "><a href="/admin" class="">Admin</a></div>
+                
+
+
+               
+               
+               <div class="flex-auto mr-4 text-sm" x-data="{ open: false }"  @mouseleave="open = false"><button @click.prevent @mouseover="open = true" style="font-weight:normal">Developers</button>
+                <div x-show="open" class="mt-4 absolute border border-2 border-grey-500 top-4 bg-white w-24 p-4">
+                    
+                    <a href="/sdks">SDKs</a> <br />
+                    
+                    <a href="/apis">APIs</a> <br />
+                    
+                </div>
+                </div>
+                
+
+
+               
+           </div>
+       </div>
+   </div>
+   <div class="w-full">
+       <section class="w-full flex flex-col items-center">
+           <div class="flex flex-row flex-nowrap w-full text-sm pl-8 text-gray-400	">
+            
+            <div class="mr-2 text-s text-gray-500"><a class="" href="/data">Data</a></div>
+            <span class="mr-2">/</span><div class="mr-2 text-s text-gray-500"><a class="" href="/data/source-catalog">Source Catalog</a></div>
+            <span class="mr-2">/</span><div class="mr-2 text-s text-gray-500"><a class="font-bold" href="/data/source-catalog/segment">Segment</a></div>
+            
+            
+        </div>
+           <div class="flex flex-row w-full p-8">
+               <div class="copy">
+                   <div class="flex flex-row items-start justify-between">
+                     <h1>Segment</h1>
+                     <span class="ml-4 text-xs text-gray-300 align-middle"><a href="http://localhost/cp/collections/source-catalog/entries/5016fc9f-620b-4dae-82b0-0d9d9377c73e" target="_blank">Edit</a></span>
+                   </div>
+                   <div class="max-w-prose"></div>
+                   
+                   
+
+
+                </div>
+               </div>
+           </div>
+
+       </section>
+
+       
+
+       <section class="w-full flex flex-col items-center template__section">
+           <div class="divider"></div>
+           <div class="w-full flex justify-center top-0 sticky mt-16 h-14 bg-light-blue-50 z-30 ">
+               <div class="flex flex-col justify-center w-full px-20">
+               </div>
+           </div>
+           <div class="h-px w-full bg-grey-200 z-20 sticky top-14"></div>
+           <div class="w-full h-px bg-light-blue-50 z-[21] mt-[-1px]"></div>
+           <div class="flex flex-row w-full p-20 pt-0 sticky top-0">
+               <div class="copy prose prose-code:font-light prose-code:text-xs">
+                   <div>
+                       <p></p>
+                   </div>
+
+               </div>
+
+           </div>
+
+       </section>
+
+   </div>
+
+</div>
+</div>
+        </div>
+    </body>
+</html>

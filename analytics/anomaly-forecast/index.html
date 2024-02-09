@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Anomaly + Forecast: Find anomalies in your data</title>
+        <link rel="preload" as="style" href="http://localhost/build/assets/site-3d487ba8.css" /><link rel="modulepreload" href="http://localhost/build/assets/site-4ed993c7.js" /><link rel="stylesheet" href="http://localhost/build/assets/site-3d487ba8.css" /><script type="module" src="http://localhost/build/assets/site-4ed993c7.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+        <style>
+            [x-cloak] { display: none !important; }
+        </style>
+    </head>
+    <body class="bg-gray-100 font-sans leading-normal text-gray-800">
+        <div class="mx-auto px-2 lg:min-h-screen flex flex-col items-center justify-center">
+            <style>
+   /*
+Margin and rounding are personal preferences,
+overflow-x-auto is recommended.
+*/
+pre {
+   border-radius: 0.25rem;
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+   overflow-x: auto;
+}
+
+/*
+Add some vertical padding and expand the width
+to fill its container. The horizontal padding
+comes at the line level so that background
+colors extend edge to edge.
+*/
+pre code.torchlight {
+   display: block;
+   min-width: -webkit-max-content;
+   min-width: -moz-max-content;
+   min-width: max-content;
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+}
+
+/*
+Horizontal line padding to match the vertical
+padding from the code block above.
+*/
+pre code.torchlight .line {
+   padding-left: 1rem;
+   padding-right: 1rem;
+}
+
+/*
+Push the code away from the line numbers and
+summary caret indicators.
+*/
+pre code.torchlight .line-number,
+pre code.torchlight .summary-caret {
+   margin-right: 1rem;
+}
+
+</style>
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+<div class="container prose">
+<div class="w-56 h-100 fixed left-0 top-0 bottom-0 border-solid border-r border-grey-200 hidden lg:block overflow-auto pt-10" x-data="{ open: 'Getting Started' }">
+   
+    
+    <style>
+a {
+    text-decoration: none!important;
+    font-weight: normal!important;
+}
+
+li::marker {
+    content: none!important;
+}
+
+button {
+    font-weight: bold;
+}
+
+ul.nav-level-1, ul.nav-level-2, ul.nav-level-3 {
+    list-style: none;
+    padding: 0;
+}
+
+
+
+
+</style>
+
+
+<div x-cloak x-data="{ lvl1: false, lvl2: false, lvl3: false }" class="nav-level-1">
+    <ul class="nav" style="font-size:12px">
+    
+    
+        <li>
+           <!-- lvl1: charts -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'charts' ? null : 'charts')"style="text-align:left">Charts</button>
+            
+            
+                <ul x-show="lvl1 === 'charts'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/find-the-right-chart" ">Amplitude Charts: Find the Right Chart for Your Analysis</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/chart-basics" ">Chart Basics in Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/build-charts-add-events" ">Build Charts: Add Events</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/build-charts-add-user-segments" ">Build Charts: Add User Segments</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/build-charts-modify-user-segment" ">Build Charts: Modify a User Segment</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/event-explorer" ">Event Explorer: View Event Streams in Real Time</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/review-chart-data" ">Review Chart Data with a Breakdown Table</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/charts-overview" ">Charts Types</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: cohorts-and-user-behavior -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'cohorts-and-user-behavior' ? null : 'cohorts-and-user-behavior')"style="text-align:left">Cohorts and User Behavior</button>
+            
+            
+                <ul x-show="lvl1 === 'cohorts-and-user-behavior'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <button @click.prevent="lvl2 = (lvl2 === 'create-and-manage-cohorts' ? null : 'create-and-manage-cohorts')"style="text-align:left">Create and Manage Cohorts</button>
+                            
+                
+                            
+                                <ul x-show="lvl2 === 'create-and-manage-cohorts'" class="nav-level-3">
+                                    
+                                        <li>
+                                            <a href="/analytics/behavioral-cohorts" >Behavioral cohorts: Identify users with similar behaviors</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/define-cohort" >Define a new cohort</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/compare-cohorts" >Compare and manage your behavioral cohorts</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/create-cohorts" >Create cohorts via Microscope, file import, or the Segmentation module</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/track-cohort-changes" >Track changes in your cohort populations over time</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <button @click.prevent="lvl2 = (lvl2 === 'historical-count' ? null : 'historical-count')"style="text-align:left">Historical Count</button>
+                            
+                
+                            
+                                <ul x-show="lvl2 === 'historical-count'" class="nav-level-3">
+                                    
+                                        <li>
+                                            <a href="/analytics/historical-count-3" >Historical Count, part 3: Funnels and behavioral cohorts</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/historical-count-2" >Historical Count, part 2: Order of operations</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/historical-count-1" >Historical Count, part 1: Track user behavior for different instances of each user action</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: organize-your-analyses -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'organize-your-analyses' ? null : 'organize-your-analyses')"style="text-align:left">Organize your Analyses</button>
+            
+            
+                <ul x-show="lvl1 === 'organize-your-analyses'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/customize-home-page" ">Customize the Home page</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/breadcrumbs" ">Breadcrumbs: Track, organize, and share your analyses</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/search" ">Search: Find charts, dashboards, cohorts, and notebooks</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/workspace" ">Workspace: Find your charts and track your work</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <button @click.prevent="lvl2 = (lvl2 === 'dashboards' ? null : 'dashboards')"style="text-align:left">Dashboards</button>
+                            
+                
+                            
+                                <ul x-show="lvl2 === 'dashboards'" class="nav-level-3">
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-create" >Create, edit, and manage dashboards</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-filter" >Filter your dashboards</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-preferences" >Change your dashboard's display preferences</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-create-template" >Turn your dashboard into a template</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-subscribe" >Subscribe to a dashboard</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: collaborate-with-team-members -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'collaborate-with-team-members' ? null : 'collaborate-with-team-members')"style="text-align:left">Collaborate with Team Members</button>
+            
+            
+                <ul x-show="lvl1 === 'collaborate-with-team-members'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/collaborate-with-spaces" ">Collaborate on your analyses using spaces</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/notebooks" ">Notebooks: Explain important insights to teammates and stakeholders</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/templates" ">Templates: Re-use your analyses</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: share-your-work -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'share-your-work' ? null : 'share-your-work')"style="text-align:left">Share your Work</button>
+            
+            
+                <ul x-show="lvl1 === 'share-your-work'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/share-dashboards" ">Share dashboards within your company</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/share-external" ">Share charts, dashboards, and notebooks with stakeholders outside your company</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/atlassian-smart-links" ">Use Atlassian Smart Links with Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/chart-embed-notion" ">Embed Amplitude charts in Notion documents</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/integrate-miro" ">Integrate Miro with Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/integrate-slack" ">Integrate Slack with Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/google-drive-sync" ">Sync your Amplitude data to Google Drive and Sheets</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: account-level-reporting -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'account-level-reporting' ? null : 'account-level-reporting')"style="text-align:left">Account-level Reporting</button>
+            
+            
+                <ul x-show="lvl1 === 'account-level-reporting'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/account-level-reporting" ">Account-level reporting in Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/account-level-reporting-setup" ">Set up account-level reporting</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: find-and-fix-anomalies -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'find-and-fix-anomalies' ? null : 'find-and-fix-anomalies')"style="text-align:left">Find and Fix Anomalies</button>
+            
+            
+                <ul x-show="lvl1 === 'find-and-fix-anomalies'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/anomaly-forecast"  style="color: green"  x-effect="lvl1 = 'find-and-fix-anomalies'">Anomaly + Forecast: Find anomalies in your data</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/insights" ">Insights: Spot anomalies in your metrics quickly with alerts</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/root-cause-analysis" ">Root Cause Analysis: Track down anomalies in your data</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+</ul>
+</div>
+
+    
+    
+
+</div>
+<div class="absolute top-0 left-0 lg:left-56 bottom-0 right-0">
+   <div class="w-full p-5">
+       <div class="box-border">
+
+           <div class="box-border flex flex-row flex-nowrap items-center border-solid border-b border-grey-200 h-12 px-4"
+               style="margin-left: -20px; margin-top: -20px;">
+               <div class="flex-auto mr-4 text-sm"><a href="/">Home</a></div>
+               
+               
+                <!--analytics - get-started-->
+                <div class="flex-auto mr-4 text-sm "><a href="/get-started" class="">Get Started</a></div>
+                
+
+
+               
+               
+                <!--analytics - data-->
+                <div class="flex-auto mr-4 text-sm "><a href="/data" class="">Data</a></div>
+                
+
+
+               
+               
+                <!--analytics - analytics-->
+                <div class="flex-auto mr-4 text-sm "><a href="/analytics" class="text-green-700">Analytics</a></div>
+                
+
+
+               
+               
+                <!--analytics - cdp-->
+                <div class="flex-auto mr-4 text-sm "><a href="/cdp" class="">CDP</a></div>
+                
+
+
+               
+               
+                <!--analytics - experiment-->
+                <div class="flex-auto mr-4 text-sm "><a href="/experiment" class="">Experiment</a></div>
+                
+
+
+               
+               
+                <!--analytics - admin-->
+                <div class="flex-auto mr-4 text-sm "><a href="/admin" class="">Admin</a></div>
+                
+
+
+               
+               
+               <div class="flex-auto mr-4 text-sm" x-data="{ open: false }"  @mouseleave="open = false"><button @click.prevent @mouseover="open = true" style="font-weight:normal">Developers</button>
+                <div x-show="open" class="mt-4 absolute border border-2 border-grey-500 top-4 bg-white w-24 p-4">
+                    
+                    <a href="/sdks">SDKs</a> <br />
+                    
+                    <a href="/apis">APIs</a> <br />
+                    
+                </div>
+                </div>
+                
+
+
+               
+           </div>
+       </div>
+   </div>
+   <div class="w-full">
+       <section class="w-full flex flex-col items-center">
+           <div class="flex flex-row flex-nowrap w-full text-sm pl-8 text-gray-400	">
+            
+            <div class="mr-2 text-s text-gray-500"><a class="" href="/analytics">Analytics</a></div>
+            <span class="mr-2">/</span><div class="mr-2 text-s text-gray-500"><a class="font-bold" href="/analytics/anomaly-forecast">Anomaly + Forecast: Find anomalies in your data</a></div>
+            
+            
+        </div>
+           <div class="flex flex-row w-full p-8">
+               <div class="copy">
+                   <div class="flex flex-row items-start justify-between">
+                     <h1>Anomaly + Forecast: Find anomalies in your data</h1>
+                     <span class="ml-4 text-xs text-gray-300 align-middle"><a href="http://localhost/cp/collections/analytics/entries/43132e17-2269-4a6d-bc69-9066e95dec1d" target="_blank">Edit</a></span>
+                   </div>
+                   <div class="max-w-prose"><h4>This article will help you:</h4>
+<ul>
+<li>Distinguish meaningful fluctuations in your core metrics from those caused by statistical noise.</li>
+</ul>
+<p>When core metrics fluctuate, it can be hard to know if those movements are meaningful and worthy of investigation, or just random noise. Amplitude's <strong>Anomaly + Forecast</strong> feature highlights statistically significant deviations from expected values for your metrics, based on historical data.</p>
+<p>This can help you:</p>
+<ul>
+<li>Determine whether a change is truly meaningful</li>
+<li>Catch instrumentation errors</li>
+<li>Study seasonal trends</li>
+<li>Monitor the impact of product releases</li>
+</ul>
+<p>Forecast lets you project metrics into the future, so that you can set realistic goals for your team and product.</p>
+<h3>Feature availability</h3>
+<p>This feature is available to users on <strong>Growth</strong> and <strong>Enterprise plans</strong> only.</p>
+<h2>Before you begin</h2>
+<p>Anomaly detection and forecast can only be applied to time-series data within the following Amplitude charts: Event Segmentation, Conversion over Time (when counting by unique users for the entire funnel), User Sessions, Retention over Time, and Stickiness over Time. </p>
+<p>Within Event Segmentation, it works with rolling windows, rolling averages, growth percentage, and custom formulas that support time series analyses.</p>
+<p>Anomaly detection does not work on cumulative time series charts, or charts comparing two different time periods.</p>
+<p>If you're using an hourly interval, Anomaly + Forecast supports a maximum of one group-by.</p>
+<h2>Set up anomaly detection</h2>
+<p>The anomaly detection technique used in Anomaly + Forecast is built on the extensively-tested open source tool <a href="https://facebook.github.io/prophet/">Prophet</a>. It's a procedure for forecasting time series data that's robust to missing data points, shifts in trends, as well as large outliers. </p>
+<p>You can find the control for this feature on the left hand side, right above the main chart area. If your chart is not supported by the Anomaly + Forecast feature, the button will be grayed out instead.</p>
+<p>To set up anomaly detection, follow these steps:</p>
+<ol>
+<li>Click <em>Anomaly + Forecast</em> to enable the feature. The button will turn orange when the feature is engaged.</li>
+<li>Click the drop-down arrow to the right of the <em>Anomaly + Forecast</em> button.</li>
+</ol>
+<p><img src="/output/img/analytics/anomaly.jpeg" alt="anomaly.jpeg" /></p>
+<ol start="3">
+<li>Select the mode. Your options are <strong>agile</strong>, <strong>robust</strong>, and <strong>custom</strong>. <strong>Agile</strong> mode adjusts more quickly to recent trends, using a 95% confidence interval and 120 days of training data prior to the beginning of the chart's date range. <strong>Robust</strong> mode is best for stable metrics, as it incorporates a full year of additional training data, and can therefore better account for seasonality. <strong>Custom</strong> allows you to change both the confidence interval and the training duration to fit your specific requirements. Higher significance levels tend to results in fewer anomalies appearing on the chart.</li>
+</ol>
+<p><strong>NOTE:</strong> Amplitude will automatically detect seasonality in each mode. The duration will depend on the amount of data used to train the model. Agile mode typically uses daily and weekly seasonalities, while Robust mode looks for monthly and yearly seasonalities. In cases where sufficient data is not available, seasonalities may not be detected or applied.
+4. Add a <strong>forecast</strong>, if you prefer. Forecast projects your metrics <strong>into the future</strong>, whereas anomalies are only detected within your historical data. To add a forecast, enter the number of months you'd like your forecast to extend in the <em>Forecast Period</em> field.
+5. Click <em>Apply</em> to begin detecting anomalies.</p>
+<h2>Interpret your results</h2>
+<p>Charts with a single series will display a light blue band (<strong>confidence interval</strong> band) and a dashed line representing the <strong>expected</strong> value beside the solid blue line that is your <strong>actual</strong> data. Any anomalies detected will appear in orange, outside the confidence band. An anomaly can be communicated in this way: &quot;Based on 120 days of training data, we can say with 95% confidence that this data point represents an unexpected change.&quot;</p>
+<p>If no orange dots are present, all data points are within the confidence interval.</p>
+<p>You can run Anomaly + Forecast with multiple series on a chart. However, you'll have to hover over each series to view its confidence band (these will all be displayed in different colors as well).</p>
+<p>For forecasts, you'll see the solid lines representing actual data and the confidence intervals until the current date. From there, the forecast will only display dashed lines representing the anticipated future values.  Prophet projects metrics by assuming the magnitude and frequency of changes observed in the past are similar in the future, with a certain degree of confidence. </p>
+<p>Forecast results can be communicated in this way: “Based on the trend seen with the last 120 days of data, we are 95% confident that this metric will be between [high value] and [low value] on [a future date].”</p>
+<h3>Determine anomaly causes</h3>
+<p>Identifying an anomaly is only the first step. You'll likely want to know what caused it in the first place.</p>
+<p>Start by looking at a few related metrics to see if you observe anomalies on those as well. In particular, look at the events that fire before or after the step in the funnel. You could also use group-bys on any properties that might yield more insights into why these anomalies occurred.</p>
+<p>A third option is to examine the business context surrounding the anomaly. For example, did a new feature ship that day? Could that have been the cause?</p>
+<p>Finally, <a href="/analytics/root-cause-analysis">Amplitude's Root Cause Analysis feature</a> is a powerful tool for tracking down the causes of anomalies.</p>
+<h2>Training data</h2>
+<p>Amplitude uses different default training durations for different time intervals and modes. In custom mode, this is configurable and is added to the chart date range. </p>
+<p>For example, using a daily interval and looking at the last 30 days of data on the chart, the default training data duration for daily charts is 120 days prior to the start of the chart date range. In this case, Amplitude will use a total of <strong>150 days</strong> of data to train the model.</p>
+<p>In agile mode, Amplitude uses the following default data training durations:</p>
+<table>
+<thead>
+<tr>
+<th><strong>&gt;Time interval used on the chart</strong></th>
+<th><strong>Default training duration</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Real time</td>
+<td>Not Available</td>
+</tr>
+<tr>
+<td>Hourly</td>
+<td>7 days</td>
+</tr>
+<tr>
+<td>Daily</td>
+<td>120 days</td>
+</tr>
+<tr>
+<td>Weekly</td>
+<td>26 weeks</td>
+</tr>
+<tr>
+<td>Monthly</td>
+<td>6 months</td>
+</tr>
+<tr>
+<td>Quarterly</td>
+<td>2 quarters</td>
+</tr>
+</tbody>
+</table>
+<p>In robust mode, Amplitude uses the following default data training durations:</p>
+<table>
+<thead>
+<tr>
+<th><strong>&gt;Time interval used on the chart</strong></th>
+<th><strong>Default training duration</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Real time</td>
+<td>Not Available</td>
+</tr>
+<tr>
+<td>Hourly</td>
+<td>7 days</td>
+</tr>
+<tr>
+<td>Daily</td>
+<td>365 days</td>
+</tr>
+<tr>
+<td>Weekly</td>
+<td>52 weeks</td>
+</tr>
+<tr>
+<td>Monthly</td>
+<td>12 months</td>
+</tr>
+<tr>
+<td>Quarterly</td>
+<td>4 quarters</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>upper limit</strong> of training data (prior periods + chart duration) used for each interval is as follows:</p>
+<table>
+<thead>
+<tr>
+<th><strong>&gt;Time interval used on the chart</strong></th>
+<th><strong>Training duration limits</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Real time</td>
+<td>Not Available</td>
+</tr>
+<tr>
+<td>Hourly</td>
+<td>14 days</td>
+</tr>
+<tr>
+<td>Daily</td>
+<td>395 days</td>
+</tr>
+<tr>
+<td>Weekly</td>
+<td>56 weeks</td>
+</tr>
+<tr>
+<td>Monthly</td>
+<td>13 months</td>
+</tr>
+<tr>
+<td>Quarterly</td>
+<td>5 quarters</td>
+</tr>
+</tbody>
+</table>
+<p>If you have a specific training duration in mind that agile or robust modes don't offer, you can set that duration by choosing the custom mode.</p>
+<h2>Insights package</h2>
+<p>If you need alerting for anomalies, Amplitude's Insights package includes automatic and custom monitor alerts. You can find more about the package <a href="https://help.amplitude.com/hc/en-us/articles/115001764612-Insight#h_21d50b36-17c6-433c-8985-18e9f313ed45">here</a>.</p>
+</div>
+                   
+                   
+
+
+                </div>
+               </div>
+           </div>
+
+       </section>
+
+       
+
+       <section class="w-full flex flex-col items-center template__section">
+           <div class="divider"></div>
+           <div class="w-full flex justify-center top-0 sticky mt-16 h-14 bg-light-blue-50 z-30 ">
+               <div class="flex flex-col justify-center w-full px-20">
+               </div>
+           </div>
+           <div class="h-px w-full bg-grey-200 z-20 sticky top-14"></div>
+           <div class="w-full h-px bg-light-blue-50 z-[21] mt-[-1px]"></div>
+           <div class="flex flex-row w-full p-20 pt-0 sticky top-0">
+               <div class="copy prose prose-code:font-light prose-code:text-xs">
+                   <div>
+                       <p></p>
+                   </div>
+
+               </div>
+
+           </div>
+
+       </section>
+
+   </div>
+
+</div>
+</div>
+        </div>
+    </body>
+</html>

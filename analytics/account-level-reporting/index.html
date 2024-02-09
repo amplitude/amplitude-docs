@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Account-level reporting in Amplitude</title>
+        <link rel="preload" as="style" href="http://localhost/build/assets/site-3d487ba8.css" /><link rel="modulepreload" href="http://localhost/build/assets/site-4ed993c7.js" /><link rel="stylesheet" href="http://localhost/build/assets/site-3d487ba8.css" /><script type="module" src="http://localhost/build/assets/site-4ed993c7.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+        <style>
+            [x-cloak] { display: none !important; }
+        </style>
+    </head>
+    <body class="bg-gray-100 font-sans leading-normal text-gray-800">
+        <div class="mx-auto px-2 lg:min-h-screen flex flex-col items-center justify-center">
+            <style>
+   /*
+Margin and rounding are personal preferences,
+overflow-x-auto is recommended.
+*/
+pre {
+   border-radius: 0.25rem;
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+   overflow-x: auto;
+}
+
+/*
+Add some vertical padding and expand the width
+to fill its container. The horizontal padding
+comes at the line level so that background
+colors extend edge to edge.
+*/
+pre code.torchlight {
+   display: block;
+   min-width: -webkit-max-content;
+   min-width: -moz-max-content;
+   min-width: max-content;
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+}
+
+/*
+Horizontal line padding to match the vertical
+padding from the code block above.
+*/
+pre code.torchlight .line {
+   padding-left: 1rem;
+   padding-right: 1rem;
+}
+
+/*
+Push the code away from the line numbers and
+summary caret indicators.
+*/
+pre code.torchlight .line-number,
+pre code.torchlight .summary-caret {
+   margin-right: 1rem;
+}
+
+</style>
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+<div class="container prose">
+<div class="w-56 h-100 fixed left-0 top-0 bottom-0 border-solid border-r border-grey-200 hidden lg:block overflow-auto pt-10" x-data="{ open: 'Getting Started' }">
+   
+    
+    <style>
+a {
+    text-decoration: none!important;
+    font-weight: normal!important;
+}
+
+li::marker {
+    content: none!important;
+}
+
+button {
+    font-weight: bold;
+}
+
+ul.nav-level-1, ul.nav-level-2, ul.nav-level-3 {
+    list-style: none;
+    padding: 0;
+}
+
+
+
+
+</style>
+
+
+<div x-cloak x-data="{ lvl1: false, lvl2: false, lvl3: false }" class="nav-level-1">
+    <ul class="nav" style="font-size:12px">
+    
+    
+        <li>
+           <!-- lvl1: charts -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'charts' ? null : 'charts')"style="text-align:left">Charts</button>
+            
+            
+                <ul x-show="lvl1 === 'charts'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/find-the-right-chart" ">Amplitude Charts: Find the Right Chart for Your Analysis</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/chart-basics" ">Chart Basics in Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/build-charts-add-events" ">Build Charts: Add Events</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/build-charts-add-user-segments" ">Build Charts: Add User Segments</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/build-charts-modify-user-segment" ">Build Charts: Modify a User Segment</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/event-explorer" ">Event Explorer: View Event Streams in Real Time</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/review-chart-data" ">Review Chart Data with a Breakdown Table</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/charts-overview" ">Charts Types</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: cohorts-and-user-behavior -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'cohorts-and-user-behavior' ? null : 'cohorts-and-user-behavior')"style="text-align:left">Cohorts and User Behavior</button>
+            
+            
+                <ul x-show="lvl1 === 'cohorts-and-user-behavior'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <button @click.prevent="lvl2 = (lvl2 === 'create-and-manage-cohorts' ? null : 'create-and-manage-cohorts')"style="text-align:left">Create and Manage Cohorts</button>
+                            
+                
+                            
+                                <ul x-show="lvl2 === 'create-and-manage-cohorts'" class="nav-level-3">
+                                    
+                                        <li>
+                                            <a href="/analytics/behavioral-cohorts" >Behavioral cohorts: Identify users with similar behaviors</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/define-cohort" >Define a new cohort</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/compare-cohorts" >Compare and manage your behavioral cohorts</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/create-cohorts" >Create cohorts via Microscope, file import, or the Segmentation module</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/track-cohort-changes" >Track changes in your cohort populations over time</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <button @click.prevent="lvl2 = (lvl2 === 'historical-count' ? null : 'historical-count')"style="text-align:left">Historical Count</button>
+                            
+                
+                            
+                                <ul x-show="lvl2 === 'historical-count'" class="nav-level-3">
+                                    
+                                        <li>
+                                            <a href="/analytics/historical-count-3" >Historical Count, part 3: Funnels and behavioral cohorts</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/historical-count-2" >Historical Count, part 2: Order of operations</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/historical-count-1" >Historical Count, part 1: Track user behavior for different instances of each user action</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: organize-your-analyses -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'organize-your-analyses' ? null : 'organize-your-analyses')"style="text-align:left">Organize your Analyses</button>
+            
+            
+                <ul x-show="lvl1 === 'organize-your-analyses'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/customize-home-page" ">Customize the Home page</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/breadcrumbs" ">Breadcrumbs: Track, organize, and share your analyses</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/search" ">Search: Find charts, dashboards, cohorts, and notebooks</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/workspace" ">Workspace: Find your charts and track your work</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <button @click.prevent="lvl2 = (lvl2 === 'dashboards' ? null : 'dashboards')"style="text-align:left">Dashboards</button>
+                            
+                
+                            
+                                <ul x-show="lvl2 === 'dashboards'" class="nav-level-3">
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-create" >Create, edit, and manage dashboards</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-filter" >Filter your dashboards</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-preferences" >Change your dashboard's display preferences</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-create-template" >Turn your dashboard into a template</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-subscribe" >Subscribe to a dashboard</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: collaborate-with-team-members -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'collaborate-with-team-members' ? null : 'collaborate-with-team-members')"style="text-align:left">Collaborate with Team Members</button>
+            
+            
+                <ul x-show="lvl1 === 'collaborate-with-team-members'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/collaborate-with-spaces" ">Collaborate on your analyses using spaces</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/notebooks" ">Notebooks: Explain important insights to teammates and stakeholders</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/templates" ">Templates: Re-use your analyses</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: share-your-work -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'share-your-work' ? null : 'share-your-work')"style="text-align:left">Share your Work</button>
+            
+            
+                <ul x-show="lvl1 === 'share-your-work'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/share-dashboards" ">Share dashboards within your company</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/share-external" ">Share charts, dashboards, and notebooks with stakeholders outside your company</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/atlassian-smart-links" ">Use Atlassian Smart Links with Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/chart-embed-notion" ">Embed Amplitude charts in Notion documents</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/integrate-miro" ">Integrate Miro with Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/integrate-slack" ">Integrate Slack with Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/google-drive-sync" ">Sync your Amplitude data to Google Drive and Sheets</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: account-level-reporting -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'account-level-reporting' ? null : 'account-level-reporting')"style="text-align:left">Account-level Reporting</button>
+            
+            
+                <ul x-show="lvl1 === 'account-level-reporting'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/account-level-reporting"  style="color: green"  x-effect="lvl1 = 'account-level-reporting'">Account-level reporting in Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/account-level-reporting-setup" ">Set up account-level reporting</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: find-and-fix-anomalies -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'find-and-fix-anomalies' ? null : 'find-and-fix-anomalies')"style="text-align:left">Find and Fix Anomalies</button>
+            
+            
+                <ul x-show="lvl1 === 'find-and-fix-anomalies'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/anomaly-forecast" ">Anomaly + Forecast: Find anomalies in your data</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/insights" ">Insights: Spot anomalies in your metrics quickly with alerts</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/root-cause-analysis" ">Root Cause Analysis: Track down anomalies in your data</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+</ul>
+</div>
+
+    
+    
+
+</div>
+<div class="absolute top-0 left-0 lg:left-56 bottom-0 right-0">
+   <div class="w-full p-5">
+       <div class="box-border">
+
+           <div class="box-border flex flex-row flex-nowrap items-center border-solid border-b border-grey-200 h-12 px-4"
+               style="margin-left: -20px; margin-top: -20px;">
+               <div class="flex-auto mr-4 text-sm"><a href="/">Home</a></div>
+               
+               
+                <!--analytics - get-started-->
+                <div class="flex-auto mr-4 text-sm "><a href="/get-started" class="">Get Started</a></div>
+                
+
+
+               
+               
+                <!--analytics - data-->
+                <div class="flex-auto mr-4 text-sm "><a href="/data" class="">Data</a></div>
+                
+
+
+               
+               
+                <!--analytics - analytics-->
+                <div class="flex-auto mr-4 text-sm "><a href="/analytics" class="text-green-700">Analytics</a></div>
+                
+
+
+               
+               
+                <!--analytics - cdp-->
+                <div class="flex-auto mr-4 text-sm "><a href="/cdp" class="">CDP</a></div>
+                
+
+
+               
+               
+                <!--analytics - experiment-->
+                <div class="flex-auto mr-4 text-sm "><a href="/experiment" class="">Experiment</a></div>
+                
+
+
+               
+               
+                <!--analytics - admin-->
+                <div class="flex-auto mr-4 text-sm "><a href="/admin" class="">Admin</a></div>
+                
+
+
+               
+               
+               <div class="flex-auto mr-4 text-sm" x-data="{ open: false }"  @mouseleave="open = false"><button @click.prevent @mouseover="open = true" style="font-weight:normal">Developers</button>
+                <div x-show="open" class="mt-4 absolute border border-2 border-grey-500 top-4 bg-white w-24 p-4">
+                    
+                    <a href="/sdks">SDKs</a> <br />
+                    
+                    <a href="/apis">APIs</a> <br />
+                    
+                </div>
+                </div>
+                
+
+
+               
+           </div>
+       </div>
+   </div>
+   <div class="w-full">
+       <section class="w-full flex flex-col items-center">
+           <div class="flex flex-row flex-nowrap w-full text-sm pl-8 text-gray-400	">
+            
+            <div class="mr-2 text-s text-gray-500"><a class="" href="/analytics">Analytics</a></div>
+            <span class="mr-2">/</span><div class="mr-2 text-s text-gray-500"><a class="font-bold" href="/analytics/account-level-reporting">Account-level reporting in Amplitude</a></div>
+            
+            
+        </div>
+           <div class="flex flex-row w-full p-8">
+               <div class="copy">
+                   <div class="flex flex-row items-start justify-between">
+                     <h1>Account-level reporting in Amplitude</h1>
+                     <span class="ml-4 text-xs text-gray-300 align-middle"><a href="http://localhost/cp/collections/analytics/entries/0c16c26c-9a94-4e5b-a136-493fb66f917d" target="_blank">Edit</a></span>
+                   </div>
+                   <div class="max-w-prose"><h4>This article will help you:</h4>
+<ul>
+<li>Build an analysis around aggregated units of measure like accounts, charts, or order IDs</li>
+<li>Understand how to look up accounts and users to set up account-level reporting</li>
+<li>Use the account-level reporting feature when using certain Amplitude integrations, like Segment or Salesforce</li>
+</ul>
+<p>In Amplitude, the default level of reporting is the <strong>individual user</strong>, meaning your charts and analyses will all be based on data drawn from individual users. In some cases, you may need reports built around an <strong>aggregated</strong> unit of measurement—say, accounts, order IDs, or charts.</p>
+<p>The Amplitude Accounts add-on enables you to do exactly this, by giving you analytical capabilities at the <strong>group</strong> level.</p>
+<p>A group is an object that a set of users might belong to—such as a company of customers, a team of users, or a playlist with listeners. Analyzing at the group level will help you understand how specific accounts interact with your product, instead of just seeing the individual users in those companies.  </p>
+<h3>Feature availability</h3>
+<p>This feature is available to users on <strong>Plus</strong>, <strong>Growth</strong>, and <strong>Enterprise</strong> <strong>plans</strong> only.</p>
+<ul>
+<li>
+<ul>
+<li>Use of this feature requires the Accounts add-on.</li>
+</ul>
+</li>
+</ul>
+<h2>Before you begin</h2>
+<ul>
+<li>With the Accounts add-on, you are able to instrument up to five different group types per project. You can manage and remove groups via Amplitude Data.</li>
+<li>Account-level properties have a limit of 1000 per project.</li>
+<li>Changes to account groups and group properties will be applied to new data moving forward, and will not affect historical data.</li>
+<li>To <a href="/analytics/account-level-reporting-setup">instrument account-level reporting in Amplitude, see our Help Center documentation</a>.</li>
+</ul>
+<h2>Group-level reporting: an overview</h2>
+<p>Once you've <a href="/analytics/account-level-reporting-setup">set up groups</a>, Amplitude will include them in a drop-down list in the <a href="/analytics/charts/build-charts-add-user-segments">Segmentation Module</a>. From there, you'll be able to report at the group level instead of the individual user level.</p>
+<p><img src="/output/img/analytics/account_level_reporting_1.png" alt="account_level_reporting_1.png" /></p>
+<p>An analysis using group-level reporting performs its counts by distinct user property groups. When might this be useful? Here are some potential use cases:</p>
+<ul>
+<li>Analyzing how many distinct accounts were active, or fired a certain event (group by account ID)</li>
+<li>Tracking how many charts are copied, saved, and modified in your organization, and then identifying which ones are interacted with most often (group by chart ID)</li>
+<li>Discovering how conversion rates change between different types of orders (group by order ID)</li>
+<li>Using group-level reporting in funnel analyses:
+<ul>
+<li>such as, determining how many accounts have converted from free trials to paid accounts (group by either account ID or project ID), or tracking how many posts are drafted but never published in your social media platform (group by post ID)</li>
+</ul>
+</li>
+</ul>
+<p>In a standard <a href="/hc/en-us/articles/360039976531">funnel analysis</a>, the same person must complete all steps of the funnel to count as a conversion. With group-level reporting, different members of the group can complete different steps in the funnel, and Amplitude will still interpret that as a conversion. </p>
+<p>This is useful for multi-sided marketplaces or B2B2C companies whose conversion processes involve multiple people. An example of this is a product that allows medical practices to bill patients for expenses. Their conversion funnel might include steps like “send invoice” and “send payment.” The former is completed by an admin, while the latter is completed by the patient. In situations like these, group-level reporting is the only way to accurately measure total invoice conversion.</p>
+<h3>Event-level vs user-level group definitions</h3>
+<p>Groups in Amplitude can be defined at either the <strong>event level</strong> or the <strong>user level</strong>. What's the difference?</p>
+<ul>
+<li>An <strong>event-level</strong> group is one that <strong>only</strong> incorporates specific events in the users' overall journey. Users are assigned to a group at the time the event is sent, and users <strong>do not</strong> remain in that group <strong>unless</strong> you explicitly assign them to it when the event is sent.</li>
+<li>By contrast, membership in a <strong>user-level</strong> group is <strong>independent</strong> of the events being triggered. This is useful when you want to attribute all events triggered by a user to a particular group. Users are assigned to the group <strong>once</strong>, and they remain in it for all future events.</li>
+</ul>
+<p><strong>NOTE:</strong> A user's group type cannot be un-set, and must instead be overwritten.</p>
+<h3>Add groups to charts</h3>
+<p>All chart and report types in Amplitude support <a href="#account-level-reporting">group-level reporting</a>, with the exception of the Personas and Compass reports. To use a group you have instrumented in your chart, select the group you want to analyze your data by in the <em>Users</em> dropdown, located in the <a href="/analytics/charts/build-charts-add-user-segments">Segmentation Module</a>.</p>
+<p>For example, if you wanted to track the number of daily active organizations and group them by region, you can set up an <a href="/analytics/charts/event-segmentation/event-segmentation-build">Event Segmentation</a> chart like this:</p>
+<p><img src="/output/img/analytics/segmentby_grpids.png" alt="segmentby_grpids.png" /></p>
+<h3>Create group-level behavioral cohorts</h3>
+<p>To create a group-level <a href="/analytics/behavioral-cohorts">behavioral cohort</a>, use the dropdown on the left to specify if you want to create a cohort out of one of your groups.</p>
+<p><img src="/output/img/analytics/account_level_group_behavioral_cohorts.png" alt="account_level_group_behavioral_cohorts.png" /></p>
+<p>For example, we can create a behavioral cohort of companies who triggered the event <code>Create customized report</code>, and apply that cohort to a Retention Analysis chart to see the differences in retention between companies that fired that event versus companies that did not.</p>
+<p>You also have the option to import a cohort of groups from a file. The file must contain exactly one group name per line. </p>
+<p><img src="/output/img/analytics/Screenshot_2022-01-07_at_14.23.29.png" alt="Screenshot_2022-01-07_at_14.23.29.png" /></p>
+<h3>View and download groups with Microscope</h3>
+<p>You can also use the <a href="/analytics/microscope">Microscope</a> feature with account-level reporting. This is useful if you are performing an account-level analysis and want to dig deeper into a single data point or bucket.</p>
+<p>For example, imagine you have an instant messaging application, and you want to increase the number of new user invites. To do so, create a funnel analysis with steps from 'Activate Account' to 'Invite New Contact':</p>
+<p><img src="/output/img/analytics/account_level_view_groups_microscope.png" alt="account_level_view_groups_microscope.png" /></p>
+<p>Then use Microscope to view the groups in the last step's drop-off, or download the groups to understand why those groups drop off before inviting additional co-workers. You can also create a group-level cohort of those accounts, apply that cohort to other charts, or open <a href="/analytics/charts/funnel-analysis/funnel-analysis-identify-conversion-drivers">Investigate Conversion Drivers</a> to perform a detailed analysis.</p>
+<p><img src="/output/img/analytics/account_level_microscope_2.png" alt="account_level_microscope_2.png" /></p>
+<h2>Explore the behavior of a specific account</h2>
+<p>Accounts allow you to drill into a single group’s behavior, similar to the User Activity section. </p>
+<p><img src="/output/img/analytics/image1.png" alt="image1.png" /></p>
+<p>In this example, the group type is <code>org id</code>, and the group value is <code>12345678</code> (listed under <em>Group Name</em>).</p>
+<p>To access the Accounts tab:</p>
+<ol>
+<li>Click <em>User Look-Up</em>.</li>
+<li>Click the <em>Account</em> toggle.</li>
+<li>Click one or all of the groups you have instrumented.</li>
+<li>Optionally, search for a specific group or group property.</li>
+</ol>
+<p>Group property searches must follow the syntax of <code>name = value</code>. They are restricted to groups that have been active in the last six months. Amplitude will search across all historical values held by the property, and not just most recent group property value. Use quotes for multi-word strings. Delimiters like commas or semi-colons should not be used. Spaces are optional.</p>
+<p>Clicking on an account will take you to that account’s page, where you can view the account’s properties and activities.</p>
+<p><img src="/output/img/analytics/account_level_account_page.png" alt="account_level_account_page.png" /></p>
+<p>You will find the account’s most recent properties in the top panel. The account’s properties can be set three different ways: the <a href="https://www.docs.developers.amplitude.com/analytics/apis/group-identify-api/">Group Identify API</a>, the <a href="https://www.docs.developers.amplitude.com/data/sources/salesforce-group/">Salesforce integration</a>, and by using Event Segmentation to create dynamic properties. These properties can be used to describe the account as whole (e.g. <code>30 day active users</code>, <code>account manager</code>, <code>plan type</code>, <code>renewal date</code>, etc.).</p>
+<p><strong>NOTE:</strong>  If you're using the User Look-up to verify events and the properties set with them, they will not be visible in the <em>Info</em> view. You can find them by clicking <em>Raw</em> instead.</p>
+<p><img src="/output/img/analytics/5jUOdenf9FPpODdA5UVd6qzJ_paC2Bf2gm2RPSK2S-WQPeI1yzNzCVE3yXKc8uu_iJYlNydjbnR38sJGPK7XvIf8iz8a4r642Kq-cL4w6Jco0EtIudeA0LDHHTeFmewzt2LgcE-vlcdgSQbXiSKAYfI" alt="" /></p>
+<h2>Set properties at the group level</h2>
+<p><strong>Group properties</strong> are simply properties at the account level. These properties will apply to all users who fall into that account.</p>
+<h3>Dynamic group properties</h3>
+<p>You can turn your KPIs into dynamically-updating group properties. Add group properties such as “Last 7 Day Active Users” or “Monthly Active Users” to each account in your product. Dynamic group properties are created by Admin-level users via an <a href="/analytics/charts/event-segmentation/event-segmentation-build">Event Segmentation</a> chart with the following steps:</p>
+<ol>
+<li>
+<strong>Save a single time series Event Segmentation chart:</strong> Save a user-level chart with a single time series metric that you want to track.</li>
+</ol>
+<p><strong>NOTE:</strong> Dynamic properties are not supported on frequency and property distribution metrics, or on custom formulas.</p>
+<ol start="2">
+<li>
+<strong>Determine time interval:</strong> Set the time interval you would like to update the group property on. For example, a rolling window of “last 7 day active users” will update every day, while “weekly active users” will update once every calendar week.</li>
+</ol>
+<p><strong>NOTE:</strong> Dynamic properties are not supported on static time ranges.</p>
+<ol start="3">
+<li>
+<strong>Name group property:</strong> Choose your group type and name for the group property.</li>
+</ol>
+<p><strong>NOTE:</strong> Editing the chart used to create the dynamic group property will not affect the property.</p>
+<h3>Create group properties via the Salesforce integration</h3>
+<p>To learn how to create <strong>group properties</strong> using Amplitude's Salesforce integration, see <a href="https://www.docs.developers.amplitude.com/data/sources/salesforce-group/">this article in the Amplitude Developer Center</a>.</p>
+</div>
+                   
+                   
+
+
+                </div>
+               </div>
+           </div>
+
+       </section>
+
+       
+
+       <section class="w-full flex flex-col items-center template__section">
+           <div class="divider"></div>
+           <div class="w-full flex justify-center top-0 sticky mt-16 h-14 bg-light-blue-50 z-30 ">
+               <div class="flex flex-col justify-center w-full px-20">
+               </div>
+           </div>
+           <div class="h-px w-full bg-grey-200 z-20 sticky top-14"></div>
+           <div class="w-full h-px bg-light-blue-50 z-[21] mt-[-1px]"></div>
+           <div class="flex flex-row w-full p-20 pt-0 sticky top-0">
+               <div class="copy prose prose-code:font-light prose-code:text-xs">
+                   <div>
+                       <p></p>
+                   </div>
+
+               </div>
+
+           </div>
+
+       </section>
+
+   </div>
+
+</div>
+</div>
+        </div>
+    </body>
+</html>

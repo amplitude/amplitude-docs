@@ -1,0 +1,1008 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Adjust</title>
+        <link rel="preload" as="style" href="http://localhost/build/assets/site-3d487ba8.css" /><link rel="modulepreload" href="http://localhost/build/assets/site-4ed993c7.js" /><link rel="stylesheet" href="http://localhost/build/assets/site-3d487ba8.css" /><script type="module" src="http://localhost/build/assets/site-4ed993c7.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+        <style>
+            [x-cloak] { display: none !important; }
+        </style>
+    </head>
+    <body class="bg-gray-100 font-sans leading-normal text-gray-800">
+        <div class="mx-auto px-2 lg:min-h-screen flex flex-col items-center justify-center">
+            <style>
+   /*
+Margin and rounding are personal preferences,
+overflow-x-auto is recommended.
+*/
+pre {
+   border-radius: 0.25rem;
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+   overflow-x: auto;
+}
+
+/*
+Add some vertical padding and expand the width
+to fill its container. The horizontal padding
+comes at the line level so that background
+colors extend edge to edge.
+*/
+pre code.torchlight {
+   display: block;
+   min-width: -webkit-max-content;
+   min-width: -moz-max-content;
+   min-width: max-content;
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+}
+
+/*
+Horizontal line padding to match the vertical
+padding from the code block above.
+*/
+pre code.torchlight .line {
+   padding-left: 1rem;
+   padding-right: 1rem;
+}
+
+/*
+Push the code away from the line numbers and
+summary caret indicators.
+*/
+pre code.torchlight .line-number,
+pre code.torchlight .summary-caret {
+   margin-right: 1rem;
+}
+
+</style>
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+<div class="container prose">
+<div class="w-56 h-100 fixed left-0 top-0 bottom-0 border-solid border-r border-grey-200 hidden lg:block overflow-auto pt-10" x-data="{ open: 'Getting Started' }">
+   
+    
+    <style>
+a {
+    text-decoration: none!important;
+    font-weight: normal!important;
+}
+
+li::marker {
+    content: none!important;
+}
+
+button {
+    font-weight: bold;
+}
+
+ul.nav-level-1, ul.nav-level-2, ul.nav-level-3 {
+    list-style: none;
+    padding: 0;
+}
+
+
+
+
+</style>
+
+
+<div x-cloak x-data="{ lvl1: false, lvl2: false, lvl3: false }" class="nav-level-1">
+    <ul class="nav" style="font-size:12px">
+    
+    
+        <li>
+           <!-- lvl1: back -->
+            
+            <a href="/data" ><- Back</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: 1flow -->
+            
+            <a href="/data/destination-catalog/1flow" >1Flow</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: adjust -->
+            
+            <a href="/data/destination-catalog/adjust"  style="color: green" x-effect="lvl1 = '">Adjust</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: airship -->
+            
+            <a href="/data/destination-catalog/airship" >Airship</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: amazon-kinesis-data-stream -->
+            
+            <a href="/data/destination-catalog/amazon-kinesis-data-stream" >Amazon Kinesis Data Stream</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: amazon-kinesis-firehose -->
+            
+            <a href="/data/destination-catalog/amazon-kinesis-firehose" >Amazon Kinesis Firehose</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: amazon-redshift -->
+            
+            <a href="/data/destination-catalog/amazon-redshift" >Amazon RedShift</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: amazon-s3 -->
+            
+            <a href="/data/destination-catalog/amazon-s3" >Amazon S3</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: appcues -->
+            
+            <a href="/data/destination-catalog/appcues" >Appcues</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: appfit -->
+            
+            <a href="/data/destination-catalog/appfit" >Appfit</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: appsflyer -->
+            
+            <a href="/data/destination-catalog/appsflyer" >AppsFlyer</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: apxor -->
+            
+            <a href="/data/destination-catalog/apxor" >Apxor</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: batch -->
+            
+            <a href="/data/destination-catalog/batch" >Batch</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: bento -->
+            
+            <a href="/data/destination-catalog/bento" >Bento</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: blitzllama -->
+            
+            <a href="/data/destination-catalog/blitzllama" >Blitzllama</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: branch -->
+            
+            <a href="/data/destination-catalog/branch" >Branch</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: braze -->
+            
+            <a href="/data/destination-catalog/braze" >Braze</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: clevertap -->
+            
+            <a href="/data/destination-catalog/clevertap" >Clevertap</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: cohort-webhooks -->
+            
+            <a href="/data/destination-catalog/cohort-webhooks" >Cohort Webhooks</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: cordial -->
+            
+            <a href="/data/destination-catalog/cordial" >Cordial</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: customerio -->
+            
+            <a href="/data/destination-catalog/customer-io" >Customer.io</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: enterpret -->
+            
+            <a href="/data/destination-catalog/enterpret" >Enterpret</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: extole -->
+            
+            <a href="/data/destination-catalog/extole" >Extole</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: facebook-ads -->
+            
+            <a href="/data/destination-catalog/facebook-ads" >Facebook Ads</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: fivetran -->
+            
+            <a href="/data/destination-catalog/fivetran" >Fivetran</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: google-ads -->
+            
+            <a href="/data/destination-catalog/google-ads" >Google Ads</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: google-analytics-4-iosandroid -->
+            
+            <a href="/data/destination-catalog/google-analytics-4-ios-android" >Google Analytics 4 (iOS/Android)</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: google-analytics-4-web -->
+            
+            <a href="/data/destination-catalog/google-analytics-4-web" >Google Analytics 4 (Web)</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: google-bigquery -->
+            
+            <a href="/data/destination-catalog/google-bigquery" >Google BigQuery</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: google-cloud-storage -->
+            
+            <a href="/data/destination-catalog/google-cloud-storage" >Google Cloud Storage</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: google-pubsub -->
+            
+            <a href="/data/destination-catalog/google-pub-sub" >Google Pub/Sub</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: hubspot -->
+            
+            <a href="/data/destination-catalog/hubspot" >Hubspot</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: infobip -->
+            
+            <a href="/data/destination-catalog/infobip" >Infobip</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: insider -->
+            
+            <a href="/data/destination-catalog/insider" >Insider</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: intercom -->
+            
+            <a href="/data/destination-catalog/intercom" >Intercom</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: iterable -->
+            
+            <a href="/data/destination-catalog/iterable" >Iterable</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: kameleoon -->
+            
+            <a href="/data/destination-catalog/kameleoon" >Kameleoon</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: klaviyo -->
+            
+            <a href="/data/destination-catalog/klaviyo" >Klaviyo</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: kochava-install -->
+            
+            <a href="/data/destination-catalog/kochava-install" >Kochava (Install)</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: kochava-post-install -->
+            
+            <a href="/data/destination-catalog/kochava-post-install" >Kochava (Post Install)</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: lantern -->
+            
+            <a href="/data/destination-catalog/lantern" >Lantern</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: launchdarkly -->
+            
+            <a href="/data/destination-catalog/launchdarkly" >LaunchDarkly</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: leanplum -->
+            
+            <a href="/data/destination-catalog/leanplum" >Leanplum</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: liveramp -->
+            
+            <a href="/data/destination-catalog/liveramp" >Liveramp</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: mailchimp -->
+            
+            <a href="/data/destination-catalog/mailchimp" >Mailchimp</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: marketo -->
+            
+            <a href="/data/destination-catalog/marketo-static-list" >Marketo</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: marketo-static-list -->
+            
+            <a href="/data/destination-catalog/marketo" >Marketo Static List</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: maze -->
+            
+            <a href="/data/destination-catalog/maze" >Maze</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: meta-pixel -->
+            
+            <a href="/data/destination-catalog/meta-pixel" >Meta Pixel</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: moengage -->
+            
+            <a href="/data/destination-catalog/moengage" >MoEngage</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: moloco -->
+            
+            <a href="/data/destination-catalog/moloco" >Moloco</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: movable-ink -->
+            
+            <a href="/data/destination-catalog/movable-ink" >Movable Ink</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: moveable-ink -->
+            
+            <a href="/data/destination-catalog/moveable-ink" >Moveable Ink</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: netcore-cloud -->
+            
+            <a href="/data/destination-catalog/netcore-cloud" >Netcore Cloud</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: notivize -->
+            
+            <a href="/data/destination-catalog/notivize" >Notivize</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: onesignal -->
+            
+            <a href="/data/destination-catalog/onesignal" >OneSignal</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: optimizely -->
+            
+            <a href="/data/destination-catalog/optimizely" >Optimizely</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: planhat -->
+            
+            <a href="/data/destination-catalog/planhat" >Planhat</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: plotline -->
+            
+            <a href="/data/destination-catalog/plotline" >Plotline</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: productboard -->
+            
+            <a href="/data/destination-catalog/productboard" >Productboard</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: pushwoosh -->
+            
+            <a href="/data/destination-catalog/pushwoosh" >Pushwoosh</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: qualtrics -->
+            
+            <a href="/data/destination-catalog/qualtrics" >Qualtrics</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: salesforce-marketing-cloud -->
+            
+            <a href="/data/destination-catalog/salesforce-marketing-cloud-v1" >Salesforce Marketing Cloud</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: salesforce-marketing-cloud-v1 -->
+            
+            <a href="/data/destination-catalog/salesforce-marketing-cloud-v2" >Salesforce Marketing Cloud V1</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: salesforce-marketing-cloud-v2 -->
+            
+            <a href="/data/destination-catalog/salesforce-marketing-cloud" >Salesforce Marketing Cloud V2</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: segment -->
+            
+            <a href="/data/destination-catalog/segment" >Segment</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: sendgrid -->
+            
+            <a href="/data/destination-catalog/sendgrid" >SendGrid</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: sleekflow -->
+            
+            <a href="/data/destination-catalog/sleekflow" >Sleekflow</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: snapchat -->
+            
+            <a href="/data/destination-catalog/snapchat" >Snapchat</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: snowflake -->
+            
+            <a href="/data/destination-catalog/snowflake-data-share" >Snowflake</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: snowflake-data-share -->
+            
+            <a href="/data/destination-catalog/snowflake" >Snowflake Data Share</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: split -->
+            
+            <a href="/data/destination-catalog/split" >Split</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: statsig -->
+            
+            <a href="/data/destination-catalog/statsig" >Statsig</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: talonone -->
+            
+            <a href="/data/destination-catalog/talon-one" >Talon.One</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: thetradedesk -->
+            
+            <a href="/data/destination-catalog/thetradedesk" >TheTradeDesk</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: tiktok-ads -->
+            
+            <a href="/data/destination-catalog/tiktok-ads" >TikTok Ads</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: toplyne -->
+            
+            <a href="/data/destination-catalog/toplyne" >Toplyne</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: unitq -->
+            
+            <a href="/data/destination-catalog/unitq" >unitQ</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: usercom -->
+            
+            <a href="/data/destination-catalog/user-com" >User.com</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: userflow -->
+            
+            <a href="/data/destination-catalog/userflow" >Userflow</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: userlist -->
+            
+            <a href="/data/destination-catalog/userlist" >Userlist</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: webengage -->
+            
+            <a href="/data/destination-catalog/webengage" >Webengage</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: webhooks -->
+            
+            <a href="/data/destination-catalog/webhooks" >Webhooks</a>
+            
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: zedaio -->
+            
+            <a href="/data/destination-catalog/zeda-io" >Zeda.io</a>
+            
+            
+        </li>
+    
+</ul>
+</div>
+
+    
+    
+
+</div>
+<div class="absolute top-0 left-0 lg:left-56 bottom-0 right-0">
+   <div class="w-full p-5">
+       <div class="box-border">
+
+           <div class="box-border flex flex-row flex-nowrap items-center border-solid border-b border-grey-200 h-12 px-4"
+               style="margin-left: -20px; margin-top: -20px;">
+               <div class="flex-auto mr-4 text-sm"><a href="/">Home</a></div>
+               
+               
+                <!--data - get-started-->
+                <div class="flex-auto mr-4 text-sm "><a href="/get-started" class="">Get Started</a></div>
+                
+
+
+               
+               
+                <!--data - data-->
+                <div class="flex-auto mr-4 text-sm "><a href="/data" class="text-green-700">Data</a></div>
+                
+
+
+               
+               
+                <!--data - analytics-->
+                <div class="flex-auto mr-4 text-sm "><a href="/analytics" class="">Analytics</a></div>
+                
+
+
+               
+               
+                <!--data - cdp-->
+                <div class="flex-auto mr-4 text-sm "><a href="/cdp" class="">CDP</a></div>
+                
+
+
+               
+               
+                <!--data - experiment-->
+                <div class="flex-auto mr-4 text-sm "><a href="/experiment" class="">Experiment</a></div>
+                
+
+
+               
+               
+                <!--data - admin-->
+                <div class="flex-auto mr-4 text-sm "><a href="/admin" class="">Admin</a></div>
+                
+
+
+               
+               
+               <div class="flex-auto mr-4 text-sm" x-data="{ open: false }"  @mouseleave="open = false"><button @click.prevent @mouseover="open = true" style="font-weight:normal">Developers</button>
+                <div x-show="open" class="mt-4 absolute border border-2 border-grey-500 top-4 bg-white w-24 p-4">
+                    
+                    <a href="/sdks">SDKs</a> <br />
+                    
+                    <a href="/apis">APIs</a> <br />
+                    
+                </div>
+                </div>
+                
+
+
+               
+           </div>
+       </div>
+   </div>
+   <div class="w-full">
+       <section class="w-full flex flex-col items-center">
+           <div class="flex flex-row flex-nowrap w-full text-sm pl-8 text-gray-400	">
+            
+            <div class="mr-2 text-s text-gray-500"><a class="" href="/data">Data</a></div>
+            <span class="mr-2">/</span><div class="mr-2 text-s text-gray-500"><a class="" href="/data/destination-catalog">Destination Catalog</a></div>
+            <span class="mr-2">/</span><div class="mr-2 text-s text-gray-500"><a class="font-bold" href="/data/destination-catalog/adjust">Adjust</a></div>
+            
+            
+        </div>
+           <div class="flex flex-row w-full p-8">
+               <div class="copy">
+                   <div class="flex flex-row items-start justify-between">
+                     <h1>Adjust</h1>
+                     <span class="ml-4 text-xs text-gray-300 align-middle"><a href="http://localhost/cp/collections/destination-catalog/entries/3b3040c0-388f-4a05-b8de-c3e909b01cd3" target="_blank">Edit</a></span>
+                   </div>
+                   <div class="max-w-prose"></div>
+                   
+                   
+
+
+                </div>
+               </div>
+           </div>
+
+       </section>
+
+       
+
+       <section class="w-full flex flex-col items-center template__section">
+           <div class="divider"></div>
+           <div class="w-full flex justify-center top-0 sticky mt-16 h-14 bg-light-blue-50 z-30 ">
+               <div class="flex flex-col justify-center w-full px-20">
+               </div>
+           </div>
+           <div class="h-px w-full bg-grey-200 z-20 sticky top-14"></div>
+           <div class="w-full h-px bg-light-blue-50 z-[21] mt-[-1px]"></div>
+           <div class="flex flex-row w-full p-20 pt-0 sticky top-0">
+               <div class="copy prose prose-code:font-light prose-code:text-xs">
+                   <div>
+                       <p></p>
+                   </div>
+
+               </div>
+
+           </div>
+
+       </section>
+
+   </div>
+
+</div>
+</div>
+        </div>
+    </body>
+</html>

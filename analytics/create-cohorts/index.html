@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Create cohorts via Microscope, file import, or the Segmentation module</title>
+        <link rel="preload" as="style" href="http://localhost/build/assets/site-3d487ba8.css" /><link rel="modulepreload" href="http://localhost/build/assets/site-4ed993c7.js" /><link rel="stylesheet" href="http://localhost/build/assets/site-3d487ba8.css" /><script type="module" src="http://localhost/build/assets/site-4ed993c7.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+        <style>
+            [x-cloak] { display: none !important; }
+        </style>
+    </head>
+    <body class="bg-gray-100 font-sans leading-normal text-gray-800">
+        <div class="mx-auto px-2 lg:min-h-screen flex flex-col items-center justify-center">
+            <style>
+   /*
+Margin and rounding are personal preferences,
+overflow-x-auto is recommended.
+*/
+pre {
+   border-radius: 0.25rem;
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+   overflow-x: auto;
+}
+
+/*
+Add some vertical padding and expand the width
+to fill its container. The horizontal padding
+comes at the line level so that background
+colors extend edge to edge.
+*/
+pre code.torchlight {
+   display: block;
+   min-width: -webkit-max-content;
+   min-width: -moz-max-content;
+   min-width: max-content;
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+}
+
+/*
+Horizontal line padding to match the vertical
+padding from the code block above.
+*/
+pre code.torchlight .line {
+   padding-left: 1rem;
+   padding-right: 1rem;
+}
+
+/*
+Push the code away from the line numbers and
+summary caret indicators.
+*/
+pre code.torchlight .line-number,
+pre code.torchlight .summary-caret {
+   margin-right: 1rem;
+}
+
+</style>
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+<div class="container prose">
+<div class="w-56 h-100 fixed left-0 top-0 bottom-0 border-solid border-r border-grey-200 hidden lg:block overflow-auto pt-10" x-data="{ open: 'Getting Started' }">
+   
+    
+    <style>
+a {
+    text-decoration: none!important;
+    font-weight: normal!important;
+}
+
+li::marker {
+    content: none!important;
+}
+
+button {
+    font-weight: bold;
+}
+
+ul.nav-level-1, ul.nav-level-2, ul.nav-level-3 {
+    list-style: none;
+    padding: 0;
+}
+
+
+
+
+</style>
+
+
+<div x-cloak x-data="{ lvl1: false, lvl2: false, lvl3: false }" class="nav-level-1">
+    <ul class="nav" style="font-size:12px">
+    
+    
+        <li>
+           <!-- lvl1: charts -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'charts' ? null : 'charts')"style="text-align:left">Charts</button>
+            
+            
+                <ul x-show="lvl1 === 'charts'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/find-the-right-chart" ">Amplitude Charts: Find the Right Chart for Your Analysis</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/chart-basics" ">Chart Basics in Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/build-charts-add-events" ">Build Charts: Add Events</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/build-charts-add-user-segments" ">Build Charts: Add User Segments</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/build-charts-modify-user-segment" ">Build Charts: Modify a User Segment</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/event-explorer" ">Event Explorer: View Event Streams in Real Time</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/review-chart-data" ">Review Chart Data with a Breakdown Table</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/charts-overview" ">Charts Types</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: cohorts-and-user-behavior -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'cohorts-and-user-behavior' ? null : 'cohorts-and-user-behavior')"style="text-align:left">Cohorts and User Behavior</button>
+            
+            
+                <ul x-show="lvl1 === 'cohorts-and-user-behavior'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <button @click.prevent="lvl2 = (lvl2 === 'create-and-manage-cohorts' ? null : 'create-and-manage-cohorts')"style="text-align:left">Create and Manage Cohorts</button>
+                            
+                
+                            
+                                <ul x-show="lvl2 === 'create-and-manage-cohorts'" class="nav-level-3">
+                                    
+                                        <li>
+                                            <a href="/analytics/behavioral-cohorts" >Behavioral cohorts: Identify users with similar behaviors</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/define-cohort" >Define a new cohort</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/compare-cohorts" >Compare and manage your behavioral cohorts</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/create-cohorts"  style="color: green" x-effect="lvl2 = 'create-and-manage-cohorts'; lvl1 = 'cohorts-and-user-behavior'">Create cohorts via Microscope, file import, or the Segmentation module</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/track-cohort-changes" >Track changes in your cohort populations over time</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <button @click.prevent="lvl2 = (lvl2 === 'historical-count' ? null : 'historical-count')"style="text-align:left">Historical Count</button>
+                            
+                
+                            
+                                <ul x-show="lvl2 === 'historical-count'" class="nav-level-3">
+                                    
+                                        <li>
+                                            <a href="/analytics/historical-count-3" >Historical Count, part 3: Funnels and behavioral cohorts</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/historical-count-2" >Historical Count, part 2: Order of operations</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/historical-count-1" >Historical Count, part 1: Track user behavior for different instances of each user action</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: organize-your-analyses -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'organize-your-analyses' ? null : 'organize-your-analyses')"style="text-align:left">Organize your Analyses</button>
+            
+            
+                <ul x-show="lvl1 === 'organize-your-analyses'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/customize-home-page" ">Customize the Home page</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/breadcrumbs" ">Breadcrumbs: Track, organize, and share your analyses</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/search" ">Search: Find charts, dashboards, cohorts, and notebooks</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/workspace" ">Workspace: Find your charts and track your work</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <button @click.prevent="lvl2 = (lvl2 === 'dashboards' ? null : 'dashboards')"style="text-align:left">Dashboards</button>
+                            
+                
+                            
+                                <ul x-show="lvl2 === 'dashboards'" class="nav-level-3">
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-create" >Create, edit, and manage dashboards</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-filter" >Filter your dashboards</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-preferences" >Change your dashboard's display preferences</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-create-template" >Turn your dashboard into a template</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-subscribe" >Subscribe to a dashboard</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: collaborate-with-team-members -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'collaborate-with-team-members' ? null : 'collaborate-with-team-members')"style="text-align:left">Collaborate with Team Members</button>
+            
+            
+                <ul x-show="lvl1 === 'collaborate-with-team-members'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/collaborate-with-spaces" ">Collaborate on your analyses using spaces</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/notebooks" ">Notebooks: Explain important insights to teammates and stakeholders</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/templates" ">Templates: Re-use your analyses</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: share-your-work -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'share-your-work' ? null : 'share-your-work')"style="text-align:left">Share your Work</button>
+            
+            
+                <ul x-show="lvl1 === 'share-your-work'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/share-dashboards" ">Share dashboards within your company</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/share-external" ">Share charts, dashboards, and notebooks with stakeholders outside your company</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/atlassian-smart-links" ">Use Atlassian Smart Links with Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/chart-embed-notion" ">Embed Amplitude charts in Notion documents</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/integrate-miro" ">Integrate Miro with Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/integrate-slack" ">Integrate Slack with Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/google-drive-sync" ">Sync your Amplitude data to Google Drive and Sheets</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: account-level-reporting -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'account-level-reporting' ? null : 'account-level-reporting')"style="text-align:left">Account-level Reporting</button>
+            
+            
+                <ul x-show="lvl1 === 'account-level-reporting'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/account-level-reporting" ">Account-level reporting in Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/account-level-reporting-setup" ">Set up account-level reporting</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: find-and-fix-anomalies -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'find-and-fix-anomalies' ? null : 'find-and-fix-anomalies')"style="text-align:left">Find and Fix Anomalies</button>
+            
+            
+                <ul x-show="lvl1 === 'find-and-fix-anomalies'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/anomaly-forecast" ">Anomaly + Forecast: Find anomalies in your data</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/insights" ">Insights: Spot anomalies in your metrics quickly with alerts</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/root-cause-analysis" ">Root Cause Analysis: Track down anomalies in your data</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+</ul>
+</div>
+
+    
+    
+
+</div>
+<div class="absolute top-0 left-0 lg:left-56 bottom-0 right-0">
+   <div class="w-full p-5">
+       <div class="box-border">
+
+           <div class="box-border flex flex-row flex-nowrap items-center border-solid border-b border-grey-200 h-12 px-4"
+               style="margin-left: -20px; margin-top: -20px;">
+               <div class="flex-auto mr-4 text-sm"><a href="/">Home</a></div>
+               
+               
+                <!--analytics - get-started-->
+                <div class="flex-auto mr-4 text-sm "><a href="/get-started" class="">Get Started</a></div>
+                
+
+
+               
+               
+                <!--analytics - data-->
+                <div class="flex-auto mr-4 text-sm "><a href="/data" class="">Data</a></div>
+                
+
+
+               
+               
+                <!--analytics - analytics-->
+                <div class="flex-auto mr-4 text-sm "><a href="/analytics" class="text-green-700">Analytics</a></div>
+                
+
+
+               
+               
+                <!--analytics - cdp-->
+                <div class="flex-auto mr-4 text-sm "><a href="/cdp" class="">CDP</a></div>
+                
+
+
+               
+               
+                <!--analytics - experiment-->
+                <div class="flex-auto mr-4 text-sm "><a href="/experiment" class="">Experiment</a></div>
+                
+
+
+               
+               
+                <!--analytics - admin-->
+                <div class="flex-auto mr-4 text-sm "><a href="/admin" class="">Admin</a></div>
+                
+
+
+               
+               
+               <div class="flex-auto mr-4 text-sm" x-data="{ open: false }"  @mouseleave="open = false"><button @click.prevent @mouseover="open = true" style="font-weight:normal">Developers</button>
+                <div x-show="open" class="mt-4 absolute border border-2 border-grey-500 top-4 bg-white w-24 p-4">
+                    
+                    <a href="/sdks">SDKs</a> <br />
+                    
+                    <a href="/apis">APIs</a> <br />
+                    
+                </div>
+                </div>
+                
+
+
+               
+           </div>
+       </div>
+   </div>
+   <div class="w-full">
+       <section class="w-full flex flex-col items-center">
+           <div class="flex flex-row flex-nowrap w-full text-sm pl-8 text-gray-400	">
+            
+            <div class="mr-2 text-s text-gray-500"><a class="" href="/analytics">Analytics</a></div>
+            <span class="mr-2">/</span><div class="mr-2 text-s text-gray-500"><a class="font-bold" href="/analytics/create-cohorts">Create cohorts via Microscope, file import, or the Segmentation module</a></div>
+            
+            
+        </div>
+           <div class="flex flex-row w-full p-8">
+               <div class="copy">
+                   <div class="flex flex-row items-start justify-between">
+                     <h1>Create cohorts via Microscope, file import, or the Segmentation module</h1>
+                     <span class="ml-4 text-xs text-gray-300 align-middle"><a href="http://localhost/cp/collections/analytics/entries/c3c874b0-ba20-4e12-bdf7-7104a492d9a4" target="_blank">Edit</a></span>
+                   </div>
+                   <div class="max-w-prose"><h4>This article will help you:</h4>
+<ul>
+<li>Create cohorts via the Microscope feature</li>
+<li>Learn how to import a cohort from a file</li>
+<li>Create cohorts with the Segmentation module of all Amplitude chart types except Compass</li>
+</ul>
+<h2>Create cohorts via Microscope</h2>
+<p><a href="/analytics/microscope">Microscope's</a> <em>Create Cohort</em> option lets you create a cohort that contains all the users captured by the data point you selected. These are usually static cohorts. However, for some chart types (like basic retention and funnel analyses), you can still create <a href="/analytics/behavioral-cohorts">behavioral cohorts</a>, though not all fields will be editable: static fields will be grayed out.</p>
+<p>Microscope can also create a group cohort from a data point with groups applied.</p>
+<p>Cohorts created from within Microscope will be static under the following scenarios:</p>
+<ul>
+<li>Composition with cross property values</li>
+<li>Retention if you have multiple returning events</li>
+<li>Usage interval view in retention</li>
+<li>Funnels with exclusion events</li>
+<li>Funnels that hold a property constant</li>
+<li>Funnels with Combine Events Inline</li>
+<li>Funnels with Compare Events at Step</li>
+<li>Distribution views in funnels (Time to Convert + Frequency)</li>
+<li>Event segmentation for properties (PropSum + PropAvg)</li>
+<li>Any chart depending on a different cohort</li>
+</ul>
+<h2>Import a cohort from a file</h2>
+<p>You can create a static cohort of users or groups by uploading a .CSV or text file of <a href="/get-started/identify-users">user IDs</a> or Amplitude IDs. To do so, navigate to <em>Cohorts &amp; Audiences</em> and click <em>Import from CSV</em>.</p>
+<p>If you have the <a href="/analytics/account-level-reporting">Accounts</a> add-on, you can also create a cohort of groups. The file <strong>must</strong> contain one ID per line, and <strong>cannot</strong> contain any other text or extra spaces. The file size must be under 50MB.</p>
+<p>If a user ID does not exist in Amplitude, it will simply be skipped, and that user will not be included in the cohort. If you are uploading Amplitude IDs, then all Amplitude IDs must be valid.</p>
+<p>Your file should look like this:</p>
+<p><img src="/output/img/analytics/image3.png" alt="image3.png" /></p>
+<p>A properly-formatted file has no header row, contains values only in the leftmost column, and does not include extraneous spaces or characters. The following is an example of an <strong>improperly</strong>-formatted file:</p>
+<p><img src="/output/img/analytics/image1.png" alt="image1.png" /></p>
+<p>Once you select a file, specify whether the file contains Amplitude IDs, user IDs, or groups.</p>
+<p><img src="/output/img/analytics/Behavioral_Cohorts_15_Import_Cohort_from_File.png" alt="Behavioral_Cohorts_15_Import_Cohort_from_File.png" /></p>
+<h3>Re-import a cohort from a file</h3>
+<p>Manually uploaded cohorts can be re-imported. This lets you update your cohort in place, and avoid having to change all your charts to point to a new cohort.</p>
+<h2>Inline behavioral cohorts and interval cohorts</h2>
+<p>You can create simple behavioral cohorts directly within the Segmentation module of all Amplitude chart types except Compass. This lets you create a behavioral cohort in the context of a specific chart without having to navigate away from it and into the <a href="/analytics/behavioral-cohorts">Behavioral Cohorts tab</a>.</p>
+<p>To do this, click <em>+ Performed</em>.</p>
+<p><img src="/output/img/analytics/behavioral_cohorts_inline.png" alt="behavioral_cohorts_inline.png" /></p>
+<p>Use this to filter your charts for users who have triggered certain events.</p>
+<p>One difference between an inline cohort and one created via the Behavioral Cohorts tab is the existence of the <em>in each</em> clause. This lets you filter for users who have triggered the selected event a certain number of times within the time interval you specify, allowing you to create <strong>interval cohorts</strong>.</p>
+<p>For example, this cohort would filter this <a href="/analytics/charts/event-segmentation/event-segmentation-build">Event Segmentation</a> chart for users in the last four weeks who triggered <code>Download Song or Video</code> at least three times in a given week:</p>
+<p><img src="/output/img/analytics/behavioral_cohort_interval_cohort.png" alt="behavioral_cohort_interval_cohort.png" /></p>
+<p>Of those users, 143,793 downloaded three or more songs or videos during the week of January 9th <strong>and</strong> triggered the <code>Purchase Song or Video</code> event.</p>
+<p>Use inline cohorts to measure populations of cohorts over time. For example, say an important milestone in your product is playing five or more songs—each of which is longer than three minutes—in a single day. This is your <strong>highly engaged</strong> cohort.</p>
+<p>From there, you can add additional <em>where</em> filters to specify event properties or user property conditions. By looking at this behavior in each interval, you can measure the population of your highly engaged cohort over time.</p>
+<p>Next, learn how to compare and manage your behavioral cohorts.</p>
+</div>
+                   
+                   
+
+
+                </div>
+               </div>
+           </div>
+
+       </section>
+
+       
+
+       <section class="w-full flex flex-col items-center template__section">
+           <div class="divider"></div>
+           <div class="w-full flex justify-center top-0 sticky mt-16 h-14 bg-light-blue-50 z-30 ">
+               <div class="flex flex-col justify-center w-full px-20">
+               </div>
+           </div>
+           <div class="h-px w-full bg-grey-200 z-20 sticky top-14"></div>
+           <div class="w-full h-px bg-light-blue-50 z-[21] mt-[-1px]"></div>
+           <div class="flex flex-row w-full p-20 pt-0 sticky top-0">
+               <div class="copy prose prose-code:font-light prose-code:text-xs">
+                   <div>
+                       <p></p>
+                   </div>
+
+               </div>
+
+           </div>
+
+       </section>
+
+   </div>
+
+</div>
+</div>
+        </div>
+    </body>
+</html>

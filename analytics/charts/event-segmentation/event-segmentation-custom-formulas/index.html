@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Custom Formulas: Syntax and Definitions</title>
+        <link rel="preload" as="style" href="http://localhost/build/assets/site-3d487ba8.css" /><link rel="modulepreload" href="http://localhost/build/assets/site-4ed993c7.js" /><link rel="stylesheet" href="http://localhost/build/assets/site-3d487ba8.css" /><script type="module" src="http://localhost/build/assets/site-4ed993c7.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+        <style>
+            [x-cloak] { display: none !important; }
+        </style>
+    </head>
+    <body class="bg-gray-100 font-sans leading-normal text-gray-800">
+        <div class="mx-auto px-2 lg:min-h-screen flex flex-col items-center justify-center">
+            <style>
+   /*
+Margin and rounding are personal preferences,
+overflow-x-auto is recommended.
+*/
+pre {
+   border-radius: 0.25rem;
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+   overflow-x: auto;
+}
+
+/*
+Add some vertical padding and expand the width
+to fill its container. The horizontal padding
+comes at the line level so that background
+colors extend edge to edge.
+*/
+pre code.torchlight {
+   display: block;
+   min-width: -webkit-max-content;
+   min-width: -moz-max-content;
+   min-width: max-content;
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+}
+
+/*
+Horizontal line padding to match the vertical
+padding from the code block above.
+*/
+pre code.torchlight .line {
+   padding-left: 1rem;
+   padding-right: 1rem;
+}
+
+/*
+Push the code away from the line numbers and
+summary caret indicators.
+*/
+pre code.torchlight .line-number,
+pre code.torchlight .summary-caret {
+   margin-right: 1rem;
+}
+
+</style>
+
+
+
+
+
+
+<div class="container prose">
+<div class="w-56 h-100 fixed left-0 top-0 bottom-0 border-solid border-r border-grey-200 hidden lg:block overflow-auto pt-10" x-data="{ open: 'Getting Started' }">
+   
+    
+    <style>
+    a {
+        text-decoration: none!important;
+        font-weight: normal!important;
+    }
+    
+    li::marker {
+        content: none!important;
+    }
+    
+    
+    </style>
+    
+    <div x-cloak x-data="{ openItem: null, openSubItem: null }">
+    <ul class="nav" style="font-size:12px">
+        
+        
+            <li>
+                
+                <a href="/analytics/charts/charts-overview"  ><- Back to Chart Types</a>
+                
+                
+            </li>
+        
+            <li>
+                 
+                <button class="font-semibold antialiased" @click.prevent="openItem = (openItem === 'event-segmentation-chart' ? null : 'event-segmentation-chart')"style="text-align:left">Event Segmentation Chart</button>
+                
+                
+                    <ul x-show="openItem === 'event-segmentation-chart'" x-collapse>
+                        
+            <li>
+                
+                <a href="/analytics/charts/event-segmentation"  >Event Segmentation Chart</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/event-segmentation/event-segmentation-build"  >Build an Event Segmentation Analysis</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/event-segmentation/event-segmentation-interpret-1"  >Interpret Your Event Segmentation Analysis, Part 1</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/event-segmentation/event-segmentation-interpret-2"  >Interpret Your Event Segmentation Analysis, Part 2</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/event-segmentation/event-segmentation-custom-formulas"  style="color: green" x-effect="openItem = 'event-segmentation-chart'" >Custom Formulas: Syntax and Definitions</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/event-segmentation/event-segmentation-in-line-events"  >Create In-Line Custom Events in Funnel and Event Segmentation Analyses</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/event-segmentation/event-segmentation-choose-measurement"  >Choose the Right Measurement for Your Event Segmentation</a>
+                
+                
+            </li>
+        
+                    </ul>
+                
+            </li>
+        
+            <li>
+                 
+                <button class="font-semibold antialiased" @click.prevent="openItem = (openItem === 'funnel-analysis' ? null : 'funnel-analysis')"style="text-align:left">Funnel Analysis</button>
+                
+                
+                    <ul x-show="openItem === 'funnel-analysis'" x-collapse>
+                        
+            <li>
+                
+                <a href="/analytics/charts/funnel-analysis"  >Funnel Analysis</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/funnel-analysis/funnel-analysis-ab-test"  >A/B Test in a Funnel Analysis</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/funnel-analysis/funnel-analysis-build"  >Build a Funnel Analysis</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/funnel-analysis/funnel-analysis-combine-events"  >Combine Funnel Events Inline</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/funnel-analysis/funnel-analysis-compare-group-by"  >Compare Group-by Values in Your Funnel Analysis</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/funnel-analysis/funnel-analysis-compare-multiple"  >Compare Multiple Funnel Events in a Single Step</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/funnel-analysis/funnel-analysis-get-the-most"  >Get the Most Out of Funnel Analysis </a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/funnel-analysis/funnel-analysis-hold-properties-constant"  >Hold Properties Constant in a Funnel Analysis</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/funnel-analysis/funnel-analysis-how-amplitude-computes-conversions"  >How Amplitude Computes Conversions with Funnels</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/funnel-analysis/funnel-analysis-how-amplitude-computes"  >How Amplitude Computes Funnels</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/funnel-analysis/funnel-analysis-how-amplitude-handles-segmenting"  >How Amplitude Handles Segmenting on a User Property in a Funnel Analysis</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/funnel-analysis/funnel-analysis-how-amplitude-handles-simultaneous-events"  >How Amplitude Handles Simultaneous Events in a Funnel</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/funnel-analysis/funnel-analysis-how-filters-work"  >How Filters Work in a Funnel Analysis</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/funnel-analysis/funnel-analysis-identify-conversion-drivers"  >Identify Conversion Drivers in Your Funnel Analyses</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/funnel-analysis/funnel-analysis-interpret"  >Interpret Your Funnel Analysis</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/funnel-analysis/funnel-analysis-optional-step"  >Mark a Step in a Funnel Analysis as Optional</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/funnel-analysis/funnel-analysis-view-by-property-value"  >View Funnel Conversion by Event Property Values</a>
+                
+                
+            </li>
+        
+                    </ul>
+                
+            </li>
+        
+            <li>
+                 
+                <button class="font-semibold antialiased" @click.prevent="openItem = (openItem === 'retention-analysis' ? null : 'retention-analysis')"style="text-align:left">Retention Analysis</button>
+                
+                
+                    <ul x-show="openItem === 'retention-analysis'" x-collapse>
+                        
+            <li>
+                
+                <a href="/analytics/charts/retention-analysis"  >Retention Analysis</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/retention-analysis/retention-analysis-interpret-usage"  >Interpret Your Retention Analysis: Usage Interval</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/retention-analysis/retention-analysis-interpret"  >Interpret Your Retention Analysis</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/retention-analysis/retention-analysis-time"  >How Time Works in a Retention Analysis</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/retention-analysis/retention-analysis-calculation"  >How the Retention Analysis Chart Calculates Retention</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/retention-analysis/retention-analysis-usage-interval"  >Build a Usage Interval Analysis</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/retention-analysis/retention-analysis-build"  >Build a Retention Analysis</a>
+                
+                
+            </li>
+        
+                    </ul>
+                
+            </li>
+        
+            <li>
+                 
+                <button class="font-semibold antialiased" @click.prevent="openItem = (openItem === 'data-tables' ? null : 'data-tables')"style="text-align:left">Data Tables</button>
+                
+                
+                    <ul x-show="openItem === 'data-tables'" x-collapse>
+                        
+            <li>
+                
+                <a href="/analytics/charts/data-tables"  >Data Tables</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/data-tables/data-tables-use-session-metrics"  >Use Session Metrics to Evaluate Content Paths</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/data-tables/data-tables-results-and-sorting-logic"  >Result Limits and Sorting Logic in Data Tables</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/data-tables/data-tables-multi-dimensional-analysis"  >Multi-Dimensional Analysis with Data Tables</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/data-tables/data-tables-create-metric"  >Create a Metric</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/data-tables/data-tables-attribute-credit"  >Attribute Credit to Multiple Acquisition Touch Points</a>
+                
+                
+            </li>
+        
+                    </ul>
+                
+            </li>
+        
+            <li>
+                 
+                <button class="font-semibold antialiased" @click.prevent="openItem = (openItem === 'journeys' ? null : 'journeys')"style="text-align:left">Journeys</button>
+                
+                
+                    <ul x-show="openItem === 'journeys'" x-collapse>
+                        
+            <li>
+                
+                <a href="/analytics/charts/journeys/journeys-understand-visualizations"  >Understand and Use Journeys Visualizations</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/journeys/journeys-understand-paths"  >Journeys: Understand the Paths Users Take in Your Product, and Why They Convert</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/journeys"  >Journeys</a>
+                
+                
+            </li>
+        
+                    </ul>
+                
+            </li>
+        
+            <li>
+                 
+                <button class="font-semibold antialiased" @click.prevent="openItem = (openItem === 'experiment-results' ? null : 'experiment-results')"style="text-align:left">Experiment Results</button>
+                
+                
+                    <ul x-show="openItem === 'experiment-results'" x-collapse>
+                        
+            <li>
+                
+                <a href="/analytics/charts/experiment-results"  >Experiment Results</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/experiment-results/experiment-results-use-formula-metrics"  >Use Formula Metrics in Experiment Results</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/experiment-results/experiment-results-dig-deeper"  >Dig Deeper Into Experimentation Data with Experiment Results</a>
+                
+                
+            </li>
+        
+                    </ul>
+                
+            </li>
+        
+            <li>
+                 
+                <button class="font-semibold antialiased" @click.prevent="openItem = (openItem === 'revenue-ltv' ? null : 'revenue-ltv')"style="text-align:left">Revenue LTV</button>
+                
+                
+                    <ul x-show="openItem === 'revenue-ltv'" x-collapse>
+                        
+            <li>
+                
+                <a href="/analytics/charts/revenue-ltv/revenue-ltv-track-new-user-monetization"  >The Revenue LTV Chart: Track New User Monetizaiton</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/revenue-ltv/revenue-ltv-interpret"  >Interpret Your Revenue Analysis</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/revenue-ltv"  >Revenue LTV</a>
+                
+                
+            </li>
+        
+                    </ul>
+                
+            </li>
+        
+            <li>
+                 
+                <button class="font-semibold antialiased" @click.prevent="openItem = (openItem === 'compass' ? null : 'compass')"style="text-align:left">Compass</button>
+                
+                
+                    <ul x-show="openItem === 'compass'" x-collapse>
+                        
+            <li>
+                
+                <a href="/analytics/charts/compass"  >Compass</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/compass/compass-aha-moment"  >The Compass Chart: Discover Your Users' A-Ha Moments</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/compass/compass-interpret-1"  >Interpret Your Compass Chart, Part One</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/compass/compass-interpret-2"  >Interpret Your Compas Chart, Part Two: Correlation and Cohorts</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/compass/compass-find-inflection-metrics"  >Find Your Company's Inflection Metrics with Compass</a>
+                
+                
+            </li>
+        
+                    </ul>
+                
+            </li>
+        
+            <li>
+                 
+                <button class="font-semibold antialiased" @click.prevent="openItem = (openItem === 'stickiness' ? null : 'stickiness')"style="text-align:left">Stickiness</button>
+                
+                
+                    <ul x-show="openItem === 'stickiness'" x-collapse>
+                        
+            <li>
+                
+                <a href="/analytics/charts/stickiness"  >Stickiness</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/stickiness/stickiness-identify-features"  >Stickiness: Identify the Features that Drive Users Back to Your Product</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/stickiness/stickiness-interpret"  >Interpret Your Stickiness Analysis</a>
+                
+                
+            </li>
+        
+                    </ul>
+                
+            </li>
+        
+            <li>
+                 
+                <button class="font-semibold antialiased" @click.prevent="openItem = (openItem === 'personas' ? null : 'personas')"style="text-align:left">Personas</button>
+                
+                
+                    <ul x-show="openItem === 'personas'" x-collapse>
+                        
+            <li>
+                
+                <a href="/analytics/charts/personas"  >Personas</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/personas/personas-clustering"  >The Personas Chart: Use Clustering Analysis to Find Your Product's User Personas</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/personas/personas-interpret"  >Interpret Your Personas Chart</a>
+                
+                
+            </li>
+        
+                    </ul>
+                
+            </li>
+        
+            <li>
+                 
+                <button class="font-semibold antialiased" @click.prevent="openItem = (openItem === 'impact-analysis' ? null : 'impact-analysis')"style="text-align:left">Impact Analysis</button>
+                
+                
+                    <ul x-show="openItem === 'impact-analysis'" x-collapse>
+                        
+            <li>
+                
+                <a href="/analytics/charts/impact-analysis"  >Impact Analysis</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/impact-analysis/impact-analysis-interpret"  >Interpret Your Impact Analysis</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/impact-analysis/impact-analysis-track"  >Impact Analysis: Track How First-Time Engagement Changes User Behavior</a>
+                
+                
+            </li>
+        
+                    </ul>
+                
+            </li>
+        
+            <li>
+                 
+                <button class="font-semibold antialiased" @click.prevent="openItem = (openItem === 'user-sessions' ? null : 'user-sessions')"style="text-align:left">User Sessions</button>
+                
+                
+                    <ul x-show="openItem === 'user-sessions'" x-collapse>
+                        
+            <li>
+                
+                <a href="/analytics/charts/user-sessions"  >User Sessions</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/user-sessions/user-sessions-track-engagement-frequency"  >The User Sessions Chart: Track Engagement Frequency and Duration</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/user-sessions/user-sessions-interpret"  >Interpret Your User Sessions Chart</a>
+                
+                
+            </li>
+        
+                    </ul>
+                
+            </li>
+        
+            <li>
+                 
+                <button class="font-semibold antialiased" @click.prevent="openItem = (openItem === 'engagement-matrix' ? null : 'engagement-matrix')"style="text-align:left">Engagement Matrix</button>
+                
+                
+                    <ul x-show="openItem === 'engagement-matrix'" x-collapse>
+                        
+            <li>
+                
+                <a href="/analytics/charts/engagement-matrix"  >Engagement Matrix</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/engagement-matrix/engagement-matrix-interpret"  >Interpret Your Engagement Matrix</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/engagement-matrix/engagement-matrix-discover"  >Engagement Matrix: Discover What Your Users Love About Your Product</a>
+                
+                
+            </li>
+        
+                    </ul>
+                
+            </li>
+        
+            <li>
+                 
+                <button class="font-semibold antialiased" @click.prevent="openItem = (openItem === 'lifecycle' ? null : 'lifecycle')"style="text-align:left">Lifecycle</button>
+                
+                
+                    <ul x-show="openItem === 'lifecycle'" x-collapse>
+                        
+            <li>
+                
+                <a href="/analytics/charts/lifecycle"  >Lifecycle</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/lifecycle/lifecycle-track-growth"  >The Lifecycle Chart: Track the Growth of Your Product's User Base</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/lifecycle/lifecycle-interpret"  >Interpret Your Lifecycle Chart</a>
+                
+                
+            </li>
+        
+                    </ul>
+                
+            </li>
+        
+            <li>
+                 
+                <button class="font-semibold antialiased" @click.prevent="openItem = (openItem === 'other-charts' ? null : 'other-charts')"style="text-align:left">Other Charts</button>
+                
+                
+                    <ul x-show="openItem === 'other-charts'" x-collapse>
+                        
+            <li>
+                
+                <a href="/analytics/charts/other-charts"  >Other Charts</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/other-charts/other-charts-user-composition"  >The User Composition Chart: View Users by Common Property</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/other-charts/other-charts-amplitude-sql-schema"  >Amplitude SQL: Table Schema and Field Shortcuts</a>
+                
+                
+            </li>
+        
+            <li>
+                
+                <a href="/analytics/charts/other-charts/other-charts-amplitude-sql"  >Amplitude SQL: Get Started with Query</a>
+                
+                
+            </li>
+        
+                    </ul>
+                
+            </li>
+        
+        
+    </ul> 
+    </div>
+    
+    
+    
+
+</div>
+<div class="absolute top-0 left-0 lg:left-56 bottom-0 right-0">
+   <div class="w-full p-5">
+       <div class="box-border">
+
+           <div class="box-border flex flex-row flex-nowrap items-center border-solid border-b border-grey-200 h-12 px-4"
+               style="margin-left: -20px; margin-top: -20px;">
+               <div class="flex-auto mr-4 text-sm"><a href="/">Home</a></div>
+               
+               
+                <!--analytics - get-started-->
+                <div class="flex-auto mr-4 text-sm "><a href="/get-started" class="">Get Started</a></div>
+                
+
+
+               
+               
+                <!--analytics - data-->
+                <div class="flex-auto mr-4 text-sm "><a href="/data" class="">Data</a></div>
+                
+
+
+               
+               
+                <!--analytics - analytics-->
+                <div class="flex-auto mr-4 text-sm "><a href="/analytics" class="text-green-700">Analytics</a></div>
+                
+
+
+               
+               
+                <!--analytics - cdp-->
+                <div class="flex-auto mr-4 text-sm "><a href="/cdp" class="">CDP</a></div>
+                
+
+
+               
+               
+                <!--analytics - experiment-->
+                <div class="flex-auto mr-4 text-sm "><a href="/experiment" class="">Experiment</a></div>
+                
+
+
+               
+               
+                <!--analytics - admin-->
+                <div class="flex-auto mr-4 text-sm "><a href="/admin" class="">Admin</a></div>
+                
+
+
+               
+               
+               <div class="flex-auto mr-4 text-sm" x-data="{ open: false }"  @mouseleave="open = false"><button @click.prevent @mouseover="open = true" style="font-weight:normal">Developers</button>
+                <div x-show="open" class="mt-4 absolute border border-2 border-grey-500 top-4 bg-white w-24 p-4">
+                    
+                    <a href="/sdks">SDKs</a> <br />
+                    
+                    <a href="/apis">APIs</a> <br />
+                    
+                </div>
+                </div>
+                
+
+
+               
+           </div>
+       </div>
+   </div>
+   <div class="w-full">
+       <section class="w-full flex flex-col items-center">
+           <div class="flex flex-row flex-nowrap w-full text-sm pl-8 text-gray-400	">
+            
+            <div class="mr-2 text-s text-gray-500"><a class="" href="/analytics">Analytics</a></div>
+            <span class="mr-2">/</span><div class="mr-2 text-s text-gray-500"><a class="" href="/analytics/charts">Charts</a></div>
+            <span class="mr-2">/</span><div class="mr-2 text-s text-gray-500"><a class="" href="/analytics/charts/event-segmentation">Event Segmentation Chart</a></div>
+            <span class="mr-2">/</span><div class="mr-2 text-s text-gray-500"><a class="font-bold" href="/analytics/charts/event-segmentation/event-segmentation-custom-formulas">Custom Formulas: Syntax and Definitions</a></div>
+            
+            
+        </div>
+           <div class="flex flex-row w-full p-8">
+               <div class="copy">
+                   <div class="flex flex-row items-start justify-between">
+                     <h1>Custom Formulas: Syntax and Definitions</h1>
+                     <span class="ml-4 text-xs text-gray-300 align-middle"><a href="http://localhost/cp/collections/event-segmentation/entries/4a23c4d3-1147-4ace-8825-0751c98e07d7" target="_blank">Edit</a></span>
+                   </div>
+                   <div class="max-w-prose"></div>
+                   
+                   
+
+
+                </div>
+               </div>
+           </div>
+
+       </section>
+
+       
+
+       <section class="w-full flex flex-col items-center template__section">
+           <div class="divider"></div>
+           <div class="w-full flex justify-center top-0 sticky mt-16 h-14 bg-light-blue-50 z-30 ">
+               <div class="flex flex-col justify-center w-full px-20">
+               </div>
+           </div>
+           <div class="h-px w-full bg-grey-200 z-20 sticky top-14"></div>
+           <div class="w-full h-px bg-light-blue-50 z-[21] mt-[-1px]"></div>
+           <div class="flex flex-row w-full p-20 pt-0 sticky top-0">
+               <div class="copy prose prose-code:font-light prose-code:text-xs">
+                   <div>
+                       <p></p>
+                   </div>
+
+               </div>
+
+           </div>
+
+       </section>
+
+   </div>
+
+</div>
+</div>
+        </div>
+    </body>
+</html>

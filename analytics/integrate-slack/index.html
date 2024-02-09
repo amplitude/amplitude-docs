@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Integrate Slack with Amplitude</title>
+        <link rel="preload" as="style" href="http://localhost/build/assets/site-3d487ba8.css" /><link rel="modulepreload" href="http://localhost/build/assets/site-4ed993c7.js" /><link rel="stylesheet" href="http://localhost/build/assets/site-3d487ba8.css" /><script type="module" src="http://localhost/build/assets/site-4ed993c7.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+        <style>
+            [x-cloak] { display: none !important; }
+        </style>
+    </head>
+    <body class="bg-gray-100 font-sans leading-normal text-gray-800">
+        <div class="mx-auto px-2 lg:min-h-screen flex flex-col items-center justify-center">
+            <style>
+   /*
+Margin and rounding are personal preferences,
+overflow-x-auto is recommended.
+*/
+pre {
+   border-radius: 0.25rem;
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+   overflow-x: auto;
+}
+
+/*
+Add some vertical padding and expand the width
+to fill its container. The horizontal padding
+comes at the line level so that background
+colors extend edge to edge.
+*/
+pre code.torchlight {
+   display: block;
+   min-width: -webkit-max-content;
+   min-width: -moz-max-content;
+   min-width: max-content;
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+}
+
+/*
+Horizontal line padding to match the vertical
+padding from the code block above.
+*/
+pre code.torchlight .line {
+   padding-left: 1rem;
+   padding-right: 1rem;
+}
+
+/*
+Push the code away from the line numbers and
+summary caret indicators.
+*/
+pre code.torchlight .line-number,
+pre code.torchlight .summary-caret {
+   margin-right: 1rem;
+}
+
+</style>
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+<div class="container prose">
+<div class="w-56 h-100 fixed left-0 top-0 bottom-0 border-solid border-r border-grey-200 hidden lg:block overflow-auto pt-10" x-data="{ open: 'Getting Started' }">
+   
+    
+    <style>
+a {
+    text-decoration: none!important;
+    font-weight: normal!important;
+}
+
+li::marker {
+    content: none!important;
+}
+
+button {
+    font-weight: bold;
+}
+
+ul.nav-level-1, ul.nav-level-2, ul.nav-level-3 {
+    list-style: none;
+    padding: 0;
+}
+
+
+
+
+</style>
+
+
+<div x-cloak x-data="{ lvl1: false, lvl2: false, lvl3: false }" class="nav-level-1">
+    <ul class="nav" style="font-size:12px">
+    
+    
+        <li>
+           <!-- lvl1: charts -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'charts' ? null : 'charts')"style="text-align:left">Charts</button>
+            
+            
+                <ul x-show="lvl1 === 'charts'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/find-the-right-chart" ">Amplitude Charts: Find the Right Chart for Your Analysis</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/chart-basics" ">Chart Basics in Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/build-charts-add-events" ">Build Charts: Add Events</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/build-charts-add-user-segments" ">Build Charts: Add User Segments</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/build-charts-modify-user-segment" ">Build Charts: Modify a User Segment</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/event-explorer" ">Event Explorer: View Event Streams in Real Time</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/review-chart-data" ">Review Chart Data with a Breakdown Table</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/charts-overview" ">Charts Types</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: cohorts-and-user-behavior -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'cohorts-and-user-behavior' ? null : 'cohorts-and-user-behavior')"style="text-align:left">Cohorts and User Behavior</button>
+            
+            
+                <ul x-show="lvl1 === 'cohorts-and-user-behavior'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <button @click.prevent="lvl2 = (lvl2 === 'create-and-manage-cohorts' ? null : 'create-and-manage-cohorts')"style="text-align:left">Create and Manage Cohorts</button>
+                            
+                
+                            
+                                <ul x-show="lvl2 === 'create-and-manage-cohorts'" class="nav-level-3">
+                                    
+                                        <li>
+                                            <a href="/analytics/behavioral-cohorts" >Behavioral cohorts: Identify users with similar behaviors</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/define-cohort" >Define a new cohort</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/compare-cohorts" >Compare and manage your behavioral cohorts</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/create-cohorts" >Create cohorts via Microscope, file import, or the Segmentation module</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/track-cohort-changes" >Track changes in your cohort populations over time</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <button @click.prevent="lvl2 = (lvl2 === 'historical-count' ? null : 'historical-count')"style="text-align:left">Historical Count</button>
+                            
+                
+                            
+                                <ul x-show="lvl2 === 'historical-count'" class="nav-level-3">
+                                    
+                                        <li>
+                                            <a href="/analytics/historical-count-3" >Historical Count, part 3: Funnels and behavioral cohorts</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/historical-count-2" >Historical Count, part 2: Order of operations</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/historical-count-1" >Historical Count, part 1: Track user behavior for different instances of each user action</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: organize-your-analyses -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'organize-your-analyses' ? null : 'organize-your-analyses')"style="text-align:left">Organize your Analyses</button>
+            
+            
+                <ul x-show="lvl1 === 'organize-your-analyses'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/customize-home-page" ">Customize the Home page</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/breadcrumbs" ">Breadcrumbs: Track, organize, and share your analyses</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/search" ">Search: Find charts, dashboards, cohorts, and notebooks</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/workspace" ">Workspace: Find your charts and track your work</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <button @click.prevent="lvl2 = (lvl2 === 'dashboards' ? null : 'dashboards')"style="text-align:left">Dashboards</button>
+                            
+                
+                            
+                                <ul x-show="lvl2 === 'dashboards'" class="nav-level-3">
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-create" >Create, edit, and manage dashboards</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-filter" >Filter your dashboards</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-preferences" >Change your dashboard's display preferences</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-create-template" >Turn your dashboard into a template</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-subscribe" >Subscribe to a dashboard</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: collaborate-with-team-members -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'collaborate-with-team-members' ? null : 'collaborate-with-team-members')"style="text-align:left">Collaborate with Team Members</button>
+            
+            
+                <ul x-show="lvl1 === 'collaborate-with-team-members'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/collaborate-with-spaces" ">Collaborate on your analyses using spaces</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/notebooks" ">Notebooks: Explain important insights to teammates and stakeholders</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/templates" ">Templates: Re-use your analyses</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: share-your-work -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'share-your-work' ? null : 'share-your-work')"style="text-align:left">Share your Work</button>
+            
+            
+                <ul x-show="lvl1 === 'share-your-work'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/share-dashboards" ">Share dashboards within your company</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/share-external" ">Share charts, dashboards, and notebooks with stakeholders outside your company</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/atlassian-smart-links" ">Use Atlassian Smart Links with Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/chart-embed-notion" ">Embed Amplitude charts in Notion documents</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/integrate-miro" ">Integrate Miro with Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/integrate-slack"  style="color: green"  x-effect="lvl1 = 'share-your-work'">Integrate Slack with Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/google-drive-sync" ">Sync your Amplitude data to Google Drive and Sheets</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: account-level-reporting -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'account-level-reporting' ? null : 'account-level-reporting')"style="text-align:left">Account-level Reporting</button>
+            
+            
+                <ul x-show="lvl1 === 'account-level-reporting'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/account-level-reporting" ">Account-level reporting in Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/account-level-reporting-setup" ">Set up account-level reporting</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: find-and-fix-anomalies -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'find-and-fix-anomalies' ? null : 'find-and-fix-anomalies')"style="text-align:left">Find and Fix Anomalies</button>
+            
+            
+                <ul x-show="lvl1 === 'find-and-fix-anomalies'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/anomaly-forecast" ">Anomaly + Forecast: Find anomalies in your data</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/insights" ">Insights: Spot anomalies in your metrics quickly with alerts</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/root-cause-analysis" ">Root Cause Analysis: Track down anomalies in your data</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+</ul>
+</div>
+
+    
+    
+
+</div>
+<div class="absolute top-0 left-0 lg:left-56 bottom-0 right-0">
+   <div class="w-full p-5">
+       <div class="box-border">
+
+           <div class="box-border flex flex-row flex-nowrap items-center border-solid border-b border-grey-200 h-12 px-4"
+               style="margin-left: -20px; margin-top: -20px;">
+               <div class="flex-auto mr-4 text-sm"><a href="/">Home</a></div>
+               
+               
+                <!--analytics - get-started-->
+                <div class="flex-auto mr-4 text-sm "><a href="/get-started" class="">Get Started</a></div>
+                
+
+
+               
+               
+                <!--analytics - data-->
+                <div class="flex-auto mr-4 text-sm "><a href="/data" class="">Data</a></div>
+                
+
+
+               
+               
+                <!--analytics - analytics-->
+                <div class="flex-auto mr-4 text-sm "><a href="/analytics" class="text-green-700">Analytics</a></div>
+                
+
+
+               
+               
+                <!--analytics - cdp-->
+                <div class="flex-auto mr-4 text-sm "><a href="/cdp" class="">CDP</a></div>
+                
+
+
+               
+               
+                <!--analytics - experiment-->
+                <div class="flex-auto mr-4 text-sm "><a href="/experiment" class="">Experiment</a></div>
+                
+
+
+               
+               
+                <!--analytics - admin-->
+                <div class="flex-auto mr-4 text-sm "><a href="/admin" class="">Admin</a></div>
+                
+
+
+               
+               
+               <div class="flex-auto mr-4 text-sm" x-data="{ open: false }"  @mouseleave="open = false"><button @click.prevent @mouseover="open = true" style="font-weight:normal">Developers</button>
+                <div x-show="open" class="mt-4 absolute border border-2 border-grey-500 top-4 bg-white w-24 p-4">
+                    
+                    <a href="/sdks">SDKs</a> <br />
+                    
+                    <a href="/apis">APIs</a> <br />
+                    
+                </div>
+                </div>
+                
+
+
+               
+           </div>
+       </div>
+   </div>
+   <div class="w-full">
+       <section class="w-full flex flex-col items-center">
+           <div class="flex flex-row flex-nowrap w-full text-sm pl-8 text-gray-400	">
+            
+            <div class="mr-2 text-s text-gray-500"><a class="" href="/analytics">Analytics</a></div>
+            <span class="mr-2">/</span><div class="mr-2 text-s text-gray-500"><a class="font-bold" href="/analytics/integrate-slack">Integrate Slack with Amplitude</a></div>
+            
+            
+        </div>
+           <div class="flex flex-row w-full p-8">
+               <div class="copy">
+                   <div class="flex flex-row items-start justify-between">
+                     <h1>Integrate Slack with Amplitude</h1>
+                     <span class="ml-4 text-xs text-gray-300 align-middle"><a href="http://localhost/cp/collections/analytics/entries/4be51454-e583-4b1f-93b1-de647114ea68" target="_blank">Edit</a></span>
+                   </div>
+                   <div class="max-w-prose"><h4>This article will help you:</h4>
+<ul>
+<li>Connect your Slack and Amplitude accounts and receive updates in Slack</li>
+<li>Set up an Amplitude Data project to send updates to a specific Slack channel</li>
+</ul>
+<p>With Amplitude's app for <a href="https://www.slack.com/">Slack</a>, you can:</p>
+<ul>
+<li>Get updates about new comments you receive in Amplitude</li>
+<li>Unfurl chart and cohort links into detailed previews</li>
+<li>Add charts to dashboards or pin dashboards to your sidebar without ever leaving the conversation</li>
+<li>Connect Amplitude Team Spaces to specific Slack channels and receive notifications whenever your team creates new analyses</li>
+</ul>
+<p>To connect Amplitude to Slack, you can either follow the steps below, or you can use the Amplitude integration in the Slack app store: </p>
+<p><a href="https://amplitude.slack.com/apps/A02PDFHC1NX-amplitude">![Add to Slack](/output/img/analytics/Add to Slack)</a></p>
+<p><strong>NOTE:</strong> If your company uses Amplitude's EU data center, there is a different Slack app intended specifically for EU customers. It can be found in the Slack app directory under “<a href="https://amplitude.slack.com/apps/A042J2XCRS9-amplitude-eu">Amplitude - EU</a>.”  Install it by clicking <a href="https://links.amplitude.com/ZFSte8rMWtuwkP5jE/l/0POygAjvJypciVq4d?messageId=6nK7UeyixFZbdLPAQ&amp;rn=&amp;re=gIt92YuUGZ1RXasBXbhB0cul2akVnauYmZlpmI&amp;sc=false">this link</a>, or by following the instructions below.</p>
+<h3>Feature availability</h3>
+<p>This feature is available to users on <strong>all Amplitude plans</strong>.</p>
+<h2>Connect to Slack</h2>
+<p>Follow these steps whether you are integrating Amplitude and Slack for the first time, or updating to the current Amplitude app for Slack experience.</p>
+<p>To connect your Amplitude account to Slack, follow these steps:</p>
+<ol>
+<li>Navigate to <img src="/output/img/analytics/gear_icon_for_settings.png" alt="gear_icon_for_settings.png" /> <em>&gt; Personal Settings</em>.</li>
+<li>Click <em>Profile,</em> then <em>Connect to Slack</em>.</li>
+</ol>
+<p><img src="/output/img/analytics/integrate_slack_with_amplitude.png" alt="integrate_slack_with_amplitude.png" /></p>
+<ol start="3">
+<li>In the new browser tab that opens, click <em>Allow</em> to grant Amplitude access to your Slack account.</li>
+</ol>
+<p><img src="/output/img/analytics/slack_connection.png" alt="slack_connection.png" /></p>
+<p>You will immediately receive a Slack message from Amplitude, which includes a link to a brief explanation of how to use the integration.</p>
+<p>Once you've authenticated via this process, Slack will automatically <strong>unfurl</strong> (or preview) any links to Amplitude charts, both in Slack channels and direct messages (<strong>DM</strong>s).</p>
+<p><img src="/output/img/analytics/unfurled_chart_in_Slack.png" alt="unfurled_chart_in_Slack.png" /></p>
+<p><strong>NOTE:</strong> Slack will not unfurl Pathfinder, Compass, and Persona charts.</p>
+<h3>Connect an Amplitude Data project to Slack</h3>
+<p>You can also subscribe a Slack channel to real-time notifications of all branch changes or publishing updates occurring within an Amplitude Data project’s tracking plan. These include:</p>
+<ul>
+<li>Branch Created / Deleted / Merged / Approved</li>
+<li>Version Published</li>
+</ul>
+<p>To receive these notifications, you will have to set up the Amplitude app for Slack for the Amplitude Data project you are interested in receiving updates from. To do so, follow these steps:</p>
+<ol>
+<li>In Amplitude Data, navigate to <em>Settings &gt; Integrations</em>.</li>
+<li>If you haven’t previously enabled the Amplitude Slack App, you’ll be prompted to grant Amplitude permission in your Slack workspace. Specify a channel where notifications about this project should be sent.</li>
+</ol>
+<p><img src="/output/img/analytics/slack_for_data.png" alt="slack_for_data.png" />
+3. Click <em>Add</em> to complete the process.</p>
+<h3>Turn on link previews</h3>
+<p>If a shareable link doesn't unfurl when you post it in Slack, it may be because you have not enabled link previews in your Slack settings. To do this, see <a href="https://get.slack.help/hc/en-us/articles/204399343-Sharing-links-in-Slack">Slack's documentation</a>.</p>
+<h2>Receive Amplitude comments directly in Slack</h2>
+<p>Once you've connected your Slack account to Amplitude, you will receive Slack notifications when you are @ mentioned in an Amplitude comment, or a comment is left on any content you own.</p>
+<p>Use this integration to quickly get questions answered about your analysis, share an insight, or leave notes to yourself.</p>
+<p><img src="/output/img/analytics/Screenshot_2019-08-05_17.37.06.png" alt="Screenshot_2019-08-05_17.37.06.png" /></p>
+<p>Use the content link within the Slack message to quickly access the Amplitude chart, dashboard, or notebook referenced.</p>
+<p><img src="/output/img/analytics/Screenshot_2019-08-05_17.36.57.png" alt="Screenshot_2019-08-05_17.36.57.png" /></p>
+<p>You can also use this integration to leave reminders or notes for yourself. Simply @ mention your own Amplitude account, and you will receive a Slack notification.</p>
+<p><img src="/output/img/analytics/Screenshot_2019-08-05_17.36.05.png" alt="Screenshot_2019-08-05_17.36.05.png" /></p>
+<h2>Connect with team spaces</h2>
+<p>Connect Amplitude team spaces to specific Slack channels to receive notifications when your team creates new analyses. When new content is added to that team space, it will automatically appear in the Slack channel. Click <em>Connect with Slack</em> from within a team space to set this up:</p>
+<p><img src="/output/img/analytics/slack_team_space.gif" alt="slack_team_space.gif" /></p>
+<p>To disconnect your team space from Slack, click the same button which should now read <em>Connected to [YourTeamSpaceName]</em> and select <em>Disconnect Slack.</em></p>
+</div>
+                   
+                   
+
+
+                </div>
+               </div>
+           </div>
+
+       </section>
+
+       
+
+       <section class="w-full flex flex-col items-center template__section">
+           <div class="divider"></div>
+           <div class="w-full flex justify-center top-0 sticky mt-16 h-14 bg-light-blue-50 z-30 ">
+               <div class="flex flex-col justify-center w-full px-20">
+               </div>
+           </div>
+           <div class="h-px w-full bg-grey-200 z-20 sticky top-14"></div>
+           <div class="w-full h-px bg-light-blue-50 z-[21] mt-[-1px]"></div>
+           <div class="flex flex-row w-full p-20 pt-0 sticky top-0">
+               <div class="copy prose prose-code:font-light prose-code:text-xs">
+                   <div>
+                       <p></p>
+                   </div>
+
+               </div>
+
+           </div>
+
+       </section>
+
+   </div>
+
+</div>
+</div>
+        </div>
+    </body>
+</html>

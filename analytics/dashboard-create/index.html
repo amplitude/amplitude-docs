@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Create, edit, and manage dashboards</title>
+        <link rel="preload" as="style" href="http://localhost/build/assets/site-3d487ba8.css" /><link rel="modulepreload" href="http://localhost/build/assets/site-4ed993c7.js" /><link rel="stylesheet" href="http://localhost/build/assets/site-3d487ba8.css" /><script type="module" src="http://localhost/build/assets/site-4ed993c7.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+        <style>
+            [x-cloak] { display: none !important; }
+        </style>
+    </head>
+    <body class="bg-gray-100 font-sans leading-normal text-gray-800">
+        <div class="mx-auto px-2 lg:min-h-screen flex flex-col items-center justify-center">
+            <style>
+   /*
+Margin and rounding are personal preferences,
+overflow-x-auto is recommended.
+*/
+pre {
+   border-radius: 0.25rem;
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+   overflow-x: auto;
+}
+
+/*
+Add some vertical padding and expand the width
+to fill its container. The horizontal padding
+comes at the line level so that background
+colors extend edge to edge.
+*/
+pre code.torchlight {
+   display: block;
+   min-width: -webkit-max-content;
+   min-width: -moz-max-content;
+   min-width: max-content;
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+}
+
+/*
+Horizontal line padding to match the vertical
+padding from the code block above.
+*/
+pre code.torchlight .line {
+   padding-left: 1rem;
+   padding-right: 1rem;
+}
+
+/*
+Push the code away from the line numbers and
+summary caret indicators.
+*/
+pre code.torchlight .line-number,
+pre code.torchlight .summary-caret {
+   margin-right: 1rem;
+}
+
+</style>
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+<div class="container prose">
+<div class="w-56 h-100 fixed left-0 top-0 bottom-0 border-solid border-r border-grey-200 hidden lg:block overflow-auto pt-10" x-data="{ open: 'Getting Started' }">
+   
+    
+    <style>
+a {
+    text-decoration: none!important;
+    font-weight: normal!important;
+}
+
+li::marker {
+    content: none!important;
+}
+
+button {
+    font-weight: bold;
+}
+
+ul.nav-level-1, ul.nav-level-2, ul.nav-level-3 {
+    list-style: none;
+    padding: 0;
+}
+
+
+
+
+</style>
+
+
+<div x-cloak x-data="{ lvl1: false, lvl2: false, lvl3: false }" class="nav-level-1">
+    <ul class="nav" style="font-size:12px">
+    
+    
+        <li>
+           <!-- lvl1: charts -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'charts' ? null : 'charts')"style="text-align:left">Charts</button>
+            
+            
+                <ul x-show="lvl1 === 'charts'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/find-the-right-chart" ">Amplitude Charts: Find the Right Chart for Your Analysis</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/chart-basics" ">Chart Basics in Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/build-charts-add-events" ">Build Charts: Add Events</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/build-charts-add-user-segments" ">Build Charts: Add User Segments</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/build-charts-modify-user-segment" ">Build Charts: Modify a User Segment</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/event-explorer" ">Event Explorer: View Event Streams in Real Time</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/review-chart-data" ">Review Chart Data with a Breakdown Table</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/charts/charts-overview" ">Charts Types</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: cohorts-and-user-behavior -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'cohorts-and-user-behavior' ? null : 'cohorts-and-user-behavior')"style="text-align:left">Cohorts and User Behavior</button>
+            
+            
+                <ul x-show="lvl1 === 'cohorts-and-user-behavior'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <button @click.prevent="lvl2 = (lvl2 === 'create-and-manage-cohorts' ? null : 'create-and-manage-cohorts')"style="text-align:left">Create and Manage Cohorts</button>
+                            
+                
+                            
+                                <ul x-show="lvl2 === 'create-and-manage-cohorts'" class="nav-level-3">
+                                    
+                                        <li>
+                                            <a href="/analytics/behavioral-cohorts" >Behavioral cohorts: Identify users with similar behaviors</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/define-cohort" >Define a new cohort</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/compare-cohorts" >Compare and manage your behavioral cohorts</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/create-cohorts" >Create cohorts via Microscope, file import, or the Segmentation module</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/track-cohort-changes" >Track changes in your cohort populations over time</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <button @click.prevent="lvl2 = (lvl2 === 'historical-count' ? null : 'historical-count')"style="text-align:left">Historical Count</button>
+                            
+                
+                            
+                                <ul x-show="lvl2 === 'historical-count'" class="nav-level-3">
+                                    
+                                        <li>
+                                            <a href="/analytics/historical-count-3" >Historical Count, part 3: Funnels and behavioral cohorts</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/historical-count-2" >Historical Count, part 2: Order of operations</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/historical-count-1" >Historical Count, part 1: Track user behavior for different instances of each user action</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: organize-your-analyses -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'organize-your-analyses' ? null : 'organize-your-analyses')"style="text-align:left">Organize your Analyses</button>
+            
+            
+                <ul x-show="lvl1 === 'organize-your-analyses'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/customize-home-page" ">Customize the Home page</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/breadcrumbs" ">Breadcrumbs: Track, organize, and share your analyses</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/search" ">Search: Find charts, dashboards, cohorts, and notebooks</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/workspace" ">Workspace: Find your charts and track your work</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <button @click.prevent="lvl2 = (lvl2 === 'dashboards' ? null : 'dashboards')"style="text-align:left">Dashboards</button>
+                            
+                
+                            
+                                <ul x-show="lvl2 === 'dashboards'" class="nav-level-3">
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-create"  style="color: green" x-effect="lvl2 = 'dashboards'; lvl1 = 'organize-your-analyses'">Create, edit, and manage dashboards</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-filter" >Filter your dashboards</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-preferences" >Change your dashboard's display preferences</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-create-template" >Turn your dashboard into a template</a>
+                                        </li>
+                                    
+                                        <li>
+                                            <a href="/analytics/dashboard-subscribe" >Subscribe to a dashboard</a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: collaborate-with-team-members -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'collaborate-with-team-members' ? null : 'collaborate-with-team-members')"style="text-align:left">Collaborate with Team Members</button>
+            
+            
+                <ul x-show="lvl1 === 'collaborate-with-team-members'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/collaborate-with-spaces" ">Collaborate on your analyses using spaces</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/notebooks" ">Notebooks: Explain important insights to teammates and stakeholders</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/templates" ">Templates: Re-use your analyses</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: share-your-work -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'share-your-work' ? null : 'share-your-work')"style="text-align:left">Share your Work</button>
+            
+            
+                <ul x-show="lvl1 === 'share-your-work'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/share-dashboards" ">Share dashboards within your company</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/share-external" ">Share charts, dashboards, and notebooks with stakeholders outside your company</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/atlassian-smart-links" ">Use Atlassian Smart Links with Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/chart-embed-notion" ">Embed Amplitude charts in Notion documents</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/integrate-miro" ">Integrate Miro with Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/integrate-slack" ">Integrate Slack with Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/google-drive-sync" ">Sync your Amplitude data to Google Drive and Sheets</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: account-level-reporting -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'account-level-reporting' ? null : 'account-level-reporting')"style="text-align:left">Account-level Reporting</button>
+            
+            
+                <ul x-show="lvl1 === 'account-level-reporting'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/account-level-reporting" ">Account-level reporting in Amplitude</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/account-level-reporting-setup" ">Set up account-level reporting</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+    
+        <li>
+           <!-- lvl1: find-and-fix-anomalies -->
+            
+            <button @click.prevent="lvl1 = (lvl1 === 'find-and-fix-anomalies' ? null : 'find-and-fix-anomalies')"style="text-align:left">Find and Fix Anomalies</button>
+            
+            
+                <ul x-show="lvl1 === 'find-and-fix-anomalies'" class="nav-level-2">
+                    
+                        <li>
+                            
+                            <a href="/analytics/anomaly-forecast" ">Anomaly + Forecast: Find anomalies in your data</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/insights" ">Insights: Spot anomalies in your metrics quickly with alerts</a>
+                            
+                
+                            
+                        </li>
+                    
+                        <li>
+                            
+                            <a href="/analytics/root-cause-analysis" ">Root Cause Analysis: Track down anomalies in your data</a>
+                            
+                
+                            
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+</ul>
+</div>
+
+    
+    
+
+</div>
+<div class="absolute top-0 left-0 lg:left-56 bottom-0 right-0">
+   <div class="w-full p-5">
+       <div class="box-border">
+
+           <div class="box-border flex flex-row flex-nowrap items-center border-solid border-b border-grey-200 h-12 px-4"
+               style="margin-left: -20px; margin-top: -20px;">
+               <div class="flex-auto mr-4 text-sm"><a href="/">Home</a></div>
+               
+               
+                <!--analytics - get-started-->
+                <div class="flex-auto mr-4 text-sm "><a href="/get-started" class="">Get Started</a></div>
+                
+
+
+               
+               
+                <!--analytics - data-->
+                <div class="flex-auto mr-4 text-sm "><a href="/data" class="">Data</a></div>
+                
+
+
+               
+               
+                <!--analytics - analytics-->
+                <div class="flex-auto mr-4 text-sm "><a href="/analytics" class="text-green-700">Analytics</a></div>
+                
+
+
+               
+               
+                <!--analytics - cdp-->
+                <div class="flex-auto mr-4 text-sm "><a href="/cdp" class="">CDP</a></div>
+                
+
+
+               
+               
+                <!--analytics - experiment-->
+                <div class="flex-auto mr-4 text-sm "><a href="/experiment" class="">Experiment</a></div>
+                
+
+
+               
+               
+                <!--analytics - admin-->
+                <div class="flex-auto mr-4 text-sm "><a href="/admin" class="">Admin</a></div>
+                
+
+
+               
+               
+               <div class="flex-auto mr-4 text-sm" x-data="{ open: false }"  @mouseleave="open = false"><button @click.prevent @mouseover="open = true" style="font-weight:normal">Developers</button>
+                <div x-show="open" class="mt-4 absolute border border-2 border-grey-500 top-4 bg-white w-24 p-4">
+                    
+                    <a href="/sdks">SDKs</a> <br />
+                    
+                    <a href="/apis">APIs</a> <br />
+                    
+                </div>
+                </div>
+                
+
+
+               
+           </div>
+       </div>
+   </div>
+   <div class="w-full">
+       <section class="w-full flex flex-col items-center">
+           <div class="flex flex-row flex-nowrap w-full text-sm pl-8 text-gray-400	">
+            
+            <div class="mr-2 text-s text-gray-500"><a class="" href="/analytics">Analytics</a></div>
+            <span class="mr-2">/</span><div class="mr-2 text-s text-gray-500"><a class="font-bold" href="/analytics/dashboard-create">Create, edit, and manage dashboards</a></div>
+            
+            
+        </div>
+           <div class="flex flex-row w-full p-8">
+               <div class="copy">
+                   <div class="flex flex-row items-start justify-between">
+                     <h1>Create, edit, and manage dashboards</h1>
+                     <span class="ml-4 text-xs text-gray-300 align-middle"><a href="http://localhost/cp/collections/analytics/entries/19c03845-d834-4777-af7c-904a6fa82cd7" target="_blank">Edit</a></span>
+                   </div>
+                   <div class="max-w-prose"><h4>This article will help you:</h4>
+<ul>
+<li>Create and edit dashboards</li>
+<li>Comment on your dashboards</li>
+<li>Manage your dashboards</li>
+</ul>
+<p>With dashboards, you can collect all your relevant charts into a single, convenient view. You can save multiple reports into a single page view, rather than viewing each individual report in isolation. You can even save cross-project charts into the same dashboard, for side-by-side comparisons.  </p>
+<p><strong>NOTE:</strong> You may also find <a href="https://academy.amplitude.com/use-dashboards-and-starter-templates-to-monitor-important-metrics/1372313/scorm/w84tdkh3z11p">this Academy course</a> on dashboards helpful.</p>
+<h2>Before you begin</h2>
+<p>Dashboards are available to all all Amplitude customers. However, certain features are only available for customers on <a href="https://help.amplitude.com/hc/en-us/articles/360053028152">Scholarship</a>, <a href="https://amplitude.com/pricing">Growth and Enterprise</a> plans:</p>
+<ul>
+<li>
+<ul>
+<li>Adding behavioral cohorts to a dashboard
+<ul>
+<li>Dashboard date range (bulk filter)</li>
+<li>Dashboard user segment (bulk filter)</li>
+<li>Comment</li>
+<li>Adding target metrics</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>You'll have to save your charts before adding them to a dashboard. Read more about creating and saving charts <a href="/get-started/create-a-chart">here</a>.</p>
+<p>Also, be aware that <a href="/analytics/charts/journeys/journeys-understand-paths">Pathfinder Users</a> is currently not supported by dashboards, and that customers on Starter plans are limited to 50 dashboard subscriptions (i.e., they can subscribe to 50 different dashboards).</p>
+<p>You may also find the following dashboards articles useful:</p>
+<ul>
+<li>
+<a href="/analytics/dashboard-preferences">Change your dashboard's display preferences</a>
+</li>
+<li>
+<a href="/analytics/dashboard-filter">Filter your dashboards</a>
+</li>
+<li>
+<a href="/analytics/dashboard-subscribe">Subscribe to a dashboard</a>
+</li>
+<li>
+<a href="/analytics/dashboard-create-template">Turn your dashboard into a template</a>
+</li>
+</ul>
+<h2>Create a dashboard</h2>
+<p>To create a dashboard, follow these steps:</p>
+<ol>
+<li>Navigate to <em>Create New &gt; Report &gt; Dashboard</em> to create a dashboard from scratch. Alternatively, click <em>+ Add to</em> from within an existing chart and select <em>+ Create a new dashboard</em> from the menu.</li>
+<li>Type the name of your new dashboard where it reads <em>Untitled Dashboard</em>. Amplitude will save your new, still-empty dashboard.</li>
+<li>To add content to your dashboard, click <em>Add Content</em> and select the type of content you want to include from the drop-down. Then select the specific items from the panel that opens on the right.</li>
+</ol>
+<p><strong>NOTE:</strong> You can also build your dashboard from an existing template, by clicking <em>Start With A Template</em> and choosing from the drop-down list.</p>
+<h2>Edit a dashboard</h2>
+<p>If you're the owner or co-owner of a dashboard, you'll be able to make edits to it. These include adding charts or cohorts to the dashboard and designating the dashboard as an official source of truth within your organization.</p>
+<h3>Add charts to your dashboard</h3>
+<p>You can add charts to your dashboard either from inside the dashboard, or from within the chart itself. To populate your new dashboard with charts <strong>from within your dashboard</strong>, follow these steps:</p>
+<ol>
+<li>From within the dashboard, click <em>+ Add Content</em> and select the type of content you want to include from the drop-down. Then select the specific items from the panel that opens on the right.</li>
+<li>Repeat step 1 until you've added all the content you need for your dashboard.</li>
+</ol>
+<h3>Add cohorts to your dashboard</h3>
+<p>You can add a <a href="/analytics/behavioral-cohorts">behavioral cohort</a> to a dashboard. This will display the number of users in a cohort and when it was last computed. </p>
+<p><strong>NOTE:</strong> This feature is only available to customers on a Scholarship, Growth, or Enterprise plan.</p>
+<p>To add a cohort to your dashboard, follow these steps:</p>
+<ol>
+<li>Save your cohort and click <em>+ Add to.</em>
+</li>
+<li>Select the dashboard you'd like to add this cohort to from the list.</li>
+</ol>
+<p><strong>NOTE:</strong> You can also add a cohort to your dashboard from within the dashboard itself: just select <em>Add Chart or Cohort</em> from the <em>More</em> menu.</p>
+<p>You can view any cohort on your dashboard by current cohort population, or the cohort population over time. To switch to viewing the cohort population over time, click •••. Then select <em>Population Over Time</em>.</p>
+<p><strong>NOTE:</strong> For any chart or query that segments on a cohort, the segmented cohort will automatically recompute itself whenever the chart is generated. Cohorts added to dashboards will also refresh.</p>
+<h3>Designate your dashboard as &quot;official&quot;</h3>
+<p>In many organizations, it can be challenging for Amplitude users to identify the charts and dashboards they can rely on as a “source of truth”—in other words, dashboards that can be trusted to be accurate, up to date, and relevant. This is especially true in analysis-heavy organizations, where source-of-truth content can be overwhelmed by the sheer volume of ad hoc analyses generated. By making this content easier to find and reference, Amplitude’s Official Dashboards feature can help newer users find their footing more quickly, and ramp up to generating productive analyses sooner.</p>
+<p>By designating a dashboard as “official,” you’re telling all Amplitude users in your organization that they can trust the content they find on it to be current, accurate, and vetted. It’s an excellent tool for tracking and broadcasting company-wide KPIs, team-specific KPIs, final analysis for a feature or experiment, or for onboarding new employees and team members.</p>
+<p>This feature is only available for users on Growth, Scholarship, and Enterprise plans.</p>
+<p><strong>NOTE</strong>: Only an admin or manager can designate an official dashboard.</p>
+<p>To label a dashboard as official, follow these steps:</p>
+<ol>
+<li>Open the dashboard you’d like to make official.</li>
+<li>Hover over the <img src="/output/img/analytics/official_icon.png" alt="official_icon.png" /> icon next to the dashboard’s title.</li>
+<li>In the popup that appears, click <em>Confirm</em>.</li>
+</ol>
+<p>You will now be a co-owner of the dashboard; this will include editing privileges. If you are not the original owner of the dashboard, that person will receive a notification.</p>
+<p><strong>NOTE:</strong> Removing a dashboard’s official designation works the same way.</p>
+<h2>Comment on your dashboard</h2>
+<p>You can start a discussion around your analyses right alongside your charts on a dashboard. This is useful for teams to discuss and iterate on their findings. </p>
+<p><strong>NOTE:</strong> This feature is only available to customers on a Scholarship, Growth, or Enterprise plan.</p>
+<p>To comment, click <em>More &gt; Comment</em>. You can also mention colleagues by typing their name after &quot;@&quot;. They will receive an Amplitude notification.</p>
+<p>You can also receive a notification via Slack. More information on how to integrate Slack can be found <a href="/analytics/integrate-slack">here</a>.  </p>
+<h2>Copy, download, export, refresh, or archive your dashboard</h2>
+<p>The <em>More</em> menu contains several administrative functions not discussed above:</p>
+<p><img src="/output/img/analytics/dashboards_final_section_more_menu_image.png" alt="dashboards_final_section_more_menu_image.png" /></p>
+<ul>
+<li>Refreshing all charts will update all charts and cohorts included in your dashboard, so that it displays the most up-to-date information.</li>
+<li>When downloading a .CSV of a chart, the downloaded file will contain a summary of the chart, the dashboard URL, and all events, segments, and user properties.</li>
+<li>When exporting your dashboards, you can choose between .PDF and .PNG formats.</li>
+<li>When copying a dashboard, you will be the owner of the copied version, regardless of whether you own the original version.</li>
+<li>Dashboards cannot be deleted, but they can be archived. You should archive a dashboard when it is no longer supported or used. Users can still search for archived charts in the Search tab. Archiving a dashboard will not archive the charts within the dashboard.</li>
+</ul>
+<h2>Dashboard cache times</h2>
+<p>Amplitude caches chart results. The cache time is dependent on the interval (daily, weekly, monthly) and the length of time covered. Cache times for charts can be found <a href="/analytics/charts/chart-basics">here</a>. Cache times for dashboards and CSV downloads are twice as long as the times listed.</p>
+<p>To manually refresh all charts and cohorts on a dashboard, click <em>More &gt; Refresh Dashboard</em>. </p>
+</div>
+                   
+                   
+
+
+                </div>
+               </div>
+           </div>
+
+       </section>
+
+       
+
+       <section class="w-full flex flex-col items-center template__section">
+           <div class="divider"></div>
+           <div class="w-full flex justify-center top-0 sticky mt-16 h-14 bg-light-blue-50 z-30 ">
+               <div class="flex flex-col justify-center w-full px-20">
+               </div>
+           </div>
+           <div class="h-px w-full bg-grey-200 z-20 sticky top-14"></div>
+           <div class="w-full h-px bg-light-blue-50 z-[21] mt-[-1px]"></div>
+           <div class="flex flex-row w-full p-20 pt-0 sticky top-0">
+               <div class="copy prose prose-code:font-light prose-code:text-xs">
+                   <div>
+                       <p></p>
+                   </div>
+
+               </div>
+
+           </div>
+
+       </section>
+
+   </div>
+
+</div>
+</div>
+        </div>
+    </body>
+</html>
