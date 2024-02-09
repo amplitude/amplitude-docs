@@ -39,7 +39,7 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
-        path: ./storage/app/static
+        path: /storage/app/static
   
   deploy:
     # Add a dependency to the build job
