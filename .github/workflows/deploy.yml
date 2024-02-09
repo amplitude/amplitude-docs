@@ -1,0 +1,43 @@
+name: Build and Deploy Statamic Site
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2' # Adjust as needed
+        extensions: bcmath, ctype, exif, json, mbstring, openssl, pdo, tokenizer, xml, gd
+        tools: composer, php-cs-fixer
+
+    - name: Install Dependencies
+      run: composer install --no-interaction --prefer-dist --optimize-autoloader
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14' # Specify the Node.js version you need
+
+    - name: Install NPM Dependencies
+      run: npm install
+
+    - name: Build Assets
+      run: npm run build # Replace "build" with your front-end build script if it's named differently
+
+    - name: Build Static Site
+      run: php please ssg:generate
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./storage/app/static
