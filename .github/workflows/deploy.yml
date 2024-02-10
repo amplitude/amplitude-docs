@@ -31,10 +31,10 @@ jobs:
       run: npm install
 
     - name: Build Assets
-      run: npm run build # Replace "build" with your front-end build script if it's named differently
+      run: npm run build 
 
     - name: Build Static Site
-      run: php please ssg:generate
+      run: php please ssg:generate --workers=4
     
     - name: Fix permissions
       run: |
