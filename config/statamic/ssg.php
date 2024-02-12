@@ -40,7 +40,7 @@ return [
 
     'copy' => [
         public_path('build') => 'build',
-        publick_path('output') => 'output'
+        public_path('output') => 'output'
     ],
 
     'symlinks' => [
