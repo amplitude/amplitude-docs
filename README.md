@@ -6,7 +6,13 @@ This is a working repository for the next version of Amplitude docs.
 
 This site uses the [Statamic](https://statamic.com) CMS. By virtue of being a flat-file by default CMS, Statamic is easy to work with on your local machine, provided you have the correct tooling installed.
 
-### Github
+This site requires the following:
+- GitHub access
+- Laravel Herd
+- A terminal app
+- A code editor (VS Code)
+
+### GitHub
 
 You can use whichever method is more comfortable to interact with the repository, command line or [GitHub Desktop](https://desktop.github.com/). Once you have access to the `amplitude/amplitude-docs` repository, clone the repository locally to your machine.
 
