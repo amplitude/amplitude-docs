@@ -18,7 +18,8 @@
         "spatie/fork": "^1.2",
         "statamic/cms": "^4.0",
         "statamic/ssg": "^2.2",
-        "torchlight/torchlight-commonmark": "^0.5.5"
+        "torchlight/torchlight-commonmark": "^0.5.5",
+        "ueberdosis/commonmark-hint-extension": "^0.1.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.8.1",

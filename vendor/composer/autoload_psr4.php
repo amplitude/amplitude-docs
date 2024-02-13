@@ -11,6 +11,7 @@ return array(
     'Wilderborn\\Partyline\\' => array($vendorDir . '/wilderborn/partyline/src'),
     'Whoops\\' => array($vendorDir . '/filp/whoops/src/Whoops'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
+    'Ueberdosis\\CommonMark\\' => array($vendorDir . '/ueberdosis/commonmark-hint-extension/src'),
     'Torchlight\\Commonmark\\' => array($vendorDir . '/torchlight/torchlight-commonmark/src'),
     'Torchlight\\' => array($vendorDir . '/torchlight/torchlight-laravel/src'),
     'Tiptap\\' => array($vendorDir . '/ueberdosis/tiptap-php/src'),
