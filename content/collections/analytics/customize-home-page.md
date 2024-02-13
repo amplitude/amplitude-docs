@@ -3,6 +3,9 @@ id: b4a5295b-e1dd-4c26-89cc-e8f1ed51e0a1
 blueprint: analytic
 title: 'Customize the Home page'
 source: 'https://help.amplitude.com/hc/en-us/articles/21150695006747-Customize-the-Home-page'
+author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1707852421
 ---
 #### This article will help you:
 
@@ -23,4 +26,6 @@ You must be an admin or a manager of a project to customize the Home page experi
   
 ![](/output/img/analytics/21150680913947)
 
-**NOTE:** Personal customization of a user’s Home page always takes precedence over any admin- or manager-enabled defaults.
+:::note Home page precedence
+Personal customization of a user’s Home page always takes precedence over any admin- or manager-enabled defaults.
+:::

@@ -153,6 +153,10 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
             'Whoops\\' => 7,
             'Webmozart\\Assert\\' => 17,
         ),
+        'U' => 
+        array (
+            'Ueberdosis\\CommonMark\\' => 22,
+        ),
         'T' => 
         array (
             'Torchlight\\Commonmark\\' => 22,
@@ -346,6 +350,10 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'Ueberdosis\\CommonMark\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ueberdosis/commonmark-hint-extension/src',
         ),
         'Torchlight\\Commonmark\\' => 
         array (
@@ -9563,6 +9571,11 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
         'Torchlight\\PostProcessors\\SimpleSwapProcessor' => __DIR__ . '/..' . '/torchlight/torchlight-laravel/src/PostProcessors/SimpleSwapProcessor.php',
         'Torchlight\\Torchlight' => __DIR__ . '/..' . '/torchlight/torchlight-laravel/src/Torchlight.php',
         'Torchlight\\TorchlightServiceProvider' => __DIR__ . '/..' . '/torchlight/torchlight-laravel/src/TorchlightServiceProvider.php',
+        'Ueberdosis\\CommonMark\\Hint' => __DIR__ . '/..' . '/ueberdosis/commonmark-hint-extension/src/Hint.php',
+        'Ueberdosis\\CommonMark\\HintExtension' => __DIR__ . '/..' . '/ueberdosis/commonmark-hint-extension/src/HintExtension.php',
+        'Ueberdosis\\CommonMark\\HintParser' => __DIR__ . '/..' . '/ueberdosis/commonmark-hint-extension/src/HintParser.php',
+        'Ueberdosis\\CommonMark\\HintRenderer' => __DIR__ . '/..' . '/ueberdosis/commonmark-hint-extension/src/HintRenderer.php',
+        'Ueberdosis\\CommonMark\\HintStartParser' => __DIR__ . '/..' . '/ueberdosis/commonmark-hint-extension/src/HintStartParser.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',

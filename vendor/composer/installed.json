@@ -11521,6 +11521,68 @@
             "install-path": "../torchlight/torchlight-laravel"
         },
         {
+            "name": "ueberdosis/commonmark-hint-extension",
+            "version": "0.1.0",
+            "version_normalized": "0.1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ueberdosis/commonmark-hint-extension.git",
+                "reference": "2f27c95862486f88730fd62a6b94a36a00b5149e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ueberdosis/commonmark-hint-extension/zipball/2f27c95862486f88730fd62a6b94a36a00b5149e",
+                "reference": "2f27c95862486f88730fd62a6b94a36a00b5149e",
+                "shasum": ""
+            },
+            "require": {
+                "league/commonmark": "^2.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "phpunit/phpunit": "^9.5",
+                "vimeo/psalm": "^4.8"
+            },
+            "time": "2021-08-26T11:50:59+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Ueberdosis\\CommonMark\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hans Pagel",
+                    "email": "hans.pagel@ueber.io",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A hint extension for league/commonmark",
+            "homepage": "https://github.com/ueberdosis/commonmark-hint-extension",
+            "keywords": [
+                "commonmark",
+                "commonmark-hint-extension",
+                "markdown"
+            ],
+            "support": {
+                "issues": "https://github.com/ueberdosis/commonmark-hint-extension/issues",
+                "source": "https://github.com/ueberdosis/commonmark-hint-extension/tree/0.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/:vendor_name",
+                    "type": "github"
+                }
+            ],
+            "install-path": "../ueberdosis/commonmark-hint-extension"
+        },
+        {
             "name": "ueberdosis/tiptap-php",
             "version": "1.3.0",
             "version_normalized": "1.3.0.0",

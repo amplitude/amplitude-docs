@@ -1,0 +1,49 @@
+{
+    "name": "ueberdosis/commonmark-hint-extension",
+    "description": "A hint extension for league/commonmark",
+    "keywords": [
+        "markdown",
+        "commonmark",
+        "commonmark-hint-extension"
+    ],
+    "homepage": "https://github.com/ueberdosis/commonmark-hint-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hans Pagel",
+            "email": "hans.pagel@ueber.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "league/commonmark": "^2.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "phpunit/phpunit": "^9.5",
+        "vimeo/psalm": "^4.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ueberdosis\\CommonMark\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ueberdosis\\CommonMark\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "psalm": "vendor/bin/psalm",
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes",
+        "test-watch": "nodemon --exec './vendor/bin/phpunit || exit 1' --ext php"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

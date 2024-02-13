@@ -7,6 +7,7 @@ use Statamic\Statamic;
 use Statamic\Facades\Markdown;
 use League\CommonMark\MarkdownConverter;
 use Torchlight\Commonmark\V2\TorchlightExtension;
+use Ueberdosis\CommonMark\HintExtension;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Markdown::addExtensions(function () {
-            return [new TorchlightExtension];
+            return [new TorchlightExtension, new HintExtension];
         });
     }
 }

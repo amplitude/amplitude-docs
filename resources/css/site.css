@@ -3,3 +3,16 @@
 @import "tailwindcss/utilities";
 
 /* This is all you. */
+.hint.note {
+    border: 1px solid blue;
+    padding: 10px;
+}
+
+h2.hint-title {
+    margin-top: auto;
+    font-size: medium;
+}
+
+p.hint-content {
+    font-size: small;
+}
