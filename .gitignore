@@ -67,3 +67,5 @@ node_modules/
 
 # users
 users/
+
+public/hot

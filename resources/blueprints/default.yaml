@@ -4,6 +4,7 @@ fields:
     handle: content
     field:
       type: markdown
+      antlers: true
       display: Content
       localizable: true
   -
