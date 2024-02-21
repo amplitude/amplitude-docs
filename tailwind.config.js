@@ -10,6 +10,7 @@ export default {
 
     theme: {
         colors:{
+            'white': '#ffffff',
             'amp-blue': {
                 DEFAULT: '#1e61f0',
                 100: '#031233',

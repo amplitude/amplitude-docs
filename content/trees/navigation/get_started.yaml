@@ -51,6 +51,25 @@ tree:
         id: 24bd0c80-0269-41b1-94e3-3cbe085d8975
         entry: 7d2ddd8b-26ba-4c9f-a201-b17179f01e02
   -
+    id: 8635ead6-f80e-4f53-9c45-9ed368a0383e
+    title: 'Get Value from Amplitude'
+    children:
+      -
+        id: 5a2e1b36-e5d0-401e-b02e-1ecc9b2eff34
+        entry: a4bd5ca3-8ce3-45b0-b57b-5578695005f6
+      -
+        id: 07bc2774-dfc6-47d1-a10a-1143b4818eb8
+        entry: 6351af1c-e7e9-4488-bbe7-34648487d173
+      -
+        id: 1319446c-4335-4013-a8e5-fe3ead82ed2e
+        entry: 3bed8b1f-3e50-4a2f-aaf9-148e3663fc89
+      -
+        id: 69de8dd4-789d-4d00-b5c1-459143f6e2e4
+        entry: 07fcc029-bad9-40ad-9841-f288943fae48
+      -
+        id: 49bd798c-0033-4d79-9689-470f470db258
+        entry: d79e04a5-67cb-4278-9fc1-5f924d78ffd3
+  -
     id: c87a6d6a-8754-48ec-90d2-a2e0fc39a569
     title: 'Additional Reading'
     children:
