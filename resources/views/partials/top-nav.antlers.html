@@ -4,7 +4,7 @@
                {{nav:collection:sections sort="order"}}
                {{if children}}
                <div class="flex-auto mr-4 text-sm" x-data="{ open: false }"  @mouseleave="open = false"><button @click.prevent @mouseover="open = true" style="font-weight:normal">{{title}}</button>
-                <div x-show="open" class="mt-4 absolute border border-2 border-grey-500 top-4 bg-white w-24 p-4">
+                <div x-cloak x-show="open" class="mt-4 absolute border-2 border-grey-500 top-4 bg-white w-24 p-4">
                     {{children }}
                     <a href="{{url}}">{{title}}</a> <br />
                     {{ /children }}
