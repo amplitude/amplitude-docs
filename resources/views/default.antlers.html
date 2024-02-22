@@ -131,7 +131,8 @@ pre code.torchlight .summary-caret {
                      <h1>{{title}}</h1>
                      {{ if environment == 'local' }}<span class="ml-4 text-xs text-gray-300 align-middle"><a href="{{edit_url}}" target="_blank">Edit</a></span>{{/if}}
                    </div>
-                   <div class="max-w-prose">{{content | markdown}}
+                   <div class="prose prose-a:text-amp-blue-300 prose-ol:list-decimal prose-ol:list-outside max-w-prose">
+                    {{content | markdown}}
 
 
 
@@ -155,29 +156,6 @@ pre code.torchlight .summary-caret {
            </div>
 
        </section>
-
-       {{# Data hookup starts here #}}
-
-       <section class="w-full flex flex-col items-center template__section">
-           <div class="divider"></div>
-           <div class="w-full flex justify-center top-0 sticky mt-16 h-14 bg-light-blue-50 z-30 ">
-               <div class="flex flex-col justify-center w-full px-20">
-               </div>
-           </div>
-           <div class="h-px w-full bg-grey-200 z-20 sticky top-14"></div>
-           <div class="w-full h-px bg-light-blue-50 z-[21] mt-[-1px]"></div>
-           <div class="flex flex-row w-full p-20 pt-0 sticky top-0">
-               <div class="copy prose prose-code:font-light prose-code:text-xs">
-                   <div>
-                       <p>{{description | markdown}}</p>
-                   </div>
-
-               </div>
-
-           </div>
-
-       </section>
-
    </div>
 
 </div>
