@@ -3,7 +3,7 @@
 @import "tailwindcss/utilities";
 
 /* This is all you. */
-.hint.note {
+.hint.info {
     border: 1px solid blue;
     padding: 10px;
 }
@@ -15,4 +15,8 @@ h2.hint-title {
 
 p.hint-content {
     font-size: small;
+}
+
+li::marker {
+    color: red;
 }
