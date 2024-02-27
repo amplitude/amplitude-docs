@@ -23,7 +23,7 @@ If you’re the first person in your company to register for an Amplitude accoun
 
 Before you can create an organization, you will need to [create an Amplitude account](https://amplitude.com/get-started) and verify your email. Once you’ve done that, just follow these steps:
 
-1. Navigate to ![gear_icon_for_settings.png](/output/img/get-started/gear_icon_for_settings.png) *> Create Organization*.
+1. Navigate to ![gear_icon_for_settings.png](/output/img/get-started/gear_icon_for_settings.png){.inline} > Create Organization.
 2. In the *Create Organization* modal, type in the name you want to give your Amplitude organization. As stated above, it should be the same as your company’s name.
 
 ![Create_Organization.png](/output/img/get-started/Create_Organization.png)
@@ -38,10 +38,3 @@ If you wish to change your organization name or URL, please send a request from 
 Check out [this article to learn about managing your organization](/admin/account-management/manage-orgs-projects).
 
 Now that you’ve created your Amplitude organization, it’s time to [create your first project](/get-started/create-project).
-
-1. Here is one thing
-2. Here is another
-
-
-- This list is unordered'
-- and another

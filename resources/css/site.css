@@ -20,3 +20,7 @@ p.hint-content {
 li::marker {
     color: red;
 }
+
+.max-w-prose {
+    max-width: 75ch;
+}
