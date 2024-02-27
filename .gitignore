@@ -69,4 +69,4 @@ node_modules/
 users/
 
 public/hot
-.DS_Store
+**/.DS_Store
