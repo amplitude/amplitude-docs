@@ -28,7 +28,7 @@ ul.nav li::marker {
         <li>
            <!-- lvl1: {{lvl1_parent}} -->
             {{ if url }}
-            <a href="{{ url }}" {{if is_current }} style="color: green" x-effect="lvl1 = '{{parent:title | slugify}}"{{/if}}>{{ title }}</a>
+            <a href="{{ url }}" {{if is_current }} style="color: green" x-effect="lvl1 = '{{parent:title | slugify}}'"{{/if}}>{{ title }}</a>
             {{else}}
             <button @click.prevent="lvl1 = (lvl1 === '{{title | slugify}}' ? null : '{{title | slugify}}')"style="text-align:left">{{ title }}</button>
             {{/if }}
