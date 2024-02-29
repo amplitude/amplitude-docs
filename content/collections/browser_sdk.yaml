@@ -1,0 +1,15 @@
+title: 'Browser SDK'
+template: default
+layout: layout
+mount: d97ddfe8-6b08-4dce-91dc-53d41ef7eb0a
+revisions: false
+route: '/sdk-catalog/browser/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true

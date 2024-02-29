@@ -1,0 +1,163 @@
+title: 'Browser SDK'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        display: Metadata
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: icon
+            field:
+              options:
+                js: 'Javascript / Typescript'
+                node: Node.js
+                android: 'Kotlin (Android)'
+                ios: iOS
+                java: Java
+                react-native: 'React Native'
+                flutter: Flutter
+                unity: Unity
+                unreal: Unreal
+                go: Go
+              taggable: false
+              push_tags: false
+              multiple: false
+              clearable: false
+              searchable: true
+              cast_booleans: false
+              type: select
+              display: icon
+              instructions: 'Select the platform or language to set the icon'
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: github_url
+            field:
+              input_type: url
+              placeholder: 'https://github.com/amplitude/'
+              antlers: false
+              type: text
+              display: 'Github URL'
+              instructions: 'Enter the URL to the GitHub repository for this API.'
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: package_manager_url
+            field:
+              input_type: url
+              antlers: false
+              type: text
+              display: 'Package Manager URL'
+              instructions: 'Enter the URL, if applicable, to the site with details about this SDK package. For example, pypi.org, npmjs.com, or bundlephobia.com'
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: api_reference
+            field:
+              input_type: url
+              antlers: false
+              type: text
+              display: 'API Reference'
+              instructions: 'Enter the URL, if applicable, to the page with references to the API'
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: examples_url
+            field:
+              input_type: url
+              antlers: false
+              type: text
+              display: 'Examples URL'
+              instructions: 'Enter the URL, if applicable, to the page or repository with implementation examples'
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: shield_io_url
+            field:
+              input_type: url
+              antlers: false
+              type: text
+              display: 'Shield.io URL'
+              instructions: 'Enter the URL, if applicable, shield.io image for this SDK.'
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: releases_url
+            field:
+              input_type: url
+              placeholder: 'https://github.com/amplitude/'
+              antlers: false
+              type: text
+              display: 'Releases URL'
+              instructions: 'Enter the URL to the GitHub releases for this SDK.'
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+      -
+        fields:
+          -
+            handle: content
+            field:
+              type: markdown
+              antlers: true
+              display: Content
+              localizable: true
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: article_parent
+            field:
+              mode: default
+              create: true
+              type: entries
+              display: 'Article Parent'
+              instructions: 'Specify this article''s "parent."'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
