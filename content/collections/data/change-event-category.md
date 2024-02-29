@@ -1,6 +1,18 @@
 ---
+title: "Change an event’s category"
+source: "https://help.amplitude.com/hc/en-us/articles/17050453062811-Change-an-event-s-category"
 id: ea221b5f-e025-4904-9343-245bafb90b65
-blueprint: data
-title: "Change an Event's Category"
-source: 'https://help.amplitude.com/hc/en-us/articles/17050453062811-Change-an-event-s-category'
 ---
+
+#### This article will help you:
+
+* Change the category of an event in Amplitude Data
+
+You can update an event type's category directly from the *Events* tab. To do so, follow these steps:
+
+1. Click the checkbox next to the event name.
+2. From the *Categorize* drop-down, select the category to which this event should belong.
+
+**NOTE:** This only applies to **active** events that are **included in your tracking plan**. It also **does not** apply to custom events.
+
+You can also change the event's category from the *Category* column in the *Events* table or from inside its right-hand fly-out panel. From the *Events* table, change the status from the *Category* column's drop-down menu. Click the event name to open its *Details* panel, then navigate to *Category* and select the new category from the drop-down menu.
