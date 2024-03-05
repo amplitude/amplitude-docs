@@ -98,7 +98,7 @@ pre code.torchlight .summary-caret {
 
 
 <div class="container prose">
-<div class="w-56 h-100 fixed left-0 top-0 bottom-0 border-solid border-r border-grey-200 hidden lg:block overflow-auto pt-10" x-data="{ open: 'Getting Started' }">
+<div class="w-56 h-100 fixed left-0 top-0 bottom-0 border-solid border-r border-grey-200 hidden lg:block overflow-auto pt-10">
    {{ if segment_1}}
     {{ if nav_type }}
     {{partial:side-nav-charts :nav_title="nav_title"}}
@@ -132,6 +132,32 @@ pre code.torchlight .summary-caret {
                      {{ if environment == 'local' }}<span class="ml-4 text-xs text-gray-300 align-middle"><a href="{{edit_url}}" target="_blank">Edit</a></span>{{/if}}
                    </div>
                    <div class="prose prose-a:text-amp-blue-300 prose-ol:list-decimal prose-ol:list-outside prose-pre:bg-[#fafafa] prose-table:w-1/2 max-w-prose">
+                    {{if related_articles}}
+                    <div class="border rounded-md border-dashed border-amp-light-purple-500 px-4">
+                        <p class="font-bold">Related Articles:</p>
+                        <ul>
+                            {{related_articles}}
+                            <li><a href="{{url}}">{{title}}</a></li>
+                            {{/related_articles}}
+                        </ul>
+                        </div>
+
+                    {{/if }}
+                    
+                    {{if goals}}
+                    <div class="border rounded-md border-dashed border-amp-light-purple-500  px-4 mt-4">
+                        <p class="font-bold">This article will help you:</p>
+                        <ul>
+                            {{goals}}
+                            <li>{{value}}</li>
+                            {{/goals}}
+                        </ul>
+                        
+
+
+                    </div>
+                    {{/if}}
+                    
                     {{content | markdown}}
 
                    </div>
