@@ -1,0 +1,171 @@
+<style>
+    /*
+ Margin and rounding are personal preferences,
+ overflow-x-auto is recommended.
+ */
+ pre {
+    border-radius: 0.25rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    overflow-x: auto;
+ }
+ 
+ /*
+ Add some vertical padding and expand the width
+ to fill its container. The horizontal padding
+ comes at the line level so that background
+ colors extend edge to edge.
+ */
+ pre code.torchlight {
+    display: block;
+    min-width: -webkit-max-content;
+    min-width: -moz-max-content;
+    min-width: max-content;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+ }
+ 
+ /*
+ Horizontal line padding to match the vertical
+ padding from the code block above.
+ */
+ pre code.torchlight .line {
+    padding-left: 1rem;
+    padding-right: 1rem;
+ }
+ 
+ /*
+ Push the code away from the line numbers and
+ summary caret indicators.
+ */
+ pre code.torchlight .line-number,
+ pre code.torchlight .summary-caret {
+    margin-right: 1rem;
+ }
+ 
+ </style>
+ {{unless nav_type}}
+     {{if segment_1 == ""}}
+     {{nav_title = ""}}
+     {{/if}}
+ 
+     {{if segment_1 == "get-started-with-amplitude" || "migration"}}
+     {{nav_title = "get_started"}}
+     {{/if}}
+     {{if segment_1 == "data"}}
+     {{nav_title = "data"}}
+     {{/if}}
+     {{if segment_1 == "experiment"}}
+     {{nav_title = "experiment"}}
+     {{/if}}
+     {{if segment_1 == "analytics"}}
+     {{nav_title = "analytics"}}
+     {{/if}}
+     {{if segment_1 == "admin"}}
+     {{nav_title = "admin"}}
+     {{/if}}
+     {{ if segment_1 == "sdks" }}
+     {{nav_title = "developers" }}
+     {{/if}}
+     {{ if segment_1 == "instrumentation" }}
+     {{nav_title = "developers" }}
+     {{/if}}
+     {{ if segment_1 == "experiment-sdks" }}
+     {{nav_title = "developers" }}
+     {{/if}}
+     {{ if segment_1 == "api" }}
+     {{nav_title = "apis" }}
+     {{/if}}
+     {{ if segment_1 == "apis" }}
+     {{nav_title = "apis" }}
+     {{/if}}
+     {{ if segment_1 == "experiment-apis" }}
+     {{nav_title = "apis" }}
+     {{/if}}
+     {{if segment_2 == "destination-catalog"}}
+     {{nav_title = "destination_catalog"}}
+     {{/if}}
+     {{if segment_1 == "cdp"}}
+     {{nav_title = "cdp"}}
+     {{/if}}
+     {{if segment_2 == "source-catalog"}}
+     {{nav_title = "source_catalog"}}
+     {{/if}}
+ {{else}}
+ {{nav_title = nav_type}}
+ {{/unless}}
+ 
+ 
+ 
+ <div class="container prose">
+ <div class="w-56 h-100 fixed left-0 top-0 bottom-0 border-solid border-r border-grey-200 hidden lg:block overflow-auto pt-10" x-data="{ open: 'Getting Started' }">
+    {{ if segment_1}}
+     {{ if nav_type }}
+     {{partial:side-nav-charts :nav_title="nav_title"}}
+     {{else}}
+     {{partial:side-nav :nav_title="nav_title"}}
+     {{/if}}
+     {{/if}}
+ 
+ </div>
+ <div class="absolute top-0 left-0 lg:left-56 bottom-0 right-0">
+    <div class="w-full p-5">
+        <div class="box-border">
+ 
+            {{partial:top-nav}}
+        </div>
+    </div>
+    <div class="w-full">
+        <section class="w-full flex flex-col items-center">
+            <div class="flex flex-row flex-nowrap w-full text-sm pl-8 text-gray-400	">
+             {{if segment_1}}
+             {{nav:breadcrumbs include_home="false"}}
+             <div class="mr-2 text-s text-gray-500"><a class="{{if is_current}}font-bold{{/if}}" href="{{url}}">{{title}}</a></div>
+             {{if !is_current}}<span class="mr-2">/</span>{{/if}}
+             {{/nav:breadcrumbs }}
+             {{/if}}
+         </div>
+            <div class="flex flex-row w-full p-8">
+                <div class="copy w-full">
+                    <div class="flex flex-row items-start justify-between">
+                      <h1>{{title}}</h1>
+                      {{ if environment == 'local' }}<span class="ml-4 text-xs text-gray-300 align-middle"><a href="{{edit_url}}" target="_blank">Edit</a></span>{{/if}}
+                    </div>
+                        
+                        <div class="flex flex-wrap gap-4 w-full">
+
+
+                            {{collection from="browser_sdk" article_type:is="core" sort="order" }}
+                            <div class="flex-1 basis-80 border grow-0 rounded p-4">
+                                <span class="text-xs my-0">{{sdk_status}}</span> 
+                                <a href="{{url}}"><h2 class="text-md my-0">{{title}}</h2></a>
+                                <div class="inline"><img class="my-0 inline" src="{{shields_io_badge}}" alt="" srcset="" />{{supported_languages}}<img class="w-4 inline mx-1 my-0" src="/assets/icons/{{value}}.svg" />{{/supported_languages}}</div>
+                                <ul class="text-sm">
+                                    <li><a href="{{github_link}}" target="_blank">GitHub</a></li>
+                                    <li><a href="{{bundle_url}}" target="_blank">NPM</a></li>
+                                    <li><a href="{{releases_url}}" target="_blank">Releases</a></li>
+                                    {{if ampli_article}}{{ampli_article}}<li><a href="{{url}}" target="_blank">Ampli</a></li>{{/ampli_article}}{{/if}}
+                                    {{if migration_guide}}{{migration_guide}}<li><a href="{{url}}" target="_blank">{{title}}</a></li>{{/migration_guide}}{{/if}}
+                                </ul>
+                            </div>
+
+                        {{/collection }}
+
+
+
+                        </div>
+
+
+
+ 
+ 
+ 
+                 </div>
+                </div>
+            </div>
+ 
+        </section>
+    </div>
+ 
+ </div>
+ </div>

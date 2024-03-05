@@ -1,14 +1,17 @@
 ---
-title: "Overview of Amplitude Data"
-source: "https://help.amplitude.com/hc/en-us/articles/5078726654363-Overview-of-Amplitude-Data"
 id: a4749cbb-95bb-49d4-a9f4-dbe167a9af63
+blueprint: overview
+title: 'Overview of Amplitude Data'
+goals:
+  - 'Understand how Amplitude Data can help you get the most from Amplitude'
+  - 'Locate the tools available to help you improve your data quality'
+related_articles:
+  - 9fbd24d0-c90c-497c-8cca-5b345f1058d6
+  - 57f6f8ee-4044-4a3e-af34-c6d6eca409dc
+  - 1bca668a-d50d-4e07-a0a9-a77016d8d5d3
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1709246244
 ---
-
-#### This article will help you:
-
-* Understand how Amplitude Data can help you get the most from Amplitude
-* Locate the tools available to help you improve your data quality
-
 To get the most out of Amplitude, building a data catalog your team understands and trusts is critical. Amplitude Data provides governance tools to help you define, track, verify, and improve your data across the platform.
 
 ## Planning and instrumentation

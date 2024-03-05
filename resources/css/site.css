@@ -24,3 +24,14 @@ li::marker {
 .max-w-prose {
     max-width: 75ch;
 }
+
+h2 a {
+    opacity: 0;
+    transition: opacity 0.5s;
+    margin-left: -16px;
+}
+
+h2:hover a {
+    opacity: 1;
+    transition: opacity 0.5s;
+}

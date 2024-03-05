@@ -1,36 +1,26 @@
 tree:
   -
+    id: 26874aaa-2b3d-459b-b015-32295a040e49
+    entry: 53c7b244-36fd-47b4-8cd7-689dc44fc563
+  -
+    id: 4eb74613-5de2-4e96-8893-ae27a2a90622
+    entry: ba956cb4-9ae1-456a-b122-984b491048f6
+  -
+    id: 613212f1-77d7-4c88-b8f0-1afeffc06e06
+    entry: cae327ea-be74-4783-ab16-09f2848cebca
+  -
+    id: 24b402ab-351e-4af8-93bf-39a23b40ed0f
+    entry: cea4db38-5323-4b0b-b401-8077084a0a0a
+  -
+    id: 6a365733-24c1-4065-8e9a-846323e14df4
+    entry: a0da41b8-4d51-4efc-9edf-30e7cf7c7929
+  -
     id: 82ff63dd-a54f-4072-93b9-9156af044126
     title: 'Analytics SDKs'
     children:
       -
-        id: 0af95fa9-d61c-4992-90a3-adbdec86cc72
-        entry: 3a6981ac-941a-41f4-b82e-3a660c59cf3a
-      -
-        id: 4eb74613-5de2-4e96-8893-ae27a2a90622
-        entry: ba956cb4-9ae1-456a-b122-984b491048f6
-      -
-        id: 26874aaa-2b3d-459b-b015-32295a040e49
-        entry: 53c7b244-36fd-47b4-8cd7-689dc44fc563
-      -
-        id: 613212f1-77d7-4c88-b8f0-1afeffc06e06
-        entry: cae327ea-be74-4783-ab16-09f2848cebca
-      -
-        id: 24b402ab-351e-4af8-93bf-39a23b40ed0f
-        entry: cea4db38-5323-4b0b-b401-8077084a0a0a
-      -
-        id: 6a365733-24c1-4065-8e9a-846323e14df4
-        entry: a0da41b8-4d51-4efc-9edf-30e7cf7c7929
-      -
-        id: f18cb8e4-087c-4642-8cb8-ee960663dbaf
-        title: 'Browser SDK'
-        children:
-          -
-            id: 739eca32-21a0-4491-a626-bc93f8b81371
-            entry: d97ddfe8-6b08-4dce-91dc-53d41ef7eb0a
-          -
-            id: f5942c3f-56a7-4f9c-9be3-7fa185f02182
-            entry: e322ca22-664e-473a-bb90-d9289eda43ef
+        id: 739eca32-21a0-4491-a626-bc93f8b81371
+        entry: d97ddfe8-6b08-4dce-91dc-53d41ef7eb0a
       -
         id: 64695903-1f8f-4a14-bbcd-53acb1bcab19
         entry: 2c015237-717d-481f-b4c3-f64fd04f48fd
@@ -38,28 +28,14 @@ tree:
         id: e550e82a-f442-43b4-a8d9-259ddb52b14f
         entry: c3197ac0-3df0-447b-b632-e1ec4b6e88c9
       -
-        id: 836e9575-3daa-4975-826a-d93445be1c89
-        title: 'iOS SDK'
-        children:
-          -
-            id: fedd29e4-4e9e-471e-8bf0-2b604208e4ca
-            entry: 4b780c66-217c-4b22-9629-916659e798ad
-          -
-            id: a9de8452-afc6-48e3-ba26-d5020c7fae59
-            entry: dbfa1bff-10de-4803-9bf3-bdb46a1ba891
+        id: fedd29e4-4e9e-471e-8bf0-2b604208e4ca
+        entry: 4b780c66-217c-4b22-9629-916659e798ad
       -
         id: 14497cf3-20c3-4e0d-93fa-27169763f666
         entry: 0906f7ef-96ae-4189-879d-ca81cafeebf8
       -
-        id: 3dbb33fe-60cb-408c-8324-c399e9030ceb
-        title: 'React Native SDK'
-        children:
-          -
-            id: ecf93188-6903-48b2-afef-2336e477b4c6
-            entry: 0e02d5e0-1bc7-4fc6-88a1-983221265987
-          -
-            id: 4a9dcf43-aca5-4969-95c1-485bd79645ea
-            entry: b2ad47e0-9a63-4a94-b538-0de472f4497c
+        id: ecf93188-6903-48b2-afef-2336e477b4c6
+        entry: 0e02d5e0-1bc7-4fc6-88a1-983221265987
       -
         id: 48847b3c-d822-4e8f-898d-63c475c23b6c
         entry: 7cac036d-49d6-4fdc-8483-e8d11c75dbac
@@ -75,25 +51,6 @@ tree:
       -
         id: 10c60ac2-3d6b-43d9-81af-81e79fffa721
         entry: 5d8e869f-a964-4cbe-a103-65ecd4c2c576
-      -
-        id: d29613aa-e0f4-4adb-9182-2fc36c944a25
-        title: 'Analytics Maintenance SDKs'
-        children:
-          -
-            id: a7ae0679-ee63-404a-bbaf-02b624af6715
-            entry: 08368e34-8d52-4877-a7fe-f230cbbc2302
-          -
-            id: 4c1b123f-34fa-4d45-9119-1e0f73a0b36d
-            entry: f57f385d-5369-41c4-be20-b7184b3d8267
-          -
-            id: 81dd8519-238d-47bc-a8fd-eeed6c22cc2a
-            entry: 5a831325-2882-4e33-a92e-e5e363e677c4
-          -
-            id: d665b3be-95f6-4c99-a038-561ac64e4b4d
-            entry: 3d2597e9-cd05-492b-b82d-a06e56466125
-          -
-            id: 121aa124-3860-48fb-94e4-9b2195651e65
-            entry: 9376ab4a-7a62-4a9c-b33e-6c4e8e19acac
   -
     id: 0800c1e2-008e-4c02-ad25-ade39c19e6fc
     title: 'Experiment SDKs'
