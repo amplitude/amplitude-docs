@@ -1,7 +1,7 @@
 ---
 id: 8471af8b-e132-4073-8330-d5dd7bbbd8ae
 blueprint: browser_sdk
-title: 'Browser SDK 1.0'
+title: 'Browser SDK 1'
 sdk_status: current
 article_type: core
 supported_languages:
