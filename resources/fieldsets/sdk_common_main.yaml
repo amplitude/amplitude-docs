@@ -85,6 +85,19 @@ fields:
       validate:
         - required
   -
+    handle: sdk_version_comparison
+    field:
+      type: table
+      display: 'SDK Version Comparison'
+      instructions: 'Enter the differences between the latest and previous versions of the SDK.'
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      if:
+        article_type: 'equals migration'
+  -
     handle: content
     field:
       container: images
