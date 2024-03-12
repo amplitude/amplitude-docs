@@ -35,3 +35,8 @@ h2:hover a {
     opacity: 1;
     transition: opacity 0.5s;
 }
+@layer components{
+    .comparison th:first-of-type {
+        @apply w-1/5;
+    }
+}
