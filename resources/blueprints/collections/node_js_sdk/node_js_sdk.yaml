@@ -1,0 +1,38 @@
+title: 'Node.js SDK'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            import: sdk_common_main
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            import: sdk_common
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - node_js_sdk
+              max_items: 1
+              listable: false
+              localizable: true

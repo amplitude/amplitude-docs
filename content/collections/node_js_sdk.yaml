@@ -1,0 +1,17 @@
+title: 'Node.js SDK'
+template: default
+layout: layout
+mount: 2c015237-717d-481f-b4c3-f64fd04f48fd
+revisions: false
+route: '/sdk-catalog/node-js-sdk/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+structure:
+  root: false

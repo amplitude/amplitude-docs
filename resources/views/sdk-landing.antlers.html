@@ -135,17 +135,16 @@
                         <div class="flex flex-wrap gap-4 w-full">
 
 
-                            {{collection from="browser_sdk" article_type:is="core" sort="order" }}
+                            {{collection :from="mount" article_type:is="core" sort="order" }}
                             <div class="flex-1 basis-80 border grow-0 rounded p-4">
                                 <span class="text-xs my-0">{{sdk_status}}</span> 
                                 <a href="{{url}}"><h2 class="text-md my-0">{{title}}</h2></a>
-                                <div class="inline"><img class="my-0 inline" src="{{shields_io_badge}}" alt="" srcset="" />{{supported_languages}}<img class="w-4 inline mx-1 my-0" src="/assets/icons/{{value}}.svg" />{{/supported_languages}}</div>
+                                <div class="inline"><a href="{{bundle_url}}" target="_blank"><img class="my-0 inline" src="{{shields_io_badge}}" alt="" srcset="" /></a>{{supported_languages}}<img class="h-4 inline mx-1 my-0" src="/assets/icons/{{value}}.svg" />{{/supported_languages}}</div>
                                 <ul class="text-sm">
                                     <li><a href="{{github_link}}" target="_blank">GitHub</a></li>
-                                    <li><a href="{{bundle_url}}" target="_blank">NPM</a></li>
                                     <li><a href="{{releases_url}}" target="_blank">Releases</a></li>
-                                    {{if ampli_article}}{{ampli_article}}<li><a href="{{url}}" target="_blank">Ampli</a></li>{{/ampli_article}}{{/if}}
-                                    {{if migration_guide}}{{migration_guide}}<li><a href="{{url}}" target="_blank">{{title}}</a></li>{{/migration_guide}}{{/if}}
+                                    {{if ampli_article}}{{ampli_article}}<li><a href="{{url}}">Ampli</a></li>{{/ampli_article}}{{/if}}
+                                    {{if migration_guide}}{{migration_guide}}<li><a href="{{url}}">{{title}}</a></li>{{/migration_guide}}{{/if}}
                                 </ul>
                             </div>
 
