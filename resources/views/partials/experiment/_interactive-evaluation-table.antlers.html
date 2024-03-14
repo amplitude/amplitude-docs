@@ -1,0 +1,47 @@
+<!-- markdown-link-check-disable -->
+
+
+<pre><code data-theme="serendipity-light" data-lang="curl" class="torchlight" style="background-color: #fafafa; --theme-selection-background: #d1e4f4fd;"><!-- Syntax highlighted by torchlight.dev --><div class="line"><span style="color:#8a919966; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #399EE6;">curl</span><span style="color: #575F66;"> </span><span style="color: #4CBF99;">--request</span><span style="color: #575F66;"> </span><span style="color: #A173FF;">GET</span><span style="color: #575F66;"> </span><span style="color: #4CBF99;">\</span></div><div class="line"><span style="color:#8a919966; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #575F66;"> </span><span style="color: #399EE6;">--url</span><span style="color: #575F66;"> </span><span style="color: #A173FF;">'<span id='curl_url'></span><span id='curl_user_id'></span><span id='curl_device_id'></span><span id='curl_flag_key'></span><span id='curl_context'></span>'</span><span style="color: #575F66;"> </span><span style="color: #4CBF99;">\</span></div><div class="line"><span style="color:#8a919966; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #575F66;"> </span><span style="color: #399EE6;">--header</span><span style="color: #575F66;"> </span><span style="color: #A173FF;">'Authorization: Api-Key <span id='curl_deployment_key'></span>'</span></div></code></pre>
+
+
+
+<div class="mt-8 grid grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 gap-6">
+        <label for="" class="block">
+            <span class="text-xs text-mountain-mist-300">Deployment key (required)</span>
+            <input class="mt-1 block w-full" type="text" name="" id="deployment_key" placeholder="deployment_key">
+        </label>
+        <label for="" class="block">
+            <span class="text-xs text-mountain-mist-300">User ID</span>
+            <input class="mt-1 block w-full" type="text" name="" id="user_id" placeholder="user_id">
+        </label>
+        <label for="" class="block">
+            <span class="text-xs text-mountain-mist-300">Device ID</span>
+            <input class="mt-1 block w-full" type="text" name="" id="device_id" placeholder="device_id">
+        </label>
+        <label for="" class="block">
+            <span class="text-xs text-mountain-mist-300">Flag key</span>
+            <input class="mt-1 block w-full" type="text" name="" id="flag_key" placeholder="flag_key">
+        </label>
+        <label for="" class="block">
+            <span class="text-xs text-mountain-mist-300">Context</span>
+            <input class="mt-1 block w-full" type="text" name="" id="context" placeholder="context">
+        </label>
+        <label for="" class="block">
+            <span class="text-xs text-mountain-mist-300">User ID</span>
+            <select class="mt-1 block w-full" type="text" name="" id="server-zone" onchange="updateUrl()">
+                <option value="US">US</option>
+                <option value="EU">EU</option>
+            </select>
+        </label>
+        <button class="md-button w-1/2 border rounded py-1 hover:bg-amp-blue-900 transition-colors" id="at-action-button">Send</button>
+    </div>
+<div class="">
+<span id="failure_tip"></span>
+<pre class="overflow-scroll max-h-[575px]">
+<code id="result" class="text-mountain-mist-800 ">
+</code>
+</pre>
+</div>
+</div>
+{{ vite src="resources/js/api-table.js" }}
