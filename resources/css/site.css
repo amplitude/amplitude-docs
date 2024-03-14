@@ -8,11 +8,6 @@
     padding: 10px;
 }
 
-.hint.warning {
-    border: 1px solid orange;
-    padding: 10px;
-}
-
 h2.hint-title {
     margin-top: auto;
     font-size: medium;
