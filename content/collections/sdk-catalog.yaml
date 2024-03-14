@@ -1,8 +1,9 @@
 title: 'SDK Catalog'
 template: default
 layout: layout
+mount: 3a6981ac-941a-41f4-b82e-3a660c59cf3a
 revisions: false
-route: '/instrumentation/sdk-catalog/{slug}'
+route: '/sdks/sdk-catalog/{slug}'
 sort_dir: asc
 date_behavior:
   past: public

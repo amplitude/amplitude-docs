@@ -2,7 +2,7 @@ title: 'Experiment SDKs'
 template: default
 layout: layout
 revisions: false
-route: '/experiment-sdks/{slug}'
+route: '/experiment/experiment-sdks/{slug}'
 sort_dir: asc
 date_behavior:
   past: public
