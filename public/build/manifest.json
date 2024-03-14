@@ -1,19 +1,11 @@
 {
   "resources/css/site.css": {
-    "file": "assets/site-53767f1d.css",
+    "file": "assets/site-3d487ba8.css",
     "isEntry": true,
     "src": "resources/css/site.css"
   },
-  "resources/js/api-table.js": {
-    "file": "assets/api-table-3924e0f7.js",
-    "imports": [
-      "resources/js/site.js"
-    ],
-    "isEntry": true,
-    "src": "resources/js/api-table.js"
-  },
   "resources/js/site.js": {
-    "file": "assets/site-c8ec3cc0.js",
+    "file": "assets/site-4ed993c7.js",
     "isEntry": true,
     "src": "resources/js/site.js"
   }
