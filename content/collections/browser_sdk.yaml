@@ -3,7 +3,7 @@ template: default
 layout: layout
 mount: d97ddfe8-6b08-4dce-91dc-53d41ef7eb0a
 revisions: false
-route: '/sdk-catalog/browser-sdk/{slug}'
+route: '/sdks/sdk-catalog/browser-sdk/{slug}'
 sort_dir: asc
 date_behavior:
   past: public
