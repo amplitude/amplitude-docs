@@ -1,4 +1,4 @@
-import { setupApiTable, } from "/resources/js/site.js";
+import { setupApiTable } from "/resources/js/site.js";
 
 
 
