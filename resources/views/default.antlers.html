@@ -44,56 +44,7 @@ pre code.torchlight .summary-caret {
 }
 
 </style>
-{{unless nav_type}}
-    {{if segment_1 == ""}}
-    {{nav_title = ""}}
-    {{/if}}
 
-    {{if segment_1 == "get-started-with-amplitude" || "migration"}}
-    {{nav_title = "get_started"}}
-    {{/if}}
-    {{if segment_1 == "data"}}
-    {{nav_title = "data"}}
-    {{/if}}
-    {{if segment_1 == "experiment"}}
-    {{nav_title = "experiment"}}
-    {{/if}}
-    {{if segment_1 == "analytics"}}
-    {{nav_title = "analytics"}}
-    {{/if}}
-    {{if segment_1 == "admin"}}
-    {{nav_title = "admin"}}
-    {{/if}}
-    {{ if segment_1 == "sdks" }}
-    {{nav_title = "developers" }}
-    {{/if}}
-    {{ if segment_1 == "instrumentation" }}
-    {{nav_title = "developers" }}
-    {{/if}}
-    {{ if segment_1 == "experiment-sdks" }}
-    {{nav_title = "developers" }}
-    {{/if}}
-    {{ if segment_1 == "api" }}
-    {{nav_title = "apis" }}
-    {{/if}}
-    {{ if segment_1 == "apis" }}
-    {{nav_title = "apis" }}
-    {{/if}}
-    {{ if segment_1 == "experiment-apis" }}
-    {{nav_title = "apis" }}
-    {{/if}}
-    {{if segment_2 == "destination-catalog"}}
-    {{nav_title = "destination_catalog"}}
-    {{/if}}
-    {{if segment_1 == "cdp"}}
-    {{nav_title = "cdp"}}
-    {{/if}}
-    {{if segment_2 == "source-catalog"}}
-    {{nav_title = "source_catalog"}}
-    {{/if}}
-{{else}}
-{{nav_title = nav_type}}
-{{/unless}}
 
 
 

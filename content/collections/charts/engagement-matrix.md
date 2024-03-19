@@ -4,5 +4,5 @@ blueprint: chart
 title: 'Engagement Matrix'
 landing: true
 sort: 13
-nav_type: charts
+nav_title: charts
 ---

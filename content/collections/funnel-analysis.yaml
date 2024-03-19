@@ -16,4 +16,4 @@ preview_targets:
 structure:
   root: false
 inject:
-  nav_type: charts
+  nav_title: charts

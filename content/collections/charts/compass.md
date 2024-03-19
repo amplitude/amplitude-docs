@@ -4,5 +4,5 @@ blueprint: chart
 title: Compass
 landing: true
 sort: 8
-nav_type: charts
+nav_title: charts
 ---
