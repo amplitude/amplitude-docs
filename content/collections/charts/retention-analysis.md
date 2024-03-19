@@ -4,5 +4,5 @@ blueprint: chart
 title: 'Retention Analysis'
 landing: true
 sort: 3
-nav_type: charts
+nav_title: charts
 ---

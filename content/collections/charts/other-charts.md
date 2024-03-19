@@ -4,5 +4,5 @@ blueprint: chart
 title: 'Other Charts'
 landing: true
 sort: 16
-nav_type: charts
+nav_title: charts
 ---
