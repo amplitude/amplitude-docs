@@ -11,5 +11,9 @@
         "postcss": "^8.4.23",
         "tailwindcss": "^3.3.2",
         "vite": "^4.5.2"
+    },
+    "dependencies": {
+        "@amplitude/analytics-browser": "^2.5.3",
+        "@amplitude/plugin-default-event-tracking-advanced-browser": "^0.7.2"
     }
 }
