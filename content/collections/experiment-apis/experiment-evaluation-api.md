@@ -4,3 +4,4 @@ blueprint: experiment-api
 title: 'Experiment Evaluation API'
 source: 'https://www.docs.developers.amplitude.com/experiment/apis/evaluation-api/'
 ---
+{{partial:partials/experiment/interactive-evaluation-table}}
