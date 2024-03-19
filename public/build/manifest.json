@@ -1,8 +1,13 @@
 {
   "resources/css/site.css": {
-    "file": "assets/site-3d487ba8.css",
+    "file": "assets/site-bcee93b0.css",
     "isEntry": true,
     "src": "resources/css/site.css"
+  },
+  "resources/js/api-table.js": {
+    "file": "assets/api-table-7743572c.js",
+    "isEntry": true,
+    "src": "resources/js/api-table.js"
   },
   "resources/js/site.js": {
     "file": "assets/site-4ed993c7.js",
