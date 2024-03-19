@@ -12,3 +12,5 @@ preview_targets:
     label: Entry
     url: '{permalink}'
     refresh: true
+inject:
+  nav_title: cdp

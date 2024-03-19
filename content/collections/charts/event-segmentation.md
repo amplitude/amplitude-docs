@@ -4,5 +4,5 @@ blueprint: chart
 title: 'Event Segmentation Chart'
 landing: true
 sort: 1
-nav_type: charts
+nav_title: charts
 ---
