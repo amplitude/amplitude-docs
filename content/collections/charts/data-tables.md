@@ -4,5 +4,5 @@ blueprint: chart
 title: 'Data Tables'
 landing: true
 sort: 4
-nav_type: charts
+nav_title: charts
 ---

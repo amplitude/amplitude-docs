@@ -4,5 +4,5 @@ blueprint: chart
 title: Journeys
 landing: true
 sort: 5
-nav_type: charts
+nav_title: charts
 ---

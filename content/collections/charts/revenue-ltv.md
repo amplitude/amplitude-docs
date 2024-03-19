@@ -4,5 +4,5 @@ blueprint: chart
 title: 'Revenue LTV'
 landing: true
 sort: 7
-nav_type: charts
+nav_title: charts
 ---

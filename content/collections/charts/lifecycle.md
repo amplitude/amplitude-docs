@@ -4,5 +4,5 @@ blueprint: chart
 title: Lifecycle
 landing: true
 sort: 14
-nav_type: charts
+nav_title: charts
 ---

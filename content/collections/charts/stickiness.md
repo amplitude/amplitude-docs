@@ -4,5 +4,5 @@ blueprint: chart
 title: Stickiness
 landing: true
 sort: 9
-nav_type: charts
+nav_title: charts
 ---
