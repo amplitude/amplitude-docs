@@ -4,5 +4,5 @@ blueprint: chart
 title: 'Impact Analysis'
 landing: true
 sort: 11
-nav_type: charts
+nav_title: charts
 ---

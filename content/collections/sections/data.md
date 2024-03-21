@@ -11,6 +11,7 @@ related_articles:
   - 1bca668a-d50d-4e07-a0a9-a77016d8d5d3
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1709663115
+nav_title: data
 ---
 To get the most out of Amplitude, building a data catalog your team understands and trusts is critical. Amplitude Data provides governance tools to help you define, track, verify, and improve your data across the platform.
 

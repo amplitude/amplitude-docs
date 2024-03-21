@@ -4,5 +4,5 @@ blueprint: chart
 title: 'Legacy Charts'
 landing: true
 sort: 17
-nav_type: charts
+nav_title: charts
 ---
