@@ -70,3 +70,6 @@ users/
 
 public/hot
 **/.DS_Store
+
+# Node modules
+**/node_modules
