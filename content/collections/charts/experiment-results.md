@@ -4,5 +4,5 @@ blueprint: chart
 title: 'Experiment Results'
 landing: true
 sort: 6
-nav_type: charts
+nav_title: charts
 ---

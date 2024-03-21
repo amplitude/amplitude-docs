@@ -23,7 +23,7 @@ tree:
           -
             id: 8a45f3d0-4bdc-4e77-847a-78cc3c76c3f5
             title: 'SDK Catalog'
-            url: /instrumentation/sdk-catalog
+            url: /sdks
           -
             id: ae9efd21-4d93-4d22-b56b-8e23401628da
             title: 'Source Catalog'
