@@ -135,8 +135,30 @@
     background-color: theme('colors.amp-red.500');
 }
 
+ul.toc-list {
+    list-style-type: none;
+    padding: 0;
+}
 
+.toc-link::before {
+    content:"";
+}
 
+.heading-permalink {
+    opacity: 0;
+    margin-left: -12px;
+  }
+  
+  h1:hover .heading-permalink,
+  h2:hover .heading-permalink,
+  h3:hover .heading-permalink,
+  h4:hover .heading-permalink,
+  h5:hover .heading-permalink,
+  h6:hover .heading-permalink
+  {
+    opacity: 1;
+    transition: opacity 0.25s;
+  }
 
 
 
