@@ -1,5 +1,9 @@
-<div class="fixed right-0 top-2 js-toc">
+<div class="relative">
+  <div class="sticky top-0 ml-8 text-sm js-toc">
   </div>
+
+</div>
+
 
   <script>
     tocbot.init({
@@ -11,5 +15,8 @@
         headingSelector: 'h2, h3, h4',
         // For headings inside relative or absolute positioned containers within content.
         hasInnerContainers: true,
+        ignoreSelector: '.hint-title',
+        orderedList: false,
+        ignoreHiddenElements: true,
       });
   </script>

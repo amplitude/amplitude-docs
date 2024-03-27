@@ -1,10 +1,13 @@
 ---
-title: "Track progress as you instrument Amplitude"
-source: "https://help.amplitude.com/hc/en-us/articles/19354328238363-Track-progress-as-you-instrument-Amplitude"
 id: 772dbd47-bee0-4b64-9672-7d09d16cd433
+blueprint: get-started
+title: 'Track progress as you instrument Amplitude'
+source: 'https://help.amplitude.com/hc/en-us/articles/19354328238363-Track-progress-as-you-instrument-Amplitude'
+author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1711494255
 ---
-
-#### This article will help you:
+##### This article will help you:
 
 * Learn how to QA your instrumentation and keep track of event limits
 * Understand how Amplitude handles duplicative events
@@ -24,5 +27,3 @@ If you go over your limit for the month, Amplitude will still collect your data 
 Amplitude de-duplicates your data to prevent unique events from being logged multiple times. Amplitude checks the event ID, client event time, and device ID for every event. If the event isn't in the database, Amplitude writes it; otherwise, the event is dropped.
 
 If you're using the Amplitude HTTP API, we recommend adding an [insert\_id field](https://help.amplitude.com/hc/en-us/articles/204771828-HTTP-API#optional-amplitude-specific-keys-for-the-event-argument). Amplitude will ignore subsequent events sent with the same event ID/client event time/device ID or insert\_id within the past seven days. 
-
-## 
