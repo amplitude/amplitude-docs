@@ -9,6 +9,12 @@ export default {
     ],
 
     theme: {
+        extend: {
+            fontFamily: {
+                IBMPlex: ['IBM Plex Sans', 'sans-serif'],
+                IBMPlexMono: ['IBM Plex Mono', 'monospace'],
+            },
+        },
         colors:{
             'white': '#ffffff',
             'black': {
