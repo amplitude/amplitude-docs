@@ -17,7 +17,28 @@
     </head>
     <body class="bg-gray-100 font-sans leading-normal text-gray-800">
         <div class="mx-auto px-2 lg:min-h-screen flex flex-col items-center justify-center">
-            {{ template_content }}
+            <div class="container prose">
+                <div
+                  class="w-56 h-100 fixed left-0 top-0 bottom-0 border-solid border-r border-black-200 hidden lg:block overflow-auto pt-10">
+                  {{ if segment_1 }}
+                    {{ if nav_type }}
+                      {{ partial:side-nav-charts :nav_title="nav_title" }}
+                    {{ else }}
+                      {{ partial:side-nav :nav_title="nav_title" }}
+                    {{ /if }}
+                  {{ /if }}
+                </div>
+                <div class="absolute top-0 left-0 lg:left-56 bottom-0 right-0">
+                  <div class="w-full py-5 pl-5">
+                    <div class="box-border">
+                      {{ partial:top-nav }}
+                    </div>
+                  </div>
+                  <div class="w-full">
+                    {{template_content}}
+                </div>
+              </div>
+              </div>
         </div>
     </body>
 </html>

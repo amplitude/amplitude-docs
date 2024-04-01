@@ -1,69 +1,48 @@
-<div class="container prose">
-    <div
-        class="w-56 h-100 fixed left-0 top-0 bottom-0 border-solid border-r border-grey-200 hidden lg:block overflow-auto pt-10">
-        {{ if segment_1 }}
-            {{ if nav_type }}
-                {{ partial:side-nav-charts :nav_title="nav_title" }}
-            {{ else }}
-                {{ partial:side-nav :nav_title="nav_title" }}
-            {{ /if }}
-        {{ /if }}
-    </div>
-    <div class="absolute top-0 left-0 lg:left-56 bottom-0 right-0">
-        <div class="w-full p-5">
-            <div class="box-border">
-                {{ partial:top-nav }}
+<section class="w-full flex flex-col items-center">
+    {{ partial:breadcrumbs }}
+    <div class="flex flex-row w-full p-8">
+        <div class="copy">
+            <div class="flex flex-row items-start justify-between">
+                <h1>{{ title }}</h1>
+                {{ if environment == 'local' }}
+                    <span class="ml-4 text-xs text-gray-300 align-middle"><a href="{{ edit_url }}"
+                            target="_blank">Edit</a></span>
+                {{ /if }}
             </div>
-        </div>
-        <div class="w-full">
-            <section class="w-full flex flex-col items-center">
-                {{ partial:breadcrumbs }}
-                <div class="flex flex-row w-full p-8">
-                    <div class="copy">
-                        <div class="flex flex-row items-start justify-between">
-                            <h1>{{ title }}</h1>
-                            {{ if environment == 'local' }}
-                                <span class="ml-4 text-xs text-gray-300 align-middle"><a href="{{ edit_url }}"
-                                        target="_blank">Edit</a></span>
+            {{#
+                <div class="prose prose-a:text-amp-blue-300 prose-ol:list-decimal prose-ol:list-outside prose-pre:bg-[#fafafa]">
+            #}}
+            <div class="flex flex-wrap gap-4 w-full">
+                {{ collection :from="mount" article_type:is="core" sort="order" }}
+                    <div class="flex-1 basis-80 border grow-0 rounded p-4">
+                        <span class="text-xs my-0">{{ sdk_status }}</span>
+                        <a href="{{ url }}">
+                            <h2 class="text-md my-0">{{ title }}</h2>
+                        </a>
+                        <div class="inline"><a href="{{ bundle_url }}" target="_blank"><img
+                                    class="my-0 inline" src="{{ shields_io_badge }}" alt=""
+                                    srcset="" /></a>
+                            {{ supported_languages }}
+                                <img class="h-4 inline mx-1 my-0" src="/assets/icons/{{ value }}.svg" />
+                            {{ /supported_languages }}
+                        </div>
+                        <ul class="text-sm">
+                            <li><a href="{{ github_link }}" target="_blank">GitHub</a></li>
+                            <li><a href="{{ releases_url }}" target="_blank">Releases</a></li>
+                            {{ if ampli_article }}
+                                {{ ampli_article }}
+                                    <li><a href="{{ url }}">Ampli</a></li>
+                                {{ /ampli_article }}
                             {{ /if }}
-                        </div>
-                        <div
-                            class="prose prose-a:text-amp-blue-300 prose-ol:list-decimal prose-ol:list-outside prose-pre:bg-[#fafafa] max-w-prose">
-                            <div class="flex flex-wrap gap-4 w-full">
-                                {{ collection :from="mount" article_type:is="core" sort="order" }}
-                                    <div class="flex-1 basis-80 border grow-0 rounded p-4">
-                                        <span class="text-xs my-0">{{ sdk_status }}</span>
-                                        <a href="{{ url }}">
-                                            <h2 class="text-md my-0">{{ title }}</h2>
-                                        </a>
-                                        <div class="inline"><a href="{{ bundle_url }}" target="_blank"><img
-                                                    class="my-0 inline" src="{{ shields_io_badge }}" alt=""
-                                                    srcset="" /></a>
-                                            {{ supported_languages }}
-                                                <img class="h-4 inline mx-1 my-0" src="/assets/icons/{{ value }}.svg" />
-                                            {{ /supported_languages }}
-                                        </div>
-                                        <ul class="text-sm">
-                                            <li><a href="{{ github_link }}" target="_blank">GitHub</a></li>
-                                            <li><a href="{{ releases_url }}" target="_blank">Releases</a></li>
-                                            {{ if ampli_article }}
-                                                {{ ampli_article }}
-                                                    <li><a href="{{ url }}">Ampli</a></li>
-                                                {{ /ampli_article }}
-                                            {{ /if }}
-                                            {{ if migration_guide }}
-                                                {{ migration_guide }}
-                                                    <li><a href="{{ url }}">{{ title }}</a></li>
-                                                {{ /migration_guide }}
-                                            {{ /if }}
-                                        </ul>
-                                    </div>
-                                {{ /collection }}
-                            </div>
-                        </div>
-
+                            {{ if migration_guide }}
+                                {{ migration_guide }}
+                                    <li><a href="{{ url }}">{{ title }}</a></li>
+                                {{ /migration_guide }}
+                            {{ /if }}
+                        </ul>
                     </div>
-            </section>
+                {{ /collection }}
+            </div>
+            {{# </div> #}}
         </div>
-    </div>
-</div>
+</section>
