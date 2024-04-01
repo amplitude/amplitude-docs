@@ -1,55 +1,35 @@
-<div class="container prose">
-  <div
-    class="w-56 h-100 fixed left-0 top-0 bottom-0 border-solid border-r border-grey-200 hidden lg:block overflow-auto pt-10">
-    {{ if segment_1 }}
-      {{ if nav_type }}
-        {{ partial:side-nav-charts :nav_title="nav_title" }}
-      {{ else }}
-        {{ partial:side-nav :nav_title="nav_title" }}
-      {{ /if }}
-    {{ /if }}
-  </div>
-  <div class="absolute top-0 left-0 lg:left-56 bottom-0 right-0">
-    <div class="w-full p-5">
-      <div class="box-border">
-        {{ partial:top-nav }}
+<section class="w-full flex flex-col items-center">
+  {{ partial:breadcrumbs }}
+  <div class="flex flex-row w-full p-8">
+    <div class="copy">
+      <div class="flex flex-row items-start justify-between">
+        <h1>{{ title }}</h1>
+        {{ if environment == 'local' }}
+          <span class="ml-4 text-xs text-gray-300 align-middle"><a href="{{ edit_url }}"
+              target="_blank">Edit</a></span>
+        {{ /if }}
       </div>
+      <div
+        class="prose prose-a:text-amp-blue-300 prose-ol:list-decimal prose-ol:list-outside prose-pre:bg-[#fafafa] max-w-prose">
+        {{ partial:sdk-comparison }}
+        {{ partial:goals }}
+        {{ content | markdown }}
+      </div>
+      {{ if slug == "charts-overview" }}
+        <div class="flex flex-wrap">
+          {{ collection:charts landing:is="true" sort="sort:asc" }}
+            <a href="{{ url }}">
+              <div class="flex-none border border-gray-500 rounded size-48 m-8 p-4 hover:shadow-lg transition-shadow">
+                <p>{{ title }}</p>
+              </div>
+            </a>
+          {{ /collection:charts }}
+      {{ /if }}
+      {{# <p class="text-xs text-amp-light-blue-700">Last updated: {{updated_at}} by {{updated_by:email}}</p> #}}
     </div>
-    <div class="w-full">
-      <section class="w-full flex flex-col items-center">
-        {{ partial:breadcrumbs }}
-        <div class="flex flex-row w-full p-8">
-          <div class="copy">
-            <div class="flex flex-row items-start justify-between">
-              <h1>{{ title }}</h1>
-              {{ if environment == 'local' }}
-                <span class="ml-4 text-xs text-gray-300 align-middle"><a href="{{ edit_url }}"
-                    target="_blank">Edit</a></span>
-              {{ /if }}
-            </div>
-            <div
-              class="prose prose-a:text-amp-blue-300 prose-ol:list-decimal prose-ol:list-outside prose-pre:bg-[#fafafa] max-w-prose">
-              {{ partial:sdk-comparison }}
-              {{ partial:goals }}
-              {{ content | markdown }}
-            </div>
-            {{ if slug == "charts-overview" }}
-              <div class="flex flex-wrap">
-                {{ collection:charts landing:is="true" sort="sort:asc" }}
-                  <a href="{{ url }}">
-                    <div
-                      class="flex-none border border-gray-500 rounded size-48 m-8 p-4 hover:shadow-lg transition-shadow">
-                      <p>{{ title }}</p>
-                    </div>
-                  </a>
-                {{ /collection:charts }}
-            {{ /if }}
-            {{# <p class="text-xs text-amp-light-blue-700">Last updated: {{updated_at}} by {{updated_by:email}}</p> #}}
-          </div>
-          {{ partial:toc }}
-        </div>
-    </div>
-    </section>
+    {{unless hide_toc}}
+      {{partial:toc}}
+    {{/unless}}
   </div>
-</div>
-</div>
+  </div>
+</section>
