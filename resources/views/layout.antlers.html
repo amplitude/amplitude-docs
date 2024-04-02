@@ -1,45 +1,59 @@
 <!doctype html>
 <html lang="{{ site:short_locale }}">
-    <head> 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ title ?? site:name }}</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.css">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title ?? site:name }}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.css">
 
-        {{ vite src="resources/js/site.js|resources/css/site.css" }}
-        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.min.js"></script>
-        
-        <style>
-            [x-cloak] { display: none !important; }
-        </style>
-    </head>
-    <body class="bg-gray-100 font-sans leading-normal text-gray-800">
-        <div class="mx-auto px-2 lg:min-h-screen flex flex-col items-center justify-center">
-            <div class="container prose">
-                <div
-                  class="w-56 h-100 fixed left-0 top-0 bottom-0 border-solid border-r border-black-200 hidden lg:block overflow-auto pt-10">
-                  {{ if segment_1 }}
-                    {{ if nav_type }}
-                      {{ partial:side-nav-charts :nav_title="nav_title" }}
-                    {{ else }}
-                      {{ partial:side-nav :nav_title="nav_title" }}
-                    {{ /if }}
-                  {{ /if }}
-                </div>
-                <div class="absolute top-0 left-0 lg:left-56 bottom-0 right-0">
-                  <div class="w-full py-5 pl-5">
-                    <div class="box-border">
-                      {{ partial:top-nav }}
-                    </div>
-                  </div>
-                  <div class="w-full">
-                    {{template_content}}
-                </div>
-              </div>
-              </div>
+  {{ vite src="resources/js/site.js|resources/css/site.css" }}
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.min.js"></script>
+
+  <style>
+    [x-cloak] {
+      display: none !important;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans leading-normal text-gray-800">
+  <div class="container prose">
+    <div class="top-0 left-0  right-0 bg-white fixed z-10">
+      <div class="w-full pt-5 pl-5">
+        <div class="box-border">
+          {{ partial:header }}
         </div>
-    </body>
+      </div>
+
+    </div>
+    <div class="top-12 left-0 right-0 fixed bg-white z-10">
+      <div class="w-full pt-5 pl-5">
+        <div class="box-border">
+          {{ partial:top-nav }}
+        </div>
+      </div>
+
+    </div>
+
+    <div
+      class="w-56 h-100 left-0 top-24 bottom-0 border-solid border-r border-black-200 hidden lg:block overflow-auto fixed">
+      {{ if segment_1 }}
+        {{ if nav_type }}
+          {{ partial:side-nav-charts :nav_title="nav_title" }}
+        {{ else }}
+          {{ partial:side-nav :nav_title="nav_title" }}
+        {{ /if }}
+      {{ /if }}
+    </div>
+    <div class="absolute top-24 left-0 lg:left-56 bottom-0 right-0 z-0">
+      <div class="w-full pt-8">
+        {{ template_content }}
+      </div>
+
+    </div>
+
+  </div>
+</body>
 </html>
