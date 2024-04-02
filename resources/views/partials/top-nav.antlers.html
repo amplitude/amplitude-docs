@@ -1,6 +1,5 @@
-<div class="box-border flex flex-row flex-nowrap items-center border-solid border-b border-black-200 h-12 px-4"
+<div class="box-border flex flex-row flex-nowrap items-center border-solid border-b border-black-200 h-12 px-4 justify-start"
     style="margin-left: -20px; margin-top: -20px;">
-    <div class="flex-auto mr-4 text-sm"><a href="/">Home</a></div>
     {{ nav:collection:sections sort="order" }}
         {{ if children }}
             <div class="flex-auto mr-4 text-sm" x-data="{ open: false }" @mouseleave="open = false"><button
@@ -12,7 +11,7 @@
                 </div>
             </div>
         {{ else }}
-            <div class="flex-auto mr-4 text-sm "><a href="{{ url }}"
+            <div class="flex-initial mr-4 text-sm "><a href="{{ url }}"
                     class="{{if segment_1 === slug}}text-green-700{{/if}}">{{ title }}</a></div>
         {{ /if }}
     {{ /nav:collection:sections }}
