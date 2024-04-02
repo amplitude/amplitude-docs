@@ -1,0 +1,41 @@
+<section class="w-full flex flex-col items-center">
+    {{ partial:breadcrumbs }}
+    <div class="flex flex-row w-full p-8">
+      <div class="copy">
+        <div class="flex flex-row items-start justify-between">
+          <h1>{{ title }}</h1>
+          {{ if environment == 'local' }}
+            <span class="ml-4 text-xs text-gray-300 align-middle"><a href="{{ edit_url }}"
+                target="_blank">Edit</a></span>
+          {{ /if }}
+        </div>
+        <div
+          class="prose prose-a:text-amp-blue-300 prose-ol:list-decimal prose-ol:list-outside prose-pre:bg-[#fafafa] max-w-prose">
+          {{collection :from="catalog" as="integrations" sort="title:asc"}}
+          {{integrations group_by="category"}}
+          {{groups | sort}}
+          <h2 id="{{group | slugify}}">{{group}}</h2>
+          <div class="flex flex-wrap gap-4">
+          {{items}}
+          <a href="{{ url }}">
+          <div class="border border-gray-500 rounded h-24 w-64 p-4 hover:shadow-lg transition-shadow flex items-center">
+          <div>{{ svg src="/assets/icons/{title|slugify}" class="max-w-12 max-h-12"}}</div>
+          
+          <div class="pl-8">{{ title }}</div>
+          </div>
+          </a>
+          {{/items}}
+          </div>
+          {{/groups}}
+          {{/integrations}}
+          {{/collection}}
+        
+        </div>
+        {{# <p class="text-xs text-amp-light-blue-700">Last updated: {{updated_at}} by {{updated_by:email}}</p> #}}
+      </div>
+      {{unless hide_toc}}
+        {{partial:toc}}
+      {{/unless}}
+    </div>
+    </div>
+  </section>
