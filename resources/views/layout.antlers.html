@@ -20,16 +20,16 @@
 </head>
 <body class="bg-gray-100 font-sans leading-normal text-gray-800">
   <div class="container prose">
-    <div class="absolute top-0 left-0 bottom-0 right-0">
-      <div class="w-full py-5 pl-5">
+    <div class="top-0 left-0  right-0 bg-white fixed z-10">
+      <div class="w-full pt-5 pl-5">
         <div class="box-border">
           {{ partial:header }}
         </div>
       </div>
 
     </div>
-    <div class="absolute top-12 left-0 bottom-0 right-0">
-      <div class="w-full py-5 pl-5">
+    <div class="top-12 left-0 right-0 fixed bg-white z-10">
+      <div class="w-full pt-5 pl-5">
         <div class="box-border">
           {{ partial:top-nav }}
         </div>
@@ -37,7 +37,8 @@
 
     </div>
 
-    <div class="w-56 h-100 fixed left-0 top-24 bottom-0 border-solid border-r border-black-200 hidden lg:block overflow-auto pt-10">
+    <div
+      class="w-56 h-100 left-0 top-24 bottom-0 border-solid border-r border-black-200 hidden lg:block overflow-auto fixed">
       {{ if segment_1 }}
         {{ if nav_type }}
           {{ partial:side-nav-charts :nav_title="nav_title" }}
@@ -46,7 +47,7 @@
         {{ /if }}
       {{ /if }}
     </div>
-    <div class="absolute top-24 left-0 lg:left-56 bottom-0 right-0">
+    <div class="absolute top-24 left-0 lg:left-56 bottom-0 right-0 z-0">
       <div class="w-full pt-8">
         {{ template_content }}
       </div>
