@@ -6,7 +6,14 @@
 
 
   <script>
-    tocbot.init({
+
+    // Get all h2 and h3 elements
+    var headings = document.querySelectorAll('h2, h3');
+
+    // Check if there are more than 3
+    if (headings.length > 3) {
+      // Execute your code here
+      tocbot.init({
         // Where to render the table of contents.
         tocSelector: '.js-toc',
         // Where to grab the headings to build the table of contents.
@@ -18,5 +25,6 @@
         ignoreSelector: '.hint-title',
         orderedList: false,
         ignoreHiddenElements: true,
-      });
+      });    }
+   
   </script>

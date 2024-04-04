@@ -100,12 +100,28 @@
 
 /* This is all you. */
 
-.toc-link:last-of-type::before {
-    height: 2rem;
-  }
+ul.toc-list {
+    list-style-type: none;
+    padding-left: 10px;
+    overflow: hidden;
+    position: relative;
+}
 
 .is-active-link::before {
     @apply bg-amp-blue-500;
+}
+
+a.toc-link {
+    display: block;
+}
+
+.is-collapsed {
+    max-height: 0;
+    display: none;
+}
+
+.toc-list-item {
+    padding: 0;
 }
 
 .hint {
@@ -239,16 +255,19 @@
     background-color: theme('colors.amp-red.500');
 }
 
-ul.toc-list {
-    list-style-type: none;
-    padding: 0;
-}
-
 
 .heading-permalink {
     opacity: 0;
     margin-left: -12px;
   }
+
+h2::before, h3::before {
+    content: "";
+    display: block;
+    height: 100px;  /* height of your fixed header */
+    margin-top: -100px;  /* negative value of fixed header height */
+    visibility: hidden;
+}
   
   h1:hover .heading-permalink,
   h2:hover .heading-permalink,
