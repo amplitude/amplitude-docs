@@ -1,0 +1,43 @@
+title: 'Article Common'
+fields:
+  -
+    handle: landing
+    field:
+      default: false
+      type: toggle
+      display: 'Display on landing page?'
+      instructions: "Toggle to place this article on the section's landing page."
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: landing_blurb
+    field:
+      restrict: false
+      buttons:
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - quote
+        - link
+        - image
+        - table
+      automatic_line_breaks: true
+      automatic_links: false
+      escape_markup: false
+      heading_anchors: false
+      smartypants: false
+      table_of_contents: false
+      antlers: false
+      type: markdown
+      display: 'Landing page blurb'
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      if:
+        landing: 'equals true'

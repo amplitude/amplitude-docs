@@ -307,6 +307,10 @@ h2:hover a {
     }
 }
 
+
+.landing-blurb > p {
+    margin-bottom: 0;
+}
 /*
 Margin and rounding are personal preferences,
 overflow-x-auto is recommended.

@@ -6,13 +6,13 @@
                     @click.prevent @mouseover="open = true" style="font-weight:normal">{{ title }}</button>
                 <div x-cloak x-show="open" class="mt-4 absolute border-2 border-black-500 top-4 bg-white w-24 p-4">
                     {{ children }}
-                        <a href="{{ url }}">{{ title }}</a> <br />
+                        <a class="no-underline" href="{{ url }}">{{ title }}</a> <br />
                     {{ /children }}
                 </div>
             </div>
         {{ else }}
-            <div class="flex-initial mr-4 text-sm "><a href="{{ url }}"
-                    class="{{if segment_1 === slug}}text-green-700{{/if}}">{{ title }}</a></div>
+            <div class="flex-initial mr-4 text-sm {{if segment_1 == slug}}border-b-4 border-amp-blue-500 pb-2.5 mt-3.5{{/if}}"><a class="no-underline" href="{{ url }}"
+                    class="{{if segment_1 === slug}}text-amp-blue-500{{/if}}">{{ title }}</a></div>
         {{ /if }}
     {{ /nav:collection:sections }}
 </div>

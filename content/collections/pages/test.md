@@ -3,10 +3,11 @@ id: 34cde5a0-0c7a-46b7-ac73-a0e306bb0b95
 blueprint: page
 title: 'Amplitude Docs.next IA Test'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-template: default
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1707241404
 hide_toc: true
+hide_side-nav: true
+template: home
 ---
 
 ## Background
