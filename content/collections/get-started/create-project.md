@@ -2,6 +2,8 @@
 title: "Create a project in Amplitude"
 source: "https://help.amplitude.com/hc/en-us/articles/16796780525339-Create-a-project-in-Amplitude"
 id: a64c1c43-88d3-415d-b895-d27bb6decfd9
+landing: true
+landing_blurb: "Once you’ve got your organization set up and users added to it, you can begin adding projects. Each analysis you create will belong to a specific project. "
 ---
 
 #### This article will help you:

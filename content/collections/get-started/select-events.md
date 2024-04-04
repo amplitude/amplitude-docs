@@ -2,6 +2,8 @@
 title: "What events will you need?"
 source: "https://help.amplitude.com/hc/en-us/articles/16800098709275-What-events-will-you-need-"
 id: 669876e4-a2ae-44d5-bfb2-5def51504a25
+landing: true
+landing_blurb: "Events and properties are the backbone of every analysis in Amplitude. Deciding which ones to track can be daunting, especially if you're new to product analytics."
 ---
 
 #### This article will help you:

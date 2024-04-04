@@ -36,7 +36,13 @@
       </div>
 
     </div>
-
+    {{if hide_side-nav}}
+    <div class="absolute top-24 left-0 bottom-0 right-0 z-0">
+      <div class="w-full">
+        {{ template_content }}
+      </div>
+    </div>
+    {{else}}
     <div
       class="w-56 h-100 left-0 top-24 bottom-0 border-solid border-r border-black-200 hidden lg:block overflow-auto fixed">
       {{ if segment_1 }}
@@ -53,6 +59,10 @@
       </div>
 
     </div>
+   
+
+    {{/if}}
+
 
   </div>
 </body>

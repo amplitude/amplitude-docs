@@ -28,7 +28,7 @@ ul.nav li::marker {
         <li>
            <!-- lvl1: {{lvl1_parent}} -->
             {{ if url }}
-            <a href="{{ url }}" {{if is_current }} style="color: green"{{/if}}>{{ title }}</a>
+            <a href="{{ url }}" {{if is_current }} class="text-amp-blue-500"{{/if}}>{{ title }}</a>
             {{else}}
             <button @click.prevent="lvl1 ='{{title | slugify}}';console.log(lvl1)"style="text-align:left">{{ title }}</button>
             {{/if }}
@@ -37,7 +37,7 @@ ul.nav li::marker {
                     {{ children }}
                         <li>
                             {{ if url }}
-                            <a href="{{ url }}" {{if is_current }} style="color: green"  x-effect="lvl1 = '{{parent:title | slugify}}'{{/if}}">{{ title }}</a>
+                            <a href="{{ url }}" {{if is_current }} class="text-amp-blue-500"  x-effect="lvl1 = '{{parent:title | slugify}}'{{/if}}">{{ title }}</a>
                             {{else}}
                             <button @click.prevent="lvl2 = (lvl2 === '{{title | slugify}}' ? null : '{{title | slugify}}')"style="text-align:left">{{ title }}</button>
                             {{/if }}
@@ -46,7 +46,7 @@ ul.nav li::marker {
                                 <ul x-show="lvl2 === '{{title | slugify}}'" class="nav-level-3">
                                     {{ children }}
                                         <li>
-                                            <a href="{{ url }}" {{if is_current }} style="color: green" x-effect="lvl2 = '{{parent:title | slugify}}'; lvl1 = '{{lvl1_parent}}'"{{/if}}>{{ title }}</a>
+                                            <a href="{{ url }}" {{if is_current }} class="text-amp-blue-500" x-effect="lvl2 = '{{parent:title | slugify}}'; lvl1 = '{{lvl1_parent}}'"{{/if}}>{{ title }}</a>
                                         </li>
                                     {{ /children }}
                                 </ul>
