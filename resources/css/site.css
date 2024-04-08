@@ -153,7 +153,7 @@ a.toc-link {
     content:'';
     mask-size: contain;
     position: absolute;
-    top: .625em;
+    top: 101px;
     width: 1.25rem;
     height: 1.25rem;
     left: 1rem;
@@ -264,9 +264,8 @@ a.toc-link {
 h2::before, h3::before {
     content: "";
     display: block;
-    height: 100px;  /* height of your fixed header */
-    margin-top: -100px;  /* negative value of fixed header height */
-    visibility: hidden;
+    height: 95px;
+    margin-top: -95px;  
 }
   
   h1:hover .heading-permalink,
