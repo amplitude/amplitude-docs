@@ -159,6 +159,10 @@ a.toc-link {
     left: 1rem;
 }
 
+.hint-content > p {
+    margin-bottom: 0;
+}
+
 .note {
     border-color: theme('colors.amp-blue.500');
 }
