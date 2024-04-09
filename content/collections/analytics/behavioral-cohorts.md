@@ -3,6 +3,12 @@ id: a7958374-901d-401d-abc9-ba400074edbd
 blueprint: analytic
 title: 'Behavioral cohorts: Identify users with similar behaviors'
 source: 'https://help.amplitude.com/hc/en-us/articles/231881448-Behavioral-cohorts-Identify-users-with-similar-behaviors'
+author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+landing: true
+landing_blurb: 'In Amplitude, a **cohort** is a group of users who share a trait or set of traits.'
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1712681972
 ---
 #### This article will help you:
 
@@ -45,4 +51,4 @@ You can also create a chart using the cohort directly from the Cohort page:
 
 ![create chart from cohort.png](/output/img/analytics/create chart from cohort.png)
 
-But before you can do any of that, you'll have to define a new cohort. Read the next article to learn how to [define a new cohort](/analytics/define-cohort). 
+But before you can do any of that, you'll have to define a new cohort. Read the next article to learn how to [define a new cohort](/analytics/define-cohort).
