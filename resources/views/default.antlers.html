@@ -27,9 +27,10 @@
       {{ /if }}
       {{# <p class="text-xs text-amp-light-blue-700">Last updated: {{updated_at}} by {{updated_by:email}}</p> #}}
     </div>
-    {{unless hide_toc}}
-      {{partial:toc}}
-    {{/unless}}
+    {{ unless hide_toc }}
+    {{ partial:toc }}
+  {{ /unless }}
   </div>
+
   </div>
 </section>
