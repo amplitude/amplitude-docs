@@ -350,7 +350,7 @@ Use the advanced configuration to better control when the SDK sends page view ev
 
 {{/partial:collapse}}
 
-For example, you can configure Amplitude to track page views only when the URL path contains a certain substring, letâs say âhomeâ. Refer to the code sample for how to achieve this.
+For example, you can configure Amplitude to track page views only when the URL path contains a certain substring.
 
 ```ts
 amplitude.init(API_KEY, OPTIONAL_USER_ID, {
