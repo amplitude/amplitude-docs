@@ -1,9 +1,13 @@
 ---
-title: "Custom events"
-source: "https://help.amplitude.com/hc/en-us/articles/16805886899483-Custom-events"
 id: c2c4ceb7-94ab-44f8-967a-99ff8f07e800
+blueprint: data
+title: 'Custom events'
+source: 'https://help.amplitude.com/hc/en-us/articles/16805886899483-Custom-events'
+author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1712683681
 ---
-
 #### This article will help you:
 
 * Understand how creating a custom event can support your analysis
@@ -30,7 +34,7 @@ This feature is available to users on **Plus**, **Growth**, and **Enterprise** *
 * Only admins, managers, and members can create custom events.
 * Custom events are available only in the Event Segmentation, Funnel Analysis, Retention Analysis, Lifecycle, Stickiness, Impact Analysis, Pathfinder, and Compass charts.
 * You cannot query on custom events in Redshift.
-* All custom events will have the prefix '[Custom]' before the event name in your charts.
+* All custom events will have the prefix `[Custom]` before the event name in your charts.
 * Editing or renaming custom events being used on other charts will break those charts. Amplitude will continue to query the previously-named value until it is manually changed on any charts that use it. You will receive a warning when making any edits to custom events.
 * Querying event properties on custom events will **only** be possible if the property is applicable to all events. If you're trying to create a custom event with five different events, and you'd like to see the location values from all of those events, you'll need to instrument the location event property to **all** the individual events making up the custom event.
 

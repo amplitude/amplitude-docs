@@ -1,16 +1,21 @@
 ---
-title: "How to organize your team for implementation"
-source: "https://help.amplitude.com/hc/en-us/articles/360039862012-How-to-organize-your-team-for-implementation"
 id: 67184865-248e-4d6c-9a46-3e7495c2e072
+blueprint: get-started
+title: 'How to organize your team for implementation'
+source: 'https://help.amplitude.com/hc/en-us/articles/360039862012-How-to-organize-your-team-for-implementation'
+author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1712683496
 ---
-
 #### This article will help you:
 
 * Identify and understand team roles that are critical to successfully using Amplitude
 
 As you prepare to implement Amplitude, it's important to assign these three roles to the members of your implementation team:
 
-**Project Lead**
+## Project Lead
 
 Also known as the Adoption Lead, this is usually the main point of contact between your company and Amplitude (especially if you've purchased a paid plan). Depending on the team that implements Amplitude, this role is often filled by a product manager or someone from the data science team.
 
@@ -20,7 +25,7 @@ Example tasks and responsibilities:
 * Drive Amplitude adoption and usage across teams at your company.
 * Manage implementation where needed. For example, if you need to expand Amplitude to a new platform or product, you make sure a [tracking plan (taxonomy)](/data/data-planning-playbook) is built and engineering resources are available.
 
-**Data Governor** 
+## Data Governor
 
 This person is responsible for designing your team's tracking plan and, later on, maintaining your Amplitude data quality. This person will also need to be able to align your business goals to the data you need to track in Amplitude. The role is often filled by a product manager, an analyst or someone else from the data science team.
 
@@ -31,7 +36,7 @@ Example tasks and responsibilities:
 * Design and manage the process for ongoing tracking development. For example, when a new feature is planned, the data governor challenges the product manager on measuring the success of that feature. Once you decide what to measure, you'll need to connect with an engineering resource to track the relevant events and properties to Amplitude.
 * One data governor can oversee multiple products/projects or you can have one data governor per project.
 
-**Instrumentation Lead**
+## Instrumentation Lead
 
 The instrumentation lead is primarily responsible for instrumenting new Amplitude events. The role is often filled by a senior developer or dev lead, especially if data is sourced across multiple locations.
 

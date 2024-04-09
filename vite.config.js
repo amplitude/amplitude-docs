@@ -9,7 +9,6 @@ export default defineConfig({
             input: [
                 'resources/css/site.css',
                 'resources/css/tocbot.css',
-                'resources/css/styles.css',
                 'resources/js/site.js',
                 'resources/js/api-table.js',
                 'resources/js/tocbot.js',
