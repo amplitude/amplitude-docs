@@ -9,6 +9,12 @@
               target="_blank">Edit</a></span>
         {{ /if }}
       </div>
+      {{# {{ if article_type == "core"}}
+      <div class="border rounded">
+        placeholder for metadata (github link, releases, version number, and more)
+        {{svg src="/assets/icons/github.svg"}} {{sdk_versions:browser}}
+      </div>
+      {{/if}} #}}
       <div
         class="prose prose-a:text-amp-blue-300 prose-ol:list-decimal prose-ol:list-outside prose-pre:bg-[#fafafa] max-w-prose">
         {{ partial:sdk-comparison }}
