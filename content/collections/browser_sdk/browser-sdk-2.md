@@ -17,7 +17,7 @@ major_version: 2
 ampli_article: 5afa91b7-c12d-425a-b4b6-661061e5843a
 ---
 
-Write a new intro here.
+Amplitude's Browser SDK 2 lets you send events to Amplitude.
 
 ## Initialize the SDK
 
@@ -307,7 +307,7 @@ Set `config.defaultTracking.attribution` to `false` to disable marketing attribu
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
   defaultTracking: {
-    attribution: false,
+    attribution: false, //[tl! highlight]
   },
 });
 ```
@@ -332,7 +332,7 @@ Set `config.defaultTracking.pageViews` to `false` to disable page view tracking.
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
   defaultTracking: {
-    pageViews: false,
+    pageViews: false, //[tl! highlight]
   },
 });
 ```
@@ -355,7 +355,7 @@ For example, you can configure Amplitude to track page views only when the URL p
 ```ts
 amplitude.init(API_KEY, OPTIONAL_USER_ID, {
   defaultTracking: {
-    pageViews: {
+    pageViews: { //[tl! highlight:2]
       trackOn: () => {
         return window.location.pathname.includes('home');
       },
@@ -387,7 +387,7 @@ You can opt out of tracking session events by setting `config.defaultTracking.se
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
   defaultTracking: {
-    sessions: false,
+    sessions: false, //[tl! highlight]
   },
 });
 ```
@@ -410,7 +410,7 @@ Set `config.defaultTracking.formInteractions` to `false` to disable form interac
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
   defaultTracking: {
-    formInteractions: false,
+    formInteractions: false, //[tl! highlight]
   },
 });
 ```
@@ -433,3 +433,392 @@ amplitude.init(AMPLITUDE_API_KEY, {
 
 ## User properties
 
+User properties are details like device details, user preferences, or language to help you understand your users at the time they performed an action in your app.
+
+Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, and `remove` on individual user properties. Declare the operations via a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
+
+{{partial:admonition type="note" title="Identify calls"}}
+If the SDK sends the Identify call after the event, the details of the call appear immediately in the user's profile in Amplitude. Results don't appear in chart results until the SDK sends another event after Identify. Identify calls affect events that happen after it. For more information, see [Overview of user properties and event properties](/data/user-properties-and-events).
+{{/partial:admonition}}
+
+### Set a user property
+
+The Identify object provides controls for setting user properties. To set a user property:
+
+1. Instantiate an Identify object
+2. Call methods on that object
+3. Instruct the SDK to make a call with the Identify object
+
+```ts
+const identifyEvent = new amplitude.Identify();
+// Use methods in the following sections to update the Identify object
+amplitude.identify(identifyEvent);
+```
+
+#### Identify.set
+This method sets the value of a user property. For example, you can set a role property of a user.
+
+```ts
+const identifyEvent = new amplitude.Identify();
+identifyEvent.set('location', 'LA'); //[tl! highlight]
+amplitude.identify(identifyEvent);
+```
+
+#### Identify.setOnce
+
+This method sets the value of a user property only one time. Subsequent calls using `setOnce()` are ignored. For example, you can set an initial login method for a user. `setOnce()` ignores later calls.
+
+```ts
+const identifyEvent = new amplitude.Identify();
+identifyEvent.setOnce('initial-location', 'SF'); //[tl! highlight]
+identify(identifyEvent);
+```
+
+#### Identify.add
+
+This method increments a user property by a numerical value. If the user property doesn't have a value set yet, it's initialized to `0` before it's incremented. For example, you can track a user's travel count.
+
+```ts
+const identifyEvent = new amplitude.Identify();
+identifyEvent.add('travel-count', 1); //[tl! highlight]
+amplitude.identify(identifyEvent);
+```
+
+### Arrays in user properties
+
+Call the `prepend`, `append`, `preInsert`, or `postInsert` methods to use arrays as user properties.
+
+#### Identify.prepend
+
+This method prepends a value or values to a user property array. If the user property doesn't have a value set yet, it's initialized to an empty list before the new values are prepended.
+
+```ts
+const identifyEvent = new Identify();
+identifyEvent.prepend('visited-locations', 'LAX'); //[tl! highlight]
+identify(identifyEvent);
+```
+
+#### Identify.append
+
+This method appends a value or values to a user property array. If the user property doesn't have a value set yet, it's initialized to an empty list before the new values are prepended.
+
+```ts
+const identifyEvent = new amplitude.Identify();
+identifyEvent.append('visited-locations', 'SFO'); //[tl! highlight]
+amplitude.identify(identifyEvent);
+```
+
+#### Identify.postInsert
+
+This method post-inserts a value or values to a user property if it doesn't exist in the user property yet. Post-insert means inserting the values at the end of a given list. If the user property doesn't have a value set yet, it's initialized to an empty list before the new values are post-inserted. If the user property has an existing value, this method is a no-op.
+
+```ts
+const identifyEvent = new amplitude.Identify();
+identifyEvent.postInsert('unique-locations', 'SFO'); //[tl! highlight]
+amplitude.identify(identifyEvent);
+```
+
+#### Identify.remove
+
+This method removes a value or values to a user property if it exists in the user property. Remove means remove the existing values from the given list. If the user property has an existing value, this method is a no-op.
+
+```ts
+const identifyEvent = new amplitude.Identify();
+identifyEvent.remove('unique-locations', 'JFK') //[tl! highlight]
+amplitude.identify(identifyEvent);
+```
+
+## User groups
+
+{{partial:admonition type="info" title="User group availability"}}
+User Groups requires the Accounts add-on to your Plus, Growth, or Enterprise plan. For more information, see the [Pricing](https://amplitude.com/pricing) page.
+{{/partial:admonition}}
+
+Amplitude supports assigning users to groups and performing queries, such as Count by Distinct, on those groups. If at least one member of the group has performed the specific event, then the count includes the group.
+
+For example, you want to group your users based on what organization they're in by using an 'orgId'. Joe is in 'orgId' '10', and Sue is in 'orgId' '15'. Sue and Joe both perform a certain event. You can query their organizations in the Event Segmentation Chart.
+
+When setting groups, define a `groupType` and `groupName`. In the previous example, 'orgId' is the `groupType` and '10' and '15' are the values for `groupName`. Another example of a `groupType` could be 'sport' with `groupName` values like 'tennis' and 'baseball'.
+
+Setting a group also sets the `groupType:groupName` as a user property, and overwrites any existing `groupName` value set for that user's `groupType`, and the corresponding user property value. `groupType` is a string, and `groupName` can be either a string or an array of strings to tell that a user is in multiple groups.
+
+{{partial:admonition type="example" title=""}}
+If Joe is in 'orgId' '15', then the `groupName` is `15`.
+
+```ts
+// set group with a single group name
+amplitude.setGroup('orgId', '15');
+```
+
+If Joe is in 'sport' 'soccer' and 'tennis', then the `groupName` is `["tennis", "soccer"]`.
+
+```ts
+// set group with multiple group names
+amplitude.setGroup('sport', ['soccer', 'tennis']);
+```
+{{/partial:admonition}}
+
+Pass an `Event` object with `groups` to a Track call to set an **event-level group**. With event-level groups, the group designation applies only to the specific logged event, and doesn't persist to the user unless you explicitly set it with `setGroup`.
+
+```ts
+amplitude.track({
+  event_type: 'event type',
+  event_properties: { eventPropertyKey: 'event property value' },
+  groups: { 'orgId': '15' }
+})
+```
+
+## Group properties
+
+{{partial:admonition type="info" title="Group properties availability"}}
+Group Properties requires the Accounts add-on to your Plus, Growth, or Enterprise plan. For more information, see the [Pricing](https://amplitude.com/pricing) page.
+{{/partial:admonition}}
+
+Use the Group Identify API to set or update the properties of particular groups. These updates only affect events going forward.
+
+The `groupIdentify()` method accepts a group type and group name string parameter, as well as an Identify object that's applied to the group.
+
+```ts
+const groupType = 'plan';
+const groupName = 'enterprise';
+const groupIdentifyEvent = new amplitude.Identify()
+groupIdentifyEvent.set('key1', 'value1');
+amplitude.groupIdentify(groupType, groupName, groupIdentifyEvent); //[tl! highlight]
+```
+
+## Track revenue
+
+The preferred method of tracking revenue for a user is to use `revenue()` in conjunction with the provided Revenue interface. Revenue instances store each revenue transaction and allow you to define several special revenue properties (like `revenueType` and `productIdentifier`) that are used in Amplitude's Event Segmentation and Revenue LTV charts. These Revenue instance objects are then passed into `revenue()` to send as revenue events to Amplitude. This lets automatically display data relevant to revenue in the platform. You can use this to track both in-app and non-in-app purchases.
+
+To track revenue from a user, call revenue each time a user generates revenue. In this example, the user purchased 3 units of a product at $3.99.
+
+```ts
+const event = new amplitude.Revenue()
+  .setProductId('com.company.productId')
+  .setPrice(3.99)
+  .setQuantity(3);
+
+amplitude.revenue(event);
+```
+
+### Revenue interface
+
+| Name | Description | Default Value |
+| --- | --- | --- |
+| `product_id` | Optional. `string`. An identifier for the product. Amplitude recommend something like the Google Play Store product ID. | Empty string. |
+| `quantity` | Required. `number`. The quantity of products purchased. Note: revenue = quantity \* price. | `1` |
+| `price` | Required. `number`. The price of the products purchased, and this can be negative. Note: revenue = quantity \* price. | `null` |
+| `revenue_type` | Optional, but required for revenue verification. `string`. The revenue type (for example, tax, refund, income). | `null` |
+| `receipt` | Optional. `string`. The receipt identifier of the revenue. | `null` |
+| `receipt_sig` | Optional, but required for revenue verification. `string`. The receipt signature of the revenue. | `null` |
+| `properties` | Optional. `{ [key: string]: any }`. An object of event properties to include in the revenue event. | `null` |
+
+## Flush the event buffer
+
+The `flush` method triggers the client to send buffered events immediately.
+
+```ts
+amplitude.flush();
+```
+
+By default, Browser SDK calls`flush` automatically at an interval. If you want to flush all events, control the async flow with the optional Promise interface, for example:
+
+```ts
+amplitude.init(API\_KEY).promise.then(function() {
+  amplitude.track('Button Clicked');
+  amplitude.flush();
+});
+```
+
+## Custom user identifier
+
+If your application has a login system that you want to track users with, call `setUserId` to update the user's identifier.
+
+```ts
+amplitude.setUserId('user@amplitude.com');
+```
+
+## Custom session identifier
+
+Assign a new session ID with `setSessionId`. When you set a custom session ID, make sure the value is in milliseconds since epoch (Unix Timestamp).
+
+```ts
+amplitude.setSessionId(Date.now());
+```
+
+## Custom device identifier
+
+Assign a new device ID with `deviceId`. When you set a custom device ID, make sure the value is sufficiently unique. Amplitude recommends using a UUID.
+
+```ts
+amplitude.setDeviceId(uuid());
+```
+
+## Reset when the user logs out
+
+Use `reset` as a shortcut to anonymize users after they log out. `reset` does the following:
+
+1. Sets `userId` to `undefined`.
+2. Sets `deviceId` to a new UUID value.
+
+With an undefined `userId` and a new `deviceId`, the user appears to Amplitude as a new user.
+
+```ts
+amplitude.reset();
+```
+
+## Opt users out of tracking
+
+Set `setOptOut` to `true` to disable logging for a specific user.
+
+```ts
+amplitude.setOptOut(true);
+```
+Amplitude doesn't save or send events to the server while `setOptOut` is enabled. The setting persists across page loads.
+
+Set `setOptOut` to `false` to re-enable logging.
+
+```ts
+amplitude.setOptOut(false);
+```
+
+## Optional tracking
+
+By default, the SDK tracks these properties automatically. You can override this behavior by passing a configuration called `trackingOptions` when initializing the SDK, setting the appropriate options to false.
+
+| Tracking Options | Default |
+| --- | --- |
+| `ipAddress` | `true` |
+| `language` | `true` |
+| `platform` | `true` |
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  trackingOptions: {
+    ipAddress: false,
+    language: false,
+    platform: false,
+  },
+});
+```
+
+## Callback
+
+All asynchronous APIs are optionally awaitable through a Promise interface. This also serves as a callback interface.
+
+{{partial:tabs tabs="Promise, async/await"}}
+{{partial:tab name="Promise"}}
+```ts
+amplitude.init("apikey", "12321.com").promise.then(function(result) { 
+ // init callback
+})
+
+amplitude.track('Button Clicked').promise.then(function(result) {
+ result.event; // {...} (The final event object sent to Amplitude)
+ result.code; // 200 (The HTTP response status code of the request.
+ result.message; // "Event tracked successfully" (The response message)
+});
+```
+{{/partial:tab}}
+{{partial:tab name="async/await"}}
+```ts
+// Using async/await
+const initResult = await amplitude.init("apikey", "12321.com").promise;
+
+const results = await amplitude.track('Button Clicked').promise;
+result.event; // {...} (The final event object sent to Amplitude)
+result.code; // 200 (The HTTP response status code of the request.
+result.message; // "Event tracked successfully" (The response message)
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+## Plugins
+
+Plugins allow you to extend Amplitude SDK's behavior by, for example, modifying event properties (enrichment plugin) or sending to third-party endpoints (destination plugin). A plugin is an `Object` with optional fields `name` and `type` and methods `setup()`, `execute()` and `teardown()`.
+
+### add
+
+The `add` method adds a plugin to Amplitude.
+
+```ts
+amplitude.add(new Plugin());
+```
+
+### remove
+
+The `remove` method removes the given plugin name from the client instance if it exists.
+
+```ts
+amplitude.remove(plugin.name);
+```
+
+### Create a custom plugin
+
+| Field / Function | Description |
+| -----------------| ------------|
+| `plugin.name`    | Optional. The name field is an optional property that allows you to reference the plugin for deletion purposes. If not provided, Amplitude assigns a random name when you add the plugin. If you don't plan to delete your plugin, you can skip assigning a name. |
+| `plugin.type`   | Optional. The type field is an optional property that defines the type of plugin you are creating. See `plugin.execute()` function below to distinguish the two types. If not defined, the plugin defaults to an enrichment type. |
+| `plugin.setup()` | Optional. The setup function is an optional method called when you add the plugin or on first init whichever happens later. This function accepts two parameters: 1) Amplitude configuration; and 2) Amplitude instance. This is useful for setup operations and tasks that depend on either the Amplitude configuration or instance. Examples include assigning baseline values to variables, setting up event listeners, and many more. |
+| `plugin.execute()` | Optional for type:enrichment. For enrichment plugins, execute function is an optional method called on each event. This function must return a new event, otherwise, the SDK drops the passed event from the queue. This is useful for cases where you need to add/remove properties from events, filter events, or perform any operation for each event tracked. <br/><br/> For destination plugins, execute function is a required method called on each event. This function must return a response object with keys: `event` (BaseEvent), `code` (number), and `message` (string). This is useful for sending events for third-party endpoints.|
+| `plugin.teardown()` | Optional. The teardown function is an optional method called when Amplitude re-initializes. This is useful for resetting unneeded persistent state created/set by setup or execute methods. Examples include removing event listeners or mutation observers. |
+
+### Plugin examples
+
+{{partial:tabs tabs="Enrichment, Destination"}}
+{{partial:tab name="Enrichment"}}
+Here's an example of an enrichment plugin that includes an extra event property `page_url` to all events.
+
+```ts
+const enrichPageUrlPlugin = (): EnrichmentPlugin => {
+  return {
+    execute: async (event: Event) => {
+      event.event\ _properties = {
+        ...event.event\ _properties,
+        page\ _url: location.href,
+      };
+      return event;
+    },
+  }
+}
+
+amplitude.init(API\ _KEY);
+amplitude.add(enrichPageUrlPlugin());
+```
+{{/partial:tab}}
+{{partial:tab name="Destination"}}
+Here's an example of a destination plugin that sends each tracked event to a custom server URL using Fetch API.
+
+```ts
+const customDestination = (customUrl: string): DestinationPlugin => {
+  return {
+    type: 'destination',
+    execute: async (event: Event) => {
+      const payload = {
+        k: 'apikey',
+        d: event,
+      };
+
+      const response = await fetch(customUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: '\*/\*',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      return {
+        code: response.status,
+        event: event,
+        message: response.statusText,
+      };
+    },
+  };
+};
+
+amplitude.init(API_KEY);
+amplitude.add(myDestinationPlugin('https://custom.url.com'));
+```
+{{/partial:tab}}
+{{/partial:tabs}}
