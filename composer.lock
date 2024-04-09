@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c7e64e12d283a4f69095a5751950f5c1",
+    "content-hash": "46eee2b43b25bdcbd3f4d6ae8eebc383",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -68,6 +68,52 @@
                 "source": "https://github.com/ajthinking/archetype/tree/v1.1.5"
             },
             "time": "2022-08-24T05:52:35+00:00"
+        },
+        {
+            "name": "alt-design/alt-sitemap",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alt-design/Alt-Sitemap-Addon.git",
+                "reference": "9224b6ec83b67d8420f38ae47d6b9f07c1628fca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alt-design/Alt-Sitemap-Addon/zipball/9224b6ec83b67d8420f38ae47d6b9f07c1628fca",
+                "reference": "9224b6ec83b67d8420f38ae47d6b9f07c1628fca",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1",
+                "statamic/cms": "^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "statamic": {
+                    "name": "Alt Sitemap",
+                    "description": "Alt Sitemap addon"
+                },
+                "laravel": {
+                    "providers": [
+                        "AltDesign\\AltSitemap\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AltDesign\\AltSitemap\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Alt Sitemap addon, create a sitemap from Statamic entries",
+            "support": {
+                "issues": "https://github.com/alt-design/Alt-Sitemap-Addon/issues",
+                "source": "https://github.com/alt-design/Alt-Sitemap-Addon/tree/v1.1.1"
+            },
+            "time": "2024-02-19T17:13:32+00:00"
         },
         {
             "name": "brick/math",

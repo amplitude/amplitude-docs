@@ -67,6 +67,55 @@
             "install-path": "../ajthinking/archetype"
         },
         {
+            "name": "alt-design/alt-sitemap",
+            "version": "v1.1.1",
+            "version_normalized": "1.1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alt-design/Alt-Sitemap-Addon.git",
+                "reference": "9224b6ec83b67d8420f38ae47d6b9f07c1628fca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alt-design/Alt-Sitemap-Addon/zipball/9224b6ec83b67d8420f38ae47d6b9f07c1628fca",
+                "reference": "9224b6ec83b67d8420f38ae47d6b9f07c1628fca",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1",
+                "statamic/cms": "^4.0"
+            },
+            "time": "2024-02-19T17:13:32+00:00",
+            "type": "library",
+            "extra": {
+                "statamic": {
+                    "name": "Alt Sitemap",
+                    "description": "Alt Sitemap addon"
+                },
+                "laravel": {
+                    "providers": [
+                        "AltDesign\\AltSitemap\\ServiceProvider"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "AltDesign\\AltSitemap\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Alt Sitemap addon, create a sitemap from Statamic entries",
+            "support": {
+                "issues": "https://github.com/alt-design/Alt-Sitemap-Addon/issues",
+                "source": "https://github.com/alt-design/Alt-Sitemap-Addon/tree/v1.1.1"
+            },
+            "install-path": "../alt-design/alt-sitemap"
+        },
+        {
             "name": "barryvdh/laravel-debugbar",
             "version": "v3.9.2",
             "version_normalized": "3.9.2.0",
