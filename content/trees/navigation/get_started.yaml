@@ -48,15 +48,15 @@ tree:
         id: 26508ef2-30cc-410d-8833-d311da49065f
         entry: 1b7d1277-e445-4c19-a784-216b7018abb1
       -
+        id: 5a2e1b36-e5d0-401e-b02e-1ecc9b2eff34
+        entry: a4bd5ca3-8ce3-45b0-b57b-5578695005f6
+      -
         id: 24bd0c80-0269-41b1-94e3-3cbe085d8975
         entry: 7d2ddd8b-26ba-4c9f-a201-b17179f01e02
   -
     id: 8635ead6-f80e-4f53-9c45-9ed368a0383e
     title: 'Get Value from Amplitude'
     children:
-      -
-        id: 5a2e1b36-e5d0-401e-b02e-1ecc9b2eff34
-        entry: a4bd5ca3-8ce3-45b0-b57b-5578695005f6
       -
         id: 07bc2774-dfc6-47d1-a10a-1143b4818eb8
         entry: 6351af1c-e7e9-4488-bbe7-34648487d173
