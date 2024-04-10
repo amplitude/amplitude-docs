@@ -3,6 +3,10 @@ id: e729223d-747e-44b5-b0ba-ed96f15acb60
 blueprint: analytic
 title: 'Notebooks: Explain important insights to teammates and stakeholders'
 source: 'https://help.amplitude.com/hc/en-us/articles/360016281172-Notebooks-Explain-important-insights-to-teammates-and-stakeholders'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1712783599
 ---
 #### This article will help you:
 
@@ -32,7 +36,7 @@ You can also scroll down to the list of existing notebooks and add the chart to 
 
 To **add new content** to your notebook, hover over it in the spot you'd like the new content to appear. Click the icon that appears to add a chart, cohort, header, text block, image, or video in that spot.
 
-![notebooks add content.png](/output/img/analytics/notebooks add content.png)
+![notebooks add content.png](/output/img/analytics/notebooks_add_content.png)
 
 To **edit a chart** in your notebook, hover over the chart and click the pen icon to enter edit mode.
 
