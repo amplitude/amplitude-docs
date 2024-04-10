@@ -1,4 +1,4 @@
-title: Audience
+title: 'Session Replay'
 tabs:
   main:
     display: Main
@@ -10,6 +10,16 @@ tabs:
             config:
               title:
                 required: true
+      -
+        display: 'New Section'
+  landing_page:
+    display: 'Landing page'
+    sections:
+      -
+        display: 'New Section'
+        fields:
+          -
+            import: article_common
   sidebar:
     display: Sidebar
     sections:
@@ -26,7 +36,7 @@ tabs:
             field:
               type: entries
               collections:
-                - audiences
+                - session-replay
               max_items: 1
               listable: false
               localizable: true
@@ -57,11 +67,3 @@ tabs:
               visibility: visible
               replicator_preview: true
               hide_display: false
-  landing_page:
-    display: 'Landing Page'
-    sections:
-      -
-        display: 'New Section'
-        fields:
-          -
-            import: article_common

@@ -1,20 +1,22 @@
-title: 'Landing Page'
+title: 'Help Center Common'
 fields:
   -
-    handle: landing
+    handle: title
     field:
-      default: false
-      type: toggle
-      display: 'Display on landing page?'
-      instructions: "Toggle to place this article on the section's landing page."
+      input_type: text
+      antlers: false
+      type: text
+      display: Title
       listable: hidden
       instructions_position: above
       visibility: visible
       replicator_preview: true
       hide_display: false
   -
-    handle: landing_blurb
+    handle: content
     field:
+      container: help_center_conversions
+      folder: /
       restrict: false
       buttons:
         - bold
@@ -29,15 +31,13 @@ fields:
       automatic_links: false
       escape_markup: false
       heading_anchors: false
-      smartypants: false
+      smartypants: true
       table_of_contents: false
       antlers: false
       type: markdown
-      display: 'Landing page blurb'
+      display: Content
       listable: hidden
       instructions_position: above
       visibility: visible
       replicator_preview: true
       hide_display: false
-      if:
-        landing: 'equals true'
