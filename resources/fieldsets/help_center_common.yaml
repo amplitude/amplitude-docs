@@ -31,9 +31,9 @@ fields:
       automatic_links: false
       escape_markup: false
       heading_anchors: false
-      smartypants: true
+      smartypants: false
       table_of_contents: false
-      antlers: false
+      antlers: true
       type: markdown
       display: Content
       listable: hidden
