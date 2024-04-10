@@ -64,6 +64,13 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
+        'help_center' => [
+            'driver' => 'local',
+            'root' => public_path('output/img'),
+            'url' => '/output/img',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
 
     ],
 
