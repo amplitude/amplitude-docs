@@ -12,11 +12,13 @@ In Amplitude, the User Management API provides a programmatic solution to provis
 
 The User Management API follows the [SCIM 2.0 Standard.](http://www.simplecloud.info/#Specification) It allows for the creation, retrieval, update, and deletion calls for users (including pending users) and permission groups.
 
-**NOTE**: For a technical guide and spec for interfacing with the SCIM API, see the [SCIM API guide](https://developers.amplitude.com/docs/scim-api) in our developer docs. It's useful for developers testing the SCIM API, developing scripts that call the Amplitude SCIM API, or constructing one-off requests.
+{{partial:admonition type='note'}}
+ For a technical guide and spec for interfacing with the SCIM API, see the [SCIM API guide](https://developers.amplitude.com/docs/scim-api) in our developer docs. It's useful for developers testing the SCIM API, developing scripts that call the Amplitude SCIM API, or constructing one-off requests.
+{{/partial:admonition}}
 
 ### Feature availability
 
-This feature is available to users on **Enterprise plans only**.
+This feature is available to users on **Enterprise plans only**. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
 
@@ -32,7 +34,9 @@ If SCIM provisioning is available in your organization, you can find it in the *
 
 Simply set the *Enable SCIM Provisioning* toggle to *Enabled*. Then click *Generate SCIM Key* to generate the access token used to authenticate requests for the SCIM API. 
 
-**NOTE:** For security reasons, the SCIM Key is only available once and will not be surfaced in the product afterwards. If you lose access to the key, click *Regenerate SCIM Key.* Be sure to keep a record of the new key. When generating/regenerating the SCIM key, changes are applied **immediately** and the old key will be rejected from future API calls, even if the other changes on the page have not yet been saved.
+{{partial:admonition type='note'}}
+For security reasons, the SCIM Key is only available once and will not be surfaced in the product afterwards. If you lose access to the key, click *Regenerate SCIM Key.* Be sure to keep a record of the new key. When generating/regenerating the SCIM key, changes are applied **immediately** and the old key will be rejected from future API calls, even if the other changes on the page have not yet been saved.
+{{/partial:admonition}}
 
 ### Supported fields
 

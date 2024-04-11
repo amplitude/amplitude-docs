@@ -99,6 +99,9 @@
   }
 
 /* This is all you. */
+.tab > pre {
+    margin-bottom: 0
+}
 
 code {
     font-family: 'IBM Plex Mono', monospace;
