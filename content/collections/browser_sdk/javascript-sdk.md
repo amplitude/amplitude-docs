@@ -17,4 +17,5 @@ ampli_article: 6b771f94-bf3a-44ba-a6a7-6e5b58108f70
 migration_guide:
   - b7cc9d54-870a-40bc-93d8-a2ac15375e75
 major_version: 1.0
+nav_title: browser_sdk
 ---

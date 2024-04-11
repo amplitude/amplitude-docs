@@ -10,4 +10,5 @@ supported_languages:
 bundle_url: 'https://www.npmjs.com/package/@amplitude/ampli?activeTab=versions'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1709671872
+nav_title: browser_sdk
 ---

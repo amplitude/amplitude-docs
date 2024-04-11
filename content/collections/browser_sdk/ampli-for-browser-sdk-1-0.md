@@ -11,4 +11,5 @@ supported_languages:
 bundle_url: 'https://www.npmjs.com/package/@amplitude/ampli'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1709672325
+nav_title: browser_sdk
 ---
