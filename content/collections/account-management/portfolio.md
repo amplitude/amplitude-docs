@@ -11,17 +11,21 @@ id: 99fc5402-2a04-4afc-a248-2973b368033b
 
 With Portfolio, you can easily generate a holistic view of how your users interact with your **entire product portfolio**. If you've instrumented multiple platforms or product lines, Portfolio can give you unparalleled insight into your users’ complete journey.
 
-**NOTE:** Be sure to understand [project settings](/admin/account-management/manage-orgs-projects) in Amplitude before getting started.
+{{partial:admonition type='note'}}
+Be sure to understand [project settings](/admin/account-management/manage-orgs-projects) in Amplitude before getting started.
+{{/partial:admonition}}
 
 ### Feature availability
 
-This feature is available to users on **Growth** and **Enterprise plans** only.
+This feature is available to users on **Enterprise plans only**. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 How it works
 
 The foundation of Portfolio's ability to create cross-product analyses is the **View**. Views are collections of Amplitude Projects or data sources that consolidate the goings-on in each project into a single display. A View, with one or more data sources, allows you to analyze users across multiple projects at once. 
 
-**NOTE:** Views cannot ingest data themselves, but you can change and update them at any point. 
+{{partial:admonition type='note'}}
+Views cannot ingest data themselves, but you can change and update them at any point. 
+{{/partial:admonition}}
 
 Amplitude assumes that if it sees the same user ID (or device ID) in different projects, they're attached to the same user. 
 
@@ -29,7 +33,9 @@ However, user properties **are** siloed on a per-project basis: User properties 
 
 For example, assume you have two projects named iOS and Android. One user has a user property called `Version`, with a value of 1.0 in the iOS project and a value of 2.0 in the Android project. In this case, events triggered by this user in the iOS project will have the value of `Version` set to 1.0, and events triggered in the Android project will have the value of `Version` set to 2.0.
 
-**NOTE:** If an event type has the same name on two or more projects, it will be considered the same event in the dropdown.
+{{partial:admonition type='note'}}
+If an event type has the same name on two or more projects, it will be considered the same event in the dropdown.
+{{/partial:admonition}}
 
 While cohort export for portfolio projects is supported for all destinations, when you select Amplitude User Property, only `device_id` and `user_id` will be available.
 

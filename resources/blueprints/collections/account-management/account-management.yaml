@@ -38,6 +38,18 @@ tabs:
               max_items: 1
               listable: false
               localizable: true
+          -
+            handle: source
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Source
+              listable: hidden
+              instructions_position: above
+              visibility: read_only
+              replicator_preview: true
+              hide_display: false
   alt_sitemap:
     display: 'Alt Sitemap'
     sections:

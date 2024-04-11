@@ -21,7 +21,7 @@ There must be at least one recipient per notification.
 
 ### Feature availability
 
-This feature is available to users on **all Amplitude plans**.
+This feature is available to users on **all Amplitude plans**. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Enable user privacy notifications
 

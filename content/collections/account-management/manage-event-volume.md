@@ -12,7 +12,11 @@ With Scale, Amplitude enables **dynamic behavioral sampling** for ultra-high vol
 
 ### Feature availability
 
-This feature is available to users on **Enterprise plans only**.
+This feature is available to users on **Enterprise plans only**. See our [pricing page](https://amplitude.com/pricing) for more details.
+
+{{partial:admonition type='note'}}
+Scale is a paid add-on intended for extremely high volume customers. **Amplitude** **does not sample by default**. Contact your Account Manager if you believe Scale may be appropriate for your organization.
+{{/partial:admonition}}
 
 ## How sampling works
 
@@ -35,7 +39,9 @@ You can see the raw events seen for your project for last month and the current 
 
 ![scale_1.png](/output/img/account-management/scale-1-png.png)
 
-**NOTE:** Sampling does not apply to PROPCOUNT results.
+{{partial:admonition type='note'}}
+Sampling does not apply to PROPCOUNT results.
+{{/partial:admonition}}
 
 ## Set up sampling
 
@@ -59,7 +65,9 @@ The dynamic sampling rate specifies the frequency with which your data will be q
 
 This list acts as a safelist to set aside small, key sub-populations from your sampling process. Users included in these populations will be exempt from sampling, and will always appear in your data. These populations are defined by the user properties and values you select in this step.
 
-**NOTE:** This process does not apply retroactively. Additionally, the following properties are not supported by the user property inclusion list: `![amplitude_logo.png](/output/img/account-management/amplitude-logo-png.png)User
+{{partial:admonition type='note'}}
+This process does not apply retroactively. Additionally, the following properties are not supported by the user property inclusion list: `![amplitude_logo.png](/output/img/account-management/amplitude-logo-png.png)User
+{{/partial:admonition}}
  ID`, `![amplitude_logo.png](/output/img/account-management/amplitude-logo-png.png)ID`, and `![amplitude_logo.png](/output/img/account-management/amplitude-logo-png.png)Device ID`.
 
 ### Anonymous users

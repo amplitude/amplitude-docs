@@ -10,7 +10,9 @@ id: b287cffb-096c-4dbd-a4f4-a8a99607e723
 
 Displaying an accurate currency in your charts is often necessary to quickly grasp what your data is telling you. Amplitude Analytics displays the United States dollar ($) by default, but managers and admins can modify the unit of currency displayed for a particular project. 
 
-**NOTE**: Changing the currency display does not modify nor convert the underlying data. 
+{{partial:admonition type='note'}}
+ Changing the currency display does not modify nor convert the underlying data. 
+{{/partial:admonition}}
 
 Follow the below steps to modify your currency display for a project: 
 
