@@ -9,16 +9,7 @@
               target="_blank">Edit</a></span>
         {{ /if }}
       </div>
-      {{ if article_type == "core"}}
-      <div class="border rounded border-amp-blue-700 flex flex-row  items-center h-8 p-2 gap-2 -mt-6">
-        <a href="{{github_link}}" target="_blank">{{svg src="/assets/icons/github.svg" class="h-4 w-4"}}</a>
-        <a href="{{releases_link}}" target="_blank">{{svg src="/assets/icons/tag.svg" class="h-4 w-4"}}</a>
-        <a href="{{bundle_url}}" target="_blank"><img src="{{shields_io_badge}}" /></a>
-        {{ supported_languages }}
-        <img class="h-4 inline mx-1 my-0" src="/assets/icons/{{ value }}.svg" />
-        {{ /supported_languages }}
-      </div>
-      {{/if}}
+      {{partial:partials/sdk-details}}
       <div
         class="prose prose-a:text-amp-blue-300 prose-ol:list-decimal prose-ol:list-outside prose-pre:bg-[#fafafa] max-w-prose">
         {{ partial:sdk-comparison }}

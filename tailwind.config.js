@@ -154,7 +154,29 @@ export default {
             },
             
         },
-        extend: {},
+        extend: {
+            typography: {
+                DEFAULT: {
+                    css: {
+                        code: {
+                            'color': '#2a2f45',
+                            'background': '#f7fafc',
+                            'padding': '0 3px',
+                            'margin': '0 1px',
+                            'border-radius': '4px',
+                            'border': '1px solid #e2e8f0',
+                            'font-weight': '400',
+                            '&::before': {
+                                'content': '""!important',
+                            },
+                            '&::after': {
+                                'content': '""!important',
+                            },
+                        }
+                    }
+                }
+            },
+        },
     },
 
     plugins: [
