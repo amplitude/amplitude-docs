@@ -1,9 +1,13 @@
 ---
-title: "Usage reports: Understand how your organization uses Amplitude"
-source: "https://help.amplitude.com/hc/en-us/articles/360049166012-Usage-reports-Understand-how-your-organization-uses-Amplitude"
 id: f8f8b50e-f22a-4c92-8845-01e630b6f7d6
+blueprint: billing-use
+title: 'Usage reports: Understand how your organization uses Amplitude'
+source: 'https://help.amplitude.com/hc/en-us/articles/360049166012-Usage-reports-Understand-how-your-organization-uses-Amplitude'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1712795690
 ---
-
 #### This article will help you:
 
 * Interpret the different charts within usage reports
@@ -42,7 +46,7 @@ Amplitude calculates depth of engagement using the number of edits per session a
 
 ### Detailed KPIs
 
-## usage_reports_detailed_kpis.png
+![](statamic://asset::help_center_conversions::billing-use/usage-reports-detailed-kpis-png.png)
 
 The Detailed KPIs panel gives you a more in-depth look at some of the metrics shared in the Summary Metrics panel. **Weekly learning users** is a way to measure the breadth of Amplitude engagement in your organization: it’s the count of active Amplitude users who’ve shared a learning which is then consumed by at least two other people in the previous seven days. 
 

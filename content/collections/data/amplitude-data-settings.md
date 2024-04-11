@@ -32,7 +32,7 @@ These settings and features are broken out into five different tabs: General; En
 | Member | Modify the tracking plan for approval |
 | Viewer | View the tracking plan and comment |
 
-{{partial:admonition type="info" title=""}}
+{{partial:admonition type="info" heading=""}}
 If the *Require team reviews to make changes to the main branch* option is disabled in the project settings, members will have the ability to modify the tracking plan; however, receiving approval would no longer be required. All other permissions remain the same.
 {{/partial:admonition}}
 

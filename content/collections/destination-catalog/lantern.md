@@ -7,7 +7,7 @@ category: Event streaming
 ---
 [Lantern](https://www.withlantern.com/) is a customer success platform designed to predict when customers are ready to expand or in need of help and run workflows to engage them. Lantern helps B2B companies connect with the right customer at the right time and increase Net Dollar Retention.
 
-{{partial:admonition type="info" title="Lantern manages this integration"}}
+{{partial:admonition type="info" heading="Lantern manages this integration"}}
 Contact the [Lantern support team](https://www.withlantern.com/pricing) for support with this integration.
 {{/partial:admonition}}
 

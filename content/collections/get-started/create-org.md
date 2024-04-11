@@ -16,7 +16,7 @@ landing_blurb: 'In Amplitude, all your analyses will live within a larger projec
 In Amplitude, all your analyses will live within a larger **project**. Projects, in turn, are contained within **organizations**. For most companies, one organization will be enough to effectively manage their Amplitude projects. The number of projects you’ll need will depend on your company’s analytics practices and requirements, which is why there’s no limit on the number of projects you can create.
 
 
-{{partial:admonition type="note" title="Note"}}
+{{partial:admonition type="note" heading="Note"}}
 You may want to take [this course](https://academy.amplitude.com/amplitude-analytics-admin-essentials) on administering Amplitude in Amplitude Academy.
 {{/partial:admonition}}
 

@@ -12,7 +12,7 @@ To show the right users the right experience, you can send cohort information to
 
 This integration lets you sync cohorts from Amplitude to Bento.
 
-{{partial:admonition type="tip" title="Bento maintains this integration"}}
+{{partial:admonition type="tip" heading="Bento maintains this integration"}}
 Contact the [Bento support team](https://help.trybento.co/en/articles/6978743-send-events-to-amplitude) with any questions about this integration.
 {{/partial:admonition}}
 

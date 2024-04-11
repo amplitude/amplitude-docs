@@ -10,7 +10,7 @@ Leanplum helps mobile teams orchestrate multi-channel campaigns from messaging t
 
 Use this integration to match Amplitude's analytics capabilities with Leanplum's marketing automation tools to drive better audience engagement. Sync cohorts created in Amplitude to Leanplum where they're available as saved audiences. 
 
-{{partial:admonition type="note" title="Other Amplitude + Leanplum integrations"}}
+{{partial:admonition type="note" heading="Other Amplitude + Leanplum integrations"}}
 This integration sends Amplitude cohorts to Leanplum. Amplitude offers other integrations with Leanplum: 
 
 - [Import Leanplum Data](/data/sources/leanplum)
