@@ -99,6 +99,34 @@
   }
 
 /* This is all you. */
+.hero {
+    position: relative;
+    overflow: hidden;
+    background-color: #EBF5FF;
+
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 382px;
+    height: 192px;
+    background: #2F1761;
+    border-bottom-right-radius: 200px;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 382px;
+    height: 192px;
+    background: #F5D9E1;
+    border-top-left-radius: 200px;
+}
 
 .tab > pre {
     margin-bottom: 0
