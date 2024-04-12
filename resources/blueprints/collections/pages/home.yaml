@@ -1,0 +1,223 @@
+title: Home
+tabs:
+  main:
+    display: Products
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: products
+            field:
+              collapse: false
+              previews: true
+              fullscreen: true
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  instructions: null
+                  icon: null
+                  sets:
+                    product_details:
+                      display: 'Product Details'
+                      instructions: null
+                      icon: null
+                      fields:
+                        -
+                          handle: product_icon
+                          field:
+                            mode: list
+                            container: assets
+                            folder: home
+                            restrict: true
+                            allow_uploads: true
+                            show_filename: true
+                            show_set_alt: true
+                            type: assets
+                            display: 'Product icon'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            max_files: 1
+                            min_files: 1
+                            width: 50
+                        -
+                          handle: product_name
+                          field:
+                            input_type: text
+                            antlers: false
+                            type: text
+                            display: 'Product Name'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            width: 50
+                        -
+                          handle: section_link
+                          field:
+                            mode: default
+                            create: true
+                            type: entries
+                            display: 'Section link'
+                            width: 50
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            collections:
+                              - sections
+                            max_items: 1
+                        -
+                          handle: product_description
+                          field:
+                            antlers: false
+                            type: textarea
+                            display: 'Product Description'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            width: 50
+              type: replicator
+              display: Products
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+  popular_content:
+    display: 'Popular Content'
+    sections:
+      -
+        display: 'New Section'
+        fields:
+          -
+            handle: popular_content
+            field:
+              collapse: false
+              previews: true
+              fullscreen: true
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  instructions: null
+                  icon: null
+                  sets:
+                    popular_item:
+                      display: 'Popular Item'
+                      instructions: null
+                      icon: null
+                      fields:
+                        -
+                          handle: article
+                          field:
+                            max_items: 1
+                            mode: default
+                            create: true
+                            type: entries
+                            display: Article
+                            width: 50
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: icon
+                          field:
+                            max_files: 1
+                            mode: list
+                            container: assets
+                            folder: home
+                            restrict: false
+                            allow_uploads: true
+                            show_filename: true
+                            show_set_alt: true
+                            type: assets
+                            display: Icon
+                            width: 50
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: blurb
+                          field:
+                            character_limit: '70'
+                            antlers: false
+                            type: textarea
+                            display: Blurb
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                            width: 50
+              type: replicator
+              display: 'Popular Content'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              max_sets: 9
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true
+  alt_sitemap:
+    display: 'Alt Sitemap'
+    sections:
+      -
+        fields:
+          -
+            handle: sitemap_priority
+            field:
+              type: float
+              display: 'Sitemap Priority'
+              instructions: 'From 0.0 (lowest priority) to 1.0 (highest priority)'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: exclude_from_sitemap
+            field:
+              default: false
+              type: toggle
+              display: 'Exclude from sitemap?'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false

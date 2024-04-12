@@ -186,6 +186,9 @@ export default {
                             '&::after': {
                                 'content': '""!important',
                             },
+                        },
+                        a: {
+                            "text-decoration": "none",
                         }
                     }
                 }
