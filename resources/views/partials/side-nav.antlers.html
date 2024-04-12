@@ -1,26 +1,3 @@
-<style>
-a {
-    text-decoration: none!important;
-    font-weight: normal!important;
-}
-
-button {
-    font-weight: bold;
-}
-
-ul.nav-level-1, ul.nav-level-2, ul.nav-level-3 {
-    list-style: none;
-    padding: 0;
-}
-
-ul.nav li::marker {
-    content: none!important
-}
-
-
-</style>
-
-
 <div x-cloak x-data="{ lvl1: false, lvl2: false, lvl3: false }" class="nav-level-1">
     <ul class="nav" style="font-size:12px">
     {{ nav :handle="nav_title" }}
@@ -28,7 +5,7 @@ ul.nav li::marker {
         <li>
            <!-- lvl1: {{lvl1_parent}} -->
             {{ if url }}
-            <a href="{{ url }}"  class="text-amp-gray-500 block {{if is_current }}bg-amp-gray-50 rounded p-2 -ml-2{{/if}}"">{{ title }}</a>
+            <a href="{{ url }}"  class="text-amp-gray-500 no-underline block {{if is_current }}bg-amp-gray-50 rounded p-2 -ml-2{{/if}}"">{{ title }}</a>
             {{else}}
             <button @click.prevent="lvl1 ='{{title | slugify}}';"style="text-align:left">{{ title }}</button>
             {{/if }}
@@ -37,7 +14,7 @@ ul.nav li::marker {
                     {{ children }}
                         <li>
                             {{ if url }}
-                            <a href="{{ url }}"  class="text-amp-gray-500 block {{if is_current}}bg-amp-gray-50 rounded p-2 -ml-2{{/if}}"  {{if is_current }} x-effect="lvl1 = '{{parent:title | slugify}}'{{/if}}">{{ title }}</a>
+                            <a href="{{ url }}"  class="text-amp-gray-500 no-underline block {{if is_current}}bg-amp-gray-50 rounded p-2 -ml-2{{/if}}"  {{if is_current }} x-effect="lvl1 = '{{parent:title | slugify}}'{{/if}}">{{ title }}</a>
                             {{else}}
                             <button @click.prevent="lvl2 = (lvl2 === '{{title | slugify}}' ? null : '{{title | slugify}}')"style="text-align:left">{{ title }}</button>
                             {{/if }}
@@ -45,7 +22,7 @@ ul.nav li::marker {
                                 <ul x-show="lvl2 === '{{title | slugify}}'" class="nav-level-3">
                                     {{ children }}
                                         <li>
-                                            <a href="{{ url }}" class="text-amp-gray-500 block {{if is_current}}bg-amp-gray-50 rounded p-2 -ml-2{{/if}}" {{if is_current }} x-effect="lvl2 = '{{parent:title | slugify}}'; lvl1 = '{{lvl1_parent}}'"{{/if}}>{{ title }}</a>
+                                            <a href="{{ url }}" class="text-amp-gray-500 no-underline block {{if is_current}}bg-amp-gray-50 rounded p-2 -ml-2{{/if}}" {{if is_current }} x-effect="lvl2 = '{{parent:title | slugify}}'; lvl1 = '{{lvl1_parent}}'"{{/if}}>{{ title }}</a>
                                         </li>
                                     {{ /children }}
                                 </ul>

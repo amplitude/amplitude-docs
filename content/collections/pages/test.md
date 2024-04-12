@@ -1,35 +1,58 @@
 ---
 id: 34cde5a0-0c7a-46b7-ac73-a0e306bb0b95
-blueprint: page
+blueprint: home
 title: 'Amplitude Docs.next IA Test'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1707241404
+updated_at: 1712964708
 hide_toc: true
 hide_side-nav: true
 template: home
+products:
+  -
+    id: lux6lp5z
+    product_name: 'Amplitude Analytics'
+    product_description: 'Amplitude Analytics lets you answer questions, make better decisions and drive outcomes with product analytics.'
+    product_icon: home/analytics.png
+    type: product_details
+    enabled: true
+    section_link: 6f3e741c-87b3-4e68-ae6d-ce393bab69d1
+  -
+    id: lux6m79d
+    product_name: 'Amplitude Data'
+    product_description: 'Something about data here'
+    product_icon: home/data.png
+    type: product_details
+    enabled: true
+    section_link: b5ff848a-655c-48be-bde9-dd564782ad71
+  -
+    id: lux6mpsy
+    product_name: 'Amplitude Experiment'
+    product_description: 'A blurb about experiment'
+    type: product_details
+    enabled: true
+    product_icon: home/analytics.png
+    section_link: 7ba36066-3d54-4874-a407-504b27d83a26
+  -
+    id: lux6n36s
+    product_name: 'Amplitude Session Replay'
+    product_description: 'Some words about Session Replay and how great it is.'
+    product_icon: home/session-replay.png
+    type: product_details
+    enabled: true
+exclude_from_sitemap: false
+popular_content:
+  -
+    id: lux77v2k
+    icon: home/data.svg
+    type: popular_item
+    enabled: true
+    blurb: 'Learn about Amplitude Data and get started using the product.'
+    article: 1bca668a-d50d-4e07-a0a9-a77016d8d5d3
+  -
+    id: lux8tltv
+    article: 37e1ab54-da77-4a60-be41-1c1018c4163a
+    icon: home/experiment.svg
+    type: popular_item
+    enabled: true
 ---
-
-## Background
-
-Documentation at Amplitude is undergoing a big change. We're moving away from the concept of separate Help Center and Developer Center properties and different platforms, and aligning on a single platform to meet all our documentation needs.
-
-We plan to deliver this project in Q224.
-
-## Current state
-
-### IA Test
-
-The purpose of this test is to examine the navigability of the site using the top and left-side navigations. No effort was made to account for content in these pages. It may exist in some places, in others it may not.
-
-Interaction design was not considered. Bare bones expand / collapse functionality was added. This will be redesigned during the design phase of this project.
-
-### Article types
-
-We're also codifying the types of articles and content this site will contain, and which metadata those article types will require or benefit from. For example, if we think of **SDK** as a content type, what default information can we provide for that content? We could include things, GitHub repository link, current version, migration guide links, and bundle size.
-
-## Requests
-
-1. Please explore the navigation structures on this site. After you explore the site, complete the five question <a href ="https://forms.gle/1RFN84jLZk76CMVP8" class="text-blue-800" target="_blank">survey</a> below about your experience.
-
-2. If you have thoughts about article types, and included metadata, send them to Mark on Slack.
