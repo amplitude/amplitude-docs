@@ -29,4 +29,4 @@ php composer.phar install
 php artisan key:generate
  
 # BUILD STATIC SITE
-php please ssg:generate
+php please ssg:generate --workers=4
