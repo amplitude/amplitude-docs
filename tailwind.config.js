@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports ={
     content: [
         './resources/**/*.antlers.html',
         './resources/**/*.antlers.php',
