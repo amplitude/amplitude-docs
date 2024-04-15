@@ -13,6 +13,7 @@ export default {
             fontFamily: {
                 IBMPlex: ['IBM Plex Sans', 'sans-serif'],
                 IBMPlexMono: ['IBM Plex Mono', 'monospace'],
+                Gellix: ['Gellix', 'sans-serif'],
             },
         },
         colors:{
