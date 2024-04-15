@@ -12,6 +12,23 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/site.js', 'public/js')
-    .postCss('resources/css/site.css', 'public/css', [
-        //
+    
+mix.postCss('resources/css/site.css', 'public/css', [
+    require('postcss-import'),
+    require('tailwindcss'),
+    require('postcss-nested'),
+    require('autoprefixer'),
     ]);
+
+mix.browserSync({
+    proxy: 'amplitude-docs.test',
+    injectChanges: true,
+    notify: false,
+    ui: false,
+    files: [
+        './content/**/*.md',
+        './resources/views/**/*.html',
+        './public/css/**/*.css',
+        './public/js/**/*.js'
+    ]
+});
