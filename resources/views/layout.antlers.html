@@ -61,9 +61,11 @@
         <div class="w-full pt-8">
           {{ template_content }}
         </div>
-
       </div>
     {{ /if }}
+    {{if segment_1}}
+    {{partial:site-footer}}
+    {{/if}}
   </div>
 </body>
 </html>
