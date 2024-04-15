@@ -7,7 +7,11 @@
   <title>{{ title ?? site:name }}</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.css">
 
-  {{ vite src="resources/js/site.js|resources/css/site.css" }}
+  {{# {{ vite src="resources/js/site.js|resources/css/site.css" }} #}}
+  <link href="{{ mix src='/css/site.css' }}" rel="stylesheet">
+ 
+
+  <script src="{{ mix src='/js/site.js' }}"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.min.js"></script>
