@@ -68,7 +68,12 @@ node_modules/
 # users
 users/
 
-public/hot
+
+/public/hot
+/public/storage
+/public/css
+/public/vendor/statamic
+/public/js
 **/.DS_Store
 
 # Node modules

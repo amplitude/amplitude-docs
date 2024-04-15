@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports ={
     content: [
         './resources/**/*.antlers.html',
         './resources/**/*.antlers.php',
@@ -13,6 +13,7 @@ export default {
             fontFamily: {
                 IBMPlex: ['IBM Plex Sans', 'sans-serif'],
                 IBMPlexMono: ['IBM Plex Mono', 'monospace'],
+                Gellix: ['Gellix', 'sans-serif'],
             },
         },
         colors:{
