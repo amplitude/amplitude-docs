@@ -9,7 +9,7 @@
 
   {{# {{ vite src="resources/js/site.js|resources/css/site.css" }} #}}
   <link href="{{ mix src='/css/site.css' }}" rel="stylesheet">
- 
+
 
   <script src="{{ mix src='/js/site.js' }}"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
@@ -40,34 +40,31 @@
       </div>
 
     </div>
-    {{if hide_side-nav}}
-    <div class="absolute top-24 left-0 bottom-0 right-0 z-0">
-      <div class="w-full">
-        {{ template_content }}
+    {{ if hide_side-nav }}
+      <div class="absolute top-24 left-0 bottom-0 right-0 z-0">
+        <div class="w-full">
+          {{ template_content }}
+        </div>
       </div>
-    </div>
-    {{else}}
-    <div
-      class="w-56 h-100 left-0 top-24 bottom-0 border-solid border-r border-black-200 hidden lg:block overflow-auto fixed">
-      {{ if segment_1 }}
-        {{ if nav_type }}
-          {{ partial:side-nav-charts :nav_title="nav_title" }}
-        {{ else }}
-          {{ partial:side-nav :nav_title="nav_title" }}
+    {{ else }}
+      <div
+        class="w-56 h-100 left-0 top-24 bottom-0 border-solid border-r border-black-200 hidden lg:block overflow-auto fixed">
+        {{ if segment_1 }}
+          {{ if nav_type }}
+            {{ partial:side-nav-charts :nav_title="nav_title" }}
+          {{ else }}
+            {{ partial:side-nav :nav_title="nav_title" }}
+          {{ /if }}
         {{ /if }}
-      {{ /if }}
-    </div>
-    <div class="absolute top-24 left-0 lg:left-56 bottom-0 right-0 z-0">
-      <div class="w-full pt-8">
-        {{ template_content }}
       </div>
+      <div class="absolute top-24 left-0 lg:left-56 bottom-0 right-0 z-0">
+        <div class="w-full pt-8">
+          {{ template_content }}
+        </div>
 
-    </div>
-   
-
-    {{/if}}
-
-
+      </div>
+    {{ /if }}
   </div>
+  {{partial:site-footer}}
 </body>
 </html>
