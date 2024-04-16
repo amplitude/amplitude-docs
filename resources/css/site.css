@@ -184,6 +184,17 @@
   }
 
 /* This is all you. */
+
+button.active > svg {
+    transform: rotate(180deg);
+}
+
+button:has(u li a.active){
+    color: red;
+
+}
+
+
 a {
     text-decoration: none;
 }
