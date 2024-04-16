@@ -396,7 +396,7 @@ video {
 }[type='file']:focus {
   outline: 1px solid ButtonText;
   outline: 1px auto -webkit-focus-ring-color;
-}p,a,li {
+}p,a,li, button {
         font-family: 'IBM Plex Sans', sans-serif;
     }h1,h2,h3,h4,h5,h6 {
         font-family: 'Gellix', sans-serif;
@@ -893,6 +893,9 @@ video {
 }.mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
+}.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }.mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -902,8 +905,6 @@ video {
 }.my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-}.-ml-2 {
-  margin-left: -0.5rem;
 }.-mt-6 {
   margin-top: -1.5rem;
 }.mb-0 {
@@ -1086,9 +1087,6 @@ video {
 }.rounded-b {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
-}.rounded-l {
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
 }.border {
   border-width: 1px;
 }.border-b {
@@ -1174,28 +1172,26 @@ video {
 }.py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
-}.py-\[2\.12rem\] {
-  padding-top: 2.12rem;
-  padding-bottom: 2.12rem;
 }.py-\[\.25rem\] {
   padding-top: .25rem;
   padding-bottom: .25rem;
+}.py-\[2\.12rem\] {
+  padding-top: 2.12rem;
+  padding-bottom: 2.12rem;
 }.pb-\[1\.5rem\] {
   padding-bottom: 1.5rem;
+}.pl-1 {
+  padding-left: 0.25rem;
 }.pl-5 {
   padding-left: 1.25rem;
 }.pl-8 {
   padding-left: 2rem;
-}.pl-\[1\.75rem\] {
-  padding-left: 1.75rem;
 }.pr-8 {
   padding-right: 2rem;
 }.pt-5 {
   padding-top: 1.25rem;
 }.pt-8 {
   padding-top: 2rem;
-}.pt-\[\.5rem\] {
-  padding-top: .5rem;
 }.pt-\[6\.5rem\] {
   padding-top: 6.5rem;
 }.text-left {
@@ -1239,16 +1235,12 @@ video {
   font-weight: 600;
 }.uppercase {
   text-transform: uppercase;
+}.leading-5 {
+  line-height: 1.25rem;
 }.leading-6 {
   line-height: 1.5rem;
 }.leading-normal {
   line-height: 1.5;
-}.leading-3 {
-  line-height: .75rem;
-}.leading-4 {
-  line-height: 1rem;
-}.leading-5 {
-  line-height: 1.25rem;
 }.tracking-\[0\.07813rem\] {
   letter-spacing: 0.07813rem;
 }.text-amp-blue-300 {
@@ -1447,9 +1439,8 @@ video {
          url(/fonts/ibm-plex-mono-v11-latin-700.svg?4d75a50b922b19f977e73c9852d7bda7#IBMPlexMono) format('svg'); /* Legacy iOS */
   }/* This is all you. */button.active > svg {
     transform: rotate(180deg);
-}button:has(u li a.active){
-    color: red;
-
+}button:has(+ div a.current) {
+    color: black;
 }a {
     text-decoration: none;
 }ul.nav-level-1, ul.nav-level-2, ul.nav-level-3 {
@@ -1696,13 +1687,8 @@ summary caret indicators.
 */pre code.torchlight .line-number,
 pre code.torchlight .summary-caret {
    margin-right: 1rem;
-}.hover\:-ml-2:hover {
-  margin-left: -0.5rem;
 }.hover\:rounded:hover {
   border-radius: 0.25rem;
-}.hover\:rounded-l:hover {
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
 }.hover\:bg-amp-blue-900:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(210 223 252 / var(--tw-bg-opacity));
@@ -1714,8 +1700,6 @@ pre code.torchlight .summary-caret {
   background-color: rgb(244 245 246 / var(--tw-bg-opacity));
 }.hover\:p-2:hover {
   padding: 0.5rem;
-}.hover\:pl-2:hover {
-  padding-left: 0.5rem;
 }.hover\:shadow-lg:hover {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
