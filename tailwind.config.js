@@ -200,6 +200,15 @@ module.exports ={
                         },
                         h3: {
                             'font-weight': '400',
+                        },
+                        kbd: {
+                            'background-color': '#e5e6e8',
+                            'border-radius': '0.2rem',
+                            'border': 'none',
+                            'color': '#656b75',
+                            'font-style': 'normal',
+                            'box-shadow': 'none',
+
                         }
 
                     }

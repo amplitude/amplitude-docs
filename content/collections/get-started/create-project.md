@@ -4,10 +4,11 @@ blueprint: get-started
 title: 'Create a project in Amplitude'
 source: 'https://help.amplitude.com/hc/en-us/articles/16796780525339-Create-a-project-in-Amplitude'
 landing: true
-landing_blurb: 'Once you’ve got your organization set up and users added to it, you can begin adding projects. Each analysis you create will belong to a specific project.'
+landing_blurb: 'Once you’ve got your organization set up and users added to it, you can begin adding projects.'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1712268171
+updated_at: 1713305558
+exclude_from_sitemap: false
 ---
 #### This article will help you:
 

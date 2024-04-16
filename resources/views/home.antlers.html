@@ -4,7 +4,14 @@
             <h1 class="text-5xl font-light mb-6 mx-auto text-center font-[Gellix]">Amplitude Documentation</h1>
         </div>
         <div class="mx-auto">
-            <input class="mx-auto w-96 rounded-full border-amp-gray-300" type="text" name="" id="">
+            <div class="w-[42rem] border border-amp-gray-200 rounded-full bg-amp-gray-50 p-[.7rem] italic relative text-amp-gray-500 cursor-pointer hover:bg-white transition-colors">
+                {{svg src="/assets/general/icon-search.svg" class="inline"}}
+                <p class="m-0 inline">Search 'instrumentation' , 'Export API'</p>
+                <div class="absolute right-4 inline">
+                    <kbd>⌘</kbd>
+                    <kbd>K</kbd>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -14,9 +21,9 @@
         {{products}}
         <a href="{{section_link:url}}">
         <div class="w-72 border rounded border-amp-gray-100 p-9 hover:shadow-lg transition-shadow">
-            <h3 class="mt-0 font-light text-[18px]">{{product_name}}</h3>
+            <h3 class="mt-0 font-medium text-[18px]">{{product_name}}</h3>
             <img class="mb-0" src="{{product_icon}}" />
-            <p class="leading-6 mb-0 text-amp-gray-600">{{product_description}}</p>
+            <p class="leading-6 mb-0 font-normal text-amp-gray-600">{{product_description}}</p>
         </div>
     </a>
         {{/products}}

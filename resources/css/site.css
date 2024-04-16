@@ -269,19 +269,23 @@ ul.nav li::marker {
 
 
 .tab > pre {
-    margin-bottom: 0
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
 .prose>p:has(img) {
     margin: 0;
     background: #F4F5F6;
-    padding: .5rem;
+    padding: 2rem;
     border-radius: 8px;
 }
 
-.prose>img {
+.prose > div > p:first-of-type {
+    margin-top: 0;
+}
+
+.prose>p>img {
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    max-width: 90%;
     margin: 0 auto;
     /* border: 1px solid #e2e8f0; */
     border-radius: 8px;
