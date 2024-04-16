@@ -1,13 +1,15 @@
 ---
-title: "Instrumentation pre-work"
-source: "https://help.amplitude.com/hc/en-us/articles/206404618-Instrumentation-pre-work"
 id: 5243dcbb-02c5-4ffb-a32b-8c3e50b2b121
+blueprint: get-started
+title: 'Instrumentation pre-work'
+source: 'https://help.amplitude.com/hc/en-us/articles/206404618-Instrumentation-pre-work'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1713287181
+this_article_will_help_you:
+  - 'Determine how best to instrument Amplitude based off of your business goals'
 ---
-
-#### This article will help you:
-
-* Determine how best to instrument Amplitude based off of your business goals
-
 So much of your overall Amplitude experience will be determined by the decisions you make during the instrumentation process. To lay the foundation for a successful instrumentation, there are a few things you'll need to do.
 
 ## Define your business goals
@@ -23,9 +25,10 @@ If you're not properly tracking your users, you will not get what you need from 
 ## Organize events and related properties
 
 Consider making a spreadsheet listing each event and its associated properties. It might look something like this:  
-  
+
 ![Screen_Shot_2017-03-20_at_9.34.15_AM.png](/output/img/get-started/Screen_Shot_2017-03-20_at_9.34.15_AM.png)  
- **Event names should be clear and intuitive**. If your organization doesn't have a standard naming scheme, we recommend naming your events using the following syntax:  
+
+**Event names should be clear and intuitive**. If your organization doesn't have a standard naming scheme, we recommend naming your events using the following syntax:  
   
 verb + noun (`clicked signup` ) or noun + verb (`signup clicked` ).  
   
