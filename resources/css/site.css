@@ -3,11 +3,92 @@
 @import "tailwindcss/utilities";
 
 @layer base {
-    h1,h2,h3,h4,h5,p {
+    h1,h2,h3,h4,h5,p,a,li {
         font-family: 'IBM Plex Sans', sans-serif;
     }
 }
 /* Font Import */
+
+@font-face {
+    font-family: 'Gellix';
+    src: url('../fonts/gellix/Gellix-Light.woff2') format('woff2'),
+        url('../fonts/gellix/Gellix-Light.woff') format('woff'),
+        url('../fonts/gellix/Gellix-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gellix';
+    src: url('../fonts/gellix/Gellix-Medium.woff2') format('woff2'),
+        url('../fonts/gellix/Gellix-Medium.woff') format('woff'),
+        url('../fonts/gellix/Gellix-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gellix';
+    src: url('../fonts/gellix/Gellix-RegularItalic.woff2') format('woff2'),
+        url('../fonts/gellix/Gellix-RegularItalic.woff') format('woff'),
+        url('../fonts/gellix/Gellix-RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gellix';
+    src: url('../fonts/gellix/Gellix-Regular.woff2') format('woff2'),
+        url('../fonts/gellix/Gellix-Regular.woff') format('woff'),
+        url('../fonts/gellix/Gellix-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gellix';
+    src: url('../fonts/gellix/Gellix-MediumItalic.woff2') format('woff2'),
+        url('../fonts/gellix/Gellix-MediumItalic.woff') format('woff'),
+        url('../fonts/gellix/Gellix-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gellix';
+    src: url('../fonts/gellix/Gellix-LightItalic.woff2') format('woff2'),
+        url('../fonts/gellix/Gellix-LightItalic.woff') format('woff'),
+        url('../fonts/gellix/Gellix-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Gellix';
+    src: url('../fonts/gellix/Gellix-SemiBold.woff2') format('woff2'),
+        url('../fonts/gellix/Gellix-SemiBold.woff') format('woff'),
+        url('../fonts/gellix/Gellix-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gellix';
+    src: url('../fonts/gellix/Gellix-SemiBoldItalic.woff2') format('woff2'),
+        url('../fonts/gellix/Gellix-SemiBoldItalic.woff') format('woff'),
+        url('../fonts/gellix/Gellix-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
 
 @font-face {
     font-family: 'IBM Plex Sans';
@@ -204,6 +285,10 @@ ul.toc-list {
     margin: 0
 }
 
+.toc-list-item {
+    margin-bottom: 0px;
+}
+
 .is-active-link::before {
     @apply bg-amp-blue-500;
 }
@@ -261,7 +346,7 @@ a.toc-link {
     content:'';
     mask-size: contain;
     position: absolute;
-    top: 101px;
+    top: 7px;
     width: 1.25rem;
     height: 1.25rem;
     left: 1rem;

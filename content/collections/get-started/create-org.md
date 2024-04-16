@@ -5,15 +5,13 @@ title: 'Create your organization'
 source: 'https://help.amplitude.com/hc/en-us/articles/16796682982427-Create-your-organization'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1712869546
+updated_at: 1713216167
 landing: true
-landing_blurb: 'In Amplitude, all your analyses will live within a larger project. Projects, in turn, are contained within organizations.'
+landing_blurb: 'In Amplitude, all your analyses live within a larger project. Projects, in turn, are contained within organizations.'
 exclude_from_sitemap: false
+this_article_will_help_you:
+  - 'Create your first organization in Amplitude'
 ---
-#### This article will help you:
-
-* Create your first organization in Amplitude
-
 In Amplitude, all your analyses will live within a larger **project**. Projects, in turn, are contained within **organizations**. For most companies, one organization will be enough to effectively manage their Amplitude projects. The number of projects you’ll need will depend on your company’s analytics practices and requirements, which is why there’s no limit on the number of projects you can create.
 
 
