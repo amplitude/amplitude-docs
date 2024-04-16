@@ -1,6 +1,6 @@
 {{tab_names = {tabs | explode(', ')} }}
-<div x-data="{ activeTab: '{{tab_names[0]}}' }">
+<div class="border border-amp-gray-200 rounded" x-data="{ activeTab: '{{tab_names[0]}}' }">
 <div class="flex space-x-1">
-{{tab_names}}<button x-on:click="activeTab = '{{value}}'" :class="{'border-b-2 border-blue-600': activeTab === '{{value}}', 'bg-gray-200': activeTab !== '{{value}}'}" class="px-4  py-2">{{value}}</button>{{/tab_names}}</div>
+{{tab_names}}<button x-on:click="activeTab = '{{value}}'" :class="{'border-b-2 border-amp-blue-500 text-amp-blue-500 -mb-[2px]' : activeTab === '{{value}}', 'bg-gray-200': activeTab !== '{{value}}'}" class="px-4  py-2">{{value}}</button>{{/tab_names}}</div>
 {{slot | strip_tags('br')}}
 </div>
