@@ -3,7 +3,7 @@
 @import "tailwindcss/utilities";
 
 @layer base {
-    p,a,li {
+    p,a,li, button {
         font-family: 'IBM Plex Sans', sans-serif;
     }
     h1,h2,h3,h4,h5,h6 {
@@ -184,6 +184,16 @@
   }
 
 /* This is all you. */
+
+button.active > svg {
+    transform: rotate(180deg);
+}
+
+button:has(+ div a.current) {
+    color: black;
+}
+
+
 a {
     text-decoration: none;
 }
