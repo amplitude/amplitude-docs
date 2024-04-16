@@ -41,3 +41,5 @@ fields:
       hide_display: false
       if:
         landing: 'equals true'
+      validate:
+        - 'max:105'
