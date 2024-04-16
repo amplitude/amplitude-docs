@@ -882,6 +882,8 @@ video {
   top: 6rem;
 }.top-4 {
   top: 1rem;
+}.right-4 {
+  right: 1rem;
 }.z-0 {
   z-index: 0;
 }.z-10 {
