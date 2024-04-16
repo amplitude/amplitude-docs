@@ -3,7 +3,7 @@
   <div class="flex flex-row w-full p-8">
     <div class="copy">
       <div class="flex flex-row items-start justify-between">
-        <h1>{{ title }}</h1>
+        <h1 class="font-[Gellix] font-normal mb-5">{{ title }}</h1>
         {{ if environment == 'local' }}
           <span class="ml-4 text-xs text-gray-300 align-middle"><a href="{{ edit_url }}"
               target="_blank">Edit</a></span>
@@ -13,7 +13,7 @@
       <div
         class="prose prose-a:text-amp-blue-300 prose-ol:list-decimal prose-ol:list-outside prose-pre:bg-[#fafafa] max-w-prose">
         {{ partial:sdk-comparison }}
-        {{ partial:goals }}
+        {{ partial:partials/goals }}
         {{ content | markdown }}
       </div>
       {{ if slug == "charts-overview" }}
@@ -26,7 +26,6 @@
             </a>
           {{ /collection:charts }}
       {{ /if }}
-      {{# <p class="text-xs text-amp-light-blue-700">Last updated: {{updated_at}} by {{updated_by:email}}</p> #}}
     </div>
     {{ unless hide_toc }}
     {{ partial:toc }}
@@ -34,4 +33,5 @@
   </div>
 
   </div>
+  {{partial:article-footer}}
 </section>

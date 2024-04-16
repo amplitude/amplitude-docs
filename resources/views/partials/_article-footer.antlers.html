@@ -1,0 +1,33 @@
+<div class="mt-12 w-full pl-8 border-b border-b-amp-gray-100">
+
+        <p class="mb-0">Was this page helpful? {{svg src="/assets/general/thumb_up.svg" class="inline ml-8"}} Yes {{svg src="/assets/general/thumb_down.svg" class="inline ml-4"}} No</p>
+        <p class="text-xs text-amp-gray-600">{{svg src="/assets/general/schedule.svg" class="inline"}} {{updated_at}}</p>
+
+</div>
+<div class="pl-8 border-b border-b-amp-gray-100 flex flex-col py-[2.12rem] gap-2">
+
+        <div>{{svg src="/assets/general/help.svg" class="inline"}} <p class="text-[0.875rem] text-amp-gray-600 inline">Need help? <a href="/contact" class="text-amp-blue-300">Contact Support</a></p></div>
+        <div>{{svg src="/assets/general/icon-amplitude.svg" class="inline"}} <p class="text-[0.875rem] text-amp-gray-600 inline">Visit <a href="/contact" class="text-amp-blue-300">Contact Support</a></p></div>
+        <div>{{svg src="/assets/general/blog.svg" class="inline"}} <p class="text-[0.875rem] text-amp-gray-600 inline">Have a look at the Amplitude <a href="/contact" class="text-amp-blue-300">Blog</a></p></div>
+        <div>{{svg src="/assets/general/help.svg" class="inline"}} <p class="text-[0.875rem] text-amp-gray-600 inline">Learn more at  <a href="/contact" class="text-amp-blue-300">Amplitude Academy</a></p></div>
+</div>
+<div class="pl-8 border-b border-b-amp-gray-100 flex flex-col py-[2.12rem] gap-2">
+
+    <div class="flex flex-row justify-between items-center">
+        <div class="flex flex-row">
+            {{site_footer:social_links}}
+                <a href="{{ social_url }}" class="mr-4">
+                    {{svg :src="social_icon" class="w-6 h-6 fill-amp-gray-600" }}
+                </a>
+            {{/site_footer:social_links}}
+        </div>
+        <div class="flex flex-col pr-8">
+            <div class="flex flex-row justify-between">
+                {{site_footer:general_links}}
+                    <a class="text-amp-gray-600 text-[0.875rem] font-[Gellix]" href="{{link_url}}">{{link_text}}</a>
+                {{/site_footer:general_links}}
+            </div>
+            <div><p class="text-[0.815rem] text-amp-gray-600 opacity-80 font-[Gellix]">© {{now | format('o')}} Amplitude, Inc. All rights reserved. Amplitude is a registered trademark of Amplitude, Inc.</p></div>
+        </div>
+    </div>
+</div>
