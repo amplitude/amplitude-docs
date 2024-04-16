@@ -191,7 +191,17 @@ module.exports ={
                         },
                         a: {
                             "text-decoration": "none",
+                        },
+                        h2: {
+                            'font-weight': '400',
+                        },
+                        h1: {
+                            'font-weight': '400',
+                        },
+                        h3: {
+                            'font-weight': '400',
                         }
+
                     }
                 }
             },
