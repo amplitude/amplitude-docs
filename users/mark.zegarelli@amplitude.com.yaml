@@ -6,3 +6,8 @@ preferences:
   assets:
     icons:
       mode: grid
+  taxonomies:
+    integration_category:
+      after_save: create_another
+    integration_type:
+      after_save: create_another

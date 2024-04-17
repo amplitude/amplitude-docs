@@ -1,0 +1,115 @@
+title: Integration
+fields:
+  -
+    handle: connection
+    field:
+      options:
+        destination: Destination
+        source: Source
+      inline: true
+      cast_booleans: false
+      type: radio
+      display: Connection
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      width: 33
+  -
+    handle: integration_type
+    field:
+      mode: select
+      create: true
+      taxonomies:
+        - integration_type
+      type: terms
+      display: 'Integration Type'
+      width: 33
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: integration_category
+    field:
+      mode: typeahead
+      create: false
+      taxonomies:
+        - integration_category
+      type: terms
+      display: 'Integration Category'
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      width: 33
+  -
+    handle: partner_doc_link
+    field:
+      input_type: text
+      antlers: false
+      type: text
+      display: 'Partner Doc Link'
+      width: 50
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: use_cases
+    field:
+      fields:
+        -
+          handle: use_case
+          field:
+            input_type: text
+            antlers: false
+            type: text
+            display: 'Use Case'
+            listable: hidden
+            instructions_position: above
+            visibility: visible
+            replicator_preview: true
+            hide_display: false
+      mode: table
+      reorderable: true
+      fullscreen: true
+      type: grid
+      display: 'Use Cases'
+      width: 50
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: short_description
+    field:
+      restrict: false
+      buttons:
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - quote
+        - link
+        - image
+        - table
+      automatic_line_breaks: true
+      automatic_links: false
+      escape_markup: false
+      heading_anchors: false
+      smartypants: false
+      table_of_contents: false
+      antlers: false
+      type: markdown
+      display: 'Short Description'
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
