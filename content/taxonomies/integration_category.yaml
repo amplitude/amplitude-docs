@@ -1,0 +1,7 @@
+title: 'Integration Category'
+preview_targets:
+  -
+    label: Category
+    url: '{permalink}'
+    refresh: true
+layout: layout
