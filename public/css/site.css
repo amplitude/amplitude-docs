@@ -990,6 +990,8 @@ video {
   height: 2rem;
 }.h-96 {
   height: 24rem;
+}.h-80 {
+  height: 20rem;
 }.max-h-12 {
   max-height: 3rem;
 }.max-h-\[575px\] {
@@ -1044,6 +1046,8 @@ video {
   flex-basis: 33.333333%;
 }.basis-80 {
   flex-basis: 20rem;
+}.basis-1\/4 {
+  flex-basis: 25%;
 }.rotate-0 {
   --tw-rotate: 0deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1170,6 +1174,8 @@ video {
   fill: #5a5e68;
 }.fill-white {
   fill: #ffffff;
+}.fill-amp-gray-500 {
+  fill: #656b75;
 }.p-0 {
   padding: 0px;
 }.p-2 {
@@ -1339,6 +1345,10 @@ video {
   transition-duration: 150ms;
 }.transition-shadow {
   transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}.transition-all {
+  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }.duration-100 {
@@ -1731,6 +1741,10 @@ summary caret indicators.
 */pre code.torchlight .line-number,
 pre code.torchlight .summary-caret {
    margin-right: 1rem;
+}.hover\:h-12:hover {
+  height: 3rem;
+}.hover\:h-10:hover {
+  height: 2.5rem;
 }.hover\:rounded:hover {
   border-radius: 0.25rem;
 }.hover\:bg-amp-blue-900:hover {
@@ -1761,6 +1775,9 @@ pre code.torchlight .summary-caret {
   list-style-position: outside;
 }.prose-ol\:list-decimal :is(:where(ol):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   list-style-type: decimal;
+}@media (min-width: 768px) {.md\:basis-1\/2 {
+    flex-basis: 50%;
+  }
 }@media (min-width: 1024px) {.lg\:left-56 {
     left: 14rem;
   }.lg\:block {
