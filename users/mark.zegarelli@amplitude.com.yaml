@@ -11,3 +11,11 @@ preferences:
       after_save: create_another
     integration_type:
       after_save: create_another
+  collections:
+    destination-catalog:
+      columns:
+        - title
+        - author
+        - slug
+        - status
+        - integration_type

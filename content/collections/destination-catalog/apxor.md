@@ -3,8 +3,27 @@ id: 669b31f3-9b53-46c3-ac8a-3d12ac172d0a
 blueprint: destination-catalog
 title: Apxor
 source: 'https://docs.developers.amplitude.com/data/destinations/apxor'
+author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+connection: destination
+integration_type:
+  - cohorts
+integration_category:
+  - other
+use_cases:
+  -
+    id: lv5gtprc
+    use_case: 'Use data from Amplitude to identify specific user segments based on their behavior, and then use Apxor to create personalized nudges and messages to guide users through onboarding, helping them understand the value of your product and reducing abandonment rates.'
+  -
+    id: lv5gtu27
+    use_case: 'Analyze user behavior in Amplitude to identify underused features or features that cause confusion, then use Apxor to target those users with in-app nudges that provide step-by-step guidance, encouraging greater feature adoption and use.'
+  -
+    id: lv5gtxr4
+    use_case: "Use Amplitude data to pinpoint users who haven't reached the desired level of engagement with your product, then use Apxor to create nudges that encourage users to take specific actions or follow certain paths to achieve activation and retention."
+short_description: 'Apxor is a no-code, in-app nudging tool for product teams. Personalize all stages of the user journey for exceptional product success. This integration lets you sync cohorts from Amplitude to Apxor.'
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1713458303
 ---
-
 {{partial:admonition type="beta"}}
 This integration is in Beta and is in active development. If you have any feedback to improve the Apxor destination or have suggestions for their documentation, contact the [Apxor support team](https://Apxor.com/). 
 {{/partial:admonition}}

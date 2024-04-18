@@ -12,7 +12,7 @@ integration_type:
   - cohorts
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713396323
+updated_at: 1713459022
 partner_doc_link: 'https://docs.1flow.ai/integrations/amplitude'
 use_cases:
   -
@@ -22,6 +22,8 @@ use_cases:
     id: lv4frid4
     use_case: 'Collect targeted feedback and insights directly from specific user groups to understand user needs and improve product features based on direct user input.'
 short_description: '1Flow is a fast & easy way to understand your customers in-product, so you can reduce churn, grow faster, and build the right features.'
+partner_maintained: false
+integration_icon: partner-icons/1flow.svg
 ---
 [1Flow](https://1flow.app/) enables product-led customer everboarding through embedded onboarding checklists, contextual guides, and empty states. Customers can get set up at their own speed, track progress, and collaborate across their team.
 

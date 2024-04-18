@@ -3,7 +3,29 @@ id: 8505a6ea-eebf-47a6-8353-ea8533584497
 blueprint: destination-catalog
 title: 'Amazon S3'
 source: 'https://docs.developers.amplitude.com/data/destinations/amazon-s3'
-category: Cloud storage
+category: 'Cloud storage'
+author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+connection: destination
+integration_type:
+  - cohorts
+  - merged-user-ids
+  - raw-events
+integration_category:
+  - storage
+use_cases:
+  -
+    id: lv5gd9il
+    use_case: 'Configure Amplitude to send raw event data directly to Amazon S3. This data can include user interactions with your product, such as clicks, views, or purchases. Storing this data in S3 allows for scalable and secure data management.'
+  -
+    id: lv5gdaqa
+    use_case: 'Import data from an S3 bucket. This enables you to combine external data sources with your Amplitude analytics, providing a more comprehensive view of your data and user interactions.'
+  -
+    id: lv5gdi62
+    use_case: 'Send cohorts of users in Amplitude to Amazon S3 to synchronize this valuable segmentation with other databases or processes that you have in place, outside of Amplitude.'
+short_description: "Amazon Simple Storage Service (Amazon S3) is a highly scalable object storage service offered by Amazon Web Services (AWS). It's designed to make web-scale computing easier for developers by providing a simple web services interface that allows you to store and retrieve any amount of data, at any time, from anywhere on the web."
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1713457545
 ---
 Often, business needs dictate that you analyze behavioral data alongside other organizational sources of data that aren't captured within Amplitude. 
 By integrating Amplitude with Amazon S3, you can export your Amplitude data to an Amazon S3 bucket. This enables you to analyze your Amplitude data sets side-by-side with the rest of your data.
