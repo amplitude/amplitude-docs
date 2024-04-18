@@ -1,9 +1,23 @@
 ---
 id: c458b2bc-8b22-41f7-a8f8-c0551d684005
 blueprint: destination-catalog
+use_cases:
+  - "Stream events from Amplitude to Lantern's Customer Success Platform to connect with the right customer at the right time, leveraging AI-powered health scores, automated workflows, and live engagement to increase Net Dollar Retention."
+short_description: "Sync analytics events to Lantern's Customer Success Platform"
+integration_category:
+  - sales
+integration_type:
+  - event-streaming
 title: Lantern
 source: 'https://docs.developers.amplitude.com/data/destinations/lantern-event-streaming'
-category: Event streaming
+category: 'Event streaming'
+author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+connection: destination
+partner_maintained: false
+integration_icon: partner-icons/lantern.svg
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1713479235
 ---
 [Lantern](https://www.withlantern.com/) is a customer success platform designed to predict when customers are ready to expand or in need of help and run workflows to engage them. Lantern helps B2B companies connect with the right customer at the right time and increase Net Dollar Retention.
 

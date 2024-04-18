@@ -60,33 +60,6 @@ fields:
       replicator_preview: true
       hide_display: false
   -
-    handle: use_cases
-    field:
-      fields:
-        -
-          handle: use_case
-          field:
-            input_type: text
-            antlers: false
-            type: text
-            display: 'Use Case'
-            listable: hidden
-            instructions_position: above
-            visibility: visible
-            replicator_preview: true
-            hide_display: false
-      mode: table
-      reorderable: true
-      fullscreen: true
-      type: grid
-      display: 'Use Cases'
-      width: 50
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
-  -
     handle: partner_maintained
     field:
       inline_label_when_true: 'This integration is maintained by a partner'
@@ -113,6 +86,16 @@ fields:
       type: assets
       display: 'Integration Icon'
       width: 50
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: use_cases
+    field:
+      type: list
+      display: 'Use Cases'
       listable: hidden
       instructions_position: above
       visibility: visible

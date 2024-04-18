@@ -18,4 +18,4 @@ preferences:
         - author
         - slug
         - status
-        - integration_type
+        - connection
