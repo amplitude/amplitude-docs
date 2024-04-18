@@ -7,7 +7,19 @@ category: 'Cohort syncing'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713457602
+updated_at: 1713479651
+connection: destination
+integration_type:
+  - cohorts
+integration_category:
+  - customer-engagement
+partner_doc_link: 'https://docs.appcues.com/en_US/integration-documents/amplitude-two-way-integration'
+partner_maintained: false
+integration_icon: partner-icons/appcues.svg
+use_cases:
+  - "Use Amplitude's data to segment users into cohorts based on their behavior, and send these cohorts to Appcues to deliver personalized in-app experiences like targeted onboarding and messages."
+  - 'Track user interactions with Appcues elements and send this event data back to Amplitude for analysis, allowing you to measure the effectiveness of your personalized engagement strategies and optimize accordingly.'
+short_description: 'Supports personalized, targeted in-app onboarding messages, modals, and hotspots to guide specific user segments through a tour or to pinpoint key page elements.'
 ---
 Amplitude's Appcues integration allows you to send finely targeted behavioral audiences from Amplitude to Appcues. You can then use them to power tailored in-product onboarding tutorials, tooltips, announcements, promotions, and surveys.
 
