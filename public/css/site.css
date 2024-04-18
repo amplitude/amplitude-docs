@@ -878,8 +878,6 @@ video {
   left: 0px;
 }.right-0 {
   right: 0px;
-}.right-1 {
-  right: 0.25rem;
 }.right-4 {
   right: 1rem;
 }.top-0 {
@@ -894,14 +892,10 @@ video {
   z-index: 0;
 }.z-10 {
   z-index: 10;
-}.float-right {
-  float: right;
 }.m-0 {
   margin: 0px;
 }.m-8 {
   margin: 2rem;
-}.m-3 {
-  margin: 0.75rem;
 }.mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
@@ -953,8 +947,6 @@ video {
   margin-top: 1rem;
 }.mt-8 {
   margin-top: 2rem;
-}.mb-3 {
-  margin-bottom: 0.75rem;
 }.box-border {
   box-sizing: border-box;
 }.block {
@@ -990,8 +982,6 @@ video {
   height: 2rem;
 }.h-96 {
   height: 24rem;
-}.h-80 {
-  height: 20rem;
 }.max-h-12 {
   max-height: 3rem;
 }.max-h-\[575px\] {
@@ -1038,6 +1028,8 @@ video {
   flex: 0 1 auto;
 }.flex-none {
   flex: none;
+}.shrink-0 {
+  flex-shrink: 0;
 }.grow {
   flex-grow: 1;
 }.grow-0 {
@@ -1046,8 +1038,10 @@ video {
   flex-basis: 33.333333%;
 }.basis-80 {
   flex-basis: 20rem;
-}.basis-1\/4 {
-  flex-basis: 25%;
+}.basis-40 {
+  flex-basis: 10rem;
+}.basis-64 {
+  flex-basis: 16rem;
 }.rotate-0 {
   --tw-rotate: 0deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1167,9 +1161,6 @@ video {
 }.bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}.bg-amp-gray-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(205 207 212 / var(--tw-bg-opacity));
 }.fill-amp-gray-600 {
   fill: #5a5e68;
 }.fill-white {
@@ -1190,8 +1181,8 @@ video {
   padding: 2.25rem;
 }.p-\[\.7rem\] {
   padding: .7rem;
-}.p-3 {
-  padding: 0.75rem;
+}.p-1 {
+  padding: 0.25rem;
 }.px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
@@ -1741,8 +1732,6 @@ summary caret indicators.
 */pre code.torchlight .line-number,
 pre code.torchlight .summary-caret {
    margin-right: 1rem;
-}.hover\:h-12:hover {
-  height: 3rem;
 }.hover\:h-10:hover {
   height: 2.5rem;
 }.hover\:rounded:hover {
@@ -1775,11 +1764,10 @@ pre code.torchlight .summary-caret {
   list-style-position: outside;
 }.prose-ol\:list-decimal :is(:where(ol):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   list-style-type: decimal;
-}@media (min-width: 768px) {.md\:basis-1\/2 {
-    flex-basis: 50%;
-  }
 }@media (min-width: 1024px) {.lg\:left-56 {
     left: 14rem;
+  }.lg\:left-64 {
+    left: 16rem;
   }.lg\:block {
     display: block;
   }
