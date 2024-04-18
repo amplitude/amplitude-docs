@@ -9,8 +9,3 @@ nav_title: destination_catalog
 catalog: destination-catalog
 template: integration-catalog
 ---
-<ul>
-{{collection :from="catalog"}}
-<li>{{title}}</li>
-{{/collection}}
-</ul>

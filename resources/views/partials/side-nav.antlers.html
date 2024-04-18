@@ -2,10 +2,9 @@
     <div class="flex flex-col mx-4">
     {{ nav :handle="nav_title" }}
     {{lvl1_parent = title | slugify}}
-        {{# <div class="my-0 py-[.25rem]"> #}}
-           <!-- lvl1: {{lvl1_parent}} -->
+    {{navigation_icon}}
             {{ if url }}
-            <a href="{{ url }}"  class="no-underline block text-[.875rem] p-2 leading-5 hover:bg-amp-gray-50 hover:rounded {{if is_current }}bg-amp-gray-50 text-amp-blue-500 rounded current{{else}}text-amp-gray-600{{/if}}">{{ title }}</a>
+            {{navigation_icon}}<a href="{{ url }}" class="no-underline block text-[.875rem] p-2 leading-5 hover:bg-amp-gray-50 hover:rounded {{if is_current }}bg-amp-gray-50 text-amp-blue-500 rounded current{{else}}text-amp-gray-600{{/if}}">{{ title }}</a>
             {{else}}
             <button @click.prevent="lvl1 = (lvl1 === '{{title | slugify}}') ? '' : '{{title | slugify}}'" class="nav-button text-left text-[.875rem] my-0 py-[.25rem]" :class="lvl1 === '{{title | slugify}}' ? 'active' : ''">{{ title }} {{svg src="/assets/general/icon-chevron-down.svg" class="inline absolute right-4" }}</button>
             {{/if }}
