@@ -22,7 +22,9 @@ use_cases:
 short_description: 'Apxor is a no-code, in-app nudging tool for product teams. Personalize all stages of the user journey for exceptional product success. This integration lets you sync cohorts from Amplitude to Apxor.'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713458303
+updated_at: 1713482034
+partner_maintained: false
+integration_icon: partner-icons/apxor.svg
 ---
 {{partial:admonition type="beta"}}
 This integration is in Beta and is in active development. If you have any feedback to improve the Apxor destination or have suggestions for their documentation, contact the [Apxor support team](https://Apxor.com/). 

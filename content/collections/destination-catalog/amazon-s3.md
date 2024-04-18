@@ -25,7 +25,9 @@ use_cases:
 short_description: "Amazon Simple Storage Service (Amazon S3) is a highly scalable object storage service offered by Amazon Web Services (AWS). It's designed to make web-scale computing easier for developers by providing a simple web services interface that allows you to store and retrieve any amount of data, at any time, from anywhere on the web."
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713457545
+updated_at: 1713482076
+partner_maintained: false
+integration_icon: partner-icons/amazon-s3.svg
 ---
 Often, business needs dictate that you analyze behavioral data alongside other organizational sources of data that aren't captured within Amplitude. 
 By integrating Amplitude with Amazon S3, you can export your Amplitude data to an Amazon S3 bucket. This enables you to analyze your Amplitude data sets side-by-side with the rest of your data.

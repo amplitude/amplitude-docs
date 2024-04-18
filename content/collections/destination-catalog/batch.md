@@ -21,7 +21,9 @@ use_cases:
 short_description: "Batch is a customer engagement platform that allows publishers to personalize push notifications and emails across multiple mobile platforms and web browsers. Batch offers an SaaS solution, integrating with clients' apps and websites via an SDK. This integration lets you sync cohorts from Amplitude to Batch."
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713458468
+updated_at: 1713482055
+partner_maintained: false
+integration_icon: partner-icons/batch.svg
 ---
 [Batch](https://batch.com/)  is a customer engagement platform that allows publishers to personalize push notifications and emails across multiple mobile platforms and web browsers. Batch offers a SaaS solution, integrating with clients' apps and websites via an SDK. This integration lets you sync cohorts from Amplitude to Batch.  
 

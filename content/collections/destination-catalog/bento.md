@@ -22,7 +22,9 @@ use_cases:
 short_description: 'Bento helps you build powerful and native-looking activation experiences in your product. From onboarding checklists presented in your app dashboard, to upsell and cross-sell cards, to new feature announcements, Bento empowers designers and PMs to build and test without being blocked by engineering.'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713458700
+updated_at: 1713482003
+partner_maintained: false
+integration_icon: partner-icons/bento.svg
 ---
 [Bento](https://www.trybento.co/) allows you to build powerful and native-looking activation experiences in your product. From onboarding checklists presented in your app dashboard, to upsell and cross-sell cards, to new feature announcements, Bento empowers designers and product managers to build and test without engineering support. 
 

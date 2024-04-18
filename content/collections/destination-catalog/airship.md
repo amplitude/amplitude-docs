@@ -21,7 +21,9 @@ use_cases:
 short_description: 'Airship provides an end-to-end solution for capturing value across the entire customer app lifecycle—from acquisition and activation to engagement and loyalty.'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713396481
+updated_at: 1713481987
+partner_maintained: false
+integration_icon: partner-icons/appfit.svg
 ---
 This integration combines Amplitude's analytics with Airship's customer engagement tools into one unified system. Use this integration to interact with any user segment or cohort via push notifications, in-app messages, and more to advance your app engagement or conversion goals.
 
