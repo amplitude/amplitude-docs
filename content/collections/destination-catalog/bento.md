@@ -3,9 +3,29 @@ id: 52bfec1f-fc6d-435e-b8ba-ac7d3f681869
 blueprint: destination-catalog
 title: Bento
 source: 'https://docs.developers.amplitude.com/data/destinations/bento'
-category: Event streaming
+category: 'Event streaming'
+author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+connection: destination
+integration_type:
+  - event-streaming
+  - cohorts
+integration_category:
+  - customer-engagement
+partner_doc_link: 'https://help.trybento.co/en/articles/6978743-amplitude-integration'
+use_cases:
+  -
+    id: lv5gyw89
+    use_case: "Customize user experiences on Bento using Amplitude's event data, improving engagement through targeted messages and tailored services."
+  -
+    id: lv5gz108
+    use_case: 'Deliver context-specific guides on Bento based on Amplitude data, gathering user feedback to continually enhance guidance and user experience.'
+short_description: 'Bento helps you build powerful and native-looking activation experiences in your product. From onboarding checklists presented in your app dashboard, to upsell and cross-sell cards, to new feature announcements, Bento empowers designers and PMs to build and test without being blocked by engineering.'
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1713482003
+partner_maintained: false
+integration_icon: partner-icons/bento.svg
 ---
-
 [Bento](https://www.trybento.co/) allows you to build powerful and native-looking activation experiences in your product. From onboarding checklists presented in your app dashboard, to upsell and cross-sell cards, to new feature announcements, Bento empowers designers and product managers to build and test without engineering support. 
 
 To show the right users the right experience, you can send cohort information to Bento for guide targeting. Amplitude supports this at the user and group level. To automatically complete steps in a Bento guide when a user takes actions, you can pass in events from Amplitude. 
@@ -15,8 +35,6 @@ This integration lets you sync cohorts from Amplitude to Bento.
 {{partial:admonition type="tip" heading="Bento maintains this integration"}}
 Contact the [Bento support team](https://help.trybento.co/en/articles/6978743-send-events-to-amplitude) with any questions about this integration.
 {{/partial:admonition}}
-
-
 
 ## Considerations
 
