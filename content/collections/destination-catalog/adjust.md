@@ -13,7 +13,7 @@ integration_type:
   - event-streaming
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713396374
+updated_at: 1713459032
 partner_doc_link: 'https://help.adjust.com/en/classic/integrated-partners-classic/amplitude'
 use_cases:
   -
@@ -23,6 +23,8 @@ use_cases:
     id: lv4ftkm3
     use_case: "Streaming events to Adjust allows for real-time data transmission from your application to Adjust's platform, enabling immediate analysis and optimization of your marketing efforts"
 short_description: 'Adjust unifies all your marketing activities into one powerful platform, giving you the insights you need to scale your business.'
+partner_maintained: false
+integration_icon: partner-icons/adjust.svg
 ---
 ## About Adjust
 

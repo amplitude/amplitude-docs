@@ -87,6 +87,38 @@ fields:
       replicator_preview: true
       hide_display: false
   -
+    handle: partner_maintained
+    field:
+      inline_label_when_true: 'This integration is maintained by a partner'
+      default: false
+      type: toggle
+      display: 'Partner maintained'
+      width: 50
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: integration_icon
+    field:
+      max_files: 1
+      mode: list
+      container: assets
+      folder: partner-icons
+      restrict: true
+      allow_uploads: true
+      show_filename: true
+      show_set_alt: true
+      type: assets
+      display: 'Integration Icon'
+      width: 50
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
     handle: short_description
     field:
       restrict: false

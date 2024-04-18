@@ -1010,6 +1010,8 @@ video {
   width: 42rem;
 }.w-full {
   width: 100%;
+}.w-12 {
+  width: 3rem;
 }.min-w-\[712px\] {
   min-width: 712px;
 }.max-w-12 {
