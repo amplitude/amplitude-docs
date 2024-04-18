@@ -1,4 +1,4 @@
-<div x-cloak x-data="{ lvl1: false, lvl2: false, lvl3: false }" class="nav-level-1">
+<div x-cloak x-data="{ lvl1: false, lvl2: false, lvl3: false }" class="nav-level-1 p-4">
     <div class="flex flex-col mx-4">
     {{ nav :handle="nav_title" }}
     {{lvl1_parent = title | slugify}}
@@ -7,7 +7,7 @@
             {{ if url }}
             <a href="{{ url }}"  class="no-underline block text-[.875rem] p-2 leading-5 hover:bg-amp-gray-50 hover:rounded {{if is_current }}bg-amp-gray-50 text-amp-blue-500 rounded current{{else}}text-amp-gray-600{{/if}}">{{ title }}</a>
             {{else}}
-            <button @click.prevent="lvl1 = (lvl1 === '{{title | slugify}}') ? '' : '{{title | slugify}}'" class="nav-button text-left text-[.875rem] my-0 py-[.25rem]" :class="lvl1 === '{{title | slugify}}' ? 'active' : ''">{{ title }} {{svg src="/assets/general/icon-chevron-down.svg" class="inline absolute right-0" }}</button>
+            <button @click.prevent="lvl1 = (lvl1 === '{{title | slugify}}') ? '' : '{{title | slugify}}'" class="nav-button text-left text-[.875rem] my-0 py-[.25rem]" :class="lvl1 === '{{title | slugify}}' ? 'active' : ''">{{ title }} {{svg src="/assets/general/icon-chevron-down.svg" class="inline absolute right-4" }}</button>
             {{/if }}
             {{ if children }}
                 <div x-show="lvl1 === '{{title | slugify}}'" class="nav-level-2 my-0 pl-1" x-collapse>
