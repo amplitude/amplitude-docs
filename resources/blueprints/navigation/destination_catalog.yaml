@@ -1,0 +1,23 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: navigation_icon
+            field:
+              mode: list
+              container: assets
+              folder: general
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'Navigation icon'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false

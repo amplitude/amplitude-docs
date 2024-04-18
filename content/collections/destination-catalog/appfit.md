@@ -12,29 +12,15 @@ integration_type:
 integration_category:
   - attribution
 partner_doc_link: 'https://support.appsflyer.com/hc/en-us/articles/211200306-Amplitude-integration-with-AppsFlyer'
-use_cases:
-  -
-    id: lv5gkjou
-    use_case: "Enhance Amplitude's analytics by sending detailed event data from AppsFlyer, improving insights into user behavior and marketing campaign effectiveness."
-  -
-    id: lv5gkowo
-    use_case: "Send targeted event data from Amplitude to AppsFlyer to deepen analysis on user actions' impact on marketing performance and attribution."
-  -
-    id: lv5gktvf
-    use_case: 'Export user cohorts from Amplitude to AppsFlyer for more personalized and effective marketing campaigns, based on specific user behaviors or characteristics.'
 short_description: 'AppsFlyer helps brands make good choices for their business and their customers with its advanced measurement, data analytics, deep linking, engagement, fraud protection, data clean room, and privacy-preserving technologies.'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713457928
+updated_at: 1713481965
+partner_maintained: false
+integration_icon: partner-icons/appfit.svg
 ---
 Amplitude CDP's AppsFlyer streaming integration enables you to forward your Amplitude events straight to [AppsFlyer](https://www.appsflyer.com/) with just a few clicks.
 
-!!!note "Other Amplitude + AppsFlyer integrations"
-
-    This integration streams Amplitude events to AppsFlyer. Amplitude CDP offers other integrations with AppsFlyer:
-
-    - [Export Amplitude cohorts to AppsFlyer](/data/destinations/appsflyer-cohort)
-    - [Import AppsFlyer events into Amplitude](/data/sources/appsflyer)
 
 ## Setup
 

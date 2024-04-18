@@ -25,7 +25,9 @@ use_cases:
 short_description: 'AppsFlyer helps brands make good choices for their business and their customers with its advanced measurement, data analytics, deep linking, engagement, fraud protection, data clean room, and privacy-preserving technologies.'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713457993
+updated_at: 1713481932
+partner_maintained: false
+integration_icon: partner-icons/appsflyer.svg
 ---
 Amplitude's AppsFlyer streaming integration enables you to forward your Amplitude events straight to [AppsFlyer](https://www.appsflyer.com/) with just a few clicks.
 
