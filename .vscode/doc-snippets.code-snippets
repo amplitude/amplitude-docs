@@ -25,4 +25,19 @@
 		],
 		"description": "Admonition"
 	},
+	"Tab Group":{
+		"scope": "markdown",
+		"prefix": "tab",
+		"body": [
+			"{{partial:tabs tabs=\"$1, $2\"}}",
+			"{{partial:tab name=\"$1\"}}",
+			"Insert tab1 content here",
+			"{{/partial:tab}}",
+			"{{partial:tab name=\"$2\"}}",
+			"Insert tab2 content here",
+			"{{/partial:tab}}",
+			"{{/partial:tabs}}"
+		],
+		"description": "Tab Group"
+	}
 }
