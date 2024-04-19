@@ -20,7 +20,7 @@ products:
   -
     id: lux6m79d
     product_name: 'Amplitude Data'
-    product_description: 'Something about data here'
+    product_description: 'Integrate with your tech stack, resolve identities across devices, and control customer and product data.'
     product_icon: home/data.png
     type: product_details
     enabled: true
@@ -28,7 +28,7 @@ products:
   -
     id: lux6mpsy
     product_name: 'Amplitude Experiment'
-    product_description: 'A blurb about experiment'
+    product_description: 'An experimentation solution that unites everything you need to test, analyze, and optimize your product at scale.'
     type: product_details
     enabled: true
     product_icon: home/analytics.png
@@ -36,7 +36,7 @@ products:
   -
     id: lux6n36s
     product_name: 'Amplitude Session Replay'
-    product_description: 'Some words about Session Replay and how great it is.'
+    product_description: 'Reconstruct digital experiences to see how your customers unlock value.'
     product_icon: home/session-replay.png
     type: product_details
     enabled: true
