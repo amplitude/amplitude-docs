@@ -11,11 +11,11 @@
       </div>
       <div
         class="prose prose-a:text-amp-blue-300 prose-ol:list-decimal prose-ol:list-outside prose-pre:bg-[#fafafa] w-full">
-        {{conn_type}}
-              {{taxonomy:integration_category min_count="1" :collection="catalog"}}
-              <h2 id="{{title | slugify}}">{{title}}</h2>
-              <div class="flex flex-wrap gap-4">
-              {{entries sort="title:asc"}}
+        {{ conn_type }}
+        {{ taxonomy:integration_category min_count="1" :collection="catalog" }}
+          <h2 id="{{ title | slugify }}">{{ title }}</h2>
+          <div class="flex flex-wrap gap-4">
+            {{ entries sort="title:asc" }}
               <a href="{{ url }}">
                 <div
                   class="border border-amp-gray-100 rounded h-24 w-64 p-4 hover:shadow-lg transition-shadow flex items-center">
@@ -24,11 +24,9 @@
                   <div class="pl-8">{{ title }}</div>
                 </div>
               </a>
-              {{/entries}}
-              </div>
-              {{/taxonomy:integration_category}}
-
-
+            {{ /entries }}
+          </div>
+        {{ /taxonomy:integration_category }}
       </div>
     </div>
     {{ unless hide_toc }}
