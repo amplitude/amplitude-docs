@@ -39,7 +39,7 @@ You need admin/manager privileges in Amplitude, as well as a role that allows yo
 1. In Amplitude Data, click **Catalog** and select the **Destinations** tab.
 2. In the Warehouse Destinations section, click **Snowflake Data Share**.
 3. Under *Access Data via Snowflake Data Share*, enter the following information:
-      - **Account Name**: This is the account name on your Snowflake account. It's the first part of your Snowflake URL, after 'https://' and before 'snowflakecomputing.com'. For example, if your Snowflake URL is 'http://amplitude.snowflakecomputing.com', then you should enter 'amplitude'.
+      - **Account Name**: This is the account name on your Snowflake account. It's the first part of your Snowflake URL, after `https://` and before 'snowflakecomputing.com'. For example, if your Snowflake URL is `http://amplitude.snowflakecomputing.com`, then you should enter `amplitude`.
       - **Org Name**: This is the name of your Snowflake organization.
 4. Choose which data to include in this export: *Raw events every 5 minutes*, *Merged IDs every hour*, or both. For events, you can also specify filtering conditions to only export events that meet certain criteria.
 5. Click **Next**, enter the name of this Snowflake export and click Finish.
@@ -50,9 +50,9 @@ When complete, Amplitude sends all future events to Snowflake with Data Share.
 
 After the Share is set up between Amplitude and your Snowflake cluster, Amplitude only loads data from that point forward. To backfill historical data from a period before the connection, specify this in the request when setting up the share. 
 
-!!!warning "Backfilling data has an additional cost"
-    
-    Contact your Amplitude Account Manager for pricing.
+{{partial:admonition type="warning" title="Data backfill incures extra cost"}}
+Contact your Amplitude Account Manager for pricing.
+{{/partial:admonition}}
 
 ## Remove Data Share from Amplitude
 
