@@ -19,3 +19,12 @@ preferences:
         - slug
         - status
         - connection
+      per_page: 100
+    source-catalog:
+      columns:
+        - title
+        - author
+        - slug
+        - status
+        - connection
+      per_page: 100

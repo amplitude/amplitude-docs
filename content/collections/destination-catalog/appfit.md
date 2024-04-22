@@ -48,11 +48,9 @@ Under **Send Events**, make sure the toggle is enabled ("Events are sent to Apps
 
 1. In **Select and filter events** choose which events you want to send. Choose only the events you need in AppsFlyer. _Transformed events aren't supported._
 
-    !!!warning "Events for non-AppsFlyer users cannot be streamed"
-
-        AppsFlyer requires that all events have an **AppsFlyer ID** present. If you have selected any events to send to AppsFlyer that may not have an **AppsFlyer ID**, add a filter to send only events where the **AppsFlyer ID** is present. Otherwise, your delivery metrics may be affected.
-
-        ![Setting up a filter for anonymous users on events](/../assets/images/streaming-anonymous-users-filter.png)
+{{partial:admonition type="warning" title="Events for non-AppsFlyer users not supported"}}
+AppsFlyer requires that all events have an **AppsFlyer ID** present. If you have selected any events to send to AppsFlyer that may not have an **AppsFlyer ID**, add a filter to send only events where the **AppsFlyer ID** is present. Otherwise, your delivery metrics may be affected.
+{{/partial:admonition}}
 
 2. In **Map properties to destination**:
     _Transformed user properties aren't supported._
@@ -70,7 +68,7 @@ Under **Send Events**, make sure the toggle is enabled ("Events are sent to Apps
 
     See the full list of [AppsFlyer properties that are supported by Amplitude](#supported-appsflyer-properties).
 
-3. (optional) In **Select additional properties**, select any more event and user properties you want to send to AppsFlyer. If you don't select any properties here, Amplitude doesn't send any. These properties are sent to AppsFlyer as [AppsFlyer event values](https://dev.appsflyer.com/hc/reference/post_s2s_inappevent). _Transformed event properties and transformed user properties aren't supported._
+2. (optional) In **Select additional properties**, select any more event and user properties you want to send to AppsFlyer. If you don't select any properties here, Amplitude doesn't send any. These properties are sent to AppsFlyer as [AppsFlyer event values](https://dev.appsflyer.com/hc/reference/post_s2s_inappevent). _Transformed event properties and transformed user properties aren't supported._
 
 ### Enable sync
 

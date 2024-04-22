@@ -20,3 +20,8 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1713480258
 ---
+[Toplyne](https://www.toplyne.io/) helps sales teams at product-led companies convert their freemium users, and helps sales teams build pipelines for new business and expansion opportunities. Toplyne's models train on Product usage data to create opportunities directly in the CRM of your choice, without involving your engineering and data science teams.
+
+## Setup
+
+For instructions for setting up this integration, see [Toplyne's documentation](https://docs.toplyne.io/docs/amplitude).

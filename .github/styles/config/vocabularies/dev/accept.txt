@@ -232,3 +232,5 @@ Contentful
 Bento
 Wordpress
 substring
+Planhat
+Talon.One
