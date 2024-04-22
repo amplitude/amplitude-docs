@@ -76,8 +76,10 @@ To confirm you've configured it correctly, [look up your test user or device in
 4. Map your Airship ID to an Amplitude ID. Amplitude recommends mapping `UAChannelID` in Amplitude to `Auto Channel ID` in Airship; however, you can map user ID, device ID, or any user property in Amplitude to any Airship ID.
 5. Save your work.
 
-!!!note
-    Auto Channel maps to the channel ID of the correct platform (Android or iOS) in Airship automatically.
+
+{{partial:admonition type="note" title=""}}
+Auto Channel maps to the channel ID of the correct platform (Android or iOS) in Airship automatically.
+{{/partial:admonition}}
 
 ## Airship setup
 

@@ -1,0 +1,90 @@
+title: 'Source Catalog'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: content
+            field:
+              type: markdown
+              antlers: true
+              display: Content
+              localizable: true
+          -
+            handle: author
+            field:
+              type: users
+              display: Author
+              default: current
+              localizable: true
+              max_items: 1
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
+              localizable: true
+  integration_metadata:
+    display: 'Integration Metadata'
+    sections:
+      -
+        display: 'New Section'
+        fields:
+          -
+            import: integration_category
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - source-catalog
+              max_items: 1
+              listable: false
+              localizable: true
+  alt_sitemap:
+    display: 'Alt Sitemap'
+    sections:
+      -
+        fields:
+          -
+            handle: sitemap_priority
+            field:
+              type: float
+              display: 'Sitemap Priority'
+              instructions: 'From 0.0 (lowest priority) to 1.0 (highest priority)'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: exclude_from_sitemap
+            field:
+              default: false
+              type: toggle
+              display: 'Exclude from sitemap?'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
