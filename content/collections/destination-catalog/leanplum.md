@@ -3,12 +3,10 @@ id: 5fd76e10-7c93-4522-b0f4-8f35a8b8bfca
 blueprint: destination-catalog
 use_cases:
   - "With this integration, businesses can leverage Amplitude's advanced analytics to identify and segment user groups based on behavior and attributes. These cohorts are seamlessly integrated into Leanplum's platform, enabling targeted messaging, personalized content delivery, and tailored user experiences. By combining Amplitude's analytics capabilities with Leanplum's marketing automation tools, businesses can drive better audience engagement and foster long-term relationships with customers."
-  - 'Ingest events from Leanplum into Amplitude to harness real-time data insights and user behavior analysis, driving customer loyalty and revenue.'
 short_description: 'Multi-channel customer engagement platform that understands and transforms customer data, behavior, and context to enable personalized campaigns that build customer loyalty and drive revenue.'
 integration_category:
   - marketing-automation
 integration_type:
-  - raw-events
   - cohorts
 partner_doc_link: 'https://docs.leanplum.com/docs/amplitude-integration'
 title: Leanplum

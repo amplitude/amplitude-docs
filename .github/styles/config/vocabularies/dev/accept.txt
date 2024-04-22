@@ -232,3 +232,4 @@ Contentful
 Bento
 Wordpress
 substring
+Planhat
