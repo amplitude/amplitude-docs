@@ -97,9 +97,10 @@ Amplitude uses [Apache FreeMarker](https://freemarker.apache.org/) templates to 
 - Amplitude's [event format](../../analytics/apis/export-api.md).
 - Amplitude's [user format](../../analytics/apis/identify-api.md). Keep in mind that based on how you use the Identify API some fields might be different (for example, if you use `device_id` instead of `user_id` in your identify calls, you will not see `user_id` in the payload).
 
-!!!tip "More FreeMarker help"
 
-    See the FreeMarker [guide to creating templates](https://freemarker.apache.org/docs/dgui.html) for more help.
+{{partial:admonition type="tip" title="More FreeMarker help"}}
+See the FreeMarker [guide to creating templates](https://freemarker.apache.org/docs/dgui.html) for more help.
+{{/partial:admonition}}
 
 ### Example template for sending events
 

@@ -34,13 +34,10 @@ Before you can export data from Amplitude to Azure Blob Storage, ensure your Azu
 
     Assign the necessary permissions for Azure Blob Storage to your service principal:
 
-    !!!note
-       
-        Amplitude requires the following permissions in Azure:
-
-        - `read` to ensure data isn't exported more than once for recurring exports.
-        - `delete` to enable deduplication during a manual export, for example when you export backfill data.
-
+{{partial:admonition type="note" title="Amplitude requires the following Azure permissions"}}
+- `read` to ensure data isn't exported more than once for recurring exports.
+- `delete` to enable deduplication during a manual export, for example when you export backfill data.
+{{/partial:admonition}}
     - `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write`
     - `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read`
     - `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete`
@@ -77,14 +74,14 @@ To export your Amplitude data to Azure Blob Storage:
 2. Select **Azure Blob Storage - Events & Merged Users**.
 3. On the **Getting Started** tab, select the data to export. Options include *Export events ingested today and moving forward*, *Export all merged Amplitude IDs*, or both. For events, you can also specify filtering conditions to only export events that meet certain criteria.
 
-    !!!note
-
-        You can export these two different data types to separate containers, if you prefer. You'll just need to complete the setup flow twice: once for each data type.
+{{partial:admonition type="note" title=""}}
+You can export these two different data types to separate containers, if you prefer. You'll just need to complete the setup flow twice: once for each data type.
+{{/partial:admonition}}
 
 4. Review the Event table and Merge IDs table schemas and click **Next**.
-5. In the *Set Up Credentials* section, enter the `tenantId`, `clientId`, and `clientSecret` from the service principal you created.
-6. Complete the Azure Blob Storage container details in the *Azure Blob Storage Container Details* section. Click **Next**.
-7. Click **Next**. Amplitude attempts a test upload to check that the entered credentials work. If the upload is successful, click **Finish** to complete the Azure Blob Storage destination configuration and activation.
+2. In the *Set Up Credentials* section, enter the `tenantId`, `clientId`, and `clientSecret` from the service principal you created.
+3. Complete the Azure Blob Storage container details in the *Azure Blob Storage Container Details* section. Click **Next**.
+4. Click **Next**. Amplitude attempts a test upload to check that the entered credentials work. If the upload is successful, click **Finish** to complete the Azure Blob Storage destination configuration and activation.
 
 When complete, Amplitude sends all future events/merged users to your Azure Blob Storage once per hour.
 
