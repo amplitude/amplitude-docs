@@ -19,3 +19,4 @@ preferences:
         - slug
         - status
         - connection
+      per_page: 100
