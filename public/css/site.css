@@ -1270,6 +1270,8 @@ video {
   font-weight: 600;
 }.uppercase {
   text-transform: uppercase;
+}.lowercase {
+  text-transform: lowercase;
 }.italic {
   font-style: italic;
 }.leading-5 {
