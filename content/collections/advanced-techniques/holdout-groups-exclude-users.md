@@ -1,15 +1,16 @@
 ---
-title: "Exclude users from your experiments with holdout groups"
-source: "https://help.amplitude.com/hc/en-us/articles/13508918823835-Exclude-users-from-your-experiments-with-holdout-groups"
 id: 59a4add6-ca49-4b8f-9f39-85ed13dbf5e9
+blueprint: advanced-technique
+title: 'Exclude users from your experiments with holdout groups'
+source: 'https://help.amplitude.com/hc/en-us/articles/13508918823835-Exclude-users-from-your-experiments-with-holdout-groups'
+this_article_will_help_you:
+  - 'Understand how holdout groups work in Amplitude Experiment'
+  - 'Create, manage, and analyze a holdout group and the experiments in it'
+  - 'Delve deeper into holdout groups with use case examples'
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1714079530
 ---
-
-#### This article will help you:
-
-* Understand how holdout groups work in Amplitude Experiment
-* Create, manage, and analyze a holdout group and the experiments in it
-* Delve deeper into holdout groups with use case examples
-
 Sometimes it can be useful to keep a certain percentage of users from viewing an experiment. This is especially true when measuring the long-term, combined effects of multiple experiments. Statistical significance in one experiment may not reflect the true, cumulative impact of your experiments.
 
 Amplitude Experiment lets you easily exclude users from your experiments by creating a **holdout** group. Holdout groups are especially useful for measuring the **long term** impact of your rolled-out variants, and measuring the lift of your experimentation program as a whole.
@@ -42,7 +43,9 @@ If you have existing groups, click *Create A New Group*, and then select *Holdou
 
 3. In the *Holdout group settings* modal, enter the name, description, and holdout percentage for the group. You can also view and change advanced settings such as the evaluation mode and bucketing key of your group.
 
-**NOTE:** The holdout percentage cannot be changed once you’ve created the group. This ensures consistent bucketing, as well as a consistent user experience.
+{{partial:admonition type='note'}}
+The holdout percentage cannot be changed once you’ve created the group. This ensures consistent bucketing, as well as a consistent user experience.
+{{/partial:admonition}}
 
 4. From the Experiments tab, click *+ Add Experiment* to add experiments to your holdout group.
 5. If desired, specify individuals or cohorts that you'd like to include or exclude from your holdout group. From either the *Individuals* or *Cohorts* tabs, add a user or cohort under *Include in holdout* or *Exclude from holdout*. This is helpful if you would like to ensure that specific users are either always held out, or never held out, from the holdout group.  

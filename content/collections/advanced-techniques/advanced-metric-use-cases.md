@@ -1,14 +1,15 @@
 ---
-title: "Advanced metric use cases in Amplitude Experiment"
-source: "https://help.amplitude.com/hc/en-us/articles/18888080184475-Advanced-metric-use-cases-in-Amplitude-Experiment"
 id: e05c2f18-2f1f-4391-ae18-cc1248444688
+blueprint: advanced-technique
+title: 'Advanced metric use cases in Amplitude Experiment'
+source: 'https://help.amplitude.com/hc/en-us/articles/18888080184475-Advanced-metric-use-cases-in-Amplitude-Experiment'
+this_article_will_help_you:
+  - "Learn how to use your experiment's metrics in a funnel analysis"
+  - 'Analyze your experiment results based on a subset of users'
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1714068215
 ---
-
-#### This article will help you:
-
-* Learn how to use your experiment's metrics in a funnel analysis
-* Analyze your experiment results based on a subset of users
-
 This article reviews advanced use cases that you may face while analyzing your experiment's results. 
 
 ## Case 1: Create a funnel analysis based on your experiment's metrics
@@ -24,7 +25,7 @@ Follow these steps to use your experiment's metrics in a [Funnel Analysis chart]
 3. Select your analysis unit or group type (i.e., *Any Users*) in the Segment By module.
 4. Create a user segment for each variant of your experiment.
 
-**![](/output/img/advanced-techniques/20464390610203)**
+**![](/output/img/advanced-techniques/20464390610203.png)**
 
 5. Click *+ Performed* to add filters with your experiment's flag key and variant.
 6. Set the date range for *any time since* to match the start date of your experiment.
@@ -46,7 +47,7 @@ Follow these steps to filter a subset of users in your experiment results:
 1. From the *Analyze* tab in your experiment, click *Open in Chart.*
 2. In the *Variants performed by* section, click *+Filter by* to add a filter for the Country property.
 
-**![](/output/img/advanced-techniques/20464386075547)**
+**![](/output/img/advanced-techniques/20464386075547.png)**
 
 {{partial:admonition type='note'}}
  This method will filter both the numerator and the denominator of the mean values so that you may correctly analyze the desired subset of users exposed to your experiment. 
