@@ -888,10 +888,18 @@ video {
   top: 6rem;
 }.top-4 {
   top: 1rem;
+}.left-\[-256px\] {
+  left: -256px;
+}.left-64 {
+  left: 16rem;
+}.left-\[256px\] {
+  left: 256px;
 }.z-0 {
   z-index: 0;
 }.z-10 {
   z-index: 10;
+}.z-50 {
+  z-index: 50;
 }.m-0 {
   margin: 0px;
 }.m-8 {
@@ -908,9 +916,6 @@ video {
 }.my-0 {
   margin-top: 0px;
   margin-bottom: 0px;
-}.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
 }.-mb-\[2px\] {
   margin-bottom: -2px;
 }.-mt-6 {
@@ -947,6 +952,8 @@ video {
   margin-top: 1rem;
 }.mt-8 {
   margin-top: 2rem;
+}.ml-\[256px\] {
+  margin-left: 256px;
 }.box-border {
   box-sizing: border-box;
 }.block {
@@ -996,10 +1003,10 @@ video {
   width: 3rem;
 }.w-20 {
   width: 5rem;
-}.w-24 {
-  width: 6rem;
 }.w-4 {
   width: 1rem;
+}.w-48 {
+  width: 12rem;
 }.w-6 {
   width: 1.5rem;
 }.w-64 {
@@ -1042,6 +1049,9 @@ video {
   flex-basis: 16rem;
 }.basis-80 {
   flex-basis: 20rem;
+}.translate-x-\[256px\] {
+  --tw-translate-x: 256px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }.rotate-0 {
   --tw-rotate: 0deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1181,6 +1191,8 @@ video {
   padding: 2.25rem;
 }.p-\[\.7rem\] {
   padding: .7rem;
+}.p-16 {
+  padding: 4rem;
 }.px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
@@ -1211,10 +1223,15 @@ video {
 }.py-\[2\.12rem\] {
   padding-top: 2.12rem;
   padding-bottom: 2.12rem;
+}.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
 }.pb-\[1\.5rem\] {
   padding-bottom: 1.5rem;
 }.pl-1 {
   padding-left: 0.25rem;
+}.pl-4 {
+  padding-left: 1rem;
 }.pl-5 {
   padding-left: 1.25rem;
 }.pl-8 {
@@ -1227,6 +1244,10 @@ video {
   padding-top: 2rem;
 }.pt-\[6\.5rem\] {
   padding-top: 6.5rem;
+}.pl-6 {
+  padding-left: 1.5rem;
+}.pl-16 {
+  padding-left: 4rem;
 }.text-left {
   text-align: left;
 }.text-center {
@@ -1717,6 +1738,9 @@ colors extend edge to edge.
    min-width: max-content;
    padding-top: 1rem;
    padding-bottom: 1rem;
+   background-color: #EBF5FF!important;
+}pre {
+    background-color: #EBF5FF!important;    
 }/*
 Horizontal line padding to match the vertical
 padding from the code block above.
@@ -1739,9 +1763,6 @@ pre code.torchlight .summary-caret {
 }.hover\:bg-amp-blue-950:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(235 245 255 / var(--tw-bg-opacity));
-}.hover\:bg-amp-gray-50:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(244 245 246 / var(--tw-bg-opacity));
 }.hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1763,7 +1784,15 @@ pre code.torchlight .summary-caret {
   list-style-type: decimal;
 }@media (min-width: 1024px) {.lg\:left-64 {
     left: 16rem;
+  }.lg\:left-0 {
+    left: 0px;
   }.lg\:block {
     display: block;
+  }.lg\:hidden {
+    display: none;
+  }.lg\:p-8 {
+    padding: 2rem;
+  }.lg\:pl-8 {
+    padding-left: 2rem;
   }
 }

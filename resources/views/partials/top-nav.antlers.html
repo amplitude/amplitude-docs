@@ -4,9 +4,9 @@
         {{ if children }}
             <div class="flex-auto mr-4 text-sm font-medium" x-data="{ open: false }" @mouseleave="open = false"><button
                     @click.prevent @mouseover="open = true">{{ title }}</button>
-                <div x-cloak x-show="open" x-transition class="mt-4 absolute border border-amp-gray-100 rounded shadow-lg top-4 bg-white w-24 p-4">
+                <div x-cloak x-show="open" x-transition class="mt-4 py-2 absolute border border-amp-gray-100 rounded flex flex-col shadow-lg top-4 bg-white w-48 p-4">
                     {{ children }}
-                        <a class="no-underline font-light my-2 hover:bg-amp-gray-50 hover:rounded" href="{{ url }}">{{ title }}</a> <br />
+                        <a class="no-underline pl-4 py-2 font-light hover:bg-amp-blue-950 hover:rounded" href="{{ url }}">{{ title }}</a>
                     {{ /children }}
                 </div>
             </div>

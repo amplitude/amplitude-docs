@@ -26,7 +26,7 @@
   </style>
 </head>
 <body class="bg-gray-100 font-sans leading-normal text-gray-800">
-  <div class="container prose">
+  <div x-data="{ sidebarOpen: false }" class="container prose">
     <div class="top-0 left-0  right-0 bg-white fixed z-10">
       <div class="w-full pt-5 pl-5">
         <div class="box-border">
@@ -51,7 +51,7 @@
       </div>
     {{ else }}
       <div
-        class="w-64 h-100 left-0 top-24 bottom-0 border-solid border-r border-black-200 hidden lg:block overflow-auto fixed">
+        class="w-64 h-100 top-24 bg-white bottom-0 border-solid border-r border-black-200 left-[-256px] lg:left-0 lg:block overflow-auto z-50 fixed transition" :class="{ 'translate-x-[256px]': sidebarOpen }">
         {{ if segment_1 }}
           {{ if nav_type }}
             {{ partial:side-nav-charts :nav_title="nav_title" }}
@@ -60,8 +60,9 @@
           {{ /if }}
         {{ /if }}
       </div>
-      <div class="absolute top-24 left-0 lg:left-64 bottom-0 right-0 z-0">
+      <div class="absolute top-24 left-0 lg:left-64 bottom-0 right-0 z-0 transition">
         <div class="w-full pt-8">
+          <button @click="sidebarOpen = !sidebarOpen" class="absolute left-0" :class="{ 'translate-x-[256px]': sidebarOpen }">{{svg src="/assets/general/expand.svg"}}</button>
           {{ template_content }}
         </div>
       </div>
