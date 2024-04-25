@@ -340,6 +340,7 @@ a.toc-link {
     border: 1px solid;
     border-radius: theme('borderRadius.md');
     margin: 1.25rem 0;
+    width: 100%;
 }
 
 .hint-title {
@@ -549,6 +550,11 @@ pre code.torchlight {
    min-width: max-content;
    padding-top: 1rem;
    padding-bottom: 1rem;
+   background-color: #EBF5FF!important;
+}
+
+pre {
+    background-color: #EBF5FF!important;    
 }
 
 /*
