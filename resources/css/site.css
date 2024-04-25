@@ -340,6 +340,7 @@ a.toc-link {
     border: 1px solid;
     border-radius: theme('borderRadius.md');
     margin: 1.25rem 0;
+    width: 100%;
 }
 
 .hint-title {

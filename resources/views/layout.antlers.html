@@ -51,7 +51,9 @@
       </div>
     {{ else }}
       <div
-        class="w-64 h-100 top-24 bg-white bottom-0 border-solid border-r border-black-200 left-[-256px] lg:left-0 lg:translate-x-0 lg:block overflow-auto z-50 fixed transition" :class="{ 'translate-x-[256px]': sidebarOpen }">
+        class="w-64 h-100 top-24 bg-white bottom-0 border-solid border-r border-black-200 -left-60 lg:left-0 lg:translate-x-0 lg:block z-10 fixed transition shadow " :class="{ 'translate-x-[240px]': sidebarOpen }">
+        <button @click="sidebarOpen = !sidebarOpen" class="absolute lg:hidden left-0 z-50 w-4 translate-x-[245px] translate-y-8">{{svg src="/assets/general/expand.svg"}}</button>
+
         {{ if segment_1 }}
           {{ if nav_type }}
             {{ partial:side-nav-charts :nav_title="nav_title" }}
@@ -62,7 +64,6 @@
       </div>
       <div class="absolute top-24 left-0 lg:left-64 bottom-0 right-0 z-0 transition">
         <div class="w-full pt-8">
-          <button @click="sidebarOpen = !sidebarOpen" class="absolute lg:hidden left-0" :class="{ 'translate-x-[256px]': sidebarOpen }">{{svg src="/assets/general/expand.svg"}}</button>
           {{ template_content }}
         </div>
       </div>
