@@ -1,0 +1,176 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        display: Links
+        fields:
+          -
+            handle: footer_details
+            field:
+              collapse: false
+              previews: true
+              fullscreen: true
+              sets:
+                link_group:
+                  display: 'Link Group'
+                  instructions: null
+                  icon: null
+                  sets:
+                    link_group:
+                      display: 'Link Group'
+                      instructions: null
+                      icon: null
+                      fields:
+                        -
+                          handle: group_title
+                          field:
+                            input_type: text
+                            antlers: false
+                            type: text
+                            display: 'Group Title'
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                        -
+                          handle: links
+                          field:
+                            fields:
+                              -
+                                handle: link_text
+                                field:
+                                  input_type: text
+                                  antlers: false
+                                  type: text
+                                  display: 'Link Text'
+                                  width: 50
+                                  listable: hidden
+                                  instructions_position: above
+                                  visibility: visible
+                                  replicator_preview: true
+                                  hide_display: false
+                              -
+                                handle: link_url
+                                field:
+                                  input_type: text
+                                  antlers: false
+                                  type: text
+                                  display: 'Link URL'
+                                  width: 50
+                                  listable: hidden
+                                  instructions_position: above
+                                  visibility: visible
+                                  replicator_preview: true
+                                  hide_display: false
+                            mode: table
+                            reorderable: true
+                            fullscreen: true
+                            type: grid
+                            display: Links
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+              type: replicator
+              display: 'Footer Details'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+      -
+        display: Social
+        fields:
+          -
+            handle: social_links
+            field:
+              fields:
+                -
+                  handle: social_icon
+                  field:
+                    max_files: 1
+                    min_files: 1
+                    mode: list
+                    container: assets
+                    folder: general
+                    restrict: false
+                    allow_uploads: true
+                    show_filename: true
+                    show_set_alt: true
+                    type: assets
+                    display: 'Social Icon'
+                    width: 50
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: social_url
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: 'Social URL'
+                    width: 50
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+              mode: table
+              reorderable: true
+              fullscreen: true
+              type: grid
+              display: 'Social Links'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+      -
+        display: 'General Links'
+        fields:
+          -
+            handle: general_links
+            field:
+              fields:
+                -
+                  handle: link_text
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: 'Link Text'
+                    width: 50
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: link_url
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: 'Link URL'
+                    width: 50
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+              mode: table
+              reorderable: true
+              fullscreen: true
+              type: grid
+              display: 'General Links'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false

@@ -1,0 +1,36 @@
+<div class=" bg-amp-dark-teal pt-[6.5rem] px-[2.88rem] pb-[1.5rem] w-full ">
+    <div class="max-w-screen-2xl mx-auto">
+        <div class="flex flex-row justify-between mb-[6.25rem]">
+            {{ site_footer:footer_details }}
+                <div class="">
+                    <p class="text-amp-light-teal uppercase font-[Gellix] text-[.75rem] tracking-[0.07813rem]">
+                        {{ group_title }}</p>
+                    <ul class="list-none p-0">
+                        {{ links }}
+                            <li class="p-0"><a class="text-white font-[Gellix]" href="{{ link_url }}" target="_blank">{{ link_text }}</a></li>
+                        {{ /links }}
+                    </ul>
+                </div>
+            {{ /site_footer:footer_details }}
+        </div>
+        <div class="flex flex-row justify-between items-center">
+            <div class="flex flex-row">
+                {{site_footer:social_links}}
+                    <a href="{{ social_url }}" class="mr-4" target="_blank">
+                        {{svg :src="social_icon" class="w-6 h-6 fill-white text-white" }}
+                    </a>
+                {{/site_footer:social_links}}
+            </div>
+            <div class="flex flex-col">
+                <div class="flex flex-row justify-between">
+                    {{site_footer:general_links}}
+                        <a class="text-white text-[0.875rem] font-[Gellix]" href="{{link_url}}" target="_blank">{{link_text}}</a>
+                    {{/site_footer:general_links}}
+                </div>
+                <div><p class="text-[0.815rem] text-white opacity-80 font-[Gellix]">© {{now | format('o')}} Amplitude, Inc. All rights reserved. Amplitude is a registered trademark of Amplitude, Inc.</p></div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

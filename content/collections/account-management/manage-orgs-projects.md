@@ -10,11 +10,13 @@ id: 4ac86a5c-028a-4bd7-8b78-e74aa4ee3238
 
 Once you've created your [first organization](/get-started/create-org) and your [first project](/get-started/create-project), you will from time to time need to manage and update them. This article explains how to perform common tasks related to organization and project management in Amplitude.
 
-**NOTE:** You may want to take [this course](https://academy.amplitude.com/amplitude-analytics-admin-essentials) on administering Amplitude in our Academy.
+{{partial:admonition type='note'}}
+You may want to take [this course](https://academy.amplitude.com/amplitude-analytics-admin-essentials) on administering Amplitude in our Academy.
+{{/partial:admonition}}
 
 ### Feature availability
 
-This feature is available to users on **all Amplitude plans**.
+This feature is available to users on **all Amplitude plans**. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Approve and provision new users in your organization
 
@@ -44,7 +46,9 @@ Navigate to ![gear icon for settings.png](/output/img/account-management/gear-ic
 | Events This Month | Shows the number of events your project has sent to Amplitude this month. |
 | Events Last Month | Shows the number of events your project sent to Amplitude last month.  |
 
-**NOTE:** Only admins and managers can edit project settings. All project information except the API key and secret key can be viewed by viewers and members.
+{{partial:admonition type='note'}}
+Only admins and managers can edit project settings. All project information except the API key and secret key can be viewed by viewers and members.
+{{/partial:admonition}}
 
 With [Scale](https://help.amplitude.com/hc/en-us/articles/115001476972), you can see counts for **raw events this month** and **raw events last month**.
 
@@ -74,7 +78,9 @@ If you are unsure who your CSM is or do not have one, follow the steps below to 
 4. Click *Submit* once you complete the form. You will receive a copy of the submitted request by email.
 5. When the request has been processed, you will receive a confirmation email that the change or deletion has been made.
 
-**NOTE**: The Amplitude Support team responds to such requests the first Monday of each month, or the following Tuesday if Monday is an observed holiday. All requests sent before 9 a.m. Pacific Time on the first Monday of each month will be included in the batch. 
+{{partial:admonition type='note'}}
+ The Amplitude Support team responds to such requests the first Monday of each month, or the following Tuesday if Monday is an observed holiday. All requests sent before 9 a.m. Pacific Time on the first Monday of each month will be included in the batch. 
+{{/partial:admonition}}
 
 ## How to rotate your project's API key or secret key
 

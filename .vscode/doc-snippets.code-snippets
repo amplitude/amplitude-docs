@@ -1,0 +1,43 @@
+{
+	// Place your amplitude-docs workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Admonition": {
+		"scope": "markdown",
+		"prefix": "adm",
+		"body": [
+			"{{partial:admonition type=\"$1\" title=\"$2\"}}",
+			"This is a note",
+			"{{/partial:admonition}}"
+		],
+		"description": "Admonition"
+	},
+	"Tab Group":{
+		"scope": "markdown",
+		"prefix": "tab",
+		"body": [
+			"{{partial:tabs tabs=\"$1, $2\"}}",
+			"{{partial:tab name=\"$1\"}}",
+			"Insert tab1 content here",
+			"{{/partial:tab}}",
+			"{{partial:tab name=\"$2\"}}",
+			"Insert tab2 content here",
+			"{{/partial:tab}}",
+			"{{/partial:tabs}}"
+		],
+		"description": "Tab Group"
+	}
+}

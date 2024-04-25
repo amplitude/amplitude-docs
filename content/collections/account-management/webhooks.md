@@ -15,7 +15,9 @@ Webhooks are automated messages your application sends when something happens. T
 
 With **webhooks for custom monitors**, you can use a webhook to send triggered monitors to an endpoint for a number of applications whenever user behavior changes in a way that affects your KPIs.
 
-**NOTE**: This feature is only available to Enterprise customers and those with the Insights package.
+{{partial:admonition type='note'}}
+ This feature is only available to Enterprise customers and those with the Insights package.
+{{/partial:admonition}}
 
 ## Create and configure a webhook
 

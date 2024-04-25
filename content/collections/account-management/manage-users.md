@@ -47,7 +47,9 @@ At this time, user email address cannot be changed because it is a unique identi
 3. Log in with your existing email address and [transfer ownership](#01H8M96ZXZ1REHKB3Z16QN389D) of all content to your new email address.
 4. Remove your old email address from your Amplitude org.
 
-**NOTE:** Repeat the process for other users who also need to change their email address.
+{{partial:admonition type='note'}}
+Repeat the process for other users who also need to change their email address.
+{{/partial:admonition}}
 
 ## Change user roles and permissions
 
@@ -61,10 +63,14 @@ To change user permissions in Amplitude, follow these steps:
 4. In the modal that appears, find the project you want to adjust permissions for and check the checkbox next to it. You can select multiple projects at once.
 5. From the *Role* dropdown, choose the new permission level you'd like to assign to the users you selected in step 2, for each project you selected in step 4.  
   
-**NOTE:** You will not be able to change the role for the only Admin in an organization.
+{{partial:admonition type='note'}}
+You will not be able to change the role for the only Admin in an organization.
+{{/partial:admonition}}
 6. To remove a user's permissions, click *Remove*. Doing so will remove the user from the organization and eliminate all access provisions.
 
-**NOTE:** When you remove a user, all their content (charts, dashboards and cohorts) will be designated as unassigned. Admins can transfer ownership of unassigned content to other users.
+{{partial:admonition type='note'}}
+When you remove a user, all their content (charts, dashboards and cohorts) will be designated as unassigned. Admins can transfer ownership of unassigned content to other users.
+{{/partial:admonition}}
 
 ### Project-level permissions
 
@@ -72,7 +78,9 @@ With project-level permissions, a user can have a different role for each projec
 
 ![mceclip2.png](/output/img/account-management/mceclip2-png.png)
 
-**NOTE:** Project-level permissions are available to customers on an Enterprise plan only.
+{{partial:admonition type='note'}}
+Project-level permissions are available to customers on an Enterprise plan only.
+{{/partial:admonition}}
 
 When viewing all members of your organization, members will either be listed as *User* or *Admin*. If you are an Admin or Manager of a project in the organization, you can view and modify an individual member's role per project by clicking the checkbox next to the member's name and selecting "Manage Project Access". Managers will only be able to modify a user's role for the project where they are a Manager.
 
@@ -84,7 +92,9 @@ When a user leaves the company or is otherwise no longer part of an Amplitude or
 
 Admins can avoid this by using the **bulk transfer ownership** feature to designate another user as the owner of that orphaned content. Navigate to ![gear_icon_for_settings.png](/output/img/account-management/gear-icon-for-settings-png.png) *> Organization settings > Members &* *Groups*, and then click *Bulk Transfer Edit Access*.
 
-**NOTE:** This process cannot be reversed, so use it with care.
+{{partial:admonition type='note'}}
+This process cannot be reversed, so use it with care.
+{{/partial:admonition}}
 
 You can also transfer content when you’re removing a user. Simply check the box on the *Remove Members?* modal, and Amplitude will give you the option to transfer each removed user's content to another existing user.
 

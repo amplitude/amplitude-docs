@@ -8,8 +8,10 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/css/site.css',
+                'resources/css/tocbot.css',
                 'resources/js/site.js',
-                'resources/js/api-table.js'
+                'resources/js/api-table.js',
+                'resources/js/tocbot.js',
 
                 // Control Panel assets.
                 // https://statamic.dev/extending/control-panel#adding-css-and-js-assets

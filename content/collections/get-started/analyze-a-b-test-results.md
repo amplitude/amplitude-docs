@@ -13,7 +13,9 @@ A/B Testing is a method of conducting controlled, randomized experiments with th
 
 For example, you can show two different onboarding flows to different groups of new users, then use the results to determine which one is more effective in driving users to complete the onboarding process. Or you can test different checkout flows to see which is more effective in generating sales.
 
-**NOTE:** This feature is not to be confused with [Amplitude Experiment](/analytics/charts/experiment-results/experiment-results-dig-deeper).
+{{partial:admonition type="note" heading="Note"}}
+This feature is not to be confused with [Amplitude Experiment](/analytics/charts/experiment-results/experiment-results-dig-deeper).
+{{/partial:admonition}}
 
 ## Before you begin: Instrument your experiments
 

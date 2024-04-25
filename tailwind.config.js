@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports ={
     content: [
         './resources/**/*.antlers.html',
         './resources/**/*.antlers.php',
@@ -9,8 +9,42 @@ export default {
     ],
 
     theme: {
+        extend: {
+            fontFamily: {
+                'sans': ['IBM Plex Sans'],
+                IBMPlex: ['IBM Plex Sans', 'sans-serif'],
+                IBMPlexMono: ['"IBM Plex Mono"',],
+                Gellix: ['Gellix', 'sans-serif'],
+            },
+        },
         colors:{
             'white': '#ffffff',
+            'black': {
+                '50': '#f6f6f6',
+                '100': '#e7e7e7',
+                '200': '#d1d1d1',
+                '300': '#b0b0b0',
+                '400': '#888888',
+                '500': '#6d6d6d',
+                '600': '#5d5d5d',
+                '700': '#4f4f4f',
+                '800': '#454545',
+                '900': '#3d3d3d',
+                '950': '#000000',
+            },
+            'amp-gray': {
+                '50': '#F4F5F6',
+                '100': '#e5e6e8',
+                '200': '#cdcfd4',
+                '300': '#aaaeb6',
+                '400': '#808690',
+                '500': '#656b75',
+                '600': '#5a5e68',
+                '700': '#4a4d54',
+                '800': '#414349',
+                '900': '#393a40',
+                '950': '#242528',
+            },             
             'amp-blue': {
                 DEFAULT: '#1e61f0',
                 100: '#031233',
@@ -21,7 +55,8 @@ export default {
                 600: '#4b80f3',
                 700: '#78a0f6',
                 800: '#a5c0f9',
-                900: '#d2dffc'
+                900: '#d2dffc',
+                950: '#EBF5FF'
             },
             'amp-dark-blue': {
                 DEFAULT: '#0d1f91',
@@ -106,13 +141,85 @@ export default {
                 700: '#f9e9ee',
                 800: '#fbf0f4',
                 900: '#fdf8f9'
-            }
+            },
+            'warning-orange': {
+                '50': '#fffbec',
+                '100': '#fff7d3',
+                '200': '#ffeba5',
+                '300': '#ffdb6d',
+                '400': '#ffbf32',
+                '500': '#ffa80a',
+                '600': '#ff9100',
+                '700': '#cc6b02',
+                '800': '#a1520b',
+                '900': '#82450c',
+                '950': '#462104',
+            },
+            'mint': {
+                '50': '#eefffb',
+                '100': '#c6fff2',
+                '200': '#8effe8',
+                '300': '#4dfbdb',
+                '400': '#19e8c9',
+                '500': '#00bfa5',
+                '600': '#00a492',
+                '700': '#028376',
+                '800': '#08675e',
+                '900': '#0c554e',
+                '950': '#003432',
+            },
+            
         },
-        extend: {},
+        extend: {
+            typography: {
+                DEFAULT: {
+                    css: {
+                        code: {
+                            'color': '#2a2f45',
+                            'background': '#f7fafc',
+                            'padding': '0 3px',
+                            'margin': '0 1px',
+                            'border-radius': '4px',
+                            'border': '1px solid #e2e8f0',
+                            'font-weight': '400',
+                            '&::before': {
+                                'content': '""!important',
+                            },
+                            '&::after': {
+                                'content': '""!important',
+                            },
+                        },
+                        a: {
+                            "text-decoration": "none",
+                        },
+                        h2: {
+                            'font-weight': '400',
+                        },
+                        h1: {
+                            'font-weight': '400',
+                        },
+                        h3: {
+                            'font-weight': '400',
+                        },
+                        kbd: {
+                            'background-color': '#e5e6e8',
+                            'border-radius': '0.2rem',
+                            'border': 'none',
+                            'color': '#656b75',
+                            'font-style': 'normal',
+                            'box-shadow': 'none',
+
+                        }
+
+                    }
+                }
+            },
+        },
     },
 
     plugins: [
         require('@tailwindcss/typography'),
         require('@tailwindcss/forms')
+
     ],
 };

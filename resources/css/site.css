@@ -2,20 +2,499 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@layer base {
+    p,a,li, button {
+        font-family: 'IBM Plex Sans', sans-serif;
+    }
+    h1,h2,h3,h4,h5,h6 {
+        font-family: 'Gellix', sans-serif;
+        font-weight: 400;
+    }
+}
+/* Font Import */
+
+@font-face {
+    font-family: 'Gellix';
+    src: url('../fonts/gellix/Gellix-Light.woff2') format('woff2'),
+        url('../fonts/gellix/Gellix-Light.woff') format('woff'),
+        url('../fonts/gellix/Gellix-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gellix';
+    src: url('../fonts/gellix/Gellix-Medium.woff2') format('woff2'),
+        url('../fonts/gellix/Gellix-Medium.woff') format('woff'),
+        url('../fonts/gellix/Gellix-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gellix';
+    src: url('../fonts/gellix/Gellix-RegularItalic.woff2') format('woff2'),
+        url('../fonts/gellix/Gellix-RegularItalic.woff') format('woff'),
+        url('../fonts/gellix/Gellix-RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gellix';
+    src: url('../fonts/gellix/Gellix-Regular.woff2') format('woff2'),
+        url('../fonts/gellix/Gellix-Regular.woff') format('woff'),
+        url('../fonts/gellix/Gellix-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gellix';
+    src: url('../fonts/gellix/Gellix-MediumItalic.woff2') format('woff2'),
+        url('../fonts/gellix/Gellix-MediumItalic.woff') format('woff'),
+        url('../fonts/gellix/Gellix-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gellix';
+    src: url('../fonts/gellix/Gellix-LightItalic.woff2') format('woff2'),
+        url('../fonts/gellix/Gellix-LightItalic.woff') format('woff'),
+        url('../fonts/gellix/Gellix-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Gellix';
+    src: url('../fonts/gellix/Gellix-SemiBold.woff2') format('woff2'),
+        url('../fonts/gellix/Gellix-SemiBold.woff') format('woff'),
+        url('../fonts/gellix/Gellix-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gellix';
+    src: url('../fonts/gellix/Gellix-SemiBoldItalic.woff2') format('woff2'),
+        url('../fonts/gellix/Gellix-SemiBoldItalic.woff') format('woff'),
+        url('../fonts/gellix/Gellix-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/ibm-plex/ibm-plex-sans-v13-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/ibm-plex/ibm-plex-sans-v13-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/ibm-plex/ibm-plex-sans-v13-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/ibm-plex/ibm-plex-sans-v13-latin-regular.svg#IBMPlexSans') format('svg'); /* Legacy iOS */
+  }
+  /* ibm-plex-sans-italic - latin */
+  @font-face {
+    font-family: 'IBM Plex Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/ibm-plex/ibm-plex-sans-v13-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/ibm-plex/ibm-plex-sans-v13-latin-italic.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/ibm-plex/ibm-plex-sans-v13-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/ibm-plex/ibm-plex-sans-v13-latin-italic.svg#IBMPlexSans') format('svg'); /* Legacy iOS */
+  }
+  /* ibm-plex-sans-600 - latin */
+  @font-face {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local(''),
+         url('../fonts/ibm-plex/ibm-plex-sans-v13-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/ibm-plex/ibm-plex-sans-v13-latin-600.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/ibm-plex/ibm-plex-sans-v13-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/ibm-plex/ibm-plex-sans-v13-latin-600.svg#IBMPlexSans') format('svg'); /* Legacy iOS */
+  }
+  /* ibm-plex-sans-700 - latin */
+  @font-face {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+         url('../fonts/ibm-plex/ibm-plex-sans-v13-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/ibm-plex/ibm-plex-sans-v13-latin-700.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/ibm-plex/ibm-plex-sans-v13-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/ibm-plex/ibm-plex-sans-v13-latin-700.svg#IBMPlexSans') format('svg'); /* Legacy iOS */
+  }
+  
+  /* ibm-plex-mono-regular - latin */
+  @font-face {
+    font-family: 'IBM Plex Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/ibm-plex/ibm-plex-mono-v11-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/ibm-plex/ibm-plex-mono-v11-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/ibm-plex/ibm-plex-mono-v11-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/ibm-plex/ibm-plex-mono-v11-latin-regular.svg#IBMPlexMono') format('svg'); /* Legacy iOS */
+  }
+  /* ibm-plex-mono-italic - latin */
+  @font-face {
+    font-family: 'IBM Plex Mono';
+    font-style: italic;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/ibm-plex/ibm-plex-mono-v11-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/ibm-plex/ibm-plex-mono-v11-latin-italic.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/ibm-plex/ibm-plex-mono-v11-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/ibm-plex/ibm-plex-mono-v11-latin-italic.svg#IBMPlexMono') format('svg'); /* Legacy iOS */
+  }
+  /* ibm-plex-mono-600 - latin */ 
+  @font-face {
+    font-family: 'IBM Plex Mono';
+    font-style: normal;
+    font-weight: 600;
+    src: local(''),
+         url('../fonts/ibm-plex/ibm-plex-mono-v11-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/ibm-plex/ibm-plex-mono-v11-latin-600.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/ibm-plex/ibm-plex-mono-v11-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/ibm-plex/ibm-plex-mono-v11-latin-600.svg#IBMPlexMono') format('svg'); /* Legacy iOS */
+  }
+  /* ibm-plex-mono-700 - latin */
+  @font-face {
+    font-family: 'IBM Plex Mono';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+         url('../fonts/ibm-plex/ibm-plex-mono-v11-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/ibm-plex/ibm-plex-mono-v11-latin-700.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/ibm-plex/ibm-plex-mono-v11-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/ibm-plex/ibm-plex-mono-v11-latin-700.svg#IBMPlexMono') format('svg'); /* Legacy iOS */
+  }
+
 /* This is all you. */
-.hint.info {
-    border: 1px solid blue;
-    padding: 10px;
+
+button.active > svg {
+    transform: rotate(180deg);
 }
 
-h2.hint-title {
-    margin-top: auto;
-    font-size: medium;
+button:has(+ div a.current) {
+    color: black;
 }
 
-p.hint-content {
-    font-size: small;
+
+a {
+    text-decoration: none;
 }
+
+ul.nav-level-1, ul.nav-level-2, ul.nav-level-3 {
+    list-style: none;
+    padding: 0;
+}
+
+ul.nav li::marker {
+    content: none!important
+}
+
+.hero, .popcon {
+    transform-style: preserve-3d;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 382px;
+    height: 192px;
+    background: #2F1761;
+    border-bottom-right-radius: 200px;
+    z-index: -1;
+    display:block;
+    transform: translateZ(-1px);
+
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 382px;
+    height: 192px;
+    background: #F5D9E1;
+    border-top-left-radius: 200px;
+    display:block;
+    transform: translateZ(-1px);
+}
+
+
+.popcon::before {
+    content: '';
+    position: absolute;
+    top: 180px;
+    left: -180px;
+    width: 228px;
+    height: 258px;
+    background: #C9C2F5;
+    border-radius: 200px;
+    z-index: -1;
+    background-repeat: no-repeat;
+    display:block;
+    /* transform: translateZ(-1px); */
+}
+
+.popcon::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 24px;
+    width: 362px;
+    height: 172px;
+    background-image: url('data:image/svg+xml,<svg width="362" height="172" viewBox="0 0 362 172" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_2_9)"><path d="M362 159C362 96.0395 310.96 45 248 45C185.04 45 134 96.0395 134 159V189.089C134 252.049 185.04 303.089 248 303.089C310.96 303.089 362 252.049 362 189.089V159Z" fill="%23C1E0FE"/><path d="M194 214.167C194 158.11 148.557 112.667 92.5 112.667C36.4431 112.667 -9 158.11 -9 214.167V379.057C-9 435.113 36.4431 480.557 92.5 480.557C148.557 480.557 194 435.113 194 379.057V214.167Z" fill="%2391D9E3"/></g><defs><clipPath id="clip0_2_9"><rect width="362" height="172" fill="white"/></clipPath></defs></svg>');    /* border-radius: 200px; */
+    display:block;
+    /* transform: translateZ(-1px); */
+}
+
+
+.tab > pre {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.prose>p:has(img) {
+    margin: 0;
+    background: #F4F5F6;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.prose > div > p:first-of-type {
+    margin-top: 0;
+}
+
+.prose>p>img {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    margin: 0 auto;
+    /* border: 1px solid #e2e8f0; */
+    border-radius: 8px;
+}
+
+code {
+    font-family: 'IBM Plex Mono', monospace;
+    color: #4f4f4f;
+}
+
+ul.toc-list {
+    list-style-type: none;
+    padding-left: 10px;
+    overflow: hidden;
+    margin: 0
+}
+
+.toc-list-item {
+    margin-bottom: 0px;
+}
+
+.is-active-link::before {
+    @apply bg-amp-blue-500;
+}
+
+.js-toc>.toc-list {
+    overflow: hidden;
+    position: relative;
+}
+
+.is-collapsible {
+    max-height: 1000px;
+    transition: all 300ms ease-in-out;
+    overflow: hidden;
+}
+
+.is-collapsed {
+    max-height: 0;
+}
+
+
+a.toc-link {
+    display: block;
+}
+
+.toc-list-item {
+    padding: 0;
+}
+
+.hint {
+    box-shadow: theme('boxShadow.lg');
+    border: 1px solid;
+    border-radius: theme('borderRadius.md');
+    margin: 1.25rem 0;
+}
+
+.hint-title {
+    border: none;
+    font-weight: 700;
+    margin: 0;
+    padding: 8px 12px 8px 40px;
+    position: relative;
+    font-size: 13px;
+    box-sizing: border-box;
+    border-top-left-radius: theme('borderRadius.md');
+    border-top-right-radius: theme('borderRadius.md');
+}
+
+.hint-content {
+    font-size: 13px;
+    padding: 12px;
+    margin-bottom: 0px;
+}
+
+.hint > h2.hint-title::before {
+    content:'';
+    mask-size: contain;
+    position: absolute;
+    top: 7px;
+    width: 1.25rem;
+    height: 1.25rem;
+    left: 1rem;
+}
+
+.hint-content > p {
+    margin-bottom: 0;
+}
+
+.note {
+    border-color: theme('colors.amp-blue.500');
+}
+
+.note > .hint-title {
+    background: theme('colors.amp-blue.900');
+}
+
+.hint.note > h2.hint-title::before {
+    mask-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2m3.1 5.07c.14 0 .28.05.4.16l1.27 1.27c.23.22.23.57 0 .78l-1 1-2.05-2.05 1-1c.1-.11.24-.16.38-.16m-1.97 1.74 2.06 2.06-6.06 6.06H7.07v-2.06l6.06-6.06Z"/></svg>');
+    background-color: theme('colors.amp-blue.500');
+}
+
+.info {
+    border-color: theme('colors.amp-light-teal.500');
+}
+
+.info > .hint-title {
+    background: theme('colors.amp-light-teal.900');
+}
+
+.hint.info > h2.hint-title::before {
+    mask-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h-2V7h2m0 10h-2v-6h2m-1-9A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg>');
+    background-color: theme('colors.amp-light-teal.500');
+}
+
+.warning {
+    border-color: theme('colors.warning-orange.500');
+}
+
+.warning > .hint-title {
+    background: theme('colors.warning-orange.200');
+}
+
+.hint.warning > h2.hint-title::before {
+    mask-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21Z"/></svg>');
+    background-color: theme('colors.warning-orange.500');
+}
+
+.example {
+    border-color: theme('colors.amp-light-purple.400');
+}
+
+.example > .hint-title {
+    background: theme('colors.amp-light-purple.800');
+}
+
+.hint.example > h2.hint-title::before {
+    mask-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2v2h1v14a4 4 0 0 0 4 4 4 4 0 0 0 4-4V4h1V2H7m4 14c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1m2-4c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1m1-5h-4V4h4v3Z"/></svg>');
+    background-color: theme('colors.amp-light-purple.400');
+}
+
+.tip {
+    border-color: theme('colors.mint.500');
+}
+
+.tip > .hint-title {
+    background: theme('colors.mint.100');
+}
+
+.hint.tip > h2.hint-title::before {
+    mask-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.66 11.2c-.23-.3-.51-.56-.77-.82-.67-.6-1.43-1.03-2.07-1.66C13.33 7.26 13 4.85 13.95 3c-.95.23-1.78.75-2.49 1.32-2.59 2.08-3.61 5.75-2.39 8.9.04.1.08.2.08.33 0 .22-.15.42-.35.5-.23.1-.47.04-.66-.12a.58.58 0 0 1-.14-.17c-1.13-1.43-1.31-3.48-.55-5.12C5.78 10 4.87 12.3 5 14.47c.06.5.12 1 .29 1.5.14.6.41 1.2.71 1.73 1.08 1.73 2.95 2.97 4.96 3.22 2.14.27 4.43-.12 6.07-1.6 1.83-1.66 2.47-4.32 1.53-6.6l-.13-.26c-.21-.46-.77-1.26-.77-1.26m-3.16 6.3c-.28.24-.74.5-1.1.6-1.12.4-2.24-.16-2.9-.82 1.19-.28 1.9-1.16 2.11-2.05.17-.8-.15-1.46-.28-2.23-.12-.74-.1-1.37.17-2.06.19.38.39.76.63 1.06.77 1 1.98 1.44 2.24 2.8.04.14.06.28.06.43.03.82-.33 1.72-.93 2.27Z"/></svg>');
+    background-color: theme('colors.mint.500');
+}
+
+.alpha, .beta {
+    border-color: theme('colors.amp-light-purple.300');
+}
+
+.alpha > .hint-title, .beta > .hint-title{
+    background: theme('colors.amp-light-purple.800');
+}
+
+.hint.alpha > h2.hint-title::before {
+    mask-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.08 17.8c-.46.13-.87.2-1.23.2-1.2 0-2.01-.88-2.42-2.65h-.05c-.99 1.91-2.38 2.86-4.13 2.86-1.31 0-2.36-.49-3.15-1.48S5.92 14.5 5.92 13c0-1.75.45-3.15 1.34-4.24.89-1.09 2.1-1.64 3.63-1.64.82 0 1.56.23 2.2.68.64.46 1.13 1.1 1.47 1.93h.04l.71-2.4h2.56l-2.14 5.32c.24 1.24.49 2.09.77 2.54.24.45.58.68 1 .68.24 0 .43-.04.6-.11l-.02 2.04m-4.26-5.24c-.21-1.13-.55-2.01-1.01-2.61-.45-.61-1-.91-1.63-.91-.82 0-1.48.37-1.97 1.1-.49.74-.71 1.65-.71 2.72 0 .98.19 1.79.62 2.45.42.66.99.98 1.7.98.6 0 1.15-.29 1.64-.84.5-.57.91-1.4 1.24-2.49l.12-.4Z"/></svg>');
+    background-color: theme('colors.amp-light-purple.300');
+}
+
+.hint.beta > h2.hint-title::before {
+    mask-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.23 17.59v5.53H6.88V6.72c0-1.45.43-2.59 1.28-3.44C9 2.43 10.17 2 11.61 2c1.39 0 2.46.34 3.26 1 .79.68 1.18 1.62 1.18 2.81 0 .82-.26 1.59-.78 2.3-.52.71-1.19 1.2-2.02 1.47v.04c1.25.2 2.22.65 2.88 1.38.66.71.99 1.62.99 2.74 0 1.32-.46 2.4-1.37 3.23-.92.83-2.12 1.24-3.62 1.24-1.06 0-2.03-.21-2.9-.62m1.49-6.84V8.83c.87-.11 1.58-.43 2.15-.97.56-.55.84-1.16.84-1.86 0-1.38-.71-2.08-2.11-2.08-.76 0-1.35.24-1.76.73-.41.49-.61 1.17-.61 2.06v8.79c.91.53 1.8.79 2.66.79.84 0 1.5-.22 1.97-.65.47-.44.7-1.06.7-1.85 0-1.79-1.28-2.79-3.84-3.04Z"/></svg>');
+    background-color: theme('colors.amp-light-purple.300');
+}
+
+.deprecated {
+    border-color: theme('colors.amp-red.500');
+}
+
+.deprecated > .hint-title {
+    background: theme('colors.amp-red.800');
+}
+
+.hint.deprecated > h2.hint-title::before {
+    mask-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m20.12 14.46 1.42 1.42L19.41 18l2.13 2.12-1.42 1.42L18 19.41l-2.12 2.13-1.41-1.42L16.59 18l-2.12-2.12 1.41-1.41L18 16.59l2.12-2.13m.21-9.79L18.67 3 17 4.67 15.33 3l-1.66 1.67L12 3l-1.67 1.67L8.67 3 7 4.67 5.33 3 3.67 4.67 2 3v16a2 2 0 0 0 2 2h8.8c-.51-.88-.8-1.91-.8-3 0-1.23.37-2.37 1-3.32V13h1.68c.95-.63 2.09-1 3.32-1 1.53 0 2.93.58 4 1.5V3l-1.67 1.67M11 19H4v-6h7v6m9-8H4V8h16v3Z"/></svg>');
+    background-color: theme('colors.amp-red.500');
+}
+
+
+.heading-permalink {
+    opacity: 0;
+    margin-left: -12px;
+  }
+
+.prose>h2::before, .prose>h3::before {
+    content: "";
+    display: block;
+    height: 95px;
+    margin-top: -95px;  
+}
+  
+  h1:hover .heading-permalink,
+  h2:hover .heading-permalink,
+  h3:hover .heading-permalink,
+  h4:hover .heading-permalink,
+  h5:hover .heading-permalink,
+  h6:hover .heading-permalink
+  {
+    opacity: 1;
+    transition: opacity 0.25s;
+  }
+
+
 
 li::marker {
     color: red;
@@ -36,7 +515,56 @@ h2:hover a {
     transition: opacity 0.5s;
 }
 @layer components{
+
     .comparison th:first-of-type {
         @apply w-1/5;
     }
+}
+
+
+.landing-blurb > p {
+    margin-bottom: 0;
+}
+/*
+Margin and rounding are personal preferences,
+overflow-x-auto is recommended.
+*/
+pre {
+   border-radius: 0.25rem;
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+   overflow-x: auto;
+}
+
+/*
+Add some vertical padding and expand the width
+to fill its container. The horizontal padding
+comes at the line level so that background
+colors extend edge to edge.
+*/
+pre code.torchlight {
+   display: block;
+   min-width: -webkit-max-content;
+   min-width: -moz-max-content;
+   min-width: max-content;
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+}
+
+/*
+Horizontal line padding to match the vertical
+padding from the code block above.
+*/
+pre code.torchlight .line {
+   padding-left: 1rem;
+   padding-right: 1rem;
+}
+
+/*
+Push the code away from the line numbers and
+summary caret indicators.
+*/
+pre code.torchlight .line-number,
+pre code.torchlight .summary-caret {
+   margin-right: 1rem;
 }

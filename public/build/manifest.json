@@ -1,8 +1,237 @@
 {
   "resources/css/site.css": {
-    "file": "assets/site-bcee93b0.css",
+    "file": "assets/site-911ed205.css",
     "isEntry": true,
     "src": "resources/css/site.css"
+  },
+  "resources/css/tocbot.css": {
+    "file": "assets/tocbot-d424291d.css",
+    "isEntry": true,
+    "src": "resources/css/tocbot.css"
+  },
+  "resources/fonts/gellix/Gellix-Light.ttf": {
+    "file": "assets/Gellix-Light-be9e2625.ttf",
+    "src": "resources/fonts/gellix/Gellix-Light.ttf"
+  },
+  "resources/fonts/gellix/Gellix-Light.woff": {
+    "file": "assets/Gellix-Light-d8ae23cf.woff",
+    "src": "resources/fonts/gellix/Gellix-Light.woff"
+  },
+  "resources/fonts/gellix/Gellix-Light.woff2": {
+    "file": "assets/Gellix-Light-e1371f56.woff2",
+    "src": "resources/fonts/gellix/Gellix-Light.woff2"
+  },
+  "resources/fonts/gellix/Gellix-LightItalic.ttf": {
+    "file": "assets/Gellix-LightItalic-5efa4147.ttf",
+    "src": "resources/fonts/gellix/Gellix-LightItalic.ttf"
+  },
+  "resources/fonts/gellix/Gellix-LightItalic.woff": {
+    "file": "assets/Gellix-LightItalic-80567639.woff",
+    "src": "resources/fonts/gellix/Gellix-LightItalic.woff"
+  },
+  "resources/fonts/gellix/Gellix-LightItalic.woff2": {
+    "file": "assets/Gellix-LightItalic-5ca0c953.woff2",
+    "src": "resources/fonts/gellix/Gellix-LightItalic.woff2"
+  },
+  "resources/fonts/gellix/Gellix-Medium.ttf": {
+    "file": "assets/Gellix-Medium-33e2a027.ttf",
+    "src": "resources/fonts/gellix/Gellix-Medium.ttf"
+  },
+  "resources/fonts/gellix/Gellix-Medium.woff": {
+    "file": "assets/Gellix-Medium-26aeba6e.woff",
+    "src": "resources/fonts/gellix/Gellix-Medium.woff"
+  },
+  "resources/fonts/gellix/Gellix-Medium.woff2": {
+    "file": "assets/Gellix-Medium-2390fcf9.woff2",
+    "src": "resources/fonts/gellix/Gellix-Medium.woff2"
+  },
+  "resources/fonts/gellix/Gellix-MediumItalic.ttf": {
+    "file": "assets/Gellix-MediumItalic-63e9fabb.ttf",
+    "src": "resources/fonts/gellix/Gellix-MediumItalic.ttf"
+  },
+  "resources/fonts/gellix/Gellix-MediumItalic.woff": {
+    "file": "assets/Gellix-MediumItalic-9d293bc5.woff",
+    "src": "resources/fonts/gellix/Gellix-MediumItalic.woff"
+  },
+  "resources/fonts/gellix/Gellix-MediumItalic.woff2": {
+    "file": "assets/Gellix-MediumItalic-8614b761.woff2",
+    "src": "resources/fonts/gellix/Gellix-MediumItalic.woff2"
+  },
+  "resources/fonts/gellix/Gellix-Regular.ttf": {
+    "file": "assets/Gellix-Regular-b086ade8.ttf",
+    "src": "resources/fonts/gellix/Gellix-Regular.ttf"
+  },
+  "resources/fonts/gellix/Gellix-Regular.woff": {
+    "file": "assets/Gellix-Regular-e804404f.woff",
+    "src": "resources/fonts/gellix/Gellix-Regular.woff"
+  },
+  "resources/fonts/gellix/Gellix-Regular.woff2": {
+    "file": "assets/Gellix-Regular-a5ad0d5c.woff2",
+    "src": "resources/fonts/gellix/Gellix-Regular.woff2"
+  },
+  "resources/fonts/gellix/Gellix-RegularItalic.ttf": {
+    "file": "assets/Gellix-RegularItalic-2e3b378c.ttf",
+    "src": "resources/fonts/gellix/Gellix-RegularItalic.ttf"
+  },
+  "resources/fonts/gellix/Gellix-RegularItalic.woff": {
+    "file": "assets/Gellix-RegularItalic-4af54c3b.woff",
+    "src": "resources/fonts/gellix/Gellix-RegularItalic.woff"
+  },
+  "resources/fonts/gellix/Gellix-RegularItalic.woff2": {
+    "file": "assets/Gellix-RegularItalic-2e01ebf8.woff2",
+    "src": "resources/fonts/gellix/Gellix-RegularItalic.woff2"
+  },
+  "resources/fonts/gellix/Gellix-SemiBold.ttf": {
+    "file": "assets/Gellix-SemiBold-b7822e72.ttf",
+    "src": "resources/fonts/gellix/Gellix-SemiBold.ttf"
+  },
+  "resources/fonts/gellix/Gellix-SemiBold.woff": {
+    "file": "assets/Gellix-SemiBold-8e8b97b5.woff",
+    "src": "resources/fonts/gellix/Gellix-SemiBold.woff"
+  },
+  "resources/fonts/gellix/Gellix-SemiBold.woff2": {
+    "file": "assets/Gellix-SemiBold-bd61acfe.woff2",
+    "src": "resources/fonts/gellix/Gellix-SemiBold.woff2"
+  },
+  "resources/fonts/gellix/Gellix-SemiBoldItalic.ttf": {
+    "file": "assets/Gellix-SemiBoldItalic-4e39acfd.ttf",
+    "src": "resources/fonts/gellix/Gellix-SemiBoldItalic.ttf"
+  },
+  "resources/fonts/gellix/Gellix-SemiBoldItalic.woff": {
+    "file": "assets/Gellix-SemiBoldItalic-cab22b59.woff",
+    "src": "resources/fonts/gellix/Gellix-SemiBoldItalic.woff"
+  },
+  "resources/fonts/gellix/Gellix-SemiBoldItalic.woff2": {
+    "file": "assets/Gellix-SemiBoldItalic-2362cee2.woff2",
+    "src": "resources/fonts/gellix/Gellix-SemiBoldItalic.woff2"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-600.svg": {
+    "file": "assets/ibm-plex-mono-v11-latin-600-9a04f02a.svg",
+    "src": "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-600.svg"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-600.ttf": {
+    "file": "assets/ibm-plex-mono-v11-latin-600-ef31f7ce.ttf",
+    "src": "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-600.ttf"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-600.woff": {
+    "file": "assets/ibm-plex-mono-v11-latin-600-c579b8e0.woff",
+    "src": "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-600.woff"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-600.woff2": {
+    "file": "assets/ibm-plex-mono-v11-latin-600-e3081f83.woff2",
+    "src": "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-600.woff2"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-700.svg": {
+    "file": "assets/ibm-plex-mono-v11-latin-700-b9e3e3c5.svg",
+    "src": "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-700.svg"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-700.ttf": {
+    "file": "assets/ibm-plex-mono-v11-latin-700-1d721367.ttf",
+    "src": "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-700.ttf"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-700.woff": {
+    "file": "assets/ibm-plex-mono-v11-latin-700-3955a58e.woff",
+    "src": "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-700.woff"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-700.woff2": {
+    "file": "assets/ibm-plex-mono-v11-latin-700-aef44caf.woff2",
+    "src": "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-700.woff2"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-italic.svg": {
+    "file": "assets/ibm-plex-mono-v11-latin-italic-f18ff344.svg",
+    "src": "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-italic.svg"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-italic.ttf": {
+    "file": "assets/ibm-plex-mono-v11-latin-italic-fb04614b.ttf",
+    "src": "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-italic.ttf"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-italic.woff": {
+    "file": "assets/ibm-plex-mono-v11-latin-italic-e6b9ab2f.woff",
+    "src": "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-italic.woff"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-italic.woff2": {
+    "file": "assets/ibm-plex-mono-v11-latin-italic-c54a7434.woff2",
+    "src": "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-italic.woff2"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-regular.svg": {
+    "file": "assets/ibm-plex-mono-v11-latin-regular-222b5e26.svg",
+    "src": "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-regular.svg"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-regular.ttf": {
+    "file": "assets/ibm-plex-mono-v11-latin-regular-fac14b78.ttf",
+    "src": "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-regular.ttf"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-regular.woff": {
+    "file": "assets/ibm-plex-mono-v11-latin-regular-68bb44de.woff",
+    "src": "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-regular.woff"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-regular.woff2": {
+    "file": "assets/ibm-plex-mono-v11-latin-regular-35119f00.woff2",
+    "src": "resources/fonts/ibm-plex/ibm-plex-mono-v11-latin-regular.woff2"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-600.svg": {
+    "file": "assets/ibm-plex-sans-v13-latin-600-f0da9249.svg",
+    "src": "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-600.svg"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-600.ttf": {
+    "file": "assets/ibm-plex-sans-v13-latin-600-20a65e21.ttf",
+    "src": "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-600.ttf"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-600.woff": {
+    "file": "assets/ibm-plex-sans-v13-latin-600-9c1d22af.woff",
+    "src": "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-600.woff"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-600.woff2": {
+    "file": "assets/ibm-plex-sans-v13-latin-600-bf4eae92.woff2",
+    "src": "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-600.woff2"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-700.svg": {
+    "file": "assets/ibm-plex-sans-v13-latin-700-b0b25b6d.svg",
+    "src": "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-700.svg"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-700.ttf": {
+    "file": "assets/ibm-plex-sans-v13-latin-700-64ec4293.ttf",
+    "src": "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-700.ttf"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-700.woff": {
+    "file": "assets/ibm-plex-sans-v13-latin-700-678d7dec.woff",
+    "src": "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-700.woff"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-700.woff2": {
+    "file": "assets/ibm-plex-sans-v13-latin-700-ea18ca3f.woff2",
+    "src": "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-700.woff2"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-italic.svg": {
+    "file": "assets/ibm-plex-sans-v13-latin-italic-ddb9be99.svg",
+    "src": "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-italic.svg"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-italic.ttf": {
+    "file": "assets/ibm-plex-sans-v13-latin-italic-89e50883.ttf",
+    "src": "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-italic.ttf"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-italic.woff": {
+    "file": "assets/ibm-plex-sans-v13-latin-italic-38b333f6.woff",
+    "src": "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-italic.woff"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-italic.woff2": {
+    "file": "assets/ibm-plex-sans-v13-latin-italic-3ebf3641.woff2",
+    "src": "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-italic.woff2"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-regular.svg": {
+    "file": "assets/ibm-plex-sans-v13-latin-regular-1f0e8a22.svg",
+    "src": "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-regular.svg"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-regular.ttf": {
+    "file": "assets/ibm-plex-sans-v13-latin-regular-317a6ecd.ttf",
+    "src": "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-regular.ttf"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-regular.woff": {
+    "file": "assets/ibm-plex-sans-v13-latin-regular-96dcd922.woff",
+    "src": "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-regular.woff"
+  },
+  "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-regular.woff2": {
+    "file": "assets/ibm-plex-sans-v13-latin-regular-fcecb97c.woff2",
+    "src": "resources/fonts/ibm-plex/ibm-plex-sans-v13-latin-regular.woff2"
   },
   "resources/js/api-table.js": {
     "file": "assets/api-table-7743572c.js",
@@ -13,5 +242,10 @@
     "file": "assets/site-4ed993c7.js",
     "isEntry": true,
     "src": "resources/js/site.js"
+  },
+  "resources/js/tocbot.js": {
+    "file": "assets/tocbot-555e9895.js",
+    "isEntry": true,
+    "src": "resources/js/tocbot.js"
   }
 }

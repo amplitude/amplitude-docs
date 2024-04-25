@@ -1,6 +1,8 @@
 title: 'Destination Catalog'
 template: default
 layout: layout
+taxonomies:
+  - integration_category
 revisions: false
 route: '/data/destination-catalog/{slug}'
 sort_dir: asc
@@ -12,5 +14,7 @@ preview_targets:
     label: Entry
     url: '{permalink}'
     refresh: true
+inject:
+  nav_title: destination_catalog
 structure:
   root: false

@@ -1,0 +1,47 @@
+tree:
+  -
+    id: b265f00c-584d-42f4-850a-73cf6fb05e27
+    title: 'Browser SDK 2'
+    children:
+      -
+        id: 4dfa95d1-1204-4075-b599-0c6f1802c7a1
+        entry: 00d74a7b-23bd-4a24-86a1-92c046e7e1b5
+      -
+        id: 8afe62f8-8e67-42eb-8cf6-b558225d2263
+        entry: 5afa91b7-c12d-425a-b4b6-661061e5843a
+  -
+    id: 328cf2a7-32ea-4a3f-b67f-7ab92b75d578
+    title: 'Browser SDK 1'
+    children:
+      -
+        id: 9ae22aac-a94b-4b10-b5b2-ac5f47969443
+        entry: 8471af8b-e132-4073-8330-d5dd7bbbd8ae
+      -
+        id: 7fe1aa97-84da-4273-9bf8-7218521adfb2
+        entry: 9b155be9-bb32-428c-9f49-6e00f9630547
+      -
+        id: fa328ed2-48ff-4dc4-9f39-a8dcd36b54a2
+        entry: f7989230-bf1c-48aa-ad61-2bc2b3e15a8c
+  -
+    id: 7473e8c0-ce5a-401e-a92d-996061919cce
+    title: 'Javascript SDK'
+    children:
+      -
+        id: d12b5569-7ede-4daf-aff6-8097e167041d
+        entry: e6b6889d-9d39-4f04-89a1-87f78db80f49
+      -
+        id: 661a7501-4bb5-4f3d-b5dc-d33e3fe48605
+        entry: b7cc9d54-870a-40bc-93d8-a2ac15375e75
+      -
+        id: ff680c93-2126-40d4-8b85-530b87b45d91
+        entry: 6b771f94-bf3a-44ba-a6a7-6e5b58108f70
+  -
+    id: 5d1118c2-c6ba-4bf7-8621-8d068c2fc236
+    title: 'Marketing Analytics SDK'
+    children:
+      -
+        id: 93283799-5b21-4411-91a7-36538d504366
+        entry: 25904c6b-609d-4365-9660-2782ef50d52d
+      -
+        id: 2a1b9b71-ded5-474c-b310-3294666cbc03
+        entry: eb4533a3-2075-49a0-83fa-e703afea78e7
