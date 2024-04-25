@@ -1,19 +1,20 @@
 ---
-title: "Set up and run mutually exclusive experiments"
-source: "https://help.amplitude.com/hc/en-us/articles/360061270712-Set-up-and-run-mutually-exclusive-experiments"
 id: c9856100-2aad-440c-9d2f-505eb008d57b
+blueprint: advanced-technique
+title: 'Set up and run mutually exclusive experiments'
+source: 'https://help.amplitude.com/hc/en-us/articles/360061270712-Set-up-and-run-mutually-exclusive-experiments'
+this_article_will_help_you:
+  - 'Understand how mutual exclusion works in Amplitude Experiment'
+  - 'Set two or more experiments to be mutually exclusive of each other'
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1714079731
 ---
-
-#### This article will help you:
-
-* Understand how mutual exclusion works in Amplitude Experiment
-* Set two or more experiments to be mutually exclusive of each other
-
 When running several experiments at once, you may want to keep users who are included in one experiment from being exposed to a second, related experiment at the same time. Perhaps these experiments are working on solving the same problem in different ways, and you worry that your users will be confused if they’re exposed to both, or that your experiment results might be tainted by the **interaction effect**. 
 
 Amplitude Experiment makes it easy to set two or more experiments to be **mutually exclusive** to each other. When you set experiments as mutually exclusive, this means they cannot share any users: users who are shown experiment A will not see experiment B, and vice versa. Simply add both experiments to the same **mutual** **exclusion group**, and Amplitude Experiment will take care of the rest.
 
-To learn more about the underlying implementation, see [Amplitude's developer documentation](https://www.docs.developers.amplitude.com/experiment/general/flag-dependencies).
+To learn more about the underlying implementation, see [our documentation on flag dependencies](https://www.docs.developers.amplitude.com/experiment/general/flag-dependencies).
 
 ### Feature availability
 
@@ -45,14 +46,18 @@ To create a mutual exclusion group and add your experiment to it, follow these s
 2. If you have no groups in your project, click *Add a new mutual exclusion group* to create a new group. If you already have existing groups, click *Create A New Group*, then select *Mutual Exclusion Group* in the drawer.  
   
 ![Screenshot](/output/img/advanced-techniques/screenshot.png)
+
 3. In the *Mutual exclusion group settings* modal, enter a name and description for your group. You can also view and change your group's advanced settings here, such as the evaluation mode and bucketing key.
 4. Next, add your **slots** and assign experiments to each slot. Experiments in different slots will be mutually exclusive from each other. You can add a maximum of 20 slots to a mutual exclusion group.
 
-**NOTE:** Once the group has been created, you will be unable to change the number of slots it contains, or the traffic allocation percentages. This ensures consistent bucketing, as well as a consistent user experience.
+{{partial:admonition type='note'}}
+Once the group has been created, you will be unable to change the number of slots it contains, or the traffic allocation percentages. This ensures consistent bucketing, as well as a consistent user experience.
+{{/partial:admonition}}
 
 5. If desired, specify individuals or cohorts that you'd like to add to your mutual exclusion group from either the *Individuals* or *Cohorts* tabs. This is helpful if you would like to test an experiment that is in a mutual exclusion group to ensure that a certain user gets assigned to a specific experiment.  
   
 Be sure not to add the same users nor cohorts to more than one slot, as the first slot will be used to determine inclusion.
+
 6. Set the traffic allocation percentages for each experiment. By default, traffic will be evenly distributed between them, but you can manually edit these percentages. This determines the percentage of the total traffic that will be allocated to each experiment in the group.
 7. Click *Add Group* to finish the process.  
 
@@ -65,8 +70,8 @@ Be sure not to add the same users nor cohorts to more than one slot, as the firs
   
 For example, consider the following two mutual exclusion groups:
 
-* * * * * Mutual exclusion group 1 has experiment A in slot 1 and experiment B in slot 2, where each experiment receives 50% of the traffic
-				* Mutual exclusion group 2 has experiment A in slot 1 and experiment C in slot 2, where each experiment receives 50% of the traffic
+* Mutual exclusion group 1 has experiment A in slot 1 and experiment B in slot 2, where each experiment receives 50% of the traffic
+* Mutual exclusion group 2 has experiment A in slot 1 and experiment C in slot 2, where each experiment receives 50% of the traffic
 
 In this case, experiment A will receive 0.5 \* 0.5 = 0.25, or 25% of the total traffic.
 
@@ -76,9 +81,9 @@ Instead of adding an experiment to multiple mutual exclusion groups, create a gr
 
 For example, consider the following holdout group and mutual exclusion group: 
 
-* * * * * The holdout group contains experiment A, with a holdout percentage of 5%
-				* The mutual exclusion group contains experiment A in slot 1 and experiment B in slot 2, where each experiment receives 50% of the traffic
+* The holdout group contains experiment A, with a holdout percentage of 5%
+* The mutual exclusion group contains experiment A in slot 1 and experiment B in slot 2, where each experiment receives 50% of the traffic
 
 In this case, experiment A will receive 0.95 \* 0.5 = 0.475, or 47.5% of the total traffic.
 
-Learn more in this Help Center article about [working with holdout groups in Amplitude Experiment.](/experiment/advanced-techniques/holdout-groups-exclude-users)
+Learn more in this article about [working with holdout groups in Amplitude Experiment.](/experiment/advanced-techniques/holdout-groups-exclude-users)

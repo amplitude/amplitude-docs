@@ -1,14 +1,15 @@
 ---
-title: "Interpret the cumulative exposures graph: Increasing and decreasing slopes"
-source: "https://help.amplitude.com/hc/en-us/articles/7985566141083-Interpret-the-cumulative-exposures-graph-Increasing-and-decreasing-slopes"
 id: cfe3d40c-d33c-4868-958f-f2a6e3f1e4f4
+blueprint: advanced-technique
+title: 'Interpret the cumulative exposures graph: Increasing and decreasing slopes'
+source: 'https://help.amplitude.com/hc/en-us/articles/7985566141083-Interpret-the-cumulative-exposures-graph-Increasing-and-decreasing-slopes'
+this_article_will_help_you:
+  - 'Understand the cumulative exposures graph in Amplitude Experiment (also available in [Experiment Results](/analytics/charts/experiment-results/experiment-results-dig-deeper))'
+  - 'Gain a deeper understanding of analyzing cumulative exposure results with examples'
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1714079331
 ---
-
-#### This article will help you:
-
-* Understand the cumulative exposures graph in Amplitude Experiment (also available in [Experiment Results](/analytics/charts/experiment-results/experiment-results-dig-deeper))
-* Gain a deeper understanding of analyzing cumulative exposure results with examples
-
 The cumulative exposures graph details the number of users who are **exposed to your experiment over time**. The x-axis displays the date when the user was first exposed to your experiment; the y-axis displays a cumulative, running total of the number of users exposed to the experiment. 
 
 Each user is only counted once, unless they are exposed to more than one experiment variant; in that case, they are counted once for each variant they see.
@@ -48,7 +49,7 @@ Mathematically speaking, the slope of each line is the change in the y-axis divi
 What are some other things we can say about this graph?
 
 * It’s cumulative, which means the **y-axis will not decrease**. The slope of the line is the number of **new** users exposed to your experiment every day. The line may slow down, or even stop growing completely. But you won’t see a cumulative exposures graph where the line peaks and then drops.
-* There’s a dotted line at the end, which means there is **incomplete data** for those dates. [See this Help Center article](https://help.amplitude.com/hc/en-us/articles/360043977571) for more information.
+* There’s a dotted line at the end, which means there is **incomplete data** for those dates. [See this article](https://help.amplitude.com/hc/en-us/articles/360043977571) for more information.
 * The two lines do not track each other perfectly. That’s because each line represents a **unique variant**, and exposures can differ slightly between variants, even when they’re set to receive the same amount of traffic.
 * Both variants are on a steady growth path. This means there is **no seasonality**. If, for example, users were more likely to engage with your product (and therefore more likely to be exposed to an experiment) on weekdays, you’d see this in the chart: on weekends, the y-axis value would increase more slowly.
 

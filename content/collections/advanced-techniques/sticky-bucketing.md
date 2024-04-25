@@ -1,14 +1,15 @@
 ---
-title: "Sticky bucketing in Amplitude Experiment"
-source: "https://help.amplitude.com/hc/en-us/articles/12939879862171-Sticky-bucketing-in-Amplitude-Experiment"
 id: 57ce7f2b-1b49-4a17-99de-76f4a5c86238
+blueprint: advanced-technique
+title: 'Sticky bucketing in Amplitude Experiment'
+source: 'https://help.amplitude.com/hc/en-us/articles/12939879862171-Sticky-bucketing-in-Amplitude-Experiment'
+this_article_will_help_you:
+  - 'Learn when and when not to use sticky bucketing in your experiments'
+  - 'Confirm if sticky bucketing was used for a specified user'
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1714079773
 ---
-
-#### This article will help you:
-
-* Learn when and when not to use sticky bucketing in your experiments
-* Confirm if sticky bucketing was used for a specified user
-
 Sticky bucketing ensures that a user will continue to see the same variant even when your experiment’s targeting criteria, percentage rollout, or rollout weights are changed. 
 
 Sticky bucketing is often used as a defense mechanism against [variant jumping](https://www.docs.developers.amplitude.com/experiment/guides/troubleshooting/variant-jumping/): when a user is exposed to two or more variants for a single flag or experiment. However, simply enabling sticky bucketing does not guarantee that you’ll never see variant jumping. For example, it may still occur if your experiment includes both a logged-out and a logged-in experience, since a user may have a different Amplitude ID when they are logged in versus not.
@@ -23,7 +24,9 @@ To turn sticky bucketing on or off, open your experiment and navigate to *Bucket
 
 When sticky bucketing is enabled, Amplitude Experiment checks whether a user already has a value for the user property associated with the experiment. If so, the user is assigned the current value of the user property (the last variant they saw); otherwise, the user is re-evaluated.
 
-**NOTE:** If two or more experiment assignments occur within a few seconds of each other, Amplitude Experiment may not have time to apply sticky bucketing. 
+{{partial:admonition type='note'}}
+If two or more experiment assignments occur within a few seconds of each other, Amplitude Experiment may not have time to apply sticky bucketing. 
+{{/partial:admonition}}
 
 Users do not get sticky bucketed to the **off** variant. Learn more about evaluation and exposure with these Amplitude resources: [evaluation flow chart](/experiment/advanced-techniques/cumulative-exposure-change-slope), and [local evaluation targeting capabilities](https://www.docs.developers.amplitude.com/experiment/general/evaluation/local-evaluation/#targeting-capabilities).
 
@@ -58,4 +61,4 @@ For example, the properties above show that the user was assigned to `off` for t
 
 ![image3.png](/output/img/advanced-techniques/image3-png.png)
 
-In this example, sticky bucketing was enabled and the user was bucketed to the 14th version of the `signup-ux-updates` flag, where they were served the `phone-number-removed` variant. Having the flag version helps with debugging when the flag has been changed. (Remember that the assignment event shows the evaluation for all active flags in that project, but the exposure event is shown on a per-flag basis). If you don’t see an event property corresponding to the flag you’re interested in, check the `[Experiment] Environment Name` field and make sure it matches the deployment your flag belongs to.  
+In this example, sticky bucketing was enabled and the user was bucketed to the 14th version of the `signup-ux-updates` flag, where they were served the `phone-number-removed` variant. Having the flag version helps with debugging when the flag has been changed. (Remember that the assignment event shows the evaluation for all active flags in that project, but the exposure event is shown on a per-flag basis). If you don’t see an event property corresponding to the flag you’re interested in, check the `[Experiment] Environment Name` field and make sure it matches the deployment your flag belongs to.

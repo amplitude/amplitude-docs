@@ -1,17 +1,17 @@
 ---
-title: "Interpret the cumulative exposures graph: Divergent lines"
-source: "https://help.amplitude.com/hc/en-us/articles/20722853103643-Interpret-the-cumulative-exposures-graph-Divergent-lines"
 id: 994fcfe6-557c-43ed-903e-dbf0bc71bb4c
+blueprint: advanced-technique
+title: 'Interpret the cumulative exposures graph: Divergent lines'
+source: 'https://help.amplitude.com/hc/en-us/articles/20722853103643-Interpret-the-cumulative-exposures-graph-Divergent-lines'
+this_article_will_help_you:
+  - 'Understand potential causes of divergent lines in the cumulative exposures graph'
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1714079368
 ---
-
-#### This article will help you:
-
-* Understand potential causes of divergent lines in the cumulative exposures graph
-
 This article will review divergent lines with similar slopes versus divergent lines with varying slopes. Divergent lines refer to lines that start from a common point but slowly spread apart from each other. 
 
-## 
-Divergent lines with similar slopes
+## Divergent lines with similar slopes
 
 Sometimes your cumulative exposure graph will show divergent lines with **similar slopes**. This could be because your experiment started before all variants were ready.
 

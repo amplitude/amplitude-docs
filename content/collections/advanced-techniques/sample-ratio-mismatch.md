@@ -1,14 +1,15 @@
 ---
-title: "Sample ratio mismatches: Debug issues with experiment allocations"
-source: "https://help.amplitude.com/hc/en-us/articles/8043418569371-Sample-ratio-mismatches-Debug-issues-with-experiment-allocations"
 id: a8dcb2f4-7dd9-49dd-9a20-4ae79a92646c
+blueprint: advanced-technique
+title: 'Sample ratio mismatches: Debug issues with experiment allocations'
+source: 'https://help.amplitude.com/hc/en-us/articles/8043418569371-Sample-ratio-mismatches-Debug-issues-with-experiment-allocations'
+this_article_will_help_you:
+  - 'Understand what a sample ratio mismatch is, and why it’s a problem'
+  - 'Diagnose the root cause of the issue'
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1714079753
 ---
-
-#### This article will help you:
-
-* Understand what a sample ratio mismatch is, and why it’s a problem
-* Diagnose the root cause of the issue
-
 In Amplitude Experiment, a sample ratio mismatch (SRM) occurs when the **observed** allocation for variants **significantly differs** from the **specified** allocation. 
 
 For example, imagine you've set your experiment's traffic allocation to be split equally between the control and treatment variants, but instead, the control receives 55% of the experiment's traffic. 
@@ -35,4 +36,4 @@ Users can check for SRM issues in the data quality guide on the *Analyze* tab. C
 
 ![sample-ratio_mismatch_detected.png](/output/img/advanced-techniques/sample-ratio-mismatch-detected-png.png)
 
-To learn more on [debugging sample ratio mismatches in Amplitude Experiment](https://www.docs.developers.amplitude.com/experiment/guides/troubleshooting/sample-ratio-mismatch/), see the Amplitude [developer documentation](https://www.docs.developers.amplitude.com/experiment/guides/troubleshooting/sample-ratio-mismatch/ "https://www.docs.developers.amplitude.com/experiment/guides/troubleshooting/sample-ratio-mismatch/").
+Learn more about [debugging sample ratio mismatches in Amplitude Experiment](https://www.docs.developers.amplitude.com/experiment/guides/troubleshooting/sample-ratio-mismatch/).

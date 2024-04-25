@@ -1,14 +1,15 @@
 ---
-title: "Interpret the cumulative exposures graph: Inflection points and flattened slopes"
-source: "https://help.amplitude.com/hc/en-us/articles/20722788163995-Interpret-the-cumulative-exposures-graph-Inflection-points-and-flattened-slopes"
 id: 6b86591a-0640-488d-b94c-5973aea3308b
+blueprint: advanced-technique
+title: 'Interpret the cumulative exposures graph: Inflection points and flattened slopes'
+source: 'https://help.amplitude.com/hc/en-us/articles/20722788163995-Interpret-the-cumulative-exposures-graph-Inflection-points-and-flattened-slopes'
+this_article_will_help_you:
+  - 'Interpret the meaning of an inflection point in your cumulative exposures graph'
+  - "Determine why you're seeing a flattened slope"
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1714079425
 ---
-
-#### This article will help you:
-
-* Interpret the meaning of an inflection point in your cumulative exposures graph
-* Determine why you're seeing a flattened slope
-
 ## Inflection point
 
 Sometimes, lines will have an **inflection point** caused sudden increase or decrease in the count of exposures per day.
@@ -17,7 +18,7 @@ Sometimes, lines will have an **inflection point** caused sudden increase or dec
 
 You can see here that on February 27, the slope of all three lines changed a bit, from around 70 users per day per variant, to about 100 users per day per variant. (Note that the slope can also flatten after an inflection point.)
 
-There are several reasons why this could have happened:
+There are several reasons why this could happen:
 
 * **Traffic was increased** to your experiment
 * **Traffic allocations were increased for each variant** (If you had increased traffic to a single variant, then only one line would show this inflection point)
@@ -26,7 +27,7 @@ There are several reasons why this could have happened:
 
 ### Settings changes during a live experiment
 
-It’s strongly recommended that you **do not change** settings for traffic or traffic allocations to variants in the middle of an experiment; in fact, you will see warnings within Amplitude Experiment to discourage this behavior. Doing so can introduce [Simpson’s paradox](https://en.wikipedia.org/wiki/Simpson's_paradox) into your results. If you have changed the traffic allocation, we suggest you restart the experiment by choosing a new start date. Avoid including any users who were already targeted.
+**You should not change** settings for traffic or traffic allocations to variants in the middle of an experiment. Doing so can introduce [Simpson’s paradox](https://en.wikipedia.org/wiki/Simpson's_paradox) into your results. If you have changed the traffic allocation, we suggest you restart the experiment by choosing a new start date. Avoid including any users who were already targeted.
 
 {{partial:admonition type='note'}}
  Read more about [Simpson's paradox in this article](https://www.exp-platform.com/Documents/2009-ExPpitfalls.pdf).
