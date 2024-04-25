@@ -11,7 +11,9 @@ This article will help you:
 
 User permissions define the level of Amplitude access a user in your organization will have. Usually, permissions are based on a user's role, though [project-level permissions](/admin/account-management/manage-users) and [permission groups](/admin/account-management/manage-permission-groups) are available for Enterprise customers who need the ability to better target levels of security.
 
-**NOTE:** You may also find [this course](https://academy.amplitude.com/amplitude-analytics-admin-essentials) on administering Amplitude helpful.
+{{partial:admonition type='note'}}
+You may also find [this course](https://academy.amplitude.com/amplitude-analytics-admin-essentials) on administering Amplitude helpful.
+{{/partial:admonition}}
 
 The person who sets user permissions is the Admin. The Admin is the first user of any Amplitude organization, and each organization must have at least one Admin (any Admin can designate other users as Admins as well). When new users are first invited to an organization, they are assigned the **viewer** role by default.
 

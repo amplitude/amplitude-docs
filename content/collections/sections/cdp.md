@@ -4,5 +4,10 @@ blueprint: section
 title: CDP
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1706640518
+updated_at: 1713306171
+nav_title: cdp
+template: landing-page
+current-collection: cdp|audiences|sources
+exclude_from_sitemap: false
 ---
+A customer data platform natively integrated with analytics that helps you proactively improve data quality, discover new audiences, and sync behavioral data across your stack.

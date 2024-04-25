@@ -1,8 +1,11 @@
 tree:
   -
     id: 00af1239-5441-40bb-8246-e7d485e75e47
-    title: '<- Back'
+    title: 'Back to Data'
     url: /data
+    data:
+      navigation_icon:
+        - general/back-icon.svg
   -
     id: a97fb934-a5ae-4434-9d11-4cb099317c16
     entry: 787eaf94-411a-405c-bc1c-3ed9054d0202
@@ -118,9 +121,6 @@ tree:
     id: f9f958c0-51a6-4c11-9734-5b3acdcf3132
     entry: 15617954-9537-4693-a1b0-653fa869c7cd
   -
-    id: 8a63610b-d1c4-4a72-bd7f-73876979a01d
-    entry: dc3ee49f-3089-42e1-837e-f34e0e8b56c6
-  -
     id: 2c2a6a4c-35e2-46c2-8f66-9f5d4160ca6a
     entry: c458b2bc-8b22-41f7-a8f8-c0551d684005
   -
@@ -192,9 +192,6 @@ tree:
   -
     id: 24afaa9e-fc98-4344-84d2-70ab8f2c07d0
     entry: 1b21e92e-2877-43f1-ab51-cfc87d398186
-  -
-    id: 85297bb4-44d7-45cf-a2db-b0a34258fa91
-    entry: 14717b4b-8b70-446f-9f84-9f04fa674e8d
   -
     id: c6ad58b1-1c61-4960-9866-bc0249e6b748
     entry: 74ce0abb-800b-4404-a9e9-526624f256b0

@@ -1,13 +1,10 @@
-<div x-data="{ expanded: false}" class="border rounded-md border-amp-dark-blue-100 p-4">
-<div @click="expanded = !expanded" class="cursor-pointer w-full font-semibold flex">
-<span class="transform transistion duration-100" x-ref="animatedItem"
-:class="{'rotate-90': expanded, 'rotate-0': !expanded}"> <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-<path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-</svg></span>
-<span>{{name}}</span>
-</div>
-<div x-cloak x-show="expanded" x-collapse.duration.250ms class="p-4 bg-gray-100 overflow-x-scroll">
-{{slot | markdown}}
+<div x-data="{ expanded: false}" class="border rounded-md border-amp-light-blue-500 bg-amp-light-blue-900 py-4 px-4">
+    <div @click="expanded = !expanded" class="cursor-pointer w-full font-semibold flex relative text-sm">
+        <span>{{ name }}</span>
+        <span class="transform transistion duration-100 absolute right-4" x-ref="animatedItem"
+            :class="{'rotate-90': expanded, 'rotate-0': !expanded}"> {{svg src="/assets/general/icon-chevron-down.svg" class="rotate-[270deg]"}}</span>
+    </div>
+    <div x-cloak x-show="expanded" x-collapse.duration.250ms class="px-4 mt-4 bg-white overflow-x-scroll">
+        {{ slot | markdown | strip_tags('br') }}
 </div>
 </div>

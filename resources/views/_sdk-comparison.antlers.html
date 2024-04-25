@@ -1,0 +1,29 @@
+{{ if sdk_version_comparison }}
+<table class="comparison">
+    {{ sdk_version_comparison }}
+    {{ if first  }}
+    <thead>
+        <tr>
+            {{ cells }}
+            <th class="w-1/3">{{ value|markdown }}</th>
+            {{ /cells }}
+        </tr>
+    </thead>
+    <tbody>
+        {{ /if }}
+        {{ if !first }}
+        {{ if first }}
+    <tbody>
+        {{ /if }}
+        <tr>
+            {{ cells }}
+            <td>{{ value|markdown }}</td>
+            {{ /cells }}
+        </tr>
+        {{ if last }}
+    </tbody>
+    {{ /if }}
+    {{ /if }}
+    {{ /sdk_version_comparison }}
+</table>
+{{/if}}

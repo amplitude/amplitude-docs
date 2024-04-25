@@ -16,7 +16,7 @@ Amplitude will grant the highest level of permissions assigned to a user. If a u
 
 ### Feature availability
 
-This feature is available to users on **Enterprise plans only**.
+This feature is available to users on **Enterprise plans only**. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
 
@@ -39,7 +39,9 @@ To create a new group, follow these steps:
 
 ![permission groups 1a.png](/output/img/account-management/permission-groups-1a-png.png)
 
-**NOTE**: If a group member already has access to a project individually or via another group, Amplitude will treat them according to the **highest** level of permission they have. For example, if a user has a "Member" role for a project via Group A, but is also part of Group B that grants them "Manager" access to the project, the user will have manager access to this project. Please see below for more [example scenarios](#Example-Scenarios).
+{{partial:admonition type='note'}}
+ If a group member already has access to a project individually or via another group, Amplitude will treat them according to the **highest** level of permission they have. For example, if a user has a "Member" role for a project via Group A, but is also part of Group B that grants them "Manager" access to the project, the user will have manager access to this project. Please see below for more [example scenarios](#Example-Scenarios).
+{{/partial:admonition}}
 
 8. Next, open the *Members* tab and click *+ Add Members*. Select the users you'd like to add from the drop-down. You can also skip this step for now, if you are not yet ready to add members.
 9. Click *Save* to finish creating your group.

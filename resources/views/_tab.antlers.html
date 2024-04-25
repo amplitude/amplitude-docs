@@ -1,1 +1,1 @@
-<div x-cloak x-show="activeTab === '{{name}}'" class="p-4 border rounded">{{slot | strip_tags('br')}}</div>
+<div x-cloak x-show="activeTab === '{{name}}'" class="p-4 tab">{{slot | strip_tags('br') | strip_tags('p')}}</div>

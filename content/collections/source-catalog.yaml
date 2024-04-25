@@ -1,6 +1,8 @@
 title: 'Source Catalog'
 template: default
 layout: layout
+taxonomies:
+  - integration_category
 revisions: false
 route: '/data/source-catalog/{slug}'
 sort_dir: asc
@@ -12,5 +14,7 @@ preview_targets:
     label: Entry
     url: '{permalink}'
     refresh: true
+inject:
+  nav_title: source_catalog
 structure:
   root: false

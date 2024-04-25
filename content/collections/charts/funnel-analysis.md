@@ -4,5 +4,5 @@ blueprint: chart
 title: 'Funnel Analysis'
 landing: true
 sort: 2
-nav_type: charts
+nav_title: charts
 ---

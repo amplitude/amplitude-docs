@@ -4,5 +4,5 @@ blueprint: chart
 title: 'User Sessions'
 landing: true
 sort: 12
-nav_type: charts
+nav_title: charts
 ---

@@ -1,20 +1,71 @@
 <!doctype html>
 <html lang="{{ site:short_locale }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ title ?? site:name }}</title>
-        {{ vite src="resources/js/site.js|resources/css/site.css" }}
-        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
-        <style>
-            [x-cloak] { display: none !important; }
-        </style>
-    </head>
-    <body class="bg-gray-100 font-sans leading-normal text-gray-800">
-        <div class="mx-auto px-2 lg:min-h-screen flex flex-col items-center justify-center">
-            {{ template_content }}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/general/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/general/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/general/favicon-16x16.png">
+  <title>{{ title ?? site:name }}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.css">
+
+  {{# {{ vite src="resources/js/site.js|resources/css/site.css" }} #}}
+  <link href="{{ mix src='/css/site.css' }}" rel="stylesheet">
+
+
+  <script src="{{ mix src='/js/site.js' }}"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.min.js"></script>
+
+  <style>
+    [x-cloak] {
+      display: none !important;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans leading-normal text-gray-800">
+  <div class="container prose">
+    <div class="top-0 left-0  right-0 bg-white fixed z-10">
+      <div class="w-full pt-5 pl-5">
+        <div class="box-border">
+          {{ partial:header }}
+]        </div>
+      </div>
+
+    </div>
+    <div class="top-12 left-0 right-0 fixed bg-white z-10">
+      <div class="w-full pt-5 pl-5">
+        <div class="box-border">
+          {{ partial:top-nav }}
         </div>
-    </body>
+      </div>
+
+    </div>
+    {{ if hide_side-nav }}
+      <div class="absolute top-24 left-0 bottom-0 right-0 z-0">
+        <div class="w-full">
+          {{ template_content }}
+        </div>
+      </div>
+    {{ else }}
+      <div
+        class="w-64 h-100 left-0 top-24 bottom-0 border-solid border-r border-black-200 hidden lg:block overflow-auto fixed">
+        {{ if segment_1 }}
+          {{ if nav_type }}
+            {{ partial:side-nav-charts :nav_title="nav_title" }}
+          {{ else }}
+            {{ partial:side-nav :nav_title="nav_title" }}
+          {{ /if }}
+        {{ /if }}
+      </div>
+      <div class="absolute top-24 left-0 lg:left-64 bottom-0 right-0 z-0">
+        <div class="w-full pt-8">
+          {{ template_content }}
+        </div>
+      </div>
+    {{ /if }}
+  </div>
+</body>
 </html>

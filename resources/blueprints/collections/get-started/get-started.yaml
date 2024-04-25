@@ -6,87 +6,35 @@ tabs:
       -
         fields:
           -
-            handle: title
-            field:
-              type: text
-              required: true
-              validate:
-                - required
+            import: help_center_common
+            config:
+              title:
+                required: true
+  landing_page:
+    display: 'Landing page'
+    sections:
+      -
+        display: 'Include on landing page?'
+        fields:
           -
-            handle: things
-            field:
-              restrict: false
-              buttons:
-                - bold
-                - italic
-                - unorderedlist
-                - orderedlist
-                - quote
-                - link
-                - image
-                - table
-              automatic_line_breaks: true
-              automatic_links: false
-              escape_markup: false
-              heading_anchors: false
-              smartypants: false
-              table_of_contents: false
-              antlers: false
-              type: markdown
-              display: Things
-              instructions: 'Add the list of things that this article will help you do.'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
-          -
-            handle: content
-            field:
-              type: markdown
-              antlers: true
-              display: Content
-              localizable: true
-              instructions_position: above
-              listable: hidden
-              visibility: visible
-              replicator_preview: true
-              restrict: false
-              buttons:
-                - bold
-                - italic
-                - unorderedlist
-                - orderedlist
-                - quote
-                - link
-                - image
-                - table
-              automatic_line_breaks: true
-              automatic_links: false
-              escape_markup: false
-              heading_anchors: false
-              smartypants: false
-              table_of_contents: false
-              hide_display: false
-          -
-            handle: author
-            field:
-              type: users
-              display: Author
-              default: current
-              localizable: true
-              max_items: 1
-          -
-            handle: template
-            field:
-              type: template
-              display: Template
-              localizable: true
+            import: article_common
   sidebar:
     display: Sidebar
     sections:
       -
         fields:
+          -
+            handle: source
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Source
+              listable: hidden
+              instructions_position: above
+              visibility: read_only
+              replicator_preview: true
+              hide_display: false
           -
             handle: slug
             field:
@@ -102,3 +50,30 @@ tabs:
               max_items: 1
               listable: false
               localizable: true
+  alt_sitemap:
+    display: 'Alt Sitemap'
+    sections:
+      -
+        fields:
+          -
+            handle: sitemap_priority
+            field:
+              type: float
+              display: 'Sitemap Priority'
+              instructions: 'From 0.0 (lowest priority) to 1.0 (highest priority)'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: exclude_from_sitemap
+            field:
+              default: false
+              type: toggle
+              display: 'Exclude from sitemap?'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false

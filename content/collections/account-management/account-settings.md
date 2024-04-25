@@ -1,14 +1,18 @@
 ---
-title: "The Settings page"
-source: "https://help.amplitude.com/hc/en-us/articles/235649848-The-Settings-page"
 id: aa69523a-2f70-40bb-b904-f478b24d6587
+blueprint: account-management
+title: 'The Settings page'
+source: 'https://help.amplitude.com/hc/en-us/articles/235649848-The-Settings-page'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1712794828
 ---
-
 #### This article will help you:
 
 * Manage organizational and project-level settings
 
-You can access the Settings page by clicking the ![settings_icon.png](/output/img/account-management/settings-icon-png.png) icon. Any user within your organization can access this page, but settings can only be changed by organization admins and managers. Within the Settings page, you can navigate between organization-level settings, your own personal Amplitude settings, and more.
+You can access the Settings page by clicking the ![settings_icon.png](/output/img/account-management/settings-icon-png.png){.inline} icon. Any user within your organization can access this page, but settings can only be changed by organization admins and managers. Within the Settings page, you can navigate between organization-level settings, your own personal Amplitude settings, and more.
 
 ## Organizational settings
 
