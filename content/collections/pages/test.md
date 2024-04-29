@@ -4,7 +4,7 @@ blueprint: home
 title: 'Amplitude Docs.next IA Test'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1712964708
+updated_at: 1714421205
 hide_toc: true
 hide_side-nav: true
 template: home
@@ -31,7 +31,7 @@ products:
     product_description: 'An experimentation solution that unites everything you need to test, analyze, and optimize your product at scale.'
     type: product_details
     enabled: true
-    product_icon: home/analytics.png
+    product_icon: home/experiment.png
     section_link: 7ba36066-3d54-4874-a407-504b27d83a26
   -
     id: lux6n36s
