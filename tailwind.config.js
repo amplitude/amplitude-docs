@@ -14,9 +14,9 @@ module.exports ={
         extend: {
             fontFamily: {
                 'sans': ['"IBM Plex Sans"', ...defaultTheme.fontFamily.sans],
-                IBMPlex: ['IBM Plex Sans', 'sans-serif'],
-                IBMPlexMono: ['"IBM Plex Mono"',],
-                Gellix: ['Gellix', 'sans-serif'],
+                'IBMPlex': ['IBM Plex Sans', 'sans-serif'],
+                'IBMPlexMono': ['"IBM Plex Mono"',],
+                'Gellix': ['Gellix', 'sans-serif'],
             },
         },
         colors:{
