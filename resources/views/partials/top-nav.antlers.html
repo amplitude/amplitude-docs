@@ -2,16 +2,16 @@
     style="margin-left: -20px; margin-top: -20px;">
     {{ nav:collection:sections sort="order" }}
         {{ if children }}
-            <div class="flex-auto mr-4 text-sm font-medium" x-data="{ open: false }" @mouseleave="open = false"><button
-                    @click.prevent @mouseover="open = true">{{ title }}</button>
-                <div x-cloak x-show="open" x-transition class="mt-4 absolute border border-amp-gray-100 rounded shadow-lg top-4 bg-white w-24 p-4">
+            <div class="flex-auto mr-4 text-sm font-medium inline" x-data="{ open: false }" @mouseleave="open = false"><button
+                    @click.prevent @mouseover="open = true">{{ title }} {{svg src="/assets/general/icon-chevron-down.svg" class="inline"}}</button>
+                <div x-cloak x-show="open" x-transition class="mt-4 py-2 absolute border border-amp-gray-100 rounded flex flex-col shadow-lg top-4 bg-white w-48 p-4">
                     {{ children }}
-                        <a class="no-underline font-light my-2 hover:bg-amp-gray-50 hover:rounded" href="{{ url }}">{{ title }}</a> <br />
+                        <a class="no-underline pl-4 py-2 font-light hover:bg-amp-blue-950 hover:rounded" href="{{ url }}">{{ title }}</a>
                     {{ /children }}
                 </div>
             </div>
         {{ else }}
-            <div class="flex-initial mr-4 text-sm p-2 transition hover:bg-amp-blue-950 hover:rounded hover:p-2"><a class="no-underline {{if segment_1 === slug}}text-amp-blue-500{{/if}}" href="{{ url }}">{{ title }}</a></div>
+            <div class="flex-initial mr-4 text-sm p-2 transition hover:bg-amp-blue-950 hover:rounded hover:p-2 relative{{if segment_1 === slug}} top-nav-active{{/if}}"><a class="no-underline font-normal {{if segment_1 === slug}}text-amp-blue-500 font-medium {{/if}}" href="{{ url }}">{{ title }}</a></div>
         {{ /if }}
     {{ /nav:collection:sections }}
 </div>
