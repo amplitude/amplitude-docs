@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports ={
     content: [
         './resources/**/*.antlers.html',
@@ -11,7 +13,7 @@ module.exports ={
     theme: {
         extend: {
             fontFamily: {
-                'sans': ['IBM Plex Sans'],
+                'sans': ['"IBM Plex Sans"', ...defaultTheme.fontFamily.sans],
                 IBMPlex: ['IBM Plex Sans', 'sans-serif'],
                 IBMPlexMono: ['"IBM Plex Mono"',],
                 Gellix: ['Gellix', 'sans-serif'],

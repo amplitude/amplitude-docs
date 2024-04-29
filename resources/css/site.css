@@ -3,7 +3,7 @@
 @import "tailwindcss/utilities";
 
 @layer base {
-    p,a,li, button {
+    p,a,li, button, td {
         font-family: 'IBM Plex Sans', sans-serif;
     }
     h1,h2,h3,h4,h5,h6 {
@@ -551,6 +551,7 @@ pre code.torchlight {
    padding-top: 1rem;
    padding-bottom: 1rem;
    background-color: #EBF5FF!important;
+   font-family: 'IBM Plex Mono';
 }
 
 pre {
