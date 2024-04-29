@@ -1,5 +1,11 @@
 tree:
   -
+    id: 5cfb26ea-3e9c-42f4-a290-f6caa5c371a2
+    title: Back
+    data:
+      icon: null
+      hide_carrot: true
+  -
     id: b265f00c-584d-42f4-850a-73cf6fb05e27
     title: 'Browser SDK 2'
     children:

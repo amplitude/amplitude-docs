@@ -1033,10 +1033,10 @@ video {
   flex: 0 1 auto;
 }.flex-none {
   flex: none;
-}.shrink-0 {
-  flex-shrink: 0;
 }.shrink {
   flex-shrink: 1;
+}.shrink-0 {
+  flex-shrink: 0;
 }.grow {
   flex-grow: 1;
 }.grow-0 {
@@ -1758,10 +1758,9 @@ colors extend edge to edge.
    min-width: max-content;
    padding-top: 1rem;
    padding-bottom: 1rem;
-   background-color: #EBF5FF!important;
    font-family: 'IBM Plex Mono';
 }pre {
-    background-color: #EBF5FF!important;    
+    background-color: #282A36!important;
 }/*
 Horizontal line padding to match the vertical
 padding from the code block above.

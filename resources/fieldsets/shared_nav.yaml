@@ -1,0 +1,32 @@
+title: 'Shared Nav'
+fields:
+  -
+    handle: icon
+    field:
+      mode: list
+      container: assets
+      restrict: false
+      allow_uploads: true
+      show_filename: true
+      show_set_alt: true
+      type: assets
+      display: Icon
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+      max_files: 1
+  -
+    handle: hide_carrot
+    field:
+      inline_label: Hide
+      inline_label_when_true: Hidden
+      default: false
+      type: toggle
+      display: 'Hide Carrot'
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false

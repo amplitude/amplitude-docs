@@ -564,14 +564,11 @@ pre code.torchlight {
    min-width: max-content;
    padding-top: 1rem;
    padding-bottom: 1rem;
-   background-color: #EBF5FF!important;
    font-family: 'IBM Plex Mono';
 }
-
 pre {
-    background-color: #EBF5FF!important;    
+    background-color: #282A36!important;
 }
-
 /*
 Horizontal line padding to match the vertical
 padding from the code block above.
