@@ -396,7 +396,7 @@ video {
 }[type='file']:focus {
   outline: 1px solid ButtonText;
   outline: 1px auto -webkit-focus-ring-color;
-}p,a,li, button {
+}p,a,li, button, td {
         font-family: 'IBM Plex Sans', sans-serif;
     }h1,h2,h3,h4,h5,h6 {
         font-family: 'Gellix', sans-serif;
@@ -1054,6 +1054,9 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }.rotate-0 {
   --tw-rotate: 0deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}.rotate-180 {
+  --tw-rotate: 180deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }.rotate-90 {
   --tw-rotate: 90deg;
@@ -1738,6 +1741,7 @@ colors extend edge to edge.
    padding-top: 1rem;
    padding-bottom: 1rem;
    background-color: #EBF5FF!important;
+   font-family: 'IBM Plex Mono';
 }pre {
     background-color: #EBF5FF!important;    
 }/*
@@ -1771,6 +1775,9 @@ pre code.torchlight .summary-caret {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}.prose-a\:text-amp-blue :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  --tw-text-opacity: 1;
+  color: rgb(30 97 240 / var(--tw-text-opacity));
 }.prose-a\:text-amp-blue-300 :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   --tw-text-opacity: 1;
   color: rgb(10 55 152 / var(--tw-text-opacity));

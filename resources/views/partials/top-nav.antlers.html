@@ -11,7 +11,7 @@
                 </div>
             </div>
         {{ else }}
-            <div class="flex-initial mr-4 text-sm p-2 transition hover:bg-amp-blue-950 hover:rounded hover:p-2"><a class="no-underline {{if segment_1 === slug}}text-amp-blue-500{{/if}}" href="{{ url }}">{{ title }}</a></div>
+            <div class="flex-initial mr-4 text-sm p-2 transition hover:bg-amp-blue-950 hover:rounded hover:p-2"><a class="no-underline font-normal {{if segment_1 === slug}}text-amp-blue-500 font-medium{{/if}}" href="{{ url }}">{{ title }}</a></div>
         {{ /if }}
     {{ /nav:collection:sections }}
 </div>
