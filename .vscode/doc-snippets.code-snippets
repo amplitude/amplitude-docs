@@ -20,7 +20,7 @@
 		"prefix": "adm",
 		"body": [
 			"{{partial:admonition type=\"$1\" title=\"$2\"}}",
-			"This is a note",
+			"$TM_SELECTED_TEXT",
 			"{{/partial:admonition}}"
 		],
 		"description": "Admonition"
