@@ -145,17 +145,12 @@ module.exports ={
                 900: '#fdf8f9'
             },
             'warning-orange': {
-                '50': '#fffbec',
-                '100': '#fff7d3',
-                '200': '#ffeba5',
-                '300': '#ffdb6d',
-                '400': '#ffbf32',
-                '500': '#ffa80a',
-                '600': '#ff9100',
-                '700': '#cc6b02',
-                '800': '#a1520b',
-                '900': '#82450c',
-                '950': '#462104',
+                DEFAULT: '#E77427',
+                'light': '#FDF5F1'
+            },
+            'error-red':{
+                DEFAULT: '#EC4747',
+                'light': '#FDF1F2'
             },
             'mint': {
                 '50': '#eefffb',
