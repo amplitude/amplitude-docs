@@ -681,112 +681,112 @@
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/1flow",
+      "source": "/data/destinations/1flow-cohort",
       "destination": "/data/destination-catalog/1flow",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/adjust",
+      "source": "/data/destinations/adjust",
       "destination": "/data/destination-catalog/adjust",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/airship",
+      "source": "/data/destinations/airship",
       "destination": "/data/destination-catalog/airship",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/amazon-kinesis-data-stream",
+      "source": "/data/destinations/amazon-kinesis-data-stream",
       "destination": "/data/destination-catalog/amazon-kinesis-data-stream",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/amazon-kinesis-firehose",
+      "source": "/data/destinations/amazon-kinesis-firehose",
       "destination": "/data/destination-catalog/amazon-kinesis-firehose",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/amazon-redshift",
+      "source": "/data/destinations/amazon-redshift",
       "destination": "/data/destination-catalog/amazon-redshift",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/amazon-s3",
+      "source": "/data/destinations/amazon-s3",
       "destination": "/data/destination-catalog/amazon-s3",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/appcues",
+      "source": "/data/destinations/appcues",
       "destination": "/data/destination-catalog/appcues",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/appfit",
+      "source": "/data/destinations/appfit",
       "destination": "/data/destination-catalog/appfit",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/appsflyer",
+      "source": "/data/destinations/appsflyer",
       "destination": "/data/destination-catalog/appsflyer",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/apxor",
+      "source": "/data/destinations/apxor",
       "destination": "/data/destination-catalog/apxor",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/batch",
+      "source": "/data/destinations/batch",
       "destination": "/data/destination-catalog/batch",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/bento",
+      "source": "/data/destinations/bento",
       "destination": "/data/destination-catalog/bento",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/blitzllama",
+      "source": "/data/destinations/blitzllama",
       "destination": "/data/destination-catalog/blitzllama",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/branch",
+      "source": "/data/destinations/branch",
       "destination": "/data/destination-catalog/branch",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/braze",
+      "source": "/data/destinations/braze",
       "destination": "/data/destination-catalog/braze",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/clevertap",
+      "source": "/data/destinations/clevertap",
       "destination": "/data/destination-catalog/clevertap",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/cohort-webhooks",
+      "source": "/data/destinations/cohort-webhooks",
       "destination": "/data/destination-catalog/cohort-webhooks",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/cordial",
+      "source": "/data/destinations/cordial",
       "destination": "/data/destination-catalog/cordial",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/customer-io",
+      "source": "/data/destinations/customer-io",
       "destination": "/data/destination-catalog/customer-io",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/enterpret",
+      "source": "/data/destinations/enterpret",
       "destination": "/data/destination-catalog/enterpret",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/extole",
+      "source": "/data/destinations/extole",
       "destination": "/data/destination-catalog/extole",
       "statusCode": 301
     },
@@ -806,307 +806,307 @@
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/facebook-ads",
+      "source": "/data/destinations/facebook-ads",
       "destination": "/data/destination-catalog/facebook-ads",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/fivetran",
+      "source": "/data/destinations/fivetran",
       "destination": "/data/destination-catalog/fivetran",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/google-ads",
+      "source": "/data/destinations/google-ads",
       "destination": "/data/destination-catalog/google-ads",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/google-analytics-4-ios-android",
+      "source": "/data/destinations/google-analytics-4-ios-android",
       "destination": "/data/destination-catalog/google-analytics-4-ios-android",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/google-analytics-4-web",
+      "source": "/data/destinations/google-analytics-4-web",
       "destination": "/data/destination-catalog/google-analytics-4-web",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/google-bigquery",
+      "source": "/data/destinations/google-bigquery",
       "destination": "/data/destination-catalog/google-bigquery",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/google-cloud-storage",
+      "source": "/data/destinations/google-cloud-storage",
       "destination": "/data/destination-catalog/google-cloud-storage",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/google-pub-sub",
+      "source": "/data/destinations/google-pub-sub",
       "destination": "/data/destination-catalog/google-pub-sub",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/hubspot",
+      "source": "/data/destinations/hubspot",
       "destination": "/data/destination-catalog/hubspot",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/infobip",
+      "source": "/data/destinations/infobip",
       "destination": "/data/destination-catalog/infobip",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/insider",
+      "source": "/data/destinations/insider",
       "destination": "/data/destination-catalog/insider",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/intercom",
+      "source": "/data/destinations/intercom",
       "destination": "/data/destination-catalog/intercom",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/iterable",
+      "source": "/data/destinations/iterable",
       "destination": "/data/destination-catalog/iterable",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/kameleoon",
+      "source": "/data/destinations/kameleoon",
       "destination": "/data/destination-catalog/kameleoon",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/klaviyo",
+      "source": "/data/destinations/klaviyo",
       "destination": "/data/destination-catalog/klaviyo",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/kochava-install",
+      "source": "/data/destinations/kochava-install",
       "destination": "/data/destination-catalog/kochava-install",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/kochava-post-install",
+      "source": "/data/destinations/kochava-post-install",
       "destination": "/data/destination-catalog/kochava-post-install",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/lantern",
+      "source": "/data/destinations/lantern",
       "destination": "/data/destination-catalog/lantern",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/launchdarkly",
+      "source": "/data/destinations/launchdarkly",
       "destination": "/data/destination-catalog/launchdarkly",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/leanplum",
+      "source": "/data/destinations/leanplum",
       "destination": "/data/destination-catalog/leanplum",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/liveramp",
+      "source": "/data/destinations/liveramp",
       "destination": "/data/destination-catalog/liveramp",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/mailchimp",
+      "source": "/data/destinations/mailchimp",
       "destination": "/data/destination-catalog/mailchimp",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/marketo",
+      "source": "/data/destinations/marketo",
       "destination": "/data/destination-catalog/marketo",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/marketo-static-list",
+      "source": "/data/destinations/marketo-static-list",
       "destination": "/data/destination-catalog/marketo-static-list",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/maze",
+      "source": "/data/destinations/maze",
       "destination": "/data/destination-catalog/maze",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/meta-pixel",
+      "source": "/data/destinations/meta-pixel",
       "destination": "/data/destination-catalog/meta-pixel",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/moengage",
+      "source": "/data/destinations/moengage",
       "destination": "/data/destination-catalog/moengage",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/moloco",
+      "source": "/data/destinations/moloco",
       "destination": "/data/destination-catalog/moloco",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/movable-ink",
+      "source": "/data/destinations/movable-ink",
       "destination": "/data/destination-catalog/movable-ink",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/moveable-ink",
+      "source": "/data/destinations/moveable-ink",
       "destination": "/data/destination-catalog/moveable-ink",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/netcore-cloud",
+      "source": "/data/destinations/netcore-cloud",
       "destination": "/data/destination-catalog/netcore-cloud",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/notivize",
+      "source": "/data/destinations/notivize",
       "destination": "/data/destination-catalog/notivize",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/onesignal",
+      "source": "/data/destinations/onesignal",
       "destination": "/data/destination-catalog/onesignal",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/optimizely",
+      "source": "/data/destinations/optimizely",
       "destination": "/data/destination-catalog/optimizely",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/planhat",
+      "source": "/data/destinations/planhat",
       "destination": "/data/destination-catalog/planhat",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/plotline",
+      "source": "/data/destinations/plotline",
       "destination": "/data/destination-catalog/plotline",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/productboard",
+      "source": "/data/destinations/productboard",
       "destination": "/data/destination-catalog/productboard",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/pushwoosh",
+      "source": "/data/destinations/pushwoosh",
       "destination": "/data/destination-catalog/pushwoosh",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/qualtrics",
+      "source": "/data/destinations/qualtrics",
       "destination": "/data/destination-catalog/qualtrics",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/salesforce-marketing-cloud",
+      "source": "/data/destinations/salesforce-marketing-cloud",
       "destination": "/data/destination-catalog/salesforce-marketing-cloud",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/salesforce-marketing-cloud-v1",
+      "source": "/data/destinations/salesforce-marketing-cloud-v1",
       "destination": "/data/destination-catalog/salesforce-marketing-cloud-v1",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/salesforce-marketing-cloud-v2",
+      "source": "/data/destinations/salesforce-marketing-cloud-v2",
       "destination": "/data/destination-catalog/salesforce-marketing-cloud-v2",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/segment",
+      "source": "/data/destinations/segment",
       "destination": "/data/destination-catalog/segment",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/sendgrid",
+      "source": "/data/destinations/sendgrid",
       "destination": "/data/destination-catalog/sendgrid",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/sleekflow",
+      "source": "/data/destinations/sleekflow",
       "destination": "/data/destination-catalog/sleekflow",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/snapchat",
+      "source": "/data/destinations/snapchat",
       "destination": "/data/destination-catalog/snapchat",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/snowflake",
+      "source": "/data/destinations/snowflake",
       "destination": "/data/destination-catalog/snowflake",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/snowflake-data-share",
+      "source": "/data/destinations/snowflake-data-share",
       "destination": "/data/destination-catalog/snowflake-data-share",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/split",
+      "source": "/data/destinations/split",
       "destination": "/data/destination-catalog/split",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/statsig",
+      "source": "/data/destinations/statsig",
       "destination": "/data/destination-catalog/statsig",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/talon-one",
+      "source": "/data/destinations/talon-one",
       "destination": "/data/destination-catalog/talon-one",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/thetradedesk",
+      "source": "/data/destinations/thetradedesk",
       "destination": "/data/destination-catalog/thetradedesk",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/tiktok-ads",
+      "source": "/data/destinations/tiktok-ads",
       "destination": "/data/destination-catalog/tiktok-ads",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/toplyne",
+      "source": "/data/destinations/toplyne",
       "destination": "/data/destination-catalog/toplyne",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/unitq",
+      "source": "/data/destinations/unitq",
       "destination": "/data/destination-catalog/unitq",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/user-com",
+      "source": "/data/destinations/user-com",
       "destination": "/data/destination-catalog/user-com",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/userflow",
+      "source": "/data/destinations/userflow",
       "destination": "/data/destination-catalog/userflow",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/userlist",
+      "source": "/data/destinations/userlist",
       "destination": "/data/destination-catalog/userlist",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/webengage",
+      "source": "/data/destinations/webengage",
       "destination": "/data/destination-catalog/webengage",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/webhooks",
+      "source": "/data/destinations/webhooks",
       "destination": "/data/destination-catalog/webhooks",
       "statusCode": 301
     },
     {
-      "source": "https://www.developers.amplitude.com/data/destinations/zeda-io",
+      "source": "/data/destinations/zeda-io",
       "destination": "/data/destination-catalog/zeda-io",
       "statusCode": 301
     },
