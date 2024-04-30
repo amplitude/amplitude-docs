@@ -2,9 +2,9 @@
     style="margin-left: -20px; margin-top: -20px;">
     {{ nav:collection:sections sort="order" }}
         {{ if children }}
-            <div class="flex-auto mr-4 text-sm font-medium inline w-max" x-data="{ open: false }"><button
-                 @click="open = !open">{{ title }} {{svg src="/assets/general/icon-chevron-down.svg" class="inline"}}</button>
-                <div x-cloak x-show="open" x-transition class="mt-4 py-2 right-4 sm:right-auto absolute border border-amp-gray-100 rounded flex flex-col shadow-lg top-4 bg-white w-48 p-4">
+            <div class="flex-initial mr-4 text-sm p-2 inline w-max" x-data="{ open: false }"><button
+                 @click="open = !open" class="font-normal -mb-[11px] text-[#111827]">{{ title }} {{svg src="/assets/general/icon-chevron-down.svg" class="inline fill-[#111827]"}}</button>
+                <div x-cloak x-show="open" x-transition class="mt-4 py-2 right-4 sm:right-auto absolute border border-amp-gray-100 rounded flex flex-col shadow-lg top-4 bg-white w-48 p-4 font-normal">
                     {{ children }}
                         <a class="no-underline pl-4 py-2 font-light hover:bg-amp-blue-950 hover:rounded" href="{{ url }}">{{ title }}</a>
                     {{ /children }}
