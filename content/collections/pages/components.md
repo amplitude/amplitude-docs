@@ -32,7 +32,6 @@ client.setLogger(new AmplitudeLog() {
 });
 ```
 {{/partial:tab}}
-
 {{/partial:tabs}}
 
 ## Collapse
@@ -54,3 +53,37 @@ client.setLogger(new AmplitudeLog() {
 |`useBatch`| `boolean`. Sets whether to upload events to Batch API instead of instead of the default HTTP V2 API or not. | `false` |
 
 {{/partial:collapse}}
+
+## Admonition
+
+{{partial:admonition type="note" heading=""}}
+This is a note
+{{/partial:admonition}}
+
+{{partial:admonition type="info" heading=""}}
+Information that's different than a note.
+{{/partial:admonition}}
+
+{{partial:admonition type="warning" heading=""}}
+This is a warning
+{{/partial:admonition}}
+
+{{partial:admonition type="example" heading=""}}
+Show an example here
+{{/partial:admonition}}
+
+{{partial:admonition type="tip" heading=""}}
+General tip
+{{/partial:admonition}}
+
+{{partial:admonition type="alpha" heading=""}}
+Alpha
+{{/partial:admonition}}
+
+{{partial:admonition type="beta" heading=""}}
+Beta
+{{/partial:admonition}}
+
+{{partial:admonition type="deprecated" heading=""}}
+This is no longer available
+{{/partial:admonition}}
