@@ -16,4 +16,5 @@ shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/analytics-node.svg'
 ampli_article: 5f0a9b3c-627c-4014-bb2e-d1ac1c465db9
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1710272856
+nav_title: node_js_sdk
 ---

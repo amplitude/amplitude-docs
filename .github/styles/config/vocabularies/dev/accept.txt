@@ -234,3 +234,5 @@ Wordpress
 substring
 Planhat
 Talon.One
+Jetbrains
+VSCode
