@@ -1033,10 +1033,10 @@ video {
   flex: 0 1 auto;
 }.flex-none {
   flex: none;
-}.shrink-0 {
-  flex-shrink: 0;
 }.shrink {
   flex-shrink: 1;
+}.shrink-0 {
+  flex-shrink: 0;
 }.grow {
   flex-grow: 1;
 }.grow-0 {
@@ -1568,6 +1568,11 @@ video {
 }.tab > pre {
     margin-bottom: 0;
     margin-top: 0;
+}.tab {
+    font-size: 13px;
+    padding: 12px;
+    margin-bottom: 0px;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }.prose>p:has(img) {
     margin: 0;
     background: #F4F5F6;
@@ -1626,7 +1631,7 @@ video {
     font-size: 13px;
     padding: 12px;
     margin-bottom: 0px;
-}.hint > h2.hint-title::before {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"}.hint > h2.hint-title::before {
     content:'';
     -webkit-mask-size: contain;
             mask-size: contain;

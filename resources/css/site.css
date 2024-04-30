@@ -273,6 +273,13 @@ ul.nav li::marker {
     margin-top: 0;
 }
 
+.tab {
+    font-size: 13px;
+    padding: 12px;
+    margin-bottom: 0px;
+    @apply font-sans;
+}
+
 .prose>p:has(img) {
     margin: 0;
     background: #F4F5F6;
@@ -359,6 +366,7 @@ a.toc-link {
     font-size: 13px;
     padding: 12px;
     margin-bottom: 0px;
+    @apply font-sans
 }
 
 .hint > h2.hint-title::before {
