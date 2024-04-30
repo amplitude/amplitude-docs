@@ -4,7 +4,7 @@ blueprint: home
 title: 'Amplitude Docs.next IA Test'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1714499956
+updated_at: 1714512021
 hide_toc: true
 hide_side-nav: true
 template: home
@@ -40,6 +40,7 @@ products:
     product_icon: home/session-replay.png
     type: product_details
     enabled: true
+    section_link: 3719e8a7-755b-4426-842b-a90fd0e62ad3
 exclude_from_sitemap: false
 popular_content:
   -
