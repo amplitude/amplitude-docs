@@ -1,0 +1,20 @@
+tree:
+  -
+    id: 3e3c5cec-fc9a-44a3-9b9c-553ef32a7564
+    entry: 3719e8a7-755b-4426-842b-a90fd0e62ad3
+  -
+    id: f0a5af52-edfd-48f1-8785-8e598a68b84a
+    entry: ca7fddb3-2ba6-4d57-a943-cfaa9d2651c0
+  -
+    id: 1bc318e3-9db5-4981-8c37-dcf814cf43fe
+    title: 'Instrument Session Replay'
+    children:
+      -
+        id: 6573c21d-8fc2-4206-96bd-5041b7313ad4
+        entry: 99b87b72-07f8-4e08-9dcd-348f3c8976f3
+      -
+        id: 2a9877d6-5e50-43d9-a1e0-15862a4279b5
+        entry: f4c61e43-7a55-43a3-9dbd-f1ecb2502774
+      -
+        id: 3706eba9-c43a-4725-a801-bf9eac846f49
+        entry: d225a8c4-c504-4cbe-b4f3-8709ab43fdc1
