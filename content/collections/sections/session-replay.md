@@ -5,10 +5,9 @@ title: 'Session Replay'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1714506727
+updated_at: 1714512173
 nav_title: session_replay
 ---
-
 Sometimes you need to go beyond a funnel analysis to understand the "why" behind your product metrics. Amplitude’s built-in Session Replay feature gives full visibility in the customer journey by uncovering qualitative insights from your quantitative data. It brings digital experiences to life, unlocking growth bottlenecks and giving you the confidence to take appropriate action.
 
 ## Feature availability
@@ -16,8 +15,7 @@ Sometimes you need to go beyond a funnel analysis to understand the "why" behind
 Session Replay is available to try on all new Amplitude plans as of February 7, 2024 (including the Starter and Plus updates from October 2023). Existing Growth and Enterprise customers can also access Session Replay as an add-on purchase. Contact your account manager with questions. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 {{partial:admonition type="note" heading=""}}
-Session Replay is **not** enabled by default, and requires instrumentation beyond the standard Amplitude instrumentation. For more information, see the [Session Replay Developer Docs](https://www.docs.developers.amplitude.com/session-replay/).
-
+Session Replay is **not** enabled by default, and requires instrumentation beyond the standard Amplitude instrumentation.
 {{/partial:admonition}}
 ## Use Session Replay to review user activity
 
