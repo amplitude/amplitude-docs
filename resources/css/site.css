@@ -3,7 +3,7 @@
 @import "tailwindcss/utilities";
 
 @layer base {
-    p,a,li, button {
+    p,a,li, button, td {
         font-family: 'IBM Plex Sans', sans-serif;
     }
     h1,h2,h3,h4,h5,h6 {
@@ -347,6 +347,7 @@ a.toc-link {
     border: 1px solid;
     border-radius: theme('borderRadius.md');
     margin: 1.25rem 0;
+    width: 100%;
 }
 
 .hint-title {
@@ -387,7 +388,7 @@ a.toc-link {
 }
 
 .note > .hint-title {
-    background: theme('colors.amp-blue.900');
+    background: theme('colors.amp-blue.950');
 }
 
 .hint.note > h2.hint-title::before {
@@ -533,6 +534,20 @@ h2:hover a {
 .landing-blurb > p {
     margin-bottom: 0;
 }
+
+.top-nav-active:before{
+    content: '';
+    position: absolute;
+    color: theme('colors.amp-blue.500');
+    width: 100%;
+    bottom: 0;
+    height: 2px;
+    border: 2px solid blue;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    margin-left: -8px;
+    bottom: -6px;
+}
 /*
 Margin and rounding are personal preferences,
 overflow-x-auto is recommended.
@@ -557,6 +572,12 @@ pre code.torchlight {
    min-width: max-content;
    padding-top: 1rem;
    padding-bottom: 1rem;
+   background-color: #EBF5FF!important;
+   font-family: 'IBM Plex Mono';
+}
+
+pre {
+    background-color: #EBF5FF!important;    
 }
 
 /*
