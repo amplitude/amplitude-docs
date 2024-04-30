@@ -1,10 +1,10 @@
-<div class="box-border flex flex-row flex-nowrap items-center border-solid border-b border-black-200 h-12 px-4 justify-start"
+<div class="box-border flex flex-row flex-nowrap items-center border-solid border-b border-black-200 h-12 px-4 justify-start overflow-scroll"
     style="margin-left: -20px; margin-top: -20px;">
     {{ nav:collection:sections sort="order" }}
         {{ if children }}
-            <div class="flex-auto mr-4 text-sm font-medium inline" x-data="{ open: false }" @mouseleave="open = false"><button
-                    @click.prevent @mouseover="open = true">{{ title }} {{svg src="/assets/general/icon-chevron-down.svg" class="inline"}}</button>
-                <div x-cloak x-show="open" x-transition class="mt-4 py-2 absolute border border-amp-gray-100 rounded flex flex-col shadow-lg top-4 bg-white w-48 p-4">
+            <div class="flex-auto mr-4 text-sm font-medium inline w-max" x-data="{ open: false }"><button
+                 @click="open = !open">{{ title }} {{svg src="/assets/general/icon-chevron-down.svg" class="inline"}}</button>
+                <div x-cloak x-show="open" x-transition class="mt-4 py-2 right-4 sm:right-auto absolute border border-amp-gray-100 rounded flex flex-col shadow-lg top-4 bg-white w-48 p-4">
                     {{ children }}
                         <a class="no-underline pl-4 py-2 font-light hover:bg-amp-blue-950 hover:rounded" href="{{ url }}">{{ title }}</a>
                     {{ /children }}
