@@ -4,7 +4,7 @@
     {{lvl1_parent = title | slugify}}
     {{navigation_icon}}
             {{ if url }}
-            {{navigation_icon}}<a href="{{ url }}" class="no-underline block text-[.875rem] p-2 leading-5 hover:bg-amp-gray-50 hover:rounded {{if is_current }}bg-amp-gray-50 text-amp-blue-500 rounded current{{else}}text-amp-gray-600{{/if}}">{{ title }}</a>
+            {{navigation_icon}}<a href="{{ url }}" class="no-underline block text-[.875rem] p-2 leading-5 hover:bg-amp-blue-950 hover:rounded {{if is_current }}bg-amp-blue-950 text-amp-blue-500 rounded current{{else}}text-amp-gray-600{{/if}}">{{ title }}</a>
             {{else}}
             <button @click.prevent="lvl1 = (lvl1 === '{{title | slugify}}') ? '' : '{{title | slugify}}'" class="nav-button text-left text-[.875rem] my-0 py-[.25rem]" :class="lvl1 === '{{title | slugify}}' ? 'active' : ''">{{ title }} {{svg src="/assets/general/icon-chevron-down.svg" class="inline absolute right-4" }}</button>
             {{/if }}
@@ -13,15 +13,15 @@
                     {{ children }}
                         {{# <li class="my-0 py-[.25rem] "> #}}
                             {{ if url }}
-                            <a href="{{ url }}"  class="no-underline block text-[.875rem] p-2 leading-5 hover:bg-amp-gray-50 hover:rounded  {{if is_current}}bg-amp-gray-50 text-amp-blue-500 rounded current{{else}}text-amp-gray-600{{/if}}"  {{if is_current }} x-effect="lvl1 = '{{parent:title | slugify}}'{{/if}}">{{ title }}</a>
+                            <a href="{{ url }}"  class="no-underline block text-[.875rem] p-2 leading-5 hover:bg-amp-blue-950 hover:rounded  {{if is_current}}bg-amp-blue-950 text-amp-blue-500 rounded current{{else}}text-amp-gray-600{{/if}}"  {{if is_current }} x-effect="lvl1 = '{{parent:title | slugify}}'{{/if}}">{{ title }}</a>
                             {{else}}
-                            <button @click.prevent="lvl2 = (lvl2 === '{{title | slugify}}' ? null : '{{title | slugify}}')" class="text-left text-[.875rem]" :class="lvl2 === '{{title | slugify}}' ? 'active' : ''">{{ title }} {{svg src="/assets/general/icon-chevron-down.svg" class="inline absolute right-0"}}</button>
+                            <button @click.prevent="lvl2 = (lvl2 === '{{title | slugify}}' ? null : '{{title | slugify}}')" class="text-left text-[.875rem]" :class="lvl2 === '{{title | slugify}}' ? 'active' : ''">{{ title }} {{svg src="/assets/general/icon-chevron-down.svg" class="inline absolute right-4"}}</button>
                             {{/if }}
                             {{ if children }}
                                 <div x-show="lvl2 === '{{title | slugify}}'" class="nav-level-3 my-0" x-collapse>
                                     {{ children }}
                                         {{# <li class="my-0 py-[.25rem] "> #}}
-                                            <a href="{{ url }}" class="no-underline block text-[.875rem] p-2 leading-5 hover:bg-amp-gray-50 hover:rounded  {{if is_current}}bg-amp-gray-50 text-amp-blue-500 rounded current{{else}}text-amp-gray-600{{/if}}" {{if is_current }} x-effect="lvl2 = '{{parent:title | slugify}}'; lvl1 = '{{lvl1_parent}}'"{{/if}}>{{ title }}</a>
+                                            <a href="{{ url }}" class="no-underline block text-[.875rem] p-2 leading-5 hover:bg-amp-blue-950 hover:rounded  {{if is_current}}bg-amp-blue-950 text-amp-blue-500 rounded current{{else}}text-amp-gray-600{{/if}}" {{if is_current }} x-effect="lvl2 = '{{parent:title | slugify}}'; lvl1 = '{{lvl1_parent}}'"{{/if}}>{{ title }}</a>
                                         {{# </li> #}}
                                     {{ /children }}
                                 </div>
