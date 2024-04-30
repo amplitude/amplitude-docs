@@ -1,13 +1,15 @@
 ---
-title: "The complete Amplitude Data planning workflow"
-source: "https://help.amplitude.com/hc/en-us/articles/5078746573979-The-complete-Amplitude-Data-planning-workflow"
 id: 52bfe4df-5034-4e5d-bfce-81736bf4face
+blueprint: data
+title: 'The complete Amplitude Data planning workflow'
+source: 'https://help.amplitude.com/hc/en-us/articles/5078746573979-The-complete-Amplitude-Data-planning-workflow'
+this_article_will_help_you:
+  - 'Understand the complete planning workflow using all the planning capabilities offered by Amplitude Data'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1713912374
 ---
-
-#### This article will help you:
-
-* Understand the complete planning workflow using all the planning capabilities offered by Amplitude Data
-
 Using Amplitude Data for planning helps ensure high-quality data from the start and reduces the need for clean-up later. This article will give you a sense of the complete workflow in Amplitude Data.
 
 ## Plan your events
@@ -34,7 +36,9 @@ If you've configured your project for team reviews, you may not have permission 
 
 Once the feature team is happy with the changes—the plan is comprehensive, and engineering was able to implement it correctly—your branch is ready for review by other stakeholders.
 
-**TIP**: Be sure to refresh your changes from main to get your branch up to date and resolve any potential conflicts. You may do this more than once as your developers refresh their branch (via git merge or git rebase).
+{{partial:admonition type="tip" title=""}}
+Be sure to refresh your changes from main to get your branch up to date and resolve any potential conflicts. You may do this more than once as your developers refresh their branch (with `git merge` or `git rebase`).
+{{/partial:admonition}}
 
 Analytics changes often affect the broader organization, so getting feedback is essential. Typical stakeholders include the security and legal team, the growth team, and the data team.
 
