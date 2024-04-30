@@ -943,7 +943,7 @@ If you are using RequireJS to load your JavaScript files, then you can use it to
 
 You can also define the path in your RequireJS configuration like this:
 
-```
+```html
 <script src='scripts/require.js'></script> <!-- loading RequireJS -->
 <script>
  requirejs.config({
@@ -1010,14 +1010,14 @@ You can pass a callback function to `logEvent` and `identify`, which gets called
 This is useful if timing may cause an event to not be captured before the browser navigates away from a webpage.
  Putting the navigation in a callback to the `logEvent` method guarantees the event is captured before the navigation occurs. Here is a logEvent example:
 
-```
+```js
 amplitude.getInstance().logEvent("EVENT_TYPE", null, callback_function);
 
 ```
 
 Here is an identify example:
 
-```
+```js
 var identify = new amplitude.Identify().set('key', 'value');
 amplitude.getInstance().identify(identify, callback_function);
 
@@ -1025,7 +1025,7 @@ amplitude.getInstance().identify(identify, callback_function);
 
 The status and response body from the server are passed to the callback function, which you might find useful. Here is an example of a callback function which redirects the browser to another site after a response:
 
-```
+```js
 var callback_function = function(status, response) {
  if (status === 200 && response === 'success') {
  // do something here
@@ -1037,14 +1037,14 @@ var callback_function = function(status, response) {
 
 You can also use this to track outbound links to your website. For example, you would have a link like this:
 
-```
+```html
 <a href="javascript:trackClickLinkA();">Link A</a>
 
 ```
 
 Then, you would define a function that's called when the link is clicked like this:
 
-```
+```js
 var trackClickLinkA = function() {
  amplitude.getInstance().logEvent('Clicked Link A', null, function() {
  window.location='LINK_A_URL';
@@ -1063,7 +1063,7 @@ You can pass a second callback to `logEvent` and identify that are called if the
  This is useful to detect if a user is using an ad blocker, or if there's an error from the Amplitude server due to an issue with the event format.
  You can use the error callback together with the success callback like this:
 
-```
+```js
 var successCallback = function() {
  console.log('the event was logged successfully');
 }
@@ -1080,7 +1080,7 @@ amplitude.getInstance().logEvent('event', null, successCallback, errorCallback);
 
 You can also pass a callback function to init, which is called after the SDK finishes its asynchronous loading. The instance is passed as an argument to the callback:
 
-```
+```js
 amplitude.getInstance().init(AMPLITUDE_API_KEY, 'USER_ID', null, function(instance) {
  console.log(instance.options.deviceId); // access Amplitude's deviceId after initialization
 });
@@ -1092,13 +1092,13 @@ amplitude.getInstance().init(AMPLITUDE_API_KEY, 'USER_ID', null, function(instan
 In SDK version 8.5.0 and higher, the SDK can send events using the browser's built-in navigator.sendBeacon API.
  Unlike standard network requests, sendBeacon sends events in the background, even if the user closes the browser or leaves the page.
 
-Warning
-
+{{partial:admonition type="warning" heading=""}}
 Because `sendBeacon` sends events in the background, events dispatched from `sendBeacon` don't return a server response and can't be retried when they encounter failures like 4xx or 5xx errors. You can address these retry issues by sending one event/request, but this could increase the network load and the likelihood of throttling.
+{{/partial:admonition}}
 
 To send an event using sendBeacon, set the transport SDK option to 'beacon' in one of two ways
 
-```
+```js
 // set transport to 'beacon' when initializing an event
 amplitude.getInstance().init(AMPLITUDE_API_KEY, 'USER_ID', {transport: 'beacon'});
 
@@ -1120,7 +1120,7 @@ amplitude.getInstance().logEvent('send event with http');
 
 The JavaScript SDK provides a convenient callback function that's called only when the user exits the page. It automatically switches the transport to 'beacon' for any logs sent in the callback. This callback is called `onExitPage` and is passed into the SDK on initialization, like so:
 
-```
+```js
 var exitCallback = function {
  amplitude.getInstance().logEvent('Logging a final event as user exits via sendBeacon');
 };
@@ -1156,7 +1156,7 @@ You can assign a new device ID using `setDeviceId()`. When setting a custom dev
 
 By default, the device ID is randomly generated base64 ID. You can define a custom device ID by setting it as a configuration option or by calling `setDeviceId`.
 
-```
+```js
 amplitude.getInstance().setDeviceId('DEVICE_ID');
 
 ```
@@ -1165,7 +1165,7 @@ amplitude.getInstance().setDeviceId('DEVICE_ID');
 
 You can retrieve the device ID that Amplitude uses with `Amplitude.getInstance().getDeviceId()` or `Amplitude.getInstance('YOUR-INSTANCE-NAME').getDeviceId()` if you defined a custom instance name. This method can return `null` if a `deviceId` hasn't been generated yet.
 
-```
+```js
 const deviceId = amplitude.getInstance().getDeviceId();
 
 ```
@@ -1176,7 +1176,7 @@ Sometimes you have more than one Amplitude Javascript SDK instance setup and wan
 
 - Method1: Initialize the other instance with device ID in configuration
 
-```
+```js
 // Initialize an instance with default configuration 
 // Device Id of this instance is created by default
 var instanceDev = amplitude.getInstance("amplitude-dev");
@@ -1193,7 +1193,7 @@ instanceProd.init("API-KEY-2", undefined, {
 
 - Method2: Set device ID after initialization whenever you need it to be the same
 
-```
+```js
 var instanceDev = amplitude.getInstance("amplitude-dev");
 instanceDev.init("API-KEY-1");
 
@@ -1213,48 +1213,3 @@ If your web app configures the strict Content Security Policy (CSP) for security
 
 - When using ["Snippet"](#install), add `https://*.amplitude.com` to `script-src`.
 - Add `https://*.amplitude.com` to `connect-src`.
-
----
-
- function getPageInfo() {
- return {
- path: window.location.pathname,
- product: window.location.pathname.split('/')[1],
- url: window.location.href
- };
- }
-
- function trackCommunity(){
- amplitude.track('Link Click', {
- ...getPageInfo(),
- name: "community_help"
- })
- }
-
- function trackClickSupportRequest(){
- amplitude.track('support request', getPageInfo());
- }
-
- function trackFeedback(isUseful){
-
- document.getElementById("happyButton").disabled = true;
- document.getElementById("sadButton").disabled = true;
-
- var feedbackMessage = document.createElement("p");
- feedbackMessage.innerHTML = isUseful ? "Glad to hear that!" : 'Still have questions? Ask them in the <a id="linkToCommunityHelp" href="https://community.amplitude.com" onclick="trackCommunity()" target="_blank" rel="noopener">Community</a> or <a href="https://support.amplitude.com/" onclick="trackClickSupportRequest()" target="_blank" rel="noopener">submit a request</a>.';
- document.getElementById("feedbackMessage").appendChild(feedbackMessage);
-
- /* Send feedback value */
- amplitude.track('feedback', {
- ...getPageInfo(),
- isUseful: isUseful
- });
- }
-
-##### Was this page helpful?
-
- Yes
- 
- No
- 
-September 21, 2023
