@@ -17,8 +17,31 @@ tree:
         id: 9ae22aac-a94b-4b10-b5b2-ac5f47969443
         entry: 8471af8b-e132-4073-8330-d5dd7bbbd8ae
       -
-        id: 7fe1aa97-84da-4273-9bf8-7218521adfb2
-        entry: 9b155be9-bb32-428c-9f49-6e00f9630547
-      -
         id: fa328ed2-48ff-4dc4-9f39-a8dcd36b54a2
         entry: f7989230-bf1c-48aa-ad61-2bc2b3e15a8c
+      -
+        id: 7fe1aa97-84da-4273-9bf8-7218521adfb2
+        entry: 9b155be9-bb32-428c-9f49-6e00f9630547
+  -
+    id: e27a5a8a-3201-49d1-bcf4-51de1e894a55
+    title: 'Javascript SDK'
+    children:
+      -
+        id: a5e4863d-e5c4-4a86-ad0f-e39b20901410
+        entry: e6b6889d-9d39-4f04-89a1-87f78db80f49
+      -
+        id: c0cde138-a993-4bcf-8526-250902400fcc
+        entry: 6b771f94-bf3a-44ba-a6a7-6e5b58108f70
+      -
+        id: 3a7309e2-7d8b-40e9-8605-548ae311b150
+        entry: b7cc9d54-870a-40bc-93d8-a2ac15375e75
+  -
+    id: 200670e6-8e72-4185-866b-4d3e56a51f59
+    title: 'Marketing Analytics SDK'
+    children:
+      -
+        id: 22f28dad-738e-4342-a839-35246ba19f5a
+        entry: 25904c6b-609d-4365-9660-2782ef50d52d
+      -
+        id: d384897b-20d2-4cc2-89f6-892a531baafd
+        entry: eb4533a3-2075-49a0-83fa-e703afea78e7
