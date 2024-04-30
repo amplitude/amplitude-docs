@@ -19,8 +19,8 @@
 		"scope": "markdown",
 		"prefix": "adm",
 		"body": [
-			"{{partial:admonition type=\"$1\" title=\"$2\"}}",
-			"This is a note",
+			"{{partial:admonition type=\"$1\" heading=\"$2\"}}",
+			"$TM_SELECTED_TEXT"	,
 			"{{/partial:admonition}}"
 		],
 		"description": "Admonition"

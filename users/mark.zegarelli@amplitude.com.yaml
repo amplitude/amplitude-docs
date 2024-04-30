@@ -6,6 +6,8 @@ preferences:
   assets:
     icons:
       mode: grid
+    assets:
+      per_page: 500
   taxonomies:
     integration_category:
       after_save: create_another

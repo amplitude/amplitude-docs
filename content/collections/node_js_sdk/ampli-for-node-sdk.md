@@ -11,4 +11,5 @@ bundle_url: 'https://www.npmjs.com/package/@amplitude/ampli?activeTab=readme'
 parent: 8cbcfa2a-a300-48c8-b551-aee1b1423cdb
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1710272806
+nav_title: node_js_sdk
 ---
