@@ -8,4 +8,5 @@ updated_at: 1706310969
 nav_title: destination_catalog
 catalog: destination-catalog
 template: integration-catalog
+hide_helpful: true
 ---

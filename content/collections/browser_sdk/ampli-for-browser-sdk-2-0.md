@@ -126,7 +126,7 @@ yarn add @amplitude/analytics-browser
 {{/partial:tabs}}
 
 {{partial:admonition type="note" title=""}}
-When you use Ampli in the browser, Amplitude recommends loading `@amplitude/analytics-browser` as a module rather than as a JavaScript snippet.
+When you use Ampli in the browser, Amplitude recommends loading `amplitude-js` as a module rather than as a JavaScript snippet.
 {{/partial:admonition}}
 
 ## Install the Ampli CLI
