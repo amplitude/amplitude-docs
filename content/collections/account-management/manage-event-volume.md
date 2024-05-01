@@ -1,9 +1,10 @@
 ---
-title: "Scale: Manage your event volume with dynamic behavioral sampling"
-source: "https://help.amplitude.com/hc/en-us/articles/115001476972-Scale-Manage-your-event-volume-with-dynamic-behavioral-sampling"
 id: c657f85d-8174-4941-9c82-80b794b5d776
+published: false
+blueprint: account-management
+title: 'Scale: Manage your event volume with dynamic behavioral sampling'
+source: 'https://help.amplitude.com/hc/en-us/articles/115001476972-Scale-Manage-your-event-volume-with-dynamic-behavioral-sampling'
 ---
-
 #### This article will help you:
 
 * Manage costs related to very high event volumes
