@@ -1130,6 +1130,8 @@ video {
   overflow: scroll;
 }.overflow-x-scroll {
   overflow-x: scroll;
+}.overscroll-contain {
+  overscroll-behavior: contain;
 }.rounded {
   border-radius: 0.25rem;
 }.rounded-full {
