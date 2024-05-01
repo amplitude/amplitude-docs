@@ -10,7 +10,7 @@
         {{ /if }}
       </div>
       <div
-        class="prose prose-a:text-amp-blue-300 prose-ol:list-decimal prose-ol:list-outside prose-pre:bg-[#fafafa] w-full">
+        class=" prose-a:text-amp-blue-300 prose-ol:list-decimal prose-ol:list-outside prose-pre:bg-[#fafafa] w-full">
         {{ conn_type }}
         {{ taxonomy:integration_category min_count="1" :collection="catalog" }}
           <h2 id="{{ title | slugify }}">{{ title }}</h2>
@@ -34,4 +34,5 @@
     {{ /unless }}
   </div>
   </div>
+  {{ partial:article-footer }}
 </section>

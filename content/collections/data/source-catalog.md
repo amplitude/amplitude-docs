@@ -5,4 +5,5 @@ title: 'Source Catalog'
 nav_title: source_catalog
 catalog: source-catalog
 template: integration-catalog
+hide_helpful: true
 ---
