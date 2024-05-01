@@ -216,3 +216,77 @@ ampli.songPlayed( {
   myMiddleware: { myMiddlewareProp: "value to send to middleware" }
 });
 ```
+
+Ampli also generates a class for each event.
+
+```js
+const myEventObject = new SongPlayed({
+  songId: 'songId', // string,
+  songFavorited: true, // boolean
+});
+```
+
+Track Event objects using Ampli `track`:
+
+```js
+ampli.track(new SongPlayed({
+  songId: 'songId', // string,
+  songFavorited: true, // boolean
+}));
+```
+
+### Flush
+
+The Ampli wrapper queues events and sends them on an interval based on the configuration.
+
+Call `flush()` to immediately send any pending events.
+
+The `flush()` method returns a promise you can use to ensure all pending events send before continuing.
+This can be useful to call prior to application exit.
+
+```typescript
+ampli.flush();
+```
+
+## Ampli CLI
+
+### Pull
+
+The `pull` command downloads the Ampli Wrapper code to your project. Run the `pull` command from the project root.
+
+```bash
+ampli pull
+```
+
+Log in to your workspace when prompted and select a source.
+
+```bash
+➜ ampli pull
+Ampli project is not initialized. No existing `ampli.json` configuration found.
+? Create a new Ampli project here? Yes
+? Organization: Amplitude
+? Workspace: My Workspace
+? Source: My Source
+```
+
+Learn more about [`ampli pull`](../../ampli/cli.md#ampli-pull).
+
+### Status
+
+Verify that events are in your code with the status command:
+
+```bash
+ampli status [--update]
+```
+
+The output displays status and indicates what events are missing.
+
+```bash
+➜ ampli status
+✘ Verifying event tracking implementation in source code
+ ✔ Song Played (1 location)
+ ✘ Song Stopped Called when a user stops playing a song.
+Events Tracked: 1 missed, 2 total
+```
+
+Learn more about [`ampli status`](../../ampli/cli.md#ampli-status).
