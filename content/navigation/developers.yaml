@@ -5,3 +5,4 @@ collections:
   - api
   - experiment-apis
   - instrumentation
+  - session-replay
