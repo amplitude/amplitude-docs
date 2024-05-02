@@ -5,7 +5,9 @@ title: 'Python SDK'
 source: 'https://www.docs.developers.amplitude.com/data/sdks/python/'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1711056754
+updated_at: 1714687944
+logo: icons/python.svg
+exclude_from_sitemap: false
 ---
 ```python
 def callback_func(event, code, message=None):

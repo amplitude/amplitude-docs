@@ -350,12 +350,13 @@ a.toc-link {
 
 .hint-title {
     border: none;
-    font-weight: 700;
+    font-weight: 600;
     margin: 0;
     padding: 8px 12px 8px 40px;
     position: relative;
-    font-size: 13px;
+    font-size: 14px;
     box-sizing: border-box;
+    font-family: 'IBM Plex Sans', sans-serif;
     border-top-left-radius: theme('borderRadius.md');
     border-top-right-radius: theme('borderRadius.md');
 }
