@@ -3,7 +3,7 @@ template: default
 layout: layout
 mount: c3197ac0-3df0-447b-b632-e1ec4b6e88c9
 revisions: false
-route: '/sdks/sdk-catalog/android-sdk/{slug}'
+route: '/sdks/analytics-sdks/android-sdk/{slug}'
 sort_dir: asc
 date_behavior:
   past: public
