@@ -17,8 +17,6 @@
   <script src="{{ mix src='/js/site.js' }}"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.min.js"></script>
-
   <style>
     [x-cloak] {
       display: none !important;
@@ -69,5 +67,29 @@
       </div>
     {{ /if }}
   </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.min.js"></script>
+    <script>
+
+      // Get all h2 and h3 elements
+      var headings = document.querySelectorAll('h2, h3');
+  
+      // Check if there are more than 3
+      if (headings.length > 2) {
+        // Execute your code here
+        tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.js-toc',
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.prose',
+          // Which headings to grab inside of the contentSelector element.
+          headingSelector: 'h2, h3',
+          // For headings inside relative or absolute positioned containers within content.
+          hasInnerContainers: true,
+          ignoreSelector: '.hint-title',
+          orderedList: false,
+          ignoreHiddenElements: true,
+        });    }
+     
+    </script>
 </body>
 </html>
