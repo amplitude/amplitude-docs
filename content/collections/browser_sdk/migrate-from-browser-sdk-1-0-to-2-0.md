@@ -53,7 +53,7 @@ Ampli v2 is compatible with both Browser SDK 2.0 and Browser SDK 1.0. Follow thi
 
 ## Default events tracking
 
-Starting Browser SDK 2.0, default tracking is enabled by default. Default tracking is implicit tracking performed by Amplitude on your behalf, and includes page views, sessions, file downloads, form interactions, and marketing attribution.
+Starting with Browser SDK 2.0, default tracking is enabled by default. Default tracking is implicit tracking performed by Amplitude on your behalf, and includes page views, sessions, file downloads, form interactions, and marketing attribution.
 
 To opt out of default tracking, set `options.defaultTracking` to `false`.
 
