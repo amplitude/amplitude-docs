@@ -1,14 +1,14 @@
 ---
-title: "Finalize your experiment's statistical preferences"
-source: "https://help.amplitude.com/hc/en-us/articles/13448368364187-Finalize-your-experiment-s-statistical-preferences"
 id: ec448015-b432-434a-93a0-6392b4474d67
+blueprint: workflow
+title: "Finalize your experiment's statistical preferences"
+source: 'https://help.amplitude.com/hc/en-us/articles/13448368364187-Finalize-your-experiment-s-statistical-preferences'
+this_article_will_help_you:
+  - "Understand the default statistical preferences in your experiment's results"
+  - 'Understand when to modify the default settings'
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1714517514
 ---
-
-#### This article will help you:
-
-* Understand the default statistical preferences in your experiment's results
-* Understand when to modify the default settings
-
 Amplitude Experiment uses default statistical settings for experiment analyses: 
 
 ![defaultStatsPreferences.png](/output/img/workflow/defaultstatspreferences-png.png)
@@ -21,7 +21,7 @@ Amplitude Experiment uses default statistical settings for experiment analyses:�
 
 As you review your results, your experiment may benefit from modifying one or more of the default settings. To modify the default statistical preferences, follow the steps below:
 
-1. From the *Settings* tab, click ![editPencil.png](/output/img/workflow/editpencil-png.png) in the *Analysis Settings* card.
+1. From the *Settings* tab, click the Edit icon in the *Analysis Settings* card.
 2. In the fly-out that appears, go to *Stats Preferences*.
 3. Make the desired edits to the default settings, and then click *Save*.
 
@@ -57,4 +57,4 @@ Read more about how to utilize a [T-test](/experiment/experiment-theory/analyze-
 
 ## Confidence Level
 
-The confidence level measures how confident Amplitude Experiment is that it would generate the same results for the experiment if you were to roll it out again and again. The default confidence level of 95% means that 5% of the time, you might interpret the results as statistically significant when they're not. Lowering your experiment’s confidence level will make it more likely that your experiment reaches statistical significance, but the likelihood of a false positive goes up. You should not go below 80%, as the experiment's results may no longer be reliable at this point. 
+The confidence level measures how confident Amplitude Experiment is that it would generate the same results for the experiment if you were to roll it out again and again. The default confidence level of 95% means that 5% of the time, you might interpret the results as statistically significant when they're not. Lowering your experiment’s confidence level will make it more likely that your experiment reaches statistical significance, but the likelihood of a false positive goes up. You should not go below 80%, as the experiment's results may no longer be reliable at this point.

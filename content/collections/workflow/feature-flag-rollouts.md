@@ -1,21 +1,18 @@
 ---
-title: "Working with feature flags and feature rollouts"
-source: "https://help.amplitude.com/hc/en-us/articles/360061687311-Working-with-feature-flags-and-feature-rollouts"
 id: 37e1ab54-da77-4a60-be41-1c1018c4163a
+blueprint: workflow
+title: 'Working with feature flags and feature rollouts'
+source: 'https://help.amplitude.com/hc/en-us/articles/360061687311-Working-with-feature-flags-and-feature-rollouts'
+this_article_will_help_you:
+  - 'Understand the role of **flags** in Amplitude Experiment'
+  - 'Create a new feature flag'
+  - 'Use a flag to roll out a new feature'
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1714517386
 ---
+In Amplitude Experiment, a **flag** is a way for you to enable or disable a function or feature in your product, without having to deploy new code each time. Flags drive both experiments and feature rollouts: They're are ideal for launching experiments and ending them once you’ve collected enough data, or for rolling out new features (and rolling them back quickly, if you need to).
 
-#### This article will help you:
-
-* Understand the role of **flags** in Amplitude Experiment
-* Create a new feature flag
-* Use a flag to roll out a new feature
-
-In Amplitude Experiment, a **flag** is a way for you to enable or disable a function or feature in your product, without having to deploy new code each time. Flags drive both experiments and feature rollouts: 
-
-* Flags are ideal for launching experiments and ending them once you’ve collected enough data,
-* or for rolling out new features (and rolling them back quickly, if you need to).
-
-This article will explain how to create a flag for a **feature rollout**. If you need information on how to use flags in your experiments, start with our Help Center article on [rolling out your experiment to your users](/experiment/workflow/experiment-test).
+This article will explain how to create a flag for a **feature rollout**. If you need information on how to use flags in your experiments, start with our article on [rolling out your experiment to your users](/experiment/workflow/experiment-test).
 
 ### Feature availability
 
@@ -29,10 +26,13 @@ You cannot create a new flag until you’ve created a deployment, and either ins
 2. In the *Create Flag* modal, choose the project that will include this flag from the *Projects* drop-down menu. Then give your flag a name and a description. Amplitude Experiment will automatically generate the flag key from the name you choose. The flag key is an identifier for the flag used in your codebase.
 3. Specify the [evaluation mode](https://www.docs.developers.amplitude.com/experiment/general/evaluation/local-evaluation/) for your experiment, either *Remote* (i.e., it will be evaluated on Amplitude servers) or *Local*. Then specify the **bucketing unit** you want to use for this experiment.  
   
-**TIP:** The best bucketing unit will usually be the user. However, in some B2B use cases, you might want to use company ID or city as the bucketing unit. For example, bucketing by company ID ensures that all users in a particular company will have the same user experience. Be sure the [Stable Unit Treatment Value Assumption](https://blogs.iq.harvard.edu/violations_of_s#:~:text=Methods%20for%20causal%20inference%2C%20in,treatments%20of%20others%20around%20him) holds for whichever unit you choose.
+{{partial:admonition type='tip'}}
+The best bucketing unit will usually be the user. However, in some B2B use cases, you might want to use company ID or city as the bucketing unit. For example, bucketing by company ID ensures that all users in a particular company will have the same user experience. Be sure the [Stable Unit Treatment Value Assumption](https://blogs.iq.harvard.edu/violations_of_s#:~:text=Methods%20for%20causal%20inference%2C%20in,treatments%20of%20others%20around%20him) holds for whichever unit you choose.
+{{/partial:admonition}}
+
 4. When you’re done, click *Create*. Experiment will open a blank template for your flag.
 5. Next, on the *Configure* tab, choose the **deployment** for your experiment from the *Deployment* drop-down menu. For more information about working with deployments, see [this article on configuring Amplitude Experiment](/experiment/workflow/configure).
-6. In *Advanced Settings*, you can change the **bucketing salt**. But if you do, users might switch between variants in your experiment. For that reason, we recommend you **do not change the bucketing salt** unless you know what you're doing. For more information, see our Help Center article on [how randomization works in Amplitude Experiment](/experiment/under-the-hood/experiment-randomization).
+6. In *Advanced Settings*, you can change the **bucketing salt**. But if you do, users might switch between variants in your experiment. For that reason, we recommend you **do not change the bucketing salt** unless you know what you're doing. For more information, see our article on [how randomization works in Amplitude Experiment](/experiment/under-the-hood/experiment-randomization).
 7. Your flag must have at least one **variant**. The variant is the new feature or product experience you want to roll out to your users.  
   
 You can add as many variants as you need to a feature flag. To add a variant to your flag, click *+ Create Variant*.

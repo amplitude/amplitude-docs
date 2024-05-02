@@ -1,19 +1,21 @@
 ---
-title: "Learn from your experiment"
-source: "https://help.amplitude.com/hc/en-us/articles/360061687631-Learn-from-your-experiment"
 id: 2e357f69-a007-4912-8603-5e568d6ddcb8
+blueprint: workflow
+title: 'Learn from your experiment'
+source: 'https://help.amplitude.com/hc/en-us/articles/360061687631-Learn-from-your-experiment'
+this_article_will_help_you:
+  - 'See your experimental results'
+  - 'Understand and interpret those results'
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1714516898
 ---
-
-#### This article will help you:
-
-* See your experimental results
-* Understand and interpret those results
-
 You’ve designed your experiment, rolled it out to your users, and given them enough time to interact with your new variants. Now it’s time to see if your hypothesis was correct.
 
 In the *Analysis* card, you’ll be able to tell at a glance whether your experiment has yielded **statistically-significant** results, as well as what those results actually are. Amplitude Experiment takes the information you gave it during the design and rollout phases and plugs them in for you automatically, so there’s no repetition of effort. It breaks the results out by variant, and provides you with a convenient, detailed tabular breakdown.
 
-**NOTE:** This article continues directly from the [article in our Help Center on rolling out your experiment](/experiment/workflow/experiment-test). If you haven’t read that and followed the process it describes, do so before continuing here.
+{{partial:admonition type='note'}}
+This article continues directly from the [article in our Help Center on rolling out your experiment](/experiment/workflow/experiment-test). If you haven’t read that and followed the process it describes, do so before continuing here.
+{{/partial:admonition}}
 
 Amplitude will not generate p-values or confidence intervals for experiments using binary metrics (i.e., unique conversions) until each variant has 100 users **and** 25 conversions. Experiments using non-binary metrics need only to reach 100 users per variant.
 
@@ -47,21 +49,28 @@ The exposure definition's default state is collapsed. Expand it by clicking ![ex
   
 You can also create a chart in Amplitude Analytics from this experiment by clicking *Open in Chart*.  
   
-**NOTE:** If you are running an A/B/n test, Amplitude Experiment displays the confidence interval / p-value for the control against each treatment individually. To instead see the comparison between two non-control treatments, either change the control variant, or open the test in Analytics and create a chart using the two treatments you're interested in.
+{{partial:admonition type='note'}}If you are running an A/B/n test, Amplitude Experiment displays the confidence interval / p-value for the control against each treatment individually. To instead see the comparison between two non-control treatments, either change the control variant, or open the test in Analytics and create a chart using the two treatments you're interested in.
+{{/partial:admonition}}
+
 3. If desired, adjust the experiment’s **confidence level**. The default is 95%. You can also [choose between a sequential test and a T-test](/experiment/workflow/finalize-statistical-preferences).   
   
-**NOTE:** Lowering your experiment’s confidence level will make it more likely that your experiment achieves statistical significance, but the trade-off is that doing so increases the likelihood of a false positive.
+{{partial:admonition type='note'}}
+Lowering your experiment’s confidence level will make it more likely that your experiment achieves statistical significance, but the trade-off is that doing so increases the likelihood of a false positive.
+{{/partial:admonition}}
+
 4. Set the **time frame** for your experiment analysis, either from the selection of pre-set durations, or by opening the date picker and choosing a custom date range.
 
 The tables, graphs, and charts shown in the Analysis section are explained in depth in our Help Center articles on [understanding the Experiment Analysis view](/experiment/analysis-view) and [interpreting the cumulative exposures graph in Amplitude Experiment](/experiment/advanced-techniques/cumulative-exposure-change-slope).
 
-**NOTE:** Amplitude Experiment needs something to compare your control to in order to generate results. If you neglect to include **both** the control and **at least one** variant, your chart will not display anything.
+{{partial:admonition type='note'}}
+Amplitude Experiment needs something to compare your control to in order to generate results. If you neglect to include **both** the control and **at least one** variant, your chart will not display anything.
+{{/partial:admonition}}
 
 Congratulations! You’ve successfully designed, rolled out, and analyzed your experiment.
 
 ## Interpret notifications
 
-Your preferred [notification](/analytics/integrate-slack). 
+Your preferred notification settings allow you to receive experiment updates by email or [Slack](/analytics/integrate-slack). 
 
 ![experiment notification settings.png](/output/img/workflow/experiment-notification-settings-png.png)
 
