@@ -1,13 +1,15 @@
 ---
-title: "Set app-level user permissions in Experiment"
-source: "https://help.amplitude.com/hc/en-us/articles/4416438117147-Set-app-level-user-permissions-in-Experiment"
 id: 52e1fdb9-b354-4012-b8de-d378c68cbf26
+blueprint: experiment
+title: 'Set app-level user permissions in Experiment'
+source: 'https://help.amplitude.com/hc/en-us/articles/4416438117147-Set-app-level-user-permissions-in-Experiment'
+this_article_will_help_you:
+  - 'Set user permissions for Amplitude Experiment that are independent of and separate from those used in Amplitude Analytics'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1714666356
 ---
-
-#### This article will help you:
-
-* Set user permissions for Amplitude Experiment that are independent of and separate from those used in Amplitude Analytics
-
 Experiment app-level permissions enable Amplitude admins to manage access to Amplitude Experiment separately from Amplitude Analytics. Use this when you want to:
 
 * **Prevent** analytics team members from releasing features through Experiment, **and/or**
@@ -22,15 +24,18 @@ To set app-level user permissions in Experiment, follow these steps:
 
 1. In Experiment, click *Permissions* in the left-hand sidebar. The Experiment Permissions page will display, with the Joined Users tab open.
 2. In the *Search* field, type the name or email of the user you're looking for. Then click the checkbox next to their name. The actions above the table should now be selectable in blue.
-3. Click *Manage Project Access to s*earch for the project where you want to adjust permissions.
+3. Click *Manage Project Access* to search for the project where you want to adjust permissions.
 4. From the dropdown displaying the current permission level for the selected user, select their updated access level. Then click *Next*.  
   
 ![manage_project_access_modal.png](/output/img/experiment/manage-project-access-modal-png.png)
+
 5. If you're sure you want to make these changes, click *Submit*.
 
 ## Flag-level access controls
 
-**NOTE:** This feature is in open beta and is available to users on Enterprise plans only.
+{{partial:admonition type='note'}}
+This feature is in open beta and is available to users on Enterprise plans only.
+{{/partial:admonition}}
 
 With flag-level access controls, you can determine which Amplitude Experiment users can make changes to specific flags or experiments. 
 

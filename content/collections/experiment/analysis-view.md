@@ -1,13 +1,15 @@
 ---
-title: "Understand the Experiment Analysis view"
-source: "https://help.amplitude.com/hc/en-us/articles/8485952382235-Understand-the-Experiment-Analysis-view"
 id: c43935f9-32e2-4ac9-82ed-9513d66203b8
+blueprint: experiment
+title: 'Understand the Experiment Analysis view'
+source: 'https://help.amplitude.com/hc/en-us/articles/8485952382235-Understand-the-Experiment-Analysis-view'
+this_article_will_help_you:
+  - 'Understand what the *Analysis* view tells you about your experiment, and how to access it'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1714666202
 ---
-
-#### This article will help you:
-
-* Understand what the *Analysis* view tells you about your experiment, and how to access it
-
 Within Amplitude Experiment, the **Experiment Analysis** view is where you’ll find the details of your experiment. Visible on the *Analysis* card under the *Activity* tab, it gives you a convenient way to quickly take in the most important, high-level statistical measurements that help you determine whether your experiment was a success.
 
 In this article, we will briefly describe what each of the columns in this table means, and how they relate to your experiment.
