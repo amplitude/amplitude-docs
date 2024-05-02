@@ -1,14 +1,14 @@
 ---
-title: "Add variants to your experiment"
-source: "https://help.amplitude.com/hc/en-us/articles/4405832771995-Add-variants-to-your-experiment"
 id: 50d1c589-2a92-427b-84d0-eb664f55678d
+blueprint: workflow
+title: 'Add variants to your experiment'
+source: 'https://help.amplitude.com/hc/en-us/articles/4405832771995-Add-variants-to-your-experiment'
+this_article_will_help_you:
+  - 'Create new variants, which will be compared to the control (or baseline)'
+  - 'Add additional code to your variants, to create more dynamic user experiences'
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1714514203
 ---
-
-#### This article will help you:
-
-* Create new variants, which will be compared to the control (or baseline)
-* Add additional code to your variants, to create more dynamic user experiences
-
 The next step in designing your experiment is to **create at least one variant**. Amplitude Experiment will compare your variants with the **control**, which is usually your product’s current user experience. (This way, Amplitude Experiment measures the performance of the variant against a known quantity, the performance of your app as it is today.)
 
 ## Add and manage variants
@@ -59,6 +59,6 @@ The next step is to set the **rollout percentage** for this experiment. This is 
 
 Manually enter the percentage of your audience that should be eligible for bucketing into the experiment. If you roll your experiment out to less than 100% of your users, the balance will see your default product experience, and will not be included in any experiment calculations.
 
-Note that Amplitude Experiment evaluates for users included in rule-based user segments before those not covered by a user segment. However, it evaluates for any [individual user or device IDs](https://help.amplitude.com/hc/en-us/articles/360061687131#qa-before-rollout) prior to both. For more information, see [this article in the Amplitude Developer Center](https://www.docs.developers.amplitude.com/experiment/general/evaluation/implementation/).
+Note that Amplitude Experiment evaluates for users included in rule-based user segments before those not covered by a user segment. However, it evaluates for any [individual user or device IDs](https://help.amplitude.com/hc/en-us/articles/360061687131#qa-before-rollout) prior to both. For more information, see [this article](https://www.docs.developers.amplitude.com/experiment/general/evaluation/implementation/).
 
 Next, it's time to [finalize your experiment's statistical settings](/experiment/workflow/finalize-statistical-preferences).

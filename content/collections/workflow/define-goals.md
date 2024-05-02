@@ -1,14 +1,14 @@
 ---
-title: "Define your experiment's goals"
-source: "https://help.amplitude.com/hc/en-us/articles/4405839607579-Define-your-experiment-s-goals"
 id: f8a65f47-6611-4f85-a5e4-3602c5b5821b
+blueprint: workflow
+title: "Define your experiment's goals"
+source: 'https://help.amplitude.com/hc/en-us/articles/4405839607579-Define-your-experiment-s-goals'
+this_article_will_help_you:
+  - 'Add primary and secondary metrics to your experiment'
+  - 'Create new metrics from scratch, and edit existing metrics'
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1714515123
 ---
-
-#### This article will help you:
-
-* Add primary and secondary metrics to your experiment
-* Create new metrics from scratch, and edit existing metrics
-
 An experiment can’t tell you anything without events to track. Adding metrics to your experiment occurs in the Goals segment of the experiment design panel. Here, you’ll tell Amplitude Experiment what you want your **primary metric** to be, as well as define any **secondary metrics**. The primary metric determines whether your hypothesis has been accepted or rejected—and therefore, whether your experiment has succeeded or failed.
 
 There’s a lot riding on your primary metric, so it’s important to select the right one. If you’re not experienced in A/B testing, it can be hard to know which one that is. But if you know what to look for, your odds of a successful [variant](/experiment/workflow/add-variants) improve dramatically:
@@ -50,6 +50,6 @@ The Amplitude exposure event is sent when your app calls .variant(). It sets the
 
 That said, you can also select a custom exposure event instead. Click *Custom Exposure*, then *Select event …* to do so. Be aware that there is a much greater risk of triggering a custom exposure event at the wrong time; this can lead to a [sample ratio mismatch](/experiment/advanced-techniques/sample-ratio-mismatch).
 
-For more information, see our [article in the Amplitude Developer Center](https://www.docs.developers.amplitude.com/experiment/general/exposure-tracking/) about exposure events.
+For more information, see [this article about exposure events in Amplitude Experiment](https://www.docs.developers.amplitude.com/experiment/general/exposure-tracking/).
 
 The next step is defining your experiment's audience.

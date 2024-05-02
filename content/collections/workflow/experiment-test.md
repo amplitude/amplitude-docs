@@ -1,15 +1,14 @@
 ---
-title: "Test and launch your experiment"
-source: "https://help.amplitude.com/hc/en-us/articles/360061687611-Test-and-launch-your-experiment"
 id: 65d9fafb-4f9c-4c7d-936e-0627d5c20937
+blueprint: workflow
+title: 'Test and launch your experiment'
+source: 'https://help.amplitude.com/hc/en-us/articles/360061687611-Test-and-launch-your-experiment'
+this_article_will_help_you:
+  - 'QA your experiment before and after rollout'
+  - 'Launch your experiment to your users'
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1714517033
 ---
-
-#### 
-This article will help you:
-
-* QA your experiment before and after rollout
-* Launch your experiment to your users
-
 Once you’ve designed your experiment and configured its delivery, you’re ready to test your experiment. Then, if all goes well, it’s time to launch it.
 
 On your Experiment Overview page, review the *Design* and *Delivery* cards. Make sure everything is set the way you planned it. Then click *Test Instrumentation* to send the experiment’s variants to the testers you designated when you [configured the experiment's delivery](/experiment/workflow/configure-delivery).
@@ -24,7 +23,9 @@ Because Experiment allows you to **allocate specific variants by user ID, device
 
 When you’re satisfied the implementation is as you intended, click *Start Experiment*. In the modal that opens, you can set an end date for the experiment, if you prefer.
 
-**NOTE:** *Start Experiment* only activates the experiment **once**. Changing the start date **will not** automatically trigger the experiment to activate on the new start date.
+{{partial:admonition type='note'}}
+*Start Experiment* only activates the experiment **once**. Changing the start date **will not** automatically trigger the experiment to activate on the new start date.
+{{/partial:admonition}}
 
 Once the experiment is running, the button is relabeled *Complete Experiment*. You will be able to click this button again when you reach the experiment's end date, or when the experiment hits statistical significance. At that point, you can do one of three things:
 
