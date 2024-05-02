@@ -39,5 +39,13 @@
 			"{{/partial:tabs}}"
 		],
 		"description": "Tab Group"
-	}
+	},
+	"Torchlight Annotation": {
+		"scope": "markdown",
+		"prefix": "torch",
+		"body": [
+			"//[tl! $1]"
+		],
+		"description": "Torchlight Annotation"
+	},
 }
