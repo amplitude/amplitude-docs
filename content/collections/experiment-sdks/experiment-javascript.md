@@ -3,12 +3,16 @@ id: da42e101-0d3f-4e0f-81cc-83516100e99b
 blueprint: experiment-sdk
 title: 'Experiment JavaScript SDK'
 source: 'https://www.docs.developers.amplitude.com/experiment/sdks/javascript-sdk/'
-github_link: "https://github.com/amplitude/experiment-js-client"
-releases_link: "https://github.com/amplitude/experiment-js-client/releases"
-api_reference_link: "https://amplitude.github.io/experiment-js-client/"
-npm_version_url: "https://img.shields.io/npm/v/@amplitude/experiment-js-client"
+github_link: 'https://github.com/amplitude/experiment-js-client'
+releases_link: 'https://github.com/amplitude/experiment-js-client/releases'
+api_reference_link: 'https://amplitude.github.io/experiment-js-client/'
+npm_version_url: 'https://img.shields.io/npm/v/@amplitude/experiment-js-client'
+author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1714689706
 ---
-
 ## Install
 
 Install the Experiment Javascript Client SDK with one of the three following methods:
@@ -184,4 +188,5 @@ Configure the SDK client once during initialization.
 | `exposureTrackingProvider` | Implement and configure this interface to track exposure events through the experiment SDK, either automatically or explicitly. | `null` |
 | `instanceName` | Custom instance name for experiment SDK instance. **The value of this field is case-sensitive.** | `null` |
 | `initialFlags` | A JSON string representing an initial set of flag configurations to use for local evaluation. | `undefined` |
+
 {{/partial:collapse}}

@@ -3,6 +3,10 @@ id: 99b87b72-07f8-4e08-9dcd-348f3c8976f3
 blueprint: session-replay
 title: 'Session Replay Plugin'
 source: 'https://www.docs.developers.amplitude.com/session-replay/sdks/standalone/'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1714686587
 ---
 {{partial:admonition type="note" heading="Session Replay instrumentation"}}
 Session Replay isn't enabled by default, and requires setup beyond the standard Amplitude instrumentation.
@@ -10,7 +14,7 @@ Session Replay isn't enabled by default, and requires setup beyond the standard 
 
 This article covers the installation of Session Replay using the Browser SDK plugin. If your site is already instrumented with Amplitude, use this option. If you use a provider other than Amplitude for in-product analytics, choose the [standalone implementation](/session-replay/session-replay-standalone-sdk).
 
-{{partial:admonition type="info" heading="Session Replay and performane"}}
+{{partial:admonition type="info" heading="Session Replay and performance"}}
 Amplitude built Session Replay to minimize impact on the performance of web pages on which it's installed by:
 
 - Asynchronously capturing and processing replay data, to avoid blocking the main user interface thread.
