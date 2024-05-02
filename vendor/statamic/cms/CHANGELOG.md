@@ -1,5 +1,68 @@
 # Release Notes
 
+## 4.57.3 (2024-05-02)
+
+### What's improved
+- German translations. [#9957](https://github.com/statamic/cms/issues/9957) by @helloDanuk
+
+### What's fixed
+- Fix Starter Kit installation on Windows. [#9968](https://github.com/statamic/cms/issues/9968) by @JohnathonKoster
+- Fix `starter-kit:install` with custom branch when branch has slash. [#9978](https://github.com/statamic/cms/issues/9978) by @jesseleite
+- Fix first child redirects when using array syntax. [#9965](https://github.com/statamic/cms/issues/9965) by @jasonvarga
+- Fix wrong permission used for configuring navs. [#9961](https://github.com/statamic/cms/issues/9961) by @simonolog
+- Fix `DataReferenceUpdater` when field data from array is null. [#9954](https://github.com/statamic/cms/issues/9954) by @duncanmcclean
+- Fix dated collection listing when time is enabled. [#9951](https://github.com/statamic/cms/issues/9951) by @jacksleight
+- Fix route parameters in Statamic routes with closures. [#9953](https://github.com/statamic/cms/issues/9953) by @arthurperton
+- Fake composer installs in make command tests. [#9955](https://github.com/statamic/cms/issues/9955) by @jasonvarga
+
+
+
+## 4.57.2 (2024-04-23)
+
+### What's fixed
+- Fix missing composer binary (starter kits couldn't install). [#9950](https://github.com/statamic/cms/issues/9950) by @duncanmcclean
+
+
+
+## 4.57.1 (2024-04-22)
+
+### What's improved
+- French translations. [#9939](https://github.com/statamic/cms/issues/9939) by @ebeauchamps
+
+### What's fixed
+- Require composer/semver instead of composer/composer. [#9947](https://github.com/statamic/cms/issues/9947) by @jasonvarga
+- Fix `DimensionsRule` for Livewire. [#9927](https://github.com/statamic/cms/issues/9927) by @aerni
+- Fix Blade compiler error. [#9946](https://github.com/statamic/cms/issues/9946) by @duncanmcclean
+- Prevent passing HTML to the Video fieldtype. [#9944](https://github.com/statamic/cms/issues/9944) by @duncanmcclean
+- Fix missing OAuth controller argument. [#9942](https://github.com/statamic/cms/issues/9942) by @simonolog
+
+
+
+## 4.57.0 (2024-04-17)
+
+### What's new
+- Add deleteQuietly methods. [#9666](https://github.com/statamic/cms/issues/9666) by @ryanmitchell
+- Support using closures for Statamic route data. [#9868](https://github.com/statamic/cms/issues/9868) by @arthurperton
+
+### What's fixed
+- Fix single unpublished entries in listing column. [#9917](https://github.com/statamic/cms/issues/9917) by @jacksleight
+- Prevent computed fields from being sortable in listing tables. [#9916](https://github.com/statamic/cms/issues/9916) by @duncanmcclean
+- Fix Grid styles messing up row-controls of nested fields. [#9910](https://github.com/statamic/cms/issues/9910) by @duncanmcclean
+- Fix icons color. [#9895](https://github.com/statamic/cms/issues/9895) by @peimn
+- Fix Nova icon not displaying in Icon Fieldtype. [#9906](https://github.com/statamic/cms/issues/9906) by @duncanmcclean
+- Add title fallback for roles & groups. [#9907](https://github.com/statamic/cms/issues/9907) by @duncanmcclean
+- Fix Bard scrolling editor/page on link insert. [#9886](https://github.com/statamic/cms/issues/9886) by @jacksleight
+- Hash API cache keys the key to handle long route and query parameters. [#9858](https://github.com/statamic/cms/issues/9858) by @Smef
+- Fix regression on bard/replicator group set previews. [#9901](https://github.com/statamic/cms/issues/9901) by @caseydwyer
+- Fix arrow direction in fav creator for RTL. [#9897](https://github.com/statamic/cms/issues/9897) by @peimn
+- Fixes for asset/term reference updater strictness. [#9878](https://github.com/statamic/cms/issues/9878) by @jesseleite
+- Add `date` to reserved fields for form blueprints. [#9872](https://github.com/statamic/cms/issues/9872) by @duncanmcclean
+- Fix tables in Bard not saving updates. [#9867](https://github.com/statamic/cms/issues/9867) by @jacksleight
+- Add tailwind safelist with horizontal margins and padding. [#9864](https://github.com/statamic/cms/issues/9864) by @jasonvarga
+- Fix PHPUnit deprecations. [#9912](https://github.com/statamic/cms/issues/9912) by @jasonvarga
+
+
+
 ## 4.56.1 (2024-04-09)
 
 ### What's fixed

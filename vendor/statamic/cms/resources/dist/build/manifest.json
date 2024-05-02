@@ -1,6 +1,6 @@
 {
   "resources/css/tailwind.css": {
-    "file": "assets/tailwind-183958aa.css",
+    "file": "assets/tailwind-bb2ca0e5.css",
     "isEntry": true,
     "src": "resources/css/tailwind.css"
   },
@@ -25,12 +25,12 @@
     "src": "resources/img/favicon.ico"
   },
   "resources/js/app.css": {
-    "file": "assets/app-ebdfcaea.css",
+    "file": "assets/app-0d9d44ed.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
     "css": [
-      "assets/app-ebdfcaea.css"
+      "assets/app-0d9d44ed.css"
     ],
     "dynamicImports": [
       "resources/svg/icons/light/add-circle.svg",
@@ -839,7 +839,7 @@
       "resources/svg/filetypes/video.svg",
       "resources/svg/filetypes/xml.svg"
     ],
-    "file": "assets/app-56496686.js",
+    "file": "assets/app-dc40c5f2.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
@@ -1049,7 +1049,7 @@
     "src": "resources/svg/icons/light/collection.svg"
   },
   "resources/svg/icons/light/collections.svg": {
-    "file": "assets/collections-8a75769e.js",
+    "file": "assets/collections-6e6967ab.js",
     "isDynamicEntry": true,
     "src": "resources/svg/icons/light/collections.svg"
   },
@@ -1164,7 +1164,7 @@
     "src": "resources/svg/icons/light/flag.svg"
   },
   "resources/svg/icons/light/float.svg": {
-    "file": "assets/float-34e69af5.js",
+    "file": "assets/float-1677f349.js",
     "isDynamicEntry": true,
     "src": "resources/svg/icons/light/float.svg"
   },
@@ -1244,7 +1244,7 @@
     "src": "resources/svg/icons/light/licensing.svg"
   },
   "resources/svg/icons/light/link.svg": {
-    "file": "assets/link-41d2a49a.js",
+    "file": "assets/link-07bdb6d1.js",
     "isDynamicEntry": true,
     "src": "resources/svg/icons/light/link.svg"
   },
@@ -1284,7 +1284,7 @@
     "src": "resources/svg/icons/light/nav-preferences.svg"
   },
   "resources/svg/icons/light/partial.svg": {
-    "file": "assets/partial-7ee21f4d.js",
+    "file": "assets/partial-94971ad0.js",
     "isDynamicEntry": true,
     "src": "resources/svg/icons/light/partial.svg"
   },
@@ -1364,7 +1364,7 @@
     "src": "resources/svg/icons/light/seo-search-graph.svg"
   },
   "resources/svg/icons/light/settings-horizontal.svg": {
-    "file": "assets/settings-horizontal-3edf72b5.js",
+    "file": "assets/settings-horizontal-507fbc32.js",
     "isDynamicEntry": true,
     "src": "resources/svg/icons/light/settings-horizontal.svg"
   },
@@ -1419,7 +1419,7 @@
     "src": "resources/svg/icons/light/taxonomies.svg"
   },
   "resources/svg/icons/light/taxonomy.svg": {
-    "file": "assets/taxonomy-04bcd2b1.js",
+    "file": "assets/taxonomy-a9ca4c2e.js",
     "isDynamicEntry": true,
     "src": "resources/svg/icons/light/taxonomy.svg"
   },
@@ -1449,7 +1449,7 @@
     "src": "resources/svg/icons/light/title.svg"
   },
   "resources/svg/icons/light/toggle.svg": {
-    "file": "assets/toggle-7b4d5c81.js",
+    "file": "assets/toggle-3bae8661.js",
     "isDynamicEntry": true,
     "src": "resources/svg/icons/light/toggle.svg"
   },
@@ -2589,7 +2589,7 @@
     "src": "resources/svg/icons/regular/folder.svg"
   },
   "resources/svg/icons/regular/generic-field.svg": {
-    "file": "assets/generic-field-041004aa.js",
+    "file": "assets/generic-field-e69e9265.js",
     "isDynamicEntry": true,
     "src": "resources/svg/icons/regular/generic-field.svg"
   },
@@ -2699,12 +2699,12 @@
     "src": "resources/svg/icons/regular/new-window.svg"
   },
   "resources/svg/icons/regular/nova.svg": {
-    "file": "assets/nova-a1932ffa.js",
+    "file": "assets/nova-a13a1c24.js",
     "isDynamicEntry": true,
     "src": "resources/svg/icons/regular/nova.svg"
   },
   "resources/svg/icons/regular/pages.svg": {
-    "file": "assets/pages-c78dfe4a.js",
+    "file": "assets/pages-9a7c5ae2.js",
     "isDynamicEntry": true,
     "src": "resources/svg/icons/regular/pages.svg"
   },
@@ -2809,7 +2809,7 @@
     "src": "resources/svg/icons/regular/subtract.svg"
   },
   "resources/svg/icons/regular/suggest.svg": {
-    "file": "assets/suggest-a6770314.js",
+    "file": "assets/suggest-cc137454.js",
     "isDynamicEntry": true,
     "src": "resources/svg/icons/regular/suggest.svg"
   },
@@ -2859,7 +2859,7 @@
     "src": "resources/svg/icons/regular/text-underline.svg"
   },
   "resources/svg/icons/regular/theme.svg": {
-    "file": "assets/theme-6e526819.js",
+    "file": "assets/theme-52bbae73.js",
     "isDynamicEntry": true,
     "src": "resources/svg/icons/regular/theme.svg"
   },
