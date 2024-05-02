@@ -1,14 +1,16 @@
 ---
-title: "Amplitude Experiment overview: Optimize your product experience through A/B testing"
-source: "https://help.amplitude.com/hc/en-us/articles/360061270232-Amplitude-Experiment-overview-Optimize-your-product-experience-through-A-B-testing"
 id: 8bfbe6f6-89ae-4878-abfe-89bcc113cddf
+blueprint: experiment
+title: 'Amplitude Experiment overview: Optimize your product experience through A/B testing'
+source: 'https://help.amplitude.com/hc/en-us/articles/360061270232-Amplitude-Experiment-overview-Optimize-your-product-experience-through-A-B-testing'
+this_article_will_help_you:
+  - 'Understand the value of experimentation in general, and how Amplitude Experiment can help your company make better decisions and build better products'
+  - 'Familiarize yourself with the concepts and processes involved in creating an experiment or feature flag in Amplitude Experiment'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1714665949
 ---
-
-#### This article will help you:
-
-* Understand the value of experimentation in general, and how Amplitude Experiment can help your company make better decisions and build better products
-* Familiarize yourself with the concepts and processes involved in creating an experiment or feature flag in Amplitude Experiment
-
 For decades, product teams have relied on **experimentation** as a way to prioritize and implement product adjustments. But it’s never been easy. Because of that, these experiments often just tweak peripheral issues around the margins, instead of driving the big-picture changes that optimize the overall product experience. 
 
 Amplitude Experiment is a workflow-driven behavioral experimentation platform that actually **accelerates your roadmaps**, letting you focus on making better decisions and building better products.
@@ -21,7 +23,9 @@ With Experiment, you can easily **modify and configure product experiences** for
 
 Amplitude Experiment enables all this through **flags**—easy-to-set up switches that let you modify your product's experience without having to change code. Use them to set up experiments in your product, or to stage and roll out new features straight to your users. Your code uses the [Amplitude Experiment SDK](https://www.docs.developers.amplitude.com/experiment/#sdks) or [REST API](https://www.docs.developers.amplitude.com/experiment/#rest-apis) to communicate with Amplitude Experiment.
 
-**NOTE:** Amplitude Experiment defaults to a [**sequential testing**](/experiment/experiment-theory/analyze-with-t-test) instead.
+{{partial:admonition type='note'}}
+Amplitude Experiment defaults to a **sequential testing** statistical model in all experiments, but you can opt for a T-test (/experiment/experiment-theory/analyze-with-t-test) instead.
+{{/partial:admonition}}
 
 This article will provide a high-level overview of the Amplitude Experiment workflow: we’ll start with the workflow for **creating an experiment**, and follow that with the workflow for **creating a feature flag**.
 
@@ -73,13 +77,13 @@ Now that you’ve got your variants, you’ll need to decide how many of your us
 
 ### Activate your experiment
 
-At this point, you’re ready to roll out your experiment to your users. Click *Start Experiment*, and your experiment will be live. Congratulations!
+At this point, you’re ready to roll out your experiment to your users. Click *Start Experiment*, and your experiment will be live.
 
 ### Analyze your results
 
 After your experiment goes live, you can generate and view your results at any time. Experiment will tell you when your experiment has reached **statistical significance**, and it gives you all the data you need to analyze and interpret your results, and to apply those learnings to your product experience going forward.
 
-To learn more about how to design, roll out, and learn from experiments, check out our [Help Center articles on the experimentation workflow](/experiment/workflow/create).
+To learn more about how to design, roll out, and learn from experiments, check out our [articles on the experimentation workflow](/experiment/workflow/create).
 
 {{partial:admonition type='note'}}
  Now that you better understand the experiment workflow, consider using experiment briefs to better communicate and streamline your experimentation processes amongst your team. They can also help to create transparency and align experimentation goals. [Read more about experiment briefs and how to use them in this blog](https://amplitude.com/blog/experiment-brief).
@@ -89,14 +93,16 @@ To learn more about how to design, roll out, and learn from experiments, check o
 
 If, on the other hand, you’re planning a phased feature rollout instead, your workflow is even simpler. Because you’re not asking a question about user behavior in your product, you don’t need to worry about creating a hypothesis, picking a metric, or analyzing your results. All you have to do is create a **feature flag**.
 
-**NOTE:** Behind the scenes, experiments and flags are very similar, but the basic difference is this: An experiment helps you make sure you’re building the right thing for your business, while feature flags allow seamless feature releases and rollbacks. This is because an experiment has metrics and a feature flag does not, giving you greater flexibility to mess with controls without breaking anything. 
+{{partial:admonition type='note'}}
+Behind the scenes, experiments and flags are very similar, but the basic difference is this: An experiment helps you make sure you’re building the right thing for your business, while feature flags allow seamless feature releases and rollbacks. This is because an experiment has metrics and a feature flag does not, giving you greater flexibility to mess with controls without breaking anything.
+{{/partial:admonition}}
 
 Once you’ve configured your deployment, go straight to creating your variants. The basic idea—i.e., a new and different product experience that some users see but others do not—remains the same. But instead of exploring how different user segments react to different user experiences, you’ll be choosing which users get access to new features first. When working with feature flags, the variant represents code for a new feature that isn’t yet released to your entire user base.
 
 You’ll still allocate users to your variants as you would if you were running an experiment, and activating your flag is as simple as switching on your experiment.
 
-Check out our Help Center article to [learn more about feature flags and how they work in Amplitude Experiment](/experiment/workflow/feature-flag-rollouts).
+Check out this article to [learn more about feature flags and how they work in Amplitude Experiment](/experiment/workflow/feature-flag-rollouts).
 
 ## Delete old experiments and flags
 
-Deleting experiments and feature flags you no longer need is simple. You'll find both options from the "more" menu in the top right of your experiment. Click on  ![moreMenu.png](/output/img/experiment/moremenu-png.png)  to open the menu, choose either *Deactivate flag* or *Archive*, to archive the experiment. 
+Deleting experiments and feature flags you no longer need is simple. You'll find both options from the "more" menu in the top right of your experiment. Click the three dots to open the menu and choose either *Deactivate flag* or, if you'd prefer to archive the experiment, *Archive*.

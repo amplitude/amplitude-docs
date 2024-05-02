@@ -1,9 +1,15 @@
 ---
-title: "Amplitude Experiment: key terms"
-source: "https://help.amplitude.com/hc/en-us/articles/360061651452-Amplitude-Experiment-key-terms"
 id: 93038e5f-a8ed-4401-8da3-308d21ed17ad
+blueprint: experiment
+title: 'Amplitude Experiment: key terms'
+source: 'https://help.amplitude.com/hc/en-us/articles/360061651452-Amplitude-Experiment-key-terms'
+this_article_will_help_you:
+  - 'Find definitions of important terms for working with Amplitude Experiment'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1714665445
 ---
-
 ## Glossary of key experimentation terms
 
 |  |  |
@@ -14,8 +20,7 @@ id: 93038e5f-a8ed-4401-8da3-308d21ed17ad
 | Audience | A group of users that will be targeted for the experiment. This audience will typically be split evenly into “control” and “variant” groups. |
 | Baseline conversion rate | The current rate of your primary success metrics prior to this experiment. |
 | Bonferroni correction | A statistical technique used to counteract the multiple comparisons problem (also known as multiplicity or the look-elsewhere effect).  |
-| Confidence interval | A range of plausible values that contains the parameter of interest. In our case, the true parameter we’re trying to estimate is the difference in means between the treatment and control/baseline. 
-For example: if the confidence level is set to 95 and we ran the same experiment 100 times, the confidence interval–in each run–would contain the true parameter at least 95 times. |
+| Confidence interval | A range of plausible values that contains the parameter of interest. In our case, the true parameter we’re trying to estimate is the difference in means between the treatment and control/baseline. For example: if the confidence level is set to 95 and we ran the same experiment 100 times, the confidence interval–in each run–would contain the true parameter at least 95 times. |
 | Confidence / significance level | The probability you will get a false positive. For example, if you have a 95% confidence level, there is a 5% chance of detecting a change to your success metric when there was really no change. |
 | Counter metric | A metric you want to ensure does not suffer at the expense of increasing your success metrics. For example, if you drive users to a free trial of your business product, trials of your consumer product could be a counter metric. If business trials go up, consumer trials will likely go down. You want to make sure there's a net positive effect. |
 | CUPED | Controlled-experiment using pre-existing data, also known as CUPED, is an optional statistical technique meant to reduce variance in experimentation.  |
