@@ -1,17 +1,17 @@
 ---
-title: "Interpret your funnel analysis"
-source: "https://help.amplitude.com/hc/en-us/articles/360053338671-Interpret-your-funnel-analysis"
 id: 0b5fb0a0-d720-4cc4-ad1d-072be91a710f
+blueprint: funnel-analysi
+title: 'Interpret your funnel analysis'
+source: 'https://help.amplitude.com/hc/en-us/articles/360053338671-Interpret-your-funnel-analysis'
+this_article_will_help_you:
+  - 'View and interpret funnel conversions'
+  - 'Track conversions over time'
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715114214
 ---
-
-#### This article will help you:
-
-* View and interpret funnel conversions
-* Track conversions over time
-
 Amplitude’s **Funnel Analysis** chart helps you understand how users are navigating defined paths ("funnels") within your product, and identify potential problem areas where users tend to drop off.
 
- This article will describe how the chart area of the Funnel Analysis chart works, and how you should interpret the data it contains.
+This article will describe how the chart area of the Funnel Analysis chart works, and how you should interpret the data it contains.
 
 Analyzing your funnel analysis data takes place in the screen’s lower panel.
 
@@ -47,13 +47,15 @@ Specifying the time frames of your funnel analysis is straightforward in Amplitu
 
 ![completed_within.png](/output/img/funnel-analysis/completed-within-png.png)
 
-By default, Amplitude assumes events will not be triggered within one second of each other. However, in some situations—like when you have multiple events firing at the same times—you may need a more detailed level of time resolution. In these cases, Amplitude can resolve events on a per-millisecond level.
+By default, Amplitude assumes events will not be triggered within one second of each other. However, in some situations — like when you have multiple events firing at the same times — you may need a more detailed level of time resolution. In these cases, Amplitude can resolve events on a per-millisecond level.
 
 ![millisecond.png](/output/img/funnel-analysis/millisecond-png.png)
 
 Simply check *Millisecond resolution* in the *Advanced* drop-down.
 
-**NOTE:** This setting can cause issues if you are generating client event times in distributed or multithreaded environments. Contact Amplitude support if you need assistance. 
+{{partial:admonition type='note'}}
+This setting can cause issues if you are generating client event times in distributed or multithreaded environments. Contact Amplitude support if you need assistance. 
+{{/partial:admonition}}
 
 ### Conversion
 
@@ -71,7 +73,9 @@ The tabular view of the data, which you'll find directly below the chart, offers
 * **[Event name]:** The number of users who complete that step in the funnel. The first step will always be 100% because a funnel only includes users who triggered that first event.
 * **Average Time:** The average time it takes users to move from one event to another event in the funnel, based on the time of users' *first* conversion.
 
-**NOTE:** If you've applied a group-by to your funnel chart, the *Average Time* column will return "N/A," since average and median times will not be computed for daily/weekly/monthly step transitions.
+{{partial:admonition type='note'}}
+If you've applied a group-by to your funnel chart, the *Average Time* column will return "N/A," since average and median times will not be computed for daily/weekly/monthly step transitions.
+{{/partial:admonition}}
 
 You can also opt to count conversions by event totals instead of unique users:
 
@@ -95,7 +99,9 @@ Amplitude will display conversion graphs for each selection in the Measured As M
 
 If this were a four-step process, conversions from step two to step three would include all users who completed the first three steps of the process, regardless of whether they completed the fourth. Users always **must enter the funnel at the first step** to be included.
 
-**NOTE:** Conversion Over Time for new users still counts all active users.
+{{partial:admonition type='note'}}
+Conversion Over Time for new users still counts all active users.
+{{/partial:admonition}}
 
 ### Time to convert
 
@@ -113,7 +119,9 @@ If you need to, you can also create custom buckets:
 
 If you create custom buckets, the percentages returned will be calculated using only users who fall between the min and max values for your bucket. 
 
-**NOTE:** The median bar will still be calculated based on the full data set, regardless of the bucket min and max values.
+{{partial:admonition type='note'}}
+The median bar will still be calculated based on the full data set, regardless of the bucket min and max values.
+{{/partial:admonition}}
 
 You can also switch from a histogram view to a new time series, depicting how median time to convert changes over time. Click the *Distribution* drop-down and select *Over Time.*
 

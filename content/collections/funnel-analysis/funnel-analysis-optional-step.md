@@ -1,16 +1,20 @@
 ---
-title: "Mark a step in your funnel as optional"
-source: "https://help.amplitude.com/hc/en-us/articles/19458278060571-Mark-a-step-in-your-funnel-as-optional"
 id: 45aaaf38-62c7-49d9-9817-bfc8d765a0ff
+blueprint: funnel-analysi
+title: 'Mark a step in your funnel as optional'
+source: 'https://help.amplitude.com/hc/en-us/articles/19458278060571-Mark-a-step-in-your-funnel-as-optional'
+this_article_will_help_you:
+  - 'Add an optional step to your Funnel Analysis charts, and compare conversion rates between the two versions'
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715114259
 ---
+At times, you will need to define a conversion where some of the steps are optional. For example, a funnel has steps A, B, C, and D, where B is optional. If a user performs steps A, C, and D, they would still convert.
 
-#### This article will help you:
+Click 
 
-* Add an optional step to your Funnel Analysis charts, and compare conversion rates between the two versions
+![](/output/img/funnel-analysis/3Xi5woe5tp-s8ySnczdFOxfSsWb7dlBuv-DE2QJaZq1-nKPQ-UsrE6eBPpaF8tZtECOOm7MJrORh8EfrPr6U-8pdHvDhz1L-wzfxMntqj0kwQ0WZ62of_V0zxJpfPIcmijhZMGZp584QjzWfI2xL_JM) 
 
-At times you will need to define a conversion where some of the steps are optional. For example, a funnel has steps A, B, C, and D, where B is optional. If a user performs steps A, C, and D, they would still convert.
-
-Click ![](/output/img/funnel-analysis/3Xi5woe5tp-s8ySnczdFOxfSsWb7dlBuv-DE2QJaZq1-nKPQ-UsrE6eBPpaF8tZtECOOm7MJrORh8EfrPr6U-8pdHvDhz1L-wzfxMntqj0kwQ0WZ62of_V0zxJpfPIcmijhZMGZp584QjzWfI2xL_JM) in the Events side control and select *Optional step* to make a step optional. 
+in the Events side control and select *Optional step* to make a step optional. 
 
 ![optional_step.png](/output/img/funnel-analysis/optional-step-png.png)
 

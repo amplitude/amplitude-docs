@@ -1,14 +1,14 @@
 ---
-title: "How Amplitude computes conversions through funnels"
-source: "https://help.amplitude.com/hc/en-us/articles/4448893756315-How-Amplitude-computes-conversions-through-funnels"
 id: 4eda9c61-73d1-425a-a28a-5f15b8fb0356
+blueprint: funnel-analysi
+title: 'How Amplitude computes conversions through funnels'
+source: 'https://help.amplitude.com/hc/en-us/articles/4448893756315-How-Amplitude-computes-conversions-through-funnels'
+this_article_will_help_you:
+  - 'Familiarize yourself with conversion computations using funnels'
+  - 'Identify key differences between Funnel and Event Segmentation charts'
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715113423
 ---
-
-#### This article will help you:
-
-* Familiarize yourself with conversion computations using funnels
-* Identify key differences between Funnel and Event Segmentation charts
-
 When calculating conversion for a funnel in which users can complete the steps more than once, Amplitude will bucket each user based on the values tied to the **first** occurrence of each event.
 
 How this **first touch** is determined in your analysis will depend on whether you opt to [hold a property](/analytics/charts/funnel-analysis/funnel-analysis-hold-properties-constant) or [break down by](/analytics/charts/funnel-analysis/funnel-analysis-view-by-property-value) specific properties.
@@ -33,10 +33,11 @@ Consider the following events and conversion results as examples:
 | A user sees Landing Page A, then Landing Page B in the **same** session, but converts only **after** seeing Landing Page B. | Since that user saw Landing Page A **first**, the conversion within the session would be attributed to Landing Page A. |
 | A user sees Landing Page A, then Landing Page B in **different** sessions. | That user **does not** convert in the session where they saw Landing Page A. But, that same user **does** convert in the session where they saw Landing Page B. Amplitude will count the Landing Page A session as **not** converted, and the Landing Page B session as **converted**. |
 
-**NOTE:** When holding constant by session ID, your chart will display the **number of user sessions** that included a conversion, and **not** the number of users to convert.
+{{partial:admonition type='note'}}
+When holding constant by session ID, your chart will display the **number of user sessions** that included a conversion, and **not** the number of users to convert.
+{{/partial:admonition}}
 
-### 
-Scenario 2: Funnels using *group conversions by*, but not *Hold property constant*
+### Scenario 2: Funnels using *group conversions by*, but not *Hold property constant*
 
 In cases where only the broken down by function is used, Amplitude bases conversion on the **earliest entry** within the lookback window.
 

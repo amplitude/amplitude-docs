@@ -1,15 +1,15 @@
 ---
-title: "Identify conversion drivers in your funnel analyses"
-source: "https://help.amplitude.com/hc/en-us/articles/360039976551-Identify-conversion-drivers-in-your-funnel-analyses"
 id: 7a9bcc67-504d-4d51-943a-b4c0af30f8a8
+blueprint: funnel-analysi
+title: 'Identify conversion drivers in your funnel analyses'
+source: 'https://help.amplitude.com/hc/en-us/articles/360039976551-Identify-conversion-drivers-in-your-funnel-analyses'
+this_article_will_help_you:
+  - 'Identify behaviors that lead users to sign up or drop off'
+  - 'Uncover friction points in onboarding and critical conversion funnels'
+  - 'Discover common experiences that lead to repeat consumers'
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715114072
 ---
-
-#### This article will help you:
-
-* Identify behaviors that lead users to sign up or drop off
-* Uncover friction points in onboarding and critical conversion funnels
-* Discover common experiences that lead to repeat consumers
-
 Knowing which events lead to conversions and which events don’t is a crucial part of any analytics program. With Amplitude, you also have the ability to conduct deeper analyses and learn **why** users convert or churn after a specific event, with **conversion drivers**.
 
 Use this feature to understand which behaviors are driving key outcomes in your customer journey. To help you do that, Amplitude provides several relevant metrics in each conversion driver analysis:
@@ -109,7 +109,9 @@ To use this feature, open a funnel chart and follow these steps:
 
 The conversion drivers tab lists every event included in your project, along with each event’s correlation with either conversion or churn. In this example, the `Add Content to Cart` event is very highly correlated (+0.97) with conversion on the `Purchase Song or Video` event.  
   
-**NOTE:** You can switch between viewing correlations with conversions and correlations with churn by clicking *Converted* or *Dropped Off*, directly above the list of events.  
+{{partial:admonition type='note'}}
+You can switch between viewing correlations with conversions and correlations with churn by clicking *Converted* or *Dropped Off*, directly above the list of events.  
+{{/partial:admonition}}
 
 2. Locate the event you’re interested in. Below the event name, click *Expand by Property*.
 3. Click the *Select property …* button and click the property you’re interested in analyzing.  
@@ -118,7 +120,9 @@ The conversion drivers tab lists every event included in your project, along wit
   
 In this example, we’re interested in finding out which genres are most frequently added to customers’ carts and then purchased—remember, we are looking at users who converted on `Purchase Song or Video`. Here, we see pop is the most popular genre, with a correlation of +0.41.
 
-**NOTE:**You can add up to three different properties. You can also create another, separate property view by clicking *+*. Note that each property view is completely independent of any other property views you may have already created.
+{{partial:admonition type='note'}}
+You can add up to three different properties. You can also create another, separate property view by clicking *+*. Note that each property view is completely independent of any other property views you may have already created.
+{{/partial:admonition}}
 
 ## Share the report
 

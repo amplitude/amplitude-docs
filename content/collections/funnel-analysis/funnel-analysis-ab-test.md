@@ -1,16 +1,18 @@
 ---
-title: "A/B testing in a Funnel Analysis chart"
-source: "https://help.amplitude.com/hc/en-us/articles/19466562128411-A-B-testing-in-a-Funnel-Analysis-chart"
 id: 8fcc98ae-f087-4a96-9317-43d833299638
+blueprint: funnel-analysi
+title: 'A/B testing in a Funnel Analysis chart'
+source: 'https://help.amplitude.com/hc/en-us/articles/19466562128411-A-B-testing-in-a-Funnel-Analysis-chart'
+this_article_will_help_you:
+  - 'View your Funnel Analysis charts in terms of either improvement over baseline or statistical significance'
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715111713
 ---
-
-#### This article will help you:
-
-* View your Funnel Analysis charts in terms of either improvement over baseline or statistical significance
-
-**NOTE:** For best practices, including tips on instrumentation, please take a look at our [How to Analyze A/B Tests Results in Amplitude](/get-started/analyze-a-b-test-results) article.  
-
 In Amplitude, A/B testing lets you compare the funnel conversion performance of two or more user segments against each other. You can view results in terms of **improvement**—which describes the performance of a segment compared to the baseline—or in terms of **statistical significance**, which will show you the probability of observing a difference as extreme as what you saw, assuming the control and treatment have the same mean.
+
+{{partial:admonition type='note'}}
+For best practices, including tips on instrumentation, please take a look at our [How to Analyze A/B Tests Results in Amplitude](/get-started/analyze-a-b-test-results) article.
+{{/partial:admonition}}
 
 ### Feature availability
 
@@ -48,4 +50,4 @@ The data table below the chart will give you a breakdown of the data. As with al
 * **% Improvement over Baseline:** This is calculated by the equation (% conversion for that variant - % conversion for the baseline) / (% conversion for the baseline). The percentage in the data table will be green when the value is a positive number.
 * **Significance:** This is the likelihood that the performance displayed for each test variant is **actually** different from zero, and not due to random fluctuations in the data. The higher this value is, the more confident you can be in your results. More formally, this can be described as *1 - p-value*.
 
-## 
+##
