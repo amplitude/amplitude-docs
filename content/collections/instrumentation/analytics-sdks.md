@@ -10,4 +10,5 @@ template: sdk-catalog
 hide_helpful: true
 exclude_from_sitemap: false
 coll: sdk-catalog
+nav_title: analytics_sdks
 ---

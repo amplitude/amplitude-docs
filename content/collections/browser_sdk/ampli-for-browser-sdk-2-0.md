@@ -56,19 +56,19 @@ There's no corresponding “in-code” functionality with Prettier. Instead, add
 
 1. [Install the Amplitude SDK](#install-the-amplitude-sdk)
 
-    ```shell
+    ```bash
     npm install @amplitude/analytics-browser
     ```
 
 2. [Install the Ampli CLI](#install-the-ampli-cli)
 
-    ```shell
+    ```bash
     npm install -g @amplitude/ampli
     ```
 
 3. [Pull the Ampli Wrapper into your project](#pull)
 
-    ```shell
+    ```bash
     ampli pull [--path ./src/ampli]
     ```
 
