@@ -1,13 +1,15 @@
 ---
-title: "Analyze your experiment data with the T-test"
-source: "https://help.amplitude.com/hc/en-us/articles/12587885686299-Analyze-your-experiment-data-with-the-T-test"
 id: dc96227b-0ac7-4206-ab5f-b92d020f88b6
+blueprint: experiment-theory
+title: 'Analyze your experiment data with the T-test'
+source: 'https://help.amplitude.com/hc/en-us/articles/12587885686299-Analyze-your-experiment-data-with-the-T-test'
+this_article_will_help_you:
+  - "Use the T-test to analyze your Amplitude Experiment's results"
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715102534
 ---
-
-#### This article will help you:
-
-* Use the T-test to analyze your Amplitude Experiment's results
-
 It can be difficult to understand the benefits of running one statistical test over another, such as sequential testing versus the T-test. 
 
 A T-test is the **comparison of means** amongst two populations of data to determine if the difference is statistically significant. Amplitude computing uses the [Welch's T-test](https://en.wikipedia.org/wiki/Welch%27s_t-test), which comes with a few assumptions about your dataset:
@@ -26,7 +28,7 @@ T-tests can be completed as either **two-sided** (which looks for **any** change
 
 You can access the T-test settings from the *Plan* tab in Amplitude Experiment. The settings will depend on the type of T-test that you'd like to run (one-sided or two-sided) and the direction you'd like the metric to move in (increase for up or decrease for down). To set your T-test's settings:
 
-1. Under your *Primary* *Metric*, select *Increase* or *Decrease*.
+1. Under your *Primary Metric*, select *Increase* or *Decrease*.
 
 ![Screenshot](/output/img/experiment-theory/screenshot.png)
 
@@ -36,12 +38,12 @@ You can access the T-test settings from the *Plan* tab in Amplitude Experiment. 
 ![exp_stat_settings.png](/output/img/experiment-theory/exp-stat-settings-png.png)
 
 {{partial:admonition type='note'}}
- The T-test works by first computing the sample size you'll need before you can control for a specific false positive and false negative rate. Analyzing your data before reaching the sample size threshold will increase your error rates. See this [article](https://medium.com/@SkyscannerEng/the-fourth-ghost-of-experimentation-peeking-b33890dcd3de) for more explanation on how peeking can interrupt your experiment process.
+The T-test works by first computing the sample size you'll need before you can control for a specific false positive and false negative rate. Analyzing your data before reaching the sample size threshold will increase your error rates. See this [article](https://medium.com/@SkyscannerEng/the-fourth-ghost-of-experimentation-peeking-b33890dcd3de) for more explanation on how peeking can interrupt your experiment process.
 {{/partial:admonition}}
 
 4. Lastly, click *Save* to change the statistical settings to T-test.
 
-The *Analyze* tab will now show the T-test results of your experimental data. Read more about interpreting test results in our Help Center article on [Amplitude's Experiment Results chart](/analytics/charts/experiment-results/experiment-results-dig-deeper).
+The *Analyze* tab now shows the T-test results of your experimental data. Read more about interpreting test results in our article on [Amplitude's Experiment Results chart](/analytics/charts/experiment-results/experiment-results-dig-deeper).
 
 ## Manage sample size needed for the T-test
 

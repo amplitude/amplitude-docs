@@ -1,13 +1,15 @@
 ---
-title: "Set the MDE for your experiment"
-source: "https://help.amplitude.com/hc/en-us/articles/12785071886875-Set-the-MDE-for-your-experiment"
 id: 18cba191-177e-4f7c-abcb-f5375c155c71
+blueprint: experiment-theory
+title: 'Set the MDE for your experiment'
+source: 'https://help.amplitude.com/hc/en-us/articles/12785071886875-Set-the-MDE-for-your-experiment'
+this_article_will_help_you:
+  - 'Identify the logic behind setting an MDE so you can more confidently run your experiment'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715102912
 ---
-
-#### This article will help you:
-
-* Identify the logic behind setting an MDE so you can more confidently run your experiment
-
 Before running an experiment, you must estimate how you will measure success by setting the MDE (minimum detectable effect). Think of MDE as the **minimum** change you're hoping to see by running your experiment. Without a fail-safe calculation available for the MDE, it can be tricky to set one. With Amplitude Experiment, the default MDE is 2%; however, as the MDE is strictly linked to your unique business needs, be thoughtful during each experiment's [design phase](/experiment/workflow/define-goals). Considerations for setting the MDE should include:
 
 * The experiment type,
@@ -32,7 +34,7 @@ Update #1 could benefit from a hypothesis test to ensure the placement of the "q
 The second update, however, is an enhancement required to meet financial requirements. As a non-negotiable enhancement to the check out process, a do-no-harm experiment may help confirm that the additional payment method will not **decrease** completed sales for users in the checkout process. Over the last four fiscal quarters, an average of 1% of users abandoned the checkout process once starting it. Therefore, this do-no-harm experiment would have a direction set to "decrease" and an MDE set to 1%.
 
 {{partial:admonition type='note'}}
- If running a [T-test](/experiment/workflow/experiment-estimate-duration) can also help set the MDE by using the constraint that you have 1 month to run the experiment and then finding out what MDE is.
+If running a [T-test](/experiment/workflow/experiment-estimate-duration), Amplitude's duration estimator can also help set the MDE: Give yourself one month to run the experiment to get the estimated MDE.
 {{/partial:admonition}}
 
 ## MDE and the primary metric

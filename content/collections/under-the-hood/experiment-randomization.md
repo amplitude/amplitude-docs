@@ -1,13 +1,13 @@
 ---
-title: "How randomization works in Amplitude Experiment"
-source: "https://help.amplitude.com/hc/en-us/articles/360061687351-How-randomization-works-in-Amplitude-Experiment"
 id: 669c59bc-5161-42fd-ad49-ab8804311bee
+blueprint: under-the-hood
+title: 'How randomization works in Amplitude Experiment'
+source: 'https://help.amplitude.com/hc/en-us/articles/360061687351-How-randomization-works-in-Amplitude-Experiment'
+this_article_will_help_you:
+  - 'Understand the process Amplitude Experiment uses to randomly assign users to experiment variants'
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715104780
 ---
-
-#### This article will help you:
-
-* Understand the process Amplitude Experiment uses to randomly assign users to experiment variants
-
 Amplitude Experiment uses **deterministic randomization** of variations. This randomization uses the bucketing key selected in the UI, as well as the bucketing salt of the flag. In most cases, the Amplitude ID is used as the bucketing key.
 
 This randomization model is two-dimensional: Amplitude Experiment performs a murmur3 hash of  `"bucketingSalt/amplitude_id"` , and uses that hash to determine first, whether a specific user should be assigned a variant, and second, which variant that user should be assigned.
