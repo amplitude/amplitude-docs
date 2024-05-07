@@ -1,6 +1,6 @@
 <section class="w-full flex flex-col items-center">
     {{ partial:breadcrumbs }}
-    <div class="flex flex-row w-full p-8">
+    <div class="w-full p-8">
         <div class="copy">
             <div class="flex flex-row items-start justify-between">
                 <h1>{{ title }}</h1>
@@ -10,7 +10,7 @@
                 {{ /if }}
             </div>
             {{# <div class="prose prose-a:text-amp-blue-300 prose-ol:list-decimal prose-ol:list-outside prose-pre:bg-[#fafafa]"> #}}
-            <div class="flex flex-wrap gap-4 w-full max-w-screen-md">
+            <div class="flex flex-wrap gap-4 w-full max-w-screen-xl">
                 {{ collection :from="mount" article_type:is="core" sort="order" }}
                     <div class="flex-1 basis-80 border border-amp-gray-200 grow-0 rounded p-4 hover:shadow transition">
                         <span class="text-xs my-0">{{ sdk_status }}</span>
