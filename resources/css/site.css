@@ -551,6 +551,14 @@ h2:hover a {
     margin-left: -8px;
     bottom: -6px;
 }
+
+td > code {
+    max-width: 100px;
+    overflow: scroll;
+    word-break: break-all;
+}
+
+
 /*
 Margin and rounding are personal preferences,
 overflow-x-auto is recommended.
