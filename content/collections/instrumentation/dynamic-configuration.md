@@ -3,6 +3,11 @@ id: a0da41b8-4d51-4efc-9edf-30e7cf7c7929
 blueprint: instrumentation
 title: 'Dynamic Configuration'
 source: 'https://www.docs.developers.amplitude.com/data/dynamic-configuration/'
+author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1715106743
+nav_title: developers
 ---
 Some Amplitude SDK versions (iOS 5.3.0+, Android 2.28.0+, JavaScript 8.9.0+, React Native, Unity, and Flutter) let you set your apps to use dynamic configuration.
 
@@ -20,28 +25,15 @@ Some Amplitude SDK versions (iOS 5.3.0+, Android 2.28.0+, JavaScript 8.9.0+, Rea
 
 Send users from different regions to the server for their region.
 
-``` mermaid
-stateDiagram-v2
-  s1: Dynamic Config Server
-  cn_user: User in China
-  us_user: User in United States
-    s1 --> cn_user : api2.amplitude.com
-    s1 --> us_user : api.amplitude.com
-
-```
+![Dynamic configuration chart](/output/img/dynamic-config-1.png)
 
 ### Dynamically adjust server URLs
 
 If a server URL becomes unreachable for some reason, Amplitude can change the address in the dynamic configuration server.
- This makes the ingestion endpoint dynamic, so you don't need to release a new version of your app.
 
-``` mermaid
-stateDiagram-v2
-  s1: Dynamic Config Server
-  user: User
-    s1 --> user : new.amplitude.com (new URL)
-    s1 --> user : old.amplitude.com (broken URL)
-```
+This makes the ingestion endpoint dynamic, so you don't need to release a new version of your app.
+
+![Dynamic configuration chart](/output/img/dynamic-config-2-1715106682.png)
 
 ## Usage
 
