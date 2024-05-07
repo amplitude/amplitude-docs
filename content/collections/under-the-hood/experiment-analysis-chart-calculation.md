@@ -1,14 +1,14 @@
 ---
-title: "How Amplitude calculates the values in Experiment Analysis charts"
-source: "https://help.amplitude.com/hc/en-us/articles/4455062287387-How-Amplitude-calculates-the-values-in-Experiment-Analysis-charts"
 id: c3d4aec1-92db-4f44-b847-19d6f31f1add
+blueprint: under-the-hood
+title: 'How Amplitude calculates the values in Experiment Analysis charts'
+source: 'https://help.amplitude.com/hc/en-us/articles/4455062287387-How-Amplitude-calculates-the-values-in-Experiment-Analysis-charts'
+this_article_will_help_you:
+  - 'Understand the inputs and formulas underlying Experiment Analysis charts'
+  - 'Understand the counting logic Amplitude uses when calculating these values'
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715104675
 ---
-
-#### This article will help you:
-
-* Understand the inputs and formulas underlying Experiment Analysis charts
-* Understand the counting logic Amplitude uses when calculating these values
-
 Knowing how the values in your Experiment Analysis charts are calculated can help you understand what your experiments are really telling you, so you can avoid making potentially costly interpretation errors.
 
 These values are derived from a small selection of inputs and formulas, which are described below.
@@ -57,7 +57,7 @@ In this example, the number of unique users exposed to the experiment—E in the
 
 The metric event was triggered three times, twice by U1 and once by U2. Again, U5 does not count.
 
-The sum of all the metric events' property values is 30, and the sum of their average — ((5 + 10)/2 + (15)/1) = (7.5 + 15) = (U1 Avg + U2 Avg) — is 22.5.
+The sum of all the metric events' property values is 30, and the sum of their average — ```((5 + 10)/2 + (15)/1) = (7.5 + 15) = (U1 Avg + U2 Avg)``` — is 22.5.
 
 With that information, we can plug these values into each of the formulas listed above:
 
