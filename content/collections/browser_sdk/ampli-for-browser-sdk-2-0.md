@@ -131,7 +131,7 @@ When you use Ampli in the browser, Amplitude recommends loading `amplitude-js` a
 
 ## Install the Ampli CLI
 
-You can install the Ampli CLI from Homebrew or NPM.
+You can install the Ampli CLI from Homebrew or npm.
 
 {{partial:tabs tabs="brew, npm"}}
 {{partial:tab name="brew"}}
