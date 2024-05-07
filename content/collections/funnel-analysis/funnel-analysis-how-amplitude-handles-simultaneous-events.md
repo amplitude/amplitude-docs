@@ -1,25 +1,27 @@
 ---
-title: "How Amplitude handles simultaneous events in a funnel"
-source: "https://help.amplitude.com/hc/en-us/articles/19458044599195-How-Amplitude-handles-simultaneous-events-in-a-funnel"
 id: 7f411988-132d-4623-89d3-730f4bc54d52
+blueprint: funnel-analysi
+title: 'How Amplitude handles simultaneous events in a funnel'
+source: 'https://help.amplitude.com/hc/en-us/articles/19458044599195-How-Amplitude-handles-simultaneous-events-in-a-funnel'
+this_article_will_help_you:
+  - 'Understand how Amplitude accounts for events fired within the same second'
+  - 'Learn how to more precisely track events with millisecond resolution'
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715113861
 ---
-
-#### This article will help you:
-
-* Understand how Amplitude accounts for events fired within the same second
-* Learn how to more precisely track events with millisecond resolution
-
 Amplitude rounds all time to the nearest second. For that reason, it maintains a one-second window to account for **simultaneous events**. If a user fires two different events within one second, Amplitude will not try to make a determination of which one came first. Instead, it will consider **either** order correct and apply that to your funnel.
 
 For example, if a user fires Event B first, and then fires Event A within one second, a funnel will count this as a conversion from **either** Event A -> Event B, **or** Event B -> Event A.
 
 If, in an exact order funnel, an event that is not part of your funnel definition is simultaneously fired in the same second, Amplitude will still consider that user to have converted.
 
-**NOTE:** When using [Historical Count](/analytics/historical-count-1) filters on the *same* events that occur within the *same* second, users will appear to have dropped off. This is because the funnel query doesn't distinguish between events that happen within the same second, but the Historical Count filter does. 
+{{partial:admonition type='note'}}
+When using [Historical Count](/analytics/historical-count-1) filters on the *same* events that occur within the *same* second, users will appear to have dropped off. This is because the funnel query doesn't distinguish between events that happen within the same second, but the Historical Count filter does. 
+{{/partial:admonition}}
 
 ## Same events fire at once
 
-If two of the same event types are sent within the same second, Amplitude will count only one of them. This is also true if you're using ![ampAnyEvent.png](/output/img/funnel-analysis/ampanyevent-png.png)`Any Event` within the step of a funnel, or if custom events within your funnel steps share the same sub-events: Amplitude will assume they're the same event if they fire at the same second and will not count each instance. To combat this, ensure the step conditions are mutually exclusive, or turn on [millisecond resolution](#h_01HMW4BNTYDZ7GVGYW6R539XSJ) to ensure events are precisely captured.
+If two of the same event types are sent within the same second, Amplitude will count only one of them. This is also true if you're using `Any Event` within the step of a funnel, or if custom events within your funnel steps share the same sub-events: Amplitude will assume they're the same event if they fire at the same second and will not count each instance. To combat this, ensure the step conditions are mutually exclusive, or turn on [millisecond resolution](#h_01HMW4BNTYDZ7GVGYW6R539XSJ) to ensure events are precisely captured.
 
 ## Millisecond Resolution
 

@@ -1,13 +1,13 @@
 ---
-title: "Build a funnel analysis"
-source: "https://help.amplitude.com/hc/en-us/articles/360052745632-Build-a-funnel-analysis"
 id: 1683dae2-34bd-4da2-9d02-007416a1836b
+blueprint: funnel-analysi
+title: 'Build a funnel analysis'
+source: 'https://help.amplitude.com/hc/en-us/articles/360052745632-Build-a-funnel-analysis'
+this_article_will_help_you:
+  - 'Build a Funnel Analysis chart'
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715111889
 ---
-
-#### This article will help you:
-
-* Build a Funnel Analysis chart
-
 Amplitude’s **Funnel Analysis** chart helps you understand how users are navigating defined paths ("funnels") within your product, and identify potential problem areas where users tend to drop off. 
 
 A common example of a funnel is successfully onboarding. Amplitude considers a user to be converted through a funnel if they fire the events you specified, in the specified order.
@@ -22,7 +22,9 @@ Finally, you might find this video walkthrough useful:
 
 A funnel analysis shows how your users are navigating specific sequences of events in your product. Funnel Analysis charts are built using the Events Module and the Segmentation Module. To create a Funnel Analysis chart, you’ll just need to tell Amplitude what those events are, and which users it should include in the analysis.
 
-**NOTE:**You can include both active and inactive events in your funnel analyses, but most customers find their Amplitude charts are more insightful when they focus on active events.
+{{partial:admonition type='note'}}
+You can include both active and inactive events in your funnel analyses, but most customers find their Amplitude charts are more insightful when they focus on active events.
+{{/partial:admonition}}
 
 To build a Funnel Analysis chart, follow these steps:
 
@@ -39,11 +41,16 @@ Selecting *This order* tells Amplitude Analytics that a user must complete all t
 
 ![excluded_who_did.png](/output/img/funnel-analysis/excluded-who-did-png.png)  
   
-**NOTE:** You cannot exclude users if you are measuring by totals.
+{{partial:admonition type='note'}}
+You cannot exclude users if you are measuring by totals.
+{{/partial:admonition}}
 
 6. In the Segmentation module, identify the user segment you want to include in this analysis. You can import a previously-saved segment by clicking *Saved* and selecting the one you want from the list. Otherwise, Amplitude begins from the assumption that your analysis will target all users.  
   
-**NOTE:** The user segment you select will only apply to the starting event.
+{{partial:admonition type='note'}}
+The user segment you select will only apply to the starting event.
+{{/partial:admonition}}
+
 7. If you do not want to import a previously-saved user segment, you can start building your own by adding properties. To do so, click *+ Filter by*, choose the property you want to include, and specify the property value you’re interested in.
 8. You can narrow your focus even further by telling Amplitude you only want to include users who have already performed certain actions. To do so, click *+ Performed*, then choose the event you’re interested in.
 9. If desired, add another user segment by clicking *+ Add Segment*, and repeating steps 6 and 7.
@@ -51,7 +58,7 @@ Selecting *This order* tells Amplitude Analytics that a user must complete all t
 ![segment.gif](/output/img/funnel-analysis/segment-gif.gif)  
   
 {{partial:admonition type='note'}}
- You can break out your starting event by user properties by clicking *… + Group by* in the Events module, if desired. For example, if you wanted to group users by the cities they were in when they fired the starting event, you would select *City* from the property list. Amplitude will then break out the retention analysis on a city-by-city basis. However, you will only be able to include one user segment in your analysis. 
+You can break out your starting event by user properties by clicking *… + Group by* in the Events module, if desired. For example, if you wanted to group users by the cities they were in when they fired the starting event, you would select *City* from the property list. Amplitude will then break out the retention analysis on a city-by-city basis. However, you will only be able to include one user segment in your analysis. 
 {{/partial:admonition}}
 
 Your new funnel analysis should now be visible in the chart module.
