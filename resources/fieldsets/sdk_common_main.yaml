@@ -6,6 +6,7 @@ fields:
       options:
         current: Current
         maintenance: Maintenance
+        Beta: Beta
       taggable: false
       push_tags: false
       multiple: false
@@ -63,16 +64,16 @@ fields:
     handle: supported_languages
     field:
       options:
-        js: null
-        ts: null
-        java: null
-        swift: null
-        obj-c: null
-        kotlin: null
-        flutter: null
-        python: null
-        c-sharp: null
-        go: null
+        js: js
+        ts: ts
+        java: java
+        swift: swift
+        obj-c: obj-c
+        kotlin: kotlin
+        python: python
+        c-sharp: c-sharp
+        go: go
+        dart: dart
       inline: true
       type: checkboxes
       display: 'Supported Languages'
