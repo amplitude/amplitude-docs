@@ -1,17 +1,21 @@
 ---
-title: "Use prediction-based cohorts in your campaigns"
-source: "https://help.amplitude.com/hc/en-us/articles/360049642891-Use-prediction-based-cohorts-in-your-campaigns"
 id: 8bfa1b80-554b-4ae1-8481-586991e7f726
+blueprint: audience
+title: 'Use prediction-based cohorts in your campaigns'
+source: 'https://help.amplitude.com/hc/en-us/articles/360049642891-Use-prediction-based-cohorts-in-your-campaigns'
+this_article_will_help_you:
+  - 'Set up a campaign based on prediction-derived cohorts, in the channel of your choice'
+  - 'Interpret the results of your campaigns, and act on those results'
+exclude_from_sitemap: false
+landing: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715120541
 ---
-
-#### This article will help you:
-
-* Set up a campaign based on prediction-derived cohorts, in the channel of your choice
-* Interpret the results of your campaigns, and act on those results
-
 A cohort based on a prediction can tell you which of your users are most likely to convert, but if you don’t target them via an email or advertising campaign, or personalize an experience to them, you won’t see the benefits. So once you save a cohort from a prediction, the next step is to plug it into a targeting campaign. 
 
-**NOTE:** Be sure to check out our other articles on predictions—[Predictions: use Amplitude's AI to help maximize lift](/cdp/audiences/predictions) and [Build a prediction](/cdp/audiences/predictions-build).
+{{partial:admonition type='note'}}
+Be sure to check out our other articles on predictions—[Predictions: use Amplitude's AI to help maximize lift](/cdp/audiences/predictions) and [Build a prediction](/cdp/audiences/predictions-build).
+{{/partial:admonition}}
 
 Prediction-based cohorts work best with three common campaign types:
 
@@ -33,18 +37,18 @@ Once you’ve decided on the type of campaign you’ll be running, and on the ch
 2. Select a one-time sync or schedule a recurring sync. The advantage of a recurring sync is that when the user probabilities change inside your cohort, they will be synced into the destination as well. Then click *Sync*.
 3. Open your destination tool and find the synced cohort. Each platform understands and categorizes synced cohorts a little differently:
 
-* * * * * * In Facebook, a synced cohort will appear as a Custom Audience
-						* In Google, it will appear as a Customer List
-						* In Braze, it will appear as a filter criteria (“Amplitude Cohorts”) within segment creation
-						* In Iterable, it will appear as a User List
+* In Facebook, a synced cohort will appear as a Custom Audience
+* In Google, it will appear as a Customer List
+* In Braze, it will appear as a filter criteria (“Amplitude Cohorts”) within segment creation
+* In Iterable, it will appear as a User List
 
 3. Next, set up a different, identical campaign for each user cohort. This way, you can measure a campaign’s effect on each cohort separately. For example, in an upgrade campaign with two predictive cohorts (the top 20% most likely to upgrade, and the bottom 80%), sync your cohorts to Braze. Choose an existing email campaign in Braze that has messaging relevant to an upgrade campaign. Then duplicate the campaign: one of them will target that top 20% cohort, and the other will target everyone else.
 4. Next, create a control (or **holdout**) group. This will be a group of users who are not included in the campaign at all. Including a control group enables you to measure the overall effect of the campaign: i.e. did the email campaign increase purchases relative to what they would have been if you’d never run the campaign? The place where you’ll set up this control will differ between platforms:
 
-* * * * * * Braze: [Multivariate Test](https://www.braze.com/docs/user_guide/engagement_tools/canvas/create_a_canvas/create_a_canvas/#step-4-use-multivariate-testing-using-canvas)
-						* Iterable: [A/B Experiment](https://support.iterable.com/hc/en-us/articles/205480325-A-B-experiments-overview-)
-						* Facebook Ads: [Holdout Lift Test](https://www.facebook.com/business/help/552097218528551?id=546437386202686)
-						* Google Ads: [Ad Experiments](https://support.google.com/displayvideo/answer/9040669?hl=en)
+* Braze: [Multivariate Test](https://www.braze.com/docs/user_guide/engagement_tools/canvas/create_a_canvas/create_a_canvas/#step-4-use-multivariate-testing-using-canvas)
+* Iterable: [A/B Experiment](https://support.iterable.com/hc/en-us/articles/205480325-A-B-experiments-overview-)
+* Facebook Ads: [Holdout Lift Test](https://www.facebook.com/business/help/552097218528551?id=546437386202686)
+* Google Ads: [Ad Experiments](https://support.google.com/displayvideo/answer/9040669?hl=en)
 
 Your campaign is now set up and ready to run. Let it run for a week or two, unless you have a smaller sample size or are working with low-conversion events: these should run longer, to give them a better chance to reach statistical significance. 
 

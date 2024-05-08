@@ -1,22 +1,26 @@
 ---
-title: "Recommendations: Help users reach the goals you've set for them"
-source: "https://help.amplitude.com/hc/en-us/articles/360059624172-Recommendations-Help-users-reach-the-goals-you-ve-set-for-them"
 id: 1367ad78-90fa-465b-be63-45e9102cdcec
+blueprint: audience
+title: "Recommendations: Help users reach the goals you've set for them"
+source: 'https://help.amplitude.com/hc/en-us/articles/360059624172-Recommendations-Help-users-reach-the-goals-you-ve-set-for-them'
+this_article_will_help_you:
+  - 'Determine if recommendations are a good fit for your organization'
+  - 'Understand the use-cases best suited to recommendations'
+  - 'Understand the data requirements for recommendations'
+exclude_from_sitemap: false
+landing: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715121430
 ---
-
-#### This article will help you:
-
-* Determine if recommendations are a good fit for your organization
-* Understand the use-cases best suited to recommendations
-* Understand the data requirements for recommendations
-
 Once you’ve identified a predictive goal for your users, the next step is making the **recommendations** that are most likely to drive users to reach it. Amplitude’s AutoML determines which items are most likely to maximize each user’s predictive goal, and then places those items in front of the user.
 
 Amplitude Audiences's machine learning algorithm clusters your selected users into groups of similar users. This similarity is determined by shared user properties and behaviors taken in the past. Next, it analyzes historical data to see which items are most likely to increase each cluster’s propensity to convert. Finally, it assigns a ranked list of items to each user, based on their respective assigned cluster.
 
 The algorithm re-trains every hour, so it’s always incorporating new information on properties and behaviors into its results.
 
-**NOTE:** Recommendations are available for standard event properties only. They are not available for merged, derived, or transformed properties.
+{{partial:admonition type='note'}}
+Recommendations are available for standard event properties only. They are not available for merged, derived, or transformed properties.
+{{/partial:admonition}}
 
 ## Who should use recommendations?
 
@@ -34,7 +38,9 @@ It’s important to keep in mind that Amplitude Audiences is **not an analytics 
 
 Support for other use cases—like in-session recommendations and new item recommendations—is currently in development.
 
-**NOTE:** Recommendations are only available to Amplitude Audiences customers.
+{{partial:admonition type='note'}}
+Recommendations are only available to Amplitude Audiences customers.
+{{/partial:admonition}}
 
 ## Data requirements for a recommendation
 

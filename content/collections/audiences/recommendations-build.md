@@ -1,14 +1,16 @@
 ---
-title: "Build a recommendation"
-source: "https://help.amplitude.com/hc/en-us/articles/360059625252-Build-a-recommendation"
 id: 81ab19f5-a628-4a08-81f0-97759a5bfa91
+blueprint: audience
+title: 'Build a recommendation'
+source: 'https://help.amplitude.com/hc/en-us/articles/360059625252-Build-a-recommendation'
+this_article_will_help_you:
+  - 'Create a new recommendation and interpret its results'
+  - 'Avoid common mistakes in setting up a recommendation'
+exclude_from_sitemap: false
+landing: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715121638
 ---
-
-#### This article will help you:
-
-* Create a new recommendation and interpret its results
-* Avoid common mistakes in setting up a recommendation
-
 Amplitude Audiences allows you to create recommendations to be used in your personalization campaigns. A recommendation to your users can increase engagement, reduce churn, and create cross-selling opportunities. Read more about the algorithm behind Amplitude's personalization feature in this [blog post](https://amplitude.com/blog/audiences-algorithm).
 
 ## Build a new recommendation
@@ -17,7 +19,7 @@ To create a new recommendation, open Cohorts & Audiences and click *Recommenda
 
 1. The first step is selecting the **type of recommendation** you'd like to create:
 
-* * **Top Trending:** The Top Trending recommendation generates a list of items that have experienced the highest increase in popularity over a specific time period. It helps identify new and emerging trends.
+	* **Top Trending:** The Top Trending recommendation generates a list of items that have experienced the highest increase in popularity over a specific time period. It helps identify new and emerging trends.
 	* **Most Popular:** The Most Popular recommendation creates a list of the most popular items based on their usage across all users. It highlights the content or products that are currently trending and in high demand.
 	* **AI Based:** The AI Based recommendation utilizes an AI-based model to provide personalized content to each user. It takes into account the user's past behavior and preferences to curate a list of items tailored specifically to them. This type of recommendation is the most sophisticated and has the potential to significantly enhance user engagement and conversion rates.
 
@@ -42,7 +44,7 @@ Amplitude also allows you to set your recommendation to work from a **static lis
 8. The next step is creating your item catalog, which is **choosing the items you want to recommend** in order to reach your desired outcome. Under *Define items to be recommended*, click *Select event…* to choose the exposure event.
 9. Click *Select property...* to designate the item to be recommended to the user. You won’t select the item itself; instead, you’ll choose an event property associated with the exposure event. The recommendation will choose the recommended item from the values of this event property.
 
-For example, a music app might want its users to buy concert tickets from within the app. It might show users who followed a playlist a concert popup, based on the genre of the playlist they followed. In this case, the event property selected here would be genre, and it would be attached to the follow\_playlist event. More generally, the event property will often be something like `SKU`, `ID`, `Name`, etc.  
+For example, a music app might want its users to buy concert tickets from within the app. It might show users who followed a playlist a concert popup, based on the genre of the playlist they followed. In this case, the event property selected here would be genre, and it would be attached to the follow\_playlist event. More generally, the event property will often be something like `SKU`, `ID`, `Name`, etc.
 
 10. **Next, specify the number of items to be recommended to each user.** By default, Amplitude Audiences will choose from the 50 most-frequent (based on 30-day uniques) values of the event property you selected in the previous step.  
   
@@ -58,7 +60,9 @@ Once your recommendation is complete, you can view some basic information about 
 
 The first thing you’ll notice is the confidence score. This represents Amplitude’s confidence that this recommendation will generate statistically-significant life, relative to a random list of items.
 
-**NOTE:** If the confidence score is less than 60, you should not use the recommendation.
+{{partial:admonition type='note'}}
+If the confidence score is less than 60, you should not use the recommendation.
+{{/partial:admonition}}
 
 Below that, you’ll find a list of items ranked by their frequency of appearance in the recommendation. The item at the top of the list is the one most commonly suggested to users by this recommendation, and is the one most likely to result in a conversion.
 

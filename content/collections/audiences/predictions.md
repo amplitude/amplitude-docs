@@ -1,15 +1,17 @@
 ---
-title: "Predictions: Use Amplitude's AI to help maximize lift"
-source: "https://help.amplitude.com/hc/en-us/articles/360049161832-Predictions-Use-Amplitude-s-AI-to-help-maximize-lift"
 id: 4271240a-42f6-4303-90a3-f0d6b11b8587
+blueprint: audience
+title: "Predictions: Use Amplitude's AI to help maximize lift"
+source: 'https://help.amplitude.com/hc/en-us/articles/360049161832-Predictions-Use-Amplitude-s-AI-to-help-maximize-lift'
+this_article_will_help_you:
+  - 'Decide if predictions will be right for your organization'
+  - 'Develop a plan for using predictions'
+  - 'Understand the calculations behind predictions'
+exclude_from_sitemap: false
+landing: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715121054
 ---
-
-#### This article will help you:
-
-* Decide if predictions will be right for your organization
-* Develop a plan for using predictions
-* Understand the calculations behind predictions
-
 As part of Amplitude Audiences, **predictions** are a **workflow improvement feature** that helps you optimize targeting workflows to generate maximal lift. 
 
 Instead of using cohorts to segment your users based on their past behavior, predictions let you segment your users based on their likelihood to perform a specific action in the future. They're most useful in three types of workflow improvement: **communication frequency, dynamic pricing,** and **content personalization.** Use them to:
@@ -19,7 +21,9 @@ Instead of using cohorts to segment your users based on their past behavior, pre
 * Modify pricing, offers, and discounts relative to a user’s likelihood to convert
 * Fine-tune the content in an ad, email, or website depending on their affinity for that content type
 
-**NOTE:** Predictions are available for standard event properties only. They are not available for merged, derived, or transformed properties.
+{{partial:admonition type='note'}}
+Predictions are available for standard event properties only. They are not available for merged, derived, or transformed properties.
+{{/partial:admonition}}
 
 Predictions construct a mathematical model to forecast the likelihood that a particular user will take a specific action in your product, and in turn groups users who have similar probabilities.
 
@@ -47,7 +51,7 @@ Conversely, your company is **less likely to benefit** from predictions if you:
 * Are in the B2B space, or
 * Lack a marketing team
 
-When you’re ready to get to work with predictive cohorts, be sure to read our Help Center articles on [building predictions](/cdp/audiences/predictions-build) and [using your predictions in campaigns](/cdp/audiences/predictions-use) first. Or have a look at the section below, which describes the process by which Amplitude Audiences builds predictions and how they work.
+When you’re ready to get to work with predictive cohorts, be sure to read our articles on [building predictions](/cdp/audiences/predictions-build) and [using your predictions in campaigns](/cdp/audiences/predictions-use) first. Or have a look at the section below, which describes the process by which Amplitude Audiences builds predictions and how they work.
 
 ## How predictions work
 

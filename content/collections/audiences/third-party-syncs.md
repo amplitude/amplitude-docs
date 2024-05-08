@@ -1,14 +1,16 @@
 ---
-title: "Sync to third-party destinations"
-source: "https://help.amplitude.com/hc/en-us/articles/360060055531-Sync-to-third-party-destinations"
 id: 8cdc1ed2-7236-4312-ae35-1efdb910c563
+blueprint: audience
+title: 'Sync to third-party destinations'
+source: 'https://help.amplitude.com/hc/en-us/articles/360060055531-Sync-to-third-party-destinations'
+this_article_will_help_you:
+  - 'Set up and manage syncs in Amplitude Audiences'
+exclude_from_sitemap: false
+landing: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715121551
 ---
-
-#### This article will help you:
-
-* Set up and manage syncs in Amplitude Audiences
-
-Amplitude supports three types of syncs for cohorts, properties, computations and predictions: **o****n-demand syncs**, **automated syncs**, and **real-time syncs**. 
+Amplitude supports three types of syncs for cohorts, properties, computations and predictions: **on-demand syncs**, **automated syncs**, and **real-time syncs**. 
 
 On-demand syncs are useful for audience testing and one-off campaigns. Automated syncs are scheduled on a daily or hourly frequency—so as your cohort audience membership changes, or the underlying predicted probabilities of the user change, Amplitude Audiences will automatically adjust their cohort membership in connected destinations as well. Real-time syncs update each minute and are built for interactive use cases where a rapid update is required.
 
@@ -16,7 +18,7 @@ No more CSV downloads or manual syncs required—whenever your users take an act
 
 #### Feature availability
 
-* **O****n-demand syncs** are available to users on Starter, Plus, Growth, and Enterprise plans.
+* **On-demand syncs** are available to users on Starter, Plus, Growth, and Enterprise plans.
 * **Automated syncs** are available to users on the Growth, Enterprise, and Plus plans.
 * **Real-time syncs** are available to users on the Growth and Enterprise plans.
 
@@ -64,7 +66,9 @@ Common reasons for differences in cohort syncs include:
 * **Unresolved mapping**: If a user property is not set (i.e., is `NULL`), Amplitude cannot sync the user the property is attached to. For example, if you're syncing a cohort of 100 users to a platform using email as the `User_ID`, but only 50 users have provided an email, only those 50 will sync. Check and fix your data at the source, update it in Amplitude, and then do another sync.
 * **Invalid mapped properties**: Properties that do not conform to the expected format in third-party destinations can cause partial or failed syncs. For example, the downstream destination may not accept a particular identifier format, like email or phone number.
 
-**NOTE:** If a sync is partially successful, the entire cohort sync will still be marked as successful, regardless of whether individual users are valid or not.
+{{partial:admonition type='note'}}
+If a sync is partially successful, the entire cohort sync will still be marked as successful, regardless of whether individual users are valid or not.
+{{/partial:admonition}}
 
 ## Warning when updating cohort mapping
 
@@ -103,7 +107,9 @@ The cohort sync history page provides a detailed breakdown of cohort syncs over 
 
 ![](/output/img/audiences/24324901338907)
 
-**NOTE:** This detailed cohort sync history page is available for all cohort sync destinations except for [Amazon S3](https://www.docs.developers.amplitude.com/data/destinations/amazon-s3-cohort/), [Braze User Properties sync](https://www.docs.developers.amplitude.com/data/destinations/braze-cohort/) and [TradeDesk](https://www.docs.developers.amplitude.com/data/destinations/thetradedesk-cohort/). These destinations continuously perform a full sync of users, not just the initial sync followed by incremental changes, making CSV downloads impractical. 
+{{partial:admonition type='note'}}
+This detailed cohort sync history page is available for all cohort sync destinations except for [Amazon S3](https://www.docs.developers.amplitude.com/data/destinations/amazon-s3-cohort/), [Braze User Properties sync](https://www.docs.developers.amplitude.com/data/destinations/braze-cohort/) and [TradeDesk](https://www.docs.developers.amplitude.com/data/destinations/thetradedesk-cohort/). These destinations continuously perform a full sync of users, not just the initial sync followed by incremental changes, making CSV downloads impractical. 
+{{/partial:admonition}}
 
 ## Inspect exported cohorts via CSV download
 
