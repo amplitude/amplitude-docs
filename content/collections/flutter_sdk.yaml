@@ -1,9 +1,9 @@
-title: 'SDK Catalog'
+title: 'Flutter SDK'
 template: default
 layout: layout
-mount: 3a6981ac-941a-41f4-b82e-3a660c59cf3a
+mount: 7cac036d-49d6-4fdc-8483-e8d11c75dbac
 revisions: false
-route: '/sdks/analytics-sdks/{slug}'
+route: '/sdks/analytics-sdks/flutter/{slug}'
 sort_dir: asc
 date_behavior:
   past: public
@@ -13,7 +13,5 @@ preview_targets:
     label: Entry
     url: '{permalink}'
     refresh: true
-structure:
-  root: false
 inject:
-  nav_title: developers
+  nav_title: flutter_sdk
