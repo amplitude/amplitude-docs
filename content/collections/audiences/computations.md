@@ -1,15 +1,17 @@
 ---
-title: "Computations: Create new user properties on the fly"
-source: "https://help.amplitude.com/hc/en-us/articles/360060044791-Computations-Create-new-user-properties-on-the-fly"
 id: 8dfd33d5-b99e-468d-82e9-548bdc2667bc
+blueprint: audience
+title: 'Computations: Create new user properties on the fly'
+source: 'https://help.amplitude.com/hc/en-us/articles/360060044791-Computations-Create-new-user-properties-on-the-fly'
+this_article_will_help_you:
+  - 'Streamline the segmentation process by understanding the difference between computations and cohorts'
+  - 'Create and deploy a computed property from an existing event or event property'
+  - 'Sync your computed properties to an external destination'
+exclude_from_sitemap: false
+landing: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715117867
 ---
-
-#### This article will help you:
-
-* Streamline the segmentation process by understanding the difference between computations and cohorts
-* Create and deploy a computed property from an existing event or event property
-* Sync your computed properties to an external destination
-
 Like cohorts, computations are a **segmentation tool**. But where cohorts create lists of users, computations work by: 
 
 * Transforming an event or event property into a **computed user property**.
@@ -21,7 +23,7 @@ Here’s an example. If you want to segment your users by the number of purchase
 As an alternative, you could create a computed property (number of orders, say), which will store the relevant number as a single integer, attached to each individual user. And while either a cohort or a computation would get the job done, in this use case, a computed property would be the more elegant and flexible choice.
 
 {{partial:admonition type='note'}}
- To use your computed property as a filter in a chart, first choose your computed property as a filter parameter in a cohort; then save the cohort. From there, you can select that cohort in any Amplitude chart as a segmentation parameter. You can also query directly on a computed property in a chart, as either a property filter or a group-by option.  
+To use your computed property as a filter in a chart, first choose your computed property as a filter parameter in a cohort; then save the cohort. From there, you can select that cohort in any Amplitude chart as a segmentation parameter. You can also query directly on a computed property in a chart, as either a property filter or a group-by option.  
 {{/partial:admonition}}
   
 Grouping by computations is only available on Event Segmentation, Funnel Analysis, Retention Analysis, and composition charts.
@@ -32,7 +34,9 @@ Computed properties are ideal tools for personalization campaigns. There are thr
 * **Aggregation**: This property type aggregates the sum, minimum, maximum, or average of the values of an event property over a defined period of time.
 * **First/last value**: This property type includes only the first or last value of the selected property in charts.
 
-**NOTE:** Computations are available for standard event properties only. They are not available for merged, derived, or transformed properties.
+{{partial:admonition type='note'}}
+Computations are available for standard event properties only. They are not available for merged, derived, or transformed properties.
+{{/partial:admonition}}
 
 ## Create a computed property
 
@@ -42,11 +46,13 @@ To create a new computed property, follow these steps:
 2. Under *Computation Type*, select the type of computed property you want to create and click *Next >*.
 3. Under *Select an Event*, choose the event you’re interested in building your computed property from:
 
-* * For **event count** computed properties, you can filter the event using *+ where* clauses to add any conditions you may wish to include.
-	* For **aggregation** computed properties, select an event and the related event property you want to aggregate. Specify if you want to compute an average, minimum, maximum, or sum value.
-	* For **first/last value** computed properties, select the aggregation type *First Value* or *Last Value*. Specify the appropriate event and property.
+* For **event count** computed properties, you can filter the event using *+ where* clauses to add any conditions you may wish to include.
+* For **aggregation** computed properties, select an event and the related event property you want to aggregate. Specify if you want to compute an average, minimum, maximum, or sum value.
+* For **first/last value** computed properties, select the aggregation type *First Value* or *Last Value*. Specify the appropriate event and property.
 
-**NOTE:** The event property value must be expressed as an integer for the aggregation to work.
+{{partial:admonition type='note'}}
+The event property value must be expressed as an integer for the aggregation to work.
+{{/partial:admonition}}
 
 4. Set the time range for your computed property. When you’re done, click *Next >*.
 5. Name your computation and, if desired, enter a description. This name will appear as a user property on every user. Then click *Next >*.

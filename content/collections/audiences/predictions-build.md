@@ -1,18 +1,22 @@
 ---
-title: "Build a prediction"
-source: "https://help.amplitude.com/hc/en-us/articles/360049164712-Build-a-prediction"
 id: e1b61782-4ec1-47a2-a803-0b6385477026
+blueprint: audience
+title: 'Build a prediction'
+source: 'https://help.amplitude.com/hc/en-us/articles/360049164712-Build-a-prediction'
+this_article_will_help_you:
+  - 'Build a prediction in Amplitude Audiences'
+  - 'Create a predictive cohort from your prediction'
+  - 'Analyze your predictive cohort'
+exclude_from_sitemap: false
+landing: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715119140
 ---
-
-#### This article will help you:
-
-* Build a prediction in Amplitude Audiences
-* Create a predictive cohort from your prediction
-* Analyze your predictive cohort
-
 Predictions allow you to segment your users based on their likelihood to perform specific events or actions in the future.
 
-**NOTE:** Be sure to check out our other articles on predictions—[Predictions: use Amplitude's AI to help maximize lift](/cdp/audiences/predictions) and [Use predictions in your campaigns](/cdp/audiences/predictions-use).
+{{partial:admonition type='note'}}
+Be sure to check out our other articles on predictions: [Predictions: use Amplitude's AI to help maximize lift](/cdp/audiences/predictions) and [Use predictions in your campaigns](/cdp/audiences/predictions-use).
+{{/partial:admonition}}
 
 ## Build a prediction
 
@@ -23,7 +27,10 @@ To build a prediction in Amplitude Audiences, follow these steps:
 3. If you choose to define your own starting cohort, the first step is selecting the users who will be included in the cohort. Under *Define starting cohort*, select the events, properties, or statuses that users in your cohort share.
 4. Next, **specify the action you want the starting cohort to take**. Under *Define future outcome*, you can specify events you want—or don’t want—your users to fire, the properties you want them to have after taking an action, or some combination of all three. Be sure to specify the time frame in which you want your users to take this future action.  
   
-**TIP:** Another way to think about a prediction is as a **cohort transition**: you’re predicting the relative likelihood of a user to transition from Cohort A (the starting cohort) to Cohort B (the future outcome) in the coming week.
+{{partial:admonition type='tip'}}
+Another way to think about a prediction is as a **cohort transition**: you’re predicting the relative likelihood of a user to transition from Cohort A (the starting cohort) to Cohort B (the future outcome) in the coming week.
+{{/partial:admonition}}
+
 5. If desired, **you may choose to add optional settings** under *Advanced Model Configuration*. This section allows you to further define your starting cohort by either including or excluding specific user properties. Click *Add Feature* under *Include* or *Exclude* to search for user properties to further define your starting cohort. Click *Save*.
 6. **Give your prediction a name and add a brief description. Then click *Save*****.** It will take about an hour for Amplitude Audiences to build your prediction. You’ll receive an email when the process is done.
 
@@ -34,12 +41,14 @@ Once Amplitude Audiences has finished building your prediction, you’ll want to
 1. To view the results of your prediction, click the *Predictions* tab from the Cohorts & Audiences page. This will show you a list of all the predictions created so far.
 2. Find your prediction and click it to open the prediction explorer's *Audience analysis* tab. Here, you’ll see the distribution of all users in your starting cohort:
 
-* * The Y-axis shows the likelihood a user will convert (i.e., arrive at the future outcome you specified earlier)
-	* The X-axis shows the percentile of users
+* The Y-axis shows the likelihood a user will convert (i.e., arrive at the future outcome you specified earlier)
+* The X-axis shows the percentile of users
 
 You can select a range of users by percentile and see how many users fall in the range, the predicted conversion rate of users in that range, and the likelihood of conversion for those users relative to the average.
 
-**NOTE: percentile and probability are not the same thing**. If you select the 80% - 100% percentile range, this does NOT mean the users in it have an 80% - 99% probability to convert. Instead, it means they’re in the top 20% of users, as ranked by probability to convert.
+{{partial:admonition type='note'}}
+**Percentile and probability are not the same thing**. If you select the 80% - 100% percentile range, this does NOT mean the users in it have an 80% - 99% probability to convert. Instead, it means they’re in the top 20% of users, as ranked by probability to convert.
+{{/partial:admonition}}
 
 ### Feature importance
 
@@ -90,7 +99,9 @@ While it can be tempting to just slice the starting cohort into two sections—i
 * **Sample size:** If you have an idea of how many users you want to target in a growth campaign, then select that percentage on the right side of the chart. For example, if you want to target 2000 users and you have 20,000 users in the starting cohort, then simply select the top 10%.
 * **Minimum detectable lift.** If you plan to target the selected users in a growth campaign, make sure the sample size is large enough to detect incremental lift. For example, if the top 20% of a prediction is 20,000 users, but the predicted conversion rate is 1%, you won’t be able to detect lift at statistically significant levels. Instead, you must increase the sample size to top 45% of users at 45,000 users.
 
-**NOTE:** When a user’s probabilities change, Amplitude Audiences will automatically adjust their cohort membership if they fall into or out of the selected percentile range.
+{{partial:admonition type='note'}}
+When a user’s probabilities change, Amplitude Audiences will automatically adjust their cohort membership if they fall into or out of the selected percentile range.
+{{/partial:admonition}}
 
 ## Analyze your predictive cohort
 
@@ -101,4 +112,4 @@ Once you save a prediction as a cohort, you can use it for analysis in any Ampli
 * **Pathfinder:** identify the different sequences of actions users take if they have a high likelihood vs low likelihood to convert.
 * **Composition:** break down the property values of the respective cohorts to differences in user properties (i.e., which countries the best users vs worst users are in).
 * **Engagement Matrix:** compare the events fired by the best users vs the worst users, based on the balance of frequency and % of users.
-* **Funnel*****:*** compare relative conversion rates for any sequence of actions between the best users and worst users.
+* **Funnel:** compare relative conversion rates for any sequence of actions between the best users and worst users.
