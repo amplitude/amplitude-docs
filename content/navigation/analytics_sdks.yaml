@@ -6,3 +6,4 @@ collections:
   - sdk-catalog
   - flutter_sdk
   - go_sdk
+  - ios_sdk

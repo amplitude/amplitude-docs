@@ -13,7 +13,6 @@ shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/node.svg'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1710273534
 ampli_article: 032ffb7e-a0ff-49d8-bcad-2407d7bd5573
-nav_title: node_sdk
 migration_guide:
   - 1ca7ad5b-47f8-4709-b0f1-083941dc62c9
 ---
