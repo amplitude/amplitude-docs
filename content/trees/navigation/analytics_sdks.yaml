@@ -1,34 +1,119 @@
 tree:
   -
-    id: 21de95f4-f284-4fe5-ace5-9fa6647cbd71
-    entry: c3197ac0-3df0-447b-b632-e1ec4b6e88c9
+    id: c91e819f-45d9-4ebe-9e89-a47bccf96541
+    title: 'Browser SDK'
+    url: /sdks/analytics-sdks/browser-sdk
+    children:
+      -
+        id: 348e2c98-813e-4a6d-9892-099b386b9c8e
+        title: 'Browser SDK 2'
+        children:
+          -
+            id: 6b9b7260-5144-413f-85e9-06ed3bebd350
+            entry: 00d74a7b-23bd-4a24-86a1-92c046e7e1b5
+          -
+            id: c8409c25-e62b-4d83-8432-9b189c05faa2
+            entry: 5afa91b7-c12d-425a-b4b6-661061e5843a
+      -
+        id: d0d30242-721b-4c7f-b6f6-74e05b283195
+        title: 'Browser SDK 1'
+        children:
+          -
+            id: 4f232c6e-ad32-4e73-a52f-9cf7126caae0
+            entry: 8471af8b-e132-4073-8330-d5dd7bbbd8ae
+          -
+            id: ed5e9870-6784-4e7f-b3e5-4d5119cda768
+            entry: f7989230-bf1c-48aa-ad61-2bc2b3e15a8c
+          -
+            id: 1ab3e6ba-6fe5-4a91-8533-9e07853cfc9a
+            entry: 9b155be9-bb32-428c-9f49-6e00f9630547
+      -
+        id: e9479f1e-9372-444c-a1b2-30a6ab36be37
+        title: 'Javascript SDK'
+        children:
+          -
+            id: 55c92e01-c259-4d6b-b864-464d3daade0c
+            entry: e6b6889d-9d39-4f04-89a1-87f78db80f49
+          -
+            id: 3ac6069e-ab90-4800-8b78-5a934fc6b44e
+            entry: 6b771f94-bf3a-44ba-a6a7-6e5b58108f70
+          -
+            id: e43c8153-9b6b-4964-ac1e-8bc091312b24
+            entry: b7cc9d54-870a-40bc-93d8-a2ac15375e75
+      -
+        id: 8fc0dfc2-e350-43be-b29c-f37a3d3c6a75
+        title: 'Marketing Analytics SDK'
+        children:
+          -
+            id: c33fde3f-8844-43f0-a029-2465addf7d13
+            entry: 25904c6b-609d-4365-9660-2782ef50d52d
+          -
+            id: 990d6409-8048-4343-8153-93b36e5976b2
+            entry: eb4533a3-2075-49a0-83fa-e703afea78e7
   -
-    id: fd2b365f-e1b9-4a69-80ff-b9ef3369e7f4
-    entry: d97ddfe8-6b08-4dce-91dc-53d41ef7eb0a
+    id: 9a81493c-ecba-4501-89c2-1edd20dd05ba
+    title: 'Android SDK'
+    url: /sdks/analytics-sdks/android-sdk
+    children:
+      -
+        id: 51dbcce0-c985-468c-9ac4-47accd32d54c
+        title: 'Android-Kotlin SDK'
+        children:
+          -
+            id: 7841e9ff-22f3-416a-adcd-24cb6e331c03
+            entry: 4e6f43a0-1f71-4b9d-9193-f45500b42188
+          -
+            id: e502a56f-49f5-4672-8376-d2be2f072d93
+            entry: 167c275e-0aad-4fd1-9658-43a25c4654d6
+      -
+        id: bbce87d4-0491-41f7-8dbe-fc58ceb1bc22
+        title: 'Android SDK 1.0'
+        children:
+          -
+            id: ca7772e4-bff2-40db-8baf-fe282004a2ce
+            entry: 9f4dcd07-e262-4c9b-b841-ebb721d37a6d
+          -
+            id: bf633f83-fa66-454c-b4b6-56cf288cffb6
+            entry: 016795b7-45ca-4daa-9458-85bf283a35cb
   -
-    id: ebfc2add-6fdb-46c3-ae7e-578c1823b09a
-    entry: 7cac036d-49d6-4fdc-8483-e8d11c75dbac
+    id: 48153f3f-9a91-4ad6-8426-0c9bfea008f3
+    title: 'Node SDK'
+    url: /sdks/analytics-sdks/node
+    children:
+      -
+        id: ae0ce800-7681-4689-937b-6a26f922bf3b
+        entry: 2c015237-717d-481f-b4c3-f64fd04f48fd
+      -
+        id: a7197abd-63ec-4fd2-bb4d-ba13e4e70f1c
+        title: 'Node.js SDK'
+        children:
+          -
+            id: 6e62c57e-8cd3-493a-9216-6abf3d00b99f
+            entry: 8cbcfa2a-a300-48c8-b551-aee1b1423cdb
+          -
+            id: e6a4c8d8-da76-435c-856d-625c0fb70476
+            entry: 032ffb7e-a0ff-49d8-bcad-2407d7bd5573
+      -
+        id: 4e49c612-d861-4dbb-8847-5b07d161da49
+        title: 'Node SDK'
+        children:
+          -
+            id: 4f59f587-dd55-4b79-b706-124bd5efea96
+            entry: e3b9838b-8d35-49d8-ba91-5a0840cbc603
+          -
+            id: cf41fb91-d19d-4f93-9b7e-e02f23f6e9c1
+            entry: 5f0a9b3c-627c-4014-bb2e-d1ac1c465db9
+          -
+            id: 5152cf3d-bb31-4831-be9f-de0cc87e3b7b
+            entry: 1ca7ad5b-47f8-4709-b0f1-083941dc62c9
   -
-    id: 255d9e5d-1efd-428c-83b0-b778ee1f56ad
-    entry: 5d8e869f-a964-4cbe-a103-65ecd4c2c576
-  -
-    id: 14a1682e-cd68-4c88-a621-f5c755dcbe9a
-    entry: 4b780c66-217c-4b22-9629-916659e798ad
-  -
-    id: c113cddb-6a2a-4718-97b2-8a843485b2da
-    entry: 0906f7ef-96ae-4189-879d-ca81cafeebf8
-  -
-    id: 8b3dc3ff-6d92-4625-823c-6594f0cfd5b3
-    entry: 2c015237-717d-481f-b4c3-f64fd04f48fd
-  -
-    id: 1e70b65d-eb53-48e5-8ef7-94f64f85e2a9
-    entry: 8928035c-0b78-4b55-8610-ea7377ddde86
-  -
-    id: ae244fed-5e07-4cd8-a436-53f53e2153e1
-    entry: 0e02d5e0-1bc7-4fc6-88a1-983221265987
-  -
-    id: 6a57bea7-334c-40fb-8bca-7fe0055a1845
-    entry: 06e72ffb-fe50-4afb-9a15-67e88597afc3
-  -
-    id: a786e5f5-7304-43b2-8385-eba00b12dc28
-    entry: 43e41163-253e-4ddc-bdd6-2f4020e91eae
+    id: a52630fc-0ccc-449a-b355-abd980ab2577
+    title: 'Go SDK'
+    url: /sdks/analytics-sdks/go
+    children:
+      -
+        id: 04095a4d-c726-40a9-989e-8d15a20cf6c0
+        entry: 81b1c47d-3e5a-4c16-8f16-6ef65c3959a4
+      -
+        id: edf55edf-4064-4530-b553-da06e71b15fb
+        entry: c71d80ea-d8a8-4bf2-8c78-fa3e8f061a95

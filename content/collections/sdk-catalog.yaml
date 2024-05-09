@@ -16,4 +16,4 @@ preview_targets:
 structure:
   root: false
 inject:
-  nav_title: developers
+  nav_title: analytics_sdks
