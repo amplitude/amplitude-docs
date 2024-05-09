@@ -4,7 +4,6 @@ blueprint: sdk-catalog
 title: 'Node.js SDK'
 source: 'https://www.docs.developers.amplitude.com/data/sdks/typescript-node/'
 template: sdk-landing
-nav_title: node_sdk
 logo: icons/node.svg
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 exclude_from_sitemap: false
