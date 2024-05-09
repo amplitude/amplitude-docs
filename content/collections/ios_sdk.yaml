@@ -1,9 +1,9 @@
-title: 'Node.js SDK'
+title: 'iOS SDK'
 template: default
 layout: layout
-mount: 2c015237-717d-481f-b4c3-f64fd04f48fd
+mount: 4b780c66-217c-4b22-9629-916659e798ad
 revisions: false
-route: '/sdks/analytics-sdks/node/{slug}'
+route: '/sdks/analytics-sdks/ios/{slug}'
 sort_dir: asc
 date_behavior:
   past: public
@@ -13,7 +13,5 @@ preview_targets:
     label: Entry
     url: '{permalink}'
     refresh: true
-structure:
-  root: false
 inject:
   nav_title: analytics_sdks

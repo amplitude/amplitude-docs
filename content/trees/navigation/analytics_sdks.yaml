@@ -1,5 +1,9 @@
 tree:
   -
+    id: 29116163-9275-43fd-aa6e-e229dee7f716
+    title: 'Analytics SDKs'
+    url: /sdks/analytics-sdks
+  -
     id: c91e819f-45d9-4ebe-9e89-a47bccf96541
     title: 'Browser SDK'
     url: /sdks/analytics-sdks/browser-sdk
@@ -117,3 +121,12 @@ tree:
       -
         id: edf55edf-4064-4530-b553-da06e71b15fb
         entry: c71d80ea-d8a8-4bf2-8c78-fa3e8f061a95
+  -
+    id: a9f79548-98e3-4713-aa6f-1449ce435ffd
+    title: 'iOS SDK'
+    url: /sdks/analytics-sdks/ios
+    children:
+      -
+        id: 27131c1a-78f9-4633-a979-93572f3f24be
+        title: 'iOS Swift SDK'
+        url: /sdks/analytics-sdks/ios/ios-swift-sdk
