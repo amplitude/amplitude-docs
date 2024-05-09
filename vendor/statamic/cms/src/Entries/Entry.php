@@ -188,9 +188,19 @@ class Entry implements Arrayable, ArrayAccess, Augmentable, ContainsQueryableVal
         ], $this->data()->except(['updated_at'])->toArray());
     }
 
+    public function deleteQuietly()
+    {
+        $this->withEvents = false;
+
+        return $this->delete();
+    }
+
     public function delete()
     {
-        if (EntryDeleting::dispatch($this) === false) {
+        $withEvents = $this->withEvents;
+        $this->withEvents = true;
+
+        if ($withEvents && EntryDeleting::dispatch($this) === false) {
             return false;
         }
 
@@ -216,16 +226,18 @@ class Entry implements Arrayable, ArrayAccess, Augmentable, ContainsQueryableVal
 
         Facades\Entry::delete($this);
 
-        EntryDeleted::dispatch($this);
+        if ($withEvents) {
+            EntryDeleted::dispatch($this);
+        }
 
         return true;
     }
 
-    public function deleteDescendants()
+    public function deleteDescendants($withEvents = true)
     {
-        $this->descendants()->each(function ($entry) {
-            $entry->deleteDescendants();
-            $entry->delete();
+        $this->descendants()->each(function ($entry) use ($withEvents) {
+            $entry->deleteDescendants($withEvents);
+            $withEvents ? $entry->delete() : $entry->deleteQuietly();
         });
 
         Blink::forget('entry-descendants-'.$this->id());
@@ -378,6 +390,7 @@ class Entry implements Arrayable, ArrayAccess, Augmentable, ContainsQueryableVal
 
         if ($this->isDirty('slug')) {
             optional(Collection::findByMount($this))->updateEntryUris();
+            $this->updateChildPageUris();
         }
 
         foreach ($afterSaveCallbacks as $callback) {
@@ -405,6 +418,28 @@ class Entry implements Arrayable, ArrayAccess, Augmentable, ContainsQueryableVal
         $this->syncOriginal();
 
         return true;
+    }
+
+    private function updateChildPageUris()
+    {
+        $collection = $this->collection();
+
+        // If it's orderable (single depth structure), there are no children to update.
+        // If the collection has no route, there are no uris to update.
+        // If there's no page, there are no children to update.
+        if (
+            $collection->orderable()
+            || ! $this->route()
+            || ! ($page = $this->page())
+        ) {
+            return;
+        }
+
+        if (empty($ids = $page->flattenedPages()->pluck('id'))) {
+            return;
+        }
+
+        $collection->updateEntryUris($ids);
     }
 
     public function taxonomize()
