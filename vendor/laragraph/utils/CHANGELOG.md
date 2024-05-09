@@ -5,9 +5,39 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-[See GitHub releases.](https://github.com/laragraph/utils/releases).
+[See GitHub releases](https://github.com/laragraph/utils/releases).
 
 ## Unreleased
+
+## v2.1.0
+
+### Added
+
+- Support Laravel 11 https://github.com/laragraph/utils/pull/16
+
+## v2.0.3
+
+### Fixed
+
+- Do not publish `tests` directory in composer package https://github.com/laragraph/utils/pull/15
+
+## v2.0.2
+
+### Fixed
+
+- Throw `BadMultipartRequestGraphQLException` for invalid `multipart/form-data` requests https://github.com/laragraph/utils/pull/14
+
+## v2.0.1
+
+### Fixed
+
+- Fix parsing batched queries
+
+## v2.0.0
+
+### Changed
+
+- Rely on `$request->input()` instead of manually json decoding request body https://github.com/laragraph/utils/pull/12
 
 ## v1.6.0
 

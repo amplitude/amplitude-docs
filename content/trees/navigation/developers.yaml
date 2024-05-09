@@ -1,20 +1,5 @@
 tree:
   -
-    id: 26874aaa-2b3d-459b-b015-32295a040e49
-    entry: 53c7b244-36fd-47b4-8cd7-689dc44fc563
-  -
-    id: 4eb74613-5de2-4e96-8893-ae27a2a90622
-    entry: ba956cb4-9ae1-456a-b122-984b491048f6
-  -
-    id: 613212f1-77d7-4c88-b8f0-1afeffc06e06
-    entry: cae327ea-be74-4783-ab16-09f2848cebca
-  -
-    id: 24b402ab-351e-4af8-93bf-39a23b40ed0f
-    entry: cea4db38-5323-4b0b-b401-8077084a0a0a
-  -
-    id: 6a365733-24c1-4065-8e9a-846323e14df4
-    entry: a0da41b8-4d51-4efc-9edf-30e7cf7c7929
-  -
     id: 82ff63dd-a54f-4072-93b9-9156af044126
     title: 'Analytics SDKs'
     children:
@@ -51,6 +36,19 @@ tree:
       -
         id: 10c60ac2-3d6b-43d9-81af-81e79fffa721
         entry: 5d8e869f-a964-4cbe-a103-65ecd4c2c576
+  -
+    id: bc3b0d2e-834b-4b0c-9998-138e9702e880
+    title: 'Session Replay'
+    children:
+      -
+        id: bb6e9b7f-614b-4571-a6af-b6b546dd5605
+        entry: 99b87b72-07f8-4e08-9dcd-348f3c8976f3
+      -
+        id: 0bb96f40-9b4a-4501-ab62-7512641e01fc
+        entry: f4c61e43-7a55-43a3-9dbd-f1ecb2502774
+      -
+        id: 50e45e20-45d5-4916-a51f-c3eefad8a8e8
+        entry: d225a8c4-c504-4cbe-b4f3-8709ab43fdc1
   -
     id: 0800c1e2-008e-4c02-ad25-ade39c19e6fc
     title: 'Experiment SDKs'
@@ -96,15 +94,17 @@ tree:
             id: 39a176e8-6c84-4655-b7d5-127c2c6c9617
             entry: 02f37e03-e7c5-4324-835a-772a79e0963c
   -
-    id: bc3b0d2e-834b-4b0c-9998-138e9702e880
-    title: 'Session Replay'
-    children:
-      -
-        id: bb6e9b7f-614b-4571-a6af-b6b546dd5605
-        entry: 99b87b72-07f8-4e08-9dcd-348f3c8976f3
-      -
-        id: 0bb96f40-9b4a-4501-ab62-7512641e01fc
-        entry: f4c61e43-7a55-43a3-9dbd-f1ecb2502774
-      -
-        id: 50e45e20-45d5-4916-a51f-c3eefad8a8e8
-        entry: d225a8c4-c504-4cbe-b4f3-8709ab43fdc1
+    id: 26874aaa-2b3d-459b-b015-32295a040e49
+    entry: 53c7b244-36fd-47b4-8cd7-689dc44fc563
+  -
+    id: 4eb74613-5de2-4e96-8893-ae27a2a90622
+    entry: ba956cb4-9ae1-456a-b122-984b491048f6
+  -
+    id: 613212f1-77d7-4c88-b8f0-1afeffc06e06
+    entry: cae327ea-be74-4783-ab16-09f2848cebca
+  -
+    id: 24b402ab-351e-4af8-93bf-39a23b40ed0f
+    entry: cea4db38-5323-4b0b-b401-8077084a0a0a
+  -
+    id: 6a365733-24c1-4065-8e9a-846323e14df4
+    entry: a0da41b8-4d51-4efc-9edf-30e7cf7c7929

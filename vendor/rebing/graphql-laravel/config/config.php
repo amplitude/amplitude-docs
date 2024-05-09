@@ -9,7 +9,7 @@ return [
 
         // The controller/method to use in GraphQL request.
         // Also supported array syntax: `[\Rebing\GraphQL\GraphQLController::class, 'query']`
-        'controller' => \Rebing\GraphQL\GraphQLController::class . '@query',
+        'controller' => Rebing\GraphQL\GraphQLController::class . '@query',
 
         // Any middleware for the graphql route group
         // This middleware will apply to all schemas
@@ -111,11 +111,6 @@ return [
         // \Rebing\GraphQL\Support\UploadType::class,
     ],
 
-    // The types will be loaded on demand. Default is to load all types on each request
-    // Can increase performance on schemes with many types
-    // Presupposes the config type key to match the type class name property
-    'lazyload_types' => true,
-
     // This callable will be passed the Error object for each errors GraphQL catch.
     // The method should return an array representing the error.
     // Typically:
@@ -123,7 +118,7 @@ return [
     //     'message' => '',
     //     'locations' => []
     // ]
-    'error_formatter' => [\Rebing\GraphQL\GraphQL::class, 'formatError'],
+    'error_formatter' => [Rebing\GraphQL\GraphQL::class, 'formatError'],
 
     /*
      * Custom Error Handling
@@ -132,7 +127,7 @@ return [
      *
      * The default handler will pass exceptions to laravel Error Handling mechanism
      */
-    'errors_handler' => [\Rebing\GraphQL\GraphQL::class, 'handleErrors'],
+    'errors_handler' => [Rebing\GraphQL\GraphQL::class, 'handleErrors'],
 
     /*
      * Options to limit the query complexity and depth. See the doc
@@ -149,24 +144,13 @@ return [
      * You can define your own pagination type.
      * Reference \Rebing\GraphQL\Support\PaginationType::class
      */
-    'pagination_type' => \Rebing\GraphQL\Support\PaginationType::class,
+    'pagination_type' => Rebing\GraphQL\Support\PaginationType::class,
 
     /*
      * You can define your own simple pagination type.
      * Reference \Rebing\GraphQL\Support\SimplePaginationType::class
      */
-    'simple_pagination_type' => \Rebing\GraphQL\Support\SimplePaginationType::class,
-
-    /*
-     * Config for GraphiQL (see (https://github.com/graphql/graphiql).
-     */
-    'graphiql' => [
-        'prefix' => 'graphiql', // Do NOT use a leading slash
-        'controller' => \Rebing\GraphQL\GraphQLController::class . '@graphiql',
-        'middleware' => [],
-        'view' => 'graphql::graphiql',
-        'display' => env('ENABLE_GRAPHIQL', true),
-    ],
+    'simple_pagination_type' => Rebing\GraphQL\Support\SimplePaginationType::class,
 
     /*
      * Overrides the default field resolver
@@ -224,10 +208,15 @@ return [
      * Execution middlewares
      */
     'execution_middleware' => [
-        \Rebing\GraphQL\Support\ExecutionMiddleware\ValidateOperationParamsMiddleware::class,
+        Rebing\GraphQL\Support\ExecutionMiddleware\ValidateOperationParamsMiddleware::class,
         // AutomaticPersistedQueriesMiddleware listed even if APQ is disabled, see the docs for the `'apq'` configuration
-        \Rebing\GraphQL\Support\ExecutionMiddleware\AutomaticPersistedQueriesMiddleware::class,
-        \Rebing\GraphQL\Support\ExecutionMiddleware\AddAuthUserContextValueMiddleware::class,
+        Rebing\GraphQL\Support\ExecutionMiddleware\AutomaticPersistedQueriesMiddleware::class,
+        Rebing\GraphQL\Support\ExecutionMiddleware\AddAuthUserContextValueMiddleware::class,
         // \Rebing\GraphQL\Support\ExecutionMiddleware\UnusedVariablesMiddleware::class,
     ],
+
+    /*
+     * Globally registered ResolverMiddleware
+     */
+    'resolver_middleware_append' => null,
 ];
