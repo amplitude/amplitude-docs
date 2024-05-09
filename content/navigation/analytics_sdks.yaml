@@ -4,3 +4,4 @@ collections:
   - browser_sdk
   - node_js_sdk
   - sdk-catalog
+  - flutter_sdk
