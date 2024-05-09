@@ -1,13 +1,104 @@
 CHANGELOG
 =========
 
-[Next release](https://github.com/rebing/graphql-laravel/compare/8.6.0...master)
---------------
+[Next release](https://github.com/rebing/graphql-laravel/compare/9.5.0...master)
+
+2024-03-06, 9.5.0
+-----------------
+
+### Changed
+- Relax PaginationType/SimplePaginationType getPaginationFields typehint [\#1132 / jasonvarga](https://github.com/rebing/graphql-laravel/pull/1132)
+
+2024-03-04, 9.4.0
+-----------------
+
+## Added
+- Possibility to add resolver middleware at runtime using `GraphQL::appendGlobalResolverMiddleware(YourMiddleware::class)` or `GraphQL::appendGlobalResolverMiddleware(new YourMiddleware(...))`
+
+2024-02-18, 9.3.0
+-----------------
+
+## Removed
+- Support for Laravel 9 & PHP 8.0 have been removed [\#1123 / mfn](https://github.com/rebing/graphql-laravel/pull/1123)
+
+2024-02-18, 9.2.0
+-----------------
+
+## Added
+- Support Laravel for 11 [\#1117 / mfn](https://github.com/rebing/graphql-laravel/pull/1117)
+
+2023-08-06, 9.1.0
+-----------------
+## Fixed
+- fix schema validation - resolve not allowed in input fields [\#1078 / crissi](https://github.com/rebing/graphql-laravel/pull/1078)
+
+2023-06-25, 9.0.0
+-----------------
+## Breaking changes
+### Added
+- Upgrade to graphql-php 15 [\#953 / mfn](https://github.com/rebing/graphql-laravel/pull/953)\
+  This includes possible breaking changes also outside of this package, see also https://github.com/webonyx/graphql-php/releases/tag/v15.0.0 \
+  Known breaking changes:
+  - non-standard error related data keys are not included directly in
+    `errors.*.<non-standard error key>` any more, but have been moved to
+    `errors.*.extensions.<non-standard error key>`.\
+    Also new keys may appear here from upstream.
+  - The `errors.*.extensions.category` has been removed upstream, but we try to
+    keep it alive with the interface
+    `\Rebing\GraphQL\Error\ProvidesErrorCategory` as it can be a useful
+    discriminator on the client side in certain cases. But only the cases from
+    _this_ library are preserved, e.g. categories like `request`, `graphql` or
+    `internal` are gone.
+  - The `\Rebing\GraphQL\Support\OperationParams` has added required types due to
+    its base class changes:
+    - Old: `public function getOriginalInput($key)`\
+      new: `public function getOriginalInput(string $key)`
+    - Old: `public function isReadOnly()`\
+      new: `public function isReadOnly(): bool`
+  
+  Some BC may happen also if you extended code originating in graphql-php,
+  some examples:
+  - if you implement custom types, you now have to use property types for e.g.
+    `$name` or `$description`
+  - If you used any `\GraphQL\Validator\DocumentValidator` in your code
+    directly, you now need use FQCN to reference them and not the shortened
+    string names.
+  - `->getWrappedType(true)` was replaced with `->getInnermostType()`
+  - the class `\GraphQL\Type\Definition\FieldArgument` has been renamed to
+    `\GraphQL\Type\Definition\Argument`
+
+### Removed
+- Remove support for eager loading (=non-lazy loading) of types\
+  Lazy loading has been introduced in 2.0.0 (2019-08) and has been made the
+  default since 8.0.0 (2021-11).\
+  The practical impact is that types are always going to be resolved using a
+  type loader and therefore cannot use aliases anymore. Types and their type
+  name have to match.
+- Remove integrated GraphiQL support in favour of https://github.com/mll-lab/laravel-graphiql [\#986 / mfn](https://github.com/rebing/graphql-laravel/pull/986)
+- Laravel 6 is no longer supported [\#967 / mfn](https://github.com/rebing/graphql-laravel/pull/967)
+- Laravel 8 is no longer supported [\#1049 / mfn](https://github.com/rebing/graphql-laravel/pull/1049)
+
+## Changed
+- The type resolver is now able to resolve the top level types 'Query',
+  'Mutation' and 'Subscription'\
+  If you have an existing query/mutation/type named like this, you need to
+  rename it.
+- Return types were added to all methods of the commands [\#1005 / sforward](https://github.com/rebing/graphql-laravel/pull/1005)
+- Upgrade to laragraph/utils v2 [\#1032 / mfn](https://github.com/rebing/graphql-laravel/pull/1032)
+- The `Pagination` and `SimplePagination` helper types now enforce `nonNull` on their data types
+- The test suite now also runs with `--prefer-lowest` [\#1055 / mfn](https://github.com/rebing/graphql-laravel/pull/1055)\
+  This uncovered a few issues with `laragraph/utils` and `webonyx/graphql-php`
+  and thus their minimum version had to be slightly bumped to `2.0.1` and
+  `15.0.3` respectively.
+
+### Removed
+- Remove unused publish command [\#1004 / sforward](https://github.com/rebing/graphql-laravel/pull/1004)
+  A leftover from the Lumen removal yers ago (#772)
 
 2023-02-18, 8.6.0
 -----------------
 ### Added
-- Add Laravl 10 support [\#983 / jasonvarga](https://github.com/rebing/graphql-laravel/pull/983)
+- Add Laravel 10 support [\#983 / jasonvarga](https://github.com/rebing/graphql-laravel/pull/983)
 
 2023-01-13, 8.5.0
 -----------------
