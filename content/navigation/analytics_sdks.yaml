@@ -5,3 +5,4 @@ collections:
   - node_js_sdk
   - sdk-catalog
   - flutter_sdk
+  - go_sdk

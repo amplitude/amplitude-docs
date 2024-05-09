@@ -1,10 +1,13 @@
 ---
 id: 41097e1a-f0a3-4500-8157-f6620fb760a6
+published: false
 blueprint: experiment
 title: 'Amplitude Experiment'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1715274213
 ---
-
-
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
   defaultTracking: {

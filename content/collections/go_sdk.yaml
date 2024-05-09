@@ -1,9 +1,9 @@
-title: 'Android SDK'
+title: 'Go SDK'
 template: default
 layout: layout
-mount: c3197ac0-3df0-447b-b632-e1ec4b6e88c9
+mount: 5d8e869f-a964-4cbe-a103-65ecd4c2c576
 revisions: false
-route: '/sdks/analytics-sdks/android-sdk/{slug}'
+route: '/sdks/analytics-sdks/go/{slug}'
 sort_dir: asc
 date_behavior:
   past: public
@@ -13,7 +13,5 @@ preview_targets:
     label: Entry
     url: '{permalink}'
     refresh: true
-structure:
-  root: false
 inject:
   nav_title: analytics_sdks
