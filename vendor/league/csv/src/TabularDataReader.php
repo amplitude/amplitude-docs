@@ -32,6 +32,7 @@ use IteratorAggregate;
  * @method bool exists(Closure $closure) tells whether at least one record satisfies the predicate.
  * @method mixed reduce(Closure $closure, mixed $initial = null) reduces the collection to a single value, passing the result of each iteration into the subsequent iteration
  * @method Iterator getObjects(string $className, array $header = []) Returns the tabular data records as an iterator object containing instance of the defined class name.
+ * @method Iterator getRecordsAsObject(string $className, array $header = []) Returns the tabular data records as an iterator object containing instance of the defined class name.
  * @method TabularDataReader filter(Closure $closure) returns all the elements of this collection for which your callback function returns `true`
  * @method TabularDataReader slice(int $offset, int $length = null) extracts a slice of $length elements starting at position $offset from the Collection.
  * @method TabularDataReader sorted(Closure $orderBy) sorts the Collection according to the closure provided see Statement::orderBy method
@@ -39,6 +40,8 @@ use IteratorAggregate;
  * @method TabularDataReader matchingFirstOrFail(string $expression) extract the first found fragment identifier of the tabular data or fail
  * @method TabularDataReader|null matchingFirst(string $expression) extract the first found fragment identifier of the tabular data or return null if none is found
  * @method iterable<int, TabularDataReader> matching(string $expression) extract all found fragment identifiers for the tabular data
+ * @method iterable<TabularDataReader> chunkBy(int $recordsCount) Chunk the TabulaDataReader into smaller TabularDataReader instances of the given size or less.
+ * @method TabularDataReader mapHeader(array $headers) Returns a new TabulaDataReader with a new set of headers.
  */
 interface TabularDataReader extends Countable, IteratorAggregate
 {
@@ -140,5 +143,5 @@ interface TabularDataReader extends Countable, IteratorAggregate
      *
      * @return Iterator<int, mixed>
      */
-    public function fetchColumn($index = 0): Iterator;
+    public function fetchColumn(string|int $index = 0): Iterator;
 }

@@ -54,9 +54,6 @@ class GraphQLServiceProvider extends ServiceProvider
         $this->publishes([
             $configPath . '/config.php' => $this->app->configPath() . '/graphql.php',
         ], 'config');
-
-        $viewsPath = __DIR__ . '/../resources/views';
-        $this->loadViewsFrom($viewsPath, 'graphql');
     }
 
     /**
@@ -77,7 +74,7 @@ class GraphQLServiceProvider extends ServiceProvider
 
         if (null !== $maxQueryComplexity) {
             /** @var QueryComplexity $queryComplexity */
-            $queryComplexity = DocumentValidator::getRule('QueryComplexity');
+            $queryComplexity = DocumentValidator::getRule(QueryComplexity::class);
             $queryComplexity->setMaxQueryComplexity($maxQueryComplexity);
         }
 
@@ -85,7 +82,7 @@ class GraphQLServiceProvider extends ServiceProvider
 
         if (null !== $maxQueryDepth) {
             /** @var QueryDepth $queryDepth */
-            $queryDepth = DocumentValidator::getRule('QueryDepth');
+            $queryDepth = DocumentValidator::getRule(QueryDepth::class);
             $queryDepth->setMaxQueryDepth($maxQueryDepth);
         }
 
@@ -93,7 +90,7 @@ class GraphQLServiceProvider extends ServiceProvider
 
         if (true === $disableIntrospection) {
             /** @var DisableIntrospection $disableIntrospection */
-            $disableIntrospection = DocumentValidator::getRule('DisableIntrospection');
+            $disableIntrospection = DocumentValidator::getRule(DisableIntrospection::class);
             $disableIntrospection->setEnabled(DisableIntrospection::ENABLED);
         }
     }
@@ -133,17 +130,19 @@ class GraphQLServiceProvider extends ServiceProvider
      */
     public function registerConsole(): void
     {
-        $this->commands(EnumMakeCommand::class);
-        $this->commands(FieldMakeCommand::class);
-        $this->commands(InputMakeCommand::class);
-        $this->commands(InterfaceMakeCommand::class);
-        $this->commands(InterfaceMakeCommand::class);
-        $this->commands(MiddlewareMakeCommand::class);
-        $this->commands(MutationMakeCommand::class);
-        $this->commands(QueryMakeCommand::class);
-        $this->commands(ScalarMakeCommand::class);
-        $this->commands(SchemaConfigMakeCommand::class);
-        $this->commands(TypeMakeCommand::class);
-        $this->commands(UnionMakeCommand::class);
+        $this->commands([
+            EnumMakeCommand::class,
+            FieldMakeCommand::class,
+            InputMakeCommand::class,
+            InterfaceMakeCommand::class,
+            InterfaceMakeCommand::class,
+            MiddlewareMakeCommand::class,
+            MutationMakeCommand::class,
+            QueryMakeCommand::class,
+            ScalarMakeCommand::class,
+            SchemaConfigMakeCommand::class,
+            TypeMakeCommand::class,
+            UnionMakeCommand::class,
+        ]);
     }
 }
