@@ -135,7 +135,7 @@ export default {
 
         editConfirmed() {
             if (! this.handle) {
-                this.handle = this.$slugify(this.display, '_');
+                this.handle = snake_case(this.display)
             }
 
             this.$emit('updated', {
@@ -157,7 +157,7 @@ export default {
 
         fieldUpdated(handle, value) {
             if (handle === 'display' && this.handleSyncedWithDisplay) {
-                this.handle = this.$slugify(value, '_');
+                this.handle = snake_case(value);
             }
 
             if (handle === 'handle') {

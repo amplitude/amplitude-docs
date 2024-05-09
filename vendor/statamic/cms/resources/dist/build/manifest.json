@@ -1,6 +1,6 @@
 {
   "resources/css/tailwind.css": {
-    "file": "assets/tailwind-50d19c06.css",
+    "file": "assets/tailwind-da9399fa.css",
     "isEntry": true,
     "src": "resources/css/tailwind.css"
   },
@@ -125,6 +125,7 @@
       "resources/svg/icons/light/seo-search-graph.svg",
       "resources/svg/icons/light/settings-horizontal.svg",
       "resources/svg/icons/light/settings-slider.svg",
+      "resources/svg/icons/light/settings.svg",
       "resources/svg/icons/light/shield-key.svg",
       "resources/svg/icons/light/shrink.svg",
       "resources/svg/icons/light/sites.svg",
@@ -520,6 +521,7 @@
       "resources/svg/icons/light/seo-search-graph.svg",
       "resources/svg/icons/light/settings-horizontal.svg",
       "resources/svg/icons/light/settings-slider.svg",
+      "resources/svg/icons/light/settings.svg",
       "resources/svg/icons/light/shield-key.svg",
       "resources/svg/icons/light/shrink.svg",
       "resources/svg/icons/light/sites.svg",
@@ -839,7 +841,7 @@
       "resources/svg/filetypes/video.svg",
       "resources/svg/filetypes/xml.svg"
     ],
-    "file": "assets/app-ee83b036.js",
+    "file": "assets/app-c5658e41.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
@@ -1372,6 +1374,11 @@
     "file": "assets/settings-slider-d0056519.js",
     "isDynamicEntry": true,
     "src": "resources/svg/icons/light/settings-slider.svg"
+  },
+  "resources/svg/icons/light/settings.svg": {
+    "file": "assets/settings-57e1db31.js",
+    "isDynamicEntry": true,
+    "src": "resources/svg/icons/light/settings.svg"
   },
   "resources/svg/icons/light/shield-key.svg": {
     "file": "assets/shield-key-969a463d.js",

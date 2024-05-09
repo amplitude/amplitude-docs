@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Traits\Macroable;
 use Illuminate\Validation\ValidationException;
 use Rebing\GraphQL\Error\AuthorizationError;
+use Rebing\GraphQL\Error\ProvidesErrorCategory;
 use Rebing\GraphQL\Error\ValidationError;
 use Rebing\GraphQL\Exception\SchemaNotFound;
 use Rebing\GraphQL\Exception\TypeNotFound;
@@ -40,7 +41,7 @@ class GraphQL
     /** @var Container */
     protected $app;
 
-    /** @var array<Schema> */
+    /** @var array<string,Schema> */
     protected $schemas = [];
 
     /**
@@ -49,6 +50,13 @@ class GraphQL
      * @var array<string,object|string>
      */
     protected $types = [];
+
+    /**
+     * These middleware are executed before all resolve methods
+     *
+     * @var list<object|class-string>
+     */
+    protected $globalResolverMiddlewares = [];
 
     /** @var Type[] */
     protected $typesInstances = [];
@@ -64,6 +72,7 @@ class GraphQL
 
     public function schema(?string $schemaName = null): Schema
     {
+        /** @var string $schemaName */
         $schemaName = $schemaName ?? $this->config->get('graphql.default_schema', 'default');
 
         if (isset($this->schemas[$schemaName])) {
@@ -100,6 +109,7 @@ class GraphQL
     public function queryAndReturnResult(string $query, ?array $variables = null, array $opts = []): ExecutionResult
     {
         $context = $opts['context'] ?? null;
+        /** @var string $schemaName */
         $schemaName = $opts['schema'] ?? $this->config->get('graphql.default_schema', 'default');
         $operationName = $opts['operationName'] ?? null;
         $rootValue = $opts['rootValue'] ?? null;
@@ -145,12 +155,13 @@ class GraphQL
     }
 
     /**
-     * @param array<string> $middleware
+     * @param list<string> $middleware
      * @param mixed $rootValue
      * @param mixed $contextValue
      */
     protected function executeViaMiddleware(array $middleware, string $schemaName, Schema $schema, OperationParams $params, $rootValue = null, $contextValue = null): ExecutionResult
     {
+        /** @var ExecutionResult */
         return $this->app->make(Pipeline::class)
             ->send([$schemaName, $schema, $params, $rootValue, $contextValue])
             ->through($middleware)
@@ -159,7 +170,7 @@ class GraphQL
     }
 
     /**
-     * @return array<string>
+     * @return list<class-string>
      */
     protected function executionMiddleware(string $schemaName): array
     {
@@ -175,14 +186,32 @@ class GraphQL
     }
 
     /**
-     * @phpstan-param array<class-string> $middlewares
-     * @phpstan-return array<class-string>
+     * @phpstan-param list<class-string> $middlewares
+     * @phpstan-return list<class-string>
      */
     protected function appendGraphqlExecutionMiddleware(array $middlewares): array
     {
         $middlewares[] = GraphqlExecutionMiddleware::class;
 
         return $middlewares;
+    }
+
+    /**
+     * @phpstan-param class-string|object $class
+     */
+    public function appendGlobalResolverMiddleware(object|string $class): void
+    {
+        $this->globalResolverMiddlewares[] = $class;
+    }
+
+    /**
+     * @phpstan-return list<object|class-string>
+     */
+    public function getGlobalResolverMiddlewares(): array
+    {
+        $resolverMiddlewares = $this->config->get('graphql.resolver_middleware_append') ?? [];
+
+        return array_merge($resolverMiddlewares, $this->globalResolverMiddlewares);
     }
 
     /**
@@ -242,11 +271,7 @@ class GraphQL
         }
 
         if (!isset($this->types[$name])) {
-            $error = "Type $name not found.";
-
-            if ($this->config->get('graphql.lazyload_types', true)) {
-                $error .= "\nCheck that the config array key for the type matches the name attribute in the type's class.\nIt is required when 'lazyload_types' is enabled";
-            }
+            $error = "Type $name not found. Check that the config array key for the type matches the name attribute in the type's class.";
 
             throw new TypeNotFound($error);
         }
@@ -363,6 +388,7 @@ class GraphQL
         $schemaQuery = $schemaConfig['query'] ?? [];
         $schemaMutation = $schemaConfig['mutation'] ?? [];
         $schemaSubscription = $schemaConfig['subscription'] ?? [];
+        /** @var array<int|string,string> $schemaTypes */
         $schemaTypes = $schemaConfig['types'] ?? [];
         $schemaDirectives = $schemaConfig['directives'] ?? [];
 
@@ -401,11 +427,18 @@ class GraphQL
 
                 return $types;
             },
-            'typeLoader' => $this->config->get('graphql.lazyload_types', true)
-                ? function ($name) {
-                    return $this->type($name);
-                }
-                : null,
+            'typeLoader' => function ($name) use (
+                $query,
+                $mutation,
+                $subscription
+            ) {
+                return match ($name) {
+                    'Query' => $query,
+                    'Mutation' => $mutation,
+                    'Subscription' => $subscription,
+                    default => $this->type($name),
+                };
+            },
         ]);
     }
 
@@ -442,7 +475,7 @@ class GraphQL
     }
 
     /**
-     * @return array<Schema>
+     * @return array<string,Schema>
      */
     public function getSchemas(): array
     {
@@ -497,8 +530,8 @@ class GraphQL
     }
 
     /**
-     * @see \GraphQL\Executor\ExecutionResult::setErrorFormatter
      * @return array<string,mixed>
+     * @see \GraphQL\Executor\ExecutionResult::setErrorFormatter
      */
     public static function formatError(Error $e): array
     {
@@ -520,6 +553,12 @@ class GraphQL
             if ($previous instanceof ValidationError) {
                 $error['extensions']['validation'] = $previous->getValidatorMessages()->getMessages();
             }
+
+            if ($previous instanceof ProvidesErrorCategory) {
+                $error['extensions']['category'] = $previous->getCategory();
+            }
+        } elseif ($e instanceof ProvidesErrorCategory) {
+            $error['extensions']['category'] = $e->getCategory();
         }
 
         return $error;
