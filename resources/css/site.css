@@ -186,12 +186,12 @@
 
 /* This is all you. */
 
-button.active > svg {
+.active > svg {
     transform: rotate(180deg);
 }
 
 button:has(+ div a.current) {
-    color: black;
+    color: #1e61f0;
 }
 
 
