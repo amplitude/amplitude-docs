@@ -9,7 +9,6 @@ supported_languages:
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1714515045
 major_version: 1
-nav_title: browser_sdk
 parent: e6b6889d-9d39-4f04-89a1-87f78db80f49
 exclude_from_sitemap: false
 ---

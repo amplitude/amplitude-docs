@@ -9,7 +9,6 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1714688168
 logo: icons/android.svg
 exclude_from_sitemap: false
-nav_title: android_sdk
 ---
 
 The Kotlin Android SDK lets you send events to Amplitude.
