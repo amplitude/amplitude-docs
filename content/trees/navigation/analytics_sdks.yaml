@@ -127,6 +127,15 @@ tree:
     url: /sdks/analytics-sdks/ios
     children:
       -
-        id: 27131c1a-78f9-4633-a979-93572f3f24be
+        id: d0eebb76-d988-418c-bace-c71998649ef4
         title: 'iOS Swift SDK'
-        url: /sdks/analytics-sdks/ios/ios-swift-sdk
+        children:
+          -
+            id: c7cf4a2a-6857-4f4c-bda2-573abcecb955
+            entry: 36708c4b-d35c-4a7e-9c31-1c1571d6a73f
+          -
+            id: 088f5b42-fcaf-41ec-a346-11f7dcc161d3
+            entry: 4a49ddd0-6bd6-4758-9985-85149b794f13
+      -
+        id: 80ea8cf0-4ee6-466c-bafe-843fe7b10bf6
+        entry: 6d713118-1088-470d-bfe7-847fbb372ba8
