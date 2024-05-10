@@ -1,14 +1,16 @@
 ---
-title: "Portfolio: Conduct cross-project analysis in Amplitude"
-source: "https://help.amplitude.com/hc/en-us/articles/360002750712-Portfolio-Conduct-cross-project-analysis-in-Amplitude"
 id: 99fc5402-2a04-4afc-a248-2973b368033b
+blueprint: account-management
+title: 'Portfolio: Conduct cross-project analysis in Amplitude'
+source: 'https://help.amplitude.com/hc/en-us/articles/360002750712-Portfolio-Conduct-cross-project-analysis-in-Amplitude'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715362483
+this_article_will_help_you:
+  - 'View and understand the behavior of your users across multiple products'
+  - 'Reconcile users with multiple user IDs across your products'
 ---
-
-#### This article will help you:
-
-* View and understand the behavior of your users across multiple products
-* Reconcile users with multiple user IDs across your products
-
 With Portfolio, you can easily generate a holistic view of how your users interact with your **entire product portfolio**. If you've instrumented multiple platforms or product lines, Portfolio can give you unparalleled insight into your users’ complete journey.
 
 {{partial:admonition type='note'}}
@@ -19,7 +21,7 @@ Be sure to understand [project settings](/admin/account-management/manage-orgs-p
 
 This feature is available to users on **Enterprise plans only**. See our [pricing page](https://amplitude.com/pricing) for more details.
 
-How it works
+## How it works
 
 The foundation of Portfolio's ability to create cross-product analyses is the **View**. Views are collections of Amplitude Projects or data sources that consolidate the goings-on in each project into a single display. A View, with one or more data sources, allows you to analyze users across multiple projects at once. 
 
@@ -41,7 +43,11 @@ While cohort export for portfolio projects is supported for all destinations, wh
 
 ## Create a Portfolio view
 
-Admins and managers in an organization can access and create the Portfolio view by clicking ![gear_icon_for_settings.png](/output/img/account-management/gear-icon-for-settings-png.png) and navigating to *Organization settings > Projects > Create Portfolio View*. A modal will appear; in it, you can name the portfolio view and set user permissions.
+Admins and managers in an organization can access and create the Portfolio view by clicking the Settings icon
+
+![gear_icon_for_settings.png](/output/img/account-management/gear-icon-for-settings-png.png)
+
+and navigating to *Organization settings > Projects > Create Portfolio View*. A modal will appear; in it, you can name the portfolio view and set user permissions.
 
 At this point, you'll be able to connect multiple projects into this cross-project view. Just click *Update Source Projects* to select the projects that should be consolidated into a single view. 
 

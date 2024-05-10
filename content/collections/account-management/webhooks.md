@@ -1,14 +1,16 @@
 ---
-title: "Webhooks for custom monitors"
-source: "https://help.amplitude.com/hc/en-us/articles/360055808391-Webhooks-for-custom-monitors"
 id: ed6b3562-8e62-476b-9dcd-b0b1526552eb
+blueprint: account-management
+title: 'Webhooks for custom monitors'
+source: 'https://help.amplitude.com/hc/en-us/articles/360055808391-Webhooks-for-custom-monitors'
+this_article_will_help_you:
+  - 'Set up a webhook and assign custom monitors to it'
+  - 'Post monitors directly into a Slack channel'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715363046
 ---
-
-#### This article will help you:
-
-* Set up a webhook and assign custom monitors to it
-* Post monitors directly into a Slack channel
-
 Webhooks are automated messages your application sends when something happens. They include a message (or **payload**) and are sent to a unique endpoint. They're an efficient way for one application to deliver real-time information to other applications, without having to wait for your API to poll data.
 
 [Custom alerts](/analytics/insights) notify you when your most important KPIs change in meaningful ways.
@@ -23,10 +25,13 @@ With **webhooks for custom monitors**, you can use a webhook to send triggered m
 
 To create and configure a webhook, follow these steps:
 
-1. Navigate to ![gear_icon_for_settings.png](/output/img/account-management/gear-icon-for-settings-png.png)
+1. Navigate to Settings by clicking on the gear icon:
+
+![gear_icon_for_settings.png](/output/img/account-management/gear-icon-for-settings-png.png)
+
 2. Click the name of the project you want to receive notifications for.
 3. Click the *Webhooks* tab. This is where you can manage your webhooks, as well as your automatic and custom monitors. The owner of the webhook, managers, and admins can edit or delete webhooks.
-4. To create a new webhook, click *+**Create.*
+4. To create a new webhook, click *+ Create.*
 5. Give your webhook a name and paste the URL for the endpoint you’d like to send the message to.
 6. At the bottom, select the custom monitors to be sent to the endpoint you’ve configured.
 

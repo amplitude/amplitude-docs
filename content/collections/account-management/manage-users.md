@@ -1,18 +1,20 @@
 ---
-title: "Manage users and permissions"
-source: "https://help.amplitude.com/hc/en-us/articles/360058531591-Manage-users-and-permissions"
 id: 6b49a561-a125-4eb2-a1e7-73c37350265e
+blueprint: account-management
+title: 'Manage users and permissions'
+source: 'https://help.amplitude.com/hc/en-us/articles/360058531591-Manage-users-and-permissions'
+this_article_will_help_you:
+  - 'Enable users to access Amplitude projects in your organization, and manage how they do it'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715294465
 ---
-
-#### This article will help you:
-
-* Enable users to access Amplitude projects in your organization, and manage how they do it
-
 Before a user can gain access to any Amplitude projects, you will have to add them to your Amplitude organization. You should do this immediately after creating an organization. Additionally, you’ll probably need to add new team members on a case-by-case basis as your organization changes and grows.
 
 ## Manage new users and user access
 
-User management is done from the Members page, which can be reached by navigating to ![gear_icon_for_settings.png](/output/img/account-management/gear-icon-for-settings-png.png) *> Organization settings > Members & Groups*.
+User management is done from the Members page, which you can reach by navigating to *Settings > Organization settings > Members & Groups*.
 
 At the top of the page, you’ll find an overview of users for your organization: the number of total users, joined users, pending users, and users requesting access. 
 
@@ -57,7 +59,7 @@ All current users will be visible in the *Joined Users* view, while *Pending Use
 
 To change user permissions in Amplitude, follow these steps:
 
-1. Navigate to ![gear_icon_for_settings.png](/output/img/account-management/gear-icon-for-settings-png.png) > *Organization settings* > *[Members & Groups](/admin/account-management/manage-users).* The Team Members page will open.
+1. Navigate to *Settings* > *Organization settings* > *[Members & Groups](/admin/account-management/manage-users).* The Team Members page will open.
 2. Check the box next to the name of the user whose permissions you'd like to edit. You can select multiple users at once.
 3. Click *Manage Project Access*.
 4. In the modal that appears, find the project you want to adjust permissions for and check the checkbox next to it. You can select multiple projects at once.
@@ -66,6 +68,7 @@ To change user permissions in Amplitude, follow these steps:
 {{partial:admonition type='note'}}
 You will not be able to change the role for the only Admin in an organization.
 {{/partial:admonition}}
+
 6. To remove a user's permissions, click *Remove*. Doing so will remove the user from the organization and eliminate all access provisions.
 
 {{partial:admonition type='note'}}
@@ -90,7 +93,7 @@ Please reach out to your Customer Success Manager to enable project-level permis
 
 When a user leaves the company or is otherwise no longer part of an Amplitude organization, any content they created will no longer have an owner. Depending on the nature of that content, situations like this can significantly hamper your company’s analytics work.
 
-Admins can avoid this by using the **bulk transfer ownership** feature to designate another user as the owner of that orphaned content. Navigate to ![gear_icon_for_settings.png](/output/img/account-management/gear-icon-for-settings-png.png) *> Organization settings > Members &* *Groups*, and then click *Bulk Transfer Edit Access*.
+Admins can avoid this by using the **bulk transfer ownership** feature to designate another user as the owner of that orphaned content. Navigate to *Settings > Organization settings > Members & Groups*, and then click *Bulk Transfer Edit Access*.
 
 {{partial:admonition type='note'}}
 This process cannot be reversed, so use it with care.
@@ -115,4 +118,4 @@ To request an email domain change, submit a [ticket](https://help.amplitude.com/
 * The old email domain
 * the new email domain
 
-An admin must request email domain changes. If you are not an admin of the organization, CC an admin in your request. 
+An admin must request email domain changes. If you are not an admin of the organization, CC an admin in your request.

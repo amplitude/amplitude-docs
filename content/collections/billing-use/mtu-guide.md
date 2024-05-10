@@ -1,9 +1,15 @@
 ---
-title: "Monthly tracked users (MTUs) billing guide"
-source: "https://help.amplitude.com/hc/en-us/articles/12217810210331-Monthly-tracked-users-MTUs-billing-guide"
 id: cb12e5e5-1e15-47b4-aa41-5f9995282e1a
+blueprint: billing-use
+title: 'Monthly tracked users (MTUs) billing guide'
+source: 'https://help.amplitude.com/hc/en-us/articles/12217810210331-Monthly-tracked-users-MTUs-billing-guide'
+this_article_will_help_you:
+  - 'Understand how Amplitude calculates and charges for MTUs'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715291244
 ---
-
 Amplitude customers on Scholarship, Starter, and Plus plans are billed according to **monthly tracked user (MTU)** count. This option is also available to customers on Growth and Enterprise plans. 
 
 An MTU is a unique user who triggers one or more events within a calendar month. This can be either an anonymous user (which Amplitude will track via device ID) or an identified user (tracked by user ID). If a user appears in two or more projects, they will still be counted as a single MTU.
@@ -14,7 +20,7 @@ Amplitude calculates MTU usage daily, with one additional, final calculation aft
 
 Your MTU count **will not** increase due to user mapping, identify calls, or group identifies.
 
-[MTU-based pricing is available for all Amplitude plans](/admin/account-management/manage-event-volume) are **not eligible** for MTU-based pricing.
+[MTU-based pricing is available for all Amplitude plans](/admin/account-management/manage-event-volume). Customers who use sampling are **not eligible** for MTU-based pricing.
 
 ## Track your MTUs
 
@@ -103,6 +109,4 @@ Because of this, backfilling data is a common cause of spikes in MTU usage.
 
 ## Drop filters and MTUs
 
-When you use a [drop filter](/data/remove-invalid-data), Amplitude will exclude a set of ingested events from your chart, based on the criteria you set. These events are not returned by your query, but they do still exist: Amplitude does not delete them. Because of this, the number of uniques you see on a drop-filtered chart in Amplitude Analytics may not match the number of uniques on the MTU chart in your billing report.
-
-### 
+When you use a [drop filter](/data/remove-invalid-data), Amplitude  excludes a set of ingested events from your chart, based on the criteria you set. These events are not returned by your query, but they do still exist: Amplitude does not delete them. Because of this, the number of uniques you see on a drop-filtered chart in Amplitude Analytics may not match the number of uniques on the MTU chart in your billing report.
