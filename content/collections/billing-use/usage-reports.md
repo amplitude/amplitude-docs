@@ -5,13 +5,11 @@ title: 'Usage reports: Understand how your organization uses Amplitude'
 source: 'https://help.amplitude.com/hc/en-us/articles/360049166012-Usage-reports-Understand-how-your-organization-uses-Amplitude'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1712795690
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715291365
+this_article_will_help_you:
+  - 'Interpret the different charts within usage reports'
 ---
-#### This article will help you:
-
-* Interpret the different charts within usage reports
-
 Amplitude’s **usage reports** will help you identify trends and patterns of Amplitude usage within your organization. Use it to better understand where your company’s analytics practice is strongest, as well as opportunities to further maximize the value your organization gets from Amplitude. 
 
 ### Feature availability
@@ -22,7 +20,7 @@ This feature is available to users on **Growth** and **Enterprise plans** only. 
 
 Usage reports include ten charts (visible on the User Metrics tab) that deliver the metrics you need to effectively drive Amplitude adoption in your organization, as well as a report (visible on the Event Usage tab) that describes how your ingested events are being used within Amplitude across all projects in your organization.
 
-Usage reports are accessible by navigating to ![settings.png](/output/img/billing-use/settings-png.png)> *Organization settings >* *Usage Reports*.
+Usage reports are accessible by navigating to *Settings >* *Organization settings >* *Usage Reports*.
 
 {{partial:admonition type='note'}}
  Only admins or managers on all projects can view usage reports.
@@ -46,11 +44,9 @@ Amplitude calculates depth of engagement using the number of edits per session a
 
 ### Detailed KPIs
 
-![](statamic://asset::help_center_conversions::billing-use/usage-reports-detailed-kpis-png.png)
-
 The Detailed KPIs panel gives you a more in-depth look at some of the metrics shared in the Summary Metrics panel. **Weekly learning users** is a way to measure the breadth of Amplitude engagement in your organization: it’s the count of active Amplitude users who’ve shared a learning which is then consumed by at least two other people in the previous seven days. 
 
-**Broadcasted learnings**, by contrast, is designed to measure depth. It’s based on a count of charts, dashboards, and notebooks consumed by two or more people in a seven-day period. You can learn more about the metrics and why they’re important [here](https://amplitude.com/north-star/amplitudes-north-star-metric-and-inputs).
+**Broadcasted learnings**, by contrast, is designed to measure depth. It’s based on a count of charts, dashboards, and notebooks consumed by two or more people in a seven-day period. [Learn more about the metrics and why they're important](https://amplitude.com/north-star/amplitudes-north-star-metric-and-inputs).
 
 ### Content Usage
 

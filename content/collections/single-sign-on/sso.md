@@ -1,9 +1,13 @@
 ---
-title: "Single sign-on (SSO) in Amplitude"
-source: "https://help.amplitude.com/hc/en-us/articles/360002534392-Single-sign-on-SSO-in-Amplitude"
 id: 668eb44f-64ea-41e0-b244-5fb7b336c262
+blueprint: single-sign-on
+title: 'Single sign-on (SSO) in Amplitude'
+source: 'https://help.amplitude.com/hc/en-us/articles/360002534392-Single-sign-on-SSO-in-Amplitude'
+this_article_will_help_you:
+  - 'Understand the basics of using single sign-on in Amplitude'
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715363605
 ---
-
 **Single sign-on** (SSO) is an authentication scheme that enables users to use a single ID and password combination to log into multiple platforms, services, or systems. Amplitude supports SSO and is compatible with any SAML 2.0-compliant SSO provider, including:
 
 * [Auth0](/admin/single-sign-on/auth-0)
@@ -26,6 +30,7 @@ Some things you should be aware of:
 * You can also **automatically** grant new users access to your organization via just-in-time provisioning. Amplitude only requires a new user to successfully authenticate with your identity provider; once authentication is received, Amplitude will add the user to your organization. You can then configure roles for each new user to reflect their needs, and those of the organization.  
   
 Enterprise customers with access to project [permissions](/admin/account-management/user-roles-permissions) can also choose the default project(s) that JIT-provisioned users will have access to.
+
 * When a user attempts to use SSO to sign in, Amplitude uses their email address in the SAML assertion to identify them. Amplitude will attempt to find the user's email by looking in these places, in this order:
 
 1. The assertion subject

@@ -5,24 +5,24 @@ title: 'The Settings page'
 source: 'https://help.amplitude.com/hc/en-us/articles/235649848-The-Settings-page'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1712794828
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715291719
+this_article_will_help_you:
+  - 'Manage organizational and project-level settings'
 ---
-#### This article will help you:
+Open the Settings page by clicking 
 
-* Manage organizational and project-level settings
+![settings_icon.png](/output/img/account-management/settings-icon-png.png) 
 
-You can access the Settings page by clicking the ![settings_icon.png](/output/img/account-management/settings-icon-png.png){.inline} icon. Any user within your organization can access this page, but settings can only be changed by organization admins and managers. Within the Settings page, you can navigate between organization-level settings, your own personal Amplitude settings, and more.
+Any user within your organization can access this page, but settings can only be changed by organization admins and managers. Here, you can navigate between organization-level settings, your own personal Amplitude settings, and more.
 
 ## Organizational settings
 
 The organizational settings area is where you'll find everything you need to manage settings at the organization and project level. The default view is the General page. This will display your organization's name, org ID, org URL, and plan type. 
 
-If you're a Growth or Enterprise customer, you'll also see some additional information, including the contract start and end date, the event limit (event volume quota), events seen this month, and events seen last month. This will help you track your event volume usage from within Amplitude itself.
+Within the Plans & Billing section, you’ll find more detailed information about your Amplitude usage: the contract start and end date, your organization's event or MTU limit, events or MTUs used by your organization this month and last month, as well as other key pieces of usage information. This will help you track your usage from within Amplitude itself.
 
-Only admins can see event quota alerts. They'll receive email alerts when event volume hits 80%, 90%, 100%, and 110% of the event quota.
-
-![settings_1.png](/output/img/account-management/settings-1-png.png)
+Users on Plus plans can also manage billing from here.
 
 The organizational settings also include tools to help you:
 
@@ -43,7 +43,11 @@ The personal settings area is where you can manage your own profile, site settin
 
 Your profile page displays information specific to you. You can also set up and manage your Slack integration here, as well as set certain preferences.
 
-The Profile panel shows your organization, role, email, name, and password associated with your Amplitude account. Click ![pencil.png](/output/img/account-management/pencil-png.png) to change your display name or update your password. 
+The Profile panel shows your organization, role, email, name, and password associated with your Amplitude account. Click 
+
+![pencil.png](/output/img/account-management/pencil-png.png) 
+
+to change your display name or update your password. 
 
 ![Settings_2.png](/output/img/account-management/settings-2-png.png)
 

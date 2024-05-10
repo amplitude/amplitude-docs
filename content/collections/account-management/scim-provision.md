@@ -1,13 +1,15 @@
 ---
-title: "Set up SCIM provisioning in Amplitude"
-source: "https://help.amplitude.com/hc/en-us/articles/360058399851-Set-up-SCIM-provisioning-in-Amplitude"
 id: 3da7e352-3754-41f3-b6a7-9e054e038130
+blueprint: account-management
+title: 'Set up SCIM provisioning in Amplitude'
+source: 'https://help.amplitude.com/hc/en-us/articles/360058399851-Set-up-SCIM-provisioning-in-Amplitude'
+this_article_will_help_you:
+  - 'Handle provisioning and group management programmatically, via a public API'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1715362557
 ---
-
-#### This article will help you:
-
-* Handle provisioning and group management programmatically, via a public API
-
 In Amplitude, the User Management API provides a programmatic solution to provisioning and group management through a public API. With it, you can quickly and easily manage your organizations at scale and integrate the provisioning process with other tools, including identity providers.
 
 The User Management API follows the [SCIM 2.0 Standard.](http://www.simplecloud.info/#Specification) It allows for the creation, retrieval, update, and deletion calls for users (including pending users) and permission groups.
@@ -82,6 +84,6 @@ Users are only asked to provide their first and last names upon **first sign-up 
 
 Additionally, there can sometimes be issues when authenticating an identity provider's application with Amplitude's SCIM API. For example, this can happen when testing the SCIM connection within Okta. In these instances, try this procedure:
 
-1. In your *Access and SSO Settings* tab, ensure that SCIM is enabled (remember to save the configuration if this needs to be enabled!)
-2. Click *Regenerate SCIM Key* and confirm the key regeneration (as discussed earlier, this will immediately invalidate the old key)
-3. Copy the new key value and retest the configuration (see our [technical guide](https://developers.amplitude.com/docs/scim-api) if you'd like to construct your own requests outside of a provider's integration)
+1. In your *Access and SSO Settings* tab, ensure that SCIM is enabled (remember to save the configuration if this needs to be enabled!).
+2. Click *Regenerate SCIM Key* and confirm the key regeneration (as discussed earlier, this will immediately invalidate the old key).
+3. Copy the new key value and retest the configuration (see our [technical guide](https://developers.amplitude.com/docs/scim-api) if you'd like to construct your own requests outside of a provider's integration).
