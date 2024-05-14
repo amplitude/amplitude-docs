@@ -9,8 +9,9 @@ supported_languages:
 github_link: 'https://github.com/amplitude/analytics-go'
 releases_url: 'https://github.com/amplitude/analytics-go/releases'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715276937
+updated_at: 1715725063
 ampli_article: c71d80ea-d8a8-4bf2-8c78-fa3e8f061a95
+shields_io_badge: 'https://img.shields.io/github/go-mod/go-version/amplitude/analytics-go'
 ---
 The Go SDK lets you send events to Amplitude from your Go application.
 
