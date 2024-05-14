@@ -11,7 +11,9 @@ github_link: 'https://github.com/amplitude/Amplitude-Swift'
 releases_url: 'https://github.com/amplitude/Amplitude-Swift/releases'
 ampli_article: 4a49ddd0-6bd6-4758-9985-85149b794f13
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715285179
+updated_at: 1715706684
+migration_guide:
+  - 06c84fb1-8d96-4042-863d-fce4619b48ed
 ---
 This is the official documentation for the Amplitude Analytics iOS SDK.
 
@@ -1170,5 +1172,4 @@ The SDK only uses `userDefaults` API for identity storage.
 
 #### Create your app's privacy report
 
-Follow the steps on how to [create your app's privacy](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests#4239187). 
-
+Follow the steps on how to [create your app's privacy](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests#4239187).
