@@ -94,11 +94,31 @@ tree:
             id: 39a176e8-6c84-4655-b7d5-127c2c6c9617
             entry: 02f37e03-e7c5-4324-835a-772a79e0963c
   -
+    id: 431c6586-0b0a-4a18-b87a-d5dca365c7c3
+    title: Ampli
+    children:
+      -
+        id: 4eb74613-5de2-4e96-8893-ae27a2a90622
+        entry: ba956cb4-9ae1-456a-b122-984b491048f6
+        title: 'Ampli Overview'
+      -
+        id: 7815b19c-eadc-4839-8785-d9b40ee468e5
+        entry: 3ee6e0df-273e-4c50-8bfd-d5a4abc9a33c
+      -
+        id: cbf19b7d-b886-41cf-b04a-223e69cdce0f
+        entry: 5dc3be0e-a645-43e5-a8db-e0277c8a9f0e
+      -
+        id: e3fb4701-768c-4a34-ba94-8d79526f6983
+        entry: 0a18b2a8-59a2-4a04-8ee2-bbc422f422b4
+      -
+        id: ce8e8459-456b-4978-bb0f-6e2208720874
+        entry: ef88cdd5-db31-4fea-add4-0b29cfcb8734
+      -
+        id: bc5c7c5e-fa0c-4bfd-8c89-a448a2c2e012
+        entry: ba4cfecb-940d-42de-b2f2-b2eb5d523bfa
+  -
     id: 26874aaa-2b3d-459b-b015-32295a040e49
     entry: 53c7b244-36fd-47b4-8cd7-689dc44fc563
-  -
-    id: 4eb74613-5de2-4e96-8893-ae27a2a90622
-    entry: ba956cb4-9ae1-456a-b122-984b491048f6
   -
     id: 613212f1-77d7-4c88-b8f0-1afeffc06e06
     entry: cae327ea-be74-4783-ab16-09f2848cebca
