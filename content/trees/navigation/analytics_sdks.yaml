@@ -139,3 +139,13 @@ tree:
       -
         id: 80ea8cf0-4ee6-466c-bafe-843fe7b10bf6
         entry: 6d713118-1088-470d-bfe7-847fbb372ba8
+  -
+    id: 4f8d41f8-8980-4c6a-81fc-634b9c5d16c3
+    title: 'Java SDK'
+    children:
+      -
+        id: 70b4777c-1950-4b7e-98dd-0251a4cc2474
+        entry: 29f79d9a-140e-4e0f-bd51-2b4fc47f5739
+      -
+        id: c5c91d84-a8a6-4720-91fd-7bb8133afcd2
+        entry: 0128c1e3-dbc5-4612-982f-aefef4ad4db0
