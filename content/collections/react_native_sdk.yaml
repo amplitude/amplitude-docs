@@ -1,0 +1,17 @@
+title: 'React Native SDK'
+template: default
+layout: layout
+mount: 0e02d5e0-1bc7-4fc6-88a1-983221265987
+revisions: false
+route: '/sdks/analytics-sdks/react-native/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: analytics_sdks
