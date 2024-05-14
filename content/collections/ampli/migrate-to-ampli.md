@@ -144,12 +144,13 @@ npm install @amplitude/analytics-browser
 npm install -g @amplitude/ampli
 ampli pull [--path] ./ampli
 ```
-{{/partial:tab}}
-{{/partial:tabs}}
-
 {{partial:admonition type="note" heading=""}}
 `ampli pull` requires a Source in Data. Without Events on the Source the user can still pull, but will only be able to use `ampli.track()` without strongly typed events.
 {{/partial:admonition}}
+{{/partial:tab}}
+{{/partial:tabs}}
+
+
 
 
 ### Initialize
@@ -249,6 +250,8 @@ amplitude.groupIdentify(
 ```
 {{/partial:tab}}
 {{partial:tab name="Ampli"}}
+Use `ampli.client` to access the underlying Amplitude SDK directly.
+
 ```typescript
 ampli.client.setUserId('me');
 ampli.client.add(new MyPlugin())
@@ -264,5 +267,4 @@ ampli.client.groupIdentify(
 {{/partial:tab}}
 {{/partial:tabs}}
 
-Use `ampli.client` to access the underlying Amplitude SDK directly.
 
