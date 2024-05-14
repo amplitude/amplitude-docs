@@ -1,0 +1,17 @@
+title: 'Java SDK'
+template: default
+layout: layout
+mount: 0906f7ef-96ae-4189-879d-ca81cafeebf8
+revisions: false
+route: '/sdks/analytics-sdks/java/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: analytics_sdks
