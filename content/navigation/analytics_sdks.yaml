@@ -8,3 +8,4 @@ collections:
   - go_sdk
   - ios_sdk
   - java_sdk
+  - react_native_sdk
