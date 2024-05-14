@@ -7,3 +7,4 @@ collections:
   - flutter_sdk
   - go_sdk
   - ios_sdk
+  - java_sdk
