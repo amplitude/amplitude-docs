@@ -149,3 +149,22 @@ tree:
       -
         id: c5c91d84-a8a6-4720-91fd-7bb8133afcd2
         entry: 0128c1e3-dbc5-4612-982f-aefef4ad4db0
+  -
+    id: 357d74c2-3e9e-41d4-9cef-01fbf6ee1ea1
+    title: 'React Native SDK'
+    url: /sdks/analytics-sdks/react-native
+    children:
+      -
+        id: d728fe85-8015-4050-ad67-2c779daa0231
+        entry: 1962c691-4ecd-4b0f-bff9-1807438bc582
+        children:
+          -
+            id: 65569ef0-5671-458d-8790-02730d842728
+            entry: 0d5a2d8a-7266-4442-807c-2f2f84fe1ae5
+          -
+            id: e3d8cc46-4025-4bf3-9c8d-ad1673ed98f9
+            entry: 4029875a-0e71-4ad0-869b-289dea48b625
+      -
+        id: a4fceea8-aa18-4f66-9f8a-1379a8c545f8
+        entry: 7cab1dd1-18ad-4940-9379-ed2954c9afd3
+        title: 'React Native SDK (maintenance)'

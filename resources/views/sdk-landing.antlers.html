@@ -13,11 +13,11 @@
             <div class="flex flex-wrap gap-4 w-full max-w-screen-xl">
                 {{ collection :from="mount" article_type:is="core" sort="order" }}
                     <div class="flex-1 basis-80 border border-amp-gray-200 grow-0 rounded p-4 hover:shadow transition">
-                        <span class="text-xs my-0">{{ sdk_status }}</span>
+                        <code class="text-xs mb-2 inline-block {{sdk_status}}">{{ sdk_status }}</code>
                         <a href="{{ url }}">
                             <h2 class="text-md font-Gellix my-0 flex flex-row content-center items-start">
                                 {{ supported_languages }}
-                                    <img class="h-6 rounded-sm inline mx-1 my-0" src="/assets/icons/{{ value }}.svg" />
+                                    <img class="h-6 rounded-sm inline mr-1 my-0" src="/assets/icons/{{ value }}.svg" />
                                 {{ /supported_languages }}
                                 <span class="ml-2">{{ title}}</span>
                             </h2>
