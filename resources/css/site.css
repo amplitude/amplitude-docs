@@ -569,6 +569,13 @@ td {
     background-color: #FDF1F2;
     margin-left: 0px;
 }
+
+.beta {
+    border-color: #686CE9;
+    color: #686CE9;
+    background-color: #F6F6FD;
+    margin-left: 0px;
+}
 /*
 Margin and rounding are personal preferences,
 overflow-x-auto is recommended.
