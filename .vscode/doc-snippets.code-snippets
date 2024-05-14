@@ -31,10 +31,10 @@
 		"body": [
 			"{{partial:tabs tabs=\"$1, $2\"}}",
 			"{{partial:tab name=\"$1\"}}",
-			"Insert tab1 content here",
+			"$3",
 			"{{/partial:tab}}",
 			"{{partial:tab name=\"$2\"}}",
-			"Insert tab2 content here",
+			"$4",
 			"{{/partial:tab}}",
 			"{{/partial:tabs}}"
 		],
