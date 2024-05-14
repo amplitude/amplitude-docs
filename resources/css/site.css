@@ -190,7 +190,7 @@
     transform: rotate(180deg);
 }
 
-button:has(+ div a.current) {
+button:has(+ div a.active) {
     color: #1e61f0;
 }
 
@@ -556,7 +556,19 @@ td {
     overflow: scroll
 }
 
+.current {
+    border-color: #259991;
+    color: #259991;
+    background-color: #EEFBFA;
+    margin-left: 0px;
+}
 
+.maintenance {
+    border-color: #EC4747;
+    color: #EC4747;
+    background-color: #FDF1F2;
+    margin-left: 0px;
+}
 /*
 Margin and rounding are personal preferences,
 overflow-x-auto is recommended.
@@ -581,12 +593,12 @@ pre code.torchlight {
    min-width: max-content;
    padding-top: 1rem;
    padding-bottom: 1rem;
-   background-color: #EBF5FF!important;
+   background-color: #282A36!important;
    font-family: 'IBM Plex Mono';
 }
 
 pre {
-    background-color: #EBF5FF!important;    
+    background-color: #282A36!important;    
 }
 
 /*
