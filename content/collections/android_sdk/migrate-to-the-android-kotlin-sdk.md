@@ -283,11 +283,11 @@ The revenue verification logic is on Amplitude's backend. Revenue verification r
 The maintenance SDK uses an old SDK endpoint (`api2.amplitude.com`) which enforces no length limit for `deviceId` and `userId`. The latest SDK uses Amplitude's Http V2 API (`api2.amplitude.com/2/httpapi`) and requires identifiers to be at least 5 characters by default. When you migrate to the latest SDK, set `config.minIdLength` to a smaller value if you allowed identifiers with fewer than 5 characters.
 {{/partial:admonition}}
 
-Most of the behaviors of the latest SDK remain the same with the maintenance SDK. Refer to the advanced topics sections of the [maintenance SDK](/sdks/analytics-sdks/android-sdk/android-sdk#advanced-topics) and the [latest SDK](/sdks/analytics-sdks/android-sdk/android-kotlin-sdk) to learn more about a specific advanced topic.
+Most of the behaviors of the latest SDK remain the same with the maintenance SDK. Refer to the advanced topics sections of the [maintenance SDK](/sdks/analytics/android-sdk/android-sdk#advanced-topics) and the [latest SDK](/sdks/analytics/android-sdk/android-kotlin-sdk) to learn more about a specific advanced topic.
 
 ## Data migration
 
-Existing [maintenance SDK](/sdks/analytics-sdks/android-sdk/android-sdk) data (events, user/device ID) are moved to the latest SDK by default. It can be disabled by setting `migrateLegacyData` to `false` in the [Configuration](#configuration). Learn more in [Github](https://github.com/amplitude/Amplitude-Kotlin/blob/main/android/src/main/java/com/amplitude/android/migration/RemnantDataMigration.kt#L9-L16).
+Existing [maintenance SDK](/sdks/analytics/android-sdk/android-sdk) data (events, user/device ID) are moved to the latest SDK by default. It can be disabled by setting `migrateLegacyData` to `false` in the [Configuration](#configuration). Learn more in [Github](https://github.com/amplitude/Amplitude-Kotlin/blob/main/android/src/main/java/com/amplitude/android/migration/RemnantDataMigration.kt#L9-L16).
 
 {{partial:tabs tabs="Kotlin, Java"}}
 {{partial:tab name="Kotlin"}}
