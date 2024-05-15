@@ -22,7 +22,7 @@ updated_at: 1710277105
 This is the official documentation for the Amplitude Analytics Android SDK.
 
 {{partial:admonition type="deprecated" heading=""}}
-This is a maintenance SDK and will only receive bug fixes until deprecation. Upgrade to the [Android Kotlin SDK](/sdks/analytics/android-sdk/android-kotlin-sdk) which supports plugins, SDK integrations, and more.
+This is a maintenance SDK and will only receive bug fixes until deprecation. Upgrade to the [Android Kotlin SDK](/sdks/analytics/android/android-kotlin-sdk) which supports plugins, SDK integrations, and more.
 {{/partial:admonition}}
 
 ## Install the SDK

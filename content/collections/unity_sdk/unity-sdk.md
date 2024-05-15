@@ -113,11 +113,11 @@ Amplitude.getInstance("client_1") //this is the same reference as amplitude1
 
 ## Configure the SDK
 
-Amplitude Unity SDK runs on the top of the [Amplitude Android Maintenance SDK](/sdks/analytics/android-sdk/android-sdk), and [Amplitude iOS Maintenance SDK](/sdks/analytics/ios/ios-sdk). The following are the C# settable config options.
+Amplitude Unity SDK runs on the top of the [Amplitude Android Maintenance SDK](/sdks/analytics/android/android-sdk), and [Amplitude iOS Maintenance SDK](/sdks/analytics/ios/ios-sdk). The following are the C# settable config options.
 
 For other default configurations:
 
-- on Android, see [Android Configuration](/sdks/analytics/android-sdk/android-kotlin-sdk/#configuration)
+- on Android, see [Android Configuration](/sdks/analytics/android/android-kotlin-sdk/#configuration)
 - on iOS side, see [iOS configuration](/sdks/analytics/ios/ios-sdk#configuration)
 
 | Name  | Description | Default Value |
@@ -131,8 +131,8 @@ For other default configurations:
 | `setServerUrl()` | `string`. The API endpoint URL that events are sent to. Automatically selected by `ServerZone`. For example, `Amplitude.getInstance().setServerUrl(https://www.your-server-url.com)`. | `https://api2.amplitude.com/` |
 | `setUseDynamicConfig()` | `bool`. Find the best server url automatically based on users' geo location. For example, `Amplitude.getInstance().setUseDynamicConfig(true)`. | `false` |
 | `setOffline()` | `bool`. Weather the SDK will upload events to Amplitude servers. However, the SDK will always log events. For example, `Amplitude.getInstance().setOffline(true)`. | `false` |
-| `useAdvertisingIdForDeviceId()` | `bool`. Whether to use advertising id as device id. Check [here](/sdks/analytics/android-sdk/android-sdk#advertiser-id) for the required module and permission. For example, `Amplitude.getInstance().useAdvertisingIdForDeviceId(true)`. | The deviceId will be UUID+"R" by default. |
-| `useAppSetIdForDeviceId()` | `bool`. Only for Android. Whether use appset id as a deviceId. Check [here](/sdks/analytics/android-sdk/android-sdk#app-set-id) for the required module and permission. For example, `Amplitude.getInstance().useAppSetIdForDeviceId(true)`. | The deviceId will be UUID+"R" by default. |
+| `useAdvertisingIdForDeviceId()` | `bool`. Whether to use advertising id as device id. Check [here](/sdks/analytics/android/android-sdk#advertiser-id) for the required module and permission. For example, `Amplitude.getInstance().useAdvertisingIdForDeviceId(true)`. | The deviceId will be UUID+"R" by default. |
+| `useAppSetIdForDeviceId()` | `bool`. Only for Android. Whether use appset id as a deviceId. Check [here](/sdks/analytics/android/android-sdk#app-set-id) for the required module and permission. For example, `Amplitude.getInstance().useAppSetIdForDeviceId(true)`. | The deviceId will be UUID+"R" by default. |
 
 ### Configure batching behavior
 

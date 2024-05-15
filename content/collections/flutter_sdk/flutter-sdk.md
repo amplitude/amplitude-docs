@@ -62,10 +62,10 @@ class YourClass {
 
 ## Configure the SDK
 
-The Amplitude Flutter SDK runs on the top of the [Amplitude Android Maintenance SDK](/sdks/analytics/android-sdk/android-sdk), [Amplitude iOS Maintenance SDK](/sdks/analytics/ios-swift) and [Amplitude JavaScript Maintenance SDK](/sdks/analytics/browser-sdk/javascript-sdk). The following are the Dart settable config options.
+The Amplitude Flutter SDK runs on the top of the [Amplitude Android Maintenance SDK](/sdks/analytics/android/android-sdk), [Amplitude iOS Maintenance SDK](/sdks/analytics/ios-swift) and [Amplitude JavaScript Maintenance SDK](/sdks/analytics/browser-sdk/javascript-sdk). The following are the Dart settable config options.
 For other default configurations:
 
-- on Android, check the [Android Configuration](/sdks/analytics/android-sdk/android-sdk#configuration)
+- on Android, check the [Android Configuration](/sdks/analytics/android/android-sdk#configuration)
 - on iOS, check the [iOS configuration](/sdks/analytics/ios-swift#configuration)
 - on browser, check the [browser configuration](./sdks/analytics/browser-sdk/javascript-sdk#configuration)
 
@@ -419,7 +419,7 @@ Advertiser ID (also referred to as IDFA) is a unique identifier provided by the 
 
  Mobile apps need permission to ask for IDFA, and apps targeted to children can't track at all. Consider IDFV, device id, or an email login system as alternatives when IDFA isn't available.
 
-See [iOS Advertising ID](/sdks/analytics/ios/ios-swift#advertising-id) or the [Android Advertising ID](/sdks/analytics/android-sdk/android-kotlin-sdk#advertiser-id) for more information.
+See [iOS Advertising ID](/sdks/analytics/ios/ios-swift#advertising-id) or the [Android Advertising ID](/sdks/analytics/android/android-kotlin-sdk#advertiser-id) for more information.
 
 ### Opt out of tracking
 
