@@ -1,9 +1,9 @@
-title: 'Android SDK'
+title: 'Unity SDK'
 template: default
 layout: layout
-mount: c3197ac0-3df0-447b-b632-e1ec4b6e88c9
+mount: 06e72ffb-fe50-4afb-9a15-67e88597afc3
 revisions: false
-route: '/sdks/analytics/android/{slug}'
+route: '/sdks/analytics-sdks/unity/{slug}'
 sort_dir: asc
 date_behavior:
   past: public
@@ -15,5 +15,3 @@ preview_targets:
     refresh: true
 inject:
   nav_title: analytics_sdks
-structure:
-  root: false
