@@ -22,7 +22,7 @@ exclude_from_sitemap: false
 This is the official documentation for the Amplitude Analytics JavaScript SDK.
 
 {{partial:admonition type="deprecated" heading="Maintenance SDK"}}
-This is a maintenance SDK and will only receive bug fixes until deprecation. Upgrade to the latest [Browser SDK 2.0](/sdks/sdk-catalog/browser-sdk/browser-sdk-2) which supports plugins and more.
+This is a maintenance SDK and will only receive bug fixes until deprecation. Upgrade to the latest [Browser SDK 2.0](/sdks/sdk-catalog/browser/browser-sdk-2) which supports plugins and more.
 {{/partial:admonition}}
 
 {{partial:admonition type="warning" heading="Supported browser versions"}}
@@ -31,7 +31,7 @@ This SDK uses modern JavaScript features. For browser compatibility information,
 * [Nullish coalescing `??` operator](https://caniuse.com/mdn-javascript_operators_nullish_coalescing)
 * [Optional chaining `?.` operator](https://caniuse.com/mdn-javascript_operators_optional_chaining)
 
-To ensure [wider browser support and ES5 conformity](https://caniuse.com/es5), use [Amplitude's TypeScript Browser SDK](/sdks/sdk-catalog/browser-sdk/browser-sdk-2).
+To ensure [wider browser support and ES5 conformity](https://caniuse.com/es5), use [Amplitude's TypeScript Browser SDK](/sdks/sdk-catalog/browser/browser-sdk-2).
 {{/partial:admonition}}
 
 ## Install

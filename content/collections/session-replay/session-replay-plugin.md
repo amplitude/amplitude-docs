@@ -100,7 +100,7 @@ The Session Replay plugin scripts load asynchronously when you add them to the `
 
 ### Track default session events
 
-Session Replay enables session tracking by default. This ensures that Session Replay captures Session Start and Session End events. If you didn't capture these events before you implement Session Replay, expect an increase in event volume. For more information about session tracking, see [Browser SDK 2.0 | Tracking Sessions](/sdks/sdk-catalog/browser-sdk/browser-sdk-2#track-sessions).
+Session Replay enables session tracking by default. This ensures that Session Replay captures Session Start and Session End events. If you didn't capture these events before you implement Session Replay, expect an increase in event volume. For more information about session tracking, see [Browser SDK 2.0 | Tracking Sessions](/sdks/sdk-catalog/browser/browser-sdk-2#track-sessions).
 
 {{partial:tabs tabs="SDK configuration, Plugin configuration"}}
 {{partial:tab name="SDK configuration"}}
