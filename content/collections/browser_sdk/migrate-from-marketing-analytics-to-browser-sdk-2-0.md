@@ -148,7 +148,7 @@ This provides a simpler and consistent interface to opt out of page view trackin
 ### Updates to page view tracking
 
 * The event type of page view has been changed from `Page View` to `[Amplitude] Page Viewed`.
-* The event properties name also be updated. Check [here](/sdks/sdk-catalog/browser-sdk/browser-sdk-2#track-default-events) for more info.
+* The event properties name also be updated. Check [here](/sdks/sdk-catalog/browser/browser-sdk-2#track-default-events) for more info.
 
 | property           | Browser SDK 2.0           | Marketing Analytics Browser SDK |
 | ------------------ | ------------------------- | ------------------------------- |
