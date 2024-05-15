@@ -231,7 +231,7 @@ ampli.Instance.Flush()
 
 Plugins allow you to extend the Amplitude behavior, for example, modifying event properties (enrichment type) or sending to third-party APIs (destination type).
 
-First you need to define your plugin: [plugin examples](/sdks/analytics-sdks/go/go-sdk#plugins).
+First you need to define your plugin: [plugin examples](/sdks/analytics/go/go-sdk#plugins).
 
 Add your plugin after init Ampli:
 

@@ -3,7 +3,7 @@ template: default
 layout: layout
 mount: 2c015237-717d-481f-b4c3-f64fd04f48fd
 revisions: false
-route: '/sdks/analytics-sdks/node/{slug}'
+route: '/sdks/analytics/node/{slug}'
 sort_dir: asc
 date_behavior:
   past: public

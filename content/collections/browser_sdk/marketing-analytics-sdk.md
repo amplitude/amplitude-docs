@@ -20,7 +20,7 @@ exclude_from_sitemap: false
 The Marketing Analytics Browser SDK extends the Browser SDK to identify users and events based on marketing channels. This library is open-source, check it out on [GitHub](https://github.com/amplitude/Amplitude-TypeScript/tree/v1.x/packages/marketing-analytics-browser).
 
 {{partial:admonition type="deprecated" heading=""}}
-This is a maintenance SDK and will only receive bug fixes until deprecation. An improved version of Amplitude Browser SDK is now available. Amplitude Browser SDK 2.0 features default event tracking, improved marketing attribution tracking, simplified interface and a lighter weight package. Amplitude recommends the Browser SDK 2.0 for both product analytics and marketing analytics use cases. Upgrade to the latest [Browser SDK 2.0](/sdks/sdk-catalog/browser-sdk/browser-sdk-2).
+This is a maintenance SDK and will only receive bug fixes until deprecation. An improved version of Amplitude Browser SDK is now available. Amplitude Browser SDK 2.0 features default event tracking, improved marketing attribution tracking, simplified interface and a lighter weight package. Amplitude recommends the Browser SDK 2.0 for both product analytics and marketing analytics use cases. Upgrade to the latest [Browser SDK 2.0](/sdks/sdk-catalog/browser/browser-sdk-2).
 {{/partial:admonition}}
 
 ## Install the SDK
@@ -348,7 +348,7 @@ The following information is tracked in the page view events.
 
 ### Use the Marketing Analytics SDK with Ampli
 
-You can use Ampli with this SDK by passing an instance of the Marketing Analytics SDK to `ampli.load()`. See the [Ampli documentation](/sdks/sdk-catalog/browser-sdk/ampli-for-browser-sdk-1-0) for the Browser SDK for more details on configuration. 
+You can use Ampli with this SDK by passing an instance of the Marketing Analytics SDK to `ampli.load()`. See the [Ampli documentation](/sdks/sdk-catalog/browser/ampli-for-browser-sdk-1-0) for the Browser SDK for more details on configuration. 
 
 1. Add the Marketing Analytics Browser SDK to your project.
 2. Create an instance of the SDK.
