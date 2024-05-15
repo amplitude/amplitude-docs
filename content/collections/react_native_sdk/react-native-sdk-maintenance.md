@@ -64,11 +64,11 @@ export function MyApp() {
 
 ## Configure the SDK
 
-Amplitude React Native SDK runs on the top of the [Amplitude Android Maintenance SDK](/sdks/analytics-sdks/android-sdk/android-sdk), [Amplitude iOS Maintenance SDK](/sdks/analytics-sdks/ios/ios-sdk). The following are the ts/js settable config options.
+Amplitude React Native SDK runs on the top of the [Amplitude Android Maintenance SDK](/sdks/analytics/android-sdk/android-sdk), [Amplitude iOS Maintenance SDK](/sdks/analytics/ios/ios-sdk). The following are the ts/js settable config options.
 For other default configurations:
 
-- on Android side, check the [Android Configuration](/sdks/analytics-sdks/android-sdk/android-sdk#configuration)
-- on iOS side, check the [iOS configuration](/sdks/analytics-sdks/ios/ios-sdk#configuration)
+- on Android side, check the [Android Configuration](/sdks/analytics/android-sdk/android-sdk#configuration)
+- on iOS side, check the [iOS configuration](/sdks/analytics/ios/ios-sdk#configuration)
 
 | Name  | Description | Default Value |
 | --- | --- | --- |

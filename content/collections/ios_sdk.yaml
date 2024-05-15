@@ -3,7 +3,7 @@ template: default
 layout: layout
 mount: 4b780c66-217c-4b22-9629-916659e798ad
 revisions: false
-route: '/sdks/analytics-sdks/ios/{slug}'
+route: '/sdks/analytics/ios/{slug}'
 sort_dir: asc
 date_behavior:
   past: public

@@ -3,7 +3,7 @@ template: default
 layout: layout
 mount: 0906f7ef-96ae-4189-879d-ca81cafeebf8
 revisions: false
-route: '/sdks/analytics-sdks/java/{slug}'
+route: '/sdks/analytics/java/{slug}'
 sort_dir: asc
 date_behavior:
   past: public

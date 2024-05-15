@@ -3,7 +3,7 @@ template: default
 layout: layout
 mount: 0e02d5e0-1bc7-4fc6-88a1-983221265987
 revisions: false
-route: '/sdks/analytics-sdks/react-native/{slug}'
+route: '/sdks/analytics/react-native/{slug}'
 sort_dir: asc
 date_behavior:
   past: public

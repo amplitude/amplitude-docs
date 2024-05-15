@@ -3,7 +3,7 @@ template: default
 layout: layout
 mount: 06e72ffb-fe50-4afb-9a15-67e88597afc3
 revisions: false
-route: '/sdks/analytics-sdks/unity/{slug}'
+route: '/sdks/analytics/unity/{slug}'
 sort_dir: asc
 date_behavior:
   past: public

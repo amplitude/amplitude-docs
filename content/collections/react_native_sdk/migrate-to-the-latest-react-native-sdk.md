@@ -263,7 +263,7 @@ You can also use `setRevenue(6)` instead of `setPrice(3)` and `setQuantity(2)`.
 
 ### Device ID
 
-As the maintenance React Native SDK is a wrapper of the maintenance iOS, maintenance Android SDK and maintenance Browser SDK and provides mappings from React Native to native SDK functions, device ID generation follows the native SDK of each platform. Learn more about device ID lifecycle of [maintenance iOS SDK](/sdks/analytics-sdks/ios/ios-sdk#device-id-lifecycle) and [maintenance Android SDK](/sdks/analytics-sdks/android-sdk/android-sdk#device-id-lifecycle). You can also call `setAdvertisingIdForDeviceId()` or `setAppSetIdForDeviceId()` to set ADID or App Set ID as device ID.
+As the maintenance React Native SDK is a wrapper of the maintenance iOS, maintenance Android SDK and maintenance Browser SDK and provides mappings from React Native to native SDK functions, device ID generation follows the native SDK of each platform. Learn more about device ID lifecycle of [maintenance iOS SDK](/sdks/analytics/ios/ios-sdk#device-id-lifecycle) and [maintenance Android SDK](/sdks/analytics/android-sdk/android-sdk#device-id-lifecycle). You can also call `setAdvertisingIdForDeviceId()` or `setAppSetIdForDeviceId()` to set ADID or App Set ID as device ID.
 
 The latest React Native SDK initializes the device ID in the following order, with the device ID being set to the first valid value encountered:
 
@@ -280,9 +280,9 @@ The maintenance React Native SDK supports setting an advertising ID as device ID
 
 You can enable COPPA control by `enableCoppaControl()` in maintenance React Native SDK. The latest React Native SDK doesn't support that API but you can still enable COPPA using `config.trackingOptions` or an [Enrichment Plugin](../#enrichment-type-plugin) to remove identifying information from being tracked.
 
-* Learn how to enable IDFA, IDFV, ADID, and AppSetId in the [Advertising Identifiers](/sdks/analytics-sdks/react-native/react-native-sdk#advertising-identifiers) documentation.
+* Learn how to enable IDFA, IDFV, ADID, and AppSetId in the [Advertising Identifiers](/sdks/analytics/react-native/react-native-sdk#advertising-identifiers) documentation.
 * You can turn off IP address tracking by setting `config.trackingOptions.ipAddress` to `false`
-* You can use an [enrichment Plugin](/sdks/analytics-sdks/react-native/react-native-sdk#enrichment-type-plugin-example) to delete `city` in the payload, or any other identifying information.
+* You can use an [enrichment Plugin](/sdks/analytics/react-native/react-native-sdk#enrichment-type-plugin-example) to delete `city` in the payload, or any other identifying information.
 * Location (latitude and longitude) isn't tracked
 
 ### Session events
