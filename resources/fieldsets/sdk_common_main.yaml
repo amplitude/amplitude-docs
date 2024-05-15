@@ -7,21 +7,10 @@ fields:
         current: Current
         maintenance: Maintenance
         Beta: Beta
-      taggable: false
-      push_tags: false
-      multiple: false
-      clearable: false
-      searchable: true
-      cast_booleans: false
       type: select
       display: 'SDK Status'
       instructions: 'What is the status of this SDK?'
       width: 50
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
       validate:
         - required
   -
@@ -31,20 +20,9 @@ fields:
         core: 'Core SDK Doc'
         migration: 'SDK Migration'
         ampli: 'Ampli Codegen'
-      taggable: false
-      push_tags: false
-      multiple: false
-      clearable: false
-      searchable: true
-      cast_booleans: false
       type: select
       display: 'Article Type'
       width: 50
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
       validate:
         - required
       instructions: 'Select the type of content this article covers.'
@@ -52,14 +30,8 @@ fields:
     handle: major_version
     field:
       input_type: number
-      antlers: false
       type: text
       display: 'Major Version'
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
   -
     handle: supported_languages
     field:
@@ -74,15 +46,11 @@ fields:
         c-sharp: c-sharp
         go: go
         dart: dart
+        c-plus-plus: c++
       inline: true
       type: checkboxes
       display: 'Supported Languages'
       instructions: 'What languages does this SDK support?'
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
       validate:
         - required
   -
@@ -91,18 +59,12 @@ fields:
       type: table
       display: 'SDK Version Comparison'
       instructions: 'Enter the differences between the latest and previous versions of the SDK.'
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
       if:
         article_type: 'equals migration'
   -
     handle: content
     field:
       container: images
-      restrict: false
       buttons:
         - bold
         - italic
@@ -114,17 +76,6 @@ fields:
         - table
         - code
         - codeblock
-      automatic_line_breaks: true
-      automatic_links: false
-      escape_markup: false
-      heading_anchors: false
-      smartypants: false
-      table_of_contents: false
       antlers: true
       type: markdown
       display: Content
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
