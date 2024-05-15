@@ -3,7 +3,7 @@ template: default
 layout: layout
 mount: 5d8e869f-a964-4cbe-a103-65ecd4c2c576
 revisions: false
-route: '/sdks/analytics-sdks/go/{slug}'
+route: '/sdks/analytics/go/{slug}'
 sort_dir: asc
 date_behavior:
   past: public
