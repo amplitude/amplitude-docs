@@ -355,3 +355,170 @@ if (Application.platform == RuntimePlatform.IPhonePlayer) {
 }
 ```
 
+{{partial:admonition type="note" heading=""}}
+Amplitude doesn't support currency conversion. All revenue data should be normalized to your currency of choice before being sent.
+{{/partial:admonition}}
+
+## User sessions
+
+A session on Android is a period of time that a user has the app in the foreground.
+
+Amplitude groups events together by session. Events that are logged within the same session have the same `session_id`. Sessions are handled automatically so you don't have to manually call an API like `startSession()` or `endSession()`.
+
+You can adjust the time window for which sessions are extended.
+
+```c#
+client.setMinTimeBetweenSessionsMillis(10000); //10 seconds
+```
+
+By default, '[Amplitude] Start Session' and '[Amplitude] End Session' events aren't sent. Even though these events aren't sent, sessions are still tracked by using `session_id`.
+To re-enable those session events, add this line before initializing the SDK.
+
+```c#
+Amplitude amplitude = Amplitude.Instance;
+amplitude.trackSessionEvents(true);
+amplitude.init(AMPLITUDE_API_KEY);
+```
+
+You can also log events as out-of-session. Internally (in Amplitude dashboards), out-of-session events have a `session_id` of `-1` and aren't considered part of the current session, meaning they don't extend the current session.
+This might be useful if you are logging events triggered by push notifications, for example. You can log events as out-of-session by setting the input parameter `outOfSession` to true when calling `logEvent()`.
+
+```c#
+Dictionary<string, object> eventProps = new Dictionary<string, object>();
+bool outOfSession = true;
+client.logEvent("event out of session", eventProps, outOfSession);
+```
+
+## Advertising ID
+
+Advertiser ID (also referred to as IDFA) is a unique identifier provided by the iOS and Google Play stores. Because it's unique to every person and not just their devices, IDFA is useful for mobile attribution. [Mobile attribution](https://www.adjust.com/blog/mobile-ad-attribution-introduction-for-beginners/) is the attribution of an installation of a mobile app to its original source (for example, ad campaign, app store search).
+
+Mobile apps need permission to ask for IDFA, and apps targeted to children can't track at all. Consider IDFV, device id, or an email login system as alternatives when IDFA isn't available.
+
+### iOS setup
+
+See setup instructions in [Unity iOS IDFA and GPS Setup](#ios-idfa-and-gps-setup).
+
+### Android setup
+
+See setup instructions in the [Android SDK](/sdks/analytics/android/android-kotlin-sdk#advertiser-id).
+
+## Location tracking
+
+For location tracking, Amplitude converts the IP of a user event into a location (GeoIP lookup) by default. This information may be overridden by an app's own tracking solution or user data.
+
+Amplitude can access the Android location service (if possible) to add the specific coordinates (longitude and latitude) where an event is logged.
+
+## Set custom user ID
+
+If your app has its login system that you want to track users with, you can call `setUserId` at any time.
+
+```c#
+Amplitude.Instance.setUserId("USER_ID");
+```
+
+You can also add the User ID as an argument to the init call.
+
+```c#
+Amplitude.Instance.init(AMPLITUDE_API_KEY, "USER_ID");
+```
+
+Don't assign users a User ID that could change as each unique User ID is interpreted as a unique user in Amplitude.
+See [Track unique users in Amplitude](/cdp/sources/instrument-track-unique-users) for more information.
+
+## Advanced topics
+
+### COPPA control
+
+COPPA (Children's Online Privacy Protection Act) restrictions on IDFA, IDFV, city, IP address and location tracking can be enabled or disabled all at once.
+Remember that apps asking for information from children under 13 years of age must comply with COPPA.
+
+```c#
+client.enableCoppaControl();
+```
+
+### Opt out of tracking
+
+Users may wish to opt out of tracking entirely, which means no events and no records of their browsing history. This API provides a way to fulfill certain users' requests for privacy.
+
+```c#
+client.setOptOut(true); //No events will be tracked for this user
+```
+
+### Dynamic configuration
+
+Unity SDK allows users to configure their apps to use [dynamic configuration](../../dynamic-configuration.md). This feature finds the best Amplitude server URL automatically based the user's location.
+
+- If you have your own proxy server and use `setServerUrl` API, don't use dynamic configuration.
+- If you have users in Mainland China, Amplitude recommends that you use dynamic configuration.
+- By default, this feature is off. You must explicitly enabled it to use it.
+- By default, this feature returns server URLs for Amplitude's US servers, if you need to send data to Amplitude's EU servers, use `setServerZone` to set it to EU zone.
+
+```c#
+amplitude.setUseDynamicConfig(true);
+```
+
+## iOS IDFA and GPS setup
+
+This section walks through the process to give Unity SDK users access to IDFA (advertiser ID) and GPS coordinate data in their logged events.
+
+### Considerations
+
+- This functionality wasn't included in the Unity SDK because the Apple App Store flags any app that uses IDFA code, even if the code is disabled or sourced from a third-party SDK developer like Amplitude.
+- Consider alternatives to IDFA. Don't assume users will enable IDFA tracking; opt-in systems engage less. Use device id, IDFV, or pass your own app's email login system as a custom user property.
+- You can edit the Objective-C iOS logic to fetch IDFA and GPS data. However, the current code was written to handle permissions, and accurately update the IDFA and GPS data within the SDK when the app user gives permissions.
+
+### Setup
+
+!!!note  "iOS App Store compliance"
+
+   If an app is subject to COPPA because it's aimed toward children, the app can't contain any IDFA or GPS tracking code. This is why the IDFA and GPS code requires additional setup.
+
+First, take the [two files](https://github.com/amplitude/unity-plugin/tree/main/IdfaIOS) `unity-plugin/IdfaIOS/CustomIdfa.m` and `unity-plugin/IdfaIOS/CustomGPS.m` and place them into `Assets/Scripts`.
+ You may place the file wherever, but check all the `#import` statements lead to correct paths.
+
+In the imports section (the top) of your `.cs` game script, add this import:
+
+```c#
+#if (UNITY_IPHONE || UNITY_TVOS)
+using System.Runtime.InteropServices;
+#endif
+```
+
+Inside the game class, add the following code inside your MonoBehavior class, or any other class.
+
+```c#
+public class AmplitudeDemo : MonoBehavior {
+
+#if (UNITY_IPHONE || UNITY_TVOS)
+    [DllImport ("__Internal")]
+    private static extern void setIdfaBlock(string instanceName);
+    [DllImport ("__Internal")]
+    private static extern void setLocationInfoBlock(string instanceName);
+#endif
+```
+
+Finally, in your game code, probably in `void Start()`, call these functions. `YOUR_INSTANCE_NAME` is a string associated with this particular instance of Amplitude. `YOUR_INSTANCE_NAME` may also be null or an empty string.
+
+```c#
+Amplitude amplitude = Amplitude.getInstance(YOUR_INSTANCE_NAME);
+amplitude.init(AMPLITUDE_API_KEY);
+
+#if (UNITY_IPHONE || UNITY_TVOS)
+    setLocationInfoBlock(YOUR_INSTANCE_NAME);
+    setIdfaBlock(YOUR_INSTANCE_NAME);
+#endif
+```
+
+These functions prompt the iOS user to accept or reject permissions for GPS location tracking, as well as IDFA tracking.
+
+Your Unity app needs two special configurations.\
+For location, navigate to `Unity > Edit > Project Settings...`. The menu in the first image below will pop up. Select `Player`, then click the `iOS` tab. Click `Other Settings`, and scroll until the field `Location Usage Description`. Type a sentence that prompts the user for GPS tracking permissions into the text box.
+
+{{partial:admonition type="note" heading="XCode simulator"}}
+IDFA tracking permissions can generally only be tested reliably on real life phones.
+{{/partial:admonition}}
+
+For IDFA, the file `Info.plist` has to be edited according to Apple's specifications. This can be done with a Unity script with [guidance from this Unity post](https://forum.unity.com/threads/how-can-you-add-items-to-the-xcode-project-targets-info-plist-using-the-xcodeapi.330574/).
+
+Also, when the app is compiled into iOS and launches into Xcode, find the top-level file `Info.plist`. Click the plus symbol next to any key value pair. Use the Xcode editor to find the key `Privacy - Tracking Usage Description`, make sure the Type is String, and type a prompt to ask for tracking permission in the Value field.

@@ -2,11 +2,11 @@ tree:
   -
     id: 29116163-9275-43fd-aa6e-e229dee7f716
     title: 'Analytics SDKs'
-    url: /sdks/analytics-sdks
+    url: /sdks/analytics
   -
     id: c91e819f-45d9-4ebe-9e89-a47bccf96541
     title: 'Browser SDK'
-    url: /sdks/analytics-sdks/browser-sdk
+    url: /sdks/analytics/browser
     children:
       -
         id: 348e2c98-813e-4a6d-9892-099b386b9c8e
@@ -57,7 +57,7 @@ tree:
   -
     id: 9a81493c-ecba-4501-89c2-1edd20dd05ba
     title: 'Android SDK'
-    url: /sdks/analytics-sdks/android-sdk
+    url: /sdks/analytics/android
     children:
       -
         id: 51dbcce0-c985-468c-9ac4-47accd32d54c
@@ -82,7 +82,7 @@ tree:
   -
     id: 48153f3f-9a91-4ad6-8426-0c9bfea008f3
     title: 'Node SDK'
-    url: /sdks/analytics-sdks/node
+    url: /sdks/analytics/node
     children:
       -
         id: ae0ce800-7681-4689-937b-6a26f922bf3b
@@ -113,7 +113,7 @@ tree:
   -
     id: a52630fc-0ccc-449a-b355-abd980ab2577
     title: 'Go SDK'
-    url: /sdks/analytics-sdks/go
+    url: /sdks/analytics/go
     children:
       -
         id: 04095a4d-c726-40a9-989e-8d15a20cf6c0
@@ -124,7 +124,7 @@ tree:
   -
     id: a9f79548-98e3-4713-aa6f-1449ce435ffd
     title: 'iOS SDK'
-    url: /sdks/analytics-sdks/ios
+    url: /sdks/analytics/ios
     children:
       -
         id: d0eebb76-d988-418c-bace-c71998649ef4
@@ -152,7 +152,7 @@ tree:
   -
     id: 357d74c2-3e9e-41d4-9cef-01fbf6ee1ea1
     title: 'React Native SDK'
-    url: /sdks/analytics-sdks/react-native
+    url: /sdks/analytics/react-native
     children:
       -
         id: d728fe85-8015-4050-ad67-2c779daa0231
