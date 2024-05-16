@@ -576,6 +576,15 @@ td {
     background-color: #F6F6FD;
     margin-left: 0px;
 }
+
+.optional {
+    color: #028376;
+}
+
+.required {
+    color:#EC4747;
+    font-style: italic;
+}
 /*
 Margin and rounding are personal preferences,
 overflow-x-auto is recommended.
@@ -639,4 +648,45 @@ pre code.torchlight::before{
         color: #858585;
         transition: color .25s ease-out;
         content: attr(data-lang)!important
+}
+
+.torchlight summary:focus {
+    outline: none;
+}
+ 
+/* Hide the default markers, as we provide our own */
+.torchlight details > summary::marker,
+.torchlight details > summary::-webkit-details-marker {
+    display: none;
+}
+ 
+.torchlight details .summary-caret::after {
+    pointer-events: none;
+}
+ 
+/* Add spaces to keep everything aligned */
+.torchlight .summary-caret-empty::after,
+.torchlight details .summary-caret-middle::after,
+.torchlight details .summary-caret-end::after {
+    content: " ";
+}
+ 
+/* Show a minus sign when the block is open. */
+.torchlight details[open] .summary-caret-start::after {
+    content: "-";
+}
+ 
+/* And a plus sign when the block is closed. */
+.torchlight details:not([open]) .summary-caret-start::after {
+    content: "+";
+}
+ 
+/* Hide the [...] indicator when open. */
+.torchlight details[open] .summary-hide-when-open {
+    display: none;
+}
+ 
+/* Show the [...] indicator when closed. */
+.torchlight details:not([open]) .summary-hide-when-open {
+    display: initial;
 }

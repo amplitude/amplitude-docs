@@ -1,0 +1,50 @@
+title: 'Analytics API'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            import: api_common
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - api
+              max_items: 1
+              listable: false
+              localizable: true
+          -
+            handle: source
+            field:
+              input_type: url
+              type: text
+              display: Source
+  code_samples:
+    display: 'Code Samples'
+    sections:
+      -
+        display: 'New Section'
+        fields:
+          -
+            import: api_code_samples

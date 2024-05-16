@@ -1,0 +1,44 @@
+{{if auth_method}}
+{{lede}}
+<h2>Authentication</h2>
+{{if auth_method == "api_key"}}
+<p>This API uses your API key passed in the body of the request:</p>
+<code>api-key=API_KEY</code>
+{{/if}}
+{{if auth_method == "api_key_query"}}
+<p> This API uses your API key passed as a query parameter in the URL of the request:</p>
+<code>{{standard_endpoint}}?api_key=API_KEY</code>
+{{/if}}
+{{if auth_method == "http_basic"}}
+<p>API uses <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization#basic_authentication" target="_blank">basic authentication</a>, using the API key and secret key for your project. Pass base64-encoded credentials in the request header like <code>{api-key}:{secret-key}</code>. <code>api-key</code> replaces username, and <code>secret-key</code> replaces the password.</p> 
+
+<p>Your authorization header should look something like this:</p>
+
+<code>--header 'Authorization: Basic YWhhbWwsdG9uQGFwaWdlZS5jb206bClwYXNzdzByZAo'`</code>
+{{/if}}
+<p>For more information, see <a href="/apis/api-credentials">Find your API Credentials</a></p>
+
+
+<h2>Endpoints</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Region</th>
+            <th>Endpoint</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Standard server</td>
+            <td><code>{{standard_endpoint}}</code></td>
+        </tr>
+        {{if eu_endpoint}}
+        <tr>
+            <td>EU residency server</td>
+            <td><code>{{eu_endpoint}}</code></td>
+        </tr>
+        {{/if}}
+    </tbody>
+</table>
+{{/if}}
