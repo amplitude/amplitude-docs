@@ -1,9 +1,8 @@
-title: 'Analytics API'
+title: APIs
 template: default
 layout: layout
-mount: aa68977b-f93c-4a87-b03d-64691d7a0306
 revisions: false
-route: '/apis/analytics/{slug}'
+route: '/apis/{slug}'
 sort_dir: asc
 date_behavior:
   past: public
@@ -13,5 +12,3 @@ preview_targets:
     label: Entry
     url: '{permalink}'
     refresh: true
-structure:
-  root: false

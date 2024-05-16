@@ -15,3 +15,5 @@ preview_targets:
     refresh: true
 inject:
   nav_title: analytics_sdks
+structure:
+  root: false
