@@ -15,21 +15,24 @@
         </div>
     </div>
 </section>
-<section class="py-16 px-6 lg:px-12 max-w-screen-2xl mx-auto">
-    <h2 class="font-light mt-0 font-[Gellix]">Browse by product</h2>
-    <div class="flex justify-between gap-4 flex-wrap flex-col sm:flex-row">
-        {{products}}
-        <a href="{{section_link:url}}">
-        <div class="w-72 h-[22rem] border rounded border-amp-gray-100 p-9 hover:shadow-lg transition-shadow">
-            <h3 class="mt-0 font-medium text-[18px]">{{product_name}}</h3>
-            <img class="mb-0" src="{{product_icon}}" />
-            <p class="leading-6 mb-0 font-normal text-amp-gray-600">{{product_description}}</p>
-        </div>
-    </a>
-        {{/products}}
-        </div>
+<section class="py-16 px-6 lg:px-12">
+    <div class="max-w-screen-2xl mx-auto">
+        <h2 class="font-light mt-0 font-[Gellix]">Browse by product</h2>
+        <div class="flex justify-between gap-4 flex-wrap flex-col sm:flex-row">
+            {{products}}
+            <a href="{{section_link:url}}">
+            <div class="w-72 h-[22rem] border rounded border-amp-gray-100 p-9 hover:shadow-lg transition-shadow">
+                <h3 class="mt-0 font-medium text-[18px]">{{product_name}}</h3>
+                <img class="mb-0" src="{{product_icon}}" />
+                <p class="leading-6 mb-0 font-normal text-amp-gray-600">{{product_description}}</p>
+            </div>
+        </a>
+            {{/products}}
+            </div>
+    </div>
+
 </section>
-<section class="bg-amp-gray-50 py-16 px-6 lg:px-12  popcon">
+<section class="bg-amp-gray-50 py-16 px-6 lg:px-12 popcon">
     <div class="max-w-screen-2xl mx-auto">
         <h2 class="font-light mt-0 font-[Gellix]">Popular content</h2>
         <div class="grid grid-cols-1 grid-rows-1 lg:grid-cols-3 lg:grid-rows-3 gap-4">
