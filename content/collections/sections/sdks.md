@@ -23,7 +23,7 @@ Learn about when you should choose client-side or server-side SDKs in the Client
 
 Visit the SDK Catalog page to see all the current SDK documentation.
 
-- [Analytics and Data SDKs](/sdks/analytics-sdks)
+- [Analytics and Data SDKs](/sdks/analytics)
 - Experiment SDKs
 - Session Replay SDKs
 
