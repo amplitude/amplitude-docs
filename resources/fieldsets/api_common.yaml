@@ -33,6 +33,19 @@ fields:
       input_type: url
       type: text
       display: 'Postman Link'
+      width: 50
+  -
+    handle: api_status
+    field:
+      options:
+        alpha: alpha
+        beta: beta
+        ga: ga
+        maintenance: maintenance
+      default: ga
+      type: radio
+      display: 'API status'
+      width: 50
   -
     handle: lede
     field:

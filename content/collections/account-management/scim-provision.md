@@ -7,8 +7,8 @@ this_article_will_help_you:
   - 'Handle provisioning and group management programmatically, via a public API'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1715362557
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1715983206
 ---
 In Amplitude, the User Management API provides a programmatic solution to provisioning and group management through a public API. With it, you can quickly and easily manage your organizations at scale and integrate the provisioning process with other tools, including identity providers.
 
@@ -59,9 +59,9 @@ In Okta, the Amplitude SCIM API provides the following features:
 
 * **Import Users/Groups**: Accesses the users and groups currently within your organization **inside Amplitude,**and adds new users or updates existing users within Okta.
 * **Create New Users:** On assignment of a user or group to the application, users will be invited to your organization in Amplitude and be sent an invitation email to complete sign-up.
-* **Update User Attributes:** Used to keep profiles in sync from Okta to Amplitude.
-* **Deactivate Users:**On removal of a user assignment from the Okta application, the users will also be removed from your Amplitude organization.
-* **Push Groups:**Creates new groups in Amplitude and links them to groups within Amplitude.
+* **Update User Attributes**: Used to keep profiles in sync from Okta to Amplitude.
+* **Deactivate Users**:On removal of a user assignment from the Okta application, the users will also be removed from your Amplitude organization.
+* **Push Groups**: Creates new groups in Amplitude and links them to groups within Amplitude.
 
 The best way to integrate Okta provisioning with Amplitude is with the Amplitude application within the Okta Integration Network. To do so, follow these steps:
 
