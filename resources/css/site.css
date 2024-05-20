@@ -642,8 +642,8 @@ pre code.torchlight {
 pre code.torchlight::before{
 
         position: absolute;
-        top: .75rem;
-        right: 1.25rem;
+        top: -.5rem;
+        left: .5rem;
         z-index: 10;
         color: #858585;
         transition: color .25s ease-out;
