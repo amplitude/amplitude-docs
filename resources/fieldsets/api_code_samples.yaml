@@ -1,0 +1,30 @@
+title: 'API Code Samples'
+fields:
+  -
+    handle: api_code_examples
+    field:
+      type: grid
+      display: 'API Code Examples'
+      fields:
+        -
+          handle: language
+          field:
+            options:
+              cURL: cURL
+              Http: Http
+              JavaScript: JavaScript
+              Node: Node
+              Ruby: Ruby
+              Python: Python
+              Java: Java
+              Go: Go
+            type: select
+            display: Language
+            width: 25
+        -
+          handle: code_sample
+          field:
+            mode: javascript
+            type: code
+            display: 'Code sample'
+            width: 75

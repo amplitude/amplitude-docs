@@ -3,6 +3,12 @@ tree:
     id: 1a5c23e3-2692-4117-a42b-7467b79dbc70
     entry: b490056f-79d5-43ce-871d-b7c762c5440b
   -
+    id: b13a984b-7a54-4638-b98c-a68a87122cac
+    entry: 3131e681-60e2-4e15-b09d-9e3aadd74b9a
+  -
+    id: a9c20f32-ebad-40f6-99b0-07d26e675a81
+    entry: 3f525d05-80f3-4166-90d0-65e0fec16fb3
+  -
     id: 43ddda3a-6552-439e-924a-1e94a15a9392
     title: 'Analytics APIs'
     children:

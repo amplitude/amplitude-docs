@@ -1,0 +1,64 @@
+title: 'API Common'
+fields:
+  -
+    handle: auth_method
+    field:
+      options:
+        api_key: 'API key'
+        api_key_query: 'API key (query param)'
+        http_basic: 'Http basic'
+        scim_key: 'SCIM key'
+      inline: true
+      type: radio
+      display: 'Auth method'
+  -
+    handle: standard_endpoint
+    field:
+      input_type: url
+      type: text
+      display: 'Standard Endpoint'
+      width: 50
+      validate:
+        - required
+  -
+    handle: eu_endpoint
+    field:
+      input_type: url
+      type: text
+      display: 'EU endpoint'
+      width: 50
+  -
+    handle: postman_link
+    field:
+      input_type: url
+      type: text
+      display: 'Postman Link'
+      width: 50
+  -
+    handle: api_status
+    field:
+      options:
+        alpha: alpha
+        beta: beta
+        ga: ga
+        maintenance: maintenance
+      default: ga
+      type: radio
+      display: 'API status'
+      width: 50
+  -
+    handle: lede
+    field:
+      type: markdown
+      display: Lede
+  -
+    handle: summary
+    field:
+      type: markdown
+      display: Summary
+  -
+    handle: content
+    field:
+      type: markdown
+      display: Content
+      antlers: true
