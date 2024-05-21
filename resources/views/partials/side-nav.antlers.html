@@ -1,5 +1,5 @@
 <div x-cloak x-data="{ lvl1: false, lvl2: false, lvl3: false }" class="nav-level-1 p-4 h-screen overflow-scroll overscroll-contain">
-    <div class="flex flex-col mx-4">
+    <div class="flex flex-col">
         {{ nav :handle="nav_title" }}
             {{ lvl1_parent = title | slugify }}
             {{ if url && children }}
@@ -13,12 +13,12 @@
                     class="no-underline block text-[.875rem] p-2 leading-5 hover:bg-amp-gray-50 hover:rounded {{if is_current }}bg-amp-blue-950 text-amp-blue-500 rounded active{{else}}text-amp-gray-600{{/if}}">{{ title }}</a>
             {{ else }}
                 <button @click.prevent="lvl1 = (lvl1 === '{{ title | slugify }}') ? '' : '{{ title | slugify }}'"
-                    class="nav-button text-left text-[.875rem] my-0 py-[.25rem]"
+                    class="nav-button text-left text-[.875rem] my-0 py-[.25rem] pl-2"
                     :class="lvl1 === '{{ title | slugify }}' ? 'active' : ''">{{ title }}
                     {{ svg src="/assets/general/icon-chevron-down.svg" class="inline absolute right-4" }}</button>
             {{ /if }}
             {{ if children }}
-                <div x-show="lvl1 === '{{ title | slugify }}'" class="nav-level-2 flex flex-col gap-2 my-0 pl-4"
+                <div x-show="lvl1 === '{{ title | slugify }}'" class="nav-level-2 flex flex-col my-0 pl-4"
                     x-collapse>
                     {{ children }}
                         {{ if url }}
@@ -28,12 +28,12 @@
                         {{ else }}
                             <button
                                 @click.prevent="lvl2 = (lvl2 === '{{ title | slugify }}' ? null : '{{ title | slugify }}')"
-                                class="text-left text-[.875rem]"
+                                class="text-left text-[.875rem] py-2 pl-2"
                                 :class="lvl2 === '{{ title | slugify }}' ? 'active' : ''">{{ title }}
                                 {{ svg src="/assets/general/icon-chevron-down.svg" class="inline absolute right-4" }}</button>
                         {{ /if }}
                         {{ if children }}
-                            <div x-show="lvl2 === '{{ title | slugify }}'" class="nav-level-3 my-0" x-collapse>
+                            <div x-show="lvl2 === '{{ title | slugify }}'" class="nav-level-3 flex flex-col my-0 pl-2" x-collapse>
                                 {{ children }}
                                     <a href="{{ url }}"
                                         class="no-underline block text-[.875rem] p-2 leading-5 hover:bg-amp-gray-50 hover:rounded  {{if is_current}}bg-amp-blue-950 text-amp-blue-500 rounded active{{else}}text-amp-gray-600{{/if}}"
