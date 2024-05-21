@@ -1,6 +1,6 @@
 {
   "resources/css/tailwind.css": {
-    "file": "assets/tailwind-da9399fa.css",
+    "file": "assets/tailwind-60164877.css",
     "isEntry": true,
     "src": "resources/css/tailwind.css"
   },
@@ -25,12 +25,12 @@
     "src": "resources/img/favicon.ico"
   },
   "resources/js/app.css": {
-    "file": "assets/app-4b5d9708.css",
+    "file": "assets/app-33cb160a.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
     "css": [
-      "assets/app-4b5d9708.css"
+      "assets/app-33cb160a.css"
     ],
     "dynamicImports": [
       "resources/svg/icons/light/add-circle.svg",
@@ -385,6 +385,7 @@
       "resources/svg/icons/regular/info-circle.svg",
       "resources/svg/icons/regular/insert-image.svg",
       "resources/svg/icons/regular/insert-link.svg",
+      "resources/svg/icons/regular/light-mode.svg",
       "resources/svg/icons/regular/list-ol.svg",
       "resources/svg/icons/regular/list-ul-2.svg",
       "resources/svg/icons/regular/list-ul.svg",
@@ -417,6 +418,7 @@
       "resources/svg/icons/regular/superscript.svg",
       "resources/svg/icons/regular/swap.svg",
       "resources/svg/icons/regular/syringe.svg",
+      "resources/svg/icons/regular/system.svg",
       "resources/svg/icons/regular/telescope.svg",
       "resources/svg/icons/regular/text-bold.svg",
       "resources/svg/icons/regular/text-italic.svg",
@@ -781,6 +783,7 @@
       "resources/svg/icons/regular/info-circle.svg",
       "resources/svg/icons/regular/insert-image.svg",
       "resources/svg/icons/regular/insert-link.svg",
+      "resources/svg/icons/regular/light-mode.svg",
       "resources/svg/icons/regular/list-ol.svg",
       "resources/svg/icons/regular/list-ul-2.svg",
       "resources/svg/icons/regular/list-ul.svg",
@@ -813,6 +816,7 @@
       "resources/svg/icons/regular/superscript.svg",
       "resources/svg/icons/regular/swap.svg",
       "resources/svg/icons/regular/syringe.svg",
+      "resources/svg/icons/regular/system.svg",
       "resources/svg/icons/regular/telescope.svg",
       "resources/svg/icons/regular/text-bold.svg",
       "resources/svg/icons/regular/text-italic.svg",
@@ -841,7 +845,7 @@
       "resources/svg/filetypes/video.svg",
       "resources/svg/filetypes/xml.svg"
     ],
-    "file": "assets/app-c5658e41.js",
+    "file": "assets/app-a7727a48.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
@@ -2491,7 +2495,7 @@
     "src": "resources/svg/icons/regular/combine-cells.svg"
   },
   "resources/svg/icons/regular/dark-mode.svg": {
-    "file": "assets/dark-mode-0a6b304a.js",
+    "file": "assets/dark-mode-23b1473a.js",
     "isDynamicEntry": true,
     "src": "resources/svg/icons/regular/dark-mode.svg"
   },
@@ -2675,6 +2679,11 @@
     "isDynamicEntry": true,
     "src": "resources/svg/icons/regular/insert-link.svg"
   },
+  "resources/svg/icons/regular/light-mode.svg": {
+    "file": "assets/light-mode-db4e6a04.js",
+    "isDynamicEntry": true,
+    "src": "resources/svg/icons/regular/light-mode.svg"
+  },
   "resources/svg/icons/regular/list-ol.svg": {
     "file": "assets/list-ol-c88bac13.js",
     "isDynamicEntry": true,
@@ -2834,6 +2843,11 @@
     "file": "assets/syringe-39cac2b4.js",
     "isDynamicEntry": true,
     "src": "resources/svg/icons/regular/syringe.svg"
+  },
+  "resources/svg/icons/regular/system.svg": {
+    "file": "assets/system-267f57ce.js",
+    "isDynamicEntry": true,
+    "src": "resources/svg/icons/regular/system.svg"
   },
   "resources/svg/icons/regular/telescope.svg": {
     "file": "assets/telescope-3e0f8434.js",
