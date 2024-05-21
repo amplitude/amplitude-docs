@@ -8,10 +8,11 @@ standard_endpoint: 'https://api2.amplitude.com/attribution'
 eu_endpoint: 'https://api.eu.amplitude.com/attribution'
 postman_link: 'https://www.postman.com/amplitude-dev-docs/workspace/amplitude-developers/folder/20044411-1fcbe9b1-677c-41ba-9e24-4d8419730071?action=share&source=copy-link&creator=29131806&ctx=documentation'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715890380
+updated_at: 1716312222
 lede: "The Attribution API is for sending attribution campaign events (identified by\_`idfa`,\_`idfv`, or\_`adid`) that contain attribution information."
+api_status: ga
+summary: 'Send attribution campaign events (identified by `idfa`, `idfv`, or `adid`) that contain attribution information.'
 ---
-
 ## Considerations
 
 - When Amplitude can't match attribution events to an existing user, they're held for up to 72 hours for potential user matching. If an event isn't logged for a matching user within 72 hours of receiving the attribution data, then Amplitude **drops the attribution data**.

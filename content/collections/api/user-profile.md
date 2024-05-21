@@ -8,9 +8,10 @@ standard_endpoint: 'https://profile-api.amplitude.com/v1/userprofile'
 postman_link: 'https://www.postman.com/amplitude-dev-docs/workspace/amplitude-developers/folder/20044411-eeb485c9-28ef-41e9-abd3-874d98fe7baa?action=share&source=copy-link&creator=29131806&ctx=documentation'
 api_status: ga
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1716246778
+updated_at: 1716312404
+lede: 'The User Profile API serves Amplitude user profiles, which include user properties, computed user properties, a list of cohort IDs of cohorts that the user is in, and recommendations.'
+summary: 'Fetch a user profile, which include user properties, computed properties, a list of cohort IDs, and recommendations.'
 ---
-
 ## Considerations
 
 **Default experiences**

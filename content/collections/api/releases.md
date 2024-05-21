@@ -10,7 +10,8 @@ postman_link: 'https://www.postman.com/amplitude-dev-docs/workspace/amplitude-de
 api_status: ga
 lede: 'Use the Releases API to programmatically create releases. Integrate this API into your deployment workflows so you can document the product changes your team introduces.'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715982589
+updated_at: 1716312353
+summary: 'Programmatically create releases in Amplitude using the Releases API.'
 ---
 ## Create a release
 

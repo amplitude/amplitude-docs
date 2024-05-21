@@ -6,18 +6,19 @@ author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 parent: 8f99c8f9-2474-4ae9-858c-935823bab025
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1706300921
+nav_title: apis
 ---
 Use Amplitude APIs to send and receive information and extend Amplitude. 
 
 ## Available APIs
 
 - [Analytics and Data APIs](/apis/analytics)
-- [Experiment APIs](../api-reference-overview#experiment-apis)
+- [Experiment APIs](/apis/experiment)
 
 ## More API resources
 
-- [Amplitude Keys and Tokens](/guides/amplitude-keys-guide): Learn about the keys and tokens used with Amplitude. 
-- [Find your API Credentials](../find-api-credentials): Learn how to find the API key for your Amplitude project. 
+- [Amplitude Keys and Tokens](/apis/keys-and-tokens): Learn about the keys and tokens used with Amplitude. 
+- [Find your API Credentials](/apis/api-credentials): Learn how to find the API key for your Amplitude project. 
 
 ## Official Postman Collection
 

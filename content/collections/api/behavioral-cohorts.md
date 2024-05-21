@@ -9,7 +9,9 @@ eu_endpoint: 'https://analytics.eu.amplitude.com/api/3/cohorts'
 postman_link: 'https://www.postman.com/amplitude-dev-docs/workspace/amplitude-developers/folder/20044411-d003b0cd-e59e-4d85-9924-a9f475bf2aba?action=share&source=copy-link&creator=29131806&ctx=documentation'
 lede: 'Use the Behavioral Cohorts API to list all your cohorts in Amplitude, export a cohort in Amplitude, or upload a cohort.'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715894730
+updated_at: 1716312235
+api_status: ga
+summary: 'List all your cohorts in Amplitude, export a cohort in Amplitude, or upload a cohort.'
 ---
 ## Considerations
 
@@ -693,4 +695,3 @@ Perform incremental update (add / remove) to existing cohort membership.
 | `skipped_ids` | List of strings. List of skipped IDs in the membership operation entry.|
 | `id_type` | String. The kind of ID sent for the `ids` field in this membership operation entry. |
 | `operation` | String. The operation applied on `ids` field in this membership operation entry |
-

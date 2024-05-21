@@ -12,7 +12,8 @@ lede: |-
 
   In this example, three user records, each with a different user ID, are all merged into the user ID `hank@globex.net`. This new user ID is that user's "global" user ID in the cross-project view. This way, you can get an accurate count of the number of unique users across your entire product portfolio.
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1716244792
+updated_at: 1716312377
+summary: 'If you use the Portfolio add-on, use this API to map and unmap users across projects to a global user ID.'
 ---
 ## Considerations
 

@@ -12,7 +12,9 @@ lede: |-
 
   The Amplitude [Accounts add-on](/analytics/account-level-reporting) makes analytical functionality available at the group level. A group is an object that a set of users might belong to, like a company of customers, team of users, or a playlist with listeners. Groups can help you understand how accounts interact with your product, instead of how individual users interact.
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715973802
+updated_at: 1716312319
+api_status: ga
+summary: 'Set or update properties of particular groups.'
 ---
 ## Considerations
 

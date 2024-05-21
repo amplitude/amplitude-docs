@@ -52,6 +52,11 @@ fields:
       type: markdown
       display: Lede
   -
+    handle: summary
+    field:
+      type: markdown
+      display: Summary
+  -
     handle: content
     field:
       type: markdown

@@ -13,7 +13,8 @@ lede: |-
 
   To create a lookup property, create a lookup table to reference. You can retrieve and update each of the tables using the API. Lookup Tables are identified by the name and are scoped per project.
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715981289
+updated_at: 1716312346
+summary: 'Augment your properties with static data.'
 ---
 ## Considerations
 

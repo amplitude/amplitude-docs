@@ -9,7 +9,9 @@ eu_endpoint: 'https://analytics.eu.amplitude.com/api/2/'
 postman_link: 'https://www.postman.com/amplitude-dev-docs/workspace/amplitude-developers/folder/20044411-b3c93c0f-0849-430a-8a82-749c2ac54fea?action=share&source=copy-link&creator=29131806&ctx=documentation'
 lede: "You can get data that's displayed on the dashboard graphs in JSON format with the Dashboard REST API."
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715898965
+updated_at: 1716312290
+api_status: ga
+summary: "Get data that's displayed on the dashboard graphs in JSON format via the Dashboard REST API."
 ---
 ## Considerations
 
