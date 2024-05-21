@@ -13,7 +13,8 @@ lede: |-
 
   The API lets you programmatically submit requests to delete all data for a set of known Amplitude IDs or User IDs.
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1716245573
+updated_at: 1716312386
+summary: 'Programmatically submit requests to delete all data for a set of known Amplitude IDs or User IDs.'
 ---
 ## Considerations
 

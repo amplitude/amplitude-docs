@@ -9,7 +9,9 @@ eu_endpoint: 'https://analytics.eu.amplitude.com/api/2/export'
 postman_link: 'https://www.postman.com/amplitude-dev-docs/workspace/amplitude-developers/folder/20044411-faf32aa1-95c4-4069-a0e7-d318b2eaebc3?action=share&source=copy-link&creator=29131806&ctx=documentation'
 lede: "The Export API lets you export your project's event data."
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715973241
+updated_at: 1716312307
+api_status: ga
+summary: "Export your project's event data."
 ---
 ## Considerations
 

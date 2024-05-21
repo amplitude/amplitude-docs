@@ -12,7 +12,9 @@ lede: |-
 
   The Http V2 API replaces the deprecated Http API.
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715974174
+updated_at: 1716312330
+api_status: ga
+summary: 'Send data directly from your server to the HTTP V2 endpoint.'
 ---
 ## Considerations
 Keep the following in mind as you use the Http V2 API.

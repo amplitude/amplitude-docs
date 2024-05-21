@@ -9,7 +9,9 @@ eu_endpoint: 'https://api.eu.amplitude.com/identify'
 postman_link: 'https://www.postman.com/amplitude-dev-docs/workspace/amplitude-developers/folder/20044411-6fc3a3e5-1c69-4ffc-ba78-09c217a14472?action=share&source=copy-link&creator=29131806&ctx=documentation'
 lede: 'Use the Identify API to set the User ID for a particular Device ID or update user properties of a particular user without sending an event. You can change Amplitude default user properties and custom user properties that you have defined.'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715980863
+updated_at: 1716312337
+api_status: ga
+summary: 'Set the User ID for a particular Device ID or update user properties of a particular user without sending an event.'
 ---
 ## Considerations
 

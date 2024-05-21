@@ -9,7 +9,9 @@ eu_endpoint: 'https://analytics.eu.amplitude.com/api/2/event-streaming/delivery-
 postman_link: 'https://www.postman.com/amplitude-dev-docs/workspace/amplitude-developers/folder/20044411-3cde52d1-570f-473b-8478-df595ae77e45?action=share&source=copy-link&creator=29131806&ctx=documentation'
 lede: 'Use the Event Streaming Metrics API to monitor delivery metrics for your event streams.'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715972419
+updated_at: 1716312299
+api_status: ga
+summary: 'Get delivery metrics summary for a configured event stream.'
 ---
 ## Considerations
 

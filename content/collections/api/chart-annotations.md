@@ -9,7 +9,9 @@ eu_endpoint: 'https://analytics.eu.amplitude.com/api/2/annotations'
 postman_link: 'https://www.postman.com/amplitude-dev-docs/workspace/amplitude-developers/folder/20044411-c858ea6d-9201-4acd-b0aa-d78692da1b44?action=share&source=copy-link&creator=29131806&ctx=documentation'
 lede: "The Chart Annotations API lets you programmatically annotate important dates like feature releases and marketing campaigns on your organization's charts with a horizontal axis of calendar dates."
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715898729
+updated_at: 1716312268
+api_status: ga
+summary: "Programmatically annotate important dates like feature releases and marketing campaigns on your organization's charts with a horizontal axis of calendar dates."
 ---
 ## Create an annotation
 

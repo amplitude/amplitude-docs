@@ -13,7 +13,8 @@ lede: |-
 
   The Taxonomy API lets you create, get, update, and delete categories, event types, event properties, and user properties.
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1716239806
+updated_at: 1716312370
+summary: 'Create, get, update, and delete categories, event types, event properties, and user properties.'
 ---
 ## Considerations
 
