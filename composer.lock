@@ -4510,20 +4510,20 @@
         },
         {
             "name": "statamic/cms",
-            "version": "v5.0.1",
+            "version": "v5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/statamic/cms.git",
-                "reference": "ea96781d34f5badd8eb3d60902e1e8b1595dda59"
+                "reference": "70e8836774a5c559c593db3cc75130d52a49f6ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/statamic/cms/zipball/ea96781d34f5badd8eb3d60902e1e8b1595dda59",
-                "reference": "ea96781d34f5badd8eb3d60902e1e8b1595dda59",
+                "url": "https://api.github.com/repos/statamic/cms/zipball/70e8836774a5c559c593db3cc75130d52a49f6ef",
+                "reference": "70e8836774a5c559c593db3cc75130d52a49f6ef",
                 "shasum": ""
             },
             "require": {
-                "ajthinking/archetype": "^1.0.3",
+                "ajthinking/archetype": "^1.0.3 || ^2.0",
                 "composer/semver": "^3.4",
                 "ext-json": "*",
                 "guzzlehttp/guzzle": "^6.3 || ^7.0",
@@ -4601,7 +4601,7 @@
             ],
             "support": {
                 "issues": "https://github.com/statamic/cms/issues",
-                "source": "https://github.com/statamic/cms/tree/v5.0.1"
+                "source": "https://github.com/statamic/cms/tree/v5.3.0"
             },
             "funding": [
                 {
@@ -4609,7 +4609,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-05-09T15:15:06+00:00"
+            "time": "2024-05-20T16:25:09+00:00"
         },
         {
             "name": "statamic/ssg",
