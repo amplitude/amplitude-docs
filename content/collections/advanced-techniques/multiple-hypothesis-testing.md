@@ -1,14 +1,14 @@
 ---
 id: cf260863-11d8-434d-a2de-22c8256e83b6
 blueprint: advanced-technique
-title: 'Multiple hypothesis testing in Amplitude Experiment'
+title: 'Multiple hypothesis testing'
 source: 'https://help.amplitude.com/hc/en-us/articles/8807757689499-Multiple-hypothesis-testing-in-Amplitude-Experiment'
 this_article_will_help_you:
   - 'Understand the differences between multiple hypothesis testing and single-hypothesis testing'
   - 'Learn how Amplitude combats potential problems with multiple hypothesis testing'
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1714079662
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1716329348
 ---
 In an experiment, think of each variant or metric you include as its own hypothesis. For example, by adding a new variant, you’re putting forth the hypothesis that whatever potential changes are included in that variant will have a detectable impact on the experiment’s results. 
 

@@ -1,12 +1,12 @@
 ---
 id: 4c9bc7b0-f786-4694-97c0-4668958ad1de
 blueprint: under-the-hood
-title: 'How Amplitude Experiment uses sequential testing for statistical inference'
+title: 'Sequential testing for statistical inference'
 source: 'https://help.amplitude.com/hc/en-us/articles/4403176829709-How-Amplitude-Experiment-uses-sequential-testing-for-statistical-inference'
 this_article_will_help_you:
   - 'Familiarize yourself with the statistical testing method used by Amplitude Experiment'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1715104931
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1716329138
 ---
 Amplitude Experiment uses a **sequential testing** method of statistical inference. Sequential testing has several advantages over **T-tests**, another widely-used method, chief among them being that you don’t need to know how many observations you’ll need to achieve significance before you start the experiment.
 

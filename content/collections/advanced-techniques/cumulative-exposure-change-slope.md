@@ -1,14 +1,14 @@
 ---
 id: cfe3d40c-d33c-4868-958f-f2a6e3f1e4f4
 blueprint: advanced-technique
-title: 'Interpret the cumulative exposures graph: Increasing and decreasing slopes'
+title: 'The cumulative exposures graph: Increasing and decreasing slopes'
 source: 'https://help.amplitude.com/hc/en-us/articles/7985566141083-Interpret-the-cumulative-exposures-graph-Increasing-and-decreasing-slopes'
 this_article_will_help_you:
   - 'Understand the cumulative exposures graph in Amplitude Experiment (also available in [Experiment Results](/analytics/charts/experiment-results/experiment-results-dig-deeper))'
   - 'Gain a deeper understanding of analyzing cumulative exposure results with examples'
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1714079331
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1716329426
 ---
 The cumulative exposures graph details the number of users who are **exposed to your experiment over time**. The x-axis displays the date when the user was first exposed to your experiment; the y-axis displays a cumulative, running total of the number of users exposed to the experiment. 
 
