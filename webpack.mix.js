@@ -20,3 +20,10 @@ mix.postCss('resources/css/site.css', 'public/css', [
     require('autoprefixer'),
     ]);
 
+    mix.postCss('resources/css/algolia.css', 'public/css', [
+        require('postcss-import'),
+        // require('tailwindcss'),
+        require('postcss-nested'),
+        require('autoprefixer'),
+        ]);
+    
