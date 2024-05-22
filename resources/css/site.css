@@ -12,6 +12,11 @@
         letter-spacing: -.5px;
     }
 }
+@layer components {
+    #algolia-search > button.DocSearch.DocSearch-Button {
+        @apply w-[42rem] border border-amp-gray-200 rounded-full bg-amp-gray-50 p-[.7rem] italic relative text-amp-gray-500 cursor-pointer hover:bg-white transition-colors;
+    }
+}
 /* Font Import */
 
 @font-face {
@@ -689,4 +694,73 @@ pre code.torchlight::before{
 /* Show the [...] indicator when closed. */
 .torchlight details:not([open]) .summary-hide-when-open {
     display: initial;
+}
+
+#algolia-search > button.DocSearch.DocSearch-Button {
+    @apply w-[42rem] border border-amp-gray-400 rounded-full bg-amp-gray-50 h-14 italic relative text-amp-gray-500 cursor-pointer hover:bg-white transition-colors;
+    border: 1px solid rgb(128 134 144);
+}
+
+#algolia-search > button.DocSearch.DocSearch-Button:hover, #algolia-search-header > button.DocSearch.DocSearch-Button:hover {
+    box-shadow: none;
+}
+
+.DocSearch-Input:focus{
+    box-shadow: none;
+}
+
+.DocSearch-Button-Key {
+    align-items:unset;
+    background: unset;
+    border-radius:unset;
+    box-shadow:unset;
+    color: unset;
+    display: unset;
+    height: unset;
+    justify-content:unset;
+    margin-right:unset;
+    position: unset;
+    padding: unset;
+    border: unset;
+    top: unset;
+    width: unset;
+}
+
+#algolia-search-header > button.DocSearch.DocSearch-Button{
+    background: white;
+    border: 1px solid #DEDFE2;
+    border-radius: .25rem;
+    width: 17rem;
+}
+
+#algolia-search-header > button.DocSearch.DocSearch-Button:hover,
+#algolia-search-header > button.DocSearch.DocSearch-Button:focus,
+#algolia-search-header > button.DocSearch.DocSearch-Button:active{
+   color: #6F7480;
+}
+
+#algolia-search-header > button.DocSearch.DocSearch-Button > .DocSearch-Button-Container > .DocSearch-Button-Placeholder {
+    font-family: "IBM Plex Sans";
+font-size: 0.875rem;
+font-style: italic;
+font-weight: 400;
+line-height: 1.25rem;
+}
+
+#algolia-search-header > button.DocSearch.DocSearch-Button > .DocSearch-Button-Container > .DocSearch-Search-Icon {
+    color: #8A8E99;
+}
+
+.DocSearch-Button-Keys > kbd {
+    background: #e5e6e8;
+    border: none;
+    border-radius: .2rem;
+    /* box-shadow: 0 0 0 1px rgb(var(--tw-prose-kbd-shadows) / 10%), 0 3px 0 rgb(var(--tw-prose-kbd-shadows) / 10%); */
+    box-shadow: none;
+    color: #656b75;
+    font-family: inherit;
+    font-size: .875em;
+    font-style: normal;
+    font-weight: 500;
+    padding: .1875em .375em;
 }
