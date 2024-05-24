@@ -1,13 +1,15 @@
 ---
-title: "Understand the conversion rate of an important flow"
-source: "https://help.amplitude.com/hc/en-us/articles/16797878206747-Understand-the-conversion-rate-of-an-important-flow"
 id: d79e04a5-67cb-4278-9fc1-5f924d78ffd3
+blueprint: get-started
+title: 'Understand the conversion rate of an important flow'
+source: 'https://help.amplitude.com/hc/en-us/articles/16797878206747-Understand-the-conversion-rate-of-an-important-flow'
+this_article_will_help_you:
+  - 'Generate a conversion report from a pre-built template'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1716571931
 ---
-
-#### This article will help you:
-
-* Generate a conversion report from a pre-built template
-
 The charts included on the **Conversion Report template** give you a deeper understanding of the customer behaviors linked to conversion and drop-off. You can easily apply it to any important in-product flow. There’s no setup required, though you can easily customize the template itself and the individual charts included with it if you need to.
 
 The Conversion Report template includes the following charts:
@@ -36,9 +38,10 @@ You may want to replace the `Any Active User` event with something more specific
 Scroll until you find the event you’re interested in and select it.  
   
 You are **not required** to replace either the `New User` or the `Any Active Event` events if you’d prefer not to.
+
 3. Click *Save As New Dashboard* and select *Keep and display saved replacement parameters*. Then click *Next*.
 4. Give your new dashboard a name and select the location where it will be saved. Then click *Save*.
 
 Your dashboard is now ready for use.
 
-Check out [this article in our Help Center to learn more about dashboards](/analytics/dashboard-create), and [this article to learn more about templates in Amplitude](/analytics/templates).
+Check out [this article to learn more about dashboards](/analytics/dashboard-create), and [this article to learn more about templates in Amplitude](/analytics/templates).

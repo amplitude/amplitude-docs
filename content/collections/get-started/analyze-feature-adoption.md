@@ -1,13 +1,15 @@
 ---
-title: "Analyze the adoption of a feature"
-source: "https://help.amplitude.com/hc/en-us/articles/16797955580955-Analyze-the-adoption-of-a-feature"
 id: 07fcc029-bad9-40ad-9841-f288943fae48
+blueprint: get-started
+title: 'Analyze the adoption of a feature'
+source: 'https://help.amplitude.com/hc/en-us/articles/16797955580955-Analyze-the-adoption-of-a-feature'
+this_article_will_help_you:
+  - 'Generate a feature adoption report from a pre-built template'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1716571239
 ---
-
-#### This article will help you:
-
-* Generate a feature adoption report from a pre-built template
-
 The charts included on the **Feature Adoption Report template** help you gain a deeper understanding of the customer behaviors linked to conversion and drop-off. There’s no setup required, though you can easily customize the template itself and the individual charts included with it if you need to.
 
 The Feature Adoption Report template includes the following charts:
@@ -40,4 +42,4 @@ You are **not required** to replace the `Any Active Event` event if you’d pref
 
 Your dashboard is now ready for use.
 
-Check out [this article in our Help Center to learn more about dashboards](/analytics/dashboard-create), and [this article to learn more about templates in Amplitude](/analytics/templates).
+Check out [this article to learn more about dashboards](/analytics/dashboard-create), and [this article to learn more about templates in Amplitude](/analytics/templates).
