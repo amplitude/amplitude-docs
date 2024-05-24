@@ -1,13 +1,15 @@
 ---
-title: "Analyze your acquisition channels"
-source: "https://help.amplitude.com/hc/en-us/articles/16798045496859-Analyze-your-acquisition-channels"
 id: 3bed8b1f-3e50-4a2f-aaf9-148e3663fc89
+blueprint: get-started
+title: 'Analyze your acquisition channels'
+source: 'https://help.amplitude.com/hc/en-us/articles/16798045496859-Analyze-your-acquisition-channels'
+this_article_will_help_you:
+  - 'Use a pre-built template to generate a customer acquisition analysis for ecommerce companies'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1716571204
 ---
-
-#### This article will help you:
-
-* Use a pre-built template to generate a customer acquisition analysis for ecommerce companies
-
 Understanding how many and where your customers are coming from is crucial for any business, but particularly those in the e-commerce sector. Amplitude helps you understand how many customers are being driven to your store, how effective different campaigns are at creating new revenue, and which channels drive the most engagement.
 
 Armed with this knowledge, you can focus your efforts on optimizing ad spend, marketing efforts, and product enhancements.
@@ -42,4 +44,4 @@ You are **not required** to replace either the New User or the Any Active Event 
 
 Your dashboard is now ready for use.
 
-Check out [this article in our Help Center to learn more about dashboards](/analytics/dashboard-create), and [this article to learn more about templates in Amplitude](/analytics/templates).
+Check out [this article to learn more about dashboards](/analytics/dashboard-create), and [this article to learn more about templates in Amplitude](/analytics/templates).

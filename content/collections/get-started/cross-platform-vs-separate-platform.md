@@ -4,13 +4,13 @@ blueprint: get-started
 title: 'Cross-platform instrumentation vs. separate platform instrumentation'
 source: 'https://help.amplitude.com/hc/en-us/articles/207108557-Cross-platform-instrumentation-vs-separate-platform-instrumentation'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1708627552
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1716571291
+this_article_will_help_you:
+  - "Understand the differences between cross-platform instrumentation and separate platform instrumentation, and when it's best to implement one over the other"
+landing: false
+exclude_from_sitemap: false
 ---
-#### This article will help you:
-
-* Understand the differences between cross-platform instrumentation and separate platform instrumentation, and when it's best to implement one over the other
-
 Amplitude customers often ask if the same API Key should be used for the iOS and Android versions of the same app, or if web and mobile data should be tied together. The answer depends on the kind of apps you have and the kind of analyses you want to do.
 
 In some cases, the app will behave differently on each individual platform—Android, iOS, and web—so your top priority should be to analyze how each one performs on its own. In others, understanding a user's behavior irrespective of the platform is the top priority: you know your users can come from any platform, and you're more interested in a user's actions than the platform they were on when they took those actions.
