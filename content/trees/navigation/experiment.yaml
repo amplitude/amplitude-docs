@@ -1,37 +1,36 @@
 tree:
   -
-    id: 1c7ca4c1-fbb7-4ade-91dc-1704f500407d
-    entry: 41097e1a-f0a3-4500-8157-f6620fb760a6
-  -
-    id: 826a6258-d974-4154-a50a-ef95dc2f3ad5
-    entry: 93038e5f-a8ed-4401-8da3-308d21ed17ad
-  -
-    id: 6ce771a2-2023-491f-aa33-3bd334daacfa
-    entry: 8bfbe6f6-89ae-4878-abfe-89bcc113cddf
-  -
-    id: 707402a6-d5fb-4432-915a-32c1f59f457a
-    entry: c43935f9-32e2-4ac9-82ed-9513d66203b8
-  -
-    id: 3687a9d2-bf40-4280-8220-12b885d702b2
-    entry: 52e1fdb9-b354-4012-b8de-d378c68cbf26
-  -
-    id: c2d55904-0be9-4466-9640-bcd9f3f63efc
-    entry: a07f325e-1e4a-4b62-a360-d21686c8a8ac
-  -
-    id: e6bc9555-c6b8-4490-aec9-846cc9a178c3
-    title: 'Experiment Theory'
-    data:
-      open_collapsed: false
+    id: 57610f46-fb4f-4070-acad-fa0872fc729a
+    title: 'Get started with Experiment'
     children:
       -
-        id: 9cf75fef-157e-4416-a7da-d5beaf7de0f8
-        entry: bc583511-2497-4b51-82dc-19e717efca56
+        id: 6ce771a2-2023-491f-aa33-3bd334daacfa
+        entry: 8bfbe6f6-89ae-4878-abfe-89bcc113cddf
       -
-        id: 2a07e2d5-f9e6-4e3a-b98d-e77b9107cc7e
-        entry: dc96227b-0ac7-4206-ab5f-b92d020f88b6
+        id: 707402a6-d5fb-4432-915a-32c1f59f457a
+        entry: c43935f9-32e2-4ac9-82ed-9513d66203b8
       -
-        id: 27510f77-6da7-44f2-a853-178f8f80987a
-        entry: 18cba191-177e-4f7c-abcb-f5375c155c71
+        id: 3687a9d2-bf40-4280-8220-12b885d702b2
+        entry: 52e1fdb9-b354-4012-b8de-d378c68cbf26
+      -
+        id: 826a6258-d974-4154-a50a-ef95dc2f3ad5
+        entry: 93038e5f-a8ed-4401-8da3-308d21ed17ad
+      -
+        id: c2d55904-0be9-4466-9640-bcd9f3f63efc
+        entry: a07f325e-1e4a-4b62-a360-d21686c8a8ac
+  -
+    id: 46c468de-cab0-4ca9-8bea-2051cfebc553
+    title: Evaluation
+    children:
+      -
+        id: fb405bc3-3370-4046-90e5-9a6145e02a67
+        entry: f5cc5398-867b-4ed0-ab8a-a75ff7eab1f0
+      -
+        id: 5af0708b-e976-453e-8354-3f622b978be5
+        entry: 33d28828-0060-41cf-aad6-ae19df201c6c
+      -
+        id: cafb3429-9567-4a4e-a379-3e253e38a9eb
+        entry: b358db28-92d6-458b-9692-d181e0871612
   -
     id: 9360179b-3944-4058-ab65-89d3f8baf60b
     title: 'Experiment Workflow'
@@ -75,6 +74,21 @@ tree:
         id: 2bda6737-066a-4283-8252-720d24a19573
         entry: 37e1ab54-da77-4a60-be41-1c1018c4163a
   -
+    id: e6bc9555-c6b8-4490-aec9-846cc9a178c3
+    title: 'Experiment Theory'
+    data:
+      open_collapsed: false
+    children:
+      -
+        id: 9cf75fef-157e-4416-a7da-d5beaf7de0f8
+        entry: bc583511-2497-4b51-82dc-19e717efca56
+      -
+        id: 2a07e2d5-f9e6-4e3a-b98d-e77b9107cc7e
+        entry: dc96227b-0ac7-4206-ab5f-b92d020f88b6
+      -
+        id: 27510f77-6da7-44f2-a853-178f8f80987a
+        entry: 18cba191-177e-4f7c-abcb-f5375c155c71
+  -
     id: a0e9f0d9-2e80-4fb5-b820-182456b1844e
     title: 'Under the Hood'
     children:
@@ -93,6 +107,15 @@ tree:
       -
         id: 18ca4c64-6388-4dc1-8a17-f93ee5cb458a
         entry: c3d4aec1-92db-4f44-b847-19d6f31f1add
+      -
+        id: dc769ea2-5ebe-4399-8c0f-95472f52e29a
+        entry: 3250ee8b-a6dd-46d0-b46a-1ed5c9f7a4f9
+      -
+        id: f0bdfffc-720d-476b-9f2d-aa867c06db0e
+        entry: ccca14e2-fca6-4932-902f-5cac8f528c9a
+      -
+        id: 7258b125-7c7c-4299-ba0e-31f188e3517c
+        entry: f1b3c937-0ad7-4686-8079-fcdf8b6cb480
   -
     id: bc2e0745-f066-479f-bc16-c83345259f79
     title: 'Advanced Techniques'
@@ -192,6 +215,3 @@ tree:
       -
         id: d02d2dfd-e23f-4207-a2c8-d2440658ba41
         entry: 932c399a-d47f-4772-a02d-cf3779bf3dac
-  -
-    id: 46c468de-cab0-4ca9-8bea-2051cfebc553
-    title: Evaluation
