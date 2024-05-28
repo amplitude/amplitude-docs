@@ -1,3 +1,5 @@
+<!--{{oreo:analytics}}-->
+
 <!doctype html>
 <html lang="{{ site:short_locale }}">
 <head>
@@ -22,7 +24,7 @@
       display: none !important;
     }
   </style>
-  {{if environment == 'production'}}
+  {{if environment == 'production' && {oreo:analytics}}}
     {{partial:partials/_amplitude}}
   {{/if}}
 </head>
@@ -95,5 +97,8 @@
      
     </script>
 {{partial:partials/algolia-script}}
+{{nocache}}
+{{oreos:popup}}
+{{/nocache}}
 </body>
 </html>
