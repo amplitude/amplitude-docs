@@ -22,6 +22,9 @@
       display: none !important;
     }
   </style>
+  {{if environment == 'production'}}
+    {{partial:partials/_amplitude}}
+  {{/if}}
 </head>
 <body class="bg-gray-100 font-sans leading-normal text-gray-800">
   <div x-data="{ sidebarOpen: false }" class="container prose">
