@@ -1,0 +1,75 @@
+<form action="{{ route:statamic.oreos.save }}" method="post">
+    <input type="hidden" name="_token" value="{{ csrf_token }}">
+
+    <div class="flex flex-col gap-4 my-8">
+        {{ oreos }}
+            <div {{ if showDetails && details }} x-data="{ showDetails: false }" {{ /if }}>
+                <label class="flex items-baseline">
+                    <input type="checkbox" name="oreos[]" value="{{ handle }}" {{ checked ? 'checked' : '' }} {{ required ? 'required disabled' : '' }} class="mr-2 {{ required ? ' opacity-40' : '' }}">
+
+                    <div class="w-full">
+                        <div class="flex items-baseline justify-between gap-2">
+                            <strong>{{ title }}</strong>
+
+                            {{ if showDetails && details }}
+                                <button type="button" class="mt-1 flex items-center text-sm text-gray-600 underline" @click="showDetails = !showDetails">
+                                    <span x-show="!showDetails">Read more</span>
+                                    <span x-show="showDetails">Hide details</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" :class="{ 'rotate-180': showDetails }">
+                                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                            {{ /if }}
+                        </div>
+
+                        <div class="prose prose-sm text-gray-600">
+                            {{ if showDescription && description }}
+                                <p class="mt-1">
+                                    {{ description }}
+                                </p>
+                            {{ /if }}
+
+                            {{ if showDetails && details }}
+                                <div class="mb-2 border-b" x-show="showDetails">
+                                    {{ details | bard_html }}
+                                </div>
+                            {{ /if }}
+                        </div>
+                    </div>
+                </label>
+            </div>
+        {{ /oreos }}
+    </div>
+
+    <div class="flex gap-2">
+        <button class="py-1 px-2 bg-gray-200 border hover:border-current" type="submit" name="action" value="save">
+            {{ trans key="statamic-oreos::messages.button.save" }}
+        </button>
+
+        {{ if showAcceptall }}
+            <button class="py-1 px-2 border hover:border-current" type="submit" name="action" value="accept-all">
+                {{ trans key="statamic-oreos::messages.button.acceptall" }}
+            </button>
+        {{ /if }}
+
+        {{ if showCancel }}
+            <button class="py-1 px-2 border hover:border-current" type="reset" onclick="removeOreosPopup()">
+                {{ trans key="statamic-oreos::messages.button.cancel" }}
+            </button>
+            <script>
+                function removeOreosPopup() {
+                    const el = document.getElementById('{{ popupId ?? "oreos-popup" }}');
+                    if (el) el.parentNode.removeChild(el);
+                }
+            </script>
+        {{ /if }}
+
+        {{ if showReset }}
+            <button class="py-1 px-2 border hover:border-current" type="submit" name="action" value="reset">
+                {{ trans key="statamic-oreos::messages.button.reset" }}
+            </button>
+        {{ /if }}
+
+    </div>
+
+</form>

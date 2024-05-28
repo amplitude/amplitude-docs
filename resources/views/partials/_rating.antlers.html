@@ -12,8 +12,15 @@
 
 </div>
 <script>
+
 function handleRating(rating) {
-    console.log(rating);
+    const eventProps = {
+        "Article Rating": rating,
+        "Page Path": window.location.pathname,
+        "Page Title": document.title,
+        "Page URL": window.location.href,
+    }
+    amplitude.track('Article rated', eventProps)
     // Send rating to server
 }
 
