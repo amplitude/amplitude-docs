@@ -24,6 +24,7 @@
       display: none !important;
     }
   </style>
+  {{enviornment}}
   {{if environment == 'production' && {oreo:analytics}}}
     {{partial:partials/_amplitude}}
   {{/if}}
@@ -97,8 +98,6 @@
      
     </script>
 {{partial:partials/algolia-script}}
-{{nocache}}
 {{oreos:popup}}
-{{/nocache}}
 </body>
 </html>
