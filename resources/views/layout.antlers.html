@@ -24,7 +24,7 @@
       display: none !important;
     }
   </style>
-  {{if environment == 'local' && {oreo:analytics}}}
+  {{if environment == 'production' && {oreo:analytics}}}
     {{partial:partials/_amplitude}}
   {{/if}}
 </head>
