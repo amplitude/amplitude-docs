@@ -1,16 +1,17 @@
 ---
-title: "Create a chart"
-source: "https://help.amplitude.com/hc/en-us/articles/16797281362843-Create-a-chart"
 id: 1b7d1277-e445-4c19-a784-216b7018abb1
+blueprint: get-started
+title: 'Create a chart'
+source: 'https://help.amplitude.com/hc/en-us/articles/16797281362843-Create-a-chart'
 landing: true
-landing_blurb: "Charts are the heart of any Amplitude analysis. Learn how to create your first chart."
+landing_blurb: 'Charts are the heart of any Amplitude analysis. Learn how to create your first chart.'
+this_article_will_help_you:
+  - 'Create a chart in Amplitude and understand the components that make it work'
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1716572296
 ---
-
-#### This article will help you:
-
-* Create a chart in Amplitude and understand the components that make it work
-
-**Charts** are the heart of any Amplitude analysis. To create a new chart, click *Create New > Analysis*, then select a new chart type from the Charts fly-out.
+**Charts** are the heart of almost any Amplitude analysis. To create a new chart, click *Create New > Analysis*, then select a new chart type from the Charts fly-out.
 
 ### Feature availability
 

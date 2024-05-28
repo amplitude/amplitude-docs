@@ -1,14 +1,16 @@
 ---
-title: "Analyze A/B test results in Amplitude"
-source: "https://help.amplitude.com/hc/en-us/articles/115001580108-Analyze-A-B-test-results-in-Amplitude"
 id: 3c450c92-9e04-4996-82ac-2baf0a741845
+blueprint: get-started
+title: 'Analyze A/B test results in Amplitude'
+source: 'https://help.amplitude.com/hc/en-us/articles/115001580108-Analyze-A-B-test-results-in-Amplitude'
+this_article_will_help_you:
+  - 'Instrument your app for A/B testing (split testing)'
+  - 'Review the results of A/B tests in Amplitude'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1716572258
 ---
-
-#### This article will help you:
-
-* Instrument your app for A/B testing (split testing)
-* Review the results of A/B tests in Amplitude
-
 A/B Testing is a method of conducting controlled, randomized experiments with the goal of improving a website or application metric. With Amplitude's [AB Test View](/analytics/charts/funnel-analysis/funnel-analysis-interpret), you can measure the impact of your experiments by comparing how each experiment group behaves in your application.
 
 For example, you can show two different onboarding flows to different groups of new users, then use the results to determine which one is more effective in driving users to complete the onboarding process. Or you can test different checkout flows to see which is more effective in generating sales.
