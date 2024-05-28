@@ -2,11 +2,12 @@
 id: a07f325e-1e4a-4b62-a360-d21686c8a8ac
 blueprint: experiment
 title: 'Data model'
-landing: false
+landing: true
 sourxe: 'https://www.docs.developers.amplitude.com/experiment/general/data-model/'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1716335144
+updated_at: 1716916934
+landing_blurb: 'See how Amplitude Experiment is structured.'
 ---
 At the top level in Amplitude is your **organization**. Within an organization, Amplitude Experiment follows the **project** structure defined by Amplitude Analytics. In short, all Experiment data must be associated with an Amplitude Analytics project.
 

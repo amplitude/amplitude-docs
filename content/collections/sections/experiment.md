@@ -7,7 +7,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1713306201
 nav_title: experiment
 template: landing-page
-current-collection: experiment|experiment-apis|experiment-results|experiment-sdks|experiment-theory
+current-collection: experiment|experiment-apis|experiment-results|experiment-sdks|experiment-theory|workflow
 exclude_from_sitemap: false
 ---
 An experimentation solution that unites everything you need to test, analyze, and optimize your product at scale.
