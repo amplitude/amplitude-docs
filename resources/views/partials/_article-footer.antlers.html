@@ -1,6 +1,7 @@
 {{if !hide_helpful}}
 <div class="mt-12 max-w-screen-xl mx-auto pl-8">
-        <p class="mb-0">Was this page helpful? {{loop from="1" to="5"}}{{svg src="/assets/general/star.svg" class="inline  hover:fill-amp-blue-500 transition"}}{{/loop}}</p>
+    {{partial:partials/rating}}
+        {{# <p class="mb-0 inline">Was this page helpful? <div x-data="{rating:-1}" class="inline-flex flex-row-reverse">{{loop from="5" to="1"}}{{svg id="{{value}}" src="/assets/general/star.svg" class="inline peer peer-hover:fill-amp-blue-500 hover:fill-amp-blue-500 transition cursor-pointer"}}{{/loop}}</div></p> #}}
         <p class="text-xs text-amp-gray-600">{{svg src="/assets/general/schedule.svg" class="inline"}} {{updated_at}}</p>
 </div>
 {{/if}}
