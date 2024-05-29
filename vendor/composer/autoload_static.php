@@ -161,7 +161,6 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
             'Tests\\' => 6,
             'Termwind\\' => 9,
-            'Takepart\\Oreos\\' => 15,
         ),
         'S' => 
         array (
@@ -355,10 +354,6 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
         'Termwind\\' => 
         array (
             0 => __DIR__ . '/..' . '/nunomaduro/termwind/src',
-        ),
-        'Takepart\\Oreos\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/takepart-media/statamic-oreos/src',
         ),
         'Symfony\\Polyfill\\Uuid\\' => 
         array (
@@ -9103,13 +9098,6 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
         'Symfony\\Polyfill\\Php80\\PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/PhpToken.php',
         'Symfony\\Polyfill\\Php83\\Php83' => __DIR__ . '/..' . '/symfony/polyfill-php83/Php83.php',
         'Symfony\\Polyfill\\Uuid\\Uuid' => __DIR__ . '/..' . '/symfony/polyfill-uuid/Uuid.php',
-        'Takepart\\Oreos\\Controllers\\OreosController' => __DIR__ . '/..' . '/takepart-media/statamic-oreos/src/Controllers/OreosController.php',
-        'Takepart\\Oreos\\Controllers\\OreosCpController' => __DIR__ . '/..' . '/takepart-media/statamic-oreos/src/Controllers/OreosCpController.php',
-        'Takepart\\Oreos\\OreosContent' => __DIR__ . '/..' . '/takepart-media/statamic-oreos/src/OreosContent.php',
-        'Takepart\\Oreos\\OreosManager' => __DIR__ . '/..' . '/takepart-media/statamic-oreos/src/OreosManager.php',
-        'Takepart\\Oreos\\ServiceProvider' => __DIR__ . '/..' . '/takepart-media/statamic-oreos/src/ServiceProvider.php',
-        'Takepart\\Oreos\\Tags\\OreoTag' => __DIR__ . '/..' . '/takepart-media/statamic-oreos/src/Tags/OreoTag.php',
-        'Takepart\\Oreos\\Tags\\OreosTag' => __DIR__ . '/..' . '/takepart-media/statamic-oreos/src/Tags/OreosTag.php',
         'Termwind\\Actions\\StyleToMethod' => __DIR__ . '/..' . '/nunomaduro/termwind/src/Actions/StyleToMethod.php',
         'Termwind\\Components\\Anchor' => __DIR__ . '/..' . '/nunomaduro/termwind/src/Components/Anchor.php',
         'Termwind\\Components\\BreakLine' => __DIR__ . '/..' . '/nunomaduro/termwind/src/Components/BreakLine.php',
