@@ -5,10 +5,10 @@ title: 'How filters work in a Funnel Analysis chart'
 source: 'https://help.amplitude.com/hc/en-us/articles/14740839213339-How-filters-work-in-a-Funnel-Analysis-chart'
 this_article_will_help_you:
   - 'Understand how Amplitude interprets different filters in a Funnel Analysis chart'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1715113944
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717015478
 ---
-There are certain nuances to applying filters in a funnel analysis. This article will explain them. 
+There are certain nuances to applying filters in a funnel analysis: 
 
 ## Applying filters in the Segmentation Module
 
@@ -34,7 +34,7 @@ For example, look at this Funnel Analysis chart:
 
 ![group-by_events.png](/output/img/funnel-analysis/group-by-events-png.png)
 
-The *Group-by* here looks at users' property values for `Genre_Type` at the time their `Favorite Song or Video` events are triggered, and shows how they converted through the remaining events of the funnel. 
+ The *Group-by* here looks at users' property values for `Genre_Type` at the time their `Favorite Song or Video` events are triggered, and shows how they converted through the remaining events of the funnel. 
 
 For example, a user that has a `Pop` property value for `Genre_Type` at the time their `Favorite Song or Video` event was triggered will show up under the `Pop` property bar for the `Play Song or Video` event as well.
 

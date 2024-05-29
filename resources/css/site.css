@@ -283,7 +283,7 @@ ul.nav li::marker {
     @apply font-sans;
 }
 
-.prose>p:has(img) {
+.prose p:has(img) {
     margin: 0;
     background: #F4F5F6;
     padding: 2rem;
@@ -294,11 +294,12 @@ ul.nav li::marker {
     margin-top: 0;
 }
 
-.prose>p>img {
+.prose img {
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     margin: 0 auto;
     /* border: 1px solid #e2e8f0; */
     border-radius: 8px;
+    max-height: 500px;
 }
 
 code {
