@@ -1,4 +1,4 @@
-title: 'Funnel Analysi'
+title: 'Funnel Analysis'
 tabs:
   main:
     display: Main
@@ -30,3 +30,8 @@ tabs:
               max_items: 1
               listable: false
               localizable: true
+          -
+            handle: source
+            field:
+              type: text
+              display: Source

@@ -6,10 +6,10 @@ source: 'https://help.amplitude.com/hc/en-us/articles/115001351507-Get-the-most-
 this_article_will_help_you:
   - 'Understand the value of a funnel analysis in Amplitude'
   - 'Plan and design your Funnel Analysis chart'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1715113235
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717015155
 ---
-[Funnel analysis](https://help.amplitude.com/hc/en-us/articles/360039976531-The-Funnel-Analysis-chart-an-overview) has become the cornerstone of event-based analytics. A **funnel** is a series of steps a user takes as part of the experience of using your product. Product managers often try to encourage users to navigate these funnels in order to demonstrate product value and to increase engagement. Amplitude considers a user to have **converted** through a step in the funnel if they trigger the event in the order you've specified.
+Funnel analysis has become the cornerstone of event-based analytics. A **funnel** is a series of steps a user takes as part of the experience of using your product. Product managers often try to encourage users to navigate these funnels in order to demonstrate product value and to increase engagement. Amplitude considers a user to have **converted** through a step in the funnel if they trigger the event in the order you've specified.
 
 Users who don't convert have **dropped off**. Knowing which steps of your funnel are leading to user drop-off is often a critical tool in improving engagement and stickiness.
 
