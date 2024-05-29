@@ -1,0 +1,49 @@
+title: FAQ
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              prepend: 'FAQ:'
+          -
+            handle: questions
+            field:
+              collapse: true
+              type: replicator
+              display: Questions
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields:
+                        -
+                          handle: question
+                          field:
+                            type: text
+                            display: Question
+                        -
+                          handle: answer
+                          field:
+                            type: markdown
+                            display: Answer
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
