@@ -1,8 +1,11 @@
 tree:
   -
     id: 431b387f-6c00-49b7-810c-b626b5e1bd58
-    title: '<- Back to Chart Types'
-    url: /analytics/charts/charts-overview
+    title: 'Back to Chart Types'
+    url: /analytics/charts
+    data:
+      icon: general/back-icon.svg
+      underline: true
   -
     id: 52cffa2c-ef18-486a-a566-96b1a3cefb9a
     title: 'Event Segmentation'
