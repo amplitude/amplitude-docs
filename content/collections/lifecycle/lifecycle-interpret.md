@@ -7,7 +7,9 @@ this_article_will_help_you:
   - 'Interpret the results of your Lifecycle chart'
   - 'Switch between chart types'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717020187
+updated_at: 1717104873
+landing: true
+landing_blurb: 'Interpret the results of your Lifecycle chart'
 ---
 This article will review how to interpret your Lifecycle analysis. Make sure you've read the previous Help Center article on [setting up the Lifecycle chart](/analytics/charts/lifecycle/lifecycle-track-growth) before proceeding.
 

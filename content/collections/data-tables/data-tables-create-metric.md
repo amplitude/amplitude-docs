@@ -6,7 +6,9 @@ source: 'https://help.amplitude.com/hc/en-us/articles/10249480038043-Create-a-me
 this_article_will_help_you:
   - 'Create a reusable unit of measurement in Amplitude'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717022964
+updated_at: 1717103323
+landing: true
+landing_blurb: 'Create a reusable unit of measurement in Amplitude'
 ---
 Metrics allow users to define and save reusable analysis objects in Amplitude. They accelerate workflows and increase confidence for end users when building analyses. Metrics are shared **project-wide**, and can be created by any member, project manager, or admin. However, only project managers and admins can designate a metric as official.
 

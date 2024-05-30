@@ -7,7 +7,9 @@ this_article_will_help_you:
   - 'Understand the different ways time can affect your Retention Analysis chart'
   - 'Choose the most appropriate time calculation for your analysis'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717015809
+updated_at: 1717103033
+landing: true
+landing_blurb: 'Understand the different ways time can affect your Retention Analysis chart'
 ---
 In a Retention Analysis chart, there are two ways to define a day: a rolling **24-hour window** or a **strict calendar date**. The method you choose can affect your results.
 

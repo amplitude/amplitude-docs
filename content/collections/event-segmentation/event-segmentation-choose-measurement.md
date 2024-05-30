@@ -1,12 +1,14 @@
 ---
 id: 6d16855b-8236-4455-9383-d4c537bf7a32
 blueprint: event-segmentation
-title: 'Choose the right measurement for your Event Segmentation chart'
+title: 'Choose the right measurement'
 source: 'https://help.amplitude.com/hc/en-us/articles/19688391224731-Choose-the-right-measurement-for-your-Event-Segmentation-chart'
 this_article_will_help_you:
   - 'Choose the most appropriate way to measure and display the results of your event segmentation analysis'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717007952
+updated_at: 1717101776
+landing: true
+landing_blurb: 'Choose the most appropriate way to measure and display the results of your event segmentation analysis'
 ---
 Amplitude offers you several different ways of looking at your [event segmentation](/analytics/charts/event-segmentation/event-segmentation-build) results. In this section, we'll explain the differences between them.
 

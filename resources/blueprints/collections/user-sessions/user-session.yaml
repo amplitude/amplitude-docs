@@ -10,6 +10,14 @@ tabs:
             config:
               title:
                 required: true
+  landing_page:
+    display: 'Landing page'
+    sections:
+      -
+        display: 'New Section'
+        fields:
+          -
+            import: article_common
   sidebar:
     display: Sidebar
     sections:

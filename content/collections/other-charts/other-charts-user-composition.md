@@ -1,13 +1,15 @@
 ---
 id: e1d50c44-fe18-4cf6-9a33-f9f397255dd6
 blueprint: other-chart
-title: 'The User Composition chart: View your users by the properties they have in common'
+title: 'User Composition: View your users by common properties'
 source: 'https://help.amplitude.com/hc/en-us/articles/231258248-The-User-Composition-chart-View-your-users-by-the-properties-they-have-in-common'
 this_article_will_help_you:
   - 'Understand the differences between a User Composition chart and other Amplitude chart types'
   - 'Build a user composition analysis and interpret the results'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717021423
+updated_at: 1717104967
+landing: true
+landing_blurb: 'Build a user composition analysis and interpret the results'
 ---
 The User Composition chart shows the breakdown of active users based on a single user property. This grouped view provides insight into **who your users are** and what **properties they share**.  
 

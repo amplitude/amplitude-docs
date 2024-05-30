@@ -1,13 +1,15 @@
 ---
 id: 9667df7f-0f3b-4544-a74e-b090f28f6490
 blueprint: user-session
-title: 'The User Sessions chart: Track engagement frequency and duration'
+title: 'User Sessions: Track engagement frequency and duration'
 source: 'https://help.amplitude.com/hc/en-us/articles/231275508-The-User-Sessions-chart-Track-engagement-frequency-and-duration'
 this_article_will_help_you:
   - 'Understand the differences between a User Sessions chart and other Amplitude chart types'
   - 'Build a user sessions analysis'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717019648
+updated_at: 1717104670
+landing: true
+landing_blurb: 'Build a user sessions analysis'
 ---
 The User Sessions chart helps analyze your users through various session-based metrics. By showing you the distribution of session lengths, average session length, and average sessions per user, it can help you answer questions like:
 

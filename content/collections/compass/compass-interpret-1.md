@@ -4,7 +4,9 @@ blueprint: compass
 title: 'Interpret your Compass chart, part 1'
 source: 'https://help.amplitude.com/hc/en-us/articles/360054192152-Interpret-your-Compass-chart-part-1'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717019034
+updated_at: 1717104008
+landing: true
+landing_blurb: 'Learn how to derive insights from Compass, and track user retention'
 ---
 Amplitude's **Compass** chart shows how a new user firing an event correlates with that user being retained. Understanding which user events lead to retention is a critical tool in driving sustainable product growth.
 

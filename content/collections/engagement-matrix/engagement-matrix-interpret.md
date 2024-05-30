@@ -7,7 +7,9 @@ this_article_will_help_you:
   - 'Interpret the results of your Engagement Matrix chart'
   - 'Identify and examine clusters of data points'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717020100
+updated_at: 1717104782
+landing: true
+landing_blurb: 'Interpret the results of your Engagement Matrix chart'
 ---
 If you haven't yet done so, read our [Help Center article setting up an Engagement Matrix chart](/analytics/charts/engagement-matrix/engagement-matrix-discover). 
 

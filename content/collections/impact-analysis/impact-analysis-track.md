@@ -1,13 +1,15 @@
 ---
 id: b8f8e53d-f276-4605-b04a-fc677d29b5f8
 blueprint: impact-analysi
-title: 'Impact Analysis: Track how first-time engagement changes user behavior'
+title: 'Impact Analysis: How engagement changes user behavior'
 source: 'https://help.amplitude.com/hc/en-us/articles/360020765372-Impact-Analysis-Track-how-first-time-engagement-changes-user-behavior'
 this_article_will_help_you:
   - 'Understand the benefits of an Impact Analysis chart to uncover feature affects on user behavior'
   - 'Set up an Impact Analysis chart'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717019411
+updated_at: 1717104542
+landing: true
+landing_blurb: 'Understand the benefits of an Impact Analysis chart'
 ---
 With Amplitude's **Impact Analysis** chart, you can discover how first-time engagement with one feature affects the rate of another behavior. 
 

@@ -1,13 +1,15 @@
 ---
-title: "Create in-line custom events in funnel and event segmentation analyses"
-source: "https://help.amplitude.com/hc/en-us/articles/13321766657947-Create-in-line-custom-events-in-funnel-and-event-segmentation-analyses"
 id: f74a2f4f-6b98-4533-802f-e706987a423e
+blueprint: event-segmentation
+title: 'Create in-line custom events'
+source: 'https://help.amplitude.com/hc/en-us/articles/13321766657947-Create-in-line-custom-events-in-funnel-and-event-segmentation-analyses'
+this_article_will_help_you:
+  - 'Combine multiple existing events into a custom event from within your event segmentation or funnel charts'
+landing: true
+landing_blurb: 'Combine multiple existing events into a custom event from within your event segmentation or funnel charts'
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717101857
 ---
-
-#### This article will help you:
-
-* Combine multiple existing events into a custom event from within your event segmentation or funnel charts
-
 Sometimes an analysis calls for combining multiple events, but you might not know which events you need. You can explore event combinations directly in the chart controls without needing to create and save a permanent custom event. Amplitude offers in-line OR logic to combine events for funnels and event segmentation charts.
 
 {{partial:admonition type='note'}}

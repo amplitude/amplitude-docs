@@ -6,7 +6,9 @@ source: 'https://help.amplitude.com/hc/en-us/articles/360052274852-Build-an-even
 this_article_will_help_you:
   - 'Use events and properties to create an Event Segmentation analysis'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717007969
+updated_at: 1717101808
+landing: true
+landing_blurb: 'Use events and properties to create an Event Segmentation analysis'
 ---
 For most users, Event Segmentation is the foundational Amplitude chart. It shows what your users are doing in your product. With the **Event Segmentation chart**, you can build analyses that:
 

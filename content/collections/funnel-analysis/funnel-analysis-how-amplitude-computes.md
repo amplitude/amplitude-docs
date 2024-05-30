@@ -6,7 +6,9 @@ source: 'https://help.amplitude.com/hc/en-us/articles/19458087881627-How-Amplitu
 this_article_will_help_you:
   - 'Understand how Amplitude computes funnels based on of the order of events, segmentation, and filters'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717015376
+updated_at: 1717102445
+landing: true
+landing_blurb: 'Understand how Amplitude computes funnels based on of the order of events, segmentation, and filters'
 ---
 ## Order of events
 

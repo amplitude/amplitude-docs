@@ -6,7 +6,9 @@ source: 'https://help.amplitude.com/hc/en-us/articles/10442602260507-Use-session
 this_article_will_help_you:
   - 'Use legacy metrics to enhance your analyses'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717023239
+updated_at: 1717103382
+landing: true
+landing_blurb: 'Use legacy metrics to enhance your analyses'
 ---
 Sometimes considered "legacy metrics," **session metrics**, like bounce rate or exit rate—are helpful diagnostic tools for obtaining a deeper understanding of the performance of campaigns or content items. 
 
@@ -120,4 +122,3 @@ These two analyses cannot be compared because of the following differences in th
 | Measures an **exact** total                                        | Measures an **estimate** of distinct property values                                                                                                                                                                                                                                                                                                             |
 | Measurement **counts unique pairings** of user IDs and session IDs | **Does not count unique pairings** of user IDs and session IDs, and will have different results when multiple users have the same session ID                                                                                                                                                                                                                       |
 |                                                                    | Session IDs are not tracked for [custom session](https://help.amplitude.com/hc/en-us/articles/115002323627-Track-sessions#h_a832c1ce-717a-4ab3-b205-9d7ed418ef1a "https://help.amplitude.com/hc/en-us/articles/115002323627-Track-sessions#h_a832c1ce-717a-4ab3-b205-9d7ed418ef1a") definitions, so they cannot be counted with the PROPCOUNT(session IDs) formula |
-

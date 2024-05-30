@@ -6,7 +6,9 @@ source: 'https://help.amplitude.com/hc/en-us/articles/6797483965083-Multi-dimens
 this_article_will_help_you:
   - 'Build a custom analysis using multiple metrics in several different dimensions'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717022995
+updated_at: 1717103314
+landing: true
+landing_blurb: 'Build a custom analysis using multiple metrics in several different dimensions'
 ---
 When analyzing a rich dataset, analysts often need to compare multiple metrics at once, and slice and dice that data by different dimensions to generate a custom analysis. Amplitude’s Data Tables enable multi-metric, multi-dimensional analyses in a single view. It is an extremely flexible chart, allowing you to quickly analyze any combination of user behavior, user attributes, and metrics. 
 

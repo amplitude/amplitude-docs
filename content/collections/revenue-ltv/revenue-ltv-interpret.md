@@ -6,7 +6,9 @@ source: 'https://help.amplitude.com/hc/en-us/articles/14453697446043-Interpret-y
 this_article_will_help_you:
   - 'Identify the strengths and weaknesses of your approach to new-user monetization'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717016999
+updated_at: 1717103772
+landing: true
+landing_blurb: 'Identify the strengths and weaknesses of your approach to new-user monetization'
 ---
 It's important to keep in mind that Revenue LTV is a monetization analysis focusing on **new users only**. Forgetting this could easily lead to some off-base interpretations of your data.
 

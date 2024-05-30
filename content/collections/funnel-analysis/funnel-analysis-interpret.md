@@ -7,7 +7,9 @@ this_article_will_help_you:
   - 'View and interpret funnel conversions'
   - 'Track conversions over time'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717015574
+updated_at: 1717102431
+landing: true
+landing_blurb: 'Interpret and track your conversions over time'
 ---
 Amplitude’s **Funnel Analysis** chart helps you understand how users are navigating defined paths ("funnels") within your product, and identify potential problem areas where users tend to drop off.
 
