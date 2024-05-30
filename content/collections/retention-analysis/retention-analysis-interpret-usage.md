@@ -5,9 +5,11 @@ title: 'Interpret your Retention Analysis chart: Usage interval'
 source: 'https://help.amplitude.com/hc/en-us/articles/14309698064923-Interpret-your-Retention-Analysis-chart-Usage-interval'
 this_article_will_help_you:
   - 'Read a retention analysis'
-  - "Understand the Retention Analysis chart's **usage interval** view"
+  - "Understand the Retention Analysis chart's usage interval view"
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717016115
+updated_at: 1717103051
+landing: true
+landing_blurb: "Understand the Retention Analysis chart's usage interval view"
 ---
 In a retention analysis, the **usage interval** shows the percentage of active users who’ve triggered the selected events with a specified daily, weekly, or monthly median frequency. These events must be triggered on **at least two different days** in order for the users to be included. 
 

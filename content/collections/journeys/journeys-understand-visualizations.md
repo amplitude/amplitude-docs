@@ -1,9 +1,13 @@
 ---
-title: "Understand and use the Journeys visualizations"
-source: "https://help.amplitude.com/hc/en-us/articles/16427848208539-Understand-and-use-the-Journeys-visualizations"
 id: 6e3ae686-82af-453e-b76c-c8253519a8cd
+blueprint: journey
+title: 'Understand and use the Journeys visualizations'
+source: 'https://help.amplitude.com/hc/en-us/articles/16427848208539-Understand-and-use-the-Journeys-visualizations'
+landing: true
+landing_blurb: 'Learn the difference between the three different Journey visualizations'
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717103599
 ---
-
 Each Journeys chart consists of three different visualizations: Pathfinder, Journey Map, and Top User Paths. Each view will tell you something different about the customer journey your users are experiencing. Navigate between them by selecting the appropriate tab along the top of the chart area.
 
 In any of these analyses, you can:

@@ -6,7 +6,9 @@ source: 'https://help.amplitude.com/hc/en-us/articles/115001163231-Custom-formul
 this_article_will_help_you:
   - 'Understand and use custom formulas in Amplitude to create exactly the analysis you need'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717008319
+updated_at: 1717102133
+landing: true
+landing_blurb: 'Understand and use custom formulas in Amplitude to create exactly the analysis you need'
 ---
 In an [Event Segmentation](/analytics/charts/event-segmentation/event-segmentation-build) or [Data Table](/analytics/charts/data-tables/data-tables-multi-dimensional-analysis) chart, the *Formula* option in the Measured As module's *Advanced* drop down offers you greater flexibility when performing analyses. Custom formulas are also useful for comparing various analyses on the same chart.
 

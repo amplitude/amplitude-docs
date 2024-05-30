@@ -5,4 +5,7 @@ title: 'Other Charts'
 landing: true
 sort: 16
 nav_title: charts
+template: landing-page
+current-collection: other-charts
+hide_helpful: true
 ---

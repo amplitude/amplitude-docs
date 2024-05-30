@@ -7,7 +7,9 @@ this_article_will_help_you:
   - 'Interpret your cluster cards'
   - 'Identify and name your personas'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717023418
+updated_at: 1717104252
+landing: true
+landing_blurb: 'Interpret your cluster cards and identify and name your personas'
 ---
 The [Personas chart](/analytics/charts/personas/personas-clustering) will help you identify and name user clusters, which can then be used to drive engagement and retention.
 

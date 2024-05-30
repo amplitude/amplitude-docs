@@ -6,10 +6,11 @@ source: 'https://help.amplitude.com/hc/en-us/articles/13885412065179-Using-formu
 this_article_will_help_you:
   - 'Understand the different kinds of formula metrics supported by the Experiment Results chart'
   - 'Understand how Amplitude calculates statistical significance for formula metrics'
-landing: false
+landing: true
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717016648
+updated_at: 1717103685
+landing_blurb: 'Understand the different kinds of formula metrics supported by the Experiment Results chart'
 ---
 In an Experiment Results chart, using a **formula metric** offers you greater flexibility when performing analyses. A formula metric is a metric that consists of:
 

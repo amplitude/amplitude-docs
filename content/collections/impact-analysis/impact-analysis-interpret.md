@@ -7,7 +7,9 @@ this_article_will_help_you:
   - 'Interpret the results of your Impact Analysis chart'
   - 'Effectively and appropriately use causal inference'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717019372
+updated_at: 1717104396
+landing: true
+landing_blurb: 'Effectively and appropriately use causal inference to interpret your Impact Analysis'
 ---
 The [Impact Analysis chart](/analytics/charts/impact-analysis/impact-analysis-track) can help you discover how triggering one event can effect the frequency at which your users fire other events.
 

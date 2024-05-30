@@ -7,7 +7,9 @@ this_article_will_help_you:
   - 'Understand the value of a funnel analysis in Amplitude'
   - 'Plan and design your Funnel Analysis chart'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717015155
+updated_at: 1717102322
+landing: true
+landing_blurb: 'Plan and design your Funnel Analysis chart'
 ---
 Funnel analysis has become the cornerstone of event-based analytics. A **funnel** is a series of steps a user takes as part of the experience of using your product. Product managers often try to encourage users to navigate these funnels in order to demonstrate product value and to increase engagement. Amplitude considers a user to have **converted** through a step in the funnel if they trigger the event in the order you've specified.
 

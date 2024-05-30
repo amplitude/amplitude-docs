@@ -4,7 +4,9 @@ blueprint: revenue-ltv
 title: "The Revenue LTV chart: Track how well you're monetizing new users"
 source: 'https://help.amplitude.com/hc/en-us/articles/230680867-The-Revenue-LTV-chart-Track-how-well-you-re-monetizing-new-users'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717017015
+updated_at: 1717103855
+landing: true
+landing_blurb: 'Analyze new-user monetization with a time horizon of as much as twelve months into the past'
 ---
 Successfully acquiring, engaging, and retaining new users won't help your company grow if you can't monetize them. 
 

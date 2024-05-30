@@ -15,18 +15,9 @@
         {{ partial:partials/goals }}
         {{partial:partials/api-lede}}
         {{ content | markdown }}
+        {{ partial:partials/chart-landing}}
       </div>
-      {{ if slug == "charts-overview" }}
-        <div class="flex flex-wrap">
-          {{ collection:charts landing:is="true" sort="sort:asc" }}
-            <a href="{{ url }}">
-              <div class="flex-none border border-gray-500 rounded size-48 m-8 p-4 hover:shadow-lg transition-shadow">
-                <p>{{ title }}</p>
-              </div>
-            </a>
-          {{ /collection:charts }}
-      {{ /if }}
-    </div>
+      </div>
     {{ unless hide_toc }}
       {{ partial:toc }}
     {{ /unless }}

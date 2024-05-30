@@ -1,12 +1,14 @@
 ---
 id: b8a605c9-d9fa-44ee-8508-12991ce72e74
 blueprint: journey
-title: 'Journeys: Understand the paths users take in your product, and why they convert'
+title: 'Understand the paths users take, and why they convert'
 source: 'https://help.amplitude.com/hc/en-us/articles/16427637651995-Journeys-Understand-the-paths-users-take-in-your-product-and-why-they-convert'
 this_article_will_help_you:
   - 'Analyze conversions between the key transition points in your product'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717016203
+updated_at: 1717103550
+landing: true
+landing_blurb: 'Analyze conversions between the key transition points in your product'
 ---
 Amplitude’s **Journeys** chart incorporates the power of the legacy [Journeys](/analytics/charts/legacy-charts/legacy-charts-pathfinder), and [Pathfinder Users](/analytics/charts/legacy-charts/legacy-charts-pathfinder-users) charts to generate a complete, 360-degree analysis of how your users convert—or fail to convert—between key transitions in your product. It allows you to inspect your users’ product journeys in two ways: By the **total number of unique users** who took a particular path, or by the **total number of times** they opted for that path.
 

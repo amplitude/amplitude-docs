@@ -7,13 +7,10 @@ this_article_will_help_you:
   - 'Understand the Compass chart interface'
   - 'Build a Compass chart to identify user behaviors that best predict retention'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717019135
+updated_at: 1717104031
+landing: true
+landing_blurb: 'Build a Compass chart to identify user behaviors that best predict retention'
 ---
-#### This article will help you:
-
-* Understand the Compass chart interface
-* Build a Compass chart to identify user behaviors that best predict retention
-
 One of the key steps in driving growth is discovering what your users' "a-ha" moments are. An "a-ha" moment happens when a **new user** makes the decision—consciously or unconsciously—to become an **active user** of your product.
 
 The most famous example probably comes from Facebook. They discovered that users who added at least seven friends in the first ten days were almost certain to stick around. Conversely, users who failed to do this almost always churned. This revelation helped Facebook drive retention by encouraging the "right" user behavior: adding friends. 

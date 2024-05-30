@@ -1,12 +1,14 @@
 ---
 id: 5aca2f50-8212-432f-b161-41319f88d8ac
 blueprint: event-segmentation
-title: 'Interpret your event segmentation analysis, part 1'
+title: 'Interpret your analysis, part 1'
 source: 'https://help.amplitude.com/hc/en-us/articles/360035355132-Interpret-your-event-segmentation-analysis-part-1'
 this_article_will_help_you:
   - 'Understand what your Event Segmentation analysis is telling you'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717008788
+updated_at: 1717101890
+landing: true
+landing_blurb: 'Understand what your Event Segmentation analysis is telling you'
 ---
 Amplitude's **Event Segmentation** chart helps you understand what specific groups of users are doing in your product. For example, in an event segmentation analysis, you can:
 

@@ -35,3 +35,11 @@ tabs:
             field:
               type: text
               display: Source
+  landing_page:
+    display: 'Landing page'
+    sections:
+      -
+        display: 'New Section'
+        fields:
+          -
+            import: article_common

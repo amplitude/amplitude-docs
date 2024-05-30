@@ -4,7 +4,9 @@ blueprint: data-table
 title: 'Results limits and sorting logic in Data Tables charts'
 source: 'https://help.amplitude.com/hc/en-us/articles/19466947066651-Results-limits-and-sorting-logic-in-Data-Tables-charts'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717023154
+updated_at: 1717103374
+landing: true
+landing_blurb: 'Learn how Amplitude decides what results to display in a Data Table chart'
 ---
 For more complex analyses, it's important to understand how Amplitude Analytics decides what results to display, as well as what happens when you sort on a given column.
 

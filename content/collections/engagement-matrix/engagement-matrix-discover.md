@@ -1,13 +1,15 @@
 ---
 id: 580a8667-f732-4986-9cd0-3cd1b520af1c
 blueprint: engagement-matrix
-title: "Engagement Matrix: discover what your users love (and don't love) about your product"
+title: 'Engagement Matrix: see how users feel about your product'
 source: 'https://help.amplitude.com/hc/en-us/articles/115000095851-Engagement-Matrix-discover-what-your-users-love-and-don-t-love-about-your-product'
 this_article_will_help_you:
   - 'Assess the overall level of engagement of features in your product'
   - 'Set up an Engagement Matrix chart and choose the right metrics for your analysis'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717020076
+updated_at: 1717104774
+landing: true
+landing_blurb: 'Assess the overall level of engagement of features in your product'
 ---
 With Amplitude's **Engagement Matrix** chart, you can develop a better understanding of the high-level pattern of feature engagement in your product, by breadth and frequency. By breaking out the top and bottom events for engagement into a four-quadrant matrix view, the Engagement Matrix will enable you to identify features that aren't performing well, so you can either refactor or deprecate them, and the features that are performing best, so you can find ways to extend that engagement to other areas of your product.
 

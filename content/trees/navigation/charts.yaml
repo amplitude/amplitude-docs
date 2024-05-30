@@ -5,7 +5,7 @@ tree:
     url: /analytics/charts/charts-overview
   -
     id: 52cffa2c-ef18-486a-a566-96b1a3cefb9a
-    title: 'Event Segmentation Chart'
+    title: 'Event Segmentation'
     children:
       -
         id: e6b58b4c-4cfb-4273-81c2-6d2660bd117d
@@ -20,14 +20,14 @@ tree:
         id: 5fbbef83-e7fa-4a37-a2ab-d0f8e5f2fd65
         entry: f74a2f4f-6b98-4533-802f-e706987a423e
       -
-        id: d54306dc-9828-45dc-b5f7-2cf57311438d
-        entry: 56c6e293-ea12-4e7c-8fb3-55216749d5ce
-      -
         id: 00f65d79-2fb3-40c0-9826-dca2d7942f44
         entry: 5aca2f50-8212-432f-b161-41319f88d8ac
       -
         id: 07751488-b786-4586-ac27-f3423565796b
         entry: 92dedf61-78f9-45d3-b75f-f400236ef746
+      -
+        id: d54306dc-9828-45dc-b5f7-2cf57311438d
+        entry: 56c6e293-ea12-4e7c-8fb3-55216749d5ce
   -
     id: 324b1a54-2fce-4092-8d79-a1be6e410f06
     title: 'Funnel Analysis'
@@ -36,38 +36,20 @@ tree:
         id: 0c58fb0f-85fe-49c7-a640-f24a5457295f
         entry: 945e85b1-de5f-4a40-8e97-37b4e1f0789f
       -
-        id: 0f4d2212-b639-4c57-bfd4-2933166124ae
-        entry: 7da7de78-2bd2-43c3-9838-e1bb2a56b687
-      -
-        id: 130533c6-bac2-4219-b61b-d067c5671213
-        entry: 8fcc98ae-f087-4a96-9317-43d833299638
+        id: b88ed62b-90b7-4f71-bfc9-c9efb8531f5b
+        entry: f69d9c00-3e3a-4bc2-ab22-8693888f3be5
       -
         id: 64014025-b73a-4873-9590-a0a614afc4a7
         entry: 1683dae2-34bd-4da2-9d02-007416a1836b
       -
-        id: d496016e-9c1a-49b6-af14-4bcd0398327f
-        entry: e60222af-17b8-480f-98cd-c8c5fbeab897
-      -
-        id: 292641ad-ed93-454f-af7a-16ed582598c3
-        entry: 3520c41a-6740-4a1e-b71c-b44a1bf5432e
-      -
-        id: 39a31186-17a1-43d4-9713-02c1ac55a452
-        entry: 2dd552bc-c1cb-4ca8-884e-543332a380f5
-      -
-        id: b88ed62b-90b7-4f71-bfc9-c9efb8531f5b
-        entry: f69d9c00-3e3a-4bc2-ab22-8693888f3be5
-      -
-        id: a544eaf0-37ac-45bf-a1de-07749fcba872
-        entry: b7e71edd-424f-41a0-8206-a787c75349e4
-      -
-        id: c3067ee6-0cdb-4e7d-9ddd-f8681c46b72b
-        entry: 4eda9c61-73d1-425a-a28a-5f15b8fb0356
+        id: ff68efd9-c69b-4aca-a411-93ec16f1f5c2
+        entry: 0b5fb0a0-d720-4cc4-ad1d-072be91a710f
       -
         id: c9458bc5-ae16-423b-9699-afa621aa992f
         entry: 1e47bc76-6edc-4391-afdf-16d74db2fd7a
       -
-        id: d3c6275c-50f9-436c-83d0-87af0985d555
-        entry: 43f380ea-7e18-462f-ba73-e7ce7366dfdb
+        id: c3067ee6-0cdb-4e7d-9ddd-f8681c46b72b
+        entry: 4eda9c61-73d1-425a-a28a-5f15b8fb0356
       -
         id: bae34865-4295-4c3f-9f4c-38d52e3fc191
         entry: 7f411988-132d-4623-89d3-730f4bc54d52
@@ -75,11 +57,29 @@ tree:
         id: 636f7821-4de5-496a-bf70-a265ff14b8aa
         entry: 633a33f0-1242-4c82-9954-b65cdbbd71d1
       -
+        id: d3c6275c-50f9-436c-83d0-87af0985d555
+        entry: 43f380ea-7e18-462f-ba73-e7ce7366dfdb
+      -
+        id: 0f4d2212-b639-4c57-bfd4-2933166124ae
+        entry: 7da7de78-2bd2-43c3-9838-e1bb2a56b687
+      -
+        id: 130533c6-bac2-4219-b61b-d067c5671213
+        entry: 8fcc98ae-f087-4a96-9317-43d833299638
+      -
+        id: d496016e-9c1a-49b6-af14-4bcd0398327f
+        entry: e60222af-17b8-480f-98cd-c8c5fbeab897
+      -
+        id: 39a31186-17a1-43d4-9713-02c1ac55a452
+        entry: 2dd552bc-c1cb-4ca8-884e-543332a380f5
+      -
+        id: 292641ad-ed93-454f-af7a-16ed582598c3
+        entry: 3520c41a-6740-4a1e-b71c-b44a1bf5432e
+      -
+        id: a544eaf0-37ac-45bf-a1de-07749fcba872
+        entry: b7e71edd-424f-41a0-8206-a787c75349e4
+      -
         id: 0a470f08-a968-403d-bd36-d4384e337197
         entry: 7a9bcc67-504d-4d51-943a-b4c0af30f8a8
-      -
-        id: ff68efd9-c69b-4aca-a411-93ec16f1f5c2
-        entry: 0b5fb0a0-d720-4cc4-ad1d-072be91a710f
       -
         id: 63549056-2033-4dd3-a89d-f5636afde6da
         entry: 45aaaf38-62c7-49d9-9817-bfc8d765a0ff
@@ -97,20 +97,20 @@ tree:
         id: 8f7bbf74-10da-4f82-b145-dbaaf74c9696
         entry: 6fa8fdca-74d6-4e5b-894d-fed42807a8e8
       -
+        id: 463aee52-a213-461f-b7b5-b952b4274097
+        entry: 32b704e4-319e-4386-9e63-afbd109bc359
+      -
         id: 0bb3fdbb-decd-4388-96f6-a999ea49f5c7
         entry: 529e064a-b201-430b-b217-67bc3d35ed1e
+      -
+        id: e6afbdfd-43b1-4205-affd-4009e5c29ae9
+        entry: f50ba26f-5561-46a1-99f5-dd6ae795fdb8
       -
         id: 92757ae9-b149-4b86-a0e8-d09eaf647e3d
         entry: de3797df-f955-4db9-9813-c392edd83a4c
       -
         id: aa048d75-6cd6-4b0d-be7a-7d38fd9caa0e
         entry: 662a82d8-e7c8-43c8-8890-6d31587fffd8
-      -
-        id: 463aee52-a213-461f-b7b5-b952b4274097
-        entry: 32b704e4-319e-4386-9e63-afbd109bc359
-      -
-        id: e6afbdfd-43b1-4205-affd-4009e5c29ae9
-        entry: f50ba26f-5561-46a1-99f5-dd6ae795fdb8
   -
     id: 772f35d3-141e-45b1-bfbf-7774696ff392
     title: 'Data Tables'
@@ -119,20 +119,20 @@ tree:
         id: 29eccf7b-b6ca-4fa5-9af2-35463c0b2101
         entry: 0cbd21dd-8917-4c02-a2a0-8aad8d4a3bd0
       -
-        id: de3a0c0f-b261-4b5b-b55b-897f855bba3d
-        entry: 17ec9033-f51e-4b77-ad1d-47beebe9471a
-      -
-        id: 59a75b34-a8c7-45c1-ba56-1315bc6d33f4
-        entry: ba7cc6cb-a012-4124-8d8b-87f1ad793a04
-      -
         id: cb0ad1c6-6dfd-4ee9-abec-9d34deeeb6a5
         entry: 9d5d7274-611b-4be2-9bbe-2a5360fa87df
       -
         id: 1fb447a0-7216-4743-a1ae-0477996c5c22
         entry: ce073128-d6a9-48e8-8d07-c7afaa128254
       -
+        id: 59a75b34-a8c7-45c1-ba56-1315bc6d33f4
+        entry: ba7cc6cb-a012-4124-8d8b-87f1ad793a04
+      -
         id: b8ed2000-f56e-4e38-8261-2aad5984f52f
         entry: 9a636606-4c3e-4452-915c-b153146b9116
+      -
+        id: de3a0c0f-b261-4b5b-b55b-897f855bba3d
+        entry: 17ec9033-f51e-4b77-ad1d-47beebe9471a
   -
     id: 68b5678a-ae1b-4d40-a094-40a3e375e300
     title: Journeys
@@ -180,6 +180,9 @@ tree:
         id: 68f75a61-238a-4a4a-9518-2babf9509e09
         entry: ec246386-8753-4106-a8f7-5410c227fa23
       -
+        id: 67126758-caa9-47ac-9fac-6e2a166995a2
+        entry: f32acaba-cdc9-45cb-8305-9b3def454ac4
+      -
         id: 7421b2a9-e2a5-4af0-af89-642bac63c959
         entry: 18b193bc-6806-48f7-997a-595aff1fbf91
       -
@@ -188,9 +191,6 @@ tree:
       -
         id: b433ab53-9335-4ed4-b91f-16da472d0539
         entry: ddf41127-c15a-422c-be5b-9bdc91d6c721
-      -
-        id: 67126758-caa9-47ac-9fac-6e2a166995a2
-        entry: f32acaba-cdc9-45cb-8305-9b3def454ac4
   -
     id: e5b0c4e5-53c8-4b73-b5c9-ce44aa48c9da
     title: Stickiness
@@ -199,11 +199,11 @@ tree:
         id: 10d0db3f-52fd-49ad-9311-de20376e89d9
         entry: f5763b49-98e0-4cbd-be73-e3d4a4742052
       -
-        id: ad926e2c-3fd7-47bb-8b5a-73be970247a6
-        entry: a2ecdb87-b991-4feb-b75a-44cf9f688d9f
-      -
         id: 2331c373-80b9-4ae6-8f8b-f4c20e739409
         entry: 15beca8e-5e6a-4e5f-9aa1-01fe53f81014
+      -
+        id: ad926e2c-3fd7-47bb-8b5a-73be970247a6
+        entry: a2ecdb87-b991-4feb-b75a-44cf9f688d9f
   -
     id: 251cacba-e145-46e3-9aa9-4e191972baf5
     title: Personas
@@ -212,11 +212,11 @@ tree:
         id: 14c0d221-f79d-430c-9be5-423c8a290e17
         entry: 54a52d56-66eb-4e70-9cae-7f15fd2b2ea6
       -
-        id: 70b65a96-f2c1-410f-905f-a4cf549a4082
-        entry: 21fd5184-cff2-4c81-9ca5-1a67c8901894
-      -
         id: 367cb323-6041-4c9b-9b4c-6a611b098eb8
         entry: 53d28de0-5610-4a79-9935-0fbf2c295e4f
+      -
+        id: 70b65a96-f2c1-410f-905f-a4cf549a4082
+        entry: 21fd5184-cff2-4c81-9ca5-1a67c8901894
   -
     id: d5d354ee-bada-4980-9b08-7d81d4099740
     title: 'Impact Analysis'
@@ -225,11 +225,11 @@ tree:
         id: f6295aea-2c69-49bf-a01f-edc076c1df08
         entry: 174c9363-dd7f-4e03-b7ea-b680633d4a61
       -
-        id: 4875095d-2105-4e14-8c34-6cb497d65e27
-        entry: cf7c955b-582e-41cd-b864-8c41e82e2b48
-      -
         id: ac86da0f-e1e8-43f2-b43a-b7535f42e659
         entry: b8f8e53d-f276-4605-b04a-fc677d29b5f8
+      -
+        id: 4875095d-2105-4e14-8c34-6cb497d65e27
+        entry: cf7c955b-582e-41cd-b864-8c41e82e2b48
   -
     id: 57e3bd9f-e47a-4d6d-b969-c657a3f7b462
     title: 'User Sessions'
@@ -238,11 +238,11 @@ tree:
         id: 6a982d0e-b42e-49e6-a4da-b88a8e2d067f
         entry: c26659a0-6a19-4533-9fd2-36a4380671c1
       -
-        id: 622da68e-ae75-4f5a-901c-1dddf74cac15
-        entry: 849868aa-1ae1-4e02-be90-2d2f2a4a17af
-      -
         id: 60711027-dd70-4963-b83f-1551b06390f3
         entry: 9667df7f-0f3b-4544-a74e-b090f28f6490
+      -
+        id: 622da68e-ae75-4f5a-901c-1dddf74cac15
+        entry: 849868aa-1ae1-4e02-be90-2d2f2a4a17af
   -
     id: f317d655-4da0-4af0-a48e-aa2700e1744f
     title: 'Engagement Matrix'
@@ -264,11 +264,11 @@ tree:
         id: 0f32fa01-2725-4b46-87a0-9a259a4c8041
         entry: c4858ae8-0592-4ebd-87a5-144cdbb88f2f
       -
-        id: 42f3eedc-a535-4c84-a3f6-b046fd8dbad1
-        entry: 0e2e4182-9627-49a1-a313-ed70f3a1076c
-      -
         id: f9318408-ece2-4790-b042-f84379a0f8e4
         entry: f5fb62f2-9096-4b63-9b79-c6c9a3bf1e2a
+      -
+        id: 42f3eedc-a535-4c84-a3f6-b046fd8dbad1
+        entry: 0e2e4182-9627-49a1-a313-ed70f3a1076c
   -
     id: eee7648d-91e9-4591-bdd0-40732f8b698c
     title: 'Other Charts'

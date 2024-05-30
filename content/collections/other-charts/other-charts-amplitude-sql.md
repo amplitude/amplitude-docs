@@ -6,7 +6,9 @@ source: 'https://help.amplitude.com/hc/en-us/articles/115001902492-Amplitude-SQL
 this_article_will_help_you:
   - 'Query your Snowflake database using custom SQL'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717020275
+updated_at: 1717104940
+landing: true
+landing_blurb: 'Query your Snowflake database using custom SQL'
 ---
 #### This article will help you:
 

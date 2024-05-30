@@ -7,7 +7,9 @@ this_article_will_help_you:
   - 'Use field shortcuts to query your Snowflake database in Amplitude SQL'
   - 'Understand the schema of the $events table'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717020376
+updated_at: 1717104948
+landing: true
+landing_blurb: 'Use field shortcuts to query your Snowflake database in Amplitude SQL'
 ---
 ## Special field shortcuts
 
@@ -78,4 +80,3 @@ See [this article to learn more about how Amplitude tracks unique users](/cdp/so
 | `merge_event_time`    | TIMESTAMP    | The time of the event a user's new Amplitude ID was associated with their original Amplitude ID.             |
 | `merge_server_time`   | TIMESTAMP    | The server time of the event when a user's new Amplitude ID was associated with their original Amplitude ID. |
 | `merged_amplitude_id` | NUMBER(38,0) | The originally assigned Amplitude ID when the user is first created.                                         |
-

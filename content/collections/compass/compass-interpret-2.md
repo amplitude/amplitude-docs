@@ -7,7 +7,9 @@ this_article_will_help_you:
   - 'Understand correlation and why Compass uses it'
   - 'Create a cohort from your Compass chart results'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717019110
+updated_at: 1717104023
+landing: true
+landing_blurb: 'Create a cohort from your Compass chart results'
 ---
 This article will further explain correlation and how it is applies to your Compass chart, and how to create a cohort from its results. See [Interpret your Compass chart, part 1](/analytics/charts/compass/compass-interpret-1) for a breakdown of how to read and interpret a Compass chart.
 

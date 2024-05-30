@@ -6,7 +6,9 @@ source: 'https://help.amplitude.com/hc/en-us/articles/6040784295195-Attribute-cr
 this_article_will_help_you:
   - 'Understand how specific touch points are contributing to your marketing outcomes'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717022723
+updated_at: 1717103337
+landing: true
+landing_blurb: 'Understand how specific touch points are contributing to your marketing outcomes'
 ---
 It can be challenging to attribute success of marketing activities without being able to clearly pinpoint which activities led your users to the desired outcome. For example, let's say a user visited your website after exposure to a Google ad, then interacting with a Facebook post, and finally watching a TikTok video. There are many ways you can attribute credit to one or more of the activities that led to the user's visit to your website. Attributing success to various property values, often referred to as [**multi-touch attribution**](https://amplitude.com/blog/amplitude-attribution), can provide more context for and drive the future of your marketing plans. 
 

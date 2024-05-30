@@ -1,12 +1,14 @@
 ---
 id: 92dedf61-78f9-45d3-b75f-f400236ef746
 blueprint: event-segmentation
-title: 'Interpret your event segmentation analysis, part 2: Advanced features'
+title: 'Interpret your analysis, part 2: Advanced features'
 source: 'https://help.amplitude.com/hc/en-us/articles/14056975720091-Interpret-your-event-segmentation-analysis-part-2-Advanced-features'
 this_article_will_help_you:
-  - 'Use the features of the *Measured As* Module to customize your analysis'
+  - 'Use the features of the Measured As Module to customize your analysis'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717008813
+updated_at: 1717101918
+landing: true
+landing_blurb: 'Use the features of the Measured As Module to customize your analysis'
 ---
 This article explores some of the more advanced features available to you as you interpret your event segmentation analyses. For a primer on the basics, [see part one](/analytics/charts/event-segmentation/event-segmentation-interpret-1).
 

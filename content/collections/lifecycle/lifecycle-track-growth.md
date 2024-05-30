@@ -1,13 +1,15 @@
 ---
 id: f5fb62f2-9096-4b63-9b79-c6c9a3bf1e2a
 blueprint: lifecycle
-title: "The Lifecycle chart: track the growth of your product's user base"
+title: "Lifecycle: track the growth of your product's user base"
 source: 'https://help.amplitude.com/hc/en-us/articles/228838627-The-Lifecycle-chart-track-the-growth-of-your-product-s-user-base'
 this_article_will_help_you:
   - 'Understand the benefits of a lifecycle analysis'
   - 'Set up a Lifecycle chart'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717020222
+updated_at: 1717104866
+landing: true
+landing_blurb: 'Understand the benefits of a lifecycle analysis'
 ---
 Amplitude's **Lifecycle** chart gives you a quick, easy-to-understand overview of the growth of your product's user base over time. It does this by breaking out your active users into subgroups: new, current, and resurrected (formerly inactive) users. All your total active users will fall into one of these categories. It will also show you a count of your inactive, dormant users.
 
