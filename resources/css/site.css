@@ -294,13 +294,14 @@ ul.nav li::marker {
     margin-top: 0;
 }
 
-.prose img {
+.prose>p>img {
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     margin: 0 auto;
     /* border: 1px solid #e2e8f0; */
     border-radius: 8px;
     max-height: 500px;
 }
+
 
 code {
     font-family: 'IBM Plex Mono', monospace;
