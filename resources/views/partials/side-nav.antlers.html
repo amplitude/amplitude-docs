@@ -3,19 +3,23 @@
         {{ nav :handle="nav_title" }}
             {{ lvl1_parent = title | slugify }}
             {{ if url && children }}
+            <!--here is a test-->
                 <a href="{{ url }}"
                     {{if current_uri | contains(url) }}@click.prevent="lvl1 = (lvl1 === '{{title | slugify}}') ? '' : '{{title | slugify}}'" {{/if}}
                     class="no-underline nav-button text-left text-[.875rem] my-0 pl-2 py-2 hover:text-amp-blue-500 {{if is_current }} text-amp-blue-500 active{{else}}text-amp-gray-600{{/if}}"
-                    {{if is_current }} x-effect="lvl1 = '{{title | slugify}}'"{{/if}} :class="lvl1 === '{{ title | slugify }}' ? 'active' : ''">{{ title }} <!--{{current_uri}} - {{url}} -->
-                    {{ svg src="/assets/general/icon-chevron-down.svg" class="inline absolute right-4" }}</a>
+                    {{if is_current }} x-effect="lvl1 = '{{title | slugify}}'"{{/if}} :class="lvl1 === '{{ title | slugify }}' ? 'active' : ''">{{ title }} <!--{{data}}{{underline}}{{/data}} -->
+                    {{ svg src="/assets/general/icon-chevron-down.svg" class="inline absolute right-0" }}</a>
             {{ elseif url }}
-                {{ navigation_icon }}<a href="{{ url }}"
-                    class="no-underline block text-[.875rem] p-2 leading-5 hover:bg-amp-gray-50 hover:rounded {{if is_current }}bg-amp-blue-950 text-amp-blue-500 rounded active{{else}}text-amp-gray-600{{/if}}">{{ title }}</a>
+                <div class="flex flex-row hover:bg-amp-gray-50 hover:rounded"> 
+                    {{svg :src="icon" class="inline w-4 fill-amp-gray-500 self-center"}}
+                    <a href="{{ url }}"
+                    class="no-underline inline-block text-[.875rem] p-2 leading-5 {{if is_current }}bg-amp-blue-950 text-amp-blue-500 rounded active{{else}}text-amp-gray-600{{/if}}">{{ title }}</a>
+                </div>
             {{ else }}
                 <button @click.prevent="lvl1 = (lvl1 === '{{ title | slugify }}') ? '' : '{{ title | slugify }}'"
-                    class="nav-button text-left text-[.875rem] my-0 py-[.25rem] pl-2"
+                    class="nav-button text-left text-[.875rem] my-0 py-[.25rem] pl-2 relative"
                     :class="lvl1 === '{{ title | slugify }}' ? 'active' : ''">{{ title }}
-                    {{ svg src="/assets/general/icon-chevron-down.svg" class="inline absolute right-4" }}</button>
+                    {{ svg src="/assets/general/icon-chevron-down.svg" class="inline absolute right-0" }}</button>
             {{ /if }}
             {{ if children }}
                 <div x-show="lvl1 === '{{ title | slugify }}'" class="nav-level-2 flex flex-col my-0 pl-4"
@@ -28,9 +32,9 @@
                         {{ else }}
                             <button
                                 @click.prevent="lvl2 = (lvl2 === '{{ title | slugify }}' ? null : '{{ title | slugify }}')"
-                                class="text-left text-[.875rem] py-2 pl-2"
+                                class="text-left text-[.875rem] py-2 pl-2 relative"
                                 :class="lvl2 === '{{ title | slugify }}' ? 'active' : ''">{{ title }}
-                                {{ svg src="/assets/general/icon-chevron-down.svg" class="inline absolute right-4" }}</button>
+                                {{ svg src="/assets/general/icon-chevron-down.svg" class="inline absolute right-0" }}</button>
                         {{ /if }}
                         {{ if children }}
                             <div x-show="lvl2 === '{{ title | slugify }}'" class="nav-level-3 flex flex-col my-0 pl-2" x-collapse>

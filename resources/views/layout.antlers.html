@@ -59,11 +59,7 @@
         <button @click="sidebarOpen = !sidebarOpen" class="absolute lg:hidden left-0 z-50 w-4 translate-x-[245px] translate-y-8" :class="{ 'rotate-180': sidebarOpen, 'translate-x-[250px]' : sidebarOpen }">{{svg src="/assets/general/expand.svg"}}</button>
 
         {{ if segment_1 }}
-          {{ if nav_type }}
-            {{ partial:side-nav-charts :nav_title="nav_title" }}
-          {{ else }}
             {{ partial:side-nav :nav_title="nav_title" }}
-          {{ /if }}
         {{ /if }}
       </div>
       <div class="absolute top-24 left-0 lg:left-64 bottom-0 right-0 z-0 transition">
