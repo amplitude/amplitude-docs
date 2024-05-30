@@ -4,9 +4,9 @@ blueprint: funnel-analysi
 title: 'Hold properties constant in a Funnel Analysis chart'
 source: 'https://help.amplitude.com/hc/en-us/articles/19466646450203-Hold-properties-constant-in-a-Funnel-Analysis-chart'
 this_article_will_help_you:
-  - 'Set up your Funnel Analysis charts to display the unique count of user and property pairs that have completed the funnel'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1715113308
+  - 'Set up your Funnel Analysis charts to display the unique count of user and property pairs that have completed the funnel, instead of just the unique count of users who have completed it at least once'
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717015220
 ---
 By default, Amplitude does not hold properties constant in a funnel analysis. This means the funnel chart will display the **unique count of users** who have gone through the funnel **once or more**—if, for example, the user goes through the entire funnel multiple times, they are only counted once.
 
