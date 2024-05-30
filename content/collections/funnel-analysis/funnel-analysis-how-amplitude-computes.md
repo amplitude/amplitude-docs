@@ -5,17 +5,17 @@ title: 'How Amplitude computes funnels'
 source: 'https://help.amplitude.com/hc/en-us/articles/19458087881627-How-Amplitude-computes-funnels'
 this_article_will_help_you:
   - 'Understand how Amplitude computes funnels based on of the order of events, segmentation, and filters'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1715113700
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717102445
+landing: true
+landing_blurb: 'Understand how Amplitude computes funnels based on of the order of events, segmentation, and filters'
 ---
-When computing funnels, Amplitude Analytics considers order of events, segmentation, and filters in specific ways. This article will explain how each factor is prioritized, so that you will be able to build funnels that work the way you expect them to.
-
 ## Order of events
 
 Unlike other charts, a Funnel Analysis requires you to specify the **order** of the events you include in the Events Module. Your options are:
 
 * **Any order**;
-* **This order**; or
+* **This order**;
 * **Exact order**.
 
 *Any order* is exactly what it sounds like: as long as a user **completes all the steps** listed, Amplitude will consider them converted. Users who fire the later events without firing the first event are not considered to be part of the funnel; they have to fire the first event for that to happen.
@@ -26,7 +26,7 @@ Unlike other charts, a Funnel Analysis requires you to specify the **order** of 
 When using *this order*, you can repeat events in your funnel. If you have defined a funnel as Event A -> Event A -> Event B, a user will be counted as converted if they fired Event A at least twice, and then fired Event B later. There are no limits to the number of times an event can appear in the funnel definition.
 {{/partial:admonition}}
 
-*Exact order* is a stricter version of *this order*, in that users **will not be counted** as converted if they trigger other events in between the ones listed. If a user deviates from the steps listed in the Events Module in any way, Amplitude will consider them to have dropped off.
+*Exact order* is a stricter version of *this order*, in that users **will not be counted** as converted if they fire other events in between the ones listed. If a user deviates from the steps listed in the Events Module in any way, Amplitude will consider them to have dropped off.
 
 {{partial:admonition type='note'}}
 In ordered funnels, each event is included in exactly one conversion path. For example, imagine you have an ordered funnel with just two events: `search -> add to cart`. If a user searches four times and then adds a product to their cart after that last search—`search, search, search, search, add to cart`—Amplitude will record **one** conversion, even though there were four occurrences of the funnel's first step.
@@ -72,7 +72,7 @@ For example, look at this Funnel Analysis chart:
 
 ![group-by_events.png](/output/img/funnel-analysis/group-by-events-png.png)
 
-The *Group-by* here looks at users' property values for `Genre_Type` at the time their `Favorite Song or Video` events are triggered, and shows how they converted through the remaining events of the funnel. 
+ The *Group-by* here looks at users' property values for `Genre_Type` at the time their `Favorite Song or Video` events are triggered, and shows how they converted through the remaining events of the funnel. 
 
 For example, a user that has a `Pop` property value for `Genre_Type` at the time their `Favorite Song or Video` event was triggered will show up under the `Pop` property bar for the `Play Song or Video` event as well.
 
@@ -86,4 +86,5 @@ This three-step funnel is grouped by Step 2's event property, `item_id`:
 
 The graph shows the conversion distribution of users who triggered Step 2 (`Add Item to Cart`) event, broken out by each `item_id` value.
 
-If you choose to group by a step other than the first, you will also see a segment of users who did not reach that segmented step (the blue-shaded segment for `did not reach step` in this example).
+If you choose to group by a step other than the first, you will also see a segment of users who did not reach that segmented step (the blue-shaded segment for `did
+ not reach step` in this example).

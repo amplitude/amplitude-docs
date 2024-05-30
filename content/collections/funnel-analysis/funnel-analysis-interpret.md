@@ -6,8 +6,10 @@ source: 'https://help.amplitude.com/hc/en-us/articles/360053338671-Interpret-you
 this_article_will_help_you:
   - 'View and interpret funnel conversions'
   - 'Track conversions over time'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1715114214
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717102431
+landing: true
+landing_blurb: 'Interpret and track your conversions over time'
 ---
 Amplitude’s **Funnel Analysis** chart helps you understand how users are navigating defined paths ("funnels") within your product, and identify potential problem areas where users tend to drop off.
 
@@ -47,7 +49,7 @@ Specifying the time frames of your funnel analysis is straightforward in Amplitu
 
 ![completed_within.png](/output/img/funnel-analysis/completed-within-png.png)
 
-By default, Amplitude assumes events will not be triggered within one second of each other. However, in some situations — like when you have multiple events firing at the same times — you may need a more detailed level of time resolution. In these cases, Amplitude can resolve events on a per-millisecond level.
+By default, Amplitude assumes events will not be triggered within one second of each other. However, in some situations—like when you have multiple events firing at the same times—you may need a more detailed level of time resolution. In these cases, Amplitude can resolve events on a per-millisecond level.
 
 ![millisecond.png](/output/img/funnel-analysis/millisecond-png.png)
 

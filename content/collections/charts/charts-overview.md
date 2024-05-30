@@ -4,6 +4,8 @@ blueprint: chart
 title: 'Charts Types'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1706811344
+updated_at: 1717091392
+hide_toc: true
+landing: false
+exclude_from_sitemap: false
 ---
-This will be an informative list of all the charts in Amplitude
