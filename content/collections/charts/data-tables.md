@@ -5,4 +5,13 @@ title: 'Data Tables'
 landing: true
 sort: 4
 nav_title: charts
+author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+landing_blurb: 'Compare and break down events and metrics in a single view'
+icon: icons/features/icon-data-table.svg
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717090515
+template: landing-page
+current-collection: data-tables
+hide_helpful: true
 ---

@@ -1,13 +1,15 @@
 ---
-title: "Optimize your Amplitude workflow to improve user engagement"
-source: "https://help.amplitude.com/hc/en-us/articles/115002661452-Optimize-your-Amplitude-workflow-to-improve-user-engagement"
 id: df37755a-32f0-4c3b-9589-dd2c71b26a9a
+blueprint: get-started
+title: 'Optimize your Amplitude workflow to improve user engagement'
+source: 'https://help.amplitude.com/hc/en-us/articles/115002661452-Optimize-your-Amplitude-workflow-to-improve-user-engagement'
+this_article_will_help_you:
+  - 'Maximize your value from Amplitude by setting up an effective and efficient workflow'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1716571758
 ---
-
-#### This article will help you:
-
-* Maximize your value from Amplitude by setting up an effective and efficient workflow
-
 To gain the most value out of Amplitude, we recommend you follow this workflow. This sequence of steps, adopted by our most successful customers, lays the groundwork for some of the most important metrics, and also demonstrates how specific charts are connected:
 
 * [Step 1: Identify your product's critical event](#h_a8bdaec2-a25f-4670-af25-6bfdcd7e2b99)
@@ -39,9 +41,7 @@ Use these questions to help determine your product's critical event:
 * What is the one action that you want a user to do every time they open your product?
 * What metric(s) do you care about as a company? What are you ultimately trying to drive up? Which user actions can be tied to that metric?
 
-|  |
-| --- |
-| [**Read more about the critical event**](https://blog.amplitude.com/user-retention-app-critical-event) |
+[Read more about the critical event](https://blog.amplitude.com/user-retention-app-critical-event)
 
 ## Step 2: Determine your product's usage interval
 
@@ -51,9 +51,7 @@ Some products are built to be used daily—think social networking, media, casua
 
 You cannot calculate user retention without first having an understanding of your product’s usage interval and critical event. 
 
-|  |
-| --- |
-| [**Read more about the usage interval**](https://help.amplitude.com/hc/en-us/articles/14309698064923-Interpret-your-Retention-Analysis-chart-Usage-interval) |
+[Read more about the usage interval](https://help.amplitude.com/hc/en-us/articles/14309698064923-Interpret-your-Retention-Analysis-chart-Usage-interval) 
 
 ## Step 3: Create retention graphs to understand your user retention rates
 
@@ -61,9 +59,7 @@ If you're having trouble holding on to users, it may signal a problem with the p
 
 Amplitude’s Retention Analysis chart helps you drive product adoption by showing you how often users return to your product after taking a specific action. Use it to discover the **events that keep users coming back**, as well as the ones that are driving them away.
 
-|  |
-| --- |
-| [Read more about retention analysis](hc/en-us/articles/360050153151) |
+[Read more about retention analysis](hc/en-us/articles/360050153151) 
 
 ## Step 4: Plot a user Lifecycle graph
 
@@ -71,9 +67,7 @@ Once you know your product's critical event, you'll want to find out how your us
 
 Ultimately, the goal should be to use this information to **grow your current and resurrected user counts**, either by keeping them engaged or by giving them a reason to become active again. You'll also want to keep an eye on your dormant users: if this category starts growing, you may have an engagement problem on your hands.
 
-|  |
-| --- |
-| [**Read more about Lifecycle analysis**](https://help.amplitude.com/hc/en-us/articles/228838627-Lifecycle) |
+[Read more about Lifecycle analysis](https://help.amplitude.com/hc/en-us/articles/228838627-Lifecycle) 
 
 ## Step 5: Map your user personas
 
@@ -81,17 +75,13 @@ Knowing who is using your product is just as important as knowing what they're d
 
 Amplitude's Personas chart groups your users into clusters based on the **similarities of their event behavior**: users who behave the same way will end up in the same cluster. It can help you surface similarities between user cohorts you may not have thought to look for. And it can guide you through the process of creating a comprehensive set of user personas for your product.
 
-|  |
-| --- |
-| [**Read more about Persona development**](/analytics/charts/personas/personas-clustering)  |
+[Read more about Persona development](/analytics/charts/personas/personas-clustering) 
 
 ## Step 6: Compare engagement across personas with the Engagement Matrix
 
 Amplitude's Engagement Matrix chart breaks out the top and bottom events for engagement into a four-quadrant matrix view, so you can easily spot which features should be refactored or deprecated, and which ones offer the potential for extending engagement into other areas of your product. This way, you can develop a better understanding of the **high-level pattern of feature engagement** in your product, by both breadth and frequency. 
 
-|  |
-| --- |
-| [**Read more about the Engagement Matrix**](https://help.amplitude.com/hc/en-us/articles/115000095851-Engagement-Matrix) |
+[Read more about the Engagement Matrix](https://help.amplitude.com/hc/en-us/articles/115000095851-Engagement-Matrix) |
 
 ## Ongoing work: Create cohorts, compare, A/B test, improve
 
@@ -100,5 +90,3 @@ Beyond this workflow, you should always be using Amplitude to explore your produ
 Drill down into the differences and develop hypotheses on what product changes can encourage all users to become power users. Test these hypotheses via [A/B testing](https://help.amplitude.com/hc/en-us/articles/115001580108).
 
 Use your wins to make meaningful product changes, and repeat as needed.
-
-## 

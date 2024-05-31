@@ -1,13 +1,15 @@
 ---
-title: "Understand your users' activity"
-source: "https://help.amplitude.com/hc/en-us/articles/16798159501723-Understand-your-users-activity"
 id: 6351af1c-e7e9-4488-bbe7-34648487d173
+blueprint: get-started
+title: "Understand your users' activity"
+source: 'https://help.amplitude.com/hc/en-us/articles/16798159501723-Understand-your-users-activity'
+this_article_will_help_you:
+  - 'Use a template to generate a user activity report in Amplitude Analytics'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1716571976
 ---
-
-#### This article will help you:
-
-* Use a template to generate a user activity report in Amplitude Analytics
-
 The charts included on the User Activity Report template deliver insights into the frequency and duration of your users' engagement with your product. There’s no setup required, though you can easily customize the template itself and the individual charts included with it if you need to.
 
 The User Activity Report template includes the following charts:
@@ -37,9 +39,10 @@ If you want to replace the `New User` event, you should choose an event that sig
 If you want to replace the `Any Active User` event with something more specific, scroll until you find the event you’re interested in and select it.  
   
 You are **not required** to replace either the `New User` or the `Any Active Event` events if you’d prefer not to.
+
 3. Click *Save As New Dashboard* and select *Keep and display saved replacement parameters*. Then click *Next*.
 4. Give your new dashboard a name and select the location where it will be saved. Then click *Save*.
 
 Your dashboard is now ready for use.
 
-Check out [this article in our Help Center to learn more about dashboards](/analytics/dashboard-create), and [this article to learn more about templates in Amplitude](/analytics/templates).
+Check out [this article to learn more about dashboards](/analytics/dashboard-create), and [this article to learn more about templates in Amplitude](/analytics/templates).

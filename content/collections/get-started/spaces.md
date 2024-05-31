@@ -1,13 +1,15 @@
 ---
-title: "Spaces: Keep your work organized"
-source: "https://help.amplitude.com/hc/en-us/articles/16797746722203-Spaces-Keep-your-work-organized"
 id: 7d2ddd8b-26ba-4c9f-a201-b17179f01e02
+blueprint: get-started
+title: 'Spaces: Keep your work organized'
+source: 'https://help.amplitude.com/hc/en-us/articles/16797746722203-Spaces-Keep-your-work-organized'
+this_article_will_help_you:
+  - 'Organize your analyses in multiple **spaces**'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1716571827
 ---
-
-#### This article will help you:
-
-* Organize your analyses in multiple **spaces**
-
 Some of the most valuable analyses are the result of collaborations among teammates. **Spaces** help product teams subscribe to and organize analyses shared in Amplitude.
 
 Every saved piece of content must live in a space. By default, content is saved into your personal workspace. You can also choose to move them into a shared space.
@@ -22,8 +24,8 @@ This feature is available to users on **all Amplitude plans**.
 
 This feature is **limited** for users on **Starter** and **Plus plans**. 
 
-* * Organizations on **Starter** plans are limited to **one space**
-	* Organizations on **Plus** plans are limited to **three spaces**
+* Organizations on **Starter** plans are limited to **one space**
+* Organizations on **Plus** plans are limited to **three spaces**
 
 ## Your personal space
 
@@ -49,12 +51,14 @@ To create a space, follow these steps:
 2. Enter a name for your space, as well as a description, in the appropriate fields of the modal that appears.
 3. In the *Members* field, select everyone who you want to join your new space. When you've finished, click *Create space*.  
   
-**NOTE:** Users with admin, manager, and member-level permissions can create a space.
+{{partial:admonition type='note'}}
+Users with admin, manager, and member-level permissions can create a space.
+{{/partial:admonition}}
 
 We recommend using naming conventions for your space that are recognizable throughout the organization, so that others can easily understand what the team space is all about.
 
 A space can reuse a previously-used name for a new project, provided the previous project was deleted. 
 
-There’s a lot more to effectively using spaces, so when you’re ready to explore further, check out [this article in the Amplitude Help Center](/analytics/collaborate-with-spaces).
+There’s a lot more to effectively using spaces, so when you’re ready to explore further, check out [this article in the Amplitude documentation](/analytics/collaborate-with-spaces).
 
 **Next:** [Starting your Amplitude analysis from a pre-built template](/get-started/start-from-template).

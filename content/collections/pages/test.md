@@ -1,7 +1,7 @@
 ---
 id: 34cde5a0-0c7a-46b7-ac73-a0e306bb0b95
 blueprint: home
-title: 'Amplitude Docs.next IA Test'
+title: 'Amplitude Documentation'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1714512021

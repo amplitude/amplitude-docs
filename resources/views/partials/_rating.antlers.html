@@ -1,0 +1,27 @@
+<div x-data="{rated: false, rating: null}" class="inline-flex flex-row-reverse items-center">
+<div x-show="rated" class="z-50" style="height: 28px; display: block; position: absolute; width: 130px;"> </div>
+{{# <span x-show="rated" x-text="rating"></span> #}}
+{{# <span x-text="value" @click="console.log(value)"></span> #}}
+<svg @click="rated = true; rating = 5; handleRating(rating)" xmlns="http://www.w3.org/2000/svg" class="inline peer peer-hover:fill-amp-blue-700 hover:fill-amp-blue-700 transition cursor-pointer" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" :class="rating >= 5 ? 'fill-amp-blue-400 cursor-default hover:none':''"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"></path></svg>
+<svg @click="rated = true; rating = 4; handleRating(rating)" xmlns="http://www.w3.org/2000/svg" class="inline peer peer-hover:fill-amp-blue-700 hover:fill-amp-blue-700 transition cursor-pointer" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" :class="rating >= 4 ? 'fill-amp-blue-400 cursor-default hover:none':''"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"></path></svg>
+<svg @click="rated = true; rating = 3; handleRating(rating)" xmlns="http://www.w3.org/2000/svg" class="inline peer peer-hover:fill-amp-blue-700 hover:fill-amp-blue-700 transition cursor-pointer" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" :class="rating >= 3 ? 'fill-amp-blue-400 cursor-default hover:none':''"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"></path></svg>
+<svg @click="rated = true; rating = 2; handleRating(rating)" xmlns="http://www.w3.org/2000/svg" class="inline peer peer-hover:fill-amp-blue-700 hover:fill-amp-blue-700 transition cursor-pointer" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" :class="rating >= 2 ? 'fill-amp-blue-400 cursor-default hover:none':''"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"></path></svg>
+<svg @click="rated = true; rating = 1; handleRating(rating)" xmlns="http://www.w3.org/2000/svg" class="inline peer peer-hover:fill-amp-blue-700 hover:fill-amp-blue-700 transition cursor-pointer" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed" :class="rating >= 1 ? 'fill-amp-blue-400 cursor-default hover:none':''"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"></path></svg>
+
+<span class="text-sm text-amp-gray-600 mr-4">Was this page helpful?</span>
+
+</div>
+<script>
+
+function handleRating(rating) {
+    const eventProps = {
+        "Article Rating": rating,
+        "Page Path": window.location.pathname,
+        "Page Title": document.title,
+        "Page URL": window.location.href,
+    }
+    amplitude.track('Article rated', eventProps)
+    // Send rating to server
+}
+
+</script>

@@ -6,8 +6,8 @@ source: 'https://help.amplitude.com/hc/en-us/articles/19458044599195-How-Amplitu
 this_article_will_help_you:
   - 'Understand how Amplitude accounts for events fired within the same second'
   - 'Learn how to more precisely track events with millisecond resolution'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1715113861
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717015451
 ---
 Amplitude rounds all time to the nearest second. For that reason, it maintains a one-second window to account for **simultaneous events**. If a user fires two different events within one second, Amplitude will not try to make a determination of which one came first. Instead, it will consider **either** order correct and apply that to your funnel.
 
@@ -21,7 +21,7 @@ When using [Historical Count](/analytics/historical-count-1) filters on the *s
 
 ## Same events fire at once
 
-If two of the same event types are sent within the same second, Amplitude will count only one of them. This is also true if you're using `Any Event` within the step of a funnel, or if custom events within your funnel steps share the same sub-events: Amplitude will assume they're the same event if they fire at the same second and will not count each instance. To combat this, ensure the step conditions are mutually exclusive, or turn on [millisecond resolution](#h_01HMW4BNTYDZ7GVGYW6R539XSJ) to ensure events are precisely captured.
+If two of the same event types are sent within the same second, Amplitude will count only one of them. This is also true if you're using `Any Event` within the step of a funnel, or if custom events within your funnel steps share the same sub-events: Amplitude will assume they're the same event if they fire at the same second and will not count each instance. To combat this, ensure the step conditions are mutually exclusive, or turn on [millisecond resolution](#millisecond-resolution) to ensure events are precisely captured.
 
 ## Millisecond Resolution
 
