@@ -7,8 +7,8 @@ this_article_will_help_you:
   - 'Identify behaviors that lead users to sign up or drop off'
   - 'Uncover friction points in onboarding and critical conversion funnels'
   - 'Discover common experiences that lead to repeat consumers'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1715114072
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717015533
 ---
 Knowing which events lead to conversions and which events don’t is a crucial part of any analytics program. With Amplitude, you also have the ability to conduct deeper analyses and learn **why** users convert or churn after a specific event, with **conversion drivers**.
 
@@ -27,7 +27,7 @@ This feature is available to users on **Growth** and **Enterprise plans** only. 
 
 ## Before you begin
 
-* If you haven’t already, familiarize yourself with the [funnels analysis](https://help.amplitude.com/hc/en-us/articles/360039976531-Funnel-Analysis-Getting-Started) chart.
+* If you haven’t already, familiarize yourself with the Funnel Analysis chart.
 * Always keep in mind that **correlation does not equal causation.**
 * This feature will only work for funnel charts that are set up for the conversion metric, and the order of the events is set to “this order.”
 

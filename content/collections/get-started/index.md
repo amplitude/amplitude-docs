@@ -1,16 +1,18 @@
 ---
-title: "Start here: Get set up in Amplitude and start generating insights today"
-source: "https://help.amplitude.com/hc/en-us/articles/16796509137179-Start-here-Get-set-up-in-Amplitude-and-start-generating-insights-today"
 id: 3f647a94-edaa-4789-9a50-914274cc9e3d
+blueprint: get-started
+title: 'Start here: Get set up in Amplitude and start generating insights today'
+source: 'https://help.amplitude.com/hc/en-us/articles/16796509137179-Start-here-Get-set-up-in-Amplitude-and-start-generating-insights-today'
+this_article_will_help_you:
+  - 'Navigate the Start Here category of the Amplitude documentation and get up and running quickly'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1716571567
 ---
-
-#### This article will help you:
-
-* Navigate the Start Here category of the Amplitude Help Center and get up and running quickly
-
 If you’re reading this, you’re probably brand-new to Amplitude. Welcome!
 
-Our Help Center has all kinds of valuable information for you as your usage of Amplitude grows. But for now, at the start of your Amplitude journey, this section will help you get Amplitude set up quickly, so you can be up and running as quickly as possible.
+Our documentation has all kinds of valuable information for you as your usage of Amplitude grows. But for now, at the start of your Amplitude journey, this section will help you get Amplitude set up quickly, so you can be up and running as quickly as possible.
 
 Start by learning about organizations and projects in Amplitude (your analyses live in projects, and all your projects live in your organization): 
 
@@ -41,9 +43,11 @@ Finally, we’ve put together some guidance on how you can generate some quick w
 * [Analyze feature adoption](/get-started/analyze-feature-adoption)
 * [Understand conversion rate of an important flow](/get-started/understand-conversion-rate)
 
-**NOTE:** If you or your engineers have questions about instrumentation, see [this article in the Amplitude Developer Center](https://www.docs.developers.amplitude.com/getting-started/).
+{{partial:admonition type='note'}}
+If you or your engineers have questions about instrumentation, see [this article](https://www.docs.developers.amplitude.com/getting-started/).
+{{/partial:admonition}}
 
 Still need to create your Amplitude account? Just follow these steps to get started.
 
 1. **Create an Amplitude Account**. If you haven't already, [just click here](https://amplitude.com/get-started) to sign up for an Amplitude account. You will be directed to explore the [demo](https://analytics.amplitude.com/login/my-demo) environment, where we've set up dashboards and charts that allow you to see some of what Amplitude can do for you.
-2. **Verify your email.**You will receive an email from Amplitude, asking you to verify your email address. Click the link it contains to set a password and finish creating your account. Once completed, you will be redirected back to the demo environment, where you can click *Set up on the Free Plan* at the top of the page to set up your own Amplitude implementation.
+2. **Verify your email.** You will receive an email from Amplitude, asking you to verify your email address. Click the link it contains to set a password and finish creating your account. Once completed, you will be redirected back to the demo environment, where you can click *Set up on the Free Plan* at the top of the page to set up your own Amplitude implementation.

@@ -1,16 +1,17 @@
 ---
-title: "What events will you need?"
-source: "https://help.amplitude.com/hc/en-us/articles/16800098709275-What-events-will-you-need-"
 id: 669876e4-a2ae-44d5-bfb2-5def51504a25
+blueprint: get-started
+title: 'What events will you need?'
+source: 'https://help.amplitude.com/hc/en-us/articles/16800098709275-What-events-will-you-need-'
 landing: true
-landing_blurb: "Events and properties are the backbone of every analysis in Amplitude. Deciding which ones to track can be daunting, especially if you're new to product analytics."
+landing_blurb: 'Events and properties are the backbone of every analysis in Amplitude.'
+this_article_will_help_you:
+  - 'Identify promising events to track in Amplitude, based on your specific industry'
+  - "Learn more about Amplitude's industry-specific guides"
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1716572509
 ---
-
-#### This article will help you:
-
-* Identify promising events to track in Amplitude, based on your specific industry
-* Learn more about Amplitude's industry-specific guides
-
 Events and properties are the backbone of every analysis in Amplitude. [Deciding which ones to track](/data/create-tracking-plan) can be daunting, especially if you're new to product analytics.
 
 ## How many events should you track?
@@ -53,7 +54,7 @@ This section offers some advice, broken down by industry, about which events and
 | Is conversion improving or worsening? | Event Segmentation |
 | How well do my channels convert? | Data Table |
 | How many goals are users completing? | Data Table |
-| What content represents the largest % of all page views? | Event Segmentation |
+| What content represents the largest percentage of all page views? | Event Segmentation |
 
 **Required events and properties:**
 
@@ -207,4 +208,4 @@ This section offers some advice, broken down by industry, about which events and
 
 Amplitude also offers **industry-specific best practices guides** that are intended to help you implement and start getting insights quickly. With the goal of driving tangible conversion, retention, and product outcomes, these guides provide you with **recommended use cases and business questions**, a **proposed taxonomy**, and an **example dashboard** that can be used for your own implementation, all carefully tailored to meet the specific needs of your industry.
 
-We currently offer guides for companies in the [e-commerce](https://analytics.amplitude.com/share/8f32b20708e743e597b75c99b7a766d5), [fintech](https://analytics.amplitude.com/share/cbb3827995aa4d03852a3cdf9a3c46b0), [print media](https://analytics.amplitude.com/share/5940753342e04394bd0379cdd952cc18), and [streaming media](https://analytics.amplitude.com/share/6f40a915c14144b8ac992a5a8d7cf7cb) sectors, with more on the way. 
+We currently offer guides for companies in the [e-commerce](https://analytics.amplitude.com/share/8f32b20708e743e597b75c99b7a766d5), [fintech](https://analytics.amplitude.com/share/cbb3827995aa4d03852a3cdf9a3c46b0), [print media](https://analytics.amplitude.com/share/5940753342e04394bd0379cdd952cc18), and [streaming media](https://analytics.amplitude.com/share/6f40a915c14144b8ac992a5a8d7cf7cb) sectors, with more on the way.

@@ -1,19 +1,23 @@
 ---
-title: "Get data into Amplitude"
-source: "https://help.amplitude.com/hc/en-us/articles/17472723888411-Get-data-into-Amplitude"
 id: 1473fc96-a097-4045-a6f9-43ad3bf5027e
+blueprint: get-started
+title: 'Get data into Amplitude'
+source: 'https://help.amplitude.com/hc/en-us/articles/17472723888411-Get-data-into-Amplitude'
+this_article_will_help_you:
+  - 'Pull data into Amplitude from your app or a third-party source'
+  - 'Identify valuable resources and APIs to consider during instrumentation'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1716571412
 ---
-
-#### This article will help you:
-
-* Pull data into Amplitude from your app or a third-party source
-* Identify valuable resources and APIs to consider during instrumentation
-
 Amplitude Analytics relies on **data** to generate charts, experiments, and other types of analyses. This data comes from your product, app, or website, or from a third-party product like Salesforce or Segment.
 
-**NOTE:** You'll probably need to involve your developer or engineer for this step.
+{{partial:admonition type='note'}}
+You'll probably need to involve your developer or engineer for this step.
+{{/partial:admonition}}
 
-This article is intended as a broad overview. For a more in-depth explanation of setting up a taxonomy, we **strongly recommend** checking out our [Data Taxonomy Playbook](/data/data-planning-playbook). 
+This article is intended as a broad overview. For a more in-depth explanation of setting up a taxonomy, we **strongly recommend** checking out the [Data Taxonomy Playbook](/data/data-planning-playbook). 
 
 ### Feature availability
 
@@ -25,13 +29,13 @@ Getting data into Amplitude from your product is done at the **project** level. 
 
 ### Data from your product
 
-The most popular way to get data into Amplitude from web products or websites is the [Browser SDK](https://www.docs.developers.amplitude.com/data/sdks/browser-2/). Learn more about it in the [Amplitude Developer Center](https://www.docs.developers.amplitude.com/data/sdks/sdk-quickstart/#initialize-the-library).
+The most popular way to get data into Amplitude from web products or websites is the [Browser SDK](https://www.docs.developers.amplitude.com/data/sdks/browser-2/). Learn more about it [here](https://www.docs.developers.amplitude.com/data/sdks/sdk-quickstart/#initialize-the-library).
 
 Once you've got the API key mentioned in the beginning of this section, add it to the Amplitude Javascript snippet, then paste that snippet to all parts of your product that generate the data you want Amplitude to [track](https://help.amplitude.com/hc/en-us/articles/5078731378203). This **must** be placed at the **top** of **every page** you want to track via Amplitude, and it **must** include the `amplitude.init()` statements. An example snippet is shown in the screenshot below.
 
 ![send data with browser sdk.png](/output/img/get-started/send data with browser sdk.png)
 
-Again, depending on your level of knowledge and / or comfort with Javascript, you may want to involve someone from your development or engineering team in this phase. And definitely take advantage of all the resources around [SDKs that are available in the Amplitude Developer Center](https://www.docs.developers.amplitude.com/data/sdks/).
+Again, depending on your level of knowledge and / or comfort with Javascript, you may want to involve someone from your development or engineering team in this phase. And definitely take advantage of all the resources around [SDKs that are available here](https://www.docs.developers.amplitude.com/data/sdks/).
 
 After instrumenting Amplitude successfully, your data will be visible just as soon as your product begins sending events. (You'll have to [instrument](/data/data-planning-playbook) for detailed documentation on how to approach your event taxonomy.
 

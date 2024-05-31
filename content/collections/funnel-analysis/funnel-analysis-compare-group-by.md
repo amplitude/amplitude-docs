@@ -5,8 +5,8 @@ title: 'Compare group-by values in your Funnel Analysis chart to each other'
 source: 'https://help.amplitude.com/hc/en-us/articles/19458300523291-Compare-group-by-values-in-your-Funnel-Analysis-chart-to-each-other'
 this_article_will_help_you:
   - 'Quickly compare a group-by value to that of a baseline property'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1715112926
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717015077
 ---
 Funnel charts allow you to compare a group-by property to another baseline property. Once your Funnel chart has a Segment property group-by, click the *Compare* dropdown to choose a value for comparison.
 
@@ -16,6 +16,6 @@ With that value selected, the conversion percentage difference will be seen on t
   
 There are some limitations to Segment property group-by comparisons:
 
-* They are only available for conversion and conversion over time.
-* They are only applicable to compare to property value or compare to past.
-* You are limited to a maximum of two segment group-bys.
+* They are only available for Conversion and Conversion Over Time.
+* They are applicable to Compare to Property Value or Compare to Past only.
+* You are limited to a maximum of two Segment group-bys.

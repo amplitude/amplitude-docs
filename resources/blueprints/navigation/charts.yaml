@@ -1,0 +1,20 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: icon
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Icon
+              width: 50
+          -
+            handle: underline
+            field:
+              type: toggle
+              display: Underline
+              width: 50

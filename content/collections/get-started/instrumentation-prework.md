@@ -5,8 +5,8 @@ title: 'Instrumentation pre-work'
 source: 'https://help.amplitude.com/hc/en-us/articles/206404618-Instrumentation-pre-work'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713287181
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1716572424
 this_article_will_help_you:
   - 'Determine how best to instrument Amplitude based off of your business goals'
 ---
@@ -48,4 +48,4 @@ We recommend combining web and mobile data into the same project if your product
 
 ## Next steps
 
-If you still have questions, read the [Help Center article on instrumentation FAQs](/get-started/create-project) and [get data into Amplitude.](/get-started/get-data-in)
+If you still have questions, read this [article on instrumentation FAQs](/get-started/create-project) and [get data into Amplitude.](/get-started/get-data-in)
