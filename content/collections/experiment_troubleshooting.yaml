@@ -1,0 +1,16 @@
+title: 'Experiment Troubleshooting'
+template: default
+layout: layout
+revisions: false
+route: '/experiment/troubleshooting/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: experiment

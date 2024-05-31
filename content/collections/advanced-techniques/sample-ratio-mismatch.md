@@ -1,5 +1,6 @@
 ---
 id: a8dcb2f4-7dd9-49dd-9a20-4ae79a92646c
+published: false
 blueprint: advanced-technique
 title: 'Sample ratio mismatches: Debug issues with experiment allocations'
 source: 'https://help.amplitude.com/hc/en-us/articles/8043418569371-Sample-ratio-mismatches-Debug-issues-with-experiment-allocations'
@@ -7,8 +8,8 @@ this_article_will_help_you:
   - 'Understand what a sample ratio mismatch is, and why it’s a problem'
   - 'Diagnose the root cause of the issue'
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1714079753
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717179385
 ---
 In Amplitude Experiment, a sample ratio mismatch (SRM) occurs when the **observed** allocation for variants **significantly differs** from the **specified** allocation. 
 

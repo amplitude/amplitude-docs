@@ -1,15 +1,17 @@
 ---
 id: 8bfbe6f6-89ae-4878-abfe-89bcc113cddf
 blueprint: experiment
-title: 'Amplitude Experiment overview: Optimize your product experience through A/B testing'
+title: Overview
 source: 'https://help.amplitude.com/hc/en-us/articles/360061270232-Amplitude-Experiment-overview-Optimize-your-product-experience-through-A-B-testing'
 this_article_will_help_you:
   - 'Understand the value of experimentation in general, and how Amplitude Experiment can help your company make better decisions and build better products'
   - 'Familiarize yourself with the concepts and processes involved in creating an experiment or feature flag in Amplitude Experiment'
-landing: false
+landing: true
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1714665949
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1716916795
+sourxe: 'https://help.amplitude.com/hc/en-us/articles/360061270232-Amplitude-Experiment-overview-Optimize-your-product-experience-through-A-B-testing'
+landing_blurb: 'Learn the value of experimentation in your product.'
 ---
 For decades, product teams have relied on **experimentation** as a way to prioritize and implement product adjustments. But it’s never been easy. Because of that, these experiments often just tweak peripheral issues around the margins, instead of driving the big-picture changes that optimize the overall product experience. 
 

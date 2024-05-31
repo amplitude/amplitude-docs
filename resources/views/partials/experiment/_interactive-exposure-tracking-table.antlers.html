@@ -1,0 +1,47 @@
+<pre><code data-theme="dracula" data-lang="bash" class="torchlight" style="background-color: #282A36; --theme-selection-background: #BD93F9;"><!-- Syntax highlighted by torchlight.dev --><div class="line"><span style="color:#6272A4; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #F8F8F2;">curl </span><span style="color: #BD93F9;">--request</span><span style="color: #F8F8F2;"> </span><span style="color: #F1FA8C;">POST</span><span style="color: #F8F8F2;"> </span><span style="color: #FF79C6;">\</span></div><div class="line"><span style="color:#6272A4; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #F8F8F2;">         --url </span><span style="color: #E9F284;">'</span><span style="color: #F1FA8C;"><span id="curl_url"></span></span><span style="color: #E9F284;">'</span><span style="color: #F8F8F2;"> </span><span style="color: #FF79C6;">\</span></div><div class="line"><span style="color:#6272A4; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #F8F8F2;">         --data </span><span style="color: #E9F284;">'</span><span style="color: #F1FA8C;">{"api_key":"<span id="curl_api_key"></span>","events":[{"event_type":"$exposure","user_id":"<span id="curl_user_id"></span>","device_id":"<span id="curl_device_id"></span>","event_properties":{"flag_key":"<span id="curl_flag_key"></span>","variant":"<span id="curl_variant"></span>"}}]}</span><span style="color: #E9F284;">'</span></div></code></pre>
+
+
+<div class="mt-8 grid grid-cols-2 gap-4 max-w">
+    <div class="grid grid-cols-1 gap-6 w-80">
+        <label for="" class="block">
+            <span class="text-xs text-mountain-mist-300">Analytics API key (required)</span>
+            <input class="mt-1 block w-full" type="text" name="" id="api_key" placeholder="analytics_api_key">
+        </label>
+        <label for="" class="block">
+            <span class="text-xs text-mountain-mist-300">User ID</span>
+            <input class="mt-1 block w-full" type="text" name="" id="user_id" placeholder="user_id">
+        </label>
+        <label for="" class="block">
+            <span class="text-xs text-mountain-mist-300">Device ID</span>
+            <input class="mt-1 block w-full" type="text" name="" id="device_id" placeholder="device_id">
+        </label>
+        <label for="" class="block">
+            <span class="text-xs text-mountain-mist-300">Flag key</span>
+            <input class="mt-1 block w-full" type="text" name="" id="flag_key" placeholder="flag_key">
+        </label>
+        <label for="" class="block">
+            <span class="text-xs text-mountain-mist-300">Variant</span>
+            <input class="mt-1 block w-full" type="text" name="" id="variant" placeholder="variant">
+        </label>
+        <label for="" class="block">
+            <span class="text-xs text-mountain-mist-300">Server zone</span>
+            <select class="mt-1 block w-full" type="text" name="" id="server-zone" onchange="updateUrl()">
+                <option value="US">US</option>
+                <option value="EU">EU</option>
+            </select>
+        </label>
+        <button class="md-button w-1/2 border rounded py-1 hover:bg-amp-blue-900 transition-colors" id="at-action-button">Send</button>
+    </div>
+<div class="">
+<span id="failure_tip"></span>
+<label for="" class="block">
+<span class="text-xs text-mountain-mist-300">Result</span>
+<pre class="overflow-scroll max-h-[575px] bg-amp-gray-900 mt-0 w-full">
+<code id="result" class="text-gray-100">
+</code>
+</pre>
+</label>
+</div>
+</div>
+<script src="/js/api-table.js"></script>
+<script src="/js/interactive-exposure-tracking-table.js"></script>

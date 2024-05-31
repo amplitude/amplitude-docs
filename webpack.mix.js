@@ -12,6 +12,9 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/site.js', 'public/js')
+mix.js('resources/js/api-table.js', 'public/js')
+mix.js('resources/js/interactive-exposure-tracking-table.js', 'public/js')
+
     
 mix.postCss('resources/css/site.css', 'public/css', [
     require('postcss-import'),

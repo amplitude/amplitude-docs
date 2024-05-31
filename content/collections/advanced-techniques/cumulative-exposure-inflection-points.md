@@ -1,14 +1,14 @@
 ---
 id: 6b86591a-0640-488d-b94c-5973aea3308b
 blueprint: advanced-technique
-title: 'Interpret the cumulative exposures graph: Inflection points and flattened slopes'
+title: 'The cumulative exposures graph: Inflection points and flattened slopes'
 source: 'https://help.amplitude.com/hc/en-us/articles/20722788163995-Interpret-the-cumulative-exposures-graph-Inflection-points-and-flattened-slopes'
 this_article_will_help_you:
   - 'Interpret the meaning of an inflection point in your cumulative exposures graph'
   - "Determine why you're seeing a flattened slope"
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1714079425
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1716329416
 ---
 ## Inflection point
 
