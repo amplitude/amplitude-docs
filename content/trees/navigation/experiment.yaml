@@ -188,6 +188,22 @@ tree:
         id: 4eed3981-f9ec-470d-8d49-3a0e4a33ebd0
         entry: 599fcf45-81ec-43f9-a3a0-a253fd999a34
   -
+    id: a81595e8-7e05-4e26-ab71-e608ac3ca9fc
+    title: Troubleshooting
+    children:
+      -
+        id: 94d19551-1ae1-4d4d-bf93-a0a9f187b2d8
+        entry: 3599cb83-1395-4690-83fa-54379538dd5b
+      -
+        id: 017ee388-a2b0-4610-a05d-a29927eeb42e
+        entry: 71dedb3e-eb17-4ed1-9df0-bcbc78a2e6a2
+      -
+        id: 6d90b3c9-30b4-4d23-8bce-ad9f10343cc6
+        entry: 9e7b1e59-fd41-4088-9d7f-be591c85b314
+      -
+        id: 9e29658b-9344-4daf-b8ba-7113b6b418cf
+        entry: 982a0f19-3b05-4358-adda-93a5b3c60919
+  -
     id: 6ccf9a45-58d5-45bf-8477-1c96b12795b4
     entry: eeaf3cb1-5593-4fc4-a220-3ad4d73e8c82
     children:
