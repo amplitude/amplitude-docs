@@ -1,13 +1,13 @@
 ---
 id: cd959cf2-2c2e-4672-9616-a5aa254e17c6
 blueprint: under-the-hood
-title: 'Performance and scaling in Amplitude Experiment'
+title: 'Performance and scaling'
 source: 'https://help.amplitude.com/hc/en-us/articles/360061687371-Performance-and-scaling-in-Amplitude-Experiment'
 this_article_will_help_you:
   - "Understand how Amplitude Experiment's architecture supports fast and reliable service"
   - 'Learn more about implementation recommendations to ensure the best experience'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1715104731
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1716329160
 ---
 In order to run a powerful, insight-generating experimentation program, you’ll need three things:
 
