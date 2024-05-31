@@ -159,6 +159,12 @@ tree:
       -
         id: cb690c88-7ceb-4a16-a42b-6ed9dedb3377
         entry: be8fad75-98bf-44c4-945a-a0f8a8bb1d94
+      -
+        id: fb5ca07a-0584-47b8-80e2-4d039c0d941e
+        entry: 517e4c3e-fefb-469c-ae3f-3567188b73bc
+      -
+        id: e038258d-fee8-4130-9e53-f83fb820339a
+        entry: adaff2f2-ddd7-41b5-af79-7e0fe0c599a9
   -
     id: dffc71a5-47ac-4420-a1c1-929df24423ce
     title: 'Experiment REST APIs'
