@@ -1,0 +1,50 @@
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "{{title}}",
+      "description": "{{content | strip_tags | safe_truncate(100)}}",
+      "url": "{{ url }}",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Amplitude",
+        "legalName": "Amplitude, Inc.",
+        "url": "https://amplitude.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://amplitude.com/nextjs-public/amplitude-default-seo.png"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "201 3rd St #200",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "postalCode": "94103",
+          "addressCountry": "USA"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "[+650-988-5131]",
+          "contactType": "Customer Support",
+          "email": "sales@amplitude.com"
+        },
+        "sameAs": [
+          "https://twitter.com/Amplitude_HQ",
+          "https://www.facebook.com/AmplitudeAnalytics/",
+          "https://www.linkedin.com/company/amplitude-analytics"
+        ]
+      },
+      "datePublished": "",
+      "dateModified": "{{ last_modified }}",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ url }}"
+      },
+      "author": [
+        {
+          "@type": "Organization",
+          "name": "Amplitude"
+        }
+      ]
+    }
+</script>
