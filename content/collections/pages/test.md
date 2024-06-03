@@ -4,7 +4,7 @@ blueprint: home
 title: 'Amplitude Documentation'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1714512021
+updated_at: 1717434208
 hide_toc: true
 hide_side-nav: true
 template: home
@@ -63,6 +63,7 @@ popular_content:
     icon: home/amp-experiment.svg
     type: popular_item
     enabled: true
+    blurb: 'Flags enable you to enable or disable features with no code changes.'
   -
     id: lvmoa29k
     article: 783ea30b-4de1-4910-acdb-ca114cbe1058
