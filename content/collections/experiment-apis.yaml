@@ -2,7 +2,7 @@ title: 'Experiment APIs'
 template: default
 layout: layout
 revisions: false
-route: '/experiment-apis/{slug}'
+route: '/apis/experiment/{slug}'
 sort_dir: asc
 date_behavior:
   past: public
@@ -12,5 +12,7 @@ preview_targets:
     label: Entry
     url: '{permalink}'
     refresh: true
+inject:
+  nav_title: apis
 structure:
   root: false

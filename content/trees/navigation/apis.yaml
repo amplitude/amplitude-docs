@@ -17,6 +17,9 @@ tree:
     title: 'Analytics APIs'
     children:
       -
+        id: 0995e778-0d9d-4ae3-9dca-e893315fbb06
+        entry: aa68977b-f93c-4a87-b03d-64691d7a0306
+      -
         id: b63b598c-4fa3-48eb-99a5-c3d3c4d9dd4e
         entry: bd6019bc-6556-4d83-ad33-70183a3a42f3
       -
@@ -75,8 +78,12 @@ tree:
     title: 'Experiment APIs'
     children:
       -
+        id: dc28e58b-0fb9-425f-8f46-3d85886e388a
+        entry: de81c9f1-331d-4177-b7da-e947101992b4
+      -
         id: ede83b7c-adfd-4b8e-bb35-0788f7f4643a
         entry: 599fcf45-81ec-43f9-a3a0-a253fd999a34
+        title: 'Evaluation API'
       -
         id: 822bbc9a-a515-4c4c-a601-994b51a1db1c
         title: 'Management API'
@@ -84,12 +91,20 @@ tree:
           -
             id: 2321a74b-54e0-4d3a-8d6b-dcfb5fa1f068
             entry: f64a356a-2a9a-44e3-a482-f429a565a12c
+            title: 'Management API'
           -
             id: dbb3c7d3-7aa3-4a0d-8f6a-2549b653c4de
             entry: e082b577-8058-494d-8567-d4ad3ccca149
+            title: 'Management API: Deployment Endpoints'
           -
             id: b3d84270-60f2-4543-9021-6652a614ba52
             entry: bc8ec21e-a8e1-4857-8557-d24143e42865
+            title: 'Management API: Experiment Endpoints'
           -
             id: 9de60646-ed35-487a-9f28-7826de47b382
             entry: 223ccb37-444f-430f-8910-0c1d079aca89
+            title: 'Management API: Flag Endpoints'
+          -
+            id: 446b9af8-4242-466e-a2e6-9a117c7fca98
+            entry: 8554f01f-abfc-4669-ae44-f00f5d2b4ccd
+            title: 'Management API: Version Endpoints'

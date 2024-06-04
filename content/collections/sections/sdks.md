@@ -5,7 +5,7 @@ title: SDKs
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 parent: 8f99c8f9-2474-4ae9-858c-935823bab025
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715879005
+updated_at: 1717525435
 nav_title: developers
 exclude_from_sitemap: false
 ---
@@ -24,7 +24,7 @@ Learn about when you should choose client-side or server-side SDKs in the Client
 Visit the SDK Catalog page to see all the current SDK documentation.
 
 - [Analytics and Data SDKs](/sdks/analytics)
-- Experiment SDKs
+- [Experiment SDKs](/sdks/experiment-sdks)
 - Session Replay SDKs
 
 ## Work with Ampli

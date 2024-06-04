@@ -47,6 +47,7 @@ fields:
         go: go
         dart: dart
         c-plus-plus: c++
+        php: php
       inline: true
       type: checkboxes
       display: 'Supported Languages'
@@ -76,6 +77,7 @@ fields:
         - table
         - code
         - codeblock
+        - asset
       antlers: true
       type: markdown
       display: Content
