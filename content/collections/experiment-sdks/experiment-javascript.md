@@ -11,7 +11,7 @@ author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717441631
+updated_at: 1717526443
 sdk_status: current
 article_type: core
 supported_languages:
@@ -20,12 +20,13 @@ supported_languages:
 releases_url: 'https://github.com/amplitude/experiment-js-client/releases'
 api_reference_url: 'https://amplitude.github.io/experiment-js-client/'
 shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/experiment-js-client'
+logo: icons/js.svg
 ---
 Official documentation for Amplitude Experiment's Client-side JavaScript SDK implementation.
 
 ## Install
 
-Install the Experiment Javascript Client SDK with one of the three following methods:
+Install the Experiment JavaScript Client SDK with one of the three following methods:
 
 {{partial:tabs tabs="npm, yarn, script"}}
 {{partial:tab name="npm"}}
@@ -315,6 +316,7 @@ Configure the behavior of `start()` by setting `fetchOnStart` in the SDK configu
 
 * If your application never relies on remote evaluation, set `fetchOnStart` to `false` to avoid increased startup latency caused by remote evaluation.
 * If your application relies on remote evaluation, but not right at startup, you may set `fetchOnStart` to `false` and call `fetch()` and await the promise separately.
+
 {{partial:tabs tabs="Amplitude, Third party"}}
 {{partial:tab name="Amplitude"}}
 ```js

@@ -13,7 +13,8 @@ releases_url: 'https://github.com/amplitude/experiment-php-server/releases'
 shields_io_badge: 'https://img.shields.io/packagist/v/amplitude/experiment-php-server.svg'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717450325
+updated_at: 1717526471
+logo: icons/php.svg
 ---
 Official documentation for Amplitude Experiment's server-side PHP SDK implementation.
 

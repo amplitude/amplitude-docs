@@ -14,7 +14,8 @@ api_reference_url: 'https://amplitude.github.io/experiment-node-server/'
 shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/experiment-node-server'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717450931
+updated_at: 1717526460
+logo: icons/node.svg
 ---
 Official documentation for Amplitude Experiment's server-side Node.js SDK implementation.
 

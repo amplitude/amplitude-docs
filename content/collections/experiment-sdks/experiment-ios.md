@@ -14,7 +14,8 @@ api_reference_url: 'https://amplitude.github.io/experiment-ios-client/'
 shields_io_badge: 'https://img.shields.io/cocoapods/v/AmplitudeExperiment'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717440570
+updated_at: 1717526435
+logo: icons/ios.svg
 ---
 Official documentation for Amplitude Experiment's Client-side iOS SDK implementation.
 
@@ -301,6 +302,7 @@ Configure the behavior of `start()` by setting `fetchOnStart` in the SDK configu
 
 * If your application never relies on remote evaluation, set `fetchOnStart` to `false` to avoid increased startup latency caused by remote evaluation.
 * If your application relies on remote evaluation, but not right at startup, you may set `fetchOnStart` to `false` and call `fetch()` separately.
+* 
 {{partial:tabs tabs="Amplitude, Third party"}}
 {{partial:tab name="Amplitude"}}
 ```swift
