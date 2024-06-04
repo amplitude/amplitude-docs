@@ -19,11 +19,11 @@ logo: icons/python.svg
 ---
 Official documentation for Amplitude Experiment's server-side Python SDK implementation.
 
-This documentation has separate sections for [remote](/experiment/remote-evaluation) and [local](/experiment/local-evaluation) evaluation.
+This documentation has separate sections for [remote](/docs/experiment/remote-evaluation) and [local](/docs/experiment/local-evaluation) evaluation.
 
 ## Remote evaluation
 
-Implements fetching variants for a user via [remote evaluation](/experiment/remote-evaluation).
+Implements fetching variants for a user via [remote evaluation](/docs/experiment/remote-evaluation).
 
 ### Install
 
@@ -70,7 +70,7 @@ if variant:
 
 ### Initialize
 
-The SDK client should be initialized in your server on startup. The [deployment key](/experiment/data-model#deployments) argument passed into the `api_key` parameter must live within the same project that you are sending analytics events to.
+The SDK client should be initialized in your server on startup. The [deployment key](/docs/experiment/data-model#deployments) argument passed into the `api_key` parameter must live within the same project that you are sending analytics events to.
 
 ```python
 Experiment.initialize_remote(api_key, config = None) : RemoteEvaluationClient
@@ -78,7 +78,7 @@ Experiment.initialize_remote(api_key, config = None) : RemoteEvaluationClient
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `api_key` | required | The [deployment key](/experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
+| `api_key` | required | The [deployment key](/docs/experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 {{partial:admonition type="info" heading="Timeout and retry configuration"}}
@@ -110,7 +110,7 @@ If you're using Amplitude's EU data center, configure the `serverUrl` option on 
 
 ### Fetch
 
-Fetches variants for a [user](/experiment/data-model#users) and returns the results. This function [remote evaluates](/experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
+Fetches variants for a [user](/docs/experiment/data-model#users) and returns the results. This function [remote evaluates](/docs/experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
 
 ```python
 fetch_v2(user: User) : Variants
@@ -118,7 +118,7 @@ fetch_v2(user: User) : Variants
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
-| `user` | required | The [user](/experiment/data-model#users) to remote fetch variants for. |
+| `user` | required | The [user](/docs/experiment/data-model#users) to remote fetch variants for. |
 
 ```python
 user = User(
@@ -152,7 +152,7 @@ fetch_async_v2(user: User, callback)
 
 | Parameter  | Requirement | Description                                                                   |
 |------------|-------------|-------------------------------------------------------------------------------|
-| `user`     | required    | The [user](/experiment/data-model#users) to remote fetch variants for. |
+| `user`     | required    | The [user](/docs/experiment/data-model#users) to remote fetch variants for. |
 | `callback` | optional    | The callback to handle the variants.                                          |
 
 ```python
@@ -169,11 +169,11 @@ experiment.fetch_async_v2(user, fetch_callback)
 
 ## Local evaluation
 
-Implements evaluating variants for a user via [local evaluation](/experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/experiment/local-evaluation#targeting-capabilities).
+Implements evaluating variants for a user via [local evaluation](/docs/experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/experiment/local-evaluation#targeting-capabilities).
 
 !!!warning "Local Evaluation Mode"
 {{partial:admonition type="warning" heading="Local evaluation mode"}}
-The local evaluation client can only evaluation flags which are [set to local evaluation mode](/experiment/advanced-techniques/create-a-local-evaluation-flag).
+The local evaluation client can only evaluation flags which are [set to local evaluation mode](/docs/experiment/advanced-techniques/create-a-local-evaluation-flag).
 {{/partial:admonition}}
 
 ### Install
@@ -229,11 +229,11 @@ variants = experiment.evaluate_v2(user)
 
 ### Initialize
 
-Initializes a [local evaluation](/experiment/local-evaluation) client.
+Initializes a [local evaluation](/docs/experiment/local-evaluation) client.
 
 !!!warning "Server Deployment Key"
 {{partial:admonition type="warning" heading="Server deployment key"}}
-You must [initialize](#initialize_1) the local evaluation client with a server [deployment](/experiment/data-model#deployments) key in to get access to local evaluation flag configs.
+You must [initialize](#initialize_1) the local evaluation client with a server [deployment](/docs/experiment/data-model#deployments) key in to get access to local evaluation flag configs.
 {{/partial:admonition}}
 
 ```python
@@ -242,7 +242,7 @@ Experiment.initialize_local(api_key, config = None) : LocalEvaluationClient
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `apiKey` | required | The server [deployment key](/experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
+| `apiKey` | required | The server [deployment key](/docs/experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 !!!tip "Flag Polling Interval"
@@ -270,7 +270,7 @@ You can configure the SDK client on initialization.
 | --- | --- | --- |
 | `api_key` | The analytics API key and NOT the experiment deployment key | *required* |
 | `cache_capacity` | The maximum number of assignments stored in the assignment cache | `65536` |
-| [Analytics SDK Options](/sdks/analytics-sdks/python/python-sdk#configuration) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
+| [Analytics SDK Options](/docs/sdks/analytics-sdks/python/python-sdk#configuration) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
 
 {{partial:admonition type="info" heading="EU data center"}}
 If you're using Amplitude's EU data center, configure the `serverUrl` option on initialization to `https://api.lab.eu.amplitude.com`
@@ -292,7 +292,7 @@ experiment.start()
 
 ### Evaluate
 
-Executes the [evaluation logic](/experiment/implementation) using the flags pre-fetched on [`start()`](#start). Evaluate must be given a user object argument and can optionally be passed an array of flag keys if only a specific subset of required flag variants are required.
+Executes the [evaluation logic](/docs/experiment/implementation) using the flags pre-fetched on [`start()`](#start). Evaluate must be given a user object argument and can optionally be passed an array of flag keys if only a specific subset of required flag variants are required.
 
 !!!tip "Automatic Assignment Tracking"
 {{partial:admonition type="tip" heading="Automatic assignment tracking"}}
@@ -305,7 +305,7 @@ evaluate_v2(self, user: User, flag_keys: List[str]) : Dict[str, Variant]
 
 | Parameter   | Requirement | Description |
 |-------------| --- | --- |
-| `user`      | required | The [user](/experiment/data-model#users) to evaluate. |
+| `user`      | required | The [user](/docs/experiment/data-model#users) to evaluate. |
 | `flag_keys` | optional | Specific flags or experiments to evaluate. If nil, or empty, all flags and experiments are evaluated. |
 
 ```python

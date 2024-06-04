@@ -32,7 +32,7 @@ composer require amplitude/experiment-php-server
 
 ## Remote evaluation
 
-This SDK supports and uses [remote evaluation](/experiment/remote-evaluation) to fetch variants for users.
+This SDK supports and uses [remote evaluation](/docs/experiment/remote-evaluation) to fetch variants for users.
 
 {{partial:admonition type="tip" heading="Quick start"}}
 1. [Initialize the experiment client](#initialize-remote-evaluation)
@@ -67,7 +67,7 @@ if ($variant) {
 
 ### Initialize remote evaluation
 
-Configure the SDK to initialize on server startup. The [deployment key](/experiment/data-model#deployments) argument you pass into the `apiKey` parameter must live within the same project that you send analytics events to.
+Configure the SDK to initialize on server startup. The [deployment key](/docs/experiment/data-model#deployments) argument you pass into the `apiKey` parameter must live within the same project that you send analytics events to.
 
 ```php
 <?php
@@ -76,7 +76,7 @@ initializeRemote(string $apiKey, ?RemoteEvaluationConfig $config = null): Remote
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `apiKey` | required | The [deployment key](/experiment/data-model#deployments) which authorizes fetch requests and determines which flags to evaluate for the user. |
+| `apiKey` | required | The [deployment key](/docs/experiment/data-model#deployments) which authorizes fetch requests and determines which flags to evaluate for the user. |
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 #### Configuration
@@ -98,7 +98,7 @@ If you use Amplitude's EU data center, set the `serverUrl` option on initializat
 
 ### Fetch
 
-Fetches variants for a [user](/experiment/data-model#users) and returns the results. This function [remote evaluates](/experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
+Fetches variants for a [user](/docs/experiment/data-model#users) and returns the results. This function [remote evaluates](/docs/experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
 
 ```php
 <?php
@@ -108,7 +108,7 @@ fetch(User $user, array $flagKeys = []): array<Variant>
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
-| `user` | required | The [user](/experiment/data-model#users) to remote fetch variants for. |
+| `user` | required | The [user](/docs/experiment/data-model#users) to remote fetch variants for. |
 | `flagKeys` | optional | Specific flags or experiments to evaluate. If empty, Amplitude evaluates all flags and experiments. |
 
 ```php
@@ -137,11 +137,11 @@ if ($variant) {
 
 ## Local evaluation
 
-Implements evaluation of variants for a user through [local evaluation](/experiment/local-evaluation). If you plan to use local evaluation, you should [understand the tradeoffs](/experiment/local-evaluation#targeting-capabilities).
+Implements evaluation of variants for a user through [local evaluation](/docs/experiment/local-evaluation). If you plan to use local evaluation, you should [understand the tradeoffs](/docs/experiment/local-evaluation#targeting-capabilities).
 
 
 {{partial:admonition type="note" heading="Local evaluation more"}}
-The local evaluation client can only evaluate flags which are [set to local evaluation mode](/experiment/advanced-techniques/create-a-local-evaluation-flag).
+The local evaluation client can only evaluate flags which are [set to local evaluation mode](/docs/experiment/advanced-techniques/create-a-local-evaluation-flag).
 {{/partial:admonition}}
 
 {{partial:admonition type="tip" heading="Quick start"}}
@@ -171,11 +171,11 @@ The local evaluation client can only evaluate flags which are [set to local eval
 
 ### Initialize local evaluation
 
-For more information, see [Local Evaluation](/experiment/local-evaluation).
+For more information, see [Local Evaluation](/docs/experiment/local-evaluation).
 
 !!!warning "Server Deployment Key"
 {{partial:admonition type="warning" heading="Server deployment key"}}
-[Initialize](#initialize-local-evaluation) the local evaluation client with a server [deployment](/experiment/data-model#deployments) key to access local evaluation flag configurations.
+[Initialize](#initialize-local-evaluation) the local evaluation client with a server [deployment](/docs/experiment/data-model#deployments) key to access local evaluation flag configurations.
 {{/partial:admonition}}
 
 ```php
@@ -184,7 +184,7 @@ initializeLocal(string $apiKey, ?LocalEvaluationConfig $config = null): LocalEva
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `apiKey` | required | The server [deployment key](/experiment/data-model#deployments) which authorizes fetch requests and determines which flags to evaluate for the user. |
+| `apiKey` | required | The server [deployment key](/docs/experiment/data-model#deployments) which authorizes fetch requests and determines which flags to evaluate for the user. |
 | `config` | optional | The client [configuration](#configuration_1) used to customize SDK client behavior. |
 
 #### Configuration
@@ -238,7 +238,7 @@ $client->getFlagConfigs();
 
 ### Evaluate
 
-Executes the [evaluation logic](/experiment/implementation) using the flags fetched on [`refreshFlagConfigs()`](#refreshFlagConfigs). Give `evaluate()` a user object argument. Optionally pass an array of flag keys if you require only a specific subset of required flag variants.
+Executes the [evaluation logic](/docs/experiment/implementation) using the flags fetched on [`refreshFlagConfigs()`](#refreshFlagConfigs). Give `evaluate()` a user object argument. Optionally pass an array of flag keys if you require only a specific subset of required flag variants.
 
 {{partial:admonition type="tip" heading="Automatic assignment tracking"}}
 Set [`assignmentConfig`](#configuration_1) to automatically track an assignment event to Amplitude when you call `evaluate()`.
@@ -250,7 +250,7 @@ evaluate(User $user, array $flagKeys = []): array
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `user` | required | The [user](/experiment/data-model#users) to evaluate. |
+| `user` | required | The [user](/docs/experiment/data-model#users) to evaluate. |
 | `flagKeys` | optional | Specific flags or experiments to evaluate. If empty, Amplitude evaluates all flags and experiments. |
 
 ```php

@@ -26,7 +26,7 @@ Official documentation for Amplitude Experiment's Client-side React Native SDK.
 ## Install
 
 {{partial:admonition type="warning" heading="Web compatibility"}}
-Experiment React Native SDK is only compatible with iOS and Android React Native projects. Use the [JavaScript SDK](/sdks/experiment-sdks/experiment-javascript) to support all three platforms.
+Experiment React Native SDK is only compatible with iOS and Android React Native projects. Use the [JavaScript SDK](/docs/sdks/experiment-sdks/experiment-javascript) to support all three platforms.
 {{/partial:admonition}}
 
 Install the Experiment JavaScript Client SDK.
@@ -83,7 +83,7 @@ Native SDKs are used under-the-hood, so you need to `await` the result of all fu
 
 ### Initialize
 
-The SDK client should be initialized in your application on startup. The [deployment key](/experiment/data-model#deployments) argument passed into the `apiKey` parameter must live within the same project that you are sending analytics events to.
+The SDK client should be initialized in your application on startup. The [deployment key](/docs/experiment/data-model#deployments) argument passed into the `apiKey` parameter must live within the same project that you are sending analytics events to.
 
 ```js
 initialize(apiKey: string, config?: ExperimentConfig): Promise<boolean>
@@ -91,7 +91,7 @@ initialize(apiKey: string, config?: ExperimentConfig): Promise<boolean>
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `apiKey` | required | The [deployment key](/experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
+| `apiKey` | required | The [deployment key](/docs/experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 The initializer returns a singleton instance, so subsequent initializations for the same instance name will always return the initial instance. To create multiple instances, use the `instanceName` [configuration](#configuration).
@@ -148,7 +148,7 @@ If you're using Amplitude's EU data center, configure the `serverUrl` option on 
 
 ### Fetch
 
-Fetches variants for a [user](/experiment/data-model#users) and store the results in the client for fast access. This function [remote evaluates](/experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
+Fetches variants for a [user](/docs/experiment/data-model#users) and store the results in the client for fast access. This function [remote evaluates](/docs/experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
 
 ```js
 fetch(user?: ExperimentUser): Promise<boolean>
@@ -156,7 +156,7 @@ fetch(user?: ExperimentUser): Promise<boolean>
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
-| `user` | optional | Explicit [user](/experiment/data-model#users) information to pass with the request to evaluate. This user information is merged with user information provided from [integrations](#integrations) via the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. |
+| `user` | optional | Explicit [user](/docs/experiment/data-model#users) information to pass with the request to evaluate. This user information is merged with user information provided from [integrations](#integrations) via the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. |
 
 Amplitude recommends calling `fetch()` during application start up so that the user gets the most up-to-date variants for the application session. Furthermore, you'll need to wait for the fetch request to return a result before rendering the user experience in order to avoid the interface "flickering".
 
@@ -180,7 +180,7 @@ await Experiment.fetch();
 {{partial:admonition type="tip" heading="Fetch when user identity changes"}}
 If you want the most up-to-date variants for the user, it is recommended that you call `fetch()` whenever the user state changes in a meaningful way. For example, if the user logs in and receives a user ID, or has a user property set which may effect flag or experiment targeting rules.
 
-In the case of **user properties**, Amplitude recommends passing new user properties explicitly to `fetch()` instead of relying on user enrichment prior to [remote evaluation](/experiment/remote-evaluation). This is because user properties that are synced remotely through a separate system have no timing guarantees with respect to `fetch()`--i.e. a race.
+In the case of **user properties**, Amplitude recommends passing new user properties explicitly to `fetch()` instead of relying on user enrichment prior to [remote evaluation](/docs/experiment/remote-evaluation). This is because user properties that are synced remotely through a separate system have no timing guarantees with respect to `fetch()`--i.e. a race.
 {{/partial:admonition}}
 
 {{partial:admonition type="tip" heading="Timeout and retries"}}
@@ -189,7 +189,7 @@ If `fetch()` times out (default 10 seconds) or fails for any reason, the SDK cli
 
 ### Variant
 
-Access a [variant](/experiment/data-model#variants) for a [flag or experiment](/experiment/data-model#flags-and-experiments) from the SDK client's local store.
+Access a [variant](/docs/experiment/data-model#variants) for a [flag or experiment](/docs/experiment/data-model#flags-and-experiments) from the SDK client's local store.
 
 {{partial:admonition type="info" heading="Automatic exposure tracking"}}
 When an [integration](#integrations) is used or a custom [exposure tracking provider](#exposure-tracking-provider) is set, `variant()` will automatically track an exposure event through the tracking provider. To disable this functionality, [configure](#configuration) `automaticExposureTracking` to be `false`, and track exposures manually using [`exposure()`](#exposure).
@@ -205,7 +205,7 @@ variantWithFallback(key: string, fallback: Variant): Promise<Variant>
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `key` | required | The **flag key** to identify the [flag or experiment](/experiment/data-model#flags-and-experiments) to access the variant for. |
+| `key` | required | The **flag key** to identify the [flag or experiment](/docs/experiment/data-model#flags-and-experiments) to access the variant for. |
 | `fallback` | optional | The value to return if no variant was found for the given `flagKey`. |
 
 When determining which variant a user has been bucketed into, you'll want to compare the variant `value` to a well-known string.
@@ -220,7 +220,7 @@ if (variant.value === 'on') {
 ```
 
 {{partial:admonition type="info" heading="Access the variant's payload"}}
-A variant may also be configured with a dynamic [payload](/experiment/data-model#variants) of arbitrary data. Access the `payload` field from the variant object after checking the variant's `value`.
+A variant may also be configured with a dynamic [payload](/docs/experiment/data-model#variants) of arbitrary data. Access the `payload` field from the variant object after checking the variant's `value`.
 
 ```js
 const variant = await Experiment.variant('<FLAG_KEY>');
@@ -243,7 +243,7 @@ if (variant === 'control') {
 
 ### All
 
-Access all [variants](/experiment/data-model#variants) stored by the SDK client.
+Access all [variants](/docs/experiment/data-model#variants) stored by the SDK client.
 
 ```js
 all(): Promise<Variants>
@@ -251,7 +251,7 @@ all(): Promise<Variants>
 
 ### Exposure
 
-Manually track an [exposure event](/experiment/under-the-hood/event-tracking#exposure-events) for the current variant of the given flag key through configured [integration](#integrations) or custom [exposure tracking provider](#exposure-tracking-provider). Generally used in conjunction with setting the `automaticExposureTracking` [configuration](#configuration) optional to `false`.
+Manually track an [exposure event](/docs/experiment/under-the-hood/event-tracking#exposure-events) for the current variant of the given flag key through configured [integration](#integrations) or custom [exposure tracking provider](#exposure-tracking-provider). Generally used in conjunction with setting the `automaticExposureTracking` [configuration](#configuration) optional to `false`.
 
 ```js
 exposure(key: string): Promise<boolean>
@@ -259,7 +259,7 @@ exposure(key: string): Promise<boolean>
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `key` | required | The **flag key** to identify the [flag or experiment](/experiment/data-model#flags-and-experiments) variant to track an [exposure event](/experiment/under-the-hood/event-tracking#exposure-events) for. |
+| `key` | required | The **flag key** to identify the [flag or experiment](/docs/experiment/data-model#flags-and-experiments) variant to track an [exposure event](/docs/experiment/under-the-hood/event-tracking#exposure-events) for. |
 
 ```js
 const variant = await Experiment.variant('<FLAG_KEY>');
