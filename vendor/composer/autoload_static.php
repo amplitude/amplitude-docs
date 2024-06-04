@@ -122,10 +122,10 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         '9e4824c5afbdc1482b6025ce3d4dfde8' => __DIR__ . '/..' . '/league/csv/src/functions_include.php',
         '3d52f551daf8fb18ca65f91322628905' => __DIR__ . '/..' . '/statamic/stringy/src/Create.php',
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
-        '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '8e144857f0908e7c5a12fb79493476b9' => __DIR__ . '/..' . '/statamic/cms/src/helpers.php',
         '84b9d66126bd3eac69daa59c72f7cf8f' => __DIR__ . '/..' . '/statamic/cms/src/namespaced_helpers.php',
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '4a1f389d6ce373bda9e57857d3b61c84' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/helpers.php',
         'c72349b1fe8d0deeedd3a52e8aa814d8' => __DIR__ . '/..' . '/mockery/mockery/library/helpers.php',
         'ce9671a430e4846b44e1c68c7611f9f5' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
@@ -303,6 +303,7 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
             'Archetype\\Tests\\' => 16,
             'Archetype\\' => 10,
             'App\\' => 4,
+            'AltDesign\\AltSitemap\\' => 21,
         ),
     );
 
@@ -761,6 +762,10 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
             0 => __DIR__ . '/../..' . '/app',
             1 => __DIR__ . '/..' . '/laravel/pint/app',
         ),
+        'AltDesign\\AltSitemap\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/alt-design/alt-sitemap/src',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -788,6 +793,10 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
         'AMFReader' => __DIR__ . '/..' . '/james-heinrich/getid3/getid3/module.audio-video.flv.php',
         'AMFStream' => __DIR__ . '/..' . '/james-heinrich/getid3/getid3/module.audio-video.flv.php',
         'AVCSequenceParameterSetReader' => __DIR__ . '/..' . '/james-heinrich/getid3/getid3/module.audio-video.flv.php',
+        'AltDesign\\AltSitemap\\Events\\Sitemap' => __DIR__ . '/..' . '/alt-design/alt-sitemap/src/Events/Sitemap.php',
+        'AltDesign\\AltSitemap\\Helpers\\Data' => __DIR__ . '/..' . '/alt-design/alt-sitemap/src/Helpers/Data.php',
+        'AltDesign\\AltSitemap\\Http\\Controllers\\AltSitemapController' => __DIR__ . '/..' . '/alt-design/alt-sitemap/src/Http/Controllers/AltSitemapController.php',
+        'AltDesign\\AltSitemap\\ServiceProvider' => __DIR__ . '/..' . '/alt-design/alt-sitemap/src/ServiceProvider.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
