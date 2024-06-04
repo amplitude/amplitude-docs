@@ -12,8 +12,9 @@ github_link: 'https://github.com/amplitude/experiment-go-server'
 releases_url: 'https://github.com/amplitude/experiment-go-server/releases'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717438983
+updated_at: 1717526428
 shields_io_badge: 'https://img.shields.io/github/v/tag/amplitude/experiment-go-server?sort=semver'
+logo: icons/go.svg
 ---
 Official documentation for Amplitude Experiment's server-side Go SDK implementation.
 

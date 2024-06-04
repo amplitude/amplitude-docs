@@ -14,7 +14,8 @@ api_reference_url: 'https://amplitude.github.io/experiment-python-server'
 shields_io_badge: 'https://img.shields.io/pypi/v/amplitude-experiment'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717452891
+updated_at: 1717526478
+logo: icons/python.svg
 ---
 Official documentation for Amplitude Experiment's server-side Python SDK implementation.
 

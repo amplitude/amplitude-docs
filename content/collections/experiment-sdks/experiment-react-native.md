@@ -13,7 +13,8 @@ releases_url: 'https://github.com/amplitude/experiment-react-native-client/relea
 shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/experiment-react-native-client'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717453518
+updated_at: 1717526489
+logo: icons/react.svg
 ---
 Official documentation for Amplitude Experiment's Client-side React Native SDK.
 

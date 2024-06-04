@@ -14,7 +14,8 @@ releases_url: 'https://github.com/amplitude/experiment-jvm-server/releases'
 shields_io_badge: 'https://img.shields.io/maven-central/v/com.amplitude/experiment-jvm-server?versionPrefix=1.1'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717448987
+updated_at: 1717526452
+logo: icons/java.svg
 ---
 Official documentation for Amplitude Experiment's server-side JVM SDK implementation. This SDK may be used in **either Java or Kotlin** server-side implementations.
 

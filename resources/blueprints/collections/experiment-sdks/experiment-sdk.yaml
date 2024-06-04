@@ -6,10 +6,20 @@ tabs:
       -
         fields:
           -
+            handle: logo
+            field:
+              max_files: 1
+              container: assets
+              folder: icons
+              type: assets
+              display: Logo
+          -
             handle: title
             field:
               type: text
               required: true
+              validate:
+                - required
           -
             import: sdk_common_main
   landing_page:

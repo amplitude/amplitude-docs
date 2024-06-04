@@ -14,7 +14,8 @@ api_reference_url: 'https://amplitude.github.io/experiment-android-client/'
 shields_io_badge: 'https://img.shields.io/maven-metadata/v.svg?label=Maven%20Central&metadataUrl=https%3A%2F%2Frepo1.maven.org%2Fmaven2%2Fcom%2Famplitude%2Fexperiment-android-client%2Fmaven-metadata.xml'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717434783
+updated_at: 1717526421
+logo: icons/android.svg
 ---
 Official documentation for Amplitude Experiment's Client-side Android SDK implementation.
 
