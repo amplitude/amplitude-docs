@@ -1,0 +1,30 @@
+{
+    "name": "alt-design/alt-sitemap",
+    "description": "Alt Sitemap addon, create a sitemap from Statamic entries",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "AltDesign\\AltSitemap\\": "src"
+        }
+    },
+    "require": {
+        "php": "^8.1",
+        "statamic/cms": "^4.0|^5.0"
+    },
+    "extra": {
+        "statamic": {
+            "name": "Alt Sitemap",
+            "description": "Alt Sitemap addon"
+        },
+        "laravel": {
+            "providers": [
+                "AltDesign\\AltSitemap\\ServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": false
+        }
+    }
+}
