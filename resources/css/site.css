@@ -559,9 +559,9 @@ h2:hover a {
     bottom: -6px;
 }
 
-td {
+/* td {
     overflow: scroll
-}
+} */
 
 .current {
     border-color: #259991;

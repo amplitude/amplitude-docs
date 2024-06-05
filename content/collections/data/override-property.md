@@ -1,14 +1,16 @@
 ---
-title: "Override a property"
-source: "https://help.amplitude.com/hc/en-us/articles/10831335547035-Override-a-property"
 id: 1259587d-dfcf-4713-a57a-35b9f5660744
+blueprint: data
+title: 'Override a property'
+source: 'https://help.amplitude.com/hc/en-us/articles/10831335547035-Override-a-property'
+this_article_will_help_you:
+  - 'Understand the benefits of overriding a property'
+  - 'Teach you how to override a property'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717620722
 ---
-
-#### This article will help you:
-
-* Understand the benefits of overriding a property
-* Teach you how to override a property
-
 Overriding property details is helpful when you want to customize the property for a specific event or property group, without updating the **original** version or creating an entirely new event property. 
 
 Each property in the properties table represents the original version, which can be shared across multiple events and property groups. Amplitude Data will apply changes to the details of any property to **all events and property groups** that share the original details. When you override a property on an event or property group, any changes to that property will apply **only** to that event or property group.
@@ -28,6 +30,8 @@ To override a property on a property group, follow these steps:
 3. In the property details panel that opens, navigate to *Details > Properties*, and click the property you want to override.
 4. In the event property details panel that opens, click *Override*.
 
-**NOTE:** Any changes to a property that is overridden on a property group will apply to all events that use that property group.
+{{partial:admonition type="note" heading=""}}
+Any changes to a property that is overridden on a property group will apply to all events that use that property group.
+{{/partial:admonition}}
 
 You can always [revert an overridden property](/data/override-property) when you no longer need the override.
