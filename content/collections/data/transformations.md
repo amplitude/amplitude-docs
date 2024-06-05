@@ -1,21 +1,25 @@
 ---
-title: "Transformations: Retroactively modify your event data structure"
-source: "https://help.amplitude.com/hc/en-us/articles/5913315221915-Transformations-Retroactively-modify-your-event-data-structure"
 id: 34900232-5084-4b90-89aa-0bccbc06a95b
+blueprint: data
+title: 'Transformations: Retroactively modify your event data structure'
+source: 'https://help.amplitude.com/hc/en-us/articles/5913315221915-Transformations-Retroactively-modify-your-event-data-structure'
+this_article_will_help_you:
+  - 'Understand and create the main types of transformations'
+  - 'Edit and manage transformations'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717621255
 ---
-
-#### This article will help you:
-
-* Understand and create the main types of transformations
-* Edit and manage transformations
-
 Amplitude Data’s **transformations** feature allows you to transform event data in order to correct common implementation mistakes. Transformations are retroactive: you can create them whenever you want, and apply them to all historical data. This means you can make changes to your event data without having to touch your underlying code base. No matter when you recognize a mistake or want to make a change, you can use a transformation to correct all affected data, both historically and moving forward.
 
 Currently, transformations on Amplitude's default user properties are not supported.
 
 Transformations can only be performed in a project’s `main` branch. Ensure the *Show transformations* toggle is set to `ON`.
 
-**NOTE**: Transformations are applied at query time when a chart or cohort generates results. **This does not affect the raw data**. Raw data on Snowflake or Redshift will not be impacted by transformations.
+{{partial:admonition type="note" heading=""}}
+Transformations are applied at query time when a chart or cohort generates results. **This does not affect the raw data**. Raw data on Snowflake or Redshift will not be impacted by transformations.
+{{/partial:admonition}}
 
 ### Feature availability
 
@@ -38,11 +42,13 @@ To merge events, follow these steps:
 3. Once the events are selected, the *Transform* option will appear in the menu bar above the events list. Click *Transform*.
 4. Choose whether you want to merge the events you selected into a single event, or into a single event with an extra distinguishing property. Then click *Next*.  
   
-![merge_transform.png](/output/img/data/merge-transform-png.png)
+  ![merge_transform.png](/output/img/data/merge-transform-png.png)
+
 5. Use the drop-down in the *Transform & Merge Events* modal to tell Amplitude Data whether you’d like to merge the selected events into a **new** event, or whether you’d like to merge them into a different, **already** **existing** event. If you are merging into a new event, you’ll also name it here. Then click *Preview*.
 6. In step 5 above, if you are **not** adding the extra distinguishing property to your merged event, skip to Step 9 below.  
   
-Otherwise, select the event property you’d like to use as a differentiator from the *Select Property* drop-down. Then click *Next*.
+  Otherwise, select the event property you’d like to use as a differentiator from the *Select Property* drop-down. Then click *Next*.
+
 7. Next, you’ll map the events you’ve selected with new values for the property you selected in step 7 above. Enter the new value in the *Property Value…* field and click *Preview*.
 8. Review your changes and click *Merge* to complete the transformation.
 
@@ -54,7 +60,7 @@ For example, imagine an event property is called `title` in some cases, and in o
 
 Similarly, a user property called `name` in some cases and `NAME` in others—even though they represent the same thing for all users—could be unclear. Transforming `name` and `NAME` into `Name` is a good way to resolve any potential confusion.
 
-Note that event properties can only be merged with other event properties, and user properties can only be merged with other user properties.
+Event properties can only be merged with other event properties, and user properties can only be merged with other user properties.
 
 To merge event properties or user properties, follow these steps:
 
@@ -112,4 +118,4 @@ To delete your transformation, follow these steps:
 
 ![undoTransformation.png](/output/img/data/undotransformation-png.png)
 
-Note that deleting a transformation does **not** delete the original events.
+Deleting a transformation does **not** delete the original events.

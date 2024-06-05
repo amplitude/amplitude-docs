@@ -1,18 +1,18 @@
 ---
-title: "Streamline property updates with property groups"
-source: "https://help.amplitude.com/hc/en-us/articles/5078762828699-Streamline-property-updates-with-property-groups"
 id: 73ffabf3-485b-4bb5-84a0-aea900f3dcad
+blueprint: data
+title: 'Streamline property updates with property groups'
+source: 'https://help.amplitude.com/hc/en-us/articles/5078762828699-Streamline-property-updates-with-property-groups'
+this_article_will_help_you:
+  - "Update changes you've made to properties across multiple events simultaneously"
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717620189
 ---
-
-#### This article will help you:
-
-* Update changes you've made to properties across multiple events simultaneously
-
 With **property groups**, you can define groups of properties so Amplitude Data can apply them to events quickly.
 
 Property groups make it easier to manage complex tracking plans, since you don't have to keep adding the same properties to events multiple times. When you update a property group, Amplitude Data applies the changes to **all events** the group is associated with.
-
-**NOTE:** Property groups are different from [group properties](/hc/en-us/articles/5078752725147).
 
 For example, a music app’s tracking manager might need a way to streamline creation of events relating to songs. Each of these events will include the following properties:
 
@@ -38,7 +38,8 @@ To create a property group, follow these steps:
 
 1. Navigate to *Properties > Event Properties* and click *Property Groups*.  
   
-![Screenshot 2023-07-20 at 8.00.38 AM.png](/output/img/data/screenshot-2023-07-20-at-8-00-38-am-png.png)
+    ![Screenshot 2023-07-20 at 8.00.38 AM.png](/output/img/data/screenshot-2023-07-20-at-8-00-38-am-png.png)
+
 2. Click *+ Create property group*.
 3. In the fly-out window, enter a name for the group. Then add a description and any tags, if desired.
 4. Click *+ Add property* to begin adding properties to this property group.
