@@ -18,8 +18,8 @@ This feature is available to users on **Growth** and **Enterprise plans** only.
 
 * Remember, public links can be shared with anyone until you revoke the link. On the Enterprise plan, anyone with the password can access your links prior to their expiration.
 * Once you revoke a link, you will not be able to re-enable it. Users who click revoked links will be directed to a 404 page.
-* Public links are not supported for [Personas](/analytics/charts/compass/compass-aha-moment) charts.
-* If you share a public link to a notebook or a dashboard that contains a [Journeys](/analytics/charts/journeys/journeys-understand-paths) chart, that chart will not be visible to the recipient of that link. (Journeys charts can instead be viewed via direct public links to the chart itself.)
+* Public links are not supported for [Personas](/docs/analytics/charts/compass/compass-aha-moment) charts.
+* If you share a public link to a notebook or a dashboard that contains a [Journeys](/docs/analytics/charts/journeys/journeys-understand-paths) chart, that chart will not be visible to the recipient of that link. (Journeys charts can instead be viewed via direct public links to the chart itself.)
 * Charts are cached for ten minutes for everyone.
 
 ## Create a public link
@@ -29,13 +29,13 @@ To create a public link to a chart, dashboard, or notebook, follow these steps:
 1. Click *Share*, in the top right corner of the menu bar.
 2. In the modal that appears, click *Create Public Link* (or *Manage Public Links*), then *Create new public link*.
 
-![create_public_link.gif](/output/img/analytics/create_public_link.gif)
+![create_public_link.gif](/docs/output/img/analytics/create_public_link.gif)
 
 3. Add a password, if desired, and enter the date the public link will expire. Then click *Create Link*.
 
 Amplitude will randomly generate a link to the content. Click *Copy Public Link* to copy the URL to your clipboard.
 
-![public_links_2.png](/output/img/analytics/public_links_2.png)
+![public_links_2.png](/docs/output/img/analytics/public_links_2.png)
 
 ## Generate embed code for your content
 
@@ -46,15 +46,15 @@ To generate this embed code, follow these steps:
 1. After saving your chart, dashboard, or notebook, click *Share*.
 2. In the *Share* modal, click the Embed tab and flip the toggle switch to On.  
   
-![embed_modal.png](/output/img/analytics/embed_modal.png)
+![embed_modal.png](/docs/output/img/analytics/embed_modal.png)
 3. Click *Copy Embed Code*. You can now paste the embed code from your clipboard.
 4. To revoke external permissions to view the content, simply flip the toggle switch to Off. The embed code will no longer work in any of the documents where it appears.
 
 ## Copy, edit, or delete a public link
 
-You can view and manage all your public links by navigating to ![gear_icon_for_settings.png](/output/img/analytics/gear_icon_for_settings.png)*> Content Access,* or by clicking *Share > Manage public links* from within the chart, dashboard, or notebook you want to manage (as described in [steps 1 and 2 in the previous section](#h_01G0FESKM4YGTW4NSYJX5SR4NG)).
+You can view and manage all your public links by navigating to ![gear_icon_for_settings.png](/docs/output/img/analytics/gear_icon_for_settings.png)*> Content Access,* or by clicking *Share > Manage public links* from within the chart, dashboard, or notebook you want to manage (as described in [steps 1 and 2 in the previous section](#h_01G0FESKM4YGTW4NSYJX5SR4NG)).
 
-![public_links_3.png](/output/img/analytics/public_links_3.png)
+![public_links_3.png](/docs/output/img/analytics/public_links_3.png)
 
 Public links are not editable via the *Manage Content Access* page; however, you can remove them from there. Hover over the public link to bring up the *Remove* button. To edit the link's password or change its expiration date, click on the name of the chart to open it, then click *Share* to begin making those changes.
 
@@ -68,4 +68,4 @@ Even if your account does not require passwords or expirations, you may set eith
 
 ## Visual links and unfurling public links on Slack
 
-Read more about the Amplitude Slack integration [here](/analytics/integrate-slack).
+Read more about the Amplitude Slack integration [here](/docs/analytics/integrate-slack).

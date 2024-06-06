@@ -10,13 +10,13 @@ updated_at: 1717103943
 landing: true
 landing_blurb: 'Use the Compass chart to identify the moments in the user journey that are critical to driving growth'
 ---
-[Compass](/analytics/charts/compass/compass-aha-moment) is a powerful feature that can help you identify behaviors that are predictive of retention or conversion. It identifies **inflection metrics**—those that capture the moments when a user has reached a critical threshold in your product—which are instrumental in driving user growth.
+[Compass](/docs/analytics/charts/compass/compass-aha-moment) is a powerful feature that can help you identify behaviors that are predictive of retention or conversion. It identifies **inflection metrics**—those that capture the moments when a user has reached a critical threshold in your product—which are instrumental in driving user growth.
 
 For example, Facebook found early on that adding seven friends in the first ten days was the strongest signal of long-term retention. More recently, Netflix published an analysis on exactly how many episodes it takes per TV show to get hooked on the show.
 
-![](/output/img/compass/Screen_Shot_2017-01-18_at_4.22.46_PM.png)
+![](/docs/output/img/compass/Screen_Shot_2017-01-18_at_4.22.46_PM.png)
 
-Before you proceed, we suggest you [read the Help Center documentation on Compass first](/analytics/charts/compass/compass-aha-moment). The rest of this article assumes that you have a general understanding of how the analysis works.1
+Before you proceed, we suggest you [read the Help Center documentation on Compass first](/docs/analytics/charts/compass/compass-aha-moment). The rest of this article assumes that you have a general understanding of how the analysis works.1
 
 For ease of reading, we maintain the new user/retention use case but new user can be replaced with any base cohort, and retained user can be replaced with any target cohort.
 

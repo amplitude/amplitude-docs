@@ -11,7 +11,7 @@ updated_at: 1714517033
 ---
 Once you’ve designed your experiment and configured its delivery, you’re ready to test your experiment. Then, if all goes well, it’s time to launch it.
 
-On your Experiment Overview page, review the *Design* and *Delivery* cards. Make sure everything is set the way you planned it. Then click *Test Instrumentation* to send the experiment’s variants to the testers you designated when you [configured the experiment's delivery](/experiment/workflow/configure-delivery).
+On your Experiment Overview page, review the *Design* and *Delivery* cards. Make sure everything is set the way you planned it. Then click *Test Instrumentation* to send the experiment’s variants to the testers you designated when you [configured the experiment's delivery](/docs/experiment/workflow/configure-delivery).
 
 ## QA before rollout
 
@@ -45,7 +45,7 @@ After rollout, you’ll be able to track how many of your users have been expose
 
 This is a useful way to QA the assignment process. If you notice that one variant is enrolling significantly more or significantly fewer users than you expected, it could indicate an issue you should investigate.
 
-If you do spot some outliers or anomalies that concern you, click *Root Cause Analysis* to conduct a deep dive into the potential causes. To learn more about how the Root Cause Analysis feature works, [see this article in the Help Center](/analytics/root-cause-analysis).
+If you do spot some outliers or anomalies that concern you, click *Root Cause Analysis* to conduct a deep dive into the potential causes. To learn more about how the Root Cause Analysis feature works, [see this article in the Help Center](/docs/analytics/root-cause-analysis).
 
 ## What happens when your experiment ends?
 
@@ -64,4 +64,4 @@ If you roll back your experiment:
 
 If you opt to continue running, your experiment, you can enter a new end date.
 
-Now that you’ve rolled out your experiment, the next step is to [learn from it](/experiment/workflow/experiment-learnings).
+Now that you’ve rolled out your experiment, the next step is to [learn from it](/docs/experiment/workflow/experiment-learnings).

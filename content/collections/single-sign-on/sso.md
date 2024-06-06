@@ -10,11 +10,11 @@ updated_at: 1715363605
 ---
 **Single sign-on** (SSO) is an authentication scheme that enables users to use a single ID and password combination to log into multiple platforms, services, or systems. Amplitude supports SSO and is compatible with any SAML 2.0-compliant SSO provider, including:
 
-* [Auth0](/admin/single-sign-on/auth-0)
-* [G Suite](/admin/single-sign-on/g-suite)
-* [Microsoft Azure Active Directory](/admin/single-sign-on/azure-active-directory)
-* [Okta](/admin/single-sign-on/okta)
-* [OneLogin](/admin/single-sign-on/one-login)
+* [Auth0](/docs/admin/single-sign-on/auth-0)
+* [G Suite](/docs/admin/single-sign-on/g-suite)
+* [Microsoft Azure Active Directory](/docs/admin/single-sign-on/azure-active-directory)
+* [Okta](/docs/admin/single-sign-on/okta)
+* [OneLogin](/docs/admin/single-sign-on/one-login)
 
 Just click through to see more detailed information on setting up and configuring SSO with each of these services.
 
@@ -29,7 +29,7 @@ Some things you should be aware of:
 * You can **require** members of your organization to sign in with SSO. Doing so will prevent users from signing in with their email and password, so make sure your SSO system is working and configured properly before turning it on in Amplitude.
 * You can also **automatically** grant new users access to your organization via just-in-time provisioning. Amplitude only requires a new user to successfully authenticate with your identity provider; once authentication is received, Amplitude will add the user to your organization. You can then configure roles for each new user to reflect their needs, and those of the organization.  
   
-Enterprise customers with access to project [permissions](/admin/account-management/user-roles-permissions) can also choose the default project(s) that JIT-provisioned users will have access to.
+Enterprise customers with access to project [permissions](/docs/admin/account-management/user-roles-permissions) can also choose the default project(s) that JIT-provisioned users will have access to.
 
 * When a user attempts to use SSO to sign in, Amplitude uses their email address in the SAML assertion to identify them. Amplitude will attempt to find the user's email by looking in these places, in this order:
 

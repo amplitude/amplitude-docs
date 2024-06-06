@@ -33,14 +33,14 @@ This feature is also **not available in the EU**.
 Amplitude SQL is accessible just like any other chart type, via *Create New > Chart > All chart types.* It can be saved, shared, and added to a dashboard just like any other chart.
 
 {{partial:admonition type='note'}}
- This feature currently does not support queuing data for [Portfolio Views](/admin/account-management/portfolio).
+ This feature currently does not support queuing data for [Portfolio Views](/docs/admin/account-management/portfolio).
 {{/partial:admonition}}
 
-Alternatively, you can connect directly to your Snowflake database via a terminal or 3rd-party application, such as SQL Workbench or the [Snowflake connector for Python](https://docs.snowflake.net/manuals/user-guide/python-connector.html). Please [reach out to us](/hc/en-us/requests/new) or contact your Success Manager for your Snowflake credentials. 
+Alternatively, you can connect directly to your Snowflake database via a terminal or 3rd-party application, such as SQL Workbench or the [Snowflake connector for Python](https://docs.snowflake.net/manuals/user-guide/python-connector.html). Please [reach out to us](/docs/hc/en-us/requests/new) or contact your Success Manager for your Snowflake credentials. 
 
 ## Set up and syntax
 
-The Query package uses a [simplified table schema](/analytics/charts/other-charts/other-charts-amplitude-sql-schema) for Snowflake and Amplitude SQL. The schema includes a **single table** that can be referenced using the shorthand `$events`. 
+The Query package uses a [simplified table schema](/docs/analytics/charts/other-charts/other-charts-amplitude-sql-schema) for Snowflake and Amplitude SQL. The schema includes a **single table** that can be referenced using the shorthand `$events`. 
 
 If you want to access other tables, you can use the full name which can be found by clicking *Show Schema*.
 
@@ -60,11 +60,11 @@ By default, Amplitude SQL shows a simple SQL query for events performed in the p
 
 The SQL syntax will be highlighted to help you distinguish SQL commands from the rest of your query. 
 
-![Screen_Shot_2019-10-30_at_10.01.20.png](/output/img/other-charts/screen-shot-2019-10-30-at-10-01-20-png.png)
+![Screen_Shot_2019-10-30_at_10.01.20.png](/docs/output/img/other-charts/screen-shot-2019-10-30-at-10-01-20-png.png)
 
 In addition, Amplitude SQL supports autocomplete of columns in the table. As you type, the query editor will recommend columns to help expedite your typing.
 
-![Screen_Shot_2019-10-30_at_10.02.27.png](/output/img/other-charts/screen-shot-2019-10-30-at-10-02-27-png.png)
+![Screen_Shot_2019-10-30_at_10.02.27.png](/docs/output/img/other-charts/screen-shot-2019-10-30-at-10-02-27-png.png)
 
 ## Query results
 
@@ -73,7 +73,7 @@ Once you have completed the desired SQL, click *Compute* to execute your query. 
 * Query results displayed in a data table.
 * A time series chart of the results below the table.
 
-![Screen Shot 2019-10-30 at 10.03.11.png](/output/img/other-charts/screen-shot-2019-10-30-at-10-03-11-png.png)
+![Screen Shot 2019-10-30 at 10.03.11.png](/docs/output/img/other-charts/screen-shot-2019-10-30-at-10-03-11-png.png)
 
 To customize the time series visualization, there is a set of controls that you can use below the query editor. The options available in the visualization controls are the fields that you return in your SQL `SELECT` statement. For example, in the query above, the 3 fields we can visualize are *DATE*, *UNIQUES*, and *TOTALS*.
 
@@ -88,10 +88,10 @@ To group the chart by a column, enter the name of the column in the *Label colum
 
 Like other Amplitude charts, you are able to export the results as a PNG, PDF, or CSV file by navigating to *More > Export*. You can also save your analysis and share it with your team or even add the visualizations you create to a dashboard in Amplitude.
 
-![Screen_Shot_2019-10-30_at_10.04.39.png](/output/img/other-charts/screen-shot-2019-10-30-at-10-04-39-png.png)
+![Screen_Shot_2019-10-30_at_10.04.39.png](/docs/output/img/other-charts/screen-shot-2019-10-30-at-10-04-39-png.png)
 
 {{partial:admonition type='note'}}
  The results of the data table and the .CSV export are capped at 1,000 rows. 
 {{/partial:admonition}}
 
-Next, learn about [**special field shortcuts** to query your Snowflake data more quickly](/analytics/charts/other-charts/other-charts-amplitude-sql-schema) .
+Next, learn about [**special field shortcuts** to query your Snowflake data more quickly](/docs/analytics/charts/other-charts/other-charts-amplitude-sql-schema) .

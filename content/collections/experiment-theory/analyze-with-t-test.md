@@ -30,12 +30,12 @@ You can access the T-test settings from the *Plan* tab in Amplitude Experiment. 
 
 1. Under your *Primary Metric*, select *Increase* or *Decrease*.
 
-![Screenshot](/output/img/experiment-theory/screenshot.png)
+![Screenshot](/docs/output/img/experiment-theory/screenshot.png)
 
 2. Under *Statistical Settings,* choose *T-test* as the *Test Type*, choose *1-sided* or *2-sided* based on the type of T-test you'd like to run. For example, if you want to do a two-sided T-test looking for an increase, select *Increase* in the primary metric and *2-sided T-test* in statistical settings.
-3. Enter the number of users needed under *Samples Per Variant Needed*. If you're unsure of the sample size to enter in *Samples Per Variant*, use Amplitude's duration estimator. To learn more, see our Help Center article on [planning experiments with the help of the duration estimator](/experiment/workflow/experiment-estimate-duration).
+3. Enter the number of users needed under *Samples Per Variant Needed*. If you're unsure of the sample size to enter in *Samples Per Variant*, use Amplitude's duration estimator. To learn more, see our Help Center article on [planning experiments with the help of the duration estimator](/docs/experiment/workflow/experiment-estimate-duration).
 
-![exp_stat_settings.png](/output/img/experiment-theory/exp-stat-settings-png.png)
+![exp_stat_settings.png](/docs/output/img/experiment-theory/exp-stat-settings-png.png)
 
 {{partial:admonition type='note'}}
 The T-test works by first computing the sample size you'll need before you can control for a specific false positive and false negative rate. Analyzing your data before reaching the sample size threshold will increase your error rates. See this [article](https://medium.com/@SkyscannerEng/the-fourth-ghost-of-experimentation-peeking-b33890dcd3de) for more explanation on how peeking can interrupt your experiment process.
@@ -43,7 +43,7 @@ The T-test works by first computing the sample size you'll need before you can c
 
 4. Lastly, click *Save* to change the statistical settings to T-test.
 
-The *Analyze* tab now shows the T-test results of your experimental data. Read more about interpreting test results in our article on [Amplitude's Experiment Results chart](/analytics/charts/experiment-results/experiment-results-dig-deeper).
+The *Analyze* tab now shows the T-test results of your experimental data. Read more about interpreting test results in our article on [Amplitude's Experiment Results chart](/docs/analytics/charts/experiment-results/experiment-results-dig-deeper).
 
 ## Manage sample size needed for the T-test
 
@@ -51,6 +51,6 @@ You'll need to reach a minimum sample size before you run a T-test. The *Analyze
 
 You can find more information on your sample size requirements in the *Cumulative Exposure* graph and its corresponding table. The graph shows a constant, dotted line named *Sample Size Target*, which is the total number of users per variant needed. The table next to the graph highlights the *Exposure Remaining*, which is the number of users needed by each variant. This information can confirm not only the number of users needed before running the T-test, but also provide an estimate of the time you'll need to complete the experiment before using a T-test to interpret your results.
 
-![](/output/img/experiment-theory/RM3egRnbjtRu6omQuMOnWLzB454XqT8c0Zggca7cXJGi3BM6utiLZjfABHlMD3LEQi3rkWuz1DWXwinwVTJeZ3WQ40aAi9qhQAFzhO769-nlNFWRhYzAhzOVPTk0UHO6k323AO60QDFVCgcZE-AThMY)
+![](/docs/output/img/experiment-theory/RM3egRnbjtRu6omQuMOnWLzB454XqT8c0Zggca7cXJGi3BM6utiLZjfABHlMD3LEQi3rkWuz1DWXwinwVTJeZ3WQ40aAi9qhQAFzhO769-nlNFWRhYzAhzOVPTk0UHO6k323AO60QDFVCgcZE-AThMY)
 
 Unfortunately, reaching the needed sample size does not guarantee your results will be statistically significant. For example, if your lift is smaller than the MDE, then your results often will not be statistically significant.

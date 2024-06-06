@@ -27,9 +27,9 @@ This feature is available to users on **all Amplitude plans**. See our [pricing 
 
 ## Before you begin
 
-If you haven’t already read up on the basics of [building charts in Amplitude](/analytics/charts/build-charts-add-events), you should do so before proceeding.
+If you haven’t already read up on the basics of [building charts in Amplitude](/docs/analytics/charts/build-charts-add-events), you should do so before proceeding.
 
-See this article to read about [selecting the best measurement for your Event Segmentation chart](/analytics/charts/event-segmentation/event-segmentation-choose-measurement).
+See this article to read about [selecting the best measurement for your Event Segmentation chart](/docs/analytics/charts/event-segmentation/event-segmentation-choose-measurement).
 
 ## Set up an event segmentation analysis
 
@@ -43,7 +43,7 @@ To build an Event Segmentation chart, follow these steps:
 
 1. In the Events Module, select the starting event or metric. You can choose a specific event that is instrumented in Amplitude, or you can tell Amplitude to consider any event as the starting event for this analysis, by selecting *Any Event* from the list of available events.  
   
-    You can also [create an in-line custom event](/analytics/charts/event-segmentation/event-segmentation-in-line-events) or [create a new metric](/analytics/charts/data-tables/data-tables-create-metric) at this point, if you need to.
+    You can also [create an in-line custom event](/docs/analytics/charts/event-segmentation/event-segmentation-in-line-events) or [create a new metric](/docs/analytics/charts/data-tables/data-tables-create-metric) at this point, if you need to.
 
 2. If desired, add properties to your starting event by clicking on *+ Filter by*, selecting the property name, and specifying the property value you’re interested in.
    
@@ -69,6 +69,6 @@ You can break out your starting event by user properties by clicking *Group segm
 
 In the chart area, you should now see your Event Segmentation chart, along with a tabular view of your results. 
 
-[Read this article to find out how to choose the best measurement for your Event Segmentation chart](/analytics/charts/event-segmentation/event-segmentation-choose-measurement).
+[Read this article to find out how to choose the best measurement for your Event Segmentation chart](/docs/analytics/charts/event-segmentation/event-segmentation-choose-measurement).
 
-To learn how to [interpret your event segmentation analysis](/analytics/charts/event-segmentation/event-segmentation-interpret-1), check out this Help Center article.
+To learn how to [interpret your event segmentation analysis](/docs/analytics/charts/event-segmentation/event-segmentation-interpret-1), check out this Help Center article.

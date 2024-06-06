@@ -12,9 +12,9 @@ parent: 8cbcfa2a-a300-48c8-b551-aee1b1423cdb
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1710272806
 ---
-The [Ampli Wrapper](/sdks/ampli#ampli-wrapper) is a generated, strongly typed API for tracking Analytics events based on your Tracking Plan in Amplitude Data. The tracking library exposes a function for every event in your teamâs tracking plan. The functionâs arguments correspond to the eventâs properties.
+The [Ampli Wrapper](/docs/sdks/ampli#ampli-wrapper) is a generated, strongly typed API for tracking Analytics events based on your Tracking Plan in Amplitude Data. The tracking library exposes a function for every event in your teamâs tracking plan. The functionâs arguments correspond to the eventâs properties.
 
-[Ampli](/sdks/ampli) can benefit your app by providing autocompletion for events & properties defined in Data and enforce your event schemas in code to prevent bad instrumentation.
+[Ampli](/docs/sdks/ampli) can benefit your app by providing autocompletion for events & properties defined in Data and enforce your event schemas in code to prevent bad instrumentation.
 
 {{partial:admonition type="tip" title="Enable real-time type checking for JavaScript"}}
 Because JavaScript isn't a type-safe language, static type checking isn't built in like TypeScript. Some common IDEs allow for real-time type checks in JavaScript based on JSDoc.
@@ -47,7 +47,7 @@ There's no corresponding “in-code” functionality with Prettier. Instead, add
 
 ## Quick start
 
-1. [(Prerequisite) Create a Tracking Plan in Amplitude Data](/data/create-tracking-plan)
+1. [(Prerequisite) Create a Tracking Plan in Amplitude Data](/docs/data/create-tracking-plan)
 
 2. [Install the Amplitude SDK](#install-the-amplitude-sdk)
 
@@ -112,7 +112,7 @@ npm install @amplitude/node@^1.10.2 @amplitude/identify@^1.10.2 @amplitude/types
 
 ## Install Ampli
 
-You can install the [Ampli CLI](/data/ampli/cli/) from Homebrew or NPM.
+You can install the [Ampli CLI](/docs/data/ampli/cli/) from Homebrew or NPM.
 
 {{partial:tabs tabs="npm, brew"}}
 {{partial:tab name="npm"}}
@@ -181,7 +181,7 @@ ampli.identify('user-id', {
 
 ```
 
-The options argument allows you to pass [Amplitude fields](/apis/http-v2/#keys-for-the-event-argument) for this call, such as `deviceId`.
+The options argument allows you to pass [Amplitude fields](/docs/apis/http-v2/#keys-for-the-event-argument) for this call, such as `deviceId`.
 
 TypeScriptJavaScript
 
@@ -239,13 +239,13 @@ ampli.eventName(
 
 `properties` passes in event properties specific to this event in the tracking plan.
 
-The `options` argument allows you to pass [Amplitude fields](/apis/http-api-v2#properties-1), like `price`, `quantity` and `revenue`.
+The `options` argument allows you to pass [Amplitude fields](/docs/apis/http-api-v2#properties-1), like `price`, `quantity` and `revenue`.
 
 The `extra` argument lets you pass data to middleware.
 
 For example, your tracking plan contains an event called Song Played. The SDK generates the `songPlayed` function for the event, using camel case to make it valid JavaScript. The event is defined with two required properties: `songId` and `songFavorited.` The property type for `songId` is string, and `songFavorited` is a boolean.
 
-The event has two Amplitude fields defined: `price`, and `quantity`. Learn more about Amplitude fields [here](/apis/http-api-v2#properties-1). The event has one MiddlewareExtra defined: `myMiddleware`. Learn more about [middleware](./sdks/sdk-middleware).
+The event has two Amplitude fields defined: `price`, and `quantity`. Learn more about Amplitude fields [here](/docs/apis/http-api-v2#properties-1). The event has one MiddlewareExtra defined: `myMiddleware`. Learn more about [middleware](./sdks/sdk-middleware).
 
 
 ```js

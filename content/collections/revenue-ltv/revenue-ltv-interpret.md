@@ -13,10 +13,10 @@ landing_blurb: 'Identify the strengths and weaknesses of your approach to new-us
 It's important to keep in mind that Revenue LTV is a monetization analysis focusing on **new users only**. Forgetting this could easily lead to some off-base interpretations of your data.
 
 {{partial:admonition type='note'}}
-This article assumes you have already familiarized yourself with our article on [building a Revenue LTV chart in Amplitude](/analytics/charts/revenue-ltv/revenue-ltv-track-new-user-monetization). If you haven't, please read that before proceeding.
+This article assumes you have already familiarized yourself with our article on [building a Revenue LTV chart in Amplitude](/docs/analytics/charts/revenue-ltv/revenue-ltv-track-new-user-monetization). If you haven't, please read that before proceeding.
 {{/partial:admonition}}
 
-Let's assume you selected a daily frequency breakdown in step 7 of [building your Revenue LTV chart](/analytics/charts/revenue-ltv/revenue-ltv-track-new-user-monetization). It could just as easily be hourly, weekly, monthly, or quarterly, and the underlying logic would be the same. Let's also assume you are looking at a date range beginning December 5th and ending December 20th.
+Let's assume you selected a daily frequency breakdown in step 7 of [building your Revenue LTV chart](/docs/analytics/charts/revenue-ltv/revenue-ltv-track-new-user-monetization). It could just as easily be hourly, weekly, monthly, or quarterly, and the underlying logic would be the same. Let's also assume you are looking at a date range beginning December 5th and ending December 20th.
 
 When calculating each data point, the Revenue LTV chart treats all users of each segment who were new users during your chosen timeframe as a **single cohort**. 
 
@@ -32,10 +32,10 @@ As a further example, imagine you are looking at Day 10. If some users started u
 
 The breakdown table below the chart can show the data broken up by cohorts of users who started on the same day. Click the triangle next to *All Users* to expand.
 
-![interpret reven ue 1.png](/output/img/revenue-ltv/interpret-reven-ue-1-png.png)
+![interpret reven ue 1.png](/docs/output/img/revenue-ltv/interpret-reven-ue-1-png.png)
 
 You can set up and interpret any Revenue LTV chart easily, as the user interface allows you to read the parameters like a sentence. For example, the following chart shows you a visualization of all revenue events fired by your users, measured by the average revenue per user daily in the last 30 days.
 
-![interpret revenue 2.png](/output/img/revenue-ltv/interpret-revenue-2-png.png)
+![interpret revenue 2.png](/docs/output/img/revenue-ltv/interpret-revenue-2-png.png)
 
 You can also hover over the individual data points to see the actual amounts.

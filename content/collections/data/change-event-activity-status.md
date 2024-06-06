@@ -21,7 +21,7 @@ To change the activity status, follow these steps:
 2. Click the *Edit Activity* drop-down menu.
 3. Select the new event status.
 
-![status.png](/output/img/data/status-png.png)
+![status.png](/docs/output/img/data/status-png.png)
 
 **NOTE**: This only applies to **active** events and event properties that are **included in your tracking plan**. It also **does not** apply to custom events.
 

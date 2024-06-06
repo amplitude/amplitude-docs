@@ -12,7 +12,7 @@ updated_at: 1716572205
 ---
 By default, Amplitude tracks the user properties listed in the table below automatically, via client-side [SDKs](https://www.docs.developers.amplitude.com/data/sdks/sdk-overview/#analytics-sdks). All these properties will be prefixed with
 
-![amplitude_logo.png](/output/img/get-started/amplitude_logo.png) 
+![amplitude_logo.png](/docs/output/img/get-started/amplitude_logo.png) 
 
 whenever you encounter them in Amplitude. If you prefer, configure Amplitude's SDKs to disable automatic tracking of these properties:
 
@@ -34,7 +34,7 @@ In Amplitude charts, if you choose to segment by device ID, event ID, latitude, 
 | Region | Region (e.g. state, province, county) of the event. This is pulled using GeoIP. "California" |
 | DMA | Designated Market Area (DMA) of the event. This is pulled using GeoIP. "San Francisco-Oakland-San Jose, CA" |
 | Language | Language of the device. "English" |
-| Paying | Paying is set to null for all users by default. The property value changes to "true" at the time of the user's first revenue event (or first verified revenue event, if [validation](https://help.amplitude.com/hc/en-us/articles/115003116888-Revenue-Technical-#verification) is on). Once a property is set to "true", it will not change. You can manually change this value via Amplitude's [Identify API](/hc/articles/205406617): "true", null/none |
+| Paying | Paying is set to null for all users by default. The property value changes to "true" at the time of the user's first revenue event (or first verified revenue event, if [validation](https://help.amplitude.com/hc/en-us/articles/115003116888-Revenue-Technical-#verification) is on). Once a property is set to "true", it will not change. You can manually change this value via Amplitude's [Identify API](/docs/hc/articles/205406617): "true", null/none |
 | Platform | Platform of the product. "iOS", "Android", or "Web" |
 | OS | `OS` = `os_name` + `os_version`. `os_name` is the name of the user's mobile operating system or browser. `os_version` is the version of the users' mobile operating system or browser. "ios 9.1", "Chrome 46" |
 | Device Family | Family of the device. "Apple iPhone", "Samsung Galaxy Tablet", "Windows" |

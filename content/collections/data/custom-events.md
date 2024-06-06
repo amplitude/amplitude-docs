@@ -15,15 +15,15 @@ updated_at: 1712683681
 
 Sometimes, you may need to create an analysis in which a particular step of the process can be any of a selection of specific events. 
 
-It is possible to [combine multiple events in-line](/analytics/charts/event-segmentation/event-segmentation-in-line-events) through the Events Module, however, the in-line event that you create will only be relevant to that specific chart and will not be accessible anywhere else unless it is saved as a **custom event**. A custom event is made up of two separate events joined by an `OR` clause. For example, this analysis is interested in users who, after receiving a push notification, **either** played a song **or** searched for one as their next step: 
+It is possible to [combine multiple events in-line](/docs/analytics/charts/event-segmentation/event-segmentation-in-line-events) through the Events Module, however, the in-line event that you create will only be relevant to that specific chart and will not be accessible anywhere else unless it is saved as a **custom event**. A custom event is made up of two separate events joined by an `OR` clause. For example, this analysis is interested in users who, after receiving a push notification, **either** played a song **or** searched for one as their next step: 
 
-![customEvent_funnel.png](/output/img/data/customevent-funnel-png.png)
+![customEvent_funnel.png](/docs/output/img/data/customevent-funnel-png.png)
 
 You create a custom event in the *Events* panel from one or more pre-existing events. Doing so tells Amplitude to combine for those pre-existing events and count any user activity for them as activity for the new custom event. This is useful if you want an easy way to track overall activity on related or similar events, like whether a visitor has fired either the `view_landing_page_1` or `view_landing_page_2` events.
 
 In the image above, `Play or Search Song` is a custom event consisting of the `Play Song` event, the `Search Song` event, and an `OR` clause to connect the two. Any user who triggers **either** the `Play Song` event **or** the `Search Song` event is considered to have **converted** that second step.
 
-Another method is conditioning an added event with an [event property or user property](/data/user-properties-and-events). This is the primary method for analyzing if a user had performed one of many events.
+Another method is conditioning an added event with an [event property or user property](/docs/data/user-properties-and-events). This is the primary method for analyzing if a user had performed one of many events.
 
 ### Feature availability
 
@@ -46,6 +46,6 @@ To do this, follow these steps:
 
 2. In the modal that appears, select the events you want to analyze as a single event. There is an option to set different filters on these events, in case the analysis requires a more granular view of the selected events.
 
-![create_customEvent.png](/output/img/data/create-customevent-png.png)
+![create_customEvent.png](/docs/output/img/data/create-customevent-png.png)
 
 At this point, this event is available for further analyses in Amplitude. To use it, select the newly-created event in the *Custom* category in the appropriate chart drop-down menus.

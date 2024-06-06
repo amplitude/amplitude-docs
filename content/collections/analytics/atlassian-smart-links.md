@@ -18,6 +18,6 @@ To create previews of your Amplitude charts with Smart Links, follow these steps
 2. If this is the first time you're trying to use the Smart Links feature from your Amplitude account, you will be asked to permit Atlassian to access Amplitude. Click *Allow*.
 3. Once you've pasted your URL, you will see the Smart Link menu appear directly below it.  
   
-![Screen_Shot_2022-09-19_at_2.20.21_PM.png](/output/img/analytics/Screen_Shot_2022-09-19_at_2.20.21_PM.png)
+![Screen_Shot_2022-09-19_at_2.20.21_PM.png](/docs/output/img/analytics/Screen_Shot_2022-09-19_at_2.20.21_PM.png)
 
 To disconnect from Smart Links, navigate [here](https://id.atlassian.com/manage-profile/apps) and look for "Atlassian Links - Amplitude." 

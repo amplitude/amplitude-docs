@@ -17,6 +17,6 @@ To apply a filter, follow these steps:
 3. To filter by date range, click one of the preset values—last seven days, 30 days, 60 days, or 90 days—or set the date range manually, using the date picker.
 4. To filter by property, click *Add Filter* and choose the property you want to filter on. Then enter the desired value. You can select more than one property to include in your filter.
 
-![filter_dashboard_1.gif](/output/img/analytics/filter_dashboard_1.gif)
+![filter_dashboard_1.gif](/docs/output/img/analytics/filter_dashboard_1.gif)
 
-Once you apply a filter, you can copy a link to share your bulk changes with others by clicking ![copy url.png](/output/img/analytics/copy url.png). Navigating to this URL will open your dashboard with the bulk filter already applied.
+Once you apply a filter, you can copy a link to share your bulk changes with others by clicking ![copy url.png](/docs/output/img/analytics/copy url.png). Navigating to this URL will open your dashboard with the bulk filter already applied.

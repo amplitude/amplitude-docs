@@ -68,7 +68,7 @@ Iterable requires that all events have an **Iterable ID** present. If you have s
 
 ### Configure user forwarding
 
-To stream user and property updates to Iterable, enable **Send Users**. This setting creates or updates users in Iterable when you update them in Amplitude with the [HTTP V2 API](/analytics/apis/http-v2-api/) or [Identify API](/analytics/apis/identify-api/). This integration doesn't support scheduled or on-demand updates.
+To stream user and property updates to Iterable, enable **Send Users**. This setting creates or updates users in Iterable when you update them in Amplitude with the [HTTP V2 API](/docs/analytics/apis/http-v2-api/) or [Identify API](/docs/analytics/apis/identify-api/). This integration doesn't support scheduled or on-demand updates.
 
 You can optionally select user properties to send to Iterable in the **Select additional properties** field. Amplitude sends only the properties you select and only when one of them is updated. Amplitude sends these properties as [Iterable data fields](https://support.iterable.com/hc/en-us/articles/208183076-Field-Data-Types). _This integration doesn't support transformed user properties_.
 

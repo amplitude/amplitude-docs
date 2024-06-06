@@ -23,19 +23,19 @@ To update your tracking plan using the Data Assistant, follow these steps:
 
 1. Open Amplitude Data. You’ll see the Data Assistant at the top of the home page, displaying a list of its top suggestions.  
   
-![AmpAI Data Assistant.png](/output/img/data/ampai-data-assistant-png.png)  
+![AmpAI Data Assistant.png](/docs/output/img/data/ampai-data-assistant-png.png)  
   
 These suggestions are listed in order of priority, which Data Assistant determines by looking at event volume and query counts, among other things.
 
 2. Select a specific suggestion to review (by clicking *Review*), or review all suggestions by clicking (*Review All*). This will open the Assistant page.
 3. In the left-hand sidebar is a list of all suggested modifications for your tracking plan. Click any suggestion to see a list of the events the suggestion would affect.  
   
-![AmpAI data assistant 2.png](/output/img/data/ampai-data-assistant-2-png.png)  
+![AmpAI data assistant 2.png](/docs/output/img/data/ampai-data-assistant-2-png.png)  
 Data Assistant groups suggestions with others similar to them, as a way to prioritize the most important issues and make the entire process of updating the tracking plan as easy as possible.  
   
-If you’d like more detail on why Data Assistant has made a specific suggestion, hover over ![AmpAI info icon.png](/output/img/data/ampai-info-icon-png.png).  
+If you’d like more detail on why Data Assistant has made a specific suggestion, hover over ![AmpAI info icon.png](/docs/output/img/data/ampai-info-icon-png.png).  
   
-![AmpAI more info.png](/output/img/data/ampai-more-info-png.png)  
+![AmpAI more info.png](/docs/output/img/data/ampai-more-info-png.png)  
   
 You can choose to implement the offered suggestion for all, some, or none of the events listed. To implement all of them, click *Apply All*. To implement none of them, click *Reject All*.  
   

@@ -25,16 +25,16 @@ Most of the time, you should set the bucketing unit to *User*. However, sometime
 When you’re ready, click *Continue*.
 2. In the *Deployments* tab, select the deployments you’d like to use for this experiment or flag. In Amplitude Experiment, a deployment is where you can serve a group of flags or experiments for code execution.  
   
-{{partial:admonition type='note'}}[Learn more about deployments in our article on configuring your experiment.](/experiment/workflow/configure)
+{{partial:admonition type='note'}}[Learn more about deployments in our article on configuring your experiment.](/docs/experiment/workflow/configure)
 {{/partial:admonition}}
   
 When you’ve selected all the deployments you need, click *Continue*.
 3. Next, check your variants.  
   
-{{partial:admonition type='note'}}[For more information on variants in Amplitude Experiment, check out this article](/experiment/workflow/add-variants).  
+{{partial:admonition type='note'}}[For more information on variants in Amplitude Experiment, check out this article](/docs/experiment/workflow/add-variants).  
 {{/partial:admonition}}
 
 Click *Continue* when you’re ready.
 4. The final step is adding the user or device IDs of your QA testers, so that you can ensure your implementation has been successful. Add the appropriate IDs for each variant. You’ll want to assign each tester to only one variant, just as if they were users who had been bucketed into your experiment.
 
-When you’re done, click *Save and Close*. It's time to [launch your experiment](/experiment/workflow/experiment-test).
+When you’re done, click *Save and Close*. It's time to [launch your experiment](/docs/experiment/workflow/experiment-test).

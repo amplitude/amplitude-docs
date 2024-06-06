@@ -21,7 +21,7 @@ Once your dashboard has been templatized, you’ll notice three differences:
 * The dashboard will include the template instructions you added in Step 2 above;
 * There will be a *Save As New Dashboard* button, which is how you can create copies of the dashboard from the template:  
   
-![dashboards templated dashboard.png](/output/img/analytics/dashboards templated dashboard.png)
+![dashboards templated dashboard.png](/docs/output/img/analytics/dashboards templated dashboard.png)
 
 You will be able to find templates using Search or Spaces. Just look for the template icon. You can also filter for dashboard templates in Search, via the Template filter under *Tags*.
 
@@ -35,4 +35,4 @@ Some of the most common use cases for templates in Amplitude include:
 * **B2B or partner use-cases:** Create different dashboards segmented by customer account or partner
 * **Amplitude new user onboarding:** Templates for the above use cases to help onboard new Amplitude users by acclimating them to the types of analyses most often performed by their new teams.
 
-For more information on templates, see [this article in our Help Center.](/analytics/templates)
+For more information on templates, see [this article in our Help Center.](/docs/analytics/templates)

@@ -22,13 +22,13 @@ You must be an admin or a manager of a project to customize the Home page experi
 
 1. Open the project and look for a blue bar across the top. Alternatively, navigate to *Organization Settings > Project*, and find it there.  
   
-![](/output/img/analytics/21150711496603.png)
+![](/docs/output/img/analytics/21150711496603.png)
 
 2. Click *Set Custom Homepage*. An edit screen will open; here, you can remove any of the default charts, add your own custom charts, and organize them how you see fit.
 3. Click *Save changes* to finalize the custom Home page layout. All users in this project who did not already **explicitly customize their personal homepage** will see this new layout as the default, including all new users.
 4. To return to the original layout, click the reset button in the top right:  
   
-![](/output/img/analytics/21150680913947.png)
+![](/docs/output/img/analytics/21150680913947.png)
 
 {{partial:admonition type="note" title="Home page precedence"}}
 Personal customization of a user’s Home page always takes precedence over any admin- or manager-enabled defaults.

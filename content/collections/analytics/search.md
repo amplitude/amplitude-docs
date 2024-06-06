@@ -30,14 +30,14 @@ Amplitude's Search feature is a handy and simple way to locate charts, dashboard
 				* The **project** the item belongs to
 				* The **last edited date** in which the item was **last edited** (in the last week, last month, last year, or any time)
 
-![Screenshot_2023-05-24_at_9.27.26_PM.png](/output/img/analytics/Screenshot_2023-05-24_at_9.27.26_PM.png)
+![Screenshot_2023-05-24_at_9.27.26_PM.png](/docs/output/img/analytics/Screenshot_2023-05-24_at_9.27.26_PM.png)
 
 5. Click on any item in the list of results to open it.
 
-**NOTE:** Dashboards and cohorts that have been marked as "official" via the Official Content feature will appear with ![blue_checkmark.png](/output/img/analytics/blue_checkmark.png) .
+**NOTE:** Dashboards and cohorts that have been marked as "official" via the Official Content feature will appear with ![blue_checkmark.png](/docs/output/img/analytics/blue_checkmark.png) .
 
 ## View hidden items (admin or manager only)
 
 Admins and managers can find items that have been set by their owners to be non-discoverable through search. To do so, type `is:unlisted`  in the search box. You will then be able to see all unlisted items for the entire organization.
 
-Check out our article on [user permissions in Amplitude](/admin/account-management/user-roles-permissions) to learn more.
+Check out our article on [user permissions in Amplitude](/docs/admin/account-management/user-roles-permissions) to learn more.

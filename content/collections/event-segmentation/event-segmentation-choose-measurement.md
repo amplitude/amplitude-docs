@@ -10,13 +10,13 @@ updated_at: 1717101776
 landing: true
 landing_blurb: 'Choose the most appropriate way to measure and display the results of your event segmentation analysis'
 ---
-Amplitude offers you several different ways of looking at your [event segmentation](/analytics/charts/event-segmentation/event-segmentation-build) results. In this section, we'll explain the differences between them.
+Amplitude offers you several different ways of looking at your [event segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) results. In this section, we'll explain the differences between them.
 
-![build_an_event_seg_analysis_measured_as.png](/output/img/event-segmentation/build-an-event-seg-analysis-measured-as-png.png)
+![build_an_event_seg_analysis_measured_as.png](/docs/output/img/event-segmentation/build-an-event-seg-analysis-measured-as-png.png)
 
 ## Uniques
 
-The default measure for the Event Segmentation chart, it displays the total count of unique users in your segment who triggered the event you added in the Events Module. View the exact count by simply hovering over the specific data point you’re interested in. If you want to inspect the users who make up that data point, just click on it (see our Help Center article on Amplitude’s [Microscope](/analytics/microscope) feature to learn more).
+The default measure for the Event Segmentation chart, it displays the total count of unique users in your segment who triggered the event you added in the Events Module. View the exact count by simply hovering over the specific data point you’re interested in. If you want to inspect the users who make up that data point, just click on it (see our Help Center article on Amplitude’s [Microscope](/docs/analytics/microscope) feature to learn more).
 
 ## Event Totals
 
@@ -24,7 +24,7 @@ Like Uniques, Event Totals is a straightforward, count-based measure. The differ
 
 ## Active %
 
-This measure graphs the percentage of all [active users](/get-started/helpful-definitions) (defined as users who have triggered any active event in a specified time frame) who triggered a specific event at each data point.
+This measure graphs the percentage of all [active users](/docs/get-started/helpful-definitions) (defined as users who have triggered any active event in a specified time frame) who triggered a specific event at each data point.
 
 ## Average
 
@@ -34,7 +34,7 @@ The Average measure graphs the average number of times a specific event was trig
 
 When you apply the Frequency measure, Amplitude will group the users included in your user segment into buckets defined by the number of times each has triggered an event during the time frame of your analysis.
 
-![new_event_seg_screenshot.png](/output/img/event-segmentation/new-event-seg-screenshot-png.png)
+![new_event_seg_screenshot.png](/docs/output/img/event-segmentation/new-event-seg-screenshot-png.png)
 
 Here, we see an event segmentation analysis using the Frequency measure. Each stacked area represents a "frequency bucket." For each data point, Amplitude displays the number of users contained in that bucket. And as described above, if you want to learn more about the users in a particular data point, all you have to do is click on it.
 
@@ -52,6 +52,6 @@ Depending on the details of your analysis, you may also be able to generate an e
 
 ## Formula
 
-This option is accessible from the *Advanced* drop-down menu in the Measured As Module. In an Event Segmentation chart, you can write formulas that Amplitude will apply to the events you've included in your analysis. To read more about each formula and see some examples of use cases, see our [Custom Formulas](/analytics/charts/event-segmentation/event-segmentation-custom-formulas) article.
+This option is accessible from the *Advanced* drop-down menu in the Measured As Module. In an Event Segmentation chart, you can write formulas that Amplitude will apply to the events you've included in your analysis. To read more about each formula and see some examples of use cases, see our [Custom Formulas](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas) article.
 
-[Read this article to learn about how to interpret your Event Segmentation chart.](/analytics/charts/event-segmentation/event-segmentation-interpret-1)
+[Read this article to learn about how to interpret your Event Segmentation chart.](/docs/analytics/charts/event-segmentation/event-segmentation-interpret-1)

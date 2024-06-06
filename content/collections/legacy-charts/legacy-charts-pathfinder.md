@@ -5,20 +5,20 @@ id: 2037ff67-3e51-4a1b-bdbc-faaefa063867
 ---
 
 {{partial:admonition type='note'}}
-This chart will be merged into the new Journeys experience. This article will remain live for as long as legacy Pathfinder charts remain accessible. [Learn about the new Journeys experience here](/analytics/charts/journeys/journeys-understand-paths).
+This chart will be merged into the new Journeys experience. This article will remain live for as long as legacy Pathfinder charts remain accessible. [Learn about the new Journeys experience here](/docs/analytics/charts/journeys/journeys-understand-paths).
 {{/partial:admonition}}
 
 Amplitude's **Pathfinder** chart lets you explore aggregated user flows within your product.
 
 Pathfinder shows all the events (also called **nodes**) users fire in your product, and the sequences of those events (also called **paths**) that users take during a specified time, measured by event totals. You can view both outgoing and incoming paths to a specified event, and Pathfinder will show you paths of up to fifty steps in depth. 
 
-We recommend using Pathfinder to see the top common paths users can take to conversion, then use this information to build out your [funnel chart](/hc/en-us/articles/229951267). 
+We recommend using Pathfinder to see the top common paths users can take to conversion, then use this information to build out your [funnel chart](/docs/hc/en-us/articles/229951267). 
 
 ## Before you begin
 
-Be sure to read our article on [building charts in Amplitude](/get-started/helpful-definitions).
+Be sure to read our article on [building charts in Amplitude](/docs/get-started/helpful-definitions).
 
-You'll also want to read up on [session IDs and how Amplitude tracks sessions,](/cdp/sources/instrument-track-sessions).
+You'll also want to read up on [session IDs and how Amplitude tracks sessions,](/docs/cdp/sources/instrument-track-sessions).
 
 You should also keep in mind that all paths in Pathfinder are tracked in individual sessions. This means that if you're sending Amplitude events via the [HTTP API](https://help.amplitude.com/hc/en-us/articles/360032842391-HTTP-API-V2) or through another pipeline, you must send a `session_id` with the event. If you don't, your product's path views won't be accurate.
 
@@ -41,7 +41,7 @@ To build your own Pathfinder chart, follow these steps:
 
 With each of these options, you are telling Amplitude to take that event and apply a group-by condition, based on the values of the property you selected. In this example, the Pathfinder chart displays results broken out by values for the `country` property of the `Search Song or Video` event.
 
-![pathfinder_2.png](/output/img/legacy-charts/pathfinder-2-png.png)
+![pathfinder_2.png](/docs/output/img/legacy-charts/pathfinder-2-png.png)
 
 5. In the Segment By Module, identify the user segment you want to include in this analysis. You can import a previously-saved segment by clicking *Saved* and selecting the one you want from the list. Otherwise, Amplitude begins from the assumption that your analysis will target all users.
 6. If you do not want to import a previously-saved user segment, you can start building your own by adding properties. To do so, click *+ Filter by*, choose the property you want to include, and specify the property value you’re interested in.
@@ -50,7 +50,7 @@ With each of these options, you are telling Amplitude to take that event and app
 9. To exclude specific active events from appearing in your Pathfinder chart, select *Hide Noisy Events* from the *Filter Events drop-down*. You can either tell Amplitude to remove specific noisy events from the chart entirely, or you can tell Amplitude to collapse repeated, consecutive steps into a single node.  
   
 {{partial:admonition type='note'}}
-This approach will exclude events for **the chart you are working on only**. To apply these exclusionary settings to all charts in a project, edit the 'Visibility' event from the [Govern](/hc/en-us/articles/360047138392) page.  
+This approach will exclude events for **the chart you are working on only**. To apply these exclusionary settings to all charts in a project, edit the 'Visibility' event from the [Govern](/docs/hc/en-us/articles/360047138392) page.  
 {{/partial:admonition}}
   
 You can also un-hide inactive events—which are hidden by default—from within *Hide Noisy Events*. You can also include specific events, by selecting *Only Show Specific Events* from the same drop-down menu.
@@ -60,7 +60,7 @@ You can also un-hide inactive events—which are hidden by default—from within
 
 ## Interpret your Pathfinder chart
 
-Pathfinder is a great tool to show you *how* users are using your product by showing all the paths that start with, or end with a specific event during a time period. Events displayed in the Pathfinder chart are ordered based on the [event\_time](/analytics/user-data-lookup) timestamp with millisecond resolution. 
+Pathfinder is a great tool to show you *how* users are using your product by showing all the paths that start with, or end with a specific event during a time period. Events displayed in the Pathfinder chart are ordered based on the [event\_time](/docs/analytics/user-data-lookup) timestamp with millisecond resolution. 
 
 Your Pathfinder chart will consist of two separate visualizations: the flowing sankey diagram towards the bottom, and the funnel towards the top.
 
@@ -68,14 +68,14 @@ Your Pathfinder chart will consist of two separate visualizations: the flowing s
 
 Once you've selected an event to begin or end your paths with, Amplitude will generate all event node paths (up to 15) that meet the following conditions:
 
-1. Either the event node is an [[Amplitude] Start Session](/cdp/sources/instrument-track-sessions), or
+1. Either the event node is an [[Amplitude] Start Session](/docs/cdp/sources/instrument-track-sessions), or
 2. The percentage of users in the node is greater than or equal to the zoom threshold
 
 The sankey diagram (the flow diagram) shows all the paths starting or ending with a specific event. Each step is labeled. The label tells you the event fired at that step in the sequence, as well as the frequency the event was fired at that stage in the sequence.
 
 For example, in the sequence shown below (`Start Session --> Main Landing Screen --> Step 3`), 17.61% of events at Step 3 in the sequence were 'Edit Profile.'
 
-![pathfinder 4.png](/output/img/legacy-charts/pathfinder-4-png.png)
+![pathfinder 4.png](/docs/output/img/legacy-charts/pathfinder-4-png.png)
 
 Each step in the sequence is uniquely colored. The colored pathways show you the flow of events between two nodes. To measure the total number of conversions through a selected sequence, use the funnel visualization at the top.
 
@@ -91,11 +91,11 @@ Above the flow diagram, you'll find a funnel measuring the total number of times
 
 To construct a sequence, simply select events from the flow diagram. As you do so, Amplitude will calculate the conversion rate for the funnel.
 
-![pathfinder_5.png](/output/img/legacy-charts/pathfinder-5-png.png)
+![pathfinder_5.png](/docs/output/img/legacy-charts/pathfinder-5-png.png)
 
 The conversion rate shows you the percentage of all sequences mirroring that specific path. In the example above, 17.6%  of all sequences were `Start Session → Main Landing Screen → Edit Profile`.
 
-You can use the [Microscope](/analytics/microscope) to create a behavioral cohort, or download the list of users as a .CSV.
+You can use the [Microscope](/docs/analytics/microscope) to create a behavioral cohort, or download the list of users as a .CSV.
 
 {{partial:admonition type='note'}}
  Because the funnel query is showing **total** conversion, and is not counting unique conversions like a typical Funnel chart, users may simultaneously appear in both the converted or dropped-off segments. Since users can be considered both converted and not converted, these cohorts may be more useful for learning more about these specific users rather than targeting them for in-product experiences.

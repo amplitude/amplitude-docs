@@ -16,7 +16,7 @@ The Amplitude Instrumentation Explorer is an extension in the Google Chrome Web 
 
 In the Instrumentation Explorer, the *Events* tab is where you'll find detailed insights into the parameters of each event **you** trigger on your website. This includes `user_id`, `device_id`, `event_properties`, and `user_properties`.
 
-![Screenshot](/output/img/data/screenshot.png)
+![Screenshot](/docs/output/img/data/screenshot.png)
 
 To switch between the different Amplitude projects that are receiving your events, select it from the Project dropdown. Each Amplitude project is distinguished by an abbreviated API key.
 
@@ -24,20 +24,20 @@ To clear all the events from your popup, click *Clear Events.*
 
 To hide specific event types, click the "Invisible" icon:
 
-![hide_events.png](/output/img/data/hide-events-png.png)
+![hide_events.png](/docs/output/img/data/hide-events-png.png)
 
 To copy your events' event and user property parameters, click the "Copy" icons:
 
-![Screenshot](/output/img/data/screenshot.png)
+![Screenshot](/docs/output/img/data/screenshot.png)
 
 ## View your configuration options
 
 To view the [configuration options](https://www.docs.developers.amplitude.com/data/sdks/javascript/#configuration) you've set for each project's SDK, click the *API Options* tab:
 
-![Screenshot](/output/img/data/screenshot.png)
+![Screenshot](/docs/output/img/data/screenshot.png)
 
 ## View your hidden events
 
 To see a list of your hidden events or to display events on the webpage as they are triggered, click the *Settings* tab.
 
-![Screenshot](/output/img/data/screenshot.png)
+![Screenshot](/docs/output/img/data/screenshot.png)

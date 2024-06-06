@@ -28,7 +28,7 @@ This feature is available to users on **Plus**, **Growth**, and **Enterprise** *
 
 The first time you view your tracking plan, you’ll see all the events and properties received and processed by Amplitude. All events and properties will show up as unexpected; to add them to your tracking plan, just check the box next to the event name and click *Add to plan*.
 
-![observe](/output/img/data/observe.png)
+![observe](/docs/output/img/data/observe.png)
 
 Do this anytime you want to add an unexpected event to your tracking plan. Don’t forget to click *Publish* to complete the process. From now on, Observe will alert you about any changes to this event or any properties associated with it.
 
@@ -54,7 +54,7 @@ Observe will still add value by surfacing and alerting you to any runtime valida
 
 You can overlay your tracking plan with your event stream.
 
-![observe](/output/img/data/observe.png)
+![observe](/docs/output/img/data/observe.png)
 
 If you’re using the Amplitude SDK, you also have the option to overlay your tracking plan with your event stream from an environment, but **only** data sent to the **specific branch** you’re currently on. This is useful for debugging when you have multiple teams sending data to the environment.
 

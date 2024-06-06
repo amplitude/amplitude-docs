@@ -12,7 +12,7 @@ major_version: 1
 parent: e6b6889d-9d39-4f04-89a1-87f78db80f49
 exclude_from_sitemap: false
 ---
-The [Ampli Wrapper](/data/sdks/ampli) is a generated, strongly typed API for tracking Analytics events based on your Tracking Plan in Amplitude Data. The tracking library exposes a function for every event in your team’s tracking plan. The function’s arguments correspond to the event’s properties.
+The [Ampli Wrapper](/docs/data/sdks/ampli) is a generated, strongly typed API for tracking Analytics events based on your Tracking Plan in Amplitude Data. The tracking library exposes a function for every event in your team’s tracking plan. The function’s arguments correspond to the event’s properties.
 
 Ampli provides autocompletion for events & properties defined in Data and enforce your event schemas in code to prevent bad instrumentation. 
 
@@ -20,7 +20,7 @@ Amplitude Data supports tracking analytics events from browser apps written in J
 
 ## Quickstart
 
-1. [(Prerequisite) Create a Tracking Plan in Amplitude Data](/data/create-tracking-plan)
+1. [(Prerequisite) Create a Tracking Plan in Amplitude Data](/docs/data/create-tracking-plan)
 
     Plan your events and properties in [Amplitude Data](https://data.amplitude.com/). 
 
@@ -126,7 +126,7 @@ ampli pull
 
 ## API
 
-Ampli generates a thin facade over the Amplitude SDK which provides convenience methods. The Ampli Wrapper also grants access to every method of the underlying Amplitude SDK through `ampli.client`. [More details](/sdks/ampli#wrapping-the-amplitude-sdk).
+Ampli generates a thin facade over the Amplitude SDK which provides convenience methods. The Ampli Wrapper also grants access to every method of the underlying Amplitude SDK through `ampli.client`. [More details](/docs/sdks/ampli#wrapping-the-amplitude-sdk).
 
 ### Load
 
@@ -156,7 +156,7 @@ ampli.identify('user-id', {
 });
 ```
 
-The options argument allows you to pass [Amplitude fields](/apis/http-api-v2#keys-for-the-event-argument) for this call, such as `deviceId`.
+The options argument allows you to pass [Amplitude fields](/docs/apis/http-api-v2#keys-for-the-event-argument) for this call, such as `deviceId`.
 
 ```ts
 ampli.identify('user-id', {
@@ -198,12 +198,12 @@ ampli.eventName(properties: EventNameProperties, options: EventOptions, extra: M
 
 The `properties` argument passes event properties.
 
-The `options` argument allows you to pass [Amplitude fields](/apis/http-api-v2#properties-1), like `price`, `quantity` and `revenue`.
+The `options` argument allows you to pass [Amplitude fields](/docs/apis/http-api-v2#properties-1), like `price`, `quantity` and `revenue`.
 
 For example, in the following code, your tracking plan contains an event called `songPlayed`. The event is defined with two required properties: `songId` and `songFavorited`.
  The property type for `songId` is string, and `songFavorited` is a boolean.
 
-The event has an Amplitude field defined: `deviceId`. Learn more about Amplitude fields [here](/apis/http-v2-api/#keys-for-the-event-argument).
+The event has an Amplitude field defined: `deviceId`. Learn more about Amplitude fields [here](/docs/apis/http-v2-api/#keys-for-the-event-argument).
 
 ```js
 ampli.songPlayed( {

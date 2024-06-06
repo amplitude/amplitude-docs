@@ -74,7 +74,7 @@ If a sync is partially successful, the entire cohort sync will still be marked a
 
 Amplitude issues a warning if you attempt to modify the Amplitude user property mapping, because doing so can impact active cohort syncs. Click *View Syncs* to view the sync that could be affected. From there, decide if you want to turn off the sync.
 
-![](/output/img/audiences/24324916576155)  
+![](/docs/output/img/audiences/24324916576155)  
   
 These warnings are available for the following cohort destinations:
 
@@ -105,7 +105,7 @@ The cohort sync history page provides a detailed breakdown of cohort syncs over 
 5. Click the *History* tab.
 6. Click *Export list* to download a CSV. See the [Inspect CSV exports via download](https://docs.google.com/document/d/18yRRJCbE35Dc9c7znO-YhQ00LYD6KWw1ltAKjXJ3J7U/edit#bookmark=id.8g3benqkxz79) section below for more detailed information.
 
-![](/output/img/audiences/24324901338907)
+![](/docs/output/img/audiences/24324901338907)
 
 {{partial:admonition type='note'}}
 This detailed cohort sync history page is available for all cohort sync destinations except for [Amazon S3](https://www.docs.developers.amplitude.com/data/destinations/amazon-s3-cohort/), [Braze User Properties sync](https://www.docs.developers.amplitude.com/data/destinations/braze-cohort/) and [TradeDesk](https://www.docs.developers.amplitude.com/data/destinations/thetradedesk-cohort/). These destinations continuously perform a full sync of users, not just the initial sync followed by incremental changes, making CSV downloads impractical. 

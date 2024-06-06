@@ -15,7 +15,7 @@ Amplitude Data provides you with a complete set of tools for the entire lifecycl
 
 ## Getting data into Amplitude
 
-There are several different methods for getting data into Amplitude. You can collect data from your app using our [SDKs](/get-started/get-data-in).
+There are several different methods for getting data into Amplitude. You can collect data from your app using our [SDKs](/docs/get-started/get-data-in).
 
 ### Which ingestion method should you use?
 
@@ -44,9 +44,9 @@ An essential step to help maximize your data is identifying and planning the eve
 
 Here are several resources to help you decide what to track, and to get you started on the right foot:
 
-* If you want to get started as quickly as possible, start by reading up on [what events you'll need](/get-started/select-events). This article provides recommendations on events and properties commonly asked in each industry.
-* Check out our [data planning playbook](/data/data-planning-playbook) if you want a deeper understanding of creating a taxonomy from scratch.
-* If you've determined the events and properties you want to track and are looking for how to get them into Amplitude, see our article on [creating your tracking plan](/data/create-tracking-plan).
+* If you want to get started as quickly as possible, start by reading up on [what events you'll need](/docs/get-started/select-events). This article provides recommendations on events and properties commonly asked in each industry.
+* Check out our [data planning playbook](/docs/data/data-planning-playbook) if you want a deeper understanding of creating a taxonomy from scratch.
+* If you've determined the events and properties you want to track and are looking for how to get them into Amplitude, see our article on [creating your tracking plan](/docs/data/create-tracking-plan).
 
 ## Best practices
 
@@ -60,4 +60,4 @@ You can set your naming convention in settings, and Amplitude Data will automati
 
 ### Use a separate environment for testing
 
-Keep your data clean by using separate projects for development and production. Different projects allow you to test your implementation without worrying about affecting your final business reports. It's also a great place to try the data management tools before applying them to your production data. See this article on [creating a project in Amplitude](/get-started/create-project).
+Keep your data clean by using separate projects for development and production. Different projects allow you to test your implementation without worrying about affecting your final business reports. It's also a great place to try the data management tools before applying them to your production data. See this article on [creating a project in Amplitude](/docs/get-started/create-project).

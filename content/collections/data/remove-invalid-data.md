@@ -28,7 +28,7 @@ To create a drop filter, follow these steps:
 **NOTE:** You must use exact strings to match values as you cannot use comparative operators (such as "Contains") for drop filters.
 5. Specify the time range for the events you’d like Amplitude Data to drop-filter out.  
   
-![amplitude](/output/img/data/amplitude.png)
+![amplitude](/docs/output/img/data/amplitude.png)
 6. When you’re ready, click *Drop Data* to initiate the drop filter.
 
 If you want to edit or delete a drop filter, click on its name in the drop filter list. In the fly-out panel that appears on the right, make your edits and click *Update Drop Filter*.
@@ -51,7 +51,7 @@ To create a block filter, follow these steps:
 4. Specify whether you want to filter events, event properties, or user properties.
 5. Specify whether the filter will be applied on the basis of event or property name; IP address; or version. Then set the rest of the filter’s parameters.  
   
-![amplitude](/output/img/data/amplitude.png)
+![amplitude](/docs/output/img/data/amplitude.png)
 6. When you’re ready, click *Block Data* to initiate the block filter.
 
 ## Block events and properties
@@ -65,7 +65,7 @@ To block an event or property, follow these steps:
 1. Make sure you're in the `main` branch. You can only block events and properties from there.
 2. Navigate to *Events* or *Properties*, depending on which one you’d like to block.
 3. Find the event or property you want to block and click the checkbox next to its name.
-4. If blocking an event, click the *Block* drop down menu, and choose either *Block now* or *Schedule for blocking*. If blocking a property, click ![block.png](/output/img/data/block-png.png).
+4. If blocking an event, click the *Block* drop down menu, and choose either *Block now* or *Schedule for blocking*. If blocking a property, click ![block.png](/docs/output/img/data/block-png.png).
 5. A confirmation modal will appear. If you are sure you still want to block the event or property, click *Block*.
 6. To unblock a blocked event, follow steps 1-5 and click *Unblock* instead of *Block*.
 
@@ -90,7 +90,7 @@ To delete events and event properties you no longer need, follow these steps:
 3. Click *Delete*.
 4. A verification modal will appear, instructing you to type in a confirmation phrase to continue with the deletion process. Type it in the text box and click *Delete*.
 
-![delete_one_event_data.png](/output/img/data/delete-one-event-data-png.png)
+![delete_one_event_data.png](/docs/output/img/data/delete-one-event-data-png.png)
 
 If you need help deciding whether to hide, block, or delete your events or properties, refer to [this article](https://help.amplitude.com/hc/en-us/articles/360059279291-FAQ-What-s-the-difference-between-hiding-blocking-and-deleting-an-event-or-property-) to see the differences between each status.
 

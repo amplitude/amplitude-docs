@@ -20,19 +20,19 @@ So start by identifying—as specifically as possible—your business goals. Wha
 
 ## Understand how users are identified and tracked in Amplitude
 
-If you're not properly tracking your users, you will not get what you need from Amplitude. It's as simple as that. So be sure to **read and understand** our Help Center article on [how Amplitude identifies and tracks unique users](/cdp/sources/instrument-track-unique-users) before you get started with instrumentation.
+If you're not properly tracking your users, you will not get what you need from Amplitude. It's as simple as that. So be sure to **read and understand** our Help Center article on [how Amplitude identifies and tracks unique users](/docs/cdp/sources/instrument-track-unique-users) before you get started with instrumentation.
 
 ## Organize events and related properties
 
 Consider making a spreadsheet listing each event and its associated properties. It might look something like this:  
 
-![Screen_Shot_2017-03-20_at_9.34.15_AM.png](/output/img/get-started/Screen_Shot_2017-03-20_at_9.34.15_AM.png)  
+![Screen_Shot_2017-03-20_at_9.34.15_AM.png](/docs/output/img/get-started/Screen_Shot_2017-03-20_at_9.34.15_AM.png)  
 
 **Event names should be clear and intuitive**. If your organization doesn't have a standard naming scheme, we recommend naming your events using the following syntax:  
   
 verb + noun (`clicked signup` ) or noun + verb (`signup clicked` ).  
   
-Check out our [Data Taxonomy Playbook](/data/data-planning-playbook) for best practices regarding your event taxonomy. Download the above template as an [Excel](https://drive.google.com/file/d/1dIiJrLJXdVNBh6VQ4bcII0THNyEkaooO/view) or [Google Sheets](https://docs.google.com/spreadsheets/d/1-6rXRomzq05YDQ9A6QG9A2i-jez72amPw-Johhd-heQ/view) spreadsheet.  
+Check out our [Data Taxonomy Playbook](/docs/data/data-planning-playbook) for best practices regarding your event taxonomy. Download the above template as an [Excel](https://drive.google.com/file/d/1dIiJrLJXdVNBh6VQ4bcII0THNyEkaooO/view) or [Google Sheets](https://docs.google.com/spreadsheets/d/1-6rXRomzq05YDQ9A6QG9A2i-jez72amPw-Johhd-heQ/view) spreadsheet.  
 
 ### Resist the urge to track everything immediately
 
@@ -44,8 +44,8 @@ We recommend that each event have no more than 20 properties. (This also applies
 
 ## Consider instrumenting a cross-platform project
 
-We recommend combining web and mobile data into the same project if your product is similar across all platforms and the taxonomy is consistent. This will allow you to analyze how users move between different platforms. Different products with distinct taxonomies should be instrumented in separate projects. [Evaluate here the pros and cons of combining Android and iOS data or multiple apps to the same Amplitude project](/get-started/cross-platform-vs-separate-platform). 
+We recommend combining web and mobile data into the same project if your product is similar across all platforms and the taxonomy is consistent. This will allow you to analyze how users move between different platforms. Different products with distinct taxonomies should be instrumented in separate projects. [Evaluate here the pros and cons of combining Android and iOS data or multiple apps to the same Amplitude project](/docs/get-started/cross-platform-vs-separate-platform). 
 
 ## Next steps
 
-If you still have questions, read this [article on instrumentation FAQs](/get-started/create-project) and [get data into Amplitude.](/get-started/get-data-in)
+If you still have questions, read this [article on instrumentation FAQs](/docs/get-started/create-project) and [get data into Amplitude.](/docs/get-started/get-data-in)

@@ -12,9 +12,9 @@ Amplitude’s **Funnel Analysis** chart helps you understand how users are navi
 
 A common example of a funnel is successfully onboarding. Amplitude considers a user to be converted through a funnel if they fire the events you specified, in the specified order.
 
-This article will outline the steps required to build a funnel analysis in Amplitude. Before you begin, you should familiarize yourself with the basics of [how charts work in Amplitude](/analytics/charts/build-charts-add-events).
+This article will outline the steps required to build a funnel analysis in Amplitude. Before you begin, you should familiarize yourself with the basics of [how charts work in Amplitude](/docs/analytics/charts/build-charts-add-events).
 
-If you've already built your funnel analysis chart, you can move on to [interpret your funnel analysis](/analytics/charts/funnel-analysis/funnel-analysis-interpret) chart.
+If you've already built your funnel analysis chart, you can move on to [interpret your funnel analysis](/docs/analytics/charts/funnel-analysis/funnel-analysis-interpret) chart.
 
 ## Set up a funnel analysis
 
@@ -31,13 +31,13 @@ To build a Funnel Analysis chart, follow these steps:
 3. Next, select at least **one other event**. You can add properties to these events as well.
 4. Specify the **order** in which a user will have to trigger these events in order to be counted as converted—this order, any order, or exact order.  
   
-    ![build_funnel.gif](/output/img/funnel-analysis/build-funnel-gif.gif)  
+    ![build_funnel.gif](/docs/output/img/funnel-analysis/build-funnel-gif.gif)  
 
     Selecting *This order* tells Amplitude Analytics that a user must complete all the steps you've included, in the order you've included them, in order to count as a conversion. However, along the way they can **also** trigger other steps not specified here. *Any order* means the user must complete all the steps you've included, but the order in which that happens doesn't matter. And *Exact order* works the same as *This order*, except the user is not permitted to include any other steps at all.
 
 5. To **exclude** users from your funnel who trigger specific events between steps of your funnel, click *+* *Exclude users who did* and select the exclusion event from the drop-down list. You can apply the exclusion between all steps in the funnel, or between two specific steps. For any-order funnels, users will be excluded if they fire the exclusion event between any of the funnel steps.
 
-![excluded_who_did.png](/output/img/funnel-analysis/excluded-who-did-png.png)  
+![excluded_who_did.png](/docs/output/img/funnel-analysis/excluded-who-did-png.png)  
   
 {{partial:admonition type='note'}}
 You cannot exclude users if you are measuring by totals.
@@ -55,7 +55,7 @@ The user segment you select will only apply to the starting event.
 
 9. If desired, add another user segment by clicking *+ Add Segment*, and repeating steps 6 and 7.
 
-![segment.gif](/output/img/funnel-analysis/segment-gif.gif)  
+![segment.gif](/docs/output/img/funnel-analysis/segment-gif.gif)  
   
 {{partial:admonition type='note'}}
  You can break out your starting event by user properties by clicking *… + Group by* in the Events module, if desired. For example, if you wanted to group users by the cities they were in when they fired the starting event, you would select *City* from the property list. Amplitude will then break out the retention analysis on a city-by-city basis. However, you will only be able to include one user segment in your analysis. 
@@ -63,4 +63,4 @@ The user segment you select will only apply to the starting event.
 
 Your new funnel analysis should now be visible in the chart module.
 
-To read about [interpreting your funnel analysis, click here](/analytics/charts/funnel-analysis/funnel-analysis-interpret).
+To read about [interpreting your funnel analysis, click here](/docs/analytics/charts/funnel-analysis/funnel-analysis-interpret).

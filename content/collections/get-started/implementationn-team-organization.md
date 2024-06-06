@@ -21,7 +21,7 @@ Example tasks and responsibilities:
 
 * Coordinate with your Success Manager (Growth/Enterprise plans only) to organize training or other workshops with your team(s).
 * Drive Amplitude adoption and usage across teams at your company.
-* Manage implementation where needed. For example, if you need to expand Amplitude to a new platform or product, you make sure a [tracking plan (taxonomy)](/data/data-planning-playbook) is built and engineering resources are available.
+* Manage implementation where needed. For example, if you need to expand Amplitude to a new platform or product, you make sure a [tracking plan (taxonomy)](/docs/data/data-planning-playbook) is built and engineering resources are available.
 
 ## Data Governor
 

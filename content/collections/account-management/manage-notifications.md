@@ -34,6 +34,6 @@ To enable specific users to receive notifications:
 3. To add new team members to the notification list, enter their names or email addresses into the text box and click *Add Team Members*.
 4. Repeat this process for each project within your organization, as needed.
 
-![manage_user_privacy_notifications.png](/output/img/account-management/manage-user-privacy-notifications-png.png)
+![manage_user_privacy_notifications.png](/docs/output/img/account-management/manage-user-privacy-notifications-png.png)
 
 For more information on Amplitude's user privacy API, see the [User Privacy API documentation](https://www.docs.developers.amplitude.com/analytics/apis/user-privacy-api/).

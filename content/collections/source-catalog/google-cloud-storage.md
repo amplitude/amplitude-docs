@@ -30,7 +30,7 @@ Before you start, make sure you’ve taken care of some prerequisites.
 - Make sure that an Amplitude project exists to receive the data. If not, create a new project.
 - Make sure you are an Admin or Manager of the Amplitude project.
 - Make sure your GCS bucket has data files ready for ingestion. They must conform to the mappings that you outline in your converter file.
-- Make sure the data in your GCS bucket follows the format outlined in [Amplitude's HTTP API v2 spec](/apis/http-api-v2#keys-for-the-event-argument).
+- Make sure the data in your GCS bucket follows the format outlined in [Amplitude's HTTP API v2 spec](/docs/apis/http-api-v2#keys-for-the-event-argument).
 
 ### Create a GCS service account and set permissions
 
@@ -94,7 +94,7 @@ After you have all the fields needed for the transformation, you can save it. Yo
 
 Although Amplitude needs certain fields to bring data in, it also supports extra fields which you can include by clicking the “Add Mapping” button. Here, Amplitude supports 4 kinds of mappings: Event properties, User Properties, Group Properties and Additional Properties. 
 
-Find a list of supported fields for events in the [HTTP V2 API documentation](/apis/http-v2-api#keys-for-the-event-argument) and  for user properties in the [Identify API documentation](/apis/identify-api#identification-parameter-keys). Add any columns not in those lists to either `event_properties` or `user_properties`, otherwise it's ignored.  
+Find a list of supported fields for events in the [HTTP V2 API documentation](/docs/apis/http-v2-api#keys-for-the-event-argument) and  for user properties in the [Identify API documentation](/docs/apis/identify-api#identification-parameter-keys). Add any columns not in those lists to either `event_properties` or `user_properties`, otherwise it's ignored.  
 
 After you have added all the fields you wish to bring into Amplitude, you can view samples of this configuration in the Data Preview section. Data Preview automatically updates as you include or remove fields and properties. In Data Preview, you can look at a few sample records based on the source records along with how that data is imported into Amplitude. This ensures that you are bringing in all the data points you need into Amplitude. You can look at 10 different sample source records and their corresponding Amplitude events.
 

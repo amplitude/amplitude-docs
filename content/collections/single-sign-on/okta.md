@@ -12,7 +12,7 @@ Amplitude provides a single sign-on integration with Okta for customers on Schol
 
 ## Before you begin
 
-For some general information about SSO, see [this article on SSO in Amplitude](/admin/single-sign-on/sso).
+For some general information about SSO, see [this article on SSO in Amplitude](/docs/admin/single-sign-on/sso).
 
 In order to set up SSO, you must be an org admin for your Amplitude organization. You must also be able to configure your organization in Okta.
 
@@ -23,33 +23,33 @@ To configure SSO for Amplitude using Okta, follow these steps:
 1. In Okta, navigate to the admin dashboard and click *Applications*.
 2. On the *Applications* page, click *Create App Integration*.
 
-![image4.png](/output/img/single-sign-on/image4-png.png)
+![image4.png](/docs/output/img/single-sign-on/image4-png.png)
 
 3. In the modal that appears, select the *SAML 2.0* radio button and click *Next*.  
 
-![image1.png](/output/img/single-sign-on/image1-png.png)
+![image1.png](/docs/output/img/single-sign-on/image1-png.png)
 
 4. Enter a name for the app. For easier recognition, you can also upload a logo to go with it. Then click *Next*.  
 
-![image6.png](/output/img/single-sign-on/image6-png.png)
+![image6.png](/docs/output/img/single-sign-on/image6-png.png)
 
 5. Next, you'll configure your SAML settings. Enter the single sign-on URL (ACS URL) and the audience URL (Entity ID) in the appropriate spaces. Then, from the *Application username* dropdown, select *Email*.
 
-![image5.png](/output/img/single-sign-on/image5-png.png)
+![image5.png](/docs/output/img/single-sign-on/image5-png.png)
 
 You can find the Entity ID and Assertion Consumer Service URL in Amplitude, under *Settings > Organization settings > Access & SSO Settings > Single Sign-On settings*.
 
-![SSO](/output/img/single-sign-on/sso.png)
+![SSO](/docs/output/img/single-sign-on/sso.png)
 
 6. Once the app is created, view the identity provider (**IdP**) metadata (found on the *Sign On* tab in Okta).  
   
-![image3.png](/output/img/single-sign-on/image3-png.png)  
+![image3.png](/docs/output/img/single-sign-on/image3-png.png)  
   
-![image9.png](/output/img/single-sign-on/image9-png.png)
+![image9.png](/docs/output/img/single-sign-on/image9-png.png)
 
 7. Click the metadata to display the XML. Save this as an .xml file (Many browsers allow saving the active page as a file and can use the .xml suffix).  
   
-![image2.png](/output/img/single-sign-on/image2-png.png)
+![image2.png](/docs/output/img/single-sign-on/image2-png.png)
 
 8. In Amplitude, navigate to *Settings > Organization settings > Access & SSO Setting > Single Sign-On Settings* and upload the metadata file.
 9. Save your changes to enable SSO.

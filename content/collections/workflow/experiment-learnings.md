@@ -14,7 +14,7 @@ You’ve designed your experiment, rolled it out to your users, and given them e
 In the *Analysis* card, you’ll be able to tell at a glance whether your experiment has yielded **statistically-significant** results, as well as what those results actually are. Amplitude Experiment takes the information you gave it during the design and rollout phases and plugs them in for you automatically, so there’s no repetition of effort. It breaks the results out by variant, and provides you with a convenient, detailed tabular breakdown.
 
 {{partial:admonition type='note'}}
-This article continues directly from the [article in our Help Center on rolling out your experiment](/experiment/workflow/experiment-test). If you haven’t read that and followed the process it describes, do so before continuing here.
+This article continues directly from the [article in our Help Center on rolling out your experiment](/docs/experiment/workflow/experiment-test). If you haven’t read that and followed the process it describes, do so before continuing here.
 {{/partial:admonition}}
 
 Amplitude will not generate p-values or confidence intervals for experiments using binary metrics (i.e., unique conversions) until each variant has 100 users **and** 25 conversions. Experiments using non-binary metrics need only to reach 100 users per variant.
@@ -35,7 +35,7 @@ The *Summary* section may include multiple badges simultaneously:
 		* *Above Goal* or *Below Goal:* the primary metric's mean was either **above** or **below** its goal depending on the direction of the test (increase = above, decrease = below).
 		* *Above Control* or *Below Control:* the primary metric's mean was either **above** or **below** the control's mean, depending on the direction of the test (increase = above, decrease = below). These badges are only relevant to stat sig results.
 
-![summary.png](/output/img/workflow/summary-png.png)
+![summary.png](/docs/output/img/workflow/summary-png.png)
 
 2. At the top of the *Analysis* section is an overview of how your experiment performed, broken down by metric and variant. Below that is the experiment's **exposure definition:** how many variants were shown, what the primary metric was, and what the **exposure event** was. This is the event users will have to fire before being included in an experiment.  
   
@@ -45,14 +45,14 @@ The *Summary* section may include multiple badges simultaneously:
   
 To learn more about exposure events, see [this article in the Amplitude Developer Center](https://www.docs.developers.amplitude.com/experiment/general/exposure-tracking/).  
   
-The exposure definition's default state is collapsed. Expand it by clicking ![expandIcon.png](/output/img/workflow/expandicon-png.png) (the expand icon) below the metric table.  
+The exposure definition's default state is collapsed. Expand it by clicking ![expandIcon.png](/docs/output/img/workflow/expandicon-png.png) (the expand icon) below the metric table.  
   
 You can also create a chart in Amplitude Analytics from this experiment by clicking *Open in Chart*.  
   
 {{partial:admonition type='note'}}If you are running an A/B/n test, Amplitude Experiment displays the confidence interval / p-value for the control against each treatment individually. To instead see the comparison between two non-control treatments, either change the control variant, or open the test in Analytics and create a chart using the two treatments you're interested in.
 {{/partial:admonition}}
 
-3. If desired, adjust the experiment’s **confidence level**. The default is 95%. You can also [choose between a sequential test and a T-test](/experiment/workflow/finalize-statistical-preferences).   
+3. If desired, adjust the experiment’s **confidence level**. The default is 95%. You can also [choose between a sequential test and a T-test](/docs/experiment/workflow/finalize-statistical-preferences).   
   
 {{partial:admonition type='note'}}
 Lowering your experiment’s confidence level will make it more likely that your experiment achieves statistical significance, but the trade-off is that doing so increases the likelihood of a false positive.
@@ -60,7 +60,7 @@ Lowering your experiment’s confidence level will make it more likely that your
 
 4. Set the **time frame** for your experiment analysis, either from the selection of pre-set durations, or by opening the date picker and choosing a custom date range.
 
-The tables, graphs, and charts shown in the Analysis section are explained in depth in our Help Center articles on [understanding the Experiment Analysis view](/experiment/analysis-view) and [interpreting the cumulative exposures graph in Amplitude Experiment](/experiment/advanced-techniques/cumulative-exposure-change-slope).
+The tables, graphs, and charts shown in the Analysis section are explained in depth in our Help Center articles on [understanding the Experiment Analysis view](/docs/experiment/analysis-view) and [interpreting the cumulative exposures graph in Amplitude Experiment](/docs/experiment/advanced-techniques/cumulative-exposure-change-slope).
 
 {{partial:admonition type='note'}}
 Amplitude Experiment needs something to compare your control to in order to generate results. If you neglect to include **both** the control and **at least one** variant, your chart will not display anything.
@@ -70,9 +70,9 @@ Congratulations! You’ve successfully designed, rolled out, and analyzed your e
 
 ## Interpret notifications
 
-Your preferred notification settings allow you to receive experiment updates by email or [Slack](/analytics/integrate-slack). 
+Your preferred notification settings allow you to receive experiment updates by email or [Slack](/docs/analytics/integrate-slack). 
 
-![experiment notification settings.png](/output/img/workflow/experiment-notification-settings-png.png)
+![experiment notification settings.png](/docs/output/img/workflow/experiment-notification-settings-png.png)
 
 Click the check box next to the desired notification:
 

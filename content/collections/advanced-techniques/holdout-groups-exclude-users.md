@@ -37,7 +37,7 @@ To create a holdout group and add your experiments to it, follow these steps:
 1. In Amplitude Experiment, navigate to the *Experiment Groups* tab in the Experiments page. (If you’re trying to do this from within an experiment, open the *Configure* tab and click *See Holdout Groups*.) Here, you can see all your holdout groups and be able to create new ones.
 2. To add a new holdout group to your project, click *Add a new holdout group*.
 
-![Screenshot](/output/img/advanced-techniques/screenshot.png)
+![Screenshot](/docs/output/img/advanced-techniques/screenshot.png)
 
 If you have existing groups, click *Create A New Group*, and then select *Holdout Group* in the drawer.
 
@@ -54,7 +54,7 @@ Be sure not to add the same users nor cohorts to both the *Include a holdout* an
 
 6. Click *Add Group* to finish the process.
 
-![holdoutGroupIndvCohortsSettings.png](/output/img/advanced-techniques/holdoutgroupindvcohortssettings-png.png)
+![holdoutGroupIndvCohortsSettings.png](/docs/output/img/advanced-techniques/holdoutgroupindvcohortssettings-png.png)
 
 ## Manage holdout groups
 
@@ -83,9 +83,9 @@ To create a pre-populated Experiment Results chart, follow these steps: 
 
 * * Exposure event
 	* Segments for *holdout* and *on*
-	* Statistical method set to [T-test](/experiment/experiment-theory/analyze-with-t-test) (*Samples per variant needed* set to 10,000)
+	* Statistical method set to [T-test](/docs/experiment/experiment-theory/analyze-with-t-test) (*Samples per variant needed* set to 10,000)
 	* Analysis date range
 
 5. From here, select the primary metric and start analyzing the impact of your holdout group.
 
-For more information, read the [help center article on advanced use cases for holdout groups](/experiment/advanced-techniques/holdout-groups-advanced-use-cases).
+For more information, read the [help center article on advanced use cases for holdout groups](/docs/experiment/advanced-techniques/holdout-groups-advanced-use-cases).

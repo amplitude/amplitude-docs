@@ -66,7 +66,7 @@ curl --data 'api_key=040062a5d38552315b98302ba4f2f' --data 'identification=[{"us
 {{/partial:tab}}
 {{/partial:tabs}}
 
-To confirm you've configured it correctly, [look up your test user or device in Amplitude](/analytics/user-data-lookup). See the `UAChannelID `property stored as a user property at the top of your user profile.
+To confirm you've configured it correctly, [look up your test user or device in Amplitude](/docs/analytics/user-data-lookup). See the `UAChannelID `property stored as a user property at the top of your user profile.
 
 ## Amplitude setup 
 

@@ -9,7 +9,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716916848
 landing_blurb: 'Learn how to implement Amplitude Experiment in your product.'
 ---
-Evaluation refers to the act of determining which variant, if any, a user is bucketed into given a flag configuration. In short, evaluation is a function of a [user](/experiment/data-model#users) and a [flag](/experiment/data-model#flags-and-experiments) configuration which outputs a [variant](/experiment/data-model#variants).
+Evaluation refers to the act of determining which variant, if any, a user is bucketed into given a flag configuration. In short, evaluation is a function of a [user](/docs/experiment/data-model#users) and a [flag](/docs/experiment/data-model#flags-and-experiments) configuration which outputs a [variant](/docs/experiment/data-model#variants).
 
 ## Pre-targeting
 
@@ -58,7 +58,7 @@ If sticky bucketing is enabled, a user will always get evaluated to the same pre
 Adding a target segment without defining any rules (where clauses) will capture all users even though the estimates show 0 users.
 {{/partial:admonition}}
 
-A [flag or experiment](/experiment/data-model#flags-and-experiments) may have `0-n` targeting segments. Targeting segments are evaluated from top-to-bottom. If a user matches the segment targeting rule, then [consistent bucketing](#consistent-bucketing) based on the configured allocation percentage and variant distribution weights determines which variant, if any, the user is bucketed into.
+A [flag or experiment](/docs/experiment/data-model#flags-and-experiments) may have `0-n` targeting segments. Targeting segments are evaluated from top-to-bottom. If a user matches the segment targeting rule, then [consistent bucketing](#consistent-bucketing) based on the configured allocation percentage and variant distribution weights determines which variant, if any, the user is bucketed into.
 
 ## All users segment
 

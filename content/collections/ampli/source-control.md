@@ -8,7 +8,7 @@ updated_at: 1715382642
 ---
 
 {{partial:admonition type="info" heading=""}}
-This workflow requires [Ampli CLI 1.9.0+](/sdks/ampli/ampli-cli)
+This workflow requires [Ampli CLI 1.9.0+](/docs/sdks/ampli/ampli-cli)
 {{/partial:admonition}}
 Larger organizations with multiple teams usually need to make changes to their tracking plan and analytics implementations in parallel.
 

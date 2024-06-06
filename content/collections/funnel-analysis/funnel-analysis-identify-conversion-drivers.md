@@ -31,7 +31,7 @@ This feature is available to users on **Growth** and **Enterprise plans** only. 
 * Always keep in mind that **correlation does not equal causation.**
 * This feature will only work for funnel charts that are set up for the conversion metric, and the order of the events is set to “this order.”
 
-See this article [for a more advanced look at funnels analysis](/analytics/charts/funnel-analysis/funnel-analysis-interpret). 
+See this article [for a more advanced look at funnels analysis](/docs/analytics/charts/funnel-analysis/funnel-analysis-interpret). 
 
 ## Analyze events performed between funnel steps
 
@@ -41,7 +41,7 @@ To start a conversion drivers analysis, follow these steps:
 
 1. From within a funnel analysis chart, find the step you’re interested in examining as a conversion event. It can be any step after the initial event in the funnel. Doing this will open the Microscope.
 
-![conversion_drivers.png](/output/img/funnel-analysis/conversion-drivers-png.png)
+![conversion_drivers.png](/docs/output/img/funnel-analysis/conversion-drivers-png.png)
 
 2. From the Microscope, click *Explore Conversion Drivers*. This will open the conversion drivers panel.
 
@@ -49,11 +49,11 @@ The conversion drivers panel has two sections. The **step controller** gives yo
   
 This section also displays the conversion and drop-off numbers for the steps you’ve selected, in terms of both unique users and a percentage of users.
 
-![cd2.png](/output/img/funnel-analysis/cd2-png.png)
+![cd2.png](/docs/output/img/funnel-analysis/cd2-png.png)
 
 Below the step controller is the **events table.** This lists all the events users have performed *between* the two selected steps. At the top of the table, you can choose to look at the event list either for users who converted, or for users who dropped off.
 
-![funnel_conversion_drivers_converted_vs_dropped.png](/output/img/funnel-analysis/funnel-conversion-drivers-converted-vs-dropped-png.png)
+![funnel_conversion_drivers_converted_vs_dropped.png](/docs/output/img/funnel-analysis/funnel-conversion-drivers-converted-vs-dropped-png.png)
 
 The events table shows four relevant metrics for each event listed:  
 
@@ -87,7 +87,7 @@ Click *View Correlation data* for a detailed confusion matrix (aka, prediction s
 * **False Negatives** (FN, bottom left): Converted users predicted not to perform the event
 * **True Negatives** (TN, bottom right): Dropped-off users predicted not to perform the event
 
-![funnel_conversion_drivers_view_correlation_data.png](/output/img/funnel-analysis/funnel-conversion-drivers-view-correlation-data-png.png)
+![funnel_conversion_drivers_view_correlation_data.png](/docs/output/img/funnel-analysis/funnel-conversion-drivers-view-correlation-data-png.png)
 
 You may have heard of different variations and definitions of correlation, including Matthews correlation, Pearson correlation, phi coefficient, and R-value. In this case, all these definitions are equivalent because a conversion drivers analysis looks at pairs of binary random variables.
 
@@ -105,7 +105,7 @@ To use this feature, open a funnel chart and follow these steps:
 
 1. On the chart, find the event you’re interested in analyzing. Open the Microscope by clicking on either the top section (for churn) or the bottom section (for conversions). Then click on *Explore Conversion Drivers*. This will open the conversion drivers tab.  
   
-![funnel_conversion_drivers_last.png](/output/img/funnel-analysis/funnel-conversion-drivers-last-png.png)
+![funnel_conversion_drivers_last.png](/docs/output/img/funnel-analysis/funnel-conversion-drivers-last-png.png)
 
 The conversion drivers tab lists every event included in your project, along with each event’s correlation with either conversion or churn. In this example, the `Add Content to Cart` event is very highly correlated (+0.97) with conversion on the `Purchase Song or Video` event.  
   
@@ -116,7 +116,7 @@ You can switch between viewing correlations with conversions and correlations wi
 2. Locate the event you’re interested in. Below the event name, click *Expand by Property*.
 3. Click the *Select property …* button and click the property you’re interested in analyzing.  
   
-![funnels_conversion_drivers_expand_by_property.gif](/output/img/funnel-analysis/funnels-conversion-drivers-expand-by-property-gif.gif)  
+![funnels_conversion_drivers_expand_by_property.gif](/docs/output/img/funnel-analysis/funnels-conversion-drivers-expand-by-property-gif.gif)  
   
 In this example, we’re interested in finding out which genres are most frequently added to customers’ carts and then purchased—remember, we are looking at users who converted on `Purchase Song or Video`. Here, we see pop is the most popular genre, with a correlation of +0.41.
 

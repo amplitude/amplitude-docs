@@ -22,7 +22,7 @@ With Session Replay, you can:
 * **Diagnose product issues faster**: Follow along with the replay of a specific user’s session to troubleshoot bugs or gain insight into the overall user experience.
 * **Identify significant UX behaviors**: Find out if a single user is representative of a larger macro trend by generating an Event Segmentation or Funnel Analysis chart from a replay in User Lookup.
 
-**NOTE**: Session Replay can only be used to segment by users, and is not available for [account-level reporting](/analytics/account-level-reporting).
+**NOTE**: Session Replay can only be used to segment by users, and is not available for [account-level reporting](/docs/analytics/account-level-reporting).
 
 ## Use Session Replay to review user activity
 
@@ -30,13 +30,13 @@ You can launch a session replay from a user’s event stream, inside a chart, or
 
 When viewing a session replay from your [homepage](#h_01HFD88N1M03EH9D8VF32QBBYQ) or from a [search](#h_01HK600KD02WEC77KE4HYMKHY6), the user's event stream will sync with the replay. You can select an event from the stream, and the replay will jump to that point in the session. (This feature is not yet available when [viewing a replay from a chart](#h_01HFD818NE7FH2D85NS1VTCHYQ).)
 
-![image-20240109-232506.png](/output/img/analytics/image-20240109-232506.png)
+![image-20240109-232506.png](/docs/output/img/analytics/image-20240109-232506.png)
 
 There is no limit on the length of a session that can be viewed as a replay.
 
 **NOTE:** By default, Amplitude will store your replays for 90 days. Upon request, this can be changed to 30 days to comply with stricter privacy requirements. If you change your retention period, the changes will apply only to new sessions, and not those that pre-date the change.
 
-To access Session Replay from a user’s event stream, use the [User Lookup](/analytics/user-data-lookup) feature.
+To access Session Replay from a user’s event stream, use the [User Lookup](/docs/analytics/user-data-lookup) feature.
 
 **NOTE:** If you are in a portfolio view, you can see replays for different users under different projects. However, keep in mind that Session Replay does **not** stitch together replays from a single user across multiple projects. If a user begins a session in one project and then continues to a second project, Amplitude Analytics will generate separate replays for that user for each project.
 
@@ -45,14 +45,14 @@ To access Session Replay from a user’s event stream, use the [User Lookup](/an
 To use Session Replay in a chart, follow these steps:
 
 1. Open the Amplitude chart that contains the events you want to look at.
-2. Open the [Microscope](/analytics/microscope) and click *View User Streams*.
+2. Open the [Microscope](/docs/analytics/microscope) and click *View User Streams*.
 3. Check the *Streams with session replays* box.
 
-*![](/output/img/analytics/20464659435931)*
+*![](/docs/output/img/analytics/20464659435931)*
 
 4. Click *Play Session* in the event stream to play the events directly below it.
 
-![](/output/img/analytics/20464631555227)
+![](/docs/output/img/analytics/20464631555227)
 
 The replay view will then appear in the right-hand panel, where you'll be able to: 
 
@@ -71,7 +71,7 @@ Session Replay is available in the following Amplitude chart types, with these r
 * **Event Segmentation**: Session replay is available for all six measures.
 * **Funnel Analysis**: Session replay is only available for the conversion measure.
 * **Journeys**: Session replay is available on the Pathfinder and Journey Map visualizations.
-* **User Sessions**: Session replay is available for all six measures. This chart won’t allow session replays for [custom defined sessions](/cdp/sources/instrument-track-sessions).
+* **User Sessions**: Session replay is available for all six measures. This chart won’t allow session replays for [custom defined sessions](/docs/cdp/sources/instrument-track-sessions).
 
 **NOTE**: For Funnel Analysis charts, the order of events will appear in chronological order (oldest to newest).
 
@@ -79,15 +79,15 @@ Session Replay is available in the following Amplitude chart types, with these r
 
 With Session Replay, your homepage will show 100 sessions captured over the past seven days. Each session will show its start time, user ID, session length, and country.
 
-**NOTE:** If you can’t see the Session Replay widget and have a customized [home page](/get-started/amplitude-home-page), reset the home page and then re-add your customizations to make the widget visible.
+**NOTE:** If you can’t see the Session Replay widget and have a customized [home page](/docs/get-started/amplitude-home-page), reset the home page and then re-add your customizations to make the widget visible.
 
 Click *Play* to see the session view in the modal that appears. 
 
-![](/output/img/analytics/20464613106203)
+![](/docs/output/img/analytics/20464613106203)
 
 ### View the number of captured sessions
 
-To see an approximation of the number of sessions that have associated replays, create a [User Sessions Chart](/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) and configure it to include sessions that contain any events where the event property `Session Replay ID ≠ “(none)”`. This will include all session replays with a value.
+To see an approximation of the number of sessions that have associated replays, create a [User Sessions Chart](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) and configure it to include sessions that contain any events where the event property `Session Replay ID ≠ “(none)”`. This will include all session replays with a value.
 
 ## Search for a replay
 
@@ -113,7 +113,7 @@ Some common use cases for Session Replay include:
 There are some limitations when using Session Replay:
 
 * Session Replay is available for web-based applications only. This includes mobile web.
-* Session Replay supports standard session definitions only. [Custom](/cdp/sources/instrument-track-sessions) session definitions are not supported.
+* Session Replay supports standard session definitions only. [Custom](/docs/cdp/sources/instrument-track-sessions) session definitions are not supported.
 * You can replay captured sessions for up to three months after they occur.
 * Some HTML elements are not supported and will not be captured as part of the replay:
 	* Canvas

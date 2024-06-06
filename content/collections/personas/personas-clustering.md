@@ -22,13 +22,13 @@ This feature is available to users on **Growth** and **Enterprise plans** only. 
 
 ## Before you begin
 
-First and foremost, events will not appear in any Amplitude charts until instrumentation is complete, so make sure you've got that done. You'll definitely want to read our article on [building charts in Amplitude](/get-started/helpful-definitions).
+First and foremost, events will not appear in any Amplitude charts until instrumentation is complete, so make sure you've got that done. You'll definitely want to read our article on [building charts in Amplitude](/docs/get-started/helpful-definitions).
 
 ## Personas differs from other Amplitude charts
 
 If you're already familiar with Amplitude, the first thing you'll notice about the Personas chart is that it doesn't work the same way other Amplitude charts work: There's no Event Module and no Segmentation Module. There's also no Measured As Module, because the Personas chart doesn't rely on metrics the way other Amplitude charts do.
 
-![personas_2.png](/output/img/personas/personas-2-png.png)
+![personas_2.png](/docs/output/img/personas/personas-2-png.png)
 
 Instead, there is the Cluster Generation Module, the Cluster Count Module, and the Target Cohort Module.  
 
@@ -40,7 +40,7 @@ Instead, there is the Cluster Generation Module, the Cluster Count Module, and t
 
 To build a Personas chart, follow these steps:
 
-1. In the Cluster Generation Module, choose the user cohort you're interested in from the *Generate clusters from* dropdown. *![personas_2.png](/output/img/personas/personas-2-png.png)*
+1. In the Cluster Generation Module, choose the user cohort you're interested in from the *Generate clusters from* dropdown. *![personas_2.png](/docs/output/img/personas/personas-2-png.png)*
 
     Amplitude populates this dropdown list with the user cohorts you've already created. If you have not previously created any user cohorts, you will only be able to choose *Active Users* or *New Users.*
 
@@ -69,4 +69,4 @@ To build a Personas chart, follow these steps:
 
 6. Use the date picker to specify the timezone and set the timeframe for your analysis. Your analysis can span a maximum of 30 days.
 
-Read on to [learn how to interpret your Personas chart](/analytics/charts/personas/personas-interpret).
+Read on to [learn how to interpret your Personas chart](/docs/analytics/charts/personas/personas-interpret).

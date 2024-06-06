@@ -24,7 +24,7 @@ This feature is available to users on **Enterprise plans only**. See our [pricin
 
 ## Before you begin
 
-The User Management API works in tandem with [permission groups](/admin/account-management/manage-users).
+The User Management API works in tandem with [permission groups](/docs/admin/account-management/manage-users).
 
 If you plan on using SCIM provisioning to integrate with an identity provider/SSO solution, make sure SCIM is also enabled within that tool as well.
 
@@ -32,7 +32,7 @@ If you plan on using SCIM provisioning to integrate with an identity provider/SS
 
 If SCIM provisioning is available in your organization, you can find it in the *Access and SSO Settings* section of your organization's settings menu, under *Provisioning Settings:*
 
-![blobid0.png](/output/img/account-management/blobid0-png.png)
+![blobid0.png](/docs/output/img/account-management/blobid0-png.png)
 
 Simply set the *Enable SCIM Provisioning* toggle to *Enabled*. Then click *Generate SCIM Key* to generate the access token used to authenticate requests for the SCIM API. 
 
@@ -68,15 +68,15 @@ The best way to integrate Okta provisioning with Amplitude is with the Amplitude
 1. In the Okta Integration Catalog, navigate to *Applications* and find the Amplitude application. Use the Org ID available in the *General Settings* section in Amplitude to create the integration.
 2. Once the integration has been created, you'll need to set up and authenticate provisioning calls to Amplitude. Navigate to the *Provisioning* tab and click *Configure API Integration*.
 
-![blobid0.png](/output/img/account-management/blobid0-png.png)
+![blobid0.png](/docs/output/img/account-management/blobid0-png.png)
 
 3. You will be prompted for an API Token: this is the same as the SCIM key provided by Amplitude and referred to earlier. Enter the token in the field and click *Save*. You should now have access to user provisioning actions in the *Import*, *Assignment*, and *Push Groups* tabs of the application.
 
-![blobid1.png](/output/img/account-management/blobid1-png.png)
+![blobid1.png](/docs/output/img/account-management/blobid1-png.png)
 
 4. Once Okta has verified the connection, you'll need to select the provisioning actions that can be taken by Okta and sent to Amplitude. Check any desired features in the *To App* section of the *Provisioning* tab that fit your needs. It's usually best to select all available features, to ensure that Amplitude's user records closely match that of your Okta directory.
 
-![blobid2.png](/output/img/account-management/blobid2-png.png)
+![blobid2.png](/docs/output/img/account-management/blobid2-png.png)
 
 ## Troubleshooting
 

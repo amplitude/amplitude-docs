@@ -39,7 +39,7 @@ To send data to Amplitude, you can:
 
 ### Set up Segment Destinations
 
-Follow [these steps](https://segment.com/docs/connections/destinations/catalog/actions-amplitude/#getting-started) with your [Amplitude API key](/apis/find-api-credentials/). 
+Follow [these steps](https://segment.com/docs/connections/destinations/catalog/actions-amplitude/#getting-started) with your [Amplitude API key](/docs/apis/find-api-credentials/). 
 
 To ensure that Segment can send data to Amplitude, make sure your Segment's Amplitude destination is connected to one of your Segment sources:
 
@@ -54,19 +54,19 @@ In addition to [Segment's libraries](https://segment.com/docs/sources/), you ca
 
 There are advantages and disadvantages to taking the client-side bundled approach. One advantage is that adding Amplitude native SDKs adds session tracking capability and automatic user property tracking:
 
-- Events logged during the same user session are grouped together when viewing that user's stream on Amplitude Dashboard. This also allows for [session length calculations](/cdp/sources/instrument-track-sessions).
-- The SDKs automatically record several user properties such as device type, operating system, and user agent. Here is a list of the [user properties](/get-started/user-property-definitions) tracked automatically by Amplitude's SDKs.
+- Events logged during the same user session are grouped together when viewing that user's stream on Amplitude Dashboard. This also allows for [session length calculations](/docs/cdp/sources/instrument-track-sessions).
+- The SDKs automatically record several user properties such as device type, operating system, and user agent. Here is a list of the [user properties](/docs/get-started/user-property-definitions) tracked automatically by Amplitude's SDKs.
 - By enabling Track Session Events, you can ensure the SDKs automatically send `Start Session` and `End Session` events to mark the start and end of a user's mobile session.
-- When Amplitude's SDKs are installed, you can directly interact with them. See the docs for [iOS SDK](/data/sdks/sdk-catalog/ios-swift) and [Android SDK](/data/sdks/sdk-catalog/android-kotlin) to learn more.
+- When Amplitude's SDKs are installed, you can directly interact with them. See the docs for [iOS SDK](/docs/data/sdks/sdk-catalog/ios-swift) and [Android SDK](/docs/data/sdks/sdk-catalog/android-kotlin) to learn more.
 
 Keep in mind that adding more SDKs increases the size of your application (each one is <200kb). You may have to account for this if you are already using several libraries in your app. These SDKs are optional, and you can still conduct almost the same analysis in Amplitude by using only Segment's libraries. 
 
 Without session tracking:
 
-- Events have a session ID of -1, so events triggered by a user during the same session aren't grouped together when viewing that [user's timeline](/analytics/user-data-lookup) in Amplitude. 
-- Session length calculations aren't available in Amplitude, so the [User Sessions](/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) chart doesn't display any data.
-- Amplitude's Pathfinder and [Pathfinder Users](/analytics/charts/legacy-charts/legacy-charts-pathfinder-users) charts aren't able to display out-of-session events alongside events within a session. 
-- You can't perform [session-based Funnel Analysis](/analytics/charts/funnel-analysis) effectively.
+- Events have a session ID of -1, so events triggered by a user during the same session aren't grouped together when viewing that [user's timeline](/docs/analytics/user-data-lookup) in Amplitude. 
+- Session length calculations aren't available in Amplitude, so the [User Sessions](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) chart doesn't display any data.
+- Amplitude's Pathfinder and [Pathfinder Users](/docs/analytics/charts/legacy-charts/legacy-charts-pathfinder-users) charts aren't able to display out-of-session events alongside events within a session. 
+- You can't perform [session-based Funnel Analysis](/docs/analytics/charts/funnel-analysis) effectively.
 
 Without Amplitude's SDKs, you have to map user properties such as device type and operating system manually to track them, as described in [Segment's docs](https://segment.com/docs/integrations/amplitude/#special-properties).
 
@@ -150,7 +150,7 @@ Segment and Amplitude use slightly different terms to describe the same concepts
 | track with property "revenue" | `revenue` | Logs a revenue event to record a revenue amount. |
 | `identify` with traits | `setUserId`, `identify` | Assigns a `userId` and set any traits as user properties. |
 | `screen` / page with name | `track "Viewed" + name` | Logs an event "Viewed [page]" where [page] is the name provided. |
-| `alias` | [User Mapping (Aliasing)](/analytics/apis/aliasing-api/) | UserId aliasing lets you merge two users together that would otherwise have different User IDs tracked in Amplitude. |
+| `alias` | [User Mapping (Aliasing)](/docs/analytics/apis/aliasing-api/) | UserId aliasing lets you merge two users together that would otherwise have different User IDs tracked in Amplitude. |
 | `group` | `groupIdentify` (with GroupName) | Lets you designate user groups. |
 
 For more information, see the [Segment documentation.](https://segment.com/docs/integrations/amplitude/)

@@ -12,11 +12,11 @@ Explore event combinations directly in the chart controls without creating and s
 
 1. Click **More Options** in the Events side control and select *Combine events inline*.
 
-![inline.png](/output/img/funnel-analysis/inline-png.png)
+![inline.png](/docs/output/img/funnel-analysis/inline-png.png)
 
 2. Next, click *Add event inline* to add a custom event. Add the number of custom events you need.
 
-![add_event_inline.png](/output/img/funnel-analysis/add-event-inline-png.png)
+![add_event_inline.png](/docs/output/img/funnel-analysis/add-event-inline-png.png)
 
 {{partial:admonition type='note'}}
  The in-line event that you create will only be relevant to that specific chart and will not be accessible anywhere else. 
@@ -24,7 +24,7 @@ Explore event combinations directly in the chart controls without creating and s
 
 3. If desired, hover on the event and click **Filter** to add event properties. Add as many filter properties as needed for each in-line event.
 
-![filter_props.png](/output/img/funnel-analysis/filter-props-png.png)
+![filter_props.png](/docs/output/img/funnel-analysis/filter-props-png.png)
 
 4. Click **Remove** to remove properties and in-line events, as needed.
 

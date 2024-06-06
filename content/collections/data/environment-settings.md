@@ -47,4 +47,4 @@ Actions that will sustain only in the filtered environment in which the action w
 * Any action involving lookup properties
 * Any action involving transformations
 
-**NOTE****:** The branch and settings you're working with dictate how changes are saved, approved, or merged. For example, changes allowed on a main branch depend on your settings but are automatically applied when saved. Read more about [working with branches](/data/work-with-branches).
+**NOTE****:** The branch and settings you're working with dictate how changes are saved, approved, or merged. For example, changes allowed on a main branch depend on your settings but are automatically applied when saved. Read more about [working with branches](/docs/data/work-with-branches).

@@ -9,11 +9,11 @@ id: ca26cfe2-d99f-498a-8581-6485a736d4bb
 * Understand how adding a channel can help to better track sources of site traffic
 * Learn how to create channels and compare metrics between them
 
-Marketers often want to define their acquisition channels based on [UTM](/get-started/analyze-acquisition-channels) and referrer data. Amplitude’s **channels** allow you to create new properties retroactively, based on functions and operators you can apply across multiple existing properties. These do not affect your raw data and will be computed on the fly.
+Marketers often want to define their acquisition channels based on [UTM](/docs/get-started/analyze-acquisition-channels) and referrer data. Amplitude’s **channels** allow you to create new properties retroactively, based on functions and operators you can apply across multiple existing properties. These do not affect your raw data and will be computed on the fly.
 
 For example, you may want to understand the distribution of organic traffic to your site. Define a version of your channels that includes the known social and search domains at that time. When a new social or search channel becomes prevalent, you can update your organic search definition and all of your existing charts will update **retroactively** to reflect the new definition.
 
-![image2.png](/output/img/data/image2-png.png)
+![image2.png](/docs/output/img/data/image2-png.png)
 
 ### Feature availability
 
@@ -29,7 +29,7 @@ To create a channel, follow these steps:
 2. Click *+ Add Channel Classifier.* A pre-built, default channel definition screen will open. Optionally, click the default channel title (*Channel*) to edit the name. You can also add a description below it, if you like.
 3. To begin creating the definition of the channel, start from the default template or click *Clear Table* to clear the table's contents and start from scratch.  
   
-![image2.gif](/output/img/data/image2-gif.gif)  
+![image2.gif](/docs/output/img/data/image2-gif.gif)  
   
 You can add multiple properties to a row to create a more complex classifier.
 4. Add one row for each channel you would like to define. For example, you can add rows labeled `Paid`, `Organic`, `Referral`, and `Direct` to create a high-level channel definition.
@@ -41,11 +41,11 @@ You can add multiple properties to a row to create a more complex classifier.
 
 ## Compare metrics between channels with Data Tables
 
-Amplitude’s [Data Tables](/analytics/charts/data-tables/data-tables-multi-dimensional-analysis) allow you to define metrics critical to your bottom line, such as CPA, AOV and ROAS. Evaluate how these metrics perform between different channels by **grouping by your channel** on the left-hand column. To see how these channels break down further, add other core dimensions like campaigns.
+Amplitude’s [Data Tables](/docs/analytics/charts/data-tables/data-tables-multi-dimensional-analysis) allow you to define metrics critical to your bottom line, such as CPA, AOV and ROAS. Evaluate how these metrics perform between different channels by **grouping by your channel** on the left-hand column. To see how these channels break down further, add other core dimensions like campaigns.
 
-![image1.png](/output/img/data/image1-png.png)
+![image1.png](/docs/output/img/data/image1-png.png)
 
-Metrics can be attributed in different ways if a user has multiple touch points with different channels before converting. Amplitude has built [attribution modeling](/analytics/charts/data-tables/data-tables-attribute-credit) into data tables to enable defining user attribution in your channels.
+Metrics can be attributed in different ways if a user has multiple touch points with different channels before converting. Amplitude has built [attribution modeling](/docs/analytics/charts/data-tables/data-tables-attribute-credit) into data tables to enable defining user attribution in your channels.
 
 **NOTE:** Applying a channel classifier before an attribution model can attribute values in potentially unexpected ways. For example, in a sequence consisting of:  
   

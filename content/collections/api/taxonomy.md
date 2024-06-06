@@ -435,7 +435,7 @@ You can use the API to manipulate event types.
 Creates an event type. Send a `POST` request to `https://amplitude.com/api/2/taxonomy/event` and include a body with your parameters.
 
 {{partial:admonition type="note" heading=""}}
-[Initialize the schema](/data/amplitude-data-settings) before you can add event types via the API.
+[Initialize the schema](/docs/data/amplitude-data-settings) before you can add event types via the API.
 {{/partial:admonition}}
 
 {{partial:tabs tabs="cURL, Http"}}
