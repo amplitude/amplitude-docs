@@ -3,11 +3,13 @@ id: e0d409b0-6eeb-4234-a99c-f8e69e3554c9
 blueprint: analytic
 title: 'Turn your dashboard into a template'
 source: 'https://help.amplitude.com/hc/en-us/articles/19464806559131-Turn-your-dashboard-into-a-template'
+this_article_will_help_you:
+  - 'Create new templates from your Analytics dashboards'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717692827
 ---
-#### This article will help you:
-
-* Create new templates from your Analytics dashboards
-
 You can easily turn your dashboards into templates, which allow teams to efficiently and confidently recreate their common analyses and share best practices with just a few clicks. Save time when repeating common analyses and make it simpler for new team members to measure impact.
 
 To designate a dashboard as a template, follow these steps:
@@ -21,11 +23,11 @@ Once your dashboard has been templatized, you’ll notice three differences:
 * The dashboard will include the template instructions you added in Step 2 above;
 * There will be a *Save As New Dashboard* button, which is how you can create copies of the dashboard from the template:  
   
-![dashboards templated dashboard.png](/output/img/analytics/dashboards templated dashboard.png)
+![dashboards templated dashboard.png](/output/img/analytics/dashboards-templated-dashboard-png.png)
 
 You will be able to find templates using Search or Spaces. Just look for the template icon. You can also filter for dashboard templates in Search, via the Template filter under *Tags*.
 
-### Template use cases
+## Template use cases
 
 Some of the most common use cases for templates in Amplitude include:
 
