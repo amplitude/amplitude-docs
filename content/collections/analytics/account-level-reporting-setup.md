@@ -8,7 +8,7 @@ source: 'https://help.amplitude.com/hc/en-us/articles/5332668738331-Set-up-accou
 
 * Correctly instrument account-level reporting in Amplitude
 
-With [account-level reporting](/analytics/account-level-reporting), you can set up aggregated, group-level analyses. This article will review the specific steps involved in the process depending on how you're sending data to Amplitude. 
+With [account-level reporting](/docs/analytics/account-level-reporting), you can set up aggregated, group-level analyses. This article will review the specific steps involved in the process depending on how you're sending data to Amplitude. 
 
 ## Before you begin
 
@@ -41,7 +41,7 @@ To set group types in Amplitude via Segment, you must first enable the following
 * **Group Type Trait:** This specifies what trait in your Segment `group` calls will contain the desired group type.
 * **Group Value Trait:** This specifies what trait in your Segment `group` calls will contain the desired group value.
 
-You can set groups and group properties using Segment's [`group`](/analytics/account-level-reporting-setup) documentation for more information on how to instrument groups via Segment. 
+You can set groups and group properties using Segment's [`group`](/docs/analytics/account-level-reporting-setup) documentation for more information on how to instrument groups via Segment. 
 
 ## Create groups using the Group Identify API
 

@@ -22,7 +22,7 @@ There are a few details about alerts you should be aware of:
 
 * You can set alerts for multiple events and user segments at the same time.
 * If you use a group-by on a property, your alert will track metrics against the top 1,000 segments only.
-* Currently, custom alerts are available in [Event Segmentation](/analytics/charts/event-segmentation/event-segmentation-build) and [Funnel Analysis](/analytics/charts/funnel-analysis/funnel-analysis-build) charts, and only on those set to a daily or hourly frequency.
+* Currently, custom alerts are available in [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) and [Funnel Analysis](/docs/analytics/charts/funnel-analysis/funnel-analysis-build) charts, and only on those set to a daily or hourly frequency.
 * A Funnel Analysis must measure conversion over time in order to support alerts.
 * In an Event Segmentation chart, if you need to track weekly or monthly KPIs, use a 7-day or 30-day rolling window. Also, alerts are not supported for the Frequency and Formula tabs, or for the bar chart visualization. Some custom formulas are supported, as long as they produce a chart with an X-axis time series.
 * Only chart owners can set alerts. If a chart you would like to receive alerts for already exists but was created by someone else, make a copy and save it before setting up an alert. Additionally, any changes you make to a chart will automatically apply to the alert tracking it.
@@ -47,7 +47,7 @@ To set a **custom** or **smart** alert for a chart you own, follow these steps:
 * * * A **smart alert** will look for unexpected changes outside of a 99% confidence interval.
 		* A **custom alert** allows you to be more specific about the conditions under which you'll receive a custom alert: whether it's above or below a specific value, or whether it differs from a previous value by a specified amount. You can also set a custom alert based on confidence interval.
 
-![conf_interval.gif](/output/img/analytics/conf_interval.gif)
+![conf_interval.gif](/docs/output/img/analytics/conf_interval.gif)
 
 3. If you are setting up a custom alert, specify your alert conditions (these will be tied to the chart's current value either exceeding or falling below a specific value, or to changes in the confidence interval). If you are setting up a smart alert, skip this step.
 4. Add the emails of everyone who should receive this alert, and click *Set Alert*.
@@ -58,13 +58,13 @@ For custom or smart alert, the training days are 120 for daily interval charts a
 
 When setting up a custom alert, you can choose to receive alerts when significance thresholds of 95%, 98%, or 99% are breached. These confidence intervals are determined by taking your historical data and identifying where 95%, 98%, and 99% of all data points fall.
 
-![conf_int.jpeg](/output/img/analytics/conf_int.jpeg)
+![conf_int.jpeg](/docs/output/img/analytics/conf_int.jpeg)
 
 The higher the required significance, the less "noisy" your alerts will be. In charts, the blue band represents the range of the confidence interval. A 95% confidence interval will have a narrower band than a 99% confidence interval, because the 99% confidence interval captures more historical data points.
 
 ## View and manage alerts
 
-You can see a list of **recently-triggered** alerts for a project by clicking *Notifications* in the left-hand sidebar, then opening the *Alerts* tab. You can see a list of **all existing** alerts for a project by clicking ![gear_icon_for_settings.png](/output/img/analytics/gear_icon_for_settings.png)*> Projects*, selecting the project you're interested in, and opening either the *Custom Monitors* (for **custom** alerts) or the *Automatic Monitors* (for **smart** alerts) tab. Click on an alert to edit or manage it.
+You can see a list of **recently-triggered** alerts for a project by clicking *Notifications* in the left-hand sidebar, then opening the *Alerts* tab. You can see a list of **all existing** alerts for a project by clicking ![gear_icon_for_settings.png](/docs/output/img/analytics/gear_icon_for_settings.png)*> Projects*, selecting the project you're interested in, and opening either the *Custom Monitors* (for **custom** alerts) or the *Automatic Monitors* (for **smart** alerts) tab. Click on an alert to edit or manage it.
 
 ## Alert emails
 

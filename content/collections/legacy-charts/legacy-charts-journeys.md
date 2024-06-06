@@ -5,7 +5,7 @@ id: 660ff7f2-c116-4841-8473-fe7a7ab95462
 ---
 
 {{partial:admonition type='note'}}
-This feature will be merged into the new Journeys experience. This article will remain live for as long as legacy Journeys charts remain accessible. [Learn about the new Journeys experience here](/analytics/charts/journeys/journeys-understand-paths).
+This feature will be merged into the new Journeys experience. This article will remain live for as long as legacy Journeys charts remain accessible. [Learn about the new Journeys experience here](/docs/analytics/charts/journeys/journeys-understand-paths).
 {{/partial:admonition}}
 
 The complexity of modern digital experiences can make it difficult for teams managing those experiences to get a comprehensive view of what users are actually doing in the product. Amplitude’s **Journeys** feature helps you overcome this challenge and develop a true understanding of how your users convert—or fail to convert—between key transitions within a 60-day conversion timeframe. 
@@ -43,8 +43,8 @@ To see the details of your users’ conversion paths with Journeys, follow these
 {{partial:admonition type='note'}}
 Any-order funnels, exact-order funnels, or funnels with properties held constant are currently not supported by Journeys.
 {{/partial:admonition}}
-2. In the chart, click the ending event to bring up the [Microscope](/analytics/microscope). From there, click *Show User Journeys*. The Journeys chart will appear.  
-![journey_converted_paths.png](/output/img/legacy-charts/journey-converted-paths-png.png)
+2. In the chart, click the ending event to bring up the [Microscope](/docs/analytics/microscope). From there, click *Show User Journeys*. The Journeys chart will appear.  
+![journey_converted_paths.png](/docs/output/img/legacy-charts/journey-converted-paths-png.png)
 3. By default, Amplitude displays user paths that resulted in conversions. If you're interested in viewing user paths that result in drop-offs instead, click *Drop off paths*.
 4. Next, you can optionally adjust your **auto-filter** settings to ensure the view Journeys provides is at the level of granularity you need:
 * Click the gear icon to open the auto-filter panel.
@@ -64,9 +64,9 @@ If no events appear in your sequence, it means one of two things: Either the eve
 
 To view the details of a specific path, or to save the users who have taken a particular path as a cohort to be used in later analysis or for targeting, just click the path.
 
-![journeys_2.png](/output/img/legacy-charts/journeys-2-png.png)
+![journeys_2.png](/docs/output/img/legacy-charts/journeys-2-png.png)
 
-You also have the option to handle specific events differently. Click the ![journeys_icon_1.png](/output/img/legacy-charts/journeys-icon-1-png.png) icon in the lower-right corner of the event if you want to:
+You also have the option to handle specific events differently. Click the ![journeys_icon_1.png](/docs/output/img/legacy-charts/journeys-icon-1-png.png) icon in the lower-right corner of the event if you want to:
 
 * Remove it from your analysis
 * Expand the event by properties—this counts each event with a different property value as a different event, and Amplitude will reload all the paths based on this new set of events

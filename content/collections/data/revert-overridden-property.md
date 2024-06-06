@@ -9,7 +9,7 @@ id: 4ae538ba-8ca1-4a0f-b93a-f89ce4b42db0
 * Understand when to revert an overridden property
 * Learn how to revert an overridden property
 
-Reverting an [overridden property](/data/override-property) to its original version is a quick way to retroactively clean up your tracking plan and maintain consistency across your event properties. Doing so tells Amplitude Data to update the property to match the latest state of the **original** version listed in the event properties table. Once reverted, any changes to the property will **also** apply to any events or property groups that use the **original** version of that property.
+Reverting an [overridden property](/docs/data/override-property) to its original version is a quick way to retroactively clean up your tracking plan and maintain consistency across your event properties. Doing so tells Amplitude Data to update the property to match the latest state of the **original** version listed in the event properties table. Once reverted, any changes to the property will **also** apply to any events or property groups that use the **original** version of that property.
 
 ## Revert an overridden property
 
@@ -20,7 +20,7 @@ To revert an overridden property on a **specific event**, follow these steps:
 3. In the event property details panel that opens, click *Manage Override*.
 4. From the dropdown menu that opens, select *Revert To Original.*
 
-**![manage_override.png](/output/img/data/manage-override-png.png)**
+**![manage_override.png](/docs/output/img/data/manage-override-png.png)**
 
 **NOTE:** Event rows that include “via property group…” are in the list because those events use a property group that includes this event property. Reverting the property on any one of those events will revert the property on all of them.
 

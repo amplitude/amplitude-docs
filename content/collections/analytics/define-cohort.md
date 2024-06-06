@@ -8,14 +8,14 @@ source: 'https://help.amplitude.com/hc/en-us/articles/19528328446363-Define-a-ne
 
 * Learn how to quickly define a new cohort to use in your analyses and charts
 
-To define a new [cohort](/analytics/behavioral-cohorts), follow these steps:
+To define a new [cohort](/docs/analytics/behavioral-cohorts), follow these steps:
 
-1. Click *Create New > Cohort*. This will take you to the a new cohort page, where you can set the parameters of a new cohort, upload a CSV of users into a new cohort, or [create a prediction for a predictive cohort](/cdp/audiences/predictions).
+1. Click *Create New > Cohort*. This will take you to the a new cohort page, where you can set the parameters of a new cohort, upload a CSV of users into a new cohort, or [create a prediction for a predictive cohort](/docs/cdp/audiences/predictions).
 2. You can click any of the conditions (performed event, had been active, had been new, had property, or had propensity) listed to begin defining your cohort. However, since this is a behavioral cohort, let's start by clicking *...performed event*. You can add other conditions to your cohort definition later.
 3. Click *Select event...* and select the event you're interested in.
 4. Begin setting the parameters that will define your behavioral cohort:
 
-![behavioral_cohorts_define_new.png](/output/img/analytics/behavioral_cohorts_define_new.png)
+![behavioral_cohorts_define_new.png](/docs/output/img/analytics/behavioral_cohorts_define_new.png)
 
 First, tell Amplitude how you want it to count events. You have six options, all of which can be accessed from the **with** dropdown:
 
@@ -23,10 +23,10 @@ First, tell Amplitude how you want it to count events. You have six options, all
 	* **Relative count.** Amplitude will compare two different event frequencies. For example, all users who triggered Play Song or Video at a greater frequency than Favorite Song or Video during the last 30 days. You have the option to add "where" clauses for both events under comparison.
 	* **Total sum of property**. Filters for users who triggered events with a particular event or user property sum. These event or user properties must have numerical values. For example, all users in the last 30 days who triggered Play or Search Song with total Duration value greater than 60 seconds.
 	* **Distinct values of property.** Filter for event or user properties down to a specific value or set of values you are analyzing. For example, only those users who favorited a song or video on more than one device.
-	* **Historical count.** Your cohort will contain users who performed the event a specific number of times, between one and five. See our Help Center article on [how Historical Count works in Amplitude](/analytics/historical-count-1) to learn more.
+	* **Historical count.** Your cohort will contain users who performed the event a specific number of times, between one and five. See our Help Center article on [how Historical Count works in Amplitude](/docs/analytics/historical-count-1) to learn more.
 	* **Count in interval**. Filter for users who triggered the event **at least once** on each of the number of **distinct days** within a given interval. This enables you to specify behavior that occurred within distinct days in a defined time period. For example, you could filter for users who triggered the event at least once on each of a certain number of distinct days (you define how many) within a given interval. This differs from daily, weekly, or monthly behavior, which doesn't require the behavior to occur on different days.  
 	  
-	See our Help Center article on [how stickiness analysis works in Amplitude](/analytics/charts/stickiness/stickiness-interpret) to learn more.
+	See our Help Center article on [how stickiness analysis works in Amplitude](/docs/analytics/charts/stickiness/stickiness-interpret) to learn more.
 
 5. Set the **operator** (equal to, greater than, less than, etc) and the **value** (i.e., the count value) of this parameter.
 6. Now you'll have to tell Amplitude **when** these events should have taken place. Here, too, you have some options, accessible from the **any time** dropdown:
@@ -40,19 +40,19 @@ First, tell Amplitude how you want it to count events. You have six options, all
 **NOTE:** Adding an event using *...then* means users must trigger **both** events **in that order** to be included in the cohort. If you want to add another event **without** requiring users trigger them in a specific order, use *+ Add,* as described in the next step.
 8. Next, you can add an *...or* clause, or you can add another event, property, propensity, cohort or new user. To see your options for an Or clause, hover the cursor over the cohort definition you've built so far. To see your options for adding to your cohort definition, click *+ Add* just below your current cohort definition.
 
-![behavioral_cohort_add_more.png](/output/img/analytics/behavioral_cohort_add_more.png)
+![behavioral_cohort_add_more.png](/docs/output/img/analytics/behavioral_cohort_add_more.png)
 
 When you add a condition using an *Or* clause, Amplitude will include users who meet **either** of those conditions. When you add to your cohort definition via *+ Add*, Amplitude treats that as an *And* clause: A user must meet **both** conditions to be included in the cohort.
 
 When you use *+ Add* to add new components to your cohort, you can specify them for either **inclusion** or **exclusion**. Do this by selecting *did not* for events, user properties, and propensities; *not part* for cohorts; and *had not been* for new users.
 
-![behavioral_cohorts_exclude.png](/output/img/analytics/behavioral_cohorts_exclude.png)
+![behavioral_cohorts_exclude.png](/docs/output/img/analytics/behavioral_cohorts_exclude.png)
 
 Items meeting the exclusion condition will be excluded from the cohort, **even if** they meet all the other conditions you've specified.
 
 In this example, the cohort is defined as users who've triggered the Play or Search Song event more than eight times, **and also** triggered the Favorited a Song or Video event more than four times between April 1 to April 30, **and** are from the United States.
 
-![behavioral_cohort_example.png](/output/img/analytics/behavioral_cohort_example.png)
+![behavioral_cohort_example.png](/docs/output/img/analytics/behavioral_cohort_example.png)
 
 **NOTE:** For the most accurate results, put a date range around any user properties you include.
 
@@ -69,7 +69,7 @@ When you include a user property condition in a cohort, you're looking not at ev
 
 If you have instrumented group types, you can create group cohorts from the cohort detail page (where you define or upload a cohort). To do this, when defining your cohort, select the group name on the left side of the definition. In this example, the group name is "company(s)."
 
-![group cohort selection.png](/output/img/analytics/group cohort selection.png)
+![group cohort selection.png](/docs/output/img/analytics/group cohort selection.png)
 
 When applying the group cohort to a chart, add the group by clicking *+ Filter by*, and then *Cohort*. Then select the group name from the list.
 

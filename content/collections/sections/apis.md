@@ -12,13 +12,13 @@ Use Amplitude APIs to send and receive information and extend Amplitude.
 
 ## Available APIs
 
-- [Analytics and Data APIs](/apis/analytics)
-- [Experiment APIs](/apis/experiment)
+- [Analytics and Data APIs](/docs/apis/analytics)
+- [Experiment APIs](/docs/apis/experiment)
 
 ## More API resources
 
-- [Amplitude Keys and Tokens](/apis/keys-and-tokens): Learn about the keys and tokens used with Amplitude. 
-- [Find your API Credentials](/apis/api-credentials): Learn how to find the API key for your Amplitude project. 
+- [Amplitude Keys and Tokens](/docs/apis/keys-and-tokens): Learn about the keys and tokens used with Amplitude. 
+- [Find your API Credentials](/docs/apis/api-credentials): Learn how to find the API key for your Amplitude project. 
 
 ## Official Postman Collection
 

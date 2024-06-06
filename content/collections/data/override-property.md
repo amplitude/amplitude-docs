@@ -30,4 +30,4 @@ To override a property on a property group, follow these steps:
 
 **NOTE:** Any changes to a property that is overridden on a property group will apply to all events that use that property group.
 
-You can always [revert an overridden property](/data/override-property) when you no longer need the override.
+You can always [revert an overridden property](/docs/data/override-property) when you no longer need the override.

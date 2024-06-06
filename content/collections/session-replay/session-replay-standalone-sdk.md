@@ -8,7 +8,7 @@ source: 'https://www.docs.developers.amplitude.com/session-replay/sdks/plugin/'
 Session Replay isn't enabled by default, and requires setup beyond the standard Amplitude instrumentation.
 {{/partial:admonition}}
 
-This article covers the installation of Session Replay using the standalone SDK. If you use a provider other than Amplitude for in-product analytics, choose this option. If your site is already instrumented with Amplitude Browser SDK, use the [Session Replay Browser SDK Plugin](/session-replay/session-replay-plugin).
+This article covers the installation of Session Replay using the standalone SDK. If you use a provider other than Amplitude for in-product analytics, choose this option. If your site is already instrumented with Amplitude Browser SDK, use the [Session Replay Browser SDK Plugin](/docs/session-replay/session-replay-plugin).
 
 {{partial:admonition type="info" heading="Session Replay and performane"}}
 Amplitude built Session Replay to minimize impact on the performance of web pages on which it's installed by:
@@ -99,7 +99,7 @@ The Session Replay SDK outputs the Session Replay properties that you need to ad
 
 `[Amplitude] Session Replay ID` is a unique identifier for the replay, and is different from `[Amplitude] Session ID`, which is the identifier for the user's session.
 
-The [Session Replay Browser Plugin](/session-replay/seession-replay-plugin) handles this by default, since Amplitude manages event instrumentation. With the Standalone SDK, you need to instrument your application to add this property to any events that occur during capture. 
+The [Session Replay Browser Plugin](/docs/session-replay/seession-replay-plugin) handles this by default, since Amplitude manages event instrumentation. With the Standalone SDK, you need to instrument your application to add this property to any events that occur during capture. 
 
 ## Configuration
 
@@ -167,7 +167,7 @@ Keep the following in mind as you consider your sample rate:
 - When you reach your monthly session quota, Amplitude stops capturing sessions for replay.
 - Session quotas reset on the first of every month.
 - Use sample rate to distribute your session quota over the course of a month, rather than using your full quota at the beginning of the month.
-- To find the best sample rate, Amplitude recommends that you start low, for example `.01`. If this value doesn't capture enough replays, raise the rate over the course of a few days. For ways to monitor the number of session replays captured, see [View the number of captured sessions](/session-replay#view-the-number-of-captured-sessions).
+- To find the best sample rate, Amplitude recommends that you start low, for example `.01`. If this value doesn't capture enough replays, raise the rate over the course of a few days. For ways to monitor the number of session replays captured, see [View the number of captured sessions](/docs/session-replay#view-the-number-of-captured-sessions).
 
 ### Disable replay collection
 
@@ -220,7 +220,7 @@ Replays that are outside of the retention period aren't viewable in Amplitude.
 
 ### DSAR API
 
-The Amplitude [DSAR API](/apis/ccpa-dsar/) returns metadata about session replays, but not the raw replay data. All events that are part of a session replay include a `[Amplitude] Session Replay ID` event property. This event provides information about the sessions collected for replay for the user, and includes all metadata collected with each event.
+The Amplitude [DSAR API](/docs/apis/ccpa-dsar/) returns metadata about session replays, but not the raw replay data. All events that are part of a session replay include a `[Amplitude] Session Replay ID` event property. This event provides information about the sessions collected for replay for the user, and includes all metadata collected with each event.
 
 ```json
 {
@@ -240,13 +240,13 @@ The Amplitude [DSAR API](/apis/ccpa-dsar/) returns metadata about session replay
 
 ### Data deletion
 
-Session Replay uses Amplitude's [User Privacy API](/apis/user-privacy/) to handle deletion requests. Successful deletion requests remove all session replays for the specified user.
+Session Replay uses Amplitude's [User Privacy API](/docs/apis/user-privacy/) to handle deletion requests. Successful deletion requests remove all session replays for the specified user.
 
 When you delete the Amplitude project on which you use Session Replay, Amplitude deletes that replay data.
 
 ### Bot filter
 
-Session Replay uses the same [block filter](/data/block-bot-traffic) available in the Amplitude app. Session Replay doesn't block traffic based on event or user properties.
+Session Replay uses the same [block filter](/docs/data/block-bot-traffic) available in the Amplitude app. Session Replay doesn't block traffic based on event or user properties.
 
 ## Session Replay storage
 
@@ -263,7 +263,7 @@ Keep the following limitations in mind as you implement Session Replay:
   - A known user begins on the marketing site, and logs in to the web application.
   - Amplitude captures both sessions.
   - The replay for each session is available for view in the host project.
-- Session Replay supports standard session definitions, and doesn't support [custom session definitions](/cdp/sources/instrument-track-sessions).
+- Session Replay supports standard session definitions, and doesn't support [custom session definitions](/docs/cdp/sources/instrument-track-sessions).
 - Session Replay can't capture the following HTML elements:
   - Canvas
   - WebGL
@@ -287,7 +287,7 @@ Session Replay supports attaching to a single instance of the Amplitude SDK. If 
 
 ## Troubleshooting
 
-For more information about individual statuses and errors, see the [Session Replay Ingestion Monitor](/session-replay/ingestion-monitor).
+For more information about individual statuses and errors, see the [Session Replay Ingestion Monitor](/docs/session-replay/ingestion-monitor).
 
 ### CSS styling doesn't appear in replay
 

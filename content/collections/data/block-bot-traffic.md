@@ -26,5 +26,5 @@ To create a block filter for bot web traffic, follow these steps:
 3. Click *+ Create Block Filter* to open the Filter Configuration fly-out panel.
 4. Select *Bot Traffic* from the *Block* drop-down.  
   
-![block_filter.png](/output/img/data/block-filter-png.png)
+![block_filter.png](/docs/output/img/data/block-filter-png.png)
 5. When you’re ready, click *Block Data* to initiate the block filter.

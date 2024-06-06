@@ -8,7 +8,7 @@ id: 5062badd-ff0e-4efd-9c1a-d8d0809e6bdd
 
 * Understand, use, and manage **analysis objects** in Amplitude
 
-Amplitude's **object management** feature lets you centrally manage **analysis objects.** Analysis objects are the reusable building blocks of your analyses, including [custom events](/data/custom-events), [metrics](#h_01GGTK9ZDFT5GSYCYY32351XEP), [segments](/analytics/behavioral-cohorts). 
+Amplitude's **object management** feature lets you centrally manage **analysis objects.** Analysis objects are the reusable building blocks of your analyses, including [custom events](/docs/data/custom-events), [metrics](#h_01GGTK9ZDFT5GSYCYY32351XEP), [segments](/docs/analytics/behavioral-cohorts). 
 
 With object management, you can:
 
@@ -36,7 +36,7 @@ Designate the object as "official" by clicking the checkmark next to the title. 
 
 Once you've created an analysis object, you can edit it by clicking on its name in the list. The object's drawer will open; click *Edit*.
 
-![object_management_drawer.png](/output/img/data/object-management-drawer-png.png)
+![object_management_drawer.png](/docs/output/img/data/object-management-drawer-png.png)
 
 You can also see which charts a metric or custom event is being used in by clicking the *Charts* tab.
 

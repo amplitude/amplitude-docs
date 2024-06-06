@@ -116,7 +116,7 @@ The configuration of the SDK is shared across web and mobile platforms, but many
 |`cookieSameSite` | `string`. Sets `SameSite` property of cookies created. | `Lax` |
 |`cookieSecure` | `boolean`. Sets `Secure` property of cookies created. | `false` |
 |`cookieStorage` | `Storage<UserSession>`. Sets a custom implementation of `Storage<UserSession>` to persist user identity. | `MemoryStorage<UserSession>` |
-|`cookieUpgrade`| `boolean`. Sets upgrading from cookies created by [maintenance Browser SDK](/data/sdks/javascript/). If true, new Browser SDK deletes cookies created by maintenance Browser SDK. If false, Browser SDK keeps cookies created by maintenance Browser SDK. | `true` |
+|`cookieUpgrade`| `boolean`. Sets upgrading from cookies created by [maintenance Browser SDK](/docs/data/sdks/javascript/). If true, new Browser SDK deletes cookies created by maintenance Browser SDK. If false, Browser SDK keeps cookies created by maintenance Browser SDK. | `true` |
 |`disableCookies`| `boolean`. Sets permission to use cookies. If value is `true`, localStorage API is used to persist user identity. | The cookies is enable by default. |
 |`domain` | `string`. Sets the domain property of cookies created. | `undefined` |
 |`partnerId` | `string`. Sets partner ID. Amplitude requires the customer who built an event ingestion integration to add the partner identifier to `partner_id`. | `undefined` |
@@ -209,7 +209,7 @@ The default logger outputs extra function context information to the developer c
 ## Track events
 
 {{partial:admonition type="note" heading=""}}
-This SDK uses the [Http V2](/apis/http-v2) API and follows the same constraints for events. Make sure that all events logged in the SDK have the `event_type` field and at least one of `deviceId`  (included by default) or `userId`, and follow the Http API's constraints on each of those fields.
+This SDK uses the [Http V2](/docs/apis/http-v2) API and follows the same constraints for events. Make sure that all events logged in the SDK have the `event_type` field and at least one of `deviceId`  (included by default) or `userId`, and follow the Http API's constraints on each of those fields.
 
 To prevent instrumentation issues, device IDs and user IDs must be strings with a length of 5 characters or more. If an event contains a device ID or user ID that's too short, the ID value is removed from the event. If the event doesn't have a `userId` or `deviceId` value, the upload may be rejected with a 400 status. Override the default minimum length of 5 characters by setting the `minIdLength` config option.
 {{/partial:admonition}}
@@ -252,7 +252,7 @@ User properties help you understand your users at the time they performed some a
 Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, and `remove` on individual user properties. The operations are declared via a provided Identify interface. You can chain multiple operations together in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
 
 {{partial:admonition type="note" heading=""}}
-If the Identify call is sent after the event, the results of operations will be visible immediately in the dashboard user’s profile area, but it won't appear in chart result until another event is sent after the Identify call. The identify call only affects events going forward. More details [here](/data/user-properties-and-events).
+If the Identify call is sent after the event, the results of operations will be visible immediately in the dashboard user’s profile area, but it won't appear in chart result until another event is sent after the Identify call. The identify call only affects events going forward. More details [here](/docs/data/user-properties-and-events).
 {{/partial:admonition}}
 
 ### Identify
@@ -770,7 +770,7 @@ We do not automatically set precise location in the SDK to avoid extra permissio
 
 To set fine grain location, you can use an enrichment Plugin. Here is an [example](https://github.com/amplitude/Amplitude-TypeScript/blob/v1.x/examples/plugins/react-native-get-location-plugin/LocationPlugin.ts) of how to set `location_lat` and `location_lng`.
 
-Note that disabling IP tracking via `ipTracking: false` in [TrackingOptions](/data/sdks/typescript-react-native/#optional-tracking) will prevent location from being resolved on the backend. In this case you may want to create a Plugin like above to set any relevant location information yourself.
+Note that disabling IP tracking via `ipTracking: false` in [TrackingOptions](/docs/data/sdks/typescript-react-native/#optional-tracking) will prevent location from being resolved on the backend. In this case you may want to create a Plugin like above to set any relevant location information yourself.
 
 ### Carrier
 
@@ -819,7 +819,7 @@ Android Ad ID is a unique identifier for each device. Android Ad ID is reset by 
 
 To use Android Ad ID, follow these steps.
 
-1. Add `play-services-ads-identifier` as a dependency to the Android project of your app. More detailed setup is [described in our latest Android SDK docs](/data/sdks/android-kotlin/#advertiser-id).
+1. Add `play-services-ads-identifier` as a dependency to the Android project of your app. More detailed setup is [described in our latest Android SDK docs](/docs/data/sdks/android-kotlin/#advertiser-id).
 
     ```bash
     dependencies {

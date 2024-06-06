@@ -23,9 +23,9 @@ This feature is available to users on **all Amplitude plans**. See our [pricing 
 
 ## Before you begin
 
-Be sure to read our article on [building charts in Amplitude](/get-started/helpful-definitions).
+Be sure to read our article on [building charts in Amplitude](/docs/get-started/helpful-definitions).
 
-You'll also want to read up on [session IDs and how Amplitude tracks sessions,](/cdp/sources/instrument-track-sessions).
+You'll also want to read up on [session IDs and how Amplitude tracks sessions,](/docs/cdp/sources/instrument-track-sessions).
 
 {{partial:admonition type='note'}}
  This article describes features that are not yet available to all users.
@@ -35,7 +35,7 @@ You'll also want to read up on [session IDs and how Amplitude tracks sessions,](
 
 Most Amplitude charts rely on the Events Module to build an analysis. The User Sessions chart works a little differently because it uses a Sessions Module. 
 
-![sessionsModule.png](/output/img/user-sessions/sessionsmodule-png.png)
+![sessionsModule.png](/docs/output/img/user-sessions/sessionsmodule-png.png)
 
 A user sessions analysis will **break out your users into groups** based on certain characteristics of their sessions spent using your product.
 
@@ -47,15 +47,15 @@ To build your own user sessions chart, follow these steps:
 
 1. In the Sessions Module (where you'd ordinarily find an Events Module), use the *Count* drop-down to specify whether you'd like your User Sessions chart to measure sessions or events performed within sessions.
 
-	![user_sessions_2.png](/output/img/user-sessions/user-sessions-2-png.png)
+	![user_sessions_2.png](/docs/output/img/user-sessions/user-sessions-2-png.png)
 
 2. If you're **counting events performed within sessions**, specify the event you're interested in counting by clicking *Select Event* under *Event Count*. If you're measuring sessions instead, skip this step.  
 
-	![eventCount.png](/output/img/user-sessions/eventcount-png.png)
+	![eventCount.png](/docs/output/img/user-sessions/eventcount-png.png)
 
 3. Add properties to your starting event by clicking on *+ Filter by* and choosing one of the available properties: `Session Duration`, `Contains Event`, `First Property` value, or `Last Property` value.
 
-	![sessionProperties.png](/output/img/user-sessions/sessionproperties-png.png)
+	![sessionProperties.png](/docs/output/img/user-sessions/sessionproperties-png.png)
 
 	Enter the session's minimum length in seconds, minutes, hours, or days if you're using`Session Duration`. Choose an event the user must trigger during each session if you're using `Contains Event`. Or choose a property each session must contain if using `First Property` value or `Last Property` value.
 
@@ -67,7 +67,7 @@ To build your own user sessions chart, follow these steps:
     * **Avg Length:** Graphs the average session length, which is calculated by taking the sum of all session lengths within the interval, and dividing it by the total number of sessions in that interval.
     * **Length Distribution:** Displays the distribution of session lengths in a histogram. Customize the shape of the distribution by setting the minimum and maximum session lengths. The minimum value is inclusive, and the maximum value is exclusive. The example above shows session length distribution for sessions between 1 and 30 minutes in length in intervals of 5 minutes.
     * **Avg Per User:** Graphs the average number of sessions per user, which is calculated by dividing the total number of valid sessions in an interval by the total number of active users in the same interval.
-    * **Formula**: With formulas, users can create their own custom metrics, such as bounce, entry, and exit rates. The following metric formulas are available in User Sessions analyses: EVENTTOTALS, HIST, PROPSUM, SESSIONTOTALS and UNIQUES. These metric formulas work similarly to the definitions in [the custom metric formulas Help Center article](/analytics/charts/event-segmentation/event-segmentation-custom-formulas), but the syntax refers to **sessions** instead of events.
+    * **Formula**: With formulas, users can create their own custom metrics, such as bounce, entry, and exit rates. The following metric formulas are available in User Sessions analyses: EVENTTOTALS, HIST, PROPSUM, SESSIONTOTALS and UNIQUES. These metric formulas work similarly to the definitions in [the custom metric formulas Help Center article](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas), but the syntax refers to **sessions** instead of events.
 
 	If, on the other hand, you selected ***Events performed within sessions***, choose from the following chart options instead:  
 
@@ -75,7 +75,7 @@ To build your own user sessions chart, follow these steps:
 	* **Total Events Across Sessions**: Graphs the total number of times a selected event is performed within sessions. Like plotting totals in Event Segmentation, this shows the number of times users have performed a particular action across all sessions in an interval.
 	* **Distribution**: Graphs a distribution of the number of sessions that include a selected event. The x-axis shows a range of the number of times the selected event is performed, and the y-axis plots the number of sessions in the time range. This analysis can help show which of your users have the highest, or lowest in-session engagement. Click *Set buckets* to set individual ranges for each bucket:  
 	
-    ![userSessions_setBuckets.png](/output/img/user-sessions/usersessions-setbuckets-png.png)
+    ![userSessions_setBuckets.png](/docs/output/img/user-sessions/usersessions-setbuckets-png.png)
 
 6. In the Segment By module, identify the user segment you want to include in this analysis. You can import a previously-saved segment by clicking *Saved* and selecting the one you want from the list. Otherwise, Amplitude begins from the assumption that your analysis will target all users.
 
@@ -91,4 +91,4 @@ To build your own user sessions chart, follow these steps:
 Sessions lasting longer than a day are excluded from analyses.
 {{/partial:admonition}}
 
-Read on to learn more about [interpreting your User Sessions chart](/analytics/charts/user-sessions/user-sessions-interpret).
+Read on to learn more about [interpreting your User Sessions chart](/docs/analytics/charts/user-sessions/user-sessions-interpret).

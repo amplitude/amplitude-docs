@@ -13,7 +13,7 @@ landing_blurb: 'Understand the different ways time can affect your Retention Ana
 ---
 In a Retention Analysis chart, there are two ways to define a day: a rolling **24-hour window** or a **strict calendar date**. The method you choose can affect your results.
 
-![](/output/img/retention-analysis/20460042102939)
+![](/docs/output/img/retention-analysis/20460042102939)
 
 Amplitude treats a day as a **rolling 24-hour window** by default, which is different for each user. Each day will be **exactly the same length**, no matter when the user triggered the starting event. For example:
 
@@ -82,7 +82,7 @@ Users who trigger the starting event multiple times are still restricted to the 
 
 For **new user** retention, filter conditions applied in the *Segmentation* module are only satisfied if they are true during the same time frame the `new user` event was triggered. For charts using strict calendar dates, this is the same as the chart interval. For charts using unaligned ranges, the time frame is more granular: e.g., the first day for seven-day windows and the first hour for 24-hour windows.
 
-This table further delineates the differences between 24-hour windows and strict calendar dates by retention types [Return on or After and Return On](/analytics/charts/retention-analysis/retention-analysis-calculation).
+This table further delineates the differences between 24-hour windows and strict calendar dates by retention types [Return on or After and Return On](/docs/analytics/charts/retention-analysis/retention-analysis-calculation).
 
 | Retention type      | A single cohort entry date retention | Explanation (strict calendar days)                                                                           | Explanation(by 24-hour windows)                                                                            |
 | ------------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |

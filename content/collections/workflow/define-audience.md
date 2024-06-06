@@ -15,7 +15,7 @@ Now that you’ve defined the events that make up your experiment, you’ll need
 Users will still have to trigger the exposure event before entering the experiment, no matter what choice you make here.
 {{/partial:admonition}}
 
-Targeting groups of users is useful if you’d like to limit experiment exposure to users in a specific geographical location, or those who belong to certain demographic groups, or those who meet certain usage thresholds in your product (i.e., power users). To do so, you’ll define a user segment to target, by selecting *Targeted Users* and clicking into Segment 1. Then follow the same steps you’d use to [build a user segment](/analytics/charts/build-charts-add-events) in Amplitude Analytics:
+Targeting groups of users is useful if you’d like to limit experiment exposure to users in a specific geographical location, or those who belong to certain demographic groups, or those who meet certain usage thresholds in your product (i.e., power users). To do so, you’ll define a user segment to target, by selecting *Targeted Users* and clicking into Segment 1. Then follow the same steps you’d use to [build a user segment](/docs/analytics/charts/build-charts-add-events) in Amplitude Analytics:
 
 * To target your experiment based on **cohorts,** select *Cohort* and choose a cohort you've previously created in Amplitude Analytics. Cohort membership is evaluated and updated once an hour.
 * To target based on **user properties** from Amplitude Analytics, select the user property you're interested in and enter the appropriate values. User properties come from the end user profile maintained by Amplitude Analytics, and are updated based on your analytics instrumentation. (If you need to evaluate user properties in real-time, add the value of the user property to the context you pass to the SDK or REST API.)
@@ -29,4 +29,4 @@ All of Amplitude’s user properties and cohorts are available to use in definin
 Caching expiration differs with the properties you use to define user segments. All user properties will always include the latest values your product has sent, defaulting to the most recent value in the event that Amplitude has not received your product’s data. Cohorts will be synced every hour.
 {{/partial:admonition}}
 
-The next step is [setting up your experiment’s variants](/experiment/workflow/add-variants).
+The next step is [setting up your experiment’s variants](/docs/experiment/workflow/add-variants).

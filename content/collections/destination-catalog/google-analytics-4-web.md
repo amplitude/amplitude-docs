@@ -23,7 +23,7 @@ updated_at: 1713478576
 Amplitude CDP's Google Analytics 4 (Web) streaming integration enables you to forward your Amplitude events and users straight to Google Analytics 4 (Web) with just a few clicks.
 
 {{partial:admonition type="note" title="Choose the correct Google Analytics 4 destination"}}
-Google Analytics 4 (Web) destination works with a web application instrumented with Google Tag (gtag.js). If you are working with an iOS or Android mobile application using Firebase, set up a [Google Analytics 4 (iOS/Android)](/data/destination-catalog/google-analtics-4-ios-android) destination.
+Google Analytics 4 (Web) destination works with a web application instrumented with Google Tag (gtag.js). If you are working with an iOS or Android mobile application using Firebase, set up a [Google Analytics 4 (iOS/Android)](/docs/data/destination-catalog/google-analtics-4-ios-android) destination.
 {{/partial:admonition}}
 
 ## Use cases
@@ -73,7 +73,7 @@ Google Analytics 4 requires that all events have a Google Analytics 4 **App Inst
 
 ### Configure user forwarding
 
-To stream user and property updates to Google Analytics 4, enable **Send Users**. This setting creates or updates users in Google Analytics 4 when you update them in Amplitude with the [HTTP V2 API](/analytics/apis/http-v2-api/) or [Identify API](/analytics/apis/identify-api/). This integration doesn't support scheduled or on-demand updates.
+To stream user and property updates to Google Analytics 4, enable **Send Users**. This setting creates or updates users in Google Analytics 4 when you update them in Amplitude with the [HTTP V2 API](/docs/analytics/apis/http-v2-api/) or [Identify API](/docs/analytics/apis/identify-api/). This integration doesn't support scheduled or on-demand updates.
 
 You can optionally select user properties to send to Google Analytics 4 in the **Select additional properties** field. Amplitude sends only the properties you select and only when one of them is updated. Amplitude sends these properties as [Google Analytics 4 User Properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties?client_type=gtag). _This integration doesn't support transformed user properties_.
 

@@ -18,14 +18,14 @@ Imagine a conversion funnel with five steps, where step three represents the exp
 
 Sometimes, you may need further analysis of your experiment's conversion rates in a funnel analysis. 
 
-Follow these steps to use your experiment's metrics in a [Funnel Analysis chart](/analytics/charts/funnel-analysis/funnel-analysis-get-the-most):
+Follow these steps to use your experiment's metrics in a [Funnel Analysis chart](/docs/analytics/charts/funnel-analysis/funnel-analysis-get-the-most):
 
 1. Add the events for your funnel analysis in the Events module.
 2. In the *Measured as* module, choose the *Conversion* time window, then specify the counting method (unique users or totals)*.*
 3. Select your analysis unit or group type (i.e., *Any Users*) in the Segment By module.
 4. Create a user segment for each variant of your experiment.
 
-**![](/output/img/advanced-techniques/20464390610203.png)**
+**![](/docs/output/img/advanced-techniques/20464390610203.png)**
 
 5. Click *+ Performed* to add filters with your experiment's flag key and variant.
 6. Set the date range for *any time since* to match the start date of your experiment.
@@ -34,7 +34,7 @@ The results of your Funnel Analysis chart may vary slightly from those of your e
 
 ### Analyze your experiment data using other Amplitude Analytics metrics
 
-Amplitude Analytics offers metrics that Amplitude Experiment does not. You can also use the steps in the previous section to analyze things like time to convert or [retention](/analytics/charts/retention-analysis/retention-analysis-build) (though these measurements will only take into account a user's first conversion). 
+Amplitude Analytics offers metrics that Amplitude Experiment does not. You can also use the steps in the previous section to analyze things like time to convert or [retention](/docs/analytics/charts/retention-analysis/retention-analysis-build) (though these measurements will only take into account a user's first conversion). 
 
 Read this [Help Center article on funnel analysis' FAQs](https://help.amplitude.com/hc/en-us/articles/360054203872) to learn more.
 
@@ -47,7 +47,7 @@ Follow these steps to filter a subset of users in your experiment results:
 1. From the *Analyze* tab in your experiment, click *Open in Chart.*
 2. In the *Variants performed by* section, click *+Filter by* to add a filter for the Country property.
 
-**![](/output/img/advanced-techniques/20464386075547.png)**
+**![](/docs/output/img/advanced-techniques/20464386075547.png)**
 
 {{partial:admonition type='note'}}
  This method will filter both the numerator and the denominator of the mean values so that you may correctly analyze the desired subset of users exposed to your experiment. 
@@ -55,4 +55,4 @@ Follow these steps to filter a subset of users in your experiment results:
 
 Be cautious of analyzing your experiment's results based on just one subset. You may encounter a false positive when looking for true statistically significant results.
 
-Remember that when you run a [multiple hypothesis test](/experiment/advanced-techniques/multiple-hypothesis-testing).) in this situation, you are actually running a separate hypothesis test for each segment. You may see a positive lift with one subset and a negative with another subset. Your decision on whether to roll out or roll back in these situations isn't clear-cut. One option is to roll out only to the group that shows positive lift.
+Remember that when you run a [multiple hypothesis test](/docs/experiment/advanced-techniques/multiple-hypothesis-testing).) in this situation, you are actually running a separate hypothesis test for each segment. You may see a positive lift with one subset and a negative with another subset. Your decision on whether to roll out or roll back in these situations isn't clear-cut. One option is to roll out only to the group that shows positive lift.

@@ -28,7 +28,7 @@ When sticky bucketing is enabled, Amplitude Experiment checks whether a user alr
 If two or more experiment assignments occur within a few seconds of each other, Amplitude Experiment may not have time to apply sticky bucketing. 
 {{/partial:admonition}}
 
-Users do not get sticky bucketed to the **off** variant. Learn more about evaluation and exposure with these Amplitude resources: [evaluation flow chart](/experiment/advanced-techniques/cumulative-exposure-change-slope), and [local evaluation targeting capabilities](https://www.docs.developers.amplitude.com/experiment/general/evaluation/local-evaluation/#targeting-capabilities).
+Users do not get sticky bucketed to the **off** variant. Learn more about evaluation and exposure with these Amplitude resources: [evaluation flow chart](/docs/experiment/advanced-techniques/cumulative-exposure-change-slope), and [local evaluation targeting capabilities](https://www.docs.developers.amplitude.com/experiment/general/evaluation/local-evaluation/#targeting-capabilities).
 
 ## When to use sticky bucketing, and when not to
 
@@ -52,13 +52,13 @@ Do not enable sticky bucketing when:
 
 Follow these steps to see if a user was subject to sticky bucketing:
 
-1. Check the Experiment Assignment events in the user's [event stream](/analytics/user-data-lookup). (You can only do this if you have not blocked the Experiment Assignment events in Govern or Data).
+1. Check the Experiment Assignment events in the user's [event stream](/docs/analytics/user-data-lookup). (You can only do this if you have not blocked the Experiment Assignment events in Govern or Data).
 2. Find the user property with `.details` that corresponds to the experiment flag key you are interested in. This will show the version of the flag that was evaluated, and which targeting rule applies to the user. This can also be helpful for debugging assignment issues.
 
-![image2.png](/output/img/advanced-techniques/image2-png.png)
+![image2.png](/docs/output/img/advanced-techniques/image2-png.png)
 
 For example, the properties above show that the user was assigned to `off` for the `lp-app-downloads` flag because the device family was not iOS. We also see that this is the 21st version of the flag; the name of the rule applied to them is `non-iOS users`; and the user failed the first rule-based targeting filter, so they went to the second one instead.
 
-![image3.png](/output/img/advanced-techniques/image3-png.png)
+![image3.png](/docs/output/img/advanced-techniques/image3-png.png)
 
 In this example, sticky bucketing was enabled and the user was bucketed to the 14th version of the `signup-ux-updates` flag, where they were served the `phone-number-removed` variant. Having the flag version helps with debugging when the flag has been changed. (Remember that the assignment event shows the evaluation for all active flags in that project, but the exposure event is shown on a per-flag basis). If you don’t see an event property corresponding to the flag you’re interested in, check the `[Experiment] Environment Name` field and make sure it matches the deployment your flag belongs to.

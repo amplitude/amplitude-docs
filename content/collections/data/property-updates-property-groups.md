@@ -12,7 +12,7 @@ With **property groups**, you can define groups of properties so Amplitude Data 
 
 Property groups make it easier to manage complex tracking plans, since you don't have to keep adding the same properties to events multiple times. When you update a property group, Amplitude Data applies the changes to **all events** the group is associated with.
 
-**NOTE:** Property groups are different from [group properties](/hc/en-us/articles/5078752725147).
+**NOTE:** Property groups are different from [group properties](/docs/hc/en-us/articles/5078752725147).
 
 For example, a music app’s tracking manager might need a way to streamline creation of events relating to songs. Each of these events will include the following properties:
 
@@ -38,7 +38,7 @@ To create a property group, follow these steps:
 
 1. Navigate to *Properties > Event Properties* and click *Property Groups*.  
   
-![Screenshot 2023-07-20 at 8.00.38 AM.png](/output/img/data/screenshot-2023-07-20-at-8-00-38-am-png.png)
+![Screenshot 2023-07-20 at 8.00.38 AM.png](/docs/output/img/data/screenshot-2023-07-20-at-8-00-38-am-png.png)
 2. Click *+ Create property group*.
 3. In the fly-out window, enter a name for the group. Then add a description and any tags, if desired.
 4. Click *+ Add property* to begin adding properties to this property group.

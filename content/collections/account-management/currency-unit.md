@@ -19,16 +19,16 @@ Displaying an accurate currency in your charts is often necessary to quickly gra
 
 Follow the below steps to modify your currency display for a project: 
 
-1. Click  ![Screenshot_2023-05-24_at_9.56.37_AM.png](/output/img/account-management/screenshot-2023-05-24-at-9-56-37-am-png.png)
+1. Click  ![Screenshot_2023-05-24_at_9.56.37_AM.png](/docs/output/img/account-management/screenshot-2023-05-24-at-9-56-37-am-png.png)
 2. Click *Projects* to view a list of your projects.
 3. Select the project you'd like to modify the currency display for.
 4. Click `United States ($)` in *General* to open the drop down for *Currency Display.*
 
-![change_currency.png](/output/img/account-management/change-currency-png.png)
+![change_currency.png](/docs/output/img/account-management/change-currency-png.png)
 
 5. Select the desired currency from the drop-down list.
 
-![drop_down.png](/output/img/account-management/drop-down-png.png)
+![drop_down.png](/docs/output/img/account-management/drop-down-png.png)
 
 This updates the currency display. The new currency is now visible for all users. 
 
@@ -41,4 +41,4 @@ Once you've made this change, the currency will be updated in:
 
 This chart shows a modified display currency from `United States ($)` to `UK (£)`:
 
-![currency_display_pounds.png](/output/img/account-management/currency-display-pounds-png.png)
+![currency_display_pounds.png](/docs/output/img/account-management/currency-display-pounds-png.png)

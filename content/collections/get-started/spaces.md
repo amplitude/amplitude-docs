@@ -14,7 +14,7 @@ Some of the most valuable analyses are the result of collaborations among teamma
 
 Every saved piece of content must live in a space. By default, content is saved into your personal workspace. You can also choose to move them into a shared space.
 
-Content can only be saved to one location, but you can create [shortcuts](/analytics/collaborate-with-spaces) to that content in other spaces.
+Content can only be saved to one location, but you can create [shortcuts](/docs/analytics/collaborate-with-spaces) to that content in other spaces.
 
 ### Feature availability
 
@@ -59,6 +59,6 @@ We recommend using naming conventions for your space that are recognizable throu
 
 A space can reuse a previously-used name for a new project, provided the previous project was deleted. 
 
-There’s a lot more to effectively using spaces, so when you’re ready to explore further, check out [this article in the Amplitude documentation](/analytics/collaborate-with-spaces).
+There’s a lot more to effectively using spaces, so when you’re ready to explore further, check out [this article in the Amplitude documentation](/docs/analytics/collaborate-with-spaces).
 
-**Next:** [Starting your Amplitude analysis from a pre-built template](/get-started/start-from-template).
+**Next:** [Starting your Amplitude analysis from a pre-built template](/docs/get-started/start-from-template).

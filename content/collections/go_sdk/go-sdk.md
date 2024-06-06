@@ -40,7 +40,7 @@ You must initialize the SDK before you can instrument any events. The API key fo
 | `Logger` | Logger interface. The logger used by Amplitude client. | `[Go standard Logger](https://pkg.go.dev/log#Logger): log.Logger.`|
 | `ServerZone` | `string`. The server zone of the projects. Supports EU and US. For EU data residency, change to EU. | `US` |
 | `ServerURL` | `string`. The API endpoint URL that events are sent to. Automatically selected by `ServerZone` and `UseBatch`. If this field is set, then `ServerZone` and `UseBatch` are ignored and the string value is used. | `https://api2.amplitude.com/2/httpapi` |
-| `UseBatch` | `boolean`. Whether to use [batch api](/apis/batch-event-upload#batch-event-upload). By default, the SDK will use the default `serverUrl`. | `false` |   
+| `UseBatch` | `boolean`. Whether to use [batch api](/docs/apis/batch-event-upload#batch-event-upload). By default, the SDK will use the default `serverUrl`. | `false` |   
 | `StorageFactory` | `function`. Used to create storage struct to hold events in the storage buffer. Events in storage buffer are waiting to be sent. | `InMemoryStorage` |
 | `OptOut` | `bool`. Opt out option. If set to `true`, client doesn't process and send events.| `false` |
 | `ConnectionTimeout` | `time.Duration`. A time limit for API requests. | `10 seconds` |
@@ -111,7 +111,7 @@ User properties help you understand your users at the time they perform some act
 
 
 {{partial:admonition type="note" heading=""}}
-If the Identify call is sent after the event, the results of operations will be visible immediately in the dashboard user’s profile area, but it won't  appear in chart result until another event is sent after the Identify call. The identify call only affects events going forward. More details [here](/data/user-properties-and-events).
+If the Identify call is sent after the event, the results of operations will be visible immediately in the dashboard user’s profile area, but it won't  appear in chart result until another event is sent after the Identify call. The identify call only affects events going forward. More details [here](/docs/data/user-properties-and-events).
 {{/partial:admonition}}
 
 `Identify` struct provides controls over setting user properties. An `Identify` struct must first be instantiated, then `Client.Identify()` methods can be called on it.

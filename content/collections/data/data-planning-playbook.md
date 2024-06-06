@@ -53,7 +53,7 @@ Properties are **attributes** that help define details around your events and us
 * **Event properties** are attributes that help describe details specific to the particular instance of an event. For example, if you had a `Purchase Completed` event, you could specify what the user purchased, the total value of the order, and the payment method used.
 * **User properties** are traits describing the user and apply across all their future events until the properties are modified. Amplitude's SDK captures several user properties by default, and you can also set up your own properties to track.
 
-You can learn more about the differences between how [events and user properties behave in this article](/data/user-properties-and-events). Also, as with events, we recommend establishing a naming convention with a consistent casing.
+You can learn more about the differences between how [events and user properties behave in this article](/docs/data/user-properties-and-events). Also, as with events, we recommend establishing a naming convention with a consistent casing.
 
 ## Step 1: Define your business objectives
 
@@ -117,7 +117,7 @@ There are a few things to consider:
 
 * Start with your key metrics. In this case, while the purchase method is important, our key metric is our purchase flow conversion. A single `Order Completed` event would be easier to include in a funnel to see the overall purchase flow conversion.
 * Is the event scalable? In this case, what happens when you introduce PayPal as a new payment method? Any chart measuring overall conversion would have to be updated. You'd also be using three events for an interaction where you could use one.
-* Do you want to identify these separately in [Journeys](/analytics/user-data-lookup)? If so, a single `Order Completed` event is probably fine. However, if you took this to an extreme and made all your events `Page Clicked`, you could see how having a series of generic `Page Clicked` events wouldn't be very helpful when looking at a user flow.
+* Do you want to identify these separately in [Journeys](/docs/analytics/user-data-lookup)? If so, a single `Order Completed` event is probably fine. However, if you took this to an extreme and made all your events `Page Clicked`, you could see how having a series of generic `Page Clicked` events wouldn't be very helpful when looking at a user flow.
 
 ### Are your property definitions consistent across your events?
 

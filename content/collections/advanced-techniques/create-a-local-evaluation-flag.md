@@ -11,14 +11,14 @@ Create a local evaluation flag, or migrate an existing remote evaluation flag to
 
 ## Create a local evaluation flag or experiment
 
-1. [Create a flag or experiment](/experiment/workflow/feature-flag-rollouts#create-a-new-flag) as you normally would, but select the **Local** option for the **Evaluation Mode** setting.
+1. [Create a flag or experiment](/docs/experiment/workflow/feature-flag-rollouts#create-a-new-flag) as you normally would, but select the **Local** option for the **Evaluation Mode** setting.
 
 	![Create a local evaluation flag](statamic://asset::help_center_conversions::advanced-techniques/local-eval-create-flag-1.png)
 
 2. In your new experiment, set your server-side deployment, configure the allocation (for example, target 100% of users), and activate your flag.
 
 {{partial:admonition type="note" heading=""}}
-Your local evaluation experiment is set up and is ready to use a [local evaluation SDK](/experiment/local-evaluation#sdks).
+Your local evaluation experiment is set up and is ready to use a [local evaluation SDK](/docs/experiment/local-evaluation#sdks).
 {{/partial:admonition}}
 
 ## Migrate an existing remote flag to local evaluation

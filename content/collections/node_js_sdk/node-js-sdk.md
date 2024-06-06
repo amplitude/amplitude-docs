@@ -186,7 +186,7 @@ User properties help you understand your users at the time they performed some a
 Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, and `remove` on individual user properties. The operations are declared via a provided Identify interface. Chain together multiple operations together in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
 
 {{partial:admonition type="note" heading=""}}
-If the Identify call is sent after the event, the results of operations are visible immediately in the dashboard user's profile area, but it don't appear in chart result until another event is sent after the Identify call. The identify call only affects events going forward. See [Overview of user properties and event properties in Amplitude](/data/user-properties-and-events) for more information.
+If the Identify call is sent after the event, the results of operations are visible immediately in the dashboard user's profile area, but it don't appear in chart result until another event is sent after the Identify call. The identify call only affects events going forward. See [Overview of user properties and event properties in Amplitude](/docs/data/user-properties-and-events) for more information.
 {{/partial:admonition}}
 
 ### Set a user property

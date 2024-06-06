@@ -15,7 +15,7 @@ With Amplitude's **Impact Analysis** chart, you can discover how first-time enga
 
 For example, a product manager of a music app can use Impact Analysis to see changes in the average number of times users play a song after they first discover the ability to 'favorite' songs:
 
-![impact analysis 1.png](/output/img/impact-analysis/impact-analysis-1-png.png)
+![impact analysis 1.png](/docs/output/img/impact-analysis/impact-analysis-1-png.png)
 
 Use the Impact Analysis chart to:
 
@@ -28,12 +28,12 @@ This feature is available to users on **Growth** and **Enterprise plans** only. 
 
 ## Before you begin
 
-First and foremost, events will not appear in any Amplitude charts until instrumentation is complete, so make sure you've got that done. You'll definitely want to read our article on [building charts in Amplitude](/get-started/helpful-definitions).
+First and foremost, events will not appear in any Amplitude charts until instrumentation is complete, so make sure you've got that done. You'll definitely want to read our article on [building charts in Amplitude](/docs/get-started/helpful-definitions).
 
 Finally, when working with an Impact Analysis chart, always keep in mind that correlation does not imply causation. 
 
 {{partial:admonition type='note'}}
- Use [Amplitude Experiment](/experiment/overview) to determine causality. 
+ Use [Amplitude Experiment](/docs/experiment/overview) to determine causality. 
 {{/partial:admonition}}
 
 ## Set up an Impact Analysis chart
@@ -57,4 +57,4 @@ Here, "first time" is defined as the first time the user has triggered the treat
 
 For example, if you set the timeframe to be between 10/15/2022 and 11/18/2022, with a weekly interval, the users included in the results would be all of those who triggered the treatment event within that time who had NOT previously done so at any point between 7/17/2022 and 10/15/2022 (91 calendar days before the beginning of the selected time window). 
 
-[Read on to learn how to interpret your Impact Analysis chart](/analytics/charts/impact-analysis/impact-analysis-interpret).
+[Read on to learn how to interpret your Impact Analysis chart](/docs/analytics/charts/impact-analysis/impact-analysis-interpret).

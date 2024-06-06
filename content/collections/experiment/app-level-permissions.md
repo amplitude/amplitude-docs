@@ -27,7 +27,7 @@ To set app-level user permissions in Experiment, follow these steps:
 3. Click *Manage Project Access* to search for the project where you want to adjust permissions.
 4. From the dropdown displaying the current permission level for the selected user, select their updated access level. Then click *Next*.  
   
-![manage_project_access_modal.png](/output/img/experiment/manage-project-access-modal-png.png)
+![manage_project_access_modal.png](/docs/output/img/experiment/manage-project-access-modal-png.png)
 
 5. If you're sure you want to make these changes, click *Submit*.
 

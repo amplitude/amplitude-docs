@@ -51,7 +51,7 @@ client.init(AMPLITUDE_API_KEY);
 | `setCallbacks()` | `AmplitudeCallbacks`. Event callback which are triggered after event sent. | `null`|
 | `setProxy()` | `Proxy`. Custom proxy for https requests. For example, `Amplitude.getInstance().setProxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("proxy.domain.com", port)));`. | `Proxy.NO_PROXY` |
 | `setFlushTimeout()` | `long`. Events flushing thread timeout in milliseconds. For example, `Amplitude.getInstance().setFlushTimeout(2000L);`. | `0` |
-| `setOptions()` | `Options`. A dictionary of key-value pairs that represent additional instructions for server save operation. For example, `Amplitude.getInstance().setOptions(new Options().setMinIdLength(8));`. | See the [available options](/#options). |
+| `setOptions()` | `Options`. A dictionary of key-value pairs that represent additional instructions for server save operation. For example, `Amplitude.getInstance().setOptions(new Options().setMinIdLength(8));`. | See the [available options](/docs/#options). |
 
 ### Options
 
@@ -157,12 +157,12 @@ client.shutdown();
 ## Send events
 
 {{partial:admonition type="note" heading=""}}
-This SDK uses the [Http V2](/apis/http-v2) API and follows the same constraints for events. Make sure that all events logged in the SDK have the `event_type` field and at least one of `device_id` or `user_id`, and follow the HTTP API's constraints on each of those fields.
+This SDK uses the [Http V2](/docs/apis/http-v2) API and follows the same constraints for events. Make sure that all events logged in the SDK have the `event_type` field and at least one of `device_id` or `user_id`, and follow the HTTP API's constraints on each of those fields.
 
 To prevent instrumentation issues, device IDs and user IDs must be strings with a length of 5 characters or more. If an event contains a device ID or user ID that's too short, the ID value is removed from the event. If the event doesn't have a `user_id` or `device_id` value, the upload may be rejected with a 400 status. Override the default minimum length of 5 characters by passing the `min_id_length` option with the request.
 {{/partial:admonition}}
 
-Events represent how users interact with your application. For example, "Button Clicked" may be an action you want to track. In Java, `logEvent` only accepts an event object. See the [Http V2 API](/apis/http-v2) for available event object keys.
+Events represent how users interact with your application. For example, "Button Clicked" may be an action you want to track. In Java, `logEvent` only accepts an event object. See the [Http V2 API](/docs/apis/http-v2) for available event object keys.
 
 {{partial:admonition type="note" heading=""}}
 For testing the Java SDK, make sure your main thread continues until the background daemon thread that has the Amplitude Http request is finished. Otherwise, the main thread terminated earlier than the daemon thread will lead `logEvent` to fail silently.

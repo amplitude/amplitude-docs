@@ -5,7 +5,7 @@ title: 'Experiment Evaluation API'
 source: 'https://www.docs.developers.amplitude.com/experiment/apis/evaluation-api/'
 summary:  Lets you retrieve variant assignment data for users with remote evaluation.
 ---
-The Amplitude Experiment Evaluation REST API lets you retrieve variant assignment data for users via [remote evaluation](/experiment/remote-evaluation). User information passes as query parameters on the request to allow for [caching the response on the CDN](/experiment/under-the-hood/performance-and-caching#cdn-caching). When you call this API, Amplitude tracks an `[Experiment] Assignment` event.
+The Amplitude Experiment Evaluation REST API lets you retrieve variant assignment data for users via [remote evaluation](/docs/experiment/remote-evaluation). User information passes as query parameters on the request to allow for [caching the response on the CDN](/docs/experiment/under-the-hood/performance-and-caching#cdn-caching). When you call this API, Amplitude tracks an `[Experiment] Assignment` event.
 
 ## Regions
 
@@ -16,7 +16,7 @@ The Amplitude Experiment Evaluation REST API lets you retrieve variant assignmen
 
 ## Authorization
 
-The REST API authenticates the request using your [deployment](/experiment/data-model#deployments) key set in the Authorization header with the prefix `Api-Key`. For example, `Authorization: Api-Key <deployment_key>`
+The REST API authenticates the request using your [deployment](/docs/experiment/data-model#deployments) key set in the Authorization header with the prefix `Api-Key`. For example, `Authorization: Api-Key <deployment_key>`
 
 ## Query parameters
 

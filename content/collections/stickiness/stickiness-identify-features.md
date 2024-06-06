@@ -20,7 +20,7 @@ This feature is available to users on **all Amplitude plans**. See our [pricing 
 
 ## Before you begin
 
-First and foremost, events will not appear in any Amplitude charts until instrumentation is complete, so make sure you've got that done. You'll definitely want to read our article on [building charts in Amplitude](/get-started/helpful-definitions).
+First and foremost, events will not appear in any Amplitude charts until instrumentation is complete, so make sure you've got that done. You'll definitely want to read our article on [building charts in Amplitude](/docs/get-started/helpful-definitions).
 
 ## Create a Stickiness chart
 
@@ -41,7 +41,7 @@ To build a Stickiness analysis, follow these steps:
 6. You can narrow your focus even further by telling Amplitude you only want to include users who have already performed certain actions. To do so, click *+ perform*, then choose the event you’re interested in.
 7. If desired, add another user segment by clicking *+ Add Segment*, and repeating steps 5 and 6.  
   
-	![stickiness_1.gif](/output/img/stickiness/stickiness-1-gif.gif)
+	![stickiness_1.gif](/docs/output/img/stickiness/stickiness-1-gif.gif)
 
 8. Finally, choose the time zone, frequency (weekly or monthly), and the time frame your analysis will cover. The date picker can be found in the top-right corner of the chart area.
 
@@ -49,4 +49,4 @@ To build a Stickiness analysis, follow these steps:
  You can break out your starting event by user properties by clicking *… grouped by* in the Segmentation Module, if desired. For example, if you wanted to group users by the cities they were in when they fired the starting event, you would select *City* from the property list. Amplitude will then break out the segmentation analysis on a city-by-city basis. However, you will only be able to include one user segment in your analysis. 
 {{/partial:admonition}}
 
-In the chart area, you should now see your Stickiness chart, along with a tabular view of your results. To learn how to interpret your stickiness analysis, [check out this Help Center article](/analytics/charts/stickiness/stickiness-interpret).
+In the chart area, you should now see your Stickiness chart, along with a tabular view of your results. To learn how to interpret your stickiness analysis, [check out this Help Center article](/docs/analytics/charts/stickiness/stickiness-interpret).

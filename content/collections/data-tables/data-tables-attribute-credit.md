@@ -53,7 +53,7 @@ Inside a data table, you can configure an attribution model on each metric colum
 2. Select an attribution model and configure a lookback window. Optionally, you can choose to apply the attribution model to all columns in the table.
 3. Click *Apply* to confirm the change and see the table results with the attribution model applied.
 
-![attribution_sidecontrols.gif](/output/img/data-tables/attribution-sidecontrols-gif.gif)
+![attribution_sidecontrols.gif](/docs/output/img/data-tables/attribution-sidecontrols-gif.gif)
 
 ## Create a custom attribution model
 
@@ -72,7 +72,7 @@ If the pre-built attribution models do not meet your needs, you can also create 
 7. If desired, exclude property values from attribution. This may be useful if you do not want to assign credit to a particular value (e.g. direct website visits or email).
 8. Click on *Save* to confirm the change, save the model (for yourself and/or others to use in the future), and see the table results with the attribution model applied.  
   
-![image1.png](/output/img/data-tables/image1-png.png)
+![image1.png](/docs/output/img/data-tables/image1-png.png)
 
 ## Use cases
 

@@ -77,7 +77,7 @@ As your project progresses, you and your team make changes to your tracking plan
 
 ## Instrument your product
 
-After you have pulled down the latest tracking plan, learn how to [instrument your product](/sdks/analytics-sdks).
+After you have pulled down the latest tracking plan, learn how to [instrument your product](/docs/sdks/analytics-sdks).
 
 ## Verify the instrumentation
 
@@ -89,7 +89,7 @@ ampli status --update
 
 The verify command scans your source code for tracking calls and compare the results to what's expected per your team's tracking plan. Include `--update` to update your company's tracking plan online and share the latest analytics implementation status with your team.
 
-You can configure your [CI pipeline](/sdks/ampli/ntegrating-with-ci) to automatically run the `ampli status` command at check-in.
+You can configure your [CI pipeline](/docs/sdks/ampli/ntegrating-with-ci) to automatically run the `ampli status` command at check-in.
 
 ## Ampli commands
 

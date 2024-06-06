@@ -22,7 +22,7 @@ exclude_from_sitemap: false
 This is the official documentation for the Amplitude Analytics JavaScript SDK.
 
 {{partial:admonition type="deprecated" heading="Maintenance SDK"}}
-This is a maintenance SDK and will only receive bug fixes until deprecation. Upgrade to the latest [Browser SDK 2.0](/sdks/sdk-catalog/browser/browser-sdk-2) which supports plugins and more.
+This is a maintenance SDK and will only receive bug fixes until deprecation. Upgrade to the latest [Browser SDK 2.0](/docs/sdks/sdk-catalog/browser/browser-sdk-2) which supports plugins and more.
 {{/partial:admonition}}
 
 {{partial:admonition type="warning" heading="Supported browser versions"}}
@@ -31,7 +31,7 @@ This SDK uses modern JavaScript features. For browser compatibility information,
 * [Nullish coalescing `??` operator](https://caniuse.com/mdn-javascript_operators_nullish_coalescing)
 * [Optional chaining `?.` operator](https://caniuse.com/mdn-javascript_operators_optional_chaining)
 
-To ensure [wider browser support and ES5 conformity](https://caniuse.com/es5), use [Amplitude's TypeScript Browser SDK](/sdks/sdk-catalog/browser/browser-sdk-2).
+To ensure [wider browser support and ES5 conformity](https://caniuse.com/es5), use [Amplitude's TypeScript Browser SDK](/docs/sdks/sdk-catalog/browser/browser-sdk-2).
 {{/partial:admonition}}
 
 ## Install
@@ -44,7 +44,7 @@ Install the Amplitude Analytics JavaScript SDK in your project.
 Install the JavaScript SDK using a small snippet of code that you paste on your site to asynchronously load the SDK.
 On every page that you want to install Amplitude analytics, paste the code snippet just before the `</head>` tag, replacing `AMPLITUDE_API_KEY` with your project's API key.
 
-You can find your project's API Key in your project's [Settings page](/admin/account-management/manage-orgs-projects).
+You can find your project's API Key in your project's [Settings page](/docs/admin/account-management/manage-orgs-projects).
 
 ```html
 <script type="text/javascript">
@@ -179,7 +179,7 @@ var instance = amplitude.getInstance("instance").init(AMPLITUDE_API_KEY, null, o
 | `secureCookie` | `boolean`. If `true`, the amplitude cookie will be set with the Secure flag. | `false` |
 | `sessionTimeout` | `number`. The time between logged events before a new session starts in milliseconds. | `30 minutes` |
 | `storage` | `string`. Options are `cookies`, `localStorage`, `sessionStorage`, or `none`. Sets storage strategy. Will override `disableCookies` option. | `Empty String` |
-| `trackingOptions` | `Object`. Type of data associated with a user. | Enable all tracking options by default. Please check [here](/#disable-tracking-specific-fields) for more details. |
+| `trackingOptions` | `Object`. Type of data associated with a user. | Enable all tracking options by default. Please check [here](/docs/#disable-tracking-specific-fields) for more details. |
 | `transport` | `string`. `http` or `beacon`. Network transport mechanism used to send events. | `http` |
 | `unsetParamsReferrerOnNewSession` | `boolean`. If `false`, the existing `referrer` and `utm_parameter` values will be carried through each new session. If set to `true`, the `referrer` and `utm_parameter` user properties, which include `referrer`, `referring_domain`, `utm_source`, `utm_medium`, `utm_campaign`, `utm_term`, and `utm_content`, will be set to `null` upon instantiating a new session. Note: This only works if `includeReferrer` or `includeUtm` is set to `true`. | `false` |
 | `unsentKey` | `string`. localStorage key that stores unsent events. | `amplitude_unsent` |
@@ -196,7 +196,7 @@ var instance = amplitude.getInstance("instance").init(AMPLITUDE_API_KEY, null, o
 
 #### Configure batching behavior
 
-To support high-performance environments, the SDK sends events in batches. Every event logged by `logEvent` method is queued in memory. Events are flushed in batches in background. You can customize batch behavior with `eventUploadThreshold` and `eventUploadPeriodMillis`. By default, the serverUrl will be `https://api.amplitude.com`. This SDK doesn't support batch mode, the [batch API](/apis/batch-event-upload-api/) endpoint.
+To support high-performance environments, the SDK sends events in batches. Every event logged by `logEvent` method is queued in memory. Events are flushed in batches in background. You can customize batch behavior with `eventUploadThreshold` and `eventUploadPeriodMillis`. By default, the serverUrl will be `https://api.amplitude.com`. This SDK doesn't support batch mode, the [batch API](/docs/apis/batch-event-upload-api/) endpoint.
 
 ```js
 amplitude.getInstance().init(apiKey, null, {
@@ -461,8 +461,8 @@ Calling `logRevenueV2` generates a revenue event type:
 
 - [Amplitude] Revenue: This event is logged for all revenue events, regardless of whether verification is enabled.
 
-You can't change the default names given to these client-side revenue events in the raw data but you do have the option to change the [display name](/admin/account-management/account-settings).
- To learn more about tracking revenue, see the documentation [here](/cdp/sources/instrument-track-revenue).
+You can't change the default names given to these client-side revenue events in the raw data but you do have the option to change the [display name](/docs/admin/account-management/account-settings).
+ To learn more about tracking revenue, see the documentation [here](/docs/cdp/sources/instrument-track-revenue).
 
 {{partial:admonition type="note" heading=""}}
 Amplitude doesn't support currency conversion. Normalize all revenue data to your currency of choice before sending it to Amplitude.
@@ -535,11 +535,11 @@ amplitude.getInstance().init(AMPLITUDE_API_KEY, 'USER_ID');
 ```
 
 Don't assign users a user ID that could change, because each unique user ID represents a unique user in Amplitude. For more information see
- [Track unique users in Amplitude](/cdp/sources/instrument-track-unique-users) in the Help Center.
+ [Track unique users in Amplitude](/docs/cdp/sources/instrument-track-unique-users) in the Help Center.
 
 ## Logged out and anonymous users
 
-Amplitude [merges user data](/cdp/sources/instrument-track-unique-users), so any events associated with a known `userId` or `deviceId` are linked the existing user.
+Amplitude [merges user data](/docs/cdp/sources/instrument-track-unique-users), so any events associated with a known `userId` or `deviceId` are linked the existing user.
  If a user logs out, Amplitude can merge that user's logged-out events to the user's record. You can change this behavior and log those events to an anonymous user instead.
 
 To log events to an anonymous user:

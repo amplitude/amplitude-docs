@@ -4,7 +4,7 @@ blueprint: advanced-technique
 title: 'The cumulative exposures graph: Increasing and decreasing slopes'
 source: 'https://help.amplitude.com/hc/en-us/articles/7985566141083-Interpret-the-cumulative-exposures-graph-Increasing-and-decreasing-slopes'
 this_article_will_help_you:
-  - 'Understand the cumulative exposures graph in Amplitude Experiment (also available in [Experiment Results](/analytics/charts/experiment-results/experiment-results-dig-deeper))'
+  - 'Understand the cumulative exposures graph in Amplitude Experiment (also available in [Experiment Results](/docs/analytics/charts/experiment-results/experiment-results-dig-deeper))'
   - 'Gain a deeper understanding of analyzing cumulative exposure results with examples'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
@@ -15,7 +15,7 @@ The cumulative exposures graph details the number of users who are **exposed to 
 Each user is only counted once, unless they are exposed to more than one experiment variant; in that case, they are counted once for each variant they see.
 
 {{partial:admonition type='note'}}
- Learn about [the difference between an assignment event and an exposure event here](/experiment/key-terms).
+ Learn about [the difference between an assignment event and an exposure event here](/docs/experiment/key-terms).
 {{/partial:admonition}}
 
 ## Interpreting the cumulative exposure graph
@@ -36,7 +36,7 @@ In the graph below, each line represents a single variant. March 20 is the first
 
 This is a very standard cumulative exposure graph with an **increasing slope**. 
 
-![image1.png](/output/img/advanced-techniques/image1-png.png)
+![image1.png](/docs/output/img/advanced-techniques/image1-png.png)
 
 Mathematically speaking, the slope of each line is the change in the y-axis divided by the change in the x-axis: 
 
@@ -57,11 +57,11 @@ What are some other things we can say about this graph?
 
 Often, changing the x-axis to an hourly setting, as opposed to daily, will offer new ways of understanding your chart:
 
-![image6.png](/output/img/advanced-techniques/image6-png.png)
+![image6.png](/docs/output/img/advanced-techniques/image6-png.png)
 
 Here, the trend is still fairly linear. But since we are now looking at an hourly graph, we can see that from 9 pm to about 5 am, almost no additional users are being exposed to the experiment. This is probably when people are sleeping, so it stands to reason they are not using the product. This is something we couldn’t have seen in the daily version of the graph. 
 
-![image9.png](/output/img/advanced-techniques/image9-png.png)
+![image9.png](/docs/output/img/advanced-techniques/image9-png.png)
 
 This is a more extreme example. Here, the exposures look like a step function. In this case, it could be that the users who have already been exposed to your experiment at least once are evaluating the feature flag again during these “flat” time periods. 
 
@@ -69,17 +69,17 @@ This is a more extreme example. Here, the exposures look like a step function. I
 
 Sometimes, an experiment’s cumulative exposures can start out strong but then slow down over time.
 
-![image10.png](/output/img/advanced-techniques/image10-png.png)
+![image10.png](/docs/output/img/advanced-techniques/image10-png.png)
 
 When this experiment launched, each variant was exposed to about 280 new users each day. But toward the end, those exposure rates were down to about 40 new users per variant, per day.
 
 ### Static cohorts can limit your experiment
 
-The cumulative exposures can flatten out over time when you’re targeting a [static cohort](/analytics/behavioral-cohorts)—i.e., one that does not grow or shrink on its own. 
+The cumulative exposures can flatten out over time when you’re targeting a [static cohort](/docs/analytics/behavioral-cohorts)—i.e., one that does not grow or shrink on its own. 
 
 For example, imagine a static cohort with 100 members. On the first day, your experiment was shown to 40 of those users. That leaves only 60 more users eligible to be included in the future. With each passing day, there are fewer and fewer users who can enter into the experiment in the first place, and the slope of your cumulative exposures graph will inevitably flatten. 
 
-If you’re using a static cohort in an experiment, consider rethinking how you’re using the [duration estimator](/experiment/workflow/experiment-estimate-duration). Instead of **solving** for the sample size, you should ask what level of lift you can reasonably detect with this **fixed** sample size. 
+If you’re using a static cohort in an experiment, consider rethinking how you’re using the [duration estimator](/docs/experiment/workflow/experiment-estimate-duration). Instead of **solving** for the sample size, you should ask what level of lift you can reasonably detect with this **fixed** sample size. 
 
 Whenever you use a cohort in this way, ask yourself whether the cohort is actually representative of a larger population that would show a similar lift if more users were exposed to the winning variant. You can’t assume this; doing so would be like running an experiment in one country and then assuming you’ll see the same impact in any other country. 
 

@@ -13,7 +13,7 @@ updated_at: 1715363046
 ---
 Webhooks are automated messages your application sends when something happens. They include a message (or **payload**) and are sent to a unique endpoint. They're an efficient way for one application to deliver real-time information to other applications, without having to wait for your API to poll data.
 
-[Custom alerts](/analytics/insights) notify you when your most important KPIs change in meaningful ways.
+[Custom alerts](/docs/analytics/insights) notify you when your most important KPIs change in meaningful ways.
 
 With **webhooks for custom monitors**, you can use a webhook to send triggered monitors to an endpoint for a number of applications whenever user behavior changes in a way that affects your KPIs.
 
@@ -27,7 +27,7 @@ To create and configure a webhook, follow these steps:
 
 1. Navigate to Settings by clicking on the gear icon:
 
-![gear_icon_for_settings.png](/output/img/account-management/gear-icon-for-settings-png.png)
+![gear_icon_for_settings.png](/docs/output/img/account-management/gear-icon-for-settings-png.png)
 
 2. Click the name of the project you want to receive notifications for.
 3. Click the *Webhooks* tab. This is where you can manage your webhooks, as well as your automatic and custom monitors. The owner of the webhook, managers, and admins can edit or delete webhooks.

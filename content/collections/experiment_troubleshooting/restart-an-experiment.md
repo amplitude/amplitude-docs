@@ -45,7 +45,7 @@ The following changes will be made to your experiment configuration when restart
 
 The experiment key property is used by Amplitude exposure events to differentiate when your experiment has been restarted. 
 
-When using the [Evaluation API](/experiment-apis/experiment-evaluation-api) , the response body will contain the experiment key of the currently running experiment.
+When using the [Evaluation API](/docs/experiment-apis/experiment-evaluation-api) , the response body will contain the experiment key of the currently running experiment.
 
 ```json
 {
@@ -62,7 +62,7 @@ Similarly this experiment key is available when using fetching variants using Ex
 
 For example, for the JavaScript SDK:
 
-The [Variant](/sdks/experiment-sdks/experiment-javascrip#variant) object will contain the existing `value` and `payload` properties, along with a new `expKey` property.
+The [Variant](/docs/sdks/experiment-sdks/experiment-javascrip#variant) object will contain the existing `value` and `payload` properties, along with a new `expKey` property.
 
 ### After restarting
 

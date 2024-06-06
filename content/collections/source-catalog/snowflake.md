@@ -68,7 +68,7 @@ For the Snowflake source in Amplitude, Table Selection UI uses CDC mechanisms av
 - Enable change tracking for the source table or view. See [Enabling Change Tracking on Views and Underlying Tables Snowflake](https://docs.snowflake.com/en/user-guide/streams-manage.html#label-enabling-change-tracking-views) for more information. 
 - `DATA_RETENTION_TIME_IN_DAYS` must be greater than or equal to `1`, but Amplitude recommends at least `7` days. Otherwise, the change-based import fails. For more details, see [Time Travel](https://docs.snowflake.com/en/user-guide/data-time-travel) in Snowflake's documentation. Setting `DATA_RETENTION_TIME_IN_DAYS` to  `0` disables the change tracking, and causes the connection to become unrecoverable. If this happens, recreate the source.
 - [Data field](#data-fields) requirements also apply.
-- (Optional, recommended) Ensure the data to be imported has a unique and immutable `insert_id` for each row to prevent data duplication if there are any unexpected issues. More about Amplitude deduplication and `insert_id` is [Event Deduplication](/apis/http-v2-api/#event-deduplication).
+- (Optional, recommended) Ensure the data to be imported has a unique and immutable `insert_id` for each row to prevent data duplication if there are any unexpected issues. More about Amplitude deduplication and `insert_id` is [Event Deduplication](/docs/apis/http-v2-api/#event-deduplication).
 - If you disable change tracking in Snowflake, or disconnect the Amplitude source for a period longer than the value of `DATA_RETENTION_TIME_IN_DAYS`, Amplitude loses ability to track historical changes. In this case, recreate the connection. To avoid duplicate events, ensure all events have an `insert_id` set, and recreate the connection within seven days.
 - The initial import job transfers all data from the source. Subsequent jobs import the differences from the last successful import.
 - Snowflake [`CHANGES`](https://docs.snowflake.com/en/sql-reference/constructs/changes#usage-notes) limitations apply.
@@ -138,7 +138,7 @@ If you have any issues or questions while following this flow, contact the Ampli
 
 To change the modeling method of your Snowflake source:
 
-1. (Optional, recommended). Ensure the data you plan to import has a unique and immutable `insert_id` in each row to prevent data duplication. For more information, see [Data deduplication](/apis/http-v2-api/#event-deduplication).
+1. (Optional, recommended). Ensure the data you plan to import has a unique and immutable `insert_id` in each row to prevent data duplication. For more information, see [Data deduplication](/docs/apis/http-v2-api/#event-deduplication).
 2. If the source uses complex SQL, including `JOIN` and `WHERE` clauses:
       1. Create a [`VIEW`](https://docs.snowflake.com/en/user-guide/views-introduction) in your Snowflake account that wraps the data source.
       2. Enable [Change Tracking](https://docs.snowflake.com/en/user-guide/streams-manage.html#label-enabling-change-tracking-views) on the new view.
@@ -162,7 +162,7 @@ When you roll back from the Table Selection UI to Custom SQL connection in the, 
 
 ## Data fields
 
-Include the mandatory fields for the data type when you create the SQL query. These tables outline the mandatory and optional fields for each data type. Find a list of other supported fields for events in the [HTTP V2 API documentation](/apis/http-v2-api/#keys-for-the-event-argument) and  for user properties in the [Identify API documentation](/apis/identify-api/#identification-parameter-keys). Add any columns not in those lists to either `event_properties` or `user_properties`, otherwise it's ignored. 
+Include the mandatory fields for the data type when you create the SQL query. These tables outline the mandatory and optional fields for each data type. Find a list of other supported fields for events in the [HTTP V2 API documentation](/docs/apis/http-v2-api/#keys-for-the-event-argument) and  for user properties in the [Identify API documentation](/docs/apis/identify-api/#identification-parameter-keys). Add any columns not in those lists to either `event_properties` or `user_properties`, otherwise it's ignored. 
 
 ### Events
 <!-- vale off-->
@@ -176,7 +176,7 @@ Include the mandatory fields for the data type when you create the SQL query. Th
 | `user_properties`               | No                                  | VARIANT (JSON Object)                | {"city":"chicago", "gender":"female"}         |
 | `update_time_column`            | No (Yes if using time based import) | TIMESTAMP_NTZ                        | 2013-04-05 01:02:03.000                       |
 
-Find other supported fields can in the [HTTP V2 API documentation](/apis/http-v2-api/#upload-request-headers).
+Find other supported fields can in the [HTTP V2 API documentation](/docs/apis/http-v2-api/#upload-request-headers).
 
 ### User properties
 
@@ -186,7 +186,7 @@ Find other supported fields can in the [HTTP V2 API documentation](/apis/http-v2
 | `user_properties`               | Yes                                 | VARIANT (JSON Object) | {"city":"chicago", "gender":"female"} |
 | `update_time_column`            | No (Yes if using time based import) | TIMESTAMP_NTZ         | 2013-04-05 01:02:03.000               |
 
-Find other supported fields in the [Identify API documentation](/apis/identify-api/#identification-parameter-keys).
+Find other supported fields in the [Identify API documentation](/docs/apis/identify-api/#identification-parameter-keys).
 
 <!--vale on-->
 ### Group properties

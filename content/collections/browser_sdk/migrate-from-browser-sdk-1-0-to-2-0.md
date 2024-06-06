@@ -28,7 +28,7 @@ sdk_version_comparison:
 ---
 Amplitude Browser SDK 2.0 (`@amplitude/analytics-browser`) features default event tracking, improved marketing attribution tracking, simplified interface and a lighter weight package.
 
-Browser SDK 2.0 is compatible with :amp-session-replay:[Amplitude Session Replay](/session-replay).
+Browser SDK 2.0 is compatible with :amp-session-replay:[Amplitude Session Replay](/docs/session-replay).
 
 {{partial:admonition type="info" title="Using Browser SDK with Ampli v2"}}
 Ampli v2 is compatible with both Browser SDK 2.0 and Browser SDK 1.0. Follow this migration guide to upgrade.

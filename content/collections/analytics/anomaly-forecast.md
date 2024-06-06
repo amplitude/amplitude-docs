@@ -44,7 +44,7 @@ To set up anomaly detection, follow these steps:
 1. Click *Anomaly + Forecast* to enable the feature. The button will turn orange when the feature is engaged.
 2. Click the drop-down arrow to the right of the *Anomaly + Forecast* button.
 
-![anomaly.jpeg](/output/img/analytics/anomaly.jpeg)
+![anomaly.jpeg](/docs/output/img/analytics/anomaly.jpeg)
 
 3. Select the mode. Your options are **agile**, **robust**, and **custom**. **Agile** mode adjusts more quickly to recent trends, using a 95% confidence interval and 120 days of training data prior to the beginning of the chart's date range. **Robust** mode is best for stable metrics, as it incorporates a full year of additional training data, and can therefore better account for seasonality. **Custom** allows you to change both the confidence interval and the training duration to fit your specific requirements. Higher significance levels tend to results in fewer anomalies appearing on the chart.   
   
@@ -72,7 +72,7 @@ Start by looking at a few related metrics to see if you observe anomalies on tho
 
 A third option is to examine the business context surrounding the anomaly. For example, did a new feature ship that day? Could that have been the cause?
 
-Finally, [Amplitude's Root Cause Analysis feature](/analytics/root-cause-analysis) is a powerful tool for tracking down the causes of anomalies.
+Finally, [Amplitude's Root Cause Analysis feature](/docs/analytics/root-cause-analysis) is a powerful tool for tracking down the causes of anomalies.
 
 ## Training data
 

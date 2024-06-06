@@ -13,7 +13,7 @@ landing: false
 ---
 In Amplitude Experiment, a **flag** is a way for you to enable or disable a function or feature in your product, without having to deploy new code each time. Flags drive both experiments and feature rollouts: They're are ideal for launching experiments and ending them once you’ve collected enough data, or for rolling out new features (and rolling them back quickly, if you need to).
 
-This article will explain how to create a flag for a **feature rollout**. If you need information on how to use flags in your experiments, start with our article on [rolling out your experiment to your users](/experiment/workflow/experiment-test).
+This article will explain how to create a flag for a **feature rollout**. If you need information on how to use flags in your experiments, start with our article on [rolling out your experiment to your users](/docs/experiment/workflow/experiment-test).
 
 ### Feature availability
 
@@ -32,13 +32,13 @@ The best bucketing unit will usually be the user. However, in some B2B use cases
 {{/partial:admonition}}
 
 4. When you’re done, click *Create*. Experiment will open a blank template for your flag.
-5. Next, on the *Configure* tab, choose the **deployment** for your experiment from the *Deployment* drop-down menu. For more information about working with deployments, see [this article on configuring Amplitude Experiment](/experiment/workflow/configure).
-6. In *Advanced Settings*, you can change the **bucketing salt**. But if you do, users might switch between variants in your experiment. For that reason, we recommend you **do not change the bucketing salt** unless you know what you're doing. For more information, see our article on [how randomization works in Amplitude Experiment](/experiment/under-the-hood/experiment-randomization).
+5. Next, on the *Configure* tab, choose the **deployment** for your experiment from the *Deployment* drop-down menu. For more information about working with deployments, see [this article on configuring Amplitude Experiment](/docs/experiment/workflow/configure).
+6. In *Advanced Settings*, you can change the **bucketing salt**. But if you do, users might switch between variants in your experiment. For that reason, we recommend you **do not change the bucketing salt** unless you know what you're doing. For more information, see our article on [how randomization works in Amplitude Experiment](/docs/experiment/under-the-hood/experiment-randomization).
 7. Your flag must have at least one **variant**. The variant is the new feature or product experience you want to roll out to your users.  
   
 You can add as many variants as you need to a feature flag. To add a variant to your flag, click *+ Create Variant*.
 
-![createVariant.png](/output/img/workflow/createvariant-png.png)
+![createVariant.png](/docs/output/img/workflow/createvariant-png.png)
 
 The *Create Variant* modal will appear. Type in a name, value, and a description for your variant in the appropriate fields. Amplitude Experiment will automatically generate the variant value from the name you enter. The variant value is a string that you’ll use as a flag in your codebase. When you’re done, click *Apply*.
 
@@ -61,5 +61,5 @@ All of Amplitude’s user properties and cohorts are available to use in definin
 2. Next, set the **rollout percentage** for this feature. This is the percentage of the users included in the flag’s user segments who will see the new feature. If you want everyone in the user segment to have access to the feature, set this value to 100%.
 3. You’ll need to tell Amplitude Experiment how many users will see each variant. The **weights** are relative values: for example, if you give variant A a weight of 1 and variant B a weight of 4, then four times as many users will see variant B than variant A.
 4. You can set separate rules for everyone not covered by any user segments you created. If, for example, you only want the feature rolled out to the specific cohorts you targeted earlier, scroll down to the *All Other Users* section and set the rollout percentage to zero.
-5. Next, save your flag, if you haven’t already, and QA it before setting it to Active. For more information, see our Help Center article on [QAing before launching an experiment](/experiment/workflow/experiment-test).
+5. Next, save your flag, if you haven’t already, and QA it before setting it to Active. For more information, see our Help Center article on [QAing before launching an experiment](/docs/experiment/workflow/experiment-test).
 6. When you’re ready, click *Activate*. Your feature is now live for the user segments you selected.

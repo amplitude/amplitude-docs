@@ -41,7 +41,7 @@ To create a new Lookup Table in Amplitude Data, follow these steps:
 3. Navigate to your .CSV file and upload it. Then click *Next*.
 4. Map your event property by selecting it from the dropdown. When you're done, click *Finish*.
 
-**![Add_source.png](/output/img/data/add-source-png.png)**
+**![Add_source.png](/docs/output/img/data/add-source-png.png)**
 
 **NOTE**: You must be an Admin or Manager of the project to add or manage a source.
 
@@ -60,4 +60,4 @@ To delete a Lookup Table you no longer need, follow these steps:
 
 1. In Amplitude, navigate to *Sources*, then find the Lookup Table in the *Sources List*.
 2. Open the *Edit Lookup Table Configuration* tab.
-3. Click ![trash.png](/output/img/data/trash-png.png) (trash can) and follow the on-screen instructions.
+3. Click ![trash.png](/docs/output/img/data/trash-png.png) (trash can) and follow the on-screen instructions.

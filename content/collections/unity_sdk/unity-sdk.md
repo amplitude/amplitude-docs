@@ -113,12 +113,12 @@ Amplitude.getInstance("client_1") //this is the same reference as amplitude1
 
 ## Configure the SDK
 
-Amplitude Unity SDK runs on the top of the [Amplitude Android Maintenance SDK](/sdks/analytics/android/android-sdk), and [Amplitude iOS Maintenance SDK](/sdks/analytics/ios/ios-sdk). The following are the C# settable config options.
+Amplitude Unity SDK runs on the top of the [Amplitude Android Maintenance SDK](/docs/sdks/analytics/android/android-sdk), and [Amplitude iOS Maintenance SDK](/docs/sdks/analytics/ios/ios-sdk). The following are the C# settable config options.
 
 For other default configurations:
 
-- on Android, see [Android Configuration](/sdks/analytics/android/android-kotlin-sdk/#configuration)
-- on iOS side, see [iOS configuration](/sdks/analytics/ios/ios-sdk#configuration)
+- on Android, see [Android Configuration](/docs/sdks/analytics/android/android-kotlin-sdk/#configuration)
+- on iOS side, see [iOS configuration](/docs/sdks/analytics/ios/ios-sdk#configuration)
 
 | Name  | Description | Default Value |
 | --- | --- | --- |
@@ -131,8 +131,8 @@ For other default configurations:
 | `setServerUrl()` | `string`. The API endpoint URL that events are sent to. Automatically selected by `ServerZone`. For example, `Amplitude.getInstance().setServerUrl(https://www.your-server-url.com)`. | `https://api2.amplitude.com/` |
 | `setUseDynamicConfig()` | `bool`. Find the best server url automatically based on users' geo location. For example, `Amplitude.getInstance().setUseDynamicConfig(true)`. | `false` |
 | `setOffline()` | `bool`. Weather the SDK will upload events to Amplitude servers. However, the SDK will always log events. For example, `Amplitude.getInstance().setOffline(true)`. | `false` |
-| `useAdvertisingIdForDeviceId()` | `bool`. Whether to use advertising id as device id. Check [here](/sdks/analytics/android/android-sdk#advertiser-id) for the required module and permission. For example, `Amplitude.getInstance().useAdvertisingIdForDeviceId(true)`. | The deviceId will be UUID+"R" by default. |
-| `useAppSetIdForDeviceId()` | `bool`. Only for Android. Whether use appset id as a deviceId. Check [here](/sdks/analytics/android/android-sdk#app-set-id) for the required module and permission. For example, `Amplitude.getInstance().useAppSetIdForDeviceId(true)`. | The deviceId will be UUID+"R" by default. |
+| `useAdvertisingIdForDeviceId()` | `bool`. Whether to use advertising id as device id. Check [here](/docs/sdks/analytics/android/android-sdk#advertiser-id) for the required module and permission. For example, `Amplitude.getInstance().useAdvertisingIdForDeviceId(true)`. | The deviceId will be UUID+"R" by default. |
+| `useAppSetIdForDeviceId()` | `bool`. Only for Android. Whether use appset id as a deviceId. Check [here](/docs/sdks/analytics/android/android-sdk#app-set-id) for the required module and permission. For example, `Amplitude.getInstance().useAppSetIdForDeviceId(true)`. | The deviceId will be UUID+"R" by default. |
 
 ### Configure batching behavior
 
@@ -197,7 +197,7 @@ Identify is for setting the user properties of a particular user without sending
 Declare the operations with a provided Identify interface. Chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
 
 {{partial:admonition type="note" heading="Identify call"}}
-If the Identify call is sent after the event, the results of operations will be visible immediately in the dashboard user's profile area, but it will not appear in chart result until another event is sent after the Identify call. So the identify call only affects events going forward. More details [here](/data/user-properties-and-events).
+If the Identify call is sent after the event, the results of operations will be visible immediately in the dashboard user's profile area, but it will not appear in chart result until another event is sent after the Identify call. So the identify call only affects events going forward. More details [here](/docs/data/user-properties-and-events).
 {{/partial:admonition}}
 
 ### Manage user identity
@@ -320,7 +320,7 @@ Calling `logRevenue` generates up to 2 different event types in the platform:
 - '[Amplitude] Revenue': This event is logged for all revenue events, regardless of whether verification is turned on.
 - '[Amplitude] Revenue (Verified/Unverified)': These revenue events will contain the actual '$revenue' property.
 
-You can't change the default names given to these client-side revenue events in the raw data but you do have the option to modify the [display name](/admin/account-management/account-settings#events). To learn more about tracking revenue, see the documentation [here](/cdp/sources/instrument-track-revenue).
+You can't change the default names given to these client-side revenue events in the raw data but you do have the option to modify the [display name](/docs/admin/account-management/account-settings#events). To learn more about tracking revenue, see the documentation [here](/docs/cdp/sources/instrument-track-revenue).
 
 | Name  | Description  |
 | --- | --- |
@@ -401,7 +401,7 @@ See setup instructions in [Unity iOS IDFA and GPS Setup](#ios-idfa-and-gps-setu
 
 ### Android setup
 
-See setup instructions in the [Android SDK](/sdks/analytics/android/android-kotlin-sdk#advertiser-id).
+See setup instructions in the [Android SDK](/docs/sdks/analytics/android/android-kotlin-sdk#advertiser-id).
 
 ## Location tracking
 
@@ -424,7 +424,7 @@ Amplitude.Instance.init(AMPLITUDE_API_KEY, "USER_ID");
 ```
 
 Don't assign users a User ID that could change as each unique User ID is interpreted as a unique user in Amplitude.
-See [Track unique users in Amplitude](/cdp/sources/instrument-track-unique-users) for more information.
+See [Track unique users in Amplitude](/docs/cdp/sources/instrument-track-unique-users) for more information.
 
 ## Advanced topics
 

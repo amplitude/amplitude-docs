@@ -99,7 +99,7 @@ Check out the [Carthage docs](https://github.com/Carthage/Carthage#adding-framew
 
 ## Install Ampli CLI
 
-Install the [Ampli CLI](/data/ampli/cli/) from Homebrew or npm.
+Install the [Ampli CLI](/docs/data/ampli/cli/) from Homebrew or npm.
 
 {{partial:tabs tabs="Homebrew, npm"}}
 {{partial:tab name="Homebrew"}}
@@ -125,7 +125,7 @@ ampli pull
 
 ## Use Ampli
 
-Ampli generates a thin facade over the Amplitude SDK which provides convenience methods. The Ampli Wrapper also grants access to every method of the underlying Amplitude SDK through `Ampli.instance.client`. [More details](/data/sdks/ampli-overview/#wrapping-the-amplitude-sdk).
+Ampli generates a thin facade over the Amplitude SDK which provides convenience methods. The Ampli Wrapper also grants access to every method of the underlying Amplitude SDK through `Ampli.instance.client`. [More details](/docs/data/sdks/ampli-overview/#wrapping-the-amplitude-sdk).
 
 ### Load
 
@@ -183,7 +183,7 @@ Ampli.instance.identify("userID", Identify(
 {{/partial:tab}}
 {{/partial:tabs}}
 
-The options argument allows you to pass [Amplitude fields](/apis/http-v2#keys-for-the-event-argument) for this call, such as `deviceId`.
+The options argument allows you to pass [Amplitude fields](/docs/apis/http-v2#keys-for-the-event-argument) for this call, such as `deviceId`.
 
 {{partial:tabs tabs="Swift, Obj-c"}}
 {{partial:tab name="Swift"}}
@@ -248,7 +248,7 @@ To track an event, call the event's corresponding function. Every event in your 
 Ampli.instance.track(_ event: Event, options: EventOptions)
 ```
 
-The `options` argument allows you to pass [Amplitude fields](/apis/http-v2#properties-1), like `deviceID`.
+The `options` argument allows you to pass [Amplitude fields](/docs/apis/http-v2#properties-1), like `deviceID`.
 
 {{partial:admonition type="note" heading=""}}
 EventOptions are set via generic track and aren't exposed on the strongly typed event methods such as `Ampli.instance.songPlayed(songId: 'id', songFavorited: true)`.

@@ -20,11 +20,11 @@ When you run an A/B test, Experiment conducts a **hypothesis test** using a rand
 
 In a hypothesis test, you’re looking for performance differences between the control and your treatment variants. Amplitude Experiment tests the **null hypothesis** 
 
-![image1.png](/output/img/under-the-hood/image1-png.png) 
+![image1.png](/docs/output/img/under-the-hood/image1-png.png) 
 
 where 
 
-![image2.png](/output/img/under-the-hood/image2-png.png) 
+![image2.png](/docs/output/img/under-the-hood/image2-png.png) 
 
 states there’s no difference between treatment’s mean and control’s mean.
 
@@ -34,14 +34,14 @@ The **alternative hypothesis** states that there is a difference between the tre
 
 There are a number of different sequential testing options. Amplitude Experiment uses a family of sequential tests called **mixture sequential probability ratio test** (**mSPRT**). The weight function, H, is the mixing distribution. So we get the following mixture of likelihood ratios against the null hypothesis that
 
-![image3.png](/output/img/under-the-hood/image3-png.png)
+![image3.png](/docs/output/img/under-the-hood/image3-png.png)
 
 :
 
-![image4.png](/output/img/under-the-hood/image4-png.png)
+![image4.png](/docs/output/img/under-the-hood/image4-png.png)
 
 Currently, Amplitude only supports a comparison of arithmetic means between the treatment and control variants for uniques, average totals, and sum of property.
 
 {{partial:admonition type='note'}}
- Read more about sequential testing in this [article on frequently asked questions](/experiment/experiment-theory/analyze-with-t-test).
+ Read more about sequential testing in this [article on frequently asked questions](/docs/experiment/experiment-theory/analyze-with-t-test).
 {{/partial:admonition}}

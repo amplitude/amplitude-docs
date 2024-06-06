@@ -35,6 +35,6 @@ You may receive a SRM warning when analyzing a time frame that’s shorter than 
 
 Users can check for SRM issues in the data quality guide on the *Analyze* tab. Click on *Implementation & Instrumentation* to view a count of any SRM issues detected. 
 
-![sample-ratio_mismatch_detected.png](/output/img/advanced-techniques/sample-ratio-mismatch-detected-png.png)
+![sample-ratio_mismatch_detected.png](/docs/output/img/advanced-techniques/sample-ratio-mismatch-detected-png.png)
 
 Learn more about [debugging sample ratio mismatches in Amplitude Experiment](https://www.docs.developers.amplitude.com/experiment/guides/troubleshooting/sample-ratio-mismatch/).

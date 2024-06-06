@@ -14,7 +14,7 @@ updated_at: 1716329416
 
 Sometimes, lines will have an **inflection point** caused sudden increase or decrease in the count of exposures per day.
 
-![image2.png](/output/img/advanced-techniques/image2-png.png)
+![image2.png](/docs/output/img/advanced-techniques/image2-png.png)
 
 You can see here that on February 27, the slope of all three lines changed a bit, from around 70 users per day per variant, to about 100 users per day per variant. (Note that the slope can also flatten after an inflection point.)
 
@@ -45,7 +45,7 @@ Once you have answered the question of why the slope changed, consider whether t
 
 ## Flattened slope
 
-![image3.png](/output/img/advanced-techniques/image3-png.png)  
+![image3.png](/docs/output/img/advanced-techniques/image3-png.png)  
 
 Focusing on the data from March 4 to March 11, the graph is fairly flat. This indicates that very few new users were added to the experiment during that time period. Potential explanations include:
 
@@ -55,6 +55,6 @@ Focusing on the data from March 4 to March 11, the graph is fairly flat. This in
 
 You can see a strong illustration of that last bullet point in this hourly chart:
 
-![image7.png](/output/img/advanced-techniques/image7-png.png)
+![image7.png](/docs/output/img/advanced-techniques/image7-png.png)
 
 Between March 21 at 7 pm and March 22 at 9 am (the rightmost section of the graph), very few users were exposed to this experiment. But just before that, starting at around 5 am, a large number of users were exposed. Yet on the left hand side of the graph, the pattern is one of users slowly trickling in. When you consider that this experiment is run by an online gambling company, it makes sense that there would be these spikes in traffic when they run their jackpots.

@@ -16,7 +16,7 @@ For example, if a user fires Event B first, and then fires Event A within one se
 If, in an exact order funnel, an event that is not part of your funnel definition is simultaneously fired in the same second, Amplitude will still consider that user to have converted.
 
 {{partial:admonition type='note'}}
-When using [Historical Count](/analytics/historical-count-1) filters on the *same* events that occur within the *same* second, users will appear to have dropped off. This is because the funnel query doesn't distinguish between events that happen within the same second, but the Historical Count filter does. 
+When using [Historical Count](/docs/analytics/historical-count-1) filters on the *same* events that occur within the *same* second, users will appear to have dropped off. This is because the funnel query doesn't distinguish between events that happen within the same second, but the Historical Count filter does. 
 {{/partial:admonition}}
 
 ## Same events fire at once
@@ -31,7 +31,7 @@ Follow these steps to track events by the millisecond: 
 
 1. From your Funnel Analysis, open the *Advanced* dropdown in the *Measured As* module.
 
-![millisecondResolution.png](/output/img/funnel-analysis/millisecondresolution-png.png)
+![millisecondResolution.png](/docs/output/img/funnel-analysis/millisecondresolution-png.png)
 
 2. Click *Millisecond resolution*.
 

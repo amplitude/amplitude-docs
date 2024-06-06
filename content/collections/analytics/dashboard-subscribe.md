@@ -21,12 +21,12 @@ To subscribe to a dashboard—either your own, or someone else's—follow these 
   
 **NOTE:** If you own or co-own the dashboard, you can also add other subscribers, the *Subscribe yourself* field will be named *Add subscribers*; there, you can add subscribers other than yourself.
 3. To subscribe a Slack channel to the dashboard, click the *Slack* tab. In the *Add new subscriber(s)* field, enter the names of the Slack channels you want to subscribe to this dashboard. Notifications take the form of automated recurring dashboard PDFs, paired with a link back to the dashboard, sent to Slack channels you designate.  
-![DB_Reports_Sample.png](/output/img/analytics/DB_Reports_Sample.png)
+![DB_Reports_Sample.png](/docs/output/img/analytics/DB_Reports_Sample.png)
 
 Dashboard owners can add subscribers to a dashboard and set the update frequency (e.g., every Monday at 12pm UTC), with or without an attached .CSV file. Dashboard owners can also customize the frequency of email reports on a person-by-person basis.
 
-View and manage the dashboards you are subscribed to by clicking ![gear_icon_for_settings.png](/output/img/analytics/gear_icon_for_settings.png) *> Organization Settings >* *Content Access > Dashboard Subscriptions*. You can cancel subscriptions you no longer need or use, change the day of the week and time the email is sent, and specify whether the email should include a .CSV file. 
+View and manage the dashboards you are subscribed to by clicking ![gear_icon_for_settings.png](/docs/output/img/analytics/gear_icon_for_settings.png) *> Organization Settings >* *Content Access > Dashboard Subscriptions*. You can cancel subscriptions you no longer need or use, change the day of the week and time the email is sent, and specify whether the email should include a .CSV file. 
 
 Admins can view and delete any dashboard subscriptions in their organization.
 
-![Screenshot](/output/img/analytics/Screenshot)
+![Screenshot](/docs/output/img/analytics/Screenshot)

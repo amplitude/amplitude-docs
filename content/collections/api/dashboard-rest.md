@@ -1419,7 +1419,7 @@ Get the lifetime value of new users.
 
 `GET https://amplitude.com/api/2/revenue/ltv`
 
-Learn more about the [Revenue LTV chart](/analytics/charts/revenue-ltv/revenue-ltv-track-new-user-monetization).
+Learn more about the [Revenue LTV chart](/docs/analytics/charts/revenue-ltv/revenue-ltv-track-new-user-monetization).
 
 {{partial:tabs tabs="cURL, Http"}}
 {{partial:tab name="cURL"}}

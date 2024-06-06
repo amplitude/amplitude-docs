@@ -90,15 +90,15 @@ class YourClass {
 | `enableCoppaControl` | `bool`. Whether to enable COPPA control for tracking options. | `false` |
 | `flushEventsOnClose` | `bool`. Flush unsent events on app close. | `true` |
 | `identifyBatchIntervalMillis` | `int`. The amount of time SDK attempts to batch intercepted identify events. The value is in milliseconds| `30000` |
-| `migrateLegacyData` | `bool`. Whether to migrate maintenance Android SDK and maintenance iOS SDK data (events, user/device ID). Learn more at the configuration section of the underlying [Kotlin SDK](/data/sdks/android-kotlin/#configuration) and [Swift SDK](/data/sdks/ios-swift/#configuration). | `true`|
+| `migrateLegacyData` | `bool`. Whether to migrate maintenance Android SDK and maintenance iOS SDK data (events, user/device ID). Learn more at the configuration section of the underlying [Kotlin SDK](/docs/data/sdks/android-kotlin/#configuration) and [Swift SDK](/docs/data/sdks/ios-swift/#configuration). | `true`|
 
 ### Configuration for Android
 
 | Name  | Description | Default Value |
 | --- | --- | --- |
-| `locationListening` | `bool`. Whether to enable Android location service. Learn more [here](/data/sdks/android-kotlin/#location-tracking).| `true` |
-| `useAdvertisingIdForDeviceId` | `bool`. Whether to use advertising id as device id. Check [here](/data/sdks/android-kotlin/#advertiser-id) for required module and permission. | `false` |
-| `useAppSetIdForDeviceId` | `bool`.  Whether to use app set id as device id. Check [here](/data/sdks/android-kotlin/#app-set-id) for required module and permission. | `false` |
+| `locationListening` | `bool`. Whether to enable Android location service. Learn more [here](/docs/data/sdks/android-kotlin/#location-tracking).| `true` |
+| `useAdvertisingIdForDeviceId` | `bool`. Whether to use advertising id as device id. Check [here](/docs/data/sdks/android-kotlin/#advertiser-id) for required module and permission. | `false` |
+| `useAppSetIdForDeviceId` | `bool`.  Whether to use app set id as device id. Check [here](/docs/data/sdks/android-kotlin/#app-set-id) for required module and permission. | `false` |
 
 ### Configure batching behavior
 
@@ -148,7 +148,7 @@ Refer to the [BaseEvent](https://github.com/amplitude/Amplitude-Flutter/blob/bet
 Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, and `remove` on individual user properties. Declare the operations via a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
 
 {{partial:admonition type="note" heading=""}}
-If the Identify call is sent after the event, the results of operations will be visible immediately in the dashboard user's profile area, but it will not appear in chart result until another event is sent after the Identify call. So the identify call only affects events going forward. More details [here](/data/user-properties-and-events).
+If the Identify call is sent after the event, the results of operations will be visible immediately in the dashboard user's profile area, but it will not appear in chart result until another event is sent after the Identify call. So the identify call only affects events going forward. More details [here](/docs/data/user-properties-and-events).
 {{/partial:admonition}}
 
 You can handle the identity of a user using the identify methods. Proper use of these methods can connect events to the correct user as they move across devices, browsers, and other platforms. Send an identify call containing those user property operations to Amplitude server to tie a user's events with specific user properties.

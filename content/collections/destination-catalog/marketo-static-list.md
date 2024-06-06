@@ -24,7 +24,7 @@ updated_at: 1713479430
 The Marketo static list destination lets you export cohorts into Marketo as a static list, sending them to a destination folder or program of your choice. Use this to leverage Marketo’s tools for in-app messaging, push notifications, and email campaigns to better engage your users. 
 
 {{partial:admonition type="note" title=""}}
-This page is about the Marketo Static List destination. Unlike the [Marketo Cohort](/data/destination-catalog/marketo) destination, this integration automatically exports cohorts as a static list in Marketo.
+This page is about the Marketo Static List destination. Unlike the [Marketo Cohort](/docs/data/destination-catalog/marketo) destination, this integration automatically exports cohorts as a static list in Marketo.
 {{/partial:admonition}}
 
 ## Considerations
@@ -88,4 +88,4 @@ It may take a few minutes depending on the size of your cohort to see the correc
 
 ### User discrepancies between Amplitude and Marketo
 
-- Some destinations like Marketo may return a 2XXs response indicating the cohort sync has synced successfully out from Amplitude. However sometimes, the 3rd party destination will silently drop users who don't meet their criteria, and this exclusion might not be communicated back to Amplitude. To check whether a user was successfully transferred, you can review the CSV file from Amplitude. While Amplitude strives to identify cases where users aren't included at third-party platforms by analyzing response codes, fully detecting every instance of silent user exclusion due to technical constraints may not always be achievable. If you encounter issues or have queries, check out this [guide](/cdp/audiences/third-party-syncs) for more information on how you can investigate and diagnose cohort sync discrepancies in a self-serve manner.
+- Some destinations like Marketo may return a 2XXs response indicating the cohort sync has synced successfully out from Amplitude. However sometimes, the 3rd party destination will silently drop users who don't meet their criteria, and this exclusion might not be communicated back to Amplitude. To check whether a user was successfully transferred, you can review the CSV file from Amplitude. While Amplitude strives to identify cases where users aren't included at third-party platforms by analyzing response codes, fully detecting every instance of silent user exclusion due to technical constraints may not always be achievable. If you encounter issues or have queries, check out this [guide](/docs/cdp/audiences/third-party-syncs) for more information on how you can investigate and diagnose cohort sync discrepancies in a self-serve manner.

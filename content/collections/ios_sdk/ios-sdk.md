@@ -757,7 +757,7 @@ Calling `logRevenueV2` generates up to 2 different event types in the platform:
 - `[Amplitude] Revenue`: This event is logged for all revenue events, regardless of whether verification is turned on.
 - `[Amplitude] Revenue (Verified/Unverified)`: These revenue events contain the actual `$revenue` property.
 
-You can't change the default names given to these client-side revenue events in the raw data, but you can change the [display name](/admin/account-management/account-settings). Learn more about tracking revenue in the [Help Center](/cdp/sources/instrument-track-revenue).
+You can't change the default names given to these client-side revenue events in the raw data, but you can change the [display name](/docs/admin/account-management/account-settings). Learn more about tracking revenue in the [Help Center](/docs/cdp/sources/instrument-track-revenue).
 
 {{partial:admonition type="note" heading=""}}
 Amplitude doesn't support currency conversion. Normalize all revenue data to your currency of choice before being sent.
@@ -765,7 +765,7 @@ Amplitude doesn't support currency conversion. Normalize all revenue data to you
 
 Each revenue event has fields available, and each field has a corresponding set method (such as `price` and `setPrice`). See the [API docs for `AMPRevenue`](http://amplitude.github.io/Amplitude-iOS/Classes/AMPRevenue.html#//api/name/productId) for a full list of fields.
 
-Like `logEvent`, you can attach event properties for each call to `logRevenueV2` . However, these event properties only appear in the [Event Segmentation](/analytics/charts/event-segmentation/event-segmentation-build) chart and not in the Revenue charts.
+Like `logEvent`, you can attach event properties for each call to `logRevenueV2` . However, these event properties only appear in the [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) chart and not in the Revenue charts.
 
 <!-- vale Vale.Spelling = NO-->
 | Name  | Description  |
@@ -890,7 +890,7 @@ Amplitude.instance().initializeApiKey("API_KEY", userId: "USER_ID")
 {{/partial:tab}}
 {{/partial:tabs}}
 
-Don't assign users a user ID that could change, because each unique user ID is a unique user in Amplitude. For more information, see [Track unique users](/cdp/sources/instrument-track-unique-users).
+Don't assign users a user ID that could change, because each unique user ID is a unique user in Amplitude. For more information, see [Track unique users](/docs/cdp/sources/instrument-track-unique-users).
 
 ### Debug logging
 
@@ -898,7 +898,7 @@ By default, only critical errors are logged to console. To enable debug logging 
 
 ### Logged out and anonymous users
 
-Amplitude [merges user data](/cdp/sources/instrument-track-unique-users), so any events associated with a known `userId` or `deviceId` are linked the existing user.
+Amplitude [merges user data](/docs/cdp/sources/instrument-track-unique-users), so any events associated with a known `userId` or `deviceId` are linked the existing user.
 
 If a user logs out, Amplitude can merge that user's logged-out events to the user's record. You can change this behavior and log those events to an anonymous user instead.
 

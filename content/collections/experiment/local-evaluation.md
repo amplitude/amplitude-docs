@@ -56,21 +56,21 @@ All server-side SDKs and all client-side (which have local evaluation enabled) s
 
 | SDK | Remote Evaluation | Local Evaluation |
 | --- | --- | --- |
-| [JavaScript](/sdks/experiment-sdks/experiment-javascript) |  ✅ | ✅  |
-| [Android](/sdks/experiment-sdks/experiment-android) |  ✅ | ✅  |
-| [iOS](/sdks/experiment-sdks/experiment-ios) |  ✅ | ✅ |
-| [React Native](/sdks/experiment-sdks/experiment-react-native) |  ✅ | ✅ |
+| [JavaScript](/docs/sdks/experiment-sdks/experiment-javascript) |  ✅ | ✅  |
+| [Android](/docs/sdks/experiment-sdks/experiment-android) |  ✅ | ✅  |
+| [iOS](/docs/sdks/experiment-sdks/experiment-ios) |  ✅ | ✅ |
+| [React Native](/docs/sdks/experiment-sdks/experiment-react-native) |  ✅ | ✅ |
 
 ### Server-side
 
 | SDK | Remote Evaluation | Local Evaluation |
 | --- | --- | --- |
-| [Node.js](/sdks/experiment-sdks/experiment-nodejs) |  ✅ | ✅  |
-| [Ruby](/sdks/experiment-sdks/experiment-ruby) |  ✅ | ✅  |
-| [JVM](/sdks/experiment-sdks/experiment-jvm) |  ✅ | ✅ |
-| [Go](/sdks/experiment-sdks/experiment-go) |  ✅ | ✅ |
-| [Python](/sdks/experiment-sdks/experiment-python) |  ✅ | ✅ |
-| [PHP](/sdks/experiment-sdks/experiment-php) |  ✅ | ✅ |
+| [Node.js](/docs/sdks/experiment-sdks/experiment-nodejs) |  ✅ | ✅  |
+| [Ruby](/docs/sdks/experiment-sdks/experiment-ruby) |  ✅ | ✅  |
+| [JVM](/docs/sdks/experiment-sdks/experiment-jvm) |  ✅ | ✅ |
+| [Go](/docs/sdks/experiment-sdks/experiment-go) |  ✅ | ✅ |
+| [Python](/docs/sdks/experiment-sdks/experiment-python) |  ✅ | ✅ |
+| [PHP](/docs/sdks/experiment-sdks/experiment-php) |  ✅ | ✅ |
 
 ### Performance
 
@@ -78,6 +78,6 @@ The following results are for **a single flag evaluation**, and were collected o
 
 | SDK | Average | Median | Cold Start |
 | --- | --- | --- | --- |
-| [Node.js](/sdks/experiment-sdks/experiment-nodejs) | 0.025ms | 0.018ms | 3ms |
-| [Go](/sdks/experiment-sdks/experiment-go) | 0.098ms | 0.071ms | 0.7ms |
-| [JVM](/sdks/experiment-sdks/experiment-jvm) | 0.007ms | 0.005ms | 6ms |
+| [Node.js](/docs/sdks/experiment-sdks/experiment-nodejs) | 0.025ms | 0.018ms | 3ms |
+| [Go](/docs/sdks/experiment-sdks/experiment-go) | 0.098ms | 0.071ms | 0.7ms |
+| [JVM](/docs/sdks/experiment-sdks/experiment-jvm) | 0.007ms | 0.005ms | 6ms |

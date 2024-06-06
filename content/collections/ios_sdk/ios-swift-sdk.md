@@ -152,7 +152,7 @@ Identify is for setting the user properties of a particular user without sending
 
 
 {{partial:admonition type="note" heading=""}}
-If the Identify call is sent after the event, the results of operations will be visible immediately in the dashboard user's profile area, but it will not appear in chart result until another event is sent after the Identify call. The identify call only affects events going forward. More details [here](/data/user-properties-and-events).
+If the Identify call is sent after the event, the results of operations will be visible immediately in the dashboard user's profile area, but it will not appear in chart result until another event is sent after the Identify call. The identify call only affects events going forward. More details [here](/docs/data/user-properties-and-events).
 {{/partial:admonition}}
 
 You can handle the identity of a user using the identify methods. Proper use of these methods can connect events to the correct user as they move across devices, browsers, and other platforms. Send an identify call containing those user property operations to Amplitude server to tie a user's events with specific user properties.
@@ -728,7 +728,7 @@ Due to the way in which Amplitude manages sessions, there are scenarios where th
 
 * If a user doesn't return to the app, Amplitude does not track a session end event to correspond with a session start event.
 * If you track an event in the background, it's possible that Amplitude perceives the session length to be longer than the user spends on the app in the foreground.
-* If you modify user properties between the last event and the session end event, the session end event reflects the updated user properties, which may differ from other properties associated with events in the same session. To address this, use an enrichment plugin to set `event['$skip_user_properties_sync']` to `true` on the session end event, which prevents Amplitude from synchronizing properties for that specific event. See [$skip_user_properties_sync](/data/converter-configuration-reference/#skip_user_properties_sync) in the Converter Configuration Reference article to learn more.
+* If you modify user properties between the last event and the session end event, the session end event reflects the updated user properties, which may differ from other properties associated with events in the same session. To address this, use an enrichment plugin to set `event['$skip_user_properties_sync']` to `true` on the session end event, which prevents Amplitude from synchronizing properties for that specific event. See [$skip_user_properties_sync](/docs/data/converter-configuration-reference/#skip_user_properties_sync) in the Converter Configuration Reference article to learn more.
 
 Amplitude groups events together by session. Events that are logged within the same session have the same `session_id`. Sessions are handled automatically so you don't have to manually call `startSession()` or `endSession()`.
 
@@ -830,7 +830,7 @@ Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 {{/partial:tab}}
 {{/partial:tabs}}
 
-Amplitude [merges user data](/cdp/sources/instrument-track-unique-users), so any events associated with a known `userId` or `deviceId` are linked the existing user.
+Amplitude [merges user data](/docs/cdp/sources/instrument-track-unique-users), so any events associated with a known `userId` or `deviceId` are linked the existing user.
  If a user logs out, Amplitude can merge that user's logged-out events to the user's record. You can change this behavior and log those events to an anonymous user instead.
 
 To log events to an anonymous user:

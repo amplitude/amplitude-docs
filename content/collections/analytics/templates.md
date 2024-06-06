@@ -30,7 +30,7 @@ This feature is available to users on **Growth** and **Enterprise plans** only.
 
 ## Create a template
 
-Templates are created from dashboards. For detailed instructions, see the section on [templatizing a dashboard in this Help Center article](/analytics/dashboard-create).
+Templates are created from dashboards. For detailed instructions, see the section on [templatizing a dashboard in this Help Center article](/docs/analytics/dashboard-create).
 
 If you're new to Amplitude, you can take advantage of a set of pre-built **starter templates.** These dashboard templates come with pre-formatted charts, so you can quickly acclimatize yourself to analyses of common product questions. The starter templates vary by type, **use case** or **industry**:
 
@@ -56,11 +56,11 @@ If you're new to Amplitude, you can take advantage of a set of pre-built **start
 
 Once you've templatized your dashboard, you'll be able to temporarily update the data in the charts your template contains:
 
-![image1.png](/output/img/analytics/image1.png)
+![image1.png](/docs/output/img/analytics/image1.png)
 
 To add more parameters, under *Find & Replace*, you'll have the option to update any **properties**, **events**, **projects**, or **text** parameters of your templated dashboard’s charts. This will not affect the values in the original charts.
 
-![image3.png](/output/img/analytics/image3.png)
+![image3.png](/docs/output/img/analytics/image3.png)
 
 After you've made changes, you can click *Reset to Default* to revert back to the original chart definitions, or *Save onto Charts* to push the updates you've made onto the original charts.
 

@@ -16,15 +16,15 @@ Follow these steps to copy settings as JSON from Experiment to Analytics:
 
 1. While in any tab in Experiment, click the *More* dropdown and select *Copy flag as JSON* to copy chart settings to your clipboard.
 
-![copy JSON.png](/output/img/advanced-techniques/copy-json-png.png)
+![copy JSON.png](/docs/output/img/advanced-techniques/copy-json-png.png)
 
 2. From an Experiment Results chart in Analytics, click *Import*.
 
-![import.png](/output/img/advanced-techniques/import-png.png)
+![import.png](/docs/output/img/advanced-techniques/import-png.png)
 
 3. Paste the copied settings in the *Import from JSON* window, then click *Apply* to exactly match your experiment's configuration.
 
-![import_from_JSON.png](/output/img/advanced-techniques/import-from-json-png.png)
+![import_from_JSON.png](/docs/output/img/advanced-techniques/import-from-json-png.png)
 
 ### JSON schema
 

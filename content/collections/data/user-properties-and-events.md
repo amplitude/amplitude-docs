@@ -37,9 +37,9 @@ Amplitude's SDKs track the following user properties by default:
 * Library
 * IP Address
 
-You can find the definitions of each property [here](/get-started/user-property-definitions).
+You can find the definitions of each property [here](/docs/get-started/user-property-definitions).
 
-**NOTE:** If you want to [disable automatic tracking](https://www.docs.developers.amplitude.com/guides/cookies-consent-mgmt-guide/) for any of the default properties, you can do so from within your [JavaScript](/hc/en-us/articles/115001361248-JavaScript-SDK-Installation#settings-configuration-options), [Android](/hc/en-us/articles/115002935588-Android-SDK-Installation#disable-automatic-tracking-of-user-properties), or [iOS](/hc/en-us/articles/115002278527-iOS-SDK-Installation#disable-automatic-tracking-of-user-properties) SDK configuration. This will prevent Amplitude from tracking default properties on any newly-created projects, where data has not yet been sent.
+**NOTE:** If you want to [disable automatic tracking](https://www.docs.developers.amplitude.com/guides/cookies-consent-mgmt-guide/) for any of the default properties, you can do so from within your [JavaScript](/docs/hc/en-us/articles/115001361248-JavaScript-SDK-Installation#settings-configuration-options), [Android](/docs/hc/en-us/articles/115002935588-Android-SDK-Installation#disable-automatic-tracking-of-user-properties), or [iOS](/docs/hc/en-us/articles/115002278527-iOS-SDK-Installation#disable-automatic-tracking-of-user-properties) SDK configuration. This will prevent Amplitude from tracking default properties on any newly-created projects, where data has not yet been sent.
 
 You can also set up custom user properties. Be sure to choose characteristics and traits that are intrinsic to the user or to the device they're using; otherwise, the data you collect from your user properties won't be as useful. Some common examples of custom user properties include referral source, plan type, number of friends, or current level in a game.
 
@@ -53,15 +53,15 @@ When a user triggers an event that is captured by Amplitude, it includes the cur
 
 For example, in the image below, this user viewed an article at 10:11 am. The value for the  `City` property became `San Francisco`.
 
-![overview of properties.png](/output/img/data/overview-of-properties-png.png)
+![overview of properties.png](/docs/output/img/data/overview-of-properties-png.png)
 
 This user also viewed an article about a week earlier. When that event is selected, the  `City` property is shown as `New York`—which was the value at the time that the  `view article` event was triggered.
 
-![overview of properties 2.png](/output/img/data/overview-of-properties-2-png.png)
+![overview of properties 2.png](/docs/output/img/data/overview-of-properties-2-png.png)
 
-The user properties displayed with each event in a user's [individual event stream](/analytics/user-data-lookup) capture the value of the user property *at the time of the event*. This information is derived from either the most recent event sent via an Identify call.
+The user properties displayed with each event in a user's [individual event stream](/docs/analytics/user-data-lookup) capture the value of the user property *at the time of the event*. This information is derived from either the most recent event sent via an Identify call.
 
-**NOTE:** You do not have to send custom user properties with every event. Once a user property is set, its value will persist, and Amplitude will apply it to all subsequent events until the value is changed. Don't worry if you forget to apply custom user properties to your events, as you can update user properties later via the [Identify API](/hc/articles/205406617), however note that if you query on this event in Amplitude later, the updated user property will not appear with the event and will only apply to events from that point forward. 
+**NOTE:** You do not have to send custom user properties with every event. Once a user property is set, its value will persist, and Amplitude will apply it to all subsequent events until the value is changed. Don't worry if you forget to apply custom user properties to your events, as you can update user properties later via the [Identify API](/docs/hc/articles/205406617), however note that if you query on this event in Amplitude later, the updated user property will not appear with the event and will only apply to events from that point forward. 
 
 #### When old and new user property values overlap
 
@@ -69,7 +69,7 @@ When a user property's value changes, Amplitude charts can show the user in both
 
 Here's an example of how that might work: On July 1st, a user logs into your game app—currently at version 1.8—and plays a few games. Later that day, she updates to the brand-new version 2.0 and plays some more. If you segment the daily active user chart by version, and then compare version 1.0 and 2.0, that user will appear in both segments for that day. However, beginning July 2nd, she'll only appear in the version 2.0 segment, until she updates to a newer version.
 
-Something similar can happen when you've applied a user segment to a chart. Amplitude will show  `(none)`  values if the user had no value for a user property at the time of the event. If a user initially had  `isPaying`  =  `(none)`  for their first  `PlaySong`  event, but then had  `isPaying`  =  `True` for the next  `PlaySong`  event, the user will show up in both buckets. If you look at the [User Activity](/analytics/user-data-lookup) page for that user, only their most recent value for that property will appear in the top section of their profile.
+Something similar can happen when you've applied a user segment to a chart. Amplitude will show  `(none)`  values if the user had no value for a user property at the time of the event. If a user initially had  `isPaying`  =  `(none)`  for their first  `PlaySong`  event, but then had  `isPaying`  =  `True` for the next  `PlaySong`  event, the user will show up in both buckets. If you look at the [User Activity](/docs/analytics/user-data-lookup) page for that user, only their most recent value for that property will appear in the top section of their profile.
 
 ### How Amplitude applies user properties to events
 
@@ -78,11 +78,11 @@ User properties can be applied to events in three different ways:
 1. **User property is updated *before* an event is sent:** The property's value is updated in the user property table and is applied to the next event that is sent to Amplitude. This is the recommended and expected method for updating user properties so that the updated property value is correctly applied to the event.
 2. **User property is updated *after* an event is sent:** The event is sent to Amplitude, and then the property's value is updated in the user property table. The updated value is not reflected in the UI until another event is sent.
 	* If an Identify call is sent after the event, the updated value is *not* reflected with the event. It will be reflected at the top of a user's profile, but will not appear in chart results until another event is sent after the Identify call.
-3. **User property is sent *with* an event:** For events sent via Amplitude's [HTTP API](/hc/en-us/articles/204771828-HTTP-API), you can include user properties with the server-side call. The updated user property value is reflected in the UI as soon as the event is received by Amplitude; the user property table is also updated once the event is ingested. Future events will have the updated user property value until the value in the user property table is updated again.
+3. **User property is sent *with* an event:** For events sent via Amplitude's [HTTP API](/docs/hc/en-us/articles/204771828-HTTP-API), you can include user properties with the server-side call. The updated user property value is reflected in the UI as soon as the event is received by Amplitude; the user property table is also updated once the event is ingested. Future events will have the updated user property value until the value in the user property table is updated again.
 
 For a new user property value to be reflected in the UI, an event must follow or be sent with the update. User properties can be updated via the [Identify API](https://developers.amplitude.com/docs/identify-api). Please read and understand the Identify API documentation fully before using it.
 
-![pasted_image_at_2017_04_11_06_16_pm.png](/output/img/data/pasted-image-at-2017-04-11-06-16-pm-png.png)
+![pasted_image_at_2017_04_11_06_16_pm.png](/docs/output/img/data/pasted-image-at-2017-04-11-06-16-pm-png.png)
 
 ## Event properties
 
@@ -96,4 +96,4 @@ For example, imagine you have a user property called `email` and a separate even
 
 ## Hide properties
 
-You can [hide old or buggy properties as needed](/data/remove-invalid-data). Hiding event or user properties will only hide them from appearing on the platform UI and does not delete them. You can always unhide the properties if you change your mind.
+You can [hide old or buggy properties as needed](/docs/data/remove-invalid-data). Hiding event or user properties will only hide them from appearing on the platform UI and does not delete them. You can always unhide the properties if you change your mind.

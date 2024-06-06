@@ -195,9 +195,9 @@ Here is the exported data JSON object schema:
 
 The size and volume of exported data depends on how you instrument data, and the number of events you send to Amplitude. Amplitude can't provide exact estimates, but you can use your average event size to provide a rough estimate:
 
-1. Download a few hourly files with the [Export API](/analytics/apis/export-api/).
+1. Download a few hourly files with the [Export API](/docs/analytics/apis/export-api/).
 2. Compare the number of events to the size of the zip file to estimate average event size.
-3. Create an [Event Segmentation chart](/analytics/charts/event-segmentation/event-segmentation-build) and multiply by the average event size to estimate the total event volume per month.
+3. Create an [Event Segmentation chart](/docs/analytics/charts/event-segmentation/event-segmentation-build) and multiply by the average event size to estimate the total event volume per month.
 
 ### 'Complete' files
 

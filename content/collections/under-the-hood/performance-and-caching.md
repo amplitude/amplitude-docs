@@ -7,7 +7,7 @@ source: 'https://www.docs.developers.amplitude.com/experiment/general/performanc
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716917482
 ---
-Amplitude Experiment [evaluation](/experiment/implementation) supports two modes, [local](/experiment/local-evaluation) and [remote](/experiment/remote-evaluation), each with different performance metrics and tradeoffs.
+Amplitude Experiment [evaluation](/docs/experiment/implementation) supports two modes, [local](/docs/experiment/local-evaluation) and [remote](/docs/experiment/remote-evaluation), each with different performance metrics and tradeoffs.
 
 ## Performance
 
@@ -17,7 +17,7 @@ Amplitude hosts data centers in the US and EU, in `us-west-2` and `eu-central-1`
 
 ### Remote evaluation
 
-[Remote evaluation](/experiment/remote-evaluation) uses [Fastly](https://fastly.com) to [cache](#cdn-caching) evaluation results for a user. Cache hits serve variants from the edge, greatly improving performance.
+[Remote evaluation](/docs/experiment/remote-evaluation) uses [Fastly](https://fastly.com) to [cache](#cdn-caching) evaluation results for a user. Cache hits serve variants from the edge, greatly improving performance.
 
 The following results are synthetic remote evaluation test requests to Amplitude's US data center collected over the last 6 months. Latency includes DNS resolution, TLS connection as well as the remote evaluation request response round trip.
 
@@ -61,21 +61,21 @@ The following results are synthetic remote evaluation test requests to Amplitude
 
 ### Local evaluation
 
-[Local evaluation](/experiment/local-evaluation) pre-fetches flag configurations which are then used to evaluate all users, saving a network request and speeding up evaluation compared to remote evaluation.
+[Local evaluation](/docs/experiment/local-evaluation) pre-fetches flag configurations which are then used to evaluate all users, saving a network request and speeding up evaluation compared to remote evaluation.
 
 The following results are for **a single flag evaluation**, collected over 10 executions of 10,000 iterations of evaluation with randomized user inputs evaluated for 1 flag configuration, selected at random out of 3 possible flag configurations.
 
 | SDK | Average | Median | Cold Start |
 | --- | --- | --- | --- |
-| [Node.js](/sdks/experiment-sdks/experimenet-node-js) | 0.025ms | 0.018ms | 3ms |
-| [Go](/sdks/experiment-sdks/experiment-go) | 0.098ms | 0.071ms | 0.7ms |
-| [JVM](/sdks/experiment-sdks/experiment-jvm) | 0.007ms | 0.005ms | 6ms |
+| [Node.js](/docs/sdks/experiment-sdks/experimenet-node-js) | 0.025ms | 0.018ms | 3ms |
+| [Go](/docs/sdks/experiment-sdks/experiment-go) | 0.098ms | 0.071ms | 0.7ms |
+| [JVM](/docs/sdks/experiment-sdks/experiment-jvm) | 0.007ms | 0.005ms | 6ms |
 
 ## CDN caching
 
 {{partial:admonition type="note" heading="Content delivery network"}}
 - A CDN (Content Delivery Network) refers to a geographically distributed group of servers that work together to provide fast delivery of Internet content.
-- The CDN caches variant responses for [remote evaluation](/experiment/remote-evaluation) and flag configurations for [local evaluation](/experiment/local-evaluation).
+- The CDN caches variant responses for [remote evaluation](/docs/experiment/remote-evaluation) and flag configurations for [local evaluation](/docs/experiment/local-evaluation).
 {{/partial:admonition}}
 
 After Experiment computes and retrieves a response for a request, it caches that request for reuse to make future requests faster. Experiment uses a CDN to cache the experiments and feature flags for a user for low latency access on subsequent requests.

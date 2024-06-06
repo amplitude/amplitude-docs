@@ -38,7 +38,7 @@ To merge events, follow these steps:
 3. Once the events are selected, the *Transform* option will appear in the menu bar above the events list. Click *Transform*.
 4. Choose whether you want to merge the events you selected into a single event, or into a single event with an extra distinguishing property. Then click *Next*.  
   
-![merge_transform.png](/output/img/data/merge-transform-png.png)
+![merge_transform.png](/docs/output/img/data/merge-transform-png.png)
 5. Use the drop-down in the *Transform & Merge Events* modal to tell Amplitude Data whether you’d like to merge the selected events into a **new** event, or whether you’d like to merge them into a different, **already** **existing** event. If you are merging into a new event, you’ll also name it here. Then click *Preview*.
 6. In step 5 above, if you are **not** adding the extra distinguishing property to your merged event, skip to Step 9 below.  
   
@@ -110,6 +110,6 @@ To delete your transformation, follow these steps:
 3. Click *Undo Transformation*.
 4. A confirmation modal will appear. Click *Undo Transformation*.
 
-![undoTransformation.png](/output/img/data/undotransformation-png.png)
+![undoTransformation.png](/docs/output/img/data/undotransformation-png.png)
 
 Note that deleting a transformation does **not** delete the original events.
