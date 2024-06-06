@@ -3,14 +3,18 @@ id: 06fa7873-19a6-47ac-9ae0-f5da83396d11
 blueprint: analytic
 title: 'Historical Count, part 2: Order of operations'
 source: 'https://help.amplitude.com/hc/en-us/articles/21037928991259-Historical-Count-part-2-Order-of-operations'
+this_article_will_help_you:
+  - "Understand where Historical Counts fall into Amplitude's order of operations"
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717692167
 ---
-#### This article will help you:
-
-* Understand where Historical Counts fall into Amplitude's order of operations
-
 Amplitude's Historical Count feature helps you achieve a deeper level of understanding when you're investigating why your users are retaining, converting, or engaging—or why they're failing to do that.
 
-**NOTE:** This article is second in a series about Historical Counts. If you haven't done so already, read [Historical Count, part 1: Track user behavior for different instances of each user action](/analytics/historical-count-1). 
+{{partial:admonition type='note'}}
+This article is second in a series about Historical Counts. If you haven't done so already, read [Historical Count, part 1: Track user behavior for different instances of each user action](/analytics/historical-count-1). 
+{{/partial:admonition}}
 
 ## Historical Count in the Amplitude order of operations
 
@@ -18,11 +22,13 @@ Whenever Amplitude applies filters to an event, it does so in a specific order. 
 
 Let's take this Historical Count filter as an example:
 
-![historical_count_2.png](/output/img/analytics/historical_count_2.png)
+![historical_count_2.png](/output/img/analytics/historical-count-2-png.png)
 
 With the Historical Count filter applied, this chart will **not** show you everyone whose third time triggering that event just happened to take place in Germany (i.e., where the first and second instances could have happened anywhere in the world). Instead, it shows the **third Germany-located instance** of that event—in other words, **both previous instances** will also have taken place in Germany. It could be the user's third, eighth, or hundredth time performing that event overall, as long as it was only their third that took place in Germany.
 
-**NOTE:** Any group-bys will apply to the first event selected in the Funnel Analysis, Pathfinder, and Retention Analysis charts. When you apply a group-by, Amplitude will show the user's property value at the time of triggering the event for the Nth time.
+{{partial:admonition type='note'}}
+Any group-bys will apply to the first event selected in the Funnel Analysis, Pathfinder, and Retention Analysis charts. When you apply a group-by, Amplitude will show the user's property value at the time of triggering the event for the Nth time.
+{{/partial:admonition}}
 
 ## Event Historical Count
 
