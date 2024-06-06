@@ -4,7 +4,7 @@ blueprint: home
 title: 'Amplitude Documentation'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717708881
+updated_at: 1717709382
 hide_toc: true
 hide_side-nav: true
 template: home
@@ -94,7 +94,7 @@ popular_content:
     enabled: true
   -
     id: lvmoigbu
-    article: 4a23c4d3-1147-4ace-8825-0751c98e07d7
+    article: 56c6e293-ea12-4e7c-8fb3-55216749d5ce
     icon: home/amp-analytics.svg
     blurb: 'Use custom formulas in Amplitude to create the analysis you need'
     type: popular_item
