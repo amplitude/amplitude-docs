@@ -26,7 +26,7 @@ In Salesforce, objects such as Account are structured as tables, where each fiel
 2. **Group Name Field:** a column of the table that will be used as the group identifier. Typically this column should identify a row in the table uniquely
 3. **Group Properties:** a list of columns that will be imported into Amplitude.
 
-![screenshot of the mapping at a high level](../../assets/images/SFDC-mapping-high-level.png)
+![screenshot of the mapping at a high level](../../docs/assets/images/SFDC-mapping-high-level.png)
 
 ## Detailed setup instruction
 

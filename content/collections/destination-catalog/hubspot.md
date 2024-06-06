@@ -96,7 +96,7 @@ Keep these things in mind when sending events to HubSpot:
     - Select the **maximum wait time**, or select the **Delay as long as possible checkbox**.
 6. Click **Save**.
 
-    ![screenshot of the HubSpot workflow](../../assets/images/hubspot-event-streaming-workflow.png)
+    ![screenshot of the HubSpot workflow](../../docs/assets/images/hubspot-event-streaming-workflow.png)
 
 ## Use cases
 

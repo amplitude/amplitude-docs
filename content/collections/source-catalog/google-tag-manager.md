@@ -380,7 +380,7 @@ Yes, but it's not recommended. Modified Community Gallery Templates will no long
 - If your website blocks script that our Template is trying to inject. Check your website’s Console or Network tab to see if any scripts are blocked or if you are getting any errors through **right click -> Inspect**:
 - Init web attribution event is missing. If you have installed cookies consent, please check if the value of `document.referrer` has been updated to your current domain. The campaign from the current domain won't be tracked.
 - Ensure that you have selected the appropriate Tag firing options. Choosing `Once per event` will cause your tag to fire each time a Trigger event is performed. On the other hand, selecting `Once per Page` will fire your Tag just once. This discrepancy could lead to events not being sent as expected.
-![Web Container Firing Option](../../assets/images/gtm/gtm-web-container-firing-option.png) 
+![Web Container Firing Option](../../docs/assets/images/gtm/gtm-web-container-firing-option.png) 
 
 ### Overall user counts to increase?
 

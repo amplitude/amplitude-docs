@@ -39,9 +39,9 @@ return [
     */
 
     'copy' => [
-        public_path('build') => 'docs/build',
-        public_path('output') => 'docs/output',
-        public_path('assets') => 'docs/assets',
+        // public_path('build') => 'docs/build',
+        public_path('docs/output') => 'docs/output',
+        public_path('docs/assets') => 'docs/assets',
         public_path('docs/css') => 'docs/css',
         public_path('docs/js') => 'docs/js',
         public_path('docs/fonts') => 'docs/fonts',
