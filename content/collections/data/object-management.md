@@ -8,7 +8,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717621423
 ---
-Amplitude's **object management** feature lets you centrally manage **analysis objects.** Analysis objects are the reusable building blocks of your analyses, including [custom events](/data/custom-events), [metrics](#metrics), [segments](/analytics/behavioral-cohorts). 
+Amplitude's **object management** feature lets you centrally manage **analysis objects.** Analysis objects are the reusable building blocks of your analyses, including [custom events](/docs/data/custom-events), [metrics](#metrics), [segments](/docs/analytics/behavioral-cohorts). 
 
 With object management, you can:
 

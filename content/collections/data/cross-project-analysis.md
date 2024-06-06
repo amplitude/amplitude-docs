@@ -28,7 +28,7 @@ To create a portfolio in Amplitude Data, follow these steps:
 
 2. In the modal that appears, name your portfolio and select the projects in Amplitude Analytics that it will draw from. When you're done, click *Next*.  
   
-    ![portfolio_in_amplitude_data_2.png](/output/img/data/portfolio-in-amplitude-data-2-png.png)
+    ![portfolio_in_amplitude_data_2.png](/docs/output/img/data/portfolio-in-amplitude-data-2-png.png)
 
 3. Next, you must **prioritize the schemas** of the source projects you included. This is required in case Amplitude Data encounters conflicts or differences in the schemas. The order in which you prioritize them will determine which schemas Amplitude Data regards as the **source of truth**; if an event or property name exists in multiple source projects, Amplitude Data will use and display the metadata from the prioritized project in this portfolio.  
   

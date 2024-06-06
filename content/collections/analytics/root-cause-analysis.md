@@ -35,7 +35,7 @@ To examine this anomalous data point using Root Cause Analysis, follow these ste
 
 1. Click [*Anomaly + Forecast*](/docs/analytics/anomaly-forecast) to confirm that the result you're interested in is actually a statistical anomaly. Amplitude will enhance the chart to display the statistically-expected values for each day, as well as a range of values that would not be considered anomalous (in other words, values that could be attributable to random chance).
 
-	![root_cause_analysis_2.png](/output/img/analytics/root_cause_analysis_2.png)
+	![root_cause_analysis_2.png](/docs/output/img/analytics/root_cause_analysis_2.png)
     
     In this example, the December 30th data point is inside the range of statistically "normal" values—but only just.
 

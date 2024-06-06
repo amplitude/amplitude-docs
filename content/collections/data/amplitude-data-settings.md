@@ -21,7 +21,7 @@ In the Settings page, you will:
 
 These settings and features are broken out into five different tabs: General; Environments; Integrations; API Tokens; and Schema Settings, each of which is described below.
 
-![data_settings.png](/output/img/data/data-settings-png.png)
+![data_settings.png](/docs/output/img/data/data-settings-png.png)
 
 {{partial:admonition type="note" heading=""}}
 Make sure you’ve configured your settings **before** setting up your first Amplitude Data project.

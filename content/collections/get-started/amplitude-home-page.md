@@ -12,7 +12,7 @@ updated_at: 1717611220
 ---
 In Amplitude, the Home page is where you can get a quick overview on what’s happening with your product. You can also find links to the last five items you visited in Amplitude, quickly create a new chart, or visit the template gallery.
 
-![](/output/img/get-started/kWIWgPS54_noK-f-M2TS4N-kj1LVqGnB85q7B1hzodWHlzPO4E_SBw4ufbXYmol9-tMhlq-_U1XwnKmZ3-YPzejIi3tv0mTZCyrAqP7wb0m5Oldo0SrC4LSXZGqTquifErTXD6vxqGlDP69HW1_1k2Y.png)
+![](/docs/output/img/get-started/kWIWgPS54_noK-f-M2TS4N-kj1LVqGnB85q7B1hzodWHlzPO4E_SBw4ufbXYmol9-tMhlq-_U1XwnKmZ3-YPzejIi3tv0mTZCyrAqP7wb0m5Oldo0SrC4LSXZGqTquifErTXD6vxqGlDP69HW1_1k2Y.png)
 
 You can go directly to the Home page anytime. Just click the Amplitude logo in the upper-left corner of the screen.
 

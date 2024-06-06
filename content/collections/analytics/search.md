@@ -34,7 +34,7 @@ Items set by their owners to be non-discoverable will not turn up in search resu
       * The **project** the item belongs to
       * The **last edited date** in which the item was **last edited** (in the last week, last month, last year, or any time)
 
-      ![Screenshot_2023-05-24_at_9.27.26_PM.png](/output/img/analytics/Screenshot_2023-05-24_at_9.27.26_PM.png)
+      ![Screenshot_2023-05-24_at_9.27.26_PM.png](/docs/output/img/analytics/Screenshot_2023-05-24_at_9.27.26_PM.png)
 
 5. Click on any item in the list of results to open it.
 
@@ -42,4 +42,4 @@ Items set by their owners to be non-discoverable will not turn up in search resu
 
 Admins and managers can find items that have been set by their owners to be non-discoverable through search. To do so, type `is:unlisted`  in the search box. You will then be able to see all unlisted items for the entire organization.
 
-Check out our article on [user permissions in Amplitude](/admin/account-management/user-roles-permissions) to learn more.
+Check out our article on [user permissions in Amplitude](/docs/admin/account-management/user-roles-permissions) to learn more.

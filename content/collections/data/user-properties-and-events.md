@@ -100,4 +100,4 @@ For example, imagine you have a user property called `email` and a separate even
 
 ## Hide properties
 
-You can [hide old or buggy properties as needed](/data/remove-invalid-data). Hiding event or user properties will only hide them from appearing on the platform UI and does not delete them. You can always unhide the properties if you change your mind.
+You can [hide old or buggy properties as needed](/docs/data/remove-invalid-data). Hiding event or user properties will only hide them from appearing on the platform UI and does not delete them. You can always unhide the properties if you change your mind.

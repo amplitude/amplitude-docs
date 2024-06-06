@@ -22,7 +22,7 @@ Once you've created and populated your dashboard with charts or cohorts, you can
 
 ## Display as charts, KPIs, or tables
 
-You have the option to display any [Event Segmentation](/analytics/charts/event-segmentation/event-segmentation-build) charts, **conversion** Funnel charts and User Session charts you add to your dashboard as a chart, a table, or a single KPI. To switch between these display modes, click ••• in the lower-right corner of your chart, and select your preferred display from the *Visualization* section of the menu. 
+You have the option to display any [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) charts, **conversion** Funnel charts and User Session charts you add to your dashboard as a chart, a table, or a single KPI. To switch between these display modes, click ••• in the lower-right corner of your chart, and select your preferred display from the *Visualization* section of the menu. 
 
 {{partial:admonition type='note'}}
 Your KPI options are limited to Average Session Length and Average Sessions Per User for a User Sessions chart. Also, only the dashboard owner can change the display mode of any included charts.
@@ -41,13 +41,13 @@ Follow the below steps to turn on or off summary metrics:
 1. From your dashboard, choose the chart you want to display summary metrics for. Ensure the chart type is one that supports summary metrics: Event Segmentation, Funnel Analysis, or User Sessions.
 2. Click ••• to open the chart's menu and click *Show Summary Metrics* to turn them on.
 
-	![dashboards KPI.png](/output/img/analytics/dashboards-kpi-png.png)
+	![dashboards KPI.png](/docs/output/img/analytics/dashboards-kpi-png.png)
 
 3. To turn off summary metrics, reopen the chart's menu and click *Show Summary Metrics* to turn them off.
 
 In the Event Segmentation chart below, *Show Summary Metrics* is switched on. The current day is July 25th, and the chart shows total article views in the last 30 days:
 
-![dashboards summary metrics.png](/output/img/analytics/dashboards-summary-metrics-png.png)
+![dashboards summary metrics.png](/docs/output/img/analytics/dashboards-summary-metrics-png.png)
 
 * **129k:** Total across the entire date range. In this case, there were about 129k total article views from June 26th to July 25th.
 * **4.84k:** The metric in the most complete interval. In the example, there were about 4.84k views on July 24th.
@@ -58,11 +58,11 @@ In another example, let's look at an Event Segmentation chart with a custom form
 
 * **592k**: Daily active users (DAU) is the number of unique users who were active on *each* day in the last 30 days.
 
-![DAU.png](/output/img/analytics/dau-png.png)
+![DAU.png](/docs/output/img/analytics/dau-png.png)
 
 * **631k**: Weekly active users (WAU) is the unique count of users who were active in **at least 1 day in a 7-day window** in the last 30 days.
 
-![WAU.png](/output/img/analytics/wau-png.png)
+![WAU.png](/docs/output/img/analytics/wau-png.png)
 
 {{partial:admonition type='note'}}
  The DAU and WAU overall values could have matched in this example if an underlying 7-day **lookback window** had been added to both.
@@ -95,5 +95,5 @@ If this isn't the metric you want, you'll have to change the KPI metric on the c
 Often, when displaying your dashboards on TV screens or shared monitors, you'll want to put it into full-screen view. To do so, click *More* and select *Enter TV Mode* from the drop-down menu.
 
 {{partial:admonition type='note'}}
-When using TV mode, the dashboard will refresh every five minutes. However, the charts in the dashboard will refresh according to [this schedule](/analytics/charts/chart-basics).
+When using TV mode, the dashboard will refresh every five minutes. However, the charts in the dashboard will refresh according to [this schedule](/docs/analytics/charts/chart-basics).
 {{/partial:admonition}}

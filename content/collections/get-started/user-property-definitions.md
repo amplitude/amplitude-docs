@@ -27,13 +27,13 @@ If you send data server-side instead of using an SDK, Amplitude cannot track the
 
 | **Property** | **Value Definition** |
 | --- | --- |
-| Cohort | [Behavioral cohort](/analytics/behavioral-cohorts) name: "Cohort Name" |
+| Cohort | [Behavioral cohort](/docs/analytics/behavioral-cohorts) name: "Cohort Name" |
 | Country | Country of the event. This is pulled using GeoIP. "United States" |
 | City | City of the event. This is pulled using GeoIP. "San Francisco" |
 | Region | Region (e.g. state, province, county) of the event. This is pulled using GeoIP. "California" |
 | DMA | Designated Market Area (DMA) of the event. This is pulled using GeoIP. "San Francisco-Oakland-San Jose, CA" |
 | Language | Language of the device. "English" |
-| Paying | Paying is set to null for all users by default. The property value changes to "true" at the time of the user's first revenue event (or first verified revenue event, if [validation](/cdp/sources/instrument-track-revenue#verification) is on). Once a property is set to "true", it will not change. You can manually change this value via Amplitude's [Identify API](/hc/articles/205406617): "true", null/none |
+| Paying | Paying is set to null for all users by default. The property value changes to "true" at the time of the user's first revenue event (or first verified revenue event, if [validation](/docs/cdp/sources/instrument-track-revenue#verification) is on). Once a property is set to "true", it will not change. You can manually change this value via Amplitude's [Identify API](/docs/hc/articles/205406617): "true", null/none |
 | Platform | Platform of the product. "iOS", "Android", or "Web" |
 | OS | `OS` = `os_name` + `os_version`. `os_name` is the name of the user's mobile operating system or browser. `os_version` is the version of the users' mobile operating system or browser. "ios 9.1", "Chrome 46" |
 | Device Family | Family of the device. "Apple iPhone", "Samsung Galaxy Tablet", "Windows" |

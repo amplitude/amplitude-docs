@@ -90,7 +90,7 @@ For any chart or query that segments on a cohort, the segmented cohort will auto
 There are three ways you can add a Session Replay to a dashboard or notebook:
 
 * From the Session Replay page itself (accessible via the homepage and Session Replay search)
-* From within [User Look-Up](/analytics/user-data-lookup)
+* From within [User Look-Up](/docs/analytics/user-data-lookup)
 * From within an individual chart
 
 ### Designate your dashboard as "official"
@@ -133,7 +133,7 @@ You can also receive a notification via Slack. More information on how to integr
 
 The *More* menu contains several administrative functions not discussed above:
 
-![dashboards_final_section_more_menu_image.png](/output/img/analytics/dashboards-final-section-more-menu-image-png.png)
+![dashboards_final_section_more_menu_image.png](/docs/output/img/analytics/dashboards-final-section-more-menu-image-png.png)
 
 * Refreshing all charts will update all charts and cohorts included in your dashboard, so that it displays the most up-to-date information.
 * When downloading a .CSV of a chart, the downloaded file will contain a summary of the chart, the dashboard URL, and all events, segments, and user properties.

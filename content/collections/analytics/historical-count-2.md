@@ -13,7 +13,7 @@ updated_at: 1717692167
 Amplitude's Historical Count feature helps you achieve a deeper level of understanding when you're investigating why your users are retaining, converting, or engaging—or why they're failing to do that.
 
 {{partial:admonition type='note'}}
-This article is second in a series about Historical Counts. If you haven't done so already, read [Historical Count, part 1: Track user behavior for different instances of each user action](/analytics/historical-count-1). 
+This article is second in a series about Historical Counts. If you haven't done so already, read [Historical Count, part 1: Track user behavior for different instances of each user action](/docs/analytics/historical-count-1). 
 {{/partial:admonition}}
 
 ## Historical Count in the Amplitude order of operations
@@ -22,7 +22,7 @@ Whenever Amplitude applies filters to an event, it does so in a specific order. 
 
 Let's take this Historical Count filter as an example:
 
-![historical_count_2.png](/output/img/analytics/historical-count-2-png.png)
+![historical_count_2.png](/docs/output/img/analytics/historical-count-2-png.png)
 
 With the Historical Count filter applied, this chart will **not** show you everyone whose third time triggering that event just happened to take place in Germany (i.e., where the first and second instances could have happened anywhere in the world). Instead, it shows the **third Germany-located instance** of that event—in other words, **both previous instances** will also have taken place in Germany. It could be the user's third, eighth, or hundredth time performing that event overall, as long as it was only their third that took place in Germany.
 

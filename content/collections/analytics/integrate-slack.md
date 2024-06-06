@@ -39,7 +39,7 @@ To connect your Amplitude account to Slack, follow these steps:
 1. Navigate to *Settings> Personal Settings*.
 2. Click *Profile,* then *Connect to Slack*.
 
-	![integrate_slack_with_amplitude.png](/output/img/analytics/integrate_slack_with_amplitude.png)
+	![integrate_slack_with_amplitude.png](/docs/output/img/analytics/integrate_slack_with_amplitude.png)
 
 3. In the new browser tab that opens, click *Allow* to grant Amplitude access to your Slack account.
 
@@ -65,7 +65,7 @@ To receive these notifications, you will have to set up the Amplitude app for Sl
 1. In Amplitude Data, navigate to *Settings > Integrations*.
 2. If you haven’t previously enabled the Amplitude Slack App, you’ll be prompted to grant Amplitude permission in your Slack workspace. Specify a channel where notifications about this project should be sent.  
   
-	![slack_for_data.png](/output/img/analytics/slack_for_data.png)
+	![slack_for_data.png](/docs/output/img/analytics/slack_for_data.png)
 
 3. Click *Add* to complete the process.
 

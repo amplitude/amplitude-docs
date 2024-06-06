@@ -10,14 +10,14 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717691081
 ---
-The segment you created in the [Add user segments](/analytics/charts/build-charts-add-user-segments) article is perfectly functional. Depending on the breadth of your analysis, it may be all you need. But many Amplitude users prefer to drill down more and create user segments based on specific combinations of **properties**. The Segmentation Module gives you all the tools you need to define user segments with a high level of precision.
+The segment you created in the [Add user segments](/docs/analytics/charts/build-charts-add-user-segments) article is perfectly functional. Depending on the breadth of your analysis, it may be all you need. But many Amplitude users prefer to drill down more and create user segments based on specific combinations of **properties**. The Segmentation Module gives you all the tools you need to define user segments with a high level of precision.
 
 ## Add a filter
 
 When adding properties to a segment definition, remember that you're specifying the property values **at the time of each event**.  
 For example, imagine you add the filter `where City = Amsterdam` to your segment. If a user triggers an event where `City
  = Amsterdam`, but more recently triggered an event where `Country
- = United Kingdom`, **only the event that matches** your filter will be included in the chart. If you need to query an event based on the user property, make sure the user property is set **prior** to the moment when the user logs that event. More information can be found [here](/data/user-properties-and-events).
+ = United Kingdom`, **only the event that matches** your filter will be included in the chart. If you need to query an event based on the user property, make sure the user property is set **prior** to the moment when the user logs that event. More information can be found [here](/docs/data/user-properties-and-events).
 
 Also, if you segment by `Device ID`, `Event ID`, `Latitude`, `Longitude`, `Server
  Upload Time`, `Session ID`, `User ID`, or `ID`, you will need to specify the **exact values** you're looking for. You will not be able to group by the user properties `Event ID`, `Latitude`, `Longitude`, `Server Upload Time`, or `ID`. 
@@ -25,11 +25,11 @@ Also, if you segment by `Device ID`, `Event ID`, `Latitude`, `Longitude`, `Serve
 To apply a filter to your user segment, follow these steps:
 
 1. Click *+ Filter by* under your user segment. Be sure you do **not** click on *+ Filter by* underneath your event.
-2. From the *Select property...* menu, select the [user property](/data/user-properties-and-events) or [behavioral cohort](/analytics/behavioral-cohorts) you want to add to the filter.
+2. From the *Select property...* menu, select the [user property](/docs/data/user-properties-and-events) or [behavioral cohort](/docs/analytics/behavioral-cohorts) you want to add to the filter.
 3. Select the value of the user property you want to include (or specifically exclude).
 4. Then, select the **operator** that will define how this property is used in your filter: is, is not, contains, does not contain, less/greater than (or equal to), set is, set is not, set contains, set does not contain, and glob match.   
   
-![build_charts_in_amplitude_segment_operator.png](/output/img/charts/build-charts-in-amplitude-segment-operator-png.png)
+![build_charts_in_amplitude_segment_operator.png](/docs/output/img/charts/build-charts-in-amplitude-segment-operator-png.png)
 
 {{partial:admonition type='note'}}
  If you enter more than one property value, the operator acts as an OR statement. To create an AND statement, add another *Filter by* clause.
@@ -49,7 +49,7 @@ To apply a filter to your user segment, follow these steps:
 * **"glob match" or "glob does not match":** Amplitude has a simple version of regular expressions that allows you to match or exclude strings like "/org/\*/chart/\*" where \* is a wildcard. You can also enter strings like "\*[0-9]" or "[!a-z]\*" to match values that end in a digit or start with a non-letter. [Here](https://en.wikipedia.org/wiki/Glob_(programming)) is more information on glob matching.
 	* The asterisk only matches non-"/" characters. To search for strings that contain "/", use two asterisks instead. For example, if your URL format is `www.example.com/blogs/blog_id`, and you would like to filter all URLs that contain the word “blog," use glob match and enter `**blogs**`.
 
-For more information, see our Help Center article on [how array operators work in Amplitude](/analytics/charts/array-operators).
+For more information, see our Help Center article on [how array operators work in Amplitude](/docs/analytics/charts/array-operators).
 
 You can also change the name of your segment by hovering over its current name and clicking it. Note that this will also change the segment’s name in any charts already using it.
 
@@ -67,4 +67,4 @@ This does not apply when you have set your operator to "set is" or "set is not".
 
 Adding another filter creates an AND clause to your segment definition. To add additional filters, click *+ Filter by*. In the screenshot below, the segment definition now includes users who fired an event in the United States AND using German.
 
-![build_charts_in_amplitude_segment_and_operator.png](/output/img/charts/build-charts-in-amplitude-segment-and-operator-png.png)
+![build_charts_in_amplitude_segment_and_operator.png](/docs/output/img/charts/build-charts-in-amplitude-segment-and-operator-png.png)

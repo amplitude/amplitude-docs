@@ -32,7 +32,7 @@ These suggestions are listed in order of priority, which Data Assistant determin
 2. Select a specific suggestion to review (by clicking *Review*), or review all suggestions by clicking (*Review All*). This will open the Assistant page.
 3. In the left-hand sidebar is a list of all suggested modifications for your tracking plan. Click any suggestion to see a list of the events the suggestion would affect.  
   
-	![AmpAI data assistant 2.png](/output/img/data/ampai-data-assistant-2-png.png)
+	![AmpAI data assistant 2.png](/docs/output/img/data/ampai-data-assistant-2-png.png)
 
 Data Assistant groups suggestions with others similar to them, as a way to prioritize the most important issues and make the entire process of updating the tracking plan as easy as possible.  
   

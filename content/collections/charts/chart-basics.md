@@ -14,7 +14,7 @@ updated_at: 1717690752
 ---
 ## Before you begin
 
-If you haven't done so yet, stop and read this [article on how to create a chart in Amplitude](/get-started/create-a-chart) before proceeding.
+If you haven't done so yet, stop and read this [article on how to create a chart in Amplitude](/docs/get-started/create-a-chart) before proceeding.
 
 Also, please keep in mind some features may require a certain subscription or a paid add on: 
 
@@ -26,13 +26,13 @@ Also, please keep in mind some features may require a certain subscription or a 
 
 To share your chart, either click the link icon to copy the chart's URL to your clipboard, or click the share icon to open the *Share your analysis* modal.
 
-![share_your_analysis.png](/output/img/charts/share-your-analysis-png.png)
+![share_your_analysis.png](/docs/output/img/charts/share-your-analysis-png.png)
 
 Enter the names or emails of the stakeholders you want to share the chart with, and set their access privileges with the drop-down to the right. When you're ready, click *Modify Owners*.
 
 ## Add your chart to a dashboard or notebook
 
-To add your chart to a new or existing [dashboard](/analytics/dashboard-create) or notebook, click *+ Add to* and scroll down until you find the dashboard or notebook you're looking for. You can also use this chart as the basis for creating a new dashboard or notebook.
+To add your chart to a new or existing [dashboard](/docs/analytics/dashboard-create) or notebook, click *+ Add to* and scroll down until you find the dashboard or notebook you're looking for. You can also use this chart as the basis for creating a new dashboard or notebook.
 
 ## Add custom legend labels
 
@@ -46,7 +46,7 @@ You can set the minimum and maximum values displayed on your chart's y-axis (ver
 
 To do so, simply click the vertical axis on your chart, then enter the desired minimum and maximum values in the modal that appears.
 
-![create](/output/img/charts/create.gif)
+![create](/docs/output/img/charts/create.gif)
 
 ## Switch projects or chart types
 
