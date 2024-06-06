@@ -1126,16 +1126,12 @@ video {
   margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
 }.self-center {
   align-self: center;
-}.overflow-auto {
-  overflow: auto;
 }.overflow-hidden {
   overflow: hidden;
 }.overflow-scroll {
   overflow: scroll;
 }.overflow-x-scroll {
   overflow-x: scroll;
-}.overscroll-contain {
-  overscroll-behavior: contain;
 }.truncate {
   overflow: hidden;
   text-overflow: ellipsis;
