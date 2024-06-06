@@ -62,7 +62,9 @@ return [
     */
 
     'urls' => [
-        '/sitemap.xml'
+        '/sitemap.xml',
+        '/sdks'
+
     ],
 
     /*
