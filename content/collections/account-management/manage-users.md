@@ -5,10 +5,11 @@ title: 'Manage users and permissions'
 source: 'https://help.amplitude.com/hc/en-us/articles/360058531591-Manage-users-and-permissions'
 this_article_will_help_you:
   - 'Enable users to access Amplitude projects in your organization, and manage how they do it'
-landing: false
+landing: true
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1715294465
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717697668
+landing_blurb: "Manage your project's users and permissions."
 ---
 Before a user can gain access to any Amplitude projects, you will have to add them to your Amplitude organization. You should do this immediately after creating an organization. Additionally, you’ll probably need to add new team members on a case-by-case basis as your organization changes and grows.
 

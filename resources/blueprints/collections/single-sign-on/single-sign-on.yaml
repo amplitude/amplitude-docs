@@ -10,6 +10,14 @@ tabs:
             config:
               title:
                 required: true
+  landing_page:
+    display: 'Landing page'
+    sections:
+      -
+        display: 'New Section'
+        fields:
+          -
+            import: article_common
   sidebar:
     display: Sidebar
     sections:
@@ -30,3 +38,19 @@ tabs:
               max_items: 1
               listable: false
               localizable: true
+  alt_sitemap:
+    display: 'Alt Sitemap'
+    sections:
+      -
+        fields:
+          -
+            handle: sitemap_priority
+            field:
+              type: float
+              display: 'Sitemap Priority'
+              instructions: 'From 0.0 (lowest priority) to 1.0 (highest priority)'
+          -
+            handle: exclude_from_sitemap
+            field:
+              type: toggle
+              display: 'Exclude from sitemap?'

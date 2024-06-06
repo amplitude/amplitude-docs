@@ -5,10 +5,11 @@ title: 'Monthly tracked users (MTUs) billing guide'
 source: 'https://help.amplitude.com/hc/en-us/articles/12217810210331-Monthly-tracked-users-MTUs-billing-guide'
 this_article_will_help_you:
   - 'Understand how Amplitude calculates and charges for MTUs'
-landing: false
+landing: true
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1715291244
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717697584
+landing_blurb: 'Learn about how Amplitude bills with Monthly Tracked Users.'
 ---
 Amplitude customers on Scholarship, Starter, and Plus plans are billed according to **monthly tracked user (MTU)** count. This option is also available to customers on Growth and Enterprise plans. 
 
