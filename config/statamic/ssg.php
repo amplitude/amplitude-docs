@@ -42,9 +42,9 @@ return [
         public_path('build') => 'docs/build',
         public_path('output') => 'docs/output',
         public_path('assets') => 'docs/assets',
-        public_path('css') => 'docs/css',
-        public_path('js') => 'docs/js',
-        public_path('fonts') => 'docs/fonts',
+        public_path('docs/css') => 'docs/css',
+        public_path('docs/js') => 'docs/js',
+        public_path('docs/fonts') => 'docs/fonts',
     ],
 
     'symlinks' => [
@@ -62,8 +62,7 @@ return [
     */
 
     'urls' => [
-        '/sitemap.xml',
-        '/docs'
+        '/docs/sitemap.xml',
 
     ],
 
