@@ -1,12 +1,17 @@
 ---
-title: "Environment settings for projects (legacy feature)"
-source: "https://help.amplitude.com/hc/en-us/articles/20587620067867-Environment-settings-for-projects-legacy-feature-"
 id: 59306913-18a3-4948-87c4-877316da591c
+published: false
+blueprint: data
+title: 'Environment settings for projects (legacy feature)'
+source: 'https://help.amplitude.com/hc/en-us/articles/20587620067867-Environment-settings-for-projects-legacy-feature-'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717622763
 ---
-
 #### This article will help you:
 
-* Manage projects with multiple environments
+* 
 
 **NOTE:** This article is about an unsupported **legacy feature**. It is still available for a small number of Amplitude customers, but will not be made accessible for customers who do not already have access.
 

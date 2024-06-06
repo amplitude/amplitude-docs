@@ -3,12 +3,14 @@ id: 213623de-f09a-461f-aaa0-01186edd7964
 blueprint: analytic
 title: 'Collaborate on your analyses using spaces'
 source: 'https://help.amplitude.com/hc/en-us/articles/360016524911-Collaborate-on-your-analyses-using-spaces'
+this_article_will_help_you:
+  - 'Collaborate with other team members to generate insights by creating and refining analyses together'
+  - 'Organize the content you create in Amplitude'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717692931
 ---
-#### This article will help you:
-
-* Collaborate with other team members to generate insights by creating and refining analyses together
-* Organize the content you create in Amplitude
-
 In this article, you'll learn how to take advantage of the different features offered by [spaces](/get-started/spaces) before continuing.
 
 ### Feature availability
@@ -63,17 +65,15 @@ To modify a space member's permissions, follow these steps:
 1. Click *Manage Members* to open the *Manage Members* modal.
 2. Scroll until you find the user whose permissions you want to modify. Open the drop-down opposite their name and select the new permissions level, or click *Remove* to remove the user from the space.
 
-## 
-Slack integration
+## Slack integration
 
 When you connect spaces to specific Slack channels, you'll receive notifications whenever your team creates new analyses. When new content gets added to that team space in Amplitude, it will automatically be posted in the Slack channel.
 
 To do this, click *Connect with Slack*. Then follow the prompts.
 
-To learn more about our Slack integration, see our [Help Center article on integrating Slack with Amplitude](/analytics/integrate-slack).
+To learn more about our Slack integration, see our [article on integrating Slack with Amplitude](/analytics/integrate-slack).
 
-## 
-Permissions
+## Permissions
 
 While only admins, managers, and members can create a team space, all users can add themselves to spaces, regardless of permission level.
 

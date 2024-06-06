@@ -1,14 +1,14 @@
 ---
-title: "Object management: Manage the building blocks of your analyses"
-source: "https://help.amplitude.com/hc/en-us/articles/9980355191579-Object-management-Manage-the-building-blocks-of-your-analyses"
 id: 5062badd-ff0e-4efd-9c1a-d8d0809e6bdd
+blueprint: data
+title: 'Object management: Manage the building blocks of your analyses'
+source: 'https://help.amplitude.com/hc/en-us/articles/9980355191579-Object-management-Manage-the-building-blocks-of-your-analyses'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717621423
 ---
-
-#### This article will help you:
-
-* Understand, use, and manage **analysis objects** in Amplitude
-
-Amplitude's **object management** feature lets you centrally manage **analysis objects.** Analysis objects are the reusable building blocks of your analyses, including [custom events](/data/custom-events), [metrics](#h_01GGTK9ZDFT5GSYCYY32351XEP), [segments](/analytics/behavioral-cohorts). 
+Amplitude's **object management** feature lets you centrally manage **analysis objects.** Analysis objects are the reusable building blocks of your analyses, including [custom events](/data/custom-events), [metrics](#metrics), [segments](/analytics/behavioral-cohorts). 
 
 With object management, you can:
 
@@ -28,7 +28,9 @@ With object management, you can:
 
 From the *Object Management* page, click *+ Create New* and select the type of object you'd like to create. Follow the prompts in the modal that appears (it'll be different for each type).
 
-**NOTE:** A **metric** is an event-and-measurement pairing saved as a single block, which can then be re-used across charts and experiments. A **custom metric** is an event object made up of a user-defined combination of events and filters.
+{{partial:admonition type="note" heading=""}}
+A **metric** is an event-and-measurement pairing saved as a single block, which can then be re-used across charts and experiments. A **custom metric** is an event object made up of a user-defined combination of events and filters.
+{{/partial:admonition}}
 
 As you define the object (by adding events for custom events and metrics, or by specifying users to be included in your cohorts or segments), Amplitude Analytics will show you a list of similar objects, at the bottom of the modal. You can check your new object against this list, to guard against creating unnecessary duplicate objects.
 

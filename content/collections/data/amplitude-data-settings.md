@@ -1,13 +1,15 @@
 ---
-title: "Configure and manage your Amplitude Data settings"
-source: "https://help.amplitude.com/hc/en-us/articles/5078848559259-Configure-and-manage-your-Amplitude-Data-settings"
 id: 9fbd24d0-c90c-497c-8cca-5b345f1058d6
+blueprint: data
+title: 'Configure and manage your Amplitude Data settings'
+source: 'https://help.amplitude.com/hc/en-us/articles/5078848559259-Configure-and-manage-your-Amplitude-Data-settings'
+this_article_will_help_you:
+  - 'Understand and manage all settings related to your Amplitude Data projects'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717611886
 ---
-
-#### This article will help you:
-
-* Understand and manage all settings related to your Amplitude Data projects
-
 In the Settings page, you will:
 
 * Name your project, and specify the naming conventions you’ll use for events and properties
@@ -19,9 +21,11 @@ In the Settings page, you will:
 
 These settings and features are broken out into five different tabs: General; Environments; Integrations; API Tokens; and Schema Settings, each of which is described below.
 
-**![data_settings.png](/output/img/data/data-settings-png.png)**
+![data_settings.png](/output/img/data/data-settings-png.png)
 
-**NOTE:** Make sure you’ve configured your settings **before** setting up your first Amplitude Data project.
+{{partial:admonition type="note" heading=""}}
+Make sure you’ve configured your settings **before** setting up your first Amplitude Data project.
+{{/partial:admonition}}
 
 ## Roles and permissions in Amplitude Data
 

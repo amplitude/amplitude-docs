@@ -302,7 +302,10 @@ ul.nav li::marker {
     max-height: 500px;
 }
 
-
+li>p>img {
+    margin-top: 0px!important;
+    margin-bottom: 0px!important;
+}
 code {
     font-family: 'IBM Plex Mono', monospace;
     color: #4f4f4f;
@@ -559,9 +562,9 @@ h2:hover a {
     bottom: -6px;
 }
 
-td {
+/* td {
     overflow: scroll
-}
+} */
 
 .current {
     border-color: #259991;

@@ -3,11 +3,6 @@ title: "Change the description of an event or property"
 source: "https://help.amplitude.com/hc/en-us/articles/17050416767003-Change-the-description-of-an-event-or-property"
 id: acd3a1dc-ad94-4730-b859-280c46747eb7
 ---
-
-#### This article will help you:
-
-* Change descriptions of events and properties
-
 You can change the description for an **event** to help other members of your organization understand what an event represents. To do so, follow these steps:
 
 1. Click the event name to open the fly-out panel on the right side.
@@ -16,7 +11,9 @@ You can change the description for an **event** to help other members of your or
 
 You can change the description for an **event property** in two different ways. Since the same event property can apply to multiple event types, you can either add a description for the **original** event property, or for an event property that has been overridden for a specific event or property group. (If the latter doesn’t exist, the description will default to the global event property.)
 
-**NOTE:** Event properties that are not overridden share the same **original** event property details.
+{{partial:admonition type="note" heading=""}}
+Event properties that aren't overridden share the same **original** event property details.
+{{/partial:admonition}}
 
 To change the description for an overridden event property **specific to an event**, follow these steps:
 

@@ -3,12 +3,14 @@ id: 4be51454-e583-4b1f-93b1-de647114ea68
 blueprint: analytic
 title: 'Integrate Slack with Amplitude'
 source: 'https://help.amplitude.com/hc/en-us/articles/227613388-Integrate-Slack-with-Amplitude'
+this_article_will_help_you:
+  - 'Connect your Slack and Amplitude accounts and receive updates in Slack'
+  - 'Set up an Amplitude Data project to send updates to a specific Slack channel'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717696292
 ---
-#### This article will help you:
-
-* Connect your Slack and Amplitude accounts and receive updates in Slack
-* Set up an Amplitude Data project to send updates to a specific Slack channel
-
 With Amplitude's app for [Slack](https://www.slack.com/), you can:
 
 * Get updates about new comments you receive in Amplitude
@@ -18,9 +20,11 @@ With Amplitude's app for [Slack](https://www.slack.com/), you can:
 
 To connect Amplitude to Slack, you can either follow the steps below, or you can use the Amplitude integration in the Slack app store: 
 
-[![Add to Slack](/output/img/analytics/Add to Slack)](https://amplitude.slack.com/apps/A02PDFHC1NX-amplitude)
+![Add to Slack](statamic://asset::help_center_conversions::analytics/add-to-slack.png.png)
 
-**NOTE:** If your company uses Amplitude's EU data center, there is a different Slack app intended specifically for EU customers. It can be found in the Slack app directory under “[Amplitude - EU](https://amplitude.slack.com/apps/A042J2XCRS9-amplitude-eu).”  Install it by clicking [this link](https://links.amplitude.com/ZFSte8rMWtuwkP5jE/l/0POygAjvJypciVq4d?messageId=6nK7UeyixFZbdLPAQ&rn=&re=gIt92YuUGZ1RXasBXbhB0cul2akVnauYmZlpmI&sc=false), or by following the instructions below.
+{{partial:admonition type="note" heading=""}}
+If your company uses Amplitude's EU data center, there is a different Slack app intended specifically for EU customers. It can be found in the Slack app directory under “[Amplitude - EU](https://amplitude.slack.com/apps/A042J2XCRS9-amplitude-eu).”  Install it by clicking [this link](https://links.amplitude.com/ZFSte8rMWtuwkP5jE/l/0POygAjvJypciVq4d?messageId=6nK7UeyixFZbdLPAQ&rn=&re=gIt92YuUGZ1RXasBXbhB0cul2akVnauYmZlpmI&sc=false), or by following the instructions below.
+{{/partial:admonition}}
 
 ### Feature availability
 
@@ -32,10 +36,10 @@ Follow these steps whether you are integrating Amplitude and Slack for the first
 
 To connect your Amplitude account to Slack, follow these steps:
 
-1. Navigate to ![gear_icon_for_settings.png](/output/img/analytics/gear_icon_for_settings.png) *> Personal Settings*.
+1. Navigate to *Settings> Personal Settings*.
 2. Click *Profile,* then *Connect to Slack*.
 
-![integrate_slack_with_amplitude.png](/output/img/analytics/integrate_slack_with_amplitude.png)
+	![integrate_slack_with_amplitude.png](/output/img/analytics/integrate_slack_with_amplitude.png)
 
 3. In the new browser tab that opens, click *Allow* to grant Amplitude access to your Slack account.
 
@@ -47,7 +51,7 @@ Once you've authenticated via this process, Slack will automatically **unfurl** 
 
 ![unfurled_chart_in_Slack.png](/output/img/analytics/unfurled_chart_in_Slack.png)
 
-**NOTE:** Slack will not unfurl Pathfinder, Compass, and Persona charts.
+Slack will not unfurl Pathfinder, Compass, and Persona charts.
 
 ### Connect an Amplitude Data project to Slack
 
@@ -61,7 +65,8 @@ To receive these notifications, you will have to set up the Amplitude app for Sl
 1. In Amplitude Data, navigate to *Settings > Integrations*.
 2. If you haven’t previously enabled the Amplitude Slack App, you’ll be prompted to grant Amplitude permission in your Slack workspace. Specify a channel where notifications about this project should be sent.  
   
-![slack_for_data.png](/output/img/analytics/slack_for_data.png)
+	![slack_for_data.png](/output/img/analytics/slack_for_data.png)
+
 3. Click *Add* to complete the process.
 
 ### Turn on link previews
