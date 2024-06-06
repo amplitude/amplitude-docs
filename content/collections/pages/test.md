@@ -4,7 +4,7 @@ blueprint: home
 title: 'Amplitude Documentation'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717434208
+updated_at: 1717708881
 hide_toc: true
 hide_side-nav: true
 template: home

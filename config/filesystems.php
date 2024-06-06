@@ -60,7 +60,7 @@ return [
         'assets' => [
             'driver' => 'local',
             'root' => public_path('docs/assets'),
-            'url' => '/assets',
+            'url' => 'docs/assets',
             'visibility' => 'public',
             'throw' => false,
         ],
