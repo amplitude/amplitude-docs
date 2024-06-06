@@ -3,18 +3,20 @@ id: 460e81bb-f27a-4e8b-a427-478147415c71
 blueprint: analytic
 title: 'Insights: Spot anomalies in your metrics quickly with alerts'
 source: 'https://help.amplitude.com/hc/en-us/articles/115001764612-Insights-Spot-anomalies-in-your-metrics-quickly-with-alerts'
+this_article_will_help_you:
+  - 'Set up and manage alerts to monitor the performance of your important project metrics'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717697238
 ---
-This article will help you:
-
-* Set up and manage alerts to monitor the performance of your important project metrics
-
 Amplitude's **alerts** feature is built using [Prophet](https://facebook.github.io/prophet/), an advanced data mining and machine learning technique that automatically detects any anomalies in your product data, and instantly brings these hidden trends to your attention. It does this by first identifying expected values, and the confidence intervals around them, and then analyzing the overall trend of the data and combining it with the weekly trend of the data. 
 
 ### Feature availability
 
 This feature is available to users on **Growth** and **Enterprise plans** only.
 
-* * Users on Growth plans require the Insights add-on to use this feature.
+* Users on Growth plans require the Insights add-on to use this feature.
 
 ## Before you begin
 
@@ -35,7 +37,7 @@ An **automatic** alert is set up for every event you instrument in Amplitude. It
 
 Amplitude will monitor an event for anomalies once it achieves a volume of 100 or more events per day in at least 15 of the last 30 days. Amplitude considers an anomaly to have occurred when an event's value falls outside of the 99% confidence interval of historical data. Amplitude uses 120 training days for automatic monitors.
 
-**NOTE:** Automatic event monitoring applies **only** to individual events. The Amplitude-defined `Any Event` does not qualify for anomaly monitoring.
+Automatic event monitoring applies **only** to individual events. The Amplitude-defined `Any Event` does not qualify for anomaly monitoring.
 
 To subscribe to **automatic** alerts and receive emails when an anomaly is detected, navigate to *Settings > Projects,* find the project you want to monitor, and open the *Automatic Monitors* tab. Switch the *Not Subscribed* toggle to *Subscribed*.
 
@@ -44,10 +46,10 @@ To set a **custom** or **smart** alert for a chart you own, follow these steps:
 1. Navigate to the chart you want to set an alert for. Note that the chart must be saved before you can set an alert for it.
 2. Select *Set Alert* from the *More* drop-down menu and select either a **smart** alert or a **custom** alert:
 
-* * * A **smart alert** will look for unexpected changes outside of a 99% confidence interval.
-		* A **custom alert** allows you to be more specific about the conditions under which you'll receive a custom alert: whether it's above or below a specific value, or whether it differs from a previous value by a specified amount. You can also set a custom alert based on confidence interval.
+    * A **smart alert** will look for unexpected changes outside of a 99% confidence interval.
+    * A **custom alert** allows you to be more specific about the conditions under which you'll receive a custom alert: whether it's above or below a specific value, or whether it differs from a previous value by a specified amount. You can also set a custom alert based on confidence interval.
 
-![conf_interval.gif](/docs/output/img/analytics/conf_interval.gif)
+    ![conf_interval.gif](/output/img/analytics/conf_interval.gif)
 
 3. If you are setting up a custom alert, specify your alert conditions (these will be tied to the chart's current value either exceeding or falling below a specific value, or to changes in the confidence interval). If you are setting up a smart alert, skip this step.
 4. Add the emails of everyone who should receive this alert, and click *Set Alert*.
@@ -72,4 +74,4 @@ When an alert is triggered, Amplitude will send an email to everyone who is desi
 
 Click on a chart in the email to be taken directly to that chart in Amplitude. You'll see a side-panel that reiterates the issue Amplitude alerted you about, so you won't lose important context in the moment.
 
-**NOTE**: The charts sent in alert emails may have a `server_upload_time` filter to show the value of the data point at the exact time the alert was triggered. It's important to note that, depending on the data point, the value in the alert email may be different than the data point's end of day or final value.
+The charts sent in alert emails may have a `server_upload_time` filter to show the value of the data point at the exact time the alert was triggered. It's important to note that, depending on the data point, the value in the alert email may be different than the data point's end of day or final value.

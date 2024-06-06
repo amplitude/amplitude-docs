@@ -5,14 +5,12 @@ title: 'The Settings page'
 source: 'https://help.amplitude.com/hc/en-us/articles/235649848-The-Settings-page'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1715291719
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717697745
 this_article_will_help_you:
   - 'Manage organizational and project-level settings'
 ---
-Open the Settings page by clicking 
-
-![settings_icon.png](/docs/output/img/account-management/settings-icon-png.png) 
+Click the gear icon to open Settings. 
 
 Any user within your organization can access this page, but settings can only be changed by organization admins and managers. Here, you can navigate between organization-level settings, your own personal Amplitude settings, and more.
 
@@ -43,11 +41,7 @@ The personal settings area is where you can manage your own profile, site settin
 
 Your profile page displays information specific to you. You can also set up and manage your Slack integration here, as well as set certain preferences.
 
-The Profile panel shows your organization, role, email, name, and password associated with your Amplitude account. Click 
-
-![pencil.png](/docs/output/img/account-management/pencil-png.png) 
-
-to change your display name or update your password. 
+The Profile panel shows your organization, role, email, name, and password associated with your Amplitude account. Click the pencil to change your display name or update your password. 
 
 ![Settings_2.png](/docs/output/img/account-management/settings-2-png.png)
 

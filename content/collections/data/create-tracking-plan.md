@@ -1,13 +1,15 @@
 ---
-title: "Create a tracking plan"
-source: "https://help.amplitude.com/hc/en-us/articles/19717053646107-Create-a-tracking-plan"
 id: f01c2196-6c7f-4ec9-9b62-2ed150653399
+blueprint: data
+title: 'Create a tracking plan'
+source: 'https://help.amplitude.com/hc/en-us/articles/19717053646107-Create-a-tracking-plan'
+this_article_will_help_you:
+  - 'Plan your event, event properties, and user properties directly in Amplitude Data'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717620118
 ---
-
-#### This article will help you:
-
-* Plan your event, event properties, and user properties directly in Amplitude Data
-
 In Amplitude Data, the **tracking plan** is a living document that outlines what events and properties to track, why you're tracking them, and where they are tracked. It allows all stakeholders within the your organization to collaborate on a single source of truth. Analysts will use this information to determine which events and properties to use and ensure their understanding of the data is correct. Developers use it to instrument the analytics schema in the code base.
 
 This article focuses on how to create your tracking plan directly in Amplitude Data. Be sure to check out the [data planning playbook](/docs/data/data-planning-workflow) to understand how planning in Amplitude Data fits into the overall planning process.
@@ -27,7 +29,7 @@ You can update your plan in two ways:
 
 ### Create a source
 
-[Sources](/docs/cdp/sources/connect-to-source) represent the originating source of the data being sent to Amplitude. (For example, your iOS, Android, Web, and Backend.) When using the [Ampli Developer experience](https://www.docs.developers.amplitude.com/data/ampli/ "https://www.docs.developers.amplitude.com/data/ampli/"), you’ll need to create a source to generate the correct tracking library.
+[Sources](/cdp/sources/connect-to-source) represent the originating source of the data being sent to Amplitude. (For example, your iOS, Android, Web, and Backend.) When using the [Ampli Developer experience](/sdks/ampli), you’ll need to create a source to generate the correct tracking library.
 
 To create a source, follow these steps:
 
@@ -61,9 +63,9 @@ To create a new event property, follow these steps:
 2. Click *Create event property*.
 3. Give your event property a name  and add any relevant metadata to the property, including:
 
-* * * A description. Including example values can be helpful.
-		* Whether this property is required on this event. If it is, and Amplitude receives an event that doesn’t include it, Amplitude Data will generate a warning.
-		* The data type (such as string, number, etc.) as well as any additional rules.
+    * A description. Including example values can be helpful.
+    * Whether this property is required on this event. If it is, and Amplitude receives an event that doesn’t include it, Amplitude Data will generate a warning.
+    * The data type (such as string, number, etc.) as well as any additional rules.
 
 You can now add this property to your events.
 
@@ -73,7 +75,9 @@ To add an existing property, or create a new property within an event, follow th
 2. In the event detail pane, click *Add property.*
 3. Name your new property, or select an existing property to add to the event.
 
-**NOTE:** If multiple events share similar properties, you can [create a property group](/docs/data/property-updates-property-groups). Property groups—which are **distinct** from [group properties](https://help.amplitude.com/hc/en-us/articles/5078752725147 "https://help.amplitude.com/hc/en-us/articles/5078752725147")—make it easier to manage complex tracking plans, as you don't have to keep adding the same properties over and over. When you update a property group, the update applies to all events the group is associated with.
+{{partial:admonition type="note" heading=""}}
+If multiple events share similar properties, you can [create a property group](/data/property-updates-property-groups). Property groups—which are **distinct** from group properties—make it easier to manage complex tracking plans, as you don't have to keep adding the same properties over and over. When you update a property group, the update applies to all events the group is associated with.
+{{/partial:admonition}}
 
 ### Create a user property
 
@@ -90,11 +94,12 @@ To create a new user property, follow these steps:
 
 ### Create a group with group properties
 
-**NOTE**: This feature requires the [Accounts](/docs/analytics/account-level-reporting-setup) add-on.
+{{partial:admonition type="note" heading=""}}
+This feature requires the [Accounts](/analytics/account-level-reporting-setup) add-on.
+{{/partial:admonition}}
 
-Group properties make it easy to associate a user with a particular account (e.g. name, industry, employees, etc.) whenever the `group()` call is made. This is helpful when you want to track groups of users (for example, tracking events across an entire company, instead of specific users within that company).
+Group properties make it easy to associate a user with a particular account (for example, name, industry, employees, etc.) whenever the `group()` call is made. This is helpful when you want to track groups of users (for example, tracking events across an entire company, instead of specific users within that company).
 
-**NOTE:** Group properties are not the same as [property groups](/docs/data/property-updates-property-groups). Be sure not to confuse the two.
 
 To create a group, follow these steps:
 

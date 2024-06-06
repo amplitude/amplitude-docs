@@ -1,14 +1,16 @@
 ---
-title: "Derived properties"
-source: "https://help.amplitude.com/hc/en-us/articles/5874857623707-Derived-properties"
 id: 66b1d5fc-c05b-4418-9cff-0be3286e437f
+blueprint: data
+title: 'Derived properties'
+source: 'https://help.amplitude.com/hc/en-us/articles/5874857623707-Derived-properties'
+this_article_will_help_you:
+  - 'Understand how derived properties can benefit your analysis'
+  - 'Review the functions and operators that can be used when creating your derived properties'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717621472
 ---
-
-#### This article will help you:
-
-* Understand how derived properties can benefit your analysis
-* Review the functions and operators that can be used when creating your derived properties
-
 In some cases, you may want to run analyses based on properties that were not sent to Amplitude but can be derived from existing properties. Amplitude Data’s **derived properties** allow you to create new event and user properties retroactively, based on functions and operators that you can apply across multiple existing properties. These do not affect your raw data and will be computed on the fly.
 
 For example, you may want to create a chart that groups by whether an item added to a shopping cart is eligible for a discount. In that case, you could create a derived property whose value is a boolean based on whether the price exceeds a certain amount.
@@ -21,7 +23,9 @@ This feature is available to users on **Enterprise plans only**.
 
 ## Create a derived property
 
-**NOTE:** You must be in your project's `main` branch to create a derived property.
+{{partial:admonition type="note" heading=""}}
+You must be in your project's `main` branch to create a derived property.
+{{/partial:admonition}}
 
 To create a derived property, follow these steps:
 
@@ -56,7 +60,9 @@ Maybe you're also interested in knowing how many orders you would have given dis
 
 `IF(SUM(PROPERTY('subtotal','event'), PROPERTY('tip','event')) >= 50, 'true')`
 
-**NOTE:** Queries using derived properties may experience longer query times depending on the complexity of the formulas. There is also a limit of up to 10 property references per derived property.
+{{partial:admonition type="note" heading=""}}
+Queries using derived properties may experience longer query times depending on the complexity of the formulas. There is also a limit of up to 10 property references per derived property.
+{{/partial:admonition}}
 
 ## Functions and operators
 
@@ -69,11 +75,7 @@ Maybe you're also interested in knowing how many orders you would have given dis
 | CONCAT(property1, property2) | Concatenates a property with another property or text value. | CONCAT("firstName", "lastName") | "firstName lastName" |
 | LOWERCASE (text\_property) | Lowercases all characters in property's values | LOWERCASE("John") | "john" |
 | UPPERCASE (text\_property) | Uppercases all characters in property's values | UPPERCASE("John") | "JOHN" |
-| SPLIT (property, separator, [index]) | Split a property based on a delimiter and return an array of split elements.  Takes an optional index that returns the element at that index. | SPLIT("a\_b\_c", "\_")
- 
-SPLIT("john@example.com", "@", 0)  | ["a", "b", "c"]
- 
-"john" |
+| SPLIT (property, separator, [index]) | Split a property based on a delimiter and return an array of split elements.  Takes an optional index that returns the element at that index. | SPLIT("a\_b\_c", "\_") <br/>SPLIT("john@example.com", "@", 0)  | ["a", "b", "c"] <br />"john" |
 | REMOVE (property, text) | Remove all occurrence of text in property | REMOVE("en-US", "en-") |   |
 | EXTRACT\_FROM\_DICT (property, text) | Extract a value from a dictionary string based on a specific key | EXTRACT\_FROM\_DICT("{'id': 1, 'name': 'John', 'country': 'US'}", "name") | "John" |
 
@@ -99,7 +101,7 @@ SPLIT("john@example.com", "@", 0)  | ["a", "b", "c"]
 
 ### Date/ time functions
 
-**NOTE:** Amplitude requires all Unix timestamps to be expressed in milliseconds.
+Amplitude requires all Unix timestamps to be expressed in milliseconds.
 
 | **Function** | **Description** | **Example** | **Result** |
 | --- | --- | --- | --- |
@@ -133,44 +135,21 @@ Example 3
 
 | **Function** | **Description** | **Example** | **Result** |
 | --- | --- | --- | --- |
-| ITEM\_COUNT (property) | Length of array property; defaults to 1 for non-arrayed properties | ITEM\_COUNT(products\*)
- 
-*\*products is an array property (e.g. ['apple', 'orange', 'banana'])* | 3 |
-| GREATEST(property) | Get max value of the array | GREATEST(prices\*)
- 
-*\*prices is an array property (e.g. [3.5, 10, 2])* | 10 |
-| LEAST(property) | Get min value of the array | LEAST(prices\*)
- 
-*\*prices is an array property (e.g. [3.5, 10, 2])*
-  | 2 |
-| COALESCE(property) | Get the first non-null value of the array | COALESCE(locations\*)
- 
-*\*locations is an array property (e.g. [null, 'California', 'New York'])*
-  | 'California' |
+| ITEM\_COUNT (property) | Length of array property; defaults to 1 for non-arrayed properties | ITEM\_COUNT(products) | 3 |
+| GREATEST(property) | Get max value of the array | GREATEST(prices) | 10 |
+| LEAST(property) | Get min value of the array | LEAST(prices) | 2 |
+| COALESCE(property) | Get the first non-null value of the array | COALESCE(locations\) | 'California' |
 
 ### Property functions
 
 When you select a property from the *Insert Property* dropdown, Amplitude Data will insert a property function referencing it directly into the editor for you. You can also manually insert this function wherever you want to reference a different Amplitude property.
 
-**NOTE:** These functions can only be used within another function.
+These functions can only be used within another function.
 
-     | 
-**Function**
-
- | 
-**Description**
-
- | 
-**Example**
-
- | 
-**Result**
-
- |
+| Function | Description | Example  | Result |
 | --- | --- | --- | --- |
 | PROPERTY(property\_name, property\_type) | Reference to property within Amplitude. 
-Possible property types: “user”, “event”, “derived”, “lookup”, “group”\*
-\*see next row for usage of “group” | PROPERTY(“first name”,”user”) | A reference to the user property “first name” in your project. This is how derived properties communicate with Amplitude’s query service. |
+Possible property types: “user”, “event”, “derived”, “lookup”, “group” | PROPERTY(“first name”,”user”) | A reference to the user property “first name” in your project. This is how derived properties communicate with Amplitude’s query service. |
 | PROPERTY(property\_name, “group”, group\_type) | Reference to group property within Amplitude. 
 Group type is required for group properties. | PROPERTY(“name”,”group”, “business“) | A reference to the group property “name” in the group type “business” within your project. This is how derived properties communicate with Amplitude’s query service. |
 
@@ -204,10 +183,8 @@ IF(OR(region == "California", region == "New York"), "USA", "Other") |
 
 | **Operator** | **Example** |
 | --- | --- |
-| == | IF(product == (“apple”,“orange”), "true", "false")
-*product = “apple”, Returns "true"* |
-| != | IF(product != (“apple”,“orange”), "true", "false")
-*product = “banana”, Returns "true"* |
+| == | IF(product == (“apple”,“orange”), "true", "false")<br />*product = “apple”, Returns "true"* |
+| != | IF(product != (“apple”,“orange”), "true", "false") <br />*product = “banana”, Returns "true"* |
 
 ## Common derived properties formulas
 
@@ -239,7 +216,9 @@ Sample output:
 
 In the derived property above, the properties end\_date and start\_date are converted into UNIX timestamps, so that Amplitude can calculate the difference between them. That result is then divided by 86400000, which is the number of milliseconds in one day.
 
-**NOTE:** This output will be a double type (e.g. 2.0).
+{{partial:admonition type="note" heading=""}}
+This output will be a double type (for example. 2.0).
+{{/partial:admonition}}
 
 ### Output a standardized date format
 
@@ -340,32 +319,32 @@ In this example, the derived property will pull the sign-up month and year from 
 ### Replace existing property values
 
 ```
-IF(  
-OR(  
-REGEXEXTRACT(  
-PROPERTY(  
-"package",  
-"event"  
-),  
-'Casual'  
-) =='Casual',  
-REGEXEXTRACT(  
-PROPERTY(  
-"package",  
-"event"  
-),  
-'1 Job Posting'  
-)=='1 Job Posting',  
-REGEXEXTRACT(  
-PROPERTY(  
-"package",  
-"event"  
-),  
-'1 Basic'  
-)=='1 Basic'  
-),  
-'Casual',  
-'False'  
+IF(
+    OR(
+        REGEXEXTRACT(
+            PROPERTY(
+                "package",
+                "event"
+                ),
+            'Casual'
+        ) =='Casual',
+        REGEXEXTRACT(
+            PROPERTY(
+                "package",
+                "event"
+            ),
+            '1 Job Posting'
+        )=='1 Job Posting',
+        REGEXEXTRACT(
+            PROPERTY(
+                "package",
+                "event"
+            ),
+            '1 Basic'
+        )=='1 Basic'
+    ),
+    'Casual',
+    'False'
 )
 ```
 

@@ -49,13 +49,11 @@ To **create** a new branch, follow these steps:
 
 4. In the *Create branch* modal, confirm the name of your branch, add an optional description, and click *Create*.
 
-![Screenshot](/docs/output/img/data/screenshot.png)
-
-If you had any pending changes on `main`, you'll have a chance to either take those changes with you into your new branch, or leave them behind on `main`.
+    If you had any pending changes on `main`, you'll have a chance to either take those changes with you into your new branch, or leave them behind on `main`.
 
 To **delete** a branch, follow these steps:
 
-1. Click ![Screenshot](/docs/output/img/data/screenshot.png) next to the branch name.
+1. Click the X next to the branch name.
 2. In the modal that appears, click *Delete* to confirm your choice.
 
 ## Work on a branch

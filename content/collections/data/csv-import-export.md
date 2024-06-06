@@ -1,14 +1,16 @@
 ---
-title: ".CSV import and export"
-source: "https://help.amplitude.com/hc/en-us/articles/360055925811--CSV-import-and-export"
 id: 39f7be45-463a-469a-a849-e41aa71437b5
+blueprint: data
+title: '.CSV import and export'
+source: 'https://help.amplitude.com/hc/en-us/articles/360055925811--CSV-import-and-export'
+this_article_will_help_you:
+  - 'Manage the events, event properties, and user properties of your tracking plan via .CSV import and export'
+  - 'Understand the data fields and values needed for importing and how they compare to exported files'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717691407
 ---
-
-#### This article will help you:
-
-* Manage the events, event properties, and user properties of your tracking plan via .CSV import and export
-* Understand the data fields and values needed for importing and how they compare to exported files
-
 In Amplitude Data, you can view and manage event types, event properties, and user properties piece by piece, but you may want to see a holistic view of your entire tracking plan's schema and make bulk changes to the schema instead.
 
 Amplitude lets you import and export your schema via .CSV to plan new events and properties, edit categories and descriptions, and generate bulk changes.
@@ -20,22 +22,24 @@ This article will discuss the differences between using import and export for ev
 Follow the below steps to import or export events and event properties:
 
 1. Navigate to Data, and click *Events* under your tracking plan in the left side pane.
-2. If you wish to import, click the import icon ![](/docs/output/img/data/22418776438811) to open the import modal.
+2. If you wish to import, click the import icon to open the import modal.
 3. If your import file is ready to upload and follows the [expected schema for events and event properties](#h_01HN467J5969YRB1J9MG80MTBN), you can drag and drop your .CSV file or click *Upload* and choose the file from your desired location. If not, click *template* to download a template .CSV to update for importing.
 
-![](/docs/output/img/data/22418776497947)
+    ![](/output/img/data/22418776497947.png)
 
-The imported events and event properties will appear in a branch named *import*.
+    The imported events and event properties will appear in a branch named *import*.
 
-4. Once you’re sure the imported tracking plan updates are correct, you can [merge the changes back into the main branch](/docs/data/data-planning-workflow).
-5. If you want to export events and event properties from your tracking plan, click the export icon ![](/docs/output/img/data/22418907234459) instead.
+4. Once you’re sure the imported tracking plan updates are correct, you can [merge the changes back into the main branch](/data/data-planning-workflow).
+5. If you want to export events and event properties from your tracking plan, click the export icon instead.
 6. In the export modal that appears, choose whether to download your tracking plan’s schema or a .CSV file template. Then, click *Download*.
 
-**![](/docs/output/img/data/22418907241627)**
+![](/output/img/data/22418907241627.png)
 
 Downloaded .CSV files of your tracking plan contain additional fields not required for import. The next section will define the events and event properties .CSV import file structure and the [additional columns seen in the exported file](#01HNB56QS6HYFRW8BSRRXBC716).
 
-**NOTE**: The import and export features do not support custom events, transformations, nor default Amplitude entities.
+{{partial:admonition type="note" heading=""}}
+The import and export features do not support custom events, transformations, nor default Amplitude entities.
+{{/partial:admonition}}
 
 ## Events and event properties file schema
 

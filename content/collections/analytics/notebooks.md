@@ -6,13 +6,9 @@ source: 'https://help.amplitude.com/hc/en-us/articles/360016281172-Notebooks-Exp
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1712783599
+updated_at: 1717693046
 ---
-#### This article will help you:
-
-* Create and edit notebooks
-
-Notebooks help you explain insights to teammates. While [dashboards](/docs/analytics/dashboard-create) are great for monitoring metrics, **notebooks** enable you to communicate context and takeaways from analysis that help your team make better-informed product decisions.
+Notebooks help you explain insights to teammates. While [dashboards](/analytics/dashboard-create) are great for monitoring metrics, **notebooks** enable you to communicate context and takeaways from analysis that help your team make better-informed product decisions.
 
 Notebooks are documents, composed of text blocks, pictures, videos, charts, chart takeaways, and summary metrics. Teams use them to:
 
@@ -36,17 +32,17 @@ You can also scroll down to the list of existing notebooks and add the chart to 
 
 To **add new content** to your notebook, hover over it in the spot you'd like the new content to appear. Click the icon that appears to add a chart, cohort, header, text block, image, or video in that spot.
 
-![notebooks add content.png](/docs/output/img/analytics/notebooks_add_content.png)
+![notebooks add content.png](/output/img/analytics/notebooks-add-content.png)
 
 To **edit a chart** in your notebook, hover over the chart and click the pen icon to enter edit mode.
 
-![notebooks edit.png](/docs/output/img/analytics/notebooks edit.png)
+![notebooks edit.png](/output/img/analytics/notebooks-edit.png)
 
 From there, you can select the type of callout box that appears above the chart (or opt for no callout box at all), add text to that callout, and include metrics from the *Metric Trackers* drop-down list.
 
 You can also **rearrange content** in your notebook via the drag-and-drop feature:
 
-![notebooks drag and drop.png](/docs/output/img/analytics/notebooks drag and drop.png)
+![notebooks drag and drop.png](/output/img/analytics/notebooks-drag-and-drop.png)
 
 ## Formatting text
 

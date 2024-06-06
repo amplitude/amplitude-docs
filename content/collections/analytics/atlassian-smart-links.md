@@ -3,11 +3,13 @@ id: 731813fe-55f2-40fa-9867-a317f3d19e52
 blueprint: analytic
 title: 'Use Atlassian Smart Links with Amplitude'
 source: 'https://help.amplitude.com/hc/en-us/articles/9121457018907-Use-Atlassian-Smart-Links-with-Amplitude'
+this_article_will_help_you:
+  - 'Include chart previews in Confluence documents and Jira tickets'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717695679
 ---
-#### This article will help you:
-
-* Include chart previews in Confluence documents and Jira tickets
-
 You can now include previews of your Amplitude charts in Confluence documents or Jira tickets. Just paste the chart URL into Confluence, Trello, or Jira, and choose whether you'd like the preview to display inline or as a card. Atlassian calls this feature [Smart Links](https://community.atlassian.com/t5/Confluence-articles/Smart-Links-a-richer-way-to-hyperlink/ba-p/1412786).
 
 Smart Links are supported by all Amplitude chart types except Personas, Pathfinder, Data Tables, and Experiment Results.
@@ -20,4 +22,4 @@ To create previews of your Amplitude charts with Smart Links, follow these steps
   
 ![Screen_Shot_2022-09-19_at_2.20.21_PM.png](/docs/output/img/analytics/Screen_Shot_2022-09-19_at_2.20.21_PM.png)
 
-To disconnect from Smart Links, navigate [here](https://id.atlassian.com/manage-profile/apps) and look for "Atlassian Links - Amplitude." 
+To disconnect from Smart Links, navigate [here](https://id.atlassian.com/manage-profile/apps) and look for "Atlassian Links - Amplitude."

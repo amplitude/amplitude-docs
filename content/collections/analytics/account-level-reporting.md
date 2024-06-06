@@ -3,14 +3,16 @@ id: 0c16c26c-9a94-4e5b-a136-493fb66f917d
 blueprint: analytic
 title: 'Account-level reporting in Amplitude'
 source: 'https://help.amplitude.com/hc/en-us/articles/115001765532-Account-level-reporting-in-Amplitude'
+this_article_will_help_you:
+  - 'Build an analysis around aggregated units of measure like accounts, charts, or order IDs'
+  - 'Understand how to look up accounts and users to set up account-level reporting'
+  - "Use the account-level reporting feature\_when using certain Amplitude integrations, like Segment or Salesforce"
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717696950
 ---
-#### This article will help you:
-
-* Build an analysis around aggregated units of measure like accounts, charts, or order IDs
-* Understand how to look up accounts and users to set up account-level reporting
-* Use the account-level reporting feature when using certain Amplitude integrations, like Segment or Salesforce
-
-In Amplitude, the default level of reporting is the **individual user**, meaning your charts and analyses will all be based on data drawn from individual users. In some cases, you may need reports built around an **aggregated** unit of measurement—say, accounts, order IDs, or charts.
+n Amplitude, the default level of reporting is the **individual user**, meaning your charts and analyses will all be based on data drawn from individual users. In some cases, you may need reports built around an **aggregated** unit of measurement—say, accounts, order IDs, or charts.
 
 The Amplitude Accounts add-on enables you to do exactly this, by giving you analytical capabilities at the **group** level.
 
@@ -20,7 +22,7 @@ A group is an object that a set of users might belong to—such as a company of 
 
 This feature is available to users on **Plus**, **Growth**, and **Enterprise** **plans** only.
 
-* * Use of this feature requires the Accounts add-on.
+* Use of this feature requires the Accounts add-on.
 
 ## Before you begin
 
@@ -54,7 +56,9 @@ Groups in Amplitude can be defined at either the **event level** or the **user l
 * An **event-level** group is one that **only** incorporates specific events in the users' overall journey. Users are assigned to a group at the time the event is sent, and users **do not** remain in that group **unless** you explicitly assign them to it when the event is sent.
 * By contrast, membership in a **user-level** group is **independent** of the events being triggered. This is useful when you want to attribute all events triggered by a user to a particular group. Users are assigned to the group **once**, and they remain in it for all future events.
 
-**NOTE:** A user's group type cannot be un-set, and must instead be overwritten.
+{{partial:admonition type='note'}}
+A user's group type cannot be un-set, and must instead be overwritten.
+{{/partial:admonition}}
 
 ### Add groups to charts
 
@@ -112,7 +116,7 @@ Clicking on an account will take you to that account’s page, where you can vie
 You will find the account’s most recent properties in the top panel. The account’s properties can be set three different ways: the [Group Identify API](https://www.docs.developers.amplitude.com/analytics/apis/group-identify-api/), the [Salesforce integration](https://www.docs.developers.amplitude.com/data/sources/salesforce-group/), and by using Event Segmentation to create dynamic properties. These properties can be used to describe the account as whole (e.g. `30 day active users`, `account
  manager`, `plan type`, `renewal date`, etc.).
 
-**NOTE:**  If you're using the User Look-up to verify events and the properties set with them, they will not be visible in the *Info* view. You can find them by clicking *Raw* instead.
+If you're using the User Look-up to verify events and the properties set with them, they will not be visible in the *Info* view. You can find them by clicking *Raw* instead.
 
 ![](/docs/output/img/analytics/5jUOdenf9FPpODdA5UVd6qzJ_paC2Bf2gm2RPSK2S-WQPeI1yzNzCVE3yXKc8uu_iJYlNydjbnR38sJGPK7XvIf8iz8a4r642Kq-cL4w6Jco0EtIudeA0LDHHTeFmewzt2LgcE-vlcdgSQbXiSKAYfI)
 
@@ -126,16 +130,16 @@ You can turn your KPIs into dynamically-updating group properties. Add group pro
 
 1. **Save a single time series Event Segmentation chart:** Save a user-level chart with a single time series metric that you want to track.
 
-**NOTE:** Dynamic properties are not supported on frequency and property distribution metrics, or on custom formulas.
+	Dynamic properties are not supported on frequency and property distribution metrics, or on custom formulas.
 
 2. **Determine time interval:** Set the time interval you would like to update the group property on. For example, a rolling window of “last 7 day active users” will update every day, while “weekly active users” will update once every calendar week.
-
-**NOTE:** Dynamic properties are not supported on static time ranges.
+	
+    Dynamic properties are not supported on static time ranges.
 
 3. **Name group property:** Choose your group type and name for the group property.
 
-**NOTE:** Editing the chart used to create the dynamic group property will not affect the property.
+	Editing the chart used to create the dynamic group property will not affect the property.
 
 ### Create group properties via the Salesforce integration
 
-To learn how to create **group properties** using Amplitude's Salesforce integration, see [this article in the Amplitude Developer Center](https://www.docs.developers.amplitude.com/data/sources/salesforce-group/).
+To learn how to create **group properties** using Amplitude's Salesforce integration, see [Salesforce](/data/source-catalog/salesforce) in Amplitude Sources.

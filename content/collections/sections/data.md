@@ -13,7 +13,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1713306140
 nav_title: data
 template: landing-page
-current-collection: data
+current-collection: data|warehouse_native_amplitude
 exclude_from_sitemap: false
 ---
 Integrate with your tech stack, resolve identities across devices, and control customer and product data.

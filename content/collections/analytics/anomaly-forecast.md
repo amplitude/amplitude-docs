@@ -3,11 +3,13 @@ id: 43132e17-2269-4a6d-bc69-9066e95dec1d
 blueprint: analytic
 title: 'Anomaly + Forecast: Find anomalies in your data'
 source: 'https://help.amplitude.com/hc/en-us/articles/360044072251-Anomaly-Forecast-Find-anomalies-in-your-data'
+this_article_will_help_you:
+  - 'Distinguish meaningful fluctuations in your core metrics from those caused by statistical noise.'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717697158
 ---
-#### This article will help you:
-
-* Distinguish meaningful fluctuations in your core metrics from those caused by statistical noise.
-
 When core metrics fluctuate, it can be hard to know if those movements are meaningful and worthy of investigation, or just random noise. Amplitude's **Anomaly + Forecast** feature highlights statistically significant deviations from expected values for your metrics, based on historical data. 
 
 This can help you: 
@@ -47,8 +49,11 @@ To set up anomaly detection, follow these steps:
 ![anomaly.jpeg](/docs/output/img/analytics/anomaly.jpeg)
 
 3. Select the mode. Your options are **agile**, **robust**, and **custom**. **Agile** mode adjusts more quickly to recent trends, using a 95% confidence interval and 120 days of training data prior to the beginning of the chart's date range. **Robust** mode is best for stable metrics, as it incorporates a full year of additional training data, and can therefore better account for seasonality. **Custom** allows you to change both the confidence interval and the training duration to fit your specific requirements. Higher significance levels tend to results in fewer anomalies appearing on the chart.   
-  
-**NOTE:** Amplitude will automatically detect seasonality in each mode. The duration will depend on the amount of data used to train the model. Agile mode typically uses daily and weekly seasonalities, while Robust mode looks for monthly and yearly seasonalities. In cases where sufficient data is not available, seasonalities may not be detected or applied.
+
+  {{partial:admonition type='note'}}
+  Amplitude will automatically detect seasonality in each mode. The duration will depend on the amount of data used to train the model. Agile mode typically uses daily and weekly seasonalities, while Robust mode looks for monthly and yearly seasonalities. In cases where sufficient data is not available, seasonalities may not be detected or applied.
+  {{/partial:admonition}}
+
 4. Add a **forecast**, if you prefer. Forecast projects your metrics **into the future**, whereas anomalies are only detected within your historical data. To add a forecast, enter the number of months you'd like your forecast to extend in the *Forecast Period* field.
 5. Click *Apply* to begin detecting anomalies.
 
@@ -117,4 +122,4 @@ If you have a specific training duration in mind that agile or robust modes don'
 
 ## Insights package
 
-If you need alerting for anomalies, Amplitude's Insights package includes automatic and custom monitor alerts. You can find more about the package [here](https://help.amplitude.com/hc/en-us/articles/115001764612-Insight#h_21d50b36-17c6-433c-8985-18e9f313ed45).
+If you need alerting for anomalies, Amplitude's Insights package includes automatic and custom monitor alerts. You can find more about the package [here](/analytics/insights).

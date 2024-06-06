@@ -1,16 +1,18 @@
 ---
-title: "Getting set up with Amplitude Data"
-source: "https://help.amplitude.com/hc/en-us/articles/5078704508571-Getting-set-up-with-Amplitude-Data"
 id: 1bca668a-d50d-4e07-a0a9-a77016d8d5d3
-description: "Data ingestion methods, tracking plans, and best practices."
+blueprint: data
+title: 'Getting set up with Amplitude Data'
+source: 'https://help.amplitude.com/hc/en-us/articles/5078704508571-Getting-set-up-with-Amplitude-Data'
+description: 'Data ingestion methods, tracking plans, and best practices.'
+this_article_will_help_you:
+  - 'Decide on the best method for ingesting data into Amplitude'
+  - 'Understand how to decide what you want to track'
+  - 'Follow best practices during the Amplitude Data setup phase'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717612640
 ---
-
-#### This article will help you:
-
-* Decide on the best method for ingesting data into Amplitude
-* Understand how to decide what you want to track
-* Follow best practices during the Amplitude Data setup phase
-
 Amplitude Data provides you with a complete set of tools for the entire lifecycle of your data, from planning and instrumentation, maintenance, and deprecation. We've designed the product to be flexible enough to accomodate various workflows, so you can choose which tools you need.
 
 ## Getting data into Amplitude
@@ -23,14 +25,14 @@ There are a few things you should consider when deciding which ingestion method 
 
 #### Using Amplitude SDKs
 
-Amplitude's SDKs are a great way to integrate if you're getting started with analytics. You'll have the option of using Ampli to keep your instrumentation clean from the start while still having the flexibility to send data to [various destinations](https://www.docs.developers.amplitude.com/data/destinations/ "https://www.docs.developers.amplitude.com/data/destinations/") later.
+Amplitude's SDKs are a great way to integrate if you're getting started with analytics. You'll have the option of using Ampli to keep your instrumentation clean from the start while still having the flexibility to send data to [various destinations](/data/destination-catalog) later.
 
 One decision you'll need to make when using our SDKs is whether to send events from the front-end clients or the back-end servers:
 
 * **Client-side tracking**: In this method, you'd add client-side SDKs to your web and mobile apps. This method can be more straightforward, as you can take advantage of default event tracking and capture both client-side and server-side interactions with your application. However, events that span all your clients will require deployment changes across all your apps. On mobile, this can sometimes take time, depending on how log it takes your customers to update their apps.
 * **Server-side tracking**: You can also send your events directly from your servers to Amplitude. For example, if you're tracking an order completion, you'd fire the event from the back-end server processing the order. This centralized approach is generally the most reliable, as you have a single place within your control sending the events. You also won't have to wait for your customers to update their app version.
 
-We recommend implementing server-side tracking on events requiring high precision, while using client-side tracking for everything else.
+Amplitude recommends implementing server-side tracking on events requiring high precision, while using client-side tracking for everything else.
 
 #### Using cloud storage, warehouses, and event streaming
 
@@ -60,4 +62,4 @@ You can set your naming convention in settings, and Amplitude Data will automati
 
 ### Use a separate environment for testing
 
-Keep your data clean by using separate projects for development and production. Different projects allow you to test your implementation without worrying about affecting your final business reports. It's also a great place to try the data management tools before applying them to your production data. See this article on [creating a project in Amplitude](/docs/get-started/create-project).
+Keep your data clean by using separate projects for development and production. Different projects allow you to test your implementation without worrying about affecting your final business reports. It's also a great place to try the data management tools before applying them to your production data. See this article on [creating a project in Amplitude](/get-started/create-project).
