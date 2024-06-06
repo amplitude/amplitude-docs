@@ -7,14 +7,10 @@ this_article_will_help_you:
   - 'Understand how Amplitude defines user properties'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1716572205
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717611472
 ---
-By default, Amplitude tracks the user properties listed in the table below automatically, via client-side [SDKs](https://www.docs.developers.amplitude.com/data/sdks/sdk-overview/#analytics-sdks). All these properties will be prefixed with
-
-![amplitude_logo.png](/docs/output/img/get-started/amplitude_logo.png) 
-
-whenever you encounter them in Amplitude. If you prefer, configure Amplitude's SDKs to disable automatic tracking of these properties:
+By default, Amplitude tracks the user properties listed in the table below automatically, via client-side [SDKs](https://www.docs.developers.amplitude.com/data/sdks/sdk-overview/#analytics-sdks). All these properties will be prefixed with the Amplitude logo whenever you encounter them in Amplitude. If you prefer, configure Amplitude's SDKs to disable automatic tracking of these properties:
 
 * [Browser SDK](https://www.docs.developers.amplitude.com/data/sdks/browser-2/#optional-tracking)
 * [iOS SDK](https://www.docs.developers.amplitude.com/data/sdks/ios-swift/#disable-tracking)
@@ -24,21 +20,24 @@ Amplitude uses the collected IP address to determine a user's location propertie
 
 In Amplitude charts, if you choose to segment by device ID, event ID, latitude, longitude, server upload time, session ID, user ID, or ID, you'll have to supply the exact values you're looking yourself. Additionally, you will not be able to group by event ID, latitude, longitude, server upload time, or ID.
 
-**NOTE:** If you’re sending data server-side instead of using an SDK, Amplitude cannot track these user properties automatically. You must instead set these properties explicitly. 
+{{partial:admonition type="note"}}
+If you send data server-side instead of using an SDK, Amplitude cannot track these user properties automatically. You must instead set these properties explicitly. 
+{{/partial:admonition}}
+
 
 | **Property** | **Value Definition** |
 | --- | --- |
-| Cohort | [Behavioral cohort](https://help.amplitude.com/hc/en-us/articles/231881448-Amplitude-2-0-Behavioral-Cohorts) name: "Cohort Name" |
+| Cohort | [Behavioral cohort](/analytics/behavioral-cohorts) name: "Cohort Name" |
 | Country | Country of the event. This is pulled using GeoIP. "United States" |
 | City | City of the event. This is pulled using GeoIP. "San Francisco" |
 | Region | Region (e.g. state, province, county) of the event. This is pulled using GeoIP. "California" |
 | DMA | Designated Market Area (DMA) of the event. This is pulled using GeoIP. "San Francisco-Oakland-San Jose, CA" |
 | Language | Language of the device. "English" |
-| Paying | Paying is set to null for all users by default. The property value changes to "true" at the time of the user's first revenue event (or first verified revenue event, if [validation](https://help.amplitude.com/hc/en-us/articles/115003116888-Revenue-Technical-#verification) is on). Once a property is set to "true", it will not change. You can manually change this value via Amplitude's [Identify API](/docs/hc/articles/205406617): "true", null/none |
+| Paying | Paying is set to null for all users by default. The property value changes to "true" at the time of the user's first revenue event (or first verified revenue event, if [validation](/cdp/sources/instrument-track-revenue#verification) is on). Once a property is set to "true", it will not change. You can manually change this value via Amplitude's [Identify API](/hc/articles/205406617): "true", null/none |
 | Platform | Platform of the product. "iOS", "Android", or "Web" |
 | OS | `OS` = `os_name` + `os_version`. `os_name` is the name of the user's mobile operating system or browser. `os_version` is the version of the users' mobile operating system or browser. "ios 9.1", "Chrome 46" |
 | Device Family | Family of the device. "Apple iPhone", "Samsung Galaxy Tablet", "Windows" |
-| Device Type | Specific type of the device. "Apple iPhone 6", "Samsung Galaxy Note 4", "Windows". Events tracked by Amplitude's [Javascript SDK](https://developers.amplitude.com/docs/javascript) will display device family values e.g. "Apple iPhone" etc. This SDK does not track the specific type of device. |
+| Device Type | Specific type of the device. "Apple iPhone 6", "Samsung Galaxy Note 4", "Windows". Events tracked by Amplitude's [Javascript SDK](/docs/sdks/analytics/browser) will display device family values e.g. "Apple iPhone" etc. This SDK does not track the specific type of device. |
 | Carrier | The device's carrier. "Verizon" |
 | Start version | First version of your application identified for the user. This can change if the user reinstalls the app. "1.0.0" |
 | Version | Current version of your application identified for the user. "1.0.0" |

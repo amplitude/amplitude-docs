@@ -3,11 +3,13 @@ id: 17fb8743-12c4-4b7f-ab11-238dd5498658
 blueprint: analytic
 title: 'Templates: Re-use your analyses'
 source: 'https://help.amplitude.com/hc/en-us/articles/360043053552-Templates-Re-use-your-analyses'
+this_article_will_help_you:
+  - 'Create templates and update the data they display'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717693091
 ---
-#### This article will help you:
-
-* Create templates and update the data they display
-
 At some point, you've probably wanted to reuse an analysis you'd already created instead of building an identical version from scratch. In Amplitude Analytics, **templates** help teams efficiently recreate common analyses and share best practices with just a few clicks. 
 
 You can create templates from any saved dashboards and choose any events, properties, cohorts, dates, projects, or titles appearing in those charts to templatize. You and your teammates can standardize reporting and create new dashboards from those templates.
@@ -34,7 +36,7 @@ Templates are created from dashboards. For detailed instructions, see the sectio
 
 If you're new to Amplitude, you can take advantage of a set of pre-built **starter templates.** These dashboard templates come with pre-formatted charts, so you can quickly acclimatize yourself to analyses of common product questions. The starter templates vary by type, **use case** or **industry**:
 
-### Use Case:
+### Use Case
 
 * Funnel Analysis
 * Feature Adoption
@@ -44,7 +46,7 @@ If you're new to Amplitude, you can take advantage of a set of pre-built **start
 * Marketing Analytics
 * User Activity
 
-### Industry:
+### Industry
 
 * B2B SaaS
 * FinTech

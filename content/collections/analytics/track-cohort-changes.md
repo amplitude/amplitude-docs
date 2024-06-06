@@ -3,11 +3,13 @@ id: d60ded31-18b1-466c-bb81-34e6455ee52a
 blueprint: analytic
 title: 'Track changes in your cohort populations over time'
 source: 'https://help.amplitude.com/hc/en-us/articles/360049309011-Track-changes-in-your-cohort-populations-over-time'
+this_article_will_help_you:
+  - 'Identify and act on trends in the populations of your dynamic cohorts'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717624206
 ---
-#### This article will help you:
-
-* Identify and act on trends in the populations of your dynamic cohorts
-
 Amplitude's **cohort population over time** chart shows you how the size of your behavioral cohorts are changing. As you release new features and launch new campaigns, understanding how your customers respond to them is a critical part of the iteration process. Cohort population over time gives you a simple, intuitive display of these trends.
 
 Cohort population over time is part of Amplitude's [Behavioral Cohorts](/docs/analytics/behavioral-cohorts) feature. If you're not already familiar with it, check out the linked article in our Help Center.

@@ -3,13 +3,15 @@ id: ec111118-7644-457c-b228-13d3f1181a0b
 blueprint: analytic
 title: 'Breadcrumbs: Track, organize, and share your analyses'
 source: 'https://help.amplitude.com/hc/en-us/articles/360050370192-Breadcrumbs-Track-organize-and-share-your-analyses'
+this_article_will_help_you:
+  - 'Organize the various components of a complex analysis in one place'
+  - 'Generate an evolutionary history of your analysis as it grows and changes'
+  - 'Create Notebooks more quickly straight from the chart view'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717692295
 ---
-#### This article will help you:
-
-* Organize the various components of a complex analysis in one place
-* Generate an evolutionary history of your analysis as it grows and changes
-* Create Notebooks more quickly straight from the chart view
-
 The more complex your analysis, the more difficult it can be to keep track of everything that’s gone into it. 
 
 Amplitudes’ **Breadcrumbs** feature stores every step of your analysis, so you can keep track of it in one place without having to open multiple tabs. Bookmark your chart, add a short note, and Breadcrumbs will put your entire analysis in an [easy-to-follow interactive format](/docs/analytics/notebooks), which you can share with your team and other stakeholders.
@@ -40,4 +42,4 @@ To add a chart to a notebook using Breadcrumbs, follow these steps:
 4. Amplitude will open a new Notebook by default. If you want to add your chart to an existing Notebook instead, click the dropdown next to the Notebook title (in this case, "Untitled Notebook") and select the one you want from the list.
 5. In the thumbnail, click on the title to edit it for the Notebook (doing so will also change the title of your main chart).
 6. To add a note to accompany the chart in the Notebook, click *Add Note*.
-7. To view and share the notebook, click ![breadcrumb share icon.png](/docs/output/img/analytics/breadcrumb share icon.png). The Notebook view will open; you can now share it with other team members by clicking *Share*. You can return to the Breadcrumb view via the Notebook toolbar.
+7. To view and share the notebook, click the breadcrumb share icon. The Notebook view will open; you can now share it with other team members by clicking *Share*. You can return to the Breadcrumb view via the Notebook toolbar.

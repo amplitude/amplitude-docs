@@ -1,13 +1,15 @@
 ---
-title: "Configure the Schema settings to handle unexpected data"
-source: "https://help.amplitude.com/hc/en-us/articles/360055495852-Configure-the-Schema-settings-to-handle-unexpected-data"
 id: d15d30d7-05f6-498f-bf9c-9a7432322077
+blueprint: data
+title: 'Configure the Schema settings to handle unexpected data'
+source: 'https://help.amplitude.com/hc/en-us/articles/360055495852-Configure-the-Schema-settings-to-handle-unexpected-data'
+this_article_will_help_you:
+  - 'Eliminate Schema errors caused by unexpected data'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717623490
 ---
-
-#### This article will help you:
-
-* Eliminate Schema errors caused by unexpected data
-
 Sometimes, Amplitude might receive data from your app that it doesn't know what to do with. This is usually the result of a **Schema violation,** and it means the data Amplitude has just received is not accounted for in your Schema. If you see a Schema violation, you have probably neglected to plan for that particular data type or value when you first set up your Schema.
 
 You can tell Amplitude how to handle these situations by configuring your Schema settings. Currently, you can configure for three different types of Schema violations. Find your Schema settings by clicking into Amplitude Data and navigating to *Settings* > *Schema Settings.*
@@ -20,8 +22,8 @@ This feature is available to users on **Growth** and **Enterprise plans** only.
 
 Sometimes, Amplitude may receive an event that is not part of your Schema, or that you did not previously plan. This is an **unplanned event type**. You can configure Amplitude to respond in these ways: 
 
-* **Mark As Unexpected****.** Amplitude will collect the event, trigger a warning, and send a notification to the subscribers designated. The event will be categorized as "Unexpected" in drop-downs until you approve it.
-* **Reject****.** Amplitude will reject the event and send a notification to the subscribers designated. Amplitude will not store the event or its properties.  
+* **Mark As Unexpected****. Amplitude will collect the event, trigger a warning, and send a notification to the subscribers designated. The event will be categorized as "Unexpected" in drop-downs until you approve it.
+* **Reject****. Amplitude will reject the event and send a notification to the subscribers designated. Amplitude will not store the event or its properties.  
   
 ![Screenshot 2023-08-07 at 6.31.28 PM.png](/docs/output/img/data/screenshot-2023-08-07-at-6-31-28-pm-png.png)
 
@@ -53,4 +55,4 @@ You can set up email alerts for validation errors by clicking *Subscribe**.*
 
 You can designate specific users to receive email notifications of any Schema violations. Do this by clicking *Manage Subscribers* at the top right of your Schema options.
 
-![Screenshot 2023-08-07 at 6.33.26 PM.png](/docs/output/img/data/screenshot-2023-08-07-at-6-33-26-pm-png.png)
+![Screenshot 2023-08-07 at 6.33.26 PM.png](/output/img/data/screenshot-2023-08-07-at-6-33-26-pm-png.png)

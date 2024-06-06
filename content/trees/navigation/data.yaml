@@ -15,6 +15,19 @@ tree:
     id: 4512faae-c8d0-4f61-9b7f-7457dc064b92
     entry: 9771eb95-0cac-4de7-a34b-c65f7e157f67
   -
+    id: 93c67f8d-a0ce-4d74-a32d-03e5e288ce41
+    title: 'Warehouse-native Amplitude'
+    children:
+      -
+        id: 534bac6a-fcd1-49db-9df9-599a6e4017c1
+        entry: 3d639f6c-44b5-4ece-b4a6-7af8b4277da0
+      -
+        id: bc3a9d38-a36c-4bf8-8184-b974787aed81
+        entry: e4734233-911d-4b24-bea6-570c05955b05
+      -
+        id: f97e4b0d-0ce0-48f7-9c70-1370598c8216
+        entry: 0aecc9dc-f80b-44f4-8ead-4ae0e4fd2603
+  -
     id: 5c207df6-c244-493a-ae56-ba8deaa66fd3
     title: 'Data Planning'
     children:

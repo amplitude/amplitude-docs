@@ -1,0 +1,52 @@
+title: 'Warehouse-native Amplitude'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            import: help_center_common
+            config:
+              title:
+                required: true
+  landing_page:
+    display: 'Landing page'
+    sections:
+      -
+        display: 'New Section'
+        fields:
+          -
+            import: article_common
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: source
+            field:
+              type: text
+              display: Source
+  alt_sitemap:
+    display: 'Alt Sitemap'
+    sections:
+      -
+        fields:
+          -
+            handle: sitemap_priority
+            field:
+              type: float
+              display: 'Sitemap Priority'
+              instructions: 'From 0.0 (lowest priority) to 1.0 (highest priority)'
+          -
+            handle: exclude_from_sitemap
+            field:
+              type: toggle
+              display: 'Exclude from sitemap?'

@@ -8,8 +8,8 @@ this_article_will_help_you:
   - 'Review the results of A/B tests in Amplitude'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1716572258
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717611551
 ---
 A/B Testing is a method of conducting controlled, randomized experiments with the goal of improving a website or application metric. With Amplitude's [AB Test View](/docs/analytics/charts/funnel-analysis/funnel-analysis-interpret), you can measure the impact of your experiments by comparing how each experiment group behaves in your application.
 
@@ -45,7 +45,7 @@ Learn more about [how user properties are synced in Amplitude](/docs/data/user-p
 
 Amplitude users tend to take one of two approaches when instrumenting split tests:
 
-* Use one user property **per experiment**.  
+### Use one user property **per experiment**.  
   
 All user properties are received as key-value pairs. This approach sets the experiment name as the key and all variations of the experiments as the potential values.  
   
@@ -54,7 +54,8 @@ User Property Value: `variation_a`
   
 **Pros:** Can easily select experiments to segment by from the user segmentation tab.  
 **Cons:** Can result in an overwhelming list of user properties, depending on the number of experiments being run.
-* Use one user property **for all** experiments.  
+
+### Use one user property **for all** experiments.  
   
 All user properties are received as key-value pairs. This approach sets the key to `Split Tests` (or something similar) and stores the values in an array.  
   
@@ -64,9 +65,9 @@ User Property Value: [`experiment_1_value`, `experiment_2_value`]
 You can segment on the user property `Split Tests` by selecting the appropriate value or test group in the chart's [segmentation module](/docs/analytics/charts/build-charts-add-user-segments).  
   
 **Pros:** You will only have one user property related to your split testing (rather than one per experiment), so your user property list will be more manageable in the dashboard.   
-**Cons:**Arrays are limited to 10,000 characters if `append`  or `prepend`  is used. If an array were to exceed the character limit, then the characters past the threshold will not be recorded.
+**Cons:** Arrays are limited to 10,000 characters if `append`  or `prepend`  is used. If an array were to exceed the character limit, then the characters past the threshold will not be recorded.
 
-Amplitude also offers a full integration with [Optimizely](https://www.optimizely.com/) that will automatically update user properties for each experiment. Please read the [integration guide](/docs/hc/en-us/articles/225364647) for more details.
+Amplitude also offers a full integration with [Optimizely](https://www.optimizely.com/) that will automatically update user properties for each experiment. 
 
 ## Viewing results in Amplitude
 

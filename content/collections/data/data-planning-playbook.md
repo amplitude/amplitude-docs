@@ -1,17 +1,17 @@
 ---
-title: "Data planning playbook"
-source: "https://help.amplitude.com/hc/en-us/articles/115000465251-Data-planning-playbook"
 id: 2886ff4d-cb6d-4327-a412-83c4e5c3aff7
+blueprint: data
+title: 'Data planning playbook'
+source: 'https://help.amplitude.com/hc/en-us/articles/115000465251-Data-planning-playbook'
+this_article_will_help_you:
+  - 'Understand the basics of users, events, and properties'
+  - 'Learn techniques for planning your taxonomy'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717612672
 ---
-
-#### This article will help you:
-
-* Understand the basics of users, events, and properties
-* Learn techniques for planning your taxonomy
-
 Using Amplitude effectively will first require you to identify the events and properties you want to track. Designing a solid, scalable taxonomy can help make your analyses easier, avoid data gaps, and prevent future data issues.
-
-**NOTE:** To better reflect recent changes to Amplitude's product line, the previous Data Taxonomy Playbook series has been condensed into this article.
 
 This playbook will review the strategy and considerations for creating your tracking plan.
 
@@ -37,14 +37,14 @@ You can learn how Amplitude tracks unique users, including how to reconcile anon
 
 An event is a **distinct action or activity** performed by a user within your product. Events can be **active** when a user has interacted with your app (for example, starting a game or adding to their cart) or they can be **inactive** (the user receives a push notification). 
 
-When naming events, we recommend establishing a consistent naming convention that uses:
+When naming events, Amplitude recommends establishing a consistent naming convention that uses:
 
 * **Consistent capitalization**: Amplitude will capture `Song Played` and `song played` as two separate events, so this naming convention will help prevent messy data, especially when multiple teams are sending the same event.
 * **A consistent syntax**: Similarly, `Song Played` and `Played Song` will also be considered separate events. For example, a standard of `[Noun]` + `[Past-Tense Verb]` will make sure all your events are consistent.
 * **A consistent actor**: Does `Message
  Sent` mean that the user sent a message or that we sent a message to the user? If all your events are always from the user's perspective, you'd know that this means the user sent a message.
 
-Our default events are Title Cased from the user's perspective, with a `[Noun]` + `[Past Tense Verb]`. You can follow establish your own convention if you wish, but the most important thing is that you remain consistent.
+Default events are Title Cased from the user's perspective, with a `[Noun]` + `[Past Tense Verb]`. You can follow establish your own convention if you wish, but the most important thing is that you remain consistent.
 
 ### Properties
 
@@ -125,12 +125,12 @@ Even though event properties are specific to each event, you should ensure they'
 
 ### Are your properties captured across all applicable events?
 
-One typical use case for event properties is tracking values that must be [held constant](https://help.amplitude.com/hc/en-us/articles/360054203872#h_01ET6K2HGVAFG1J3V3QM4D7CJC) to count toward funnel conversion. For example, perhaps you want to know how often users add to cart after viewing details:
+One typical use case for event properties is tracking values that must be remain constant to count toward funnel conversion. For example, perhaps you want to know how often users add to cart after viewing details:
 
 * Step 1: `Product Details Viewed`
 * Step 2: `Product Added`
 
-Here, users should count as converted through the funnel **only** if they triggered the event on the **same** product. To ensure this, instrument the event property `Product ID` and require the funnel to [hold this value constant](https://help.amplitude.com/hc/en-us/articles/360054203872#h_01ET6K2HGVAFG1J3V3QM4D7CJC). Every event in the funnel must have that property for the holding constant feature to work.
+Here, users should count as converted through the funnel **only** if they triggered the event on the **same** product. To ensure this, instrument the event property `Product ID` and require the funnel to hold this value constant. Every event in the funnel must have that property for the holding constant feature to work.
 
 * Step 1: `Product Details Viewed`
 	* `Product ID` = `3345`
@@ -138,7 +138,7 @@ Here, users should count as converted through the funnel **only** if they trigge
 	* `Product ID` = `3345`
 	* `quantity` = `1`
 
-So, in this example, you can see how often a user adds to their cart after viewing an item. Without the `Product ID`, you'd be analyzing how often a user adds any item to their cart after viewing any item.
+In this example, you can see how often a user adds to their cart after viewing an item. Without the `Product ID`, you'd be analyzing how often a user adds any item to their cart after viewing any item.
 
 ## Next steps
 

@@ -32,3 +32,5 @@ preferences:
       per_page: 100
     ampli:
       after_save: create_another
+    warehouse_native_amplitude:
+      after_save: create_another
