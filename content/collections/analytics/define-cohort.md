@@ -20,7 +20,7 @@ To define a new [cohort](/docs/analytics/behavioral-cohorts), follow these steps
 3. Click *Select event...* and select the event you're interested in.
 4. Begin setting the parameters that will define your behavioral cohort:
 
-    ![behavioral_cohorts_define_new.png](/output/img/analytics/behavioral_cohorts_define_new.png)
+    ![behavioral_cohorts_define_new.png](/docs/output/img/analytics/behavioral_cohorts_define_new.png)
 
     First, tell Amplitude how you want it to count events. You have six options, all of which can be accessed from the **with** dropdown:
 
@@ -28,10 +28,10 @@ To define a new [cohort](/docs/analytics/behavioral-cohorts), follow these steps
     * **Relative count.** Amplitude will compare two different event frequencies. For example, all users who triggered Play Song or Video at a greater frequency than Favorite Song or Video during the last 30 days. You have the option to add "where" clauses for both events under comparison.
     * **Total sum of property**. Filters for users who triggered events with a particular event or user property sum. These event or user properties must have numerical values. For example, all users in the last 30 days who triggered Play or Search Song with total Duration value greater than 60 seconds.
     * **Distinct values of property.** Filter for event or user properties down to a specific value or set of values you are analyzing. For example, only those users who favorited a song or video on more than one device.
-    * **Historical count.** Your cohort will contain users who performed the event a specific number of times, between one and five. See our Help Center article on [how Historical Count works in Amplitude](/analytics/historical-count-1) to learn more.
+    * **Historical count.** Your cohort will contain users who performed the event a specific number of times, between one and five. See our Help Center article on [how Historical Count works in Amplitude](/docs/analytics/historical-count-1) to learn more.
     * **Count in interval**. Filter for users who triggered the event **at least once** on each of the number of **distinct days** within a given interval. This enables you to specify behavior that occurred within distinct days in a defined time period. For example, you could filter for users who triggered the event at least once on each of a certain number of distinct days (you define how many) within a given interval. This differs from daily, weekly, or monthly behavior, which doesn't require the behavior to occur on different days.  
 
-    See the article on [how stickiness analysis works in Amplitude](/analytics/charts/stickiness/stickiness-interpret) to learn more.
+    See the article on [how stickiness analysis works in Amplitude](/docs/analytics/charts/stickiness/stickiness-interpret) to learn more.
 
 5. Set the **operator** (equal to, greater than, less than, etc) and the **value** (i.e., the count value) of this parameter.
 6. Now you'll have to tell Amplitude **when** these events should have taken place. Here, too, you have some options, accessible from the **any time** dropdown:
@@ -80,7 +80,7 @@ For numerical property values, Amplitude interprets a missing value as 0.
 
 If you have instrumented group types, you can create group cohorts from the cohort detail page (where you define or upload a cohort). To do this, when defining your cohort, select the group name on the left side of the definition. In this example, the group name is "company(s)."
 
-![group cohort selection.png](/output/img/analytics/group-cohort-selection.png)
+![group cohort selection.png](/docs/output/img/analytics/group-cohort-selection.png)
 
 When applying the group cohort to a chart, add the group by clicking *+ Filter by*, and then *Cohort*. Then select the group name from the list.
 

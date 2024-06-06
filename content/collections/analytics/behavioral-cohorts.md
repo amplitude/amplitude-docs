@@ -32,7 +32,7 @@ Some examples of behavioral cohorts might be:
 
 Ultimately, this sort of behavioral data reveals how engagement with your product affects retention, conversion, revenue, and other business outcomes you care about.
 
-Cohorts are extremely useful across the Amplitude platform. To segment your data by cohorts, select *Cohort* in the [Segmentation Module](/analytics/charts/build-charts-add-user-segments), and then choose the cohort you're interested in from the drop-down list.
+Cohorts are extremely useful across the Amplitude platform. To segment your data by cohorts, select *Cohort* in the [Segmentation Module](/docs/analytics/charts/build-charts-add-user-segments), and then choose the cohort you're interested in from the drop-down list.
 
 For any chart or query that segments on a cohort, the segmented cohort will automatically recompute itself whenever the chart is generated. You can manually re-compute the cohort at any time by clicking the refresh icon.
 

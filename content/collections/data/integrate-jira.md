@@ -23,7 +23,7 @@ To set up and use the integration, follow these steps:
 
 1. In Amplitude Data, navigate to *Settings > Integrations* and find the Atlassian Jira panel. Click *Add*, and in the modal that appears, click *Authenticate* to start the authentication flow.
    
-    ![image5.png](/output/img/data/image5-png.png)
+    ![image5.png](/docs/output/img/data/image5-png.png)
 
 2. Another modal will appear, this one asking you to authorize Jira access for your site. From the drop-down in the modal, select the site you want to authorize. Then click *Accept*.
 

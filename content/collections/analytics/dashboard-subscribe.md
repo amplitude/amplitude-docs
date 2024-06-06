@@ -27,7 +27,7 @@ If you own or co-own the dashboard, you can also add other subscribers, the *Sub
 3. To subscribe a Slack channel to the dashboard, click the *Slack* tab. In the *Add new subscriber(s)* field, enter the names of the Slack channels you want to subscribe to this dashboard. Notifications take the form of automated recurring dashboard PDFs, paired with a link back to the dashboard, sent to Slack channels you designate.
 
 
-![DB_Reports_Sample.png](/output/img/analytics/db-reports-sample-png.png)
+![DB_Reports_Sample.png](/docs/output/img/analytics/db-reports-sample-png.png)
 
 Dashboard owners can add subscribers to a dashboard and set the update frequency (e.g., every Monday at 12pm UTC), with or without an attached .CSV file. Dashboard owners can also customize the frequency of email reports on a person-by-person basis.
 
@@ -35,4 +35,4 @@ View and manage the dashboards you are subscribed to by clicking *Settings > Org
 
 Admins can view and delete any dashboard subscriptions in their organization.
 
-![Screenshot](/output/img/analytics/screenshot.png)
+![Screenshot](/docs/output/img/analytics/screenshot.png)

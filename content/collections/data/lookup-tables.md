@@ -47,7 +47,7 @@ To create a new Lookup Table in Amplitude Data, follow these steps:
 3. Navigate to your .CSV file and upload it. Then click *Next*.
 4. Map your event property by selecting it from the dropdown. When you're done, click *Finish*.
 
-![Add_source.png](/output/img/data/add-source-png.png)
+![Add_source.png](/docs/output/img/data/add-source-png.png)
 
 {{partial:admonition type="note" heading=""}}
 You must be an Admin or Manager of the project to add or manage a source.

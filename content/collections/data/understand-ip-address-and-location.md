@@ -33,7 +33,7 @@ Even if you have chosen to block or filter IP addresses in your data ingestion, 
 4. When you look at this specific event in Amplitude, it will not have an associated IP address. However, it will have related location properties, such as city and country.
 
 {{partial:admonition type="note" heading=""}}
-Any IP address currently known for a user will be synced to all future events by default. To change it, you can unset the IP address with the [identify API](/apis/analytics/identify).
+Any IP address currently known for a user will be synced to all future events by default. To change it, you can unset the IP address with the [identify API](/docs/apis/analytics/identify).
 {{/partial:admonition}}
 
-If you are using an SDK and want Amplitude to drop IP addresses, configure the options within the [SDK](/sdks/analytics). If you want to remove IP addresses on events moving forward, file a Service Task request on the Support form.
+If you are using an SDK and want Amplitude to drop IP addresses, configure the options within the [SDK](/docs/sdks/analytics). If you want to remove IP addresses on events moving forward, file a Service Task request on the Support form.

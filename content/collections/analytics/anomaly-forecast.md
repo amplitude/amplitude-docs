@@ -122,4 +122,4 @@ If you have a specific training duration in mind that agile or robust modes don'
 
 ## Insights package
 
-If you need alerting for anomalies, Amplitude's Insights package includes automatic and custom monitor alerts. You can find more about the package [here](/analytics/insights).
+If you need alerting for anomalies, Amplitude's Insights package includes automatic and custom monitor alerts. You can find more about the package [here](/docs/analytics/insights).

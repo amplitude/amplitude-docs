@@ -11,7 +11,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717622389
 ---
-Marketers often want to define their acquisition channels based on [UTM](/get-started/analyze-acquisition-channels) and referrer data. Amplitude’s **channels** allow you to create new properties retroactively, based on functions and operators you can apply across multiple existing properties. These do not affect your raw data and will be computed on the fly.
+Marketers often want to define their acquisition channels based on [UTM](/docs/get-started/analyze-acquisition-channels) and referrer data. Amplitude’s **channels** allow you to create new properties retroactively, based on functions and operators you can apply across multiple existing properties. These do not affect your raw data and will be computed on the fly.
 
 For example, you may want to understand the distribution of organic traffic to your site. Define a version of your channels that includes the known social and search domains at that time. When a new social or search channel becomes prevalent, you can update your organic search definition and all of your existing charts will update **retroactively** to reflect the new definition.
 
@@ -31,7 +31,7 @@ To create a channel, follow these steps:
 2. Click *+ Add Channel Classifier.* A pre-built, default channel definition screen will open. Optionally, click the default channel title (*Channel*) to edit the name. You can also add a description below it, if you like.
 3. To begin creating the definition of the channel, start from the default template or click *Clear Table* to clear the table's contents and start from scratch.  
   
-    ![image2.gif](/output/img/data/image2-gif.gif)  
+    ![image2.gif](/docs/output/img/data/image2-gif.gif)  
       
     You can add multiple properties to a row to create a more complex classifier.
 

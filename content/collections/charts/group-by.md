@@ -11,13 +11,13 @@ id: 3fc06830-001c-4c85-9d1f-6fc7c5ea7a39
 
 In its basic form, Amplitude's **group-by** feature is a tool for categorizing events for aggregation. 
 
-![group_by.png](/output/img/charts/group-by-png.png)
+![group_by.png](/docs/output/img/charts/group-by-png.png)
 
 When you want to count the number of events by country, for example, you'd use a group-by:
 
-![group_by_2.png](/output/img/charts/group-by-2-png.png)  
+![group_by_2.png](/docs/output/img/charts/group-by-2-png.png)  
 
-Check out our Help Center article for a more detailed look at [group-by visualization in Amplitude's Event Segmentation charts](/analytics/charts/build-charts-add-events).
+Check out our Help Center article for a more detailed look at [group-by visualization in Amplitude's Event Segmentation charts](/docs/analytics/charts/build-charts-add-events).
 
 ## Group-by result limits
 

@@ -55,4 +55,4 @@ You can set up email alerts for validation errors by clicking *Subscribe**.*
 
 You can designate specific users to receive email notifications of any Schema violations. Do this by clicking *Manage Subscribers* at the top right of your Schema options.
 
-![Screenshot 2023-08-07 at 6.33.26 PM.png](/output/img/data/screenshot-2023-08-07-at-6-33-26-pm-png.png)
+![Screenshot 2023-08-07 at 6.33.26 PM.png](/docs/output/img/data/screenshot-2023-08-07-at-6-33-26-pm-png.png)

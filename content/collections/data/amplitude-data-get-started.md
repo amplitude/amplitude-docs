@@ -25,7 +25,7 @@ There are a few things you should consider when deciding which ingestion method 
 
 #### Using Amplitude SDKs
 
-Amplitude's SDKs are a great way to integrate if you're getting started with analytics. You'll have the option of using Ampli to keep your instrumentation clean from the start while still having the flexibility to send data to [various destinations](/data/destination-catalog) later.
+Amplitude's SDKs are a great way to integrate if you're getting started with analytics. You'll have the option of using Ampli to keep your instrumentation clean from the start while still having the flexibility to send data to [various destinations](/docs/data/destination-catalog) later.
 
 One decision you'll need to make when using our SDKs is whether to send events from the front-end clients or the back-end servers:
 
@@ -62,4 +62,4 @@ You can set your naming convention in settings, and Amplitude Data will automati
 
 ### Use a separate environment for testing
 
-Keep your data clean by using separate projects for development and production. Different projects allow you to test your implementation without worrying about affecting your final business reports. It's also a great place to try the data management tools before applying them to your production data. See this article on [creating a project in Amplitude](/get-started/create-project).
+Keep your data clean by using separate projects for development and production. Different projects allow you to test your implementation without worrying about affecting your final business reports. It's also a great place to try the data management tools before applying them to your production data. See this article on [creating a project in Amplitude](/docs/get-started/create-project).

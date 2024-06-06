@@ -21,7 +21,7 @@ Once you've got your dashboard built out the way you want it, you'll need a way 
       
 	Adding co-owners to individual charts is a one-by-one process. There is no way to bulk-add a new co-owner to multiple charts at once.
     
-5. To create a live, public link that will be usable by others without an Amplitude account, click Manage Public Links. For more information, see the article on [public links in Amplitude](/analytics/share-external).
+5. To create a live, public link that will be usable by others without an Amplitude account, click Manage Public Links. For more information, see the article on [public links in Amplitude](/docs/analytics/share-external).
 
 	Public links are only available to customers on a Scholarship, Growth, or Enterprise plan.
     

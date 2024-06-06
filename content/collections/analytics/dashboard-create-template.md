@@ -37,4 +37,4 @@ Some of the most common use cases for templates in Amplitude include:
 * **B2B or partner use-cases:** Create different dashboards segmented by customer account or partner
 * **Amplitude new user onboarding:** Templates for the above use cases to help onboard new Amplitude users by acclimating them to the types of analyses most often performed by their new teams.
 
-For more information on templates, see [this article in our Help Center.](/analytics/templates)
+For more information on templates, see [this article in our Help Center.](/docs/analytics/templates)

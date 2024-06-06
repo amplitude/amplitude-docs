@@ -48,7 +48,7 @@ To generate this embed code, follow these steps:
 1. After saving your chart, dashboard, or notebook, click *Share*.
 2. In the *Share* modal, click the Embed tab and flip the toggle switch to On.  
   
-	![embed_modal.png](/output/img/analytics/embed_modal.png)
+	![embed_modal.png](/docs/output/img/analytics/embed_modal.png)
 
 3. Click *Copy Embed Code*. You can now paste the embed code from your clipboard.
 4. To revoke external permissions to view the content, simply flip the toggle switch to Off. The embed code will no longer work in any of the documents where it appears.
@@ -71,4 +71,4 @@ Even if your account does not require passwords or expirations, you may set eith
 
 ## Visual links and unfurling public links on Slack
 
-Read more about the Amplitude Slack integration [here](/analytics/integrate-slack).
+Read more about the Amplitude Slack integration [here](/docs/analytics/integrate-slack).

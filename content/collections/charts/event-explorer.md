@@ -19,7 +19,7 @@ You may also find [this video](https://academy.amplitude.com/use-event-explorer-
 
 Amplitude’s Event Explorer helps you overcome these and similar challenges by surfacing events and properties in real time for any user flow, so you can immediately see which data is relevant.
 
-![event_explorer.png](/output/img/charts/event-explorer-png.png)
+![event_explorer.png](/docs/output/img/charts/event-explorer-png.png)
 
 Simply find your test account ID and click through the area of your product you want to analyze. Event Explorer shows the events you’re triggering **as you trigger them**. You’ll know exactly which events correspond with the user actions you’re interested in analyzing, and you can immediately add them to any Amplitude chart.
 
@@ -54,15 +54,15 @@ To use Event Explorer to view events as they are triggered, follow these steps:
 
 1. In any Amplitude chart, click *Event Explorer*. It may take up to a minute for events to appear when first launched.
 
-![click_event_explorer.png](/output/img/charts/click-event-explorer-png.png)
+![click_event_explorer.png](/docs/output/img/charts/click-event-explorer-png.png)
 
 2. Click *+* *Add new user* from the target dropdown.
 
-![add_new_user2.png](/output/img/charts/add-new-user2-png.png)
+![add_new_user2.png](/docs/output/img/charts/add-new-user2-png.png)
 
 3. In the modal that opens, search for a user by [IP address, user ID, device ID,](#h_01EMKSY3CCHXWVZY2T6P42SJ74) or user property. IP address is the default search criteria, and will return all users with the same IP address.
 
-![event_explorer_setup.png](/output/img/charts/event-explorer-setup-png.png)
+![event_explorer_setup.png](/docs/output/img/charts/event-explorer-setup-png.png)
 
 If you have not yet set up targeting, the *Event Explorer Setup* modal will automatically open when you click *Event Explorer*.
 
@@ -96,7 +96,7 @@ Methods you can use to locate your ID include:
 
 **Other methods:**
 
-* The [Instrumentation Explorer](/data/chrome-extension-debug) Chrome plugin, which works for our JS SDK, identifies your user ID.
+* The [Instrumentation Explorer](/docs/data/chrome-extension-debug) Chrome plugin, which works for our JS SDK, identifies your user ID.
 * If you use Amplitude's iOS SDK or Android SDK, [there is a tool](https://www.docs.developers.amplitude.com/data/debugger/) to identify your user ID and device ID when running under a debug version.
 * Your company may have an internal tool or method to find your ID. Consider asking someone in your organization for tips.
-* Try firing some events that are unlikely to be fired by your users. Then use *Filter by events* on the [User Lookup](/analytics/user-data-lookup) page to locate the ID that just fired those events. This will be your user ID.
+* Try firing some events that are unlikely to be fired by your users. Then use *Filter by events* on the [User Lookup](/docs/analytics/user-data-lookup) page to locate the ID that just fired those events. This will be your user ID.

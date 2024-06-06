@@ -142,4 +142,4 @@ You can turn your KPIs into dynamically-updating group properties. Add group pro
 
 ### Create group properties via the Salesforce integration
 
-To learn how to create **group properties** using Amplitude's Salesforce integration, see [Salesforce](/data/source-catalog/salesforce) in Amplitude Sources.
+To learn how to create **group properties** using Amplitude's Salesforce integration, see [Salesforce](/docs/data/source-catalog/salesforce) in Amplitude Sources.

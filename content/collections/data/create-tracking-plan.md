@@ -29,7 +29,7 @@ You can update your plan in two ways:
 
 ### Create a source
 
-[Sources](/cdp/sources/connect-to-source) represent the originating source of the data being sent to Amplitude. (For example, your iOS, Android, Web, and Backend.) When using the [Ampli Developer experience](/sdks/ampli), you’ll need to create a source to generate the correct tracking library.
+[Sources](/docs/cdp/sources/connect-to-source) represent the originating source of the data being sent to Amplitude. (For example, your iOS, Android, Web, and Backend.) When using the [Ampli Developer experience](/docs/sdks/ampli), you’ll need to create a source to generate the correct tracking library.
 
 To create a source, follow these steps:
 
@@ -76,7 +76,7 @@ To add an existing property, or create a new property within an event, follow th
 3. Name your new property, or select an existing property to add to the event.
 
 {{partial:admonition type="note" heading=""}}
-If multiple events share similar properties, you can [create a property group](/data/property-updates-property-groups). Property groups—which are **distinct** from group properties—make it easier to manage complex tracking plans, as you don't have to keep adding the same properties over and over. When you update a property group, the update applies to all events the group is associated with.
+If multiple events share similar properties, you can [create a property group](/docs/data/property-updates-property-groups). Property groups—which are **distinct** from group properties—make it easier to manage complex tracking plans, as you don't have to keep adding the same properties over and over. When you update a property group, the update applies to all events the group is associated with.
 {{/partial:admonition}}
 
 ### Create a user property
@@ -95,7 +95,7 @@ To create a new user property, follow these steps:
 ### Create a group with group properties
 
 {{partial:admonition type="note" heading=""}}
-This feature requires the [Accounts](/analytics/account-level-reporting-setup) add-on.
+This feature requires the [Accounts](/docs/analytics/account-level-reporting-setup) add-on.
 {{/partial:admonition}}
 
 Group properties make it easy to associate a user with a particular account (for example, name, industry, employees, etc.) whenever the `group()` call is made. This is helpful when you want to track groups of users (for example, tracking events across an entire company, instead of specific users within that company).

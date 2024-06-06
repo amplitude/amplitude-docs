@@ -20,7 +20,7 @@ Amplitude Analytics will prune and order a chart's data whenever there are an ex
 
 In order to maintain chart performance in these cases, Amplitude **prunes** values of the chart. For charts with one group-by clause, a maximum of 100 values will be viewable. For charts with two group-by clauses, a maximum of 500 values will be viewable.
 
-[Read more about the group-by and how it affects pruning and ordering](/analytics/charts/group-by).
+[Read more about the group-by and how it affects pruning and ordering](/docs/analytics/charts/group-by).
 
 Amplitude Analytics will also **order** chart results, by displaying the top values only. Analytics compares user activity in the chart's time-frame to determine which values are, in fact, the top values.
 

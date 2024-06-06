@@ -22,11 +22,11 @@ After you download the extension, follow these steps to sync your chart data wit
 
 1. From within a Google spreadsheet, navigate to *Extensions >* *Amplitude Sync to Drive and Sheets.* Then click *Start Exporting Amplitude Data.*
 
-	![](/output/img/analytics/17785851254939.png)
+	![](/docs/output/img/analytics/17785851254939.png)
 
 2. In the modal that appears, click *Sign in with Google*.
 
-	![](/output/img/analytics/17785851995035.png)
+	![](/docs/output/img/analytics/17785851995035.png)
 
   {{partial:admonition type='note'}}
   Be sure you use the same email to sign into Google Sheets that you use to log in to your Amplitude account. If the emails don't match, you won’t be able to export data from your organization.
@@ -34,19 +34,19 @@ After you download the extension, follow these steps to sync your chart data wit
 
 3. Next, allow Amplitude access to your Google account.
 
-	![](/output/img/analytics/17785883327771)
+	![](/docs/output/img/analytics/17785883327771)
 
 4. Choose your organization. Hover over the desired chart's name and click *Add* to export its data. You can select multiple charts for the same export.
 
-	![](/output/img/analytics/17785922947611)
+	![](/docs/output/img/analytics/17785922947611)
 
 5. A tab in your Google spreadsheet populates with the selected chart's data; this tab is titled *Amplitude [DO NOT EDIT]*.
 6. As desired, use *Manage* to refresh or delete selected charts from the sheet. Click the refresh icon to refresh and the delete icon to delete.
 
-	![](/output/img/analytics/17787044724891)
+	![](/docs/output/img/analytics/17787044724891)
 
 {{partial:admonition type='note'}}
-Export to Sheets uses Amplitude's [Dashboard REST API](/apis/analytics/dashboard-rest) to generate results, so ensure your charts abide by the same limits.
+Export to Sheets uses Amplitude's [Dashboard REST API](/docs/apis/analytics/dashboard-rest) to generate results, so ensure your charts abide by the same limits.
 {{/partial:admonition}}
 
 ## Sync your Amplitude data to Google Slides
@@ -55,14 +55,14 @@ After you download the extension, follow these steps to sync your chart images w
 
 1. From within a Google Slides presentation, navigate to *Extensions >* *Amplitude Sync to Drive and Sheets.* Then click *Start Exporting Amplitude Data.*
 
-	![](/output/img/analytics/17786253763099)
+	![](/docs/output/img/analytics/17786253763099)
 
 2. As with steps 2 and 3 in the previous section, you'll be prompted to sign into Google in the modal that appears. You should then allow Amplitude access to your Google account when prompted.
 3. Next, choose your organization. Hover over the desired chart's name and click *Add* to export its data. You can select multiple charts for the same export.
 
 At this point, your presentation populates with chart images, one per slide, depending on how many charts you chose for export.
 
-![](/output/img/analytics/17786281483803)
+![](/docs/output/img/analytics/17786281483803)
 
 {{partial:admonition type='note'}}
 Charts with a lot of data might take longer to export.
@@ -70,4 +70,4 @@ Charts with a lot of data might take longer to export.
 
 5. As desired, use *Manage* to refresh or delete selected charts from the sheet. Click the refresh icon to refresh and the delete icon to delete.
 
-![](/output/img/analytics/17787100775195)
+![](/docs/output/img/analytics/17787100775195)

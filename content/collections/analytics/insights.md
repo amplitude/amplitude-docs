@@ -49,7 +49,7 @@ To set a **custom** or **smart** alert for a chart you own, follow these steps:
     * A **smart alert** will look for unexpected changes outside of a 99% confidence interval.
     * A **custom alert** allows you to be more specific about the conditions under which you'll receive a custom alert: whether it's above or below a specific value, or whether it differs from a previous value by a specified amount. You can also set a custom alert based on confidence interval.
 
-    ![conf_interval.gif](/output/img/analytics/conf_interval.gif)
+    ![conf_interval.gif](/docs/output/img/analytics/conf_interval.gif)
 
 3. If you are setting up a custom alert, specify your alert conditions (these will be tied to the chart's current value either exceeding or falling below a specific value, or to changes in the confidence interval). If you are setting up a smart alert, skip this step.
 4. Add the emails of everyone who should receive this alert, and click *Set Alert*.
