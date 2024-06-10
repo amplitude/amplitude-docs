@@ -17,8 +17,7 @@
 
 <script>
     (function () {
-        let theme = {!! ($userTheme = $user?->preferredTheme()) ? "'".$userTheme."'" : "null" !!};
-        if (! theme) theme = localStorage.getItem('statamic.theme') ?? 'auto';
+        let theme = '{{ $user?->preferredTheme() ?? "auto" }}';
         if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) theme = 'dark';
         if (theme === 'dark') document.documentElement.classList.add('dark');
     })();

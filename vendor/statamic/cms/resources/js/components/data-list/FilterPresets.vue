@@ -168,34 +168,24 @@ export default {
                 return;
             }
 
-            if (this.showRenameModal) {
-                let preference = this.$preferences.get(`${this.preferencesKey}`);
-
-                preference = Object.fromEntries(Object.entries(preference).map(([key, value]) => {
-                    if (key === this.activePreset) {
-                        return [this.savingPresetSlug, this.presetPreferencesPayload];
-                    }
-
-                    return [key, value];
-                }));
-
-                this.$preferences.set(`${this.preferencesKey}`, preference)
-                    .then(response => {
-                        this.$toast.success(__('View renamed'));
-                        this.$emit('deleted', this.activePreset);
-                        this.showRenameModal = false;
-                        this.refreshPresets();
-                    })
-                    .catch(error => {
-                        this.$toast.error(__('Unable to rename view'));
-                        this.showRenameModal = false;
-                    });
-
-                return;
-            }
-
             this.$preferences.set(`${this.preferencesKey}.${presetHandle}`, this.presetPreferencesPayload)
                 .then(response => {
+                    if (this.showRenameModal) {
+                        this.$preferences.remove(`${this.preferencesKey}.${this.activePreset}`)
+                            .then(response => {
+                                this.$toast.success(__('View renamed'));
+                                this.$emit('deleted', this.activePreset);
+                                this.showRenameModal = false;
+                                this.refreshPresets();
+                            })
+                            .catch(error => {
+                                this.$toast.error(__('Unable to rename view'));
+                                this.showRenameModal = false;
+                            });
+
+                        return;
+                    }
+
                     this.$toast.success(__('View saved'));
                     this.showCreateModal = false;
                     this.savingPresetName = null;

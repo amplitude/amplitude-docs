@@ -13,7 +13,6 @@ use Statamic\Exceptions\TermsFieldtypeTaxonomyOptionUsed;
 use Statamic\Facades;
 use Statamic\Facades\Blink;
 use Statamic\Facades\GraphQL;
-use Statamic\Facades\Scope;
 use Statamic\Facades\Site;
 use Statamic\Facades\Taxonomy;
 use Statamic\Facades\Term;
@@ -21,7 +20,6 @@ use Statamic\Facades\User;
 use Statamic\GraphQL\Types\TermInterface;
 use Statamic\Http\Resources\CP\Taxonomies\Terms as TermsResource;
 use Statamic\Query\OrderedQueryBuilder;
-use Statamic\Query\Scopes\Filter;
 use Statamic\Query\Scopes\Filters\Fields\Terms as TermsFilter;
 use Statamic\Support\Arr;
 use Statamic\Support\Str;
@@ -97,11 +95,6 @@ class Terms extends Relationship
                         'display' => __('Query Scopes'),
                         'instructions' => __('statamic::fieldtypes.terms.config.query_scopes'),
                         'type' => 'taggable',
-                        'options' => Scope::all()
-                            ->reject(fn ($scope) => $scope instanceof Filter)
-                            ->map->handle()
-                            ->values()
-                            ->all(),
                     ],
                 ],
             ],
