@@ -66,16 +66,7 @@ export default {
     methods: {
         prefer(mode) {
             this.preference = mode;
-
-            // Saving to user preference allows it to persist across browsers, whereas saving to local
-            // storage allows it to work before the user is authenticated, e.g. on the login screen.
-            if (mode === 'auto') {
-                this.$preferences.remove('theme');
-                localStorage.removeItem('statamic.theme');
-            } else {
-                this.$preferences.set('theme', mode);
-                localStorage.setItem('statamic.theme', mode);
-            }
+            this.$preferences.set('theme', mode === 'auto' ? null : mode);
         }
     }
 }

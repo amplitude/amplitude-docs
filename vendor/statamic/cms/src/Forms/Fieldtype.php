@@ -6,11 +6,9 @@ use Statamic\CP\Column;
 use Statamic\Data\DataCollection;
 use Statamic\Facades;
 use Statamic\Facades\GraphQL;
-use Statamic\Facades\Scope;
 use Statamic\Fieldtypes\Relationship;
 use Statamic\GraphQL\Types\FormType;
 use Statamic\Query\ItemQueryBuilder;
-use Statamic\Query\Scopes\Filter;
 
 class Fieldtype extends Relationship
 {
@@ -50,11 +48,6 @@ class Fieldtype extends Relationship
                 'display' => __('Query Scopes'),
                 'instructions' => __('statamic::fieldtypes.form.config.query_scopes'),
                 'type' => 'taggable',
-                'options' => Scope::all()
-                    ->reject(fn ($scope) => $scope instanceof Filter)
-                    ->map->handle()
-                    ->values()
-                    ->all(),
             ],
         ];
     }
