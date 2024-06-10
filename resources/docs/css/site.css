@@ -714,7 +714,7 @@ pre code.torchlight::before{
 }
 
 #algolia-search > button.DocSearch.DocSearch-Button {
-    @apply w-[42rem] border border-amp-gray-400 rounded-full bg-amp-gray-50 h-14 italic relative text-amp-gray-500 cursor-pointer hover:bg-white transition-colors;
+    @apply w-72 lg:w-[42rem] border border-amp-gray-400 rounded-full bg-amp-gray-50 h-14 italic relative text-amp-gray-500 cursor-pointer hover:bg-white transition-colors;
     border: 1px solid rgb(128 134 144);
 }
 

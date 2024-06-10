@@ -6,9 +6,10 @@ source: 'https://help.amplitude.com/hc/en-us/articles/115001163231-Custom-formul
 this_article_will_help_you:
   - 'Understand and use custom formulas in Amplitude to create exactly the analysis you need'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717102133
+updated_at: 1718057055
 landing: true
 landing_blurb: 'Understand and use custom formulas in Amplitude to create exactly the analysis you need'
+exclude_from_sitemap: false
 ---
 In an [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) or [Data Table](/docs/analytics/charts/data-tables/data-tables-multi-dimensional-analysis) chart, the *Formula* option in the Measured As module's *Advanced* drop down offers you greater flexibility when performing analyses. Custom formulas are also useful for comparing various analyses on the same chart.
 
@@ -101,7 +102,7 @@ Function formulas let you query on a mathematical function for a particular even
 
 * **Event:** Refers to the event you are interested in. This must be a letter that corresponds to an event in the Events card.
 
-The `ACTIVE` formula returns the percent of active users who triggered the event. This is the same as the `Active %` [metric](/docs/hc/en-us/articles/10249480038043) in the Measured card, but here it is displayed in decimal fraction form. This setup will display the percentage of active users who have triggered the `View Item Details` event.
+The `ACTIVE` formula returns the percent of active users who triggered the event. This is the same as the `Active %` [metric](/docs/analytics/charts/data-tables/data-tables-create-metric) in the Measured card, but here it is displayed in decimal fraction form. This setup will display the percentage of active users who have triggered the `View Item Details` event.
 
 ![custom_formulas_active.png](/docs/output/img/event-segmentation/custom-formulas-active-png.png)
 
@@ -121,7 +122,7 @@ For example, the following setup shows the average revenue per active user of a 
 As you can see in the screenshot above, the `$:` prefix is optional. Its presence simply ensures the output format will be as a currency.
 
 {{partial:admonition type='note'}}
- ARPAU cannot be used in conjunction with [aggregation formulas](/docs/hc/en-us/articles/115001163231#h_01HAN58RXG1WR1N9T4XD49R60S). 
+ ARPAU cannot be used in conjunction with [aggregation formulas](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas). 
 {{/partial:admonition}}
 
 ### AVG
@@ -147,7 +148,7 @@ Returns the inputted [percentile](https://en.wikipedia.org/wiki/Percentile) eve
 
 ![c_f_freqpercentile.png](/docs/output/img/event-segmentation/c-f-freqpercentile-png.png)
 
-You can then take this information and create a [behavioral cohort](/docs/hc/en-us/articles/231881448-Amplitude-2-0-Behavioral-Cohorts) of your power users and further analyze them to see what distinguishes them from users who are not in the cohort.
+You can then take this information and create a [behavioral cohort](/docs/analytics/behavioral-cohorts) of your power users and further analyze them to see what distinguishes them from users who are not in the cohort.
 
 ### HIST
 
