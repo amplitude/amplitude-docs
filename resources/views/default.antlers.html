@@ -1,12 +1,12 @@
 <section class="w-full flex flex-col items-center">
   {{ partial:breadcrumbs }}
-  <div class="flex flex-row w-full pt-8 px-16 lg:p-8">
-    <div class="copy">
+  <div class="flex flex-row w-full pt-8 px-6 lg:p-8">
+    <div class="copy w-full">
       <div class="flex flex-row items-start justify-between">
         <h1 class="font-[Gellix] font-normal mb-5">{{ title }}</h1>
         <span class="ml-4 text-xs text-gray-300 align-middle"><a
             href="{{ environment == 'local' ? edit_url : {github_edit_url} }}"
-            target="_blank">{{ svg src="/assets/general/pencil.svg" class="fill-amp-gray-500 h-4 hover:h-6 transition-all" }}</a></span>
+            target="_blank">{{ svg src="/docs/assets/general/pencil.svg" class="fill-amp-gray-500 h-4 hover:h-6 transition-all" }}</a></span>
       </div>
       <div
         class="prose prose-a:text-amp-blue prose-ol:list-decimal prose-ol:list-outside prose-pre:bg-[#fafafa] max-w-prose">
