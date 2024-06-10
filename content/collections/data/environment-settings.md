@@ -8,14 +8,12 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717622763
----
-#### This article will help you:
+--- 
+{{partial:admonition type="warning" title="Legacy feature"}}
+This article is about an unsupported **legacy feature**. It is still available for a small number of Amplitude customers, but will not be made accessible for customers who do not already have access.
+{{/partial:admonition}}
 
-* 
-
-**NOTE:** This article is about an unsupported **legacy feature**. It is still available for a small number of Amplitude customers, but will not be made accessible for customers who do not already have access.
-
-In Amplitude Data, the **project** is where you configure events, properties, sources, and destinations. It’s also called the [**tracking plan**, and you can read about it here](https://help.amplitude.com/hc/en-us/articles/5078731378203). This is distinct from an **environment**. 
+In Amplitude Data, the **project** is where you configure events, properties, sources, and destinations. It’s also called the **tracking plan** This is distinct from an **environment**. 
 
 Amplitude Analytics also uses projects, but it does so differently. Setting up a project in Amplitude Analytics is a prerequisite for receiving data from your product—the project is where the data flows to, and it’s where you conduct your analyses. 
 

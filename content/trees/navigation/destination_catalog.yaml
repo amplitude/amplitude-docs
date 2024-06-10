@@ -2,7 +2,7 @@ tree:
   -
     id: 00af1239-5441-40bb-8246-e7d485e75e47
     title: 'Back to Data'
-    url: /data
+    url: /docs/data
     data:
       navigation_icon:
         - general/back-icon.svg
@@ -156,9 +156,6 @@ tree:
   -
     id: b402700f-553f-40c9-aeab-fa2c3c7ce204
     entry: 9b3ba232-531a-490c-b762-7b188f8118fa
-  -
-    id: f4a95ab1-a53c-4a70-b746-52d99e4185af
-    entry: 37bcfdf6-35cd-4780-9693-43f035ed61f9
   -
     id: 014af208-cdc3-4ee0-bca4-63d7e8624927
     entry: a09cf85b-cb12-486f-861f-db7ec91441d2

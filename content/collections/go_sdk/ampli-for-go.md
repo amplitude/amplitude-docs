@@ -13,29 +13,29 @@ Amplitude Data supports tracking analytics events from Go apps. The generated tr
 
 ## Quick start
 
-0. [(Prerequisite) Create a Tracking Plan in Amplitude Data](https://help.amplitude.com/hc/en-us/articles/5078731378203)
+1. (Prerequisite) Create a Tracking Plan in Amplitude Data
 
     Plan your events and properties in [Amplitude Data](https://data.amplitude.com/). See detailed instructions [here](/docs/data/create-tracking-plan)
 
-1. [Install the Amplitude SDK](#install-the-amplitude-sdk)
+2. [Install the Amplitude SDK](#install-the-amplitude-sdk)
 
     ```shell
     go get github.com/amplitude/analytics-go
     ```
 
-2. [Install the Ampli CLI](#install-the-ampli-cli)
+3. [Install the Ampli CLI](#install-the-ampli-cli)
 
     ```shell
     npm install -g @amplitude/ampli
     ```
 
-3. [Pull the Ampli Wrapper into your project](#pull)
+4. [Pull the Ampli Wrapper into your project](#pull)
 
     ```shell
     ampli pull [--path ./ampli]
     ```
 
-4. [Initialize the Ampli Wrapper](#load)
+5. [Initialize the Ampli Wrapper](#load)
 
     ```golang
     import "<your-module-name>/ampli"
@@ -47,7 +47,7 @@ Amplitude Data supports tracking analytics events from Go apps. The generated tr
     })
     ```
 
-5. [Identify users and set user properties](#identify)
+6. [Identify users and set user properties](#identify)
 
     ```golang
     ampli.Instance.Identify(userID, ampli.Identify.Builder().
@@ -56,20 +56,20 @@ Amplitude Data supports tracking analytics events from Go apps. The generated tr
     )
     ```
 
-6. [Track events with strongly typed methods and classes](#track)
+7. [Track events with strongly typed methods and classes](#track)
 
     ```golang
     ampli.Instance.SongPlayed("user_id", ampli.SongPlayed.Builder().SongId("song-1").Build())
     ampli.Instance.Track("user_id", ampli.SongFavorited.Builder().SongId("song-2").Build())
     ```
 
-7. [Flush events before application exit](#flush)
+8. [Flush events before application exit](#flush)
 
     ```golang
     ampli.Instance.Flush()
     ```
 
-8. [Verify implementation status with CLI](#status)
+9. [Verify implementation status with CLI](#status)
 
     ```shell
     ampli status [--update]

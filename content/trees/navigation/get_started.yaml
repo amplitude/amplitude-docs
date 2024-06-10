@@ -23,11 +23,11 @@ tree:
           -
             id: 8a45f3d0-4bdc-4e77-847a-78cc3c76c3f5
             title: 'SDK Catalog'
-            url: /sdks
+            url: /docs/sdks
           -
             id: ae9efd21-4d93-4d22-b56b-8e23401628da
             title: 'Source Catalog'
-            url: /data/source-catalog
+            url: /docs/data/source-catalog
       -
         id: 60f7ce81-ea9b-4e5f-adc7-3e3801691c58
         entry: 669876e4-a2ae-44d5-bfb2-5def51504a25

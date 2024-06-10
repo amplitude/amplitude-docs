@@ -8,17 +8,19 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717612225
+updated_at: 1718057120
 ---
 The Amplitude Instrumentation Explorer is an extension in the Google Chrome Web Store that helps you examine and debug your Amplitude JS SDK instrumentation just by interacting with your product. It will capture each Amplitude event you trigger and display it in the extension popup. [Download it here.](https://chrome.google.com/webstore/detail/amplitude-instrumentation/acehfjhnmhbmgkedjmjlobpgdicnhkbp)
 
-**NOTE**: The Instrumentation Explorer displays the `event_type` , even when it has a different display name.  
+{{partial:admonition type="" title=""}}
+The Instrumentation Explorer displays the `event_type` , even when it has a different display name.  
+{{/partial:admonition}}
 
 ## View your triggered events
 
 In the Instrumentation Explorer, the *Events* tab is where you'll find detailed insights into the parameters of each event **you** trigger on your website. This includes `user_id`, `device_id`, `event_properties`, and `user_properties`.
 
-![Chrome plugin](statamic://asset::help_center_conversions::data/plugin.png)
+![](statamic://asset::help_center_conversions::data/plugin.png)
 
 To switch between the different Amplitude projects that are receiving your events, select it from the Project dropdown. Each Amplitude project is distinguished by an abbreviated API key.
 

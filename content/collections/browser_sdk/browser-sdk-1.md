@@ -13,18 +13,19 @@ bundle_url: 'https://www.npmjs.com/package/@amplitude/analytics-browser/v/1.13.4
 api_reference_url: 'https://amplitude.github.io/Amplitude-TypeScript/'
 shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/analytics-browser/v1.svg'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1709680112
+updated_at: 1718056305
 major_version: 1
 ampli_article: f7989230-bf1c-48aa-ad61-2bc2b3e15a8c
 migration_guide:
   - 9b155be9-bb32-428c-9f49-6e00f9630547
+exclude_from_sitemap: false
 ---
 The Browser SDK lets you send events to Amplitude.
 
 ## Initialize the SDK
 
 {{partial:admonition type="note" heading="Sending events"}}
-This SDK uses the [Http V2](/docs/api/http-v2) API and follows the same constraints for events. Make sure that all events logged in the SDK have the `event_type` field and at least one of `deviceId`  (included by default) or `userId`, and follow the Http API's constraints on each of those fields.
+This SDK uses the [Http V2](/docs/apis/analytics/http-v2) API and follows the same constraints for events. Make sure that all events logged in the SDK have the `event_type` field and at least one of `deviceId`  (included by default) or `userId`, and follow the Http API's constraints on each of those fields.
 
 To prevent instrumentation issues, device IDs and user IDs must be strings with a length of 5 characters or more. If an event contains a device ID or user ID that's too short, the ID value is removed from the event. If the event doesn't have a `userId` or `deviceId` value, Amplitude may reject the upload with a 400 status. Override the default minimum length of 5 characters by setting the `minIdLength` config option.
 {{/partial:admonition}}
