@@ -61,12 +61,11 @@ Recommended for users who need access to all content created within Amplitude (d
 
 * Add and remove users
 * Edit user role (permissions)
-* Create, edit, and delete [annotations](https://help.amplitude.com/hc/en-us/articles/236032527#01H8MKXYQNNSVADDA5FVHWF6RA)
+* Create, edit, and delete [annotations](/docs/analytics/microscope)
 * Visibility of API keys and secret keys in project settings
 * Remove and edit saved segments
 * Create new projects
 * Edit project settings
-* Make edits to your tracking plan: [change](https://help.amplitude.com/hc/en-us/articles/17050314884635-Set-or-change-a-property-s-data-type), [block, delete, drop](https://help.amplitude.com/hc/en-us/articles/16805784778907-Remove-invalid-or-incorrect-data), [plan](https://help.amplitude.com/hc/en-us/articles/5078731378203-Plan-events-properties-and-user-properties), [approve/reject](https://help.amplitude.com/hc/en-us/articles/5078731378203-Plan-events-properties-and-user-properties), [transform](https://help.amplitude.com/hc/en-us/articles/5913315221915-Transformations-Retroactively-modify-your-event-data-structure), [derive](https://help.amplitude.com/hc/en-us/search/click?data=BAh7DjoHaWRsKwibQM3YVwU6D2FjY291bnRfaWRpA6EvCjoJdHlwZUkiDGFydGljbGUGOgZFVDoIdXJsSSJSaHR0cHM6Ly9oZWxwLmFtcGxpdHVkZS5jb20vaGMvZW4tdXMvYXJ0aWNsZXMvNTg3NDg1NzYyMzcwNy1EZXJpdmVkLXByb3BlcnRpZXMGOwhUOg5zZWFyY2hfaWRJIik5OWFlZDI4MS03MjRjLTRhZDctOWFjNi02ZWFjZGQ1M2FiYTQGOwhGOglyYW5raQY6C2xvY2FsZUkiCmVuLXVzBjsIVDoKcXVlcnlJIgxkZXJpdmVkBjsIVDoScmVzdWx0c19jb3VudGkT--d6cc6279801205bdadd0a6207891141ec824f7b0)
 * Add and edit data sources and data destinations
 * Transfer ownership of content they don’t own
 
@@ -74,8 +73,8 @@ Recommended for users who need access to all content created within Amplitude (d
 The highest-level permissions set in an organization. We recommend limiting the number of users in an organization who are Admins. The Admin role can only be granted or revoked by existing admins. Admins have all manager-level permissions, plus:
 
 * Remove shared chart and dashboard links
-* Change [sampling](https://help.amplitude.com/hc/en-us/articles/115001476972) settings
-* Create [permission groups](https://help.amplitude.com/hc/en-us/articles/360044588191)
+* Change [sampling](/docs/admin/account-management/manage-event-volume) settings
+* Create [permission groups](/docs/admin/account-management/manage-permission-groups)
 * Delete organization or change organization name and URL (the Admin must submit this request to the Amplitude Support team)
 * Change org Admins
 
