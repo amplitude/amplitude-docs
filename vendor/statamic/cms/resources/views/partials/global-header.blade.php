@@ -8,8 +8,7 @@
         <a href="{{ route('statamic.cp.index') }}" class="flex items-end">
             <div v-tooltip="version" class="hidden md:block shrink-0">
                 @if ($customLogo)
-                    <img src="{{ $customLogo }}" alt="{{ config('statamic.cp.custom_cms_name') }}" class="white-label-logo dark:hidden">
-                    <img src="{{ $customDarkLogo }}" alt="{{ config('statamic.cp.custom_cms_name') }}" class="white-label-logo hidden dark:block">
+                    <img src="{{ $customLogo }}" alt="{{ config('statamic.cp.custom_cms_name') }}" class="white-label-logo">
                 @else
                     @cp_svg('statamic-wordmark', 'w-24 logo')
                     @if (Statamic::pro())<span class="font-bold text-4xs align-top uppercase">{{ __('Pro') }}</span>@endif
