@@ -25,7 +25,7 @@ If you are still having issues with an SRM after using this guide, contact suppo
 
 ## Amplitude exposure events versus custom exposure events
 <!-- Casey: Revisit -->
-Amplitude recommends that you use the [Amplitude exposure event](/experiment/under-the-hood/event-tracking#exposure-events). When using client-side SDKs, the Amplitude exposure event is automatically tracked when the variant is accessed from the cache, not when variants are fetched. When using local evaluation, there is no assignment event and you are required to use a custom exposure event. 
+Amplitude recommends that you use the [Amplitude exposure event](/docs/experiment/under-the-hood/event-tracking#exposure-events). When using client-side SDKs, the Amplitude exposure event is automatically tracked when the variant is accessed from the cache, not when variants are fetched. When using local evaluation, there is no assignment event and you are required to use a custom exposure event. 
 
 If you use a custom exposure event, make sure that you send it when the user experiences the variant. More importantly, the custom exposure event may happen before assignment, meaning that the user property isn't yet set, and the initial custom exposure event isn't actually counted as an exposure in analysis. Note that it doesn't cost extra money to use Amplitude Exposure events.
 
@@ -33,7 +33,7 @@ If you use a custom exposure event, make sure that you send it when the user exp
 
 As a best practice, you shouldn't change a running experiment in a way that could cause users to jump between variants. This can cause an SRM.
 
-For example, changing 50% treatment / 50% control to 60% treatment / 40% control may cause users to jump between variants while the experiment is running. One of the assumptions of the SRM test is that the traffic allocation doesn't change while the experiment is running. See [Interpret the Cumulative Exposures Graph in Amplitude Experiment](/experiment/advanced-techniques/cumulative-exposure-change-slope) for more context about why you shouldn't change the traffic allocation in the middle of an experiment.
+For example, changing 50% treatment / 50% control to 60% treatment / 40% control may cause users to jump between variants while the experiment is running. One of the assumptions of the SRM test is that the traffic allocation doesn't change while the experiment is running. See [Interpret the Cumulative Exposures Graph in Amplitude Experiment](/docs/experiment/advanced-techniques/cumulative-exposure-change-slope) for more context about why you shouldn't change the traffic allocation in the middle of an experiment.
 
 ## Experiment exposures started before analysis window begins
 
@@ -50,9 +50,9 @@ If the analysis time window and the time the experiment was receiving traffic ar
 
 ## Variant jumping
 
-[Variant jumping](/experiment/troubleshooting/variant-jumping) describes when a user moves from one variant to another, sometimes multiple times. Variant jumping makes it difficult to attribute the metric to a specific variant. Amplitude Experiment's built-in diagnostics in the **Diagnostics** card has charts to make it easy to track the percentage of users jumping between variants. 
+[Variant jumping](/docs/experiment/troubleshooting/variant-jumping) describes when a user moves from one variant to another, sometimes multiple times. Variant jumping makes it difficult to attribute the metric to a specific variant. Amplitude Experiment's built-in diagnostics in the **Diagnostics** card has charts to make it easy to track the percentage of users jumping between variants. 
 
-If there is variant jumping, is it because of anonymous users (people logging in and out frequently) or changing device IDs? You can see this by looking at the [User Stream](/analytics/user-data-lookups).
+If there is variant jumping, is it because of anonymous users (people logging in and out frequently) or changing device IDs? You can see this by looking at the [User Stream](/docs/analytics/user-data-lookups).
 
 As a best practice, you shouldn't change a running experiment in a way that could cause users to jump between variants. This can cause an SRM.
 
@@ -70,7 +70,7 @@ Enabling or disabling sticky bucketing on a running experiment can cause a misma
 
 ## Changes that affected a segment of users
 
-Is the SRM only on a certain segment of users? For example, filter by [country, OS version, app version, platform](/get-started/user-property-definitions)
+Is the SRM only on a certain segment of users? For example, filter by [country, OS version, app version, platform](/docs/get-started/user-property-definitions)
 
 To troubleshoot this kind of problem, find out which specific users were affected. Ask questions like:
 

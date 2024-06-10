@@ -12,11 +12,11 @@ At times you will need to define a conversion where some of the steps are option
 
 Click **More Options** in the Events side control and select *Optional step* to make a step optional. 
 
-![optional_step.png](/output/img/funnel-analysis/optional-step-png.png)
+![optional_step.png](/docs/output/img/funnel-analysis/optional-step-png.png)
 
 When an event is marked optional, the side control will say *\*Optional* and have a dotted line around it. 
 
-![optional_side_control.png](/output/img/funnel-analysis/optional-side-control-png.png)
+![optional_side_control.png](/docs/output/img/funnel-analysis/optional-side-control-png.png)
 
 The chart will then show two funnels - one with the step and one without the step. The conversion take-aways and breakdown table will also reflect these two scenarios.
 
@@ -29,4 +29,4 @@ There are some limitations to marking a step as optional:
 * Events with a group-by cannot be optional.
 * Events comparing multiple events cannot be optional.
 
-In-line custom events can also be created in Funnel and Event Segmentation charts. [Read this article for more information](/analytics/charts/event-segmentation/event-segmentation-in-line-events).
+In-line custom events can also be created in Funnel and Event Segmentation charts. [Read this article for more information](/docs/analytics/charts/event-segmentation/event-segmentation-in-line-events).

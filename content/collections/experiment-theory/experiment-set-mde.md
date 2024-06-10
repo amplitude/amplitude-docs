@@ -10,7 +10,7 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715102912
 ---
-Before running an experiment, you must estimate how you will measure success by setting the MDE (minimum detectable effect). Think of MDE as the **minimum** change you're hoping to see by running your experiment. Without a fail-safe calculation available for the MDE, it can be tricky to set one. With Amplitude Experiment, the default MDE is 2%; however, as the MDE is strictly linked to your unique business needs, be thoughtful during each experiment's [design phase](/experiment/workflow/define-goals). Considerations for setting the MDE should include:
+Before running an experiment, you must estimate how you will measure success by setting the MDE (minimum detectable effect). Think of MDE as the **minimum** change you're hoping to see by running your experiment. Without a fail-safe calculation available for the MDE, it can be tricky to set one. With Amplitude Experiment, the default MDE is 2%; however, as the MDE is strictly linked to your unique business needs, be thoughtful during each experiment's [design phase](/docs/experiment/workflow/define-goals). Considerations for setting the MDE should include:
 
 * The experiment type,
 * The primary metric, and
@@ -20,7 +20,7 @@ Before running an experiment, you must estimate how you will measure success by 
 
 From the *Plan* tab in Amplitude experiment, you can choose between two experiment types: *Hypothesis Testing* or *Do No Harm*. 
 
-![](/output/img/experiment-theory/4EhALP5sorFVIbGa36oMowyvD9svSyDoADF8LRPmQYY6XEYCA5PahAG7op7j4yX_AqdJR5WQioWlmjNrqxgLjNnZAWCAX9xXS9l9O28EOo1Wvmn3kkCnunFyLkok3bVyDgBepzQOYDNyqjG19AmY7To)
+![](/docs/output/img/experiment-theory/4EhALP5sorFVIbGa36oMowyvD9svSyDoADF8LRPmQYY6XEYCA5PahAG7op7j4yX_AqdJR5WQioWlmjNrqxgLjNnZAWCAX9xXS9l9O28EOo1Wvmn3kkCnunFyLkok3bVyDgBepzQOYDNyqjG19AmY7To)
 
 Let's review a case study to dive deeper into how the experiment type could alter the MDE.
 
@@ -34,14 +34,14 @@ Update #1 could benefit from a hypothesis test to ensure the placement of the "q
 The second update, however, is an enhancement required to meet financial requirements. As a non-negotiable enhancement to the check out process, a do-no-harm experiment may help confirm that the additional payment method will not **decrease** completed sales for users in the checkout process. Over the last four fiscal quarters, an average of 1% of users abandoned the checkout process once starting it. Therefore, this do-no-harm experiment would have a direction set to "decrease" and an MDE set to 1%.
 
 {{partial:admonition type='note'}}
-If running a [T-test](/experiment/workflow/experiment-estimate-duration), Amplitude's duration estimator can also help set the MDE: Give yourself one month to run the experiment to get the estimated MDE.
+If running a [T-test](/docs/experiment/workflow/experiment-estimate-duration), Amplitude's duration estimator can also help set the MDE: Give yourself one month to run the experiment to get the estimated MDE.
 {{/partial:admonition}}
 
 ## MDE and the primary metric
 
 In Amplitude, the MDE is relative to the control mean of the primary metric. For example, if the conversion rate for the control group is 10%, an MDE of 2% (0.2) would mean that a change would be detected if the rate moved outside of the range 9.8% to 10.2%. 
 
-![](/output/img/experiment-theory/iPjSCAikkvo1LS08hdcnUNMRTs0gBBf1uz637LtRMJ_qWxfemZrs2pXuG62AT5pv53jwIzvh3EEchljc24YO07xPv8zhV_Mwyf4T_mhohc2owmko0kMFUFjrS0fsfQVtGjwZnHRJvOteJccgvp9vs8Q)
+![](/docs/output/img/experiment-theory/iPjSCAikkvo1LS08hdcnUNMRTs0gBBf1uz637LtRMJ_qWxfemZrs2pXuG62AT5pv53jwIzvh3EEchljc24YO07xPv8zhV_Mwyf4T_mhohc2owmko0kMFUFjrS0fsfQVtGjwZnHRJvOteJccgvp9vs8Q)
 
 Let's look again at the case study from the previous section. Consider how the primary metric of ticket sale purchases may require a change in the MDE:
 
@@ -55,7 +55,7 @@ Any unique business needs and circumstances must be considered when planning for
  You can also set the MDE when analyzing your experiment results. 
 {{/partial:admonition}}
 
-![MDE_test_chart.jpeg](/output/img/experiment-theory/mde-test-chart-jpeg.jpeg)
+![MDE_test_chart.jpeg](/docs/output/img/experiment-theory/mde-test-chart-jpeg.jpeg)
 
 ## MDE and associated risk
 

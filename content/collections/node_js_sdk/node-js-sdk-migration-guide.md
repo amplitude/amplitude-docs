@@ -163,7 +163,7 @@ user_id: 'user@amplitude.com',
 
 ### Middleware
 
-Middlewares map to [plugins](/sdks/analytics/node/node-js-sdk#plugins) in the latest Node.js SDK. Here are two types of plugins, enrichment plugins and destination plugins. Here is an example of logging event information.
+Middlewares map to [plugins](/docs/sdks/analytics/node/node-js-sdk#plugins) in the latest Node.js SDK. Here are two types of plugins, enrichment plugins and destination plugins. Here is an example of logging event information.
 
 ```js
 + import { add } from '@amplitude/analytics-node'; //[tl! ++:1]

@@ -48,7 +48,7 @@ client = Amplitude(AMPLITUDE_API_KEY)
 | `callback`  | `Function`. Client level callback function. Takes three parameters:<br> 1. event: a Event instance<br> 2. code: a integer of Http response code <br> 3. message: a string message. | `None` |
 | `server_zone` |`String`. The server zone of the projects. Supports `EU` and `US`. For EU data residency, Change to `EU`. | `US` |
 | `server_url` | `String`. The API endpoint URL that events are sent to. Automatically selected by `server_zone` and `use_batch`. If this field is set with a string value instead of `None`, then `server_zone` and `use_batch` are ignored and the string value is used. | `https://api2.amplitude.com/2/httpapi` |
-| `use_batch` | `Boolean`.  Whether to use [batch API](/apis/batch-event-upload#batch-event-upload). By default, the SDK will use the default `serverUrl`. | `False` |
+| `use_batch` | `Boolean`.  Whether to use [batch API](/docs/apis/batch-event-upload#batch-event-upload). By default, the SDK will use the default `serverUrl`. | `False` |
 | `storage_provider` | `StorageProvider`. Used to create storage instance to hold events in the storage buffer. Events in storage buffer are waiting to be sent. | `InMemoryStorageProvider` |
 | `opt_out`  | `Boolean`. Opt out option. If set to `True`, client doesn't process and send events. | `False` |
 
@@ -120,7 +120,7 @@ User properties help you understand your users at the time they performed some a
 Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `set_once`, `unset`, `add`, `append`, `prepend`, `pre_insert`, `post_insert`, and `remove` on individual user properties. Declare the operations via a provided Identify interface. You can chain multiple operations together in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
 
 {{partial:admonition type="note" heading=""}}
-If the Identify call is sent after the event, the results of operations are visible immediately in the dashboard user’s profile area, but it won't appear in chart result until another event is sent after the Identify call. The identify call only affects events going forward. More details [here](/data/user-properties-and-events).
+If the Identify call is sent after the event, the results of operations are visible immediately in the dashboard user’s profile area, but it won't appear in chart result until another event is sent after the Identify call. The identify call only affects events going forward. More details [here](/docs/data/user-properties-and-events).
 {{/partial:admonition}}
 
 ### Set a user property

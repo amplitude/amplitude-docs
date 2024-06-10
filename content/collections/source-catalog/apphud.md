@@ -40,7 +40,7 @@ For help with this integration, contact the [Apphud Support team](https://apphud
 Before you can add this integration, you must do the following: 
 
 - Add the [Apphud SDK](https://docs.apphud.com/docs/sdk-integration).
-- Add the [Amplitude SDK](/sdks).
+- Add the [Amplitude SDK](/docs/sdks).
 - Match the user IDs between Apphud and Amplitude. See the [Apphud documentation](https://docs.apphud.com/docs/amplitude#match-user-ids) for help with this step. 
 
 ### Amplitude setup

@@ -24,7 +24,7 @@ The Browser SDK lets you send events to Amplitude.
 ## Initialize the SDK
 
 {{partial:admonition type="note" heading="Sending events"}}
-This SDK uses the [Http V2](/api/http-v2) API and follows the same constraints for events. Make sure that all events logged in the SDK have the `event_type` field and at least one of `deviceId`  (included by default) or `userId`, and follow the Http API's constraints on each of those fields.
+This SDK uses the [Http V2](/docs/api/http-v2) API and follows the same constraints for events. Make sure that all events logged in the SDK have the `event_type` field and at least one of `deviceId`  (included by default) or `userId`, and follow the Http API's constraints on each of those fields.
 
 To prevent instrumentation issues, device IDs and user IDs must be strings with a length of 5 characters or more. If an event contains a device ID or user ID that's too short, the ID value is removed from the event. If the event doesn't have a `userId` or `deviceId` value, Amplitude may reject the upload with a 400 status. Override the default minimum length of 5 characters by setting the `minIdLength` config option.
 {{/partial:admonition}}
@@ -64,7 +64,7 @@ amplitude.init(API_KEY, 'user@amplitude.com', options);
 |`cookieSameSite` | `string`. Sets `SameSite` property of cookies created. | `Lax` |
 |`cookieSecure` | `boolean`. Sets `Secure` property of cookies created. | `false` |
 |`cookieStorage` | `Storage<UserSession>`. Sets a custom implementation of `Storage<UserSession>` to persist user identity. | `MemoryStorage<UserSession>` |
-|`cookieUpgrade`| `boolean`. Sets upgrading from cookies created by [maintenance Browser SDK](/data/sdks/javascript/). If true, new Browser SDK deletes cookies created by maintenance Browser SDK. If false, Browser SDK keeps cookies created by maintenance Browser SDK. | `true` |
+|`cookieUpgrade`| `boolean`. Sets upgrading from cookies created by [maintenance Browser SDK](/docs/data/sdks/javascript/). If true, new Browser SDK deletes cookies created by maintenance Browser SDK. If false, Browser SDK keeps cookies created by maintenance Browser SDK. | `true` |
 |`disableCookies`| `boolean`. Sets permission to use cookies. If value is `true`, localStorage API is used to persist user identity. | The cookies is enable by default. |
 |`domain` | `string`. Sets the domain property of cookies created. | `undefined` |
 |`partnerId` | `string`. Sets partner ID. Amplitude requires the customer who built an event ingestion integration to add the partner identifier to `partner_id`. | `undefined` |
@@ -318,7 +318,7 @@ amplitude.init(API_KEY, OPTIONAL_USER_ID, {
 });
 ```
 
-A session is the period of time a user has your website open. See [How Amplitude defines sessions](/cdp/sources/instrument-track-sessions) for more information. When a new session starts, Amplitude tracks a session start event is and is the first event of the session. The event type for session start is `[Amplitude] Start Session`. When an existing session ends, Amplitude tracks `[Amplitude] End Sessions`, which is the last event of the session.
+A session is the period of time a user has your website open. See [How Amplitude defines sessions](/docs/cdp/sources/instrument-track-sessions) for more information. When a new session starts, Amplitude tracks a session start event is and is the first event of the session. The event type for session start is `[Amplitude] Start Session`. When an existing session ends, Amplitude tracks `[Amplitude] End Sessions`, which is the last event of the session.
 
 ### Track form interactions
 
@@ -368,7 +368,7 @@ User properties are details like device details, user preferences, or language t
 Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, and `remove` on individual user properties. Declare the operations via a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
 
 {{partial:admonition type="note" title=""}}
-If you send the Identify call is sent after the event, the results of operations are visible immediately in the dashboard user’s profile area. However, they don't appear in chart results until another event is sent after the Identify call. The identify call only affects events going forward. More details [here](/data/user-properties-and-events#applying-user-properties-to-events).
+If you send the Identify call is sent after the event, the results of operations are visible immediately in the dashboard user’s profile area. However, they don't appear in chart results until another event is sent after the Identify call. The identify call only affects events going forward. More details [here](/docs/data/user-properties-and-events#applying-user-properties-to-events).
 
 {{/partial:admonition}}
 
@@ -827,9 +827,9 @@ amplitude.add(webAttributionPlugin());
 amplitude.init(API_KEY);
 ```
 
-See the [configuration options](/sdks/sdk-catalog/browser/marketing-analytics-sdk#configuration).
+See the [configuration options](/docs/sdks/sdk-catalog/browser/marketing-analytics-sdk#configuration).
 
-Learn more about what the [Web Attribution Plugin](/sdks/sdk-catalog/browser/marketing-analytics-sdk#web-attribution) supports.
+Learn more about what the [Web Attribution Plugin](/docs/sdks/sdk-catalog/browser/marketing-analytics-sdk#web-attribution) supports.
 
 ##### Differences from the base SDK
 
@@ -867,8 +867,8 @@ amplitude.add(pageViewTrackingPlugin());
 amplitude.init(API_KEY);
 ```
 
-See the [configuration options](/sdks/sdk-catalog/browser/marketing-analytics-sdk#configuration).
-Learn more about what the [Page View Plugin](/sdks/sdk-catalog/browser/marketing-analytics-sdk#page-view) supports.
+See the [configuration options](/docs/sdks/sdk-catalog/browser/marketing-analytics-sdk#configuration).
+Learn more about what the [Page View Plugin](/docs/sdks/sdk-catalog/browser/marketing-analytics-sdk#page-view) supports.
 
 ##### Differences from base SDK
 
@@ -902,7 +902,7 @@ Check [here](../../debugger/#step-2-analyze-the-event-stream) for more details.
 
 ## Common Issues
 
-The following are common issues specific to Browser SDK. For additional general common issues, see [SDK Troubleshooting and Debugging](/sdks/sdk-debugging).
+The following are common issues specific to Browser SDK. For additional general common issues, see [SDK Troubleshooting and Debugging](/docs/sdks/sdk-debugging).
 
 ### AD Blocker
 

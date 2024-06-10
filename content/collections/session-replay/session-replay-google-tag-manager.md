@@ -7,9 +7,9 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1714506527
 ---
-Instrumenting Amplitude Session Replay with Google Tag Manager requires a different procedure than with the standard [Browser SDK Plugin](/session-replay/session-replay-plugin). To instrument Session Replay with Google Tag Manager:
+Instrumenting Amplitude Session Replay with Google Tag Manager requires a different procedure than with the standard [Browser SDK Plugin](/docs/session-replay/session-replay-plugin). To instrument Session Replay with Google Tag Manager:
 
-1. Add the [Google Tag Manager Web Template for Amplitude Analytics Browser SDK](/data/source-catalog/google-tag-manager) if it's not yet enabled.
+1. Add the [Google Tag Manager Web Template for Amplitude Analytics Browser SDK](/docs/data/source-catalog/google-tag-manager) if it's not yet enabled.
 2. In Google Tag Manager, create an **init** tag with the same API key as your Amplitude Project. This is the project that receives the session replays.
    1. Set the **Trigger** to `Initialization - All Pages`.
    2. Amplitude recommends that you enable default event tracking for better search support with Session Replay. Default events count against your event quota.
@@ -46,7 +46,7 @@ Instrumenting Amplitude Session Replay with Google Tag Manager requires a differ
 ```
 
 {{partial:admonition type="info" heading="Sample rate"}}
-The sample rate in this sample is set to 1, or 100%, which means every session is captured. This is good for testing, but not recommended for production. For more information, see [Session Replay Plugin | Sample Rate](/session-replay/sdks/plugin/#sampling-rate).
+The sample rate in this sample is set to 1, or 100%, which means every session is captured. This is good for testing, but not recommended for production. For more information, see [Session Replay Plugin | Sample Rate](/docs/session-replay/sdks/plugin/#sampling-rate).
 {{/partial:admonition}}
 
 ## Troubleshooting

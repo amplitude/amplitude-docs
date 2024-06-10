@@ -13,7 +13,7 @@ landing_blurb: 'Create a new experiment in Amplitude.'
 ---
 The decisions you make in the **design** phase set the stage for your experiment’s success. By putting more thought into your experiment’s purpose and goals before you start, you’ll be far more likely to glean useful, actionable insights from it.
 
-To create a new experiment, first ensure you’ve created a deployment, and either [installed the SDK](/experiment/workflow/configure) or are set up to call the [evaluation REST API](https://www.docs.developers.amplitude.com/experiment/apis/evaluation-api/ "https://www.docs.developers.amplitude.com/experiment/apis/evaluation-api/").  Then follow these steps:
+To create a new experiment, first ensure you’ve created a deployment, and either [installed the SDK](/docs/experiment/workflow/configure) or are set up to call the [evaluation REST API](https://www.docs.developers.amplitude.com/experiment/apis/evaluation-api/ "https://www.docs.developers.amplitude.com/experiment/apis/evaluation-api/").  Then follow these steps:
 
 1. Open Amplitude Experiment and click *+ New.* In the *Create New…* fly-out panel, select *Experiment*.
 2. In the *Create Experiment* modal, choose the project that will house this experiment from the *Projects* drop-down menu.
@@ -33,4 +33,4 @@ Amplitude Experiment will open the Experiment Design panel to guide you through 
 
 As an example, let's say you've chosen to run a hypothesis testing experiment with a direction setting of "increase" and a minimum goal (MDE) of 2%. This means you believe the metric will increase by at least 2%. If you change the experiment type to *Do No Harm*, you'd be saying that you expect the metric to "*not* increase by 2%." A good use case for a Do No Harm experiment is launching a service agreement in your app and then testing for a lack of change in user retention.
 
-Click *Continue* to move on to the next step—[defining your experiment’s goals](/experiment/workflow/define-goals).
+Click *Continue* to move on to the next step—[defining your experiment’s goals](/docs/experiment/workflow/define-goals).

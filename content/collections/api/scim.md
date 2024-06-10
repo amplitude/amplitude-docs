@@ -13,7 +13,7 @@ lede: |-
 
   This guide provides detailed documentation on the specific routes supported by Amplitude's implementation of the [System for Cross-domain Identity Management (SCIM) 2.0 Standard](http://www.simplecloud.info/#Specification). This guide pays specific attention to any details useful for debugging issues with a SCIM integration.
 
-  For help integrating the SCIM API with an Identity Provider like Okta or JumpCloud, or help enabling the SCIM API for an Amplitude organization, see [Set up SCIM provisioning in Amplitude](/admin/account-management/scim-provision).
+  For help integrating the SCIM API with an Identity Provider like Okta or JumpCloud, or help enabling the SCIM API for an Amplitude organization, see [Set up SCIM provisioning in Amplitude](/docs/admin/account-management/scim-provision).
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716312360
 summary: 'Provision and manage users and groups. This API uses the System for Cross-domain Identity Management (SCIM) 2.0 Standard.'
@@ -398,7 +398,7 @@ A successful request returns a `200 OK` status and a JSON response with data abo
 Creates a group in Amplitude. It adds existing users to the group and invites new users to Amplitude.
 
 {{partial:admonition type="warning" heading=""}}
-When a user is added to a group without first being invited to the Amplitude organization, they are immediately provisioned with the minimum permissions and added to the group. The user is invited via email. [Learn more about permission groups](/admin/account-management/manage-permission-groups).
+When a user is added to a group without first being invited to the Amplitude organization, they are immediately provisioned with the minimum permissions and added to the group. The user is invited via email. [Learn more about permission groups](/docs/admin/account-management/manage-permission-groups).
 {{/partial:admonition}}
 
 ```bash

@@ -4,7 +4,7 @@ blueprint: home
 title: 'Amplitude Documentation'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717698517
+updated_at: 1717709382
 hide_toc: true
 hide_side-nav: true
 template: home
@@ -97,6 +97,13 @@ popular_content:
     article: 57f6f8ee-4044-4a3e-af34-c6d6eca409dc
     icon: home/data-1.svg
     blurb: 'Learn differences between user properties and event properties'
+    type: popular_item
+    enabled: true
+  -
+    id: lvmoigbu
+    article: 56c6e293-ea12-4e7c-8fb3-55216749d5ce
+    icon: home/amp-analytics.svg
+    blurb: 'Use custom formulas in Amplitude to create the analysis you need'
     type: popular_item
     enabled: true
   -

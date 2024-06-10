@@ -26,11 +26,10 @@ To embed an Amplitude chart into a Notion document, follow these steps:
 2. Open your Notion document and paste the URL into it.
 3. Select how you'd like Notion to handle the Amplitude URL in the document. You can post as a **preview** (a fully unfurled chart), a **mention** (a snippet that doesn't show the fully unfurled chart), or as a **link** (the URL).  
   
-	![Frame_28.png](/output/img/analytics/Frame_28.png)
-
+![Frame_28.png](/docs/output/img/analytics/Frame_28.png)
 4. If this is the first time you're using this integration, click *Connect to Amplitude to update*. Notion will initiate a short authentication flow, to ensure you have the appropriate Amplitude permissions to view the chart you're pasting.  
   
-![Notion_modal.png](/output/img/analytics/Notion_modal.png)  
+![Notion_modal.png](/docs/output/img/analytics/Notion_modal.png)  
   
 Click *Allow* to proceed.
 

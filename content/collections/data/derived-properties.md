@@ -15,7 +15,7 @@ In some cases, you may want to run analyses based on properties that were not se
 
 For example, you may want to create a chart that groups by whether an item added to a shopping cart is eligible for a discount. In that case, you could create a derived property whose value is a boolean based on whether the price exceeds a certain amount.
 
-![Screen_Shot_2021-08-03_at_2.35.25_PM.png](/output/img/data/screen-shot-2021-08-03-at-2-35-25-pm-png.png)
+![Screen_Shot_2021-08-03_at_2.35.25_PM.png](/docs/output/img/data/screen-shot-2021-08-03-at-2-35-25-pm-png.png)
 
 ### Feature availability
 
@@ -40,7 +40,7 @@ To create a derived property, follow these steps:
 
 As long as the formula you entered is valid, you can test the results in the space below the formula editor. Do this by selecting existing values for properties used in the formula, or test out any free-form values. You can do this from either the *Create/Edit* modal or from the side panel for a saved derived property.
 
-![Screen_Shot_2021-08-03_at_12.46.09_PM.png](/output/img/data/screen-shot-2021-08-03-at-12-46-09-pm-png.png)
+![Screen_Shot_2021-08-03_at_12.46.09_PM.png](/docs/output/img/data/screen-shot-2021-08-03-at-12-46-09-pm-png.png)
 
 ## Derived property use cases
 
@@ -212,7 +212,7 @@ DIVIDE(
 
 Sample output:
 
-![Date Diff.png](/output/img/data/date-diff-png.png)
+![Date Diff.png](/docs/output/img/data/date-diff-png.png)
 
 In the derived property above, the properties end\_date and start\_date are converted into UNIX timestamps, so that Amplitude can calculate the difference between them. That result is then divided by 86400000, which is the number of milliseconds in one day.
 
@@ -291,7 +291,7 @@ PROPERTY(
 
 Sample output:
 
-![Date Formatter.png](/output/img/data/date-formatter-png.png)
+![Date Formatter.png](/docs/output/img/data/date-formatter-png.png)
 
 One way to format dates to Standard Date Format is to use a series of IF statements. Make sure the higher specificity conditional comes first. Replace the `$<number>` here with the actual properties.
 
@@ -350,7 +350,7 @@ IF(
 
 Sample output:
 
-![Screen Shot 2023-01-19 at 3.23.29 PM.png](/output/img/data/screen-shot-2023-01-19-at-3-23-29-pm-png.png)
+![Screen Shot 2023-01-19 at 3.23.29 PM.png](/docs/output/img/data/screen-shot-2023-01-19-at-3-23-29-pm-png.png)
 
 To replace multiple property values, use `REGEXEXTRACT()` to pull the string in the property, and use OR statements inside an IF statement to see if the value pulled from the properties contains any of the values you wish to replace. In this example, if the property value matches any of the values specified, it will replace the value with `Casual`. Otherwise, it will replace the property with `False`. Replace the `$<number>` here with the actual properties.
 
@@ -367,7 +367,7 @@ PROPERTY('color', 'event'),
 
 Sample output:
 
-![Screenshot 2023-09-28 at 14.39.54.png](/output/img/data/screenshot-2023-09-28-at-14-39-54-png.png)
+![Screenshot 2023-09-28 at 14.39.54.png](/docs/output/img/data/screenshot-2023-09-28-at-14-39-54-png.png)
 
 The property color was ingested as a string into Amplitude "Red, Green, Blue". After using SPLIT, the resulting value will be `[Red, Green, Blue]`.
 
@@ -381,6 +381,6 @@ PROPERTY("Transform into Array", "derived")
 
 Sample output:
 
-![Screenshot 2023-09-28 at 14.42.30.png](/output/img/data/screenshot-2023-09-28-at-14-42-30-png.png)
+![Screenshot 2023-09-28 at 14.42.30.png](/docs/output/img/data/screenshot-2023-09-28-at-14-42-30-png.png)
 
 Now the underlying data being used is an array. `ITEM_COUNT` will count the number of items that make up the array.

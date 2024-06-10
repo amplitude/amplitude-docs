@@ -19,13 +19,13 @@ This feature is available to users on **all Amplitude plans**. See our [pricing 
 
 ## Before you begin
 
-First and foremost, events will not appear in any Amplitude charts until instrumentation is complete, so make sure you've got that done. You'll definitely want to read our article on [building charts in Amplitude](/get-started/helpful-definitions), and be sure you understand [the difference between user properties and event properties](/data/user-properties-and-events). 
+First and foremost, events will not appear in any Amplitude charts until instrumentation is complete, so make sure you've got that done. You'll definitely want to read our article on [building charts in Amplitude](/docs/get-started/helpful-definitions), and be sure you understand [the difference between user properties and event properties](/docs/data/user-properties-and-events). 
 
 ## Set up a user composition analysis
 
 Most Amplitude charts rely on the Events Module to build an analysis. The User Composition chart is not an event-driven analysis—and, therefore, does not have an Events Module—so it works a little differently.
 
-![UC_1.png](/output/img/other-charts/uc-1-png.png)
+![UC_1.png](/docs/output/img/other-charts/uc-1-png.png)
 
 Instead of events, a user composition analysis relies on **user properties**. Select a user property you're interested in, define your user segments, and the User Composition chart will display a breakdown of values for that property across the user segments you've specified.
 
@@ -46,10 +46,10 @@ To build your own user composition analysis, follow these steps:
 
 7. Use the date picker to specify the timezone and set the timeframe of your analysis.
 
-In all cases, Amplitude will break out the top 13 values for your user property; any other values will be grouped in the *Other* bucket. The value in the center of the chart is the column sum value in the [breakdown data table](/analytics/charts/review-chart-data) below the chart. It includes only the users who are part of the top 100 user property value groups by user count.
+In all cases, Amplitude will break out the top 13 values for your user property; any other values will be grouped in the *Other* bucket. The value in the center of the chart is the column sum value in the [breakdown data table](/docs/analytics/charts/review-chart-data) below the chart. It includes only the users who are part of the top 100 user property value groups by user count.
 
 You can also view your results as a bar graph:
 
-![UC_4.png](/output/img/other-charts/uc-4-png.png)
+![UC_4.png](/docs/output/img/other-charts/uc-4-png.png)
 
-And of course, you can always inspect the composition of your user groups via the [Microscope](/analytics/microscope).
+And of course, you can always inspect the composition of your user groups via the [Microscope](/docs/analytics/microscope).

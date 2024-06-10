@@ -10,14 +10,14 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717692188
 ---
-This article is third in a series about Historical Counts. If you haven't done so already, read parts [one](/analytics/historical-count-1) and [two](/analytics/historical-count-2).
+This article is third in a series about Historical Counts. If you haven't done so already, read parts [one](/docs/analytics/historical-count-1) and [two](/docs/analytics/historical-count-2).
 
 ## Historical count in funnel analyses
 
 In Funnel Analysis charts, a user could enter the funnel multiple times, or perform the various steps multiple times. In order to decide if a user counts as converted in a Funnel Analysis chart with a Historical Count filter, Amplitude considers two things: 
 
 1. The *N*th instance must be within the date picker dates; and
-2. The *N*th instance must occur within the [conversion window](/analytics/charts/funnel-analysis/funnel-analysis-build) of the other funnel steps.
+2. The *N*th instance must occur within the [conversion window](/docs/analytics/charts/funnel-analysis/funnel-analysis-build) of the other funnel steps.
 
 As an example, let's imagine a two-step funnel. We've set the Historical Count filter to 2 on `event_a`, with a date range of December 21st, 2020 to December 22nd, 2020. The funnel is:
 
@@ -36,7 +36,7 @@ If we instead apply the Historical Count filter of 2 to the second event—every
 * `Event_a` (the one in the specified time frame) was performed **before** the second occurrence of `event_b`.
 
 {{partial:admonition type='note'}}
-When using [Historical Count filters](/analytics/historical-count-1) on the same events that happen within the same second, users will appear to have dropped off. This is because the [funnel query](/analytics/charts/funnel-analysis/funnel-analysis-interpret) does not distinguish between events that happen within the same second, but the Historical Count filter does. 
+When using [Historical Count filters](/docs/analytics/historical-count-1) on the same events that happen within the same second, users will appear to have dropped off. This is because the [funnel query](/docs/analytics/charts/funnel-analysis/funnel-analysis-interpret) does not distinguish between events that happen within the same second, but the Historical Count filter does. 
 {{/partial:admonition}}
 
 ## Historical Count in behavioral cohorts
@@ -49,4 +49,4 @@ Conversely, Historical Count allows you to pinpoint a user’s fifth workout. So
 
 Amplitude allows users to combine the power of both, by creating a cohort with historical count as a condition. You can also see the cohort population over time as well.
 
-To add Historical Count to a behavioral cohort, see our Help Center article on [creating a behavioral cohort in Amplitude](/analytics/behavioral-cohorts).
+To add Historical Count to a behavioral cohort, see our Help Center article on [creating a behavioral cohort in Amplitude](/docs/analytics/behavioral-cohorts).

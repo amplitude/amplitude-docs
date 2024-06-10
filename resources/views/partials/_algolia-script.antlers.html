@@ -15,7 +15,7 @@
     transformItems(items) {
         return items.map((item) => ({
           ...item,
-          url: item.url.replace('https://amplitude-docs.vercel.app','')
+          url: item.url.replace('https://amplitude-docs.vercel.app','/docs')
         }))
       }
   });

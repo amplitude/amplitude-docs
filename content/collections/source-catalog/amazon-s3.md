@@ -286,13 +286,13 @@ After you have all the fields needed for the transformation, you can save it. Yo
 
 You can include more fields by clicking the **Add Mapping** button. Here Amplitude supports 4 kinds of mappings: Event properties, User Properties, Group Properties and Additional Properties. 
 
-Find a list of supported fields for events in the [HTTP V2 API documentation](/analytics/apis/http-v2-api/#keys-for-the-event-argument) and  for user properties in the [Identify API documentation](/analytics/apis/identify-api/#identification-parameter-keys). Add any columns not in those lists to either `event_properties` or `user_properties`, otherwise it's ignored. 
+Find a list of supported fields for events in the [HTTP V2 API documentation](/docs/analytics/apis/http-v2-api/#keys-for-the-event-argument) and  for user properties in the [Identify API documentation](/docs/analytics/apis/identify-api/#identification-parameter-keys). Add any columns not in those lists to either `event_properties` or `user_properties`, otherwise it's ignored. 
 
 After you have added all the fields you wish to bring into Amplitude, you can view samples of this configuration in the Data Preview section. Data Preview automatically updates as you include or remove fields and properties. In Data Preview, you can look at a few sample records based on the source records along with how that data is imported into Amplitude. This ensures that you are bringing in all the data points you need into Amplitude. You can look at 10 different sample source records and their corresponding Amplitude events.
 
 
 {{partial:admonition type="note" title=""}}
-The group properties import feature requires that groups are set in the [HTTP API event format](/apis/http-v2-api). The converter expects a `groups` object and a `group_properties` object.
+The group properties import feature requires that groups are set in the [HTTP API event format](/docs/apis/http-v2-api). The converter expects a `groups` object and a `group_properties` object.
 {{/partial:admonition}}
 
 ### Manual converter creation
@@ -307,7 +307,7 @@ The converter language describes extraction of a value given a JSON element. You
 - JSON_OBJECT
 
 {{partial:admonition type="example" title="Example converters"}}
-See the [Converter Configuration reference](/data/converter-configuration-reference) for more help.
+See the [Converter Configuration reference](/docs/data/converter-configuration-reference) for more help.
 {{/partial:admonition}}
 
 ### Configure converter in Amplitude

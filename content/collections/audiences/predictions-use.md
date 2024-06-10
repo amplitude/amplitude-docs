@@ -14,7 +14,7 @@ updated_at: 1715120541
 A cohort based on a prediction can tell you which of your users are most likely to convert, but if you don’t target them via an email or advertising campaign, or personalize an experience to them, you won’t see the benefits. So once you save a cohort from a prediction, the next step is to plug it into a targeting campaign. 
 
 {{partial:admonition type='note'}}
-Be sure to check out our other articles on predictions—[Predictions: use Amplitude's AI to help maximize lift](/cdp/audiences/predictions) and [Build a prediction](/cdp/audiences/predictions-build).
+Be sure to check out our other articles on predictions—[Predictions: use Amplitude's AI to help maximize lift](/docs/cdp/audiences/predictions) and [Build a prediction](/docs/cdp/audiences/predictions-build).
 {{/partial:admonition}}
 
 Prediction-based cohorts work best with three common campaign types:
@@ -68,7 +68,7 @@ To do this, load two segments that were exposed to the campaign: Predictive Coho
 
 For example, in the screenshot below, engagement and conversion rates are higher for the top 20% predictive cohort:
 
-![Event_Seg_clean.png](/output/img/audiences/event-seg-clean-png.png)
+![Event_Seg_clean.png](/docs/output/img/audiences/event-seg-clean-png.png)
 
 Next, you’ll want to see if the different user groups reacted to the campaign differently.
 

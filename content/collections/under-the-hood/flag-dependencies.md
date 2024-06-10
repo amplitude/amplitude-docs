@@ -7,7 +7,7 @@ source: 'https://www.docs.developers.amplitude.com/experiment/general/flag-depen
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716926567
 ---
-Flag dependencies define relationships between flags to ensure evaluation order. The result of each flag's evaluation is then passed to all subsequent evaluations to decide if dependent flags should [evaluate](/experiment/implementation#flag-dependencies) based on the result of the dependency.
+Flag dependencies define relationships between flags to ensure evaluation order. The result of each flag's evaluation is then passed to all subsequent evaluations to decide if dependent flags should [evaluate](/docs/experiment/implementation#flag-dependencies) based on the result of the dependency.
 
 Flag dependencies are currently used to implement mutual exclusion and holdout groups.
 
@@ -20,7 +20,7 @@ A mutual exclusion group ensures that, on evaluation, at most one of the experim
 The variant result of a mutual exclusion group's evaluation isn't returned and not assigned as a user property.
 
 For more information, see [Set up and run mutually exclusive experiments
-](/experiment/advanced-techniques/mutually-exclusive-experiments)
+](/docs/experiment/advanced-techniques/mutually-exclusive-experiments)
 
 ## Holdout groups
 
@@ -30,7 +30,7 @@ A holdout group withholds a percentage of traffic from a group of experiments, a
 
 The variant result of a holdout group's evaluation isn't returned but is assigned as a user property to enable holdout analysis.
 
-For more information, see [Holdout Groups](/experiment/advanced-techniques/holdout-groups-exclude-users)
+For more information, see [Holdout Groups](/docs/experiment/advanced-techniques/holdout-groups-exclude-users)
 ## Local evaluation support
 
 Flag dependencies (mutual exclusion and holdout groups) is only supported after certain version of SDKs.
@@ -41,8 +41,8 @@ Prior local evaluation SDK versions don't consider mutual exclusion or holdout g
 
 | SDK | Local Evaluation Flag Dependencies Support |
 | --- | --- |
-| [:material-nodejs: Node.js](/sdks/experiment/experiment-node-js) | `1.4.0+` |
-| [:material-language-ruby: Ruby](/sdks/experiment/experiment-ruby) | `1.1.0+` |
-| [:material-language-java: JVM](/sdks/experiment/experiment-jvm) | `1.1.0+` |
-| [:fontawesome-brands-golang: Go](/sdks/experiment/experiment-go) | `1.1.0+` |
-| [:material-language-python: Python](/sdks/experiment/experiment-python) | `1.1.0+` |
+| [:material-nodejs: Node.js](/docs/sdks/experiment/experiment-node-js) | `1.4.0+` |
+| [:material-language-ruby: Ruby](/docs/sdks/experiment/experiment-ruby) | `1.1.0+` |
+| [:material-language-java: JVM](/docs/sdks/experiment/experiment-jvm) | `1.1.0+` |
+| [:fontawesome-brands-golang: Go](/docs/sdks/experiment/experiment-go) | `1.1.0+` |
+| [:material-language-python: Python](/docs/sdks/experiment/experiment-python) | `1.1.0+` |

@@ -7,9 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta content="{{content | strip_tags | safe_truncate(100)}}" name="description">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/general/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/general/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/general/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/docs/assets/general/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/docs/assets/general/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/docs/assets/general/favicon-16x16.png">
   <title>{{ title ?? site:name }}</title>
   {{if content }}
   {{partial:partials/schema/article}}
@@ -17,10 +17,10 @@
   {{partial:partials/schema/webpage}}
   {{/if}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.css">
-  <link href="{{ mix src='/css/site.css' }}" rel="stylesheet">
-  <link href="{{ mix src='/css/algolia.css' }}" rel="stylesheet">
+  <link href="{{ mix src='/docs/css/site.css' }}" rel="stylesheet">
+  <link href="{{ mix src='/docs/css/algolia.css' }}" rel="stylesheet">
 
-  <script src="{{ mix src='/js/site.js' }}"></script>
+  <script src="{{ mix src='/docs/js/site.js' }}"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
   <link rel="preconnect" href="https://93SYI9HL20-dsn.algolia.net" crossorigin />
@@ -61,8 +61,8 @@
       </div>
     {{ else }}
       <div
-        class="w-64 h-100 top-24 bg-white bottom-0 border-solid border-r border-black-200 -left-60 lg:left-0 lg:translate-x-0 lg:block z-10 fixed transition shadow overflow-auto overscroll-contain" :class="{ 'translate-x-[240px]': sidebarOpen }">
-        <button @click="sidebarOpen = !sidebarOpen" class="absolute lg:hidden left-0 z-50 w-4 translate-x-[245px] translate-y-8 " :class="{ 'rotate-180': sidebarOpen, 'translate-x-[250px]' : sidebarOpen }">{{svg src="/assets/general/expand.svg"}}</button>
+        class="w-64 h-100 top-24 bg-white bottom-0 border-solid border-r border-black-200 -left-60 lg:left-0 lg:translate-x-0 lg:block z-10 fixed transition shadow" :class="{ 'translate-x-[240px]': sidebarOpen }">
+        <button @click="sidebarOpen = !sidebarOpen" class="absolute lg:hidden left-0 z-50 w-4 translate-x-[245px] translate-y-8" :class="{ 'rotate-180': sidebarOpen, 'translate-x-[250px]' : sidebarOpen }">{{svg src="/docs/assets/general/expand.svg"}}</button>
 
         {{ if segment_1 }}
             {{ partial:side-nav :nav_title="nav_title" }}

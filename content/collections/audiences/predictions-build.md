@@ -15,7 +15,7 @@ updated_at: 1715119140
 Predictions allow you to segment your users based on their likelihood to perform specific events or actions in the future.
 
 {{partial:admonition type='note'}}
-Be sure to check out our other articles on predictions: [Predictions: use Amplitude's AI to help maximize lift](/cdp/audiences/predictions) and [Use predictions in your campaigns](/cdp/audiences/predictions-use).
+Be sure to check out our other articles on predictions: [Predictions: use Amplitude's AI to help maximize lift](/docs/cdp/audiences/predictions) and [Use predictions in your campaigns](/docs/cdp/audiences/predictions-use).
 {{/partial:admonition}}
 
 ## Build a prediction

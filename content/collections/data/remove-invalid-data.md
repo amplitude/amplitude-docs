@@ -100,7 +100,7 @@ To delete events and event properties you no longer need, follow these steps:
 3. Click *Delete*.
 4. A verification modal will appear, instructing you to type in a confirmation phrase to continue with the deletion process. Type it in the text box and click *Delete*.
 
-![delete_one_event_data.png](/output/img/data/delete-one-event-data-png.png)
+![delete_one_event_data.png](/docs/output/img/data/delete-one-event-data-png.png)
 
 
 If you change your mind after you've deleted an event or property, you can easily undelete it. To do so, follow these steps:

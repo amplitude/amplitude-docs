@@ -39,17 +39,17 @@ To connect your Amplitude account to Slack, follow these steps:
 1. Navigate to *Settings> Personal Settings*.
 2. Click *Profile,* then *Connect to Slack*.
 
-	![integrate_slack_with_amplitude.png](/output/img/analytics/integrate_slack_with_amplitude.png)
+	![integrate_slack_with_amplitude.png](/docs/output/img/analytics/integrate_slack_with_amplitude.png)
 
 3. In the new browser tab that opens, click *Allow* to grant Amplitude access to your Slack account.
 
-![slack_connection.png](/output/img/analytics/slack_connection.png)
+![slack_connection.png](/docs/output/img/analytics/slack_connection.png)
 
 You will immediately receive a Slack message from Amplitude, which includes a link to a brief explanation of how to use the integration.
 
 Once you've authenticated via this process, Slack will automatically **unfurl** (or preview) any links to Amplitude charts, both in Slack channels and direct messages (**DM**s).
 
-![unfurled_chart_in_Slack.png](/output/img/analytics/unfurled_chart_in_Slack.png)
+![unfurled_chart_in_Slack.png](/docs/output/img/analytics/unfurled_chart_in_Slack.png)
 
 Slack will not unfurl Pathfinder, Compass, and Persona charts.
 
@@ -65,7 +65,7 @@ To receive these notifications, you will have to set up the Amplitude app for Sl
 1. In Amplitude Data, navigate to *Settings > Integrations*.
 2. If you haven’t previously enabled the Amplitude Slack App, you’ll be prompted to grant Amplitude permission in your Slack workspace. Specify a channel where notifications about this project should be sent.  
   
-	![slack_for_data.png](/output/img/analytics/slack_for_data.png)
+	![slack_for_data.png](/docs/output/img/analytics/slack_for_data.png)
 
 3. Click *Add* to complete the process.
 
@@ -79,20 +79,20 @@ Once you've connected your Slack account to Amplitude, you will receive Slack no
 
 Use this integration to quickly get questions answered about your analysis, share an insight, or leave notes to yourself.
 
-![Screenshot_2019-08-05_17.37.06.png](/output/img/analytics/Screenshot_2019-08-05_17.37.06.png)
+![Screenshot_2019-08-05_17.37.06.png](/docs/output/img/analytics/Screenshot_2019-08-05_17.37.06.png)
 
 Use the content link within the Slack message to quickly access the Amplitude chart, dashboard, or notebook referenced.
 
-![Screenshot_2019-08-05_17.36.57.png](/output/img/analytics/Screenshot_2019-08-05_17.36.57.png)
+![Screenshot_2019-08-05_17.36.57.png](/docs/output/img/analytics/Screenshot_2019-08-05_17.36.57.png)
 
 You can also use this integration to leave reminders or notes for yourself. Simply @ mention your own Amplitude account, and you will receive a Slack notification.
 
-![Screenshot_2019-08-05_17.36.05.png](/output/img/analytics/Screenshot_2019-08-05_17.36.05.png)
+![Screenshot_2019-08-05_17.36.05.png](/docs/output/img/analytics/Screenshot_2019-08-05_17.36.05.png)
 
 ## Connect with team spaces
 
 Connect Amplitude team spaces to specific Slack channels to receive notifications when your team creates new analyses. When new content is added to that team space, it will automatically appear in the Slack channel. Click *Connect with Slack* from within a team space to set this up:
 
-![slack_team_space.gif](/output/img/analytics/slack_team_space.gif)
+![slack_team_space.gif](/docs/output/img/analytics/slack_team_space.gif)
 
 To disconnect your team space from Slack, click the same button which should now read *Connected to [YourTeamSpaceName]* and select *Disconnect Slack.*

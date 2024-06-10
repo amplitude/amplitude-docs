@@ -35,7 +35,7 @@ divided by
 
 In the table below, Day 3 retention for April 1 shows that 6,633 users triggered the return event on April 4 or later. 9,644 users triggered the start event on April 1. Dividing 6,633 by 9,644 gives us an April 1 Day 3 retention of 68.8%.
 
-![7day_retention_Day3_up.jpeg](/output/img/retention-analysis/7day-retention-day3-up-jpeg.jpeg)
+![7day_retention_Day3_up.jpeg](/docs/output/img/retention-analysis/7day-retention-day3-up-jpeg.jpeg)
 
 The retention percentage for a specific cohort entry date will always **decrease over time**. This is because while the denominator remains constant, the numerator gradually goes down: the number of people who are 7 day+ retained will be less than the number of people who are 3 day+ retained. 
 
@@ -54,7 +54,7 @@ that reached the retention interval }
 
 In the table below, the All Users Day 3 retention shows that 55,752 users triggered the return event on Day 3 or later, while 137,586 users triggered the start event between March 30 and April 6. Dividing 55,752 by 137,586 gives us a Day 3 retention of 63.8%. 
 
-![7day_retention_allUsers.jpeg](/output/img/retention-analysis/7day-retention-allusers-jpeg.jpeg)
+![7day_retention_allUsers.jpeg](/docs/output/img/retention-analysis/7day-retention-allusers-jpeg.jpeg)
 
 In the table, the All Users row contains the daily sums of the date rows below it. Incomplete data are excluded from the All Users totals (incomplete cells are noted with an asterisk).
 
@@ -64,7 +64,7 @@ However, when the analysis is still in progress, the graph can **curve up** and 
 
 Accordingly, the denominator value in the Microscope for a single day will be the sum of the users who have completed that day’s retention interval. This value is not shown in the breakdown table.
 
-![](/output/img/retention-analysis/i9GRGIY6n-UT9VyUMTrr0fAGUoEDqEwPYAmYaj0G2qMOi4tpTeeyWSB39W051OuDgOxkTAUace1Lureo0GurkEmiA53YwD1OjfcLS8MWagNojgyqhotTHMiOA8qAo2DlaOSBDZaioWWBFxwiwHpyMY4)
+![](/docs/output/img/retention-analysis/i9GRGIY6n-UT9VyUMTrr0fAGUoEDqEwPYAmYaj0G2qMOi4tpTeeyWSB39W051OuDgOxkTAUace1Lureo0GurkEmiA53YwD1OjfcLS8MWagNojgyqhotTHMiOA8qAo2DlaOSBDZaioWWBFxwiwHpyMY4)
 
 ## Return On
 
@@ -81,7 +81,7 @@ divided by
 
 In the table below, Day 3 retention for April 1 shows that 6,594 users triggered the return event on April 4, while 9,644 users triggered the start event on April 1. Dividing 6,594 by 9,644 gives us an April 1 Day 3 retention of 68.4%.
 
-![returnOn_Day3.png](/output/img/retention-analysis/returnon-day3-png.png)
+![returnOn_Day3.png](/docs/output/img/retention-analysis/returnon-day3-png.png)
 
 All users' Day 3 retention shows 48,219 users triggered the return event on Day 3, while 125,665 users triggered the start event between March 30 and April 6, giving us a Day 3 retention of 72%.   
 
@@ -90,7 +90,7 @@ A user can trigger the return event on multiple days and be counted on each day.
 As with Return On or After retention, when the analysis time frame is complete, the denominator value in the Microscope for any day will be consistent with the total number of users for overall retention. When the analysis is still in progress, the denominator value in the Microscope for a single day will be the sum of the users who have completed that day’s retention interval. This value is not shown in the breakdown table.
 
 {{partial:admonition type='note'}}
-In bar chart format, the X axis will include the most common units of time ([days, weeks, months](/analytics/charts/retention-analysis/retention-analysis-time)) by default. You can customize this using [Return On (Custom)](https://help.amplitude.com/hc/en-us/articles/4402840087181#h_01FA68RVF9FY09M7BXB66SGVWX).
+In bar chart format, the X axis will include the most common units of time ([days, weeks, months](/docs/analytics/charts/retention-analysis/retention-analysis-time)) by default. You can customize this using [Return On (Custom)](https://help.amplitude.com/hc/en-us/articles/4402840087181#h_01FA68RVF9FY09M7BXB66SGVWX).
 {{/partial:admonition}}
 
 Additionally, the overall row represents the sum of the cohort entry date rows below it. Similar to Return On or After retention, if data is incomplete (cells noted with an \*), they are excluded from the overall row's total (e.g. the sum of each row for Day 3 won't add to the overall Day 3 value).

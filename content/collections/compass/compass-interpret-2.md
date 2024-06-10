@@ -11,7 +11,7 @@ updated_at: 1717104023
 landing: true
 landing_blurb: 'Create a cohort from your Compass chart results'
 ---
-This article will further explain correlation and how it is applies to your Compass chart, and how to create a cohort from its results. See [Interpret your Compass chart, part 1](/analytics/charts/compass/compass-interpret-1) for a breakdown of how to read and interpret a Compass chart.
+This article will further explain correlation and how it is applies to your Compass chart, and how to create a cohort from its results. See [Interpret your Compass chart, part 1](/docs/analytics/charts/compass/compass-interpret-1) for a breakdown of how to read and interpret a Compass chart.
 
 ## Understanding correlation
 
@@ -34,12 +34,12 @@ You may have heard of different variations and definitions of correlation. Well-
 Remember, **correlation is not causation**, so any hypotheses you come up with via a Compass analysis must still be **tested and verified** in the real world.
 
 {{partial:admonition type='note'}}
- Use [Amplitude Experiment](/experiment/overview) to determine causality. 
+ Use [Amplitude Experiment](/docs/experiment/overview) to determine causality. 
 {{/partial:admonition}}
 
 ### Why is correlation a good metric to use here?
 
-When you're looking for that one metric that captures your users' "a-ha" moment, you want one where most users above a certain threshold go on to be retained, and most users below the threshold end up not being retained. Such a metric would have a threshold with a good [positive predictive value (PPV)](/analytics/charts/compass/compass-find-inflection-metrics).
+When you're looking for that one metric that captures your users' "a-ha" moment, you want one where most users above a certain threshold go on to be retained, and most users below the threshold end up not being retained. Such a metric would have a threshold with a good [positive predictive value (PPV)](/docs/analytics/charts/compass/compass-find-inflection-metrics).
 
 However, you also have to consider is how easy it will be to move users across that threshold. If you find a threshold with a very strong PPV and NPV, but discover that it's very difficult to move users across it, that metric will not be of much help in growing your user base. A tell-tale sign of this would be if few of your users have crossed the threshold, or almost all of your users have already crossed it. This isn't always the case, of course—but in the absence of more specific information, it's generally a good assumption.
 
@@ -55,14 +55,14 @@ You can create a cohort from your results by clicking *Create Cohort.* Then Ampl
 
 This comparison is based on **`Any Active Event`**, and not simply `Any Event`.
 
-Clicking *Show* (next to *Correlation Table*) will bring up a detailed [contingency table](/analytics/charts/compass/compass-find-inflection-metrics) that shows the count of users in your base cohort in each of four categories: true positives, false positives, false negatives, and true negatives. 
+Clicking *Show* (next to *Correlation Table*) will bring up a detailed [contingency table](/docs/analytics/charts/compass/compass-find-inflection-metrics) that shows the count of users in your base cohort in each of four categories: true positives, false positives, false negatives, and true negatives. 
 
-![](/output/img/compass/Screen_Shot_2016-12-06_at_2.59.32_PM.png)
+![](/docs/output/img/compass/Screen_Shot_2016-12-06_at_2.59.32_PM.png)
 
 Likewise, you can see detailed statistics on your cohort by clicking *Show* (next to *Detailed Statistics*):  
 
-![](/output/img/compass/Screen_Shot_2016-11-16_at_11.15.49_AM.png)
+![](/docs/output/img/compass/Screen_Shot_2016-11-16_at_11.15.49_AM.png)
 
-You can read more about these statistics [here](/analytics/charts/compass/compass-find-inflection-metrics).
+You can read more about these statistics [here](/docs/analytics/charts/compass/compass-find-inflection-metrics).
 
-Next, be sure to read the Help Center article on how to use [Compass to identify the moments in the user journey that are critical to driving growth](/analytics/charts/compass/compass-find-inflection-metrics).
+Next, be sure to read the Help Center article on how to use [Compass to identify the moments in the user journey that are critical to driving growth](/docs/analytics/charts/compass/compass-find-inflection-metrics).

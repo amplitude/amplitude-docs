@@ -18,19 +18,19 @@ You may also find [this course](https://academy.amplitude.com/analyze-multiple-m
 
 Data Tables are useful for:
 
-* Marketing [attribution](/analytics/charts/data-tables/data-tables-attribute-credit) (total visits, page views, and conversion rate by UTM source)
+* Marketing [attribution](/docs/analytics/charts/data-tables/data-tables-attribute-credit) (total visits, page views, and conversion rate by UTM source)
 * Market Segment analysis (comparing several actions broken down by country)
 * Experiment analysis (multiple metrics by control vs variant groups)
 * Trend investigation (quickly and easily breaking down a number by multiple properties)
 * Comparing time periods across multiple metrics (metric A, metric B, and metric C, broken down by category, compared to last quarter)
 
-![compare_time_periods.gif](/output/img/data-tables/compare-time-periods-gif.gif)
+![compare_time_periods.gif](/docs/output/img/data-tables/compare-time-periods-gif.gif)
 
 You can easily sort columns in ascending or descending order (just click the metric header), drag and drop or resize columns, and highlight, copy and paste any number of cells from your Data Table.
 
 To get a quick overview of how Data Tables work, check out our [short Loom tutorial](https://www.loom.com/share/c6467e0667334368a51acab1bff77cd5?t=13).
 
-Don't forget to read the [Help Center article on results limits and sorting logic in Data Tables](/analytics/charts/data-tables/data-tables-results-and-sorting-logic).
+Don't forget to read the [Help Center article on results limits and sorting logic in Data Tables](/docs/analytics/charts/data-tables/data-tables-results-and-sorting-logic).
 
 ### Feature availability
 
@@ -43,11 +43,11 @@ To set up and use a Data Table, follow these steps:
 1. Navigate to*Create New > Analysis > Data Table*.
 2. In the empty Data Table panel, click *Add an event or metric* and select the event or metric you’re interested in. A new Data Table will open, with your chosen event or metric in the first column. Add more by clicking *+ Add Event or Metric* in the rightmost column in the Data Table.  
   
-    You can [create a new metric](/analytics/charts/data-tables/data-tables-create-metric) at this point, if you need to.
+    You can [create a new metric](/docs/analytics/charts/data-tables/data-tables-create-metric) at this point, if you need to.
 
 3. To break out your events and metrics by property v alues—country, for example, or platform, or week—click *Select property…* in the leftmost column of the table and choose the property you’re interested in.
 
-    ![select_property.gif](/output/img/data-tables/select-property-gif.gif)  
+    ![select_property.gif](/docs/output/img/data-tables/select-property-gif.gif)  
       
     This will run a group-by on your events and metrics, grouping by the property you selected. You can include up to five top-level group-bys in a single Data Table.
 
@@ -57,23 +57,23 @@ To set up and use a Data Table, follow these steps:
 
 4. Once you’ve added a group-by property, you can run a secondary group-by on that row of your Data Table. For example, you can break your events and metrics out by the `Day of Week` property nested within `Country`.  
   
-    ![nested_groupby.png](/output/img/data-tables/nested-groupby-png.png)  
+    ![nested_groupby.png](/docs/output/img/data-tables/nested-groupby-png.png)  
       
     Click the Bar icon in the rightmost group-by column and select the property you’re interested in.  
   
-    ![groupby_property.jpeg](/output/img/data-tables/groupby-property-jpeg.jpeg)
+    ![groupby_property.jpeg](/docs/output/img/data-tables/groupby-property-jpeg.jpeg)
 
-5. Next, add [user segments](/analytics/charts/build-charts-add-events), if desired. Saved segments are accessible. Multiple segments will show up in the table as separate columns within the same metric.
+5. Next, add [user segments](/docs/analytics/charts/build-charts-add-events), if desired. Saved segments are accessible. Multiple segments will show up in the table as separate columns within the same metric.
 
 Once setup, there are several options you can use to manage and manipulate your data.
 
 Within any cell, click the Options icon to: 
 
 * **Open as chart,** which will open a new tab with the chosen metric applied;
-* **Create cohort**, which allows you to save the chart's data points as a [cohort](/analytics/behavioral-cohorts);
+* **Create cohort**, which allows you to save the chart's data points as a [cohort](/docs/analytics/behavioral-cohorts);
 * **Copy** the data so you can paste elsewhere as needed or export the data as a CSV file.
 
-![open_as_chart.jpeg](/output/img/data-tables/open-as-chart-jpeg.jpeg)
+![open_as_chart.jpeg](/docs/output/img/data-tables/open-as-chart-jpeg.jpeg)
 
 Within any column header, click the Options icon to:
 
@@ -86,10 +86,10 @@ Within any column header, click the Options icon to:
 {{/partial:admonition}}
 
 * **Save as** **metric**, which allows you to use the metric in other analyses;
-* **Attribution**, which allows you to apply an [attribution model](/analytics/charts/data-tables/data-tables-attribute-credit) to the chosen field or all fields;
+* **Attribution**, which allows you to apply an [attribution model](/docs/analytics/charts/data-tables/data-tables-attribute-credit) to the chosen field or all fields;
 * **Sort** values by low to high (ascending) or high to low (descending).
 
-![dataTablesOptions.png](/output/img/data-tables/datatablesoptions-png.png)
+![dataTablesOptions.png](/docs/output/img/data-tables/datatablesoptions-png.png)
 
 ### Using metrics in Data Tables
 
@@ -106,13 +106,13 @@ You can click **Filter** to select which property values you want to keep or hi
 You can also add an ad hoc filter for in-line events or metrics. To do so, click the three dots from the event or metric header and select “Add Filter.” This will let you apply filters *on top* of your events or metrics. Once applied, you can see what filters are applied by hovering over the **Filter** icon.
 
 {{partial:admonition type='note'}}
- there are some display limits when sharing analyses externally via a [Public Link](/knowledge/articles/235717108/en-us?brand_id=68397):
+ there are some display limits when sharing analyses externally via a [Public Link](/docs/knowledge/articles/235717108/en-us?brand_id=68397):
 {{/partial:admonition}}
 
 * Session-based and attribute-based metrics are not supported, and
 * display options *Relative % for totals* nor *Data bars in cells* are not displayed.
 
-![display_options.jpeg](/output/img/data-tables/display-options-jpeg.jpeg)
+![display_options.jpeg](/docs/output/img/data-tables/display-options-jpeg.jpeg)
 
 ## Transpose rows and columns
 
@@ -139,7 +139,7 @@ To transpose a Data Table, follow these steps:
 2. Add top level group-bys to vertical axis.
 3. Change the *Columns* dropdown to rows to flip the axes.
 
-![rows_read_only.png](/output/img/data-tables/rows-read-only-png.png)
+![rows_read_only.png](/docs/output/img/data-tables/rows-read-only-png.png)
 
 {{partial:admonition type='note'}}
 Transposed Data Tables will be read-only and not allow editing.

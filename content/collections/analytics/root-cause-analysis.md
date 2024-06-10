@@ -29,13 +29,13 @@ In order to use RCA, you must first have an analysis in Amplitude that's display
 
 For example, this Event Segmentation chart has an unusual-looking peak for December 30th:
 
-![root_cause_analysis_1.png](/output/img/analytics/root_cause_analysis_1.png)
+![root_cause_analysis_1.png](/docs/output/img/analytics/root_cause_analysis_1.png)
 
 To examine this anomalous data point using Root Cause Analysis, follow these steps:
 
-1. Click [*Anomaly + Forecast*](/analytics/anomaly-forecast) to confirm that the result you're interested in is actually a statistical anomaly. Amplitude will enhance the chart to display the statistically-expected values for each day, as well as a range of values that would not be considered anomalous (in other words, values that could be attributable to random chance).
+1. Click [*Anomaly + Forecast*](/docs/analytics/anomaly-forecast) to confirm that the result you're interested in is actually a statistical anomaly. Amplitude will enhance the chart to display the statistically-expected values for each day, as well as a range of values that would not be considered anomalous (in other words, values that could be attributable to random chance).
 
-	![root_cause_analysis_2.png](/output/img/analytics/root_cause_analysis_2.png)
+	![root_cause_analysis_2.png](/docs/output/img/analytics/root_cause_analysis_2.png)
     
     In this example, the December 30th data point is inside the range of statistically "normal" values—but only just.
 

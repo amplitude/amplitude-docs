@@ -27,7 +27,7 @@ This table gives a brief overview of each kind of key.
 
 Analytics keys are automatically created for each project, and can only be used to manipulate data within the project the key belongs to. 
 
-To view your project's API Key and Secret Key, see [Find your Amplitude Project API Credentials](/apis/api-credentials/).
+To view your project's API Key and Secret Key, see [Find your Amplitude Project API Credentials](/docs/apis/api-credentials/).
 
 ### API Key
 
@@ -97,10 +97,10 @@ Keep org-level keys private. They have access to your entire Amplitude organizat
 
 ### SCIM Key
 
-The SCIM key is used with the [SCIM API](/apis/scim). SCIM features are available in accounts with an Enterprise plan.
+The SCIM key is used with the [SCIM API](/docs/apis/scim). SCIM features are available in accounts with an Enterprise plan.
 
 {{partial:admonition type="warning" heading="SCIM tokens are secret"}}
 Keep your token secret. It has global user management permissions on your account. If your key has been compromised, you can rotate it yourself in Amplitude.
 {{/partial:admonition}}
 
-See [Set up SCIM provisioning in Amplitude](/admin/account-management/scim-provision) for more information.
+See [Set up SCIM provisioning in Amplitude](/docs/admin/account-management/scim-provision) for more information.

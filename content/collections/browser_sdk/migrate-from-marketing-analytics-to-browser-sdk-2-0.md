@@ -14,7 +14,7 @@ parent: 25904c6b-609d-4365-9660-2782ef50d52d
 
 Amplitude Browser SDK 2.0 (`@amplitude/analytics-browser`) features default event tracking, improved marketing attribution tracking, simplified interface and a lighter weight package.
 
-Browser SDK 2.0 is compatible with [Amplitude Session Replay](/session-replay).
+Browser SDK 2.0 is compatible with [Amplitude Session Replay](/docs/session-replay).
 
 ## Terminology
 
@@ -148,7 +148,7 @@ This provides a simpler and consistent interface to opt out of page view trackin
 ### Updates to page view tracking
 
 * The event type of page view has been changed from `Page View` to `[Amplitude] Page Viewed`.
-* The event properties name also be updated. Check [here](/sdks/sdk-catalog/browser/browser-sdk-2#track-default-events) for more info.
+* The event properties name also be updated. Check [here](/docs/sdks/sdk-catalog/browser/browser-sdk-2#track-default-events) for more info.
 
 | property           | Browser SDK 2.0           | Marketing Analytics Browser SDK |
 | ------------------ | ------------------------- | ------------------------------- |

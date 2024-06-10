@@ -25,15 +25,15 @@ Follow the below steps to import or export events and event properties:
 2. If you wish to import, click the import icon to open the import modal.
 3. If your import file is ready to upload and follows the [expected schema for events and event properties](#h_01HN467J5969YRB1J9MG80MTBN), you can drag and drop your .CSV file or click *Upload* and choose the file from your desired location. If not, click *template* to download a template .CSV to update for importing.
 
-    ![](/output/img/data/22418776497947.png)
+    ![](/docs/output/img/data/22418776497947.png)
 
     The imported events and event properties will appear in a branch named *import*.
 
-4. Once you’re sure the imported tracking plan updates are correct, you can [merge the changes back into the main branch](/data/data-planning-workflow).
+4. Once you’re sure the imported tracking plan updates are correct, you can [merge the changes back into the main branch](/docs/data/data-planning-workflow).
 5. If you want to export events and event properties from your tracking plan, click the export icon instead.
 6. In the export modal that appears, choose whether to download your tracking plan’s schema or a .CSV file template. Then, click *Download*.
 
-![](/output/img/data/22418907241627.png)
+![](/docs/output/img/data/22418907241627.png)
 
 Downloaded .CSV files of your tracking plan contain additional fields not required for import. The next section will define the events and event properties .CSV import file structure and the [additional columns seen in the exported file](#01HNB56QS6HYFRW8BSRRXBC716).
 
@@ -123,18 +123,18 @@ This field exists in the import template, but the downloaded file will automatic
 Follow the below steps to import or export user properties:
 
 1. Navigate to Data, and click *Properties* under *Tracking Plan* in the left side pane. Then click *User Properties*.
-2. Click the import icon ![](/output/img/data/22418899828635) to open the import modal.
+2. Click the import icon ![](/docs/output/img/data/22418899828635) to open the import modal.
 3. If your import file is ready to upload and follows the [expected user properties schema](#h_01HNB5CSJY8QWZXPWXPJYK1JHQ), you can drag and drop your .CSV file or click Upload and choose the file from your desired location. If not, click *template* to download a template .CSV to update for importing.
 
-![](/output/img/data/22418907248795)
+![](/docs/output/img/data/22418907248795)
 
 The imported events and event properties will appear in a branch named *import*.
 
-4. Once you’re sure the imported tracking plan updates are correct, you can [merge the changes back into the main branch](/data/data-planning-workflow).
-5. If you want to export user properties from your tracking plan, click the export icon ![](/output/img/data/22418905478939) instead.
+4. Once you’re sure the imported tracking plan updates are correct, you can [merge the changes back into the main branch](/docs/data/data-planning-workflow).
+5. If you want to export user properties from your tracking plan, click the export icon ![](/docs/output/img/data/22418905478939) instead.
 6. In the export modal that appears, choose whether to download your tracking plan’s schema or a .CSV file template. Then, click Download.
 
-**![](/output/img/data/22418912795163)**
+**![](/docs/output/img/data/22418912795163)**
 
 The next section will define the user properties .CSV import file structure and the [additional columns seen in the user properties export](#h_01HN4703NR0H9FRFDPZ610WCWN).
 

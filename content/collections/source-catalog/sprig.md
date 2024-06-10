@@ -34,7 +34,7 @@ This guide is complementary to Sprig's instructions. Visit the [Sprig documentat
 
 ### Amplitude setup
 
-Copy your project's API key. There are no other setup steps in Amplitude. [Find your project API key](/apis/find-api-credentials.md).
+Copy your project's API key. There are no other setup steps in Amplitude. [Find your project API key](/docs/apis/find-api-credentials.md).
 
 ### Sprig setup
 

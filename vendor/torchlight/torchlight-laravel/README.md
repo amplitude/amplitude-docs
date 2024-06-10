@@ -1,6 +1,6 @@
 # Laravel Torchlight Client
 
-[![Tests](https://github.com/torchlight-api/torchlight-laravel/actions/workflows/tests.yml/badge.svg)](https://github.com/torchlight-api/torchlight-laravel/actions/workflows/tests.yml) [![Latest Stable Version](https://poser.pugx.org/torchlight/torchlight-laravel/v)](//packagist.org/packages/torchlight/torchlight-laravel) [![Total Downloads](https://poser.pugx.org/torchlight/torchlight-laravel/downloads)](//packagist.org/packages/torchlight/torchlight-laravel) [![License](https://poser.pugx.org/torchlight/torchlight-laravel/license)](//packagist.org/packages/torchlight/torchlight-laravel)
+[![Tests](https://github.com/torchlight-api/torchlight-laravel/actions/workflows/tests.yml/badge.svg)](https://github.com/torchlight-api/torchlight-laravel/actions/workflows/tests.yml) [![Latest Stable Version](https://poser.pugx.org/torchlight/torchlight-laravel/v)](/docs//packagist.org/packages/torchlight/torchlight-laravel) [![Total Downloads](https://poser.pugx.org/torchlight/torchlight-laravel/downloads)](/docs//packagist.org/packages/torchlight/torchlight-laravel) [![License](https://poser.pugx.org/torchlight/torchlight-laravel/license)](/docs//packagist.org/packages/torchlight/torchlight-laravel)
 
 
 A [Torchlight](https://torchlight.dev) syntax highlighting extension for the [Laravel](https://laravel.com/) framework.

@@ -15,7 +15,7 @@ Amplitude's **User & Account Look-Up** gives you a centralized and intuitive way
 
 In the User & Account Look-Up tab, the section below the search bar is a real-time feed of the most recent 100 events Amplitude has received from your product during the last day (based on upload time), along with their corresponding time, ID, event, platform, and country. To see a live stream of all events coming into Amplitude, set the *Live event updates* toggle in the top right corner to *On*.
 
-![user_lookup.png](/output/img/analytics/user_lookup.png)
+![user_lookup.png](/docs/output/img/analytics/user_lookup.png)
 
 **NOTE:** `Identify` events are not visible in user lookup.
 
@@ -31,7 +31,7 @@ To search for a specific user, follow these steps:
   
 Searching by user property values will display a list of users who match the criteria you specified, **and** who triggered at least one active event in the last six months.
 
-![_24c7336c3049271e6a2ffaadf9b68ab2__userIDsearch.gif](/output/img/analytics/_24c7336c3049271e6a2ffaadf9b68ab2__userIDsearch.gif)
+![_24c7336c3049271e6a2ffaadf9b68ab2__userIDsearch.gif](/docs/output/img/analytics/_24c7336c3049271e6a2ffaadf9b68ab2__userIDsearch.gif)
 
 If you would like to search for users who have a user property value containing a specific string, click in the *Search users* field (in the *Search Users* fly-out panel shown above) and type in your custom user property type, prefixed with `gp:` . Be sure to include a `~` between your user property type and user property value. For example: `gp:email~amplitude`.
 
@@ -39,11 +39,11 @@ If you would like to search for users who have a user property value containing 
 
 When you find the user you're looking for, click their ID to view their user profile. The profile is split into two sections: the **user details** section—where the user's most-recent properties will be visible—and the **event stream** section, which contains the user's entire event history and displays all events received from them for a given day, which you can specify using the date picker.
 
-![user_lookup_2.png](/output/img/analytics/user_lookup_2.png)
+![user_lookup_2.png](/docs/output/img/analytics/user_lookup_2.png)
 
-![user_lookup_3.png](/output/img/analytics/user_lookup_3.png)
+![user_lookup_3.png](/docs/output/img/analytics/user_lookup_3.png)
 
-The first five rows of the user details section show user properties Amplitude will [track by default](/get-started/user-property-definitions) if your product sends data client-side, as well as other usage metrics calculated for each user.
+The first five rows of the user details section show user properties Amplitude will [track by default](/docs/get-started/user-property-definitions) if your product sends data client-side, as well as other usage metrics calculated for each user.
 
 **NOTE:** Values for the `Total Spent` and `# Purchases` metrics are aggregated based on events in the user's stream that contain the `$revenue` property. 
 
@@ -55,7 +55,7 @@ Amplitude groups the event stream by **session**, and orders it in **reverse chr
 
 There are two available views: the **Info** view, which gives a digestible view of the event data, and the **Raw** view, which displays the raw JSON file Amplitude received, along with any user properties that persisted from previous events or Identify requests. This is useful for debugging the data your product sends to Amplitude.
 
-![user_lookup_4.png](/output/img/analytics/user_lookup_4.png)
+![user_lookup_4.png](/docs/output/img/analytics/user_lookup_4.png)
 
 **NOTE:** Group properties are only visible in the raw event view.
 
@@ -68,7 +68,7 @@ You can choose up to ten events from a user's event stream to view in a funnel o
 1. Check the boxes next to the events you'd like to visualize in a chart.
 2. Click *Create Chart* and choose *Segmentation* or *Funnel* to visualize the user's event stream data.
 
-![event_stream_to_chart.png](/output/img/analytics/event_stream_to_chart.png)
+![event_stream_to_chart.png](/docs/output/img/analytics/event_stream_to_chart.png)
 
 ## Raw data fields
 

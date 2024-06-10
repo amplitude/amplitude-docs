@@ -61,8 +61,8 @@ To apply a Historical Count filter, follow these steps:
 2. Scroll down to *Amplitude Event Properties* and select *Historical Count**.*
 3. Choose the correct operator and specify the *N*-value (first through fifth) that you're interested in.
 
-![historical_count_1.gif](/output/img/analytics/historical-count-1-gif.gif)
+![historical_count_1.gif](/docs/output/img/analytics/historical-count-1-gif.gif)
 
 In the example above, the chart will include users who performed the `Send Message` event, with a Historical Count of three. 
 
-Continue to the second article in the Historical Count series: [Historical Count, part 2: Order of operations](/analytics/historical-count-2).
+Continue to the second article in the Historical Count series: [Historical Count, part 2: Order of operations](/docs/analytics/historical-count-2).

@@ -11,9 +11,9 @@ id: 4eda9c61-73d1-425a-a28a-5f15b8fb0356
 
 When calculating conversion for a funnel in which users can complete the steps more than once, Amplitude will bucket each user based on the values tied to the **first** occurrence of each event.
 
-How this **first touch** is determined in your analysis will depend on whether you opt to [hold a property](/analytics/charts/funnel-analysis/funnel-analysis-hold-properties-constant) or [break down by](/analytics/charts/funnel-analysis/funnel-analysis-view-by-property-value) specific properties.
+How this **first touch** is determined in your analysis will depend on whether you opt to [hold a property](/docs/analytics/charts/funnel-analysis/funnel-analysis-hold-properties-constant) or [break down by](/docs/analytics/charts/funnel-analysis/funnel-analysis-view-by-property-value) specific properties.
 
-![hold constant or group by.png](/output/img/funnel-analysis/hold-constant-or-group-by-png.png)
+![hold constant or group by.png](/docs/output/img/funnel-analysis/hold-constant-or-group-by-png.png)
 
 Understanding these implications is vital in drawing accurate conclusions from your analyses.
 

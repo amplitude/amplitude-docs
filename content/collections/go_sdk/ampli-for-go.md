@@ -15,7 +15,7 @@ Amplitude Data supports tracking analytics events from Go apps. The generated tr
 
 0. [(Prerequisite) Create a Tracking Plan in Amplitude Data](https://help.amplitude.com/hc/en-us/articles/5078731378203)
 
-    Plan your events and properties in [Amplitude Data](https://data.amplitude.com/). See detailed instructions [here](/data/create-tracking-plan)
+    Plan your events and properties in [Amplitude Data](https://data.amplitude.com/). See detailed instructions [here](/docs/data/create-tracking-plan)
 
 1. [Install the Amplitude SDK](#install-the-amplitude-sdk)
 
@@ -85,7 +85,7 @@ go get github.com/amplitude/analytics-go
 
 ## Install Ampli CLI
 
-You can install the [Ampli CLI](/data/ampli/cli/) from Homebrew or NPM.
+You can install the [Ampli CLI](/docs/data/ampli/cli/) from Homebrew or NPM.
 
 {{partial:tabs tabs="brew, npm"}}
 {{partial:tab name="brew"}}
@@ -159,7 +159,7 @@ ampli.Instance.Identify(
 )
 ```
 
-The options argument allows you to pass [Amplitude fields](/apis/http-v2#keys-for-the-event-argument) for this call, such as `DeviceID`.
+The options argument allows you to pass [Amplitude fields](/docs/apis/http-v2#keys-for-the-event-argument) for this call, such as `DeviceID`.
 
 ```Go
 ampli.Instance.Identify(
@@ -185,7 +185,7 @@ To track an event, call the event's corresponding function. Every event in your 
 ampli.Instance.EventName(userID, ampli.EventName.Builder().EventProp(true).Build())
 ```
 
-Optional `EventOptions` argument allows you to pass [Amplitude fields](/apis/http-v2#keys-for-the-event-argument), like `DeviceID`.
+Optional `EventOptions` argument allows you to pass [Amplitude fields](/docs/apis/http-v2#keys-for-the-event-argument), like `DeviceID`.
 
 For example, in the following code snippet, your tracking plan contains an event called `songPlayed`. The event is defined with two required properties: `songId` and `songFavorited.` The property type for `songId` is string, and `songFavorited` is a boolean.
 
@@ -231,7 +231,7 @@ ampli.Instance.Flush()
 
 Plugins allow you to extend the Amplitude behavior, for example, modifying event properties (enrichment type) or sending to third-party APIs (destination type).
 
-First you need to define your plugin: [plugin examples](/sdks/analytics/go/go-sdk#plugins).
+First you need to define your plugin: [plugin examples](/docs/sdks/analytics/go/go-sdk#plugins).
 
 Add your plugin after init Ampli:
 

@@ -21,10 +21,10 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1713821937
 ---
-This is the client-side Google Tag Manager Template for Amplitude Analytics. The tag uses the [Amplitude Browser SDK 2.0](/sdks/sdk-catalog/browser/browser-sdk-2/) for data collection.
+This is the client-side Google Tag Manager Template for Amplitude Analytics. The tag uses the [Amplitude Browser SDK 2.0](/docs/sdks/sdk-catalog/browser/browser-sdk-2/) for data collection.
 
 {{partial:admonition type="warning" title="Breaking Changes Checklist from the version 240a7, Aug, 2023"}}
-Starting from the version 240a7, Aug, 2023, this template has been updated from using the [Marketing Analytics SDK(Deprecated)](../../sdks/marketing-analytics-browser/) to the [Amplitude Browser SDK 2.0](/sdks/sdk-catalog/browser/browser-sdk-2/), offering better support, enhanced functionality, and additional features. 
+Starting from the version 240a7, Aug, 2023, this template has been updated from using the [Marketing Analytics SDK(Deprecated)](../../sdks/marketing-analytics-browser/) to the [Amplitude Browser SDK 2.0](/docs/sdks/sdk-catalog/browser/browser-sdk-2/), offering better support, enhanced functionality, and additional features. 
  
 While this updated template offers additional features and improvements,it may result in slightly different behavior that could potentially affect your existing analytics charts. However, we've made these changes configurable to maintain consistency. If you wish to retain the legacy behavior, it's essential to review the following [list of breaking changes](./#breaking-changes-checklist) and adjust your configuration accordingly.
 
@@ -68,7 +68,7 @@ Amplitude recommends that you install Amplitude through a method *other* than a 
  
 #### API Key
 
-Copy your Amplitude project API Key in the API Key field. For EU residency, your project API Key is under `analytics.eu.amplitude.com`. Each project has different API Key, make sure you are copy the API Key from the right project. Go to **Settings -> Projects -> click the right project name from the list** to find your project API Key. Check [here](/apis/find-api-credentials/) for more details.
+Copy your Amplitude project API Key in the API Key field. For EU residency, your project API Key is under `analytics.eu.amplitude.com`. Each project has different API Key, make sure you are copy the API Key from the right project. Go to **Settings -> Projects -> click the right project name from the list** to find your project API Key. Check [here](/docs/apis/find-api-credentials/) for more details.
 
 #### Instance name
 
@@ -117,7 +117,7 @@ Cookies are generated at the initialization stage. For more information on manag
 
 Check this checkbox to enable default event tracking and configure the following default tracking events
 
-The following configurations are available attribution options. [More details](/sdks/sdk-catalog/browser/browser-sdk-2#track-marketing-attribution).
+The following configurations are available attribution options. [More details](/docs/sdks/sdk-catalog/browser/browser-sdk-2#track-marketing-attribution).
 
 - Track Page Views
 - Track Sessions
@@ -129,18 +129,18 @@ The following configurations are available attribution options. [More details](/
 | --- | --- | --- |
 | `Initial Empty Value` | `string`. Customize the initial empty value for attribution related user properties to any string value. | `EMPTY`|
 | `Exclude Referrers`| `string` or `string1, string2`. The referrer_domain you want to exclude the attribution tracking. If you exclude a referring_domain, it won't fire any web attribution tracking. That means for the event fired from the exclude referring_domain won't have any web attribution user properties, it maps to `(none)` in chart analysis. By default, it will also exclude referral section to track attribution of all subdomains of the input domain. [More Details](./#subdomain-attribution-tracking).  | `[]` | 
-| `Reset session on new campaign` | `boolean`. Enable this will broke the current session and create a new session if there has a new campaign is deleted. [More details](/sdks/sdk-catalog/browser/browser-sdk-2#advanced-configuration-for-tracking-marketing-attribution). The session isn't reset in the case where the referrer is just a different subdomain of your site. | `false`|
+| `Reset session on new campaign` | `boolean`. Enable this will broke the current session and create a new session if there has a new campaign is deleted. [More details](/docs/sdks/sdk-catalog/browser/browser-sdk-2#advanced-configuration-for-tracking-marketing-attribution). The session isn't reset in the case where the referrer is just a different subdomain of your site. | `false`|
 
 ##### EU data residency
 
-For EU data residency, you must set up your project inside Amplitude EU and use the API key from Amplitude EU. You can configure the server zone by checking the checkbox **EU Data Residency** under **Tag Configuration** -> **Initialization** of the `init` tag. The initialization section only shows up when tag type is set to `init`. [More details](/sdks/sdk-catalog/browser/browser-sdk-2#eu-data-residency).
+For EU data residency, you must set up your project inside Amplitude EU and use the API key from Amplitude EU. You can configure the server zone by checking the checkbox **EU Data Residency** under **Tag Configuration** -> **Initialization** of the `init` tag. The initialization section only shows up when tag type is set to `init`. [More details](/docs/sdks/sdk-catalog/browser/browser-sdk-2#eu-data-residency).
 
 ##### User ID
 
 If the user ID is already available you can:
 
 - Initialize the instance with it by inputting it in the "User ID" input box of the `init` tag
-- Use the `setUserId` tag type to set the use ID at a later time. [More details](/sdks/sdk-catalog/browser/browser-sdk-2/#custom-user-id).
+- Use the `setUserId` tag type to set the use ID at a later time. [More details](/docs/sdks/sdk-catalog/browser/browser-sdk-2/#custom-user-id).
 
 ##### Configurations
 
@@ -166,7 +166,7 @@ If the user ID is already available you can:
 |`cookieSameSite` | `string`. Sets `SameSite` property of cookies created. | `Lax` |
 |`cookieSecure` | `boolean`. Sets `Secure` property of cookies created. | `false` |
 |`cookieStorage` | `Storage<UserSession>`. Sets a custom implementation of `Storage<UserSession>` to persist user identity. | `MemoryStorage<UserSession>` |
-|`cookieUpgrade`| `boolean`. Sets upgrading from cookies created by [maintenance Browser SDK](/data/sdks/javascript/). If true, new Browser SDK deletes cookies created by maintenance Browser SDK. If false, Browser SDK keeps cookies created by maintenance Browser SDK. | `true` |
+|`cookieUpgrade`| `boolean`. Sets upgrading from cookies created by [maintenance Browser SDK](/docs/data/sdks/javascript/). If true, new Browser SDK deletes cookies created by maintenance Browser SDK. If false, Browser SDK keeps cookies created by maintenance Browser SDK. | `true` |
 |`disableCookies`| `boolean`. Sets permission to use cookies. If value is `true`, localStorage API is used to persist user identity. | The cookies is enable by default. |
 |`domain` | `string`. Sets the domain property of cookies created. | `undefined` |
 |`partnerId` | `string`. Sets partner ID. Amplitude requires the customer who built an event ingestion integration to add the partner identifier to `partner_id`. | `undefined` |
@@ -216,30 +216,30 @@ If you are a new user, we highly recommend adopting server-side parsing by leavi
 
 ###### Page View Tracking
 
-Check this box to enable page view tracking. The following configurations are available page view tracking options. [More details](/sdks/sdk-catalog/browser/browser-sdk-2/#tracking-page-views).
+Check this box to enable page view tracking. The following configurations are available page view tracking options. [More details](/docs/sdks/sdk-catalog/browser/browser-sdk-2/#tracking-page-views).
 
 {{partial:collapse name="Default configurations"}}
 | Name  | Description | Default Value |
 | --- | --- | --- |
-| `Use the legacy page view properties` | `check box`. Whether use the legacy page view properties. [More Details](./#breaking-changes-checklist). | `Enabled`. Use the latest page view event type and properties as in [Amplitude Browser 2.0](/sdks/sdk-catalog/browser/browser-sdk-2/#tracking-page-views). |
+| `Use the legacy page view properties` | `check box`. Whether use the legacy page view properties. [More Details](./#breaking-changes-checklist). | `Enabled`. Use the latest page view event type and properties as in [Amplitude Browser 2.0](/docs/sdks/sdk-catalog/browser/browser-sdk-2/#tracking-page-views). |
 | `Page View Type` | `string`. The event type for page view event. | `[Amplitude] Page Viewed` |
-| `Page View trigger` | `Page Loads` or `Only with Attribution changes` or a `Variable Configuration`.  The trigger of page view event. A variable configuration can be either build-in or customized that returns a function with a true or false return value. If the function returns true, then Page Views are tracked automatically, if it returns false then Page Views are not tracked. [More details](/sdks/sdk-catalog/browser/browser-sdk-2/#advanced-configuration-for-tracking-page-views). | `Page Loads` if enable page view tracking. |
-| `Track history events automatically` | `All history changes` or `Only when page path changes`. Whether to track history events. This is for tracking page view on SPA. [More details](/sdks/sdk-catalog/browser/browser-sdk-2#advanced-configuration-for-tracking-page-views). | `All history changes` |
+| `Page View trigger` | `Page Loads` or `Only with Attribution changes` or a `Variable Configuration`.  The trigger of page view event. A variable configuration can be either build-in or customized that returns a function with a true or false return value. If the function returns true, then Page Views are tracked automatically, if it returns false then Page Views are not tracked. [More details](/docs/sdks/sdk-catalog/browser/browser-sdk-2/#advanced-configuration-for-tracking-page-views). | `Page Loads` if enable page view tracking. |
+| `Track history events automatically` | `All history changes` or `Only when page path changes`. Whether to track history events. This is for tracking page view on SPA. [More details](/docs/sdks/sdk-catalog/browser/browser-sdk-2#advanced-configuration-for-tracking-page-views). | `All history changes` |
 
 {{/partial:collapse}}
 
 
 ###### Sessions Tracking
 
-Check this box to enable sessions tracking. [More details](/sdks/sdk-catalog/browser/browser-sdk-2/#tracking-sessions).
+Check this box to enable sessions tracking. [More details](/docs/sdks/sdk-catalog/browser/browser-sdk-2/#tracking-sessions).
 
 ###### Form Interactions Tracking
 
-Check this box to enable form interactions tracking. [More details](/sdks/sdk-catalog/browser/browser-sdk-2/#tracking-form-interactions).
+Check this box to enable form interactions tracking. [More details](/docs/sdks/sdk-catalog/browser/browser-sdk-2/#tracking-form-interactions).
 
 ###### File Downloads Tracking
 
-Check this box to enable file downloads tracking. [More details](/sdks/sdk-catalog/browser/browser-sdk-2/#tracking-file-downloads).
+Check this box to enable file downloads tracking. [More details](/docs/sdks/sdk-catalog/browser/browser-sdk-2/#tracking-file-downloads).
     
 #### track
 
@@ -267,7 +267,7 @@ The `track` tag type is for tracking an event under a specific trigger.
 
 ##### Track Groups
 
-Set event level groups. With event-level groups, the group designation applies only to the specific event being logged, and doesn't persist on the user unless explicitly set with setGroup. [More details](/sdks/sdk-catalog/browser/browser-sdk-2/#user-groups).
+Set event level groups. With event-level groups, the group designation applies only to the specific event being logged, and doesn't persist on the user unless explicitly set with setGroup. [More details](/docs/sdks/sdk-catalog/browser/browser-sdk-2/#user-groups).
 
 | Name  | Description |
 | --- | --- |
@@ -279,7 +279,7 @@ Set event level groups. With event-level groups, the group designation applies o
 !!!note 
     Identify calls *don't* appear in user look up. The identify calls will set the user properties, and those updated user properties will appear only after the next event fired by the user.
 
-Add individual user property operations each as its own row in the table. You can add as many as you like, but note that you can only include a specific User Property in a single operation. The operations are executed in order. [More details](/sdks/sdk-catalog/browser/browser-sdk-2/#user-properties).
+Add individual user property operations each as its own row in the table. You can add as many as you like, but note that you can only include a specific User Property in a single operation. The operations are executed in order. [More details](/docs/sdks/sdk-catalog/browser/browser-sdk-2/#user-properties).
 
 | Name  | Description |
 | --- | --- |
@@ -289,7 +289,7 @@ Add individual user property operations each as its own row in the table. You ca
 
 #### setGroup
 
-Amplitude supports assigning users to groups and performing queries, such as Count by Distinct, on those groups. If at least one member of the group has performed the specific event, then the count includes the group. [More details](/sdks/sdk-catalog/browser/browser-sdk-2/#user-groups).
+Amplitude supports assigning users to groups and performing queries, such as Count by Distinct, on those groups. If at least one member of the group has performed the specific event, then the count includes the group. [More details](/docs/sdks/sdk-catalog/browser/browser-sdk-2/#user-groups).
 
 | Name  | Description | Default Value |
 | --- | --- | --- |
@@ -298,7 +298,7 @@ Amplitude supports assigning users to groups and performing queries, such as Cou
 
 #### groupIdentify
 
-Use the Group Identify API to set or update the properties of particular groups. These updates only affect events going forward. [More details](/sdks/sdk-catalog/browser/browser-sdk-2/#user-properties).
+Use the Group Identify API to set or update the properties of particular groups. These updates only affect events going forward. [More details](/docs/sdks/sdk-catalog/browser/browser-sdk-2/#user-properties).
 
 | Name | Description |
 | --- | --- |
@@ -322,7 +322,7 @@ Tracking the revenue event for a user. Revenue instances store each revenue tran
 
 #### flush
 
-The flush method prompts the client to instantly send [buffered events](/sdks/sdk-catalog/browser/browser-sdk-2/#flush-the-event-buffer). There's no need to manually call the `flush `tag type, it will automatically be triggered based on either `flushIntervalMillis` or `flushQueueSize`, whichever comes first. To avoid event loss due to browser closure, consider enabling the `sendBeacon` transport in the configuration options, or set the transport type to `sendBeacon` when `pagehide`. Alternatively, you could reduce the `flushQueueSize` and `flushIntervalMillis` according to your event traffic load, ensuring events don't get stuck on the client.
+The flush method prompts the client to instantly send [buffered events](/docs/sdks/sdk-catalog/browser/browser-sdk-2/#flush-the-event-buffer). There's no need to manually call the `flush `tag type, it will automatically be triggered based on either `flushIntervalMillis` or `flushQueueSize`, whichever comes first. To avoid event loss due to browser closure, consider enabling the `sendBeacon` transport in the configuration options, or set the transport type to `sendBeacon` when `pagehide`. Alternatively, you could reduce the `flushQueueSize` and `flushIntervalMillis` according to your event traffic load, ensuring events don't get stuck on the client.
 
 #### setUserId
 
@@ -338,19 +338,19 @@ If you want to reset the userId and deviceId after logout, please check `reset` 
 
 | Name | Description | Default Value |
 | --- | --- | --- |
-| `Device ID`| `string`. Set the deviceId for the current user. Amplitude will assign an unique identifier for the deviceId by default. For the cross domain use case, Amplitude will auto capture the `deviceId` from URL parameter and assign the value to deviceId. Otherwise, this is not recommended unless you know what you are doing. [More Details](/sdks/sdk-catalog/browser/browser-sdk-2/#custom-device-id) | `UUID` |
+| `Device ID`| `string`. Set the deviceId for the current user. Amplitude will assign an unique identifier for the deviceId by default. For the cross domain use case, Amplitude will auto capture the `deviceId` from URL parameter and assign the value to deviceId. Otherwise, this is not recommended unless you know what you are doing. [More Details](/docs/sdks/sdk-catalog/browser/browser-sdk-2/#custom-device-id) | `UUID` |
 
 #### setSessionId
 
-Session logic is auto handled by Amplitude. You might need to set the sessionId to `-1` if you want to out of session control. Please make sure the value is in milliseconds since epoch (Unix Timestamp) or `-1`. [More details](/sdks/sdk-catalog/browser/browser-sdk-2/#custom-session-id).
+Session logic is auto handled by Amplitude. You might need to set the sessionId to `-1` if you want to out of session control. Please make sure the value is in milliseconds since epoch (Unix Timestamp) or `-1`. [More details](/docs/sdks/sdk-catalog/browser/browser-sdk-2/#custom-session-id).
 
 #### reset 
 
-`reset` will be commonly used when a user has been logged out. It includes 2 operations which are `setUserId(undefined)` and `setDeviceId(UUID())`. [More details](/sdks/sdk-catalog/browser/browser-sdk-2/#reset-when-user-logs-out).
+`reset` will be commonly used when a user has been logged out. It includes 2 operations which are `setUserId(undefined)` and `setDeviceId(UUID())`. [More details](/docs/sdks/sdk-catalog/browser/browser-sdk-2/#reset-when-user-logs-out).
 
 #### setOptOut
 
-Check the `Opt current user out of tracking` checkbox to opt user out of tracking. [More details](/sdks/sdk-catalog/browser/browser-sdk-2/#opt-users-out-of-tracking).
+Check the `Opt current user out of tracking` checkbox to opt user out of tracking. [More details](/docs/sdks/sdk-catalog/browser/browser-sdk-2/#opt-users-out-of-tracking).
 
 ### Define your trigger - Triggering
 
@@ -380,11 +380,11 @@ Yes, but it's not recommended. Modified Community Gallery Templates will no long
 - If your website blocks script that our Template is trying to inject. Check your website’s Console or Network tab to see if any scripts are blocked or if you are getting any errors through **right click -> Inspect**:
 - Init web attribution event is missing. If you have installed cookies consent, please check if the value of `document.referrer` has been updated to your current domain. The campaign from the current domain won't be tracked.
 - Ensure that you have selected the appropriate Tag firing options. Choosing `Once per event` will cause your tag to fire each time a Trigger event is performed. On the other hand, selecting `Once per Page` will fire your Tag just once. This discrepancy could lead to events not being sent as expected.
-![Web Container Firing Option](../../assets/images/gtm/gtm-web-container-firing-option.png) 
+![Web Container Firing Option](../../docs/assets/images/gtm/gtm-web-container-firing-option.png) 
 
 ### Overall user counts to increase?
 
-Verify whether cookies have been altered or removed inadvertently. [Cookies](/sdks/sdk-catalog/browser/browser-sdk-2/#cookie-data) store critical user session data and marketing campaign information. If these cookies are deleted, it triggers a reset of user identifiers (such as user ID and device ID), invariably leading to a surge in the user count. Additionally, the erasure of last-viewed campaign parameters can result in an increase in organic/direct traffic, among other effects.
+Verify whether cookies have been altered or removed inadvertently. [Cookies](/docs/sdks/sdk-catalog/browser/browser-sdk-2/#cookie-data) store critical user session data and marketing campaign information. If these cookies are deleted, it triggers a reset of user identifiers (such as user ID and device ID), invariably leading to a surge in the user count. Additionally, the erasure of last-viewed campaign parameters can result in an increase in organic/direct traffic, among other effects.
 
 ### Cross Domain Tracking?
 

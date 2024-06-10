@@ -96,7 +96,7 @@ Complete a manual export to backfill and send historical data to Azure Blob Stor
 
 If the backfill date range overlaps with the date range of already exported data, Amplitude de-duplicates any overlapping data.
 
-**![screenshot of the export data modal](../../assets/images/integrations-gcs-export-manual-export.png)**
+**![screenshot of the export data modal](../../docs/assets/images/integrations-gcs-export-manual-export.png)**
 
 ## Exported data format
 

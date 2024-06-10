@@ -45,7 +45,7 @@ To create a mutual exclusion group and add your experiment to it, follow these s
 1. In Amplitude Experiment, navigate to the *Experiment Groups* tab in the Experiments page. (If you are trying to do this from within an experiment, head to the *Configure* tab and click *See Mutual Exclusion Groups*.) Here, you can see all your mutual exclusion groups and be able to create new ones.
 2. If you have no groups in your project, click *Add a new mutual exclusion group* to create a new group. If you already have existing groups, click *Create A New Group*, then select *Mutual Exclusion Group* in the drawer.  
   
-![Screenshot](/output/img/advanced-techniques/screenshot.png)
+![Screenshot](/docs/output/img/advanced-techniques/screenshot.png)
 
 3. In the *Mutual exclusion group settings* modal, enter a name and description for your group. You can also view and change your group's advanced settings here, such as the evaluation mode and bucketing key.
 4. Next, add your **slots** and assign experiments to each slot. Experiments in different slots will be mutually exclusive from each other. You can add a maximum of 20 slots to a mutual exclusion group.
@@ -61,7 +61,7 @@ Be sure not to add the same users nor cohorts to more than one slot, as the firs
 6. Set the traffic allocation percentages for each experiment. By default, traffic will be evenly distributed between them, but you can manually edit these percentages. This determines the percentage of the total traffic that will be allocated to each experiment in the group.
 7. Click *Add Group* to finish the process.  
 
-![mutual exclusions.png](/output/img/advanced-techniques/mutual-exclusions-png.png)
+![mutual exclusions.png](/docs/output/img/advanced-techniques/mutual-exclusions-png.png)
 
 ## Advanced use cases
 
@@ -86,4 +86,4 @@ For example, consider the following holdout group and mutual exclusion group: 
 
 In this case, experiment A will receive 0.95 \* 0.5 = 0.475, or 47.5% of the total traffic.
 
-Learn more in this article about [working with holdout groups in Amplitude Experiment.](/experiment/advanced-techniques/holdout-groups-exclude-users)
+Learn more in this article about [working with holdout groups in Amplitude Experiment.](/docs/experiment/advanced-techniques/holdout-groups-exclude-users)

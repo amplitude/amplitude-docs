@@ -19,7 +19,7 @@ If you see a large number or percentage of users in the chart, be careful when i
 Exposure without assignment may also affect future experiments, so you should investigate and fix the issue. 
 
 {{partial:admonition type="note" heading=""}}
-This chart doesn't appear if you selected assignment event as the exposure event or if you are using [local evaluation](/experiment/local-evaluation). 
+This chart doesn't appear if you selected assignment event as the exposure event or if you are using [local evaluation](/docs/experiment/local-evaluation). 
 {{/partial:admonition}}
 
 {{partial:admonition type="note" heading=""}}
@@ -32,7 +32,7 @@ Sometimes the exposure event is delayed and is sent on a different day than the 
 A significant number of users in the Exposures without Assignments chart could be caused by a few different scenarios, such as: 
 
 - Identity mismatch between assignment and exposure.
-    - User ID and device ID are incorrect, switched, or [missing](/apis/analytics/http-v2#device-ids-and-user-ids-minimum-length) on either assignment or exposure. For example, sending the device ID as the user ID or visa versa.
+    - User ID and device ID are incorrect, switched, or [missing](/docs/apis/analytics/http-v2#device-ids-and-user-ids-minimum-length) on either assignment or exposure. For example, sending the device ID as the user ID or visa versa.
 - Account switching on the same device.
     - If a real user has multiple accounts on the same device, and you don't call fetch on login/logout, the value accessed by `variant()` triggers an exposure for the new user without an assignment event. It's important to re-call `fetch()` whenever there are changes to the user identity.
 - Exposures for fallback variants.

@@ -60,7 +60,7 @@ Amplitude.init(AMPLITUDE_API_KEY, options);
 
 ### Configure batching behavior
 
-To support high-performance environments, the SDK sends events in batches. Every event logged by `logEvent` method is queued in memory. Events are flushed in batches in background. You can customize batch behavior with `maxCachedEvents` and `uploadIntervalInSec`. By default, the serverUrl will be `https://api2.amplitude.com/2/httpapi`. For customers who want to send large batches of data at a time, you can use the batch mode. You need to set the server url to the [batch event upload API](/apis/batch-event-upload) based on your needs. 
+To support high-performance environments, the SDK sends events in batches. Every event logged by `logEvent` method is queued in memory. Events are flushed in batches in background. You can customize batch behavior with `maxCachedEvents` and `uploadIntervalInSec`. By default, the serverUrl will be `https://api2.amplitude.com/2/httpapi`. For customers who want to send large batches of data at a time, you can use the batch mode. You need to set the server url to the [batch event upload API](/docs/apis/batch-event-upload) based on your needs. 
 
 - Standard Server Batch API - `https://api2.amplitude.com/batch`
 - EU Residency Server Batch API - `https://api.eu.amplitude.com/batch`
@@ -91,7 +91,7 @@ client = Amplitude.init(AMPLITUDE_API_KEY, {
 ## Send events
 
 {{partial:admonition type="note" heading=""}}
-This SDK uses the [HTTP V2](/apis/http-v2) API and follows the same constraints for events. Make sure that all events logged in the SDK have the `event_type` field and at least one of `device_id` or `user_id`, and follow the HTTP API's constraints on each of those fields.
+This SDK uses the [HTTP V2](/docs/apis/http-v2) API and follows the same constraints for events. Make sure that all events logged in the SDK have the `event_type` field and at least one of `device_id` or `user_id`, and follow the HTTP API's constraints on each of those fields.
 {{/partial:admonition}}
 
 To prevent instrumentation issues, device IDs and user IDs must be strings with a length of 5 characters or more. If an event contains a device ID or user ID that's too short, the ID value is removed from the event. If the event doesn't have a `user_id` or `device_id` value, the upload may be rejected with a 400 status. Override the default minimum length of 5 characters by passing the `min_id_length` option with the request.

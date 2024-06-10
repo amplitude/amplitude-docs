@@ -10,14 +10,14 @@ updated_at: 1717102133
 landing: true
 landing_blurb: 'Understand and use custom formulas in Amplitude to create exactly the analysis you need'
 ---
-In an [Event Segmentation](/analytics/charts/event-segmentation/event-segmentation-build) or [Data Table](/analytics/charts/data-tables/data-tables-multi-dimensional-analysis) chart, the *Formula* option in the Measured As module's *Advanced* drop down offers you greater flexibility when performing analyses. Custom formulas are also useful for comparing various analyses on the same chart.
+In an [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) or [Data Table](/docs/analytics/charts/data-tables/data-tables-multi-dimensional-analysis) chart, the *Formula* option in the Measured As module's *Advanced* drop down offers you greater flexibility when performing analyses. Custom formulas are also useful for comparing various analyses on the same chart.
 
 Choose from more than 20 custom formulas to plot the metrics you need. You can plot up to six formulas on the same chart, separated by semicolons. 
 
 This article will describe the mechanics of custom formulas, with examples of formulas you can use right now.
 
 {{partial:admonition type='note'}}
-While the Experiment Results chart also uses formula metrics, it does so in a different way than either the Event Segmentation or Data Table charts. To learn more about those differences, see [this Help Center article on using formula metrics in Amplitude's Experiment Results chart](/analytics/charts/experiment-results/experiment-results-use-formula-metrics).
+While the Experiment Results chart also uses formula metrics, it does so in a different way than either the Event Segmentation or Data Table charts. To learn more about those differences, see [this Help Center article on using formula metrics in Amplitude's Experiment Results chart](/docs/analytics/charts/experiment-results/experiment-results-use-formula-metrics).
 {{/partial:admonition}}
 
 ### Feature availability
@@ -36,7 +36,7 @@ In your formulas, refer to events selected in the Events Module by their corresp
 
 For example, the letter A in the formula `UNIQUES(A)` refers to the event `View Item Details` while the letter B in the formula `UNIQUES(B)` refers to the event `Add Item to Cart`. This setup will display the ratio of users who viewed an item's details to users who placed an item in their cart.
 
-![custom_formulas_1.png](/output/img/event-segmentation/custom-formulas-1-png.png)
+![custom_formulas_1.png](/docs/output/img/event-segmentation/custom-formulas-1-png.png)
 
 You can also write a formula that consists of events, grouping each event by a property or properties. However, for the formula to be valid, the properties must have matching values across all events you are segmenting.
 
@@ -47,13 +47,13 @@ For example, if you have an event called `Page Name`, the following property val
 
 The order in which you are grouping properties by matters as well. Both events must have the *grouped by* values in the same order; otherwise, you will see a warning that events have no matching group by values.
 
-![custom_formulas_group_by_error.png](/output/img/event-segmentation/custom-formulas-group-by-error-png.png)
+![custom_formulas_group_by_error.png](/docs/output/img/event-segmentation/custom-formulas-group-by-error-png.png)
 
 You can also use custom formulas to uncover how many more times users in one cohort trigger a particular event than do users in another cohort.
 
 To compare a metric between two different cohorts or user segments, add the number of the segment to the letter designating the event: `UNIQUES(A1)/UNIQUES(A2)`. This will display a ratio of the performance of your cohorts on the same event as a single plotted line on your graph. 
 
-![custom_forumlas_2.png](/output/img/event-segmentation/custom-forumlas-2-png.png)
+![custom_forumlas_2.png](/docs/output/img/event-segmentation/custom-forumlas-2-png.png)
 
 You can also view your metrics in percentages or dollars by adding the following prefixes to your formula:
 
@@ -101,9 +101,9 @@ Function formulas let you query on a mathematical function for a particular even
 
 * **Event:** Refers to the event you are interested in. This must be a letter that corresponds to an event in the Events card.
 
-The `ACTIVE` formula returns the percent of active users who triggered the event. This is the same as the `Active %` [metric](/hc/en-us/articles/10249480038043) in the Measured card, but here it is displayed in decimal fraction form. This setup will display the percentage of active users who have triggered the `View Item Details` event.
+The `ACTIVE` formula returns the percent of active users who triggered the event. This is the same as the `Active %` [metric](/docs/hc/en-us/articles/10249480038043) in the Measured card, but here it is displayed in decimal fraction form. This setup will display the percentage of active users who have triggered the `View Item Details` event.
 
-![custom_formulas_active.png](/output/img/event-segmentation/custom-formulas-active-png.png)
+![custom_formulas_active.png](/docs/output/img/event-segmentation/custom-formulas-active-png.png)
 
 ### ARPAU
 
@@ -116,12 +116,12 @@ Returns the aggregate sum of the revenue event property formatted as a currency,
 
 For example, the following setup shows the average revenue per active user of a generic e-commerce company:
 
-![ARPAU_sidecontrols.png](/output/img/event-segmentation/arpau-sidecontrols-png.png)
+![ARPAU_sidecontrols.png](/docs/output/img/event-segmentation/arpau-sidecontrols-png.png)
 
 As you can see in the screenshot above, the `$:` prefix is optional. Its presence simply ensures the output format will be as a currency.
 
 {{partial:admonition type='note'}}
- ARPAU cannot be used in conjunction with [aggregation formulas](/hc/en-us/articles/115001163231#h_01HAN58RXG1WR1N9T4XD49R60S). 
+ ARPAU cannot be used in conjunction with [aggregation formulas](/docs/hc/en-us/articles/115001163231#h_01HAN58RXG1WR1N9T4XD49R60S). 
 {{/partial:admonition}}
 
 ### AVG
@@ -134,7 +134,7 @@ Returns the average number of times the event was triggered. This function is eq
  Item Details` was triggered, as well as the average number of times `Add Item
  to Cart` was triggered on the same chart.
 
-![custom_formulas_avg.png](/output/img/event-segmentation/custom-formulas-avg-png.png)
+![custom_formulas_avg.png](/docs/output/img/event-segmentation/custom-formulas-avg-png.png)
 
 ### FREQPERCENTILE
 
@@ -145,9 +145,9 @@ Returns the average number of times the event was triggered. This function is eq
 
 Returns the inputted [percentile](https://en.wikipedia.org/wiki/Percentile) event frequency across all users. A percentile is a measure that indicates the value below which a given percentage of values fall. For example, the following formula shows the 90th percentile of users who triggered the `View Item Details` event.
 
-![c_f_freqpercentile.png](/output/img/event-segmentation/c-f-freqpercentile-png.png)
+![c_f_freqpercentile.png](/docs/output/img/event-segmentation/c-f-freqpercentile-png.png)
 
-You can then take this information and create a [behavioral cohort](/hc/en-us/articles/231881448-Amplitude-2-0-Behavioral-Cohorts) of your power users and further analyze them to see what distinguishes them from users who are not in the cohort.
+You can then take this information and create a [behavioral cohort](/docs/hc/en-us/articles/231881448-Amplitude-2-0-Behavioral-Cohorts) of your power users and further analyze them to see what distinguishes them from users who are not in the cohort.
 
 ### HIST
 
@@ -157,7 +157,7 @@ You can then take this information and create a [behavioral cohort](/hc/en-us/ar
 
 Returns the distribution of the event frequency per unique user over the selected time period. The following setup displays the distribution of event frequency for the `Complete Purchase` event.
 
-![custom_formulas_hist.png](/output/img/event-segmentation/custom-formulas-hist-png.png)
+![custom_formulas_hist.png](/docs/output/img/event-segmentation/custom-formulas-hist-png.png)
 
 We can see that in the last 30 days, 22,075 users completed purchases five times.
 
@@ -169,7 +169,7 @@ The syntax for HIST varies slightly for the [User Sessions chart](https://help.a
 
 Returns the distribution of session durations (in seconds) over the selected time period. The following setup displays the distribution of the durations of all sessions.
 
-![HIST_UserSessions.png](/output/img/event-segmentation/hist-usersessions-png.png)
+![HIST_UserSessions.png](/docs/output/img/event-segmentation/hist-usersessions-png.png)
 
 ### PERCENTILE
 
@@ -184,7 +184,7 @@ This function will only work if you are grouping by a numerical property on the 
 
 Returns inputted [percentile](https://en.wikipedia.org/wiki/Percentile) of the property being grouped by. For example, the following formula will return the 90th percentile for revenue of all `Complete Purchase` events.
 
-![c_f_percentile.png](/output/img/event-segmentation/c-f-percentile-png.png)
+![c_f_percentile.png](/docs/output/img/event-segmentation/c-f-percentile-png.png)
 
 Another example where the PERCENTILE formula can be useful is if you're tracking load times for your product, trying to ensure that a particular percentage of load times is below a certain threshold.
 
@@ -203,7 +203,7 @@ Returns the average of the property values you are grouping by. This function is
 
 The following setup will show the average of the revenue generated by completed purchases on a given day.
 
-![propavg_sidecontrols.png](/output/img/event-segmentation/propavg-sidecontrols-png.png)
+![propavg_sidecontrols.png](/docs/output/img/event-segmentation/propavg-sidecontrols-png.png)
 
 ### PROPCOUNT
 
@@ -213,7 +213,7 @@ The following setup will show the average of the revenue generated by completed 
 
 Returns the number of distinct property values for the property the event is grouped by. In this setup, the formula will retrieve the number of different departments covering all the items for which details were viewed:
 
-![propcount_sidecontrols.png](/output/img/event-segmentation/propcount-sidecontrols-png.png)
+![propcount_sidecontrols.png](/docs/output/img/event-segmentation/propcount-sidecontrols-png.png)
 
 Note that `PROPCOUNT` is an **estimate** of distinct property values. This estimate is generated by a [HyperLogLog algorithm,](https://en.wikipedia.org/wiki/HyperLogLog) and its accuracy depends on amount of data it has to work with. Expect a relative error in the range of 0.1% for less than 12,000 unique values, and up to 0.5% for more than 12,000 unique property values, depending on the cardinality of the property. 
 
@@ -237,7 +237,7 @@ For example, imagine you're interested in the average number of song genres your
 
 Returns the distribution of the property values you are grouping by over the selected time period. The following setup will display the distribution of revenue over the last 30 days.
 
-![prophist_sidecontrols.png](/output/img/event-segmentation/prophist-sidecontrols-png.png)
+![prophist_sidecontrols.png](/docs/output/img/event-segmentation/prophist-sidecontrols-png.png)
 
 ### PROPMAX
 
@@ -260,7 +260,7 @@ Returns the distribution of the property values you are grouping by over the sel
 
 Returns the sum of the property values you are grouping the specified event by. For example, this visualization shows the total revenue generated by the `Complete Purchase` event.
 
-![c_f_propsum.png](/output/img/event-segmentation/c-f-propsum-png.png)
+![c_f_propsum.png](/docs/output/img/event-segmentation/c-f-propsum-png.png)
 
 The syntax for PROPSUM varies slightly for the [User Sessions chart](https://help.amplitude.com/hc/en-us/articles/231275508-The-User-Sessions-chart-Track-engagement-frequency-and-duration) as sessions are the focus of the metrics. 
 
@@ -270,7 +270,7 @@ The syntax for PROPSUM varies slightly for the [User Sessions chart](https://hel
 
 Returns the total time (sum of the duration in seconds) of the specified session. For example, the following chart shows the total time (in seconds) summed across all sessions.
 
-![userSessionsPROPSUM.png](/output/img/event-segmentation/usersessionspropsum-png.png)
+![userSessionsPROPSUM.png](/docs/output/img/event-segmentation/usersessionspropsum-png.png)
 
 ### REVENUETOTAL
 
@@ -281,7 +281,7 @@ Returns the total time (sum of the duration in seconds) of the specified session
 
 Returns the aggregate sum of the property, formatted as a currency. It is equivalent to `PROPSUM(event)`. For example, the following setup shows the total revenue by day generated by purchases:
 
-![revtotal_sidecontrols.png](/output/img/event-segmentation/revtotal-sidecontrols-png.png)
+![revtotal_sidecontrols.png](/docs/output/img/event-segmentation/revtotal-sidecontrols-png.png)
 
 As you can see in the screenshot above, the `$:` prefix is optional. Its presence simply ensures the output format will be as a currency.
 
@@ -293,7 +293,7 @@ As you can see in the screenshot above, the `$:` prefix is optional. Its presenc
 
 Returns the total number of times the event was triggered. This setup will show the total number of times an item's details were viewed, plus the total number of times an item was added to a cart.
 
-![custom_events_totals.png](/output/img/event-segmentation/custom-events-totals-png.png)
+![custom_events_totals.png](/docs/output/img/event-segmentation/custom-events-totals-png.png)
 
 ### UNIQUES
 
@@ -303,7 +303,7 @@ Returns the total number of times the event was triggered. This setup will show 
 
 Returns the number of unique users who triggered the event. For example, the following setup shows the ratio of users who viewed an item's details to the users who added an item to their cart.
 
-![custom_formulas_uniques.png](/output/img/event-segmentation/custom-formulas-uniques-png.png)
+![custom_formulas_uniques.png](/docs/output/img/event-segmentation/custom-formulas-uniques-png.png)
 
 The syntax for UNIQUES varies slightly for the [User Sessions chart](https://help.amplitude.com/hc/en-us/articles/231275508-The-User-Sessions-chart-Track-engagement-frequency-and-duration) as sessions are the focus of the metrics. 
 
@@ -313,7 +313,7 @@ The syntax for UNIQUES varies slightly for the [User Sessions chart](https://hel
 
 Returns the number of unique users who engaged in session(s) defined by the specified session. For example, the following setup shows the ratio of users who engaged in sessions longer than one minute to the users who engaged in sessions that contained at least one `Search Items` event.
 
-![userSessionsUNIQUES.png](/output/img/event-segmentation/usersessionsuniques-png.png)
+![userSessionsUNIQUES.png](/docs/output/img/event-segmentation/usersessionsuniques-png.png)
 
 ### EVENTTOTALS
 
@@ -325,7 +325,7 @@ This formula metric is **only** available in the [User Sessions chart](https://h
 
 For example, the following setup shows the number of `Page Viewed` events across all sessions.
 
-![eventTotals.png](/output/img/event-segmentation/eventtotals-png.png)
+![eventTotals.png](/docs/output/img/event-segmentation/eventtotals-png.png)
 
 ### SESSIONTOTALS
 
@@ -337,7 +337,7 @@ This formula metric is **only** available in the [User Sessions chart](https://h
 
 For example, the following setup shows the total number of sessions by day over the last 30 days for all users in the United Kingdom who completed at least one `Add to Cart` event during each session. 
 
-![sessionTotalsChart.png](/output/img/event-segmentation/sessiontotalschart-png.png)
+![sessionTotalsChart.png](/docs/output/img/event-segmentation/sessiontotalschart-png.png)
 
 ## Aggregation formulas
 
@@ -351,7 +351,7 @@ Returns the metric for selected event with a running total of days/weeks/months 
 
 For example, this chart shows a daily [cumulative sum](https://help.amplitude.com/hc/en-us/articles/14056975720091#h_f2ff0863-0770-4a12-9bde-89311a099c64) of revenue from `Complete Purchase` events in the last 30 days. The data point for February 22nd will be a sum of revenue generated on February 20th, 21st, and 22nd.
 
-![CUMSUM_sidecontrols.png](/output/img/event-segmentation/cumsum-sidecontrols-png.png)
+![CUMSUM_sidecontrols.png](/docs/output/img/event-segmentation/cumsum-sidecontrols-png.png)
 
 For `CUMSUM(UNIQUES,A)`, a deduplicated count of unique users will be returned for each data point. 
 
@@ -365,11 +365,11 @@ For `CUMSUM(UNIQUES,A)`, a deduplicated count of unique users will be returned f
 
 Returns the metric for the event selected with a [rolling average](https://help.amplitude.com/hc/en-us/articles/14056975720091) over the interval selected. For example, the following chart shows you your weekly rolling average superimposed on top of your daily active users.
 
-![rollavg_sidecontrols.png](/output/img/event-segmentation/rollavg-sidecontrols-png.png)
+![rollavg_sidecontrols.png](/docs/output/img/event-segmentation/rollavg-sidecontrols-png.png)
 
 The blue line in this chart shows daily active users and the green line shows the weekly rolling average. This is useful to see if your daily active user count is higher or lower than the rolling average.
 
-![rollavg_linechart.png](/output/img/event-segmentation/rollavg-linechart-png.png)
+![rollavg_linechart.png](/docs/output/img/event-segmentation/rollavg-linechart-png.png)
 
 ### ROLLWIN
 
@@ -383,7 +383,7 @@ Returns the metric for the event selected with a [rolling window](https://help.a
 
 For example, this chart first calculates the new users for each time interval and then performs the rolling window aggregation on top of that.
 
-![rollwin_sidecontrols.png](/output/img/event-segmentation/rollwin-sidecontrols-png.png)
+![rollwin_sidecontrols.png](/docs/output/img/event-segmentation/rollwin-sidecontrols-png.png)
 
 ### ROLLWINBEFORE
 
@@ -397,7 +397,7 @@ Returns the metric for the event selected with a [rolling window](https://help.a
 
 For example, this chart first calculates the rolling active users for each time interval and then applies the new user cohort filter on top of that.
 
-![rollwinbefore_sidecontrols.png](/output/img/event-segmentation/rollwinbefore-sidecontrols-png.png)
+![rollwinbefore_sidecontrols.png](/docs/output/img/event-segmentation/rollwinbefore-sidecontrols-png.png)
 
 ## Function formulas
 
@@ -409,7 +409,7 @@ For example, this chart first calculates the rolling active users for each time 
 
 Returns [e](https://en.wikipedia.org/wiki/E_(mathematical_constant)) to the power of value you have specified. For example, here we are computing e to the power of the average number of times users purchase tickets.
 
-![expavg_sidecontrols.png](/output/img/event-segmentation/expavg-sidecontrols-png.png)
+![expavg_sidecontrols.png](/docs/output/img/event-segmentation/expavg-sidecontrols-png.png)
 
 ### LN
 
@@ -428,7 +428,7 @@ Returns the [natural logarithm](https://en.wikipedia.org/wiki/Natural_logarithm
 
 Returns the [logarithm](https://en.wikipedia.org/wiki/Logarithm) of the value to the base. For example, the following formula will return the logarithm of the count of unique active users to base 3.
 
-![log_sidecontrols.png](/output/img/event-segmentation/log-sidecontrols-png.png)
+![log_sidecontrols.png](/docs/output/img/event-segmentation/log-sidecontrols-png.png)
 
 ### LOG10
 
@@ -438,7 +438,7 @@ Returns the [logarithm](https://en.wikipedia.org/wiki/Logarithm) of the value 
 
 Returns the [logarithm](https://en.wikipedia.org/wiki/Common_logarithm) of the value to base 10. For example, the following formula will return the logarithm of the average number of times `Complete Purchase` was triggered to base 10.
 
-![log10_sidecontrols.png](/output/img/event-segmentation/log10-sidecontrols-png.png)
+![log10_sidecontrols.png](/docs/output/img/event-segmentation/log10-sidecontrols-png.png)
 
 ### POWER
 
@@ -467,4 +467,4 @@ Returns the trendline of the value. This is calculated with [ordinary least-squ
 
 For example, use this function to see the trendline of number of users who purchase a song or video and compare it to the unique number of users.
 
-![trendline_sidecontrols.png](/output/img/event-segmentation/trendline-sidecontrols-png.png)
+![trendline_sidecontrols.png](/docs/output/img/event-segmentation/trendline-sidecontrols-png.png)

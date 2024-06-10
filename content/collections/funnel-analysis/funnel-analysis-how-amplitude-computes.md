@@ -34,7 +34,7 @@ In ordered funnels, each event is included in exactly one conversion path. For e
 
 ## Segmentation
 
-When you [segment the data on a user property](/analytics/charts/build-charts-add-events), Amplitude will apply the segmentation to the first step of your funnel.
+When you [segment the data on a user property](/docs/analytics/charts/build-charts-add-events), Amplitude will apply the segmentation to the first step of your funnel.
 
 For example, suppose Event A is the first step of your funnel, and a user triggered:
 
@@ -70,7 +70,7 @@ You can also use the group-by filter for an event (limit of one event group-by p
 
 For example, look at this Funnel Analysis chart:
 
-![group-by_events.png](/output/img/funnel-analysis/group-by-events-png.png)
+![group-by_events.png](/docs/output/img/funnel-analysis/group-by-events-png.png)
 
  The *Group-by* here looks at users' property values for `Genre_Type` at the time their `Favorite Song or Video` events are triggered, and shows how they converted through the remaining events of the funnel. 
 
@@ -82,7 +82,7 @@ If users in your funnel can complete the steps multiple times, this method will 
 
 This three-step funnel is grouped by Step 2's event property, `item_id`:
 
-![group_by.png](/output/img/funnel-analysis/group-by-png.png)
+![group_by.png](/docs/output/img/funnel-analysis/group-by-png.png)
 
 The graph shows the conversion distribution of users who triggered Step 2 (`Add Item to Cart`) event, broken out by each `item_id` value.
 

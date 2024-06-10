@@ -56,11 +56,11 @@ Repeat the process for other users who also need to change their email address.
 
 ## Change user roles and permissions
 
-All current users will be visible in the *Joined Users* view, while *Pending Users* shows those who still have an outstanding invite. An admin or manager can adjust any user's organization role or [permissions](/admin/account-management/user-roles-permissions) with the dropdown menu in the *Role* column. Enterprise customers with project-level permissions enabled will need to select the checkbox next to a user's name to manage their individual permissions.
+All current users will be visible in the *Joined Users* view, while *Pending Users* shows those who still have an outstanding invite. An admin or manager can adjust any user's organization role or [permissions](/docs/admin/account-management/user-roles-permissions) with the dropdown menu in the *Role* column. Enterprise customers with project-level permissions enabled will need to select the checkbox next to a user's name to manage their individual permissions.
 
 To change user permissions in Amplitude, follow these steps:
 
-1. Navigate to *Settings* > *Organization settings* > *[Members & Groups](/admin/account-management/manage-users).* The Team Members page will open.
+1. Navigate to *Settings* > *Organization settings* > *[Members & Groups](/docs/admin/account-management/manage-users).* The Team Members page will open.
 2. Check the box next to the name of the user whose permissions you'd like to edit. You can select multiple users at once.
 3. Click *Manage Project Access*.
 4. In the modal that appears, find the project you want to adjust permissions for and check the checkbox next to it. You can select multiple projects at once.
@@ -80,7 +80,7 @@ When you remove a user, all their content (charts, dashboards and cohorts) will 
 
 With project-level permissions, a user can have a different role for each project within an organization. This enables multiple teams in your company to operate autonomously and manage their own datasets. For example, a user may have Manager-level permission in one project, but Viewer-level permission in another. Users without access to a project cannot view any content that belongs in that project.
 
-![mceclip2.png](/output/img/account-management/mceclip2-png.png)
+![mceclip2.png](/docs/output/img/account-management/mceclip2-png.png)
 
 {{partial:admonition type='note'}}
 Project-level permissions are available to customers on an Enterprise plan only.

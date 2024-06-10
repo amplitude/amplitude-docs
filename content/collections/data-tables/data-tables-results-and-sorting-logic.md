@@ -24,7 +24,7 @@ Once you have these results, any sorting you do will apply **only to them**, and
 
 When you are using multiple metrics, sorting by a particular column will display data for all columns based on the values in the sorted column. For a data table with multiple segments, multiple metrics, and a period over period comparison, sorting a period-over-period column within a metric will give you a dataset based on the first segment's current period.
 
-![sort_columns.jpeg](/output/img/data-tables/sort-columns-jpeg.jpeg)
+![sort_columns.jpeg](/docs/output/img/data-tables/sort-columns-jpeg.jpeg)
 
 ## Limits for .CSV exports
 

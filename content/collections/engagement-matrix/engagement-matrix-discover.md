@@ -13,7 +13,7 @@ landing_blurb: 'Assess the overall level of engagement of features in your produ
 ---
 With Amplitude's **Engagement Matrix** chart, you can develop a better understanding of the high-level pattern of feature engagement in your product, by breadth and frequency. By breaking out the top and bottom events for engagement into a four-quadrant matrix view, the Engagement Matrix will enable you to identify features that aren't performing well, so you can either refactor or deprecate them, and the features that are performing best, so you can find ways to extend that engagement to other areas of your product.
 
-![Screenshot](/output/img/engagement-matrix/screenshot.png)
+![Screenshot](/docs/output/img/engagement-matrix/screenshot.png)
 
 ### Feature availability
 
@@ -21,7 +21,7 @@ This feature is available to users on **Growth** and **Enterprise plans** only. 
 
 ## Before you begin
 
-First and foremost, events will not appear in any Amplitude charts until instrumentation is complete, so make sure you've got that done. You'll definitely want to read our article on [building charts in Amplitude](/get-started/helpful-definitions).
+First and foremost, events will not appear in any Amplitude charts until instrumentation is complete, so make sure you've got that done. You'll definitely want to read our article on [building charts in Amplitude](/docs/get-started/helpful-definitions).
 
 ## Set up an Engagement Matrix chart
 
@@ -48,7 +48,7 @@ To build an Engagement Matrix, follow these steps:
 5. You can narrow your focus even further by telling Amplitude you only want to include users who have already performed certain actions. To do so, click *+ Performed*, then choose the event you’re interested in.  
   
   {{partial:admonition type='note'}}
-   You can use [account-level reporting](/analytics/account-level-reporting) with this chart type, which you can enable from the *...performed by* dropdown if you have instrumented groups.
+   You can use [account-level reporting](/docs/analytics/account-level-reporting) with this chart type, which you can enable from the *...performed by* dropdown if you have instrumented groups.
   {{/partial:admonition}}
 
 6. In the Measured As Module, set the metrics you'll use from the drop-down menus (described [below](#01H823GJ8AGWK069EYH4GJSVET)).
@@ -56,7 +56,7 @@ To build an Engagement Matrix, follow these steps:
 
 ### Choose your metrics
 
-![measured_as.gif](/output/img/engagement-matrix/measured-as-gif.gif)
+![measured_as.gif](/docs/output/img/engagement-matrix/measured-as-gif.gif)
 
 In the Measured As Module, you'll find a range of options to customize your Engagement Matrix analysis: 
 
@@ -67,7 +67,7 @@ To change this option, you'll have to change your interval to match—for exampl
 For some inactive events, you may see a %DAU / %WAU / %MAU value greater than 100%. This happens because the data point includes users who are only firing those inactive events, and may not necessarily be active in the time interval selected. 
 {{/partial:admonition}}
 
-![interval.png](/output/img/engagement-matrix/interval-png.png)
+![interval.png](/docs/output/img/engagement-matrix/interval-png.png)
 
 Next, you can choose between *Average Days Performed* or *Average Times Performed:*
 
@@ -87,4 +87,4 @@ Next, you can choose between *Average Days Performed* or *Average Times Performe
 
 * **Log or Linear Scale:** Finally, you can specify if you would like to see the chart on a log or a linear scale, depending on which method better suits your Engagement Matrix analysis.
 
-Next, read the Help Center article on [interpreting your Engagement Matrix](/analytics/charts/engagement-matrix/engagement-matrix-interpret).
+Next, read the Help Center article on [interpreting your Engagement Matrix](/docs/analytics/charts/engagement-matrix/engagement-matrix-interpret).
