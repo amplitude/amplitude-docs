@@ -50,9 +50,7 @@ class GlobalVariablesRepository implements RepositoryContract
             ->filter(fn ($value) => $value == $handle)
             ->keys();
 
-        $items = $this->store->getItems($keys)->filter(fn ($item) => $item->site());
-
-        return VariablesCollection::make($items);
+        return VariablesCollection::make($this->store->getItems($keys));
     }
 
     public function save($variable)

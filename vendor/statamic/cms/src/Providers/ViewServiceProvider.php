@@ -23,7 +23,6 @@ use Statamic\View\Blade\AntlersBladePrecompiler;
 use Statamic\View\Cascade;
 use Statamic\View\Debugbar\AntlersProfiler\PerformanceCollector;
 use Statamic\View\Debugbar\AntlersProfiler\PerformanceTracer;
-use Statamic\View\Interop\Stacks;
 use Statamic\View\Store;
 
 class ViewServiceProvider extends ServiceProvider
@@ -50,7 +49,6 @@ class ViewServiceProvider extends ServiceProvider
 
     private function registerAntlers()
     {
-        Stacks::register();
         GlobalRuntimeState::$environmentId = StringUtilities::uuidv4();
 
         // Set the debug mode before anything else starts.

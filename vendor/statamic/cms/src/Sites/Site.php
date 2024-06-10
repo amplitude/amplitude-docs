@@ -15,6 +15,7 @@ class Site implements Augmentable
     protected $handle;
     protected $config;
     protected $rawConfig;
+    private $absoluteUrlCache;
 
     public function __construct($handle, $config)
     {
@@ -71,11 +72,15 @@ class Site implements Augmentable
 
     public function absoluteUrl()
     {
+        if ($this->absoluteUrlCache !== null) {
+            return $this->absoluteUrlCache;
+        }
+
         if (Str::startsWith($url = $this->url(), '/')) {
             $url = Str::ensureLeft($url, request()->getSchemeAndHttpHost());
         }
 
-        return Str::removeRight($url, '/');
+        return $this->absoluteUrlCache = Str::removeRight($url, '/');
     }
 
     public function relativePath($url)

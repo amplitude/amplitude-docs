@@ -160,7 +160,6 @@ class ExtensionServiceProvider extends ServiceProvider
         Tags\GetError::class,
         Tags\GetErrors::class,
         Tags\GetFiles::class,
-        Tags\GetSite::class,
         Tags\Glide::class,
         Tags\In::class,
         Tags\Increment::class,
