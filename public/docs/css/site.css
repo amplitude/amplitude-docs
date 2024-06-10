@@ -901,9 +901,6 @@ video {
   z-index: 50;
 }.m-0 {
   margin: 0px;
-}.mx-1 {
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
 }.mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -914,12 +911,12 @@ video {
   margin-bottom: -11px;
 }.-mb-\[2px\] {
   margin-bottom: -2px;
-}.-mt-6 {
-  margin-top: -1.5rem;
 }.mb-0 {
   margin-bottom: 0px;
 }.mb-2 {
   margin-bottom: 0.5rem;
+}.mb-4 {
+  margin-bottom: 1rem;
 }.mb-5 {
   margin-bottom: 1.25rem;
 }.mb-6 {
@@ -1216,6 +1213,8 @@ video {
   fill: #5a5e68;
 }.fill-white {
   fill: #ffffff;
+}.fill-black-300 {
+  fill: #b0b0b0;
 }.p-0 {
   padding: 0px;
 }.p-2 {
@@ -1352,6 +1351,9 @@ video {
 }.text-amp-light-teal {
   --tw-text-opacity: 1;
   color: rgb(145 217 227 / var(--tw-text-opacity));
+}.text-black-200 {
+  --tw-text-opacity: 1;
+  color: rgb(209 209 209 / var(--tw-text-opacity));
 }.text-black-600 {
   --tw-text-opacity: 1;
   color: rgb(93 93 93 / var(--tw-text-opacity));
@@ -1361,6 +1363,9 @@ video {
 }.text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}.text-black-300 {
+  --tw-text-opacity: 1;
+  color: rgb(176 176 176 / var(--tw-text-opacity));
 }.underline {
   text-decoration-line: underline;
 }.no-underline {
@@ -1401,65 +1406,65 @@ video {
   transition-duration: 100ms;
 }/* Font Import */@font-face {
     font-family: 'Gellix';
-    src: url(/fonts/Gellix-Light.woff2?86e41fac53b46729b8911b765a9a98dc) format('woff2'),
-        url(/fonts/Gellix-Light.woff?809916eadb20ce0669709a0cbd82a3e2) format('woff'),
-        url(/fonts/Gellix-Light.ttf?2fdc7981e98ef2e4ba7bc660e3d38fd0) format('truetype');
+    src: url('../fonts/Gellix-Light.woff2') format('woff2'),
+        url('../fonts/Gellix-Light.woff') format('woff'),
+        url('../fonts/Gellix-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
     font-display: block;
 }@font-face {
     font-family: 'Gellix';
-    src: url(/fonts/Gellix-Medium.woff2?2bfe4699534abaa11ddb4ad5e37eb8b5) format('woff2'),
-        url(/fonts/Gellix-Medium.woff?6022f82273ed185657beb0e15a4b0a17) format('woff'),
-        url(/fonts/Gellix-Medium.ttf?f0c0d3cb6a4eb5e95aa4f038952d8600) format('truetype');
+    src: url('../fonts/Gellix-Medium.woff2') format('woff2'),
+        url('../fonts/Gellix-Medium.woff') format('woff'),
+        url('../fonts/Gellix-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
     font-display: block;
 }@font-face {
     font-family: 'Gellix';
-    src: url(/fonts/Gellix-RegularItalic.woff2?d0513f4e04f57565df922b92b2d94f68) format('woff2'),
-        url(/fonts/Gellix-RegularItalic.woff?dff8b4b5d429fd353825e7bba720be0b) format('woff'),
-        url(/fonts/Gellix-RegularItalic.ttf?f0ae6ec6a26628fff536170b8a676b65) format('truetype');
+    src: url('../fonts/Gellix-RegularItalic.woff2') format('woff2'),
+        url('../fonts/Gellix-RegularItalic.woff') format('woff'),
+        url('../fonts/Gellix-RegularItalic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
     font-display: block;
 }@font-face {
     font-family: 'Gellix';
-    src: url(/fonts/Gellix-Regular.woff2?32b46ae924c6731fdd171398d6833e7a) format('woff2'),
-        url(/fonts/Gellix-Regular.woff?c34da819265e02240af4876d2b08e7b2) format('woff'),
-        url(/fonts/Gellix-Regular.ttf?95dcd62ad4d7da98bee4d1e47b553f0b) format('truetype');
+    src: url('../fonts/Gellix-Regular.woff2') format('woff2'),
+        url('../fonts/Gellix-Regular.woff') format('woff'),
+        url('../fonts/Gellix-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: block;
 }@font-face {
     font-family: 'Gellix';
-    src: url(/fonts/Gellix-MediumItalic.woff2?488b57016185071b1fc547f54806a57e) format('woff2'),
-        url(/fonts/Gellix-MediumItalic.woff?15cdb3baf23e0120e55c84dfe2b5361d) format('woff'),
-        url(/fonts/Gellix-MediumItalic.ttf?ec3da7168a586e82d88bf5ac927ea098) format('truetype');
+    src: url('../fonts/Gellix-MediumItalic.woff2') format('woff2'),
+        url('../fonts/Gellix-MediumItalic.woff') format('woff'),
+        url('../fonts/Gellix-MediumItalic.ttf') format('truetype');
     font-weight: 500;
     font-style: italic;
     font-display: block;
 }@font-face {
     font-family: 'Gellix';
-    src: url(/fonts/Gellix-LightItalic.woff2?b76830e81f11131391a6d9c354ac0345) format('woff2'),
-        url(/fonts/Gellix-LightItalic.woff?47754439511f6640d56398d481b4b188) format('woff'),
-        url(/fonts/Gellix-LightItalic.ttf?23cf150133996bc4f3ccf07d1503580c) format('truetype');
+    src: url('../fonts/Gellix-LightItalic.woff2') format('woff2'),
+        url('../fonts/Gellix-LightItalic.woff') format('woff'),
+        url('../fonts/Gellix-LightItalic.ttf') format('truetype');
     font-weight: 300;
     font-style: italic;
     font-display: block;
 }@font-face {
     font-family: 'Gellix';
-    src: url(/fonts/Gellix-SemiBold.woff2?7a597feb68a40c32c4aa33d0c2ef88e6) format('woff2'),
-        url(/fonts/Gellix-SemiBold.woff?cb22e664327de96ee2fa31386c1f8845) format('woff'),
-        url(/fonts/Gellix-SemiBold.ttf?68c1fca7cc5ffb9a1634e7e82077c3b5) format('truetype');
+    src: url('../fonts/Gellix-SemiBold.woff2') format('woff2'),
+        url('../fonts/Gellix-SemiBold.woff') format('woff'),
+        url('../fonts/Gellix-SemiBold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
     font-display: block;
 }@font-face {
     font-family: 'Gellix';
-    src: url(/fonts/Gellix-SemiBoldItalic.woff2?a40849efa42acad363fa38b52e6e0687) format('woff2'),
-        url(/fonts/Gellix-SemiBoldItalic.woff?5256efd09b904947b5c096cdd3feac69) format('woff'),
-        url(/fonts/Gellix-SemiBoldItalic.ttf?10d198187f3a3d74b981d4b5f1d82d7f) format('truetype');
+    src: url('../fonts/Gellix-SemiBoldItalic.woff2') format('woff2'),
+        url('../fonts/Gellix-SemiBoldItalic.woff') format('woff'),
+        url('../fonts/Gellix-SemiBoldItalic.ttf') format('truetype');
     font-weight: 600;
     font-style: italic;
     font-display: block;
@@ -1468,73 +1473,73 @@ video {
     font-style: normal;
     font-weight: 400;
     src: local(''),
-         url(/fonts/ibm-plex-sans-v13-latin-regular.woff2?4d32b6c22a800bdf82604a8862de6235) format('woff2'), /* Super Modern Browsers */
-         url(/fonts/ibm-plex-sans-v13-latin-regular.woff?31490b338d5ed4da4d8a7e85f84136bd) format('woff'), /* Modern Browsers */
-         url(/fonts/ibm-plex-sans-v13-latin-regular.ttf?b2ddc35e597d41132e12e071735509f9) format('truetype'), /* Safari, Android, iOS */
-         url(/fonts/ibm-plex-sans-v13-latin-regular.svg?240a4af036e2592b538a2de2acda40a8#IBMPlexSans) format('svg'); /* Legacy iOS */
+         url('../fonts/ibm-plex-sans-v13-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/ibm-plex-sans-v13-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/ibm-plex-sans-v13-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/ibm-plex-sans-v13-latin-regular.svg#IBMPlexSans') format('svg'); /* Legacy iOS */
   }/* ibm-plex-sans-italic - latin */@font-face {
     font-family: 'IBM Plex Sans';
     font-style: italic;
     font-weight: 400;
     src: local(''),
-         url(/fonts/ibm-plex-sans-v13-latin-italic.woff2?70ef3eceb982f15dc6378188238836d3) format('woff2'), /* Super Modern Browsers */
-         url(/fonts/ibm-plex-sans-v13-latin-italic.woff?1c23919ec8962c4e20ad42a7cd9c9bcb) format('woff'), /* Modern Browsers */
-         url(/fonts/ibm-plex-sans-v13-latin-italic.ttf?112d6f7900bfede0bc8604e8ee660f89) format('truetype'), /* Safari, Android, iOS */
-         url(/fonts/ibm-plex-sans-v13-latin-italic.svg?553132e61db10c13404c58ca07bce391#IBMPlexSans) format('svg'); /* Legacy iOS */
+         url('../fonts/ibm-plex-sans-v13-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/ibm-plex-sans-v13-latin-italic.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/ibm-plex-sans-v13-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/ibm-plex-sans-v13-latin-italic.svg#IBMPlexSans') format('svg'); /* Legacy iOS */
   }/* ibm-plex-sans-600 - latin */@font-face {
     font-family: 'IBM Plex Sans';
     font-style: normal;
     font-weight: 600;
     src: local(''),
-         url(/fonts/ibm-plex-sans-v13-latin-600.woff2?343ea5304f9ab1a7567b16b9dad461de) format('woff2'), /* Super Modern Browsers */
-         url(/fonts/ibm-plex-sans-v13-latin-600.woff?eaf750b1a0f4a2cdadd7aa097f256b8c) format('woff'), /* Modern Browsers */
-         url(/fonts/ibm-plex-sans-v13-latin-600.ttf?0153da36bb069aefb5e9ba8c38cecc68) format('truetype'), /* Safari, Android, iOS */
-         url(/fonts/ibm-plex-sans-v13-latin-600.svg?0ebd522612496cd779ee90085f605479#IBMPlexSans) format('svg'); /* Legacy iOS */
+         url('../fonts/ibm-plex-sans-v13-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/ibm-plex-sans-v13-latin-600.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/ibm-plex-sans-v13-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/ibm-plex-sans-v13-latin-600.svg#IBMPlexSans') format('svg'); /* Legacy iOS */
   }/* ibm-plex-sans-700 - latin */@font-face {
     font-family: 'IBM Plex Sans';
     font-style: normal;
     font-weight: 700;
     src: local(''),
-         url(/fonts/ibm-plex-sans-v13-latin-700.woff2?db8b76340f5e9fb22749e8e25b839ac7) format('woff2'), /* Super Modern Browsers */
-         url(/fonts/ibm-plex-sans-v13-latin-700.woff?66539165a16bc1389fce2bf6a5310e82) format('woff'), /* Modern Browsers */
-         url(/fonts/ibm-plex-sans-v13-latin-700.ttf?0b894494c8e4d4ef3a339799bb36d68f) format('truetype'), /* Safari, Android, iOS */
-         url(/fonts/ibm-plex-sans-v13-latin-700.svg?942d46ceb97f760a5611bba4759d3f08#IBMPlexSans) format('svg'); /* Legacy iOS */
+         url('../fonts/ibm-plex-sans-v13-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/ibm-plex-sans-v13-latin-700.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/ibm-plex-sans-v13-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/ibm-plex-sans-v13-latin-700.svg#IBMPlexSans') format('svg'); /* Legacy iOS */
   }/* ibm-plex-mono-regular - latin */@font-face {
     font-family: 'IBM Plex Mono';
     font-style: normal;
     font-weight: 400;
     src: local(''),
-         url(/fonts/ibm-plex-mono-v11-latin-regular.woff2?08db3dc2ed5beb5e6d48f51a3a8bd878) format('woff2'), /* Super Modern Browsers */
-         url(/fonts/ibm-plex-mono-v11-latin-regular.woff?0e4add8427b3ef31f67a51fcad5c066c) format('woff'), /* Modern Browsers */
-         url(/fonts/ibm-plex-mono-v11-latin-regular.ttf?7c469e4bd6aad01a04bdeb174f029a60) format('truetype'), /* Safari, Android, iOS */
-         url(/fonts/ibm-plex-mono-v11-latin-regular.svg?9bb235b1d6bf1f4a174f87b4dbae57da#IBMPlexMono) format('svg'); /* Legacy iOS */
+         url('../fonts/ibm-plex-mono-v11-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/ibm-plex-mono-v11-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/ibm-plex-mono-v11-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/ibm-plex-mono-v11-latin-regular.svg#IBMPlexMono') format('svg'); /* Legacy iOS */
   }/* ibm-plex-mono-italic - latin */@font-face {
     font-family: 'IBM Plex Mono';
     font-style: italic;
     font-weight: 400;
     src: local(''),
-         url(/fonts/ibm-plex-mono-v11-latin-italic.woff2?6d509ce4dc1f33bb1c5c9181b8b868dc) format('woff2'), /* Super Modern Browsers */
-         url(/fonts/ibm-plex-mono-v11-latin-italic.woff?1e5308d189d682412f675d33ebf94948) format('woff'), /* Modern Browsers */
-         url(/fonts/ibm-plex-mono-v11-latin-italic.ttf?10f8b610d996b8208bd684eab50a9997) format('truetype'), /* Safari, Android, iOS */
-         url(/fonts/ibm-plex-mono-v11-latin-italic.svg?837e39de9504a7e085fb3c039b4613bc#IBMPlexMono) format('svg'); /* Legacy iOS */
+         url('../fonts/ibm-plex-mono-v11-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/ibm-plex-mono-v11-latin-italic.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/ibm-plex-mono-v11-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/ibm-plex-mono-v11-latin-italic.svg#IBMPlexMono') format('svg'); /* Legacy iOS */
   }/* ibm-plex-mono-600 - latin */@font-face {
     font-family: 'IBM Plex Mono';
     font-style: normal;
     font-weight: 600;
     src: local(''),
-         url(/fonts/ibm-plex-mono-v11-latin-600.woff2?d9be19d92e60c05bef8918d6e8b95bea) format('woff2'), /* Super Modern Browsers */
-         url(/fonts/ibm-plex-mono-v11-latin-600.woff?fcd3180a8eef166799f2b4e1bdf16331) format('woff'), /* Modern Browsers */
-         url(/fonts/ibm-plex-mono-v11-latin-600.ttf?ea2e90267c9032fcb40c60bb9a5cace7) format('truetype'), /* Safari, Android, iOS */
-         url(/fonts/ibm-plex-mono-v11-latin-600.svg?420f1563f0741e9056f0b61ee837680f#IBMPlexMono) format('svg'); /* Legacy iOS */
+         url('../fonts/ibm-plex-mono-v11-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/ibm-plex-mono-v11-latin-600.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/ibm-plex-mono-v11-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/ibm-plex-mono-v11-latin-600.svg#IBMPlexMono') format('svg'); /* Legacy iOS */
   }/* ibm-plex-mono-700 - latin */@font-face {
     font-family: 'IBM Plex Mono';
     font-style: normal;
     font-weight: 700;
     src: local(''),
-         url(/fonts/ibm-plex-mono-v11-latin-700.woff2?51e6da73610da9ebeb306f94d502c18d) format('woff2'), /* Super Modern Browsers */
-         url(/fonts/ibm-plex-mono-v11-latin-700.woff?65e69da8555d659526e56d93ce11d0ed) format('woff'), /* Modern Browsers */
-         url(/fonts/ibm-plex-mono-v11-latin-700.ttf?d580918c3cc907604392f9b8e6e74f9e) format('truetype'), /* Safari, Android, iOS */
-         url(/fonts/ibm-plex-mono-v11-latin-700.svg?4d75a50b922b19f977e73c9852d7bda7#IBMPlexMono) format('svg'); /* Legacy iOS */
+         url('../fonts/ibm-plex-mono-v11-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/ibm-plex-mono-v11-latin-700.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/ibm-plex-mono-v11-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/ibm-plex-mono-v11-latin-700.svg#IBMPlexMono') format('svg'); /* Legacy iOS */
   }/* This is all you. */.active > svg {
     transform: rotate(180deg);
 }button:has(+ div a.active) {
@@ -1945,8 +1950,10 @@ line-height: 1.25rem;
     font-style: normal;
     font-weight: 500;
     padding: .1875em .375em;
-}.hover\:h-10:hover {
-  height: 2.5rem;
+}.hover\:h-6:hover {
+  height: 1.5rem;
+}.hover\:h-8:hover {
+  height: 2rem;
 }.hover\:rounded:hover {
   border-radius: 0.25rem;
 }.hover\:bg-amp-blue-900:hover {
