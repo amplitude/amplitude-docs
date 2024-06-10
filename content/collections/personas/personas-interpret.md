@@ -50,4 +50,4 @@ The event table should help you answer the question: "Am I confident I selected 
 
 ### Hide events
 
-If there are events you still wish to track but do not want to visualize in your Personas reports, you can [hide them](/docs/data/remove-invalid-data) in your [tracking plan](/docs/hc/en-us/articles/5078731378203). Amplitude clusters over the top 100 events, so if you mark one of those events as hidden, it will no longer count in the calculation.
+If there are events you still wish to track but do not want to visualize in your Personas reports, you can [hide them](/docs/data/remove-invalid-data) in your tracking plan. Amplitude clusters over the top 100 events, so if you mark one of those events as hidden, it will no longer count in the calculation.

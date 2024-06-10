@@ -41,7 +41,7 @@ When Amplitude receives an event property value that is not part of your Schema,
 * **Mark As Unexpected.** Amplitude will collect the property, trigger a warning, and send a notification to the subscribers designated.
 * **Reject.** Amplitude will reject the property, trigger a warning, and send a notification to the subscribers designated. Amplitude will store the event, but not the properties.
 
-If Amplitude is rejecting your event data and you want to begin collecting it, add the events or properties to your Schema by [planning a new event or planning a new property](https://help.amplitude.com/hc/en-us/articles/5078731378203).
+If Amplitude is rejecting your event data and you want to begin collecting it, add the events or properties to your Schema by planning a new event or planning a new property.
 
 ## View validation errors
 

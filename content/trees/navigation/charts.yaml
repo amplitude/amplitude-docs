@@ -2,7 +2,7 @@ tree:
   -
     id: 431b387f-6c00-49b7-810c-b626b5e1bd58
     title: 'Back to Chart Types'
-    url: /analytics/charts
+    url: /docs/analytics/charts
     data:
       icon: general/back-icon.svg
       underline: true

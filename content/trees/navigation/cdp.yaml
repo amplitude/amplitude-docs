@@ -64,7 +64,7 @@ tree:
       -
         id: 39ecbdb2-a9cd-4934-87f4-9b5369e02db0
         title: 'Source Catalog'
-        url: /data/source-catalog
+        url: /docs/data/source-catalog
   -
     id: 2275c22d-081d-4b7c-acf3-527aca41a667
     title: Destinations
@@ -75,4 +75,4 @@ tree:
       -
         id: 94bbb23b-82d0-4995-bd9d-60c2f391e6b9
         title: 'Destination Catalog'
-        url: /data/destination-catalog
+        url: /docs/data/destination-catalog

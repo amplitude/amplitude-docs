@@ -10,7 +10,7 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717690805
+updated_at: 1718056137
 ---
 Amplitude charts are built using three information cards. These cards, located along the left-hand side of your chart, are called **modules**, and while their specific function can change from chart to chart, they follow some general guidelines:
 
@@ -31,10 +31,6 @@ Because they are designed for different types of analyses, Amplitude’s [User C
 **Events** are the heart of any Amplitude analysis. An event is an action a user takes in your product: Pushing a button, completing a level, or making a payment. You should aim to track between 15 and 200 events to develop a full understanding of how users are engaging with your app.
 
 Amplitude can also track **inactive events**, or actions that are **not** taken by the end user, but still occur within the app or website. One example might be a push notification sent by the app.
-
-{{partial:admonition type='note'}}
-To learn about configuring inactive events, see our Help Center articles on Amplitude’s [Govern](/docs/hc/en-us/articles/360043750992) feature.
-{{/partial:admonition}}
 
 ### Add events to your analysis
 

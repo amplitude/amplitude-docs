@@ -31,11 +31,9 @@ Getting data into Amplitude from your product is done at the **project** level. 
 
 The most popular way to get data into Amplitude from web products or websites is the [Browser SDK](https://www.docs.developers.amplitude.com/data/sdks/browser-2/). Learn more about it [here](https://www.docs.developers.amplitude.com/data/sdks/sdk-quickstart/#initialize-the-library).
 
-Once you've got the API key mentioned in the beginning of this section, add it to the Amplitude Javascript snippet, then paste that snippet to all parts of your product that generate the data you want Amplitude to [track](https://help.amplitude.com/hc/en-us/articles/5078731378203). This **must** be placed at the **top** of **every page** you want to track via Amplitude, and it **must** include the `amplitude.init()` statements. An example snippet is shown in the screenshot below.
+Once you've got the API key mentioned in the beginning of this section, add it to the Amplitude JavaScript snippet, then paste that snippet to all parts of your product that generate the data you want Amplitude to [track](https://help.amplitude.com/hc/en-us/articles/5078731378203). This **must** be placed at the **top** of **every page** you want to track via Amplitude, and it **must** include the `amplitude.init()` statements. An example snippet is shown in the screenshot below.
 
-![send data with browser sdk.png](/docs/output/img/get-started/send data with browser sdk.png)
-
-Again, depending on your level of knowledge and / or comfort with Javascript, you may want to involve someone from your development or engineering team in this phase. And definitely take advantage of all the resources around [SDKs that are available here](https://www.docs.developers.amplitude.com/data/sdks/).
+Again, depending on your level of knowledge and / or comfort with JavaScript, you may want to involve someone from your development or engineering team in this phase. And definitely take advantage of all the resources around [SDKs that are available here](https://www.docs.developers.amplitude.com/data/sdks/).
 
 After instrumenting Amplitude successfully, your data will be visible just as soon as your product begins sending events. (You'll have to [instrument](/docs/data/data-planning-playbook) for detailed documentation on how to approach your event taxonomy.
 
