@@ -20,7 +20,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1713480655
 ---
-This integration combines Amplitude's analytics with Salesforce Marketing Cloud. You can export [Behavioral Cohorts](/analytics/behavioral-cohorts) from Amplitude to Salesforce Marketing Cloud so that you can better engage your users. 
+This integration combines Amplitude's analytics with Salesforce Marketing Cloud. You can export [Behavioral Cohorts](/docs/analytics/behavioral-cohorts) from Amplitude to Salesforce Marketing Cloud so that you can better engage your users. 
 
 Salesforce Marketing Cloud provides marketing engagement automation that allows you to engage your users. Using this integration enables your marketing and growth teams to use behavioral data to better target campaigns and increase user engagement. 
 

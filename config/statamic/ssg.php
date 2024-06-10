@@ -39,12 +39,12 @@ return [
     */
 
     'copy' => [
-        public_path('build') => 'build',
-        public_path('output') => 'output',
-        public_path('assets') => 'assets',
-        public_path('css') => 'css',
-        public_path('js') => 'js',
-        public_path('fonts') => 'fonts',
+        // public_path('build') => 'docs/build',
+        public_path('docs/output') => 'docs/output',
+        public_path('docs/assets') => 'docs/assets',
+        public_path('docs/css') => 'docs/css',
+        public_path('docs/js') => 'docs/js',
+        public_path('docs/fonts') => 'docs/fonts',
     ],
 
     'symlinks' => [

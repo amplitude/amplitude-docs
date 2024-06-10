@@ -24,7 +24,7 @@ To set up a URL redirect test:
 1. In Amplitude, navigate to *Create > Experiment > Use a URL Redirect*.
 2. In the *Variants* panel, add each URL you want to test as a separate variant.
 3. In the *Analysis Settings* panel, copy the code snippet and paste it between the `<head>` and `</head>` tags of your site. Also, make sure your site has the latest Amplitude Analytics SDK installed.
-4. For the rest of the setup process, follow the relevant [Experiment](/experiment) documentation.
+4. For the rest of the setup process, follow the relevant [Experiment](/docs/experiment) documentation.
 
 ## Preview and test
 

@@ -25,7 +25,7 @@ Some Amplitude SDK versions (iOS 5.3.0+, Android 2.28.0+, JavaScript 8.9.0+, Rea
 
 Send users from different regions to the server for their region.
 
-![Dynamic configuration chart](/output/img/dynamic-config-1.png)
+![Dynamic configuration chart](/docs/output/img/dynamic-config-1.png)
 
 ### Dynamically adjust server URLs
 
@@ -33,7 +33,7 @@ If a server URL becomes unreachable for some reason, Amplitude can change the ad
 
 This makes the ingestion endpoint dynamic, so you don't need to release a new version of your app.
 
-![Dynamic configuration chart](/output/img/dynamic-config-2-1715106682.png)
+![Dynamic configuration chart](/docs/output/img/dynamic-config-2-1715106682.png)
 
 ## Usage
 

@@ -77,7 +77,7 @@ Customer.io requires that all events have a user ID present. If you have selecte
 
 ### Configure user forwarding
 
-To stream user and property updates to Customer.io, enable **Send Users**. This setting creates or updates users in Customer.io when you update them in Amplitude with the [HTTP V2 API](/analytics/apis/http-v2-api/) or [Identify API](/analytics/apis/identify-api/). This integration doesn't support scheduled or on-demand updates.
+To stream user and property updates to Customer.io, enable **Send Users**. This setting creates or updates users in Customer.io when you update them in Amplitude with the [HTTP V2 API](/docs/analytics/apis/http-v2-api/) or [Identify API](/docs/analytics/apis/identify-api/). This integration doesn't support scheduled or on-demand updates.
 
 You can optionally select user properties to send to Customer.io in the **Select additional properties** field. Amplitude sends only the properties you select and only when one of them is updated. Amplitude sends these properties as [Customer.io user attributes](https://www.customer.io/docs/attributes/). _This integration doesn't support transformed user properties_.
 

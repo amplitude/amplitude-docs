@@ -20,11 +20,11 @@ Follow these steps to add a custom event:
 
 1. Click **More Options** in the Events side control and select *Combine events inline*.
 
-![](/output/img/event-segmentation/-4kwHCRJq_nvW0E9oN9Y_JbirBp57tTdA5TE09o5UHb3XWt3Vx_rWP6A0e4C87r9LLOIk14GvHYr5554HS8HD1HPjYk0D9-O_qWjTZaswL24ICTPq5ti88C6sOXme80Qcj4Y77J8AyoPQZqsLrCA-uc)
+![](/docs/output/img/event-segmentation/-4kwHCRJq_nvW0E9oN9Y_JbirBp57tTdA5TE09o5UHb3XWt3Vx_rWP6A0e4C87r9LLOIk14GvHYr5554HS8HD1HPjYk0D9-O_qWjTZaswL24ICTPq5ti88C6sOXme80Qcj4Y77J8AyoPQZqsLrCA-uc)
 
 2. Next, click *Add event inline* to add a custom event. Add any number of custom events.
 
-![](/output/img/event-segmentation/rFM_7I88rsHivl7dYUFlLxirvXBSxjBv0yilzSTzFeznNiL4mVchXd5brDg0Xay_nsnlJx6jjm8arG1yu5g_FQUVjr6clxac2oNyh1Z32iSoncl0PHk3PzcvK8AixQXFA7qRX_iFmjMv8zU9aBrXK28)
+![](/docs/output/img/event-segmentation/rFM_7I88rsHivl7dYUFlLxirvXBSxjBv0yilzSTzFeznNiL4mVchXd5brDg0Xay_nsnlJx6jjm8arG1yu5g_FQUVjr6clxac2oNyh1Z32iSoncl0PHk3PzcvK8AixQXFA7qRX_iFmjMv8zU9aBrXK28)
 
 {{partial:admonition type='note'}}
  The in-line event that you create will only be relevant to that specific chart and will not be accessible anywhere else unless it is saved as a custom event. 
@@ -32,11 +32,11 @@ Follow these steps to add a custom event:
 
 3. If desired, hover on the event and click **Filter** to add event properties. Add as many filter properties as needed for each in-line event.
 
-![](/output/img/event-segmentation/2qGAw9uAmao0tp6ZE4c0Hyo3VXKt6VApaZNJE0LKdXPKLt2i-yeaFyfSM_vn_d0EtYOiVS2SxFmBNLPZy1cAFuTN5WNp_Aj6dQfWT1sMG63QJfh4i44oHfaHYs4KTzOZLN93vEmKMepdCZHkLT23e_w)
+![](/docs/output/img/event-segmentation/2qGAw9uAmao0tp6ZE4c0Hyo3VXKt6VApaZNJE0LKdXPKLt2i-yeaFyfSM_vn_d0EtYOiVS2SxFmBNLPZy1cAFuTN5WNp_Aj6dQfWT1sMG63QJfh4i44oHfaHYs4KTzOZLN93vEmKMepdCZHkLT23e_w)
 
-4. Save the in-line events as a [custom event](/analytics/charts/group-events) to use it in other charts. Click **More Options** and choose *Save Custom Event*.
+4. Save the in-line events as a [custom event](/docs/analytics/charts/group-events) to use it in other charts. Click **More Options** and choose *Save Custom Event*.
 
-![inline_to_custom.png](/output/img/event-segmentation/inline-to-custom-png.png)
+![inline_to_custom.png](/docs/output/img/event-segmentation/inline-to-custom-png.png)
 
 5. Click **Remove** to remove properties and in-line events, as needed.
 

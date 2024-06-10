@@ -15,7 +15,7 @@ This article will review divergent lines with similar slopes versus divergent li
 
 Sometimes your cumulative exposure graph will show divergent lines with **similar slopes**. This could be because your experiment started before all variants were ready.
 
-![image8.png](/output/img/advanced-techniques/image8-png.png) 
+![image8.png](/docs/output/img/advanced-techniques/image8-png.png) 
 
 In this example, the two variants began receiving traffic on two separate days, February 23 and February 28, resulting in a pair of staggered lines on the graph.
 
@@ -35,7 +35,7 @@ For example, a user could be assigned to the control variant without triggering 
 
 This reasoning also holds for experiments with sticky bucketing on.
 
- ![image5.png](/output/img/advanced-techniques/image5-png.png)
+ ![image5.png](/docs/output/img/advanced-techniques/image5-png.png)
 
 In this example, on March 15, this user rolled out their experiment to 100% for the control variant. Since sticky bucketing was turned on, we still see the number of “on” users increasing even after the traffic allocation is set to 0%. This happens because allocation occurs when the variant is requested via the SDK or API, so the variant can become “stuck” even without the user having been exposed to it. 
 

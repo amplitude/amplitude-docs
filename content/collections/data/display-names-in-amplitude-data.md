@@ -25,7 +25,7 @@ You can update an event type's display name directly from the *Events* screen. T
 2. Click the event name.
 3. Type the new display name for the event.
 
-![display name.png](/output/img/data/display-name-png.png)
+![display name.png](/docs/output/img/data/display-name-png.png)
 
 ## Change the display name for a user property
 

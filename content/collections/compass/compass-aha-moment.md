@@ -23,17 +23,17 @@ This feature is available to users on **Growth** and **Enterprise plans** only. 
 
 ## Before you begin
 
-First and foremost, events will not appear in any Amplitude charts until instrumentation is complete, so make sure you've got that done. You'll definitely want to read our article on [building charts in Amplitude](/get-started/helpful-definitions).
+First and foremost, events will not appear in any Amplitude charts until instrumentation is complete, so make sure you've got that done. You'll definitely want to read our article on [building charts in Amplitude](/docs/get-started/helpful-definitions).
 
 ## Set up a Compass chart
 
 If you're already familiar with Amplitude, the first thing you'll notice about the Compass chart is that it doesn't work the same way other Amplitude charts work. There's no *Event* Module, no *Segmentation* Module, and no *Measured As* Module:
 
-![compass 1.png](/output/img/compass/compass-1-png.png)
+![compass 1.png](/docs/output/img/compass/compass-1-png.png)
 
 When you first open a Compass chart, you'll see a heat map view that shows the likelihood of new users being retained into their second week, based on both the events they fire, and when they fire them. In this example, we see that users who start a session on their first day are less likely to be retained. This is probably because **all** new users will start a session on their first day—they have to start a session to become a new user in the first place, and since they haven't yet had a chance to interact with your product beyond that, it's not an especially predictive event.
 
-But if they also edit their profile on that first day, they're much more likely to be retained into the second week: the correlation rates between firing those events on day 1 and sticking around for another week are 0.21 for starting a session, versus 0.47 for editing their profile. (We'll talk about correlation in [the article on interpreting your Compass chart](/analytics/charts/compass/compass-interpret-1).)
+But if they also edit their profile on that first day, they're much more likely to be retained into the second week: the correlation rates between firing those events on day 1 and sticking around for another week are 0.21 for starting a session, versus 0.47 for editing their profile. (We'll talk about correlation in [the article on interpreting your Compass chart](/docs/analytics/charts/compass/compass-interpret-1).)
 
 To build a Compass chart, follow these steps:
 
@@ -65,4 +65,4 @@ To add your Compass report to a dashboard, follow these steps:
 1. If you haven't done so already, save your chart by clicking *Save*.
 2. Click *+ Add to*. From the dropdown, select the dashboard you'd like to add the report to, or select *Create a new dashboard*.
 
-Now that you've successfully created a Compass chart, find out what it all means—check out our [Help Center article on interpreting your Compass chart](/analytics/charts/compass/compass-interpret-1).
+Now that you've successfully created a Compass chart, find out what it all means—check out our [Help Center article on interpreting your Compass chart](/docs/analytics/charts/compass/compass-interpret-1).

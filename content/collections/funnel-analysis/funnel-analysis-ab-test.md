@@ -11,7 +11,7 @@ landing: true
 landing_blurb: 'View your Funnel Analysis charts in terms of either improvement over baseline or statistical significance'
 ---
 {{partial:admonition type='note'}}
-For best practices, including tips on instrumentation, please take a look at our [How to Analyze A/B Tests Results in Amplitude](/get-started/analyze-a-b-test-results) article.  
+For best practices, including tips on instrumentation, please take a look at our [How to Analyze A/B Tests Results in Amplitude](/docs/get-started/analyze-a-b-test-results) article.  
 {{/partial:admonition}}
 
 In Amplitude, A/B testing lets you compare the funnel conversion performance of two or more user segments against each other. You can view results in terms of **improvement**—which describes the performance of a segment compared to the baseline—or in terms of **statistical significance**, which will show you the probability of observing a difference as extreme as what you saw, assuming the control and treatment have the same mean.
@@ -22,7 +22,7 @@ This feature is available to users on **Growth** and **Enterprise plans** only. 
 
 Amplitude will, by default, use the first segment added to the funnel analysis as the baseline, but you can change this in the *Baseline segment* drop-down menu.
 
-![baseline_segment.png](/output/img/funnel-analysis/baseline-segment-png.png)
+![baseline_segment.png](/docs/output/img/funnel-analysis/baseline-segment-png.png)
 
 ### A/B Test - Improvement
 

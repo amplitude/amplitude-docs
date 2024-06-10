@@ -49,7 +49,7 @@ If you’re blocking, filtering or transforming your data upstream of Amplitude,
 
 ### Observe and the Ampli CLI
 
-If you’ve instrumented all your event tracking using Amplitude’s SDKs, you already benefit from type-safe analytics libraries, client-side validation, and continuous integration ([CI](/sdks/ampi/validate-in-ci)) for clean and accurate data you can trust.
+If you’ve instrumented all your event tracking using Amplitude’s SDKs, you already benefit from type-safe analytics libraries, client-side validation, and continuous integration ([CI](/docs/sdks/ampi/validate-in-ci)) for clean and accurate data you can trust.
 
 Observe will still add value by surfacing and alerting you to any runtime validation errors in the web app. This is specifically relevant for JavaScript, as it’s not a type-safe language, and checks are only performed at runtime. See the Amplitude Data developer documentation for more details.
 

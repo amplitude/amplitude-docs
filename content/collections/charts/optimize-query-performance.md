@@ -27,21 +27,21 @@ This feature is available to users on **all Amplitude plans**. See our [pricing 
 
 To enable query time sampling, follow these steps:
 
-1. From your Funnel Analysis, click ![lightningBolt.png](/output/img/charts/lightningbolt-png.png).
+1. From your Funnel Analysis, click ![lightningBolt.png](/docs/output/img/charts/lightningbolt-png.png).
 
-![querySample.png](/output/img/charts/querysample-png.png)
+![querySample.png](/docs/output/img/charts/querysample-png.png)
 
-2. The ![lightningBolt.png](/output/img/charts/lightningbolt-png.png) will then change to ![sampling10Percent.png](/output/img/charts/sampling10percent-png.png).
+2. The ![lightningBolt.png](/docs/output/img/charts/lightningbolt-png.png) will then change to ![sampling10Percent.png](/docs/output/img/charts/sampling10percent-png.png).
 
-![testFunnelChart.png](/output/img/charts/testfunnelchart-png.png)
+![testFunnelChart.png](/docs/output/img/charts/testfunnelchart-png.png)
 
-To return to querying your full dataset, turn off query time sampling by clicking ![sampling10Percent.png](/output/img/charts/sampling10percent-png.png). 
+To return to querying your full dataset, turn off query time sampling by clicking ![sampling10Percent.png](/docs/output/img/charts/sampling10percent-png.png). 
 
 ## Set query time sampling as the default
 
 Admin users can set query time sampling as the default for all new charts in a project. To do so, follow these steps:
 
-1. Click ![](/output/img/charts/15172559254683) to view your organizational settings.
+1. Click ![](/docs/output/img/charts/15172559254683) to view your organizational settings.
 2. Click *Projects.*
 3. Choose the project you'd like to modify and switch the *Query time sampling* toggle to On.
 

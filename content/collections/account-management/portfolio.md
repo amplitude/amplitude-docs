@@ -14,7 +14,7 @@ this_article_will_help_you:
 With Portfolio, you can easily generate a holistic view of how your users interact with your **entire product portfolio**. If you've instrumented multiple platforms or product lines, Portfolio can give you unparalleled insight into your users’ complete journey.
 
 {{partial:admonition type='note'}}
-Be sure to understand [project settings](/admin/account-management/manage-orgs-projects) in Amplitude before getting started.
+Be sure to understand [project settings](/docs/admin/account-management/manage-orgs-projects) in Amplitude before getting started.
 {{/partial:admonition}}
 
 ### Feature availability
@@ -45,7 +45,7 @@ While cohort export for portfolio projects is supported for all destinations, wh
 
 Admins and managers in an organization can access and create the Portfolio view by clicking the Settings icon
 
-![gear_icon_for_settings.png](/output/img/account-management/gear-icon-for-settings-png.png)
+![gear_icon_for_settings.png](/docs/output/img/account-management/gear-icon-for-settings-png.png)
 
 and navigating to *Organization settings > Projects > Create Portfolio View*. A modal will appear; in it, you can name the portfolio view and set user permissions.
 
@@ -57,7 +57,7 @@ It's not uncommon for user IDs for the same user to differ across projects withi
 
 In the example below, three user records—each with a different users ID—are all merged into the user ID `mike@hooli.com` . This new user ID will be that user’s “global” user ID in the cross-project view. This way, you can get an accurate count of the number of unique users across your entire product portfolio.
 
-![](/output/img/account-management/360003724891)
+![](/docs/output/img/account-management/360003724891)
 
 When users are mapped, user properties **are not merged**—this means the user properties attached to each event will be those from the original user who triggered the event in the first place.
 

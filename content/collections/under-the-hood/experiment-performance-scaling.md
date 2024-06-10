@@ -33,4 +33,4 @@ The Amplitude Experiment architecture is built on two components:
 * **Fastly CDN**. All requests to Amplitude servers are routed through Fastly, one of the best CDNs out there.
 * **Reliable hosted AWS services**. Amplitude uses Application Load Balancer, Relational Databases, and DynamoDB, which guarantee high availability.
 
-![experiment_architecture.png](/output/img/under-the-hood/experiment-architecture-png.png)
+![experiment_architecture.png](/docs/output/img/under-the-hood/experiment-architecture-png.png)

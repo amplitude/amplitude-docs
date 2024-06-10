@@ -42,7 +42,7 @@ The risk of a false positive result increases with each metric or variant you ad
 Fortunately, there are statistical tools used to compensate and correct for the multiple comparisons problem. Amplitude uses the **Bonferroni correction** to accomplish this.
 
 {{partial:admonition type='note'}}
- By default, the Bonferroni correction is set to on. In certain circumstances, you may manually toggle it off in your [statistical settings](/experiment/workflow/finalize-statistical-preferences). 
+ By default, the Bonferroni correction is set to on. In certain circumstances, you may manually toggle it off in your [statistical settings](/docs/experiment/workflow/finalize-statistical-preferences). 
 {{/partial:admonition}}
 
 ## Bonferroni correction
@@ -51,7 +51,7 @@ The Bonferroni correction is the simplest statistical method for counteracting t
 
 The Bonferroni correction does, however, control for family-wise error rate and applies to the confidence interval. In the button color example above, dividing 0.1 by 2 equals .05, which is what we want. Thus, the [family wise error rate](https://en.wikipedia.org/wiki/Family-wise_error_rate) (the probability of rejecting at least one hypothesis) is controlled. 
 
-![image1.png](/output/img/advanced-techniques/image1-png.png)
+![image1.png](/docs/output/img/advanced-techniques/image1-png.png)
 
 **NOTE:** The proof follows from [Boole’s inequality](https://en.wikipedia.org/wiki/Boole%27s_inequality).
 
@@ -64,4 +64,4 @@ Amplitude Experiment performs Bonferroni corrections on both the number of treat
 
 In either case, you will see an info icon in the significance column when Bonferroni correction is applied. The tooltip will show the corrected and uncorrected p-value. 
 
-![eadb7a2f-6963-4e41-9876-71b7ec29c325.png](/output/img/advanced-techniques/eadb7a2f-6963-4e41-9876-71b7ec29c325-png.png)
+![eadb7a2f-6963-4e41-9876-71b7ec29c325.png](/docs/output/img/advanced-techniques/eadb7a2f-6963-4e41-9876-71b7ec29c325-png.png)

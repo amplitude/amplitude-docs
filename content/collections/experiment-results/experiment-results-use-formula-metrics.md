@@ -17,7 +17,7 @@ In an Experiment Results chart, using a **formula metric** offers you greater fl
 * at least one event, and
 * a mathematical operation through which the events interact with each other.
 
-If you've used [custom formulas in Event Segmentation](/analytics/charts/event-segmentation/event-segmentation-custom-formulas), this should be familiar to you. If not, take a minute to go back and read over that article before proceeding.
+If you've used [custom formulas in Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas), this should be familiar to you. If not, take a minute to go back and read over that article before proceeding.
 
 ## Create a formula metric
 
@@ -25,11 +25,11 @@ To add a formula metric to your Experiment Results chart, follow the below steps
 
 1. In the Primary Metric module, click *+ Add Metric* and choose a formula from the *Formula* drop down options.
 
-  ![select_formula.png](/output/img/experiment-results/select-formula-png.png)
+  ![select_formula.png](/docs/output/img/experiment-results/select-formula-png.png)
 
 2. Click *+ Define single-use metric*, then select *Formula* from the *Metric Type* dropdown in the modal that appears.  
   
-  ![Screenshot 2023-07-31 at 2.13.04 PM.png](/output/img/experiment-results/screenshot-2023-07-31-at-2-13-04-pm-png.png)
+  ![Screenshot 2023-07-31 at 2.13.04 PM.png](/docs/output/img/experiment-results/screenshot-2023-07-31-at-2-13-04-pm-png.png)
 
 3. Click *Select event ...* to begin selecting events to include in your formula metric. Repeat this step until all events are included.
 
@@ -37,7 +37,7 @@ To add a formula metric to your Experiment Results chart, follow the below steps
 
 3. Add a name for this new formula metric. Click *Apply* when you're done. The metric will be added to your Experiment Results chart.
 
-You can also view this metric in the [object management center](/data/object-management).
+You can also view this metric in the [object management center](/docs/data/object-management).
 
 ## Supported formula functions
 
@@ -77,7 +77,7 @@ Returns the sum of the property values you are grouping the specified event by.
 
 This function will only work if you are grouping by a numerical property on the event. If grouping by multiple properties, the formula will perform the calculation with the first group-by clause.
 
-Returns the average of the property values you are grouping by. This function is equivalent to `PROPSUM(event)/TOTALS(event)`. [Learn more about how Amplitude calculates PROPAVG and PROPSUM in this article](/experiment/under-the-hood/experiment-analysis-chart-calculation)
+Returns the average of the property values you are grouping by. This function is equivalent to `PROPSUM(event)/TOTALS(event)`. [Learn more about how Amplitude calculates PROPAVG and PROPSUM in this article](/docs/experiment/under-the-hood/experiment-analysis-chart-calculation)
 
 **CONVERSIONRATE (closed beta):**
 
@@ -93,7 +93,7 @@ This function is supported for Experiment metrics only, and is currently only av
 
 Returns the conversion rate (< 1) from 1st event to nth event of the array. This function internally uses Funnel Query to get the conversion rate.
 
-![](/output/img/experiment-results/23576087044507)
+![](/docs/output/img/experiment-results/23576087044507)
 
 **CONVERSIONAVG (closed beta):**
 
@@ -121,7 +121,7 @@ In your formulas, refer to events selected in the Events Module by their corresp
 
 ## How Amplitude calculates experiment data for formula metrics
 
-Before understanding how experiment data is calculated for formula metrics, it’s important to understand the overall [Experiment Analysis view](/experiment/analysis-view), which provides details for your experiment.
+Before understanding how experiment data is calculated for formula metrics, it’s important to understand the overall [Experiment Analysis view](/docs/experiment/analysis-view), which provides details for your experiment.
 
 For formula metrics, Amplitude computes the results for each function independently to find the mean and variance of each one. The arithmetic operators are then applied on the results of these individual functions.   
 
@@ -141,7 +141,7 @@ Mean: E[X + Y] = E[X] + E[Y]
 Mean: E[X - Y] = E[X] - E[Y]`
 * **Multiplication:**`Variance: V[X \* Y] = n^3 mu\_y^2 sigma\_x^2 + n^3 sigma\_y^2 mu\_x^2 + n^2 sigma\_x^2 sigma\_y^2  
 Mean: E[X \* Y] = E[X] \* E[Y]`
-* **Division:**`Variance:**![](/output/img/experiment-results/23576087077403)**Mean: E[X / Y] = E[X] / E[Y]`
+* **Division:**`Variance:**![](/docs/output/img/experiment-results/23576087077403)**Mean: E[X / Y] = E[X] / E[Y]`
 
 Once we have the mean and variance of the overall formula metric, we can calculate the confidence interval chart and the p-values.
 

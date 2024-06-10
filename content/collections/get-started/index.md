@@ -16,32 +16,32 @@ Our documentation has all kinds of valuable information for you as your usage of
 
 Start by learning about organizations and projects in Amplitude (your analyses live in projects, and all your projects live in your organization): 
 
-* [Create your organization](/get-started/create-org)
-* [Instrumentation pre-work](/get-started/instrumentation-prework)
-* [Create a project in Amplitude](/get-started/create-project)
+* [Create your organization](/docs/get-started/create-org)
+* [Instrumentation pre-work](/docs/get-started/instrumentation-prework)
+* [Create a project in Amplitude](/docs/get-started/create-project)
 
 Next, find out how to get your product data into Amplitude (you can’t do any analyses without data!), the specific events and properties you should consider tracking, and answers to some common implementation questions:
 
-* [Get data into Amplitude](/get-started/get-data-in)
-* [What events will you need?](/get-started/select-events)
-* [How will you identify your users?](/get-started/identify-users)
-* [Questions your engineers may ask you](/get-started/questions-from-your-engineer)
-* [Cross-platform instrumentation vs. separate platform instrumentation](/get-started/cross-platform-vs-separate-platform)
-* [Track your progress as you instrument Amplitude](/get-started/track-your-progress)
+* [Get data into Amplitude](/docs/get-started/get-data-in)
+* [What events will you need?](/docs/get-started/select-events)
+* [How will you identify your users?](/docs/get-started/identify-users)
+* [Questions your engineers may ask you](/docs/get-started/questions-from-your-engineer)
+* [Cross-platform instrumentation vs. separate platform instrumentation](/docs/get-started/cross-platform-vs-separate-platform)
+* [Track your progress as you instrument Amplitude](/docs/get-started/track-your-progress)
 
 From there, learn how to create and share charts:
 
-* [The Amplitude Home page](/get-started/amplitude-home-page)
-* [Create a chart](/get-started/create-a-chart)
-* [Spaces](/get-started/spaces)
-* [Start from a template](/get-started/start-from-template)
+* [The Amplitude Home page](/docs/get-started/amplitude-home-page)
+* [Create a chart](/docs/get-started/create-a-chart)
+* [Spaces](/docs/get-started/spaces)
+* [Start from a template](/docs/get-started/start-from-template)
 
 Finally, we’ve put together some guidance on how you can generate some quick wins right now, so your company’s investment in Amplitude can begin paying off today:
 
-* [Understand your users’ activity](/get-started/understand-user-activity)
-* [Analyze your acquisition channels](/get-started/analyze-acquisition-channels)
-* [Analyze feature adoption](/get-started/analyze-feature-adoption)
-* [Understand conversion rate of an important flow](/get-started/understand-conversion-rate)
+* [Understand your users’ activity](/docs/get-started/understand-user-activity)
+* [Analyze your acquisition channels](/docs/get-started/analyze-acquisition-channels)
+* [Analyze feature adoption](/docs/get-started/analyze-feature-adoption)
+* [Understand conversion rate of an important flow](/docs/get-started/understand-conversion-rate)
 
 {{partial:admonition type='note'}}
 If you or your engineers have questions about instrumentation, see [this article](https://www.docs.developers.amplitude.com/getting-started/).

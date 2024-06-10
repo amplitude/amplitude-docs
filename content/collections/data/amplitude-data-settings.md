@@ -21,7 +21,7 @@ In the Settings page, you will:
 
 These settings and features are broken out into five different tabs: General; Environments; Integrations; API Tokens; and Schema Settings, each of which is described below.
 
-![data_settings.png](/output/img/data/data-settings-png.png)
+![data_settings.png](/docs/output/img/data/data-settings-png.png)
 
 {{partial:admonition type="note" heading=""}}
 Make sure you’ve configured your settings **before** setting up your first Amplitude Data project.
@@ -44,7 +44,7 @@ If the *Require team reviews to make changes to the main branch* option is disab
 
 The General tab is where you’ll give your project a **name**, set the event and property **naming conventions**, set **team review requirements** for making changes on main, and **delete your project**. It’s also where you’ll find a **public link** to a read-only version of your tracking plan, so you can easily and safely share it with stakeholders across your organization.
 
-![general.png](/output/img/data/general-png.png)
+![general.png](/docs/output/img/data/general-png.png)
 
 ### Naming conventions
 
@@ -73,7 +73,7 @@ You can also enable or disable the public link, which will change the availabili
 
 You can integrate Amplitude Data with your existing tools to streamline your analytics workflow. To integrate a platform, simply click *Connect* or *Add* next to its name.
 
-![integrations.png](/output/img/data/integrations-png.png)
+![integrations.png](/docs/output/img/data/integrations-png.png)
 
 ## The API Tokens tab
 
@@ -81,7 +81,7 @@ Use API tokens to authenticate to Amplitude Data using credentials other than yo
 
 To create an API token, click *Create Token*. Amplitude Data will generate the token and display it in a modal window.
 
-![create_token.png](/output/img/data/create-token-png.png)
+![create_token.png](/docs/output/img/data/create-token-png.png)
 
 Be sure to click *Copy to clipboard* now, as you won’t be able to retrieve the token later.
 
@@ -91,7 +91,7 @@ Sometimes, Amplitude Data might receive data from your app that it doesn't know 
 
 You can tell Amplitude how to handle these situations by configuring your schema settings.
 
-![schema.png](/output/img/data/schema-png.png)
+![schema.png](/docs/output/img/data/schema-png.png)
 
 For any unplanned events, event properties, event property types, user properties, or user property types, you can tell Amplitude Data to either mark them as **unexpected**, or to **reject** them outright. Amplitude Data will collect any events or properties marked as unexpected and send a notification to everyone subscribed to this schema. If you choose to reject unexpected data, however, Amplitude Data will not collect or store the rejected data. Subscribers will still receive a notification.
 

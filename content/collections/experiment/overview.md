@@ -9,7 +9,7 @@ this_article_will_help_you:
 landing: true
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1716916795
+updated_at: 1717539472
 sourxe: 'https://help.amplitude.com/hc/en-us/articles/360061270232-Amplitude-Experiment-overview-Optimize-your-product-experience-through-A-B-testing'
 landing_blurb: 'Learn the value of experimentation in your product.'
 ---
@@ -26,7 +26,7 @@ With Experiment, you can easily **modify and configure product experiences** for
 Amplitude Experiment enables all this through **flags**—easy-to-set up switches that let you modify your product's experience without having to change code. Use them to set up experiments in your product, or to stage and roll out new features straight to your users. Your code uses the [Amplitude Experiment SDK](https://www.docs.developers.amplitude.com/experiment/#sdks) or [REST API](https://www.docs.developers.amplitude.com/experiment/#rest-apis) to communicate with Amplitude Experiment.
 
 {{partial:admonition type='note'}}
-Amplitude Experiment defaults to a **sequential testing** statistical model in all experiments, but you can opt for a T-test (/experiment/experiment-theory/analyze-with-t-test) instead.
+Amplitude Experiment defaults to a **sequential testing** statistical model in all experiments, but you can opt for a [T-test](/docs/experiment/experiment-theory/analyze-with-t-test) instead.
 {{/partial:admonition}}
 
 This article will provide a high-level overview of the Amplitude Experiment workflow: we’ll start with the workflow for **creating an experiment**, and follow that with the workflow for **creating a feature flag**.
@@ -70,7 +70,7 @@ When coming up with variants, it’s good practice to keep the number of changes
 Next you'll be able to decipher a bucketing unit, or the determinant of what group of people sees the same variant. The most common bucketing unit is “user”. However, if you’re a B2B business or are utilizing the collaboration feature, you might want to use a bucketing unit such as “organization” or company\_id, which means that every user within the same organization will see the same variant. This can help reduce product-related confusion caused by disparate user interfaces if people are sitting next to their coworkers. Another reason for bucketing by company\_id is to reduce the load on your customer support team. It is easier for the customer support team to know which accounts have which features enabled. Either way, you want to make sure the Stable Unit Treatment Value Assumption ([SUTVA](https://blogs.iq.harvard.edu/violations_of_s#:~:text=Methods%20for%20causal%20inference%2C%20in,treatments%20of%20others%20around%20him)) holds for whatever bucketing unit you choose to best ensure inference. 
 
 {{partial:admonition type='note'}}
- If your organization has purchased the [Accounts add-on,](/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users.
+ If your organization has purchased the [Accounts add-on,](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users.
 {{/partial:admonition}}
 
 ### Allocate users
@@ -85,7 +85,7 @@ At this point, you’re ready to roll out your experiment to your users. Click *
 
 After your experiment goes live, you can generate and view your results at any time. Experiment will tell you when your experiment has reached **statistical significance**, and it gives you all the data you need to analyze and interpret your results, and to apply those learnings to your product experience going forward.
 
-To learn more about how to design, roll out, and learn from experiments, check out our [articles on the experimentation workflow](/experiment/workflow/create).
+To learn more about how to design, roll out, and learn from experiments, check out our [articles on the experimentation workflow](/docs/experiment/workflow/create).
 
 {{partial:admonition type='note'}}
  Now that you better understand the experiment workflow, consider using experiment briefs to better communicate and streamline your experimentation processes amongst your team. They can also help to create transparency and align experimentation goals. [Read more about experiment briefs and how to use them in this blog](https://amplitude.com/blog/experiment-brief).
@@ -103,7 +103,7 @@ Once you’ve configured your deployment, go straight to creating your variants.
 
 You’ll still allocate users to your variants as you would if you were running an experiment, and activating your flag is as simple as switching on your experiment.
 
-Check out this article to [learn more about feature flags and how they work in Amplitude Experiment](/experiment/workflow/feature-flag-rollouts).
+Check out this article to [learn more about feature flags and how they work in Amplitude Experiment](/docs/experiment/workflow/feature-flag-rollouts).
 
 ## Delete old experiments and flags
 

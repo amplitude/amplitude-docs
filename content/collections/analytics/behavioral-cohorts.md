@@ -10,7 +10,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717623689
 ---
-In Amplitude, a **cohort** is a group of users who share a trait or set of traits. There are two different types of cohorts: [predictive cohorts](/cdp/audiences/predictions) and **behavioral cohorts**. 
+In Amplitude, a **cohort** is a group of users who share a trait or set of traits. There are two different types of cohorts: [predictive cohorts](/docs/cdp/audiences/predictions) and **behavioral cohorts**. 
 
 ### Feature availability
 
@@ -32,16 +32,16 @@ Some examples of behavioral cohorts might be:
 
 Ultimately, this sort of behavioral data reveals how engagement with your product affects retention, conversion, revenue, and other business outcomes you care about.
 
-Cohorts are extremely useful across the Amplitude platform. To segment your data by cohorts, select *Cohort* in the [Segmentation Module](/analytics/charts/build-charts-add-user-segments), and then choose the cohort you're interested in from the drop-down list.
+Cohorts are extremely useful across the Amplitude platform. To segment your data by cohorts, select *Cohort* in the [Segmentation Module](/docs/analytics/charts/build-charts-add-user-segments), and then choose the cohort you're interested in from the drop-down list.
 
 For any chart or query that segments on a cohort, the segmented cohort will automatically recompute itself whenever the chart is generated. You can manually re-compute the cohort at any time by clicking the refresh icon.
 
-If you have the [Accounts add-on](/analytics/account-level-reporting), you can apply a group-level cohort instead of a cohort of users. When you select a specific group type, only the cohorts it contains will appear in the drop-down list on the right side of the equals sign:
+If you have the [Accounts add-on](/docs/analytics/account-level-reporting), you can apply a group-level cohort instead of a cohort of users. When you select a specific group type, only the cohorts it contains will appear in the drop-down list on the right side of the equals sign:
 
-![behavioral_cohorts_1.png](/output/img/analytics/behavioral_cohorts_1.png)
+![behavioral_cohorts_1.png](/docs/output/img/analytics/behavioral_cohorts_1.png)
 
 You can also create a chart using the cohort directly from the Cohort page:
 
-![create chart from cohort.png](/output/img/analytics/create-chart-from-cohort.png)
+![create chart from cohort.png](/docs/output/img/analytics/create chart from cohort.png)
 
-But before you can do any of that, you'll have to define a new cohort. Read the next article to learn how to [define a new cohort](/analytics/define-cohort).
+But before you can do any of that, you'll have to define a new cohort. Read the next article to learn how to [define a new cohort](/docs/analytics/define-cohort).

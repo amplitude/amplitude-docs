@@ -22,7 +22,7 @@ short_description: 'Salesforce Marketing Cloud is a provider of digital marketin
 ---
 Salesforce Marketing Cloud provides marketing engagement automation that allows you to engage your users. Using this integration enables your marketing and growth teams to use behavioral data to better target campaigns and increase user engagement.
 
-This integration combines Amplitude's analytics with Salesforce Marketing Cloud. You can export [Behavioral Cohorts](/analytics/behavioral-cohorts) from Amplitude to Salesforce Marketing Cloud so that you can better engage your users. 
+This integration combines Amplitude's analytics with Salesforce Marketing Cloud. You can export [Behavioral Cohorts](/docs/analytics/behavioral-cohorts) from Amplitude to Salesforce Marketing Cloud so that you can better engage your users. 
 
 {{partial:admonition type="info" title="Differences between v1 and v2"}}
 There are several key improvements to the Salesforce Marketing Cloud v2 integration.

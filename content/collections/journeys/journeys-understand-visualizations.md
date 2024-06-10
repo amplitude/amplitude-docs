@@ -20,12 +20,12 @@ In any of these analyses, you can:
 
 You can also hide noisy events, only show specific events, collapse repeated events, and view custom events. Any settings you change while viewing one visualization will carry over to the others.
 
-Start and end sessions are also defined the same for all Journeys visualizations, and do not allow cohort generation from dropped off users. This is because the start and end times don't always represent true events. For example, let's say a user logs in and then goes inactive after 30 minutes. By default, Amplitude will generate a start session event after the user logs in and an end session event for when the user went inactive. Read more about how Amplitude tracks sessions [here](/cdp/sources/instrument-track-sessions). 
+Start and end sessions are also defined the same for all Journeys visualizations, and do not allow cohort generation from dropped off users. This is because the start and end times don't always represent true events. For example, let's say a user logs in and then goes inactive after 30 minutes. By default, Amplitude will generate a start session event after the user logs in and an end session event for when the user went inactive. Read more about how Amplitude tracks sessions [here](/docs/cdp/sources/instrument-track-sessions). 
 
 Finally, in any Journeys visualization, you can remove an event, expand an event by property, filter by sequences that include the event and property pair, or create a cohort from an event. Just click the event and select the option you want from the menu that appears.
 
 {{partial:admonition type='note'}}
-To [access your legacy Pathfinder, Pathfinder Users, and Journeys charts, see our Help Center article linked here](/analytics/charts/journeys/journeys-understand-paths).
+To [access your legacy Pathfinder, Pathfinder Users, and Journeys charts, see our Help Center article linked here](/docs/analytics/charts/journeys/journeys-understand-paths).
 {{/partial:admonition}}
 
 Because Journeys charts automatically hide inactive events, you may see more conversions in a Pathfinder chart than in an identical funnel. Here are some more differences to note between a Journeys chart and a funnel:
@@ -38,7 +38,7 @@ Because Journeys charts automatically hide inactive events, you may see more con
 
 Pathfinder is the default visualization of the Journeys chart. It’s a great tool to show you how users are using your product by presenting all the paths that start with, or end with, a specific event during a given time period. It shows the paths your customers take and their popularity relative to each other. 
 
-![](/output/img/journeys/2IFR1uDtIQKZMXgmgEwUF3v1pRwk5LFh_XxP2hFihkSxCYWQtskL5qb5xfy-eNEg_BqJKe3Xe_5V27DJMjzEAF5n7Rxx72ySHKJQtSXVLI0P2_r8YTsBMabZH2ffrvXCDa1k5RWxGMMnNhrrt0ep_oU)
+![](/docs/output/img/journeys/2IFR1uDtIQKZMXgmgEwUF3v1pRwk5LFh_XxP2hFihkSxCYWQtskL5qb5xfy-eNEg_BqJKe3Xe_5V27DJMjzEAF5n7Rxx72ySHKJQtSXVLI0P2_r8YTsBMabZH2ffrvXCDa1k5RWxGMMnNhrrt0ep_oU)
 
 The flow diagram shows all the paths starting or ending with a specific event. Each step is labeled. The label tells you the event triggered at that step in the sequence, as well as the frequency the event was triggered at that stage in the sequence. If a step reads *Dropped off* or *Did not perform an event*, that path includes users who dropped off at that point, or who did not trigger an event prior to the next one listed in the path.
 
@@ -62,7 +62,7 @@ From here, she might develop a hypothesis about why users are behaving in a way 
 
 The Journey Map does the hard work of surfacing these patterns for you; all you have to do is follow the insights and keep asking follow-up questions.
 
-![](/output/img/journeys/0ukZnY6Wlnm_-4kXzURQjH4SIPCJcp7uRnDbXvIoOpItSdWpCjNbkRQArmue6r8nwSGfZBNLyQM5pxx4KQQfa6mFCiABMQCczFo5xY63fxwNr1pcSr6T9m6bCCDcUqtnLNjbT5YcNbtRkOJGYXdw-ww)
+![](/docs/output/img/journeys/0ukZnY6Wlnm_-4kXzURQjH4SIPCJcp7uRnDbXvIoOpItSdWpCjNbkRQArmue6r8nwSGfZBNLyQM5pxx4KQQfa6mFCiABMQCczFo5xY63fxwNr1pcSr6T9m6bCCDcUqtnLNjbT5YcNbtRkOJGYXdw-ww)
 
 {{partial:admonition type='note'}}
 You cannot create cohorts for event paths that include `Dropped off` or `Did not perform an event`.
@@ -82,7 +82,7 @@ Next, 20.7% of all users triggered `taxonomy: view event detail panel`, followed
 
 We can see the same progressions in the Journey Map. Here we can also see that those 2,725 users took an average of 1 hour and 48 minutes to progress all the way through the path.
 
-![](/output/img/journeys/oSpPJfbuxyBQuRxC8FLdP_AnO-r0zLvxZ-sd3et_csda79xP-0VWqz_MqUNdQ6jgksbElHtCtXRlPWo-n6cyqd1P5oktPkzVEe9c4fpHfOkDtJ3o31JS7f6awZmcH1muu75inKY3Z2-aUUcYc3eaZkA)
+![](/docs/output/img/journeys/oSpPJfbuxyBQuRxC8FLdP_AnO-r0zLvxZ-sd3et_csda79xP-0VWqz_MqUNdQ6jgksbElHtCtXRlPWo-n6cyqd1P5oktPkzVEe9c4fpHfOkDtJ3o31JS7f6awZmcH1muu75inKY3Z2-aUUcYc3eaZkA)
 
 ## Differences from the legacy versions of these charts
 

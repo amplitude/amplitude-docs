@@ -11,11 +11,11 @@ updated_at: 1717104782
 landing: true
 landing_blurb: 'Interpret the results of your Engagement Matrix chart'
 ---
-If you haven't yet done so, read our [Help Center article setting up an Engagement Matrix chart](/analytics/charts/engagement-matrix/engagement-matrix-discover). 
+If you haven't yet done so, read our [Help Center article setting up an Engagement Matrix chart](/docs/analytics/charts/engagement-matrix/engagement-matrix-discover). 
 
 ## Interpret your Engagement Matrix
 
-![interpret.png](/output/img/engagement-matrix/interpret-png.png)
+![interpret.png](/docs/output/img/engagement-matrix/interpret-png.png)
 
 The light blue lines on your chart offer a handy way of categorizing your features and events, based on their performance relative to each other. Use it to prioritize which events or features you wish to focus on:
 
@@ -26,15 +26,15 @@ The light blue lines on your chart offer a handy way of categorizing your featur
 
 For example, in the following matrix it seems like the 'Select Song or Video' event is a core event in our product, while the 'Upgrade Plan' event is in the bottom left. This could mean that your product team should focus on moving the 'Upgrade Plan' event to the right, perhaps by enticing users to upgrade their plans. 
 
-![matrix_closeup.png](/output/img/engagement-matrix/matrix-closeup-png.png)
+![matrix_closeup.png](/docs/output/img/engagement-matrix/matrix-closeup-png.png)
 
 ## Breakdown table
 
-The [breakdown table](/analytics/charts/review-chart-data) below the chart provides a convenient tabular summary of the data displayed in your matrix. 
+The [breakdown table](/docs/analytics/charts/review-chart-data) below the chart provides a convenient tabular summary of the data displayed in your matrix. 
 
 You can perform operations on the columns: The column average or median will be the same as the values the cross-sectional gray lines denote. Once you've selected your events, you can deselect in the table any events you may not wish to see in your Engagement Matrix chart. You also have the option to export this data as a CSV file and display either the average number of times performed or the average number of days for each event. 
 
-![breakdown_table.png](/output/img/engagement-matrix/breakdown-table-png.png)
+![breakdown_table.png](/docs/output/img/engagement-matrix/breakdown-table-png.png)
 
 To export the table as a .CSV file, click *Export CSV*.
 
@@ -44,4 +44,4 @@ To zoom in on a cluster of data points, drag your mouse diagonally across the da
 
 In the chart below, we can see a cluster of data points we'd like to dig deeper into, so we can see exactly which events are falling into which section of the matrix. 
 
-![zoom_in.gif](/output/img/engagement-matrix/zoom-in-gif.gif)
+![zoom_in.gif](/docs/output/img/engagement-matrix/zoom-in-gif.gif)

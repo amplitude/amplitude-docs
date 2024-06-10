@@ -34,11 +34,11 @@ For example, if you are sampling at 10%, Amplitude would multiply tracked events
 
 Each Amplitude chart will show the sampling rate applied to it. This allows for transparent communication of effective sampling rates.
 
-![Screen_Shot_2023-03-22_at_11.02.05_AM.png](/output/img/account-management/screen-shot-2023-03-22-at-11-02-05-am-png.png)
+![Screen_Shot_2023-03-22_at_11.02.05_AM.png](/docs/output/img/account-management/screen-shot-2023-03-22-at-11-02-05-am-png.png)
 
 You can see the raw events seen for your project for last month and the current month, along with the number of events after sampling. This provides you with real-time access to event volume. 
 
-![scale_1.png](/output/img/account-management/scale-1-png.png)
+![scale_1.png](/docs/output/img/account-management/scale-1-png.png)
 
 {{partial:admonition type='note'}}
 Sampling does not apply to PROPCOUNT results.
@@ -46,34 +46,34 @@ Sampling does not apply to PROPCOUNT results.
 
 ## Set up sampling
 
-You must be an [Admin](/admin/account-management/user-roles-permissions) in your Amplitude organization in order to make any sampling-related changes.
+You must be an [Admin](/docs/admin/account-management/user-roles-permissions) in your Amplitude organization in order to make any sampling-related changes.
 
 To set up sampling, follow these steps:
 
-1. Click ![gear_icon_for_settings.png](/output/img/account-management/gear-icon-for-settings-png.png), then click *Projects.* Select the project you're interested in. Then click *Sampling*.
+1. Click ![gear_icon_for_settings.png](/docs/output/img/account-management/gear-icon-for-settings-png.png), then click *Projects.* Select the project you're interested in. Then click *Sampling*.
 
-![scale_2.png](/output/img/account-management/scale-2-png.png)
+![scale_2.png](/docs/output/img/account-management/scale-2-png.png)
 
 2. In the modal that opens, click *Edit* to set the **dynamic sampling rate**.
 
-![scale_3.png](/output/img/account-management/scale-3-png.png)
+![scale_3.png](/docs/output/img/account-management/scale-3-png.png)
 
 The dynamic sampling rate specifies the frequency with which your data will be queried. For example, if you have 50 million active users per year and you set a dynamic sampling rate of 10%, your queried data will contain 5 million active users per year. Your event costs will be significantly lower, yet you'll still have more than enough data to generate highly accurate analyses.
 
 3. Next, set your **user property inclusion list**, if desired.
 
-![scale_4.png](/output/img/account-management/scale-4-png.png)
+![scale_4.png](/docs/output/img/account-management/scale-4-png.png)
 
 This list acts as a safelist to set aside small, key sub-populations from your sampling process. Users included in these populations will be exempt from sampling, and will always appear in your data. These populations are defined by the user properties and values you select in this step.
 
 {{partial:admonition type='note'}}
-This process does not apply retroactively. Additionally, the following properties are not supported by the user property inclusion list: `![amplitude_logo.png](/output/img/account-management/amplitude-logo-png.png)User
+This process does not apply retroactively. Additionally, the following properties are not supported by the user property inclusion list: `![amplitude_logo.png](/docs/output/img/account-management/amplitude-logo-png.png)User
 {{/partial:admonition}}
- ID`, `![amplitude_logo.png](/output/img/account-management/amplitude-logo-png.png)ID`, and `![amplitude_logo.png](/output/img/account-management/amplitude-logo-png.png)Device ID`.
+ ID`, `![amplitude_logo.png](/docs/output/img/account-management/amplitude-logo-png.png)ID`, and `![amplitude_logo.png](/docs/output/img/account-management/amplitude-logo-png.png)Device ID`.
 
 ### Anonymous users
 
-Although Amplitude prioritizes [identifying and tracking unique users](/cdp/sources/instrument-track-unique-users), ingestion-side sampling can sometimes lead to inaccuracies when it comes to anonymous users. For example, if an anonymous user triggers an event from a new device, that user will be assigned a new Amplitude ID and will be sampled based on that new ID. Even if it's determined at a later time that this user was actually a previous user using a new device, there is **no way** to retroactively link the paired events to the particular user's previous Amplitude ID. Since the **sampling of events is based on the Amplitude ID at the time the event was ingested**, analyses that rely on user behavior on new devices may be inaccurate or skewed.
+Although Amplitude prioritizes [identifying and tracking unique users](/docs/cdp/sources/instrument-track-unique-users), ingestion-side sampling can sometimes lead to inaccuracies when it comes to anonymous users. For example, if an anonymous user triggers an event from a new device, that user will be assigned a new Amplitude ID and will be sampled based on that new ID. Even if it's determined at a later time that this user was actually a previous user using a new device, there is **no way** to retroactively link the paired events to the particular user's previous Amplitude ID. Since the **sampling of events is based on the Amplitude ID at the time the event was ingested**, analyses that rely on user behavior on new devices may be inaccurate or skewed.
 
 ## Accuracy benchmarks
 

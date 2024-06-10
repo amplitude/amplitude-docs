@@ -11,7 +11,7 @@ updated_at: 1717104873
 landing: true
 landing_blurb: 'Interpret the results of your Lifecycle chart'
 ---
-This article will review how to interpret your Lifecycle analysis. Make sure you've read the previous Help Center article on [setting up the Lifecycle chart](/analytics/charts/lifecycle/lifecycle-track-growth) before proceeding.
+This article will review how to interpret your Lifecycle analysis. Make sure you've read the previous Help Center article on [setting up the Lifecycle chart](/docs/analytics/charts/lifecycle/lifecycle-track-growth) before proceeding.
 
 ## Interpret your Lifecycle chart
 
@@ -25,15 +25,15 @@ Earlier, we mentioned that all your **active users** would fall into one of thre
 * A **current user** (medium blue) is one who logged the specified event in the **current** interval and also**in the previous usage interval** (day, week, or month). Using the same example, a user who fired the specified event on August 1st and August 2nd would be considered a **current** user on August 2nd.
 * A **resurrected user** (dark blue) is a user who logged the specified event in the **current** interval but did **not** log the event in the previous interval (previously inactive). In our example, a user who was new to Amplitude on August 1st, but didn't fire the specified event until August 2nd would be considered a **resurrected** user on August 2nd.
 
-![Screenshot 2023-08-08 at 12.01.00 PM.png](/output/img/lifecycle/screenshot-2023-08-08-at-12-01-00-pm-png.png)
+![Screenshot 2023-08-08 at 12.01.00 PM.png](/docs/output/img/lifecycle/screenshot-2023-08-08-at-12-01-00-pm-png.png)
 
 We also have **dormant users**, represented by the red bar. A dormant user is one who did not log the event you've specified, but who was had logged the specified event during the previous time period (day, week, or month). For example, a user who was active on January 1st but **not** active on January 2nd would be considered a dormant user on January 2nd.
 
 ### Breakdown table
 
-Below the chart is a [breakdown table](/analytics/charts/review-chart-data) of lifecycle data. You can export the data table as a .CSV file by clicking *Export CSV*.
+Below the chart is a [breakdown table](/docs/analytics/charts/review-chart-data) of lifecycle data. You can export the data table as a .CSV file by clicking *Export CSV*.
 
-![lifecycle breakdown table.png](/output/img/lifecycle/lifecycle-breakdown-table-png.png)
+![lifecycle breakdown table.png](/docs/output/img/lifecycle/lifecycle-breakdown-table-png.png)
 
 ## Switch between views
 
@@ -43,7 +43,7 @@ There are also two other views for your Lifecycle chart: Dormant and Pulse.
 
 The Dormant chart shows the distribution of dormant users for a particular day, week, or month. For example, a dormant new user on November 21st (shown in the bar between November 20th and November 21st) is a user who was new on November 20th but became dormant on November 21st.
 
-![dormant lifecycle.png](/output/img/lifecycle/dormant-lifecycle-png.png)
+![dormant lifecycle.png](/docs/output/img/lifecycle/dormant-lifecycle-png.png)
 
 ### Pulse
 
@@ -60,4 +60,4 @@ Broadly speaking:
 
 For example, in the chart below, pulse was 0.95 between December 5th and December 11th. This means we lost more users in that interval than we gained or resurrected.
 
-![pulse lifecycle.png](/output/img/lifecycle/pulse-lifecycle-png.png)
+![pulse lifecycle.png](/docs/output/img/lifecycle/pulse-lifecycle-png.png)

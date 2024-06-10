@@ -26,7 +26,7 @@ To clear all the events from your popup, click *Clear Events.*
 
 To hide specific event types, click the "Invisible" icon:
 
-![hide_events.png](/output/img/data/hide-events-png.png)
+![hide_events.png](/docs/output/img/data/hide-events-png.png)
 
 To copy your events' event and user property parameters, click the "Copy" icons:
 

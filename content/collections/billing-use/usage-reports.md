@@ -34,7 +34,7 @@ The Summary Metrics chart displays the total number of users in your organizatio
 
 ### User metrics
 
-![usage_reports_user_metrics.png](/output/img/billing-use/usage-reports-user-metrics-png.png)
+![usage_reports_user_metrics.png](/docs/output/img/billing-use/usage-reports-user-metrics-png.png)
 
 The User Metrics panel is where you will find information on active user count, top users and teams, and depth of engagement. You can set the active users chart to display data on a monthly, weekly, or daily basis by clicking on the appropriate buttons in the top corner. The summary statistics included in this chart work the same as the ones you’ll find in the [KPI view](#h_01ES43BE6YJMSD6KZTR7XH7ZN0). 
 
@@ -50,7 +50,7 @@ The Detailed KPIs panel gives you a more in-depth look at some of the metrics sh
 
 ### Content Usage
 
-![usage_reports_content_usage.png](/output/img/billing-use/usage-reports-content-usage-png.png)  
+![usage_reports_content_usage.png](/docs/output/img/billing-use/usage-reports-content-usage-png.png)  
 
 The Content Usage panel gives you insight into the Amplitude features and content—chart types, dashboards, and notebooks—your people rely on most. You can view content by clicking the titles, provided you have the proper permissions to do so.
 
@@ -58,17 +58,17 @@ The Content Usage panel gives you insight into the Amplitude features and conten
 
 To export the report as a PDF or PNG, click the export icon in the upper-right corner.
 
-![usage_reports_export.png](/output/img/billing-use/usage-reports-export-png.png)
+![usage_reports_export.png](/docs/output/img/billing-use/usage-reports-export-png.png)
 
 ## The Event Usage tab
 
 On the Events Usage tab, you'll find a downloadable, **organization-level** usage report in .CSV or JSON format, detailing usage of events across all projects and portfolios within your org. This is intended for organization admins to review Amplitude usage across your company. Generate an up-to-date report whenever you like by clicking *Generate Report*.
 
-In Amplitude, event usage is measured by **queries**. Amplitude defines a query as the **selection of an event** in the definition of a chart, segment, or cohort. When you use [custom events](/analytics/charts/event-segmentation/event-segmentation-in-line-events) or metrics that are composed of multiple events, queries for **each component event** are tallied separately.
+In Amplitude, event usage is measured by **queries**. Amplitude defines a query as the **selection of an event** in the definition of a chart, segment, or cohort. When you use [custom events](/docs/analytics/charts/event-segmentation/event-segmentation-in-line-events) or metrics that are composed of multiple events, queries for **each component event** are tallied separately.
 
-![Screenshot_2023-04-24_at_17.47.39.png](/output/img/billing-use/screenshot-2023-04-24-at-17-47-39-png.png)
+![Screenshot_2023-04-24_at_17.47.39.png](/docs/output/img/billing-use/screenshot-2023-04-24-at-17-47-39-png.png)
 
-Events queried in [cross-project views](/analytics/user-data-lookup), or when an event appears in the path in a [pathfinder analysis](/analytics/charts/journeys/journeys-understand-paths).
+Events queried in [cross-project views](/docs/analytics/user-data-lookup), or when an event appears in the path in a [pathfinder analysis](/docs/analytics/charts/journeys/journeys-understand-paths).
 
 {{partial:admonition type='note'}}
 If you do not have access to the query counts feature, contact Amplitude Support to enable it.

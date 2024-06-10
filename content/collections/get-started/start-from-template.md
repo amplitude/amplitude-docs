@@ -16,9 +16,9 @@ In Amplitude Analytics, **templates** help teams efficiently recreate common ana
 
 This feature is available to users on **all Amplitude plans**.
 
-Once you've built some analyses of your own, you can easily [create your own templates](/analytics/templates). But before that day, you can use Amplitude's suite of starter templates in the **Template Gallery** to start generating insights into your users and their behavior.
+Once you've built some analyses of your own, you can easily [create your own templates](/docs/analytics/templates). But before that day, you can use Amplitude's suite of starter templates in the **Template Gallery** to start generating insights into your users and their behavior.
 
-![template](/output/img/get-started/template.png)
+![template](/docs/output/img/get-started/template.png)
 
 Then just click on the template you're interested in to open it. Any templates you create in the future will also be found here.
 
@@ -28,6 +28,6 @@ If a process can be represented as a [funnel](https://help.amplitude.com/hc/en-
 
 You can find the Template Gallery by clicking *Start from a template* on the Amplitude Home page.
 
-![start](/output/img/get-started/start.png)
+![start](/docs/output/img/get-started/start.png)
 
 Learn about [how to use these starter templates in the next section, Quick Wins](https://help.amplitude.com/hc/en-us/sections/16796463058587-4-Quick-wins-Get-value-from-Amplitude-right-now).

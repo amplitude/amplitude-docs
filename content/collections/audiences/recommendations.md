@@ -52,4 +52,4 @@ There are three data components to configuring a recommendation: the outcome eve
 
 It’s recommended that you work closely with your Amplitude CSM to ensure these conditions are met.
 
-To learn more, read on to find out [how to build a recommendation](/cdp/audiences/recommendations-build) and [how to use recommendations in your personalization campaigns](/cdp/audiences/recommendations-use).
+To learn more, read on to find out [how to build a recommendation](/docs/cdp/audiences/recommendations-build) and [how to use recommendations in your personalization campaigns](/docs/cdp/audiences/recommendations-use).

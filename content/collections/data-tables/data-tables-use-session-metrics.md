@@ -12,7 +12,7 @@ landing_blurb: 'Use legacy metrics to enhance your analyses'
 ---
 Sometimes considered "legacy metrics," **session metrics**, like bounce rate or exit rate—are helpful diagnostic tools for obtaining a deeper understanding of the performance of campaigns or content items. 
 
-![image1.png](/output/img/data-tables/image1-png.png)
+![image1.png](/docs/output/img/data-tables/image1-png.png)
 
 In Amplitude Analytics, you can find session metrics in the Data Tables charts, on the *Metrics* tab. Other than session totals, session metrics—bounce rate, exit rate, entry rate, entries, and exits—are not available as standalone metrics in Amplitude Analytics. Instead, these session metrics are calculated from the group-by you select, and will only include **active events** in the computation. Amplitude Analytics uses the group-by to determine how many values are present, and the sequence to be used for calculation. 
 
@@ -113,7 +113,7 @@ Example, for the same sessions above:
 
 It's common to want to compare results of one Amplitude chart versus another, but not all chart analyses are interchangeable.
 
-For example, you cannot compare the results of a session totals query in a Session Metrics chart versus the [PROPCOUNT](/analytics/charts/event-segmentation/event-segmentation-custom-formulas)(session IDs) formula in the Event Segmentation chart.
+For example, you cannot compare the results of a session totals query in a Session Metrics chart versus the [PROPCOUNT](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas)(session IDs) formula in the Event Segmentation chart.
 
 These two analyses cannot be compared because of the following differences in their logic:
 

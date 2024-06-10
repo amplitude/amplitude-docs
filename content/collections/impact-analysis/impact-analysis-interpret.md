@@ -11,13 +11,13 @@ updated_at: 1717104396
 landing: true
 landing_blurb: 'Effectively and appropriately use causal inference to interpret your Impact Analysis'
 ---
-The [Impact Analysis chart](/analytics/charts/impact-analysis/impact-analysis-track) can help you discover how triggering one event can effect the frequency at which your users fire other events.
+The [Impact Analysis chart](/docs/analytics/charts/impact-analysis/impact-analysis-track) can help you discover how triggering one event can effect the frequency at which your users fire other events.
 
 ## Interpret the results of your Impact Analysis chart
 
 The Impact Analysis chart plots the outcome event on a relative *n*-day basis, from the time each user triggered the treatment event for the first time. Amplitude lines up each user's relative timeline for you, so you can easily see the pattern. The center line represents the day or week the users first triggered the event.
 
-![impact analysis 1.5.png](/output/img/impact-analysis/impact-analysis-1-5-png.png)
+![impact analysis 1.5.png](/docs/output/img/impact-analysis/impact-analysis-1-5-png.png)
 
 In the above example, you can see that the users who favorited a song for the first time between November 1st and November 30 played an average of just over three songs or videos per day in the week after they first tried favoriting. By contrast, those users only played an average of around two songs per day in the week before they discovered the favoriting feature.
 
@@ -35,7 +35,7 @@ Here, the Y axis will represent the percentage of people who triggered the outco
 
 In the example below, 160,836 users were active the day after favoriting a song for the first time; 85.1% played a song or video. 
 
-![impact analysis 3.png](/output/img/impact-analysis/impact-analysis-3-png.png)
+![impact analysis 3.png](/docs/output/img/impact-analysis/impact-analysis-3-png.png)
 
 #### Frequency
 
@@ -43,7 +43,7 @@ With this metric, the chart's Y axis will show the distribution of the number of
 
 In the example below, 15,085 users played four songs or videos on the seventh day after favoriting a song for the first time.
 
-![impact analysis 4.png](/output/img/impact-analysis/impact-analysis-4-png.png)
+![impact analysis 4.png](/docs/output/img/impact-analysis/impact-analysis-4-png.png)
 
 #### Properties
 

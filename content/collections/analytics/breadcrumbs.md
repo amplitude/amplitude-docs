@@ -14,7 +14,7 @@ updated_at: 1717692295
 ---
 The more complex your analysis, the more difficult it can be to keep track of everything that’s gone into it. 
 
-Amplitudes’ **Breadcrumbs** feature stores every step of your analysis, so you can keep track of it in one place without having to open multiple tabs. Bookmark your chart, add a short note, and Breadcrumbs will put your entire analysis in an [easy-to-follow interactive format](/analytics/notebooks), which you can share with your team and other stakeholders.
+Amplitudes’ **Breadcrumbs** feature stores every step of your analysis, so you can keep track of it in one place without having to open multiple tabs. Bookmark your chart, add a short note, and Breadcrumbs will put your entire analysis in an [easy-to-follow interactive format](/docs/analytics/notebooks), which you can share with your team and other stakeholders.
 
 With Breadcrumbs, you can:
 
@@ -23,14 +23,14 @@ With Breadcrumbs, you can:
 * Eliminate the need to retrace your steps before sharing results with the team
 * Preserve the context of your analysis, so you can pick up where you left off
 
-![breadcrumbs_side_controls_event_seg.png](/output/img/analytics/breadcrumbs_side_controls_event_seg.png)
+![breadcrumbs_side_controls_event_seg.png](/docs/output/img/analytics/breadcrumbs_side_controls_event_seg.png)
 
 Breadcrumbs can be used with any Amplitude chart type.
 
 ## Breadcrumbs use cases
 
 * **Workflow simplification.** It’s difficult and time consuming to transfer multiple individual charts and analyses into a notebook at the end of the process. Breadcrumbs simplifies this workflow by allowing you to build the notebook as you go.
-* **Tracing the evolution of an analysis.** Being able to show the evolution of a chart, and how its conclusion was reached, is often crucial to getting buy-in from other stakeholders. Charts that give no clue as to why or how they were created are often ignored. [Notebooks](/analytics/notebooks) can help with this, but Breadcrumbs makes the process even more efficient.
+* **Tracing the evolution of an analysis.** Being able to show the evolution of a chart, and how its conclusion was reached, is often crucial to getting buy-in from other stakeholders. Charts that give no clue as to why or how they were created are often ignored. [Notebooks](/docs/analytics/notebooks) can help with this, but Breadcrumbs makes the process even more efficient.
 
 ## Use Breadcrumbs to add charts to Notebooks
 

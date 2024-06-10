@@ -45,7 +45,7 @@ To **create** a new branch, follow these steps:
 2. Type in the name of the branch you'd like to create.
 3. Click *+*.
 
-![create_branch.png](/output/img/data/create-branch-png.png)
+![create_branch.png](/docs/output/img/data/create-branch-png.png)
 
 4. In the *Create branch* modal, confirm the name of your branch, add an optional description, and click *Create*.
 
@@ -85,7 +85,7 @@ Then to merge, follow these steps:
 2. Click *Approve*.
 3. Click *Merge*.
 
-If your account is configured for [team reviews](/data/amplitude-data-settings), you may not have permission to merge directly and will instead first create a merge request. A merge request is a way to ask stakeholders outside your team to review your changes and give their explicit approval. Only team members with Manager or Admin permissions can approve changes; do so by logging into Amplitude Data and clicking *Merge*, in the page's toolbar.
+If your account is configured for [team reviews](/docs/data/amplitude-data-settings), you may not have permission to merge directly and will instead first create a merge request. A merge request is a way to ask stakeholders outside your team to review your changes and give their explicit approval. Only team members with Manager or Admin permissions can approve changes; do so by logging into Amplitude Data and clicking *Merge*, in the page's toolbar.
 
 An approved merge request is now ready to be merged by anyone on your team.
 

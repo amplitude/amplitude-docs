@@ -62,11 +62,11 @@ class YourClass {
 
 ## Configure the SDK
 
-The Amplitude Flutter SDK runs on the top of the [Amplitude Android Maintenance SDK](/sdks/analytics/android/android-sdk), [Amplitude iOS Maintenance SDK](/sdks/analytics/ios-swift) and [Amplitude JavaScript Maintenance SDK](/sdks/analytics/browser/javascript-sdk). The following are the Dart settable config options.
+The Amplitude Flutter SDK runs on the top of the [Amplitude Android Maintenance SDK](/docs/sdks/analytics/android/android-sdk), [Amplitude iOS Maintenance SDK](/docs/sdks/analytics/ios-swift) and [Amplitude JavaScript Maintenance SDK](/docs/sdks/analytics/browser/javascript-sdk). The following are the Dart settable config options.
 For other default configurations:
 
-- on Android, check the [Android Configuration](/sdks/analytics/android/android-sdk#configuration)
-- on iOS, check the [iOS configuration](/sdks/analytics/ios-swift#configuration)
+- on Android, check the [Android Configuration](/docs/sdks/analytics/android/android-sdk#configuration)
+- on iOS, check the [iOS configuration](/docs/sdks/analytics/ios-swift#configuration)
 - on browser, check the [browser configuration](./sdks/analytics/browser/javascript-sdk#configuration)
 
 | Name  | Description | Default Value |
@@ -80,7 +80,7 @@ For other default configurations:
 | `setServerUrl()` | `String`. The API endpoint URL that events are sent to. Automatically selected by `ServerZone`. For example, `Amplitude.getInstance().setServerUrl(https://www.your-server-url.com)`. | `https://api2.amplitude.com/` |
 | `setUseDynamicConfig()` | `bool`. Find the best server url automatically based on users' geo location. For example, `setUseDynamicConfig(true)`. | `false` |
 | `setOptOut()` | `bool`. Opt the user out of tracking. For example, `Amplitude.getInstance().setOptOut(true)`.| `false` |
-| `trackingSessionEvents()` | `bool`. Whether to automatically log "[Amplitude] Session Start" and "[Amplitude] Session End" session events corresponding to the start and end of a user's session. Not supported on Flutter Web. [Learn more](/#flutter-web-support). | `false` |
+| `trackingSessionEvents()` | `bool`. Whether to automatically log "[Amplitude] Session Start" and "[Amplitude] Session End" session events corresponding to the start and end of a user's session. Not supported on Flutter Web. [Learn more](/docs/#flutter-web-support). | `false` |
 | `useAppSetIdForDeviceId()` | Only for Android. Whether to use app ser id as device id on Android side.  Check [here](../android/#app-set-id) for the required module and permission. For example, `Amplitude.getInstance().useAppSetIdForDeviceId(true)` | By default, the deviceId will be UUID+"R" |
     
 ### Configure batching behavior
@@ -419,7 +419,7 @@ Advertiser ID (also referred to as IDFA) is a unique identifier provided by the 
 
  Mobile apps need permission to ask for IDFA, and apps targeted to children can't track at all. Consider IDFV, device id, or an email login system as alternatives when IDFA isn't available.
 
-See [iOS Advertising ID](/sdks/analytics/ios/ios-swift#advertising-id) or the [Android Advertising ID](/sdks/analytics/android/android-kotlin-sdk#advertiser-id) for more information.
+See [iOS Advertising ID](/docs/sdks/analytics/ios/ios-swift#advertising-id) or the [Android Advertising ID](/docs/sdks/analytics/android/android-kotlin-sdk#advertiser-id) for more information.
 
 ### Opt out of tracking
 
@@ -453,7 +453,7 @@ These features aren't supported in Flutter web:
 
 - `enableCoppaControl`
 - `disableCoppaControl`
-- `trackingSessionEvents`. While Flutter Web doesn’t support the ability to send `Start Session` and `End Session` events automatically, the SDK will automatically track session IDs. You can use this for common session-based analyses like the User Session and Pathfinder charts. See our help docs on tracking sessions in Amplitude to [learn more](/cdp/sources/instrument-track-sessions).
+- `trackingSessionEvents`. While Flutter Web doesn’t support the ability to send `Start Session` and `End Session` events automatically, the SDK will automatically track session IDs. You can use this for common session-based analyses like the User Session and Pathfinder charts. See our help docs on tracking sessions in Amplitude to [learn more](/docs/cdp/sources/instrument-track-sessions).
 - `useAppSetIdForDeviceId`
 
 #### Use

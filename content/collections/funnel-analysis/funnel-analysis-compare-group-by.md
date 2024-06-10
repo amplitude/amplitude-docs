@@ -10,7 +10,7 @@ updated_at: 1717015077
 ---
 Funnel charts allow you to compare a group-by property to another baseline property. Once your Funnel chart has a Segment property group-by, click the *Compare* dropdown to choose a value for comparison.
 
-![compare_groupby.png](/output/img/funnel-analysis/compare-groupby-png.png)
+![compare_groupby.png](/docs/output/img/funnel-analysis/compare-groupby-png.png)
 
 With that value selected, the conversion percentage difference will be seen on the microscope when hovering over a value in the visual, and the breakdown table. For a particular step in the breakdown table, you’ll see both the absolute percent difference and the conversion percent difference.  
   

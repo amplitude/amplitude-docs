@@ -23,9 +23,9 @@ This feature is available to users on **Growth** and **Enterprise plans** only. 
 
 ## Before you begin
 
-First and foremost, events will not appear in any Amplitude charts until instrumentation is complete, so make sure you've got that done. You'll definitely want to read our article on [building charts in Amplitude](/get-started/helpful-definitions).
+First and foremost, events will not appear in any Amplitude charts until instrumentation is complete, so make sure you've got that done. You'll definitely want to read our article on [building charts in Amplitude](/docs/get-started/helpful-definitions).
 
-Also, check out the [tracking revenue](/cdp/sources/instrument-track-revenue) documentation to learn how to track revenue events. For example, if you're using [Amplitude's SDKs](https://www.docs.developers.amplitude.com/data/sdks/sdk-quickstart/), you will have to call `logRevenueV2()` in conjunction with the provided revenue interface. If you're tracking in-app purchases (IAPs), we recommend using Amplitude's revenue authentication system.  
+Also, check out the [tracking revenue](/docs/cdp/sources/instrument-track-revenue) documentation to learn how to track revenue events. For example, if you're using [Amplitude's SDKs](https://www.docs.developers.amplitude.com/data/sdks/sdk-quickstart/), you will have to call `logRevenueV2()` in conjunction with the provided revenue interface. If you're tracking in-app purchases (IAPs), we recommend using Amplitude's revenue authentication system.  
 
 {{partial:admonition type='note'}}
 Amplitude does not currently support currency conversion. The revenue value you send Amplitude is what will be aggregated and displayed. If you get revenue in different currencies, we recommend normalizing to a single currency before you send any revenue data to Amplitude.
@@ -33,13 +33,13 @@ Amplitude does not currently support currency conversion. The revenue value you 
 
 ## Set up a Revenue LTV chart
 
-Like most other Amplitude charts, the Revenue LTV chart has an Events Module. In most cases, you'll want to use `![amplitude_logo.png](/output/img/revenue-ltv/amplitude-logo-png.png) Any Revenue Event` here. This lets you analyze the data sent by Amplitude's SDK when it logs revenue events. 
+Like most other Amplitude charts, the Revenue LTV chart has an Events Module. In most cases, you'll want to use `![amplitude_logo.png](/docs/output/img/revenue-ltv/amplitude-logo-png.png) Any Revenue Event` here. This lets you analyze the data sent by Amplitude's SDK when it logs revenue events. 
 
 However, you can also choose to calculate revenue based on other events. You can segment on the event itself by adding properties to it in the Events Module.
 
 To build a Revenue LTV chart, follow these steps:
 
-1. Select your revenue event and the event property that contains the revenue information, if one exists. If you are using `![amplitude_logo.png](/output/img/revenue-ltv/amplitude-logo-png.png) Any Revenue Event`, you should select `$revenue`. If you are using your own custom revenue event, you can select your own custom revenue property.  
+1. Select your revenue event and the event property that contains the revenue information, if one exists. If you are using `![amplitude_logo.png](/docs/output/img/revenue-ltv/amplitude-logo-png.png) Any Revenue Event`, you should select `$revenue`. If you are using your own custom revenue event, you can select your own custom revenue property.  
   
 {{partial:admonition type='note'}}
 You do not have to use a revenue property here, though that is the most common use case of the Revenue LTV chart.
@@ -47,13 +47,13 @@ You do not have to use a revenue property here, though that is the most common u
 
 2. Add properties to the revenue event by clicking on *+ where*, selecting the property name, and specifying the property value you’re interested in. You can add as many properties as you like, though you'll have to add them one at a time.  
   
-	![revenue_LTV_basic_screenshot.png](/output/img/revenue-ltv/revenue-ltv-basic-screenshot-png.png)  
+	![revenue_LTV_basic_screenshot.png](/docs/output/img/revenue-ltv/revenue-ltv-basic-screenshot-png.png)  
 		
 	{{partial:admonition type='note'}}
 	These properties must be explicitly sent **by you** via Amplitude's SDKs when you log revenue events.  
 	{{/partial:admonition}}
 
-	If you are using `![amplitude_logo.png](/output/img/revenue-ltv/amplitude-logo-png.png) Any Revenue Event`, you can filter on one of five event properties to filter on, all prefixed with a `$`:  
+	If you are using `![amplitude_logo.png](/docs/output/img/revenue-ltv/amplitude-logo-png.png) Any Revenue Event`, you can filter on one of five event properties to filter on, all prefixed with a `$`:  
 
 	* **$price**: The price of the products purchased
 	* **$productId**: A product-specific identifier for each item purchased
@@ -71,7 +71,7 @@ You do not have to use a revenue property here, though that is the most common u
 
 7. Choose the measure you'd like to use for this analysis.  
   
-	![revenue_LTV_screenshot_2.png](/output/img/revenue-ltv/revenue-ltv-screenshot-2-png.png)  
+	![revenue_LTV_screenshot_2.png](/docs/output/img/revenue-ltv/revenue-ltv-screenshot-2-png.png)  
 	
 	* **Total Revenue**: This shows the total revenue received during the timeframe of your analysis. Specifically, it's the sum of all total revenue from all new users, beginning the day they sent their first Amplitude event. You can break this out on an hourly, daily, weekly, monthly, or quarterly frequency, which we'll get to in the next step of this process.
 	* **New Paying Users**: This shows the number of users who triggered a revenue event for the first time during the specified hour/day/week/month after their cohort's start date.
@@ -86,4 +86,4 @@ You do not have to use a revenue property here, though that is the most common u
 
 ## Next steps
 
-Next, learn how to [interpret your revenue analysis](/analytics/charts/revenue-ltv/revenue-ltv-interpret).
+Next, learn how to [interpret your revenue analysis](/docs/analytics/charts/revenue-ltv/revenue-ltv-interpret).

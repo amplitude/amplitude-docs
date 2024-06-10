@@ -16,7 +16,7 @@ In this article, we will briefly describe what each of the columns in this table
 
 ## Metric name and variant
 
-The first two columns, **Metric name** and **Variant**, are straightforward. The first contains the names of the metrics that you currently have selected. The top metric is the [primary metric](/experiment/key-terms); all other metrics are secondary metrics. The second contains the names of the variants in the experiment. This includes the control and all treatments.
+The first two columns, **Metric name** and **Variant**, are straightforward. The first contains the names of the metrics that you currently have selected. The top metric is the [primary metric](/docs/experiment/key-terms); all other metrics are secondary metrics. The second contains the names of the variants in the experiment. This includes the control and all treatments.
 
 Hover over a metric's name to see its definition. 
 

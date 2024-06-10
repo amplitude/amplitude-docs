@@ -11,7 +11,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717692931
 ---
-In this article, you'll learn how to take advantage of the different features offered by [spaces](/get-started/spaces) before continuing.
+In this article, you'll learn how to take advantage of the different features offered by [spaces](/docs/get-started/spaces) before continuing.
 
 ### Feature availability
 
@@ -23,7 +23,7 @@ To subscribe to an existing space, click the *Spaces* drop-down, then click *Vie
 
 When you join a space, Amplitude stars it automatically and adds it to your list of joined spaces. You can un-star a space and remove it from your list by clicking the star icon on the space itself.
 
-![spaces_1.png](/output/img/analytics/spaces_1.png)
+![spaces_1.png](/docs/output/img/analytics/spaces_1.png)
 
 ## Move content to a new space
 
@@ -45,7 +45,7 @@ A shortcut is a way to add content to multiple spaces and folders. Anyone can cr
 
 You can add new members to your space, or manage the access permissions of current space members, via the *Manage Members* button.
 
-![spaces_update_1.png](/output/img/analytics/spaces_update_1.png)
+![spaces_update_1.png](/docs/output/img/analytics/spaces_update_1.png)
 
 There are three levels of permissions:
 
@@ -71,7 +71,7 @@ When you connect spaces to specific Slack channels, you'll receive notifications
 
 To do this, click *Connect with Slack*. Then follow the prompts.
 
-To learn more about our Slack integration, see our [article on integrating Slack with Amplitude](/analytics/integrate-slack).
+To learn more about our Slack integration, see our [article on integrating Slack with Amplitude](/docs/analytics/integrate-slack).
 
 ## Permissions
 

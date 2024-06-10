@@ -11,22 +11,24 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/site.js', 'public/js')
-mix.js('resources/js/api-table.js', 'public/js')
-mix.js('resources/js/interactive-exposure-tracking-table.js', 'public/js')
+mix.js('resources/docs/js/site.js', 'public/docs/js')
+mix.js('resources/docs/js/api-table.js', 'public/docs/js')
+mix.js('resources/docs/js/interactive-exposure-tracking-table.js', 'public/docs/js')
 
     
-mix.postCss('resources/css/site.css', 'public/css', [
+mix.postCss('resources/docs/css/site.css', 'public/docs/css', [
+    require('postcss-import'),
+    require('tailwindcss'),
+    require('postcss-nested'),
+    require('autoprefixer'),
+    ]).options({
+        processCssUrls: false
+    });
+
+mix.postCss('resources/docs/css/algolia.css', 'public/docs/css', [
     require('postcss-import'),
     require('tailwindcss'),
     require('postcss-nested'),
     require('autoprefixer'),
     ]);
-
-    mix.postCss('resources/css/algolia.css', 'public/css', [
-        require('postcss-import'),
-        // require('tailwindcss'),
-        require('postcss-nested'),
-        require('autoprefixer'),
-        ]);
     

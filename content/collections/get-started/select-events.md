@@ -12,7 +12,7 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1716572509
 ---
-Events and properties are the backbone of every analysis in Amplitude. [Deciding which ones to track](/data/create-tracking-plan) can be daunting, especially if you're new to product analytics.
+Events and properties are the backbone of every analysis in Amplitude. [Deciding which ones to track](/docs/data/create-tracking-plan) can be daunting, especially if you're new to product analytics.
 
 ## How many events should you track?
 
@@ -30,11 +30,11 @@ No matter what, you should be tracking **any actions** that fit into these thr
 * Those that guide a user through the main mechanics of your product
 * Those that enable a user to make an in-app purchase
 
-When you've decided which events to track, you'll be ready to [plan your events](/data/data-planning-playbook) takes a deep dive into this question, so be sure to read that as well.
+When you've decided which events to track, you'll be ready to [plan your events](/docs/data/data-planning-playbook) takes a deep dive into this question, so be sure to read that as well.
 
 ## Common events and properties to track by industry
 
-This section offers some advice, broken down by industry, about which events and properties to track if you're interested in answering the questions most commonly asked by others in your industry. This is not a comprehensive list of everything you'll need, but are instead suggestions you should keep in mind as you create your [taxonomy](/data/create-tracking-plan). 
+This section offers some advice, broken down by industry, about which events and properties to track if you're interested in answering the questions most commonly asked by others in your industry. This is not a comprehensive list of everything you'll need, but are instead suggestions you should keep in mind as you create your [taxonomy](/docs/data/create-tracking-plan). 
 
 |  |  |
 | --- | --- |

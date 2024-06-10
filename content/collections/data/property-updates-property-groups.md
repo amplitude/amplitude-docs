@@ -38,7 +38,7 @@ To create a property group, follow these steps:
 
 1. Navigate to *Properties > Event Properties* and click *Property Groups*.  
   
-    ![Screenshot 2023-07-20 at 8.00.38 AM.png](/output/img/data/screenshot-2023-07-20-at-8-00-38-am-png.png)
+    ![Screenshot 2023-07-20 at 8.00.38 AM.png](/docs/output/img/data/screenshot-2023-07-20-at-8-00-38-am-png.png)
 
 2. Click *+ Create property group*.
 3. In the fly-out window, enter a name for the group. Then add a description and any tags, if desired.

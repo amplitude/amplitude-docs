@@ -17,7 +17,7 @@ Amplitude Analytics relies on **data** to generate charts, experiments, and othe
 You'll probably need to involve your developer or engineer for this step.
 {{/partial:admonition}}
 
-This article is intended as a broad overview. For a more in-depth explanation of setting up a taxonomy, we **strongly recommend** checking out the [Data Taxonomy Playbook](/data/data-planning-playbook). 
+This article is intended as a broad overview. For a more in-depth explanation of setting up a taxonomy, we **strongly recommend** checking out the [Data Taxonomy Playbook](/docs/data/data-planning-playbook). 
 
 ### Feature availability
 
@@ -25,7 +25,7 @@ This feature is available to users on **all Amplitude plans**.
 
 ## Send data to Amplitude
 
-Getting data into Amplitude from your product is done at the **project** level. Remember when you created [your first Amplitude project](/get-started/create-project)? When you did that, Amplitude generated an API key that will ensure your product data finds its way to the correct Amplitude project. You'll need this key to initialize the SDK in your product or website; [here's how to find it in an existing Amplitude project](/admin/account-management/manage-orgs-projects).
+Getting data into Amplitude from your product is done at the **project** level. Remember when you created [your first Amplitude project](/docs/get-started/create-project)? When you did that, Amplitude generated an API key that will ensure your product data finds its way to the correct Amplitude project. You'll need this key to initialize the SDK in your product or website; [here's how to find it in an existing Amplitude project](/docs/admin/account-management/manage-orgs-projects).
 
 ### Data from your product
 
@@ -33,11 +33,11 @@ The most popular way to get data into Amplitude from web products or websites is
 
 Once you've got the API key mentioned in the beginning of this section, add it to the Amplitude Javascript snippet, then paste that snippet to all parts of your product that generate the data you want Amplitude to [track](https://help.amplitude.com/hc/en-us/articles/5078731378203). This **must** be placed at the **top** of **every page** you want to track via Amplitude, and it **must** include the `amplitude.init()` statements. An example snippet is shown in the screenshot below.
 
-![send data with browser sdk.png](/output/img/get-started/send data with browser sdk.png)
+![send data with browser sdk.png](/docs/output/img/get-started/send data with browser sdk.png)
 
 Again, depending on your level of knowledge and / or comfort with Javascript, you may want to involve someone from your development or engineering team in this phase. And definitely take advantage of all the resources around [SDKs that are available here](https://www.docs.developers.amplitude.com/data/sdks/).
 
-After instrumenting Amplitude successfully, your data will be visible just as soon as your product begins sending events. (You'll have to [instrument](/data/data-planning-playbook) for detailed documentation on how to approach your event taxonomy.
+After instrumenting Amplitude successfully, your data will be visible just as soon as your product begins sending events. (You'll have to [instrument](/docs/data/data-planning-playbook) for detailed documentation on how to approach your event taxonomy.
 
 ### Data from a third-party source
 
@@ -61,5 +61,5 @@ Data can be sent to Amplitude in different ways: SDKs, HTTP API v2, Batch API, A
 * [Amplitude Developer Center](https://www.docs.developers.amplitude.com/), specifically the article [Getting Started for developers](https://www.docs.developers.amplitude.com/getting-started/)
 * [Amplitude SDKs](https://www.docs.developers.amplitude.com/data/sources/)
 * [Amplitude Github Repository](https://github.com/amplitude?page=1)
-* [Data Taxonomy Playbook](/data/data-planning-playbook)
+* [Data Taxonomy Playbook](/docs/data/data-planning-playbook)
 * [Amplitude Academy](https://academy.amplitude.com/)

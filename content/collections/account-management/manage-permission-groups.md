@@ -23,8 +23,8 @@ This feature is available to users on **Enterprise plans only**. See our [pricin
 ## Before you begin
 
 * Only Admins in the organization can edit groups.
-* Permission groups can be managed via the [User Management API](/admin/account-management/scim-provision) (a SCIM API).
-* You should be familiar with Amplitude's [user permissions model](/admin/account-management/user-roles-permissions) before proceeding.
+* Permission groups can be managed via the [User Management API](/docs/admin/account-management/scim-provision) (a SCIM API).
+* You should be familiar with Amplitude's [user permissions model](/docs/admin/account-management/user-roles-permissions) before proceeding.
 
 ## Create a group
 
@@ -32,16 +32,16 @@ To create a new group, follow these steps:
 
 1. Navigate to *Settings* > *Organization settings*. Then click *Members & Groups*.
 
-![manage_permissions_at_scale_1.png](/output/img/account-management/manage-permissions-at-scale-1-png.png)
+![manage_permissions_at_scale_1.png](/docs/output/img/account-management/manage-permissions-at-scale-1-png.png)
 
 2. From the *Groups* tab, click *+ New Group.* The *Create New Group* pane will open.
 3. In the *General* tab, name your group and add a description, if desired.
-4. If desired, select from the [Team Spaces](/analytics/collaborate-with-spaces) drop-down any team spaces you want to automatically add group members to. Existing members of the selected Team Spaces will **not** be automatically added to this group.
+4. If desired, select from the [Team Spaces](/docs/analytics/collaborate-with-spaces) drop-down any team spaces you want to automatically add group members to. Existing members of the selected Team Spaces will **not** be automatically added to this group.
 5. Select the appropriate group type from the drop-down.
 6. Next, click *+ Add Project* and select the projects to which this group will have access. You can add any number of projects to the group.
 7. For each project, select the appropriate project role. All group members will have the permission level that is attached to that project role.
 
-![permission groups 1a.png](/output/img/account-management/permission-groups-1a-png.png)
+![permission groups 1a.png](/docs/output/img/account-management/permission-groups-1a-png.png)
 
 {{partial:admonition type='note'}}
  If a group member already has access to a project individually or via another group, Amplitude will treat them according to the **highest** level of permission they have. For example, if a user has a "Member" role for a project via Group A, but is also part of Group B that grants them "Manager" access to the project, the user will have manager access to this project. Find more [example scenarios here](#Example-Scenarios).
@@ -60,7 +60,7 @@ To **modify the group's permission level** for a specific project, navigate to t
 
 ## Assign groups when inviting new users
 
-When [inviting new users](/admin/account-management/manage-users) to your organization, you can assign them to a group and/or assign individual project permissions during the 'Assign Access' step.
+When [inviting new users](/docs/admin/account-management/manage-users) to your organization, you can assign them to a group and/or assign individual project permissions during the 'Assign Access' step.
 
 ## Things to consider when assigning user permissions
 

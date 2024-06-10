@@ -28,16 +28,16 @@ Dashboards are available to all all Amplitude customers. However, certain featur
 * Comment
 * Adding target metrics
 
-You'll have to save your charts before adding them to a dashboard. Read more about creating and saving charts [here](/get-started/create-a-chart).
+You'll have to save your charts before adding them to a dashboard. Read more about creating and saving charts [here](/docs/get-started/create-a-chart).
 
-Also, be aware that [Pathfinder Users](/analytics/charts/journeys/journeys-understand-paths) is currently not supported by dashboards, and that customers on Starter plans are limited to 50 dashboard subscriptions (i.e., they can subscribe to 50 different dashboards).
+Also, be aware that [Pathfinder Users](/docs/analytics/charts/journeys/journeys-understand-paths) is currently not supported by dashboards, and that customers on Starter plans are limited to 50 dashboard subscriptions (i.e., they can subscribe to 50 different dashboards).
 
 You may also find the following dashboards articles useful:
 
-* [Change your dashboard's display preferences](/analytics/dashboard-preferences)
-* [Filter your dashboards](/analytics/dashboard-filter)
-* [Subscribe to a dashboard](/analytics/dashboard-subscribe)
-* [Turn your dashboard into a template](/analytics/dashboard-create-template)
+* [Change your dashboard's display preferences](/docs/analytics/dashboard-preferences)
+* [Filter your dashboards](/docs/analytics/dashboard-filter)
+* [Subscribe to a dashboard](/docs/analytics/dashboard-subscribe)
+* [Turn your dashboard into a template](/docs/analytics/dashboard-create-template)
 
 ## Create a dashboard
 
@@ -64,7 +64,7 @@ You can add charts to your dashboard either from inside the dashboard, or from w
 
 ### Add cohorts to your dashboard
 
-You can add a [behavioral cohort](/analytics/behavioral-cohorts) to a dashboard. This will display the number of users in a cohort and when it was last computed. 
+You can add a [behavioral cohort](/docs/analytics/behavioral-cohorts) to a dashboard. This will display the number of users in a cohort and when it was last computed. 
 
 {{partial:admonition type='note'}}
 This feature is only available to customers on a Scholarship, Growth, or Enterprise plan.
@@ -90,7 +90,7 @@ For any chart or query that segments on a cohort, the segmented cohort will auto
 There are three ways you can add a Session Replay to a dashboard or notebook:
 
 * From the Session Replay page itself (accessible via the homepage and Session Replay search)
-* From within [User Look-Up](/analytics/user-data-lookup)
+* From within [User Look-Up](/docs/analytics/user-data-lookup)
 * From within an individual chart
 
 ### Designate your dashboard as "official"
@@ -127,13 +127,13 @@ This feature is only available to customers on a Scholarship, Growth, or Enterpr
 
 To comment, click *More > Comment*. You can also mention colleagues by typing their name after "@". They will receive an Amplitude notification.
 
-You can also receive a notification via Slack. More information on how to integrate Slack can be found [here](/analytics/integrate-slack).  
+You can also receive a notification via Slack. More information on how to integrate Slack can be found [here](/docs/analytics/integrate-slack).  
 
 ## Copy, download, export, refresh, or archive your dashboard
 
 The *More* menu contains several administrative functions not discussed above:
 
-![dashboards_final_section_more_menu_image.png](/output/img/analytics/dashboards-final-section-more-menu-image-png.png)
+![dashboards_final_section_more_menu_image.png](/docs/output/img/analytics/dashboards-final-section-more-menu-image-png.png)
 
 * Refreshing all charts will update all charts and cohorts included in your dashboard, so that it displays the most up-to-date information.
 * When downloading a .CSV of a chart, the downloaded file will contain a summary of the chart, the dashboard URL, and all events, segments, and user properties.
@@ -144,6 +144,6 @@ The *More* menu contains several administrative functions not discussed above:
 
 ## Dashboard cache times
 
-Amplitude caches chart results. The cache time is dependent on the interval (daily, weekly, monthly) and the length of time covered. Cache times for charts can be found [here](/analytics/charts/chart-basics). Cache times for dashboards and CSV downloads are twice as long as the times listed.
+Amplitude caches chart results. The cache time is dependent on the interval (daily, weekly, monthly) and the length of time covered. Cache times for charts can be found [here](/docs/analytics/charts/chart-basics). Cache times for dashboards and CSV downloads are twice as long as the times listed.
 
 To manually refresh all charts and cohorts on a dashboard, click *More > Refresh Dashboard*.

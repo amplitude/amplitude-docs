@@ -47,14 +47,14 @@ Performing the following actions may cause a user to jump variants:
 
 !!!tip "Avoid variant jumping by enabling sticky bucketing"
 {{partial:admonition type="tip" heading="Avoid variant jumping by enabling sticky bucketing"}}
-Enabling sticky bucketing before making targeting changes prevents variant jumping. However, sticky bucketing may cause a [sample ratio mismatch (SRM)](/experiment/troubleshooting/sample-ratio-mismatch).
+Enabling sticky bucketing before making targeting changes prevents variant jumping. However, sticky bucketing may cause a [sample ratio mismatch (SRM)](/docs/experiment/troubleshooting/sample-ratio-mismatch).
 {{/partial:admonition}}
 
 ### Anonymous identity merging
 
 Variant jumping caused by anonymous identity merging may occur due to bucketing by Amplitude ID, when user profiles with distinct device IDs (resolved to different amplitude IDs) are merged when resolved to a common user ID. This may happen if a user uses your app on different devices, or if, on logout, the device ID is re-generated.
 
-[Learn more about Amplitude's identity resolution and merging users.](/cdp/sources/instrument-track-unique-users)
+[Learn more about Amplitude's identity resolution and merging users.](/docs/cdp/sources/instrument-track-unique-users)
 
 Identifying this type of variant jumping is easy by identifying the assignment event where the user jumped between variants, and comparing the value of the Amplitude ID for both events. If the Amplitude ID is different on the two events, then there then it's very likely that anonymous identity merging was the cause.
 
@@ -98,7 +98,7 @@ If you keep a consistent device ID across logins, you can easily check for this 
 
 ### Inconsistent identity input between assignment and exposure
 
-In Amplitude, the user ID and device ID properties are essential to identify your user and [resolve their Amplitude ID](/cdp/sources/instrument-track-unique-users). If the device ID or user ID used to fetch/evaluate assignments is different from the device ID and user ID used to track the exposure event, you may see variant jumping, SRMs and inconsistent or unexpected bucketing behavior.
+In Amplitude, the user ID and device ID properties are essential to identify your user and [resolve their Amplitude ID](/docs/cdp/sources/instrument-track-unique-users). If the device ID or user ID used to fetch/evaluate assignments is different from the device ID and user ID used to track the exposure event, you may see variant jumping, SRMs and inconsistent or unexpected bucketing behavior.
 
 For example, you may be sending events through a proxy or CDP which obfuscates or canonicalizes IDs before sending to Amplitude. In this case, the identity used to fetch variants would be different from the identity included in the exposure events.
 

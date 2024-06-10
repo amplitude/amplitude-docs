@@ -14,9 +14,9 @@ updated_at: 1717624136
 ---
 ## Compare your cohorts
 
-The Cohort Comparison feature automatically compares your new [cohort](/analytics/behavioral-cohorts) to all active users for the last 30 days. You can then choose a pre-existing cohort to compare it with, look at the overlap between two cohorts, choose user properties for side-by-side composition, compare actives, retention, average events, and more.
+The Cohort Comparison feature automatically compares your new [cohort](/docs/analytics/behavioral-cohorts) to all active users for the last 30 days. You can then choose a pre-existing cohort to compare it with, look at the overlap between two cohorts, choose user properties for side-by-side composition, compare actives, retention, average events, and more.
 
-In the [Behavioral Cohorts](/analytics/behavioral-cohorts) tab, click the title of a cohort to open the comparison analysis. 
+In the [Behavioral Cohorts](/docs/analytics/behavioral-cohorts) tab, click the title of a cohort to open the comparison analysis. 
 
 ## Manage your cohorts
 

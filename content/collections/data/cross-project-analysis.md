@@ -12,7 +12,7 @@ updated_at: 1717622895
 ---
 Amplitude Data's **portfolio** feature lets you create cross-product analyses by combining multiple source projects into a single view. 
 
-With this feature, you can create portfolios in Analytics and build charts using data aggregated across all the source projects in your portfolio. To learn more, see our Help Center article on [conducting cross-project analyses in Amplitude Analytics.](/admin/account-management/portfolio)
+With this feature, you can create portfolios in Analytics and build charts using data aggregated across all the source projects in your portfolio. To learn more, see our Help Center article on [conducting cross-project analyses in Amplitude Analytics.](/docs/admin/account-management/portfolio)
 
 The behavior of portfolios managed in Amplitude Data is different from legacy portfolios once managed in the Govern section of Amplitude Analytics. For one thing, legacy portfolios did not enable users to prioritize source projects, or to show event or property metadata from the source projects in the portfolio by default.
 
@@ -28,7 +28,7 @@ To create a portfolio in Amplitude Data, follow these steps:
 
 2. In the modal that appears, name your portfolio and select the projects in Amplitude Analytics that it will draw from. When you're done, click *Next*.  
   
-    ![portfolio_in_amplitude_data_2.png](/output/img/data/portfolio-in-amplitude-data-2-png.png)
+    ![portfolio_in_amplitude_data_2.png](/docs/output/img/data/portfolio-in-amplitude-data-2-png.png)
 
 3. Next, you must **prioritize the schemas** of the source projects you included. This is required in case Amplitude Data encounters conflicts or differences in the schemas. The order in which you prioritize them will determine which schemas Amplitude Data regards as the **source of truth**; if an event or property name exists in multiple source projects, Amplitude Data will use and display the metadata from the prioritized project in this portfolio.  
   
@@ -42,7 +42,7 @@ To create a portfolio in Amplitude Data, follow these steps:
 
 Customize events and property metadata in the portfolio  
 
-You can customize event and property metadata in your portfolio through the use of an [override](/data/override-property).
+You can customize event and property metadata in your portfolio through the use of an [override](/docs/data/override-property).
 
 ## Import existing portfolios into Amplitude Data
 

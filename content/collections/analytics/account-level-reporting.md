@@ -29,13 +29,13 @@ This feature is available to users on **Plus**, **Growth**, and **Enterprise** *
 * With the Accounts add-on, you are able to instrument up to five different group types per project. You can manage and remove groups via Amplitude Data.
 * Account-level properties have a limit of 1000 per project.
 * Changes to account groups and group properties will be applied to new data moving forward, and will not affect historical data.
-* To [instrument account-level reporting in Amplitude, see our Help Center documentation](/analytics/account-level-reporting-setup).
+* To [instrument account-level reporting in Amplitude, see our Help Center documentation](/docs/analytics/account-level-reporting-setup).
 
 ## Group-level reporting: an overview
 
-Once you've [set up groups](/analytics/account-level-reporting-setup), Amplitude will include them in a drop-down list in the [Segmentation Module](/analytics/charts/build-charts-add-user-segments). From there, you'll be able to report at the group level instead of the individual user level.
+Once you've [set up groups](/docs/analytics/account-level-reporting-setup), Amplitude will include them in a drop-down list in the [Segmentation Module](/docs/analytics/charts/build-charts-add-user-segments). From there, you'll be able to report at the group level instead of the individual user level.
 
-![account_level_reporting_1.png](/output/img/analytics/account_level_reporting_1.png)
+![account_level_reporting_1.png](/docs/output/img/analytics/account_level_reporting_1.png)
 
 An analysis using group-level reporting performs its counts by distinct user property groups. When might this be useful? Here are some potential use cases:
 
@@ -45,7 +45,7 @@ An analysis using group-level reporting performs its counts by distinct user pro
 * Using group-level reporting in funnel analyses: 
 	* such as, determining how many accounts have converted from free trials to paid accounts (group by either account ID or project ID), or tracking how many posts are drafted but never published in your social media platform (group by post ID)
 
-In a standard [funnel analysis](/analytics/charts/funnel-analysis), the same person must complete all steps of the funnel to count as a conversion. With group-level reporting, different members of the group can complete different steps in the funnel, and Amplitude will still interpret that as a conversion. 
+In a standard [funnel analysis](/docs/hc/en-us/articles/360039976531), the same person must complete all steps of the funnel to count as a conversion. With group-level reporting, different members of the group can complete different steps in the funnel, and Amplitude will still interpret that as a conversion. 
 
 This is useful for multi-sided marketplaces or B2B2C companies whose conversion processes involve multiple people. An example of this is a product that allows medical practices to bill patients for expenses. Their conversion funnel might include steps like “send invoice” and “send payment.” The former is completed by an admin, while the latter is completed by the patient. In situations like these, group-level reporting is the only way to accurately measure total invoice conversion.
 
@@ -62,41 +62,41 @@ A user's group type cannot be un-set, and must instead be overwritten.
 
 ### Add groups to charts
 
-All chart and report types in Amplitude support [group-level reporting](#account-level-reporting), with the exception of the Personas and Compass reports. To use a group you have instrumented in your chart, select the group you want to analyze your data by in the *Users* dropdown, located in the [Segmentation Module](/analytics/charts/build-charts-add-user-segments).
+All chart and report types in Amplitude support [group-level reporting](#account-level-reporting), with the exception of the Personas and Compass reports. To use a group you have instrumented in your chart, select the group you want to analyze your data by in the *Users* dropdown, located in the [Segmentation Module](/docs/analytics/charts/build-charts-add-user-segments).
 
-For example, if you wanted to track the number of daily active organizations and group them by region, you can set up an [Event Segmentation](/analytics/charts/event-segmentation/event-segmentation-build) chart like this:
+For example, if you wanted to track the number of daily active organizations and group them by region, you can set up an [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) chart like this:
 
-![segmentby_grpids.png](/output/img/analytics/segmentby_grpids.png)
+![segmentby_grpids.png](/docs/output/img/analytics/segmentby_grpids.png)
 
 ### Create group-level behavioral cohorts
 
-To create a group-level [behavioral cohort](/analytics/behavioral-cohorts), use the dropdown on the left to specify if you want to create a cohort out of one of your groups.
+To create a group-level [behavioral cohort](/docs/analytics/behavioral-cohorts), use the dropdown on the left to specify if you want to create a cohort out of one of your groups.
 
-![account_level_group_behavioral_cohorts.png](/output/img/analytics/account_level_group_behavioral_cohorts.png)
+![account_level_group_behavioral_cohorts.png](/docs/output/img/analytics/account_level_group_behavioral_cohorts.png)
 
 For example, we can create a behavioral cohort of companies who triggered the event `Create customized report`, and apply that cohort to a Retention Analysis chart to see the differences in retention between companies that fired that event versus companies that did not.
 
 You also have the option to import a cohort of groups from a file. The file must contain exactly one group name per line. 
 
-![Screenshot_2022-01-07_at_14.23.29.png](/output/img/analytics/Screenshot_2022-01-07_at_14.23.29.png)
+![Screenshot_2022-01-07_at_14.23.29.png](/docs/output/img/analytics/Screenshot_2022-01-07_at_14.23.29.png)
 
 ### View and download groups with Microscope
 
-You can also use the [Microscope](/analytics/microscope) feature with account-level reporting. This is useful if you are performing an account-level analysis and want to dig deeper into a single data point or bucket.
+You can also use the [Microscope](/docs/analytics/microscope) feature with account-level reporting. This is useful if you are performing an account-level analysis and want to dig deeper into a single data point or bucket.
 
 For example, imagine you have an instant messaging application, and you want to increase the number of new user invites. To do so, create a funnel analysis with steps from 'Activate Account' to 'Invite New Contact':
 
-![account_level_view_groups_microscope.png](/output/img/analytics/account_level_view_groups_microscope.png)
+![account_level_view_groups_microscope.png](/docs/output/img/analytics/account_level_view_groups_microscope.png)
 
-Then use Microscope to view the groups in the last step's drop-off, or download the groups to understand why those groups drop off before inviting additional co-workers. You can also create a group-level cohort of those accounts, apply that cohort to other charts, or open [Investigate Conversion Drivers](/analytics/charts/funnel-analysis/funnel-analysis-identify-conversion-drivers) to perform a detailed analysis.
+Then use Microscope to view the groups in the last step's drop-off, or download the groups to understand why those groups drop off before inviting additional co-workers. You can also create a group-level cohort of those accounts, apply that cohort to other charts, or open [Investigate Conversion Drivers](/docs/analytics/charts/funnel-analysis/funnel-analysis-identify-conversion-drivers) to perform a detailed analysis.
 
-![account_level_microscope_2.png](/output/img/analytics/account_level_microscope_2.png)
+![account_level_microscope_2.png](/docs/output/img/analytics/account_level_microscope_2.png)
 
 ## Explore the behavior of a specific account
 
 Accounts allow you to drill into a single group’s behavior, similar to the User Activity section. 
 
-![image1.png](/output/img/analytics/image1.png)
+![image1.png](/docs/output/img/analytics/image1.png)
 
 In this example, the group type is `org id`, and the group value is `12345678` (listed under *Group Name*).
 
@@ -111,14 +111,14 @@ Group property searches must follow the syntax of `name = value`. They are restr
 
 Clicking on an account will take you to that account’s page, where you can view the account’s properties and activities.
 
-![account_level_account_page.png](/output/img/analytics/account_level_account_page.png)
+![account_level_account_page.png](/docs/output/img/analytics/account_level_account_page.png)
 
 You will find the account’s most recent properties in the top panel. The account’s properties can be set three different ways: the [Group Identify API](https://www.docs.developers.amplitude.com/analytics/apis/group-identify-api/), the [Salesforce integration](https://www.docs.developers.amplitude.com/data/sources/salesforce-group/), and by using Event Segmentation to create dynamic properties. These properties can be used to describe the account as whole (e.g. `30 day active users`, `account
  manager`, `plan type`, `renewal date`, etc.).
 
 If you're using the User Look-up to verify events and the properties set with them, they will not be visible in the *Info* view. You can find them by clicking *Raw* instead.
 
-![](/output/img/analytics/5jUOdenf9FPpODdA5UVd6qzJ_paC2Bf2gm2RPSK2S-WQPeI1yzNzCVE3yXKc8uu_iJYlNydjbnR38sJGPK7XvIf8iz8a4r642Kq-cL4w6Jco0EtIudeA0LDHHTeFmewzt2LgcE-vlcdgSQbXiSKAYfI)
+![](/docs/output/img/analytics/5jUOdenf9FPpODdA5UVd6qzJ_paC2Bf2gm2RPSK2S-WQPeI1yzNzCVE3yXKc8uu_iJYlNydjbnR38sJGPK7XvIf8iz8a4r642Kq-cL4w6Jco0EtIudeA0LDHHTeFmewzt2LgcE-vlcdgSQbXiSKAYfI)
 
 ## Set properties at the group level
 
@@ -126,7 +126,7 @@ If you're using the User Look-up to verify events and the properties set with th
 
 ### Dynamic group properties
 
-You can turn your KPIs into dynamically-updating group properties. Add group properties such as “Last 7 Day Active Users” or “Monthly Active Users” to each account in your product. Dynamic group properties are created by Admin-level users via an [Event Segmentation](/analytics/charts/event-segmentation/event-segmentation-build) chart with the following steps:
+You can turn your KPIs into dynamically-updating group properties. Add group properties such as “Last 7 Day Active Users” or “Monthly Active Users” to each account in your product. Dynamic group properties are created by Admin-level users via an [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) chart with the following steps:
 
 1. **Save a single time series Event Segmentation chart:** Save a user-level chart with a single time series metric that you want to track.
 
@@ -142,4 +142,4 @@ You can turn your KPIs into dynamically-updating group properties. Add group pro
 
 ### Create group properties via the Salesforce integration
 
-To learn how to create **group properties** using Amplitude's Salesforce integration, see [Salesforce](/data/source-catalog/salesforce) in Amplitude Sources.
+To learn how to create **group properties** using Amplitude's Salesforce integration, see [Salesforce](/docs/data/source-catalog/salesforce) in Amplitude Sources.

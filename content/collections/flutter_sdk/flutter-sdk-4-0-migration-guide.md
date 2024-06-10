@@ -10,7 +10,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1715204523
 ---
-Amplitude Flutter SDK 4.0 features default event tracking, simplified interfaces, and wraps the latest [Amplitude iOS](/data/sdks/ios-swift/) and [Android Kotlin](/data/sdks/android-kotlin/) SDKs. 
+Amplitude Flutter SDK 4.0 features default event tracking, simplified interfaces, and wraps the latest [Amplitude iOS](/docs/data/sdks/ios-swift/) and [Android Kotlin](/docs/data/sdks/android-kotlin/) SDKs. 
 
 
 ## Terminology

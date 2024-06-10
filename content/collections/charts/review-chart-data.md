@@ -15,7 +15,7 @@ Sometimes just visualizing data in a chart is not sufficient for all analyses. T
 
 Some charts—including Data Tables, Personas, Pathfinder, Pathfinder Users, Compass, and Experiment Results—do not have a breakdown table.
 
-![breakdownTable_location.png](/output/img/charts/breakdowntable-location-png.png)
+![breakdownTable_location.png](/docs/output/img/charts/breakdowntable-location-png.png)
 
 ## Sort your table's fields
 
@@ -30,7 +30,7 @@ Some of the columns in your breakdown table will be **fixed**. A fixed column wi
 
 Click on a column name in your breakdown table to sort the column in descending or ascending order.
 
-![breakdownTable.gif](/output/img/charts/breakdowntable-gif.gif)
+![breakdownTable.gif](/docs/output/img/charts/breakdowntable-gif.gif)
 
 {{partial:admonition type='note'}}
 Fixed column values will be sorted as strings. 
@@ -40,7 +40,7 @@ Fixed column values will be sorted as strings. 
 
 Some charts, such as Segmentation and User Sessions charts, include a **summary column**. Modify the summary column by choosing a **row aggregate** in the drop-down menu. Select from average, median, change (first row minus last row values), or sum (available only for event totals, properties, and formulas).
 
-![row_Aggregates.png](/output/img/charts/row-aggregates-png.png)
+![row_Aggregates.png](/docs/output/img/charts/row-aggregates-png.png)
 
 ## Set the number of series to display
 
@@ -50,24 +50,24 @@ Each breakdown table automatically interacts with your charts, and vice versa. A
  Regardless of what is selected or un-selected in the breakdown table, the exported .CSV will include **all** rows and values.
 {{/partial:admonition}}
 
-![select_unselect_values.png](/output/img/charts/select-unselect-values-png.png)
+![select_unselect_values.png](/docs/output/img/charts/select-unselect-values-png.png)
 
 ## Modify the table breakdown
 
 Select the specific number of series or rows that you'd like to display in your breakdown table. Click on the *Breakdown by:* drop down to choose a default or enter a numerical value between 1-30. As long as it's saved, the *Breakdown by:* selection will persist through sorting and refreshing, as well as to any dashboards that include your chart. When Amplitude receives new data, the top values or events will automatically update. 
 
-![breakdownBy.png](/output/img/charts/breakdownby-png.png)
+![breakdownBy.png](/docs/output/img/charts/breakdownby-png.png)
 
 To turn off a *Breakdown by:* selection, ensure only the values and events you want to keep maintain a checkmark. Your Breakdown table will then notate that only a specific number are selected. Turn it back on by clicking on the *Reset to top...* hyperlink. 
 
-![reset_to_top.png](/output/img/charts/reset-to-top-png.png)
+![reset_to_top.png](/docs/output/img/charts/reset-to-top-png.png)
 
 ## Export to .CSV
 
-Click to export your breakdown table as a .CSV file. There are [.CSV download limits](/data/csv-import-export) that depend on the type of chart and group-by in use. 
+Click to export your breakdown table as a .CSV file. There are [.CSV download limits](/docs/data/csv-import-export) that depend on the type of chart and group-by in use. 
 
 ## Search for values
 
 Use the search bar to search for any values in your breakdown table. Searches automatically start once a value is entered, and update when the value is modified or removed. A search result does not impact the chart nor the data that can be exported. 
 
-![searchField.png](/output/img/charts/searchfield-png.png)
+![searchField.png](/docs/output/img/charts/searchfield-png.png)

@@ -24,7 +24,7 @@ To add a description to an event, follow these steps:
 2. In the fly-out that appears, click *Add a description* under *Details.*
 3. Type in a description of the event and click *Apply*.
 
-![add_description.png](/output/img/data/add-description-png.png)
+![add_description.png](/docs/output/img/data/add-description-png.png)
 
 ## Add a description to an event property
 

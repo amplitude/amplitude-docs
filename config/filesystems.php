@@ -59,14 +59,14 @@ return [
 
         'assets' => [
             'driver' => 'local',
-            'root' => public_path('assets'),
-            'url' => '/assets',
+            'root' => public_path('docs/assets'),
+            'url' => 'docs/assets',
             'visibility' => 'public',
             'throw' => false,
         ],
         'help_center' => [
             'driver' => 'local',
-            'root' => public_path('output/img'),
+            'root' => public_path('docs/output/img'),
             'url' => '/output/img',
             'visibility' => 'public',
             'throw' => false,

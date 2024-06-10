@@ -8,11 +8,11 @@ this_article_will_help_you:
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717015719
 ---
-A usage interval analysis is related to a [retention analysis](/analytics/charts/retention-analysis/retention-analysis-build), but it works a little differently. While a simple retention analysis measures the amount of time between a starting event and a return event, a usage interval analysis considers return events only. It’s intended to show you how long users go between triggering your product’s most important event—its **critical event**.
+A usage interval analysis is related to a [retention analysis](/docs/analytics/charts/retention-analysis/retention-analysis-build), but it works a little differently. While a simple retention analysis measures the amount of time between a starting event and a return event, a usage interval analysis considers return events only. It’s intended to show you how long users go between triggering your product’s most important event—its **critical event**.
 
-For more details on usage interval analyses and what they mean, see our Help Center article on [interpreting your retention analysis](/analytics/charts/retention-analysis/retention-analysis-interpret-usage). 
+For more details on usage interval analyses and what they mean, see our Help Center article on [interpreting your retention analysis](/docs/analytics/charts/retention-analysis/retention-analysis-interpret-usage). 
 
-![segment_by_2.gif](/output/img/retention-analysis/segment-by-2-gif.gif)
+![segment_by_2.gif](/docs/output/img/retention-analysis/segment-by-2-gif.gif)
 
 To build a usage interval analysis, follow these steps:
 
@@ -31,4 +31,4 @@ You can add up to two return events for your usage interval analysis.
 
 You should now see your usage interval analysis, along with a tabular view of your results. 
 
-But what does it mean? For the answer to that, check out our Help Center article on [interpreting your usage interval analysis](/analytics/charts/retention-analysis/retention-analysis-interpret-usage).
+But what does it mean? For the answer to that, check out our Help Center article on [interpreting your usage interval analysis](/docs/analytics/charts/retention-analysis/retention-analysis-interpret-usage).

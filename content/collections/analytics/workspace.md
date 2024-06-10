@@ -8,7 +8,7 @@ Your workspace allows you to find your Amplitude analyses quickly and reliably, 
 
 Navigate to your workspace by clicking the *Spaces* drop-down, then clicking your name on the *Favorite Spaces* tab.
 
-![workspace.png](/output/img/analytics/workspace.png)
+![workspace.png](/docs/output/img/analytics/workspace.png)
 
 Open an item in your workspace by clicking it.
 

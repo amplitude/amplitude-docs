@@ -14,16 +14,16 @@ updated_at: 1717690805
 ---
 Amplitude charts are built using three information cards. These cards, located along the left-hand side of your chart, are called **modules**, and while their specific function can change from chart to chart, they follow some general guidelines:
 
-![build_charts_in_amplitude_1.png](/output/img/charts/build-charts-in-amplitude-1-png.png)
+![build_charts_in_amplitude_1.png](/docs/output/img/charts/build-charts-in-amplitude-1-png.png)
 
 1. At the top is the **Events module**. This is where you’ll select the Amplitude events and metrics you want to include in your analysis.
 2. In the middle is the **Measured As module**. The appearance and features of the Measured As module varies widely from chart to chart; for that reason, this article will focus solely on the Events module and the Segment By module instead. You can find out about the Measured As module for a specific chart type by reading the documentation for that chart.
 3. At the bottom is the **Segment By module**, which is where you’ll define and identify the specific subsets of users you’re interested in learning about.
 
-This article will explain how to use the Events module. Once you're done here, check out our article on [adding user segments to your Amplitude charts](/analytics/charts/build-charts-add-user-segments).
+This article will explain how to use the Events module. Once you're done here, check out our article on [adding user segments to your Amplitude charts](/docs/analytics/charts/build-charts-add-user-segments).
 
 {{partial:admonition type='note'}}
-Because they are designed for different types of analyses, Amplitude’s [User Composition](/analytics/charts/compass/compass-aha-moment) charts do not have an Events module. For more information on how to build analyses using these charts, click through the links above to view the documentation.
+Because they are designed for different types of analyses, Amplitude’s [User Composition](/docs/analytics/charts/compass/compass-aha-moment) charts do not have an Events module. For more information on how to build analyses using these charts, click through the links above to view the documentation.
 {{/partial:admonition}}
 
 ## Events module
@@ -33,24 +33,24 @@ Because they are designed for different types of analyses, Amplitude’s [User C
 Amplitude can also track **inactive events**, or actions that are **not** taken by the end user, but still occur within the app or website. One example might be a push notification sent by the app.
 
 {{partial:admonition type='note'}}
-To learn about configuring inactive events, see our Help Center articles on Amplitude’s [Govern](/hc/en-us/articles/360043750992) feature.
+To learn about configuring inactive events, see our Help Center articles on Amplitude’s [Govern](/docs/hc/en-us/articles/360043750992) feature.
 {{/partial:admonition}}
 
 ### Add events to your analysis
 
 To add an event to an analysis, navigate to the Events module and click *Add Event or Metric*. This will bring up a list of all available events. You can add up to 10 events to an analysis. An event must first be instrumented before it will appear in this list. To learn more, see our articles on [managing events](https://help.amplitude.com/hc/en-us/sections/16805649563163-Clean-up-your-data).
 
-![build_charts_in_amplitude_add_event.png](/output/img/charts/build-charts-in-amplitude-add-event-png.png)
+![build_charts_in_amplitude_add_event.png](/docs/output/img/charts/build-charts-in-amplitude-add-event-png.png)
 
 In addition to the product-specific events your team will instrument, there are five default Amplitude events:
 
 * **Top Global Events:** Queries on the top ten active events by volume with the highest counts, over the time period selected, for **all users in your project**.
 * **Top Events for Segment:** Queries on the top ten active events by volume with the highest counts, over the time period selected, for **a particular user segment** defined in the Segment By module.
 * **Any Active Event:** Queries on any **active** event over the time period selected. For example, if you want to view your daily active users, select *Any Active Event* and change the measurement in the Measured As module to *Uniques*.
-* **Any Event:** Queries on **any** event over the time period selected. This includes [non-active](/admin/account-management/account-settings) events.
+* **Any Event:** Queries on **any** event over the time period selected. This includes [non-active](/docs/admin/account-management/account-settings) events.
 * **New User:** Queries on new users over the time period selected. For example, if you want to view daily new users, select *New User* and change the measurement in the Measured As module to *Uniques*. A user is considered to be "new" the moment they send their first event to Amplitude.
 
-When you use `![amplitude_logo.png](/output/img/charts/amplitude-logo-png.png) New User` in a chart, the chart will look at all events triggered by new users during the interval when they were new. For example, in an Event Segmentation chart, if you compare uniques to event totals, you may see a higher count of events than the number of new users. 
+When you use `![amplitude_logo.png](/docs/output/img/charts/amplitude-logo-png.png) New User` in a chart, the chart will look at all events triggered by new users during the interval when they were new. For example, in an Event Segmentation chart, if you compare uniques to event totals, you may see a higher count of events than the number of new users. 
 
 ### Use wildcards to search for events
 
@@ -89,4 +89,4 @@ Some things to be aware of:
 
 ## Next step: Add user segments
 
-Now that you understand how the Event module works in Amplitude, you're ready to read about [adding user segments to your charts](/analytics/charts/build-charts-add-user-segments).
+Now that you understand how the Event module works in Amplitude, you're ready to read about [adding user segments to your charts](/docs/analytics/charts/build-charts-add-user-segments).

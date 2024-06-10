@@ -125,7 +125,7 @@ The **Event** table schema includes the following columns:
 - `source_id`
 - `data_type`
 
-For more information, see the [Event Table Schema](/data/destination-catalog/snowflake#event-table-schema) section of the Snowflake Export documentation.
+For more information, see the [Event Table Schema](/docs/data/destination-catalog/snowflake#event-table-schema) section of the Snowflake Export documentation.
 
 ### Merged User table schema
 
@@ -136,4 +136,4 @@ The Merged User table schema contains the following:
 - `merge_server_time`
 - `merged_amplitude_id`
 
-For more information,  see the [Merged User table schema](/data/destination-catalog/snowflake#merged-user-table-schema) section of the Snowflake Export documentation.
+For more information,  see the [Merged User table schema](/docs/data/destination-catalog/snowflake#merged-user-table-schema) section of the Snowflake Export documentation.

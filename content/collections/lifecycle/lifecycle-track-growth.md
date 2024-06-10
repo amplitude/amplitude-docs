@@ -25,7 +25,7 @@ This feature is available to users on **Growth** and **Enterprise plans** only. 
 
 ## Before you begin
 
-First and foremost, events will not appear in any Amplitude charts until instrumentation is complete, so make sure you've got that done. You'll definitely want to read our article on [building charts in Amplitude](/get-started/helpful-definitions).
+First and foremost, events will not appear in any Amplitude charts until instrumentation is complete, so make sure you've got that done. You'll definitely want to read our article on [building charts in Amplitude](/docs/get-started/helpful-definitions).
 
 You'll probably get more out of a lifecycle analysis if you fully understand your product's critical event, and its usage frequency. And you may want to check out our blog post on [the retention lifecycle framework.](https://amplitude.com/blog/2016/11/02/retention-lifecycle-framework)
 
@@ -51,8 +51,8 @@ To build a Lifecycle chart, follow these steps:
 6. You can narrow your focus even further by telling Amplitude you only want to include users who have already performed certain actions. To do so, click *Select event...*, then choose the event you’re interested in.
 7. In the Metrics Module, set your **usage interval**. If a user fires your selected event within the usage interval, Amplitude will consider them current; otherwise, for the purposes of this analysis, they are considered dormant. Your chart will display the results in the interval you've selected.
 
-![growth lifecycle.png](/output/img/lifecycle/growth-lifecycle-png.png)
+![growth lifecycle.png](/docs/output/img/lifecycle/growth-lifecycle-png.png)
 
 This example shows a daily lifecycle chart with an interval of 7 days (August 1 to August 7). Each day includes blue and red buckets defined as active users (blue) versus dormant users (red). Users cannot be in more than one bucker per interval. 
 
-Read on to learn how to [interpret your Lifecycle chart](/analytics/charts/lifecycle/lifecycle-interpret).
+Read on to learn how to [interpret your Lifecycle chart](/docs/analytics/charts/lifecycle/lifecycle-interpret).

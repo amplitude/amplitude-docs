@@ -75,7 +75,7 @@ Knowing who is using your product is just as important as knowing what they're d
 
 Amplitude's Personas chart groups your users into clusters based on the **similarities of their event behavior**: users who behave the same way will end up in the same cluster. It can help you surface similarities between user cohorts you may not have thought to look for. And it can guide you through the process of creating a comprehensive set of user personas for your product.
 
-[Read more about Persona development](/analytics/charts/personas/personas-clustering) 
+[Read more about Persona development](/docs/analytics/charts/personas/personas-clustering) 
 
 ## Step 6: Compare engagement across personas with the Engagement Matrix
 
