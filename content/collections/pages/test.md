@@ -4,7 +4,7 @@ blueprint: home
 title: 'Amplitude Documentation'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717709382
+updated_at: 1718054535
 hide_toc: true
 hide_side-nav: true
 template: home
@@ -46,24 +46,24 @@ popular_content:
   -
     id: lvmoigbu
     article: 3d639f6c-44b5-4ece-b4a6-7af8b4277da0
-    icon: home/data-1.svg
+    icon: home/amp-analytics.svg
     blurb: 'Run analyses from data in your own data warehouse'
     type: popular_item
     enabled: true
   -
     id: lux77v2k
-    icon: home/data-1.svg
     type: popular_item
     enabled: true
     blurb: 'Learn about Amplitude Data and get started using the product.'
     article: 1bca668a-d50d-4e07-a0a9-a77016d8d5d3
+    icon: home/amp-data.svg
   -
     id: lvmo8bua
     article: 00d74a7b-23bd-4a24-86a1-92c046e7e1b5
-    icon: home/developer.svg
     blurb: "Amplitude's Browser SDK 2 sends data to Amplitude."
     type: popular_item
     enabled: true
+    icon: home/data.svg
   -
     id: lux8tltv
     article: 37e1ab54-da77-4a60-be41-1c1018c4163a
@@ -81,10 +81,10 @@ popular_content:
   -
     id: lvmoc61a
     article: f01c2196-6c7f-4ec9-9b62-2ed150653399
-    icon: home/data-1.svg
     blurb: 'Plan your event and user properties directly in Amplitude Data'
     type: popular_item
     enabled: true
+    icon: home/amp-data.svg
   -
     id: lvmoeddf
     article: 6351af1c-e7e9-4488-bbe7-34648487d173
@@ -95,10 +95,10 @@ popular_content:
   -
     id: lvmoex4l
     article: 57f6f8ee-4044-4a3e-af34-c6d6eca409dc
-    icon: home/data-1.svg
     blurb: 'Learn differences between user properties and event properties'
     type: popular_item
     enabled: true
+    icon: home/amp-audiences.svg
   -
     id: lvmoigbu
     article: 56c6e293-ea12-4e7c-8fb3-55216749d5ce
@@ -109,8 +109,8 @@ popular_content:
   -
     id: lvmoz14m
     article: e5e8c350-b75d-4c43-83a0-833ff186a0be
-    icon: home/data-1.svg
     blurb: 'Learn how Amplitude identifies and tracks unique users'
     type: popular_item
     enabled: true
+    icon: home/amp-audiences.svg
 ---
