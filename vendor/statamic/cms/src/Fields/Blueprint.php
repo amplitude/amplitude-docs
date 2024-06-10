@@ -615,17 +615,11 @@ class Blueprint implements Arrayable, ArrayAccess, Augmentable, QueryableValue
         $fieldKey = $fields[$handle]['fieldIndex'];
         $sectionKey = $fields[$handle]['sectionIndex'];
 
-        $field = $this->contents['tabs'][$tab]['sections'][$sectionKey]['fields'][$fieldKey];
+        // Get existing field config.
+        $existingConfig = Arr::get($this->contents['tabs'][$tab]['sections'][$sectionKey]['fields'][$fieldKey], 'field', []);
 
-        $isImportedField = Arr::has($field, 'config');
-
-        if ($isImportedField) {
-            $existingConfig = Arr::get($field, 'config', []);
-            $this->contents['tabs'][$tab]['sections'][$sectionKey]['fields'][$fieldKey]['config'] = array_merge($existingConfig, $config);
-        } else {
-            $existingConfig = Arr::get($field, 'field', []);
-            $this->contents['tabs'][$tab]['sections'][$sectionKey]['fields'][$fieldKey]['field'] = array_merge($existingConfig, $config);
-        }
+        // Merge in new field config.
+        $this->contents['tabs'][$tab]['sections'][$sectionKey]['fields'][$fieldKey]['field'] = array_merge($existingConfig, $config);
 
         return $this->resetBlueprintCache()->resetFieldsCache();
     }
