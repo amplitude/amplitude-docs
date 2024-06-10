@@ -3,26 +3,30 @@ id: 19c03845-d834-4777-af7c-904a6fa82cd7
 blueprint: analytic
 title: 'Create, edit, and manage dashboards'
 source: 'https://help.amplitude.com/hc/en-us/articles/229505188-Create-edit-and-manage-dashboards'
+this_article_will_help_you:
+  - 'Create and edit dashboards'
+  - 'Comment on your dashboards'
+  - 'Manage your dashboards'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717692682
 ---
-#### This article will help you:
-
-* Create and edit dashboards
-* Comment on your dashboards
-* Manage your dashboards
-
 With dashboards, you can collect all your relevant charts into a single, convenient view. You can save multiple reports into a single page view, rather than viewing each individual report in isolation. You can even save cross-project charts into the same dashboard, for side-by-side comparisons.  
 
-**NOTE:** You may also find [this Academy course](https://academy.amplitude.com/use-dashboards-and-starter-templates-to-monitor-important-metrics/1372313/scorm/w84tdkh3z11p) on dashboards helpful.
+{{partial:admonition type='note'}}
+You may also find [this Academy course](https://academy.amplitude.com/use-dashboards-and-starter-templates-to-monitor-important-metrics/1372313/scorm/w84tdkh3z11p) on dashboards helpful.
+{{/partial:admonition}}
 
 ## Before you begin
 
 Dashboards are available to all all Amplitude customers. However, certain features are only available for customers on [Scholarship](https://help.amplitude.com/hc/en-us/articles/360053028152), [Growth and Enterprise](https://amplitude.com/pricing) plans:
 
-* * Adding behavioral cohorts to a dashboard
-	* Dashboard date range (bulk filter)
-	* Dashboard user segment (bulk filter)
-	* Comment
-	* Adding target metrics
+* Adding behavioral cohorts to a dashboard
+* Dashboard date range (bulk filter)
+* Dashboard user segment (bulk filter)
+* Comment
+* Adding target metrics
 
 You'll have to save your charts before adding them to a dashboard. Read more about creating and saving charts [here](/get-started/create-a-chart).
 
@@ -43,7 +47,9 @@ To create a dashboard, follow these steps:
 2. Type the name of your new dashboard where it reads *Untitled Dashboard*. Amplitude will save your new, still-empty dashboard.
 3. To add content to your dashboard, click *Add Content* and select the type of content you want to include from the drop-down. Then select the specific items from the panel that opens on the right.  
   
-**NOTE:** You can also build your dashboard from an existing template, by clicking *Start With A Template* and choosing from the drop-down list.
+{{partial:admonition type='note'}}
+You can also build your dashboard from an existing template, by clicking *Start With A Template* and choosing from the drop-down list.
+{{/partial:admonition}}
 
 ## Edit a dashboard
 
@@ -60,18 +66,32 @@ You can add charts to your dashboard either from inside the dashboard, or from w
 
 You can add a [behavioral cohort](/analytics/behavioral-cohorts) to a dashboard. This will display the number of users in a cohort and when it was last computed. 
 
-**NOTE:** This feature is only available to customers on a Scholarship, Growth, or Enterprise plan.
+{{partial:admonition type='note'}}
+This feature is only available to customers on a Scholarship, Growth, or Enterprise plan.
+{{/partial:admonition}}
 
 To add a cohort to your dashboard, follow these steps:
 
 1. Save your cohort and click *+ Add to.*
 2. Select the dashboard you'd like to add this cohort to from the list.   
   
-**NOTE:** You can also add a cohort to your dashboard from within the dashboard itself: just select *Add Chart or Cohort* from the *More* menu.
+{{partial:admonition type='note'}}
+You can also add a cohort to your dashboard from within the dashboard itself: just select *Add Chart or Cohort* from the *More* menu.
+{{/partial:admonition}}
 
 You can view any cohort on your dashboard by current cohort population, or the cohort population over time. To switch to viewing the cohort population over time, click •••. Then select *Population Over Time*.
 
-**NOTE:** For any chart or query that segments on a cohort, the segmented cohort will automatically recompute itself whenever the chart is generated. Cohorts added to dashboards will also refresh.
+{{partial:admonition type='note'}}
+For any chart or query that segments on a cohort, the segmented cohort will automatically recompute itself whenever the chart is generated. Cohorts added to dashboards will also refresh.
+{{/partial:admonition}}
+
+### Add a Session Replay to your dashboard
+
+There are three ways you can add a Session Replay to a dashboard or notebook:
+
+* From the Session Replay page itself (accessible via the homepage and Session Replay search)
+* From within [User Look-Up](/analytics/user-data-lookup)
+* From within an individual chart
 
 ### Designate your dashboard as "official"
 
@@ -81,23 +101,29 @@ By designating a dashboard as “official,” you’re telling all Amplitude use
 
 This feature is only available for users on Growth, Scholarship, and Enterprise plans.
 
-**NOTE**: Only an admin or manager can designate an official dashboard.
+{{partial:admonition type='note'}}
+ Only an admin or manager can designate an official dashboard.
+{{/partial:admonition}}
 
 To label a dashboard as official, follow these steps:
 
 1. Open the dashboard you’d like to make official.
-2. Hover over the ![official_icon.png](/output/img/analytics/official_icon.png) icon next to the dashboard’s title.
+2. Hover over the icon next to the dashboard’s title.
 3. In the popup that appears, click *Confirm*.
 
 You will now be a co-owner of the dashboard; this will include editing privileges. If you are not the original owner of the dashboard, that person will receive a notification.
 
-**NOTE:** Removing a dashboard’s official designation works the same way.
+{{partial:admonition type='note'}}
+Removing a dashboard’s official designation works the same way.
+{{/partial:admonition}}
 
 ## Comment on your dashboard
 
 You can start a discussion around your analyses right alongside your charts on a dashboard. This is useful for teams to discuss and iterate on their findings. 
 
-**NOTE:** This feature is only available to customers on a Scholarship, Growth, or Enterprise plan.
+{{partial:admonition type='note'}}
+This feature is only available to customers on a Scholarship, Growth, or Enterprise plan.
+{{/partial:admonition}}
 
 To comment, click *More > Comment*. You can also mention colleagues by typing their name after "@". They will receive an Amplitude notification.
 
@@ -107,16 +133,17 @@ You can also receive a notification via Slack. More information on how to integr
 
 The *More* menu contains several administrative functions not discussed above:
 
-![dashboards_final_section_more_menu_image.png](/output/img/analytics/dashboards_final_section_more_menu_image.png)
+![dashboards_final_section_more_menu_image.png](/output/img/analytics/dashboards-final-section-more-menu-image-png.png)
 
 * Refreshing all charts will update all charts and cohorts included in your dashboard, so that it displays the most up-to-date information.
 * When downloading a .CSV of a chart, the downloaded file will contain a summary of the chart, the dashboard URL, and all events, segments, and user properties.
 * When exporting your dashboards, you can choose between .PDF and .PNG formats.
 * When copying a dashboard, you will be the owner of the copied version, regardless of whether you own the original version.
-* Dashboards cannot be deleted, but they can be archived. You should archive a dashboard when it is no longer supported or used. Users can still search for archived charts in the Search tab. Archiving a dashboard will not archive the charts within the dashboard.
+* Dashboards can be deleted or archived by the owner, an invited editor, or an organization admin. Viewers and members cannot delete or archive dashboards.
+* You should archive a dashboard when it is no longer supported or used. Users can still search for archived charts in the Search tab. Archiving a dashboard will not archive the charts within the dashboard.
 
 ## Dashboard cache times
 
 Amplitude caches chart results. The cache time is dependent on the interval (daily, weekly, monthly) and the length of time covered. Cache times for charts can be found [here](/analytics/charts/chart-basics). Cache times for dashboards and CSV downloads are twice as long as the times listed.
 
-To manually refresh all charts and cohorts on a dashboard, click *More > Refresh Dashboard*. 
+To manually refresh all charts and cohorts on a dashboard, click *More > Refresh Dashboard*.

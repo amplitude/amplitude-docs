@@ -7,7 +7,7 @@ landing: true
 landing_blurb: 'Once you’ve got your organization set up and users added to it, you can begin adding projects.'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717433992
+updated_at: 1717611181
 exclude_from_sitemap: false
 this_article_will_help_you:
   - 'Create a project in Amplitude'
@@ -20,7 +20,7 @@ Each project in Amplitude has its own separate API key you'll use to send data. 
 
 To create a new project, follow these steps:
 
-1. Navigate to * Settings > Projects*.
+1. Navigate to *Settings > Projects*.
 2. Click *Create Project*.
 3. In the *Create New Project* modal, type in the project’s name and a description. Then click *Next*.
 4. Select the users you’d like to have access to the project, and specify their roles from the drop-down menus next to their names. Users will have to belong to the organization before you can add them to a project.

@@ -6,13 +6,12 @@ source: 'https://help.amplitude.com/hc/en-us/articles/16805886899483-Custom-even
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1712683681
+updated_at: 1717621393
+this_article_will_help_you:
+  - 'Understand how creating a custom event can support your analysis'
+  - 'Learn how to create a custom event'
+landing: false
 ---
-#### This article will help you:
-
-* Understand how creating a custom event can support your analysis
-* Learn how to create a custom event
-
 Sometimes, you may need to create an analysis in which a particular step of the process can be any of a selection of specific events. 
 
 It is possible to [combine multiple events in-line](/analytics/charts/event-segmentation/event-segmentation-in-line-events) through the Events Module, however, the in-line event that you create will only be relevant to that specific chart and will not be accessible anywhere else unless it is saved as a **custom event**. A custom event is made up of two separate events joined by an `OR` clause. For example, this analysis is interested in users who, after receiving a push notification, **either** played a song **or** searched for one as their next step: 

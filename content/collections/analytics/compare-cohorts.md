@@ -3,13 +3,15 @@ id: c683b859-5751-415c-a7ee-278d58b4d35c
 blueprint: analytic
 title: 'Compare and manage your behavioral cohorts'
 source: 'https://help.amplitude.com/hc/en-us/articles/19528580295835-Compare-and-manage-your-behavioral-cohorts'
+this_article_will_help_you:
+  - 'Compare active cohorts in your analyses'
+  - 'Manage your cohorts with archiving, deleting, or transfering ownership'
+  - 'Learn how to sync, export, or refresh your cohorts'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717624136
 ---
-#### This article will help you:
-
-* Compare active cohorts in your analyses
-* Manage your cohorts with archiving, deleting, or transfering ownership
-* Learn how to sync, export, or refresh your cohorts
-
 ## Compare your cohorts
 
 The Cohort Comparison feature automatically compares your new [cohort](/analytics/behavioral-cohorts) to all active users for the last 30 days. You can then choose a pre-existing cohort to compare it with, look at the overlap between two cohorts, choose user properties for side-by-side composition, compare actives, retention, average events, and more.

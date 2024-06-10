@@ -1,17 +1,21 @@
 ---
-title: "Event and property descriptions"
-source: "https://help.amplitude.com/hc/en-us/articles/16805655718939-Event-and-property-descriptions"
 id: eabe8de8-fe63-42b8-a93d-eb1d10884b43
+blueprint: data
+title: 'Event and property descriptions'
+source: 'https://help.amplitude.com/hc/en-us/articles/16805655718939-Event-and-property-descriptions'
+this_article_will_help_you:
+  - 'Learn how to quickly add descriptions to events or properties'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717620367
 ---
-
-#### This article will help you:
-
-* Learn how to quickly add descriptions to events or properties
-
 You can change the description for an **event** or **property** to help other members of your organization understand what an event or property represents. 
 
-**NOTE**: This only applies to **active** events and properties that are **included in your tracking plan**. It also **does not** apply to custom events.
+{{partial:admonition type="note" heading=""}}
+This only applies to **active** events and properties that are **included in your tracking plan**. It also **doesn't** apply to custom events.
 
+{{/partial:admonition}}
 ## Add a description to an event
 
 To add a description to an event, follow these steps:
@@ -31,4 +35,4 @@ You can change the description for an **event property** in two different ways. 
 
 ## Add a description to a user or group property
 
-You can change the description for a **user property** or a **group property** by navigating to *Properties > User Properties* or *Properties > Group Properties*. Click on the property name to open the *Details* panel. Then type a description where it says *Add a description*, and click *Apply* to save. 
+You can change the description for a **user property** or a **group property** by navigating to *Properties > User Properties* or *Properties > Group Properties*. Click on the property name to open the *Details* panel. Then type a description where it says *Add a description*, and click *Apply* to save.
