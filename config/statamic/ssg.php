@@ -64,7 +64,9 @@ return [
     'urls' => [
         'sitemap-docs.xml',
         '/sitemap-docs.xml',
-        '/404'
+        '/404',
+        '/sdks',
+        '/docs/sdks'
     ],
 
     /*
