@@ -63,7 +63,6 @@ return [
 
     'urls' => [
         '/sitemap.xml',
-        '/sdks/analytics/browser/'
     ],
 
     /*
