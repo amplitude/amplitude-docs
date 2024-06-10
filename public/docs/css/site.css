@@ -1213,8 +1213,6 @@ video {
   fill: #5a5e68;
 }.fill-white {
   fill: #ffffff;
-}.fill-black-300 {
-  fill: #b0b0b0;
 }.p-0 {
   padding: 0px;
 }.p-2 {
@@ -1265,14 +1263,14 @@ video {
   padding-bottom: 2.12rem;
 }.pb-\[1\.5rem\] {
   padding-bottom: 1.5rem;
-}.pl-16 {
-  padding-left: 4rem;
 }.pl-2 {
   padding-left: 0.5rem;
 }.pl-4 {
   padding-left: 1rem;
 }.pl-5 {
   padding-left: 1.25rem;
+}.pl-6 {
+  padding-left: 1.5rem;
 }.pl-8 {
   padding-left: 2rem;
 }.pr-8 {
@@ -1351,9 +1349,9 @@ video {
 }.text-amp-light-teal {
   --tw-text-opacity: 1;
   color: rgb(145 217 227 / var(--tw-text-opacity));
-}.text-black-200 {
+}.text-black-300 {
   --tw-text-opacity: 1;
-  color: rgb(209 209 209 / var(--tw-text-opacity));
+  color: rgb(176 176 176 / var(--tw-text-opacity));
 }.text-black-600 {
   --tw-text-opacity: 1;
   color: rgb(93 93 93 / var(--tw-text-opacity));
@@ -1363,9 +1361,6 @@ video {
 }.text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}.text-black-300 {
-  --tw-text-opacity: 1;
-  color: rgb(176 176 176 / var(--tw-text-opacity));
 }.underline {
   text-decoration-line: underline;
 }.no-underline {
@@ -1883,7 +1878,7 @@ pre code.torchlight .summary-caret {
 }#algolia-search > button.DocSearch.DocSearch-Button {
   position: relative;
   height: 3.5rem;
-  width: 42rem;
+  width: 18rem;
   cursor: pointer;
   border-radius: 9999px;
   border-width: 1px;
@@ -1900,6 +1895,9 @@ pre code.torchlight .summary-caret {
 }#algolia-search > button.DocSearch.DocSearch-Button:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}@media (min-width: 1024px) {#algolia-search > button.DocSearch.DocSearch-Button {
+    width: 42rem;
+  }
 }#algolia-search > button.DocSearch.DocSearch-Button {
     border: 1px solid rgb(128 134 144);
 }#algolia-search > button.DocSearch.DocSearch-Button:hover, #algolia-search-header > button.DocSearch.DocSearch-Button:hover {
