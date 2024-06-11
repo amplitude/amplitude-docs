@@ -100,5 +100,8 @@
      
     </script>
 {{partial:partials/algolia-script}}
+{{if environment == 'production' }}
+{{partial:partials/kapa-script}}
+{{/if}}
 </body>
 </html>
