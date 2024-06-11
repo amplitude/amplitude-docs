@@ -9,7 +9,7 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717691407
+updated_at: 1718136402
 ---
 In Amplitude Data, you can view and manage event types, event properties, and user properties piece by piece, but you may want to see a holistic view of your entire tracking plan's schema and make bulk changes to the schema instead.
 
