@@ -18,7 +18,7 @@ partner_maintained: false
 integration_icon: partner-icons/sprig.svg
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713825697
+updated_at: 1718141144
 ---
 [Sprig](https://sprig.com/) is the product development lifecycle research platform. Sprig is on a mission to make experiences that matter. Companies use Sprig's Concept and Usability Testing and In-Product Surveys to get research insights from users about new ideas, designs, and current product experiences.
 
