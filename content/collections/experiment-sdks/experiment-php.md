@@ -334,7 +334,7 @@ class DefaultAssignmentTrackingProvider implements AssignmentTrackingProvider {
 | `minIdLength` | The minimum length of `userId` and `deviceId`. | `5` |
 | `serverZone` | The server zone of the projects. Supports `EU` and `US`. For EU data residency, Change to `EU`. | `US` |
 | `serverUrl` | The API endpoint URL that events are sent to. Automatically selected by `serverZone` and `useBatch`. If this field is set with a string value instead of `null`, then `serverZone` and `useBatch` are ignored and the string value is used. | `https://api2.amplitude.com/2/httpapi` |
-| `useBatch` | Whether to use [batch API](../../../analytics/apis/batch-event-upload-api/#batch-event-upload). By default, the SDK will use the default `serverUrl`. | `false` |
+| `useBatch` | Whether to use [batch API](/docs/apis/analytics/batch-event-upload#batch-event-upload). By default, the SDK will use the default `serverUrl`. | `false` |
 | `httpClient` | The underlying [Http client](#custom-http-client) to use for requests, if this is not set, a [default](#guzzlehttpclient) Http client will be used. | `null` |
 | `guzzleClientConfig` | The configuration for the underlying default `GuzzleHttpClient` (if used). | [defaults](#guzzlehttpclient) |
 | `logger` | Set to use custom logger. If not set, a [default logger](#custom-logger) is used. | `null` |

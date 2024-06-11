@@ -4,7 +4,7 @@ source: "https://help.amplitude.com/hc/en-us/articles/360043976571-Understand-th
 id: 69cefed6-2b87-4333-8cc6-ba5bac1b41e5
 ---
 
-In some cases, you may notice differences between your Amplitude data and the data in both Snowflake and Redshift, or data exported using the Export API. Often, these are related to the [event time](/analytics/user-data-lookup) used by each platform. In [Snowflake](https://www.docs.developers.amplitude.com/data/destinations/snowflake/), as well as data exported using the [Export API](https://developers.amplitude.com/docs/export-api), event time is specified in UTC timezone. The data shown in Amplitude charts depends on the [timezone settings](https://help.amplitude.com/hc/en-us/articles/360035522372#h_52731f6f-5c45-4c28-b1e1-5c0074f83ee5) for the project.
+In some cases, you may notice differences between your Amplitude data and the data in both Snowflake and Redshift, or data exported using the Export API. Often, these are related to the [event time](/docs/analytics/user-data-lookup) used by each platform. In [Snowflake](/docs/data/destination-catalog/snowflake), as well as data exported using the [Export API](/docs/apis/analytics/export), event time is specified in UTC timezone. The data shown in Amplitude charts depends on the timezone settings for the project.
 
 ## Difference between Amplitude and Snowflake
 
