@@ -18,7 +18,7 @@ partner_maintained: false
 integration_icon: partner-icons/rudderstack.svg
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713825617
+updated_at: 1718126930
 ---
 [Rudderstack](https://www.rudderstack.com/) helps you collect and integrate customer data from all your apps, websites, and platforms.
 
