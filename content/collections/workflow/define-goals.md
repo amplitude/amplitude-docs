@@ -28,7 +28,7 @@ To set up the metrics for your experiment, follow these steps:
 3. Optionally, set the minimally acceptable goal for the experiment, otherwise known as the **[minimum detectable effect](/docs/experiment/experiment-theory/experiment-set-mde)**. This is the minimum amount of difference between the control and the variant there should be in order for the experiment to be considered a success.
 4. To add secondary metrics, click *+ Add Metric* and repeat this process for each secondary metrics you want to include.
 
-The [duration estimator](/docs/experiment/key-terms). 
+The [duration estimator](/docs/experiment/key-terms) estimates the time and sample size you need to achieve significant results in your experiment, given your metric settings. Amplitude Experiment pre-populates reasonable industry defaults based on historical data, but you can adjust the confidence level, statistical power, minimum detectable effect, standard deviation, and test type as needed.
 
 ## Create a custom metric
 
@@ -48,8 +48,8 @@ On your experiment’s Plan tab, choose the **exposure event**. This is the even
 
 The Amplitude exposure event is sent when your app calls .variant(). It sets the user properties Amplitude Experiment uses to conduct its analyses. When you use the Amplitude exposure event, you can be certain your app will trigger the event at the correct time.
 
-That said, you can also select a custom exposure event instead. Click *Custom Exposure*, then *Select event …* to do so. Be aware that there is a much greater risk of triggering a custom exposure event at the wrong time; this can lead to a [sample ratio mismatch](/docs/experiment/advanced-techniques/sample-ratio-mismatch).
+That said, you can also select a custom exposure event instead. Click *Custom Exposure*, then *Select event …* to do so. Be aware that there is a much greater risk of triggering a custom exposure event at the wrong time; this can lead to a [sample ratio mismatch](/docs/experiment/troubleshooting/sample-ratio-mismatch).
 
 For more information, see [this article about exposure events in Amplitude Experiment](https://www.docs.developers.amplitude.com/experiment/general/exposure-tracking/).
 
-The next step is defining your experiment's audience.
+The next step is defining your experiment's [audience](/docs/experiment/workflow/define-audience).

@@ -11,10 +11,10 @@ The Experiment management API can be used to programmatically create and control
 
 | <div class="big-column">API</div> | Description |
 | --- | --- |
-|[Flag APIs](/docs/experiment-apis/experiment-management-api-flags)| Flag APIs to create, edit, and display flags, and their properties.  |
-|[Experiment APIs](/docs/experiment-apis/experiment-management-api-experiments)| Experiment APIs to create, edit, and display experiments, and their properties.  |
-|[Deployment APIs](/docs/experiment-apis/experiment-management-api-deployments)| Deployment APIs to create, edit, and display deployments that flags or experiments can be assigned to. |
-|[Version APIs](/docs/experiment-apis/experiment-management-api-version-endpoints)| Version APIs to display a list of versions of flags or experiments that the management API key has access to. |
+|[Flag APIs](/docs/apis/experiment/experiment-management-api-flags)| Flag APIs to create, edit, and display flags, and their properties.  |
+|[Experiment APIs](/docs/apis/experiment/experiment-management-api-experiments)| Experiment APIs to create, edit, and display experiments, and their properties.  |
+|[Deployment APIs](/docs/apis/experiment/experiment-management-api-deployments)| Deployment APIs to create, edit, and display deployments that flags or experiments can be assigned to. |
+|[Version APIs](/docs/apis/experiment/experiment-management-api-version-endpoints)| Version APIs to display a list of versions of flags or experiments that the management API key has access to. |
 
 
 ## Management API Key

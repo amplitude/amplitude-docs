@@ -290,6 +290,13 @@ ul.nav li::marker {
     border-radius: 8px;
 }
 
+.prose p:has(.inline) {
+    margin: 0;
+    background: none;
+    padding: none;
+    border-radius: 0;
+}
+
 .prose > div > p:first-of-type {
     margin-top: 0;
 }

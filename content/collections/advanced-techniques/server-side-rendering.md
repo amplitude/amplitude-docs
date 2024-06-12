@@ -100,5 +100,5 @@ After the Client SDK is initialized, you can fetch the flag status in any compon
 
 ```js
 // experimentClient should be the same ExperimentClient instance that was instantiated in the previous step
-'experimentClient.variant('flag-key');
+experimentClient.variant('flag-key');
 ```
