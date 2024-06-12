@@ -41,8 +41,8 @@ Prior local evaluation SDK versions don't consider mutual exclusion or holdout g
 
 | SDK | Local Evaluation Flag Dependencies Support |
 | --- | --- |
-| [Node.js](/docs/sdks/experiment/experiment-node-js) | `1.4.0+` |
-| [Ruby](/docs/sdks/experiment/experiment-ruby) | `1.1.0+` |
-| [JVM](/docs/sdks/experiment/experiment-jvm) | `1.1.0+` |
-| [Go](/docs/sdks/experiment/experiment-go) | `1.1.0+` |
-| [Python](/docs/sdks/experiment/experiment-python) | `1.1.0+` |
+| [Node.js](/docs/sdks/experiment-sdks/experiment-node-js) | `1.4.0+` |
+| [Ruby](/docs/sdks/experiment-sdks/experiment-ruby) | `1.1.0+` |
+| [JVM](/docs/sdks/experiment-sdks/experiment-jvm) | `1.1.0+` |
+| [Go](/docs/sdks/experiment-sdks/experiment-go) | `1.1.0+` |
+| [Python](/docs/sdks/experiment-sdks/experiment-python) | `1.1.0+` |

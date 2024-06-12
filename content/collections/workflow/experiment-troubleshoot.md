@@ -19,7 +19,7 @@ This article assumes that you understand how to set up and run an experiment in 
 
 This list of questions acts as a quick troubleshooting checklist for any experiment discrepancies you may be experiencing. If you can answer "yes" to a question, it's probably not the cause.
 
-Do the device ID and user ID align?
+**Do the device ID and user ID align?**
 The device ID and user ID you use for experiments and flags **must be the same** as the device ID and user ID used in Amplitude Analytics.
 
 **Is your flag enabled?**
