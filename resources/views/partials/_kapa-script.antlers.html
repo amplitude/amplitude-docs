@@ -1,55 +1,112 @@
 <script>
-    function getPageInfo() {
-        return {
-            path: window.location.pathname,
-            product: window.location.pathname.split('/')[1],
-            url: window.location.href
-        };
+  function getPageInfo() {
+    return {
+      path: window.location.pathname,
+      product: window.location.pathname.split("/")[1],
+      url: window.location.href,
+    };
+  }
+
+  const initKapa = function () {
+    var script = document.createElement("script");
+    script.src = "https://widget.kapa.ai/kapa-widget.bundle.js";
+    script.setAttribute(
+      "data-website-id",
+      "ad8ecaa4-5c43-413b-9d0a-8114b6e1f831"
+    );
+    script.setAttribute("data-project-name", "Amplitude");
+    script.setAttribute("data-project-color", "#301661");
+    script.setAttribute(
+      "data-project-logo",
+      "https://avatars.githubusercontent.com/u/2291562?s=280&v=4"
+    );
+    script.setAttribute(
+      "data-modal-example-questions",
+      "How do I install Amplitude on my website?,How do I install Amplitude in my mobile App?,How do I get started with Experiment in my application?"
+    );
+    script.async = true;
+    document.head.appendChild(script);
+    // Tracking stuff starts here.
+    // });
+  };
+
+  initKapa();
+
+  // Kapa tracking
+
+  Kapa("onModalOpen", function ({ mode }) {
+    amplitude.track("Kapa opened", {
+        ...getPageInfo(),
+    })
+  });
+
+  Kapa("onModalClose", function ({ mode }) {
+    amplitude.track("Kapa closed", {
+        ...getPageInfo(),
+    })
+  });
+
+  Kapa("onAskAIQuerySubmit", ({ threadId, questionAnswerId, question }) => {
+    amplitude.track("Kapa question asked", {
+      ...getPageInfo(),
+      "Kapa thread ID": threadId,
+      "Question": question
+    });
+  });
+
+  Kapa(
+    "onAskAIExampleQuerySubmit",
+    ({ threadId, questionAnswerId, question }) => {
+    amplitude.track("Kapa example question asked", {
+        ...getPageInfo(),
+        "Kapa thread ID": threadId,
+        "Question": question
+        });
     }
-    
-    const initKapa = function () {
-        var script = document.createElement("script");
-        script.src = "https://widget.kapa.ai/kapa-widget.bundle.js";
-        script.setAttribute("data-website-id", "ad8ecaa4-5c43-413b-9d0a-8114b6e1f831");
-        script.setAttribute("data-project-name", "Amplitude");
-        script.setAttribute("data-project-color", "#301661");
-        script.setAttribute("data-project-logo", "https://avatars.githubusercontent.com/u/2291562?s=280&v=4");
-        script.setAttribute("data-modal-example-questions","How do I install Amplitude on my website?,How do I install Amplitude in my mobile App?,How do I get started with Experiment in my application?")
-        script.async = true;
-        document.head.appendChild(script);
-        // Tracking stuff starts here. 
-        setTimeout(function () {
-            const kapaWidget = document.getElementById("kapa-widget-container")
-    
-            kapaWidget.addEventListener("click", function () {
-                amplitude.track('Kapa Click', getPageInfo())
-                setTimeout(function () {
-                    const kapaSearchButton = document.getElementsByClassName("mantine-UnstyledButton-root mantine-ActionIcon-root")
-                    const kapaSearchBox = document.getElementsByClassName('mantine-Textarea-input')
-                    kapaSearchButton[1].addEventListener("click", function () {
-                        let kapaQuestion = kapaSearchBox[0].value
-                        // Kapa Search event here
-                        amplitude.track('Kapa Search', {
-                            ...getPageInfo(),
-                            question: kapaQuestion
-                        })
-                    })
-                    kapaSearchBox[0].addEventListener("keydown", function (event) {
-                        
-                        if (event.key === 13 || event.key === 'Enter') {
-                            let kapaQuestion = kapaSearchBox[0].value
-                            amplitude.track('Kapa Search', {
-                                ...getPageInfo(),
-                                question: kapaQuestion
-                            })
-                        }
-                    })
-    
-                }, 1000)
-            })
-        }, 1500);
-        // });
+  );
+
+
+  Kapa(
+    "onAskAIFeedbackSubmit",
+    ({
+      reaction,
+      comment,
+      threadId,
+      questionAnswerId,
+      question,
+      answer,
+      conversation,
+    }) => {
+    amplitude.track("Kapa feedback submitted", {
+        ...getPageInfo(),
+        "Kapa thread ID": threadId,
+        "Question": question,
+        "Reaction": reaction,
+        "Answer": answer
+        });
     }
-    
-    initKapa()
-    </script>
+  );
+
+  Kapa(
+    "onAskAILinkClick",
+    ({ href, threadId, questionAnswerId, question, answer }) => {
+      amplitude.track("Kapa link clicked", {
+        ...getPageInfo(),
+        "Kapa thread ID": threadId,
+        "Link": href
+      })
+    }
+  );
+
+  Kapa(
+    "onAskAISourceClick",
+    ({ source, threadId, questionAnswerId, question, answer }) => {
+      amplitude.track("Kapa source clicked", {
+        ...getPageInfo(),
+        "Kapa thread ID": threadId,
+        "Source title": source.title,
+        "Source URL": source.url
+      })
+    }
+  );
+</script>

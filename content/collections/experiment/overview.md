@@ -23,7 +23,7 @@ With Experiment, you can easily **modify and configure product experiences** for
 * **Progressive feature delivery:** Pre-plan and **stage new features** for beta testers, a percentage of your users, or even specific target audiences.
 * **Dynamic in-product experiences:** Deploy and adapt **custom experiences** at scale.
 
-Amplitude Experiment enables all this through **flags**—easy-to-set up switches that let you modify your product's experience without having to change code. Use them to set up experiments in your product, or to stage and roll out new features straight to your users. Your code uses the [Amplitude Experiment SDK](https://www.docs.developers.amplitude.com/experiment/#sdks) or [REST API](https://www.docs.developers.amplitude.com/experiment/#rest-apis) to communicate with Amplitude Experiment.
+Amplitude Experiment enables all this through **flags**—easy-to-set up switches that let you modify your product's experience without having to change code. Use them to set up experiments in your product, or to stage and roll out new features straight to your users. Your code uses the [Amplitude Experiment SDK](/docs/sdks/experiment-sdks) or [REST API](docs/apis/experiment) to communicate with Amplitude Experiment.
 
 {{partial:admonition type='note'}}
 Amplitude Experiment defaults to a **sequential testing** statistical model in all experiments, but you can opt for a [T-test](/docs/experiment/experiment-theory/analyze-with-t-test) instead.
