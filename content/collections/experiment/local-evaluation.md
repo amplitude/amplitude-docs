@@ -65,7 +65,7 @@ All server-side SDKs and all client-side (which have local evaluation enabled) s
 
 | SDK | Remote Evaluation | Local Evaluation |
 | --- | --- | --- |
-| [Node.js](/docs/sdks/experiment-sdks/experiment-nodejs) |  ✅ | ✅  |
+| [Node.js](/docs/sdks/experiment-sdks/experiment-node-js) |  ✅ | ✅  |
 | [Ruby](/docs/sdks/experiment-sdks/experiment-ruby) |  ✅ | ✅  |
 | [JVM](/docs/sdks/experiment-sdks/experiment-jvm) |  ✅ | ✅ |
 | [Go](/docs/sdks/experiment-sdks/experiment-go) |  ✅ | ✅ |
@@ -78,6 +78,6 @@ The following results are for **a single flag evaluation**, and were collected o
 
 | SDK | Average | Median | Cold Start |
 | --- | --- | --- | --- |
-| [Node.js](/docs/sdks/experiment-sdks/experiment-nodejs) | 0.025ms | 0.018ms | 3ms |
+| [Node.js](/docs/sdks/experiment-sdks/experiment-node-js) | 0.025ms | 0.018ms | 3ms |
 | [Go](/docs/sdks/experiment-sdks/experiment-go) | 0.098ms | 0.071ms | 0.7ms |
 | [JVM](/docs/sdks/experiment-sdks/experiment-jvm) | 0.007ms | 0.005ms | 6ms |

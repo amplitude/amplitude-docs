@@ -51,36 +51,42 @@ However, even after you grant a user editor permissions to your flag, Amplitude 
 
 This table describes the various permissions included with each permission level.
 
-|  |  |  |  |  |
-| --- | --- | --- | --- | --- |
-|  | **Viewer** | **Member** | **Manager (Project)** | **Admin (Org)** |
-| **Experiments and Flags** |  |  |  |  |
-| Read | Y | Y | Y | Y |
-| Create |  | Y | Y | Y |
-| Edit |  | Y | Y | Y |
-| Delete |  | Y | Y | Y |
-|  |  |  |  |  |
-| Targeted Environments | Read | Read/Write | Read/Write | Read/Write |
-| Active | Read | Read/Write | Read/Write | Read/Write |
-| Variants | Read | Read/Write | Read/Write | Read/Write |
-| Allocation | Read | Read/Write | Read/Write | Read/Write |
-| Analysis | Read | Read/Write | Read/Write | Read/Write |
-| Metrics | Read | Read/Write | Read/Write | Read/Write |
-|  |  |  |  |  |
-| **Environments** |  |  |  |  |
-| Read | Y | Y | Y | Y |
-| Create |  | Y | Y | Y |
-| Edit |  | Y | Y | Y |
-| Delete |  | Y | Y | Y |
-|  |  |  |  |  |
-| **Mutual Exclusion Groups** |  |  |  |  |
-| Read | Y | Y | Y | Y |
-| Create |  | Y | Y | Y |
-| Edit |  | Y | Y | Y |
-| Delete |  | Y | Y | Y |
-|  |  |  |  |  |
-| **Users** |  |  |  |  |
-| Add user to a project |  |  | Y | Y |
-| Edit project role |  |  | Y | Y |
-| Add user to organization |  |  |  | Y |
-| Edit organization role |  |  |  | Y |
+|                       | Viewer | Member     | Manager (Project) | Admin (Org) |
+| --------------------- | ------ | ---------- | ----------------- | ----------- |
+| Targeted Environments | Read   | Read/Write | Read/Write        | Read/Write  |
+| Activate                | Read   | Read/Write | Read/Write        | Read/Write  |
+| Variants              | Read   | Read/Write | Read/Write        | Read/Write  |
+| Allocation            | Read   | Read/Write | Read/Write        | Read/Write  |
+| Analysis              | Read   | Read/Write | Read/Write        | Read/Write  |
+| Metrics               | Read   | Read/Write | Read/Write        | Read/Write  |
+
+
+| **Experiments and Flags** | Viewer | Member | Manager (Project) | Admin (Org) |
+| ------------------------- | ------ | ------ | ----------------- | ----------- |
+| Read                      | Y      | Y      | Y                 | Y           |
+| Create                    |        | Y      | Y                 | Y           |
+| Edit                      |        | Y      | Y                 | Y           |
+| Delete                    |        | Y      | Y                 | Y           |
+
+
+| **Environments** | Viewer | Member | Manager (Project) | Admin (Org) |
+| ---------------- | ------ | ------ | ----------------- | ----------- |
+| Read             | Y      | Y      | Y                 | Y           |
+| Create           |        | Y      | Y                 | Y           |
+| Edit             |        | Y      | Y                 | Y           |
+| Delete           |        | Y      | Y                 | Y           |
+
+
+| **Mutual Exclusion Groups** | Viewer | Member | Manager (Project) | Admin (Org) |
+| --------------------------- | ------ | ------ | ----------------- | ----------- |
+| Read                        | Y      | Y      | Y                 | Y           |
+| Create                      |        | Y      | Y                 | Y           |
+| Edit                        |        | Y      | Y                 | Y           |
+| Delete                      |        | Y      | Y                 | Y           |
+
+| **Users**                | Viewer | Member | Manager (Project) | Admin (Org) |
+| ------------------------ | ------ | ------ | ----------------- | ----------- |
+| Add user to a project    |        |        | Y                 | Y           |
+| Edit project role        |        |        | Y                 | Y           |
+| Add user to organization |        |        |                   | Y           |
+| Edit organization role   |        |        |                   | Y           |

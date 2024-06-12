@@ -53,10 +53,7 @@ Export to Sheets uses Amplitude's [Dashboard REST API](/docs/apis/analytics/dash
 
 After you download the extension, follow these steps to sync your chart images with Google Slides:
 
-1. From within a Google Slides presentation, navigate to *Extensions >* *Amplitude Sync to Drive and Sheets.* Then click *Start Exporting Amplitude Data.*
-
-	![](/docs/output/img/analytics/1778625376309.png)
-
+1. From within a Google Slides presentation, navigate to *Extensions >* *Amplitude Sync to Drive and Sheets.* Then click *Start Exporting Amplitude Data.
 2. As with steps 2 and 3 in the previous section, you'll be prompted to sign into Google in the modal that appears. You should then allow Amplitude access to your Google account when prompted.
 3. Next, choose your organization. Hover over the desired chart's name and click *Add* to export its data. You can select multiple charts for the same export.
 

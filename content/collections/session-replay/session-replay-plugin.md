@@ -100,7 +100,7 @@ The Session Replay plugin scripts load asynchronously when you add them to the `
 
 ### Track default session events
 
-Session Replay enables session tracking by default. This ensures that Session Replay captures Session Start and Session End events. If you didn't capture these events before you implement Session Replay, expect an increase in event volume. For more information about session tracking, see [Browser SDK 2.0 | Tracking Sessions](/docs/sdks/sdk-catalog/browser/browser-sdk-2#track-sessions).
+Session Replay enables session tracking by default. This ensures that Session Replay captures Session Start and Session End events. If you didn't capture these events before you implement Session Replay, expect an increase in event volume. For more information about session tracking, see [Browser SDK 2.0 | Tracking Sessions](/docs/sdks/analytics/browser/browser-sdk-2#track-sessions).
 
 {{partial:tabs tabs="SDK configuration, Plugin configuration"}}
 {{partial:tab name="SDK configuration"}}
@@ -233,7 +233,7 @@ Replays that are outside of the retention period aren't viewable in Amplitude.
 
 ### DSAR API
 
-The Amplitude [DSAR API](/docs/apis/ccpa-dsar/) returns metadata about session replays, but not the raw replay data. All events that are part of a session replay include a `[Amplitude] Session Replay ID` event property. This event provides information about the sessions collected for replay for the user, and includes all metadata collected with each event.
+The Amplitude [DSAR API](/docs/apis/analytics/ccpa-dsar) returns metadata about session replays, but not the raw replay data. All events that are part of a session replay include a `[Amplitude] Session Replay ID` event property. This event provides information about the sessions collected for replay for the user, and includes all metadata collected with each event.
 
 ```json
 {
@@ -253,7 +253,7 @@ The Amplitude [DSAR API](/docs/apis/ccpa-dsar/) returns metadata about session r
 
 ### Data deletion
 
-Session Replay uses Amplitude's [User Privacy API](/docs/apis/user-privacy/) to handle deletion requests. Successful deletion requests remove all session replays for the specified user.
+Session Replay uses Amplitude's [User Privacy API](/docs/apis/analytics/user-privacy/) to handle deletion requests. Successful deletion requests remove all session replays for the specified user.
 
 When you delete the Amplitude project on which you use Session Replay, Amplitude deletes that replay data.
 
@@ -357,7 +357,7 @@ Browser extensions or network security policy may block the Session Replay SDK. 
 
 #### No events triggered through the browser SDK in the current session
 
-Session Replay requires that at least one event in the user's session has the `[Amplitude] Session Replay ID` property. The [Browser SDK](/docs/data/sdks/browser-2/) `Session Start` and `Session End` events include this property by default. If you instrument your events with any SDK other than the Amplitude Browser SDK 2, use the [Session Replay Standalone SDK](/docs/session-replay/sdks/standalone) and ensure you tag your events with the necessary event properties.
+Session Replay requires that at least one event in the user's session has the `[Amplitude] Session Replay ID` property. The [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) `Session Start` and `Session End` events include this property by default. If you instrument your events with any SDK other than the Amplitude Browser SDK 2, use the [Session Replay Standalone SDK](/docs/session-replay/session-replay-standalone-sdk) and ensure you tag your events with the necessary event properties.
 
 For local testing, you can force a Session Start event to ensure that Session Replay functions. 
 

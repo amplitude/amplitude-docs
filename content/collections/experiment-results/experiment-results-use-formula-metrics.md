@@ -116,7 +116,7 @@ In your formulas, refer to events selected in the Events Module by their corresp
 * Parenthesis ()
 * Addition (+)
 * Subtraction (-)
-* Multiplication (\*)
+* Multiplication (*)
 * Division (/)
 
 ## How Amplitude calculates experiment data for formula metrics
@@ -135,13 +135,20 @@ If we set X equal to TOTALS(A) and Y equal to TOTALS(B), the following statement
 * `E[Y]` = Mean of Y
 * `Cov[X, Y]` = Covariance of X and Y, assumed to be zero for all mathematical operations.
 
-* **Addition:**Variance: V[X + Y] = nV[X] + nV[Y]  
-Mean: E[X + Y] = E[X] + E[Y]
-* **Subtraction:**`Variance: V[X - Y] = nV[X] + nV[Y]  
-Mean: E[X - Y] = E[X] - E[Y]`
-* **Multiplication:**`Variance: V[X \* Y] = n^3 mu\_y^2 sigma\_x^2 + n^3 sigma\_y^2 mu\_x^2 + n^2 sigma\_x^2 sigma\_y^2  
-Mean: E[X \* Y] = E[X] \* E[Y]`
-* **Division:**`Variance:**![](/docs/output/img/experiment-results/23576087077403)**Mean: E[X / Y] = E[X] / E[Y]`
+* **Addition:** 
+    Variance: `V[X + Y] = nV[X] + nV[Y]`  
+    Mean: `E[X + Y] = E[X] + E[Y]`
+
+* **Subtraction:** 
+    Variance: `V[X - Y] = nV[X] + nV[Y]`  
+    Mean: `E[X - Y] = E[X] - E[Y]`
+
+* **Multiplication:**
+    Variance: `V[X * Y] = n^3 mu_y^2 sigma_x^2 + n^3 sigma_y^2 mu_x^2 + n^2 sigma_x^2 sigma_y^2`  
+    Mean: `E[X * Y] = E[X] * E[Y]`
+* **Division:** 
+    Variance: ![](/docs/output/img/experiment-results/23576087077403){.inline}
+    Mean: `E[X / Y] = E[X] / E[Y]`
 
 Once we have the mean and variance of the overall formula metric, we can calculate the confidence interval chart and the p-values.
 

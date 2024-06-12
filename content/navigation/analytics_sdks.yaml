@@ -9,3 +9,5 @@ collections:
   - ios_sdk
   - java_sdk
   - react_native_sdk
+  - unreal_sdk
+  - unity_sdk

@@ -46,7 +46,7 @@ Instrumenting Amplitude Session Replay with Google Tag Manager requires a differ
 ```
 
 {{partial:admonition type="info" heading="Sample rate"}}
-The sample rate in this sample is set to 1, or 100%, which means every session is captured. This is good for testing, but not recommended for production. For more information, see [Session Replay Plugin | Sample Rate](/docs/session-replay/sdks/plugin/#sampling-rate).
+The sample rate in this sample is set to 1, or 100%, which means every session is captured. This is good for testing, but not recommended for production. For more information, see [Session Replay Plugin | Sample Rate](/docs/session-replay/session-replay-plugin#sampling-rate).
 {{/partial:admonition}}
 
 ## Troubleshooting

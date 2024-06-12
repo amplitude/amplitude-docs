@@ -1,11 +1,12 @@
 ---
 id: 517e4c3e-fefb-469c-ae3f-3567188b73bc
+published: false
 blueprint: advanced-technique
 title: 'Create a local evaluation flag'
 source: 'https://www.docs.developers.amplitude.com/experiment/guides/create-local-evaluation-flag/'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717178630
+updated_at: 1718211686
 ---
 Create a local evaluation flag, or migrate an existing remote evaluation flag to local evaluation.
 

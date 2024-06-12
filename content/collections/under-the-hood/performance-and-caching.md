@@ -67,7 +67,7 @@ The following results are for **a single flag evaluation**, collected over 10 ex
 
 | SDK | Average | Median | Cold Start |
 | --- | --- | --- | --- |
-| [Node.js](/docs/sdks/experiment-sdks/experimenet-node-js) | 0.025ms | 0.018ms | 3ms |
+| [Node.js](/docs/sdks/experiment-sdks/experiment-node-js) | 0.025ms | 0.018ms | 3ms |
 | [Go](/docs/sdks/experiment-sdks/experiment-go) | 0.098ms | 0.071ms | 0.7ms |
 | [JVM](/docs/sdks/experiment-sdks/experiment-jvm) | 0.007ms | 0.005ms | 6ms |
 

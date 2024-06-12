@@ -98,11 +98,11 @@ In other words, you should expect one Assignment per evaluated user, per unique 
 
 | SDK | Minimum Version |
 | --- | --- |
-| [Node.js](/docs/sdks/experiment/experiment-node-js) | `1.7.4+` |
-| [Ruby](/docs/sdks/experiment/experiment-ruby) | `1.2.2+` |
-| [JVM](/docs/sdks/experiment/experiment-jvm) | `1.2.1+` |
-| [Go](/docs/sdks/experiment/experiment-go) | `1.2.2+` |
-| [Python](/docs/sdks/experiment/experiment-python) | `1.2.3+` |
+| [Node.js](/docs/sdks/experiment-sdks/experiment-node-js) | `1.7.4+` |
+| [Ruby](/docs/sdks/experiment-sdks/experiment-ruby) | `1.2.2+` |
+| [JVM](/docs/sdks/experiment-sdks/experiment-jvm) | `1.2.1+` |
+| [Go](/docs/sdks/experiment-sdks/experiment-go) | `1.2.2+` |
+| [Python](/docs/sdks/experiment-sdks/experiment-python) | `1.2.3+` |
 
 ## Exposure events
 
@@ -118,7 +118,7 @@ The exposure event is simple enough to send through any analytics implementation
 | --- | --- | --- | --- |
 | **`$exposure`** | `flag_key` | Required | The flag or experiment key which the user is being exposed to. |
 | | `variant` | Optional | The variant for the flag or experiment that the user has been exposed to. If `null` or missing, the user property for the flag/experiment is unset, and the users is no longer a part of the experiment. |
-| | `experiment_key` | Optional | The key of the experiment that the user was exposed to. The experiment key is used to differentiate between two [runs of an experiment on the same flag key](../guides/troubleshooting/restarting-experiments.md). |
+| | `experiment_key` | Optional | The key of the experiment that the user was exposed to. The experiment key is used to differentiate between two [runs of an experiment on the same flag key](/docs/experiment/troubleshooting/restart-an-experiment). |
 
 {{partial:admonition type="example" heading="Example event JSON"}}
 This is an example exposure event for a user, `123456789`, who was exposed to the `treatment` variant of the experiment, `my-experiment`.
@@ -152,10 +152,10 @@ Client-side Experiment SDKs support automatic exposure tracking through an expos
 <!--vale off-->
 | <div class='big-column'>SDK Integrations</div> | Minimum Version |
 | --- | --- |
-| [JavaScript SDK](/docs/sdks/experiment/experiment-javascript#integrations) | `1.4.1+` |
-| [Android SDK](/docs/sdks/experiment/experiment-android#integrations) | `1.5.1+` |
-| [iOS SDK](/docs/sdks/experiment/experiment-ios#integrations) | `1.6.0+` |
-| [React Native](/docs/sdks/experiment/experiment-react-native#integrations) | `0.6.0+` |
+| [JavaScript SDK](/docs/sdks/experiment-sdks/experiment-javascript#integrations) | `1.4.1+` |
+| [Android SDK](/docs/sdks/experiment-sdks/experiment-android#integrations) | `1.5.1+` |
+| [iOS SDK](/docs/sdks/experiment-sdks/experiment-ios#integrations) | `1.6.0+` |
+| [React Native](/docs/sdks/experiment-sdks/experiment-react-native#integrations) | `0.6.0+` |
 <!-- vale on-->
 
 ### Exposure tracking example
