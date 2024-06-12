@@ -118,7 +118,7 @@ To add Databricks as a source in Amplitude, complete the following steps.
 
 4. Set the sync frequency. This frequency determines the interval at which Amplitude pulls data from Databricks.
 5. Configure the SQL command that transforms data in Databricks before Amplitude imports it.
-    - Amplitude treats each record in the SQL execution as an event to be import. See the Example body in the [Batch Event Upload API](/docs/analytics/apis/batch-event-upload-api/#example-body) documentation to ensure each record you import complies.
+    - Amplitude treats each record in the SQL execution as an event to be import. See the Example body in the [Batch Event Upload API](/docs/apis/analytics/batch-event-upload#example-body) documentation to ensure each record you import complies.
     - Amplitude can transform / import from only the tables you specify in step 1 above.
     - The table names you reference in the SQL command must match exactly the name of the table you select in step 1. For example, if you select `catalog.schema.table1`, use that exact value in the SQL.
 

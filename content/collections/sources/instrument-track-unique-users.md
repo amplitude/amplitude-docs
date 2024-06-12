@@ -29,10 +29,10 @@ Anonymous users **should not be assigned a user ID**. These users will still hav
 * **Amplitude ID:** After gathering the device and user IDs, Amplitude generates the Amplitude ID and associates it with the user and device IDs it has already collected for this user. Amplitude only needs one or the other to generate an Amplitude ID; however, the user ID is preferred, as multiple unique users could share the same device.
 
 {{partial:admonition type='note'}}
- If Amplitude encounters a known device ID that is already tied to a user ID in a different project, Amplitude will assume the device ID is tied to that user ID in all projects, even if you do not have the Portfolio add-on. [See our article on Portfolios for more information](/admin/account-management/portfolio).
+ If Amplitude encounters a known device ID that is already tied to a user ID in a different project, Amplitude will assume the device ID is tied to that user ID in all projects, even if you do not have the Portfolio add-on. [See our article on Portfolios for more information](/docs/admin/account-management/portfolio).
 {{/partial:admonition}}
 
-When multiple projects reside in a single organization, all projects **must** use the same variable as a user ID. This is crucial to prevent discrepancies in tracking. For instance, if one project uses email addresses as user IDs while another project uses phone numbers, these different identifiers **will not be merged** into the same Amplitude user profile. If you are on [MTU billing](/admin/billing-use/mtu-guide), you may incur charges for multiple users.
+When multiple projects reside in a single organization, all projects **must** use the same variable as a user ID. This is crucial to prevent discrepancies in tracking. For instance, if one project uses email addresses as user IDs while another project uses phone numbers, these different identifiers **will not be merged** into the same Amplitude user profile. If you are on [MTU billing](/docs/admin/billing-use/mtu-guide), you may incur charges for multiple users.
 
 ### Use advertising identifiers as the device ID
 

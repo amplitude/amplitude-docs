@@ -1,1 +1,20 @@
-<p>404 Page not found.</p>
+---
+hide_side-nav: true
+title: 'Page Not Found'
+hide_helpful: true
+---
+
+<section class="w-full h-screen flex flex-col justify-between -mt-[100px]">
+    <div class="flex flex-col items-center h-4/5 justify-center bg-gray-100 dark:bg-gray-900 p-4">
+        <div class="max-w-md text-center space-y-4">
+            <div class="text-6xl sm:text-8xl font-bold text-gray-400 dark:text-gray-600">🤷‍♂️</div>
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-gray-200">Oops! There's no page here.</h1>
+            <p class="text-gray-500 dark:text-gray-400 text-lg">
+                Try a search, or head <a href="/docs">home</a>.
+            </p>
+        </div>
+    </div>
+    <div class="w-full">
+        {{ partial:article-footer hide_helpful="true" }}
+    </div>
+</section>

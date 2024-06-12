@@ -53,7 +53,7 @@
       </div>
 
     </div>
-    {{ if hide_side-nav }}
+    {{ if hide_side-nav || view:hide_side-nav}}
       <div class="absolute top-24 left-0 bottom-0 right-0 z-0">
         <div class="w-full">
           {{ template_content }}
@@ -100,5 +100,8 @@
      
     </script>
 {{partial:partials/algolia-script}}
+{{if environment == 'production' }}
+{{partial:partials/kapa-script}}
+{{/if}}
 </body>
 </html>

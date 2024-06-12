@@ -947,6 +947,14 @@ video {
   margin-top: 1rem;
 }.mt-8 {
   margin-top: 2rem;
+}.-mt-\[50px\] {
+  margin-top: -50px;
+}.-mt-\[300px\] {
+  margin-top: -300px;
+}.-mt-\[250px\] {
+  margin-top: -250px;
+}.-mt-\[100px\] {
+  margin-top: -100px;
 }.box-border {
   box-sizing: border-box;
 }.block {
@@ -986,6 +994,12 @@ video {
 }.h-max {
   height: -moz-max-content;
   height: max-content;
+}.h-screen {
+  height: 100vh;
+}.h-full {
+  height: 100%;
+}.h-4\/5 {
+  height: 80%;
 }.max-h-12 {
   max-height: 3rem;
 }.max-h-\[575px\] {
@@ -1029,6 +1043,8 @@ video {
   max-width: 1536px;
 }.max-w-screen-xl {
   max-width: 1280px;
+}.max-w-md {
+  max-width: 28rem;
 }.flex-1 {
   flex: 1 1 0%;
 }.flex-auto {
@@ -1109,6 +1125,8 @@ video {
   align-items: center;
 }.justify-start {
   justify-content: flex-start;
+}.justify-center {
+  justify-content: center;
 }.justify-between {
   justify-content: space-between;
 }.gap-2 {
@@ -1121,8 +1139,14 @@ video {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.25rem * var(--tw-space-x-reverse));
   margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
+}.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }.self-center {
   align-self: center;
+}.justify-self-end {
+  justify-self: end;
 }.overflow-auto {
   overflow: auto;
 }.overflow-hidden {
@@ -1316,6 +1340,15 @@ video {
 }.text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }.font-bold {
   font-weight: 700;
 }.font-light {
@@ -2005,6 +2038,12 @@ line-height: 1.25rem;
     right: auto;
   }.sm\:flex-row {
     flex-direction: row;
+  }.sm\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }.sm\:text-8xl {
+    font-size: 6rem;
+    line-height: 1;
   }
 }@media (min-width: 1024px) {.lg\:left-0 {
     left: 0px;

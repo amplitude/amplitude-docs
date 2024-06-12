@@ -1,26 +1,28 @@
 ---
-title: "Track revenue"
-source: "https://help.amplitude.com/hc/en-us/articles/115003116888-Track-revenue"
 id: 02e1a247-91b8-48ac-aabb-e1ab3b46042f
+blueprint: source
+title: 'Track revenue'
+source: 'https://help.amplitude.com/hc/en-us/articles/115003116888-Track-revenue'
+this_article_will_help_you:
+  - 'Understand your options for tracking revenue in Amplitude'
+  - 'Learn how to track in-app and non-in-app purchases and validate revenue data'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1718137658
 ---
-
-#### This article will help you:
-
-* Understand your options for tracking revenue in Amplitude
-* Learn how to track in-app and non-in-app purchases and validate revenue data
-
 When you begin sending revenue events to Amplitude, you can choose from a handful of different configuration options.
 
 {{partial:admonition type='note'}}
 Amplitude currently **does not support currency conversion**. All revenue data should be normalized to your currency of choice **before** being sent to Amplitude. 
 {{/partial:admonition}}
 
-All revenue events that send revenue as [revenue properties](#h_7a841611-ad4f-459a-98ce-073a4a1fe8e5) will appear in the [Revenue LTV](/analytics/charts/revenue-ltv/revenue-ltv-track-new-user-monetization) chart (including both verified and unverified events). See the following documentation for more information on sending revenue events:
+All revenue events that send revenue as [revenue properties](#h_7a841611-ad4f-459a-98ce-073a4a1fe8e5) will appear in the [Revenue LTV](/docs/analytics/charts/revenue-ltv/revenue-ltv-track-new-user-monetization) chart (including both verified and unverified events). See the following documentation for more information on sending revenue events:
 
-* [iOS SDK](https://www.docs.developers.amplitude.com/data/sdks/ios/)
-* [Android SDK](https://www.docs.developers.amplitude.com/data/sdks/android/)
-* [Javascript SDK](https://www.docs.developers.amplitude.com/data/sdks/javascript/)
-* [HTTP API](https://www.docs.developers.amplitude.com/analytics/apis/http-v2-api/) (set the `price`, `quantity`, and `revenue` fields to record the event as a revenue event)
+* [iOS SDK](/docs/sdks/analytics/ios/ios-swift-sdk)
+* [Android SDK](/docs/sdks/analytics/android/android-kotlin-sdk)
+* [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2)
+* [HTTP API](/docs/apis/analytics/http-v2) (set the `price`, `quantity`, and `revenue` fields to record the event as a revenue event)
 
 Amplitude will only count events that you send and that are processed through the Amplitude ingestion system. Any computed events **are not counted separately.** Therefore, any additional events attached to revenue events (e.g verified / unverified) **will not be counted** towards your limit.
 
@@ -38,7 +40,7 @@ Amplitude needs certain information in order to track revenue:
 | $productId | String | An identifier for the product. | null |
 | $quantity | Integer | The quantity of products purchased. Defaults to one if not specified. | 1 |
 | $revenueType | String | The type of revenue (e.g. tax, refund, income). | null |
-| eventProperties | Object | An object of event properties to include in the revenue event. You will only be able to segment on these properties in the [Event Segmentation](https://help.amplitude.com/hc/en-us/articles/360033852251) chart. | null |
+| eventProperties | Object | An object of event properties to include in the revenue event. You will only be able to segment on these properties in the [Event Segmentation](/docs/analytics/charts/event-segmentation) chart. | null |
 
 Note that these properties must be explicitly sent **by you** via Amplitude's SDKs or server-side when you log revenue events.
 
@@ -46,7 +48,7 @@ Note that these properties must be explicitly sent **by you** via Amplitude's SD
 
 For purchases **other than** in-app purchases, there are three ways to send revenue data to Amplitude:
 
-* Use Amplitude's [SDKs](https://www.docs.developers.amplitude.com/data/sources/) to call the `logRevenueV2` function (this generates the `Revenue` events).
+* Use Amplitude's [SDKs](/docs/sdks/analytics) to call the `logRevenueV2` function (this generates the `Revenue` events).
 * Use Amplitude's SDKs to call the `logEvent` function, provided you include the `$revenue` property.
 * Use Amplitude's HTTP API (by setting the `price`,  `quantity`, or `revenue` fields - you will need to add your own event name, for example, "Purchase completed").
 
@@ -60,13 +62,13 @@ To track IAPs, send revenue events the same way you would send regular revenue e
 
 ### Enable revenue verification
 
-To enable revenue verification, copy your iTunes Connect In App Purchase Shared Secret or your Google Play License Public Key into the *[Sources](https://help.amplitude.com/hc/en-us/articles/16806069264539)* section of your project in Amplitude Data. You must include a key for each Amplitude project where you want revenue verification. You will also need to pass in receipt data in order for Amplitude to verify the revenue event.
+To enable revenue verification, copy your iTunes Connect In App Purchase Shared Secret or your Google Play License Public Key into the Sources section of your project in Amplitude Data. You must include a key for each Amplitude project where you want revenue verification. You will also need to pass in receipt data in order for Amplitude to verify the revenue event.
 
 There are three different types of revenue events in Amplitude that correspond to the `logRevenue` call within the SDK; they are separate from the revenue events sent server-side via HTTP API:
 
-1. **![amplitude_logo.png](/output/img/sources/amplitude-logo-png.png)** This event will always be logged for revenue events, regardless of whether revenue verification is turned on. However, this event will not populate the `$revenue` property; the `Revenue (Verified/Unverified)` events do this. If you want the event to appear in a Revenue LTV chart, you must turn revenue verification on. If you have revenue verification turned on and only see a `Revenue` event in the user activity stream with no corresponding `Revenue (Verified/Unverified)` event, this means that the revenue failed verification.
-2. **![amplitude_logo.png](/output/img/sources/amplitude-logo-png.png) Revenue (Verified):** This verified event will be logged whenever there is a legitimate transaction. As a result, the difference between `Revenue` and `Revenue (Verified)` is the number of illegitimate app purchases that have been made. By default, revenue events recorded on the SDKs appear in Amplitude dashboards as unverified revenue events. You will have to enable revenue verification in order to see `Revenue (Verified)` events.
-3. **![amplitude_logo.png](/output/img/sources/amplitude-logo-png.png) Revenue (Unverified):** If a revenue event is unverified, that **does not mean** it failed verification. It means Amplitude did not attempt to verify it since it came through the HTTP API, Javascript SDK, or because your project did not include any revenue verification keys. If verification is not on, this event will be logged for all revenue events.
+1. **Revenue** This event will always be logged for revenue events, regardless of whether revenue verification is turned on. However, this event will not populate the `$revenue` property; the `Revenue (Verified/Unverified)` events do this. If you want the event to appear in a Revenue LTV chart, you must turn revenue verification on. If you have revenue verification turned on and only see a `Revenue` event in the user activity stream with no corresponding `Revenue (Verified/Unverified)` event, this means that the revenue failed verification.
+2. **Revenue (Verified):** This verified event will be logged whenever there is a legitimate transaction. As a result, the difference between `Revenue` and `Revenue (Verified)` is the number of illegitimate app purchases that have been made. By default, revenue events recorded on the SDKs appear in Amplitude dashboards as unverified revenue events. You will have to enable revenue verification in order to see `Revenue (Verified)` events.
+3. **Revenue (Unverified):** If a revenue event is unverified, that **does not mean** it failed verification. It means Amplitude did not attempt to verify it since it came through the HTTP API, Javascript SDK, or because your project did not include any revenue verification keys. If verification is not on, this event will be logged for all revenue events.
 
 {{partial:admonition type='note'}}
 Verification can only be switched on or off for mobile. Web will always track `Revenue` and `Revenue (Unverified)`.
@@ -96,11 +98,11 @@ AmplitudeClient.getInstance().logRevenueV2("com.company.productid", 1, 2.99)
 
 ```
 
-Another cause for major discrepancies is piracy. A user can circumvent the app store and make purchases that do not show up in the app store reports. To avoid seeing pirated revenue events in your data, we recommend using Amplitude's revenue verification method to track revenue events. If you suspect your data are being skewed heavily because of piracy, then please contact us [here](/hc/en-us/requests/new).
+Another cause for major discrepancies is piracy. A user can circumvent the app store and make purchases that do not show up in the app store reports. To avoid seeing pirated revenue events in your data, we recommend using Amplitude's revenue verification method to track revenue events. If you suspect your data are being skewed heavily because of piracy, contact us [here](https://help.amplitude.com/hc/en-us/requests/new).
 
 ### Considerations for Developers
 
-Regarding tracking revenue events, there are a few things to take into consideration. Please check out the [Amplitude Developer Center](https://developers.amplitude.com/#tracking-revenue) for more details. 
+Regarding tracking revenue events, there are a few things to take into consideration. 
 
 * **Backwards compatibility**: The existing `logRevenue` methods still work but are deprecated. Fields such as `revenueType` will be missing from events logged with the old methods, so the ability to segment on those revenue events will be limited in the Amplitude platform.
 * **Opting user out of logging**: You can turn off logging for a given user by calling `setOptOut`:

@@ -52,7 +52,7 @@ If the analysis time window and the time the experiment was receiving traffic ar
 
 [Variant jumping](/docs/experiment/troubleshooting/variant-jumping) describes when a user moves from one variant to another, sometimes multiple times. Variant jumping makes it difficult to attribute the metric to a specific variant. Amplitude Experiment's built-in diagnostics in the **Diagnostics** card has charts to make it easy to track the percentage of users jumping between variants. 
 
-If there is variant jumping, is it because of anonymous users (people logging in and out frequently) or changing device IDs? You can see this by looking at the [User Stream](/docs/analytics/user-data-lookups).
+If there is variant jumping, is it because of anonymous users (people logging in and out frequently) or changing device IDs? You can see this by looking at the [User Stream](/docs/analytics/user-data-lookup).
 
 As a best practice, you shouldn't change a running experiment in a way that could cause users to jump between variants. This can cause an SRM.
 

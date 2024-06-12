@@ -44,7 +44,7 @@ Recommendations are only available to Amplitude Audiences customers.
 
 ## Data requirements for a recommendation
 
-There are three data components to configuring a recommendation: the outcome event, the exposure event, and the event property. The data behind these components [**must be instrumented**](https://help.amplitude.com/hc/en-us/articles/360000748812) in your taxonomy for recommendations to work:
+There are three data components to configuring a recommendation: the outcome event, the exposure event, and the event property. The data behind these components **must be instrumented**] in your taxonomy for recommendations to work:
 
 * The **outcome event** is the objective goal for your recommendation. Often, it’s something like “purchase” or “subscribe.” You’ll need to be tracking this outcome as an event in Amplitude Analytics.
 * The **exposure event** is an action taken by the user prior to the outcome event. Typical exposure events include “add to cart,” “click product,” or some other event that would have an event property to configure as an item to be recommended. This event must be tracked as an event **upstream in the conversion funnel** of the outcome event.
