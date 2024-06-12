@@ -24,7 +24,7 @@ If you are using the right instance. Ensure that you're using the correct instan
 If you are using Amplitude Data, check that the event hasn't been blocked.
 
 * Are you setting valid userId and deviceId?
-Check if your deviceId or userId are valid, the 400 error can be caused by this. [More details](../../analytics/apis/http-v2-api/#device-ids-and-user-ids-minimum-length).
+Check if your deviceId or userId are valid, the 400 error can be caused by this. [More details](/docs/apis/analytics/http-v2#device-ids-and-user-ids-minimum-length).
 
 * Did you hit the `flushQueueSize` or `flushIntervalMillis`?
 Events are queued and sent in batches by default. That means events are not sent immediately to the server. The exact values differ by platform, check to make sure you have waited for events to be sent to the server before checking for them in charts.
@@ -51,6 +51,6 @@ Check this section if you're seeing `client_upload_time` appearing as a time in 
 
 ## `user_properties` through identify call showing up late
 
-A race condition might occur if there's no deviceId in the request or if it has not been sent through the batch API. We have partition logic in our backend. Not having the same deviceId or not sending through the [batch API](../../analytics/apis/batch-event-upload-api/?h=batch+api) could cause two different calls to fall into separate buckets. The processing time in different buckets within different queues cannot be ensured. Therefore, to maintain the order of `identify` calls and other `track` calls, make sure the calls have the same deviceId and have been sent to our batch API.
+A race condition might occur if there's no deviceId in the request or if it has not been sent through the batch API. We have partition logic in our backend. Not having the same deviceId or not sending through the [batch API](/docs/apis/analytics/batch-event-upload) could cause two different calls to fall into separate buckets. The processing time in different buckets within different queues cannot be ensured. Therefore, to maintain the order of `identify` calls and other `track` calls, make sure the calls have the same deviceId and have been sent to our batch API.
 
 To reduce the amount of requests made by the SDK, the latest mobile SDKs will queue and consolidate certain Identify updates and wait to send them along with the next non-Identify event sent via `track()`. If you need user properties to update immediately you can `flush()`.

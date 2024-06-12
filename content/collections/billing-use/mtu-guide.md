@@ -21,7 +21,7 @@ Amplitude calculates MTU usage daily, with one additional, final calculation aft
 
 Your MTU count **will not** increase due to user mapping, identify calls, or group identifies.
 
-[MTU-based pricing is available for all Amplitude plans](/docs/admin/account-management/manage-event-volume). Customers who use sampling are **not eligible** for MTU-based pricing.
+MTU-based pricing is available for all Amplitude plans. Customers who use sampling are **not eligible** for MTU-based pricing.
 
 ## Track your MTUs
 

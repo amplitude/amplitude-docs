@@ -39,6 +39,4 @@ To add a new data source, follow these steps:
 2. Look for the tile of the source you want to add, When you find it, click it.
 3. At this point, the specifics of what you’ll see on the screen depend on the source. In some cases, you will be redirected to log into your source account. In others, you’ll see a set of instructions on the source’s *Set Up Connection* tab:  
   
-![catalog.png](/output/img/sources/catalog-png.png)  
-  
 Just follow the instructions you see on the screen to complete the setup process for your data source.

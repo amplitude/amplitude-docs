@@ -136,7 +136,7 @@ For other default configurations:
 
 ### Configure batching behavior
 
-To support high-performance environments, the SDK sends events in batches. Every event logged by the `logEvent` method is queued in memory. Events are flushed in batches in background. You can customize batch behavior with `setEventUploadPeriodSeconds`. By default, the serverUrl will be `https://api2.amplitude.com/`. This SDK doesn't support batch mode, the [batch API](../../../analytics/apis/batch-event-upload-api.md) endpoint.
+To support high-performance environments, the SDK sends events in batches. Every event logged by the `logEvent` method is queued in memory. Events are flushed in batches in background. You can customize batch behavior with `setEventUploadPeriodSeconds`. By default, the serverUrl will be `https://api2.amplitude.com/`. This SDK doesn't support batch mode, the [batch API](/docs/apis/analytics/batch-event-upload) endpoint.
 
 ```c#
 // Events queue will flush every certain seconds based on setting
@@ -147,12 +147,12 @@ amplitude.setEventUploadPeriodSeconds(50);
 ### EU data residency
 
 Starting from version 2.4.0, you can configure the server zone after initializing the client for sending data to Amplitude's EU servers. SDK will switch and send data based on the server zone if it's set.
-The server zone configuration supports [dynamic configuration](../../dynamic-configuration.md) as well.
+The server zone configuration supports [dynamic configuration](/docs/sdks/dynamic-configuration) as well.
 
 For earlier versions, you need to configure the `serverURL` property after initializing the client.
 
 {{partial:admonition type="note" heading=""}}
-For EU data residency, project need to be set up inside Amplitude EU and SDK initialized with api key from Amplitude EU first. This method won't work without proper set up first.
+For EU data residency, project need to be set up inside Amplitude EU and SDK initialized with API key from Amplitude EU first. This method won't work without proper set up first.
 {{/partial:admonition}}
 
 ```c#

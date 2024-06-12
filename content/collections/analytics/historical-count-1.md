@@ -29,7 +29,7 @@ This feature is available to users on **all Amplitude plans**. See our [pricing 
 
 ## Before you begin
 
-Before you get started using the Historical Count feature, there are some things you should know. If you're new to Amplitude, you'll need to complete the instrumentation process in order for your events to appear in any Amplitude charts. We recommend you start exploring the [Event Segmentation chart](https://help.amplitude.com/hc/en-us/articles/360033852251-Event-Segmentation-Getting-Started) first.
+Before you get started using the Historical Count feature, there are some things you should know. If you're new to Amplitude, you'll need to complete the instrumentation process in order for your events to appear in any Amplitude charts. We recommend you start exploring the [Event Segmentation chart](/docs/analytics/charts/event-segmentation) first.
 
 Other important things to note about this feature:
 

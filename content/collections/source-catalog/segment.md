@@ -150,7 +150,7 @@ Segment and Amplitude use slightly different terms to describe the same concepts
 | track with property "revenue" | `revenue` | Logs a revenue event to record a revenue amount. |
 | `identify` with traits | `setUserId`, `identify` | Assigns a `userId` and set any traits as user properties. |
 | `screen` / page with name | `track "Viewed" + name` | Logs an event "Viewed [page]" where [page] is the name provided. |
-| `alias` | [User Mapping (Aliasing)](/docs/analytics/apis/aliasing-api/) | UserId aliasing lets you merge two users together that would otherwise have different User IDs tracked in Amplitude. |
+| `alias` | [User Mapping (Aliasing)](/docs/apis/analytics/user-mapping) | UserId aliasing lets you merge two users together that would otherwise have different User IDs tracked in Amplitude. |
 | `group` | `groupIdentify` (with GroupName) | Lets you designate user groups. |
 
 For more information, see the [Segment documentation.](https://segment.com/docs/integrations/amplitude/)

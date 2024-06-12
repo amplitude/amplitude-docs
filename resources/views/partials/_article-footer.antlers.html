@@ -1,4 +1,4 @@
-{{if !hide_helpful}}
+{{if !hide_helpful || !view:hide_helpful}}
 <div class="mt-12 max-w-screen-xl mx-auto pl-8">
     {{partial:partials/rating}}
         {{# <p class="mb-0 inline">Was this page helpful? <div x-data="{rating:-1}" class="inline-flex flex-row-reverse">{{loop from="5" to="1"}}{{svg id="{{value}}" src="/docs/assets/general/star.svg" class="inline peer peer-hover:fill-amp-blue-500 hover:fill-amp-blue-500 transition cursor-pointer"}}{{/loop}}</div></p> #}}

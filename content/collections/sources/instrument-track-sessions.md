@@ -11,7 +11,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718136903
 ---
-In Amplitude, sessions are a useful metric for understanding the frequency and duration of your users' engagement with your product. The most direct way to build a session-based analysis is with the [User Sessions chart](/data/user-properties-and-events). 
+In Amplitude, sessions are a useful metric for understanding the frequency and duration of your users' engagement with your product. The most direct way to build a session-based analysis is with the [User Sessions chart](/docs/data/user-properties-and-events). 
 
 {{partial:admonition type='note'}}
 You may also find [this video](https://academy.amplitude.com/how-long-do-users-spend-in-my-product/1091393) on User Sessions helpful.
@@ -21,7 +21,7 @@ You may also find [this video](https://academy.amplitude.com/how-long-do-users-s
 
 Generally, a session is the period of time a user has your app in the foreground or has your website open. The specifics differ slightly between mobile and web applications:
 
-* For **mobile**, a session begins when the app is brought into the foreground; it ends when the app goes into the background and no events are fired for at least five minutes. All events sent within five minutes of each other are counted towards the current session. Note that you can define your own session expiration time by calling  [setMinTimeBetweenSessionsMillis(timeout)](https://developers.amplitude.com/docs/android#user-sessions%20) , where the timeout input is in milliseconds.
+* For **mobile**, a session begins when the app is brought into the foreground; it ends when the app goes into the background and no events are fired for at least five minutes. All events sent within five minutes of each other are counted towards the current session. Note that you can define your own session expiration time by calling `setMinTimeBetweenSessionsMillis(timeout)`, where the timeout input is in milliseconds.
 * On a **browser**, a session begins when the website is opened and the SDK is initialized; it ends when the last event is triggered. Web sessions time out after 30 minutes by default. All events fired within 30 minutes of each other are counted as part of the same session. This timeout window can be customized via the [Browser SDK configuration options](/docs/sdks/analytics/browser/browser-sdk-2).
 
 Amplitude automatically generates a session ID for each new session; that ID is the session's start time in milliseconds since **epoch** (also known as the [Unix timestamp](https://en.wikipedia.org/wiki/Unix_time)). All events within the same session share the same session ID. If you are using Amplitude's SDKs, this happens automatically. However, if you are sending data to Amplitude using the HTTP API, you will have to explicitly set the [session ID](/docs/apis/analytics/http-v2) field in order to track sessions.
@@ -30,7 +30,7 @@ Amplitude automatically generates a session ID for each new session; that ID is 
 
 By default, the setting in Amplitude for the session property is session ID. All events with the same session ID and the same user ID will be grouped into the same session. The session ID does **not** have to be unique across multiple users. You can also [change the property you use](#h_d6df9d70-48fa-44cb-8907-7c3c652b007f) to group sessions.
 
-As noted above, session IDs for events sent via the Amplitude SDKs are automatically generated and managed. However, for events sent via the [HTTP API](https://www.docs.developers.amplitude.com/analytics/apis/http-v2-api/), Amplitude defaults to a session ID of `-1`. This means the event is excluded from all session metrics.
+As noted above, session IDs for events sent via the Amplitude SDKs are automatically generated and managed. However, for events sent via the [HTTP API](/docs/apis/analytics/http-v2), Amplitude defaults to a session ID of `-1`. This means the event is excluded from all session metrics.
 
 {{partial:admonition type='note'}}
 This commonly occurs when sending data to Amplitude from Segment via a cloud-mode connection. As with sending data via HTTP API, you will have to explicitly set a session ID to track sessions.
@@ -66,7 +66,7 @@ amplitude.init(API\_KEY, OPTIONAL\_USER\_ID, {  defaultTracking: {  sessions: tr
 
 **Important Notes:**
 
-* This only applies to Amplitude's **Android**[,](https://developers.amplitude.com/docs/android#user-sessions) **iOS**, and **Browser** SDKs. Refer to Amplitude's [Developer Center](https://www.docs.developers.amplitude.com/data/sdks/) for all SDK documentation.
+* This only applies to Amplitude's **Android**,**iOS**, and **Browser** SDKs. Refer to Amplitude's [Developer Center](/docs/sdks/analytics) for all SDK documentation.
 * Start/End Session events count towards your monthly [event volume limit](https://help.amplitude.com/hc/en-us/articles/115002923888#h_5d6b52ca-cb1e-4497-82a3-81b86b2f30ff).
 * The `End Session` event will be sent at the start of the user's next session.
 * You will not be able to add additional event properties to these Start Session and End Session events. If you would like to send event properties for session start/end events, try implementing your own custom `Open App` and `Close App` events.
@@ -75,7 +75,7 @@ amplitude.init(API\_KEY, OPTIONAL\_USER\_ID, {  defaultTracking: {  sessions: tr
 
 You can also log events as out-of-session by setting the session ID to `-1`. Out-of-session events are not considered part of the current session. Because they do not extend the current session, they can be useful if you're logging events triggered by push notifications.
 
-Out-of-session events are normally server-side events received by Amplitude (see our [HTTP API](https://www.docs.developers.amplitude.com/analytics/apis/http-v2-api/) documentation for more details). These events will appear in a user's event stream as disconnected green squares.
+Out-of-session events are normally server-side events received by Amplitude (see our [HTTP API](/docs/apis/analytics/http-v2) documentation for more details). These events will appear in a user's event stream as disconnected green squares.
 
 ![SessionId](statamic://asset::help_center_conversions::sources/sessionid-neg1-png.png)
 

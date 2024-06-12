@@ -64,7 +64,7 @@ You can create and revoke these as needed by navigating to **Data** > **Settings
 
 ### Deployment Key
 
-When you create a [deployment](../experiment/general/data-model.md#deployments), Experiment creates a key for that deployment. Whether the key is public or private depends on whether the deployment is client-side or server-side.
+When you create a [deployment](/docs/experiment/data-model), Experiment creates a key for that deployment. Whether the key is public or private depends on whether the deployment is client-side or server-side.
 
 {{partial:admonition type="tip" heading="Client-side deployment keys are public"}}
 These deployments run on a client device, such as a web browser or mobile app. The key associated with client deployments can be viewed publicly and should be used in client-side SDKs. These keys are prepended with `client-`. Because this key is already public, you don't have to worry about it being compromised.
@@ -98,7 +98,7 @@ Keep org-level keys private. They have access to your entire Amplitude organizat
 
 ### SCIM Key
 
-The SCIM key is used with the [SCIM API](/docs/apis/scim). SCIM features are available in accounts with an Enterprise plan.
+The SCIM key is used with the [SCIM API](/docs/apis/analytics/scim). SCIM features are available in accounts with an Enterprise plan.
 
 {{partial:admonition type="warning" heading="SCIM tokens are secret"}}
 Keep your token secret. It has global user management permissions on your account. If your key has been compromised, you can rotate it yourself in Amplitude.
