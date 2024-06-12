@@ -23,11 +23,9 @@ Once you've built some analyses of your own, you can easily [create your own tem
 Then just click on the template you're interested in to open it. Any templates you create in the future will also be found here.
 
 {{partial:admonition type='note'}}
-If a process can be represented as a [funnel](https://help.amplitude.com/hc/en-us/articles/360039976531), you should be tracking the steps in a Funnel Analysis chart. For example, tracking an onboarding funnel will help you quickly understand if first-time users are successfully navigating your signup process. A retention funnel will help you understand which parts of your product your users find confusing or frustrating, so you can spot and fix them quickly. If you need help deciding what events to track and in what chart, contact your dedicated Success Manager or reach out to us [here](https://help.amplitude.com/hc/en-us/requests/new).
+If a process can be represented as a [funnel](/docs/analytics/charts/funnel-analysis/funnel-analysis-get-the-most), you should be tracking the steps in a Funnel Analysis chart. For example, tracking an onboarding funnel will help you quickly understand if first-time users are successfully navigating your signup process. A retention funnel will help you understand which parts of your product your users find confusing or frustrating, so you can spot and fix them quickly. If you need help deciding what events to track and in what chart, contact your dedicated Success Manager or reach out to us [here](https://help.amplitude.com/hc/en-us/requests/new).
 {{/partial:admonition}}
 
 You can find the Template Gallery by clicking *Start from a template* on the Amplitude Home page.
 
 ![start](/docs/output/img/get-started/start.png)
-
-Learn about [how to use these starter templates in the next section, Quick Wins](https://help.amplitude.com/hc/en-us/sections/16796463058587-4-Quick-wins-Get-value-from-Amplitude-right-now).

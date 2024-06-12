@@ -1,0 +1,13 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: navigation_icon
+            field:
+              container: assets
+              folder: general
+              type: assets
+              display: 'Navigation icon'

@@ -73,7 +73,7 @@ Recommended for users who need access to all content created within Amplitude (d
 The highest-level permissions set in an organization. We recommend limiting the number of users in an organization who are Admins. The Admin role can only be granted or revoked by existing admins. Admins have all manager-level permissions, plus:
 
 * Remove shared chart and dashboard links
-* Change [sampling](/docs/admin/account-management/manage-event-volume) settings
+* Change sampling settings
 * Create [permission groups](/docs/admin/account-management/manage-permission-groups)
 * Delete organization or change organization name and URL (the Admin must submit this request to the Amplitude Support team)
 * Change org Admins

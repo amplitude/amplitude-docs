@@ -11,7 +11,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718136903
 ---
-In Amplitude, sessions are a useful metric for understanding the frequency and duration of your users' engagement with your product. The most direct way to build a session-based analysis is with the [User Sessions chart](/data/user-properties-and-events). 
+In Amplitude, sessions are a useful metric for understanding the frequency and duration of your users' engagement with your product. The most direct way to build a session-based analysis is with the [User Sessions chart](/docs/data/user-properties-and-events). 
 
 {{partial:admonition type='note'}}
 You may also find [this video](https://academy.amplitude.com/how-long-do-users-spend-in-my-product/1091393) on User Sessions helpful.
@@ -21,7 +21,7 @@ You may also find [this video](https://academy.amplitude.com/how-long-do-users-s
 
 Generally, a session is the period of time a user has your app in the foreground or has your website open. The specifics differ slightly between mobile and web applications:
 
-* For **mobile**, a session begins when the app is brought into the foreground; it ends when the app goes into the background and no events are fired for at least five minutes. All events sent within five minutes of each other are counted towards the current session. Note that you can define your own session expiration time by calling  [setMinTimeBetweenSessionsMillis(timeout)](https://developers.amplitude.com/docs/android#user-sessions%20) , where the timeout input is in milliseconds.
+* For **mobile**, a session begins when the app is brought into the foreground; it ends when the app goes into the background and no events are fired for at least five minutes. All events sent within five minutes of each other are counted towards the current session. Note that you can define your own session expiration time by calling `setMinTimeBetweenSessionsMillis(timeout)`, where the timeout input is in milliseconds.
 * On a **browser**, a session begins when the website is opened and the SDK is initialized; it ends when the last event is triggered. Web sessions time out after 30 minutes by default. All events fired within 30 minutes of each other are counted as part of the same session. This timeout window can be customized via the [Browser SDK configuration options](/docs/sdks/analytics/browser/browser-sdk-2).
 
 Amplitude automatically generates a session ID for each new session; that ID is the session's start time in milliseconds since **epoch** (also known as the [Unix timestamp](https://en.wikipedia.org/wiki/Unix_time)). All events within the same session share the same session ID. If you are using Amplitude's SDKs, this happens automatically. However, if you are sending data to Amplitude using the HTTP API, you will have to explicitly set the [session ID](/docs/apis/analytics/http-v2) field in order to track sessions.

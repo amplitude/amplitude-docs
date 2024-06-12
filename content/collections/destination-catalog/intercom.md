@@ -86,7 +86,7 @@ Intercom requires that all events have a user ID present. If you have selected a
 
 ### Configure user forwarding
 
-To stream user and property updates to Intercom, enable **Send Users**. This setting creates or updates users in Intercom when you update them in Amplitude with the [HTTP V2 API](/docs/analytics/apis/http-v2-api/) or [Identify API](/docs/analytics/apis/identify-api/). This integration doesn't support scheduled or on-demand updates. Each user is created as an [Intercom contact](https://developers.intercom.com/intercom-api-reference/reference/the-contact-model).
+To stream user and property updates to Intercom, enable **Send Users**. This setting creates or updates users in Intercom when you update them in Amplitude with the [HTTP V2 API](/docs/analytics/apis/http-v2-api/) or [Identify API](/docs/apis/analytics/identify). This integration doesn't support scheduled or on-demand updates. Each user is created as an [Intercom contact](https://developers.intercom.com/intercom-api-reference/reference/the-contact-model).
 
 You can optionally select user properties to send to Intercom in the **Select additional properties** field. Amplitude sends only the properties you select and only when one of them is updated. Amplitude sends these properties as [Intercom custom attributes](https://www.intercom.com/help/en/articles/179-send-custom-user-attributes-to-intercom/). _This integration doesn't support transformed user properties_.
 

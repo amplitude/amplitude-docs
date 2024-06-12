@@ -21,4 +21,4 @@ Event A --> Event B --> Event C --> Event D
 
 If Event C and Event D are [hidden, inactive, or deleted](https://help.amplitude.com/hc/en-us/sections/16805649563163-Clean-up-your-data), then the `max(client_event_time)` is taken from Event B instead of Event D. 
 
-Read more about how Amplitude tracks sessions in this [help center article](/cdp/sources/instrument-track-sessions). 
+Read more about how Amplitude tracks sessions in this [help center article](/docs/cdp/sources/instrument-track-sessions). 

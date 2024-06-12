@@ -24,7 +24,7 @@ If you are using the right instance. Ensure that you're using the correct instan
 If you are using Amplitude Data, check that the event hasn't been blocked.
 
 * Are you setting valid userId and deviceId?
-Check if your deviceId or userId are valid, the 400 error can be caused by this. [More details](../../analytics/apis/http-v2-api/#device-ids-and-user-ids-minimum-length).
+Check if your deviceId or userId are valid, the 400 error can be caused by this. [More details](/docs/apis/analytics/http-v2#device-ids-and-user-ids-minimum-length).
 
 * Did you hit the `flushQueueSize` or `flushIntervalMillis`?
 Events are queued and sent in batches by default. That means events are not sent immediately to the server. The exact values differ by platform, check to make sure you have waited for events to be sent to the server before checking for them in charts.

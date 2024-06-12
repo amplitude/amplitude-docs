@@ -45,7 +45,7 @@ An analysis using group-level reporting performs its counts by distinct user pro
 * Using group-level reporting in funnel analyses: 
 	* such as, determining how many accounts have converted from free trials to paid accounts (group by either account ID or project ID), or tracking how many posts are drafted but never published in your social media platform (group by post ID)
 
-In a standard [funnel analysis](/docs/hc/en-us/articles/360039976531), the same person must complete all steps of the funnel to count as a conversion. With group-level reporting, different members of the group can complete different steps in the funnel, and Amplitude will still interpret that as a conversion. 
+In a standard [funnel analysis](/docs/analytics/charts/funnel-analysis), the same person must complete all steps of the funnel to count as a conversion. With group-level reporting, different members of the group can complete different steps in the funnel, and Amplitude will still interpret that as a conversion. 
 
 This is useful for multi-sided marketplaces or B2B2C companies whose conversion processes involve multiple people. An example of this is a product that allows medical practices to bill patients for expenses. Their conversion funnel might include steps like “send invoice” and “send payment.” The former is completed by an admin, while the latter is completed by the patient. In situations like these, group-level reporting is the only way to accurately measure total invoice conversion.
 
@@ -118,7 +118,7 @@ You will find the account’s most recent properties in the top panel. The accou
 
 If you're using the User Look-up to verify events and the properties set with them, they will not be visible in the *Info* view. You can find them by clicking *Raw* instead.
 
-![](/docs/output/img/analytics/5jUOdenf9FPpODdA5UVd6qzJ_paC2Bf2gm2RPSK2S-WQPeI1yzNzCVE3yXKc8uu_iJYlNydjbnR38sJGPK7XvIf8iz8a4r642Kq-cL4w6Jco0EtIudeA0LDHHTeFmewzt2LgcE-vlcdgSQbXiSKAYfI)
+![](/docs/output/img/analytics/5jUOdenf9FPpODdA5UVd6qzJ_paC2Bf2gm2RPSK2S-WQPeI1yzNzCVE3yXKc8uu_iJYlNydjbnR38sJGPK7XvIf8iz8a4r642Kq-cL4w6Jco0EtIudeA0LDHHTeFmewzt2LgcE-vlcdgSQbXiSKAYfI.png)
 
 ## Set properties at the group level
 

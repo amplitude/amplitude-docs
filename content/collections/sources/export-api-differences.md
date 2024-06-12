@@ -10,7 +10,7 @@ In some cases, you may notice differences between your Amplitude data and the da
 
 If the timezone setting for the Amplitude project is different than UTC, you will likely see differences in the data shown in Amplitude charts compared to the data in Snowflake. 
 
-When comparing data, make sure you are comparing the same queries. For example, if you query data for event totals in Snowflake, be sure to check the event totals tab in the Event Segmentation chart. Learn more in our Help Center article on [SQL in Amplitude](/analytics/charts/other-charts/other-charts-amplitude-sql).
+When comparing data, make sure you are comparing the same queries. For example, if you query data for event totals in Snowflake, be sure to check the event totals tab in the Event Segmentation chart. Learn more in our Help Center article on [SQL in Amplitude](/docs/analytics/charts/other-charts/other-charts-amplitude-sql).
 
 ## Difference between Amplitude and Export API
 
