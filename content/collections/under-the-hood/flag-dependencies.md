@@ -41,8 +41,8 @@ Prior local evaluation SDK versions don't consider mutual exclusion or holdout g
 
 | SDK | Local Evaluation Flag Dependencies Support |
 | --- | --- |
-| [:material-nodejs: Node.js](/docs/sdks/experiment/experiment-node-js) | `1.4.0+` |
-| [:material-language-ruby: Ruby](/docs/sdks/experiment/experiment-ruby) | `1.1.0+` |
-| [:material-language-java: JVM](/docs/sdks/experiment/experiment-jvm) | `1.1.0+` |
-| [:fontawesome-brands-golang: Go](/docs/sdks/experiment/experiment-go) | `1.1.0+` |
-| [:material-language-python: Python](/docs/sdks/experiment/experiment-python) | `1.1.0+` |
+| [Node.js](/docs/sdks/experiment/experiment-node-js) | `1.4.0+` |
+| [Ruby](/docs/sdks/experiment/experiment-ruby) | `1.1.0+` |
+| [JVM](/docs/sdks/experiment/experiment-jvm) | `1.1.0+` |
+| [Go](/docs/sdks/experiment/experiment-go) | `1.1.0+` |
+| [Python](/docs/sdks/experiment/experiment-python) | `1.1.0+` |

@@ -75,7 +75,6 @@ Targeting a recently set user property may cause a race between Amplitude Analyt
 
 The [resolved Amplitude ID](#amplitude-id-resolution) is used to access the user's current user properties based on historical analytics data. These user properties are merged with any user properties sent explicitly in the fetch request and which are then passed in for [evaluation](/docs/experiment/implementation).
 
-!!!info "User Property Merge Priority"
 {{partial:admonition type="info" heading="User property merge priority"}}
 User properties sent explicitly in a remote fetch request are prioritized over user properties accessed from analytics.
 {{/partial:admonition}}
