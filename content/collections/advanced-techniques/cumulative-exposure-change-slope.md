@@ -4,11 +4,11 @@ blueprint: advanced-technique
 title: 'The cumulative exposures graph: Increasing and decreasing slopes'
 source: 'https://help.amplitude.com/hc/en-us/articles/7985566141083-Interpret-the-cumulative-exposures-graph-Increasing-and-decreasing-slopes'
 this_article_will_help_you:
-  - 'Understand the cumulative exposures graph in Amplitude Experiment (also available in [Experiment Results](/docs/analytics/charts/experiment-results/experiment-results-dig-deeper))'
+  - 'Understand the cumulative exposures graph in Amplitude Experiment'
   - 'Gain a deeper understanding of analyzing cumulative exposure results with examples'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1716329426
+updated_at: 1718228350
 ---
 The cumulative exposures graph details the number of users who are **exposed to your experiment over time**. The x-axis displays the date when the user was first exposed to your experiment; the y-axis displays a cumulative, running total of the number of users exposed to the experiment. 
 
@@ -40,12 +40,9 @@ This is a very standard cumulative exposure graph with an **increasing slope**.�
 
 Mathematically speaking, the slope of each line is the change in the y-axis divided by the change in the x-axis: 
 
-`∆y / ∆x =`
-
-`(cumulative users exposed as of day T1 — cumulative users exposed as of day T0) / (number of days elapsed between T0 and T1) =`
-
-`Number of new users exposed to the experiment, per day, from day T0 to day T1.`
-
+```
+∆y / ∆x = (cumulative users exposed as of day T1 — cumulative users exposed as of day T0) / (number of days elapsed between T0 and T1) = Number of new users exposed to the experiment, per day, from day T0 to day T1.
+```
 What are some other things we can say about this graph?
 
 * It’s cumulative, which means the **y-axis will not decrease**. The slope of the line is the number of **new** users exposed to your experiment every day. The line may slow down, or even stop growing completely. But you won’t see a cumulative exposures graph where the line peaks and then drops.
@@ -86,7 +83,7 @@ Whenever you use a cohort in this way, ask yourself whether the cohort is actual
 ### Other possible causes for decreasing slope
 
 * Using a dynamic cohort that isn’t growing quickly enough, or the number of users that interact with your experiment might be limited.
-* How you handle [sticky bucketing](https://www.docs.developers.amplitude.com/experiment/general/evaluation/implementation/#sticky-bucketing): If users enter the cohort and then exit, do you want them to continue to see the experiment (for consistency’s sake) even though they no longer meet the targeting criteria?
+* How you handle [sticky bucketing](/docs/experiment/advanced-techniques/sticky-bucketing): If users enter the cohort and then exit, do you want them to continue to see the experiment (for consistency’s sake) even though they no longer meet the targeting criteria?
 * The experiment is initially shown to a group of users who are not representative of users exposed later. Users who have been using your product for 30 days may interact with the feature you’re testing differently than those who’ve been around for 100 days, for example. Consider running your experiment for longer than you had originally planned, to make sure you’re studying the effect of the treatment on a steady state of users.
 * Users gradually become numb to your experiment and stop responding to it after repeated exposures.
 

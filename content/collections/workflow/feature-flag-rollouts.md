@@ -24,15 +24,15 @@ This feature is available to users on **all Amplitude plans** who have **purchas
 You cannot create a new flag until you’ve created a deployment, and either installed the [SDK](https://www.docs.developers.amplitude.com/data/sdks/sdk-overview/#experiment-sdks) or are set up to call the [evaluation REST API](https://www.docs.developers.amplitude.com/experiment/apis/evaluation-api/). Once you've done that, follow these steps:
 
 1. From the main Experiment page, navigate to *Flags* in the left-hand sidebar. Click *+ Create Feature Flag*.
-2. In the *Create Flag* modal, choose the project that will include this flag from the *Projects* drop-down menu. Then give your flag a name and a description. Amplitude Experiment will automatically generate the flag key from the name you choose. The flag key is an identifier for the flag used in your codebase.
+2. In the *Create Flag* modal, choose the project that will include this flag from the *Projects* drop-down menu. Then give your flag a name. Amplitude Experiment will automatically generate the flag key from the name you choose. The flag key is an identifier for the flag used in your codebase.
 3. Specify the [evaluation mode](https://www.docs.developers.amplitude.com/experiment/general/evaluation/local-evaluation/) for your experiment, either *Remote* (i.e., it will be evaluated on Amplitude servers) or *Local*. Then specify the **bucketing unit** you want to use for this experiment.  
   
-{{partial:admonition type='tip'}}
-The best bucketing unit will usually be the user. However, in some B2B use cases, you might want to use company ID or city as the bucketing unit. For example, bucketing by company ID ensures that all users in a particular company will have the same user experience. Be sure the [Stable Unit Treatment Value Assumption](https://blogs.iq.harvard.edu/violations_of_s#:~:text=Methods%20for%20causal%20inference%2C%20in,treatments%20of%20others%20around%20him) holds for whichever unit you choose.
-{{/partial:admonition}}
+    {{partial:admonition type='tip'}}
+    The best bucketing unit will usually be the user. However, in some B2B use cases, you might want to use company ID or city as the bucketing unit. For example, bucketing by company ID ensures that all users in a particular company will have the same user experience. Be sure the [Stable Unit Treatment Value Assumption](https://blogs.iq.harvard.edu/violations_of_s#:~:text=Methods%20for%20causal%20inference%2C%20in,treatments%20of%20others%20around%20him) holds for whichever unit you choose.
+    {{/partial:admonition}}
 
 4. When you’re done, click *Create*. Experiment will open a blank template for your flag.
-5. Next, on the *Configure* tab, choose the **deployment** for your experiment from the *Deployment* drop-down menu. For more information about working with deployments, see [this article on configuring Amplitude Experiment](/docs/experiment/workflow/configure).
+5. Next, choose the **deployment** for your experiment from the *Deployment* drop-down menu. For more information about working with deployments, see [this article on configuring Amplitude Experiment](/docs/experiment/workflow/configure).
 6. In *Advanced Settings*, you can change the **bucketing salt**. But if you do, users might switch between variants in your experiment. For that reason, we recommend you **do not change the bucketing salt** unless you know what you're doing. For more information, see our article on [how randomization works in Amplitude Experiment](/docs/experiment/under-the-hood/experiment-randomization).
 7. Your flag must have at least one **variant**. The variant is the new feature or product experience you want to roll out to your users.  
   
@@ -52,11 +52,11 @@ Continuing from the previous section, you can now use the flag you've created to
 
 1. In the *Allocation* panel, you can define **user segments** that will see your new feature, specify the percentage of users you’ll roll it out to.
 
-Defining a user segment is useful if you’d like to limit your rollout to users in a specific geographical location, or those who belong to certain demographic groups, or those who meet certain usage thresholds in your product (i.e., power users).
+    Defining a user segment is useful if you’d like to limit your rollout to users in a specific geographical location, or those who belong to certain demographic groups, or those who meet certain usage thresholds in your product (i.e., power users).
 
-To define a user segment, scroll down to the *Rule Based User Segments* section and click into Segment 1. Then follow the same steps you’d use to build a user segment in Amplitude Analytics.
+    To define a user segment, scroll down to the *Rule Based User Segments* section and click into Segment 1. Then follow the same steps you’d use to build a user segment in Amplitude Analytics.
 
-All of Amplitude’s user properties and cohorts are available to use in defining user segments. There is no limit on the number of user segments you can include here.
+    All of Amplitude’s user properties and cohorts are available to use in defining user segments. There is no limit on the number of user segments you can include here.
 
 2. Next, set the **rollout percentage** for this feature. This is the percentage of the users included in the flag’s user segments who will see the new feature. If you want everyone in the user segment to have access to the feature, set this value to 100%.
 3. You’ll need to tell Amplitude Experiment how many users will see each variant. The **weights** are relative values: for example, if you give variant A a weight of 1 and variant B a weight of 4, then four times as many users will see variant B than variant A.
