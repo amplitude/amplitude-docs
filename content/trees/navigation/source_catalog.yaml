@@ -1,8 +1,11 @@
 tree:
   -
     id: 183f0803-ef46-4a38-ad1c-4119855ac3e4
-    title: '<- Back'
-    url: /data
+    title: Back
+    url: /docs/data
+    data:
+      navigation_icon:
+        - general/back-icon.svg
   -
     id: 083c1f43-9571-4d3a-aeba-21473441e426
     entry: 62c9cb0e-142c-4f4e-9bd2-92065a536385

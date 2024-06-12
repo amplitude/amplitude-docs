@@ -8,7 +8,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716333767
 ---
-Local evaluation runs [evaluation logic](./implementation.md) in the SDK, saving you the overhead incurred by making a network request per user evaluation. The [sub-millisecond evaluation](../performance-and-caching.md#local-evaluation) is perfect for latency-minded systems which need to be performant at scale.
+Local evaluation runs [evaluation logic](/docs/experiment/implementation) in the SDK, saving you the overhead incurred by making a network request per user evaluation. The [sub-millisecond evaluation](/docs/experiment/under-the-hood/performance-and-caching) is perfect for latency-minded systems which need to be performant at scale.
 
 ## Targeting capabilities
 
@@ -20,16 +20,16 @@ When using client-side local evaluation it is important to note that all data us
 
 | <div class='big-column'>Feature</div> | Remote Evaluation | Local Evaluation |
 | --- | --- | --- |
-| [Consistent bucketing](./implementation.md#consistent-bucketing) | ✅ | ✅ |
-| [Individual inclusions](./implementation.md#individual-inclusions) | ✅ | ✅ |
-| [Targeting segments](./implementation.md#targeting-segments) | ✅ | ✅ |
-| [Amplitude ID resolution](./remote-evaluation.md#amplitude-id-resolution) | ✅ | ❌ |
-| [User enrichment](./remote-evaluation.md#user-enrichment) | ✅ | ❌ |
-| [Sticky bucketing](./implementation.md#sticky-bucketing) | ✅ | ❌ |
+| [Consistent bucketing](/docs/experiment/implementation#consistent-bucketing) | ✅ | ✅ |
+| [Individual inclusions](/docs/experiment/implementation#individual-inclusions) | ✅ | ✅ |
+| [Targeting segments](/docs/experiment/implementation#targeting-segments) | ✅ | ✅ |
+| [Amplitude ID resolution](/docs/experiment/remote-evaluation#amplitude-id-resolution) | ✅ | ❌ |
+| [User enrichment](/docs/experiment/remote-evaluation#user-enrichment) | ✅ | ❌ |
+| [Sticky bucketing](/docs/experiment/implementation#sticky-bucketing) | ✅ | ❌ |
 
 ## Implementation
 
-Local evaluation is just [evaluation](./implementation.md)--a function which takes a [user](../data-model.md#users) and a [flag](../data-model.md#flags-and-experiments) as input, and outputs a [variant](../data-model.md#variants).
+Local evaluation is just [evaluation](/docs/experiment/implementation)--a function which takes a [user](/docs/experiment/data-model#users) and a [flag](/docs/experiment/data-model#flags-and-experiments) as input, and outputs a [variant](/docs/experiment/data-model#variants).
 
 ![](statamic://asset::help_center_conversions::experiment/local-evaluation.drawio.png)
 
@@ -43,7 +43,7 @@ The local evaluation Node.js SDK can be run in edge worker/functions which suppo
 
 Local evaluation SDKs track evaluations differently on the client-side vs on the server-side.
 
-- Client-side SDKs track an [**exposure event**](../experiment-event-tracking.md#exposure-events) when the user is evaluated due to a variant being accessed from the SDK.
+- Client-side SDKs track an [**exposure event**](/docs/experiment/under-the-hood/event-tracking#exposure-events) when the user is evaluated due to a variant being accessed from the SDK.
 - Server-side SDKs track an **assignment event** (if configured to do so) when a user is evaluated.
 
 Server-side local evaluation experiments often set the Assignment event as a heuristic for Exposure.

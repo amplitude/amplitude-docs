@@ -57,5 +57,5 @@ You can find the Entity ID and Assertion Consumer Service URL in the Amplitude S
 ![an_gsuite_8_attributes.png](/docs/output/img/single-sign-on/an-gsuite-8-attributes-png.png)
 
 {{partial:admonition type='note'}}
- You can review information regarding just-in-time (JIT) provisioning settings for G Suite administration [here](cloud.google.com/identity/solutions/automate-user-provisioning). There may be a short "settling period" when setting up and validating the configuration. If users are getting 403 errors, please wait a day and try JIT again. 
+ You can review information regarding just-in-time (JIT) provisioning settings for G Suite administration [here](http://cloud.google.com/identity/solutions/automate-user-provisioning). There may be a short "settling period" when setting up and validating the configuration. If users are getting 403 errors, wait a day and try JIT again. 
 {{/partial:admonition}}

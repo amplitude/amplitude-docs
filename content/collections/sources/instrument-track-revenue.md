@@ -98,7 +98,7 @@ AmplitudeClient.getInstance().logRevenueV2("com.company.productid", 1, 2.99)
 
 ```
 
-Another cause for major discrepancies is piracy. A user can circumvent the app store and make purchases that do not show up in the app store reports. To avoid seeing pirated revenue events in your data, we recommend using Amplitude's revenue verification method to track revenue events. If you suspect your data are being skewed heavily because of piracy, then please contact us [here](/hc/en-us/requests/new).
+Another cause for major discrepancies is piracy. A user can circumvent the app store and make purchases that do not show up in the app store reports. To avoid seeing pirated revenue events in your data, we recommend using Amplitude's revenue verification method to track revenue events. If you suspect your data are being skewed heavily because of piracy, contact us [here](https://help.amplitude.com/hc/en-us/requests/new).
 
 ### Considerations for Developers
 
