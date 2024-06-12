@@ -5,7 +5,8 @@ title: 'Sample Ratio Mismatch'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 source: 'https://www.docs.developers.amplitude.com/experiment/guides/troubleshooting/sample-ratio-mismatch/'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717179440
+updated_at: 1718233372
+exclude_from_sitemap: false
 ---
 In Amplitude Experiment, a sample ratio mismatch occurs when the observed allocation for variants significantly differs from the specified allocation. For example, you allocated 50% of your Experiment traffic to the control and 50% to the treatment variant, but you are seeing a ratio of 55% control to 45% treatment.
 
@@ -79,7 +80,7 @@ To troubleshoot this kind of problem, find out which specific users were affecte
 
 ## Individual allocation of many users
 
-Did you [individually allocate](experiment/implementation#individual-inclusions) a large number of users?
+Did you [individually allocate](/docs/experiment/implementation#individual-inclusions) a large number of users?
 This can cause an SRM because individually allocating users doesn't randomly allocate them and can skew your ratio. 
 
 It's fine to add a few users in the experiment individually, but avoid adding many users.

@@ -27,7 +27,7 @@ For simple on/off flags, Amplitude recommends using the [all users segment](#all
 
 ### Flag dependencies
 
-A flag may define a [dependency](../flag-dependencies.md) on another flag's evaluation. If the dependency isn't met then no variant returns, otherwise the evaluation continues. Flag dependencies are currently utilized to implement [mutual exclusion groups](../flag-dependencies.md#mutual-exclusion-groups) and [holdout groups](../flag-dependencies.md#holdout-groups).
+A flag may define a [dependency](/docs/experiment/under-the-hood/flag-dependencies) on another flag's evaluation. If the dependency isn't met then no variant returns, otherwise the evaluation continues. Flag dependencies are currently utilized to implement [mutual exclusion groups](/docs/experiment/under-the-hood/flag-dependencies#mutual-exclusion-groups) and [holdout groups](/docs/experiment/under-the-hood/flag-dependencies#holdout-groups).
 
 {{partial:admonition type="example" heading=""}}
 For example, Flag-2 may define a dependency on Flag-1 evaluating to the variant `on`.
