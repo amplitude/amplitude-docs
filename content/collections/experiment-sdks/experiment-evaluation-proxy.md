@@ -21,11 +21,11 @@ logo: icons/docker.svg
 The evaluation proxy is under active development. APIs are unstable and may change before general availability.
 {{/partial:admonition}}
 
-The Evaluation Proxy is a Service to enable, enhance, and optimize [local evaluation](/docs/docs/experiment/local-evaluation) running within your infrastructure.
+The Evaluation Proxy is a Service to enable, enhance, and optimize [local evaluation](/docs/experiment/local-evaluation) running within your infrastructure.
 
 ![](statamic://asset::help_center_conversions::experiment/evaluation-proxy.drawio.png)
 
-* **Enable local evaluation on unsupported platforms**: Use remote [Evaluation APIs](/docs/docs/experiment-apis/experiment-evaluation-api) and [SDKs](sdks/experiment-sdks) to run local evaluation in your infrastructure.
+* **Enable local evaluation on unsupported platforms**: Use remote [Evaluation APIs](/docs/apis/experiment/experiment-evaluation-api) and [SDKs](/docs/sdks/experiment-sdks) to run local evaluation in your infrastructure.
 
 * **Automatically track assignment events for local evaluations**: Identical assignment events are deduplicated for 24 hours.
 
@@ -59,9 +59,9 @@ Environment configuration can only configure a single project. Environment varia
 
 | Environment Variable | Description |
 | --- | --- |
-| `AMPLITUDE_API_KEY` | The project's [API key](/docs/docs/apis/keys-and-tokens#api-key). |
-| `AMPLITUDE_SECRET_KEY` | The project's [secret key](/docs/docs/apis/keys-and-tokens#secret-key). |
-| `AMPLITUDE_EXPERIMENT_MANAGEMENT_API_KEY` | <span style="max-width:450px;display:inline-block">The [Experiment management API key](/docs/docs/apis/keys-and-tokens#management-api-key). Must be created for the same project as the configured API and secret key. Used to automatically access and update deployments used for the project.</span> |
+| `AMPLITUDE_API_KEY` | The project's [API key](/docs/apis/keys-and-tokens#api-key). |
+| `AMPLITUDE_SECRET_KEY` | The project's [secret key](/docs/apis/keys-and-tokens#secret-key). |
+| `AMPLITUDE_EXPERIMENT_MANAGEMENT_API_KEY` | <span style="max-width:450px;display:inline-block">The [Experiment management API key](/docs/apis/keys-and-tokens#management-api-key). Must be created for the same project as the configured API and secret key. Used to automatically access and update deployments used for the project.</span> |
 | `AMPLITUDE_REDIS_URI` | Optional. The entire URI to connect to Redis. Include the protocol, host, port, and optional username, password, and path (for example `redis://localhost:6379`). |
 | `AMPLITUDE_REDIS_PREFIX` | Optional. The prefix to connect  |
 | `AMPLITUDE_SERVER_URL` | Optional. The server URL, including protocol and host, to fetch flags from. |
@@ -79,9 +79,9 @@ A required array of objects with the following fields, all which are required.
 | <div class="big-column">Field</div> | <div style="max-width:450px;display:inline-block">Description</div> |
 | --- | --- |
 | `id` | The project's ID. Found in the project settings. |
-| `apiKey` | The project's [API key](/docs/docs/apis/keys-and-tokens#api-key). |
-| `secretKey` | The project's [secret key](/docs/docs/apis/keys-and-tokens#secret-key). |
-| `managementKey` | The [Experiment management API key](/docs/docs/apis/keys-and-tokens#management-api-key). Must be created for the same project as the configured API and secret key. Used to automatically access and update deployments used for the project. |
+| `apiKey` | The project's [API key](/docs/apis/keys-and-tokens#api-key). |
+| `secretKey` | The project's [secret key](/docs/apis/keys-and-tokens#secret-key). |
+| `managementKey` | The [Experiment management API key](/docs/apis/keys-and-tokens#management-api-key). Must be created for the same project as the configured API and secret key. Used to automatically access and update deployments used for the project. |
 
 ### configuration
 
@@ -177,7 +177,7 @@ The [evaluation-proxy GitHub repository](https://github.com/amplitude/evaluation
 
 ## Evaluation
 
-The Evaluation Proxy exposes remote [Evaluation API](/docs/docs/experiment-apis/experiment-evaluation-api) and [SDK](/docs/docs/sdks/experiment-sdks) endpoints to run local evaluation within your cluster. This is useful to enable platforms and languages which aren't supported by local evaluation SDKs. As an added benefit, fetch requests made to the evaluation proxy can target cohorts of users, and have assignment events tracked automatically to Amplitude.
+The Evaluation Proxy exposes remote [Evaluation API](/docs/apis/experiment/experiment-evaluation-api) and [SDK](/docs/sdks/experiment-sdks) endpoints to run local evaluation within your cluster. This is useful to enable platforms and languages which aren't supported by local evaluation SDKs. As an added benefit, fetch requests made to the evaluation proxy can target cohorts of users, and have assignment events tracked automatically to Amplitude.
 
 **You must send requests to the service using `http` on port `3546`.**
 

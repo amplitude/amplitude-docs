@@ -51,7 +51,7 @@ If you're having trouble holding on to users, it may signal a problem with the p
 
 Amplitude’s Retention Analysis chart helps you drive product adoption by showing you how often users return to your product after taking a specific action. Use it to discover the **events that keep users coming back**, as well as the ones that are driving them away.
 
-[Read more about retention analysis](/docs/analytics/charts/retention-analysis/retention-analysis-buildd) 
+[Read more about retention analysis](/docs/analytics/charts/retention-analysis/retention-analysis-build) 
 
 ## Step 4: Plot a user Lifecycle graph
 

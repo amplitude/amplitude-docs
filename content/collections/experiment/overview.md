@@ -9,7 +9,7 @@ this_article_will_help_you:
 landing: true
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717539472
+updated_at: 1718232315
 sourxe: 'https://help.amplitude.com/hc/en-us/articles/360061270232-Amplitude-Experiment-overview-Optimize-your-product-experience-through-A-B-testing'
 landing_blurb: 'Learn the value of experimentation in your product.'
 ---
@@ -23,7 +23,7 @@ With Experiment, you can easily **modify and configure product experiences** for
 * **Progressive feature delivery:** Pre-plan and **stage new features** for beta testers, a percentage of your users, or even specific target audiences.
 * **Dynamic in-product experiences:** Deploy and adapt **custom experiences** at scale.
 
-Amplitude Experiment enables all this through **flags**—easy-to-set up switches that let you modify your product's experience without having to change code. Use them to set up experiments in your product, or to stage and roll out new features straight to your users. Your code uses the [Amplitude Experiment SDK](/docs/sdks/experiment-sdks) or [REST API](docs/apis/experiment) to communicate with Amplitude Experiment.
+Amplitude Experiment enables all this through **flags**—easy-to-set up switches that let you modify your product's experience without having to change code. Use them to set up experiments in your product, or to stage and roll out new features straight to your users. Your code uses the [Amplitude Experiment SDK](/docs/sdks/experiment-sdks) or [REST API](/docs/apis/experiment) to communicate with Amplitude Experiment.
 
 {{partial:admonition type='note'}}
 Amplitude Experiment defaults to a **sequential testing** statistical model in all experiments, but you can opt for a [T-test](/docs/experiment/experiment-theory/analyze-with-t-test) instead.

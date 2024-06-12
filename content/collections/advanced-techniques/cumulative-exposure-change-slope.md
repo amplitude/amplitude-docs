@@ -36,8 +36,6 @@ In the graph below, each line represents a single variant. March 20 is the first
 
 This is a very standard cumulative exposure graph with an **increasing slope**. 
 
-![image1.png](/docs/output/img/advanced-techniques/image1-png.png)
-
 Mathematically speaking, the slope of each line is the change in the y-axis divided by the change in the x-axis: 
 
 ```

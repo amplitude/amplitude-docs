@@ -19,11 +19,11 @@ logo: icons/node.svg
 ---
 Official documentation for Amplitude Experiment's server-side Node.js SDK implementation.
 
-This documentation has separate sections for [remote](/docs/docs/experiment/remote-evaluation) and [local](/docs/docs/experiment/local-evaluation) evaluation:
+This documentation has separate sections for [remote](/docs/experiment/remote-evaluation) and [local](/docs/experiment/local-evaluation) evaluation:
 
 ## Remote evaluation
 
-Implements fetching variants for a user via [remote evaluation](/docs/docs/experiment/remote-evaluation).
+Implements fetching variants for a user via [remote evaluation](/docs/experiment/remote-evaluation).
 
 ### Install
 
@@ -82,7 +82,7 @@ if (variant?.value === 'on') {
 
 ### Initialize remote
 
-The SDK client should be initialized in your server on startup. The [deployment key](/docs/docs/experiment/data-model#deployments) argument passed into the `apiKey` parameter must live within the same project that you are sending analytics events to.
+The SDK client should be initialized in your server on startup. The [deployment key](/docs/experiment/data-model#deployments) argument passed into the `apiKey` parameter must live within the same project that you are sending analytics events to.
 
 ```js
 initializeRemote(apiKey: string, config?: RemoteEvaluationConfig): RemoteEvaluationClient
@@ -90,12 +90,12 @@ initializeRemote(apiKey: string, config?: RemoteEvaluationConfig): RemoteEvaluat
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `apiKey` | required | The [deployment key](/docs/docs/experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
+| `apiKey` | required | The [deployment key](/docs/experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 !!!warning "Timeout & Retry Configuration"
 {{partial:admonition type="warning" heading="Timeout and retry configuration"}}
-**The default timeout and retry configuration options are too high for most server environments**. Configure the timeout and retry options to best fit your performance requirements. If [remote evaluation performance](/docs/docs/experiment/under-the-hood/performance-and-caching#remote-evaluation) is too slow, consider using [local evaluation](#local-evaluation).
+**The default timeout and retry configuration options are too high for most server environments**. Configure the timeout and retry options to best fit your performance requirements. If [remote evaluation performance](/docs/experiment/under-the-hood/performance-and-caching#remote-evaluation) is too slow, consider using [local evaluation](#local-evaluation).
 {{/partial:admonition}}
 
 ```js
@@ -131,7 +131,7 @@ If you're using Amplitude's EU data center, configure the `serverUrl` option on 
 
 ### Fetch
 
-Fetches variants for a [user](/docs/docs/experiment/data-model#users) and returns the results. This function [remote evaluates](/docs/docs/experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
+Fetches variants for a [user](/docs/experiment/data-model#users) and returns the results. This function [remote evaluates](/docs/experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
 
 ```js
 fetchV2(user: ExperimentUser): Promise<Variants>
@@ -139,7 +139,7 @@ fetchV2(user: ExperimentUser): Promise<Variants>
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
-| `user` | required | The [user](/docs/docs/experiment/data-model#users) to remote fetch variants for. |
+| `user` | required | The [user](/docs/experiment/data-model#users) to remote fetch variants for. |
 
 ```js
 const user = {
@@ -165,11 +165,11 @@ if (variant?.value === 'on') {
 
 ## Local evaluation
 
-Implements evaluating variants for a user via [local evaluation](/docs/docs/experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/docs/experiment/local-evaluation#targeting-capabilities).
+Implements evaluating variants for a user via [local evaluation](/docs/experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/experiment/local-evaluation#targeting-capabilities).
 
 !!!note "Local Evaluation Mode"
 {{partial:admonition type="note" heading="Local evaluation mode"}}
-The local evaluation client can only evaluation flags which are [set to local evaluation mode](/docs/docs/experiment/advanced-techniques/create-a-local-evaluation-flag).
+The local evaluation client can only evaluation flags which are [set to local evaluation mode](/docs/experiment/advanced-techniques/create-a-local-evaluation-flag).
 {{/partial:admonition}}
 
 ### Install
@@ -211,10 +211,10 @@ const variants = experiment.evaluateV2(user);
 
 ### Initialize Local
 
-Initializes a [local evaluation](/docs/docs/experiment/local-evaluation) client.
+Initializes a [local evaluation](/docs/experiment/local-evaluation) client.
 
 {{partial:admonition type="warning" heading="Server deployment key"}}
-You must [initialize](#initialize-local) the local evaluation client with a server [deployment](/docs/docs/experiment/data-model#deployments) key to get access to local evaluation flag configs.
+You must [initialize](#initialize-local) the local evaluation client with a server [deployment](/docs/experiment/data-model#deployments) key to get access to local evaluation flag configs.
 {{/partial:admonition}}
 
 ```js
@@ -223,7 +223,7 @@ initializeLocal(apiKey: string, config?: LocalEvaluationConfig): LocalEvaluation
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `apiKey` | required | The server [deployment key](/docs/docs/experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
+| `apiKey` | required | The server [deployment key](/docs/experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 {{partial:admonition type="tip" heading="Flag polling interval"}}
@@ -257,7 +257,7 @@ You can configure the SDK client on initialization.
 | --- | --- | --- |
 | `apiKey` | The analytics API key and NOT the experiment deployment key | *required* |
 | `cacheCapacity` | The maximum number of assignments stored in the assignment cache | `65536` |
-| [Analytics SDK Options](/docs/docs/sdks/analytics/browser/browser-sdk-2#configuration) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
+| [Analytics SDK Options](/docs/sdks/analytics/browser/browser-sdk-2#configuration) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
 
 !!!info "EU Data Center"
 {{partial:admonition type="info" heading="EU data center"}}
@@ -282,7 +282,7 @@ await experiment.start();
 
 ### Evaluate
 
-Executes the [evaluation logic](/docs/docs/experiment/implementation) using the flags pre-fetched on [`start()`](#start). You must give evaluate a user object argument. You can optionally pass an array of flag keys if you require only a specific subset of required flag variants.
+Executes the [evaluation logic](/docs/experiment/implementation) using the flags pre-fetched on [`start()`](#start). You must give evaluate a user object argument. You can optionally pass an array of flag keys if you require only a specific subset of required flag variants.
 
 !!!tip "Automatic Assignment Tracking"
 {{partial:admonition type="tip" heading="Automatic assignment tracking"}}
@@ -295,7 +295,7 @@ evaluateV2(user: ExperimentUser, flagKeys?: string[]): Record<string, Variant>
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `user` | required | The [user](/docs/docs/experiment/data-model#users) to evaluate. |
+| `user` | required | The [user](/docs/experiment/data-model#users) to evaluate. |
 | `flagKeys` | optional | Specific flags or experiments to evaluate. If undefined, null, or empty, all flags and experiments are evaluated. |
 
 ```js

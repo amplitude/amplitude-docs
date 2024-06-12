@@ -59,6 +59,6 @@ The next step is to set the **rollout percentage** for this experiment. This is 
 
 Manually enter the percentage of your audience that should be eligible for bucketing into the experiment. If you roll your experiment out to less than 100% of your users, the balance will see your default product experience, and will not be included in any experiment calculations.
 
-Note that Amplitude Experiment evaluates for users included in rule-based user segments before those not covered by a user segment. However, it evaluates for any [individual user or device IDs](https://help.amplitude.com/hc/en-us/articles/360061687131#qa-before-rollout) prior to both. For more information, see [this article](https://www.docs.developers.amplitude.com/experiment/general/evaluation/implementation/).
+Note that Amplitude Experiment evaluates for users included in rule-based user segments before those not covered by a user segment. However, it evaluates for any individual user or device IDs prior to both.
 
 Next, it's time to [finalize your experiment's statistical settings](/docs/experiment/workflow/finalize-statistical-preferences).

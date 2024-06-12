@@ -14,4 +14,4 @@ preview_targets:
     url: '{permalink}'
     refresh: true
 inject:
-  nav_title: flutter_sdk
+  nav_title: analytics_sdks

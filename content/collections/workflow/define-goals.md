@@ -48,7 +48,7 @@ On your experiment’s Plan tab, choose the **exposure event**. This is the even
 
 The Amplitude exposure event is sent when your app calls .variant(). It sets the user properties Amplitude Experiment uses to conduct its analyses. When you use the Amplitude exposure event, you can be certain your app will trigger the event at the correct time.
 
-That said, you can also select a custom exposure event instead. Click *Custom Exposure*, then *Select event …* to do so. Be aware that there is a much greater risk of triggering a custom exposure event at the wrong time; this can lead to a [sample ratio mismatch](/docs/experiment/advanced-techniques/sample-ratio-mismatch).
+That said, you can also select a custom exposure event instead. Click *Custom Exposure*, then *Select event …* to do so. Be aware that there is a much greater risk of triggering a custom exposure event at the wrong time; this can lead to a [sample ratio mismatch](/docs/experiment/troubleshooting/sample-ratio-mismatch).
 
 For more information, see [this article about exposure events in Amplitude Experiment](https://www.docs.developers.amplitude.com/experiment/general/exposure-tracking/).
 

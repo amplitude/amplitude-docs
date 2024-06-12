@@ -99,7 +99,7 @@ The Session Replay SDK outputs the Session Replay properties that you need to ad
 
 `[Amplitude] Session Replay ID` is a unique identifier for the replay, and is different from `[Amplitude] Session ID`, which is the identifier for the user's session.
 
-The [Session Replay Browser Plugin](/docs/session-replay/seession-replay-plugin) handles this by default, since Amplitude manages event instrumentation. With the Standalone SDK, you need to instrument your application to add this property to any events that occur during capture. 
+The [Session Replay Browser Plugin](/docs/session-replay/session-replay-plugin) handles this by default, since Amplitude manages event instrumentation. With the Standalone SDK, you need to instrument your application to add this property to any events that occur during capture. 
 
 ## Configuration
 
@@ -220,7 +220,7 @@ Replays that are outside of the retention period aren't viewable in Amplitude.
 
 ### DSAR API
 
-The Amplitude [DSAR API](/docs/apis/ccpa-dsar/) returns metadata about session replays, but not the raw replay data. All events that are part of a session replay include a `[Amplitude] Session Replay ID` event property. This event provides information about the sessions collected for replay for the user, and includes all metadata collected with each event.
+The Amplitude [DSAR API](/docs/apis/analytics/ccpa-dsar) returns metadata about session replays, but not the raw replay data. All events that are part of a session replay include a `[Amplitude] Session Replay ID` event property. This event provides information about the sessions collected for replay for the user, and includes all metadata collected with each event.
 
 ```json
 {
@@ -240,7 +240,7 @@ The Amplitude [DSAR API](/docs/apis/ccpa-dsar/) returns metadata about session r
 
 ### Data deletion
 
-Session Replay uses Amplitude's [User Privacy API](/docs/apis/user-privacy/) to handle deletion requests. Successful deletion requests remove all session replays for the specified user.
+Session Replay uses Amplitude's [User Privacy API](/docs/apis/analytics/user-privacy/) to handle deletion requests. Successful deletion requests remove all session replays for the specified user.
 
 When you delete the Amplitude project on which you use Session Replay, Amplitude deletes that replay data.
 
