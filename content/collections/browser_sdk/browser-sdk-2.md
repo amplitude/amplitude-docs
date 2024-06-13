@@ -822,3 +822,295 @@ amplitude.add(myDestinationPlugin('https://custom.url.com'));
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
+
+## Troubleshooting and debugging
+
+Debugging in a browser can help you identify problems related to your code's implementation, as well as potential issues within the SDKs you're using. Here's a basic guide on how to use the browser's built-in Developer Tools (DevTools) for debugging.
+
+### Console
+
+You can find JavaScript errors under **Inspect > Console**, which might have the details about the line of code and file that caused the problem. The console also allows you to execute JavaScript code in real time.
+
+* Enable debug mode by following these [instructions](#debugging). Then With the default logger, extra function context information will be output to the developer console when any SDK public method is invoked, which can be helpful for debugging.
+
+* Amplitude supports SDK deferred initialization. Events tracked before initialization will be dispatched after the initialization call. If you cannot send events but can send the event successfully after entering `amplitude.init(API_KEY, 'USER_ID')` in the browser console, it indicates that your `amplitude.init` call might not have been triggered in your codebase or you aren't using the correct Amplitude instance during initialization. Therefore,  check your implementation."
+
+### Network Request
+
+Use the **Inspect > Network** tab to view all network requests made by your page. Search for the Amplitude request.
+
+Check the response code and ensure that the response payload is as expected.
+
+### Instrumentation Explorer/Chrome Extension
+
+The Amplitude Instrumentation Explorer is an extension available in the Google Chrome Web Store. The extension captures each Amplitude event you trigger and displays it in the extension popup. It's important to ensure that the event has been sent out successfully and to check the context in the event payload.
+
+### Common Issues
+
+The following are common issues specific to Browser SDK. For more general common issues, see [SDK Troubleshooting and Debugging](/docs/sdks/sdk-debugging).
+
+#### Ad blocker
+
+`Ad Blocker` might lead to event dropping. The following errors indicate that the tracking has been affected by `Ad Blocker`. When loading via a script tag, an error may appear in the console/network tab while loading the SDK script. When loaded with npm package, there could be errors in the network tab when trying to send events to the server. The errors might vary depending on the browser.
+
+* Chrome (Ubuntu, MacOS)
+Console: error net::ERR_BLOCKED_BY_CLIENT
+Network: status (blocked:other)
+* Firefox (Ubuntu)
+Console: error text doesn’t contain any blocking-specific info
+Network: Transferred column contains the name of plugin Blocked by uBlock Origin
+* Safari (MacOS)
+Console: error contains text Content Blocker prevented frame ... from loading a resource from ...
+Network: it looks like blocked requests aren't listed. Not sure if it’s possible to show them.
+
+Amplitude recommends using a proxy server to avoid this situation.
+
+#### Cookies related
+
+Here is the [information](./#cookie-management) SDK stored in the cookies. This means that client behavior, like disabling cookies or using a private browser/window/tab, will affect the persistence of these saved values in the cookies. If these values aren't persistent or aren't increasing by one, that could be the reason.
+
+#### CORS
+
+Cross-Origin Resource Sharing (CORS) is a security measure implemented by browsers to restrict how resources on a web page can be requested from a different domain. It might cause this issue if you used `setServerURL`.
+
+```Access to fetch at 'xxx' from origin 'xxx' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.```
+
+Cross-origin resource sharing (CORS) prevents a malicious site from reading another site's data without permission. The error message suggests that the server you're trying to access isn't allowing your origin to access the requested resource. This is due to the lack of the `Access-Control-Allow-Origin` header in the server's response.
+
+* If you have control over the server, you can "Update the server's CORS policy". Add the `Access-Control-Allow-Origin` header to the server's responses. This would allow your origin to make requests. The value of `Access-Control-Allow-Origin` can be * to allow all origins, or it can be the specific URL of your web page.
+
+* If you don't have control over the server, you can set up a proxy server that adds the necessary CORS headers. The web page makes requests to the proxy, which then makes requests to the actual server. The proxy adds the `Access-Control-Allow-Origin` header to the response before sending it back to the web page.
+
+If you have set up an API proxy and run into configuration issues related to that on a platform you’ve selected, that’s no longer an SDK issue but an integration issue between your application and the service provider.
+
+#### Events fired but no network requests
+
+If you [set the logger to "Debug" level](#debugging), and see track calls in the developer console, the `track()` method has been called. If you don't see the corresponding event in Amplitude, the Amplitude Instrumentation Explorer Chrome extension, or the network request tab of the browser, the event wasn't sent to Amplitude. Events are fired and placed in the SDK's internal queue upon a successful `track()` call, but sometimes these queued events may not send successfully. This can happen when an in-progress HTTP request is cancelled. For example, if you close the browser or leave the page.
+
+There are two ways to address this issue:
+
+1. If you use standard network requests, set the transport to `beacon` during initialization or set the transport to `beacon` upon page exit. `sendBeacon` doesn't work in this case because it sends events in the background, and doesn't return server responses like `4xx` or `5xx`. As a result, it doesn't retry on failure. `sendBeacon` sends only scheduled requests in the background. For more information, see the [sendBeacon](./#use-sendbeacon) section.
+
+2. To make track() synchronous, [add the `await` keyword](#callback) before the call.
+
+## Advanced topics
+
+### Cross-domain tracking
+
+You can track anonymous behavior across two different domains. Amplitude identifies anonymous users by their device IDs which must be passed between the domains. To maintain the same session and ensure a continuous user journey, also pass session IDs to the other domain. 
+
+{{partial:admonition type="note" heading=""}}
+Starting from `v2.8.0` the SDK supports getting the device ID from the URL paramter `ampDeviceId`. The SDK configuration, for example, `init('API_KEY', { deviceId: 'custom-device-id' })` still takes precedence over the URL parameter. Previous versions of the SDK supported the `deviceId` URL parameter, this option is still supported for backward compatibility but `ampDeviceId` will take precedence if both are set. You don't need to change your code if upgrade to versions higher than `v2.8.0` but it is recommended.
+{{/partial:admonition}}
+
+For example:
+
+* Site 1: `www.example.com`
+* Site 2: `www.example.org`
+
+Users who start on Site 1 and then navigate to Site 2 must have the device ID generated from Site 1 passed as a parameter to Site 2. Site 2 then needs to initialize the SDK with the device ID.
+ The SDK can parse the URL parameter automatically if `deviceId` is in the URL query parameters.
+
+Starting from `v2.8.0`, the SDK can automatically get session ID from the URL to maintain the same session and ensure a continuous user journey.
+
+1. From Site 1, grab the device ID from `getDeviceId()` and the session ID from `getSessionId()`.
+2. Pass the device ID and session ID to Site 2 via a URL parameter when the user navigates. (for example: `www.example.com?ampDeviceId=device_id_from_site_1&ampSessionId=1716245958483`)
+3. Initialize the Amplitude SDK on Site 2 with `init('API_KEY', null)`.
+
+If the `deviceId` and `sessionId` aren't set in `init('API_KEY', null, { deviceId: 'custom-device-id', sessionId: 1716245958483 })`, the SDK automatically falls back to using the URL parameters respectively.
+
+It's recommended to follow the same session ID format as the Browser SDK by using `Date.now()`. Because the SDK checks whether an event is in session every time an event is tracked. For example, 
+
+```typescript
+// if session ID is set to 12345
+// https://www.example.com?ampDeviceId=my-device-id&ampSessionId=12345
+amplitude.init(API_KEY)
+// session ID is set to 12345 after init()
+
+amplitude.track("event")
+// session ID is set back to Date.now() 
+// because the tracked "event" is not in the previous session 12345
+```
+
+### Use sendBeacon
+
+Unlike standard network requests, sendBeacon sends events in the background, even if the user closes the browser or leaves the page.
+
+{{partial:admonition type="warning" heading=""}}
+Because `sendBeacon` sends events in the background, events dispatched from `sendBeacon` don't return a server response and can't be retried when they encounter failures like 4xx or 5xx errors. You can address these retry issues by sending one event/request, but this could increase the network load and the likelihood of throttling.
+{{/partial:admonition}}
+
+#### Set the transport to use sendBeacon for all events
+
+To send an event using `sendBeacon`, set the transport SDK option to 'beacon' in one of two ways
+
+```ts
+amplitude.init(API_KEY, 'user@amplitude.com', 
+  {
+    transport: TransportType.SendBeacon,
+    // To make sure the event will be scheduled right away.
+    flushIntervalMillis: 0,
+    flushQueueSize: 1,
+  }
+);
+```
+
+#### Set the transport to use beacon only when exiting page
+
+Amplitude recommends adding your own event listener for pagehide event.
+
+```ts
+window.addEventListener('pagehide',
+  () => {
+    amplitude.setTransport('beacon') 
+    // Sets https transport to use `sendBeacon` API
+    amplitude.flush()
+  },
+);
+```
+
+### Content Security Policy (CSP)
+
+If your web app configures the strict Content Security Policy (CSP) for security concerns, adjust the policy to whitelist the Amplitude domains:
+
+* When using ["Script Loader"](https://github.com/amplitude/Amplitude-TypeScript/tree/main/packages/analytics-browser#installing-via-script-loader), add `https://*.amplitude.com` to `script-src`.
+* Add `https://*.amplitude.com` to `connect-src`.
+
+### Cookie management
+
+The Browser SDK uses cookie storage to persist information that multiple subdomains of the same domain may likely want to share. This includes information like user sessions and marketing campaigns, which are stored in separate cookie entries.
+
+#### Cookie prefix
+
+* **AMP**: The SDK creates user session cookies with `AMP` prefix and the first ten digits of the API key: `AMP_{first_ten_digits_API_KEY}`.
+* **AMP_MKTG**: The SDK creates marketing campaign cookies with `AMP_MKTG` and the first ten digits of the API key: `AMP_MKTG_{first_ten_digits_API_KEY}`. 
+* **AMP_TEST**: On initialization, the SDK creates a cookie with `AMP_TEST` prefix to check whether the cookie storage is working properly. Then the SDK sets the value as the current time, retrieves the cookie by a key and checks if the retrieved value matches the original set time. You **can safely delete** the `AMP_TEST` prefix cookies if, for some reason, they're not successfully deleted.
+* **AMP_TDLTEST**: On initialization, the SDK creates a cookie with `AMP_TDLTEST` prefix to find a subdomain that supports cookie storage. For example, when checking for cookie support on `https://analytics.amplitude.com/amplitude/home` the SDK first tries to find a subdomain that matches the root domain (`amplitude.com`) and then falls back to the full domain (`analytics.amplitude.com`). You **can safely delete** the `AMP_TDLTEST` prefix cookies if, for some reason, they're not successfully deleted.
+
+#### Cookie domain
+
+By default, the SDK assigns these cookies to the top-level domain which supports cookie storage. Cookies can be shared on multiple subdomains which allows for a seamless user experience across all subdomains.
+
+For example, if a user logs into the website on one subdomain (`data.amplitude.com`) where the SDK is initialized. On initialization, the SDK assigns cookies to `.amplitude.com`. If the user then navigates to another subdomain (`analytics.amplitude.com`), the login information can be seamlessly shared by shared cookies.
+
+#### Cookie data
+
+The SDK creates two types of cookies: user session cookies and marketing campaign cookies.
+
+
+
+
+{{partial:collapse name="User session cookies"}}
+|<div class="big-column">Name</div>| Description|
+|---|----|
+|`optOut`|<span class="required">Required</span>. A flag to opt this device out of Amplitude tracking. If this flag is set, no additional information will be stored for the user|
+|`userId`|Upon user log-in, if you send this value, it is stored in the cookie. Set this to uniquely identify their users (non-anonymous navigation). It is stored encoded using Base64|
+|`deviceId`|A randomly generated string. It will persist unless a user clears their browser cookies and/ or is browsing in private mode. Even if a user consistently uses the same the device and browser, the device ID can still vary|
+|`sessionId`|A randomly generated string for each session|
+|`lastEventTime`|Time of the last event, used to determine when to expire and create a new session Id|
+|`lastEventId`|Id of the last event|
+
+{{/partial:collapse}}
+
+
+{{partial:collapse name="Marketing campaign cookies"}}
+|<div class="big-column">Name</div>| Description|
+| --- | --- |
+|`utm_campaign`| This identifies a specific campaign used (for example, "summer_sale") |
+|`utm_content` | This identifies what brought the user to the site and is commonly used for A/B testing (for example, "banner-link", "text-link") |
+|`utm_id`|An optional parameter for tracking unique IDs or transaction IDs associated with the link.|
+|`utm_medium`| This identifies a specific campaign used (for example, "summer_sale") |
+|`utm_source`| This identifies which website sent the traffic (for example, Google, Facebook) |
+|`utm_term`| This identifies paid search terms used (for example, product+analytics) |
+|`referrer`|The last page the user was on (for example, `https://amplitude.com/behavioral-analytics-platform?ref=nav`)|
+|`referring_domain`|The domain that the user was last on (for example, `https://amplitude.com`)|
+|`dclid`|Google campaign manager Click Identifier|
+|`gbraid`|Google Click Identifier for iOS device from Web to App|
+|`gclid`|Google Click Identifier from URL parameters|
+|`fbclid`|Facebook Click Identifier from URL parameters|
+|`ko_click_id`|Kochava Click Identifier from URL parameters|
+|`msclkid`|Microsoft Click Identifier|
+|`ttclid`|TikTok Click Identifier|
+|`twclid`|Twitter Click Identifier from URL parameter|
+|`wbraid`|Google Click Identifier for iOS device from App to Web|
+|`li_fat_id`|LinkedIn member indirect identifier for Members for conversion tracking, retargeting, analytics|
+|`rtd_cid`|Reddit Click Identifier| 
+
+{{/partial:collapse}}
+
+#### Disable cookies
+
+Opt-out of using cookies by setting `identityStorage` to `localStorage` so that the SDK will use `LocalStorage` instead. `LocalStorage` is a great alternative, but because access to `LocalStorage` is restricted by subdomain, you can't track anonymous users across subdomains of your product (for example: `www.amplitude.com` vs `analytics.amplitude.com`).
+
+```ts
+amplitude.init("api-key", null, {
+  identityStorage: "localStorage",
+});
+```
+
+### Offline mode
+
+{{partial:admonition type="note" heading="Auto-flush when reconnecting"}}
+Setting `config.flushIntervalMillis` to a small value like `1` may cause an `ERR_NETWORK_CHANGED` error.
+{{/partial:admonition}}
+
+Beginning with version 2.4.0, the Amplitude Browser SDK supports offline mode. The SDK checks network connectivity every time it tracks an event. If the device is connected to network, the SDK schedules a flush. If not, it saves the event to storage. The SDK also listens for changes in network connectivity and schedules a flush of all stored events when the device reconnects, based on the `config.flushIntervalMillis` setting.
+
+To disable offline mode, add `offline: amplitude.Types.OfflineDisabled` to the `amplitude.init()` call as shown below.
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  offline: amplitude.Types.OfflineDisabled
+});
+```
+
+### Marketing Attribution Tracking
+
+Amplitude tracks marketing attribution and exclude all the referrer from all subdomain by default. Once you enable marketing attribution tracking, Amplitude generates `identify` events to assign the campaign value in certain cases. This ensures that user properties update and influence future events.
+
+#### Tracking scenarios
+
+Amplitude track marketing attribution changes while
+
+##### Amplitude SDK initialization (Hard page refresh)
+
+- At the start of a session, the referrer isn't excluded and campaign has any change or customer first visit.
+- In the middle of the session, the referrer isn't excluded, not direct traffic, and campaign has any change.
+
+##### Processing the event
+
+- At the start of a session, the referrer isn't excluded, and campaign has any change.
+
+For more information, see the scenarios outlined below that demonstrate when Amplitude does or doesn't track marketing attribution. These examples are illustrative, not exhaustive.
+
+Tracking occurs when either of the following applies:
+
+|Rule|Example|
+|-|-|
+| The current subdomain is not an excluded referrer. | The referrer does not originates from the same domain or the current subdomain is not match any referrer in `config.defaultTracking.attribution.excludeReferrers`. |
+| No previous campaign. | A user's initial visit. |
+| There is an introduction of new UTM parameter or Click ID parameter. | If any utm parameters or Click ID parameters have been dropped during a session, we will unset it. |
+| The referrer domain changes to a new one. | Referrer domain changed from `a.test.com` to `b.test-new.com`|
+
+Amplitude doesn't track marketing attribution under any of the following conditions:
+
+|Rule|Example|
+|-|-|
+| The referrer originates from the same domain with default configuration. | The landing page is `a.test.com`, with the referrer set to `b.test.com`. |
+| A specific referrer domain is explicitly excluded.| When setting `config.defaultTracking.attribution.excludeReferrers` = `[a.test.com]`, and the referrer domain is `a.test.com` for the current page. |
+| The subdomain is specified or matches the regular expression in `config.defaultTracking.attribution.excludeReferrers`.| Configuration of excludeReferrers involves specific string arrays or a regular expression. |
+| The user engages in direct traffic within the same session.| During a session, a user clicks on a link without any campaign attribution parameters, including the absence of UTM and click id parameters from an email. |
+| SPA redirect without page reloading  | During a session, a user clicks on a link without any campaign attribution parameters, including the absence of UTM and click id parameters from an email. |
+
+#### Rogue referral problem for SPAs
+
+SPA typically don't experience a true page load after a visitor enters the site, which means the referrer information doesn't update when clicking internal links. UTM parameters may be dropped during SPA redirects, while the referrer remains unchanged. This is a known issue in the industry. To address this problem, you can either:
+
+- Control the page and location parameters and / or
+- Unset the referrer after the first hit
+
+
+
+
+
+
