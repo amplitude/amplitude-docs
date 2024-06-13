@@ -31,7 +31,7 @@ Events are queued and sent in batches by default. That means events are not sent
 
 ## Privacy 
 
-If you've already disabled IP, it's still possible to see the IP in your user lookup if you're using the [latest SDK](../sdks/sdk-architecture/). We send the data to the HTTP API (HTTP API V1 for maintenance SDK and HTTP API V2 for the latest SDK). If you disabled the IP address midway, it's possible that the user's previous IP address was saved in our backend. Our backend will retrieve the IP from the database, if there's any. If it's a test user, it's probably fine. It won't affect incoming new users after you disable the IP. If this affects all users, you might need to create a new workspace.
+If you've already disabled IP, it's still possible to see the IP in your user lookup if you're using the latest SDK. Amplitude sends the data to the Http API (Http API V1 for maintenance SDK and Http API V2 for the latest SDK). If you disabled the IP address midway, it's possible that the user's previous IP address was saved in our backend. Our backend will retrieve the IP from the database, if there's any. If it's a test user, it's probably fine. It won't affect incoming new users after you disable the IP. If this affects all users, you might need to create a new workspace.
 
 ## `Client Event Time` shows unexpected value
 

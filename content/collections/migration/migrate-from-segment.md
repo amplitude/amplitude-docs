@@ -46,7 +46,7 @@ Both Segment and Amplitude SDKs are meant to capture first party data by trackin
 | write_key | api_key   | Unique key to validate source of the data. |
 | Workspace | Project   | [Projects](/docs/admin/account-management/manage-orgs-projects) allow you to organize your data.  |
 | User      | User      | User who is performing action.             |
-| Identify  | Identify  | [Identify](/docs/analytics/what-is-amplitude/#user-properties-are-details-about-your-user) updates properties/attributes of the user.|
+| Identify  | Identify  | Identify updates properties/attributes of the user.|
 | Track     | Event     | [Event](/docs/apis/analytics/http-v2/) in Amplitude tracks the action user is performing.|
 | Screen    | Event     | Create an Event to track Screen views.|
 | Page      | Event     | Create an Event to track Page views.|
@@ -243,7 +243,7 @@ For all other SDKs, see the relevant [SDK documentation](/docs/sdks/analytics).
 
 ## Validate events
 
-Data validation is a critical step in the instrumentation process. Amplitude lets validate your event data via Amplitude's debugging [tools](/docs/data/debugger/).
+Data validation is a critical step in the instrumentation process. Amplitude lets validate your event data via Amplitude's debugging [tools](/docs/analytics/debug-analytics).
 
 ## Add a destination
 

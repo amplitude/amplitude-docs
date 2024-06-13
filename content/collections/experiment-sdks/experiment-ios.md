@@ -231,7 +231,7 @@ Using the integration initializer will automatically configure implementations o
 
 **Supported Versions**
 
-All generally available versions of the next-generation [Amplitude Analytics Swift](../../data/sdks/ios-swift/index.md) SDK support this integration.
+All generally available versions of the next-generation [Amplitude Analytics Swift](/docs/sdks/analytics/ios/ios-swift-sdk) SDK support this integration.
 
 | Analytics SDK Version | Experiment SDK Version |
 | --- | --- |
@@ -240,7 +240,7 @@ All generally available versions of the next-generation [Amplitude Analytics Swi
 {{/partial:collapse}}
 
 {{partial:collapse name="Segment integration"}}
-Experiment's integration with Segment Analytics must be configured manually. The Experiment SDK must then be configured on initialization with an instance of the the exposure tracking provider. Make sure this happens _after_ the analytics SDK has been loaded an initialized.
+Experiment's integration with Segment Analytics must be configured manually. The Experiment SDK must then be configured on initialization with an instance of the exposure tracking provider. Make sure this happens _after_ the analytics SDK has been loaded an initialized.
 
 ```swift
 class SegmentExposureTrackingProvider : ExposureTrackingProvider {

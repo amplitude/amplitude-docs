@@ -17,7 +17,7 @@ Quickly review the offerings that are available for mParticle and how that stack
 
 | mParticle                                                                         | Amplitude |
 |-----------------------------------------------------------------------------------| ----------- |
-| [Connections](https://docs.mparticle.com/guides/platform-guide/connections/)      | [Sources](/docs/data/source-catalog) & [Destinations](/docs/data/destinations/) |
+| [Connections](https://docs.mparticle.com/guides/platform-guide/connections/)      | [Sources](/docs/data/source-catalog) & [Destinations](/docs/data/destination-catalog/) |
 | [Audiences](https://docs.mparticle.com/guides/platform-guide/audiences/overview/) | [Audiences](https://help.amplitude.com/hc/en-us/sections/360011146031-Amplitude-Audiences) |
 |                                                                              | [Data Management](https://help.amplitude.com/hc/en-us/categories/5078631395227-Amplitude-CDP) |
 
@@ -45,12 +45,12 @@ Both mParticle and Amplitude SDKs are meant to capture first party data by track
 | app_key   | api_key   | Unique key to validate source of the data. |
 | Workspace | Project   | [Projects](/docs/admin/account-management/manage-orgs-projects) allow you to organize your data.  |
 | User      | User      | User who is performing action.             |
-| Identify  | Identify  | [Identify](/docs/analytics/what-is-amplitude/#user-properties-are-details-about-your-user) updates properties/attributes of the user.|
-| Event     | Event     | [Event](/docs/analytics/apis/http-v2-api-quickstart/) in Amplitude tracks the action user is performing.|
+| Identify  | Identify  | Identify updates properties/attributes of the user.|
+| Event     | Event     | Events track the action user is performing.|
 | Screen    | Event     | Create an Event to track Screen views.|
 | Page      | Event     | Create an Event to track Page views.|
-|           | Group     | [Group](/docs/guides/accounts-instrumentation-guide/) is a collection of users. In Amplitude one user could belong to multiple groups. Each group can have properties/attributes that will be available to query/forward on actions performed by any user in the group.|
-| Kits      | Plugins   | [Plugins](/docs/data/sdk-plugins/) lets you extend Amplitude by running a sequence of custom code on every event.|
+|           | Group     | Group is a collection of users. In Amplitude one user could belong to multiple groups. Each group can have properties/attributes that will be available to query/forward on actions performed by any user in the group.|
+| Kits      | Plugins   | Plugins let you extend Amplitude by running a sequence of custom code on every event.|
 
 
 {{partial:tabs tabs="Browser, iOS, Android"}}
@@ -232,7 +232,7 @@ For all other SDKs, see the relevant [SDK documentation](/docs/sdks/analytics).
 
 ## Validate events
 
-Data validation is a critical step in the instrumentation process. Amplitude lets validate your event data via Amplitude's debugging [tools](/docs/data/debugger/).
+Data validation is a critical step in the instrumentation process. Amplitude lets validate your event data via Amplitude's debugging [tools](/docs/analytics/debug-analytics).
 
 ## Add a destination
 
