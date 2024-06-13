@@ -133,6 +133,9 @@ tree:
       -
         id: 77482cc4-a811-4976-abb6-56b02448ad08
         entry: ba19562a-4957-464b-be1c-f86926c58289
+      -
+        id: eb30f600-7dc7-4768-834a-9d61e1090402
+        entry: 11423e67-aee4-4d24-9501-229b6065861b
   -
     id: c2f4f77f-a780-4fa5-adc9-cfc5076045d5
     title: Integrations
