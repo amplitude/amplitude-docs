@@ -3,7 +3,7 @@ template: default
 layout: layout
 mount: ba956cb4-9ae1-456a-b122-984b491048f6
 revisions: false
-route: '/sdks/ampi/{slug}'
+route: '/sdks/ampli/{slug}'
 sort_dir: asc
 date_behavior:
   past: public

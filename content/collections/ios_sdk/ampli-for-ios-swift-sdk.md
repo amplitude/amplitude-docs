@@ -125,7 +125,7 @@ ampli pull
 
 ## Use Ampli
 
-Ampli generates a thin facade over the Amplitude SDK which provides convenience methods. The Ampli Wrapper also grants access to every method of the underlying Amplitude SDK through `Ampli.instance.client`. [More details](/docs/data/sdks/ampli-overview/#wrapping-the-amplitude-sdk).
+Ampli generates a thin facade over the Amplitude SDK which provides convenience methods. The Ampli Wrapper also grants access to every method of the underlying Amplitude SDK through `Ampli.instance.client`. [More details](/docs/sdks/ampli#wrapping-the-amplitude-sdk).
 
 ### Load
 
@@ -392,4 +392,4 @@ The output displays status and indicates what events are missing.
 Events Tracked: 1 missed, 2 total
 ```
 
-Learn more about [`ampli status`](../../ampli/cli.md#ampli-status).
+Learn more about [`ampli status`](/docs/sdks/ampli/ampli-cli#ampli-status).

@@ -11,3 +11,4 @@ collections:
   - react_native_sdk
   - unreal_sdk
   - unity_sdk
+  - python_sdk

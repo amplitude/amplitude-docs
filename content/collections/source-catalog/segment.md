@@ -46,7 +46,7 @@ To ensure that Segment can send data to Amplitude, make sure your Segment's Ampl
 - In your Segment workspace, click **Connections** -> **Sources**. 
 - Verify the status of your Amplitude destination is set to **Enable** to allow Segment to send data to Amplitude
 
-Send data to your Segment source, and [validate your events in Amplitude](../../debugger/).
+Send data to your Segment source, and [validate your events in Amplitude](/docs/analytics/debug-analytics).
 
 ### Client-side bundled integration
 

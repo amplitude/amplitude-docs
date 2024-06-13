@@ -25,11 +25,11 @@ The steps below provide a roadmap to the process of migrating to Amplitude.
 ### Design a data taxonomy
 
 * Your data taxonomy should have events and properties that can answer your core metrics.
-* See the [Data Taxonomy Playbook](/data/data-planning-playbook) and the sample taxonomy below for best practices.
+* See the [Data Taxonomy Playbook](/docs/data/data-planning-playbook) and the sample taxonomy below for best practices.
 
 ### Instrument your taxonomy
 
-You can send data to Amplitude client-side, server-side, or through a third party. For more information, see [Getting Started with Amplitude](/getting-started).
+You can send data to Amplitude client-side, server-side, or through a third party.
 
 ## Suggested use cases and business questions
 
@@ -110,7 +110,7 @@ For client-side event tracking:
 
 For server-side event tracking:
 
-* [Amplitude's Http API](/docs/apis/analytics/http-v3)
+* [Amplitude's Http API](/docs/apis/analytics/http-v2)
 
 ### Map existing Mixpanel methods to Amplitude
 
@@ -133,7 +133,7 @@ Super properties in Mixpanel are properties that attach to all subsequent events
 * Mixpanel uses a combination of `distinct_id` (a randomly generated identifier on a specific platform) and `user_id` (explicitly set by the instrumenting teams) to identify a user with the `'mixpanel.identify()'` method.
 * Amplitude uses a combination of `device_id` (a randomly generated id on a specific platform) and `user_id` (explicitly set by the instrumenting teams) to identify a user with the `'amplitude.identify()'` method.
 
-For more on how Amplitude resolves user identifies, see [Track unique users](/cdp/sources/instrument-track-unique-users)
+For more on how Amplitude resolves user identifies, see [Track unique users](/docs/cdp/sources/instrument-track-unique-users)
 
 ### Migrate existing historical data from Mixpanel to Amplitude
 
@@ -161,8 +161,8 @@ Amplitude provides a tool that can import historical Mixpanel events into your A
 
 If you need to import user profile information, Amplitude provides the following options:
 
-* Export your data from Mixpanel with the Mixpanel [Export](https://developer.mixpanel.com/reference/raw-event-export) and [Engage](https://developer.mixpanel.com/reference/engage-query) APIs, and import it to Amplitude with the [Batch Event Upload API](/analytics/apis/batch-event-upload-api/).
-* If you host your data in another external source, use the [Batch Event Upload API](/analytics/apis/batch-event-upload-api/) directly.
+* Export your data from Mixpanel with the Mixpanel [Export](https://developer.mixpanel.com/reference/raw-event-export) and [Engage](https://developer.mixpanel.com/reference/engage-query) APIs, and import it to Amplitude with the [Batch Event Upload API](/docs/apis/analytics/batch-event-upload).
+* If you host your data in another external source, use the [Batch Event Upload API](/docs/apis/analytics/batch-event-upload) directly.
 * Contact [Amplitude Support](mailto:support@amplitude.com) or your Amplitude account manager for custom services lead by Amplitude's Professional Services team.
 
 ### Troubleshooting
