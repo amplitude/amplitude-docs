@@ -1,4 +1,7 @@
 title: APIs
+sites:
+  - en
+propagate: false
 template: default
 layout: layout
 revisions: false
