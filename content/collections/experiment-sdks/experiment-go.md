@@ -140,11 +140,7 @@ if variant.Value == "on" {
 
 ## Local evaluation
 
-Implements evaluating variants for a user via [local evaluation](./experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](./experiment/local-evaluation#targeting-capabilities).
-
-{{partial:admonition type="warning" heading="Local evaluation mode"}}
-The local evaluation client can only evaluation flags which are [set to local evaluation mode](/docs/experiment/advanced-techniques/create-a-local-evaluation-flag).
-{{/partial:admonition}}
+Implements evaluating variants for a user via [local evaluation](/docs/experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/experiment/local-evaluation#targeting-capabilities).
 
 ### Install
 

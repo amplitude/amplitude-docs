@@ -16,7 +16,6 @@
 	// 	"description": "Log output to console"
 	// }
 	"Admonition": {
-		"scope": "markdown",
 		"prefix": "adm",
 		"body": [
 			"{{partial:admonition type=\"$1\" heading=\"$2\"}}",
@@ -26,7 +25,6 @@
 		"description": "Admonition"
 	},
 	"Tab Group":{
-		"scope": "markdown",
 		"prefix": "tab",
 		"body": [
 			"{{partial:tabs tabs=\"$1, $2\"}}",
@@ -41,11 +39,19 @@
 		"description": "Tab Group"
 	},
 	"Torchlight Annotation": {
-		"scope": "markdown",
 		"prefix": "torch",
 		"body": [
 			"//[tl! $1]"
 		],
 		"description": "Torchlight Annotation"
+	},
+	"Collapse": {
+		"prefix": "coll",
+		"body": [
+			"{{partial:collapse name=\"$1\"}}",
+			"$TM_SELECTED_TEXT",
+			"{{/partial:collapse}}" 
+		],
+		"description": "Collapse section"
 	},
 }

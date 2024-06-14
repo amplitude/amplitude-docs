@@ -90,15 +90,15 @@ class YourClass {
 | `enableCoppaControl` | `bool`. Whether to enable COPPA control for tracking options. | `false` |
 | `flushEventsOnClose` | `bool`. Flush unsent events on app close. | `true` |
 | `identifyBatchIntervalMillis` | `int`. The amount of time SDK attempts to batch intercepted identify events. The value is in milliseconds| `30000` |
-| `migrateLegacyData` | `bool`. Whether to migrate maintenance Android SDK and maintenance iOS SDK data (events, user/device ID). Learn more at the configuration section of the underlying [Kotlin SDK](/docs/data/sdks/android-kotlin/#configuration) and [Swift SDK](/docs/data/sdks/ios-swift/#configuration). | `true`|
+| `migrateLegacyData` | `bool`. Whether to migrate maintenance Android SDK and maintenance iOS SDK data (events, user/device ID). Learn more at the configuration section of the underlying [Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk/#configuration) and [Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk/#configuration). | `true`|
 
 ### Configuration for Android
 
 | Name  | Description | Default Value |
 | --- | --- | --- |
-| `locationListening` | `bool`. Whether to enable Android location service. Learn more [here](/docs/data/sdks/android-kotlin/#location-tracking).| `true` |
-| `useAdvertisingIdForDeviceId` | `bool`. Whether to use advertising id as device id. Check [here](/docs/data/sdks/android-kotlin/#advertiser-id) for required module and permission. | `false` |
-| `useAppSetIdForDeviceId` | `bool`.  Whether to use app set id as device id. Check [here](/docs/data/sdks/android-kotlin/#app-set-id) for required module and permission. | `false` |
+| `locationListening` | `bool`. Whether to enable Android location service. Learn more [here](/docs/sdks/analytics/android/android-kotlin-sdk/#location-tracking).| `true` |
+| `useAdvertisingIdForDeviceId` | `bool`. Whether to use advertising id as device id. Check [here](/docs/sdks/analytics/android/android-kotlin-sdk/#advertiser-id) for required module and permission. | `false` |
+| `useAppSetIdForDeviceId` | `bool`.  Whether to use app set id as device id. Check [here](/docs/sdks/analytics/android/android-kotlin-sdk/#app-set-id) for required module and permission. | `false` |
 
 ### Configure batching behavior
 

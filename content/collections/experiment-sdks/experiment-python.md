@@ -171,11 +171,6 @@ experiment.fetch_async_v2(user, fetch_callback)
 
 Implements evaluating variants for a user via [local evaluation](/docs/experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/experiment/local-evaluation#targeting-capabilities).
 
-!!!warning "Local Evaluation Mode"
-{{partial:admonition type="warning" heading="Local evaluation mode"}}
-The local evaluation client can only evaluation flags which are [set to local evaluation mode](/docs/experiment/advanced-techniques/create-a-local-evaluation-flag).
-{{/partial:admonition}}
-
 ### Install
 
 Install the Python Server SDK's local evaluation.
@@ -231,7 +226,6 @@ variants = experiment.evaluate_v2(user)
 
 Initializes a [local evaluation](/docs/experiment/local-evaluation) client.
 
-!!!warning "Server Deployment Key"
 {{partial:admonition type="warning" heading="Server deployment key"}}
 You must [initialize](#initialize_1) the local evaluation client with a server [deployment](/docs/experiment/data-model#deployments) key in to get access to local evaluation flag configs.
 {{/partial:admonition}}

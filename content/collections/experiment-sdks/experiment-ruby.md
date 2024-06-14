@@ -184,11 +184,6 @@ end
 
 Implements evaluating variants for a user via [local evaluation](/docs/experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/experiment/local-evaluation#targeting-capabilities).
 
-!!!warning "Local Evaluation Mode"
-{{partial:admonition type="warning" heading="Local evaluation mode"}}
-The local evaluation client can only evaluation flags which are [set to local evaluation mode](/docs/experiment/advanced-techniques/create-a-local-evaluation-flag).
-{{/partial:admonition}}
-
 ### Install
 
 Install the Ruby Server SDK's local evaluation.
