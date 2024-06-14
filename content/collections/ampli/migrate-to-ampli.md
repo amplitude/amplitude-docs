@@ -34,7 +34,7 @@ amplitude.flush();
 
 ### Step 1 - Amplitude SDK & Ampli Together
 
-It is easy to use Ampli with your existing Amplitude SDK implementation. Learn more about how Ampli and the Amplitude SDK work together in the [Ampli overview](/docs/data/sdks/ampli-overview) documentation.
+It is easy to use Ampli with your existing Amplitude SDK implementation. Learn more about how Ampli and the Amplitude SDK work together in the [Ampli overview](/docs/sdks/ampli) documentation.
 
 Start by passing your existing Amplitude SDK instance to Ampli. Ampli will use the given instance for all event tracking. This includes the API key, plugins, storage provider, log provider and other configuration set on the Amplitude instance.
 

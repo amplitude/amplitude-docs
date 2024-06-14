@@ -31,7 +31,7 @@ If `execute()` doesn't returns an event, the event will **NOT** propagate throug
 
 ## Enrichment plugins
 
-Enrichment plugins modify properties in Event objects or drop an Event. Here are the [available keys for Event Object](/docs/apis/http-v2/#keys-for-the-event-argument) which you can enrich in the Enrichment Plugin.
+Enrichment plugins modify properties in Event objects or drop an Event. Here are the [available keys for Event Object](/docs/apis/analytics/http-v2#keys-for-the-event-argument) which you can enrich in the Enrichment Plugin.
 
 ### Drop an event
 
@@ -683,9 +683,9 @@ export class FullstoryPlugin implements DestinationPlugin {
 | Platform                                                 | SDK                                                                                                                           | Github                                                                                                                                |
 | -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | [Browser](/docs/sdks/analytics/browser/browser-sdk-2/#plugin)            | [`@amplitude/analytics-browser`](https://www.npmjs.com/package/@amplitude/analytics-browser)            | [Amplitude-TypeScript](https://github.com/amplitude/Amplitude-TypeScript)                                           |
-| [Android](http://amplitude-docs.test/sdks/analytics/android/android-kotlin-sdk)  | [`com.amplitude:analytics-android`](https://mvnrepository.com/artifact/com.amplitude/analytics-android) | [Amplitude-Kotlin](https://github.com/amplitude/Amplitude-Kotlin)                                                   |
-| [Node.js](http://amplitude-docs.test/sdks/analytics/node/node-js-sdk/#plugins)              | [`@amplitude/analytics-node`](https://www.npmjs.com/package/@amplitude/analytics-node)                  | [Amplitude-Typescript](https://github.com/amplitude/Amplitude-TypeScript/tree/main/packages/analytics-node)         |
+| [Android](/docs/sdks/analytics/android/android-kotlin-sdk)  | [`com.amplitude:analytics-android`](https://mvnrepository.com/artifact/com.amplitude/analytics-android) | [Amplitude-Kotlin](https://github.com/amplitude/Amplitude-Kotlin)                                                   |
+| [Node.js](/docs/sdks/analytics/node/node-js-sdk#plugins)              | [`@amplitude/analytics-node`](https://www.npmjs.com/package/@amplitude/analytics-node)                  | [Amplitude-Typescript](https://github.com/amplitude/Amplitude-TypeScript/tree/main/packages/analytics-node)         |
 | [React Native](/docs/sdks/analytics/react-native/#plugins) | [`@amplitude/analytics-react-native`](https://www.npmjs.com/package/@amplitude/analytics-react-native)  | [Amplitude-TypeScript](https://github.com/amplitude/Amplitude-TypeScript/tree/main/packages/analytics-react-native) |
-| [iOS](/docs/sdks/analytics/ios-swift#amplitude-sdk-plugin)           | `AmplitudeSwift`                                                                                        | [Amplitude-Swift](https://github.com/amplitude/Amplitude-Swift)                                                     |
+| [iOS](/docs/sdks/analytics/ios/ios-swift-sdk#amplitude-sdk-plugin)           | `AmplitudeSwift`                                                                                        | [Amplitude-Swift](https://github.com/amplitude/Amplitude-Swift)                                                     |
 | [Python](/docs/sdks/analytics/python/#amplitude-sdk-plugin)           | [`amplitude-analytics`](https://pypi.org/project/amplitude-analytics/)                                  | [Amplitude-Python](https://github.com/amplitude/Amplitude-Python)                                                   |
 | [Go](/docs/sdks/analytics/go#amplitude-sdk-plugin)                   | [`github.com/amplitude/analytics-go`](https://pkg.go.dev/github.com/amplitude/analytics-go)             | [analytics-go](https://github.com/amplitude/analytics-go)                                                           |

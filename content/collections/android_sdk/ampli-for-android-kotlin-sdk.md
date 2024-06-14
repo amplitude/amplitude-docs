@@ -307,7 +307,7 @@ Ampli.getInstance().eventName(EventName event, EventOptions options)
 {{/partial:tab}}
 {{/partial:tabs}}
 
-The `options` argument allows you to pass [Amplitude fields](/docs/apis/http-v2/#properties-1), like `deviceID`.
+The `options` argument allows you to pass [Amplitude fields](/docs/apis/analytics/http-v2#properties-1), like `deviceID`.
 
 For example, in the following code snippets, your tracking plan contains an event called `songPlayed`. The event is defined with two required properties: `songId` and `songFavorited.` The property type for `songId` is string, and `songFavorited` is a boolean.
 
@@ -528,4 +528,4 @@ The output displays status and indicates what events are missing.
 Events Tracked: 1 missed, 2 total
 ```
 
-Learn more about [`ampli status`](../../ampli/cli.md#ampli-status).
+Learn more about [`ampli status`](/docs/sdks/ampli/ampli-cli#ampli-status).
