@@ -1,8 +1,11 @@
 {{ if segment_1}}
     {{container = "#algolia-search-header"}}
 {{ else }}
+  {{if site == 'jp'}}
+    {{container = "#algolia-search-header"}}
+  {{/if}}
     {{container = "#algolia-search"}}
-    {{/if}}
+{{/if}}
 <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
 <script type="text/javascript">
   docsearch({

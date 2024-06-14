@@ -1,5 +1,14 @@
+{{if site == 'jp'}}
+<div class="box-border flex flex-row flex-nowrap items-center border-solid border-b border-black-200 h-12 px-4"
+    style="margin-left: -20px; margin-top: -20px;">
+    <div class="flex-auto mr-4"><a class="no-underline" href="/docs/jp">{{svg src="/docs/assets/home/amplitude.svg" class="inline"}} <span class="inline text-xs uppercase text-black-600 ml-2">ドキュメンテーション</span></a></div>
+    <div id="algolia-search-header"></div>
+</div>
+{{else}}
+
 <div class="box-border flex flex-row flex-nowrap items-center border-solid border-b border-black-200 h-12 px-4"
     style="margin-left: -20px; margin-top: -20px;">
     <div class="flex-auto mr-4"><a class="no-underline" href="/docs">{{svg src="/docs/assets/home/amplitude.svg" class="inline"}} <span class="inline text-xs uppercase text-black-600 ml-2">documentation</span></a></div>
     {{if segment_1}}<div id="algolia-search-header"></div>{{/if}}
 </div>
+{{/if}}

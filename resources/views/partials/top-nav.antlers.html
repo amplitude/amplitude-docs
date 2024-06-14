@@ -1,3 +1,10 @@
+{{ if site == 'jp'}}
+<div class="box-border flex flex-row flex-nowrap items-center border-solid border-b border-black-200 h-12 px-4 justify-start"
+    style="margin-left: -20px; margin-top: -20px;">
+    <div class="flex-initial mr-4 text-sm p-2 transition hover:bg-amp-blue-950 hover:rounded hover:p-2 relative"><a class="no-underline font-normal" href="/docs">Amplitude English Documentation</a></div>
+</div>
+
+{{else}}
 <div class="box-border flex flex-row flex-nowrap items-center border-solid border-b border-black-200 h-12 px-4 justify-start"
     style="margin-left: -20px; margin-top: -20px;">
     {{ nav:collection:sections sort="order" }}
@@ -15,3 +22,5 @@
         {{ /if }}
     {{ /nav:collection:sections }}
 </div>
+
+{{/if}}
