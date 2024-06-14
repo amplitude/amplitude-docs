@@ -402,4 +402,4 @@ The output displays status and indicates what events are missing.
 Events Tracked: 1 missed, 2 total
 ```
 
-Learn more about [`ampli status`](../../ampli/cli.md#ampli-status).
+Learn more about [`ampli status`](/docs/sdks/ampli/ampli-cli#ampli-status).

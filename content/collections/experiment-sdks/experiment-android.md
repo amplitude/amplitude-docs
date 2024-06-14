@@ -381,7 +381,7 @@ try {
 
 ### Fetch
 
-Fetches variants for a [user](/docs/experiment/data-model#users) and store the results in the client for fast access. This function [remote evaluates](../general/evaluation/remote-evaluation.md) the user for flags associated with the deployment used to initialize the SDK client.
+Fetches variants for a [user](/docs/experiment/data-model#users) and store the results in the client for fast access. This function [remote evaluates](/docs/experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
 
 ```kotlin
 fun fetch(user: ExperimentUser? = null, options: FetchOptions? = null): Future<ExperimentClient>
@@ -441,7 +441,7 @@ experiment.fetch()
 {{partial:admonition type="tip" heading="Fetch when user identity changes"}}
 If you want the most up-to-date variants for the user, it's recommended that you call `fetch()` whenever the user state changes in a meaningful way. For example, if the user logs in and receives a user ID, or has a user property set which may effect flag or experiment targeting rules.
 
-In the case of **user properties**, Amplitude recommends passing new user properties explicitly to `fetch()` instead of relying on user enrichment prior to [remote evaluation](../general/evaluation/remote-evaluation.md). This is because user properties that are synced remotely through a separate system have no timing guarantees with respect to `fetch()` -- for example, a race.
+In the case of **user properties**, Amplitude recommends passing new user properties explicitly to `fetch()` instead of relying on user enrichment prior to [remote evaluation](/docs/experiment/remote-evaluation). This is because user properties that are synced remotely through a separate system have no timing guarantees with respect to `fetch()` -- for example, a race.
 {{/partial:admonition}}
 
 {{partial:admonition type="info" heading="Timeout and retries"}}
@@ -462,7 +462,7 @@ fun variant(key: String, fallback: Variant? = null): Variant
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `key` | required | The **flag key** to identify the [flag or experiment](../general/data-model.md#flags-and-experiments) to access the variant for. |
+| `key` | required | The **flag key** to identify the [flag or experiment](/docs/experiment/data-model#flags-and-experiments) to access the variant for. |
 | `fallback` | optional | The value to return if no variant was found for the given `flagKey`. |
 
 When determining which variant a user has been bucketed into, you'll want to compare the variant `value` to a well-known string.

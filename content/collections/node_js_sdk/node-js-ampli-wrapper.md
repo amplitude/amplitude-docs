@@ -367,7 +367,7 @@ Ampli project is not initialized. No existing `ampli.json` configuration found.
 ? Source: My Source
 ```
 
-Learn more about [`ampli pull`](../../ampli/cli.md#ampli-pull).
+Learn more about [`ampli pull`](/docs/sdks/ampli/ampli-cli#ampli-pull).
 
 ### Status
 
@@ -387,7 +387,7 @@ The output displays status and indicates what events are missing.
 Events Tracked: 1 missed, 2 total
 ```
 
-Learn more about [`ampli status`](../../ampli/cli.md#ampli-status).
+Learn more about [`ampli status`](/docs/sdks/ampli/ampli-cli#ampli-status).
 
 ## Migrate from Ampli (Legacy) for the `@amplitude/node` runtime
 
