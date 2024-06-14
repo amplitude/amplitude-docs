@@ -62,11 +62,11 @@ class YourClass {
 
 ## Configure the SDK
 
-The Amplitude Flutter SDK runs on the top of the [Amplitude Android Maintenance SDK](/docs/sdks/analytics/android/android-sdk), [Amplitude iOS Maintenance SDK](/docs/sdks/analytics/ios-swift) and [Amplitude JavaScript Maintenance SDK](/docs/sdks/analytics/browser/javascript-sdk). The following are the Dart settable config options.
+The Amplitude Flutter SDK runs on the top of the [Amplitude Android Maintenance SDK](/docs/sdks/analytics/android/android-sdk), [Amplitude iOS Maintenance SDK](/docs/sdks/analytics/ios/ios-swift-sdk) and [Amplitude JavaScript Maintenance SDK](/docs/sdks/analytics/browser/javascript-sdk). The following are the Dart settable config options.
 For other default configurations:
 
 - on Android, check the [Android Configuration](/docs/sdks/analytics/android/android-sdk#configuration)
-- on iOS, check the [iOS configuration](/docs/sdks/analytics/ios-swift#configuration)
+- on iOS, check the [iOS configuration](/docs/sdks/analytics/ios/ios-swift-sdk#configuration)
 - on browser, check the [browser configuration](./sdks/analytics/browser/javascript-sdk#configuration)
 
 | Name  | Description | Default Value |

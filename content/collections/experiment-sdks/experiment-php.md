@@ -139,11 +139,6 @@ if ($variant) {
 
 Implements evaluation of variants for a user through [local evaluation](/docs/experiment/local-evaluation). If you plan to use local evaluation, you should [understand the tradeoffs](/docs/experiment/local-evaluation#targeting-capabilities).
 
-
-{{partial:admonition type="note" heading="Local evaluation more"}}
-The local evaluation client can only evaluate flags which are [set to local evaluation mode](/docs/experiment/advanced-techniques/create-a-local-evaluation-flag).
-{{/partial:admonition}}
-
 {{partial:admonition type="tip" heading="Quick start"}}
  1. [Initialize the local evaluation client.](#initialize-local-evaluation)
  2. [Fetch flag configs for the local evaluation client.](#refreshFlagConfigs)
@@ -282,7 +277,7 @@ if ($variant) {
 
 ### Assignment tracking
 
-You can configure the local evaluation client to send [assignment events](../../general/experiment-event-tracking/#assignment-events) to Amplitude.
+You can configure the local evaluation client to send [assignment events](/docs/experiment/under-the-hood/event-tracking#assignment-events) to Amplitude.
 
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |

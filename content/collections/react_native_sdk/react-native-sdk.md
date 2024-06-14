@@ -116,7 +116,7 @@ The configuration of the SDK is shared across web and mobile platforms, but many
 |`cookieSameSite` | `string`. Sets `SameSite` property of cookies created. | `Lax` |
 |`cookieSecure` | `boolean`. Sets `Secure` property of cookies created. | `false` |
 |`cookieStorage` | `Storage<UserSession>`. Sets a custom implementation of `Storage<UserSession>` to persist user identity. | `MemoryStorage<UserSession>` |
-|`cookieUpgrade`| `boolean`. Sets upgrading from cookies created by [maintenance Browser SDK](/docs/data/sdks/javascript/). If true, new Browser SDK deletes cookies created by maintenance Browser SDK. If false, Browser SDK keeps cookies created by maintenance Browser SDK. | `true` |
+|`cookieUpgrade`| `boolean`. Sets upgrading from cookies created by [maintenance Browser SDK](/docs/data/sdks/analytics/javascript/). If true, new Browser SDK deletes cookies created by maintenance Browser SDK. If false, Browser SDK keeps cookies created by maintenance Browser SDK. | `true` |
 |`disableCookies`| `boolean`. Sets permission to use cookies. If value is `true`, localStorage API is used to persist user identity. | The cookies is enable by default. |
 |`domain` | `string`. Sets the domain property of cookies created. | `undefined` |
 |`partnerId` | `string`. Sets partner ID. Amplitude requires the customer who built an event ingestion integration to add the partner identifier to `partner_id`. | `undefined` |
@@ -770,7 +770,7 @@ We do not automatically set precise location in the SDK to avoid extra permissio
 
 To set fine grain location, you can use an enrichment Plugin. Here is an [example](https://github.com/amplitude/Amplitude-TypeScript/blob/v1.x/examples/plugins/react-native-get-location-plugin/LocationPlugin.ts) of how to set `location_lat` and `location_lng`.
 
-Note that disabling IP tracking via `ipTracking: false` in [TrackingOptions](/docs/data/sdks/typescript-react-native/#optional-tracking) will prevent location from being resolved on the backend. In this case you may want to create a Plugin like above to set any relevant location information yourself.
+Note that disabling IP tracking via `ipTracking: false` in [TrackingOptions](/docs/data/sdks/analytics/typescript-react-native/#optional-tracking) will prevent location from being resolved on the backend. In this case you may want to create a Plugin like above to set any relevant location information yourself.
 
 ### Carrier
 
@@ -819,7 +819,7 @@ Android Ad ID is a unique identifier for each device. Android Ad ID is reset by 
 
 To use Android Ad ID, follow these steps.
 
-1. Add `play-services-ads-identifier` as a dependency to the Android project of your app. More detailed setup is [described in our latest Android SDK docs](/docs/data/sdks/android-kotlin/#advertiser-id).
+1. Add `play-services-ads-identifier` as a dependency to the Android project of your app. More detailed setup is [described in our latest Android SDK docs](/docs/data/sdks/analytics/android-kotlin/#advertiser-id).
 
     ```bash
     dependencies {

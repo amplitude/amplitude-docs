@@ -181,7 +181,7 @@ ampli.identify('user-id', {
 
 ```
 
-The options argument allows you to pass [Amplitude fields](/docs/apis/http-v2/#keys-for-the-event-argument) for this call, such as `deviceId`.
+The options argument allows you to pass [Amplitude fields](/docs/apis/analytics/http-v2#keys-for-the-event-argument) for this call, such as `deviceId`.
 
 TypeScriptJavaScript
 

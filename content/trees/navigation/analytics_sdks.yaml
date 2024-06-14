@@ -53,6 +53,16 @@ tree:
         id: edf55edf-4064-4530-b553-da06e71b15fb
         entry: c71d80ea-d8a8-4bf2-8c78-fa3e8f061a95
   -
+    id: 14ebe790-acc4-4e6e-aa0c-c091bd3cdec9
+    title: Python
+    children:
+      -
+        id: 330f49f9-42cb-46ba-898f-d3556412a335
+        entry: 48d6de5e-571a-4b30-bb6c-d2b615f3c73c
+      -
+        id: 09e64cf6-fc27-4f85-80ce-5435d7940d1e
+        entry: 1af7ad64-aaae-45df-b562-e7ebe3470288
+  -
     id: a9f79548-98e3-4713-aa6f-1449ce435ffd
     title: iOS
     children:
@@ -89,6 +99,9 @@ tree:
     id: 357d74c2-3e9e-41d4-9cef-01fbf6ee1ea1
     title: 'React Native'
     children:
+      -
+        id: c1414966-e4c4-4ee5-9f1d-da7fcf35ef43
+        entry: 1962c691-4ecd-4b0f-bff9-1807438bc582
       -
         id: 65569ef0-5671-458d-8790-02730d842728
         entry: 0d5a2d8a-7266-4442-807c-2f2f84fe1ae5
