@@ -34,3 +34,10 @@ preferences:
       after_save: create_another
     warehouse_native_amplitude:
       after_save: create_another
+    japanese_translation:
+      columns:
+        - title
+        - title_en
+        - slug
+        - source
+      per_page: 500

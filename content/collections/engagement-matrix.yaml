@@ -13,7 +13,7 @@ preview_targets:
     label: Entry
     url: '{permalink}'
     refresh: true
-structure:
-  root: false
 inject:
   nav_title: charts
+structure:
+  root: false
