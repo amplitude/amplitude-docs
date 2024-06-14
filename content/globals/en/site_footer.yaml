@@ -1,0 +1,133 @@
+footer_details:
+  -
+    id: lv1if716
+    group_title: Platform
+    links:
+      -
+        id: lv1ifc6w
+        link_text: Analytics
+        link_url: 'https://amplitude.com/amplitude-analytics'
+      -
+        id: lv1ifph7
+        link_text: Experiment
+        link_url: 'https://amplitude.com/amplitude-experiment'
+      -
+        id: lv1ig23d
+        link_text: 'Customer Data Platform'
+        link_url: 'https://amplitude.com/customer-data-platform'
+      -
+        id: lv1ig7dk
+        link_text: 'Session Replay'
+        link_url: 'https://amplitude.com/session-replay'
+    type: link_group
+    enabled: true
+  -
+    id: lv1igh9p
+    group_title: Resources
+    links:
+      -
+        id: lv1igknd
+        link_text: 'Resource Center'
+        link_url: 'https://amplitude.com/resources'
+      -
+        id: lv1igtg5
+        link_text: Blog
+        link_url: 'https://amplitude.com/blog'
+      -
+        id: lv1ihle9
+        link_text: 'Amp Champs'
+        link_url: 'https://amplitude.com/amp-champs'
+      -
+        id: lv1ihxcs
+        link_text: 'Amplitude Academy'
+        link_url: 'https://academy.amplitude.com/'
+      -
+        id: lv1ii6ka
+        link_text: Events
+        link_url: 'https://amplitude.com/events'
+    type: link_group
+    enabled: true
+  -
+    id: lv1itlpz
+    group_title: Support
+    links:
+      -
+        id: lv1itpc9
+        link_text: 'Contact Us'
+        link_url: 'https://amplitude.com/contact'
+      -
+        id: lv1iu73l
+        link_text: Community
+        link_url: 'https://amplitude.com/community'
+      -
+        id: lv1iujxz
+        link_text: Documentation
+        link_url: 'https://amplitude.com/docs'
+    type: link_group
+    enabled: true
+  -
+    id: lv1iuv0p
+    group_title: Partners
+    links:
+      -
+        id: lv1iuzsd
+        link_text: 'Find a Partner'
+        link_url: 'https://partnerships.amplitude.com/English/directory/'
+    type: link_group
+    enabled: true
+  -
+    id: lv1ivbgf
+    group_title: Company
+    links:
+      -
+        id: lv1ivewx
+        link_text: 'About Us'
+        link_url: 'https://amplitude.com/company'
+      -
+        id: lv1ivnnr
+        link_text: Careers
+        link_url: 'https://amplitude.com/careers'
+      -
+        id: lv1ivo82
+        link_text: 'Press & News'
+        link_url: 'https://amplitude.com/press'
+      -
+        id: lv1ivpm2
+        link_text: 'Investor Relations'
+        link_url: 'https://investors.amplitude.com/'
+      -
+        id: lv1ivzyx
+        link_text: 'Diversity, Equity & Inclusion'
+        link_url: 'https://amplitude.com/diversity-equity-inclusion'
+    type: link_group
+    enabled: true
+social_links:
+  -
+    id: lv1j6f9r
+    social_icon: general/linkedin.svg
+    social_url: 'https://www.linkedin.com/company/amplitude-analytics'
+  -
+    id: lv1j6oei
+    social_icon: general/twitter.svg
+    social_url: 'https://twitter.com/Amplitude_HQ'
+  -
+    id: lv1j6w21
+    social_icon: general/g2.svg
+    social_url: 'https://www.g2.com/products/amplitude-analytics/reviews'
+general_links:
+  -
+    id: lv1je3sh
+    link_text: 'Terms of Service'
+    link_url: 'https://amplitude.com/terms'
+  -
+    id: lv1je9uo
+    link_text: 'Privacy Notice'
+    link_url: 'https://amplitude.com/privacy'
+  -
+    id: lv1jeac5
+    link_text: 'Acceptable Use Policy'
+    link_url: 'https://amplitude.com/aup'
+  -
+    id: lv1jeahg
+    link_text: Legal
+    link_url: 'https://amplitude.com/legal'

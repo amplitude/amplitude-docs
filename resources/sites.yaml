@@ -1,4 +1,9 @@
-default:
+en:
   name: '{{ config:app:name }}'
   url: /docs
   locale: en_US
+jp:
+  name: '{{ config:app:name }} - Japanese'
+  url: /docs/jp
+  locale: ja-JP
+  lang: ja
