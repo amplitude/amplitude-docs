@@ -1,9 +1,8 @@
-{{ if segment_1}}
+{{ if site == 'jp'}}
     {{container = "#algolia-search-header"}}
-{{ else }}
-  {{if site == 'jp'}}
+{{ elseif segment_1}}
     {{container = "#algolia-search-header"}}
-  {{/if}}
+  {{else}}
     {{container = "#algolia-search"}}
 {{/if}}
 <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
