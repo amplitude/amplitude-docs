@@ -1,0 +1,77 @@
+title: 'Japanese Translation'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: false
+              validate:
+                - required
+          -
+            handle: content
+            field:
+              type: markdown
+              antlers: true
+              display: Content
+              localizable: true
+          -
+            handle: author
+            field:
+              type: users
+              display: Author
+              default: current
+              localizable: true
+              max_items: 1
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
+              localizable: true
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: source
+            field:
+              type: text
+              display: Source
+              localizable: false
+          -
+            handle: title_en
+            field:
+              type: text
+              display: Title_EN
+              localizable: false
+  alt_sitemap:
+    display: 'Alt Sitemap'
+    sections:
+      -
+        fields:
+          -
+            handle: sitemap_priority
+            field:
+              type: float
+              display: 'Sitemap Priority'
+              instructions: 'From 0.0 (lowest priority) to 1.0 (highest priority)'
+              localizable: false
+          -
+            handle: exclude_from_sitemap
+            field:
+              type: toggle
+              display: 'Exclude from sitemap?'
+              localizable: false

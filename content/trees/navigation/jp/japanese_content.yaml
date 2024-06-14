@@ -1,0 +1,253 @@
+tree:
+  -
+    id: 4f873ad4-a4bd-46e1-b2fa-680d69446ca7
+    title: 'Amplitude Analytics'
+    children:
+      -
+        id: f72be7c9-58a9-4637-b43e-69b3d1fa40ea
+        title: 'Get Started with Charts'
+        children:
+          -
+            id: fcb71809-ecd2-476c-b625-c4d2ad328cbe
+            entry: c981cbe4-a7ce-4471-a6a1-c47d3f3f72f1
+          -
+            id: ceebc122-2295-4ac7-bb8c-9e89cf6c70c1
+            entry: 5b5fafdc-5665-4979-a8ce-215fa6357dca
+          -
+            id: 0e0a4c42-4b4b-4f41-9068-adbbc0d33f17
+            entry: 3b7fa56c-a46a-4f5e-91f2-44b41e6b6dad
+          -
+            id: 6d1273fe-8217-42df-b30e-7e89b8d7de82
+            entry: 9704c291-c479-4b4f-9a21-238736e16967
+          -
+            id: 4bf490d4-d9b3-4d0a-81d1-fbc1b271c936
+            entry: cf4e3920-1b57-47c9-b77d-0abd4e86c24e
+          -
+            id: c9c98e00-4f4c-41a7-b76b-6818c5ea9687
+            entry: 53a823fe-2224-4238-80f0-9271b9097573
+      -
+        id: 74642dbd-e02b-4cf8-b03b-22ddc8d815a6
+        title: 'Event Segmentation'
+        children:
+          -
+            id: d6bf6dcf-a028-4f4d-b132-fffaa1c9a7d3
+            entry: 52560591-6703-4d36-accc-4d7a295c7aed
+          -
+            id: 680a05be-cc77-4dc0-af19-f7b1e57ee664
+            entry: 21f07c6d-a00d-4f08-ad76-afe8149ac5e3
+          -
+            id: 276a5646-cb24-4d3b-b34b-41ff8589ac19
+            entry: a614c0d6-f644-4121-b5c8-e4a2a222a5ca
+          -
+            id: d005b7ff-cc59-45fe-9fb2-83224ee3b1ee
+            entry: 2f5014ce-5202-43de-8b88-941d4b80369a
+          -
+            id: 9099e74a-1608-4422-8209-bf9d6b9e0381
+            entry: c5b4ee47-fb78-4b53-a271-e8561b2e4438
+      -
+        id: 39a18abc-08e9-4059-8e6a-3a0bd1e7bee6
+        title: 'Retention Analysis'
+        children:
+          -
+            id: 66b16320-1d63-4794-8ead-37c23252827e
+            entry: efc1c9e5-28c9-482f-b74b-494f648a400c
+          -
+            id: 4008a488-58db-4cfb-9612-65691ccc7673
+            entry: f505671d-d69f-46fa-9431-8e1903256837
+          -
+            id: 79a5063d-6e85-46e6-884c-0466a697e265
+            entry: 7539e9dc-fe55-49b2-89db-1fcbbd317448
+          -
+            id: deae5113-38db-4d59-b3b1-a12bde7aaa39
+            entry: baec9f8b-6bbc-47d5-90c5-36c265382c60
+          -
+            id: 9883bc59-bc7a-4982-ae25-ddb411b72118
+            entry: b7159750-bf54-47b6-8571-23cc629789c8
+      -
+        id: 67991735-3700-4b14-82a0-07ec0037fbac
+        title: Journeys
+        children:
+          -
+            id: bffd11f4-008f-4d98-87b5-bbd4e7cc4aba
+            entry: 7a79aaaf-211d-4af3-bea4-27ad2e7a9b95
+          -
+            id: 9e80139d-48f4-4535-b311-11dad3be63e5
+            entry: 2e7f6a63-7cd3-4741-8edc-18990be3b0ed
+      -
+        id: 7daf9fed-bcd9-4138-bee0-4a6b7a7fef8e
+        title: Compass
+        children:
+          -
+            id: 32b4d2e1-174d-4969-a665-0e539e9c63b7
+            entry: 0d00b956-d7d0-4f07-83cc-3d2cfbf5ee56
+          -
+            id: b907d305-b3d5-4d69-95c6-a71d70bd4c65
+            entry: d20dd204-aa79-4e55-993d-49f6be053a5f
+          -
+            id: d88acec6-0c26-46ab-b818-4fd425ddef28
+            entry: efe89917-90d5-454f-a452-5523bccfb62e
+      -
+        id: 6fcfda5f-a068-4a57-a55b-17431793f9b3
+        title: Stickiness
+        children:
+          -
+            id: 3fe4d6ef-82b1-45ac-af0c-cd1d9245fc5e
+            entry: d98beb68-379e-4e04-8ba4-1b00537f1a87
+          -
+            id: 32ae683f-125c-48ab-b620-c78b86e9f4d0
+            entry: 8d9eec3c-8a58-44ab-94b7-b4a186f58bed
+      -
+        id: 944e236c-3d75-4856-a055-957c5868f189
+        title: 'Other charts'
+        children:
+          -
+            id: 12d96fe6-4e40-421f-b3a0-272413d675b9
+            entry: 1da4438e-996f-488b-87cd-96b32986ca59
+          -
+            id: 37e3dc47-d86c-48f1-b6b3-53eda547ed04
+            entry: 5b180819-47e3-49b8-b0d8-2ac0110a76d2
+      -
+        id: a7df7fa6-10a4-4452-abc4-158ebd9a6e80
+        title: 'Advanced topics in charts'
+        children:
+          -
+            id: 46b293df-9f43-43a6-9c71-84097f4409b2
+            entry: b4da41d5-f15c-4411-bc76-9747e3ce37d7
+          -
+            id: 6e7825d8-808d-4491-8cd1-e540ed495329
+            entry: 8afad8ee-1e24-4741-893b-529c425fa7e1
+          -
+            id: a7131364-c43d-4fa5-bb51-475f5f269d4c
+            entry: 2d0718df-6de6-4481-8d7e-2b1abc7a1c7d
+          -
+            id: 25470cba-4bc0-4a6a-a884-43aff2d6a0f0
+            entry: a92ece1e-9b27-43a9-8fb7-e32b15cd814d
+          -
+            id: c0fb236c-7b5d-43d1-8778-fa16f6149a90
+            entry: edbc937e-8b36-4198-b1b4-ca9b8dba85eb
+      -
+        id: b58f449f-352b-414e-b6bb-39eb0a9366ca
+        title: 'Organize your analyses'
+        children:
+          -
+            id: b3ce2f3e-0368-4a7b-9eb3-a42f9c4b493b
+            entry: b3cb46de-bf66-42b9-84e2-069e14064f8f
+          -
+            id: 88c8cd77-fd04-40de-9f06-cd21ee083537
+            entry: fd9e7a1b-67a2-4bcd-ab8c-092c386417e6
+          -
+            id: d8fcadbd-715a-4ed1-b4ac-b104ac341a3e
+            entry: 426d882a-a31f-44d8-b704-7d7f945f973b
+      -
+        id: 139bd09b-5e37-4d43-acad-8ead8b092ade
+        title: 'Collaborate with team members'
+        children:
+          -
+            id: 0986beef-c811-4496-8094-186598657edc
+            entry: 5ed3eb30-1507-4039-a4df-4ed8fd2900ee
+          -
+            id: 60bac70d-57db-436d-bdf0-9872a12ec187
+            entry: 79a08719-f41b-490e-9e84-b84d7c1e59a1
+          -
+            id: ae5cfbf4-c82a-4e82-93eb-6671818e67fd
+            entry: c8a0c0fa-e142-4589-8068-276522043982
+      -
+        id: a31fffd4-8683-4dbe-b06f-8c6300109573
+        title: 'Share your work with external stakeholders'
+        children:
+          -
+            id: 0b6cfe8a-b767-4fe2-aeda-42ea263502e9
+            entry: dc9fc5ce-feb8-4f83-88d2-69839d1aa238
+          -
+            id: a3e776d6-b385-4da8-9481-aec44f3ad9e9
+            entry: 5bdf7bd9-8048-440f-9f4e-c763ec04e59d
+          -
+            id: b4e34955-8581-4fe9-8df5-ba326c5e6e86
+            entry: 1e08e79b-90d0-4def-a7f0-948535e79580
+          -
+            id: d230ef65-0dc4-480c-be3c-30bb94407496
+            entry: 598a1c7e-a7f4-4cd2-84e3-3e255cd4d449
+          -
+            id: 3904f1ae-2cef-4679-a9f2-372a4faf94e9
+            entry: df4f3d08-420b-45b5-8e8b-f3151b1a2d53
+          -
+            id: 9312f021-a044-47b5-8fb0-4e56f05117f1
+            entry: d33c5ddf-2af2-4239-9e6d-8e9352d5d7f2
+      -
+        id: 5b1969ae-6fa4-4889-aebb-cf4d7f8adac3
+        title: 'Advanced features: Dig deeper'
+        children:
+          -
+            id: 9bd2c638-b561-447a-a3b7-71345e9f80de
+            entry: b1610bf8-be02-47d4-b690-ecd2d748ad73
+          -
+            id: af3e5011-e9e8-4746-a585-3e63add6b4a7
+            entry: bdb6fa8d-8a7e-4448-aa56-cca3eac1cdca
+          -
+            id: 1ac33549-8307-4984-8c10-98a8a6036877
+            entry: ecd268e1-9de0-43f2-8667-93598b02f737
+          -
+            id: 4b091a54-f81c-4e9e-8245-019736573a23
+            entry: b88b4774-8b86-4a13-8316-d524f258a25c
+          -
+            id: 0ba9aed5-cf40-4e5e-ac64-28934238d9b5
+            entry: e8b4ed55-29bb-4d95-84fa-093bf918215c
+          -
+            id: aef78288-54bf-41a6-8534-cb1452bf29da
+            entry: 67940e87-0935-4d91-a32e-2ffa8e63bcad
+          -
+            id: f463e745-98a9-4332-aa6f-9ec4d481f0f8
+            entry: 7e0a5654-6269-4291-98a1-c758541ad1d6
+  -
+    id: f523711b-8635-4328-aae5-cdeb6fbb556d
+    title: 'Amplitude Experiment'
+    children:
+      -
+        id: d4fa412c-7837-4c46-8960-a1b744865304
+        entry: 307d7887-08f3-4864-9dae-efa431be89f8
+      -
+        id: 908ee5e4-7867-4cc2-8b73-63a00db29725
+        entry: 0ac7b683-6300-4498-bb2e-6efdad8d19b3
+      -
+        id: 45e46294-9b1e-4c4a-8960-8dc5690c26ff
+        entry: f225635c-e04f-4d20-a308-f67c05e25a3b
+      -
+        id: 0728dee7-3b2e-4ef9-a1d0-783436fcdf78
+        entry: fd5974d4-6adb-4b5b-aa7e-2c46632b31e7
+      -
+        id: 9cbf0cb1-cea2-4180-a9e7-af329e52607b
+        title: 'Experiment workflow'
+        children:
+          -
+            id: 39669dde-a4f5-4044-9801-5e6533b39667
+            entry: a586d4e2-e230-4f3a-8eef-dc327ca685d4
+          -
+            id: 3b7bc1ce-57b0-49c4-9534-390d5d57ae58
+            entry: 0fdebba9-4eac-447d-afa4-b5fc7a2921ca
+          -
+            id: 9505e259-682b-43fd-8b4f-71bc45065b05
+            entry: bc381a7f-f10c-4578-8ea9-db4e80f10db7
+          -
+            id: e033d2d3-b923-4a62-86d5-eedd664697a7
+            entry: feab7eda-54f6-4792-812f-4a7b92626e22
+          -
+            id: 50b2cce1-819c-4ee1-bed8-9cb776b0eba4
+            entry: c3e839ff-acca-4bc7-8d5d-642f1712fd07
+          -
+            id: c69cd302-7bde-42d8-96fb-f96d682de1c6
+            entry: a7e8e20c-65b6-4d08-855f-5945c731eb62
+          -
+            id: 97201474-8d13-4e96-b2b4-8b0255b245c7
+            entry: 32cf4270-095e-40a4-86c8-76ac2595da1c
+          -
+            id: 09962bd1-4aea-48e1-82d2-25c0d666d3a4
+            entry: 97f46ade-43f1-4f1e-8edd-db4ee4142fac
+          -
+            id: bd53f4e6-a962-4545-b9b9-2774fb38338c
+            entry: 3f4916a8-857f-4b95-bcb9-5653ad32f367
+          -
+            id: 5b523931-2c75-4bed-8ed1-18d63d71bf55
+            entry: 887cf1ac-73c6-4005-b62f-b32be3e8b46c
+          -
+            id: 97e10f30-13d3-4bad-b6bc-ba7d0cf5810a
+            entry: 8d7143e5-03a1-4e08-a161-77d5a73ba82d

@@ -12,7 +12,7 @@ preview_targets:
     label: Entry
     url: '{permalink}'
     refresh: true
+inject:
+  nav_title: session_replay
 structure:
   root: false
-inject:
-  nav_title: 'session_replay'
