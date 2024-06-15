@@ -15,9 +15,12 @@
 /*!*************************************!*\
   !*** ./resources/docs/css/site.css ***!
   \*************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/postcss-loader/dist/cjs.js):\nError: ENOENT: no such file or directory, stat '/Users/mark.zegarelli/work/amplitude-docs/content/collections/japanese_translation/jp/create-charts-with-amplitude-advanced-features-of-the-segmentation-module.md'\n    at Object.statSync (node:fs:1668:25)\n    at resolveChangedFiles (/Users/mark.zegarelli/work/amplitude-docs/node_modules/tailwindcss/lib/lib/content.js:170:36)\n    at resolvedChangedContent (/Users/mark.zegarelli/work/amplitude-docs/node_modules/tailwindcss/lib/lib/content.js:142:42)\n    at /Users/mark.zegarelli/work/amplitude-docs/node_modules/tailwindcss/lib/lib/setupTrackingContext.js:133:99\n    at /Users/mark.zegarelli/work/amplitude-docs/node_modules/tailwindcss/lib/processTailwindFeatures.js:48:11\n    at plugins (/Users/mark.zegarelli/work/amplitude-docs/node_modules/tailwindcss/lib/plugin.js:38:69)\n    at LazyResult.runOnRoot (/Users/mark.zegarelli/work/amplitude-docs/node_modules/postcss/lib/lazy-result.js:329:16)\n    at LazyResult.runAsync (/Users/mark.zegarelli/work/amplitude-docs/node_modules/postcss/lib/lazy-result.js:258:26)\n    at LazyResult.async (/Users/mark.zegarelli/work/amplitude-docs/node_modules/postcss/lib/lazy-result.js:160:30)\n    at LazyResult.then (/Users/mark.zegarelli/work/amplitude-docs/node_modules/postcss/lib/lazy-result.js:404:17)\n    at processResult (/Users/mark.zegarelli/work/amplitude-docs/node_modules/webpack/lib/NormalModule.js:841:19)\n    at /Users/mark.zegarelli/work/amplitude-docs/node_modules/webpack/lib/NormalModule.js:966:5\n    at /Users/mark.zegarelli/work/amplitude-docs/node_modules/loader-runner/lib/LoaderRunner.js:400:11\n    at /Users/mark.zegarelli/work/amplitude-docs/node_modules/loader-runner/lib/LoaderRunner.js:252:18\n    at context.callback (/Users/mark.zegarelli/work/amplitude-docs/node_modules/loader-runner/lib/LoaderRunner.js:124:13)\n    at Object.loader (/Users/mark.zegarelli/work/amplitude-docs/node_modules/postcss-loader/dist/index.js:142:7)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ }),
 
@@ -121,7 +124,8 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/docs/js/site": 0,
-/******/ 			"docs/css/algolia": 0
+/******/ 			"docs/css/algolia": 0,
+/******/ 			"docs/css/site": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -171,9 +175,9 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["docs/css/algolia"], () => (__webpack_require__("./resources/docs/js/site.js")))
-/******/ 	__webpack_require__.O(undefined, ["docs/css/algolia"], () => (__webpack_require__("./resources/docs/css/site.css")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["docs/css/algolia"], () => (__webpack_require__("./resources/docs/css/algolia.css")))
+/******/ 	__webpack_require__.O(undefined, ["docs/css/algolia","docs/css/site"], () => (__webpack_require__("./resources/docs/js/site.js")))
+/******/ 	__webpack_require__.O(undefined, ["docs/css/algolia","docs/css/site"], () => (__webpack_require__("./resources/docs/css/site.css")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["docs/css/algolia","docs/css/site"], () => (__webpack_require__("./resources/docs/css/algolia.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
