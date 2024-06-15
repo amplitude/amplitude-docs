@@ -37,6 +37,56 @@ tree:
         id: 10c60ac2-3d6b-43d9-81af-81e79fffa721
         entry: 5d8e869f-a964-4cbe-a103-65ecd4c2c576
   -
+    id: 0800c1e2-008e-4c02-ad25-ade39c19e6fc
+    title: 'Experiment SDKs'
+    data:
+      open_collapsed: false
+    children:
+      -
+        id: 8c15a0c6-a220-46a5-8490-862a0ba854f2
+        entry: da42e101-0d3f-4e0f-81cc-83516100e99b
+        title: JavaScript
+      -
+        id: 78ef2ff2-f2ce-435e-b06c-792d2c0fca85
+        entry: fd9cb872-7781-46a7-bf79-c1e7bcbdf816
+        title: Android
+      -
+        id: e9387ce6-ee1f-4e09-a501-4746493da664
+        entry: ecb37544-1701-4bfa-b89c-dd8150fe3451
+        title: iOS
+      -
+        id: a475eaea-ba23-46a6-af86-1390f774ed90
+        entry: 3f748a4b-f71d-4eb8-9e0a-72360f774bfa
+        title: 'React Native'
+      -
+        id: 13c912ae-eea3-4f4e-8a4d-d7b68f7552d5
+        entry: 58209a5e-a41d-4607-bc7e-6fe209725c38
+        title: Node.js
+      -
+        id: b0bd8d89-140a-4ad8-a329-4fc6b64728c9
+        entry: 1e224b64-c80b-48a2-a408-57a73aa36a33
+        title: Go
+      -
+        id: c925bb1f-6168-41af-881a-a491dc0a5cd5
+        entry: 3eab77ce-9efe-46bb-9daf-81bf55876d1c
+        title: JVM
+      -
+        id: 67e98bcc-abb6-423c-b2eb-93df61a39076
+        entry: 0939d037-2575-40b4-9c8d-61ed94265af4
+        title: Python
+      -
+        id: dc35667b-4bd2-40f9-aa3e-50124309840a
+        entry: 932c399a-d47f-4772-a02d-cf3779bf3dac
+        title: Ruby
+      -
+        id: f257d6fc-4a89-488b-aeda-86c4d5e1af5a
+        entry: 327f3e9a-ef42-40eb-b42e-19dfd3bea562
+        title: PHP
+      -
+        id: fda8c6d0-c61f-459c-8495-7eca228a9287
+        entry: 764109e2-cb86-4d19-af7d-fa0d9516f663
+        title: 'Evaluation Proxy'
+  -
     id: bc3b0d2e-834b-4b0c-9998-138e9702e880
     title: 'Session Replay'
     children:
@@ -49,50 +99,6 @@ tree:
       -
         id: 50e45e20-45d5-4916-a51f-c3eefad8a8e8
         entry: d225a8c4-c504-4cbe-b4f3-8709ab43fdc1
-  -
-    id: 0800c1e2-008e-4c02-ad25-ade39c19e6fc
-    title: 'Experiment SDKs'
-    children:
-      -
-        id: 8c15a0c6-a220-46a5-8490-862a0ba854f2
-        entry: da42e101-0d3f-4e0f-81cc-83516100e99b
-      -
-        id: 78ef2ff2-f2ce-435e-b06c-792d2c0fca85
-        entry: fd9cb872-7781-46a7-bf79-c1e7bcbdf816
-      -
-        id: e9387ce6-ee1f-4e09-a501-4746493da664
-        entry: ecb37544-1701-4bfa-b89c-dd8150fe3451
-      -
-        id: a475eaea-ba23-46a6-af86-1390f774ed90
-        entry: 3f748a4b-f71d-4eb8-9e0a-72360f774bfa
-      -
-        id: 13c912ae-eea3-4f4e-8a4d-d7b68f7552d5
-        entry: 58209a5e-a41d-4607-bc7e-6fe209725c38
-      -
-        id: dc35667b-4bd2-40f9-aa3e-50124309840a
-        entry: 932c399a-d47f-4772-a02d-cf3779bf3dac
-      -
-        id: c925bb1f-6168-41af-881a-a491dc0a5cd5
-        entry: 3eab77ce-9efe-46bb-9daf-81bf55876d1c
-      -
-        id: b0bd8d89-140a-4ad8-a329-4fc6b64728c9
-        entry: 1e224b64-c80b-48a2-a408-57a73aa36a33
-      -
-        id: 67e98bcc-abb6-423c-b2eb-93df61a39076
-        entry: 0939d037-2575-40b4-9c8d-61ed94265af4
-      -
-        id: f257d6fc-4a89-488b-aeda-86c4d5e1af5a
-        entry: 327f3e9a-ef42-40eb-b42e-19dfd3bea562
-      -
-        id: fda8c6d0-c61f-459c-8495-7eca228a9287
-        entry: 764109e2-cb86-4d19-af7d-fa0d9516f663
-      -
-        id: 19a0d501-8c8f-4b9e-bb71-3cb073a6df50
-        title: 'Experiment Maintenance SDKs'
-        children:
-          -
-            id: 39a176e8-6c84-4655-b7d5-127c2c6c9617
-            entry: 02f37e03-e7c5-4324-835a-772a79e0963c
   -
     id: 431c6586-0b0a-4a18-b87a-d5dca365c7c3
     title: Ampli
@@ -128,3 +134,6 @@ tree:
   -
     id: 6a365733-24c1-4065-8e9a-846323e14df4
     entry: a0da41b8-4d51-4efc-9edf-30e7cf7c7929
+  -
+    id: 23de94a3-e0cd-44a3-8f02-8e0ec704f566
+    entry: eeaf3cb1-5593-4fc4-a220-3ad4d73e8c82
