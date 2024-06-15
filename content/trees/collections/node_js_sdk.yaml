@@ -1,13 +1,6 @@
 tree:
   -
-    entry: 8cbcfa2a-a300-48c8-b551-aee1b1423cdb
-    children:
-      -
-        entry: 032ffb7e-a0ff-49d8-bcad-2407d7bd5573
-  -
     entry: e3b9838b-8d35-49d8-ba91-5a0840cbc603
     children:
       -
         entry: 5f0a9b3c-627c-4014-bb2e-d1ac1c465db9
-      -
-        entry: 1ca7ad5b-47f8-4709-b0f1-083941dc62c9
