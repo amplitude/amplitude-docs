@@ -225,6 +225,7 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
             'Pixelfear\\ComposerDistPlugin\\' => 29,
             'PhpParser\\' => 10,
             'PhpOption\\' => 10,
+            'Pecotamic\\Sitemap\\' => 18,
         ),
         'N' => 
         array (
@@ -303,7 +304,6 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
             'Archetype\\Tests\\' => 16,
             'Archetype\\' => 10,
             'App\\' => 4,
-            'AltDesign\\AltSitemap\\' => 21,
         ),
     );
 
@@ -577,6 +577,10 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
         ),
+        'Pecotamic\\Sitemap\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pecotamic/sitemap/src',
+        ),
         'NunoMaduro\\Collision\\' => 
         array (
             0 => __DIR__ . '/..' . '/nunomaduro/collision/src',
@@ -762,10 +766,6 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
             0 => __DIR__ . '/../..' . '/app',
             1 => __DIR__ . '/..' . '/laravel/pint/app',
         ),
-        'AltDesign\\AltSitemap\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/alt-design/alt-sitemap/src',
-        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -793,10 +793,6 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
         'AMFReader' => __DIR__ . '/..' . '/james-heinrich/getid3/getid3/module.audio-video.flv.php',
         'AMFStream' => __DIR__ . '/..' . '/james-heinrich/getid3/getid3/module.audio-video.flv.php',
         'AVCSequenceParameterSetReader' => __DIR__ . '/..' . '/james-heinrich/getid3/getid3/module.audio-video.flv.php',
-        'AltDesign\\AltSitemap\\Events\\Sitemap' => __DIR__ . '/..' . '/alt-design/alt-sitemap/src/Events/Sitemap.php',
-        'AltDesign\\AltSitemap\\Helpers\\Data' => __DIR__ . '/..' . '/alt-design/alt-sitemap/src/Helpers/Data.php',
-        'AltDesign\\AltSitemap\\Http\\Controllers\\AltSitemapController' => __DIR__ . '/..' . '/alt-design/alt-sitemap/src/Http/Controllers/AltSitemapController.php',
-        'AltDesign\\AltSitemap\\ServiceProvider' => __DIR__ . '/..' . '/alt-design/alt-sitemap/src/ServiceProvider.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
@@ -5299,6 +5295,11 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
         'PHPUnit\\Util\\Xml' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml/Xml.php',
         'PHPUnit\\Util\\Xml\\Loader' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml/Loader.php',
         'PHPUnit\\Util\\Xml\\XmlException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Exception/XmlException.php',
+        'Pecotamic\\Sitemap\\Generator' => __DIR__ . '/..' . '/pecotamic/sitemap/src/Generator.php',
+        'Pecotamic\\Sitemap\\Http\\Controllers\\SitemapController' => __DIR__ . '/..' . '/pecotamic/sitemap/src/Http/Controllers/SitemapController.php',
+        'Pecotamic\\Sitemap\\ServiceProvider' => __DIR__ . '/..' . '/pecotamic/sitemap/src/ServiceProvider.php',
+        'Pecotamic\\Sitemap\\Sitemap' => __DIR__ . '/..' . '/pecotamic/sitemap/src/Sitemap.php',
+        'Pecotamic\\Sitemap\\SitemapEntry' => __DIR__ . '/..' . '/pecotamic/sitemap/src/SitemapEntry.php',
         'PharIo\\Manifest\\Application' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Application.php',
         'PharIo\\Manifest\\ApplicationName' => __DIR__ . '/..' . '/phar-io/manifest/src/values/ApplicationName.php',
         'PharIo\\Manifest\\Author' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Author.php',
