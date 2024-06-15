@@ -1,40 +1,67 @@
 tree:
   -
+    id: 57e9b727-5387-4abf-8535-7e773e791d3b
+    title: 'Back to all SDKs'
+    url: /docs/sdks
+    data:
+      icon: general/back-icon.svg
+      underline: true
+  -
     id: 6b99293f-0a6f-4b39-b2d2-ebd159600846
     entry: eeaf3cb1-5593-4fc4-a220-3ad4d73e8c82
-  -
-    id: f4603fa1-a9d4-4563-ac7c-cc06ef615a5f
-    entry: da42e101-0d3f-4e0f-81cc-83516100e99b
-  -
-    id: 9afeae38-844b-4f7c-8955-f877be4c0639
-    entry: fd9cb872-7781-46a7-bf79-c1e7bcbdf816
-  -
-    id: 0697a8d3-5ed8-4c31-9fe5-c457e457a9db
-    entry: ecb37544-1701-4bfa-b89c-dd8150fe3451
-  -
-    id: 3e12833f-c70a-40e7-b414-47a2d57b6760
-    entry: 3f748a4b-f71d-4eb8-9e0a-72360f774bfa
-  -
-    id: 4075ee37-74b9-4af9-9592-8546a84988dd
-    entry: 1e224b64-c80b-48a2-a408-57a73aa36a33
-  -
-    id: f4986f35-6f4d-4b5e-883b-0a54ba8f20bc
-    entry: 3eab77ce-9efe-46bb-9daf-81bf55876d1c
-  -
-    id: fcc90e0d-b00e-403d-81bc-364604618ef1
-    entry: 58209a5e-a41d-4607-bc7e-6fe209725c38
-  -
-    id: 483786ab-9921-4324-8916-04e3858a0279
-    entry: 327f3e9a-ef42-40eb-b42e-19dfd3bea562
-  -
-    id: a54c9dac-4d1e-4bc9-9209-ae40513ea8b2
-    entry: 0939d037-2575-40b4-9c8d-61ed94265af4
-  -
-    id: 7c5f41c9-71f8-4d38-9fba-a168d9e49c77
-    entry: 932c399a-d47f-4772-a02d-cf3779bf3dac
-  -
-    id: de6577cc-e60f-4a85-941d-1864bb56a86a
-    entry: 764109e2-cb86-4d19-af7d-fa0d9516f663
-  -
-    id: 4efe059c-f32e-4150-af95-6c313f54fab6
-    entry: 02f37e03-e7c5-4324-835a-772a79e0963c
+    title: 'Experiment SDKs'
+    children:
+      -
+        id: f4603fa1-a9d4-4563-ac7c-cc06ef615a5f
+        entry: da42e101-0d3f-4e0f-81cc-83516100e99b
+        title: JavaScript
+        data:
+          icon: null
+      -
+        id: 9afeae38-844b-4f7c-8955-f877be4c0639
+        entry: fd9cb872-7781-46a7-bf79-c1e7bcbdf816
+        title: Android
+      -
+        id: 0697a8d3-5ed8-4c31-9fe5-c457e457a9db
+        entry: ecb37544-1701-4bfa-b89c-dd8150fe3451
+        title: iOS
+      -
+        id: 3e12833f-c70a-40e7-b414-47a2d57b6760
+        entry: 3f748a4b-f71d-4eb8-9e0a-72360f774bfa
+        title: 'React Native'
+      -
+        id: fcc90e0d-b00e-403d-81bc-364604618ef1
+        entry: 58209a5e-a41d-4607-bc7e-6fe209725c38
+        title: Node.js
+      -
+        id: 4075ee37-74b9-4af9-9592-8546a84988dd
+        entry: 1e224b64-c80b-48a2-a408-57a73aa36a33
+        title: Go
+      -
+        id: f4986f35-6f4d-4b5e-883b-0a54ba8f20bc
+        entry: 3eab77ce-9efe-46bb-9daf-81bf55876d1c
+        title: JVM
+      -
+        id: a54c9dac-4d1e-4bc9-9209-ae40513ea8b2
+        entry: 0939d037-2575-40b4-9c8d-61ed94265af4
+        title: Python
+      -
+        id: 7c5f41c9-71f8-4d38-9fba-a168d9e49c77
+        entry: 932c399a-d47f-4772-a02d-cf3779bf3dac
+        title: Ruby
+      -
+        id: 483786ab-9921-4324-8916-04e3858a0279
+        entry: 327f3e9a-ef42-40eb-b42e-19dfd3bea562
+        title: PHP
+      -
+        id: de6577cc-e60f-4a85-941d-1864bb56a86a
+        entry: 764109e2-cb86-4d19-af7d-fa0d9516f663
+        title: 'Evaluation Proxy'
+      -
+        id: 99d6c675-dc88-406a-8063-50c690858375
+        title: Legacy
+        children:
+          -
+            id: d3b64cd0-fcec-482c-b310-0fd874a8ebc7
+            entry: 02f37e03-e7c5-4324-835a-772a79e0963c
+            title: 'React Native (Legacy)'
