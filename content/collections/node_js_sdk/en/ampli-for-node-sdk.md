@@ -112,7 +112,7 @@ npm install @amplitude/node@^1.10.2 @amplitude/identify@^1.10.2 @amplitude/types
 
 ## Install Ampli
 
-You can install the [Ampli CLI](/docs/data/ampli/cli/) from Homebrew or NPM.
+You can install the [Ampli CLI](/docs/sdks/ampli/ampli-cli) from Homebrew or NPM.
 
 {{partial:tabs tabs="npm, brew"}}
 {{partial:tab name="npm"}}
@@ -245,7 +245,7 @@ The `extra` argument lets you pass data to middleware.
 
 For example, your tracking plan contains an event called Song Played. The SDK generates the `songPlayed` function for the event, using camel case to make it valid JavaScript. The event is defined with two required properties: `songId` and `songFavorited.` The property type for `songId` is string, and `songFavorited` is a boolean.
 
-The event has two Amplitude fields defined: `price`, and `quantity`. Learn more about Amplitude fields [here](/docs/apis/analytics/http-v2#properties-1). The event has one MiddlewareExtra defined: `myMiddleware`. Learn more about [middleware](./sdks/sdk-middleware).
+The event has two Amplitude fields defined: `price`, and `quantity`. Learn more about Amplitude fields [here](/docs/apis/analytics/http-v2#properties-1). The event has one MiddlewareExtra defined: `myMiddleware`. Learn more about [middleware](/docs/sdks/sdk-middleware).
 
 
 ```js

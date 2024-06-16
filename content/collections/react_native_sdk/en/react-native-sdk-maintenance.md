@@ -91,7 +91,7 @@ For other default configurations:
 
 ### Configure batching behavior
 
-To support high-performance environments, the SDK sends events in batches. Every event logged by the `logEvent` method is queued in memory. Events are flushed in batches in background. You can customize batch behavior with `setEventUploadThreshold` and `setEventUploadPeriodMillis`. By default, the serverUrl will be `https://api2.amplitude.com/`. This SDK doesn't support batch mode, the [batch API](/docs/apis/batch-event-upload) endpoint.
+To support high-performance environments, the SDK sends events in batches. Every event logged by the `logEvent` method is queued in memory. Events are flushed in batches in background. You can customize batch behavior with `setEventUploadThreshold` and `setEventUploadPeriodMillis`. By default, the serverUrl will be `https://api2.amplitude.com/`. This SDK doesn't support batch mode, the [batch API](/docs/apis/analytics/batch-event-upload) endpoint.
 
 ```js
 // Events queued in memory will flush when number of events exceed upload threshold
@@ -391,7 +391,7 @@ Amplitude.getInstance().setOptOut(false);
 
 ### Dynamic configuration
 
-React Native SDK allows users to configure their apps to use [dynamic configuration](../../dynamic-configuration.md). This feature finds the best server URL automatically based on app users' location.
+React Native SDK allows users to configure their apps to use [dynamic configuration](/docs/sdks/dynamic-configuration). This feature finds the best server URL automatically based on app users' location.
 
 - If you have your own proxy server and use `setServerUrl` API, don't use dynamic configuration.
 - If you have users in Mainland China, Amplitude recommends that you use dynamic configuration.

@@ -209,7 +209,7 @@ The default logger outputs extra function context information to the developer c
 ## Track events
 
 {{partial:admonition type="note" heading=""}}
-This SDK uses the [Http V2](/docs/apis/http-v2) API and follows the same constraints for events. Make sure that all events logged in the SDK have the `event_type` field and at least one of `deviceId`  (included by default) or `userId`, and follow the Http API's constraints on each of those fields.
+This SDK uses the [Http V2](/docs/apis/analytics/http-v2) API and follows the same constraints for events. Make sure that all events logged in the SDK have the `event_type` field and at least one of `deviceId`  (included by default) or `userId`, and follow the Http API's constraints on each of those fields.
 
 To prevent instrumentation issues, device IDs and user IDs must be strings with a length of 5 characters or more. If an event contains a device ID or user ID that's too short, the ID value is removed from the event. If the event doesn't have a `userId` or `deviceId` value, the upload may be rejected with a 400 status. Override the default minimum length of 5 characters by setting the `minIdLength` config option.
 {{/partial:admonition}}
@@ -766,11 +766,11 @@ The Amplitude ingestion servers resolve event location in the following order:
 3. Resolved from `ip`
 
 By default, location will be determined by the `ip` on the server side. If you want more provide more granular location you can set `city`, `country` and `region` individually, or set `location_lat` and `location_lng` which will then be resolved to `city`, `country` and `region` on the server. 
-We do not automatically set precise location in the SDK to avoid extra permissions that my not be needed by all customers.
+Amplitude doesn't set precise location in the SDK to avoid extra permissions that my not be needed by all customers.
 
 To set fine grain location, you can use an enrichment Plugin. Here is an [example](https://github.com/amplitude/Amplitude-TypeScript/blob/v1.x/examples/plugins/react-native-get-location-plugin/LocationPlugin.ts) of how to set `location_lat` and `location_lng`.
 
-Note that disabling IP tracking via `ipTracking: false` in [TrackingOptions](/docs/data/sdks/analytics/typescript-react-native/#optional-tracking) will prevent location from being resolved on the backend. In this case you may want to create a Plugin like above to set any relevant location information yourself.
+Disabling IP tracking with `ipAddress: false` in [TrackingOptions](#optional-tracking) prevents location from being resolved on the backend. In this case you may want to create a Plugin like above to set any relevant location information yourself.
 
 ### Carrier
 
@@ -778,7 +778,7 @@ Carrier support works on Android, but Apple stopped supporting it in iOS 16. In 
 
 ### Advertising Identifiers
 
-Different platforms have different advertising identifiers. Due to user privacy concerns, Amplitude does not automatically collect these identifiers. However, it is easy to enable them using the instructions below. It is important to note that some identifiers are no longer recommended for use by the platform providers. Please read the notes below before deciding to enable them.
+Different platforms have different advertising identifiers. Due to user privacy concerns, Amplitude does not automatically collect these identifiers. However, it is easy to enable them using the instructions below. It is important to note that some identifiers are no longer recommended for use by the platform providers. Read the notes below before deciding to enable them.
 
 | Platform | Advertising Identifier | Recommended | Notes |
 | --- | --- |-------------| --- |
@@ -819,7 +819,7 @@ Android Ad ID is a unique identifier for each device. Android Ad ID is reset by 
 
 To use Android Ad ID, follow these steps.
 
-1. Add `play-services-ads-identifier` as a dependency to the Android project of your app. More detailed setup is [described in our latest Android SDK docs](/docs/data/sdks/analytics/android-kotlin/#advertiser-id).
+1. Add `play-services-ads-identifier` as a dependency to the Android project of your app. More detailed setup is [described in our latest Android SDK docs](/docs/sdks/analytics/android/android-kotlin-sdk#advertiser-id).
 
     ```bash
     dependencies {

@@ -22,9 +22,9 @@ A/Bテストは、ウェブサイトまたはアプリケーションの指標�
 
 ユーザープロパティを更新するには、主に2つの方法があります。
 
-1) [SDK](https://help.amplitude.com/hc/en-us/articles/205406607-SDKs)と[HTTP API](https://help.amplitude.com/hc/en-us/articles/360032842391-HTTP-API-V2)：イベントアクションでユーザープロパティを更新します。
+1) [SDK](https://help.amplitude.com/hc/en-us/articles/205406607-SDKs)と[HTTP API](/docs/apis/analytics/http-v2)：イベントアクションでユーザープロパティを更新します。
 
-* **方法：** ユーザープロパティは、[SDK](https://help.amplitude.com/hc/en-us/articles/205406607-SDKs)または[HTTP API](https://help.amplitude.com/hc/en-us/articles/360032842391-HTTP-API-V2)を介して、各イベントで送信できます。
+* **方法：** ユーザープロパティは、[SDK](https://help.amplitude.com/hc/en-us/articles/205406607-SDKs)または[HTTP API](/docs/apis/analytics/http-v2)を介して、各イベントで送信できます。
 * **長所：**ユーザープロパティは、イベントが送信された瞬間に有効になり、プロパティ値が明示的に更新されるまで、その後のすべてのイベントでユーザーに紐づいています。
 * **短所：**これらのイベントは、月次イベントボリュームにカウントされます。 さらに、これらのイベントはデフォルトでユーザーを**アクティブ**ユーザーとしてカウントします。そのため、A/Bテスト関連のイベントが[非アクティブイベント](/docs/data/change-event-activity-status)としてマークされていることを確認する必要があります。
 

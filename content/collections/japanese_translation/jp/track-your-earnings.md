@@ -14,7 +14,7 @@ Amplitudeに収益イベントの送信を始める際は、いくつかの異�
 * [iOS SDK](https://help.amplitude.com/hc/en-us/articles/115002278527#tracking-revenue)
 * [Android SDK](https://help.amplitude.com/hc/en-us/articles/115002935588#tracking-revenue)
 * [Javascript SDK](https://help.amplitude.com/hc/en-us/articles/115001361248#tracking-revenue)
-* [HTTP API](https://help.amplitude.com/hc/en-us/articles/360032842391-HTTP-API-V2)（`価格`、`数量`、`収益`フィールドを設定して、イベントを収益イベントとして記録する）
+* [HTTP API](/docs/apis/analytics/http-v2)（`価格`、`数量`、`収益`フィールドを設定して、イベントを収益イベントとして記録する）
 * [Amplitude Developer](https://developers.amplitude.com/#tracking-revenue)
 
 Amplitudeは、送信したイベントとのみをカウントし、そのイベントはAmplitude取り込みシステムを介して処理されます。計算されたイベントは、**別途カウントされることはありません。**したがって、収益イベントに付属する追加のイベント（例：検証済み/未検証）は、制限対象として**カウントされません**。
@@ -43,7 +43,7 @@ Amplitudeで収益を追跡するには、以下の特定の情報が必要で�
 
 * Amplitudeの[SDK](https://help.amplitude.com/hc/articles/205406607-SDKs)を使用して、`logRevenueV2`関数（`![amplitude_logo.png](/docs/output/img/jp/amplitude-logo-png.png)収益`イベントを生成）を呼び出す
 * Amplitudeの[SDK](https://help.amplitude.com/hc/articles/205406607-SDKs)を使用して、`logEvent`関数を呼び出す（`$revenue`プロパティを含む場合）
-* Amplitudeの[HTTP API](https://help.amplitude.com/hc/en-us/articles/360032842391-HTTP-API-V2)を使用する（`価格`、`数量`、または`収益`フィールドを設定することで、独自のイベント名を追加する必要があります。例：「購入完了」）。
+* Amplitudeの[HTTP API](/docs/apis/analytics/http-v2)を使用する（`価格`、`数量`、または`収益`フィールドを設定することで、独自のイベント名を追加する必要があります。例：「購入完了」）。
 
 **注：**検証済みの収益チェックは、アプリ内購入に対してのみ実行されます。
 
@@ -59,7 +59,7 @@ IAPを追跡するには、AmplitudeのSDKで`logRevenueV2`または`logEvent`�
 * [Android SDK](https://help.amplitude.com/hc/en-us/articles/115002935588#tracking-revenue)
 * [iOS SDK](https://help.amplitude.com/hc/en-us/articles/115002278527#tracking-revenue)
 
-Amplitudeには、SDK内の`logRevenue`コールに対応する3つの異なるタイプの収益イベントがあります。これらは、[HTTP API](https://help.amplitude.com/hc/en-us/articles/360032842391-HTTP-API-V2)を介してサーバーサイドに送信される収益イベントとは分離されています。
+Amplitudeには、SDK内の`logRevenue`コールに対応する3つの異なるタイプの収益イベントがあります。これらは、[HTTP API](/docs/apis/analytics/http-v2)を介してサーバーサイドに送信される収益イベントとは分離されています。
 
 1. **![amplitude_logo.png](/docs/output/img/jp/amplitude-logo-png.png)収益：**このイベントは、収益検証がオンになっているかどうかにかかわらず、常に収益イベントを記録します。ただし、このイベントは「$revenue」プロパティを入力することはありません。`![amplitude_logo.png](/docs/output/img/jp/amplitude-logo-png.png)収益（検証済み/未検証）`イベントが行います。イベントを収益LTVチャートに表示させたい場合は、収益検証をオンにする必要があります。収益検証がオンになっており、対応する`![amplitude_logo.png](/docs/output/img/jp/amplitude-logo-png.png)収益（検証/未検証）`イベントがないユーザーアクティビティストリームに`![amplitude_logo.png](/docs/output/img/jp/amplitude-logo-png.png)収益`イベントのみが表示される場合は、収益の検証に失敗したことを意味します。
 2. **![amplitude_logo.png](/docs/output/img/jp/amplitude-logo-png.png)収益（検証済み）：**この検証済みイベントは、正当なトランザクションがあるたびに記録されます。結果として、`![amplitude_logo.png](/docs/output/img/jp/amplitude-logo-png.png)収益`と`![amplitude_logo.png](/docs/output/img/jp/amplitude-logo-png.png)収益（検証済み）`の差は、行われた違法アプリ購入数になります。デフォルトでは、SDKに記録された収益イベントは、Amplitudeダッシュボードに未検証の収益イベントとして表示されます。`![amplitude_logo.png](/docs/output/img/jp/amplitude-logo-png.png)収益（検証済み）`イベントを表示するには、収益検証を有効にする必要があります。

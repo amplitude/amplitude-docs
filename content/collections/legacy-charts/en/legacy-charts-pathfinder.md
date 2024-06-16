@@ -12,7 +12,7 @@ Amplitude's **Pathfinder** chart lets you explore aggregated user flows within
 
 Pathfinder shows all the events (also called **nodes**) users fire in your product, and the sequences of those events (also called **paths**) that users take during a specified time, measured by event totals. You can view both outgoing and incoming paths to a specified event, and Pathfinder will show you paths of up to fifty steps in depth. 
 
-We recommend using Pathfinder to see the top common paths users can take to conversion, then use this information to build out your [funnel chart](/docs/hc/en-us/articles/229951267). 
+We recommend using Pathfinder to see the top common paths users can take to conversion, then use this information to build out your funnel chart. 
 
 ## Before you begin
 
@@ -20,7 +20,7 @@ Be sure to read our article on [building charts in Amplitude](/docs/get-started/
 
 You'll also want to read up on [session IDs and how Amplitude tracks sessions,](/docs/cdp/sources/instrument-track-sessions).
 
-You should also keep in mind that all paths in Pathfinder are tracked in individual sessions. This means that if you're sending Amplitude events via the [HTTP API](https://help.amplitude.com/hc/en-us/articles/360032842391-HTTP-API-V2) or through another pipeline, you must send a `session_id` with the event. If you don't, your product's path views won't be accurate.
+You should also keep in mind that all paths in Pathfinder are tracked in individual sessions. This means that if you're sending Amplitude events via the [HTTP API](/docs/apis/analytics/http-v2) or through another pipeline, you must send a `session_id` with the event. If you don't, your product's path views won't be accurate.
 
 ## Set up your Pathfinder chart
 
@@ -49,11 +49,7 @@ With each of these options, you are telling Amplitude to take that event and app
 8. In the chart module, set your preferred ***Bucket below*** threshold. This threshold sets a lower boundary for node visibility in your chart. In other words, if the percentage of users who took a particular path is lower than the bucket below threshold, **Amplitude will not display** that path. Amplitude will collapse any nodes that fall below your bucket below threshold into a single node, labeled *Other*.
 9. To exclude specific active events from appearing in your Pathfinder chart, select *Hide Noisy Events* from the *Filter Events drop-down*. You can either tell Amplitude to remove specific noisy events from the chart entirely, or you can tell Amplitude to collapse repeated, consecutive steps into a single node.  
   
-{{partial:admonition type='note'}}
-This approach will exclude events for **the chart you are working on only**. To apply these exclusionary settings to all charts in a project, edit the 'Visibility' event from the [Govern](/docs/hc/en-us/articles/360047138392) page.  
-{{/partial:admonition}}
-  
-You can also un-hide inactive events—which are hidden by default—from within *Hide Noisy Events*. You can also include specific events, by selecting *Only Show Specific Events* from the same drop-down menu.
+	You can also un-hide inactive events—which are hidden by default—from within *Hide Noisy Events*. You can also include specific events, by selecting *Only Show Specific Events* from the same drop-down menu.
 10. If desired, adjust the number of steps displayed in your Pathfinder chart by clicking the ***+*** button next to *Steps*. Your chart can include from five to fifty steps.
 11. Use the date picker to specify the timezone and set the timeframe of your analysis. Your analysis can span a maximum of 45 days.
 12. To save the Pathfinder chart, click *Save*. The *Save* modal will appear. Fill in all the necessary information and click *Save*.
@@ -87,7 +83,7 @@ Events will be ordered by `client_event_time`. 
 
 ### The funnel diagram
 
-Above the flow diagram, you'll find a funnel measuring the total number of times a selected sequence of events has been completed. Unlike a traditional [Funnels](https://help.amplitude.com/hc/en-us/articles/229951267) chart, this funnel measures total sequences, rather than unique users.
+Above the flow diagram, you'll find a funnel measuring the total number of times a selected sequence of events has been completed. Unlike a traditional Funnels chart, this funnel measures total sequences, rather than unique users.
 
 To construct a sequence, simply select events from the flow diagram. As you do so, Amplitude will calculate the conversion rate for the funnel.
 

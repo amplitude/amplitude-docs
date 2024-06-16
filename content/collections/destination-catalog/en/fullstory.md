@@ -25,7 +25,7 @@ source: 'https://www.docs.developers.amplitude.com/data/destinations/fullstory-e
 
 ### Amplitude plugin setup
 
-A variant of an [Amplitude Destination Plugin](../sdk-plugins.md#destination-type-plugin) is required to forward events to FullStory. Below is a template of a Destination Plugin tailored for FullStory. It creates an instance of the 
+A variant of an [Amplitude Destination Plugin](/docs/sdks/sdk-plugins#destination-plugins) is required to forward events to FullStory. Below is a template of a Destination Plugin tailored for FullStory. It creates an instance of the 
 FullStory [browser SDK](https://help.fullstory.com/hc/en-us/articles/360020828273-Getting-Started-with-FullStory#h_01FXB8T39JB6TPBWMR3727QMVV) and forwards tracked events from Amplitude's SDK. This template is customizable for any needs.
 
 ```ts

@@ -22,7 +22,7 @@ updated_at: 1713563166
 
 ### Amplitude plugin setup
 
-A variant of an [Amplitude Destination Plugin](../sdk-plugins.md#destination-type-plugin) is required to forward events to Google Tag Manager. Below is a template of a Destination Plugin tailored for Google Tag Manager. It creates an instance of the 
+A variant of an [Amplitude Destination Plugin](/docs/sdks/sdk-plugins#destination-plugins) is required to forward events to Google Tag Manager. Below is a template of a Destination Plugin tailored for Google Tag Manager. It creates an instance of the 
 Google Tag Manager [browser snippet](https://developers.google.com/tag-platform/tag-manager/web) and forwards tracked events from Amplitude's SDK. This template is customizable for any needs.
 
 ```ts

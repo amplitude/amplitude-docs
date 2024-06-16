@@ -1097,7 +1097,7 @@ If you want to enable SDK to report this information from devices, add `CoreTel
 
 ### Dynamic configuration
 
-The iOS SDK lets you configure your apps to use [dynamic configuration](../../dynamic-configuration.md).
+The iOS SDK lets you configure your apps to use [dynamic configuration](/docs/sdks/dynamic-configuration).
  This feature finds the best server URL automatically based on app users' location.
 
  To use, enable the `useDynamicConfig` flag.
