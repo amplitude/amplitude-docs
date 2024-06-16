@@ -508,7 +508,7 @@ Ampli project is not initialized. No existing `ampli.json` configuration found.
 ? Source: My Source
 ```
 
-Learn more about [`ampli pull`](/docs/sdks/ampli/cli.md#ampli-pull).
+Learn more about [`ampli pull`](/docs/sdks/ampli/ampli-cli#ampli-pull).
 
 ### Status
 

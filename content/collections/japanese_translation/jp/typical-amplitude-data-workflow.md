@@ -32,7 +32,7 @@ Amplitude Dataに関与するチームが増え、分離して作業できるよ
 
 ![amplitude_data_workflow_1.png](/docs/output/img/jp/amplitude-data-workflow-1-png.png)
 
-ブランチでのイベントとプロパティの作成は`、メイン`での場合と同様に機能します。[Amplitude Dataでのイベントの作成](https://help.amplitude.com/hc/en-us/articles/5078731378203-Create-a-tracking-plan#create-your-tracking-plan)の詳細については、ここを参照してください。
+ブランチでのイベントとプロパティの作成は`、メイン`での場合と同様に機能します。[Amplitude Dataでのイベントの作成](/docs/data/create-tracking-plan-Create-a-tracking-plan#create-your-tracking-plan)の詳細については、ここを参照してください。
 
 最初のドラフトを作成し、エンジニアリングが確認できるようになったら、新しいバージョンをパブリッシュします。チームと一緒に計画を繰り返すときに、多くのバージョンを公開します。そのため、早く、頻繁に公開することをためらう必要はありません。
 

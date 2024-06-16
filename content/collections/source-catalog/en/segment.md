@@ -39,7 +39,7 @@ To send data to Amplitude, you can:
 
 ### Set up Segment Destinations
 
-Follow [these steps](https://segment.com/docs/connections/destinations/catalog/actions-amplitude/#getting-started) with your [Amplitude API key](/docs/apis/find-api-credentials/). 
+Follow [these steps](https://segment.com/docs/connections/destinations/catalog/actions-amplitude/#getting-started) with your [Amplitude API key](/docs/apis/authentication). 
 
 To ensure that Segment can send data to Amplitude, make sure your Segment's Amplitude destination is connected to one of your Segment sources:
 

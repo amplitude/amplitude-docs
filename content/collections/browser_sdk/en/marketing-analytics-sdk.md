@@ -76,7 +76,7 @@ amplitude.init("YOUR_API_KEY_HERE");
 |`cookieSameSite` | `string`. Sets `SameSite` property of cookies created. | `Lax` |
 |`cookieSecure` | `boolean`. Sets `Secure` property of cookies created. | `false` |
 |`cookieStorage` | `Storage<UserSession>`. Sets a custom implementation of `Storage<UserSession>` to persist user identity. | `MemoryStorage<UserSession>` |
-|`cookieUpgrade`| `boolean`. Sets upgrading from cookies created by [maintenance Browser SDK](/docs/data/sdks/analytics/javascript/). If true, new Browser SDK deletes cookies created by maintenance Browser SDK. If false, Browser SDK keeps cookies created by maintenance Browser SDK. | `true` |
+|`cookieUpgrade`| `boolean`. Sets upgrading from cookies created by [maintenance Browser SDK](/docs/sdks/analytics/browser/javascript-sdk). If true, new Browser SDK deletes cookies created by maintenance Browser SDK. If false, Browser SDK keeps cookies created by maintenance Browser SDK. | `true` |
 |`disableCookies`| `boolean`. Sets permission to use cookies. If value is `true`, localStorage API is used to persist user identity. | The cookies is enable by default. |
 |`domain` | `string`. Sets the domain property of cookies created. | `undefined` |
 |`partnerId` | `string`. Sets partner ID. Amplitude requires the customer who built an event ingestion integration to add the partner identifier to `partner_id`. | `undefined` |
