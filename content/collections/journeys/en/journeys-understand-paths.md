@@ -10,7 +10,7 @@ updated_at: 1717103550
 landing: true
 landing_blurb: 'Analyze conversions between the key transition points in your product'
 ---
-Amplitude’s **Journeys** chart incorporates the power of the legacy [Journeys](/docs/analytics/charts/legacy-charts/legacy-charts-pathfinder), and [Pathfinder Users](/docs/analytics/charts/legacy-charts/legacy-charts-pathfinder-users) charts to generate a complete, 360-degree analysis of how your users convert—or fail to convert—between key transitions in your product. It allows you to inspect your users’ product journeys in two ways: By the **total number of unique users** who took a particular path, or by the **total number of times** they opted for that path.
+Amplitude’s **Journeys** chart incorporates the power of the legacy Journeys, and Pathfinder Users charts to generate a complete, 360-degree analysis of how your users convert—or fail to convert—between key transitions in your product. It allows you to inspect your users’ product journeys in two ways: By the **total number of unique users** who took a particular path, or by the **total number of times** they opted for that path.
 
 Within a Journeys chart, you can:
 
@@ -79,7 +79,7 @@ When you set the window to one session, your chart will include event paths that
 
 ## Access legacy Journeys, Pathfinder, and Pathfinder Users charts
 
-This Journeys experience was built by combining the [Pathfinder](/docs/analytics/charts/legacy-charts/legacy-charts-pathfinder) and [Pathfinder Users](/docs/analytics/charts/legacy-charts/legacy-charts-pathfinder-users) charts with the [legacy Journeys feature](/docs/analytics/charts/legacy-charts/legacy-charts-journeys) (previously included with the Funnel Analysis chart). It is still possible to access those legacy analyses:
+This Journeys experience was built by combining the Pathfinder and Pathfinder Users charts with the legacy Journeys feature (previously included with the Funnel Analysis chart). It is still possible to access those legacy analyses:
 
 * Access any legacy Journeys charts from within a [Funnel Analysis](/docs/analytics/charts/funnel-analysis/funnel-analysis-build), by clicking on the bar you’re interested in and selecting *Show User Journeys*.
 * Legacy Pathfinder and Pathfinder Users charts are accessible from the chart switcher in the top-left of the screen.

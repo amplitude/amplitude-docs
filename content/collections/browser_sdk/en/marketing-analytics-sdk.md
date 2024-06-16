@@ -348,7 +348,7 @@ The following information is tracked in the page view events.
 
 ### Use the Marketing Analytics SDK with Ampli
 
-You can use Ampli with this SDK by passing an instance of the Marketing Analytics SDK to `ampli.load()`. See the [Ampli documentation](/docs/sdks/sdk-catalog/browser/ampli-for-browser-sdk-1-0) for the Browser SDK for more details on configuration. 
+You can use Ampli with this SDK by passing an instance of the Marketing Analytics SDK to `ampli.load()`.
 
 1. Add the Marketing Analytics Browser SDK to your project.
 2. Create an instance of the SDK.

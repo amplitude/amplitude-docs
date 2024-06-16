@@ -15,7 +15,7 @@ Amplitudeの**パスファインダーユーザー**チャートはあなたの�
 
 まず最初に、実装が完了するまでイベントはAmplitudeチャートに表示されないため、予め実装を完了してください。Amplitudeのユーザーインターフェースの基本について解説した[Amplitudeでのチャートの作成](/docs/get-started/helpful-definitions)。 最後に、パスファインダーユーザーのチャートにおいて[非アクティブイベント](https://help.amplitude.com/knowledge/articles/5078778423579/en-us?brand_id=68397)がデフォルトで*隠されている*ため、アクティブイベントと非アクティブイベントの違いを確認します。
 
-パスファインダーユーザーのパスはすべて個別のセッションでトラックされることを覚えておきましょう。つまり、[HTTP API](https://help.amplitude.com/hc/en-us/articles/360032842391-HTTP-API-V2)などのパイプラインを通じてAmplitudeにイベントを送っている場合、イベントとあわせて`session_id`を送る必要があります。 session\_idがないと、プロダクトのパスビューは不正確なものになります。
+パスファインダーユーザーのパスはすべて個別のセッションでトラックされることを覚えておきましょう。つまり、[HTTP API](/docs/apis/analytics/http-v2)などのパイプラインを通じてAmplitudeにイベントを送っている場合、イベントとあわせて`session_id`を送る必要があります。 session\_idがないと、プロダクトのパスビューは不正確なものになります。
 
 ## パスファインダーユーザーチャートの設定
 

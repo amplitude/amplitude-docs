@@ -57,7 +57,7 @@ Amplitudeは、**イベントベース**のアナリティクスプラットフ�
 
 クライアント側のイベントでは、MaxMindがそのIPアドレスに対してnullを返した場合に、ロケーションプロパティが`（無）`値となる場合があります。MaxMindは最も信頼できる情報源と考えられていますが、都市／地域の情報の正確性と可用性は国によって異なります（詳細は[こちら](https://www.maxmind.com/en/geoip2-city-accuracy-comparison?country=&resolution=50)で確認）。
 
-サーバー側のイベントでは、ロケーションプロパティ値は、GeoIP（利用できない場合は、`location_lat`と`location_long`で代用）か、APIコールで明示的に定義されたものによって決定されます。Amplitudeの[HTTP API](https://help.amplitude.com/hc/en-us/articles/360032842391-HTTP-API-V2)では、`都市`、`DMA`、`地域`、`国`のカスタム値をイベントと一緒に送信することができます。これらの値を送信することを選択した場合、AmplitudeはGeoIPを反映するように変更を加えることはありません。必ず4つのフィールドを一緒に更新してください。[これらの](https://help.amplitude.com/hc/en-us/articles/204771828-HTTP-API#footnotes)フィールドのいずれかを設定すると、他のフィールドは自動的にリセットされます（脚注3を参照してください）。
+サーバー側のイベントでは、ロケーションプロパティ値は、GeoIP（利用できない場合は、`location_lat`と`location_long`で代用）か、APIコールで明示的に定義されたものによって決定されます。Amplitudeの[HTTP API](/docs/apis/analytics/http-v2)では、`都市`、`DMA`、`地域`、`国`のカスタム値をイベントと一緒に送信することができます。これらの値を送信することを選択した場合、AmplitudeはGeoIPを反映するように変更を加えることはありません。必ず4つのフィールドを一緒に更新してください。[これらの](https://help.amplitude.com/hc/en-us/articles/204771828-HTTP-API#footnotes)フィールドのいずれかを設定すると、他のフィールドは自動的にリセットされます（脚注3を参照してください）。
 
 ### デバイスプロパティ
 
