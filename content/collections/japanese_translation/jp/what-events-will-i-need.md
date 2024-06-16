@@ -9,9 +9,9 @@ source: 'https://help.amplitude.com/hc/ja/articles/16800098709275'
 
 * 特定の業界において、Amplitudeでトラックすべき信頼のおけそうなイベントを特定する
 
-イベントとプロパティは、Amplitudeの全ての分析のバックボーンです。プロダクト分析に慣れていない場合は、[トラックする内容を決定するのが](https://help.amplitude.com/hc/en-us/articles/5078731378203-Create-a-tracking-plan)難しい場合があります。
+イベントとプロパティは、Amplitudeの全ての分析のバックボーンです。プロダクト分析に慣れていない場合は、[トラックする内容を決定するのが](/docs/data/create-tracking-plan-Create-a-tracking-plan)難しい場合があります。
 
-この記事ではトラックするべきイベントやプロパティについて業種別にいくつかのアドバイスを紹介しています。同業者から最もよく聞かれる質問に回答したい場合はこちらを参考にしてください。これは必要なものすべてを包括するリストではありませんが、[分類基準](https://help.amplitude.com/hc/en-us/articles/5078731378203-Create-a-tracking-plan)を作成する際に留意すべきポイントを提案しています。
+この記事ではトラックするべきイベントやプロパティについて業種別にいくつかのアドバイスを紹介しています。同業者から最もよく聞かれる質問に回答したい場合はこちらを参考にしてください。これは必要なものすべてを包括するリストではありませんが、[分類基準](/docs/data/create-tracking-plan-Create-a-tracking-plan)を作成する際に留意すべきポイントを提案しています。
 
 ### 一般的
 

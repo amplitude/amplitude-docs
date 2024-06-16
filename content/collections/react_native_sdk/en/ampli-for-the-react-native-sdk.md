@@ -10,7 +10,7 @@ supported_languages:
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1715717973
 ---
-The [Ampli Wrapper](/docs/sdks/ampi/ampli-wrapper) is a generated, strongly typed API for tracking Analytics events based on your Tracking Plan in Amplitude Data. The tracking library exposes a function for every event in your team’s tracking plan. The function’s arguments correspond to the event’s properties.
+The [Ampli Wrapper](/docs/sdks/ampli/ampli-wrapper) is a generated, strongly typed API for tracking Analytics events based on your Tracking Plan in Amplitude Data. The tracking library exposes a function for every event in your team’s tracking plan. The function’s arguments correspond to the event’s properties.
 
 [Ampli](/docs/sdks/ampli) can benefit your app by providing autocompletion for events & properties defined in Data and enforce your event schemas in code to prevent bad instrumentation. 
 
@@ -159,7 +159,7 @@ ampli.identify('user-id', {
 });
 ```
 
-The options argument allows you to pass [Amplitude fields](/docs/apis/http-api-v2#keys-for-the-event-argument) for this call, such as `deviceId`.
+The options argument allows you to pass [Amplitude fields](/docs/apis/analytics/http-v2#keys-for-the-event-argument) for this call, such as `deviceId`.
 
 ```ts
 ampli.identify('user-id', {
@@ -201,12 +201,12 @@ ampli.eventName(properties: EventNameProperties, options: EventOptions)
 
 The `properties` argument passes event properties.
 
-The `options` argument allows you to pass [Amplitude fields](/docs/apis/http-api-v2#properties-1), like `price`, `quantity` and `revenue`.
+The `options` argument allows you to pass [Amplitude fields](/docs/apis/analytics/http-v2#properties-1), like `price`, `quantity` and `revenue`.
 
 For example, in the following code, your tracking plan contains an event called `songPlayed`. The event is defined with two required properties: `songId` and `songFavorited`.
  The property type for `songId` is string, and `songFavorited` is a boolean.
 
-The event has an Amplitude field defined: `deviceId`. Learn more about Amplitude fields [here](/docs/apis/http-v2-api/#keys-for-the-event-argument).
+The event has an Amplitude field defined: `deviceId`. Learn more about Amplitude fields [here](/docs/apis/analytics/http-v2/#keys-for-the-event-argument).
 
 ```ts
 ampli.songPlayed({

@@ -24,7 +24,7 @@ updated_at: 1713821937
 This is the client-side Google Tag Manager Template for Amplitude Analytics. The tag uses the [Amplitude Browser SDK 2.0](/docs/sdks/analytics/browser/browser-sdk-2/) for data collection.
 
 {{partial:admonition type="warning" title="Breaking Changes Checklist from the version 240a7, Aug, 2023"}}
-Starting from the version 240a7, Aug, 2023, this template has been updated from using the [Marketing Analytics SDK(Deprecated)](../../sdks/marketing-analytics-browser/) to the [Amplitude Browser SDK 2.0](/docs/sdks/analytics/browser/browser-sdk-2/), offering better support, enhanced functionality, and additional features. 
+Starting from the version 240a7, Aug, 2023, this template has been updated from using the [Marketing Analytics SDK(Deprecated)](/docs/sdks/analytics/browser/marketing-analytics-sdk/) to the [Amplitude Browser SDK 2.0](/docs/sdks/analytics/browser/browser-sdk-2/), offering better support, enhanced functionality, and additional features. 
  
 While this updated template offers additional features and improvements,it may result in slightly different behavior that could potentially affect your existing analytics charts. However, we've made these changes configurable to maintain consistency. If you wish to retain the legacy behavior, it's essential to review the following [list of breaking changes](./#breaking-changes-checklist) and adjust your configuration accordingly.
 
@@ -68,7 +68,7 @@ Amplitude recommends that you install Amplitude through a method *other* than a 
  
 #### API Key
 
-Copy your Amplitude project API Key in the API Key field. For EU residency, your project API Key is under `analytics.eu.amplitude.com`. Each project has different API Key, make sure you are copy the API Key from the right project. Go to **Settings -> Projects -> click the right project name from the list** to find your project API Key. Check [here](/docs/apis/find-api-credentials/) for more details.
+Copy your Amplitude project API Key in the API Key field. For EU residency, your project API Key is under `analytics.eu.amplitude.com`. Each project has different API Key, make sure you are copy the API Key from the right project. Go to **Settings -> Projects -> click the right project name from the list** to find your project API Key. Check [here](/docs/apis/authentication) for more details.
 
 #### Instance name
 
@@ -111,7 +111,7 @@ A tag type allows you to specify what kind of action or event should be tracked 
 `init` operates as a separate tag type. It's essential to create a tag for the init tag type. Although Amplidue provides deferer initialization, events won't be sent to Amplitude until the `init` tag has been activated.
 {{/partial:admonition}}
 
-Cookies are generated at the initialization stage. For more information on managing cookies, see the [cookie management details](../../sdks/typescript-browser/#cookie-management). Amplitude recommends that you initialize after obtaining cookie consent. Amplitude supports deferred initialization, so any event tracking that takes place before the init command will still be captured and won't be lost.
+Cookies are generated at the initialization stage. For more information on managing cookies, see the [cookie management details](/docs/sdks/analytics/browser/browser-sdk-2#cookie-management). Amplitude recommends that you initialize after obtaining cookie consent. Amplitude supports deferred initialization, so any event tracking that takes place before the init command will still be captured and won't be lost.
 
 ##### Track default Amplitude events
 
@@ -166,7 +166,7 @@ If the user ID is already available you can:
 |`cookieSameSite` | `string`. Sets `SameSite` property of cookies created. | `Lax` |
 |`cookieSecure` | `boolean`. Sets `Secure` property of cookies created. | `false` |
 |`cookieStorage` | `Storage<UserSession>`. Sets a custom implementation of `Storage<UserSession>` to persist user identity. | `MemoryStorage<UserSession>` |
-|`cookieUpgrade`| `boolean`. Sets upgrading from cookies created by [maintenance Browser SDK](/docs/data/sdks/analytics/javascript/). If true, new Browser SDK deletes cookies created by maintenance Browser SDK. If false, Browser SDK keeps cookies created by maintenance Browser SDK. | `true` |
+|`cookieUpgrade`| `boolean`. Sets upgrading from cookies created by [maintenance Browser SDK](/docs/sdks/analytics/browser/javascript-sdk). If true, new Browser SDK deletes cookies created by maintenance Browser SDK. If false, Browser SDK keeps cookies created by maintenance Browser SDK. | `true` |
 |`disableCookies`| `boolean`. Sets permission to use cookies. If value is `true`, localStorage API is used to persist user identity. | The cookies is enable by default. |
 |`domain` | `string`. Sets the domain property of cookies created. | `undefined` |
 |`partnerId` | `string`. Sets partner ID. Amplitude requires the customer who built an event ingestion integration to add the partner identifier to `partner_id`. | `undefined` |

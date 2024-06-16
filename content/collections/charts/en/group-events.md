@@ -8,7 +8,7 @@ Sometimes, you may need to create an analysis in which a particular step of the 
 
 ![events_in_this_order.png](/docs/output/img/charts/events-in-this-order-png.png)
 
-By default, Amplitude does not permit you to select multiple steps directly through the Events Module. There is no `OR` clause for you to use here. However, it is possible to create a [custom event](https://help.amplitude.com/hc/en-us/articles/360047138392#create-a-custom-event-from-existing-events) that is made up of two separate events joined by an `OR` clause. You would then use this new, custom event in your flow.
+By default, Amplitude does not permit you to select multiple steps directly through the Events Module. There is no `OR` clause for you to use here. However, it is possible to create a custom event that is made up of two separate events joined by an `OR` clause. You would then use this new, custom event in your flow.
 
 In the image above, `Play or Search Song` is a custom event consisting of the `Play Song` event, the `Search Song` event, and an `OR` clause to connect the two. Any user who triggers **either** the `Play Song` event **or** the `Search Song` event is considered to have **converted** that second step.
 

@@ -65,7 +65,7 @@ amplitude.init(API_KEY, 'user@amplitude.com', options);
 |`cookieSameSite` | `string`. Sets `SameSite` property of cookies created. | `Lax` |
 |`cookieSecure` | `boolean`. Sets `Secure` property of cookies created. | `false` |
 |`cookieStorage` | `Storage<UserSession>`. Sets a custom implementation of `Storage<UserSession>` to persist user identity. | `MemoryStorage<UserSession>` |
-|`cookieUpgrade`| `boolean`. Sets upgrading from cookies created by [maintenance Browser SDK](/docs/data/sdks/analytics/javascript/). If true, new Browser SDK deletes cookies created by maintenance Browser SDK. If false, Browser SDK keeps cookies created by maintenance Browser SDK. | `true` |
+|`cookieUpgrade`| `boolean`. Sets upgrading from cookies created by [maintenance Browser SDK](/docs/sdks/analytics/browser/javascript-sdk). If true, new Browser SDK deletes cookies created by maintenance Browser SDK. If false, Browser SDK keeps cookies created by maintenance Browser SDK. | `true` |
 |`disableCookies`| `boolean`. Sets permission to use cookies. If value is `true`, localStorage API is used to persist user identity. | The cookies is enable by default. |
 |`domain` | `string`. Sets the domain property of cookies created. | `undefined` |
 |`partnerId` | `string`. Sets partner ID. Amplitude requires the customer who built an event ingestion integration to add the partner identifier to `partner_id`. | `undefined` |
@@ -828,9 +828,9 @@ amplitude.add(webAttributionPlugin());
 amplitude.init(API_KEY);
 ```
 
-See the [configuration options](/docs/sdks/sdk-catalog/browser/marketing-analytics-sdk#configuration).
+See the [configuration options](/docs/sdks/analytics/browser/marketing-analytics-sdk#configuration).
 
-Learn more about what the [Web Attribution Plugin](/docs/sdks/sdk-catalog/browser/marketing-analytics-sdk#web-attribution) supports.
+Learn more about what the [Web Attribution Plugin](/docs/sdks/analytics/browser/marketing-analytics-sdk#web-attribution) supports.
 
 ##### Differences from the base SDK
 
@@ -868,8 +868,8 @@ amplitude.add(pageViewTrackingPlugin());
 amplitude.init(API_KEY);
 ```
 
-See the [configuration options](/docs/sdks/sdk-catalog/browser/marketing-analytics-sdk#configuration).
-Learn more about what the [Page View Plugin](/docs/sdks/sdk-catalog/browser/marketing-analytics-sdk#page-view) supports.
+See the [configuration options](/docs/sdks/analytics/browser/marketing-analytics-sdk#configuration).
+Learn more about what the [Page View Plugin](/docs/sdks/analytics/browser/marketing-analytics-sdk#page-view) supports.
 
 ##### Differences from base SDK
 
@@ -1097,7 +1097,7 @@ The SDK initializes the device ID in the following order, with the device ID bei
 1. Device id in configuration on initialization
 2. "deviceId" value from URL param, for example `http://example.com/?deviceId=123456789`. See  [cross domain tracking](#cross-domain-tracking) for more details
 3. Device id in cookie storage. Refer to [cookie management](#cookie-management) for more details
-4. Device id in cookie storage of Browser SDK. Refer to [cookie management](../typescript-browser/#cookie-management) for more details
+4. Device id in cookie storage of Browser SDK. Refer to [cookie management](/docs/sdks/analytics/browser/browser-sdk-2#cookie-management) for more details
 5. A randomly generated 36-character UUID
 
 #### When does a device ID change
