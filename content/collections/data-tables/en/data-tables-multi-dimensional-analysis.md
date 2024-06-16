@@ -6,7 +6,7 @@ source: 'https://help.amplitude.com/hc/en-us/articles/6797483965083-Multi-dimens
 this_article_will_help_you:
   - 'Build a custom analysis using multiple metrics in several different dimensions'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717103314
+updated_at: 1718568259
 landing: true
 landing_blurb: 'Build a custom analysis using multiple metrics in several different dimensions'
 ---
@@ -104,10 +104,6 @@ The same logic applies to the Session Totals metric. When a group-by is added in
 You can click **Filter** to select which property values you want to keep or hide in the table.
 
 You can also add an ad hoc filter for in-line events or metrics. To do so, click the three dots from the event or metric header and select “Add Filter.” This will let you apply filters *on top* of your events or metrics. Once applied, you can see what filters are applied by hovering over the **Filter** icon.
-
-{{partial:admonition type='note'}}
- there are some display limits when sharing analyses externally via a [Public Link](/docs/knowledge/articles/235717108/en-us?brand_id=68397):
-{{/partial:admonition}}
 
 * Session-based and attribute-based metrics are not supported, and
 * display options *Relative % for totals* nor *Data bars in cells* are not displayed.

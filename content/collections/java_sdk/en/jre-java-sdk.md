@@ -9,7 +9,7 @@ supported_languages:
 github_link: 'https://github.com/amplitude/Amplitude-Java'
 releases_url: 'https://github.com/amplitude/Amplitude-Java/releases'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715709839
+updated_at: 1718572695
 ampli_article: 0128c1e3-dbc5-4612-982f-aefef4ad4db0
 ---
 This is the documentation for the Amplitude Analytics Java SDK.
@@ -157,12 +157,12 @@ client.shutdown();
 ## Send events
 
 {{partial:admonition type="note" heading=""}}
-This SDK uses the [Http V2](/docs/apis/http-v2) API and follows the same constraints for events. Make sure that all events logged in the SDK have the `event_type` field and at least one of `device_id` or `user_id`, and follow the HTTP API's constraints on each of those fields.
+This SDK uses the [Http V2](/docs/apis/analytics/http-v2) API and follows the same constraints for events. Make sure that all events logged in the SDK have the `event_type` field and at least one of `device_id` or `user_id`, and follow the HTTP API's constraints on each of those fields.
 
 To prevent instrumentation issues, device IDs and user IDs must be strings with a length of 5 characters or more. If an event contains a device ID or user ID that's too short, the ID value is removed from the event. If the event doesn't have a `user_id` or `device_id` value, the upload may be rejected with a 400 status. Override the default minimum length of 5 characters by passing the `min_id_length` option with the request.
 {{/partial:admonition}}
 
-Events represent how users interact with your application. For example, "Button Clicked" may be an action you want to track. In Java, `logEvent` only accepts an event object. See the [Http V2 API](/docs/apis/http-v2) for available event object keys.
+Events represent how users interact with your application. For example, "Button Clicked" may be an action you want to track. In Java, `logEvent` only accepts an event object. See the [Http V2 API](/docs/apis/analytics/http-v2) for available event object keys.
 
 {{partial:admonition type="note" heading=""}}
 For testing the Java SDK, make sure your main thread continues until the background daemon thread that has the Amplitude Http request is finished. Otherwise, the main thread terminated earlier than the daemon thread will lead `logEvent` to fail silently.
@@ -359,8 +359,6 @@ To invoke the next middleware in the queue, use the `next` function. You must 
 Add middleware to Amplitude via `client.addEventMiddleware`. You can add as many middleware as you like. Each middleware runs in the order in which it was added.
 
 You can find examples for [Java](https://github.com/amplitude/ampli-examples/blob/main/jre/java/AmpliApp/src/main/java/org/example/LoggingMiddleware.java) and [Kotlin](https://github.com/amplitude/ampli-examples/blob/main/jre/kotlin/AmpliApp/src/main/kotlin/LoggingMiddleware.kt).
-
-## Troubleshooting
 
 ## Troubleshooting
 

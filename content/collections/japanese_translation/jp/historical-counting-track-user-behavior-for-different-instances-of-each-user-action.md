@@ -25,7 +25,7 @@ eコマースプラットフォームで購入を完了したり、音楽スト�
 
 ## 開始する前に
 
-ヒストリカルカウント機能の使用を開始する前に、知っておくべきことがいくつかあります。Amplitudeを初めて使用する場合は、イベントがAmplitudeチャートに表示されるようにインストルメンテーションプロセスを完了する必要があります。最初に[イベントセグメンテーションチャート](https://help.amplitude.com/hc/en-us/articles/360033852251-Event-Segmentation-Getting-Started)を探索することをお勧めします。
+ヒストリカルカウント機能の使用を開始する前に、知っておくべきことがいくつかあります。Amplitudeを初めて使用する場合は、イベントがAmplitudeチャートに表示されるようにインストルメンテーションプロセスを完了する必要があります。最初に[イベントセグメンテーションチャート](/docs/analytics/charts/event-segmentation/event-segmentation-build-Event-Segmentation-Getting-Started)を探索することをお勧めします。
 
 この機能について注意する他の重要なこと：
 

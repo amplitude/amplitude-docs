@@ -75,7 +75,7 @@ pip install amplitude-analytics
 
 ## Install Ampli
 
-You can install the [Ampli CLI](/docs/data/ampli/cli/) from Homebrew or NPM.
+You can install the [Ampli CLI](/docs/sdks/ampli/ampli-cli) from Homebrew or NPM.
 
 {{partial:tabs tabs="npm, brew"}}
 {{partial:tab name="npm"}}
@@ -140,7 +140,7 @@ For example your tracking plan contains a user property called `role`. The prope
 ampli.identify("user_id", Identify(role="admin"))
 ```
 
-The options argument allows you to pass [Amplitude fields](/docs/apis/http-v2#keys-for-the-event-argument) for this call, such as `device_id`.
+The options argument allows you to pass [Amplitude fields](/docs/apis/analytics/http-v2#keys-for-the-event-argument) for this call, such as `device_id`.
 
 ```python
 ampli.identify("user_id", Identify(role="admin"), EventOptions(device_id="device_id"))
@@ -182,7 +182,7 @@ To track an event, call the event's corresponding function. Every event in your 
 ampli.event_name("user_id", EventName(...), EventOptions(...))
 ```
 
-The optional `EventOptions` argument allows you to pass [Amplitude fields](/docs/apis/http-v2#keys-for-the-event-argument), like `device_id`.
+The optional `EventOptions` argument allows you to pass [Amplitude fields](/docs/apis/analytics/http-v2#keys-for-the-event-argument), like `device_id`.
 
 For example, in the following code snippet, your tracking plan contains an event called `songPlayed`. The event is defined with two required properties: `songId` and `songFavorited.` The property type for `songId` is string, and `songFavorited` is a boolean.
 

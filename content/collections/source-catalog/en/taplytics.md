@@ -34,7 +34,7 @@ When the Taplytics SDK is installed alongside Amplitude, your existing and futu
 
 ## Set up and use the integration
 
-For detailed instructions, see the [Taplytics documentation](https://docs.taplytics.com/docs/integrations-amplitude). The integration uses Amplitude's [Attribution API endpoint](/docs/apis/attribution-api).
+For detailed instructions, see the [Taplytics documentation](https://docs.taplytics.com/docs/integrations-amplitude). The integration uses Amplitude's [Attribution API endpoint](/docs/apis/analytics/attribution).
 
 Taplytics sends experiment data as a single event to Amplitude. The event is named `TL_experiments` and includes the experiment data as properties.
 

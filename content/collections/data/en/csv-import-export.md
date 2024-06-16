@@ -126,7 +126,7 @@ Follow the below steps to import or export user properties:
 2. Click the import icon ![](/docs/output/img/data/22418899828635) to open the import modal.
 3. If your import file is ready to upload and follows the [expected user properties schema](#h_01HNB5CSJY8QWZXPWXPJYK1JHQ), you can drag and drop your .CSV file or click Upload and choose the file from your desired location. If not, click *template* to download a template .CSV to update for importing.
 
-![](/docs/output/img/data/22418907248795)
+![](/docs/output/img/data/22418907248795.png)
 
 The imported events and event properties will appear in a branch named *import*.
 
@@ -134,7 +134,7 @@ The imported events and event properties will appear in a branch named *import*.
 5. If you want to export user properties from your tracking plan, click the export icon ![](/docs/output/img/data/22418905478939) instead.
 6. In the export modal that appears, choose whether to download your tracking plan’s schema or a .CSV file template. Then, click Download.
 
-**![](/docs/output/img/data/22418912795163)**
+**![](/docs/output/img/data/22418912795163.png)**
 
 The next section will define the user properties .CSV import file structure and the [additional columns seen in the user properties export](#h_01HN4703NR0H9FRFDPZ610WCWN).
 
