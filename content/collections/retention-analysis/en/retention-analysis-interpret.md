@@ -39,7 +39,7 @@ In the rest of this section, we’ll explain how you measure retention, what all
 
 ## Different ways to measure retention
 
-The Retention Analysis chart offers several options for measuring retention, based on when your users triggered their [return event](https://help.amplitude.com/hc/en-us/articles/230543327):
+The Retention Analysis chart offers several options for measuring retention, based on when your users triggered their [return event](/docs/analytics/charts/retention-analysis/retention-analysis-build):
 
 * To discover how many of your users triggered your return event **on a specific day or after** triggering your starting event, use [**Return On or After**](#h_01GXB4EFQ2VXSYEZ0CRMF09AJS) retention.
 * To learn what percentage of users came back to fire your return event **only on a specific day** after they performed your starting event, use [**Return On**](#h_01GXB4F62TJEH50T03FGGH0HY4) retention.

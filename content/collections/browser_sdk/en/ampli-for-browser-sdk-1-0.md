@@ -200,7 +200,7 @@ ampli.identify('user-id', {
 });
 ```
 
-The options argument allows you to pass [Amplitude fields](/docs/apis/http-api-v2#keys-for-the-event-argument) for this call, such as `deviceId`.
+The options argument allows you to pass [Amplitude fields](/docs/apis/analytics/http-v2#keys-for-the-event-argument) for this call, such as `deviceId`.
 
 ```ts
 ampli.identify('user-id', {
@@ -242,12 +242,12 @@ ampli.eventName(properties: EventNameProperties, options: EventOptions)
 
 The `properties` argument passes event properties.
 
-The `options` argument allows you to pass [Amplitude fields](/docs/apis/http-api-v2#properties-1), like `price`, `quantity` and `revenue`.
+The `options` argument allows you to pass [Amplitude fields](/docs/apis/analytics/http-v2#properties-1), like `price`, `quantity` and `revenue`.
 
 For example, in the following code, your tracking plan contains an event called `songPlayed`. The event is defined with two required properties: `songId` and `songFavorited`.
  The property type for `songId` is string, and `songFavorited` is a boolean.
 
-The event has an Amplitude field defined: `deviceId`. Learn more about Amplitude fields [here](/docs/apis/http-v2-api/#keys-for-the-event-argument).
+The event has an Amplitude field defined: `deviceId`. Learn more about Amplitude fields [here](/docs/apis/analytics/http-v2/#keys-for-the-event-argument).
 
 ```ts
 ampli.songPlayed({

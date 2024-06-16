@@ -50,7 +50,7 @@ To install Ampli locally, run `npm install @amplitude/ampli -D`.
 
 ## Step 4: Run Ampli in CI
 
-To integrate Ampli with your CI system, change your CI configuration to run [`ampli status`](cli.md#ampli-status) as part of the build process.
+To integrate Ampli with your CI system, change your CI configuration to run [`ampli status`](/docs/sdks/ampli/ampli-cli#ampli-status) as part of the build process.
 
 ### Docker Containers
 

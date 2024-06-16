@@ -22,7 +22,7 @@ updated_at: 1713825662
 This integration combines Amplitude's analytics with Singular's attribution tools into a unified system. Using this integration helps non-technical product and marketing team members identify the marketing channels and product features and with the best user retention and engagement.
 
 {{partial:admonition type="note" title=""}}
-Singular uses the [Amplitude Attribution API](/docs/apis/attribution-api) to send data to Amplitude. Make sure you understand how the Attribution API works before setting up this integration.
+Singular uses the [Amplitude Attribution API](/docs/apis/analytics/attribution) to send data to Amplitude. Make sure you understand how the Attribution API works before setting up this integration.
 {{/partial:admonition}}
 
 ## About Singular
