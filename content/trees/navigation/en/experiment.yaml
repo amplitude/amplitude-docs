@@ -159,6 +159,10 @@ tree:
   -
     id: e67e82c0-c298-4d72-bd01-6e42a7e97826
     title: Integrations
+    children:
+      -
+        id: 91587dda-6cea-4de4-981f-3e346a936598
+        entry: 401dbba7-8405-4a22-96ff-5161ec1c969e
   -
     id: a81595e8-7e05-4e26-ab71-e608ac3ca9fc
     title: Troubleshooting
