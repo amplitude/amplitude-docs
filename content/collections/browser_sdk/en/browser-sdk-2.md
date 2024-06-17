@@ -323,6 +323,59 @@ amplitude.init(AMPLITUDE_API_KEY, {
 
 {{/partial:collapse}}
 
+##### Exclude referrers
+
+{{partial:admonition type="note" heading=""}}
+All sub-configurations of `config.defaultTracking.attribution` take effect only on user properties and do **NOT** affect the event properties of the default page view events. 
+{{/partial:admonition}}
+
+The default value of `config.defaultTracking.attribution.excludeReferrers` is the top level domain with cookie storage enabled. For example, if you initialize the SDK on `https://www.docs.developers.amplitude.com/`, the SDK first checks `amplitude.com`. If it doesn't allow cookie storage, then the SDK checks `developers.amplitude.com` and subsequent subdomains. If it allows cookie storage, then the SDK sets `excludeReferrers` to an RegExp object `/amplitude\.com$/` which matches and then exlucdes tracking referrers from all subdomains of `amplitude.com`, for example, `data.amplitude.com`, `analytics.amplitude.com` and etc. 
+
+In addition to excluding referrers from the default configuration, you can add other domains by setting the custom `excludeReferrers`. Custom `excludeReferrers` overrides the default values. For example, to also exclude referrers from `google.com`, set `excludeReferrers` to `[/amplitude\.com$/, 'google.com']`.
+
+{{partial:collapse name="Example of including all referrers"}}
+Track complete web attribution, including self-referrals, for comprehensive insight.
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  defaultTracking: {
+    attribution: {
+      // Override the default setting to exclude all subdomains
+      excludeReferrers: [],
+    },
+  },
+});
+```
+{{/partial:collapse}}
+
+{{partial:collapse name="Example of excluding all self-referrals and other subdomains"}}
+For customers who want to exclude tracking campaign from any referrers across all subdomains of `your-domain.com`, as well as from a specific subdomain.
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+    defaultTracking: {
+    attribution: {
+      excludeReferrers: [/your-domain\.com$/, 'www.test.com'],
+    },
+  },
+});
+```
+{{/partial:collapse}}
+
+{{partial:collapse name="Exclude referrers that match a specific pattern"}}
+For customers who want to exclude tracking campaign from all referrers across all subdomains of `test.com`.
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  defaultTracking: {
+    attribution: {
+      excludeReferrers: [/test\.com$/],
+    },
+  },
+});
+```
+{{/partial:collapse}}
+
 ### Track page views
 
 Amplitude tracks page view events by default. The default behavior sends a page view event on initialization. The event type for this event is `[Amplitude] Page Viewed`.

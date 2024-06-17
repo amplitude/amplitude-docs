@@ -1,29 +1,23 @@
 ---
-id: eafb23af-5ee4-4b2d-abe0-1ea6774ac089
+id: 7a2593e7-565f-4cb8-8b8a-ac138219acb4
 blueprint: api
-title: 'Lookup Table API'
-source: 'https://www.docs.developers.amplitude.com/analytics/apis/lookup-tables-api/'
+title: 'Lookup Table API 2'
 auth_method: http_basic
-standard_endpoint: 'https://amplitude.com/api/2/lookup_table'
-eu_endpoint: 'https://analytics.eu.amplitude.com/api/2/lookup_table'
-postman_link: 'https://www.postman.com/amplitude-dev-docs/workspace/amplitude-developers/folder/20044411-37aafdc7-968f-4bec-b2fc-a1a204b87863?action=share&source=copy-link&creator=29131806&ctx=documentation'
-api_status: beta
+standard_endpoint: 'https://data-api.amplitude.com/api/3/lookup_table'
+eu_endpoint: 'https://data-api.eu.amplitude.com/api/3/lookup_table'
+postman_link: 'https://god.gw.postman.com/run-collection/20044411-88bd70c1-9e00-483c-aaf1-2b7159f9bb2b?action=collection%2Ffork&collection-url=entityId%3D20044411-88bd70c1-9e00-483c-aaf1-2b7159f9bb2b%26entityType%3Dcollection%26workspaceId%3D2ffc735a-10a6-4f54-818e-16c87aeebcd7#?env%5BAmplitude%20API%20Environment%5D=W3sia2V5IjoiYXBpX2tleSIsInZhbHVlIjoiSU5TRVJUIEFQSSBLRVkiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoic2VjcmV0Iiwic2Vzc2lvblZhbHVlIjoiSU5TRVJUIEFQSSBLRVkiLCJzZXNzaW9uSW5kZXgiOjB9LHsia2V5Ijoic2VjcmV0X2tleSIsInZhbHVlIjoiSU5TRVJUIFNFQ1JFVCBLRVkiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoic2VjcmV0Iiwic2Vzc2lvblZhbHVlIjoiSU5TRVJUIFNFQ1JFVCBLRVkiLCJzZXNzaW9uSW5kZXgiOjF9LHsia2V5IjoiU0NJTV90b2tlbiIsInZhbHVlIjoiSU5TRVJUIFNDSU0gVE9LRU4iLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoic2VjcmV0Iiwic2Vzc2lvblZhbHVlIjoiSU5TRVJUIFNDSU0gVE9LRU4iLCJzZXNzaW9uSW5kZXgiOjJ9LHsia2V5Ijoib3JnX2FwaV9rZXkiLCJ2YWx1ZSI6IklOU0VSVCBPUkcgQVBJIEtFWSIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJzZWNyZXQiLCJzZXNzaW9uVmFsdWUiOiJJTlNFUlQgT1JHIEFQSSBLRVkiLCJzZXNzaW9uSW5kZXgiOjN9LHsia2V5Ijoib3JnX3NlY3JldF9rZXkiLCJ2YWx1ZSI6IklOU0VSVCBPUkcgU0VDUkVUIEtFWSIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJzZWNyZXQiLCJzZXNzaW9uVmFsdWUiOiJJTlNFUlQgT1JHIFNFQ1JFVCBLRVkiLCJzZXNzaW9uSW5kZXgiOjR9XQ=='
+api_status: ga
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1718651015
 lede: |-
   Lookup tables let you augment user and event properties. Instead of using formulas, you can upload a CSV file that contains property mappings to derive new properties. 
 
   To create a lookup property, create a lookup table to reference. You can retrieve and update each of the tables using the API. Lookup Tables are identified by the name and are scoped per project.
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1716312346
-summary: 'Augment your properties with static data.'
+source: 'https://www.docs.developers.amplitude.com/data/apis/lookup-tables-api/'
 ---
-
-{{partial:admonition type="deprecated" heading="This version of the Lookup Tables API is deprecated"}}
-This API is no longer supported. Use the new [API](/docs/apis/analytics/lookup-tabe-2).
-{{/partial:admonition}}
-
 ## Considerations
 
-The CSV file must meet the following requirements:
+The CSV file must comply with the following requirements:
 
 - The max file size is 100 MB and the file can't have more than 1,000,000 rows.
 - The first row must contain column names/headers.
@@ -43,7 +37,7 @@ Create a Lookup Table object by uploading a CSV that maps an existing property t
 |`name` | <span class="required">Required</span>. String. Name of the table.|
 |`file` | <span class="required">Required</span>. File. A CSV representation of the mappings.|
 
-### Request
+### Example request
 
 {{partial:tabs tabs="cURL, Http"}}
 {{partial:tab name="cURL"}}
@@ -57,7 +51,7 @@ curl -L -X POST 'https://amplitude.com/api/2/lookup_table/:name' \
 ```bash
 POST '/api/2/lookup_table/:name' HTTP/1.1
 Host: api2.amplitude.com
-Authorization: Basic {api-key}:{secret-key}
+Authorization: Basic {{api-key}}:{{secret-key}}
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
 
 ----WebKitFormBoundary7MA4YWxkTrZu0gW
@@ -72,7 +66,7 @@ Content-Type: text/csv
 
 ### Response
 
-{{partial:tabs tabs="Success, Http 400: Bad request, Http 409: Conflict, Http 413: Payload too large"}}
+{{partial:tabs tabs="Success, Http 400: Bad Request, HTTP 409: Conflict, HTTP 413: Payload Too Large"}}
 {{partial:tab name="Success"}}
 ```json
 {
@@ -88,7 +82,7 @@ Content-Type: text/csv
 }
 ```
 {{/partial:tab}}
-{{partial:tab name="Http 400: Bad request"}}
+{{partial:tab name="Http 400: Bad Request"}}
 ```bash
 HTTP 400: Bad Request
 ```
@@ -96,21 +90,23 @@ HTTP 400: Bad Request
 - Invalid file
 - File type is invalid. Accepted file types are `text/csv`, `text/plain`, and `text/tab-separated-values`.
 - File is empty
-- Found duplicate column header. There's a duplicate column, remove the column so the file can be processed.
+- Found duplicate column header. There's a duplicate column, please remove the column so the file can be processed.
 {{/partial:tab}}
-{{partial:tab name="Http 409: Conflict"}}
+{{partial:tab name="HTTP 409: Conflict"}}
 ```bash
+
 HTTP 409: Conflict (Conflict, name already exists)
 ```
+
 The table already exists
 {{/partial:tab}}
-{{partial:tab name="Http 413: Payload too large"}}
+{{partial:tab name="HTTP 413: Payload Too Large"}}
 ```bash
+
 HTTP 413: Payload Too Large
 ```
 
 The file exceeds the max size.
-
 {{/partial:tab}}
 {{/partial:tabs}}
 
@@ -124,7 +120,7 @@ Retrieve a Lookup Table by its name.
 |-----|------|
 |`name` | <span class="required">Required</span>. String. Name of the table.|
 
-### Request
+### Example request
 
 {{partial:tabs tabs="cURL, Http"}}
 {{partial:tab name="cURL"}}
@@ -137,14 +133,14 @@ curl -L -X GET 'https://amplitude.com/api/2/lookup_table/:name' \
 ```bash
 GET /api/2/lookup_table/:name HTTP/1.1
 Host: amplitude.com
-Authorization: Basic {api-key}:{secret-key}
+Authorization: Basic {{api-key}}:{{secret-key}}
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
 
 ### Response
 
-{{partial:tabs tabs="Success, Http 400: Not found"}}
+{{partial:tabs tabs="Success, Http 404: Not found"}}
 {{partial:tab name="Success"}}
 ```json
 {
@@ -160,7 +156,7 @@ Authorization: Basic {api-key}:{secret-key}
 }
 ```
 {{/partial:tab}}
-{{partial:tab name="Http 400: Not found"}}
+{{partial:tab name="Http 404: Not found"}}
 ```bash
 HTTP 404: Not found
 ```
@@ -180,7 +176,7 @@ Update a Lookup Table's columns and data.
 |`name` | <span class="required">Required</span>. String. Name of the table.|
 |`file` | <span class="required">Required</span>. File. A CSV representation of the mappings.|
 
-### Request
+### Example request
 
 {{partial:tabs tabs="cURL, Http"}}
 {{partial:tab name="cURL"}}
@@ -194,7 +190,7 @@ curl -L -X PATCH 'https://amplitude.com/api/2/lookup_table/:name' \
 ```bash
 PATCH /api/2/lookup_table/:name HTTP/1.1
 Host: amplitude.com
-Authorization: Basic {api-key}:{secret-key}
+Authorization: Basic {{api-key}}:{{secret-key}}
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
 
 ----WebKitFormBoundary7MA4YWxkTrZu0gW
@@ -209,7 +205,7 @@ Content-Type: text/csv
 
 ### Response
 
-{{partial:tabs tabs="Success, Http 400: Bad request, Http 404: Not found, Http 413: Payload too large"}}
+{{partial:tabs tabs="Success, Http 400: Bad Request, Http 404: Not found, Http 413: Payload Too Large"}}
 {{partial:tab name="Success"}}
 ```json
 {
@@ -225,7 +221,7 @@ Content-Type: text/csv
 }
 ```
 {{/partial:tab}}
-{{partial:tab name="Http 400: Bad request"}}
+{{partial:tab name="Http 400: Bad Request"}}
 ```bash
 HTTP 400: Bad Request
 ```
@@ -235,14 +231,14 @@ HTTP 400: Bad Request
 - File is empty.
 - Found duplicate column header. There's a duplicate column, please remove the column so the file can be processed.
 {{/partial:tab}}
-{{partial:tab name="Http 409: Conflict"}}
+{{partial:tab name="Http 404: Not found"}}
 ```bash
 HTTP 404: Not found
 ```
 
 The table wasn't found because it wasn't created
 {{/partial:tab}}
-{{partial:tab name="Http 413: Payload too large"}}
+{{partial:tab name="Http 413: Payload Too Large"}}
 ```bash
 
 HTTP 413: Payload Too Large
@@ -254,8 +250,6 @@ The file exceeds the max size.
 
 ## Delete a Lookup Table
 
-Delete a Lookup Table.
-
 ### Parameters
 
 |<div class="big-column">Name</div>| Description|
@@ -263,7 +257,7 @@ Delete a Lookup Table.
 |`name` | <span class="required">Required</span>. String. Name of the table.|
 |`force` | <span class="optional">Optional</span>. Boolean. Delete the associated properties. Defaults to `false`.|
 
-### Request 
+### Example request
 
 {{partial:tabs tabs="cURL, Http"}}
 {{partial:tab name="cURL"}}
@@ -276,12 +270,12 @@ curl -L -X DELETE 'https://amplitude.com/api/2/lookup_table/:name' \
 ```bash
 DELETE /api/2/lookup_table/:lookup_table_name?force=True HTTP/1.1
 Host: amplitude.com
-Authorization: Basic {api-key}:{secret-key}
+Authorization: Basic {{api-key}}:{{secret-key}}
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
 
-### Response
+### Repsonse
 
 {{partial:tabs tabs="Success, Http 404: Not found"}}
 {{partial:tab name="Success"}}
@@ -302,9 +296,11 @@ The table wasn't found.
 {{/partial:tab}}
 {{/partial:tabs}}
 
-## List all lookup tables
+## List all Lookup Tables
 
 List all the Lookup Tables for the project.
+
+### Example request
 
 {{partial:tabs tabs="cURL, Http"}}
 {{partial:tab name="cURL"}}
