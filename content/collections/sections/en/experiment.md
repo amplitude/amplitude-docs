@@ -4,7 +4,7 @@ blueprint: section
 title: Experiment
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: c0ecd457-5b72-4dc9-b683-18a736413d32
-updated_at: 1718656433
+updated_at: 1718658252
 nav_title: experiment
 template: landing-page-experiment
 current-collection: experiment|experiment-apis|experiment-results|experiment-sdks|experiment-theory|workflow
@@ -36,14 +36,14 @@ landing_page_content:
     card_title: 'Web Experimentation'
     card_content: 'Run A/B, multivariate, and MAB experiments on the web without writing any code.'
     cta: 'Get started with web experimenation'
-    entries_field: 48014e0e-3130-40cc-ba15-946d6a16b51b
+    entries_field: 99eb2927-ad52-424a-a04d-7e90a0ddfeb7
     type: card
     enabled: true
     external_link: false
     icon: brand-stickers/icon-experiment-purple.svg
   -
     id: lxj7mpnk
-    card_title: 'Experiment SDKs'
+    card_title: SDKs
     card_content: 'Instrument feature flagging and experimentation using SDKs.'
     cta: 'See the Experiment SDK docs'
     entries_field: eeaf3cb1-5593-4fc4-a220-3ad4d73e8c82
