@@ -1,5 +1,6 @@
-browser: 2.7.0
-session_replay_plugin: 1.1.9
-session_replay_standalone: 1.2.8
-session_replay_android_plugin: 0.5+
+browser: 2.7.3
+visual_labeling_plugin: 0.9.0
+session_replay_plugin: 1.4.0
+session_replay_standalone: 1.6.0
+session_replay_android_plugin: 0.6+
 experiment_android: 1.12.1

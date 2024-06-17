@@ -29,7 +29,7 @@ After you download the extension, follow these steps to sync your chart data wit
 	![](/docs/output/img/analytics/17785851995035.png)
 
   {{partial:admonition type='note'}}
-  Be sure you use the same email to sign into Google Sheets that you use to log in to your Amplitude account. If the emails don't match, you won’t be able to export data from your organization.
+  Use the same email to sign into Google Sheets that you use to log in to your Amplitude account. If the emails don't match, you won’t be able to export data from your organization.
   {{/partial:admonition}}
 
 3. Next, allow Amplitude access to your Google account.

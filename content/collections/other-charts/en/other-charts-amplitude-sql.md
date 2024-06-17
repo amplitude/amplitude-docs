@@ -6,14 +6,10 @@ source: 'https://help.amplitude.com/hc/en-us/articles/115001902492-Amplitude-SQL
 this_article_will_help_you:
   - 'Query your Snowflake database using custom SQL'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717104940
+updated_at: 1718660265
 landing: true
 landing_blurb: 'Query your Snowflake database using custom SQL'
 ---
-#### This article will help you:
-
-* Query your Snowflake database using custom SQL
-
 The Amplitude Query product allows customers to query their raw data via their Amplitude-managed [Snowflake](https://www.snowflake.net/) database. Query also includes a powerful new chart type called **Amplitude SQL** that allows customers to write custom SQL against their Amplitude data directly inside the Amplitude platform.
 
 {{partial:admonition type='note'}}

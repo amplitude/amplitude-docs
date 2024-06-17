@@ -83,7 +83,7 @@ With project-level permissions, a user can have a different role for each projec
 ![mceclip2.png](/docs/output/img/account-management/mceclip2-png.png)
 
 {{partial:admonition type='note'}}
-Project-level permissions are available to customers on an Enterprise plan only.
+Project-level permissions are available to customers on Growth and Enterprise plans only.
 {{/partial:admonition}}
 
 When viewing all members of your organization, members will either be listed as *User* or *Admin*. If you are an Admin or Manager of a project in the organization, you can view and modify an individual member's role per project by clicking the checkbox next to the member's name and selecting "Manage Project Access". Managers will only be able to modify a user's role for the project where they are a Manager.
