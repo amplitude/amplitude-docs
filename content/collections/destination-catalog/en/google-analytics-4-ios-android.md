@@ -74,5 +74,3 @@ You can optionally select user properties to send to Google Analytics 4 in the *
 ### Enable sync
 
 When satisfied with your configuration, at the top of the page toggle the **Status** to "Enabled" and click **Save**.
-
---8<-- "includes/debug-delivery-metrics.md"
