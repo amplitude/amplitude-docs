@@ -7,6 +7,7 @@ article_type: ampli
 supported_languages:
   - js
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+source: https://www.docs.developers.amplitude.com/data/sdks/node/ampli/
 updated_at: 1710273461
 ---
 Ampli supports Node.js apps written in JavaScript (ES6 and higher) and TypeScript (2.1 and higher). The generated tracking library is packaged as a CJS module.

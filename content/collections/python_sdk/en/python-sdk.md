@@ -14,6 +14,7 @@ shields_io_badge: 'https://badge.fury.io/py/amplitude-analytics.svg'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1715796668
 ampli_article: 1af7ad64-aaae-45df-b562-e7ebe3470288
+source: https://www.docs.developers.amplitude.com/data/sdks/python/
 ---
 The Python SDK lets you send events to Amplitude. 
 

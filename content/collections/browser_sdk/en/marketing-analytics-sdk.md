@@ -16,6 +16,7 @@ updated_at: 1714515055
 migration_guide:
   - eb4533a3-2075-49a0-83fa-e703afea78e7
 exclude_from_sitemap: false
+source: https://www.docs.developers.amplitude.com/data/sdks/marketing-analytics-browser/
 ---
 The Marketing Analytics Browser SDK extends the Browser SDK to identify users and events based on marketing channels. This library is open-source, check it out on [GitHub](https://github.com/amplitude/Amplitude-TypeScript/tree/v1.x/packages/marketing-analytics-browser).
 
