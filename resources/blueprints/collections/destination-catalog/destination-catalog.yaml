@@ -12,6 +12,7 @@ tabs:
               required: true
               validate:
                 - required
+              localizable: false
           -
             handle: content
             field:
@@ -63,15 +64,9 @@ tabs:
           -
             handle: source
             field:
-              input_type: text
-              antlers: false
               type: text
               display: Source
-              listable: hidden
-              instructions_position: above
-              visibility: read_only
-              replicator_preview: true
-              hide_display: false
+              localizable: false
   alt_sitemap:
     display: 'Alt Sitemap'
     sections:
@@ -83,19 +78,10 @@ tabs:
               type: float
               display: 'Sitemap Priority'
               instructions: 'From 0.0 (lowest priority) to 1.0 (highest priority)'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: exclude_from_sitemap
             field:
-              default: false
               type: toggle
               display: 'Exclude from sitemap?'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false

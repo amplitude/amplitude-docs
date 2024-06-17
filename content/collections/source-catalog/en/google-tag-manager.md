@@ -252,12 +252,40 @@ The `track` tag type is for tracking an event under a specific trigger.
 | --- | --- |
 | `Event Type` | `string`. The name of the event. |
 
-##### Event Properties
+##### Individual Event Properties
 
 | Name  | Description |
 | --- | --- |
 | `Property Name` | `string`. The name of the event property. |
 | `Property Value` | `string`. The value of the event property. |
+
+##### Event Properties Object
+
+
+Select a GTM variable that returns a valid event properties object. This overwrites the **Individual Event Properties** event properties if there are any duplicate keys. Amplitude ignores any inputs not in the object format and any value under `user_properties` key.
+
+```javascript
+    {
+        'eventPropKey' : 'eventPropValue',
+        'otherEventPropKey': 'otherEventPropValue',
+    }
+```
+
+To establish a scalable approach for defining properties, you can use the **Google Tag: Event Settings** variable in GTM. GTM **Google Tag: Event Settings** variable provides a way to let you reuse the event settings in multiple tags. [More details](https://support.google.com/tagmanager/answer/13438771?hl=en). You can take advantage of it to create properties and reuse it across several tags.
+
+The format of **Google Tag: Event Settings** variable:
+
+```javascript
+    {
+        'eventPropKey' : 'eventPropValue',
+        'otherEventPropKey': 'otherEventPropValue',
+        'user_properties': {
+            'user_property_key': 'user_property_value'
+        }
+    }
+```
+
+Notice that choosing Google Tag: Event Settings variable as an input in Event Properties Object, the value under `user_properties` is ignored.
 
 ##### Custom Timestamp 
 
@@ -376,11 +404,10 @@ Yes, but it's not recommended. Modified Community Gallery Templates will no long
 
 ### Missing events?
 
-- Please check if you have multiple versions of Amplitude browser SDK installed. There may be collision between different versions of SDKs. Please try giving a different instance name for your GTM instance. 
+- Check if you have multiple versions of Amplitude browser SDK installed. There may be collision between different versions of SDKs. Try giving a different instance name for your GTM instance. 
 - If your website blocks script that our Template is trying to inject. Check your website’s Console or Network tab to see if any scripts are blocked or if you are getting any errors through **right click -> Inspect**:
-- Init web attribution event is missing. If you have installed cookies consent, please check if the value of `document.referrer` has been updated to your current domain. The campaign from the current domain won't be tracked.
+- Init web attribution event is missing. If you have installed cookies consent, check if the value of `document.referrer` has been updated to your current domain. The campaign from the current domain won't be tracked.
 - Ensure that you have selected the appropriate Tag firing options. Choosing `Once per event` will cause your tag to fire each time a Trigger event is performed. On the other hand, selecting `Once per Page` will fire your Tag just once. This discrepancy could lead to events not being sent as expected.
-![Web Container Firing Option](../../docs/assets/images/gtm/gtm-web-container-firing-option.png) 
 
 ### Overall user counts to increase?
 
@@ -388,11 +415,13 @@ Verify whether cookies have been altered or removed inadvertently. [Cookies](/do
 
 ### Cross Domain Tracking?
 
-To retain user identification across different domains, a custom HTML tag must be created to attach the user's deviceId to the domain link you wish to track. By appending `deviceId=YourDeviceId` to the URL, the Amplitude Analytics Browser SDK will utilize this deviceId from the URL parameter rather than generating a new one. Due to certain limitations in GTM, the [workaround](https://github.com/amplitude/GTM-cross-domain-script) is available to illustrate how to append URLs in the GTM template.
+To retain user identification across domains, create a custom HTML tag to attach the user's `deviceId` to the domain link you wish to track. When you append `ampDeviceId=YourDeviceId` to the URL, the Amplitude Browser SDK uses the URL parameter value rather than generate a new `deviceId`. For more information see an [example script](https://github.com/amplitude/GTM-cross-domain-script) on GitHub.
+
+Starting from template version `15cce` (library version `amplitude-ts-gtm/3.7.12`), the template supports getting the session ID from the URL parameter `ampSessionId` to maintain the same session. For more information, see [Cross-domain tracking](/docs/sdks/analytics/browser/browser-sdk-2#cross-domain-tracking) with Browser SDK 2.0.
 
 ### How to pass other types for identify/groupIdentify value
 
-If you hardcode the value in your tag, the input will be forced into a string type. To use other types such as `number` or `boolean`, please create a GTM variable, specifically a Data Layer Variable. This will accurately capture the types you've specified.
+If you hardcode the value in your tag, the input will be forced into a string type. To use other types such as `number` or `boolean`, create a GTM variable, specifically a Data Layer Variable. This will accurately capture the types you've specified.
 
 ## Breaking changes checklist
 
