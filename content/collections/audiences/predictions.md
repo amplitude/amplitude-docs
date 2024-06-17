@@ -10,7 +10,7 @@ this_article_will_help_you:
 exclude_from_sitemap: false
 landing: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1715121054
+updated_at: 1718647452
 ---
 As part of Amplitude Audiences, **predictions** are a **workflow improvement feature** that helps you optimize targeting workflows to generate maximal lift. 
 
@@ -22,7 +22,7 @@ Instead of using cohorts to segment your users based on their past behavior, pre
 * Fine-tune the content in an ad, email, or website depending on their affinity for that content type
 
 {{partial:admonition type='note'}}
-Predictions are available for standard event properties only. They are not available for merged, derived, or transformed properties.
+Predictions are not available for merged properties.
 {{/partial:admonition}}
 
 Predictions construct a mathematical model to forecast the likelihood that a particular user will take a specific action in your product, and in turn groups users who have similar probabilities.

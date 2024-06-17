@@ -1,10 +1,10 @@
 ---
 id: be8fad75-98bf-44c4-945a-a0f8a8bb1d94
 blueprint: advanced-technique
-title: 'Server-side Rendering'
+title: 'Server-side rendering'
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1716927210
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1718648659
 source: 'https://www.docs.developers.amplitude.com/experiment/guides/server-side-rendering/'
 ---
 Use the JavaScript Server SDK and JavaScript Client SDK together to create a seamless server-side rendered experience.

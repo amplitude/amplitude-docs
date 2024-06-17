@@ -7,8 +7,8 @@ this_article_will_help_you:
   - 'Understand how Amplitude defines user properties'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717611472
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1718654686
 ---
 By default, Amplitude tracks the user properties listed in the table below automatically, via client-side [SDKs](https://www.docs.developers.amplitude.com/data/sdks/sdk-overview/#analytics-sdks). All these properties will be prefixed with the Amplitude logo whenever you encounter them in Amplitude. If you prefer, configure Amplitude's SDKs to disable automatic tracking of these properties:
 
@@ -32,7 +32,7 @@ If you send data server-side instead of using an SDK, Amplitude cannot track the
 | City | City of the event. This is pulled using GeoIP. "San Francisco" |
 | Region | Region (e.g. state, province, county) of the event. This is pulled using GeoIP. "California" |
 | DMA | Designated Market Area (DMA) of the event. This is pulled using GeoIP. "San Francisco-Oakland-San Jose, CA" |
-| Language | Language of the device. "English" |
+| Language | Language of the device. This is drawn from the user's device settings or browser settings. "English" |
 | Paying | Paying is set to null for all users by default. The property value changes to "true" at the time of the user's first revenue event (or first verified revenue event, if [validation](/docs/cdp/sources/instrument-track-revenue#verification) is on). Once a property is set to "true", it will not change. You can manually change this value via Amplitude's [Identify API](/docs/hc/articles/205406617): "true", null/none |
 | Platform | Platform of the product. "iOS", "Android", or "Web" |
 | OS | `OS` = `os_name` + `os_version`. `os_name` is the name of the user's mobile operating system or browser. `os_version` is the version of the users' mobile operating system or browser. "ios 9.1", "Chrome 46" |

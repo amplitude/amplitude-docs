@@ -1,13 +1,15 @@
 ---
-title: "Pruning and ordering of data in Amplitude Analytics"
-source: "https://help.amplitude.com/hc/en-us/articles/17727675382811-Pruning-and-ordering-of-data-in-Amplitude-Analytics"
 id: a916ade1-9b6a-4721-a44d-ccbc95773e0d
+blueprint: chart
+title: 'Pruning and ordering of data in Amplitude Analytics'
+source: 'https://help.amplitude.com/hc/en-us/articles/17727675382811-Pruning-and-ordering-of-data-in-Amplitude-Analytics'
+this_article_will_help_you:
+  - 'Understand the criteria and procedures Amplitude Analytics follows when streamlining and sorting data'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1718648797
 ---
-
-This article will help you:
-
-* Understand the criteria and procedures Amplitude Analytics follows when streamlining and sorting data
-
 In data analytics, data **pruning** refers to the process of removing or reducing the size of a dataset by eliminating irrelevant, redundant, or low-value data. The goal of data pruning is to streamline the dataset and make it more manageable, efficient, and meaningful for analysis.
 
 **Ordering**, also known as sorting, refers to the process of arranging data in a particular sequence based on one or more criteria. When data is ordered, it becomes easier to identify patterns, trends, and relationships within the dataset.  

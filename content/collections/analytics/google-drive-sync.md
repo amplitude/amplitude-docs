@@ -5,8 +5,8 @@ title: 'Sync your Amplitude data to Google Drive and Sheets'
 source: 'https://help.amplitude.com/hc/en-us/articles/17787338689307-Sync-your-Amplitude-data-to-Google-Drive-and-Sheets'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717696633
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1718650991
 this_article_will_help_you:
   - 'Export chart data to Google Sheets and chart images to Google Slides'
 ---
@@ -29,7 +29,7 @@ After you download the extension, follow these steps to sync your chart data wit
 	![](/docs/output/img/analytics/17785851995035.png)
 
   {{partial:admonition type='note'}}
-  Be sure you use the same email to sign into Google Sheets that you use to log in to your Amplitude account. If the emails don't match, you won’t be able to export data from your organization.
+Be sure you use the same email to sign into Google Sheets that you use to log in to your Amplitude account. If the emails don't match, you won’t be able to export data from your organization.
   {{/partial:admonition}}
 
 3. Next, allow Amplitude access to your Google account.

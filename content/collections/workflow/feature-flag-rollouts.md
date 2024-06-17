@@ -7,9 +7,10 @@ this_article_will_help_you:
   - 'Understand the role of flags in Amplitude Experiment'
   - 'Create a new feature flag'
   - 'Use a flag to roll out a new feature'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717434102
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1718652974
 landing: false
+exclude_from_sitemap: false
 ---
 In Amplitude Experiment, a **flag** is a way for you to enable or disable a function or feature in your product, without having to deploy new code each time. Flags drive both experiments and feature rollouts: They're are ideal for launching experiments and ending them once you’ve collected enough data, or for rolling out new features (and rolling them back quickly, if you need to).
 
@@ -17,7 +18,7 @@ This article will explain how to create a flag for a **feature rollout**. If you
 
 ### Feature availability
 
-This feature is available to users on **all Amplitude plans** who have **purchased Amplitude Experiment**. See our [pricing page](https://amplitude.com/pricing) for more details.
+This feature is available to users on **all Amplitude plans**. See our [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Create a new flag
 

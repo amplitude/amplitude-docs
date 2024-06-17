@@ -1,14 +1,16 @@
 ---
-title: "How Amplitude computes conversions through funnels"
-source: "https://help.amplitude.com/hc/en-us/articles/4448893756315-How-Amplitude-computes-conversions-through-funnels"
 id: 4eda9c61-73d1-425a-a28a-5f15b8fb0356
+blueprint: funnel-analysi
+title: 'How Amplitude computes conversions through funnels'
+source: 'https://help.amplitude.com/hc/en-us/articles/4448893756315-How-Amplitude-computes-conversions-through-funnels'
+this_article_will_help_you:
+  - 'Familiarize yourself with conversion computations using funnels'
+  - 'Identify key differences between Funnel and Event Segmentation charts'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1718655054
 ---
-
-#### This article will help you:
-
-* Familiarize yourself with conversion computations using funnels
-* Identify key differences between Funnel and Event Segmentation charts
-
 When calculating conversion for a funnel in which users can complete the steps more than once, Amplitude will bucket each user based on the values tied to the **first** occurrence of each event.
 
 How this **first touch** is determined in your analysis will depend on whether you opt to [hold a property](/docs/analytics/charts/funnel-analysis/funnel-analysis-hold-properties-constant) or [break down by](/docs/analytics/charts/funnel-analysis/funnel-analysis-view-by-property-value) specific properties.

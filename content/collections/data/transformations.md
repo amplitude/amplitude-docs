@@ -8,8 +8,8 @@ this_article_will_help_you:
   - 'Edit and manage transformations'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717621255
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1718650909
 ---
 Amplitude Data’s **transformations** feature allows you to transform event data in order to correct common implementation mistakes. Transformations are retroactive: you can create them whenever you want, and apply them to all historical data. This means you can make changes to your event data without having to touch your underlying code base. No matter when you recognize a mistake or want to make a change, you can use a transformation to correct all affected data, both historically and moving forward.
 
@@ -23,7 +23,7 @@ Transformations are applied at query time when a chart or cohort generates resul
 
 ### Feature availability
 
-This feature is available to users on **all Amplitude plans**.
+This feature is available with **some Amplitude plans only**. See our [pricing page](https://amplitude.com/pricing) for details.
 
 ## Merge events, event properties, and user properties
 

@@ -7,8 +7,8 @@ this_article_will_help_you:
   - 'Enable users to access Amplitude projects in your organization, and manage how they do it'
 landing: true
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717697668
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1718653543
 landing_blurb: "Manage your project's users and permissions."
 ---
 Before a user can gain access to any Amplitude projects, you will have to add them to your Amplitude organization. You should do this immediately after creating an organization. Additionally, you’ll probably need to add new team members on a case-by-case basis as your organization changes and grows.
@@ -83,7 +83,7 @@ With project-level permissions, a user can have a different role for each projec
 ![mceclip2.png](/docs/output/img/account-management/mceclip2-png.png)
 
 {{partial:admonition type='note'}}
-Project-level permissions are available to customers on an Enterprise plan only.
+Project-level permissions are available to customers on Growth and Enterprise plans only.
 {{/partial:admonition}}
 
 When viewing all members of your organization, members will either be listed as *User* or *Admin*. If you are an Admin or Manager of a project in the organization, you can view and modify an individual member's role per project by clicking the checkbox next to the member's name and selecting "Manage Project Access". Managers will only be able to modify a user's role for the project where they are a Manager.
