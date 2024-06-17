@@ -9,6 +9,7 @@ supported_languages:
   - kotlin
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1710274401
+source: https://www.docs.developers.amplitude.com/data/sdks/android-kotlin/ampli/
 ---
 The [Ampli Wrapper](/docs/sdks/ampli) is a generated, strongly typed API for tracking Analytics events based on your Tracking Plan in Amplitude Data. The tracking library exposes a function for every event in your team’s tracking plan. The function’s arguments correspond to the event’s properties.
 

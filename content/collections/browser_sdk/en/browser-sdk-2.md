@@ -16,6 +16,7 @@ updated_at: 1718658234
 major_version: 2
 ampli_article: 5afa91b7-c12d-425a-b4b6-661061e5843a
 exclude_from_sitemap: false
+source: https://www.docs.developers.amplitude.com/data/sdks/browser-2/
 plugins:
   - f0bf544a-7505-45ef-89ad-e7fe6ec71fbf
 ---

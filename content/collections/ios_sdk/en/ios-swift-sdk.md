@@ -12,6 +12,7 @@ releases_url: 'https://github.com/amplitude/Amplitude-Swift/releases'
 ampli_article: 4a49ddd0-6bd6-4758-9985-85149b794f13
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1715706684
+source: https://www.docs.developers.amplitude.com/data/sdks/ios-swift/
 migration_guide:
   - 06c84fb1-8d96-4042-863d-fce4619b48ed
 ---

@@ -19,6 +19,7 @@ ampli_article: f7989230-bf1c-48aa-ad61-2bc2b3e15a8c
 migration_guide:
   - 9b155be9-bb32-428c-9f49-6e00f9630547
 exclude_from_sitemap: false
+source: https://www.docs.developers.amplitude.com/data/sdks/typescript-browser/
 ---
 The Browser SDK lets you send events to Amplitude.
 

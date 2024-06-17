@@ -15,6 +15,7 @@ updated_at: 1715724636
 migration_guide:
   - 4be26940-0200-46a2-a614-a2c8df0808b1
 shields_io_badge: 'https://img.shields.io/pub/v/amplitude_flutter.svg'
+source: https://www.docs.developers.amplitude.com/data/sdks/flutter/
 ---
 This is the official documentation for the Amplitude Analytics Flutter SDK.
 
