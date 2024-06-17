@@ -4,91 +4,73 @@ fields:
     handle: github_link
     field:
       input_type: url
-      antlers: false
       type: text
       display: 'GitHub Link'
       instructions: "Add the URL to this SDK's GitHub repository"
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
+      localizable: false
   -
     handle: releases_url
     field:
       input_type: url
-      antlers: false
       type: text
       display: 'Releases URL'
       instructions: 'Add the link to the GitHub Releases page for this SDK. Include filtering if applicable.'
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
+      localizable: false
   -
     handle: bundle_url
     field:
       input_type: url
-      antlers: false
       type: text
       display: 'Bundle URL'
       instructions: "Add a link to this SDK's bundle, if applicable. For example, NPM, Maven, or another repository."
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
+      localizable: false
   -
     handle: api_reference_url
     field:
       input_type: url
-      antlers: false
       type: text
       display: 'API Reference URL'
       instructions: "Add a link to this SDK's API Reference, if applicable."
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
+      localizable: false
   -
     handle: shields_io_badge
     field:
       input_type: url
-      antlers: false
       type: text
       display: 'Shields.io Badge'
       instructions: 'Add a link to the badge on shields.io, if applicable.'
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
+      localizable: false
   -
     handle: ampli_article
     field:
       max_items: 1
-      mode: default
       create: false
       type: entries
       display: 'Ampli Article'
       instructions: 'Select the Ampli content related to this SDK version'
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
+      localizable: false
   -
     handle: migration_guide
     field:
-      mode: default
-      create: true
       type: entries
       display: 'Migration Guide'
       instructions: 'Select the Migration Guide that relates to this SDK'
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      replicator_preview: true
-      hide_display: false
+      localizable: false
+  -
+    handle: plugins
+    field:
+      collections:
+        - browser_sdk
+        - android_sdk
+        - flutter_sdk
+        - go_sdk
+        - java_sdk
+        - node_js_sdk
+        - python_sdk
+        - react_native_sdk
+        - unity_sdk
+        - unreal_sdk
+        - ios_sdk
+      type: entries
+      display: Plugins
+      localizable: false

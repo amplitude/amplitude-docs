@@ -23,7 +23,7 @@ Transformations are applied at query time when a chart or cohort generates resul
 
 ### Feature availability
 
-This feature is available to users on **all Amplitude plans**.
+This feature is available with **some Amplitude plans only**. See the [pricing page](https://amplitude.com/pricing) for details.
 
 ## Merge events, event properties, and user properties
 

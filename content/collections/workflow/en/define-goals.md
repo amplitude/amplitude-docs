@@ -39,7 +39,7 @@ If you don’t want to use any of the metrics in the drop-down list, you can cre
 3. Click *Select event …* to choose the metric event, which is the event that best represents that metric. Then click *Create*.
 
 {{partial:admonition type='note'}}
- By default, the Retention metric does not support [CUPED](/docs/experiment/workflow/finalize-statistical-preferences), exposure attribution settings, nor calendar day windows. Instead, the metric will calculate exposure attribution settings using any exposure and the nth day value based on 24-hour window increments. [See this FAQ help center article for more information on how the Retention metric is calculated](https://help.amplitude.com/hc/en-us/articles/17986231773595).
+By default, the Retention metric does not support [CUPED](/docs/experiment/workflow/finalize-statistical-preferences), exposure attribution settings, nor calendar day windows. Instead, the metric will calculate exposure attribution settings using any exposure and the nth day value based on 24-hour window increments.
 {{/partial:admonition}}
 
 ## Define the exposure event

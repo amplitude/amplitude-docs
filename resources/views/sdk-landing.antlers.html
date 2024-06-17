@@ -39,6 +39,11 @@
                                     <li><a href="{{ url }}">{{ title }}</a></li>
                                 {{ /migration_guide }}
                             {{ /if }}
+                            {{ if plugins }}
+                            {{ plugins }}
+                                <li><a href="{{ url }}">{{ title }}</a></li>
+                            {{ /plugins }}
+                        {{ /if }}
                         </ul>
                     </div>
                 {{ /collection }}
