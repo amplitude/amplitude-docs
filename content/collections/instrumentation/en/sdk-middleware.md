@@ -1,69 +1,172 @@
 ---
 id: cae327ea-be74-4783-ab16-09f2848cebca
-published: false
 blueprint: instrumentation
 title: 'SDK Middleware'
 source: 'https://www.docs.developers.amplitude.com/data/sdk-middleware/'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715104327
+updated_at: 1718572745
 nav_title: developers
 ---
+Middleware lets you extend Amplitude by running a sequence of custom code on every event. This pattern is flexible and you can use it to support event enrichment, transformation, filtering, routing to third-party destinations, and more.
 
 
-Data validation is a critical step in the instrumentation process. To streamline this process and enhance your debugging efforts, Amplitude provides some tools to convenience your debugging process. You can explore these in detail by following this [link](../debugger). These resources will facilitate the smooth implementation and operation of your projects.
+{{partial:admonition type="note" heading=""}}
+Middleware is only supported in Maintenance SDKs except the maintenance Browser SDK and legacy Ampli. Middleware has been replaced by **[Plugins](/docs/sdks/sdk-plugins)** in the latest SDK and Ampli versions.
+{{/partial:admonition}}
 
-The following sections will outline common issues that you may encounter, along with their respective solutions or explanations to aid in resolving these problems. Go to the individual SDK pages to check the platform specific trouble-shooting and debugging. 
+## Middleware Structure
+ 
+### Function Signature 
 
-* [Latest Browser](../sdks/typescript-browser/#troubleshooting-and-debugging)
-* [Maintenance Browser](../sdks/javascript/#troubleshooting-and-debugging)
-* [Latest Android](../sdks/android-kotlin/#troubleshooting-and-debugging)
-* [Maintenance Android](../sdks/android/#troubleshooting-and-debugging)
-* [iOS (Beta)](../sdks/ios/#troubleshooting-and-debugging)
-* [iOS](../sdks/ios-swift/#troubleshooting-and-debugging)
+Each middleware is a simple function with this signature:
 
-## Events not showing in Amplitude
+```js
+/**
+ * A function to run on the Event stream (each logEvent call)
+ *
+ * @param payload The `payload` contains the `event` to send and an optional `extra` that lets you pass custom data to your own middleware implementations.
+ * @param next Function to run the next middleware in the chain, not calling next will end the middleware chain
+ */
 
-If you are not able to ingest any event, check the following questions:
+function (payload: MiddlewarePayload: next: MiddlewareNext): void;
+```
 
-* Are you using the correct API key? 
-Check that you have correctly set the API during init(). If you have enabled data residency in the EU, you'll need to retrieve your API key from `https://analytics.eu.amplitude.com/`. This is where your specific API details are located due to data locality regulations.
+Types in middleware:
 
-* Are you using multiple instances? 
-If you are using the right instance. Ensure that you're using the correct instance. If multiple versions of SDKs exist, they might cause conflict issues. To avoid this, provide different instance names for each instance. For the latest SDKs, you might need to create separate variables in order to instantiate them differently.
+| <div class="med-column">Name</div> | Type                                 | Description                                                                            |
+| ---------------------------------- | ------------------------------------ | -------------------------------------------------------------------------------------- |
+| `MiddlewarePayload.event`          | Event                                | The event data being sent. The event may vary by platform.                             |
+| `MiddlewarePayload.extra`          | { [x: string]: any }                 | Unstructured object to let users pass extra data to middleware.                        |
+| `MiddlewareNext`                   | (payload: MiddlewarePayload) => void | Function called at the end of each Middleware to run the next middleware in the chain. |
 
-* Are you using Amplitude Data? 
-If you are using Amplitude Data, check that the event hasn't been blocked.
+To invoke the next middleware in the queue, use the `next` function. You must call `next(payload)` to continue the middleware chain. If a middleware doesn't call `next`, then the event processing stops executing after the current middleware completes.
 
-* Are you setting valid userId and deviceId?
-Check if your deviceId or userId are valid, the 400 error can be caused by this. [More details](../../analytics/apis/http-v2-api/#device-ids-and-user-ids-minimum-length).
+### Payload Customization
 
-* Did you hit the `flushQueueSize` or `flushIntervalMillis`?
-Events are queued and sent in batches by default. That means events are not sent immediately to the server. The exact values differ by platform, check to make sure you have waited for events to be sent to the server before checking for them in charts.
+Middleware access to event fields may vary by platform. To ensure comprehensive access, Amplitude recommends updating to the latest Ampli version and utilizing the [Plugins](/docs/sdks/sdk-plugins) feature.
 
-## Privacy 
+For Browser Ampli, the following are the accessible keys under `payload`.
 
-If you've already disabled IP, it's still possible to see the IP in your user lookup if you're using the [latest SDK](../sdks/sdk-architecture/). We send the data to the HTTP API (HTTP API V1 for maintenance SDK and HTTP API V2 for the latest SDK). If you disabled the IP address midway, it's possible that the user's previous IP address was saved in our backend. Our backend will retrieve the IP from the database, if there's any. If it's a test user, it's probably fine. It won't affect incoming new users after you disable the IP. If this affects all users, you might need to create a new workspace.
+| <div class="med-column">Name</div> | Type                   | Description                                                                                                   |
+| ---------------------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `event.event_type`                 | string                 | The event name.                                                                                               |
+| `event.event_properties`           | { [key: string]: any } | The event properties.                                                                                         |
+| `event.user_id`                    | string                 | The event level user ID.                                                                                      |
+| `event.device_id`                  | string                 | The event level device ID.                                                                                    |
+| `event.user_properties`            | { [key: string]: any } | The event level user properties.                                                                              |
+| `extra`                            | { [x: string]: any }   | The extra information you want to send that lets you pass custom data to your own middleware implementations. |
 
-## `Client Event Time` shows unexpected value
+For other platforms, middleware can access and modify the entire Event JSON object, allowing for comprehensive adjustments as needed. Learn more at [here](/docs/apis/analytics/http-v2#keys-for-the-event-argument).
 
-`Client Event Time` is the local timestamp (UTC) when the device logged the event. Check [here](https://help.amplitude.com/hc/en-us/articles/229313067#Raw-Data-Fields) for different timestamps explanations at Amplitude.
+### Use
 
-* `Client Event Time` shows a future time
-Check this section if you're seeing `client_upload_time` appearing as a time in the future. The `client_upload_time` is determined by the customer's device. It's possible that it may show a time in the future if the customer's clock is incorrectly set. You can remove the time in the Event payload via the Enrichment Plugin if you are using latest SDK. This will stop using the customer's device clock and instead rely on server_upload_time. However, be aware that this approach has a downside. If events are not uploaded immediately, the recorded event time can differ significantly from the original time the event was fired.
+Add middleware to Amplitude via `amplitude.addEventMiddleware()`. You can add as many middleware as you like. Each middleware runs in the order in which it's added.
 
-* `Client Event Time` different with `Client Upload Time`
-`Client Event Time` may differ from `Client Upload Time`. To support high-performance environments, the SDK contains logic to send events in batches. Every event logged by the `track` method is queued on the client side. Events are batched and flushed when either `flushQueueSize` or `flushIntervalMillis` meets the defined value first. Therefore, it's possible to track an event and upload it later. Adjust `flushQueueSize` and `flushIntervalMillis` or manually call `flush()` to send events more frequently.
+```js
+amplitude.addEventMiddleware(yourMiddleware());
+```
 
-## Device family is not appropriate
+## Middleware examples
 
-* For web, Amplitude uses a [third party library](https://github.com/faisalman/ua-parser-js) library to parse the `Navigator.userAgent` info, except @amplitude/analytics-browser@^2.0. If you find an inappropriate device family, make sure the value of `Navigator.userAgent` as expected first. Starting from Chrome 110, a fixed value for Android version and device model has been introduced. Device info might be effect by [Chrome's user‑agent reduction](https://developer.chrome.com/blog/user-agent-reduction-android-model-and-version/#fixed-android-version-and-device-model-starting-from-chrome-110).
+Use an Middleware to modify event properties, transformation, filtering, routing to third-party destinations, and more:
 
-* For mobile SDKs, we rely on server device mapping. We refer to [this resource](http://storage.googleapis.com/play_public/supported_devices.html), [this resource](https://en.wikipedia.org/wiki/List_of_Android_smartphones) for Android, and [this resource](https://en.wikipedia.org/wiki/Comparison_of_tablet_computers) for iOS. If you find an inappropriate device family that doesn't exist in any of these files, submit a ticket. 
 
-## `user_properties` through identify call showing up late
+### Filtering middleware
 
-A race condition might occur if there's no deviceId in the request or if it has not been sent through the batch API. We have partition logic in our backend. Not having the same deviceId or not sending through the [batch API](/docs/apis/analytics/batch-event-upload) could cause two different calls to fall into separate buckets. The processing time in different buckets within different queues cannot be ensured. Therefore, to maintain the order of `identify` calls and other `track` calls, make sure the calls have the same deviceId and have been sent to our batch API.
+```ts
+    amplitude.addEventMiddleware((payload, next) => {
+    const {eventType} =  payload.event;
+    if (shouldSendEvent(eventType)) {
+    next(payload)
+    } else {
+    // event will not continue to following middleware or be sent to Amplitude
+    console.log(`Filtered event: ${eventType}`);
+    }
+});
+```
+        
+### Remove PII (Personally Identifiable Information)
 
-To reduce the amount of requests made by the SDK, the latest mobile SDKs will queue and consolidate certain Identify updates and wait to send them along with the next non-Identify event sent via `track()`. If you need user properties to update immediately you can `flush()`.
+```js
+amplitude.addEventMiddleware((payload, next) => {
+    const { event } = payload;
+    if (hasPii(event.event_properties)) {
+    payload.event.event_properties = obfuscate(payload.event.event_properties);
+    }
+    next(payload);
+});
+```
+    
+### Enrich Event Properties
+
+```js
+amplitude.addEventMiddleware((payload, next) => {
+    const { event } = payload;
+    if (needsDeviceId(event)) {
+    payload.event.deviceId = getDeviceId();
+    }
+    next(payload)
+});
+```
+
+### Send event level groups using Ampli v1
+
+This is an example of how to send event level groups in Ampli V1.
+How to send event level groups in SDKs(not in Ampli) is different. Please check the specific SDKs for the usage.
+
+```js
+ampli.addEventMiddleware((payload, next) => {
+    const {event, extra} =  payload;
+    if (event && extra && event.extra.groups) {
+    event.groups =  event.extra.groups;
+    }
+
+    next(payload);
+});
+
+// Pass the event level groups info though middleware extra when calling the tracking plan.
+const extra = {groups: {"test_group_name": "test_group_value"}};
+ampli.eventWithGroups({requiredNumber: 1.23, requiredBoolean: false}, extra);
+```
+
+
+### Forward data to other services
+
+```js
+import amplitude from 'amplitude/sdk'
+import adroll from 'adroll';
+import segment from 'segment';
+import snowplow from 'snowplow';
+
+amplitude.addEventMiddleware((payload, next) => {
+    const { event, extra } = payload;
+    segment.track(event.event_type, event.event_properties, { extra.anonymousId })
+    adroll.track();
+    snowplow.track(event.event_type, event.event_properties, extra.snowplow.context);
+    // next();
+});
+```
+
+
+### Use client-side validation (click to expand)
+
+```js
+amplitude.addEventMiddleware((payload, next) => {
+    if (isDevelopment && !SchemaValidator.isValid(payload.event)) {
+    throw Error(`Invalid event ${event.event_type}`);
+    }
+    next(payload);
+});
+```
+
+## Supported SDKs
+
+| Platform                                                                       | SDK                                                                                                               | Github                                                                                        |
+| ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| [Android](/docs/sdks/analytics/android/android-sdk#middleware)                 | [`com.amplitude:android-sdk`](https://mvnrepository.com/artifact/com.amplitude/android-sdk) | [:material-github: Amplitude-Android](https://github.com/amplitude/Amplitude-Android)         |
+| [Node.js](/docs/sdks/analytics/node/node-sdk#middleware)                       | [`@amplitude/node`](https://www.npmjs.com/package/@amplitude/node)                          | [:material-github: Amplitude-Node](https://github.com/amplitude/Amplitude-Node)               |
+| [React Native](/docs/sdks/analytics/react-native/react-native-sdk-maintenance) | [`@amplitude/react-native`](https://www.npmjs.com/package/@amplitude/react-native)          | [:material-github: Amplitude-ReactNative](https://github.com/amplitude/Amplitude-ReactNative) |
+| [iOS](/docs/sdks/analytics/ios/ios-sdk#middleware)                             | [`Amplitude`](https://cocoapods.org/pods/Amplitude-iOS)                                     | [:material-github: Amplitude-iOS](https://github.com/amplitude/Amplitude-iOS)                 |
+| [Java](/docs/sdks/analytics/java/jre-java-sdk#middleware)                      | [`com.amplitude.:java-sdk`](https://mvnrepository.com/artifact/com.amplitude/java-sdk)      | [:material-github: Amplitude-Java](https://github.com/amplitude/Amplitude-Java)               |

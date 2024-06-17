@@ -36,7 +36,7 @@ This article helps guide you through the process of ingesting Adobe data into Am
     - `user_id:` Amplitude uses `postvisidhigh` or, if that's not available, `postvisidlow`.
     - `device_id`: Amplitude uses `custvisid`.
     - User properties aren't synced in this integration. 
-    - Amplitude receives data with the Adobe field names (for example, event1, event2, event3). For that reason, Amplitude recommends that you add display names for events in [Project Advanced settings.](https://help.amplitude.com/hc/en-us/articles/360035522372-Manage-Data#h_853f3eb1-af85-48ca-980d-2268c0674fa7)
+    - Amplitude receives data with the Adobe field names (for example, event1, event2, event3). For that reason, Amplitude recommends that you add display names for events.
 
 ## Set up and use the integration
 
