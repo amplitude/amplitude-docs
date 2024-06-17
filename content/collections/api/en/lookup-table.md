@@ -16,6 +16,11 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716312346
 summary: 'Augment your properties with static data.'
 ---
+
+{{partial:admonition type="deprecated" heading="This version of the Lookup Tables API is deprecated"}}
+This API is no longer supported. Use the new [API](/docs/apis/analytics/lookup-tabe-2).
+{{/partial:admonition}}
+
 ## Considerations
 
 The CSV file must meet the following requirements:
