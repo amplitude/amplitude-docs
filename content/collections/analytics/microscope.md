@@ -3,30 +3,30 @@ id: a78497a9-734e-4d88-9e3c-1c2a8d1cb102
 blueprint: analytic
 title: 'Microscope: Explore individual data points in your charts'
 source: 'https://help.amplitude.com/hc/en-us/articles/236032527-Microscope-Explore-individual-data-points-in-your-charts'
+this_article_will_help_you:
+  - 'Inspect your data points in a high level of detail'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1718651713
 ---
-#### This article will help you:
-
-* Inspect your data points in a high level of detail
-
 Amplitude's **Microscope** feature enables you to dig deeper into a specific data point's users. Just hover over a data point in your chart, and a black pop-up will offer you up to six options (depending on your Amplitude plan) for further inspection.
 
 This article will help you understand how to use this feature and interpret the information provided in the *View User Streams* and *Show User Paths* sections. 
 
 ### Feature availability
 
-This feature is available to users on **all Amplitude plans**.
+This feature is available to users on **all Amplitude plans**. See our [pricing page](https://amplitude.com/pricing) for details.
 
 ## Before you begin
 
 * Only events selected in the chart's [Events Module](/docs/analytics/charts/build-charts-add-events) that occur during the date range selected will be highlighted in Microscope streams.
-* *View Groups* and *Download Groups* are only available to Enterprise customers who have purchased the [Accounts add-on](/docs/analytics/account-level-reporting).
+* *View Groups* and *Download Groups* are only available to Enterprise customers.
 * Microscope is not available in the [Pathfinder](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas) section of the Event Segmentation chart.
 
 ## Use Microscope
 
 To bring up the Microscope menu, simply click on a data point in any supported chart.
-
-![event_seg_microscope.png](/docs/output/img/analytics/event_seg_microscope.png)
 
 From here, you can:
 
@@ -39,12 +39,14 @@ From here, you can:
 * **View a list of all the users** in the selected data point. Click a user ID to open that user's profile in the *User Activity* tab. If you are an Enterprise customer with [account-level reporting](/docs/analytics/account-level-reporting), you can also use Microscope to view the groups in a data point. Click any group to see a list of users in that group, in the *User Activity* tab.
 * **Download all the users** (up to 1 million) that make up the selected data point, in the form of a .CSV file. This file will also contain each user's most-recently sent user property values.
 
-**NOTE:** If you are conducting [account-level reporting](/docs/analytics/account-level-reporting) analysis, you can opt to download the groups included in a certain data point or bucket. The .CSV file will include the following four columns:
+{{partial:admonition type='note'}}
+If you are conducting [account-level reporting](/docs/analytics/account-level-reporting) analysis, you can opt to download the groups included in a certain data point or bucket. The .CSV file will include the following four columns:
 
 * * * **group\_id:** The unique ID of a particular group name (much like Amplitude ID). When Amplitude sees a new group value or group name, Amplitude assigns a unique `group_id` to the unique group name.
 		* **group\_name:** The group property value (like the user ID). For example, if your count-by was for the group `Company`, then the `group_name` could be `Amplitude`. The `group_name` values are set by you.
 		* **first\_time:** The Unix timestamp denoting when Amplitude first saw that group.
 		* **creator\_amplitude\_id:** The `amplitude_id` that sent the event creating the group.
+{{/partial:admonition}}
 
 Additionally, you can **show user paths**, **view user streams**, and **explore conversion drivers**, all of which are described below.
 
@@ -54,7 +56,9 @@ This option runs a [Pathfinder Users](/docs/analytics/charts/journeys/journeys-u
 
 For example, you can view users who dropped off after a specific event or step in a [Funnel Analysis](/docs/analytics/charts/funnel-analysis/funnel-analysis-build) chart and see what were the top paths the dropped off users performed, instead of successfully completing the funnel.
 
-**NOTE:** The maximum date range for *Show User Paths* is 30 days.
+{{partial:admonition type='note'}}
+The maximum date range for *Show User Paths* is 30 days.
+{{/partial:admonition}}
 
 To analyze what users are doing instead of triggering the `Purchase Song or Video` event in the funnel chart below, click the drop-off data point for the `Purchase
  Song or Video` event and use Microscope's *Show User Paths* feature to view the top event paths users take after the `Add Friends` event:

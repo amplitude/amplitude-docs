@@ -8,8 +8,8 @@ this_article_will_help_you:
   - 'Review the functions and operators that can be used when creating your derived properties'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717621472
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1718646395
 ---
 In some cases, you may want to run analyses based on properties that were not sent to Amplitude but can be derived from existing properties. Amplitude Data’s **derived properties** allow you to create new event and user properties retroactively, based on functions and operators that you can apply across multiple existing properties. These do not affect your raw data and will be computed on the fly.
 
@@ -19,7 +19,7 @@ For example, you may want to create a chart that groups by whether an item added
 
 ### Feature availability
 
-This feature is available to users on **Enterprise plans only**.
+This feature is available to users on **Enterprise plans only**. See our pricing page (https://amplitude.com/pricing) for more details.
 
 ## Create a derived property
 
@@ -109,8 +109,7 @@ Amplitude requires all Unix timestamps to be expressed in milliseconds.
 | TIME\_TO\_LONG (time\_property) | Convert date time (YYYY-MM-dd[T]HH:mm:ss) into unix timestamp | TIME\_TO\_LONG("2020-12-01 12:00:00") | 1606780800000 |
 | LONG\_TO\_TIME (number\_property) | Convert unix timestamp into date-time | LONG\_TO\_TIME (1606780800000) | "2020-12-01 12:00:00" |
 | LONG\_TO\_DATE (number\_property) | Convert unix timestamp into date | LONG\_TO\_DATE (1606780800000) | "2020-12-01" |
-| DATE\_TIME\_FORMATTER (datetime\_property, old\_format, new\_format) | Convert format of a datetime property to a new format.
-See [Java SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) for more details. | DATE\_TIME\_FORMATTER ("05.01.2021 12:00:00:000", "MM.dd.yyyy hh:mm:ss:SSS", "yyyy/MM/dd") | "2021/05/01" |
+| DATE\_TIME\_FORMATTER (datetime\_property, old\_format, new\_format) | Convert format of a datetime property to a new format. See [Java SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) for more details. | DATE\_TIME\_FORMATTER ("05.01.2021 12:00:00:000", "MM.dd.yyyy hh:mm:ss:SSS", "yyyy/MM/dd") | "2021/05/01" |
 | TODAY() | Current day represented as a long in epoch time in UTC. | TODAY() - start\_date\_in\_ms >>> 1609459200000 - 1577836800000  | 31622400000 |
 | EVENT\_HOUR\_OF\_DAY() | Get hour of day from the event's timestamp. (0-23) | EVENT\_HOUR\_OF\_DAY()  | 10 |
 | EVENT\_DAY\_OF\_WEEK() | Get day of week from the event's timestamp as string. i.e. Monday | EVENT\_DAY\_OF\_WEEK() | Monday |
@@ -148,18 +147,14 @@ These functions can only be used within another function.
 
 | Function | Description | Example  | Result |
 | --- | --- | --- | --- |
-| PROPERTY(property\_name, property\_type) | Reference to property within Amplitude. 
-Possible property types: “user”, “event”, “derived”, “lookup”, “group” | PROPERTY(“first name”,”user”) | A reference to the user property “first name” in your project. This is how derived properties communicate with Amplitude’s query service. |
-| PROPERTY(property\_name, “group”, group\_type) | Reference to group property within Amplitude. 
-Group type is required for group properties. | PROPERTY(“name”,”group”, “business“) | A reference to the group property “name” in the group type “business” within your project. This is how derived properties communicate with Amplitude’s query service. |
+| PROPERTY(property\_name, property\_type) | Reference to property within Amplitude. Possible property types: “user”, “event”, “derived”, “lookup”, “group” | PROPERTY(“first name”,”user”) | A reference to the user property “first name” in your project. This is how derived properties communicate with Amplitude’s query service. |
+| PROPERTY(property\_name, “group”, group\_type) | Reference to group property within Amplitude. Group type is required for group properties. | PROPERTY(“name”,”group”, “business“) | A reference to the group property “name” in the group type “business” within your project. This is how derived properties communicate with Amplitude’s query service. |
 
 ### Conditional operators
 
 | **Operator** | **Description** | **Example** |
 | --- | --- | --- |
-| IF(logical\_expression, value\_if\_true, value\_if\_false) | Returns value\_if\_true if logical\_expression is true, otherwise return value\_if\_false | IF(price == 0, "true", "false")
-IF(property == "(none)", "Property was not set", "Property was set")
-IF(OR(region == "California", region == "New York"), "USA", "Other") |
+| IF(logical\_expression, value\_if\_true, value\_if\_false) | Returns value\_if\_true if logical\_expression is true, otherwise return value\_if\_false | IF(property == "(none)", "Property was not set", "Property was set")|
 | AND(logical\_expression\_1, logical\_expression\_2) | Returns True if both logical expressions are true, false otherwise | AND(is\_subscribed == "true", has\_valid\_promo == "true") |
 | OR(logical\_expression\_1, logical\_expression\_2) | Returns True if any logical expression is true, false otherwise | OR(has\_email == "true", has\_phone == "true") |
 | SWITCH(expression, case\_1, value\_1, [case\_2, value\_2 ...], [default]) | Evaluates an expression and returns values based on defined cases.  Returns a default value if no cases are met if defined, otherwise null. | SWITCH(tier, "gold", 2, "silver", 2, "bronze", 1, 0) |
@@ -179,7 +174,7 @@ IF(OR(region == "California", region == "New York"), "USA", "Other") |
 
 ### Set operators
 
-*Set literals (e.g. ("apple", "orange")) must appear on the right hand side of the operator*
+Set literals (e.g. ("apple", "orange")) must appear on the right hand side of the operator.
 
 | **Operator** | **Example** |
 | --- | --- |
@@ -189,6 +184,20 @@ IF(OR(region == "California", region == "New York"), "USA", "Other") |
 ## Common derived properties formulas
 
 This section provides a description of several common use cases for derived properties formulas.
+###Calculate the age of a customer
+
+```
+CEIL(
+DIVIDE(
+MINUS(
+PROPERTY('server_upload_time', 'amplitude_user'),
+TIME_TO_LONG(PROPERTY('Created At', 'user'))
+),
+86400000
+)
+)
+```
+Use this when tracking a user property with a date-time data type, and you want to calculate the age of that user (in other words, how long that user has existed in your system) since the time of the event that triggered when this user property was set.
 
 ### Get the difference between two dates
 
