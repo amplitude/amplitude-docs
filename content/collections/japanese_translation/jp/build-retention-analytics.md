@@ -14,7 +14,7 @@ Amplitudeの**リテンション分析**チャートは、プロダクトの採�
 
 ## 開始する前に
 
-Amplitudeのリテンション分析チャートの[概要](https://help.amplitude.com/hc/en-us/articles/230543327)をまだお読みでない場合は、最初のリテンション分析を構築する前に、概要をよくお読みください。
+Amplitudeのリテンション分析チャートの[概要](/docs/analytics/charts/retention-analysis/retention-analysis-build)をまだお読みでない場合は、最初のリテンション分析を構築する前に、概要をよくお読みください。
 
 ## リテンション分析を設定する
 

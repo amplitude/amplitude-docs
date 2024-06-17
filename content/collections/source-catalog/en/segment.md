@@ -39,7 +39,7 @@ To send data to Amplitude, you can:
 
 ### Set up Segment Destinations
 
-Follow [these steps](https://segment.com/docs/connections/destinations/catalog/actions-amplitude/#getting-started) with your [Amplitude API key](/docs/apis/find-api-credentials/). 
+Follow [these steps](https://segment.com/docs/connections/destinations/catalog/actions-amplitude/#getting-started) with your [Amplitude API key](/docs/apis/authentication). 
 
 To ensure that Segment can send data to Amplitude, make sure your Segment's Amplitude destination is connected to one of your Segment sources:
 
@@ -50,14 +50,14 @@ Send data to your Segment source, and [validate your events in Amplitude](/docs/
 
 ### Client-side bundled integration
 
-In addition to [Segment's libraries](https://segment.com/docs/sources/), you can install [Amplitude's SDKs](../../sources/#sdks). If you do, Segment's library delegates the data collection to Amplitude's SDK, which then sends the data to Amplitude's servers. 
+In addition to [Segment's libraries](https://segment.com/docs/sources/), you can install [Amplitude's SDKs](/docs/sdks/analytics). If you do, Segment's library delegates the data collection to Amplitude's SDK, which then sends the data to Amplitude's servers. 
 
 There are advantages and disadvantages to taking the client-side bundled approach. One advantage is that adding Amplitude native SDKs adds session tracking capability and automatic user property tracking:
 
 - Events logged during the same user session are grouped together when viewing that user's stream on Amplitude Dashboard. This also allows for [session length calculations](/docs/cdp/sources/instrument-track-sessions).
 - The SDKs automatically record several user properties such as device type, operating system, and user agent. Here is a list of the [user properties](/docs/get-started/user-property-definitions) tracked automatically by Amplitude's SDKs.
 - By enabling Track Session Events, you can ensure the SDKs automatically send `Start Session` and `End Session` events to mark the start and end of a user's mobile session.
-- When Amplitude's SDKs are installed, you can directly interact with them. See the docs for [iOS SDK](/docs/data/sdks/sdk-catalog/ios-swift) and [Android SDK](/docs/data/sdks/sdk-catalog/android-kotlin) to learn more.
+- When Amplitude's SDKs are installed, you can directly interact with them. See the docs for [iOS SDK](/docs/sdks/analytics/ios/ios-swift-sdk) and [Android SDK](/docs/sdks/analytics/android/android-kotlin-sdk) to learn more.
 
 Keep in mind that adding more SDKs increases the size of your application (each one is <200kb). You may have to account for this if you are already using several libraries in your app. These SDKs are optional, and you can still conduct almost the same analysis in Amplitude by using only Segment's libraries. 
 
@@ -159,7 +159,7 @@ For more information, see the [Segment documentation.](https://segment.com/docs
 
 Amplitude Audiences lets you automatically send behavioral audiences to ad networks, marketing automation tools, and personalization engines so you can better tailor campaigns and product experiences.
 
-See [Send Cohorts to Segment](../destinations/segment-cohort.md) for more information.
+See [Send Cohorts to Segment](/docs/data/destination-catalog/segment) for more information.
 
 ## More help
 

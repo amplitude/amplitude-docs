@@ -6,7 +6,7 @@ source: 'https://www.docs.developers.amplitude.com/data/sdk-troubleshooting-and-
 nav_title: developers
 ---
 
-Data validation is a critical step in the instrumentation process. To streamline this process and enhance your debugging efforts, Amplitude provides some tools to convenience your debugging process. You can explore these in detail by following this [link](../debugger). These resources facilitate the smooth implementation and operation of your projects.
+Data validation is a critical step in the instrumentation process. To streamline this process and enhance your debugging efforts, Amplitude provides some tools to convenience your debugging process. These resources facilitate the smooth implementation and operation of your projects.
 
 The following sections outline common issues that you may encounter, along with their respective solutions or explanations to aid in resolving these problems. 
 

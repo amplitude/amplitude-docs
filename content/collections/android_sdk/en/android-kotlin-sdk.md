@@ -39,9 +39,9 @@ The Kotlin Android SDK lets you send events to Amplitude.
 | `minTimeBetweenSessionsMillis` | `Long`. The amount of time for session timeout. The value is in milliseconds. | `300000` |
 | `serverUrl` | `String`. The server url events upload to. | `https://api2.amplitude.com/2/httpapi` |
 | `serverZone` | `ServerZone.US` or `ServerZone.EU`. The server zone to send to, will adjust server url based on this config. | `ServerZone.US` |
-| `useBatch` | `Boolean` Whether to use batch api. | `false` |
-| `useAdvertisingIdForDeviceId` | `Boolean`. Whether to use advertising id as device id. Please check [here](../android-kotlin/#advertiser-id) for required module and permission. | `false` |
-| `useAppSetIdForDeviceId` | `Boolean`. Whether to use app set id as device id. Please check [here](../android-kotlin/#app-set-id) for required module and permission. | `false` |
+| `useBatch` | `Boolean` Whether to use batch API. | `false` |
+| `useAdvertisingIdForDeviceId` | `Boolean`. Whether to use advertising id as device id. For more information, see [Advertiser ID](#advertiser-id) for required module and permission. | `false` |
+| `useAppSetIdForDeviceId` | `Boolean`. Whether to use app set id as device id. For more information, see [Application ID](#app-set-id) for required module and permission. | `false` |
 | `trackingOptions` | `TrackingOptions`. Options to control the values tracked in SDK. | `enable` |
 | `enableCoppaControl` | `Boolean`. Whether to enable COPPA control for tracking options. | `false` |
 | `instanceName` | `String`. The name of the instance. Instances with the same name will share storage and identity. For isolated storage and identity use a unique `instanceName` for each instance. | `$default_instance` |

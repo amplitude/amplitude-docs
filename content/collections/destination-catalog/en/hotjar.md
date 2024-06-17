@@ -23,7 +23,7 @@ updated_at: 1713564926
 
 ### Hotjar plugin setup
 
-A variant of an [Amplitude Destination Plugin](../sdk-plugins.md#destination-type-plugin) is required to forward events to Hotjar. Below is a template of a Destination Plugin tailored for Hotjar. It creates an instance of the 
+A variant of an [Amplitude Destination Plugin](/docs/sdks/sdk-plugins#destination-plugins) is required to forward events to Hotjar. Below is a template of a Destination Plugin tailored for Hotjar. It creates an instance of the 
 Hotjar [browser tracking code](https://help.hotjar.com/hc/en-us/articles/115011639927-What-is-the-Hotjar-Tracking-Code-) and forwards tracked events from Amplitude's SDK. This template is customizable for any needs.
 
 

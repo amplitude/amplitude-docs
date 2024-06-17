@@ -105,7 +105,7 @@ implementation 'org.json:json:20201115'
 
 ## Install Ampli CLI
 
-Install the [Ampli CLI](/docs/data/ampli/cli/) from Homebrew or npm.
+Install the [Ampli CLI](/docs/sdks/ampli/ampli-cli) from Homebrew or npm.
 
 {{partial:tabs tabs="Homebrew, npm"}}
 {{partial:tab name="Homebrew"}}
@@ -189,7 +189,7 @@ ampli.identify("user-id", Identify(
 {{/partial:tab}}
 {{/partial:tabs}}
 
-The options argument allows you to pass [Amplitude fields](/docs/apis/http-v2#keys-for-the-event-argument) for this call, such as `deviceId`.
+The options argument allows you to pass [Amplitude fields](/docs/apis/analytics/http-v2#keys-for-the-event-argument) for this call, such as `deviceId`.
 
 {{partial:tabs tabs="Java, Kotlin"}}
 {{partial:tab name="Java"}}
@@ -271,11 +271,11 @@ ampli.track(userId: String, event: Event, options: EventOptions, extra: Middlewa
 {{/partial:tab}}
 {{/partial:tabs}}
 
-The `options` argument allows you to pass [Amplitude fields](/docs/apis/http-v2#properties-1), like `price`, `quantity` and `revenue`. The `extra` argument lets you pass data to middleware.
+The `options` argument allows you to pass [Amplitude fields](/docs/apis/analytics/http-v2#properties-1), like `price`, `quantity` and `revenue`. The `extra` argument lets you pass data to middleware.
 
 For example, in the following code snippet, your tracking plan contains an event called `songPlayed`. The event is defined with two required properties: `songId` and `songFavorited.` The property type for `songId` is string, and `songFavorited` is a boolean.
 
-The event has an Amplitude field defined: `deviceId`. Learn more about Amplitude fields [here](/docs/apis/http-v2#properties-1). The event has one MiddlewareExtra defined: `extra`. Learn more about [Middleware](../../../sdk-middleware).
+The event has an Amplitude field defined: `deviceId`. Learn more about Amplitude fields [here](/docs/apis/analytics/http-v2#properties-1). The event has one MiddlewareExtra defined: `extra`. Learn more about [Middleware](/docs/sdks/sdk-middleware).
 
 {{partial:tabs tabs="Java, Kotlin"}}
 {{partial:tab name="Java"}}

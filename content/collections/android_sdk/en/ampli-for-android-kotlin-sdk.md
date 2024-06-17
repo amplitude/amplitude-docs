@@ -10,7 +10,7 @@ supported_languages:
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1710274401
 ---
-The [Ampli Wrapper](/docs/data/sdks/ampli) is a generated, strongly typed API for tracking Analytics events based on your Tracking Plan in Amplitude Data. The tracking library exposes a function for every event in your team’s tracking plan. The function’s arguments correspond to the event’s properties.
+The [Ampli Wrapper](/docs/sdks/ampli) is a generated, strongly typed API for tracking Analytics events based on your Tracking Plan in Amplitude Data. The tracking library exposes a function for every event in your team’s tracking plan. The function’s arguments correspond to the event’s properties.
 
 Ampli provides autocompletion for events & properties defined in Data and enforce your event schemas in code to prevent bad instrumentation. 
 
@@ -183,7 +183,7 @@ Ampli.getInstance().identify(userId, Identify.builder()
 {{/partial:tab}}
 {{/partial:tabs}}
 
-The options argument allows you to pass [Amplitude fields](/docs/apis/http-v2#keys-for-the-event-argument) for this call, such as `deviceId`.
+The options argument allows you to pass [Amplitude fields](/docs/apis/analytics/http-v2#keys-for-the-event-argument) for this call, such as `deviceId`.
 
 {{partial:tabs tabs="Kotlin, Java"}}
 {{partial:tab name="Kotlin"}}
@@ -508,7 +508,7 @@ Ampli project is not initialized. No existing `ampli.json` configuration found.
 ? Source: My Source
 ```
 
-Learn more about [`ampli pull`](/docs/sdks/ampli/cli.md#ampli-pull).
+Learn more about [`ampli pull`](/docs/sdks/ampli/ampli-cli#ampli-pull).
 
 ### Status
 

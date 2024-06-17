@@ -67,55 +67,6 @@
             "install-path": "../ajthinking/archetype"
         },
         {
-            "name": "alt-design/alt-sitemap",
-            "version": "v1.2.0",
-            "version_normalized": "1.2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/alt-design/Alt-Sitemap-Addon.git",
-                "reference": "7e233700734f65c21fa1b402e311287ffe285a31"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/alt-design/Alt-Sitemap-Addon/zipball/7e233700734f65c21fa1b402e311287ffe285a31",
-                "reference": "7e233700734f65c21fa1b402e311287ffe285a31",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.1",
-                "statamic/cms": "^4.0|^5.0"
-            },
-            "time": "2024-05-15T08:04:37+00:00",
-            "type": "library",
-            "extra": {
-                "statamic": {
-                    "name": "Alt Sitemap",
-                    "description": "Alt Sitemap addon"
-                },
-                "laravel": {
-                    "providers": [
-                        "AltDesign\\AltSitemap\\ServiceProvider"
-                    ]
-                }
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "AltDesign\\AltSitemap\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Alt Sitemap addon, create a sitemap from Statamic entries",
-            "support": {
-                "issues": "https://github.com/alt-design/Alt-Sitemap-Addon/issues",
-                "source": "https://github.com/alt-design/Alt-Sitemap-Addon/tree/v1.2.0"
-            },
-            "install-path": "../alt-design/alt-sitemap"
-        },
-        {
             "name": "barryvdh/laravel-debugbar",
             "version": "v3.9.2",
             "version_normalized": "3.9.2.0",
@@ -3923,6 +3874,65 @@
                 }
             ],
             "install-path": "../nunomaduro/termwind"
+        },
+        {
+            "name": "pecotamic/sitemap",
+            "version": "1.4.7",
+            "version_normalized": "1.4.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pecotamic/sitemap.git",
+                "reference": "74433efb16ff6c204be7b7c61716d5e5e6b5478a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pecotamic/sitemap/zipball/74433efb16ff6c204be7b7c61716d5e5e6b5478a",
+                "reference": "74433efb16ff6c204be7b7c61716d5e5e6b5478a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1|^8.0",
+                "statamic/cms": "^3.0|^4.0|^5.0"
+            },
+            "time": "2024-05-09T22:00:31+00:00",
+            "type": "statamic-addon",
+            "extra": {
+                "statamic": {
+                    "name": "Pecotamic Sitemap",
+                    "description": "Sitemap addon"
+                },
+                "laravel": {
+                    "providers": [
+                        "Pecotamic\\Sitemap\\ServiceProvider"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pecotamic\\Sitemap\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Werner Freytag",
+                    "email": "wf@pecora.de"
+                }
+            ],
+            "description": "Simple sitemap addon for Statamic v3",
+            "keywords": [
+                "Sitemap",
+                "statamic"
+            ],
+            "support": {
+                "issues": "https://github.com/pecotamic/sitemap/issues",
+                "source": "https://github.com/pecotamic/sitemap/tree/1.4.7"
+            },
+            "install-path": "../pecotamic/sitemap"
         },
         {
             "name": "phar-io/manifest",

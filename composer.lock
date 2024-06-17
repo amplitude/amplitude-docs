@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e0c5fe5992a143de0cc883742b103900",
+    "content-hash": "751ea34346c0c6c220c8ebc713576338",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -68,52 +68,6 @@
                 "source": "https://github.com/ajthinking/archetype/tree/v1.1.5"
             },
             "time": "2022-08-24T05:52:35+00:00"
-        },
-        {
-            "name": "alt-design/alt-sitemap",
-            "version": "v1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/alt-design/Alt-Sitemap-Addon.git",
-                "reference": "7e233700734f65c21fa1b402e311287ffe285a31"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/alt-design/Alt-Sitemap-Addon/zipball/7e233700734f65c21fa1b402e311287ffe285a31",
-                "reference": "7e233700734f65c21fa1b402e311287ffe285a31",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.1",
-                "statamic/cms": "^4.0|^5.0"
-            },
-            "type": "library",
-            "extra": {
-                "statamic": {
-                    "name": "Alt Sitemap",
-                    "description": "Alt Sitemap addon"
-                },
-                "laravel": {
-                    "providers": [
-                        "AltDesign\\AltSitemap\\ServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "AltDesign\\AltSitemap\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Alt Sitemap addon, create a sitemap from Statamic entries",
-            "support": {
-                "issues": "https://github.com/alt-design/Alt-Sitemap-Addon/issues",
-                "source": "https://github.com/alt-design/Alt-Sitemap-Addon/tree/v1.2.0"
-            },
-            "time": "2024-05-15T08:04:37+00:00"
         },
         {
             "name": "brick/math",
@@ -3078,6 +3032,62 @@
                 }
             ],
             "time": "2023-02-08T01:06:31+00:00"
+        },
+        {
+            "name": "pecotamic/sitemap",
+            "version": "1.4.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pecotamic/sitemap.git",
+                "reference": "74433efb16ff6c204be7b7c61716d5e5e6b5478a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pecotamic/sitemap/zipball/74433efb16ff6c204be7b7c61716d5e5e6b5478a",
+                "reference": "74433efb16ff6c204be7b7c61716d5e5e6b5478a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1|^8.0",
+                "statamic/cms": "^3.0|^4.0|^5.0"
+            },
+            "type": "statamic-addon",
+            "extra": {
+                "statamic": {
+                    "name": "Pecotamic Sitemap",
+                    "description": "Sitemap addon"
+                },
+                "laravel": {
+                    "providers": [
+                        "Pecotamic\\Sitemap\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pecotamic\\Sitemap\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Werner Freytag",
+                    "email": "wf@pecora.de"
+                }
+            ],
+            "description": "Simple sitemap addon for Statamic v3",
+            "keywords": [
+                "Sitemap",
+                "statamic"
+            ],
+            "support": {
+                "issues": "https://github.com/pecotamic/sitemap/issues",
+                "source": "https://github.com/pecotamic/sitemap/tree/1.4.7"
+            },
+            "time": "2024-05-09T22:00:31+00:00"
         },
         {
             "name": "phpoption/phpoption",

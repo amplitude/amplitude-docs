@@ -85,7 +85,7 @@ go get github.com/amplitude/analytics-go
 
 ## Install Ampli CLI
 
-You can install the [Ampli CLI](/docs/data/ampli/cli/) from Homebrew or NPM.
+You can install the [Ampli CLI](/docs/sdks/ampli/ampli-cli) from Homebrew or NPM.
 
 {{partial:tabs tabs="brew, npm"}}
 {{partial:tab name="brew"}}
@@ -159,7 +159,7 @@ ampli.Instance.Identify(
 )
 ```
 
-The options argument allows you to pass [Amplitude fields](/docs/apis/http-v2#keys-for-the-event-argument) for this call, such as `DeviceID`.
+The options argument allows you to pass [Amplitude fields](/docs/apis/analytics/http-v2#keys-for-the-event-argument) for this call, such as `DeviceID`.
 
 ```Go
 ampli.Instance.Identify(
@@ -185,7 +185,7 @@ To track an event, call the event's corresponding function. Every event in your 
 ampli.Instance.EventName(userID, ampli.EventName.Builder().EventProp(true).Build())
 ```
 
-Optional `EventOptions` argument allows you to pass [Amplitude fields](/docs/apis/http-v2#keys-for-the-event-argument), like `DeviceID`.
+Optional `EventOptions` argument allows you to pass [Amplitude fields](/docs/apis/analytics/http-v2#keys-for-the-event-argument), like `DeviceID`.
 
 For example, in the following code snippet, your tracking plan contains an event called `songPlayed`. The event is defined with two required properties: `songId` and `songFavorited.` The property type for `songId` is string, and `songFavorited` is a boolean.
 

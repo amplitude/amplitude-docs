@@ -1196,7 +1196,7 @@ video {
   border-color: rgb(229 230 232 / var(--tw-border-opacity));
 }.border-amp-gray-200 {
   --tw-border-opacity: 1;
-  border-color: rgb(205 207 212 / var(--tw-border-opacity));
+  border-color: rgb(222 223 226 / var(--tw-border-opacity));
 }.border-amp-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(170 174 182 / var(--tw-border-opacity));
@@ -1947,7 +1947,7 @@ pre code.torchlight .summary-caret {
     width: 42rem;
   }
 }#algolia-search > button.DocSearch.DocSearch-Button {
-    border: 1px solid rgb(128 134 144);
+    border: 1px solid #DEDFE2;
 }#algolia-search > button.DocSearch.DocSearch-Button:hover, #algolia-search-header > button.DocSearch.DocSearch-Button:hover {
     box-shadow: none;
 }.DocSearch-Input:focus{

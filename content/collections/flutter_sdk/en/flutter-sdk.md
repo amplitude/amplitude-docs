@@ -67,7 +67,7 @@ For other default configurations:
 
 - on Android, check the [Android Configuration](/docs/sdks/analytics/android/android-sdk#configuration)
 - on iOS, check the [iOS configuration](/docs/sdks/analytics/ios/ios-swift-sdk#configuration)
-- on browser, check the [browser configuration](./sdks/analytics/browser/javascript-sdk#configuration)
+- on browser, check the [browser configuration](/docs/sdks/analytics/browser/browser-sdk-2#configuration)
 
 | Name  | Description | Default Value |
 | --- | --- | --- |
@@ -85,7 +85,7 @@ For other default configurations:
     
 ### Configure batching behavior
 
-To support high-performance environments, the SDK sends events in batches. Every event logged by the `logEvent` method is queued in memory. Events are flushed in batches in background. You can customize batch behavior with `setEventUploadThreshold`. By default, the serverUrl will be `https://api2.amplitude.com/`. This SDK doesn't support batch mode, the [batch API](apis/batch-event-upload) endpoint.
+To support high-performance environments, the SDK sends events in batches. Every event logged by the `logEvent` method is queued in memory. Events are flushed in batches in background. You can customize batch behavior with `setEventUploadThreshold`. By default, the serverUrl will be `https://api2.amplitude.com/`. This SDK doesn't support batch mode, the [batch API](/docs/apis/analytics/batch-event-upload) endpoint.
 
 ```dart
 // Events queued in memory will flush when number of events exceed upload threshold
@@ -419,7 +419,7 @@ Advertiser ID (also referred to as IDFA) is a unique identifier provided by the 
 
  Mobile apps need permission to ask for IDFA, and apps targeted to children can't track at all. Consider IDFV, device id, or an email login system as alternatives when IDFA isn't available.
 
-See [iOS Advertising ID](/docs/sdks/analytics/ios/ios-swift#advertising-id) or the [Android Advertising ID](/docs/sdks/analytics/android/android-kotlin-sdk#advertiser-id) for more information.
+See [iOS Advertising ID](/docs/sdks/analytics/ios/ios-swift-sdk#advertising-id) or the [Android Advertising ID](/docs/sdks/analytics/android/android-kotlin-sdk#advertiser-id) for more information.
 
 ### Opt out of tracking
 
