@@ -15,7 +15,7 @@ updated_at: 1717623969
 
 To define a new [cohort](/docs/analytics/behavioral-cohorts), follow these steps:
 
-1. Click *Create New > Cohort*. This will take you to the a new cohort page, where you can set the parameters of a new cohort, upload a CSV of users into a new cohort, or [create a prediction for a predictive cohort](/docs/cdp/audiences/predictions).
+1. Click *Create New > Cohort*. This will take you to the a new cohort page, where you can set the parameters of a new cohort, upload a CSV of users into a new behavioral cohort, select and edit a predictive cohort template, or [create a prediction for a predictive cohort](/docs/cdp/audiences/predictions).
 2. You can click any of the conditions (performed event, had been active, had been new, had property, or had propensity) listed to begin defining your cohort. However, since this is a behavioral cohort, let's start by clicking *...performed event*. You can add other conditions to your cohort definition later.
 3. Click *Select event...* and select the event you're interested in.
 4. Begin setting the parameters that will define your behavioral cohort:

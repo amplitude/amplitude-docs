@@ -2,13 +2,10 @@
 title: "Cart analysis: Use object arrays to drive behavioral insights"
 source: "https://help.amplitude.com/hc/en-us/articles/9623000954907-Cart-analysis-Use-object-arrays-to-drive-behavioral-insights"
 id: a80bb339-97b8-4d0e-955a-7bb2c2972ace
+this_article_will_help_you:
+  - 'Unlock new insights by analyzing Amplitude data as object arrays'
 ---
-
-#### This article will help you:
-
-* Unlock new insights by analyzing Amplitude data as object arrays
-
-Amplitude's **cart analysis** feature enables you to analyze data sent as object arrays. This can be particularly useful for behavioral insights into e-commerce transaction and shopping cart flows. You can analyze search results or cart events in the aggregate (e.g., total order volume or co-occurrence), or you can segment your analyses by dimensions such as brand, category, price, or SKU, among others.
+Amplitude's **cart analysis** feature enables you to analyze data sent as object arrays. This can be particularly useful for behavioral insights into e-commerce transaction and shopping cart flows. You can analyze search results or cart events in the aggregate (for example, total order volume or co-occurrence), or you can segment your analyses by dimensions such as brand, category, price, or SKU, among others.
 
 Once you've set everything up, you'll be able to access and analyze these object arrays from within your chart. 
 
@@ -26,7 +23,7 @@ Likely use cases include:
 
 ### Feature availability
 
-This feature is is currently in an open beta and only available to users on Growth and Enterprise plans. See [Set up property splitting](#h_01GGX3KMYSJX6EBW6WHRC7PEMH) to get started. 
+This feature is in an open beta and only available to users on Growth and Enterprise plans. See [Set up property splitting](#h_01GGX3KMYSJX6EBW6WHRC7PEMH) to get started. 
 
 ## Terms and concepts
 

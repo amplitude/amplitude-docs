@@ -199,6 +199,22 @@ Find other supported fields in the [Identify API documentation](/docs/apis/analy
 
 Each group property in `group_properties` would apply to every group in `groups`.
 
+To use a group property:
+
+- Set group properties. The following is an example of how you can do it in Snowflake Group Property Import:
+
+  ```SQL
+  SELECT OBJECT_CONSTRUCT('customerId', account_id)                      AS "groups",          -- must be JSON
+        OBJECT_CONSTRUCT('companyName', name, 'customerType', type) AS "group_properties" -- must be JSON
+  FROM "AMPLITUDE"."DWH"."ACCOUNTS"
+  ```
+
+- Send events with group properties associated. This can be dummy events, so long as the user id and groups are there, such as specifying the following in customer's Snowflake Event Import:
+
+  ```SQL
+  "groups": {"customerId": <account_id>}
+  ```
+
 ### Profile properties
 
 | Column name (must be lowercase) | Mandatory | Column data type             | Example                  |
