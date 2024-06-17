@@ -4,9 +4,6 @@ tree:
     title: 'Getting started'
     children:
       -
-        id: 6ce771a2-2023-491f-aa33-3bd334daacfa
-        entry: 8bfbe6f6-89ae-4878-abfe-89bcc113cddf
-      -
         id: 2bda6737-066a-4283-8252-720d24a19573
         entry: 37e1ab54-da77-4a60-be41-1c1018c4163a
         title: 'Create a new feature flag'
@@ -56,6 +53,9 @@ tree:
           -
             id: cafb3429-9567-4a4e-a379-3e253e38a9eb
             entry: b358db28-92d6-458b-9692-d181e0871612
+          -
+            id: f2f0b387-9b70-4b56-99ef-4189afdc4a99
+            entry: 57ce7f2b-1b49-4a17-99de-76f4a5c86238
       -
         id: b89a72f6-2342-4d84-b3ae-ffb476a9d487
         title: Analysis
@@ -94,9 +94,6 @@ tree:
             id: a8c8105b-547c-4a25-8931-e217aa6b9647
             entry: 9c708cb5-e9b4-464b-9d43-cf5411e43cfe
       -
-        id: f2f0b387-9b70-4b56-99ef-4189afdc4a99
-        entry: 57ce7f2b-1b49-4a17-99de-76f4a5c86238
-      -
         id: 33de7741-62d4-4b58-b6f4-6359a8c6e114
         title: 'Understand the cumulative exposures graph'
         children:
@@ -118,6 +115,9 @@ tree:
     data:
       open_collapsed: false
     children:
+      -
+        id: 6ce771a2-2023-491f-aa33-3bd334daacfa
+        entry: 8bfbe6f6-89ae-4878-abfe-89bcc113cddf
       -
         id: 45493c66-cbea-4f55-84b7-9131ef5094c4
         entry: c33709fd-ba40-43e3-ba18-3b7467d2940c
@@ -175,17 +175,17 @@ tree:
     title: Troubleshooting
     children:
       -
-        id: 94d19551-1ae1-4d4d-bf93-a0a9f187b2d8
-        entry: 3599cb83-1395-4690-83fa-54379538dd5b
-      -
-        id: 017ee388-a2b0-4610-a05d-a29927eeb42e
-        entry: 71dedb3e-eb17-4ed1-9df0-bcbc78a2e6a2
+        id: 9e29658b-9344-4daf-b8ba-7113b6b418cf
+        entry: 982a0f19-3b05-4358-adda-93a5b3c60919
       -
         id: 6d90b3c9-30b4-4d23-8bce-ad9f10343cc6
         entry: 9e7b1e59-fd41-4088-9d7f-be591c85b314
       -
-        id: 9e29658b-9344-4daf-b8ba-7113b6b418cf
-        entry: 982a0f19-3b05-4358-adda-93a5b3c60919
+        id: 017ee388-a2b0-4610-a05d-a29927eeb42e
+        entry: 71dedb3e-eb17-4ed1-9df0-bcbc78a2e6a2
+      -
+        id: 94d19551-1ae1-4d4d-bf93-a0a9f187b2d8
+        entry: 3599cb83-1395-4690-83fa-54379538dd5b
   -
     id: 7a437c18-7481-4b76-9ed7-bb5a2f6d4e93
     title: 'Implementation guides'

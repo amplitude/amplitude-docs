@@ -22,7 +22,7 @@ Amplitude's web experimentation provides a no-code solution running experiments 
 
 To implement Amplitude's web experimentation, copy and paste the standalone Amplitude experiment script into your website. Paste the script into the `<head>` element of your site as high up as possible to avoid flickering.
 
-This script snippet tracks [experiment events](../general/experiment-event-tracking.md) through the Amplitude Analytics SDK installed on your site. Replace `API_KEY` with your project's API key.
+This script snippet tracks [experiment events](/docs/experiment/under-the-hood/event-tracking) through the Amplitude Analytics SDK installed on your site. Replace `API_KEY` with your project's API key.
 
 {{partial:tabs tabs="US Data Center, EU Data Center"}}
 {{partial:tab name="US Data Center"}}
@@ -42,12 +42,12 @@ This script snippet tracks [experiment events](../general/experiment-event-track
 {{/partial:tabs}}
 
 {{partial:admonition type="info" heading="Install Amplitude Analytics"}}
-You must install Amplitude Analytics on your website to enable [Experiment event tracking](../general/experiment-event-tracking.md) to Amplitude for analysis. Install the analytics SDK using a [script tag](https://github.com/amplitude/Amplitude-TypeScript/tree/main/packages/analytics-browser#installing-via-script-loader) or using your preferred [package manager](https://www.docs.developers.amplitude.com/data/sdks/sdk-quickstart/#install-the-dependency) (for example npm, yarn etc.)
+You must install Amplitude Analytics on your website to enable [Experiment event tracking](/docs/experiment/under-the-hood/event-tracking) to Amplitude for analysis. Install the analytics SDK using a [script tag](https://github.com/amplitude/Amplitude-TypeScript/tree/main/packages/analytics-browser#installing-via-script-loader) or using your preferred [package manager](https://github.com/amplitude/Amplitude-TypeScript/tree/main/packages/analytics-browser#installing-via-package-manager) (for example npm, yarn etc.)
 {{/partial:admonition}}
 
 ## Web vs feature experimentation
 
-Web experimentation builds off of Amplitude's end-to-end [feature experimentation platform](../index.md) to enable no-code experimentation on the web, but differs in a few key ways:
+Web experimentation builds off of Amplitude's end-to-end [feature experimentation platform](/docs/experiment/overview) to enable no-code experimentation on the web, but differs in a few key ways:
 
 | Web Experimentation | Feature Experimentation |
 | --- | --- |
