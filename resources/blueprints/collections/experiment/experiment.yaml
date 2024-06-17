@@ -18,6 +18,14 @@ tabs:
         fields:
           -
             import: article_common
+  fancy_landing_page:
+    display: 'Fancy landing page'
+    sections:
+      -
+        display: 'New Section'
+        fields:
+          -
+            import: landing_page_plus
   sidebar:
     display: Sidebar
     sections:
@@ -43,6 +51,7 @@ tabs:
             field:
               type: text
               display: Source
+              localizable: false
   alt_sitemap:
     display: 'Alt Sitemap'
     sections:
@@ -54,8 +63,10 @@ tabs:
               type: float
               display: 'Sitemap Priority'
               instructions: 'From 0.0 (lowest priority) to 1.0 (highest priority)'
+              localizable: false
           -
             handle: exclude_from_sitemap
             field:
               type: toggle
               display: 'Exclude from sitemap?'
+              localizable: false
