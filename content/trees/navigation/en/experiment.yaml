@@ -11,11 +11,12 @@ tree:
         entry: 37e1ab54-da77-4a60-be41-1c1018c4163a
         title: 'Create a new feature flag'
       -
-        id: fe143222-2dc0-4561-bde0-80cca4188df7
+        id: c3a877d1-44c7-42a4-8ad7-ae2319a76a1d
         entry: 1623ff4b-4f76-411c-bbe4-2f38614ffc9a
+        title: 'Create a new feature experiment'
       -
-        id: 707402a6-d5fb-4432-915a-32c1f59f457a
-        entry: c43935f9-32e2-4ac9-82ed-9513d66203b8
+        id: 481adc35-989a-4465-92f6-e871ae33ab75
+        entry: 99eb2927-ad52-424a-a04d-7e90a0ddfeb7
   -
     id: 90ff8151-b864-4782-abdd-65b81d1c26ca
     title: 'Experiment SDKs'
@@ -59,6 +60,9 @@ tree:
         id: b89a72f6-2342-4d84-b3ae-ffb476a9d487
         title: Analysis
         children:
+          -
+            id: 707402a6-d5fb-4432-915a-32c1f59f457a
+            entry: c43935f9-32e2-4ac9-82ed-9513d66203b8
           -
             id: e781c130-d33e-4773-a647-3914df6b6f45
             entry: 4c9bc7b0-f786-4694-97c0-4668958ad1de
@@ -117,6 +121,9 @@ tree:
       -
         id: 45493c66-cbea-4f55-84b7-9131ef5094c4
         entry: c33709fd-ba40-43e3-ba18-3b7467d2940c
+      -
+        id: 36240aa5-9d79-456a-a64e-314f9d8fc59d
+        entry: 1623ff4b-4f76-411c-bbe4-2f38614ffc9a
       -
         id: 8d0578e2-aca5-4710-bfac-16ddb05d378e
         entry: f8a65f47-6611-4f85-a5e4-3602c5b5821b
