@@ -86,7 +86,7 @@ Upon first import, Amplitude imports all the data returned from the query config
 
 ## Mandatory data fields
 
-Include the mandatory fields for the data type when you create the SQL query. These tables outline the mandatory and optional fields for each data type. Find a list of other supported fields for events in the [HTTP V2 API documentation](/docs/apis/http-v2-api#keys-for-the-event-argument) and  for user properties in the [Identify API documentation](/docs/apis/identify-api#identification-parameter-keys). Add any columns not in those lists to either `event_properties` or `user_properties`, otherwise it's ignored. 
+Include the mandatory fields for the data type when you create the SQL query. These tables outline the mandatory and optional fields for each data type. Find a list of other supported fields for events in the [Http V2 API documentation](/docs/apis/analytics/http-v2#keys-for-the-event-argument) and  for user properties in the [Identify API documentation](/docs/apis/analytics/identify#identification-parameter-keys). Add any columns not in those lists to either `event_properties` or `user_properties`, otherwise it's ignored. 
 
 ### Events
 
@@ -100,7 +100,7 @@ Include the mandatory fields for the data type when you create the SQL query. Th
 | `user_properties` | No | JSON | {"city":"chicago", "gender":"female"} |
 | `update_time_column` | No (Yes if using time based import) | TIMESTAMP | 2013-04-05 01:02:03.000 |
 
-Find other supported fields in the [HTTP V2 API documentation](/docs/apis/http-v2-api#upload-request-headers).
+Find other supported fields in the [HTTP V2 API documentation](/docs/apis/analytics/http-v2#upload-request-headers).
 
 ### User properties
 
@@ -110,7 +110,7 @@ Find other supported fields in the [HTTP V2 API documentation](/docs/apis/http-v
 | `user_properties` | Yes | JSON | {"city":"chicago", "gender":"female"} |
 | `update_time_column` | No (Yes if using time based import) | TIMESTAMP | 2013-04-05 01:02:03.000 |
 
-Find other supported fields in the [Identify API documentation](/docs/apis/identify-api#identification-parameter-keys).
+Find other supported fields in the [Identify API documentation](/docs/apis/analytics/identify#identification-parameter-keys).
 
 ### Group properties
 

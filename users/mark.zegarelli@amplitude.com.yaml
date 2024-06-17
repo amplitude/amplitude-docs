@@ -41,3 +41,8 @@ preferences:
         - slug
         - source
       per_page: 500
+    data:
+      columns:
+        - title
+        - slug
+        - status

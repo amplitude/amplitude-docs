@@ -30,4 +30,4 @@ Integrating Kochava with Amplitude lets you share user data between platforms in
 ## Set up and use the integration
 
 
-Kochava has instructions on setting up integrations [on their support site](https://support.kochava.com/). For more information, see Kochava's article [Create a Kochava-Certified Postback](https://support.kochava.com/campaign-management/create-a-kochava-certified-postback/). The integration uses Amplitude's [Attribution API](/docs/apis/attribution-api).
+Kochava has instructions on setting up integrations [on their support site](https://support.kochava.com/). For more information, see Kochava's article [Create a Kochava-Certified Postback](https://support.kochava.com/campaign-management/create-a-kochava-certified-postback/). The integration uses Amplitude's [Attribution API](/docs/apis/analytics/attribution).

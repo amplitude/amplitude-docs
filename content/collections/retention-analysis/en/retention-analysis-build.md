@@ -34,7 +34,7 @@ This feature is available to users on **all Amplitude plans**. See our [pricing 
 
 You won’t be able to use the Retention Analysis chart—or any other Amplitude chart, for that matter—until you’ve completed the instrumentation process. You'll definitely want to read our article on [building charts in Amplitude](/docs/analytics/charts/build-charts-add-events), as this is where you'll learn the basics of Amplitude's user interface. 
 
-Also, if you’re new to Amplitude, we recommend you read about our [Event Segmentation](https://help.amplitude.com/hc/en-us/articles/360033852251) chart before moving on to Retention Analysis. You may also want to check out our [playbook on mastering retention](https://amplitude.com/mastering-retention).
+Also, if you’re new to Amplitude, we recommend you read about our [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) chart before moving on to Retention Analysis. You may also want to check out our [playbook on mastering retention](https://amplitude.com/mastering-retention).
 
 ## Set up a retention analysis
 

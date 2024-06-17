@@ -292,7 +292,7 @@ After you have added all the fields you wish to bring into Amplitude, you can vi
 
 
 {{partial:admonition type="note" title=""}}
-The group properties import feature requires that groups are set in the [HTTP API event format](/docs/apis/http-v2-api). The converter expects a `groups` object and a `group_properties` object.
+The group properties import feature requires that groups are set in the [HTTP API event format](/docs/apis/analytics/http-v2). The converter expects a `groups` object and a `group_properties` object.
 {{/partial:admonition}}
 
 ### Manual converter creation

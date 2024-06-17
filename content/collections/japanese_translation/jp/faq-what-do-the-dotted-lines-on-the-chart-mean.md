@@ -11,7 +11,7 @@ Amplitudeチャートに点線が表示されている場合は、Amplitudeが�
 
 ![dotted_line_in_chart.png](/docs/output/img/jp/dotted-line-in-chart-png.png)
 
-3月13日のデータポイントまで伸びる点線は、その日にまだ未解決のイベントがある可能性を示しています。この事象は、[経時変化率](https://help.amplitude.com/hc/en-us/articles/230543327-Retention-Analysis#Change-Over-Time)が**24時間単位で**計算されるために発生します。3月15日午前9時の時点では、まだ当該ユーザーの1日目のリテンション期間内です。
+3月13日のデータポイントまで伸びる点線は、その日にまだ未解決のイベントがある可能性を示しています。この事象は、[経時変化率](/docs/analytics/charts/retention-analysis/retention-analysis-build-Retention-Analysis#Change-Over-Time)が**24時間単位で**計算されるために発生します。3月15日午前9時の時点では、まだ当該ユーザーの1日目のリテンション期間内です。
 
 * **0日**目のリテンションは、**3月13日午後7時**から**3月14日午後7時**までとなります。
 * **1日目の**リテンションは、**3月14日午後7時**から**3月15日午後7時**までです。
