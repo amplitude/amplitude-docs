@@ -46,3 +46,8 @@ preferences:
         - title
         - slug
         - status
+    analytics:
+      columns:
+        - title
+        - slug
+        - status

@@ -22,7 +22,7 @@ Instead of using cohorts to segment your users based on their past behavior, pre
 * Fine-tune the content in an ad, email, or website depending on their affinity for that content type
 
 {{partial:admonition type='note'}}
-Predictions are available for standard event properties only. They are not available for merged, derived, or transformed properties.
+Predictions aren't available for merged properties.
 {{/partial:admonition}}
 
 Predictions construct a mathematical model to forecast the likelihood that a particular user will take a specific action in your product, and in turn groups users who have similar probabilities.

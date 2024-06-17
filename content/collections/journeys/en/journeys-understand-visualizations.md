@@ -8,7 +8,7 @@ landing_blurb: 'Learn the difference between the three different Journey visuali
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717103599
 ---
-Each Journeys chart consists of three different visualizations: Pathfinder, Journey Map, and Top User Paths. Each view will tell you something different about the customer journey your users are experiencing. Navigate between them by selecting the appropriate tab along the top of the chart area.
+Each Journeys chart consists of the Pathfinder and Journey Map visualizations. Both views will tell you something different about the customer journey your users are experiencing. Navigate between them by selecting the appropriate tab along the top of the chart area.
 
 In any of these analyses, you can:
 
@@ -38,8 +38,6 @@ Because Journeys charts automatically hide inactive events, you may see more con
 
 Pathfinder is the default visualization of the Journeys chart. It’s a great tool to show you how users are using your product by presenting all the paths that start with, or end with, a specific event during a given time period. It shows the paths your customers take and their popularity relative to each other. 
 
-![](/docs/output/img/journeys/2IFR1uDtIQKZMXgmgEwUF3v1pRwk5LFh_XxP2hFihkSxCYWQtskL5qb5xfy-eNEg_BqJKe3Xe_5V27DJMjzEAF5n7Rxx72ySHKJQtSXVLI0P2_r8YTsBMabZH2ffrvXCDa1k5RWxGMMnNhrrt0ep_oU)
-
 The flow diagram shows all the paths starting or ending with a specific event. Each step is labeled. The label tells you the event triggered at that step in the sequence, as well as the frequency the event was triggered at that stage in the sequence. If a step reads *Dropped off* or *Did not perform an event*, that path includes users who dropped off at that point, or who did not trigger an event prior to the next one listed in the path.
 
 Drill in on and expand a particular branch by clicking *More*, to a maximum of nine steps.
@@ -61,8 +59,6 @@ Imagine a product manager who wants to better understand the initial activation 
 From here, she might develop a hypothesis about why users are behaving in a way that has implications for the design of the flow itself, which she can take to the product team for discussion and iteration. She might spot something in the flow that looks like it’s causing friction for users, which then leads to further questions and new explorations. Or she notices a large number of users are dropping off before getting to a critical step in the conversion process, so she saves them into a cohort, which she shares with the marketing team to target with specific messaging.
 
 The Journey Map does the hard work of surfacing these patterns for you; all you have to do is follow the insights and keep asking follow-up questions.
-
-![](/docs/output/img/journeys/0ukZnY6Wlnm_-4kXzURQjH4SIPCJcp7uRnDbXvIoOpItSdWpCjNbkRQArmue6r8nwSGfZBNLyQM5pxx4KQQfa6mFCiABMQCczFo5xY63fxwNr1pcSr6T9m6bCCDcUqtnLNjbT5YcNbtRkOJGYXdw-ww)
 
 {{partial:admonition type='note'}}
 You cannot create cohorts for event paths that include `Dropped off` or `Did not perform an event`.

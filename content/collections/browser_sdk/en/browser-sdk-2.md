@@ -12,10 +12,12 @@ releases_url: 'https://github.com/amplitude/Amplitude-TypeScript/releases?q=anal
 bundle_url: 'https://www.npmjs.com/package/@amplitude/analytics-browser'
 shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/analytics-browser/latest.svg'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718056292
+updated_at: 1718658234
 major_version: 2
 ampli_article: 5afa91b7-c12d-425a-b4b6-661061e5843a
 exclude_from_sitemap: false
+plugins:
+  - f0bf544a-7505-45ef-89ad-e7fe6ec71fbf
 ---
 Amplitude's Browser SDK 2 lets you send events to Amplitude.
 
@@ -1108,9 +1110,3 @@ SPA typically don't experience a true page load after a visitor enters the site,
 
 - Control the page and location parameters and / or
 - Unset the referrer after the first hit
-
-
-
-
-
-
