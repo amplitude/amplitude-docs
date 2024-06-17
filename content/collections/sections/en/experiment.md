@@ -3,8 +3,8 @@ id: 7ba36066-3d54-4874-a407-504b27d83a26
 blueprint: section
 title: Experiment
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718644295
+updated_by: c0ecd457-5b72-4dc9-b683-18a736413d32
+updated_at: 1718656433
 nav_title: experiment
 template: landing-page-experiment
 current-collection: experiment|experiment-apis|experiment-results|experiment-sdks|experiment-theory|workflow
@@ -20,7 +20,7 @@ landing_page_content:
     type: card
     enabled: true
     external_link: false
-    icon: brand-stickers/icon-experiment-blue.svg
+    icon: brand-stickers/icon-compliance-teal.svg
   -
     id: lxj7kbpg
     card_title: 'Feature Experimentation'
@@ -30,17 +30,17 @@ landing_page_content:
     type: card
     enabled: true
     external_link: false
-    icon: brand-stickers/icon-experiment-red.svg
+    icon: brand-stickers/icon-experiment-purple.svg
   -
     id: lxj7lgzm
-    card_title: 'Experiment Results'
-    card_content: 'Run A/B and multivariate experients with existing data in Amplitude.'
-    cta: 'Get started with experiment results'
+    card_title: 'Web Experimentation'
+    card_content: 'Run A/B, multivariate, and MAB experiments on the web without writing any code.'
+    cta: 'Get started with web experimenation'
     entries_field: 48014e0e-3130-40cc-ba15-946d6a16b51b
     type: card
     enabled: true
     external_link: false
-    icon: brand-stickers/icon-analytics-blue.svg
+    icon: brand-stickers/icon-experiment-purple.svg
   -
     id: lxj7mpnk
     card_title: 'Experiment SDKs'
@@ -60,7 +60,7 @@ landing_page_content:
     type: card
     enabled: true
     external_link: false
-    icon: brand-stickers/icon-developerhub-purple.svg
+    icon: brand-stickers/icon-developerhub-blue.svg
   -
     id: lxj7ojoj
     card_title: Demo
@@ -70,6 +70,6 @@ landing_page_content:
     enabled: true
     external_link: true
     external_url: 'https://app.amplitude.com/experiment/demo/470648/config/69916/activity'
-    icon: brand-stickers/icon-gaming-blue.svg
+    icon: brand-stickers/icon-gaming-red.svg
 ---
 An experimentation solution that unites everything you need to test, analyze, and optimize your product at scale.

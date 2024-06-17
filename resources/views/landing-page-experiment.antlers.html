@@ -16,8 +16,9 @@
 
                             <div class="flex flex-col border border-black-100 rounded h-52 p-4 hover:shadow-lg transition-shadow text-black-900">
                                 <p class="self-start my-0 leading-6 font-[Gellix] text-[1.25rem]">{{if icon}} {{svg :src="icon" class="h-8 w-8 mr-4 inline"}}{{/if}}{{ card_title }}</p>
-                                <div class="mb-auto text-[.875rem] leading-5 text-amp-gray-600 landing-blurb">{{ card_content }}</div>
-                                <a class="mt-auto" href="{{entries_field:url ?? external_url}}">{{cta}}</a>
+                                <div class="mb-auto text-[.875rem] leading-5 text-amp-gray-600 landing-blurb grow">{{ card_content }}</div>
+                                <br />
+                                <a class="mt-auto " href="{{entries_field:url ?? external_url}}">→&nbsp;&nbsp;{{cta}}</a>
                             </div>
 
                     {{ /landing_page_content }}
