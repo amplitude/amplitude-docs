@@ -27,7 +27,7 @@ Use this integration to match Amplitude's analytics capabilities with Leanplum's
 {{partial:admonition type="note" heading="Other Amplitude + Leanplum integrations"}}
 This integration sends Amplitude cohorts to Leanplum. Amplitude offers other integrations with Leanplum: 
 
-- [Import Leanplum Data](/docs/data/sources/leanplum)
+- [Import Leanplum Data](/docs/data/source-catalog/leanplum)
 {{/partial:admonition}}
 
 ## Considerations

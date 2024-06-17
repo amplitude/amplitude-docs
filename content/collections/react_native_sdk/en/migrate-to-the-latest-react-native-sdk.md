@@ -291,7 +291,7 @@ The maintenance React Native SDK supports automatically log start and end events
 
 ## Data migration
 
-Starting [v1.3.4](https://github.com/amplitude/Amplitude-TypeScript/releases/tag/%40amplitude%2Fanalytics-react-native%401.3.4), existing [maintenance SDK](../../react-native) data (events, user/device ID) are moved to the latest SDK by default. It can be disabled by setting `migrateLegacyData` to `false` in the [Configuration](../#configuration).
+Starting [v1.3.4](https://github.com/amplitude/Amplitude-TypeScript/releases/tag/%40amplitude%2Fanalytics-react-native%401.3.4), existing [maintenance SDK](/docs/sdks/analytics/react-native/react-native-sdk-maintenance) data (events, user/device ID) are moved to the latest SDK by default. It can be disabled by setting `migrateLegacyData` to `false` in the [Configuration](../#configuration).
 
 ```typescript
 init(API_KEY, OPTIONAL_USER_ID, {
