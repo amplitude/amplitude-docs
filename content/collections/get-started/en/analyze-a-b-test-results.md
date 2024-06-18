@@ -21,21 +21,21 @@ This feature is not to be confused with [Amplitude Experiment](/docs/analytics/c
 
 ## Before you begin: Instrument your experiments
 
-Before you can do anything, you'll need to instrument your experiments. We recommend using user properties to associate a user with a given experiment variation. User properties reflect traits about each individual person using your product. Use them to segment your analysis in Amplitude Analytics.
+Before you can do anything, you'll need to instrument your experiments. Amplitude recommends using user properties to associate a user with a given experiment variation. User properties reflect traits about each individual person using your product. Use them to segment your analysis in Amplitude Analytics.
 
 There are two main ways to update a user property:
 
-1) [SDKs](/docs/sdks) & [HTTP API](/docs/apis/analytics/http-v2): Update user properties on event action.
+1. [SDKs](/docs/sdks) & [Http API](/docs/apis/analytics/http-v2): Update user properties on event action.
 
-    * **How:** User properties can be sent with each event via our [SDKs](/docs/sdks) or [HTTP API](/docs/apis/analytics/http-v2).
-    * **Pros:** User properties will take effect at the moment the event is sent and exist with the user for all subsequent events, until the property values are explicitly updated.
-    * **Cons:** These events will count towards your monthly event volume. Further, these events will count users as **active** users by default, so you'll need to ensure any A/B  testing-related events are marked as [inactive events](/docs/data/change-event-activity-status).
+   * **How:** User properties can be sent with each event via our [SDKs](/docs/sdks) or [HTTP API](/docs/apis/analytics/http-v2).
+   * **Pros:** User properties will take effect at the moment the event is sent and exist with the user for all subsequent events, until the property values are explicitly updated.
+   * **Cons:** These events will count towards your monthly event volume. Further, these events will count users as **active** users by default, so you'll need to ensure any A/B  testing-related events are marked as [inactive events](/docs/data/change-event-activity-status).
 
-2) [Identify API](/docs/apis/analytics/identify): Update user properties without sending an event.
+2. [Identify API](/docs/apis/analytics/identify): Update user properties without sending an event.
 
-    * **How:** Amplitude's [Identify API](/docs/apis/analytics/identify) allows you to update a user property without sending an event.
-    * **Pros:** Can asynchronously update a user property without sending an event, and will not impact your monthly event volume count.
-    * **Cons:** The user property will not take effect until the user takes an action. This usually is not an issue for most experiments, but it **may have an impact on experiments** that are aimed to track whether or not inactive users are returning to your application.  
+   * **How:** Amplitude's [Identify API](/docs/apis/analytics/identify) allows you to update a user property without sending an event.
+   * **Pros:** Can asynchronously update a user property without sending an event, and will not impact your monthly event volume count.
+   * **Cons:** The user property will not take effect until the user takes an action. This usually is not an issue for most experiments, but it **may have an impact on experiments** that are aimed to track whether or not inactive users are returning to your application.  
   
 For example, suppose you're trying to get users who have been inactive for more than seven days to return to your app, and you're testing the effectiveness of an email to make that happen. If the [Identify API](/docs/apis/analytics/identify) is used to update a user property, it will only be applied to those users who have returned to trigger an event in your application. If a user remains inactive after receiving the email, the user property will not be applied to this user. As a result, this inactive user will not be included in the experiment group that has received the email, because the user property never attached to them. In situations like these, we recommend updating user properties on an event action (eg. an event called "Email Sent").
 
