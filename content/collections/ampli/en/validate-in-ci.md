@@ -6,6 +6,7 @@ title: 'Validate in CI'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1715382632
+source: https://www.docs.developers.amplitude.com/data/ampli/integrating-with-ci/
 ---
 Amplitude Data works best when integrated into your continuous integration (CI) workflow, running continuously alongside your test suite. Amplitude Data integrates with all common CI providers, and you can configure it for custom environments.
 

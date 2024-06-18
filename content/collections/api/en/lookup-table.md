@@ -18,7 +18,7 @@ summary: 'Augment your properties with static data.'
 ---
 
 {{partial:admonition type="deprecated" heading="This version of the Lookup Tables API is deprecated"}}
-This API is no longer supported. Use the new [API](/docs/apis/analytics/lookup-tabe-2).
+This API is no longer supported. Use the new [API](/docs/apis/analytics/lookup-table-2).
 {{/partial:admonition}}
 
 ## Considerations

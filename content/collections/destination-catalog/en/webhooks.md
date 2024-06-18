@@ -64,17 +64,17 @@ After these preset headers, you can define five more headers. To create a new he
 Under **Send Events**, make sure the toggle is enabled ("Events are sent to Webhook") if you want to stream events to the webhook. When enabled, events are automatically forwarded to the webhook when they're ingested in Amplitude. Events aren't sent on a schedule or on-demand using this integration.
 
 1. Define the event payload you want to receive in the webhook. You can choose to:
-    1. Send the default Amplitude payload which follows the Amplitude [event format](../../analytics/apis/export-api.md).
+    1. Send the default Amplitude payload which follows the Amplitude [event format](/docs/apis/analytics/export).
     2. Customize the payload using an [Apache FreeMarker](https://freemarker.apache.org/) template. [See more details below](#freemarker-templating-language).
 
 2. In **Select and filter events** choose which events you want to send. Choose only the events you need in the webhook. _Transformed events aren't supported._
 
 ### Configure user forwarding
 
-Under **Send Users**, make sure the toggle is enabled ("Users are sent to Webhook") if you want to stream users and their properties to the webhook. When enabled, users are sent to the webhook when an event is sent to Amplitude. [Amplitude Identify API](../../analytics/apis/identify-api.md) calls are also forwarded to the webhook. Users aren't sent on a schedule or on-demand using this integration.
+Under **Send Users**, make sure the toggle is enabled ("Users are sent to Webhook") if you want to stream users and their properties to the webhook. When enabled, users are sent to the webhook when an event is sent to Amplitude. [Amplitude Identify API](/docs/apis/analytics/identify) calls are also forwarded to the webhook. Users aren't sent on a schedule or on-demand using this integration.
 
 - Define the user payload you want to receive in the webhook. You can choose to:
-    1. Send the default Amplitude payload which follows the Amplitude [user format](../../analytics/apis/identify-api.md).
+    1. Send the default Amplitude payload which follows the Amplitude [user format](/docs/apis/analytics/identify).
     2. Customize the payload using an [Apache FreeMarker](https://freemarker.apache.org/) template. [See more details below](#freemarker-templating-language).
 
 ### Enable sync
@@ -94,8 +94,8 @@ Amplitude makes a delivery attempt first on each event or user, and then on fail
 Amplitude uses [Apache FreeMarker](https://freemarker.apache.org/) templates to customize your event payloads that you send to webhook.
 
 - You can use the FreeMarker Templating Language (FTL) to transform Amplitude's events and user payloads into any other JSON schema expected by the Webhook destination.
-- Amplitude's [event format](../../analytics/apis/export-api.md).
-- Amplitude's [user format](../../analytics/apis/identify-api.md). Keep in mind that based on how you use the Identify API some fields might be different (for example, if you use `device_id` instead of `user_id` in your identify calls, you will not see `user_id` in the payload).
+- Amplitude's [event format](/docs/apis/analytics/export).
+- Amplitude's [user format](/docs/apis/analytics/identify). Keep in mind that based on how you use the Identify API some fields might be different (for example, if you use `device_id` instead of `user_id` in your identify calls, you will not see `user_id` in the payload).
 
 
 {{partial:admonition type="tip" title="More FreeMarker help"}}
@@ -176,7 +176,7 @@ To modify this in different formats:
 ### Other useful information for templates
 
 - FreeMarker replaces the `${ ... }` constructs with the actual value of the expression inside the curly braces.
-- `input` is a reserved variable that refers to the event as an object, as defined [in the Export API docs](../../analytics/apis/export-api.md).
+- `input` is a reserved variable that refers to the event as an object, as defined [in the Export API docs](/docs/apis/analytics/export).
 - `input.event_type` refers to the `event_type` field of event.
 - `input.user_properties` refers to the user properties dictionary.
 - `input.user_properties.email` refers to the `email` field in user properties.

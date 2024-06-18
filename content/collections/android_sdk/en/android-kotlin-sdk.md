@@ -15,6 +15,7 @@ shields_io_badge: 'https://img.shields.io/maven-central/v/com.amplitude/analytic
 ampli_article: 167c275e-0aad-4fd1-9658-43a25c4654d6
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1710274534
+source: https://www.docs.developers.amplitude.com/data/sdks/android-kotlin/
 ---
 
 The Kotlin Android SDK lets you send events to Amplitude.

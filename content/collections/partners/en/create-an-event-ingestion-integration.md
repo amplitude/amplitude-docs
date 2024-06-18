@@ -52,7 +52,7 @@ Notice that this page has two sections:
     Navigate to **Data Sources** and click **I want to import data into Amplitude**. From there, you can click any integration tile to see their setup instructions.
     {{/partial:admonition}}
   
-5. In **Additional Resources**, add a link to your documentation. For example: *See the Amplitude [documentation](/) for more details and instructions.*
+5. In **Additional Resources**, add a link to your documentation. For example: *See the Amplitude [documentation](/docs) for more details and instructions.*
 6. When finished, click **Next** to go to the testing tab.
 
 ## Test and submit the integration
