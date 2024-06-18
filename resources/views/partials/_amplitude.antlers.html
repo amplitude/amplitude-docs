@@ -22,7 +22,7 @@
                         const userSession = JSON.parse(decodeURIComponent(atob(cookieValue)))
                         if (userSession && userSession.userId) {
                             amplitude.setUserId(userSession.userId);
-                            console.log('User authenticated: ', userSession.userId)
+                            //console.log('User authenticated: ', userSession.userId)
                             break;
                         }
                     } catch {}
