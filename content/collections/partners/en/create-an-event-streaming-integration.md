@@ -108,7 +108,7 @@ Use the Customize Events Payload section to customize what's included in your pa
 
 - **URL Endpoint:** Depending on your endpoint, you can choose between the following methods PUT, POST or PATCH.
 - **REST API Headers:** You can customize the API headers type to suit your use case. Some examples include:
-    - **Authorization:** Contains the authentication credentials for HTTP authentication.
+    - **Authorization:** Contains the authentication credentials for Http authentication.
     - **Content-Type:** Tells the client what the response's media type is. For example `application/json` or `application/javascript`. This is an important header field that helps the client know how to process the response body correctly.
     - **WWW-Authenticate:** The server may send this as an initial response if it needs some form of authentication before responding with the actual requested resource. Often following this header is the response code 401, which means “unauthorized”.
     - **Accept-Charset:** This header is set with the request and tells the server which character sets (for example, UTF-8, ISO-8859-1, Windows-1251, etc.) are acceptable by the client.
@@ -139,8 +139,6 @@ Use the Customize Events Payload section to customize what's included in your pa
 
 This section is a Freemarker template that allows you to construct the payload that's sent to your destination.
 The template in the screenshot can correspond to the above payload depending on how the user configures their sync and based on the *Customize user properties mapping* section above.
-
-![screenshot of the event body editor](../assets/images/partners/partner-event-body-editor.png)
 
 - **Input:** This object includes the forwarded event and its fields, and is enriched with the user’s other events and user properties. These fields aren't guaranteed and rely on the way each user has instrumented their events. Amplitude suggests keeping the input fields usage to minimum and just use the most common ones such as: `user_id`, `event_type`, `event_time`.
 - **Parameters:** A key-value pair where the key is a *Parameter Name* defined in the **Create Parameters** section, and the value corresponds to the value that the user has provided when setting up their sync.

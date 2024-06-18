@@ -4,6 +4,7 @@ blueprint: node_js_sdk
 title: 'Node.js SDK Migration Guide'
 sdk_status: maintenance
 article_type: migration
+source: https://www.docs.developers.amplitude.com/data/sdks/typescript-node/migration/
 supported_languages:
   - js
   - ts

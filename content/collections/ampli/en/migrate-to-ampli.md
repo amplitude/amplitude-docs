@@ -6,6 +6,7 @@ title: 'Migrate to Ampli'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1715382647
+source: https://www.docs.developers.amplitude.com/data/ampli/migration/
 ---
 Ampli provides the benefits of type safety, linting, and data validation to make sure that your analytics are accurate and trustworthy.
 

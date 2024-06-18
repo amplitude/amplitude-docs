@@ -4,6 +4,7 @@ blueprint: react_native_sdk
 title: 'React Native SDK'
 sdk_status: maintenance
 article_type: core
+source: https://www.docs.developers.amplitude.com/data/sdks/react-native/
 supported_languages:
   - js
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
