@@ -25,7 +25,7 @@ Amplitude aims to make it easy for partners like yourself to self-define and add
 
 This Integration Portal suits partners who want to build these kinds of integrations:
 
-- [Event Ingestion](/docs/partners/create-an-event-ingestion-integratione) - Build your own Amplitude Data Source tile to let your users set up an integration between Amplitude and your app.
+- [Event Ingestion](/docs/partners/create-an-event-ingestion-integration) - Build your own Amplitude Data Source tile to let your users set up an integration between Amplitude and your app.
 - [Cohorts](/docs/partners/create-a-cohort-syncing-integration) - Build your own Amplitude Data Destination cohort tile to enable users to sync cohorts (audiences) from Amplitude to your platform through a series of REST API calls.
 - [Event Streaming](/docs/partners/create-an-event-streaming-integration) - Build your own Amplitude Event Streaming tile to let your users forward events in real time from Amplitude. 
 
