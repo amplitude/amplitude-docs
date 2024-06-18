@@ -13,10 +13,10 @@ Client-side and server-side are terms that describe where an app's code runs: ei
 
 Both Amplitude client-side SDKs and server-side SDKs use API endpoints. These endpoints offers flexibility for implementing custom solutions without relying on Amplitude's SDKs, especially for programming languages not supported by Amplitude's SDKs, like PHP.
 
-| Name                                                               | API endpoints                                                                                                                 |
-| ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| [Analytics and Data SDKs](/docs/sdks/analytics) | [HTTP V2 API](/docs/apis/analytics/http-v2) and [Batch event upload]([../../../analytics/apis/batch-event-upload-api/](http://amplitude-docs.test/docs/apis/analytics/batch-event-upload)) |
-| [Experiment SDKs](/docs/sdks/experiment-sdks)        | [Evaluation API](/docs/apis/experiment/experiment-evaluation-api)                                                                    |
+| Name                                            | API endpoints                                                                                                                                                                              |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [Analytics and Data SDKs](/docs/sdks/analytics) | [Http V2 API](/docs/apis/analytics/http-v2) and [Batch event upload][/docs/apis/analytics/batch-event-upload] |
+| [Experiment SDKs](/docs/sdks/experiment-sdks)   | [Evaluation API](/docs/apis/experiment/experiment-evaluation-api)                                                                                                                          |
 
 ## Client-side sources
 
@@ -41,7 +41,7 @@ Amplitude's server-side sources include these SDKs and APIs:
 
 ## Third-party sources
 
-Third-party is another kind of source. These sources let you import data from other platforms into Amplitude. These sources all require that you have an account with the third-party sources, and each have different setup requirements. You can see all third-party sources in the [Source catalog](../../sources/).
+Third-party is another kind of source. These sources let you import data from other platforms into Amplitude. These sources all require that you have an account with the third-party sources, and each have different setup requirements. You can see all third-party sources in the [Source catalog](/docs/data/source-catalog).
 
 ## How to choose
 
