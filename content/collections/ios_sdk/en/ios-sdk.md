@@ -11,6 +11,7 @@ github_link: 'https://github.com/amplitude/Amplitude-iOS'
 releases_url: 'https://github.com/amplitude/Amplitude-iOS/releases'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1715285165
+source: https://www.docs.developers.amplitude.com/data/sdks/ios/
 ---
 This is the official documentation for the Amplitude Analytics iOS SDK.
 

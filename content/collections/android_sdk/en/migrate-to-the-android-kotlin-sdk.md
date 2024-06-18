@@ -4,6 +4,7 @@ blueprint: android_sdk
 title: 'Migrate to the Android-Kotlin SDK'
 sdk_status: maintenance
 article_type: migration
+source: https://www.docs.developers.amplitude.com/data/sdks/android-kotlin/migration/
 supported_languages:
   - java
   - kotlin
