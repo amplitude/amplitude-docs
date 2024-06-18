@@ -21,6 +21,23 @@ source: https://www.docs.developers.amplitude.com/data/sdks/typescript-node/
 
 The Node.js SDK lets you send events to Amplitude.
 
+## Install the SDK
+
+Install the dependency with npm or yarn.
+
+{{partial:tabs tabs="npm, yarn"}}
+{{partial:tab name="npm"}}
+```bash
+npm install @amplitude/analytics-node
+```
+{{/partial:tab}}
+{{partial:tab name="yarn"}}
+```bash
+yarn add @amplitude/analytics-node
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
 ## Initialize the SDK
 
 Initialization is necessary before you instrument the SDK. The API key for your Amplitude project is required. The SDK can be used anywhere after it's initialized anywhere in an application.
