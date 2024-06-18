@@ -28,6 +28,16 @@ go get github.com/amplitude/analytics-go
 
 You must initialize the SDK before you can instrument any events. The API key for your Amplitude project is required to construct a Config `struct`. Use that Config `struct` to initialize a client `struct` which implements Client interface. You can use it across requests after it's initialized. See examples in the next section.
 
+```go
+import (
+    "github.com/amplitude/analytics-go/amplitude"
+)
+
+config := amplitude.NewConfig(AMPLITUDE_API_KEY)
+
+client := amplitude.NewClient(config)
+```
+
 ## Configure the SDK
 
 | Name  | Description | Default Value |
