@@ -9,8 +9,9 @@ supported_languages:
 github_link: 'https://github.com/amplitude/Amplitude-Java'
 releases_url: 'https://github.com/amplitude/Amplitude-Java/releases'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718572695
+updated_at: 1718672530
 ampli_article: 0128c1e3-dbc5-4612-982f-aefef4ad4db0
+source: 'https://www.docs.developers.amplitude.com/data/sdks/java/'
 ---
 This is the documentation for the Amplitude Analytics Java SDK.
 

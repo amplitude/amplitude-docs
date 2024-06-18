@@ -3,6 +3,7 @@ id: 9b155be9-bb32-428c-9f49-6e00f9630547
 blueprint: browser_sdk
 title: 'Migrate from Browser SDK 1.0 to 2.0'
 sdk_status: current
+source: https://www.docs.developers.amplitude.com/data/sdks/browser-2/migration/
 article_type: migration
 supported_languages:
   - js

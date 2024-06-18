@@ -4,6 +4,7 @@ blueprint: node_js_sdk
 title: 'Ampli for Node SDK'
 sdk_status: current
 article_type: ampli
+source: https://www.docs.developers.amplitude.com/data/sdks/node/ampli/
 supported_languages:
   - js
   - ts

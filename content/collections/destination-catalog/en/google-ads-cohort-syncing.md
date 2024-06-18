@@ -9,6 +9,7 @@ integration_type:
 integration_category:
   - ad-networks
 partner_maintained: false
+source: https://www.docs.developers.amplitude.com/data/destinations/google-ads-cohort/
 integration_icon: partner-icons/google-ads.svg
 use_cases:
   - 'The use case with sending cohorts from Amplitude to Google Ads involves creating more personalized campaigns by uploading and syncing behavioral cohorts directly to the Google Ad network. This allows advertisers to target specific audiences more effectively and optimize their campaigns based on real-time performance data.'

@@ -1,0 +1,12 @@
+
+{{coll = "account-management|admin|advanced-techniques|ampli|analytics|android_sdk|api|apis|audiences|billing-use|browser_sdk|cdp|charts|compass|data|data-tables|destination-catalog|engagement-matrix|event-segmentation|experiment|experiment-apis|experiment-results|experiment-sdks|experiment-theory|experiment_troubleshooting|flutter_sdk|funnel-analysis|get-started|go_sdk|impact-analysis|instrumentation|ios_sdk|japanese_translation|java_sdk|journeys|legacy-charts|lifecycle|migration|node_js_sdk|other-charts|pages|partners|personas|python_sdk|react_native_sdk|retention-analysis|revenue-ltv|sdk-catalog|sections|session-replay|single-sign-on|source-catalog|sources|stickiness|under-the-hood|unity_sdk|unreal_sdk|user-sessions|warehouse_native_amplitude|workflow"}}
+
+{{collection :from="coll"}}
+{{if source}}
+{
+    "source": "{{source | replace('https://help.amplitude.com','') | replace('https://docs.developers.amplitude.com','') | replace('https://www.docs.developers.amplitude.com','')}}",
+    "destination": "{{uri}}",
+    "statusCode": 301
+},
+{{/if}}
+{{/collection }}

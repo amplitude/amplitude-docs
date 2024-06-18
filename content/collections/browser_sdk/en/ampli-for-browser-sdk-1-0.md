@@ -4,6 +4,7 @@ blueprint: browser_sdk
 title: 'Ampli for Browser SDK 1.0'
 sdk_status: current
 article_type: ampli
+source: https://www.docs.developers.amplitude.com/data/sdks/typescript-browser/ampli/
 major_version: 1.0
 supported_languages:
   - js

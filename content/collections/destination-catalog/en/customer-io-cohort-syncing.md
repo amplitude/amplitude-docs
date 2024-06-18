@@ -9,6 +9,7 @@ integration_type:
 integration_category:
   - marketing-automation
 partner_maintained: false
+source: https://www.docs.developers.amplitude.com/data/destinations/customerio-cohort/
 integration_icon: partner-icons/customerio.svg
 use_cases:
   - 'This capability allows businesses to sync their Amplitude cohorts with Customer.io. By integrating Amplitude cohorts into Customer.io, organizations can create targeted messaging campaigns based on user behavior captured in Amplitude. This enables personalized communication and engagement strategies tailored to specific customer segments, driving higher conversion rates and improved customer satisfaction.'
