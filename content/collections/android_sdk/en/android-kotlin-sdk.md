@@ -20,6 +20,33 @@ source: https://www.docs.developers.amplitude.com/data/sdks/android-kotlin/
 
 The Kotlin Android SDK lets you send events to Amplitude.
 
+## Install the SDK
+
+Amplitude recommends using Android Studio as an IDE and Gradle to manage dependencies.
+
+{{partial:tabs tabs="Gradle, Maven"}}
+{{partial:tab name="Gradle"}}
+If you use Gradle in your project, add the following dependency to `build.gradle`, and sync your project with the updated file.
+
+```groovy
+dependencies {
+    implementation 'com.amplitude:analytics-android:1.+'
+}
+```
+{{/partial:tab}}
+{{partial:tab name="Maven"}}
+If you use Maven in your project, the .jar is available on Maven Central with the following configuration in `pom.xml`.
+```xml
+<dependency>
+    <groupId>com.amplitude</groupId>
+    <artifactId>analytics-android</artifactId>
+    <version>[1.0,2.0]</version>
+</dependency>
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+
 ## Configure the SDK
 
 {{partial:collapse name="Configuration Options"}}
