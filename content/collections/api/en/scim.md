@@ -15,7 +15,7 @@ lede: |-
 
   For help integrating the SCIM API with an Identity Provider like Okta or JumpCloud, or help enabling the SCIM API for an Amplitude organization, see [Set up SCIM provisioning in Amplitude](/docs/admin/account-management/scim-provision).
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1716312360
+updated_at: 1718668267
 summary: 'Provision and manage users and groups. This API uses the System for Cross-domain Identity Management (SCIM) 2.0 Standard.'
 ---
 ## Considerations

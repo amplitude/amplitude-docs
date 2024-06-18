@@ -18,6 +18,7 @@ migration_guide:
   - b7cc9d54-870a-40bc-93d8-a2ac15375e75
 major_version: 1
 exclude_from_sitemap: false
+source: https://www.docs.developers.amplitude.com/data/sdks/javascript/
 ---
 This is the official documentation for the Amplitude Analytics JavaScript SDK.
 
@@ -196,7 +197,7 @@ var instance = amplitude.getInstance("instance").init(AMPLITUDE_API_KEY, null, o
 
 #### Configure batching behavior
 
-To support high-performance environments, the SDK sends events in batches. Every event logged by `logEvent` method is queued in memory. Events are flushed in batches in background. You can customize batch behavior with `eventUploadThreshold` and `eventUploadPeriodMillis`. By default, the serverUrl will be `https://api.amplitude.com`. This SDK doesn't support batch mode, the [batch API](/docs/apis/analytics/batch-event-upload-api/) endpoint.
+To support high-performance environments, the SDK sends events in batches. Every event logged by `logEvent` method is queued in memory. Events are flushed in batches in background. You can customize batch behavior with `eventUploadThreshold` and `eventUploadPeriodMillis`. By default, the serverUrl will be `https://api.amplitude.com`. This SDK doesn't support batch mode, the [batch API](/docs/apis/analytics/batch-event-upload/) endpoint.
 
 ```js
 amplitude.getInstance().init(apiKey, null, {

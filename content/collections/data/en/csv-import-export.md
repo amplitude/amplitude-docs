@@ -108,11 +108,11 @@ Marking an event as inactive is applied retroactively and immediately, and will 
 
 The following table includes additional fields found in the .CSV export of your tracking plan’s events and event properties.
 
-        | **Field name** | **Definition** | **Values or format** | **Events** | **Event properties** | **Property groups** | **Property group properties** |
+| **Field name** | **Definition** | **Values or format** | **Events** | **Event properties** | **Property groups** | **Property group properties** |
 |  Action | The default action to perform on a particular entity
 This field exists in the import template, but the downloaded file will automatically include default values.  | * **Ignore**: The user property is unexpected, blocked or deleted.
 * ***<blank>***: The user property is planned or live.
- |  X | X | X | X |
+|  X | X | X | X |
 | Event First Seen | The date on which the Event was first seen. | “mm/dd/yyyy”  | X |  |  |  |
 | Event Last Seen | The date on which the Event was last seen. | “mm/dd/yyyy”  | X |  |  |  |
 | Property First Seen | The date on which the property was first seen. | “mm/dd/yyyy”  |  | X |  |  |
@@ -123,7 +123,7 @@ This field exists in the import template, but the downloaded file will automatic
 Follow the below steps to import or export user properties:
 
 1. Navigate to Data, and click *Properties* under *Tracking Plan* in the left side pane. Then click *User Properties*.
-2. Click the import icon ![](/docs/output/img/data/22418899828635) to open the import modal.
+2. Click the import icon to open the import modal.
 3. If your import file is ready to upload and follows the [expected user properties schema](#h_01HNB5CSJY8QWZXPWXPJYK1JHQ), you can drag and drop your .CSV file or click Upload and choose the file from your desired location. If not, click *template* to download a template .CSV to update for importing.
 
 ![](/docs/output/img/data/22418907248795.png)
@@ -131,7 +131,7 @@ Follow the below steps to import or export user properties:
 The imported events and event properties will appear in a branch named *import*.
 
 4. Once you’re sure the imported tracking plan updates are correct, you can [merge the changes back into the main branch](/docs/data/data-planning-workflow).
-5. If you want to export user properties from your tracking plan, click the export icon ![](/docs/output/img/data/22418905478939) instead.
+5. If you want to export user properties from your tracking plan, click the export icon instead.
 6. In the export modal that appears, choose whether to download your tracking plan’s schema or a .CSV file template. Then, click Download.
 
 **![](/docs/output/img/data/22418912795163.png)**

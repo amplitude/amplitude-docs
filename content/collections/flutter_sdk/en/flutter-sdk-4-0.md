@@ -12,6 +12,7 @@ releases_url: 'https://github.com/amplitude/Amplitude-Flutter/releases'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1715123988
+source: https://www.docs.developers.amplitude.com/data/sdks/flutter-4/
 ---
 This is the official documentation for the Amplitude Analytics Flutter SDK. The Flutter SDK lets you send events from your Flutter application to Amplitude.
 

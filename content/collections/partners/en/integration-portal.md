@@ -25,22 +25,22 @@ Amplitude aims to make it easy for partners like yourself to self-define and add
 
 This Integration Portal suits partners who want to build these kinds of integrations:
 
-- [Event Ingestion](../event-ingestion-integration-guide) - Build your own Amplitude Data Source tile to let your users set up an integration between Amplitude and your app.
-- [Cohorts](../cohort-integration-guide) - Build your own Amplitude Data Destination cohort tile to enable users to sync cohorts (audiences) from Amplitude to your platform through a series of REST API calls.
-- [Event Streaming](../event-streaming-integration-guide) - Build your own Amplitude Event Streaming tile to let your users forward events in real time from Amplitude. 
+- [Event Ingestion](/docs/partners/create-an-event-ingestion-integratione) - Build your own Amplitude Data Source tile to let your users set up an integration between Amplitude and your app.
+- [Cohorts](/docs/partners/create-a-cohort-syncing-integration) - Build your own Amplitude Data Destination cohort tile to enable users to sync cohorts (audiences) from Amplitude to your platform through a series of REST API calls.
+- [Event Streaming](/docs/partners/create-an-event-streaming-integration) - Build your own Amplitude Event Streaming tile to let your users forward events in real time from Amplitude. 
 
 ### Prerequisites 
 
 To get started, you need to do the following:
 
 1. [Sign up](https://amplitude.com/get-started) or have an existing Amplitude plan.
-2. Email integrations@amplitude.com with your [Org ID](https://help.amplitude.com/hc/en-us/articles/235649848-The-Settings-page) so Amplitude can enable the Integration Portal. This also enables the partner sandbox plan to give you access to all the same features as the Enterprise plan for testing purposes.
+2. Email integrations@amplitude.com with your [Org ID](/docs/admin/account-management/account-settings) so Amplitude can enable the Integration Portal. This also enables the partner sandbox plan to give you access to all the same features as the Enterprise plan for testing purposes.
 
 ### High-level process to get listed in Amplitude
 
 Here are the high-level steps to having your integration listed within the Amplitude app. 
 
-1. **Go to the Integration Portal**: In Amplitude, navigate to the **My Settings** page and click **Integration Portal**. If you don't see this option, send an email to integrations@amplitude.com with your [Org ID](https://help.amplitude.com/hc/en-us/articles/235649848-The-Settings-page), and our Amplitude Product Development team will provide you access.
+1. **Go to the Integration Portal**: In Amplitude, navigate to the **My Settings** page and click **Integration Portal**. If you don't see this option, send an email to [integrations@amplitude.com](mailto:integrations@amplitude.com) with your [Org ID](/docs/admin/account-management/account-settings), and the Amplitude Product Development team will provide you access.
 2. **Configure your integration**: Once you have finalized your testing, click **Submit** via the Integration Portal and it will notify the Amplitude Engineering team to review your integration.
 3. **Amplitude Engineering team reviews integration**: During the review process, the Amplitude team validates the integration which could take up to 2 weeks. During this process, Amplitude may reach out to you if the team has questions.
     - **Cohort destination integration:** Provide a test account to integrations@amplitude.com. Typically the Amplitude team syncs a test cohort from Amplitude to your platform as part of the validation process.
