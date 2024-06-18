@@ -1,6 +1,12 @@
 title: 'SDK Common Sidebar'
 fields:
   -
+    handle: source
+    field:
+      type: text
+      display: Source
+      localizable: false
+  -
     handle: github_link
     field:
       input_type: url

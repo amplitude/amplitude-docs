@@ -4,6 +4,7 @@ blueprint: destination-catalog
 title: 'Braze (Cohort Sync)'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 connection: destination
+source: https://www.docs.developers.amplitude.com/data/destinations/braze-cohort/
 integration_type:
   - cohorts
 integration_category:

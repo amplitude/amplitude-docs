@@ -4,6 +4,7 @@ blueprint: ios_sdk
 title: 'iOS SDK Migration Guide'
 sdk_status: current
 article_type: migration
+source: https://www.docs.developers.amplitude.com/data/sdks/ios-swift/migration/
 supported_languages:
   - swift
   - obj-c

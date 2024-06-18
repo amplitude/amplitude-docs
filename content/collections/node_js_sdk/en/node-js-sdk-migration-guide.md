@@ -8,6 +8,7 @@ supported_languages:
   - js
   - ts
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+source: https://www.docs.developers.amplitude.com/data/sdks/typescript-node/migration/
 updated_at: 1715102406
 sdk_version_comparison:
   -

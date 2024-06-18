@@ -54,9 +54,9 @@ sdk_version_comparison:
       - 'Http V2 API'
       - 'Http V1 API'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715719187
+updated_at: 1718672648
+source: 'https://www.docs.developers.amplitude.com/data/sdks/typescript-react-native/migration/'
 ---
-
 Amplitude's latest React Native SDK (`@amplitude/analytics-react-native`) features a plugin architecture, built-in type definition and broader platform support.
 
 The latest React Native SDK isn't fully backwards compatible with maintenance React Native SDK `@amplitude/react-native`. However, it will transfer user, device, and event data to the new SDK automatically in versions `v1.3.4` and above.

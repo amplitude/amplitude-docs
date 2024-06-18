@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::statamic('example', 'example-view', [
-//    'title' => 'Example'
-// ]);
+Route::statamic('json', 'json', [
+    'content_type' => 'json',
+    'layout' => 'blank'
+   
+]);

@@ -4,6 +4,7 @@ blueprint: browser_sdk
 title: 'Autocapture Plugin'
 sdk_status: Beta
 article_type: plugin
+source: https://www.docs.developers.amplitude.com/data/sdks/browser-2/autocapture/
 supported_languages:
   - js
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0

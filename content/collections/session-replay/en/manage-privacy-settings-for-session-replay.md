@@ -6,6 +6,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718659422
+source: https://help.amplitude.com/hc/en-us/articles/26605783882779-Manage-privacy-settings-for-Session-Replay
 this_article_will_help_you:
   - 'Ensure your use of Session Replay complies with data privacy requirements'
 ---
