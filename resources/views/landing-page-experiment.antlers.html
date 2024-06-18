@@ -1,0 +1,31 @@
+<section class="w-full flex flex-col items-center">
+    <div class="w-full pt-8 px-16 lg:p-8">
+        <div class="copy">
+            <div class="flex flex-row items-start justify-between">
+                <h1 class="font-[Gellix] font-normal mb-5">{{ title }}</h1>
+                <span class="ml-4 text-xs text-gray-300 align-middle"><a
+                        href="{{ environment == 'local' ? edit_url : {github_edit_url} }}"
+                        target="_blank">{{ svg src="/assets/general/pencil.svg" class="fill-amp-gray-500 h-6 hover:h-8 transition-all" }}</a></span>
+            </div>
+            <div
+                class="prose prose-a:text-amp-blue prose-ol:list-decimal prose-ol:list-outside prose-pre:bg-[#fafafa] max-w-screen-xl">
+                {{ content | markdown }}
+                {{ landing_blurb }}
+                <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+                    {{ landing_page_content }}
+
+                            <div class="flex flex-col border border-black-100 rounded h-52 p-4 hover:shadow-lg transition-shadow text-black-900">
+                                <p class="self-start my-0 leading-6 font-[Gellix] text-[1.25rem]">{{if icon}} {{svg :src="icon" class="h-8 w-8 mr-4 inline"}}{{/if}}{{ card_title }}</p>
+                                <div class="mb-auto text-[.875rem] leading-5 text-amp-gray-600 landing-blurb grow">{{ card_content }}</div>
+                                <br />
+                                <a class="mt-auto " href="{{entries_field:url ?? external_url}}">→&nbsp;&nbsp;{{cta}}</a>
+                            </div>
+
+                    {{ /landing_page_content }}
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    {{ partial:article-footer }}
+</section>
