@@ -13,7 +13,6 @@ github_link: 'https://github.com/amplitude/Amplitude-ReactNative'
 releases_url: 'https://github.com/amplitude/Amplitude-ReactNative/releases'
 bundle_url: 'https://www.npmjs.com/package/@amplitude/react-native'
 shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/react-native'
-source: 'https://www.docs.developers.amplitude.com/data/sdks/react-native/'
 ---
 This is the official documentation for the Amplitude Analytics React Native SDK.
 

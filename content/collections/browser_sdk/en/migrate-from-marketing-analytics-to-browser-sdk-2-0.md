@@ -3,7 +3,6 @@ id: eb4533a3-2075-49a0-83fa-e703afea78e7
 blueprint: browser_sdk
 title: 'Migrate from Marketing Analytics to Browser SDK 2.0'
 sdk_status: maintenance
-source: https://www.docs.developers.amplitude.com/data/sdks/marketing-analytics-browser/migration/
 article_type: migration
 supported_languages:
   - js

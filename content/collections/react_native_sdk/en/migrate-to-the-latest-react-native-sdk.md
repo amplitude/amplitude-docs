@@ -4,7 +4,6 @@ blueprint: react_native_sdk
 title: 'Migrate to the latest React Native SDK'
 sdk_status: current
 article_type: migration
-source: https://www.docs.developers.amplitude.com/data/sdks/typescript-react-native/migration/
 supported_languages:
   - js
   - ts

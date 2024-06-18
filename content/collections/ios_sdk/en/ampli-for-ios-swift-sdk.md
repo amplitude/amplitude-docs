@@ -4,7 +4,6 @@ blueprint: ios_sdk
 title: 'Ampli for iOS Swift SDK'
 sdk_status: current
 article_type: ampli
-source: https://www.docs.developers.amplitude.com/data/sdks/ios-swift/ampli/
 supported_languages:
   - swift
   - obj-c
