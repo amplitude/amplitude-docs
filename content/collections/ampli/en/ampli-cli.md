@@ -4,8 +4,8 @@ blueprint: ampli
 title: 'Ampli CLI'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715382596
 source: https://www.docs.developers.amplitude.com/data/ampli/cli/
+updated_at: 1715382596
 ---
 Ampli is Amplitude's command line app. It works hand-in-hand with the Amplitude Data web app and enables developers to correctly instrument tracking code in their apps.
 

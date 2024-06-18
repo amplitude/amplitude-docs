@@ -7,8 +7,8 @@ article_type: ampli
 supported_languages:
   - go
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715275857
-source: https://www.docs.developers.amplitude.com/data/sdks/go/ampli/
+updated_at: 1718672509
+source: 'https://www.docs.developers.amplitude.com/data/sdks/go/ampli/'
 ---
 Amplitude Data supports tracking analytics events from Go apps. The generated tracking library is packaged as a Go package.
 

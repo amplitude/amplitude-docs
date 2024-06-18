@@ -10,6 +10,7 @@ integration_category:
   - other
 partner_maintained: false
 integration_icon: partner-icons/hotjar.svg
+source: https://www.docs.developers.amplitude.com/data/destinations/hotjar-event-streaming/
 use_cases:
   - "Utilize Amplitude's SDK plugin architecture to seamlessly send Amplitude events to HotJar, allowing for a more integrated approach to understanding user behavior and website optimization. By combining the power of Amplitude's analytics with HotJar's user experience insights, businesses can gain a holistic view of their digital presence and make data-driven decisions to improve overall performance and user satisfaction."
 exclude_from_sitemap: false
