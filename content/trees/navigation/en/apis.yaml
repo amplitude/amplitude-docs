@@ -98,16 +98,16 @@ tree:
           -
             id: dbb3c7d3-7aa3-4a0d-8f6a-2549b653c4de
             entry: e082b577-8058-494d-8567-d4ad3ccca149
-            title: 'Management API: Deployment Endpoints'
+            title: 'Deployment Endpoints'
           -
             id: b3d84270-60f2-4543-9021-6652a614ba52
             entry: bc8ec21e-a8e1-4857-8557-d24143e42865
-            title: 'Management API: Experiment Endpoints'
+            title: 'Experiment Endpoints'
           -
             id: 9de60646-ed35-487a-9f28-7826de47b382
             entry: 223ccb37-444f-430f-8910-0c1d079aca89
-            title: 'Management API: Flag Endpoints'
+            title: 'Flag Endpoints'
           -
             id: 446b9af8-4242-466e-a2e6-9a117c7fca98
             entry: 8554f01f-abfc-4669-ae44-f00f5d2b4ccd
-            title: 'Management API: Version Endpoints'
+            title: 'Version Endpoints'
