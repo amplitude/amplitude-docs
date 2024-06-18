@@ -1,19 +1,16 @@
 {{ if site == 'jp'}}
     {{container = "#algolia-search-header"}}
-    {{index_name = 'amplitude-vercel-jp'}}
 {{ elseif segment_1}}
     {{container = "#algolia-search-header"}}
-    {{index_name = 'amplitude-vercel'}}
   {{else}}
     {{container = "#algolia-search"}}
-    {{index_name = 'amplitude-vercel'}}
 {{/if}}
 <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
 <script type="text/javascript">
   docsearch({
     appId: "93SYI9HL20",
     apiKey: "1bfbfd55a8ceb5c3d26f898de26ada12",
-    indexName: "{{index_name}}",
+    indexName: "amplitude-vercel",
     container: '{{container}}',
     debug: true,
     placeholder: "Search 'instrumentation' , 'Export API'",
