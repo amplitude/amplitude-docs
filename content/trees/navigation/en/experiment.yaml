@@ -93,22 +93,6 @@ tree:
           -
             id: a8c8105b-547c-4a25-8931-e217aa6b9647
             entry: 9c708cb5-e9b4-464b-9d43-cf5411e43cfe
-      -
-        id: 33de7741-62d4-4b58-b6f4-6359a8c6e114
-        title: 'Understand the cumulative exposures graph'
-        children:
-          -
-            id: 80dccec2-db6b-4563-b8b8-51788500c723
-            entry: cfe3d40c-d33c-4868-958f-f2a6e3f1e4f4
-            title: 'Increasing and decreasing slopes'
-          -
-            id: c645f1f2-5e16-40e4-a24f-ec475d26ad32
-            entry: 994fcfe6-557c-43ed-903e-dbf0bc71bb4c
-            title: 'Divergent lines'
-          -
-            id: e05b14be-4608-493e-9e68-5c56f0003390
-            entry: 6b86591a-0640-488d-b94c-5973aea3308b
-            title: 'Inflection points and flattened slopes'
   -
     id: 9360179b-3944-4058-ab65-89d3f8baf60b
     title: 'Experiment workflows'
@@ -163,6 +147,22 @@ tree:
       -
         id: e2cf6857-5740-4894-8121-e9ff81d9814d
         entry: d8fdb1b4-2027-4785-aea6-375d53143cf8
+      -
+        id: 33de7741-62d4-4b58-b6f4-6359a8c6e114
+        title: 'Understand the cumulative exposures graph'
+        children:
+          -
+            id: 80dccec2-db6b-4563-b8b8-51788500c723
+            entry: cfe3d40c-d33c-4868-958f-f2a6e3f1e4f4
+            title: 'Increasing and decreasing slopes'
+          -
+            id: c645f1f2-5e16-40e4-a24f-ec475d26ad32
+            entry: 994fcfe6-557c-43ed-903e-dbf0bc71bb4c
+            title: 'Divergent lines'
+          -
+            id: e05b14be-4608-493e-9e68-5c56f0003390
+            entry: 6b86591a-0640-488d-b94c-5973aea3308b
+            title: 'Inflection points and flattened slopes'
   -
     id: e67e82c0-c298-4d72-bd01-6e42a7e97826
     title: Integrations
