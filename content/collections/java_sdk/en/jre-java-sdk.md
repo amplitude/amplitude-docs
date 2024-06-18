@@ -15,6 +15,24 @@ source: 'https://www.docs.developers.amplitude.com/data/sdks/java/'
 ---
 This is the documentation for the Amplitude Analytics Java SDK.
 
+## Install the SDK
+
+{{partial:tabs tabs="Gradle, Download"}}
+{{partial:tab name="Gradle"}}
+If you use Gradle in your project, add the following dependency to `build.gradle`, and sync your project with the updated file.
+
+```groovy
+dependencies {
+    implementation 'org.json:json:20201115'
+    implementation 'com.amplitude:java-sdk:1.+'
+}
+```
+{{/partial:tab}}
+{{partial:tab name="Download"}}
+Download the latest [JAR file](https://github.com/amplitude/Amplitude-Java/releases) then add it to the project's build path. See instructions for your IDE.
+{{/partial:tab}}
+{{/partial:tabs}}
+
 ## Import the SDK
 
 Import Amplitude into any file that uses it. Amplitude uses the open source `JSONObject` library to conveniently create JSON key-value objects.
