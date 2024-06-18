@@ -73,7 +73,7 @@ Amplitude's Personas chart groups your users into clusters based on the **sim
 
 Amplitude's Engagement Matrix chart breaks out the top and bottom events for engagement into a four-quadrant matrix view, so you can easily spot which features should be refactored or deprecated, and which ones offer the potential for extending engagement into other areas of your product. This way, you can develop a better understanding of the **high-level pattern of feature engagement** in your product, by both breadth and frequency. 
 
-[Read more about the Engagement Matrix](/docs/analytics/charts/engagement-matrix) |
+[Read more about the Engagement Matrix](/docs/analytics/charts/engagement-matrix)
 
 ## Ongoing work: Create cohorts, compare, A/B test, improve
 

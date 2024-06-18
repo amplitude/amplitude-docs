@@ -5,11 +5,11 @@ title: 'Microscope: Explore individual data points in your charts'
 this_article_will_help_you:
   - 'Inspect your data points in a high level of detail'
 source: 'https://help.amplitude.com/hc/en-us/articles/236032527-Microscope-Explore-individual-data-points-in-your-charts'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1718730247
 ---
-#### This article will help you:
-
-* Inspect your data points in a high level of detail
-
 Amplitude's **Microscope** feature enables you to dig deeper into a specific data point's users. Just hover over a data point in your chart, and a black pop-up will offer you up to six options (depending on your Amplitude plan) for further inspection.
 
 This article will help you understand how to use this feature and interpret the information provided in the *View User Streams* and *Show User Paths* sections. 
