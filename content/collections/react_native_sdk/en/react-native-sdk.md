@@ -17,7 +17,6 @@ ampli_article: 4029875a-0e71-4ad0-869b-289dea48b625
 source: https://www.docs.developers.amplitude.com/data/sdks/typescript-react-native/
 migration_guide:
   - 0d5a2d8a-7266-4442-807c-2f2f84fe1ae5
-source: 'https://www.docs.developers.amplitude.com/data/sdks/typescript-react-native/'
 ---
 The React Native SDK lets you send events to Amplitude.
 

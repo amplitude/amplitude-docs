@@ -9,7 +9,6 @@ supported_languages:
   - js
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718657468
-source: https://www.docs.developers.amplitude.com/data/sdks/browser-2/autocapture/
 ---
 Amplitude's Autocapture plugin extends the events and properties that Amplitude tracks by default, and enables Visual Labeling to enable you to define events based on elements on your site. For more information about Visual Labeling, see [Visual Labeling](/docs/data/visual-labeling).
 
