@@ -8,8 +8,8 @@ this_article_will_help_you:
   - 'Understand the data fields and values needed for importing and how they compare to exported files'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718136402
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1718824177
 ---
 In Amplitude Data, you can view and manage event types, event properties, and user properties piece by piece, but you may want to see a holistic view of your entire tracking plan's schema and make bulk changes to the schema instead.
 
@@ -49,74 +49,178 @@ The events and event properties .CSV file requires a specific schema for a succe
 * The fields can be in any order, but their names and values must be exact in spelling and capitalization to ensure a successful import process.
 * Some fields require a value depending on entity type, and are notated as such in the table below.
 
-        | **Field name** | **Definition** | **Values or format** | **Events** | **Event properties** | **Property groups** | **Property group properties** |
-|  Action | Action to perform on a particular entity | * **Ignore**: No changes will be made to the entity nor its subproperties
-* **Remove**: Event and property groups can be removed from the tracking plan. The remove value will not affect individual properties.
+**Action**
+* Definition: Action to perform on a particular entity
+* Values:
+    * `Ignore`: No changes will be made to the entity nor its subproperties
+    * `Remove`: Event and property groups can be removed from the tracking plan. The remove value will not affect individual properties. Removing an event or property group will disassociate related properties, and will change a live property’s status to unexpected. The remove value does not delete an entity, nor does it stop ingestion.
+    * `<blank>`: Creates or updates an entity and it’s associated sub-entities
+* For events, event properties, property groups property group properties
 
-Removing an event or property group will disassociate related properties, and will change a live property’s status to unexpected. 
-The remove value does not delete an entity, nor does it stop ingestion.* ***<blank>***: Creates or updates an entity and it’s associated sub-entities
- |  X | X | X | X |
-| Object Type |  Entity type | * Event
-* Property Group
- |  **X** **(required)** |  | ****X**** **(required)** |  |
-| Object Name | Name of the event or property group |  |  ****X**** **(required)** |  | **X** **(required)** |  |
-| Event Display Name | Only applicable to optional display names of events |  |  X |  |  |  |
-| Object description | Description of the entity |  | X |  | X |  |
-| Event Category | Category of an event |  | X |  |  |  |
-| Tags | Tags associated with an event | Separate each tag with a comma | X |  |  |  |
-| Event Activity | Description of an event’s activity.  | * Active
-* Inactive
+**Array min items**
+* Definition: Minimum number of items for a property with an array property value type
+* For event properties and property group properties
 
-Marking an event as inactive is applied retroactively and immediately, and will exclude the event from the Any Active Event metric. | X |  |  |  |
-| Event Source | Sources associated with the event |  | X |  |  |  |
-| Property Type | Type of property associated with the event | * Event Property
-* Event Property Group
- | **X** **(required)** |  |  |  |
-| Property Group Names | Property group that is associated with the event |  | X |  |  |  |
-| Event Property Name | Name of the property  |  |  | **X** **(required)** |  | **X** **(required)** |
-| Property Description | Description of the entity |  |  | X |  | X |
-| Property Value Type | The value type of an event property or property group property | * string
-* number
-* boolean
-* any
-* enum
-* const
- |  | X |  | X |
-| Property Required | Denotes the required status of the property | * **True**: Property is required
-* **False or** ***<blank>***: Property is optional
- |  | X |  | X |
-| Property Is Array | Denotes if the property is an array | * **True**: Property is an array
-* **False or** ***<blank>***: Property is not an array
- |  | X |  | X |
-| Enum Values | Enum values for properties with an enum property value type | Separate each enum value with a comma |  | X |  | X |
-| Property Regex | Regular expression (Regex) values for properties with a string property value type |  |  | X |  | X |
-| Const Value | Const value for properties with a const property value type |  |  | X |  | X |
-| String Property Value Min Length | Minimum length of a property with string property value type |  |  | X |  | X |
-| String Property Value Max Length | Maximum length of a property with string property value type |  |  | X |  | X |
-| Number Property Value Min  | Minimum value of a property with number property value type |  |  | X |  | X |
-| Number Property Value Max | Maximum value of a property with number property value type |  |  | X |  | X |
-| Number Is Integer | Denotes if a property with number property value type is an integer | * **True**: Property is an integer
-* **False or** ***<blank>***: Property is not an integer
- |  | X |  | X |
-| Array Min Items | Minimum number of items for a property with an array property value type |  |  | X |  | X |
-| Array Max Items | Maximum number of items for a property with an array property value type |  |  | X |  | X |
-| Array Unique Items | Denotes if an array property value type has unique items | * **TRUE**: Array has unique items
-* ***<any>***: Assumes array does not have unique items
- |  | X |  | X |
+**Array max items**
+* Definition: Maximum number of items for a property with an array property value type
+* For event properties and property group properties
+
+**Array unique items**
+* Definition: Denotes if an array property value type has unique items
+* Values:
+    * `TRUE`: Array has unique items
+    * `<any>`: Assumes array does not have unique items
+* For event properties and property group properties
+
+**Const value**
+* Definition: Const value for properties with a const property value type
+* For event properties and property group properties
+
+**Enum values**
+* Definition: Enum values for properties with an enum property value type
+* Format: Separate each enum value with a comma
+* For event properties and property group properties
+
+**Event activity**
+* Definition: Description of an event’s activity
+* Values:
+    * `Active`
+    * `Inactive`. Marking an event as inactive is applied retroactively and immediately, and will exclude the event from the `Any Active Event` metric.
+* For events
+
+**Event category**
+* Definition: Category of an event
+* For events
+
+**Event display name**
+* Definition: Only applicable to optional display names of events
+* For events
+
+**Event property name**
+* Definition: Name of the property
+* Required for event properties and property group properties
+
+**Event source**
+* Definition: Sources associated with the event
+* For events
+
+**Number property value min**
+* Definition: Minimum value of a property with number property value type
+* For event properties and property group properties
+
+**Number property value max**
+* Definition: Maximum value of a property with number property value type
+* For event properties and property group properties
+
+**Number is integer**
+* Definition: Denotes if a property with number property value type is an integer
+* Values:
+    * `True`: Property is an integer
+    * `False` or `<blank>`: Property is not an integer
+* For event properties and property group properties
+
+**Object type**
+* Definition: Entity type
+* Values:
+    * `Event`
+    * `Property Group`
+* **Required** for events and property groups
+
+**Object name**
+* Definition: Name of the event or property group
+* **Required** for events and property groups
+
+**Object description**
+* Definition: Description of the entity
+* For events and property groups
+
+**Property type**
+* Definition: Type of property associated with the event
+* Values:
+    * `Event Property`
+    * `Event Property Group`
+* **Required** for events
+
+**Property group names**
+* Definition: Property group that is associated with the event
+* For events
+
+**Property description**
+* Definition: Description of the property
+* For event properties and property group properties
+
+**Property value type**
+* Definition: The value type of an event property or property group property
+* Values:
+    * `string`
+    * `number`
+    * `boolean`
+    * `any`
+    * `enum`
+    * `const`
+* For event properties and property group properties
+
+**Property required**
+* Definition: Denotes the required status of the property
+* Values:
+    * `True`: Property is required
+    * `False` or `<blank>`: Property is optional
+* For event properties and property group properties
+
+**Property is array**
+* Definition: Denotes if the property is an array
+* Values:
+    * `True`: Property is an array
+    * `False` or `<blank>`: Property is not an array
+* For event properties and property group properties
+
+**Property regex**
+* Definition: Regular expression (Regex) values for properties with a string property value type
+* For event properties and property group properties
+
+**String property value min length**
+* Definition: Minimum length of a property with string property value type
+* For event properties and property group properties
+
+**String property value max length**
+* Definition: Maximum length of a property with string property value type
+* For event properties and property group properties
+
+**Tags**
+* Definition: Tags associated with an event
+* Format: separate each tag with a comma
+* For events
 
 ### Additional fields .CSV export of events and event properties
 
-The following table includes additional fields found in the .CSV export of your tracking plan’s events and event properties.
+The following list includes additional fields found in the .CSV export of your tracking plan’s events and event properties.
 
-| **Field name** | **Definition** | **Values or format** | **Events** | **Event properties** | **Property groups** | **Property group properties** |
-|  Action | The default action to perform on a particular entity
-This field exists in the import template, but the downloaded file will automatically include default values.  | * **Ignore**: The user property is unexpected, blocked or deleted.
-* ***<blank>***: The user property is planned or live.
-|  X | X | X | X |
-| Event First Seen | The date on which the Event was first seen. | “mm/dd/yyyy”  | X |  |  |  |
-| Event Last Seen | The date on which the Event was last seen. | “mm/dd/yyyy”  | X |  |  |  |
-| Property First Seen | The date on which the property was first seen. | “mm/dd/yyyy”  |  | X |  |  |
-| Property Last Seen | The date on which the property was last seen. | “mm/dd/yyyy”  |  | X |  |  |
+**Action**
+* Definition: The default action to perform on a particular entity. This field exists in the import template, but the downloaded file will automatically include default values.
+* Values:
+    * `Ignore`: The user property is unexpected, blocked or deleted.
+    * `<blank>`: The user property is planned or live.
+* For events, event properties, property groups property group properties
+
+**Event first seen**
+* Definition: The date on which the event was first seen.
+* Format: `mm/dd/yyyy`
+* For events
+
+**Event last seen**
+* Definition: The date on which the event was last seen.
+* Format: `mm/dd/yyyy`
+* For events
+
+**Property first seen**
+* Definition: The date on which the property was first seen.
+* Format: `mm/dd/yyyy`
+* For property groups
+
+**Property last seen**
+* Definition: The date on which the property was last seen.
+* Format: `mm/dd/yyyy`
+* For property groups
 
 ## User properties
 
@@ -140,56 +244,100 @@ The next section will define the user properties .CSV import file structure and 
 
 ## User properties file schema
 
-The table below highlights the required schema for the user properties .CSV file import. There are some things to note: 
+The list below highlights the required schema for the user properties .CSV file import. There are some things to note: 
 
 * The file's header must contain all listed fields.
 * The fields can be in any order, but their names and values must be exact in spelling and capitalization to ensure a successful import process.
 * Some fields require a value and are notated as such in the table below.
 
-    | **Field name** | **Definition** | **Values** |
-|  Action | Action to perform on a particular user property | * **Ignore**: No changes will be made to the user property.
-* **Remove**: User property will be removed from the tracking plan.
+**Action**
+* Definition: Action to perform on a particular user property
+* Values:
+    * `Ignore`: No changes will be made to the user property.
+    * `Remove`: User property will be removed from the tracking plan. The remove value does not delete a user property, nor does it stop its ingestion.
+    * `<blank>`: Creates the user property if it did not already exist; or updates the user property if it did exist.
 
-The remove value does not delete a user property, nor does it stop its ingestion.* ***<blank>***: Creates the user property if it did not already exist; or updates the user property if it did exist.
- |
-| Property Type | User property type |  **User Property** 
- **(required)**  |
-| Property Name | Name of the user property |  **(required)**  |
-| Property description | Description of the user property |  |
-| Property Value Type | The value type of a user property | * string
-* number
-* boolean
-* any
-* enum
-* const
- |
-| Property Is Array | Denotes if the property is an array | * **True**: Property is an array
-* **False or** ***<blank>***: Property is not an array
- |
-| Enum Values | Enum values for properties with an enum property value type | Separate each enum value with a comma |
-| Property Regex | Regular expression (Regex) values for properties with a string property value type |  |
-| Const Value | Const value for properties with a const property value type |  |
-| String Property Value Min Length | Minimum length of a property with string property value type |  |
-| String Property Value Max Length | Maximum length of a property with string property value type |  |
-| Number Property Value Min  | Minimum value of a property with number property value type |  |
-| Number Property Value Max | Maximum value of a property with number property value type |  |
-| Number Is Integer | Denotes if a property with number property value type is an integer | * **True**: Property is an integer
-* **False or** ***<blank>***: Property is not an integer
- |
-| Array Min Items | Minimum number of items for a property with an array property value type |  |
-| Array Max Items | Maximum number of items for a property with an array property value type |  |
-| Array Unique Items | Denotes if an array property value type has unique items | * **TRUE**: Array has unique items
-* ***<any>***: Assumes array does not have unique items
- |
+**Array min items**
+* Definition: Minimum number of items for a property with an array property value type
+
+**Array max items**
+* Definition: Maximum number of items for a property with an array property value type
+
+**Array unique items**
+* Definition: Denotes if an array property value type has unique items
+* Values:
+    * `TRUE`: Array has unique items
+    * `<any>`: Assumes array does not have unique items
+
+**Const value**
+* Definition: Const value for properties with a const property value type
+
+**Enum values**
+* Definition: Enum values for properties with an enum property value type
+* Format: Separate each enum value with a comma
+
+**Number property value min**
+* Definition: Minimum value of a property with number property value type
+
+**Number property value max**
+* Definition: Maximum value of a property with number property value type
+
+**Number is integer**
+* Definition: Denotes if a property with number property value type is an integer
+* Values: 
+    * `True`: Property is an integer
+    * `False` or `<blank>`: Property is not an integer
+
+**Property type**
+* Definition: User property type
+* Values: User property **(required)**
+
+**Property name**
+* Definition: Name of the user property
+* This value is **required**
+
+**Property description**
+* Definition: Description of the user property
+
+**Property value type**
+* Definition: The value type of a user property
+* Values:
+    * `string`
+    * `number`
+    * `boolean`
+    * `any`
+    * `enum`
+    * `const`
+
+**Property is array**
+* Definition: Denotes if the property is an array
+* Values:
+    * `True`: Property is an array
+    * `False` or `<blank>`: Property is not an array
+
+**Property regex** 
+* Definition: Regular expression (Regex) values for properties with a string property value type
+
+**String property value min length**
+* Definition: Minimum length of a property with string property value type
+
+**String property value max length**
+* Definition: Maximum length of a property with string property value type
 
 ### Additional fields in .CSV export of user properties
 
-The following table includes additional fields found in the .CSV export of your tracking plan’s user properties.
+The following list includes additional fields found in the .CSV export of your tracking plan’s user properties.
 
-    | **Field name** | **Definition** | **Values or format** |
-|  Action | The default action to perform on a particular entity
-This field exists in the import template, but the downloaded file will automatically include default values.  | * **Ignore**: The user property is unexpected, blocked or deleted.
-* ***<blank>***: The user property is planned or live.
- |
-| Property First Seen | The date on which the property was first seen. | “mm/dd/yyyy”  |
-| Property Last Seen | The date on which the property was last seen. | “mm/dd/yyyy”  |
+**Action**
+* Definition: The default action to perform on a particular entity. This field exists in the import template, but the downloaded file will automatically include default values.
+* Values:
+    * `Ignore`: The user property is unexpected, blocked or deleted.
+    * `<blank>`: The user property is planned or live.
+
+**Property first seen**
+* Definition: The date on which the property was first seen.
+* Format: `mm/dd/yyyy`
+
+**Property last seen**
+* Definition: The date on which the property was last seen.
+* Format: `mm/dd/yyyy`
