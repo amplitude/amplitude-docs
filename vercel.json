@@ -2,6 +2,16 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/guides/cookies-consent-mgmt-guide",
+      "destination": "/docs/get-started/cookies-and-consent-management",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc",
+      "destination": "/docs",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/analytics/api-reference-overview",
       "destination": "/docs/apis/analytics",
       "statusCode": 301
@@ -9,11 +19,6 @@
     {
       "source": "/docs/hc/en-us/sections/360013708911-The-experimentation-workflow",
       "destination": "/docs/experiment/overview",
-      "statusCode": 301
-    },
-    {
-      "source": "/docs/analytics",
-      "destination": "/docs",
       "statusCode": 301
     },
     {
@@ -3159,6 +3164,11 @@
     },
     {
       "source": "/docs/hc/en-us/articles/115003135607-Track-unique-users",
+      "destination": "/docs/cdp/sources/instrument-track-unique-users",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/115003135607-Tracking-Unique-Users",
       "destination": "/docs/cdp/sources/instrument-track-unique-users",
       "statusCode": 301
     },
