@@ -3,6 +3,7 @@ id: 5afa91b7-c12d-425a-b4b6-661061e5843a
 blueprint: browser_sdk
 title: 'Ampli for Browser SDK 2.0'
 sdk_status: current
+source: https://www.docs.developers.amplitude.com/data/sdks/browser-2/ampli/
 article_type: ampli
 supported_languages:
   - js

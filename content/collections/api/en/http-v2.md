@@ -35,7 +35,7 @@ If you have high volume and concerned with scale, partition your work based on `
 
 If you have an event ingestion integration with Amplitude, you need to send your integration's assigned partner ID in the event payload. 
 
-For help finding your integration's partner ID and a payload example, see [Create an Event Ingestion Integration](../../partners/event-ingestion-integration-guide.md#test-and-submit-the-integration).
+For help finding your integration's partner ID and a payload example, see [Create an Event Ingestion Integration](/docs/partners/create-an-event-ingestion-integration#test-and-submit-the-integration).
 
 ### All-zero device IDs: Limit Ad Tracking enabled
 

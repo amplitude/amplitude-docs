@@ -9,9 +9,9 @@ supported_languages:
 github_link: 'https://github.com/amplitude/Amplitude-Unreal'
 releases_url: 'https://github.com/amplitude/Amplitude-Unreal/releases'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715809188
+updated_at: 1718672680
+source: 'https://www.docs.developers.amplitude.com/data/sdks/unreal/'
 ---
-
 ## Install the SDK
 
 Install the Unreal Engine SDK by downloading the latest version of `AmplitudeUnreal.zip` found on the [GitHub releases](https://github.com/amplitude/Amplitude-Unreal/releases/latest) page.
@@ -83,4 +83,3 @@ If your app has its login system that you want to track users with, use `SetUser
 ```cpp
 FAnalytics::Get().GetDefaultConfiguredProvider()->SetUserID(TEXT("test123@test.com"));
 ```
-

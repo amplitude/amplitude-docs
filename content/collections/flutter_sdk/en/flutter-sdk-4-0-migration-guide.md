@@ -8,7 +8,8 @@ supported_languages:
   - dart
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715204523
+updated_at: 1718672484
+source: 'https://www.docs.developers.amplitude.com/data/sdks/flutter/migration/'
 ---
 Amplitude Flutter SDK 4.0 features default event tracking, simplified interfaces, and wraps the latest [Amplitude iOS](/docs/sdks/analytics/ios/ios-swift-sdk) and [Android Kotlin](/docs/sdks/analytics/android/android-kotlin-sdk) SDKs. 
 

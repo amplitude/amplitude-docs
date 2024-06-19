@@ -1,0 +1,72 @@
+title: 'landing page plus'
+fields:
+  -
+    handle: landing_page_content
+    field:
+      max_sets: 6
+      type: replicator
+      display: 'Landing Page Content'
+      localizable: false
+      sets:
+        cards:
+          display: Cards
+          sets:
+            card:
+              display: Card
+              fields:
+                -
+                  handle: icon
+                  field:
+                    max_files: 1
+                    container: assets
+                    folder: brand-stickers
+                    restrict: true
+                    type: assets
+                    display: Icon
+                    localizable: false
+                    width: 33
+                -
+                  handle: card_title
+                  field:
+                    type: text
+                    display: 'Card title'
+                    localizable: false
+                    width: 66
+                -
+                  handle: card_content
+                  field:
+                    type: markdown
+                    display: 'Card content'
+                    localizable: false
+                -
+                  handle: cta
+                  field:
+                    type: text
+                    display: CTA
+                    localizable: false
+                -
+                  handle: external_link
+                  field:
+                    type: toggle
+                    display: 'External link'
+                    localizable: false
+                    width: 25
+                -
+                  handle: entries_field
+                  field:
+                    type: entries
+                    display: 'Entries Field'
+                    localizable: false
+                    width: 25
+                    unless:
+                      external_link: 'equals true'
+                    max_items: 1
+                -
+                  handle: external_url
+                  field:
+                    type: text
+                    display: 'External URL'
+                    localizable: false
+                    width: 50
+                    if:
+                      external_link: 'equals true'

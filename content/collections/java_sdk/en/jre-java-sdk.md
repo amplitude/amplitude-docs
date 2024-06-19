@@ -9,10 +9,29 @@ supported_languages:
 github_link: 'https://github.com/amplitude/Amplitude-Java'
 releases_url: 'https://github.com/amplitude/Amplitude-Java/releases'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718572695
+updated_at: 1718672530
 ampli_article: 0128c1e3-dbc5-4612-982f-aefef4ad4db0
+source: 'https://www.docs.developers.amplitude.com/data/sdks/java/'
 ---
 This is the documentation for the Amplitude Analytics Java SDK.
+
+## Install the SDK
+
+{{partial:tabs tabs="Gradle, Download"}}
+{{partial:tab name="Gradle"}}
+If you use Gradle in your project, add the following dependency to `build.gradle`, and sync your project with the updated file.
+
+```groovy
+dependencies {
+    implementation 'org.json:json:20201115'
+    implementation 'com.amplitude:java-sdk:1.+'
+}
+```
+{{/partial:tab}}
+{{partial:tab name="Download"}}
+Download the latest [JAR file](https://github.com/amplitude/Amplitude-Java/releases) then add it to the project's build path. See instructions for your IDE.
+{{/partial:tab}}
+{{/partial:tabs}}
 
 ## Import the SDK
 

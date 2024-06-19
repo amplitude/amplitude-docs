@@ -96,8 +96,6 @@ Keep these things in mind when sending events to HubSpot:
     - Select the **maximum wait time**, or select the **Delay as long as possible checkbox**.
 6. Click **Save**.
 
-    ![screenshot of the HubSpot workflow](../../docs/assets/images/hubspot-event-streaming-workflow.png)
-
 ## Use cases
 
 1. **Personalized Marketing:** With the ability to track user behavior and capture user and event properties in Amplitude, businesses can create highly personalized and targeted marketing campaigns in HubSpot. This can lead to increased engagement, conversions, and customer loyalty.

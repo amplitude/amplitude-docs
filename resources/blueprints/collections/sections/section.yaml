@@ -1,6 +1,7 @@
 title: Section
 tabs:
   main:
+    display: Main
     sections:
       -
         fields:
@@ -9,6 +10,9 @@ tabs:
             field:
               type: text
               required: true
+              localizable: false
+              validate:
+                - required
           -
             handle: content
             field:
@@ -30,7 +34,16 @@ tabs:
               type: template
               display: Template
               localizable: true
+  landing_page_plus:
+    display: 'Landing Page Plus'
+    sections:
+      -
+        display: 'New Section'
+        fields:
+          -
+            import: landing_page_plus
   sidebar:
+    display: Sidebar
     sections:
       -
         fields:
@@ -49,3 +62,21 @@ tabs:
               max_items: 1
               listable: false
               localizable: true
+  alt_sitemap:
+    display: 'Alt Sitemap'
+    sections:
+      -
+        fields:
+          -
+            handle: sitemap_priority
+            field:
+              type: float
+              display: 'Sitemap Priority'
+              instructions: 'From 0.0 (lowest priority) to 1.0 (highest priority)'
+              localizable: false
+          -
+            handle: exclude_from_sitemap
+            field:
+              type: toggle
+              display: 'Exclude from sitemap?'
+              localizable: false

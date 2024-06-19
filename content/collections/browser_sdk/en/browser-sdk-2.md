@@ -12,12 +12,44 @@ releases_url: 'https://github.com/amplitude/Amplitude-TypeScript/releases?q=anal
 bundle_url: 'https://www.npmjs.com/package/@amplitude/analytics-browser'
 shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/analytics-browser/latest.svg'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718056292
+updated_at: 1718658234
 major_version: 2
 ampli_article: 5afa91b7-c12d-425a-b4b6-661061e5843a
 exclude_from_sitemap: false
+source: https://www.docs.developers.amplitude.com/data/sdks/browser-2/
+plugins:
+  - f0bf544a-7505-45ef-89ad-e7fe6ec71fbf
 ---
 Amplitude's Browser SDK 2 lets you send events to Amplitude.
+
+## Install the SDK
+
+Install the dependency with npm, yarn, or the script loader.
+
+{{partial:tabs tabs="Script loader, npm, yarn"}}
+{{partial:tab name="Script loader"}}
+Get the latest snippet from [GitHub](https://github.com/amplitude/Amplitude-TypeScript/tree/main/packages/analytics-browser#installing-via-script-loader).
+{{/partial:tab}}
+{{partial:tab name="npm"}}
+```bash
+npm install @amplitude/analytics-browser
+```
+Import Amplitude into your project
+```js
+import * as amplitude from '@amplitude/analytics-browser';
+```
+{{/partial:tab}}
+{{partial:tab name="yarn"}}
+```bash
+yarn add @amplitude/analytics-browser
+```
+Import Amplitude into your project
+```js
+import * as amplitude from '@amplitude/analytics-browser';
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
 
 ## Initialize the SDK
 
@@ -321,6 +353,59 @@ amplitude.init(AMPLITUDE_API_KEY, {
 `config.defaultTracking.attribution.initialEmptyValue` | Optional. `string` | Sets the value to represent undefined/no initial campaign parameter for first-touch attribution. The default value is `"EMPTY`. |
 `config.defaultTracking.attribution.resetSessionOnNewCampaign` | Optional. `boolean` | Configures Amplitude to start a new session if any campaign parameter changes. The default value is `false`. |
 
+{{/partial:collapse}}
+
+##### Exclude referrers
+
+{{partial:admonition type="note" heading=""}}
+All sub-configurations of `config.defaultTracking.attribution` take effect only on user properties and do **NOT** affect the event properties of the default page view events. 
+{{/partial:admonition}}
+
+The default value of `config.defaultTracking.attribution.excludeReferrers` is the top level domain with cookie storage enabled. For example, if you initialize the SDK on `https://www.docs.developers.amplitude.com/`, the SDK first checks `amplitude.com`. If it doesn't allow cookie storage, then the SDK checks `developers.amplitude.com` and subsequent subdomains. If it allows cookie storage, then the SDK sets `excludeReferrers` to an RegExp object `/amplitude\.com$/` which matches and then exlucdes tracking referrers from all subdomains of `amplitude.com`, for example, `data.amplitude.com`, `analytics.amplitude.com` and etc. 
+
+In addition to excluding referrers from the default configuration, you can add other domains by setting the custom `excludeReferrers`. Custom `excludeReferrers` overrides the default values. For example, to also exclude referrers from `google.com`, set `excludeReferrers` to `[/amplitude\.com$/, 'google.com']`.
+
+{{partial:collapse name="Example of including all referrers"}}
+Track complete web attribution, including self-referrals, for comprehensive insight.
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  defaultTracking: {
+    attribution: {
+      // Override the default setting to exclude all subdomains
+      excludeReferrers: [],
+    },
+  },
+});
+```
+{{/partial:collapse}}
+
+{{partial:collapse name="Example of excluding all self-referrals and other subdomains"}}
+For customers who want to exclude tracking campaign from any referrers across all subdomains of `your-domain.com`, as well as from a specific subdomain.
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+    defaultTracking: {
+    attribution: {
+      excludeReferrers: [/your-domain\.com$/, 'www.test.com'],
+    },
+  },
+});
+```
+{{/partial:collapse}}
+
+{{partial:collapse name="Exclude referrers that match a specific pattern"}}
+For customers who want to exclude tracking campaign from all referrers across all subdomains of `test.com`.
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  defaultTracking: {
+    attribution: {
+      excludeReferrers: [/test\.com$/],
+    },
+  },
+});
+```
 {{/partial:collapse}}
 
 ### Track page views
@@ -1108,9 +1193,3 @@ SPA typically don't experience a true page load after a visitor enters the site,
 
 - Control the page and location parameters and / or
 - Unset the referrer after the first hit
-
-
-
-
-
-

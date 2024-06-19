@@ -13,6 +13,7 @@ fields:
       width: 50
       validate:
         - required
+      localizable: false
   -
     handle: article_type
     field:
@@ -20,18 +21,21 @@ fields:
         core: 'Core SDK Doc'
         migration: 'SDK Migration'
         ampli: 'Ampli Codegen'
+        plugin: Plugin
       type: select
       display: 'Article Type'
       width: 50
       validate:
         - required
       instructions: 'Select the type of content this article covers.'
+      localizable: false
   -
     handle: major_version
     field:
       input_type: number
       type: text
       display: 'Major Version'
+      localizable: false
   -
     handle: supported_languages
     field:
@@ -54,6 +58,7 @@ fields:
       instructions: 'What languages does this SDK support?'
       validate:
         - required
+      localizable: false
   -
     handle: sdk_version_comparison
     field:
@@ -62,6 +67,7 @@ fields:
       instructions: 'Enter the differences between the latest and previous versions of the SDK.'
       if:
         article_type: 'equals migration'
+      localizable: false
   -
     handle: content
     field:
@@ -81,3 +87,4 @@ fields:
       antlers: true
       type: markdown
       display: Content
+      localizable: false

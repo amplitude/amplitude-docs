@@ -1,7 +1,7 @@
 ---
 id: be8fad75-98bf-44c4-945a-a0f8a8bb1d94
 blueprint: advanced-technique
-title: 'Server-side Rendering'
+title: 'Server-side rendering'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716927210

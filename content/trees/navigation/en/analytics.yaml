@@ -19,6 +19,9 @@ tree:
         id: 3cf80aa1-7460-4974-8bd1-3e150f859432
         entry: 7a2db517-e19b-4eac-9dfc-02a984a05128
       -
+        id: 43d72c2c-cdd0-45e5-8126-d84f2b5678a5
+        entry: a78497a9-734e-4d88-9e3c-1c2a8d1cb102
+      -
         id: 8053bf8f-15a0-49b3-abca-77e34e233ccb
         entry: f4d3ad91-b9c5-4271-b06d-3ac81d3dba0f
       -
@@ -80,6 +83,9 @@ tree:
         id: f2f249ae-2d76-431a-b2bf-41184ea913a6
         entry: f4787d6d-6142-4045-8c0b-0801932322b9
       -
+        id: ffd3a53b-939f-49f2-823f-3fe5d33b80cc
+        entry: 9dd9d1d8-df67-4782-872e-d618ce058c49
+      -
         id: 1f5a7f31-722a-4cff-8ac8-07fa5d09ee71
         title: Dashboards
         children:
@@ -111,6 +117,9 @@ tree:
       -
         id: 0189be9f-7c09-4881-812d-041c88d51c5b
         entry: 17fb8743-12c4-4b7f-ab11-238dd5498658
+      -
+        id: 41bda9fe-49df-415c-87c1-12c29e8cb005
+        entry: ec6127d5-1384-41b1-b85a-04d21d0678f1
   -
     id: 746b5d06-948f-49e1-b935-efaba28a2819
     title: 'Share your Work'
