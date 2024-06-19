@@ -22,11 +22,6 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/analytics",
-      "destination": "/docs",
-      "statusCode": 301
-    },
-    {
       "source": "/docs/documentation-home",
       "destination": "/docs",
       "statusCode": 301
@@ -3169,6 +3164,11 @@
     },
     {
       "source": "/docs/hc/en-us/articles/115003135607-Track-unique-users",
+      "destination": "/docs/cdp/sources/instrument-track-unique-users",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/115003135607-Tracking-Unique-Users",
       "destination": "/docs/cdp/sources/instrument-track-unique-users",
       "statusCode": 301
     },
