@@ -2568,11 +2568,6 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/partners/integration-portal",
-      "destination": "/docs/partners/integration-portal",
-      "statusCode": 301
-    },
-    {
       "source": "/docs/data/sdks/python/ampli",
       "destination": "/docs/sdks/analytics-sdks/python/ampli-for-python-sdk",
       "statusCode": 301
