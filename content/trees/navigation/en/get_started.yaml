@@ -94,6 +94,9 @@ tree:
       -
         id: 84452bfd-99ec-4057-86e9-da2c6804d2b8
         entry: 3c450c92-9e04-4996-82ac-2baf0a741845
+      -
+        id: f3d252a5-ac73-4c91-b308-7744e78c4265
+        entry: 1b0ba36a-6b55-40cb-98f8-13931435966d
   -
     id: f57e8298-ded9-46b8-89ff-a39e5494d739
     title: 'Migrate to Amplitude'
