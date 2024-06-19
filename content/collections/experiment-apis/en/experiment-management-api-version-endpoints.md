@@ -7,6 +7,7 @@ landing: false
 parent: f64a356a-2a9a-44e3-a482-f429a565a12c
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+source: https://www.docs.developers.amplitude.com/experiment/apis/management-api/versions/
 updated_at: 1717530376
 ---
 

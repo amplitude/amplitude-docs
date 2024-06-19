@@ -1,2239 +1,2583 @@
 {
   "trailingSlash": false,
-  "redirects": [
+  "redirects": [{
+      "source": "/docs/hc/en-us/articles/15581410157339-Change-the-unit-of-currency-your-project-uses-",
+      "destination": "/docs/admin/account-management/currency-unit",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/experiment/guides/server-side-rendering",
+      "destination": "/docs/experiment/advanced-techniques/server-side-rendering",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/data/sdks/android-kotlin/ampli",
+      "destination": "/docs/sdks/analytics/android/ampli-for-android-kotlin-sdk",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/data/apis/lookup-tables-api",
+      "destination": "/docs/apis/analytics/lookup-table-2",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/360060044791-Computations-Create-new-user-properties-on-the-fly",
+      "destination": "/docs/cdp/audiences/computations",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/12217810210331-Monthly-tracked-users-MTUs-billing-guide",
+      "destination": "/docs/admin/billing-use/mtu-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/5606320929179-Array-operators-in-Amplitude",
+      "destination": "/docs/analytics/charts/array-operators",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/360054192152-Interpret-your-Compass-chart-part-1",
+      "destination": "/docs/analytics/charts/compass/compass-interpret-1",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/data/ttl-configuration",
+      "destination": "/docs/data/time-to-live",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/6040784295195-Attribute-credit-to-multiple-acquisition-touch-points",
+      "destination": "/docs/analytics/charts/data-tables/data-tables-attribute-credit",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/data/destinations/1flow",
+      "destination": "/docs/data/destination-catalog/1flow",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/115000095851-Engagement-Matrix-discover-what-your-users-love-and-don-t-love-about-your-product",
+      "destination": "/docs/analytics/charts/engagement-matrix/engagement-matrix-discover",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/19688391224731-Choose-the-right-measurement-for-your-Event-Segmentation-chart",
+      "destination": "/docs/analytics/charts/event-segmentation/event-segmentation-choose-measurement",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/360061270232-Amplitude-Experiment-overview-Optimize-your-product-experience-through-A-B-testing",
+      "destination": "/docs/experiment/overview",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/experiment/apis/evaluation-api",
+      "destination": "/docs/apis/experiment/experiment-evaluation-api",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/360062072631-Dig-deeper-into-experimentation-data-with-Experiment-Results",
+      "destination": "/docs/analytics/charts/experiment-results/experiment-results-dig-deeper",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/experiment/sdks/javascript-sdk",
+      "destination": "/docs/sdks/experiment-sdks/experiment-javascript",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/12587885686299-Analyze-your-experiment-data-with-the-T-test",
+      "destination": "/docs/experiment/experiment-theory/analyze-with-t-test",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/19466562128411-A-B-testing-in-a-Funnel-Analysis-chart",
+      "destination": "/docs/analytics/charts/funnel-analysis/funnel-analysis-ab-test",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/16796919792667-The-Amplitude-Home-page",
+      "destination": "/docs/get-started/amplitude-home-page",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/20962963769499-Interpret-your-Impact-Analysis-chart",
+      "destination": "/docs/analytics/charts/impact-analysis/impact-analysis-interpret",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/sdks/ampli-overview",
+      "destination": "/docs/sdks/ampli",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/data/sdks/ios-swift/ampli",
+      "destination": "/docs/sdks/analytics/ios/ampli-for-ios-swift-sdk",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/16427637651995-Journeys-Understand-the-paths-users-take-in-your-product-and-why-they-convert",
+      "destination": "/docs/analytics/charts/journeys/journeys-understand-paths",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/360050769531-Journeys-Discover-what-s-making-your-users-convert-or-drop-off",
+      "destination": "/docs/analytics/charts/legacy-charts/legacy-charts-journeys",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/21037113562651-Interpret-your-Lifecycle-chart",
+      "destination": "/docs/analytics/charts/lifecycle/lifecycle-interpret",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/guides/adobe-migration-guide",
+      "destination": "/docs/migration/migrate-from-adobe",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/20460581705243-Amplitude-SQL-Table-schema-and-field-shortcuts",
+      "destination": "/docs/analytics/charts/other-charts/other-charts-amplitude-sql-schema",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/20719767917083-Interpret-your-Personas-chart",
+      "destination": "/docs/analytics/charts/personas/personas-interpret",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/360050153151-Build-a-retention-analysis",
+      "destination": "/docs/analytics/charts/retention-analysis/retention-analysis-build",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/14453697446043-Interpret-your-revenue-analysis",
+      "destination": "/docs/analytics/charts/revenue-ltv/revenue-ltv-interpret",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/data/sdks/android-kotlin",
+      "destination": "/docs/sdks/analytics/android",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/26605783882779-Manage-privacy-settings-for-Session-Replay",
+      "destination": "/docs/session-replay/manage-privacy-settings-for-session-replay",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/360002548591-Set-up-single-sign-on-SSO-for-Amplitude-using-Auth0",
+      "destination": "/docs/admin/single-sign-on/auth-0",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/data/sources/databricks",
+      "destination": "/docs/data/source-catalog/databricks",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/16806069264539-Connect-to-a-source",
+      "destination": "/docs/cdp/sources/connect-to-source",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/360053681271-Interpret-your-stickiness-analysis",
+      "destination": "/docs/analytics/charts/stickiness/stickiness-interpret",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/experiment/general/performance-and-caching",
+      "destination": "/docs/experiment/under-the-hood/performance-and-caching",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/20997387039387-Interpret-your-User-Sessions-chart",
+      "destination": "/docs/analytics/charts/user-sessions/user-sessions-interpret",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/4405832771995-Add-variants-to-your-experiment",
+      "destination": "/docs/experiment/workflow/add-variants",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/data/debugger",
+      "destination": "/docs/analytics/debug-analytics",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/analytics/apis/attribution-api",
+      "destination": "/docs/apis/analytics/attribution",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/360049164712-Build-a-prediction",
+      "destination": "/docs/cdp/audiences/predictions-build",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/360049166012-Usage-reports-Understand-how-your-organization-uses-Amplitude",
+      "destination": "/docs/admin/billing-use/usage-reports",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/data/sdks/browser-2/ampli",
+      "destination": "/docs/sdks/analytics/browser/ampli-for-browser-sdk-2-0",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/360051775171-Build-charts-in-Amplitude-Add-events",
+      "destination": "/docs/analytics/charts/build-charts-add-events",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/20963736374299-Interpret-your-Compass-chart-part-2-Correlation-and-cohorts",
+      "destination": "/docs/analytics/charts/compass/compass-interpret-2",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/10249480038043-Create-a-metric",
+      "destination": "/docs/analytics/charts/data-tables/data-tables-create-metric",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/21037634182299-Interpret-your-Engagement-Matrix",
+      "destination": "/docs/analytics/charts/engagement-matrix/engagement-matrix-interpret",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/13321766657947-Create-in-line-custom-events-in-funnel-and-event-segmentation-analyses",
+      "destination": "/docs/analytics/charts/event-segmentation/event-segmentation-in-line-events",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/8485952382235-Understand-the-Experiment-Analysis-view",
+      "destination": "/docs/experiment/analysis-view",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/experiment/apis/management-api",
+      "destination": "/docs/apis/experiment/experiment-management-api",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/13885412065179-Using-formula-metrics-in-Experiment-Results",
+      "destination": "/docs/analytics/charts/experiment-results/experiment-results-use-formula-metrics",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/experiment/sdks/android-sdk",
+      "destination": "/docs/sdks/experiment-sdks/experiment-android",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/12785071886875-Set-the-MDE-for-your-experiment",
+      "destination": "/docs/experiment/experiment-theory/experiment-set-mde",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/360052745632-Build-a-funnel-analysis",
+      "destination": "/docs/analytics/charts/funnel-analysis/funnel-analysis-build",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/115001580108-Analyze-A-B-test-results-in-Amplitude",
+      "destination": "/docs/get-started/analyze-a-b-test-results",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/360020765372-Impact-Analysis-Track-how-first-time-engagement-changes-user-behavior",
+      "destination": "/docs/analytics/charts/impact-analysis/impact-analysis-track",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/data/sdks/sdk-overview",
+      "destination": "/docs/sdks/analytics",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/data/sdks/ios-swift/migration",
+      "destination": "/docs/sdks/analytics/ios/ios-sdk-migration-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/16427848208539-Understand-and-use-the-Journeys-visualizations",
+      "destination": "/docs/analytics/charts/journeys/journeys-understand-visualizations",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/360042951571-Pathfinder-Find-the-paths-your-users-take-on-their-way-to-conversion",
+      "destination": "/docs/analytics/charts/legacy-charts/legacy-charts-pathfinder",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/228838627-The-Lifecycle-chart-track-the-growth-of-your-product-s-user-base",
+      "destination": "/docs/analytics/charts/lifecycle/lifecycle-track-growth",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/guides/mixpanel-migration-guide",
+      "destination": "/docs/migration/migrate-from-mixpanel",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/data/sdks/node/ampli",
+      "destination": "/docs/sdks/analytics/node/ampli-for-node-sdk",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/231258248-The-User-Composition-chart-View-your-users-by-the-properties-they-have-in-common",
+      "destination": "/docs/analytics/charts/other-charts/other-charts-user-composition",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/235648588-The-Personas-chart-Use-clustering-analysis-to-find-your-product-s-user-personas",
+      "destination": "/docs/analytics/charts/personas/personas-clustering",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/14310206381595-How-the-Retention-Analysis-chart-calculates-retention",
+      "destination": "/docs/analytics/charts/retention-analysis/retention-analysis-calculation",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/230680867-The-Revenue-LTV-chart-Track-how-well-you-re-monetizing-new-users",
+      "destination": "/docs/analytics/charts/revenue-ltv/revenue-ltv-track-new-user-monetization",
+      "statusCode": 301
+    },
     {
-      "source": "/hc/en-us/articles/235649848-The-Settings-page",
-      "destination": "/admin/account-management/account-settings",
+      "source": "/docs/data/sdks/browser-2",
+      "destination": "/docs/sdks/analytics/browser",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/15581410157339-Change-the-unit-of-currency-your-project-uses-",
-      "destination": "/admin/account-management/currency-unit",
+      "source": "/docs/session-replay/sdks/plugin",
+      "destination": "/docs/session-replay/session-replay-standalone-sdk",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360058399851-Set-up-SCIM-provisioning-in-Amplitude",
-      "destination": "/admin/account-management/scim-provision",
+      "source": "/docs/hc/en-us/articles/360002581311-Set-up-single-sign-on-SSO-for-Amplitude-using-Microsoft-Azure-Active-Directory",
+      "destination": "/docs/admin/single-sign-on/azure-active-directory",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360002750712-Portfolio-Conduct-cross-project-analysis-in-Amplitude",
-      "destination": "/admin/account-management/portfolio",
+      "source": "/docs/data/sources/adapty",
+      "destination": "/docs/data/source-catalog/adapty",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/115001476972-Scale-Manage-your-event-volume-with-dynamic-behavioral-sampling",
-      "destination": "/admin/account-management/manage-event-volume",
+      "source": "/docs/hc/en-us/articles/360043976571-Understand-the-data-differences-between-Amplitude-Snowflake-and-the-Export-API",
+      "destination": "/docs/cdp/sources/export-api-differences",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360058073772-Manage-organizations-and-projects",
-      "destination": "/admin/account-management/manage-orgs-projects",
+      "source": "/docs/hc/en-us/articles/230901928-Stickiness-Identify-the-features-that-drive-users-back-to-your-product",
+      "destination": "/docs/analytics/charts/stickiness/stickiness-identify-features",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360044588191-Manage-permissions-at-scale-with-permission-groups",
-      "destination": "/admin/account-management/manage-permission-groups",
+      "source": "/docs/experiment/general/experiment-event-tracking",
+      "destination": "/docs/experiment/under-the-hood/event-tracking",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360031965572-Manage-user-privacy-notifications-in-Amplitude",
-      "destination": "/admin/account-management/manage-notifications",
+      "source": "/docs/hc/en-us/articles/231275508-The-User-Sessions-chart-Track-engagement-frequency-and-duration",
+      "destination": "/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360058531591-Manage-users-and-permissions",
-      "destination": "/admin/account-management/manage-users",
+      "source": "/docs/hc/en-us/articles/20009673705627-Configure-your-experiment-s-delivery",
+      "destination": "/docs/experiment/workflow/configure-delivery",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/229672228-User-roles-and-permissions-in-Amplitude",
-      "destination": "/admin/account-management/user-roles-permissions",
+      "source": "/docs/hc/en-us/articles/360031965572-Manage-user-privacy-notifications-in-Amplitude",
+      "destination": "/docs/admin/account-management/manage-notifications",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360055808391-Webhooks-for-custom-monitors",
-      "destination": "/admin/account-management/webhooks",
+      "source": "/docs/hc/en-us/articles/18888080184475-Advanced-metric-use-cases-in-Amplitude-Experiment",
+      "destination": "/docs/experiment/advanced-techniques/advanced-metric-use-cases",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/20085827191963-Holdout-groups-Advanced-use-cases",
-      "destination": "/experiment/advanced-techniques/holdout-groups-advanced-use-cases",
+      "source": "/docs/hc/en-us/articles/5332668738331-Set-up-account-level-reporting",
+      "destination": "/docs/analytics/account-level-reporting-setup",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/18888080184475-Advanced-metric-use-cases-in-Amplitude-Experiment",
-      "destination": "/experiment/advanced-techniques/advanced-metric-use-cases",
+      "source": "/docs/data/sdks/android-kotlin/migration",
+      "destination": "/docs/sdks/analytics/android/migrate-to-the-android-kotlin-sdk",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/20722853103643-Interpret-the-cumulative-exposures-graph-Divergent-lines",
-      "destination": "/experiment/advanced-techniques/cumulative-exposure-divergent-lines",
+      "source": "/docs/analytics/apis/batch-event-upload-api",
+      "destination": "/docs/apis/analytics/batch-event-upload",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/7985566141083-Interpret-the-cumulative-exposures-graph-Increasing-and-decreasing-slopes",
-      "destination": "/experiment/advanced-techniques/cumulative-exposure-change-slope",
+      "source": "/docs/hc/en-us/articles/360049642891-Use-prediction-based-cohorts-in-your-campaigns",
+      "destination": "/docs/cdp/audiences/predictions-use",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/20722788163995-Interpret-the-cumulative-exposures-graph-Inflection-points-and-flattened-slopes",
-      "destination": "/experiment/advanced-techniques/cumulative-exposure-inflection-points",
+      "source": "/docs/data/sdks/browser-2/autocapture",
+      "destination": "/docs/sdks/analytics/browser/autocapture-plugin",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/13508918823835-Exclude-users-from-your-experiments-with-holdout-groups",
-      "destination": "/experiment/advanced-techniques/holdout-groups-exclude-users",
+      "source": "/docs/hc/en-us/articles/13650690245915-Build-charts-in-Amplitude-Add-user-segments",
+      "destination": "/docs/analytics/charts/build-charts-add-user-segments",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/12347964006555-Import-or-export-experiment-chart-settings-as-JSON",
-      "destination": "/experiment/advanced-techniques/import-export-settings",
+      "source": "/docs/hc/en-us/articles/115001526027-Find-your-company-s-inflection-metrics-with-Compass",
+      "destination": "/docs/analytics/charts/compass/compass-find-inflection-metrics",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/8807757689499-Multiple-hypothesis-testing-in-Amplitude-Experiment",
-      "destination": "/experiment/advanced-techniques/multiple-hypothesis-testing",
+      "source": "/docs/analytics/data-backfill-guide",
+      "destination": "/docs/data/data-backfill",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360061270712-Set-up-and-run-mutually-exclusive-experiments",
-      "destination": "/experiment/advanced-techniques/mutually-exclusive-experiments",
+      "source": "/docs/hc/en-us/articles/6797483965083-Multi-dimensional-analysis-with-Data-Tables",
+      "destination": "/docs/analytics/charts/data-tables/data-tables-multi-dimensional-analysis",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/8043418569371-Sample-ratio-mismatches-Debug-issues-with-experiment-allocations",
-      "destination": "/experiment/advanced-techniques/sample-ratio-mismatch",
+      "source": "/docs/data/destinations/adjust",
+      "destination": "/docs/data/destination-catalog/adjust",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/12939879862171-Sticky-bucketing-in-Amplitude-Experiment",
-      "destination": "/experiment/advanced-techniques/sticky-bucketing",
+      "source": "/docs/hc/en-us/articles/360035355132-Interpret-your-event-segmentation-analysis-part-1",
+      "destination": "/docs/analytics/charts/event-segmentation/event-segmentation-interpret-1",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/115001765532-Account-level-reporting-in-Amplitude",
-      "destination": "/analytics/account-level-reporting",
+      "source": "/docs/hc/en-us/articles/4416438117147-Set-app-level-user-permissions-in-Experiment",
+      "destination": "/docs/experiment/app-level-permissions",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/5332668738331-Set-up-account-level-reporting",
-      "destination": "/analytics/account-level-reporting-setup",
+      "source": "/docs/experiment/apis/management-api/experiments",
+      "destination": "/docs/apis/experiment/experiment-management-api-experiments",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360044072251-Anomaly-Forecast-Find-anomalies-in-your-data",
-      "destination": "/analytics/anomaly-forecast",
+      "source": "/docs/experiment/sdks/ios-sdk",
+      "destination": "/docs/sdks/experiment-sdks/experiment-ios",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/9121457018907-Use-Atlassian-Smart-Links-with-Amplitude",
-      "destination": "/analytics/atlassian-smart-links",
+      "source": "/docs/hc/en-us/articles/19458351187483-Combine-funnel-events-inline",
+      "destination": "/docs/analytics/charts/funnel-analysis/funnel-analysis-combine-events",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360040965352-Behavior-offset-Segment-users-over-two-distinct-time-periods",
-      "destination": "/analytics/behavior-offset",
+      "source": "/docs/hc/en-us/articles/16798045496859-Analyze-your-acquisition-channels",
+      "destination": "/docs/get-started/analyze-acquisition-channels",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/231881448-Behavioral-cohorts-Identify-users-with-similar-behaviors",
-      "destination": "/analytics/behavioral-cohorts",
+      "source": "/docs/data/sdks/sdk-architecture",
+      "destination": "/docs/sdks/architecture",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360050370192-Breadcrumbs-Track-organize-and-share-your-analyses",
-      "destination": "/analytics/breadcrumbs",
+      "source": "/docs/hc/en-us/articles/235777567-The-Pathfinder-Users-chart-see-the-paths-your-users-take-through-your-product",
+      "destination": "/docs/analytics/charts/legacy-charts/legacy-charts-pathfinder-users",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/5786072827291-Embed-Amplitude-charts-in-Notion-documents",
-      "destination": "/analytics/chart-embed-notion",
+      "source": "/docs/guides/mparticle-migration-guide",
+      "destination": "/docs/migration/migrate-from-mparticle",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360016524911-Collaborate-on-your-analyses-using-spaces",
-      "destination": "/analytics/collaborate-with-spaces",
+      "source": "/docs/data/sdks/typescript-node/ampli",
+      "destination": "/docs/sdks/analytics/node/node-js-ampli-wrapper",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/19528580295835-Compare-and-manage-your-behavioral-cohorts",
-      "destination": "/analytics/compare-cohorts",
+      "source": "/docs/hc/en-us/articles/115001902492-Amplitude-SQL-Getting-started-with-Query",
+      "destination": "/docs/analytics/charts/other-charts/other-charts-amplitude-sql",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/19528398045083-Create-cohorts-via-Microscope-file-import-or-the-Segmentation-module",
-      "destination": "/analytics/create-cohorts",
+      "source": "/docs/hc/en-us/articles/14309698064923-Interpret-your-Retention-Analysis-chart-Usage-interval",
+      "destination": "/docs/analytics/charts/retention-analysis/retention-analysis-interpret-usage",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/21150695006747-Customize-the-Home-page",
-      "destination": "/analytics/customize-home-page",
+      "source": "/docs/data/sdks/flutter",
+      "destination": "/docs/sdks/analytics/flutter",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/229505188-Create-edit-and-manage-dashboards",
-      "destination": "/analytics/dashboard-create",
+      "source": "/docs/session-replay/sdks/standalone",
+      "destination": "/docs/session-replay/session-replay-plugin",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/19464806559131-Turn-your-dashboard-into-a-template",
-      "destination": "/analytics/dashboard-create-template",
+      "source": "/docs/hc/en-us/articles/360002564052-Set-up-single-sign-on-SSO-for-Amplitude-using-G-Suite",
+      "destination": "/docs/admin/single-sign-on/g-suite",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/19465004411803-Filter-your-dashboards",
-      "destination": "/analytics/dashboard-filter",
+      "source": "/docs/data/sources/adjust",
+      "destination": "/docs/data/source-catalog/adjust",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/19464952104475-Change-your-dashboard-s-display-preferences",
-      "destination": "/analytics/dashboard-preferences",
+      "source": "/docs/hc/en-us/articles/115003116888-Track-revenue",
+      "destination": "/docs/cdp/sources/instrument-track-revenue",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/19465059724827-Subscribe-to-a-dashboard",
-      "destination": "/analytics/dashboard-subscribe",
+      "source": "/docs/experiment/general/flag-dependencies",
+      "destination": "/docs/experiment/under-the-hood/flag-dependencies",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/19528328446363-Define-a-new-cohort",
-      "destination": "/analytics/define-cohort",
+      "source": "/docs/hc/en-us/articles/360061270372-Configure-your-experiment",
+      "destination": "/docs/experiment/workflow/configure",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/17787338689307-Sync-your-Amplitude-data-to-Google-Drive-and-Sheets",
-      "destination": "/analytics/google-drive-sync",
+      "source": "/docs/hc/en-us/articles/360058073772-Manage-organizations-and-projects",
+      "destination": "/docs/admin/account-management/manage-orgs-projects",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360040957432-Historical-Count-part-1-Track-user-behavior-for-different-instances-of-each-user-action",
-      "destination": "/analytics/historical-count-1",
+      "source": "/docs/hc/en-us/articles/7985566141083-Interpret-the-cumulative-exposures-graph-Increasing-and-decreasing-slopes",
+      "destination": "/docs/experiment/advanced-techniques/cumulative-exposure-change-slope",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/21037928991259-Historical-Count-part-2-Order-of-operations",
-      "destination": "/analytics/historical-count-2",
+      "source": "/docs/hc/en-us/articles/115001765532-Account-level-reporting-in-Amplitude",
+      "destination": "/docs/analytics/account-level-reporting",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/21065498729243-Historical-Count-part-3-Funnels-and-behavioral-cohorts",
-      "destination": "/analytics/historical-count-3",
+      "source": "/docs/analytics/apis/behavioral-cohorts-api",
+      "destination": "/docs/apis/analytics/behavioral-cohorts",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/115001764612-Insights-Spot-anomalies-in-your-metrics-quickly-with-alerts",
-      "destination": "/analytics/insights",
+      "source": "/docs/hc/en-us/articles/360059625252-Build-a-recommendation",
+      "destination": "/docs/cdp/audiences/recommendations-build",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/8476297377819-Integrate-Miro-with-Amplitude",
-      "destination": "/analytics/integrate-miro",
+      "source": "/docs/hc/en-us/articles/19689507379995-Build-charts-in-Amplitude-Modify-a-user-segment",
+      "destination": "/docs/analytics/charts/build-charts-modify-user-segment",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/227613388-Integrate-Slack-with-Amplitude",
-      "destination": "/analytics/integrate-slack",
+      "source": "/docs/hc/en-us/articles/235147347-The-Compass-chart-discover-your-users-a-ha-moments",
+      "destination": "/docs/analytics/charts/compass/compass-aha-moment",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/236032527-Microscope-Explore-individual-data-points-in-your-charts",
-      "destination": "/analytics/microscope",
+      "source": "/docs/data/converter-configuration-reference",
+      "destination": "/docs/data/converter-configuration-reference",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360016281172-Notebooks-Explain-important-insights-to-teammates-and-stakeholders",
-      "destination": "/analytics/notebooks",
+      "source": "/docs/hc/en-us/articles/19466947066651-Results-limits-and-sorting-logic-in-Data-Tables-charts",
+      "destination": "/docs/analytics/charts/data-tables/data-tables-results-and-sorting-logic",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360017800371-Releases-See-how-users-respond-to-changes-in-your-product",
-      "destination": "/analytics/releases",
+      "source": "/docs/data/destinations/airship",
+      "destination": "/docs/data/destination-catalog/airship",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360053198271-Root-Cause-Analysis-Track-down-anomalies-in-your-data",
-      "destination": "/analytics/root-cause-analysis",
+      "source": "/docs/hc/en-us/articles/14056975720091-Interpret-your-event-segmentation-analysis-part-2-Advanced-features",
+      "destination": "/docs/analytics/charts/event-segmentation/event-segmentation-interpret-2",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/236051328-Search-Find-charts-dashboards-cohorts-and-notebooks",
-      "destination": "/analytics/search",
+      "source": "/docs/experiment/apis/management-api/flags",
+      "destination": "/docs/apis/experiment/experiment-management-api-flags",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/20464659456667-See-how-your-customers-use-your-product-with-Session-Replay",
-      "destination": "/analytics/session-replay",
+      "source": "/docs/experiment/sdks/react-native-sdk",
+      "destination": "/docs/sdks/experiment-sdks/experiment-react-native",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/11314104312859-Share-dashboards-within-your-company",
-      "destination": "/analytics/share-dashboards",
+      "source": "/docs/hc/en-us/articles/19458300523291-Compare-group-by-values-in-your-Funnel-Analysis-chart-to-each-other",
+      "destination": "/docs/analytics/charts/funnel-analysis/funnel-analysis-compare-group-by",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/235717108-Share-charts-dashboards-and-notebooks-with-stakeholders-outside-your-company",
-      "destination": "/analytics/share-external",
+      "source": "/docs/hc/en-us/articles/16797955580955-Analyze-the-adoption-of-a-feature",
+      "destination": "/docs/get-started/analyze-feature-adoption",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360043053552-Templates-Re-use-your-analyses",
-      "destination": "/analytics/templates",
+      "source": "/docs/data/dynamic-configuration",
+      "destination": "/docs/sdks/dynamic-configuration",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360049309011-Track-changes-in-your-cohort-populations-over-time",
-      "destination": "/analytics/track-cohort-changes",
+      "source": "/docs/guides/segment-migration-guide",
+      "destination": "/docs/migration/migrate-from-segment",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/229313067-Look-up-event-data-for-individual-users",
-      "destination": "/analytics/user-data-lookup",
+      "source": "/docs/data/sdks/typescript-node/migration",
+      "destination": "/docs/sdks/analytics/node/node-js-sdk-migration-guide",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360028260251-Workspace-Find-your-charts-and-track-your-work",
-      "destination": "/analytics/workspace",
+      "source": "/docs/hc/en-us/articles/360050153551-Interpret-your-retention-analysis",
+      "destination": "/docs/analytics/charts/retention-analysis/retention-analysis-interpret",
       "statusCode": 301
     },
     {
-      "source": "/analytics/apis/",
-      "destination": "/api",
+      "source": "/docs/data/sdks/go",
+      "destination": "/docs/sdks/analytics/go",
       "statusCode": 301
     },
     {
-      "source": "/analytics/apis/attribution-api/",
-      "destination": "/api/attribution",
+      "source": "/docs/session-replay/ingestion-monitor",
+      "destination": "/docs/session-replay/ingestion-monitor",
       "statusCode": 301
     },
     {
-      "source": "/analytics/find-api-credentials/",
-      "destination": "/api/authentication",
+      "source": "/docs/hc/en-us/articles/360002583131-Set-up-single-sign-on-SSO-for-Amplitude-using-Okta",
+      "destination": "/docs/admin/single-sign-on/okta",
       "statusCode": 301
     },
     {
-      "source": "/analytics/apis/batch-event-upload-api/",
-      "destination": "/api/batch-event-upload",
+      "source": "/docs/data/sources/adobe-analytics",
+      "destination": "/docs/data/source-catalog/adobe-analytics",
       "statusCode": 301
     },
     {
-      "source": "/analytics/apis/behavioral-cohorts-api/",
-      "destination": "/api/behavioral-cohorts",
+      "source": "/docs/hc/en-us/articles/115002323627-Track-sessions",
+      "destination": "/docs/cdp/sources/instrument-track-sessions",
       "statusCode": 301
     },
     {
-      "source": "/analytics/apis/ccpa-dsar-api/",
-      "destination": "/api/ccpa-dsar",
+      "source": "/docs/hc/en-us/articles/4455062287387-How-Amplitude-calculates-the-values-in-Experiment-Analysis-charts",
+      "destination": "/docs/experiment/under-the-hood/experiment-analysis-chart-calculation",
       "statusCode": 301
     },
     {
-      "source": "/analytics/apis/chart-annotations-api/",
-      "destination": "/api/chart-annotations",
+      "source": "/docs/hc/en-us/articles/360061687551-Create-a-new-experiment",
+      "destination": "/docs/experiment/workflow/create",
       "statusCode": 301
     },
     {
-      "source": "/analytics/apis/dashboard-rest-api/",
-      "destination": "/api/dashboard-rest",
+      "source": "/docs/hc/en-us/articles/360044588191-Manage-permissions-at-scale-with-permission-groups",
+      "destination": "/docs/admin/account-management/manage-permission-groups",
       "statusCode": 301
     },
     {
-      "source": "/analytics/apis/dashboard-rest-api/",
-      "destination": "/api/event-streaming-metrics",
+      "source": "/docs/hc/en-us/articles/20722853103643-Interpret-the-cumulative-exposures-graph-Divergent-lines",
+      "destination": "/docs/experiment/advanced-techniques/cumulative-exposure-divergent-lines",
       "statusCode": 301
     },
     {
-      "source": "/analytics/apis/export-api/",
-      "destination": "/api/export",
+      "source": "/docs/hc/en-us/articles/360044072251-Anomaly-Forecast-Find-anomalies-in-your-data",
+      "destination": "/docs/analytics/anomaly-forecast",
       "statusCode": 301
     },
     {
-      "source": "/analytics/apis/group-identify-api/",
-      "destination": "/api/group-identify",
+      "source": "/docs/analytics/apis/ccpa-dsar-api",
+      "destination": "/docs/apis/analytics/ccpa-dsar",
       "statusCode": 301
     },
     {
-      "source": "/analytics/apis/http-v2-api/",
-      "destination": "/api/http-v2",
+      "source": "/docs/hc/en-us/articles/360059626072-Use-recommendations-in-personalization-campaigns",
+      "destination": "/docs/cdp/audiences/recommendations-use",
       "statusCode": 301
     },
     {
-      "source": "/analytics/apis/identify-api/",
-      "destination": "/api/identify",
+      "source": "/docs/data/sdks/typescript-browser/ampli",
+      "destination": "/docs/sdks/analytics/browser/ampli-for-browser-sdk-1-0",
       "statusCode": 301
     },
     {
-      "source": "/analytics/apis/lookup-tables-api/",
-      "destination": "/api/lookup-table",
+      "source": "/docs/hc/en-us/articles/360035354552-Build-charts-in-Amplitude-the-Segmentation-Module-s-advanced-features",
+      "destination": "/docs/analytics/charts/build-charts-segmentation-module",
       "statusCode": 301
     },
     {
-      "source": "/analytics/apis/releases-api/",
-      "destination": "/api/releases",
+      "source": "/docs/hc/en-us/articles/24094812669979-Visual-Labeling-Quickly-create-no-code-events-from-your-site-s-existing-elements",
+      "destination": "/docs/data/visual-labeling",
       "statusCode": 301
     },
     {
-      "source": "/analytics/apis/scim-api/",
-      "destination": "/api/scim",
+      "source": "/docs/hc/en-us/articles/10442602260507-Use-session-metrics-to-evaluate-content-paths",
+      "destination": "/docs/analytics/charts/data-tables/data-tables-use-session-metrics",
       "statusCode": 301
     },
     {
-      "source": "/analytics/apis/taxonomy-api/",
-      "destination": "/api/taxonomy",
+      "source": "/docs/data/destinations/amazon-kinesis-data-stream",
+      "destination": "/docs/data/destination-catalog/amazon-kinesis-data-stream",
       "statusCode": 301
     },
     {
-      "source": "/analytics/apis/aliasing-api/",
-      "destination": "/api/user-mapping",
+      "source": "/docs/hc/en-us/articles/115001163231-Custom-formulas-Syntax-and-definitions",
+      "destination": "/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas",
       "statusCode": 301
     },
     {
-      "source": "/analytics/apis/user-privacy-api/",
-      "destination": "/api/user-privacy",
+      "source": "/docs/experiment/apis/management-api/versions",
+      "destination": "/docs/apis/experiment/experiment-management-api-version-endpoints",
       "statusCode": 301
     },
     {
-      "source": "/analytics/apis/user-profile-api/",
-      "destination": "/api/user-profile",
+      "source": "/docs/experiment/sdks/ruby-sdk",
+      "destination": "/docs/sdks/experiment-sdks/experiment-ruby",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360060044791-Computations-Create-new-user-properties-on-the-fly",
-      "destination": "/cdp/audiences/computations",
+      "source": "/docs/hc/en-us/articles/19458267203099-Compare-multiple-funnel-events-in-a-single-step",
+      "destination": "/docs/analytics/charts/funnel-analysis/funnel-analysis-compare-multiple",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360049161832-Predictions-Use-Amplitude-s-AI-to-help-maximize-lift",
-      "destination": "/cdp/audiences/predictions",
+      "source": "/docs/hc/en-us/articles/360024709711-Browser-compatibility-for-Amplitude-s-product-website",
+      "destination": "/docs/get-started/browser-compatibility",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360049164712-Build-a-prediction",
-      "destination": "/cdp/audiences/predictions-build",
+      "source": "/docs/hc/en-us/articles/14309817756827-How-time-works-in-a-retention-analysis",
+      "destination": "/docs/analytics/charts/retention-analysis/retention-analysis-time",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360059625252-Build-a-recommendation",
-      "destination": "/cdp/audiences/recommendations-build",
+      "source": "/docs/data/sdks/ios-swift",
+      "destination": "/docs/sdks/analytics/ios",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360059624172-Recommendations-Help-users-reach-the-goals-you-ve-set-for-them",
-      "destination": "/cdp/audiences/recommendations",
+      "source": "/docs/session-replay/tag-managers/google-tag-manager",
+      "destination": "/docs/session-replay/session-replay-google-tag-manager",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360060055531-Sync-to-third-party-destinations",
-      "destination": "/cdp/audiences/third-party-syncs",
+      "source": "/docs/hc/en-us/articles/360002583351-Set-up-single-sign-on-SSO-for-Amplitude-using-OneLogin",
+      "destination": "/docs/admin/single-sign-on/one-login",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360049642891-Use-prediction-based-cohorts-in-your-campaigns",
-      "destination": "/cdp/audiences/predictions-use",
+      "source": "/docs/hc/en-us/articles/115003135607-Track-unique-users",
+      "destination": "/docs/cdp/sources/instrument-track-unique-users",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360059626072-Use-recommendations-in-personalization-campaigns",
-      "destination": "/cdp/audiences/recommendations-use",
+      "source": "/docs/hc/en-us/articles/360061687371-Performance-and-scaling-in-Amplitude-Experiment",
+      "destination": "/docs/experiment/under-the-hood/experiment-performance-scaling",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/12217810210331-Monthly-tracked-users-MTUs-billing-guide",
-      "destination": "/admin/billing-use/mtu-guide",
+      "source": "/docs/hc/en-us/articles/9795802005019-Define-your-experiment-s-audience",
+      "destination": "/docs/experiment/workflow/define-audience",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360049166012-Usage-reports-Understand-how-your-organization-uses-Amplitude",
-      "destination": "/admin/billing-use/usage-reports",
+      "source": "/docs/hc/en-us/articles/360002750712-Portfolio-Conduct-cross-project-analysis-in-Amplitude",
+      "destination": "/docs/admin/account-management/portfolio",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/5606320929179-Array-operators-in-Amplitude",
-      "destination": "/analytics/charts/array-operators",
+      "source": "/docs/hc/en-us/articles/20722788163995-Interpret-the-cumulative-exposures-graph-Inflection-points-and-flattened-slopes",
+      "destination": "/docs/experiment/advanced-techniques/cumulative-exposure-inflection-points",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360051775171-Build-charts-in-Amplitude-Add-events",
-      "destination": "/analytics/charts/build-charts-add-events",
+      "source": "/docs/hc/en-us/articles/9121457018907-Use-Atlassian-Smart-Links-with-Amplitude",
+      "destination": "/docs/analytics/atlassian-smart-links",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/13650690245915-Build-charts-in-Amplitude-Add-user-segments",
-      "destination": "/analytics/charts/build-charts-add-user-segments",
+      "source": "/docs/analytics/apis/chart-annotations-api",
+      "destination": "/docs/apis/analytics/chart-annotations",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/19689507379995-Build-charts-in-Amplitude-Modify-a-user-segment",
-      "destination": "/analytics/charts/build-charts-modify-user-segment",
+      "source": "/docs/hc/en-us/articles/360059624172-Recommendations-Help-users-reach-the-goals-you-ve-set-for-them",
+      "destination": "/docs/cdp/audiences/recommendations",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360035354552-Build-charts-in-Amplitude-the-Segmentation-Module-s-advanced-features",
-      "destination": "/analytics/charts/build-charts-segmentation-module",
+      "source": "/docs/hc/en-us/articles/231999267-Chart-basics-in-Amplitude",
+      "destination": "/docs/analytics/charts/chart-basics",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/9623000954907-Cart-analysis-Use-object-arrays-to-drive-behavioral-insights",
-      "destination": "/analytics/charts/cart-analysis",
+      "source": "/docs/hc/en-us/articles/5078704508571-Getting-set-up-with-Amplitude-Data",
+      "destination": "/docs/data/amplitude-data-get-started",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/231999267-Chart-basics-in-Amplitude",
-      "destination": "/analytics/charts/chart-basics",
+      "source": "/docs/data/destinations/amazon-kinesis-firehose",
+      "destination": "/docs/data/destination-catalog/amazon-kinesis-firehose",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/235147347-The-Compass-chart-discover-your-users-a-ha-moments",
-      "destination": "/analytics/charts/compass/compass-aha-moment",
+      "source": "/docs/hc/en-us/articles/360052274852-Build-an-event-segmentation-analysis",
+      "destination": "/docs/analytics/charts/event-segmentation/event-segmentation-build",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/115001526027-Find-your-company-s-inflection-metrics-with-Compass",
-      "destination": "/analytics/charts/compass/compass-find-inflection-metrics",
+      "source": "/docs/hc/en-us/articles/360061651452-Amplitude-Experiment-key-terms",
+      "destination": "/docs/experiment/key-terms",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360050836071-Event-Explorer-View-event-streams-in-real-time",
-      "destination": "/analytics/charts/event-explorer",
+      "source": "/docs/experiment/apis/management-api/deployments",
+      "destination": "/docs/apis/experiment/experiment-management-api-deployments",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360054192152-Interpret-your-Compass-chart-part-1",
-      "destination": "/analytics/charts/compass/compass-interpret-1",
+      "source": "/docs/experiment/sdks/go-sdk",
+      "destination": "/docs/sdks/experiment-sdks/experiment-go",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/20963736374299-Interpret-your-Compass-chart-part-2-Correlation-and-cohorts",
-      "destination": "/analytics/charts/compass/compass-interpret-2",
+      "source": "/docs/hc/en-us/articles/115001351507-Get-the-most-out-of-Amplitude-s-Funnel-Analysis-chart",
+      "destination": "/docs/analytics/charts/funnel-analysis/funnel-analysis-get-the-most",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/115001816407-Amplitude-s-charts-Find-the-right-one-for-your-analysis",
-      "destination": "/analytics/charts/find-the-right-chart",
+      "source": "/docs/hc/en-us/articles/16797281362843-Create-a-chart",
+      "destination": "/docs/get-started/create-a-chart",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360031259831-Group-bys-How-Amplitude-prunes-and-orders-chart-results",
-      "destination": "/analytics/charts/group-by",
+      "source": "/docs/hc/en-us/articles/19687889786011-Build-a-usage-interval-analysis",
+      "destination": "/docs/analytics/charts/retention-analysis/retention-analysis-usage-interval",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360041885332-Group-two-or-more-events-together-as-a-single-step-in-the-Events-module",
-      "destination": "/analytics/charts/group-events",
+      "source": "/docs/data/sdks/java",
+      "destination": "/docs/sdks/analytics/java",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/6040784295195-Attribute-credit-to-multiple-acquisition-touch-points",
-      "destination": "/analytics/charts/data-tables/data-tables-attribute-credit",
+      "source": "/docs/hc/en-us/articles/360002534392-Single-sign-on-SSO-in-Amplitude",
+      "destination": "/docs/admin/single-sign-on/sso",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/10249480038043-Create-a-metric",
-      "destination": "/analytics/charts/data-tables/data-tables-create-metric",
+      "source": "/docs/data/sources/airbridge",
+      "destination": "/docs/data/source-catalog/airbridge",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/6797483965083-Multi-dimensional-analysis-with-Data-Tables",
-      "destination": "/analytics/charts/data-tables/data-tables-multi-dimensional-analysis",
+      "source": "/docs/hc/en-us/articles/18749912891419-How-Amplitude-calculates-session-length",
+      "destination": "/docs/cdp/sources/session-length",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/19466947066651-Results-limits-and-sorting-logic-in-Data-Tables-charts",
-      "destination": "/analytics/charts/data-tables/data-tables-results-and-sorting-logic",
+      "source": "/docs/hc/en-us/articles/360061687351-How-randomization-works-in-Amplitude-Experiment",
+      "destination": "/docs/experiment/under-the-hood/experiment-randomization",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/14885323242907-Optimize-performance-with-query-time-sampling-in-Amplitude-Analytics",
-      "destination": "/analytics/charts/optimize-query-performance",
+      "source": "/docs/hc/en-us/articles/11502996649371-Estimate-the-duration-of-your-experiments",
+      "destination": "/docs/experiment/workflow/experiment-estimate-duration",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/10442602260507-Use-session-metrics-to-evaluate-content-paths",
-      "destination": "/analytics/charts/data-tables/data-tables-use-session-metrics",
+      "source": "/docs/hc/en-us/articles/360058399851-Set-up-SCIM-provisioning-in-Amplitude",
+      "destination": "/docs/admin/account-management/scim-provision",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/17727675382811-Pruning-and-ordering-of-data-in-Amplitude-Analytics",
-      "destination": "/analytics/charts/prune-and-order-data",
+      "source": "/docs/hc/en-us/articles/20085827191963-Holdout-groups-Advanced-use-cases",
+      "destination": "/docs/experiment/advanced-techniques/holdout-groups-advanced-use-cases",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/115000095851-Engagement-Matrix-discover-what-your-users-love-and-don-t-love-about-your-product",
-      "destination": "/analytics/charts/engagement-matrix/engagement-matrix-discover",
+      "source": "/docs/hc/en-us/articles/360040965352-Behavior-offset-Segment-users-over-two-distinct-time-periods",
+      "destination": "/docs/analytics/behavior-offset",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/21037634182299-Interpret-your-Engagement-Matrix",
-      "destination": "/analytics/charts/engagement-matrix/engagement-matrix-interpret",
+      "source": "/docs/analytics/apis/dashboard-rest-api",
+      "destination": "/docs/apis/analytics/dashboard-rest",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/14911842524827-Review-chart-data-with-the-breakdown-table",
-      "destination": "/analytics/charts/review-chart-data",
+      "source": "/docs/hc/en-us/articles/360060055531-Sync-to-third-party-destinations",
+      "destination": "/docs/cdp/audiences/third-party-syncs",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360052274852-Build-an-event-segmentation-analysis",
-      "destination": "/analytics/charts/event-segmentation/event-segmentation-build",
+      "source": "/docs/data/sdks/marketing-analytics-browser/migration",
+      "destination": "/docs/sdks/analytics/browser/migrate-from-marketing-analytics-to-browser-sdk-2-0",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/19688391224731-Choose-the-right-measurement-for-your-Event-Segmentation-chart",
-      "destination": "/analytics/charts/event-segmentation/event-segmentation-choose-measurement",
+      "source": "/docs/hc/en-us/articles/5078848559259-Configure-and-manage-your-Amplitude-Data-settings",
+      "destination": "/docs/data/amplitude-data-settings",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/115001163231-Custom-formulas-Syntax-and-definitions",
-      "destination": "/analytics/charts/event-segmentation/event-segmentation-custom-formulas",
+      "source": "/docs/data/destinations/amazon-redshift",
+      "destination": "/docs/data/destination-catalog/amazon-redshift",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/13321766657947-Create-in-line-custom-events-in-funnel-and-event-segmentation-analyses",
-      "destination": "/analytics/charts/event-segmentation/event-segmentation-in-line-events",
+      "source": "/docs/experiment/sdks/jvm-sdk",
+      "destination": "/docs/sdks/experiment-sdks/experiment-jvm",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360035355132-Interpret-your-event-segmentation-analysis-part-1",
-      "destination": "/analytics/charts/event-segmentation/event-segmentation-interpret-1",
+      "source": "/docs/hc/en-us/articles/19466646450203-Hold-properties-constant-in-a-Funnel-Analysis-chart",
+      "destination": "/docs/analytics/charts/funnel-analysis/funnel-analysis-hold-properties-constant",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/5078704508571-Getting-set-up-with-Amplitude-Data",
-      "destination": "/data/amplitude-data-get-started",
+      "source": "/docs/hc/en-us/articles/16796682982427-Create-your-organization",
+      "destination": "/docs/get-started/create-org",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/5078848559259-Configure-and-manage-your-Amplitude-Data-settings",
-      "destination": "/data/amplitude-data-settings",
+      "source": "/docs/data/sdk-troubleshooting-and-debugging",
+      "destination": "/docs/sdks/sdk-debugging",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/14884769332507-Block-bot-web-traffic",
-      "destination": "/data/block-bot-traffic",
+      "source": "/docs/data/sdks/typescript-node",
+      "destination": "/docs/sdks/analytics/node",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/17050354126619-Change-an-event-s-activity-status",
-      "destination": "/data/change-event-activity-status",
+      "source": "/docs/data/sources/amazon-s3",
+      "destination": "/docs/data/source-catalog/amazon-s3",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/17050453062811-Change-an-event-s-category",
-      "destination": "/data/change-event-category",
+      "source": "/docs/hc/en-us/articles/4403176829709-How-Amplitude-Experiment-uses-sequential-testing-for-statistical-inference",
+      "destination": "/docs/experiment/under-the-hood/experiment-sequential-testing",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/17050416767003-Change-the-description-of-an-event-or-property",
-      "destination": "/data/change-event-description",
+      "source": "/docs/hc/en-us/articles/360061687631-Learn-from-your-experiment",
+      "destination": "/docs/experiment/workflow/experiment-learnings",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/5918635077403-Channels",
-      "destination": "/data/channels",
+      "source": "/docs/hc/en-us/articles/229672228-User-roles-and-permissions-in-Amplitude",
+      "destination": "/docs/admin/account-management/user-roles-permissions",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360003032451-Debug-with-the-Amplitude-Chrome-extension",
-      "destination": "/data/chrome-extension-debug",
+      "source": "/docs/hc/en-us/articles/13508918823835-Exclude-users-from-your-experiments-with-holdout-groups",
+      "destination": "/docs/experiment/advanced-techniques/holdout-groups-exclude-users",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360055495852-Configure-the-Schema-settings-to-handle-unexpected-data",
-      "destination": "/data/configure-schema",
+      "source": "/docs/hc/en-us/articles/231881448-Behavioral-cohorts-Identify-users-with-similar-behaviors",
+      "destination": "/docs/analytics/behavioral-cohorts",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/19717053646107-Create-a-tracking-plan",
-      "destination": "/data/create-tracking-plan",
+      "source": "/docs/analytics/apis/event-streaming-metrics-summary-api",
+      "destination": "/docs/apis/analytics/event-streaming-metrics",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/14909802992283-Cross-project-analysis-in-Amplitude-Data",
-      "destination": "/data/cross-project-analysis",
+      "source": "/docs/hc/en-us/articles/360049161832-Predictions-Use-Amplitude-s-AI-to-help-maximize-lift",
+      "destination": "/docs/cdp/audiences/predictions",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360055925811--CSV-import-and-export",
-      "destination": "/data/csv-import-export",
+      "source": "/docs/data/sdks/browser-2/migration",
+      "destination": "/docs/sdks/analytics/browser/migrate-from-browser-sdk-1-0-to-2-0",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/16805886899483-Custom-events",
-      "destination": "/data/custom-events",
+      "source": "/docs/hc/en-us/articles/14884769332507-Block-bot-web-traffic",
+      "destination": "/docs/data/block-bot-traffic",
       "statusCode": 301
     },
     {
-      "source": "/getting-started/",
-      "destination": "/data/data-get-started",
+      "source": "/docs/data/destinations/amazon-s3",
+      "destination": "/docs/data/destination-catalog/amazon-s3",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/115000465251-Data-planning-playbook",
-      "destination": "/data/data-planning-playbook",
+      "source": "/docs/experiment/sdks/nodejs-sdk",
+      "destination": "/docs/sdks/experiment-sdks/experiment-node-js",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/5078746573979-The-complete-Amplitude-Data-planning-workflow",
-      "destination": "/data/data-planning-workflow",
+      "source": "/docs/hc/en-us/articles/19458087881627-How-Amplitude-computes-funnels",
+      "destination": "/docs/analytics/charts/funnel-analysis/funnel-analysis-how-amplitude-computes",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/5874857623707-Derived-properties",
-      "destination": "/data/derived-properties",
+      "source": "/docs/hc/en-us/articles/16796780525339-Create-a-project-in-Amplitude",
+      "destination": "/docs/get-started/create-project",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/1flow-cohort",
-      "destination": "/data/destination-catalog/1flow",
+      "source": "/docs/data/sdks/sdk-maintenance-and-support",
+      "destination": "/docs/sdks/sdk-maintenance-and-support",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/adjust",
-      "destination": "/data/destination-catalog/adjust",
+      "source": "/docs/data/sdks/python",
+      "destination": "/docs/sdks/analytics/python",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/airship",
-      "destination": "/data/destination-catalog/airship",
+      "source": "/docs/data/sources/apphud",
+      "destination": "/docs/data/source-catalog/apphud",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/amazon-kinesis-data-stream",
-      "destination": "/data/destination-catalog/amazon-kinesis-data-stream",
+      "source": "/docs/hc/en-us/articles/360061687611-Test-and-launch-your-experiment",
+      "destination": "/docs/experiment/workflow/experiment-test",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/amazon-kinesis-firehose",
-      "destination": "/data/destination-catalog/amazon-kinesis-firehose",
+      "source": "/docs/hc/en-us/articles/360055808391-Webhooks-for-custom-monitors",
+      "destination": "/docs/admin/account-management/webhooks",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/amazon-redshift",
-      "destination": "/data/destination-catalog/amazon-redshift",
+      "source": "/docs/hc/en-us/articles/12347964006555-Import-or-export-experiment-chart-settings-as-JSON",
+      "destination": "/docs/experiment/advanced-techniques/import-export-settings",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/amazon-s3",
-      "destination": "/data/destination-catalog/amazon-s3",
+      "source": "/docs/hc/en-us/articles/360050370192-Breadcrumbs-Track-organize-and-share-your-analyses",
+      "destination": "/docs/analytics/breadcrumbs",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/appcues",
-      "destination": "/data/destination-catalog/appcues",
+      "source": "/docs/analytics/apis/export-api",
+      "destination": "/docs/apis/analytics/export",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/appfit",
-      "destination": "/data/destination-catalog/appfit",
+      "source": "/docs/data/sdks/typescript-browser/migration",
+      "destination": "/docs/sdks/analytics/browser/migrate-from-javascript-sdk-to-browser-sdk-1-0",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/appsflyer",
-      "destination": "/data/destination-catalog/appsflyer",
+      "source": "/docs/hc/en-us/articles/17050354126619-Change-an-event-s-activity-status",
+      "destination": "/docs/data/change-event-activity-status",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/apxor",
-      "destination": "/data/destination-catalog/apxor",
+      "source": "/docs/data/destinations/appcues",
+      "destination": "/docs/data/destination-catalog/appcues",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/batch",
-      "destination": "/data/destination-catalog/batch",
+      "source": "/docs/experiment/sdks/php-sdk",
+      "destination": "/docs/sdks/experiment-sdks/experiment-php",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/bento",
-      "destination": "/data/destination-catalog/bento",
+      "source": "/docs/hc/en-us/articles/19458172443931-How-Amplitude-handles-segmenting-on-a-user-property-in-a-Funnel-Analysis-chart",
+      "destination": "/docs/analytics/charts/funnel-analysis/funnel-analysis-how-amplitude-handles-segmenting",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/blitzllama",
-      "destination": "/data/destination-catalog/blitzllama",
+      "source": "/docs/hc/en-us/articles/207108557-Cross-platform-instrumentation-vs-separate-platform-instrumentation",
+      "destination": "/docs/get-started/cross-platform-vs-separate-platform",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/branch",
-      "destination": "/data/destination-catalog/branch",
+      "source": "/docs/data/sdk-middleware",
+      "destination": "/docs/sdks/sdk-middleware",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/braze",
-      "destination": "/data/destination-catalog/braze",
+      "source": "/docs/data/sdks/typescript-react-native",
+      "destination": "/docs/sdks/analytics/react-native",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/clevertap",
-      "destination": "/data/destination-catalog/clevertap",
+      "source": "/docs/data/sources/appsflyer",
+      "destination": "/docs/data/source-catalog/appsflyer",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/cohort-webhooks",
-      "destination": "/data/destination-catalog/cohort-webhooks",
+      "source": "/docs/hc/en-us/articles/360061270832-Troubleshoot-your-experiment",
+      "destination": "/docs/experiment/workflow/experiment-troubleshoot",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/cordial",
-      "destination": "/data/destination-catalog/cordial",
+      "source": "/docs/hc/en-us/articles/235649848-The-Settings-page",
+      "destination": "/docs/admin/account-management/account-settings",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/customer-io",
-      "destination": "/data/destination-catalog/customer-io",
+      "source": "/docs/hc/en-us/articles/8807757689499-Multiple-hypothesis-testing-in-Amplitude-Experiment",
+      "destination": "/docs/experiment/advanced-techniques/multiple-hypothesis-testing",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/enterpret",
-      "destination": "/data/destination-catalog/enterpret",
+      "source": "/docs/hc/en-us/articles/5786072827291-Embed-Amplitude-charts-in-Notion-documents",
+      "destination": "/docs/analytics/chart-embed-notion",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/extole",
-      "destination": "/data/destination-catalog/extole",
+      "source": "/docs/analytics/apis/group-identify-api",
+      "destination": "/docs/apis/analytics/group-identify",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/14056975720091-Interpret-your-event-segmentation-analysis-part-2-Advanced-features",
-      "destination": "/analytics/charts/event-segmentation/event-segmentation-interpret-2",
+      "source": "/docs/data/sdks/javascript/ampli",
+      "destination": "/docs/sdks/analytics/browser/ampli-for-javascript-sdk",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360062072631-Dig-deeper-into-experimentation-data-with-Experiment-Results",
-      "destination": "/analytics/charts/experiment-results/experiment-results-dig-deeper",
+      "source": "/docs/hc/en-us/articles/17050453062811-Change-an-event-s-category",
+      "destination": "/docs/data/change-event-category",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/13885412065179-Using-formula-metrics-in-Experiment-Results",
-      "destination": "/analytics/charts/experiment-results/experiment-results-use-formula-metrics",
+      "source": "/docs/data/destinations/appfit",
+      "destination": "/docs/data/destination-catalog/appfit",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/facebook-ads",
-      "destination": "/data/destination-catalog/facebook-ads",
+      "source": "/docs/experiment/sdks/python-sdk",
+      "destination": "/docs/sdks/experiment-sdks/experiment-python",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/fivetran",
-      "destination": "/data/destination-catalog/fivetran",
+      "source": "/docs/hc/en-us/articles/19458044599195-How-Amplitude-handles-simultaneous-events-in-a-funnel",
+      "destination": "/docs/analytics/charts/funnel-analysis/funnel-analysis-how-amplitude-handles-simultaneous-events",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/google-ads",
-      "destination": "/data/destination-catalog/google-ads",
+      "source": "/docs/hc/en-us/articles/17472723888411-Get-data-into-Amplitude",
+      "destination": "/docs/get-started/get-data-in",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/google-analytics-4-ios-android",
-      "destination": "/data/destination-catalog/google-analytics-4-ios-android",
+      "source": "/docs/data/sdk-plugins",
+      "destination": "/docs/sdks/sdk-plugins",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/google-analytics-4-web",
-      "destination": "/data/destination-catalog/google-analytics-4-web",
+      "source": "/docs/data/sdks/unity",
+      "destination": "/docs/sdks/analytics/unity",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/google-bigquery",
-      "destination": "/data/destination-catalog/google-bigquery",
+      "source": "/docs/data/sources/bento",
+      "destination": "/docs/data/source-catalog/bento",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/google-cloud-storage",
-      "destination": "/data/destination-catalog/google-cloud-storage",
+      "source": "/docs/hc/en-us/articles/13448368364187-Finalize-your-experiment-s-statistical-preferences",
+      "destination": "/docs/experiment/workflow/finalize-statistical-preferences",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/google-pub-sub",
-      "destination": "/data/destination-catalog/google-pub-sub",
+      "source": "/docs/hc/en-us/articles/360058531591-Manage-users-and-permissions",
+      "destination": "/docs/admin/account-management/manage-users",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/hubspot",
-      "destination": "/data/destination-catalog/hubspot",
+      "source": "/docs/hc/en-us/articles/360061270712-Set-up-and-run-mutually-exclusive-experiments",
+      "destination": "/docs/experiment/advanced-techniques/mutually-exclusive-experiments",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/infobip",
-      "destination": "/data/destination-catalog/infobip",
+      "source": "/docs/hc/en-us/articles/360016524911-Collaborate-on-your-analyses-using-spaces",
+      "destination": "/docs/analytics/collaborate-with-spaces",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/insider",
-      "destination": "/data/destination-catalog/insider",
+      "source": "/docs/analytics/apis/identify-api",
+      "destination": "/docs/apis/analytics/identify",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/intercom",
-      "destination": "/data/destination-catalog/intercom",
+      "source": "/docs/hc/en-us/articles/360050836071-Event-Explorer-View-event-streams-in-real-time",
+      "destination": "/docs/analytics/charts/event-explorer",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/iterable",
-      "destination": "/data/destination-catalog/iterable",
+      "source": "/docs/hc/en-us/articles/17050416767003-Change-the-description-of-an-event-or-property",
+      "destination": "/docs/data/change-event-description",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/kameleoon",
-      "destination": "/data/destination-catalog/kameleoon",
+      "source": "/docs/data/destinations/appsflyer",
+      "destination": "/docs/data/destination-catalog/appsflyer",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/klaviyo",
-      "destination": "/data/destination-catalog/klaviyo",
+      "source": "/docs/experiment/sdks/react-native-sdk-legacy",
+      "destination": "/docs/sdks/experiment-sdks/experiment-react-native-legacy",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/kochava-install",
-      "destination": "/data/destination-catalog/kochava-install",
+      "source": "/docs/hc/en-us/articles/14740839213339-How-filters-work-in-a-Funnel-Analysis-chart",
+      "destination": "/docs/analytics/charts/funnel-analysis/funnel-analysis-how-filters-work",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/kochava-post-install",
-      "destination": "/data/destination-catalog/kochava-post-install",
+      "source": "/docs/hc/en-us/articles/204620508-Helpful-definitions",
+      "destination": "/docs/get-started/helpful-definitions",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/lantern",
-      "destination": "/data/destination-catalog/lantern",
+      "source": "/docs/data/sdks/sdk-quickstart",
+      "destination": "/docs/sdks/sdk-quickstart",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/launchdarkly",
-      "destination": "/data/destination-catalog/launchdarkly",
+      "source": "/docs/data/sdks/unreal",
+      "destination": "/docs/sdks/analytics/unreal",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/leanplum",
-      "destination": "/data/destination-catalog/leanplum",
+      "source": "/docs/data/sources/blitzllama",
+      "destination": "/docs/data/source-catalog/blitzllama",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/liveramp",
-      "destination": "/data/destination-catalog/liveramp",
+      "source": "/docs/hc/en-us/articles/4405839607579-Define-your-experiment-s-goals",
+      "destination": "/docs/experiment/workflow/define-goals",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/mailchimp",
-      "destination": "/data/destination-catalog/mailchimp",
+      "source": "/docs/experiment/guides/aws-cloudfront-proxy",
+      "destination": "/docs/experiment/advanced-techniques/proxy-requests-to-experiment-with-aws-cloudfront",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/marketo",
-      "destination": "/data/destination-catalog/marketo",
+      "source": "/docs/hc/en-us/articles/19528580295835-Compare-and-manage-your-behavioral-cohorts",
+      "destination": "/docs/analytics/compare-cohorts",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/marketo-static-list",
-      "destination": "/data/destination-catalog/marketo-static-list",
+      "source": "/docs/hc/en-us/articles/5918635077403-Channels",
+      "destination": "/docs/data/channels",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/maze",
-      "destination": "/data/destination-catalog/maze",
+      "source": "/docs/data/destinations/apxor",
+      "destination": "/docs/data/destination-catalog/apxor",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/meta-pixel",
-      "destination": "/data/destination-catalog/meta-pixel",
+      "source": "/docs/experiment/general/evaluation/remote-evaluation",
+      "destination": "/docs/experiment/remote-evaluation",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/moengage",
-      "destination": "/data/destination-catalog/moengage",
+      "source": "/docs/experiment/infra/evaluation-proxy",
+      "destination": "/docs/sdks/experiment-sdks/experiment-evaluation-proxy",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/moloco",
-      "destination": "/data/destination-catalog/moloco",
+      "source": "/docs/hc/en-us/articles/360039976551-Identify-conversion-drivers-in-your-funnel-analyses",
+      "destination": "/docs/analytics/charts/funnel-analysis/funnel-analysis-identify-conversion-drivers",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/movable-ink",
-      "destination": "/data/destination-catalog/movable-ink",
+      "source": "/docs/hc/en-us/articles/206404628-How-will-you-identify-your-users-",
+      "destination": "/docs/get-started/identify-users",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/moveable-ink",
-      "destination": "/data/destination-catalog/moveable-ink",
+      "source": "/docs/data/sources/branch",
+      "destination": "/docs/data/source-catalog/branch",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/netcore-cloud",
-      "destination": "/data/destination-catalog/netcore-cloud",
+      "source": "/docs/hc/en-us/articles/360061687311-Working-with-feature-flags-and-feature-rollouts",
+      "destination": "/docs/experiment/workflow/feature-flag-rollouts",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/notivize",
-      "destination": "/data/destination-catalog/notivize",
+      "source": "/docs/hc/en-us/articles/19528398045083-Create-cohorts-via-Microscope-file-import-or-the-Segmentation-module",
+      "destination": "/docs/analytics/create-cohorts",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/onesignal",
-      "destination": "/data/destination-catalog/onesignal",
+      "source": "/docs/analytics/apis/releases-api",
+      "destination": "/docs/apis/analytics/releases",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/optimizely",
-      "destination": "/data/destination-catalog/optimizely",
+      "source": "/docs/hc/en-us/articles/360003032451-Debug-with-the-Amplitude-Chrome-extension",
+      "destination": "/docs/data/chrome-extension-debug",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/planhat",
-      "destination": "/data/destination-catalog/planhat",
+      "source": "/docs/hc/en-us/articles/360053338671-Interpret-your-funnel-analysis",
+      "destination": "/docs/analytics/charts/funnel-analysis/funnel-analysis-interpret",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/plotline",
-      "destination": "/data/destination-catalog/plotline",
+      "source": "/docs/hc/en-us/articles/360039862012-How-to-organize-your-team-for-implementation",
+      "destination": "/docs/get-started/implementationn-team-organization",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/productboard",
-      "destination": "/data/destination-catalog/productboard",
+      "source": "/docs/data/sources/braze",
+      "destination": "/docs/data/source-catalog/braze",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/pushwoosh",
-      "destination": "/data/destination-catalog/pushwoosh",
+      "source": "/docs/hc/en-us/articles/12939879862171-Sticky-bucketing-in-Amplitude-Experiment",
+      "destination": "/docs/experiment/advanced-techniques/sticky-bucketing",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/qualtrics",
-      "destination": "/data/destination-catalog/qualtrics",
+      "source": "/docs/hc/en-us/articles/21150695006747-Customize-the-Home-page",
+      "destination": "/docs/analytics/customize-home-page",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/salesforce-marketing-cloud",
-      "destination": "/data/destination-catalog/salesforce-marketing-cloud",
+      "source": "/docs/analytics/apis/taxonomy-api",
+      "destination": "/docs/apis/analytics/taxonomy",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/salesforce-marketing-cloud-v1",
-      "destination": "/data/destination-catalog/salesforce-marketing-cloud-v1",
+      "source": "/docs/hc/en-us/articles/115001816407-Amplitude-s-charts-Find-the-right-one-for-your-analysis",
+      "destination": "/docs/analytics/charts/find-the-right-chart",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/salesforce-marketing-cloud-v2",
-      "destination": "/data/destination-catalog/salesforce-marketing-cloud-v2",
+      "source": "/docs/hc/en-us/articles/360055495852-Configure-the-Schema-settings-to-handle-unexpected-data",
+      "destination": "/docs/data/configure-schema",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/segment",
-      "destination": "/data/destination-catalog/segment",
+      "source": "/docs/data/destinations/batch",
+      "destination": "/docs/data/destination-catalog/batch",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/sendgrid",
-      "destination": "/data/destination-catalog/sendgrid",
+      "source": "/docs/hc/en-us/articles/19458278060571-Mark-a-step-in-your-funnel-as-optional",
+      "destination": "/docs/analytics/charts/funnel-analysis/funnel-analysis-optional-step",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/sleekflow",
-      "destination": "/data/destination-catalog/sleekflow",
+      "source": "/docs/hc/en-us/articles/16796509137179-Start-here-Get-set-up-in-Amplitude-and-start-generating-insights-today",
+      "destination": "/docs/get-started/index",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/snapchat",
-      "destination": "/data/destination-catalog/snapchat",
+      "source": "/docs/hc/en-us/articles/26003807556635-Split-URL-testing",
+      "destination": "/docs/experiment/advanced-techniques/split-url-testing",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/snowflake",
-      "destination": "/data/destination-catalog/snowflake",
+      "source": "/docs/hc/en-us/articles/19464806559131-Turn-your-dashboard-into-a-template",
+      "destination": "/docs/analytics/dashboard-create-template",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/snowflake-data-share",
-      "destination": "/data/destination-catalog/snowflake-data-share",
+      "source": "/docs/analytics/apis/aliasing-api",
+      "destination": "/docs/apis/analytics/user-mapping",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/split",
-      "destination": "/data/destination-catalog/split",
+      "source": "/docs/hc/en-us/articles/19717053646107-Create-a-tracking-plan",
+      "destination": "/docs/data/create-tracking-plan",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/statsig",
-      "destination": "/data/destination-catalog/statsig",
+      "source": "/docs/data/destinations/bento",
+      "destination": "/docs/data/destination-catalog/bento",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/talon-one",
-      "destination": "/data/destination-catalog/talon-one",
+      "source": "/docs/hc/en-us/articles/206404618-Instrumentation-pre-work",
+      "destination": "/docs/get-started/instrumentation-prework",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/thetradedesk",
-      "destination": "/data/destination-catalog/thetradedesk",
+      "source": "/docs/data/sources/census",
+      "destination": "/docs/data/source-catalog/census",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/tiktok-ads",
-      "destination": "/data/destination-catalog/tiktok-ads",
+      "source": "/docs/hc/en-us/articles/229505188-Create-edit-and-manage-dashboards",
+      "destination": "/docs/analytics/dashboard-create",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/toplyne",
-      "destination": "/data/destination-catalog/toplyne",
+      "source": "/docs/analytics/apis/user-privacy-api",
+      "destination": "/docs/apis/analytics/user-privacy",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/unitq",
-      "destination": "/data/destination-catalog/unitq",
+      "source": "/docs/hc/en-us/articles/360031259831-Group-bys-How-Amplitude-prunes-and-orders-chart-results",
+      "destination": "/docs/analytics/charts/group-by",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/user-com",
-      "destination": "/data/destination-catalog/user-com",
+      "source": "/docs/hc/en-us/articles/14909802992283-Cross-project-analysis-in-Amplitude-Data",
+      "destination": "/docs/data/cross-project-analysis",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/userflow",
-      "destination": "/data/destination-catalog/userflow",
+      "source": "/docs/data/destinations/blitzllama",
+      "destination": "/docs/data/destination-catalog/blitzllama",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/userlist",
-      "destination": "/data/destination-catalog/userlist",
+      "source": "/docs/hc/en-us/articles/4448893756315-How-Amplitude-computes-conversions-through-funnels",
+      "destination": "/docs/analytics/charts/funnel-analysis/funnel-analysis-how-amplitude-computes-conversions",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/webengage",
-      "destination": "/data/destination-catalog/webengage",
+      "source": "/docs/hc/en-us/articles/115002661452-Optimize-your-Amplitude-workflow-to-improve-user-engagement",
+      "destination": "/docs/get-started/optimize-amplitude-workflow",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/webhooks",
-      "destination": "/data/destination-catalog/webhooks",
+      "source": "/docs/data/sources/chameleon",
+      "destination": "/docs/data/source-catalog/chameleon",
       "statusCode": 301
     },
     {
-      "source": "/data/destinations/zeda-io",
-      "destination": "/data/destination-catalog/zeda-io",
+      "source": "/docs/hc/en-us/articles/19465004411803-Filter-your-dashboards",
+      "destination": "/docs/analytics/dashboard-filter",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/16805727661211-Display-names-in-Amplitude-Data",
-      "destination": "/data/display-names-in-amplitude-data",
+      "source": "/docs/analytics/apis/user-profile-api",
+      "destination": "/docs/apis/analytics/user-profile",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/20587620067867-Environment-settings-for-projects-legacy-feature-",
-      "destination": "/data/environment-settings",
+      "source": "/docs/hc/en-us/articles/360041885332-Group-two-or-more-events-together-as-a-single-step-in-the-Events-module",
+      "destination": "/docs/analytics/charts/group-events",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/16805655718939-Event-and-property-descriptions",
-      "destination": "/data/event-property-descriptions",
+      "source": "/docs/hc/en-us/articles/16805886899483-Custom-events",
+      "destination": "/docs/data/custom-events",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/5078726654363-Overview-of-Amplitude-Data",
-      "destination": "/data/index",
+      "source": "/docs/data/destinations/branch",
+      "destination": "/docs/data/destination-catalog/branch",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/6816905540251-Integrate-Jira-with-Amplitude-Data",
-      "destination": "/data/integrate-jira",
+      "source": "/docs/hc/en-us/articles/16800098709275-What-events-will-you-need-",
+      "destination": "/docs/get-started/select-events",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/8634149673627-Add-more-data-to-event-and-user-properties-with-Lookup-Tables",
-      "destination": "/data/lookup-tables",
+      "source": "/docs/data/sources/clevertap",
+      "destination": "/docs/data/source-catalog/clevertap",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/9980355191579-Object-management-Manage-the-building-blocks-of-your-analyses",
-      "destination": "/data/object-management",
+      "source": "/docs/hc/en-us/articles/19464952104475-Change-your-dashboard-s-display-preferences",
+      "destination": "/docs/analytics/dashboard-preferences",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/10831335547035-Override-a-property",
-      "destination": "/data/override-property",
+      "source": "/docs/analytics/apis/http-v2-api",
+      "destination": "/docs/apis/analytics/http-v2",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/5078762828699-Streamline-property-updates-with-property-groups",
-      "destination": "/data/property-updates-property-groups",
+      "source": "/docs/getting-started",
+      "destination": "/docs/data/data-get-started",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/16805784778907-Remove-invalid-or-incorrect-data",
-      "destination": "/data/remove-invalid-data",
+      "source": "/docs/data/destinations/braze-cohort",
+      "destination": "/docs/data/destination-catalog/braze-cohort-sync",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/10831709352987-Revert-an-overridden-property",
-      "destination": "/data/revert-overridden-property",
+      "source": "/docs/hc/en-us/articles/16797746722203-Spaces-Keep-your-work-organized",
+      "destination": "/docs/get-started/spaces",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/adapty",
-      "destination": "/data/source-catalog/adapty",
+      "source": "/docs/data/sources/convizit",
+      "destination": "/docs/data/source-catalog/convizit",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/adjust",
-      "destination": "/data/source-catalog/adjust",
+      "source": "/docs/hc/en-us/articles/19465059724827-Subscribe-to-a-dashboard",
+      "destination": "/docs/analytics/dashboard-subscribe",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/adobe-analytics",
-      "destination": "/data/source-catalog/adobe-analytics",
+      "source": "/docs/analytics/apis/lookup-tables-api",
+      "destination": "/docs/apis/analytics/lookup-table",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/adobe-launch",
-      "destination": "/data/source-catalog/adobe-launch",
+      "source": "/docs/hc/en-us/articles/115000465251-Data-planning-playbook",
+      "destination": "/docs/data/data-planning-playbook",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/airbridge",
-      "destination": "/data/source-catalog/airbridge",
+      "source": "/docs/data/destinations/braze",
+      "destination": "/docs/data/destination-catalog/braze",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/amazon-s3/",
-      "destination": "/data/source-catalog/amazon-s3",
+      "source": "/docs/hc/en-us/articles/16798886153883-Start-from-a-template",
+      "destination": "/docs/get-started/start-from-template",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/apphud",
-      "destination": "/data/source-catalog/apphud",
+      "source": "/docs/data/sources/cordial",
+      "destination": "/docs/data/source-catalog/cordial",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/appsflyer",
-      "destination": "/data/source-catalog/appsflyer",
+      "source": "/docs/hc/en-us/articles/360040957432-Historical-Count-part-1-Track-user-behavior-for-different-instances-of-each-user-action",
+      "destination": "/docs/analytics/historical-count-1",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/bento",
-      "destination": "/data/source-catalog/bento",
+      "source": "/docs/analytics/apis/scim-api",
+      "destination": "/docs/apis/analytics/scim",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/bigquery/",
-      "destination": "/data/source-catalog/bigquery",
+      "source": "/docs/hc/en-us/articles/5078746573979-The-complete-Amplitude-Data-planning-workflow",
+      "destination": "/docs/data/data-planning-workflow",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/19466562128411-A-B-testing-in-a-Funnel-Analysis-chart",
-      "destination": "/analytics/charts/funnel-analysis/funnel-analysis-ab-test",
+      "source": "/docs/data/destinations/clevertap-event-streaming",
+      "destination": "/docs/data/destination-catalog/clevertap-event-streaming",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360052745632-Build-a-funnel-analysis",
-      "destination": "/analytics/charts/funnel-analysis/funnel-analysis-build",
+      "source": "/docs/hc/en-us/articles/19354328238363-Track-progress-as-you-instrument-Amplitude",
+      "destination": "/docs/get-started/track-your-progress",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/19458351187483-Combine-funnel-events-inline",
-      "destination": "/analytics/charts/funnel-analysis/funnel-analysis-combine-events",
+      "source": "/docs/data/sources/csv",
+      "destination": "/docs/data/source-catalog/csv",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/19458300523291-Compare-group-by-values-in-your-Funnel-Analysis-chart-to-each-other",
-      "destination": "/analytics/charts/funnel-analysis/funnel-analysis-compare-group-by",
+      "source": "/docs/hc/en-us/articles/21037928991259-Historical-Count-part-2-Order-of-operations",
+      "destination": "/docs/analytics/historical-count-2",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/19458267203099-Compare-multiple-funnel-events-in-a-single-step",
-      "destination": "/analytics/charts/funnel-analysis/funnel-analysis-compare-multiple",
+      "source": "/docs/data/destinations/clevertap",
+      "destination": "/docs/data/destination-catalog/clevertap",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/115001351507-Get-the-most-out-of-Amplitude-s-Funnel-Analysis-chart",
-      "destination": "/analytics/charts/funnel-analysis/funnel-analysis-get-the-most",
+      "source": "/docs/hc/en-us/articles/16797878206747-Understand-the-conversion-rate-of-an-important-flow",
+      "destination": "/docs/get-started/understand-conversion-rate",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/19466646450203-Hold-properties-constant-in-a-Funnel-Analysis-chart",
-      "destination": "/analytics/charts/funnel-analysis/funnel-analysis-hold-properties-constant",
+      "source": "/docs/data/sources/datazoom",
+      "destination": "/docs/data/source-catalog/datazoom",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/19458087881627-How-Amplitude-computes-funnels",
-      "destination": "/analytics/charts/funnel-analysis/funnel-analysis-how-amplitude-computes",
+      "source": "/docs/hc/en-us/articles/21065498729243-Historical-Count-part-3-Funnels-and-behavioral-cohorts",
+      "destination": "/docs/analytics/historical-count-3",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360061270232-Amplitude-Experiment-overview-Optimize-your-product-experience-through-A-B-testing",
-      "destination": "/experiment/overview",
+      "source": "/docs/hc/en-us/articles/14885323242907-Optimize-performance-with-query-time-sampling-in-Amplitude-Analytics",
+      "destination": "/docs/analytics/charts/optimize-query-performance",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360061651452-Amplitude-Experiment-key-terms",
-      "destination": "/experiment/key-terms",
+      "source": "/docs/hc/en-us/articles/16805727661211-Display-names-in-Amplitude-Data",
+      "destination": "/docs/data/display-names-in-amplitude-data",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/4416438117147-Set-app-level-user-permissions-in-Experiment",
-      "destination": "/experiment/app-level-permissions",
+      "source": "/docs/hc/en-us/articles/16798159501723-Understand-your-users-activity",
+      "destination": "/docs/get-started/understand-user-activity",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/8485952382235-Understand-the-Experiment-Analysis-view",
-      "destination": "/experiment/analysis-view",
+      "source": "/docs/data/sources/google-cloud-storage",
+      "destination": "/docs/data/source-catalog/google-cloud-storage",
       "statusCode": 301
     },
     {
-      "source": "/experiment/apis/evaluation-api/",
-      "destination": "/experiment/experiment-apis/experiment-evaluation-api",
+      "source": "/docs/hc/en-us/articles/115001764612-Insights-Spot-anomalies-in-your-metrics-quickly-with-alerts",
+      "destination": "/docs/analytics/insights",
       "statusCode": 301
     },
     {
-      "source": "/experiment/apis/management-api/",
-      "destination": "/experiment/experiment-apis/experiment-management-api",
+      "source": "/docs/data/destinations/cordial",
+      "destination": "/docs/data/destination-catalog/cordial",
       "statusCode": 301
     },
     {
-      "source": "/experiment/apis/management-api/deployments/",
-      "destination": "/experiment/experiment-apis/experiment-management-api-deployments",
+      "source": "/docs/hc/en-us/articles/16798497073947-Questions-your-engineer-may-ask-you",
+      "destination": "/docs/get-started/engineer-questions",
       "statusCode": 301
     },
     {
-      "source": "/experiment/apis/management-api/experiments/",
-      "destination": "/experiment/experiment-apis/experiment-management-api-experiments",
+      "source": "/docs/data/sources/hightouch",
+      "destination": "/docs/data/source-catalog/hightouch",
       "statusCode": 301
     },
     {
-      "source": "/experiment/apis/management-api/flags/",
-      "destination": "/experiment/experiment-apis/experiment-management-api-flags",
+      "source": "/docs/hc/en-us/articles/8476297377819-Integrate-Miro-with-Amplitude",
+      "destination": "/docs/analytics/integrate-miro",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/4448893756315-How-Amplitude-computes-conversions-through-funnels",
-      "destination": "/analytics/charts/funnel-analysis/funnel-analysis-how-amplitude-computes-conversions",
+      "source": "/docs/hc/en-us/articles/16805655718939-Event-and-property-descriptions",
+      "destination": "/docs/data/event-property-descriptions",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/19458172443931-How-Amplitude-handles-segmenting-on-a-user-property-in-a-Funnel-Analysis-chart",
-      "destination": "/analytics/charts/funnel-analysis/funnel-analysis-how-amplitude-handles-segmenting",
+      "source": "/docs/data/destinations/customerio-cohort",
+      "destination": "/docs/data/destination-catalog/customer-io-cohort-syncing",
       "statusCode": 301
     },
     {
-      "source": "/experiment/sdks/android-sdk/",
-      "destination": "/experiment/experiment-sdks/experiment-android",
+      "source": "/docs/hc/en-us/articles/215562387-User-property-definitions",
+      "destination": "/docs/get-started/user-property-definitions",
       "statusCode": 301
     },
     {
-      "source": "/experiment/infra/evaluation-proxy/",
-      "destination": "/experiment/experiment-sdks/experiment-evaluation-proxy",
+      "source": "/docs/data/sources/hubspot",
+      "destination": "/docs/data/source-catalog/hubspot",
       "statusCode": 301
     },
     {
-      "source": "/experiment/sdks/go-sdk/",
-      "destination": "/experiment/experiment-sdks/experiment-go",
+      "source": "/docs/hc/en-us/articles/227613388-Integrate-Slack-with-Amplitude",
+      "destination": "/docs/analytics/integrate-slack",
       "statusCode": 301
     },
     {
-      "source": "/experiment/sdks/ios-sdk/",
-      "destination": "/experiment/experiment-sdks/experiment-ios",
+      "source": "/docs/data/destinations/customer-io",
+      "destination": "/docs/data/destination-catalog/customer-io",
       "statusCode": 301
     },
     {
-      "source": "/experiment/sdks/javascript-sdk/",
-      "destination": "/experiment/experiment-sdks/experiment-javascript",
+      "source": "/docs/data/sources/insider",
+      "destination": "/docs/data/source-catalog/insider",
       "statusCode": 301
     },
     {
-      "source": "/experiment/sdks/jvm-sdk/",
-      "destination": "/experiment/experiment-sdks/experiment-jvm",
+      "source": "/docs/hc/en-us/articles/360016281172-Notebooks-Explain-important-insights-to-teammates-and-stakeholders",
+      "destination": "/docs/analytics/notebooks",
       "statusCode": 301
     },
     {
-      "source": "/experiment/sdks/nodejs-sdk/",
-      "destination": "/experiment/experiment-sdks/experimenet-node-js",
+      "source": "/docs/hc/en-us/articles/6816905540251-Integrate-Jira-with-Amplitude-Data",
+      "destination": "/docs/data/integrate-jira",
       "statusCode": 301
     },
     {
-      "source": "/experiment/sdks/php-sdk/",
-      "destination": "/experiment/experiment-sdks/experiment-php",
+      "source": "/docs/data/destinations/enterpret",
+      "destination": "/docs/data/destination-catalog/enterpret",
       "statusCode": 301
     },
     {
-      "source": "/experiment/sdks/python-sdk/",
-      "destination": "/experiment/experiment-sdks/experiment-python",
+      "source": "/docs/data/sources/intercom",
+      "destination": "/docs/data/source-catalog/intercom",
       "statusCode": 301
     },
     {
-      "source": "/experiment/sdks/react-native-sdk/",
-      "destination": "/experiment/experiment-sdks/experiment-react-native",
+      "source": "/docs/hc/en-us/articles/360017800371-Releases-See-how-users-respond-to-changes-in-your-product",
+      "destination": "/docs/analytics/releases",
       "statusCode": 301
     },
     {
-      "source": "/experiment/sdks/react-native-sdk-legacy/",
-      "destination": "/experiment/experiment-sdks/experiment-react-native-legacy",
+      "source": "/docs/hc/en-us/articles/14911842524827-Review-chart-data-with-the-breakdown-table",
+      "destination": "/docs/analytics/charts/review-chart-data",
       "statusCode": 301
     },
     {
-      "source": "/experiment/sdks/ruby-sdk/",
-      "destination": "/experiment/experiment-sdks/experiment-ruby",
+      "source": "/docs/hc/en-us/articles/8634149673627-Add-more-data-to-event-and-user-properties-with-Lookup-Tables",
+      "destination": "/docs/data/lookup-tables",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/12587885686299-Analyze-your-experiment-data-with-the-T-test",
-      "destination": "/experiment/experiment-theory/analyze-with-t-test",
+      "source": "/docs/data/destinations/extole",
+      "destination": "/docs/data/destination-catalog/extole",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/12785071886875-Set-the-MDE-for-your-experiment",
-      "destination": "/experiment/experiment-theory/experiment-set-mde",
+      "source": "/docs/data/sources/iterable",
+      "destination": "/docs/data/source-catalog/iterable",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/19458044599195-How-Amplitude-handles-simultaneous-events-in-a-funnel",
-      "destination": "/analytics/charts/funnel-analysis/funnel-analysis-how-amplitude-handles-simultaneous-events",
+      "source": "/docs/hc/en-us/articles/360053198271-Root-Cause-Analysis-Track-down-anomalies-in-your-data",
+      "destination": "/docs/analytics/root-cause-analysis",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/14740839213339-How-filters-work-in-a-Funnel-Analysis-chart",
-      "destination": "/analytics/charts/funnel-analysis/funnel-analysis-how-filters-work",
+      "source": "/docs/hc/en-us/articles/9980355191579-Object-management-Manage-the-building-blocks-of-your-analyses",
+      "destination": "/docs/data/object-management",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360039976551-Identify-conversion-drivers-in-your-funnel-analyses",
-      "destination": "/analytics/charts/funnel-analysis/funnel-analysis-identify-conversion-drivers",
+      "source": "/docs/data/destinations/facebook-ads",
+      "destination": "/docs/data/destination-catalog/facebook-ads",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360053338671-Interpret-your-funnel-analysis",
-      "destination": "/analytics/charts/funnel-analysis/funnel-analysis-interpret",
+      "source": "/docs/data/sources/kochava",
+      "destination": "/docs/data/source-catalog/kochava",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/19458278060571-Mark-a-step-in-your-funnel-as-optional",
-      "destination": "/analytics/charts/funnel-analysis/funnel-analysis-optional-step",
+      "source": "/docs/hc/en-us/articles/236051328-Search-Find-charts-dashboards-cohorts-and-notebooks",
+      "destination": "/docs/analytics/search",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/19466710221979-View-funnel-conversion-by-event-property-values",
-      "destination": "/analytics/charts/funnel-analysis/funnel-analysis-how-filters-work",
+      "source": "/docs/hc/en-us/articles/10831335547035-Override-a-property",
+      "destination": "/docs/data/override-property",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/20962963769499-Interpret-your-Impact-Analysis-chart",
-      "destination": "/analytics/charts/impact-analysis/impact-analysis-interpret",
+      "source": "/docs/data/destinations/fivetran",
+      "destination": "/docs/data/destination-catalog/fivetran",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360020765372-Impact-Analysis-Track-how-first-time-engagement-changes-user-behavior",
-      "destination": "/analytics/charts/impact-analysis/impact-analysis-track",
+      "source": "/docs/data/sources/leanplum",
+      "destination": "/docs/data/source-catalog/leanplum",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/16427637651995-Journeys-Understand-the-paths-users-take-in-your-product-and-why-they-convert",
-      "destination": "/analytics/charts/journeys/journeys-understand-paths",
+      "source": "/docs/hc/en-us/articles/20464659456667-See-how-your-customers-use-your-product-with-Session-Replay",
+      "destination": "/docs/analytics/session-replay",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/16427848208539-Understand-and-use-the-Journeys-visualizations",
-      "destination": "/analytics/charts/journeys/journeys-understand-visualizations",
+      "source": "/docs/hc/en-us/articles/9623000954907-Cart-analysis-Use-object-arrays-to-drive-behavioral-insights",
+      "destination": "/docs/analytics/charts/cart-analysis",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360050769531-Journeys-Discover-what-s-making-your-users-convert-or-drop-off",
-      "destination": "/analytics/charts/legacy-charts/legacy-charts-journeys",
+      "source": "/docs/hc/en-us/articles/5078762828699-Streamline-property-updates-with-property-groups",
+      "destination": "/docs/data/property-updates-property-groups",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360042951571-Pathfinder-Find-the-paths-your-users-take-on-their-way-to-conversion",
-      "destination": "/analytics/charts/legacy-charts/legacy-charts-pathfinder",
+      "source": "/docs/data/destinations/fullstory-event-streaming",
+      "destination": "/docs/data/destination-catalog/fullstory",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/235777567-The-Pathfinder-Users-chart-see-the-paths-your-users-take-through-your-product",
-      "destination": "/analytics/charts/legacy-charts/legacy-charts-pathfinder-users",
+      "source": "/docs/data/sources/mailchimp",
+      "destination": "/docs/data/source-catalog/mailchimp",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/16796509137179-Start-here-Get-set-up-in-Amplitude-and-start-generating-insights-today",
-      "destination": "/get-started/",
+      "source": "/docs/hc/en-us/articles/11314104312859-Share-dashboards-within-your-company",
+      "destination": "/docs/analytics/share-dashboards",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/16796919792667-The-Amplitude-Home-page",
-      "destination": "/get-started/amplitude-home-page",
+      "source": "/docs/hc/en-us/articles/17727675382811-Pruning-and-ordering-of-data-in-Amplitude-Analytics",
+      "destination": "/docs/analytics/charts/prune-and-order-data",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/115001580108-Analyze-A-B-test-results-in-Amplitude",
-      "destination": "/get-started/analyze-a-b-test-results",
+      "source": "/docs/hc/en-us/articles/16805784778907-Remove-invalid-or-incorrect-data",
+      "destination": "/docs/data/remove-invalid-data",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/16798045496859-Analyze-your-acquisition-channels",
-      "destination": "/get-started/analyze-acquisition-channels",
+      "source": "/docs/data/destinations/google-ads-cohort",
+      "destination": "/docs/data/destination-catalog/google-ads-cohort-syncing",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/16797955580955-Analyze-the-adoption-of-a-feature",
-      "destination": "/get-started/analyze-feature-adoption",
+      "source": "/docs/data/sources/metarouter",
+      "destination": "/docs/data/source-catalog/metarouter",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360024709711-Browser-compatibility-for-Amplitude-s-product-website",
-      "destination": "/get-started/browser-compatibility",
+      "source": "/docs/hc/en-us/articles/235717108-Share-charts-dashboards-and-notebooks-with-stakeholders-outside-your-company",
+      "destination": "/docs/analytics/share-external",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/16797281362843-Create-a-chart",
-      "destination": "/get-started/create-a-chart",
+      "source": "/docs/hc/en-us/articles/10831709352987-Revert-an-overridden-property",
+      "destination": "/docs/data/revert-overridden-property",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/16796682982427-Create-your-organization",
-      "destination": "/get-started/create-org",
+      "source": "/docs/data/destinations/google-ads",
+      "destination": "/docs/data/destination-catalog/google-ads",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/16796780525339-Create-a-project-in-Amplitude",
-      "destination": "/get-started/create-project",
+      "source": "/docs/data/sources/moengage",
+      "destination": "/docs/data/source-catalog/moengage",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/207108557-Cross-platform-instrumentation-vs-separate-platform-instrumentation",
-      "destination": "/get-started/cross-platform-vs-separate-platform",
+      "source": "/docs/hc/en-us/articles/360043053552-Templates-Re-use-your-analyses",
+      "destination": "/docs/analytics/templates",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/17472723888411-Get-data-into-Amplitude",
-      "destination": "/get-started/get-data-in",
+      "source": "/docs/data/destinations/google-analytics-4-gtag",
+      "destination": "/docs/data/destination-catalog/google-analytics-4-web",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/204620508-Helpful-definitions",
-      "destination": "/get-started/helpful-definitions",
+      "source": "/docs/data/sources/mparticle",
+      "destination": "/docs/data/source-catalog/mparticle",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/206404628-How-will-you-identify-your-users-",
-      "destination": "/get-started/identify-users",
+      "source": "/docs/hc/en-us/articles/360049309011-Track-changes-in-your-cohort-populations-over-time",
+      "destination": "/docs/analytics/track-cohort-changes",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360039862012-How-to-organize-your-team-for-implementation",
-      "destination": "/get-started/implementationn-team-organization",
+      "source": "/docs/hc/en-us/articles/360016606991-Taxonomy-API",
+      "destination": "/docs/data/taxonomy-api",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/206404618-Instrumentation-pre-work",
-      "destination": "/get-started/instrumentation-prework",
+      "source": "/docs/data/destinations/google-bigquery",
+      "destination": "/docs/data/destination-catalog/google-bigquery",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/115002661452-Optimize-your-Amplitude-workflow-to-improve-user-engagement",
-      "destination": "/get-started/optimize-amplitude-workflow",
+      "source": "/docs/data/sources/nami",
+      "destination": "/docs/data/source-catalog/nami",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/16800098709275-What-events-will-you-need-",
-      "destination": "/get-started/select-events",
+      "source": "/docs/hc/en-us/articles/229313067-Look-up-event-data-for-individual-users",
+      "destination": "/docs/analytics/user-data-lookup",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/16797746722203-Spaces-Keep-your-work-organized",
-      "destination": "/get-started/spaces",
+      "source": "/docs/hc/en-us/articles/17646803703323-Understand-IP-address-and-location-properties",
+      "destination": "/docs/data/understand-ip-address-and-location",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/16798886153883-Start-from-a-template",
-      "destination": "/get-started/start-from-template",
+      "source": "/docs/data/destinations/google-cloud-storage",
+      "destination": "/docs/data/destination-catalog/google-cloud-storage",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/19354328238363-Track-progress-as-you-instrument-Amplitude",
-      "destination": "/get-started/track-your-progress",
+      "source": "/docs/data/sources/onesignal",
+      "destination": "/docs/data/source-catalog/onesignal",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/16797878206747-Understand-the-conversion-rate-of-an-important-flow",
-      "destination": "/get-started/understand-conversion-rate",
+      "source": "/docs/hc/en-us/articles/360028260251-Workspace-Find-your-charts-and-track-your-work",
+      "destination": "/docs/analytics/workspace",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/16798159501723-Understand-your-users-activity",
-      "destination": "/get-started/understand-user-activity",
+      "source": "/docs/hc/en-us/articles/17050314884635-Set-or-change-a-property-s-data-type",
+      "destination": "/docs/data/update-property-data-type",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/215562387-User-property-definitions",
-      "destination": "/get-started/user-property-definitions",
+      "source": "/docs/data/destinations/google-pub-sub",
+      "destination": "/docs/data/destination-catalog/google-pub-sub-cohort-sync-s",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/21037113562651-Interpret-your-Lifecycle-chart",
-      "destination": "/analytics/charts/lifecycle/lifecycle-interpret",
+      "source": "/docs/data/sources/optimizely",
+      "destination": "/docs/data/source-catalog/optimizely",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/ampli-overview/",
-      "destination": "/instrumentation/ampli",
+      "source": "/docs/hc/en-us/articles/25388746170523-Bulk-manage-charts-with-Chart-Cleanup",
+      "destination": "/docs/analytics/bulk-manage-charts-with-chart-cleanup",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/sdk-overview/",
-      "destination": "/instrumentation/sdk-catalog",
+      "source": "/docs/hc/en-us/articles/17321563434267-Streamline-and-improve-your-tracking-plan-with-the-AI-Data-Assistant",
+      "destination": "/docs/data/use-ai-data-assistant",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/sdk-architecture/",
-      "destination": "/instrumentation/architecture",
+      "source": "/docs/data/destinations/google-pub-sub",
+      "destination": "/docs/data/destination-catalog/google-pub-sub",
       "statusCode": 301
     },
     {
-      "source": "/data/dynamic-configuration/",
-      "destination": "/instrumentation/dynamic-configuration",
+      "source": "/docs/data/sources/qualtrics",
+      "destination": "/docs/data/source-catalog/qualtrics",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/sdk-maintenance-and-support/",
-      "destination": "/instrumentation/sdk-maintenance-and-support",
+      "source": "/docs/hc/en-us/articles/19528328446363-Define-a-new-cohort",
+      "destination": "/docs/analytics/define-cohort",
       "statusCode": 301
     },
     {
-      "source": "/data/sdk-middleware/",
-      "destination": "/instrumentation/sdk-middleware",
+      "source": "/docs/hc/en-us/articles/16805456124699-Use-Ampli",
+      "destination": "/docs/data/use-ampli",
       "statusCode": 301
     },
     {
-      "source": "/data/sdk-plugins/",
-      "destination": "/instrumentation/sdk-plugins",
+      "source": "/docs/data/destinations/google-tag-manager-event-streaming",
+      "destination": "/docs/data/destination-catalog/google-tag-manager",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/sdk-quickstart/",
-      "destination": "/instrumentation/sdk-quickstart",
+      "source": "/docs/data/sources/radar",
+      "destination": "/docs/data/source-catalog/radar",
       "statusCode": 301
     },
     {
-      "source": "/data/sdk-troubleshooting-and-debugging/",
-      "destination": "/instrumentation/sdk-debugging",
+      "source": "/docs/hc/en-us/articles/17787338689307-Sync-your-Amplitude-data-to-Google-Drive-and-Sheets",
+      "destination": "/docs/analytics/google-drive-sync",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/228838627-The-Lifecycle-chart-track-the-growth-of-your-product-s-user-base",
-      "destination": "/analytics/charts/lifecycle/lifecycle-track-growth",
+      "source": "/docs/hc/en-us/articles/115002380567-Overview-of-user-properties-and-event-properties-in-Amplitude",
+      "destination": "/docs/data/user-properties-and-events",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/115001902492-Amplitude-SQL-Getting-started-with-Query",
-      "destination": "/analytics/charts/other-charts/other-charts-amplitude-sql",
+      "source": "/docs/data/destinations/hotjar-event-streaming",
+      "destination": "/docs/data/destination-catalog/hotjar",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/20460581705243-Amplitude-SQL-Table-schema-and-field-shortcuts",
-      "destination": "/analytics/charts/other-charts/other-charts-amplitude-sql-schema",
+      "source": "/docs/data/sources/revenuecat",
+      "destination": "/docs/data/source-catalog/revenuecat",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/231258248-The-User-Composition-chart-View-your-users-by-the-properties-they-have-in-common",
-      "destination": "/analytics/charts/other-charts/other-charts-user-composition",
+      "source": "/docs/hc/en-us/articles/236032527-Microscope-Explore-individual-data-points-in-your-charts",
+      "destination": "/docs/analytics/microscope",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/235648588-The-Personas-chart-Use-clustering-analysis-to-find-your-product-s-user-personas",
-      "destination": "/analytics/charts/personas/personas-clustering",
+      "source": "/docs/hc/en-us/articles/5078870942363-Validate-events-with-Observe",
+      "destination": "/docs/data/validate-events",
       "statusCode": 301
     },
     {
-      "source": "/guides/mixpanel-migration-guide",
-      "destination": "/migration/migrate-from-mixpanel",
+      "source": "/docs/data/destinations/hubspot-cohort",
+      "destination": "/docs/data/destination-catalog/hubspot-cohort-sync",
       "statusCode": 301
     },
     {
-      "source": "/guides/mparticle-migration-guide",
-      "destination": "/migration/migrate-from-mparticle",
+      "source": "/docs/data/sources/rudderstack",
+      "destination": "/docs/data/source-catalog/rudderstack",
       "statusCode": 301
     },
     {
-      "source": "/guides/segment-migration-guide",
-      "destination": "/migration/migrate-from-segment",
+      "source": "/docs/hc/en-us/articles/25181928085019-Gain-marketing-insights-with-web-analytics",
+      "destination": "/docs/analytics/web-analytics",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/20719767917083-Interpret-your-Personas-chart",
-      "destination": "/analytics/charts/personas/personas-interpret",
+      "source": "/docs/hc/en-us/articles/5078713391387-Work-with-branches",
+      "destination": "/docs/data/work-with-branches",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360050153151-Build-a-retention-analysis",
-      "destination": "/analytics/charts/retention-analysis/retention-analysis-build",
+      "source": "/docs/data/destinations/infobip-cohort",
+      "destination": "/docs/data/destination-catalog/infobip",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/14310206381595-How-the-Retention-Analysis-chart-calculates-retention",
-      "destination": "/analytics/charts/retention-analysis/retention-analysis-calculation",
+      "source": "/docs/data/sources/segment",
+      "destination": "/docs/data/source-catalog/segment",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360050153551-Interpret-your-retention-analysis",
-      "destination": "/analytics/charts/retention-analysis/retention-analysis-interpret",
+      "source": "/docs/hc/en-us/articles/5874857623707-Derived-properties",
+      "destination": "/docs/data/derived-properties",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/14309698064923-Interpret-your-Retention-Analysis-chart-Usage-interval",
-      "destination": "/analytics/charts/retention-analysis/retention-analysis-interpret-usage",
+      "source": "/docs/data/destinations/insider",
+      "destination": "/docs/data/destination-catalog/insider",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/14309817756827-How-time-works-in-a-retention-analysis",
-      "destination": "/analytics/charts/retention-analysis/retention-analysis-time",
+      "source": "/docs/data/sources/sendgrid",
+      "destination": "/docs/data/source-catalog/sendgrid",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/19687889786011-Build-a-usage-interval-analysis",
-      "destination": "/analytics/charts/retention-analysis/retention-analysis-usage-interval",
+      "source": "/docs/hc/en-us/articles/5913315221915-Transformations-Retroactively-modify-your-event-data-structure",
+      "destination": "/docs/data/transformations",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/14453697446043-Interpret-your-revenue-analysis",
-      "destination": "/analytics/charts/revenue-ltv/revenue-ltv-interpret",
+      "source": "/docs/data/destinations/intercom-cohort",
+      "destination": "/docs/data/destination-catalog/intercom-cohort-sync",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/230680867-The-Revenue-LTV-chart-Track-how-well-you-re-monetizing-new-users",
-      "destination": "/analytics/charts/revenue-ltv/revenue-ltv-track-new-user-monetization",
+      "source": "/docs/data/sources/singular",
+      "destination": "/docs/data/source-catalog/singular",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/230901928-Stickiness-Identify-the-features-that-drive-users-back-to-your-product",
-      "destination": "/analytics/charts/stickiness/stickiness-identify-features",
+      "source": "/docs/hc/en-us/articles/360055925811--CSV-import-and-export",
+      "destination": "/docs/data/csv-import-export",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/android-kotlin/",
-      "destination": "/instrumentation/sdk-catalog/android-kotlin",
+      "source": "/docs/data/destinations/intercom",
+      "destination": "/docs/data/destination-catalog/intercom",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/android/",
-      "destination": "/instrumentation/sdk-catalog/android",
+      "source": "/docs/data/sources/split",
+      "destination": "/docs/data/source-catalog/split",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/typescript-browser/",
-      "destination": "/instrumentation/sdk-catalog/browser-1",
+      "source": "/docs/data/destinations/iterable-cohort",
+      "destination": "/docs/data/destination-catalog/iterable-cohort-sync",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/typescript-browser/migration/",
-      "destination": "/instrumentation/sdk-catalog/browser-sdk-1-migration",
+      "source": "/docs/data/sources/sprig",
+      "destination": "/docs/data/source-catalog/sprig",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/browser-2/",
-      "destination": "/instrumentation/sdk-catalog/browser-2",
+      "source": "/docs/data/destinations/iterable",
+      "destination": "/docs/data/destination-catalog/iterable",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/typescript-browser/migration/",
-      "destination": "/instrumentation/sdk-catalog/browser-sdk-2-migration",
+      "source": "/docs/data/sources/survicate",
+      "destination": "/docs/data/source-catalog/survicate",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/flutter/",
-      "destination": "/instrumentation/sdk-catalog/flutter",
+      "source": "/docs/data/destinations/kameleoon",
+      "destination": "/docs/data/destination-catalog/kameleoon",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/unreal/",
-      "destination": "/instrumentation/sdk-catalog/go",
+      "source": "/docs/data/sources/taplytics",
+      "destination": "/docs/data/source-catalog/taplytics",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/ios-swift/",
-      "destination": "/instrumentation/sdk-catalog/ios-swift",
+      "source": "/docs/data/destinations/klaviyo",
+      "destination": "/docs/data/destination-catalog/klaviyo",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/ios/",
-      "destination": "/instrumentation/sdk-catalog/ios-maintenance",
+      "source": "/docs/data/sources/tealium",
+      "destination": "/docs/data/source-catalog/tealium",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/ios-swift/migration/",
-      "destination": "/instrumentation/sdk-catalog/ios-swift-migration",
+      "source": "/docs/data/destinations/kochava-install",
+      "destination": "/docs/data/destination-catalog/kochava",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/javascript/",
-      "destination": "/instrumentation/sdk-catalog/javascript-maintenance",
+      "source": "/docs/data/sources/tribe",
+      "destination": "/docs/data/source-catalog/tribe",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/java/",
-      "destination": "/instrumentation/sdk-catalog/java",
+      "source": "/docs/data/destinations/lantern-event-streaming",
+      "destination": "/docs/data/destination-catalog/lantern",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/typescript-node/",
-      "destination": "/instrumentation/sdk-catalog/node",
+      "source": "/docs/data/sources/userflow",
+      "destination": "/docs/data/source-catalog/userflow",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/node/",
-      "destination": "/instrumentation/sdk-catalog/node-legacy",
+      "source": "/docs/data/destinations/launchdarkly",
+      "destination": "/docs/data/destination-catalog/launchdarkly",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/python/",
-      "destination": "/instrumentation/sdk-catalog/python",
+      "source": "/docs/data/sources/userguiding",
+      "destination": "/docs/data/source-catalog/userguiding",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/typescript-react-native/migration/",
-      "destination": "/instrumentation/sdk-catalog/react-native-migration",
+      "source": "/docs/data/destinations/leanplum",
+      "destination": "/docs/data/destination-catalog/leanplum",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/typescript-react-native/",
-      "destination": "/instrumentation/sdk-catalog/react-native",
+      "source": "/docs/data/sources/bigquery",
+      "destination": "/docs/data/source-catalog/bigquery",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/react-native/",
-      "destination": "/instrumentation/sdk-catalog/react-native-maintenance",
+      "source": "/docs/data/sources/google-tag-manager",
+      "destination": "/docs/data/source-catalog/google-tag-manager",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/unity/",
-      "destination": "/instrumentation/sdk-catalog/unity",
+      "source": "/docs/data/destinations/mailchimp",
+      "destination": "/docs/data/destination-catalog/mailchimp",
       "statusCode": 301
     },
     {
-      "source": "/data/sdks/unreal/",
-      "destination": "/instrumentation/sdk-catalog/unreal",
+      "source": "/docs/data/sources/snowflake",
+      "destination": "/docs/data/source-catalog/snowflake",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360053681271-Interpret-your-stickiness-analysis",
-      "destination": "/analytics/charts/stickiness/stickiness-interpret",
+      "source": "/docs/data/destinations/marketo-static-list",
+      "destination": "/docs/data/destination-catalog/marketo-static-list",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360002548591-Set-up-single-sign-on-SSO-for-Amplitude-using-Auth0",
-      "destination": "/admin/single-sign-on/auth-0",
+      "source": "/docs/data/sources/salesforce",
+      "destination": "/docs/data/source-catalog/salesforce",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360002581311-Set-up-single-sign-on-SSO-for-Amplitude-using-Microsoft-Azure-Active-Directory",
-      "destination": "/admin/single-sign-on/azure-active-directory",
+      "source": "/docs/data/destinations/marketo",
+      "destination": "/docs/data/destination-catalog/marketo",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360002564052-Set-up-single-sign-on-SSO-for-Amplitude-using-G-Suite",
-      "destination": "/admin/single-sign-on/g-suite",
+      "source": "/docs/data/destinations/maze",
+      "destination": "/docs/data/destination-catalog/maze",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360002583131-Set-up-single-sign-on-SSO-for-Amplitude-using-Okta",
-      "destination": "/admin/single-sign-on/okta",
+      "source": "/docs/data/destinations/meta-pixel",
+      "destination": "/docs/data/destination-catalog/meta-pixel",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360002583351-Set-up-single-sign-on-SSO-for-Amplitude-using-OneLogin",
-      "destination": "/admin/single-sign-on/one-login",
+      "source": "/docs/data/destinations/moengage-cohort",
+      "destination": "/docs/data/destination-catalog/moengage-cohort-sync",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360002534392-Single-sign-on-SSO-in-Amplitude",
-      "destination": "/admin/single-sign-on/sso",
+      "source": "/docs/data/destinations/moengage",
+      "destination": "/docs/data/destination-catalog/moengage",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/blitzllama",
-      "destination": "/data/source-catalog/blitzllama",
+      "source": "/docs/data/destinations/moloco",
+      "destination": "/docs/data/destination-catalog/moloco",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/branch",
-      "destination": "/data/source-catalog/branch",
+      "source": "/docs/data/destinations/moveable-ink-profile-api",
+      "destination": "/docs/data/destination-catalog/movable-ink-profile-api",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/braze",
-      "destination": "/data/source-catalog/braze",
+      "source": "/docs/data/destinations/movable-ink",
+      "destination": "/docs/data/destination-catalog/movable-ink",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/census",
-      "destination": "/data/source-catalog/census",
+      "source": "/docs/data/destinations/netcore-cloud",
+      "destination": "/docs/data/destination-catalog/netcore-cloud",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/chameleon",
-      "destination": "/data/source-catalog/chameleon",
+      "source": "/docs/data/destinations/notivize",
+      "destination": "/docs/data/destination-catalog/notivize",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/clevertap",
-      "destination": "/data/source-catalog/clevertap",
+      "source": "/docs/data/destinations/onesignal",
+      "destination": "/docs/data/destination-catalog/onesignal",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/convizit",
-      "destination": "/data/source-catalog/convizit",
+      "source": "/docs/data/destinations/optimizely",
+      "destination": "/docs/data/destination-catalog/optimizely",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/cordial",
-      "destination": "/data/source-catalog/cordial",
+      "source": "/docs/data/destinations/planhat",
+      "destination": "/docs/data/destination-catalog/planhat",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/csv",
-      "destination": "/data/source-catalog/csv",
+      "source": "/docs/data/destinations/plotline-cohort",
+      "destination": "/docs/data/destination-catalog/plotline-cohort-sync",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/datazoom",
-      "destination": "/data/source-catalog/datazoom",
+      "source": "/docs/data/destinations/plotline",
+      "destination": "/docs/data/destination-catalog/plotline",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/google-cloud-storage/",
-      "destination": "/data/source-catalog/google-cloud-storage",
+      "source": "/docs/data/destinations/productboard",
+      "destination": "/docs/data/destination-catalog/productboard",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/google-tag-manager",
-      "destination": "/data/source-catalog/google-tag-manager",
+      "source": "/docs/data/destinations/pushwoosh-event-streaming",
+      "destination": "/docs/data/destination-catalog/pushwoosh-event-stream",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/hightouch",
-      "destination": "/data/source-catalog/hightouch",
+      "source": "/docs/data/destinations/pushwoosh",
+      "destination": "/docs/data/destination-catalog/pushwoosh",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/hubspot",
-      "destination": "/data/source-catalog/hubspot",
+      "source": "/docs/data/destinations/qualtrics",
+      "destination": "/docs/data/destination-catalog/qualtrics",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/insider",
-      "destination": "/data/source-catalog/insider",
+      "source": "/docs/data/destinations/salesforce-marketing-cloud-v1",
+      "destination": "/docs/data/destination-catalog/salesforce-marketing-cloud-v1",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/intercom",
-      "destination": "/data/source-catalog/intercom",
+      "source": "/docs/data/destinations/salesforce-marketing-cloud-v2",
+      "destination": "/docs/data/destination-catalog/salesforce-marketing-cloud-v2",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/iterable",
-      "destination": "/data/source-catalog/iterable",
+      "source": "/docs/data/destinations/segment",
+      "destination": "/docs/data/destination-catalog/segment",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/kochava",
-      "destination": "/data/source-catalog/kochava",
+      "source": "/docs/data/destinations/sendgrid",
+      "destination": "/docs/data/destination-catalog/sendgrid",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/leanplum",
-      "destination": "/data/source-catalog/leanplum",
+      "source": "/docs/data/destinations/sleekflow",
+      "destination": "/docs/data/destination-catalog/sleekflow",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/mailchimp",
-      "destination": "/data/source-catalog/mailchimp",
+      "source": "/docs/data/destinations/snapchat",
+      "destination": "/docs/data/destination-catalog/snapchat",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/metarouter",
-      "destination": "/data/source-catalog/metarouter",
+      "source": "/docs/data/destinations/snowflake-data-share",
+      "destination": "/docs/data/destination-catalog/snowflake-data-share",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/moengage",
-      "destination": "/data/source-catalog/moengage",
+      "source": "/docs/data/destinations/snowflake",
+      "destination": "/docs/data/destination-catalog/snowflake",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/mparticle",
-      "destination": "/data/source-catalog/mparticle",
+      "source": "/docs/data/destinations/split",
+      "destination": "/docs/data/destination-catalog/split",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/nami",
-      "destination": "/data/source-catalog/nami",
+      "source": "/docs/data/destinations/statsig-cohort",
+      "destination": "/docs/data/destination-catalog/statsig-cohort-sync",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/onesignal",
-      "destination": "/data/source-catalog/onesignal",
+      "source": "/docs/data/destinations/statsig",
+      "destination": "/docs/data/destination-catalog/statsig",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/optimizely",
-      "destination": "/data/source-catalog/optimizely",
+      "source": "/docs/data/destinations/talon-one",
+      "destination": "/docs/data/destination-catalog/talon-one",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/qualtrics",
-      "destination": "/data/source-catalog/qualtrics",
+      "source": "/docs/data/destinations/tiktok-ads",
+      "destination": "/docs/data/destination-catalog/tiktok-ads",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/radar",
-      "destination": "/data/source-catalog/radar",
+      "source": "/docs/data/destinations/toplyne",
+      "destination": "/docs/data/destination-catalog/toplyne",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/revenuecat",
-      "destination": "/data/source-catalog/revenuecat",
+      "source": "/docs/data/destinations/unitq",
+      "destination": "/docs/data/destination-catalog/unitq",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/rudderstack",
-      "destination": "/data/source-catalog/rudderstack",
+      "source": "/docs/data/destinations/user-com",
+      "destination": "/docs/data/destination-catalog/user-com",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/salesforce",
-      "destination": "/data/source-catalog/salesforce",
+      "source": "/docs/data/destinations/userflow",
+      "destination": "/docs/data/destination-catalog/userflow",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/segment",
-      "destination": "/data/source-catalog/segment",
+      "source": "/docs/data/destinations/userlist-cohort",
+      "destination": "/docs/data/destination-catalog/userlist-cohort-sync",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/sendgrid",
-      "destination": "/data/source-catalog/sendgrid",
+      "source": "/docs/data/destinations/userlist",
+      "destination": "/docs/data/destination-catalog/userlist",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/singular",
-      "destination": "/data/source-catalog/singular",
+      "source": "/docs/data/destinations/webengage",
+      "destination": "/docs/data/destination-catalog/webengage",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/snowflake/",
-      "destination": "/data/source-catalog/snowflake",
+      "source": "/docs/data/destinations/zeda-io",
+      "destination": "/docs/data/destination-catalog/zeda-io",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/split",
-      "destination": "/data/source-catalog/split",
+      "source": "/docs/data/destinations/blueshift-cohort",
+      "destination": "/docs/data/destination-catalog/blueshift-cohort",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/sprig",
-      "destination": "/data/source-catalog/sprig",
+      "source": "/docs/data/destinations/candu-event-streaming",
+      "destination": "/docs/data/destination-catalog/candu-event-streaming",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/survicate",
-      "destination": "/data/source-catalog/survicate",
+      "source": "/docs/data/destinations/commandbar-cohort",
+      "destination": "/docs/data/destination-catalog/commandbar-cohort",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/taplytics",
-      "destination": "/data/source-catalog/taplytics",
+      "source": "/docs/data/destinations/hubspot-event-streaming-v2",
+      "destination": "/docs/data/destination-catalog/hubspot-event-streaming-v2",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/tealium",
-      "destination": "/data/source-catalog/tealium",
+      "source": "/docs/data/destinations/humanic-ai-cohort",
+      "destination": "/docs/data/destination-catalog/humanicai-cohort",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/tribe",
-      "destination": "/data/source-catalog/tribe",
+      "source": "/docs/data/destinations/humanic-ai-event-streaming",
+      "destination": "/docs/data/destination-catalog/humanicai-event-stream",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/userflow",
-      "destination": "/data/source-catalog/userflow",
+      "source": "/docs/data/destinations/thetradedesk",
+      "destination": "/docs/data/destination-catalog/thetradedesk",
       "statusCode": 301
     },
     {
-      "source": "/data/sources/userguiding",
-      "destination": "/data/source-catalog/userguiding",
+      "source": "/docs/data/destinations/chameleon-cohort",
+      "destination": "/docs/data/destination-catalog/chameleon-cohort",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360016606991-Taxonomy-API",
-      "destination": "/data/taxonomy-api",
+      "source": "/docs/data/destinations/google-analytics-4-ios-android",
+      "destination": "/docs/data/destination-catalog/google-analytics-4-ios-android",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/5913315221915-Transformations-Retroactively-modify-your-event-data-structure",
-      "destination": "/data/transformations",
+      "source": "/docs/data/destinations/hubspot",
+      "destination": "/docs/data/destination-catalog/hubspot",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/17646803703323-Understand-IP-address-and-location-properties",
-      "destination": "/data/understand-ip-address-and-location",
+      "source": "/docs/data/ampli/cli",
+      "destination": "/docs/sdks/ampli/ampli-cli",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/17050314884635-Set-or-change-a-property-s-data-type",
-      "destination": "/data/update-property-data-type",
+      "source": "/docs/data/ampli/sdk",
+      "destination": "/docs/sdks/ampli/ampli-wrapper",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/17321563434267-Streamline-and-improve-your-tracking-plan-with-the-AI-Data-Assistant",
-      "destination": "/data/use-ai-data-assistant",
+      "source": "/docs/data/ampli/migration",
+      "destination": "/docs/sdks/ampli/migrate-to-ampli",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/16805456124699-Use-Ampli",
-      "destination": "/data/use-ampli",
+      "source": "/docs/data/ampli/git-workflow",
+      "destination": "/docs/sdks/ampli/source-control",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/115002380567-Overview-of-user-properties-and-event-properties-in-Amplitude",
-      "destination": "/data/user-properties-and-events",
+      "source": "/docs/data/ampli/integrating-with-ci",
+      "destination": "/docs/sdks/ampli/validate-in-ci",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/5078870942363-Validate-events-with-Observe",
-      "destination": "/data/validate-events",
+      "source": "/docs/analytics/find-api-credentials",
+      "destination": "/docs/apis/authentication",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/5078713391387-Work-with-branches",
-      "destination": "/data/work-with-branches",
+      "source": "/docs/guides/amplitude-keys-guide",
+      "destination": "/docs/apis/keys-and-tokens",
       "statusCode": 301
     },
     {
-      "source": "/data/ttl-configuration/",
-      "destination": "/data/time-to-live",
+      "source": "/docs/experiment/guides/troubleshooting/exposures-without-assignments",
+      "destination": "/docs/experiment/troubleshooting/exposures-without-assignments",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/16806069264539-Connect-to-a-source",
-      "destination": "/cdp/sources/connect-to-source",
+      "source": "/docs/experiment/guides/troubleshooting/restarting-experiments",
+      "destination": "/docs/experiment/troubleshooting/restart-an-experiment",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360043976571-Understand-the-data-differences-between-Amplitude-Snowflake-and-the-Export-API",
-      "destination": "/cdp/sources/export-api-differences",
+      "source": "/docs/experiment/guides/troubleshooting/sample-ratio-mismatch",
+      "destination": "/docs/experiment/troubleshooting/sample-ratio-mismatch",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/115003116888-Track-revenue",
-      "destination": "/cdp/sources/instrument-track-revenue",
+      "source": "/docs/experiment/guides/troubleshooting/variant-jumping",
+      "destination": "/docs/experiment/troubleshooting/variant-jumping",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/115002323627-Track-sessions",
-      "destination": "/cdp/sources/instrument-track-sessions",
+      "source": "/docs/data/sdks/flutter/migration",
+      "destination": "/docs/sdks/analytics/flutter/flutter-sdk-4-0-migration-guide",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/115003135607-Track-unique-users",
-      "destination": "/cdp/sources/instrument-track-unique-users",
+      "source": "/docs/data/sdks/flutter-4",
+      "destination": "/docs/sdks/analytics/flutter/flutter-sdk-4-0",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/18749912891419-How-Amplitude-calculates-session-length",
-      "destination": "/cdp/sources/session-length",
+      "source": "/docs/data/sdks/flutter",
+      "destination": "/docs/sdks/analytics/flutter/flutter-sdk",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/20997387039387-Interpret-your-User-Sessions-chart",
-      "destination": "/analytics/charts/user-sessions/user-sessions-interpret",
+      "source": "/docs/data/sdks/go/ampli",
+      "destination": "/docs/sdks/analytics/go/ampli-for-go",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/231275508-The-User-Sessions-chart-Track-engagement-frequency-and-duration",
-      "destination": "/analytics/charts/user-sessions/user-sessions-track-engagement-frequency",
+      "source": "/docs/data/sdks/go",
+      "destination": "/docs/sdks/analytics/go/go-sdk",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/4455062287387-How-Amplitude-calculates-the-values-in-Experiment-Analysis-charts",
-      "destination": "/experiment/under-the-hood/experiment-analysis-chart-calculation",
+      "source": "/docs/data/sdks/java/ampli",
+      "destination": "/docs/sdks/analytics/java/ampli-for-java-sdk",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360061687371-Performance-and-scaling-in-Amplitude-Experiment",
-      "destination": "/experiment/under-the-hood/experiment-performance-scaling",
+      "source": "/docs/data/sdks/java",
+      "destination": "/docs/sdks/analytics/java/jre-java-sdk",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360061687351-How-randomization-works-in-Amplitude-Experiment",
-      "destination": "/experiment/under-the-hood/experiment-randomization",
+      "source": "/docs/partners/cohort-integration-guide",
+      "destination": "/docs/partners/create-a-cohort-syncing-integration",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/4403176829709-How-Amplitude-Experiment-uses-sequential-testing-for-statistical-inference",
-      "destination": "/experiment/under-the-hood/experiment-sequential-testing",
+      "source": "/docs/partners/sending-cohorts",
+      "destination": "/docs/partners/receiving-behavioral-cohorts",
       "statusCode": 301
     },
     {
-      "source": "/session-replay/sdks/standalone/",
-      "destination": "/analytics/session-replay/session-replay-plugin",
+      "source": "/docs/partners/event-ingestion-integration-guide",
+      "destination": "/docs/partners/create-an-event-ingestion-integration",
       "statusCode": 301
     },
     {
-      "source": "/session-replay/sdks/plugin/",
-      "destination": "/analytics/session-replay/session-replay-standalon-sdk",
+      "source": "/docs/partners/event-streaming-integration-guide",
+      "destination": "/docs/partners/create-an-event-streaming-integration",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/4405832771995-Add-variants-to-your-experiment",
-      "destination": "/experiment/workflow/add-variants",
+      "source": "/docs/partners/integration-portal",
+      "destination": "/docs/partners/integration-portal",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360061270372-Configure-your-experiment",
-      "destination": "/experiment/workflow/configure",
+      "source": "/docs/data/sdks/python/ampli",
+      "destination": "/docs/sdks/analytics-sdks/python/ampli-for-python-sdk",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/20009673705627-Configure-your-experiment-s-delivery",
-      "destination": "/experiment/workflow/configure-delivery",
+      "source": "/docs/data/sdks/python",
+      "destination": "/docs/sdks/analytics-sdks/python/python-sdk",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360061687551-Create-a-new-experiment",
-      "destination": "/experiment/workflow/create",
+      "source": "/docs/data/sdks/typescript-react-native/ampli",
+      "destination": "/docs/sdks/analytics/react-native/ampli-for-the-react-native-sdk",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/9795802005019-Define-your-experiment-s-audience",
-      "destination": "/experiment/workflow/define-audience",
+      "source": "/docs/data/sdks/typescript-react-native/migration",
+      "destination": "/docs/sdks/analytics/react-native/migrate-to-the-latest-react-native-sdk",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/4405839607579-Define-your-experiment-s-goals",
-      "destination": "/experiment/workflow/define-goals",
+      "source": "/docs/data/sdks/react-native",
+      "destination": "/docs/sdks/analytics/react-native/react-native-sdk-maintenance",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/11502996649371-Estimate-the-duration-of-your-experiments",
-      "destination": "/experiment/workflow/experiment-estimate-duration",
+      "source": "/docs/data/sdks/typescript-react-native",
+      "destination": "/docs/sdks/analytics/react-native/react-native-sdk",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/13448368364187-Finalize-your-experiment-s-statistical-preferences",
-      "destination": "/experiment/workflow/finalize-statistical-preferences",
+      "source": "/docs/data/sdks/unity",
+      "destination": "/docs/sdks/analytics/unity/unity-sdk",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360061687631-Learn-from-your-experiment",
-      "destination": "/experiment/workflow/experiment-learnings",
+      "source": "/docs/data/sdks/unreal",
+      "destination": "/docs/sdks/analytics/unreal/unreal-sdk",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360061687611-Test-and-launch-your-experiment",
-      "destination": "/experiment/workflow/experiment-test",
+      "source": "/docs/hc/en-us/articles/26004068419995-Build-a-warehouse-native-data-model",
+      "destination": "/docs/data/warehouse-native/build-a-warehouse-native-data-model",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360061270832-Troubleshoot-your-experiment",
-      "destination": "/experiment/workflow/experiment-troubleshoot",
+      "source": "/docs/hc/en-us/articles/26003996242203-Warehouse-native-Amplitude-Run-analyses-from-data-in-your-own-data-warehouse",
+      "destination": "/docs/data/warehouse-native/overview",
       "statusCode": 301
     },
     {
-      "source": "/hc/en-us/articles/360061687311-Working-with-feature-flags-and-feature-rollouts",
-      "destination": "/experiment/workflow/feature-flag-rollouts",
+      "source": "/docs/hc/en-us/articles/26004084762011-Warehouse-native-Amplitude-Best-Practices",
+      "destination": "/docs/data/warehouse-native/warehouse-native-amplitude-best-practices",
       "statusCode": 301
     }
   ]

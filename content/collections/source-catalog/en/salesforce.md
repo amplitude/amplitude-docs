@@ -26,19 +26,17 @@ In Salesforce, objects such as Account are structured as tables, where each fiel
 2. **Group Name Field:** a column of the table that will be used as the group identifier. Typically this column should identify a row in the table uniquely
 3. **Group Properties:** a list of columns that will be imported into Amplitude.
 
-![screenshot of the mapping at a high level](../../docs/assets/images/SFDC-mapping-high-level.png)
-
 ## Detailed setup instruction
 
 ### Part 1: Set up account-level reporting 
 
-Verify that you have [account-level reporting](https://help.amplitude.com/hc/en-us/articles/5332668738331) set up in Amplitude.
+Verify that you have [account-level reporting](/docs/analytics/account-level-reporting-setup) set up in Amplitude.
 
 ### Part 2: Grant Amplitude access to your Salesforce data
 
 1. In Amplitude Data, navigate to **Data Sources**.
 2. Select the **Salesforce V2** tile.
-3. Click on **Connect to** to initiate the authentication process. Once authenticated, you should see a valid email address associated with your Salesforce account.
+3. Click **Connect to**, and start the authentication process. Once authenticated, you should see a valid email address associated with your Salesforce account.
 4. Click on **Next** located at the top right corner to continue with the mapping setup.
 
 ### Part 3: Mapping Setup

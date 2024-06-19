@@ -26,7 +26,7 @@ There is also an [Experiment Results FAQ article](https://help.amplitude.com/hc/
 To create an A/B test and see the results, follow these steps:
 
 1. Click *Create New* > *Analysis* > *Experiment Results*.
-2. In the Primary Metric module, click *+ Add Metric* or *+* *Define single-use* metricto begin setting up your primary metric. A third option, *Import*, allows you to [import your experiment settings as JSON](/docs/experiment/advanced-techniques/import-export-settings).
+2. In the Primary Metric module, click *+ Add Metric* or *+* *Define single-use metric* to begin setting up your primary metric. A third option, *Import*, allows you to [import your experiment settings as JSON](/docs/experiment/advanced-techniques/import-export-settings).
 3. If adding a single-use metric, use the drop-down menu to specify the **metric type** in the *Define Metric* fly-out panel:
 
       * Unique conversions

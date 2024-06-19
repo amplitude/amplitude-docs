@@ -13,6 +13,7 @@ integration_icon: partner-icons/iterable.svg
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1713566725
+source: https://www.docs.developers.amplitude.com/data/destinations/iterable-cohort/
 ---
 
 Send Amplitude cohorts to Iterable to use them in your customer engagement efforts. 

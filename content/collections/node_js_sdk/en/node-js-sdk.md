@@ -16,9 +16,27 @@ shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/analytics-node.svg'
 ampli_article: 5f0a9b3c-627c-4014-bb2e-d1ac1c465db9
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1710272856
+source: https://www.docs.developers.amplitude.com/data/sdks/typescript-node/
 ---
 
 The Node.js SDK lets you send events to Amplitude.
+
+## Install the SDK
+
+Install the dependency with npm or yarn.
+
+{{partial:tabs tabs="npm, yarn"}}
+{{partial:tab name="npm"}}
+```bash
+npm install @amplitude/analytics-node
+```
+{{/partial:tab}}
+{{partial:tab name="yarn"}}
+```bash
+yarn add @amplitude/analytics-node
+```
+{{/partial:tab}}
+{{/partial:tabs}}
 
 ## Initialize the SDK
 

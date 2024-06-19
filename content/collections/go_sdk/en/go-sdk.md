@@ -9,8 +9,9 @@ supported_languages:
 github_link: 'https://github.com/amplitude/analytics-go'
 releases_url: 'https://github.com/amplitude/analytics-go/releases'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715725063
+updated_at: 1718672500
 ampli_article: c71d80ea-d8a8-4bf2-8c78-fa3e8f061a95
+source: https://www.docs.developers.amplitude.com/data/sdks/go/
 shields_io_badge: 'https://img.shields.io/github/go-mod/go-version/amplitude/analytics-go'
 ---
 The Go SDK lets you send events to Amplitude from your Go application.
@@ -26,6 +27,16 @@ go get github.com/amplitude/analytics-go
 ## Initialize the SDK
 
 You must initialize the SDK before you can instrument any events. The API key for your Amplitude project is required to construct a Config `struct`. Use that Config `struct` to initialize a client `struct` which implements Client interface. You can use it across requests after it's initialized. See examples in the next section.
+
+```go
+import (
+    "github.com/amplitude/analytics-go/amplitude"
+)
+
+config := amplitude.NewConfig(AMPLITUDE_API_KEY)
+
+client := amplitude.NewClient(config)
+```
 
 ## Configure the SDK
 

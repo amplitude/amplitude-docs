@@ -12,8 +12,9 @@ bundle_url: 'https://www.npmjs.com/package/@amplitude/analytics-react-native'
 api_reference_url: 'https://amplitude.github.io/Amplitude-TypeScript/'
 shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/analytics-react-native'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715723218
+updated_at: 1718672605
 ampli_article: 4029875a-0e71-4ad0-869b-289dea48b625
+source: https://www.docs.developers.amplitude.com/data/sdks/typescript-react-native/
 migration_guide:
   - 0d5a2d8a-7266-4442-807c-2f2f84fe1ae5
 ---

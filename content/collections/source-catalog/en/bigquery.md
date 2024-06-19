@@ -174,3 +174,21 @@ FROM your_table;
 
 Be aware that, unlike other data warehouse products, BigQuery treats "double-quoted strings" as string literals. 
 This means that you can't use them to quote identifiers like column names or table names, or the SQL fails to execute in BigQuery.
+
+## BigQuery dedupe table
+
+To create a BigQuery dedupe table:
+
+```sql
+CREATE OR REPLACE TABLE FUNCTION `amplitude_bq_ingestion`.deduplicated_EVENTS(start_date DATE, end_date DATE)
+AS
+SELECT *
+FROM (SELECT *,
+             ROW_NUMBER() OVER (
+                 PARTITION BY uuid
+                 ) rn
+      FROM `amplitude_bq_ingestion`.`EVENTS`
+      WHERE DATE(event_time) >= start_date
+        and DATE(event_time) <= end_date) t
+WHERE rn = 1;
+```

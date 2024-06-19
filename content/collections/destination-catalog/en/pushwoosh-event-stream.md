@@ -3,6 +3,7 @@ id: 7383a1ed-a8a5-42b8-b873-f88935f13ec1
 blueprint: destination-catalog
 title: 'Pushwoosh (Event Stream'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+source: https://www.docs.developers.amplitude.com/data/destinations/pushwoosh-event-streaming/
 connection: destination
 integration_type:
   - event-streaming

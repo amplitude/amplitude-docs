@@ -15,6 +15,7 @@ use_cases:
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1713563166
+source: https://www.docs.developers.amplitude.com/data/destinations/google-tag-manager-event-streaming/
 ---
 [Google Tag Manager](https://developers.google.com/tag-platform/tag-manager/) is a platform to manage all your website's tags without code.
 

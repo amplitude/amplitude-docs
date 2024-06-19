@@ -1,4 +1,5 @@
 ---
+source: https://www.docs.developers.amplitude.com/data/ampli/sdk/
 id: 5dc3be0e-a645-43e5-a8db-e0277c8a9f0e
 blueprint: ampli
 title: 'Ampli Wrapper'

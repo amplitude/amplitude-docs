@@ -236,3 +236,5 @@ Planhat
 Talon.One
 Jetbrains
 VSCode
+Candu
+CommandBar

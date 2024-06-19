@@ -8,344 +8,195 @@ tabs:
           -
             handle: browser
             field:
-              input_type: text
-              antlers: false
               type: text
               display: Browser
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               width: 50
+              localizable: false
           -
             handle: node
             field:
-              input_type: text
-              antlers: false
               type: text
               display: Node
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: android
             field:
-              input_type: text
-              antlers: false
               type: text
               display: Android
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               width: 50
+              localizable: false
           -
             handle: ios
             field:
-              input_type: text
-              antlers: false
               type: text
               display: iOS
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: java
             field:
-              input_type: text
-              antlers: false
               type: text
               display: Java
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: react_native
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'React Native'
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: flutter
             field:
-              input_type: text
-              antlers: false
               type: text
               display: Flutter
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: python
             field:
-              input_type: text
-              antlers: false
               type: text
               display: Python
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: unity
             field:
-              input_type: text
-              antlers: false
               type: text
               display: Unity
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: unreal
             field:
-              input_type: text
-              antlers: false
               type: text
               display: Unreal
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: go
             field:
-              input_type: text
-              antlers: false
               type: text
               display: Go
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
+          -
+            handle: visual_labeling_plugin
+            field:
+              type: text
+              display: 'Visual Labeling Plugin'
+              localizable: false
+              width: 50
       -
         display: 'Session Replay'
         fields:
           -
             handle: session_replay_plugin
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Session Replay Plugin'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               width: 50
+              localizable: false
           -
             handle: session_replay_standalone
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Session Replay Standalone'
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: session_replay_android_plugin
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Session Replay Android Plugin'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               width: 50
+              localizable: false
           -
             handle: session_replay_android_standalone
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Session Replay Android Standalone'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
               width: 50
+              localizable: false
       -
         display: Experiment
         fields:
           -
             handle: experiment_javascript
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Experiment Javascript'
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: experiment_android
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Experiment Android'
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: experiment_ios
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Experiment iOS'
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: experiment_react_native
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Experiment React Native'
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: experiment_node
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Experiment Node'
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: experiment_ruby
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Experiment Ruby'
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: experiment_jvm
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Experiment JVM'
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: experiment_go
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Experiment Go'
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: experiment_python
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Experiment Python'
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: experiment_php
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Experiment PHP'
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: experiment_evaluation_proxy
             field:
-              input_type: text
-              antlers: false
               type: text
               display: 'Experiment Evaluation Proxy'
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false

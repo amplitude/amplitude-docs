@@ -24,7 +24,6 @@ updated_at: 1713481007
 
 ## Considerations
 
-- This integration is only available for customers who have paid plans with Amplitude.
 - You must enable this integration in each Amplitude project you want to use it in.
 - You need a paid The Trade Desk plan to enable this integration.
 - You can map identifiers to TheTradeDesk's 36 character GUID, the raw device GUID (for example, iOS IDFA or Android AAID), or TheTradeDesk's Unified ID 2.0 (UID2). For more information about UID2, see TheTradeDesk's [Unified IDs](https://partner.thetradedesk.com/v3/portal/data/doc/UnifiedIDs).

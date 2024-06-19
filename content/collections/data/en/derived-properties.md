@@ -9,7 +9,7 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717621472
+updated_at: 1718733210
 ---
 In some cases, you may want to run analyses based on properties that were not sent to Amplitude but can be derived from existing properties. Amplitude Data’s **derived properties** allow you to create new event and user properties retroactively, based on functions and operators that you can apply across multiple existing properties. These do not affect your raw data and will be computed on the fly.
 
@@ -19,7 +19,7 @@ For example, you may want to create a chart that groups by whether an item added
 
 ### Feature availability
 
-This feature is available to users on **Enterprise plans only**.
+This feature is available to users on **Enterprise plans only**. See the [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Create a derived property
 
@@ -46,11 +46,11 @@ As long as the formula you entered is valid, you can test the results in the spa
 
 Taking our previous referrer URL example, you can write a formula using string operators that looks like this:
 
-`SPLIT(PROPERTY('referrer\_url','event'), "/", 2)`
+`SPLIT(PROPERTY('referrer_url','event'), "/", 2)`
 
 This formula will convert a value like "https://www.google.com/search?q=amplitude" into the value "www.google.com." But what if you want to strip this down even further, to just "google"? You can achieve this by wrapping the result of a SPLIT function inside another SPLIT function. The resulting formula would look like this:
 
-`SPLIT(SPLIT(PROPERTY('referrer\_url','event'), "/", 2), ".", 1)`
+`SPLIT(SPLIT(PROPERTY('referrer_url','event'), "/", 2), ".", 1)`
 
 Amplitude also supports math operators. Let’s say you have events that contain subtotal and tip properties, and you want to run some analyses based on the total amount. You can use this formula:
 
@@ -68,52 +68,53 @@ Queries using derived properties may experience longer query times depending on 
 
 ### String functions
 
-| **Function** | **Description** | **Example** | **Result** |
-| --- | --- | --- | --- |
-| REGEXEXTRACT (text\_property, regular\_expression) | Extracts substrings matching the regular\_expression | REGEXEXTRACT("shirt-150", "[0-9]+") | "150" |
-| REGEXREPLACE (text\_property, regular\_expression, replacement\_text) | Replaces the property's values with text matching the regular\_expression with replacement\_text | REGEXREPLACE("en-US", "-.\*", "") | "en" |
-| CONCAT(property1, property2) | Concatenates a property with another property or text value. | CONCAT("firstName", "lastName") | "firstName lastName" |
-| LOWERCASE (text\_property) | Lowercases all characters in property's values | LOWERCASE("John") | "john" |
-| UPPERCASE (text\_property) | Uppercases all characters in property's values | UPPERCASE("John") | "JOHN" |
-| SPLIT (property, separator, [index]) | Split a property based on a delimiter and return an array of split elements.  Takes an optional index that returns the element at that index. | SPLIT("a\_b\_c", "\_") <br/>SPLIT("john@example.com", "@", 0)  | ["a", "b", "c"] <br />"john" |
-| REMOVE (property, text) | Remove all occurrence of text in property | REMOVE("en-US", "en-") |   |
-| EXTRACT\_FROM\_DICT (property, text) | Extract a value from a dictionary string based on a specific key | EXTRACT\_FROM\_DICT("{'id': 1, 'name': 'John', 'country': 'US'}", "name") | "John" |
+| **Function**                                                          | **Description**                                                                                                                               | **Example**                                                               | **Result**                   |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ---------------------------- |
+| REGEXEXTRACT (text_property, regular_expression)                    | Extracts substrings matching the regular_expression                                                                                          | REGEXEXTRACT("shirt-150", "[0-9]+")                                       | "150"                        |
+| REGEXREPLACE (text_property, regular_expression, replacement_text) | Replaces the property's values with text matching the regular_expression with replacement_text                                              | REGEXREPLACE("en-US", "-.*", "")                                         | "en"                         |
+| CONCAT(property1, property2)                                          | Concatenates a property with another property or text value.                                                                                  | CONCAT("firstName", "lastName")                                           | "firstName lastName"         |
+| LOWERCASE (text_property)                                            | Lowercases all characters in property's values                                                                                                | LOWERCASE("John")                                                         | "john"                       |
+| UPPERCASE (text_property)                                            | Uppercases all characters in property's values                                                                                                | UPPERCASE("John")                                                         | "JOHN"                       |
+| SPLIT (property, separator, [index])                                  | Split a property based on a delimiter and return an array of split elements.  Takes an optional index that returns the element at that index. | SPLIT("a_b_c", "_") <br/>SPLIT("john@example.com", "@", 0)             | ["a", "b", "c"] <br />"john" |
+| REMOVE (property, text)                                               | Remove all occurrence of text in property                                                                                                     | REMOVE("en-US", "en-")                                                    |                              |
+| EXTRACT_FROM_DICT (property, text)                                  | Extract a value from a dictionary string based on a specific key                                                                              | EXTRACT_FROM_DICT("{'id': 1, 'name': 'John', 'country': 'US'}", "name") | "John"                       |
 
 ### Math functions
 
-| **Function** | **Description** | **Example** | **Result** |
-| --- | --- | --- | --- |
-| SUM(num\_property1, num\_property2) or ADDITION( | Adds a property with other properties or with numbers. Equivalent to the `+` operator | SUM(subtotal, tip) >>>  SUM(10, 2) | 12 |
-| MINUS(num\_property1, num\_property2) or SUBTRACT( | Subtracts a property with other properties or with numbers. Equivalent to the `-` operator. | MINUS(total, tip) >>> MINUS(12, 2) | 10 |
-| MULTIPLY (num\_property1, num\_property2) | Multiplies a property with other properties and/or with numbers. Equivalent to the `\*` operator. | MULTIPLY(price, quantity) >>> MULTIPLY(2.50, 4) | 10 |
-| DIVIDE(numerator, denominator) | Divides a property by another property or number. Equivalent to the `/` operator. | DIVIDE(calorie\_intake, calorie\_goal) >>> DIVID(1000, 2000) | 0.5 |
-| POWER(num\_property, exponent) | Takes the property's values to the exponent power | POWER(property, 3) >>> POWER(2, 3) | 8 |
-| MIN(num\_property1, num\_property\_2) | Returns the minimum value between two numbers. | MIN(5, 10) | 5 |
-| MAX(num\_property1, num\_property\_2) | Returns the maximum value between two numbers. | MAX(5, 10) | 10 |
-| CEIL(num\_property) | Rounds up to the nearest integer. | CEIL(3.8) | 4.0 |
-| FLOOR(num\_property) | Rounds down to the nearest integer. | FLOOR(3.8) | 3.0 |
+| **Function**                                       | **Description**                                                                                   | **Example**                                                  | **Result** |
+| -------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ | ---------- |
+| SUM(num_property1, num_property2) or ADDITION(   | Adds a property with other properties or with numbers. Equivalent to the `+` operator             | SUM(subtotal, tip) >>>  SUM(10, 2)                           | 12         |
+| MINUS(num_property1, num_property2) or SUBTRACT( | Subtracts a property with other properties or with numbers. Equivalent to the `-` operator.       | MINUS(total, tip) >>> MINUS(12, 2)                           | 10         |
+| MULTIPLY (num_property1, num_property2)          | Multiplies a property with other properties and/or with numbers. Equivalent to the `*` operator. | MULTIPLY(price, quantity) >>> MULTIPLY(2.50, 4)              | 10         |
+| DIVIDE(numerator, denominator)                     | Divides a property by another property or number. Equivalent to the `/` operator.                 | DIVIDE(calorie_intake, calorie_goal) >>> DIVID(1000, 2000) | 0.5        |
+| POWER(num_property, exponent)                     | Takes the property's values to the exponent power                                                 | POWER(property, 3) >>> POWER(2, 3)                           | 8          |
+| MIN(num_property1, num_property_2)              | Returns the minimum value between two numbers.                                                    | MIN(5, 10)                                                   | 5          |
+| MAX(num_property1, num_property_2)              | Returns the maximum value between two numbers.                                                    | MAX(5, 10)                                                   | 10         |
+| CEIL(num_property)                                | Rounds up to the nearest integer.                                                                 | CEIL(3.8)                                                    | 4.0        |
+| FLOOR(num_property)                               | Rounds down to the nearest integer.                                                               | FLOOR(3.8)                                                   | 3.0        |
 
 ### Object functions
 
-| **Function** | **Description** | **Example** | **Result** |
-| --- | --- | --- | --- |
-| EXTRACT\_FROM\_DICT (property, text) | Extract a value from a dictionary string based on a specific key | EXTRACT\_FROM\_DICT("{'id': 1, 'name': 'John', 'country': 'US'}", "name") | "John" |
+| **Function**                         | **Description**                                                  | **Example**                                                               | **Result** |
+| ------------------------------------ | ---------------------------------------------------------------- | ------------------------------------------------------------------------- | ---------- |
+| EXTRACT_FROM_DICT (property, text) | Extract a value from a dictionary string based on a specific key | EXTRACT_FROM_DICT("{'id': 1, 'name': 'John', 'country': 'US'}", "name") | "John"     |
 
 ### Date/ time functions
 
 Amplitude requires all Unix timestamps to be expressed in milliseconds.
 
-| **Function** | **Description** | **Example** | **Result** |
-| --- | --- | --- | --- |
-| DATE\_TO\_LONG (date\_property) | Convert date into unix timestamp | DATE\_TO\_LONG("2020-12-01") | 1606780800000 |
-| TIME\_TO\_LONG (time\_property) | Convert date time (YYYY-MM-dd[T]HH:mm:ss) into unix timestamp | TIME\_TO\_LONG("2020-12-01 12:00:00") | 1606780800000 |
-| LONG\_TO\_TIME (number\_property) | Convert unix timestamp into date-time | LONG\_TO\_TIME (1606780800000) | "2020-12-01 12:00:00" |
-| LONG\_TO\_DATE (number\_property) | Convert unix timestamp into date | LONG\_TO\_DATE (1606780800000) | "2020-12-01" |
-| DATE\_TIME\_FORMATTER (datetime\_property, old\_format, new\_format) | Convert format of a datetime property to a new format.
-See [Java SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) for more details. | DATE\_TIME\_FORMATTER ("05.01.2021 12:00:00:000", "MM.dd.yyyy hh:mm:ss:SSS", "yyyy/MM/dd") | "2021/05/01" |
-| TODAY() | Current day represented as a long in epoch time in UTC. | TODAY() - start\_date\_in\_ms >>> 1609459200000 - 1577836800000  | 31622400000 |
-| EVENT\_HOUR\_OF\_DAY() | Get hour of day from the event's timestamp. (0-23) | EVENT\_HOUR\_OF\_DAY()  | 10 |
-| EVENT\_DAY\_OF\_WEEK() | Get day of week from the event's timestamp as string. i.e. Monday | EVENT\_DAY\_OF\_WEEK() | Monday |
+| **Function**                                                                                                             | **Description**                                                                                                                                                                 | **Example**                                                                                | **Result**            |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | --------------------- |
+| DATE_TO_LONG (date_property)                                                                                          | Convert date into unix timestamp                                                                                                                                                | DATE_TO_LONG("2020-12-01")                                                               | 1606780800000         |
+| TIME_TO_LONG (time_property)                                                                                          | Convert date time (YYYY-MM-dd[T]HH:mm:ss) into unix timestamp                                                                                                                   | TIME_TO_LONG("2020-12-01 12:00:00")                                                      | 1606780800000         |
+| LONG_TO_TIME (number_property)                                                                                        | Convert unix timestamp into date-time                                                                                                                                           | LONG_TO_TIME (1606780800000)                                                             | "2020-12-01 12:00:00" |
+| LONG_TO_DATE (number_property)                                                                                        | Convert unix timestamp into date                                                                                                                                                | LONG_TO_DATE (1606780800000)                                                             | "2020-12-01"          |
+| DATE_TIME_FORMATTER (datetime_property, old_format, new_format)                                                     | Convert format of a datetime property to a new format.                                                                                                                          |
+| See [Java SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) for more details. | DATE_TIME_FORMATTER ("05.01.2021 12:00:00:000", "MM.dd.yyyy hh:mm:ss:SSS", "yyyy/MM/dd")                                                                                      | "2021/05/01"                                                                               |
+| TODAY()                                                                                                                  | Current day represented as a long in epoch time in UTC.                                                                                                                         | TODAY() - start_date_in_ms >>> 1609459200000 - 1577836800000                            | 31622400000           |
+| EVENT_HOUR_OF_DAY()                                                                                                   | Get hour of day from the event's timestamp. (0-23)                                                                                                                              | EVENT_HOUR_OF_DAY()                                                                     | 10                    |
+| EVENT_DAY_OF_WEEK()                                                                                                   | Get day of week from the event's timestamp as string. i.e. Monday                                                                                                               | EVENT_DAY_OF_WEEK()                                                                     | Monday                |
+| DATE_TIME_FORMATTER (datetime_property, old_format, new_format)                                                     | Convert format of a datetime property to a new format. See [Java SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) for more details. | DATE_TIME_FORMATTER ("05.01.2021 12:00:00:000", "MM.dd.yyyy hh:mm:ss:SSS", "yyyy/MM/dd") | "2021/05/01"          |
 
 ### Array functions
 
@@ -133,12 +134,12 @@ Example 3
  CONCAT(propA, propB) = [1a]
 ```
 
-| **Function** | **Description** | **Example** | **Result** |
-| --- | --- | --- | --- |
-| ITEM\_COUNT (property) | Length of array property; defaults to 1 for non-arrayed properties | ITEM\_COUNT(products) | 3 |
-| GREATEST(property) | Get max value of the array | GREATEST(prices) | 10 |
-| LEAST(property) | Get min value of the array | LEAST(prices) | 2 |
-| COALESCE(property) | Get the first non-null value of the array | COALESCE(locations\) | 'California' |
+| **Function**           | **Description**                                                    | **Example**           | **Result**   |
+| ---------------------- | ------------------------------------------------------------------ | --------------------- | ------------ |
+| ITEM_COUNT (property) | Length of array property; defaults to 1 for non-arrayed properties | ITEM_COUNT(products) | 3            |
+| GREATEST(property)     | Get max value of the array                                         | GREATEST(prices)      | 10           |
+| LEAST(property)        | Get min value of the array                                         | LEAST(prices)         | 2            |
+| COALESCE(property)     | Get the first non-null value of the array                          | COALESCE(locations)  | 'California' |
 
 ### Property functions
 
@@ -146,61 +147,72 @@ When you select a property from the *Insert Property* dropdown, Amplitude Data w
 
 These functions can only be used within another function.
 
-| Function | Description | Example  | Result |
-| --- | --- | --- | --- |
-| PROPERTY(property\_name, property\_type) | Reference to property within Amplitude. 
-Possible property types: “user”, “event”, “derived”, “lookup”, “group” | PROPERTY(“first name”,”user”) | A reference to the user property “first name” in your project. This is how derived properties communicate with Amplitude’s query service. |
-| PROPERTY(property\_name, “group”, group\_type) | Reference to group property within Amplitude. 
-Group type is required for group properties. | PROPERTY(“name”,”group”, “business“) | A reference to the group property “name” in the group type “business” within your project. This is how derived properties communicate with Amplitude’s query service. |
+| Function                                       | Description                                                                                                    | Example                              | Result                                                                                                                                                                |
+| ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| PROPERTY(property_name, property_type)       | Reference to property within Amplitude. Possible property types: “user”, “event”, “derived”, “lookup”, “group” | PROPERTY(“first name”,”user”)        | A reference to the user property “first name” in your project. This is how derived properties communicate with Amplitude’s query service.                             |
+| PROPERTY(property_name, “group”, group_type) | Reference to group property within Amplitude. Group type is required for group properties.                     | PROPERTY(“name”,”group”, “business“) | A reference to the group property “name” in the group type “business” within your project. This is how derived properties communicate with Amplitude’s query service. |
 
 ### Conditional operators
 
-| **Operator** | **Description** | **Example** |
-| --- | --- | --- |
-| IF(logical\_expression, value\_if\_true, value\_if\_false) | Returns value\_if\_true if logical\_expression is true, otherwise return value\_if\_false | IF(price == 0, "true", "false")
-IF(property == "(none)", "Property was not set", "Property was set")
-IF(OR(region == "California", region == "New York"), "USA", "Other") |
-| AND(logical\_expression\_1, logical\_expression\_2) | Returns True if both logical expressions are true, false otherwise | AND(is\_subscribed == "true", has\_valid\_promo == "true") |
-| OR(logical\_expression\_1, logical\_expression\_2) | Returns True if any logical expression is true, false otherwise | OR(has\_email == "true", has\_phone == "true") |
-| SWITCH(expression, case\_1, value\_1, [case\_2, value\_2 ...], [default]) | Evaluates an expression and returns values based on defined cases.  Returns a default value if no cases are met if defined, otherwise null. | SWITCH(tier, "gold", 2, "silver", 2, "bronze", 1, 0) |
+| **Operator**                                                              | **Description**                                                                                                                             | **Example**                                                          |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| IF(logical_expression, value_if_true, value_if_false)                | Returns value_if_true if logical_expression is true, otherwise return value_if_false                                                   | IF(property == "(none)", "Property was not set", "Property was set") |
+| AND(logical_expression_1, logical_expression_2)                       | Returns True if both logical expressions are true, false otherwise                                                                          | AND(is_subscribed == "true", has_valid_promo == "true")           |
+| OR(logical_expression_1, logical_expression_2)                        | Returns True if any logical expression is true, false otherwise                                                                             | OR(has_email == "true", has_phone == "true")                       |
+| SWITCH(expression, case_1, value_1, [case_2, value_2 ...], [default]) | Evaluates an expression and returns values based on defined cases.  Returns a default value if no cases are met if defined, otherwise null. | SWITCH(tier, "gold", 2, "silver", 2, "bronze", 1, 0)                 |
 
 ### String/numerical operators
 
-| **Operator** | **Example** |
-| --- | --- |
-| == | action == “purchase” |
-| != | item\_count != 0 |
-| contains | email contains “@gmail.com” |
-| does not contain | title does not contain “officer” |
-| <, <=, >, >= | duration >= 60 |
-| glob match | url glob match “https://www.google.\*/\*” |
-| glob does not match | query glob does not match “\*/query=\*“ |
-| has prefix | title has prefix “sir” |
+| **Operator**        | **Example**                               |
+| ------------------- | ----------------------------------------- |
+| ==                  | action == “purchase”                      |
+| !=                  | item_count != 0                          |
+| contains            | email contains “@gmail.com”               |
+| does not contain    | title does not contain “officer”          |
+| <, <=, >, >=        | duration >= 60                            |
+| glob match          | url glob match “https://www.google.*/*” |
+| glob does not match | query glob does not match “*/query=*“   |
+| has prefix          | title has prefix “sir”                    |
 
 ### Set operators
 
-*Set literals (e.g. ("apple", "orange")) must appear on the right hand side of the operator*
+Set literals ("apple", "orange") must appear on the right hand side of the operator.
 
-| **Operator** | **Example** |
-| --- | --- |
-| == | IF(product == (“apple”,“orange”), "true", "false")<br />*product = “apple”, Returns "true"* |
-| != | IF(product != (“apple”,“orange”), "true", "false") <br />*product = “banana”, Returns "true"* |
+| **Operator** | **Example**                                                                                   |
+| ------------ | --------------------------------------------------------------------------------------------- |
+| ==           | IF(product == (“apple”,“orange”), "true", "false")<br />*product = “apple”, Returns "true"*   |
+| !=           | IF(product != (“apple”,“orange”), "true", "false") <br />*product = “banana”, Returns "true"* |
 
 ## Common derived properties formulas
 
 This section provides a description of several common use cases for derived properties formulas.
+
+### Calculate the age of a customer
+
+```
+CEIL(
+    DIVIDE(
+        MINUS(
+            PROPERTY('server_upload_time', 'amplitude_user'),
+            TIME_TO_LONG(PROPERTY('Created At', 'user'))
+        ),
+        86400000
+    )
+)
+```
+Use this when tracking a user property with a date-time data type, and you want to calculate the age of that user (in other words, how long that user has existed in your system) since the time of the event that triggered when this user property was set.
 
 ### Get the difference between two dates
 
 ```
 DIVIDE(  
   SUBTRACTION(  
-  DATE\_TO\_LONG(  
+  DATE_TO_LONG(  
   PROPERTY(  
   'Subscription Start Date', 'user'  
   )  
   ),  
-  DATE\_TO\_LONG(  
+  DATE_TO_LONG(  
   PROPERTY(  
   'Subscription End Date', 'user'  
   )  
@@ -214,10 +226,10 @@ Sample output:
 
 ![Date Diff.png](/docs/output/img/data/date-diff-png.png)
 
-In the derived property above, the properties end\_date and start\_date are converted into UNIX timestamps, so that Amplitude can calculate the difference between them. That result is then divided by 86400000, which is the number of milliseconds in one day.
+In the derived property above, the properties end_date and start_date are converted into UNIX timestamps, so that Amplitude can calculate the difference between them. That result is then divided by 86400000, which is the number of milliseconds in one day.
 
 {{partial:admonition type="note" heading=""}}
-This output will be a double type (for example. 2.0).
+This output is a double type (for example. 2.0).
 {{/partial:admonition}}
 
 ### Output a standardized date format
@@ -304,17 +316,13 @@ PROPERTY(
 'Subscription Start Date',  
 'user'  
 ),  
-'\d\d\d\d\-\d\d'  
+'dddd-dd'  
 ),  
 "-01"  
 )
 ```
 
-Sample output:
-
-### Screenshot 2023-08-25 at 4.38.47 PM.png
-
-In this example, the derived property will pull the sign-up month and year from a property that contains a more detailed value, and append the "-01" to set it to the beginning of the month. Use the `REGEXEXTRACT()` to pull the year and month from the value, and use `CONCAT()` to append the "-01". Replace the `$<number>` here with the actual properties.
+In this example, the derived property pulls the sign-up month and year from a property that contains a more detailed value, and append the "-01" to set it to the beginning of the month. Use the `REGEXEXTRACT()` to pull the year and month from the value, and use `CONCAT()` to append the "-01". Replace the `$<number>` here with the actual properties.
 
 ### Replace existing property values
 

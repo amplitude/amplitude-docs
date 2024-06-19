@@ -11,6 +11,7 @@ integration_category:
 partner_maintained: false
 integration_icon: partner-icons/statsig.svg
 exclude_from_sitemap: false
+source: https://www.docs.developers.amplitude.com/data/destinations/statsig-cohort/
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1713811732
 ---

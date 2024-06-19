@@ -267,6 +267,18 @@ Session Replay doesn't set cookies on the user's browser. Instead, it relies on 
 
 If a user opts out of all cookies on your site, use the `optOut` configuration option to disable replay collection for that user.
 
+If a user opts out of all cookies on your site, use the `optOut` configuration option to disable replay collection for that user.
+
+### IndexedDB best practices
+
+To ensure that IndexedDB is initialized and working properly:
+
+* Review CSP headers to ensure they're not overly restrictive. Ensure `default-src` and `script-src` directives allow necessary sources.
+
+* Perform IndexedDB operations are within the same origin. Cross-origin restrictions can block IndexedDB operations.
+
+* Confirm that users use a modern browser that supports IndexedDB. Amplitude recommends the latest versions of Chrome, Firefox, Safari, Edge, or Opera.
+
 ## Known limitations
 
 Keep the following limitations in mind as you implement Session Replay:

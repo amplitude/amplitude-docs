@@ -4,10 +4,11 @@ blueprint: react_native_sdk
 title: 'React Native SDK'
 sdk_status: maintenance
 article_type: core
+source: https://www.docs.developers.amplitude.com/data/sdks/react-native/
 supported_languages:
   - js
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715723294
+updated_at: 1718672635
 github_link: 'https://github.com/amplitude/Amplitude-ReactNative'
 releases_url: 'https://github.com/amplitude/Amplitude-ReactNative/releases'
 bundle_url: 'https://www.npmjs.com/package/@amplitude/react-native'

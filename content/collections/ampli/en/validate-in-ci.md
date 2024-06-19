@@ -1,4 +1,5 @@
 ---
+source: https://www.docs.developers.amplitude.com/data/ampli/integrating-with-ci/
 id: ba4cfecb-940d-42de-b2f2-b2eb5d523bfa
 blueprint: ampli
 title: 'Validate in CI'
