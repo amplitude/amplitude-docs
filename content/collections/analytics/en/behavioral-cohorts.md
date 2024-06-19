@@ -1,14 +1,14 @@
 ---
 id: a7958374-901d-401d-abc9-ba400074edbd
 blueprint: analytic
-title: 'Behavioral cohorts: Identify users with similar behaviors'
+title: 'Identify users with similar behaviors'
 source: 'https://help.amplitude.com/hc/en-us/articles/231881448-Behavioral-cohorts-Identify-users-with-similar-behaviors'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 landing: true
 landing_blurb: 'In Amplitude, a **cohort** is a group of users who share a trait or set of traits.'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717623689
+updated_at: 1718767845
 ---
 In Amplitude, a **cohort** is a group of users who share a trait or set of traits. There are two different types of cohorts: [predictive cohorts](/docs/cdp/audiences/predictions) and **behavioral cohorts**. 
 

@@ -42,6 +42,42 @@
       "statusCode": 301
     },
     {
+      "source": "/docs/hc/en-us/sections/360013708911-The-experimentation-workflow",
+      "destination": "/docs/experiment/overview",
+      "statusCode": 301
+    },
+    {
+      "source": "/analytics",
+      "destination": "/docs",
+      "statusCode": 301
+    },
+    {
+      "source": "/documentation-home",
+      "destination": "/docs",
+      "statusCode": 301
+    },
+    {
+      "source": "/getting-started",
+      "destination": "/docs/getting-started",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/data/sdks",
+      "destination": "/docs/sdks",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/analytics/what-is-amplitude",
+      "destination": "/docs",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/analytics/apis",
+      "destination": "/docs/apis",
+      "statusCode": 301
+    },
+
+    {
       "source": "/docs/hc/en-us",
       "destination": "/docs",
       "statusCode": 301
@@ -3844,6 +3880,11 @@
     {
       "source": "/docs/hc/en-us/articles/26004084762011-Warehouse-native-Amplitude-Best-Practices",
       "destination": "/docs/data/warehouse-native/warehouse-native-amplitude-best-practices",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/partners/integration-portal",
+      "destination": "/docs/partners/integration-portal",
       "statusCode": 301
     }
   ]

@@ -148,6 +148,9 @@ tree:
         id: e2cf6857-5740-4894-8121-e9ff81d9814d
         entry: d8fdb1b4-2027-4785-aea6-375d53143cf8
       -
+        id: 2b74cad9-5bab-4b75-85da-9d10ca7b8446
+        entry: d368cb08-20c7-424f-ba2f-3d902fc10cb6
+      -
         id: 33de7741-62d4-4b58-b6f4-6359a8c6e114
         title: 'Understand the cumulative exposures graph'
         children:
