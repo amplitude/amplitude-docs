@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/hc/en-us/sections/360013708911-The-experimentation-workflow",
+      "destination": "/docs/experiment/overview",
+      "statusCode": 301
+    },
+    {
       "source": "/analytics",
       "destination": "/docs",
       "statusCode": 301
