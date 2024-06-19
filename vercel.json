@@ -2,22 +2,27 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/analytics/api-reference-overview",
+      "destination": "/docs/apis/analytics",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/hc/en-us/sections/360013708911-The-experimentation-workflow",
       "destination": "/docs/experiment/overview",
       "statusCode": 301
     },
     {
-      "source": "/analytics",
+      "source": "/docs/analytics",
       "destination": "/docs",
       "statusCode": 301
     },
     {
-      "source": "/documentation-home",
+      "source": "/docs/documentation-home",
       "destination": "/docs",
       "statusCode": 301
     },
     {
-      "source": "/getting-started",
+      "source": "/docs/getting-started",
       "destination": "/docs/getting-started",
       "statusCode": 301
     },
