@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/guides/wordpress-plugin-guide/",
+      "destination": "/docs/data/amplitude-wordpress-plugin",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/guides/cookies-consent-mgmt-guide",
       "destination": "/docs/get-started/cookies-and-consent-management",
       "statusCode": 301
