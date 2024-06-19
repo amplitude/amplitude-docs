@@ -269,7 +269,7 @@ The list below highlights the required schema for the user properties .CSV file 
     * `TRUE`: Array has unique items
     * `<any>`: Assumes array does not have unique items
 
-**Const value **
+**Const value**
 * Definition: Const value for properties with a const property value type
 
 **Enum values**
