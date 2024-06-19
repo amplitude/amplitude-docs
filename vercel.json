@@ -7,6 +7,11 @@
       "statusCode": 301
     },
     {
+      "source": "/docs/data/sdks/typescript-browser/",
+      "destination": "/docs/sdks/analytics/browser/browser-sdk-1",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/hc/en-us/articles/15581410157339-Change-the-unit-of-currency-your-project-uses-",
       "destination": "/docs/admin/account-management/currency-unit",
       "statusCode": 301
