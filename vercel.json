@@ -2,6 +2,37 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/analytics",
+      "destination": "/docs",
+      "statusCode": 301
+    },
+    {
+      "source": "/documentation-home",
+      "destination": "/docs",
+      "statusCode": 301
+    },
+    {
+      "source": "/getting-started",
+      "destination": "/docs/getting-started",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/data/sdks",
+      "destination": "/docs/sdks",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/analytics/what-is-amplitude",
+      "destination": "/docs",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/analytics/apis",
+      "destination": "/docs/apis",
+      "statusCode": 301
+    },
+
+    {
       "source": "/docs/hc/en-us",
       "destination": "/docs",
       "statusCode": 301
