@@ -23,6 +23,9 @@ source: https://www.docs.developers.amplitude.com/data/sdks/typescript-browser/
 ---
 The Browser SDK lets you send events to Amplitude.
 
+{{partial:admonition type="note" title="Browser SDK 2.0 now available"}}
+An improved version of Amplitude Browser SDK is now available. Amplitude [Browser SDK 2.0](/docs/sdks/analytics/browser/browser-sdk-2) features default event tracking, improved marketing attribution tracking, simplified interface and a lighter weight package. Amplitude recommends the Browser SDK 2.0 for both product analytics and marketing analytics use cases. Upgrade to the latest Browser SDK 2.0. See the [Migration Guide](/docs/sdks/analytics/browser/migrate-from-browser-sdk-1-0-to-2-0) for more information.
+
 ## Initialize the SDK
 
 {{partial:admonition type="note" heading="Sending events"}}
