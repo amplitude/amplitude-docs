@@ -5,9 +5,9 @@ title: 'Create your organization'
 source: 'https://help.amplitude.com/hc/en-us/articles/16796682982427-Create-your-organization'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713216167
+updated_at: 1718767975
 landing: true
-landing_blurb: 'In Amplitude, all your analyses live within a larger project. Projects, in turn, are contained within organizations.'
+landing_blurb: 'All your analyses live in a project, and projects live in organizations.'
 exclude_from_sitemap: false
 this_article_will_help_you:
   - 'Create your first organization in Amplitude'
