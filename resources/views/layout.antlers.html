@@ -49,7 +49,7 @@
 
     </div>
     <div class="top-12 left-0 right-0 fixed bg-white z-10">
-      <div class="w-full pt-5 pl-5">
+      <div class="w-full overflow-scroll md:overflow-auto pt-5 pl-5">
         <div class="box-border">
           {{ partial:top-nav }}
         </div>
@@ -64,7 +64,7 @@
       </div>
     {{ else }}
       <div
-        class="w-64 h-100 top-24 bg-white bottom-0 border-solid border-r border-black-200 -left-60 lg:left-0 lg:translate-x-0 lg:block z-10 fixed transition shadow overflow-auto overscroll-contain" :class="{ 'translate-x-[240px]': sidebarOpen }">
+        class="w-64 h-100 top-24 bg-white bottom-0 border-solid border-r border-black-200 -left-60 lg:left-0 lg:translate-x-0 lg:block z-10 fixed transition shadow overflow-visible lg:overflow-auto lg:overscroll-contain" :class="{ 'translate-x-[240px]': sidebarOpen }">
         <button @click="sidebarOpen = !sidebarOpen" class="absolute lg:hidden left-0 z-50 w-4 translate-x-[245px] translate-y-8" :class="{ 'rotate-180': sidebarOpen, 'translate-x-[250px]' : sidebarOpen }">{{svg src="/docs/assets/general/expand.svg"}}</button>
 
         
