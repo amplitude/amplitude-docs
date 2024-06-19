@@ -10,6 +10,10 @@ updated_at: 1718826570
 ---
 The [Amplitude Wordpress Plugin](https://wordpress.org/plugins/amplitude/) enables you to instrument your Wordpress site with an advanced version of Autocapture.
 
+{{partial:admonition type="beta" heading="This feature is in open beta"}}
+This feature is in open beta and under active development.
+{{/partial:admonition}}
+
 Amplitude's Wordpress plugin installs a version of the [Browser SDK](/data/sdks/typescript-browser/), and adds the script before the `</head>` tag on each of your site's pages. This enables an [advanced](https://github.com/amplitude/Amplitude-TypeScript/tree/v1.x/packages/plugin-default-event-tracking-advanced-browser) version of Autocapture that tracks the following events and associated properties:
 
 - Page viewed
