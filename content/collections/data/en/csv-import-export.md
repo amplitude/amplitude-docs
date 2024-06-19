@@ -9,7 +9,7 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1718754120
+updated_at: 1718824177
 ---
 In Amplitude Data, you can view and manage event types, event properties, and user properties piece by piece, but you may want to see a holistic view of your entire tracking plan's schema and make bulk changes to the schema instead.
 
@@ -52,9 +52,9 @@ The events and event properties .CSV file requires a specific schema for a succe
 **Action**
 * Definition: Action to perform on a particular entity
 * Values:
-* * `Ignore`: No changes will be made to the entity nor its subproperties
-* * `Remove`: Event and property groups can be removed from the tracking plan. The remove value will not affect individual properties. Removing an event or property group will disassociate related properties, and will change a live property’s status to unexpected. The remove value does not delete an entity, nor does it stop ingestion.
-* * `<blank>`: Creates or updates an entity and it’s associated sub-entities
+    * `Ignore`: No changes will be made to the entity nor its subproperties
+    * `Remove`: Event and property groups can be removed from the tracking plan. The remove value will not affect individual properties. Removing an event or property group will disassociate related properties, and will change a live property’s status to unexpected. The remove value does not delete an entity, nor does it stop ingestion.
+    * `<blank>`: Creates or updates an entity and it’s associated sub-entities
 * For events, event properties, property groups property group properties
 
 **Array min items**
@@ -68,8 +68,8 @@ The events and event properties .CSV file requires a specific schema for a succe
 **Array unique items**
 * Definition: Denotes if an array property value type has unique items
 * Values:
-* * `TRUE`: Array has unique items
-* * `<any>`: Assumes array does not have unique items
+    * `TRUE`: Array has unique items
+    * `<any>`: Assumes array does not have unique items
 * For event properties and property group properties
 
 **Const value**
@@ -84,8 +84,8 @@ The events and event properties .CSV file requires a specific schema for a succe
 **Event activity**
 * Definition: Description of an event’s activity
 * Values:
-* * `Active`
-* * `Inactive`. Marking an event as inactive is applied retroactively and immediately, and will exclude the event from the `Any Active Event` metric.
+    * `Active`
+    * `Inactive`. Marking an event as inactive is applied retroactively and immediately, and will exclude the event from the `Any Active Event` metric.
 * For events
 
 **Event category**
@@ -115,15 +115,15 @@ The events and event properties .CSV file requires a specific schema for a succe
 **Number is integer**
 * Definition: Denotes if a property with number property value type is an integer
 * Values:
-* * `True`: Property is an integer
-* * `False` or `<blank>`: Property is not an integer
+    * `True`: Property is an integer
+    * `False` or `<blank>`: Property is not an integer
 * For event properties and property group properties
 
 **Object type**
 * Definition: Entity type
 * Values:
-* * `Event`
-* * `Property Group`
+    * `Event`
+    * `Property Group`
 * **Required** for events and property groups
 
 **Object name**
@@ -137,8 +137,8 @@ The events and event properties .CSV file requires a specific schema for a succe
 **Property type**
 * Definition: Type of property associated with the event
 * Values:
-* * `Event Property`
-* * `Event Property Group`
+    * `Event Property`
+    * `Event Property Group`
 * **Required** for events
 
 **Property group names**
@@ -152,26 +152,26 @@ The events and event properties .CSV file requires a specific schema for a succe
 **Property value type**
 * Definition: The value type of an event property or property group property
 * Values:
-* * `string`
-* * `number`
-* * `boolean`
-* * `any`
-* * `enum`
-* * `const`
+    * `string`
+    * `number`
+    * `boolean`
+    * `any`
+    * `enum`
+    * `const`
 * For event properties and property group properties
 
 **Property required**
 * Definition: Denotes the required status of the property
 * Values:
-* * `True`: Property is required
-* * `False` or `<blank>`: Property is optional
+    * `True`: Property is required
+    * `False` or `<blank>`: Property is optional
 * For event properties and property group properties
 
 **Property is array**
 * Definition: Denotes if the property is an array
 * Values:
-* * `True`: Property is an array
-* * `False` or `<blank>`: Property is not an array
+    * `True`: Property is an array
+    * `False` or `<blank>`: Property is not an array
 * For event properties and property group properties
 
 **Property regex**
@@ -198,8 +198,8 @@ The following list includes additional fields found in the .CSV export of your t
 **Action**
 * Definition: The default action to perform on a particular entity. This field exists in the import template, but the downloaded file will automatically include default values.
 * Values:
-* * `Ignore`: The user property is unexpected, blocked or deleted.
-* * `<blank>`: The user property is planned or live.
+    * `Ignore`: The user property is unexpected, blocked or deleted.
+    * `<blank>`: The user property is planned or live.
 * For events, event properties, property groups property group properties
 
 **Event first seen**
@@ -253,9 +253,9 @@ The list below highlights the required schema for the user properties .CSV file 
 **Action**
 * Definition: Action to perform on a particular user property
 * Values:
-* * `Ignore`: No changes will be made to the user property.
-* * `Remove`: User property will be removed from the tracking plan. The remove value does not delete a user property, nor does it stop its ingestion.
-* * `<blank>`: Creates the user property if it did not already exist; or updates the user property if it did exist.
+    * `Ignore`: No changes will be made to the user property.
+    * `Remove`: User property will be removed from the tracking plan. The remove value does not delete a user property, nor does it stop its ingestion.
+    * `<blank>`: Creates the user property if it did not already exist; or updates the user property if it did exist.
 
 **Array min items**
 * Definition: Minimum number of items for a property with an array property value type
@@ -266,8 +266,8 @@ The list below highlights the required schema for the user properties .CSV file 
 **Array unique items**
 * Definition: Denotes if an array property value type has unique items
 * Values:
-* * `TRUE`: Array has unique items
-* * `<any>`: Assumes array does not have unique items
+    * `TRUE`: Array has unique items
+    * `<any>`: Assumes array does not have unique items
 
 **Const value **
 * Definition: Const value for properties with a const property value type
@@ -285,8 +285,8 @@ The list below highlights the required schema for the user properties .CSV file 
 **Number is integer**
 * Definition: Denotes if a property with number property value type is an integer
 * Values: 
-* * `True`: Property is an integer
-* * `False` or `<blank>`: Property is not an integer
+    * `True`: Property is an integer
+    * `False` or `<blank>`: Property is not an integer
 
 **Property type**
 * Definition: User property type
@@ -302,18 +302,18 @@ The list below highlights the required schema for the user properties .CSV file 
 **Property value type**
 * Definition: The value type of a user property
 * Values:
-* * `string`
-* * `number`
-* * `boolean`
-* * `any`
-* * `enum`
-* * `const`
+    * `string`
+    * `number`
+    * `boolean`
+    * `any`
+    * `enum`
+    * `const`
 
 **Property is array**
 * Definition: Denotes if the property is an array
 * Values:
-* * `True`: Property is an array
-* * `False` or `<blank>`: Property is not an array
+    * `True`: Property is an array
+    * `False` or `<blank>`: Property is not an array
 
 **Property regex** 
 * Definition: Regular expression (Regex) values for properties with a string property value type
@@ -331,8 +331,8 @@ The following list includes additional fields found in the .CSV export of your t
 **Action**
 * Definition: The default action to perform on a particular entity. This field exists in the import template, but the downloaded file will automatically include default values.
 * Values:
-* * `Ignore`: The user property is unexpected, blocked or deleted.
-* * `<blank>`: The user property is planned or live.
+    * `Ignore`: The user property is unexpected, blocked or deleted.
+    * `<blank>`: The user property is planned or live.
 
 **Property first seen**
 * Definition: The date on which the property was first seen.
