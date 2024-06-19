@@ -2,6 +2,16 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/guides/cookies-consent-mgmt-guide",
+      "destination": "/docs/get-started/cookies-and-consent-management",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc",
+      "destination": "/docs",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/analytics/api-reference-overview",
       "destination": "/docs/apis/analytics",
       "statusCode": 301
