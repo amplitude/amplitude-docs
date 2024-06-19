@@ -3836,6 +3836,11 @@
       "source": "/docs/hc/en-us/articles/26004084762011-Warehouse-native-Amplitude-Best-Practices",
       "destination": "/docs/data/warehouse-native/warehouse-native-amplitude-best-practices",
       "statusCode": 301
+    },
+    {
+      "source": "/docs/partners/integration-portal",
+      "destination": "/docs/partners/integration-portal",
+      "statusCode": 301
     }
   ]
 }
