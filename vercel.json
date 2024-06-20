@@ -2,6 +2,11 @@
     "trailingSlash": false,
     "redirects": 
     [
+    {
+        "source": "/docs/experiment/general/evaluation/local-evaluation",
+        "destination": "/docs/experiment/local-evaluation",
+        "statusCode": 301
+        },
         {
           "source": "/docs/data/ampli",
           "destination": "/docs/sdks/ampli",
