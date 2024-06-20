@@ -1,6 +1,14 @@
 {
   "trailingSlash": false,
-  "redirects": [
+  "redirects": [{
+      "source": "/docs/hc/requests/:path",
+      "destination": "https://amplitude.zendesk.com/hc/requests/:path"
+    },
+    {
+      "source": "/data/destinations/marketo-cohort/",
+      "destination": "/docs/data/destination-catalog/marketo",
+      "statusCode": 301
+    },
     {
       "source": "/docs/guides/wordpress-plugin-guide/",
       "destination": "/docs/data/amplitude-wordpress-plugin",

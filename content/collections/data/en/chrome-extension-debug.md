@@ -36,7 +36,7 @@ To copy your events' event and user property parameters, click the "Copy" icons:
 
 ## View your configuration options
 
-To view the [configuration options](https://www.docs.developers.amplitude.com/data/sdks/javascript/#configuration) you've set for each project's SDK, click the *API Options* tab:
+To view the [configuration options](/docs/sdks/analytics/browser/browser-sdk-2#configuration) you've set for each project's SDK, click the *API Options* tab:
 
 ![Plugin options](statamic://asset::help_center_conversions::data/plugin-options.png)
 
