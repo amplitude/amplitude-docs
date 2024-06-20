@@ -14,10 +14,10 @@ updated_at: 1716571412
 Amplitude Analytics relies on **data** to generate charts, experiments, and other types of analyses. This data comes from your product, app, or website, or from a third-party product like Salesforce or Segment.
 
 {{partial:admonition type='note'}}
-You'll probably need to involve your developer or engineer for this step.
+You may need to involve your developer or engineer for this step.
 {{/partial:admonition}}
 
-This article is intended as a broad overview. For a more in-depth explanation of setting up a taxonomy, we **strongly recommend** checking out the [Data Taxonomy Playbook](/docs/data/data-planning-playbook). 
+This article is intended as a broad overview. For a more in-depth explanation of setting up a taxonomy, check out the [Data Taxonomy Playbook](/docs/data/data-planning-playbook). 
 
 ### Feature availability
 
@@ -25,17 +25,17 @@ This feature is available to users on **all Amplitude plans**.
 
 ## Send data to Amplitude
 
-Getting data into Amplitude from your product is done at the **project** level. Remember when you created [your first Amplitude project](/docs/get-started/create-project)? When you did that, Amplitude generated an API key that will ensure your product data finds its way to the correct Amplitude project. You'll need this key to initialize the SDK in your product or website; [here's how to find it in an existing Amplitude project](/docs/admin/account-management/manage-orgs-projects).
+Getting data into Amplitude from your product happens at the **project** level. Remember when you created [your first Amplitude project](/docs/get-started/create-project)? When you did that, Amplitude generated an API key to ensure your product data finds its way to the correct Amplitude project. You must use this key to initialize the SDK in your product or website; [here's how to find it in an existing Amplitude project](/docs/admin/account-management/manage-orgs-projects).
 
 ### Data from your product
 
 The most popular way to get data into Amplitude from web products or websites is the [Browser SDK](https://www.docs.developers.amplitude.com/data/sdks/browser-2/). Learn more about it [here](https://www.docs.developers.amplitude.com/data/sdks/sdk-quickstart/#initialize-the-library).
 
-Once you've got the API key mentioned in the beginning of this section, add it to the Amplitude JavaScript snippet, then paste that snippet to all parts of your product that generate the data you want Amplitude to [track](/docs/data/create-tracking-plan). This **must** be placed at the **top** of **every page** you want to track via Amplitude, and it **must** include the `amplitude.init()` statements. An example snippet is shown in the screenshot below.
+Once you've got the API key mentioned in the beginning of this section, add it to the Amplitude JavaScript snippet, then paste that snippet to all parts of your product that generate the data you want Amplitude to [track](/docs/data/create-tracking-plan). This **must** appear at the **top** of **every page** you want to track via Amplitude, and it **must** include the `amplitude.init()` statements. See this screenshot for an example snippet.
 
 Again, depending on your level of knowledge and / or comfort with JavaScript, you may want to involve someone from your development or engineering team in this phase. And definitely take advantage of all the resources around [SDKs that are available here](https://www.docs.developers.amplitude.com/data/sdks/).
 
-After instrumenting Amplitude successfully, your data will be visible just as soon as your product begins sending events. (You'll have to [instrument](/docs/data/data-planning-playbook) for detailed documentation on how to approach your event taxonomy.
+After instrumenting Amplitude successfully, your data becomes visible as soon as your product begins sending events.
 
 ### Data from a third-party source
 
@@ -43,15 +43,15 @@ You can import data from a wide range of third-party data sources. To learn more
 
 ## Take note of APIs and resources
 
-Data can be sent to Amplitude in different ways: SDKs, HTTP API v2, Batch API, Amplitude's integration with Segment, or Amplitude's integration with mParticle. The below lists include examples of powerful APIs and useful resources to keep in mind. Your Success Manager is always available to help answer questions.
+You can send data to Amplitude in different ways: SDKs, HTTP API v2, Batch API, Amplitude's integration with Segment, or Amplitude's integration with mParticle. The below lists include examples of powerful APIs and useful resources to keep in mind. Your Success Manager is always available to help answer questions.
 
 ### APIs
 
 * [Identify API](https://www.docs.developers.amplitude.com/analytics/apis/identify-api/): Use the Identify API to modify the user properties of a particular user without sending an event. You can modify Amplitude default user properties as well as custom user properties you've already defined.
-* [Dashboard REST API](https://www.docs.developers.amplitude.com/analytics/apis/dashboard-rest-api/): Use the Dashboard REST API to obtain any data that can be displayed on the dashboard graphs. The results are returned as JSON.
-* [Export API](https://www.docs.developers.amplitude.com/analytics/apis/export-api/): Export all events data for a given app that occurred within a specified range of dates. The results are returned as a zipped archive of JSON files with one or multiple files per hour.
+* [Dashboard REST API](https://www.docs.developers.amplitude.com/analytics/apis/dashboard-rest-api/): Use the Dashboard REST API to get any data that dashboard graphs can display. The results come back as JSON.
+* [Export API](https://www.docs.developers.amplitude.com/analytics/apis/export-api/): Export all events data for a given app that occurred within a specified range of dates. The results come back as a zipped archive of JSON files with one or multiple files per hour.
 * [Attribution API](https://www.docs.developers.amplitude.com/analytics/apis/attribution-api/): Associate users from various attribution campaigns on Amplitude.
-* [HTTP API](https://www.docs.developers.amplitude.com/analytics/apis/http-v2-api/): Use the HTTP API to send data directly from your server to our endpoint.
+* [HTTP API](https://www.docs.developers.amplitude.com/analytics/apis/http-v2-api/): Use the HTTP API to send data directly from your server to Amplitude's endpoint.
 * [Behavioral Cohorts API](https://www.docs.developers.amplitude.com/analytics/apis/behavioral-cohorts-api/): Use the Behavioral Cohorts API to get all cohorts for an app.
 
 ### Resources
