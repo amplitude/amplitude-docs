@@ -1,6 +1,14 @@
 {
   "trailingSlash": false,
-  "redirects": [
+  "redirects": [{
+      "source": "/docs/hc/requests/:path",
+      "destination": "https://amplitude.zendesk.com/hc/requests/:path"
+    },
+    {
+      "source": "/data/destinations/marketo-cohort/",
+      "destination": "/docs/data/destination-catalog/marketo",
+      "statusCode": 301
+    },
     {
       "source": "/docs/guides/wordpress-plugin-guide/",
       "destination": "/docs/data/amplitude-wordpress-plugin",
@@ -1874,7 +1882,7 @@
     },
     {
       "source": "/docs/hc/en-us/articles/20464659456667",
-      "destination": "/docs/analytics/session-replay",
+      "destination": "/docs/session-replay",
       "statusCode": 301
     },
     {
@@ -3744,7 +3752,7 @@
     },
     {
       "source": "/docs/hc/en-us/articles/20464659456667-See-how-your-customers-use-your-product-with-Session-Replay",
-      "destination": "/docs/analytics/session-replay",
+      "destination": "/docs/session-replay",
       "statusCode": 301
     },
     {
