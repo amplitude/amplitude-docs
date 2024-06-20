@@ -4,13 +4,12 @@ blueprint: session-replay
 title: 'Manage privacy settings for Session Replay'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718659422
-source: https://help.amplitude.com/hc/en-us/articles/26605783882779-Manage-privacy-settings-for-Session-Replay
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1718918098
+source: 'https://help.amplitude.com/hc/en-us/articles/26605783882779-Manage-privacy-settings-for-Session-Replay'
 this_article_will_help_you:
   - 'Ensure your use of Session Replay complies with data privacy requirements'
 ---
-
 For many organizations, data privacy, security, and PII are more pressing concerns than they’ve ever been before. Because the potential for legal exposure varies from jurisdiction to jurisdiction, and because specific business needs vary considerably, no one-size-fits-all solution will work for everyone.
 
 This is why Amplitude’s Session Replay feature enables you to specify the types of user data displayed during a replay. These privacy settings are flexible enough to adhere to your company’s legal and security requirements, no matter what they are. Once they’re set, you can enjoy the peace of mind that comes with knowing that nothing will inadvertently fall through the cracks.
@@ -42,6 +41,19 @@ To do so, right-click on your application and select Inspect mode. Under *Maskin
 **Unmasking** an element also unmasks its child elements. If needed, you can remask these child elements using the process described above. However, when you **mask** an element using CSS selectors, its child elements will also be masked; you **cannot** then unmask these child elements.
 
 When you **exclude** an element using CSS selectors, the element will be replaced with an empty placeholder element of the same dimensions. Any child elements will also be excluded.
+
+{{partial:tabs tabs="mask, unmask, exclude"}}
+{{partial:tab name="mask"}}
+![](statamic://asset::help_center_conversions::session-replay/image2.png)
+{{/partial:tab}}
+{{partial:tab name="unmask"}}
+![](statamic://asset::help_center_conversions::session-replay/image1.png)
+{{/partial:tab}}
+{{partial:tab name="exclude"}}
+![](statamic://asset::help_center_conversions::session-replay/image3.png)
+{{/partial:tab}}
+
+{{/partial:tabs}}
 
 ## How Session Replay resolves conflicts between the SDK and the UI
 
