@@ -1,6 +1,15 @@
 {
   "trailingSlash": false,
-  "redirects": [{
+  "redirects": [
+    {
+      "source": "/docs/analytics/plan-your-setup",
+      "destination": "/docs/get-started/plan-your-implementation"
+    },
+    {
+      "source": "/docs/analytics/what-is-amplitude/",
+      "destination": "/docs/get-started/what-is-amplitude"
+    },
+    {
       "source": "/docs/hc/requests/:path",
       "destination": "https://amplitude.zendesk.com/hc/requests/:path"
     },

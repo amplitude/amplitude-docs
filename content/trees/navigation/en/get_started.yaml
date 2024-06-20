@@ -4,6 +4,9 @@ tree:
     title: 'Set Up Amplitude'
     children:
       -
+        id: 4914bd44-0aad-4f7c-8e97-d0b57d671ad9
+        entry: e4d9e0f6-a440-47d9-9f21-f1af62645bff
+      -
         id: d1b99fe5-418d-4c69-a6dd-b0e40303e8d0
         entry: 60e0ed22-81d6-4978-8751-cb7e4f6a24f1
       -
