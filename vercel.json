@@ -23,11 +23,6 @@
           "statusCode": 301
         },
         {
-          "source": "/docs/data/destination-event-streaming-overview",
-          "destination": "/docs/data/destination-event-streaming-overview",
-          "statusCode": 301
-        },
-        {
           "source": "/docs/data/destinations/webhooks-streaming",
           "destination": "/docs/data/destination-catalog/webhooks",
           "statusCode": 301
