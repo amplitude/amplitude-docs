@@ -143,11 +143,25 @@ Amplitude requires at least one event in any captured session to enable playback
 
 The Session Replay SDK offers three ways to mask user input, text, and other HTML elements.
 
-| Element | Description |
-| --- | --- |
-| `<input>` | Session Replay masks all text input fields by default. When a users enters text into an input field, Session Replay captures asterisks in place of text. To *unmask* a text input, add the class `.amp-unmask`. For example: `<input class="amp-unmask">`. |
-| text | To mask text within non-input elements, add the class `.amp-mask`. For example, `<p class="amp-mask">Text</p>`. When masked, Session Replay captures masked text as a series of asterisks. |
-| non-text elements | To block a non-text element, add the class `.amp-block`. For example, `<div class="amp-block"></div>`. Session Replay replaces blocked elements with a placeholder of the same dimensions. |
+| Element           | Description                                                                                                                                                                                                                                                |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `<input>`         | Session Replay masks all text input fields by default. When a users enters text into an input field, Session Replay captures asterisks in place of text. To *unmask* a text input, add the class `.amp-unmask`. For example: `<input class="amp-unmask">`. |
+| text              | To mask text within non-input elements, add the class `.amp-mask`. For example, `<p class="amp-mask">Text</p>`. When masked, Session Replay captures masked text as a series of asterisks.                                                                 |
+| non-text elements | To block a non-text element, add the class `.amp-block`. For example, `<div class="amp-block"></div>`. Session Replay replaces blocked elements with a placeholder of the same dimensions.                                                                 |
+
+Session Replay supports setting a masking level on the [Session Replay Settings](#) screen in Amplitude. This includes Light, Medium, and Conservative settings.
+
+Session Replay settings also enable remote masking overrides. These enable users in your organization to configure or update masking after implementation.
+
+In the event of a conflict, Session Replay defers to the remote setting. For example:
+
+|                | .selector-1 | .selector-2 | .selector-3 |
+| -------------- | ----------- | ----------- | ----------- |
+| Local setting  | `mask`      | --          | `mask`      |
+| Remote setting | `unmask`    | `unmask`    | --          |
+| Result         | `unmask`    | `unmask`    | `mask`      |
+
+In this example, `.selector-1` has a local setting and a remote setting. The result follows the remote setting, and overrides the setting in the SDK or plugin implementation.
 
 ### User opt-out
 
@@ -190,7 +204,15 @@ Keep the following in mind as you consider your sample rate:
 Once enabled, Session Replay runs on your site until either:
 
 - The user leaves your site
-- You call `amplitude.remove('sessionReplayTracking')`
+- You call `amplitude.remove(sessionReplayTracking.name)`
+
+Call `amplitude.remove(sessionReplayTracking.name)` before a user navigates to a restricted area of your site to disable replay collection while the user is in that area. 
+
+To restart replay collection, call `amplitude.add(sessionReplayTracking)` to re-add the plugin.
+
+{{partial:admonition type="note" heading=""}}
+These examples assume you use the variable `sessionReplayTracking` in your initialization code.
+{{/partial:admonition}}
 
 Call `amplitude.remove('sessionReplayTracking')` before a user navigates to a restricted area of your site to disable replay collection while the user is in that area. 
 
