@@ -10,7 +10,7 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1716571204
 ---
-Understanding how many and where your customers are coming from is crucial for any business, but particularly those in the e-commerce sector. Amplitude helps you understand how many customers are being driven to your store, how effective different campaigns are at creating new revenue, and which channels drive the most engagement.
+Understanding how many and where your customers are coming from is crucial for any business, but particularly those in the e-commerce sector. Amplitude helps you understand how many customers are finding your store, how effective different campaigns are at creating new revenue, and which channels drive the most engagement.
 
 Armed with this knowledge, you can focus your efforts on optimizing ad spend, marketing efforts, and product enhancements.
 
@@ -21,7 +21,7 @@ The Ecommerce Report template includes the following charts related to customer 
 * How are customers finding my shop?
 * How many customers have visited my shop in the last 30 days?
 
-For a more detailed view into any of these questions, you can simply click the title of the chart you’re interested in, and you’ll be taken directly to it.
+For a more detailed view into any of these questions, simply click the title of the chart you’re interested in.
 
 ## Customize the Ecommerce Report template
 
@@ -36,11 +36,11 @@ If you want to replace the New User event, you should choose an event that signa
   
 If you want to replace the `Any Active User` event with something more specific, scroll until you find the event you’re interested in and select it.  
   
-For example, you could select a page view / navigation event in order to generate an understanding of traffic as it enters your site, and general navigation throughout. Or if you’re more interested in identifying traffic sources, you could select a property of your page view / navigation event that tracks the user's source. This is often a UTM parameter like `utm_source`.  
+For example, you could select a page view / navigation event to generate an understanding of traffic as it enters your site, and general navigation throughout. Or if you’re more interested in identifying traffic sources, you could select a property of your page view / navigation event that tracks the user's source. This is often a UTM parameter like `utm_source`.  
   
 You are **not required** to replace either the New User or the Any Active Event events if you’d prefer not to.
 3. Click *Save As New Dashboard* and select *Keep and display saved replacement parameters*. Then click *Next*.
-4. Give your new dashboard a name and select the location where it will be saved. Then click *Save*.
+4. Give your new dashboard a name and select a location to save it in. Then click *Save*.
 
 Your dashboard is now ready for use.
 

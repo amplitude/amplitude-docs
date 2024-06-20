@@ -14,13 +14,13 @@ The charts included on the **Conversion Report template** give you a deeper unde
 
 The Conversion Report template includes the following charts:
 
-* What is the conversion rate of this funnel?
+* What's the conversion rate of this funnel?
 * How is the conversion rate changing over time?
 * How long does it take users to convert?
 * How many times do users do `New User` before doing `Any Active Event`?
 * What paths do users take to get to `Any Active Event`?
 
-For a more detailed view into any of these questions, you can simply click the title of the chart you’re interested in, and you’ll be taken directly to it.
+For a more detailed view into any of these questions, simply click the title of the chart you’re interested in.
 
 ## Customize the User Activity template
 
@@ -40,7 +40,7 @@ Scroll until you find the event you’re interested in and select it.
 You are **not required** to replace either the `New User` or the `Any Active Event` events if you’d prefer not to.
 
 3. Click *Save As New Dashboard* and select *Keep and display saved replacement parameters*. Then click *Next*.
-4. Give your new dashboard a name and select the location where it will be saved. Then click *Save*.
+4. Give your new dashboard a name and select a location to save it in. Then click *Save*.
 
 Your dashboard is now ready for use.
 

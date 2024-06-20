@@ -12,18 +12,18 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 ---
-As your implementing Amplitude for the first time, you'll want to ensure you QA your data during each step the process. This will help to ensure that you're tracking the events, users, and actions that will provide valuable insights for your product or service.
+As you implement Amplitude for the first time, take care to QA your data during each step the process. This helps ensure that you're tracking the events, users, and actions that provide valuable insights for your product or service.
 
 ## QA your instrumentation
 
-To verify your instrumentation works the way you'd intended, navigate over to Amplitude's [User Activity tab](/docs/sdks/sdk-debugging). Fire some events using your test device, go to your project in Amplitude, and then watch as the device ID or user ID appears on the near-realtime feed. Clicking on that ID will take you to that user's event stream, which should be made up of the events you've decided to track. If you're not seeing the events you expect to see, it means something's wrong with your instrumentation.
+To verify your instrumentation works the way you'd intended, navigate over to Amplitude's [User Activity tab](/docs/sdks/sdk-debugging). Fire some events using your test device, go to your project in Amplitude, and then watch as the device ID or user ID appears on the near-realtime feed. Clicking on that ID takes you to that user's event stream, which should include the events you've decided to track. If you're not seeing the events you expect to see, it means something's wrong with your instrumentation.
 
 ## Know your event limits
 
-If you go over your limit for the month, Amplitude will still collect your data as usual. However, you won't have access to that excess data unless you upgrade to a new tier or wait until the following month.
+If you go over your limit for the month, Amplitude still collects your data as usual. However, that excess data is inaccessible to you, unless you upgrade to a new tier or wait until the following month.
 
 ## Understand how Amplitude handles duplicate events
 
-Amplitude de-duplicates your data to prevent unique events from being logged multiple times. Amplitude checks the event ID, client event time, and device ID for every event. If the event isn't in the database, Amplitude writes it; otherwise, the event is dropped.
+Amplitude de-duplicates your data so it doesn't log unique events multiple times. Amplitude checks the event ID, client event time, and device ID for every event. If the event isn't in the database, Amplitude writes it; otherwise, Amplitude drops the event.
 
-If you're using the Amplitude HTTP API, we recommend adding an [insert\_id field](/docs/apis/analytics/http-v2). Amplitude will ignore subsequent events sent with the same event ID/client event time/device ID or insert\_id within the past seven days.
+If you're using the Amplitude HTTP API, add an [insert\_id field](/docs/apis/analytics/http-v2). Amplitude ignores subsequent events sent with the same event ID/client event time/device ID or insert\_id within the past seven days.
