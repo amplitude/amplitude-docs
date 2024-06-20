@@ -1,7 +1,7 @@
 ---
 id: 2caa7dc1-796d-4f1f-b423-add51b091335
 blueprint: get-started
-title: 'Plan your Implementation'
+title: 'Plan your implementation'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
@@ -14,7 +14,7 @@ Amplitude is an event-based analytics tool that tracks the behaviors of users ba
 
 ## Send data
 
-Without a data source, Amplitude can't show you who your customers are and their behavior with your product. You should pick one source to start with, but you can add more later. Send data to Amplitude client-side, server-side, or through a third party.
+Without a data source, Amplitude can't show you who your customers are and their behavior with your product. Pick one source to start with and add more later if you need to. Send data to Amplitude client-side, server-side, or through a third party.
 
 There are two main ways to send data into Amplitude:
 
@@ -41,7 +41,7 @@ You can track your product data using Amplitude SDKs or APIs:
 See [What is Amplitude?](/docs/get-started/what-is-amplitude/) for definitions of users, events, and properties.
 {{/partial:admonition}}
 
-If you're just starting out, you should **resisting the urge to track everything** upfront. The number of events you should track depends on the complexity of your product. 
+If you're just starting out, **resisting the urge to track everything** upfront. The number of events you should track depends on the complexity of your product. 
 
 Consider starting with two important events in your product to give you some initial insights.
 
@@ -58,6 +58,6 @@ After successfully tracking these events, you can [track more](/docs/data/data-p
 
 ## Create a tracking plan
 
-As you advance, it’s critical to [create a tracking plan](/docs/data/create-tracking-plan) document that outlines what events and properties to track, why you're tracking them, and where they're tracked. A tracking plan should be based on the business outcomes you’re trying to measure or improve.
+As you advance, it’s critical to [create a tracking plan](/docs/data/create-tracking-plan) document that outlines what events and properties to track, why you're tracking them, and where they're tracked. A tracking plan should derive from the business outcomes you’re trying to measure or improve.
 
-If you are using Amplitude SDKs, it's recommended to use Ampli Wrapper which is a lightweight wrapper over the Amplitude SDK that provides type safety, supports linting, and enables features like input validation. Ampli CLI works together with the Ampli wrapper to bring a tracking library into your project. Learn more about [Ampli](../../data/ampli/).
+If you're using Amplitude SDKs, Ampli Wrapper is a lightweight wrapper over the Amplitude SDK that provides type safety, supports linting, and enables features like input validation. Ampli CLI works together with the Ampli wrapper to bring a tracking library into your project. Learn more about [Ampli](../../data/ampli/).
