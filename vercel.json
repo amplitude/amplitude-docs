@@ -3181,7 +3181,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/hc/en-us/articles/115003135607-Tracking-Unique-Users",
+      "source": "/docs/hc/en-us/articles/115003135607",
       "destination": "/docs/cdp/sources/instrument-track-unique-users",
       "statusCode": 301
     },
