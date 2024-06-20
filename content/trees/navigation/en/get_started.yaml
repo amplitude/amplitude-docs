@@ -4,14 +4,20 @@ tree:
     title: 'Set Up Amplitude'
     children:
       -
+        id: 4914bd44-0aad-4f7c-8e97-d0b57d671ad9
+        entry: e4d9e0f6-a440-47d9-9f21-f1af62645bff
+      -
         id: d1b99fe5-418d-4c69-a6dd-b0e40303e8d0
         entry: 60e0ed22-81d6-4978-8751-cb7e4f6a24f1
       -
-        id: 2074def5-bdea-4610-aeae-4b95112901ab
-        entry: 5243dcbb-02c5-4ffb-a32b-8c3e50b2b121
-      -
         id: 814d306c-400d-4800-bfbb-02486d709750
         entry: a64c1c43-88d3-415d-b895-d27bb6decfd9
+      -
+        id: e2ee2b7c-fb55-4f13-b607-1bf50ef9db8f
+        entry: 2caa7dc1-796d-4f1f-b423-add51b091335
+      -
+        id: 2074def5-bdea-4610-aeae-4b95112901ab
+        entry: 5243dcbb-02c5-4ffb-a32b-8c3e50b2b121
   -
     id: b888fbc0-820b-47e3-9b06-019592be3e54
     title: 'Instrument Amplitude'
@@ -72,6 +78,9 @@ tree:
       -
         id: 49bd798c-0033-4d79-9689-470f470db258
         entry: d79e04a5-67cb-4278-9fc1-5f924d78ffd3
+      -
+        id: 1e4eb409-e30c-4cd1-b755-962708afadbd
+        entry: 0540d355-59be-49fc-b93d-ac1a256c38af
   -
     id: c87a6d6a-8754-48ec-90d2-a2e0fc39a569
     title: 'Additional Reading'
