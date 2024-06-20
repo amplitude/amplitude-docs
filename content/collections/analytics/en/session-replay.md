@@ -1,8 +1,13 @@
 ---
 id: b119e5d3-f22e-44e9-ab59-fe66b807894a
+published: false
 blueprint: analytic
 title: 'See how your customers use your product with Session Replay'
 source: 'https://help.amplitude.com/hc/en-us/articles/20464659456667-See-how-your-customers-use-your-product-with-Session-Replay'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1718901114
 ---
 #### This article will help you:
 
