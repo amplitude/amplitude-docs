@@ -2,11 +2,31 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/data/ampli",
+      "destination": "/docs/sdks/ampli"
+    },
+    {
+      "source": "/docs/data/destinations",
+      "destination": "/docs/data/destination-catalog"
+    },
+    {
+      "source": "/docs/data/sources",
+      "destination": "/docs/data/source-catalog"
+    },
+    {
+      "source": "/docs/data/destination-event-streaming-overview",
+      "destination": "/docs/data/destination-event-streaming-overview"
+    },
+    {
+      "source": "/docs/data/destinations/webhooks-streaming",
+      "destination": "/docs/data/destination-catalog/webhooks"
+    },
+    {
       "source": "/docs/analytics/plan-your-setup",
       "destination": "/docs/get-started/plan-your-implementation"
     },
     {
-      "source": "/docs/analytics/what-is-amplitude/",
+      "source": "/docs/analytics/what-is-amplitude",
       "destination": "/docs/get-started/what-is-amplitude"
     },
     {
@@ -14,12 +34,12 @@
       "destination": "https://amplitude.zendesk.com/hc/requests/:path"
     },
     {
-      "source": "/data/destinations/marketo-cohort/",
+      "source": "/data/destinations/marketo-cohort",
       "destination": "/docs/data/destination-catalog/marketo",
       "statusCode": 301
     },
     {
-      "source": "/docs/guides/wordpress-plugin-guide/",
+      "source": "/docs/guides/wordpress-plugin-guide",
       "destination": "/docs/data/amplitude-wordpress-plugin",
       "statusCode": 301
     },
@@ -3912,11 +3932,6 @@
     {
       "source": "/docs/hc/en-us/articles/26004084762011-Warehouse-native-Amplitude-Best-Practices",
       "destination": "/docs/data/warehouse-native/warehouse-native-amplitude-best-practices",
-      "statusCode": 301
-    },
-    {
-      "source": "/docs/partners/integration-portal",
-      "destination": "/docs/partners/integration-portal",
       "statusCode": 301
     }
   ]

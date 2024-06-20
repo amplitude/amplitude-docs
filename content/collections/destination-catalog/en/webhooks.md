@@ -1,8 +1,7 @@
 ---
 id: 2f77aba1-73a1-4712-9eeb-f58ee03683be
-published: false
 blueprint: destination-catalog
-title: Webhooks
+title: 'Webhooks Streaming'
 source: 'https://docs.developers.amplitude.com/data/destinations/webhooks'
 category: 'Event streaming'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
@@ -15,7 +14,7 @@ integration_category:
 partner_maintained: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713481500
+updated_at: 1718907206
 ---
 Amplitude's Webhook integration enables you to forward your Amplitude events and users to custom webhooks. This is a light-weight way to set a stream of event and user data out of Amplitude, to a URL of your choosing to enable any of your use cases.
 
