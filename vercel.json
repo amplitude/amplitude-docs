@@ -790,11 +790,6 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/session-replay/ingestion-monitor",
-      "destination": "/docs/session-replay/ingestion-monitor",
-      "statusCode": 301
-    },
-    {
       "source": "/docs/hc/en-us/articles/360002583131",
       "destination": "/docs/admin/single-sign-on/okta",
       "statusCode": 301
