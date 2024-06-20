@@ -1882,7 +1882,7 @@
     },
     {
       "source": "/docs/hc/en-us/articles/20464659456667",
-      "destination": "/docs/analytics/session-replay",
+      "destination": "/docs/session-replay",
       "statusCode": 301
     },
     {
@@ -3752,7 +3752,7 @@
     },
     {
       "source": "/docs/hc/en-us/articles/20464659456667-See-how-your-customers-use-your-product-with-Session-Replay",
-      "destination": "/docs/analytics/session-replay",
+      "destination": "/docs/session-replay",
       "statusCode": 301
     },
     {
