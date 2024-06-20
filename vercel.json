@@ -1,6 +1,15 @@
 {
   "trailingSlash": false,
-  "redirects": [{
+  "redirects": [
+    {
+      "source": "/docs/analytics/plan-your-setup",
+      "destination": "/docs/get-started/plan-your-implementation"
+    },
+    {
+      "source": "/docs/analytics/what-is-amplitude/",
+      "destination": "/docs/get-started/what-is-amplitude"
+    },
+    {
       "source": "/docs/hc/requests/:path",
       "destination": "https://amplitude.zendesk.com/hc/requests/:path"
     },
@@ -3181,7 +3190,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/hc/en-us/articles/115003135607-Tracking-Unique-Users",
+      "source": "/docs/hc/en-us/articles/115003135607",
       "destination": "/docs/cdp/sources/instrument-track-unique-users",
       "statusCode": 301
     },
