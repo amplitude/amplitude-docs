@@ -2693,7 +2693,7 @@
           "statusCode": 301
         },
         {
-          "source": "/docs/hc/en-us/articles/10249480038043|(-.*)",
+          "source": "\/docs\/hc\/en-us\/articles\/10249480038043(?:-[a-zA-Z0-9-]+)?",
           "destination": "/docs/analytics/charts/data-tables/data-tables-create-metric",
           "statusCode": 301
         }
