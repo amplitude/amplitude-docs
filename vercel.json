@@ -7,7 +7,7 @@
       "statusCode": 301
     },
     {
-      "source": "/experiment/general/exposure-tracking",
+      "source": "/docs/experiment/general/exposure-tracking",
       "destination": "/docs/experiment/track-exposure",
       "statusCode": 301
     },
