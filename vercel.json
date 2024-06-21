@@ -2862,9 +2862,15 @@
       "source": "/docs/hc/en-us/articles/18748906568731((?:-[a-zA-Z0-9-]+)?)",
       "destination": "/docs/faq/send-data-to-amplitude",
       "statusCode": 301
-    }, {
+    }, 
+    {
       "source": "/docs/hc/en-us/articles/17645167873691((?:-[a-zA-Z0-9-]+)?)",
       "destination": "/docs/faq/user-sessions",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/23990255180443((?:-[a-zA-Z0-9-]+)?)",
+      "destination": "/docs/analytics/charts/user-sessions/marketing-metrics-recipes",
       "statusCode": 301
     }
   ]

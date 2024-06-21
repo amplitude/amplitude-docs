@@ -7,13 +7,8 @@ this_article_will_help_you:
 landing: false
 source: /hc/en-us/articles/23990255180443-Marketing-metrics-recipes
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718899635
+updated_at: 1718945038
 ---
-
-This article will help you:
-
-* Use Amplitude charts to analyze common marketing metrics
-
 Amplitude Analytics provides a multitude of insights into the success of your product's marketing efforts. This article highlights the ingredients needed to recreate common marketing metrics using [Event Segmentation](/analytics/charts/event-segmentation/event-segmentation-build) or [User Sessions](/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) charts.
 
 ## Before you begin
