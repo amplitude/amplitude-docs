@@ -51,3 +51,8 @@ preferences:
         - title
         - slug
         - status
+    faq_and_troubleshooting:
+      columns:
+        - title
+        - slug
+        - status
