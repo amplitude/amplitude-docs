@@ -457,7 +457,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/amazon-redshift",
+      "source": "/docs/data/destinations/redshift",
       "destination": "/docs/data/destination-catalog/amazon-redshift",
       "statusCode": 301
     },
