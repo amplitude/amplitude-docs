@@ -3,14 +3,15 @@ id: eebd426c-6b43-4347-bc8a-29ff34b90b9f
 blueprint: faq_and_troubleshooting
 title: 'Missing mobile attribution events'
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/360051234592'
+category: governance
+this_article_will_help_you:
+  - 'Understand why mobile attribution events are missing, and fix the issue'
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1718926153
 ---
-#### This article will help you:
-
-* Understand why mobile attribution events are missing, and fix the issue
-
 Mobile attribution partners identify events using advertising IDs like IDFA / IDFV / ADID. However, Amplitude identifies users based on a combination of `user_id`, `device_id`, and `amplitude_id`. 
 
-Amplitude's [Attribution API](https://developers.amplitude.com/docs/attribution-api) elides these differences and maps attribution events to existing users in Amplitude. Some mobile attribution partners–like, Appsflyer, Adjust, Branch, and Singular–use this API to send their non-custom, standard data with the advertising IDs as the identifier.
+Amplitude's [Attribution API](/docs/apis/analytics/attribution) omits these differences and maps attribution events to existing users in Amplitude. Some mobile attribution partners–like, Appsflyer, Adjust, Branch, and Singular–use this API to send their non-custom, standard data with the advertising IDs as the identifier.
 
 Amplitude stores unmapped attribution events for 72 hours. During that time, Amplitude will look for a matching IDFA, IDFV, or ADID on an already-existing user in an Amplitude project. If there is one, Amplitude will route that attribution event to that user. If there isn't, Amplitude will drop the attribution event once those 72 hours have passed.
 
@@ -22,38 +23,34 @@ To facilitate this process, be sure to instrument Amplitude with advertising IDs
 
 In some cases, the issue is easily and quickly resolvable:
 
-* * The attribution events were not successfully sent to Amplitude. Make sure the attribution partner is receiving a success response (i.e., a 200) when sending events.
-	* Your project has reached the [instrumentation limit](https://help.amplitude.com/hc/en-us/articles/115002923888-Limits#h_8d90ca72-bf91-4161-88b2-01b5448b0859). You may need to delete event types or properties in order to allow Amplitude Analytics to ingest new event types and properties.
-	* The event type has been blocked or deleted in the Amplitude project. Restore the event type or property via Amplitude Data to fix the issue.
+* The attribution events were not successfully sent to Amplitude. Make sure the attribution partner is receiving a success response (i.e., a 200) when sending events.
+* Your project has reached the [instrumentation limit](/docs/faq/limits). You may need to delete event types or properties in order to allow Amplitude Analytics to ingest new event types and properties.
+* The event type has been blocked or deleted in the Amplitude project. Restore the event type or property via Amplitude Data to fix the issue.
 
 However, there are other commonly-encountered reasons that can take a little more investigating to resolve:
 
-* * There is no existing user in Amplitude with the matching IDFA, IDFV, or ADID
-	* Mapping was not completed within 72 hours
+* There is no existing user in Amplitude with the matching IDFA, IDFV, or ADID
+* Mapping was not completed within 72 hours
 
-Troubleshoot: No existing user in Amplitude with the matching IDFA, IDFV, or ADID
+## Troubleshoot: No existing user in Amplitude with the matching IDFA, IDFV, or ADID
 
 This is the top reason why mobile attribution events are not ingested by Amplitude Analytics. Remember, you do have to instrument Amplitude **before** you can send over mobile attribution events. 
 
-#### Determine if you are tracking advertising IDs
+### Determine if you are tracking advertising IDs
 
 Advertising IDs are IDFA, IDFV, or ADID. If you are tracking them in your Amplitude events, Amplitude Analytics will capture their value in the respective property field. However, for security and PII reasons, they **will not appear** as a useable property, and will be removed from your raw data after they have been captured (unless you instrument this as a custom property). 
 
 Amplitude does store a hashed version of the advertising IDs, in a field called `amplitude_attribution_ids`. Use this field to determine whether or not you are instrumenting advertising IDs. If the value of this field is `null`, then no advertising IDs were captured for this user.
 
-#### Screen_Shot_2022-12-29_at_4.46.20_PM.png
-
 Generally, this means either that you have not instrumented Amplitude Analytics to capture advertising IDs, or that the end user has opted out of advertising ID tracking.
 
 User opt-outs **must be honored**. If you know advertising IDs are tracked properly and want to confirm `amplitude_attribution_ids = null`  because of user opt-out, contact Amplitude Support.
 
-#### Solution: Tracking advertising IDs
+### Solution: Tracking advertising IDs
 
-The first step is to make sure advertising ID tracking is enabled. See the [Amplitude Developer Center](https://www.docs.developers.amplitude.com/) for more information.
+If you are using the Javascript—which lack the ability to track advertising IDs automatically—you will have to send an Amplitude event with the advertising ID via the [HTTP API](/docs/cdp/sources/instrument-track-unique-users).
 
-If you are using the Javascript—which lack the ability to track advertising IDs automatically—you will have to send an Amplitude event with the advertising ID via the [HTTP API](/docs/cdp/sources/instrument-track-unique-users)).
-
-### Troubleshoot: Mapping was not made within 72 hours
+## Troubleshoot: Mapping was not made within 72 hours
 
 Amplitude will hold an attribution event for 72 hours. If a match is not made during that time, the event will be dropped.
 
@@ -64,7 +61,7 @@ For example, User A downloads a game app on December 1 but does not open the app
 
 User A's `Install` event will be dropped because User A did not exist in Amplitude within 72 hours of the attribution event. User A only existed in Amplitude seven days after the `Install` event, which is longer than the 72-hour holding period. 
 
-#### Determine if the attribution event came too early
+### Determine if the attribution event came too early
 
 Amplitude's iOS SDKs captures IDFV as `device_id` by default. If you use the default setting for iOS SDKs, you can use an iOS example to troubleshoot this:
 
@@ -84,7 +81,7 @@ You can also see whether a user already exists in Amplitude by following a simil
 
 You will likely see that the IDFV is not associated to a profile in Amplitude Analytics, which means Amplitude has not seen the user yet. 
 
-#### Solution: Create users before real user activity
+### Solution: Create users before real user activity
 
 An end user exists in Amplitude when their first event is received by Amplitude. If you do not want to wait on your end user's actions to trigger a profile creation, you can create a profile for them yourself, by either:
 

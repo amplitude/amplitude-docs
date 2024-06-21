@@ -3,11 +3,11 @@ id: de87be4d-9370-44b2-b5c7-051dea5df54f
 blueprint: faq_and_troubleshooting
 title: Limits
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/115002923888'
+this_article_will_help_you:
+  - 'Ensure you do not experience "missing" data due to exceeding your Amplitude data limits'
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1718925693
 ---
-#### This article will help you:
-
-* Ensure you do not experience "missing" data due to exceeding your Amplitude data limits
-
 There are some limits to the amount of data that you can send to Amplitude.
 
 ## Event volume limits
@@ -30,7 +30,7 @@ The allowed per-project maximums for **event types**, **event properties**, and 
 * Event properties: 2000
 * User properties: 1000
 
-Once these limit are reached, Amplitude will stop indexing new values. Data for any event types and event or user properties that exceed these limits **cannot be queried** from Amplitude, and can only be accessed in the raw data by exporting data via a CSV file or Amplitude's [Export API](https://www.docs.developers.amplitude.com/analytics/apis/export-api/).
+Once these limit are reached, Amplitude will stop indexing new values. Data for any event types and event or user properties that exceed these limits **cannot be queried** from Amplitude, and can only be accessed in the raw data by exporting data via a CSV file or Amplitude's [Export API](/docs/apis/analytics/export).
 
 As an example, imagine an instrumentation bug causes your product to send several additional event types to Amplitude, causing your project to exceed its instrumentation limit by five. Data for those excess event types will be visible within Amplitude once you have brought your project back down under the instrumentation limit. However, you will be unable to query any data received for those excess event types **during the period** when your account was over the instrumentation limit. 
 
@@ -69,7 +69,7 @@ Up to 30 segments can be selected and shown on the chart at once.
 
 ## Limit warnings
 
-Amplitude will warn you when you are getting close to event type, event property, or user property instrumentation limits. View your current instrumentation usage by navigating to *![gear icon for settings.png](/docs/output/img/faq/gear-icon-for-settings-png.png) > [Organization settings](/docs/admin/account-management/account-settings) > Projects* and selecting a project.
+Amplitude will warn you when you are getting close to event type, event property, or user property instrumentation limits. View your current instrumentation usage by navigating to *Settings > [Organization settings](/docs/admin/account-management/account-settings) > Projects* and selecting a project.
 
 Any limits you are approaching will be delineated with orange text. Any limits you have already exceeded will be delineated with red text.
 
@@ -103,7 +103,7 @@ The group-by limits vary from chart to chart:
 | Revenue LTV | 300 |
 | Data Tables | 10,000 (**see below**) |
 
-For example, in the [Event Segmentation](https://help.amplitude.com/hc/en-us/articles/360033852251) chart, you can export a CSV of data for 10,000 distinct property values. If you perform a group-by on a property with more than 10,000 possible values, Amplitude would only export the top 10,000 values. However, you can export the full data table to the warehouse of your choice. Learn more about how to [export from Amplitude to a data warehouse](https://www.docs.developers.amplitude.com/data/destination-warehouse-overview/).
+For example, in the [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) chart, you can export a CSV of data for 10,000 distinct property values. If you perform a group-by on a property with more than 10,000 possible values, Amplitude would only export the top 10,000 values. However, you can export the full data table to the warehouse of your choice.
 
 As stated in the table, the baseline group-by limit for Data Tables is 10,000. However, there are several exceptions:
 

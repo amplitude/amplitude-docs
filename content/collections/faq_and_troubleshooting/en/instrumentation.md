@@ -13,7 +13,8 @@ Once data is ingested into Amplitude, it cannot be altered. Amplitude's current 
 Data can be deleted at the individual user level in compliance with GDPR and other privacy laws via the User Privacy API. More details on this API can be found [here](/docs/apis/analytics/user-privacy).
 {{/partial:collapse}}
 
-How is Device ID set?
+
+{{partial:collapse name="How is Device ID set?"}}
 Device IDs are set differently when sending client-side events (using Amplitude's SDKs) vs server-side events (HTTP API). 
 
 * SDKs
@@ -22,35 +23,46 @@ Device IDs are set differently when sending client-side events (using Amplitude'
 * Server-side (HTTP API)
 	* For server-side events, Device ID must be manually sent in the event. If there is no Device ID available, the Device ID will be set to a randomly-generated hashed version of the `user_id`. More details [here](/docs/apis/analytics/http-v2).
 	* If the same Device ID set-up is not maintained for server-side events and client-side events, the same user will have different Device IDs even if the device model, language and carrier are the same.
+{{/partial:collapse}}
 
-Can two different events have the same name?
+
+{{partial:collapse name="Can two different events have the same name?"}}
 No. Each event name must be unique across an entire project. Two events with the same name will be considered the same event. If you notice two events in a project with the same name, it's possible that the display name for one of them was inadvertently set to the same name as another event. You can confirm by expanding the event in Amplitude Data to see more details.
 
 Can array values be sent into Amplitude?
 Yes. However, Amplitude doesn't support exact matching on array properties. The contains operator can be used to filter for values within an array. 
 
 * SDK
-	* * [User Property Array](https://www.docs.developers.amplitude.com/data/sdks/typescript-node/?h=user+array#arrays-in-user-properties)
-		* [Event Property Array](https://www.docs.developers.amplitude.com/data/sdks/javascript/?h=even+array+property#arrays-in-event-properties)
-* [HTTP API Array](https://developers.amplitude.com/docs/http-api-v2#footnotes)
+	* * [User Property Array](/docs/sdks/analytics/browser/browser-sdk-2#arrays-in-user-properties)
+		* [Event Property Array](/docs/sdks/analytics/browser/javascript-sdk#arrays-in-event-properties)
+* [HTTP API Array](/docs/apis/analytics/http-v2)
+{{/partial:collapse}}
 
-Why is device information (like Device Type or Device Family) returning ‘null’ in my project?
+
+{{partial:collapse name="Why is device information (like Device Type or Device Family) returning ‘null’ in my project?"}}
 A null value will be returned if Amplitude is unable to parse device information from the device or browser, or if the device is not mapped in Amplitude's system. If you would like new device values to be mapped, please reach out to Amplitude's support team with the following information:
 
 * Manufacturer (ex: samsung)
 * Model (ex: sm-g930u)
 * Device Family (ex: Samsung Galaxy Phone)
 * Device Type (ex: Samsung Galaxy S7)
+{{/partial:collapse}}
 
-Why are my sessions generating new Session ID values?
+
+{{partial:collapse name="Why are my sessions generating new Session ID values?"}}
 The events ingested through Amplitude's SDK will maintain the same session *if* the events are coming from the same device. Session ID changes every time the Device ID changes.
 
 The default session time-out for JavaScript SDK is 30 minutes. For iOS/Android, it's five minutes.
+{{/partial:collapse}}
 
-How can recurring revenue subscription events be sent in?
+
+{{partial:collapse name="How can recurring revenue subscription events be sent in?"}}
 After the first revenue event related to subscription, Apple or Google will have to validate whether or not a subscription is active. If it is, the subscription revenue event should be received by Amplitude at the time interval of that subscription. 
+{{/partial:collapse}}
 
-How do I filter out bot traffic users?
+
+{{partial:collapse name="How do I filter out bot traffic users?"}}
 While Amplitude SDKs use the User Agent to populate some user properties (such as device type), the User Agent itself is not collected or stored. Some customers implement logic to store User Agent as a custom user property and remove bot users that way. 
 
 Alternatively, if you're able to determine the IP address of a suspected bot user, you can also use Data Filters to block events from that IP address. To learn more, see Amplitude's help center article on [blocking bot web traffic](/docs/data/block-bot-traffic).
+{{/partial:collapse}}
