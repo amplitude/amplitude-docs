@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/data/destinations/azure-blob-storage/",
+      "destination": "/docs/data/destination-catalog/azure-blob-storage",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/data/sources/facebook-ads/",
       "destination": "/docs/data/source-catalog/facebook-ads",
       "statusCode": 301
