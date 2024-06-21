@@ -21,18 +21,24 @@ jobs:
           token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
-      # Setup Node
-      - name: Setup Node 18
-        uses: actions/setup-node@v3
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
         with:
-          node-version: 18
-      # Setup Python
-      - name: Setup Python
-        uses: actions/setup-python@v4
+          php-version: '8.2' # Adjust as needed
+          extensions: bcmath, ctype, exif, json, mbstring, openssl, pdo, tokenizer, xml, gd
+          tools: composer, php-cs-fixer
+
+      - name: Install Dependencies
+        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          python-version: '3.9'
-          cache: 'pip'
-      - run: pip install -r requirements.txt
+          node-version: '20'
+
+      - name: Install NPM Dependencies
+        run: npm install
       # External Link Check
       - name: Internal Link Check
         run: ./linkchecker external
