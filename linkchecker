@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Rebuild the site
+npm run build
 php please ssg:generate --workers=4
 
 # Run the link checker on the local site
