@@ -3,11 +3,11 @@ id: 58d6a33c-545b-44fe-a840-d5df0a1ab748
 blueprint: faq_and_troubleshooting
 title: 'The datepicker'
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/18133682827419'
+this_article_will_help_you:
+  - 'Understand nuances in the way the datepicker understands time'
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1718928315
 ---
-#### This article will help you:
-
-* Understand nuances in the way the datepicker understands time
-
 In Amplitude, you use the datepicker to select the timeframe of the analysis you're conducting. In many ways, it's very intuitive, as it's something you've most likely seen in other software contexts. You can choose to analyze data collected between two dates, since a specific date, or in the last *x* days, weeks, or months, where *x* is a value you select. 
 
 However, there are certain nuances to the way the datepicker understands time. This **explainer** should clarify these nuances for you.
@@ -20,7 +20,7 @@ For example, if you set the datepicker to the last 30 days, you'll get data from
 
 ![newDropdownDatepicker.png](/docs/output/img/faq/newdropdowndatepicker-png.png)
 
-The dotted line that's framing March 13th tells you that the data for that day is incomplete. (Similarly, you'd see this data represented on a chart as a [dotted line](https://help.amplitude.com/hc/en-us/articles/360043977571).)
+The dotted line that's framing March 13th tells you that the data for that day is incomplete. Similarly, you'd see this data represented on a chart as a [dotted line](/docs/faq/the-dotted-line-in-amplitude-charts).
 
 If you'd rather not get data from the incomplete day, you can use an **offset**. To use an offset, click *Add Offset* from the *Advanced Settings* dropdown. Then enter the number of days to offset by.
 
@@ -54,4 +54,4 @@ To enable time granularity, click *Enable Time Input* from the *Advanced Setting
 
 ![newDatepickerGranularityON.png](/docs/output/img/faq/newdatepickergranularityon-png.png)
 
-To turn it off, choose *Disable Time Input* from *Advanced Settings*.  
+To turn it off, choose *Disable Time Input* from *Advanced Settings*.

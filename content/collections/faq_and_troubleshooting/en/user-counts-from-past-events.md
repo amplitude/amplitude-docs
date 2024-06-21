@@ -9,7 +9,7 @@ The user count for an earlier date can fluctuate as time goes by. When you view 
 The user count can **increase** when events that occurred in the past are ingested into Amplitude later. Most frequently, it happens for one of the following reasons:
 
 * Amplitude's mobile SDKs batch events, with a threshold of every 30 seconds, or every 30 events. When users don't meet this threshold, their events may not be sent to Amplitude until they return to your product and trigger more events.
-	* To resolve this, adjust the event upload frequency. For [Android Kotlin SDK](https://www.docs.developers.amplitude.com/data/sdks/android-kotlin/#configuration), configure flushIntervalMillis and/or flushQueueSize. For [iOS SDK](https://www.docs.developers.amplitude.com/data/sdks/ios/#configuration), configure eventUploadPeriodSeconds and/or eventUploadThreshold. See [our SDK documentation](https://www.docs.developers.amplitude.com/data/sdks/sdk-overview/) to learn more about configuring the threshold on other SDKs.
+	* To resolve this, adjust the event upload frequency. For [Android Kotlin SDK](docs/sdks/analytics/android/android-kotlin-sdk#configure-the-sdk), configure `flushIntervalMillis` and/or `flushQueueSize`. For [iOS SDK](/docs/sdks/analytics/ios/ios-swift-sdk#configure-the-sdk), configure eventUploadPeriodSeconds and/or eventUploadThreshold. See [SDK documentation](/docs/sdks/analytics) to learn more about configuring the threshold on other SDKs.
 * Amplitude's Batch API/server-side integrations have inherent delays.
 	* To resolve this, schedule batches more frequently.
 * If the user's cellular or WiFi connection was not strong enough when they triggered events, those events will be held until the connection is stronger.

@@ -3,25 +3,29 @@ id: 703db1c8-8a4e-4f30-b2b5-9a412c6d4986
 blueprint: faq_and_troubleshooting
 title: 'Security and Privacy'
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/17269140583451'
+category: other
 ---
 This article covers some frequently asked questions about Amplitude's security and privacy policies.
 
-### Feature availability
+## Feature availability
 
 Amplitude has a built-in compliance feature that meets standards for SOC2 Type 2, GDPR, HIPPA, CCPA, and Privacy Shield. It is available to users on Starter, Plus, Growth, and Enterprise plans.
 
-What are the terms of Amplitude's service and privacy policy?
+
+{{partial:collapse name="What are the terms of Amplitude's service and privacy policy?"}}
 Amplitude provides a secure platform to explore your data, while addressing all relevant legal, industry, and regulatory concerns. The Terms of Service incorporate the Data Processing Addendum for Terms of Service ([TOS DPA](https://www.amplitude.com/terms/dpa)) and the Acceptable Use Policy ([AUP](https://www.amplitude.com/aup)).
 
 The Privacy Notice describes Amplitude’s practices for collecting, storing, using, disclosing, and otherwise processing information in relation to visitors of the [Amplitude's website](https://amplitude.com/); including our Community Forum and Amplitude Academy (aka, the **website**); and Amplitude’s marketing activities, customers accessing and using our products or services (collectively, the **product**).
 
 {{partial:admonition type='note'}}
- Please read Amplitude's [Terms of Service](https://amplitude.com/terms) and [Privacy Policy](https://amplitude.com/privacy) carefully to understand the policies and practices regarding your information collected through the website and the product. 
+Read Amplitude's [Terms of Service](https://amplitude.com/terms) and [Privacy Policy](https://amplitude.com/privacy) carefully to understand the policies and practices regarding your information collected through the website and the product. 
 {{/partial:admonition}}
 
 For other security and privacy information (GDPR, CCPA, HIPPA, etc.), review Amplitude's [Stance on Security & Privacy](https://amplitude.com/amplitude-security-and-privacy). 
+{{/partial:collapse}}
 
-What is the SOC2 report?
+
+{{partial:collapse name="What is the SOC2 report?"}}
 The SOC2 is a report on Amplitude’s Description of its Digital Optimization System and on the Suitability of the Design and Operating Effectiveness of Controls Relevant to Security, Availability, and Confidentiality. This is available in Amplitude's [Customer Trust Portal](http://trust.amplitude.com). 
 
 There you will find the following and more:
@@ -31,8 +35,10 @@ There you will find the following and more:
 * ISO certification
 * Industry Standard Questionnaires (CAIQ)
 * Privacy Related Information
+{{/partial:collapse}}
 
-What is the DPA for paying and non-paying customers?
+
+{{partial:collapse name="What is the DPA for paying and non-paying customers?"}}
 The Data Processing Addendum for Terms of Service (TOS DPA) is incorporated into and forms part of the [Amplitude Terms of Service](https://amplitude.com/terms), or other written or electronic agreement between customer and Amplitude, Inc. which governs customer’s use of the Amplitude Services (as applicable, the in the **Terms**). Visit the [Customer Trust Portal](http://trust.amplitude.com) for more information.
 
 There you will find the following:
@@ -42,8 +48,10 @@ There you will find the following:
 * ISO certification
 * Industry Standard Questionnaires (CAIQ)
 * Privacy Related Information
+{{/partial:collapse}}
 
-What is the Bug Bounty program?
+
+{{partial:collapse name="What is the Bug Bounty program?"}}
 Amplitude has implemented the following ongoing security procedures:
 
 * Automated monthly vulnerability scanning of its source code, application, and infrastructure
@@ -60,3 +68,4 @@ For more questions around security and compliance, please feel free to contact [
 For more questions around privacy, please contact [privacy@amplitude.com](mailto:privacy@amplitude.com). 
 
 If you want to report any concerns, including fraud, please email [reports@lighthouse-services.com](mailto:reports@lighthouse-services.com) and include Amplitude in the report. 
+{{/partial:collapse}}
