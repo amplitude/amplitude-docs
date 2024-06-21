@@ -787,7 +787,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/customer-io",
+      "source": "/docs/data/destinations/customerio",
       "destination": "/docs/data/destination-catalog/customer-io",
       "statusCode": 301
     },
