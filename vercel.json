@@ -2,6 +2,16 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/experiment/general/evaluation/implementation",
+      "destination": "/docs/experiment/implementation",
+      "statusCode": 301
+    },
+    {
+      "source": "/experiment/general/exposure-tracking",
+      "destination": "/docs/experiment/track-exposure",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/experiment/integrations/contentful",
       "destination": "/docs/experiment/contentful",
       "statusCode": 301
