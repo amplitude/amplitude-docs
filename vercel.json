@@ -1,6 +1,12 @@
 {
   "trailingSlash": false,
-  "redirects": [{
+  "redirects": [
+    {
+      "source": "/docs/data/sources/facebook-ads/",
+      "destination": "/docs/data/source-catalog/facebook-ads",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/experiment/general/evaluation/local-evaluation",
       "destination": "/docs/experiment/local-evaluation",
       "statusCode": 301
