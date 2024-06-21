@@ -67,7 +67,7 @@ Adobe Analytics and Amplitude have different approaches to data modeling and tra
                     <td>
                         <ul>
                             <li>Uses page views and custom events to track user interactions.</li>
-                            <li>Predefines events that require configuration in the Adobe Analytics user interface.</li>
+                            <li>Pre-defines events that require configuration in the Adobe Analytics user interface.</li>
                             <li>A more complex creation process for custom events.</li>
                         </ul>
                     </td>
@@ -125,7 +125,7 @@ Amplitude and Adobe Analytics use different terminology and structures for metri
 
 | Term                               | Definition                                                               | Amplitude Equivalent                                                                                                                                                                                                                                                                   |
 | ---------------------------------- | ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Page Views                         | The total number of times users view a page.                             | `PageView` event. Amplitude captures this by default, and you can pass it from any data source. See this [Community thread](https://community.amplitude.com/product-updates/default-event-tracking-as-part-of-our-browser-sdk-2-0-2462) for more information about autotracked events. |
+| Page Views                         | The total number of times users view a page.                             | `PageView` event. Amplitude captures this by default, and you can pass it from any data source. See this [Community thread](https://community.amplitude.com/product-updates/default-event-tracking-as-part-of-our-browser-sdk-2-0-2462) for more information about auto-tracked events. |
 | Unique Visitors                    | A count of the distinct visitors to a website or app.                    | Amplitude ID. Amplitude derives this from the User ID Count and Device ID Count.                                                                                                                                                                                                       |
 | Events                             | Custom interactions or actions tracked on a website or app.              | Custom Events                                                                                                                                                                                                                                                                          |
 | Conversion Rate                    | The percentage of visitors who complete a specified action.              | Conversion (tracked as a specific event). Build a [Funnel](/docs/analytics/charts/funnel-analysis/funnel-analysis-get-the-most), which is a series of steps a user takes as part of the experience.                                        |
@@ -153,7 +153,7 @@ For more information, see Amplitude's [industry-specific best practice guides](/
 
 ## Map your Adobe variables to the Amplitude schema
 
-When you map variables from Adobe Analytics to Amplitude, you need to align the terminiology and concepts used in each platform. This table provides a general guide to map variables between Adobe Analytics and Amplitude. The mapping may not be one-to-one, and there may be differences in the way each platform collects and reports data. The specific configuration and setup of variables may vary based on the complexity of your analytics implementation.
+When you map variables from Adobe Analytics to Amplitude, you must align the terminology and concepts used in each platform. This table provides a general guide to map variables between Adobe Analytics and Amplitude. The mapping may not be one-to-one, and there may be differences in the way each platform collects and reports data. The specific configuration and setup of variables may vary based on the complexity of your analytics implementation.
 
 | Adobe Analytics                 | Amplitude Analytics                                                                 | Notes                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | ------------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -232,7 +232,7 @@ If your organization uses Adobe Launch (Adobe’s tag management system) to popu
 
 
 {{partial:admonition type="note" heading="Adobe Launch availability"}}
-Adobe provides Adobe Launch free for Adobe clients, but if you eventually remove all Adobe products, you may lose access to Adobe Launch. The Amplitude Adobe Launch extension is a great way to try out Amplitude with little effort. But if your organization replaces Adobe Analytics, you may need to switch to another tag management system in the future.
+Adobe provides Adobe Launch free for Adobe clients, but if you eventually remove all Adobe products, you may lose access to Adobe Launch. The Amplitude Adobe Launch extension is a great way to try out Amplitude with little effort. But if your organization replaces Adobe Analytics, you may have to switch to another tag management system in the future.
 {{/partial:admonition}}
 
 #### Tealium
@@ -274,7 +274,7 @@ If you need to send historical Adobe data, Amplitude recommends the following:
 
 - Key identifiers, data structures and user definitions can differ between Adobe Analytics and Amplitude. Given the complexity of unique identifiers in Adobe, it’s best to align on the logic for the main identifier for your unique visitors. The differences in the data models can lead to expected discrepancies on certain metrics. Amplitude recommends that you align on a percentage of discrepancies that's acceptable. 
 
-- If you have a critical need to analyze historical data, Amplitude recommends that you confirm the specific events and properties that you consider to be critical. Migrating the full historical data set takes considerable time so rank specific events and properties your users are most likely to query in Amplitude. 
+- If you need to analyze historical data, Amplitude recommends that you confirm the specific events and properties that you consider to be critical. Migrating the full historical data set takes considerable time so rank specific events and properties your users are most likely to query in Amplitude. 
 
 - To prevent issues with identity management due to the differences in the data model, Amplitude recommends that you backfill historical data into separate projects. If this data exists in a separate project, you may not be able to analyze trends over certain time periods. 
 

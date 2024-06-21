@@ -38,7 +38,7 @@ For detailed instructions, see the documentation for the [source](/docs/data/sou
 
 ## Update SDK implementation
 
-Both mParticle and Amplitude SDKs are meant to capture first party data by tracking user interactions. For the most part both work pretty similarly except some nuances around syntax. Here is high level mapping of concepts between mParticle & Amplitude.
+Both mParticle and Amplitude SDKs capture first-party data by tracking user interactions. Other than some nuances around syntax, they work similarly. Here is high level mapping of concepts between mParticle & Amplitude.
 
 | mParticle | Amplitude | Notes                                      |
 |-----------|-----------|--------------------------------------------|
@@ -49,7 +49,7 @@ Both mParticle and Amplitude SDKs are meant to capture first party data by track
 | Event     | Event     | Events track the action user is performing.|
 | Screen    | Event     | Create an Event to track Screen views.|
 | Page      | Event     | Create an Event to track Page views.|
-|           | Group     | Group is a collection of users. In Amplitude one user could belong to multiple groups. Each group can have properties/attributes that will be available to query/forward on actions performed by any user in the group.|
+|           | Group     | Group is a collection of users. In Amplitude one user could belong to multiple groups. Each group can have properties/attributes that are then available to query/forward on actions performed by any user in the group.|
 | Kits      | Plugins   | Plugins let you extend Amplitude by running a sequence of custom code on every event.|
 
 
@@ -254,17 +254,17 @@ It's important to validate the migration to make sure there is minimal impact on
 - [x] Validated events are flowing in to Amplitude correctly
 - [x] Added all destinations to Amplitude
 - [x] Validated data is flowing into destinations correctly
-- [x] Validated downstream consumers are not impacted (for example, BI, Mktg, ML, Ops)
+- [x] Validated downstream consumers aren't affected (for example, BI, Mktg, ML, Ops)
 
 ## Frequently asked questions
 
 
 {{partial:collapse name="How long does it take to migrate?"}}
-This depends on how you implemented your CDP. For most teams we'd recommend that you plan a few months to be able to complete your migration. If you're looking to update your taxonomy and tracking plan than this could require more upfront planning.
+This depends on how you implemented your CDP. Most teams should plan a few months to be able to complete your migration. If you're looking to update your taxonomy and tracking plan than this could require more upfront planning.
 {{/partial:collapse}}
 
 {{partial:collapse name="What if I don't see an integration that I need?"}}
-Amplitude regularly adds new integrations so either add a request in product or communicate with your CSM and we'll provide a timeline.
+Amplitude regularly adds new integrations, so either add a request in the product or ask your CSM for a timeline.
 {{/partial:collapse}}
 
 {{partial:collapse name="What if I have an existing CDP contract?"}}
