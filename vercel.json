@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/experiment/integrations/contentful",
+      "destination": "/docs/experiment/contentful",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/data/destinations/azure-blob-storage/",
       "destination": "/docs/data/destination-catalog/azure-blob-storage",
       "statusCode": 301
