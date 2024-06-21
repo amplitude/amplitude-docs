@@ -1,12 +1,14 @@
 ---
 id: ec6127d5-1384-41b1-b85a-04d21d0678f1
+blueprint: analytic
 title: 'Gain marketing insights with web analytics'
 this_article_will_help_you:
   - 'Track industry-standard web analytics in one place'
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1718653434
-source: https://help.amplitude.com/hc/en-us/articles/25181928085019-Gain-marketing-insights-with-web-analytics
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1718945018
+source: 'https://help.amplitude.com/hc/en-us/articles/25181928085019-Gain-marketing-insights-with-web-analytics'
+landing: false
 ---
 Amplitude’s Web Analytics space acts as a centralized hub where you can track page engagement and session-based metrics using common KPIs, such as page views, session duration, and bounce rate. Custom settings are available to:
 
@@ -33,7 +35,7 @@ The Web Analytics space offers four sets of insights with default metrics, as we
 Each insight displays a time series chart and an aggregated data table below it. 
 
 {{partial:admonition type='note'}}
-Visit the [Marketing metrics recipes article](https://help.amplitude.com/hc/en-us/articles/23990255180443-Marketing-metrics-recipes) for a more detailed explanation of commonly-used marketing analytics and how to replicate them in Amplitude charts.
+Visit the [Marketing metrics recipes article](/docs/analytics/charts/user-sessions/marketing-metrics-recipes) for a more detailed explanation of commonly-used marketing analytics and how to replicate them in Amplitude charts.
 {{/partial:admonition}}
 
 Follow these steps to analyze metrics in the Web Analytics space:
