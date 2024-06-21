@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Rebuild the site
+npm run build
 php please ssg:generate --workers=4
 
 # Run the link checker on the local site
@@ -8,7 +9,7 @@ if [ "$1" = "external" ]; then
     # Also check external links. Requires additional filtering
     exec 5>&1
     echo "Running full link check, including external links. This may take some time..."
-    out=$( npx -y broken-link-checker-local@latest ./site -rog \
+    out=$( npx -y broken-link-checker-local@latest ./storage/app/static/docs -b /docs -rog \
         --exclude 'https://help.amplitude.com' \
         --exclude 'https://api.amplitude.com' \
         --exclude 'https://api2.ampliude.com' \
@@ -24,7 +25,7 @@ else
     # Check only internal links
     exec 5>&1
     echo "Running internal link check..."
-    out=$( npx -y broken-link-checker-local@latest ./storage/app/static -roe \
+    out=$( npx -y broken-link-checker-local@latest ./storage/app/static/docs -b /docs -roe \
     | grep --line-buffered 'BROKEN\|Getting links from' \
     | tee >(cat - >&5) )
 fi

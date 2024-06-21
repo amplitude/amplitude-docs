@@ -1,0 +1,41 @@
+name: Internal Link Check
+
+on:
+  # Trigger at every push. Action will also be visible from Pull Requests to master
+  pull_request:
+    branches:
+        - main
+
+jobs:
+  build:
+    name: Internal Link Check
+    runs-on: ubuntu-latest
+    steps:
+      # Git Checkout
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2' # Adjust as needed
+          extensions: bcmath, ctype, exif, json, mbstring, openssl, pdo, tokenizer, xml, gd
+          tools: composer, php-cs-fixer
+
+      - name: Install Dependencies
+        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Install NPM Dependencies
+        run: npm install
+
+      # Internal Link Check
+      - name: Internal Link Check
+        run: ./linkchecker
