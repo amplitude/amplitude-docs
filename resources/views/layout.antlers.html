@@ -21,7 +21,6 @@
   <link href="{{ mix src='/docs/css/site.css' }}" rel="stylesheet">
   <link href="{{ mix src='/docs/css/algolia.css' }}" rel="stylesheet">
 
-  <script src="{{ mix src='/docs/js/site.js' }}"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
   <link rel="preconnect" href="https://93SYI9HL20-dsn.algolia.net" crossorigin />
@@ -99,6 +98,8 @@
           ignoreSelector: '.hint-title',
           orderedList: false,
           ignoreHiddenElements: true,
+          headingsOffset: 96,
+          scrollSmoothOffset: -96
         });    }
      
     </script>
@@ -106,5 +107,7 @@
 {{if environment == 'production' }}
 {{partial:partials/kapa-script}}
 {{/if}}
+<script src="{{ mix src='/docs/js/site.js' }}"></script>
+
 </body>
 </html>
