@@ -857,7 +857,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/fivetran",
+      "source": "/docs/data/destinations/fivetran-event-forwarding",
       "destination": "/docs/data/destination-catalog/fivetran",
       "statusCode": 301
     },
