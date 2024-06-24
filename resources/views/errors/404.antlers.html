@@ -18,3 +18,12 @@ hide_helpful: true
         {{ partial:article-footer hide_helpful="true" }}
     </div>
 </section>
+
+{{if environment == "production"}}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Your code here
+        amplitude.track("404")
+      });
+</script>
+{{/if}}
