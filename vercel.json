@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/assets/csv/lookup-table-example.csv",
+      "destination": "/docs/assets/downloads/lookup-table-example.csv",
+      "statusCode": 301
+    },
+  {
       "source": "/docs/data/destinations/cohort-webhooks",
       "destination": "/docs/data/destination-catalog/cohort-webhooks",
       "statusCode": 301
@@ -574,6 +579,11 @@
     {
       "source": "/docs/data/sdks/javascript/ampli",
       "destination": "/docs/sdks/analytics/browser/ampli-for-javascript-sdk",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/data/sdks/javascript",
+      "destination": "/docs/sdks/analytics/browser/javascript-sdk",
       "statusCode": 301
     },
     {
@@ -1267,7 +1277,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/tiktok-ads",
+      "source": "/docs/data/destinations/tiktok-cohort",
       "destination": "/docs/data/destination-catalog/tiktok-ads",
       "statusCode": 301
     },
@@ -2906,6 +2916,16 @@
     {
       "source": "/docs/hc/en-us/categories/360006505032((?:-[a-zA-Z0-9-]+)?)",
       "destination": "/docs/experiment",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/categories/360039976531((?:-[a-zA-Z0-9-]+)?)",
+      "destination": "/docs/analytics/charts/funnel-analysis/funnel-analysis-get-the-most",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/categories/360052274852((?:-[a-zA-Z0-9-]+)?)",
+      "destination": "/docs/analytics/charts/event-segmentation/event-segmentation-build",
       "statusCode": 301
     }
   ]
