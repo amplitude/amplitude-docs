@@ -2892,6 +2892,16 @@
       "source": "/docs/hc/en-us/articles/23990255180443((?:-[a-zA-Z0-9-]+)?)",
       "destination": "/docs/analytics/charts/user-sessions/marketing-metrics-recipes",
       "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/24776961429019((?:-[a-zA-Z0-9-]+)?)",
+      "destination": "/docs/experiment/workflow/multi-armed-bandit-experiments",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/360006505032((?:-[a-zA-Z0-9-]+)?)",
+      "destination": "/docs/experiment",
+      "statusCode": 301
     }
   ]
 }
