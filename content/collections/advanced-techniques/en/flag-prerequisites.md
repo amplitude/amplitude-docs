@@ -3,8 +3,8 @@ id: 18d1ed19-14ba-4e8a-bd27-3774f931f02a
 blueprint: advanced-technique
 title: 'Flag Prerequisites'
 exclude_from_sitemap: false
-updated_by: 924ab613-3300-4c23-b6d6-2030761a8ea7
-updated_at: 1718742008
+updated_by: 04dfbed9-a0fd-4d6a-bf64-d31bebb05bdc
+updated_at: 1719252081
 ---
 As you are running new experiments or rolling out new feature flags, you may have features that are only relevant to users if another feature has been enabled for them. You may want to make sure that those dependencies are evaluated first and then the results of that are used in the evaluation of your flag or experiment.
 
