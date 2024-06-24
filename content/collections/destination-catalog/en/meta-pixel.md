@@ -69,17 +69,17 @@ When satisfied with your configuration, at the top of the page toggle the **Stat
 
 | Parameter Name    | Required              | Hashed                |
 |-------------------|:---------------------:|:---------------------:|
-| **External ID**   | :octicons-check-16:   | :octicons-check-16:   |
-| Email             |                       | :octicons-check-16:   |
-| Phone Number      |                       | :octicons-check-16:   |
-| First Name        |                       | :octicons-check-16:   |
-| Last Name         |                       | :octicons-check-16:   |
-| Date of Birth     |                       | :octicons-check-16:   |
-| Gender            |                       | :octicons-check-16:   |
-| City              |                       | :octicons-check-16:   |
-| State             |                       | :octicons-check-16:   |
-| Zip Code          |                       | :octicons-check-16:   |
-| Country           |                       | :octicons-check-16:   |
+| **External ID**   | ✅   | ✅   |
+| Email             |                       | ✅   |
+| Phone Number      |                       | ✅   |
+| First Name        |                       | ✅   |
+| Last Name         |                       | ✅   |
+| Date of Birth     |                       | ✅   |
+| Gender            |                       | ✅   |
+| City              |                       | ✅   |
+| State             |                       | ✅   |
+| Zip Code          |                       | ✅   |
+| Country           |                       | ✅   |
 | Client IP Address |                       |                       |
 | Client User Agent |                       |                       |
 | Click ID          |                       |                       |
