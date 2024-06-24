@@ -23,7 +23,9 @@ hide_helpful: true
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         // Your code here
-        amplitude.track("404")
+        amplitude.track("404", {
+            "referrer": document.referrer
+        })
       });
 </script>
 {{/if}}
