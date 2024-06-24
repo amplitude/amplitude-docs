@@ -30,20 +30,19 @@ For more information, see [Set up and run mutually exclusive experiments
 
 *Available for experiments only*
 
-A holdout group withholds a percentage of traffic from a group of experiments, allowing measurement of the long-term and combined impact of multiple experiments. In Amplitude Experiment, a holdout group is implemented using a flag with two variants: `holdout` and `on`, where the `holdout` variant is allocated the holdout percentage defined on creation. Experiments in the group depend on the holdout group's variant `on`.
+A holdout group withholds a percentage of traffic from a group of experiments, allowing measurement of the long-term and combined impact of multiple experiments. Amplitude Experiment implements a holdout group using a flag with two variants: `holdout` and `on`, where the `holdout` variant is allocated the holdout percentage defined on creation. Experiments in the group depend on the holdout group's variant `on`.
 
 The variant result of a holdout group's evaluation isn't returned but is assigned as a user property to enable holdout analysis.
 
 For more information, see [Holdout Groups](/docs/experiment/advanced-techniques/holdout-groups-exclude-users)
 
-## Flag Prerequisites
+## Flag prerequisites
 
 *Available for flags and experiments*
 
-Flag prerequisites allow flags and experiments to depend on other flags and experiments so targeting can be based on the result of another flag evaluation. Evaluation of the prerequisites can look for specific variant(s) or be configured to target users who were not included in the prerequisite flag or experiment.
+Flag prerequisites allow flags and experiments to depend on other flags and experiments to base targeting on the result of another flag evaluation. Evaluation of the prerequisites can look for specific variants or be configured to target users who weren't included in the prerequisite flag or experiment.
 
-For more information, see [Flag Prerequisites
-](/docs/experiment/advanced-techniques/flag-prerequisites)
+For more information, see [Flag Prerequisites](/docs/experiment/advanced-techniques/flag-prerequisites)
 
 ## Local evaluation support
 
