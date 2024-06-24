@@ -1318,6 +1318,8 @@ video {
   padding-top: 2rem;
 }.pt-\[6\.5rem\] {
   padding-top: 6.5rem;
+}.pr-4 {
+  padding-right: 1rem;
 }.text-left {
   text-align: left;
 }.text-center {
