@@ -2,6 +2,16 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/assets/csv/lookup-table-example.csv",
+      "destination": "/docs/assets/downloads/lookup-table-example.csv",
+      "statusCode": 301
+    },
+  {
+      "source": "/docs/data/destinations/cohort-webhooks",
+      "destination": "/docs/data/destination-catalog/cohort-webhooks",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/experiment/general/evaluation/implementation",
       "destination": "/docs/experiment/implementation",
       "statusCode": 301
@@ -572,6 +582,11 @@
       "statusCode": 301
     },
     {
+      "source": "/docs/data/sdks/javascript",
+      "destination": "/docs/sdks/analytics/browser/javascript-sdk",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/data/destinations/appfit",
       "destination": "/docs/data/destination-catalog/appfit",
       "statusCode": 301
@@ -842,7 +857,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/fivetran",
+      "source": "/docs/data/destinations/fivetran-event-forwarding",
       "destination": "/docs/data/destination-catalog/fivetran",
       "statusCode": 301
     },
@@ -1262,7 +1277,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/tiktok-ads",
+      "source": "/docs/data/destinations/tiktok-cohort",
       "destination": "/docs/data/destination-catalog/tiktok-ads",
       "statusCode": 301
     },
@@ -2891,6 +2906,26 @@
     {
       "source": "/docs/hc/en-us/articles/23990255180443((?:-[a-zA-Z0-9-]+)?)",
       "destination": "/docs/analytics/charts/user-sessions/marketing-metrics-recipes",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/24776961429019((?:-[a-zA-Z0-9-]+)?)",
+      "destination": "/docs/experiment/workflow/multi-armed-bandit-experiments",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/categories/360006505032((?:-[a-zA-Z0-9-]+)?)",
+      "destination": "/docs/experiment",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/categories/360039976531((?:-[a-zA-Z0-9-]+)?)",
+      "destination": "/docs/analytics/charts/funnel-analysis/funnel-analysis-get-the-most",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/categories/360052274852((?:-[a-zA-Z0-9-]+)?)",
+      "destination": "/docs/analytics/charts/event-segmentation/event-segmentation-build",
       "statusCode": 301
     }
   ]
