@@ -191,12 +191,23 @@ module.exports ={
                         },
                         h2: {
                             'font-weight': '400',
+                            'cursor': 'pointer',
                         },
                         h1: {
                             'font-weight': '400',
+                            'cursor': 'pointer',
                         },
                         h3: {
                             'font-weight': '400',
+                            'cursor': 'pointer',
+                        },
+                        h4: {
+                            'font-weight': '400',
+                            'cursor': 'pointer',
+                        },
+                        h5: {
+                            'font-weight': '400',
+                            'cursor': 'pointer',
                         },
                         kbd: {
                             'background-color': '#e5e6e8',
