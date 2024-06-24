@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/data/destinations/cohort-webhooks",
+      "destination": "/docs/data/destination-catalog/cohort-webhooks",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/experiment/general/evaluation/implementation",
       "destination": "/docs/experiment/implementation",
       "statusCode": 301
