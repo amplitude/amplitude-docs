@@ -2899,7 +2899,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/hc/en-us/articles/360006505032((?:-[a-zA-Z0-9-]+)?)",
+      "source": "/docs/hc/en-us/categories/360006505032((?:-[a-zA-Z0-9-]+)?)",
       "destination": "/docs/experiment",
       "statusCode": 301
     }
