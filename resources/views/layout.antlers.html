@@ -98,6 +98,8 @@
           ignoreSelector: '.hint-title',
           orderedList: false,
           ignoreHiddenElements: true,
+          headingsOffset: 96,
+          scrollSmoothOffset: -96
         });    }
      
     </script>
@@ -105,5 +107,7 @@
 {{if environment == 'production' }}
 {{partial:partials/kapa-script}}
 {{/if}}
+<script src="{{ mix src='/docs/js/site.js' }}"></script>
+
 </body>
 </html>
