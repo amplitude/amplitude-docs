@@ -399,6 +399,10 @@ a.toc-link {
     margin-bottom: 0;
 }
 
+.hint-content > p:first-of-type {
+    margin-top: 0;
+}
+
 .note {
     border-color: theme('colors.amp-blue.500');
 }

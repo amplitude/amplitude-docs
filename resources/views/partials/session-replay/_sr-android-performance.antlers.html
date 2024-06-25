@@ -1,0 +1,7 @@
+{{partial:admonition type="note" heading="Session Replay and performance"}}
+Amplitude built Session Replay to minimize impact on the performance of the Android apps in which it's installed by:
+
+- Asynchronously capturing and processing replay data, to avoid blocking the main user interface thread. The main thread must analyze the view hierarchy, but snapshot capture scheduling and extra processing offloads to the background.
+- Using batching and lightweight compression to reduce the number of network connections and bandwidth.
+- Optimizing view hierarchy processing. This is a work in progress. Contact Amplitude if you experience issues with hierarchy processing.
+{{/partial:admonition}}

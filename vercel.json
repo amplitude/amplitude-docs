@@ -2,11 +2,41 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/session-replay/sdks/middleware-android",
+      "destination": "/docs/session-replay/session-replay-android-middleware",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/session-replay/sdks/plugin-android",
+      "destination": "/docs/session-replay/session-replay-android-plugin",
+      "statusCode": 301
+    },
+    {
+      "source": "/session-replay/sdks/standalone-android",
+      "destination": "/docs/session-replay/session-replay-android-standalone",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/data/android",
+      "destination": "/docs/sdks/analytics/android",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/experiment/guides/getting-started",
+      "destination": "/docs/experiment",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/experiment/guides/getting-started/create-a-flag",
+      "destination": "/docs/experiment/workflow/feature-flag-rollouts",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/assets/csv/lookup-table-example.csv",
       "destination": "/docs/assets/downloads/lookup-table-example.csv",
       "statusCode": 301
     },
-  {
+    {
       "source": "/docs/data/destinations/cohort-webhooks",
       "destination": "/docs/data/destination-catalog/cohort-webhooks",
       "statusCode": 301
@@ -907,7 +937,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/google-bigquery",
+      "source": "/docs/data/destinations/bigquery",
       "destination": "/docs/data/destination-catalog/google-bigquery",
       "statusCode": 301
     },
@@ -2897,7 +2927,7 @@
       "source": "/docs/hc/en-us/articles/18748906568731((?:-[a-zA-Z0-9-]+)?)",
       "destination": "/docs/faq/send-data-to-amplitude",
       "statusCode": 301
-    }, 
+    },
     {
       "source": "/docs/hc/en-us/articles/17645167873691((?:-[a-zA-Z0-9-]+)?)",
       "destination": "/docs/faq/user-sessions",
@@ -2919,13 +2949,18 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/hc/en-us/categories/360039976531((?:-[a-zA-Z0-9-]+)?)",
+      "source": "/docs/hc/en-us/articles/360039976531((?:-[a-zA-Z0-9-]+)?)",
       "destination": "/docs/analytics/charts/funnel-analysis/funnel-analysis-get-the-most",
       "statusCode": 301
     },
     {
-      "source": "/docs/hc/en-us/categories/360052274852((?:-[a-zA-Z0-9-]+)?)",
+      "source": "/docs/hc/en-us/articles/360052274852((?:-[a-zA-Z0-9-]+)?)",
       "destination": "/docs/analytics/charts/event-segmentation/event-segmentation-build",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/sections/360011006231((?:-[a-zA-Z0-9-]+)?)",
+      "destination": "/docs/analytics/charts/funnel-analysis",
       "statusCode": 301
     }
   ]
