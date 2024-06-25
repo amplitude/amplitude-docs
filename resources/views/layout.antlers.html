@@ -108,6 +108,8 @@
 {{partial:partials/kapa-script}}
 {{/if}}
 <script src="{{ mix src='/docs/js/site.js' }}"></script>
-
+{{if environment == "production" || "preview"}}
+{{partial:partials/cookie-control}}
+{{/if}}
 </body>
 </html>
