@@ -238,3 +238,4 @@ Jetbrains
 VSCode
 Candu
 CommandBar
+Welltory
