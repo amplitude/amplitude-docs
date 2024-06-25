@@ -1310,6 +1310,8 @@ video {
   padding-left: 1.5rem;
 }.pl-8 {
   padding-left: 2rem;
+}.pr-4 {
+  padding-right: 1rem;
 }.pr-8 {
   padding-right: 2rem;
 }.pt-5 {
@@ -1318,8 +1320,6 @@ video {
   padding-top: 2rem;
 }.pt-\[6\.5rem\] {
   padding-top: 6.5rem;
-}.pr-4 {
-  padding-right: 1rem;
 }.text-left {
   text-align: left;
 }.text-center {
@@ -2020,6 +2020,110 @@ line-height: 1.25rem;
     font-style: normal;
     font-weight: 500;
     padding: .1875em .375em;
+}/* Cookie Control */#ccc #ccc-notify {
+    padding: 20px 30px!important;
+    justify-content: center!important;
+    display: flex!important;
+    box-shadow: 0 5px 15px rgba(0,0,0,.35)!important
+}#ccc p {
+    opacity: 1!important
+}#ccc .ccc-notify-text>h3 {
+    display: none
+}#ccc .ccc-notify-text {
+    margin-right: 0!important
+}#ccc .ccc-notify-buttons {
+    display: none
+}#ccc .ccc-description {
+    display: flex;
+    align-items: center
+}#ccc .ccc-description h2 {
+    font-size: 16px!important;
+    font-weight: 600!important;
+    line-height: 24px!important;
+    color: #1f1f1f!important;
+    margin-top: 0!important;
+    padding: 0!important
+}#ccc .ccc-description p {
+    font-size: 14px!important;
+    font-weight: 400!important;
+    line-height: 20px!important;
+    color: #565656!important;
+    margin-top: 4px!important
+}#ccc .ccc-description a {
+    color: #1e61f0!important;
+    text-decoration: underline!important;
+    transition: color .3s;
+    cursor: pointer
+}#ccc .ccc-description a:active,#ccc .ccc-description a:hover {
+    color: #1709e9;
+    transition-duration: .1s
+}#ccc .ccc-description .ccc-manage-settings-btn {
+    font-size: 14px;
+    margin-right: 15px;
+    white-space: nowrap
+}#ccc .ccc-inner-description {
+    margin-left: 20px
+}#ccc .ccc-actions {
+    display: flex;
+    align-items: center;
+    margin-left: 50px
+}#ccc .ccc-description button {
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    overflow: hidden;
+    padding: 12px 30px;
+    text-align: center;
+    transition: all .25s;
+    z-index: 5;
+    background-color: #1e61f0;
+    border: 0;
+    color: #fff;
+    position: relative
+}#ccc .ccc-description button:before {
+    background: url(https://amplitude.com/cookie-control/button-edge.svg);
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 165px;
+    height: 32px
+}#ccc .ccc-description button:active,#ccc .ccc-description button:hover {
+    background: #1709e9;
+    transition-duration: .1s
+}#ccc .ccc-description button:active:before,#ccc .ccc-description button:hover:before {
+    content: ""
+}#ccc-ccpa,#ccc-notify-title,#ccc-overlay {
+    display: none
+}@media (max-width: 767px) {
+    #ccc #ccc-notify {
+        padding:25px 20px!important
+    }
+
+    #ccc .ccc-description h2,.ccc-description p {
+        text-align: center!important
+    }
+
+    #ccc .ccc-description {
+        flex-direction: column;
+        align-items: center
+    }
+
+    #ccc .ccc-actions {
+        flex-direction: column;
+        align-items: normal;
+        margin-left: 0
+    }
+
+    #ccc .ccc-inner-description {
+        margin-left: 0
+    }
+
+    #ccc .ccc-description .ccc-manage-settings-btn {
+        margin: 0 0 15px;
+        text-align: center
+    }
 }.hover\:h-6:hover {
   height: 1.5rem;
 }.hover\:h-8:hover {
