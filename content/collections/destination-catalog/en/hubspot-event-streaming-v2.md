@@ -36,10 +36,10 @@ Keep these things in mind when sending events to HubSpot:
 - Events from Amplitude appear as Custom Behavioral Events in HubSpot.
 - A HubSpot Enterprise Marketing Hub account is required to send Custom Behavioral Events.
 - Relevant limits for HubSpot events are:
-    - HubSpot enforces strict API rate limits. You can find more information about these limits [here](https://developers.HubSpot.com/docs/api/usage-details).
+    - HubSpot enforces strict API rate limits. You can find more information about these limits on HubSport's[Usage Details](https://developers.HubSpot.com/docs/api/usage-details) page.
     - HubSpot allows up to 50 custom properties for each custom event.
-- Amplitude sends selected event properties along with the event.
-- Amplitude targets an end-to-end p95 latency of 60s. This means 95% of Events streamed deliver to HubSpot within 60s or less. Amplitude has internal processes, monitors, and alerts in place to meet this target.   
+- Amplitude sends selected event and user properties along with the event.
+- Amplitude targets an end-to-end p95 latency of 60s. This means 95% of Events streamed deliver to HubSpot within 60s or less. Amplitude has internal processes, monitors, and alerts in place to meet this target.     
 
 ## Setup
 
@@ -48,7 +48,7 @@ Keep these things in mind when sending events to HubSpot:
 1. In Amplitude Data, click **Catalog** and select the **Destinations** tab.
 2. In the Event Streaming section, click **HubSpot V2**.
 3. Enter a sync name, then click Create **Sync**.
-4. Choose a HubSpot Account ID or authenticate with HubSpot
+4. Choose a HubSpot Account ID or authenticate with HubSpot. If you have an existing Account ID, re-authenticate to grant the necessary permissions from HubSpot.
 5. Toggle the **Send events** filter to select the events to send.
 6. Under the **Select & filter events** section, select which Amplitude Events you would like to map to HubSpot. Provide a HubSpot Internal Event Name which corresponds with this Amplitude Event that you’ve selected. HubSpot recommends choosing the events that are most important to your use case.
 7. Under the **Map properties to destinations**, select which Event Properties you would like to send. The HubSpot identifier for this object must be at least one of the following: User Token, Email or Object ID.
@@ -67,7 +67,7 @@ Learn more about [analyzing your custom events](https://knowledge.hubspot.com/an
 
 ### View event completions on the contact timeline
 
-Event completions appear on the contact record timeline, along with any properties that were populated.
+Event completions appear on the contact record timeline, along with any properties that populate.
 
 To view event details on the contact timeline:
 
