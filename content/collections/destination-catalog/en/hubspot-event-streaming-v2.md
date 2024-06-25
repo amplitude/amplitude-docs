@@ -24,7 +24,7 @@ This feature is in Closed Beta and is in active development. Email [integrations
 ## Use cases
 
 1. **Personalized Marketing:** With the ability to track user behavior and capture user and event properties in Amplitude, businesses can create highly personalized and targeted marketing campaigns in HubSpot. This can lead to increased engagement, conversions, and customer loyalty.
-2. **Lead Scoring and Nurturing:** By tracking user behavior and capturing user and event properties in Amplitude, businesses can score and prioritize leads based on their level of engagement and interests. This can help businesses to optimize their lead nurturing efforts and increase their chances of closing deals.
+2. **Lead Scoring and Nurturing:** By tracking user behavior and capturing user and event properties in Amplitude, businesses can score and rank leads based on their level of engagement and interests. This can help businesses to optimize their lead nurturing efforts and increase their chances of closing deals.
 3. **Customer Retention:** By tracking user behavior and capturing user and event properties in Amplitude, businesses can identify customers who are at risk of churning and take proactive steps to retain them. For instance, businesses can trigger personalized emails or ads to offer discounts or incentives to encourage customers to stay engaged with the product or service.
 
 ## Considerations
@@ -34,7 +34,7 @@ Keep these things in mind when sending events to HubSpot:
 - If you have an existing HubSpot streaming sync [HubSpot streaming integration](/docs/data/destination-catalog/hubspot), and you want to access these new features, select HubSpot V2 in the Data Catalog to create a new Event streaming connection . With this update, Amplitude sends events and their properties to different event definitions in HubSpot, matching each of the selected events, rather than the single event definition from the internal event name.
 - You must enable this integration in each Amplitude project you want to use it in.
 - Events from Amplitude appear as Custom Behavioral Events in HubSpot.
-- A HubSpot Enterprise Marketing Hub account is required to send Custom Behavioral Events.
+- A HubSpot Enterprise Marketing Hub account is required to send Custom Behavioral Events. See HubSpot's [HubSpot Product & Services Catalog](https://legal.hubspot.com/hubspot-product-and-services-catalog) for more information
 - Relevant limits for HubSpot events are:
     - HubSpot enforces strict API rate limits. You can find more information about these limits on HubSport's[Usage Details](https://developers.HubSpot.com/docs/api/usage-details) page.
     - HubSpot allows up to 50 custom properties for each custom event.
