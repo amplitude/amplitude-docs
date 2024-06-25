@@ -32,7 +32,7 @@ This is a maintenance SDK and will only receive bug fixes until deprecation. Upg
 Amplitude recommends Android Studio as an IDE and Gradle to manage dependencies. Use version 2.x, version 3.35.1 is invalid.
 {{/partial:admonition}}
 
-1. In the `build.gradle` file, add these dependencies. The SDK requires OkHttp.
+1. In the `build.gradle` file, add these dependencies. The SDK requires OkHTTP.
 
     ```java
     dependencies {

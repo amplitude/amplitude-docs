@@ -1,7 +1,7 @@
 ---
 id: 9ca72079-8ffd-4208-a9cb-d2dcedda62e6
 blueprint: faq_and_troubleshooting
-title: 'Http v2 API vs Batch Event Upload API'
+title: 'HTTP v2 API vs Batch Event Upload API'
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/17678790790427'
 category: other
 ---

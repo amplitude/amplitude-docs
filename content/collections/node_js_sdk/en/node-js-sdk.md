@@ -70,7 +70,7 @@ init(API_KEY, {
 | `serverZone` | `EU` or `US`. Sets the Amplitude server zone. Set this to `EU` for Amplitude projects created in `EU` data center. | `US` |
 | `storageProvider` | `Storage<Event[]>`. Sets a custom implementation of `Storage<Event[]>` to persist unsent events. | `MemoryStorage` |
 | `transportProvider` | `Transport`. Sets a custom implementation of `Transport` to use different request API. | `HTTPTransport` |
-| `useBatch` | `boolean`. Sets whether to upload events to Batch API instead of the default Http V2 API or not. | `false` |
+| `useBatch` | `boolean`. Sets whether to upload events to Batch API instead of the default HTTP V2 API or not. | `false` |
 
 ### Configure batching behavior
 
@@ -592,7 +592,7 @@ add(new AddEventIdPlugin());
 ```
 {{/partial:tab}}
 {{partial:tab name="Destination"}}
-Here's an example of a plugin that sends each instrumented event to a target server URL using your preferred Http client.
+Here's an example of a plugin that sends each instrumented event to a target server URL using your preferred HTTP client.
 
 ```js
 import { init, add } from '@amplitude/analytics-node';
@@ -647,7 +647,7 @@ add(new MyDestinationPlugin('https://custom.domain.com'));
 {{/partial:tab}}
 {{/partial:tabs}}
 
-## Custom Http client
+## Custom HTTP client
 
 You can provide an implementation of `Transport` interface to the `transportProvider` configuration option for customization purpose, for example, sending requests to your proxy server with customized HTTP request headers.
 

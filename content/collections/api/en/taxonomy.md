@@ -59,7 +59,7 @@ Create an event category in your project.
 
 `POST /api/2/taxonomy/category`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request POST 'https://amplitude.com/api/2/taxonomy/category' \
@@ -68,7 +68,7 @@ curl --location --request POST 'https://amplitude.com/api/2/taxonomy/category' \
 --data-urlencode 'category_name=CATEGORY_NAME'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 POST /api/2/taxonomy/category HTTP/1.1
 Host: amplitude.com
@@ -80,7 +80,7 @@ category_name=CATEGORY_NAME
 {{/partial:tabs}}
 
 {{partial:collapse name="Example: Create an event category"}}
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request POST 'https://amplitude.com/api/2/taxonomy/category' \
@@ -89,7 +89,7 @@ curl --location --request POST 'https://amplitude.com/api/2/taxonomy/category' \
 --data-urlencode 'category_name=Attribution'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 POST /api/2/taxonomy/category HTTP/1.1
 Host: amplitude.com
@@ -138,14 +138,14 @@ Get all event categories in your project.
 
 `GET https://amplitude.com/api/2/taxonomy/category`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://amplitude.com/api/2/taxonomy/category' \
 -u '{api_key}:{secret_key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/taxonomy/category HTTP/1.1
 Host: amplitude.com
@@ -193,14 +193,14 @@ Get the ID of an event category in your project. Send a `GET` request with the c
 
 `GET https://amplitude.com/api/2/taxonomy/category/:category_name`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/2/taxonomy/category/:category_name' \
 -u '{api_key}:{secret_key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/taxonomy/category/:category_name HTTP/1.1
 Host: amplitude.com
@@ -212,14 +212,14 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 {{partial:collapse name="Example: Get a category's ID"}}
 This example get the ID for the event category named "Attribution".
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/2/taxonomy/category/Attribution' \
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='    
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/taxonomy/category/Attribution HTTP/1.1
 Host: amplitude.com
@@ -266,7 +266,7 @@ Update the name of an event category. Send a `PUT` request with the category ID 
 
 `PUT https://amplitude.com/api/2/taxonomy/category/:category_id`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request PUT 'https://amplitude.com/api/2/taxonomy/category/CATEGORY_ID' \
@@ -275,7 +275,7 @@ curl --location --request PUT 'https://amplitude.com/api/2/taxonomy/category/CAT
 --data-urlencode 'category_name=NEW_NAME'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 PUT /api/2/taxonomy/category/CATEGORY_ID HTTP/1.1
 Host: amplitude.com
@@ -291,7 +291,7 @@ category_name=NEW_NAME
 {{partial:collapse name="Example: Rename a category"}}
 This example renames the category with the ID `412941` to "Converted".
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request PUT 'https://amplitude.com/api/2/taxonomy/category/412941' \
@@ -300,7 +300,7 @@ curl --location --request PUT 'https://amplitude.com/api/2/taxonomy/category/412
 --data-urlencode 'category_name=Converted'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 PUT /api/2/taxonomy/category/412941 HTTP/1.1
 Host: amplitude.com
@@ -357,14 +357,14 @@ Delete an event category. Send a `DELETE` request with the category ID.
 
 `DELETE https://amplitude.com/api/2/taxonomy/category/:category_id`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash 
 curl --location --request DELETE 'https://amplitude.com/api/2/taxonomy/category/:category_id' \
 -u '{api_key}:{secret_key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 DELETE /api/2/taxonomy/category/:category_id HTTP/1.1
 Host: amplitude.com
@@ -376,14 +376,14 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 {{partial:collapse name="Example: Delete a category"}}
 This example deletes the category with the ID `412941`.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request DELETE 'https://amplitude.com/api/2/taxonomy/category/412941' \
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 DELETE /api/2/taxonomy/category/412941 HTTP/1.1
 Host: amplitude.com
@@ -438,7 +438,7 @@ Creates an event type. Send a `POST` request to `https://amplitude.com/api/2/tax
 [Initialize the schema](/docs/data/amplitude-data-settings) before you can add event types via the API.
 {{/partial:admonition}}
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request POST 'https://amplitude.com/api/2/taxonomy/event' \
@@ -449,7 +449,7 @@ curl --location --request POST 'https://amplitude.com/api/2/taxonomy/event' \
 --data-urlencode 'description=DESCRIPTION'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 POST /api/2/taxonomy/event?=null HTTP/1.1
 Host: amplitude.com
@@ -465,7 +465,7 @@ event_type=EVENT_TYPE&category=CATEGORY_NAME&description=CATEGORY_DESCRIPTION
 {{partial:collapse name="Example: Create an event type"}}
 This example creates the event type "Onboarding Start" with the category "Onboarding" and a description of "My new onboarding event".
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request POST 'https://amplitude.com/api/2/taxonomy/event' \
@@ -475,7 +475,7 @@ curl --location --request POST 'https://amplitude.com/api/2/taxonomy/event' \
 --data-urlencode 'description=My new onboarding event. ' \
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 
 POST /api/2/taxonomy/event HTTP/1.1
@@ -536,14 +536,14 @@ By default, deleted events will also not be included, but the `showDeleted` quer
 `GET https://amplitude.com/api/2/taxonomy/event?showDeleted=true`
 {{/partial:admonition}}
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://amplitude.com/api/2/taxonomy/event' \
 -u '{api_key}:{secret_key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/taxonomy/event HTTP/1.1
 Host: amplitude.com
@@ -584,14 +584,14 @@ Get a single event type, by name. Send a `GET` request with the event name.
 
 `GET https://amplitude.com/api/2/taxonomy/event/:event_type`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://amplitude.com/api/2/taxonomy/event:event_type' \
 -u '{api_key}:{secret_key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/taxonomy/event/:event_type HTTP/1.1
 Host: amplitude.com
@@ -603,7 +603,7 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 {{partial:collapse name="Example: Get an event type by name"}}
 This example gets the "Event 2" event type. This is a custom event, so it has a `ce:` prefix.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 
@@ -611,7 +611,7 @@ curl --location --request GET 'https://amplitude.com/api/2/taxonomy/event/ce:Eve
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 
 curl --location --request GET 'https://amplitude.com/api/2/taxonomy/event/ce:Event 2' \
@@ -666,7 +666,7 @@ Update an event type. Send a `PUT` request with the event type name.
 
 `PUT https://amplitude.com/api/2/taxonomy/event/:event_type`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request PUT 'https://amplitude.com/api/2/taxonomy/event/EVENT_TYPE_NAME' \
@@ -675,7 +675,7 @@ curl --location --request PUT 'https://amplitude.com/api/2/taxonomy/event/EVENT_
 --data-urlencode 'display_name=NEW_EVENT_TYPE_DISPLAY_NAME'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 PUT /api/2/taxonomy/event/EVENT_TYPE_NAME HTTP/1.1
 Host: amplitude.com
@@ -690,7 +690,7 @@ category=NEW_CATEGORY_NAME&display_name=NEW_EVENT_TYPE_DISPLAY_NAME
 {{partial:collapse name="Example: Update an event type"}}
 This example updates the event type "OnboardingBegin" with the category "Onboarding", event type name "OnboardStart", the display name "Onboarding Start", and a description of "User signed in and completed an onboarding task from modal". Because the event type is custom, it has the `ce:` prefix.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request PUT 'https://amplitude.com/api/2/taxonomy/event/ce:OnboardBegin' \
@@ -703,7 +703,7 @@ curl --location --request PUT 'https://amplitude.com/api/2/taxonomy/event/ce:Onb
 
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 
 PUT /api/2/taxonomy/event/ce:OnboardBegin HTTP/1.1
@@ -764,14 +764,14 @@ Delete an event type.
 
 `DELETE https://amplitude.com/api/2/taxonomy/event/:event_type`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request DELETE 'https://amplitude.com/api/2/taxonomy/event/EVENT_TYPE'
 -u '{api_key}:{secret_key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 DELETE /api/2/taxonomy/event/EVENT_TYPE HTTP/1.1
 Host: amplitude.com
@@ -783,7 +783,7 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 {{partial:collapse name="Example: Delete an event type"}}
 This example deletes the event type "Event1". Because the event type is custom, it has the `ce:` prefix.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 
@@ -792,7 +792,7 @@ curl --location --request DELETE 'https://amplitude.com/api/2/taxonomy/event/ce:
 
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 
 DELETE /api/2/taxonomy/event/ce:Event1 HTTP/1.1
@@ -845,7 +845,7 @@ Create an event property. Send a `POST` request to the endpoint with the require
 
 `POST https://amplitude.com/api/2/taxonomy/event-property`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request POST 'https://amplitude.com/api/2/taxonomy/event-property' \
@@ -855,7 +855,7 @@ curl --location --request POST 'https://amplitude.com/api/2/taxonomy/event-prope
 --data-urlencode 'event_property=EVENT_PROPERTY' \
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 POST /api/2/taxonomy/event-property HTTP/1.1
 Host: amplitude.com
@@ -871,7 +871,7 @@ event_type=EVENT_TYPE&event_property=EVENT_PROPERTY
 {{partial:collapse name="Example: Create an event property"}}
 This example creates the event property "Completed Task" with the description "User completed any onboarding task" for the event "Onboarding Start". The event property is a boolean type, is not required.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 
@@ -885,7 +885,7 @@ curl --location --request POST 'https://amplitude.com/api/2/taxonomy/event-prope
 
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 
 POST /api/2/taxonomy/event-property HTTP/1.1
@@ -945,7 +945,7 @@ Get an event's properties.
 
 `GET https://amplitude.com/api/2/taxonomy/event-property`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 
@@ -955,7 +955,7 @@ curl --location --request GET 'https://amplitude.com/api/2/taxonomy/event-proper
 --data-urlencode 'event_type=EVENT_NAME'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 
 GET /api/2/taxonomy/event-property HTTP/1.1
@@ -970,7 +970,7 @@ event_type=EVENT_NAME
 {{partial:collapse name="Example: get all of an event's properties"}}
 This example gets all event properties for the "Onboard Start" event.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 
@@ -981,7 +981,7 @@ curl --location --request GET 'https://amplitude.com/api/2/taxonomy/event-proper
 
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 
 GET /api/2/taxonomy/event-property HTTP/1.1
@@ -1040,7 +1040,7 @@ Get a single event property. Send a `GET` request with the event property name a
 
 `GET https://amplitude.com/api/2/taxonomy/event-property`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://amplitude.com/api/2/taxonomy/event-property?event_property=EVENT_PROPERTY' \
@@ -1049,7 +1049,7 @@ curl --location --request GET 'https://amplitude.com/api/2/taxonomy/event-proper
 --data-urlencode 'event_type=EVENT_NAME'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/taxonomy/event-property/EVENT_PROPERTY_NAME HTTP/1.1
 Host: amplitude.com
@@ -1063,7 +1063,7 @@ event_type=EVENT_NAME
 {{partial:collapse name="Example: Get a property from a specific event"}}
 This example gets a the "Completed Task" property for the "Onboard Start" event.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 
@@ -1073,7 +1073,7 @@ curl --location --request GET 'https://amplitude.com/api/2/taxonomy/event-proper
 --data-urlencode 'event_type=Onboard Start'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 
 GET /api/2/taxonomy/event-property?event_property=Completed Task HTTP/1.1
@@ -1141,7 +1141,7 @@ Update an event property.
 
 `PUT https://amplitude.com/api/2/taxonomy/event-property/:event-property`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request PUT 'https://amplitude.com/api/2/taxonomy/event-property/EVENT_PROPERTY' \
@@ -1150,7 +1150,7 @@ curl --location --request PUT 'https://amplitude.com/api/2/taxonomy/event-proper
 --data-urlencode 'event_type=EVENT_NAME' \
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 
 PUT /api/2/taxonomy/event-property/EVENT_PROPERTY HTTP/1.1
@@ -1167,7 +1167,7 @@ event_type=EVENT_NAME
 {{partial:collapse name="Example: Update an event property"}}
 This example updates a the "Completed Task" property for the "Onboard Start" event. It changes the name to "Task Completed", adds a description, and changes the type to "any".
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 
@@ -1180,7 +1180,7 @@ curl --location --request PUT 'https://amplitude.com/api/2/taxonomy/event-proper
 --data-urlencode 'type=any'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 
 PUT /api/2/taxonomy/event-property/Completed Task HTTP/1.1
@@ -1245,7 +1245,7 @@ Delete an event property. Send a `DELETE` request with the event property as a p
 
 `DELETE https://amplitude.com/api/2/taxonomy/event-property/:event-property`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request DELETE 'https://amplitude.com/api/2/taxonomy/event-property/EVENT_PROPERTY' \
@@ -1254,7 +1254,7 @@ curl --location --request DELETE 'https://amplitude.com/api/2/taxonomy/event-pro
 --data-urlencode 'event_type=EVENT_NAME'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 DELETE /api/2/taxonomy/event-property/EVENT_PROPERTY HTTP/1.1
 Host: amplitude.com
@@ -1268,7 +1268,7 @@ event_type=EVENT_NAME
 {{partial:collapse name="Example: Delete an event property"}}
 This example deletes the event property "Completed Task" from the "Onboarding Start" event.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 
@@ -1278,7 +1278,7 @@ curl --location --request DELETE 'https://amplitude.com/api/2/taxonomy/event-pro
 --data-urlencode 'event_type=Onboarding Start'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 
 DELETE /api/2/taxonomy/event-property/Completed Task HTTP/1.1
@@ -1327,7 +1327,7 @@ Create a user property.
 
 `POST https://amplitude.com/api/2/taxonomy/user-property/`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 
@@ -1336,7 +1336,7 @@ curl --location --request POST 'https://amplitude.com/api/2/taxonomy/user-proper
 --data-urlencode 'user_property=USER_PROPERTY' \
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 POST /api/2/taxonomy/user-property HTTP/1.1
 Host: amplitude.com
@@ -1350,7 +1350,7 @@ user_property=USER_PROPERTY
 {{partial:collapse name="Example: Create a user property"}}
 This example creates a user property called "User Type", with a description of "Describes whether the user is a Free, Standard, or Premium user.", a type of `string` and allows the values "Free", "Standard", and "Premium".
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 
@@ -1362,7 +1362,7 @@ curl --location --request POST 'https://amplitude.com/api/2/taxonomy/user-proper
 --data-urlencode 'enum_values=Free, Standard, Premium'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 
 POST /api/2/taxonomy/user-property HTTP/1.1
@@ -1409,14 +1409,14 @@ Retrieves all user properties in your account. This call doesn't have any requir
 
 `GET https://amplitude.com/api/2/taxonomy/user-property`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://amplitude.com/api/2/taxonomy/user-property' \
 -u '{api_key}:{secret_key}''
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/taxonomy/user-property HTTP/1.1
 Host: amplitude.com
@@ -1507,14 +1507,14 @@ Retrieves a single user property, by name.
 
 `GET https://amplitude.com/api/2/taxonomy/user-property/:user_property`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://amplitude.com/api/2/taxonomy/user-property/USER_PROPERTY' \
 -u '{api_key}:{secret_key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/taxonomy/user-property/USER_PROPERTY HTTP/1.1
 Host: amplitude.com
@@ -1526,7 +1526,7 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 {{partial:collapse name="Example: Get a user property"}}
 This example gets the `device_id` user property.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 
@@ -1534,7 +1534,7 @@ curl --location --request GET 'https://amplitude.com/api/2/taxonomy/user-propert
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 
 GET /api/2/taxonomy/user-property/device_id HTTP/1.1
@@ -1593,7 +1593,7 @@ Update a user property.
 
 `PUT https://amplitude.com/api/2/taxonomy/user-property/:user_property`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request PUT 'https://amplitude.com/api/2/taxonomy/user-property/USER_PROPERTY' \
@@ -1603,7 +1603,7 @@ curl --location --request PUT 'https://amplitude.com/api/2/taxonomy/user-propert
 --data-urlencode 'description=DESCRIPTION'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 PUT /api/2/taxonomy/user-property/USER_PROPERTY HTTP/1.1
 Host: amplitude.com
@@ -1619,7 +1619,7 @@ new_user_property_value=VALUE&description=DESCRIPTION
 {{partial:collapse name="Example: Update a user property"}}
 This example updates a user property called "user_type" to be named "subscription_type", adds a description of "The user's subscription type", and changes the property's data type to `string`. The user property is prefixed with `gp:` in the path because it's a custom user property. 
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 
@@ -1630,7 +1630,7 @@ curl --location --request PUT 'https://amplitude.com/api/2/taxonomy/user-propert
 --data-urlencode 'type=string'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 
 PUT /api/2/taxonomy/user-property/gp:user_type HTTP/1.1
@@ -1683,14 +1683,14 @@ Deletes a single user property, by name.
 
 `DELETE https://amplitude.com/api/2/taxonomy/user-property/USER_PROPERTY`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request DELETE 'https://amplitude.com/api/2/taxonomy/user-property/USER_PROPERTY' \
 -u '{api_key}:{secret_key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 
 DELETE /api/2/taxonomy/user-property/USER_PROPERTY HTTP/1.1
@@ -1704,14 +1704,14 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 {{partial:collapse name="Example: Delete a user property"}}
 This example deletes a custom user property "interests". Notice that the user property is prefixed with `gp:`.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request DELETE 'https://amplitude.com/api/2/taxonomy/user-property/gp:interests' \
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 
 DELETE /api/2/taxonomy/user-property/gp:interests HTTP/1.1

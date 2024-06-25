@@ -94,7 +94,7 @@ for url in response.get('urls'):
 
 ## Create a request for data
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request POST 'https://amplitude.com/api/2/dsar/requests' \
@@ -108,7 +108,7 @@ curl --location --request POST 'https://amplitude.com/api/2/dsar/requests' \
 }'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 POST /api/2/dsar/requests HTTP/1.1
 Host: amplitude.com
@@ -127,7 +127,7 @@ Authorization: Basic {org-api-key}:{org-secret_key} # credentials must be base64
 {{partial:collapse name="Example: Create a request by user ID"}}
 This example creates a request by user ID `12345`, between the dates of April 24, 2020 and February 20, 2022.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request POST 'https://amplitude.com/api/2/dsar/requests' \
@@ -141,7 +141,7 @@ curl --location --request POST 'https://amplitude.com/api/2/dsar/requests' \
 }'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 POST /api/2/dsar/requests HTTP/1.1
 Host: amplitude.com
@@ -163,7 +163,7 @@ Content-Length: 83
 {{partial:collapse name="Example: Create a request by Amplitude ID"}}
 This example creates a request by Amplitude ID `90102919293`, between the dates of April 24, 2020 and February 20, 2022.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request POST 'https://amplitude.com/api/2/dsar/requests' \
@@ -177,7 +177,7 @@ curl --location --request POST 'https://amplitude.com/api/2/dsar/requests' \
 }'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 POST /api/2/dsar/requests HTTP/1.1
 Host: amplitude.com
@@ -219,7 +219,7 @@ When successful, the call returns a `202 Accepted` response and `requestID`. Use
 
 Poll the data request job to get its status. 
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://amplitude.com/api/2/dsar/requests/requestID' \
@@ -227,7 +227,7 @@ curl --location --request GET 'https://amplitude.com/api/2/dsar/requests/request
 --header 'Authorization: Basic org-api-key}:{org-secret_key}' #credentials must be base64 encoded
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/dsar/requests/requestID HTTP/1.1
 Host: amplitude.com
@@ -240,7 +240,7 @@ Authorization: Basic {org-api-key}:{org-secret_key} #credentials must be base64 
 {{partial:collapse name="Example: Poll a specific request"}}
 This example polls request `53367`.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://amplitude.com/api/2/dsar/requests/53367' \
@@ -248,7 +248,7 @@ curl --location --request GET 'https://amplitude.com/api/2/dsar/requests/53367' 
 --header 'Authorization: Basic YWhhbWwsdG9uQGFwaWdlZS5jb206bClwYXNzdzByZAo'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/dsar/requests/53367 HTTP/1.1
 Host: amplitude.com
@@ -287,14 +287,14 @@ Download a returned output file.
 
 The download link is valid for two days. Most clients used to send API requests automatically download the data from the S3 link. If your API client doesn't automatically download the file from the link, access it manually using your org API key as the username and your org secret key as the password.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://analytics.amplitude.com/api/2/dsar/requests/:request_id/outputs/:output_id' \
 -u '{org-api-key}:{org-secret_key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/dsar/requests/request_id/outputs/:output_id HTTP/1.1
 Host: analytics.amplitude.com
@@ -306,14 +306,14 @@ Authorization: Basic {org-api-key}:{org-secret_key} # credentials must be base64
 {{partial:collapse name="Example: Get the output for a specific request ID"}}
 This example gets output with ID `0` for request `53367`.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://analytics.amplitude.com/api/2/dsar/requests/53367/outputs/0' \
 --header 'Authorization: Basic YWhhbWwsdG9uQGFwaWdlZS5jb206bClwYXNzdzByZAo'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 
 {{/partial:tab}}
 {{/partial:tabs}}

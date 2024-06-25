@@ -39,9 +39,9 @@ Before you start to configure the Databricks source in Amplitude, complete the f
 
 ### Find or create an all-purpose compute cluster
 
-Amplitude creates workflows in this cluster on your behalf to start sync jobs. When complete, copy the **Server hostname** and **Http path** values to use in a later step. Find both values on the **Configuration -> JDBC/ODBC** tab. For more information about cluster types, see [Compute](https://docs.databricks.com/en/compute/index.html).
+Amplitude creates workflows in this cluster on your behalf to start sync jobs. When complete, copy the **Server hostname** and **HTTP path** values to use in a later step. Find both values on the **Configuration -> JDBC/ODBC** tab. For more information about cluster types, see [Compute](https://docs.databricks.com/en/compute/index.html).
 
-![where to find server host name and Http path](statamic://asset::help_center_conversions::destinations/integrations-databricks-import-server-hostname-http-path.png)
+![where to find server host name and HTTP path](statamic://asset::help_center_conversions::destinations/integrations-databricks-import-server-hostname-http-path.png)
 
 {{partial:admonition type="note" heading=""}}
 Ensure that the new cluster can run jobs by NOT having configs below in cluster's policy. See details in Databricks' article [Policy definition](https://docs.databricks.com/en/administration-guide/clusters/policy-definition.html#workload).
@@ -129,7 +129,7 @@ To add Databricks as a source in Amplitude, complete the following steps.
 2. Search for **Databricks**.
 3. On the **Credentials** tab of the Connect Databricks screen, enter the credentials you configured during the Databricks configuration:
     - Server hostname
-    - Http Path
+    - HTTP Path
     - Personal Access Token (for the workspace user or Service Principal)
 4. Click **Next** to verify access.
 
