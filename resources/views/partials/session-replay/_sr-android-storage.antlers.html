@@ -1,0 +1,11 @@
+{{markdown}}
+## Session Replay storage
+
+If a user opts out tracking in your app, use the `optOut` configuration option to disable replay collection for that user.
+
+(alpha) Session Replay stores data in memory only.
+
+- This can lead to data loss between app starts. Make sure to call `flush()` before app exit.
+- Memory usage grows until you call `flush()` to transfer the session replay data to the server.
+- Session data isn't retried on failure to transfer to the Amplitude servers.
+{{/markdown}}
