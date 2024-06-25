@@ -1310,6 +1310,8 @@ video {
   padding-left: 1.5rem;
 }.pl-8 {
   padding-left: 2rem;
+}.pr-4 {
+  padding-right: 1rem;
 }.pr-8 {
   padding-right: 2rem;
 }.pt-5 {
@@ -1318,8 +1320,6 @@ video {
   padding-top: 2rem;
 }.pt-\[6\.5rem\] {
   padding-top: 6.5rem;
-}.pr-4 {
-  padding-right: 1rem;
 }.text-left {
   text-align: left;
 }.text-center {
