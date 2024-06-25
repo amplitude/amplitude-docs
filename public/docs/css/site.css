@@ -1718,6 +1718,8 @@ video {
     left: 1rem;
 }.hint-content > p {
     margin-bottom: 0;
+}.hint-content > p:first-of-type {
+    margin-top: 0;
 }.note {
     border-color: #1e61f0;
 }.note > .hint-title {

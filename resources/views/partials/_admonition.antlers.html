@@ -1,1 +1,1 @@
-<div class="hint {{type}}"><h2 class="hint-title">{{heading ?? type | ucfirst}}</h2><div class="hint-content">{{slot | strip_tags('br')}}</div></div>
+<div class="hint {{type}}"><h2 class="hint-title">{{heading ?? type | ucfirst}}</h2><div class="hint-content">{{markdown}}{{slot | strip_tags('br')}}{{/markdown}}</div></div>
