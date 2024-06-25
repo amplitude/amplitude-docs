@@ -13,7 +13,7 @@ This guide assumes that you've completed the prerequisites for building partner 
 {{/partial:admonition}}
 
 
-This guide walks through the basics of creating an event ingestion integration in Amplitude. This guide doesn't cover any steps to building your integration or sending events to Amplitude. For information about how to send events to Amplitude see the [Http v2 API](/docs/apis/analytics/http-v2) documentation.
+This guide walks through the basics of creating an event ingestion integration in Amplitude. This guide doesn't cover any steps to building your integration or sending events to Amplitude. For information about how to send events to Amplitude see the [HTTP v2 API](/docs/apis/analytics/http-v2) documentation.
 
 1. Navigate to **Settings > Developer Portal**.
 2. Click **Add Connection Info**.

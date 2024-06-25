@@ -1,23 +1,23 @@
 ---
 id: 1a944881-9630-4422-9cb7-836651db6ec4
 blueprint: api
-title: 'Http V2 API'
+title: 'HTTP V2 API'
 source: 'https://www.docs.developers.amplitude.com/analytics/apis/http-v2-api/'
 auth_method: api_key
 standard_endpoint: 'https://api2.amplitude.com/2/httpapi'
 eu_endpoint: 'https://api.eu.amplitude.com/2/httpapi'
 postman_link: 'https://www.postman.com/amplitude-dev-docs/workspace/amplitude-developers/folder/20044411-6fc3a3e5-1c69-4ffc-ba78-09c217a14472?action=share&source=copy-link&creator=29131806&ctx=documentation'
 lede: |-
-  Use the Http V2 API to send data directly from your server to the Http V2 endpoint.
+  Use the HTTP V2 API to send data directly from your server to the HTTP V2 endpoint.
 
-  The Http V2 API replaces the deprecated Http API.
+  The HTTP V2 API replaces the deprecated HTTP API.
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716312330
 api_status: ga
 summary: 'Send data directly from your server to the HTTP V2 endpoint.'
 ---
 ## Considerations
-Keep the following in mind as you use the Http V2 API.
+Keep the following in mind as you use the HTTP V2 API.
 
 ### Upload limit
 
@@ -1498,7 +1498,7 @@ The following table shows the list of mappings. Language tags are case-insensiti
 {{partial:collapse name="Example: Simple request"}}
 This example uploads a 'watch_tutorial' event with a few properties and user properties for the user `12345`.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request POST 'https://api.amplitude.com/2/httpapi' \
@@ -1520,7 +1520,7 @@ curl --location --request POST 'https://api.amplitude.com/2/httpapi' \
 }'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 POST /2/httpapi HTTP/1.1
 Host: api.amplitude.com
@@ -1550,7 +1550,7 @@ Content-Length: 360
 {{partial:collapse name="Example: Request with many fields"}}
 This example uploads a 'watch_tutorial' event with many event properties and user properties for the user `12345`.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request POST 'https://api.amplitude.com/2/httpapi' \
@@ -1620,7 +1620,7 @@ curl --location --request POST 'https://api.amplitude.com/2/httpapi' \
 }'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 POST /2/httpapi HTTP/1.1
 Host: api.amplitude.com
@@ -1698,7 +1698,7 @@ Content-Length: 1719
 {{partial:collapse name="Example: Request with option "}}
 This example uploads a 'watch_tutorial' event with many event properties and user properties for the user `12345`, but sets the `min_id_length` option to 3.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 # [tl! ~~:5,2]
@@ -1772,7 +1772,7 @@ curl --location --request POST 'https://api.amplitude.com/2/httpapi' \
 }'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 POST /2/httpapi HTTP/1.1
 Host: api.amplitude.com
@@ -1852,7 +1852,7 @@ Content-Length: 1731
 
 ### Headers
 
-To send data to Amplitude Http V2 API, a `Content-Type` header must be set to `application/json`.
+To send data to Amplitude HTTP V2 API, a `Content-Type` header must be set to `application/json`.
 
 ### Body parameters
 

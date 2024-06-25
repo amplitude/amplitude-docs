@@ -86,7 +86,7 @@ Upon first import, Amplitude imports all the data returned from the query config
 
 ## Mandatory data fields
 
-Include the mandatory fields for the data type when you create the SQL query. These tables outline the mandatory and optional fields for each data type. Find a list of other supported fields for events in the [Http V2 API documentation](/docs/apis/analytics/http-v2#keys-for-the-event-argument) and  for user properties in the [Identify API documentation](/docs/apis/analytics/identify#identification-parameter-keys). Add any columns not in those lists to either `event_properties` or `user_properties`, otherwise it's ignored. 
+Include the mandatory fields for the data type when you create the SQL query. These tables outline the mandatory and optional fields for each data type. Find a list of other supported fields for events in the [HTTP V2 API documentation](/docs/apis/analytics/http-v2#keys-for-the-event-argument) and  for user properties in the [Identify API documentation](/docs/apis/analytics/identify#identification-parameter-keys). Add any columns not in those lists to either `event_properties` or `user_properties`, otherwise it's ignored. 
 
 ### Events
 

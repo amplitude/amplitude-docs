@@ -42,8 +42,8 @@ sdk_version_comparison:
   -
     cells:
       - 'Server endpoint'
-      - 'Http v2 API'
-      - 'Http v1 API'
+      - 'HTTP v2 API'
+      - 'HTTP v1 API'
   -
     cells:
       - 'Batch API support'
@@ -307,7 +307,7 @@ The APIs for setting user properties are the same, except for the removal of `in
 #### setUserId
 
 {{partial:admonition type="warning" heading="ID length limit"}}
-The maintenance SDK uses an old SDK endpoint (`api2.amplitude.com`) which enforces no length limit for `deviceId` and `userId`. The latest SDK uses Amplitude's Http V2 API (`api2.amplitude.com/2/httpapi`) and requires identifiers to be at least 5 characters by default. When you migrate to the latest SDK, set `config.minIdLength` to a smaller value if you allowed identifiers with fewer than 5 characters.
+The maintenance SDK uses an old SDK endpoint (`api2.amplitude.com`) which enforces no length limit for `deviceId` and `userId`. The latest SDK uses Amplitude's HTTP V2 API (`api2.amplitude.com/2/httpapi`) and requires identifiers to be at least 5 characters by default. When you migrate to the latest SDK, set `config.minIdLength` to a smaller value if you allowed identifiers with fewer than 5 characters.
 {{/partial:admonition}}
 
 Setting a user ID can be invoked on `amplitude` without calling `getInstance()`.
@@ -332,7 +332,7 @@ NSString* userId = @"TEST-USER-ID";
 #### setDeviceId
 
 {{partial:admonition type="warning" heading="ID length limit"}}
-The maintenance SDK uses an old SDK endpoint (`api2.amplitude.com`) which enforces no length limit for `deviceId` and `userId`. The latest SDK uses Amplitude's Http V2 API (`api2.amplitude.com/2/httpapi`) and requires identifiers to be at least 5 characters by default. When you migrate to the latest SDK, set `config.minIdLength` to a smaller value if you allowed identifiers with fewer than 5 characters.
+The maintenance SDK uses an old SDK endpoint (`api2.amplitude.com`) which enforces no length limit for `deviceId` and `userId`. The latest SDK uses Amplitude's HTTP V2 API (`api2.amplitude.com/2/httpapi`) and requires identifiers to be at least 5 characters by default. When you migrate to the latest SDK, set `config.minIdLength` to a smaller value if you allowed identifiers with fewer than 5 characters.
 {{/partial:admonition}}
 
 Set a device ID on `amplitude` without calling `instance()`.
