@@ -1691,7 +1691,9 @@ video {
     overflow: hidden;
 }.is-collapsed {
     max-height: 0;
-}a.toc-link {
+}details summary {
+    list-style:none;
+  }a.toc-link {
     display: block;
 }.toc-list-item {
     padding: 0;

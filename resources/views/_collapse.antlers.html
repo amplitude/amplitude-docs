@@ -1,10 +1,9 @@
-<div x-data="{ expanded: false}" class="border rounded-md border-amp-light-blue-500 bg-amp-light-blue-900 py-4 px-4">
-    <div @click="expanded = !expanded" class="cursor-pointer w-full font-semibold flex relative text-sm">
-        <span>{{ name }}</span>
-        <span class="transform transistion duration-100 absolute right-4" x-ref="animatedItem"
-            :class="{'rotate-90': expanded, 'rotate-0': !expanded}"> {{svg src="/docs/assets/general/icon-chevron-down.svg" class="rotate-[270deg]"}}</span>
-    </div>
-    <div x-cloak x-show="expanded" x-collapse.duration.250ms class="px-4 mt-4 bg-white overflow-x-scroll">
-        {{ slot | markdown | strip_tags('br') }}
-</div>
-</div>
+<details x-data="{ expanded: false}"
+    class="border rounded-md border-amp-light-blue-500 bg-amp-light-blue-900 py-4 px-4 relative cursor-pointer"
+    @click="expanded = !expanded">
+    <summary class="flex"><span class="w-full font-semibold text-sm">{{name}}</span><span
+            class="transform transistion duration-100 absolute right-4" x-ref="animatedItem"
+            :class="{'rotate-90': expanded, 'rotate-0': !expanded}">
+            {{svg src="/docs/assets/general/icon-chevron-down.svg" class="rotate-[270deg]"}}</span></summary>
+    <div class="px-4 mt-4 bg-white overflow-x-scroll">{{ slot | markdown}}</div>
+</details>
