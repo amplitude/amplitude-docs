@@ -31,10 +31,6 @@ Amplitude Experiment follows a specific order of operations when assigning users
 
 Because Amplitude Experiment considers the individual user qualification **before** mutual exclusion groups, users targeted under `Individual
  Users` may be able to see multiple experiments even if they are in the same mutual exclusion group. 
-
-{{partial:admonition type='note'}}
-Visit the [Amplitude Developer Center](/docs/experiment/implementation) for more information.
-{{/partial:admonition}}
 {{/partial:collapse}}
 
 
