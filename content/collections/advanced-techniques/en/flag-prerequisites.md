@@ -71,7 +71,7 @@ Flag prerequisites are extremely flexible and have many use cases. That said, he
 
 ### Release groups
 
-Utilize flag prerequisites to build a primary feature with multiple sub-features. Sub-features require the primary feature to be `on`, unless a user is individually included as a tester in one of the sub-features. Targeting and bucketing applied to the primary feature are effectively applied to all sub-features which list the primary feature as a prerequisite.
+Use flag prerequisites to build a primary feature with multiple sub-features. Sub-features require the primary feature to be `on`, unless a user is individually included as a tester in one of the sub-features. Targeting and bucketing applied to the primary feature are effectively applied to all sub-features which list the primary feature as a prerequisite.
 
 Common use cases for release groups are:
 
@@ -81,11 +81,11 @@ Common use cases for release groups are:
 
 ![Diagram of example release group.](/docs/output/img/experiment/release-group.drawio.svg)
 
-In this example, we have a `primary-feature` flag, and `sub-feature` flags which list the primary feature as a prerequisite.
+This example contains a `primary-feature` flag and `sub-feature` flags which list the primary feature as a prerequisite.
 
 The `primary-feature` flag targets all users where user property `premium` is `true` with 100% allocation. Therefore, sub-features only evaluate if the user has the required user property, and meet the sub-feature's criteria -- unless the user is individually included in the sub-feature's testers section.
 
-- The `sub-feature-1` flag contains an additional targeting criteria for users where the user property `beta` is `true`. In order to be assigned `sub-feature-1` a user have the `premium` and `beta` user properties equal to `true`.
+- The `sub-feature-1` flag contains an extra targeting criteria for users where the user property `beta` is `true`. To be assigned `sub-feature-1` a user have the `premium` and `beta` user properties equal to `true`.
 - The `sub-feature-2` flag allocates 100% of users. All users where the `premium` user property is `true` is assigned.
 - The `sub-feature-3` flag allocates 0% of users. No users are assigned to `sub-feature-3`, even if the `premium` user property is `true`.
 
@@ -101,5 +101,3 @@ In this example, `experiment-1` is currently running, and we want to run another
 - The `experiment-2` experiment lists `experiment-1` as a prerequisite, and allocates 100% of users 50/50 control/treatment.
 
 Overall, 20% of users are assigned to `experiment-1` and the remaining 80% are assigned to `experiment-2`. No users are assigned variants for both `experiment-1` and `experiment-2`, unless they are included as a tester.
-
-### Advanced holdout groups
