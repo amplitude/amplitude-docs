@@ -9,7 +9,7 @@ this_article_will_help_you:
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714515123
 ---
-An experiment can’t tell you anything without events to track. Adding metrics to your experiment occurs in the Goals segment of the experiment design panel. Here, you’ll tell Amplitude Experiment what you want your **primary metric** to be, as well as define any **secondary metrics**. The primary metric determines whether your hypothesis has been accepted or rejected—and therefore, whether your experiment has succeeded or failed.
+An experiment can’t tell you anything without events to track. Adding metrics to your experiment occurs in the Goals segment of the experiment design panel. Here, you’ll tell Amplitude Experiment what you want your **primary metric** to be, as well as define any **secondary metrics**. The primary metric determines whether your hypothesis is accepted or rejected, and therefore, whether your experiment has succeeded or failed.
 
 There’s a lot riding on your primary metric, so it’s important to select the right one. If you’re not experienced in A/B testing, it can be hard to know which one that is. But if you know what to look for, your odds of a successful [variant](/docs/experiment/workflow/add-variants) improve dramatically:
 
@@ -23,12 +23,12 @@ Amplitude Experiment lets you define multiple metrics when running an experiment
 
 To set up the metrics for your experiment, follow these steps:
 
-1. In the *Goals* section of the experiment design panel, select your primary metric. You can do this from the *Metric* drop-down. You can also [create a custom metric](/docs/experiment/workflow/define-goals) instead.
+1. In the *Goals* section of the experiment design panel, select your primary metric. You can do this from the *Metric* drop-down. You can also create a custom metric instead.
 2. Next to *Direction*, specify whether you’re expecting the metric to increase or decrease.
 3. Optionally, set the minimally acceptable goal for the experiment, otherwise known as the **[minimum detectable effect](/docs/experiment/experiment-theory/experiment-set-mde)**. This is the minimum amount of difference between the control and the variant there should be in order for the experiment to be considered a success.
 4. To add secondary metrics, click *+ Add Metric* and repeat this process for each secondary metrics you want to include.
 
-The [duration estimator](/docs/experiment/key-terms) estimates the time and sample size you need to achieve significant results in your experiment, given your metric settings. Amplitude Experiment pre-populates reasonable industry defaults based on historical data, but you can adjust the confidence level, statistical power, minimum detectable effect, standard deviation, and test type as needed.
+The duration estimator estimates the time and sample size you need to achieve significant results in your experiment, given your metric settings. Amplitude Experiment pre-populates reasonable industry defaults based on historical data, but you can adjust the confidence level, statistical power, minimum detectable effect, standard deviation, and test type as needed.
 
 ## Create a custom metric
 

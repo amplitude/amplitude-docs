@@ -2,7 +2,12 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/docs/data/profile-properties/",
+      "source": "/docs/experiment/general/data-model",
+      "destination": "/docs/experiment/data-model",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/data/profile-properties",
       "destination": "/docs/data/profile-properties",
       "statusCode": 301
     },
