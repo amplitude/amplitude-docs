@@ -87,18 +87,15 @@ tree:
             entry: ccca14e2-fca6-4932-902f-5cac8f528c9a
             title: 'How flag dependencies work'
           -
+            id: 15fcf5be-505a-44db-9b00-e4f687435164
+            entry: 18d1ed19-14ba-4e8a-bd27-3774f931f02a
+          -
             id: e580e44e-a2e7-412b-91fd-310f714d3bbf
             entry: c9856100-2aad-440c-9d2f-505eb008d57b
             title: 'Mutual exclusion groups'
           -
             id: a6d4e67a-7138-4d72-b471-e1e37ea9d4de
             entry: 59a4add6-ca49-4b8f-9f39-85ed13dbf5e9
-          -
-            id: 15fcf5be-505a-44db-9b00-e4f687435164
-            entry: 18d1ed19-14ba-4e8a-bd27-3774f931f02a
-          -
-            id: a8c8105b-547c-4a25-8931-e217aa6b9647
-            entry: 9c708cb5-e9b4-464b-9d43-cf5411e43cfe
   -
     id: 9360179b-3944-4058-ab65-89d3f8baf60b
     title: 'Experiment workflows'
