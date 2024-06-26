@@ -15,7 +15,7 @@ The best way to debug variant jumping is by identifying a user that has jumped v
 
 {{partial:admonition type="info" heading="Find a user who has jumped variants"}}
 1. Go to the diagnostics card of your experiment
-2. Find the variant jumping charts, and click "Open in Analytics"
+2. Find the variant jumping charts, and click "Open in Chart"
 3. Select the bar for users who jumped variants and click "View User Streams" (you may need to use uniques instead of a formula)
 
 You may find it helpful to "only show" assignment and exposure events in the user timeline.
@@ -33,7 +33,7 @@ Important things to note when debugging a user timeline include:
 Normal variant jumping may occur due to:
 
 1. [Targeting changes](#targeting-changes): changes to targeting rules while your experiment is running
-2. [Anonymous identity merging](#anonymous-identity-merging): anonymous users, bucketed by amplitude ID may receive different variants until they're eventually resolved via a matching user ID.
+2. [Anonymous identity merging](#anonymous-identity-merging): anonymous users, bucketed by Amplitude ID may receive different variants until they're eventually resolved via a matching user ID.
 
 ### Targeting changes
 
@@ -52,7 +52,7 @@ Enabling sticky bucketing before making targeting changes prevents variant jumpi
 
 ### Anonymous identity merging
 
-Variant jumping caused by anonymous identity merging may occur due to bucketing by Amplitude ID, when user profiles with distinct device IDs (resolved to different amplitude IDs) are merged when resolved to a common user ID. This may happen if a user uses your app on different devices, or if, on logout, the device ID is re-generated.
+Variant jumping caused by anonymous identity merging may occur due to bucketing by Amplitude ID, when user profiles with distinct device IDs (resolved to different Amplitude IDs) are merged when resolved to a common user ID. This may happen if a user uses your app on different devices, or if, on logout, the device ID is re-generated.
 
 [Learn more about Amplitude's identity resolution and merging users.](/docs/cdp/sources/instrument-track-unique-users)
 
@@ -60,26 +60,26 @@ Identifying this type of variant jumping is easy by identifying the assignment e
 
 To combat this type of variant jumping, consider bucketing by:
 
-* User ID: If you're only targeting user who are logged in, and have a user ID.
+* User ID: If you're only targeting logged in users, and have a user ID.
 * Device ID: If you're only targeting anonymous users. For example, a sign up experiment.
 
 ### Inclusion list
 
-Say you have some user ids in the inclusion list. You call `fetch()` with the user id passed in to the `fetch()` call. You get control since that is what the inclusion list said. Then the next time you call `fetch()` you do not pass in the user id so the user does not meet the inclusion list criteria so the bucketing key gets hashed and they may see treatment. The same thing can happen if you include device ids.
+Say you have some user ids in the inclusion list. You call `fetch()` with the user id passed in to the `fetch()` call. You get control since that's what the inclusion list said. Then the next time you call `fetch()` you don't pass in the user id so the user doesn't meet the inclusion list criteria so the bucketing key gets hashed and they may see treatment. The same thing can happen if you include device ids.
 
 Has a user id so matches the inclusion list and gets `signin-up-new_design`.
 
 ![Has a user id so matches the inclusion list and gets signin-up-new_design](statamic://asset::help_center_conversions::experiment-troubleshoot/inclusion-list-variant-jumping-1.png)
 
-Does not have a user id so does not match the inclusion list and hits the all other users segment and gets `signin-up-original-view`.
+Doesn't have a user id so doesn't match the inclusion list and hits the all other users segment and gets `signin-up-original-view`.
 
-![Does not have a user id so does not match the inclusion list and hits the all other users segment and gets signin-up-original-view](statamic://asset::help_center_conversions::experiment-troubleshoot/inclusion-list-variant-jumping-2.png)
+![Doesn't have a user id so doesn't match the inclusion list and hits the all other users segment and gets signin-up-original-view](statamic://asset::help_center_conversions::experiment-troubleshoot/inclusion-list-variant-jumping-2.png)
 
 ## Abnormal variant jumping
 
 Abnormal variant jumping is unexpected variant jumping that can't be explained by any [normal means](#normal-variant-jumping). Abnormal variant jumping can be tough to track down, however most abnormal variant jumping is caused by some form of identity mismatch: **when the user identity used in assignment is different from the identity used to track the exposure.** In short, abnormal variant jumping is almost always due to an inconsistency in implementation.
 
-The following examples aren't exhaustive, but should get you thinking about the use of identity in your system with respect to Amplitude Experiment.
+The following examples aren't exhaustive, but should get you thinking about the use of identity in your system and Amplitude Experiment.
 
 ### Multiple logged in accounts on a single device
 
