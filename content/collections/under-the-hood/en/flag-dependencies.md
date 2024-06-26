@@ -15,13 +15,13 @@ Flag dependencies are used to implement:
 - [Mutual exclusion groups](/docs/experiment/advanced-techniques/mutually-exclusive-experiments)
 - [Holdout groups](/docs/experiment/advanced-techniques/holdout-groups-exclude-users)
 
-## Flag Prerequisites
+## Flag prerequisites
 
 ![Flag prerequisites](/docs/output/img/experiment/release-group.drawio.svg)
 
 *Available for flags and experiments*
 
-Flag prerequisites is a generic implementation of flag dependencies to allow any flags or experiments to depend on any other flags or experiments. Evaluation of the prerequisites can check specific variant(s) or target users who were not included in the prerequisite flag or experiment.
+Flag prerequisites is a generic implementation of flag dependencies to allow any flags or experiments to depend on any other flags or experiments. Evaluation of the prerequisites can check specific variants or target users who weren't included in the prerequisite flag or experiment.
 
 Use flag prerequisites to:
 
