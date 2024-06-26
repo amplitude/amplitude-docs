@@ -108,7 +108,7 @@ Use the Customize Events Payload section to customize what's included in your pa
 
 - **URL Endpoint:** Depending on your endpoint, you can choose between the following methods PUT, POST or PATCH.
 - **REST API Headers:** You can customize the API headers type to suit your use case. Some examples include:
-    - **Authorization:** Contains the authentication credentials for Http authentication.
+    - **Authorization:** Contains the authentication credentials for HTTP authentication.
     - **Content-Type:** Tells the client what the response's media type is. For example `application/json` or `application/javascript`. This is an important header field that helps the client know how to process the response body correctly.
     - **WWW-Authenticate:** The server may send this as an initial response if it needs some form of authentication before responding with the actual requested resource. Often following this header is the response code 401, which means “unauthorized”.
     - **Accept-Charset:** This header is set with the request and tells the server which character sets (for example, UTF-8, ISO-8859-1, Windows-1251, etc.) are acceptable by the client.

@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/data/destinations/marketing-cloud-event-streaming",
+      "destination": "/docs/data/destination-catalog/salesforce-marketing-cloud-event-streaming",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/session-replay/sdks/middleware-android",
       "destination": "/docs/session-replay/session-replay-android-middleware",
       "statusCode": 301

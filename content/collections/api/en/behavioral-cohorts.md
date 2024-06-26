@@ -28,14 +28,14 @@ summary: 'List all your cohorts in Amplitude, export a cohort in Amplitude, or u
 
 Get all discoverable cohorts for an app. Use the `id` for each cohort returned in the response to get a single cohort.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/3/cohorts' \
 -u '{api_key}:{secret_key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/3/cohorts HTTP/1.1
 Host: amplitude.com
@@ -183,14 +183,14 @@ Get a discoverable cohort using its `cohort_id`.
 
 This is step one in the download a cohort operation. Use the `request_id` returned in the response to poll export status.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/5/cohorts/request/id'
 -u '{api_key}:{secret_key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/5/cohorts/request/id HTTP/1.1
 Host: amplitude.com
@@ -202,14 +202,14 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 
 {{partial:collapse name="Example: Get a cohort with specific properties"}}
 This example gets the cohort with ID `26umsb5` and includes the properties `Property1` and `Property2`.
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/5/cohorts/request/26umsb5?props=1&propKeys=Property1&propKeys=Property2'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/5/cohorts/request/26umsb5?props=1&propKeys=Property1&propKeys=Property2 HTTP/1.1
 Host: amplitude.com
@@ -220,14 +220,14 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 {{/partial:collapse}}
 
 {{partial:collapse name="Example: Get cohort with all properties"}}
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/5/cohorts/request/26umsb5?props=1'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 
 GET /api/5/cohorts/request/26umsb5?props=1 HTTP/1.1
@@ -269,14 +269,14 @@ If your authorization or the `cohort_id` is invalid, the request returns an erro
 
 Poll the request status using the `request_id` retrieved for the cohort. This is the second phase in a cohort download operation.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/5/cohorts/request-status/:request_id' \
 -u '{api_key}:{secret_key}''
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/5/cohorts/request-status/:request_id HTTP/1.1
 Host: amplitude.com
@@ -288,14 +288,14 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 {{partial:collapse name="Example: Get the status of a request"}}
 This example gets the status of request with the ID `qfaZya`.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/5/cohorts/request-status/qfaZya' \
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/5/cohorts/request-status/qfaZya HTTP/1.1
 Host: amplitude.com
@@ -340,14 +340,14 @@ When the job has finished running, download the cohort.
 
 This is a basic request.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/5/cohorts/request/:requestId/file' \
 -u '{api_key}:{secret_key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/5/cohorts/request/requestId/file HTTP/1.1
 Host: amplitude.com
@@ -359,14 +359,14 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 {{partial:collapse name="Example: Download a requested cohort"}}
 This request downloads the file for request ID `Sf7M9j`.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/5/cohorts/request/Sf7M9j/file'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/5/cohorts/request/Sf7M9j/file HTTP/1.1
 Host: amplitude.com
@@ -391,7 +391,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 Generate a new cohort or update an existing cohort by uploading a set of User IDs or Amplitude IDs. This is a basic request example with placeholder values.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request POST 'https://amplitude.com/api/3/cohorts/upload' \
@@ -410,7 +410,7 @@ curl --location --request POST 'https://amplitude.com/api/3/cohorts/upload' \
 }'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 POST /api/3/cohorts/upload HTTP/1.1
 Host: amplitude.com
@@ -436,7 +436,7 @@ Content-Length: 201
 {{partial:collapse name="Example: Create a new cohort"}}
 This example creates a new cohort named "New Cohort" and includes the Amplitude IDs  `10101010101010ID1`, and `00000010101010ID2`.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request POST 'https://amplitude.com/api/3/cohorts/upload' \
@@ -457,7 +457,7 @@ curl --location --request POST 'https://amplitude.com/api/3/cohorts/upload' \
 
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 POST /api/3/cohorts/upload HTTP/1.1
 Host: amplitude.com
@@ -523,7 +523,7 @@ The response is a JSON object with this schema:
 
 Add and remove IDs to incrementally update existing cohort membership.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request POST 'https://amplitude.com/api/3/cohorts/membership' \
@@ -561,7 +561,7 @@ curl --location --request POST 'https://amplitude.com/api/3/cohorts/membership' 
 }
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 
 POST /api/3/cohorts/membership HTTP/1.1
@@ -598,7 +598,7 @@ Content-Length: 362
 {{partial:collapse name="Example: Remove and add cohort members"}}
 This example adds IDs `111` and `222` by ID, removes IDs `333` and `444` by ID, and removes IDs `asd` and `qwe` by name from the the cohort with ID `1a2bc3d`. The operation is set to skip invalid IDs.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request POST 'https://amplitude.com/api/3/cohorts/membership' \
@@ -627,7 +627,7 @@ curl --location --request POST 'https://amplitude.com/api/3/cohorts/membership' 
 }'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 
 POST /api/3/cohorts/membership HTTP/1.1

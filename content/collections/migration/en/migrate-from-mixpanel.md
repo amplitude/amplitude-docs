@@ -110,7 +110,7 @@ For client-side event tracking:
 
 For server-side event tracking:
 
-* [Amplitude's Http API](/docs/apis/analytics/http-v2)
+* [Amplitude's HTTP API](/docs/apis/analytics/http-v2)
 
 ### Map existing Mixpanel methods to Amplitude
 

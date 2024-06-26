@@ -349,6 +349,10 @@ ul.toc-list {
 }
 
 
+details summary {
+    list-style:none;
+  }
+
 a.toc-link {
     display: block;
 }
@@ -814,6 +818,8 @@ line-height: 1.25rem;
     font-weight: 500;
     padding: .1875em .375em;
 }
+
+
 
 /* Cookie Control */
 
