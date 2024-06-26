@@ -13,24 +13,23 @@ landing_blurb: 'Create a new experiment in Amplitude.'
 ---
 The decisions you make in the **design** phase set the stage for your experiment’s success. By putting more thought into your experiment’s purpose and goals before you start, you’ll be far more likely to glean useful, actionable insights from it.
 
-To create a new experiment, first ensure you’ve created a deployment, and either [installed the SDK](/docs/experiment/workflow/configure) or are set up to call the [evaluation REST API](https://www.docs.developers.amplitude.com/experiment/apis/evaluation-api/ "https://www.docs.developers.amplitude.com/experiment/apis/evaluation-api/").  Then follow these steps:
+To create a new experiment, [install an SDK](/docs/sdks/experiment-sdks) or call the [evaluation REST API](/docs/apis/experiment/experiment-evaluation-api).  Then follow these steps:
 
-1. Open Amplitude Experiment and click *+ New.* In the *Create New…* fly-out panel, select *Experiment*.
-2. In the *Create Experiment* modal, choose the project that will house this experiment from the *Projects* drop-down menu.
-3. Enter a name and a description for your experiment in the appropriate fields.   
+1. Click *Create > Experiment*, and select an Web or Feature.
+2. In the *New Experiment* modal, complete the fields:
+    - **Name**: Enter the name of the experiment for future reference.
+    - **Project**: Select the project in which this experiment operates.
+    - **Experiment Type**: Select from the following:
+      - *Hypothesis Testing* (default): Experiments where you’re using data to decide which variant to roll out based on performance. If no variant outperforms the control, you’ll usually want to roll back the experiment and stick with the control experience.
+      - *Do No Harm (DNH)*: Experiments where you already have a direction in mind, and the purpose of the experiment is to make sure that this change doesn't significantly harm key metrics. This type of experiment is often used for design system changes, or features that have to be sunset.
+      - *Multi-Armed Bandit*: Amplitude allocates an increasing amount of traffic to the winning variant, based on the primary metric, until it hits 100% allocation.
+    - For Web Experiments, enter the *Targeted Page URL*, on which this experiment runs.
+3. Optionally, complete the following fields:
+   - *Key*: Keys are unique to experiments and tell which experiments a user participates in. You can edit keys until you run the experiment.
+   - *Evaluation Mode*: Select if the experiment runs locally or on Amplitude's Experiment servers. For more information, see [Local evaluation](/docs/experiment/local-evaluation) and [Remote evaluation](/docs/experiment/remote-evaluation)
+   - *Bucketing Unit*: Select the unit Amplitude uses to assign variants, either `User` or `Group`.
+4. Click **Create**.
   
-{{partial:admonition type='note'}}
-Amplitude Experiment uses **flags** to include experiments within your product. It will automatically generate the flag key for your experiment from the name you choose; this key will act as an identifier for the flag used in your codebase.
-{{/partial:admonition}}
-
-4. Optionally, you can select a template for this experiment.
-5. When you’re done, click *Create*.
-
-Amplitude Experiment will open the Experiment Design panel to guide you through the rest of the process. First, in the *Basics* section, you'll choose one of the following experiment types:
-
-* *Hypothesis Testing* (default): Experiments where you’re using data to determine which variant to roll out based on performance. If no variant outperforms the control, you’ll usually want to roll back the experiment and stick with the control experience.
-* *Do No Harm (DNH):* Experiments where you already have a direction in mind, and the purpose of the experiment is to make sure that this change **does not** significantly harm key metrics. This type of experiment is often used for design system changes, or features that have to be sunset.
-
-As an example, let's say you've chosen to run a hypothesis testing experiment with a direction setting of "increase" and a minimum goal (MDE) of 2%. This means you believe the metric will increase by at least 2%. If you change the experiment type to *Do No Harm*, you'd be saying that you expect the metric to "*not* increase by 2%." A good use case for a Do No Harm experiment is launching a service agreement in your app and then testing for a lack of change in user retention.
+For example, you've chosen to run a hypothesis testing experiment with a direction setting of "increase" and a minimum goal (MDE) of 2%. This means you believe the metric should increase by at least 2%. If you change the experiment type to *Do No Harm*, you expect the metric to "*not* increase by 2%." A good use case for a Do No Harm experiment is launching a service agreement in your app and then testing for a lack of change in user retention.
 
 Click *Continue* to move on to the next step—[defining your experiment’s goals](/docs/experiment/workflow/define-goals).
