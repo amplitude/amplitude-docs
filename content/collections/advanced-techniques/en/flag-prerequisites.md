@@ -24,14 +24,14 @@ For a given flag or experiment, this card provides a summary of all flag depende
 2. In the Dependencies edit drawer, click _Add Dependency_ to add a new prerequisite flag or experiment.
 3. Select the flag or experiment you wish to create the dependency on.
 
-{{partial:admonition type='note'}}
-Flags and experiments are eligible to be used as a prerequisite if:
+	{{partial:admonition type='note'}}
+	Flags and experiments are eligible to be used as a prerequisite if:
 
-- They are in the same project.
-- They have compatible evaluation modes. Local evaluation mode flags and experiments can only have local evaluation mode prerequisites. Remote evaluation mode flags and experiments can have both remote and local prerequisites.
+	- They're in the same project.
+	- They have compatible evaluation modes. Local evaluation mode flags and experiments can only have local evaluation mode prerequisites. Remote evaluation mode flags and experiments can have both remote and local prerequisites.
 
-You can't add a prerequisite that would cause a circular dependency loop.
-{{/partial:admonition}}
+	You can't add a prerequisite that would cause a circular dependency loop.
+	{{/partial:admonition}}
 
 1. Then, select the variants that you want to be dependent on. _Off_ is a special value that represents when users weren't included in the prerequisite flag or experiment.
 2. To finish adding the dependency, click _Save_.
