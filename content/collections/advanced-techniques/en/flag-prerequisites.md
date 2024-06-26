@@ -91,13 +91,13 @@ The `primary-feature` flag targets all users where user property `premium` is `t
 
 ### Chained mutual exclusion groups
 
-Use flag prerequisites to build complex hierarchies of mutually exclusive experiments which start at different times. Dependent experiments list a prerequisite on an existing active experiment evaluating to `off`. This effectively targets all users who were not allocated to the existing experiment. You main continue this chain to add more mutually exclusive experiments if the previous experiment does not all users.
+Use flag prerequisites to build complex hierarchies of mutually exclusive experiments which start at different times. Dependent experiments list a prerequisite on an existing active experiment evaluating to `off`. This effectively targets all users who weren't allocated to the existing experiment. Continue this chain to add more mutually exclusive experiments if the previous experiment doesn't all users.
 
 ![Diagram of example mutual exclusion group](/docs/output/img/experiment/advanced-mutex-group.drawio.svg)
 
-In this example, `experiment-1` is currently running, and we want to run another experiment, `experiment-2`, which is mutually exclusive to `experiment-1`.
+In this example, `experiment-1` is running, and `experiment-2`, which is mutually exclusive to `experiment-1`, is set to run.
 
 - The `experiment-1` experiment allocates 20% of users 50/50 control/treatment.
 - The `experiment-2` experiment lists `experiment-1` as a prerequisite, and allocates 100% of users 50/50 control/treatment.
 
-Overall, 20% of users are assigned to `experiment-1` and the remaining 80% are assigned to `experiment-2`. No users are assigned variants for both `experiment-1` and `experiment-2`, unless they are included as a tester.
+Experiment assigns 20% of users to `experiment-1` and the assigns the remaining 80% to `experiment-2`. Experiment assigns no users variants for both `experiment-1` and `experiment-2`, unless they're a tester.
