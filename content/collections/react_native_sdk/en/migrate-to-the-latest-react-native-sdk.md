@@ -51,8 +51,8 @@ sdk_version_comparison:
   -
     cells:
       - 'Server endpoint'
-      - 'Http V2 API'
-      - 'Http V1 API'
+      - 'HTTP V2 API'
+      - 'HTTP V1 API'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718672648
 source: 'https://www.docs.developers.amplitude.com/data/sdks/typescript-react-native/migration/'
@@ -195,7 +195,7 @@ amplitude.identify(identifyObj)
 ### setUserId
 
 {{partial:admonition type="warning" heading=""}}
-The maintenance SDK uses an old SDK endpoint (`api2.amplitude.com`) which enforces no length limit for `deviceId` and `userId`. The latest SDK uses Amplitude's Http V2 API (`api2.amplitude.com/2/httpapi`) and requires identifiers to be at least 5 characters by default. When you migrate to the latest SDK, set `config.minIdLength` to a smaller value if you allowed identifiers with fewer than 5 characters.
+The maintenance SDK uses an old SDK endpoint (`api2.amplitude.com`) which enforces no length limit for `deviceId` and `userId`. The latest SDK uses Amplitude's HTTP V2 API (`api2.amplitude.com/2/httpapi`) and requires identifiers to be at least 5 characters by default. When you migrate to the latest SDK, set `config.minIdLength` to a smaller value if you allowed identifiers with fewer than 5 characters.
 {{/partial:admonition}}
 
 The `setUserId()` API remains the same.

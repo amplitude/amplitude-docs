@@ -161,7 +161,7 @@ var instance = amplitude.getInstance("instance").init(AMPLITUDE_API_KEY, null, o
 | `domain` | `string`. Set a custom domain for the Amplitude cookie. To include subdomains, add a preceding period, eg: `.amplitude.com`. | `null` |
 | `eventUploadPeriodMillis` | `number`. Amount of time in milliseconds that the SDK waits before uploading events if batchEvents is true. | 30 seconds |
 | `eventUploadThreshold` | `number`. Minimum number of events to batch together per request if batchEvents is true. | `30` |
-| `forceHttps` | `boolean`. Whether force to upload toHTTPS endpoint. If `true`, the events will always be uploaded to HTTPS endpoint. Otherwise, it will use the embedding site's protocol. | `true` |
+| `forceHTTPs` | `boolean`. Whether force to upload toHTTPS endpoint. If `true`, the events will always be uploaded to HTTPS endpoint. Otherwise, it will use the embedding site's protocol. | `true` |
 | `includeFbclid` | `boolean`. If `true`, captures the fbclid URL parameter as well as the user's initial_fbclid via a setOnce operation. | `false` |
 | `includeGclid` | `boolean`. If `true`, captures the gclid URL parameter as well as the user's initial_gclid via a setOnce operation. | `false` |
 | `includeReferrer` | `boolean`. If `true`, captures the referrer and referring_domain for each session, as well as the user's initial_referrer and initial_referring_domain via a setOnce operation. | `false` |
@@ -909,9 +909,9 @@ Disable cookies created by the SDK with the `disableCookies` option. When you 
 The JavaScript SDK defaults to setting the SameSite option on its cookies to `None`. This can be overridden with the `sameSiteCookie` option.
  Amplitude recommends using `Lax` unless there are instances where you have third party sites that `POST` forms to your site.
 
-#### HttpOnly cookies
+#### HTTPOnly cookies
 
-An HttpOnly option isn't technologically possible for cookies created by the SDK. The cookie is set on the client side and is used as a client-side data store. An SDK cookie can't set the HttpOnly flag.
+An HTTPOnly option isn't technologically possible for cookies created by the SDK. The cookie is set on the client side and is used as a client-side data store. An SDK cookie can't set the HTTPOnly flag.
 
 #### Upgrade legacy cookies
 

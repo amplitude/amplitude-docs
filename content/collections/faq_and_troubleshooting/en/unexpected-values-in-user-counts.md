@@ -59,7 +59,7 @@ Location user properties (such as `[Amplitude] City`, `[Amplitude] DMA`, `[Ampli
 
 For client-side events, location properties can have `(none)` values if MaxMind returns null for that IP address. Even through MaxMind is considered as the most reliable source, accuracy and availability of city/region information can vary by country (more info [here](https://www.maxmind.com/en/geoip2-city-accuracy-comparison?country=&resolution=50)).
 
-For server-side events, location property values are determined either by GeoIP (which falls back on `location_lat` and `location_long` if unavailable), or explicitly defined in your API call. Amplitude's [Http API](/docs/apis/analytics/http-c2) allows you to send custom `City` , `DMA` , `Region` , and `Country` values with your events. If you choose to send these values, Amplitude will not modify them to reflect GeoIP. Please be sure to update all four fields together; setting any one of these fields will automatically reset all others.
+For server-side events, location property values are determined either by GeoIP (which falls back on `location_lat` and `location_long` if unavailable), or explicitly defined in your API call. Amplitude's [HTTP API](/docs/apis/analytics/http-c2) allows you to send custom `City` , `DMA` , `Region` , and `Country` values with your events. If you choose to send these values, Amplitude will not modify them to reflect GeoIP. Please be sure to update all four fields together; setting any one of these fields will automatically reset all others.
 {{/partial:collapse}}
 
 

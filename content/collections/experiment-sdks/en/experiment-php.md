@@ -88,8 +88,8 @@ You can configure the SDK client on initialization.
 | `serverUrl` | The host to fetch variants from. | `https://api.lab.amplitude.com` |
 | `logger` | Set to use custom logger. If not set, a [default logger](#custom-logger) is used. | `null` |
 | `logLevel` | The [log level](#log-level) to use for the logger. | `LogLevel::ERROR` |
-| `httpClient` | The underlying [Http client](#custom-http-client) to use for requests, if this is not set, a [default](#guzzlehttpclient) Http client will be used. | `null` |
-| `guzzleClientConfig` | The configuration for the underlying default `GuzzleHttpClient` (if used). | [defaults](#guzzlehttpclient) |
+| `httpClient` | The underlying [HTTP client](#custom-http-client) to use for requests, if this is not set, a [default](#guzzlehttpclient) HTTP client will be used. | `null` |
+| `guzzleClientConfig` | The configuration for the underlying default `GuzzleHTTPClient` (if used). | [defaults](#guzzlehttpclient) |
 
 
 {{partial:admonition type="info" heading="EU data center"}}
@@ -192,8 +192,8 @@ You can configure the SDK client on initialization.
 | `serverUrl` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
 | `logger` | Set to use custom logger. If not set, a [default logger](#custom-logger) is used. | `null` |
 | `logLevel` | The [log level](#log-level) to use for the logger. | `LogLevel::ERROR` |
-| `httpClient` | The underlying [Http client](#custom-http-client) to use for requests, if this is not set, a [default](#guzzlehttpclient) Http client will be used. | `null` |
-| `guzzleClientConfig` | The configuration for the underlying default `GuzzleHttpClient` (if used). | [defaults](#guzzlehttpclient) |
+| `httpClient` | The underlying [HTTP client](#custom-http-client) to use for requests, if this is not set, a [default](#guzzlehttpclient) HTTP client will be used. | `null` |
+| `guzzleClientConfig` | The configuration for the underlying default `GuzzleHTTPClient` (if used). | [defaults](#guzzlehttpclient) |
 | `bootstrap` | Bootstrap the client with an array of flag key to flag configuration | `[]` |
 | [`assignmentConfig`](#assignment-tracking) | Configuration for automatically tracking assignment events after an evaluation. | `null` |
 
@@ -305,7 +305,7 @@ The local evaluation client calls `track()` when it determines there are untrack
 
 #### DefaultAssignmentTrackingProvider
 
-The default assignment tracking provider is a basic implementation of the interface which uses the internal `Amplitude` package to send assignment events through synchronous Http requests.
+The default assignment tracking provider is a basic implementation of the interface which uses the internal `Amplitude` package to send assignment events through synchronous HTTP requests.
 
 ```php title="DefaultAssignmentTrackingProvider"
 <?php
@@ -330,8 +330,8 @@ class DefaultAssignmentTrackingProvider implements AssignmentTrackingProvider {
 | `serverZone` | The server zone of the projects. Supports `EU` and `US`. For EU data residency, Change to `EU`. | `US` |
 | `serverUrl` | The API endpoint URL that events are sent to. Automatically selected by `serverZone` and `useBatch`. If this field is set with a string value instead of `null`, then `serverZone` and `useBatch` are ignored and the string value is used. | `https://api2.amplitude.com/2/httpapi` |
 | `useBatch` | Whether to use [batch API](/docs/apis/analytics/batch-event-upload#batch-event-upload). By default, the SDK will use the default `serverUrl`. | `false` |
-| `httpClient` | The underlying [Http client](#custom-http-client) to use for requests, if this is not set, a [default](#guzzlehttpclient) Http client will be used. | `null` |
-| `guzzleClientConfig` | The configuration for the underlying default `GuzzleHttpClient` (if used). | [defaults](#guzzlehttpclient) |
+| `httpClient` | The underlying [HTTP client](#custom-http-client) to use for requests, if this is not set, a [default](#guzzlehttpclient) HTTP client will be used. | `null` |
+| `guzzleClientConfig` | The configuration for the underlying default `GuzzleHTTPClient` (if used). | [defaults](#guzzlehttpclient) |
 | `logger` | Set to use custom logger. If not set, a [default logger](#custom-logger) is used. | `null` |
 | `logLevel` | The [log level](#log-level) to use for the logger. | `LogLevel::ERROR` |
 
@@ -359,18 +359,18 @@ The following log levels are used by the SDK:
 | `ERROR` | Error-level messages are logged |
 | `DEBUG` | Debug and error-level messages are logged |
 
-## Custom Http Client
+## Custom HTTP Client
 
-Local and remote evaluation clients can be configured to use a custom Http client which implements the [HttpClientInterface](#httpclientinterface), otherwise a default [Guzzle-based Http client](#guzzlehttpclient) is used.
+Local and remote evaluation clients can be configured to use a custom HTTP client which implements the [HTTPClientInterface](#httpclientinterface), otherwise a default [Guzzle-based HTTP client](#guzzlehttpclient) is used.
 
-### HttpClientInterface
+### HTTPClientInterface
 
 | Method | Return Type | Description |
 | --- | --- | --- |
-| `getClient` | `Psr\Http\Client\ClientInterface` | Return the underlying PSR Http Client. |
-| `createRequest` | `Psr\Http\Message\RequestInterface` | Return a PSR Request to be sent by the underlying PSR Http Client. |
+| `getClient` | `Psr\HTTP\Client\ClientInterface` | Return the underlying PSR HTTP Client. |
+| `createRequest` | `Psr\HTTP\Message\RequestInterface` | Return a PSR Request to be sent by the underlying PSR HTTP Client. |
 
-### GuzzleHttpClient
+### GuzzleHTTPClient
 
 The default Guzzle client can be configured via the `guzzleClientConfig` option in [`RemoteEvaluationConfig`](#configuration) and [`LocalEvaluationConfig`](#configuration_1).
 

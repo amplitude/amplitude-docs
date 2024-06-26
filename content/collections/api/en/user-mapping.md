@@ -59,13 +59,13 @@ Map a user ID to a global user ID. Remember that you can map a single user ID pe
 
 This is a basic request with only the required parameters. See the examples below for more detailed requests.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location -g --request POST 'https://api.amplitude.com/usermap?mapping=[{"user_id":"<USER_ID", "global_user_id": "<GLOBAL_USER_ID"}]&api_key=API_KEY'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 POST /usermap?mapping=[{"user_id":"<USER_ID", "global_user_id": "<GLOBAL_USER_ID"}]&api_key=API_KEY
 HTTP/1.1
@@ -77,13 +77,13 @@ Host: api.amplitude.com
 {{partial:collapse name="Example: Map a user ID to a global user ID"}}
 Maps the user ID "63629@hmail.com" to the global user ID "hank@globex.net".
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location -g --request POST 'https://api.amplitude.com/usermap?mapping=[{"user_id":"63629@hmail.com", "global_user_id": "hank@globex.net"}]&api_key=123456789'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 POST /usermap?mapping=[{"user_id":"63629@hmail.com", "global_user_id": "hank@globex.net"}]]&api_key=123456789 HTTP/1.1
 Host: api.amplitude.com
@@ -95,13 +95,13 @@ Host: api.amplitude.com
 {{partial:collapse name="Example: Map multiple users in one request"}}
 Maps the user ID "63629@hmail.com" to the global user ID "hank@globex.net", and maps the user ID "12345@hmail.com" to the global user ID "hank@globex.net".
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location -g --request POST 'curl --location -g --request POST 'https://api.amplitude.com/usermap?mapping=[{"user_id":"63629@hmail.com", "global_user_id": "hank@globex.net"}, {"user_id":"12345@hmail.com", "global_user_id": "hank@globex.net"}]&api_key=123456789'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 POST /usermap?mapping=[{"user_id":"63629@hmail.com", "global_user_id": "hank@globex.net"}, {"user_id":"12345@hmail.com", "global_user_id": "hank@globex.net"}]&api_key=123456789 HTTP/1.1
 Host: api.amplitude.com
@@ -114,13 +114,13 @@ Host: api.amplitude.com
 
 This is a basic request with only the required parameters. Remember that you can unmap a single user ID per JSON mapping object. See the examples below for more detailed requests.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location -g --request POST 'https://api.amplitude.com/usermap?mapping=[{"user_id":"<USER_ID", "unmap": true}]&api_key=API_KEY'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 POST /usermap?mapping=[{"user_id":"<USER_ID>", "unmap": true}]&api_key=API_KEY
 HTTP/1.1
@@ -132,13 +132,13 @@ Host: api.amplitude.com
 {{partial:collapse name="Example: Unmap a user ID"}}
 Unmaps the user ID "63629@hmail.com" and user ID "12345@hmail.com".
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location -g --request POST 'curl --location -g --request POST 'https://api.amplitude.com/usermap?mapping=[{"user_id":"63629@hmail.com", "unmap":true}, {"user_id":"12345@hmail.com", "unmap":true}]&api_key=123456789'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 POST /usermap?mapping=[{"user_id":"63629@hmail.com", "unmap":true}, {"user_id":"12345@hmail.com", "unmap":true}]&api_key=123456789 HTTP/1.1
 Host: api.amplitude.com
