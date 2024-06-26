@@ -291,10 +291,10 @@ What is happening in this case is that the website owner is embedding pieces of 
 {{/partial:collapse}}
 
 
-{{partial:collapse name="Why aren't Amplitude cookies marked as `HttpOnly`?"}}
-It doesn’t really make sense for Amplitude's cookies to be HttpOnly; the point of that option is so that document.cookie can’t read those cookies (since they’d only be used in the client-server communication). But the point of Amplitude's cookies is the opposite: Amplitude wants to persist data specifically in their browser and be put in document.cookies, Amplitude can’t read from their server because Amplitude is client-side code.
+{{partial:collapse name="Why aren't Amplitude cookies marked as `HTTPOnly`?"}}
+It doesn’t really make sense for Amplitude's cookies to be HTTPOnly; the point of that option is so that document.cookie can’t read those cookies (since they’d only be used in the client-server communication). But the point of Amplitude's cookies is the opposite: Amplitude wants to persist data specifically in their browser and be put in document.cookies, Amplitude can’t read from their server because Amplitude is client-side code.
 
-The concerns of having Amplitude's cookie be not HttpOnly aren't aligned with the fact of stealing authentication information: Amplitude has no authentication information in that cookie so Amplitude isn't in danger of a XSS attack. The worst thing an attacker could do is steal Amplitude's cookie and take that user’s device ID and user ID, which shouldn’t be PII to be begin with.
+The concerns of having Amplitude's cookie be not HTTPOnly aren't aligned with the fact of stealing authentication information: Amplitude has no authentication information in that cookie so Amplitude isn't in danger of a XSS attack. The worst thing an attacker could do is steal Amplitude's cookie and take that user’s device ID and user ID, which shouldn’t be PII to be begin with.
 
 Nonetheless, if this is a serious concern for the customer, they should probably disable Amplitude's cookies.
 {{/partial:collapse}}

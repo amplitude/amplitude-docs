@@ -17,7 +17,7 @@ Data that highlights user location properties, such as a user's city and country
 
 Amplitude uses the [MaxMind](https://www.maxmind.com/en/home) database to look up location information from the user's IP address. Even though MaxMind data is generally highly reliable, the [accuracy and availability of city and region information can vary by country](https://www.maxmind.com/en/geoip2-city-accuracy-comparison?country=&resolution=50).
 
-By default, Amplitude uses the GeoIP to gather location property values based on `location_lat` and `location_long`. You may explicitly define how a user's location properties will be tracked server-side. Amplitude's [Http API](/docs/apis/analytics/http-v2) allows you to send your own `[Amplitude] City`, `[Amplitude] DMA`, `[Amplitude] Region`, and `[Amplitude] Country` values with your events.
+By default, Amplitude uses the GeoIP to gather location property values based on `location_lat` and `location_long`. You may explicitly define how a user's location properties will be tracked server-side. Amplitude's [HTTP API](/docs/apis/analytics/http-v2) allows you to send your own `[Amplitude] City`, `[Amplitude] DMA`, `[Amplitude] Region`, and `[Amplitude] Country` values with your events.
 
 {{partial:admonition type="note" heading=""}}
 If you choose to send these values, Amplitude will not modify them to reflect GeoIP. Always update all four fields together, as setting any one of the fields will automatically reset the others.

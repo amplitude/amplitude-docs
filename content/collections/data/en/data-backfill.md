@@ -37,7 +37,7 @@ This means that at any given time, a particular user or device can only send 500
 
 ## Backfill best practices
 
-- Review the documentation for the [Batch API](/docs/apis/analytics/batch-event-upload). If you exported historical data using the Export API and want use the data to backfill, note that the fields exported aren't in the same format as the fields needed for import. For example, the Export API uses `$insert_id` while Http and Batch APIs use the format `insert_id` without the `$`.
+- Review the documentation for the [Batch API](/docs/apis/analytics/batch-event-upload). If you exported historical data using the Export API and want use the data to backfill, note that the fields exported aren't in the same format as the fields needed for import. For example, the Export API uses `$insert_id` while HTTP and Batch APIs use the format `insert_id` without the `$`.
 - Understand which fields you want to send and map your historical data to Amplitude fields. Amplitude strongly recommends that you use the `insert_id` field to deduplicate events.
 - Because there is no way to undo an import, create a test project in Amplitude to send sample data from your backfill. Do several tests with a few days worth of data in an Amplitude test project before the final upload to the production project.
 

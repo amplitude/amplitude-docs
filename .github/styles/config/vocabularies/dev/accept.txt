@@ -238,3 +238,6 @@ Jetbrains
 VSCode
 Candu
 CommandBar
+Welltory
+MTU
+MTUs

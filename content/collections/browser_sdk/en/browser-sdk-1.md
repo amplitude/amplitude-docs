@@ -30,7 +30,7 @@ An improved version of Amplitude Browser SDK is now available. Amplitude [Browse
 ## Initialize the SDK
 
 {{partial:admonition type="note" heading="Sending events"}}
-This SDK uses the [Http V2](/docs/apis/analytics/http-v2) API and follows the same constraints for events. Make sure that all events logged in the SDK have the `event_type` field and at least one of `deviceId`  (included by default) or `userId`, and follow the Http API's constraints on each of those fields.
+This SDK uses the [HTTP V2](/docs/apis/analytics/http-v2) API and follows the same constraints for events. Make sure that all events logged in the SDK have the `event_type` field and at least one of `deviceId`  (included by default) or `userId`, and follow the HTTP API's constraints on each of those fields.
 
 To prevent instrumentation issues, device IDs and user IDs must be strings with a length of 5 characters or more. If an event contains a device ID or user ID that's too short, the ID value is removed from the event. If the event doesn't have a `userId` or `deviceId` value, Amplitude may reject the upload with a 400 status. Override the default minimum length of 5 characters by setting the `minIdLength` config option.
 {{/partial:admonition}}
@@ -63,7 +63,7 @@ amplitude.init(API_KEY, 'user@amplitude.com', options);
 |`optOut` | `boolean`. Sets permission to track events. Setting a value of `true` prevents Amplitude from tracking and uploading events. | `false` |
 |`serverUrl`| `string`. Sets the URL where events are upload to. | `https://api2.amplitude.com/2/httpapi` | 
 |`serverZone`| `EU` or  `US`. Sets the Amplitude server zone. Set this to `EU` for Amplitude projects created in `EU` data center. | `US` |
-|`useBatch`| `boolean`. Sets whether to upload events to Batch API instead of the default Http V2 API or not. | `false` |
+|`useBatch`| `boolean`. Sets whether to upload events to Batch API instead of the default HTTP V2 API or not. | `false` |
 |`appVersion` | `string`. Sets an app version for events tracked. This can be the version of your application. For example: "1.0.0" | `undefined` |
 |`deviceId` | `string`. Sets an identifier for the device running your application. | `UUID()` |
 |`cookieExpiration` | `number`. Sets expiration of cookies created in days. | 365 days |
@@ -715,7 +715,7 @@ This method contains the logic for processing events and has event as parameter.
 
 #### Destination type plugin
 
-Here's an example of a plugin that sends each event that's instrumented to a target server URL using your preferred Http client.
+Here's an example of a plugin that sends each event that's instrumented to a target server URL using your preferred HTTP client.
 
 ```ts
 function myDestinationPlugin (serverUrl) {
@@ -973,9 +973,9 @@ The SDK can parse the URL parameter automatically if `deviceId` is in the URL q
 
 If the `deviceId` isn't provided with the `init` like `init('API_KEY', null, { deviceId: 'custom-device-id' })`, then it automatically fallbacks to using the URL parameter.
 
-### Custom Http client
+### Custom HTTP client
 
-You can provide an implementation of `Transport` interface to the `transportProvider` configuration option for customization purpose, for example, sending requests to your proxy server with customized Http request headers.
+You can provide an implementation of `Transport` interface to the `transportProvider` configuration option for customization purpose, for example, sending requests to your proxy server with customized HTTP request headers.
 
 ```ts
 class MyTransport {

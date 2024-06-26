@@ -50,7 +50,7 @@ For more information, see [Set up and run mutually exclusive experiments](/docs/
 
 *Available for experiments only*
 
-A holdout group withholds a percentage of traffic from a group of experiments, allowing measurement of the long-term and combined impact of multiple experiments. In Amplitude Experiment, a holdout group is implemented using a flag with two variants: `holdout` and `on`, where the `holdout` variant is allocated the holdout percentage defined on creation. Experiments in the group depend on the holdout group's variant `on`.
+A holdout group withholds a percentage of traffic from a group of experiments, allowing measurement of the long-term and combined impact of multiple experiments. Amplitude Experiment implements a holdout group using a flag with two variants: `holdout` and `on`, where the `holdout` variant is allocated the holdout percentage defined on creation. Experiments in the group depend on the holdout group's variant `on`.
 
 The variant result of a holdout group's evaluation isn't returned but is assigned as a user property to enable holdout analysis.
 

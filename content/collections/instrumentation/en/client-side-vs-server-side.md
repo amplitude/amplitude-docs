@@ -15,7 +15,7 @@ Both Amplitude client-side SDKs and server-side SDKs use API endpoints. These en
 
 | Name                                            | API endpoints                                                                                                                                                                              |
 | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Analytics and Data SDKs](/docs/sdks/analytics) | [Http V2 API](/docs/apis/analytics/http-v2) and [Batch event upload](/docs/apis/analytics/batch-event-upload) |
+| [Analytics and Data SDKs](/docs/sdks/analytics) | [HTTP V2 API](/docs/apis/analytics/http-v2) and [Batch event upload](/docs/apis/analytics/batch-event-upload) |
 | [Experiment SDKs](/docs/sdks/experiment-sdks)   | [Evaluation API](/docs/apis/experiment/experiment-evaluation-api)                                                                                                                          |
 
 ## Client-side sources
