@@ -69,8 +69,8 @@ Amplitude provides a workbook with the most common use cases from other Amplitud
 **Key questions:**
 
 * How often do users look at products?
-* What is our purchase conversion rate?
-* And what is the falloff in each step? (rates of- click to category page, click to product, add to cart, view cart, start checkout, order conversion)
+* What's our purchase conversion rate?
+* And what's the falloff in each step? (rates of- click to category page, click to product, add to cart, view cart, start checkout, order conversion)
 * What features do users interact with that lead to conversions?
 * What are the drivers that lead from user registration to first purchase?
 * How many purchases include more than one item?
@@ -110,7 +110,7 @@ For client-side event tracking:
 
 For server-side event tracking:
 
-* [Amplitude's Http API](/docs/apis/analytics/http-v2)
+* [Amplitude's HTTP API](/docs/apis/analytics/http-v2)
 
 ### Map existing Mixpanel methods to Amplitude
 
@@ -195,7 +195,7 @@ The data set may be too large to process. Try again with a more narrow time rang
 
 * Some Mixpanel events may not be compatible with Amplitude events due to missing information. If your Mixpanel instrumentation doesn't capture fields like `name`, `date`, or `device ID`, Amplitude may not import them.
 
-## GDPR INFORMATION
+## GDPR information
 
 Amplitude is fully GDPR compliant.
 

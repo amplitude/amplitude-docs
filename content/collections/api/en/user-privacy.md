@@ -44,7 +44,7 @@ Using this API doesn't prevent future user tracking for the deleted users. To le
 
 ## Limits
 
-The endpoint `/api/2/deletions/users` has a rate limit of 1 Http request per second. Each Http request can contain up to 100 `amplitude_ids` or `user_ids`.
+The endpoint `/api/2/deletions/users` has a rate limit of 1 HTTP request per second. Each HTTP request can contain up to 100 `amplitude_ids` or `user_ids`.
 
 Make up to 100 deletion requests per second if you batch 100 users in each request.
 
@@ -56,7 +56,7 @@ Add a user for deletion using a JSON body. Specify up to 100 users at a time. Yo
 
 {{partial:collapse name="Example: Delete a user in one project"}}
 
-{{partial:tabs tabs="cURL, Http, JavaScript, Node, Ruby, Python, Java, Go"}}
+{{partial:tabs tabs="cURL, HTTP, JavaScript, Node, Ruby, Python, Java, Go"}}
 {{partial:tab name="cURL"}}
 ```bash
     curl --request POST 'https://amplitude.com/api/2/deletions/users'  \
@@ -70,7 +70,7 @@ Add a user for deletion using a JSON body. Specify up to 100 users at a time. Yo
     }'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 POST /api/2/deletions/users HTTP/1.1
 Host: amplitude.com
@@ -192,7 +192,7 @@ p JSON.parse(result)
 {{partial:tab name="Java"}}
 ```java
 URL obj = new URL("https://amplitude.com/api/2/deletions/users");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+HTTPURLConnection con = (HTTPURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
 BufferedReader in = new BufferedReader(
@@ -266,7 +266,7 @@ func main() {
 {{/partial:collapse}}
 
 {{partial:collapse name="Example: Delete users from all projects"}}
-{{partial:tabs tabs="cURL, Http, JavaScript, Node, Ruby, Python, Java, Go"}}
+{{partial:tabs tabs="cURL, HTTP, JavaScript, Node, Ruby, Python, Java, Go"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request POST 'https://amplitude.com/api/2/deletions/users' \
@@ -288,7 +288,7 @@ curl --location --request POST 'https://amplitude.com/api/2/deletions/users' \
 }'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 POST /api/2/deletions/users HTTP/1.1
 Host: amplitude.com
@@ -417,7 +417,7 @@ print(response.text)
 {{partial:tab name="Java"}}
 ```java
 URL obj = new URL("https://amplitude.com/api/2/deletions/users");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+HTTPURLConnection con = (HTTPURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
 BufferedReader in = new BufferedReader(
@@ -535,7 +535,7 @@ Retrieves a list of deletion jobs scheduled in a time range. The time range shou
 
 If the request returns no values, then no jobs are scheduled for that time range. Note: The largest permitted time range is six months.
 
-{{partial:tabs tabs="cURL, Http, JavaScript, Node, Ruby, Python, Java, Go"}}
+{{partial:tabs tabs="cURL, HTTP, JavaScript, Node, Ruby, Python, Java, Go"}}
 {{partial:tab name="cURL"}}
 ```bash
 # You can also use wget
@@ -544,7 +544,7 @@ curl -X GET https://amplitude.com/api/2/deletions/users?start_day=string&end_day
   -U API_KEY:API_SECRET
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET https://amplitude.com/api/2/deletions/users?start_day=string&end_day=string HTTP/1.1
 Host: amplitude.com
@@ -627,7 +627,7 @@ print r.json()
 {{partial:tab name="Java"}}
 ```java
 URL obj = new URL("https://amplitude.com/api/2/deletions/users?start_day=string&end_day=string");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+HTTPURLConnection con = (HTTPURLConnection) obj.openConnection();
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
 BufferedReader in = new BufferedReader(

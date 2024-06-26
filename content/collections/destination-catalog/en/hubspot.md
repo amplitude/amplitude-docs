@@ -23,29 +23,29 @@ updated_at: 1713478876
 
 [HubSpot](https://www.hubspot.com/) is an easy to use and powerful CRM platform that enables scaling companies to sell, market and provide customer service from a unified UI. 
 
-Amplitude CDP's HubSpot streaming integration enables you to forward your Amplitude events and event properties straight to HubSpot with just a few clicks.
+Amplitude's HubSpot streaming integration enables you to forward your Amplitude events and event properties straight to HubSpot with just a few clicks.
 
 ## Considerations
 
 Keep these things in mind when sending events to HubSpot:
 
 - You must enable this integration in each Amplitude project you want to use it in.
-- Events from Amplitude will appear as Custom Behavioral Events in HubSpot.
+- Events from Amplitude appear as Custom Behavioral Events in HubSpot.
 - A HubSpot Enterprise Marketing Hub account is required to send Custom Behavioral Events.
 - Relevant limits for HubSpot events are:
     - HubSpot enforces strict API rate limits. You can find more information about these limits [here](https://developers.hubspot.com/docs/api/usage-details).
     - HubSpot allows up to 50 properties for each custom behavior event.
 - Types of data you can forward to HubSpot:
     - Amplitude sends selected event properties along with the event.
-    - Amplitude does not perform an identity call for this integration. This means Amplitude does not send any user properties information directly to HubSpot.
+    - Amplitude doesn't perform an identity call for this integration. This means Amplitude doesn't send any user properties information directly to HubSpot.
 - Latency considerations:
-    - Amplitude targets an end-to-end p95 latency of 60s. This means 95% of Events streamed will be delivered to HubSpot within 60s or less. We have internal processes, monitors, and alerts in place to monitor and maintain this target.   
+    - Amplitude targets an end-to-end p95 latency of 60s. This means 95% of Events streamed deliver to HubSpot within 60s or less. Amplitude has internal processes, monitors, and alerts in place meet this target.   
 
 ## Setup
 
 ### HubSpot setup
 
-1. Create the custom behavioral events and note down their internal name and add event properties that you want to forward to HubSpot. Include a string property named `event_type` in the behavior custom event, which will indicate the specific type of event within Amplitude. Learn how you create the event and event property in HubSpot [here](https://knowledge.hubspot.com/analytics-tools/create-custom-behavioral-events-with-the-code-wizard). 
+1. Create the custom behavioral events and note down their internal name and add event properties that you want to forward to HubSpot. Include a string property named `event_type` in the behavior custom event, which indicates the specific type of event within Amplitude. Learn how you create the event and event property in HubSpot [here](https://knowledge.hubspot.com/analytics-tools/create-custom-behavioral-events-with-the-code-wizard). 
 
 ### Amplitude setup
 
@@ -56,7 +56,7 @@ Keep these things in mind when sending events to HubSpot:
 5. Enter the HubSpot Event Name created by HubSpot
 6. Toggle the **Send events** filter to select the events to send. HubSpot recommends choosing the events that are most important to your use case. 
 7. Click on the **Select & filter events** option to choose the event type of the events you would like to send.
-8. Click on **Map properties to destination** to specify the identity mapping between Amplitude and HubSpot. Note that HubSpot requires the identifier to be at least one of the following: utk, email, or object ID.
+8. Click on **Map properties to destination** to specify the identity mapping between Amplitude and HubSpot. Note that HubSpot requires the identifier to be at least one of the following: `utk`, `email`, or object ID.
 9. Click on **Select additional properties** to specify the event properties you wish to forward to HubSpot. By default, the event properties only include the **event_type** property, which indicates the type of event for a particular event in Amplitude.
 10. When finished, enable the destination and **Save**.
 
@@ -99,5 +99,5 @@ Keep these things in mind when sending events to HubSpot:
 ## Use cases
 
 1. **Personalized Marketing:** With the ability to track user behavior and capture user and event properties in Amplitude, businesses can create highly personalized and targeted marketing campaigns in HubSpot. This can lead to increased engagement, conversions, and customer loyalty.
-2. **Lead Scoring and Nurturing:** By tracking user behavior and capturing user and event properties in Amplitude, businesses can score and prioritize leads based on their level of engagement and interests. This can help businesses to optimize their lead nurturing efforts and increase their chances of closing deals.
+2. **Lead Scoring and Nurturing:** By tracking user behavior and capturing user and event properties in Amplitude, businesses can score and rank leads based on their level of engagement and interests. This can help businesses to optimize their lead nurturing efforts and increase their chances of closing deals.
 3. **Customer Retention:** By tracking user behavior and capturing user and event properties in Amplitude, businesses can identify customers who are at risk of churning and take proactive steps to retain them. For instance, businesses can trigger personalized emails or ads to offer discounts or incentives to encourage customers to stay engaged with the product or service.

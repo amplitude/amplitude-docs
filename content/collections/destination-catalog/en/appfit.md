@@ -78,14 +78,14 @@ When satisfied with your configuration, at the top of the page toggle the **Stat
 
 | Parameter Name        | Required              | Recommended         |
 |-----------------------|:---------------------:|:-------------------:|
-| **AppsFlyer ID**      | :octicons-check-16:   |                     |
-| Customer User ID      |                       | :octicons-check-16: |
-| Advertising ID (GAID) |                       | :octicons-check-16: |
-| Amazon AID            |                       | :octicons-check-16: |
-| OAID                  |                       | :octicons-check-16: |
-| IMEI                  |                       | :octicons-check-16: |
-| IDFA                  |                       | :octicons-check-16: |
-| IDFV                  |                       | :octicons-check-16: |
+| **AppsFlyer ID**      | ✅   |                     |
+| Customer User ID      |                       | ✅ |
+| Advertising ID (GAID) |                       | ✅ |
+| Amazon AID            |                       | ✅ |
+| OAID                  |                       | ✅ |
+| IMEI                  |                       | ✅ |
+| IDFA                  |                       | ✅ |
+| IDFV                  |                       | ✅ |
 | AF Content ID         |                       |                     |
 | AF Content Type       |                       |                     |
 | AF Currency           |                       |                     |

@@ -28,14 +28,14 @@ Send a `GET` request with required and optional parameters to `https://analytics
 
 Here is a basic request with only the required parameters.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://analytics.amplitude.com/api/2/event-streaming/delivery-metrics-summary?sync_id=SYNC_ID&time_period=TIME_PERIOD' \
 -u '{api_key}:{secret_key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/event-streaming/delivery-metrics-summary?sync_id=SYNC_ID&time_period=TIME_PERIOD HTTP/1.1
 Host: analytics.amplitude.com
@@ -47,14 +47,14 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64-encoded
 {{partial:collapse name="Example: Get the last four hours"}}
 Gets the last four hours of data for the decoded sync ID `30001625`.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://analytics.amplitude.com/api/2/event-streaming/delivery-metrics-summary?sync_id=30001625&time_period=FOUR_HOURS' \
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/event-streaming/delivery-metrics-summary?sync_id=30001625&time_period=FOUR_HOURS HTTP/1.1
 Host: analytics.amplitude.com
@@ -67,14 +67,14 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 {{partial:collapse name="Example: Get the last hour"}}
 Gets the last hour of data for the decoded sync ID `30001625`.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://analytics.amplitude.com/api/2/event-streaming/delivery-metrics-summary?sync_id=30001625&time_period=ONE_HOUR' \
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/event-streaming/delivery-metrics-summary?sync_id=30001625&time_period=ONE_HOUR HTTP/1.1
 Host: analytics.amplitude.com
@@ -87,14 +87,14 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 {{partial:collapse name="Example: Get data for a custom period"}}
 Gets the data between October 1, 2022 at 7:00 AM UTC +1 and October 31, 2022 at 7:00 AM UTC +1 for the decoded sync ID `30001625`.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://analytics.amplitude.com/api/2/event-streaming/delivery-metrics-summary?sync_id=30001625&time_period=CUSTOM&start=2022-10-01T07:00:00+01:00&end=end=2022-10-31T07:00:00+01:00' \
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/event-streaming/delivery-metrics-summary?sync_id=30001625&time_period=CUSTOM&start=2022-10-01T07:00:00+01:00&end=2022-10-31T07:00:00+01:00 HTTP/1.1
 Host: analytics.amplitude.com

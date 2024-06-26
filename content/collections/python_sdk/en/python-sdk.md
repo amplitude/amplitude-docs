@@ -46,7 +46,7 @@ client = Amplitude(AMPLITUDE_API_KEY)
 | `flush_max_retries` | `Integer`. The number of times the client retries an event when the request returns an error. | `12` |
 | `logger` | Logger. The logger instance used by Amplitude client. | [python built-in logging](https://docs.python.org/3/library/logging.html#logger-objects): `logging.getLogger(name)`. |
 | `min_id_length` | `Integer`. The minimum length of `user_id` and `device_id`. | `5` |
-| `callback`  | `Function`. Client level callback function. Takes three parameters:<br> 1. event: a Event instance<br> 2. code: a integer of Http response code <br> 3. message: a string message. | `None` |
+| `callback`  | `Function`. Client level callback function. Takes three parameters:<br> 1. event: a Event instance<br> 2. code: a integer of HTTP response code <br> 3. message: a string message. | `None` |
 | `server_zone` |`String`. The server zone of the projects. Supports `EU` and `US`. For EU data residency, Change to `EU`. | `US` |
 | `server_url` | `String`. The API endpoint URL that events are sent to. Automatically selected by `server_zone` and `use_batch`. If this field is set with a string value instead of `None`, then `server_zone` and `use_batch` are ignored and the string value is used. | `https://api2.amplitude.com/2/httpapi` |
 | `use_batch` | `Boolean`.  Whether to use [batch API](/docs/apis/analytics/batch-event-upload#batch-event-upload). By default, the SDK will use the default `serverUrl`. | `False` |

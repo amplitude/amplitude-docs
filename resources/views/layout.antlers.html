@@ -98,12 +98,18 @@
           ignoreSelector: '.hint-title',
           orderedList: false,
           ignoreHiddenElements: true,
+          headingsOffset: 96,
+          scrollSmoothOffset: -96
         });    }
      
     </script>
 {{partial:partials/algolia-script}}
 {{if environment == 'production' }}
 {{partial:partials/kapa-script}}
+{{/if}}
+<script src="{{ mix src='/docs/js/site.js' }}"></script>
+{{if environment == "production" || "preview"}}
+{{partial:partials/cookie-control}}
 {{/if}}
 </body>
 </html>

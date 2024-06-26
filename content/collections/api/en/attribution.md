@@ -17,7 +17,7 @@ summary: 'Send attribution campaign events (identified by `idfa`, `idfv`, or `ad
 
 - When Amplitude can't match attribution events to an existing user, they're held for up to 72 hours for potential user matching. If an event isn't logged for a matching user within 72 hours of receiving the attribution data, then Amplitude **drops the attribution data**.
 - For most of Amplitude's partners, attribution is matched to Amplitude users and events via the Advertising ID (IDFA, IDFV, or ADID). Therefore, you must send the Advertising ID for attribution requests and you must set the `idfa`, `idfv`, and `adid` fields in Amplitude as the Advertising ID. 
-- If you are using the iOS SDK or Android SDK, you can enable tracking of the Advertising ID by following the instructions [here](/docs/sdks/analytics/ios/ios-swift-sdk#advertiser-id). If you are using a JavaScript SDK or React Native, these don't have the functionality to collect Advertising ID automatically due to Google's and Apple's privacy rules around advertising ID and web tracking. You have to send the Advertising ID through the Http API endpoint so that Amplitude can match attribution data/events. See keys in the [Http API V2](/docs/apis/analytics/http-v2) doc.
+- If you are using the iOS SDK or Android SDK, you can enable tracking of the Advertising ID by following the instructions [here](/docs/sdks/analytics/ios/ios-swift-sdk#advertiser-id). If you are using a JavaScript SDK or React Native, these don't have the functionality to collect Advertising ID automatically due to Google's and Apple's privacy rules around advertising ID and web tracking. You have to send the Advertising ID through the HTTP API endpoint so that Amplitude can match attribution data/events. See keys in the [HTTP API V2](/docs/apis/analytics/http-v2) doc.
 
 ## Send an attribution event
 
@@ -48,7 +48,7 @@ These keys are available for the Event argument.
 
 The following code illustrates attribution for iOS.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request POST 'https://api.amplitude.com/attribution' \
@@ -56,7 +56,7 @@ curl --location --request POST 'https://api.amplitude.com/attribution' \
 --data-urlencode 'event={"event_type":"[YOUR COMPANY] Install", "idfa": "AEBE52E7-03EE-455A-B3C4-E57283966239", "user_properties": {"[YOUR COMPANY] media source": "facebook", "[YOUR COMPANY] campaign": "refer-a-friend"}, "platform": "ios"}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ``` bash
 POST /attribution HTTP/1.1
 Host: api.amplitude.com
@@ -69,13 +69,13 @@ api_key={{api_key}}&event=%7B%22event_type%22%3A%22%5BYOUR%20COMPANY%5D%20Instal
 
 The following example illustrates attribution on Android.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location -g --request POST 'https://api2.amplitude.com/attribution?api_key=123456789&event={"event_type":"[YOUR COMPANY] Install","adid": "AEBE52E7-03EE-455A-B3C4-E57283966239", "user_properties": {"[YOUR COMPANY] media source": "facebook", "[YOUR COMPANY] campaign": "refer-a-friend"}, "platform": "android"}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 POST /attribution?api_key=api_key&event="{event_type":"[YOUR COMPANY] Install","adid": "AEBE52E7-03EE-455A-B3C4-E57283966239", "user_properties": {"[YOUR COMPANY] media source": "facebook", "[YOUR COMPANY] campaign": "refer-a-friend"}, "platform": "android"} HTTP/1.1
 Host: api2.amplitude.com
