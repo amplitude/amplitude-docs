@@ -14,9 +14,9 @@ Amplitude Experiment allows you to create dependencies for your flags and experi
 
 This feature is available to users on **Enterprise plans** who have **purchased Amplitude Experiment**. See our [pricing page](https://amplitude.com/pricing) for more details.
 
-## Configuring flag prerequisites 
+## Configuring flag prerequisites
 
-Flag prerequisites are configured in the _Dependencies card_, which is found below the _Overview card_ for experiments and below the _Settings card_ for flags. 
+Flag prerequisites are configured in the _Dependencies card_, which is found below the _Overview card_ for experiments and below the _Settings card_ for flags.
 
 For a given flag or experiment, this card provides a summary of all flag dependencies including its prerequisite flags, experiments, mutual exclusion, and holdout groups as well as a list of the flags and experiments that are dependent on it.
 
@@ -26,6 +26,7 @@ For a given flag or experiment, this card provides a summary of all flag depende
 
 {{partial:admonition type='note'}}
 Flags and experiments are eligible to be used as a prerequisite if:
+
 - They are in the same project.
 - They have compatible evaluation modes. Local evaluation mode flags and experiments can only have local evaluation mode prerequisites. Remote evaluation mode flags and experiments can have both remote and local prerequisites.
 
@@ -40,6 +41,7 @@ You cannot add a prerequisite that would cause a circular dependency loop.
 Before activating your flag or starting your experiment, you will want to make sure that prerequisite flags are active and variant assignment is working as intended. You will be unable to start the experiment until prerequisite flags and experiments are activated.
 
 Additionally, flags and experiments with dependents, you will be prevented from taking certain actions:
+
 - Deleting a variant or changing the variant key of a variant that another flag or experiment is dependent on.
 - Archiving that flag or experiment.
 
@@ -52,9 +54,48 @@ Example scenario: I want to ensure that my new feature flag (Flag-B) is rolled o
 When users are evaluated for Flag-B:
 
 1. First, we check if the user is in Flag-B’s testers.
-- If the user is a member of the testers, the configured variant is served to the user.
-2. The user is then evaluated for dependencies, in this case: Flag-A. 
-- If the user does not receive the _on_ variant for Flag-A, the user is excluded from Flag-B.
+   - If the user is a member of the testers, the configured variant is served to the user.
+2. The user is then evaluated for dependencies, in this case: Flag-A.
+   - If the user does not receive the _on_ variant for Flag-A, the user is excluded from Flag-B.
 3. The user will then be evaluated for Flag-B.
 
 Note that the targeting for Flag-B will determine what variant (if any) the user receives, and the flag dependency on Flag-A has no effect at this point.
+
+## Common use cases
+
+Flag prerequisites are extremely flexible and have many use cases. That said, here are some common examples.
+
+### Release groups
+
+Utilize flag prerequisites to build a primary feature with multiple sub-features. Sub-features require the primary feature to be `on`, unless a user is individually included as a tester in one of the sub-features. Targeting and bucketing applied to the primary feature are effectively applied to all sub-features which list the primary feature as a prerequisite.
+
+Common use cases for release groups are:
+
+- Actively developing large feature releases with many developers and teams.
+- Provisioning users to primary SKUs with add-ons.
+- Simplifying feature flag logic in code.
+
+![Diagram of example release group.](/docs/output/img/experiment/release-group.drawio.svg)
+
+In this example, we have a `primary-feature` flag, and `sub-feature` flags which list the primary feature as a prerequisite.
+
+The `primary-feature` flag targets all users where user property `premium` is `true` with 100% allocation. Therefore, sub-features only evaluate if the user has the required user property, and meet the sub-feature's criteria -- unless the user is individually included in the sub-feature's testers section.
+
+- The `sub-feature-1` flag contains an additional targeting criteria for users where the user property `beta` is `true`. In order to be assigned `sub-feature-1` a user have the `premium` and `beta` user properties equal to `true`.
+- The `sub-feature-2` flag allocates 100% of users. All users where the `premium` user property is `true` is assigned.
+- The `sub-feature-3` flag allocates 0% of users. No users are assigned to `sub-feature-3`, even if the `premium` user property is `true`.
+
+### Chained mutual exclusion groups
+
+Use flag prerequisites to build complex hierarchies of mutually exclusive experiments which start at different times. Dependent experiments list a prerequisite on an existing active experiment evaluating to `off`. This effectively targets all users who were not allocated to the existing experiment. You main continue this chain to add more mutually exclusive experiments if the previous experiment does not all users.
+
+![Diagram of example mutual exclusion group](/docs/output/img/experiment/advanced-mutex-group.drawio.svg)
+
+In this example, `experiment-1` is currently running, and we want to run another experiment, `experiment-2`, which is mutually exclusive to `experiment-1`.
+
+- The `experiment-1` experiment allocates 20% of users 50/50 control/treatment.
+- The `experiment-2` experiment lists `experiment-1` as a prerequisite, and allocates 100% of users 50/50 control/treatment.
+
+Overall, 20% of users are assigned to `experiment-1` and the remaining 80% are assigned to `experiment-2`. No users are assigned variants for both `experiment-1` and `experiment-2`, unless they are included as a tester.
+
+### Advanced holdout groups

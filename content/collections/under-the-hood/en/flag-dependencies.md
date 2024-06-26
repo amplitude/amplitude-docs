@@ -9,7 +9,28 @@ updated_at: 1718742410
 ---
 Flag dependencies define relationships between flags to ensure evaluation order. The result of each flag's evaluation is then passed to all subsequent evaluations to decide if dependent flags should [evaluate](/docs/experiment/implementation#flag-dependencies) based on the result of the dependency.
 
-Flag dependencies are currently used to implement mutual exclusion groups, holdout groups, and prerequisite flags.
+Flag dependencies are used to implement:
+
+- [Flag prerequisites](/docs/experiment/advanced-techniques/flag-prerequisites)
+- [Mutual exclusion groups](/docs/experiment/advanced-techniques/mutually-exclusive-experiments)
+- [Holdout groups](/docs/experiment/advanced-techniques/holdout-groups-exclude-users)
+
+## Flag Prerequisites
+
+![Flag prerequisites](/docs/output/img/experiment/release-group.drawio.svg)
+
+*Available for flags and experiments*
+
+Flag prerequisites is a generic implementation of flag dependencies to allow any flags or experiments to depend on any other flags or experiments. Evaluation of the prerequisites can check specific variant(s) or target users who were not included in the prerequisite flag or experiment.
+
+Use flag prerequisites to:
+
+- Actively develop large feature releases with many developers and teams.
+- Build provisioning for users to primary SKUs with add-ons.
+- Simplifying complex feature flag logic in code.
+- Build complex hierarchies of mutually exclusive experiments which start at different times
+
+For more information, see [Flag Prerequisites](/docs/experiment/advanced-techniques/flag-prerequisites)
 
 ## Mutual exclusion groups
 
@@ -21,8 +42,7 @@ A mutual exclusion group ensures that, on evaluation, at most one of the experim
 
 The variant result of a mutual exclusion group's evaluation isn't returned and not assigned as a user property.
 
-For more information, see [Set up and run mutually exclusive experiments
-](/docs/experiment/advanced-techniques/mutually-exclusive-experiments)
+For more information, see [Set up and run mutually exclusive experiments](/docs/experiment/advanced-techniques/mutually-exclusive-experiments)
 
 ## Holdout groups
 
@@ -35,15 +55,6 @@ A holdout group withholds a percentage of traffic from a group of experiments, a
 The variant result of a holdout group's evaluation isn't returned but is assigned as a user property to enable holdout analysis.
 
 For more information, see [Holdout Groups](/docs/experiment/advanced-techniques/holdout-groups-exclude-users)
-
-## Flag Prerequisites
-
-*Available for flags and experiments*
-
-Flag prerequisites allow flags and experiments to depend on other flags and experiments so targeting can be based on the result of another flag evaluation. Evaluation of the prerequisites can look for specific variant(s) or be configured to target users who were not included in the prerequisite flag or experiment.
-
-For more information, see [Flag Prerequisites
-](/docs/experiment/advanced-techniques/flag-prerequisites)
 
 ## Local evaluation support
 
