@@ -2,7 +2,12 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/data/destinations/marketing-cloud-event-streaming",
+      "source": "/docs/data/profile-properties/",
+      "destination": "/docs/data/profile-properties",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/data/destinations/marketing-cloud-event-streaming",
       "destination": "/docs/data/destination-catalog/salesforce-marketing-cloud-event-streaming",
       "statusCode": 301
     },
