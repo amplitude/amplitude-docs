@@ -2,11 +2,6 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/docs/data/profile-properties/",
-      "destination": "/docs/data/profile-properties",
-      "statusCode": 301
-    },
-    {
       "source": "/docs/data/destinations/marketing-cloud-event-streaming",
       "destination": "/docs/data/destination-catalog/salesforce-marketing-cloud-event-streaming",
       "statusCode": 301
@@ -144,11 +139,6 @@
     {
       "source": "/docs/documentation-home",
       "destination": "/docs",
-      "statusCode": 301
-    },
-    {
-      "source": "/docs/getting-started",
-      "destination": "/docs/getting-started",
       "statusCode": 301
     },
     {
@@ -389,11 +379,6 @@
     {
       "source": "/docs/analytics/apis/behavioral-cohorts-api",
       "destination": "/docs/apis/analytics/behavioral-cohorts",
-      "statusCode": 301
-    },
-    {
-      "source": "/docs/data/converter-configuration-reference",
-      "destination": "/docs/data/converter-configuration-reference",
       "statusCode": 301
     },
     {
