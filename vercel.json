@@ -2957,6 +2957,11 @@
       "source": "/docs/hc/en-us/sections/360011006231((?:-[a-zA-Z0-9-]+)?)",
       "destination": "/docs/analytics/charts/funnel-analysis",
       "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/22135800974875((?:-[a-zA-Z0-9-]+)?)",
+      "destination": "/docs/analytics/marketing-analytics",
+      "statusCode": 301
     }
   ]
 }
