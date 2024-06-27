@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/data/tutorials/migrating-from-google-analytics",
+      "destination": "/docs/migration/migrate-from-google-analytics",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/data/destinations/marketing-cloud-event-streaming",
       "destination": "/docs/data/destination-catalog/salesforce-marketing-cloud-event-streaming",
       "statusCode": 301
