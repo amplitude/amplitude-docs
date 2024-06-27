@@ -4,8 +4,8 @@ blueprint: get-started
 title: 'Cookies and Consent Management'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718825257
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1719503768
 source: 'https://docs.developers.amplitude.com/guides/cookies-consent-mgmt-guide/'
 ---
 This guide covers functional and technical information on how Amplitude works with cookies, local storage, opt-in/opt-out options and consent management (including CNIL regulations for France).  
@@ -308,8 +308,8 @@ Based on those premises, Amplitude doesn't consider this as a security vulnerabi
 {{partial:collapse name="Will cookies cause unsent events to send to a project with a different API key"}}
 No, the SDK versions later than 4.0.0 scope with the API key all events stored in the unsent keys (local storage) so if a product changes the project (or its API key) it's sending the events to, those old events won’t reach the new project.
 
-In SDK versions prior to 4.0.0, this wasn’t the case, and the events didn’t consider the API Key when queued to be retried. If the product is still using an old SDK version, the old unsent events remaining in local storage reach the new project the moment the connection with Amplitude runs again. A way that might mitigate this problem in the case the customer can’t upgrade to a newer SDK version is to use an instance name for the project instead of using the default project. Like this to instantiate the Amplitude client  `amplitude.getInstance(‘ProjectName’).init("API_KEY")` and like  this to log any event 
-{{/partial:collapse}}`amplitude.getInstance(ProjectName).logEvent()`
+In SDK versions prior to 4.0.0, this wasn’t the case, and the events didn’t consider the API Key when queued to be retried. If the product is still using an old SDK version, the old unsent events remaining in local storage reach the new project the moment the connection with Amplitude runs again. A way that might mitigate this problem in the case the customer can’t upgrade to a newer SDK version is to use an instance name for the project instead of using the default project. Like this to instantiate the Amplitude client:  `amplitude.getInstance(‘ProjectName’).init("API_KEY")`, and like this to log any event: 
+`amplitude.getInstance(ProjectName).logEvent()`.{{/partial:collapse}}
 
 {{partial:collapse name="How do you integrate with third-party Consent Management Platfoms?"}}
 A consent management platform (CMP) is a technology that websites/applications can use to manage legal consent from users to collect and process their personal data through cookies and other trackers in operation on the domain as may be required by applicable privacy laws, such as GDPR, CCPA and ePrivacy. Some examples of these tools are OneTrust, Axeptio or Responsum.
