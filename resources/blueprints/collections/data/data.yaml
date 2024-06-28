@@ -43,6 +43,20 @@ tabs:
             field:
               type: text
               display: Source
+              localizable: false
+          -
+            handle: package_name
+            field:
+              type: text
+              display: 'Package Name'
+              localizable: false
+          -
+            handle: bundle_url
+            field:
+              input_type: url
+              type: text
+              display: 'Bundle URL'
+              localizable: false
   alt_sitemap:
     display: 'Alt Sitemap'
     sections:
@@ -54,8 +68,10 @@ tabs:
               type: float
               display: 'Sitemap Priority'
               instructions: 'From 0.0 (lowest priority) to 1.0 (highest priority)'
+              localizable: false
           -
             handle: exclude_from_sitemap
             field:
               type: toggle
               display: 'Exclude from sitemap?'
+              localizable: false

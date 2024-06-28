@@ -3,6 +3,130 @@ id: 18f5ac3b-003a-4386-86a3-1ffad3ca2429
 blueprint: instrumentation
 title: 'SDK Maintenance and Support'
 source: 'https://www.docs.developers.amplitude.com/data/sdks/sdk-maintenance-and-support/'
+author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+nav_title: developers
+exclude_from_sitemap: false
+version_support_matrix:
+  -
+    id: lxz4ns26
+    article: 3ee6e0df-273e-4c50-8bfd-d5a4abc9a33c
+    version: 1.x
+    phase: GA
+    ga_date: '2021-11-15'
+    type: sdk_tool
+    enabled: true
+    icon: icons/terminal.svg
+  -
+    id: lxz4pg5i
+    name: Amplitude-Android
+    article: 9f4dcd07-e262-4c9b-b841-ebb721d37a6d
+    version: '1.x - 2.x'
+    phase: Maint
+    ga_date: '2014-05-01'
+    notes: 'Maintenance: 2023-06-14'
+    type: sdk_tool
+    enabled: true
+    icon: icons/android-sm.svg
+  -
+    id: lxz8z7lp
+    name: Amplitude-Android
+    article: 9f4dcd07-e262-4c9b-b841-ebb721d37a6d
+    version: 3.x
+    phase: EOS
+    ga_date: '2021-12-16'
+    notes: |-
+      EOL: 2021-12-16
+      Bad release (3.35.1)
+    type: sdk_tool
+    enabled: true
+    icon: icons/android-sm.svg
+  -
+    id: lxz8vcmy
+    article: 4e6f43a0-1f71-4b9d-9193-f45500b42188
+    icon: icons/android-sm.svg
+    name: Amplitude-Kotlin
+    version: 1.x
+    phase: GA
+    ga_date: '2022-06-28'
+    type: sdk_tool
+    enabled: true
+  -
+    id: lxz92u57
+    article: 8471af8b-e132-4073-8330-d5dd7bbbd8ae
+    icon: icons/ts-small.svg
+    name: Amplitude-TypeScript
+    version: 1.x
+    phase: Maint
+    ga_date: '2022-06-29'
+    notes: 'MD: 2023-06-29'
+    type: sdk_tool
+    enabled: true
+  -
+    id: lxz9gxwj
+    article: 25904c6b-609d-4365-9660-2782ef50d52d
+    icon: icons/ts-small.svg
+    name: Amplitude-TypeScript
+    version: 1.x
+    phase: Maint
+    ga_date: '2022-06-29'
+    notes: |-
+      MD: 2023-06-29
+      Replaced by Browser 2.0
+    type: sdk_tool
+    enabled: true
+  -
+    id: lxz9jmj7
+    article: 00d74a7b-23bd-4a24-86a1-92c046e7e1b5
+    icon: icons/ts-small.svg
+    name: Amplitude-TypeScript
+    version: 2.x
+    phase: GA
+    ga_date: '2023-06-14'
+    type: sdk_tool
+    enabled: true
+  -
+    id: lxz9lrkx
+    article: e6b6889d-9d39-4f04-89a1-87f78db80f49
+    icon: icons/js-sm.svg
+    name: Amplitude-JavaScript
+    version: '1.x - 8.x'
+    phase: Maint
+    ga_date: '2014-06-11'
+    notes: 'MD: 2023-06-29'
+    type: sdk_tool
+    enabled: true
+  -
+    id: lxz9w0l3
+    article: 8160e521-d064-46f7-bf1b-595dc1c56327
+    title_override: 'Chrome Event Explorer'
+    icon: icons/chrome.svg
+    version: 1.x
+    phase: GA
+    ga_date: '2023-04-25'
+    type: sdk_tool
+    enabled: true
+  -
+    id: lxza5mmb
+    article: 91ff3c42-e0d0-493c-9fe4-65262f814883
+    icon: icons/flutter.svg
+    name: Amplitude-Flutter
+    version: '1.x - 3.x'
+    phase: GA
+    ga_date: '2020-04-30'
+    type: sdk_tool
+    enabled: true
+  -
+    id: lxzabcjy
+    article: 7d5c2ee4-29ff-45be-8e6e-0bfd213412d3
+    icon: icons/google.svg
+    name: amplitude-browser-sdk-gtm-template
+    version: 1.x
+    phase: GA
+    ga_date: '2022-11-13'
+    type: sdk_tool
+    enabled: true
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1719615256
 ---
 ## Overview
 
@@ -62,6 +186,8 @@ To see the list of available major versions of Amplitude SDKs and Tools and wher
 ## SDKs and Tools version support matrix
 
 The matrix below shows the list of available Amplitude SDK and Tools major versions and where they're in the maintenance life cycle with associated timelines. Amplitude updates the matrix with the release of a new major version or when a major version transitions to a new phase in the maintenance life cycle.
+
+{{partial:partials/sdk-maintenance-matrix}}
 
 <!-- vale off -->
 

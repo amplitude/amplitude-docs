@@ -38,6 +38,26 @@ tabs:
               max_items: 1
               listable: false
               localizable: true
+          -
+            handle: package_name
+            field:
+              type: text
+              display: 'Package Name'
+              localizable: false
+          -
+            handle: bundle_url
+            field:
+              input_type: url
+              type: text
+              display: 'Bundle URL'
+              localizable: false
+          -
+            handle: github_link
+            field:
+              input_type: url
+              type: text
+              display: 'GitHub Link'
+              localizable: false
   alt_sitemap:
     display: 'Alt Sitemap'
     sections:
