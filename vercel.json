@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/hc/en-us/articles/360041266311-Amplitude-Support-Offerings-and-Policy",
+      "destination": "https://amplitude.zendesk.com/hc/en-us/articles/13513083850267-Amplitude-Technical-Support-offerings",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/data/tutorials/migrating-from-google-analytics",
       "destination": "/docs/migration/migrate-from-google-analytics",
       "statusCode": 301
