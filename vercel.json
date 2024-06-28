@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/experiment/general/data-model",
+      "destination": "/docs/experiment/data-model",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/hc/en-us/articles/360041266311-Amplitude-Support-Offerings-and-Policy",
       "destination": "/docs/analytics/plan-your-accounts-instrumentation",
       "statusCode": 301

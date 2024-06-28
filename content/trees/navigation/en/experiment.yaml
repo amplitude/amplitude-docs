@@ -6,7 +6,6 @@ tree:
       -
         id: 2bda6737-066a-4283-8252-720d24a19573
         entry: 37e1ab54-da77-4a60-be41-1c1018c4163a
-        title: 'Create a new feature flag'
       -
         id: c3a877d1-44c7-42a4-8ad7-ae2319a76a1d
         entry: 1623ff4b-4f76-411c-bbe4-2f38614ffc9a
@@ -67,11 +66,11 @@ tree:
             id: 707402a6-d5fb-4432-915a-32c1f59f457a
             entry: c43935f9-32e2-4ac9-82ed-9513d66203b8
           -
-            id: e781c130-d33e-4773-a647-3914df6b6f45
-            entry: 4c9bc7b0-f786-4694-97c0-4668958ad1de
-          -
             id: 18ca4c64-6388-4dc1-8a17-f93ee5cb458a
             entry: c3d4aec1-92db-4f44-b847-19d6f31f1add
+          -
+            id: e781c130-d33e-4773-a647-3914df6b6f45
+            entry: 4c9bc7b0-f786-4694-97c0-4668958ad1de
           -
             id: 0a50430a-04b8-4c21-a907-7daed0df887a
             entry: cf260863-11d8-434d-a2de-22c8256e83b6

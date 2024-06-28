@@ -18,23 +18,23 @@ updated_at: 1717530376
 GET https://experiment.amplitude.com/api/1/versions
 ```
 
-Fetch a list of versions of all experiments or flags can the management api key has access to, across multiple projects if the key is scoped to them.
+Fetch a list of versions of all experiments or flags can the management API key has access to, across multiple projects if the key scope has access to them.
 
 ### Query parameters
 
-|Name|Description|
-|---|----|
-|`start`| The ISO 8601 formatted start time of versions to be returned (inclusive).|
-|`end`| The ISO 8601 formatted end time to versions to be returned (exclusive).|
-|`limit`| The max number of deployments to be returned. Capped at 1000.|
-|`cursor`| The offset to start the "page" of results from.|
+| Name     | Description                                                               |
+| -------- | ------------------------------------------------------------------------- |
+| `start`  | The ISO 8601 formatted start time of versions to return (inclusive). |
+| `end`    | The ISO 8601 formatted end time to versions to return (exclusive).   |
+| `limit`  | The max number of deployments to return. Capped at 1000.             |
+| `cursor` | The offset to start the "page" of results from.                           |
 
 ### Response
 
 A successful request returns a `200 OK` response and a list of versions encoded as JSON in the response body, along with the cursor to next page.
+
 Versions are ordered by version creation time descending.
 
-!!!example "Example cURL"
 {{partial:admonition type="example" heading="Example cURL"}}
 ```bash
 curl --request GET \                                                                                    
