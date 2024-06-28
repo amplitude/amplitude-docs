@@ -168,8 +168,24 @@ tabs:
                             display: 'GA date'
                             localizable: false
                         -
+                          handle: maintenance_date
+                          field:
+                            type: date
+                            display: 'Maintenance Date'
+                            localizable: false
+                            if:
+                              phase: 'equals Maint'
+                        -
                           handle: notes
                           field:
                             type: markdown
                             display: Notes
                             localizable: false
+                        -
+                          handle: eos_date
+                          field:
+                            type: date
+                            display: 'EOS Date'
+                            localizable: false
+                            if:
+                              phase: 'equals EOS'

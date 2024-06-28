@@ -4,7 +4,6 @@
 <th>Version</th>
 <th>Phase</th>
 <th>GA Date</th>
-<th>Notes</th>
 </thead>
 <tbody>
 {{version_support_matrix}}
@@ -25,11 +24,9 @@
 </td>
 {{/article}}
 <td>{{version}}</td>
-<td>{{if phase == "GA" }}<img src="/docs/assets/icons/ga.svg" class="my-0 mr-1 inline fill-amp-gray-950 h-4 "/>{{/if}}{{phase}}</td>
-<td>{{ga_date}}</td>
-<td>{{notes}}</td>
+<td>{{if phase == "GA" }}<img src="/docs/assets/icons/ga.svg" class="my-0 mr-1 inline fill-amp-gray-950 h-4 "/>{{/if}}<abbr title="{{phase:label}}">{{phase}}</abbr></td>
+<td>{{ga_date | format('o-m-d')}}</td>
 </tr>
 {{/version_support_matrix}}
-
 </tbody>
 </table>
