@@ -27,6 +27,7 @@ version_support_matrix:
     type: sdk_tool
     enabled: true
     icon: icons/android-sm.svg
+    maintenance_date: '2023-06-14'
   -
     id: lxz8z7lp
     name: Amplitude-Android
@@ -125,8 +126,29 @@ version_support_matrix:
     ga_date: '2022-11-13'
     type: sdk_tool
     enabled: true
+  -
+    id: lxzazjg5
+    article: aa318ba2-74f4-4998-a0f3-790d0f123606
+    icon: icons/google.svg
+    name: amplitude-browser-sdk-gtm-template
+    version: 1.x
+    phase: GA
+    ga_date: '2022-05-02'
+    type: sdk_tool
+    enabled: true
+  -
+    id: lxzbdqbi
+    article: 6f2a3532-cb82-4114-9d9a-4e0d8de49fff
+    icon: icons/google.svg
+    name: amplitude-gtm-template
+    version: 1.x
+    phase: Maint
+    ga_date: '2021-10-21'
+    notes: 'MD: 2022-11-13'
+    type: sdk_tool
+    enabled: true
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1719615256
+updated_at: 1719617021
 ---
 ## Overview
 
