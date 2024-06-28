@@ -1,0 +1,35 @@
+<table>
+<thead>
+<th>SDK / Tool</th>
+<th>Version</th>
+<th>Phase</th>
+<th>GA Date</th>
+<th>Notes</th>
+</thead>
+<tbody>
+{{version_support_matrix}}
+<tr>
+{{article}}
+<td class="py-[1.25rem]">
+<div class="flex flex-row items-center">
+<img src="{{icon}}" class="my-0 mr-1 inline fill-amp-gray-950 h-4 "/><a href="{{url}}">{{title_override ?? title}}</a>
+</div>
+<div class="flex flex-row items-center">
+<img src="/docs/assets/icons/package.svg" class="my-0 mr-1 inline fill-amp-gray-950 h-4 "/><a href="{{bundle_url}}"><code>{{package_name}}</code></a>
+</div>
+{{if github_link}}
+<div class="flex flex-row items-center">
+<img src="/docs/assets/icons/github.svg" class="my-0 mr-1 inline fill-amp-gray-950 h-4 "/><a href="{{github_link}}">{{name}}</a>
+</div>
+{{/if}}
+</td>
+{{/article}}
+<td>{{version}}</td>
+<td>{{if phase == "GA" }}<img src="/docs/assets/icons/ga.svg" class="my-0 mr-1 inline fill-amp-gray-950 h-4 "/>{{/if}}{{phase}}</td>
+<td>{{ga_date}}</td>
+<td>{{notes}}</td>
+</tr>
+{{/version_support_matrix}}
+
+</tbody>
+</table>
