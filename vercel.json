@@ -227,6 +227,11 @@
       "statusCode": 301
     },
     {
+      "source": "/docs/data/sdks/ampli-overview",
+      "destination": "/docs/sdks/ampli",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/data/sdks/ios-swift/ampli",
       "destination": "/docs/sdks/analytics/ios/ampli-for-ios-swift-sdk",
       "statusCode": 301
