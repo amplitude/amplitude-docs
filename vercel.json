@@ -7,8 +7,13 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/profile-properties",
-      "destination": "/docs/data/profile-properties",
+      "source": "/docs/hc/en-us/articles/360041266311-Amplitude-Support-Offerings-and-Policy",
+      "destination": "https://amplitude.zendesk.com/hc/en-us/articles/13513083850267-Amplitude-Technical-Support-offerings",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/data/tutorials/migrating-from-google-analytics",
+      "destination": "/docs/migration/migrate-from-google-analytics",
       "statusCode": 301
     },
     {
@@ -152,11 +157,6 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/getting-started",
-      "destination": "/docs/getting-started",
-      "statusCode": 301
-    },
-    {
       "source": "/docs/data/sdks",
       "destination": "/docs/sdks",
       "statusCode": 301
@@ -228,6 +228,11 @@
     },
     {
       "source": "/docs/sdks/ampli-overview",
+      "destination": "/docs/sdks/ampli",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/data/sdks/ampli-overview",
       "destination": "/docs/sdks/ampli",
       "statusCode": 301
     },
@@ -394,11 +399,6 @@
     {
       "source": "/docs/analytics/apis/behavioral-cohorts-api",
       "destination": "/docs/apis/analytics/behavioral-cohorts",
-      "statusCode": 301
-    },
-    {
-      "source": "/docs/data/converter-configuration-reference",
-      "destination": "/docs/data/converter-configuration-reference",
       "statusCode": 301
     },
     {
@@ -2971,6 +2971,16 @@
     {
       "source": "/docs/hc/en-us/sections/360011006231((?:-[a-zA-Z0-9-]+)?)",
       "destination": "/docs/analytics/charts/funnel-analysis",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/22135800974875((?:-[a-zA-Z0-9-]+)?)",
+      "destination": "/docs/analytics/marketing-analytics",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/sections/9556302268699((?:-[a-zA-Z0-9-]+)?)",
+      "destination": "/docs/data/data-planning-playbook",
       "statusCode": 301
     }
   ]
