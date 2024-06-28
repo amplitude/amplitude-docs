@@ -31,10 +31,6 @@ While this updated template offers additional features and improvements,it may r
 Check the breaking changes checklist at [here](./#breaking-changes-checklist).
 {{/partial:admonition}}
 
-{{partial:admonition type="warning" title="Messages are queued"}}
-This is a note
-{{/partial:admonition}}
-
 {{partial:admonition type="warning" title=""}}
 Due to inherent limitations of GTM, certain features, such as plugins, are not supported in this GTM template. You are still able to add plugins using the Custom HTML tag, but because of how the SDK gets loaded in GTM, this could lead to missing data.
 {{/partial:admonition}}
