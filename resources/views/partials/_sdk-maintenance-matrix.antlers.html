@@ -11,20 +11,20 @@
 {{article}}
 <td class="py-[1.25rem]">
 <div class="flex flex-row items-center">
-<img src="{{icon}}" class="my-0 mr-1 inline fill-amp-gray-950 h-4 w-4 "/><a href="{{url}}">{{title_override ?? title}}</a>
+<img src="{{icon}}" class="my-0 mr-1 inline fill-amp-gray-800 h-4 w-4 "/><a href="{{url}}">{{title_override ?? title}}</a>
 </div>
 <div class="flex flex-row items-center">
-<img src="/docs/assets/icons/package.svg" class="my-0 mr-1 inline fill-amp-gray-950 h-4 "/><a href="{{bundle_url}}"><code>{{package_name}}</code></a>
+<img src="/docs/assets/icons/package.svg" class="my-0 mr-1 inline fill-amp-gray-800 h-4 "/><a href="{{bundle_url}}"><code>{{package_name}}</code></a>
 </div>
 {{if github_link}}
 <div class="flex flex-row items-center">
-<img src="/docs/assets/icons/github.svg" class="my-0 mr-1 inline fill-amp-gray-950 h-4 "/><a href="{{github_link}}">{{name}}</a>
+<img src="/docs/assets/icons/github.svg" class="my-0 mr-1 inline fill-amp-gray-800 h-4 "/><a href="{{github_link}}">{{name}}</a>
 </div>
 {{/if}}
 </td>
 {{/article}}
 <td>{{version}}</td>
-<td><img src="/docs/assets/icons/{{phase|lower}}.svg" class="my-0 mr-1 inline fill-amp-gray-950 h-4 "/>{{phase}}</td>
+<td>{{svg src="/docs/assets/icons/{{phase|lower}}.svg" class="my-0 inline fill-amp-gray-800 h-4 " }} {{phase}}</td>
 <td>{{ga_date | format('o-m-d')}}<strong>{{notes}}</strong></td>
 </tr>
 {{/version_support_matrix}}
