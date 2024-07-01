@@ -29,6 +29,10 @@ Statamic is built on a PHP framework / ecosystem called [Laravel](https://larave
 4. On the **Node** tab in Herd's settings, install version `20`.
 5. Close the Herd settings.
 
+### Set your .env file
+
+Rename the file `.env.example` to `.env`.
+
 ### Command line
 
 Developing and building with Statamic requires some time in the terminal. You can use the built in macOS terminal, iTerm2, or Warp for extended functionality.
