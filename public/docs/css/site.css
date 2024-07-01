@@ -1252,6 +1252,12 @@ video {
   fill: #242528;
 }.fill-white {
   fill: #ffffff;
+}.fill-\[\#374151\] {
+  fill: #374151;
+}.fill-\[amp-gray-800\] {
+  fill: amp-gray-800;
+}.fill-amp-gray-800 {
+  fill: #414349;
 }.p-0 {
   padding: 0px;
 }.p-2 {
