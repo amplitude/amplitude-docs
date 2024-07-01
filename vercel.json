@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/data/sources/client-side-vs-server-side",
+      "destination": "/docs/experiment/data-model",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/experiment/general/data-model",
       "destination": "/docs/experiment/data-model",
       "statusCode": 301
