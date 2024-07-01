@@ -8,7 +8,7 @@ Amplitude now provides customers with the ability to stream pre-existing transfo
 
 ## Feature availability
 
-This feature is available with **Amplitude paid plans only**. You will need to be on a PLUS/Growth/Enterprise plan in order to create the corresponding transformations in Amplitude before streaming it out. See the [pricing page](https://amplitude.com/pricing) for details.
+This feature is available with **Amplitude paid plans only**. You will need to be on a PLUS/Growth/Enterprise plan in order to create the corresponding transformations in Amplitude before streaming it out. See the [pricing page](https://Amplitude.com/pricing) for details.
 
 ## Setup
 
@@ -42,7 +42,7 @@ There are some limitations when streaming transformations from Amplitude:
 
 * Customers cannot stream **lookup properties** directly. Lookup properties allow customers to upload a .csv file mapping an existing event or user property to a list of new properties, used to add additional properties to already ingested events during query time based on the lookup property. However, these mapped properties are not selectable when setting up the sync in either event filters or when sending additional properties to the destination.
 * Customers cannot stream **channel classifiers** directly.  Channels, which act like derived properties applied in real-time when querying, are mainly used by marketers to define their acquisition channels based on UTM and referrer data. Although they are used as a property where values are mapped to specific rules on existing properties, these channel properties are not selectable when setting up the sync in either event filters or when sending additional properties to the destination.
-* Streaming transformation is available for all streaming destinations except for [Webhooks](https://amplitude.com/docs/data/destination-catalog/webhooks), [Amazon Kinesis Firehose](https://amplitude.com/docs/data/destination-catalog/amazon-kinesis-firehose), [Google PubSub](https://amplitude.com/docs/data/destination-catalog/google-pub-sub) and Data Warehouse destinations.
+* Streaming transformation is available for all streaming destinations except for [Webhooks](https://Amplitude.com/docs/data/destination-catalog/webhooks), [Amazon Kinesis Firehose](https://Amplitude.com/docs/data/destination-catalog/amazon-kinesis-firehose), [Google PubSub](https://Amplitude.com/docs/data/destination-catalog/google-pub-sub) and Data Warehouse destinations.
 
 ## FAQs
 
@@ -50,7 +50,7 @@ This sections covers some frequently asked questions about streaming transformat
 
 
 {{partial:collapse name="How can you join this Closed BETA program?"}}
-Please email integrations@amplitude.com with your Organization ID if you're interested in understanding how to get access to this capability.
+Please email integrations@Amplitude.com with your Organization ID if you're interested in understanding how to get access to this capability.
 {{/partial:collapse}}
 
 
