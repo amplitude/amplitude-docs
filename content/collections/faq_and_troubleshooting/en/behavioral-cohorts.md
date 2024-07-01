@@ -5,7 +5,7 @@ title: 'Behavioral cohorts'
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/4402840043789'
 category: recommendation
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1719505179
+updated_at: 1719857305
 ---
 This article covers some frequently asked questions about [Behavioral Cohorts](/docs/analytics/behavioral-cohorts).
 
@@ -25,7 +25,7 @@ The .CSV file may only contain one field with values:
 * The file can contain either the user IDs or Amplitude IDs, but **not both**.
 * It must not contain blank space or other text.
 
-If the file is not in the correct format, Amplitude will show an error message and refuse to upload the cohort. Read more about [uploading CSVs as cohorts](/docs/data/csv-import-export).
+If the file isn't in the correct format, Amplitude shows an error message and won't upload the cohort. Read more about [uploading .CSV files as cohorts](/docs/data/csv-import-export).
 
 A properly-formatted .CSV file looks like this:
 
@@ -53,7 +53,7 @@ The [**count**](/docs/analytics/behavioral-cohorts) feature in cohorts allows yo
 You can create a custom definition of a group of users based on not only the events they have performed, but also events which they **did not** perform.
 
 {{partial:admonition type='note'}}
-Queries that include `Count = 0` or `Count < 1` will not be processed, and they will return zero users.
+Amplitude does not process queries that include `Count = 0` or `Count < 1`. All such queries return zero users.
 {{/partial:admonition}}
 
 To identify users who did perform a particular event or who lack a particular property, follow one of the processes described below.
