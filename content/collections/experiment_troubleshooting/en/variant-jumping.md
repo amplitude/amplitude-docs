@@ -5,13 +5,13 @@ title: 'Variant jumping'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 source: 'https://www.docs.developers.amplitude.com/experiment/guides/troubleshooting/variant-jumping/'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1719872764
+updated_at: 1719874098
 this_article_will_help_you:
   - 'Understand what variant jumping is, and what you can do about it'
 ---
 **Variant jumping** occurs when a user is exposed to two or more variants for a single flag or experiment. Variant jumping above a certain threshold may be cause for concern around the trustworthiness of an analysis.
 
-Some types of variant jumping are normal, in that they are somewhat common and can usually be explained. Other types are more difficult to track down. 
+Some types of variant jumping are normal, in that they're somewhat common and usually explainable. Other types are more difficult to track down. 
 
 ## Debug variant jumping 
 
@@ -55,7 +55,7 @@ Enabling sticky bucketing before making targeting changes prevents variant jumpi
 
 ### Anonymous identity merging
 
-The way Amplitude handles anonymous users can, in some cases, lead to variant jumping. Specifically, Amplitude merges anonymous IDs with the correct existing user IDs (if one exists) as soon as it has enough information to do so. This may happen if a user uses your app on different devices without logging in, or if the device ID regenerates upon logout.
+The way Amplitude handles anonymous users can sometimes lead to variant jumping. Specifically, Amplitude merges anonymous IDs with the correct existing user IDs (if one exists) as soon as it has enough information to do so. This may happen if a user uses your app on different devices without logging in, or if the device ID regenerates upon logout.
 
 [Learn more about Amplitude's identity resolution and merging users.](/docs/cdp/sources/instrument-track-unique-users)
 
@@ -65,7 +65,7 @@ To avoid this type of variant jumping, consider bucketing by user ID if you're o
 
 ### Inclusion list
 
-Let's say you have some user IDs in the inclusion list. You call `fetch()` and pass the user ID in to the call. This returns the control experience, as per the inclusion list. But the next time you call `fetch()`, you don't pass in the user ID. Now the user doesn't meet the inclusion list criteria, so the bucketing key is hashed and they may see a different variant instead. The same thing can happen if you include device IDs.
+Imagine you have some user IDs in the inclusion list. You call `fetch()` and pass the user ID in to the call. This returns the control experience, per the inclusion list. But the next time you call `fetch()`, you don't pass in the user ID. Now the user doesn't meet the inclusion list criteria, so Amplitude hashes the bucketing key, and the user may see a different variant instead. The same thing can happen if you include device IDs.
 
 In this example, the user has a user ID. They match the inclusion list and get the `signin-up-new_design` experience.
 
@@ -77,7 +77,7 @@ In this example, there is no user ID. The user doesn't match the inclusion list,
 
 ## Abnormal variant jumping
 
-Abnormal variant jumping can't be explained by any [normal means](#normal-variant-jumping). This can be difficult to track down. However, the most frequent cause is some form of identity mismatch, specifically when the user identity differs between assignment and exposure tracking. This is almost always due to an implementation inconsistency.
+Instances of abnormal variant jumping don't fit with any of the [normal explanations](#normal-variant-jumping). They can be difficult to track down. However, the most frequent cause is some form of identity mismatch, specifically when the user identity differs between assignment and exposure tracking. This is almost always due to an implementation inconsistency.
 
 Here are some examples of abnormal variant jumping. It's not an exhaustive list, but it should get you thinking about how best to use identity in your systems and Amplitude Experiment.
 
