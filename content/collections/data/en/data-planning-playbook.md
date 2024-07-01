@@ -71,7 +71,7 @@ Some typical goals Amplitude customers pursue include:
 
 Once you've identified your organization's overarching goals, it's easier to break them down into individual metrics and ensure your tracking plan measures your desired outcome.
 
-Let's say you have an e-commerce app and are looking to increase purchases. You could do this by:
+For example, you have an e-commerce app and are looking to increase purchases. You could do this by:
 
 * Increasing the conversion rate of users through your purchase flow
 * Increase the number of users who make multiple purchases
