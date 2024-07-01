@@ -18,8 +18,8 @@ connection: source
 partner_maintained: false
 integration_icon: partner-icons/google-tag-manager.svg
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713821937
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1719870553
 ---
 This is the client-side Google Tag Manager Template for Amplitude Analytics. The tag uses the [Amplitude Browser SDK 2.0](/docs/sdks/analytics/browser/browser-sdk-2/) for data collection.
 
@@ -49,7 +49,7 @@ If you start from zero, you need to setup your container first. This Amplitude A
 
 Create a new tag template by searching the gallery. Choose Amplitude Analytics Browser SDK and click the `add` button.
 
-### Create rags
+### Create tags
 
 Create tags for your Amplitude browser SDK tracking. Click the `New` button to create your new tags.
 
@@ -398,18 +398,18 @@ No. The Amplitude Analytics Browser SDK only supports the web container, designe
 
 Yes, but it's not recommended. Modified Community Gallery Templates will no longer receive updates provided by the developer but you can always restore the template to start receiving notifications again.
 
-### Missing events?
+### Missing events
 
 - Check if you have multiple versions of Amplitude browser SDK installed. There may be collision between different versions of SDKs. Try giving a different instance name for your GTM instance. 
 - If your website blocks script that our Template is trying to inject. Check your website’s Console or Network tab to see if any scripts are blocked or if you are getting any errors through **right click -> Inspect**:
 - Init web attribution event is missing. If you have installed cookies consent, check if the value of `document.referrer` has been updated to your current domain. The campaign from the current domain won't be tracked.
 - Ensure that you have selected the appropriate Tag firing options. Choosing `Once per event` will cause your tag to fire each time a Trigger event is performed. On the other hand, selecting `Once per Page` will fire your Tag just once. This discrepancy could lead to events not being sent as expected.
 
-### Overall user counts to increase?
+### Overall user counts to increase
 
 Verify whether cookies have been altered or removed inadvertently. [Cookies](/docs/sdks/analytics/browser/browser-sdk-2/#cookie-data) store critical user session data and marketing campaign information. If these cookies are deleted, it triggers a reset of user identifiers (such as user ID and device ID), invariably leading to a surge in the user count. Additionally, the erasure of last-viewed campaign parameters can result in an increase in organic/direct traffic, among other effects.
 
-### Cross Domain Tracking?
+### Cross domain tracking
 
 To retain user identification across domains, create a custom HTML tag to attach the user's `deviceId` to the domain link you wish to track. When you append `ampDeviceId=YourDeviceId` to the URL, the Amplitude Browser SDK uses the URL parameter value rather than generate a new `deviceId`. For more information see an [example script](https://github.com/amplitude/GTM-cross-domain-script) on GitHub.
 
