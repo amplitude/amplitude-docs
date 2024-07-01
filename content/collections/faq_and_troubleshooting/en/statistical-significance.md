@@ -3,9 +3,14 @@ id: 05e6e78c-dcda-41d1-8bbe-92c7e578f785
 blueprint: faq_and_troubleshooting
 title: 'Statistical significance'
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/360053484751'
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1719503279
 ---
 Amplitude's A/B testing features rely on standard statistical techniques to determine its statistical significance. This article covers some frequently asked questions about those calculations.
 
+{{partial:admonition type='note'}}
+The information in this article **only** applies to [A/B tests in a funnels chart](https://amplitude.com/docs/analytics/charts/funnel-analysis/funnel-analysis-ab-test). It **does not apply** to the Experiment Results chart, or to end-to-end experimentation in Amplitude Experiment.
+{{/partial:admonition}}
 
 {{partial:collapse name="How does Amplitude calculate improvement over baseline?"}}
 Improvement over baseline is the ratio of the mean variant (A) over the mean baseline (B), ![improvement over baseline.png](/docs/output/img/faq/improvement-over-baseline-png.png){.inline}.
