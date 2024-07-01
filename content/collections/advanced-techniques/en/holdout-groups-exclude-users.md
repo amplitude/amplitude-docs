@@ -8,14 +8,14 @@ this_article_will_help_you:
   - 'Create, manage, and analyze a holdout group and the experiments in it'
   - 'Delve deeper into holdout groups with use case examples'
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1716329388
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1719503550
 ---
 Sometimes it can be useful to keep a certain percentage of users from viewing an experiment. This is especially true when measuring the long-term, combined effects of multiple experiments. Statistical significance in one experiment may not reflect the true, cumulative impact of your experiments.
 
 Amplitude Experiment lets you easily exclude users from your experiments by creating a **holdout** group. Holdout groups are especially useful for measuring the **long term** impact of your rolled-out variants, and measuring the lift of your experimentation program as a whole.
 
-For more information, see [Flag Dependencies](/docs/experiment/under-the-hood/flag-dependencies)
+For more information, see the article on [Flag Dependencies](/docs/experiment/under-the-hood/flag-dependencies#holdout-groups).
 
 ### Feature availability
 
@@ -34,7 +34,7 @@ When using holdout groups, there are a few things to keep in mind:
 
 To create a holdout group and add your experiments to it, follow these steps:
 
-1. In Amplitude Experiment, navigate to the *Experiment Groups* tab in the Experiments page. (If you’re trying to do this from within an experiment, open the *Configure* tab and click *See Holdout Groups*.) Here, you can see all your holdout groups and be able to create new ones.
+1. In Amplitude Experiment, navigate to the *Experiment Groups* tab in the Experiments page. Here, you can see all your holdout groups and be able to create new ones.
 2. To add a new holdout group to your project, click *Add a new holdout group*.
 
 ![Screenshot](/docs/output/img/advanced-techniques/screenshot.png)
@@ -52,7 +52,7 @@ If you have existing groups, click *Create A New Group*, and then select *Holdou
   
 Don't add the same users nor cohorts to both the *Include a holdout* and *Exclude from holdout* slots, as the *Include a holdout* slot determines inclusion.
 
-1. Click *Add Group* to finish the process.
+6. Click *Add Group* to finish the process.
 
 ![holdoutGroupIndvCohortsSettings.png](/docs/output/img/advanced-techniques/holdoutgroupindvcohortssettings-png.png)
 

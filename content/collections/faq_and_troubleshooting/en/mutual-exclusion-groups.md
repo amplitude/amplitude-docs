@@ -4,6 +4,8 @@ blueprint: faq_and_troubleshooting
 title: 'Mutual exclusion groups'
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/14753159500827'
 category: experiment
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1719504966
 ---
 In Amplitude Experiment, you can set experiments as mutually exclusive. This means users will not interact with more than one experiment at the same time. For example, users who are shown experiment A will not see experiment B, and vice versa. 
 
@@ -29,8 +31,9 @@ Amplitude Experiment follows a specific order of operations when assigning users
 `individual user qualification → mutual exclusion → sticky bucketing → target
  segment`
 
-Because Amplitude Experiment considers the individual user qualification **before** mutual exclusion groups, users targeted under `Individual
- Users` may be able to see multiple experiments even if they are in the same mutual exclusion group. 
+Because Amplitude Experiment considers the individual user qualification **before** mutual exclusion groups, users targeted under `Individual Users` may be able to see multiple experiments even if they are in the same mutual exclusion group. 
+ 
+If you're using individual inclusions for cohorts, Amplitude Experiment also applies them before mutual exclusion groups.
 {{/partial:collapse}}
 
 
