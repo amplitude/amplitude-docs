@@ -157,6 +157,7 @@ tabs:
                               GA: GA
                               Maint: Maintenance
                               EOS: 'End of support'
+                              Beta: Beta
                             type: select
                             display: Phase
                             localizable: false
@@ -165,27 +166,11 @@ tabs:
                           handle: ga_date
                           field:
                             type: date
-                            display: 'GA date'
+                            display: 'Date of change'
                             localizable: false
-                        -
-                          handle: maintenance_date
-                          field:
-                            type: date
-                            display: 'Maintenance Date'
-                            localizable: false
-                            if:
-                              phase: 'equals Maint'
                         -
                           handle: notes
                           field:
                             type: markdown
                             display: Notes
                             localizable: false
-                        -
-                          handle: eos_date
-                          field:
-                            type: date
-                            display: 'EOS Date'
-                            localizable: false
-                            if:
-                              phase: 'equals EOS'
