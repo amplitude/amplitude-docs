@@ -189,7 +189,26 @@
          url('../fonts/ibm-plex-mono-v11-latin-700.svg#IBMPlexMono') format('svg'); /* Legacy iOS */
   }
 
-/* This is all you. */
+/* This is all us. */
+
+abbr {
+    position: relative
+  }
+
+abbr:hover::after {
+    background: #1b1b1b;
+    color: white;
+    border-radius: 4px;
+    bottom: 100%;
+    content: attr(title);
+    display: block;
+    left: 100%;
+    padding: 1em;
+    position: absolute;    
+    /* width: 280px; */
+    z-index: 1;
+    transition: all;
+  }
 
 .active > svg {
     transform: rotate(180deg);
