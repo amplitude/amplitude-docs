@@ -183,6 +183,8 @@ Keep the following in mind as you consider your sample rate:
 - Use sample rate to distribute your session quota over the course of a month, rather than using your full quota at the beginning of the month.
 - To find the best sample rate, Amplitude recommends that you start low, for example `.01`. If this value doesn't capture enough replays, raise the rate over the course of a few days. For ways to monitor the number of session replays captured, see [View the number of captured sessions](/docs/session-replay#view-the-number-of-captured-sessions).
 
+Session Replay supports remote sampling rate settings. This enables users in your organization to configure or update the sampling rate of your project after implementation, without a code change. In the event of a conflict, Session Replay defaults to the remote setting. For more information, see [Account Settings](/docs/admin/account-management/account-settings#session-replay-settings).
+
 ### Disable replay collection
 
 Once enabled, Session Replay runs on your site until either:
