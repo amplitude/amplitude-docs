@@ -10,8 +10,10 @@ landing_blurb: 'Count and filter sessions to understand user behavior'
 icon: icons/features/icon-user-session.svg
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717090590
+updated_at: 1719944543
 template: landing-page
 current-collection: user-sessions
 hide_helpful: true
+faq_link:
+  - fe60748d-6a3e-4a93-8e5a-007affe53c41
 ---
