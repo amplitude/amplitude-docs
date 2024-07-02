@@ -289,8 +289,6 @@ Session Replay doesn't set cookies on the user's browser. Instead, it relies on 
 
 If a user opts out of all cookies on your site, use the `optOut` configuration option to disable replay collection for that user.
 
-If a user opts out of all cookies on your site, use the `optOut` configuration option to disable replay collection for that user.
-
 ### IndexedDB best practices
 
 To ensure that IndexedDB is initialized and working properly:

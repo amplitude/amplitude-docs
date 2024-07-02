@@ -2,7 +2,22 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/data/sources/client-side-vs-server-side",
+      "destination": "/docs/experiment/data-model",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/experiment/general/data-model",
+      "destination": "/docs/experiment/data-model",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/hc/en-us/articles/360041266311-Amplitude-Support-Offerings-and-Policy",
+      "destination": "/docs/analytics/plan-your-accounts-instrumentation",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/guides/accounts-instrumentation-guide/",
       "destination": "https://amplitude.zendesk.com/hc/en-us/articles/13513083850267-Amplitude-Technical-Support-offerings",
       "statusCode": 301
     },
@@ -107,7 +122,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/analytics/plan-your-setup",
+      "source": "/docs/analytics/plan-your-set-up",
       "destination": "/docs/get-started/plan-your-implementation",
       "statusCode": 301
     },
