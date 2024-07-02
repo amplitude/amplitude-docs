@@ -10,8 +10,10 @@ supported_languages:
 github_link: 'https://github.com/amplitude/Amplitude-iOS'
 releases_url: 'https://github.com/amplitude/Amplitude-iOS/releases'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715285165
-source: https://www.docs.developers.amplitude.com/data/sdks/ios/
+updated_at: 1719861177
+source: 'https://www.docs.developers.amplitude.com/data/sdks/ios/'
+package_name: Amplitude
+bundle_url: 'https://cocoapods.org/pods/Amplitude-iOS'
 ---
 This is the official documentation for the Amplitude Analytics iOS SDK.
 
@@ -1323,4 +1325,4 @@ The SDK doesn't use any API by default. Learn more [here](https://developer.appl
 
 #### Create your app's privacy report
 
-Follow the steps on how to [create your app's privacy](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests#4239187). 
+Follow the steps on how to [create your app's privacy](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests#4239187).

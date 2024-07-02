@@ -12,6 +12,7 @@ tabs:
               required: true
               validate:
                 - required
+              localizable: false
           -
             handle: content
             field:
@@ -19,28 +20,7 @@ tabs:
               antlers: true
               display: Content
               localizable: true
-              instructions_position: above
-              listable: hidden
-              visibility: visible
-              replicator_preview: true
               container: help_center_conversions
-              restrict: false
-              buttons:
-                - bold
-                - italic
-                - unorderedlist
-                - orderedlist
-                - quote
-                - link
-                - image
-                - table
-              automatic_line_breaks: true
-              automatic_links: false
-              escape_markup: false
-              heading_anchors: false
-              smartypants: false
-              table_of_contents: false
-              hide_display: false
           -
             handle: author
             field:
@@ -86,19 +66,111 @@ tabs:
               type: float
               display: 'Sitemap Priority'
               instructions: 'From 0.0 (lowest priority) to 1.0 (highest priority)'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: exclude_from_sitemap
             field:
-              default: false
               type: toggle
               display: 'Exclude from sitemap?'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
+  version_support_matrix:
+    display: 'Version Support Matrix'
+    sections:
+      -
+        fields:
+          -
+            handle: version_support_matrix
+            field:
+              collapse: true
+              type: replicator
+              display: 'Version Support Matrix'
+              localizable: false
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    sdk_tool:
+                      display: 'SDK / Tool'
+                      icon: setting-cog-gear
+                      fields:
+                        -
+                          handle: article
+                          field:
+                            max_items: 1
+                            collections:
+                              - instrumentation
+                              - android_sdk
+                              - browser_sdk
+                              - flutter_sdk
+                              - go_sdk
+                              - java_sdk
+                              - node_js_sdk
+                              - python_sdk
+                              - react_native_sdk
+                              - sdk-catalog
+                              - unity_sdk
+                              - unreal_sdk
+                              - ios_sdk
+                              - ampli
+                              - data
+                              - source-catalog
+                            type: entries
+                            display: Article
+                            localizable: false
+                            width: 50
+                        -
+                          handle: title_override
+                          field:
+                            type: text
+                            display: 'Title override'
+                            localizable: false
+                            width: 50
+                        -
+                          handle: icon
+                          field:
+                            max_files: 1
+                            container: assets
+                            folder: icons
+                            restrict: true
+                            type: assets
+                            display: Icon
+                            localizable: false
+                            width: 50
+                        -
+                          handle: name
+                          field:
+                            type: text
+                            display: 'Repository Name'
+                            localizable: false
+                            width: 50
+                        -
+                          handle: version
+                          field:
+                            type: text
+                            display: Version
+                            localizable: false
+                            width: 50
+                        -
+                          handle: phase
+                          field:
+                            options:
+                              GA: GA
+                              Maint: Maintenance
+                              EOS: 'End of support'
+                              Beta: Beta
+                            type: select
+                            display: Phase
+                            localizable: false
+                            width: 50
+                        -
+                          handle: ga_date
+                          field:
+                            type: date
+                            display: 'Date of change'
+                            localizable: false
+                        -
+                          handle: notes
+                          field:
+                            type: markdown
+                            display: Notes
+                            localizable: false
