@@ -18,9 +18,9 @@ This feature is available to users on **Plus**, **Growth**, and **Enterprise** *
 
 ### Restrictions
 
-This feature is **limited** for users on **Plus** plans. 
+This feature is available for users on **Plus** plans. 
 
-* Organizations on the Plus plan are limited to five behavioral cohorts
+* Organizations on the Plus plan have a limit of five behavioral cohorts
 
 Behavioral cohorts are defined by user actions taken within a specific time period. They allow you to group together different users based on the events they've triggered in your product. Once you've created a cohort, you can add them as a segment in many Amplitude charts.
 
@@ -34,14 +34,14 @@ Ultimately, this sort of behavioral data reveals how engagement with your produc
 
 Cohorts are extremely useful across the Amplitude platform. To segment your data by cohorts, select *Cohort* in the [Segmentation Module](/docs/analytics/charts/build-charts-add-user-segments), and then choose the cohort you're interested in from the drop-down list.
 
-For any chart or query that segments on a cohort, the segmented cohort will automatically recompute itself whenever the chart is generated. You can manually re-compute the cohort at any time by clicking the refresh icon.
+For any chart or query that segments on a cohort, the segmented cohort automatically recomputes itself whenever the chart generates. You can manually re-compute the cohort at any time by clicking the refresh icon.
 
-If you have the [Accounts add-on](/docs/analytics/account-level-reporting), you can apply a group-level cohort instead of a cohort of users. When you select a specific group type, only the cohorts it contains will appear in the drop-down list on the right side of the equals sign:
+If you have the [Accounts add-on](/docs/analytics/account-level-reporting), you can apply a group-level cohort instead of a cohort of users. When you select a specific group type, only the cohorts it contains appear in the drop-down list on the right side of the equals sign:
 
 ![behavioral_cohorts_1.png](/docs/output/img/analytics/behavioral_cohorts_1.png)
 
 You can also create a chart using the cohort directly from the Cohort page:
 
-![create chart from cohort.png](/docs/output/img/analytics/create_chart_from_cohort.png)
+![create chart from cohort.png](/docs/output/img/analytics/create-chart-from-cohort.png)
 
-But before you can do any of that, you'll have to define a new cohort. Read the next article to learn how to [define a new cohort](/docs/analytics/define-cohort).
+But before you can do any of that, define a new cohort. Read the next article to learn how to [define a new cohort](/docs/analytics/define-cohort).
