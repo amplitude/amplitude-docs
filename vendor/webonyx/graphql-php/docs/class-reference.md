@@ -50,10 +50,10 @@ See [related documentation](executing-queries.md).
  *    Empty array would allow to skip query validation (may be convenient for persisted
  *    queries which are validated before persisting and assumed valid during execution)
  *
- * @param string|DocumentNode        $source
- * @param mixed                      $rootValue
- * @param mixed                      $contextValue
- * @param array<string, mixed>|null  $variableValues
+ * @param string|DocumentNode $source
+ * @param mixed $rootValue
+ * @param mixed $contextValue
+ * @param array<string, mixed>|null $variableValues
  * @param array<ValidationRule>|null $validationRules
  *
  * @api
@@ -308,7 +308,7 @@ Passed as 4th argument to every field resolver. See [docs on field resolving (da
 
 @phpstan-import-type QueryPlanOptions from QueryPlan
 
-@phpstan-type Path array<int, string|int>
+@phpstan-type Path list<string|int>
 
 ### GraphQL\Type\Definition\ResolveInfo Props
 
@@ -351,15 +351,26 @@ public $fieldNodes;
 public $parentType;
 
 /**
- * Path to this field from the very root value.
+ * Path to this field from the very root value. When fields are aliased, the path includes aliases.
  *
  * @api
  *
- * @var array<int, string|int>
+ * @var list<string|int>
  *
  * @phpstan-var Path
  */
 public $path;
+
+/**
+ * Path to this field from the very root value. This will never include aliases.
+ *
+ * @api
+ *
+ * @var list<string|int>
+ *
+ * @phpstan-var Path
+ */
+public $unaliasedPath;
 
 /**
  * Instance of a schema used for execution.
@@ -1344,8 +1355,8 @@ Implements the "Evaluating requests" section of the GraphQL specification.
  * Always returns ExecutionResult and never throws.
  * All errors which occur during operation execution are collected in `$result->errors`.
  *
- * @param mixed                     $rootValue
- * @param mixed                     $contextValue
+ * @param mixed $rootValue
+ * @param mixed $contextValue
  * @param array<string, mixed>|null $variableValues
  *
  * @phpstan-param FieldResolver|null $fieldResolver
@@ -1372,8 +1383,8 @@ static function execute(
  *
  * Useful for async PHP platforms.
  *
- * @param mixed                     $rootValue
- * @param mixed                     $contextValue
+ * @param mixed $rootValue
+ * @param mixed $contextValue
  * @param array<string, mixed>|null $variableValues
  *
  * @phpstan-param FieldResolver|null $fieldResolver
@@ -1730,13 +1741,25 @@ function getLocations(): array
 ```php
 /**
  * Returns an array describing the path from the root value to the field which produced this error.
- * Only included for execution errors.
+ * Only included for execution errors. When fields are aliased, the path includes aliases.
  *
- * @return array<int, int|string>|null
+ * @return list<int|string>|null
  *
  * @api
  */
 function getPath(): ?array
+```
+
+```php
+/**
+ * Returns an array describing the path from the root value to the field which produced this error.
+ * Only included for execution errors. This will never include aliases.
+ *
+ * @return list<int|string>|null
+ *
+ * @api
+ */
+function getUnaliasedPath(): ?array
 ```
 
 ## GraphQL\Error\Warning
