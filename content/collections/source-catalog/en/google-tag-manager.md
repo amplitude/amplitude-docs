@@ -10,7 +10,7 @@ integration_category:
 integration_type:
   - raw-events
   - event-streaming
-title: 'Google Tag Manager'
+title: 'Google Tag Manager (client)'
 source: 'https://www.docs.developers.amplitude.com/data/sources/google-tag-manager'
 category: 'Marketing Analytics'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
@@ -18,8 +18,11 @@ connection: source
 partner_maintained: false
 integration_icon: partner-icons/google-tag-manager.svg
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1719870553
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1719615487
+package_name: 'Amplitude Analytics Browser SDK'
+bundle_url: 'https://tagmanager.google.com/gallery/#/owners/amplitude/templates/amplitude-browser-sdk-gtm-template'
+github_link: 'https://github.com/amplitude/amplitude-browser-sdk-gtm-template'
 ---
 This is the client-side Google Tag Manager Template for Amplitude Analytics. The tag uses the [Amplitude Browser SDK 2.0](/docs/sdks/analytics/browser/browser-sdk-2/) for data collection.
 

@@ -3,6 +3,254 @@ id: 18f5ac3b-003a-4386-86a3-1ffad3ca2429
 blueprint: instrumentation
 title: 'SDK Maintenance and Support'
 source: 'https://www.docs.developers.amplitude.com/data/sdks/sdk-maintenance-and-support/'
+author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+nav_title: developers
+exclude_from_sitemap: false
+version_support_matrix:
+  -
+    id: lxz4ns26
+    article: 3ee6e0df-273e-4c50-8bfd-d5a4abc9a33c
+    version: 1.x
+    phase: GA
+    ga_date: '2021-11-15'
+    type: sdk_tool
+    enabled: true
+    icon: icons/terminal.svg
+  -
+    id: lxz8vcmy
+    article: 4e6f43a0-1f71-4b9d-9193-f45500b42188
+    icon: icons/android-sm.svg
+    name: Amplitude-Kotlin
+    version: 1.x
+    phase: GA
+    ga_date: '2022-06-28'
+    type: sdk_tool
+    enabled: true
+  -
+    id: lxz9jmj7
+    article: 00d74a7b-23bd-4a24-86a1-92c046e7e1b5
+    icon: icons/ts-small.svg
+    name: Amplitude-TypeScript
+    version: 2.x
+    phase: GA
+    ga_date: '2023-06-14'
+    type: sdk_tool
+    enabled: true
+  -
+    id: lxz9w0l3
+    article: 8160e521-d064-46f7-bf1b-595dc1c56327
+    title_override: 'Chrome Event Explorer'
+    icon: icons/chrome.svg
+    version: 1.x
+    phase: GA
+    ga_date: '2023-04-25'
+    type: sdk_tool
+    enabled: true
+  -
+    id: lxza5mmb
+    article: 91ff3c42-e0d0-493c-9fe4-65262f814883
+    icon: icons/flutter.svg
+    name: Amplitude-Flutter
+    version: '1.x - 3.x'
+    phase: GA
+    ga_date: '2020-04-30'
+    type: sdk_tool
+    enabled: true
+  -
+    id: lxzabcjy
+    article: 7d5c2ee4-29ff-45be-8e6e-0bfd213412d3
+    icon: icons/google.svg
+    name: amplitude-browser-sdk-gtm-template
+    version: 1.x
+    phase: GA
+    ga_date: '2022-11-13'
+    type: sdk_tool
+    enabled: true
+  -
+    id: lxzazjg5
+    article: aa318ba2-74f4-4998-a0f3-790d0f123606
+    icon: icons/google.svg
+    name: amplitude-browser-sdk-gtm-template
+    version: 1.x
+    phase: GA
+    ga_date: '2022-05-02'
+    type: sdk_tool
+    enabled: true
+  -
+    id: ly3cr18y
+    article: 81b1c47d-3e5a-4c16-8f16-6ef65c3959a4
+    icon: icons/go-sm.svg
+    name: analytics-go
+    version: 1.x
+    phase: GA
+    ga_date: '2023-02-09'
+    type: sdk_tool
+    enabled: true
+  -
+    id: ly3d28wu
+    article: 36708c4b-d35c-4a7e-9c31-1c1571d6a73f
+    icon: icons/ios.svg
+    name: Amplitude-Swift
+    version: 1.x
+    phase: GA
+    ga_date: '2023-10-27'
+    type: sdk_tool
+    enabled: true
+  -
+    id: ly3d4v0j
+    article: 29f79d9a-140e-4e0f-bd51-2b4fc47f5739
+    icon: icons/java-sm.svg
+    name: Amplitude-Java
+    version: 1.x
+    phase: GA
+    ga_date: '2021-06-15'
+    type: sdk_tool
+    enabled: true
+  -
+    id: ly3dc3nk
+    article: 8cbcfa2a-a300-48c8-b551-aee1b1423cdb
+    icon: icons/node-sm.svg
+    name: Amplitude-Typescript
+    version: 1.x
+    phase: GA
+    ga_date: '2024-07-01'
+    type: sdk_tool
+    enabled: true
+  -
+    id: ly3dhjf7
+    article: 48d6de5e-571a-4b30-bb6c-d2b615f3c73c
+    icon: icons/python-sm.svg
+    name: Amplitude-Python
+    version: 1.x
+    phase: GA
+    ga_date: '2022-06-29'
+    type: sdk_tool
+    enabled: true
+  -
+    id: ly3ddfa1
+    article: 1962c691-4ecd-4b0f-bff9-1807438bc582
+    icon: icons/react-sm.svg
+    name: Amplitude-TypeScript
+    version: 1.x
+    phase: GA
+    ga_date: '2023-02-02'
+    type: sdk_tool
+    enabled: true
+  -
+    id: ly3dshpr
+    article: 9dc79fa3-30b2-4f67-954e-f03433c6cdbd
+    icon: icons/unity-sm.svg
+    name: unity-plugin
+    version: '1.x - 2.x'
+    phase: GA
+    ga_date: '2020-03-18'
+    type: sdk_tool
+    enabled: true
+  -
+    id: ly3e0kep
+    article: 77394402-6156-49e0-84ed-2ff1fee9a136
+    icon: icons/unreal.svg
+    name: Amplitude-Unreal
+    version: 0.x
+    type: sdk_tool
+    enabled: true
+    phase: Beta
+    ga_date: '2021-03-24'
+  -
+    id: lxz4pg5i
+    name: Amplitude-Android
+    article: 9f4dcd07-e262-4c9b-b841-ebb721d37a6d
+    version: '1.x - 2.x'
+    phase: Maint
+    ga_date: '2023-06-14'
+    type: sdk_tool
+    enabled: true
+    icon: icons/android-sm.svg
+    maintenance_date: '2023-06-14'
+  -
+    id: lxz8z7lp
+    name: Amplitude-Android
+    article: 9f4dcd07-e262-4c9b-b841-ebb721d37a6d
+    version: 3.x
+    phase: EOS
+    ga_date: '2021-12-16'
+    notes: 'Bad release (3.35.1)'
+    type: sdk_tool
+    enabled: true
+    icon: icons/android-sm.svg
+  -
+    id: lxz92u57
+    article: 8471af8b-e132-4073-8330-d5dd7bbbd8ae
+    icon: icons/ts-small.svg
+    name: Amplitude-TypeScript
+    version: 1.x
+    phase: Maint
+    ga_date: '2023-06-29'
+    type: sdk_tool
+    enabled: true
+  -
+    id: lxz9lrkx
+    article: e6b6889d-9d39-4f04-89a1-87f78db80f49
+    icon: icons/js-sm.svg
+    name: Amplitude-JavaScript
+    version: '1.x - 8.x'
+    phase: Maint
+    ga_date: '2023-06-29'
+    type: sdk_tool
+    enabled: true
+  -
+    id: ly3dopax
+    article: 7cab1dd1-18ad-4940-9379-ed2954c9afd3
+    icon: icons/react-sm.svg
+    name: Amplitude-ReactNative
+    version: 2.x
+    phase: Maint
+    ga_date: '2023-02-02'
+    type: sdk_tool
+    enabled: true
+  -
+    id: lxzbdqbi
+    article: 6f2a3532-cb82-4114-9d9a-4e0d8de49fff
+    icon: icons/google.svg
+    name: amplitude-gtm-template
+    version: 1.x
+    phase: Maint
+    ga_date: '2022-11-13'
+    type: sdk_tool
+    enabled: true
+  -
+    id: lxz9gxwj
+    article: 25904c6b-609d-4365-9660-2782ef50d52d
+    icon: icons/ts-small.svg
+    name: Amplitude-TypeScript
+    version: 1.x
+    phase: Maint
+    ga_date: '2023-06-29'
+    notes: 'Replaced by Browser 2.0'
+    type: sdk_tool
+    enabled: true
+  -
+    id: ly3cx13u
+    article: 6d713118-1088-470d-bfe7-847fbb372ba8
+    icon: icons/ios.svg
+    name: Amplitude-iOS
+    version: '1.x - 8.x'
+    phase: Maint
+    ga_date: '2023-10-17'
+    type: sdk_tool
+    enabled: true
+  -
+    id: ly3d8y0m
+    article: e3b9838b-8d35-49d8-ba91-5a0840cbc603
+    icon: icons/node-sm.svg
+    name: Amplitude-Node
+    version: 1.x
+    phase: Maint
+    ga_date: '2022-12-10'
+    type: sdk_tool
+    enabled: true
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1719941719
 ---
 ## Overview
 
@@ -63,32 +311,4 @@ To see the list of available major versions of Amplitude SDKs and Tools and wher
 
 The matrix below shows the list of available Amplitude SDK and Tools major versions and where they're in the maintenance life cycle with associated timelines. Amplitude updates the matrix with the release of a new major version or when a major version transitions to a new phase in the maintenance life cycle.
 
-<!-- vale off -->
-
-| SDK / Tool                                                                                                                                                                                                                                                                                                                                                                                   | Version   | Phase              | GA Date    | Notes                                       |
-|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|--------------------|------------|---------------------------------------------|
-| :material-console: [Ampli CLI](../ampli/index.md) <br/> :octicons-package-16: [`@amplitude/ampli`](https://www.npmjs.com/package/@amplitude/ampli)                                                                                                                                                                                                                                           | 1.x       | :material-star: GA | 2021-11-15 |                                             |
-| :material-android: [Android SDK](./android-kotlin/index.md)<br/>:octicons-package-16: [`com.amplitude:analytics-android`](https://mvnrepository.com/artifact/com.amplitude/analytics-android)<br/>:material-github: [Amplitude-Kotlin](https://github.com/amplitude/Amplitude-Kotlin)                                                                                                        | 1.x       | :material-star: GA | 2022-06-28 |                                             |
-| :material-android: [Android SDK](./android/index.md)<br/>:octicons-package-16: [`com.amplitude:android-sdk`](https://mvnrepository.com/artifact/com.amplitude/android-sdk)<br/>:material-github: [Amplitude-Android](https://github.com/amplitude/Amplitude-Android)                                                                                                                         | 3.x       | End-of-support     | 2021-12-16 | EOL: 2021-12-16<br/>Bad release (3.35.1)    |
-| :material-android: [Android SDK](./android/index.md)<br/>:octicons-package-16: [`com.amplitude:android-sdk`](https://mvnrepository.com/artifact/com.amplitude/android-sdk)<br/>:material-github: [Amplitude-Android](https://github.com/amplitude/Amplitude-Android)                                                                                                                         | 1.x -2.x  | Maintenance        | 2014-05-01 | MD: 2023-06-14                              |
-| :material-language-typescript: [Browser SDK](./browser-2/index.md)<br/> :octicons-package-16: [`@amplitude/analytics-browser`](https://www.npmjs.com/package/@amplitude/analytics-browser)<br/>:material-github: [Amplitude-TypeScript](https://github.com/amplitude/Amplitude-TypeScript)                                                                                                   | 2.x       | :material-star: GA | 2023-06-14 |                                             |
-| :material-language-typescript: [Browser SDK](./typescript-browser/index.md) <br/> :octicons-package-16: [`@amplitude/analytics-browser`](https://www.npmjs.com/package/@amplitude/analytics-browser)<br/>:material-github: [Amplitude-TypeScript](https://github.com/amplitude/Amplitude-TypeScript)                                                                                         | 1.x       | Maintenance        | 2022-06-29 | MD: 2023-06-29                              |
-| :material-language-typescript: [Browser SDK](./marketing-analytics-browser/index.md) <br/> :octicons-package-16: [`@amplitude/marketing-analytics-browser`](https://www.npmjs.com/package/@amplitude/arketing-analytics-browser)<br/>:material-github: [Amplitude-TypeScript](https://github.com/amplitude/Amplitude-TypeScript)                                                             | 1.x       | Maintenance        | 2022-06-29 | MD: 2023-06-29<br/>Replaced by Browser 2.0  |
-| :material-language-javascript: [Browser SDK](./javascript/index.md)<br/>:octicons-package-16: [`@amplitude/amplitude-js`](https://www.npmjs.com/package/amplitude-js)<br/>:material-github: [Amplitude-JavaScript](https://github.com/amplitude/Amplitude-JavaScript)                                                                                                                        | 1.x - 8.x | Maintenance        | 2014-06-11 | MD: 2023-06-29                              |
-| :simple-googlechrome: [Chrome Event Explorer](../../debugger/?h=debug#instrumentation-explorer)<br/>:octicons-package-16: [`Amplitude Event Explorer`](https://chrome.google.com/webstore/detail/amplitude-event-explorer/acehfjhnmhbmgkedjmjlobpgdicnhkbp)                                                                                                                                  | 1.x       | :material-star: GA | 2023-04-25 |                                             |
-| :simple-flutter: [Flutter SDK](./flutter/index.md)<br/>:octicons-package-16: [`amplitude_flutter`](https://pub.dev/packages/amplitude_flutter)<br/>:material-github: [Amplitude-Flutter](https://github.com/amplitude/Amplitude-Flutter)                                                                                                                                                     | 1.x - 3.X | :material-star: GA | 2020-04-30 |                                             |
-| :material-google: [Google Tag Manager (Client)](../../sources/google-tag-manager-client/)<br/>:simple-googletagmanager: [Amplitude Analytics Browser SDK](https://tagmanager.google.com/gallery/#/owners/amplitude/templates/amplitude-browser-sdk-gtm-template)<br/>:material-github: [amplitude-browser-sdk-gtm-template](https://github.com/amplitude/amplitude-browser-sdk-gtm-template) | 1.x       | :material-star: GA | 2022-11-13 |                                             |
-| :material-google: [Google Tag Manager (Server)](../../sources/google-tag-manager-server/)<br/>:simple-googletagmanager: [Amplitude Analytics](https://tagmanager.google.com/gallery/#/owners/amplitude/templates/amplitude-server-gtm-template)<br/>:material-github: [amplitude-browser-sdk-gtm-template](https://github.com/amplitude/amplitude-server-gtm-template)                       | 1.x       | :material-star: GA | 2022-05-02 |                                             |
-| :material-google: [Google Tag Manager (Client)](../../sources/google-tag-manager-client-legacy/)<br/>:simple-googletagmanager: [Amplitude Analytics Legacy](https://tagmanager.google.com/gallery/#/owners/amplitude/templates/amplitude-gtm-template)<br/>:material-github: [amplitude-gtm-template](https://github.com/amplitude/amplitude-gtm-template)                                   | 1.x       | Maintenance        | 2021-10-21 | MD: 2022-11-13                              |
-| :material-language-go: [Go SDK](./go/index.md)<br/>:octicons-package-16: [`github.com/amplitude/analytics-go`](https://pkg.go.dev/github.com/amplitude/analytics-go)<br/>:material-github: [analytics-go](https://github.com/amplitude/analytics-go)                                                                                                                                         | 1.x       | :material-star: GA | 2023-02-09 |                                             |
-| :material-apple-ios: [iOS SDK](./ios-swift/index.md)<br/>:octicons-package-16: `AmplitudeSwift`<br/>:material-github: [Amplitude-Swift](https://github.com/amplitude/Amplitude-Swift)                                                                                                                                                                                                        | 1.x       | :material-star: GA | 2023-10-27 |                                             |
-| :material-apple-ios: [iOS SDK](./ios/index.md)<br/>:octicons-package-16: [`Amplitude`](https://cocoapods.org/pods/Amplitude-iOS)<br/>:material-github: [Amplitude-iOS](https://github.com/amplitude/Amplitude-iOS)                                                                                                                                                                           | 1.x - 8.X | Maintenance        | 2014-06-05 | MD: 2023-10-27                              |
-| :material-language-java: [Java SDK](./java/index.md)<br/>:octicons-package-16: [`com.amplitude.:java-sdk`](https://mvnrepository.com/artifact/com.amplitude/java-sdk)<br/>:material-github: [Amplitude-Java](https://github.com/amplitude/Amplitude-Java)                                                                                                                                    | 1.x       | :material-star: GA | 2021-06-15 |                                             |
-| :material-nodejs: [Node SDK](./typescript-node/index.md)<br/>:octicons-package-16: [`@amplitude/analytics-node`](https://www.npmjs.com/package/@amplitude/analytics-node)<br/>:material-github: [Amplitude-Typescript](https://github.com/amplitude/Amplitude-TypeScript/tree/main/packages/analytics-node)                                                                                  | 1.x       | :material-star: GA | 2022-12-10 |                                             |
-| :material-nodejs: [Node SDK](./node/index.md) <br/>:octicons-package-16: [`@amplitude/node`](https://www.npmjs.com/package/@amplitude/node)<br/>:material-github: [Amplitude-Node](https://github.com/amplitude/Amplitude-Node)                                                                                                                                                              | 1.x       | Maintenance        | 2020-09-25 | MD: 2022-12-10                              |
-| :material-language-python: [Python SDK](./python/index.md)<br/>:octicons-package-16: [`amplitude-analytics`](https://pypi.org/project/amplitude-analytics/)<br/>:material-github: [Amplitude-Python](https://github.com/amplitude/Amplitude-Python)                                                                                                                                          | 1.x       | :material-star: GA | 2022-06-29 |                                             |
-| :material-react: [React SDK](https://github.com/amplitude/react-amplitude#readme)<br/>:octicons-package-16: [`@amplitude/react-amplitude`](https://www.npmjs.com/package/@amplitude/react-amplitude)<br/>:material-github: [react-amplitude](https://github.com/amplitude/react-amplitude)                                                                                                   | 1.x       | End-of-support     | 2019-05-27 | EOL: 2022-06-29<br/>Replaced by Browser 2.0 |
-| :material-react: [React Native SDK](./typescript-react-native/index.md)<br/>:octicons-package-16: [`@amplitude/analytics-react-native`](https://www.npmjs.com/package/@amplitude/analytics-react-native)<br/>:material-github: [Amplitude-TypeScript](https://github.com/amplitude/Amplitude-TypeScript/tree/main/packages/analytics-react-native)                                           | 1.x       | :material-star: GA | 2023-02-02 |                                             |
-| :material-react: [React Native SDK](./react-native/index.md)<br/>:octicons-package-16: [`@amplitude/react-native`](https://www.npmjs.com/package/@amplitude/react-native)<br/>:material-github: [Amplitude-ReactNative](https://github.com/amplitude/Amplitude-ReactNative)                                                                                                                  | 2.x       | Maintenance        | 2021-03-02 | MD: 2023-02-02                              |
-| :material-unity: [Unity SDK](./unity/index.md)<br/>:octicons-package-16: [`amplitude-unity.unitypackage`](https://github.com/amplitude/unity-plugin/releases)<br/>:material-github: [unity-plugin](https://github.com/amplitude/unity-plugin)                                                                                                                                                | 1.x - 2.X | GA                 | 2020-03-18 |                                             |
-| :material-unreal: [Unreal SDK](./unreal/index.md)<br/>:octicons-package-16: [`AmplitudeUnreal`](https://github.com/amplitude/Amplitude-Unreal/releases)<br/>:material-github: [Amplitude-Unreal](https://github.com/amplitude/Amplitude-Unreal)                                                                                                                                              | 0.x       | Beta               | N/A        |                                             |
+{{partial:partials/sdk-maintenance-matrix}}
