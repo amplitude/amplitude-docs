@@ -13,7 +13,7 @@ This feature is available with **Amplitude paid plans only**. You need to be on 
 ## Setup
 
 1. In Amplitude Data, click **Catalog** and select the **Destinations** tab.
-2. In the Event Streaming section, click on any streaming destination tile. E.g. Braze.
+2. In the Event Streaming section, click on any streaming destination tile.
 3. Enter a sync name, then click Create Sync.
 4. Toggle Status from **Disabled** to **Enabled**.
 5. Paste your Server Secret Key.
@@ -41,7 +41,7 @@ Keep these things in mind when streaming transformations from Amplitude:
 There are some limitations when streaming transformations from Amplitude:
 
 * You can't stream **lookup properties** directly. Lookup properties allow you to upload a .csv file mapping an existing event or user property to a list of new properties, used to add more properties to already ingested events during query time based on the lookup property. However, these mapped properties aren't selectable when setting up the sync in either event filters or when sending more properties to the destination.
-* You can't stream **channel classifiers** directly. Channels, which act like derived properties applied in real-time when querying, are mainly used by marketers to define their acquisition channels based on UTM and referrer data. Although they are used as a property where values map to specific rules on existing properties, these channel properties aren't selectable when setting up the sync in either event filters or when sending more properties to the destination.
+* You can't stream **channel classifiers** directly. Channels, which act like derived properties applied in real-time when querying within Amplitude, are mainly used by marketers to define their acquisition channels based on UTM and referrer data. Although they are used as a property where values map to specific rules on existing properties, these channel properties aren't selectable when setting up the sync in either event filters or when sending more properties to the destination.
 * Streaming transformation is available for all streaming destinations except for [Webhooks](https://Amplitude.com/docs/data/destination-catalog/webhooks), [Amazon Kinesis Firehose](https://Amplitude.com/docs/data/destination-catalog/amazon-kinesis-firehose), [Google PubSub](https://Amplitude.com/docs/data/destination-catalog/google-pub-sub) and Data Warehouse destinations.
 
 ## FAQs
@@ -55,15 +55,15 @@ Email integrations@Amplitude.com with your Organization ID if you're interested 
 
 
 {{partial:collapse name="Will this impact my event volume streaming limit?"}}
-Yes, this will count towards your existing event streaming volume limit. Check your event streaming limit by navigating to the Settings page and clicking on Plans & Billing.
+Yes, this counts towards your existing event streaming volume limit. Check your event streaming limit by navigating to the Settings page and clicking on Plans & Billing.
 {{/partial:collapse}}
 
 
 {{partial:collapse name="Can I select both the raw event/property in the event streaming drop down?"}}
-You should be allowed to use both for your streaming sync. For example, if three event types are merged into one, there would be four event types in the selection dropdown.
+You can use both for your streaming sync. For example, if three event types are merged into one, there would be four event types in the selection dropdown.
 {{/partial:collapse}}
 
 
 {{partial:collapse name="How are custom events and transformed properties handled during streaming?"}}
-Custom events and transformed properties are handled according to the configurations set in your Amplitude Data taxonomy. The transformations are applied before the data is streamed to the destination.
+Custom events and transformed properties follow the configurations set in your Amplitude Data taxonomy. The transformations are applied before the data is streamed to the destination.
 {{/partial:collapse}}
