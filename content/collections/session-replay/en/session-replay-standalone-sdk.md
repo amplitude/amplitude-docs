@@ -376,6 +376,10 @@ Session Replay supports other analytics providers. Follow the information below 
 - [Amplitude Classic (Cloud-mode)](#amplitude-classic-destination-cloud-mode)
 - [Amplitude Classic (Device-mode)](#amplitude-classic-destination-device-mode)
 
+{{partial:admonition type="warning" heading="Session Replay ID is a required property"}}
+To ensure that Session Replay implementations with Segment work as expected, add the `Session Replay ID` event property to your Segment tracking plan. Otherwise, Segment may block the property.
+{{/partial:admonition}}
+
 ### Amplitude (Actions) destination
 
 Amplitude (Actions) tracks sessions automatically. When a user starts a new session, Amplitude sets an `analytics_session_id` cookie on the users browser. Configure your implementation to listen for changes in value to `analytics_session_id`, which you can do with Segment's [Source Middleware](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/middleware/).
