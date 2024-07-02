@@ -23,7 +23,7 @@ The User Activity Report template includes the following charts:
 * Breakdown of these users by country
 * Breakdown of these users by platform
 
-For a more detailed view into any of these questions, you can simply click the title of the chart you’re interested in, and you’ll be taken directly to it.
+For a more detailed view into any of these questions, simply click the title of the chart you’re interested in.
 
 ## Customize the User Activity template
 
@@ -41,7 +41,7 @@ If you want to replace the `Any Active User` event with something more specific,
 You are **not required** to replace either the `New User` or the `Any Active Event` events if you’d prefer not to.
 
 3. Click *Save As New Dashboard* and select *Keep and display saved replacement parameters*. Then click *Next*.
-4. Give your new dashboard a name and select the location where it will be saved. Then click *Save*.
+4. Give your new dashboard a name and select a location to save it. Then click *Save*.
 
 Your dashboard is now ready for use.
 

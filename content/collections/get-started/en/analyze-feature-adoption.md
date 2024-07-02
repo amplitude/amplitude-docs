@@ -23,7 +23,7 @@ The Feature Adoption Report template includes the following charts:
 * How many times does each unique user do `Any Active Event` in 30 days?
 * How many users return to do `Any Active Event` after their first time?
 
-For a more detailed view into any of these questions, you can simply click the title of the chart you’re interested in, and you’ll be taken directly to it.
+For a more detailed view into any of these questions, simply click the title of the chart you’re interested in.
 
 ## Customize the Feature Adoption Report template
 
@@ -38,7 +38,7 @@ For example, if you’re interested in questions around feature discovery, selec
   
 You are **not required** to replace the `Any Active Event` event if you’d prefer not to.
 3. Click *Save As New Dashboard* and select *Keep and display saved replacement parameters*. Then click *Next*.
-4. Give your new dashboard a name and select the location where it will be saved. Then click *Save*.
+4. Give your new dashboard a name and select a location to save it in. Then click *Save*.
 
 Your dashboard is now ready for use.
 
