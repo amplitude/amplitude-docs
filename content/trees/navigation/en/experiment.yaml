@@ -6,7 +6,6 @@ tree:
       -
         id: 2bda6737-066a-4283-8252-720d24a19573
         entry: 37e1ab54-da77-4a60-be41-1c1018c4163a
-        title: 'Create a new feature flag'
       -
         id: c3a877d1-44c7-42a4-8ad7-ae2319a76a1d
         entry: 1623ff4b-4f76-411c-bbe4-2f38614ffc9a
@@ -14,6 +13,9 @@ tree:
       -
         id: 481adc35-989a-4465-92f6-e871ae33ab75
         entry: 99eb2927-ad52-424a-a04d-7e90a0ddfeb7
+      -
+        id: 1f131d74-cfb7-43b6-b218-1c3974e04d36
+        entry: 665e15c4-7194-4898-9cca-b58251cc79a2
   -
     id: 90ff8151-b864-4782-abdd-65b81d1c26ca
     title: 'Experiment SDKs'
@@ -64,11 +66,11 @@ tree:
             id: 707402a6-d5fb-4432-915a-32c1f59f457a
             entry: c43935f9-32e2-4ac9-82ed-9513d66203b8
           -
-            id: e781c130-d33e-4773-a647-3914df6b6f45
-            entry: 4c9bc7b0-f786-4694-97c0-4668958ad1de
-          -
             id: 18ca4c64-6388-4dc1-8a17-f93ee5cb458a
             entry: c3d4aec1-92db-4f44-b847-19d6f31f1add
+          -
+            id: e781c130-d33e-4773-a647-3914df6b6f45
+            entry: 4c9bc7b0-f786-4694-97c0-4668958ad1de
           -
             id: 0a50430a-04b8-4c21-a907-7daed0df887a
             entry: cf260863-11d8-434d-a2de-22c8256e83b6
@@ -84,15 +86,15 @@ tree:
             entry: ccca14e2-fca6-4932-902f-5cac8f528c9a
             title: 'How flag dependencies work'
           -
+            id: 15fcf5be-505a-44db-9b00-e4f687435164
+            entry: 18d1ed19-14ba-4e8a-bd27-3774f931f02a
+          -
             id: e580e44e-a2e7-412b-91fd-310f714d3bbf
             entry: c9856100-2aad-440c-9d2f-505eb008d57b
             title: 'Mutual exclusion groups'
           -
             id: a6d4e67a-7138-4d72-b471-e1e37ea9d4de
             entry: 59a4add6-ca49-4b8f-9f39-85ed13dbf5e9
-          -
-            id: a8c8105b-547c-4a25-8931-e217aa6b9647
-            entry: 9c708cb5-e9b4-464b-9d43-cf5411e43cfe
   -
     id: 9360179b-3944-4058-ab65-89d3f8baf60b
     title: 'Experiment workflows'

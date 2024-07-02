@@ -14,6 +14,7 @@ const mix = require('laravel-mix');
 mix.js('resources/docs/js/site.js', 'public/docs/js')
 mix.js('resources/docs/js/api-table.js', 'public/docs/js')
 mix.js('resources/docs/js/interactive-exposure-tracking-table.js', 'public/docs/js')
+mix.js('resources/docs/js/interactive-evaluation-table.js', 'public/docs/js')
 
     
 mix.postCss('resources/docs/css/site.css', 'public/docs/css', [
@@ -31,4 +32,23 @@ mix.postCss('resources/docs/css/algolia.css', 'public/docs/css', [
     require('postcss-nested'),
     require('autoprefixer'),
     ]);
-    
+
+mix.override(webpackConfig => {
+    webpackConfig.module.rules.push({
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+            loader: 'babel-loader',
+            options: {
+                presets: [
+                    ['@babel/preset-env', { targets: '> 0.25%, not dead' }],
+                ],
+                plugins: [
+                    '@babel/plugin-transform-class-properties',
+                    '@babel/plugin-proposal-object-rest-spread',
+                    '@babel/plugin-transform-runtime',
+                ],
+            },
+        }
+    });
+});

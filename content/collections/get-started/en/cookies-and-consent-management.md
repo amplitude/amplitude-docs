@@ -5,7 +5,7 @@ title: 'Cookies and consent management'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718825257
+updated_at: 1719952775
 source: 'https://docs.developers.amplitude.com/guides/cookies-consent-mgmt-guide/'
 ---
 This guide covers functional and technical information on how Amplitude works with cookies, local storage, opt-in/opt-out options and consent management (including CNIL regulations for France).  
@@ -26,7 +26,7 @@ amplitude.getInstance().init("a2dbce0e18dfe5f8e...")
 
 The Amplitude Browser 2.0 SDK creates a cookie with the format `AMP_` with the first 10 characters of your project's API Key appended.
 
-![](statamic://asset::help_center_conversions::get-started/amplitudecookies.png)
+![](statamic://asset::help_center_conversions::get-started/amplitude-cookies.png)
 
 In previous versions of the SDK, you could customize the key for this cookie upon initialization, using the option `cookieName`. This no longer works, but if you use older SDK versions, the cookie name may differ from the indicated standard name
 
@@ -290,11 +290,10 @@ What's happening in this case is that the website owner embeds pieces of code, p
 **No**-as stated above, **Amplitude is not a third-party cookie**. Amplitude customers add Amplitude to their website/bundle themselves and Amplitude sets it in their own bundled code through document.cookie, so Amplitude has the privileges of a first-party cookie.
 {{/partial:collapse}}
 
-
 {{partial:collapse name="Why aren't Amplitude cookies marked as `HttpOnly`?"}}
 It doesn’t make sense for Amplitude's cookies to be HttpOnly; the point of that option is so that document.cookie can’t read those cookies (since they’d only be used in the client-server communication). But the point of Amplitude's cookies is the opposite: Amplitude **wants** to persist data specifically in their browser and to rest in document.cookies, Amplitude can’t read from their server because Amplitude is client-side code.
 
-If you're concerned that this renders the AMplitude cookie vulnerable to authentication information theft, you shouldn't be. Amplitude stores no authentication information in that cookie, so there's no danger of a XSS attack. The worst thing an attacker could do is steal Amplitude's cookie and take that user’s device ID and user ID, which shouldn’t be PII to be begin with.
+If you're concerned that this renders the Amplitude cookie vulnerable to authentication information theft, you shouldn't be. Amplitude stores no authentication information in that cookie, so there's no danger of a XSS attack. The worst thing an attacker could do is steal Amplitude's cookie and take that user’s device ID and user ID, which shouldn’t be PII to be begin with.
 
 Nonetheless, if this is a serious concern for you, then you should probably disable Amplitude's cookies.
 {{/partial:collapse}}

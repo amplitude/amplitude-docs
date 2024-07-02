@@ -7,7 +7,7 @@ action:
 swap:
   "approximate(?:ly)?": about
   abundance: plenty
-  accelerate: speed up
+  # accelerate: speed up
   accentuate: stress
   accompany: go with
   accomplish: carry out|do
@@ -72,8 +72,8 @@ swap:
   facilitate: ease
   females: women
   finalize: complete|finish
-  frequently: often
-  identical: same
+  #frequently: often
+  # identical: same
   incorrect: wrong
   indication: sign
   initiate: start|begin

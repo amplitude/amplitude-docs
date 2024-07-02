@@ -74,3 +74,9 @@ To sync your first cohort, follow these steps:
 2. Click on **Create Segment** and name your Segment.
 3. Under Add Filter, select **Amplitude Cohorts** and choose the cohort you created and synced from Amplitude.
 4. When saved, you can reference this segment during Canvas or campaign creation in the targeting users step.
+
+## Troubleshooting
+
+### I don't see a list of users in Braze
+
+When you sync a cohort, Braze matches users in that cohort with users that already exist in Braze, and doesn't create new users. Make sure users in your Amplitude cohort have a matching user (`userId`) in Braze.

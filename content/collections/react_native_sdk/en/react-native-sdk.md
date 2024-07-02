@@ -12,11 +12,12 @@ bundle_url: 'https://www.npmjs.com/package/@amplitude/analytics-react-native'
 api_reference_url: 'https://amplitude.github.io/Amplitude-TypeScript/'
 shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/analytics-react-native'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718672605
+updated_at: 1719862498
 ampli_article: 4029875a-0e71-4ad0-869b-289dea48b625
-source: https://www.docs.developers.amplitude.com/data/sdks/typescript-react-native/
+source: 'https://www.docs.developers.amplitude.com/data/sdks/typescript-react-native/'
 migration_guide:
   - 0d5a2d8a-7266-4442-807c-2f2f84fe1ae5
+package_name: '@amplitude/analytics-react-native'
 ---
 The React Native SDK lets you send events to Amplitude.
 
@@ -210,7 +211,7 @@ The default logger outputs extra function context information to the developer c
 ## Track events
 
 {{partial:admonition type="note" heading=""}}
-This SDK uses the [Http V2](/docs/apis/analytics/http-v2) API and follows the same constraints for events. Make sure that all events logged in the SDK have the `event_type` field and at least one of `deviceId`  (included by default) or `userId`, and follow the Http API's constraints on each of those fields.
+This SDK uses the [HTTP V2](/docs/apis/analytics/http-v2) API and follows the same constraints for events. Make sure that all events logged in the SDK have the `event_type` field and at least one of `deviceId`  (included by default) or `userId`, and follow the HTTP API's constraints on each of those fields.
 
 To prevent instrumentation issues, device IDs and user IDs must be strings with a length of 5 characters or more. If an event contains a device ID or user ID that's too short, the ID value is removed from the event. If the event doesn't have a `userId` or `deviceId` value, the upload may be rejected with a 400 status. Override the default minimum length of 5 characters by setting the `minIdLength` config option.
 {{/partial:admonition}}
@@ -687,7 +688,7 @@ add(new AddEventIdPlugin());
 
 ### Destination type plugin example
 
-Here's an example of a plugin that sends each instrumented event to a target server URL using your preferred Http client.
+Here's an example of a plugin that sends each instrumented event to a target server URL using your preferred HTTP client.
 
 ```ts
 import { init, add } from '@amplitude/analytics-react-native';
@@ -740,7 +741,7 @@ add(new MyDestinationPlugin('https://custom.domain.com'));
 
 ## Advanced topics
 
-### Custom Http client
+### Custom HTTP client
 
 You can provide an implementation of `Transport` interface to the `transportProvider` configuration option for customization purpose, for example, sending requests to your proxy server with customized HTTP request headers.
 

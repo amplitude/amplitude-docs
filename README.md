@@ -1,6 +1,7 @@
-# Amplitude Docs.next
+<!--vale off-->
+# Amplitude Docs
 
-This is a working repository for the next version of Amplitude docs.
+This repository contains the source files and CMS of [Amplitude's Documentation site](https://amplitude.com/docs)
 
 ## Install locally
 
@@ -28,6 +29,10 @@ Statamic is built on a PHP framework / ecosystem called [Laravel](https://larave
 4. On the **Node** tab in Herd's settings, install version `20`.
 5. Close the Herd settings.
 
+### Set your .env file
+
+Rename the file `.env.example` to `.env`.
+
 ### Command line
 
 Developing and building with Statamic requires some time in the terminal. You can use the built in macOS terminal, iTerm2, or Warp for extended functionality.
@@ -36,16 +41,33 @@ When you have your terminal app of choice ready, navigate to the directory where
 
 In that directory, run `composer install`. This reads the application's `composer.json` file and installs any PHP dependencies.
 
-In the same directory, run `npm install` to install NPM dependencies.
+In the same directory, run `npm install` to install npm dependencies.
 
 Run `php please` to validate the installation. If successful, the terminal displays a list of commands that `please` can run.
+
+Run the following to initiate the site's local cache:
+- `php artisan cache:clear`
+- `php please stache:refresh`
 
 Run the command `php pleas make:user` to create a local admin user to interact with the Statamic dashboard. On the fourth step, enable Super user status for the user you create.
 
 ### View the site
 
-Run `npm run build` to generate the CSS and javascript assets necessary to display the site.
+Run `npm run build` to generate the CSS and JavaScript assets necessary to display the site. If you plan to develop CSS, run `npm run watch` to rebuild the CSS and JS on every save.
 
 With a new Super user created, point your browser to `amplitude-docs.test`. All sites that Herd serves use the `.test` tld by default. You should see site in its current state.
 
 To access the control panel, go to `amplitude-docs.test/cp`. The control panel provides access to the front end editing environment for content, navigations, images, and other parts of the site.
+
+## Working with Docs
+
+
+### Collections
+
+Adding content to the Amplitude Docs site is different than other site builders or CMS platforms. Instead of using the directory structure or file system to determine the page hierarchy, Statamic sites use Collections. Collections are containers that hold similar content, and have routes defined on them. 
+
+For example, [`account-management`](https://github.com/amplitude/amplitude-docs/tree/main/content/collections/account-management/en) is a collection. The content within that collection all relate to Account Management. Each collection also has a YAML file that sets properties for the whole collection. [Here](https://github.com/amplitude/amplitude-docs/blob/main/content/collections/account-management.yaml) is the YAML file for that Account Management collection. Notice on line 5, there's a a `route` property. Routes set the URL structure for every piece of content within that collection. In this case, the route is set as `/admin/account-management/{slug}` where `{slug}` is a variable for the article's slug.
+
+### Images
+
+The easiest way to add images to your article is to place the `public/docs/output/img/*` folder, and then reference them with `![](/docs/output/img/*)`. Statamic supports adding assets through the dashboard as well, which makes available any metadata you assign to the image, like alt text.

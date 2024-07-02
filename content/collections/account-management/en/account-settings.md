@@ -33,6 +33,31 @@ The organizational settings also include tools to help you:
 
 For more information on each of these tasks, just follow the links to the relevant Help Center articles.
 
+### Session Replay settings
+
+The organizational settings also allow admins and managers to view or modify [Session Replay](docs/session-replay) settings.
+
+The session replay settings area displays your overall session replay capture plan allowance, current usage, and a list of projects showing sample rate, instrumentation status, and if replays are being captured for a specified project.
+
+Click *View Usage Over Time* in the session capture card to review usage specific to your plan.
+
+From the project list, you can:
+
+- View a list of projects that are capturing replays, along with their sample rate and current instrumentation status.
+- Toggle Session Capture on or off for a specific project. Turning off session capture for a specific project only applies to future sessions.
+Click a- project name to modify the sample rate, or percentage of user sessions being captured. Modifying the sample rate in settings will override the existing SDK implementation's sample rate, and may take several minutes to take effect.
+
+    From the sampling module, click View User Sessions Chart to view an estimate of the total sessions captured on a monthly basis. 
+
+- Click *+ Select Projec*t from the bottom of the list to add a project. Projects cannot be removed once added.
+By default, the project's session capture will be set to on and its sample rate will match the rate established in your SDK implementation. Adding a project via the SDK does not automatically add it to the list. However, an admin adding a new organization via the organizational settings will add a project to the list with session capture set to on and a sample rate of 100%.
+
+{{partial:admonition type="note" heading=""}}
+Replays can only be captured if instrumentation is accurate and complete, and a sample rate is set. Be sure to use the most recent [SDK](/docs/sdks) for best results.
+{{/partial:admonition}}
+
+
+
 ## Personal settings
 
 The personal settings area is where you can manage your own profile, site settings, and notifications.

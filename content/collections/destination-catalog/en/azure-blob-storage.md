@@ -1,15 +1,20 @@
 ---
 id: 986ba08a-28dd-4d28-9107-0bfffb4dd599
-published: false
 blueprint: destination-catalog
-title: 'Send Amplitude Event Data to Azure Blob Storage'
+title: 'Azure Blob Storage'
 source: 'https://www.docs.developers.amplitude.com/data/destinations/azure-blob-storage/'
 category: 'Cloud storage'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 partner_maintained: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713479852
+updated_at: 1718993413
+connection: destination
+integration_type:
+  - event-streaming
+integration_category:
+  - storage
+integration_icon: partner-icons/azure-blob-storage.svg
 ---
 Amplitude's Azure Blob Storage destination enables you to export Amplitude event data and merged user data to your Azure Blob Storage container. You can use Azure Blob Storage's container policies to manage and export this data programmatically into an Azure container. Amplitude allows recurring syncs as often as once per hour.
 
@@ -96,7 +101,7 @@ Complete a manual export to backfill and send historical data to Azure Blob Stor
 
 If the backfill date range overlaps with the date range of already exported data, Amplitude de-duplicates any overlapping data.
 
-**![screenshot of the export data modal](../../docs/assets/images/integrations-gcs-export-manual-export.png)**
+![](statamic://asset::help_center_conversions::destinations/integrations-gcs-export-manual-export.png)
 
 ## Exported data format
 

@@ -23,13 +23,13 @@ summary: 'Fetch a user profile, which include user properties, computed properti
 **Authentication errors**
 
 - If the secret key is correct but user IDs are improperly formatted, or are user IDs from a different project, you get this error: `{"error":"User id and device id not seen before"}`
-- If the secret key is wrong, you get an Http 401 response: `Invalid Api-Key`
-- If the authorization header is missing or malformed you get an Http 401 response: `Missing Api-Key in Authorization header`
+- If the secret key is wrong, you get an HTTP 401 response: `Invalid Api-Key`
+- If the authorization header is missing or malformed you get an HTTP 401 response: `Missing Api-Key in Authorization header`
 
 **Configuration errors**
 
-- If the endpoint or path are wrong, you get an empty error (Http 404) response.
-- If an insecure Http request is sent, it's redirected to the Https endpoint (HttpS 301) with an HTML body - the Location header contains the proper protocol and URL.
+- If the endpoint or path are wrong, you get an empty error (HTTP 404) response.
+- If an insecure HTTP request is sent, it's redirected to the HTTPs endpoint (HTTPS 301) with an HTML body - the Location header contains the proper protocol and URL.
 
 **Throttling errors**
 
@@ -58,14 +58,14 @@ Amplitude recommends returning 50 items per request. The maximum allowable is 10
 
 Retrieve a single recommendation by ID.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://profile-api.amplitude.com/v1/userprofile?user_id=USER_ID&get_recs=true&rec_id=testRecId' \
 --header 'Authorization: Api-Key <SECRET KEY>'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /v1/userprofile?user_id=USER_ID&get_recs=true&rec_id=testRecId HTTP/1.1
 Host: profile-api.amplitude.com
@@ -77,14 +77,14 @@ Authorization: Api-Key <SECRET KEY>
 {{partial:collapse name="Example: Get a specific recommendation"}}
 This example retrieves the recommendation with ID `98765` for the user with ID `12345`.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://profile-api.amplitude.com/v1/userprofile?user_id=12345&get_recs=true&rec_id=98765' \
 --header 'Authorization: Api-Key 1234567890'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /v1/userprofile?user_id=12345&get_recs=true&rec_id=98765 HTTP/1.1
 Host: profile-api.amplitude.com
@@ -138,14 +138,14 @@ Amplitude recommends returning 50 items per request. The maximum allowable is 10
 
 Retrieves multiple recommendations for a user.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://profile-api.amplitude.com/v1/userprofile?user_id=USER_ID&get_recs=true&rec_id=testRecId,testRecID2' \
 --header 'Authorization: Api-Key <SECRET KEY>'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /v1/userprofile?user_id=USER_ID&get_recs=true&rec_id=testRecId,testRecId2 HTTP/1.1
 Host: profile-api.amplitude.com
@@ -157,14 +157,14 @@ Authorization: Api-Key <SECRET KEY>
 {{partial:collapse name="Example: Get multiple recommendations"}}
 This example retrieves the recommendation with ID `98765` and `56789` for the user with ID `12345`.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://profile-api.amplitude.com/v1/userprofile?user_id=12345&get_recs=true&rec_id=98765,56789' \
 --header 'Authorization: Api-Key 1234567890'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /v1/userprofile?user_id=12345&get_recs=true&rec_id=98765,56789 HTTP/1.1
 Host: profile-api.amplitude.com
@@ -221,14 +221,14 @@ Authorization: Api-Key 1234567890
 
 Retrieves the user's properties.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://profile-api.amplitude.com/v1/userprofile?user_id=USER_ID&get_amp_props=true' \
 --header 'Authorization: Api-Key <SECRET KEY>'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /v1/userprofile?user_id=USER_ID&get_amp_props=true HTTP/1.1
 Host: profile-api.amplitude.com
@@ -240,14 +240,14 @@ Authorization: Api-Key <SECRET KEY>
 {{partial:collapse name="Example: Get user properties by user ID"}}
 This example retrieves the user properties for the user with ID `12345`.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://profile-api.amplitude.com/v1/userprofile?user_id=12345&get_amp_props=true' \
 --header 'Authorization: Api-Key 1234567890'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /v1/userprofile?user_id=12345&get_amp_props=true HTTP/1.1
 Host: profile-api.amplitude.com
@@ -281,14 +281,14 @@ Authorization: Api-Key 1234567890
 
 Retrieves a user's cohort IDs.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://profile-api.amplitude.com/v1/userprofile?user_id=USER_ID&get_cohort_ids=true' \
 --header 'Authorization: Api-Key <SECRET KEY>'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /v1/userprofile?user_id=USER_ID&get_cohort_ids=true HTTP/1.1
 Host: profile-api.amplitude.com
@@ -300,14 +300,14 @@ Authorization: Api-Key <SECRET KEY>
 {{partial:collapse name="Example: "}}
 This example gets cohort IDs for user ID `12345`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://profile-api.amplitude.com/v1/userprofile?user_id=12345&get_cohort_ids=true' \
 --header 'Authorization: Api-Key 123456789'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /v1/userprofile?user_id=12345&get_cohort_ids=true HTTP/1.1
 Host: profile-api.amplitude.com
@@ -340,7 +340,7 @@ You can use the computed property as a configurable filter in any Amplitude char
 
 Retrieve all computations for a user.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 
 ```bash
@@ -348,7 +348,7 @@ curl --location --request GET 'https://profile-api.amplitude.com/v1/userprofile?
 --header 'Authorization: Api-Key <SECRET KEY>'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /v1/userprofile?get_computations=true&user_id=USER_ID HTTP/1.1
 Host: profile-api.amplitude.com
@@ -360,14 +360,14 @@ Authorization: Api-Key <SECRET KEY>
 {{partial:collapse name="Example: Get all computations for a user"}}
 This example retrieves all computations for user ID `12345`.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://profile-api.amplitude.com/v1/userprofile?user_id=12345&get_computations=true'
 --header 'Authorization: Api-Key 123456789'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /v1/userprofile?get_computations=true&user_id=1234 HTTP/1.1
 Host: profile-api.amplitude.com
@@ -403,14 +403,14 @@ To fetch multiple `comp_id`, separate `comp_id` by comma(,). For example: `comp_
 
 Retrieve a computation for a user by ID.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://profile-api.amplitude.com/v1/userprofile?user_id=USER_ID&get_computations=true&comp_id=COMP_ID' \
 --header 'Authorization: Api-Key <SECRET KEY>'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /v1/userprofile?user_id=USER_ID&get_computations=true&comp_id=COMP_ID HTTP/1.1
 Host: profile-api.amplitude.com
@@ -422,14 +422,14 @@ Authorization: Api-Key <SECRET KEY>
 {{partial:collapse name="Example: Get a computation by ID for a specific user"}}
 This example retrieves the computation with ID `t14bqib` for user ID `12345`.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://profile-api.amplitude.com/v1/userprofile?user_id=12345&get_computations=true&comp_id=t14bqib'
 --header 'Authorization: Api-Key 123456789'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /v1/userprofile?get_computations=true&user_id=1234&comp_id=t14bqib HTTP/1.1
 Host: profile-api.amplitude.com
@@ -471,14 +471,14 @@ Find the `prediction_id` by navigating to the prediction in the Audiences web ap
 To fetch multiple `prediction_id`, separate `prediction_id` by comma(,). For example: `prediction_id=id1,id2`. Responses for multiple `prediction_id` IDs are in the `propensities` field.
 {{/partial:admonition}}
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://profile-api.amplitude.com/v1/userprofile?user_id=USER_ID&get_propensity=true&prediction_id=PREDICTION_ID&propensity_type=PROPENSITY_TYPE'
 --header 'Authorization: Api-Key <SECRET KEY>'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /v1/userprofile?user_id=USER_ID&get_propensity=&prediction_id=PREDICTION_ID&propensity_type=PROPENSITY_TYPE HTTP/1.1
 Host: profile-api.amplitude.com
@@ -490,14 +490,14 @@ Authorization: Api-Key <SECRET KEY>
 {{partial:collapse name="Example: Propensity score"}}
 This example requests a propensity score for prediction ID `0x10x` for the user ID `12345`.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://profile-api.amplitude.com/v1/userprofile?user_id=12345&get_propensity=true&prediction_id=0x10x&propensity_type=score'
 --header 'Authorization: Api-Key 123456789'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /v1/userprofile?user_id=12345&get_propensity=&prediction_id=0x10x&propensity_type=score HTTP/1.1
 Host: profile-api.amplitude.com
@@ -532,14 +532,14 @@ Response:
 {{partial:collapse name="Example: Propensity percentage"}}
 This example requests a propensity percentage for prediction ID `0x10x` for the user ID `12345`.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://profile-api.amplitude.com/v1/userprofile?user_id=12345&get_propensity=true&prediction_id=0x10x&propensity_type=pct'
 --header 'Authorization: Api-Key 123456789'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /v1/userprofile?user_id=12345&get_propensity=&prediction_id=0x10x&propensity_type=pct HTTP/1.1
 Host: profile-api.amplitude.com
@@ -574,14 +574,14 @@ Response:
 {{partial:collapse name="Example: Propensity score with multiple prediction IDs"}}
 This example requests a propensity percentage for prediction ID `0x10x` and `0x11x` for the user ID `12345`.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://profile-api.amplitude.com/v1/userprofile?user_id=12345&get_propensity=true&prediction_id=0x10x,0x11x&propensity_type=pct'
 --header 'Authorization: Api-Key 123456789'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /v1/userprofile?user_id=12345&get_propensity=&prediction_id=0x10x,0x11x&propensity_type=pct HTTP/1.1
 Host: profile-api.amplitude.com

@@ -126,7 +126,7 @@ if (variant.value === 'on') {
 
 ## Initialize the SDK
 
-Initialize the SDK in your application on startup. The deployment key argument you pass into the `apiKey` paramater must live in the same Amplitude project to which you send events.
+Initialize the SDK in your application on startup. The [deployment key](/docs/experiment/data-model#deployments) argument you pass into the `apiKey` parameter must live in the same Amplitude project to which you send events.
 
 {{partial:tabs tabs="Amplitude, Third-party"}}
 {{partial:tab name="Amplitude"}}
@@ -204,12 +204,12 @@ Configure the SDK client once during initialization.
 
 ### Integrations
 
-If you use either Amplitude or Segment Analytics SDKs to track events into Amplitude, you'll want to set up an integration on initialization. Integrations automatically implement [provider](#providers) interfaces to enable a more streamlined developer experience by making it easier to **manage user identity** and **track exposures events**.
+If you use either Amplitude or Segment Analytics SDKs to track events into Amplitude, set up an integration on initialization. Integrations automatically implement [provider](#providers) interfaces to enable a more streamlined developer experience by making it easier to **manage user identity** and **track exposures events**.
 
 {{partial:collapse name="Amplitude integration"}}
 The Amplitude Experiment SDK is set up to integrate seamlessly with the Amplitude Analytics SDK.
 
-```js hl_lines="5"
+```js
 import * as amplitude from '@amplitude/analytics-browser';
 import { Experiment } from '@amplitude/experiment-js-client';
 
@@ -217,7 +217,7 @@ amplitude.init('API_KEY');
 const experiment = Experiment.initializeWithAmplitudeAnalytics('DEPLOYMENT_KEY');
 ```
 
-Using the integration initializer will automatically configure implementations of the [user provider](#user-provider) and [exposure tracking provider](#exposure-tracking-provider) interfaces to pull user data from the Amplitude Analytics SDK and track exposure events.
+Using the integration initializer configures implementations of the [user provider](#user-provider) and [exposure tracking provider](#exposure-tracking-provider) interfaces to pull user data from the Amplitude Analytics SDK and track exposure events.
 
 **Supported Versions**
 
@@ -230,7 +230,7 @@ All versions of the next-generation [Amplitude analytics Browser](/docs/sdks/ana
 {{/partial:collapse}}
 
 {{partial:collapse name="Segment integration"}}
-Experiment's integration with Segment Analytics must be configured manually. The Experiment SDK must then be configured on initialization with an instance of the the exposure tracking provider. Make sure this happens _after_ the analytics SDK has been loaded an initialized.
+Experiment's integration with Segment Analytics requires manual configuration. Then, configure the  Experiment SDK on initialization with an instance of the exposure tracking provider. Make sure this happens _after_ the analytics SDK loads an initializes.
 
 ```js
 analytics.ready(() => {
@@ -344,7 +344,7 @@ Fetches variants for a [user](/docs/experiment/data-model#users) and store the r
 {{partial:admonition type="tip" heading="Fetch on user identity change"}}
 If you want the most up-to-date variants for the user, it's recommended that you call `fetch()` whenever the user state changes in a meaningful way. For example, if the user logs in and receives a user ID, or has a user property set which may effect flag or experiment targeting rules.
 
-In addition, pass new **user properties** explicitly to `fetch()` instead of relying on user enrichment prior to [remote evaluation](/docs/experiment/remote-evaluation). This is because user properties that are synced remotely through a separate system have no timing guarantees with respect to `fetch()`--i.e. a race.
+Pass new **user properties** explicitly to `fetch()` instead of relying on user enrichment prior to [remote evaluation](/docs/experiment/remote-evaluation). This is because user properties that are synced remotely through a separate system have no timing guarantees with respect to `fetch()`--for example, a race.
 {{/partial:admonition}}
 
 ```js
@@ -356,7 +356,7 @@ fetch(user?: ExperimentUser, options?: FetchOptions): Promise<Client>
 | `user`    | optional | Explicit [user](/docs/experiment/data-model#users) information to pass with the request to evaluate. This user information is merged with user information provided from [integrations](#integrations) via the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. |
 | `options` | optional | Explicit flag keys to fetch.|
 
-{{partial:admonition type="beta" heading="Account-level bucketing an analysis (v1.5.6+)"}}
+{{partial:admonition type="beta" heading="Account-level bucketing and analysis (v1.5.6+)"}}
 If your organization has purchased the [Accounts add-on](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users. Reach out to your representative to gain access to this beta feature.
 
 Groups must either be included in the user sent with the fetch request (recommended), or identified with the user via a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or via [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).

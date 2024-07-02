@@ -30,7 +30,7 @@ Set or update group properties.
 
 `POST https://api2.amplitude.com/groupidentify`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request POST '<https://api2.amplitude.com/groupidentify>' \
@@ -39,7 +39,7 @@ curl --location --request POST '<https://api2.amplitude.com/groupidentify>' \
 --data-urlencode 'identification=[{"group_properties":{"org csm":"Lucas","org plan":"Enterprise","org owner":"Luis"},"group_type":"Seller","group_value":"12345678"}]'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 POST /groupidentify?api_key={api-key}&identification={"group_properties":{"org_csm":"Lucas","org_plan":"Enterprise","org_owner":"Luis"},"group_type":"org_id","group_value":"12345678"} HTTP/1.1
 Host: api2.amplitude.com

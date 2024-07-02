@@ -238,3 +238,10 @@ Jetbrains
 VSCode
 Candu
 CommandBar
+Welltory
+MTU
+MTUs
+HTTP
+Wix
+Squarespace
+Clickthrough

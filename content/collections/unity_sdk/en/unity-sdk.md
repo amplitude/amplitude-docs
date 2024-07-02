@@ -11,8 +11,10 @@ releases_url: 'https://github.com/amplitude/unity-plugin/releases'
 api_reference_url: 'https://github.com/amplitude/unity-plugin'
 shields_io_badge: 'https://img.shields.io/github/v/tag/amplitude/unity-plugin?label=Unity%20SDK'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718672668
+updated_at: 1719862686
 source: 'https://www.docs.developers.amplitude.com/data/sdks/unity/'
+package_name: amplitude-unity.unitypackage
+bundle_url: 'https://github.com/amplitude/unity-plugin/releases'
 ---
 The Amplitude Analytics Unity SDK is a plugin to simplify the integration of Amplitude iOS and Android SDKs into your Unity project. This SDK works with Unity 2019.3.11 and higher.
 
@@ -51,9 +53,9 @@ Add this line in your ProGuard rules file - `proguard.pro`.
 
 #### Dependency management
 
-Amplitude's `com.amplitude.android-sdk` is a transitive library, it doesn't include any other dependencies by itself. Other dependencies for `com.amplitude.android-sdk` are placed into `Assets/Plugins/Android`. Amplitude uses OkHttp, and the other dependencies you see are ones OkHttp depends on (for example, Okio or Jetbrains).
+Amplitude's `com.amplitude.android-sdk` is a transitive library, it doesn't include any other dependencies by itself. Other dependencies for `com.amplitude.android-sdk` are placed into `Assets/Plugins/Android`. Amplitude uses OkHTTP, and the other dependencies you see are ones OkHTTP depends on (for example, Okio or Jetbrains).
 
-If you use OkHttp  in your project, you can choose not to include OkHttp and its related dependencies by unchecking them.
+If you use OkHTTP  in your project, you can choose not to include OkHTTP and its related dependencies by unchecking them.
 
 #### Use unity-jar-resolver
 
@@ -77,13 +79,13 @@ Add Amplitude's native dependencies under `androidPackage` tag.
 
 #### API compatibility
 
-The Amplitude Analytics Unity SDK depends on the OkHttp library.  OkHttp v3.13 requires the minimum version to be Android 5.0, Android Lollipop (API 21). [Read details here](https://developer.squareup.com/blog/okhttp-3-13-requires-android-5/).
+The Amplitude Analytics Unity SDK depends on the OkHTTP library.  OkHTTP v3.13 requires the minimum version to be Android 5.0, Android Lollipop (API 21). [Read details here](https://developer.squareup.com/blog/okhttp-3-13-requires-android-5/).
 
-Amplitude doesn't restrict which OkHttp version to use. For API 19, 20 (Android KitKat) to work, downgrade the OkHttp version to be lower than 3.13.
+Amplitude doesn't restrict which OkHTTP version to use. For API 19, 20 (Android KitKat) to work, downgrade the OkHTTP version to be lower than 3.13.
 
-1. Change the version of OkHttp to be lower than 3.13.
-2. In Unity, import the library by copying the .jar file, you can downgrade OkHttp library by replacing it with a version lower than 3.13.
-If you use google dependency resolver, update the dependency version for OkHttp in `*Dependency.xml` file.
+1. Change the version of OkHTTP to be lower than 3.13.
+2. In Unity, import the library by copying the .jar file, you can downgrade OkHTTP library by replacing it with a version lower than 3.13.
+If you use google dependency resolver, update the dependency version for OkHTTP in `*Dependency.xml` file.
 
 ### iOS XCode troubleshooting
 
