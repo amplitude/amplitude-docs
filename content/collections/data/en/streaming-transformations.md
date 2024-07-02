@@ -42,7 +42,7 @@ There are some limitations when streaming transformations from Amplitude:
 
 * You can't stream **lookup properties** directly. Lookup properties allow you to upload a .csv file mapping an existing event or user property to a list of new properties, used to add more properties to already ingested events during query time based on the lookup property. However, these mapped properties aren't selectable when setting up the sync in either event filters or when sending more properties to the destination.
 * You can't stream **channel classifiers** directly. Channels, which act like derived properties applied in real-time when querying within Amplitude, are mainly used by marketers to define their acquisition channels based on UTM and referrer data. Although they are used as a property where values map to specific rules on existing properties, these channel properties aren't selectable when setting up the sync in either event filters or when sending more properties to the destination.
-* Streaming transformation is available for all streaming destinations except for [Webhooks](https://Amplitude.com/docs/data/destination-catalog/webhooks), [Amazon Kinesis Firehose](https://Amplitude.com/docs/data/destination-catalog/amazon-kinesis-firehose), [Google PubSub](https://Amplitude.com/docs/data/destination-catalog/google-pub-sub) and Data Warehouse destinations.
+* Streaming transformation is available for all streaming destinations except for Data Warehouse destinations.
 
 ## FAQs
 
