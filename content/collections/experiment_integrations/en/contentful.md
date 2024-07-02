@@ -192,7 +192,7 @@ import { Experiment } from '@amplitude/experiment-js-client';
      await experiment.fetch({
        user_id: userId,
      });
-     const heroBanner = sdk.getEntry(‘ENTRY_ID_HERE’);
+     const heroBanner = sdk.getEntry('ENTRY_ID_HERE');
      const variant = experiment.variant(heroBanner?.experimentId ?? 'control');
      let resolvedVariant;
      if (heroBanner && variant.value) {
