@@ -23,6 +23,12 @@ fields:
       instructions: 'Add the link to the GitHub Releases page for this SDK. Include filtering if applicable.'
       localizable: false
   -
+    handle: package_name
+    field:
+      type: text
+      display: 'Package name'
+      localizable: false
+  -
     handle: bundle_url
     field:
       input_type: url

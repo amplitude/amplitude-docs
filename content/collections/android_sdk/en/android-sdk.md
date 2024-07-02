@@ -16,10 +16,10 @@ ampli_article: 56590eed-e958-44c2-bbe3-a95ef1d180af
 migration_guide:
   - 016795b7-45ca-4daa-9458-85bf283a35cb
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1710277105
-source: https://www.docs.developers.amplitude.com/data/sdks/android/
+updated_at: 1719605587
+source: 'https://www.docs.developers.amplitude.com/data/sdks/android/'
+package_name: 'com.amplitude:android-sdk'
 ---
-
 This is the official documentation for the Amplitude Analytics Android SDK.
 
 {{partial:admonition type="deprecated" heading=""}}
