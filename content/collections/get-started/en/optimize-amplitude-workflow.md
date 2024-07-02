@@ -10,6 +10,7 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1716571758
 ---
+
 To gain the most value out of Amplitude, follow this workflow. This sequence of steps, adopted by Amplitude's most successful customers, lays the groundwork for the most important metrics, and also demonstrates how specific charts connect to each other:
 
 ## Step 1: Identify your product's critical event
@@ -26,12 +27,13 @@ A critical event is an action users take within your product that aligns closely
 | On-demand grocery delivery | Completing a delivery |
 | Share songs on various social media platforms | Sharing a song |
 
-Use these questions to help decide your product's critical event:
+Use these questions to help identify your product's critical event:
 
 * Does your product have different offerings? If so, what are they? What are your success metrics for each?
 * Does your product have distinct groups of users? If so, how do they differ in the way they use your product? What value does each group get?
 * What's the one action that you want a user to do every time they open your product?
-* What metrics do you care about as a company? What are you ultimately trying to drive up? Which user actions can you tie to that metric?
+* What metrics do you care about as a company? What are you ultimately trying to drive up? Which user actions connect to that metric?
+
 
 [Read more about the critical event](https://blog.amplitude.com/user-retention-app-critical-event)
 
@@ -39,7 +41,7 @@ Use these questions to help decide your product's critical event:
 
 Just as important as defining your critical event is determining **how often** people take that action. The **product usage interval** is the frequency (daily, weekly, monthly, etc.) with which you expect people to use your product. 
 
-Some build products for daily—think social networking, media, casual gaming, or productivity apps. Others, like on-demand, e-commerce, and expense reporting apps, would be used much less often.
+Some products are built to be used daily—think social networking, media, casual gaming, or productivity apps. Others, like on-demand, e-commerce, and expense reporting apps, would be used much less often.
 
 You can't calculate user retention without first having an understanding of your product’s usage interval and critical event. 
 
@@ -55,9 +57,9 @@ Amplitude’s Retention Analysis chart helps you drive product adoption by sho
 
 ## Step 4: Plot a user Lifecycle graph
 
-Once you know your product's critical event, find out how your user base interacts with that event over time. A Lifecycle analysis breaks out your active users into three subgroups—new, current, and resurrected (formerly inactive)—for a more granular view of user behavior. 
+Once you know your product's critical event,find out how your user base interacts with that event over time. A Lifecycle analysis breaks out your active users into three subgroups—new, current, and resurrected (formerly inactive)—for a more granular view of user behavior. 
 
-Ultimately, the goal should be to use this information to **grow your current and resurrected user counts**, either by keeping them engaged or by giving them a reason to become active again. Observe your dormant users: if this category starts growing, you may have an engagement problem on your hands.
+Ultimately, the goal should be to use this information to **grow your current and resurrected user counts**, either by keeping them engaged or by giving them a reason to become active again. Pay attention to your dormant users: if this category starts growing, you may have an engagement problem on your hands.
 
 [Read more about Lifecycle analysis](/docs/analytics/charts/lifecycle) 
 
@@ -65,7 +67,7 @@ Ultimately, the goal should be to use this information to **grow your current an
 
 Knowing who is using your product is just as important as knowing what they're doing with it.
 
-Amplitude's Personas chart groups your users into clusters based on the **similarities of their event behavior**: users who behave the same way end up in the same cluster. It can help you surface similarities between user cohorts you may not have thought to look for. And it can guide you through the process of creating a comprehensive set of user personas for your product.
+Amplitude's Personas chart groups your users into clusters based on the **similarities of their event behavior**: users who behave the same way, end up in the same cluster. It can help you surface similarities between user cohorts you may not have thought to look for. And it can guide you through the process of creating a comprehensive set of user personas for your product.
 
 [Read more about Persona development](/docs/analytics/charts/personas/personas-clustering) 
 

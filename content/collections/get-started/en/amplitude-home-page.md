@@ -14,7 +14,7 @@ In Amplitude, the Home page is where you can get a quick overview on what’s ha
 
 ![](/docs/output/img/get-started/kWIWgPS54_noK-f-M2TS4N-kj1LVqGnB85q7B1hzodWHlzPO4E_SBw4ufbXYmol9-tMhlq-_U1XwnKmZ3-YPzejIi3tv0mTZCyrAqP7wb0m5Oldo0SrC4LSXZGqTquifErTXD6vxqGlDP69HW1_1k2Y.png)
 
-You can go directly to the Home page anytime. Just click the Amplitude logo in the upper-left corner of the screen.
+Click the Amplitude logo at the top-left of the screen to go to the Home page.
 
 Right out of the box, the Home page acts as a dashboard that gives you an immediate understanding of how many users you have, how many are new, where they are, and what they’re doing. Once you get comfortable creating your own analyses in Amplitude, you can replace the included charts with others that make more sense for your organization.
 

@@ -1,7 +1,7 @@
 ---
 id: 1b0ba36a-6b55-40cb-98f8-13931435966d
 blueprint: get-started
-title: 'Cookies and Consent Management'
+title: 'Cookies and consent management'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
@@ -14,11 +14,11 @@ This guide covers functional and technical information on how Amplitude works wi
 The guide covers the behavior with the legacy JavaScript SDK that's the most used client browser SDK with Amplitude Analytics for current Amplitude users. New customers must use the new TypeScript SDK. 
 {{/partial:admonition}}
 
-## Using Amplitude cookies
+## Amplitude cookies
 
-A **“Cookie”** is a piece of data from a website that's stored on a users a web browser that. Websites can retrieve cookies at a later time to access data stored for functional and/or technical purposes. After initialization, the Amplitude SDK creates a cookie that begins with the prefix `AMP_` and ends with this first 10 digits of your project API key. You can customize this prefix with the constant `COOKIE_PREFIX` in the SDK's [constants.js](https://github.com/amplitude/Amplitude-JavaScript/blob/35e2dd3f342614cfb27fcb6455e361595ae222d7/src/constants.js#L36) file. The SDK defines the cookie's value in [amplitude-client.js](https://github.com/amplitude/Amplitude-JavaScript/blob/03c0a890d578db1ada383cf1e6195d71275bac44/src/amplitude-client.js#L121).
+A **“cookie”** is a piece of data from a website stored on a user's web browser. Websites retrieve cookies later, to access data stored for functional or technical purposes. After initialization, the Amplitude SDK creates a cookie that begins with the prefix `AMP_` and ends with this first 10 digits of your project API key. You can customize this prefix with the constant `COOKIE_PREFIX` in the SDK's [constants.js](https://github.com/amplitude/Amplitude-JavaScript/blob/35e2dd3f342614cfb27fcb6455e361595ae222d7/src/constants.js#L36) file. The SDK defines the cookie's value in [amplitude-client.js](https://github.com/amplitude/Amplitude-JavaScript/blob/03c0a890d578db1ada383cf1e6195d71275bac44/src/amplitude-client.js#L121).
 
-For example, if the default value for the prefix is used and you enter the following: 
+For example, if you use the default value for the prefix with the following: 
 
 ```js
 amplitude.getInstance().init("a2dbce0e18dfe5f8e...") 
@@ -28,25 +28,25 @@ The Amplitude Browser 2.0 SDK creates a cookie with the format `AMP_` with the f
 
 ![](statamic://asset::help_center_conversions::get-started/amplitude-cookies.png)
 
-In previous versions of the SDK, you could customize the key for this cookie upon initialization with the initialization option `cookieName`. This is deprecated in the latest versions for the SDK, but if you use older SDK versions, the cookie name may differ from the indicated standard name
+In previous versions of the SDK, you could customize the key for this cookie upon initialization, using the option `cookieName`. This no longer works, but if you use older SDK versions, the cookie name may differ from the indicated standard name
 
-If another cookie appears with the key `amplitude_cookie_test` followed by a suffix of a random base64 string, the cookie is used to test whether the user has cookies enabled, and the SDK should be remove it when the test completes. For more information, see the detail in the SDK's [base-cookie.js](https://github.com/amplitude/Amplitude-JavaScript/blob/main/src/base-cookie.js#L97) file.
+If another cookie appears with the key `amplitude_cookie_test` followed by a suffix of a random base64 string, the cookie is used to test whether the user has cookies enabled, and the SDK should remove it when the test completes. For more information, see the detail in the SDK's [base-cookie.js](https://github.com/amplitude/Amplitude-JavaScript/blob/main/src/base-cookie.js#L97) file.
 
 Sometimes, the SDK may not remove the `amplitude_test_cookie` cookie. In this case, the cookie remains in the cookie list, but isn't used. You can customize the key of this cookie with the `COOKIE_TEST_PREFEX` constant in the SDK's [constants.js](https://github.com/amplitude/Amplitude-JavaScript/blob/35e2dd3f342614cfb27fcb6455e361595ae222d7/src/constants.js#L35) file.
 
 
-The cookie is used to keep track of a few bits of metadata for the SDK:
+The cookie is used to keep track of certain metadata for the SDK:
 
 - `deviceId`: A randomly generated string
-- `userId`: Upon user log-in, if the your instrumentation sends this value to Amplitude, it's stored in the cookie. Amplitude recommends you set this to uniquely identify users. Amplitude encodes this value as Base64 before storing it.
+- `userId`: Upon user log-in, if your app sends this value to Amplitude, it's stored in the cookie. You should set this to uniquely identify users. Amplitude encodes this value as Base64 before storing it.
 - `optOut`: A flag to opt this device out of Amplitude tracking. If this flag is set, Amplitude stores no extra information about the user. 
 - `sessionId`: A randomly generated string for each session
-- `lastEventTime`: Time of the last event, used to decide when to expire and create a new session Id
+- `lastEventTime`: Time of the last event, used to decide when to expire and create a new session ID
 - `eventId`: An incrementing sequence of identifiers used to distinguish events
 - `identifyId`: An incrementing sequence of identifiers used to distinguish identify calls
 - `sequenceNumber`: A sequence number used to order events and identifies and properly sequence them
 
-When the Amplitude JavaScript SDK loads, it checks the cookie to see if it has an Amplitude `device_id` in it (if user is a returning user and the `device_id` was generated in a previous visit). If it finds one, it uses that value. If it doesn't find one (either because it's a new user or the user recently cleared cookies), the SDK randomly generates a `device_id`, and also saves it to the cookie.
+When the Amplitude JavaScript SDK loads, it checks the cookie to see if there is an Amplitude `device_id` (if user is a returning user and generated a `device_id`in a previous visit). If so, it uses that value. If not (either because it's a new user or the user recently cleared cookies), the SDK randomly generates a `device_id`, and also saves it to the cookie.
 
 ### Cookie size
 
@@ -54,7 +54,7 @@ The cookie size can vary, going from a minimum of 60 bytes to some 120 bytes. Kn
 
 ### Expiration time
 
-The Amplitude SDK has a `cookieExpiration` option to allows you to set the number of days a cookie lives. Before SDK version 7.0, the default value was 10 years. After SDK version 7.0, `cookieExperiation` defaults to 1 year. Most browsers limit the lifetime of cookies set using `document.cookie` from 1 to 7 days.
+The Amplitude SDK has a `cookieExpiration` option to allows you to set the number of days until a cookie expires. Before SDK version 7.0, the default value was 10 years. After SDK version 7.0, `cookieExperiation` defaults to one year. Most browsers limit the lifetime of cookies set using `document.cookie` from one to seven days.
 
 ### Remove Amplitude cookies
 
@@ -64,23 +64,23 @@ To programmatically remove the Amplitude cookie, use the method JavaScript SDK's
 
 The following cookie keys are deprecated in the latest SDK versions:
 
-- `amplitude_id_<API_KEY>.your_org_domain`: In previous versions of the Amplitude JavaScript SDK, the cookie key was set by default to `amplitude_id` so it may appear in some projects that use an SDK version prior to 6.0.0. In that case the cookie is set under the key `amplitude_id_<PROJECT_API_KEY>.organization.domain`. 
+- `amplitude_id_<API_KEY>.your_org_domain`: In previous versions of the Amplitude JavaScript SDK, the cookie key was set by default to `amplitude_id`; this may appear in projects that use an SDK version prior to 6.0.0. In that case, the cookie is set under the key `amplitude_id_<PROJECT_API_KEY>.organization.domain`. 
 
 	![](statamic://asset::help_center_conversions::get-started/deprecatedcookies.png)
 
-- `amplitude_test.your_org_domain`: The Amplitude SDK uses this cookie to test more thoroughly if cookies are available. By default, the key is used as `amplitude_cookie_test` but as mentioned above, the SDK should remove this cookie after the test.
+- `amplitude_test.your_org_domain`: The Amplitude SDK uses this cookie to test more thoroughly if cookies are available. By default, the key is used as `amplitude_cookie_test`, but as mentioned above, the SDK should remove this cookie after the test.
 
 ## Disable cookies using LocalStorage (opt-out cookies)
 
-The data inside the cookie is necessary for Amplitude to function correctly. It saves `deviceId`, `sessionId`, and the last event's timestamp. You can set `disableCookies` to `true` in the SDK's [options.js](https://github.com/amplitude/Amplitude-JavaScript/blob/4cbe557a81ca981d03e140bebed6134c49595a5e/src/options.js#L70) file to store this information in a user's Local Storage.
+The cookie contains data necessary for Amplitude to function correctly. It saves `deviceId`, `sessionId`, and the last event's timestamp. You can set `disableCookies` to `true` in the SDK's [options.js](https://github.com/amplitude/Amplitude-JavaScript/blob/4cbe557a81ca981d03e140bebed6134c49595a5e/src/options.js#L70) file to store this information in a user's local storage.
 
 ### Data stored in local storage
 
 Besides the information that managed in the cookie, Amplitude uses this storage to store:
 
-- **Online events**: Controlled by the option `saveEvents` in the SDK's [options.js](https://github.com/amplitude/Amplitude-JavaScript/blob/4cbe557a81ca981d03e140bebed6134c49595a5e/src/options.js#L103) (defaults to `true`), every event sent to Amplitude is stored and then removed upon successful upload. If set to `false`, events may be lost if the user navigates quickly to another page before the events are uploaded.
-- **Offline events**: The number of offline events is managed by the option `savedMaxCount` in the SDK's [options.js](https://github.com/amplitude/Amplitude-JavaScript/blob/4cbe557a81ca981d03e140bebed6134c49595a5e/src/options.js#L102) (defaults to 1000). If Amplitude logs more than 1000 events when offline, the oldest events are removed from the storage.
-Failed events: Any failed event will be stored here to retry.
+- **Online events**: Controlled by the option `saveEvents` in the SDK's [options.js](https://github.com/amplitude/Amplitude-JavaScript/blob/4cbe557a81ca981d03e140bebed6134c49595a5e/src/options.js#L103) (defaults to `true`), Amplitude stores every event sent it receives, and then removes it upon successful upload. If set to `false`, events may be lost if the user navigates quickly to another page before the events are uploaded.
+- **Offline events**: The option `savedMaxCount` in the SDK's [options.js](https://github.com/amplitude/Amplitude-JavaScript/blob/4cbe557a81ca981d03e140bebed6134c49595a5e/src/options.js#L102) manages the number of offline events (defaults to 1000). If Amplitude logs more than 1000 events when offline, the oldest events are removed from the storage.
+Failed events: Any failed event is stored here to retry.
 
 This data is stored in the next keys:
 
@@ -97,31 +97,31 @@ The Amplitude SDK supports cross-site tracking with the `deviceIdFromURLParam` o
 
 The rest of auto captured properties are unaffected by the fact of using LocalStorage instead of cookie you can [refer to this article](/docs/get-started/user-property-definitions) for full detail.
 
-This action disables cookie storage, but Amplitude stores this same data in the user’s browser Local Storage. It's not a valid option for a user that wants to fully opt-out.
+This action disables cookie storage, but Amplitude stores this same data in the user’s browser Local Storage. It's not a valid option for a user that wants to fully opt out.
 
-## Disable cookies and Local Storage / Session Storage (opt-out storage)
+## Disable cookies and local storage / session storage (opt-out storage)
 
-When you disable cookies, and the user disables Local Storage and Session Storage, Amplitude creates a new `device_id` for that user every time the visit your site because it can't find an existing ID. If the user logs in or provides other identifying information during their visit, Amplitude's identity resolution system ties the various `device_id` values together with that user ID. The user must log in on each visit to enable Amplitude to consolidate identifiers.
+When you disable cookies, and the user disables local storage and session storage, Amplitude creates a new `device_id` for that user every time the visit your site because it can't find an existing ID. If the user logs in or provides other identifying information, Amplitude's identity resolution system ties the various `device_id` values together with that user ID. The user must log in on each visit to enable Amplitude to merge identifiers.
 
-## Disabling tracking (opt-out tracking)
+## Disabling tracking (opt out tracking)
 
-Users may wish not only to opt-out of cookies which will prevent Amplitude from storing any data in the cookie, but also opt-out of tracking completely, which means no events and no records of their browsing history will be stored in Amplitude. The Amplitude SDK provides an `optOut` as a way to fulfill this request. To programmatically opt-out of tracking the SDK provides the method `amplitude.setOptOut(true)`.
+Users may wish not only to opt out of cookies, which prevents Amplitude from storing any data in the cookie, but also opt out of tracking completely, which means that Amplitude does not store events or records of their browsing history. The Amplitude SDK provides an `optOut` as a way to fulfill this request. To programmatically opt out of tracking the SDK provides the method `amplitude.setOptOut(true)`.
 
 ### “Do not track” setting on browsers (DNT flag)
 
-Some browsers have a setting “Do not track” that's intended to block all tracking. Amplitude doesn't adhere to this setting. The DNT standard isn’t widely supported and it isn’t clear what it’s meant to disable. If you want to consider that setting, you'll need to write your own code to test for the DNT flag and then set the `optOut` option in the SDK.
+Some browsers have a setting “Do not track” that's intended to block all tracking. Amplitude doesn't adhere to this setting. The DNT standard isn’t widely supported and it isn’t clear what it’s meant to disable. If you want to consider that setting, write your own code to test for the DNT flag and then set the `optOut` option in the SDK.
 
 ## Managing cookie consent
 
-Certain jurisdictions require that end users consent to non-essential cookies before any data is collected. You are ultimately responsible for ensuring that you obtain any necessary consents and make any necessary disclosures for the personal data you collect and send to Amplitude. You're also responsible for determining how you classify the Amplitude cookies in your cookie policy based on your specific use case and the jurisdictions in which you use them.
+Certain jurisdictions require that users consent to non-essential cookies before any data can be collected. You are ultimately responsible for ensuring that you get any necessary consents and make any necessary disclosures for the personal data you collect and send to Amplitude. You're also responsible for determining how you classify the Amplitude cookies in your cookie policy based on your specific use case and the jurisdictions in which you use them.
 
 ![](statamic://asset::help_center_conversions::get-started/consentscreen.png)
 
-If you use the Amplitude SDK in a jurisdiction that requires consent before any non-essential cookies are set, don't initialize SDK until the end user has consented to the use of cookies. This is because the Amplitude functionality (for example, cookie storage, local storage, and tracking events) is enabled or disabled upon SDK initialization.
+If you use the Amplitude SDK in one of these jurisdictions, don't initialize the SDK until the user has consented to your use of cookies. This is because the Amplitude functions (for example, cookie storage, local storage, and tracking events) are enabled or disabled upon SDK initialization.
 
-To allow for this, the JavaScript SDK offers an option called `deferInitialization` (defaults to `null`). If set to `true`, it disables the core functionality of the SDK, including saving a cookie (or anything to the local storage) and all tracking, until explicitly enabled. This allows the SDK instance to load without storage and tracking until you call `amplitude.getInstance().enableTracking()`.
+To allow for this, the JavaScript SDK offers an option called `deferInitialization` (defaults to `null`). If set to `true`, it disables the core function of the SDK, including saving a cookie (or anything to the local storage) and all tracking, until explicitly enabled. The SDK instance loads without storage and tracking until you call `amplitude.getInstance().enableTracking()`.
 
-When you call `amplitude.getInstance().enableTracking()`, the option `deferInitialization` is set to `false` and the cookie is created with the options values you configured, as you can see in the code below in [client.js](https://github.com/amplitude/Amplitude-JavaScript/blob/03c0a890d578db1ada383cf1e6195d71275bac44/src/amplitude-client.js#L2060).
+When you call `amplitude.getInstance().enableTracking()`, the option `deferInitialization` is set to `false` and Amplitude creates the cookie with the options values you configured, as in the code in [client.js](https://github.com/amplitude/Amplitude-JavaScript/blob/03c0a890d578db1ada383cf1e6195d71275bac44/src/amplitude-client.js#L2060):
 
 ```js
 /**
@@ -160,15 +160,15 @@ var _saveCookieData = function _saveCookieData(scope) {
  };
 ```
 
-This doesn't affect users who have an Amplitude cookie. As you can see in the code below from [amplitude-client.js](https://github.com/amplitude/Amplitude-JavaScript/blob/03c0a890d578db1ada383cf1e6195d71275bac44/src/amplitude-client.js#L140), because that means that, at some point, the user provided consent, allowing the cookie to be created. To opt that user out of tracking, you must remove any amplitude cookies that were previously set for that user.
+This doesn't affect users who have an Amplitude cookie, as shown in the code from [amplitude-client.js](https://github.com/amplitude/Amplitude-JavaScript/blob/03c0a890d578db1ada383cf1e6195d71275bac44/src/amplitude-client.js#L140): at some point, the user provided consent, which is all Amplitude needed to create the cookie legitimately. To opt that user out of tracking, you must remove any amplitude cookies that were already set for that user.
 
-The decision to track events is determined by if a user has an Amplitude Analytics cookie. For users that have an Amplitude Analytics cookie, consider the following:
+The presence of an Amplitude Analytics cookie is what determines whether Amplitude tracks a user's events. For users that have one, consider the following:
 
-1. If the you manually define `cookieExpiration` to be a short lifespan, you may need to run `amplitude.getInstance().enableTracking()` upon the Amplitude Analytics cookie expiration or user log in.
+1. If you manually define `cookieExpiration` to be a short lifespan, you may need to run `amplitude.getInstance().enableTracking()` when the Amplitude Analytics cookie expires, or when the user logs in.
 
-2. If the user removes all the cookies, they will likely be shown the consent banner again the next time they visit the site/app. Since there won’t be any Amplitude Analytics cookie yet set, the flow will go as indicated: the initialization of storage and tracking options will wait if using `deferInitialization = true`.
+2. If the user removes all cookies, they should see the consent banner again the next time they visit your app. Since there won’t be any Amplitude Analytics cookie yet set, the flow will go as described earlier, and the initialization of storage and tracking options will wait if using `deferInitialization = true`.
 
-3. If the user consented to the Amplitude Analytics cookie at some point in the past, and the given consent has expired because of any reason (website cookie deletion, consent tracking expired), the user will be prompted for consent again. If the user declines the consent, the Amplitude Analytics cookie must explicitly be removed, otherwise it will continue to collect the user’s information regardless of the consent declination.
+3. If the user consented to the Amplitude Analytics cookie at some point in the past, and that consent has expired for any reason (website cookie deletion, consent tracking expired), Amplitude will prompt the user for consent again. If the user declines, the Amplitude Analytics cookie **must** explicitly be removed. Otherwise, it will continue to collect the user’s information, this time against their will.
 
 ## Getting the SDK initialization options per project
 
@@ -178,13 +178,13 @@ From any site that uses Amplitude JavaScript SDK, you can know which initializat
 amplitude.getInstance().options
 ```
 
-You'll see the options displayed alongside their values. For example, on amplitude.com you'll see the following:
+Options are displayed alongside their values. For example, on amplitude.com you may see the following:
 
 ![](statamic://asset::help_center_conversions::get-started/initializationsdkoptions.png)
 
-### API options in “Amplitude Event Explorer” Chrome extension
+### API options in Amplitude Event Explorer Chrome extension
 
-If you use the Amplitude Event Explorer Chrome extension, you can access the initialization options values in the “API Options” tab by first selecting which project (API key) you want to see the options for:
+If you use the Amplitude Event Explorer Chrome extension, you can access the initialization options values in the “API Options” tab by first selecting the project you're interested in:
 
 ![](statamic://asset::help_center_conversions::get-started/pluginapioptions.png)
 
@@ -192,7 +192,7 @@ If the Amplitude object instance isn't stored in the `window` object, it won’t
 
 ![](statamic://asset::help_center_conversions::get-started/nooptionspermission.png)
 
-The error in the console will be as displayed in the following image:
+The error in the console appears like this:
 
 ![](statamic://asset::help_center_conversions::get-started/nooptionspermissionerror.png)
 
@@ -202,17 +202,17 @@ This table gives a brief overview of each option related to storage.
 
 | Option                 | Default Value                            | Definition                                                                                                                                                                                                                                                                                            |
 | ---------------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `cookieExpiration`     | 365                                      | The number of days after which the Amplitude cookie will expire. The default 12 months is for GDPR compliance.                                                                                                                                                                                        |
+| `cookieExpiration`     | 365                                      | The number of days after which the Amplitude cookie expires. The default 12 months is for GDPR compliance.                                                                                                                                                                                        |
 | `cookieForceUpgrade`   | False                                    | Forces SDK pre-v6.0.0 instances to adopt SDK post-v6.0.0 compatible cookie formats.                                                                                                                                                                                                                   |
-| `deferInitialization`  | Null                                     | If *`true`*, disables the core functionality of the SDK, including saving a cookie and all logging, until explicitly enabled by calling *`amplitude.getInstance().enableTracking()`*                                                                                                                  |
-| `deviceIdFromUrlParam` | False                                    | If *`true`*, then the SDK will parse Device ID values from the URL parameter amp_device_id if available. This is useful for cross-domain tracking. Device IDs defined in the configuration options during init will take priority over Device IDs from URL parameters.                                |
+| `deferInitialization`  | Null                                     | If *`true`*, disables the core functions of the SDK, including saving a cookie and all logging, until explicitly enabled by calling *`amplitude.getInstance().enableTracking()`*                                                                                                                  |
+| `deviceIdFromUrlParam` | False                                    | If *`true`*, the SDK parses device ID values from the URL parameter amp_device_id if available. This is useful for cross-domain tracking. Device IDs defined in the configuration options during init take priority over device IDs from URL parameters.                                |
 | `disableCookie`        | False                                    | Disable Amplitude cookies altogether.                                                                                                                                                                                                                                                                 |
 | `domain`               | The top domain of the current page's URL | Set a custom domain for the Amplitude cookie. To include subdomains, add a preceding period, for example: *`.amplitude.com`*.                                                                                                                                                                                  |
 | `optOut`               | False                                    | Disable tracking for the current user.                                                                                                                                                                                                                                                                |
 | `sameSiteCookie`       | None                                     | Sets the SameSite flag on the amplitude cookie. Decides cookie privacy policy.                                                                                                                                                                                                                        |
-| `saveEvents`           | True                                     | If `true`, it saves events to Local Storage and removes them upon successful upload. **Note.-** Without saving events, those may be lost if the user navigates to another page before the events are uploaded.                                                                                        |
+| `saveEvents`           | True                                     | If `true`, it saves events to local storage and removes them upon successful upload. **Note.-** Without saving events, those may be lost if the user navigates to another page before the events are uploaded.                                                                                        |
 | `savedMaxCount`        | 1000                                     | Maximum number of events to save in Local Storage. If more events are logged while offline, then old events are removed.                                                                                                                                                                              |
-| `secureCookie`         | False                                    | If `true`, the amplitude cookie will be set with the Secure flag. The secure flag is an additional flag for letting the browser send this cookie only when on encrypted HTTPS transmissions. This ensures that your cookie isn't visible to an attacker in, for instance, a man-in-the-middle attack. |
+| `secureCookie`         | False                                    | If `true`, the Amplitude cookie is set with the Secure flag. The secure flag lets the browser send this cookie only when on encrypted HTTPS transmissions. This ensures that your cookie isn't visible to an attacker in, for instance, a man-in-the-middle attack. |
 | `unsentIdentifyKey`    | amplitude_unsent_identify                | *`localStorage`* key that stores unsent identifies.                                                                                                                                                                                                                                                   |
 | `unsetKey`             | amplitude_unsent                         | *`localStorage`* key that stores unsent events.                                                                                                                                                                                                                                                       |
 
@@ -228,7 +228,7 @@ The abstraction layer for storage and available options as well as the metadata 
 - [localstorage.js](https://github.com/amplitude/Amplitude-JavaScript/blob/master/src/localstorage.js)
 - [metadata-storage.js](https://github.com/amplitude/Amplitude-JavaScript/blob/master/src/metadata-storage.js)
 
-As indicated, the options are set on initialization; regarding the cookie and metadata storage this action happens in the method Init for the Amplitude client:
+As indicated, the options are set on initialization; for cookie and metadata storage, this happens in the method Init for the Amplitude client:
 
 - [amplitude-client.js](https://github.com/amplitude/Amplitude-JavaScript/blob/master/src/amplitude-client.js)
 
@@ -271,60 +271,59 @@ const hasCookie = hasNewCookie || hasOldCookie;
 
 
 {{partial:collapse name="Are Amplitude's cookies first-party or third-party cookies?"}}
-**Amplitude uses first-party cookies**. From a technical standpoint there’s no intrinsic difference between first-party and third-party cookies. The distinction is related to:
+**Amplitude uses first-party cookies**. From a technical standpoint, there’s no difference between first-party and third-party cookies. The distinction is related to:
 
 1. The context of a particular visit.
 2. Who creates the cookie.
 
-Every cookie has an owner, this is, a domain defined in the cookie:
+Every cookie has an owner, which is the domain defined in the cookie:
 
-- **First-party cookies** are issued by a website that a user views directly. So, if a user lands on a website – for example, fit.amplitude.com – then this site creates a cookie which is then saved on the user’s computer. 
-This is the case for Amplitude. When a customer decides to use on their website our JS SDK for the tracking, it is this customer and this website the one who is directly creating the cookie that is stored in the visitor’s computer. 
+- **First-party cookies** are issued by a website that a user views directly. If a user lands on a website–for example, fit.amplitude.com–this site creates a cookie which is then saved on the user’s computer. 
+This is how Amplitude works. When a customer decides to add the Amplitude JS SDK to their website, the customer (through their website) is the one who directly creates the cookie stored in the visitor’s computer. 
 
-- **Third-party cookies** are not created by the website being visited, but rather by someone else. Let’s say you’re visiting fit.amplitude.com, and this site uses YouTube videos for the virtual non-live classes. In this case, it will be YouTube who is setting a cookie which is then saved on the user’s computer.
+- **Third-party cookies** are not created by the website being visited, but by someone else. Imagine you’re visiting fit.amplitude.com, and the site uses YouTube videos for virtual non-live classes. In this case, it's YouTube who's setting the cookie that is saved on the user’s computer.
 
-What is happening in this case is that the website owner is embedding pieces of code, provided by YouTube, for the videos to play directly in fit.amplitude.com. When that YouTube code is executed in the browser, or the video is loaded, YouTube can track the player and put data in its cookies. As a result, the cookie is classified as a third-party cookie, because it’s created by a different domain than fit.amplitude.com / amplitude.com
+What's happening in this case is that the website owner embeds pieces of code, provided by YouTube, for the videos to play directly in fit.amplitude.com. When that YouTube code executes in the browser, or the video loads, YouTube can track the player and put data in its cookies. This is why the cookie qualifies as a third-party cookie-because it’s created by a different domain than fit.amplitude.com / amplitude.com
 {{/partial:collapse}}
 
 {{partial:collapse name="Will Google Chrome’s plan to remove third party cookies affect Amplitude?"}}
-**No**, as previously indicated, **Amplitude is not a third-party cookie**. Amplitude customers add Amplitude to their website/bundle themselves and Amplitude sets it in their own bundled code through document.cookie, so Amplitude has the privilege of a first-party cookie.
+**No**-as stated above, **Amplitude is not a third-party cookie**. Amplitude customers add Amplitude to their website/bundle themselves and Amplitude sets it in their own bundled code through document.cookie, so Amplitude has the privileges of a first-party cookie.
 {{/partial:collapse}}
 
+{{partial:collapse name="Why aren't Amplitude cookies marked as `HttpOnly`?"}}
+It doesn’t make sense for Amplitude's cookies to be HttpOnly; the point of that option is so that document.cookie can’t read those cookies (since they’d only be used in the client-server communication). But the point of Amplitude's cookies is the opposite: Amplitude **wants** to persist data specifically in their browser and to rest in document.cookies, Amplitude can’t read from their server because Amplitude is client-side code.
 
-{{partial:collapse name="Why aren't Amplitude cookies marked as `HTTPOnly`?"}}
-It doesn’t really make sense for Amplitude's cookies to be HTTPOnly; the point of that option is so that document.cookie can’t read those cookies (since they’d only be used in the client-server communication). But the point of Amplitude's cookies is the opposite: Amplitude wants to persist data specifically in their browser and be put in document.cookies, Amplitude can’t read from their server because Amplitude is client-side code.
+If you're concerned that this renders the Amplitude cookie vulnerable to authentication information theft, you shouldn't be. Amplitude stores no authentication information in that cookie, so there's no danger of a XSS attack. The worst thing an attacker could do is steal Amplitude's cookie and take that user’s device ID and user ID, which shouldn’t be PII to be begin with.
 
-The concerns of having Amplitude's cookie be not HTTPOnly aren't aligned with the fact of stealing authentication information: Amplitude has no authentication information in that cookie so Amplitude isn't in danger of a XSS attack. The worst thing an attacker could do is steal Amplitude's cookie and take that user’s device ID and user ID, which shouldn’t be PII to be begin with.
-
-Nonetheless, if this is a serious concern for the customer, they should probably disable Amplitude's cookies.
+Nonetheless, if this is a serious concern for you, then you should probably disable Amplitude's cookies.
 {{/partial:collapse}}
 
 {{partial:collapse name="Why aren't Amplitude's cookies marked as secure?"}}
-The secure flag is an additional flag for letting the browser **send the cookie only when on encrypted HTTPS transmissions**. This ensures that your cookie is not visible to an attacker in, for instance, a man-in-the-middle attack. Amplitude has no authentication information in that cookie nor any type of sensitive information, so Amplitude isn't in danger of a XSS attack not needing to set the cookie as secure by default. Again, the worst thing an attacker could do is steal Amplitude's cookie and take that user’s device ID and user ID.
+The secure flag lets the browser **send the cookie only when on encrypted HTTPS transmissions**. This ensures that your cookie isn't visible to an attacker in, for instance, a man-in-the-middle attack. Amplitude has no authentication information in that cookie nor any type of sensitive information, so Amplitude isn't in danger of a XSS attack. Again, the worst thing an attacker could do is steal Amplitude's cookie and take that user’s device ID and user ID.
 
-Based on those premises, Amplitude doesn't consider this as a security vulnerability.
+For these reasons, Amplitude doesn't consider this as a security vulnerability.
 {{/partial:collapse}}
 
-{{partial:collapse name="Will cookies cause unsent events to send to a project with a different API key"}}
-No, the SDK versions later than 4.0.0 scope with the API key all events stored in the unsent keys (local storage) so if a product changes the project (or its API key) it's sending the events to, those old events won’t reach the new project.
+{{partial:collapse name="Will cookies cause unsent events to send to a project with a different API key?"}}
+No-the SDKs later than version 4.0.0 all scope with the API key events stored in the unsent keys (local storage) so if a product changes the project (or its API key) it's sending the events to, those old events won’t reach the new project.
 
-In SDK versions prior to 4.0.0, this wasn’t the case, and the events didn’t consider the API Key when queued to be retried. If the product is still using an old SDK version, the old unsent events remaining in local storage reach the new project the moment the connection with Amplitude runs again. A way that might mitigate this problem in the case the customer can’t upgrade to a newer SDK version is to use an instance name for the project instead of using the default project. Like this to instantiate the Amplitude client:  `amplitude.getInstance(‘ProjectName’).init("API_KEY")`, and like this to log any event: 
-`amplitude.getInstance(ProjectName).logEvent()`.{{/partial:collapse}}
+In SDK versions prior to 4.0.0, this wasn’t the case; the events didn’t consider the API Key when queued for retry. If the product is still using an old SDK version, the old unsent events remaining in local storage reach the new project the moment the connection with Amplitude runs again. To mitigate this problem if you can’t upgrade to a newer SDK version, try using an instance name for the project instead of using the default project. Like this to instantiate the Amplitude client:  `amplitude.getInstance(‘ProjectName’).init("API_KEY")` and like  this to log any event: `amplitude.getInstance(ProjectName).logEvent()` 
+{{/partial:collapse}}
 
 {{partial:collapse name="How do you integrate with third-party Consent Management Platfoms?"}}
-A consent management platform (CMP) is a technology that websites/applications can use to manage legal consent from users to collect and process their personal data through cookies and other trackers in operation on the domain as may be required by applicable privacy laws, such as GDPR, CCPA and ePrivacy. Some examples of these tools are OneTrust, Axeptio or Responsum.
+Websites and applications can use a consent management platform (CMP) to manage legal consent from users around collecting and processing their personal data through any cookies and other trackers operating on the domain, as may be required by applicable privacy laws, such as GDPR, CCPA and ePrivacy. Some examples of these tools are OneTrust, Axeptio or Responsum.
 
-At the time of writing this document, Amplitude doesn't have a default integration with any of these tools. Therefore, the customer must configure their CMP to pass  the outcome of the consent to the Amplitude SDK, so that any end user that has not provided consent or has revoked consent (depending on the end user’s jurisdiction) will be opted out of tracking by the Amplitude SDK. That signal must be received by the SDK as implemented on the customer’s site/application to execute (if consent is accepted) the method *`amplitude.getInstance().enableTracking()`* while using the SDK deferred initialization as indicated in the section [**“Managing Cookie Consent”**](#managing-cookie-consent).
+At the time of this writing, Amplitude doesn't have a default integration with any of these tools. You must configure your CMP to pass the outcome of the consent to the Amplitude SDK, so that any end user who hasn't provided consent or who has revoked consent (depending on the end user’s jurisdiction) is opted out of tracking by the Amplitude SDK. That signal must be received by the SDK as implemented on the customer’s site or application to execute the method *`amplitude.getInstance().enableTracking()`* while using the SDK deferred initialization as described in [**“Managing Cookie Consent”**](#managing-cookie-consent).
 {{/partial:collapse}}
 
 {{partial:collapse name="Can I use OneTrust with Amplitude to stay GDPR compliant?"}}
-Yes, you can use Amplitude with a CMP, like OneTrust, in a GDPR compliant manner. However, to ensure compliance, implement Amplitude in a way that meets their compliance needs. Amplitude can't direct customers on how to classify the Amplitude SDK/cookies. Your privacy and legal teams should assess based on the data being collected. However, most customers, including in the EU, classify Amplitude cookies as Performance/Analytics cookies. 
+Yes, you can use Amplitude with a CMP, like OneTrust, in a GDPR-compliant manner. Amplitude can't direct you on how to classify the Amplitude SDK/cookies. Instead, your privacy and legal teams should make this assessment based on the data you're coillecting. However, most customers, including in the EU, classify Amplitude cookies as Performance/Analytics cookies.
 
-Additionally, customers may choose to implement via a server side integration, therefore bypassing Amplitude’s cookies from the SDK. However, customers who integrate via a server side integration will still be responsible for ensuring that they obtain any necessary consents and make any necessary disclosures for the personal data they collect and send to Amplitude. 
+Customers may also choose to implement via a server side integration, therefore bypassing Amplitude’s cookies from the SDK. However, customers who integrate via a server side integration are still responsible for ensuring that they get any necessary consents and make any necessary disclosures for the personal data they collect and send to Amplitude. 
 {{/partial:collapse}}
 
-{{partial:collapse name="When a user is opted-out, how can I opt them in again?"}}
-Besides the method `amplitude.getInstance().enableTracking()` discussed before, once a user is opted-out,  you can opt them in programmatically by calling the method `amplitude.setOptOut(false)`. This sets the option `optOut` to `false`, re-setting the cookie with the new options and enabling the tracking. You can find the following code in the amplitude client:
+{{partial:collapse name="When a user opts out, how can I opt them in again?"}}
+Besides the method `amplitude.getInstance().enableTracking()` discussed before, once a user is opted out,  you can opt them in programmatically by calling the method `amplitude.setOptOut(false)`. This sets the option `optOut` to `false`, re-setting the cookie with the new options and enabling the tracking. You can find the following code in the amplitude client:
 
 ```js
 /**
@@ -364,7 +363,7 @@ FAQs related to CNIL aren't intended as legal or regulatory advice and don't con
 The CNIL maintains a list of services which can be used under the exemption. However, any use of an analytics service under the CNIL exemption is subject to the following limitations:
 
 1. **Analytics cookies can ONLY** be placed without asking for user consent if they **only collect anonymous statistical data for audience measurement** (overall traffic, page views). 
-2. **It doesn't mean a customer can collect ALL data** about a user for analysis.
+2. **This doesn't mean a customer can collect ALL data** about a user for analysis.
 3. Under the exemption, **customers can't use or create “user” analyses**.
 {{/partial:collapse}}
 
