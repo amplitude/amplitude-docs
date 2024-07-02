@@ -4,8 +4,8 @@ blueprint: get-started
 title: 'Cookies and Consent Management'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1719503768
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1719952775
 source: 'https://docs.developers.amplitude.com/guides/cookies-consent-mgmt-guide/'
 ---
 This guide covers functional and technical information on how Amplitude works with cookies, local storage, opt-in/opt-out options and consent management (including CNIL regulations for France).  
@@ -26,7 +26,7 @@ amplitude.getInstance().init("a2dbce0e18dfe5f8e...")
 
 The Amplitude Browser 2.0 SDK creates a cookie with the format `AMP_` with the first 10 characters of your project's API Key appended.
 
-![](statamic://asset::help_center_conversions::get-started/amplitudecookies.png)
+![](statamic://asset::help_center_conversions::get-started/amplitude-cookies.png)
 
 In previous versions of the SDK, you could customize the key for this cookie upon initialization with the initialization option `cookieName`. This is deprecated in the latest versions for the SDK, but if you use older SDK versions, the cookie name may differ from the indicated standard name
 
