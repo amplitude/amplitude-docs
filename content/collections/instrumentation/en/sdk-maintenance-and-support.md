@@ -17,28 +17,6 @@ version_support_matrix:
     enabled: true
     icon: icons/terminal.svg
   -
-    id: lxz4pg5i
-    name: Amplitude-Android
-    article: 9f4dcd07-e262-4c9b-b841-ebb721d37a6d
-    version: '1.x - 2.x'
-    phase: Maint
-    ga_date: '2023-06-14'
-    type: sdk_tool
-    enabled: true
-    icon: icons/android-sm.svg
-    maintenance_date: '2023-06-14'
-  -
-    id: lxz8z7lp
-    name: Amplitude-Android
-    article: 9f4dcd07-e262-4c9b-b841-ebb721d37a6d
-    version: 3.x
-    phase: EOS
-    ga_date: '2021-12-16'
-    notes: 'Bad release (3.35.1)'
-    type: sdk_tool
-    enabled: true
-    icon: icons/android-sm.svg
-  -
     id: lxz8vcmy
     article: 4e6f43a0-1f71-4b9d-9193-f45500b42188
     icon: icons/android-sm.svg
@@ -49,27 +27,6 @@ version_support_matrix:
     type: sdk_tool
     enabled: true
   -
-    id: lxz92u57
-    article: 8471af8b-e132-4073-8330-d5dd7bbbd8ae
-    icon: icons/ts-small.svg
-    name: Amplitude-TypeScript
-    version: 1.x
-    phase: Maint
-    ga_date: '2023-06-29'
-    type: sdk_tool
-    enabled: true
-  -
-    id: lxz9gxwj
-    article: 25904c6b-609d-4365-9660-2782ef50d52d
-    icon: icons/ts-small.svg
-    name: Amplitude-TypeScript
-    version: 1.x
-    phase: Maint
-    ga_date: '2023-06-29'
-    notes: 'Replaced by Browser 2.0'
-    type: sdk_tool
-    enabled: true
-  -
     id: lxz9jmj7
     article: 00d74a7b-23bd-4a24-86a1-92c046e7e1b5
     icon: icons/ts-small.svg
@@ -77,16 +34,6 @@ version_support_matrix:
     version: 2.x
     phase: GA
     ga_date: '2023-06-14'
-    type: sdk_tool
-    enabled: true
-  -
-    id: lxz9lrkx
-    article: e6b6889d-9d39-4f04-89a1-87f78db80f49
-    icon: icons/js-sm.svg
-    name: Amplitude-JavaScript
-    version: '1.x - 8.x'
-    phase: Maint
-    ga_date: '2023-06-29'
     type: sdk_tool
     enabled: true
   -
@@ -130,16 +77,6 @@ version_support_matrix:
     type: sdk_tool
     enabled: true
   -
-    id: lxzbdqbi
-    article: 6f2a3532-cb82-4114-9d9a-4e0d8de49fff
-    icon: icons/google.svg
-    name: amplitude-gtm-template
-    version: 1.x
-    phase: Maint
-    ga_date: '2022-11-13'
-    type: sdk_tool
-    enabled: true
-  -
     id: ly3cr18y
     article: 81b1c47d-3e5a-4c16-8f16-6ef65c3959a4
     icon: icons/go-sm.svg
@@ -147,16 +84,6 @@ version_support_matrix:
     version: 1.x
     phase: GA
     ga_date: '2023-02-09'
-    type: sdk_tool
-    enabled: true
-  -
-    id: ly3cx13u
-    article: 6d713118-1088-470d-bfe7-847fbb372ba8
-    icon: icons/ios.svg
-    name: Amplitude-iOS
-    version: '1.x - 8.x'
-    phase: Maint
-    ga_date: '2023-10-17'
     type: sdk_tool
     enabled: true
   -
@@ -177,16 +104,6 @@ version_support_matrix:
     version: 1.x
     phase: GA
     ga_date: '2021-06-15'
-    type: sdk_tool
-    enabled: true
-  -
-    id: ly3d8y0m
-    article: e3b9838b-8d35-49d8-ba91-5a0840cbc603
-    icon: icons/node-sm.svg
-    name: Amplitude-Node
-    version: 1.x
-    phase: Maint
-    ga_date: '2022-12-10'
     type: sdk_tool
     enabled: true
   -
@@ -220,16 +137,6 @@ version_support_matrix:
     type: sdk_tool
     enabled: true
   -
-    id: ly3dopax
-    article: 7cab1dd1-18ad-4940-9379-ed2954c9afd3
-    icon: icons/react-sm.svg
-    name: Amplitude-ReactNative
-    version: 2.x
-    phase: Maint
-    ga_date: '2023-02-02'
-    type: sdk_tool
-    enabled: true
-  -
     id: ly3dshpr
     article: 9dc79fa3-30b2-4f67-954e-f03433c6cdbd
     icon: icons/unity-sm.svg
@@ -249,8 +156,101 @@ version_support_matrix:
     enabled: true
     phase: Beta
     ga_date: '2021-03-24'
+  -
+    id: lxz4pg5i
+    name: Amplitude-Android
+    article: 9f4dcd07-e262-4c9b-b841-ebb721d37a6d
+    version: '1.x - 2.x'
+    phase: Maint
+    ga_date: '2023-06-14'
+    type: sdk_tool
+    enabled: true
+    icon: icons/android-sm.svg
+    maintenance_date: '2023-06-14'
+  -
+    id: lxz8z7lp
+    name: Amplitude-Android
+    article: 9f4dcd07-e262-4c9b-b841-ebb721d37a6d
+    version: 3.x
+    phase: EOS
+    ga_date: '2021-12-16'
+    notes: 'Bad release (3.35.1)'
+    type: sdk_tool
+    enabled: true
+    icon: icons/android-sm.svg
+  -
+    id: lxz92u57
+    article: 8471af8b-e132-4073-8330-d5dd7bbbd8ae
+    icon: icons/ts-small.svg
+    name: Amplitude-TypeScript
+    version: 1.x
+    phase: Maint
+    ga_date: '2023-06-29'
+    type: sdk_tool
+    enabled: true
+  -
+    id: lxz9lrkx
+    article: e6b6889d-9d39-4f04-89a1-87f78db80f49
+    icon: icons/js-sm.svg
+    name: Amplitude-JavaScript
+    version: '1.x - 8.x'
+    phase: Maint
+    ga_date: '2023-06-29'
+    type: sdk_tool
+    enabled: true
+  -
+    id: ly3dopax
+    article: 7cab1dd1-18ad-4940-9379-ed2954c9afd3
+    icon: icons/react-sm.svg
+    name: Amplitude-ReactNative
+    version: 2.x
+    phase: Maint
+    ga_date: '2023-02-02'
+    type: sdk_tool
+    enabled: true
+  -
+    id: lxzbdqbi
+    article: 6f2a3532-cb82-4114-9d9a-4e0d8de49fff
+    icon: icons/google.svg
+    name: amplitude-gtm-template
+    version: 1.x
+    phase: Maint
+    ga_date: '2022-11-13'
+    type: sdk_tool
+    enabled: true
+  -
+    id: lxz9gxwj
+    article: 25904c6b-609d-4365-9660-2782ef50d52d
+    icon: icons/ts-small.svg
+    name: Amplitude-TypeScript
+    version: 1.x
+    phase: Maint
+    ga_date: '2023-06-29'
+    notes: 'Replaced by Browser 2.0'
+    type: sdk_tool
+    enabled: true
+  -
+    id: ly3cx13u
+    article: 6d713118-1088-470d-bfe7-847fbb372ba8
+    icon: icons/ios.svg
+    name: Amplitude-iOS
+    version: '1.x - 8.x'
+    phase: Maint
+    ga_date: '2023-10-17'
+    type: sdk_tool
+    enabled: true
+  -
+    id: ly3d8y0m
+    article: e3b9838b-8d35-49d8-ba91-5a0840cbc603
+    icon: icons/node-sm.svg
+    name: Amplitude-Node
+    version: 1.x
+    phase: Maint
+    ga_date: '2022-12-10'
+    type: sdk_tool
+    enabled: true
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1719863174
+updated_at: 1719941719
 ---
 ## Overview
 
