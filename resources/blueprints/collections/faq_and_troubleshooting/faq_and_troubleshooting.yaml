@@ -27,3 +27,20 @@ tabs:
               type: text
               display: source
               localizable: false
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - faq_and_troubleshooting
+              max_items: 1
+              listable: false
+              localizable: true
+  landing_page:
+    display: 'Landing Page'
+    sections:
+      -
+        display: 'New Section'
+        fields:
+          -
+            import: article_common

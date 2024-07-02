@@ -10,8 +10,10 @@ landing_blurb: 'Count and filter events to understand user behavior'
 icon: icons/features/icon-segmentation.svg
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718056655
+updated_at: 1719944337
 template: landing-page
 current-collection: event-segmentation
 hide_helpful: true
+faq_link:
+  - b4246de7-7e38-476c-86bd-b28e13443ba5
 ---

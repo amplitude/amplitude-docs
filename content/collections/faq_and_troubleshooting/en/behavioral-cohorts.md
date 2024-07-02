@@ -4,8 +4,10 @@ blueprint: faq_and_troubleshooting
 title: 'Behavioral cohorts'
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/4402840043789'
 category: recommendation
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1719857305
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1719951122
+landing: true
+landing_blurb: 'See what other people ask about Behavioral Cohorts'
 ---
 This article covers some frequently asked questions about [Behavioral Cohorts](/docs/analytics/behavioral-cohorts).
 

@@ -10,8 +10,10 @@ landing_blurb: 'Determine clusters of users by grouping those that behave in a s
 icon: icons/features/icon-personas.svg
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717090876
+updated_at: 1719944471
 template: landing-page
 current-collection: personas
 hide_helpful: true
+faq_link:
+  - 95892000-ec56-4eb0-bd92-f45a49bb51e3
 ---
