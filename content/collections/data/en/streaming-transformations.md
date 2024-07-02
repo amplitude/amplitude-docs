@@ -8,7 +8,7 @@ Amplitude now provides customers with the ability to stream pre-existing transfo
 
 ## Feature availability
 
-This feature is available with **Amplitude paid plans only**. You will need to be on a PLUS/Growth/Enterprise plan in order to create the corresponding transformations in Amplitude before streaming it out. See the [pricing page](https://Amplitude.com/pricing) for details.
+This feature is available with **Amplitude paid plans only**.  You need to be on a PLUS/Growth/Enterprise plan to create the corresponding transformations in Amplitude before streaming it out. See the [pricing page](https://Amplitude.com/pricing) for details.
 
 ## Setup
 
@@ -25,8 +25,8 @@ This feature is available with **Amplitude paid plans only**. You will need to b
 
 ## Example Use cases
 
-1. **Example 1:** A company streams events to AppsFlyer, which requires unique event names for attribution and doesn’t understand event properties. This meant the company had to create custom events in the backend and resend them to Amplitude CDP. With our new feature, the company can now use Amplitude Data to rename their events before sending them to AppsFlyer. This streamlines their process, reducing duplicate ingestions and optimizing event volume.
-2. **Example 2:** A company wants to stream derived properties from Amplitude to Braze to improve their campaign effectiveness. Now, they can select derived properties in sync filters and include them when sending additional properties. This means they can run more targeted and efficient campaigns using the enriched event data from Amplitude.
+1. **Example 1:** If you stream events to AppsFlyer, which requires unique event names for attribution and doesn’t understand event properties, you previously had to create custom events in the backend and resend them to Amplitude CDP. With our new feature, you can now use Amplitude Data to rename your events before sending them to AppsFlyer. This streamlines your process, reducing duplicate ingestions and optimizing event volume.
+2. **Example 2:** If you want to stream derived properties from Amplitude to Braze to improve your campaign effectiveness, you can now select derived properties in sync filters and include them when sending additional properties. This means you can run more targeted and efficient campaigns using the enriched event data from Amplitude.
 
 ## Considerations
 
@@ -34,7 +34,7 @@ Keep these things in mind when streaming transformations from Amplitude
 
 * You must enable this integration in each Amplitude project you want to use it in.
 * Amplitude sends selected event and user properties along with the event.
-* Amplitude targets an end-to-end p95 latency of 60s. This means 95% of Events streamed deliver to HubSpot within 60s or less. Amplitude has internal processes, monitors, and alerts in place to meet this target.
+* Amplitude targets an end-to-end p95 latency of 60s. This means 95% of Events streamed from Amplitude within 60s or less. Amplitude has internal processes, monitors, and alerts in place to meet this target.
 
 ## Limitations
 
@@ -55,15 +55,15 @@ Please email integrations@Amplitude.com with your Organization ID if you're inte
 
 
 {{partial:collapse name="Will this impact my event volume streaming limit?"}}
-Yes, this will count towards your existing event streaming volume limit. Check your Event streaming limit by navigating to the Settings page and clicking on Plans & Billing. 
+Yes, this will count towards your existing event streaming volume limit. Check your event streaming limit by navigating to the Settings page and clicking on Plans & Billing.
 {{/partial:collapse}}
 
 
-{{partial:collapse name="Can I select both the raw event/property in the event streaming drop down??"}}
-Customers should be allowed to use both for their streaming sync. For example if three event types are merged into one, there would be 4 event types in the selection dropdown.
+{{partial:collapse name="Can I select both the raw event/property in the event streaming drop down?"}}
+You should be allowed to use both for your streaming sync. For example, if three event types are merged into one, there would be four event types in the selection dropdown.
 {{/partial:collapse}}
 
 
-{{partial:collapse name="How are custom events and transformed properties handled during streaming"}}
+{{partial:collapse name="How are custom events and transformed properties handled during streaming?"}}
 Custom events and transformed properties are handled according to the configurations set in your Amplitude Data taxonomy. The transformations are applied before the data is streamed to the destination.
 {{/partial:collapse}}
