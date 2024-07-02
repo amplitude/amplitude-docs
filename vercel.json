@@ -122,7 +122,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/analytics/plan-your-setup",
+      "source": "/docs/analytics/plan-your-set-up",
       "destination": "/docs/get-started/plan-your-implementation",
       "statusCode": 301
     },
