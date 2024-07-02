@@ -8,7 +8,7 @@ Amplitude now provides customers with the ability to stream pre-existing transfo
 
 ## Feature availability
 
-This feature is available with **Amplitude paid plans only**.  You need to be on a PLUS/Growth/Enterprise plan to create the corresponding transformations in Amplitude before streaming it out. See the [pricing page](https://Amplitude.com/pricing) for details.
+This feature is available with **Amplitude paid plans only**. You need to be on a PLUS/Growth/Enterprise plan to create the corresponding transformations in Amplitude before streaming it out. See the [pricing page](https://Amplitude.com/pricing) for details.
 
 ## Setup
 
@@ -30,7 +30,7 @@ This feature is available with **Amplitude paid plans only**.  You need to be on
 
 ## Considerations
 
-Keep these things in mind when streaming transformations from Amplitude
+Keep these things in mind when streaming transformations from Amplitude:
 
 * You must enable this integration in each Amplitude project you want to use it in.
 * Amplitude sends selected event and user properties along with the event.
@@ -40,13 +40,13 @@ Keep these things in mind when streaming transformations from Amplitude
 
 There are some limitations when streaming transformations from Amplitude:
 
-* Customers cannot stream **lookup properties** directly. Lookup properties allow customers to upload a .csv file mapping an existing event or user property to a list of new properties, used to add additional properties to already ingested events during query time based on the lookup property. However, these mapped properties are not selectable when setting up the sync in either event filters or when sending additional properties to the destination.
-* Customers cannot stream **channel classifiers** directly.  Channels, which act like derived properties applied in real-time when querying, are mainly used by marketers to define their acquisition channels based on UTM and referrer data. Although they are used as a property where values are mapped to specific rules on existing properties, these channel properties are not selectable when setting up the sync in either event filters or when sending additional properties to the destination.
+* You cannot stream **lookup properties** directly. Lookup properties allow you to upload a .csv file mapping an existing event or user property to a list of new properties, used to add more properties to already ingested events during query time based on the lookup property. However, these mapped properties are not selectable when setting up the sync in either event filters or when sending more properties to the destination.
+* You cannot stream **channel classifiers** directly. Channels, which act like derived properties applied in real-time when querying, are mainly used by marketers to define their acquisition channels based on UTM and referrer data. Although they are used as a property where values are mapped to specific rules on existing properties, these channel properties are not selectable when setting up the sync in either event filters or when sending more properties to the destination.
 * Streaming transformation is available for all streaming destinations except for [Webhooks](https://Amplitude.com/docs/data/destination-catalog/webhooks), [Amazon Kinesis Firehose](https://Amplitude.com/docs/data/destination-catalog/amazon-kinesis-firehose), [Google PubSub](https://Amplitude.com/docs/data/destination-catalog/google-pub-sub) and Data Warehouse destinations.
 
 ## FAQs
 
-This sections covers some frequently asked questions about streaming transformations.
+This section covers some frequently asked questions about streaming transformations.
 
 
 {{partial:collapse name="How can you join this Closed BETA program?"}}
