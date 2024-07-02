@@ -38,7 +38,7 @@ After you have instrumented your events, the first step is to manually fire some
 
 ### Step 2: Analyze the event stream
 
-After you find your user profile, scroll down to the [Event Stream](/docs/analytics/user-data-lookup#individual-event-stream) section. The event stream displays a user's entire event history, grouped by session. The most recent activity appears at the top of the list, and events populate the stream in ten seconds to one minute.
+After you find your user profile, scroll down to the [Event Stream](/docs/analytics/user-data-lookup#view-a-users-details-and-event-stream) section. The event stream displays a user's entire event history, grouped by session. The most recent activity appears at the top of the list, and events populate the stream in ten seconds to one minute.
 
 Clicking on an event gives you detailed information about it, including the user property and event property values **at the time of that event**.
 
