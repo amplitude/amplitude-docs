@@ -1038,6 +1038,8 @@ video {
 }.w-max {
   width: -moz-max-content;
   width: max-content;
+}.w-1\/4 {
+  width: 25%;
 }.min-w-\[712px\] {
   min-width: 712px;
 }.max-w-12 {
@@ -1248,16 +1250,12 @@ video {
   fill: #656b75;
 }.fill-amp-gray-600 {
   fill: #5a5e68;
-}.fill-amp-gray-950 {
-  fill: #242528;
-}.fill-white {
-  fill: #ffffff;
-}.fill-\[\#374151\] {
-  fill: #374151;
-}.fill-\[amp-gray-800\] {
-  fill: amp-gray-800;
 }.fill-amp-gray-800 {
   fill: #414349;
+}.fill-white {
+  fill: #ffffff;
+}.fill-amp-blue-500 {
+  fill: #1e61f0;
 }.p-0 {
   padding: 0px;
 }.p-2 {
