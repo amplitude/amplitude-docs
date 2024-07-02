@@ -4,33 +4,58 @@ blueprint: under-the-hood
 title: 'Flag Dependencies'
 landing: false
 source: 'https://www.docs.developers.amplitude.com/experiment/general/flag-dependencies/'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1716926567
+updated_by: 924ab613-3300-4c23-b6d6-2030761a8ea7
+updated_at: 1718742410
 ---
 Flag dependencies define relationships between flags to ensure evaluation order. The result of each flag's evaluation is then passed to all subsequent evaluations to decide if dependent flags should [evaluate](/docs/experiment/implementation#flag-dependencies) based on the result of the dependency.
 
-Flag dependencies are currently used to implement mutual exclusion and holdout groups.
+Flag dependencies are used to implement:
+
+- [Flag prerequisites](/docs/experiment/advanced-techniques/flag-prerequisites)
+- [Mutual exclusion groups](/docs/experiment/advanced-techniques/mutually-exclusive-experiments)
+- [Holdout groups](/docs/experiment/advanced-techniques/holdout-groups-exclude-users)
+
+## Flag prerequisites
+
+![Flag prerequisites](/docs/output/img/experiment/release-group.drawio.svg)
+
+*Available for flags and experiments*
+
+Flag prerequisites is a generic implementation of flag dependencies to allow any flags or experiments to depend on any other flags or experiments. Evaluation of the prerequisites can check specific variants or target users who weren't included in the prerequisite flag or experiment.
+
+Use flag prerequisites to:
+
+- Actively develop large feature releases with many developers and teams.
+- Build provisioning for users to primary SKUs with add-ons.
+- Simplifying complex feature flag logic in code.
+- Build complex hierarchies of mutually exclusive experiments which start at different times
+
+For more information, see [Flag Prerequisites](/docs/experiment/advanced-techniques/flag-prerequisites)
 
 ## Mutual exclusion groups
 
 ![Mutual exclusion group](statamic://asset::help_center_conversions::experiment/mutex-group.drawio.png)
 
+*Available for experiments only*
+
 A mutual exclusion group ensures that, on evaluation, at most one of the experiments within the group is assigned. In Amplitude Experiment, a mutual exclusion group defines multiple slots, each with a percentage of traffic allocated to that slot. The mutual exclusion group is actually just a flag with a variant for each slot. Experiments in the group add a dependency on one or more slots (variants) of the mutual exclusion group flag.
 
 The variant result of a mutual exclusion group's evaluation isn't returned and not assigned as a user property.
 
-For more information, see [Set up and run mutually exclusive experiments
-](/docs/experiment/advanced-techniques/mutually-exclusive-experiments)
+For more information, see [Set up and run mutually exclusive experiments](/docs/experiment/advanced-techniques/mutually-exclusive-experiments)
 
 ## Holdout groups
 
 ![](statamic://asset::help_center_conversions::experiment/holdout-group.drawio.png)
 
-A holdout group withholds a percentage of traffic from a group of experiments, allowing measurement of the long-term and combined impact of multiple experiments. In Amplitude Experiment, a holdout group is implemented using a flag with two variants: `holdout` and `on`, where the `holdout` variant is allocated the holdout percentage defined on creation. Experiments in the group depend on the holdout group's variant `on`.
+*Available for experiments only*
+
+A holdout group withholds a percentage of traffic from a group of experiments, allowing measurement of the long-term and combined impact of multiple experiments. Amplitude Experiment implements a holdout group using a flag with two variants: `holdout` and `on`, where the `holdout` variant is allocated the holdout percentage defined on creation. Experiments in the group depend on the holdout group's variant `on`.
 
 The variant result of a holdout group's evaluation isn't returned but is assigned as a user property to enable holdout analysis.
 
 For more information, see [Holdout Groups](/docs/experiment/advanced-techniques/holdout-groups-exclude-users)
+
 ## Local evaluation support
 
 Flag dependencies (mutual exclusion and holdout groups) is only supported after certain version of SDKs.

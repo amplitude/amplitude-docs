@@ -25,7 +25,7 @@ Before you can do anything, you must instrument your experiments. Amplitude reco
 
 There are two main ways to update a user property:
 
-1. [SDKs](/docs/sdks) & [Http API](/docs/apis/analytics/http-v2): Update user properties on event action.
+1. [SDKs](/docs/sdks) & [HTTP API](/docs/apis/analytics/http-v2): Update user properties on event action.
 
    * **How:** Send user properties with each event via Amplitude's [SDKs](/docs/sdks) or [HTTP API](/docs/apis/analytics/http-v2).
    * **Pros:** User properties take effect at the moment the event is sent, and exist with the user for all subsequent events, until the property values are explicitly updated.

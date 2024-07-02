@@ -120,11 +120,25 @@ Pass the following configuration options when you initialize the Session Replay 
 
 The Session Replay SDK offers three ways to mask user input, text, and other HTML elements.
 
-| Element | Description |
-| --- | --- |
-| `<input>` | Session Replay masks all text input fields by default. When a users enters text into an input field, Session Replay captures asterisks in place of text. To *unmask* a text input, add the class `.amp-unmask`. For example: `<input class="amp-unmask">`. |
-| text | To mask text within non-input elements, add the class `.amp-mask`. For example, `<p class="amp-mask">Text</p>`. When masked, Session Replay captures masked text as a series of asterisks. |
-| non-text elements | To block a non-text element, add the class `.amp-block`. For example, `<div class="amp-block"></div>`. Session Replay replaces blocked elements with a placeholder of the same dimensions. |
+| Element           | Description                                                                                                                                                                                                                                                |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `<input>`         | Session Replay masks all text input fields by default. When a users enters text into an input field, Session Replay captures asterisks in place of text. To *unmask* a text input, add the class `.amp-unmask`. For example: `<input class="amp-unmask">`. |
+| text              | To mask text within non-input elements, add the class `.amp-mask`. For example, `<p class="amp-mask">Text</p>`. When masked, Session Replay captures masked text as a series of asterisks.                                                                 |
+| non-text elements | To block a non-text element, add the class `.amp-block`. For example, `<div class="amp-block"></div>`. Session Replay replaces blocked elements with a placeholder of the same dimensions.                                                                 |
+
+Session Replay supports setting a masking level on the [Session Replay Settings](#) screen in Amplitude. This includes Light, Medium, and Conservative settings.
+
+Session Replay settings also enable remote masking overrides. These enable users in your organization to configure or update masking after implementation.
+
+In the event of a conflict, Session Replay defers to the remote setting. For example:
+
+|                | .selector-1 | .selector-2 | .selector-3 |
+| -------------- | ----------- | ----------- | ----------- |
+| Local setting  | `mask`      | --          | `mask`      |
+| Remote setting | `unmask`    | `unmask`    | --          |
+| Result         | `unmask`    | `unmask`    | `mask`      |
+
+In this example, `.selector-1` has a local setting and a remote setting. The result follows the remote setting, and overrides the setting in the SDK or plugin implementation.
 
 ### User opt-out
 
@@ -168,6 +182,8 @@ Keep the following in mind as you consider your sample rate:
 - Session quotas reset on the first of every month.
 - Use sample rate to distribute your session quota over the course of a month, rather than using your full quota at the beginning of the month.
 - To find the best sample rate, Amplitude recommends that you start low, for example `.01`. If this value doesn't capture enough replays, raise the rate over the course of a few days. For ways to monitor the number of session replays captured, see [View the number of captured sessions](/docs/session-replay#view-the-number-of-captured-sessions).
+
+Session Replay supports remote sampling rate settings. This enables users in your organization to configure or update the sampling rate of your project after implementation, without a code change. In the event of a conflict, Session Replay defaults to the remote setting. For more information, see [Account Settings](/docs/admin/account-management/account-settings#session-replay-settings).
 
 ### Disable replay collection
 
@@ -254,8 +270,6 @@ Session Replay doesn't set cookies on the user's browser. Instead, it relies on 
 
 If a user opts out of all cookies on your site, use the `optOut` configuration option to disable replay collection for that user.
 
-If a user opts out of all cookies on your site, use the `optOut` configuration option to disable replay collection for that user.
-
 ### IndexedDB best practices
 
 To ensure that IndexedDB is initialized and working properly:
@@ -321,6 +335,7 @@ Session replays may not appear in Amplitude due to:
 - Content security policy
 - Blocked JavaScript
 - Sampling
+- Some sessions don't include the Session Replay ID property
 
 #### Content security policy
 
@@ -362,6 +377,10 @@ Session Replay supports other analytics providers. Follow the information below 
 - [Amplitude (Actions)](#amplitude-actions-destination)
 - [Amplitude Classic (Cloud-mode)](#amplitude-classic-destination-cloud-mode)
 - [Amplitude Classic (Device-mode)](#amplitude-classic-destination-device-mode)
+
+{{partial:admonition type="warning" heading="Session Replay ID is a required property"}}
+To ensure that Session Replay implementations with Segment work as expected, add the `Session Replay ID` event property to your Segment tracking plan. Otherwise, Segment may block the property.
+{{/partial:admonition}}
 
 ### Amplitude (Actions) destination
 

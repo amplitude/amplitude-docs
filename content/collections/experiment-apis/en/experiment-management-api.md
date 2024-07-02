@@ -23,7 +23,7 @@ You can create and revoke management API keys by clicking on "Management API" in
 
 ## Authorization
 
-The management API uses the Http Authorization header for authentication.
+The management API uses the HTTP Authorization header for authentication.
 
 The header must be: `Authorization: Bearer <management-api-key>`.
 

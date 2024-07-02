@@ -281,7 +281,7 @@ The revenue verification logic is on Amplitude's backend. Revenue verification r
 ## Advanced topics
 
 {{partial:admonition type="warning" heading=""}}
-The maintenance SDK uses an old SDK endpoint (`api2.amplitude.com`) which enforces no length limit for `deviceId` and `userId`. The latest SDK uses Amplitude's Http V2 API (`api2.amplitude.com/2/httpapi`) and requires identifiers to be at least 5 characters by default. When you migrate to the latest SDK, set `config.minIdLength` to a smaller value if you allowed identifiers with fewer than 5 characters.
+The maintenance SDK uses an old SDK endpoint (`api2.amplitude.com`) which enforces no length limit for `deviceId` and `userId`. The latest SDK uses Amplitude's HTTP V2 API (`api2.amplitude.com/2/httpapi`) and requires identifiers to be at least 5 characters by default. When you migrate to the latest SDK, set `config.minIdLength` to a smaller value if you allowed identifiers with fewer than 5 characters.
 {{/partial:admonition}}
 
 Most of the behaviors of the latest SDK remain the same with the maintenance SDK. Refer to the advanced topics sections of the [maintenance SDK](/docs/sdks/analytics/android/android-sdk#advanced-topics) and the [latest SDK](/docs/sdks/analytics/android/android-kotlin-sdk) to learn more about a specific advanced topic.

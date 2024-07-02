@@ -1,1 +1,3 @@
-// This is all you.
+import headingsAnchors from './heading-anchors'
+
+headingsAnchors()

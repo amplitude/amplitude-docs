@@ -10,7 +10,8 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1716571758
 ---
-To gain the most value out of Amplitude, consider following this workflow. This sequence of steps, adopted by many successful Amplitude customers, lays the groundwork for several critically important metrics, and also demonstrates how specific charts connect to each other:
+
+To gain the most value out of Amplitude, follow this workflow. This sequence of steps, adopted by Amplitude's most successful customers, lays the groundwork for the most important metrics, and also demonstrates how specific charts connect to each other:
 
 ## Step 1: Identify your product's critical event
 
@@ -32,6 +33,7 @@ Use these questions to help identify your product's critical event:
 * Does your product have distinct groups of users? If so, how do they differ in the way they use your product? What value does each group get?
 * What's the one action that you want a user to do every time they open your product?
 * What metrics do you care about as a company? What are you ultimately trying to drive up? Which user actions connect to that metric?
+
 
 [Read more about the critical event](https://blog.amplitude.com/user-retention-app-critical-event)
 
@@ -77,7 +79,7 @@ Amplitude's Engagement Matrix chart breaks out the top and bottom events for eng
 
 ## Ongoing work: Create cohorts, compare, A/B test, improve
 
-Beyond this workflow, you should always be using Amplitude to explore your product and user data further. Create cohorts in various charts and compare how those different groups of users are engaging with your product. Are they taking different flows in [their user journeys](/docs/analytics/charts/journeys/journeys-understand-paths)? Are they converting more quickly in [funnels](/docs/analytics/charts/funnel-analysis/funnel-analysis-build)?
+Beyond this workflow, use Amplitude to explore your product and user data further. Create cohorts in various charts and compare how those different groups of users are engaging with your product. Are they taking different flows in [their user journeys](/docs/analytics/charts/journeys/journeys-understand-paths)? Do [experiments](docs/experiment/overview) show they convert more quickly with one variant?
 
 Drill down into the differences and develop hypotheses on what product changes can encourage all users to become power users. Test these hypotheses via [A/B testing](/docs/get-started/analyze-a-b-test-results).
 

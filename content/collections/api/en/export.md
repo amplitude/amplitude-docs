@@ -25,14 +25,14 @@ summary: "Export your project's event data."
 
 `GET https://amplitude.com/api/2/export`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/2/export?start=<starttime>&end=<endtime>' \
 -u '{api_key}:{secret_key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/export?start=<starttime>&end=<endtime> HTTP/1.1
 Host: amplitude.com
@@ -44,14 +44,14 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 {{partial:collapse name="Example: Get data for a period"}}
 Export activity data from between midnight on January 1, 2022 and midnight January 27, 2022. 
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/2/export?start=20220101T00&end=20220127T00' \
 --header 'Authorization: Basic YWhhbWwsdG9uQGFwaWdlZS5jb206bClwYXNzdzByZAo'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/export?start=20220101T00&end=20220127T00 HTTP/1.1
 Host: amplitude.com

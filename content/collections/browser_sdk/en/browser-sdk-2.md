@@ -12,13 +12,14 @@ releases_url: 'https://github.com/amplitude/Amplitude-TypeScript/releases?q=anal
 bundle_url: 'https://www.npmjs.com/package/@amplitude/analytics-browser'
 shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/analytics-browser/latest.svg'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718658234
+updated_at: 1719613681
 major_version: 2
 ampli_article: 5afa91b7-c12d-425a-b4b6-661061e5843a
 exclude_from_sitemap: false
-source: https://www.docs.developers.amplitude.com/data/sdks/browser-2/
+source: 'https://www.docs.developers.amplitude.com/data/sdks/browser-2/'
 plugins:
   - f0bf544a-7505-45ef-89ad-e7fe6ec71fbf
+package_name: '@amplitude/analytics-browser'
 ---
 Amplitude's Browser SDK 2 lets you send events to Amplitude.
 
@@ -54,7 +55,7 @@ import * as amplitude from '@amplitude/analytics-browser';
 ## Initialize the SDK
 
 {{partial:admonition type="note" heading="Sending events"}}
-This SDK uses the [Http V2](/docs/apis/analytics/http-v2) API and follows the same constraints for events. Make sure that all events logged in the SDK have the `event_type` field and at least one of `deviceId`  (included by default) or `userId`, and follow the Http API's constraints on each of those fields.
+This SDK uses the [HTTP V2](/docs/apis/analytics/http-v2) API and follows the same constraints for events. Make sure that all events logged in the SDK have the `event_type` field and at least one of `deviceId`  (included by default) or `userId`, and follow the HTTP API's constraints on each of those fields.
 
 To prevent instrumentation issues, device IDs and user IDs must be strings with a length of 5 characters or more. If an event contains a device ID or user ID that's too short, the ID value is removed from the event. If the event doesn't have a `userId` or `deviceId` value, Amplitude may reject the upload with a 400 status. Override the default minimum length of 5 characters by setting the `minIdLength` config option.
 {{/partial:admonition}}
@@ -78,35 +79,35 @@ amplitude.init(AMPLITUDE_API_KEY, 'user@amplitude.com', options);
 ## Configure the SDK
 
 {{partial:collapse name="SDK configuration options"}}
-| Name  | Description | Default Value |
-| --- | --- | --- |
-|`instanceName`| `string`. The instance name. | `$default_instance` |
-|`flushIntervalMillis`| `number`. Sets the interval of uploading events to Amplitude in milliseconds. | 1,000 (1 second) |
-|`flushQueueSize`| `number`. Sets the maximum number of events batched in a single upload attempt. | 30 events |
-|`flushMaxRetries`| `number`. Sets the maximum number of retries for failed upload attempts. This is only applicable to errors that the SDK can retry. | 5 times.|
-|`logLevel` | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. Sets the log level. | `LogLevel.Warn` |
-|`loggerProvider `| `Logger`. Sets a custom `loggerProvider` class from the Logger to emit log messages to desired destination. | `Amplitude Logger` |
-|`minIdLength`|  `number`. Sets the minimum length for the value of `userId` and `deviceId` properties. | `5` |
-|`optOut` | `boolean`. Sets permission to track events. Setting a value of `true` prevents Amplitude from tracking and uploading events. | `false` |
-|`serverUrl`| `string`. Sets the URL where events are upload to. | `https://api2.amplitude.com/2/httpapi` | 
-|`serverZone`| `EU` or  `US`. Sets the Amplitude server zone. Set this to `EU` for Amplitude projects created in `EU` data center. | `US` |
-|`useBatch`| `boolean`. Sets whether to upload events to Batch API instead of the default Http V2 API or not. | `false` |
-|`appVersion` | `string`. Sets an app version for events tracked. This can be the version of your application. For example: "1.0.0" | `undefined` |
-|`defaultTracking` | `boolean | DefaultTrackingOptions`. Configures default event tracking | Check [tracking default events](./#tracking-default-events)|
-|`deviceId` | `string`. Sets an identifier for the device running your application. | `UUID()` |
-|`cookieOptions.domain` | `string`. Sets the domain property of cookies created. | `undefined` |
-|`cookieOptions.expiration` | `number`. Sets expiration of cookies created in days. | 365 days |
-|`cookieOptions.sameSite` | `string`. Sets `SameSite` property of cookies created. | `Lax` |
-|`cookieOptions.secure` | `boolean`. Sets `Secure` property of cookies created. | `false` |
-|`cookieOptions.upgrade` | `boolean`. Sets upgrading from cookies created by [maintenance Browser SDK](/docs/sdks/analytics/browser/javascript-sdk). If `true`, new Browser SDK deletes cookies created by maintenance Browser SDK. If `false`, Browser SDK keeps cookies created by maintenance Browser SDK. | `true` |
-|`identityStorage` | `string`. Sets storage API for user identity. Options include `cookie` for `document.cookie`, `localStorage` for `localStorage`, or `none` to opt-out of persisting user identity. | `cookie` |
-|`partnerId` | `string`. Sets partner ID. Amplitude requires the customer who built an event ingestion integration to add the partner identifier to `partner_id`. | `undefined` |
-|`sessionTimeout` | `number`. Sets the period of inactivity from the last tracked event before a session expires in milliseconds. | 1,800,000 milliseconds (30 minutes) |
-|`storageProvider`| `Storage<Event[]>`. Sets a custom implementation of `Storage<Event[]>` to persist unsent events. | `LocalStorage` |
-|`userId` | `number`. Sets an identifier for the tracked user. Must have a minimum length of 5 characters unless overridden with the `minIdLength` option. | `undefined` |
-|`trackingOptions` | `TrackingOptions`. Configures tracking of extra properties. | Enable all tracking options by default. |
-|`transport` | `string`. Sets request API to use by name. Options include `fetch` for fetch, `xhr` for `XMLHttpRequest`, or  `beacon` for `navigator.sendBeacon`. | `fetch` |
-|`offline` | `boolean | OfflineDisabled`. Whether the SDK connects to the network. Learn more [here](./#offline-mode) | `false` |
+| Name                       | Description                                                                                                                                                                                                                                                                        | Default Value                                                                                 |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `instanceName`             | `string`. The instance name.                                                                                                                                                                                                                                                       | `$default_instance`                                                                           |
+| `flushIntervalMillis`      | `number`. Sets the interval of uploading events to Amplitude in milliseconds.                                                                                                                                                                                                      | 1,000 (1 second)                                                                              |
+| `flushQueueSize`           | `number`. Sets the maximum number of events batched in a single upload attempt.                                                                                                                                                                                                    | 30 events                                                                                     |
+| `flushMaxRetries`          | `number`. Sets the maximum number of retries for failed upload attempts. This is only applicable to errors that the SDK can retry.                                                                                                                                                 | 5 times.                                                                                      |
+| `logLevel`                 | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. Sets the log level.                                                                                                                                                              | `LogLevel.Warn`                                                                               |
+| `loggerProvider `          | `Logger`. Sets a custom `loggerProvider` class from the Logger to emit log messages to desired destination.                                                                                                                                                                        | `Amplitude Logger`                                                                            |
+| `minIdLength`              | `number`. Sets the minimum length for the value of `userId` and `deviceId` properties.                                                                                                                                                                                             | `5`                                                                                           |
+| `optOut`                   | `boolean`. Sets permission to track events. Setting a value of `true` prevents Amplitude from tracking and uploading events.                                                                                                                                                       | `false`                                                                                       |
+| `serverUrl`                | `string`. Sets the URL where events are upload to.                                                                                                                                                                                                                                 | `https://api2.amplitude.com/2/httpapi`                                                        |
+| `serverZone`               | `EU` or  `US`. Sets the Amplitude server zone. Set this to `EU` for Amplitude projects created in `EU` data center.                                                                                                                                                                | `US`                                                                                          |
+| `useBatch`                 | `boolean`. Sets whether to upload events to Batch API instead of the default HTTP V2 API or not.                                                                                                                                                                                   | `false`                                                                                       |
+| `appVersion`               | `string`. Sets an app version for events tracked. This can be the version of your application. For example: "1.0.0"                                                                                                                                                                | `undefined`                                                                                   |
+| `defaultTracking`          | `boolean                                                                                                                                                                                                                                                                           | DefaultTrackingOptions`. Configures default event tracking                                    | Check [tracking default events](./#tracking-default-events) |
+| `deviceId`                 | `string`. Sets an identifier for the device running your application.                                                                                                                                                                                                              | `UUID()`                                                                                      |
+| `cookieOptions.domain`     | `string`. Sets the domain property of cookies created.                                                                                                                                                                                                                             | `undefined`                                                                                   |
+| `cookieOptions.expiration` | `number`. Sets expiration of cookies created in days.                                                                                                                                                                                                                              | 365 days                                                                                      |
+| `cookieOptions.sameSite`   | `string`. Sets `SameSite` property of cookies created.                                                                                                                                                                                                                             | `Lax`                                                                                         |
+| `cookieOptions.secure`     | `boolean`. Sets `Secure` property of cookies created.                                                                                                                                                                                                                              | `false`                                                                                       |
+| `cookieOptions.upgrade`    | `boolean`. Sets upgrading from cookies created by [maintenance Browser SDK](/docs/sdks/analytics/browser/javascript-sdk). If `true`, new Browser SDK deletes cookies created by maintenance Browser SDK. If `false`, Browser SDK keeps cookies created by maintenance Browser SDK. | `true`                                                                                        |
+| `identityStorage`          | `string`. Sets storage API for user identity. Options include `cookie` for `document.cookie`, `localStorage` for `localStorage`, or `none` to opt-out of persisting user identity.                                                                                                 | `cookie`                                                                                      |
+| `partnerId`                | `string`. Sets partner ID. Amplitude requires the customer who built an event ingestion integration to add the partner identifier to `partner_id`.                                                                                                                                 | `undefined`                                                                                   |
+| `sessionTimeout`           | `number`. Sets the period of inactivity from the last tracked event before a session expires in milliseconds.                                                                                                                                                                      | 1,800,000 milliseconds (30 minutes)                                                           |
+| `storageProvider`          | `Storage<Event[]>`. Sets a custom implementation of `Storage<Event[]>` to persist unsent events.                                                                                                                                                                                   | `LocalStorage`                                                                                |
+| `userId`                   | `number`. Sets an identifier for the tracked user. Must have a minimum length of 5 characters unless overridden with the `minIdLength` option.                                                                                                                                     | `undefined`                                                                                   |
+| `trackingOptions`          | `TrackingOptions`. Configures tracking of extra properties.                                                                                                                                                                                                                        | Enable all tracking options by default.                                                       |
+| `transport`                | `string`. Sets request API to use by name. Options include `fetch` for fetch, `xhr` for `XMLHTTPRequest`, or  `beacon` for `navigator.sendBeacon`.                                                                                                                                 | `fetch`                                                                                       |
+| `offline`                  | `boolean                                                                                                                                                                                                                                                                           | OfflineDisabled`. Whether the SDK connects to the network. Learn more [here](./#offline-mode) | `false`                                                     |
 
 {{/partial:collapse}}
 
@@ -132,13 +133,13 @@ To send data to Amplitude's EU servers, use `https://app.eu.amplitude.com` to cr
 
 Control the level of logs the SDK prints to the console with the following `logLevel` settings:
 
-| Log level | Description |
-| --------| ------------|
-| `none` | Suppresses all log messages |
-| `error` | Shows error messages only | 
-| `warn` | Default. Shows error and warning messages. |
-| `verbose` | Shows informative messages. |
-| `debug` | Shows all messages, including function context information for each public method the SDK invokes. Amplitude recommends this log level for development only. |
+| Log level | Description                                                                                                                                                  |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `none`    | Suppresses all log messages                                                                                                                                  |
+| `error`   | Shows error messages only                                                                                                                                    |
+| `warn`    | Default. Shows error and warning messages.                                                                                                                   |
+| `verbose` | Shows informative messages.                                                                                                                                  |
+| `debug`   | Shows all messages, including function context information for each public method the SDK invokes. Amplitude recommends this log level for development only. |
 
 ## Track an event
 
@@ -197,13 +198,13 @@ Starting in SDK version 1.9.1, the Browser SDK tracks default events, and adds a
 - File downloads
 
 {{partial:collapse name="Default event tracking options"}}
-| Name                                      | Value               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| ----------------------------------------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `config.defaultTracking.attribution`      | Optional. `boolean` | Enables/disables marketing attribution tracking. If value is `true`, Amplitude tracks marketing attribution events. Default value is `true`.                                                                                                                                                                                                                                          |
+| Name                                      | Value               | Description                                                                                                                                                                                                                                                                                                                                                                                                     |
+| ----------------------------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `config.defaultTracking.attribution`      | Optional. `boolean` | Enables/disables marketing attribution tracking. If value is `true`, Amplitude tracks marketing attribution events. Default value is `true`.                                                                                                                                                                                                                                                                    |
 | `config.defaultTracking.pageViews`        | Optional. `boolean` | Enables/disables default page view tracking. If value is `true`, Amplitude tracks page view events on initialization. Default value is `true`.<br /><br />Event properties tracked includes: `[Amplitude] Page Domain`, `[Amplitude] Page Location`, `[Amplitude] Page Path`, `[Amplitude] Page Title`, `[Amplitude] Page URL`<br /><br />See [Tracking page views](#tracking-page-views) for more information. |
-| `config.defaultTracking.sessions`         | Optional. `boolean` | Enables/disables session tracking. If value is `true`, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting is `false`, Amplitude tracks `sessionId` only.<br /><br />See [Tracking sessions](#tracking-sessions) for more information.                                                                                                                                            |
-| `config.defaultTracking.formInteractions` | Optional. `boolean` | Enables/disables form interaction tracking. If value is `true`, Amplitude tracks form start and form submit events. Default value is `true`.<br /><br />Event properties tracked includes: `[Amplitude]  Form ID`, `[Amplitude] Form Name`, `[Amplitude] Form Destination`<br /><br />See [Tracking form interactions](#tracking-form-interactions) for more information.                                |
-| `config.defaultTracking.fileDownloads`    | Optional. `boolean` | Enables/disables file download tracking. If value is `true`, Amplitude tracks file download events otherwise. Default value is `true`.<br /><br />Event properties tracked includes: `[Amplitude] File Extension`, `[Amplitude] File Name`, `[Amplitude] Link ID`, `[Amplitude] Link Text`, `[Amplitude] Link URL`<br /><br />See [Tracking file downloads](#tracking-file-downloads) for more information.           |
+| `config.defaultTracking.sessions`         | Optional. `boolean` | Enables/disables session tracking. If value is `true`, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting is `false`, Amplitude tracks `sessionId` only.<br /><br />See [Tracking sessions](#tracking-sessions) for more information.                                                                                                   |
+| `config.defaultTracking.formInteractions` | Optional. `boolean` | Enables/disables form interaction tracking. If value is `true`, Amplitude tracks form start and form submit events. Default value is `true`.<br /><br />Event properties tracked includes: `[Amplitude]  Form ID`, `[Amplitude] Form Name`, `[Amplitude] Form Destination`<br /><br />See [Tracking form interactions](#tracking-form-interactions) for more information.                                       |
+| `config.defaultTracking.fileDownloads`    | Optional. `boolean` | Enables/disables file download tracking. If value is `true`, Amplitude tracks file download events otherwise. Default value is `true`.<br /><br />Event properties tracked includes: `[Amplitude] File Extension`, `[Amplitude] File Name`, `[Amplitude] Link ID`, `[Amplitude] Link Text`, `[Amplitude] Link URL`<br /><br />See [Tracking file downloads](#tracking-file-downloads) for more information.     |
 
 {{/partial:collapse}}
 
@@ -240,13 +241,13 @@ UTM (Urchin Traffic Monitor) parameters are useful for analyzing the effectivene
 
 There are five different standard UTM parameters:
 
-| Name |Description|
-|-|-|
-|`utm_source`| This identifies which website sent the traffic (for example, Google, Facebook) |
-|`utm_medium`| This identifies a specific campaign used (for example, "summer_sale") |
-|`utm_campaign`| This identifies a specific campaign used (for example, "summer_sale") |
-|`utm_term`| This identifies paid search terms used (for example, product+analytics) |
-|`utm_content` | This identifies what brought the user to the site and is commonly used for A/B testing (for example, "banner-link", "text-link") |
+| Name           | Description                                                                                                                      |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `utm_source`   | This identifies which website sent the traffic (for example, Google, Facebook)                                                   |
+| `utm_medium`   | This identifies a specific campaign used (for example, "summer_sale")                                                            |
+| `utm_campaign` | This identifies a specific campaign used (for example, "summer_sale")                                                            |
+| `utm_term`     | This identifies paid search terms used (for example, product+analytics)                                                          |
+| `utm_content`  | This identifies what brought the user to the site and is commonly used for A/B testing (for example, "banner-link", "text-link") |
 
 Here is an example URL with UTM parameters:
 
@@ -258,10 +259,10 @@ https://www.amplitude.com/?utm_source=newsletter&utm_campaign=product_analytics_
 
 Referrer is the URL of the page that linked to the destination page. Amplitude tracks the following parameters:
 
-| Name |Description|
-|-|-|
-|`referrer`| The last page the user was on (for example, `https://amplitude.com/behavioral-analytics-platform?ref=nav`) |
-|`referring_domain`| The domain that the user was last on (for example, `https://amplitude.com`) |
+| Name               | Description                                                                                                |
+| ------------------ | ---------------------------------------------------------------------------------------------------------- |
+| `referrer`         | The last page the user was on (for example, `https://amplitude.com/behavioral-analytics-platform?ref=nav`) |
+| `referring_domain` | The domain that the user was last on (for example, `https://amplitude.com`)                                |
 
 Referrer is an empty string (`''`) if the user navigated to the destination page directly.
 
@@ -269,19 +270,21 @@ Referrer is an empty string (`''`) if the user navigated to the destination page
 
 Click IDs are campaign identifiers included as URL query parameters. Ad platforms use these IDs to identify the campaign and other attributes. While Amplitude doesn't have access to further campaign attributes associated to Click IDs, Amplitude can track Click ID values specified in the following table.
 
-| Name |Description|
-|-|-|
-|`dclid`| Google Click Identifier from URL parameters |
-|`fbclid`| Facebook Click Identifier from URL parameters |
-|`gbraid`| Google campaign manager Click Identifier |
-|`gclid`| Google Click Identifier for iOS device from Web to App |
-|`ko_click_id`| Google Click Identifier for iOS device from App to Web |
-|`li_fat_id`| Kochava Click Identifier from URL parameters |
-|`msclkid`| Microsoft Click Identifier |
-|`rtd_cid`| TikTok Click Identifier |
-|`ttclid`| Twitter Click Identifier from URL parameter |
-|`twclid`| LinkedIn Click identifier |
-|`wbraid`| Reddit campaign tracking/attribution Click identifier |
+| Name          | Description                                                |
+| ------------- | ---------------------------------------------------------- |
+| `dclid`       | Google Marketing Platform click identifier                 |
+| `fbclid`      | Facebook click identifier                                  |
+| `gbraid`      | Google click identifdier on iOS for web-to-app measurement |
+| `wbraid`      | Google click identidier on iOS for app-to-web measurement  |
+| `gclid`       | Google click identifier                                    |
+| `ko_click_id` | Kochava click identifier                                   |
+| `li_fat_id`   | LinkedIn click identifier                                  |
+| `msclkid`     | Microsoft click identifier                                 |
+| `rtd_cid`     | Reddit click identifier                                    |
+| `ttclid`      | TikTok click identidier                                    |
+| `twclid`      | Twitter click identifier                                   |
+
+
 
 #### First-touch attribution
 
@@ -347,11 +350,11 @@ amplitude.init(AMPLITUDE_API_KEY, {
 #### Advanced configuration for marketing attribution tracking
 
 {{partial:collapse name="Marketing attribution configuration"}}
-|Name|Value|Description|
-|-|-|-|
-`config.defaultTracking.attribution.excludeReferrers` | Optional. Array of `string` or `RegExp` | Sets rules to decide which referrers to exclude from tracking as traffic source. Use string values for exact matching and RegExp values for pattern matching against the referring domain. When this option isn't set, the SDK excludes the current domain (and its subdomains). If explicitly adding an external referrer to exclude, you must also add the current domain (and its subdomains) as more referrers to exclude. |
-`config.defaultTracking.attribution.initialEmptyValue` | Optional. `string` | Sets the value to represent undefined/no initial campaign parameter for first-touch attribution. The default value is `"EMPTY`. |
-`config.defaultTracking.attribution.resetSessionOnNewCampaign` | Optional. `boolean` | Configures Amplitude to start a new session if any campaign parameter changes. The default value is `false`. |
+| Name                                                           | Value                                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| -------------------------------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `config.defaultTracking.attribution.excludeReferrers`          | Optional. Array of `string` or `RegExp` | Sets rules to decide which referrers to exclude from tracking as traffic source. Use string values for exact matching and RegExp values for pattern matching against the referring domain. When this option isn't set, the SDK excludes the current domain (and its subdomains). If explicitly adding an external referrer to exclude, you must also add the current domain (and its subdomains) as more referrers to exclude. |
+| `config.defaultTracking.attribution.initialEmptyValue`         | Optional. `string`                      | Sets the value to represent undefined/no initial campaign parameter for first-touch attribution. The default value is `"EMPTY`.                                                                                                                                                                                                                                                                                                |
+| `config.defaultTracking.attribution.resetSessionOnNewCampaign` | Optional. `boolean`                     | Configures Amplitude to start a new session if any campaign parameter changes. The default value is `false`.                                                                                                                                                                                                                                                                                                                   |
 
 {{/partial:collapse}}
 
@@ -427,11 +430,11 @@ amplitude.init(AMPLITUDE_API_KEY, {
 Use the advanced configuration to better control when the SDK sends page view events.
 
 {{partial:collapse name="Tracking page views options"}}
-| Name | Value | Description |
-| --- | --- | --- |
-| `config.defaultTracking.pageViews.trackOn` | Optional. `"attribution"` or `() => boolean` | Provides advanced control for when the SDK tracks page view events. Omit or set the value to `undefined`, and configure the SDK to track page view events to on initialization. Set the value to `"attribution"` and configure the SDK to track page view events to only when it tracks web attribution. Set the value to a function that returns a boolean (`true` or `false`) and configure the SDK to track page view events to based on your criteria. |
-| `config.defaultTracking.pageViews.trackHistoryChanges` | Optional. `"pathOnly"` or `"all"` | Provides advanced control for single page application for when the SDK tracks page views. Omit or set the value to `"all"`, and configure the SDK to track page view events on any navigation change to the URL within your single page application. For example: navigating from `https://amplitude.com/#company` to `https://amplitude.com/#blog`. Set the value to `pathOnly`, and configure the SDK to track page view events on navigation change to the URL path only within your single page application. For example: navigating from `https://amplitude.com/company` to `https://amplitude.com/blog`. |
-| `config.defaultTracking.pageViews.eventType` | Optional. `string` | Customize the event\_type for page view event. |
+| Name                                                   | Value                                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ------------------------------------------------------ | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `config.defaultTracking.pageViews.trackOn`             | Optional. `"attribution"` or `() => boolean` | Provides advanced control for when the SDK tracks page view events. Omit or set the value to `undefined`, and configure the SDK to track page view events to on initialization. Set the value to `"attribution"` and configure the SDK to track page view events to only when it tracks web attribution. Set the value to a function that returns a boolean (`true` or `false`) and configure the SDK to track page view events to based on your criteria.                                                                                                                                                     |
+| `config.defaultTracking.pageViews.trackHistoryChanges` | Optional. `"pathOnly"` or `"all"`            | Provides advanced control for single page application for when the SDK tracks page views. Omit or set the value to `"all"`, and configure the SDK to track page view events on any navigation change to the URL within your single page application. For example: navigating from `https://amplitude.com/#company` to `https://amplitude.com/#blog`. Set the value to `pathOnly`, and configure the SDK to track page view events on navigation change to the URL path only within your single page application. For example: navigating from `https://amplitude.com/company` to `https://amplitude.com/blog`. |
+| `config.defaultTracking.pageViews.eventType`           | Optional. `string`                           | Customize the event\_type for page view event.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 
 {{/partial:collapse}}
 
@@ -451,15 +454,15 @@ amplitude.init(API_KEY, OPTIONAL_USER_ID, {
 
 Browser SDK tracks the following information in page view events.
 
-| Name | Description | Default Value |
-| --- | --- | --- |
-| `event_type` | `string`. The event type for page view event. Configurable through `defaultTracking.pageViews.eventType` or enrichment plugin. | `[Amplitude] Page Viewed` from version 1.9.1. |
-| `event_properties.[Amplitude] Page Domain` | `string`. The page domain. | location.hostname or ''. |
-| `event_properties.[Amplitude] Page Location` | `string`. The page location. | location.href or ''. |
-| `event_properties.[Amplitude] Page Path` | `string`. The page path. | location.path or ''. |
-| `event_properties.[Amplitude] Page Title` | `string`. The page title. | document.title or ''. |
-| `event_properties.[Amplitude] Page URL` | `string`. The value of page URL. | location.href.split('?')[0] or ``. |
-| `event_properties.${CampaignParam}` | `string`. The value of `UTMParameters` `ReferrerParameters` `ClickIdParameters` if has any. Check [here](./#web-attribution) for the possible keys. | Any undefined `campaignParam` or `undefined`. |
+| Name                                         | Description                                                                                                                                         | Default Value                                 |
+| -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| `event_type`                                 | `string`. The event type for page view event. Configurable through `defaultTracking.pageViews.eventType` or enrichment plugin.                      | `[Amplitude] Page Viewed` from version 1.9.1. |
+| `event_properties.[Amplitude] Page Domain`   | `string`. The page domain.                                                                                                                          | location.hostname or ''.                      |
+| `event_properties.[Amplitude] Page Location` | `string`. The page location.                                                                                                                        | location.href or ''.                          |
+| `event_properties.[Amplitude] Page Path`     | `string`. The page path.                                                                                                                            | location.path or ''.                          |
+| `event_properties.[Amplitude] Page Title`    | `string`. The page title.                                                                                                                           | document.title or ''.                         |
+| `event_properties.[Amplitude] Page URL`      | `string`. The value of page URL.                                                                                                                    | location.href.split('?')[0] or ``.            |
+| `event_properties.${CampaignParam}`          | `string`. The value of `UTMParameters` `ReferrerParameters` `ClickIdParameters` if has any. Check [here](./#web-attribution) for the possible keys. | Any undefined `campaignParam` or `undefined`. |
 
 See [this example](https://github.com/amplitude/Amplitude-TypeScript/blob/main/examples/plugins/page-view-tracking-enrichment/index.ts) to understand how to enrich default page view events, such as adding more properties along with page view tracking.
 
@@ -688,15 +691,15 @@ amplitude.revenue(event);
 
 ### Revenue interface
 
-| Name | Description | Default Value |
-| --- | --- | --- |
-| `product_id` | Optional. `string`. An identifier for the product. Amplitude recommend something like the Google Play Store product ID. | Empty string. |
-| `quantity` | Required. `number`. The quantity of products purchased. Note: revenue = quantity \* price. | `1` |
-| `price` | Required. `number`. The price of the products purchased, and this can be negative. Note: revenue = quantity \* price. | `null` |
-| `revenue_type` | Optional, but required for revenue verification. `string`. The revenue type (for example, tax, refund, income). | `null` |
-| `receipt` | Optional. `string`. The receipt identifier of the revenue. | `null` |
-| `receipt_sig` | Optional, but required for revenue verification. `string`. The receipt signature of the revenue. | `null` |
-| `properties` | Optional. `{ [key: string]: any }`. An object of event properties to include in the revenue event. | `null` |
+| Name           | Description                                                                                                             | Default Value |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `product_id`   | Optional. `string`. An identifier for the product. Amplitude recommend something like the Google Play Store product ID. | Empty string. |
+| `quantity`     | Required. `number`. The quantity of products purchased. Note: revenue = quantity \* price.                              | `1`           |
+| `price`        | Required. `number`. The price of the products purchased, and this can be negative. Note: revenue = quantity \* price.   | `null`        |
+| `revenue_type` | Optional, but required for revenue verification. `string`. The revenue type (for example, tax, refund, income).         | `null`        |
+| `receipt`      | Optional. `string`. The receipt identifier of the revenue.                                                              | `null`        |
+| `receipt_sig`  | Optional, but required for revenue verification. `string`. The receipt signature of the revenue.                        | `null`        |
+| `properties`   | Optional. `{ [key: string]: any }`. An object of event properties to include in the revenue event.                      | `null`        |
 
 ## Flush the event buffer
 
@@ -772,10 +775,10 @@ amplitude.setOptOut(false);
 By default, the SDK tracks these properties automatically. You can override this behavior by passing a configuration called `trackingOptions` when initializing the SDK, setting the appropriate options to false.
 
 | Tracking Options | Default |
-| --- | --- |
-| `ipAddress` | `true` |
-| `language` | `true` |
-| `platform` | `true` |
+| ---------------- | ------- |
+| `ipAddress`      | `true`  |
+| `language`       | `true`  |
+| `platform`       | `true`  |
 
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
@@ -840,13 +843,13 @@ amplitude.remove(plugin.name);
 
 ### Create a custom plugin
 
-| Field / Function | Description |
-| -----------------| ------------|
-| `plugin.name`    | Optional. The name field is an optional property that allows you to reference the plugin for deletion purposes. If not provided, Amplitude assigns a random name when you add the plugin. If you don't plan to delete your plugin, you can skip assigning a name. |
-| `plugin.type`   | Optional. The type field is an optional property that defines the type of plugin you are creating. See `plugin.execute()` function below to distinguish the two types. If not defined, the plugin defaults to an enrichment type. |
-| `plugin.setup()` | Optional. The setup function is an optional method called when you add the plugin or on first init whichever happens later. This function accepts two parameters: 1) Amplitude configuration; and 2) Amplitude instance. This is useful for setup operations and tasks that depend on either the Amplitude configuration or instance. Examples include assigning baseline values to variables, setting up event listeners, and many more. |
-| `plugin.execute()` | Optional for type:enrichment. For enrichment plugins, execute function is an optional method called on each event. This function must return a new event, otherwise, the SDK drops the passed event from the queue. This is useful for cases where you need to add/remove properties from events, filter events, or perform any operation for each event tracked. <br/><br/> For destination plugins, execute function is a required method called on each event. This function must return a response object with keys: `event` (BaseEvent), `code` (number), and `message` (string). This is useful for sending events for third-party endpoints.|
-| `plugin.teardown()` | Optional. The teardown function is an optional method called when Amplitude re-initializes. This is useful for resetting unneeded persistent state created/set by setup or execute methods. Examples include removing event listeners or mutation observers. |
+| Field / Function    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `plugin.name`       | Optional. The name field is an optional property that allows you to reference the plugin for deletion purposes. If not provided, Amplitude assigns a random name when you add the plugin. If you don't plan to delete your plugin, you can skip assigning a name.                                                                                                                                                                                                                                                                                                                                                                                   |
+| `plugin.type`       | Optional. The type field is an optional property that defines the type of plugin you are creating. See `plugin.execute()` function below to distinguish the two types. If not defined, the plugin defaults to an enrichment type.                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `plugin.setup()`    | Optional. The setup function is an optional method called when you add the plugin or on first init whichever happens later. This function accepts two parameters: 1) Amplitude configuration; and 2) Amplitude instance. This is useful for setup operations and tasks that depend on either the Amplitude configuration or instance. Examples include assigning baseline values to variables, setting up event listeners, and many more.                                                                                                                                                                                                           |
+| `plugin.execute()`  | Optional for type:enrichment. For enrichment plugins, execute function is an optional method called on each event. This function must return a new event, otherwise, the SDK drops the passed event from the queue. This is useful for cases where you need to add/remove properties from events, filter events, or perform any operation for each event tracked. <br/><br/> For destination plugins, execute function is a required method called on each event. This function must return a response object with keys: `event` (BaseEvent), `code` (number), and `message` (string). This is useful for sending events for third-party endpoints. |
+| `plugin.teardown()` | Optional. The teardown function is an optional method called when Amplitude re-initializes. This is useful for resetting unneeded persistent state created/set by setup or execute methods. Examples include removing event listeners or mutation observers.                                                                                                                                                                                                                                                                                                                                                                                        |
 
 ### Plugin examples
 
@@ -1086,40 +1089,40 @@ The SDK creates two types of cookies: user session cookies and marketing campaig
 
 
 {{partial:collapse name="User session cookies"}}
-|<div class="big-column">Name</div>| Description|
-|---|----|
-|`optOut`|<span class="required">Required</span>. A flag to opt this device out of Amplitude tracking. If this flag is set, no additional information will be stored for the user|
-|`userId`|Upon user log-in, if you send this value, it is stored in the cookie. Set this to uniquely identify their users (non-anonymous navigation). It is stored encoded using Base64|
-|`deviceId`|A randomly generated string. It will persist unless a user clears their browser cookies and/ or is browsing in private mode. Even if a user consistently uses the same the device and browser, the device ID can still vary|
-|`sessionId`|A randomly generated string for each session|
-|`lastEventTime`|Time of the last event, used to determine when to expire and create a new session Id|
-|`lastEventId`|Id of the last event|
+| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                 |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `optOut`                           | <span class="required">Required</span>. A flag to opt this device out of Amplitude tracking. If this flag is set, no additional information will be stored for the user                                                     |
+| `userId`                           | Upon user log-in, if you send this value, it is stored in the cookie. Set this to uniquely identify their users (non-anonymous navigation). It is stored encoded using Base64                                               |
+| `deviceId`                         | A randomly generated string. It will persist unless a user clears their browser cookies and/ or is browsing in private mode. Even if a user consistently uses the same the device and browser, the device ID can still vary |
+| `sessionId`                        | A randomly generated string for each session                                                                                                                                                                                |
+| `lastEventTime`                    | Time of the last event, used to determine when to expire and create a new session Id                                                                                                                                        |
+| `lastEventId`                      | Id of the last event                                                                                                                                                                                                        |
 
 {{/partial:collapse}}
 
 
 {{partial:collapse name="Marketing campaign cookies"}}
-|<div class="big-column">Name</div>| Description|
-| --- | --- |
-|`utm_campaign`| This identifies a specific campaign used (for example, "summer_sale") |
-|`utm_content` | This identifies what brought the user to the site and is commonly used for A/B testing (for example, "banner-link", "text-link") |
-|`utm_id`|An optional parameter for tracking unique IDs or transaction IDs associated with the link.|
-|`utm_medium`| This identifies a specific campaign used (for example, "summer_sale") |
-|`utm_source`| This identifies which website sent the traffic (for example, Google, Facebook) |
-|`utm_term`| This identifies paid search terms used (for example, product+analytics) |
-|`referrer`|The last page the user was on (for example, `https://amplitude.com/behavioral-analytics-platform?ref=nav`)|
-|`referring_domain`|The domain that the user was last on (for example, `https://amplitude.com`)|
-|`dclid`|Google campaign manager Click Identifier|
-|`gbraid`|Google Click Identifier for iOS device from Web to App|
-|`gclid`|Google Click Identifier from URL parameters|
-|`fbclid`|Facebook Click Identifier from URL parameters|
-|`ko_click_id`|Kochava Click Identifier from URL parameters|
-|`msclkid`|Microsoft Click Identifier|
-|`ttclid`|TikTok Click Identifier|
-|`twclid`|Twitter Click Identifier from URL parameter|
-|`wbraid`|Google Click Identifier for iOS device from App to Web|
-|`li_fat_id`|LinkedIn member indirect identifier for Members for conversion tracking, retargeting, analytics|
-|`rtd_cid`|Reddit Click Identifier| 
+| <div class="big-column">Name</div> | Description                                                                                                                      |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `utm_campaign`                     | This identifies a specific campaign used (for example, "summer_sale")                                                            |
+| `utm_content`                      | This identifies what brought the user to the site and is commonly used for A/B testing (for example, "banner-link", "text-link") |
+| `utm_id`                           | An optional parameter for tracking unique IDs or transaction IDs associated with the link.                                       |
+| `utm_medium`                       | This identifies a specific campaign used (for example, "summer_sale")                                                            |
+| `utm_source`                       | This identifies which website sent the traffic (for example, Google, Facebook)                                                   |
+| `utm_term`                         | This identifies paid search terms used (for example, product+analytics)                                                          |
+| `referrer`                         | The last page the user was on (for example, `https://amplitude.com/behavioral-analytics-platform?ref=nav`)                       |
+| `referring_domain`                 | The domain that the user was last on (for example, `https://amplitude.com`)                                                      |
+| `dclid`                            | Google campaign manager Click Identifier                                                                                         |
+| `gbraid`                           | Google Click Identifier for iOS device from Web to App                                                                           |
+| `gclid`                            | Google Click Identifier from URL parameters                                                                                      |
+| `fbclid`                           | Facebook Click Identifier from URL parameters                                                                                    |
+| `ko_click_id`                      | Kochava Click Identifier from URL parameters                                                                                     |
+| `msclkid`                          | Microsoft Click Identifier                                                                                                       |
+| `ttclid`                           | TikTok Click Identifier                                                                                                          |
+| `twclid`                           | Twitter Click Identifier from URL parameter                                                                                      |
+| `wbraid`                           | Google Click Identifier for iOS device from App to Web                                                                           |
+| `li_fat_id`                        | LinkedIn member indirect identifier for Members for conversion tracking, retargeting, analytics                                  |
+| `rtd_cid`                          | Reddit Click Identifier                                                                                                          |
 
 {{/partial:collapse}}
 
@@ -1170,22 +1173,22 @@ For more information, see the scenarios outlined below that demonstrate when Amp
 
 Tracking occurs when either of the following applies:
 
-|Rule|Example|
-|-|-|
-| The current subdomain is not an excluded referrer. | The referrer does not originates from the same domain or the current subdomain is not match any referrer in `config.defaultTracking.attribution.excludeReferrers`. |
-| No previous campaign. | A user's initial visit. |
-| There is an introduction of new UTM parameter or Click ID parameter. | If any utm parameters or Click ID parameters have been dropped during a session, we will unset it. |
-| The referrer domain changes to a new one. | Referrer domain changed from `a.test.com` to `b.test-new.com`|
+| Rule                                                                 | Example                                                                                                                                                            |
+| -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| The current subdomain is not an excluded referrer.                   | The referrer does not originates from the same domain or the current subdomain is not match any referrer in `config.defaultTracking.attribution.excludeReferrers`. |
+| No previous campaign.                                                | A user's initial visit.                                                                                                                                            |
+| There is an introduction of new UTM parameter or Click ID parameter. | If any utm parameters or Click ID parameters have been dropped during a session, we will unset it.                                                                 |
+| The referrer domain changes to a new one.                            | Referrer domain changed from `a.test.com` to `b.test-new.com`                                                                                                      |
 
 Amplitude doesn't track marketing attribution under any of the following conditions:
 
-|Rule|Example|
-|-|-|
-| The referrer originates from the same domain with default configuration. | The landing page is `a.test.com`, with the referrer set to `b.test.com`. |
-| A specific referrer domain is explicitly excluded.| When setting `config.defaultTracking.attribution.excludeReferrers` = `[a.test.com]`, and the referrer domain is `a.test.com` for the current page. |
-| The subdomain is specified or matches the regular expression in `config.defaultTracking.attribution.excludeReferrers`.| Configuration of excludeReferrers involves specific string arrays or a regular expression. |
-| The user engages in direct traffic within the same session.| During a session, a user clicks on a link without any campaign attribution parameters, including the absence of UTM and click id parameters from an email. |
-| SPA redirect without page reloading  | During a session, a user clicks on a link without any campaign attribution parameters, including the absence of UTM and click id parameters from an email. |
+| Rule                                                                                                                   | Example                                                                                                                                                    |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| The referrer originates from the same domain with default configuration.                                               | The landing page is `a.test.com`, with the referrer set to `b.test.com`.                                                                                   |
+| A specific referrer domain is explicitly excluded.                                                                     | When setting `config.defaultTracking.attribution.excludeReferrers` = `[a.test.com]`, and the referrer domain is `a.test.com` for the current page.         |
+| The subdomain is specified or matches the regular expression in `config.defaultTracking.attribution.excludeReferrers`. | Configuration of excludeReferrers involves specific string arrays or a regular expression.                                                                 |
+| The user engages in direct traffic within the same session.                                                            | During a session, a user clicks on a link without any campaign attribution parameters, including the absence of UTM and click id parameters from an email. |
+| SPA redirect without page reloading                                                                                    | During a session, a user clicks on a link without any campaign attribution parameters, including the absence of UTM and click id parameters from an email. |
 
 #### Rogue referral problem for SPAs
 

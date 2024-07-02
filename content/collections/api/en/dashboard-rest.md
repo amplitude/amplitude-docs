@@ -141,14 +141,14 @@ You can use the Dashboard REST API to export data from data tables. Just query a
 Get JSON results from any saved chart via chart ID.
 `GET https://amplitude.com/api/3/chart/chart_id/query`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://amplitude.com/api/3/chart/:chart_id/query' \
 -u '{api_key}:{secret_key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/3/chart/:chart_id/query HTTP/1.1
 Host: amplitude.com
@@ -173,14 +173,14 @@ Get the number of active or new users.
 
 `GET https://amplitude.com/api/2/users`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://amplitude.com/api/2/users?start=STARTDATE&end=ENDDATE' \
 -u '{api_key}:{secret_key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/users?start=20210101&end=20210901&m=active&i=30&g=city HTTP/1.1
 Host: amplitude.com
@@ -192,14 +192,14 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 {{partial:collapse name="Example: Get active users for a period, counted in an interval"}}
 Retrieves active users between January 1, 2021 and September 1, 2021.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/2/users?start=20210101&end=20210901&m=active'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/users?start=20210101&end=20210901&m=active HTTP/1.1
 Host: amplitude.com
@@ -212,14 +212,14 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 {{partial:collapse name="Example: Get active users for a period, segmented by a property, counted in an interval"}}
 Retrieves active users in Amsterdam between January 1 2021 and September 1 2021, counted monthly. 
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location -g --request GET 'https://amplitude.com/api/2/users?start=20210101&end=20210901&m=active&i=30&s=[{"prop":"city","op": "is","values": ["Amsterdam"]}]'            
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/users?start=20210101&end=20210901&m=active&i=30&s=[{"prop":"city","op": "is","values": ["Amsterdam"]}] HTTP/1.1
 Host: amplitude.com
@@ -269,14 +269,14 @@ Get the number of sessions for each pre-defined length ("bucket") period during 
 
 `GET https://amplitude.com/api/2/sessions/length`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://amplitude.com/api/2/sessions/length?start=STARTDATE&end=ENDDATE'
 -u '{api_key}:{secret_key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/sessions/length?start=20210426&end=20210905 HTTP/1.1
 Host: amplitude.com
@@ -288,14 +288,14 @@ Authorization: Basic {api-key}:{secret-key} # credentials must be base64 encoded
 {{partial:collapse name="Example: Get session length distribution with a custom bin for a period"}}
 Retrieves session length distribution from 0-10 minutes for the period between April 26 and September 5.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://amplitude.com/api/2/sessions/length?start=20210426&end=20210905&timeHistogramConfigBinTimeUnit=minutes&timeHistogramConfigBinMin=0&timeHistogramConfigBinMax=10'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/sessions/length?start=20210426&end=20210905&timeHistogramConfigBinTimeUnit=minutes&timeHistogramConfigBinMin=0&timeHistogramConfigBinMax=10 HTTP/1.1
 Host: amplitude.com
@@ -308,14 +308,14 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 {{partial:collapse name="Example: Get session length distribution by hours with a custom bin size for period"}}
 Retrieves session length distribution with 0 - 10 hours with bucket size 2 for the period between April 26 and September 5. 
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://amplitude.com/api/2/sessions/length?start=20210426&end=20210905&timeHistogramConfigBinTimeUnit=days&timeHistogramConfigBinMin=0&timeHistogramConfigBinMax=10&timeHistogramConfigBinSize=1'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/sessions/length?start=20210426&end=20210905&timeHistogramConfigBinTimeUnit=days&timeHistogramConfigBinMin=0&timeHistogramConfigBinMax=10&timeHistogramConfigBinSize=1 HTTP/1.1
 Host: amplitude.com
@@ -374,14 +374,14 @@ The response is a JSON object with this schema:
 
 Get the average session length (in seconds) for each day in the specified date range.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://amplitude.com/api/2/sessions/average?start=20210601&end=20210630' \
 -u '{api_key}:{secret_key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/sessions/average?start=20210601&end=20210630 HTTP/1.1
 Host: amplitude.com
@@ -430,14 +430,14 @@ Returns a JSON object with this schema:
 
 Get the average number of sessions per user on each day in the specified date range.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://amplitude.com/api/2/sessions/peruser?start=&end=' \
 -u '{api_key}:{secret_key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/sessions/average?start=20210601&end=20210630
 Host: amplitude.com
@@ -484,14 +484,14 @@ Get the distribution of users across values of a user property in the specified 
 
 `GET https://amplitude.com/api/2/composition`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://amplitude.com/api/2/composition?start=STARTDATE&end=ENDDATE&p=PROPERTY' \
 -u '{api_key}:{secret_key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/composition?start=STARTDATE&end=ENDDATE&p=property HTTP/1.1
 Host: amplitude.com
@@ -503,14 +503,14 @@ Authorization: Basic {api-key}:{secret-key} # credentials must be base64 encoded
 {{partial:collapse name="Example: Get user composition by property for a period of time"}}
 Retrieves user composition by platform between June 1 and June 30. 
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/2/composition?start=20210601&end=20210630&p=platform'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/composition?start=20210601&end=20210630&p=platform HTTP/1.1
 Host: amplitude.com
@@ -524,14 +524,14 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 {{partial:collapse name="Example: Get user composition by custom property event for a period"}}
 Retrieves user composition by custom property event between June 1 and June 30. 
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/2/composition?start=20210601&end=20210630&p=gp:event'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/composition?start=20210601&end=20210630&p=gp:event HTTP/1.1
 Host: amplitude.com
@@ -577,14 +577,14 @@ Get the list of events with the current week's totals, uniques, and % DAU (daily
 
 `GET https://amplitude.com/api/2/events/list`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://amplitude.com/api/2/events/list' \
 -u '{api-key}:{secret-key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/events/list HTTP/1.1
 Host: amplitude.com
@@ -638,14 +638,14 @@ Returns a JSON object with this schema:
 Get metrics for an event with segmentation.
 
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/2/events/segmentation?e={"event_type":"YOUR%20EVENT"}&start=STARTDATE&end=DATE' \
 -u '{api-key}:{secret-key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/events/segmentation?e={"event_type":"YOUR%20EVENT"}&start=STARTDATE&end=ENDDATE HTTP/1.1
 Host: amplitude.com
@@ -661,14 +661,14 @@ You may need to URL encode special characters in the names of event types, event
 {{partial:collapse name="Example: Get any active event for a period"}}
 Retrieves metrics for any active event between August 1 and August 31. 
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location -g --request GET 'https://amplitude.com/api/2/events/segmentation?e={"event_type":"_active"}&start=20210801&end=20210831'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/events/segmentation?e={"event_type":"_active"}&start=20210801&end=20210831 HTTP/1.1
 Host: amplitude.com
@@ -681,14 +681,14 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 {{partial:collapse name="Example: Get two events for a period"}}
 Retrieves metrics for the "watch_tutorial" and "transaction" events between August 1 and August 31. 
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location -g --request GET 'https://amplitude.com/api/2/events/segmentation?e={"event_type":"watch_tutorial"}&start=20210801&end=20210802&e2={"event_type":"transaction"}'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/events/segmentation?e={"event_type":"watch_tutorial"}&start=20210801&end=20210831&e2={"event_type":"transaction"} HTTP/1.1
 Host: amplitude.com
@@ -701,14 +701,14 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 {{partial:collapse name="Example: Get a custom event for a period"}}
 Retrieves metrics for the "My Custom Event" event between August 1 and August 31. 
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location -g --request GET 'https://amplitude.com/api/2/events/segmentation?e={"event_type":"ce:My%20Custom%20Event"}&start=20210801&end=20210831'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/events/segmentation?e={"event_type":"ce:My%20Custom%20Event"}&start=20210801&end=20210831 HTTP/1.1
 Host: amplitude.com
@@ -721,13 +721,13 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 {{partial:collapse name="Example: Get event totals for a period"}}
 Retrieves totals for the "watch_tutorial" event between August 1 and August 31. 
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location -g --request GET 'https://amplitude.com/api/2/events/segmentation?e={"event_type":"watch_tutorial"}&start=20210801&end=20210831&m=totals'
 --heade
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/events/segmentation?e={"event_type":"watch_tutorial"}&start=20210801&end=20210831&m=totals HTTP/1.1  
 Host: amplitude.com
@@ -740,14 +740,14 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 {{partial:collapse name="Example: Get event Active % for a period"}}
 Retrieves daily active user (DAU) percentage for the "watch_tutorial" event between August 1 and August 31. 
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location -g --request GET 'https://amplitude.com/api/2/events/segmentation?e={"event_type":"watch_tutorial"}&start=20210801&end=20210831&m=pct_dau'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/events/segmentation?e={"event_type":"watch_tutorial"}&start=20210801&end=20210831&m=pct_dau HTTP/1.1
 Host: amplitude.com
@@ -808,14 +808,14 @@ Get funnel drop-off and conversion rates.
 
 `GET https://amplitude.com/api/2/funnels`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location -g --request GET 'https://amplitude.com/api/2/funnels?e={"event_type":"EVENT_1"}&e={"event_type":"EVENT_2"}&start=STARTDATE&end=ENDDATE'
 -u '{api_key}:{secret_key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/funnels?e={"event_type":"EVENT"}&e={"event_type":"EVENT"}&e={"event_type":"EVENT"}&start=STARTDATE&end=ENDDATE HTTP/1.1
 Host: amplitude.com
@@ -827,14 +827,14 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 {{partial:collapse name="Example: Get event funnel for a series of events in a period, in any order with a specific conversion time"}}
 Retrieves Event funnel for "event_one" -> "event_two" -> "event_three" between August 1 to September 26 in ANY ORDER with 3 second conversion time.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location -g --request GET 'https://amplitude.com/api/2/funnels?e={"event_type":"event_one"}&e={"event_type":"event_two"}&e={"event_type":"event_three"}&start=20210801&end=20210926&mode=unordered&cs=3&limit=100'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/funnels?e={"event_type":"event_one"}&e={"event_type":"event_two"}&e={"event_type":"event_three"}&start=20210801&end=20210926&mode=unordered&cs=3&limit=100 HTTP/1.1
 Host: amplitude.com
@@ -847,14 +847,14 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 {{partial:collapse name="Example: Get event funnel for a series of events in a period, in a specific order grouped by a property"}}
 Retrieves event funnel for "event_one" -> "event_two" between August 1 to September 26 in THIS ORDER for new users where city is none grouped by custom event property called 'event'.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location -g --request GET 'https://amplitude.com/api/2/funnels?e={"event_type":"event_one"}&e={"event_type":"event_two"}&start=20210801&end=20210926&mode=unordered&n=new&s=[{"prop":"city","op": "is","values": ["(none)"]}]&g=gp:event'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/funnels?e={"event_type":"event_one"}&e={"event_type":"event_two"}&start=20210801&end=20210926&mode=unordered&n=new&s=[{"prop":"city","op": "is","values": ["(none)"]}]&g=gp:event HTTP/1.1
 Host: amplitude.com
@@ -867,14 +867,14 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 {{partial:collapse name="Example: Get event funnel for a series of events in a period, in a specific order, filtered by property, grouped by property"}}
 Retrieve event funnel for "event_one" -> "event_two" between August 1 and September 26 in THIS ORDER for new users where city is none, grouped by library.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location -g --request GET 'https://amplitude.com/api/2/funnels?e={"event_type":"event_one"}&e={"event_type":"event_two"}&start=20210801&end=20210926&mode=unordered&n=new&s=[{"prop":"city","op": "is","values": ["(none)"]}]&g=library'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/funnels?e={"event_type":"event_one"}&e={"event_type":"event_two"}&start=20210801&end=20210926&mode=unordered&n=new&s=[{"prop":"city","op": "is","values": ["(none)"]}]&g=library HTTP/1.1
 Host: amplitude.com
@@ -887,14 +887,14 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 {{partial:collapse name="Example: Get event funnel for four events in a period"}}
 Get Event funnel for "event_one" -> "event_two" -> "event_three" -> "event_four" between August 1 and September 26 in ANY ORDER.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location -g --request GET 'https://amplitude.com/api/2/funnels?e={"event_type":"event_one"}&e={"event_type":"event_two"}&e={"event_type":"event_three"}&e={"event_type":"event_four"}&start=20210801&end=20210926&mode=unordered'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/funnels?e={"event_type":"event_one"}&e={"event_type":"event_two"}&e={"event_type":"event_three"}&e={"event_type":"event_four"}&start=20210801&end=20210926&mode=unordered HTTP/1.1
 Host: amplitude.com
@@ -907,14 +907,14 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 {{partial:collapse name="Example: Get event funnel for four events in a period, for new users, unordered"}}
 Get Event funnel for "event_one" -> "event_two" -> "event_three" -> "event_four" between August 1 and September 26 in ANY ORDER, for new users.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location -g --request GET 'https://amplitude.com/api/2/funnels?e={"event_type":"event_one"}&e={"event_type":"event_two"}&e={"event_type":"event_three"}&e={"event_type":"event_four"}&start=20210801&end=20210926&mode=unordered'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/funnels?e={"event_type":"event_one"}&e={"event_type":"event_two"}&start=20210801&end=20210926&mode=unordered&n=new&e={"event_type":"event_four"} HTTP/1.1
 Host: amplitude.com
@@ -927,14 +927,14 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 {{partial:collapse name="Example: Get event funnel for four events in a period, for new users, ordered"}}
 Get Event funnel for "event_one" -> "event_two" -> "event_three" -> "event_four" between August 1 and September 26 in THIS ORDER, for new users.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location -g --request GET 'https://amplitude.com/api/2/funnels?e={"event_type":"event_one"}&e={"event_type":"event_two"}&e={"event_type":"event_three"}&e={"event_type":"event_four"}&start=20210801&end=20210926&mode=ordered'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/funnels?e={"event_type":"event_one"}&e={"event_type":"event_two"}&start=20210801&end=20210926&mode=ordered&n=new&e={"event_type":"event_four"} HTTP/1.1
 Host: amplitude.com
@@ -1022,14 +1022,14 @@ Get user retention for specific starting and returning actions.
 
 `GET https://amplitude.com/api/2/retention`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://amplitude.com/api/2/retention?se={"event_type":"STARTEVENT"}&re={"event_type":"RETURNEVENT"}&start=STARTDATE&end=ENDDATE' \
 -u '{api_key}:{secret_key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/retention?se={"event_type":"_active"}&re={"event_type":"EVENT"}&start=STARTDATE&end=ENDDATE 
 HTTP/1.1
@@ -1042,14 +1042,14 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 {{partial:collapse name="Example: Get unbounded retention for active event with another event return for a period"}}
 Retrieves unbounded Retention for Any Active Event with "watch_tutorial" return between August 1 and August 31.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location -g --request GET 'http://amplitude.com/api/2/retention?se={"event_type":"_active"}&re={"event_type":"watch_tutorial"}&start=20210801&end=20210831&rm=rolling'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/retention?se={"event_type":"_active"}&re={"event_type":"watch_tutorial"}&start=20210801&end=20210831&rm=rolling HTTP/1.1
 Host: amplitude.com
@@ -1062,14 +1062,14 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 {{partial:collapse name="Example: Get weekly N-day retention for active event with another event return for a period"}}
 Retrieves weekly N-day retention for any active event with "watch_tutorial" return between July 26 and September 5.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location -g --request GET 'http://amplitude.com/api/2/retention?se={"event_type":"_active"}&re={"event_type":"watch_tutorial"}&start=20210726&end=20210905&i=7'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/retention?se={"event_type":"_active"}&re={"event_type":"watch_tutorial"}&start=20210726&end=20210905&i=7 HTTP/1.1
 Host: amplitude.com
@@ -1082,14 +1082,14 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 {{partial:collapse name="Example: "}}
 Get monthly N-day retention for active event with another event return for a period
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location -g --request GET 'http://amplitude.com/api/2/retention?se={"event_type":"_active"}&re={"event_type":"watch_tutorial"}&start=20210726&end=20210905&i=30'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/retention?se={"event_type":"_active"}&re={"event_type":"watch_tutorial"}&start=20210726&end=20210905&i=30 HTTP/1.1
 Host: amplitude.com
@@ -1161,14 +1161,14 @@ Get a user summary and their most (or least) recent events. Exceeding the reques
 
 `GET https://amplitude.com/api/2/useractivity`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/2/useractivity?user={amplitude_id}'
 -u '{api_key}:{secret_key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/useractivity?user=247246881751 HTTP/1.1
 Host: amplitude.com
@@ -1178,14 +1178,14 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 {{/partial:tabs}}
 
 {{partial:collapse name="Example: Get events for user with ID 123"}}
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/2/useractivity?user=123'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/useractivity?user=123 HTTP/1.1
 Host: amplitude.com
@@ -1198,14 +1198,14 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 {{partial:collapse name="Example: Get most recent two events for user with ID 123"}}
 Limits are indexed from 0, so notice that the request has a limit of `1` to return the two most recent events.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/2/useractivity?user=123&limit=1' \
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/useractivity?user=123&limit=1 HTTP/1.1
 Host: amplitude.com
@@ -1278,14 +1278,14 @@ Search for a user with a specified Amplitude ID, device ID, user ID, or user ID 
 
 `GET https://amplitude.com/api/2/usersearch`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/2/usersearch?user=USER_ID' \
 -u '{api-key}:{secret-key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/usersearch?user=user_id HTTP/1.1
 Host: amplitude.com
@@ -1297,14 +1297,14 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 {{partial:collapse name="Example: Search for user by device ID"}}
 Search for user with the device ID `0786zXEdyOX1rS3M-P_m1d`.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/2/usersearch?user=0786zXEdyOX1rS3M-P_m1d'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/usersearch?user=0786zXEdyOX1rS3M-P_m1d HTTP/1.1
 Host: amplitude.com
@@ -1317,14 +1317,14 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 {{partial:collapse name="Example: Search for user by Amplitude ID"}}
 Search for the user with Amplitude ID `356893043036`.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/2/usersearch?user=356893043036'
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='=
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/usersearch?user=356893043036 HTTP/1.1
 Host: amplitude.com
@@ -1374,14 +1374,14 @@ Get active user numbers with 5-minute granularity for the last two days.
 
 `GET https://amplitude.com/api/2/realtime`
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/2/realtime' \
 -u '{api-key}:{secret-key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/realtime?i=5 HTTP/1.1
 Host: amplitude.com
@@ -1421,14 +1421,14 @@ Get the lifetime value of new users.
 
 Learn more about the [Revenue LTV chart](/docs/analytics/charts/revenue-ltv/revenue-ltv-track-new-user-monetization).
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/2/revenue/ltv?start=&end=' \
 -u '{api-key}:{secret-key}'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/revenue/ltv?start=STARTDATE&end=ENDDATE HTTP/1.1
 Host: amplitude.com
@@ -1440,14 +1440,14 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 {{partial:collapse name="Example: LTV aggregated weekly"}}
 Requests LTV between December 1 2021 and December 31 2021, aggregated weekly. 
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/2/revenue/ltv?start=20211201&end=20211231&i=7' \
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/revenue/ltv?start=20211201&end=20211231&i=7 HTTP/1.1
 Host: amplitude.com
@@ -1460,14 +1460,14 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 {{partial:collapse name="Example: LTV aggregated monthly for new paying users"}}
 This example pulls LTV for the year, counted monthly for new paying users. 
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://amplitude.com/api/2/revenue/ltv?start=20211201&end=20221231&m=3&i=30' \
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/revenue/ltv?start=20211201&end=20221231&m=3&i=30 HTTP/1.1
 Host: amplitude.com

@@ -12,13 +12,14 @@ bundle_url: 'https://www.npmjs.com/package/amplitude-js'
 api_reference_url: 'https://amplitude.github.io/Amplitude-JavaScript/'
 shields_io_badge: 'https://img.shields.io/npm/v/amplitude-js.svg'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713914442
+updated_at: 1719613821
 ampli_article: 6b771f94-bf3a-44ba-a6a7-6e5b58108f70
 migration_guide:
   - b7cc9d54-870a-40bc-93d8-a2ac15375e75
 major_version: 1
 exclude_from_sitemap: false
-source: https://www.docs.developers.amplitude.com/data/sdks/javascript/
+source: 'https://www.docs.developers.amplitude.com/data/sdks/javascript/'
+package_name: '@amplitude/analytics-browser'
 ---
 This is the official documentation for the Amplitude Analytics JavaScript SDK.
 
@@ -161,7 +162,7 @@ var instance = amplitude.getInstance("instance").init(AMPLITUDE_API_KEY, null, o
 | `domain` | `string`. Set a custom domain for the Amplitude cookie. To include subdomains, add a preceding period, eg: `.amplitude.com`. | `null` |
 | `eventUploadPeriodMillis` | `number`. Amount of time in milliseconds that the SDK waits before uploading events if batchEvents is true. | 30 seconds |
 | `eventUploadThreshold` | `number`. Minimum number of events to batch together per request if batchEvents is true. | `30` |
-| `forceHttps` | `boolean`. Whether force to upload toHTTPS endpoint. If `true`, the events will always be uploaded to HTTPS endpoint. Otherwise, it will use the embedding site's protocol. | `true` |
+| `forceHTTPs` | `boolean`. Whether force to upload toHTTPS endpoint. If `true`, the events will always be uploaded to HTTPS endpoint. Otherwise, it will use the embedding site's protocol. | `true` |
 | `includeFbclid` | `boolean`. If `true`, captures the fbclid URL parameter as well as the user's initial_fbclid via a setOnce operation. | `false` |
 | `includeGclid` | `boolean`. If `true`, captures the gclid URL parameter as well as the user's initial_gclid via a setOnce operation. | `false` |
 | `includeReferrer` | `boolean`. If `true`, captures the referrer and referring_domain for each session, as well as the user's initial_referrer and initial_referring_domain via a setOnce operation. | `false` |
@@ -909,9 +910,9 @@ Disable cookies created by the SDK with the `disableCookies` option. When you 
 The JavaScript SDK defaults to setting the SameSite option on its cookies to `None`. This can be overridden with the `sameSiteCookie` option.
  Amplitude recommends using `Lax` unless there are instances where you have third party sites that `POST` forms to your site.
 
-#### HttpOnly cookies
+#### HTTPOnly cookies
 
-An HttpOnly option isn't technologically possible for cookies created by the SDK. The cookie is set on the client side and is used as a client-side data store. An SDK cookie can't set the HttpOnly flag.
+An HTTPOnly option isn't technologically possible for cookies created by the SDK. The cookie is set on the client side and is used as a client-side data store. An SDK cookie can't set the HTTPOnly flag.
 
 #### Upgrade legacy cookies
 

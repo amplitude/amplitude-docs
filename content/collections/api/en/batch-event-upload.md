@@ -26,12 +26,12 @@ Use this request to bulk upload events to Amplitude.
 
 ## Request
 
-The Batch Event Upload API has two differences in the request as compared to the Http API:
+The Batch Event Upload API has two differences in the request as compared to the HTTP API:
 
 - Content-type must be `application/json`.
 - The key for the `events` payload is `events` plural, not `event` singular.
 
-{{partial:tabs tabs="cURL, Http"}}
+{{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```curl
 # You can also use wget
@@ -40,7 +40,7 @@ curl -X POST https://api2.amplitude.com/batch \
   -H 'Accept: */*'
 ```
 {{/partial:tab}}
-{{partial:tab name="Http"}}
+{{partial:tab name="HTTP"}}
 ```bash
 POST https//api2.amplitude.com/batch HTTP/1.1
 Host: api2.amplitude.com

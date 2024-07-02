@@ -28,14 +28,14 @@ This script snippet tracks [experiment events](/docs/experiment/under-the-hood/e
 {{partial:tab name="US Data Center"}}
 
   ```html
-  <script src="https://cdn.lab.amplitude.com/web/v1/script/API_KEY.js"><script>
+  <script src="https://cdn.amplitude.com/script/API_KEY.experiment.js"><script>
   ```
 
 {{/partial:tab}}
 {{partial:tab name="EU Data Center"}}
 
   ```html
-  <script src="https://cdn.lab.eu.amplitude.com/web/v1/script/API_KEY.js"></script>
+  <script src="https://cdn.eu.amplitude.com/script/API_KEY.experiment.js"></script>
   ```
 
 {{/partial:tab}}
