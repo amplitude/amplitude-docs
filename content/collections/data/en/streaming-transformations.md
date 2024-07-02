@@ -9,7 +9,7 @@ Amplitude supports streaming pre-existing transformed events and event propertie
 
 ## Feature availability
 
-This feature is available with **Amplitude paid plans only**. You need to be on a Plus/Growth/Enterprise plan to create the corresponding transformations in Amplitude before streaming them out. See the [pricing page](https://Amplitude.com/pricing) for details.
+This feature is available on Plus, Growth, or Enterprise plans. For more information, see the [pricing page](https://amplitude.com/pricing).
 
 ## Setup
 
