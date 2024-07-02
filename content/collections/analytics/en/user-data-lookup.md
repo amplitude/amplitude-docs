@@ -55,7 +55,7 @@ Values for the `Total Spent` and `# Purchases` metrics are aggregated from event
 
 Any user properties at the bottom of this section are **custom user properties** you're tracking for your users in this project or portfolio.
 
-You can activate a **live stream of all events** as they are ingested into Amplitude by setting the *Live event updates* toggle to *On*.
+You can activate a **live stream of all events** as they're ingested into Amplitude by setting the *Live event updates* toggle to *On*.
 
 Amplitude groups the event stream by **session**, and orders it in **reverse chronological order**, placing the session property with the most recent activity at the top of the list. Blue events in a session are all connected by a line; green, out-of-session events stand alone. Customize the events you want to see in the event stream by choosing to show all events, highlight specific events, or only show specific events. You can also filter on a particular device ID.
 
@@ -80,23 +80,23 @@ You can choose up to ten events from a user's event stream to view in a funnel o
 
 ## Raw data fields
 
-Amplitude uses different timestamps to ensure your data is being reported accurately:
+Amplitude uses different timestamps to ensure it reports your data accurately:
 
-* **client\_event\_time**: Local timestamp (UTC) when the device logged the event.
-* **client\_upload\_time**: Local timestamp (UTC) when the device uploaded the event.
-* **server\_received\_time:** Amplitude timestamp (UTC) when Amplitude's servers receive the event.
-* **server\_upload\_time**: Amplitude timestamp (UTC) when the event is ingested into Amplitude's ingestion system. This timestamp is not used to calculate `event_time`, but it is available to reference in the raw data.
-* **event\_time:** Amplitude timestamp (UTC) which is the `client_event_time` adjusted by the difference between `server_received_time` and `client_upload_time`, specifically:
+* `client_event_time`: Local timestamp (UTC) when the device logged the event.
+* `client_upload_time`: Local timestamp (UTC) when the device uploaded the event.
+* `server_received_time`: Amplitude timestamp (UTC) when Amplitude's servers receive the event.
+* `server_upload_time`: Amplitude timestamp (UTC) when the event is ingested into Amplitude's ingestion system. This timestamp isn't used to calculate `event_time`, but it's available to reference in the raw data.
+* `event_time`: Amplitude timestamp (UTC) which is the `client_event_time` adjusted by the difference between `server_received_time` and `client_upload_time`, specifically:
 
 ```
-event\_time = client\_event\_time + (server\_received\_time - client\_upload\_time)
+event_time = client_event_time + (server_received_time - client_upload_time)
 ```
 
 {{partial:admonition type="note" heading=""}}
 If the difference between `server_received_time` and `client_upload_time` is less than 60 seconds, the `event_time` isn't adjusted and is set equal to the `client_event_time`. This occurs automatically for projects with a [project ID](/docs/admin/account-management/manage-orgs-projects#view-and-edit-your-project-information) of 243704 or higher. To apply this 60-second cutoff time to an older project, contact Amplitude Support.
 {{/partial:admonition}}
 
-Daily exported files are based on `server_upload_time` and all dashboards are based on `event_time`. Queries on raw data should use `event_time`.
+Daily exported files use `server_upload_time` and all dashboards use `event_time`. Queries on raw data should use `event_time`.
 
 ## UUID
 
