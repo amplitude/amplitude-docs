@@ -1,8 +1,11 @@
 title: 'Account Management'
+sites:
+  - en
+propagate: false
 template: default
 layout: layout
 revisions: false
-route: '/admin/account-management/{slug}'
+route: '/admin/{slug}'
 sort_dir: asc
 date_behavior:
   past: public

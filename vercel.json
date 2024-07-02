@@ -1823,17 +1823,17 @@
     },
     {
       "source": "/docs/hc/en-us/articles/360058531591((?:-[a-zA-Z0-9-]+)?)",
-      "destination": "/docs/admin/account-management/manage-users",
+      "destination": "/docs/admin/manage-users",
       "statusCode": 301
     },
     {
       "source": "/docs/hc/en-us/articles/360058399851((?:-[a-zA-Z0-9-]+)?)",
-      "destination": "/docs/admin/account-management/scim-provision",
+      "destination": "/docs/admin/scim-provision",
       "statusCode": 301
     },
     {
       "source": "/docs/hc/en-us/articles/360058073772((?:-[a-zA-Z0-9-]+)?)",
-      "destination": "/docs/admin/account-management/manage-orgs-projects",
+      "destination": "/docs/admin/manage-orgs-projects",
       "statusCode": 301
     },
     {
@@ -1843,7 +1843,7 @@
     },
     {
       "source": "/docs/hc/en-us/articles/360055808391((?:-[a-zA-Z0-9-]+)?)",
-      "destination": "/docs/admin/account-management/webhooks",
+      "destination": "/docs/admin/webhooks",
       "statusCode": 301
     },
     {
@@ -1938,7 +1938,7 @@
     },
     {
       "source": "/docs/hc/en-us/articles/360044588191((?:-[a-zA-Z0-9-]+)?)",
-      "destination": "/docs/admin/account-management/manage-permission-groups",
+      "destination": "/docs/admin/manage-permission-groups",
       "statusCode": 301
     },
     {
@@ -1998,7 +1998,7 @@
     },
     {
       "source": "/docs/hc/en-us/articles/360031965572((?:-[a-zA-Z0-9-]+)?)",
-      "destination": "/docs/admin/account-management/manage-notifications",
+      "destination": "/docs/admin/manage-notifications",
       "statusCode": 301
     },
     {
@@ -2048,7 +2048,7 @@
     },
     {
       "source": "/docs/hc/en-us/articles/360002750712((?:-[a-zA-Z0-9-]+)?)",
-      "destination": "/docs/admin/account-management/portfolio",
+      "destination": "/docs/admin/portfolio",
       "statusCode": 301
     },
     {
@@ -2143,7 +2143,7 @@
     },
     {
       "source": "/docs/hc/en-us/articles/235649848((?:-[a-zA-Z0-9-]+)?)",
-      "destination": "/docs/admin/account-management/account-settings",
+      "destination": "/docs/admin/account-settings",
       "statusCode": 301
     },
     {
@@ -2188,7 +2188,7 @@
     },
     {
       "source": "/docs/hc/en-us/articles/229672228((?:-[a-zA-Z0-9-]+)?)",
-      "destination": "/docs/admin/account-management/user-roles-permissions",
+      "destination": "/docs/admin/user-roles-permissions",
       "statusCode": 301
     },
     {
@@ -2583,7 +2583,7 @@
     },
     {
       "source": "/docs/hc/en-us/articles/15581410157339((?:-[a-zA-Z0-9-]+)?)",
-      "destination": "/docs/admin/account-management/currency-unit",
+      "destination": "/docs/admin/currency-unit",
       "statusCode": 301
     },
     {
