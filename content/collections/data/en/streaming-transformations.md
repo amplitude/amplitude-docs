@@ -4,11 +4,11 @@ title: 'Streaming transformations'
 landing: false
 exclude_from_sitemap: false
 ---
-Amplitude now provides customers with the ability to stream pre-existing transformed event and event properties. This includes support for Custom Events, Derived Properties, Transformed Events, Transformed Properties. With this feature, you can now select any existing transformations you made in Amplitude taxonomy when setting up your streaming configuration.
+Amplitude now provides you with the ability to stream pre-existing transformed event and event properties. This includes support for Custom Events, Derived Properties, Transformed Events, and Transformed Properties. With this feature, you can now select any existing transformations you made in Amplitude taxonomy when setting up your streaming configuration.
 
 ## Feature availability
 
-This feature is available with **Amplitude paid plans only**. You need to be on a PLUS/Growth/Enterprise plan to create the corresponding transformations in Amplitude before streaming it out. See the [pricing page](https://Amplitude.com/pricing) for details.
+This feature is available with **Amplitude paid plans only**. You need to be on a PLUS/Growth/Enterprise plan to create the corresponding transformations in Amplitude before streaming them out. See the [pricing page](https://Amplitude.com/pricing) for details.
 
 ## Setup
 
@@ -25,8 +25,8 @@ This feature is available with **Amplitude paid plans only**. You need to be on 
 
 ## Example Use cases
 
-1. **Example 1:** If you stream events to AppsFlyer, which requires unique event names for attribution and doesn’t understand event properties, you previously had to create custom events in the backend and resend them to Amplitude CDP. With our new feature, you can now use Amplitude Data to rename your events before sending them to AppsFlyer. This streamlines your process, reducing duplicate ingestions and optimizing event volume.
-2. **Example 2:** If you want to stream derived properties from Amplitude to Braze to improve your campaign effectiveness, you can now select derived properties in sync filters and include them when sending additional properties. This means you can run more targeted and efficient campaigns using the enriched event data from Amplitude.
+1. **Example 1:** If you stream events to AppsFlyer, which requires unique event names for attribution and doesn’t understand event properties, you had to create custom events in the backend and resend them to Amplitude CDP. With this feature, you can now use Amplitude Data to rename your events before sending them to AppsFlyer. This streamlines your process, reducing duplicate ingestion and optimizing event volume.
+2. **Example 2:** If you want to stream derived properties from Amplitude to Braze to improve your campaign effectiveness, you can now select derived properties in sync filters and include them when sending more properties. This means you can run more targeted and efficient campaigns using the enriched event data from Amplitude.
 
 ## Considerations
 
