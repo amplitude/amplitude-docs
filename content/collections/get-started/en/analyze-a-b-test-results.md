@@ -27,15 +27,15 @@ There are two main ways to update a user property:
 
 1. [SDKs](/docs/sdks) & [HTTP API](/docs/apis/analytics/http-v2): Update user properties on event action.
 
-   * **How:** Send user properties with each event via Amplitude's [SDKs](/docs/sdks) or [HTTP API](/docs/apis/analytics/http-v2).
+   * **How:** Send user properties with each event with Amplitude's [SDKs](/docs/sdks) or [HTTP API](/docs/apis/analytics/http-v2).
    * **Pros:** User properties take effect at the moment the event is sent, and exist with the user for all subsequent events, until the property values are explicitly updated.
-   * **Cons:** These events count towards your monthly event volume. Further, these events count users as **active** users by default, so make sure any A/B testing-related events are marked as [inactive events](/docs/data/change-event-activity-status).
+   * **Cons:** These events count towards your monthly event volume. Further, these events count users as **active** users by default, so make sure to mark any A/B testing-related events as [inactive events](/docs/data/change-event-activity-status).
 
 2. [Identify API](/docs/apis/analytics/identify): Update user properties without sending an event.
 
    * **How:** Amplitude's [Identify API](/docs/apis/analytics/identify) allows you to update a user property without sending an event.
    * **Pros:** Can asynchronously update a user property without sending an event, and don't affect your monthly event volume count.
-   * **Cons:** The user property don't take effect until the user takes an action. This usually isn't an issue for most experiments, but it **may have an impact on experiments** intended to track whether inactive users are returning to your application.  
+   * **Cons:** The user property doesn't take effect until the user takes an action. This isn't an issue for most experiments, but it may impact on experiments that track if inactive users return to your application.  
   
 For example, suppose you're trying to get users who have been inactive for more than seven days to return to your app, and you're testing the effectiveness of an email to make that happen. If the [Identify API](/docs/apis/analytics/identify) is used to update a user property, it will only apply to those users who have returned to trigger an event in your application. If a user remains inactive after receiving the email, the user property doesn't apply to this user. As a result, this inactive user isn't included in the experiment group that has received the email, because the user property never attached to them. In situations like these, consider updating user properties on an event action (for example, an event called "Email Sent").
 
@@ -53,7 +53,7 @@ User Property Key: `Experiment 1`
 User Property Value: `variation_a`  
   
 **Pros:** Can easily select experiments to segment by from the user segmentation tab.  
-**Cons:** Can result in an overwhelming list of user properties, depending on the number of experiments currently running.
+**Cons:** Can result in an overwhelming list of user properties, depending on the number of active experiments.
 
 ### Use one user property **for all** experiments.  
   
@@ -65,13 +65,13 @@ User Property Value: [`experiment_1_value`, `experiment_2_value`]
 You can segment on the user property `Split Tests` by selecting the appropriate value or test group in the chart's [segmentation module](/docs/analytics/charts/build-charts-add-user-segments).  
   
 **Pros:** You will only have one user property related to your split testing (rather than one per experiment), so your user property list is more manageable in the dashboard.   
-**Cons:** Arrays may not exceed 10,000 characters if `append`  or `prepend`  is used. If an array were to exceed this limit, any characters past the threshold wouldn't be recorded.
+**Cons:** Arrays can't exceed 10,000 characters if you use `append`  or `prepend` . If an array exceeds this limit, Amplitude doesn't record any characters past the threshold.
 
 Amplitude also offers a full integration with [Optimizely](https://www.optimizely.com/) that automatically updates user properties for each experiment. 
 
 ## Viewing results in Amplitude
 
-You can review the results of your split tests after user properties update for each experiment group. The [AB Test View](/docs/analytics/charts/funnel-analysis/funnel-analysis-interpret) chart allows you to conduct this analysis.
+Review the results of your split tests after user properties update for each experiment group. Use the [AB Test View](/docs/analytics/charts/funnel-analysis/funnel-analysis-interpret) conduct this analysis.
 
 Compare the activity between experiment groups in the [segments module](/docs/analytics/charts/build-charts-add-user-segments) of the chart control panel. To do this, simply add your experimental groups.
 
