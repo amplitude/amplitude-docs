@@ -11,13 +11,13 @@ releases_url: 'https://github.com/amplitude/Amplitude-Node/releases'
 bundle_url: 'https://www.npmjs.com/package/@amplitude/node'
 shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/node.svg'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1710273534
+updated_at: 1719861804
 ampli_article: 032ffb7e-a0ff-49d8-bcad-2407d7bd5573
-source: https://www.docs.developers.amplitude.com/data/sdks/node/
+source: 'https://www.docs.developers.amplitude.com/data/sdks/node/'
 migration_guide:
   - 1ca7ad5b-47f8-4709-b0f1-083941dc62c9
+package_name: '@amplitude/node'
 ---
-
 This is Amplitude Node.js SDK written in Typescript, the first backend SDK for Amplitude.
 
 The client-side SDKs are optimized to track session and attribution for a single user or device. The Node SDK's focus is to offer a helpful developer experience to help back-end services reliably and correctly send events from many users and sources. 
@@ -190,4 +190,3 @@ client.addEventMiddleware(filteringMiddleware)
 ```
 
 You can find examples for [Typescript](https://github.com/amplitude/ampli-examples/tree/main/browser/typescript/v1/react-app/src/middleware) and [JavaScript](https://github.com/amplitude/ampli-examples/tree/main/browser/javascript/v1/react-app/src/middleware).
-

@@ -1,0 +1,60 @@
+title: Ampli
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: false
+              validate:
+                - required
+          -
+            handle: content
+            field:
+              type: markdown
+              antlers: true
+              display: Content
+              localizable: true
+          -
+            handle: author
+            field:
+              type: users
+              display: Author
+              default: current
+              localizable: true
+              max_items: 1
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
+              localizable: true
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: package_name
+            field:
+              type: text
+              display: 'Package name'
+              localizable: false
+          -
+            handle: bundle_url
+            field:
+              input_type: url
+              type: text
+              display: 'Bundle URL'
+              localizable: false

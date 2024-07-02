@@ -1248,8 +1248,16 @@ video {
   fill: #656b75;
 }.fill-amp-gray-600 {
   fill: #5a5e68;
+}.fill-amp-gray-950 {
+  fill: #242528;
 }.fill-white {
   fill: #ffffff;
+}.fill-\[\#374151\] {
+  fill: #374151;
+}.fill-\[amp-gray-800\] {
+  fill: amp-gray-800;
+}.fill-amp-gray-800 {
+  fill: #414349;
 }.p-0 {
   padding: 0px;
 }.p-2 {
@@ -1295,6 +1303,9 @@ video {
 }.py-\[\.25rem\] {
   padding-top: .25rem;
   padding-bottom: .25rem;
+}.py-\[1\.25rem\] {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }.py-\[2\.12rem\] {
   padding-top: 2.12rem;
   padding-bottom: 2.12rem;
@@ -1583,7 +1594,22 @@ video {
          url('../fonts/ibm-plex-mono-v11-latin-700.woff') format('woff'), /* Modern Browsers */
          url('../fonts/ibm-plex-mono-v11-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
          url('../fonts/ibm-plex-mono-v11-latin-700.svg#IBMPlexMono') format('svg'); /* Legacy iOS */
-  }/* This is all you. */.active > svg {
+  }/* This is all us. */abbr {
+    position: relative
+  }abbr:hover::after {
+    background: #1b1b1b;
+    color: white;
+    border-radius: 4px;
+    bottom: 100%;
+    content: attr(title);
+    display: block;
+    left: 100%;
+    padding: 1em;
+    position: absolute;    
+    /* width: 280px; */
+    z-index: 1;
+    transition: all;
+  }.active > svg {
     transform: rotate(180deg);
 }button:has(+ div a.active) {
     color: #1e61f0;
