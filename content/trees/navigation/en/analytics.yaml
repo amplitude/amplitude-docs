@@ -86,6 +86,9 @@ tree:
         id: ffd3a53b-939f-49f2-823f-3fe5d33b80cc
         entry: 9dd9d1d8-df67-4782-872e-d618ce058c49
       -
+        id: 9c3d9617-e10a-4a81-8412-83b420119045
+        entry: 9e896326-38fa-4b70-b016-df2906dc4e48
+      -
         id: 1f5a7f31-722a-4cff-8ac8-07fa5d09ee71
         title: Dashboards
         children:
