@@ -829,7 +829,12 @@
     },
     {
       "source": "/docs/data/sources/csv",
-      "destination": "/docs/data/source-catalog/csv",
+      "destination": "/docs/data/source-catalog/lookup-tables",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/data/sources/lookup-table",
+      "destination": "/docs/data/source-catalog/lookup-tables",
       "statusCode": 301
     },
     {
@@ -1049,6 +1054,11 @@
     },
     {
       "source": "/docs/data/destinations/intercom-cohort",
+      "destination": "/docs/data/destination-catalog/intercom-cohort-sync",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/data/destinations/itercom-cohort",
       "destination": "/docs/data/destination-catalog/intercom-cohort-sync",
       "statusCode": 301
     },
