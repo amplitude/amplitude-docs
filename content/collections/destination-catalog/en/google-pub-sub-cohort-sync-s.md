@@ -1,7 +1,7 @@
 ---
 id: b1d8d8a7-3cf2-43ad-8ee0-c2b4d81dcf4d
 blueprint: destination-catalog
-title: 'Google Pub/Sub (Cohort Sync)s'
+title: 'Google Pub/Sub (Cohort Sync)'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 connection: destination
 source: https://www.docs.developers.amplitude.com/data/destinations/google-pub-sub/

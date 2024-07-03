@@ -222,7 +222,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/1flow",
+      "source": "/docs/data/destinations/1flow-cohort",
       "destination": "/docs/data/destination-catalog/1flow",
       "statusCode": 301
     },
@@ -412,7 +412,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/airship",
+      "source": "/docs/data/destinations/airship-cohort",
       "destination": "/docs/data/destination-catalog/airship",
       "statusCode": 301
     },
@@ -462,7 +462,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/amazon-kinesis-data-stream",
+      "source": "/docs/data/destinations/kinesis-data-stream",
       "destination": "/docs/data/destination-catalog/amazon-kinesis-data-stream",
       "statusCode": 301
     },
@@ -492,7 +492,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/amazon-kinesis-firehose",
+      "source": "/docs/data/destinations/kinesis-firehose",
       "destination": "/docs/data/destination-catalog/amazon-kinesis-firehose",
       "statusCode": 301
     },
@@ -597,7 +597,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/appcues",
+      "source": "/docs/data/destinations/appcues-cohort",
       "destination": "/docs/data/destination-catalog/appcues",
       "statusCode": 301
     },
@@ -637,7 +637,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/appfit",
+      "source": "/docs/data/destinations/appfit-event-streaming",
       "destination": "/docs/data/destination-catalog/appfit",
       "statusCode": 301
     },
@@ -671,6 +671,7 @@
       "destination": "/docs/data/destination-catalog/appsflyer",
       "statusCode": 301
     },
+    
     {
       "source": "/docs/experiment/sdks/react-native-sdk-legacy",
       "destination": "/docs/sdks/experiment-sdks/experiment-react-native-legacy",
@@ -697,7 +698,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/apxor",
+      "source": "/docs/data/destinations/apxor-cohort",
       "destination": "/docs/data/destination-catalog/apxor",
       "statusCode": 301
     },
@@ -732,7 +733,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/batch",
+      "source": "/docs/data/destinations/batch-cohort",
       "destination": "/docs/data/destination-catalog/batch",
       "statusCode": 301
     },
@@ -757,7 +758,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/blitzllama",
+      "source": "/docs/data/destinations/blitzllama-cohort",
       "destination": "/docs/data/destination-catalog/blitzllama",
       "statusCode": 301
     },
@@ -847,7 +848,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/cordial",
+      "source": "/docs/data/destinations/cordial-cohort",
       "destination": "/docs/data/destination-catalog/cordial",
       "statusCode": 301
     },
@@ -877,7 +878,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/enterpret",
+      "source": "/docs/data/destinations/enterpret-cohort",
       "destination": "/docs/data/destination-catalog/enterpret",
       "statusCode": 301
     },
@@ -887,7 +888,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/extole",
+      "source": "/docs/data/destinations/extole-event-streaming",
       "destination": "/docs/data/destination-catalog/extole",
       "statusCode": 301
     },
@@ -897,7 +898,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/facebook-ads",
+      "source": "/docs/data/destinations/facebook-cohort",
       "destination": "/docs/data/destination-catalog/facebook-ads",
       "statusCode": 301
     },
@@ -937,7 +938,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/google-ads",
+      "source": "/docs/data/destinations/google-ads-event-streaming",
       "destination": "/docs/data/destination-catalog/google-ads",
       "statusCode": 301
     },
@@ -1037,7 +1038,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/insider",
+      "source": "/docs/data/destinations/insider-cohort",
       "destination": "/docs/data/destination-catalog/insider",
       "statusCode": 301
     },
@@ -1087,7 +1088,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/kameleoon",
+      "source": "/docs/data/destinations/kameleoon-event-streaming",
       "destination": "/docs/data/destination-catalog/kameleoon",
       "statusCode": 301
     },
@@ -1097,7 +1098,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/klaviyo",
+      "source": "/docs/data/destinations/klaviyo-cohort",
       "destination": "/docs/data/destination-catalog/klaviyo",
       "statusCode": 301
     },
@@ -1127,7 +1128,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/launchdarkly",
+      "source": "/docs/data/destinations/launchdarkly-cohort/",
       "destination": "/docs/data/destination-catalog/launchdarkly",
       "statusCode": 301
     },
@@ -1137,7 +1138,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/leanplum",
+      "source": "/docs/data/destinations/leanplum-cohort",
       "destination": "/docs/data/destination-catalog/leanplum",
       "statusCode": 301
     },
@@ -1152,7 +1153,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/mailchimp",
+      "source": "/docs/data/destinations/mailchimp-cohort",
       "destination": "/docs/data/destination-catalog/mailchimp",
       "statusCode": 301
     },
@@ -1162,7 +1163,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/marketo-static-list",
+      "source": "/docs/data/destinations/marketo-static-list-cohort",
       "destination": "/docs/data/destination-catalog/marketo-static-list",
       "statusCode": 301
     },
@@ -1172,12 +1173,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/marketo",
-      "destination": "/docs/data/destination-catalog/marketo",
-      "statusCode": 301
-    },
-    {
-      "source": "/docs/data/destinations/maze",
+      "source": "/docs/data/destinations/maze-cohort",
       "destination": "/docs/data/destination-catalog/maze",
       "statusCode": 301
     },
@@ -1192,12 +1188,12 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/moengage",
+      "source": "/docs/data/destinations/moengage-event-streaming",
       "destination": "/docs/data/destination-catalog/moengage",
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/moloco",
+      "source": "/docs/data/destinations/moloco-event-streaming",
       "destination": "/docs/data/destination-catalog/moloco",
       "statusCode": 301
     },
@@ -1207,32 +1203,32 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/movable-ink",
+      "source": "/docs/data/destinations/movable-ink-event-streaming",
       "destination": "/docs/data/destination-catalog/movable-ink",
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/netcore-cloud",
+      "source": "/docs/data/destinations/netcore-cohort",
       "destination": "/docs/data/destination-catalog/netcore-cloud",
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/notivize",
+      "source": "/docs/data/destinations/notivize-cohort",
       "destination": "/docs/data/destination-catalog/notivize",
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/onesignal",
+      "source": "/docs/data/destinations/onesignal-cohort",
       "destination": "/docs/data/destination-catalog/onesignal",
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/optimizely",
+      "source": "/docs/data/destinations/optimizely-cohort",
       "destination": "/docs/data/destination-catalog/optimizely",
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/planhat",
+      "source": "/docs/data/destinations/planhat-event-streaming",
       "destination": "/docs/data/destination-catalog/planhat",
       "statusCode": 301
     },
@@ -1242,12 +1238,12 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/plotline",
+      "source": "/docs/data/destinations/plotline-event-streaming",
       "destination": "/docs/data/destination-catalog/plotline",
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/productboard",
+      "source": "/docs/data/destinations/productboard-cohort",
       "destination": "/docs/data/destination-catalog/productboard",
       "statusCode": 301
     },
@@ -1257,42 +1253,42 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/pushwoosh",
+      "source": "/docs/data/destinations/pushwoosh-cohort",
       "destination": "/docs/data/destination-catalog/pushwoosh",
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/qualtrics",
+      "source": "/docs/data/destinations/qualtrics-cohort",
       "destination": "/docs/data/destination-catalog/qualtrics",
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/salesforce-marketing-cloud-v1",
+      "source": "/docs/data/destinations/marketing-cloud-cohort",
       "destination": "/docs/data/destination-catalog/salesforce-marketing-cloud-v1",
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/salesforce-marketing-cloud-v2",
+      "source": "/docs/data/destinations/marketing-cloud-cohort-v2",
       "destination": "/docs/data/destination-catalog/salesforce-marketing-cloud-v2",
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/segment",
+      "source": "/docs/data/destinations/segment-cohort",
       "destination": "/docs/data/destination-catalog/segment",
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/sendgrid",
+      "source": "/docs/data/destinations/sendgrid-cohort",
       "destination": "/docs/data/destination-catalog/sendgrid",
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/sleekflow",
+      "source": "/docs/data/destinations/sleekflow-cohort",
       "destination": "/docs/data/destination-catalog/sleekflow",
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/snapchat",
+      "source": "/docs/data/destinations/snapchat-ads-cohort",
       "destination": "/docs/data/destination-catalog/snapchat",
       "statusCode": 301
     },
@@ -1307,7 +1303,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/split",
+      "source": "/docs/data/destinations/split-cohort",
       "destination": "/docs/data/destination-catalog/split",
       "statusCode": 301
     },
@@ -1322,7 +1318,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/talon-one",
+      "source": "/docs/data/destinations/talonone-cohort",
       "destination": "/docs/data/destination-catalog/talon-one",
       "statusCode": 301
     },
@@ -1337,17 +1333,17 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/unitq",
+      "source": "/docs/data/destinations/unitq-cohort",
       "destination": "/docs/data/destination-catalog/unitq",
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/user-com",
+      "source": "/docs/data/destinations/user.com-cohort",
       "destination": "/docs/data/destination-catalog/user-com",
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/userflow",
+      "source": "/docs/data/destinations/userflow-cohort",
       "destination": "/docs/data/destination-catalog/userflow",
       "statusCode": 301
     },
@@ -1357,17 +1353,17 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/userlist",
+      "source": "/docs/data/destinations/userlist-event-streaming",
       "destination": "/docs/data/destination-catalog/userlist",
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/webengage",
+      "source": "/docs/data/destinations/webengage-cohort",
       "destination": "/docs/data/destination-catalog/webengage",
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/zeda-io",
+      "source": "/docs/data/destinations/zeda.io-cohort",
       "destination": "/docs/data/destination-catalog/zeda-io",
       "statusCode": 301
     },
@@ -1402,7 +1398,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/thetradedesk",
+      "source": "/docs/data/destinations/thetradedesk-cohort",
       "destination": "/docs/data/destination-catalog/thetradedesk",
       "statusCode": 301
     },
