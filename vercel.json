@@ -1128,7 +1128,7 @@
       "statusCode": 301
     },
     {
-      "source": "/docs/data/destinations/launchdarkly-cohort/",
+      "source": "/docs/data/destinations/launchdarkly-cohort",
       "destination": "/docs/data/destination-catalog/launchdarkly",
       "statusCode": 301
     },
