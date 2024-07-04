@@ -9,7 +9,7 @@ integration_category:
   - marketing-automation
 integration_type:
   - cohorts
-title: Mailchimp
+title: 'Mailchimp (Cohort)'
 source: 'https://docs.developers.amplitude.com/data/destinations/mailchimp'
 category: 'Cohort syncing'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
@@ -18,7 +18,7 @@ partner_maintained: false
 integration_icon: partner-icons/mailchimp.svg
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713479308
+updated_at: 1720115869
 ---
 Send Amplitude cohorts to Mailchimp to create targeted audiences for your email marketing needs.
 
