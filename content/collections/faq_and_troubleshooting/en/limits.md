@@ -4,9 +4,10 @@ blueprint: faq_and_troubleshooting
 title: Limits
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/115002923888'
 this_article_will_help_you:
-  - 'Ensure you do not experience "missing" data due to exceeding your Amplitude data limits'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718925693
+  - 'Understand the limits Amplitude places on the amount of data you can send, and how to avoid exceeding them'
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1720211956
+landing: false
 ---
 There are some limits to the amount of data that you can send to Amplitude.
 
@@ -87,7 +88,7 @@ Additionally, an orange warning bar will appear at the top of the page when you 
 
 ## CSV download limits
 
-The breakdown data table in the UI will only list the top 100 property values (for when you perform a [group-by](/docs/analytics/charts/group-by)). You can export approximately 10,000 rows as a CSV file. This is specifically a limitation on the number of group-by values you can export.
+The breakdown data table in the UI will only list the top 100 property values (for when you perform a [group-by](/docs/analytics/charts/group-by)). You can export approximately 10,000 rows as a .CSV file. This is specifically a limitation on the number of group-by values you can export.
 
 The group-by limits vary from chart to chart:
 
@@ -103,9 +104,9 @@ The group-by limits vary from chart to chart:
 | Revenue LTV | 300 |
 | Data Tables | 10,000 (**see below**) |
 
-For example, in the [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) chart, you can export a CSV of data for 10,000 distinct property values. If you perform a group-by on a property with more than 10,000 possible values, Amplitude would only export the top 10,000 values. However, you can export the full data table to the warehouse of your choice.
+For example, in the [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) chart, you can export a .CSV that includes 10,000 distinct property values. If you apply a group-by to a property with more than 10,000 possible values, Amplitude only exports the top 10,000 of those values. However, you can export the full data table to the warehouse of your choice.
 
-As stated in the table, the baseline group-by limit for Data Tables is 10,000. However, there are several exceptions:
+The baseline group-by limit for Data Tables is 10,000, with some exceptions:
 
 * The limit is 300 if a conversion metric is involved
 * The limit is 100 if a session metric is involved
