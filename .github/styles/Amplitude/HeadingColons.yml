@@ -1,5 +1,5 @@
 extends: existence
-message: "Capitalize '%s'."
+message: "Don't use colons in headings."
 nonword: true
 level: suggestion
 scope: heading

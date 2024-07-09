@@ -28,9 +28,6 @@ exceptions:
   - flushing
   - batching
   - exiting
-  - JSON
-  - String
-  - string
   - Missing
   - missing
   - targeting
