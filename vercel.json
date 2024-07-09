@@ -3073,7 +3073,7 @@
   },
   {
     "destination": "/docs/session-replay/session-replay-android-standalone",
-    "source": "/session-replay/sdks/standalone-android",
+    "source": "/docs/session-replay/sdks/standalone-android",
     "statusCode": 301
   }
 ]
