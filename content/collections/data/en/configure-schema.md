@@ -8,11 +8,11 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1720539325
+updated_at: 1720552894
 ---
-Sometimes, Amplitude might receive data from your app that it doesn't know what to do with. This is usually the result of a **Schema violation,** and it means the data Amplitude has just received is not accounted for in your Schema. If you see a Schema violation, you have probably neglected to plan for that particular data type or value when you first set up your Schema.
+Sometimes, Amplitude might receive data from your app that it doesn't know what to do with. This is usually the result of a **schema violation,** and it means the data Amplitude has just received isn't accounted for in your schema. If you see a schema violation, you've probably neglected to plan for that particular data type or value when you first set up your schema.
 
-You can tell Amplitude how to handle these situations by configuring your Schema settings. Currently, you can configure for three different types of Schema violations. Find your Schema settings by clicking into Amplitude Data and navigating to *Settings* > *Schema Settings.*
+You can tell Amplitude how to handle these situations by configuring your schema settings. You can configure for three different types of schema violations. Find your schema settings by clicking into Amplitude Data and navigating to *Settings* > *Schema Settings.*
 
 ### Feature availability
 
@@ -20,34 +20,34 @@ See [the pricing page](https://amplitude.com/pricing) to find out if this featur
 
 ## Unplanned event types
 
-Sometimes, Amplitude may receive an event that is not part of your Schema, or that you did not previously plan. This is an **unplanned event type**. You can configure Amplitude to respond in these ways: 
+Sometimes, Amplitude may receive an event that isn't part of your schema, or that you didn't plan earlier. This is an **unplanned event type**. You can configure Amplitude to respond in these ways: 
 
-* **Mark As Unexpected****. Amplitude will collect the event, trigger a warning, and send a notification to the subscribers designated. The event will be categorized as "Unexpected" in drop-downs until you approve it.
-* **Reject****. Amplitude will reject the event and send a notification to the subscribers designated. Amplitude will not store the event or its properties.  
+* **Mark As Unexpected****. Amplitude collects the event, triggers a warning, and sends a notification to the subscribers designated. The event's category in drop-downs is "Unexpected" until you approve it.
+* **Reject****. Amplitude rejects the event and sends a notification to the subscribers designated. Amplitude doesn't store the event or its properties.  
   
 ![Screenshot 2023-08-07 at 6.31.28 PM.png](/docs/output/img/data/screenshot-2023-08-07-at-6-31-28-pm-png.png)
 
 ## Unplanned event/user properties
 
-When Amplitude encounters an event or user property that is not part of your Schema, or that you did not previously plan, it considers the property to be an **unplanned event/user property**. You can configure Amplitude to respond to these in the following ways: 
+When Amplitude encounters an event or user property that isn't part of your schema, or that you didn't plan earlier, it considers the property to be an **unplanned event/user property**. You can configure Amplitude to respond to these in the following ways: 
 
-* **Mark As Unexpected.** Amplitude will collect the property, trigger a warning, and send a notification to the subscribers designated.
-* **Reject.** Amplitude will reject the property and send a notification to the subscribers designated. Amplitude will store the event, but not the properties.
+* **Mark As Unexpected.** Amplitude collects the property, triggers a warning, and sends a notification to the subscribers designated.
+* **Reject.** Amplitude rejects the property and sends a notification to the subscribers designated. Amplitude stores the event, but not the properties.
 
 ## Unplanned event/user property values
 
-When Amplitude receives an event property value that is not part of your Schema, or that you did not previously plan, it considers the value an **unplanned property value**. For example, an event property value is sent as a string, but your Schema expected a number. You can configure Amplitude to respond to an unplanned property value in the following ways:
+When Amplitude receives an event property value that isn't part of your schema, or that you didn't plan earlier, it considers the value an **unplanned property value**. For example, an event property value arrives as a string, but your schema expected a number. You can configure Amplitude to respond to an unplanned property value in the following ways:
 
-* **Mark As Unexpected.** Amplitude will collect the property, trigger a warning, and send a notification to the subscribers designated.
-* **Reject.** Amplitude will reject the property, trigger a warning, and send a notification to the subscribers designated. Amplitude will store the event, but not the properties.
+* **Mark As Unexpected.** Amplitude collects the property, triggers a warning, and sends a notification to the subscribers designated.
+* **Reject.** Amplitude rejects the property, triggers a warning, and sends a notification to the subscribers designated. Amplitude stores the event, but not the properties.
 
 If Amplitude is rejecting your event data and you want to begin collecting it, add the events or properties to your Schema by planning a new event or planning a new property.
 
 ## View validation errors
 
-Once you have initialized your Schema and defined your expected events and event properties, your Schema can be used to validate live data coming into Amplitude. If your Schema is configured to trigger a warning for unexpected events or properties, Amplitude will log an error in the validation errors panel. 
+Once you've initialized your schema and defined your expected events and event properties, your Schema can be used to validate live data coming into Amplitude. If you've configured your schema to trigger a warning for unexpected events or properties, Amplitude logs an error in the validation errors panel. 
 
-View validation errors by clicking into Amplitude Data and navigating to *Settings* > *Schema Settings* > *Validation Errors*. Any errors triggered in the last 24 hours will be displayed on this page, regardless of if the event or property have since been approved or rejected. If no errors are visible in the validation page, there have not been any violations in the past 24 hours. This does **not** mean that any violations have been fixed; it only means Amplitude has not encountered them in that time.
+View validation errors by clicking into Amplitude Data and navigating to *Settings* > *Schema Settings* > *Validation Errors*. Any errors triggered in the last 24 hours appear on this page, regardless of whether the event or property have since been approved or rejected. If no errors are visible in the validation page, there haven't been any violations in the past 24 hours. This **doesn't** mean that all violations are now fixed; it only means Amplitude hasn't encountered them in that time.
 
 You can set up email alerts for validation errors by clicking *Subscribe**.*
 
