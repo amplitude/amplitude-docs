@@ -16,7 +16,7 @@ tokens:
   - maimed
   - missing a limb
   - mute
-  - normal
+  - normal #may be worth removing if it comes up, depends on context
   - sight-impaired
   - stricken with
   - suffers from
