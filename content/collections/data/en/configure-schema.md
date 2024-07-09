@@ -7,8 +7,8 @@ this_article_will_help_you:
   - 'Eliminate Schema errors caused by unexpected data'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717623490
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1720539325
 ---
 Sometimes, Amplitude might receive data from your app that it doesn't know what to do with. This is usually the result of a **Schema violation,** and it means the data Amplitude has just received is not accounted for in your Schema. If you see a Schema violation, you have probably neglected to plan for that particular data type or value when you first set up your Schema.
 
@@ -16,7 +16,7 @@ You can tell Amplitude how to handle these situations by configuring your Schema
 
 ### Feature availability
 
-This feature is available to users on **Growth** and **Enterprise plans** only.
+See [the pricing page](https://amplitude.com/pricing) to find out if this feature is available for your Amplitude plan.
 
 ## Unplanned event types
 

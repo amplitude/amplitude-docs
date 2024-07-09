@@ -4,8 +4,8 @@ blueprint: faq_and_troubleshooting
 title: 'Access issues'
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/360059024552'
 category: other
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1719951039
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1720538805
 landing: true
 ---
 In some cases, when customers try to access Amplitude or log in, they see this error page:
@@ -39,7 +39,7 @@ If you have configured SSO via Google Suite, another possible SSO login error th
 
 ![](/docs/output/img/faq/pE-Cz24P1IMMLF4ThTaq27ZC3y8_m8aojhfOkeGHPWCM_D8FHnm_rLwCkeFKNRyFpJGn7Fb2skrAuID-PAUELNh0xldZUcVlbdTKLS9Im1yOg10yUtazvV-KlKAhPY6X03o10AHXsG_abK48y85BIgE)
 
-If you see this page, refer to  [Google Workspace Admin Help documentation](https://support.google.com/a/answer/6301076?hl=en) to find detailed instructions to resolve the login issue. 
+If you see this page, refer to [Google Workspace Admin Help documentation](https://support.google.com/a/answer/6301076?hl=en) to find detailed instructions to resolve the login issue. 
 
 If these tips don’t fix the problem, reach out to the Amplitude support team. Remember to include the browser you’re using, as well as its version, in your request.
 {{/partial:collapse}}
