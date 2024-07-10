@@ -32,6 +32,7 @@ The Session Replay Plugin requires that:
 
 1. Your application is web-based.
 2. You can provide a device ID to the SDK.
+3. You are using the Browser 2.0 SDK.
 
 ### Supported browsers
 
