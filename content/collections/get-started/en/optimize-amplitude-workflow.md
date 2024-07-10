@@ -79,7 +79,7 @@ Amplitude's Engagement Matrix chart breaks out the top and bottom events for eng
 
 ## Ongoing work: Create cohorts, compare, A/B test, improve
 
-Beyond this workflow, use Amplitude to explore your product and user data further. Create cohorts in various charts and compare how those different groups of users are engaging with your product. Are they taking different flows in [their user journeys](/docs/analytics/charts/journeys/journeys-understand-paths)? Do [experiments](docs/experiment/overview) show they convert more quickly with one variant?
+Beyond this workflow, use Amplitude to explore your product and user data further. Create cohorts in various charts and compare how those different groups of users are engaging with your product. Are they taking different flows in [their user journeys](/docs/analytics/charts/journeys/journeys-understand-paths)? Do [experiments](/docs/experiment/overview) show they convert more quickly with one variant?
 
 Drill down into the differences and develop hypotheses on what product changes can encourage all users to become power users. Test these hypotheses via [A/B testing](/docs/get-started/analyze-a-b-test-results).
 

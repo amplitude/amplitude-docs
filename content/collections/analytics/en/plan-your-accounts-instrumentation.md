@@ -80,7 +80,7 @@ Updates to groups aren't retroactive.
 
 - Set and update group properties with group identify calls. 
 
-- Send group identify calls server-side to the [Group Identify API](/docs/apis/analytics/group-identiy) or using an SDK. 
+- Send group identify calls server-side to the [Group Identify API](/docs/apis/analytics/group-identify) or using an SDK. 
 
 {{partial:admonition type="note" heading=""}}
 Group properties persist for the group until they're explicitly updated or unset. Updates to group properties aren't retroactive. 
