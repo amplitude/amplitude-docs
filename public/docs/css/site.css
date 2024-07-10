@@ -1240,6 +1240,9 @@ video {
 }.bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}.bg-amp-blue-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(210 223 252 / var(--tw-bg-opacity));
 }.fill-\[\#111827\] {
   fill: #111827;
 }.fill-amp-blue-400 {
@@ -1590,7 +1593,9 @@ video {
          url('../fonts/ibm-plex-mono-v11-latin-700.woff') format('woff'), /* Modern Browsers */
          url('../fonts/ibm-plex-mono-v11-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
          url('../fonts/ibm-plex-mono-v11-latin-700.svg#IBMPlexMono') format('svg'); /* Legacy iOS */
-  }/* This is all us. */abbr {
+  }/* This is all us. */li.help p {
+    margin-bottom: 0;
+}abbr {
     position: relative
   }abbr:hover::after {
     background: #1b1b1b;
