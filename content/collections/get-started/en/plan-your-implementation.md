@@ -60,4 +60,4 @@ After successfully tracking these events, you can [track more](/docs/data/data-p
 
 As you advance, it’s critical to [create a tracking plan](/docs/data/create-tracking-plan) document that outlines what events and properties to track, why you're tracking them, and where they're tracked. A tracking plan should derive from the business outcomes you’re trying to measure or improve.
 
-If you're using Amplitude SDKs, Ampli Wrapper is a lightweight wrapper over the Amplitude SDK that provides type safety, supports linting, and enables features like input validation. Ampli CLI works together with the Ampli wrapper to bring a tracking library into your project. Learn more about [Ampli](../../data/ampli/).
+If you're using Amplitude SDKs, Ampli Wrapper is a lightweight wrapper over the Amplitude SDK that provides type safety, supports linting, and enables features like input validation. Ampli CLI works together with the Ampli wrapper to bring a tracking library into your project. Learn more about [Ampli](/docs/sdks/ampli).

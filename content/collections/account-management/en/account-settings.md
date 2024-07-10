@@ -35,7 +35,7 @@ For more information on each of these tasks, just follow the links to the releva
 
 ### Session Replay settings
 
-The organizational settings also allow admins and managers to view or modify [Session Replay](docs/session-replay) settings.
+The organizational settings also allow admins and managers to view or modify [Session Replay](/docs/session-replay) settings.
 
 The session replay settings area displays your overall session replay capture plan allowance, current usage, and a list of projects showing sample rate, instrumentation status, and if replays are being captured for a specified project.
 

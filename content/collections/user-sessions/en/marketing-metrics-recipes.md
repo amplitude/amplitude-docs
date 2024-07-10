@@ -9,13 +9,13 @@ source: /hc/en-us/articles/23990255180443-Marketing-metrics-recipes
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718945038
 ---
-Amplitude Analytics provides a multitude of insights into the success of your product's marketing efforts. This article highlights the ingredients needed to recreate common marketing metrics using [Event Segmentation](/analytics/charts/event-segmentation/event-segmentation-build) or [User Sessions](/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) charts.
+Amplitude Analytics provides a multitude of insights into the success of your product's marketing efforts. This article highlights the ingredients needed to recreate common marketing metrics using [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) or [User Sessions](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) charts.
 
 ## Before you begin
 
-If you haven’t already read up on the basics of [building charts in Amplitude](/analytics/charts/build-charts-add-events), you should do so before proceeding.
+If you haven’t already read up on the basics of [building charts in Amplitude](/docs/analytics/charts/build-charts-add-events), you should do so before proceeding.
 
-Some of the setup instructions in this article require the use of custom formulas. See this article to read more about [custom formula metrics, syntax, and definitions](/analytics/charts/event-segmentation/event-segmentation-custom-formulas).
+Some of the setup instructions in this article require the use of custom formulas. See this article to read more about [custom formula metrics, syntax, and definitions](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas).
 
 ## Metric recipes
 

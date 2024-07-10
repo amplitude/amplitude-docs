@@ -14,5 +14,6 @@ preview_targets:
     refresh: true
 inject:
   nav_title: experiment
+  landing: true
 structure:
   root: false
