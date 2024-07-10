@@ -8,7 +8,7 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1715362928
+updated_at: 1720214133
 ---
 User permissions define the level of Amplitude access a user in your organization has. Usually, Amplitued bases permissions on a user's role, though [project-level permissions](/docs/admin/account-management/manage-users) and [permission groups](/docs/admin/account-management/manage-permission-groups) are available for Enterprise customers who need the ability to better target levels of security. For more information about permissions in Amplitude Experiment, see [App-level user permissions](/docs/experiment/app-level-permissions).
 
@@ -48,7 +48,6 @@ Note that viewers:
 Recommended for the majority of Amplitude users in your organization. Members have all viewer-level permissions, plus:
 
 * Create discoverable dashboards, charts, behavioral cohorts, and saved segments
-* Mark content as "Official Content"
 * Create [custom events](https://help.amplitude.com/hc/en-us/articles/16805886899483-Custom-events)
 * Create [team spaces](https://help.amplitude.com/hc/en-us/articles/360016524911)
 * Edit [releases](https://help.amplitude.com/hc/en-us/articles/360017800371)
@@ -68,6 +67,7 @@ Recommended for users who need access to all content created within Amplitude (d
 * Remove and edit saved segments
 * Create new projects
 * Edit project settings
+* Mark content as "Official Content"
 * Add and edit data sources and data destinations
 * Transfer ownership of content they don’t own
 
