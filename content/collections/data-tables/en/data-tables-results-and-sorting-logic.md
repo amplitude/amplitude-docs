@@ -21,7 +21,7 @@ For more complex analyses, it's important to understand how Amplitude Analytics 
 
 ## Sorting logic
 
-Once you have these results, any sorting you do applies **only to them**, and does **not** bring in any new results. 
+Once you have these results, any sorting you do applies **only to them**, and **doesn't** bring in any new results. 
 
 For example, imagine your group-by has enough different property values that Amplitude Analytics limits the results displayed to the top 100. By default, Amplitude sorts these results in descending order. If you opt to view your results in ascending order, **you do not** see the “bottom 100” results instead. You **still** see only the same top 100 results—only their sorting order has changed.
 
