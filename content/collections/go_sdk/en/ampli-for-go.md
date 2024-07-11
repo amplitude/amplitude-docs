@@ -38,7 +38,7 @@ Amplitude Data supports tracking analytics events from Go apps. The generated tr
 
 5. [Initialize the Ampli Wrapper](#load)
 
-    ```golang
+    ```go
     import "<your-module-name>/ampli"
 
     ampli.Instance.Load(ampli.LoadOptions{
@@ -50,7 +50,7 @@ Amplitude Data supports tracking analytics events from Go apps. The generated tr
 
 6. [Identify users and set user properties](#identify)
 
-    ```golang
+    ```go
     ampli.Instance.Identify(userID, ampli.Identify.Builder().
         UserProp("A trait associated with this user").
         Build(),
@@ -59,14 +59,14 @@ Amplitude Data supports tracking analytics events from Go apps. The generated tr
 
 7. [Track events with strongly typed methods and classes](#track)
 
-    ```golang
+    ```go
     ampli.Instance.SongPlayed("user_id", ampli.SongPlayed.Builder().SongId("song-1").Build())
     ampli.Instance.Track("user_id", ampli.SongFavorited.Builder().SongId("song-2").Build())
     ```
 
 8. [Flush events before application exit](#flush)
 
-    ```golang
+    ```go
     ampli.Instance.Flush()
     ```
 

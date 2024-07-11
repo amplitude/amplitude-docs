@@ -123,6 +123,10 @@ tree:
         id: bc5c7c5e-fa0c-4bfd-8c89-a448a2c2e012
         entry: ba4cfecb-940d-42de-b2f2-b2eb5d523bfa
   -
+    id: c6f0430b-d074-41fc-a9d9-c6a231685ad4
+    title: 'SDK Quickstart'
+    url: /docs/sdks/sdk-quickstart
+  -
     id: 26874aaa-2b3d-459b-b015-32295a040e49
     entry: 53c7b244-36fd-47b4-8cd7-689dc44fc563
   -
