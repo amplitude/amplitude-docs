@@ -10,7 +10,9 @@ updated_at: 1719939361
 Amplitude provides a wrapper to enable a one-line integration between Segment and Amplitude's Session Replay.
 
 {{partial:admonition type="note" heading=""}}
-This wrapper supports [Segment's Amplitude (Actions)](https://segment.com/docs/connections/destinations/catalog/actions-amplitude/) destination only. 
+This wrapper supports [Segment's Amplitude (Actions)](https://segment.com/docs/connections/destinations/catalog/actions-amplitude/) destination only.
+
+To use Session Replay with [Segment's Amplitude (Classic) destination](https://segment.com/docs/connections/destinations/catalog/amplitude/), use the [Session Replay Standalone SDK](/docs/session-replay/session-replay-standalone-sdk).
 {{/partial:admonition}}
 
 ## Install the wrapper
