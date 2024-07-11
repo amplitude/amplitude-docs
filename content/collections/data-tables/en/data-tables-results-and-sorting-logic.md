@@ -51,5 +51,5 @@ When you apply time properties as group-bys, all limits described above apply to
 * If you are using multiple top-level group-bys, the display limit is 500 rows.   
 If, for example, you add another top-level group-by for the month property (a time-related property), and the date range includes three months (and thus, three different values for the property), up to 1500 rows (500 rows \* three property values) will be displayed in your Data Table.
 * If you export a funnel metric without attribution, grouped by a non-time property, the .CSV export result limit is 300 rows.   
-If, for example, you add another top-level group-by for the day property (a time property), and the date range includes seven days (and thus, seven different values for the property), up to 2100 rows (300 rows \* seven property values) will be exported to your .CSV.
+If, for example, you add another top-level group-by for the day property (a time property), and the date range includes seven days (and thus, seven different values for the property), up to 2100 rows (300 rows * seven property values) will be exported to your .CSV.
 *  The 10,000 row limit for event segmentation metrics without attribution **doesn't apply** if the final group-by in the top level group includes a time property.
