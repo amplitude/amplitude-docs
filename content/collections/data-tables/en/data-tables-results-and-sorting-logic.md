@@ -23,7 +23,7 @@ For more complex analyses, it's important to understand how Amplitude Analytics 
 
 Once you have these results, any sorting you do applies **only to them**, and **doesn't** bring in any new results. 
 
-For example, imagine your group-by has enough different property values that Amplitude Analytics limits the results displayed to the top 100. By default, Amplitude sorts these results in descending order. If you opt to view your results in ascending order, **you do not** see the “bottom 100” results instead. You **still** see only the same top 100 results—only their sorting order has changed.
+For example, imagine your group-by has enough different property values that Amplitude Analytics limits the results displayed to the top 100. By default, Amplitude sorts these results in descending order. If you opt to view your results in ascending order, **you don't** see the “bottom 100” results instead. You **still** see only the same top 100 results—only their sorting order has changed.
 
 When using multiple metrics, sorting by a particular column displays data for all columns based on the values in the sorted column. For a data table with multiple segments, multiple metrics, and a period over period comparison, sorting a period-over-period column within a metric gives you a dataset based on the first segment's current period.
 
