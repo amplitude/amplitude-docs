@@ -61,6 +61,8 @@ To access the control panel, go to `amplitude-docs.test/cp`. The control panel p
 
 ## Working with Docs
 
+> Tip: The easiest way to get to the sourcefile of an article is to use the pencil icon that's enabled on local environments. Look for it near the article title.
+
 
 ### Collections
 
