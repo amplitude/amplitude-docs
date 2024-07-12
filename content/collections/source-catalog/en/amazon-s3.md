@@ -67,7 +67,7 @@ For each Amplitude project, AWS S3 import can ingest:
 
 ## Considerations
 
-Depending on your company's network policy, you may need add these IP addresses to your allowlist in order for Amplitude's servers to access your buckets:
+If your network policy requires, add the following IP addresses to your allowlist to enable Amplitude to access your buckets:
 
 - Amplitude US IP addresses:
   - 52.33.3.219
