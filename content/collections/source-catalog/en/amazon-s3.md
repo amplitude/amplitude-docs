@@ -65,6 +65,19 @@ For each Amplitude project, AWS S3 import can ingest:
 - Up to 50 files per second.
 - Up to 30k events per second.
 
+## Considerations
+
+Depending on your company's network policy, you may need add these IP addresses to your allowlist in order for Amplitude's servers to access your buckets:
+
+- Amplitude US IP addresses:
+  - 52.33.3.219
+  - 35.162.216.242
+  - 52.27.10.221
+- Amplitude EU IP addresses:
+   - 3.124.22.25
+   - 18.157.59.125
+   - 18.192.47.195
+
 ### Deduplication with `insert_id`
 
 Amplitude uses a unique identifier, `insert_id`, to match against incoming events and prevent duplicates. If within the same project, Amplitude receives an event with `insert_id` and `device_id` values that match the `insert_id` and `device_id` of a different event received within the last 7 days, Amplitude drops the most recent event.
