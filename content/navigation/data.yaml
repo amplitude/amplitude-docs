@@ -3,3 +3,6 @@ collections:
   - data
   - sections
   - warehouse_native_amplitude
+  - audiences
+  - cdp
+  - sources

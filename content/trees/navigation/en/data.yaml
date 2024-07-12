@@ -15,6 +15,42 @@ tree:
     id: 4512faae-c8d0-4f61-9b7f-7457dc064b92
     entry: 9771eb95-0cac-4de7-a34b-c65f7e157f67
   -
+    id: 7318ab4d-f08a-4c62-8dc1-bd1c642934dc
+    title: Audiences
+    children:
+      -
+        id: 8e65db0d-9e99-4567-88c4-2f2e7495573f
+        entry: 598de42f-58b0-4349-894d-1c8a8495e953
+      -
+        id: 87974e06-c03d-436a-82cf-79b243473f09
+        title: Recommendations
+        children:
+          -
+            id: 90813234-d91b-48b7-a959-fce1ac925ef1
+            entry: 1367ad78-90fa-465b-be63-45e9102cdcec
+          -
+            id: 5881c7c9-49c0-4613-bf49-122b8b347ea7
+            entry: 81ab19f5-a628-4a08-81f0-97759a5bfa91
+          -
+            id: 0fd8b5a6-9be2-4c93-833f-237e461e6f32
+            entry: 314e6a98-3da6-4985-9ab3-f58b81646a75
+      -
+        id: 98bfa7cf-8db0-404d-8674-ab962c02bc45
+        title: Predictions
+        children:
+          -
+            id: 05b23018-9c6c-4a15-9060-787e0fce98af
+            entry: 4271240a-42f6-4303-90a3-f0d6b11b8587
+          -
+            id: 4779cc1b-0cc5-4f63-937f-fcd9af5c1768
+            entry: e1b61782-4ec1-47a2-a803-0b6385477026
+          -
+            id: 6aeaa9a5-60c1-45f4-bbf6-41fb37ff36af
+            entry: 314e6a98-3da6-4985-9ab3-f58b81646a75
+      -
+        id: 04cd704d-f698-41cd-8567-f91d09b941fe
+        entry: 8cdc1ed2-7236-4312-ae35-1efdb910c563
+  -
     id: 93c67f8d-a0ce-4d74-a32d-03e5e288ce41
     title: 'Warehouse-native Amplitude'
     children:
@@ -141,23 +177,40 @@ tree:
     title: Integrations
     children:
       -
-        id: 9bf6f3b5-6182-48c6-9638-f3732692892a
-        entry: ed3743e1-8c1f-4777-aa03-95b07412286d
+        id: ba48c936-bb37-4f7b-ae36-ca8804ce77ba
+        title: Sources
+        children:
+          -
+            id: 9bf6f3b5-6182-48c6-9638-f3732692892a
+            entry: ed3743e1-8c1f-4777-aa03-95b07412286d
+          -
+            id: 64bb8f89-2078-43cf-bc05-69c46e131569
+            entry: a1eb1953-5738-45a4-8a4f-e276692b4089
+          -
+            id: eb2ff912-6151-4093-b5c0-61762b0f4fc5
+            entry: 69cefed6-2b87-4333-8cc6-ba5bac1b41e5
       -
-        id: 7158fb4e-4a88-4c09-900c-f3fb6e58dbc1
-        entry: c34ea643-dbea-4798-bb2d-ee976fc0d92c
+        id: 55593519-36f4-4c87-9155-24903f6353de
+        title: Destinations
+        children:
+          -
+            id: 95f5c74a-570a-4736-97cf-0e6a59475ca7
+            entry: b4b879ac-d33b-4e63-b530-ea9a7259b442
+          -
+            id: 7158fb4e-4a88-4c09-900c-f3fb6e58dbc1
+            entry: c34ea643-dbea-4798-bb2d-ee976fc0d92c
+          -
+            id: a1798b11-d4cc-434f-9ca7-8702c889d4ef
+            entry: 42e4e239-54c9-4ac4-9170-b535a1fd5eba
+          -
+            id: 5c664b29-a07c-4f3d-a0eb-7d9c1237b555
+            entry: e738a4d5-a463-405e-aad0-665115a2b631
       -
         id: 767f106d-946f-43af-a7ac-83cdb0b6965d
         entry: 0741a26f-3377-4301-b927-b82ea73c4c57
       -
         id: 2d36d2b4-0d23-4bf0-9127-224901dfa27a
         entry: 1c4b9202-0063-4acf-9b99-66b73435630b
-      -
-        id: a1798b11-d4cc-434f-9ca7-8702c889d4ef
-        entry: 42e4e239-54c9-4ac4-9170-b535a1fd5eba
-      -
-        id: 5c664b29-a07c-4f3d-a0eb-7d9c1237b555
-        entry: e738a4d5-a463-405e-aad0-665115a2b631
       -
         id: 5c2c93d4-51a2-4bc4-8b8f-0857049c1bbc
         entry: 0a282ff3-e487-45bd-af38-dbad6c534de2
