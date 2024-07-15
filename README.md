@@ -49,7 +49,7 @@ Run the following to initiate the site's local cache:
 - `php artisan cache:clear`
 - `php please stache:refresh`
 
-Run the command `php pleas make:user` to create a local admin user to interact with the Statamic dashboard. On the fourth step, enable Super user status for the user you create.
+Run the command `php please make:user` to create a local admin user to interact with the Statamic dashboard. On the fourth step, enable Super user status for the user you create.
 
 ### View the site
 
