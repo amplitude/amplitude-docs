@@ -1,8 +1,11 @@
 ---
 id: 85af6ffa-2e03-4ec5-a0a2-eb99ce9e28d9
 blueprint: faq_and_troubleshooting
-title: 'Startup scholorship plan'
+title: 'Startup Scholarship plan'
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/360053028152'
+landing: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1721064516
 ---
 This article covers some frequently asked questions about the Scholarship plan.
 
@@ -26,22 +29,22 @@ To qualify, your company must meet the following criteria:
 {{partial:collapse name="What’s included in the Amplitude Startup Scholarship?"}}
 You’ll get 200,000 [MTUs](/docs/admin/billing-use/mtu-guide)—more than enough data to get you to product-market fit. You also get full access to features on our paid Growth plan, including Behavioral Cohorts, Pathfinder, advanced collaboration features, and more.
 
-Add-ons like [Insights](/docs/analytics/account-level-reporting) and [Portfolio](/docs/analytics/charts/other-charts/other-charts-amplitude-sql).
+Request access to add-ons like [Insights](/docs/analytics/account-level-reporting) and [Portfolio](/docs/analytics/charts/other-charts/other-charts-amplitude-sql) by emailing [scholarship@amplitude.com](mailto:scholarship@amplitude.com).
 {{/partial:collapse}}
 
 
-{{partial:collapse name="I haven't heard back regarding to my Scholarship application. When can I expect to hear back?"}}
-Contact [scholarship@amplitude.com](mailto:scholarship@amplitude.com) if you haven't heard back regarding to your application or approval.
+{{partial:collapse name="I haven't heard back about to my Scholarship application. When can I expect to hear back?"}}
+Contact [scholarship@amplitude.com](mailto:scholarship@amplitude.com) if you haven't heard back about to your application or approval.
 {{/partial:collapse}}
 
 
 {{partial:collapse name="Can I move the Scholarship plan type from one org to another?"}}
-Yes. Contact [scholarship@amplitude.com.](mailto:scholarship@amplitude.com)
+Yes. Contact [scholarship@amplitude.com](mailto:scholarship@amplitude.com).
 {{/partial:collapse}}
 
 
 {{partial:collapse name="What happens if we go over the limit?"}}
-We’ll give you the option to decrease your MTU volume the following month or start a 30 day trial of the Growth plan to decide whether you’d like to upgrade for more event volume. If you go over the event limit more than twice, your account will be downgraded to the Free plan.
+We’ll give you the option to decrease your MTU volume the following month or start a 30 day trial of the Growth plan to decide whether you’d like to upgrade for more event volume. If you go over the event limit more than twice, Amplitude downgrades your account to the Free plan.
 {{/partial:collapse}}
 
 
