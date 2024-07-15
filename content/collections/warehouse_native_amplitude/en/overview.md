@@ -11,7 +11,7 @@ updated_at: 1720732273
 landing: true
 landing_blurb: 'Your data warehouse stores critical data on every aspect of your business.'
 ---
-Your data warehouse stores critical data on every aspect of your business. But not all that data makes its way into Amplitude. Some is siloed, and remains inaccessible for Amplitude analyses you want to run.
+Your data warehouse stores critical data on every aspect of your business. But some of that data never makes its way into Amplitude, making it inaccessible for Amplitude analyses you want to run.
 
 With Warehouse-native Amplitude (WNA), you can create custom analyses using data models based directly on data living in your data warehouse. Because you no longer ingest event and end user data into Amplitude, you can quickly unlock more and newer datasets, especially those that are time-sensitive. And just like standard Amplitude, WNA quickly delivers insights into user behavior, identifies trends, and makes data-driven decisions to improve your business, all based on data sitting in your own data warehouse.
 
