@@ -62,6 +62,35 @@ fields:
       instructions: 'Select the Ampli content related to this SDK version'
       localizable: false
   -
+    handle: ampli_examples
+    field:
+      type: grid
+      display: 'Ampli examples'
+      localizable: false
+      fields:
+        -
+          handle: ampli_language
+          field:
+            options:
+              JavaScript: JavaScript
+              TypeScript: TypeScript
+              Swift: Swift
+              Objective-C: Objective-C
+              Kotlin: Kotlin
+              Java: Java
+              Python: Python
+              Django: Django
+            type: select
+            display: 'Ampli language'
+            localizable: false
+        -
+          handle: ampli_example_link
+          field:
+            input_type: url
+            type: text
+            display: 'Ampli example link'
+            localizable: false
+  -
     handle: migration_guide
     field:
       type: entries

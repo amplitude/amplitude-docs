@@ -7,8 +7,17 @@ article_type: ampli
 supported_languages:
   - python
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718672577
+updated_at: 1721151613
 source: 'https://www.docs.developers.amplitude.com/data/sdks/python/ampli/'
+ampli_examples:
+  -
+    id: lyop80rm
+    ampli_language: Python
+    ampli_example_link: 'https://github.com/amplitude/ampli-examples/blob/main/python/simple/v1'
+  -
+    id: lyop81ea
+    ampli_language: Django
+    ampli_example_link: 'https://github.com/amplitude/ampli-examples/blob/main/python/django/v1'
 ---
 Amplitude Data supports tracking analytics events from Python apps (Python 3.6 or higher). The generated tracking library is packaged as a python package.
 
