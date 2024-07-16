@@ -19,7 +19,7 @@ All organizations have a monthly event volume limit. Your company's signed agree
  Identify and Group Identify calls do **NOT** count against total event volume.
 {{/partial:admonition}}
 
-Customers who exceed these limits may be subject to overage fees. If you're close to exceeding this limit, Amplitude alerts you via email and through in-product notifications. Email alerts automatically go out to users in an Admin role when you reach certain percentages of your limit (80%, 90%, 100%, and 110% for paid plans).
+Customers who exceed these limits may be subject to overage fees. If you're close to exceeding this limit, Amplitude alerts you through email and in-product notifications. Email alerts automatically go out to users with the Admin role when you reach certain percentages of your limit (80%, 90%, 100%, and 110% for paid plans).
 
 If you're a non-paying customer and you exceed your monthly limit three times, Amplitude **blocks your account**. With a blocked account, you can't access any charts and dashboards, but you can still use certain administrative functions, like the User API, to meet compliance obligations. Amplitude continues to ingest data **up to your limit**; however, Amplitude **doesn't ingest** any data beyond your limit. If you continue to exceed your monthly limit without upgrading to a paid plan, Amplitude **deletes your account** six months after the initial block.
 
