@@ -5,20 +5,20 @@ title: 'The Settings page'
 source: 'https://help.amplitude.com/hc/en-us/articles/235649848-The-Settings-page'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717697745
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1721163957
 this_article_will_help_you:
   - 'Manage organizational and project-level settings'
 ---
-Any user within your organization can access the Settings page, but settings can only be changed by organization admins and managers. Here, you can navigate between organization-level settings, your own personal Amplitude settings, and more.
+Any user within your organization can access the Settings page, but only organization admins and managers can edit it. Here, you can navigate between organization-level settings, your own personal Amplitude settings, and more.
 
 Click the gear icon to open Settings. 
 
 ## Organizational settings
 
-The organizational settings area is where you'll find everything you need to manage settings at the organization and project level. The default view is the General page. This will display your organization's name, org ID, org URL, and plan type. 
+The organizational settings area is where you can find everything you need to manage settings at the organization and project level. The default view is the General page. This displays your organization's name, org ID, org URL, and plan type. 
 
-Within the Plans & Billing section, you’ll find more detailed information about your Amplitude usage: the contract start and end date, your organization's event or MTU limit, events or MTUs used by your organization this month and last month, as well as other key pieces of usage information. This will help you track your usage from within Amplitude itself.
+Within the Plans & Billing section, you’ll find more detailed information about your Amplitude usage: the contract start and end date, your organization's event or MTU limit, events or MTUs used by your organization this month and last month, as well as other key pieces of usage information. This helps you track your usage from within Amplitude itself.
 
 Users on Plus plans can also manage billing from here.
 
@@ -37,7 +37,7 @@ For more information on each of these tasks, just follow the links to the releva
 
 The organizational settings also allow admins and managers to view or modify [Session Replay](/docs/session-replay) settings.
 
-The session replay settings area displays your overall session replay capture plan allowance, current usage, and a list of projects showing sample rate, instrumentation status, and if replays are being captured for a specified project.
+The session replay settings area displays your total session replay capture plan allowance, current usage, and a list of projects showing sample rate, instrumentation status, and whether a specific project is capturing replays.
 
 Click *View Usage Over Time* in the session capture card to review usage specific to your plan.
 
@@ -45,18 +45,18 @@ From the project list, you can:
 
 - View a list of projects that are capturing replays, along with their sample rate and current instrumentation status.
 - Toggle Session Capture on or off for a specific project. Turning off session capture for a specific project only applies to future sessions.
-Click a- project name to modify the sample rate, or percentage of user sessions being captured. Modifying the sample rate in settings will override the existing SDK implementation's sample rate, and may take several minutes to take effect.
+Click a project name to modify the sample rate, or percentage of user sessions captured. Modifying the sample rate in settings overrides the existing SDK implementation's sample rate, and may take several minutes to take effect.
 
     From the sampling module, click View User Sessions Chart to view an estimate of the total sessions captured on a monthly basis. 
 
-- Click *+ Select Projec*t from the bottom of the list to add a project. Projects cannot be removed once added.
-By default, the project's session capture will be set to on and its sample rate will match the rate established in your SDK implementation. Adding a project via the SDK does not automatically add it to the list. However, an admin adding a new organization via the organizational settings will add a project to the list with session capture set to on and a sample rate of 100%.
+- Click *+ Select Project* from the bottom of the list to add a project. Projects can't be removed once added.
+By default, the project's session capture are set to `on`, and its sample rate matches the rate established in your SDK implementation. Adding a project via the SDK doesn't automatically add it to the list. However, an admin adding a new organization via the organizational settings adds a project to the list with session capture set to on and a sample rate of 100%.
 
 {{partial:admonition type="note" heading=""}}
-Replays can only be captured if instrumentation is accurate and complete, and a sample rate is set. Be sure to use the most recent [SDK](/docs/sdks) for best results.
+Replays are captured only if instrumentation is accurate and complete, and a sample rate is set. Be sure to use the most recent [SDK](/docs/sdks) for best results.
 {{/partial:admonition}}
 
-
+[Learn how to manage your Session Replay privacy settings here](https://amplitude.com/docs/session-replay/manage-privacy-settings-for-session-replay).
 
 ## Personal settings
 
@@ -70,11 +70,11 @@ The Profile panel shows your organization, role, email, name, and password assoc
 
 ![Settings_2.png](/docs/output/img/account-management/settings-2-png.png)
 
-The Site Settings panel includes a series of toggles you can use to customize your Amplitude experience. They are mostly self-explanatory.
+The Site Settings panel includes a series of toggles you can use to customize your Amplitude experience. They're mostly self-explanatory.
 
 ![Settings_3.png](/docs/output/img/account-management/settings-3-png.png)
 
-The "Always Remove Leading Spaces from Export” option tells Amplitude to delete any empty spaces from the beginnings of cells in an export .CSV. With the default setting, these spaces are left in place, which can result in messy data, or more significant data errors. This setting works for positive values, but not for values that start with or are `=` , `+`, `-`, or `@`
+The "Always Remove Leading Spaces from Export” option tells Amplitude to delete any empty spaces from the beginnings of cells in an export .CSV. With the default setting, these spaces remain in place, which can result in messy data, or more significant data errors. This setting works for positive values, but not for values that start with or are `=` , `+`, `-`, or `@`
 
 If you do keep this option disabled, you should remove these spaces later in Excel or Google Sheets, using the Text to Columns feature.
 
