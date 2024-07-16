@@ -1,0 +1,10 @@
+title: 'New SDK'
+fields:
+  -
+    handle: body
+    field:
+      smart_typography: true
+      remove_empty_nodes: false
+      type: bard
+      display: Body
+      localizable: false
