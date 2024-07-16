@@ -1,8 +1,11 @@
 title: CDP
+sites:
+  - en
+propagate: false
 template: default
 layout: layout
 revisions: false
-route: '/cdp/{slug}'
+route: '/data/{slug}'
 sort_dir: asc
 date_behavior:
   past: public
@@ -13,4 +16,4 @@ preview_targets:
     url: '{permalink}'
     refresh: true
 inject:
-  nav_title: cdp
+  nav_title: data
