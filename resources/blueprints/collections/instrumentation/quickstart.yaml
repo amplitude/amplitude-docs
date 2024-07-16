@@ -1,0 +1,254 @@
+title: Quickstart
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: false
+              validate:
+                - required
+          -
+            handle: lede
+            field:
+              type: markdown
+              display: Lede
+              localizable: false
+          -
+            handle: sdk
+            field:
+              type: replicator
+              display: SDK
+              localizable: false
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    intro:
+                      display: 'SDK Details'
+                      fields:
+                        -
+                          handle: sdk_label
+                          field:
+                            type: text
+                            display: 'SDK label'
+                            localizable: false
+                        -
+                          handle: related_sdk
+                          field:
+                            collections:
+                              - android_sdk
+                              - browser_sdk
+                              - flutter_sdk
+                              - go_sdk
+                              - java_sdk
+                              - node_js_sdk
+                              - python_sdk
+                              - react_native_sdk
+                              - unity_sdk
+                              - unreal_sdk
+                              - ios_sdk
+                            type: entries
+                            display: 'Related SDK'
+                            localizable: false
+                        -
+                          handle: introduction
+                          field:
+                            type: markdown
+                            display: Introduction
+                            localizable: false
+                            antlers: true
+                        -
+                          handle: dependency_install
+                          field:
+                            type: section
+                            display: 'Dependency install'
+                            localizable: false
+                        -
+                          handle: install_instructions
+                          field:
+                            type: markdown
+                            display: 'Install instructions'
+                            localizable: false
+                        -
+                          handle: installation_grid
+                          field:
+                            type: grid
+                            display: 'Installation grid'
+                            localizable: false
+                            mode: stacked
+                            fields:
+                              -
+                                handle: tab_label
+                                field:
+                                  type: text
+                                  display: 'Tab label'
+                                  localizable: false
+                              -
+                                handle: instructions
+                                field:
+                                  type: markdown
+                                  display: Instructions
+                                  localizable: false
+                        -
+                          handle: dependency_init
+                          field:
+                            type: section
+                            display: 'Dependency init'
+                            localizable: false
+                        -
+                          handle: init_instructions
+                          field:
+                            antlers: true
+                            type: markdown
+                            display: 'Init instructions'
+                            localizable: false
+                        -
+                          handle: initialization_grid
+                          field:
+                            type: grid
+                            display: 'Initialization grid'
+                            localizable: false
+                            mode: stacked
+                            fields:
+                              -
+                                handle: tab_label
+                                field:
+                                  type: text
+                                  display: 'Tab label'
+                                  localizable: false
+                              -
+                                handle: instructions
+                                field:
+                                  type: markdown
+                                  display: Instructions
+                                  localizable: false
+                                  antlers: true
+                        -
+                          handle: send_data
+                          field:
+                            type: section
+                            display: 'Send data'
+                            localizable: false
+                        -
+                          handle: send_data_instructions
+                          field:
+                            antlers: true
+                            type: markdown
+                            display: 'Send data instructions'
+                            localizable: false
+                        -
+                          handle: send_data_grid
+                          field:
+                            type: grid
+                            display: 'Send data grid'
+                            localizable: false
+                            mode: stacked
+                            fields:
+                              -
+                                handle: tab_label
+                                field:
+                                  type: text
+                                  display: 'Tab label'
+                                  localizable: false
+                              -
+                                handle: instructions
+                                field:
+                                  type: markdown
+                                  display: Instructions
+                                  localizable: false
+                        -
+                          handle: code_sample
+                          field:
+                            type: section
+                            display: 'Code sample'
+                            localizable: false
+                        -
+                          handle: code_sample_grid
+                          field:
+                            type: grid
+                            display: 'Code sample grid'
+                            localizable: false
+                            mode: stacked
+                            fields:
+                              -
+                                handle: tab_label
+                                field:
+                                  type: text
+                                  display: 'Tab label'
+                                  localizable: false
+                              -
+                                handle: instructions
+                                field:
+                                  type: markdown
+                                  display: Instructions
+                                  localizable: false
+                        -
+                          handle: ampli
+                          field:
+                            type: section
+                            display: Ampli
+                            localizable: false
+                        -
+                          handle: ampli_article
+                          field:
+                            collections:
+                              - android_sdk
+                              - browser_sdk
+                              - flutter_sdk
+                              - go_sdk
+                              - java_sdk
+                              - node_js_sdk
+                              - python_sdk
+                              - react_native_sdk
+                              - unity_sdk
+                              - unreal_sdk
+                              - ios_sdk
+                            type: entries
+                            display: 'Ampli article'
+                            localizable: false
+                        -
+                          handle: ampli_grid
+                          field:
+                            type: grid
+                            display: 'Ampli grid'
+                            localizable: false
+                            mode: stacked
+                            fields:
+                              -
+                                handle: tab_label
+                                field:
+                                  type: text
+                                  display: 'Tab label'
+                                  localizable: false
+                              -
+                                handle: instructions
+                                field:
+                                  type: markdown
+                                  display: Instructions
+                                  localizable: false
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - instrumentation
+              max_items: 1
+              listable: false
+              localizable: true

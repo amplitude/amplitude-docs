@@ -14,7 +14,7 @@ api_reference_url: 'https://amplitude.github.io/Amplitude-Kotlin'
 shields_io_badge: 'https://img.shields.io/maven-central/v/com.amplitude/analytics-android.svg?label=Maven%20Central'
 ampli_article: 167c275e-0aad-4fd1-9658-43a25c4654d6
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1719612553
+updated_at: 1721151215
 source: 'https://www.docs.developers.amplitude.com/data/sdks/android-kotlin/'
 package_name: 'com.amplitude:analytics-android'
 ---
@@ -94,12 +94,12 @@ To support high-performance environments, the SDK sends events in batches. Every
 import com.amplitude.android.Amplitude
 
 val amplitude = Amplitude(
- Configuration(
- apiKey = AMPLITUDE_API_KEY,
- context = applicationContext,
- flushIntervalMillis = 50000,
- flushQueueSize = 20,
- )
+  Configuration(
+    apiKey = AMPLITUDE_API_KEY,
+    context = applicationContext,
+    flushIntervalMillis = 50000,
+    flushQueueSize = 20,
+  )
 )
 ```
 {{/partial:tab}}
@@ -124,10 +124,10 @@ You can dynamically set the configuration after initialization.
 import com.amplitude.android.Amplitude
 
 val amplitude = Amplitude(
- Configuration(
- apiKey = AMPLITUDE_API_KEY,
- context = applicationContext,
- )
+  Configuration(
+    apiKey = AMPLITUDE_API_KEY,
+    context = applicationContext,
+  )
 )
 
 amplitude.configuration.optOut = true
@@ -161,11 +161,11 @@ For EU data residency, the project must be set up inside Amplitude EU. You must 
 import com.amplitude.android.Amplitude
 
 val amplitude = Amplitude(
- Configuration(
- apiKey = AMPLITUDE_API_KEY,
- context = applicationContext,
- serverZone = ServerZone.EU
- )
+  Configuration(
+    apiKey = AMPLITUDE_API_KEY,
+    context = applicationContext,
+    serverZone = ServerZone.EU
+  )
 )
 ```
 {{/partial:tab}}
@@ -195,8 +195,8 @@ You can also optionally include event properties.
 
 ```kotlin
 amplitude.track(
- "Song Played",
- mutableMapOf<String, Any?>("title" to "Happy Birthday")
+  "Song Played",
+  mutableMapOf<String, Any?>("title" to "Happy Birthday")
 )
 
 ```
@@ -256,13 +256,12 @@ You can enable Amplitude to start tracking all events mentioned above, use the c
 
 ```kotlin
 Amplitude(
- Configuration(
- apiKey = AMPLITUDE_API_KEY,
- context = applicationContext,
- defaultTracking = DefaultTrackingOptions.ALL
- )
+  Configuration(
+    apiKey = AMPLITUDE_API_KEY,
+    context = applicationContext,
+    defaultTracking = DefaultTrackingOptions.ALL
+  )
 )
-
 ```
 
 {{partial:admonition type="note" heading=""}}
@@ -286,16 +285,16 @@ You can also customize the tracking with `DefaultTrackingOptions`, see code samp
 
 ```kotlin
 Amplitude(
- Configuration(
- apiKey = AMPLITUDE_API_KEY,
- context = applicationContext,
- defaultTracking = DefaultTrackingOptions(
- appLifecycles = true,
- sessions = false,
- deepLinks = true,
- screenViews = false
- )
- )
+  Configuration(
+    apiKey = AMPLITUDE_API_KEY,
+    context = applicationContext,
+    defaultTracking = DefaultTrackingOptions(
+      appLifecycles = true,
+      sessions = false,
+      deepLinks = true,
+      screenViews = false
+    )
+  )
 )
 
 ```
@@ -306,13 +305,13 @@ You can enable Amplitude to start tracking session events by setting `configurat
 
 ```kotlin
 Amplitude(
- Configuration(
- apiKey = AMPLITUDE_API_KEY,
- context = applicationContext,
- defaultTracking = DefaultTrackingOptions(
- sessions = true
- )
- )
+  Configuration(
+    apiKey = AMPLITUDE_API_KEY,
+    context = applicationContext,
+    defaultTracking = DefaultTrackingOptions(
+      sessions = true
+    )
+  )
 )
 
 ```
@@ -329,13 +328,13 @@ You can enable Amplitude to start tracking application lifecycle events by setti
 
 ```kotlin
 Amplitude(
- Configuration(
- apiKey = AMPLITUDE_API_KEY,
- context = applicationContext,
- defaultTracking = DefaultTrackingOptions(
- appLifecycles = true
- )
- )
+  Configuration(
+    apiKey = AMPLITUDE_API_KEY,
+    context = applicationContext,
+    defaultTracking = DefaultTrackingOptions(
+      appLifecycles = true
+    )
+  )
 )
 
 ```
@@ -353,13 +352,13 @@ You can enable Amplitude to start tracking screen view events by setting `config
 
 ```kotlin
 Amplitude(
- Configuration(
- apiKey = AMPLITUDE_API_KEY,
- context = applicationContext,
- defaultTracking = DefaultTrackingOptions(
- screenViews = true
- )
- )
+  Configuration(
+    apiKey = AMPLITUDE_API_KEY,
+    context = applicationContext,
+    defaultTracking = DefaultTrackingOptions(
+      screenViews = true
+    )
+  )
 )
 
 ```
@@ -525,38 +524,38 @@ import com.amplitude.core.platform.Plugin;
 import java.util.HashMap;
 
 public class EnrichmentPlugin implements Plugin {
- public Amplitude amplitude;
- @NonNull
- @Override
- public Amplitude getAmplitude() {
- return this.amplitude;
- }
+  public Amplitude amplitude;
+  @NonNull
+  @Override
+  public Amplitude getAmplitude() {
+    return this.amplitude;
+  }
 
- @Override
- public void setAmplitude(@NonNull Amplitude amplitude) {
- this.amplitude = amplitude;
- }
+  @Override
+  public void setAmplitude(@NonNull Amplitude amplitude) {
+    this.amplitude = amplitude;
+  }
 
- @NonNull
- @Override
- public Type getType() {
- return Type.Enrichment;
- }
+  @NonNull
+  @Override
+  public Type getType() {
+    return Type.Enrichment;
+  }
 
- @Nullable
- @Override
- public BaseEvent execute(@NonNull BaseEvent baseEvent) {
- if (baseEvent.getEventProperties() == null) {
- baseEvent.setEventProperties(new HashMap<String, Object>());
- }
- baseEvent.getEventProperties().put("custom android event property", "test");
- return baseEvent;
- }
+  @Nullable
+  @Override
+  public BaseEvent execute(@NonNull BaseEvent baseEvent) {
+    if (baseEvent.getEventProperties() == null) {
+      baseEvent.setEventProperties(new HashMap<String, Object>());
+    }
+    baseEvent.getEventProperties().put("custom android event property", "test");
+    return baseEvent;
+  }
 
- @Override
- public void setup(@NonNull Amplitude amplitude) {
- this.amplitude = amplitude;
- }
+  @Override
+  public void setup(@NonNull Amplitude amplitude) {
+    this.amplitude = amplitude;
+  }
 }
 
 amplitude.add(new EnrichmentPlugin());
@@ -575,42 +574,42 @@ import com.segment.analytics.Analytics;
 import com.segment.analytics.Properties;
 
 public class SegmentDestinationPlugin extends DestinationPlugin {
- android.content.Context context;
- Analytics analytics;
- String writeKey;
- public SegmentDestinationPlugin(android.content.Context appContext, String writeKey) {
- this.context = appContext;
- this.writeKey = writeKey;
- }
- @Override
- public void setup(Amplitude amplitude) {
- super.setup(amplitude);
- analytics = new Analytics.Builder(this.context, this.writeKey)
- .build();
+  android.content.Context context;
+  Analytics analytics;
+  String writeKey;
+  public SegmentDestinationPlugin(android.content.Context appContext, String writeKey) {
+    this.context = appContext;
+    this.writeKey = writeKey;
+  }
+  @Override
+  public void setup(Amplitude amplitude) {
+    super.setup(amplitude);
+    analytics = new Analytics.Builder(this.context, this.writeKey)
+    .build();
 
- Analytics.setSingletonInstance(analytics);
- }
+    Analytics.setSingletonInstance(analytics);
+    }
 
- @Override
- public BaseEvent track(BaseEvent event) {
- Properties properties = new Properties();
- for (Map.Entry<String,Object> entry : event.getEventProperties().entrySet()) {
- properties.putValue(entry.getKey(),entry.getValue());
- }
- analytics.track(event.eventType, properties);
- return event;
- }
+  @Override
+  public BaseEvent track(BaseEvent event) {
+    Properties properties = new Properties();
+    for (Map.Entry<String,Object> entry : event.getEventProperties().entrySet()) {
+      properties.putValue(entry.getKey(),entry.getValue());
+    }
+    analytics.track(event.eventType, properties);
+    return event;
+    }
 }
 
 amplitude.add(
- new SegmentDestinationPlugin(this, SEGMENT_WRITE_KEY)
+new SegmentDestinationPlugin(this, SEGMENT_WRITE_KEY)
 )
 
 ```
 
 ## Debugging
 
-Ensure that the configuration and payload are accurate and check for any unusual messages during the debugging process. If everything appears to be right, check the value of `flushQueueSize` or `flushIntervalMillis`. Events are queued and sent in batches by default, which means they are not immediately dispatched to the server. Ensure that you have waited for the events to be sent to the server before checking for them in the charts.
+Ensure that the configuration and payload are accurate and check for any unusual messages during the debugging process. If everything appears to be right, check the value of `flushQueueSize` or `flushIntervalMillis`. Events are queued and sent in batches by default, which means they don't dispatch to the server. Ensure that you have waited for the events to be sent to the server before checking for them in the charts.
 
 ### Log
 
@@ -653,13 +652,12 @@ You can adjust the time window for which sessions are extended. The default sess
 {{partial:tab name="Kotlin"}}
 ```kotlin
 amplitude = Amplitude(
- Configuration(
- apiKey = AMPLITUDE_API_KEY,
- context = applicationContext,
- minTimeBetweenSessionsMillis = 10000
- )
+  Configuration(
+    apiKey = AMPLITUDE_API_KEY,
+    context = applicationContext,
+    minTimeBetweenSessionsMillis = 10000
+  )
 )
-
 ```
 {{/partial:tab}}
 {{partial:tab name="Java"}}
@@ -839,11 +837,11 @@ Before initializing the SDK with your `apiKey`, create a `TrackingOptions` ins
 val trackingOptions = TrackingOptions()
 trackingOptions.disableCity().disableIpAddress().disableLatLng()
 amplitude = Amplitude(
- Configuration(
- apiKey = AMPLITUDE_API_KEY,
- context = applicationContext,
- trackingOptions = trackingOptions
- )
+  Configuration(
+    apiKey = AMPLITUDE_API_KEY,
+    context = applicationContext,
+    trackingOptions = trackingOptions
+  )
 )
 
 ```
@@ -902,11 +900,11 @@ COPPA (Children's Online Privacy Protection Act) restrictions on IDFA, IDFV, cit
 {{partial:tab name="Kotlin"}}
 ```kotlin
 amplitude = Amplitude(
- Configuration(
- apiKey = AMPLITUDE_API_KEY,
- context = applicationContext,
- enableCoppaControl = true //Disables ADID, city, IP, and location tracking
- )
+  Configuration(
+    apiKey = AMPLITUDE_API_KEY,
+    context = applicationContext,
+    enableCoppaControl = true //Disables ADID, city, IP, and location tracking
+  )
 )
 
 ```
@@ -979,13 +977,12 @@ After you set up the logic to fetch the advertising ID, you can enable `useAdver
 {{partial:tab name="Kotlin"}}
 ```kotlin
 amplitude = Amplitude(
- Configuration(
- apiKey = AMPLITUDE_API_KEY,
- context = applicationContext,
- useAdvertisingIdForDeviceId = true
- )
+  Configuration(
+    apiKey = AMPLITUDE_API_KEY,
+    context = applicationContext,
+    useAdvertisingIdForDeviceId = true
+  )
 )
-
 ```
 {{/partial:tab}}
 {{partial:tab name="Java"}}
@@ -1241,7 +1238,7 @@ class sampleLoggerProvider implements LoggerProvider {
 
 ### Multiple instances
 
-It is possible to create multiple instances of Amplitude. Instances with the same `instanceName` will share storage and identity. For isolated storage and identity use a unique `instanceName` for each instance. For more details see [Configuration](#configuration).
+You can create multiple instances of Amplitude. Instances with the same `instanceName` share storage and identity. For isolated storage and identity use a unique `instanceName` for each instance. For more details see [Configuration](#configuration).
 
 ```kotlin
 val amplitude1 = Amplitude(Configuration(
