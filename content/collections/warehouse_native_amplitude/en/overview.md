@@ -6,12 +6,12 @@ this_article_will_help_you:
   - 'Run analyses from data in your own data warehouse'
 source: 'https://help.amplitude.com/hc/en-us/articles/26003996242203-Warehouse-native-Amplitude-Run-analyses-from-data-in-your-own-data-warehouse'
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717543885
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1720732273
 landing: true
 landing_blurb: 'Your data warehouse stores critical data on every aspect of your business.'
 ---
-Your data warehouse stores critical data on every aspect of your business. But not all that data makes its way into Amplitude. Some is siloed, and remains inaccessible for Amplitude analyses you want to run.
+Your data warehouse stores critical data on every aspect of your business. But some of that data never makes its way into Amplitude, making it inaccessible for Amplitude analyses you want to run.
 
 With Warehouse-native Amplitude (WNA), you can create custom analyses using data models based directly on data living in your data warehouse. Because you no longer ingest event and end user data into Amplitude, you can quickly unlock more and newer datasets, especially those that are time-sensitive. And just like standard Amplitude, WNA quickly delivers insights into user behavior, identifies trends, and makes data-driven decisions to improve your business, all based on data sitting in your own data warehouse.
 
@@ -41,6 +41,12 @@ Warehouse-native Amplitude supports a single “connection” (set of credential
 Amplitude recommends using [clustering keys](https://docs.snowflake.com/en/user-guide/tables-clustering-keys) in tables, to improve performance and reduce latency. Consider using the date column as part of the key, since it’s included in most queries.
 
 ## Constraints
+
+Warehouse-native Amplitude doesn't support the following [formulas](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas#list-of-available-formulas):
+
+* HIST
+* PERCENTILE
+* PROPCOUNT
 
 Some Amplitude charts include features that warehouse-native projects don't support. Features that aren't available include:
 

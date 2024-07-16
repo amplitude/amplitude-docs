@@ -7,8 +7,17 @@ article_type: ampli
 supported_languages:
   - java
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718672539
+updated_at: 1721151518
 source: 'https://www.docs.developers.amplitude.com/data/sdks/java/ampli/'
+ampli_examples:
+  -
+    id: lyop5ui2
+    ampli_language: Kotlin
+    ampli_example_link: 'https://github.com/amplitude/ampli-examples/blob/main/jre/kotlin/AmpliApp'
+  -
+    id: lyop6258
+    ampli_language: Java
+    ampli_example_link: 'https://github.com/amplitude/ampli-examples/blob/main/jre/java/AmpliApp'
 ---
 Amplitude Data supports tracking analytics events from JRE programs written in Java (6 and higher).
 

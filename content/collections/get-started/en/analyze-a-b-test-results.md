@@ -8,12 +8,12 @@ this_article_will_help_you:
   - 'Review the results of A/B tests in Amplitude'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717611551
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1720718906
 ---
 A/B testing is a method of conducting controlled, randomized experiments with the goal of improving a website or application metric. With Amplitude's [AB Test View](/docs/analytics/charts/funnel-analysis/funnel-analysis-interpret), you can measure the impact of your experiments by comparing how each experiment group behaves in your application.
 
-For example, you can show two different onboarding flows to different groups of new users, then use the results to determine which one is more effective in driving users to complete the onboarding process. Or you can test different checkout flows to see which is more effective in generating sales.
+For example, you can show two different onboarding flows to different groups of new users, then use the results to identify the flow that's more effective in driving users to complete the onboarding process. Or you can test different checkout flows to see which is more effective in generating sales.
 
 {{partial:admonition type="note" heading="Note"}}
 Don't confuse this feature with [Amplitude Experiment](/docs/analytics/charts/experiment-results/experiment-results-dig-deeper).
@@ -28,7 +28,7 @@ There are two main ways to update a user property:
 1. [SDKs](/docs/sdks) & [HTTP API](/docs/apis/analytics/http-v2): Update user properties on event action.
 
    * **How:** Send user properties with each event with Amplitude's [SDKs](/docs/sdks) or [HTTP API](/docs/apis/analytics/http-v2).
-   * **Pros:** User properties take effect at the moment the event is sent, and exist with the user for all subsequent events, until the property values are explicitly updated.
+   * **Pros:** User properties take effect at the moment your app sends the event, and exist with the user for all subsequent events, until the property values are explicitly updated.
    * **Cons:** These events count towards your monthly event volume. Further, these events count users as **active** users by default, so make sure to mark any A/B testing-related events as [inactive events](/docs/data/change-event-activity-status).
 
 2. [Identify API](/docs/apis/analytics/identify): Update user properties without sending an event.
@@ -55,7 +55,7 @@ User Property Value: `variation_a`
 **Pros:** Can easily select experiments to segment by from the user segmentation tab.  
 **Cons:** Can result in an overwhelming list of user properties, depending on the number of active experiments.
 
-### Use one user property **for all** experiments.  
+### Use one user property **for all** experiments 
   
 All user properties arrive as key-value pairs. This approach sets the key to `Split Tests` (or something similar) and stores the values in an array.  
   
@@ -67,7 +67,11 @@ You can segment on the user property `Split Tests` by selecting the appropriate 
 **Pros:** You will only have one user property related to your split testing (rather than one per experiment), so your user property list is more manageable in the dashboard.   
 **Cons:** Arrays can't exceed 10,000 characters if you use `append`  or `prepend` . If an array exceeds this limit, Amplitude doesn't record any characters past the threshold.
 
-Amplitude also offers a full integration with [Optimizely](https://www.optimizely.com/) that automatically updates user properties for each experiment. 
+{{partial:admonition type="note" heading="Note"}}
+This feature doesn't support merged or transformed properties. 
+{{/partial:admonition}}
+
+Amplitude also offers a full integration with [Optimizely](https://www.optimizely.com/) that automatically updates user properties for each experiment.
 
 ## Viewing results in Amplitude
 

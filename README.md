@@ -49,17 +49,19 @@ Run the following to initiate the site's local cache:
 - `php artisan cache:clear`
 - `php please stache:refresh`
 
-Run the command `php pleas make:user` to create a local admin user to interact with the Statamic dashboard. On the fourth step, enable Super user status for the user you create.
+Run the command `php please make:user` to create a local admin user to interact with the Statamic dashboard. On the fourth step, enable Super user status for the user you create.
 
 ### View the site
 
-Run `npm run build` to generate the CSS and JavaScript assets necessary to display the site. If you plan to develop CSS, run `npm run watch` to rebuild the CSS and JS on every save.
+Run `npm run dev` to generate the CSS and JavaScript assets necessary to display the site. If you plan to develop CSS, run `npm run watch` to rebuild the CSS and JS on every save.
 
 With a new Super user created, point your browser to `amplitude-docs.test`. All sites that Herd serves use the `.test` tld by default. You should see site in its current state.
 
 To access the control panel, go to `amplitude-docs.test/cp`. The control panel provides access to the front end editing environment for content, navigations, images, and other parts of the site.
 
 ## Working with Docs
+
+> Tip: The easiest way to get to the sourcefile of an article is to use the pencil icon that's enabled on local environments. Look for it near the article title.
 
 
 ### Collections
