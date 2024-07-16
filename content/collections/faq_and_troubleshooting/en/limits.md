@@ -31,7 +31,7 @@ The allowed per-project maximums for **event types**, **event properties**, and 
 * Event properties: 2000
 * User properties: 1000
 
-Once you reach these limits, Amplitude stops indexing new values. You can no longer query data for any event types and event or user properties that exceed these limits, and you can only access them in the raw data by exporting data via a CSV file or Amplitude's [Export API](/docs/apis/analytics/export).
+Once you reach these limits, Amplitude stops indexing new values. You can no longer query data for any event types and event or user properties that exceed these limits, and you can only access them in the raw data by exporting data as a CSV file or Amplitude's [Export API](/docs/apis/analytics/export).
 
 As an example, imagine an instrumentation bug causes your product to send several extra event types to Amplitude, and your project exceeds its instrumentation limit by five as a result. Data for those excess event types are visible within Amplitude once you've brought your project down under the instrumentation limit. However, you can't query any data received for those excess event types **during the period** when your account was over the instrumentation limit. 
 
