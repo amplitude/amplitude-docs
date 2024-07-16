@@ -1,4 +1,7 @@
 title: 'React Native SDK'
+sites:
+  - en
+propagate: false
 template: default
 layout: layout
 mount: 0e02d5e0-1bc7-4fc6-88a1-983221265987
@@ -15,3 +18,5 @@ preview_targets:
     refresh: true
 inject:
   nav_title: analytics_sdks
+structure:
+  root: false

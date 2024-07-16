@@ -8,8 +8,17 @@ supported_languages:
   - swift
   - obj-c
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715285108
-source: https://www.docs.developers.amplitude.com/data/sdks/ios-swift/ampli/
+updated_at: 1721151464
+source: 'https://www.docs.developers.amplitude.com/data/sdks/ios-swift/ampli/'
+ampli_examples:
+  -
+    id: lyop4qhh
+    ampli_language: Objective-C
+    ampli_example_link: 'https://github.com/amplitude/ampli-examples/blob/main/ios/objective-c/v2/AmpliObjectiveCSampleApp'
+  -
+    id: lyop4rh4
+    ampli_language: Swift
+    ampli_example_link: 'https://github.com/amplitude/ampli-examples/blob/main/ios/swift/v2/AmpliSwiftSampleApp'
 ---
 Amplitude Data supports tracking analytics events from iOS apps written in Swift and Objective-C.
 

@@ -4,11 +4,20 @@ blueprint: node_js_sdk
 title: 'Node.js Ampli Wrapper'
 sdk_status: maintenance
 article_type: ampli
-source: https://www.docs.developers.amplitude.com/data/sdks/typescript-node/ampli/
+source: 'https://www.docs.developers.amplitude.com/data/sdks/typescript-node/ampli/'
 supported_languages:
   - js
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1710273461
+updated_at: 1721151423
+ampli_examples:
+  -
+    id: lyop3v8h
+    ampli_language: JavaScript
+    ampli_example_link: 'https://github.com/amplitude/ampli-examples/blob/main/node/javascript'
+  -
+    id: lyop3w4v
+    ampli_language: TypeScript
+    ampli_example_link: 'https://github.com/amplitude/ampli-examples/blob/main/node/typescript'
 ---
 Ampli supports Node.js apps written in JavaScript (ES6 and higher) and TypeScript (2.1 and higher). The generated tracking library is packaged as a CJS module.
 
@@ -415,4 +424,3 @@ Migrate from Ampli for `@amplitude/node` to Ampli for `@amplitude/analytics-node
 6. Find and replace.
 
     Middleware is no longer support. It has been replaced by a new Plugin architecture. Migrating from Middleware to a Plugin is easy.
-
