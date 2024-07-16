@@ -11,7 +11,7 @@
             </div>
             {{# <div class="prose prose-a:text-amp-blue-300 prose-ol:list-decimal prose-ol:list-outside prose-pre:bg-[#fafafa]"> #}}
             <div class="flex flex-wrap gap-4 w-full max-w-screen-xl">
-                {{ collection :from="mount" article_type:is="core" sort="sdk_status:asc" }}
+                {{ collection :from="mount" article_type:is="core" sort="order" }}
                     <div class="flex-1 basis-80 border border-amp-gray-200 grow-0 rounded p-4 hover:shadow transition">
                         <code class="text-xs mb-2 inline-block {{sdk_status | lower}}">{{ sdk_status }}</code>
                         <a href="{{ url }}">
