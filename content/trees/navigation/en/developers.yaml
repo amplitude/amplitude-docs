@@ -123,33 +123,8 @@ tree:
         id: bc5c7c5e-fa0c-4bfd-8c89-a448a2c2e012
         entry: ba4cfecb-940d-42de-b2f2-b2eb5d523bfa
   -
-    id: a24b89be-89c6-4061-b922-5de1fc686bf5
-    title: 'SDK implementation'
-    children:
-      -
-        id: 2822e104-61da-4250-8687-f76d787d3b93
-        entry: 02e1a247-91b8-48ac-aabb-e1ab3b46042f
-      -
-        id: 73b866f9-1415-41f1-8907-043fb543cd38
-        entry: aaef4714-72e1-470d-a8e0-87de6001daf3
-      -
-        id: de5e81ea-d352-4f5e-8490-8225b4dec890
-        entry: e5e8c350-b75d-4c43-83a0-833ff186a0be
-      -
-        id: 26874aaa-2b3d-459b-b015-32295a040e49
-        entry: 53c7b244-36fd-47b4-8cd7-689dc44fc563
-      -
-        id: 613212f1-77d7-4c88-b8f0-1afeffc06e06
-        entry: cae327ea-be74-4783-ab16-09f2848cebca
-      -
-        id: 24b402ab-351e-4af8-93bf-39a23b40ed0f
-        entry: cea4db38-5323-4b0b-b401-8077084a0a0a
-      -
-        id: cc8b7515-d6c5-43a5-8d9d-039fbd4740e7
-        entry: 18f5ac3b-003a-4386-86a3-1ffad3ca2429
-    id: c6f0430b-d074-41fc-a9d9-c6a231685ad4
-    title: 'SDK Quickstart'
-    url: /docs/sdks/sdk-quickstart
+    id: 31c797f0-bc32-442a-8204-028abd627513
+    entry: bcd2bdb9-24a7-4c65-bb08-764eda6efaa5
   -
     id: 26874aaa-2b3d-459b-b015-32295a040e49
     entry: 53c7b244-36fd-47b4-8cd7-689dc44fc563
