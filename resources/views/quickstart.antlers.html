@@ -1,0 +1,130 @@
+<section class="w-full flex flex-col items-center">
+    {{ partial:breadcrumbs }}
+    <div class="flex flex-row w-full pt-8 px-6 lg:p-8">
+      <div class="copy w-full">
+        <div class="flex flex-row items-start justify-between">
+          <h1 class="font-[Gellix] font-normal mb-5">{{ title }}</h1>
+          {{if environment == 'local'}} <span class="ml-4 text-xs text-gray-300 align-middle"><a
+              href="{{ environment == 'local' ? edit_url : {github_edit_url} }}"
+              target="_blank">{{ svg src="/docs/assets/general/pencil.svg" class="fill-amp-gray-500 h-4 hover:h-6 transition-all" }}</a></span> {{/if}}
+        </div>
+        <div
+          class="prose prose-a:text-amp-blue prose-ol:list-decimal prose-ol:list-outside prose-pre:bg-[#fafafa] max-w-screen-lg" data-headings-anchors x-data="{activeSdk: '{{sdk:0:sdk_label}}'}">
+          <div class="flex space-x-1">
+            {{sdk}}
+            <button x-on:click="activeSdk = '{{sdk_label}}'" :class="{'border-b-2 border-amp-blue-500 text-amp-blue-500 -mb-[2px]' : activeSdk === '{{sdk_label}}', 'bg-gray-200': activeSdk !== '{{sdk_label}}'}" class="px-4  py-2">{{sdk_label}}</button>
+            {{/sdk}}
+
+          </div>
+          {{sdk}}
+          <div id="{{sdk_label | slugify}}" x-cloak x-show="activeSdk === '{{sdk_label}}'">
+            <h2>{{sdk_label}}</h2>
+            <p>The {{sdk_label}} SDK sends events to Amplitude. For more information, see the {{related_sdk}}<a href="{{url}}">{{title}}</a>{{/related_sdk}} documentation for more configuration options and advanced topics.</p>
+            
+            {{introduction ?? ""}}
+            <h3>Install the dependency</h3>
+
+            {{if installation_grid | length > 1}}
+            
+
+            <div class="border border-amp-gray-200 rounded" x-data="{ activeTab: '{{installation_grid:0:tab_label}}' }">
+                <div class="flex space-x-1">
+                {{installation_grid}}<button x-on:click="activeTab = '{{tab_label}}'" :class="{'border-b-2 border-amp-blue-500 text-amp-blue-500 -mb-[2px]' : activeTab === '{{tab_label}}', 'bg-gray-200': activeTab !== '{{tab_label}}'}" class="px-4  py-2">{{tab_label}}</button>{{/installation_grid}}</div>
+                {{installation_grid}}
+                <div x-cloak x-show="activeTab === '{{tab_label}}'" class="p-4 tab">{{instructions}}</div>
+                {{/installation_grid}}
+                </div>
+            {{else}}
+            {{installation_grid:0:instructions}}
+            {{/if}}
+
+            {{install_instructions ?? ""}}
+            <h3>Initialize the SDK</h3>
+            <p>Before you instrument,in itialize the SDK using the <a href="/docs/apis/keys-and-tokens">API Key</a> for your Amplitude project.</p>
+            {{init_instructions ?? ""}}
+            {{if initialization_grid | length > 1}}
+
+
+            <div class="border border-amp-gray-200 rounded" x-data="{ activeTab: '{{initialization_grid:0:tab_label}}' }">
+                <div class="flex space-x-1">
+                {{initialization_grid}}<button x-on:click="activeTab = '{{tab_label}}'" :class="{'border-b-2 border-amp-blue-500 text-amp-blue-500 -mb-[2px]' : activeTab === '{{tab_label}}', 'bg-gray-200': activeTab !== '{{tab_label}}'}" class="px-4  py-2">{{tab_label}}</button>{{/initialization_grid}}</div>
+                {{initialization_grid}}
+                <div x-cloak x-show="activeTab === '{{tab_label}}'" class="p-4 tab">{{instructions}}</div>
+                {{/initialization_grid}}
+                </div>
+            {{else}}
+            {{initialization_grid:0:instructions}}
+            {{/if}}
+
+            <h3>Send data</h3>
+            <p>Next, send data from your app or website to Amplitude.</p>
+            {{send_data_instructions ?? ""}}
+            {{if send_data_grid | length > 1}}
+                
+
+            <div class="border border-amp-gray-200 rounded" x-data="{ activeTab: '{{send_data_grid:0:tab_label}}' }">
+                <div class="flex space-x-1">
+                {{send_data_grid}}<button x-on:click="activeTab = '{{tab_label}}'" :class="{'border-b-2 border-amp-blue-500 text-amp-blue-500 -mb-[2px]' : activeTab === '{{tab_label}}', 'bg-gray-200': activeTab !== '{{tab_label}}'}" class="px-4  py-2">{{tab_label}}</button>{{/send_data_grid}}</div>
+                {{send_data_grid}}
+                <div x-cloak x-show="activeTab === '{{tab_label}}'" class="p-4 tab">{{instructions}}</div>
+                {{/send_data_grid}}
+                </div>
+            {{else}}
+            {{send_data_grid:0:instructions}}
+            {{/if}}
+
+            <h3>Check for success</h3>
+            <p>After you begin sending data to Amplitude, use one of the <a href="/docs/analytics/debug-analytics">debugging</a> tools to check your instrumentation and validate your events.</p>
+
+            <h3>Complete code example</h3>
+            <p>Here's a complete example of how to use the SDK in your own app.</p>
+            {{if code_sample_grid | length > 1}}
+
+
+            <div class="border border-amp-gray-200 rounded" x-data="{ activeTab: '{{code_sample_grid:0:tab_label}}' }">
+                <div class="flex space-x-1">
+                {{code_sample_grid}}<button x-on:click="activeTab = '{{tab_label}}'" :class="{'border-b-2 border-amp-blue-500 text-amp-blue-500 -mb-[2px]' : activeTab === '{{tab_label}}', 'bg-gray-200': activeTab !== '{{tab_label}}'}" class="px-4  py-2">{{tab_label}}</button>{{/code_sample_grid}}</div>
+                {{code_sample_grid}}
+                <div x-cloak x-show="activeTab === '{{tab_label}}'" class="p-4 tab">{{instructions}}</div>
+                {{/code_sample_grid}}
+                </div>
+            {{else}}
+            {{code_sample_grid:0:instructions}}
+            {{/if}}
+            <p>For more information, see <a href="{{related_sdk:0:url}}">{{related_sdk:0:title}}</a>.</p>
+            {{if ampli_article}}
+            <h3>Enforce event schemas (Ampli)</h3>
+            <p>The <a href="/docs/sdks/ampli/ampli-cli">Ampli CLI</a>, <a href="/docs/sdks/ampli/ampli-wrapper">Ampli Wrapper</a>, and Amplitude SDK work together to generate a tracking library based on your Tracking Plan. The autogenerated library provides type safety, supports linting, and enable features like input validation which contextualizes your analytics instrumentation, and reduces instrumentation mistakes.</p>
+            <p>For more information, see <a href="{{ampli_article:0:url}}">{{ampli_article:0:title}}</a> or examples on GitHub for:</p>
+            {{ampli_article}}
+            <ul>
+              {{ampli_examples}}
+                <li><a href="{{ampli_example_link}}" target="_blank">{{ampli_language}}</a></li>
+              {{/ampli_examples}}
+            </ul>
+            {{/ampli_article}}
+
+
+            </ul>
+            {{if ampli_grid | length > 1}}
+
+
+            <div class="border border-amp-gray-200 rounded" x-data="{ activeTab: '{{ampli_grid:0:tab_label}}' }">
+                <div class="flex space-x-1">
+                {{ampli_grid}}<button x-on:click="activeTab = '{{tab_label}}'" :class="{'border-b-2 border-amp-blue-500 text-amp-blue-500 -mb-[2px]' : activeTab === '{{tab_label}}', 'bg-gray-200': activeTab !== '{{tab_label}}'}" class="px-4  py-2">{{tab_label}}</button>{{/ampli_grid}}</div>
+                {{ampli_grid}}
+                <div x-cloak x-show="activeTab === '{{tab_label}}'" class="p-4 tab">{{instructions}}</div>
+                {{/ampli_grid}}
+                </div>
+            {{else}}
+            {{ampli_grid:0:instructions}}
+            {{/if}}
+            {{/if}}
+        </div>
+        {{/sdk}}
+        </div>
+        </div>
+    </div>
+    </div>
+    {{ partial:article-footer }}
+  </section>
