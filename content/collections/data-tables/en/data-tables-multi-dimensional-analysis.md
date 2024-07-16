@@ -6,7 +6,7 @@ source: 'https://help.amplitude.com/hc/en-us/articles/6797483965083-Multi-dimens
 this_article_will_help_you:
   - 'Build a custom analysis using multiple metrics in several different dimensions'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1720718276
+updated_at: 1721167433
 landing: true
 landing_blurb: 'Build a custom analysis using multiple metrics in several different dimensions'
 ---
@@ -26,7 +26,7 @@ Data Tables are useful for:
 
 ![compare_time_periods.gif](/docs/output/img/data-tables/compare-time-periods-gif.gif)
 
-You can easily sort columns in ascending or descending order (just click the metric header), drag and drop or resize columns, and highlight, copy and paste any number of cells from your Data Table.
+You can easily sort columns in ascending or descending order (just click the metric header), drag or resize columns, and highlight, copy and paste any number of cells from your Data Table.
 
 To get a quick overview of how Data Tables work, check out our [short Loom tutorial](https://www.loom.com/share/c6467e0667334368a51acab1bff77cd5?t=13).
 
@@ -63,9 +63,13 @@ To set up and use a Data Table, follow these steps:
   
     ![groupby_property.jpeg](/docs/output/img/data-tables/groupby-property-jpeg.jpeg)
 
+{{partial:admonition type='note'}}
+When using a time dimension as a group-by property, the time dimension must be the last group-by you add: `group by: country`, then `group by: day of week`. Adding these group-bys in the reverse order doesn't generate correct results.
+{{/partial:admonition}}
+
 5. Next, add [user segments](/docs/analytics/charts/build-charts-add-events), if desired. Saved segments are accessible. Multiple segments show up in the table as separate columns within the same metric.
 
-Once setup, there are several options you can use to manage and manipulate your data.
+Once set up, there are several options you can use to manage and manipulate your data.
 
 Within any cell, click the Options icon to: 
 
