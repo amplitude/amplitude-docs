@@ -2,7 +2,7 @@ title: Sources
 template: default
 layout: layout
 revisions: false
-route: '/cdp/sources/{slug}'
+route: '/data/sources/{slug}'
 sort_dir: asc
 date_behavior:
   past: public
@@ -13,6 +13,6 @@ preview_targets:
     url: '{permalink}'
     refresh: true
 inject:
-  nav_title: cdp
+  nav_title: data
 structure:
   root: false

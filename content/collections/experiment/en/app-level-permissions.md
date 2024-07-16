@@ -7,8 +7,8 @@ this_article_will_help_you:
   - 'Set user permissions for Amplitude Experiment that are independent of and separate from those used in Amplitude Analytics'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1716329073
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1720719003
 ---
 Experiment app-level permissions enable Amplitude admins to manage access to Amplitude Experiment separately from [Amplitude Analytics permissions](/docs/admin/account-management/user-roles-permissions). Use this when you want to:
 
@@ -43,7 +43,7 @@ When flag-level access controls are enabled, users in your organization are unab
 
 For new flags and experiments, this access defaults to prohibiting edits from other users; manually add any users to the list of those permitted to edit them.
 
-To edit the list of approved editors, navigate to *Permissions > [flag or experiment] > More Actions > Manage Access*. Here, you can add individual users, or specify that the flag is editable by all users in your organization.
+To edit the list of approved editors, navigate to *[flag or experiment] > More Actions > Manage Access*. Here, you can add individual users, or specify that the flag is editable by all users in your organization.
 
 After you grant a user editor permissions to your flag, Amplitude Experiment checks permissions, and that user needs edit access through their role. For example, if you assign a user the Viewer role and you add them as an editor to your flag, they can't to save changes until you assign them a role with editing privileges
 

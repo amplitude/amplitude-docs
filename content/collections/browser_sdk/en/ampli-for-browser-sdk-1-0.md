@@ -4,16 +4,24 @@ blueprint: browser_sdk
 title: 'Ampli for Browser SDK 1.0'
 sdk_status: current
 article_type: ampli
-major_version: 1.0
+major_version: 1
 supported_languages:
   - js
   - ts
 bundle_url: 'https://www.npmjs.com/package/@amplitude/ampli'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1709672325
-source: https://www.docs.developers.amplitude.com/data/sdks/typescript-browser/ampli/
+updated_at: 1721151372
+source: 'https://www.docs.developers.amplitude.com/data/sdks/typescript-browser/ampli/'
+ampli_examples:
+  -
+    id: lyop2q37
+    ampli_language: JavaScript
+    ampli_example_link: 'https://github.com/amplitude/ampli-examples/blob/main/browser/javascript/v1/react-app'
+  -
+    id: lyop2qo0
+    ampli_language: TypeScript
+    ampli_example_link: 'https://github.com/amplitude/ampli-examples/blob/main/browser/typescript/v1/react-app'
 ---
-
 The [Ampli Wrapper](/docs/sdks/ampli) is a generated, strongly typed API for tracking Analytics events based on your Tracking Plan in Amplitude Data. The tracking library exposes a function for every event in your team’s tracking plan. The function’s arguments correspond to the event’s properties.
 
 Ampli provides autocompletion for events & properties defined in Data and enforce your event schemas in code to prevent bad instrumentation. 

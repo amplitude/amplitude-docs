@@ -10,7 +10,9 @@ updated_at: 1719939361
 Amplitude provides a wrapper to enable a one-line integration between Segment and Amplitude's Session Replay.
 
 {{partial:admonition type="note" heading=""}}
-This wrapper supports [Segment's Amplitude (Actions)](https://segment.com/docs/connections/destinations/catalog/actions-amplitude/) destination only. 
+This wrapper supports [Segment's Amplitude (Actions)](https://segment.com/docs/connections/destinations/catalog/actions-amplitude/) destination only.
+
+To use Session Replay with [Segment's Amplitude (Classic) destination](https://segment.com/docs/connections/destinations/catalog/amplitude/), use the [Session Replay Standalone SDK](/docs/session-replay/session-replay-standalone-sdk).
 {{/partial:admonition}}
 
 ## Install the wrapper
@@ -20,12 +22,12 @@ Use npm or Yarn to install the package, which includes the Amplitude Session Rep
 {{partial:tabs tabs="npm, yarn"}}
 {{partial:tab name="npm"}}
 ```bash
-npm install @amplitude/segment-session-replay-wrapper" --save
+npm install @amplitude/segment-session-replay-wrapper --save
 ```
 {{/partial:tab}}
 {{partial:tab name="yarn"}}
 ```bash
-yarn add @amplitude/segment-session-replay-wrapper"
+yarn add @amplitude/segment-session-replay-wrapper
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -60,3 +62,7 @@ This wrapper uses Segment's plugin architecture, which ensures that all `track` 
 ## User ID to Device ID mapping
 
 Following Segment's documentation, the wrapper maps the Segment user ID to the Amplitude device ID. To find the device ID for replay captures, the wrapper checks if `userId` is set, and if not, it uses `anonymousId`.
+
+## Troubleshooting
+
+For troubleshooting information, see [Session Replay Standalone SDK | Troubleshooting](/docs/session-replay/session-replay-standalone-sdk#troubleshooting)

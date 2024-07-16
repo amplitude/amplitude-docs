@@ -12,7 +12,8 @@ updated_at: 1714686587
 Session Replay isn't enabled by default, and requires setup beyond the standard Amplitude instrumentation.
 {{/partial:admonition}}
 
-This article covers the installation of Session Replay using the Browser SDK plugin. If your site is already instrumented with Amplitude, use this option. If you use a provider other than Amplitude for in-product analytics, choose the [standalone implementation](/docs/session-replay/session-replay-standalone-sdk).
+This article covers the installation of Session Replay using the Browser SDK plugin. If your site is already instrumented with Amplitude, use this option. If you use a provider other than Amplitude for in-product analytics, choose the [standalone implementation](/docs/session-replay/session-replay-standalone-sdk). For more information about the Browser SDK, see 
+[Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2).
 
 {{partial:admonition type="info" heading="Session Replay and performance"}}
 Amplitude built Session Replay to minimize impact on the performance of web pages on which it's installed by:
@@ -64,24 +65,24 @@ Configure your application code.
 ```js
 import * as amplitude from '@amplitude/analytics-browser';
 import { sessionReplayPlugin } from '@amplitude/plugin-session-replay-browser';
+ 
+ // Create and Install Session Replay Plugin
+const sessionReplayTracking = sessionReplayPlugin();
+amplitude.add(sessionReplayTracking);
 
 // Your existing initialization logic with Browser SDK
 amplitude.init(API_KEY);
-
-// Create and Install Session Replay Plugin
-const sessionReplayTracking = sessionReplayPlugin();
-amplitude.add(sessionReplayTracking);
 ```
 
 You can also add the code directly to the `<head>` of your site. With this method, be sure that the Browser SDK isn't initialized elsewhere in your application. If you initialize the Browser SDK more than once, you may see mismatches in Device ID or Session ID.
 
 ```html
-<script src="https://cdn.amplitude.com/libs/analytics-browser-{{sdk_versions:browser}}-min.js.gz"></script>
-<script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-{{sdk_versions:session_replay_plugin}}-min.js.gz"></script>
+<script src="https://cdn.amplitude.com/libs/analytics-browser-2.9.0-min.js.gz"></script>
+<script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.4.0-min.js.gz"></script>
 <script>
-window.amplitude.init(API_KEY)
 const sessionReplayTracking = window.sessionReplay.plugin();
 window.amplitude.add(sessionReplayTracking);
+window.amplitude.init(API_KEY)
 </script>
 ```
 
