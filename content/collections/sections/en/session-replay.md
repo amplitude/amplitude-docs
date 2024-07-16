@@ -81,7 +81,7 @@ Click *Play* to see the session view in the modal that appears. 
 
 To review your Session Replay quota and retention time frame, navigate to the Plans & Billing page for your organization.
 
-To see an approximation of the number of sessions that have associated replays, create a [User Sessions Chart](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) and configure it to include all sessions with any active event, where the first property value of `Session Replay ID` is not equal to `“(none)”`. This includes all session replays with a value.
+To see an approximation of the number of sessions that have associated replays, create a [User Sessions Chart](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) and configure it to include all sessions with any active event, where the first property value of `Session Replay ID` is not equal to `"(none)"`. This includes all session replays with a value.
 
 ## Search for a replay
 
