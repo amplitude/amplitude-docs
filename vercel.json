@@ -1668,7 +1668,7 @@
       "statusCode": 301
     },
     {
-      "destination": "/docs/cdp/sources/instrument-track-sessions",
+      "destination": "/docs/data/sources/instrument-track-sessions",
       "source": "/docs/hc/en-us/articles/115002323627((?:-[a-zA-Z0-9-]+)?)",
       "statusCode": 301
     },
