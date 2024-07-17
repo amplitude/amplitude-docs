@@ -68,7 +68,8 @@
 <script>
     function academyClick(link){
         amplitude.track('Academy link', {
-            'destination': link
+            'destination': link,
+            '[Amplitude] Page URL': window.location.href
         })
     }
 </script>
