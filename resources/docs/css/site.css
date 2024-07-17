@@ -191,6 +191,10 @@
 
 /* This is all us. */
 
+li.help p {
+    margin-bottom: 0;
+}
+
 abbr {
     position: relative
   }
