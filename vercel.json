@@ -2833,6 +2833,11 @@
       "statusCode": 301
     },
     {
+      "destination": "/docs/data/create-tracking-plan",
+      "source": "/docs/hc/en-us/articles/5078752725147((?:-[a-zA-Z0-9-]+)?)",
+      "statusCode": 301
+    },
+    {
       "destination": "/docs/experiment/under-the-hood/experiment-performance-scaling",
       "source": "/docs/hc/en-us/articles/360061687371((?:-[a-zA-Z0-9-]+)?)",
       "statusCode": 301

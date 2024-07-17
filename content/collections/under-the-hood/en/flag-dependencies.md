@@ -71,3 +71,4 @@ Prior local evaluation SDK versions don't consider mutual exclusion or holdout g
 | [JVM](/docs/sdks/experiment-sdks/experiment-jvm) | `1.1.0+` |
 | [Go](/docs/sdks/experiment-sdks/experiment-go) | `1.1.0+` |
 | [Python](/docs/sdks/experiment-sdks/experiment-python) | `1.1.0+` |
+| [PHP](/docs/sdks/experiment-sdks/experiment-php) | `1.0.0+` |

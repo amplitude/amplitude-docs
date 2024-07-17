@@ -1050,10 +1050,10 @@ video {
   max-width: 65ch;
 }.max-w-screen-2xl {
   max-width: 1536px;
-}.max-w-screen-xl {
-  max-width: 1280px;
 }.max-w-screen-lg {
   max-width: 1024px;
+}.max-w-screen-xl {
+  max-width: 1280px;
 }.flex-1 {
   flex: 1 1 0%;
 }.flex-auto {
