@@ -40,3 +40,37 @@ fields:
       type: entries
       display: 'FAQ Link'
       localizable: false
+  -
+    handle: related_academy_course
+    field:
+      type: section
+      display: 'Related Academy course'
+      localizable: false
+  -
+    handle: academy_link
+    field:
+      input_type: url
+      type: text
+      display: 'Academy link'
+      localizable: false
+      width: 50
+  -
+    handle: academy_title
+    field:
+      type: text
+      display: 'Academy course title'
+      localizable: false
+      width: 50
+  -
+    handle: academy_description
+    field:
+      buttons:
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - link
+        - table
+      type: markdown
+      display: 'Academy description'
+      localizable: false

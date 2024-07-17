@@ -35,6 +35,12 @@
 
   {{if environment == 'production' }}
     {{partial:partials/_amplitude}}
+    {{else}}
+    <script>
+      function academyClick(link){
+          console.log(link)
+      }
+  </script>
   {{/if}}
 </head>
 <body class="bg-gray-100 font-sans leading-normal text-gray-800">
