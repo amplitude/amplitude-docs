@@ -1668,8 +1668,13 @@
       "statusCode": 301
     },
     {
-      "destination": "/docs/cdp/sources/instrument-track-sessions",
+      "destination": "/docs/data/sources/instrument-track-sessions",
       "source": "/docs/hc/en-us/articles/115002323627((?:-[a-zA-Z0-9-]+)?)",
+      "statusCode": 301
+    },
+    {
+      "destination": "/docs/data/sources/instrument-track-sessions",
+      "source": "/docs/cdp/sources/instrument-track-sessions",
       "statusCode": 301
     },
     {
@@ -1693,8 +1698,13 @@
       "statusCode": 301
     },
     {
-      "destination": "/docs/cdp/sources/instrument-track-revenue",
+      "destination": "/docs/data/sources/instrument-track-revenue",
       "source": "/docs/hc/en-us/articles/115003116888((?:-[a-zA-Z0-9-]+)?)",
+      "statusCode": 301
+    },
+    {
+      "destination": "/docs/data/sources/instrument-track-revenue",
+      "source": "/docs/cdp/sources/instrument-track-revenue",
       "statusCode": 301
     },
     {
@@ -1928,8 +1938,13 @@
       "statusCode": 301
     },
     {
-      "destination": "/docs/cdp/sources/connect-to-source",
+      "destination": "/docs/data/sources/connect-to-source",
       "source": "/docs/hc/en-us/articles/16806069264539((?:-[a-zA-Z0-9-]+)?)",
+      "statusCode": 301
+    },
+    {
+      "destination": "/docs/data/sources/connect-to-source",
+      "source": "/docs/cdp/sources/connect-to-source",
       "statusCode": 301
     },
     {
@@ -2038,8 +2053,13 @@
       "statusCode": 301
     },
     {
-      "destination": "/docs/cdp/sources/session-length",
+      "destination": "/docs/data/sources/session-length",
       "source": "/docs/hc/en-us/articles/18749912891419((?:-[a-zA-Z0-9-]+)?)",
+      "statusCode": 301
+    },
+    {
+      "destination": "/docs/data/sources/session-length",
+      "source": "/docs/cdp/sources/session-length",
       "statusCode": 301
     },
     {
@@ -2558,8 +2578,13 @@
       "statusCode": 301
     },
     {
-      "destination": "/docs/cdp/sources/export-api-differences",
+      "destination": "/docs/data/sources/export-api-differences",
       "source": "/docs/hc/en-us/articles/360043976571((?:-[a-zA-Z0-9-]+)?)",
+      "statusCode": 301
+    },
+    {
+      "destination": "/docs/data/sources/export-api-differences",
+      "source": "/docs/cdp/sources/export-api-differences",
       "statusCode": 301
     },
     {
