@@ -1668,7 +1668,7 @@
       "statusCode": 301
     },
     {
-      "destination": "/docs/data/sources/instrument-track-sessions",
+      "destination": "/docs/cdp/sources/instrument-track-sessions",
       "source": "/docs/hc/en-us/articles/115002323627((?:-[a-zA-Z0-9-]+)?)",
       "statusCode": 301
     },
@@ -2830,6 +2830,11 @@
     {
       "destination": "/docs/experiment/under-the-hood/experiment-randomization",
       "source": "/docs/hc/en-us/articles/360061687351((?:-[a-zA-Z0-9-]+)?)",
+      "statusCode": 301
+    },
+    {
+      "destination": "/docs/data/create-tracking-plan",
+      "source": "/docs/hc/en-us/articles/5078752725147((?:-[a-zA-Z0-9-]+)?)",
       "statusCode": 301
     },
     {
