@@ -19,6 +19,7 @@
         "spatie/fork": "^1.2",
         "statamic/cms": "5.3.0",
         "statamic/ssg": "^3.0",
+        "swiftmade/statamic-clear-assets": "^3.0",
         "torchlight/torchlight-commonmark": "^0.5.5",
         "ueberdosis/commonmark-hint-extension": "^0.1.0"
     },
