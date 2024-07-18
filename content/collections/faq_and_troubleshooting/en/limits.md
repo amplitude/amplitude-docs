@@ -6,22 +6,22 @@ source: 'https://amplitude.zendesk.com/hc/en-us/articles/115002923888'
 this_article_will_help_you:
   - 'Understand the limits Amplitude places on the amount of data you can send, and how to avoid exceeding them'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1720211956
+updated_at: 1721083346
 landing: false
 ---
 There are some limits to the amount of data that you can send to Amplitude.
 
 ## Event volume limits
 
-All organizations have a monthly event volume limit. The exact number will be specified in the signed agreement between Amplitude and each customer, and should be listed in your Settings.   
+All organizations have a monthly event volume limit. Your company's signed agreement with Amplitude specifies the limit that applies to you, and you can see it in your Settings.   
 
 {{partial:admonition type='note'}}
  Identify and Group Identify calls do **NOT** count against total event volume.
 {{/partial:admonition}}
 
-Customers who exceed these limits may be subject to overage fees. If you're ever close to exceeding this limit, we'll alert you via email and through in-product notifications. Email alerts automatically go out to users in an Admin role when a % of your limit is reached (intervals 80%, 90%, 100%, and 110% for paid plans).
+Customers who exceed these limits may be subject to overage fees. If you're close to exceeding this limit, Amplitude alerts you through email and in-product notifications. Email alerts automatically go out to users with the Admin role when you reach certain percentages of your limit (80%, 90%, 100%, and 110% for paid plans).
 
-If you're a non-paying customer and you exceed your monthly limit three times, your account will be **blocked**. You will no longer be able to access any of your charts and dashboards (you will still have access to certain Admin functions, like the User API, so you can meet your compliance obligations). Data you send to Amplitude **up to your limit** will continue to be ingested; however, data **past** the limit will **not** be ingested. If you continue to exceed your monthly limit without upgrading to a paid plan, your account will be **deleted** six months after it was first blocked.
+If you're a non-paying customer and you exceed your monthly limit three times, Amplitude **blocks your account**. With a blocked account, you can't access any charts and dashboards, but you can still use certain administrative functions, like the User API, to meet compliance obligations. Amplitude continues to ingest data **up to your limit**; however, Amplitude **doesn't ingest** any data beyond your limit. If you continue to exceed your monthly limit without upgrading to a paid plan, Amplitude **deletes your account** six months after the initial block.
 
 ## Instrumentation limits
 
@@ -31,34 +31,36 @@ The allowed per-project maximums for **event types**, **event properties**, and 
 * Event properties: 2000
 * User properties: 1000
 
-Once these limit are reached, Amplitude will stop indexing new values. Data for any event types and event or user properties that exceed these limits **cannot be queried** from Amplitude, and can only be accessed in the raw data by exporting data via a CSV file or Amplitude's [Export API](/docs/apis/analytics/export).
+Once you reach these limits, Amplitude stops indexing new values. You can no longer query data for any event types and event or user properties that exceed these limits, and you can only access them in the raw data by exporting data as a CSV file or Amplitude's [Export API](/docs/apis/analytics/export).
 
-As an example, imagine an instrumentation bug causes your product to send several additional event types to Amplitude, causing your project to exceed its instrumentation limit by five. Data for those excess event types will be visible within Amplitude once you have brought your project back down under the instrumentation limit. However, you will be unable to query any data received for those excess event types **during the period** when your account was over the instrumentation limit. 
+As an example, imagine an instrumentation bug causes your product to send several extra event types to Amplitude, and your project exceeds its instrumentation limit by five as a result. Data for those excess event types are visible within Amplitude once you've brought your project down under the instrumentation limit. However, you can't query any data received for those excess event types **during the period** when your account was over the instrumentation limit. 
 
-There is **no limit** to the number of event or user property values you can send. However, for a specific event or user property, only the first 1000 values sent to Amplitude will be selectable from dropdown menus.
+There is **no limit** to the number of event or user property values you can send. However, for a specific event or user property, you can select only the first 1000 values sent to Amplitude from dropdown menus.
 
 There is **no limit** to the number of event properties you can apply to an event.
 
-You can [delete unneeded event types in Amplitude Data](/docs/data/remove-invalid-data). Once you are under the limit, it will take approximately 24 hours for the new event types, event properties, and user properties to appear in Amplitude.
+You can [delete unneeded event types in Amplitude Data](/docs/data/remove-invalid-data). Once you're under the limit, it can take around 24 hours for the new event types, event properties, and user properties to appear in Amplitude.
 
 ### Character limit for strings
 
-String values are limited to 1024 characters (user ID, event or user property values, etc.). Arrays have a limit of 10000 characters when append or prepend is used (this is available for user property types only). Any string that exceeds this limit will be truncated.
+String values have a limit of 1024 characters (user ID, event or user property values, etc.). Arrays have a limit of 10000 characters when append or prepend is used (this is available for user property types only). Amplitude truncates any strings that exceeds this limit.
 
 ## Chart limits
 
+All limits described in this section apply to the Event Segmentation chart only.
+
 ### Segmentation module
 
-Inline behavioral cohorts have a maximum range of three years. Any date range exceeding three years in the segmentation module will result in a 404 error.
+Inline behavioral cohorts have a maximum range of three years. Any date range exceeding three years in the segmentation module results in a 404 error.
 
-A maximum of ten user segments can be added to a chart.
+You can add a maximum of ten user segments to a chart.
 
 ### Date picker
 
-Depending on the scale, each visualization has its own date range limit. Your charts will show a warning message when these time limits have been reached or exceeded:
+Depending on the scale, each visualization has its own date range limit. Your charts show a warning message when you've reached or exceeded these time limits:
 
-* Real-time: maximum range of 1 day
-* Hourly: maximum range of 7 days
+* Real-time: maximum range of one day
+* Hourly: maximum range of seven days
 * Daily: maximum range of 365 days
 * Weekly: maximum range of 52 weeks
 * Monthly: maximum range of 36 months
@@ -66,21 +68,21 @@ Depending on the scale, each visualization has its own date range limit. Your ch
 
 ### Breakdown table: Segment selection
 
-Up to 30 segments can be selected and shown on the chart at once.
+You can select up to 30 segments and show them all on a chart at once.
 
 ## Limit warnings
 
-Amplitude will warn you when you are getting close to event type, event property, or user property instrumentation limits. View your current instrumentation usage by navigating to *Settings > [Organization settings](/docs/admin/account-management/account-settings) > Projects* and selecting a project.
+Amplitude warns you when you are getting close to event type, event property, or user property instrumentation limits. View your current instrumentation usage by navigating to *Settings > [Organization settings](/docs/admin/account-management/account-settings) > Projects* and selecting a project.
 
-Any limits you are approaching will be delineated with orange text. Any limits you have already exceeded will be delineated with red text.
+Amplitude uses orange text to highlight the limits you're approaching, and red text for limits you've already exceeded.
 
 ![Limits_-_1_-_Max_Properties__orange_red_.png](/docs/output/img/faq/limits-1-max-properties-orange-red-png.png)
 
 {{partial:admonition type='note'}}
-if you have exceeded your event type limits, they will still be displayed in orange. This is because event types beyond that limit are no longer indexed. 
+if you have exceeded your event type limits, Amplitude still displays them in orange. This is because event types beyond that limit are no longer indexed.
 {{/partial:admonition}}
 
-Additionally, an orange warning bar will appear at the top of the page when you are within 10% of the limit. This will be replaced by a red warning bar when you've exceeded your limits.
+Additionally, an orange warning bar appears at the top of the page when you're within 10% of the limit. A red warning bar appears when you've exceeded your limits.
 
 ![Limits_-_3_-_Orange_butter_bar.png](/docs/output/img/faq/limits-3-orange-butter-bar-png.png)
 
@@ -88,7 +90,7 @@ Additionally, an orange warning bar will appear at the top of the page when you 
 
 ## CSV download limits
 
-The breakdown data table in the UI will only list the top 100 property values (for when you perform a [group-by](/docs/analytics/charts/group-by)). You can export approximately 10,000 rows as a .CSV file. This is specifically a limitation on the number of group-by values you can export.
+The breakdown data table in the UI will only list the top 100 property values (for when you perform a [group-by](/docs/analytics/charts/group-by)). You can export roughly 10,000 rows as a .CSV file. This is specifically a limitation on the number of group-by values you can export.
 
 The group-by limits vary from chart to chart:
 
@@ -108,8 +110,8 @@ For example, in the [Event Segmentation](/docs/analytics/charts/event-segmentati
 
 The baseline group-by limit for Data Tables is 10,000, with some exceptions:
 
-* The limit is 300 if a conversion metric is involved
-* The limit is 100 if a session metric is involved
-* The limit is 10 if attribution is involved
+* The limit is 300 with a conversion metric
+* The limit is 100 with a session metric
+* The limit is 10 with attribution
 
-For any combination of these exceptions, the limit is the lowest limit included in the combination. For example, if both a conversion metric and attribution are involved, the limit is 10.
+For any combination of these exceptions, the limit is the lowest limit included in the combination. For example, if a group-by includes both a conversion metric and attribution, the limit is 10.
