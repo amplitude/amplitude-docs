@@ -953,6 +953,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA==
 |`end`|<span class="required">Required</span>. Last date included in data series, formatted YYYYMMDD. For example, `20221001`.|
 |`mode`|<span class="optional">Optional</span>. What mode to run the funnel in: `ordered` for events in the given order, `unordered` for events in any order, and `sequential` for events in the given order with no other events between. Defaults to `ordered`.|
 |`n`| <span class="optional">Optional</span>. Either "new" or "active" to specify what set of users to consider in the funnel. Defaults to `active`.|
+| `i` | Set to -300000, -3600000, 1, 7, or 30 for real-time, hourly, daily, weekly, and monthly counts, respectively. Defaults to 1. Real-time segmentation displays up to 2 days of data, hourly segmentation displays up to 7 days of data, and daily displays up to 365 days of data. |
 |`s`| <span class="optional">Optional</span>. Segment definitions. Defaults to none. [Full description](#shared-query-parameters). |
 |`g`| <span class="optional">Optional</span>. The property to group by. Defaults to none. [Full description](#shared-query-parameters).|
 |`cs`| <span class="optional">Optional</span>. The conversion window in seconds. Defaults to 2,592,000 (30 days). Conversion windows are automatically rounded down to the nearest day in "unordered" mode.|
