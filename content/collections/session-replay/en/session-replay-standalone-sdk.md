@@ -3,6 +3,10 @@ id: f4c61e43-7a55-43a3-9dbd-f1ecb2502774
 blueprint: session-replay
 title: 'Session Replay Standalone SDK'
 source: 'https://www.docs.developers.amplitude.com/session-replay/sdks/plugin/'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1721323488
 ---
 {{partial:admonition type="note" heading="Session Replay instrumentation"}}
 Session Replay isn't enabled by default, and requires setup beyond the standard Amplitude instrumentation.
@@ -82,6 +86,28 @@ const sessionReplayProperties = sessionReplay.getSessionReplayProperties();
 {{partial:admonition type="info" heading=""}}
 Session Replay instrumentation happens in the context of an Amplitude Project. Your replay quota is defined on the Organization level. As a result, you may have multiple Session Replay implementations, across multiple projects each with their own sample rate, that pull from the same quota.
 {{/partial:admonition}}
+
+Alternatively, use script tags to instrument Session Replay:
+
+```js
+<script src="https://cdn.amplitude.com/libs/session-replay-browser-1.10.0-min.js.gz"></script>
+<script>
+window.sessionReplay.init(AMPLITUDE_API_KEY, {
+    deviceId: "<string>",
+    sessionId: "<number>",
+    sampleRate: "<number>"
+    //...other options
+})
+
+// Call whenever the session id changes
+window.sessionReplay.setSessionId(sessionId);
+ 
+// When you send events to Amplitude, call this event to get
+// the most up-to-date Session Replay properties for the event
+const sessionReplayProperties = window.sessionReplay.getSessionReplayProperties();
+3rdPartyAnalytics.track('event', {...eventProperties, ...sessionReplayProperties})
+</script>
+```
 
 ## Add Session Replay ID to your events
 
