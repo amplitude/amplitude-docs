@@ -3,7 +3,6 @@
         {{ nav :handle="nav_title" }}
             {{ lvl1_parent = title | slugify }}
             {{ if url && children }}
-            <!--here is a test-->
                 <a href="{{ url }}"
                     {{if current_uri | contains(url) }}@click.prevent="lvl1 = (lvl1 === '{{title | slugify}}') ? '' : '{{title | slugify}}'" {{/if}}
                     class="no-underline nav-button text-left text-[.875rem] my-0 pl-2 py-2 relative hover:text-amp-blue-500 {{if is_current }} text-amp-blue-500 active{{else}}text-amp-gray-600{{/if}}"

@@ -1,7 +1,7 @@
 ---
 id: 8f7305fa-4aa8-4520-8e8b-22f5fac10bca
 blueprint: source-catalog
-title: Salesforce
+title: 'Salesforce Group'
 connection: source
 integration_category:
   - sales
@@ -9,9 +9,8 @@ partner_maintained: false
 integration_icon: partner-icons/salesforce.svg
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1719256451
+updated_at: 1721338402
 ---
-
 Salesforce provides solutions that help unify marketing, sales, commerce, IT, and service. This Salesforce V2 integration lets you create group-level properties from [Salesforce](https://www.salesforce.com/) data by setting specific Salesforce fields as group-level properties and importing that into Amplitude. This can be useful when analyzing information about accounts that exist in Salesforce. 
 
 ## Overview

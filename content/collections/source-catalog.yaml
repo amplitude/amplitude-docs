@@ -1,4 +1,7 @@
 title: 'Source Catalog'
+sites:
+  - en
+propagate: false
 template: default
 layout: layout
 taxonomies:
@@ -15,6 +18,6 @@ preview_targets:
     url: '{permalink}'
     refresh: true
 inject:
-  nav_title: source_catalog
+  nav_title: 'collection::source-catalog'
 structure:
   root: false
