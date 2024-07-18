@@ -33,7 +33,7 @@
     }
   </style>
 
-  {{if environment == 'production' }}
+  {{if environment == 'production' || environment=='test' }}
     {{partial:partials/_amplitude}}
     {{else}}
     <script>
