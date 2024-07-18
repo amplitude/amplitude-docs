@@ -12,8 +12,8 @@ releases_url: 'https://github.com/amplitude/Amplitude-TypeScript/releases?q=anal
 bundle_url: 'https://www.npmjs.com/package/@amplitude/analytics-browser/v/1.13.4'
 api_reference_url: 'https://amplitude.github.io/Amplitude-TypeScript/'
 shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/analytics-browser/v1.svg'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1719612942
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1721323792
 major_version: 1
 ampli_article: f7989230-bf1c-48aa-ad61-2bc2b3e15a8c
 migration_guide:
@@ -56,8 +56,8 @@ amplitude.init(API_KEY, 'user@amplitude.com', options);
 | --- | --- | --- |
 |`instanceName`| `string`. The instance name. | `$default_instance` |
 |`flushIntervalMillis`| `number`. Sets the interval of uploading events to Amplitude in milliseconds. | 1,000 (1 second) |
-|`flushQueueSize`| `number`. Sets the maximum number of events that are batched in a single upload attempt. | 30 events |
-|`flushMaxRetries`| `number`. Sets the maximum number of retries for failed upload attempts. This is only applicable to retryable errors. | 5 times.|
+|`flushQueueSize`| `number`. Sets the maximum number of events batched in a single upload attempt. | 30 events |
+|`flushMaxRetries`| `number`. Sets the maximum number of retries for failed upload attempts. This is only applicable to errors that can be retried. | 5 times.|
 |`logLevel` | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. Sets the log level. | `LogLevel.Warn` |
 |`loggerProvider `| `Logger`. Sets a custom `loggerProvider` class from the Logger to emit log messages to desired destination. | `Amplitude Logger` |
 |`minIdLength`|  `number`. Sets the minimum length for the value of `userId` and `deviceId` properties. | `5` |
@@ -76,8 +76,8 @@ amplitude.init(API_KEY, 'user@amplitude.com', options);
 |`domain` | `string`. Sets the domain property of cookies created. | `undefined` |
 |`partnerId` | `string`. Sets partner ID. Amplitude requires the customer who built an event ingestion integration to add the partner identifier to `partner_id`. | `undefined` |
 |`sessionTimeout` | `number`. Sets the period of inactivity from the last tracked event before a session expires in milliseconds. | 1,800,000 milliseconds (30 minutes) |
-|`userId` | `number`. Sets an identifier for the user being tracked. Must have a minimum length of 5 characters unless overridden with the `minIdLength` option. | `undefined` |
-|`trackingOptions`| `TrackingOptions`. Configures tracking of additional properties. See the `Optional tracking` section for more information. | Enable all tracking options by default. |
+|`userId` | `number`. Sets an identifier for the tracked user. Must have a minimum length of 5 characters unless overridden with the `minIdLength` option. | `undefined` |
+|`trackingOptions`| `TrackingOptions`. Configures tracking of more properties. See the `Optional tracking` section for more information. | Enable all tracking options by default. |
 
 {{/partial:collapse}}
 
@@ -306,12 +306,10 @@ Amplitude tracks the following information with page view events.
 |`event_properties.[Amplitude] Page Location`| `string`. The page location. | location.href or ''. |
 |`event_properties.[Amplitude] Page Path`| `string`. The page path. | location.path or ''.|
 |`event_properties.[Amplitude] Page Title`| `string`. The page title. | document.title or ''.|
-|`event_properties.[Amplitude] Page URL`| `string`. The value of page URL. | location.href.split('?')[0] or ``.|
+|`event_properties.[Amplitude] Page URL`| `string`. The value of page URL. | location.href.split('?')[0] or ''.|
 |`event_properties.${CampaignParam}`| `string`. The value of `UTMParameters` `ReferrerParameters` `ClickIdParameters` if has any. Check [here](./#tracking-default-events) for the possible keys. | Any undefined `campaignParam` or `undefined`. |
 
-Check [this example](https://github.com/amplitude/Amplitude-TypeScript/blob/main/examples/plugins/page-view-tracking-enrichment/index.ts) to understand how to enrich default page view events, such as adding more properties along with page view tracking.
-
-For more information, see [this example](https://github.com/amplitude/Amplitude-TypeScript/blob/main/examples/plugins/page-view-tracking-enrichment/index.ts) to understand how to enrich default page view events, such as adding more properties along with page view tracking.
+See [this example](https://github.com/amplitude/Amplitude-TypeScript/blob/main/examples/plugins/page-view-tracking-enrichment/index.ts) to understand how to enrich default page view events, such as adding more properties along with page view tracking.
 
 ### Track sessions
 
@@ -522,7 +520,7 @@ The preferred method of tracking revenue for a user is to use `revenue()` in con
 
 <!--vale on-->
 
-To track revenue from a user, call revenue each time a user generates revenue. In this example, 3 units of a product were purchased at $3.99.
+To track revenue from a user, call revenue each time a user generates revenue. In this example, the user purchased three units of a product at $3.99.
 
 ```ts
 const event = new amplitude.Revenue()
@@ -891,17 +889,17 @@ Debugging in a browser can help you identify problems related to your code's imp
 
 You can find JavaScript errors under **Inspect > Console**, which might have the details about the line of code and file that caused the problem. The console also allows you to execute JavaScript code in real time.
 
-* Enable debug mode by following these [instructions](#debug-mode). Then With the default logger, extra function context information will be output to the developer console when any SDK public method is invoked, which can be helpful for debugging.
+* Enable debug mode by following these [instructions](#debug-mode). Then with the default logger, extra function context information outputs to the developer console when any SDK public method is invoked, which can be helpful for debugging.
 
-* Amplitude supports SDK deferred initialization. Events tracked before initialization will be dispatched after the initialization call. If you cannot send events but can send the event successfully after entering `amplitude.init(API_KEY, 'USER_ID')` in the browser console, it indicates that your `amplitude.init` call might not have been triggered in your codebase or you aren't using the correct Amplitude instance during initialization."
+* Amplitude supports SDK deferred initialization. Events tracked before initialization are dispatched after the initialization call. If you can't send events but can send the event successfully after entering `amplitude.init(API_KEY, 'USER_ID')` in the browser console, it indicates that your `amplitude.init` call might not have been triggered in your codebase or you aren't using the correct Amplitude instance during initialization."
 
-### Network Request
+### Network request
 
 Use the **Inspect > Network** tab to view all network requests made by your page. Search for the Amplitude request.
 
 Check the response code and ensure that the response payload is as expected.
 
-### Instrumentation Explorer/Chrome Extension
+### Instrumentation Explorer/Chrome extension
 
 The Amplitude Instrumentation Explorer is an extension available in the Google Chrome Web Store. The extension captures each Amplitude event you trigger and displays it in the extension popup. It's important to ensure that the event has been sent out successfully and to check the context in the event payload.
 
@@ -909,11 +907,11 @@ Check [here](/docs/analytics/debug-analytics#step-2-analyze-the-event-stream) fo
 
 ## Common Issues
 
-The following are common issues specific to Browser SDK. For additional general common issues, see [SDK Troubleshooting and Debugging](/docs/sdks/sdk-debugging).
+The following are common issues specific to Browser SDK. For more general common issues, see [SDK Troubleshooting and Debugging](/docs/sdks/sdk-debugging).
 
-### AD Blocker
+### Ad Blocker
 
-`Ad Blocker` might lead to event dropping. The following errors indicate that the tracking has been affected by `Ad Blocker`. When loading via a script tag, an error may appear in the console/network tab while loading the SDK script. When loaded with npm package, there could be errors in the network tab when trying to send events to the server. The errors might vary depending on the browser.
+`Ad Blocker` might lead to event dropping. These errors show the tracking has been affected by `Ad Blocker`. When loading via a script tag, an error may appear in the console/network tab while loading the SDK script. When loaded with npm package, there could be errors in the network tab when trying to send events to the server. The errors might vary depending on the browser.
 
 * Chrome (Ubuntu, MacOS)
 Console: error net::ERR_BLOCKED_BY_CLIENT
@@ -929,7 +927,7 @@ Amplitude recommends using a proxy server to avoid this situation.
 
 ### Cookies related
 
-Here is the [information](#cookie-management) SDK stored in the cookies. This means that client behavior, like disabling cookies or using a private browser/window/tab, will affect the persistence of these saved values in the cookies. If these values aren't persistent or aren't increasing by one, that could be the reason.
+Here is the [information](#cookie-management) SDK stored in the cookies. This means that client behavior, like disabling cookies or using a private browser/window/tab, affects the persistence of these saved values in the cookies. If these values aren't persistent or aren't increasing by one, that could be the reason.
 
 ### CORS
 
@@ -1058,11 +1056,11 @@ The SDK creates two types of cookies: user session cookies and marketing campaig
 {{partial:collapse name="User session cookies"}}
 |Name| Description|
 |---|----|
-|`optOut`|<span class="required">Required</span>. A flag to opt this device out of Amplitude tracking. If this flag is set, no additional information will be stored for the user|
-|`userId`|Upon user log-in, if you send this value, it is stored in the cookie. Set this to uniquely identify their users (non-anonymous navigation). It is stored encoded using Base64|
-|`deviceId`|A randomly generated string. It will persist unless a user clears their browser cookies and/ or is browsing in private mode. Even if a user consistently uses the same the device and browser, the device ID can still vary|
+|`optOut`|<span class="required">Required</span>. A flag to opt this device out of Amplitude tracking. If this flag is set, no extra information will be stored for the user|
+|`userId`|Upon user log-in, if you send this value, it's stored in the cookie. Set this to uniquely identify their users (non-anonymous navigation). It's stored encoded using Base64|
+|`deviceId`|A randomly generated string. It persists unless a user clears their browser cookies and/ or is browsing in private mode. Even if a user consistently uses the same the device and browser, the device ID can still vary|
 |`sessionId`|A randomly generated string for each session|
-|`lastEventTime`|Time of the last event, used to determine when to expire and create a new session Id|
+|`lastEventTime`|Time of the last event. Used to decide when to expire and create a new session Id|
 |`lastEventId`|Id of the last event|
 
 {{/partial:collapse}}
@@ -1101,7 +1099,7 @@ You can opt-out of using cookies by setting `disableCookies` to `true` so that
 The SDK initializes the device ID in the following order, with the device ID being set to the first valid value encountered:
 
 1. Device id in configuration on initialization
-2. "deviceId" value from URL param, for example `http://example.com/?deviceId=123456789`. See  [cross domain tracking](#cross-domain-tracking) for more details
+2. "deviceId" value from URL parameter, for example `http://example.com/?deviceId=123456789`. See  [cross domain tracking](#cross-domain-tracking) for more details
 3. Device id in cookie storage. Refer to [cookie management](#cookie-management) for more details
 4. Device id in cookie storage of Browser SDK. Refer to [cookie management](/docs/sdks/analytics/browser/browser-sdk-2#cookie-management) for more details
 5. A randomly generated 36-character UUID
@@ -1115,8 +1113,8 @@ A device ID changes in many scenarios:
 {{/partial:admonition}}
 
 - `setDeviceId()` is called explicitly
--  By default the SDK stores device IDs in cookies, so a device ID will change if a user clears cookies, uses another device, or uses privacy mode
-- On initialization, a device ID is passed in from URL param `deviceId`
+-  By default the SDK stores device IDs in cookies, so a device ID changes if a user clears cookies, uses another device, or uses privacy mode
+- On initialization, a device ID is passed in from URL parameter `deviceId`
 - `reset()` is called
 
 #### Custom device ID
