@@ -10,7 +10,7 @@
                     {{ svg src="/docs/assets/general/icon-chevron-down.svg" class="inline absolute right-0" }}</a>
             {{ elseif url }}
                 <div class="flex flex-row hover:bg-amp-gray-50 hover:rounded"> 
-                    {{svg :src="icon" class="inline w-4 fill-amp-gray-500 self-center"}}
+                    
                     <a href="{{ url }}"
                     class="no-underline inline-block text-[.875rem] p-2 leading-5 {{if is_current }}bg-amp-blue-950 text-amp-blue-500 rounded active{{else}}text-amp-gray-600{{/if}}">{{ title }}</a>
                 </div>
@@ -38,9 +38,11 @@
                         {{ if children }}
                             <div x-show="lvl2 === '{{ title | slugify }}'" class="nav-level-3 flex flex-col my-0 pl-2">
                                 {{ children }}
+                                <div>{{icon}}
                                     <a href="{{ url }}"
                                         class="no-underline block text-[.875rem] p-2 leading-5 hover:bg-amp-gray-50 hover:rounded  {{if is_current}}bg-amp-blue-950 text-amp-blue-500 rounded active{{else}}text-amp-gray-600{{/if}}"
                                         {{if is_current }} x-effect="lvl2 = '{{parent:title | slugify}}'; lvl1 = '{{lvl1_parent}}'"{{/if}}>{{ title }}</a>
+</div>
                                 {{ /children }}
                             </div>
                         {{ /if }}
