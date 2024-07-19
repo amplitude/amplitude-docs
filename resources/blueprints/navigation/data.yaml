@@ -10,3 +10,5 @@ tabs:
               type: icon
               display: Icon
               localizable: false
+              directory: node_modules/@material-design-icons/svg
+              folder: outlined
