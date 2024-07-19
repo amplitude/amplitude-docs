@@ -337,7 +337,7 @@ amplitude.init(API_KEY, OPTIONAL_USER_ID, {
 });
 ```
 
-Amplitued tracks `[Amplitude] Form Started` when the user initially interacts with the form. An initial interaction can be the first change to a text input, radio button, or dropdown.
+Amplitude tracks `[Amplitude] Form Started` when the user initially interacts with the form. An initial interaction can be the first change to a text input, radio button, or dropdown.
 
 Amplitude tracks `[Amplitude] Form Submitted` when the user submits the form. If the user submits a form with no initial change to any form fields, Amplitude sends both `[Amplitude] Form Started` and `[Amplitude] Form Submitted` events.
 
