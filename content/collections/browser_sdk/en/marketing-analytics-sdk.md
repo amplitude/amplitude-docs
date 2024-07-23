@@ -12,12 +12,13 @@ bundle_url: 'https://www.npmjs.com/package/@amplitude/marketing-analytics-browse
 api_reference_url: 'https://amplitude.github.io/Amplitude-TypeScript/modules/_amplitude_marketing_analytics_browser.html'
 shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/marketing-analytics-browser.svg'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1719613539
+updated_at: 1721756294
 migration_guide:
   - eb4533a3-2075-49a0-83fa-e703afea78e7
 exclude_from_sitemap: false
 source: 'https://www.docs.developers.amplitude.com/data/sdks/marketing-analytics-browser/'
 package_name: '@amplitude/marketing-analytics-browser'
+platform: Browser
 ---
 The Marketing Analytics Browser SDK extends the Browser SDK to identify users and events based on marketing channels. This library is open-source, check it out on [GitHub](https://github.com/amplitude/Amplitude-TypeScript/tree/v1.x/packages/marketing-analytics-browser).
 
