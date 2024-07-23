@@ -29,7 +29,7 @@ This is the official documentation for the Amplitude Analytics Flutter SDK. The 
 
 ### iOS installation
 
-Add `platform :ios, '10.0'` to your Podfile.
+Add `platform :ios, '13.0'` to your Podfile. Run `pod install` under the ios directory of your Flutter project to update the CocoaPods dependencies.
 
 To enable Bitcode, follow Flutter's [documentation](https://github.com/flutter/flutter/wiki/Creating-an-iOS-Bitcode-enabled-app).
 
