@@ -65,9 +65,6 @@ The **Ampli CLI** generates the **Ampli Wrapper** and can verify the instrumenta
 
 ## Supported platforms
 
-Ampli supports the following platforms - **Browser**, **Android**, **iOS**, **React Native**, **Node**, **Go**, **Python**, and **Java**.
-The other Amplitude SDKs for _Flutter_, _Unity_, and _Unreal_ _do not_ have Ampli at this time.
-
 | Platform     | Ampli Support | Supported Amplitude SDK(s)                                                                                                                                                                                                                                                 |
 | ------------ | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Browser      | Yes           | [`@amplitude/analytics-browser`](/docs/sdks/analytics/browser/browser-sdk-1/)<br/> [Ampli documentation](/docs/sdks/analytics/browser/ampli-for-browser-sdk-1-0/)<br/><br/> [`amplitude-js`](/docs/sdks/analytics/browser/javascript-sdk)<br/>[Ampli documentation](/docs/sdks/analytics/browser/ampli-for-javascript-sdk)                               |
