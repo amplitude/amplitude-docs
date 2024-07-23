@@ -1,7 +1,16 @@
 {
   "trailingSlash": false,
   "redirects": [
-
+    {
+      "source": "/docs/data/using-the-ampli-cli",
+      "destination": "/docs/sdks/ampli",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/hc/en-us/articles/23984384952987((?:-[a-zA-Z0-9-]+)?)",
+      "destination": "/docs/get-started/event-property-definitions",
+      "statusCode": 301
+    },
     {
       "source": "/docs/cdp/audiences",
       "destination": "/docs/data/audiences",

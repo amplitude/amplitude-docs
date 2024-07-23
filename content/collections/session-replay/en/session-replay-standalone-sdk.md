@@ -3,6 +3,10 @@ id: f4c61e43-7a55-43a3-9dbd-f1ecb2502774
 blueprint: session-replay
 title: 'Session Replay Standalone SDK'
 source: 'https://www.docs.developers.amplitude.com/session-replay/sdks/plugin/'
+landing: false
+exclude_from_sitemap: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1721323488
 ---
 {{partial:admonition type="note" heading="Session Replay instrumentation"}}
 Session Replay isn't enabled by default, and requires setup beyond the standard Amplitude instrumentation.
@@ -83,6 +87,28 @@ const sessionReplayProperties = sessionReplay.getSessionReplayProperties();
 Session Replay instrumentation happens in the context of an Amplitude Project. Your replay quota is defined on the Organization level. As a result, you may have multiple Session Replay implementations, across multiple projects each with their own sample rate, that pull from the same quota.
 {{/partial:admonition}}
 
+Alternatively, use script tags to instrument Session Replay:
+
+```js
+<script src="https://cdn.amplitude.com/libs/session-replay-browser-1.10.0-min.js.gz"></script>
+<script>
+window.sessionReplay.init(AMPLITUDE_API_KEY, {
+    deviceId: "<string>",
+    sessionId: "<number>",
+    sampleRate: "<number>"
+    //...other options
+})
+
+// Call whenever the session id changes
+window.sessionReplay.setSessionId(sessionId);
+ 
+// When you send events to Amplitude, call this event to get
+// the most up-to-date Session Replay properties for the event
+const sessionReplayProperties = window.sessionReplay.getSessionReplayProperties();
+3rdPartyAnalytics.track('event', {...eventProperties, ...sessionReplayProperties})
+</script>
+```
+
 ## Add Session Replay ID to your events
 
 The Session Replay SDK outputs the Session Replay properties that you need to add to your custom event instrumentation. `getSessionReplayProperties` returns event properties, namely the `[Amplitude] Session Replay ID` event property that you need to add to events before you send them to Amplitude. An example response of getSessionReplayProperties is: 
@@ -118,27 +144,7 @@ Pass the following configuration options when you initialize the Session Replay 
 
 ### Mask on-screen data
 
-The Session Replay SDK offers three ways to mask user input, text, and other HTML elements.
-
-| Element           | Description                                                                                                                                                                                                                                                |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `<input>`         | Session Replay masks all text input fields by default. When a users enters text into an input field, Session Replay captures asterisks in place of text. To *unmask* a text input, add the class `.amp-unmask`. For example: `<input class="amp-unmask">`. |
-| text              | To mask text within non-input elements, add the class `.amp-mask`. For example, `<p class="amp-mask">Text</p>`. When masked, Session Replay captures masked text as a series of asterisks.                                                                 |
-| non-text elements | To block a non-text element, add the class `.amp-block`. For example, `<div class="amp-block"></div>`. Session Replay replaces blocked elements with a placeholder of the same dimensions.                                                                 |
-
-Session Replay supports setting a masking level on the [Session Replay Settings](#) screen in Amplitude. This includes Light, Medium, and Conservative settings.
-
-Session Replay settings also enable remote masking overrides. These enable users in your organization to configure or update masking after implementation.
-
-In the event of a conflict, Session Replay defers to the remote setting. For example:
-
-|                | .selector-1 | .selector-2 | .selector-3 |
-| -------------- | ----------- | ----------- | ----------- |
-| Local setting  | `mask`      | --          | `mask`      |
-| Remote setting | `unmask`    | `unmask`    | --          |
-| Result         | `unmask`    | `unmask`    | `mask`      |
-
-In this example, `.selector-1` has a local setting and a remote setting. The result follows the remote setting, and overrides the setting in the SDK or plugin implementation.
+{{partial:partials/session-replay/sr-mask-data}}
 
 ### User opt-out
 

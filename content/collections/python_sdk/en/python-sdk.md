@@ -12,10 +12,11 @@ bundle_url: 'https://pypi.org/project/amplitude-analytics/'
 api_reference_url: 'https://github.com/amplitude/Amplitude-Python'
 shields_io_badge: 'https://badge.fury.io/py/amplitude-analytics.svg'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1719862169
+updated_at: 1721756367
 ampli_article: 1af7ad64-aaae-45df-b562-e7ebe3470288
 source: 'https://www.docs.developers.amplitude.com/data/sdks/python/'
 package_name: amplitude-analytics
+platform: Python
 ---
 The Python SDK lets you send events to Amplitude. 
 
