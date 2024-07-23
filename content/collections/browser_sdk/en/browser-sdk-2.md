@@ -862,17 +862,17 @@ Here's an example of an enrichment plugin that includes an extra event property 
 const enrichPageUrlPlugin = (): EnrichmentPlugin => {
   return {
     execute: async (event: Event) => {
-      event.event\ _properties = {
-        ...event.event\ _properties,
-        page\ _url: location.href,
+      event.event_properties = {
+        ...event.event_properties,
+        page_url: location.href,
       };
       return event;
     },
   }
 }
-
-amplitude.init(API\ _KEY);
+ 
 amplitude.add(enrichPageUrlPlugin());
+amplitude.init(API_KEY);
 ```
 {{/partial:tab}}
 {{partial:tab name="Destination"}}
