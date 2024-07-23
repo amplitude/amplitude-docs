@@ -16,8 +16,6 @@ updated_at: 1719352148
 ---
 Welltory helps you build, iterate, and personalize your in-app content experiences. This integration enables you to send cohorts from to Amplitude to Welltory.
 
-!!!info "This integration is managed by Welltory"
-
 {{partial:admonition type="note" heading="Welltory maintains this integration"}}
 Contact the [Welltory support team](https://welltory.com/) with any questions about this integration.
 {{/partial:admonition}}

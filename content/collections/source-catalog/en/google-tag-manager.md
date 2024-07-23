@@ -73,8 +73,10 @@ Copy your Amplitude project API Key in the API Key field. For EU residency, your
 
 If you plan on running more than one Amplitude instance, each with distinct API keys or initialization options, you'll need to assign an `Instance Name` to each one. Tags with the same `Instance Name` are linked together and use the API key of the Initialization tag for that `Instance Name`.
 
-!!!note
-    This approach can also prevent missing events if different versions of the Amplitude SDK coexist in your system.
+
+{{partial:admonition type="note" heading=""}}
+This approach can also prevent missing events if different versions of the Amplitude SDK coexist in your system.
+{{/partial:admonition}}
 
 #### Access Amplitude instance 
 
@@ -303,8 +305,10 @@ Set event level groups. With event-level groups, the group designation applies o
 
 #### identify
 
-!!!note 
-    Identify calls *don't* appear in user look up. The identify calls will set the user properties, and those updated user properties will appear only after the next event fired by the user.
+
+{{partial:admonition type="note" heading=""}}
+Identify calls *don't* appear in user look up. The identify calls will set the user properties, and those updated user properties will appear only after the next event fired by the user.
+{{/partial:admonition}}
 
 Add individual user property operations each as its own row in the table. You can add as many as you like, but note that you can only include a specific User Property in a single operation. The operations are executed in order. [More details](/docs/sdks/analytics/browser/browser-sdk-2/#user-properties).
 
