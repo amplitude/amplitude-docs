@@ -1,0 +1,26 @@
+<table>
+    <tr>
+        <th>Platform</th>
+        <th>SDK</th>
+        <th>Ampli support</th>
+    </tr>
+{{collection from="android_sdk|browser_sdk|flutter_sdk|go_sdk|ios_sdk|java_sdk|node_js_sdk|python_sdk|react_native_sdk|unity_sdk|unreal_sdk" article_type:is="core" as="sdks" sort="title:asc"}}
+{{sdks group_by="platform"}}
+{{groups}}
+<tr><td rowspan="{{items | count}}">{{group}}</td>
+{{items}}
+{{if first}}
+<td class="pl-0"><a href="{{url}}">{{title}}</a></td>
+<td>{{if ampli_article}}✅<a class="pl-2" href="{{ampli_article:url}}">{{ampli_article:title}}</a>{{else}}❌{{/if}}</td>
+{{else}}
+<tr>
+    <td><a href="{{url}}">{{title}}</a></td>
+    <td>{{if ampli_article}}✅<a class="pl-2" href="{{ampli_article:url}}">{{ampli_article:title}}</a>{{else}}❌{{/if}}</td>
+</tr>
+{{/if}}
+{{/items}}
+</tr>
+{{/groups}}
+{{/sdks}}
+{{/collection}}
+</table>
