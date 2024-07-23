@@ -474,9 +474,9 @@ This section walks through the process to give Unity SDK users access to IDFA (a
 
 ### Setup
 
-!!!note  "iOS App Store compliance"
-
-   If an app is subject to COPPA because it's aimed toward children, the app can't contain any IDFA or GPS tracking code. This is why the IDFA and GPS code requires additional setup.
+{{partial:admonition type="note" heading="iOS App Store compliance"}}
+If an app is subject to COPPA because it's aimed toward children, the app can't contain any IDFA or GPS tracking code. This is why the IDFA and GPS code requires additional setup.
+{{/partial:admonition}}
 
 First, take the [two files](https://github.com/amplitude/unity-plugin/tree/main/IdfaIOS) `unity-plugin/IdfaIOS/CustomIdfa.m` and `unity-plugin/IdfaIOS/CustomGPS.m` and place them into `Assets/Scripts`.
  You may place the file wherever, but check all the `#import` statements lead to correct paths.

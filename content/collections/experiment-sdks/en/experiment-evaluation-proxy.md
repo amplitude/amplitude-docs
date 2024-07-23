@@ -95,7 +95,6 @@ An optional object of extra configuration.
 | `serverUrl` | Optional. The server URL, including protocol and host, to fetch flags from. (default `https://api.lab.amplitude.com`) |
 | `cohortServerUrl` | Optional. The server URL, including protocol and host, to download cohorts from. (default `https://cohort.lab.amplitude.com`) |
 
-!!!info "EU Data Residency"
 {{partial:admonition type="info" heading="EU data residency"}}
 To use the evaluation proxy with the EU data center, set the [`serverUrl`](#configuration-1) and [`cohortServerUrl`](#configuration-1) configurations to hit the EU data center endpoints:
 ```yaml
@@ -170,7 +169,6 @@ docker run \
     amplitudeinc/evaluation-proxy
 ```
 
-!!!tip "Docker compose example"
 {{partial:admonition type="tip" heading="Docker compose example"}}
 The [evaluation-proxy GitHub repository](https://github.com/amplitude/evaluation-proxy) also contains an example using `docker compose` to run the proxy alongside a local Redis image.
 {{/partial:admonition}}

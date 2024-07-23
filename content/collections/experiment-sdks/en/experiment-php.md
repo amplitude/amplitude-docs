@@ -168,7 +168,6 @@ Implements evaluation of variants for a user through [local evaluation](/docs/ex
 
 For more information, see [Local Evaluation](/docs/experiment/local-evaluation).
 
-!!!warning "Server Deployment Key"
 {{partial:admonition type="warning" heading="Server deployment key"}}
 [Initialize](#initialize-local-evaluation) the local evaluation client with a server [deployment](/docs/experiment/data-model#deployments) key to access local evaluation flag configurations.
 {{/partial:admonition}}

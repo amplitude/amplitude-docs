@@ -205,8 +205,6 @@ If you need another OS/Arch supported, please [submit an issue on github](https:
 
 Install the Ruby Server SDK with bundler or gem directly.
 
-!!!info "Ruby version compatibility"
-
 {{partial:admonition type="info" heading="Ruby version compaitibility"}}
 The Ruby Server SDK works with Ruby 2.0+.
 {{/partial:admonition}}
