@@ -17,7 +17,7 @@ preferences:
     destination-catalog:
       columns:
         - title
-        - author
+        - integration_type
         - slug
         - status
         - connection
