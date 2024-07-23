@@ -1009,6 +1009,8 @@ video {
   height: 100vh;
 }.h-full {
   height: 100%;
+}.h-\[0\.875rem\] {
+  height: 0.875rem;
 }.max-h-12 {
   max-height: 3rem;
 }.max-h-\[575px\] {
@@ -1343,6 +1345,8 @@ video {
   padding-top: 6.5rem;
 }.pl-0 {
   padding-left: 0px;
+}.pr-2 {
+  padding-right: 0.5rem;
 }.text-left {
   text-align: left;
 }.text-center {

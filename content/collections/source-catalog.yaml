@@ -18,6 +18,6 @@ preview_targets:
     url: '{permalink}'
     refresh: true
 inject:
-  nav_title: 'collection::source-catalog'
+  nav_title: 'source-catalog'
 structure:
   root: false
