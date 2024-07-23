@@ -65,7 +65,9 @@ The **Ampli CLI** generates the **Ampli Wrapper** and can verify the instrumenta
 
 ## Supported platforms
 
-| Platform     | Ampli Support | Supported Amplitude SDK(s)                                                                                                                                                                                                                                                 |
+{{partial:partials/ampli-supported-platforms}}
+
+<!-- | Platform     | Ampli Support | Supported Amplitude SDK(s)                                                                                                                                                                                                                                                 |
 | ------------ | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Browser      | Yes           | [`@amplitude/analytics-browser`](/docs/sdks/analytics/browser/browser-sdk-1/)<br/> [Ampli documentation](/docs/sdks/analytics/browser/ampli-for-browser-sdk-1-0/)<br/><br/> [`amplitude-js`](/docs/sdks/analytics/browser/javascript-sdk)<br/>[Ampli documentation](/docs/sdks/analytics/browser/ampli-for-javascript-sdk)                               |
 | Android      | Yes           | [`com.amplitude:analytics-android`](/docs/sdks/analytics/android/android-kotlin-sdk)<br/> [Ampli documentation](/docs/sdks/analytics/android/ampli-for-android-kotlin-sdk)                            |
@@ -77,7 +79,7 @@ The **Ampli CLI** generates the **Ampli Wrapper** and can verify the instrumenta
 | Java         | Yes           | [`com.amplitude:java-sdk`](/docs/sdks/analytics/java/jre-java-sdk)<br/>[Ampli documentation](/docs/sdks/analytics/java/ampli-for-java-sdk)                                                                                                                                                                             |
 | Flutter      | No            |                                                                                                                                                                                                                                                                            |
 | Unity        | No            |                                                                                                                                                                                                                                                                            |
-| Unreal       | No            |                                                                                                                                                                                                                                                                            |
+| Unreal       | No            |                                                                                                                                                                                                                                                                            | -->
 
 ## Amplitude Data
 
