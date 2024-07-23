@@ -7,8 +7,9 @@ tabs:
           -
             handle: icon
             field:
-              type: icon
-              display: Icon
+              max_files: 1
+              container: assets
+              folder: general
+              type: assets
+              display: icon
               localizable: false
-              directory: node_modules/@material-design-icons/svg
-              folder: outlined

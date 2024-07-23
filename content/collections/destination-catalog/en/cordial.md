@@ -19,10 +19,10 @@ connection: destination
 partner_maintained: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713482015
+updated_at: 1721766896
 integration_icon: partner-icons/cordial.svg
 ---
-Cordial](https://cordial.com/) is a customer engagement and data platform that unifies real-time data from anywhere in your technology stack. With it, you can engage with your customers in more personalized ways across email, SMS, mobile app, and more.
+[Cordial](https://cordial.com/) is a customer engagement and data platform that unifies real-time data from anywhere in your technology stack. With it, you can engage with your customers in more personalized ways across email, SMS, mobile app, and more.
 
 This cohort integration allows you to sync users from Amplitude cohorts to Cordial lists. Using lists along with other contact data in Cordial, you can create dynamic segments of contacts for sending messages, searching contacts, and filtering analytics reports.
 
