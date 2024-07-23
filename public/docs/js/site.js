@@ -4009,6 +4009,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _heading_anchors__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./heading-anchors */ "./resources/docs/js/heading-anchors/index.js");
 
 (0,_heading_anchors__WEBPACK_IMPORTED_MODULE_0__["default"])();
+window.onload = function () {
+  var element = document.querySelector('.active');
+  if (element) {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+};
 
 /***/ }),
 

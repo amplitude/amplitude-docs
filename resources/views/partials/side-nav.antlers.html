@@ -4,10 +4,8 @@
         {{collection :from="nav_title" as="integrations"}}
         <a href="/docs/data" class="no-underline nav-button text-left text-[.875rem] my-0 pl-2 py-2 relative text-amp-gray-600 hover:text-amp-blue-500">Back to Data</a>
         {{integrations}}
-        <a href="{{url}}" class="no-underline nav-button text-left text-[.875rem] my-0 pl-2 py-2 relative text-amp-gray-600 hover:text-amp-blue-500">{{title}}</a>
-
+        <a href="{{url}}" class="no-underline nav-button text-left text-[.875rem] my-0 pl-2 py-2 relative hover:text-amp-blue-500  hover:bg-amp-gray-50 hover:rounded {{if current_uri == url }}bg-amp-blue-950 text-amp-blue-500 rounded active{{else}}}text-amp-gray-600{{/if}}" >{{title}}</a>
         {{/integrations}}
-
         {{/collection}}
     </div>
 </div>
@@ -23,8 +21,7 @@
                     {{if is_current }} x-effect="lvl1 = '{{title | slugify}}'"{{/if}} :class="lvl1 === '{{ title | slugify }}' ? 'active' : ''">{{ title }} <!--{{data}}{{underline}}{{/data}} -->
                     {{ svg src="/docs/assets/general/icon-chevron-down.svg" class="inline absolute right-0" }}</a>
             {{ elseif url }}
-                <div class="flex flex-row hover:bg-amp-gray-50 hover:rounded"> 
-                    
+                <div class="flex flex-row hover:bg-amp-gray-50 hover:rounded {{if is_current }}bg-amp-blue-950{{/if}}">   
                     <a href="{{ url }}"
                     class="no-underline inline-block text-[.875rem] p-2 leading-5 {{if is_current }}bg-amp-blue-950 text-amp-blue-500 rounded active{{else}}text-amp-gray-600{{/if}}">{{ title }}</a>
                 </div>
