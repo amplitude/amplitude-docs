@@ -299,7 +299,7 @@ Valid data types for event properties are string, array, object, boolean, and nu
 Event property values can be arrays. You can query array event properties by any subset of the individual properties in the array.
 
 ```js
-var event = "=Button Clicked";
+var event = "Button Clicked";
 var eventProperties1 = {
  "selectedColors": ['red', 'blue']
 };
