@@ -29,9 +29,9 @@ There are two ways customers can send data to Amplitude:
 1. Tealium iQ & Tag Management (TIQ)
 2. Tealium AudienceStream & Universal Data Hub (Tealium sends data from TIQ to Amplitude)
 
-!!!tip
-
-    This integration is maintained by Tealium. Contact the [Tealium support team](https://support.tealiumiq.com) with any questions about this integration.
+{{partial:admonition type="note" heading=""}}
+This integration is maintained by Tealium. Contact the [Tealium support team](https://support.tealiumiq.com) with any questions about this integration.
+{{/partial:admonition}}
 
 ## Tealium iQ and tag management (TIQ)
 
