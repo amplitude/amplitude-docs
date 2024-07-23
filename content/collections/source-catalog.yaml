@@ -18,6 +18,4 @@ preview_targets:
     url: '{permalink}'
     refresh: true
 inject:
-  nav_title: 'source-catalog'
-structure:
-  root: false
+  nav_title: source-catalog
