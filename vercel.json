@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "h/docs/data/sources/google-tag-manager-client",
+      "destination": "/docs/data/source-catalog/google-tag-manager",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/data/using-the-ampli-cli",
       "destination": "/docs/sdks/ampli",
       "statusCode": 301
