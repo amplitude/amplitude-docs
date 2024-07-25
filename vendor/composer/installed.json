@@ -7198,17 +7198,17 @@
         },
         {
             "name": "statamic/ssg",
-            "version": "3.0.0",
-            "version_normalized": "3.0.0.0",
+            "version": "3.0.1",
+            "version_normalized": "3.0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/statamic/ssg.git",
-                "reference": "018b695797df95670968a68188bd6e2df1158003"
+                "reference": "3bb1658d2b9c33f809071a7788c59d19ad6cc57c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/statamic/ssg/zipball/018b695797df95670968a68188bd6e2df1158003",
-                "reference": "018b695797df95670968a68188bd6e2df1158003",
+                "url": "https://api.github.com/repos/statamic/ssg/zipball/3bb1658d2b9c33f809071a7788c59d19ad6cc57c",
+                "reference": "3bb1658d2b9c33f809071a7788c59d19ad6cc57c",
                 "shasum": ""
             },
             "require": {
@@ -7220,7 +7220,7 @@
             "suggest": {
                 "spatie/fork": "Required to generate pages concurrently (^0.0.4)."
             },
-            "time": "2024-05-09T13:55:43+00:00",
+            "time": "2024-05-17T19:40:01+00:00",
             "type": "statamic-addon",
             "extra": {
                 "statamic": {
@@ -7243,7 +7243,7 @@
             "description": "Generate static sites with Statamic.",
             "support": {
                 "issues": "https://github.com/statamic/ssg/issues",
-                "source": "https://github.com/statamic/ssg/tree/3.0.0"
+                "source": "https://github.com/statamic/ssg/tree/3.0.1"
             },
             "install-path": "../statamic/ssg"
         },
