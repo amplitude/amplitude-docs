@@ -15,6 +15,8 @@ use PhpParser\Node;
 use PhpParser\Node\Expr\Closure;
 use PhpParser\Node\Expr\ConstFetch;
 use PhpParser\Node\Identifier;
+use PhpParser\Node\IntersectionType;
+use PhpParser\Node\Name;
 use PhpParser\Node\NullableType;
 use PhpParser\Node\Stmt\Function_;
 use PhpParser\Node\Stmt\Return_;
@@ -100,12 +102,16 @@ class ReturnTypePass extends CodeCleanerPass
             return \implode('|', \array_map([$this, 'typeName'], $node->types));
         }
 
-        if ($node instanceof NullableType) {
-            return \strtolower($node->type->name);
+        if ($node instanceof IntersectionType) {
+            return \implode('&', \array_map([$this, 'typeName'], $node->types));
         }
 
-        if ($node instanceof Identifier) {
-            return \strtolower($node->name);
+        if ($node instanceof NullableType) {
+            return $this->typeName($node->type);
+        }
+
+        if ($node instanceof Identifier || $node instanceof Name) {
+            return $node->toLowerString();
         }
 
         throw new \InvalidArgumentException('Unable to find type name');
