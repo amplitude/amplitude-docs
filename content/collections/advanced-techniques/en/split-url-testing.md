@@ -13,7 +13,7 @@ With Amplitude’s split URL testing feature, you can design, deploy, and analyz
 
 Split URL testing works well if you’re building different versions of your page or site on a CMS like Wordpress. In these cases, your different URLs and their associated pages are the variants that Amplitude Experiment tracks.
 
-You can use split URL testing with both standard A/B tests and multi-arm bandits.
+You can use split URL testing with both standard A/B tests and multi-armed bandits.
 
 To use split URL testing, you’ll have to add a script tag for Amplitude’s Experiment SDK to the site you want to test, in the `<head>` section. Install the Amplitude Analytics SDK on your site for event tracking.
 
