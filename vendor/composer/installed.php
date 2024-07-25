@@ -1193,6 +1193,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'swiftmade/statamic-clear-assets' => array(
+            'pretty_version' => 'v3.0.0',
+            'version' => '3.0.0.0',
+            'reference' => 'e3e55a79ef2c4f0423b2571fa69b6caaeaf76570',
+            'type' => 'statamic-addon',
+            'install_path' => __DIR__ . '/../swiftmade/statamic-clear-assets',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'symfony/console' => array(
             'pretty_version' => 'v6.4.7',
             'version' => '6.4.7.0',
