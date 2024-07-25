@@ -7313,6 +7313,8 @@ return array(
     'Stringable' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
     'Stringy\\StaticStringy' => $vendorDir . '/statamic/stringy/src/StaticStringy.php',
     'Stringy\\Stringy' => $vendorDir . '/statamic/stringy/src/Stringy.php',
+    'Swiftmade\\StatamicClearAssets\\ClearAssets' => $vendorDir . '/swiftmade/statamic-clear-assets/src/ClearAssets.php',
+    'Swiftmade\\StatamicClearAssets\\ServiceProvider' => $vendorDir . '/swiftmade/statamic-clear-assets/src/ServiceProvider.php',
     'Symfony\\Component\\Console\\Application' => $vendorDir . '/symfony/console/Application.php',
     'Symfony\\Component\\Console\\Attribute\\AsCommand' => $vendorDir . '/symfony/console/Attribute/AsCommand.php',
     'Symfony\\Component\\Console\\CI\\GithubActionReporter' => $vendorDir . '/symfony/console/CI/GithubActionReporter.php',
