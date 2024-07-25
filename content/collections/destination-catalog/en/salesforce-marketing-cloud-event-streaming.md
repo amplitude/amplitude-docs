@@ -78,7 +78,7 @@ You need a Client ID, Client Secret and Subdomain from Salesforce Marketing Clou
 ## Event forwarding setup (optional)
 
 {{partial:admonition type="note" heading="Storing data in different a different Data Extension"}}
-Following these steps enable you to create a Data Extension in Salesforce Marketing Cloud, set up an Event Definition, and configure the necessary mappings to forward events to Amplitude. If you don't store your data in the same Data Extension, repeat these steps for any other Data Extension you use.
+Following these steps enable you to create a Data Extension in Salesforce Marketing Cloud, set up an Event Definition, and configure the necessary mappings to forward events to Salesforce. If you don't store your data in the same Data Extension, repeat these steps for any other Data Extension you use.
 {{/partial:admonition}} 
 
 1. In Salesforce Marketing Cloud, navigate to **Email Studio** from the top navigation bar.
