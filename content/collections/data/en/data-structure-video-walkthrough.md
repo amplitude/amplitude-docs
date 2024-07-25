@@ -9,4 +9,4 @@ updated_at: 1721926258
 ---
 Good instrumentation is crucial to your success in using Amplitude, and preventing instrumentation errors early can pay off in the long run. This video describes best practices for Amplitude implementation. It's for developers and product managers who are responsible for instrumenting Amplitude.
   
-<iframe  src="https://www.loom.com/embed/93368a58ac014387bcb5cbc663711912?sid=879ce2c4-1146-408f-b4e1-e925a8a38356" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<iframe src="https://www.loom.com/embed/93368a58ac014387bcb5cbc663711912?sid=879ce2c4-1146-408f-b4e1-e925a8a38356" frameborder="0" allowfullscreen="allowfullscreen" class="w-full aspect-video shadow-md"></iframe>
