@@ -1,12 +1,12 @@
 ---
 id: 1c4b9202-0063-4acf-9b99-66b73435630b
 blueprint: data
-title: 'Amplitude Wordpress Plugin'
+title: 'Amplitude Wordpress plugin'
 landing: false
 source: /guides/wordpress-plugin-guide/
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718826570
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1721925985
 ---
 The [Amplitude Wordpress Plugin](https://wordpress.org/plugins/amplitude/) enables you to instrument your Wordpress site with an advanced version of Autocapture.
 

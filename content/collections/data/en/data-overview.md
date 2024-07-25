@@ -1,10 +1,10 @@
 ---
 id: c5166da1-e099-4e0b-a870-b06b10057c19
 blueprint: data
-title: 'Data Overview'
+title: 'Data overview'
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713214991
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1721925948
 landing: true
 landing_blurb: 'Get up to speed with Amplitude Data.'
 ---
