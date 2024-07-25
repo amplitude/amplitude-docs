@@ -40,7 +40,7 @@ FROM DATABASE_NAME.SCHEMA_NAME.TABLE_OR_VIEW_NAME
 
 ## Clear a profile property value
 
-You can remove profile property values in your data warehouse, and they will sync to Amplitude during the next sync operation. You can also use Amplitude Data to remove unused property fields from users in Amplitude.
+When you remove profile property values in your data warehouse, those values sync to Amplitude during the next sync operation. You can also use Amplitude Data to remove unused property fields from users in Amplitude.
 
 ## Sample queries
 
