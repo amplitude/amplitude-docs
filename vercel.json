@@ -3170,6 +3170,11 @@
       "destination": "/docs/session-replay/session-replay-android-standalone",
       "source": "/docs/session-replay/sdks/standalone-android",
       "statusCode": 301
+    },
+    {
+      "destination": "/docs/data/data-structure-video-walkthrough",
+      "source": "/docs/hc/en-us/articles/115001352151((?:-[a-zA-Z0-9-]+)?)",
+      "statusCode": 301
     }
   ]
 }
