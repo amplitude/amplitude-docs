@@ -1,12 +1,12 @@
 ---
 id: 0741a26f-3377-4301-b927-b82ea73c4c57
 blueprint: data
-title: 'Converter Configuration Reference'
+title: 'Converter configuration reference'
 landing: false
 source: 'https://www.docs.developers.amplitude.com/data/converter-configuration-reference/'
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718569106
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1721925973
 ---
 This reference covers examples and operators for the Amazon S3 Import and GCS converter configuration. Read the [S3 guide](/docs/data/source-catalog/amazon-s3) or the [GCS guide](/docs/data/source-catalog/google-cloud-storage) for more information.
 
