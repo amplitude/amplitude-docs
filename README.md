@@ -37,6 +37,8 @@ Rename the file `.env.example` to `.env`.
 
 Developing and building with Statamic requires some time in the terminal. You can use the built in macOS terminal, iTerm2, or Warp for extended functionality.
 
+Install `composer` by running `brew install composer`.
+
 When you have your terminal app of choice ready, navigate to the directory where you cloned the `amplitude-docs` repository.
 
 In that directory, run `composer install`. This reads the application's `composer.json` file and installs any PHP dependencies.
