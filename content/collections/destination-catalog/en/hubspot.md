@@ -18,7 +18,7 @@ partner_maintained: false
 integration_icon: partner-icons/hubspot.svg
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1722024870
+updated_at: 1722027623
 ---
 [HubSpot](https://www.hubspot.com/) is an easy to use and powerful CRM platform that enables scaling companies to sell, market and provide customer service from a unified UI. 
 
@@ -33,7 +33,7 @@ Keep these things in mind when sending events to HubSpot:
 - A HubSpot Enterprise subscription is required to send custom events.
 - Relevant limits for HubSpot events are:
     - HubSpot enforces strict API rate limits. You can find more information about these limits [here](https://developers.hubspot.com/docs/api/usage-details).
-    - HubSpot allows up to 50 properties for each custom behavior event.
+    - HubSpot allows up to 50 properties for each custom event.
 - Types of data you can forward to HubSpot:
     - Amplitude sends selected event properties along with the event.
     - Amplitude doesn't perform an identity call for this integration. This means Amplitude doesn't send any user properties information directly to HubSpot.
