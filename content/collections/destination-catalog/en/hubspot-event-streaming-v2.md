@@ -11,7 +11,7 @@ integration_icon: partner-icons/hubspot.svg
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 source: 'https://www.docs.developers.amplitude.com/data/destinations/hubspot-event-streaming-v2/'
-updated_at: 1722024948
+updated_at: 1722034306
 ---
 [HubSpot](https://www.HubSpot.com/) is an easy to use and powerful CRM platform that enables scaling companies to sell, market and provide customer service from a unified UI. Amplitude's HubSpot streaming integration enables you to forward your Amplitude events and event properties straight to HubSpot with just a few clicks.
 
@@ -29,10 +29,10 @@ This feature is in Closed Beta and is in active development. Email [integrations
 
 Keep these things in mind when sending events to HubSpot:
 
-- If you have an existing HubSpot streaming sync [HubSpot streaming integration](/docs/data/destination-catalog/hubspot), and you want to access these new features, select HubSpot V2 in the Data Catalog to create a new Event streaming connection . With this update, Amplitude sends events and their properties to different event definitions in HubSpot, matching each of the selected events, rather than the single event definition from the internal event name.
+- If you already have an existing HubSpot streaming connection, re-authenticate with HubSpot to grant additional permissions to create events and properties for you. With this update, Amplitude sends events and their properties to different event definitions in HubSpot, matching each of the selected events, rather than the single event definition from the internal event name.
 - You must enable this integration in each Amplitude project you want to use it in.
 - Events from Amplitude appear as custom events in HubSpot.
-- A HubSpot Enterprise subscription is required to send custom events. See HubSpot's [HubSpot Product & Services Catalog](https://legal.hubspot.com/hubspot-product-and-services-catalog) for more information
+- A HubSpot Enterprise subscription is required to send custom events. See the [HubSpot Product & Services Catalog](https://legal.hubspot.com/hubspot-product-and-services-catalog) for more information.
 - Relevant limits for HubSpot events are:
     - HubSpot enforces strict API rate limits. You can find more information about these limits on HubSport's[Usage Details](https://developers.HubSpot.com/docs/api/usage-details) page.
     - HubSpot allows up to 50 custom properties for each custom event.
@@ -50,7 +50,7 @@ Keep these things in mind when sending events to HubSpot:
 5. Toggle the *Send events* filter to select the events to send.
 6. Under *Select & filter events*, choose the Amplitude Events you would like to map to HubSpot. Provide a HubSpot Internal Event Name that corresponds to the Amplitude event you’ve selected. HubSpot recommends choosing the events that are most important to your use case.
 7. Under *Map properties to destinations*, select the Event Properties you would like to send. The HubSpot identifier for this object must be at least one of the following: `User Token`, `Email` or `Object ID`.
-8. Under *Select additional properties*, select any extra event and user properties you want to send to HubSpot. If you don't select any properties here, Amplitude doesn't send any. Transformed event properties and transformed user properties aren't supported.
+8. Under *Select additional properties*, select any extra event and user properties you want to send to HubSpot. If you don't select any properties here, Amplitude doesn't send any.
 9. When finished, enable the destination and click *Save*.
 
 ## Use custom event data in HubSpot
