@@ -1,7 +1,7 @@
 ---
 id: 119727fe-3a6f-40c0-aa88-e1eab2da0cf6
 blueprint: destination-catalog
-title: 'HubSpot (Cohort Sync)'
+title: 'HubSpot (cohort sync)'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 connection: destination
 integration_type:
@@ -14,7 +14,7 @@ use_cases:
   - 'Target key cohorts with messaging informed by customer insights'
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1722023682
+updated_at: 1722034412
 source: 'https://www.docs.developers.amplitude.com/data/destinations/hubspot-cohort/'
 ---
 The HubSpot destination allows you to sync your Amplitude-built cohort to your HubSpot contacts lists for targeting purposes.
@@ -25,23 +25,17 @@ The HubSpot destination allows you to sync your Amplitude-built cohort to your H
 - If you choose Email as HubSpot's userID, Amplitude creates a new email address contact in HubSpot if the user doesn't exist in HubSpot but does exist in the Amplitude cohort that you are syncing over. 
 - If you choose Contact ID as HubSpot's userID, it must already exist in HubSpot and is required to be in **long** data type format.
 
-## Setup
+## Set up in Amplitude
 
-### Prerequisites
-
-Contact your CSM if you want to use this integration.
-
-### Amplitude setup 
-
-1. In Amplitude Data, click **Catalog** and select the **Destinations** tab.
-2. In the Cohort section, click **HubSpot**.
+1. In Amplitude Data, navigate to *Catalog > Destinations* tab.
+2. In the Cohort section, click *HubSpot*.
 3. Log into your HubSpot account (via OAuth) to authenticate. Then select the account that contains the cohort you want to sync.
 4. After you're redirected to the Amplitude dashboard, select the identifiers you want to use for the cohort sync. When you're done, save your work.
 
 ## Send a cohort
 
 1. In Amplitude, open the cohort you want to sync. 
-2. Click **Sync** and choose HubSpot.
+2. Click *Sync* and choose *HubSpot*.
 3. Specify the HubSpot account you want to send the cohort to.
 4. Set the sync cadence. 
 5. Save your work.
