@@ -323,7 +323,6 @@ Map<String, Variant> variants = experiment.evaluate(user);
 
 Initializes a [local evaluation](/docs/experiment/local-evaluation) client.
 
-!!!warning "Server Deployment Key"
 {{partial:admonition type="warning" heading="Server deployment key"}}
 You must [initialize](#initialize-local) the local evaluation client with a server [deployment](/docs/experiment/data-model#deployments) key to get access to local evaluation flag configs.
 {{/partial:admonition}}
@@ -407,7 +406,6 @@ You should wait for `start()` to return before calling [`evaluate()`](#evaluate)
 
 Executes the [evaluation logic](/docs/experiment/implementation) using the flags pre-fetched on [`start()`](#start). Evaluate must be given a user object argument and can optionally be passed an array of flag keys if only a specific subset of required flag variants are required.
 
-!!!tip "Automatic Assignment Tracking"
 {{partial:admonition type="tip" heading="Automatic assignment tracking"}}
 Set [`assignmentConfiguration`](#configuration_1) to automatically track an assignment event to Amplitude when `evaluate()` is called.
 {{/partial:admonition}}

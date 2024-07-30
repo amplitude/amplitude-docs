@@ -1,17 +1,27 @@
+{{if nav_title =="source-catalog" || nav_title=="destination-catalog"}}
+<div class="nav-level-1 p-4">
+    <div class="flex flex-col">
+        {{collection :from="nav_title" as="integrations"}}
+        <a href="/docs/data" class="no-underline nav-button text-left text-[.875rem] my-0 pl-2 py-2 relative text-amp-gray-600 hover:text-amp-blue-500">Back to Data</a>
+        {{integrations}}
+        <a href="{{url}}" class="no-underline nav-button text-left text-[.875rem] my-0 pl-2 py-2 relative hover:text-amp-blue-500  hover:bg-amp-gray-50 hover:rounded {{if current_uri == url }}bg-amp-blue-950 text-amp-blue-500 rounded active{{else}}}text-amp-gray-600{{/if}}" >{{title}}</a>
+        {{/integrations}}
+        {{/collection}}
+    </div>
+</div>
+{{else}}
 <div x-cloak x-data="{ lvl1: false, lvl2: false, lvl3: false }" class="nav-level-1 p-4">
     <div class="flex flex-col">
         {{ nav :handle="nav_title" }}
             {{ lvl1_parent = title | slugify }}
             {{ if url && children }}
-            <!--here is a test-->
                 <a href="{{ url }}"
                     {{if current_uri | contains(url) }}@click.prevent="lvl1 = (lvl1 === '{{title | slugify}}') ? '' : '{{title | slugify}}'" {{/if}}
                     class="no-underline nav-button text-left text-[.875rem] my-0 pl-2 py-2 relative hover:text-amp-blue-500 {{if is_current }} text-amp-blue-500 active{{else}}text-amp-gray-600{{/if}}"
                     {{if is_current }} x-effect="lvl1 = '{{title | slugify}}'"{{/if}} :class="lvl1 === '{{ title | slugify }}' ? 'active' : ''">{{ title }} <!--{{data}}{{underline}}{{/data}} -->
                     {{ svg src="/docs/assets/general/icon-chevron-down.svg" class="inline absolute right-0" }}</a>
             {{ elseif url }}
-                <div class="flex flex-row hover:bg-amp-gray-50 hover:rounded"> 
-                    {{svg :src="icon" class="inline w-4 fill-amp-gray-500 self-center"}}
+                <div class="flex flex-row hover:bg-amp-gray-50 hover:rounded {{if is_current }}bg-amp-blue-950{{/if}}">   
                     <a href="{{ url }}"
                     class="no-underline inline-block text-[.875rem] p-2 leading-5 {{if is_current }}bg-amp-blue-950 text-amp-blue-500 rounded active{{else}}text-amp-gray-600{{/if}}">{{ title }}</a>
                 </div>
@@ -39,9 +49,11 @@
                         {{ if children }}
                             <div x-show="lvl2 === '{{ title | slugify }}'" class="nav-level-3 flex flex-col my-0 pl-2">
                                 {{ children }}
+                                <div>
                                     <a href="{{ url }}"
                                         class="no-underline block text-[.875rem] p-2 leading-5 hover:bg-amp-gray-50 hover:rounded  {{if is_current}}bg-amp-blue-950 text-amp-blue-500 rounded active{{else}}text-amp-gray-600{{/if}}"
-                                        {{if is_current }} x-effect="lvl2 = '{{parent:title | slugify}}'; lvl1 = '{{lvl1_parent}}'"{{/if}}>{{ title }}</a>
+                                        {{if is_current }} x-effect="lvl2 = '{{parent:title | slugify}}'; lvl1 = '{{lvl1_parent}}'"{{/if}}>{{svg :src="icon" class="inline pr-2 text-amp-gray-600 h-[0.875rem]"}}{{ title }}</a>
+</div>
                                 {{ /children }}
                             </div>
                         {{ /if }}
@@ -51,3 +63,4 @@
         {{ /nav }}
     </div>
 </div>
+{{/if}} 

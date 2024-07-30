@@ -11,8 +11,10 @@ github_link: 'https://github.com/amplitude/Amplitude-Flutter/tree/beta'
 releases_url: 'https://github.com/amplitude/Amplitude-Flutter/releases'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718672473
+updated_at: 1721756317
 source: 'https://www.docs.developers.amplitude.com/data/sdks/flutter-4/'
+platform: Flutter
+package_name: amplitude_flutter
 ---
 This is the official documentation for the Amplitude Analytics Flutter SDK. The Flutter SDK lets you send events from your Flutter application to Amplitude.
 
@@ -29,7 +31,7 @@ This is the official documentation for the Amplitude Analytics Flutter SDK. The 
 
 ### iOS installation
 
-Add `platform :ios, '10.0'` to your Podfile.
+Add `platform :ios, '13.0'` to your Podfile. Run `pod install` under the ios directory of your Flutter project to update the CocoaPods dependencies.
 
 To enable Bitcode, follow Flutter's [documentation](https://github.com/flutter/flutter/wiki/Creating-an-iOS-Bitcode-enabled-app).
 

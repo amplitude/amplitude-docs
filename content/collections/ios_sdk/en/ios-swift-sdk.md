@@ -11,12 +11,13 @@ github_link: 'https://github.com/amplitude/Amplitude-Swift'
 releases_url: 'https://github.com/amplitude/Amplitude-Swift/releases'
 ampli_article: 4a49ddd0-6bd6-4758-9985-85149b794f13
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1719861479
+updated_at: 1721756427
 source: 'https://www.docs.developers.amplitude.com/data/sdks/ios-swift/'
 migration_guide:
   - 06c84fb1-8d96-4042-863d-fce4619b48ed
 package_name: AmplitudeSwift
 bundle_url: 'https://cocoapods.org/pods/AmplitudeSwift'
+platform: iOS
 ---
 This is the official documentation for the Amplitude Analytics iOS SDK.
 
@@ -1132,9 +1133,6 @@ You can also implement you own offline logic:
 ### Apple privacy manifest
 
 Starting December 8, 2020, Apple requires a privacy manifest file for all new apps and app updates. Apple expects to make this mandatory in the Spring of 2024. As Amplitude is a third-party to your app, you need to ensure you properly disclose to your users the ways you use Amplitude in regards to their data.
-
-!!! Note "Update privacy manifest based on your app"
-
 
 {{partial:admonition type="note" heading="Update the privacy manifest based on your app"}}
 Amplitude sets privacy manifest based on a default configuration. Update the privacy manifest according to your configuration and your app.

@@ -69,7 +69,7 @@ The Autocapture plugin adds four settings that help you configure what the plugi
 | <div class="big-column">Setting</div>                   | Default                                                                                              | Description                                                                                        |
 | -------------------------- | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
 | `cssSelectorAllowlist`     | `['a','button','input','select','textarea','label','[data-amp-default-track]','.amp-default-track']` | String[]. Accepts one or more CSS selectors that define which elements on the page to track.         |
-| `pageUrlAllowlist`         | undefined                                                                                            | `(string|RegExp)[]`. Defines the URL, URLs, or URL pattern on which Amplitude tracks default events |
+| `pageUrlAllowlist`         | undefined                                                                                            | `(string\|RegExp)[]`. Defines the URL, URLs, or URL pattern on which Amplitude tracks default events |
 | `shouldTrackEventResolver` | undefined                                                                                            | Function. Programatically determines if Amplitude should or shouldn't track an event.              |
 | `dataAttributePrefix`      | `data-amp-track`                                                                                     | Allows the plugin to capture data attributes as an event property                                  |
 

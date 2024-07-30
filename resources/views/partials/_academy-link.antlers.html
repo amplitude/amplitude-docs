@@ -1,0 +1,10 @@
+{{if academy_link}}
+<div class="w-full mb-4 bg-white p-5 border rounded-lg border-amp-gray-300 text-amp-gray-600 text-sm">
+    <h4 class="mt-0 text-amp-blue-500 tracking-[.07813rem] text-[.875rem] font-semibold">AMPLITUDE ACADEMY</h4>
+    <p class="self-start my-0 leading-6 font-[Gellix] text-[1.25rem] text-[#1E2024]">{{academy_title}}</p>
+    <p>{{academy_description}}</p>
+    <a @click="academyClick('{{academy_link}}')" href="{{academy_link}}" target="_blank"><span class="inline-block px-[1.25rem] py-[.75rem] border border-amp-blue-500 rounded-full text-amp-blue-500 font-semibold hover:shadow-lg transition">Go to Academy</span></a>
+</div>
+
+{{/if}}
+

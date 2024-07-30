@@ -15,8 +15,6 @@ updated_at: 1718649214
 ---
 [HubSpot](https://www.HubSpot.com/) is an easy to use and powerful CRM platform that enables scaling companies to sell, market and provide customer service from a unified UI. Amplitude's HubSpot streaming integration enables you to forward your Amplitude events and event properties straight to HubSpot with just a few clicks.
 
-!!!info "This integration is in Closed Beta"
-
 {{partial:admonition type="note" heading="This integration is in a closed beta"}}
 This feature is in Closed Beta and is in active development. Email [integrations@amplitude.com](mailto:integrations@amplitude.com) for more information. Unlike the [HubSpot streaming integration](/docs/data/destination-catalog/hubspot), this integration automatically creates the necessary custom event definitions and properties in HubSpot, rather than requiring you to create them manually. 
 {{/partial:admonition}}

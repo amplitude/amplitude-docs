@@ -46,12 +46,14 @@ Cost structure of each endpoint:
 
 Event categories are a way to organize your event types into broad groups.
 
-!!!example
-    You want to track how users register for your app, checkout, and how they interact with the onboarding experience. You can bucket your events using these event categories:
 
-    - Registration
-    - Checkout
-    - Onboarding
+{{partial:admonition type="example" heading=""}}
+You want to track how users register for your app, checkout, and how they interact with the onboarding experience. You can bucket your events using these event categories:
+
+- Registration
+- Checkout
+- Onboarding
+{{/partial:admonition}}
 
 ### Create event category
 

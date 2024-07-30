@@ -15,6 +15,8 @@ mix.js('resources/docs/js/site.js', 'public/docs/js')
 mix.js('resources/docs/js/api-table.js', 'public/docs/js')
 mix.js('resources/docs/js/interactive-exposure-tracking-table.js', 'public/docs/js')
 mix.js('resources/docs/js/interactive-evaluation-table.js', 'public/docs/js')
+mix.js('resources/docs/js/interactive-exposure-table.js', 'public/docs/js')
+
 
     
 mix.postCss('resources/docs/css/site.css', 'public/docs/css', [

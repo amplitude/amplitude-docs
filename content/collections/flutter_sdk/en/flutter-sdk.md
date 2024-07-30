@@ -11,13 +11,14 @@ releases_url: 'https://github.com/amplitude/Amplitude-Flutter/releases'
 api_reference_url: 'https://pub.dev/documentation/amplitude_flutter/latest/'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1719614719
+updated_at: 1721756309
 migration_guide:
   - 4be26940-0200-46a2-a614-a2c8df0808b1
 shields_io_badge: 'https://img.shields.io/pub/v/amplitude_flutter.svg'
 source: 'https://www.docs.developers.amplitude.com/data/sdks/flutter/'
 package_name: amplitude_flutter
 bundle_url: 'https://pub.dev/packages/amplitude_flutter'
+platform: Flutter
 ---
 This is the official documentation for the Amplitude Analytics Flutter SDK.
 

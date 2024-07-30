@@ -48,6 +48,7 @@ return array(
     'Symfony\\Component\\ErrorHandler\\' => array($vendorDir . '/symfony/error-handler'),
     'Symfony\\Component\\CssSelector\\' => array($vendorDir . '/symfony/css-selector'),
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
+    'Swiftmade\\StatamicClearAssets\\' => array($vendorDir . '/swiftmade/statamic-clear-assets/src'),
     'Stringy\\' => array($vendorDir . '/statamic/stringy/src'),
     'Statamic\\StaticSite\\' => array($vendorDir . '/statamic/ssg/src'),
     'Statamic\\' => array($vendorDir . '/statamic/cms/src'),

@@ -1,12 +1,12 @@
 ---
 id: 11423e67-aee4-4d24-9501-229b6065861b
 blueprint: data
-title: 'Data Backfill'
+title: 'Data backfill'
 landing: false
 source: 'https://www.docs.developers.amplitude.com/analytics/data-backfill-guide/'
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718307607
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1721925960
 ---
 You can import historical data to Amplitude yourself using the [Batch Event Upload API](/docs/apis/analytics/batch-event-upload). 
 
