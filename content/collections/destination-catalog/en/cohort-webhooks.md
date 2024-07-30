@@ -7,7 +7,9 @@ category: 'Cohort syncing'
 partner_maintained: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1719255480
+updated_at: 1721766883
+integration_type:
+  - cohorts
 ---
 {{partial:admonition type="beta" heading=""}}
 This feature is in beta and is in active development. Features and functionality may change during the course of the beta period.

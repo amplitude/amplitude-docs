@@ -42,7 +42,7 @@ You need a Client ID, Client Secret and Subdomain from Salesforce Marketing Clou
 2. In the Quick Find box, search for **Installed Packages**.
 3. Click **New** to create a new package.
 4. Click **Add Component**.
-5. For the Component Type, select **API Integration**. This step generates the API integration information that is required in Amplitude.
+5. For the Component Type, select **API Integration**. This step generates the API integration information that's required in Amplitude.
 6. For the integration type, select **Server-to-Server**.
 7. Grant the package these permissions:
     - Email: Read, Write
@@ -77,8 +77,8 @@ You need a Client ID, Client Secret and Subdomain from Salesforce Marketing Clou
 
 ## Event forwarding setup (optional)
 
-{{partial:admonition type="note" heading="Storing data in different "}}
-Following these steps enable you to create a Data Extension in Salesforce Marketing Cloud, set up an Event Definition, and configure the necessary mappings for forwarding events to Amplitude. If you don't store your data in the same Data Extension, repeat these steps.
+{{partial:admonition type="note" heading="Storing data in different a different Data Extension"}}
+Following these steps enable you to create a Data Extension in Salesforce Marketing Cloud, set up an Event Definition, and configure the necessary mappings to forward events to Salesforce. If you don't store your data in the same Data Extension, repeat these steps for any other Data Extension you use.
 {{/partial:admonition}} 
 
 1. In Salesforce Marketing Cloud, navigate to **Email Studio** from the top navigation bar.
@@ -86,9 +86,9 @@ Following these steps enable you to create a Data Extension in Salesforce Market
 3. Create a Data Extension in any folder.
 4. (Recommendation) When you create a new Data Extension for event forwarding, use a template. Choose **Create from Template** in the Creation Method.
 5. Choose **TriggeredSendDataExtension** as the template.
-6. Make sure your **Data Extension** includes the columns **SubscriberKey** (to be used as Contact key) and **EmailAddress** (to be used as Email) for mapping properties in Amplitude's setup page.
-7. For any other columns you create (except SubscriberKey and EmailAddress), ensure their names match the properties you select in Amplitude's additional properties.
-    - By default, the event properties include **event_type** / **event_time** / **SubscriberKey** / **EmailAddress**.
+6. Make sure your **Data Extension** includes the columns `SubscriberKey` (to be used as Contact key) and `EmailAddress` (to be used as Email) for mapping properties in Amplitude's setup page.
+7. For any other columns you create (except `SubscriberKey` and `EmailAddress`), ensure their names match the properties you select in Amplitude's additional properties.
+    - By default, the event properties include `*event_type` / `event_time` / `SubscriberKey` / `EmailAddress`.
 8. After you created the Data Extension, go to **Journey Builder** and find **Event Sources** under the **Event** tab.
 9. Click on **New Event** and select **API Event** for **New Entry Sources**.
 10. Name your Event Definition and select the **Data Extension** you created.
@@ -99,12 +99,12 @@ Following these steps enable you to create a Data Extension in Salesforce Market
 ## Identify forwarding setup (optional)
 
 {{partial:admonition type="note" heading="Send other user properties than the default attributes in SFMC"}}
-You will have to define the Data Extension in SFMC to store the user properties that do not exist in the default attributes in SFMC. Default attribute set includes Contact Key and Email Address.
+Define the Data Extension in SFMC to store the user properties that don't exist in the default attributes in SFMC. Default attribute set includes `ContactKey` and `EmailAddress`.
 {{/partial:admonition}}
 
 1. To add your own attribute set, start by defining a **Data Extension** in SFMC.
 2. When creating the **Data Extension**, follow the specified naming format for **Event Forwarding**.
-3. Include a **contactKey** column in the **Data Extension** to map attributes to each contact in SFMC. Make sure that the `contactKey` column is set as a primary key.
+3. Include a `contactKey` column in the **Data Extension** to map attributes to each contact in SFMC. Make sure that the `contactKey` column is set as a primary key.
 4. After creating the **Data Extension**, navigate to the **Data Designer** tab in Contact Builder.
 5. Choose an **Attribute Group** and click on the **Data Extensions** button, then select **Link**.
 6. Select your **Data Extension** and choose the column that maps to the **Customer Data attribute**. Map the `contactKey` attribute to Contact Key in the Customer Data section.

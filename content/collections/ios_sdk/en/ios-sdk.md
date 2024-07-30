@@ -10,10 +10,11 @@ supported_languages:
 github_link: 'https://github.com/amplitude/Amplitude-iOS'
 releases_url: 'https://github.com/amplitude/Amplitude-iOS/releases'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1719861177
+updated_at: 1721756421
 source: 'https://www.docs.developers.amplitude.com/data/sdks/ios/'
 package_name: Amplitude
 bundle_url: 'https://cocoapods.org/pods/Amplitude-iOS'
+platform: iOS
 ---
 This is the official documentation for the Amplitude Analytics iOS SDK.
 
@@ -1284,7 +1285,6 @@ let amplitude = Amplitude.instanceWithName("my-unqiue-instance-name")
 
 Starting December 8, 2020, Apple requires a privacy manifest file for all new apps and app updates. Apple expects to make this mandatory in the Spring of 2024. As Amplitude is a third-party to your app, you need to ensure you properly disclose to your users the ways you use Amplitude in regards to their data.
 
-!!! Note "Update privacy manifest based on your app"
 {{partial:admonition type="note" heading="Update privacy manifest based on your app"}}
 Amplitude sets privacy manifest based on a default configuration. Update the privacy manifest according to your configuration and your app.
 {{/partial:admonition}}

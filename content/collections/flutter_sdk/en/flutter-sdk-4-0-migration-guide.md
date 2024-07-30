@@ -29,6 +29,17 @@ dependencies:
 +  amplitude_flutter: ^4.0.0-beta.1
 ```
 
+Run `flutter pub get` in the terminal to update the dependencies.
+
+Open `Podfile` and update:
+
+```diff
+- platform :ios, '10.0'
++ platform :ios, '13.0'
+```
+
+Run `pod install` under the ios directory of your Flutter project to update the CocoaPods dependencies.
+
 ## Instrumentation
 
 Flutter SDK 4.0 offers an API to instrument events. To migrate to Flutter SDK 4.0, you need to update a few calls. The following sections detail which calls have changed.

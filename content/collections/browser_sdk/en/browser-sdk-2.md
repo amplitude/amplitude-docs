@@ -12,7 +12,7 @@ releases_url: 'https://github.com/amplitude/Amplitude-TypeScript/releases?q=anal
 bundle_url: 'https://www.npmjs.com/package/@amplitude/analytics-browser'
 shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/analytics-browser/latest.svg'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1719613681
+updated_at: 1721756275
 major_version: 2
 ampli_article: 5afa91b7-c12d-425a-b4b6-661061e5843a
 exclude_from_sitemap: false
@@ -20,6 +20,7 @@ source: 'https://www.docs.developers.amplitude.com/data/sdks/browser-2/'
 plugins:
   - f0bf544a-7505-45ef-89ad-e7fe6ec71fbf
 package_name: '@amplitude/analytics-browser'
+platform: Browser
 ---
 Amplitude's Browser SDK 2 lets you send events to Amplitude.
 
@@ -861,17 +862,17 @@ Here's an example of an enrichment plugin that includes an extra event property 
 const enrichPageUrlPlugin = (): EnrichmentPlugin => {
   return {
     execute: async (event: Event) => {
-      event.event\ _properties = {
-        ...event.event\ _properties,
-        page\ _url: location.href,
+      event.event_properties = {
+        ...event.event_properties,
+        page_url: location.href,
       };
       return event;
     },
   }
 }
-
-amplitude.init(API\ _KEY);
+ 
 amplitude.add(enrichPageUrlPlugin());
+amplitude.init(API_KEY);
 ```
 {{/partial:tab}}
 {{partial:tab name="Destination"}}

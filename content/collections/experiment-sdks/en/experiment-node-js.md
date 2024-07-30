@@ -93,7 +93,6 @@ initializeRemote(apiKey: string, config?: RemoteEvaluationConfig): RemoteEvaluat
 | `apiKey` | required | The [deployment key](/docs/experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
-!!!warning "Timeout & Retry Configuration"
 {{partial:admonition type="warning" heading="Timeout and retry configuration"}}
 **The default timeout and retry configuration options are too high for most server environments**. Configure the timeout and retry options to best fit your performance requirements. If [remote evaluation performance](/docs/experiment/under-the-hood/performance-and-caching#remote-evaluation) is too slow, consider using [local evaluation](#local-evaluation).
 {{/partial:admonition}}
@@ -124,7 +123,6 @@ The SDK client can be configured on initialization.
 | `fetchRetryBackoffScalar` | Scales the minimum backoff exponentially. | `1.5` |
 | `fetchRetryTimeoutMillis` | The request timeout for retrying variant fetches. | `10000` |
 
-!!!info "EU Data Center"
 {{partial:admonition type="info" heading="EU data center"}}
 If you're using Amplitude's EU data center, configure the `serverUrl` option on initialization to `https://api.lab.eu.amplitude.com`
 {{/partial:admonition}}
@@ -254,7 +252,6 @@ You can configure the SDK client on initialization.
 | `cacheCapacity` | The maximum number of assignments stored in the assignment cache | `65536` |
 | [Analytics SDK Options](/docs/sdks/analytics/browser/browser-sdk-2#configuration) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
 
-!!!info "EU Data Center"
 {{partial:admonition type="info" heading="EU data center"}}
 If you're using Amplitude's EU data center, configure the `serverUrl` option on initialization to `https://api.lab.eu.amplitude.com`
 
@@ -279,7 +276,6 @@ await experiment.start();
 
 Executes the [evaluation logic](/docs/experiment/implementation) using the flags pre-fetched on [`start()`](#start). You must give evaluate a user object argument. You can optionally pass an array of flag keys if you require only a specific subset of required flag variants.
 
-!!!tip "Automatic Assignment Tracking"
 {{partial:admonition type="tip" heading="Automatic assignment tracking"}}
 Set [`assignmentConfig`](#configuration_1) to automatically track an assignment event to Amplitude when `evaluateV2()` is called.
 {{/partial:admonition}}

@@ -1,0 +1,15 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: icon
+            field:
+              max_files: 1
+              container: assets
+              folder: general
+              type: assets
+              display: icon
+              localizable: false

@@ -103,7 +103,6 @@ You can configure the SDK client on initialization.
 | `fetch_retry_backoff_scalar` | Scales the minimum backoff exponentially. | `1.5` |
 | `fetch_retry_timeout_millis` | The request timeout for retrying variant fetches. | `10000` |
 
-!!!info "EU Data Center"
 {{partial:admonition type="info" heading="EU data center"}}
 If you're using Amplitude's EU data center, configure the `serverUrl` option on initialization to `https://api.lab.eu.amplitude.com`
 {{/partial:admonition}}
@@ -175,7 +174,6 @@ Implements evaluating variants for a user via [local evaluation](/docs/experimen
 
 Install the Python Server SDK's local evaluation.
 
-!!!warning "OS, and architecture support"
 {{partial:admonition type="warning" heading="Operating system and architecture support"}}
 The local evaluation package currently only supports the following OS' and architectures (`OS/ARCH`):
 
@@ -239,7 +237,6 @@ Experiment.initialize_local(api_key, config = None) : LocalEvaluationClient
 | `apiKey` | required | The server [deployment key](/docs/experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
-!!!tip "Flag Polling Interval"
 {{partial:admonition type="tip" heading="Flag polling interval"}}
 Use the `flag_config_polling_interval_millis` [configuration](#configuration_1) to determine the time flag configs take to update once modified (default 30s).
 {{/partial:admonition}}
@@ -288,7 +285,6 @@ experiment.start()
 
 Executes the [evaluation logic](/docs/experiment/implementation) using the flags pre-fetched on [`start()`](#start). Evaluate must be given a user object argument and can optionally be passed an array of flag keys if only a specific subset of required flag variants are required.
 
-!!!tip "Automatic Assignment Tracking"
 {{partial:admonition type="tip" heading="Automatic assignment tracking"}}
 Set [`assignment_config`](#configuration_1) to automatically track an assignment event to Amplitude when `evaluate_v2()` is called.
 {{/partial:admonition}}

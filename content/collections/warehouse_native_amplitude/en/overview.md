@@ -47,6 +47,19 @@ Warehouse-native Amplitude doesn't support the following [formulas](/docs/analyt
 * HIST
 * PERCENTILE
 * PROPCOUNT
+* ROLLWINBEFORE
+* CUMSUM
+* ACTIVE
+* ARPAU
+* FREQPERCENTILE
+* HIST
+* PERCENTILE
+* PROPCOUNT
+* PROPCOUNTAVG
+* PROPHIST
+* PROPMIN
+* PROPMAX
+* REVENUETOTAL
 
 Some Amplitude charts include features that warehouse-native projects don't support. Features that aren't available include:
 

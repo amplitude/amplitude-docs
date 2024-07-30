@@ -11,10 +11,11 @@ releases_url: 'https://github.com/amplitude/unity-plugin/releases'
 api_reference_url: 'https://github.com/amplitude/unity-plugin'
 shields_io_badge: 'https://img.shields.io/github/v/tag/amplitude/unity-plugin?label=Unity%20SDK'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1719862686
+updated_at: 1721756405
 source: 'https://www.docs.developers.amplitude.com/data/sdks/unity/'
 package_name: amplitude-unity.unitypackage
 bundle_url: 'https://github.com/amplitude/unity-plugin/releases'
+platform: Unity
 ---
 The Amplitude Analytics Unity SDK is a plugin to simplify the integration of Amplitude iOS and Android SDKs into your Unity project. This SDK works with Unity 2019.3.11 and higher.
 
@@ -473,9 +474,9 @@ This section walks through the process to give Unity SDK users access to IDFA (a
 
 ### Setup
 
-!!!note  "iOS App Store compliance"
-
-   If an app is subject to COPPA because it's aimed toward children, the app can't contain any IDFA or GPS tracking code. This is why the IDFA and GPS code requires additional setup.
+{{partial:admonition type="note" heading="iOS App Store compliance"}}
+If an app is subject to COPPA because it's aimed toward children, the app can't contain any IDFA or GPS tracking code. This is why the IDFA and GPS code requires additional setup.
+{{/partial:admonition}}
 
 First, take the [two files](https://github.com/amplitude/unity-plugin/tree/main/IdfaIOS) `unity-plugin/IdfaIOS/CustomIdfa.m` and `unity-plugin/IdfaIOS/CustomGPS.m` and place them into `Assets/Scripts`.
  You may place the file wherever, but check all the `#import` statements lead to correct paths.

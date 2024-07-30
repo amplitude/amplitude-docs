@@ -30,12 +30,32 @@ fields:
       instructions: 'Select the type of content this article covers.'
       localizable: false
   -
+    handle: platform
+    field:
+      options:
+        Browser: Browser
+        Android: Android
+        iOS: iOS
+        'React Native': 'React Native'
+        Node: Node
+        Go: Go
+        Python: Python
+        Java: Java
+        Flutter: Flutter
+        Unity: Unity
+        Unreal: Unreal
+      type: select
+      display: Platform
+      localizable: false
+      width: 50
+  -
     handle: major_version
     field:
       input_type: number
       type: text
       display: 'Major Version'
       localizable: false
+      width: 50
   -
     handle: supported_languages
     field:

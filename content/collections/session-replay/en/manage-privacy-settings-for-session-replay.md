@@ -68,3 +68,9 @@ When this happens, Session Replay combines the settings from the SDK and the UI,
 |Session Replay settings| MASK | UNMASK | |	
 |SDK settings |	UNMASK | | MASK |
 |End results | MASK | UNMASK | MASK |
+
+### CSS selectors
+
+Session Replay's configuration supports many types of [CSS Selector](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors). Specify an element tag (`h1` or `textarea`), a class name (`.hidden`) or a data attribute.
+
+Data attributes may be useful if your class names change often due to hashing. To use  data attributes, add a custom attribute like `data-amp-unmask` or `data-amp-mask` to any HTML element. For example, `<textarea data-amp-unmask></textarea>`, then enclose the attribute in square brackets when you specify the selector, `[data-amp-unmask]`.
