@@ -8,8 +8,8 @@ this_article_will_help_you:
   - 'Understand how Amplitude calculates statistical significance for formula metrics'
 landing: true
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717103685
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1722359496
 landing_blurb: 'Understand the different kinds of formula metrics supported by the Experiment Results chart'
 ---
 In an Experiment Results chart, using a **formula metric** offers you greater flexibility when performing analyses. A formula metric is a metric that consists of:
@@ -78,6 +78,18 @@ Returns the sum of the property values you are grouping the specified event by.
 This function will only work if you are grouping by a numerical property on the event. If grouping by multiple properties, the formula will perform the calculation with the first group-by clause.
 
 Returns the average of the property values you are grouping by. This function is equivalent to `PROPSUM(event)/TOTALS(event)`. [Learn more about how Amplitude calculates PROPAVG and PROPSUM in this article](/docs/experiment/under-the-hood/experiment-analysis-chart-calculation)
+
+### PROPMAX
+
+**Syntax**: PROPMAX(event)
+
+* **Event:** returns the maximum value of the property you are grouping the specified event by. The property must be numeric. If grouping by multiple properties, the calculation will be performed using the first group-by clause.
+
+### PROPMIN
+
+**Syntax**: PROPMIN(event)
+
+* **Event:** returns the minimum value of the property you are grouping the specified event by. The property must be numeric. If grouping by multiple properties, the calculation will be performed using the first group-by clause.
 
 **CONVERSIONRATE (closed beta):**
 
