@@ -9,7 +9,7 @@ this_article_will_help_you:
 landing: true
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1722359496
+updated_at: 1722360131
 landing_blurb: 'Understand the different kinds of formula metrics supported by the Experiment Results chart'
 ---
 In an Experiment Results chart, using a **formula metric** offers you greater flexibility when performing analyses. A formula metric is a metric that consists of:
@@ -31,11 +31,11 @@ To add a formula metric to your Experiment Results chart, follow the below steps
   
   ![Screenshot 2023-07-31 at 2.13.04 PM.png](/docs/output/img/experiment-results/screenshot-2023-07-31-at-2-13-04-pm-png.png)
 
-3. Click *Select event ...* to begin selecting events to include in your formula metric. Repeat this step until all events are included.
+3. Click *Select event ...* to begin selecting events to include in your formula metric. Repeat this step until you've selected all the events you need.
 
-2. In the *Formula* box, enter the formula that will calculate your formula metric. [Click here for a list of formulas that are supported by Experiment Results](#h_01GYB55B59PZ793RCSC6B32KJ7), or [here for an explanation of formula syntax](#h_01GYB56QRGWM2BZHNV2VSG53TW).
+2. In the *Formula* box, enter the formula for calculating your formula metric. [Click here for a list of formulas Experiment Results supports](#h_01GYB55B59PZ793RCSC6B32KJ7), or [here for an explanation of formula syntax](#h_01GYB56QRGWM2BZHNV2VSG53TW).
 
-3. Add a name for this new formula metric. Click *Apply* when you're done. The metric will be added to your Experiment Results chart.
+3. Add a name for this new formula metric. Click *Apply* when you're done. The metric now appears in your Experiment Results chart.
 
 You can also view this metric in the [object management center](/docs/data/object-management).
 
@@ -47,7 +47,7 @@ The following formula functions are supported in Experiment Results:
 
 **Syntax**: UNIQUES(event)
 
-* **Event:** Refers to the event you are interested in. This must be a letter that corresponds to an event in the Events Module.
+* **Event:** Refers to the event you're interested in. This must be a letter corresponding to an event in the Events Module.
 
 Returns the number of unique users who triggered the event. 
 
@@ -55,7 +55,7 @@ Returns the number of unique users who triggered the event. 
 
 **Syntax**: TOTALS(event)
 
-* **Event:** Refers to the event you are interested in. This must be a letter that corresponds to an event in the Events Module.
+* **Event:** Refers to the event you're interested in. This must be a letter corresponding to an event in the Events Module.
 
 Returns the total number of times the event was triggered.
 
@@ -63,33 +63,33 @@ Returns the total number of times the event was triggered.
 
 **Syntax**: PROPSUM(event)
 
-* **Event:** Refers to the event you are interested in. This must be a letter that corresponds to an event in the Events Module.
+* **Event:** Refers to the event you're interested in. This must be a letter corresponding to an event in the Events Module.
 
-This function will only work if you are grouping by a numerical property on the event. If grouping by multiple properties, the formula will perform the calculation with the first group-by clause.
+This function only works when grouping by a numerical property on the event. If grouping by multiple properties, the formula runs the calculation with the first group-by clause.
 
-Returns the sum of the property values you are grouping the specified event by.
+Returns the sum of the property values you're grouping the specified event by.
 
 **PROPAVG:**
 
 **Syntax**: PROPAVG(event)
 
-* **Event:** Refers to the event you are interested in. This must be a letter that corresponds to an event in the Events Module.
+* **Event:** Refers to the event you're interested in. This must be a letter corresponding to an event in the Events Module.
 
-This function will only work if you are grouping by a numerical property on the event. If grouping by multiple properties, the formula will perform the calculation with the first group-by clause.
+This function only works when grouping by a numerical property on the event. If grouping by multiple properties, the formula runs the calculation with the first group-by clause.
 
-Returns the average of the property values you are grouping by. This function is equivalent to `PROPSUM(event)/TOTALS(event)`. [Learn more about how Amplitude calculates PROPAVG and PROPSUM in this article](/docs/experiment/under-the-hood/experiment-analysis-chart-calculation)
+Returns the average of the property values you're grouping by. This function is equivalent to `PROPSUM(event)/TOTALS(event)`. [Learn more about how Amplitude calculates PROPAVG and PROPSUM in this article](/docs/experiment/under-the-hood/experiment-analysis-chart-calculation)
 
 ### PROPMAX
 
 **Syntax**: PROPMAX(event)
 
-* **Event:** returns the maximum value of the property you are grouping the specified event by. The property must be numeric. If grouping by multiple properties, the calculation will be performed using the first group-by clause.
+* **Event:** Returns the maximum value of the property you're grouping the specified event by. The property must be numeric. If grouping by multiple properties, the calculation uses the first group-by clause.
 
 ### PROPMIN
 
 **Syntax**: PROPMIN(event)
 
-* **Event:** returns the minimum value of the property you are grouping the specified event by. The property must be numeric. If grouping by multiple properties, the calculation will be performed using the first group-by clause.
+* **Event:** Returns the minimum value of the property you're grouping the specified event by. The property must be numeric. If grouping by multiple properties, the calculation uses the first group-by clause.
 
 **CONVERSIONRATE (closed beta):**
 
@@ -116,14 +116,16 @@ Returns the conversion rate (< 1) from 1st event to nth event of the array. This
 * **Latency Offset** (optional): Refers to latency in the data ingestion to Amplitude. The unit is in seconds.
 
 {{partial:admonition type='note'}}
-This function is supported for Experiment metrics only, and is currently only available to certain customers. To gain access, contact your Amplitude Customer Success Manager. Also, this function will only work when grouping by a numerical property on the last event.
+This function is supported for Experiment metrics only, and is currently only available to certain customers. To gain access, contact your Amplitude Customer Success Manager. 
+
+This function only works when grouping by a numerical property on the last event.
 {{/partial:admonition}}
 
 Returns the average value of the given property among all the users who completed the conversion. This function internally uses Funnel Query to get the average value among the converted users.
 
 ## Formula syntax
 
-In your formulas, refer to events selected in the Events Module by their corresponding letter. The functions and the parameters are not case sensitive. You can also perform the following arithmetic operations:
+In your formulas, refer to events selected in the Events Module by their corresponding letter. The functions and the parameters aren't case-sensitive. You can also perform the following arithmetic operations:
 
 * Parenthesis ()
 * Addition (+)
@@ -133,13 +135,13 @@ In your formulas, refer to events selected in the Events Module by their corresp
 
 ## How Amplitude calculates experiment data for formula metrics
 
-Before understanding how experiment data is calculated for formula metrics, it’s important to understand the overall [Experiment Analysis view](/docs/experiment/analysis-view), which provides details for your experiment.
+Before getting into how calculations of formula metrics work with experiment data, it’s important to understand the overall [Experiment Analysis view](/docs/experiment/analysis-view), which provides details for your experiment.
 
-For formula metrics, Amplitude computes the results for each function independently to find the mean and variance of each one. The arithmetic operators are then applied on the results of these individual functions.   
+For formula metrics, Amplitude computes the results for each function independently to find the mean and variance of each one. It then applies the arithmetic operators to the results of these individual functions.   
 
-Imagine you have defined a formula metric as `TOTALS(A) + TOTALS(B)`. Amplitude will calculate the variances and means of both components of this metric, as well as the covariance.
+Imagine you've defined a formula metric as `TOTALS(A) + TOTALS(B)`. Amplitude calculates the variances and means of both components of this metric, as well as the covariance.
 
-If we set X equal to TOTALS(A) and Y equal to TOTALS(B), the following statements hold:
+If you set X equal to TOTALS(A) and Y equal to TOTALS(B), the following statements hold:
 
 * `V[X]` = Variance of X
 * `E[X]` = Mean of X
@@ -162,6 +164,6 @@ If we set X equal to TOTALS(A) and Y equal to TOTALS(B), the following statement
     Variance: ![](/docs/output/img/experiment-results/23576087077403){.inline}
     Mean: `E[X / Y] = E[X] / E[Y]`
 
-Once we have the mean and variance of the overall formula metric, we can calculate the confidence interval chart and the p-values.
+Once you have the mean and variance of the overall formula metric, you can calculate the confidence interval chart and the p-values.
 
 `Formula / Metric: TOTALS(A) / TOTALS(B)`
