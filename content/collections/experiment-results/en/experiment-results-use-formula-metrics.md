@@ -21,7 +21,7 @@ If you've used [custom formulas in Event Segmentation](/docs/analytics/charts/ev
 
 ## Create a formula metric
 
-To add a formula metric to your Experiment Results chart, follow the below steps:
+To add a formula metric to your Experiment Results chart, follow these steps:
 
 1. In the Primary Metric module, click *+ Add Metric* and choose a formula from the *Formula* drop down options.
 
@@ -41,7 +41,7 @@ You can also view this metric in the [object management center](/docs/data/objec
 
 ## Supported formula functions
 
-The following formula functions are supported in Experiment Results:
+Experiment Results supports the formula functions listed here:
 
 **UNIQUES:**
 
@@ -57,7 +57,7 @@ Returns the number of unique users who triggered the event. 
 
 * **Event:** Refers to the event you're interested in. This must be a letter corresponding to an event in the Events Module.
 
-Returns the total number of times the event was triggered.
+Returns the total number of times users triggered the event.
 
 **PROPSUM:**
 
