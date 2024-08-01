@@ -9,7 +9,7 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1722551768
 ---
-Enterprise-level organizations often collect data that can include revenue data, personally-identifiable information (PII), and other sensitive information. Amplitude’s **data access control (DAC)** feature enables these organizations to easily manage access to these categories of data, in a way that prevents unauthorized users from gaining access to it, and that helps prevent the data from inadvertently leaking out.
+Enterprise-level organizations often collect data that can include revenue data, personally identifiable information (PII), and other sensitive information. Amplitude’s **data access control (DAC)** feature enables these organizations to easily manage access to these categories of data, in a way that prevents unauthorized users from gaining access to it, and that helps prevent the data from inadvertently leaking out.
 
 DAC works within Amplitude’s Groups framework. Admins grant or restrict access to PII, revenue data, and sensitive information to all members of a group. From there, they can [add or remove users from these groups](/docs/admin/account-management/manage-permission-groups#edit-a-group) as access requirements change, either on an individual or organizational level.
 
@@ -26,7 +26,7 @@ The user can then exclude the restricted data and view the chart (or cohort, das
 
 ## Set access for specific categories of sensitive data
 
-Setting access levels is a two-stage process. First, you must **classify** your data. When that’s complete, you can set up **permissioning**.
+Setting access levels is a two-stage process. First, you must **classify** your data. When that’s complete, you can set up **permissions**.
 
 {{/partial:admonition type='note'}}
 DAC applies only to properties. It **doesn’t** apply to definitions or metadata.
@@ -39,9 +39,9 @@ DAC applies only to properties. It **doesn’t** apply to definitions or metadat
 3. In the details panel that opens, click the *Classification* drop-down and select all relevant classifications for this property. Then click *Send*.
 4. Repeat steps 2 and 3 for each property you want to classify.
 
-### Set up permissioning
+### Set up permissions
 
-1. In Amplitude Data, navigate to *Groups* and click the name of the group you’re interested in. Alternatively, you can [create a new group](/docs/admin/account-management/manage-permission-groups#create-a-group).
-2. Open the group’s *Data Access* tab. All three controllable classifications are listed here: PII, revenue, and sensitive.
+1. In Amplitude Data, navigate to *Groups* and click the name of the group you’re interested in. You can also [create a new group](/docs/admin/account-management/manage-permission-groups#create-a-group).
+2. Open the group’s *Data Access* tab. All three controllable classifications are visible here: PII, revenue, and sensitive.
 3. For each classification, select *Yes* to allow members of the group to view this data, or *No* to deny them access.
 4. When you’re done, click *Save*.
