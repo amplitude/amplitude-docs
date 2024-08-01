@@ -19,6 +19,8 @@ source: 'https://www.docs.developers.amplitude.com/data/sources/databricks/'
 ---
 Amplitude's Databricks import source enables you to import data from Databricks to your Amplitude account. Databricks import uses the [Databricks Change Data Feed](https://docs.databricks.com/en/delta/delta-change-data-feed.html#use-delta-lake-change-data-feed-on-databricks) feature to securely access and extract live data from your Databricks workspace.
 
+For guided instructions to setting up this integration, view the [Loom video](https://www.loom.com/share/a00f8905170e4c83977ae6fb2f0dcde7?sid=5a77e8c9-d34b-42b0-a179-679669c8bdbe).
+
 ## Features
 
 - Import all data types, including events, user properties, and group properties.
@@ -31,7 +33,7 @@ Amplitude's Databricks import source enables you to import data from Databricks 
 
 - The User Look-Up page doesn't display 100 most recent events ingested.
 
-For guided instructions to setting up this integration, view the [Loom video](https://www.loom.com/share/a00f8905170e4c83977ae6fb2f0dcde7?sid=5a77e8c9-d34b-42b0-a179-679669c8bdbe).
+- Databricks [views](https://docs.databricks.com/en/views/index.html), [materialized views](https://docs.databricks.com/en/views/materialized.html), and [streaming tables](https://docs.databricks.com/en/delta-live-tables/index.html#streaming-table) are not supported by feature right now since they don't support time travel yet.
 
 ## Configure Databricks
 
