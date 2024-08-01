@@ -94,7 +94,8 @@ amplitude.init(AMPLITUDE_API_KEY, 'user@amplitude.com', options);
 | `serverZone`               | `EU` or  `US`. Sets the Amplitude server zone. Set this to `EU` for Amplitude projects created in `EU` data center.                                                                                                                                                                | `US`                                              |
 | `useBatch`                 | `boolean`. Sets whether to upload events to Batch API instead of the default HTTP V2 API or not.                                                                                                                                                                                   | `false`                                           |
 | `appVersion`               | `string`. Sets an app version for events tracked. This can be the version of your application. For example: "1.0.0"                                                                                                                                                                | `undefined`                                       |
-| `defaultTracking`          | `boolean`. Configures default event tracking. See [Track default events](#track-default-events).                                                                                                                                                                                   |  `true` |
+| `autocapture`          | `boolean|AutocaptureOptions`. Configures autocapture tracking.                                                                                                                                                                                    |  |
+| `defaultTracking`          | `boolean`. Deprecated. Use `autocapture` instead. Configures default event tracking. See [Track default events](#track-default-events).                                                                                                                                                                                   |  `true` |
 | `deviceId`                 | `string`. Sets an identifier for the device running your application.                                                                                                                                                                                                              | `UUID()`                                          |
 | `cookieOptions.domain`     | `string`. Sets the domain property of cookies created.                                                                                                                                                                                                                             | `undefined`                                       |
 | `cookieOptions.expiration` | `number`. Sets expiration of cookies created in days.                                                                                                                                                                                                                              | 365 days                                          |
@@ -109,6 +110,7 @@ amplitude.init(AMPLITUDE_API_KEY, 'user@amplitude.com', options);
 | `trackingOptions`          | `TrackingOptions`. Configures tracking of extra properties.                                                                                                                                                                                                                        | Enable all tracking options by default.           |
 | `transport`                | `string`. Sets request API to use by name. Options include `fetch` for fetch, `xhr` for `XMLHTTPRequest`, or  `beacon` for `navigator.sendBeacon`.                                                                                                                                 | `fetch`                                           |
 | `offline`                  | `boolean`. Whether the SDK connects to the network. See [Offline mode](#offline-mode)                                                                                                                                                                                            | `false`                                           |
+| `fetchRemoteConfig`        | `boolean`. Whether the SDK fetches remote configuration. See [Remote configurations](#remote-configuration)                                                                                                                                                                                    | `false`                                           |
 
 {{/partial:collapse}}
 
@@ -1197,3 +1199,19 @@ SPA typically don't experience a true page load after a visitor enters the site,
 
 - Control the page and location parameters and / or
 - Unset the referrer after the first hit
+
+### Remote configuration
+
+Beginning with version 2.10.0, the Amplitude Browser SDK supports remote config. By default, the SDK disables this feature.
+
+To enable remote config, add `fetchRemoteConfig: true` to the `amplitude.init()` call as shown below.
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  fetchRemoteConfig: true
+});
+```
+
+When remote config is enabled, the SDK will first check if remote config has been fetched within the same session. If so, it will use the remote config stored in the indexedDB. Otherwise, it will fetch remote config from the remote config endpoint. Note that remote config will override local config.
+
+You can set remote config in the Amplitude app "Data -> Manage -> Settings -> Autocapture". It currently supports `config.autocapture` only.
