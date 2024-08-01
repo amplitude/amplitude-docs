@@ -13,9 +13,9 @@ exclude_from_sitemap: false
 ---
 In an [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) or [Data Table](/docs/analytics/charts/data-tables/data-tables-multi-dimensional-analysis) chart, the *Formula* option in the Measured As module's *Advanced* drop down offers you greater flexibility when performing analyses. Custom formulas are also useful for comparing various analyses on the same chart.
 
-Choose from more than 20 custom formulas to plot the metrics you need. You can plot up to six formulas on the same chart, separated by semicolons. 
+Choose from more than 20 custom formulas to plot the metrics you need. You can plot up to 10 formulas on the same chart, separated by semicolons. 
 
-This article will describe the mechanics of custom formulas, with examples of formulas you can use right now.
+This article describes the mechanics of custom formulas, with examples of formulas you can use right now.
 
 {{partial:admonition type='note'}}
 While the Experiment Results chart also uses formula metrics, it does so in a different way than either the Event Segmentation or Data Table charts. To learn more about those differences, see [this Help Center article on using formula metrics in Amplitude's Experiment Results chart](/docs/analytics/charts/experiment-results/experiment-results-use-formula-metrics).
@@ -27,7 +27,7 @@ This feature is available to users on **Plus**, **Growth**, and **Enterprise** *
 
 ## Formula syntax
 
-In your formulas, refer to events selected in the Events Module by their corresponding letter. The functions and the parameters are not case sensitive. You can also perform the following arithmetic operations:
+In your formulas, refer to events selected in the Events Module by their corresponding letter. The functions and the parameters aren't case sensitive. You can also perform the following arithmetic operations:
 
 * Parenthesis ()
 * Addition (+)
@@ -35,7 +35,7 @@ In your formulas, refer to events selected in the Events Module by their corresp
 * Multiplication (\*)
 * Division (/)
 
-For example, the letter A in the formula `UNIQUES(A)` refers to the event `View Item Details` while the letter B in the formula `UNIQUES(B)` refers to the event `Add Item to Cart`. This setup will display the ratio of users who viewed an item's details to users who placed an item in their cart.
+For example, the letter A in the formula `UNIQUES(A)` refers to the event `View Item Details` while the letter B in the formula `UNIQUES(B)` refers to the event `Add Item to Cart`. This setup displays the ratio of users who viewed an item's details to users who placed an item in their cart.
 
 ![custom_formulas_1.png](/docs/output/img/event-segmentation/custom-formulas-1-png.png)
 
@@ -46,13 +46,13 @@ For example, if you have an event called `Page Name`, the following property val
 * `Tutorial` and `TUTORIAL` (the matching is case sensitive)
 * `1` and `1.0` (non-matching characters)
 
-The order in which you are grouping properties by matters as well. Both events must have the *grouped by* values in the same order; otherwise, you will see a warning that events have no matching group by values.
+The order in which you group properties matters as well. Both events must have the *grouped by* values in the same order; otherwise, Amplitude displays a warning that events have no matching group by values.
 
 ![custom_formulas_group_by_error.png](/docs/output/img/event-segmentation/custom-formulas-group-by-error-png.png)
 
 You can also use custom formulas to uncover how many more times users in one cohort trigger a particular event than do users in another cohort.
 
-To compare a metric between two different cohorts or user segments, add the number of the segment to the letter designating the event: `UNIQUES(A1)/UNIQUES(A2)`. This will display a ratio of the performance of your cohorts on the same event as a single plotted line on your graph. 
+To compare a metric between two different cohorts or user segments, add the number of the segment to the letter designating the event: `UNIQUES(A1)/UNIQUES(A2)`. This displays a ratio of the performance of your cohorts on the same event as a single plotted line on your graph. 
 
 ![custom_forumlas_2.png](/docs/output/img/event-segmentation/custom-forumlas-2-png.png)
 
@@ -67,7 +67,7 @@ This section lists available formulas by type: Metric, Aggregation, and Function
 
 ### Metrics formulas
 
-With metrics formulas, you can query on a metric for a particular event you are interested in. These formulas will be color-coded in green. Each metrics formula requires a letter corresponding to the event you're interested in as a parameter.
+With metrics formulas, query on a metric for a particular event that interests you. These formulas are color-coded in green. Each metrics formula requires a letter corresponding to the event you're interested in as a parameter.
 
 |                               |                                 |                     |                                   |
 | ----------------------------- | ------------------------------- | ------------------- | --------------------------------- |
@@ -79,7 +79,7 @@ With metrics formulas, you can query on a metric for a particular event you are 
 
 ### Aggregation formulas
 
-Aggregation formulas let you query on a **rolling average or rolling window** for the metric and event you are interested in. These formulas will be color-coded in purple. Each aggregation formula requires **three** components: the metric you are aggregating, the event you are interested in, and the interval to aggregate by.
+Aggregation formulas let you query on a **rolling average or rolling window** for the metric and event interests you. These formulas are color-coded in purple. Each aggregation formula requires **three** components: the metric you are aggregating, the event you are interested in, and the interval to aggregate by.
 
 |                   |                     |                     |                                 |
 | ----------------- | ------------------- | ------------------- | ------------------------------- |
@@ -148,7 +148,7 @@ Returns the inputted [percentile](https://en.wikipedia.org/wiki/Percentile) eve
 
 ![c_f_freqpercentile.png](/docs/output/img/event-segmentation/c-f-freqpercentile-png.png)
 
-You can then take this information and create a [behavioral cohort](/docs/analytics/behavioral-cohorts) of your power users and further analyze them to see what distinguishes them from users who are not in the cohort.
+You can then take this information and create a [behavioral cohort](/docs/analytics/behavioral-cohorts) of your power users and further analyze them to see what distinguishes them from users who aren't in the cohort.
 
 ### HIST
 
