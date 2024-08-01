@@ -7377,7 +7377,6 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
         'Statamic\\Http\\Controllers\\CP\\Updater\\UpdateProductController' => __DIR__ . '/..' . '/statamic/cms/src/Http/Controllers/CP/Updater/UpdateProductController.php',
         'Statamic\\Http\\Controllers\\CP\\Updater\\UpdaterController' => __DIR__ . '/..' . '/statamic/cms/src/Http/Controllers/CP/Updater/UpdaterController.php',
         'Statamic\\Http\\Controllers\\CP\\Users\\AccountController' => __DIR__ . '/..' . '/statamic/cms/src/Http/Controllers/CP/Users/AccountController.php',
-        'Statamic\\Http\\Controllers\\CP\\Users\\ExtractsFromUserFields' => __DIR__ . '/..' . '/statamic/cms/src/Http/Controllers/CP/Users/ExtractsFromUserFields.php',
         'Statamic\\Http\\Controllers\\CP\\Users\\PasswordController' => __DIR__ . '/..' . '/statamic/cms/src/Http/Controllers/CP/Users/PasswordController.php',
         'Statamic\\Http\\Controllers\\CP\\Users\\RolesController' => __DIR__ . '/..' . '/statamic/cms/src/Http/Controllers/CP/Users/RolesController.php',
         'Statamic\\Http\\Controllers\\CP\\Users\\UserActionController' => __DIR__ . '/..' . '/statamic/cms/src/Http/Controllers/CP/Users/UserActionController.php',
