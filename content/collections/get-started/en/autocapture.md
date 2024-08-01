@@ -69,11 +69,7 @@ If your web app configures the strict Content Security Policy (CSP) for security
 * Add `https://*.amplitude.com` to `script-src`
 * Add `https://*.amplitude.com` to `connect-src`
 
-### Autocapture for web features
-
-After you install and enable the SDK and plugin, the following features are available.
-
-#### Default events
+### Default events
 
 | Event           | Description                                              | Properties                                                                                                                                                                                       |
 | --------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -90,7 +86,7 @@ For more information, see Track Default Events in the [Browser SDK 2](/docs/sdks
 Amplitude prefixes default events with the Amplitude logo or `[Amplitude]` in plain text.
 {{/partial:admonition}}
 
-#### Marketing attribution
+### Marketing attribution
 
 Captures the following properties:
 
@@ -99,11 +95,11 @@ Captures the following properties:
 * Click identifiers for Google, Facebook, Kochava, Microsoft, TikTok, X (Twitter), LinkedIn, and Reddit.
 * [First-touch](/docs/sdks/analytics/browser/browser-sdk-2#first-touch-attribution) and [multi-touch](/docs/sdks/analytics/browser/browser-sdk-2#multi-touch-attribution). For more information about attribution, see [Use sessions, channels, and attribution to drive marketing analytics](/docs/analytics/marketing-analytics).
 
-#### User properties
+### User properties
 
 Amplitude attaches [User Properties](/docs/get-started/user-property-definitions) to all default event, unless disabled.
 
-#### Visual labeling for web (alpha)
+### Visual labeling for web (alpha)
 
 Amplitude's Visual Labeling tool enables you to identify and select individual elements on a page that you want to track. For example, if you want to track the number of users who click a **Sign up**, button you can select it with Visual Labeling, and Amplitude creates an event that targets the specific element.
 
@@ -143,12 +139,7 @@ Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 {{/partial:tab}}
 {{/partial:tabs}}
 
-
-### Autocapture for iOS features
-
-After you install and initialize the SDK, the following features are available.
-
-#### Default events
+### Default events
 
 | Event                    | Description                                                                  | Properties                           |
 | ------------------------ | ---------------------------------------------------------------------------- | ------------------------------------ |
@@ -160,7 +151,7 @@ After you install and initialize the SDK, the following features are available.
 | Application backgrounded | Captures when a user backgrounds the application.                            |                                      |
 | Screen viewed            | Captures when a user views a screen in an app.                               | Screen name                          |
 
-#### User properties
+### User properties
 
 Amplitude attaches [User Properties](/docs/get-started/user-property-definitions) to all default event, unless disabled.
 
@@ -186,7 +177,7 @@ Amplitude(
 )
 ```
 
-#### Default events
+### Default events
 
 | Event                    | Description                                                                  | Properties                           |
 | ------------------------ | ---------------------------------------------------------------------------- | ------------------------------------ |
@@ -198,7 +189,7 @@ Amplitude(
 | Application backgrounded | Captures when a user backgrounds the application.                            |                                      |
 | Screen viewed            | Captures when a user views a screen in an app.                               | Screen name                          |
 
-#### User properties
+### User properties
 
 Amplitude attaches [User Properties](/docs/get-started/user-property-definitions) to all default event, unless disabled.
 
