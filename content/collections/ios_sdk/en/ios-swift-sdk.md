@@ -299,11 +299,10 @@ When you enable this setting, Amplitude tracks the following events:
 - `[Amplitude] Application Updated`, this event fires when a user opens the application after updating the application, by observing the `UIApplicationDidFinishLaunchingNotification` notification underneath.
 - `[Amplitude] Application Opened`, this event fires when a user launches or foregrounds the application after the first open, by observing the `UIApplicationDidFinishLaunchingNotification` or `UIApplicationWillEnterForegroundNotification` notification underneath.
 - `[Amplitude] Application Backgrounded`, this event fires when a user backgrounds the application, by observing the `UIApplicationDidEnterBackgroundNotification` notification underneath.
-- 
+
 ### Track screen views
 
 Set `defaultTracking.screenViews` to `true` to enable Amplitude to track screen view events.
-
 
 {{partial:admonition type="warning" heading=""}}
 This feature is supported in UIKit. For Swift UI, track the corresponding event manually.
