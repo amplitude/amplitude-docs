@@ -33,7 +33,7 @@ For guided instructions to setting up this integration, view the [Loom video](ht
 
 - The User Look-Up page doesn't display 100 most recent events ingested.
 
-- Feature only supports delta tables for now. Databricks views, materialized views, and streaming tables are not supported since they don't support time travel yet.
+- Databricks [views](https://docs.databricks.com/en/views/index.html), [materialized views](https://docs.databricks.com/en/views/materialized.html), and [streaming tables](https://docs.databricks.com/en/delta-live-tables/index.html#streaming-table) are not supported by feature right now since they don't support time travel yet.
 
 ## Configure Databricks
 
