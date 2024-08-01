@@ -46,6 +46,9 @@ tree:
       -
         id: fb66467c-e050-4c9e-bdf6-e110f8abf58b
         entry: 95a8c851-e03e-4b3d-907b-d3381dd46957
+      -
+        id: 67e31de9-d899-47a7-8e8e-52be22d8a5b2
+        entry: 062d89f1-1e39-4f90-8490-1ee34c5647f9
   -
     id: 8699ae75-d49f-4d84-9090-0bef3527444c
     title: 'Build a Chart'
