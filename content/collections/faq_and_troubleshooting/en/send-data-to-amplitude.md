@@ -10,12 +10,23 @@ This article covers some frequently asked questions about [sending data to Ampli
 
 
 {{partial:collapse name="How are events calculated towards the monthly event volume limit?"}}
-Any events sent and processed through Amplitude’s ingestion system are counted toward the monthly limit. Event volume is calculated on a calendar month basis. On the first of every month, event volume is reset to zero. Any computed events in Amplitude (e.g. computed revenue events) do not count as separate events.
+Any events sent and processed through Amplitude’s ingestion system are counted toward the monthly limit. Event volume is calculated on a calendar month basis. On the first of every month, event volume is reset to zero. Any computed events in Amplitude (for example, computed revenue events) don't count as separate events.
 {{/partial:collapse}}
 
+{{partial:collapse name="What are Amplitude's limits on event types, event properties, and user properties?"}}
+Amplitude projects have the following limits:
+
+- Event types: 2000
+- Event properties: 2000
+- User properties: 1000
+
+If you exceed these limits, Amplitude ingests data as configured, but doesn't appear until you meet the limit.
+
+For example, if you have 2000 event types, and add four more, those new four event types don't appear until the total number of event types is 2000 or fewer.
+{{/partial:collapse}}
 
 {{partial:collapse name="I exceeded my 2000 event type per project instrumentation limit. Are the events that are sent after the 2000th event type still counted towards the monthly event volume limit?"}}
-Yes. Events that exceed the event type limit of 2000 events per project still count towards the monthly event limit. Although these events are not queryable within Amplitude itself, they are still ingested and can be viewed with Export API.
+Yes. Events that exceed the event type limit of 2000 events per project still count towards the monthly event limit. Although these events aren't queryable within Amplitude itself, they are still ingested and can be viewed with Export API.
 {{/partial:collapse}}
 
 
