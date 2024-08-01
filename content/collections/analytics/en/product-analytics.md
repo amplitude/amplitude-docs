@@ -51,6 +51,7 @@ The Product Overview, Onboarding, and Retention views also take advantage of the
 ### Product overview
 
 The Product Overview displays the baseline metrics:
+
 * Active users (unique)
 * New users (unique)
 * Avg. session duration
@@ -58,3 +59,17 @@ The Product Overview displays the baseline metrics:
 * Weekly active users
 
 ### Onboarding
+
+Onboarding displays a conversion funnel based on the events you defined during configuration.
+
+Break down conversion with the properties you defined during configuration. Breakdown shows overall conversion rate per value, and raw conversion numbers for each event.
+
+### Feature engagement
+
+Feature Engagement displays an engagement matrix with the features you defined plotted according to percent of daily active users (DAU) that engaged with the feature, and the average frequency with which users engaged with the feature.
+
+### Retention
+
+Retention contains three tabs that reflect your product's overall user retention, the retention over time, and the usage interval.
+
+Retention over time uses the Retention Interval values you set during configuration.
