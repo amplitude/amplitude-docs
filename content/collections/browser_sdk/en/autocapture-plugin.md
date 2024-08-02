@@ -26,13 +26,13 @@ Autocapture requires the latest versions of the Amplitude Browser SDK ({{sdk_ver
 {{partial:tab name="npm"}}
 ```bash
 npm install @amplitude/analytics-browser
-npm install @amplitude/plugin-autocapture-browser@beta
+npm install @amplitude/plugin-autocapture-browser
 ```
 {{/partial:tab}}
 {{partial:tab name="yarn"}}
 ```bash
 yarn add @amplitude/analytics-browser
-yarn add @amplitude/plugin-autocapture-browser@beta
+yarn add @amplitude/plugin-autocapture-browser
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
