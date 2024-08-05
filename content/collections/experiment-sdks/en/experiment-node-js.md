@@ -191,7 +191,13 @@ yarn add @amplitude/experiment-node-server
 import { Experiment } from '@amplitude/experiment-node-server';
 
 // (1) Initialize the local evaluation client with a server deployment key.
-const experiment = Experiment.initializeLocal('<DEPLOYMENT_KEY>');
+const experiment = Experiment.initializeLocal('<DEPLOYMENT_KEY>', {
+  // (Recommended) Enable local evaluation cohort targeting.
+  cohortConfig: {
+    apiKey: '<API_KEY>',
+    secretKey: '<SECRET_KEY>'
+  }
+});
 
 // (2) Start the local evaluation client.
 await experiment.start();
@@ -219,12 +225,8 @@ initializeLocal(apiKey: string, config?: LocalEvaluationConfig): LocalEvaluation
 | `apiKey` | required | The server [deployment key](/docs/experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
-{{partial:admonition type="tip" heading="Flag polling interval"}}
-Use the `flagConfigPollingIntervalMillis` [configuration](#configuration_1) to determine the time flag configs take to update once modified (default 30s).
-{{/partial:admonition}}
-
 {{partial:admonition type="tip" heading="Flag streaming"}}
-Use the `streamUpdates` [configuration](#configuration_1) to get flag config updates pushed to SDK (default false), instead of polling every `flagConfigPollingIntervalMillis` milliseconds. The time for SDK to receive the update after saving is generally under 1 second. It will fallback to polling if streaming failed. Configure `flagConfigPollingIntervalMillis` [configuration](#configuration_1) as well for fallback. 
+Use the `streamUpdates` [configuration](#configuration_1) to get flag config updates pushed to SDK (default false), instead of polling every `flagConfigPollingIntervalMillis` milliseconds. The time for SDK to receive the update after saving is generally under 1 second. It will fallback to polling if streaming failed. Configure `flagConfigPollingIntervalMillis` [configuration](#configuration_1) as well for fallback.
 {{/partial:admonition}}
 
 #### Configuration
@@ -243,6 +245,7 @@ You can configure the SDK client on initialization.
 | `streamUpdates` | Enable streaming to replace polling for receiving flag config updates. Instead of polling every second, our servers push updates to SDK generally within a second. If stream fails for any reason, it will fallback to polling automatically and retry streaming after some interval. | `false` |
 | `streamServerUrl` | The stream server url to stream from. | `https://stream.lab.amplitude.com` |
 | `streamFlagConnTimeoutMillis` | The timeout for establishing a valid flag config stream. This includes time for a connection to be established to stream server and time for receiving initial flag configs. | `1500` |
+| `cohortConfig` | Configuration to enable cohort downloading for local evaluation cohort targeting. | `undefined` |
 
 **AssignmentConfig**
 
@@ -252,11 +255,13 @@ You can configure the SDK client on initialization.
 | `cacheCapacity` | The maximum number of assignments stored in the assignment cache | `65536` |
 | [Analytics SDK Options](/docs/sdks/analytics/browser/browser-sdk-2#configuration) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
 
-{{partial:admonition type="info" heading="EU data center"}}
-If you're using Amplitude's EU data center, configure the `serverUrl` option on initialization to `https://api.lab.eu.amplitude.com`
+**CohortConfig**
 
-If you opted in for streaming flag config updates, configure the `streamServerUrl` option on initialization to `https://stream.lab.eu.amplitude.com`
-{{/partial:admonition}}
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `apiKey` | The analytics API key and NOT the experiment deployment key | *required* |
+| `secretKey` | The analytics secret key | *required* |
+| `maxCohortSize` | The maximum size of cohort that the SDK will download | `2147483647` |
 
 ### Start
 
@@ -302,6 +307,22 @@ const specificVariants = experiment.evaluateV2(user, [
   'my-local-flag-2',
 ]);
 ```
+
+## Local evaluation cohort targeting
+
+Since version `1.10.0`, the local evaluation SDK client supports downloading cohorts for local evaluation targeting. You must configure the `cohortConfig` option with the analytics `apiKey` and `secretKey` on initialization to enable this support.
+
+```js
+const experiment = Experiment.initializeLocal('<DEPLOYMENT_KEY>', {
+  // (Recommended) Enable local evaluation cohort targeting.
+  cohortConfig: {
+    apiKey: '<API_KEY>',
+    secretKey: '<SECRET_KEY>'
+  }
+});
+```
+
+Consider configuring the `maxCohortSize` to avoid downloading large cohorts which may cause your service to run out of memory. Cohorts that are too large will not be downloaded.
 
 ## Access Amplitude cookies
 
