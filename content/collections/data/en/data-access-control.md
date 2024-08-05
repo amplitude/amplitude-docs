@@ -6,8 +6,8 @@ this_article_will_help_you:
   - 'Easily prevent users from accessing sensitive or restricted information in Amplitude'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1722551768
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1722878855
 ---
 Enterprise-level organizations often collect data that can include revenue data, personally identifiable information (PII), and other sensitive information. Amplitude’s **data access control (DAC)** feature enables these organizations to easily manage access to these categories of data, in a way that prevents unauthorized users from gaining access to it, and that helps prevent the data from inadvertently leaking out.
 
@@ -16,7 +16,8 @@ DAC works within Amplitude’s Groups framework. Admins grant or restrict access
 For example, when an unauthorized user tries to view a chart that includes restricted information, Amplitude blocks the chart from loading on the user’s screen. Those users are also unable to create new charts that might include restricted data. This is true not only for charts, but also for cohorts, dashboards, notebooks, and user sessions.
 
 {{partial:admonition type='note'}}
-Organization admins always have access to all data classifications, regardless of any DAC restrictions.{{/partial:admonition}}
+Organization admins always have access to all data classifications, regardless of any DAC restrictions.
+{{/partial:admonition}}
 
 When a user encounters a chart they’re unable to view because of the presence of restricted data, Amplitude specifies the properties or cohorts DAC has blocked. 
 
@@ -26,11 +27,11 @@ The user can then exclude the restricted data and view the chart (or cohort, das
 
 ## Set access for specific categories of sensitive data
 
-Setting access levels is a two-stage process. First, you must **classify** your data. When that’s complete, you can set up **permissions**.
+Setting access levels is a two-stage process. First, y**classify** your data. When that’s complete, you can set up **permissions**.
 
-{{/partial:admonition type='note'}}
+{{partial:admonition type='note'}}
 DAC applies only to properties. It **doesn’t** apply to definitions or metadata.
-{{/partial:admonition}
+{{/partial:admonition}}
 
 ### Classify properties
 
