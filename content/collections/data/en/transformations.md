@@ -1,7 +1,7 @@
 ---
 id: 34900232-5084-4b90-89aa-0bccbc06a95b
 blueprint: data
-title: 'Transformations: Retroactively modify your event data structure'
+title: 'Using transformations to fix your data'
 source: 'https://help.amplitude.com/hc/en-us/articles/5913315221915-Transformations-Retroactively-modify-your-event-data-structure'
 this_article_will_help_you:
   - 'Understand and create the main types of transformations'
@@ -9,7 +9,7 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717621255
+updated_at: 1722896092
 ---
 Amplitude Data’s **transformations** feature allows you to transform event data in order to correct common implementation mistakes. Transformations are retroactive: you can create them whenever you want, and apply them to all historical data. This means you can make changes to your event data without having to touch your underlying code base. No matter when you recognize a mistake or want to make a change, you can use a transformation to correct all affected data, both historically and moving forward.
 

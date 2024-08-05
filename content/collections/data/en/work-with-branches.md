@@ -1,9 +1,13 @@
 ---
-title: "Work with branches"
-source: "https://help.amplitude.com/hc/en-us/articles/5078713391387-Work-with-branches"
 id: 1912398b-4b46-42ce-b63e-44d4f0f01881
+blueprint: data
+title: 'Working with branches'
+source: 'https://help.amplitude.com/hc/en-us/articles/5078713391387-Work-with-branches'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1722895188
 ---
-
 #### This article will help you:
 
 * Create and work with new branches of your tracking plan

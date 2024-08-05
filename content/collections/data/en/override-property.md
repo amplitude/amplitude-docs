@@ -1,7 +1,7 @@
 ---
 id: 1259587d-dfcf-4713-a57a-35b9f5660744
 blueprint: data
-title: 'Override a property'
+title: 'Override a property definition'
 source: 'https://help.amplitude.com/hc/en-us/articles/10831335547035-Override-a-property'
 this_article_will_help_you:
   - 'Understand the benefits of overriding a property'
@@ -9,7 +9,7 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717620722
+updated_at: 1722895748
 ---
 Overriding property details is helpful when you want to customize the property for a specific event or property group, without updating the **original** version or creating an entirely new event property. 
 

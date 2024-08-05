@@ -1,7 +1,7 @@
 ---
 id: 4116b5ac-6eb0-4b39-8b13-470a135f2143
 blueprint: data
-title: "Change an event's activity status"
+title: 'Event activity status'
 source: 'https://help.amplitude.com/hc/en-us/articles/17050354126619-Change-an-event-s-activity-status'
 this_article_will_help_you:
   - 'Understand what constitutes an active or inactive event'
@@ -9,7 +9,7 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717620469
+updated_at: 1722895620
 ---
 You can specify whether an event should be considered an **active** or **inactive** event. A good way to think about the difference is that an active event is one the user actively engaged with, like clicking the Add to Cart button. An **inactive** event is one that happened to the user, without any specific action on their part. Some good examples of this would be events like `Push Notification Sent` or `Message Received`.
 

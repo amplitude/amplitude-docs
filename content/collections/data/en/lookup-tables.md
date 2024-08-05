@@ -1,7 +1,7 @@
 ---
 id: a47ad425-cbf2-4408-bd10-17f889025d70
 blueprint: data
-title: 'Add more data to event and user properties with Lookup Tables'
+title: 'Lookup Tables'
 source: 'https://help.amplitude.com/hc/en-us/articles/8634149673627-Add-more-data-to-event-and-user-properties-with-Lookup-Tables'
 this_article_will_help_you:
   - 'Understand how adding a Lookup Table data source can enhance your event and user properties'
@@ -9,7 +9,7 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717622272
+updated_at: 1722896296
 ---
 With Amplitude's Lookup Table feature, you can import your own data and map it to ingested properties to create an enhanced set of event and user properties.
 
