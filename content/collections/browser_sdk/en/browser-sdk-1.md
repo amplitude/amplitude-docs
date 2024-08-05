@@ -2,7 +2,7 @@
 id: 8471af8b-e132-4073-8330-d5dd7bbbd8ae
 blueprint: browser_sdk
 title: 'Browser SDK 1'
-sdk_status: current
+sdk_status: maintenance
 article_type: core
 supported_languages:
   - js
@@ -13,7 +13,7 @@ bundle_url: 'https://www.npmjs.com/package/@amplitude/analytics-browser/v/1.13.4
 api_reference_url: 'https://amplitude.github.io/Amplitude-TypeScript/'
 shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/analytics-browser/v1.svg'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1721756281
+updated_at: 1722891605
 major_version: 1
 ampli_article: f7989230-bf1c-48aa-ad61-2bc2b3e15a8c
 migration_guide:
