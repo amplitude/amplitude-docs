@@ -12,15 +12,15 @@ releases_url: 'https://github.com/amplitude/Amplitude-TypeScript/releases?q=anal
 bundle_url: 'https://www.npmjs.com/package/@amplitude/analytics-browser'
 shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/analytics-browser/latest.svg'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1721756275
+updated_at: 1722891854
 major_version: 2
 ampli_article: 5afa91b7-c12d-425a-b4b6-661061e5843a
 exclude_from_sitemap: false
 source: 'https://www.docs.developers.amplitude.com/data/sdks/browser-2/'
-plugins:
-  - f0bf544a-7505-45ef-89ad-e7fe6ec71fbf
 package_name: '@amplitude/analytics-browser'
 platform: Browser
+migration_guide:
+  - 9b155be9-bb32-428c-9f49-6e00f9630547
 ---
 Amplitude's Browser SDK 2 lets you send events to Amplitude.
 
