@@ -10,6 +10,64 @@ supported_languages:
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718657468
 ---
+
+{{partial:admonition type="warning" heading="Autocapture plugin is deprecated"}}
+As of August 8, 2024, Amplitude's Autocapture plugin for the Browser SDK is deprecated.
+
+If you used the Autocapture plugin prior to August 8, Amplitude recommends that you remove the plugin from your instrumentation, and update Browser SDK to version 2.10.0 or above. Version 2.10.0 ships with Autocapture included.
+{{/partial:admonition}}
+
+## Update to the built-in Autocapture
+
+If you used the Autocapture plugin, and updated the Browser SDK to version 2.10.0 or newer, complete the following steps to remove the plugin, and used the Autocapture that ships with Browser SDK.
+
+### Script loader
+
+Replace your referenced script with the following snippet:
+
+```html
+<script type="text/javascript">
+!function(){"use strict";!function(e,t){var r=e.amplitude||{_q:[],_iq:{}};if(r.invoked)e.console&&console.error&&console.error("Amplitude snippet has been loaded.");else{var n=function(e,t){e.prototype[t]=function(){return this._q.push({name:t,args:Array.prototype.slice.call(arguments,0)}),this}},s=function(e,t,r){return function(n){e._q.push({name:t,args:Array.prototype.slice.call(r,0),resolve:n})}},o=function(e,t,r){e._q.push({name:t,args:Array.prototype.slice.call(r,0)})},i=function(e,t,r){e[t]=function(){if(r)return{promise:new Promise(s(e,t,Array.prototype.slice.call(arguments)))};o(e,t,Array.prototype.slice.call(arguments))}},a=function(e){for(var t=0;t<g.length;t++)i(e,g[t],!1);for(var r=0;r<m.length;r++)i(e,m[r],!0)};r.invoked=!0;var c=t.createElement("script");c.type="text/javascript",c.integrity="sha384-8fNco6Xiv+HOa+SIVGKVjByyY5LyircydGlHS9mXcHJpapcgF98L6UNOlauMTxJq",c.crossOrigin="anonymous",c.async=!0,c.src="https://cdn.amplitude.com/libs/analytics-browser-2.10.0-min.js.gz",c.onload=function(){e.amplitude.runQueuedFunctions||console.log("[Amplitude] Error: could not load SDK")};var u=t.getElementsByTagName("script")[0];u.parentNode.insertBefore(c,u);for(var l=function(){return this._q=[],this},p=["add","append","clearAll","prepend","set","setOnce","unset","preInsert","postInsert","remove","getUserProperties"],d=0;d<p.length;d++)n(l,p[d]);r.Identify=l;for(var f=function(){return this._q=[],this},y=["getEventProperties","setProductId","setQuantity","setPrice","setRevenue","setRevenueType","setEventProperties"],v=0;v<y.length;v++)n(f,y[v]);r.Revenue=f;var g=["getDeviceId","setDeviceId","getSessionId","setSessionId","getUserId","setUserId","setOptOut","setTransport","reset","extendSession"],m=["init","add","remove","track","logEvent","identify","groupIdentify","setGroup","revenue","flush"];a(r),r.createInstance=function(e){return r._iq[e]={_q:[]},a(r._iq[e]),r._iq[e]},e.amplitude=r}}(window,document)}();
+
+amplitude.init(AMPLITUDE_API_KEY, {
+  autocapture: {
+    elementInteractions: true,
+  },
+});
+</script>
+```
+
+### Npm or yarn
+
+If you use npm or yarn to add the Browser SDK, update the Browser SDK package, and remove the Autocapture plugin.
+
+```js
+// package.json
+{
+  "dependencies": {
+    "@amplitude/analytics-browser": "^2.10.0", // make sure the minimum version is 2.10.0
+    "@amplitude/plugin-autocapture-browser": "0.9.0", //[tl! --]
+  }
+}
+```
+
+In your script, remove references to the Autocapture plugin.
+
+```js
+import * as amplitude from '@amplitude/analytics-browser';
+import { autocapturePlugin } from '@amplitude/plugin-autocapture-browser'; //[tl! --]
+ 
+amplitude.init(AMPLITUDE_API_KEY); //[tl! --]
+amplitude.init(AMPLITUDE_API_KEY, { //[tl! ++: 4]
+  autocapture: {
+    elementInteractions: true,
+  },
+});
+amplitude.add(autocapturePlugin()); //[tl! --]
+```
+
+---
+
 Amplitude's Autocapture plugin extends the events and properties that Amplitude tracks by default, and enables Visual Labeling to enable you to define events based on elements on your site. For more information about Visual Labeling, see [Visual Labeling](/docs/data/visual-labeling).
 
 ## Installation
