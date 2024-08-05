@@ -1,14 +1,14 @@
 ---
 id: d15d30d7-05f6-498f-bf9c-9a7432322077
 blueprint: data
-title: 'Configure the Schema settings to handle unexpected data'
+title: 'Protect your schema from unexpected data'
 source: 'https://help.amplitude.com/hc/en-us/articles/360055495852-Configure-the-Schema-settings-to-handle-unexpected-data'
 this_article_will_help_you:
   - 'Eliminate Schema errors caused by unexpected data'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1720552894
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1722895369
 ---
 Sometimes, Amplitude might receive data from your app that it doesn't know what to do with. This is usually the result of a **schema violation,** and it means the data Amplitude has just received isn't accounted for in your schema. If you see a schema violation, you've probably neglected to plan for that particular data type or value when you first set up your schema.
 

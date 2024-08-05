@@ -1,22 +1,154 @@
 tree:
   -
-    id: 60a71f94-e900-46ec-baf1-d73161835907
-    entry: c5166da1-e099-4e0b-a870-b06b10057c19
+    id: ad9ea166-c4b2-4a3b-a8ad-5ff015b60200
+    title: 'Get started'
+    children:
+      -
+        id: 60a71f94-e900-46ec-baf1-d73161835907
+        entry: c5166da1-e099-4e0b-a870-b06b10057c19
+      -
+        id: 037c12ca-e0a1-41b6-a61b-87269d089de6
+        entry: 1bca668a-d50d-4e07-a0a9-a77016d8d5d3
+      -
+        id: 174b47f9-ffca-40af-bb9d-78a15d49fb1b
+        entry: 1017e95b-5dd2-46fc-82b4-54e61d4fb755
+      -
+        id: 01fcdf37-aa52-472c-abbe-80885ecf7976
+        entry: 2634b65f-264c-413f-bccd-8d8fb5dcd88f
+      -
+        id: b50df020-c7e3-4e2b-88e7-ea6e6a8a633d
+        entry: a856a44d-9cc7-4964-bf6b-7c15e69b0f2c
+      -
+        id: c08061ee-b6d3-4874-be1e-d5b2514195cd
+        entry: 8160e521-d064-46f7-bf1b-595dc1c56327
+      -
+        id: f11c6cd0-9c94-414c-9a97-a20e86ab59e0
+        entry: 9fbd24d0-c90c-497c-8cca-5b345f1058d6
+      -
+        id: eb30f600-7dc7-4768-834a-9d61e1090402
+        entry: 11423e67-aee4-4d24-9501-229b6065861b
   -
-    id: bb1a9f6b-7be3-4ac9-a242-acfd606af895
-    entry: 57f6f8ee-4044-4a3e-af34-c6d6eca409dc
+    id: 93c67f8d-a0ce-4d74-a32d-03e5e288ce41
+    title: 'Warehouse-native Amplitude'
+    children:
+      -
+        id: 534bac6a-fcd1-49db-9df9-599a6e4017c1
+        entry: 3d639f6c-44b5-4ece-b4a6-7af8b4277da0
+      -
+        id: bc3a9d38-a36c-4bf8-8184-b974787aed81
+        entry: e4734233-911d-4b24-bea6-570c05955b05
+      -
+        id: f97e4b0d-0ce0-48f7-9c70-1370598c8216
+        entry: 0aecc9dc-f80b-44f4-8ead-4ae0e4fd2603
   -
-    id: f11c6cd0-9c94-414c-9a97-a20e86ab59e0
-    entry: 9fbd24d0-c90c-497c-8cca-5b345f1058d6
+    id: 5c207df6-c244-493a-ae56-ba8deaa66fd3
+    title: 'Plan your Data'
+    children:
+      -
+        id: 041a701a-fb09-4c3f-9250-452165d66d22
+        entry: 2886ff4d-cb6d-4327-a412-83c4e5c3aff7
+      -
+        id: d01f4fba-b773-46d8-accb-2b5393a1f6ca
+        entry: 52bfe4df-5034-4e5d-bfce-81736bf4face
+      -
+        id: 3cbd213b-04b6-4b5c-b37e-afacdc938995
+        entry: f01c2196-6c7f-4ec9-9b62-2ed150653399
+      -
+        id: ad7ae0df-f870-4385-8714-993cc9d028af
+        entry: 1912398b-4b46-42ce-b63e-44d4f0f01881
+      -
+        id: a2047a94-7fab-43f5-abb8-2b285104c573
+        entry: 0ec04456-9c40-478d-a76e-a45f4c3e0628
+      -
+        id: d92c04ca-7468-483f-90cb-f4ad28d8ee2b
+        entry: dd311a35-601e-4713-b0cd-49fece790c20
+      -
+        id: 4b844179-6f1e-45ec-a021-f7fde78f5d5a
+        entry: d15d30d7-05f6-498f-bf9c-9a7432322077
+      -
+        id: d76e509e-6038-4c7c-b3cd-efba5b762102
+        entry: 0556731c-f68a-495e-b85f-8e813640d6b0
   -
-    id: c08061ee-b6d3-4874-be1e-d5b2514195cd
-    entry: 8160e521-d064-46f7-bf1b-595dc1c56327
+    id: 3d58b9f0-3bf3-4b37-b7ba-e61969f66d14
+    title: 'Organize your Data'
+    children:
+      -
+        id: bb1a9f6b-7be3-4ac9-a242-acfd606af895
+        entry: 57f6f8ee-4044-4a3e-af34-c6d6eca409dc
+      -
+        id: 6ac0be64-1583-4943-9867-ac268697694c
+        entry: eabe8de8-fe63-42b8-a93d-eb1d10884b43
+      -
+        id: ecbdb63f-dc25-44fd-a482-fc46c6bc9392
+        entry: 761569fa-61e0-451b-8c08-4f1d52b8e17e
+      -
+        id: b3e4594e-e96a-402f-ac38-99c8d89724dd
+        entry: ea221b5f-e025-4904-9343-245bafb90b65
+      -
+        id: 662824ed-25d3-4573-96b5-a01a46561efc
+        entry: 4116b5ac-6eb0-4b39-8b13-470a135f2143
+      -
+        id: 8d1f037f-b546-4963-84a3-8f266118c48e
+        entry: 09910eae-5073-45e2-9f8b-5b8cdb11806a
+      -
+        id: 4512faae-c8d0-4f61-9b7f-7457dc064b92
+        entry: 9771eb95-0cac-4de7-a34b-c65f7e157f67
+      -
+        id: 117426e4-0199-4bd3-a236-74f340015589
+        entry: 1259587d-dfcf-4713-a57a-35b9f5660744
+      -
+        id: f2eea3c0-51dc-4c62-910c-26f52fb026f5
+        entry: 4ae538ba-8ca1-4a0f-b93a-f89ce4b42db0
+      -
+        id: 2f4d2dc0-32b2-47fa-b329-1ca41922750c
+        entry: 73ffabf3-485b-4bb5-84a0-aea900f3dcad
+      -
+        id: 7f285103-e43e-496b-bd9b-c2f583ebe078
+        entry: 6389c912-154c-42fe-afea-07db4a295404
   -
-    id: 4512faae-c8d0-4f61-9b7f-7457dc064b92
-    entry: 9771eb95-0cac-4de7-a34b-c65f7e157f67
+    id: 0779f92f-a386-49c7-b231-c92046dd3e03
+    title: 'Clean your data'
+    children:
+      -
+        id: 19247ad4-2bcc-41a6-a36b-7c750a9a4a94
+        entry: 186f35a4-5184-46c4-8a96-16184ad038bb
+      -
+        id: 88973ab4-dc04-4a3e-b1c9-a17fc1f336d3
+        entry: 3b46d4e2-2ab2-43e2-bacf-19e133b534cf
+      -
+        id: 7bcc4ed0-4197-4fd9-8380-b0bdf91e74a8
+        entry: 9996cae3-403c-44be-9b25-61efb780a3e9
+      -
+        id: 5ea68126-865b-4ce1-be52-4d122514e67d
+        entry: acd3a1dc-ad94-4730-b859-280c46747eb7
+      -
+        id: 6dd7ed66-270b-4e42-a6c3-4d17aa9d8f93
+        entry: 34900232-5084-4b90-89aa-0bccbc06a95b
+      -
+        id: 77482cc4-a811-4976-abb6-56b02448ad08
+        entry: ba19562a-4957-464b-be1c-f86926c58289
   -
-    id: b50df020-c7e3-4e2b-88e7-ea6e6a8a633d
-    entry: a856a44d-9cc7-4964-bf6b-7c15e69b0f2c
+    id: e8cc25dc-5440-4548-8c35-17d9c672e4c7
+    title: 'Enrich your Data'
+    children:
+      -
+        id: fe9f9788-bd92-4f42-b9da-fe8609659743
+        entry: c2c4ceb7-94ab-44f8-967a-99ff8f07e800
+      -
+        id: 8fa0a996-04f9-4483-b702-2c293809af77
+        entry: 5062badd-ff0e-4efd-9c1a-d8d0809e6bdd
+      -
+        id: da09feea-cdbd-4acb-a118-0b23e096166c
+        entry: 66b1d5fc-c05b-4418-9cff-0be3286e437f
+      -
+        id: 5393ca67-74d4-4a28-9af4-d00b48c07ca6
+        entry: a47ad425-cbf2-4408-bd10-17f889025d70
+      -
+        id: 5d795727-8fee-4d68-8ad2-ad9ae27c7572
+        entry: ca26cfe2-d99f-498a-8581-6485a736d4bb
+  -
+    id: bd47ee5c-f2c0-4a7b-8616-82d7b1b14ace
+    entry: 59306913-18a3-4948-87c4-877316da591c
   -
     id: 7318ab4d-f08a-4c62-8dc1-bd1c642934dc
     title: Audiences
@@ -53,128 +185,6 @@ tree:
       -
         id: 04cd704d-f698-41cd-8567-f91d09b941fe
         entry: 8cdc1ed2-7236-4312-ae35-1efdb910c563
-  -
-    id: 93c67f8d-a0ce-4d74-a32d-03e5e288ce41
-    title: 'Warehouse-native Amplitude'
-    children:
-      -
-        id: 534bac6a-fcd1-49db-9df9-599a6e4017c1
-        entry: 3d639f6c-44b5-4ece-b4a6-7af8b4277da0
-      -
-        id: bc3a9d38-a36c-4bf8-8184-b974787aed81
-        entry: e4734233-911d-4b24-bea6-570c05955b05
-      -
-        id: f97e4b0d-0ce0-48f7-9c70-1370598c8216
-        entry: 0aecc9dc-f80b-44f4-8ead-4ae0e4fd2603
-  -
-    id: 5c207df6-c244-493a-ae56-ba8deaa66fd3
-    title: 'Data Planning'
-    children:
-      -
-        id: 037c12ca-e0a1-41b6-a61b-87269d089de6
-        entry: 1bca668a-d50d-4e07-a0a9-a77016d8d5d3
-      -
-        id: d01f4fba-b773-46d8-accb-2b5393a1f6ca
-        entry: 52bfe4df-5034-4e5d-bfce-81736bf4face
-      -
-        id: 041a701a-fb09-4c3f-9250-452165d66d22
-        entry: 2886ff4d-cb6d-4327-a412-83c4e5c3aff7
-      -
-        id: 3cbd213b-04b6-4b5c-b37e-afacdc938995
-        entry: f01c2196-6c7f-4ec9-9b62-2ed150653399
-      -
-        id: 2f4d2dc0-32b2-47fa-b329-1ca41922750c
-        entry: 73ffabf3-485b-4bb5-84a0-aea900f3dcad
-      -
-        id: ad7ae0df-f870-4385-8714-993cc9d028af
-        entry: 1912398b-4b46-42ce-b63e-44d4f0f01881
-      -
-        id: a2047a94-7fab-43f5-abb8-2b285104c573
-        entry: 0ec04456-9c40-478d-a76e-a45f4c3e0628
-  -
-    id: f24d8210-795f-44de-aaaf-665e1c8db67c
-    title: 'Manage Data'
-    children:
-      -
-        id: 6ac0be64-1583-4943-9867-ac268697694c
-        entry: eabe8de8-fe63-42b8-a93d-eb1d10884b43
-      -
-        id: 0779f92f-a386-49c7-b231-c92046dd3e03
-        title: 'Clean and Fix Data'
-        children:
-          -
-            id: 7bcc4ed0-4197-4fd9-8380-b0bdf91e74a8
-            entry: 9996cae3-403c-44be-9b25-61efb780a3e9
-          -
-            id: 662824ed-25d3-4573-96b5-a01a46561efc
-            entry: 4116b5ac-6eb0-4b39-8b13-470a135f2143
-          -
-            id: b3e4594e-e96a-402f-ac38-99c8d89724dd
-            entry: ea221b5f-e025-4904-9343-245bafb90b65
-          -
-            id: 5ea68126-865b-4ce1-be52-4d122514e67d
-            entry: acd3a1dc-ad94-4730-b859-280c46747eb7
-          -
-            id: ecbdb63f-dc25-44fd-a482-fc46c6bc9392
-            entry: 761569fa-61e0-451b-8c08-4f1d52b8e17e
-          -
-            id: 117426e4-0199-4bd3-a236-74f340015589
-            entry: 1259587d-dfcf-4713-a57a-35b9f5660744
-          -
-            id: 88973ab4-dc04-4a3e-b1c9-a17fc1f336d3
-            entry: 3b46d4e2-2ab2-43e2-bacf-19e133b534cf
-          -
-            id: f2eea3c0-51dc-4c62-910c-26f52fb026f5
-            entry: 4ae538ba-8ca1-4a0f-b93a-f89ce4b42db0
-          -
-            id: 8d1f037f-b546-4963-84a3-8f266118c48e
-            entry: 09910eae-5073-45e2-9f8b-5b8cdb11806a
-          -
-            id: 19247ad4-2bcc-41a6-a36b-7c750a9a4a94
-            entry: 186f35a4-5184-46c4-8a96-16184ad038bb
-          -
-            id: 6dd7ed66-270b-4e42-a6c3-4d17aa9d8f93
-            entry: 34900232-5084-4b90-89aa-0bccbc06a95b
-      -
-        id: e8cc25dc-5440-4548-8c35-17d9c672e4c7
-        title: 'Enrich your Data'
-        children:
-          -
-            id: fe9f9788-bd92-4f42-b9da-fe8609659743
-            entry: c2c4ceb7-94ab-44f8-967a-99ff8f07e800
-          -
-            id: 8fa0a996-04f9-4483-b702-2c293809af77
-            entry: 5062badd-ff0e-4efd-9c1a-d8d0809e6bdd
-          -
-            id: da09feea-cdbd-4acb-a118-0b23e096166c
-            entry: 66b1d5fc-c05b-4418-9cff-0be3286e437f
-          -
-            id: 5393ca67-74d4-4a28-9af4-d00b48c07ca6
-            entry: a47ad425-cbf2-4408-bd10-17f889025d70
-          -
-            id: 5d795727-8fee-4d68-8ad2-ad9ae27c7572
-            entry: ca26cfe2-d99f-498a-8581-6485a736d4bb
-      -
-        id: d92c04ca-7468-483f-90cb-f4ad28d8ee2b
-        entry: dd311a35-601e-4713-b0cd-49fece790c20
-      -
-        id: bd47ee5c-f2c0-4a7b-8616-82d7b1b14ace
-        entry: 59306913-18a3-4948-87c4-877316da591c
-      -
-        id: 7f285103-e43e-496b-bd9b-c2f583ebe078
-        entry: 6389c912-154c-42fe-afea-07db4a295404
-      -
-        id: d76e509e-6038-4c7c-b3cd-efba5b762102
-        entry: 0556731c-f68a-495e-b85f-8e813640d6b0
-      -
-        id: 4b844179-6f1e-45ec-a021-f7fde78f5d5a
-        entry: d15d30d7-05f6-498f-bf9c-9a7432322077
-      -
-        id: 77482cc4-a811-4976-abb6-56b02448ad08
-        entry: ba19562a-4957-464b-be1c-f86926c58289
-      -
-        id: eb30f600-7dc7-4768-834a-9d61e1090402
-        entry: 11423e67-aee4-4d24-9501-229b6065861b
   -
     id: c2f4f77f-a780-4fa5-adc9-cfc5076045d5
     title: Integrations

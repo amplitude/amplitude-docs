@@ -1,7 +1,7 @@
 ---
 id: dd311a35-601e-4713-b0cd-49fece790c20
 blueprint: data
-title: 'Validate events with Observe'
+title: 'Monitor your data with observe'
 source: 'https://help.amplitude.com/hc/en-us/articles/5078870942363-Validate-events-with-Observe'
 this_article_will_help_you:
   - 'Understand how the Observe feature helps you better manage your event data for accuracy'
@@ -10,7 +10,7 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717622737
+updated_at: 1722895310
 ---
 A big challenge for data, product, and growth teams is a lack of visibility into the state of their data collection. Often, teams rely on manual testing, broken charts, and gut feel to continually validate their product analytics.
 

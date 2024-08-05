@@ -1,14 +1,14 @@
 ---
 id: 73ffabf3-485b-4bb5-84a0-aea900f3dcad
 blueprint: data
-title: 'Streamline property updates with property groups'
+title: 'Using property groups'
 source: 'https://help.amplitude.com/hc/en-us/articles/5078762828699-Streamline-property-updates-with-property-groups'
 this_article_will_help_you:
   - "Update changes you've made to properties across multiple events simultaneously"
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717620189
+updated_at: 1722895847
 ---
 With **property groups**, you can define groups of properties so Amplitude Data can apply them to events quickly.
 

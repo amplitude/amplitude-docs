@@ -1,7 +1,7 @@
 ---
 id: 761569fa-61e0-451b-8c08-4f1d52b8e17e
 blueprint: data
-title: 'Display names in Amplitude Data'
+title: 'Event and property display names'
 source: 'https://help.amplitude.com/hc/en-us/articles/16805727661211-Display-names-in-Amplitude-Data'
 this_article_will_help_you:
   - 'Understand the benefits to using a display name for an event or user property'
@@ -9,7 +9,7 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717620601
+updated_at: 1722895571
 ---
 By default, a display name in Amplitude Data is whatever it was called in your tracking plan. However, these can be difficult to read, understand, and incorporate directly into your analyses. For this reason, you can give your events and user properties new display names that offer an easy-to-read description of their purpose and content.
 
