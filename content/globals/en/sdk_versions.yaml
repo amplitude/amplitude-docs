@@ -1,5 +1,5 @@
 browser: 2.10.0
-visual_labeling_plugin: 1.0.0-beta.3
+visual_labeling_plugin: 1.0.0
 session_replay_plugin: 1.4.0
 session_replay_standalone: 1.6.0
 session_replay_android_plugin: 0.6.5

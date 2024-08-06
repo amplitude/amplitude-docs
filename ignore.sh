@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # List of users
-users=("markzegarelli" "SpencerFleury")
+users=("markzegarelli" "SpencerFleury" "Theodore Chao")
 
 # Get the contributor of the last commit
 last_contributor=$(git log -1 --pretty=format:'%an')
