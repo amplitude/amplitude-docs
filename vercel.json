@@ -477,6 +477,11 @@
       "statusCode": 301
     },
     {
+      "destination": "/docs/data/destination-catalog/hubspot",
+      "source": "/docs/data/destinations/hubspot-event-streaming/",
+      "statusCode": 301
+    },
+    {
       "destination": "/docs/data/destination-catalog/hubspot-cohort-sync",
       "source": "/docs/data/destinations/hubspot-cohort",
       "statusCode": 301
