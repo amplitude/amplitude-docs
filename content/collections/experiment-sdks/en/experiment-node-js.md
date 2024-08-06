@@ -308,7 +308,7 @@ const specificVariants = experiment.evaluateV2(user, [
 ]);
 ```
 
-## Local evaluation cohort targeting
+### Local evaluation cohort targeting
 
 Since version `1.10.0`, the local evaluation SDK client supports downloading cohorts for local evaluation targeting. You must configure the `cohortConfig` option with the analytics `apiKey` and `secretKey` on initialization to enable this support.
 
