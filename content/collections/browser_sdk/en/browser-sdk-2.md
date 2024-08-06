@@ -30,7 +30,7 @@ Install the dependency with npm, yarn, or the script loader.
 
 {{partial:tabs tabs="Script loader, npm, yarn"}}
 {{partial:tab name="Script loader"}}
-Get the latest snippet from [GitHub](https://github.com/amplitude/Amplitude-TypeScript/tree/main/packages/analytics-browser#installing-via-script-loader).
+{{partial:partials/code/snippet autocapture="true"}}
 {{/partial:tab}}
 {{partial:tab name="npm"}}
 ```bash
