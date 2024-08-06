@@ -14,50 +14,43 @@ Amplitude's Autocapture helps you gain insights as soon as you install the SDK. 
 When you use them together, Amplitude's latest [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) and [Autocapture plugin](/docs/sdks/analytics/browser/autocapture-plugin) captures default events, form field interactions, and marketing attribution information. 
 
 ### Install the SDK and plugin
-Autocapture requires the latest versions of the Amplitude Browser SDK ({{sdk_versions:browser}}) and the Autocapture plugin ({{sdk_versions:visual_labeling_plugin}})
+Autocapture requires the latest versions of the Amplitude Browser SDK ({{sdk_versions:browser}}).
 
 {{partial:tabs tabs="Script Loader, npm, yarn"}}
 {{partial:tab name="Script Loader"}}
-```html
-<script defer src="https://cdn.amplitude.com/libs/analytics-browser-{{sdk_versions:browser}}-min.js.gz"></script>
-<script defer src="https://cdn.amplitude.com/libs/plugin-autocapture-browser-{{sdk_versions:visual_labeling_plugin}}-min.js.gz"></script>
-```
+{{partial:partials/code/snippet autocapture="true"}}
 {{/partial:tab}}
 {{partial:tab name="npm"}}
 ```bash
 npm install @amplitude/analytics-browser
-npm install @amplitude/plugin-autocapture-browser
 ```
 {{/partial:tab}}
 {{partial:tab name="yarn"}}
 ```bash
 yarn add @amplitude/analytics-browser
-yarn add @amplitude/plugin-autocapture-browser
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
 
-### Initialize the SDK and plugin
+### Initialize the SDK
 
-The Amplitude Browser SDK supports a [plugin architecture](/docs/sdks/sdk-plugins) that enables features like Autocapture. To enable the plugin, update your code with one of the following snippets, depending on your implementation. Both methods require that you define the Autocapture plugin, then call `add()` to enable it.
+Autocapture ships with Browser SDK 2.10.0 and above. To enable it, set `config.autocapture.elementInteractions` to `true` when you initialize the SDK.
 
 {{partial:tabs tabs="Script loader, npm / yarn"}}
 {{partial:tab name="Script loader"}}
-```html
-<script type="module">
-  window.amplitude.init(AMPLITUDE_API_KEY)
-  const autocapturePlugin = window.amplitudeAutocapturePlugin.plugin();
-  window.amplitude.add(autocapturePlugin);
-</script>
-```
+{{partial:partials/code/snippet autocapture="true"}}
 {{/partial:tab}}
 {{partial:tab name="npm / yarn"}}
 ```js
 import * as amplitude from '@amplitude/analytics-browser';
 import { autocapturePlugin } from '@amplitude/plugin-autocapture-browser';
 
-amplitude.init(AMPLITUDE_API_KEY);
-amplitude.add(autocapturePlugin());
+amplitude.init('AMPLITUDE_API_KEY', {
+  autocapture: {
+    elementInteractions: true
+  }
+});
+
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
