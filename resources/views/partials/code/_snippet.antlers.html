@@ -1,0 +1,53 @@
+{{if session_replay&&autocapture}}
+{{markdown}}
+```html
+<script src="https://cdn.amplitude.com/libs/analytics-browser-{{sdk_versions.browser}}-min.js.gz"></script>
+<script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-{{sdk_versions.session_replay_plugin}}-min.js.gz"></script>
+<script>
+    window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1})).promise.then(function() {
+        window.amplitude.init('AMPLITUDE_API_KEY', {
+        autocapture: {
+            elementInteractions: true
+        }
+    });});
+</script>
+```
+{{/markdown}}
+
+{{elseif autocapture}}
+{{markdown}}
+```html
+<script src="https://cdn.amplitude.com/libs/analytics-browser-{{sdk_versions.browser}}-min.js.gz"></script>
+<script>
+    window.amplitude.init('AMPLITUDE_API_KEY', {
+        autocapture: {
+            elementInteractions: true
+        }
+    });
+</script>
+```
+{{/markdown}}
+{{elseif session_replay}}
+
+{{markdown}}
+```html
+<script src="https://cdn.amplitude.com/libs/analytics-browser-{{sdk_versions.browser}}-min.js.gz"></script>
+<script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-{{sdk_versions.session_replay_plugin}}-min.js.gz"></script>
+<script>
+window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1})).promise.then(function() {window.amplitude.init('AMPLITUDE_API_KEY');});
+</script>
+```
+{{/markdown}}
+
+{{else}}
+
+{{markdown}}
+```html
+<script src="https://cdn.amplitude.com/libs/analytics-browser-{{sdk_versions.browser}}-min.js.gz"></script>
+<script>
+    window.amplitude.init('AMPLITUDE_API_KEY');
+</script>
+```
+{{/markdown}}
+{{/if}}
+
