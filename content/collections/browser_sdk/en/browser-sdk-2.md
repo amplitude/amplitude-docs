@@ -30,6 +30,7 @@ Install the dependency with npm, yarn, or the script loader.
 
 {{partial:tabs tabs="Script loader, npm, yarn"}}
 {{partial:tab name="Script loader"}}
+When you use the script loader and enable Autocapture, Browser SDK track interactions on your site automatically. For more information, see [Autocapture](#autocapture).
 {{partial:partials/code/snippet autocapture="true"}}
 {{/partial:tab}}
 {{partial:tab name="npm"}}
@@ -94,8 +95,8 @@ amplitude.init(AMPLITUDE_API_KEY, 'user@amplitude.com', options);
 | `serverZone`               | `EU` or  `US`. Sets the Amplitude server zone. Set this to `EU` for Amplitude projects created in `EU` data center.                                                                                                                                                                | `US`                                              |
 | `useBatch`                 | `boolean`. Sets whether to upload events to Batch API instead of the default HTTP V2 API or not.                                                                                                                                                                                   | `false`                                           |
 | `appVersion`               | `string`. Sets an app version for events tracked. This can be the version of your application. For example: "1.0.0"                                                                                                                                                                | `undefined`                                       |
-| `autocapture`          | `boolean|AutocaptureOptions`. Configures autocapture tracking.                                                                                                                                                                                    |  |
-| `defaultTracking`          | `boolean`. Deprecated. Use `autocapture` instead. Configures default event tracking. See [Track default events](#track-default-events).                                                                                                                                                                                   |  `true` |
+| `autocapture`              | `boolean\|AutocaptureOptions`. Configures autocapture tracking. See [Autocapture](#autocapture).                                                                                                                                                                                    |  |
+| `autocapture`          | `boolean`. Deprecated. Use `autocapture` instead. Configures default event tracking.                                                                                                                                                                                  |  `true` |
 | `deviceId`                 | `string`. Sets an identifier for the device running your application.                                                                                                                                                                                                              | `UUID()`                                          |
 | `cookieOptions.domain`     | `string`. Sets the domain property of cookies created.                                                                                                                                                                                                                             | `undefined`                                       |
 | `cookieOptions.expiration` | `number`. Sets expiration of cookies created in days.                                                                                                                                                                                                                              | 365 days                                          |
@@ -144,70 +145,30 @@ Control the level of logs the SDK prints to the console with the following `logL
 | `verbose` | Shows informative messages.                                                                                                                                  |
 | `debug`   | Shows all messages, including function context information for each public method the SDK invokes. Amplitude recommends this log level for development only. |
 
-## Track an event
+## Autocapture
 
-Events represent how users interact with your application. For example, "Button Clicked" might be an action you want to track.
+{{partial:admonition type="warning" heading="`autocapture` is deprecated"}}
+As of Browser SDK version 2.10.0, `autocapture` is deprecated and replaced by `autocapture`.
+{{/partial:admonition}}
 
-```ts
-// Track a basic event
-amplitude.track('Button Clicked');
-
-// Track events with optional properties
-const eventProperties = {
-  buttonColor: 'primary',
-};
-amplitude.track('Button Clicked', eventProperties);
-```
-
-You can also pass a `BaseEvent` object to `track`. For more information, see the [BaseEvent](https://amplitude.github.io/Amplitude-TypeScript/interfaces/_amplitude_analytics_browser.Types.BaseEvent.html) interface for all available fields.
-
-```ts
-const event_properties = {
-  buttonColor: 'primary',
-};
-
-const event = {
-  event_type: "Button Clicked", 
-  event_properties,
-  groups: { 'role': 'engineering' },
-  group_properties: { 'groupPropertyKey': 'groupPropertyValue' }
-};
-
-amplitude.track(event);
-```
-
-## Track events to multiple projects
-
-By default, Amplitude SDKs send data to one Amplitude project. To send data to more than one project, add an instance of the Amplitude SDK for each project you want to receive data. Then, pass instance variables to wherever you want to call Amplitude. Each instance allows for independent `apiKey`, `userId`, `deviceId`, and `settings` values.
-
-```ts
-const defaultInstance = amplitude.createInstance();
-defaultInstance.init(API_KEY_DEFAULT);
-
-const envInstance = amplitude.createInstance();
-envInstance.init(API_KEY_ENV, {
-  instanceName: 'env',
-});
-```
-
-## Track default events
-
-Starting in SDK version 1.9.1, the Browser SDK tracks default events, and adds a configuration to control the collection of default events. Browser SDK tracks the following default events:
+Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you enable it, and adds a configuration to control the collection of autocaptured events. Browser SDK can autocapture the following event types:
 
 - Attribution
 - Page views
 - Sessions
 - Form interactions
 - File downloads
+- Element interactions
 
 {{partial:collapse name="Default event tracking options"}}
 | Name                                      | Value               | Description                                                                                                                                                                                                                                                                                                                                                                                                     |
 | ----------------------------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `config.defaultTracking.attribution`      | Optional. `boolean` | Enables/disables marketing attribution tracking. If value is `true`, Amplitude tracks marketing attribution events. Default value is `true`.                                                                                                                                                                                                                                                                    |
-| `config.defaultTracking.pageViews`        | Optional. `boolean` | Enables/disables default page view tracking. If value is `true`, Amplitude tracks page view events on initialization. Default value is `true`.<br /><br />Event properties tracked includes: `[Amplitude] Page Domain`, `[Amplitude] Page Location`, `[Amplitude] Page Path`, `[Amplitude] Page Title`, `[Amplitude] Page URL`. See [Track page views](#track-page-views) for more information. |
-| `config.defaultTracking.sessions`         | Optional. `boolean` | Enables/disables session tracking. If value is `true`, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting is `false`, Amplitude tracks `sessionId` only. See [Track sessions](#track-sessions) for more information.                                                                                                   |
-| `config.defaultTracking.formInteractions` | Optional. `boolean` | Enables/disables form interaction tracking. If value is `true`, Amplitude tracks form start and form submit events. Default value is `true`.<br /><br />Event properties tracked includes: `[Amplitude]  Form ID`, `[Amplitude] Form Name`, `[Amplitude] Form Destination`. See [Track form interactions](#track-form-interactions) for more information.                                       |
-| `config.defaultTracking.fileDownloads`    | Optional. `boolean` | Enables/disables file download tracking. If value is `true`, Amplitude tracks file download events otherwise. Default value is `true`.<br /><br />Event properties tracked includes: `[Amplitude] File Extension`, `[Amplitude] File Name`, `[Amplitude] Link ID`, `[Amplitude] Link Text`, `[Amplitude] Link URL`. See [Track file downloads](#track-file-downloads) for more information.     |
+| `config.autocapture.attribution`      | Optional. `boolean` | Enables/disables marketing attribution tracking. If `true`, Amplitude tracks marketing attribution events. Default value is `true`.                                                                                                                                                                                                                                                                    |
+| `config.autocapture.pageViews`        | Optional. `boolean` | Enables/disables default page view tracking. If `true`, Amplitude tracks page view events on initialization. Default value is `true`.<br /><br />Event properties tracked includes: `[Amplitude] Page Domain`, `[Amplitude] Page Location`, `[Amplitude] Page Path`, `[Amplitude] Page Title`, `[Amplitude] Page URL`. See [Track page views](#track-page-views) for more information. |
+| `config.autocapture.sessions`         | Optional. `boolean` | Enables/disables session tracking. If `true`, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting is `false`, Amplitude tracks `sessionId` only. See [Track sessions](#track-sessions) for more information.                                                                                                   |
+| `config.autocapture.formInteractions` | Optional. `boolean` | Enables/disables form interaction tracking. If `true`, Amplitude tracks form start and form submit events. Default value is `true`.<br /><br />Event properties tracked includes: `[Amplitude]  Form ID`, `[Amplitude] Form Name`, `[Amplitude] Form Destination`. See [Track form interactions](#track-form-interactions) for more information.                                       |
+| `config.autocapture.fileDownloads`    | Optional. `boolean` | Enables/disables file download tracking. If `true`, Amplitude tracks file download events otherwise. Default value is `true`.<br /><br />Event properties tracked includes: `[Amplitude] File Extension`, `[Amplitude] File Name`, `[Amplitude] Link ID`, `[Amplitude] Link Text`, `[Amplitude] Link URL`. See [Track file downloads](#track-file-downloads) for more information.     |
+| `config.autocapture.elementInteractions` | Optional. `boolean` | Enables/disables element interaction tracking. If `true`, Amplitude tracks interactions with all elements on the page. |
 
 {{/partial:collapse}}
 
@@ -216,18 +177,19 @@ To disable default tracking, see the following code sample. If you do nothing, t
 ```ts
 // Disable individual default tracked events
 amplitude.init(AMPLITUDE_API_KEY, {
-  defaultTracking: {
+  autocapture: {
     attribution: false,
     pageViews: false,
     sessions: false,
     formInteractions: false,
     fileDownloads: false,
+    elementInteractions: false,
   },
 });
 
 // Disable all default tracked events
 amplitude.init(AMPLITUDE_API_KEY, {
-  defaultTracking: false,
+  autocapture: false,
 });
 ```
 
@@ -340,11 +302,11 @@ Amplitude tracks the following as user properties:
 - `rdt_cid`
 {{/partial:collapse}}
 
-Set `config.defaultTracking.attribution` to `false` to disable marketing attribution tracking.
+Set `config.autocapture.attribution` to `false` to disable marketing attribution tracking.
 
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
-  defaultTracking: {
+  autocapture: {
     attribution: false, //[tl! highlight]
   },
 });
@@ -355,19 +317,19 @@ amplitude.init(AMPLITUDE_API_KEY, {
 {{partial:collapse name="Marketing attribution configuration"}}
 | Name                                                           | Value                                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | -------------------------------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `config.defaultTracking.attribution.excludeReferrers`          | Optional. Array of `string` or `RegExp` | Sets rules to decide which referrers to exclude from tracking as traffic source. Use string values for exact matching and RegExp values for pattern matching against the referring domain. When this option isn't set, the SDK excludes the current domain (and its subdomains). If explicitly adding an external referrer to exclude, you must also add the current domain (and its subdomains) as more referrers to exclude. |
-| `config.defaultTracking.attribution.initialEmptyValue`         | Optional. `string`                      | Sets the value to represent undefined/no initial campaign parameter for first-touch attribution. The default value is `"EMPTY`.                                                                                                                                                                                                                                                                                                |
-| `config.defaultTracking.attribution.resetSessionOnNewCampaign` | Optional. `boolean`                     | Configures Amplitude to start a new session if any campaign parameter changes. The default value is `false`.                                                                                                                                                                                                                                                                                                                   |
+| `config.autocapture.attribution.excludeReferrers`          | Optional. Array of `string` or `RegExp` | Sets rules to decide which referrers to exclude from tracking as traffic source. Use string values for exact matching and RegExp values for pattern matching against the referring domain. When this option isn't set, the SDK excludes the current domain (and its subdomains). If explicitly adding an external referrer to exclude, you must also add the current domain (and its subdomains) as more referrers to exclude. |
+| `config.autocapture.attribution.initialEmptyValue`         | Optional. `string`                      | Sets the value to represent undefined/no initial campaign parameter for first-touch attribution. The default value is `"EMPTY`.                                                                                                                                                                                                                                                                                                |
+| `config.autocapture.attribution.resetSessionOnNewCampaign` | Optional. `boolean`                     | Configures Amplitude to start a new session if any campaign parameter changes. The default value is `false`.                                                                                                                                                                                                                                                                                                                   |
 
 {{/partial:collapse}}
 
 ##### Exclude referrers
 
 {{partial:admonition type="note" heading=""}}
-All sub-configurations of `config.defaultTracking.attribution` take effect only on user properties and do **NOT** affect the event properties of the default page view events. 
+All sub-configurations of `config.autocapture.attribution` take effect only on user properties and do **NOT** affect the event properties of the default page view events. 
 {{/partial:admonition}}
 
-The default value of `config.defaultTracking.attribution.excludeReferrers` is the top level domain with cookie storage enabled. For example, if you initialize the SDK on `https://www.docs.developers.amplitude.com/`, the SDK first checks `amplitude.com`. If it doesn't allow cookie storage, then the SDK checks `developers.amplitude.com` and subsequent subdomains. If it allows cookie storage, then the SDK sets `excludeReferrers` to an RegExp object `/amplitude\.com$/` which matches and then exlucdes tracking referrers from all subdomains of `amplitude.com`, for example, `data.amplitude.com`, `analytics.amplitude.com` and etc. 
+The default value of `config.autocapture.attribution.excludeReferrers` is the top level domain with cookie storage enabled. For example, if you initialize the SDK on `https://www.docs.developers.amplitude.com/`, the SDK first checks `amplitude.com`. If it doesn't allow cookie storage, then the SDK checks `developers.amplitude.com` and subsequent subdomains. If it allows cookie storage, then the SDK sets `excludeReferrers` to an RegExp object `/amplitude\.com$/` which matches and then exlucdes tracking referrers from all subdomains of `amplitude.com`, for example, `data.amplitude.com`, `analytics.amplitude.com` and etc. 
 
 In addition to excluding referrers from the default configuration, you can add other domains by setting the custom `excludeReferrers`. Custom `excludeReferrers` overrides the default values. For example, to also exclude referrers from `google.com`, set `excludeReferrers` to `[/amplitude\.com$/, 'google.com']`.
 
@@ -376,7 +338,7 @@ Track complete web attribution, including self-referrals, for comprehensive insi
 
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
-  defaultTracking: {
+  autocapture: {
     attribution: {
       // Override the default setting to exclude all subdomains
       excludeReferrers: [],
@@ -391,7 +353,7 @@ For customers who want to exclude tracking campaign from any referrers across al
 
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
-    defaultTracking: {
+    autocapture: {
     attribution: {
       excludeReferrers: [/your-domain\.com$/, 'www.test.com'],
     },
@@ -405,7 +367,7 @@ For customers who want to exclude tracking campaign from all referrers across al
 
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
-  defaultTracking: {
+  autocapture: {
     attribution: {
       excludeReferrers: [/test\.com$/],
     },
@@ -418,11 +380,11 @@ amplitude.init(AMPLITUDE_API_KEY, {
 
 Amplitude tracks page view events by default. The default behavior sends a page view event on initialization. The event type for this event is `[Amplitude] Page Viewed`.
 
-Set `config.defaultTracking.pageViews` to `false` to disable page view tracking.
+Set `config.autocapture.pageViews` to `false` to disable page view tracking.
 
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
-  defaultTracking: {
+  autocapture: {
     pageViews: false, //[tl! highlight]
   },
 });
@@ -435,9 +397,9 @@ Use the advanced configuration to better control when the SDK sends page view ev
 {{partial:collapse name="Tracking page views options"}}
 | Name                                                   | Value                                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | ------------------------------------------------------ | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `config.defaultTracking.pageViews.trackOn`             | Optional. `"attribution"` or `() => boolean` | Provides advanced control for when the SDK tracks page view events. Omit or set the value to `undefined`, and configure the SDK to track page view events to on initialization. Set the value to `"attribution"` and configure the SDK to track page view events to only when it tracks web attribution. Set the value to a function that returns a boolean (`true` or `false`) and configure the SDK to track page view events to based on your criteria.                                                                                                                                                     |
-| `config.defaultTracking.pageViews.trackHistoryChanges` | Optional. `"pathOnly"` or `"all"`            | Provides advanced control for single page application for when the SDK tracks page views. Omit or set the value to `"all"`, and configure the SDK to track page view events on any navigation change to the URL within your single page application. For example: navigating from `https://amplitude.com/#company` to `https://amplitude.com/#blog`. Set the value to `pathOnly`, and configure the SDK to track page view events on navigation change to the URL path only within your single page application. For example: navigating from `https://amplitude.com/company` to `https://amplitude.com/blog`. |
-| `config.defaultTracking.pageViews.eventType`           | Optional. `string`                           | Customize the event\_type for page view event.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `config.autocapture.pageViews.trackOn`             | Optional. `"attribution"` or `() => boolean` | Provides advanced control for when the SDK tracks page view events. Omit or set the value to `undefined`, and configure the SDK to track page view events to on initialization. Set the value to `"attribution"` and configure the SDK to track page view events to only when it tracks web attribution. Set the value to a function that returns a boolean (`true` or `false`) and configure the SDK to track page view events to based on your criteria.                                                                                                                                                     |
+| `config.autocapture.pageViews.trackHistoryChanges` | Optional. `"pathOnly"` or `"all"`            | Provides advanced control for single page application for when the SDK tracks page views. Omit or set the value to `"all"`, and configure the SDK to track page view events on any navigation change to the URL within your single page application. For example: navigating from `https://amplitude.com/#company` to `https://amplitude.com/#blog`. Set the value to `pathOnly`, and configure the SDK to track page view events on navigation change to the URL path only within your single page application. For example: navigating from `https://amplitude.com/company` to `https://amplitude.com/blog`. |
+| `config.autocapture.pageViews.eventType`           | Optional. `string`                           | Customize the event\_type for page view event.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 
 {{/partial:collapse}}
 
@@ -445,7 +407,7 @@ For example, you can configure Amplitude to track page views only when the URL p
 
 ```ts
 amplitude.init(API_KEY, OPTIONAL_USER_ID, {
-  defaultTracking: {
+  autocapture: {
     pageViews: { //[tl! highlight:2]
       trackOn: () => {
         return window.location.pathname.includes('home');
@@ -459,7 +421,7 @@ Browser SDK tracks the following information in page view events.
 
 | Name                                         | Description                                                                                                                                         | Default Value                                 |
 | -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
-| `event_type`                                 | `string`. The event type for page view event. Configurable through `defaultTracking.pageViews.eventType` or enrichment plugin.                      | `[Amplitude] Page Viewed` from version 1.9.1. |
+| `event_type`                                 | `string`. The event type for page view event. Configurable through `autocapture.pageViews.eventType` or enrichment plugin.                      | `[Amplitude] Page Viewed` from version 1.9.1. |
 | `event_properties.[Amplitude] Page Domain`   | `string`. The page domain.                                                                                                                          | location.hostname or ''.                      |
 | `event_properties.[Amplitude] Page Location` | `string`. The page location.                                                                                                                        | location.href or ''.                          |
 | `event_properties.[Amplitude] Page Path`     | `string`. The page path.                                                                                                                            | location.path or ''.                          |
@@ -473,11 +435,11 @@ See [this example](https://github.com/amplitude/Amplitude-TypeScript/blob/main/e
 
 Amplitude tracks session events by default. A session is the period of time a user has your website open. See [How Amplitude defines sessions](https://help.amplitude.com/hc/en-us/articles/115002323627-Track-sessions-in-Amplitude#how-amplitude-defines-sessions) for more information. When a new session starts, Amplitude tracks a session start event and is the first event of the session. The event type for session start is `[Amplitude] Start Session`. When an existing session ends, Amplitude tracks a session end event, which is the last event of the session. The event type for session end is `[Amplitude] End Session`.
 
-You can opt out of tracking session events by setting `config.defaultTracking.sessions` to `false`. Refer to the code sample below.
+You can opt out of tracking session events by setting `config.autocapture.sessions` to `false`. Refer to the code sample below.
 
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
-  defaultTracking: {
+  autocapture: {
     sessions: false, //[tl! highlight]
   },
 });
@@ -496,11 +458,11 @@ Amplitude can track forms constructed with `<form>` tags and `<input>` tags nest
 </form>
 ```
 
-Set `config.defaultTracking.formInteractions` to `false` to disable form interaction tracking
+Set `config.autocapture.formInteractions` to `false` to disable form interaction tracking
 
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
-  defaultTracking: {
+  autocapture: {
     formInteractions: false, //[tl! highlight]
   },
 });
@@ -512,13 +474,59 @@ Amplitude tracks file download events by default. The SDK tracks `[Amplitude] Fi
 
 `pdf|xlsx?|docx?|txt|rtf|csv|exe|key|pp(s|t|tx)|7z|pkg|rar|gz|zip|avi|mov|mp4|mpe?g|wmv|midi?|mp3|wav|wma`
 
-Set `config.defaultTracking.fileDownloads` to `false` to disable file download tracking.
+Set `config.autocapture.fileDownloads` to `false` to disable file download tracking.
 
 ```ts
 amplitude.init(AMPLITUDE_API_KEY, {
-  defaultTracking: {
+  autocapture: {
     fileDownloads: false,
   },
+});
+```
+
+## Track an event
+
+Events represent how users interact with your application. For example, "Button Clicked" might be an action you want to track.
+
+```ts
+// Track a basic event
+amplitude.track('Button Clicked');
+
+// Track events with optional properties
+const eventProperties = {
+  buttonColor: 'primary',
+};
+amplitude.track('Button Clicked', eventProperties);
+```
+
+You can also pass a `BaseEvent` object to `track`. For more information, see the [BaseEvent](https://amplitude.github.io/Amplitude-TypeScript/interfaces/_amplitude_analytics_browser.Types.BaseEvent.html) interface for all available fields.
+
+```ts
+const event_properties = {
+  buttonColor: 'primary',
+};
+
+const event = {
+  event_type: "Button Clicked", 
+  event_properties,
+  groups: { 'role': 'engineering' },
+  group_properties: { 'groupPropertyKey': 'groupPropertyValue' }
+};
+
+amplitude.track(event);
+```
+
+## Track events to multiple projects
+
+By default, Amplitude SDKs send data to one Amplitude project. To send data to more than one project, add an instance of the Amplitude SDK for each project you want to receive data. Then, pass instance variables to wherever you want to call Amplitude. Each instance allows for independent `apiKey`, `userId`, `deviceId`, and `settings` values.
+
+```ts
+const defaultInstance = amplitude.createInstance();
+defaultInstance.init(API_KEY_DEFAULT);
+
+const envInstance = amplitude.createInstance();
+envInstance.init(API_KEY_ENV, {
+  instanceName: 'env',
 });
 ```
 
@@ -1178,7 +1186,7 @@ Tracking occurs when either of the following applies:
 
 | Rule                                                                 | Example                                                                                                                                                            |
 | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| The current subdomain is not an excluded referrer.                   | The referrer does not originates from the same domain or the current subdomain is not match any referrer in `config.defaultTracking.attribution.excludeReferrers`. |
+| The current subdomain is not an excluded referrer.                   | The referrer does not originates from the same domain or the current subdomain is not match any referrer in `config.autocapture.attribution.excludeReferrers`. |
 | No previous campaign.                                                | A user's initial visit.                                                                                                                                            |
 | There is an introduction of new UTM parameter or Click ID parameter. | If any utm parameters or Click ID parameters have been dropped during a session, we will unset it.                                                                 |
 | The referrer domain changes to a new one.                            | Referrer domain changed from `a.test.com` to `b.test-new.com`                                                                                                      |
@@ -1188,8 +1196,8 @@ Amplitude doesn't track marketing attribution under any of the following conditi
 | Rule                                                                                                                   | Example                                                                                                                                                    |
 | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | The referrer originates from the same domain with default configuration.                                               | The landing page is `a.test.com`, with the referrer set to `b.test.com`.                                                                                   |
-| A specific referrer domain is explicitly excluded.                                                                     | When setting `config.defaultTracking.attribution.excludeReferrers` = `[a.test.com]`, and the referrer domain is `a.test.com` for the current page.         |
-| The subdomain is specified or matches the regular expression in `config.defaultTracking.attribution.excludeReferrers`. | Configuration of excludeReferrers involves specific string arrays or a regular expression.                                                                 |
+| A specific referrer domain is explicitly excluded.                                                                     | When setting `config.autocapture.attribution.excludeReferrers` = `[a.test.com]`, and the referrer domain is `a.test.com` for the current page.         |
+| The subdomain is specified or matches the regular expression in `config.autocapture.attribution.excludeReferrers`. | Configuration of excludeReferrers involves specific string arrays or a regular expression.                                                                 |
 | The user engages in direct traffic within the same session.                                                            | During a session, a user clicks on a link without any campaign attribution parameters, including the absence of UTM and click id parameters from an email. |
 | SPA redirect without page reloading                                                                                    | During a session, a user clicks on a link without any campaign attribution parameters, including the absence of UTM and click id parameters from an email. |
 
@@ -1202,7 +1210,7 @@ SPA typically don't experience a true page load after a visitor enters the site,
 
 ### Remote configuration
 
-Beginning with version 2.10.0, the Amplitude Browser SDK supports remote config. By default, the SDK disables this feature.
+Beginning with version 2.10.0, the Amplitude Browser SDK supports remote configuration. By default, the SDK disables this feature.
 
 To enable remote config, add `fetchRemoteConfig: true` to the `amplitude.init()` call as shown below.
 
@@ -1212,6 +1220,10 @@ amplitude.init(AMPLITUDE_API_KEY, {
 });
 ```
 
-When remote config is enabled, the SDK will first check if remote config has been fetched within the same session. If so, it will use the remote config stored in the indexedDB. Otherwise, it will fetch remote config from the remote config endpoint. Note that remote config will override local config.
+When remote config is enabled, the SDK checks if remote configuration has been fetched within the same session. If so, it uses the remote configuration stored in the indexedDB. Otherwise, it fetches the remote configuration from the remote configuration endpoint.
 
-You can set remote config in the Amplitude app "Data -> Manage -> Settings -> Autocapture". It currently supports `config.autocapture` only.
+{{partial:admonition type="note" heading=""}}
+Remote configuration supports Autocapture settings, and overrides settings you configure locally.
+{{/partial:admonition}}
+
+In Amplitude, navigate to *Data > Manage > Settings > Autocapture* to add or update a remote configuration.
