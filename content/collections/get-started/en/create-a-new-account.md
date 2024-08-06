@@ -18,6 +18,10 @@ Once you sign up and activate your account, Amplitude prompts you to connect you
 
 {{partial:partials/code/snippet autocapture="true" session_replay="true"}}
 
+{{partial:admonition type="note" heading="Session Replay sample rate"}}
+When you add Session Replay to the snippet, Amplitude sets the Sample Rate to `1`. This ensures you can verify the implementation during testing. In production, Amplitude recommends you set this value lower to account for your monthly quota. For more information, see [Session Replay Plugin | Sampling rate](/docs/session-replay/session-replay-plugin#sampling-rate)
+{{/partial:admonition}}
+
 Amplitude inserts your API key in the snippet as necessary. Paste the snippet in the `head` tag of each page you want to track user behavior, create a feature flag, or build a cohort.
 
 This snippet installs and initializes the [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) and any extra features you enable.
@@ -27,8 +31,6 @@ After you install the snippet, browser your site to allow Amplitude to verify th
 ![](statamic://asset::help_center_conversions::get-started/data-flowing.png)
 
 When Amplitude verifies that it can receive events, click **Next** to create your first chart, and optionally save it as a dashboard.
-
-
 
 ## Other ways to install
 
