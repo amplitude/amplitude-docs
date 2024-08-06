@@ -31,3 +31,4 @@ php artisan key:generate
 # BUILD STATIC SITE
 npm run prod
 php please ssg:generate --workers=4
+npx torchlight

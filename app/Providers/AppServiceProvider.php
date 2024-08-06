@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Markdown::addExtensions(function () {
-            return [new TorchlightExtension, new HeadingPermalinkExtension];
+            // return [new TorchlightExtension, new HeadingPermalinkExtension];
         });
     }
 }
