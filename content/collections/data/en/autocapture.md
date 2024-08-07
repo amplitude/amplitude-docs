@@ -2,10 +2,11 @@
 id: 1017e95b-5dd2-46fc-82b4-54e61d4fb755
 blueprint: data
 title: Autocapture
-landing: false
+landing: true
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1722883100
+updated_at: 1723072396
+landing_blurb: 'Autocapture is the fastest way to capture information about your website or app with minimal setup.'
 ---
 Amplitude's Autocapture is the fastest way to capture information about your website or app with minimal setup. Once enabled, Autocapture captures user interactions on your site with no pre-planning or complex engineering work. It's a great way to get started and uncover insights quickly.
 
