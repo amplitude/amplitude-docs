@@ -28,19 +28,6 @@ tree:
         id: eb30f600-7dc7-4768-834a-9d61e1090402
         entry: 11423e67-aee4-4d24-9501-229b6065861b
   -
-    id: 93c67f8d-a0ce-4d74-a32d-03e5e288ce41
-    title: 'Warehouse-native Amplitude'
-    children:
-      -
-        id: 534bac6a-fcd1-49db-9df9-599a6e4017c1
-        entry: 3d639f6c-44b5-4ece-b4a6-7af8b4277da0
-      -
-        id: bc3a9d38-a36c-4bf8-8184-b974787aed81
-        entry: e4734233-911d-4b24-bea6-570c05955b05
-      -
-        id: f97e4b0d-0ce0-48f7-9c70-1370598c8216
-        entry: 0aecc9dc-f80b-44f4-8ead-4ae0e4fd2603
-  -
     id: 5c207df6-c244-493a-ae56-ba8deaa66fd3
     title: 'Plan your Data'
     children:
@@ -149,6 +136,19 @@ tree:
   -
     id: bd47ee5c-f2c0-4a7b-8616-82d7b1b14ace
     entry: 59306913-18a3-4948-87c4-877316da591c
+  -
+    id: 93c67f8d-a0ce-4d74-a32d-03e5e288ce41
+    title: 'Warehouse-native Amplitude'
+    children:
+      -
+        id: 534bac6a-fcd1-49db-9df9-599a6e4017c1
+        entry: 3d639f6c-44b5-4ece-b4a6-7af8b4277da0
+      -
+        id: bc3a9d38-a36c-4bf8-8184-b974787aed81
+        entry: e4734233-911d-4b24-bea6-570c05955b05
+      -
+        id: f97e4b0d-0ce0-48f7-9c70-1370598c8216
+        entry: 0aecc9dc-f80b-44f4-8ead-4ae0e4fd2603
   -
     id: 7318ab4d-f08a-4c62-8dc1-bd1c642934dc
     title: Audiences
