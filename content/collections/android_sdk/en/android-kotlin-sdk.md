@@ -65,7 +65,7 @@ If you use Maven in your project, the .jar is available on Maven Central with th
 | `optOut` | `Boolean`. Opt the user out of tracking. | `false` |
 | ~`trackingSessionEvents`~ (Deprecated. Use [`autocapture`](#autocapture) instead.)| `Boolean`. Automatic tracking of "Start Session" and "End Session" events that count toward event volume. | `false` |
 | ~`defaultTracking`~ (Deprecated. Use [`autocapture`](#autocapture) instead.) | `DefaultTrackingOptions`. Enable tracking of default events for sessions, app lifecycles, screen views, and deep links. | `DefaultTrackingOptions(sessions = true)` |
-| `autocapture` | `Set<AutocaptureOption>`. A `Set` of Options to enable tracking of default events for sessions, app lifecycles, screen views, deep links, and element interactions. | If the parameter is not set, `AutocaptureOption.SESSIONS` is added to the `Set` by default. For more information, see [Autocapture](#autocapture).|
+| `autocapture` | `Set<AutocaptureOption>`. A `Set` of Options to enable tracking of default events for sessions, app lifecycles, screen views, deep links, and element interactions. | If the parameter isn't set, `AutocaptureOption.SESSIONS` is added to the `Set` by default. For more information, see [Autocapture](#autocapture).|
 | `minTimeBetweenSessionsMillis` | `Long`. The amount of time for session timeout. The value is in milliseconds. | `300000` |
 | `serverUrl` | `String`. The server url events upload to. | `https://api2.amplitude.com/2/httpapi` |
 | `serverZone` | `ServerZone.US` or `ServerZone.EU`. The server zone to send to, will adjust server url based on this config. | `ServerZone.US` |
@@ -238,7 +238,7 @@ amplitude.identify(identify)
 
 ## Autocapture <a id="track-default-events"></a>
 
-Starting from release v1.10.1, the SDK is able to track more events without manual instrumentation. It can be configured to track the following events automatically:
+Starting from release v1.17.0, the SDK is able to track more events without manual instrumentation. It can be configured to track the following events automatically:
 
 - Sessions <sup>[1](#fn:1)</sup>
 - App lifecycles
@@ -249,7 +249,7 @@ Starting from release v1.10.1, the SDK is able to track more events without manu
 {{partial:collapse name="Autocapture options"}}
 | Name | Type | Set by Default | Description |
 | --- | --- | --- | --- |
-| `SESSIONS` | `AutocaptureOption` | Yes | Enables session tracking. If the option is set, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting is not set, Amplitude tracks `sessionId` only. See [Track sessions](#track-sessions) for more information. |
+| `SESSIONS` | `AutocaptureOption` | Yes | Enables session tracking. If the option is set, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting isn't set, Amplitude tracks `sessionId` only. See [Track sessions](#track-sessions) for more information. |
 | `APP_LIFECYCLES` | `AutocaptureOption` | No | Enables application lifecycle events tracking. If the option is set, Amplitude tracks application installed, application updated, application opened, and application backgrounded events. Event properties tracked includes: `[Amplitude] Version`, `[Amplitude] Build`, `[Amplitude] Previous Version`, `[Amplitude] Previous Build`, `[Amplitude] From Background`. See [Track application lifecycles](#track-application-lifecycles) for more information. |
 | `SCREEN_VIEWS` | `AutocaptureOption` | No | Enables screen views tracking. If the option is set, Amplitude tracks screen viewed events. Event properties tracked includes: `[Amplitude] Screen Name`. See [Track screen views](#track-screen-views) for more information. |
 | `DEEP_LINKS` | `AutocaptureOption` | No | Enables deep link tracking. If the option is set, Amplitude tracks deep link opened events. Event properties tracked includes: `[Amplitude] Link URL`, `[Amplitude] Link Referrer`. See [Track deep links](#track-deep-links) for more information. |
@@ -279,7 +279,7 @@ val amplitude = Amplitude(
   )
 )
 ```
-By default, if the `autocapture` configuration is not explicitly set during `Configuration` initialization, `configuration.autocapture` will automatically include `AutocaptureOption.SESSIONS`.
+By default, if the `autocapture` configuration isn't explicitly set during `Configuration` initialization, `configuration.autocapture` will automatically include `AutocaptureOption.SESSIONS`.
 
 If you want to prevent automatic session events capture, set `autocapture` without the `AutocaptureOption.SESSIONS` option.
 ```kotlin
@@ -311,7 +311,7 @@ configuration.getAutocapture().addAll(Arrays.asList(
 
 Amplitude amplitude = new Amplitude(configuration);
 ```
-By default, if the `autocapture` configuration is not explicitly set during `Configuration` initialization, `configuration.getAutocapture()` will automatically include `AutocaptureOption.SESSIONS`.
+By default, if the `autocapture` configuration isn't explicitly set during `Configuration` initialization, `configuration.getAutocapture()` will automatically include `AutocaptureOption.SESSIONS`.
 
 If you want to prevent automatic session events capture, remove the `AutocaptureOption.SESSIONS` option from `autocapture`.
 ```java
@@ -473,7 +473,7 @@ After enabling this setting, Amplitude will track the `[Amplitude] Deep Link Ope
 Amplitude can track user interactions with clickable elements with support for both classic Android Views as well as Jetpack Compose. To enable this option, include `AutocaptureOption.ELEMENT_INTERACTIONS` in the `autocapture` configuration. 
 
 {{partial:admonition type="note" heading=""}}
-The `AutocaptureOption.ELEMENT_INTERACTIONS` option is experimental. We'd love your feedback! Try it out and share your thoughts on our [GitHub](https://github.com/amplitude/Amplitude-Kotlin).
+The `AutocaptureOption.ELEMENT_INTERACTIONS` option is experimental. Try it out and share your thoughts on our [GitHub](https://github.com/amplitude/Amplitude-Kotlin).
 {{/partial:admonition}}
 
 {{partial:tabs tabs="Kotlin, Java"}}
