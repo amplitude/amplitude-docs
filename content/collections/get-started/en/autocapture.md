@@ -1,7 +1,7 @@
 ---
 id: 062d89f1-1e39-4f90-8490-1ee34c5647f9
 blueprint: get-started
-title: Autocapture
+title: Use Autocapture to get fast insights
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
@@ -38,7 +38,7 @@ Autocapture ships with Browser SDK 2.10.0 and above. To enable it, set `config.a
 
 {{partial:tabs tabs="Script loader, npm / yarn"}}
 {{partial:tab name="Script loader"}}
-{{partial:partials/code/snippet autocapture="true"}}
+No extra initialization required.
 {{/partial:tab}}
 {{partial:tab name="npm / yarn"}}
 ```js

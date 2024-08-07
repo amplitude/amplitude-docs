@@ -147,10 +147,6 @@ Control the level of logs the SDK prints to the console with the following `logL
 
 ## Autocapture
 
-{{partial:admonition type="warning" heading="`autocapture` is deprecated"}}
-As of Browser SDK version 2.10.0, `autocapture` is deprecated and replaced by `autocapture`.
-{{/partial:admonition}}
-
 Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you enable it, and adds a configuration to control the collection of autocaptured events. Browser SDK can autocapture the following event types:
 
 - Attribution
@@ -160,7 +156,7 @@ Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you 
 - File downloads
 - Element interactions
 
-{{partial:collapse name="Default event tracking options"}}
+{{partial:collapse name="Autocapture options"}}
 | Name                                      | Value               | Description                                                                                                                                                                                                                                                                                                                                                                                                     |
 | ----------------------------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `config.autocapture.attribution`      | Optional. `boolean` | Enables/disables marketing attribution tracking. If `true`, Amplitude tracks marketing attribution events. Default value is `true`.                                                                                                                                                                                                                                                                    |
@@ -172,7 +168,9 @@ Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you 
 
 {{/partial:collapse}}
 
-To disable default tracking, see the following code sample. If you do nothing, the SDK tracks all default events.
+### Disable Autocapture
+
+To disable Autocapture, see the following code sample.
 
 ```ts
 // Disable individual default tracked events

@@ -13,17 +13,24 @@ tabs:
               width: 50
               localizable: false
           -
-            handle: node
+            handle: browser_sdk_sha
             field:
               type: text
-              display: Node
-              width: 50
+              display: 'Browser SDK SHA'
               localizable: false
+              width: 50
           -
             handle: android
             field:
               type: text
               display: Android
+              width: 50
+              localizable: false
+          -
+            handle: node
+            field:
+              type: text
+              display: Node
               width: 50
               localizable: false
           -

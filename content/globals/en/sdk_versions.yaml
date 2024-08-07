@@ -1,4 +1,5 @@
 browser: 2.10.0
+browser_sdk_sha: sha384-8fNco6Xiv+HOa+SIVGKVjByyY5LyircydGlHS9mXcHJpapcgF98L6UNOlauMTxJq
 visual_labeling_plugin: 1.0.0
 session_replay_plugin: 1.4.0
 session_replay_standalone: 1.6.0
