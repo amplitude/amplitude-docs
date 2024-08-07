@@ -11,9 +11,9 @@ Amplitude's Autocapture helps you gain insights as soon as you install the SDK. 
 
 ## Autocapture for the web
 
-When you use them together, Amplitude's latest [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) and [Autocapture plugin](/docs/sdks/analytics/browser/autocapture-plugin) captures default events, form field interactions, and marketing attribution information. 
+Amplitude's Browser SDK 2.10.0 and above include Autocapture to help you capture events, interactions, and attribution on your site.
 
-### Install the SDK and plugin
+### Install the Browser SDK
 Autocapture requires the latest versions of the Amplitude Browser SDK ({{sdk_versions:browser}}).
 
 {{partial:tabs tabs="Script Loader, npm, yarn"}}
@@ -92,7 +92,7 @@ Captures the following properties:
 
 Amplitude attaches [User Properties](/docs/get-started/user-property-definitions) to all default event, unless disabled.
 
-### Visual labeling for web (alpha)
+### Visual labeling for web
 
 Amplitude's Visual Labeling tool enables you to identify and select individual elements on a page that you want to track. For example, if you want to track the number of users who click a **Sign up**, button you can select it with Visual Labeling, and Amplitude creates an event that targets the specific element.
 
