@@ -53,9 +53,22 @@ In the event's fly-out tab, you can:
 
 ## Labeled events and event volume
 
-
 When you enable Autocapture, Amplitude begins tracking click and page change events on your site. These events count towards your total event volume. Labeled events act like a virtual layer on top of these events, and help define a specific type of click and use that click in an analysis. As a result, labeled events don't impact event volume beyond Autocapture.
 
 For example, a well-instrumented site may see 10,000 events per day, and Autocapture may add as many as 2,000 events per day. This means the site would see a 20% increase in daily events. A less-instrumented site may see only 1,000 instrumented events per day. The plugin adding another 2,000 events counts as a 200% increase.
 
 In both cases, the increase in daily events comes from tracking click and page change events. Labeled events don't impact the event count.
+
+## Limitations
+
+* **Event Streams**: Labeled events don't appear in the Live Event Stream, user lookup event stream, or Session Replay streams. You can view raw `Element clicked` and `Element changed` events.
+* **Google Chrome extension**: The Amplitude Event Explorer Chrome extensions displays raw events sent from the browser only.
+
+## Troubleshooting
+
+**I don't see the visual labeling experience on my site**
+
+If you don't see the Visual Labeling tools on your site, check the following:
+
+* If you have pop-up or adblocking tools enabled, they can interfere with the Visual Labeling experience. Disable the adblocker and retry.
+* If the URL you entered redirects to another URL, the Visual Labeling experience may not load. For security reasons, the domain of the page you're labeling needs to match the domain that you entered in Amplitude.
