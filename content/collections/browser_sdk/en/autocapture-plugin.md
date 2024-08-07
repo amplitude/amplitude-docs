@@ -12,9 +12,9 @@ updated_at: 1718657468
 ---
 
 {{partial:admonition type="warning" heading="Autocapture plugin is deprecated"}}
-Starting with Browser SDK version 2.10.0, Autocapture functionality is included with the SDK. 
+Starting with Browser SDK version 2.10.0, Amplitude includes [Autocapture](/docs/get-started/autocapture) functionality with the SDK. 
 
-For best results, Amplitued recommends that you upgrade to Browser SDK 2.10.0 or higher using the following instructions.
+For best results, Amplitude recommends that you upgrade to Browser SDK 2.10.0 or higher using the following instructions.
 {{/partial:admonition}}
 
 ## Update to the built-in Autocapture

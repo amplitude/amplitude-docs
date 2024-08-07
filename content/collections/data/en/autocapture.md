@@ -7,3 +7,82 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1722883100
 ---
+Amplitude's Autocapture is the fastest way to capture information about your website or app with minimal setup. Once enabled, Autocapture captures user interactions on your site with no pre-planning or complex engineering work. It's a great way to get started and uncover insights quickly.
+
+## Availability
+
+Autocapture is available for all Amplitude plans.
+
+* On your website, a single [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) snippet lets you capture sessions, page views, clicks, form interactions, file downloads, and other marketing attribution data. You can also use visual labeling to navigate your site and create new events from the click information.
+* On iOS and Android, the [iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk) and [Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk) capture application installs and upgrades, sessions, page views, and more.
+
+## Autocapture and precision tracking
+
+Amplitude offers two primary ways to capture events:
+
+* Autocapture automatically collects a predefined set of events and properties in a standardized taxonomy using our SDKs.
+* Precision tracking allows you to instrument events and properties specific to your business needs and desired analyses.
+
+With Autocapture, you get basic analytics with minimal engineering. From the moment you install the SDK, Amplitude collects data to gain insights into feature usage, funnel conversion rates, and even specific click analysis on the web. This solution is best to help you get running quickly.
+
+If you have follow-up questions about specific actions in your application that require additional context-specific metadata, or have some events (like a purchase event) that may be core to your business, Amplitude supports Precision tracking. Precise tracking in code allows you to send these events with a robust set of properties to perform even deeper analyses.
+
+With Amplitude, you don't need to choose. Both solutions go hand-in-hand, and you can use a combination of Autocapture and precision tracking data in your analyses.
+
+For example, if you’re in a scenario where you  release a new feature and don't have the time to implement precision tracking. With Autocapture, you can proceed with the release knowing you have a safety net to get your baseline metrics and answer engagement questions. Once you have some insights and want to go deeper, you can work with your team to implement precisely tracked events and get the best of both worlds.
+
+## Optimize event volume
+
+Autocapture provides several configuration options to help you adjust your implementation to your needs. You can turn individual Autocapture events on and off as needed, and even tune those events further to optimize your event volume.
+
+The default configuration should provide the right balance of capturing events that matter while excluding ones that don't. This balance is most critical when capturing clicks. By default, Amplitude captures all clicks on interactable elements (for example, links, text fields, dropdowns, and other form elements). Amplitude also captures other clicks on elements that result in a change on the page (for example, a new visual element) or a navigation to a new page. This configuration excludes clicks on blank areas, a user highlighting text, and other similar actions.
+
+Amplitude recommends monitoring your event volume (in Settings > Plans & Billing) as you make changes to ensure it matches your expectations. You can change your configuration to capture clicks on specified elements (or elements with certain classes), track on specific pages, or turn click tracking off while still taking advantage of other Autocapture data (page views, sessions, etc.).
+
+## Your taxonomy with Autocapture
+
+Keeping your taxonomy clean and organized is essential to ensuring users can find what they need, so Autocapture captures data using a predefined set of event and property types. For example, the SDK captures all click interactions as two events: "Element Clicked" and "Element Changed." Each event also has a predefined set of properties.
+
+[Visual labeling](/docs/data/visual-labeling) allows other users on your to create events, so there are some additional considerations to make when thinking about your taxonomy:
+
+* Be sure you set up the correct permissions for each user. Users with a Member role or higher can create labeled events.
+* Continue using your naming conventions and add descriptions for your labeled events, just as you would with other events.
+
+Some additional things to know about your labeled events:
+
+* Labeled events have a separate tab within Data > Events to help you manage them separately from your raw ingested events. Here, you can see who created the labeled events and when they created them.
+* Labeled events have a different icon in the event dropdown so you and your users can distinguish them from other events.
+
+## Privacy and security
+
+For many organizations, data privacy, security, and PII are critical factors when setting up their tracking strategy. Your business needs, the purpose of your application, and the potential for legal exposure between jurisdictions can vary greatly, and there's no one-size-fits-all solution that can work in every situation.
+
+Amplitude's Autocapture feature provides flexible configuration options to adhere to your company's legal and security requirements. These settings prevent your product from sending that data in the first place, so it never makes it to Amplitude.
+
+### Autocapture protections
+
+You control what information Autocapture sends to Amplitude. For information about how to update the events that Autocapture sends to Amplitude, see [Browser SDK | Disable Autocapture](/docs/sdks/analytics/browser/browser-sdk-2#disable-autocapture).
+
+Autocapture's default settings include the following privacy and security considerations:
+
+* Autocapture only collects class names and the type attribute from user input fields, including `input`, `select`, and `textarea` elements, along with any HTML element with the `contenteditable="true"` attribute. Autocapture excludes any user-inputted text. The exception to these attribute collection rules is when an element has an explicit attribute added with the prefix `data-amp-track-`. This allows you to intentionally pass the data in these attributes back to Amplitude.
+* Autocapture further restricts sensitive input fields, like passwords or form fields with the hidden attribute to capture class names only. Autocapture doesn't capture other details about these elements.
+* Click tracking uses pattern matching to automatically remove any text that looks like a credit card or social security number.
+* Autocapture removes value, event handlers, style, and react attribute.
+
+### Autocapture security options
+
+Some companies, like those in financial services, healthcare, and medical technologies, may deal with highly sensitive data. If your organization requires higher restrictions or safeguards, Autocapture provides the following options.
+
+#### Limit click tracking
+
+To support visual labeling, Autocapture captures interaction information about both the elements clicked or changed and information about the element's parents in the HTML structure. Depending on your site's structure, you can:
+
+* Change the elements allowed for click and change tracking. Configure the `cssSelectorAllowlist` and `actionClickAllowlist` options to change the list of elements that Autocapture can track. You can even remove all common HTML elements and restrict to elements with a specific class.
+* Change the pages allowed for click and change tracking. You can configure the `pageUrlAllowlist` to limit the collection of these events to specific URLs (or URL patterns).
+
+#### Turn off Autocapture events
+
+Amplitude provides the flexibility to track any or all of more precisely with Data Management tools and workflows that give you complete control of your data.
+
+You can turn off any or all Autocapture events through your SDK configuration.
