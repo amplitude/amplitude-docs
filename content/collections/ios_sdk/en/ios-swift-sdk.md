@@ -194,7 +194,7 @@ Starting from release v1.8.0, the SDK is able to track more events without manua
 {{partial:collapse name="Autocapture options"}}
 | Name | Type | Set by Default | Description |
 | --- | --- | --- | --- |
-| `sessions` | `AutocaptureOptions` | Yes | Enables session tracking. If the option is set, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting is not set, Amplitude tracks `sessionId` only. See [Track sessions](#track-sessions) for more information. |
+| `sessions` | `AutocaptureOptions` | Yes | Enables session tracking. If the option is set, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting isn't set, Amplitude tracks `sessionId` only. See [Track sessions](#track-sessions) for more information. |
 | `appLifecycles` | `AutocaptureOptions` | No | Enables application lifecycle events tracking. If the option is set, Amplitude tracks application installed, application updated, application opened, and application backgrounded events. Event properties tracked include: `[Amplitude] Version`, `[Amplitude] Build`, `[Amplitude] Previous Version`, `[Amplitude] Previous Build`, `[Amplitude] From Background`. See [Track application lifecycles](#track-application-lifecycles) for more information. |
 | `screenViews` | `AutocaptureOptions` | No | Enables screen views tracking. If the option is set, Amplitude tracks screen viewed events. Event properties tracked include: `[Amplitude] Screen Name`. See [Track screen views](#track-screen-views) for more information. |
 | `elementInteractions` | `AutocaptureOptions` | No | Enables element interaction tracking. If the option is set, Amplitude tracks user interactions with `UIControl` element and `UIGestureRecognizer`. Event properties tracked include: `[Amplitude] Action`, `[Amplitude] Target View Class`, `[Amplitude] Target Text`, `[Amplitude] Action Method`, `[Amplitude] Gesture Recognizer`, `[Amplitude] Hierarchy`, `[Amplitude] Accessibility Identifier`, `[Amplitude] Accessibility Label`, `[Amplitude] Screen Name`. See [Track element interactions](#track-element-interactions) for more information. |
@@ -212,7 +212,7 @@ let amplitude = Amplitude(configuration: Configuration(
     autocapture: [.sessions, .appLifecycles, .screenViews, .elementInteractions]
 ))
 ```
-By default, if the `autocapture` configuration is not explicitly set during `Configuration` initialization, `configuration.autocapture` will automatically include `AutocaptureOptions.sessions`.
+By default, if the `autocapture` configuration isn't explicitly set during `Configuration` initialization, `configuration.autocapture` will automatically include `AutocaptureOptions.sessions`.
 
 If you want to prevent automatic session events capture, set `autocapture` without the `AutocaptureOptions.sessions` option.
 ```swift
@@ -234,7 +234,7 @@ configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnio
 ]];
 Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 ```
-By default, if the `autocapture` configuration is not explicitly set during `Configuration` initialization, `configuration.autocapture` will automatically include `AutocaptureOptions.sessions`.
+By default, if the `autocapture` configuration isn't explicitly set during `Configuration` initialization, `configuration.autocapture` will automatically include `AutocaptureOptions.sessions`.
 
 If you want to prevent automatic session events capture, set `autocapture` without the `AutocaptureOptions.sessions` option.
 ```objc
@@ -378,7 +378,7 @@ Amplitude tracks the `[Amplitude] Deep Link Opened` event with the URL and refer
 Amplitude can track user interactions with `UIControl` elements and `UIGestureRecognizer` objects in `UIKit` applications. To enable this option, include `AutocaptureOptions.elementInteractions` in the `autocapture` configuration.
 
 {{partial:admonition type="note" heading=""}}
-The `AutocaptureOptions.elementInteractions` option is experimental. We'd love your feedback! Try it out and share your thoughts on our [GitHub](https://github.com/amplitude/Amplitude-Swift).
+The `AutocaptureOptions.elementInteractions` option is experimental. Try it out and share your thoughts on our [GitHub](https://github.com/amplitude/Amplitude-Swift).
 {{/partial:admonition}}
 
 {{partial:tabs tabs="Swift, Obj-c"}}
