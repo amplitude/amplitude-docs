@@ -181,3 +181,14 @@ To verify the data coming into Amplitude:
 - View the Events page of your Tracking Plan
 - Create a Segmentation chart that filters on the event name you specify. 
 - Go to the `Ingestion Jobs` tab in your source. You can view the status of the ingestion and debug using `ERROR LOG` if necessary.
+
+Depending on your company's network policy, you may need to add the following IP addresses to your allowlist to allow Amplitude's servers to access your Databricks instance:
+
+- Amplitude US IP addresses:
+    - 52.33.3.219
+    - 35.162.216.242
+    - 52.27.10.221 
+- Amplitude EU IP addresses:
+    - 3.124.22.25
+    - 18.157.59.125
+    - 18.192.47.195
