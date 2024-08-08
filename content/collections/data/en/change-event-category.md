@@ -1,9 +1,13 @@
 ---
-title: "Change an event’s category"
-source: "https://help.amplitude.com/hc/en-us/articles/17050453062811-Change-an-event-s-category"
 id: ea221b5f-e025-4904-9343-245bafb90b65
+blueprint: data
+title: 'Event categorization'
+source: 'https://help.amplitude.com/hc/en-us/articles/17050453062811-Change-an-event-s-category'
+landing: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1722895597
 ---
-
 You can update an event type's category directly from the *Events* tab. To do so, follow these steps:
 
 1. Click the checkbox next to the event name.

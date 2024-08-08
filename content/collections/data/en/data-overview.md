@@ -1,10 +1,10 @@
 ---
 id: c5166da1-e099-4e0b-a870-b06b10057c19
 blueprint: data
-title: 'Data overview'
+title: 'Overview of Amplitude Data'
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1721925948
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1722894813
 landing: true
 landing_blurb: 'Get up to speed with Amplitude Data.'
 ---
@@ -14,7 +14,7 @@ To get the most out of Amplitude, building a data catalog your team understands 
 
 Amplitude Data provides a robust set of tools to help prevent data quality issues from the start.
 
-* Create a plan directly in Amplitude and define your events, properties, and even your taxonomy standards directly in Amplitude. This information is visible when you select events and properties. Ampitude Analytics monitors this information to make sure your incoming data matches your spec.
+* Create a plan directly in Amplitude and define your events, properties, and even your taxonomy standards directly in Amplitude. This information is visible when you select events and properties. Amplitude Analytics monitors this information to make sure your incoming data matches your spec.
 * Use the Ampli developer toolkit, which uses your plan to generate a type-safe tracking library and lints code to ensure proper tracking of your events and properties.
 
 Planning directly in Amplitude Data gives you an up-to-date plan your company can use instead of one-off spreadsheets or wiki pages that can quickly become outdated. We've created a walkthrough of the [complete planning workflow](/docs/data/data-planning-workflow) to illustrate the process from start to finish.

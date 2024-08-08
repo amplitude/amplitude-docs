@@ -1,7 +1,7 @@
 ---
 id: 9771eb95-0cac-4de7-a34b-c65f7e157f67
 blueprint: data
-title: 'Understand IP address and location properties'
+title: 'IP address and location properties'
 source: 'https://help.amplitude.com/hc/en-us/articles/17646803703323-Understand-IP-address-and-location-properties'
 this_article_will_help_you:
   - 'Understand Amplitude defines and uses location properties to enhance your analyses'
@@ -9,7 +9,7 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717612556
+updated_at: 1722895713
 ---
 Data that highlights user location properties, such as a user's city and country, are crucial for generating insights related to the geographical distribution of your users. They can show you how user preferences and behaviors differ from region to region, and help you better optimize your product. 
 
