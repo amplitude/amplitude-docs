@@ -274,7 +274,6 @@ val amplitude = Amplitude(
         +appLifecycles		  // or `+Autocapture.APP_LIFECYCLES`
         +deepLinks			  // or `+Autocapture.DEEP_LINKS`
         +screenViews			// or `+Autocapture.SCREEN_VIEWS`
-        +elementInteractions	// or `+Autocapture.ELEMENT_INTERACTIONS`
     }
   )
 )
@@ -305,8 +304,7 @@ Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicatio
 configuration.getAutocapture().addAll(Arrays.asList(
     AutocaptureOption.APP_LIFECYCLES,
     AutocaptureOption.DEEP_LINKS,
-    AutocaptureOption.SCREEN_VIEWS,
-    AutocaptureOption.ELEMENT_INTERACTIONS
+    AutocaptureOption.SCREEN_VIEWS
 ));
 
 Amplitude amplitude = new Amplitude(configuration);
