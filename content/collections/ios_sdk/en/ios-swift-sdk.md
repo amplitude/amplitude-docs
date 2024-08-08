@@ -209,7 +209,7 @@ The `autocapture` configuration accepts an [`OptionSet`](https://developer.apple
 ```swift
 let amplitude = Amplitude(configuration: Configuration(
     apiKey: "API_KEY",
-    autocapture: [.sessions, .appLifecycles, .screenViews, .elementInteractions]
+    autocapture: [.sessions, .appLifecycles, .screenViews]
 ))
 ```
 By default, if the `autocapture` configuration isn't explicitly set during `Configuration` initialization, `configuration.autocapture` will automatically include `AutocaptureOptions.sessions`.
@@ -229,8 +229,7 @@ AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
 configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[
     AMPAutocaptureOptions.sessions,
     AMPAutocaptureOptions.appLifecycles,
-    AMPAutocaptureOptions.screenViews,
-    AMPAutocaptureOptions.elementInteractions
+    AMPAutocaptureOptions.screenViews
 ]];
 Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 ```

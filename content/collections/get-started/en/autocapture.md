@@ -172,11 +172,11 @@ Amplitude(
 	 apiKey = AMPLITUDE_API_KEY,
 		context = applicationContext,
 		autocapture = autocaptureOptions { //[tl! ~~]
-          +sessions               // or `+Autocapture.SESSIONS` //[tl! ~~]
-          +appLifecycles          // or `+Autocapture.APP_LIFECYCLES` //[tl! ~~]
-          +deepLinks              // or `+Autocapture.DEEP_LINKS` //[tl! ~~]
-          +screenViews            // or `+Autocapture.SCREEN_VIEWS` //[tl! ~~]
-          +elementInteractions    // or `+Autocapture.ELEMENT_INTERACTIONS` //[tl! ~~]
+          +sessions               // or `+Autocapture.SESSIONS` [tl! ~~]
+          +appLifecycles          // or `+Autocapture.APP_LIFECYCLES` [tl! ~~]
+          +deepLinks              // or `+Autocapture.DEEP_LINKS` [tl! ~~]
+          +screenViews            // or `+Autocapture.SCREEN_VIEWS` [tl! ~~]
+          +elementInteractions    // or `+Autocapture.ELEMENT_INTERACTIONS` [tl! ~~]
     	} //[tl! ~~]
 	)
 )
