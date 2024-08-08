@@ -62,7 +62,7 @@ If your web app configures the strict Content Security Policy (CSP) for security
 * Add `https://*.amplitude.com` to `script-src`
 * Add `https://*.amplitude.com` to `connect-src`
 
-### Default events
+### Autocapture events
 
 | Event           | Description                                              | Properties                                                                                                                                                                                       |
 | --------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -75,8 +75,8 @@ If your web app configures the strict Content Security Policy (CSP) for security
 
 For more information, see Track Default Events in the [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2#track-default-events) documentation. 
 
-{{partial:admonition type="tip" heading="Default event prefix"}}
-Amplitude prefixes default events with the Amplitude logo or `[Amplitude]` in plain text.
+{{partial:admonition type="tip" heading="Autocapture event prefix"}}
+Amplitude prefixes Autocapture events with the Amplitude logo or `[Amplitude]` in plain text.
 {{/partial:admonition}}
 
 ### Marketing attribution
@@ -108,31 +108,34 @@ The latest version of Amplitude's [iOS SDK](/docs/sdks/analytics/ios/ios-swift-s
 
 Install the SDK as instructed in the [iOS-Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk#install-the-sdk) documentation.
 
-### Initialize the SDK with default tracking enabled
+### Initialize the SDK with Autocapture enabled
 
-The iOS SDK enables session tracking and disables both application lifecycle tracking and screen view tracking by default.
-
-To enable all default tracking, initialize the SDK with the following snippet.
+The iOS SDK enables session tracking, and disables application lifecycle, screen view, and element interaction tracking by default. To enable all Autocapture options, initialize the SDK with the following snippet:
 
 {{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 let amplitude = Amplitude(configuration: Configuration(
     apiKey: "API_KEY",
-    defaultTracking: DefaultTrackingOptions.ALL //[tl! ~~]
+    autocapture: [.sessions, .appLifecycles, .screenViews, .elementInteractions] //[tl! ~~]
 ))
 ```
 {{/partial:tab}}
 {{partial:tab name="Obj-C"}}
 ```objc
 AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
-configuration.defaultTracking = AMPDefaultTrackingOptions.ALL; //[tl! ~~]
+configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[  //[tl! ~~]
+    AMPAutocaptureOptions.sessions,  //[tl! ~~]
+    AMPAutocaptureOptions.appLifecycles,  //[tl! ~~]
+    AMPAutocaptureOptions.screenViews,  //[tl! ~~]
+    AMPAutocaptureOptions.elementInteractions  //[tl! ~~]
+]]; //[tl! ~~]
 Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
 
-### Default events
+### Autocapture events
 
 | Event                    | Description                                                                  | Properties                           |
 | ------------------------ | ---------------------------------------------------------------------------- | ------------------------------------ |
@@ -142,11 +145,12 @@ Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 | Application updated      | Captures when a user opens the app for the first time after they update it.  |                                      |
 | Application opened       | Captures when a user launches or foregrounds the app after the first open.   |                                      |
 | Application backgrounded | Captures when a user backgrounds the application.                            |                                      |
-| Screen viewed            | Captures when a user views a screen in an app.                               | Screen name                          |
+| Screen viewed            | Captures when a user views a screen in your app.                               | Screen name                          |
+| Element Interacted            | Captures when a user interacts with the UI elements in your app.                               | Element properties                          |
 
 ### User properties
 
-Amplitude attaches [User Properties](/docs/get-started/user-property-definitions) to all default event, unless disabled.
+Amplitude attaches [User Properties](/docs/get-started/user-property-definitions) to all Autocapture events, unless disabled.
 
 ## Autocapture for Android
 
@@ -156,21 +160,44 @@ The latest version of Amplitude's [Android SDK](/docs/sdks/analytics/android/and
 
 Install the SDK as instructed in the [Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk#install-the-sdk) documentation.
 
-### Initialize the SDK with default tracking enabled
+### Initialize the SDK with Autocapture enabled
 
-The Android-Kotlin SDK enables session tracking, and disables application lifecycle, screen view, and deep link tracking by default. To enable all default tracking, initialize the SDK with the following snippet:
+The Android-Kotlin SDK enables session tracking, and disables application lifecycle, screen view, deep link, and element interaction tracking by default. To enable all Autocapture options, initialize the SDK with the following snippet:
 
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
 ```kotlin
 Amplitude(
 	Configuration(
 	 apiKey = AMPLITUDE_API_KEY,
 		context = applicationContext,
-		defaultTracking = DefaultTrackingOptions.ALL //[tl! ~~]
+		autocapture = autocaptureOptions { //[tl! ~~]
+          +sessions               // or `+Autocapture.SESSIONS` //[tl! ~~]
+          +appLifecycles          // or `+Autocapture.APP_LIFECYCLES` //[tl! ~~]
+          +deepLinks              // or `+Autocapture.DEEP_LINKS` //[tl! ~~]
+          +screenViews            // or `+Autocapture.SCREEN_VIEWS` //[tl! ~~]
+          +elementInteractions    // or `+Autocapture.ELEMENT_INTERACTIONS` //[tl! ~~]
+    	} //[tl! ~~]
 	)
 )
 ```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicationContext());
+configuration.getAutocapture().addAll(Arrays.asList( //[tl! ~~]
+    AutocaptureOption.APP_LIFECYCLES, //[tl! ~~]
+    AutocaptureOption.DEEP_LINKS, //[tl! ~~]
+    AutocaptureOption.SCREEN_VIEWS, //[tl! ~~]
+    AutocaptureOption.ELEMENT_INTERACTIONS //[tl! ~~]
+)); //[tl! ~~]
 
-### Default events
+Amplitude amplitude = new Amplitude(configuration);
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+### Autocapture events
 
 | Event                    | Description                                                                  | Properties                           |
 | ------------------------ | ---------------------------------------------------------------------------- | ------------------------------------ |
@@ -180,11 +207,13 @@ Amplitude(
 | Application updated      | Captures when a user opens the app for the first time after they update it.  |                                      |
 | Application opened       | Captures when a user launches or foregrounds the app after the first open.   |                                      |
 | Application backgrounded | Captures when a user backgrounds the application.                            |                                      |
-| Screen viewed            | Captures when a user views a screen in an app.                               | Screen name                          |
+| Screen viewed            | Captures when a user views a screen in your app.                               | Screen name                          |
+| Deep link opened            | Captures when a user opens a deep link in your app.                               | URL and referrer information                          |
+| Element Interacted            | Captures when a user interacts with the UI elements in your app.                               | Element properties                          |
 
 ### User properties
 
-Amplitude attaches [User Properties](/docs/get-started/user-property-definitions) to all default event, unless disabled.
+Amplitude attaches [User Properties](/docs/get-started/user-property-definitions) to all Autocapture events, unless disabled.
 
 ## Working with Autocapture
 
@@ -196,7 +225,7 @@ In situations where your site or app's code changes, you can update existing eve
 
 ### Adjust tracked events to control event volume
 
-The [Browser](/docs/sdks/analytics/browser/browser-sdk-2#track-default-events), [iOS](/docs/sdks/analytics/ios/ios-swift-sdk#track-default-events), and [Android](/docs/sdks/analytics/android/android-kotlin-sdk#track-default-events) SDKs have granular control that determines which categories of default event the SDK tracks.
+The [Browser](/docs/sdks/analytics/browser/browser-sdk-2#track-default-events), [iOS](/docs/sdks/analytics/ios/ios-swift-sdk#track-default-events), and [Android](/docs/sdks/analytics/android/android-kotlin-sdk#track-default-events) SDKs have granular control that determines which categories of Autocapture events the SDK tracks.
 
 ### Use Autocapture as a starting point
 
