@@ -38,10 +38,7 @@ To use Visual Labeling to create new labeled events, follow these steps:
     If you leave any fields blank, Amplitude interprets that as `[any value]`. For example, if you leave the URL field blank, the tracking for that event fires on any page.
     {{/partial:admonition}}
 
-8. If this is the only action you want to include in the labeled event, click Save. To add more actions:
-   1. Click *Select action...* and choose the action to add.
-   2. Enter the properties of the element you want to label, or click Switch to Visual Element Selection and repeat this process. You can add as many actions as you want.
-   3. When you're done, click *Save*. The modal closes, and the Labeled Events tab loads, where your new events appear.
+8. You can select another element to continue labeling or click "Back to Amplitude" if you're done.
 
 ## Edit a labeled event
 
