@@ -1,14 +1,14 @@
 ---
 id: 52bfe4df-5034-4e5d-bfce-81736bf4face
 blueprint: data
-title: 'The complete Amplitude Data planning workflow'
+title: 'Planning and instrumentation workflow'
 source: 'https://help.amplitude.com/hc/en-us/articles/5078746573979-The-complete-Amplitude-Data-planning-workflow'
 this_article_will_help_you:
   - 'Understand the complete planning workflow using all the planning capabilities offered by Amplitude Data'
 landing: true
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1715274278
+updated_at: 1722895150
 landing_blurb: 'Learn the end-to-end Amplitude data planning process.'
 ---
 Using Amplitude Data for planning helps ensure high-quality data from the start and reduces the need for clean-up later. This article will give you a sense of the complete workflow in Amplitude Data.

@@ -12,13 +12,11 @@ exclude_from_sitemap: false
 this_article_will_help_you:
   - 'Create your first organization in Amplitude'
 ---
-In Amplitude, all your analyses live within a larger **project**. Projects, in turn, are contained within **organizations**. For most companies, one organization is enough to effectively manage their Amplitude projects. The number of projects you’ll need depends on your company’s analytics practices and requirements, which is why there’s no limit on the number of projects you can create.
-
+In Amplitude, all your analyses live within a larger **project**. Projects, in turn, exist within **organizations**. For most companies, one organization is enough to effectively manage their Amplitude projects. The number of projects you’ll need depends on your company’s analytics practices and requirements, which is why there’s no limit on the number of projects you can create.
 
 {{partial:admonition type="note" heading="Note"}}
 You may want to take [this course](https://academy.amplitude.com/amplitude-analytics-admin-essentials) on administering Amplitude in Amplitude Academy.
 {{/partial:admonition}}
-
 
 If you’re the first person in your company to register for an Amplitude account, you must create an organization as part of that process. Usually, it's best to use your company’s name for that organization.
 
@@ -34,9 +32,11 @@ Before you can create an organization, you must [create an Amplitude account](ht
 3. Next, enter the organization’s name in the *Org URL* field. This creates an Amplitude directory for your organization and is used to identify your organization when you log in.
 4. To make your organization discoverable for other team members to join automatically, check the box next to *Anyone with your domain can join*. You don't have to approve new members.
 5. Click *Create* to create your organization.
-6. Once Amplitude has finished creating your organization, navigate to *Settings → Access & SSO Settings*. Scroll down to the *Org Discovery* panel and specify whether your organization is an **open org** (new users can join without an invitation or explicit approval), or whether it's accessible to new users via **invite only** or through **admin approval**. The default setting is "invite only."
+6. Once Amplitude has finished creating your organization, navigate to *Settings → Access & SSO Settings*. Scroll down to the *Org Discovery* panel and specify whether your organization is an **open org** (new users can join without an invitation or explicit approval), or whether it's accessible to new users through **invite only** or through **admin approval**. The default setting is "invite only."
 
 If you wish to change your organization name or URL, send a request from the [Amplitude Support page](https://support.amplitude.com) with your org ID, new organization name, and new organization URL.
+
+
 
 Check out [this article to learn about managing your organization](/docs/admin/account-management/manage-orgs-projects).
 

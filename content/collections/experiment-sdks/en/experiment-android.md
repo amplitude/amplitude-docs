@@ -550,6 +550,28 @@ if (variant.value == "control") {
 {{/partial:tab}}
 {{/partial:tabs}}
 
+### All
+
+Access all [variants](/docs/experiment/data-model#variants) stored by the SDK client.
+
+```kotlin
+fun all(): Map<String, Variant>
+```
+
+{{partial:tabs tabs="Java, Kotlin"}}
+{{partial:tab name="Java"}}
+```java
+experiment.all();
+```
+{{/partial:tab}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+experiment.all()
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+### Clear
 
 Clear all [variants](/docs/experiment/data-model#variants) in the cache and storage.
 

@@ -1,14 +1,14 @@
 ---
 id: 57f6f8ee-4044-4a3e-af34-c6d6eca409dc
 blueprint: data
-title: 'Overview of user properties and event properties in Amplitude'
+title: 'About user properties and event properties'
 source: 'https://help.amplitude.com/hc/en-us/articles/115002380567-Overview-of-user-properties-and-event-properties-in-Amplitude'
 this_article_will_help_you:
   - 'Articulate the differences between user properties and event properties, and use each type appropriately and effectively in your analyses'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717611656
+updated_at: 1722895468
 ---
 In Amplitude, **properties** are attributes that provide additional context around your users and the events they trigger. There are two types of properties in Amplitude:
 

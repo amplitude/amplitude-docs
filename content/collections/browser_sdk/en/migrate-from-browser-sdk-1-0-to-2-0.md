@@ -51,15 +51,15 @@ Ampli v2 is compatible with both Browser SDK 2.0 and Browser SDK 1.0. Follow thi
 }
 ```
 
-## Default events tracking
+## Autocapture
 
-Starting with Browser SDK 2.0, default tracking is enabled by default. Default tracking is implicit tracking performed by Amplitude on your behalf, and includes page views, sessions, file downloads, form interactions, and marketing attribution.
+Starting with Browser SDK 2.10.0, Autocapture is enabled by default. Autocapture is implicit tracking performed by Amplitude on your behalf, and includes page views, sessions, file downloads, form and element interactions, and marketing attribution.
 
-To opt out of default tracking, set `options.defaultTracking` to `false`.
+To opt out of default tracking, set `options.autocapture` to `false`.
 
 ```ts
 amplitude.init(API_KEY, undefined, {
-  defaultTracking: false,
+  autocapture: false,
 });
 ```
 
@@ -67,12 +67,13 @@ Additionally, you can pick and choose which events you want tracked by Amplitude
 
 ```ts
 amplitude.init(API_KEY, undefined, {
-  defaultTracking: {
+  autocapture: {
     attribution: true,
     pageViews: true,
     sessions: false,
     fileDownload: false,
     formInteractions: false,
+    elementInteractions: false
   },
 });
 ```

@@ -19,6 +19,8 @@ source: 'https://www.docs.developers.amplitude.com/data/sources/databricks/'
 ---
 Amplitude's Databricks import source enables you to import data from Databricks to your Amplitude account. Databricks import uses the [Databricks Change Data Feed](https://docs.databricks.com/en/delta/delta-change-data-feed.html#use-delta-lake-change-data-feed-on-databricks) feature to securely access and extract live data from your Databricks workspace.
 
+For guided instructions to setting up this integration, view the [Loom video](https://www.loom.com/share/a00f8905170e4c83977ae6fb2f0dcde7?sid=5a77e8c9-d34b-42b0-a179-679669c8bdbe).
+
 ## Features
 
 - Import all data types, including events, user properties, and group properties.
@@ -31,7 +33,10 @@ Amplitude's Databricks import source enables you to import data from Databricks 
 
 - The User Look-Up page doesn't display 100 most recent events ingested.
 
-For guided instructions to setting up this integration, view the [Loom video](https://www.loom.com/share/a00f8905170e4c83977ae6fb2f0dcde7?sid=5a77e8c9-d34b-42b0-a179-679669c8bdbe).
+- The following Databricks features don't support time travel, and aren't supported by this integration:
+  - [views](https://docs.databricks.com/en/views/index.html)
+  - [materialized views](https://docs.databricks.com/en/views/materialized.html)
+  - [streaming tables](https://docs.databricks.com/en/delta-live-tables/index.html#streaming-table)
 
 ## Configure Databricks
 
@@ -176,3 +181,14 @@ To verify the data coming into Amplitude:
 - View the Events page of your Tracking Plan
 - Create a Segmentation chart that filters on the event name you specify. 
 - Go to the `Ingestion Jobs` tab in your source. You can view the status of the ingestion and debug using `ERROR LOG` if necessary.
+
+Depending on your company's network policy, you may need to add the following IP addresses to your allowlist to allow Amplitude's servers to access your Databricks instance:
+
+- Amplitude US IP addresses:
+    - 52.33.3.219
+    - 35.162.216.242
+    - 52.27.10.221 
+- Amplitude EU IP addresses:
+    - 3.124.22.25
+    - 18.157.59.125
+    - 18.192.47.195

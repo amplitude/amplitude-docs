@@ -1,12 +1,12 @@
 ---
 id: 5062badd-ff0e-4efd-9c1a-d8d0809e6bdd
 blueprint: data
-title: 'Object management: Manage the building blocks of your analyses'
+title: 'Object management'
 source: 'https://help.amplitude.com/hc/en-us/articles/9980355191579-Object-management-Manage-the-building-blocks-of-your-analyses'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1720026414
+updated_at: 1722896250
 ---
 Amplitude's **object management** feature lets you centrally manage **analysis objects.** Analysis objects are the reusable building blocks of your analyses, including [custom events](/docs/data/custom-events), [metrics](#metrics), [segments](/docs/analytics/behavioral-cohorts). 
 

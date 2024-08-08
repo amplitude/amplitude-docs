@@ -1,14 +1,14 @@
 ---
 id: 6389c912-154c-42fe-afea-07db4a295404
 blueprint: data
-title: 'Cross-project analysis in Amplitude Data'
+title: 'Cross-project analysis with Portfolios'
 source: 'https://help.amplitude.com/hc/en-us/articles/14909802992283-Cross-project-analysis-in-Amplitude-Data'
 this_article_will_help_you:
   - 'Create or import a data portfolio to analyze data from multiple source projects at once'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717622895
+updated_at: 1722895919
 ---
 Amplitude Data's **portfolio** feature lets you create cross-product analyses by combining multiple source projects into a single view. 
 
