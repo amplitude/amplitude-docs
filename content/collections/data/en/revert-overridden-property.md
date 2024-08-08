@@ -1,7 +1,7 @@
 ---
 id: 4ae538ba-8ca1-4a0f-b93a-f89ce4b42db0
 blueprint: data
-title: 'Revert an overridden property'
+title: 'Revert an overridden property definition'
 source: 'https://help.amplitude.com/hc/en-us/articles/10831709352987-Revert-an-overridden-property'
 this_article_will_help_you:
   - 'Understand when to revert an overridden property'
@@ -9,7 +9,7 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717620952
+updated_at: 1722895781
 ---
 Reverting an [overridden property](/docs/data/override-property) to its original version is a quick way to retroactively clean up your tracking plan and maintain consistency across your event properties. Doing so tells Amplitude Data to update the property to match the latest state of the **original** version listed in the event properties table. Once reverted, any changes to the property will **also** apply to any events or property groups that use the **original** version of that property.
 

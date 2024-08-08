@@ -4,61 +4,45 @@ blueprint: data
 title: 'Visual Labeling'
 this_article_will_help_you:
   - 'Create and edit labeled events with no new code required'
-landing: false
+landing: true
 source: 'https://help.amplitude.com/hc/en-us/articles/24094812669979-Visual-Labeling-Quickly-create-no-code-events-from-your-site-s-existing-elements'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718657270
+updated_at: 1723072454
+landing_blurb: 'Enable non-technical Amplitude users to create events with Visual Labeling.'
 ---
-When you enable [the Autocapture plugin](https://www.docs.developers.amplitude.com/data/sdks/browser-2/autocapture/), you can begin to create **labeled events** by clicking specific elements on your site, using Amplitude Data's Visual Labeling feature. This way, non-technical Amplitude users can create these events without needing to understand the structure of the page.
+When you [Autocapture plugin](/docs/get-started/autocapture), you can begin to create **labeled events** by clicking specific elements on your site, using Amplitude Data's Visual Labeling feature. This way, non-technical Amplitude users can create these events without needing to understand the structure of the page.
 
-Labeled events are maintained separately from events you've created in other ways. If there are issues with data for labeled events, simply make adjustments from within the _Labeled Events_ tab, instead of involving your engineering team.
-
-This is **not** a tag management solution that allows you to manage or insert marketing tags on your site. Instead, Visual Labeling is designed to **reduce instrumentation barriers**, so you can accelerate your insights without waiting for assistance from an engineer.
+Amplitude maintains labeled events separately from events you've created in other ways. If there are issues with data for labeled events, make adjustments from within the _Labeled Events_ tab, instead of involving your engineering team.
 
 ## Feature availability
-This feature is available to users on Starter plans who onboarded on or after April 1st, 2024. See our [pricing page](https://amplitude.com/pricing) for more details.
+This feature is available on all plans, and requires the following:
 
-{{partial:admonition type='note'}}
-Labeled events are limited to the specific interactions captured by the Autocapture plugin. As with other types of events, Amplitude Data will automatically associate user and group properties to these events, but no additional event properties will be captured.
-{{/partial:admonition}}
+* [Amplitude Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) 2.10.0 or higher
+* The SDK's `config.autocapture.elementInteractions` option set to `true`. For more information, see [Browser SDK Configuration](/docs/sdks/analytics/browser/browser-sdk-2#configure-the-sdk).
 
-Visual Labeling is available for web applications and requires installation of the following:
-
-- Amplitude Browser SDK
-- Autocapture plugin
 
 ## Create a labeled event with Visual Labeling
 
 To use Visual Labeling to create new labeled events, follow these steps:
 
-1. Open Amplitude Data and click *Events* in the left rail.
-2. Select the *Labeled Events* tab. If someone in your organization has created labeled events before, they will appear here. Otherwise, this tab will be empty.
-3. Click *+Create labeled event*. The *Open Event Tagger* modal will appear.
-4. Enter the URL of the site or application you want to tag, then click *Start Tagging*. The app will open in a new tab.
-5. In the app, click the element you want to tag. Amplitude Data will tag the element and return you to the Amplitude environment.
-6. In the *Save Labeled Event* modal, enter the name and description of your labeled event.
-7. You have two options for registering user activity with this element: when it is clicked, or when it is changed. Select the correct action from the *When this* drop-down menu.
-8. To replace this element with a different one, click *Replace Element*. Amplitude Data will return you to step 4 of this procedure.
-9. To edit the element’s properties manually, click *Edit Manually*. Here you can change the tag, text, selector, or page URL.
+1. Open Amplitude Data and click *Visual Labeling* in the left rail. The Launch Visual Labeling modal appears.
+2. Enter the URL of the site or application you want to label, and click *Start Labeling*. Amplitude opens your website or app in a new tab, with the Visual Labeling toolbar at the top of the page.
+3. Click an element you want to label, the Visual Labeling overlay appears. Click *Navigate* to navigate to a different part of site that you want to label.
+4. In the Visual Labeling overlay, enter a name and description for your labeled event. Select if tracking should happen when a user clicks the element, or when it changes. Visual Labeling uses the `clicked` event by default. Refine the definition and select filters as needed. When you're done, click *Save*.
+5. Amplitude saves the labeled event and displays a confirmation with an option to view the labeled event.
+6. Repeat steps three through five for each event you want to label.
+7. When you're done labeling, return to Amplitude. Here, you can manually update the tag, text, selector, and page URL of each labeled event.
 
-{{partial:admonition type='note'}}
-If you leave a field blank, Amplitude Data will interpret that as [any value]. For example, leaving the URL field blank results in the tag / text / selector combination you specified firing on any page.
-{{/partial:admonition}}
+    {{partial:admonition type='note'}}
+    If you leave any fields blank, Amplitude interprets that as `[any value]`. For example, if you leave the URL field blank, the tracking for that event fires on any page.
+    {{/partial:admonition}}
 
-10. If this is the only action you wish to include in your labeled event, click *Save*. Otherwise, proceed to the next step to add more actions.
-11. To add another action to your labeled event, click *Select action…* and choose the appropriate action.
-12. Enter the properties of the element you want to tag, or click *Switch to Visual Element Selection* and repeat this process. You can add as many actions as you want.
-13. When you're done, click *Save*. The modal will close, and you will be returned to the *Labeled Events* tab. Your new event will be visible there.
-
-
-{{partial:admonition type='note'}}
-You can only use default properties with a labeled event created via Visual Labeling. To define your own properties, track the event in your code instead.
-{{/partial:admonition}}
+8. You can select another element to continue labeling or click "Back to Amplitude" if you're done.
 
 ## Edit a labeled event
 
-To edit a labeled event, click on it from within the *Labeled Events* tab.
+To edit a labeled event, click it on the *Labeled Events* tab.
 
 In the event's fly-out tab, you can:
 
@@ -67,8 +51,22 @@ In the event's fly-out tab, you can:
 
 ## Labeled events and event volume
 
-Once you have enabled the Autocapture plugin, Amplitude will begin tracking click and page change events on your site. **These events do count** towards your event volume. Labeled events act as a **virtual** layer **on top** of these events, to help define a specific type of click and use it in an analysis. Therefore, **labeled events don't impact** your event volume.
+When you enable Autocapture, Amplitude begins tracking click and page change events on your site. These events count towards your total event volume. Labeled events act like a virtual layer on top of these events, and help define a specific type of click and use that click in an analysis. As a result, labeled events don't impact event volume beyond Autocapture.
 
-For example, a well-instrumented site may see 10,000 events per day, and this plugin might add as many as 2,000 events per day. This site would therefore see a 20% increase in daily events. On the other hand, 1,000 events per day might be the norm for a similar site with only rudimentary instrumentation. Because this plugin will add the same number of events—2,000 per day—this site will see a 200% increase in daily events.
+For example, a well-instrumented site may see 10,000 events per day, and Autocapture may add as many as 2,000 events per day. This means the site would see a 20% increase in daily events. A less-instrumented site may see only 1,000 instrumented events per day. The plugin adding another 2,000 events counts as a 200% increase.
 
-In both cases, the increase in daily events comes from tracking the click and page change events on your site. Labeled events do not affect the event count either way.
+In both cases, the increase in daily events comes from tracking click and page change events. Labeled events don't impact the event count.
+
+## Limitations
+
+* **Event Streams**: Labeled events don't appear in the Live Event Stream, user lookup event stream, or Session Replay streams. You can view raw `Element clicked` and `Element changed` events.
+* **Google Chrome extension**: The Amplitude Event Explorer Chrome extensions displays raw events sent from the browser only.
+
+## Troubleshooting
+
+**I don't see the visual labeling experience on my site**
+
+If you don't see the Visual Labeling tools on your site, check the following:
+
+* If you have pop-up or adblocking tools enabled, they can interfere with the Visual Labeling experience. Disable the adblocker and retry.
+* If the URL you entered redirects to another URL, the Visual Labeling experience may not load. For security reasons, the domain of the page you're labeling needs to match the domain that you entered in Amplitude.

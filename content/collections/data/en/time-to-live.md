@@ -1,11 +1,13 @@
 ---
 id: ba19562a-4957-464b-be1c-f86926c58289
 blueprint: data
-title: 'Time to Live'
+title: 'Time to Live (TTL)'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1706310913
-source: https://www.docs.developers.amplitude.com/data/ttl-configuration/
+updated_at: 1722896162
+source: 'https://www.docs.developers.amplitude.com/data/ttl-configuration/'
+landing: false
+exclude_from_sitemap: false
 ---
 Amplitude Data's Time-to-Live (TTL) feature lets you have control over how long event data lives in your Amplitude instance. You set the retention period for event data in Amplitude at the Amplitude organization level. When TTL is enabled, a job runs daily to make sure that Amplitude retains your event data according to your organization's TTL policy.
 

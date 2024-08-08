@@ -10,7 +10,7 @@ supported_languages:
   - ts
 bundle_url: 'https://www.npmjs.com/package/@amplitude/ampli?activeTab=versions'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1721151325
+updated_at: 1722891655
 ampli_examples:
   -
     id: lyop1tqs
@@ -20,6 +20,8 @@ ampli_examples:
     id: lyop20ks
     ampli_language: TypeScript
     ampli_example_link: 'https://github.com/amplitude/ampli-examples/blob/main/browser/typescript/v2/react-app'
+migration_guide:
+  - 9b155be9-bb32-428c-9f49-6e00f9630547
 ---
 The [Ampli Wrapper](/docs/sdks/ampli) is a generated, strongly typed API for tracking Analytics events based on your Tracking Plan in Amplitude Data. The tracking library exposes a function for every event in your team’s tracking plan. The function’s arguments correspond to the event’s properties.
 
