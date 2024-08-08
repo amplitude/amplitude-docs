@@ -1,14 +1,14 @@
 ---
 id: 9fbd24d0-c90c-497c-8cca-5b345f1058d6
 blueprint: data
-title: 'Configure and manage your Amplitude Data settings'
+title: 'Manage your Amplitude Data settings'
 source: 'https://help.amplitude.com/hc/en-us/articles/5078848559259-Configure-and-manage-your-Amplitude-Data-settings'
 this_article_will_help_you:
   - 'Understand and manage all settings related to your Amplitude Data projects'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717611886
+updated_at: 1722894995
 ---
 In the Settings page, you will:
 

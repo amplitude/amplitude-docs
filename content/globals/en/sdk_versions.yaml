@@ -1,8 +1,8 @@
-browser: 2.9.3
+browser: 2.10.0
+browser_sdk_sha: sha384-8fNco6Xiv+HOa+SIVGKVjByyY5LyircydGlHS9mXcHJpapcgF98L6UNOlauMTxJq
 visual_labeling_plugin: 1.0.0
 session_replay_plugin: 1.4.0
 session_replay_standalone: 1.6.0
 session_replay_android_plugin: 0.6.5
 session_replay_android_standalone: 0.6.5
-session_replay_android_middleware: 0.6.5
 experiment_android: 1.12.1

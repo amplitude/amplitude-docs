@@ -1,15 +1,15 @@
 ---
 id: 2886ff4d-cb6d-4327-a412-83c4e5c3aff7
 blueprint: data
-title: 'Data planning playbook'
+title: 'Plan your Taxonomy'
 source: 'https://help.amplitude.com/hc/en-us/articles/115000465251-Data-planning-playbook'
 this_article_will_help_you:
   - 'Understand the basics of users, events, and properties'
   - 'Learn techniques for planning your taxonomy'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1719870354
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1722895120
 ---
 Using Amplitude effectively requires you to first identify the events and properties you want to track. Designing a solid, scalable taxonomy can help make your analyses easier, avoid data gaps, and prevent future data issues.
 
