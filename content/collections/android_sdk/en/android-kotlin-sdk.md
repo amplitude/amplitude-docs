@@ -238,7 +238,7 @@ amplitude.identify(identify)
 
 ## Autocapture <a id="track-default-events"></a>
 
-Starting from release v1.17.0, the SDK is able to track more events without manual instrumentation. It can be configured to track the following events automatically:
+Starting from release v1.17.1, the SDK is able to track more events without manual instrumentation. It can be configured to track the following events automatically:
 
 - Sessions <sup>[1](#fn:1)</sup>
 - App lifecycles
