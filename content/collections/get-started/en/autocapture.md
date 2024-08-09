@@ -7,14 +7,14 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1722531117
 ---
-Amplitude's Autocapture helps you gain insights as soon as you install the SDK. This document describes enabling Autocapture.
+Amplitude's [Autocapture](/docs/data/autocapture) is the best option for getting up and running quickly. This document will help you enable Autocapture across your digital products for out of the box analytics with minimal engineering.
 
 ## Autocapture for the web
 
-Amplitude's Browser SDK 2.10.0 and above include Autocapture to help you capture events, interactions, and attribution on your site.
+Amplitude's Browser SDK 2.10.0 and above includes Autocapture to help you capture events, interactions, and attribution on your site.
 
 ### Install the Browser SDK
-Autocapture requires the latest versions of the Amplitude Browser SDK ({{sdk_versions:browser}}).
+Autocapture requires the latest version of the Amplitude Browser SDK ({{sdk_versions:browser}}).
 
 {{partial:tabs tabs="Script Loader, npm, yarn"}}
 {{partial:tab name="Script Loader"}}
@@ -33,8 +33,9 @@ yarn add @amplitude/analytics-browser
 {{/partial:tabs}}
 
 ### Initialize the SDK
+Browser SDK 2.10.0 and above includes element click and change tracking, which enables [visual labeling](/docs/data/visual-labeling) within Amplitude. To enable it, make sure `config.autocapture.elementInteractions` is set to `true` when initializing the SDK.
 
-Autocapture ships with Browser SDK 2.10.0 and above. To enable it, set `config.autocapture.elementInteractions` to `true` when you initialize the SDK.
+Autocapture ships with Browser SDK 2.10.0 and above. To enable it, set `config.autocapture.elementInteractions` to `true` when initializing the SDK.
 
 {{partial:tabs tabs="Script loader, npm / yarn"}}
 {{partial:tab name="Script loader"}}
@@ -62,7 +63,7 @@ If your web app configures the strict Content Security Policy (CSP) for security
 * Add `https://*.amplitude.com` to `script-src`
 * Add `https://*.amplitude.com` to `connect-src`
 
-### Default events
+### Events
 
 | Event           | Description                                              | Properties                                                                                                                                                                                       |
 | --------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -73,10 +74,10 @@ If your web app configures the strict Content Security Policy (CSP) for security
 | Form submitted  | Captures when a user submits a form on your site.        | Form destination, Session Replay ID (if enabled), [User properties](#user-properties).                                                                                                           |
 | File downloaded | Captures when a user downloads a file from your site.    | File extension, File name, Link text, Link URL, Session Replay ID (if enabled),                                                                                                                  |
 
-For more information, see Track Default Events in the [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2#track-default-events) documentation. 
+For more information, see Autocapture in the [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2#autocapture) documentation. 
 
 {{partial:admonition type="tip" heading="Default event prefix"}}
-Amplitude prefixes default events with the Amplitude logo or `[Amplitude]` in plain text.
+Amplitude prefixes default events with the Amplitude logo.
 {{/partial:admonition}}
 
 ### Marketing attribution
@@ -90,15 +91,15 @@ Captures the following properties:
 
 ### User properties
 
-Amplitude attaches [User Properties](/docs/get-started/user-property-definitions) to all default event, unless disabled.
+Amplitude attaches [User Properties](/docs/get-started/user-property-definitions) to all Autocapture events, unless disabled.
 
 ### Visual labeling for web
 
-Amplitude's Visual Labeling tool enables you to identify and select individual elements on a page that you want to track. For example, if you want to track the number of users who click a **Sign up**, button you can select it with Visual Labeling, and Amplitude creates an event that targets the specific element.
+Amplitude's visual labeling tool enables you to identify and select individual elements on a page that you want to track. For example, if you want to track the number of users who click a **Sign up**, button you can select it with visual labeling, and Amplitude creates an event that targets the specific element.
 
-Events you add with Visual Labeling work retroactively, since Amplitude captures all form-related events starting from when your instrumentation is live.
+Events you add with visual labeling work retroactively, since Amplitude captures all form-related events starting from when your instrumentation is live.
 
-For more information, see [Visual Labeling](/docs/data/visual-labeling).
+For more information, see [Visual labeling](/docs/data/visual-labeling).
 
 ## Autocapture for iOS
 
@@ -108,11 +109,11 @@ The latest version of Amplitude's [iOS SDK](/docs/sdks/analytics/ios/ios-swift-s
 
 Install the SDK as instructed in the [iOS-Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk#install-the-sdk) documentation.
 
-### Initialize the SDK with default tracking enabled
+### Initialize the SDK with Autocapture enabled
 
 The iOS SDK enables session tracking and disables both application lifecycle tracking and screen view tracking by default.
 
-To enable all default tracking, initialize the SDK with the following snippet.
+To enable all Autocapture capabilities, initialize the SDK with the following snippet.
 
 {{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
@@ -158,7 +159,7 @@ Install the SDK as instructed in the [Android-Kotlin SDK](/docs/sdks/analytics/a
 
 ### Initialize the SDK with default tracking enabled
 
-The Android-Kotlin SDK enables session tracking, and disables application lifecycle, screen view, and deep link tracking by default. To enable all default tracking, initialize the SDK with the following snippet:
+The Android-Kotlin SDK enables session tracking, and disables application lifecycle, screen view, and deep link tracking by default. To enable all Autocapture capabilities, initialize the SDK with the following snippet:
 
 ```kotlin
 Amplitude(
@@ -185,19 +186,3 @@ Amplitude(
 ### User properties
 
 Amplitude attaches [User Properties](/docs/get-started/user-property-definitions) to all default event, unless disabled.
-
-## Working with Autocapture
-
-Autocapture provides flexible options to help ensure you track the most relevant data.
-
-### Update event definitions
-
-In situations where your site or app's code changes, you can update existing event definitions to match, or create a new event that reflects the update. Autocapture consistently captures raw click events, so the new definition retroactively fixes gaps in your data due to site or application changes.
-
-### Adjust tracked events to control event volume
-
-The [Browser](/docs/sdks/analytics/browser/browser-sdk-2#track-default-events), [iOS](/docs/sdks/analytics/ios/ios-swift-sdk#track-default-events), and [Android](/docs/sdks/analytics/android/android-kotlin-sdk#track-default-events) SDKs have granular control that determines which categories of default event the SDK tracks.
-
-### Use Autocapture as a starting point
-
-Autocapture provides the quickest path to analytics, without the need for engineering support. For more complex use-cases, you may want to work with an engineer to expand your instrumentation and capture more rich metadata and events that are core to your business
