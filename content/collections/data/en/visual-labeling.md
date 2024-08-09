@@ -70,4 +70,4 @@ In both cases, the increase in daily events comes from tracking click and page c
 If you don't see the visual labeling tools on your site, check the following:
 
 * If you have pop-up or adblocking tools enabled, they can interfere with the Visual Labeling experience. Disable the adblocker and retry.
-* If the URL you entered redirects to another URL, the visual labeling experience may not load. For security reasons, the domain of the page you're labeling needs to match the domain that you entered in Amplitude.
+* If the URL you entered redirects to another URL, the visual labeling experience may not load. For security reasons, the domain of the page you're labeling must match the domain you entered in Amplitude. Try using the final URL after any redirects are complete.
