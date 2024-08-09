@@ -27,7 +27,7 @@ sdk_version_comparison:
       - 'By default, the Browser SDK includes the `web-attribution` plugin which implements Web Attribution V1.'
       - 'Configuration required. Use Maintenance Web Attribution.'
 ---
-Amplitude Browser SDK 2.0 (`@amplitude/analytics-browser`) features include [Autocapture](/docs/data/autocapture), improved marketing attribution tracking, a simplified interface, and a lighter-weight package.
+Amplitude Browser SDK 2.0 (`@amplitude/analytics-browser`) features [Autocapture](/docs/data/autocapture), improved marketing attribution tracking, a simplified interface, and a lighter-weight package.
 
 Browser SDK 2.0 is compatible with [Amplitude Session Replay](/docs/session-replay).
 
