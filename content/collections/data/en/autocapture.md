@@ -8,7 +8,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1723072396
 landing_blurb: 'Autocapture is the fastest way to capture information about your website or app with minimal setup.'
 ---
-Amplitude's Autocapture is the fastest way to capture information about your website or app with minimal setup. Once enabled, Autocapture captures user interactions on your digital products with a single code snippet. It's a great way to get started and uncover insights quickly.
+Amplitude's Autocapture is the fastest way to capture information about your website or app with minimal setup. Once enabled via our Browser SDK, Autocapture captures user interactions on your digital products with a single code snippet. It's a great way to get started and uncover insights quickly.
 
 ## Availability
 
