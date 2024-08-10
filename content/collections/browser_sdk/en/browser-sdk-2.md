@@ -482,6 +482,94 @@ amplitude.init(AMPLITUDE_API_KEY, {
 });
 ```
 
+### Track element interactions (click tracking)
+
+You can enable element interaction tracking to capture clicks and changes for elements on your page, which is required for [Visual labeling](/docs/data/visual-labeling). Review our page on [Autocapture privacy and security](/docs/data/autocapture#privacy-and-security) for more information about the data collected with these events. 
+
+Set `config.autocapture.elementInteractions` to `true` to enable element click and change tracking.
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  autocapture: {
+    elementInteractions: true, //[tl! highlight]
+  },
+});
+```
+
+#### Advanced configuration for element interactions
+
+Use the advanced configuration to control element interaction tracking.
+
+{{partial:collapse name="Tracking element interaction options"}}
+
+| Name                                                                      | Value                              | Description                                                                 |
+| ------------------------------------------------------------------------- | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `config.autocapture.elementInteractions.cssSelectorAllowlist`  | Optional. `string`        | Accepts one or more CSS selectors that define which elements on the page should always be tracked. By default, this is set to `['a','button','input','select','textarea','label','[data-amp-default-track]','.amp-default-track']` |
+| `config.autocapture.elementInteractions.actionClickAllowlist`             | Optional. `string`                 | Accepts one or more CSS selectors that define which elements on the page should be tracked when the page changes (for example, a new visual element appears) or the click takes a user to a new page. By default, this is set to `['div', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']` |
+| `config.autocapture.elementInteractions.pageUrlAllowlist`                 | Optional. `(string\|RegExp)[]`     | Defines the URL, URLs, or URL pattern on which Amplitude tracks element click and change events. By default, element interactions will be captured on any URL if undefined. |
+| `config.autocapture.elementInteractions.dataAttributePrefix`              | Optional. `(string\|RegExp)[]`     | Allows the SDK to capture data attributes as an event property. By default, this is set to `data-amp-track`. |
+
+{{/partial:collapse}}
+
+For example, you could configure Amplitude only to capture clicks on elements with a class of `amp-tracking` on the blog pages of a site as follows:
+
+```ts
+amplitude.init(API_KEY, OPTIONAL_USER_ID, {
+  autocapture: {
+    cssSelectorAllowlist: [
+      '.amp-tracking'
+    ],
+    pageUrlAllowlist: [
+      new RegExp('https://amplitude.com/blog/*')
+    ],
+  },
+});
+```
+
+By default, if you don't use these settings, Amplitude tracks the default selectors on all page on which you enable the plugin.
+
+{{partial:admonition type="note" heading=""}}
+When specify the CSS selectors to track, your selection overrides the default. To retain the default selectors import the `DEFAULT_CSS_SELECTOR_ALLOWLIST` and include it in your code.
+
+```js
+import { DEFAULT_CSS_SELECTOR_ALLOWLIST } from '@amplitude/plugin-autocapture-browser';
+
+const selectors = [
+  ...DEFAULT_CSS_SELECTOR_ALLOWLIST,
+  '.class-of-a-thing-i-want-to-track',
+];
+```
+{{/partial:admonition}}
+
+{{partial:collapse name="Element interaction events"}} 
+When you enable element interactions for Autocapture, Amplitude sends two events, from which you can create labeled events with [visual labeling](/docs/data/visual-labeling):
+
+- `[Amplitude] Element Clicked`
+- `[Amplitude] Element Changed`
+
+These two events capture properties that describe the corresponding element and other context about the user's browser:
+
+<!-- vale off-->
+- `[Amplitude] Element ID`
+- `[Amplitude] Element Class`
+- `[Amplitude] Element Tag`
+- `[Amplitude] Element Text` (Collected for `[Amplitude] Element Clicked`, only) 
+- `[Amplitude] Element Href` (Collected for `[Amplitude] Element Clicked`, only)
+- `[Amplitude] Element Position Left`
+- `[Amplitude] Element Position Top`
+- `[Amplitude] Viewport Height`
+- `[Amplitude] Viewport Width`
+- `[Amplitude] Page URL`
+- `[Amplitude] Page Title`
+- `[Amplitude] Element Selector`
+- `[Amplitude] Element Hierarchy`
+- `[Amplitude] Element Attributes`
+- `[Amplitude] Element Aria Label`
+- `[Amplitude] Element Parent Label`
+<!-- vale on-->
+{{/partial:collapse}}
+
+
 ## Track an event
 
 Events represent how users interact with your application. For example, "Button Clicked" might be an action you want to track.
