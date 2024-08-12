@@ -86,9 +86,14 @@ client := remote.Initialize("<DEPLOYMENT_KEY>", nil)
 
 The SDK client can be configured on initialization.
 
+{{partial:admonition type="info" heading="EU data center"}}
+If you're using Amplitude's EU data center, configure the `ServerZone` option on initialization.
+{{/partial:admonition}}
+
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
 | `Debug` | Set to `true` to enable debug logging. | `false` |
+| `ServerZone` | The Amplitude data center to use. Either `USServerZone` or `EUServerZone`. | `USServerZone` |
 | `ServerUrl` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
 | `FlagConfigPollingInterval` |  The timeout for fetching variants in milliseconds. This timeout only applies to the initial request, not subsequent retries | `500 * time.Millisecond` |
 | `RetryBackoff.FetchRetries` | The number of retries to attempt if a request to fetch variants fails. | `1` |
@@ -96,10 +101,6 @@ The SDK client can be configured on initialization.
 | `RetryBackoff.FetchRetryBackoffMax` | The maximum backoff between retries. If the scaled backoff becomes greater than the max, the max is used for all subsequent requests | `10 * time.Second` |
 | `RetryBackoff.FetchRetryBackoffScalar` | Scales the minimum backoff exponentially. | `1` |
 | `RetryBackoff.FetchRetryTimeout` | The request timeout for retrying variant fetches. | `500 * time.Millisecond` |
-
-{{partial:admonition type="note" heading="EU data center"}}
-If you're using Amplitude's EU data center, configure the `serverUrl` option on initialization to `https://api.lab.eu.amplitude.com`
-{{/partial:admonition}}
 
 ### Fetch
 
@@ -157,7 +158,13 @@ go get github.com/amplitude/experiment-go-server
 
  ```go
  // (1) Initialize the local evaluation client with a server deployment key.
- client := local.Initialize("<DEPLOYMENT_KEY>", nil)
+ client := local.Initialize("<DEPLOYMENT_KEY>", &local.Config{
+  // (Recommended) Enable local evaluation cohort targeting.
+  CohortSyncConfig: &local.CohortSyncConfig {
+    ApiKey: "<API_KEY>",
+    SecretKey: "<SECRET_KEY>"
+  }
+ })
 
  // (2) Start the local evaluation client.
  err := client.Start()
@@ -199,26 +206,37 @@ Use the `FlagConfigPollingInterval` [configuration](#configuration-1) to determi
 
 The SDK client can be configured on initialization.
 
+{{partial:admonition type="info" heading="EU data center"}}
+If you're using Amplitude's EU data center, configure the `ServerZone` option on initialization.
+{{/partial:admonition}}
+
 **Config**
 
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
 | `Debug` | Set to `true` to enable debug logging. | `false` |
+| `ServerZone` | The Amplitude data center to use. Either `USServerZone` or `EUServerZone`. | `USServerZone` |
 | `ServerUrl` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
 | `FlagConfigPollingInterval` | The interval to poll for updated flag configs after calling [`Start()`](#start) | `30 * time.Second` |
 | `FlagConfigPollerRequestTimeout` | The timeout for the request made by the flag config poller | `10 * time.Second` |
 | `AssignmentConfig` | Configuration for automatically tracking assignment events after an evaluation. | `nil` |
+| `CohortSyncConfig` | Configuration to enable cohort downloading for [local evaluation cohort targeting](#local-evaluation-cohort-targeting). | `nil` |
 
 **AssignmentConfig**
 
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
-| `cacheCapacity` | The maximum number of assignments stored in the assignment cache | `524288` |
+| `CacheCapacity` | The maximum number of assignments stored in the assignment cache | `524288` |
 | [`Config`](/docs/sdks/analytics/go/go-sdk#configuration) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
 
-{{partial:admonition type="note" heading="EU data center"}}
-If you're using Amplitude's EU data center, configure the `serverUrl` option on initialization to `https://api.lab.eu.amplitude.com`
-{{/partial:admonition}}
+**CohortSyncConfig**
+
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `ApiKey` | The analytics API key and NOT the experiment deployment key | *required* |
+| `SecretKey` | The analytics secret key | *required* |
+| `MaxCohortSize` | The maximum size of cohort that the SDK will download. Cohorts larger than this size will not be downloaded. | `2147483647` |
+| `CohortPollingIntervalMillis` | The interval, in milliseconds, to poll Amplitude for cohort updates (60000 minimum). | `60000` |
 
 ### Start
 
@@ -277,4 +295,18 @@ if variant.Value == "on" {
 } else {
     // Flag is off
 }
+```
+
+### Local evaluation cohort targeting
+
+Since version `1.6.0`, the local evaluation SDK client supports downloading cohorts for local evaluation targeting. You must configure the `CohortSyncConfig` option with the analytics `ApiKey` and `SecretKey` on initialization to enable this support.
+
+```go
+client := local.Initialize("<DEPLOYMENT_KEY>", &local.Config{
+  // (Recommended) Enable local evaluation cohort targeting.
+  CohortSyncConfig: &local.CohortSyncConfig {
+    ApiKey: "<API_KEY>",
+    SecretKey: "<SECRET_KEY>"
+  }
+})
 ```

@@ -21,7 +21,6 @@ Official documentation for Amplitude Experiment's server-side JVM SDK implementa
 
 This documentation has separate sections for [remote](/docs/experiment/remote-evaluation) and [local](/docs/experiment/local-evaluation) evaluation:
 
-
 ## Remote evaluation
 
 Implements fetching variants for a user via [remote evaluation](/docs/experiment/remote-evaluation).
@@ -156,21 +155,29 @@ RemoteEvaluationClient experiment = Experiment.initializeRemote("<DEPLOYMENT_KEY
 
 The SDK client can be configured on initialization.
 
+{{partial:admonition type="info" heading="EU data center"}}
+If you're using Amplitude's EU data center, configure the `serverZone` option on initialization.
+{{/partial:admonition}}
+
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
 | `debug` | Set to `true` to enable debug logging. | `false` |
+| `serverZone` | The Amplitude data center to use. Either `ServerZone.US` or `ServerZone.EU`. | `ServerZone.US` |
 | `serverUrl` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
 | `fetchTimeoutMillis` |  The timeout for fetching variants in milliseconds. This timeout only applies to the initial request, not subsequent retries | `500` |
 | `fetchRetries` | The number of retries to attempt if a request to fetch variants fails. | `1` |
 | `fetchRetryBackoffMinMillis` | The minimum (initial) backoff after a request to fetch variants fails. This delay is scaled by the `fetchRetryBackoffScalar` | `0` |
 | `fetchRetryBackoffMaxMillis` | The maximum backoff between retries. If the scaled backoff becomes greater than the max, the max is used for all subsequent requests | `10000` |
 | `fetchRetryBackoffScalar` | Scales the minimum backoff exponentially. | `1` |
-| `assignmentConfiguration` | Configuration for automatically tracking assignment events after an evaluation. | `null` |
 
+**CohortSyncConfig**
 
-{{partial:admonition type="info" heading="EU data center"}}
-If you're using Amplitude's EU data center, configure the `serverUrl` option on initialization to `https://api.lab.eu.amplitude.com`
-{{/partial:admonition}}
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `apiKey` | The analytics API key and NOT the experiment deployment key | *required* |
+| `secretKey` | The analytics secret key | *required* |
+| `maxCohortSize` | The maximum size of cohort that the SDK will download. Cohorts larger than this size will not be downloaded. | `2147483647` |
+| `cohortPollingIntervalMillis` | The interval, in milliseconds, to poll Amplitude for cohort updates (60000 minimum). | `60000` |
 
 ### Fetch
 
@@ -289,7 +296,7 @@ val experiment = Experiment.initializeLocal(
     "<DEPLOYMENT_KEY>",
     // (Recommended) Enable local evaluation cohort targeting.
     LocalEvaluationConfig.builder()
-        .enableCohortSync(CohortSyncConfiguration("<API_KEY>", "<SECRET_KEY>"))
+        .cohortSyncConfig(CohortSyncConfig("<API_KEY>", "<SECRET_KEY>"))
         .build()
 )
 
@@ -311,7 +318,7 @@ val variants = experiment.evaluate(user)
 LocalEvaluationClient experiment = Experiment.initializeLocal("<DEPLOYMENT_KEY>",
     // (Recommended) Enable local evaluation cohort targeting.
     LocalEvaluationConfig.builder()
-        .enableCohortSync(new CohortSyncConfiguration("<API_KEY>", "<SECRET_KEY>"))
+        .cohortSyncConfig(new CohortSyncConfig("<API_KEY>", "<SECRET_KEY>"))
         .build());
 
 // (2) Start the local evaluation client.
@@ -379,12 +386,12 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
 | `debug` | Set to `true` to enable debug logging. | `false` |
-| `serverZone` | The Amplitude data center to use, either `ServerZone.US` or `ServerZone.EU`. | `ServerZone.US` |
+| `serverZone` | The Amplitude data center to use. Either `ServerZone.US` or `ServerZone.EU`. | `ServerZone.US` |
 | `serverUrl` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
 | `flagConfigPollingIntervalMillis` | The interval to poll for updated flag configs after calling [`Start()`](#start) | `30000` |
 | `flagConfigPollerRequestTimeoutMillis` | The timeout for the request made by the flag config poller | `10000` |
 | `assignmentConfiguration` | Enable automatic assignment tracking for local evaluations. | `null` |
-| `cohortSyncConfiguration` | Enable cohort downloading for local evaluation targeting | `null` |
+| `cohortSyncConfig` | Configuration to enable cohort downloading for [local evaluation cohort targeting](#local-evaluation-cohort-targeting). | `null` |
 
 **AssignmentConfiguration**
 
@@ -396,13 +403,14 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 | `eventUploadPeriodMillis` | `setEventUploadPeriodMillis()` in the underlying [Analytics SDK](/docs/sdks/analytics/java/jre-java-sdk#configuration) | `10000` |
 | `useBatchMode` | `useBatchMode()` in the underlying [Analytics SDK](/docs/sdks/analytics/java/jre-java-sdk#configuration) | `true` |
 
-**CohortSyncConfiguration**
+**CohortSyncConfig**
 
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
 | `apiKey` | The analytics API key and NOT the experiment deployment key | *required* |
 | `secretKey` | The analytics secret key | *required* |
-| `maxCohortSize` | The maximum size of cohort that the SDK will download | `2147483647` |
+| `maxCohortSize` | The maximum size of cohort that the SDK will download. Cohorts larger than this size will not be downloaded. | `2147483647` |
+| `cohortPollingIntervalMillis` | The interval, in milliseconds, to poll Amplitude for cohort updates (60000 minimum). | `60000` |
 
 ### Start
 
@@ -507,7 +515,7 @@ if (Variant.valueEquals(variant, "on")) {
 
 ### Local evaluation cohort targeting
 
-Since version `1.4.0`, the local evaluation SDK client supports downloading cohorts for local evaluation targeting. You must configure the SDK using `enableCohortSync` with the analytics `apiKey` and `secretKey` on initialization to enable this support.
+Since version `1.4.0`, the local evaluation SDK client supports downloading cohorts for local evaluation targeting. You must configure the SDK using `cohortSyncConfig` with the analytics `apiKey` and `secretKey` on initialization to enable this support.
 
 {{partial:tabs tabs="Kotlin, Java"}}
 {{partial:tab name="Kotlin"}}
@@ -517,7 +525,7 @@ val experiment = Experiment.initializeLocal(
     "<DEPLOYMENT_KEY>",
     // (Recommended) Enable local evaluation cohort targeting.
     LocalEvaluationConfig.builder()
-        .enableCohortSync(CohortSyncConfiguration("<API_KEY>", "<SECRET_KEY>"))
+        .cohortSyncConfig(CohortSyncConfig("<API_KEY>", "<SECRET_KEY>"))
         .build()
 )
 ```
@@ -530,7 +538,7 @@ val experiment = Experiment.initializeLocal(
 LocalEvaluationClient experiment = Experiment.initializeLocal("<DEPLOYMENT_KEY>",
     // (Recommended) Enable local evaluation cohort targeting.
     LocalEvaluationConfig.builder()
-        .enableCohortSync(new CohortSyncConfiguration("<API_KEY>", "<SECRET_KEY>"))
+        .cohortSyncConfig(new CohortSyncConfig("<API_KEY>", "<SECRET_KEY>"))
         .build());
 ```
 

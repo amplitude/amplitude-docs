@@ -112,9 +112,14 @@ const experiment = Experiment.initializeRemote('<DEPLOYMENT_KEY>', config: {
 
 The SDK client can be configured on initialization.
 
+{{partial:admonition type="info" heading="EU data center"}}
+If you're using Amplitude's EU data center, configure the `serverZone` option on initialization.
+{{/partial:admonition}}
+
 | <div class="big-column">Name</div>  | Description | Default Value |
 | --- | --- | --- |
 | `debug` | Enable additional debug logging. | `false` |
+| `serverZone` | The Amplitude data center to use. Either `"us"` or `"eu"` | `"us"` |
 | `serverUrl` | The host to fetch variants from. | `https://api.lab.amplitude.com` |
 | `fetchTimeoutMillis` | The timeout for fetching variants in milliseconds. This timeout only applies to the initial request, not subsequent retries | `10000` |
 | `fetchRetries` | The number of retries to attempt if a request to fetch variants fails. | `8` |
@@ -122,10 +127,6 @@ The SDK client can be configured on initialization.
 | `fetchRetryBackoffMaxMillis` | The maximum backoff between retries. If the scaled backoff becomes greater than the max, the max is used for all subsequent requests | `10000` |
 | `fetchRetryBackoffScalar` | Scales the minimum backoff exponentially. | `1.5` |
 | `fetchRetryTimeoutMillis` | The request timeout for retrying variant fetches. | `10000` |
-
-{{partial:admonition type="info" heading="EU data center"}}
-If you're using Amplitude's EU data center, configure the `serverUrl` option on initialization to `https://api.lab.eu.amplitude.com`
-{{/partial:admonition}}
 
 ### Fetch
 
@@ -193,7 +194,7 @@ import { Experiment } from '@amplitude/experiment-node-server';
 // (1) Initialize the local evaluation client with a server deployment key.
 const experiment = Experiment.initializeLocal('<DEPLOYMENT_KEY>', {
   // (Recommended) Enable local evaluation cohort targeting.
-  cohortConfig: {
+  cohortSyncConfig: {
     apiKey: '<API_KEY>',
     secretKey: '<SECRET_KEY>'
   }
@@ -233,11 +234,16 @@ Use the `streamUpdates` [configuration](#configuration_1) to get flag config upd
 
 You can configure the SDK client on initialization.
 
+{{partial:admonition type="info" heading="EU data center"}}
+If you're using Amplitude's EU data center, configure the `serverZone` option on initialization.
+{{/partial:admonition}}
+
 **LocalEvaluationConfig**
 
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
 | `debug` | Set to `true` to enable debug logging. | `false` |
+| `serverZone` | The Amplitude data center to use. Either `"us"` or `"eu"` | `"us"` |
 | `serverUrl` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
 | `bootstrap` | Bootstrap the client with a map of flag key to flag configuration | `{}` |
 | `flagConfigPollingIntervalMillis` | The interval (in milliseconds) to poll for updated flag configs after calling `start()` | `30000` |
@@ -245,7 +251,7 @@ You can configure the SDK client on initialization.
 | `streamUpdates` | Enable streaming to replace polling for receiving flag config updates. Instead of polling every second, our servers push updates to SDK generally within a second. If stream fails for any reason, it will fallback to polling automatically and retry streaming after some interval. | `false` |
 | `streamServerUrl` | The stream server url to stream from. | `https://stream.lab.amplitude.com` |
 | `streamFlagConnTimeoutMillis` | The timeout for establishing a valid flag config stream. This includes time for a connection to be established to stream server and time for receiving initial flag configs. | `1500` |
-| `cohortConfig` | Configuration to enable cohort downloading for local evaluation cohort targeting. | `undefined` |
+| `cohortSyncConfig` | Configuration to enable cohort downloading for [local evaluation cohort targeting](#local-evaluation-cohort-targeting). | `undefined` |
 
 **AssignmentConfig**
 
@@ -255,13 +261,14 @@ You can configure the SDK client on initialization.
 | `cacheCapacity` | The maximum number of assignments stored in the assignment cache | `65536` |
 | [Analytics SDK Options](/docs/sdks/analytics/browser/browser-sdk-2#configuration) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
 
-**CohortConfig**
+**CohortSyncConfig**
 
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
 | `apiKey` | The analytics API key and NOT the experiment deployment key | *required* |
 | `secretKey` | The analytics secret key | *required* |
-| `maxCohortSize` | The maximum size of cohort that the SDK will download | `2147483647` |
+| `maxCohortSize` | The maximum size of cohort that the SDK will download. Cohorts larger than this size will not be downloaded. | `2147483647` |
+| `cohortPollingIntervalMillis` | The interval, in milliseconds, to poll Amplitude for cohort updates (60000 minimum). | `60000` |
 
 ### Start
 
@@ -310,12 +317,12 @@ const specificVariants = experiment.evaluateV2(user, [
 
 ### Local evaluation cohort targeting
 
-Since version `1.10.0`, the local evaluation SDK client supports downloading cohorts for local evaluation targeting. You must configure the `cohortConfig` option with the analytics `apiKey` and `secretKey` on initialization to enable this support.
+Since version `1.10.0`, the local evaluation SDK client supports downloading cohorts for local evaluation targeting. You must configure the `cohortSyncConfig` option with the analytics `apiKey` and `secretKey` on initialization to enable this support.
 
 ```js
 const experiment = Experiment.initializeLocal('<DEPLOYMENT_KEY>', {
   // (Recommended) Enable local evaluation cohort targeting.
-  cohortConfig: {
+  cohortSyncConfig: {
     apiKey: '<API_KEY>',
     secretKey: '<SECRET_KEY>'
   }
