@@ -26,7 +26,7 @@ When developing a new feature with an experiment, you can create the experiment 
 
 In Amplitude Experiment, a deployment serves a group of flags or experiments for use in an application. Each [project](#projects) has a deployment using the project API key as the deployment key, available by default. On creation, experiment deployments have an associated randomly generated **deployment key** which Experiment uses to identify the deployment and authorize requests to the evaluation servers.
 
-{{partial:admonition type="note" heading="Client vs. server deplpoyments"}}
+{{partial:admonition type="note" heading="Client vs. server deployments"}}
 Deployments are either client or server deployments. Use client-side deployments to initialize client-side SDKs, and server-side deployments to initialize server-side SDKs or authorize requests to the Evaluation API.
 {{/partial:admonition}}
 
