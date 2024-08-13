@@ -5,8 +5,8 @@ title: 'Custom formulas: Syntax and definitions'
 source: 'https://help.amplitude.com/hc/en-us/articles/115001163231-Custom-formulas-Syntax-and-definitions'
 this_article_will_help_you:
   - 'Understand and use custom formulas in Amplitude to create exactly the analysis you need'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718057055
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1723580804
 landing: true
 landing_blurb: 'Understand and use custom formulas in Amplitude to create exactly the analysis you need'
 exclude_from_sitemap: false
@@ -380,11 +380,13 @@ The blue line in this chart shows daily active users and the green line shows th
 * **Event:** Refers to the event you are interested in. This must be a letter that corresponds to an event in the Events card.
 * **Number of intervals:** The number of five-minute intervals, hours, days, weeks, or months to include in the rolling average. For example, a daily chart allows rolling averages over daily intervals only. The maximum ranges for a rolling average are 36 five-minute intervals (this works out to three hours), 72 hours, 90 days, 12 weeks, or 12 months.
 
-Returns the metric for the event selected with a [rolling window](https://help.amplitude.com/hc/en-us/articles/14056975720091#h_d48f96e2-797c-45d9-bf87-6e5a5ac8ad28) of however many days/weeks/months inputted, where a rolling window aggregation is applied *after* a cohort filter, if one is in use. 
+Returns the metric for the event selected with a [rolling window](https://help.amplitude.com/hc/en-us/articles/14056975720091#h_d48f96e2-797c-45d9-bf87-6e5a5ac8ad28) of the number of days, weeks, or months you specify, where a rolling window aggregation is applied *after* a cohort filter, if one is in use. 
 
 For example, this chart first calculates the new users for each time interval and then performs the rolling window aggregation on top of that.
 
 ![rollwin_sidecontrols.png](/docs/output/img/event-segmentation/rollwin-sidecontrols-png.png)
+
+The day (or week, or month) the chart displays is the last day of the window.
 
 ### ROLLWINBEFORE
 
