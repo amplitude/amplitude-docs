@@ -16,7 +16,10 @@ summary: 'List all your cohorts in Amplitude, export a cohort in Amplitude, or u
 ## Considerations
 
 - For Growth and Enterprise plans, the Behavioral Cohorts Download API has a limit of 500 requests per month.
-- The limit for cohort export size is 10 million users.
+- The advertised limit for cohort export size is 2 million users. In case cohort size is too big, here are suggestion:
+    1. Set up cohort sync to [Amazon Kinesis](/docs/data/destination-catalog/amazon-kinesis-cohort)
+    2. Set up cohort sync to your [Webhook](/docs/data/destination-catalog/cohort-webhooks)
+    3. If single user lookup, sync the cohort to Profile API, and use [Profile API](/docs/apis/analytics/user-profile#get-cohort-ids) for single user lookup.
 - There's a concurrency limit of 5 requests across cohort downloads and the Dashboard REST API.
 - Cohort Download uses an asynchronous API. Getting a cohort happens in three steps:
     1. Request a single cohort.
@@ -249,7 +252,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 | Name|Description|
 |----|-----|
-|`props`|<span class="optional">Optional</span>. Integer. Set to 1 to include user properties in the response object.|
+|`props`|<span class="optional">Optional</span>. Integer. Set to 1 to include user properties in the response object. Set this to `0` or unset if the request keeps timing out.|
 |`propKeys`|<span class="optional">Optional</span>. string[]. One or more user properties to include in the response. Add as many `propKeys` parameters as needed. If left undefined and props=1, response object returns all available user properties.|
 
 ### Response
@@ -511,7 +514,7 @@ The response is a JSON object with this schema:
 | --- | --- | --- |
 | error | [error json](#update-cohort-error-response-json) | Error details.  |
 
-#### Update cohort error response JSON
+#### Upload cohort error response JSON
 
 | Parameter | Description |
 | --- | --- |
