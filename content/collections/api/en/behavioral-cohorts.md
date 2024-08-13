@@ -252,7 +252,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 | Name|Description|
 |----|-----|
-|`props`|<span class="optional">Optional</span>. Integer. Set to 1 to include user properties in the response object. It is suggested to set this to 0 or unset if the request keeps timing out.|
+|`props`|<span class="optional">Optional</span>. Integer. Set to 1 to include user properties in the response object. Set this to `0` or unset if the request keeps timing out.|
 |`propKeys`|<span class="optional">Optional</span>. string[]. One or more user properties to include in the response. Add as many `propKeys` parameters as needed. If left undefined and props=1, response object returns all available user properties.|
 
 ### Response
