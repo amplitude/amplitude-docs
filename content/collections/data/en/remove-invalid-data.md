@@ -9,8 +9,8 @@ this_article_will_help_you:
   - 'Learn how to remove corrupt data from analysis'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717620767
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1723653538
 ---
 Data on Amplitude is immutable once ingested. Amplitude Data provides you with several methods to prevent invalid or incorrect data from appearing in your Amplitude analyses. You can create a drop filter, create a block filter, block events and properties, or delete events and properties. This article describes each technique, as well as the differences between them.
 
@@ -27,20 +27,21 @@ To create a drop filter, follow these steps:
 1. Make sure you’re on `main`, as filters are not accessible from any other branch
 2. In the left-hand sidebar, click *Filters*, then select the *Drop Filters* tab.
 3. Click *+ Create Drop Filter* to open the Filter Configuration fly-out panel.
-4. Click *Select property …* to include any relevant properties that will refine your filter. For example, perhaps you want to filter out all purchase events that come from a specific geographical location. Simply select that location from the list of properties.  
+4. Click *Select event ...* to choose the event you want to filter on.
+5. Optionally, click *+ where* to include any relevant properties that will refine your filter. For example, perhaps you want to filter out all purchase events that come from a specific geographical location. Simply select that location from the list of properties and set the evaluation to `is not equal`.  
+6. Specify the time range for the events you’d like Amplitude Data to drop-filter out.  
   
-    {{partial:admonition type="note" heading=""}}
-    Use exact strings to match values as you cannot use comparative operators (such as "Contains") for drop filters.
-    {{/partial:admonition}}
-
-5. Specify the time range for the events you’d like Amplitude Data to drop-filter out.  
-  
-6. When you’re ready, click *Drop Data* to initiate the drop filter.
+7. When you’re ready, click *Drop Data* to initiate the drop filter.
 
 If you want to edit or delete a drop filter, click on its name in the drop filter list. In the fly-out panel that appears on the right, make your edits and click *Update Drop Filter*.
 
-{{partial:admonition type="note" heading=""}}
-Drop filters do not affect the user activity view.
+{{partial:admonition type="note" heading="Drop filter details"}}
+There are some things about drop filters to keep in mind:
+* Drop filters don't affect event streams.
+* You must use the **same operator** across all selected properties.
+* You can **mix and match** event and user properties.
+* You can have a maximum of **three properties**.
+* You can't use any property **more than once**.
 {{/partial:admonition}}
 
 ## Create a block filter
