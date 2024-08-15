@@ -64,7 +64,7 @@ Specify a custom naming convention, or choose from the following:
 For larger teams and organizations, it’s good practice to require team reviews for any changes made to main. When this option is selected, any changes to your tracking plan must be made in a branch other than main. You can specify the number of reviewers required for approval—up to seven—here as well.
 
 {{partial:admonition type='note'}}
-To find out if this feature is available on your Amplitude plan, [visit our pricing page](https://amplitude.com/pricing).
+To find out if this feature is available on your Amplitude plan, [visit the pricing page](https://amplitude.com/pricing).
 {{/partial:admonition}}
 
 ### Public link to your tracking plan
