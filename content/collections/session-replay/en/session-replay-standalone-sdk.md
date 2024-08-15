@@ -6,7 +6,7 @@ source: 'https://www.docs.developers.amplitude.com/session-replay/sdks/plugin/'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1721323488
+updated_at: 1723742323
 ---
 {{partial:admonition type="note" heading="Session Replay instrumentation"}}
 Session Replay isn't enabled by default, and requires setup beyond the standard Amplitude instrumentation.
@@ -26,7 +26,7 @@ Session Replay captures changes to a page's Document Object Model (DOM), includi
 
 ## Before you begin
 
-Use the latest version of the Session Replay standalone SDK above version {{sdk_versions:session-replay-standalone}}. For more information, see the [change log](https://github.com/amplitude/Amplitude-TypeScript/blob/v1.x/packages/session-replay-browser/CHANGELOG.md) on GitHub.
+Use the latest version of the Session Replay standalone SDK above version {{sdk_versions:session_replay_standalone}}. For more information, see the [change log](https://github.com/amplitude/Amplitude-TypeScript/blob/v1.x/packages/session-replay-browser/CHANGELOG.md) on GitHub.
 
 Session Replay Standalone SDK requires that:
 
@@ -87,7 +87,7 @@ const sessionReplayProperties = sessionReplay.getSessionReplayProperties();
 Session Replay instrumentation happens in the context of an Amplitude Project. Your replay quota is defined on the Organization level. As a result, you may have multiple Session Replay implementations, across multiple projects each with their own sample rate, that pull from the same quota.
 {{/partial:admonition}}
 
-Alternatively, use script tags to instrument Session Replay:
+You can also use script tags to instrument Session Replay:
 
 ```js
 <script src="https://cdn.amplitude.com/libs/session-replay-browser-1.10.0-min.js.gz"></script>
