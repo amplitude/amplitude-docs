@@ -380,7 +380,7 @@ The blue line in this chart shows daily active users and the green line shows th
 * **Event:** Refers to the event you are interested in. This must be a letter that corresponds to an event in the Events card.
 * **Number of intervals:** The number of five-minute intervals, hours, days, weeks, or months to include in the rolling average. For example, a daily chart allows rolling averages over daily intervals only. The maximum ranges for a rolling average are 36 five-minute intervals (this works out to three hours), 72 hours, 90 days, 12 weeks, or 12 months.
 
-Returns the metric for the event selected with a [rolling window](https://help.amplitude.com/hc/en-us/articles/14056975720091#h_d48f96e2-797c-45d9-bf87-6e5a5ac8ad28) of the number of days, weeks, or months you specify, where a rolling window aggregation is applied *after* a cohort filter, if one is in use. 
+Returns the metric for the event selected with a [rolling window](/docs/analytics/charts/event-segmentation/event-segmentation-interpret-2#rolling-windows) of the number of days, weeks, or months you specify, where a rolling window aggregation is applied *after* a cohort filter, if one is in use. 
 
 For example, this chart first calculates the new users for each time interval and then performs the rolling window aggregation on top of that.
 
