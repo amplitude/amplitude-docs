@@ -77,8 +77,6 @@ sessionReplay.setSessionId(ThirdPartyAnalytics.getSessionId())
 sessionReplay.flush()
 ```
 
-{{partial:partials/session-replay/sr-android-jetpack-compose}}
-
 ## Configuration
 
 Pass the following configuration options when you initialize the Session Replay SDK.

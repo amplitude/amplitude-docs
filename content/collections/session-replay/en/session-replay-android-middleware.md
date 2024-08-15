@@ -75,8 +75,6 @@ amplitude.uploadEvents()
 // override fun Activity.onPause() { sessionReplayMiddleware.flush() }
 ```
 
-{{partial:partials/session-replay/sr-android-jetpack-compose}}
-
 ## Configuration
 
 Pass the following option when you initialize the Session Replay middleware:
