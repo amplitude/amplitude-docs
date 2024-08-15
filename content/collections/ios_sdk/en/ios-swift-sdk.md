@@ -192,7 +192,7 @@ Starting from release v1.8.0, the SDK is able to track more events without manua
 - Element interactions
 
 {{partial:collapse name="Autocapture options"}}
-| Name | Type | Set by Default | Description |
+| Name | Type | Enabled by default | Description |
 | --- | --- | --- | --- |
 | `sessions` | `AutocaptureOptions` | Yes | Enables session tracking. If the option is set, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting isn't set, Amplitude tracks `sessionId` only. See [Track sessions](#track-sessions) for more information. |
 | `appLifecycles` | `AutocaptureOptions` | No | Enables application lifecycle events tracking. If the option is set, Amplitude tracks application installed, application updated, application opened, and application backgrounded events. Event properties tracked include: `[Amplitude] Version`, `[Amplitude] Build`, `[Amplitude] Previous Version`, `[Amplitude] Previous Build`, `[Amplitude] From Background`. See [Track application lifecycles](#track-application-lifecycles) for more information. |
@@ -377,7 +377,7 @@ Amplitude tracks the `[Amplitude] Deep Link Opened` event with the URL and refer
 Amplitude can track user interactions with `UIControl` elements and `UIGestureRecognizer` objects in `UIKit` applications. To enable this option, include `AutocaptureOptions.elementInteractions` in the `autocapture` configuration.
 
 {{partial:admonition type="note" heading=""}}
-The `AutocaptureOptions.elementInteractions` option is experimental. Try it out and share your thoughts on our [GitHub](https://github.com/amplitude/Amplitude-Swift).
+The `AutocaptureOptions.elementInteractions` option is available as a beta release for early feedback. Try it out and share your thoughts on our [GitHub](https://github.com/amplitude/Amplitude-Swift).
 {{/partial:admonition}}
 
 {{partial:tabs tabs="Swift, Obj-c"}}
