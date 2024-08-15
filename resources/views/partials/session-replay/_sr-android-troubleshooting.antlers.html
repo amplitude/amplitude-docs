@@ -3,17 +3,6 @@
 
 For more information about individual statuses and errors, see the [Session Replay Ingestion Monitor](/docs/session-replay/ingestion-monitor).
 
-### Styles, fonts, drawables, images don't appear in replay
-
-(alpha) When Amplitude captures a replay, it doesn't transfer or store styles or other static assets that are part of your application. 
-
-Session Replay doesn't support the following in this version:
-
-- Images
-- Drawables
-- Fonts
-- Custom styles
-
 ### View components don't appear in replay
 
 (alpha) Session replay is in alpha and doesn't support all Android View components.
@@ -22,27 +11,27 @@ Session Replay doesn't support the following in this version:
 |---------------------------|---------------|--------------------------------------------------------------------------------------------------------------|
 | Layout: position          | Full          |                                                                                                              |
 | Layout: dimensions        | Full          |                                                                                                              |
-| Layout: padding           | Partial       | Broken for some text views                                                                                   |
-| Layout: insets            | Partial       | Buttons are supported                                                                                        |
+| Layout: padding           | Full          |                                                                                                              |
+| Layout: insets            | Full          |                                                                                                              |
 | View: background color    | Full          |                                                                                                              |
-| View: background drawable | In progress   |                                                                                                              |
+| View: background drawable | Full          |                                                                                                              |
 | View: background radius   | Full          |                                                                                                              |
 | View: scrolling           | Partial       |                                                                                                              |
 | View: animations          | Partial       | Any animations adding/removing views are supported.                                                          |
 | Images: placeholders      | Full          |                                                                                                              |
-| Images: bitmaps           | In progress   |                                                                                                              |
-| Text: alignment           | Partial       |                                                                                                              |
-| Text: size                | Partial       |                                                                                                              |
+| Images: bitmaps           | Full          |                                                                                                              |
+| Text: alignment           | Full          |                                                                                                              |
+| Text: size                | Full          |                                                                                                              |
 | Text: color               | Full          |                                                                                                              |
-| Text: font                | In progress   |                                                                                                              |
+| Text: font                | Full          |                                                                                                              |
 | Text: fontFamily          | Full          |                                                                                                              |
-| Text: all caps            | None          | Issue in Android SDK. `isAllCaps` doesn't work.                                                              |
-| Text: compound drawables  | Partial       | Left/right drawables added to text views have placeholders. Top/bottom drawables aren't supported |
+| Text: all caps            | Full          |                                                                                                              |
+| Text: compound drawables  | Full          |                                                                                                              |
 | Touch: up                 | Full          |                                                                                                              |
 | Touch: down               | Full          |                                                                                                              |
-| Touch: move               | In progress   |                                                                                                              |
+| Touch: move               | Partial       |                                                                                                              |
 | WebView                   | In progress   |                                                                                                              |
 | MapView                   | In progress   |                                                                                                              |
-| Canvas Views              | In progress   | Views that draw to a custom Canvas aren't  supported.                                              |
+| Canvas Views              | In progress   | Views that draw to a custom Canvas aren't supported.                                                         |
 
 {{/markdown}}
