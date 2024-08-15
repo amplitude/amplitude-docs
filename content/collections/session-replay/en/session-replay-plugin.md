@@ -206,7 +206,7 @@ await amplitude.add(sessionReplayTracking).promise;
 await amplitude.remove(sesionReplayTracking.name).promise;
 ```
 
-```
+```js
 const addPromise = amplitude.add(sessionReplayTracking).promise; 
 addPromise.then(() => {
     amplitude.remove(sessionReplayTracking.name).promise;
