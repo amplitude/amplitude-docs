@@ -7,8 +7,8 @@ this_article_will_help_you:
   - 'Understand and manage all settings related to your Amplitude Data projects'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1722894995
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1723651941
 ---
 In the Settings page, you will:
 
@@ -62,6 +62,10 @@ Specify a custom naming convention, or choose from the following:
 ### Team reviews
 
 For larger teams and organizations, it’s good practice to require team reviews for any changes made to main. When this option is selected, any changes to your tracking plan must be made in a branch other than main. You can specify the number of reviewers required for approval—up to seven—here as well.
+
+{{partial:admonition type='note'}}
+To find out if this feature is available on your Amplitude plan, [visit the pricing page](https://amplitude.com/pricing).
+{{/partial:admonition}}
 
 ### Public link to your tracking plan
 
