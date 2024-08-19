@@ -16,10 +16,10 @@ summary: 'List all your cohorts in Amplitude, export a cohort in Amplitude, or u
 ## Considerations
 
 - For Growth and Enterprise plans, the Behavioral Cohorts Download API has a limit of 500 requests per month.
-- The maximum supported cohort size is 2 million users. In case cohort size is too big, here are suggestion:
-    1. Set up cohort sync to [Amazon Kinesis](/docs/data/destination-catalog/amazon-kinesis-cohort)
-    2. Set up cohort sync to your [Webhook](/docs/data/destination-catalog/cohort-webhooks)
-    3. If single user lookup, sync the cohort to Profile API, and use [Profile API](/docs/apis/analytics/user-profile#get-cohort-ids) for single user lookup.
+- Amplitude supports a maximum cohort size of 2 million users. Here are some suggestions for cohorts larger than this:
+    - Set up a cohort sync to [Amazon Kinesis](/docs/data/destination-catalog/amazon-kinesis-cohort)
+    - Set up a cohort sync to your [Webhook](/docs/data/destination-catalog/cohort-webhooks)
+    - For single user lookup, sync the cohort to Profile API, and use [Profile API](/docs/apis/analytics/user-profile#get-cohort-ids) for single user lookup.
 - There's a concurrency limit of 5 requests across cohort downloads and the Dashboard REST API.
 - Cohort Download uses an asynchronous API. Getting a cohort happens in three steps:
     1. Request a single cohort.
