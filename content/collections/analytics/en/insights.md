@@ -7,16 +7,14 @@ this_article_will_help_you:
   - 'Set up and manage alerts to monitor the performance of your important project metrics'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717697238
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1723651708
 ---
 Amplitude's **alerts** feature is built using [Prophet](https://facebook.github.io/prophet/), an advanced data mining and machine learning technique that automatically detects any anomalies in your product data, and instantly brings these hidden trends to your attention. It does this by first identifying expected values, and the confidence intervals around them, and then analyzing the overall trend of the data and combining it with the weekly trend of the data. 
 
 ### Feature availability
 
-This feature is available to users on **Growth** and **Enterprise plans** only.
-
-* Users on Growth plans require the Insights add-on to use this feature.
+To find out if this feature is available for your Amplitude plan, [visit our pricing page](https://amplitude.com/pricing).
 
 ## Before you begin
 
