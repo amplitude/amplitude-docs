@@ -5,8 +5,8 @@ title: 'Session Replay Plugin'
 source: 'https://www.docs.developers.amplitude.com/session-replay/sdks/standalone/'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1714686587
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1723582784
 ---
 {{partial:admonition type="note" heading="Session Replay instrumentation"}}
 Session Replay isn't enabled by default, and requires setup beyond the standard Amplitude instrumentation.
@@ -190,10 +190,6 @@ Once enabled, Session Replay runs on your site until either:
 - The user leaves your site
 - You call `amplitude.remove(sessionReplayTracking.name)`
 
-Call `amplitude.remove(sessionReplayTracking.name)` before a user navigates to a restricted area of your site to disable replay collection while the user is in that area. 
-
-To restart replay collection, call `amplitude.add(sessionReplayTracking)` to re-add the plugin.
-
 {{partial:admonition type="note" heading=""}}
 These examples assume you use the variable `sessionReplayTracking` in your initialization code.
 {{/partial:admonition}}
@@ -201,6 +197,22 @@ These examples assume you use the variable `sessionReplayTracking` in your initi
 Call `amplitude.remove('sessionReplayTracking')` before a user navigates to a restricted area of your site to disable replay collection while the user is in that area. 
 
 To restart replay collection, call `amplitude.add('sessionReplayTracking')` to re-add the plugin.
+
+{{partial:admonition type='note'}}
+Always wait for `amplitude.add()` to finish before invoking `amplitude.remove()`. If you don't, you may get an error in the console: `TypeError: Cannot read properties of undefined (reading 'teardown')`. Use the `promise` property to do this, as shown in either of these examples:
+
+```
+await amplitude.add(sessionReplayTracking).promise;
+await amplitude.remove(sesionReplayTracking.name).promise;
+```
+
+```js
+const addPromise = amplitude.add(sessionReplayTracking).promise; 
+addPromise.then(() => {
+    amplitude.remove(sessionReplayTracking.name).promise;
+});
+```
+{{/partial:admonition}}
 
 You can also use a feature flag product like Amplitude Experiment to create logic that enables or disables replay collection based on criteria like location. For example, you can create a feature flag that targets a specific user group, and add that to your initialization logic:
 
@@ -218,6 +230,8 @@ if (nonEUCountryFlagEnabled) {
  amplitude.add(sessionReplayTracking);
 }
 ```
+
+
 
 ## Data retention
 
