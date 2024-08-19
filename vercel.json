@@ -2,7 +2,7 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "h/docs/data/sources/google-tag-manager-client",
+      "source": "/docs/data/sources/google-tag-manager-client",
       "destination": "/docs/data/source-catalog/google-tag-manager",
       "statusCode": 301
     },

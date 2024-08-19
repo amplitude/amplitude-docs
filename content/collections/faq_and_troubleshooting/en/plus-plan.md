@@ -4,6 +4,9 @@ blueprint: faq_and_troubleshooting
 title: 'Plus plan'
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/18004947747611'
 category: other
+landing: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1723650059
 ---
 This article covers some **frequently asked questions** about the [Plus plan](https://amplitude.com/plus-plan-terms).
 
@@ -29,21 +32,7 @@ Your subscription will automatically renew every 12 months if you are on the ann
 
 
 {{partial:collapse name="What happens if I go over my quota?"}}
-Overage fees are calculated based on any monthly tracked users (MTU) in excess of the Plus plan volume at the end of each month. The applicable overage fee schedule is determined by your current Plus plan MTU tier, and is calculated as follows:
-
-|  |  |  |
-| --- | --- | --- |
-| **MTUs** | **Price per MTU overage for annual plan** | **Price per MTU overage for monthly plan** |
-| 1,000 | $0.050 | $0.063 |
-| 5,000 | $0.020 | $0.025 |
-| 10,000 | $0.020 | $0.025 |
-| 25,000 | $0.020 | $0.025 |
-| 50,000 | $0.020 | $0.025 |
-| 100,000 | $0.010 | $0.013 |
-| 200,000 | $0.010 | $0.013 |
-| 300,000 | $0.010 | $0.013 |
-
-Overage fees for Plus plan customers who purchase event volume are calculated based on the number of events in excess of the purchased Plus plan volume at the end of each month, calculated at 1.5 times the purchased per-event rate.
+Overage fees apply to any monthly tracked users (MTU) or events in excess of the Plus plan volume at the end of each month. Overage fees are charged at 1.2x the customer’s price per MTU or per event (as applicable).
 {{/partial:collapse}}
 
 

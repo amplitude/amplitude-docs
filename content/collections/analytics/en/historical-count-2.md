@@ -7,8 +7,8 @@ this_article_will_help_you:
   - "Understand where Historical Counts fall into Amplitude's order of operations"
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717692167
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1723652404
 ---
 Amplitude's Historical Count feature helps you achieve a deeper level of understanding when you're investigating why your users are retaining, converting, or engaging—or why they're failing to do that.
 
@@ -18,7 +18,7 @@ This article is second in a series about Historical Counts. If you haven't done 
 
 ## Historical Count in the Amplitude order of operations
 
-Whenever Amplitude applies filters to an event, it does so in a specific order. **The Historical Count filter is always applied last**. 
+Whenever Amplitude applies filters to an event (including filters in segments), it does so in a specific order. **The Historical Count filter is always applied last**. 
 
 Let's take this Historical Count filter as an example:
 

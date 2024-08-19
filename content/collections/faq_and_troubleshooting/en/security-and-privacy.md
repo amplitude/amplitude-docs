@@ -1,9 +1,12 @@
 ---
 id: 703db1c8-8a4e-4f30-b2b5-9a412c6d4986
 blueprint: faq_and_troubleshooting
-title: 'Security and Privacy'
+title: 'Security and privacy'
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/17269140583451'
 category: other
+landing: false
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1723649888
 ---
 This article covers some frequently asked questions about Amplitude's security and privacy policies.
 
