@@ -16,7 +16,7 @@ summary: 'List all your cohorts in Amplitude, export a cohort in Amplitude, or u
 ## Considerations
 
 - For Growth and Enterprise plans, the Behavioral Cohorts Download API has a limit of 500 requests per month.
-- The advertised limit for cohort export size is 2 million users. In case cohort size is too big, here are suggestion:
+- The maximum supported cohort size is 2 million users. In case cohort size is too big, here are suggestion:
     1. Set up cohort sync to [Amazon Kinesis](/docs/data/destination-catalog/amazon-kinesis-cohort)
     2. Set up cohort sync to your [Webhook](/docs/data/destination-catalog/cohort-webhooks)
     3. If single user lookup, sync the cohort to Profile API, and use [Profile API](/docs/apis/analytics/user-profile#get-cohort-ids) for single user lookup.
