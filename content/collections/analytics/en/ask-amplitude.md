@@ -3,7 +3,7 @@ id: 10d36278-7030-497c-acce-46469b415a93
 blueprint: analytic
 title: 'Ask Amplitude'
 ---
-Ask Amplitude is a conversational interface for using Amplitude. Intended primarily for Amplitude users with minimal experience using analytics tools, or with limited understanding of the data taxonomy, Ask Amplitude can help you express Amplitude-related concepts and questions in natural language.
+Ask Amplitude is a conversational interface for using Amplitude. Intended primarily for Amplitude users with minimal experience using analytics tools, or with limited understanding of the data taxonomy, Ask Amplitude helps you express Amplitude-related concepts and questions in natural language.
 
 With Ask Amplitude, you can:
 - Create or edit charts from natural language.
