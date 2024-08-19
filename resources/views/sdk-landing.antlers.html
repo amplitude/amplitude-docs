@@ -9,7 +9,6 @@
                             target="_blank">Edit</a></span>
                 {{ /if }}
             </div>
-            {{# <div class="prose prose-a:text-amp-blue-300 prose-ol:list-decimal prose-ol:list-outside prose-pre:bg-[#fafafa]"> #}}
             <div class="flex flex-wrap gap-4 w-full max-w-screen-xl">
                 {{ collection :from="mount" article_type:is="core" sort="order" }}
                     <div class="flex-1 basis-80 border border-amp-gray-200 grow-0 rounded p-4 hover:shadow transition">
@@ -24,7 +23,6 @@
                         </a>
                         <div class="inline"><a href="{{ bundle_url }}" target="_blank"><img class="my-0 inline"
                                     src="{{ shields_io_badge }}" alt="" srcset="" /></a>
-
                         </div>
                         <ul class="text-sm">
                             <li><a href="{{ github_link }}" target="_blank">GitHub</a></li>
@@ -40,14 +38,13 @@
                                 {{ /migration_guide }}
                             {{ /if }}
                             {{ if plugins }}
-                            {{ plugins }}
-                                <li><a href="{{ url }}">{{ title }}</a></li>
-                            {{ /plugins }}
+                                {{ plugins }}
+                                    <li><a href="{{ url }}">{{ title }}</a></li>
+                                {{ /plugins }}
                             {{ /if }}
                         </ul>
                     </div>
                 {{ /collection }}
             </div>
-            {{# </div> #}}
         </div>
 </section>
