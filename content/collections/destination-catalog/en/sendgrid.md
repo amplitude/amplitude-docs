@@ -29,14 +29,14 @@ This SendGrid integration allows you to send audiences from Amplitude to SendGri
 ## Considerations
 
 - The API key from SendGrid must be either Full Access or Restricted Access with Marketing permissions.
-- Cohorts cannot have duplicate emails. Duplicates cause sync errors with SendGrid.
+- Cohorts can't have duplicate emails. Duplicates cause sync errors with SendGrid.
   - The recommended way to guarantee unique email addresses is by setting your Amplitude User IDs to use email addresses. 
 - All exported emails must be valid or the sync will fail.
 - You must map the email, first name, and last name fields. If the Amplitude user doesn't have values for the first and last name fields, the corresponding SendGrid contact won't have first or last names, only the email address.
 - In cases where users don't have an email address, they aren't synced to SendGrid. This can cause a discrepancy between the number of users in SendGrid and Amplitude. 
 - In SendGrid, emails aren't case-sensitive. For example, "User@Company.com" and "user@company.com" sync to the same contact (user@company.com).
-- New contacts are created for Amplitude users that are not SendGrid contacts, and existing contacts aren't duplicated. Both types of users are added to the list.
-
+- New contacts are created for Amplitude users that aren't SendGrid contacts, and existing contacts aren't duplicated. Both types of users are added to the list.
+- Cohorts can't be greater than 85 characters in length. Cohorts with names greater than 85 characters will fail during export.
 ## Setup
 
 ### SendGrid setup
