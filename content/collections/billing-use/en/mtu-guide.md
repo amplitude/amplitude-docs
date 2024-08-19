@@ -7,8 +7,8 @@ this_article_will_help_you:
   - 'Understand how Amplitude calculates and charges for MTUs'
 landing: true
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717697584
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1723581207
 landing_blurb: 'Learn about how Amplitude bills with Monthly Tracked Users.'
 ---
 Amplitude customers on Scholarship, Starter, and Plus plans bill according to **monthly tracked user (MTU)** count. This option is also available to customers on Growth and Enterprise plans. 
@@ -84,7 +84,7 @@ Regardless of the plan you’re on, you're' be subject to a cap on events per MT
 
 For example, if you purchased *n* MTUs and expect to have *x* events per user, when your event volume *k* exceeds *n*(*x*), you could see a charge for the difference based on the formula
 
-`(* - n(x)) / x = number of excess MTUs`
+`(k - n(x)) / x = number of excess MTUs`
 
 ### Exceeding limits on a free plan
 
