@@ -77,8 +77,6 @@ sessionReplay.setSessionId(ThirdPartyAnalytics.getSessionId())
 sessionReplay.flush()
 ```
 
-{{partial:partials/session-replay/sr-android-jetpack-compose}}
-
 ## Configuration
 
 Pass the following configuration options when you initialize the Session Replay SDK.
@@ -163,8 +161,6 @@ if (nonEUCountryFlagEnabled) {
 }
 ```
 
-{{partial:partials/session-replay/sr-android-bitmap-capture}}
-
 {{partial:partials/session-replay/sr-data-retention}}
 
 {{partial:partials/session-replay/sr-android-storage}}
@@ -184,14 +180,6 @@ Session replays may not appear in Amplitude due to:
 #### Lack of connectivity
 
 Ensure your app has access to the internet then try again.
-
-#### Failed to flush recording before exiting the app
-
-Session replay stores data in memory only. This can lead to data loss between app starts.
-
-Make sure to call `sessionReplay.flush()` to flush all pending session replay data before app exit.
-
-Learn more in [Session Replay storage](#session-replay-storage).
 
 #### Sampling
 
