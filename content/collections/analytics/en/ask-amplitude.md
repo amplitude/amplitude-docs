@@ -24,7 +24,7 @@ To power Ask Amplitude, Amplitude may send the following data to the OpenAI API:
 
 ### Your data and information
 
-The conversation thread history between you and Ask Amplitude is sent to the OpenAI API. However, the OpenAI API **does not receive** your customer data. **OpenAI does not store or train on** any of your Amplitude data.
+Amplitude sends the conversation thread history between you and Ask Amplitude to the OpenAI API. However, the OpenAI API **doesn't receive** your customer data. **OpenAI doesn't store or train on** any of your Amplitude data.
 
 ## Chart creation with Ask Amplitude
 
