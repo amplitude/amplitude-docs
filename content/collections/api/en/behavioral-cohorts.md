@@ -19,7 +19,7 @@ summary: 'List all your cohorts in Amplitude, export a cohort in Amplitude, or u
 - Amplitude supports a maximum cohort size of 2 million users. For cohorts larger than this, consider the following options:
     - Create a cohort sync to [Amazon Kinesis](/docs/data/destination-catalog/amazon-kinesis-cohort)
     - Create a cohort sync to a custom destination with a  [Webhook](/docs/data/destination-catalog/cohort-webhooks)
-    - For single user lookup, sync the cohort to Profile API, and use [Profile API](/docs/apis/analytics/user-profile#get-cohort-ids) for single user lookup.
+    - Create a cohort sync to [Profile API](/docs/apis/analytics/user-profile#get-cohort-ids)
 - There's a concurrency limit of 5 requests across cohort downloads and the Dashboard REST API.
 - Cohort Download uses an asynchronous API. Getting a cohort happens in three steps:
     1. Request a single cohort.
