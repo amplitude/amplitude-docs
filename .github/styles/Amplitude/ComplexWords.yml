@@ -62,7 +62,7 @@ swap:
   elucidate: explain
   employ: use
   enclosed: inside|included
-  encounter: meet
+  # encounter: meet
   endeavor: try
   enumerate: count
   equitable: fair

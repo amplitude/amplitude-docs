@@ -10,7 +10,7 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715102912
 ---
-Before running an experiment, you must estimate how you will measure success by setting the MDE (minimum detectable effect). Think of MDE as the **minimum** change you're hoping to see by running your experiment. Without a fail-safe calculation available for the MDE, it can be tricky to set one. With Amplitude Experiment, the default MDE is 2%; however, as the MDE is strictly linked to your unique business needs, be thoughtful during each experiment's [design phase](/docs/experiment/workflow/define-goals). Considerations for setting the MDE should include:
+Before you run a experiment, set an MDE (minimum detectable effect) to estimate how you'll measure success. Think of MDE as the **minimum** change you're hoping to see by running your experiment. Without a fail-safe calculation available for the MDE, it can be tricky to set one. With Amplitude Experiment, the default MDE is 2%; however, as the MDE is strictly linked to your unique business needs, be thoughtful during each experiment's [design phase](/docs/experiment/workflow/define-goals). Considerations for setting the MDE should include:
 
 * The experiment type,
 * The primary metric, and
@@ -18,11 +18,9 @@ Before running an experiment, you must estimate how you will measure success by 
 
 ## MDE and the experiment type
 
-From the *Plan* tab in Amplitude experiment, you can choose between two experiment types: *Hypothesis Testing* or *Do No Harm*. 
+When you create your experiment, you select between two experiment types: A/B test or Multi-Armed Bandit
 
-![](/docs/output/img/experiment-theory/4EhALP5sorFVIbGa36oMowyvD9svSyDoADF8LRPmQYY6XEYCA5PahAG7op7j4yX_AqdJR5WQioWlmjNrqxgLjNnZAWCAX9xXS9l9O28EOo1Wvmn3kkCnunFyLkok3bVyDgBepzQOYDNyqjG19AmY7To)
-
-Let's review a case study to dive deeper into how the experiment type could alter the MDE.
+See the following case study to dive deeper into how the experiment type could alter the MDE.
 
 The marketing director of a small arts organization is using Amplitude Experiment to help plan updates to a ticketing management system. With no data science team, the director must choose whether experiments are needed and, if so, how best to run them. The anticipated updates are:
 
@@ -31,7 +29,7 @@ The marketing director of a small arts organization is using Amplitude Experimen
 
 Update #1 could benefit from a hypothesis test to ensure the placement of the "quick checkout" button boosts conversion rates by the desired amount. The marketing director notes that their next fiscal quarter goal is to **increase** ticket sale revenue by 3%. These company goals are important when planning for the hypothesis test, and steer the test's direction to "increase" and the MDE to 3%.
 
-The second update, however, is an enhancement required to meet financial requirements. As a non-negotiable enhancement to the check out process, a do-no-harm experiment may help confirm that the additional payment method will not **decrease** completed sales for users in the checkout process. Over the last four fiscal quarters, an average of 1% of users abandoned the checkout process once starting it. Therefore, this do-no-harm experiment would have a direction set to "decrease" and an MDE set to 1%.
+The second update, however, is an enhancement required to meet financial requirements. As a non-negotiable enhancement to the check out process, a do-no-harm experiment may help confirm that the additional payment method won't **decrease** completed sales for users in the checkout process. Over the last four fiscal quarters, an average of 1% of users abandoned the checkout process once starting it. Therefore, this do-no-harm experiment would have a direction set to "decrease" and an MDE set to 1%.
 
 {{partial:admonition type='note'}}
 If running a [T-test](/docs/experiment/workflow/experiment-estimate-duration), Amplitude's duration estimator can also help set the MDE: Give yourself one month to run the experiment to get the estimated MDE.
@@ -40,8 +38,6 @@ If running a [T-test](/docs/experiment/workflow/experiment-estimate-duration), A
 ## MDE and the primary metric
 
 In Amplitude, the MDE is relative to the control mean of the primary metric. For example, if the conversion rate for the control group is 10%, an MDE of 2% (0.2) would mean that a change would be detected if the rate moved outside of the range 9.8% to 10.2%. 
-
-![](/docs/output/img/experiment-theory/iPjSCAikkvo1LS08hdcnUNMRTs0gBBf1uz637LtRMJ_qWxfemZrs2pXuG62AT5pv53jwIzvh3EEchljc24YO07xPv8zhV_Mwyf4T_mhohc2owmko0kMFUFjrS0fsfQVtGjwZnHRJvOteJccgvp9vs8Q)
 
 Let's look again at the case study from the previous section. Consider how the primary metric of ticket sale purchases may require a change in the MDE:
 
@@ -59,12 +55,12 @@ Any unique business needs and circumstances must be considered when planning for
 
 ## MDE and associated risk
 
-Experiments do not produce risk-free results, and running them can take a lot of time and require large sample sets, which mean higher costs and greater potential for adverse effects on users. The most important thing to remember when assessing risk is that the MDE is **inversely related** to sample size, meaning the smaller or more "sensitive" the MDE, the larger the sample size needed to reach statistical significance. 
+Experiments don't produce risk-free results, and running them can take a lot of time and require large sample sets, which mean higher costs and greater potential for adverse effects on users. The most important thing to remember when assessing risk is that the MDE is **inversely related** to sample size, meaning the smaller or more "sensitive" the MDE, the larger the sample size needed to reach statistical significance. 
 
 Here are some additional questions to ask yourself to further assess risk:
 
 * Would the estimated costs or run time of an experiment be worth the desired outcome?
 * What are the potentially negative side effects of users exposed to the experiment, and would the outcome be worth potential losses?
 * Is an experiment needed at all, or should other options, such as a feature release, be considered instead?
-* What is the smallest percentage change you would be happy with? For example, would you be willing to roll out the experiment if you saw a lift of 2%, 3%, or 5%?
+* What's the smallest percentage change you would be happy with? For example, would you be willing to roll out the experiment if you saw a lift of 2%, 3%, or 5%?
 * If your experiment resulted in positive outcomes, such as an increase in the number of annual subscribers from 100 to 105, would that be a big enough change to present to leadership?
