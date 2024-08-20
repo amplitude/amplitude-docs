@@ -38,15 +38,6 @@ If the estimate isn't showing, it likely means that one or more of these criteri
 {{/partial:collapse}}
 
 
-{{partial:collapse name="What do worst case, average case, and best case mean?"}}
-Amplitude Experiment uses the worst case, average case, and best case to describe the uncertainty inherent in its estimate of the time it takes for a hypothesis test to reach statistical significance: 
-
-* **Best case** estimate of three days: 20% of the time, the experiment reaches statistical significance in three days or less
-* **Average case** estimate of seven days: 50% of the time, the experiment reaches statistical significance in seven days or less
-* **Worst case** estimate of ten days: 80% of the time, the experiment reaches statistical significance in ten days or less
-{{/partial:collapse}}
-
-
 {{partial:collapse name="Is there a cap for the duration estimate?"}}
 Yes. The duration estimate is currently capped at 40 days, for the following reasons:
 
