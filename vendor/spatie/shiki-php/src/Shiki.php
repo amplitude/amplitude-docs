@@ -37,42 +37,9 @@ class Shiki
         ]);
     }
 
-    public function getAvailableLanguages(): array
-    {
-        $shikiResult = $this->callShiki('languages');
-
-        $languageProperties = json_decode($shikiResult, true);
-
-        $languages = array_map(
-            fn ($properties) => $properties['id'],
-            $languageProperties
-        );
-
-        sort($languages);
-
-        return $languages;
-    }
-
     public function __construct(string $defaultTheme = 'nord')
     {
         $this->defaultTheme = $defaultTheme;
-    }
-
-    public function getAvailableThemes(): array
-    {
-        $shikiResult = $this->callShiki('themes');
-
-        return json_decode($shikiResult, true);
-    }
-
-    public function languageIsAvailable(string $language): bool
-    {
-        return in_array($language, $this->getAvailableLanguages());
-    }
-
-    public function themeIsAvailable(string $theme): bool
-    {
-        return in_array($theme, $this->getAvailableThemes());
     }
 
     public function highlightCode(string $code, string $language, ?string $theme = null, ?array $options = []): string
@@ -93,10 +60,12 @@ class Shiki
 
     protected function callShiki(...$arguments): string
     {
+        $home = getenv("HOME");
         $command = [
             (new ExecutableFinder())->find('node', 'node', [
                 '/usr/local/bin',
                 '/opt/homebrew/bin',
+                $home . '/n/bin', // support https://github.com/tj/n
             ]),
             'shiki.js',
             json_encode(array_values($arguments)),

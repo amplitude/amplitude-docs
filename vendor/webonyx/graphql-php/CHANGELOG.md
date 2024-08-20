@@ -9,6 +9,46 @@ You can find and compare releases at the [GitHub release page](https://github.co
 
 ## Unreleased
 
+### Fixed
+
+- Avoid infinite recursion in `QueryDepth` validator https://github.com/webonyx/graphql-php/pull/1581
+
+## v15.12.4
+
+### Fixed
+
+- Ensure `unaliasedPath` does not grow for each list item https://github.com/webonyx/graphql-php/pull/1579
+
+## v15.12.3
+
+### Fixed
+
+- Avoid crash by triggering side effect via `count` on `PHPUnit\Framework\Test` https://github.com/webonyx/graphql-php/pull/1577
+
+## v15.12.2
+
+### Changed
+
+- Optimize and deduplicate ReferenceExecutor https://github.com/webonyx/graphql-php/pull/1572
+
+## v15.12.1
+
+### Fixed
+
+- Remove redundant code in `ReferenceExecutor` https://github.com/webonyx/graphql-php/pull/1570
+
+## v15.12.0
+
+### Added
+
+- Add property `unaliasedPath` to `ResolveInfo` https://github.com/webonyx/graphql-php/pull/1548
+
+## v15.11.2
+
+### Fixed
+
+- Fix `ScopedContext` for mutations https://github.com/webonyx/graphql-php/pull/1549
+
 ## v15.11.1
 
 ### Fixed
