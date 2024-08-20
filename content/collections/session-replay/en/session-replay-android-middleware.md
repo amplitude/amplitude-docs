@@ -153,8 +153,6 @@ if (nonEUCountryFlagEnabled) {
 }
 ```
 
-{{partial:partials/session-replay/sr-android-bitmap-capture}}
-
 {{partial:partials/session-replay/sr-data-retention}}
 
 {{partial:partials/session-replay/sr-android-storage}}
@@ -191,14 +189,6 @@ Session replays may not appear in Amplitude due to:
 #### Lack of connectivity
 
 Ensure your app has access to the internet then try again.
-
-#### Failed to flush recording before exiting the app
-
-Session replay stores data in memory only. This can lead to data loss between app starts.
-
-Amplitude recommends setting `amplitude.setFlushEventsOnClose(true)` (the default) to send session data to the server on each app exit.
-
-You can also call `sessionReplayMiddleware.flush()` or `amplitude.uploadEvents()` to flush events at any time of your choice.
 
 #### No events triggered through the Android SDK in the current session
 

@@ -3,7 +3,7 @@
 
 If a user opts out tracking in your app, use the `optOut` configuration option to disable replay collection for that user.
 
-(alpha) Session Replay stores data in persistent storage, specifically the file system. For testing purposes, it also stores data in local storage.
+(alpha) Session Replay stores data in persistent storage, specifically the file system.
 
 - Memory usage grows until you call `flush()` to transfer the session replay data to the server.
 - Session data isn't retried on failure to transfer to the Amplitude servers.
