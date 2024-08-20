@@ -20,8 +20,7 @@ To create a new experiment, [install an SDK](/docs/sdks/experiment-sdks) or cal
     - **Name**: Enter the name of the experiment for future reference.
     - **Project**: Select the project in which this experiment operates.
     - **Experiment Type**: Select from the following:
-      - *Hypothesis Testing* (default): Experiments where you’re using data to decide which variant to roll out based on performance. If no variant outperforms the control, you’ll usually want to roll back the experiment and stick with the control experience.
-      - *Do No Harm (DNH)*: Experiments where you already have a direction in mind, and the purpose of the experiment is to make sure that this change doesn't significantly harm key metrics. This type of experiment is often used for design system changes, or features that have to be sunset.
+      - *A/B Test*: Test one or more variants with a goal of improving a metric. Run A/B tests using hypothesis testing or do no harm methodologies. For more information, see [Define your experiment's goals](/docs/experiment/workflow/define-goals).
       - *Multi-Armed Bandit*: Amplitude allocates an increasing amount of traffic to the winning variant, based on the primary metric, until it hits 100% allocation.
     - For Web Experiments, enter the *Targeted Page URL*, on which this experiment runs.
 3. Optionally, complete the following fields:
