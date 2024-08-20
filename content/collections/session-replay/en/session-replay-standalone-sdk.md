@@ -303,6 +303,7 @@ Keep the following limitations in mind as you implement Session Replay:
   - Lottie animations
   - `<iframe>` elements from a different origin
   - Assets that require authentication, like fonts, CSS, or images
+- - Session Replay isn't compatible with ad blocking software.
 
 ### Multiple Amplitude instances
 
