@@ -11,7 +11,7 @@ This article covers frequently asked questions about Amplitude Experiment's dura
 {{partial:collapse name="How does the duration estimate work?"}}
 The experiment duration estimate predicts the length of time your experiment needs to generate statistically significant results. It can only be used with the primary metric and sequential testing. It's not supported in Experiment Results. 
 
-Amplitude Experiment uses the means, variances, and exposures of your control and variants to forecast expected behavior and calculate how the number of days your experiment takes to reach statistical significance. As Amplitude Experiment receives more data over time, this prediction improves. If any of these inputs change significantly during the experiment, the accuracy of the prediction is likely to decrease.
+Amplitude Experiment uses the means, variances, and exposures of your control and variants to forecast expected behavior and calculate the number of days your experiment takes to reach statistical significance. As Amplitude Experiment receives more data over time, this prediction improves. If any of these inputs change significantly during the experiment, the accuracy of the prediction is likely to decrease.
 {{/partial:collapse}}
 
 
@@ -21,9 +21,9 @@ Amplitude calculates the duration estimate using sequential testing **as the exp
 
 
 {{partial:collapse name="Why is the duration estimate not showing?"}}
-The duration estimate is visible your experiment meets the follow criteria:
+The duration estimate is visible when your experiment meets the follow criteria:
 
-* Your experiment meets he following statistical assumptions:
+* Your experiment meets the following statistical assumptions:
 	* The absolute lift is outside the confidence interval
 	* The confidence interval **flips** (lower confidence interval > upper confidence interval). This can happen if, while the experiment is running, the mean for either the treatment or the control fluctuates, or if the experiment’s rollout weights or targeting segments change
 	* The standard error is very small
