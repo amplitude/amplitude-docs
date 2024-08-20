@@ -160,11 +160,11 @@ Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you 
 | Name                                      | Value               | Description                                                                                                                                                                                                                                                                                                                                                                                                     |
 | ----------------------------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `config.autocapture.attribution`      | Optional. `boolean` | Enables/disables marketing attribution tracking. If `true`, Amplitude tracks marketing attribution events. Default value is `true`.                                                                                                                                                                                                                                                                    |
-| `config.autocapture.pageViews`        | Optional. `boolean` | Enables/disables default page view tracking. If `true`, Amplitude tracks page view events on initialization. Default value is `true`.<br /><br />Event properties tracked includes: `[Amplitude] Page Domain`, `[Amplitude] Page Location`, `[Amplitude] Page Path`, `[Amplitude] Page Title`, `[Amplitude] Page URL`. See [Track page views](#track-page-views) for more information. |
-| `config.autocapture.sessions`         | Optional. `boolean` | Enables/disables session tracking. If `true`, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting is `false`, Amplitude tracks `sessionId` only. See [Track sessions](#track-sessions) for more information.                                                                                                   |
-| `config.autocapture.formInteractions` | Optional. `boolean` | Enables/disables form interaction tracking. If `true`, Amplitude tracks form start and form submit events. Default value is `true`.<br /><br />Event properties tracked includes: `[Amplitude]  Form ID`, `[Amplitude] Form Name`, `[Amplitude] Form Destination`. See [Track form interactions](#track-form-interactions) for more information.                                       |
-| `config.autocapture.fileDownloads`    | Optional. `boolean` | Enables/disables file download tracking. If `true`, Amplitude tracks file download events otherwise. Default value is `true`.<br /><br />Event properties tracked includes: `[Amplitude] File Extension`, `[Amplitude] File Name`, `[Amplitude] Link ID`, `[Amplitude] Link Text`, `[Amplitude] Link URL`. See [Track file downloads](#track-file-downloads) for more information.     |
-| `config.autocapture.elementInteractions` | Optional. `boolean` | Enables/disables element interaction tracking. If `true`, Amplitude tracks interactions with all elements on the page. |
+| `config.autocapture.pageViews`        | Optional. `boolean` | Enables/disables default page view tracking. If `true`, Amplitude tracks page view events on initialization. Default value is `true`.<br /><br />Event properties tracked includes: `[Amplitude] Page Domain`, `[Amplitude] Page Location`, `[Amplitude] Page Path`, `[Amplitude] Page Title`, `[Amplitude] Page URL`. <br /><br />See [Track page views](#track-page-views) for more information. |
+| `config.autocapture.sessions`         | Optional. `boolean` | Enables/disables session tracking. If `true`, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting is `false`, Amplitude tracks `sessionId` only.<br /><br />See [Track sessions](#track-sessions) for more information.                                                                                                   |
+| `config.autocapture.formInteractions` | Optional. `boolean` | Enables/disables form interaction tracking. If `true`, Amplitude tracks form start and form submit events. Default value is `true`.<br /><br />Event properties tracked includes: `[Amplitude]  Form ID`, `[Amplitude] Form Name`, `[Amplitude] Form Destination`.<br /><br />See [Track form interactions](#track-form-interactions) for more information.                                       |
+| `config.autocapture.fileDownloads`    | Optional. `boolean` | Enables/disables file download tracking. If `true`, Amplitude tracks file download events otherwise. Default value is `true`.<br /><br />Event properties tracked includes: `[Amplitude] File Extension`, `[Amplitude] File Name`, `[Amplitude] Link ID`, `[Amplitude] Link Text`, `[Amplitude] Link URL`.<br /><br />See [Track file downloads](#track-file-downloads) for more information.     |
+| `config.autocapture.elementInteractions` | Optional. `boolean` | Enables/disables element interaction tracking. If `true`, Amplitude tracks interactions with all elements on the page.<br /><br />See [Track element interactions](#track-element-interactions) for more information and configuration options.  |
 
 {{/partial:collapse}}
 
@@ -481,6 +481,94 @@ amplitude.init(AMPLITUDE_API_KEY, {
   },
 });
 ```
+
+### Track element interactions
+
+You can enable element interaction tracking to capture clicks and changes for elements on your page, which is required for [Visual labeling](/docs/data/visual-labeling). Review our page on [Autocapture privacy and security](/docs/data/autocapture#privacy-and-security) for more information about the data collected with these events. 
+
+Set `config.autocapture.elementInteractions` to `true` to enable element click and change tracking.
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  autocapture: {
+    elementInteractions: true, //[tl! highlight]
+  },
+});
+```
+
+#### Advanced configuration for element interactions
+
+Use the advanced configuration to control element interaction tracking.
+
+{{partial:collapse name="Tracking element interaction options"}}
+
+| Name                                                                      | Value                              | Description                                                                 |
+| ------------------------------------------------------------------------- | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `config.autocapture.elementInteractions.cssSelectorAllowlist`  | Optional. `(string)[]`        | Accepts one or more CSS selectors that define which elements on the page should always be tracked. By default, this is set to `['a','button','input','select','textarea','label','video','audio','[contenteditable="true" i]','[data-amp-default-track]','.amp-default-track']` |
+| `config.autocapture.elementInteractions.actionClickAllowlist`             | Optional. `(string)[]`                 | Accepts one or more CSS selectors that define which elements on the page should be tracked when the page changes (for example, a new visual element appears) or the click takes a user to a new page. By default, this is set to `['div', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']` |
+| `config.autocapture.elementInteractions.pageUrlAllowlist`                 | Optional. `(string\|RegExp)[]`     | Defines the URL, URLs, or URL pattern on which Amplitude tracks element click and change events. By default, element interactions will be captured on any URL if undefined. |
+| `config.autocapture.elementInteractions.dataAttributePrefix`              | Optional. `(string\|RegExp)[]`     | Allows the SDK to capture data attributes as an event property. By default, this is set to `data-amp-track`. |
+
+{{/partial:collapse}}
+
+For example, you could configure Amplitude only to capture clicks on elements with a class of `amp-tracking` on the blog pages of a site as follows:
+
+```ts
+amplitude.init(API_KEY, OPTIONAL_USER_ID, {
+  autocapture: {
+    cssSelectorAllowlist: [
+      '.amp-tracking'
+    ],
+    pageUrlAllowlist: [
+      new RegExp('https://amplitude.com/blog/*')
+    ],
+  },
+});
+```
+
+By default, if you don't use these settings, Amplitude tracks the default selectors on all page on which you enable the plugin.
+
+{{partial:admonition type="note" heading=""}}
+When specify the CSS selectors to track, your selection overrides the default. To retain the default selectors import the `DEFAULT_CSS_SELECTOR_ALLOWLIST` and include it in your code.
+
+```js
+import { DEFAULT_CSS_SELECTOR_ALLOWLIST } from '@amplitude/plugin-autocapture-browser';
+
+const selectors = [
+  ...DEFAULT_CSS_SELECTOR_ALLOWLIST,
+  '.class-of-a-thing-i-want-to-track',
+];
+```
+{{/partial:admonition}}
+
+{{partial:collapse name="Element interaction events"}} 
+When you enable element interactions for Autocapture, Amplitude sends two events, from which you can create labeled events with [visual labeling](/docs/data/visual-labeling):
+
+- `[Amplitude] Element Clicked`
+- `[Amplitude] Element Changed`
+
+These two events capture properties that describe the corresponding element and other context about the user's browser:
+
+<!-- vale off-->
+- `[Amplitude] Element ID`
+- `[Amplitude] Element Class`
+- `[Amplitude] Element Tag`
+- `[Amplitude] Element Text` (Collected for `[Amplitude] Element Clicked`, only) 
+- `[Amplitude] Element Href` (Collected for `[Amplitude] Element Clicked`, only)
+- `[Amplitude] Element Position Left`
+- `[Amplitude] Element Position Top`
+- `[Amplitude] Viewport Height`
+- `[Amplitude] Viewport Width`
+- `[Amplitude] Page URL`
+- `[Amplitude] Page Title`
+- `[Amplitude] Element Selector`
+- `[Amplitude] Element Hierarchy`
+- `[Amplitude] Element Attributes`
+- `[Amplitude] Element Aria Label`
+- `[Amplitude] Element Parent Label`
+<!-- vale on-->
+{{/partial:collapse}}
+
 
 ## Track an event
 
