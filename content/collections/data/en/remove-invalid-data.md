@@ -65,10 +65,10 @@ Amplitude doesn't collect data for blocked events or properties. As a result, yo
 To create a block filter:
 
 1. Ensure you're on your project's `main` branch in Data.
-2. Click **Filters** in the side navigation.
-3. Click **+ Create Block Filter**.
+2. Click *Filters* in the side navigation.
+3. Click *+ Create Block Filter*.
 4. Specify the project and data type (Events, Event properties, User properties, or Bot traffic). If applicable, use the available filtering parameters.
-5. Click **Block Data** to initiate the block filter.
+5. Click *Block Data* to initiate the block filter.
 
 ### Block events based on property values
 
@@ -100,7 +100,7 @@ Custom events are a virtual grouping of your ingested events, aren't blockable. 
 You can prevent Amplitude Data from collecting data on a specific event, event property, or user property by blocking it. Amplitude Data immediately stops processing data for that event or property until you decide to unblock it.
 
 {{partial:admonition type="warning" heading=""}}
-Because Amplitude Data does not collect any data for blocked events or properties, this means you **cannot recover** **any information** about them at any future date. If you don't wish to display a specific event or property but think you may someday need this data, consider **hiding** the event or property instead.
+Because Amplitude Data does not collect any data for blocked events or properties, this means you **can't recover** **any information** about them at any future date. If you don't wish to display a specific event or property but think you may someday need this data, consider **hiding** the event or property instead.
 {{/partial:admonition}}
 
 To block an event or property, follow these steps:
