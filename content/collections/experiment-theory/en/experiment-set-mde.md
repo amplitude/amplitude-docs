@@ -20,16 +20,16 @@ Before you run a experiment, set an MDE (minimum detectable effect) to estimate 
 
 When you create your experiment, you select between two experiment types: A/B test or Multi-Armed Bandit
 
-See the following case study to dive deeper into how the experiment type could alter the MDE.
+See the following case study to dive deeper into how the goal type can alter the MDE.
 
 The marketing director of a small arts organization is using Amplitude Experiment to help plan updates to a ticketing management system. With no data science team, the director must choose whether experiments are needed and, if so, how best to run them. The anticipated updates are:
 
 1. Adding a "quick checkout" option on event pages, to increase conversion of page visits to ticket sales for logged-in users.
 2. Adding a new payment option during check out for all users.
 
-Update #1 could benefit from a hypothesis test to ensure the placement of the "quick checkout" button boosts conversion rates by the desired amount. The marketing director notes that their next fiscal quarter goal is to **increase** ticket sale revenue by 3%. These company goals are important when planning for the hypothesis test, and steer the test's direction to "increase" and the MDE to 3%.
+Update #1 could benefit from a success metric to ensure the placement of the "quick checkout" button boosts conversion rates by the desired amount. The marketing director notes that their next fiscal quarter goal is to **increase** ticket sale revenue by 3%. These company goals are important when planning for the success metrtic, and steer the test's direction to "increase" and the MDE to 3%.
 
-The second update, however, is an enhancement required to meet financial requirements. As a non-negotiable enhancement to the check out process, a do-no-harm experiment may help confirm that the additional payment method won't **decrease** completed sales for users in the checkout process. Over the last four fiscal quarters, an average of 1% of users abandoned the checkout process once starting it. Therefore, this do-no-harm experiment would have a direction set to "decrease" and an MDE set to 1%.
+The second update, is an enhancement required to meet financial requirements. As a non-negotiable enhancement to the check out process, a guardrail metric may help confirm that the additional payment method doesn't **decrease** completed sales for users in the checkout process. Over the last four fiscal quarters, an average of 1% of users abandoned the checkout process once starting it. Therefore, this guardrail metric would have a direction set to "decrease" and an MDE set to 1%.
 
 {{partial:admonition type='note'}}
 If running a [T-test](/docs/experiment/workflow/experiment-estimate-duration), Amplitude's duration estimator can also help set the MDE: Give yourself one month to run the experiment to get the estimated MDE.
