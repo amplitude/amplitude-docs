@@ -107,10 +107,9 @@ The same logic applies to the Session Totals metric. When you add a group-by in 
 
 You can click **Filter** to select which property values you want to keep or hide in the table.
 
-You can also add an ad hoc filter for in-line events or metrics. To do so, click the three dots from the event or metric header and select “Add Filter.” This lets you apply filters *on top* of your events or metrics. Once applied, you can see the filters you applied by hovering over the **Filter** icon.
-
-* Session-based and attribute-based metrics aren't supported, and
-* display options *Relative % for totals* nor *Data bars in cells* aren't visible.
+You can also add an ad-hoc filter for in-line events or metrics. To do so, click the three dots from the event or metric header and select “Add Filter.” This lets you apply filters *on top* of your events or metrics. Once applied, you can see the filters you applied by hovering over the **Filter** icon.
+  
+Display options *Relative % for totals* nor *Data bars in cells* aren't visible.
 
 ![display_options.jpeg](/docs/output/img/data-tables/display-options-jpeg.jpeg)
 
@@ -126,7 +125,6 @@ You can transpose columns and rows of a Data Table when:
 Transposing *isn't* possible if:
 
 * *nested* group-bys exist
-* if the table contains session or attribution-based metrics
 * if the user has unchecked the *Absolute numbers*
 
 {{partial:admonition type="note" heading=""}}
