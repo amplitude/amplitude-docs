@@ -48,6 +48,7 @@ In the same directory, run `npm install` to install npm dependencies.
 Run `php please` to validate the installation. If successful, the terminal displays a list of commands that `please` can run.
 
 Run the following to initiate the site's local cache:
+
 - `php artisan cache:clear`
 - `php please stache:refresh`
 
