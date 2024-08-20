@@ -70,6 +70,7 @@ Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 
 ## Configure the SDK
 
+{{partial:collapse name="Configuration options"}}
 | Name                           | Description                                                                                                                                                                                                 | Default Value                            |
 | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
 | `apiKey`                       | The apiKey of your project.                                                                                                                                                                                 | `nil`                                    |
@@ -86,7 +87,8 @@ Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 | `flushEventsOnClose`           | Flushing of unsent events on app close.                                                                                                                                                                     | `true`                                   |
 | `callback`                     | Callback function after event sent.                                                                                                                                                                         | `nil`                                    |
 | `optOut`                       | Opt the user out of tracking.                                                                                                                                                                               | `false`                                  |
-| `defaultTracking`              | Enable tracking of [default events](#track-default-events) for sessions, app lifecycle, screen views, and deep links.                                                                                    | `DefaultTrackingOptions(sessions: true)` |
+| ~`defaultTracking`~ (Deprecated. Use [`autocapture`](#autocapture) instead.)             | Enable tracking of default events for sessions, app lifecycles, screen views, and deep links.                                                                                    | `DefaultTrackingOptions(sessions: true)` |
+| `autocapture`             | Enable tracking of [Autocapture events](#autocapture) for sessions, app lifecycles, screen views, deep links, and element interactions.                                                                                    | `AutocaptureOptions.sessions` |
 | `minTimeBetweenSessionsMillis` | The amount of time for session timeout.                                                                                                                                                                     | `300000`                                 |
 | `serverUrl`                    | The server url events upload to.                                                                                                                                                                            | `https://api2.amplitude.com/2/httpapi`   |
 | `serverZone`                   | The server zone to send to, will adjust server url based on this config.                                                                                                                                    | `US`                                     |
@@ -95,6 +97,8 @@ Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 | `enableCoppaControl`           | Whether to enable COPPA control for tracking options.                                                                                                                                                       | `false`                                  |
 | `migrateLegacyData`            | Available in `0.4.7`+. Whether to migrate [maintenance SDK](../ios) data (events, user/device ID).                                                                                                          | `true`                                   |
 | `offline`                      | Available in `1.2.0+`. Whether the SDK is connected to network. Learn more [here](./#offline-mode).                                                                                                         | `false`                                  |
+
+{{/partial:collapse}}
 
 ## Track events
 
@@ -178,62 +182,63 @@ AMPIdentify* identify = [AMPIdentify new];
 {{/partial:tab}}
 {{/partial:tabs}}
 
-## Track default events
+## Autocapture <a id="track-default-events"></a>
 
-Starting from release v0.6.0, the SDK can track more default events. You can configure it to track the following events by default:
+Starting from release v1.8.0, the SDK is able to track more events without manual instrumentation. It can be configured to track the following events automatically:
 
 - Sessions
 - App lifecycles
 - Screen views
+- Element interactions
 
+{{partial:collapse name="Autocapture options"}}
+| Name | Type | Enabled by default | Description |
+| --- | --- | --- | --- |
+| `sessions` | `AutocaptureOptions` | Yes | Enables session tracking. If the option is set, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting isn't set, Amplitude tracks `sessionId` only. See [Track sessions](#track-sessions) for more information. |
+| `appLifecycles` | `AutocaptureOptions` | No | Enables application lifecycle events tracking. If the option is set, Amplitude tracks application installed, application updated, application opened, and application backgrounded events. Event properties tracked include: `[Amplitude] Version`, `[Amplitude] Build`, `[Amplitude] Previous Version`, `[Amplitude] Previous Build`, `[Amplitude] From Background`. See [Track application lifecycles](#track-application-lifecycles) for more information. |
+| `screenViews` | `AutocaptureOptions` | No | Enables screen views tracking. If the option is set, Amplitude tracks screen viewed events. Event properties tracked include: `[Amplitude] Screen Name`. See [Track screen views](#track-screen-views) for more information. |
+| `elementInteractions` | `AutocaptureOptions` | No | Enables element interaction tracking. If the option is set, Amplitude tracks user interactions with `UIControl` element and `UIGestureRecognizer`. Event properties tracked include: `[Amplitude] Action`, `[Amplitude] Target View Class`, `[Amplitude] Target Text`, `[Amplitude] Action Method`, `[Amplitude] Gesture Recognizer`, `[Amplitude] Hierarchy`, `[Amplitude] Accessibility Identifier`, `[Amplitude] Accessibility Label`, `[Amplitude] Screen Name`. See [Track element interactions](#track-element-interactions) for more information. |
 
-| Name                            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Default Value |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- |
-| `defaultTracking.sessions`      | Optional. `boolean`. Enables session tracking. This configuration replaces [`trackingSessionEvents`](#configuration). If value is `true`, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting is `false`, Amplitude tracks `sessionId` only.<br /><br />See [Tracking sessions](#track-sessions) for more information.                                                                                                                         | `true`        |
-| `defaultTracking.appLifecycles` | Optional. `boolean`. Enables application lifecycle events tracking. If value is `true`, Amplitude tracks application installed, application updated, application opened, and application backgrounded events.<br /><br />Event properties tracked includes: `[Amplitude] Version`,<br /> `[Amplitude] Build`,<br /> `[Amplitude] Previous Version`, `[Amplitude] Previous Build`, `[Amplitude] From Background`<br /><br />See [Tracking application lifecycles](#track-application-lifecycles) for more information. | `false`       |
-| `defaultTracking.screenViews`   | Optional. `boolean`. Enables screen views tracking. If value is `true`, Amplitude tracks screen viewed events.<br /><br />Event properties tracked includes: `[Amplitude] Screen Name`<br /><br />See [Tracking screen views](#track-screen-views) for more information.                                                                                                                                                                                                                                              | `false`       |
+{{/partial:collapse}}
 
-Use the following code sample to enable these tracking events.
+You can configure Amplitude to start tracking Autocapture events. Otherwise, you can omit the configuration to keep only session tracking enabled.
 
 {{partial:tabs tabs="Swift, Obj-c"}}
 {{partial:tab name="Swift"}}
+The `autocapture` configuration accepts an [`OptionSet`](https://developer.apple.com/documentation/swift/optionset){:target="_blank"} with `AutocaptureOptions` values.
 ```swift
 let amplitude = Amplitude(configuration: Configuration(
     apiKey: "API_KEY",
-    defaultTracking: DefaultTrackingOptions.NONE
+    autocapture: [.sessions, .appLifecycles, .screenViews]
+))
+```
+By default, if the `autocapture` configuration isn't explicitly set during `Configuration` initialization, `configuration.autocapture` will automatically include `AutocaptureOptions.sessions`.
+
+If you want to prevent automatic session events capture, set `autocapture` without the `AutocaptureOptions.sessions` option.
+```swift
+let amplitude = Amplitude(configuration: Configuration(
+    apiKey: "API_KEY",
+    autocapture: .appLifecycles 	// or use `[]` to disable Autocapture.
 ))
 ```
 {{/partial:tab}}
 {{partial:tab name="Obj-c"}}
+The `autocapture` configuration accepts an `Array` of `AutocaptureOptions` values.
 ```objc
 AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
-configuration.defaultTracking = AMPDefaultTrackingOptions.NONE;
+configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[
+    AMPAutocaptureOptions.sessions,
+    AMPAutocaptureOptions.appLifecycles,
+    AMPAutocaptureOptions.screenViews
+]];
 Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 ```
-{{/partial:tab}}
-{{/partial:tabs}}
+By default, if the `autocapture` configuration isn't explicitly set during `Configuration` initialization, `configuration.autocapture` will automatically include `AutocaptureOptions.sessions`.
 
-Customize the tracking with `DefaultTrackingOptions`.
-
-{{partial:tabs tabs="Swift, Obj-c"}}
-{{partial:tab name="Swift"}}
-```swift
-let amplitude = Amplitude(configuration: Configuration(
-    apiKey: "API_KEY",
-    defaultTracking: DefaultTrackingOptions(
-        sessions: true,
-        appLifecycles: false,
-        screenViews: false
-    )
-))
-```
-{{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+If you want to prevent automatic session events capture, set `autocapture` without the `AutocaptureOptions.sessions` option.
 ```objc
 AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
-configuration.defaultTracking.sessions = true;
-configuration.defaultTracking.appLifecycles = false;
-configuration.defaultTracking.screenViews = false;
+configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[AMPAutocaptureOptions.appLifecycles]];   // or use an empty array to disable Autocapture.
 Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
@@ -241,23 +246,21 @@ Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 
 ### Track sessions
 
-Amplitude enables session tracking by default. Set `defaultTracking.sessions` to `true` to  track session events.
+Amplitude enables session tracking by default. Include `AutocaptureOptions.sessions` in the `autocapture` configuration to explicitly configure the SDK to track session events or to enable session event tracking along with other Autocapture configurations.
 
 {{partial:tabs tabs="Swift, Obj-c"}}
 {{partial:tab name="Swift"}}
 ```swift
 let amplitude = Amplitude(configuration: Configuration(
     apiKey: "API_KEY",
-    defaultTracking: DefaultTrackingOptions(
-        sessions: true
-    )
+    autocapture: .sessions
 ))
 ```
 {{/partial:tab}}
 {{partial:tab name="Obj-c"}}
 ```objc
 AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
-configuration.defaultTracking.sessions = true;
+configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[AMPAutocaptureOptions.sessions]];
 Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
@@ -266,28 +269,26 @@ Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 For more information about session tracking, see [User sessions](#user-sessions).
 
 {{partial:admonition type="note" heading=""}}
-`trackingSessionEvents` is deprecated and replaced with `defaultTracking.sessions`.
+`trackingSessionEvents` is deprecated and replaced with the `AutocaptureOptions.sessions` option of the `autocapture` configuration.
 {{/partial:admonition}}
 
 ### Track application lifecycles
 
-Set `defaultTracking.appLifecycles` to `true` to enable Amplitude to track application lifecycle events.
+You can enable Amplitude to start tracking application lifecycle events by including `AutocaptureOptions.appLifecycles` in the `autocapture` configuration.
 
 {{partial:tabs tabs="Swift, Obj-c"}}
 {{partial:tab name="Swift"}}
 ```swift
 let amplitude = Amplitude(configuration: Configuration(
     apiKey: "API_KEY",
-    defaultTracking: DefaultTrackingOptions(
-        appLifecycles: true
-    )
+    autocapture: .appLifecycles
 ))
 ```
 {{/partial:tab}}
 {{partial:tab name="Obj-c"}}
 ```objc
 AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
-configuration.defaultTracking.appLifecycles = true;
+configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[AMPAutocaptureOptions.appLifecycles]];
 Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
@@ -302,10 +303,10 @@ When you enable this setting, Amplitude tracks the following events:
 
 ### Track screen views
 
-Set `defaultTracking.screenViews` to `true` to enable Amplitude to track screen view events.
+You can enable Amplitude to start tracking screen view events by including `AutocaptureOptions.screenViews` in the `autocapture` configuration.
 
 {{partial:admonition type="warning" heading=""}}
-This feature is supported in UIKit. For Swift UI, track the corresponding event manually.
+This feature is supported in UIKit. For SwiftUI, track the corresponding event manually.
 {{/partial:admonition}}
 
 {{partial:tabs tabs="Swift, Obj-c"}}
@@ -314,13 +315,14 @@ This feature is supported in UIKit. For Swift UI, track the corresponding event 
 // UIKit
 let amplitude = Amplitude(configuration: Configuration(
     apiKey: "API_KEY",
-    defaultTracking: DefaultTrackingOptions(
-        screenViews: true
-    )
+    autocapture: .screenViews
 ))
 
 // Swift UI
-amplitude.configuration.defaultTracking.screenViews = false
+let amplitude = Amplitude(configuration: Configuration(
+    apiKey: "API_KEY",
+    autocapture: []
+))
 amplitude.track(ScreenViewedEvent(screenName: "Screen Name"))
 ```
 {{/partial:tab}}
@@ -328,11 +330,11 @@ amplitude.track(ScreenViewedEvent(screenName: "Screen Name"))
 ```objc
 // UIKit
 AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
-configuration.defaultTracking.screenViews = true;
-Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
+configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[AMPAutocaptureOptions.screenViews]];
+Amplitude* amplitude = [Amplitude initWithConfiguration:screenViews];
 
 // Swift UI
-amplitude.configuration.defaultTracking.screenViews = false;
+configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[]];
 [amplitude track:[AMPScreenViewedEvent initWithScreenName:@"Screen Name"]];
 ```
 {{/partial:tab}}
@@ -369,6 +371,38 @@ Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 {{/partial:tabs}}
 
 Amplitude tracks the `[Amplitude] Deep Link Opened` event with the URL and referrer information.
+
+### Track element interactions
+
+Amplitude can track user interactions with `UIControl` elements and `UIGestureRecognizer` objects in `UIKit` applications. To enable this option, include `AutocaptureOptions.elementInteractions` in the `autocapture` configuration.
+
+{{partial:admonition type="note" heading=""}}
+The `AutocaptureOptions.elementInteractions` option is available as a beta release for early feedback. Try it out and share your thoughts on our [GitHub](https://github.com/amplitude/Amplitude-Swift).
+{{/partial:admonition}}
+
+{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tab name="Swift"}}
+```swift
+let amplitude = Amplitude(configuration: Configuration(
+    apiKey: "API_KEY",
+    autocapture: .elementInteractions
+))
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-c"}}
+```objc
+AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
+configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[AMPAutocaptureOptions.elementInteractions]];
+Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+After enabling this setting, Amplitude will track the `[Amplitude] Element Interacted` event whenever a user interacts with an element in the application. The SDK swizzles the `UIApplication.sendAction(_:to:from:for:)` method and the `UIGestureRecognizer.state` property setter to instrument `UIControl` action methods and `UIGestureRecognizer` within the application, respectively.
+
+{{partial:admonition type="info" heading=""}}
+Currently, Amplitude does not supports tracking user interactions with UI elements in SwiftUI.
+{{/partial:admonition}}
 
 ## User groups
 
@@ -721,7 +755,7 @@ The event callback executes after the event is sent, for both successful and fai
 
 ### User sessions
 
-Amplitude starts a session when the app is brought into the foreground or when an event is tracked in the background. A session ends when the app remains in the background for more than the time set by `setMinTimeBetweenSessionsMillis()` without any event being tracked. Note that a session will continue for the entire time the app is in the foreground no matter whether session tracking is enabled by `configuration.trackingSessionEvents` or `configuration.defaultTracking.sessions` or not. 
+Amplitude starts a session when the app is brought into the foreground or when an event is tracked in the background. A session ends when the app remains in the background for more than the time set by `setMinTimeBetweenSessionsMillis()` without any event being tracked. Note that a session will continue for the entire time the app is in the foreground no matter whether session tracking is enabled by `configuration.defaultTracking`, `configuration.autocapture` or not. 
 
 When the app enters the foreground, Amplitude tracks a session start, and starts a countdown based on `setMinTimeBetweenSessionsMillis()`. Amplitude extends the session and restarts the countdown any time it tracks a new event. If the countdown expires, Amplitude waits until the next event to track a session end event.
 
@@ -758,7 +792,7 @@ Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 {{/partial:tabs}}
 
 {{partial:admonition type="note" heading=""}}
-`trackingSessionEvents` is deprecated and replaced with `defaultTracking.sessions`.
+`trackingSessionEvents` is deprecated and replaced with the `AutocaptureOptions.sessions` option of `autocapture`.
 {{/partial:admonition}}
 
 You can also track events as out-of-session. Out-of-session events have a `sessionId` of `-1` and behave as follows:
