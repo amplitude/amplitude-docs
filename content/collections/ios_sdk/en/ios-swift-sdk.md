@@ -191,7 +191,7 @@ Starting from release v1.8.0, the SDK is able to track more events without manua
 - Screen views
 - Element interactions
 
-{{partial:collapse name="Autocapture options"}}
+{{partial:collapse name="Autocapture Options"}}
 | Name | Type | Enabled by default | Description |
 | --- | --- | --- | --- |
 | `sessions` | `AutocaptureOptions` | Yes | Enables session tracking. If the option is set, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting isn't set, Amplitude tracks `sessionId` only. See [Track sessions](#track-sessions) for more information. |
@@ -340,7 +340,7 @@ configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnio
 {{/partial:tab}}
 {{/partial:tabs}}
 
-When you enable this setting, Amplitude tracks the `[Amplitude] Screen Viewed` event with the screen name property. Amplitude reads this value from the controller class metadata `viewDidAppear` method swizzling.
+When you enable this setting, Amplitude tracks the `[Amplitude] Screen Viewed` event and sets the screen name property of this event to the name of the top-most view controller's class. Amplitude reads this value from the controller class metadata `viewDidAppear` method swizzling.
 
 ### Track deep links
 
@@ -399,6 +399,21 @@ Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 {{/partial:tabs}}
 
 After enabling this setting, Amplitude will track the `[Amplitude] Element Interacted` event whenever a user interacts with an element in the application. The SDK swizzles the `UIApplication.sendAction(_:to:from:for:)` method and the `UIGestureRecognizer.state` property setter to instrument `UIControl` action methods and `UIGestureRecognizer` within the application, respectively.
+
+{{partial:collapse name="Event Properties Descriptions"}}
+| Event property | Description |
+| --- | --- |
+| `[Amplitude] Action` | The action that triggered the event. Defaults to `touch`. |
+| `[Amplitude] Target View Class` | The name of the target view class. |
+| `[Amplitude] Target Text` | The title of the target `UIControl` element. |
+| `[Amplitude] Target Accessibility Label` | The accessibility label of the target element. |
+| `[Amplitude] Target Accessibility Identifier` | The accessibility identifier of the target element. |
+| `[Amplitude] Action Method` | The name of the function or method that is triggered when the interaction occurs. |
+| `[Amplitude] Gesture Recognizer` | The name of the `UIGestureRecognizer` class that recognizes the interaction. |
+| `[Amplitude] Hierarchy` | A nested hierarchy of the target view's class inheritance, from the most specific to the most general. |
+| `[Amplitude] Screen Name` | See [Track screen views](#track-screen-views). |
+
+{{/partial:collapse}}
 
 {{partial:admonition type="info" heading=""}}
 Currently, Amplitude does not supports tracking user interactions with UI elements in SwiftUI.

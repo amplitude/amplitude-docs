@@ -246,7 +246,7 @@ Starting from release v1.17.3, the SDK can track more events without manual inst
 - Deep links
 - Element interactions
 
-{{partial:collapse name="Autocapture options"}}
+{{partial:collapse name="Autocapture Options"}}
 | Name | Type | Enabled by default | Description |
 | --- | --- | --- | --- |
 | `SESSIONS` | `AutocaptureOption` | Yes | Enables session tracking. If the option is set, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting isn't set, Amplitude tracks `sessionId` only. See [Track sessions](#track-sessions) for more information. |
@@ -505,6 +505,20 @@ Amplitude amplitude = new Amplitude(configuration);
 {{/partial:tabs}}
 
 When you enable this setting, Amplitude tracks the `[Amplitude] Element Interacted` event whenever a user interacts with an element in the application.
+
+{{partial:collapse name="Event Properties Descriptions"}}
+| Event property | Description |
+| --- | --- |
+| `[Amplitude] Action` | The action that triggered the event. Defaults to `touch`. |
+| `[Amplitude] Target Class` | The canonical name of the target view class. |
+| `[Amplitude] Target Resource` | The resource entry name for the target view identifier within the context the view is running in. |
+| `[Amplitude] Target Tag` | The tag of the target view if the value is of primitive type, or the `Modifier.testTag` of the target `@Composable` function. |
+| `[Amplitude] Target Text` | The text of the target view if the view is a `Button` instance. |
+| `[Amplitude] Target Source` | The underlying framework of the target element, either `Android Views` or `Jetpack Compose`. |
+| `[Amplitude] Hierarchy` | A nested hierarchy of the target view's class inheritance, from the most specific to the most general. |
+| `[Amplitude] Screen Name` | See [Track screen views](#track-screen-views). |
+
+{{/partial:collapse}}
 
 {{partial:admonition type="info" heading="Support for Jetpack Compose"}}
 Amplitude supports tracking user interactions with UI elements implemented in Jetpack Compose. To track interactions, add a `Modifier.testTag` to the `@Composable` functions of the elements that you want to track.
