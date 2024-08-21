@@ -68,4 +68,8 @@ Following Segment's documentation, the wrapper maps the Segment user ID to the A
 
 ## Troubleshooting
 
+{{partial:admonition type="warning" heading="Session replay and ad blockers"}}
+Session Replay isn't compatible with ad blocking software.
+{{/partial:admonition}}
+
 For troubleshooting information, see [Session Replay Standalone SDK | Troubleshooting](/docs/session-replay/session-replay-standalone-sdk#troubleshooting)

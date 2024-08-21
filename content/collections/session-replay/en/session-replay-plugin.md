@@ -287,6 +287,12 @@ Session Replay doesn't set cookies on the user's browser. Instead, it relies on 
 
 If a user opts out of all cookies on your site, use the `optOut` configuration option to disable replay collection for that user.
 
+{{partial:admonition type="note" heading="Session Replay and cookie size"}}
+Session Replay doesn't use cookies directly, and has no impact on cookie size. 
+
+[Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) uses cookies for session management.
+{{/partial:admonition}}
+
 ### IndexedDB best practices
 
 To ensure that IndexedDB is initialized and working properly:
@@ -314,6 +320,7 @@ Keep the following limitations in mind as you implement Session Replay:
   - Lottie animations
   - `<iframe>` elements from a different origin
   - Assets that require authentication, like fonts, CSS, or images
+- Session Replay isn't compatible with ad blocking software.
 
 ### Multiple Amplitude instances
 

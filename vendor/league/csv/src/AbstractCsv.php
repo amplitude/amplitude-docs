@@ -17,10 +17,10 @@ use Generator;
 use RuntimeException;
 use SplFileObject;
 use Stringable;
+use Throwable;
 
 use function filter_var;
 use function get_class;
-use function mb_strlen;
 use function rawurlencode;
 use function sprintf;
 use function str_replace;
@@ -41,8 +41,8 @@ abstract class AbstractCsv implements ByteSequence
 
     /** @var array<string, bool> collection of stream filters. */
     protected array $stream_filters = [];
-    protected ?string $input_bom = null;
-    protected string $output_bom = '';
+    protected ?Bom $input_bom = null;
+    protected ?Bom $output_bom = null;
     protected string $delimiter = ',';
     protected string $enclosure = '"';
     protected string $escape = '\\';
@@ -147,7 +147,7 @@ abstract class AbstractCsv implements ByteSequence
      */
     public function getOutputBOM(): string
     {
-        return $this->output_bom;
+        return $this->output_bom?->value ?? '';
     }
 
     /**
@@ -155,15 +155,12 @@ abstract class AbstractCsv implements ByteSequence
      */
     public function getInputBOM(): string
     {
-        if (null !== $this->input_bom) {
-            return $this->input_bom;
+        if (null === $this->input_bom) {
+            $this->document->setFlags(SplFileObject::READ_CSV);
+            $this->input_bom = Bom::tryFromSequence($this->document);
         }
 
-        $this->document->setFlags(SplFileObject::READ_CSV);
-        $this->document->rewind();
-        $this->input_bom = Info::fetchBOMSequence((string) $this->document->fread(4)) ?? '';
-
-        return $this->input_bom;
+        return $this->input_bom?->value ?? '';
     }
 
     /**
@@ -217,7 +214,7 @@ abstract class AbstractCsv implements ByteSequence
             throw new RuntimeException('Unable to seek the document.');
         }
 
-        yield from str_split($this->output_bom.$this->document->fread($length), $length);
+        yield from str_split($this->getOutputBOM().$this->document->fread($length), $length);
 
         while ($this->document->valid()) {
             yield $this->document->fread($length);
@@ -246,7 +243,7 @@ abstract class AbstractCsv implements ByteSequence
      *
      * @throws Exception
      */
-    public function output(string $filename = null): int
+    public function output(?string $filename = null): int
     {
         if (null !== $filename) {
             $this->sendHeaders($filename);
@@ -258,7 +255,7 @@ abstract class AbstractCsv implements ByteSequence
             throw new RuntimeException('Unable to seek the document.');
         }
 
-        $stream = Stream::createFromString($this->output_bom);
+        $stream = Stream::createFromString($this->getOutputBOM());
         $stream->rewind();
 
         $res1 = $stream->fpassthru();
@@ -290,7 +287,7 @@ abstract class AbstractCsv implements ByteSequence
         }
 
         $flag = FILTER_FLAG_STRIP_LOW;
-        if (strlen($filename) !== mb_strlen($filename)) {
+        if (1 === preg_match('/[^\x20-\x7E]/', $filename)) {
             $flag |= FILTER_FLAG_STRIP_HIGH;
         }
 
@@ -394,12 +391,23 @@ abstract class AbstractCsv implements ByteSequence
 
     /**
      * Sets the BOM sequence to prepend the CSV on output.
+     *
+     * @throws InvalidArgument if the given non-empty string is not a valid BOM sequence
      */
-    public function setOutputBOM(string $str): static
+    public function setOutputBOM(Bom|string|null $str): static
     {
-        $this->output_bom = $str;
+        try {
+            $this->output_bom = match (true) {
+                $str instanceof Bom => $str,
+                null === $str,
+                '' === $str => null,
+                default => Bom::fromSequence($str),
+            };
 
-        return $this;
+            return $this;
+        } catch (Throwable $exception) {
+            throw InvalidArgument::dueToInvalidBOMCharacter(__METHOD__, $exception);
+        }
     }
 
     /**

@@ -43,11 +43,11 @@ Follow these steps to analyze metrics in the Web Analytics space:
 1. Click Explore Web Analytics from the Quick Actions section on the homepage, or click Web Analytics from the Spaces dropdown.
 2. In the left-hand panel, click on the insight you’d like to view.
 3. If desired, click the All Users dropdown to filter your analysis by user type:
-* * **All users**: Users who triggered any event during the selected date range.
-* * **Active users**: Users who triggered at least one active event during the selected date range.
-* * **New users**: Users who triggered at least one new user event during the selected date range.
-* * **Mobile web**: Users who triggered events on a web platform from an Apple iPad or Android device.
-* * **Desktop web**: Users who triggered events on a web platform from a Mac or Windows device.
+     *  **All users**: Users who triggered any event during the selected date range.
+     * **Active users**: Users who triggered at least one active event during the selected date range.
+     * **New users**: Users who triggered at least one new user event during the selected date range.
+     * **Mobile web**: Users who triggered events on a web platform from an Apple iPad or Android device.
+     * **Desktop web**: Users who triggered events on a web platform from a Mac or Windows device.
 
 From there, use the data table to further your analysis: 
 - Click *Open in Data Table* to view your results in a separate chart.

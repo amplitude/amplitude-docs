@@ -58,9 +58,9 @@ final class Stream implements SeekableIterator
     private bool $is_seekable;
     private bool $should_close_stream = false;
     /** @var mixed can be a null, false or a scalar type value. Current iterator value. */
-    private mixed $value;
+    private mixed $value = null;
     /** Current iterator key. */
-    private int $offset;
+    private int $offset = -1;
     /** Flags for the Document. */
     private int $flags = 0;
     private string $delimiter = ',';
@@ -105,6 +105,11 @@ final class Stream implements SeekableIterator
             'escape' => $this->escape,
             'stream_filters' => array_keys($this->filters),
         ];
+    }
+
+    public function ftell(): int|false
+    {
+        return ftell($this->stream);
     }
 
     /**
@@ -177,7 +182,7 @@ final class Stream implements SeekableIterator
      *
      * @throws InvalidArgument if the filter can not be appended
      */
-    public function appendFilter(string $filtername, int $read_write, array $params = null): void
+    public function appendFilter(string $filtername, int $read_write, ?array $params = null): void
     {
         set_error_handler(fn (int $errno, string $errstr, string $errfile, int $errline) => true);
         $res = stream_filter_append($this->stream, $filtername, $read_write, $params ?? []);
@@ -415,7 +420,6 @@ final class Stream implements SeekableIterator
         return $line;
     }
 
-
     /**
      * Seeks to specified line.
      *
@@ -484,7 +488,7 @@ final class Stream implements SeekableIterator
      *
      * @see http://php.net/manual/en/SplFileObject.fwrite.php
      */
-    public function fwrite(string $str, int $length = null): int|false
+    public function fwrite(string $str, ?int $length = null): int|false
     {
         $args = [$this->stream, $str];
         if (null !== $length) {
