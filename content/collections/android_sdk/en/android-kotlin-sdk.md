@@ -50,7 +50,7 @@ If you use Maven in your project, the .jar is available on Maven Central with th
 
 ## Configure the SDK
 
-{{partial:collapse name="Configuration Options"}}
+{{partial:collapse name="Configuration options"}}
 | Name | Description | Default Value |
 | --- | --- | --- |
 | `deviceId` | `String?`. The device ID to use for this device. If no deviceID is provided one will be generated automatically. Learn more [here](./#device-id-lifecycle). | `null` |
@@ -246,7 +246,7 @@ Starting from release v1.17.3, the SDK can track more events without manual inst
 - Deep links
 - Element interactions
 
-{{partial:collapse name="Autocapture Options"}}
+{{partial:collapse name="Autocapture options"}}
 | Name | Type | Enabled by default | Description |
 | --- | --- | --- | --- |
 | `SESSIONS` | `AutocaptureOption` | Yes | Enables session tracking. If the option is set, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting isn't set, Amplitude tracks `sessionId` only. See [Track sessions](#track-sessions) for more information. |
@@ -506,7 +506,7 @@ Amplitude amplitude = new Amplitude(configuration);
 
 When you enable this setting, Amplitude tracks the `[Amplitude] Element Interacted` event whenever a user interacts with an element in the application.
 
-{{partial:collapse name="Event Properties Descriptions"}}
+{{partial:collapse name="Event properties descriptions"}}
 | Event property | Description |
 | --- | --- |
 | `[Amplitude] Action` | The action that triggered the event. Defaults to `touch`. |
@@ -760,7 +760,7 @@ Ensure that the configuration and payload are accurate and check for any unusual
 
 ### Plugins
 
-You can take advantage of a Destination Plugin to print out the configuration value and event payload before sending them to the server. You can set the `logLevel` to debug, copy the following `TroubleShootingPlugin` into your project, add the plugin into the Amplitude instance.
+You can take advantage of a destination plugin to print out the configuration value and event payload before sending them to the server. You can set the `logLevel` to debug, copy the following `TroubleShootingPlugin` into your project, add the plugin into the Amplitude instance.
 
 - [Java TroubleShootingPlugin example](https://github.com/amplitude/Amplitude-Kotlin/blob/main/samples/java-android-app/src/main/java/com/amplitude/android/sample/TroubleShootingPlugin.java).
 - [Kotlin TroubleShootingPlugin example](https://github.com/amplitude/Amplitude-Kotlin/blob/main/samples/kotlin-android-app/src/main/java/com/amplitude/android/sample/TroubleShootingPlugin.kt).
@@ -1067,7 +1067,7 @@ The Android Advertising ID is a unique identifier provided by the Google Play st
 Follow these steps to use Android Ad ID.
 
 {{partial:admonition type="warning" heading=""}}
-As of April 1, 2022, Google allows users to opt out of Ad ID tracking. Ad ID may return null or error. You can use am alternative ID called [App Set ID](#app-set-id), which is unique to every app install on a device. [Learn more](https://support.google.com/googleplay/android-developer/answer/6048248?hl=en).
+As of April 1, 2022, Google allows users to opt out of Ad ID tracking. Ad ID may return null or error. You can use an alternative ID called [App Set ID](#app-set-id), which is unique to every app install on a device. [Learn more](https://support.google.com/googleplay/android-developer/answer/6048248?hl=en).
 {{/partial:admonition}}
 
 1. Add `play-services-ads-identifier` as a dependency.
@@ -1138,7 +1138,7 @@ Amplitude amplitude = new Amplitude(configuration);
 App set ID is a unique identifier for each app install on a device. App set ID is reset by the user manually when they uninstall the app, or after 13 months of not opening the app.
  Google designed this as a privacy-friendly alternative to Ad ID for users who want to opt out of stronger analytics.
 
-To use App Set ID, follow these steps.
+To use app set ID, follow these steps.
 
 1. Add `play-services-appset` as a dependency. For versions earlier than 2.35.3, use `'com.google.android.gms:play-services-appset:16.0.0-alpha1'`
 
