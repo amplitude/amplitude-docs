@@ -1167,7 +1167,7 @@ event_type=EVENT_NAME
 {{/partial:tabs}}
 
 {{partial:collapse name="Example: Update an event property"}}
-This example updates a the "Completed Task" property for the "Onboard Start" event. It changes the name to "Task Completed", adds a description, and changes the type to "any".
+This example updates a the "Completed Task" property. It changes the name to "Task Completed" and adds a description.
 
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
@@ -1176,10 +1176,8 @@ This example updates a the "Completed Task" property for the "Onboard Start" eve
 curl --location --request PUT 'https://amplitude.com/api/2/taxonomy/event-property/Completed Task' \
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA==' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'event_type=Onboard Start' \
 --data-urlencode 'description=User completed an onboarding task' \
 --data-urlencode 'new_event_property_value=Task Completed' \
---data-urlencode 'type=any'
 ```
 {{/partial:tab}}
 {{partial:tab name="HTTP"}}
