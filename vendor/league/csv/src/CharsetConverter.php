@@ -52,13 +52,7 @@ class CharsetConverter extends php_user_filter
         self::register();
 
         $document->addStreamFilter(
-            self::getFiltername(match ($document->getInputBOM()) {
-                ByteSequence::BOM_UTF16_LE => 'UTF-16LE',
-                ByteSequence::BOM_UTF16_BE => 'UTF-16BE',
-                ByteSequence::BOM_UTF32_LE => 'UTF-32LE',
-                ByteSequence::BOM_UTF32_BE => 'UTF-32BE',
-                default => 'UTF-8',
-            }, $output_encoding),
+            self::getFiltername((Bom::tryFrom($document->getInputBOM()) ?? Bom::Utf8)->encoding(), $output_encoding),
             [self::BOM_SEQUENCE => self::SKIP_BOM_SEQUENCE]
         );
 
@@ -68,7 +62,7 @@ class CharsetConverter extends php_user_filter
     /**
      * Static method to add the stream filter to a {@link AbstractCsv} object.
      */
-    public static function addTo(AbstractCsv $csv, string $input_encoding, string $output_encoding, array $params = null): AbstractCsv
+    public static function addTo(AbstractCsv $csv, string $input_encoding, string $output_encoding, ?array $params = null): AbstractCsv
     {
         self::register();
 
@@ -151,8 +145,8 @@ class CharsetConverter extends php_user_filter
         $alreadyRun = false;
         while (null !== ($bucket = stream_bucket_make_writeable($in))) {
             $content = $bucket->data;
-            if (!$alreadyRun && $this->skipBomSequence && null !== ($bom = Info::fetchBOMSequence($content))) {
-                $content = substr($content, strlen($bom));
+            if (!$alreadyRun && $this->skipBomSequence && null !== ($bom = Bom::tryFromSequence($content))) {
+                $content = substr($content, $bom->length());
             }
             $alreadyRun = true;
             $bucket->data = mb_convert_encoding($content, $this->output_encoding, $this->input_encoding);
@@ -172,7 +166,7 @@ class CharsetConverter extends php_user_filter
         return match (true) {
             $this->output_encoding === $this->input_encoding => $records,
             is_array($records) => array_map($this, $records),
-            default => new MapIterator($records, $this),
+            default => MapIterator::fromIterable($records, $this),
         };
     }
 
