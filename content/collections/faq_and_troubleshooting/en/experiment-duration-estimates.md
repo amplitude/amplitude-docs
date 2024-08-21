@@ -77,9 +77,9 @@ For example, if today the control mean equals 5, and ten days from now the contr
 {{partial:collapse name="What does 'Threshold reached' mean?"}}
 If your experiment displays the message "Threshold reached" with "0 days left" in the duration estimator, it's because the confidence interval doesn't contain the MDE (aka, threshold in this instance).
 
-This isn't necessarily a bad result if your goal metric is a guardrail metric, since the effect size would be smaller than the allowed amount.
+This isn't necessarily a bad result if your recommendation metric is a guardrail metric, since the effect size would be smaller than the allowed amount.
 
-Conversely, it's a bad sign if your goal metric is a success metric the effect size would be smaller than what you hoped for. It's recommended to end the experiment if this happens; even if you would have reached statistical significance, the lift would be smaller than what's practically significant and you wouldn't have moved the metric like you were hoping to.
+Conversely, it's a bad sign if your recommendation metric is a success metric the effect size would be smaller than what you hoped for. It's recommended to end the experiment if this happens; even if you would have reached statistical significance, the lift would be smaller than what's practically significant and you wouldn't have moved the metric like you were hoping to.
 {{/partial:collapse}}
 
 
