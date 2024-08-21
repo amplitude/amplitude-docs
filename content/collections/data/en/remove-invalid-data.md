@@ -16,15 +16,15 @@ Data on Amplitude is immutable once ingested. Amplitude Data provides you with s
 
 ## Create a drop filter
 
-In some cases, you may find you've loaded incorrect data and want to filter it out from queries. Amplitude Data's **drop filters** feature allows you to remove specific event data from your charts at query time. These events are not deleted, and they can be restored to your charts simply by editing or deleting the drop filter. Drop filters do not apply to data exports.
+You may find you've loaded incorrect data and want to filter it out from queries. Amplitude Data's **drop filters** feature allows you to remove specific event data from your charts at query time. These events aren't deleted, and they can be restored to your charts simply by editing or deleting the drop filter. Drop filters don't apply to data exports.
 
 {{partial:admonition type="note" heading=""}}
-As query-side filters that are not applied during data ingestion, drop filters **do not affect** your event volume limit.
+As query-side filters that aren't applied during data ingestion, drop filters **don't affect** your event volume limit.
 {{/partial:admonition}}
 
 To create a drop filter, follow these steps:
 
-1. Make sure you’re on `main`, as filters are not accessible from any other branch
+1. Make sure you’re on `main`, as filters aren't accessible from any other branch
 2. In the left-hand sidebar, click *Filters*, then select the *Drop Filters* tab.
 3. Click *+ Create Drop Filter* to open the Filter Configuration fly-out panel.
 4. Click *Select event ...* to choose the event you want to filter on.
@@ -46,27 +46,61 @@ There are some things about drop filters to keep in mind:
 
 ## Create a block filter
 
-You can also set up a block filter. This differs from a drop filter in that data filtered out by a drop filter is recoverable, while any **data filtered out by a block filter cannot be recovered** because it is never ingested in the first place.
+Block filters enable you to stop data ingestion for events and properties that you specify based on criteria you define. Blocking Amplitude from ingesting data can help you you need to act quickly before you update your code.
 
-You can use a block filter to block individual events or properties, but it’s especially useful for **blocking data by IP address**.
+Block filters enable you to:
 
-If you are using a block filter to block specific events or properties, you should also **update your instrumentation** so that it no longer sends the unwanted data.
+- Block events based on an event property or Amplitude property. For example, events from a specific data source.
+- Block events from a specific IP address or set of IP addresses. Use this to block traffic from a test server or bad actor.
+- Block events from a specific version of your application to help find and fix instrumentation issues.
+- Block event or user properties that start with a particular string, or properties with numeric names to help uncover instrumentation issues.
+- Block bot traffic from websites.
 
-To create a block filter, follow these steps:
+When you add or remove a block filter, allow up to 10 minutes for the change to take effect. As soon as the filter is active, it blocks Amplitude from ingesting matching data.
 
-1. Make sure you’re on `main`, as filters are not accessible from any other branch
-2. In the left-hand sidebar, click *Filters*, then select the *Block Filters* tab.
-3. Click *+ Create Block Filter* to open the Filter Configuration fly-out panel.
-4. Specify whether you want to filter events, event properties, or user properties.
-5. Specify whether the filter will be applied on the basis of event or property name; IP address; or version. Then set the rest of the filter’s parameters.  
-  6. When you’re ready, click *Block Data* to initiate the block filter.
+{{partial:admonition type="warning" heading=""}}
+Amplitude doesn't collect data for blocked events or properties. As a result, you can't recover information about blocked data at a later time, because Amplitude never ingests it. If you think you may need data at some point in the future, consider hiding the event or property instead.
+{{/partial:admonition}}
+
+To create a block filter:
+
+1. Ensure you're on your project's `main` branch in Data.
+2. Click *Filters* in the side navigation.
+3. Click *+ Create Block Filter*.
+4. Specify the project and data type (Events, Event properties, User properties, or Bot traffic). If applicable, use the available filtering parameters.
+5. Click *Block Data* to initiate the block filter.
+
+### Block events based on property values
+
+Block events based on the value of up to three event properties.
+
+When you block events based on property values, Amplitude compares your filter against the raw stringified values sent to Amplitude. Knowing the data type is important in the following scenarios:
+
+- Boolean values: If you send a property as `true` or `false`, Amplitude displays the value as "True" or "False". To use this in a Block filter, you need to specify the exact value sent as a string. In this case, `true` or `false`.
+- Array values: Amplitude splits arrays into separate values for querying. Block filters compare against the stringfied raw value.
+
+To find raw property values, use the [Event Explorer](/docs/analytics/charts/event-explorer) to view an example of the event you want to block.
+
+### Block events and properties from your plan
+
+Create Block filters from your Events or Properties list.
+
+1. Ensure you're on your project's `main` branch.
+2. In Data, navigate to the Events or Properties tab.
+3. Select the Events or Properties you want to block.
+4. Once selected, click Block to create the filter, and confirm the block.
+5. To unblock a blocked event, repeat the previous steps and click Unblock.
+
+{{partial:admonition type="note" heading=""}}
+Custom events are a virtual grouping of your ingested events, aren't blockable. Instead, block the indivdual events that make up the custom event.
+{{/partial:admonition}}
 
 ## Block events and properties
 
-You can prevent Amplitude Data from collecting data on a specific event, event property, or user property by blocking it. Amplitude Data will immediately stop processing data for that event or property until you decide to unblock it.
+You can prevent Amplitude Data from collecting data on a specific event, event property, or user property by blocking it. Amplitude Data immediately stops processing data for that event or property until you decide to unblock it.
 
 {{partial:admonition type="warning" heading=""}}
-Because Amplitude Data does not collect any data for blocked events or properties, this means you **cannot recover** **any information** about them at any future date. If you do not wish to display a specific event or property but think you may someday need this data, consider **hiding** the event or property instead.
+Because Amplitude Data does not collect any data for blocked events or properties, this means you **can't recover** **any information** about them at any future date. If you don't wish to display a specific event or property but think you may someday need this data, consider **hiding** the event or property instead.
 {{/partial:admonition}}
 
 To block an event or property, follow these steps:
@@ -84,31 +118,26 @@ You can't block **custom** events.
 
 ## Delete events and properties in Amplitude Data
 
-If you ever outgrow events or properties that are part of your Amplitude Data tracking plan, you can easily delete them.
+If you ingest events or properties that you no longer need, you can delete them from your plan.
 
-Deleting an event will block the event from ingestion and remove the event from chart drop-downs, meaning you will no longer be able to query on the event. Keep in mind that when you delete an event or event property, it will still appear in your historical data. Deleting an event simply means that Amplitude will no longer collect data for that event, and that the event will no longer count toward your monthly event volume or instrumentation [limit](https://help.amplitude.com/hc/en-us/articles/115002923888). You should also update your instrumentation to stop sending the deleted event type.
+When you delete an event or property, Amplitude blocks it from future ingestion and removes it from chart drop-downs to prevent future querying. The event or property doesn't count toward your monthly event volume or instrumentation limit.
 
-Deleting a user property will **not** remove the property from events that have already been ingested. This means that past events in a user's event stream will still contain the user property data.
+Deleting an event or property doesn't remove historical data. Charts that reference a deleted event load with data from before you deleted the event and indicates the event is deleted. 
 
-{{partial:admonition type="note" heading=""}}
-You can't delete events or properties in `main`.
-{{/partial:admonition}}
+Deleted user properties still appear on events that are already ingested, and you can still see them in historical user stream data.
 
-To delete events and event properties you no longer need, follow these steps:
+To delete an event or property:
 
-1. Create a new branch, or open an existing branch that isn't `main`.
+1. Navigate to the Events or Properties section of Amplitude Data.
 2. Find the events or event properties you want to delete and click the checkboxes next to their names.
-3. Click *Delete*.
-4. A verification modal will appear, instructing you to type in a confirmation phrase to continue with the deletion process. Type it in the text box and click *Delete*.
+3. Click Delete.
+4. Complete the verification modal.
 
-![delete_one_event_data.png](/docs/output/img/data/delete-one-event-data-png.png)
+You can undelete a deleted event or property.
 
-
-If you change your mind after you've deleted an event or property, you can easily undelete it. To do so, follow these steps:
-
-1. From the status filter drop-down, select *Deleted*. This will limit your view to deleted events.
-2. Find the items you want to undelete and click the checkboxes next to their names.
-3. Click *Undelete.*
+1. From the status filter drop-down, select Deleted to see your deleted events or properties.
+2. Find the items you want to restore and click the checkboxes next to their names.
+3. Click Restore.
 
 ## Delete an entire user
 
