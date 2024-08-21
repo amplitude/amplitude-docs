@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/hc/en-us/articles/5078631395227((?:-[a-zA-Z0-9-]+)?)",
+      "destination": "/docs/data",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/data/sources/google-tag-manager-client",
       "destination": "/docs/data/source-catalog/google-tag-manager",
       "statusCode": 301
