@@ -24,7 +24,7 @@ Amplitude Experiment lets you define multiple metrics when running an experiment
 To set up the metrics for your experiment, follow these steps:
 
 {{partial:admonition type="note" heading="Recommendations"}}
-Turn on the *Enable Recommendation* option to enable recommendations duration estimates, experiment configuration settings, result takeaways, and statistical significance notifications.
+Turn on the *Enable Recommendation* option to enable recommendations duration estimates, result takeaways, and statistical significance notifications.
 {{/partial:admonition}}
 
 1. In the *Goals* section of the experiment design panel, select your recommendation metric. You can do this from the *Metric* drop-down, or create a custom metric instead.
