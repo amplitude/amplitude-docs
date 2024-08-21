@@ -107,7 +107,11 @@ class FragmentFinder
                         (null === $selection['end'] || $offset <= $selection['end'])
             );
 
-            return [Statement::create()->where($rowFilter)->process($tabularDataReader)];
+            return [
+                Statement::create()
+                    ->where($rowFilter)
+                    ->process($tabularDataReader),
+            ];
         }
 
         if (self::TYPE_COLUMN === $type) {
@@ -125,9 +129,9 @@ class FragmentFinder
 
         return array_map(
             fn (array $selection) => Statement::create()
-                ->select(...$selection['columns'])
                 ->offset($selection['start'])
                 ->limit($selection['length'])
+                ->select(...$selection['columns'])
                 ->process($tabularDataReader),
             $selections
         );
