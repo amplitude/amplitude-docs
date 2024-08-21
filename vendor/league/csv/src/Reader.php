@@ -33,6 +33,8 @@ use const STREAM_FILTER_READ;
 
 /**
  * A class to parse and read records from a CSV document.
+ *
+ * @template TValue of array
  */
 class Reader extends AbstractCsv implements TabularDataReader, JsonSerializable
 {
@@ -160,13 +162,13 @@ class Reader extends AbstractCsv implements TabularDataReader, JsonSerializable
      */
     protected function setHeader(int $offset): array
     {
-        $inputBom = '';
+        $inputBom = null;
         $header = $this->seekRow($offset);
         if (0 === $offset) {
-            $inputBom = $this->getInputBOM();
+            $inputBom = Bom::tryFrom($this->getInputBOM());
             $header = $this->removeBOM(
                 $header,
-                !$this->is_input_bom_included ? strlen($inputBom) : 0,
+                !$this->is_input_bom_included ? $inputBom?->length() ?? 0 : 0,
                 $this->enclosure
             );
         }
@@ -175,7 +177,7 @@ class Reader extends AbstractCsv implements TabularDataReader, JsonSerializable
             [] === $header,
             [null] === $header,
             [false] === $header,
-            [''] === $header && 0 === $offset && '' !== $inputBom => throw SyntaxError::dueToHeaderNotFound($offset),
+            [''] === $header && 0 === $offset && null !== $inputBom => throw SyntaxError::dueToHeaderNotFound($offset),
             default => $header,
         };
     }
@@ -314,8 +316,6 @@ class Reader extends AbstractCsv implements TabularDataReader, JsonSerializable
 
     /**
      * @throws Exception
-     *
-     * @return Iterator<array-key, array<mixed>>
      */
     public function getIterator(): Iterator
     {
@@ -331,32 +331,32 @@ class Reader extends AbstractCsv implements TabularDataReader, JsonSerializable
     }
 
     /**
-     * @param Closure(array<mixed>, array-key=): (void|bool|null) $closure
+     * @param Closure(array<mixed>, array-key=): (void|bool|null) $callback
      */
-    public function each(Closure $closure): bool
+    public function each(Closure $callback): bool
     {
-        return ResultSet::createFromTabularDataReader($this)->each($closure);
+        return ResultSet::createFromTabularDataReader($this)->each($callback);
     }
 
     /**
-     * @param Closure(array<mixed>, array-key=): bool $closure
+     * @param Closure(array<mixed>, array-key=): bool $callback
      */
-    public function exists(Closure $closure): bool
+    public function exists(Closure $callback): bool
     {
-        return ResultSet::createFromTabularDataReader($this)->exists($closure);
+        return ResultSet::createFromTabularDataReader($this)->exists($callback);
     }
 
     /**
-     * @param Closure(TInitial|null, array<mixed>, array-key=): TInitial $closure
+     * @param Closure(TInitial|null, array<mixed>, array-key=): TInitial $callback
      * @param TInitial|null $initial
      *
      * @template TInitial
      *
      * @return TInitial|null
      */
-    public function reduce(Closure $closure, mixed $initial = null): mixed
+    public function reduce(Closure $callback, mixed $initial = null): mixed
     {
-        return ResultSet::createFromTabularDataReader($this)->reduce($closure, $initial);
+        return ResultSet::createFromTabularDataReader($this)->reduce($callback, $initial);
     }
 
     /**
@@ -380,14 +380,14 @@ class Reader extends AbstractCsv implements TabularDataReader, JsonSerializable
     }
 
     /**
-     * @param Closure(array<mixed>, array-key): bool $closure
+     * @param \League\Csv\Query\Predicate|Closure(array, array-key): bool $predicate
      *
      * @throws Exception
      * @throws SyntaxError
      */
-    public function filter(Closure $closure): TabularDataReader
+    public function filter(Query\Predicate|Closure $predicate): TabularDataReader
     {
-        return Statement::create()->where($closure)->process($this);
+        return Statement::create()->where($predicate)->process($this);
     }
 
     /**
@@ -403,12 +403,12 @@ class Reader extends AbstractCsv implements TabularDataReader, JsonSerializable
     }
 
     /**
-     * @param Closure(array<string|null>, array<string|null>): int $orderBy
+     * @param Closure(mixed, mixed): int $orderBy
      *
      * @throws Exception
      * @throws SyntaxError
      */
-    public function sorted(Closure $orderBy): TabularDataReader
+    public function sorted(Query\Sort|Closure $orderBy): TabularDataReader
     {
         return Statement::create()->orderBy($orderBy)->process($this);
     }
@@ -434,7 +434,7 @@ class Reader extends AbstractCsv implements TabularDataReader, JsonSerializable
 
     public function select(string|int ...$columns): TabularDataReader
     {
-        return Statement::create()->select(...$columns)->process($this);
+        return ResultSet::createFromTabularDataReader($this)->select(...$columns);
     }
 
     /**
@@ -442,7 +442,7 @@ class Reader extends AbstractCsv implements TabularDataReader, JsonSerializable
      *
      * @throws Exception
      *
-     * @return Iterator<array<mixed>>
+     * @return Iterator<array-key, TValue>
      */
     public function getRecords(array $header = []): Iterator
     {
@@ -481,9 +481,9 @@ class Reader extends AbstractCsv implements TabularDataReader, JsonSerializable
     protected function prepareRecords(): Iterator
     {
         $normalized = fn ($record): bool => is_array($record) && ($this->is_empty_records_included || $record !== [null]);
-        $bom = '';
+        $bom = null;
         if (!$this->is_input_bom_included) {
-            $bom = $this->getInputBOM();
+            $bom = Bom::tryFrom($this->getInputBOM());
         }
 
         $records = $this->stripBOM(new CallbackFilterIterator($this->getDocument(), $normalized), $bom);
@@ -501,24 +501,24 @@ class Reader extends AbstractCsv implements TabularDataReader, JsonSerializable
     /**
      * Strips the BOM sequence from the returned records if necessary.
      */
-    protected function stripBOM(Iterator $iterator, string $bom): Iterator
+    protected function stripBOM(Iterator $iterator, ?Bom $bom): Iterator
     {
-        if ('' === $bom) {
+        if (null === $bom) {
             return $iterator;
         }
 
-        $bom_length = strlen($bom);
-        $mapper = function (array $record, int $index) use ($bom_length): array {
+        $bomLength = $bom->length();
+        $mapper = function (array $record, int $index) use ($bomLength): array {
             if (0 !== $index) {
                 return $record;
             }
 
-            $record = $this->removeBOM($record, $bom_length, $this->enclosure);
-            if ([''] === $record) {
-                return [null];
-            }
+            $record = $this->removeBOM($record, $bomLength, $this->enclosure);
 
-            return $record;
+            return match ($record) {
+                [''] => [null],
+                default => $record,
+            };
         };
 
         return new CallbackFilterIterator(
