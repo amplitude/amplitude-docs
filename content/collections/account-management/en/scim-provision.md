@@ -63,9 +63,12 @@ In Okta, the Amplitude SCIM API provides the following features:
 * **Deactivate Users**: On removal of a user assignment from the Okta application, Amplitude removes the users from your Amplitude organization.
 * **Push Groups**: Creates new groups in Amplitude and links them to groups within Amplitude.
 
+### Okta integration
+
 The best way to integrate Okta provisioning with Amplitude is with the Amplitude application within the Okta Integration Network. To do so, follow these steps:
 
 1. In the Okta Integration Catalog, navigate to *Applications* and find the Amplitude application. Use the Org ID available in the *General Settings* section in Amplitude to create the integration.
+
 2. Once you create the integration, set up and authenticate provisioning calls to Amplitude. Navigate to the *Provisioning* tab and click *Configure API Integration*.
 
   ![blobid0.png](/docs/output/img/account-management/blobid0-png.png)
@@ -74,9 +77,15 @@ The best way to integrate Okta provisioning with Amplitude is with the Amplitude
 
   ![blobid1.png](/docs/output/img/account-management/blobid1-png.png)
 
-1. Once Okta verifies the connection, select the provisioning actions that can Okta can send to Amplitude. Check any features in the *To App* section of the *Provisioning* tab that fit your needs. It's usually best to select all available features, to ensure that Amplitude's user records closely match that of your Okta directory.
+4. Once Okta verifies the connection, select the provisioning actions that can Okta can send to Amplitude. Check any features in the *To App* section of the *Provisioning* tab that fit your needs. It's usually best to select all available features, to ensure that Amplitude's user records closely match that of your Okta directory.
 
   ![blobid2.png](/docs/output/img/account-management/blobid2-png.png)
+
+
+### Manual configuration (SAML)
+
+If you're SSO requires SAML support, use the manual configuration described in [Set up single sign-on (SSO) for Amplitude using Okta](/docs/admin/single-sign-on/okta).
+
 
 ## Troubleshooting
 
