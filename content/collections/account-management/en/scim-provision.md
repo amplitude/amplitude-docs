@@ -15,7 +15,7 @@ In Amplitude, the User Management API provides a programmatic solution to provis
 The User Management API follows the [SCIM 2.0 Standard.](http://www.simplecloud.info/#Specification) It allows for the creation, retrieval, update, and deletion calls for users (including pending users) and permission groups.
 
 {{partial:admonition type='note'}}
- For a technical guide and spec for interfacing with the SCIM API, see the [SCIM API guide](https://developers.amplitude.com/docs/scim-api) in our developer docs. It's useful for developers testing the SCIM API, developing scripts that call the Amplitude SCIM API, or constructing one-off requests.
+For a technical guide and spec for interfacing with the SCIM API, see the [SCIM API guide](https://developers.amplitude.com/docs/scim-api) in our developer docs. It's useful for developers testing the SCIM API, developing scripts that call the Amplitude SCIM API, or constructing one-off requests.
 {{/partial:admonition}}
 
 ### Feature availability
@@ -57,7 +57,7 @@ Amplitude currently supports all fields of the core group schema of SCIM, as wel
 
 In Okta, the Amplitude SCIM API provides the following features:
 
-* **Import Users/Groups**: Accesses the users and groups currently within your organization **inside Amplitude,**and adds new users or updates existing users within Okta.
+* **Import Users/Groups**: Accesses the users and groups currently within your organization inside Amplitude and adds new users or updates existing users within Okta.
 * **Create New Users:** On assignment of a user or group to the application, Amplitude invites users to your organization in Amplitude and sends an invitation email to complete sign-up.
 * **Update User Attributes**: Used to keep profiles in sync from Okta to Amplitude.
 * **Deactivate Users**: On removal of a user assignment from the Okta application, Amplitude removes the users from your Amplitude organization.
