@@ -34,6 +34,15 @@ Sometimes, you may have different versions of the same property, like variations
 
 ## Frequently asked questions
 
+### Do property values get sent to OpenAI?
+
+Yes, there are three scenarios where property values can be sent to OpenAI today:
+1. Filter Selection: In order to choose values for filters, we look at possible values. This is the same metadata as when you are selecting a value from the property dropdown in charts. (Example: When you ask "How many users signed up on the free plan?", we would check the values of the plan property.)
+2. Suggestion Generation: the same mechanics as 1.  (Example: When you ask a question, and we suggest "Filter by Country = United States" as a follow up.)
+3. User Input + Chat History - All user-typed input is sent to openAI, so if specific property values are described that will be sent.
+
+Also as a reminder, Amplitude pays to guarantee OpenAI does not store or train on any data that is sent to their API from Ask Amplitude.
+
 ### What are the differences between this version of Ask Amplitude and the last one?
 
 While both versions have similar underlying chart creation capabilities, the scope of Ask Amplitude is now more expansive, to better assist with a broader set of tasks. This version also models interactions as a conversation instead of as a single question; this is a better way to model the iterative nature of analytics.
