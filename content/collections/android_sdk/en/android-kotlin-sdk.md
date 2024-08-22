@@ -65,7 +65,7 @@ If you use Maven in your project, the .jar is available on Maven Central with th
 | `optOut` | `Boolean`. Opt the user out of tracking. | `false` |
 | ~`trackingSessionEvents`~ (Deprecated. Use [`autocapture`](#autocapture) instead.)| `Boolean`. Automatic tracking of "Start Session" and "End Session" events that count toward event volume. | `false` |
 | ~`defaultTracking`~ (Deprecated. Use [`autocapture`](#autocapture) instead.) | `DefaultTrackingOptions`. Enable tracking of default events for sessions, app lifecycles, screen views, and deep links. | `DefaultTrackingOptions(sessions = true)` |
-| `autocapture` | `Set<AutocaptureOption>`. A `Set` of Options to enable tracking of default events for sessions, application lifecycles, screen views, deep links, and element interactions. | If the parameter isn't set, `AutocaptureOption.SESSIONS` is added to the `Set` by default. For more information, see [Autocapture](#autocapture).|
+| `autocapture` | `Set<AutocaptureOption>`. A `Set` of Options to enable tracking of default events for sessions, application lifecycles, screen and fragment views, deep links, and element interactions. | If the parameter isn't set, `AutocaptureOption.SESSIONS` is added to the `Set` by default. For more information, see [Autocapture](#autocapture).|
 | `minTimeBetweenSessionsMillis` | `Long`. The amount of time for session timeout. The value is in milliseconds. | `300000` |
 | `serverUrl` | `String`. The server url events upload to. | `https://api2.amplitude.com/2/httpapi` |
 | `serverZone` | `ServerZone.US` or `ServerZone.EU`. The server zone to send to, will adjust server url based on this config. | `ServerZone.US` |
