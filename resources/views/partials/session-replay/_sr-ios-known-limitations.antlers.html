@@ -1,0 +1,23 @@
+{{markdown}}
+## Known limitations
+
+Keep the following limitations in mind as you implement Session Replay:
+
+- (alpha) Session replay may not support all view components. Contact Amplitude (with a session replay link) for more information.
+
+- Session Replay doesn't stitch together replays from a single user across multiple projects. For example:
+  
+    - You instrument multiple apps as separate Amplitude projects with Session Replay enabled in each.
+    - A known user begins on one app, and then switch to another.
+    - Amplitude captures both sessions.
+    - The replay for each session is available for view in the corresponding host project.
+
+- The User Sessions chart doesn't show session replays if your organization uses a custom session definition.
+
+- Session Replay cannot capture the following iOS views:
+
+    - Out-of-process iOS views, such as SFSafariViewController
+    - AVPlayerLayer backed views
+    - MKMapView
+    - WKWebView
+{{/markdown}}
