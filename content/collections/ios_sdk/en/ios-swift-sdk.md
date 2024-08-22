@@ -191,7 +191,7 @@ Starting from release v1.8.0, the SDK is able to track more events without manua
 - Screen views
 - Element interactions
 
-{{partial:collapse name="Autocapture Options"}}
+{{partial:collapse name="Autocapture options"}}
 | Name | Type | Enabled by default | Description |
 | --- | --- | --- | --- |
 | `sessions` | `AutocaptureOptions` | Yes | Enables session tracking. If the option is set, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting isn't set, Amplitude tracks `sessionId` only. See [Track sessions](#track-sessions) for more information. |
