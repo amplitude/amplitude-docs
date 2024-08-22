@@ -37,6 +37,7 @@ Sometimes, you may have different versions of the same property, like variations
 ### Does Ask Amplitude send property values to OpenAI?
 
 Yes, there are three scenarios where Amplitude may send property values to OpenAI:
+
 1. **Filter Selection**: To choose values for filters, Ask Amplitude looks at possible values. This uses the same metadata as when you select a value from the property dropdown in charts. For example when you ask "How many users signed up on the free plan?", Amplitude would check the values of the `plan` property.
 2. **Suggestion Generation**:  Uses the same mechanics as the first scenario.  For example, when you ask a question, and Ask Amplitude suggests `Filter by Country = United States` as a follow up.
 3. **User Input + Chat History**: Ask Amplitude sends all user-typed input  to OpenAI, so if specific property values are described, Ask Amplitude sends them to OpenAI
