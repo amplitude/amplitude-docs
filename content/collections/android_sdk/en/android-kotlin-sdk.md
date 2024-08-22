@@ -65,7 +65,7 @@ If you use Maven in your project, the .jar is available on Maven Central with th
 | `optOut` | `Boolean`. Opt the user out of tracking. | `false` |
 | ~`trackingSessionEvents`~ (Deprecated. Use [`autocapture`](#autocapture) instead.)| `Boolean`. Automatic tracking of "Start Session" and "End Session" events that count toward event volume. | `false` |
 | ~`defaultTracking`~ (Deprecated. Use [`autocapture`](#autocapture) instead.) | `DefaultTrackingOptions`. Enable tracking of default events for sessions, app lifecycles, screen views, and deep links. | `DefaultTrackingOptions(sessions = true)` |
-| `autocapture` | `Set<AutocaptureOption>`. A `Set` of Options to enable tracking of default events for sessions, app lifecycles, screen views, deep links, and element interactions. | If the parameter isn't set, `AutocaptureOption.SESSIONS` is added to the `Set` by default. For more information, see [Autocapture](#autocapture).|
+| `autocapture` | `Set<AutocaptureOption>`. A `Set` of Options to enable tracking of default events for sessions, application lifecycles, screen and fragment views, deep links, and element interactions. | If the parameter isn't set, `AutocaptureOption.SESSIONS` is added to the `Set` by default. For more information, see [Autocapture](#autocapture).|
 | `minTimeBetweenSessionsMillis` | `Long`. The amount of time for session timeout. The value is in milliseconds. | `300000` |
 | `serverUrl` | `String`. The server url events upload to. | `https://api2.amplitude.com/2/httpapi` |
 | `serverZone` | `ServerZone.US` or `ServerZone.EU`. The server zone to send to, will adjust server url based on this config. | `ServerZone.US` |
@@ -238,7 +238,7 @@ amplitude.identify(identify)
 
 ## Autocapture <a id="track-default-events"></a>
 
-Starting from release v1.17.3, the SDK can track more events without manual instrumentation. You can configure it to track the following events automatically:
+Starting from release v1.18.0, the SDK can track more events without manual instrumentation. You can configure it to track the following events automatically:
 
 - Sessions
 - App lifecycles
@@ -251,7 +251,7 @@ Starting from release v1.17.3, the SDK can track more events without manual inst
 | --- | --- | --- | --- |
 | `SESSIONS` | `AutocaptureOption` | Yes | Enables session tracking. If the option is set, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting isn't set, Amplitude tracks `sessionId` only. See [Track sessions](#track-sessions) for more information. |
 | `APP_LIFECYCLES` | `AutocaptureOption` | No | Enables application lifecycle events tracking. If the option is set, Amplitude tracks application installed, application updated, application opened, and application backgrounded events. Event properties tracked includes: `[Amplitude] Version`, `[Amplitude] Build`, `[Amplitude] Previous Version`, `[Amplitude] Previous Build`, `[Amplitude] From Background`. See [Track application lifecycles](#track-application-lifecycles) for more information. |
-| `SCREEN_VIEWS` | `AutocaptureOption` | No | Enables screen views tracking. If the option is set, Amplitude tracks screen viewed events. Event properties tracked includes: `[Amplitude] Screen Name`. See [Track screen views](#track-screen-views) for more information. |
+| `SCREEN_VIEWS` | `AutocaptureOption` | No | Enables screen and fragment views tracking. If the option is set, Amplitude tracks screen viewed and fragment viewed events. Event properties tracked includes: `[Amplitude] Screen Name`, `[Amplitude] Fragment Class`, `[Amplitude] Fragment Identifier`, `[Amplitude] Fragment Tag`. See [Track screen views](#track-screen-views) for more information. |
 | `DEEP_LINKS` | `AutocaptureOption` | No | Enables deep link tracking. If the option is set, Amplitude tracks deep link opened events. Event properties tracked includes: `[Amplitude] Link URL`, `[Amplitude] Link Referrer`. See [Track deep links](#track-deep-links) for more information. |
 | `ELEMENT_INTERACTIONS` | `AutocaptureOption` | No | Enables element interaction tracking. If the option is set, Amplitude tracks user interactions with clickable elements. Event properties tracked includes: `[Amplitude] Action`, `[Amplitude] Target Class`, `[Amplitude] Target Resource`, `[Amplitude] Target Tag`, `[Amplitude] Target Source`, `[Amplitude] Hierarchy`, `[Amplitude] Screen Name`. See [Track element interactions](#track-element-interactions) for more information. |
 
@@ -270,10 +270,10 @@ val amplitude = Amplitude(
     apiKey = AMPLITUDE_API_KEY,
     context = applicationContext,
     autocapture = autocaptureOptions {
-        +sessions			   // or `+Autocapture.SESSIONS`
-        +appLifecycles		  // or `+Autocapture.APP_LIFECYCLES`
-        +deepLinks			  // or `+Autocapture.DEEP_LINKS`
-        +screenViews			// or `+Autocapture.SCREEN_VIEWS`
+        +sessions			   // or `+AutocaptureOption.SESSIONS`
+        +appLifecycles		  // or `+AutocaptureOption.APP_LIFECYCLES`
+        +deepLinks			  // or `+AutocaptureOption.DEEP_LINKS`
+        +screenViews			// or `+AutocaptureOption.SCREEN_VIEWS`
     }
   )
 )
@@ -288,7 +288,7 @@ val amplitude = Amplitude(
   Configuration(
     apiKey = AMPLITUDE_API_KEY,
     context = applicationContext,
-    autocapture = setOf(Autocapture.APP_LIFECYCLES)  // or use `setOf()` to disable autocapture.
+    autocapture = setOf(AutocaptureOption.APP_LIFECYCLES)  // or use `setOf()` to disable autocapture.
   )
 )
 ```
@@ -337,7 +337,7 @@ val amplitude = Amplitude(
     apiKey = AMPLITUDE_API_KEY,
     context = applicationContext,
     autocapture = autocaptureOptions {
-        +sessions	// or `+Autocapture.SESSIONS`
+        +sessions	// or `+AutocaptureOption.SESSIONS`
     }
   )
 )
@@ -373,7 +373,7 @@ val amplitude = Amplitude(
     apiKey = AMPLITUDE_API_KEY,
     context = applicationContext,
     autocapture = autocaptureOptions {
-        +appLifecycles	// or `+Autocapture.APP_LIFECYCLES`
+        +appLifecycles	// or `+AutocaptureOption.APP_LIFECYCLES`
     }
   )
 )
@@ -400,7 +400,7 @@ After enabling this setting, Amplitude tracks the following events:
 
 ### Track screen views
 
-You can enable Amplitude to start tracking screen view events by including `AutocaptureOption.SCREEN_VIEWS` in the `autocapture` configuration. See the following code sample.
+You can enable Amplitude to start tracking screen and fragment view events by including `AutocaptureOption.SCREEN_VIEWS` in the `autocapture` configuration. See the following code sample.
 
 {{partial:tabs tabs="Kotlin, Java"}}
 {{partial:tab name="Kotlin"}}
@@ -412,7 +412,7 @@ val amplitude = Amplitude(
     apiKey = AMPLITUDE_API_KEY,
     context = applicationContext,
     autocapture = autocaptureOptions {
-        +screenViews	// or `+Autocapture.SCREEN_VIEWS`
+        +screenViews	// or `+AutocaptureOption.SCREEN_VIEWS`
     }
   )
 )
@@ -430,7 +430,18 @@ Amplitude amplitude = new Amplitude(configuration);
 {{/partial:tab}}
 {{/partial:tabs}}
 
-After enabling this setting, Amplitude will track the `[Amplitude] Screen Viewed` event with the screen name property. This property value is read from the activity label, application label, and activity name successively.
+After enabling this setting, Amplitude will track both `[Amplitude] Screen Viewed` and `[Amplitude] Fragment Viewed` events. Both of these events include a screen name property. For `[Amplitude] Fragment Viewed` events, Amplitude captures additional fragment-specific properties.
+
+{{partial:collapse name="Event properties descriptions"}}
+| Event property | Description |
+| --- | --- |
+| `[Amplitude] Screen Name` | The activity label, application label, or activity name (in order of priority). |
+| `[Amplitude] Fragment Class` | The fully qualified class name of the viewed fragment. |
+| `[Amplitude] Fragment Identifier` | The resource ID of the fragment as defined in the layout XML. |
+| `[Amplitude] Fragment Tag` | The unique identifier assigned to the fragment during a transaction. |
+
+{{/partial:collapse}}
+
 
 ### Track deep links
 
@@ -446,7 +457,7 @@ val amplitude = Amplitude(
     apiKey = AMPLITUDE_API_KEY,
     context = applicationContext,
     autocapture = autocaptureOptions {
-        +deepLinks	// or `+Autocapture.DEEP_LINKS`
+        +deepLinks	// or `+AutocaptureOption.DEEP_LINKS`
     }
   )
 )
