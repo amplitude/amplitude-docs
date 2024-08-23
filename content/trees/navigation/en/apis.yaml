@@ -47,8 +47,15 @@ tree:
         id: 15a45c14-ef63-42e8-b27a-20bf40022ef1
         entry: 4d2cf9ef-beac-4b30-a798-689da9b5417c
       -
-        id: 005d5fab-df7a-431e-8ff3-f2a4fa797e51
-        entry: 1a944881-9630-4422-9cb7-836651db6ec4
+        id: d9627015-919e-4532-b5ae-d89a05c5c355
+        title: 'HTTP API v2'
+        children:
+          -
+            id: 839d7f9f-13e8-48fa-a1fb-4c50c53ca987
+            entry: 19c7fa54-15db-4eaa-8423-5338819cc0f4
+          -
+            id: 005d5fab-df7a-431e-8ff3-f2a4fa797e51
+            entry: 1a944881-9630-4422-9cb7-836651db6ec4
       -
         id: b336634e-3e23-4722-adae-04370a8735a1
         entry: 6ed2b731-5818-41f4-beb9-fb62b70f9581
