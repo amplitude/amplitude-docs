@@ -84,7 +84,7 @@ The best way to integrate Okta provisioning with Amplitude is with the Amplitude
 
 ### Manual configuration (SAML)
 
-If you're SSO requires SAML support, use the manual configuration described in [Set up single sign-on (SSO) for Amplitude using Okta](/docs/admin/single-sign-on/okta).
+If your SSO requires SAML support, use the manual configuration described in [Set up single sign-on (SSO) for Amplitude using Okta](/docs/admin/single-sign-on/okta).
 
 
 ## Troubleshooting
