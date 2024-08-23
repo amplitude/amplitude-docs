@@ -53,8 +53,8 @@ This is useful for multi-sided marketplaces or B2B2C companies whose conversion 
 
 Groups in Amplitude can be defined at either the **event level** or the **user level**. What's the difference?
 
-* An **event-level** group is one that **only** incorporates specific events in the users' overall journey. Users are assigned to a group at the time the event is sent, and users **do not** remain in that group **unless** you explicitly assign them to it when the event is sent.
-* By contrast, membership in a **user-level** group is **independent** of the events being triggered. This is useful when you want to attribute all events triggered by a user to a particular group. Users are assigned to the group **once**, and they remain in it for all future events.
+* An **event-level** group is one that **only** incorporates specific events in the users' overall journey. Users aren't affected by the events, meaning future events triggered by the users are **not** added to the group, **unless** explicitly assigned.
+* By contrast, membership in a **user-level** group is **independent** of specific events. After users are assigned to the group using the [Identify API](/docs/apis/analytics/identify), they remain in it for all future events. This is useful when you want to attribute all events triggered by a user to a particular group.
 
 {{partial:admonition type='note'}}
 A user's group type cannot be un-set, and must instead be overwritten.
