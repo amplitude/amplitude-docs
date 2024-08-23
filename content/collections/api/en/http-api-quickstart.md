@@ -67,29 +67,40 @@ Body: {
 {{/partial:tab}}
 {{partial:tab name="JavaScript"}}
 ```js
-// include the following lines in your HTML file
-// <script src="amplitude_http_api.js"></script>
-// <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+const payload = {
+    api_key: 'YOUR_API_KEY', // Replace with your Amplitude API key
+    events: [
+        {
+            'user_id': '203201202',
+            'device_id': 'C8F9E604-F01A-4BD9-95C6-8E5357DF265D',
+            'event_type': 'watch_tutorial',
+        }
+    ]
+};
 
-// amplitude_http_api.js
-$.ajax({
-    url: 'https://api2.amplitude.com/2/httpapi',
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-        'Accept': '*/*'
-    },
-    success: function () {
-        console.log(JSON.stringify({
-            "api_key": "YOUR_API_KEY",
-            "events": [{
-                "user_id": "203201202",
-                "device_id": "C8F9E604-F01A-4BD9-95C6-8E5357DF265D",
-                "event_type": "watch_tutorial"
-            }]
-        }));
+async function sendAmplitudeEvent() {
+    try {
+        const response = await fetch('https://api2.amplitude.com/2/httpapi', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        });
+
+        if (response.code != 200)  {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log('Response:', data);
+    } catch (error) {
+        console.error('Error:', error);
     }
-})
+}
+
+// Call the function to send the event
+sendAmplitudeEvent();
 ```
 {{/partial:tab}}
 {{partial:tab name="NodeJS"}}
