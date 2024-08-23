@@ -15,7 +15,7 @@ In Amplitude, the User Management API provides a programmatic solution to provis
 The User Management API follows the [SCIM 2.0 Standard.](http://www.simplecloud.info/#Specification) It allows for the creation, retrieval, update, and deletion calls for users (including pending users) and permission groups.
 
 {{partial:admonition type='note'}}
-For a technical guide and spec for interfacing with the SCIM API, see the [SCIM API guide](https://developers.amplitude.com/docs/scim-api) in our developer docs. It's useful for developers testing the SCIM API, developing scripts that call the Amplitude SCIM API, or constructing one-off requests.
+For a technical guide and spec for interfacing with the SCIM API, see the [SCIM API guide](/docs/apis/analytics/scim). It's useful for developers testing the SCIM API, developing scripts that call the Amplitude SCIM API, or constructing one-off requests.
 {{/partial:admonition}}
 
 ### Feature availability
