@@ -1,0 +1,7 @@
+{{partial:admonition type="note" heading="Session Replay and performance"}}
+Amplitude built Session Replay to minimize impact on the performance of the iOS apps in which it's installed by:
+
+- Asynchronously processing replay data, to avoid blocking the main user interface thread. The main thread must be used to interact with the view hierarchy, but all processing is performed on a background queue.
+- Using batching and lightweight compression to reduce the number of network connections and bandwidth.
+- Optimizing view hierarchy processing. Contact Amplitude if you experience issues with hierarchy processing.
+{{/partial:admonition}}

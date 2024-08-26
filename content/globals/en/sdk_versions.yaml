@@ -5,5 +5,6 @@ session_replay_plugin: 1.6.17
 session_replay_standalone: 1.13.1
 session_replay_android_plugin: 0.6.5
 session_replay_android_standalone: 0.6.5
+session_replay_ios: 0.0.1
 experiment_android: 1.12.1
 session_replay_segment_wrapper: 0.3.1

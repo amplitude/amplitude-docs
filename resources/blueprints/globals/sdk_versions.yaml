@@ -127,6 +127,13 @@ tabs:
               display: 'Session Replay Android Standalone'
               width: 50
               localizable: false
+          -
+            handle: session_replay_ios
+            field:
+              type: text
+              display: 'Session Replay iOS'
+              localizable: false
+              width: 50
       -
         display: Experiment
         fields:

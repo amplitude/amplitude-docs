@@ -1,0 +1,31 @@
+{{markdown}}
+### Block on-screen data
+
+By default session replay hides all user inputs with `isSecureTextEntry = true`.
+
+Further sensitive views can be can be selectively hidden.
+
+#### Privacy methods for UIKit
+
+Session Replay provides an extension on `UIView` to manage privacy. Import the Session Replay library to access it.
+
+```swift
+import AmplitudeSessionReplay
+```
+
+| Variable             | Description                                                                                                                                                                                                                                                                                            |
+|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `amp_isBlocked`      | Set `view.amp_isBlocked` to selectively replace a view and its subviews with a placeholder in session replays. UITextViews and UITextFields with [`isSecureTextEntry = true`](https://developer.apple.com/documentation/uikit/uitextinputtraits/1624427-issecuretextentry) are automatically blocked.  |                                                                          |
+
+#### Privacy Modifiers for SwiftUI
+
+Session Replay provides an extension on `View` to manage privacy. Import the Session Replay Library to access it.
+(alpha) We have not yet verified that modifiers work in all scenarios, please manually confirm that SwiftUI views are blocked and be sure to report any issues.
+
+```swift
+import AmplitudeSessionReplay
+```
+
+| Modifier                          | Description                                                                                                                                  |
+|-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| `amp_setBlocked(_ blocked: Bool)` | Add the `amp_setBlocked()` modifier to a `View` to selectively replace a view and its subviews with a placeholder in session replays.        |
