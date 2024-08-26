@@ -29,6 +29,7 @@ This integration enables you to create [custom audiences](https://www.facebook.
 - If your audience has fewer than 100 users, [Facebook is unlikely to use it](https://www.facebook.com/business/a/custom-to-lookalike-audiences#:~:text=Note%3A%20The%20minimum%20source%20audience,find%20who%20look%20like%20them.). For audiences between 100 and 1000 users, Facebook displays the user count as "<1000 users."
 - You must add this integration in each individual project. The person who establishes the integration is also the person who needs to agree with the custom audience Terms of Service.
 - Matching for added users from uploaded custom audiences can take up to one hour, and removing users can take up to a day. As a result, there can be a delay before you see the Audience you synced from Amplitude.
+- Facebook Ads requires hashed fields for ingestion. If such fields are not already hashed, we will hash them for you when we export the cohort.
 
 ## Setup
 
