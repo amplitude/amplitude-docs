@@ -6,6 +6,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 9d88465d-45b3-49e0-88f9-82b78932c7c5
 updated_at: 1724451061
+alpha: true
 ---
 {{partial:partials/session-replay/sr-ios-eap :when="alpha"}}
 
@@ -157,7 +158,7 @@ Session Replay supports attaching to a single instance of the Amplitude SDK. If 
 
 ### Captured sessions contain limited information
 
-Session Replay requires that the iOS SDK send `[Amplitude] Session Start` and `[Amplitude] Session End` events, at a minimum. If you instrument events outside of the iOS SDK, Amplitude doesn't tag those events as part of the session replay. As a result, charts like Funnel, Segmentation, or Journeys won't show session replays. As an alternative, use the User Sessions chart or [User Lookup](/docs/analytics/user-data-lookup) to find session replays.
+Session Replay requires that the iOS SDK send `[Amplitude] Session Start` and `[Amplitude] Session End` events, at a minimum. If you instrument events outside of the iOS SDK, Amplitude doesn't tag those events as part of the session replay. As a result, charts like Funnel, Segmentation, or Journeys don't show session replays. As an alternative, use the User Sessions chart or [User Lookup](/docs/analytics/user-data-lookup) to find session replays.
 
 If you use a method other than the iOS SDK to instrument your events, consider using the [Session Replay Standalone SDK for iOS](/docs/session-replay/session-replay-ios-standalone/).
 
