@@ -32,7 +32,7 @@ When using client-side local evaluation it is important to note that all data us
 Server-side SDKs can target cohorts if configured to do so. **Only User IDs can be targeted by local evaluation cohorts.**
 
 | SDK | Cohort Targeting | Version |
-| --- | --- | --- |
+| --- | :---: | --- |
 | [Node.js](/docs/sdks/experiment-sdks/experiment-node-js) |  ✅ | `1.10.0+`  |
 | [Ruby](/docs/sdks/experiment-sdks/experiment-ruby) |  ✅ | `1.5.0+` |
 | [JVM](/docs/sdks/experiment-sdks/experiment-jvm) |  ✅ | `1.4.0+` |

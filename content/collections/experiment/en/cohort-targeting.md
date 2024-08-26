@@ -40,7 +40,7 @@ Local evaluation cohorts currently only sync **User IDs** to the SDKs. This mean
 Server-side SDKs can target cohorts if configured to do so. Client-side SDKs do not currently support local evaluation cohort targeting.
 
 | SDK | Cohort Targeting | Version |
-| --- | --- | --- |
+| --- | :---: | --- |
 | [Node.js](/docs/sdks/experiment-sdks/experiment-node-js) |  ✅ | `1.10.0+`  |
 | [Ruby](/docs/sdks/experiment-sdks/experiment-ruby) |  ✅ | `1.5.0+` |
 | [JVM](/docs/sdks/experiment-sdks/experiment-jvm) |  ✅ | `1.4.0+` |
