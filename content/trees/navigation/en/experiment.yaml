@@ -58,6 +58,10 @@ tree:
           -
             id: f2f0b387-9b70-4b56-99ef-4189afdc4a99
             entry: 57ce7f2b-1b49-4a17-99de-76f4a5c86238
+          -
+            id: 64dc1494-6d29-4baf-8152-3979efa1b480
+            entry: 21a670fe-6939-4c52-919c-ff495b3109f3
+            title: 'Cohort targeting'
       -
         id: b89a72f6-2342-4d84-b3ae-ffb476a9d487
         title: Analysis
