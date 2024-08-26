@@ -56,7 +56,7 @@ There are three levels of permissions:
 To add a new member to a space, follow these steps:
 
 1. Click *Manage Members* to open the *Manage Members* modal.
-2. Click in the *Add people* field and select the new member from the drop-down list. Repeat this step for each new user who requires the same permissions level.
+2. Click the *Add people* field and select the new member from the drop-down list. Repeat this step for each new user who requires the same permissions level.
 3. Set the permissions level for the new user from the drop-down menu.
 4. Click *Share*.
 
