@@ -56,7 +56,7 @@ There are three levels of permissions:
 To add a new member to a space, follow these steps:
 
 1. Click *Manage Members* to open the *Manage Members* modal.
-2. Click in the *Add people* field and select the new member from the drop-down list. Repeat this step for each new user who will have the same permissions level.
+2. Click in the *Add people* field and select the new member from the drop-down list. Repeat this step for each new user who requires the same permissions level.
 3. Set the permissions level for the new user from the drop-down menu.
 4. Click *Share*.
 
@@ -67,7 +67,7 @@ To modify a space member's permissions, follow these steps:
 
 ## Slack integration
 
-When you connect spaces to specific Slack channels, you'll receive notifications whenever your team creates new analyses. When new content gets added to that team space in Amplitude, it will automatically be posted in the Slack channel.
+When you connect spaces to specific Slack channels, you receive notifications whenever your team creates new analyses. When new content gets added to that team space in Amplitude, it's posted in the Slack channel.
 
 To do this, click *Connect with Slack*. Then follow the prompts.
 
@@ -79,4 +79,10 @@ While only admins, managers, and members can create a team space, all users can 
 
 By default, admins, managers, and members can all add content, invite users to the space, and archive a space. Admins and managers also have the option to manage the space permissions to specify which roles have permissions to add content, invite users, and archive a space.
 
-To archive content from a space you own, you will need editing permissions.
+When you invite a new user to a space, you can grant them access up to your level of access. For example, if you have the "can view" permission on a specific space, you can't invite users with "can add" or "can edit" permissions.
+
+Archiving content from a space you own requires edit permissions within the space.
+
+{{partial:admonition type="note" heading="Space and Project permissions"}}
+Permissions set at the project-level superceed permissions set at the space level. As a result, a user's permissions within a project may override their permissions within the space.
+{{/partial:admonition}}
