@@ -5,7 +5,7 @@ title: 'Profile properties'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1724779625
+updated_at: 1724781409
 ---
 Profile properties enable you to merge customer profile data from your data warehouse with existing behavioral product data already in Amplitude. 
 
@@ -46,11 +46,22 @@ Snowflake Standard Edition plans have a maximum retention time of one day.
 
 Profile properties supports a maximum of 200 warehouse properties, and supports known Amplitude users. A `user_id` must go with each profile property.
 
-| Field               | Description                                                                                                                   | Example                  |
-| ------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
-| `user_ID`             | Identifier for the user. Must have a minimum length of 5.                                                                     | 12345              |
-| `Profile Property 1`  | Profile property set at the user level. The value of this field is the value from the customer’s source since last sync. | LTV |
-| `Profile Property 2` | Profile property set at the user level. The value of this field is the value from the customer’s source since last sync. | Number of purchases  |
+| Field               | Description                                                                                                                   | 
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------- | 
+| `user_id`             | Identifier for the user. Must have a minimum length of 5.                                                                     |
+| `Profile Property 1`  | Profile property set at the user level. The value of this field is the value from the customer’s source since last sync. |
+| `Profile Property 2` | Profile property set at the user level. The value of this field is the value from the customer’s source since last sync. | 
+
+Example:
+
+```
+{
+  "user_id": 12345,
+  "number of purchases": 10,
+  "title": "Data Engineer"
+}
+```
+
 
 See [this article for information on Snowflake profile properties](/docs/data/source-catalog/snowflake#profile-properties).
 
