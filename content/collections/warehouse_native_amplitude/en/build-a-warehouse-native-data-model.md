@@ -43,7 +43,7 @@ User models most often map to the User Properties data type.
 
 ### Joining models
 
-You can join Event and User models with each model's User ID or Unique ID.
+You can join Event and User models with each model's user ID or unique ID.
 
 Warehouse-native projects support multiple identity spaces. Keep in mind though, using models that cross identity spaces impacts the accuracy and usefulness of an analysis.
 
@@ -54,18 +54,18 @@ To join a Group model, select the corresponding ID in an existing Event or User 
 Amplitude bases the data types in this article on and opinionated analysis structure. Warehouse-native Amplitude is flexible, however:
 
 - Use the Event data model for fact tables in a data warehouse.
-- Use the User property data model for any dimensional data models.
+- Use the User Property data model for any dimensional data models.
 
 ## Data structure recommendations
 
-The structure of your data within a data warehouse or data lake impacts Amplitude's performance. Amplitude recommends that you model data in ways that the benefit analytical workloads that Warehouse-native Amplitude generates. For more detailed best practices, see [Warehouse-native Amplitude: Best Practices](/docs/data/warehouse-native/warehouse-native-amplitude-best-practices).
+The structure of your data within a data warehouse or data lake affects Amplitude's performance. Amplitude recommends that you model data in ways that the benefit analytical workloads that Warehouse-native Amplitude generates. For more detailed best practices, see [Warehouse-native Amplitude: Best Practices](/docs/data/warehouse-native/warehouse-native-amplitude-best-practices).
 
 ## Key considerations
 
-1. Data model choice impacts analysis capabilities
-2. Accurate insights require properly joined models
-3. Even though Warehouse-native Amplitude is flexible, following the recommended structures can improve performance.
-4. Consider your specific use case when you decide between one event per table or multiple events in a single table.
+- Data model choice impacts analysis capabilities
+- Accurate insights require properly joined models
+- Even though Warehouse-native Amplitude is flexible, following the recommended structures can improve performance.
+- Consider your specific use case when you decide between one event per table or multiple events in a single table.
 
 ## Create a data model
 
