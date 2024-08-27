@@ -299,7 +299,7 @@ if variant.Value == "on" {
 
 ### Local evaluation cohort targeting
 
-Since version `1.6.0`, the local evaluation SDK client supports downloading cohorts for local evaluation targeting. You must configure the `CohortSyncConfig` option with the analytics `ApiKey` and `SecretKey` on initialization to enable this support.
+Since version `1.7.0`, the local evaluation SDK client supports downloading cohorts for local evaluation targeting. You must configure the `CohortSyncConfig` option with the analytics `ApiKey` and `SecretKey` on initialization to enable this support.
 
 ```go
 client := local.Initialize("<DEPLOYMENT_KEY>", &local.Config{
