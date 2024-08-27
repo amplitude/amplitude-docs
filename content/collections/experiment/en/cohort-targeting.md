@@ -44,7 +44,7 @@ Server-side SDKs can target cohorts if configured to do so. Client-side SDKs do 
 | [Node.js](/docs/sdks/experiment-sdks/experiment-node-js) |  ✅ | `1.10.0+`  |
 | [Ruby](/docs/sdks/experiment-sdks/experiment-ruby) |  ✅ | `1.5.0+` |
 | [JVM](/docs/sdks/experiment-sdks/experiment-jvm) |  ✅ | `1.4.0+` |
-| [Go](/docs/sdks/experiment-sdks/experiment-go) |  ✅ | `1.6.0+` |
+| [Go](/docs/sdks/experiment-sdks/experiment-go) |  ✅ | `1.7.0+` |
 | [Python](/docs/sdks/experiment-sdks/experiment-python) |  ✅ | `1.4.0+` |
 | [PHP](/docs/sdks/experiment-sdks/experiment-php) | ❌  | N/A |
 
