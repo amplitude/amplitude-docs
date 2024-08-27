@@ -14,7 +14,7 @@ This article reviews advanced use cases that you may face while analyzing your e
 
 ## Case 1: Create a funnel analysis based on your experiment's metrics
 
-Imagine a conversion funnel with five steps, where step three represents the exposure event for your experiment. To reduce noise and increase the likelihood of reaching statistical significance, Amplitude Experiment only counts metric events **after** the exposure event. If the exposure event is step three of the funnel, and you include the whole funnel as a metric, the number of conversions for the funnel is zero. Making steps three through five a standalone metric in your experiment would be the best way to measure the actual conversion rate of your funnel.
+Imagine a conversion funnel with five steps, where step three represents the exposure event for your experiment. To reduce noise and increase the likelihood of reaching statistical significance, Amplitude Experiment only counts metric events **after** the exposure event. If the exposure event is step three of the funnel, and you include the whole funnel as a metric, the number of conversions for the funnel is zero. The best way to measure the actual conversion rate of your funnel is to make steps three through five a standalone metric in your experiment.
 
 Sometimes, you may need further analysis of your experiment's conversion rates in a funnel analysis. 
 
