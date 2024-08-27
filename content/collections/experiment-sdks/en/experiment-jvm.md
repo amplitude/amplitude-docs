@@ -515,7 +515,7 @@ if (Variant.valueEquals(variant, "on")) {
 
 ### Local evaluation cohort targeting
 
-Since version `1.4.0`, the local evaluation SDK client supports downloading cohorts for local evaluation targeting. You must configure the SDK using `cohortSyncConfig` with the analytics `apiKey` and `secretKey` on initialization to enable this support.
+Since version `1.4.0`, the local evaluation SDK client supports downloading cohorts for local evaluation targeting. Configure the SDK using `cohortSyncConfig` with the analytics `apiKey` and `secretKey` on initialization to enable this support.
 
 {{partial:tabs tabs="Kotlin, Java"}}
 {{partial:tab name="Kotlin"}}
