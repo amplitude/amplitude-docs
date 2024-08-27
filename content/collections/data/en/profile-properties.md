@@ -53,7 +53,7 @@ Profile properties supports a maximum of 200 warehouse properties, and supports 
 | `Profile Property 2` | Profile property set at the user level. The value of this field is the value from the customer’s source since last sync. |
 
 Example:
-```
+```json
 {
   "user_id": 12345,
   "number of purchases": 10,
