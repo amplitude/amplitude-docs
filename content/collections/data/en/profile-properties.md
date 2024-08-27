@@ -48,7 +48,7 @@ Profile properties supports a maximum of 200 warehouse properties, and supports 
 
 | Field               | Description                                                                                                                   | Example                  |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
-| `user_ID`             | Identifier for the user. Must have a minimum length of 5.                                                                     | 12345              |
+| `user_id`             | Identifier for the user. Must have a minimum length of 5.                                                                     | 12345              |
 | `Profile Property 1`  | Profile property set at the user level. The value of this field is the value from the customer’s source since last sync. | LTV |
 | `Profile Property 2` | Profile property set at the user level. The value of this field is the value from the customer’s source since last sync. | Number of purchases  |
 
