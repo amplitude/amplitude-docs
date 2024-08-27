@@ -5,7 +5,7 @@ title: 'Profile properties'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1724781409
+updated_at: 1724792791
 ---
 Profile properties enable you to merge customer profile data from your data warehouse with existing behavioral product data already in Amplitude. 
 
@@ -21,9 +21,11 @@ To set up a profile property in Amplitude, follow these steps:
 2. In the *Set Up Connection* tab, connect Amplitude to your data warehouse by filling in all the relevant fields under *Snowflake Credentials*. You can either create a new connection, or reuse an existing one. Click *Next* when you're done.
 3. If this is a new connection, [verify your instrumentation by following these steps](/docs/data/source-catalog/snowflake). Click *Next* when you're done.
 4. On the *Select Data* tab, select the `profile properties` data type. Amplitude pre-selects the required change data capture import strategy for you, which you can see under the *Select Import Strategy* dropdown:
-* **Insert**: Always on, creates new profile properties when added to your table.
-* **Update**: Syncs changes to values from your table to Amplitude.
-* **Delete**: Syncs deletions from your table to Amplitude.
+
+    * **Insert**: Always on, creates new profile properties when added to your table.
+    * **Update**: Syncs changes to values from your table to Amplitude.
+    * **Delete**: Syncs deletions from your table to Amplitude.
+
 When you're done, click *Next* to move on to data mapping.
 
 {{partial:admonition type='note'}}
