@@ -5,7 +5,7 @@ title: 'Session Replay iOS Standalone SDK'
 landing: false
 exclude_from_sitemap: false
 updated_by: 9d88465d-45b3-49e0-88f9-82b78932c7c5
-updated_at: 1724453233
+updated_at: 1724777219
 alpha: true
 ---
 {{partial:partials/session-replay/sr-ios-eap :when="alpha"}}
@@ -15,6 +15,8 @@ This article covers the installation of Session Replay for iOS using the standal
 If your app is already instrumented with [(latest) iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk), use the [Session Replay iOS SDK Plugin](/docs/session-replay/session-replay-ios-plugin).
 
 If your app is already instrumented with [(maintenance) iOS SDK](/docs/sdks/analytics/ios/ios-sdk), use the [Session Replay iOS SDK Middleware](/docs/session-replay/session-replay-ios-middleware).
+
+If you use Segment through their Analytics-Swift SDK and [Amplitude (Actions) destination](https://segment.com/docs/connections/destinations/catalog/actions-amplitude/), choose the [Segment Plugin](/docs/session-replay/session-replay-ios-segment-integration).
 
 {{partial:partials/session-replay/sr-ios-performance}}
 
