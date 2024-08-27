@@ -47,7 +47,7 @@ You must install Amplitude Analytics on your website to enable [Experiment event
 
 ### Async script with anti-flicker snippet
 
-The synchronous script will deliver the most seamless experience for your users. That said, if you wish to use an async script load while avoiding flicker, install the anti-flicker script **above** the async experiment script.
+The synchronous script delivers the most seamless experience for your users. That said, if you wish to use an async script load while avoiding flicker, install the anti-flicker script **above** the async experiment script.
 
 {{partial:tabs tabs="US Data Center, EU Data Center"}}
 {{partial:tab name="US Data Center"}}
