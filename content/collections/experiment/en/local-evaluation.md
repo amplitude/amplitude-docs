@@ -27,6 +27,19 @@ When using client-side local evaluation it is important to note that all data us
 | [User enrichment](/docs/experiment/remote-evaluation#user-enrichment) | ✅ | ❌ |
 | [Sticky bucketing](/docs/experiment/implementation#sticky-bucketing) | ✅ | ❌ |
 
+### Cohort targeting
+
+Server-side SDKs can target cohorts if configured to do so. **Only User IDs can be targeted by local evaluation cohorts.**
+
+| SDK | Cohort Targeting | Version |
+| --- | :---: | --- |
+| [Node.js](/docs/sdks/experiment-sdks/experiment-node-js) |  ✅ | `1.10.0+`  |
+| [Ruby](/docs/sdks/experiment-sdks/experiment-ruby) |  ✅ | `1.5.0+` |
+| [JVM](/docs/sdks/experiment-sdks/experiment-jvm) |  ✅ | `1.4.0+` |
+| [Go](/docs/sdks/experiment-sdks/experiment-go) |  ✅ | `1.6.0+` |
+| [Python](/docs/sdks/experiment-sdks/experiment-python) |  ✅ | `1.4.0+` |
+| [PHP](/docs/sdks/experiment-sdks/experiment-php) | ❌  | N/A |
+
 ## Implementation
 
 Local evaluation is just [evaluation](/docs/experiment/implementation)--a function which takes a [user](/docs/experiment/data-model#users) and a [flag](/docs/experiment/data-model#flags-and-experiments) as input, and outputs a [variant](/docs/experiment/data-model#variants).
@@ -47,30 +60,6 @@ Local evaluation SDKs track evaluations differently on the client-side vs on the
 - Server-side SDKs track an **assignment event** (if configured to do so) when a user is evaluated.
 
 Server-side local evaluation experiments often set the Assignment event as a heuristic for Exposure.
-
-## SDKs
-
-All server-side SDKs and all client-side (which have local evaluation enabled) support local evaluation.
-
-### Client-side
-
-| SDK | Remote Evaluation | Local Evaluation |
-| --- | --- | --- |
-| [JavaScript](/docs/sdks/experiment-sdks/experiment-javascript) |  ✅ | ✅  |
-| [Android](/docs/sdks/experiment-sdks/experiment-android) |  ✅ | ✅  |
-| [iOS](/docs/sdks/experiment-sdks/experiment-ios) |  ✅ | ✅ |
-| [React Native](/docs/sdks/experiment-sdks/experiment-react-native) |  ✅ | ✅ |
-
-### Server-side
-
-| SDK | Remote Evaluation | Local Evaluation |
-| --- | --- | --- |
-| [Node.js](/docs/sdks/experiment-sdks/experiment-node-js) |  ✅ | ✅  |
-| [Ruby](/docs/sdks/experiment-sdks/experiment-ruby) |  ✅ | ✅  |
-| [JVM](/docs/sdks/experiment-sdks/experiment-jvm) |  ✅ | ✅ |
-| [Go](/docs/sdks/experiment-sdks/experiment-go) |  ✅ | ✅ |
-| [Python](/docs/sdks/experiment-sdks/experiment-python) |  ✅ | ✅ |
-| [PHP](/docs/sdks/experiment-sdks/experiment-php) |  ✅ | ✅ |
 
 ### Performance
 
