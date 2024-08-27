@@ -48,8 +48,8 @@ You can understand this as a range of values that includes the parameter you’r
 
 The confidence interval shown reveals characteristics about what the experiment has observed thus far:
 
-* Confidence Interval **contains** 0: There’s not enough evidence to decide there’s a difference between control and treatment.
-* Confidence Interval **greater than** 0: The interval (upper and lower confidence bounds) is greater than zero. Amplitude Experiment has accumulated enough observations to reach statistical significance, and you can conclude that the variant has a **positive effect** compared to control. For example, if you look at lift, you can expect a variant with a confidence interval greater than zero can to perform better than the control.
+* Confidence Interval **contains** 0: There’s not enough evidence to decide whether there’s a difference between control and treatment.
+* Confidence Interval **greater than** 0: The interval (upper and lower confidence bounds) is greater than zero. Amplitude Experiment has accumulated enough observations to reach statistical significance, and you can conclude that the variant has a **positive effect** compared to control. For example, if you look at lift, expect a variant with a confidence interval greater than zero can to perform better than the control.
 * Confidence Interval **less than** 0: Amplitude Experiment has accumulated enough observations to reach statistical significance, and you can conclude that the variant has a **negative effect** compared to control. If, as in the last example, you look at lift, expect a variant with a confidence interval less than zero to perform worse than the control.
 
 If you have multiple variants, select the one you want to view in the confidence interval chart from the drop-down above the chart.
