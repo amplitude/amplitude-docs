@@ -235,7 +235,7 @@ If you're using Amplitude's EU data center, configure the `ServerZone` option on
 | --- | --- | --- |
 | `ApiKey` | The analytics API key and NOT the experiment deployment key | *required* |
 | `SecretKey` | The analytics secret key | *required* |
-| `MaxCohortSize` | The maximum size of cohort that the SDK will download. Cohorts larger than this size will not be downloaded. | `2147483647` |
+| `MaxCohortSize` | The maximum size of cohort that the SDK will download. Cohorts larger than this size won't download. | `2147483647` |
 | `CohortPollingIntervalMillis` | The interval, in milliseconds, to poll Amplitude for cohort updates (60000 minimum). | `60000` |
 
 ### Start
