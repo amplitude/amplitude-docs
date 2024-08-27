@@ -5,7 +5,7 @@ title: 'Session Replay iOS Plugin'
 landing: false
 exclude_from_sitemap: false
 updated_by: 9d88465d-45b3-49e0-88f9-82b78932c7c5
-updated_at: 1724452937
+updated_at: 1724777186
 alpha: true
 ---
 {{partial:partials/session-replay/sr-ios-eap :when="alpha"}}
@@ -14,7 +14,9 @@ This article covers the installation of Session Replay using the iOS Swift SDK p
 
 If your app is already instrumented with [(maintenance) iOS SDK](/docs/sdks/analytics/ios/ios-sdk), use the [Session Replay iOS SDK Middleware](/docs/session-replay/session-replay-ios-middleware).
 
-If you use a provider other than Amplitude for in-product analytics, choose the [standalone implementation](/docs/session-replay/session-replay-ios-standalone).
+If you use Segment through their Analytics-Swift SDK and [Amplitude (Actions) destination](https://segment.com/docs/connections/destinations/catalog/actions-amplitude/), choose the [Segment Plugin](/docs/session-replay/session-replay-ios-segment-integration).
+
+If you use a provider other than Amplitude for in-product analytics, choose the [standalone implementation](/docs/session-replay/session-replay-ios-standalone-sdk).
 
 {{partial:partials/session-replay/sr-ios-performance}}
 
@@ -22,12 +24,12 @@ Session Replay captures changes to an app's view tree, this means the main view 
 
 ## Before you begin
 
-Use the latest version of the Session Replay plugin above `{{sdk_versions:session_replay_ios}}`.
+Use the latest version of the iOS Session Replay plugin above `{{sdk_versions:session_replay_ios}}`.
 
 The Session Replay iOS Plugin requires that:
 
 1. Your application runs on iOS or iPadOS.
-2. 2. You are using `1.8.1` or higher of the [iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk).
+2. You are using `1.9.0` or higher of the [iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk).
 
 {{partial:partials/session-replay/sr-ios-supported-versions}}
 
@@ -68,9 +70,7 @@ import AmplitudeSwift
 import AmplitudeSwiftSessionReplayPlugin
 
 // Initialize Amplitude Analytics SDK instance
-// Although not required, we recommend enabling session start and end events when enabling Session Replay
-let amplitude = Amplitude(configuration: Configuration(apiKey: API_KEY,
-                                                           autocapture: .sessions))
+let amplitude = Amplitude(configuration: Configuration(apiKey: API_KEY))
 
 // Create and Install Session Replay Plugin
 // Recording will be handled automatically
@@ -82,6 +82,8 @@ Pass the following option when you initialize the Session Replay plugin:
 | Name              | Type      | Required | Default         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | ----------------- | --------- | -------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `sampleRate`      | `Float`  | No       | `0`             | Use this option to control how many sessions to select for replay collection. <br></br>The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. |
+
+{{partial:partials/session-replay/sr-ios-mask-data}}
 
 ### User opt-out
 
@@ -155,12 +157,6 @@ if (nonEUCountryFlagEnabled) {
 Session Replay supports attaching to a single instance of the Amplitude SDK. If you have more than one instance instrumented in your application, make sure to start Session Replay on the instance that most relates to your project.
 
 {{partial:partials/session-replay/sr-ios-troubleshooting}}
-
-### Captured sessions contain limited information
-
-Session Replay requires that the iOS SDK send `[Amplitude] Session Start` and `[Amplitude] Session End` events, at a minimum. If you instrument events outside of the iOS SDK, Amplitude doesn't tag those events as part of the session replay. As a result, charts like Funnel, Segmentation, or Journeys don't show session replays. As an alternative, use the User Sessions chart or [User Lookup](/docs/analytics/user-data-lookup) to find session replays.
-
-If you use a method other than the iOS SDK to instrument your events, consider using the [Session Replay Standalone SDK for iOS](/docs/session-replay/session-replay-ios-standalone/).
 
 ### Replay length and session length don't match
 

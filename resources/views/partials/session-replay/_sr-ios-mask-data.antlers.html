@@ -15,7 +15,7 @@ import AmplitudeSessionReplay
 
 | Variable             | Description                                                                                                                                                                                                                                                                                            |
 |----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `amp_isBlocked`      | Set `view.amp_isBlocked` to selectively replace a view and its subviews with a placeholder in session replays. UITextViews and UITextFields with [`isSecureTextEntry = true`](https://developer.apple.com/documentation/uikit/uitextinputtraits/1624427-issecuretextentry) are automatically blocked.  |                                                                          |
+| `amp_isBlocked`      | Set `view.amp_isBlocked` to selectively replace a view and its subviews with a placeholder in session replays. UITextViews and UITextFields are automatically blocked.  |                                                                          |
 
 #### Privacy Modifiers for SwiftUI
 
@@ -29,3 +29,5 @@ import AmplitudeSessionReplay
 | Modifier                          | Description                                                                                                                                  |
 |-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | `amp_setBlocked(_ blocked: Bool)` | Add the `amp_setBlocked()` modifier to a `View` to selectively replace a view and its subviews with a placeholder in session replays.        |
+
+{{/markdown}}
