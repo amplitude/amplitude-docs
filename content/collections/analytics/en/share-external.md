@@ -7,8 +7,8 @@ this_article_will_help_you:
   - "Share analyses with people who do not have full access to your organization's data"
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717695661
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1724882858
 ---
 Sometimes, you may need to share your Amplitude analyses with people who are not in your organization, or who should not have full access to your data. You can create **public links** to charts, dashboards, and notebooks and send them to **any** person, even if they are not registered under your Amplitude organization.
 
@@ -55,7 +55,7 @@ To generate this embed code, follow these steps:
 
 ## Copy, edit, or delete a public link
 
-You can view and manage all your public links by navigating to *Settings > Content Access,* or by clicking *Share > Manage public links* from within the chart, dashboard, or notebook you want to manage.
+You can view and manage all your public links by navigating to *Settings > Organization Settings > Content Access,* or by clicking *Share > Manage public links* from within the chart, dashboard, or notebook you want to manage.
 
 ![public_links_3.png](/docs/output/img/analytics/public_links_3.png)
 

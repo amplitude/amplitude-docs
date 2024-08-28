@@ -8,7 +8,7 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1716571827
+updated_at: 1724879868
 ---
 Some of the most valuable analyses are the result of collaborations among teammates. **Spaces** help product teams subscribe to and organize analyses shared in Amplitude.
 
@@ -47,7 +47,7 @@ Folders are a convenient way to group related content together in a single, easi
 
 To create a space, follow these steps:
 
-1. Navigate to *Create New > Space*.
+1. Navigate to *Spaces > Create New Space*.
 2. Enter a name for your space, as well as a description, in the appropriate fields of the modal that appears.
 3. In the *Members* field, select everyone who you want to join your new space. When you've finished, click *Create space*.  
   

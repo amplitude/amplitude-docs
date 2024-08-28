@@ -7,8 +7,8 @@ this_article_will_help_you:
   - 'Understand how Amplitude calculates and charges for MTUs'
 landing: true
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717697584
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1724884595
 landing_blurb: 'Learn about how Amplitude bills with Monthly Tracked Users.'
 ---
 Amplitude customers on Scholarship, Starter, and Plus plans bill according to **monthly tracked user (MTU)** count. This option is also available to customers on Growth and Enterprise plans. 
@@ -37,7 +37,7 @@ If you haven't implemented tracking yet, you can use your monthly active user (M
 
 ## View your MTU use
 
-To view your MTU usage, navigate to *Settings > Plans & Billing*. MTU statistics are visible in their own panel.
+To view your MTU usage, navigate to *Settings > Organization Settings > Plans & Billing*. MTU statistics are visible in their own panel.
 
 ![MTUsUsage.png](/docs/output/img/billing-use/mtususage-png.png)
 
