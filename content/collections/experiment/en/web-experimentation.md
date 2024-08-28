@@ -12,13 +12,13 @@ updated_by: c0ecd457-5b72-4dc9-b683-18a736413d32
 updated_at: 1718652695
 ---
 
-Amplitude's web experimentation provides a no-code solution running experiments on the web. [Copy the script snippet](#implement-the-experiment-script) for your Amplitude project into your site and begin running experiments immediately.
+Amplitude's web experimentation provides a no-code solution running experiments on the web. [Copy the script snippet](#implement-the-web-experiment-script) for your Amplitude project into your site and begin running experiments immediately.
 
 {{partial:admonition type="beta" heading="Web Experimentation is in Beta"}}
 **URL Redirect** tests are in open *Beta*.
 {{/partial:admonition}}
 
-## Implement the Experiment script
+## Implement the Web Experiment script
 
 To implement Amplitude's web experimentation, copy and paste the standalone Amplitude experiment script into your website. Paste the script into the `<head>` element of your site as high up as possible to avoid flickering.
 
