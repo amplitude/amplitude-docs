@@ -10,7 +10,7 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1719856737
+updated_at: 1724883715
 ---
 With dashboards, you can collect all your relevant charts into a single, convenient view. You can save multiple reports into a single page view, rather than viewing each individual report in isolation. You can even save cross-project charts into the same dashboard, for side-by-side comparisons.  
 
@@ -43,7 +43,9 @@ You may also find the following dashboards articles useful:
 
 To create a dashboard, follow these steps:
 
-1. Navigate to *Create New > Dashboard* to create a dashboard from scratch. Or click *+ Add to* from within an existing chart and select *+ Create a new dashboard* from the menu.
+1. Navigate to *Create > Dashboard* to create a dashboard from scratch. Choose a blank dashboard, or [start from a template](/docs/get-started/start-from-template).
+
+Or click *+ Add to* from within an existing chart and select *+ Create a new dashboard* from the menu.
 2. Type the name of your new dashboard where it reads *Untitled Dashboard*. Amplitude will save your new, still-empty dashboard.
 3. To add content to your dashboard, click *Add Content* and select the type of content you want to include from the drop-down. Then select the specific items from the panel that opens on the right.  
   

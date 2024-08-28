@@ -1,14 +1,14 @@
 ---
 id: 0037796b-7b61-4125-bbc7-6d13c83e6e6a
 blueprint: get-started
-title: 'Create a new Account'
+title: 'Create a new account'
 this_article_will_help_you:
-  - 'Create a new Amplitude Account and Organization'
+  - 'Create a new Amplitude account and organization'
   - 'Configure the Amplitude snippet to include the features you want'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1722979409
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1724879558
 ---
 Amplitude's onboarding enables you to get data into your new organization as quickly as possible.
 
