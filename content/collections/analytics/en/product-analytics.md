@@ -7,15 +7,15 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1722362576
 ---
-Amplitude's Product Analytics Hub provides a single location in Amplitude where you can track metrics that provide insight into how users engage with your product. Track metrics like new and active users, retention, conversion, engagement, and more.
+Amplitude's Out-of-the-box Product Analytics provides a single location in Amplitude where you can track metrics that provide insight into how users engage with your product. Track metrics like new and active users, retention, conversion, engagement, and more.
 
 ## Feature availability
 
 This feature is available on all Amplitude plans. For more information, see the [pricing page](https://amplitude.com/pricing).
 
-## Configure the Product Analytics hub
+## Configure the Out-of-the-box Product Analytics
 
-Before you begin, configure the Product Analytics hub to ensure the provided analysis meets your needs.
+Before you begin, configure the Out-of-the-box Product Analytics to ensure the provided analysis meets your needs.
 
 From the Product Overview page, click **Settings**.
 
@@ -39,7 +39,7 @@ Select specific features for which you want to track engagement. Define features
 
 ## Product Analytics views
 
-The Product Analytics hub provides four views, each of which share filtering and segmentation controls.
+Out-of-the-box Product Analytics provides four views, each of which share filtering and segmentation controls.
 
 * Product overview
 * Onboarding
