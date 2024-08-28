@@ -1,7 +1,7 @@
 ---
 id: 34dec17f-acb6-4cfe-98fb-674fe2295f8a
 blueprint: analytic
-title: 'Product Analytics'
+title: 'Out-of-the-box Product Analytics'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
