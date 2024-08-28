@@ -1,7 +1,7 @@
 ---
 id: ec6127d5-1384-41b1-b85a-04d21d0678f1
 blueprint: analytic
-title: 'Gain marketing insights with web analytics'
+title: 'Out-of-the-box Web Analytics'
 this_article_will_help_you:
   - 'Track industry-standard web analytics in one place'
 exclude_from_sitemap: false
