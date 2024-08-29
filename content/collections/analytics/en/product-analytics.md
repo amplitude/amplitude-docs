@@ -17,13 +17,13 @@ This feature is available on all Amplitude plans. For more information, see the 
 
 Before you begin, configure Out-of-the-box Product Analytics to ensure the provided analysis meets your needs.
 
-From the Product Overview page, click **Customize**. Use Amplitude's [usage interval analysis](docs/analytics/charts/retention-analysis/retention-analysis-usage-interval) to determine how long users go between triggering your critical event. 
+From the Product Overview page, click **Customize**. 
 
 ### Basic settings
 
-On the Basic Settings page, select any event that represents an action that a user takes in your product. By default, Amplitude sets `[Amplitude] Any Active Event` as the event.
+On the Basic Settings page, select the event that represents an active action in your product. By default, Amplitude sets `[Amplitude] Any Active Event` as the event.
 
-Next, select the retention intervals that are most meaningful to you. Set both Daily and Weekly intervals.
+Next, select the retention intervals that are most meaningful to you. Set both Daily and Weekly intervals. Use Amplitude's [usage interval analysis](docs/analytics/charts/retention-analysis/retention-analysis-usage-interval) to determine how long users go between triggering your critical event.
 
 Configure breakdown properties for the Product Overview, Onboarding, and Retention views. Select up to three.
 
@@ -76,7 +76,7 @@ Break down conversion with the properties you defined during configuration. Brea
 Features are a specific function or characteristic of a product that provides value to customers.
 {{/partial:admonition}}
 
-Feature engagement displays an engagement matrix that enables you to compare the features you define. The matrix plots features according to adoption (or the percentage of daily active users that engaged with the feature), and the average frequency with which users engaged with the feature.
+Feature engagement displays an engagement matrix that enables you to compare the features you define. The matrix plots features according to adoption (or the percentage of active users that engaged with the feature), and the average frequency with which users engaged with the feature.
 
 ### Retention
 
