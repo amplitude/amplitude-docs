@@ -16,7 +16,7 @@ Amplitude’s Web Analytics feature acts as a centralized hub where you can trac
 - **Track conversions**: Easily define a conversion funnel, enable detailed tracking, and visualize conversion metrics with data tables and charts.
 - **Uncover deeper insights with nested group-bys**: Add additional detail to your top-level channels or campaigns analytics with nested group-bys.
 
-Find Web Analytics in Amplitude Analytics's left-hand sidebar.
+Find Web Analytics in the left-hand sidebar.
 
 This article will help you understand how to use this feature and quickly gain insights into your product’s web analytics in Amplitude.
 
