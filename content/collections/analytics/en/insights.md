@@ -59,7 +59,7 @@ For custom or smart alert, the training days are 120 for daily interval charts a
 
 When setting up a custom alert, you can choose to receive alerts when significance thresholds of 95%, 98%, or 99% are breached. These confidence intervals are determined by taking your historical data and identifying where 95%, 98%, and 99% of all data points fall.
 
-![conf_int.jpeg](/docs/output/img/analytics/conf_int.jpeg)
+![conf_int.png](/docs/output/img/analytics/conf_int.png)
 
 The higher the required significance, the less "noisy" your alerts will be. In charts, the blue band represents the range of the confidence interval. A 95% confidence interval will have a narrower band than a 99% confidence interval, because the 99% confidence interval captures more historical data points.
 
