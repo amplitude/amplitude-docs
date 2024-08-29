@@ -25,7 +25,7 @@ This feature is **limited** for users on **Starter plans**. 
 
 For a high-level overview of each chart type, check out this [overview of charts and features](/docs/analytics/charts/find-the-right-chart).
 
-Find and add relevant [events](/docs/analytics/charts/build-charts-add-events), [properties](/docs/data/user-properties-and-events), and [user segments](/docs/analytics/charts/build-charts-add-user-segments) for your chart to generate useful information from it. Follow those links to learn more about those elements of an Amplitude analysis. You can also just start from a [pre-built template](/docs/get-started/start-from-template)instead.
+Find and add relevant [events](/docs/analytics/charts/build-charts-add-events), [properties](/docs/data/user-properties-and-events), and [user segments](/docs/analytics/charts/build-charts-add-user-segments) for your chart to generate useful information from it. Follow those links to learn more about those elements of an Amplitude analysis. You can also just start from a [pre-built template](/docs/get-started/start-from-template) instead.
 
 To save your chart, click *Save*.
 

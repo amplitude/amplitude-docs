@@ -92,9 +92,14 @@ experiment = Experiment.initialize_remote('<DEPLOYMENT_KEY>', Config())
 
 You can configure the SDK client on initialization.
 
+{{partial:admonition type="info" heading="EU data center"}}
+If you're using Amplitude's EU data center, configure the `server_zone` option on initialization.
+{{/partial:admonition}}
+
 | <div class="big-column">Name</div>  | Description | Default Value |
 | --- | --- | --- |
 | `debug` | Enable additional debug logging. | `false` |
+| `server_zone` | The Amplitude data center to use. Either `ServerZone.US` or `ServerZone.EU` | `ServerZone.US` |
 | `server_url` | The host to fetch variants from. | `https://api.lab.amplitude.com` |
 | `fetch_timeout_millis` | The timeout for fetching variants in milliseconds. This timeout only applies to the initial request, not subsequent retries | `10000` |
 | `fetch_retries` | The number of retries to attempt if a request to fetch variants fails. | `0` |
@@ -102,10 +107,6 @@ You can configure the SDK client on initialization.
 | `fetch_retry_backoff_max_millis` | The maximum backoff between retries. If the scaled backoff becomes greater than the max, the max is used for all subsequent requests | `10000` |
 | `fetch_retry_backoff_scalar` | Scales the minimum backoff exponentially. | `1.5` |
 | `fetch_retry_timeout_millis` | The request timeout for retrying variant fetches. | `10000` |
-
-{{partial:admonition type="info" heading="EU data center"}}
-If you're using Amplitude's EU data center, configure the `serverUrl` option on initialization to `https://api.lab.eu.amplitude.com`
-{{/partial:admonition}}
 
 ### Fetch
 
@@ -203,7 +204,10 @@ pip install amplitude-experiment
 
 ```python
 # (1) Initialize the local evaluation client with a server deployment key.
-experiment = Experiment.initialize_local(api_key)
+experiment = Experiment.initialize_local("DEPLOYMENT_KEY", LocalEvaluationConfig(
+  # (Recommended) Enable local evaluation cohort targeting.
+  cohort_sync_config=CohortSyncConfig(api_key="API_KEY", secret_key="SECRET_KEY")
+))
 
 # (2) Start the local evaluation client.
 experiment.start()
@@ -245,15 +249,21 @@ Use the `flag_config_polling_interval_millis` [configuration](#configuration_1) 
 
 You can configure the SDK client on initialization.
 
+{{partial:admonition type="info" heading="EU data center"}}
+If you're using Amplitude's EU data center, configure the `server_zone` option on initialization.
+{{/partial:admonition}}
+
 **LocalEvaluationConfig**
 
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
 | `debug` | Set to `true` to enable debug logging. | `false` |
+| `server_zone` | The Amplitude data center to use. Either `ServerZone.US` or `ServerZone.EU` | `ServerZone.US` |
 | `server_url` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
 | `flag_config_polling_interval_millis` | The interval to poll for updated flag configs after calling [`start()`](#start) | `30000` |
 | `flag_config_poller_request_timeout_millis` | The timeout for the request made by the flag config poller | `10000` |
 | `assignment_config` | Configuration for automatically tracking assignment events after an evaluation. | `None` |
+| `cohort_sync_config` | Configuration to enable cohort downloading for [local evaluation cohort targeting](#local-evaluation-cohort-targeting). | `None` |
 
 **AssignmentConfig**
 
@@ -263,9 +273,14 @@ You can configure the SDK client on initialization.
 | `cache_capacity` | The maximum number of assignments stored in the assignment cache | `65536` |
 | [Analytics SDK Options](/docs/sdks/analytics-sdks/python/python-sdk#configuration) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
 
-{{partial:admonition type="info" heading="EU data center"}}
-If you're using Amplitude's EU data center, configure the `serverUrl` option on initialization to `https://api.lab.eu.amplitude.com`
-{{/partial:admonition}}
+**CohortSyncConfig**
+
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `api_key` | The analytics API key and NOT the experiment deployment key | *required* |
+| `secret_key` | The analytics secret key | *required* |
+| `max_cohort_size` | The maximum size of cohort that the SDK will download. Cohorts larger than this size will not be downloaded. | `2147483647` |
+| `cohort_polling_interval_millis` | The interval, in milliseconds, to poll Amplitude for cohort updates (60000 minimum). | `60000` |
 
 ### Start
 
@@ -314,6 +329,17 @@ if variant.value == 'on':
     # Flag is on
 else:
     # Flag is off
+```
+
+### Local evaluation cohort targeting
+
+Since version `1.4.0`, the local evaluation SDK client supports downloading cohorts for local evaluation targeting. You must configure the `cohort_sync_config` option with the analytics `api_key` and `secret_key` on initialization to enable this support.
+
+```python
+experiment = Experiment.initialize_local("DEPLOYMENT_KEY", LocalEvaluationConfig(
+  # (Recommended) Enable local evaluation cohort targeting.
+  cohort_sync_config=CohortSyncConfig(api_key="API_KEY", secret_key="SECRET_KEY")
+))
 ```
 
 ## Access Amplitude cookies

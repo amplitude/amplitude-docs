@@ -10,7 +10,7 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724879558
 ---
-Amplitude's onboarding enables you to get data into your new organization as quickly as possible.
+Amplitude's onboarding helps you to get data into your new organization as quickly as possible.
 
 ## The Amplitude snippet
 
@@ -30,7 +30,7 @@ After you install the snippet, browser your site to allow Amplitude to verify th
 
 ![](statamic://asset::help_center_conversions::get-started/data-flowing.png)
 
-When Amplitude verifies that it can receive events, click **Next** to create your first chart, and optionally save it as a dashboard.
+When Amplitude verifies that it can receive events, click *Next* to create your first chart, and optionally save it as a dashboard.
 
 ## Other ways to install
 

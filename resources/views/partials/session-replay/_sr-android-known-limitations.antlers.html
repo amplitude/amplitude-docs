@@ -3,9 +3,9 @@
 
 Keep the following limitations in mind as you implement Session Replay:
 
-- (alpha) Session replay stores data in memory only. This can lead to data loss between app starts. Learn more in [Session Replay storage](#session-replay-storage).
+- (alpha) Session replay doesn't support all view components. Contact Amplitude (with a session replay link) for more information.
 
-- (alpha)Session replay doesn't support all view components. Contact Amplitude (with a session replay link) for more information.
+- (alpha) Session replay doesn't support Jetpack Compose.
 
 - Session Replay doesn't stitch together replays from a single user across multiple projects. For example:
   
@@ -17,7 +17,7 @@ Keep the following limitations in mind as you implement Session Replay:
 - The User Sessions chart doesn't show session replays if your organization uses a custom session definition.
 - Session Replay can't capture the following Android views:
 
-    - ImageView
     - WebView
-    - Static assets like fonts, drawable, and images from the `res` folder.
+    - MapView
+    - Canvas Views
 {{/markdown}}

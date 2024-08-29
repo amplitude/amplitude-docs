@@ -50,7 +50,7 @@ If you use Maven in your project, the .jar is available on Maven Central with th
 
 ## Configure the SDK
 
-{{partial:collapse name="Configuration Options"}}
+{{partial:collapse name="Configuration options"}}
 | Name | Description | Default Value |
 | --- | --- | --- |
 | `deviceId` | `String?`. The device ID to use for this device. If no deviceID is provided one will be generated automatically. Learn more [here](./#device-id-lifecycle). | `null` |
@@ -63,8 +63,9 @@ If you use Maven in your project, the .jar is available on Maven Central with th
 | `flushEventsOnClose` | `Boolean`. Flushing of unsent events on app close. | `true` |
 | `callback` | `EventCallBack`. Callback function after event sent. | `null` |
 | `optOut` | `Boolean`. Opt the user out of tracking. | `false` |
-| `trackingSessionEvents` | `Boolean`. Deprecated. Automatic tracking of "Start Session" and "End Session" events that count toward event volume. | `false` |
-| `defaultTracking` | `DefaultTrackingOptions`. Options to control the default events tracking. | Check [Tracking default events](#tracking-default-events) |
+| ~`trackingSessionEvents`~ (Deprecated. Use [`autocapture`](#autocapture) instead.)| `Boolean`. Automatic tracking of "Start Session" and "End Session" events that count toward event volume. | `false` |
+| ~`defaultTracking`~ (Deprecated. Use [`autocapture`](#autocapture) instead.) | `DefaultTrackingOptions`. Enable tracking of default events for sessions, app lifecycles, screen views, and deep links. | `DefaultTrackingOptions(sessions = true)` |
+| `autocapture` | `Set<AutocaptureOption>`. A `Set` of Options to enable tracking of default events for sessions, application lifecycles, screen and fragment views, deep links, and element interactions. | If the parameter isn't set, `AutocaptureOption.SESSIONS` is added to the `Set` by default. For more information, see [Autocapture](#autocapture).|
 | `minTimeBetweenSessionsMillis` | `Long`. The amount of time for session timeout. The value is in milliseconds. | `300000` |
 | `serverUrl` | `String`. The server url events upload to. | `https://api2.amplitude.com/2/httpapi` |
 | `serverZone` | `ServerZone.US` or `ServerZone.EU`. The server zone to send to, will adjust server url based on this config. | `ServerZone.US` |
@@ -75,7 +76,7 @@ If you use Maven in your project, the .jar is available on Maven Central with th
 | `enableCoppaControl` | `Boolean`. Whether to enable COPPA control for tracking options. | `false` |
 | `instanceName` | `String`. The name of the instance. Instances with the same name will share storage and identity. For isolated storage and identity use a unique `instanceName` for each instance. | `$default_instance` |
 | `migrateLegacyData` | `Boolean`. Available in `1.9.0`+. Whether to migrate [maintenance Android SDK](../android) data (events, user/device ID). Learn more [here](https://github.com/amplitude/Amplitude-Kotlin/blob/main/android/src/main/java/com/amplitude/android/migration/RemnantDataMigration.kt#L9-L16). | `true` |
-| `offline` | `Boolean | AndroidNetworkConnectivityCheckerPlugin.Disabled`. Whether the SDK is connected to network. Learn more [here](./#offline-mode) | `false` |
+| `offline` | `Boolean \| AndroidNetworkConnectivityCheckerPlugin.Disabled`. Whether the SDK is connected to network. Learn more [here](./#offline-mode) | `false` |
 | `storageProvider` | `StorageProvider`. Implements `StorageProvider` interface to store events. | `AndroidStorageProvider` |
 | `identifyInterceptStorageProvider` | `StorageProvider`. Implements `StorageProvider` interface for identify event interception and volume optimization. | `AndroidStorageProvider` |
 | `identityStorageProvider` | `IdentityStorageProvider`. Implements `IdentityStorageProvider` to store user id and device id. | `FileIdentityStorageProvider` |
@@ -235,110 +236,160 @@ amplitude.identify(identify)
 
 ```
 
-## Track default events
+## Autocapture <a id="track-default-events"></a>
 
-Starting from release v1.10.1, the SDK is able to track more default events now. It can be configured to track the following events automatically:
+Starting from release v1.18.0, the SDK can track more events without manual instrumentation. You can configure it to track the following events automatically:
 
-- Sessions [1](#fn:1)
+- Sessions
 - App lifecycles
 - Screen views
 - Deep links
+- Element interactions
 
-Tracking default events options
-
-| Name | Type | Default Value | Description |
+{{partial:collapse name="Autocapture options"}}
+| Name | Type | Enabled by default | Description |
 | --- | --- | --- | --- |
-| `config.defaultTracking.sessions` | Optional. `boolean` | `true` | Enables session tracking. This configuration replaces [`trackingSessionEvents`](#configuration). If value is `true`, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting is `false`, Amplitude tracks `sessionId` only.See [Tracking sessions](#tracking-sessions) for more information. |
-| `config.defaultTracking.appLifecycles` | Optional. `boolean` | `false` | Enables application lifecycle events tracking. If value is `true`, Amplitude tracks application installed, application updated, application opened, and application backgrounded events. Event properties tracked includes: `[Amplitude] Version`, `[Amplitude] Build`, `[Amplitude] Previous Version`, `[Amplitude] Previous Build`, `[Amplitude] From Background`See [Tracking application lifecycles](#tracking-application-lifecycles) for more information. |
-| `config.defaultTracking.screenViews` | Optional. `boolean` | `false` | Enables screen views tracking. If value is `true`, Amplitude tracks screen viewed events. Event properties tracked includes: `[Amplitude] Screen Name`See [Tracking screen views](#tracking-screen-views) for more information. |
-| `config.defaultTracking.deepLinks` | Optional. `boolean` | `false` | Enables deep link tracking. If value is `true`, Amplitude tracks deep link opened events. Event properties tracked includes: `[Amplitude] Link URL`, `[Amplitude] Link Referrer`See [Tracking deep links](#tracking-deep-links) for more information. |
+| `SESSIONS` | `AutocaptureOption` | Yes | Enables session tracking. If the option is set, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting isn't set, Amplitude tracks `sessionId` only. See [Track sessions](#track-sessions) for more information. |
+| `APP_LIFECYCLES` | `AutocaptureOption` | No | Enables application lifecycle events tracking. If the option is set, Amplitude tracks application installed, application updated, application opened, and application backgrounded events. Event properties tracked includes: `[Amplitude] Version`, `[Amplitude] Build`, `[Amplitude] Previous Version`, `[Amplitude] Previous Build`, `[Amplitude] From Background`. See [Track application lifecycles](#track-application-lifecycles) for more information. |
+| `SCREEN_VIEWS` | `AutocaptureOption` | No | Enables screen and fragment views tracking. If the option is set, Amplitude tracks screen viewed and fragment viewed events. Event properties tracked includes: `[Amplitude] Screen Name`, `[Amplitude] Fragment Class`, `[Amplitude] Fragment Identifier`, `[Amplitude] Fragment Tag`. See [Track screen views](#track-screen-views) for more information. |
+| `DEEP_LINKS` | `AutocaptureOption` | No | Enables deep link tracking. If the option is set, Amplitude tracks deep link opened events. Event properties tracked includes: `[Amplitude] Link URL`, `[Amplitude] Link Referrer`. See [Track deep links](#track-deep-links) for more information. |
+| `ELEMENT_INTERACTIONS` | `AutocaptureOption` | No | Enables element interaction tracking. If the option is set, Amplitude tracks user interactions with clickable elements. Event properties tracked includes: `[Amplitude] Action`, `[Amplitude] Target Class`, `[Amplitude] Target Resource`, `[Amplitude] Target Tag`, `[Amplitude] Target Source`, `[Amplitude] Hierarchy`, `[Amplitude] Screen Name`. See [Track element interactions](#track-element-interactions) for more information. |
 
-You can enable Amplitude to start tracking all events mentioned above, use the code sample below. Otherwise, you can omit the configuration to keep only session tracking enabled.
+{{/partial:collapse}}
 
+You can configure Amplitude to start tracking Autocapture events. Otherwise, you can omit the configuration to keep only session tracking enabled.
+
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
+The `autocapture` configuration accepts a `Set` of `AutocaptureOption` values. To create the Autocapture options, use the `autocaptureOptions` helper function and add the options to the set with a unary plus sign (`+`) before each option.
 ```kotlin
-Amplitude(
+import com.amplitude.android.Amplitude
+
+val amplitude = Amplitude(
   Configuration(
     apiKey = AMPLITUDE_API_KEY,
     context = applicationContext,
-    defaultTracking = DefaultTrackingOptions.ALL
+    autocapture = autocaptureOptions {
+        +sessions			   // or `+AutocaptureOption.SESSIONS`
+        +appLifecycles		  // or `+AutocaptureOption.APP_LIFECYCLES`
+        +deepLinks			  // or `+AutocaptureOption.DEEP_LINKS`
+        +screenViews			// or `+AutocaptureOption.SCREEN_VIEWS`
+    }
   )
 )
 ```
+By default, if the `autocapture` configuration isn't explicitly set during `Configuration` initialization, `configuration.autocapture` automatically includes `AutocaptureOption.SESSIONS`.
 
-{{partial:admonition type="note" heading=""}}
-Amplitude may add more events in a future version, and this configuration enables tracking for those events as well.
-{{/partial:admonition}}
-
-Similarly, you can disable Amplitude to track all events mentioned above with the code sample below.
-
+If you want to prevent automatic session events capture, set `autocapture` without the `AutocaptureOption.SESSIONS` option.
 ```kotlin
-Amplitude(
- Configuration(
- apiKey = AMPLITUDE_API_KEY,
- context = applicationContext,
- defaultTracking = DefaultTrackingOptions.NONE
- )
-)
+import com.amplitude.android.Amplitude
 
-```
-
-You can also customize the tracking with `DefaultTrackingOptions`, see code sample below.
-
-```kotlin
-Amplitude(
+val amplitude = Amplitude(
   Configuration(
     apiKey = AMPLITUDE_API_KEY,
     context = applicationContext,
-    defaultTracking = DefaultTrackingOptions(
-      appLifecycles = true,
-      sessions = false,
-      deepLinks = true,
-      screenViews = false
-    )
+    autocapture = setOf(AutocaptureOption.APP_LIFECYCLES)  // or use `setOf()` to disable autocapture.
   )
 )
-
 ```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+The `autocapture` configuration accepts a `Set` of `AutocaptureOption` values.
+```java
+import com.amplitude.android.Amplitude;
+
+import java.util.Arrays;
+
+Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicationContext());
+configuration.getAutocapture().addAll(Arrays.asList(
+    AutocaptureOption.APP_LIFECYCLES,
+    AutocaptureOption.DEEP_LINKS,
+    AutocaptureOption.SCREEN_VIEWS
+));
+
+Amplitude amplitude = new Amplitude(configuration);
+```
+By default, if the `autocapture` configuration isn't explicitly set during `Configuration` initialization, `configuration.getAutocapture()` automatically includes `AutocaptureOption.SESSIONS`.
+
+To prevent automatic session event capture, remove the `AutocaptureOption.SESSIONS` option from `autocapture`.
+```java
+import com.amplitude.android.Amplitude;
+
+Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicationContext());
+configuration.getAutocapture().remove(AutocaptureOption.SESSIONS);
+
+Amplitude amplitude = new Amplitude(configuration);
+```
+{{/partial:tab}}
+{{/partial:tabs}}
 
 ### Track sessions
 
-You can enable Amplitude to start tracking session events by setting `configuration.defaultTracking.sessions` to `true`. Refer to the code sample below.
+Amplitude enables session tracking by default. Include `AutocaptureOption.SESSIONS` in the `autocapture` configuration to explicitly configure the SDK to track session events or to enable session event tracking along with other Autocapture configurations.
 
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
 ```kotlin
-Amplitude(
+import com.amplitude.android.Amplitude
+
+val amplitude = Amplitude(
   Configuration(
     apiKey = AMPLITUDE_API_KEY,
     context = applicationContext,
-    defaultTracking = DefaultTrackingOptions(
-      sessions = true
-    )
+    autocapture = autocaptureOptions {
+        +sessions	// or `+AutocaptureOption.SESSIONS`
+    }
   )
 )
-
 ```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+import com.amplitude.android.Amplitude;
+
+import java.util.Arrays;
+
+Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicationContext());
+// `AutocaptureOption.SESSION` is automatically set in `configuration.autocapture`.
+
+Amplitude amplitude = new Amplitude(configuration);
+```
+{{/partial:tab}}
+{{/partial:tabs}}
 
 For more information about session tracking, refer to [User sessions](#user-sessions).
 
-{{partial:admonition type="note" heading=""}}
-`configuration.trackingSessionEvents` is deprecated and replaced with `configuration.defaultTracking.sessions`.
-{{/partial:admonition}}
-
 ### Track application lifecycles
 
-You can enable Amplitude to start tracking application lifecycle events by setting `configuration.defaultTracking.appLifecycles` to `true`. Refer to the code sample below.
+You can enable Amplitude to start tracking application lifecycle events by including `AutocaptureOption.APP_LIFECYCLES` in the `autocapture` configuration. See the following code sample.
 
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
 ```kotlin
-Amplitude(
+import com.amplitude.android.Amplitude
+
+val amplitude = Amplitude(
   Configuration(
     apiKey = AMPLITUDE_API_KEY,
     context = applicationContext,
-    defaultTracking = DefaultTrackingOptions(
-      appLifecycles = true
-    )
+    autocapture = autocaptureOptions {
+        +appLifecycles	// or `+AutocaptureOption.APP_LIFECYCLES`
+    }
   )
 )
-
 ```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+import com.amplitude.android.Amplitude;
+
+Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicationContext());
+configuration.getAutocapture().add(AutocaptureOption.APP_LIFECYCLES);
+
+Amplitude amplitude = new Amplitude(configuration);
+```
+{{/partial:tab}}
+{{/partial:tabs}}
 
 After enabling this setting, Amplitude tracks the following events:
 
@@ -349,40 +400,140 @@ After enabling this setting, Amplitude tracks the following events:
 
 ### Track screen views
 
-You can enable Amplitude to start tracking screen view events by setting `configuration.defaultTracking.screenViews` to `true`. Refer to the code sample below.
+You can enable Amplitude to start tracking screen and fragment view events by including `AutocaptureOption.SCREEN_VIEWS` in the `autocapture` configuration. See the following code sample.
 
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
 ```kotlin
-Amplitude(
+import com.amplitude.android.Amplitude
+
+val amplitude = Amplitude(
   Configuration(
     apiKey = AMPLITUDE_API_KEY,
     context = applicationContext,
-    defaultTracking = DefaultTrackingOptions(
-      screenViews = true
-    )
+    autocapture = autocaptureOptions {
+        +screenViews	// or `+AutocaptureOption.SCREEN_VIEWS`
+    }
   )
 )
-
 ```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+import com.amplitude.android.Amplitude;
 
-After enabling this setting, Amplitude will track the `[Amplitude] Screen Viewed` event with the screen name property. This property value is read from the activity label, application label, and activity name successively.
+Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicationContext());
+configuration.getAutocapture().add(AutocaptureOption.SCREEN_VIEWS);
+
+Amplitude amplitude = new Amplitude(configuration);
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+After enabling this setting, Amplitude will track both `[Amplitude] Screen Viewed` and `[Amplitude] Fragment Viewed` events. Both of these events include a screen name property. For `[Amplitude] Fragment Viewed` events, Amplitude captures additional fragment-specific properties.
+
+{{partial:collapse name="Event properties descriptions"}}
+| Event property | Description |
+| --- | --- |
+| `[Amplitude] Screen Name` | The activity label, application label, or activity name (in order of priority). |
+| `[Amplitude] Fragment Class` | The fully qualified class name of the viewed fragment. |
+| `[Amplitude] Fragment Identifier` | The resource ID of the fragment as defined in the layout XML. |
+| `[Amplitude] Fragment Tag` | The unique identifier assigned to the fragment during a transaction. |
+
+{{/partial:collapse}}
+
 
 ### Track deep links
 
-You can enable Amplitude to start tracking deep link events by setting `configuration.defaultTracking.deepLinks` to `true`. Refer to the code sample below.
+You can enable Amplitude to start tracking deep link events by including `AutocaptureOption.DEEP_LINKS` in the `autocapture` configuration. See the following code sample.
 
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
 ```kotlin
-Amplitude(
+import com.amplitude.android.Amplitude
+
+val amplitude = Amplitude(
   Configuration(
     apiKey = AMPLITUDE_API_KEY,
     context = applicationContext,
-    defaultTracking = DefaultTrackingOptions(
-      deepLinks = true
-    )
+    autocapture = autocaptureOptions {
+        +deepLinks	// or `+AutocaptureOption.DEEP_LINKS`
+    }
   )
 )
 ```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+import com.amplitude.android.Amplitude;
+
+Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicationContext());
+configuration.getAutocapture().add(AutocaptureOption.DEEP_LINKS);
+
+Amplitude amplitude = new Amplitude(configuration);
+```
+{{/partial:tab}}
+{{/partial:tabs}}
 
 After enabling this setting, Amplitude will track the `[Amplitude] Deep Link Opened` event with the URL and referrer information.
+
+### Track element interactions
+
+Amplitude can track user interactions with clickable elements with support for both classic Android Views as well as Jetpack Compose. To enable this option, include `AutocaptureOption.ELEMENT_INTERACTIONS` in the `autocapture` configuration. 
+
+{{partial:admonition type="note" heading=""}}
+The `AutocaptureOption.ELEMENT_INTERACTIONS` option is available as a beta release for early feedback. Try it out and share your thoughts on our [GitHub](https://github.com/amplitude/Amplitude-Kotlin).
+{{/partial:admonition}}
+
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+import com.amplitude.android.Amplitude
+
+val amplitude = Amplitude(
+  @OptIn(ExperimentalAmplitudeFeature::class)
+  Configuration(
+    apiKey = AMPLITUDE_API_KEY,
+    context = applicationContext,
+    autocapture = autocaptureOptions {
+        +elementInteractions	// or `+AutocaptureOption.ELEMENT_INTERACTIONS`
+    }
+  )
+)
+```
+The `AutocaptureOption.ELEMENT_INTERACTIONS` option is marked as `@ExperimentalAmplitudeFeature`. To enable this feature, apply the `@OptIn(ExperimentalAmplitudeFeature::class)` annotation to the configuration.
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+import com.amplitude.android.Amplitude;
+
+Configuration configuration = new Configuration(AMPLITUDE_API_KEY, getApplicationContext());
+configuration.getAutocapture().add(AutocaptureOption.ELEMENT_INTERACTIONS);
+
+Amplitude amplitude = new Amplitude(configuration);
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+When you enable this setting, Amplitude tracks the `[Amplitude] Element Interacted` event whenever a user interacts with an element in the application.
+
+{{partial:collapse name="Event properties descriptions"}}
+| Event property | Description |
+| --- | --- |
+| `[Amplitude] Action` | The action that triggered the event. Defaults to `touch`. |
+| `[Amplitude] Target Class` | The canonical name of the target view class. |
+| `[Amplitude] Target Resource` | The resource entry name for the target view identifier within the context the view is running in. |
+| `[Amplitude] Target Tag` | The tag of the target view if the value is of primitive type, or the `Modifier.testTag` of the target `@Composable` function. |
+| `[Amplitude] Target Text` | The text of the target view if the view is a `Button` instance. |
+| `[Amplitude] Target Source` | The underlying framework of the target element, either `Android Views` or `Jetpack Compose`. |
+| `[Amplitude] Hierarchy` | A nested hierarchy of the target view's class inheritance, from the most specific to the most general. |
+| `[Amplitude] Screen Name` | See [Track screen views](#track-screen-views). |
+
+{{/partial:collapse}}
+
+{{partial:admonition type="info" heading="Support for Jetpack Compose"}}
+Amplitude supports tracking user interactions with UI elements implemented in Jetpack Compose. To track interactions, add a `Modifier.testTag` to the `@Composable` functions of the elements that you want to track.
+{{/partial:admonition}}
 
 ## User groups
 
@@ -620,7 +771,7 @@ Ensure that the configuration and payload are accurate and check for any unusual
 
 ### Plugins
 
-You can take advantage of a Destination Plugin to print out the configuration value and event payload before sending them to the server. You can set the `logLevel` to debug, copy the following `TroubleShootingPlugin` into your project, add the plugin into the Amplitude instance.
+You can take advantage of a destination plugin to print out the configuration value and event payload before sending them to the server. You can set the `logLevel` to debug, copy the following `TroubleShootingPlugin` into your project, add the plugin into the Amplitude instance.
 
 - [Java TroubleShootingPlugin example](https://github.com/amplitude/Amplitude-Kotlin/blob/main/samples/java-android-app/src/main/java/com/amplitude/android/sample/TroubleShootingPlugin.java).
 - [Kotlin TroubleShootingPlugin example](https://github.com/amplitude/Amplitude-Kotlin/blob/main/samples/kotlin-android-app/src/main/java/com/amplitude/android/sample/TroubleShootingPlugin.kt).
@@ -633,7 +784,7 @@ The event callback executes after the event is sent, for both successful and fai
 
 ### User sessions
 
-Amplitude starts a session when the app is brought into the foreground or when an event is tracked in the background. A session ends when the app remains in the background for more than the time set by `setMinTimeBetweenSessionsMillis()` without any event being tracked. Note that a session will continue for the entire time the app is in the foreground no matter whether session tracking is enabled by `configuration.trackingSessionEvents` or `configuration.defaultTracking.sessions` or not. 
+Amplitude starts a session when the app is brought into the foreground or when an event is tracked in the background. A session ends when the app remains in the background for more than the time set by `setMinTimeBetweenSessionsMillis()` without any event being tracked. Note that a session will continue for the entire time the app is in the foreground no matter whether session tracking is enabled by `configuration.trackingSessionEvents`, `configuration.defaultTracking`, `configuration.autocapture` or not. 
 
 When the app enters the foreground, Amplitude tracks a session start, and starts a countdown based on `setMinTimeBetweenSessionsMillis()`. Amplitude extends the session and restarts the countdown any time it tracks a new event. If the countdown expires, Amplitude waits until the next event to track a session end event.
 
@@ -682,9 +833,7 @@ amplitude = Amplitude(
   Configuration(
     apiKey = AMPLITUDE_API_KEY,
     context = applicationContext,
-    defaultTracking = DefaultTrackingOptions(
-      sessions = false
-    )
+    autocapture = setOf()
   )
 )
 
@@ -692,10 +841,8 @@ amplitude = Amplitude(
 {{/partial:tab}}
 {{partial:tab name="Java"}}
 ```java
-defaultTrackingOptions = new DefaultTrackingOptions();
-defaultTrackingOptions.setSessions(false);
 amplitude = AmplitudeKt.Amplitude(AMPLITUDE_API_KEY, getApplicationContext(), configuration -> {
-    configuration.setDefaultTracking(defaultTrackingOptions);
+    configuration.getAutocapture().remove(AutocaptureOption.SESSION);
     return Unit.INSTANCE;
 });
 
@@ -931,7 +1078,7 @@ The Android Advertising ID is a unique identifier provided by the Google Play st
 Follow these steps to use Android Ad ID.
 
 {{partial:admonition type="warning" heading=""}}
-As of April 1, 2022, Google allows users to opt out of Ad ID tracking. Ad ID may return null or error. You can use am alternative ID called [App Set ID](#app-set-id), which is unique to every app install on a device. [Learn more](https://support.google.com/googleplay/android-developer/answer/6048248?hl=en).
+As of April 1, 2022, Google allows users to opt out of Ad ID tracking. Ad ID may return null or error. You can use an alternative ID called [App Set ID](#app-set-id), which is unique to every app install on a device. [Learn more](https://support.google.com/googleplay/android-developer/answer/6048248?hl=en).
 {{/partial:admonition}}
 
 1. Add `play-services-ads-identifier` as a dependency.
@@ -1002,7 +1149,7 @@ Amplitude amplitude = new Amplitude(configuration);
 App set ID is a unique identifier for each app install on a device. App set ID is reset by the user manually when they uninstall the app, or after 13 months of not opening the app.
  Google designed this as a privacy-friendly alternative to Ad ID for users who want to opt out of stronger analytics.
 
-To use App Set ID, follow these steps.
+To use app set ID, follow these steps.
 
 1. Add `play-services-appset` as a dependency. For versions earlier than 2.35.3, use `'com.google.android.gms:play-services-appset:16.0.0-alpha1'`
 

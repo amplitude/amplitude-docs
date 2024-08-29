@@ -96,7 +96,11 @@ Filtered results by date or time frame match the project's timezone.
 
 3. To narrow the list with a filter, click *+ Add Filter*. You can filter by cohorts, events, event properties, user properties, and session duration. You can also use multiple filters to further narrow your list.
 
-Once you make your selection, view replays that took place within the selected time frame, or replays that meet your filter specifications. Your search results generate a unique URL that you can share with your team. 
+Once you make your selection, view replays that took place within the selected time frame, or replays that meet your filter specifications. Your search results generate a unique URL that you can share with your team.
+
+{{partial:admonition type='note'}}
+Keep in mind that if you apply a filter to exclude replays with a specific property value, Session Replay search returns results for all replays with a different value for that property, **and** replays with **missing** values for that property.
+{{/partial:admonition}}
 
 The list of results shows a maximum of 100 replays. 
 

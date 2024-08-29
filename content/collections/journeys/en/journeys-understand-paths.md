@@ -5,8 +5,8 @@ title: 'Understand the paths users take, and why they convert'
 source: 'https://help.amplitude.com/hc/en-us/articles/16427637651995-Journeys-Understand-the-paths-users-take-in-your-product-and-why-they-convert'
 this_article_will_help_you:
   - 'Analyze conversions between the key transition points in your product'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717103550
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1723654564
 landing: true
 landing_blurb: 'Analyze conversions between the key transition points in your product'
 ---
@@ -61,7 +61,7 @@ To create a new Journeys chart, follow these steps:
 Inactive events are hidden by default. To show them, click *Choose events to exclude* and de-select the ones you'd like to be visible.
 {{/partial:admonition}}
 
-![](/docs/output/img/journeys/3kd7ifhLg-hLRYwAD-5yyN3dD-YVmIhCy4U9Q6kc9j4YCTn66OvxbWwuypySg9aWWo-KeY1Xm97_DKXFbgsXc30_mPmQMkL_SEhjdYa3NKsEW8hw-IVbLS41qZn5IuQcczh-DXfR-OWlJftEN3KBcm0)
+![](/docs/output/img/journeys/journeys1.png)
 
 Be aware that any changes you make to settings in this procedure will populate across [all three Journeys visualizations, which you can read more about here](/docs/analytics/charts/journeys/journeys-understand-visualizations).
 
@@ -69,7 +69,7 @@ Be aware that any changes you make to settings in this procedure will populate a
 
 Like any other Amplitude chart, you will need to set a length of time for your analysis. In a Journeys chart, this is done with the **conversion window**.
 
-![](/docs/output/img/journeys/tEzAMjPOTHZ2jjsumP8BRwqaN7clzTQnhhtWdxElSGiowh8L77-tFfua6Kk5KU3V2FtBc0kiZ_2G2K0rwqyigmxKF2gRMogP_B7U5AidrM_P5xLrg9RhG5SBazwnxX0rgPKpg0VaLlkoQlTgNROFCfY)
+![](/docs/output/img/journeys/journeys2.png)
 
 A conversion window can be measured in **clock time**, or it can be measured in **sessions**. When you set the window to a unit of clock time, your chart will include event paths that were completed within that length of time, no matter how many sessions it took.
 
