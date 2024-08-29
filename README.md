@@ -62,10 +62,15 @@ With a new Super user created, point your browser to `amplitude-docs.test`. All 
 
 To access the control panel, go to `amplitude-docs.test/cp`. The control panel provides access to the front end editing environment for content, navigations, images, and other parts of the site.
 
+## Deployment previews
+
+Amplitude Docs runs on the Vercel platform. If you already have a Vercel seat with Amplitude, your PRs will build previews on Vercel. If you don't have a Vercel seat, the PR displays a message that you need to request access to Vercel to build a preview. Ignore this message. Unfortunately, Amplitude is out of Vercel seats.
+
+However, as a backup, the Docs team has added AWS Amplify as an alternative build preview tool. It takes a bit longer to build, but when a preview is ready, the AWS Amplify bot posts a comment to the PR with a link to the preview. To view the preview, click the link and add `/docs`. For example, `https://pr-246.d2yiv7onwgut1v.amplifyapp.com/docs`.
+
 ## Working with Docs
 
 > Tip: The easiest way to get to the sourcefile of an article is to use the pencil icon that's enabled on local environments. Look for it near the article title.
-
 
 ### Collections
 
