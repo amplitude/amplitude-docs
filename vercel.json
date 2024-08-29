@@ -2,7 +2,7 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/docs/hc/en-us/articles/5078631395227((?:-[a-zA-Z0-9-]+)?)",
+      "source": "/docs/hc/en-us/categories/5078631395227((?:-[a-zA-Z0-9-]+)?)",
       "destination": "/docs/data",
       "statusCode": 301
     },
