@@ -5,7 +5,7 @@ title: 'Insights: Spot anomalies in your metrics quickly with alerts'
 source: 'https://help.amplitude.com/hc/en-us/articles/115001764612-Insights-Spot-anomalies-in-your-metrics-quickly-with-alerts'
 this_article_will_help_you:
   - 'Set up and manage alerts to monitor the performance of your important project metrics'
-  - 'Send alerts directly into a Slack channel'
+  - 'Send alerts directly to a Slack channel'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5343a026-383e-4b6a-ad4d-df18684b6384
@@ -79,7 +79,7 @@ The charts sent in alert emails may have a `server_upload_time` filter to show t
 
 In addition to receiving emails when alerts are triggered, you can also set up an alert to post to one or more Slack channels.
 
-When setting up or modifying an alert, Slack channels can be selected in the "Notifications" section at the bottom of the modal:
+When you configure or modify an alert, you can select Slack channels in the *Notification* section at the bottom of the modal.
 
 ![slack_chart_alerts.png](/docs/output/img/analytics/slack_chart_alerts.png)
 
