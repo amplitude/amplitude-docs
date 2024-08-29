@@ -207,6 +207,11 @@
       "statusCode": 301
     },
     {
+      "destination": "/docs/assets/downloads/cohort-csv-upload-example.csv",
+      "source": "/docs/assets/csv/cohort-csv-upload-example.csv",
+      "statusCode": 301
+    },
+    {
       "destination": "/docs/sdks/ampli",
       "source": "/docs/data/ampli",
       "statusCode": 301
