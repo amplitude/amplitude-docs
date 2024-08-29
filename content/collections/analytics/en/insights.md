@@ -9,7 +9,7 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 5343a026-383e-4b6a-ad4d-df18684b6384
-updated_at: 1724970092
+updated_at: 1724975584
 ---
 Amplitude's **alerts** feature is built using [Prophet](https://facebook.github.io/prophet/), an advanced data mining and machine learning technique that automatically detects any anomalies in your product data, and instantly brings these hidden trends to your attention. It does this by first identifying expected values, and the confidence intervals around them, and then analyzing the overall trend of the data and combining it with the weekly trend of the data. 
 
@@ -83,4 +83,6 @@ When you configure or modify an alert, you can select Slack channels in the *Not
 
 ![slack_chart_alerts.png](/docs/output/img/analytics/slack_chart_alerts.png)
 
-If you have not set up the [Slack integration](/docs/analytics/integrate-slack) yet, you will see a button here that will let you connect your Amplitude account to Slack.
+If you haven't set up the [Slack integration](/docs/analytics/integrate-slack), connect your Amplitude account by clicking the *Connect to Slack* button:
+
+![chart_alerts_connect_to_slack.png](/docs/output/img/analytics/chart_alerts_connect_to_slack.png)
