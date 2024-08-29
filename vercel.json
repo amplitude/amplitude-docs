@@ -2,7 +2,7 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/docs/hc/en-us/articles/5078631395227((?:-[a-zA-Z0-9-]+)?)",
+      "source": "/docs/hc/en-us/categories/5078631395227((?:-[a-zA-Z0-9-]+)?)",
       "destination": "/docs/data",
       "statusCode": 301
     },
@@ -204,6 +204,11 @@
     {
       "destination": "/docs/assets/downloads/lookup-table-example.csv",
       "source": "/docs/assets/csv/lookup-table-example.csv",
+      "statusCode": 301
+    },
+    {
+      "destination": "/docs/assets/downloads/cohort-csv-upload-example.csv",
+      "source": "/docs/assets/csv/cohort-csv-upload-example.csv",
       "statusCode": 301
     },
     {

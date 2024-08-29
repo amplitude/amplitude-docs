@@ -5,8 +5,8 @@ title: 'Build an event segmentation analysis'
 source: 'https://help.amplitude.com/hc/en-us/articles/360052274852-Build-an-event-segmentation-analysis'
 this_article_will_help_you:
   - 'Use events and properties to create an Event Segmentation analysis'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1720649118
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1724963581
 landing: true
 landing_blurb: 'Use events and properties to create an Event Segmentation analysis'
 academy_link: 'https://academy.amplitude.com/understand-user-behavior-with-the-event-segmentation-chart?utm_source=help_center&utm_medium=academy_object&utm_campaign=content_page'
@@ -49,6 +49,10 @@ To build an Event Segmentation chart, follow these steps:
     You can also [create an in-line custom event](/docs/analytics/charts/event-segmentation/event-segmentation-in-line-events) or [create a new metric](/docs/analytics/charts/data-tables/data-tables-create-metric) at this point, if you need to.
 
 2. If desired, add properties to your starting event by clicking on *+ Filter by*, selecting the property name, and specifying the property value you’re interested in.
+
+    {{partial:admonition type='note'}}
+    The list of property values includes those ingested into your project during the last 30 days.
+    {{/partial:admonition}}
    
 3. Next, select another event to include, if desired. You can choose up to ten, and you can add properties to these events as well.
 

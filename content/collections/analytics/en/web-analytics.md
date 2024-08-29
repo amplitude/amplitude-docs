@@ -1,7 +1,7 @@
 ---
 id: ec6127d5-1384-41b1-b85a-04d21d0678f1
 blueprint: analytic
-title: 'Gain marketing insights with web analytics'
+title: 'Out-of-the-box Web Analytics'
 this_article_will_help_you:
   - 'Track industry-standard web analytics in one place'
 exclude_from_sitemap: false
@@ -10,7 +10,8 @@ updated_at: 1724883484
 source: 'https://help.amplitude.com/hc/en-us/articles/25181928085019-Gain-marketing-insights-with-web-analytics'
 landing: false
 ---
-Amplitude’s Web Analytics feature acts as a centralized hub where you can track page engagement and session-based metrics using common KPIs, such as page views, session duration, and bounce rate. Custom settings are available to:
+
+Amplitude’s Out-of-the-box Web Analytics acts as a centralized hub where you can track page engagement and session-based metrics using common KPIs, such as page views, session duration, and bounce rate. Custom settings are available to:
 
 - **Filter by domain**: Filter metrics by a specific domain to target a specific website for analysis.
 - **Track conversions**: Easily define a conversion funnel, enable detailed tracking, and visualize conversion metrics with data tables and charts.
@@ -20,14 +21,17 @@ Find Web Analytics in the left-hand sidebar.
 
 This article will help you understand how to use this feature and quickly gain insights into your product’s web analytics in Amplitude.
 
+
 ## Feature availability
-This feature is available to users on all Amplitude plans. See our [pricing page](https://amplitude.com/pricing) for more details.
+
+This feature is available to users on all Amplitude plans. See the [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
+
 If you haven’t already read up on the basics of building charts in Amplitude, you should do so before proceeding.
 
 ## Analyze industry-standard metrics
-Web Analytics offers four sets of insights with default metrics, as well as optional goals or key outcomes, that you are driving users to:
+Out-of-the-box Web Analytics offers four sets of insights with default metrics, as well as optional goals or key outcomes, that you are driving users to:
 
 - **Traffic by Channel**: Provides an overview of users visiting your product by channel. Metrics include visitors, bounce rate, session totals, average session duration, sessions per user, and web analytics views.
 - **Traffic by Campaign**: Provides an overview of the users visiting your product by campaign. Metrics include visitors, bounce rate, session totals, average session duration, sessions per user, and any defined goals.
@@ -37,10 +41,10 @@ Web Analytics offers four sets of insights with default metrics, as well as opti
 Each insight displays a time series chart and an aggregated data table below it. 
 
 {{partial:admonition type='note'}}
-Visit the [Marketing metrics recipes article](/docs/analytics/charts/user-sessions/marketing-metrics-recipes) for a more detailed explanation of commonly-used marketing analytics and how to replicate them in Amplitude charts.
+Visit the [Marketing metrics recipes article](/docs/analytics/charts/user-sessions/marketing-metrics-recipes) for a more detailed explanation of commonly used marketing analytics and how to replicate them in Amplitude charts.
 {{/partial:admonition}}
 
-Follow these steps to analyze metrics in the Web Analytics space:
+Follow these steps to analyze metrics in Out-of-the-box Web Analytics:
 
 1. Click *Web Analytics* in the left-hand sidebar and select the insight you’d like to view.
 2. If desired, click *Add segment > Amplitude segments* to filter your analysis by user type:
@@ -60,7 +64,7 @@ For conversion insights, you can also:
 
 ## Modify settings and create goals
 
-The Web Analytics space uses default events and properties from the Browser SDK, but admins or managers can modify them in settings.
+Out-of-the-box Web Analytics uses default events and properties from the Browser SDK, but admins or managers can modify them in settings.
 
 Follow these steps to manage settings, create goals, or customize tracked events:
 
