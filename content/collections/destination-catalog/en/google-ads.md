@@ -42,7 +42,7 @@ After you create the destination, you must configure the settings.
 
 1. On the *Settings* tab, click *Edit*.
 2. Under *Status*, click the toggle from *Disabled* to **Enabled**.
-3. Upload the [Google Cloud Service Account](https://developers.google.com/google-ads/api/docs/oauth/service-accounts): A Google Cloud Service Account is a special type of Google account used for server-to-server interactions and authentication within Google Cloud Platform (GCP) services. A user wth access to the Google Ads Service Account can create the Google Cloud Service Account. The Google Ads Service Account should have [domain wide delegation enabled](https://developers.google.com/workspace/guides/create-credentials). 
+3. Upload the [Google Cloud Service Account](https://developers.google.com/google-ads/api/docs/oauth/service-accounts): A Google Cloud Service Account is a special type of Google account used for server-to-server interactions and authentication within Google Cloud Platform (GCP) services. A user with access to the Google Ads Service Account can create the Google Cloud Service Account. The Google Ads Service Account should have [domain wide delegation enabled](https://developers.google.com/workspace/guides/create-credentials). 
       
       When you configure the domain-wide delegation, set the OAuth scope to `https://www.googleapis.com/auth/adwords`. For more information, see [Configure the OAuth screen](https://developers.google.com/google-ads/api/docs/get-started/oauth-cloud-project#configure_the_oauth_consent_screen) in Google's documentation.
 
