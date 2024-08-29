@@ -40,7 +40,7 @@ Clicking an event gives you detailed information about it, including the user pr
 
 Because the event stream can update in real time, you can use it to make sure you're capturing new events correctly, or to troubleshoot or debug instrumentation errors. For example, if you trigger an event only one time but the event stream consistently displays two instances of the event, there could be an instrumentation error.
 
-See more information and the raw data of an event by clicking Raw.
+Click *Raw* to see more information and the event's raw data.
 
 ## Instrumentation Explorer
 
