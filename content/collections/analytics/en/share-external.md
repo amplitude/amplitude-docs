@@ -71,4 +71,4 @@ Even if your account does not require passwords or expirations, you may set eith
 
 ## Visual links and unfurling public links on Slack
 
-Read more about the Amplitude Slack integration [here](/docs/analytics/integrate-slack).
+For more information, see [Integrate Slack with Amplitude](/docs/analytics/integrate-slack).
