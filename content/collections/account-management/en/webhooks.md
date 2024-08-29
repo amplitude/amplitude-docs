@@ -34,4 +34,4 @@ To create and configure a webhook, follow these steps:
 5. Give your webhook a name and paste the URL for the endpoint you’d like to send the message to.
 6. At the bottom, select the custom monitors to be sent to the endpoint you’ve configured.
 
-Once you’ve chosen your custom monitors, you can test your endpoint by clicking *Send a test message* to see how the message will be posted to your endpoint.
+Once you choose your custom monitors, click *Send a test message* to test the endpoint and see how the message posts to your endpoint.
