@@ -12,7 +12,7 @@ Data validation is a critical step in the instrumentation process.
 
 ### Before you begin
 
-Before you can debug, you must instrument your events. **If you haven't instrumented any events, Amplitude's servers don't receive data, and no data is available in Amplitude itself**. Create a test app to test and validate your first event data.
+Before you can debug, **you must instrument your events**. If you haven't instrumented any events, Amplitude's servers don't receive data, and no data is available in Amplitude itself. Create a test app to test and validate your first event data.
 
 ## Ingestion debugger
 
