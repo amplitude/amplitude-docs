@@ -30,7 +30,7 @@ Below the ingestion debugger is the list of throttled users and devices. Here yo
 
 ### Step 1: Find yourself
 
-After you have instrumented your events, the first step is to manually trigger some of those events on your own device. Once you've done that, open Amplitude Analytics and navigate to [*Users > User Profiles*](http://analytics.amplitude.com/amp-dev-docs/activity). Here, you can search for yourself by user ID or device ID.
+After you instrument your events, trigger some of those events on your own device. Once you've done that, open Amplitude Analytics and navigate to [*Users > User Profiles*](http://analytics.amplitude.com/amp-dev-docs/activity). Here, you can search for yourself by user ID or device ID.
 
 ### Step 2: Analyze the event stream
 
