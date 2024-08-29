@@ -45,7 +45,8 @@ To create a dashboard, follow these steps:
 
 1. Navigate to *Create > Dashboard* to create a dashboard from scratch. Choose a blank dashboard, or [start from a template](/docs/get-started/start-from-template).
 
-Or click *+ Add to* from within an existing chart and select *+ Create a new dashboard* from the menu.
+    Or click *+ Add to* from within an existing chart and select *+ Create a new dashboard* from the menu.
+    
 2. Type the name of your new dashboard where it reads *Untitled Dashboard*. Amplitude will save your new, still-empty dashboard.
 3. To add content to your dashboard, click *Add Content* and select the type of content you want to include from the drop-down. Then select the specific items from the panel that opens on the right.  
   
