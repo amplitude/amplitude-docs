@@ -13,11 +13,11 @@ Amplitude's Out-of-the-box Product Analytics provides a single location in Ampli
 
 This feature is available on all Amplitude plans. For more information, see the [pricing page](https://amplitude.com/pricing).
 
-## Configure the Out-of-the-box Product Analytics
+## Configure Out-of-the-box Product Analytics
 
-Before you begin, configure the Out-of-the-box Product Analytics to ensure the provided analysis meets your needs.
+Before you begin, configure Out-of-the-box Product Analytics to ensure the provided analysis meets your needs.
 
-From the Product Overview page, click **Settings**.
+From the Product Overview page, click **Customize**. Use Amplitude's [usage interval analysis](docs/analytics/charts/retention-analysis/retention-analysis-usage-interval) to determine how long users go between triggering your critical event. 
 
 ### Basic settings
 
@@ -31,11 +31,17 @@ Click **Save** to commit changes.
 
 ### Onboarding funnel
 
-Select events that represent the steps in your onboarding funnel. For example start with a broad event like `[Amplitude] Session Started` and move down the funnel to more specific actions that users can take as part of onboarding, like `Profile completed`. Add up to five events to your funnel.
+Select events that represent the steps in your onboarding funnel. For example start with a broad event like `App installed` and move down the funnel to more specific actions that users can take as part of onboarding, like `Profile completed`. Add up to five events to your funnel.
 
 ### Features
 
-Select specific features for which you want to track engagement. Define features with tracked events or [Feature Flags](/docs/experiment/workflow/feature-flag-rollouts) that are a part of an experiment running in your product. Features you define are available on the Feature Engagement tab.
+Select specific features for which you want to track engagement. Define features with tracked events (including custom events) or [Feature Flags](/docs/experiment/workflow/feature-flag-rollouts) that are a part of an experiment running in your product. Features you define are available on the Feature Engagement tab.
+
+To create a new feature based on an event:
+
+1. From the *Features* tab of the *Customize page*, click *+ Create Feature*.
+2. Choose to define the feature with an event.
+3. Name the feature, and select the Value Moment, or the event that represents when a user realized value from the feature.
 
 ## Product Analytics views
 
@@ -55,21 +61,25 @@ The product overview displays the baseline metrics:
 * Active users (unique)
 * New users (unique)
 * Avg. session duration
-* New user retention, based on the daily interval you set.
+* New user retention, based on the interval you set.
 * Weekly active users
 
 ### Onboarding
 
 Onboarding displays a conversion funnel based on the events you defined during configuration.
 
-Break down conversion with the properties you defined during configuration. Breakdown shows overall conversion rate per value, and raw conversion numbers for each event.
+Break down conversion with the properties you defined during configuration. Breakdown shows conversion rate per value, and raw conversion numbers for each event.
 
 ### Feature engagement
 
-Feature engagement displays an engagement matrix with the features you defined plotted according to percent of daily active users (DAU) that engaged with the feature, and the average frequency with which users engaged with the feature.
+{{partial:admonition type="note" heading=""}}
+Features are a specific function or characteristic of a product that provides value to customers.
+{{/partial:admonition}}
+
+Feature engagement displays an engagement matrix that enables you to compare the features you define. The matrix plots features according to adoption (or the percentage of daily active users that engaged with the feature), and the average frequency with which users engaged with the feature.
 
 ### Retention
 
-Retention contains three tabs that reflect your product's overall user retention, the retention over time, and the usage interval.
+Retention contains three tabs that reflect your product's user retention, retention over time, and  usage interval.
 
 Retention over time uses the retention interval values you set during configuration.
