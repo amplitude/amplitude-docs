@@ -12,17 +12,17 @@ updated_by: c0ecd457-5b72-4dc9-b683-18a736413d32
 updated_at: 1718652695
 ---
 
-Amplitude's web experimentation provides a no-code solution running experiments on the web. [Copy the script snippet](#implement-the-script-snippet) for your Amplitude project into your site and begin running experiments immediately.
+Amplitude's web experimentation provides a no-code solution running experiments on the web. [Copy the script snippet](#implement-the-web-experiment-script) for your Amplitude project into your site and begin running experiments immediately.
 
 {{partial:admonition type="beta" heading="Web Experimentation is in Beta"}}
 **URL Redirect** tests are in open *Beta*.
 {{/partial:admonition}}
 
-## Implement the script snippet
+## Implement the Web Experiment script
 
 To implement Amplitude's web experimentation, copy and paste the standalone Amplitude experiment script into your website. Paste the script into the `<head>` element of your site as high up as possible to avoid flickering.
 
-This script snippet tracks [experiment events](/docs/experiment/under-the-hood/event-tracking) through the Amplitude Analytics SDK installed on your site. Replace `API_KEY` with your project's API key.
+This script tracks [experiment events](/docs/experiment/under-the-hood/event-tracking) through the Amplitude Analytics SDK installed on your site. Replace `API_KEY` with your project's API key.
 
 {{partial:tabs tabs="US Data Center, EU Data Center"}}
 {{partial:tab name="US Data Center"}}
@@ -45,13 +45,62 @@ This script snippet tracks [experiment events](/docs/experiment/under-the-hood/e
 You must install Amplitude Analytics on your website to enable [Experiment event tracking](/docs/experiment/under-the-hood/event-tracking) to Amplitude for analysis. Install the analytics SDK using a [script tag](https://github.com/amplitude/Amplitude-TypeScript/tree/main/packages/analytics-browser#installing-via-script-loader) or using your preferred [package manager](https://github.com/amplitude/Amplitude-TypeScript/tree/main/packages/analytics-browser#installing-via-package-manager) (for example npm, yarn etc.)
 {{/partial:admonition}}
 
+### Async script with anti-flicker snippet
+
+The synchronous script delivers the most seamless experience for your users. That said, if you wish to use an async script load while avoiding flicker, install the anti-flicker script **above** the async experiment script.
+
+{{partial:tabs tabs="US Data Center, EU Data Center"}}
+{{partial:tab name="US Data Center"}}
+
+  ```html
+  <!-- The anti-flicker snippet. Should be set above the async experiment script -->
+  <script>
+    // Set a timeout in milliseconds for the anti-flicker.
+    var timeout = 1000;
+    var id = "amp-exp-css";
+    if (!document.getElementById(id)) {
+      var s = document.createElement("style");
+      s.id = id;
+      s.innerText = "* { visibility: hidden !important; background-image: none !important; }";
+      document.head.appendChild(s);
+      window.setTimeout(function () {s.remove()}, timeout);
+    }
+  </script>
+  <!-- The existing experiment script set to load asynchronously -->
+  <script async src="https://cdn.amplitude.com/script/API_KEY.experiment.js"><script>
+  ```
+
+{{/partial:tab}}
+{{partial:tab name="EU Data Center"}}
+
+  ```html
+  <!-- The anti-flicker snippet. Should be set above the async experiment script -->
+  <script>
+    // Set a timeout in milliseconds for the anti-flicker.
+    var timeout = 1000;
+    var id = "amp-exp-css";
+    if (!document.getElementById(id)) {
+      var s = document.createElement("style");
+      s.id = id;
+      s.innerText = "* { visibility: hidden !important; background-image: none !important; }";
+      document.head.appendChild(s);
+      window.setTimeout(function () {s.remove()}, timeout);
+    }
+  </script>
+  <!-- The existing experiment script set to load asynchronously -->
+  <script async src="https://cdn.eu.amplitude.com/script/API_KEY.experiment.js"></script>
+  ```
+
+{{/partial:tab}}
+{{/partial:tabs}}
+
 ## Web vs feature experimentation
 
 Web experimentation builds off of Amplitude's end-to-end [feature experimentation platform](/docs/experiment/overview) to enable no-code experimentation on the web, but differs in a few key ways:
 
 | Web Experimentation | Feature Experimentation |
 | --- | --- |
-| Requires implementation using Experiment script snippet | Generally implemented using a SDK or an API. |
+| Requires implementation using Web Experiment script | Generally implemented using a SDK or an API. |
 | Enables no-code experimentation. | Requires engineering work to implement features and flags. |
 | Only supported on Web platforms. | Supports on any platform or system. |
 
@@ -71,7 +120,7 @@ To set up a web experiment, follow these steps:
 
 1. In Amplitude, navigate to *Create > Experiment > Use a URL Redirect.*
 2. In the *Variants* panel, add each URL you want to test as a separate variant.
-3. In the *Analysis Settings* panel, copy the code snippet to paste between the `<head>` and `</head>` tags of your site. Also, make sure your site has the Amplitude Analytics SDK installed, to properly monitor your exposures.
+3. In the *Analysis Settings* panel, copy the script to paste between the `<head>` and `</head>` tags of your site. Also, make sure your site has the Amplitude Analytics SDK installed, to properly monitor your exposures.
 4. For the rest of the setup process, follow the guidance provided in our experimentation workflow documentation.
 
 ### Preview and test

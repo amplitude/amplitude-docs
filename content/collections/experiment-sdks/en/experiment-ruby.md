@@ -103,9 +103,14 @@ experiment = AmplitudeExperiment.initialize_remote('<DEPLOYMENT_KEY>', Amplitude
 
 You can configure the SDK client on initialization.
 
+{{partial:admonition type="info" heading="EU data center"}}
+If you're using Amplitude's EU data center, configure the `server_zone` option on initialization.
+{{/partial:admonition}}
+
 | <div class="big-column">Name</div>  | Description | Default Value |
 | --- | --- | --- |
 | `debug` | Enable additional debug logging. | `false` |
+| `server_zone` | The Amplitude data center to use. Either `ServerZone::US` or `ServerZone::EU` | `ServerZone::US` |
 | `server_url` | The host to fetch variants from. | `https://api.lab.amplitude.com` |
 | `fetch_timeout_millis` | The timeout for fetching variants in milliseconds. This timeout only applies to the initial request, not subsequent retries | `10000` |
 | `fetch_retries` | The number of retries to attempt if a request to fetch variants fails. | `0` |
@@ -113,10 +118,6 @@ You can configure the SDK client on initialization.
 | `fetch_retry_backoff_max_millis` | The maximum backoff between retries. If the scaled backoff becomes greater than the max, the max is used for all subsequent requests | `10000` |
 | `fetch_retry_backoff_scalar` | Scales the minimum backoff exponentially. | `1.5` |
 | `fetch_retry_timeout_millis` | The request timeout for retrying variant fetches. | `10000` |
-
-{{partial:admonition type="info" heading="EU data center"}}
-If you're using Amplitude's EU data center, configure the `serverUrl` option on initialization to `https://api.lab.eu.amplitude.com`
-{{/partial:admonition}}
 
 ### Fetch
 
@@ -231,7 +232,15 @@ gem install amplitude-experiment
 require 'amplitude-experiment'
 
 # (1) Initialize the local evaluation client with a server deployment key.
-experiment = AmplitudeExperiment.initialize_local('<DEPLOYMENT_KEY>', AmplitudeExperiment::LocalEvaluationConfig.new)
+experiment = AmplitudeExperiment.initialize_local('DEPLOYMENT_KEY',
+  # (Recommended) Enable local evaluation cohort targeting.
+  AmplitudeExperiment::LocalEvaluationConfig.new(
+    cohort_sync_config: AmplitudeExperiment::CohortSyncConfig.new(
+      api_key: 'API_KEY',
+      secret_key: 'SECRET_KEY'
+    )
+  )
+)
 
 # (2) Start the local evaluation
 experiment.start
@@ -281,16 +290,22 @@ Use the `flag_config_polling_interval_millis` [configuration](#configuration_1) 
 #### Configuration
 
 You can configure the SDK client on initialization.
-  
+
+{{partial:admonition type="info" heading="EU data center"}}
+If you're using Amplitude's EU data center, configure the `server_zone` option on initialization.
+{{/partial:admonition}}
+
 **LocalEvaluationConfig**
 
 | <div class="big-column">Name</div> | Description | Default Value |
 | --- | --- | --- |
+| `server_zone` | The Amplitude data center to use. Either `ServerZone::US` or `ServerZone::EU` | `ServerZone::US` |
 | `server_url` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
 | `bootstrap` | Bootstrap the client with a map of flag key to flag configuration | `{}` |
 | `flag_config_polling_interval_millis` | The interval to poll for updated flag configs after calling [`start`](#start) | `30000` |
 | `debug` | Set to `true` to enable debug logging. | `false` |
-| `assignment_config` | Configuration for automatically tracking assignment events after an evaluation. | `None` |
+| `assignment_config` | Configuration for automatically tracking assignment events after an evaluation. | `nil` |
+| `cohort_sync_config` | Configuration to enable cohort downloading for [local evaluation cohort targeting](#local-evaluation-cohort-targeting). | `nil` |
 
 **AssignmentConfig**
 
@@ -303,16 +318,21 @@ You can configure the SDK client on initialization.
 | `flush_max_retries` | The number of times the client retries an event when the request returns an error. | `12` |
 | `logger` | The logger instance used by Amplitude client. | Default Ruby logger |
 | `min_id_length` | The minimum length of `user_id` and `device_id`. | `5` |
-| `callback`  | Client level callback function. Takes three parameters:<br> 1. event: a Event instance<br> 2. code: a integer of HTTP response code <br> 3. message: a string message. | `None` |
+| `callback`  | Client level callback function. Takes three parameters:<br> 1. event: a Event instance<br> 2. code: a integer of HTTP response code <br> 3. message: a string message. | `nil` |
 | `server_zone` | The server zone of the projects. Supports `EU` and `US`. For EU data residency, Change to `EU`. | `US` |
-| `server_url` | The API endpoint URL that events are sent to. Automatically selected by `server_zone` and `use_batch`. If this field is set with a string value instead of `None`, then `server_zone` and `use_batch` are ignored and the string value is used. | `https://api2.amplitude.com/2/httpapi` |
+| `server_url` | The API endpoint URL that events are sent to. Automatically selected by `server_zone` and `use_batch`. If this field is set with a string value instead of `nil`, then `server_zone` and `use_batch` are ignored and the string value is used. | `https://api2.amplitude.com/2/httpapi` |
 | `use_batch` | Whether to use [batch API](/docs/apis/analytics/batch-event-upload#batch-event-upload). By default, the SDK will use the default `serverUrl`. | `False` |
 | `storage_provider` | Used to create storage instance to hold events in the storage buffer. Events in storage buffer are waiting to be sent. | `InMemoryStorageProvider` |
 | `opt_out`  | Opt out option. If set to `True`, client doesn't process and send events. | `False` |
 
-{{partial:admonition type="info" heading="EU data center"}}
-If you're using Amplitude's EU data center, configure the `serverUrl` option on initialization to `https://api.lab.eu.amplitude.com`
-{{/partial:admonition}}
+**CohortSyncConfig**
+
+| <div class="big-column">Name</div> | Description | Default Value |
+| --- | --- | --- |
+| `api_key` | The analytics API key and NOT the experiment deployment key | *required* |
+| `secret_key` | The analytics secret key | *required* |
+| `max_cohort_size` | The maximum size of cohort that the SDK will download. Cohorts larger than this size will not be downloaded. | `2147483647` |
+| `cohort_polling_interval_millis` | The interval, in milliseconds, to poll Amplitude for cohort updates (60000 minimum). | `60000` |
 
 ### Start
 
@@ -359,6 +379,22 @@ if variant.value == 'on':
 else:
     # Flag is off
 end
+```
+
+### Local evaluation cohort targeting
+
+Since version `1.5.0`, the local evaluation SDK client supports downloading cohorts for local evaluation targeting. You must configure the `cohort_sync_config` option with the analytics `api_key` and `secret_key` on initialization to enable this support.
+
+```ruby
+experiment = AmplitudeExperiment.initialize_local('DEPLOYMENT_KEY',
+  # (Recommended) Enable local evaluation cohort targeting.
+  AmplitudeExperiment::LocalEvaluationConfig.new(
+    cohort_sync_config: AmplitudeExperiment::CohortSyncConfig.new(
+      api_key: 'API_KEY',
+      secret_key: 'SECRET_KEY'
+    )
+  )
+)
 ```
 
 ## Access Amplitude cookies

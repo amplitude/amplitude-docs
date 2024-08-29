@@ -92,7 +92,11 @@ event_time = client_event_time + (server_received_time - client_upload_time)
 ```
 
 {{partial:admonition type="note" heading=""}}
-If the difference between `server_received_time` and `client_upload_time` is less than 60 seconds, the `event_time` isn't adjusted and is set equal to the `client_event_time`. This occurs automatically for projects with a [project ID](/docs/admin/account-management/manage-orgs-projects#view-and-edit-your-project-information) of 243704 or higher. To apply this 60-second cutoff time to an older project, contact Amplitude Support.
+If the difference between `server_received_time` and `client_upload_time` is less than 60 seconds, the `event_time` isn't adjusted and is set equal to the `client_event_time`. But if that difference is greater than 60 seconds, Amplitude assumes the `client_event_time` is off, probably because of an incorrect system clock, and makes the adjustment.
+
+This occurs automatically for projects with a [project ID](/docs/admin/account-management/manage-orgs-projects#view-and-edit-your-project-information) of 243704 or higher. To apply this 60-second cutoff time to an older project, contact Amplitude Support.
+
+[See this blog post for more detail](https://amplitude.com/blog/dont-trust-client-data).
 {{/partial:admonition}}
 
 Daily exported files use `server_upload_time` and all dashboards use `event_time`. Queries on raw data should use `event_time`.

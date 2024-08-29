@@ -55,17 +55,25 @@ final class Denormalizer
         $this->postMapCalls = $this->setPostMapCalls();
     }
 
+    /**
+     * Enable converting empty string to the null value.
+     */
     public static function allowEmptyStringAsNull(): void
     {
         self::$emptyStringAsNull = true;
     }
 
+    /**
+     * Disable converting empty string to the null value.
+     */
     public static function disallowEmptyStringAsNull(): void
     {
         self::$emptyStringAsNull = false;
     }
 
     /**
+     * Register a global type conversion callback to convert a field into a specific type.
+     *
      * @throws MappingFailed
      */
     public static function registerType(string $type, Closure $callback): void
@@ -73,6 +81,13 @@ final class Denormalizer
         CallbackCasting::register($type, $callback);
     }
 
+    /**
+     * Unregister a global type conversion callback to convert a field into a specific type.
+     *
+     * @param string $type
+     *
+     * @return bool
+     */
     public static function unregisterType(string $type): bool
     {
         return CallbackCasting::unregisterType($type);
@@ -84,6 +99,8 @@ final class Denormalizer
     }
 
     /**
+     * Register a callback to convert a field into a specific type.
+     *
      * @throws MappingFailed
      */
     public static function registerAlias(string $alias, string $type, Closure $callback): void
@@ -157,24 +174,7 @@ final class Denormalizer
 
     public function denormalizeAll(iterable $records): Iterator
     {
-        $check = true;
-        $assign = function (array $record) use (&$check) {
-            $object = $this->class->newInstanceWithoutConstructor();
-            $this->hydrate($object, $record);
-
-            if ($check) {
-                $check = false;
-                $this->assertObjectIsInValidState($object);
-            }
-
-            foreach ($this->postMapCalls as $accessor) {
-                $accessor->invoke($object);
-            }
-
-            return $object;
-        };
-
-        return MapIterator::fromIterable($records, $assign);
+        return MapIterator::fromIterable($records, $this->denormalize(...));
     }
 
     /**
@@ -419,15 +419,11 @@ final class Denormalizer
         array $options
     ): TypeCasting {
         try {
-            if (str_starts_with($typeCaster, CallbackCasting::class.'@')) {
-                $cast = new CallbackCasting($reflectionProperty, substr($typeCaster, strlen(CallbackCasting::class)));
-                $cast->setOptions(...$options);
-
-                return $cast;
-            }
-
             /** @var TypeCasting $cast */
-            $cast = new $typeCaster($reflectionProperty);
+            $cast = match (str_starts_with($typeCaster, CallbackCasting::class.'@')) {
+                true => new CallbackCasting($reflectionProperty, substr($typeCaster, strlen(CallbackCasting::class))),
+                false => new $typeCaster($reflectionProperty),
+            };
             $cast->setOptions(...$options);
 
             return $cast;

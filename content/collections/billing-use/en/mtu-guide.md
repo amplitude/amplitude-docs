@@ -84,7 +84,7 @@ Regardless of the plan you’re on, you're' be subject to a cap on events per MT
 
 For example, if you purchased *n* MTUs and expect to have *x* events per user, when your event volume *k* exceeds *n*(*x*), you could see a charge for the difference based on the formula
 
-`(* - n(x)) / x = number of excess MTUs`
+`(k - n(x)) / x = number of excess MTUs`
 
 ### Exceeding limits on a free plan
 

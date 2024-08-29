@@ -47,6 +47,14 @@ The response body is a JSON object keyed by the flag key. The value for a given 
 }
 ```
 
+{{partial:admonition type="note" heading="Empty results"}}
+If a user isn't in the target audience, the Evaluation API may return an empty object.
+
+```json
+{}
+```
+{{/partial:admonition}}
+
 Use the [example](#example) below to try the API from your browser or copy a curl.
 
 ### 400 Bad Request
