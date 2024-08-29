@@ -31,7 +31,7 @@ When you're done, click *Next* to move on to data mapping.
 {{partial:admonition type='note'}}
 If this is the first time you're importing data from this table, set a data retention time and enable change tracking in Snowflake with the following commands:
 
-```
+```sql
 ALTER TABLE DATAPL_DB_STAG.PUBLIC.PROFILE_PROPERTIES_TABLE_1 SET DATA_RETENTION_TIME_IN_DAYS = 7;
 
 ALTER TABLE DATAPL_DB_STAG.PUBLIC.PROFILE_PROPERTIES_TABLE_1 SET CHANGE_TRACKING = TRUE;
