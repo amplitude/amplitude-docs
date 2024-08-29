@@ -9,7 +9,7 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 5343a026-383e-4b6a-ad4d-df18684b6384
-updated_at: 1724969245
+updated_at: 1724969578
 ---
 Amplitude's **alerts** feature is built using [Prophet](https://facebook.github.io/prophet/), an advanced data mining and machine learning technique that automatically detects any anomalies in your product data, and instantly brings these hidden trends to your attention. It does this by first identifying expected values, and the confidence intervals around them, and then analyzing the overall trend of the data and combining it with the weekly trend of the data. 
 
@@ -65,7 +65,7 @@ The higher the required significance, the less "noisy" your alerts will be. In c
 
 ## View and manage alerts
 
-You can see a list of **recently-triggered** alerts for a project by clicking *Notifications* in the left-hand sidebar, then opening the *Alerts* tab. You can see a list of **all existing** alerts for a project by clicking <img src="/docs/output/img/analytics/gear_icon_for_settings.png" alt="gear_icon_for_settings.png" style="display:inline-block;" /> Projects*, selecting the project you're interested in, and opening either the *Custom Monitors* (for **custom** alerts) or the *Automatic Monitors* (for **smart** alerts) tab. Click on an alert to edit or manage it.
+You can see a list of **recently-triggered** alerts for a project by clicking *Notifications* in the left-hand sidebar, then opening the *Alerts* tab. The project can be changed by using the project switcher on the left, and you can see a list of **all existing** alerts for the current project by clicking <img src="/docs/output/img/analytics/gear_icon_for_settings.png" alt="gear_icon_for_settings.png" style="display:inline-block;" /> *Manage Custom Alerts*, and opening either the *Custom Monitors* (for **custom** alerts) or the *Automatic Monitors* (for **smart** alerts) tab. Click on an alert to edit or manage it.
 
 ## Alert emails
 
