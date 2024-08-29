@@ -5,17 +5,44 @@ title: 'Profile properties'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1721926325
+updated_at: 1724792791
 ---
-Profile properties enable you to merge customer profile data from your data warehouse with existing behavioral product data already in Amplitude. These values display the most current data synced from your warehouse.
+Profile properties enable you to merge customer profile data from your data warehouse with existing behavioral product data already in Amplitude. 
 
-{{partial:admonition type="note" heading=""}}
-This feature isn't available in the EU.
-{{/partial:admonition}}
+Profile properties are different from traditional user properties. These are standalone properties: they aren't associated with specific events and are instead associated with a user profile.
+
+Profile properties always display the most current data synced from your warehouse.
 
 ## Setup
 
-To set up a profile property in Amplitude, you must connect Amplitude to your data warehouse. Once connected, and you reach the data configuration section, you must select the “Warehouse Props” data type in the dropdown. From there, there are two minimum requirements for the import: a user identifier (`user_id`) and a profile property. Note: you may add more than one warehouse property per import, but there must be at least one per import.
+To set up a profile property in Amplitude, follow these steps:
+
+1. In Amplitude Data, navigate to *Connections > Catalog* and click the Snowflake tile.
+2. In the *Set Up Connection* tab, connect Amplitude to your data warehouse by filling in all the relevant fields under *Snowflake Credentials*. You can either create a new connection, or reuse an existing one. Click *Next* when you're done.
+3. In the *Verify Instrumentation* tab, follow the steps desrcibed in the [Snowflake Data Import guide](/docs/data/source-catalog/snowflake#add-snowflake-as-a-source). Click *Next* when you're done.
+4. in the *Select Data* tab, select the `profile properties` data type. Amplitude pre-selects the required change data capture import strategy for you, which you can see under the *Select Import Strategy* dropdown:
+
+    * **Insert**: Always on, creates new profile properties when added to your table.
+    * **Update**: Syncs changes to values from your table to Amplitude.
+    * **Delete**: Syncs deletions from your table to Amplitude.
+
+When you're done, click *Next* to move on to data mapping.
+
+{{partial:admonition type='note'}}
+If this is the first time you're importing data from this table, set a data retention time and enable change tracking in Snowflake with the following commands:
+
+```sql
+ALTER TABLE DATAPL_DB_STAG.PUBLIC.PROFILE_PROPERTIES_TABLE_1 SET DATA_RETENTION_TIME_IN_DAYS = 7;
+
+ALTER TABLE DATAPL_DB_STAG.PUBLIC.PROFILE_PROPERTIES_TABLE_1 SET CHANGE_TRACKING = TRUE;
+```
+Snowflake Standard Edition plans have a maximum retention time of one day.
+{{/partial:admonition}}
+
+5. You can see a list of your tables under *Select Table.* To begin column mapping, click the table you're interested in.
+6. In the list of required fields under *Column Mapping,* enter the column names in the appropriate fields to match columns to required fields. To add more fields, click *+ Add field*. 
+7. When you're done, click *Test Mapping* to verify your mapping information. When you're ready, click *Next.*
+8. Name the source and set the frequency at which Amplitude should refresh your profile properties from the data warehouse.
 
 ## Data specifications
 
@@ -23,12 +50,22 @@ Profile properties supports a maximum of 200 warehouse properties, and supports 
 
 | Field               | Description                                                                                                                   | Example                  |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
-| User ID             | Identifier for the user. Must have a minimum length of 5.                                                                     | xyz@abc.com              |
-| Profile Property 1  | Profile property set at the user-level. The value of this field is the value from the customer’s source since last sync. | “Title”: “Data Engineer” |
-| Profile Property 2 | Profile property set at the user-level. The value of this field is the value from the customer’s source since last sync. | “City”: “San Francisco”  |
+| `user_id`             | Identifier for the user. Must have a minimum length of 5.                                                                     | 
+| `Profile Property 1`  | Profile property set at the user level. The value of this field is the value from the customer’s source since last sync. |
+| `Profile Property 2` | Profile property set at the user level. The value of this field is the value from the customer’s source since last sync. |
+
+Example:
+```json
+{
+  "user_id": 12345,
+  "number of purchases": 10,
+  "title": "Data Engineer"
+}
+```
+
+See [this article for information on Snowflake profile properties](/docs/data/source-catalog/snowflake#profile-properties).
 
 ## SQL template
-
 
 ```sql
 SELECT
