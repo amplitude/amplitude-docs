@@ -18,7 +18,7 @@ Exposure tracking is optional for feature flags that don't require analysis.
 
 ### Analytics REST API
 
-In this simple example, an [exposure event](/docs/experiment/under-the-hood/event-tracking#exposure-events) is `curl`ed to Amplitude using the [Analytics REST API v2.0](/docs/apis/analytics/http-v2).
+In this example, the [Analytics REST API v2.0](/docs/apis/analytics/http-v2) sends an [exposure event](/docs/experiment/under-the-hood/event-tracking#exposure-events)  to Amplitude with `curl`.
 
 {{partial:partials/experiment/interactive-exposure-table}}
 
