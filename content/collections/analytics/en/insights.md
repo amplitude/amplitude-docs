@@ -5,10 +5,11 @@ title: 'Insights: Spot anomalies in your metrics quickly with alerts'
 source: 'https://help.amplitude.com/hc/en-us/articles/115001764612-Insights-Spot-anomalies-in-your-metrics-quickly-with-alerts'
 this_article_will_help_you:
   - 'Set up and manage alerts to monitor the performance of your important project metrics'
+  - 'Send alerts directly into a Slack channel'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1723651708
+updated_by: 5343a026-383e-4b6a-ad4d-df18684b6384
+updated_at: 1724968562
 ---
 Amplitude's **alerts** feature is built using [Prophet](https://facebook.github.io/prophet/), an advanced data mining and machine learning technique that automatically detects any anomalies in your product data, and instantly brings these hidden trends to your attention. It does this by first identifying expected values, and the confidence intervals around them, and then analyzing the overall trend of the data and combining it with the weekly trend of the data. 
 
@@ -73,3 +74,13 @@ When an alert is triggered, Amplitude will send an email to everyone who is desi
 Click on a chart in the email to be taken directly to that chart in Amplitude. You'll see a side-panel that reiterates the issue Amplitude alerted you about, so you won't lose important context in the moment.
 
 The charts sent in alert emails may have a `server_upload_time` filter to show the value of the data point at the exact time the alert was triggered. It's important to note that, depending on the data point, the value in the alert email may be different than the data point's end of day or final value.
+
+## Slack notifications
+
+In addition to receiving emails when alerts are triggered, you can also set up an alert to post to one or more Slack channels.
+
+When setting up or modifying an alert, Slack channels can be selected in the "Notifications" section at the bottom of the modal:
+
+![slack_chart_alerts.png](/docs/output/img/analytics/slack_chart_alerts.png)
+
+If you have not yet set up the [Slack integration](/docs/analytics/integrate-slack) yet, you will see a button here that will let you connect your Amplitude account to Slack.
