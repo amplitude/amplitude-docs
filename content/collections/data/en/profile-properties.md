@@ -9,7 +9,7 @@ updated_at: 1724792791
 ---
 Profile properties enable you to merge customer profile data from your data warehouse with existing behavioral product data already in Amplitude. 
 
-Profile properties are different from traditional user properties. These are **standalone properties**: they aren't associated with specific events and don't receive a timestamp when the user triggers an event.
+Profile properties are different from traditional user properties. These are standalone properties: they aren't associated with specific events and are instead associated with a user profile.
 
 Profile properties always display the most current data synced from your warehouse.
 
