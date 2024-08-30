@@ -145,7 +145,7 @@ Control the level of logs the SDK prints to the console with the following `logL
 | `verbose` | Shows informative messages.                                                                                                                                  |
 | `debug`   | Shows all messages, including function context information for each public method the SDK invokes. Amplitude recommends this log level for development only. |
 
-## Autocapture
+## Autocapture <a id="tracking-default-events"></a>
 
 Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you enable it, and adds a configuration to control the collection of autocaptured events. Browser SDK can autocapture the following event types:
 
