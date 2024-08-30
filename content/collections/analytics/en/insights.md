@@ -65,7 +65,9 @@ The higher the required significance, the less "noisy" your alerts will be. In c
 
 ## View and manage alerts
 
-You can see a list of **recently-triggered** alerts for a project by clicking *Notifications* in the left-hand sidebar, then opening the *Alerts* tab. The project can be changed by using the project switcher on the left, and you can see a list of **all existing** alerts for the current project by clicking <img src="/docs/output/img/analytics/gear_icon_for_settings.png" alt="gear_icon_for_settings.png" style="display:inline-block;" /> *Manage Custom Alerts*, and opening either the *Custom Monitors* (for **custom** alerts) or the *Automatic Monitors* (for **smart** alerts) tab. Click on an alert to edit or manage it.
+To see a list of a project's recently triggered alerts, click *Notifications* in the left sidebar, and navigate to the *Alerts* tab. Use the project switcher on the left to change to a new project.
+
+To see a list of all existing alerts for a project, navigate to *Settings > Manage Custom Alerts*. Open *Custom Monitors* to update custom alerts, or *Automatic Monitors* for smart alerts. Click an individual alert to update it.
 
 ## Alert emails
 
