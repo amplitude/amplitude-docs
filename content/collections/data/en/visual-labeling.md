@@ -60,8 +60,9 @@ In both cases, the increase in daily events comes from tracking click and page c
 
 ## Limitations
 
-* **Event Streams**: Labeled events don't appear in the Live Event Stream, user lookup event stream, or Session Replay streams. You can view raw `Element clicked` and `Element changed` events.
-* **Google Chrome extension**: The Amplitude Event Explorer Chrome extensions displays raw events sent from the browser only.
+* **Event streams**: Labeled events are not currently available in live events or the event stream in user lookup and Session Replay. You'll see the raw `Element clicked` and `Element changed` events.
+* **Google Chrome extension**: The Amplitude Event Explorer Chrome extension only displays raw events from the browser, so labeled events will not appear.
+* ** Destination event streaming **: Labeled events cannot be sent to destinations with [event streaming](/docs/data/destination-event-streaming-overview). However, you can use your labeled events to define cohorts and then leverage cohort syncing to integrate with (other destinations)[/docs/data/destination-catalog].
 
 ## Troubleshooting
 
