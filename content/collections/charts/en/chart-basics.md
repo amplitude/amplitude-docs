@@ -24,9 +24,13 @@ Also, keep in mind some features may require a certain subscription or a paid ad
 
 ## Start from a template
 
-From the new Chart screen, click Templates at the top of the left sidebar. On the Chart Templates panel, search for an existing template, filter by goal, or browse by chart type.
+From the new Chart screen or the chart switcher, click Templates at the top of the left sidebar. On the Chart Templates panel, search for an existing template, filter by goal, or browse by chart type.
 
-When you select a template, it overrides any metrics or settings you have defined, and loads the required events or metrics.
+When you select a template, it prepopluates the chart definition. Save the chart directly, or edit it to better meet your requirements and then save it.
+
+{{partial:admonition type="note" heading=""}}
+Chart templates rely on default events and properties and work best if you use Amplitude SDKs to instrument your applications or websites.
+{{/partial:admonition}}
 
 ## Share your chart
 
