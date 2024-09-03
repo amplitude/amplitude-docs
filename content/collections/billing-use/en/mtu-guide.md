@@ -8,7 +8,7 @@ this_article_will_help_you:
 landing: true
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1723581207
+updated_at: 1725395342
 landing_blurb: 'Learn about how Amplitude bills with Monthly Tracked Users.'
 ---
 Amplitude customers on Scholarship, Starter, and Plus plans bill according to **monthly tracked user (MTU)** count. This option is also available to customers on Growth and Enterprise plans. 
@@ -39,13 +39,11 @@ If you haven't implemented tracking yet, you can use your monthly active user (M
 
 To view your MTU usage, navigate to *Settings > Plans & Billing*. MTU statistics are visible in their own panel.
 
-![MTUsUsage.png](/docs/output/img/billing-use/mtususage-png.png)
-
 {{partial:admonition type='note'}}
 MTU counts are **not** available for every plan type.
 {{/partial:admonition}}
 
-Sometimes, a single user may count **multiple times** when totaling MTUs. This can happen when a user is logged in, but then later opens the app anonymously on a different device or platform. Because there is no way to connect these two users, they register as distinct MTUs unless the user eventually logs in on all devices. At that point, Amplitude merges their profiles into a single user.
+Sometimes, a single user may count **multiple times** when totaling MTUs. This can happen for users who log in on their usual device, but then later open the app anonymously on a different device or platform. Because there is no way to connect these two users, they register as distinct MTUs unless the user eventually logs in on all devices. At that point, Amplitude merges their profiles into a single user.
 
 It can also happen if a user has two unlinked user IDs and uses both of them in a single month.
 

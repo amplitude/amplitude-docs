@@ -8,7 +8,7 @@ landing: true
 landing_blurb: 'In Amplitude, a **cohort** is a group of users who share a trait or set of traits.'
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1719505386
+updated_at: 1725397068
 ---
 In Amplitude, a **cohort** is a group of users who share a trait or set of traits. There are two different types of cohorts: [predictive cohorts](/docs/cdp/audiences/predictions) and **behavioral cohorts**. 
 
@@ -42,6 +42,6 @@ If you have the [Accounts add-on](/docs/analytics/account-level-reporting), you 
 
 You can also create a chart using the cohort directly from the Cohort page:
 
-![create chart from cohort.png](/docs/output/img/analytics/create-chart-from-cohort.png)
+![cohort create chart.png](/docs/output/img/analytics/cohort-create-chart.png)
 
 But before you can do any of that, define a new cohort. Read the next article to learn how to [define a new cohort](/docs/analytics/define-cohort).
