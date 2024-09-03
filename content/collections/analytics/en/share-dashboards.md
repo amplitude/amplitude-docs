@@ -18,7 +18,7 @@ To copy the URL of your dashboard to the clipboard, click the link icon next to 
 
 To share the dashboard directly, follow these steps:
 
-1. Click *Share* instead. In the *Share* tab of the modal that appears, type in the names or emails of everyone you want to share the dashboard with.
+1. Click *Share*. In the *Share* tab of the modal that appears, enter the names or email addresses of everyone you want to share the dashboard with.
 2. In the right-side drop-down, set the permissions for everyone you'll be sharing the dashboard with. To make them co-owners, select *Can edit*. To limit their permissions to read-only, select *Can view*.
       
 	Adding co-owners to individual charts is a one-by-one process. There is no way to bulk-add a new co-owner to multiple charts at once.
