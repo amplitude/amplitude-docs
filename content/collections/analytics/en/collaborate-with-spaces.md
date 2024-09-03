@@ -8,10 +8,10 @@ this_article_will_help_you:
   - 'Organize the content you create in Amplitude'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717692931
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1725396408
 ---
-In this article, you'll learn how to take advantage of the different features offered by [spaces](/docs/get-started/spaces) before continuing.
+This article explains how to take advantage of the different features offered by [spaces](/docs/get-started/spaces) before continuing.
 
 ### Feature availability
 
@@ -23,14 +23,12 @@ To subscribe to an existing space, click the *Spaces* drop-down, then click *Vie
 
 When you join a space, Amplitude stars it automatically and adds it to your list of joined spaces. You can un-star a space and remove it from your list by clicking the star icon on the space itself.
 
-![spaces_1.png](/docs/output/img/analytics/spaces_1.png)
-
 ## Move content to a new space
 
-As mentioned above, each piece of content can only be saved to a single space. You can move content to a new space by following these steps:
+You can save each piece of content to just a single space. You can move content to a new space by following these steps:
 
-1. Navigate to the space where the content is saved and check the box next to its name.
-2. In the menu bar above the content list, click *Move*. A navigational fly-out panel will open.
+1. Navigate to the space where the content is. Check the box next to its name.
+2. In the menu bar above the content list, click *Move*. A navigational flyout panel opens.
 3. Navigate to the space or folder you want, or create a new space or folder. Then click *Move*.
 
 ## Create a shortcut
@@ -43,9 +41,7 @@ A shortcut is a way to add content to multiple spaces and folders. Anyone can cr
 
 ## Manage space members
 
-You can add new members to your space, or manage the access permissions of current space members, via the *Manage Members* button.
-
-![spaces_update_1.png](/docs/output/img/analytics/spaces_update_1.png)
+You can add new members to your space, or manage the access permissions of current space members, through the *Manage Members* button.
 
 There are three levels of permissions:
 
@@ -84,5 +80,5 @@ When you invite a new user to a space, you can grant them access up to your leve
 Archiving content from a space you own requires edit permissions within the space.
 
 {{partial:admonition type="note" heading="Space and Project permissions"}}
-Permissions set at the project-level superceed permissions set at the space level. As a result, a user's permissions within a project may override their permissions within the space.
+Permissions set at the project-level override any permissions set at the space level. As a result, a user's permissions within a project may override their permissions within the space.
 {{/partial:admonition}}
