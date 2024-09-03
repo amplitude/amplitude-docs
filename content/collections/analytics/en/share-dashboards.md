@@ -16,7 +16,7 @@ Once you've got your dashboard built out the way you want it, you'll need a way 
 
 To copy the URL of your dashboard to the clipboard, click the link icon next to *Share*. Then paste it into an email or Slack message.
 
-Alternatively, to share the dashboard directly, follow these steps:
+To share the dashboard directly, follow these steps:
 
 1. Click *Share* instead. In the *Share* tab of the modal that appears, type in the names or emails of everyone you want to share the dashboard with.
 2. In the right-side drop-down, set the permissions for everyone you'll be sharing the dashboard with. To make them co-owners, select *Can edit*. To limit their permissions to read-only, select *Can view*.
