@@ -1,0 +1,49 @@
+title: Property
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: false
+              validate:
+                - required
+          -
+            handle: description
+            field:
+              type: markdown
+              display: Description
+              localizable: false
+          -
+            handle: property_type
+            field:
+              options:
+                Event: event
+                User: user
+              type: checkboxes
+              display: 'Property type'
+              localizable: false
+              validate:
+                - required
+          -
+            handle: example_values
+            field:
+              type: list
+              display: 'Example values'
+              localizable: false
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

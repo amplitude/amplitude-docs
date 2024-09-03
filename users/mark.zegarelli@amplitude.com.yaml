@@ -56,3 +56,9 @@ preferences:
         - title
         - slug
         - status
+    properties:
+      after_save: create_another
+      columns:
+        - title
+        - slug
+        - property_type
