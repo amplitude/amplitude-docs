@@ -5,10 +5,11 @@ title: 'Insights: Spot anomalies in your metrics quickly with alerts'
 source: 'https://help.amplitude.com/hc/en-us/articles/115001764612-Insights-Spot-anomalies-in-your-metrics-quickly-with-alerts'
 this_article_will_help_you:
   - 'Set up and manage alerts to monitor the performance of your important project metrics'
+  - 'Send alerts directly to a Slack channel'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1723651708
+updated_by: 5343a026-383e-4b6a-ad4d-df18684b6384
+updated_at: 1725042431
 ---
 Amplitude's **alerts** feature is built using [Prophet](https://facebook.github.io/prophet/), an advanced data mining and machine learning technique that automatically detects any anomalies in your product data, and instantly brings these hidden trends to your attention. It does this by first identifying expected values, and the confidence intervals around them, and then analyzing the overall trend of the data and combining it with the weekly trend of the data. 
 
@@ -58,13 +59,15 @@ For custom or smart alert, the training days are 120 for daily interval charts a
 
 When setting up a custom alert, you can choose to receive alerts when significance thresholds of 95%, 98%, or 99% are breached. These confidence intervals are determined by taking your historical data and identifying where 95%, 98%, and 99% of all data points fall.
 
-![conf_int.jpeg](/docs/output/img/analytics/conf_int.jpeg)
+![conf_int.png](/docs/output/img/analytics/conf_int.png)
 
 The higher the required significance, the less "noisy" your alerts will be. In charts, the blue band represents the range of the confidence interval. A 95% confidence interval will have a narrower band than a 99% confidence interval, because the 99% confidence interval captures more historical data points.
 
 ## View and manage alerts
 
-You can see a list of **recently-triggered** alerts for a project by clicking *Notifications* in the left-hand sidebar, then opening the *Alerts* tab. You can see a list of **all existing** alerts for a project by clicking ![gear_icon_for_settings.png](/docs/output/img/analytics/gear_icon_for_settings.png)*> Projects*, selecting the project you're interested in, and opening either the *Custom Monitors* (for **custom** alerts) or the *Automatic Monitors* (for **smart** alerts) tab. Click on an alert to edit or manage it.
+To see a list of a project's recently triggered alerts, click *Notifications* in the top right corner of the screen, and navigate to the *Alerts* tab. Use the project switcher on the left to change to a new project.
+
+To see a list of all existing alerts for a project, click *Manage Custom Alerts*. Open *Custom Monitors* to update custom alerts, or *Automatic Monitors* for smart alerts. Click an individual alert to update it.
 
 ## Alert emails
 
@@ -73,3 +76,15 @@ When an alert is triggered, Amplitude will send an email to everyone who is desi
 Click on a chart in the email to be taken directly to that chart in Amplitude. You'll see a side-panel that reiterates the issue Amplitude alerted you about, so you won't lose important context in the moment.
 
 The charts sent in alert emails may have a `server_upload_time` filter to show the value of the data point at the exact time the alert was triggered. It's important to note that, depending on the data point, the value in the alert email may be different than the data point's end of day or final value.
+
+## Slack notifications
+
+In addition to receiving emails when alerts are triggered, you can also set up an alert to post to one or more Slack channels.
+
+When you configure or modify an alert, you can select Slack channels in the *Notification* section at the bottom of the modal.
+
+![slack_chart_alerts.png](/docs/output/img/analytics/slack_chart_alerts.png)
+
+If you haven't set up the [Slack integration](/docs/analytics/integrate-slack), connect your Amplitude account by clicking the *Connect to Slack* button:
+
+![chart_alerts_connect_to_slack.png](/docs/output/img/analytics/chart_alerts_connect_to_slack.png)
