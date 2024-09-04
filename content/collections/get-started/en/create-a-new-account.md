@@ -8,7 +8,7 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1723649470
+updated_at: 1724879558
 ---
 Amplitude's onboarding helps you to get data into your new organization as quickly as possible.
 

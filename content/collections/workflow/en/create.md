@@ -6,8 +6,8 @@ source: 'https://help.amplitude.com/hc/en-us/articles/360061687551-Create-a-new-
 this_article_will_help_you:
   - 'Create and initialize a new experiment'
   - 'Add context to your experiment description, so other stakeholders will understand it'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1716917009
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1724885023
 landing: true
 landing_blurb: 'Create a new experiment in Amplitude.'
 ---
@@ -15,7 +15,7 @@ The decisions you make in the **design** phase set the stage for your experiment
 
 To create a new experiment, [install an SDK](/docs/sdks/experiment-sdks) or call the [evaluation REST API](/docs/apis/experiment/experiment-evaluation-api).  Then follow these steps:
 
-1. Click *Create > Experiment*, and select an Web or Feature.
+1. Click *Create > Experiment*, and select *Web* or *Feature*.
 2. In the *New Experiment* modal, complete the fields:
     - **Name**: Enter the name of the experiment for future reference.
     - **Project**: Select the project in which this experiment operates.

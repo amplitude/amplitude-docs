@@ -8,13 +8,14 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1725400281
+updated_at: 1724879794
+
 ---
 In Amplitude, the Home page is where you can get a quick overview on what’s happening with your product. You can also find links to the last five items you visited in Amplitude, quickly create a new chart, or visit the template gallery.
 
 ![](/docs/output/img/get-started/build-a-chart-homepage.png)
 
-Click the Amplitude logo at the top-left of the screen to go to the Home page.
+Click *Home* in the top-left of the screen to go to the Home page.
 
 Right out of the box, the Home page acts as a dashboard that gives you an immediate understanding of how many users you have, how many are new, where they are, and what they’re doing. Once you get comfortable creating your own analyses in Amplitude, you can replace the included charts with others that make more sense for your organization.
 
