@@ -25,7 +25,7 @@ When you join a space, Amplitude stars it automatically and adds it to your list
 
 ## Move content to a new space
 
-You can save each piece of content to just a single space. You can move content to a new space by following these steps:
+You can save each piece of content to just a single space. Follow these steps to move content to a new space:
 
 1. Navigate to the space where the content is. Check the box next to its name.
 2. In the menu bar above the content list, click *Move*. A navigational flyout panel opens.
@@ -73,7 +73,7 @@ To learn more about our Slack integration, see our [article on integrating Slack
 
 While only admins, managers, and members can create a team space, all users can add themselves to spaces, regardless of permission level.
 
-By default, admins, managers, and members can all add content, invite users to the space, and archive a space. Admins and managers also have the option to manage the space permissions to specify which roles have permissions to add content, invite users, and archive a space.
+Customers on the Growth and Enterprise plans have enhanced controls around user permissions within a space. By default, admins, managers, and members can all add content, invite users to the space, and archive a space. Admins and managers also have the option to manage the space permissions to specify which roles have permissions to add content, invite users, and archive a space.
 
 When you invite a new user to a space, you can grant them access up to your level of access. For example, if you have the "can view" permission on a specific space, you can't invite users with "can add" or "can edit" permissions.
 
