@@ -10,7 +10,7 @@ updated_at: 1717103323
 landing: true
 landing_blurb: 'Create a reusable unit of measurement in Amplitude'
 ---
-Metrics allow users to define and save reusable analysis objects in Amplitude. They accelerate workflows and increase confidence for end users when building analyses. Metrics are shared **project-wide**, and can be created by any member, project manager, or admin. However, only project managers and admins can designate a metric as official.
+Metrics allow users to define and save reusable analysis objects in Amplitude. They accelerate workflows and increase confidence for end users when building analyses. Metrics are shared **project-wide**, and can be created by any member, manager, or admin. However, only managers and administrators can designate a metric as official.
 
 ### Feature availability
 
@@ -38,7 +38,7 @@ Only project managers and admins can verify metrics.
 
 Once added, you can **edit** or **remove** the metric from your analysis. To do so for a Data Table, click **More Options ** in the metric header. For an Event Segmentation chart, click *View Metric* in the flyout panel to edit your metric. You can remove a metric from an Event Segmentation chart the same way you would a normal event.
 
-To **delete** the metric from the project, click *Edit metric*, followed by *Delete*, within the metric drawer. Only project managers and admins can delete metrics they do not own.
+To **delete** the metric from the project, click *Edit metric*, followed by *Delete*, within the metric drawer. Only Amplitude users with the Administrator role can delete metrics they don't own.
 
 For **event total** metrics in Data Tables, click on the settings gear next to the datepicker to toggle between absolute numbers, relative percentage of total, or both visualization options.
 

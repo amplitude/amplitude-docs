@@ -54,4 +54,4 @@ To bulk-delete analysis objects, navigate to the appropriate tab *Custom Events,
 
 ## Permissions
 
-Anyone can create or read an analysis object. Users can also update and delete the objects **they own**. Only admins can update and delete objects they don’t own.
+Amplitude users with the role of [Member](/docs/admin/account-management/user-roles-permissions#member) or higher can create analysis objects, and update or delete analysis objects they own. Only administrators can delete objects created by anyone.
