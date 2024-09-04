@@ -7,29 +7,29 @@ this_article_will_help_you:
   - 'Create new templates from your Analytics dashboards'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717692827
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1725397215
 ---
 You can easily turn your dashboards into templates, which allow teams to efficiently and confidently recreate their common analyses and share best practices with just a few clicks. Save time when repeating common analyses and make it simpler for new team members to measure impact.
 
 To designate a dashboard as a template, follow these steps:
 
 1. In your dashboard, click *More* and select *Tag as Template* from the dropdown menu.
-2. In the Templatize Dashboard modal, set the discoverability toggle to on or off, depending on your preferences, and add any instructions you’d like to communicate to users of the template. If you choose not to add your own instructions, the default boilerplate will be used. Then click *Save*.
+2. In the *Templatize Dashboard* modal, set the discoverability toggle to on or off, depending on your preferences, and add any instructions you’d like to communicate to users of the template. If you choose not to add your own instructions, Amplitude uses the default boilerplate. Then click *Save*.
 
-Once your dashboard has been templatized, you’ll notice three differences:
+Here's what you can expect to see once you've templatized your dashboard:
 
-* The dashboard will carry a template icon;
-* The dashboard will include the template instructions you added in Step 2 above;
-* There will be a *Save As New Dashboard* button, which is how you can create copies of the dashboard from the template:  
+* The dashboard carries a template icon;
+* The dashboard includes the template instructions you added in Step 2 above;
+* There's a *Save As New Dashboard* button, which is how you can create copies of the dashboard from the template:  
   
-![dashboards templated dashboard.png](/docs/output/img/analytics/dashboards-templated-dashboard-png.png)
+![dashboard create template.png](/docs/output/img/analytics/dashboard-create-template.png)
 
-You will be able to find templates using Search or Spaces. Just look for the template icon. You can also filter for dashboard templates in Search, via the Template filter under *Tags*.
+You can find templates using Search or Spaces. Just look for the template icon. You can also filter for dashboard templates in Search, using the Template filter under *Tags*.
 
 ## Template use cases
 
-Some of the most common use cases for templates in Amplitude include:
+Some common use cases for templates in Amplitude include:
 
 * **A/B testing:** Swap out user or event properties or cohorts with each new experiment’s variants
 * **Releases:** Swap out version, campaign, region, etc. to track performance or key metrics for new releases
