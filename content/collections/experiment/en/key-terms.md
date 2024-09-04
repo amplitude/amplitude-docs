@@ -1,14 +1,14 @@
 ---
 id: 93038e5f-a8ed-4401-8da3-308d21ed17ad
 blueprint: experiment
-title: 'Key Terms'
+title: 'Key terms'
 source: 'https://help.amplitude.com/hc/en-us/articles/360061651452-Amplitude-Experiment-key-terms'
 this_article_will_help_you:
   - 'Find definitions of important terms for working with Amplitude Experiment'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1716917156
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1724884920
 ---
 ## Glossary of key experimentation terms
 
