@@ -6,6 +6,7 @@ author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724885142
+
 nav_title: session_replay
 hide_toc: false
 ---
@@ -28,13 +29,13 @@ When viewing a session replay from your [homepage](#h_01HFD88N1M03EH9D8VF32QBBYQ
 
 ![image-20240109-232506.png](/docs/output/img/session-replay/image-20240109-232506-png.png)
 
-There is no limit on the length of a session that can be viewed as a replay.
+Session replay supports user sessions of any length.
 
 ### View Session Replay from User Look-Up
 
 To access Session Replay from a user’s event stream, use the [User Look-Up](/docs/analytics/user-data-lookup) feature. This can be helpful if a user has reported a potential bug during their session, or if you want to understand whether a user's experience is representative of a bigger trend. 
 
-Find the user via User Look-Up (you’ll need their user ID to do this), then click *Play Session* next to the session you're looking for in the event stream. The replay appears to the right, where you can review session activity. You can generate a link to share the replay with your team from the view in a User Look-Up event stream. Click *Copy URL* from the view to copy the link. 
+Find the user with User Look-Up (you’ll need their user ID to do this), then click *Play Session* next to the session you're looking for in the event stream. The replay appears to the right, where you can review session activity. You can generate a link to share the replay with your team from the view in a User Look-Up event stream. Click *Copy URL* from the view to copy the link. 
 
 ### View Session Replay from a chart
 
@@ -77,17 +78,15 @@ If you can’t see the Session Replay widget and have a customized [home page](/
 
 Click *Play* to see the session view in the modal that appears. 
 
-![](/docs/output/img/session-replay/20464613106203)
-
 ## View the number of captured sessions
 
 To review your Session Replay quota and retention time frame, navigate to the Plans & Billing page for your organization.
 
-To see an approximation of the number of sessions that have associated replays, create a [User Sessions Chart](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) and configure it to include all sessions with any active event, where the first property value of `Session Replay ID` is not equal to `"(none)"`. This includes all session replays with a value.
+To see an approximation of the number of sessions that have associated replays, create a [User Sessions Chart](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) and configure it to include all sessions with any active event, where the first property value of `Session Replay ID` isn't equal to `"(none)"`. This includes all session replays with a value.
 
 ## Search for a replay
 
-Session replay gives you two options for searching replays: either by date, or via a filter.
+Session replay gives you two options for searching replays: either by date, or with a filter.
 
 1. Navigate to *Users & Sessions—>Session Replays* to see the complete list of session replays available for viewing.
 2. To narrow the list by date, click the calendar icon just above the list and select the starting and ending dates you'd like to use. You can also use a preset timeframe—seven days, 30 days, 60 days, or 90 days—by clicking on the appropriate button.
@@ -108,7 +107,7 @@ The list of results shows a maximum of 100 replays. 
 
 There are three ways you can add a Session Replay to a dashboard or notebook:
 
-* From the Session Replay page itself (accessible via the homepage and Session Replay search)
+* From the Session Replay page itself (accessible from the homepage and Session Replay search)
 * From within [User Look-Up](/docs/analytics/user-data-lookup)
 * From within an individual chart
 
