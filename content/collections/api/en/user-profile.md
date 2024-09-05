@@ -3,7 +3,7 @@ id: 19341437-f344-4481-aa23-a0d495ebabcc
 blueprint: api
 title: 'User Profile API'
 source: 'https://www.docs.developers.amplitude.com/analytics/apis/user-profile-api/'
-auth_method: api_key
+auth_method: authorization_with_secret_key_value
 standard_endpoint: 'https://profile-api.amplitude.com/v1/userprofile'
 postman_link: 'https://www.postman.com/amplitude-dev-docs/workspace/amplitude-developers/folder/20044411-eeb485c9-28ef-41e9-abd3-874d98fe7baa?action=share&source=copy-link&creator=29131806&ctx=documentation'
 api_status: ga
@@ -12,6 +12,10 @@ updated_at: 1716312404
 lede: 'The User Profile API serves Amplitude user profiles, which include user properties, computed user properties, a list of cohort IDs of cohorts that the user is in, and recommendations.'
 summary: 'Fetch a user profile, which include user properties, computed properties, a list of cohort IDs, and recommendations.'
 ---
+{{partial:admonition type='note'}}
+Starting 2024/10/1, Amplitude will begin enforcement of access to the API for the appropriate plan (CDP Enterprise)
+{{/partial:admonition}}
+
 ## Considerations
 
 **Default experiences**
