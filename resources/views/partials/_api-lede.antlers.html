@@ -10,7 +10,7 @@
 <code>{{standard_endpoint}}?api_key=API_KEY</code>
 {{/if}}
 {{if auth_method == "authorization_with_secret_key_value"}}
-<p>This API uses <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization" target="_blank">Authorization header</a>, using the Secret Key in Authroziation header with this format: </p>
+<p>This API uses an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization" target="_blank">Authorization header</a>. Use your project's Secret Key in the format: </p>
 <code>Api-Key SECRET_KEY</code>
 {{/if}}
 {{if auth_method == "http_basic"}}
