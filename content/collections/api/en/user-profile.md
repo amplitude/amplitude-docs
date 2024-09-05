@@ -13,7 +13,7 @@ lede: 'The User Profile API serves Amplitude user profiles, which include user p
 summary: 'Fetch a user profile, which include user properties, computed properties, a list of cohort IDs, and recommendations.'
 ---
 {{partial:admonition type='note'}}
-Starting 2024/10/1, Amplitude will begin enforcement of access to the API for the appropriate plan (CDP Enterprise)
+Starting 2024/10/1, Amplitude is going to begin enforcement of access to the API for the appropriate plan (CDP Enterprise)
 {{/partial:admonition}}
 
 ## Considerations
