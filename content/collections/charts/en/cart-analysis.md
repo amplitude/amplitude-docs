@@ -81,8 +81,6 @@ To enable property splitting, follow these steps:
 3. In the property drawer, set `Type` to `Array` and set `Item type` to `Any`. The *Splitting* tab displays on the right.
 4. If Amplitude has seen or ingested the property at least once before, it shows a preview of what the splitting process would deliver. Click *Start Splitting* to begin.  
   
-![](/docs/output/img/charts/21705259614363)
-
 To stop splitting, go to the *Splitting* tab and click *Stop Splitting*.
 
 This change takes effect for any net new data ingestion. Data persists for previously split events.
