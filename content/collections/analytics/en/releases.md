@@ -7,8 +7,8 @@ this_article_will_help_you:
   - 'Use changes in your product as points to build an analysis around'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1720031176
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1724883801
 ---
 In Amplitude, a **release** represents a change in your product. It can be a major update like the launch of a new feature, a minor patch to fix a small bug, or the launch of an experiment. Releases are shown as a marker in your time-series charts when they occur.
 
@@ -90,7 +90,7 @@ The *Release Timeline* serves as a living history of all the product updates you
 
 To access the *Release Timeline*, follow these steps:
 
-1. Navigate to *Settings> Organizational settings > Projects*.
+1. Navigate to *Settings> Organization settings > Projects*.
 2. Find the project you're interested in and click it.
 3. Open the *Releases* tab.
 

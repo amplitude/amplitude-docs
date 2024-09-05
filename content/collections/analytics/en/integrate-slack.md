@@ -8,8 +8,8 @@ this_article_will_help_you:
   - 'Set up an Amplitude Data project to send updates to a specific Slack channel'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717696292
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1724882676
 ---
 With Amplitude's app for [Slack](https://www.slack.com/), you can:
 
@@ -36,7 +36,7 @@ Follow these steps whether you are integrating Amplitude and Slack for the first
 
 To connect your Amplitude account to Slack, follow these steps:
 
-1. Navigate to *Settings> Personal Settings*.
+1. Navigate to *Settings > Personal Settings*.
 2. Click *Profile,* then *Connect to Slack*.
 
 	![integrate_slack_with_amplitude.png](/docs/output/img/analytics/integrate_slack_with_amplitude.png)
@@ -62,7 +62,7 @@ You can also subscribe a Slack channel to real-time notifications of all branch 
 
 To receive these notifications, you will have to set up the Amplitude app for Slack for the Amplitude Data project you are interested in receiving updates from. To do so, follow these steps:
 
-1. In Amplitude Data, navigate to *Settings > Integrations*.
+1. In Amplitude Data, navigate to *Catalog > Integrations*.
 2. If you haven’t previously enabled the Amplitude Slack App, you’ll be prompted to grant Amplitude permission in your Slack workspace. Specify a channel where notifications about this project should be sent.  
   
 	![slack_for_data.png](/docs/output/img/analytics/slack_for_data.png)
