@@ -5,8 +5,8 @@ title: 'Notebooks: Explain important insights to teammates and stakeholders'
 source: 'https://help.amplitude.com/hc/en-us/articles/360016281172-Notebooks-Explain-important-insights-to-teammates-and-stakeholders'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717693046
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1724883553
 ---
 Notebooks help you explain insights to teammates. While [dashboards](/docs/analytics/dashboard-create) are great for monitoring metrics, **notebooks** enable you to communicate context and takeaways from analysis that help your team make better-informed product decisions.
 
@@ -24,7 +24,7 @@ Notebooks do not support the .BMP Image format, or the Personas and Pathfinder U
 
 There are two ways to create a new notebook:
 
-* Click *Create New* and navigate to *Report >* *Notebook*.
+* Click *Create > Notebook*.
 * From inside a chart, click *+ Add to...*  Click *Create a new notebook* to simultaneously create the new notebook and add the chart you're working on to it.  
 You can also scroll down to the list of existing notebooks and add the chart to one of those.
 

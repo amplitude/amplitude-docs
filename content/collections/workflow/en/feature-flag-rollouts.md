@@ -7,8 +7,8 @@ this_article_will_help_you:
   - 'Understand the role of flags in Amplitude Experiment'
   - 'Create a new feature flag'
   - 'Use a flag to roll out a new feature'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1720645777
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1724884966
 landing: true
 ---
 In Amplitude Experiment, a **flag** is a way for you to enable or disable a function or feature in your product, without having to deploy new code each time. Flags drive both experiments and feature rollouts: They're are ideal for launching experiments and ending them once you’ve collected enough data, or for rolling out new features (and rolling them back quickly, if you need to).
@@ -23,7 +23,7 @@ This feature is available to users on **all Amplitude plans**. See the [pricing 
 
 You can't create a new flag until you’ve created a deployment, and either installed the [SDK](/docs/sdks/experiment-sdks) or are set up to call the [evaluation REST API](/docs/apis/experiment/experiment-evaluation-api). Once you've done that, follow these steps:
 
-1. From the main Experiment page, navigate to *Flags* in the left-hand sidebar. Click *+ Create Feature Flag*.
+1. Navigate to *Experiment > Feature Flags* in the left-hand sidebar. Click *+ Create Feature Flag*.
 2. In the *Create Flag* modal, choose the project that includes this flag from the *Projects* drop-down menu. Then give your flag a name. Amplitude Experiment generates the flag key from the name you choose. The flag key is an identifier for the flag used in your codebase.
 3. Specify the [evaluation mode](/docs/experiment/local-evaluation) for your experiment, either *Remote* (for example, Amplitude evaluates it on Amplitudes servers) or *Local*. Then specify the **bucketing unit** you want to use for this experiment.  
   
