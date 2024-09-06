@@ -13,11 +13,7 @@ Amplitude's Out-of-the-box Product Analytics provides a single location in Ampli
 
 This feature is available on all Amplitude plans. For more information, see the [pricing page](https://amplitude.com/pricing).
 
-## Configure Out-of-the-box Product Analytics
-
-Before you begin, configure Out-of-the-box Product Analytics to ensure the provided analysis meets your needs.
-
-From the Product Overview page, click **Customize**. 
+{{partial:partials/web-product-analytics hub="Product"}}
 
 ### Basic settings
 
