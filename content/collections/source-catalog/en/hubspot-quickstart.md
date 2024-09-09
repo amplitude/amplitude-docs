@@ -22,7 +22,17 @@ Keep the following high-level steps in mind as you plan your integration:
 5. **Create alerts**. Configure alerts to tell your sales or marketing team when leads engage at a high level and are ready for outreach.
 6. **Embed Amplitude charts in HubSpot reports**. Track PQL scores, lead engagement, and conversion rates on HubSpot dashboards for real-time insights and smarter decision making.
 
-## Detailed configuration
+## Configuration for new Amplitude users
+
+Amplitude provides a simplified flow specifically for HubSpot users who are new to Amplitude.
+
+To configure:
+
+1. From the HubSpot App Marketplace, find the Amplitude app and click Install.
+2. Sign up for Amplitude using your email address or Google credentials.
+3. After you create your account, continue to Step 3 in the [Connect HubSpot](#connect-hubspot) section.
+
+## Configuration for existing Amplitude users 
 
 Amplitude maintains this integration. For help with setup, contact [Amplitude Support](https://amplitude.zendesk.com/hc/en-us/requests/new).
 
