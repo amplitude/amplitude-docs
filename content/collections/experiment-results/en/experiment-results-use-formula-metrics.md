@@ -9,7 +9,7 @@ this_article_will_help_you:
 landing: true
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1722360131
+updated_at: 1725919213
 landing_blurb: 'Understand the different kinds of formula metrics supported by the Experiment Results chart'
 ---
 In an Experiment Results chart, using a **formula metric** offers you greater flexibility when performing analyses. A formula metric is a metric that consists of:
@@ -29,7 +29,7 @@ To add a formula metric to your Experiment Results chart, follow these steps:
 
 2. Click *+ Define single-use metric*, then select *Formula* from the *Metric Type* dropdown in the modal that appears.  
   
-  ![Screenshot 2023-07-31 at 2.13.04 PM.png](/docs/output/img/experiment-results/screenshot-2023-07-31-at-2-13-04-pm-png.png)
+  ![Screenshot 2023-07-31 at 2.13.04 PM.png](/docs/output/img/experiment-results/untitled-metric.png)
 
 3. Click *Select event ...* to begin selecting events to include in your formula metric. Repeat this step until you've selected all the events you need.
 
