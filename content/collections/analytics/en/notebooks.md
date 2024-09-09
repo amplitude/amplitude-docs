@@ -6,7 +6,7 @@ source: 'https://help.amplitude.com/hc/en-us/articles/360016281172-Notebooks-Exp
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1724883553
+updated_at: 1725919166
 ---
 Notebooks help you explain insights to teammates. While [dashboards](/docs/analytics/dashboard-create) are great for monitoring metrics, **notebooks** enable you to communicate context and takeaways from analysis that help your team make better-informed product decisions.
 
@@ -32,7 +32,7 @@ You can also scroll down to the list of existing notebooks and add the chart to 
 
 To **add new content** to your notebook, hover over it in the spot you'd like the new content to appear. Click the icon that appears to add a chart, cohort, header, text block, image, or video in that spot.
 
-![notebooks add content.png](/docs/output/img/analytics/notebooks-add-content.png)
+![notebooks add content.png](/docs/output/img/analytics/notebooks-add-content2.png)
 
 To **edit a chart** in your notebook, hover over the chart and click the pen icon to enter edit mode.
 
