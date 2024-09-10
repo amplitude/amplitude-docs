@@ -42,7 +42,7 @@ Amplitude recommends monitoring your event volume (in Settings > Plans & Billing
 
 ## Your taxonomy with Autocapture
 
-Keeping your taxonomy clean and organized is essential to ensuring users can find what they need. When you enable Autocapture, your data will be ingested into a pre-defined set of events and properties. For example, the SDK captures click interactions as two events ("Element Clicked" and "Element Changed") with a predefined set of properties rather than a stream of noisy user interactions.
+Keeping your taxonomy clean and organized is essential to ensuring users can find what they need. When you enable Autocapture, you're getting a predefined set of event and property types for ingestion. For example, the SDK captures click interactions as two events ("Element Clicked" and "Element Changed") with a predefined set of properties rather than a stream of noisy user interactions.
 
 [Visual labeling](/docs/data/visual-labeling) allows users within your organization to create events, so there are some additional considerations to make when thinking about your taxonomy:
 
@@ -52,7 +52,7 @@ Keeping your taxonomy clean and organized is essential to ensuring users can fin
 
 Some additional things to know about your labeled events:
 
-* Labeled events have a separate tab within Data > Events to help you manage them separately from your raw ingested events. Here, you can see who created the labeled events and when they were created.
+* Labeled events have a separate tab within Data > Events to help you manage them differently from your raw ingested events. Here, you can see who created the labeled events and when they were created.
 * Labeled events have a different icon in the event dropdown so you and your users can distinguish them from other events.
 
 ## Privacy and security
