@@ -38,7 +38,7 @@ Autocapture provides several configuration options to help you adjust your imple
 
 The default configuration should provide the right balance of automatically capturing events that matter while excluding ones that don't. This balance is critical when capturing clicks. By default, Amplitude captures clicks on interactable elements (for example, links, text fields, dropdowns, and other form elements). Amplitude also captures other clicks on elements that result in a change on the page (for example, a new visual element) or a navigation to a new page. This configuration excludes clicks on blank areas, a user highlighting text, and other similar actions to ensure you aren't paying for low-value user behaviors.
 
-Amplitude recommends monitoring your event volume (in Settings > Plans & Billing) as you make changes to ensure it matches your expectations. You can change your configuration at any time to only capture clicks on specified elements (or elements with certain classes), track on specific pages, or turn click tracking off while still taking advantage of other Autocapture data (page views, sessions, etc.).
+Amplitude recommends monitoring your event volume (in Settings > Plans & Billing) as you make changes to ensure it matches your expectations. At any time, you can change your configuration to only capture clicks on specified elements (or elements with certain classes), track on specific pages, or turn click tracking off while still taking advantage of other Autocapture data (page views, sessions, etc.).
 
 ## Your taxonomy with Autocapture
 
