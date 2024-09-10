@@ -625,8 +625,8 @@ amplitude.getInstance().logEvent('Viewed Home Page');
 
 ## Web attribution
 
-While Amplitude"s JavaScript SDK doesn't collect web attribution data by default, setting it up is simple.
- The SDK can automatically collect this information if you enable attribution configuration options.
+While Amplitude's JavaScript SDK doesn't ingest web attribution data by default, setting it up is simple.
+The SDK can automatically ingest this information if you enable attribution configuration options.
 
 Amplitude supports automatically tracking the following through the SDK configuration options:
 

@@ -33,7 +33,7 @@ To view your project's API Key and Secret Key, see [Authentication](/docs/apis/a
 
 ### API Key
 
-To collect data from browsers and mobile applications, Amplitude must be able to identify which project the requests should go to. Amplitude does this with an *API Key* that's associated with a single project. 
+To ingest data from browsers and mobile applications, Amplitude must be able to identify which project the requests should go to. Amplitude does this with an *API Key* that's associated with a single project. 
 
 Files sent to a browser and code distributed as part of a mobile app are shared with end users, so the API Key can't be truly secret. 
 
