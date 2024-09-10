@@ -59,7 +59,7 @@ Some additional things to know about your labeled events:
 
 For many organizations, data privacy, security, and PII are critical factors when setting up their data collection strategy. Your business needs, the purpose of your digital product(s), and your compliance requirements between jurisdictions can vary greatly. There's no one-size-fits-all solution that will work in every situation.
 
-Amplitude's Autocapture feature provides flexible configuration options to enable you to adhere to your company's privacy and security policies and requirements. While it is your responsibility to ensure your use of Amplitude is in compliance with your data privacy policies and requirements, these settings are designed to help you do so.
+Amplitude's Autocapture feature provides flexible configuration options to enable you to adhere to your company's privacy and security policies and requirements. While it's your responsibility to ensure your use of Amplitude complies with your data privacy policies and requirements, these settings are designed to help you do so.
 
 ### Autocapture protections
 
