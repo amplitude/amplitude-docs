@@ -17,11 +17,6 @@ Amplitude’s Out-of-the-box Web Analytics acts as a centralized hub where you c
 - **Track conversions**: Easily define a conversion funnel, enable detailed tracking, and visualize conversion metrics with data tables and charts.
 - **Uncover deeper insights with nested group-bys**: Add additional detail to your top-level channels or campaigns analytics with nested group-bys.
 
-Find Web Analytics in the left-hand sidebar.
-
-This article will help you understand how to use this feature and quickly gain insights into your product’s web analytics in Amplitude.
-
-
 ## Feature availability
 
 This feature is available to users on all Amplitude plans. See the [pricing page](https://amplitude.com/pricing) for more details.
@@ -29,6 +24,9 @@ This feature is available to users on all Amplitude plans. See the [pricing page
 ## Before you begin
 
 If you haven’t already read up on the basics of building charts in Amplitude, you should do so before proceeding.
+
+{{partial:partials/web-product-analytics hub="Web"}}
+
 
 ## Analyze industry-standard metrics
 Out-of-the-box Web Analytics offers four sets of insights with default metrics, as well as optional goals or key outcomes, that you are driving users to:
