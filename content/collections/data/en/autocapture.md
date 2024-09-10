@@ -85,6 +85,6 @@ To support visual labeling, Autocapture captures interaction information about b
 
 #### Turn off Autocapture events
 
-Amplitude also allows you to turn off Autocapture entirely and use precision tracking for data collection. We provide robust data management tools and workflows that support the planning and implementation of a custom taxonomy.
+You can also turn off Autocapture entirely and use precision tracking for data collection. Amplitude includes robust data management tools and workflows that support planning and implementing a custom taxonomy.
 
 You can [turn off any or all Autocapture events](/docs/sdks/analytics/browser/browser-sdk-2#disable-autocapture) through your SDK configuration.
