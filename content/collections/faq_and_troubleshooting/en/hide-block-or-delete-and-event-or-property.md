@@ -37,7 +37,7 @@ Blocking an event or property doesn't stop you from sending that data to Amplitu
 {{partial:collapse name="What happens to deleted events and properties?"}}
 If you've instrumented an event or property that you no longer need, deleting it helps you keep your data structure organized. Too many unnecessary events and properties can lead to hitting your project's instrumentation limit.
 
-As with blocking, Amplitude doesn't collect deleted events and properties, and the data sent after deleting an event or property isn't recoverable. The difference is that deleted events and properties aren't available in drop-downs. 
+As with blocking, Amplitude doesn't ingest deleted events and properties, and the data sent after deleting an event or property isn't recoverable. The difference is that deleted events and properties aren't available in drop-downs. 
 
 Charts that include the now-deleted event or property are available, but you can't include it in any new charts. If you removed the deleted event from a chart, you can't add it back it unless you undelete it. However, deleted events still appear in chart results, so if you'd like to remove/hide data from charts for a deleted event, [create a drop filter](/docs/data/remove-invalid-data) prior to deleting the event.
 {{/partial:collapse}}

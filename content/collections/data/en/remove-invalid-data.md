@@ -97,10 +97,10 @@ Custom events are a virtual grouping of your ingested events, aren't blockable. 
 
 ## Block events and properties
 
-You can prevent Amplitude Data from collecting data on a specific event, event property, or user property by blocking it. Amplitude Data immediately stops processing data for that event or property until you decide to unblock it.
+You can prevent Amplitude Data from ingesting data on a specific event, event property, or user property by blocking it. Amplitude Data immediately stops processing data for that event or property until you decide to unblock it.
 
 {{partial:admonition type="warning" heading=""}}
-Because Amplitude Data does not collect any data for blocked events or properties, this means you **can't recover** **any information** about them at any future date. If you don't wish to display a specific event or property but think you may someday need this data, consider **hiding** the event or property instead.
+Because Amplitude Data doesn't ingest any data for blocked events or properties, this means you **can't recover** **any information** about them at any future date. If you don't wish to display a specific event or property but think you may someday need this data, consider **hiding** the event or property instead.
 {{/partial:admonition}}
 
 To block an event or property, follow these steps:
