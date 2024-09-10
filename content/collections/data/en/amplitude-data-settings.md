@@ -19,7 +19,7 @@ In the Settings page, you can:
 * Generate API tokens
 * Delete your Amplitude Data project
 
-These settings and features can be found on five different tabs: General; Environments; Integrations; API Tokens; and Schema Settings. This article describes each tab below.
+Find these settings and features on five different tabs: General; Environments; Integrations; API Tokens; and Schema Settings. This article describes each tab below.
 
 {{partial:admonition type="note" heading=""}}
 Make sure you’ve configured your settings **before** setting up your first Amplitude Data project.
@@ -35,7 +35,7 @@ Make sure you’ve configured your settings **before** setting up your first Amp
 | Viewer | View the tracking plan and comment |
 
 {{partial:admonition type="info" heading=""}}
-If the *Require team reviews to make changes to the main branch* option is disabled in the project settings, members can modify the tracking plan; however, receiving approval would no longer be required. All other permissions remain the same.
+If you disable the *Require team reviews to make changes to the main branch* option in the project settings, members can modify the tracking plan; however, receiving approval would no longer be required. All other permissions remain the same.
 {{/partial:admonition}}
 
 ## The General tab
@@ -87,6 +87,6 @@ Sometimes, Amplitude Data might receive data from your app that it doesn't know 
 
 You can tell Amplitude how to handle these situations by configuring your schema settings.
 
-For any unplanned events, event properties, event property types, user properties, or user property types, you can tell Amplitude Data to either mark them as **unexpected**, or to **reject** them outright. Amplitude Data collects any events or properties marked as unexpected and send a notification to everyone subscribed to this schema. If you choose to reject unexpected data, however, Amplitude Data doesn't collect or store the rejected data. Subscribers still receive a notification.
+For any unplanned events, event properties, event property types, user properties, or user property types, you can tell Amplitude Data to either mark them as **unexpected**, or to **reject** them outright. Amplitude Data ingests any events or properties marked as unexpected and send a notification to everyone subscribed to this schema. If you choose to reject unexpected data, however, Amplitude Data doesn't ingest or store the rejected data. Subscribers still receive a notification.
 
 Click *Save* to implement any changes you make to your schema settings.
