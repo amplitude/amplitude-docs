@@ -57,7 +57,7 @@ Some additional things to know about your labeled events:
 
 ## Privacy and security
 
-For many organizations, data privacy, security, and PII are critical factors when setting up their data collection strategy. Your business needs, the purpose of your digital product(s), and your compliance requirements between jurisdictions can vary greatly. There's no one-size-fits-all solution that will work in every situation.
+For many organizations, data privacy, security, and PII are critical factors when setting up their data collection strategy. Your business needs, the purpose of your digital products, and your compliance requirements between jurisdictions can vary greatly. There's no one-size-fits-all solution that will work in every situation.
 
 Amplitude's Autocapture feature provides flexible configuration options to enable you to adhere to your company's privacy and security policies and requirements. While it's your responsibility to ensure your use of Amplitude complies with your data privacy policies and requirements, these settings are designed to help you do so.
 
@@ -68,7 +68,7 @@ You control what information you collect with Autocapture and send to the Amplit
 Autocapture's default settings for capturing clicks and changes on page elements ("Element Clicked" and "Element Changed" events) also include the following privacy and security considerations:
 * For sensitive elements—such as end user text inputs, selects, textarea elements, and any HTML elements with contenteditable=”true” as an attribute—the SDK only collects class names and the type attribute. Any end user-inputted text is excluded.
 * Autocapture’s default settings further restrict your collection of sensitive input fields, like passwords or form fields with the hidden attribute, and only captures class and type attribute values. Autocapture doesn't capture other details about these elements, including any of the content of the input fields an end user may populate.
-* Autocapture will capture the text your website or app is displaying - i.e., the content (textContent) of the element clicked and its children. While we recommend not implementing Autocapture's element interaction tracking on pages that may contain sensitive information (see below), Amplitude also uses pattern matching to automatically exclude from your collection any text content that looks like a credit card or social security number.
+* Autocapture captures the text your website or app displays - for example, the content (textContent) of the element clicked and its children. While we recommend not implementing Autocapture's element interaction tracking on pages that may contain sensitive information (see below), Amplitude also uses pattern matching to automatically exclude from your collection any text content that looks like a credit card or social security number.
 * The exception to these attribute collection rules is when an element has an explicit attribute added with the prefix “data-amp-track-”. This allows data in these attributes to be intentionally passed back to Amplitude.
 * Autocapture automatically removes value, event handlers, style, and react attributes.
 
