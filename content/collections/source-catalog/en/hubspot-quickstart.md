@@ -44,8 +44,8 @@ To begin tracking user behavior, add the one-line code snippet from Amplitude to
 
 ### Connect HubSpot
 
-1. From Amplitude Data, navigate to *Catalog > Sources*, search for `HubSpot`, and select **HubSpot Quickstart**.
-2. Select your CMS, and select if you're on a [HubSpot Enterprise plan](https://knowledge.hubspot.com/account/manage-your-hubspot-subscription).
+1. From Amplitude Data, navigate to *Catalog > Sources*, search for `HubSpot`, and select *HubSpot Quickstart*.
+2. Select your CMS, and specify if you're on a [HubSpot Enterprise plan](https://knowledge.hubspot.com/account/manage-your-hubspot-subscription).
 3. The integration provides customized HubSpot configuration instructions based on your selection. When you complete the steps in HubSpot, click *Next*.
 4. Send test events from your website or CMS to verify your instrumentation.
 
@@ -57,7 +57,7 @@ Follow the instructions in [Define a new cohort](/docs/analytics/define-cohort) 
 
 ### Configure product-qualified lead (PQL) scoring in HubSpot
 
-After you sync your cohort to HubSpot, create a Product-Qualified Lead (PQL) score to rank leads based on their likelihood to convert. For more information, see HubSpot's article [Build scores to qualify contacts and companies in the lead scoring tool (BETA)](https://knowledge.hubspot.com/properties/build-lead-scores).
+After you sync your cohort to HubSpot, create a product-qualified lead (PQL) score to rank leads based on their likelihood to convert. For more information, see HubSpot's article [Build scores to qualify contacts and companies in the lead scoring tool (BETA)](https://knowledge.hubspot.com/properties/build-lead-scores).
 
 ### Automate outreach with HubSpot workflow templates
 
@@ -75,6 +75,6 @@ For more information, see HubSpot's articles [Set your workflow enrollment trigg
 
 Track and analyze product use data and lead performance from within HubSpot dashboards. This integration enables you to add Amplitude charts directly to your HubSpot dashboards. To add Amplitude charts to HubSpot:
 
-1. Navigate to an existing, or create a new [dashboard](https://knowledge.hubspot.com/dashboards/customize-your-dashboards) in HubSpot.
+1. Navigate to an existing dashboard, or [create a new one](https://knowledge.hubspot.com/dashboards/customize-your-dashboards) in HubSpot.
 2. From the dashboard, click *Actions > Add external content*. For more information, see HubSpot's article [Embed external content on a dashboard](https://knowledge.hubspot.com/dashboards/embed-external-content-on-a-dashboard).
-3. Provide a name for the chart, and enter the chart's URL from Amplitude. The URL should be in the format: `https://app.amplitude.com/analytics/<project>/1234abcd` where `1234abcd` represent an 8 character alphanumeric identifier of the chart.
+3. Name the chart, and enter the chart's URL from Amplitude. The URL should be in the format: `https://app.amplitude.com/analytics/<project>/1234abcd` where `1234abcd` represent an 8 character alphanumeric identifier of the chart.
