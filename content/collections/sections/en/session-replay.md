@@ -21,6 +21,9 @@ Session Replay is available to try on all new Amplitude plans as of February 7, 
 {{partial:admonition type="note" heading=""}}
 Session Replay is **not** enabled by default, and requires instrumentation beyond the standard Amplitude instrumentation.
 {{/partial:admonition}}
+
+{{partial:partials/session-replay/sr-retention}}
+
 ## Use Session Replay to review user activity
 
 You can launch a session replay from a user’s event stream, inside a chart, or from your homepage. Replays are generally available for viewing five minutes after a session begins.
@@ -29,7 +32,7 @@ When viewing a session replay from your [homepage](#h_01HFD88N1M03EH9D8VF32QBBYQ
 
 ![image-20240109-232506.png](/docs/output/img/session-replay/image-20240109-232506-png.png)
 
-Session replay supports user sessions of any length.
+Session Replay supports user sessions of any length.
 
 ### View Session Replay from User Look-Up
 
@@ -131,7 +134,6 @@ There are some limitations when using Session Replay:
 * Session Replay is available for web-based applications only. This includes mobile web. Desktop applications aren't supported.
 * Session Replay supports standard session definitions only. [Custom session definitions](/docs/cdp/sources/instrument-track-sessions) aren't supported.
 * Session Replay can only be used to segment by users, and isn't available for [account-level reporting](/docs/analytics/account-level-reporting).
-* You can replay captured sessions for up to three months (90 days) after they occur. You can request to change this to 30 days, to comply with stricter privacy requirements. If you change your retention period, the changes apply only to new sessions, and not those that pre-date the change.
 * If you are in a portfolio view, you can see replays for different users under different projects. However, keep in mind that Session Replay doesn't stitch together replays from a single user across multiple projects. If a user begins a session in one project and then continues to a second project, Amplitude Analytics generates separate replays for that user for each project.
 * Session Replay doesn't capture these unsupported HTML elements:
 	* Canvas
