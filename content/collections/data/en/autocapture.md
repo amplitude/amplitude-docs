@@ -21,7 +21,7 @@ Autocapture is available for all Amplitude plans.
 
 Amplitude offers two primary ways to capture events:
 
-* Autocapture is designed so you can automatically collect a predefined set of events and properties in a standardized taxonomy using our SDKs.
+* Autocapture allows you to automatically collect a predefined set of events and properties in a standardized taxonomy using our SDKs.
 * Precision tracking allows you to instrument events and properties specific to your business needs and desired analyses.
 
 With Autocapture, you get out of the box analytics with minimal engineering. From the moment you install the SDK, Amplitude automatically collects data to gain insights into feature usage, funnel conversion rates, and even specific click analysis on the web. This solution is the best option to help you get up and running quickly.
