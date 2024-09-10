@@ -7,14 +7,15 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1722531117
 ---
-Amplitude's [Autocapture](/docs/data/autocapture) is the best option for getting up and running quickly. This document will help you enable Autocapture across your digital products for out of the box analytics with minimal engineering.
+Amplitude's [Autocapture](/docs/data/autocapture) is the best option for getting up and running quickly. This document helps you enable Autocapture across your digital products for out of the box analytics with minimal engineering.
 
 ## Autocapture for the web
 
-Amplitude's Browser SDK 2.10.0 and above includes Autocapture to help you capture events, interactions, and attribution on your site.
+Starting with version 2.10.0, the Amplitude Browser SDK includes Autocapture to help you capture events, interactions, and attribution on your site.
 
 ### Install the Browser SDK
-Autocapture requires the latest version of the Amplitude Browser SDK ({{sdk_versions:browser}}).
+
+To get started with Autocapture, install the latest version of the Browser SDK ({{sdk_versions:browser}}).
 
 {{partial:tabs tabs="Script Loader, npm, yarn"}}
 {{partial:tab name="Script Loader"}}
@@ -33,6 +34,7 @@ yarn add @amplitude/analytics-browser
 {{/partial:tabs}}
 
 ### Initialize the SDK
+
 Browser SDK 2.10.0 and above includes element click and change tracking, which enables [visual labeling](/docs/data/visual-labeling) within Amplitude. To enable it, make sure `config.autocapture.elementInteractions` is set to `true` when initializing the SDK.
 
 Autocapture ships with Browser SDK 2.10.0 and above. To enable it, set `config.autocapture.elementInteractions` to `true` when initializing the SDK.
