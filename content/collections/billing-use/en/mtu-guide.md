@@ -8,8 +8,7 @@ this_article_will_help_you:
 landing: true
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1724884595
-
+updated_at: 1726004220
 landing_blurb: 'Learn about how Amplitude bills with Monthly Tracked Users.'
 ---
 Amplitude customers on Scholarship, Starter, and Plus plans bill according to **monthly tracked user (MTU)** count. This option is also available to customers on Growth and Enterprise plans. 
@@ -71,19 +70,19 @@ MTU limits are defined by the plan your organization is on, or the MTU volume yo
 
 These are each calculated on the last day of each calendar month. Exceeding either limit can result in overage charges. Amplitude alerts you when you are approaching your limit so you can take steps to avoid exceeding it.
 
-### Exceeding your plan’s allowed MTU volume
+### Calculate your organization’s limit of events per MTU
 
-Exceeding your plan limits or purchased MTU limit results in charges for all excess MTUs recorded. 
+Your organization's limit of events per MTU depends on the Amplitude plan you're on. For organizations on the Starter plan, this limit is 1,000 events per MTU. 
 
-For example, if you purchase *n* MTUs, and Amplitude records *n+m* MTUs at the end of the month, you're charged for *m* extra MTUs.
+Amplitude uses **synthetic MTUs** to track overages for Starter customers. Use this formula to calculate your organization's synthetic MTU count:
 
-### Exceeding your plan’s events per MTU limit
+`(Events tracked this month - (Your plan's monthly MTU limit x 1,000)) / 1,000`
 
-Regardless of the plan you’re on, you're' be subject to a cap on events per MTU. Amplitude calculates this cumulatively.
+This works out to one synthetic MTU for every 1,000 events over your plan's specified average.
 
-For example, if you purchased *n* MTUs and expect to have *x* events per user, when your event volume *k* exceeds *n*(*x*), you could see a charge for the difference based on the formula
+Amplitude calculates billing based on **total MTU count**. Most of the time, your total MTU count is equal to your **unique MTU count**, which is the number of unique IDs associated with any tracked event triggered this month. If you exceed your monthly limit, however, you can add your unique MTU count to your synthetic MTU count to calculate your total MTU count for the month.
 
-`(k - n(x)) / x = number of excess MTUs`
+If your total MTU count exceeds your plan’s allotted volume, you could see an overage charge (if you’re on a paid plan) or an overage strike (if you’re on a free plan).
 
 ### Exceeding limits on a free plan
 
