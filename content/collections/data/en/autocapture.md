@@ -74,7 +74,7 @@ Autocapture's default settings for capturing clicks and changes on page elements
 
 ### Autocapture security options
 
-Amplitude also provides flexibility to refine the pages for which you configure Autocapture. We recommend you utilize these capabilities, especially if your organization requires higher restrictions or safeguards and/or your website or app may contain pages with highly sensitive data, such as those in financial services, healthcare, and medical technologies.
+Amplitude also provides flexibility to refine the pages for which you configure Autocapture. You should use these capabilities, especially if your organization requires stronger restrictions or safeguards, or your website or app may contain pages with highly sensitive data, such as those in financial services, healthcare, and medical technologies.
 
 #### Limit click tracking
 
