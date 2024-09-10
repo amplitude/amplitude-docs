@@ -20,7 +20,7 @@ To verify your instrumentation works the way you'd intended, navigate over to Am
 
 ## Know your event limits
 
-If you go over your limit for the month, Amplitude still collects your data as usual. However, that excess data is inaccessible to you, unless you upgrade to a new tier or wait until the following month.
+If you go over your limit for the month, Amplitude still ingests your data as usual. However, that excess data is inaccessible to you, unless you upgrade to a new tier or wait until the following month.
 
 ## Understand how Amplitude handles duplicate events
 

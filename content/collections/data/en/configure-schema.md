@@ -22,7 +22,7 @@ See [the pricing page](https://amplitude.com/pricing) to find out if this featur
 
 Sometimes, Amplitude may receive an event that isn't part of your schema, or that you didn't plan earlier. This is an **unplanned event type**. You can configure Amplitude to respond in these ways: 
 
-* **Mark As Unexpected****. Amplitude collects the event, triggers a warning, and sends a notification to the subscribers designated. The event's category in drop-downs is "Unexpected" until you approve it.
+* **Mark As Unexpected****. Amplitude ingests the event, triggers a warning, and sends a notification to the subscribers designated. The event's category in drop-downs is "Unexpected" until you approve it.
 * **Reject****. Amplitude rejects the event and sends a notification to the subscribers designated. Amplitude doesn't store the event or its properties.  
   
 ![Screenshot 2023-08-07 at 6.31.28 PM.png](/docs/output/img/data/screenshot-2023-08-07-at-6-31-28-pm-png.png)
@@ -31,17 +31,17 @@ Sometimes, Amplitude may receive an event that isn't part of your schema, or tha
 
 When Amplitude encounters an event or user property that isn't part of your schema, or that you didn't plan earlier, it considers the property to be an **unplanned event/user property**. You can configure Amplitude to respond to these in the following ways: 
 
-* **Mark As Unexpected.** Amplitude collects the property, triggers a warning, and sends a notification to the subscribers designated.
+* **Mark As Unexpected.** Amplitude ingests the property, triggers a warning, and sends a notification to the subscribers designated.
 * **Reject.** Amplitude rejects the property and sends a notification to the subscribers designated. Amplitude stores the event, but not the properties.
 
 ## Unplanned event/user property values
 
 When Amplitude receives an event property value that isn't part of your schema, or that you didn't plan earlier, it considers the value an **unplanned property value**. For example, an event property value arrives as a string, but your schema expected a number. You can configure Amplitude to respond to an unplanned property value in the following ways:
 
-* **Mark As Unexpected.** Amplitude collects the property, triggers a warning, and sends a notification to the subscribers designated.
+* **Mark As Unexpected.** Amplitude ingests the property, triggers a warning, and sends a notification to the subscribers designated.
 * **Reject.** Amplitude rejects the property, triggers a warning, and sends a notification to the subscribers designated. Amplitude stores the event, but not the properties.
 
-If Amplitude is rejecting your event data and you want to begin collecting it, add the events or properties to your Schema by planning a new event or planning a new property.
+If Amplitude rejects your event data and you want to ingest it, add the events or properties to your Schema by planning a new event or planning a new property.
 
 ## View validation errors
 
