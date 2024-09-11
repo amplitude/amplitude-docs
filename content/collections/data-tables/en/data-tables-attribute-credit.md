@@ -5,8 +5,8 @@ title: 'Attribute credit to multiple acquisition touch points'
 source: 'https://help.amplitude.com/hc/en-us/articles/6040784295195-Attribute-credit-to-multiple-acquisition-touch-points'
 this_article_will_help_you:
   - 'Understand how specific touch points are contributing to your marketing outcomes'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717103337
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1726093726
 landing: true
 landing_blurb: 'Understand how specific touch points are contributing to your marketing outcomes'
 ---
@@ -81,6 +81,42 @@ If the pre-built attribution models do not meet your needs, you can also create 
 * **Content**: Use attribution to see not only how often content was viewed but how that content participated in driving a business KPI outcome. Knowing that content has a low bounce/exit rate or longer time spent on a page can be helpful, but you can clarify the business impact by generating a conversion rate based on different attribution models.
 * **Internal campaigns**: Similar to paid off platform advertising investments, marketing teams invest their time and creative talent to generate offers and brand-building content to drive KPI outcomes. Using attribution on the impact of those marketing efforts can similarly inform your content marketing teams which types of offers and creatives are best at driving both short and long term business value.
 * **Paid channels with LTV**: By combining your attribution model with your behavior-based LTV calculations, you can see a bigger perspective of how much value a paid channel or campaign is driving. This data can unlock potential for greater investments in channels that drive the most long term business value.
+
+## Supported attribution types by metric
+
+Each metric type supports a specific set of attribution types:
+
+* **Uniques**
+    * first touch
+    * last touch
+    * participation
+    * markov
+
+* **Conversion**
+    * first touch
+    * last touch
+    * participation
+
+* **Event totals**
+    * first touch
+    * last touch
+    * participation
+    * linear
+    * j-shaped
+    * inverse j-shaped
+    * u-shaped
+    * custom
+    * markov
+
+* **Property sum**, **revenue total**, and **formula**
+    * first touch
+    * last touch
+    * participation
+    * linear
+    * j-shaped
+    * inverse j-shaped
+    * u-shaped
+    * custom
 
 ## Attribution example calculation
 
