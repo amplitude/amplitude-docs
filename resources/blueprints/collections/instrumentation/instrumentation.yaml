@@ -21,6 +21,16 @@ tabs:
               display: Content
               localizable: true
               container: help_center_conversions
+              buttons:
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - quote
+                - link
+                - image
+                - table
+                - asset
           -
             handle: author
             field:
