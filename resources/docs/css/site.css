@@ -987,3 +987,6 @@ line-height: 1.25rem;
         text-align: center
     }
 }
+th {
+    text-align: left;
+}
