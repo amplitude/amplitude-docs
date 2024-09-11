@@ -391,7 +391,7 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 | `flagConfigPollingIntervalMillis` | The interval to poll for updated flag configs after calling [`Start()`](#start) | `30000` |
 | `flagConfigPollerRequestTimeoutMillis` | The timeout for the request made by the flag config poller | `10000` |
 | `assignmentConfiguration` | Enable automatic assignment tracking for local evaluations. | `null` |
-| `streamUpdates` | Enable streaming to replace polling for receiving flag config updates. Instead of polling every second, our servers push updates to SDK generally within a second. If stream fails for any reason, it will fallback to polling automatically and retry streaming after some interval. | `false` |
+| `streamUpdates` | Enable streaming to replace polling for receiving flag config updates. Instead of polling every second, Amplitude servers push updates to SDK generally within one second. If the stream fails for any reason, it will revert to polling automatically and retry streaming after some interval. | `false` |
 | `streamServerUrl` | The stream server url to stream from. | `https://stream.lab.amplitude.com` |
 | `streamFlagConnTimeoutMillis` | The timeout for establishing a valid flag config stream. This includes time for a connection to be established to stream server and time for receiving initial flag configs. | `1500` |
 | `cohortSyncConfig` | Configuration to enable cohort downloading for [local evaluation cohort targeting](#local-evaluation-cohort-targeting). | `null` |
