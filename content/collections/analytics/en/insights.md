@@ -8,8 +8,8 @@ this_article_will_help_you:
   - 'Send alerts directly to a Slack channel'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5343a026-383e-4b6a-ad4d-df18684b6384
-updated_at: 1725042431
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1726094509
 ---
 Amplitude's **alerts** feature is built using [Prophet](https://facebook.github.io/prophet/), an advanced data mining and machine learning technique that automatically detects any anomalies in your product data, and instantly brings these hidden trends to your attention. It does this by first identifying expected values, and the confidence intervals around them, and then analyzing the overall trend of the data and combining it with the weekly trend of the data. 
 
@@ -43,12 +43,10 @@ To subscribe to **automatic** alerts and receive emails when an anomaly is detec
 To set a **custom** or **smart** alert for a chart you own, follow these steps:
 
 1. Navigate to the chart you want to set an alert for. Note that the chart must be saved before you can set an alert for it.
-2. Select *Set Alert* from the *More* drop-down menu and select either a **smart** alert or a **custom** alert:
+2. Select *Set Alert* from the bell icon and select either a **smart** alert or a **custom** alert:
 
     * A **smart alert** will look for unexpected changes outside of a 99% confidence interval.
     * A **custom alert** allows you to be more specific about the conditions under which you'll receive a custom alert: whether it's above or below a specific value, or whether it differs from a previous value by a specified amount. You can also set a custom alert based on confidence interval.
-
-    ![conf_interval.gif](/docs/output/img/analytics/conf_interval.gif)
 
 3. If you are setting up a custom alert, specify your alert conditions (these will be tied to the chart's current value either exceeding or falling below a specific value, or to changes in the confidence interval). If you are setting up a smart alert, skip this step.
 4. Add the emails of everyone who should receive this alert, and click *Set Alert*.

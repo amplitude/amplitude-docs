@@ -8,7 +8,7 @@ this_article_will_help_you:
 landing: true
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1726004220
+updated_at: 1726094463
 landing_blurb: 'Learn about how Amplitude bills with Monthly Tracked Users.'
 ---
 Amplitude customers on Scholarship, Starter, and Plus plans bill according to **monthly tracked user (MTU)** count. This option is also available to customers on Growth and Enterprise plans. 
@@ -74,15 +74,15 @@ These are each calculated on the last day of each calendar month. Exceeding eith
 
 Your organization's limit of events per MTU depends on the Amplitude plan you're on. For organizations on the Starter plan, this limit is 1,000 events per MTU. 
 
-Amplitude uses **synthetic MTUs** to track overages for Starter customers. Use this formula to calculate your organization's synthetic MTU count:
+Amplitude calculates billing based on **total MTU count**. Most of the time, your total MTU count is equal to your **unique MTU count**, which is the number of unique IDs associated with any tracked event triggered this month. If you exceed your monthly limit, Amplitude adds **synthetic MTUs** to your monthly MTU count.
+
+Use this formula to calculate your organization's synthetic MTU count:
 
 `(Events tracked this month - (Your plan's monthly MTU limit x 1,000)) / 1,000`
 
-This works out to one synthetic MTU for every 1,000 events over your plan's specified average.
+This works out to one synthetic MTU for every 1,000 events over your plan's quota allotment.
 
-Amplitude calculates billing based on **total MTU count**. Most of the time, your total MTU count is equal to your **unique MTU count**, which is the number of unique IDs associated with any tracked event triggered this month. If you exceed your monthly limit, however, you can add your unique MTU count to your synthetic MTU count to calculate your total MTU count for the month.
-
-If your total MTU count exceeds your plan’s allotted volume, you could see an overage charge (if you’re on a paid plan) or an overage strike (if you’re on a free plan).
+To calculate your total MTU count for the month, add your unique MTU count to your synthetic MTU count.
 
 ### Exceeding limits on a free plan
 
