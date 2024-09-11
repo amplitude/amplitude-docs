@@ -370,7 +370,7 @@ public LocalEvaluationClient initializeLocal(
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 {{partial:admonition type="tip" heading="Flag streaming"}}
-Use the `streamUpdates` [configuration](#configuration-1) to get flag config updates pushed to SDK (default false), instead of polling every `flagConfigPollingIntervalMillis` milliseconds. The time for SDK to receive the update after saving is generally under 1 second. It will fallback to polling if streaming failed. Configure `flagConfigPollingIntervalMillis` [configuration](#configuration-1) to determine the time flag configs take to update once modified (default 30s) as well for fallback.
+Use the `streamUpdates` [configuration](#configuration-1) to push flag config updates to the SDK (default `false`), instead of polling every `flagConfigPollingIntervalMillis` milliseconds. The time for SDK to receive the update after saving is generally under one second. It will revert to polling if streaming fails. Configure `flagConfigPollingIntervalMillis` [configuration](#configuration-1) to set the time flag configs take to update once modified (default 30s), as well for fallback.
 {{/partial:admonition}}
 
 #### Configuration
