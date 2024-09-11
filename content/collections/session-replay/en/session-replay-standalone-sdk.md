@@ -24,8 +24,6 @@ Amplitude built Session Replay to minimize impact on the performance of web page
 
 Session Replay captures changes to a page's Document Object Model (DOM), including elements in the shadow DOM, then replays these changes to build a video-like replay. For example, at the start of a session, Session Replay captures a full snapshot of the page's DOM. As the user interacts with the page, Session Replay captures each change to the DOM as a diff. When you watch the replay of a session, Session Replay applies each diff back to the original DOM in sequential order, to construct the replay. Session replays have no maximum length.
 
-{{partial:partials/session-replay/sr-retention}}
-
 ## Before you begin
 
 Use the latest version of the Session Replay standalone SDK above version {{sdk_versions:session_replay_standalone}}. For more information, see the [change log](https://github.com/amplitude/Amplitude-TypeScript/blob/v1.x/packages/session-replay-browser/CHANGELOG.md) on GitHub.
@@ -224,23 +222,7 @@ if (nonEUCountryFlagEnabled) {
 }
 ```
 
-## Data retention
-
-Session replay uses existing Amplitude tools and APIs to handle privacy and deletion requests.
-
-{{partial:admonition type="note" heading="Consent management and Session Replay"}}
-While privacy laws and regulations vary across states and countries, certain constants exist, including the requirements to disclose in a privacy notice the categories of personal information you are collecting, the purposes for its use, and the categories of third parties with which personal information is shared. When implementing a session replay tool, you should review your privacy notice to make sure your disclosures remain accurate and complete. And as a best practice, review your notice with legal counsel to make sure it complies with the constantly evolving privacy laws and requirements applicable to your business and personal information data practices.
-{{/partial:admonition}}
-
-### Retention period
-
-If your Amplitude plan includes Session Replay, Amplitude retains raw replay data for 30 days from the date of ingestion. 
-
-If you purchase extra session volume, Amplitude retains raw replay data for 90 days from the date of ingestion. If you need a more strict policy, contact Amplitude support to set the value to 30 days.
-
-Changes to the retention period impact replays ingested after the change. Sessions captured and ingested before a retention period change retain the previous retention period.
-
-Replays that are outside of the retention period aren't viewable in Amplitude.
+{{partial:partials/session-replay/sr-retention}}
 
 ### DSAR API
 
