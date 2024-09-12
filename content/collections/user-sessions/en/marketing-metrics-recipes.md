@@ -6,8 +6,8 @@ this_article_will_help_you:
   - 'Use Amplitude charts to analyze common marketing metrics'
 landing: false
 source: /hc/en-us/articles/23990255180443-Marketing-metrics-recipes
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718945038
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1726161979
 ---
 Amplitude Analytics provides a multitude of insights into the success of your product's marketing efforts. This article highlights the ingredients needed to recreate common marketing metrics using [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) or [User Sessions](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) charts.
 
@@ -197,3 +197,50 @@ If desired, filter results by a specific domain or URL of sessions A and B: 
 This User Sessions chart is set up to calculate the 30-day exit rate for the `Page URL` ampli.com/home. The chart’s group-by property value `Page Title` is seen as different colored lines in the chart. The exit rate for March 4th was 16.1 percent for the `Log In` property value.
 
 ![exitRate_wDomain.png](/docs/output/img/user-sessions/exitrate-wdomain-png.png)
+
+## Performance marketing metrics
+
+Amplitude supports the use of several common performance marketing metrics. [Create these metrics](/docs/analytics/charts/data-tables/data-tables-create-metric#create-and-configure-a-new-metric) by following the recipes in this section.
+
+### Ad network clicks
+* Metric type: `Formula`
+* Event: `Daily ad metric`
+* Grouped by: `ad_metrics.clicks`
+* Formula: `PROPSUM(A)`
+
+![ad-network-clicks-definition.png](/docs/output/img/user-sessions/ad-network-clicks-definition.png)
+
+### Ad network impressions
+* Metric type: `Formula`
+* Event: `Daily ad metric`
+* Grouped by: `ad_metrics.impressions`
+* Formula: `PROPSUM(A)`
+
+### Ad network costs
+* Metric type: `Formula`
+* Event: `Daily ad metric`
+* Grouped by: `ad_metrics.costs`
+* Formula: `PROPSUM(A)`
+
+### Return on ad spending
+* Metric type: `Formula`
+* Event A: `Complete purchase`
+    * Grouped by: `Revenue`
+* Event B: `Daily ad metric`
+    * Grouped by: `ad_metrics.cost`
+* Formula: %: `PROPSUM(A) / PROPSUM(B)`
+
+### Customer acquisition cost
+* Metric type: `Formula`
+* Event A: `Daily ad metric`
+    * Grouped by: `ad_metrics.cost`
+* Event B: `User Sign Up`
+* Formula: $: `PROPSUM(A) / TOTALS(B)`
+
+### Clickthrough rate
+* Metric type: `Formula`
+* Event A: `Daily ad metric`
+    * Grouped by: `ad_metrics.impressions`
+* Event B: `Daily ad metric`
+    * Grouped by: `ad_metrics.clicks`
+* Formula: %: `PROPSUM(A) / PROPSUM(B)
