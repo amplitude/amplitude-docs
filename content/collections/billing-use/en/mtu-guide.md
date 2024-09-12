@@ -8,7 +8,7 @@ this_article_will_help_you:
 landing: true
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1723581207
+updated_at: 1726094463
 landing_blurb: 'Learn about how Amplitude bills with Monthly Tracked Users.'
 ---
 Amplitude customers on Scholarship, Starter, and Plus plans bill according to **monthly tracked user (MTU)** count. This option is also available to customers on Growth and Enterprise plans. 
@@ -37,15 +37,13 @@ If you haven't implemented tracking yet, you can use your monthly active user (M
 
 ## View your MTU use
 
-To view your MTU usage, navigate to *Settings > Plans & Billing*. MTU statistics are visible in their own panel.
-
-![MTUsUsage.png](/docs/output/img/billing-use/mtususage-png.png)
+To view your MTU usage, navigate to *Settings > Organization Settings > Plans & Billing*. MTU statistics are visible in their own panel.
 
 {{partial:admonition type='note'}}
 MTU counts are **not** available for every plan type.
 {{/partial:admonition}}
 
-Sometimes, a single user may count **multiple times** when totaling MTUs. This can happen when a user is logged in, but then later opens the app anonymously on a different device or platform. Because there is no way to connect these two users, they register as distinct MTUs unless the user eventually logs in on all devices. At that point, Amplitude merges their profiles into a single user.
+Sometimes, a single user may count **multiple times** when totaling MTUs. This can happen for users who log in on their usual device, but then later open the app anonymously on a different device or platform. Because there is no way to connect these two users, they register as distinct MTUs unless the user eventually logs in on all devices. At that point, Amplitude merges their profiles into a single user.
 
 It can also happen if a user has two unlinked user IDs and uses both of them in a single month.
 
@@ -72,19 +70,19 @@ MTU limits are defined by the plan your organization is on, or the MTU volume yo
 
 These are each calculated on the last day of each calendar month. Exceeding either limit can result in overage charges. Amplitude alerts you when you are approaching your limit so you can take steps to avoid exceeding it.
 
-### Exceeding your plan’s allowed MTU volume
+### Calculate your organization’s limit of events per MTU
 
-Exceeding your plan limits or purchased MTU limit results in charges for all excess MTUs recorded. 
+Your organization's limit of events per MTU depends on the Amplitude plan you're on. For organizations on the Starter plan, this limit is 1,000 events per MTU. 
 
-For example, if you purchase *n* MTUs, and Amplitude records *n+m* MTUs at the end of the month, you're charged for *m* extra MTUs.
+Amplitude calculates billing based on **total MTU count**. Most of the time, your total MTU count is equal to your **unique MTU count**, which is the number of unique IDs associated with any tracked event triggered this month. If you exceed your monthly limit, Amplitude adds **synthetic MTUs** to your monthly MTU count.
 
-### Exceeding your plan’s events per MTU limit
+Use this formula to calculate your organization's synthetic MTU count:
 
-Regardless of the plan you’re on, you're' be subject to a cap on events per MTU. Amplitude calculates this cumulatively.
+`(Events tracked this month - (Your plan's monthly MTU limit x 1,000)) / 1,000`
 
-For example, if you purchased *n* MTUs and expect to have *x* events per user, when your event volume *k* exceeds *n*(*x*), you could see a charge for the difference based on the formula
+This works out to one synthetic MTU for every 1,000 events over your plan's quota allotment.
 
-`(k - n(x)) / x = number of excess MTUs`
+To calculate your total MTU count for the month, add your unique MTU count to your synthetic MTU count.
 
 ### Exceeding limits on a free plan
 

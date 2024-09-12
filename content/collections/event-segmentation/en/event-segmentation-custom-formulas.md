@@ -6,7 +6,7 @@ source: 'https://help.amplitude.com/hc/en-us/articles/115001163231-Custom-formul
 this_article_will_help_you:
   - 'Understand and use custom formulas in Amplitude to create exactly the analysis you need'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1723651809
+updated_at: 1726001553
 landing: true
 landing_blurb: 'Understand and use custom formulas in Amplitude to create exactly the analysis you need'
 exclude_from_sitemap: false
@@ -15,7 +15,7 @@ In an [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segme
 
 Choose from more than 20 custom formulas to plot the metrics you need. You can plot up to ten formulas on the same chart, separated by semicolons. 
 
-This article will describe the mechanics of custom formulas, with examples of formulas you can use right now.
+This article explains the mechanics of custom formulas, with examples of formulas you can use right now.
 
 {{partial:admonition type='note'}}
 While the Experiment Results chart also uses formula metrics, it does so in a different way than either the Event Segmentation or Data Table charts. To learn more about those differences, see [this Help Center article on using formula metrics in Amplitude's Experiment Results chart](/docs/analytics/charts/experiment-results/experiment-results-use-formula-metrics).
@@ -27,7 +27,7 @@ This feature is available to users on **Plus**, **Growth**, and **Enterprise** *
 
 ## Formula syntax
 
-In your formulas, refer to events selected in the Events Module by their corresponding letter. The functions and the parameters are not case sensitive. You can also perform the following arithmetic operations:
+In your formulas, refer to events selected in the Events Module by their corresponding letter. The functions and the parameters aren't case sensitive. You can also perform the following arithmetic operations:
 
 * Parenthesis ()
 * Addition (+)
@@ -35,7 +35,7 @@ In your formulas, refer to events selected in the Events Module by their corresp
 * Multiplication (\*)
 * Division (/)
 
-For example, the letter A in the formula `UNIQUES(A)` refers to the event `View Item Details` while the letter B in the formula `UNIQUES(B)` refers to the event `Add Item to Cart`. This setup will display the ratio of users who viewed an item's details to users who placed an item in their cart.
+For example, the letter A in the formula `UNIQUES(A)` refers to the event `View Item Details` while the letter B in the formula `UNIQUES(B)` refers to the event `Add Item to Cart`. This setup  displays the ratio of users who viewed an item's details to users who placed an item in their cart.
 
 ![custom_formulas_1.png](/docs/output/img/event-segmentation/custom-formulas-1-png.png)
 
@@ -46,13 +46,13 @@ For example, if you have an event called `Page Name`, the following property val
 * `Tutorial` and `TUTORIAL` (the matching is case sensitive)
 * `1` and `1.0` (non-matching characters)
 
-The order in which you are grouping properties by matters as well. Both events must have the *grouped by* values in the same order; otherwise, you will see a warning that events have no matching group by values.
+The order in which you are grouping properties by matters as well. Both events must have the *grouped by* values in the same order; otherwise, there is a warning that events have no matching group by values.
 
 ![custom_formulas_group_by_error.png](/docs/output/img/event-segmentation/custom-formulas-group-by-error-png.png)
 
 You can also use custom formulas to uncover how many more times users in one cohort trigger a particular event than do users in another cohort.
 
-To compare a metric between two different cohorts or user segments, add the number of the segment to the letter designating the event: `UNIQUES(A1)/UNIQUES(A2)`. This will display a ratio of the performance of your cohorts on the same event as a single plotted line on your graph. 
+To compare a metric between two different cohorts or user segments, add the number of the segment to the letter designating the event: `UNIQUES(A1)/UNIQUES(A2)`. This displays a ratio of the performance of your cohorts on the same event as a single plotted line on your graph. 
 
 ![custom_forumlas_2.png](/docs/output/img/event-segmentation/custom-forumlas-2-png.png)
 
@@ -67,7 +67,7 @@ This section lists available formulas by type: Metric, Aggregation, and Function
 
 ### Metrics formulas
 
-With metrics formulas, you can query on a metric for a particular event you are interested in. These formulas will be color-coded in green. Each metrics formula requires a letter corresponding to the event you're interested in as a parameter.
+With metrics formulas, you can query on a metric for a particular event that interests you. These formulas are color-coded in green. Each metrics formula requires a letter corresponding to the event you're interested in as a parameter.
 
 |                               |                                 |                     |                                   |
 | ----------------------------- | ------------------------------- | ------------------- | --------------------------------- |
@@ -79,7 +79,7 @@ With metrics formulas, you can query on a metric for a particular event you are 
 
 ### Aggregation formulas
 
-Aggregation formulas let you query on a **rolling average or rolling window** for the metric and event you are interested in. These formulas will be color-coded in purple. Each aggregation formula requires **three** components: the metric you are aggregating, the event you are interested in, and the interval to aggregate by.
+Aggregation formulas let you query on a **rolling average or rolling window** for the metric and event that interests you. These formulas are color-coded in purple. Each aggregation formula requires **three** components: the metric you are aggregating, the event that interests you, and the interval to aggregate by.
 
 |                   |                     |                     |                                 |
 | ----------------- | ------------------- | ------------------- | ------------------------------- |
@@ -87,7 +87,7 @@ Aggregation formulas let you query on a **rolling average or rolling window** fo
 
 ### Function formulas
 
-Function formulas let you query on a mathematical function for a particular event and metric you're interested in. These formulas will be color coded in blue. Each function formula requires a value that can be either a constant, or another formula containing an event.
+Function formulas let you query on a mathematical function for a particular event and metric you're interested in. These formulas are color coded in blue. Each function formula requires a value that can be either a constant, or another formula containing an event.
 
 |                 |               |                         |                 |
 | --------------- | ------------- | ----------------------- | --------------- |
@@ -100,9 +100,9 @@ Function formulas let you query on a mathematical function for a particular even
 
 **Syntax:** ACTIVE(event)
 
-* **Event:** Refers to the event you are interested in. This must be a letter that corresponds to an event in the Events card.
+* **Event:** Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card.
 
-The `ACTIVE` formula returns the percent of active users who triggered the event. This is the same as the `Active %` [metric](/docs/analytics/charts/data-tables/data-tables-create-metric) in the Measured card, but here it is displayed in decimal fraction form. This setup will display the percentage of active users who have triggered the `View Item Details` event.
+The `ACTIVE` formula returns the percent of active users who triggered the event. This is the same as the `Active %` [metric](/docs/analytics/charts/data-tables/data-tables-create-metric) in the Measured card, but here it displays in decimal fraction form. This setup displays the percentage of active users who have triggered the `View Item Details` event.
 
 ![custom_formulas_active.png](/docs/output/img/event-segmentation/custom-formulas-active-png.png)
 
@@ -113,25 +113,25 @@ The `ACTIVE` formula returns the percent of active users who triggered the event
 * **Event:** Refers to the revenue event. This must be a letter that corresponds to an event in the Events card.
 * This function will only work if you are grouping by a numerical property on the event.
 
-Returns the aggregate sum of the revenue event property formatted as a currency, divided by the number of unique active users in that same time period. It is equivalent to `PROPSUM(event) / UNIQUES(any active event)`.
+Returns the aggregate sum of the revenue event property formatted as a currency, divided by the number of unique active users in that same time period. It's the same as `PROPSUM(event) / UNIQUES(any active event)`.
 
 For example, the following setup shows the average revenue per active user of a generic e-commerce company:
 
 ![ARPAU_sidecontrols.png](/docs/output/img/event-segmentation/arpau-sidecontrols-png.png)
 
-As you can see in the screenshot above, the `$:` prefix is optional. Its presence simply ensures the output format will be as a currency.
+As you can see in the screenshot above, the `$:` prefix is optional. Its presence simply ensures the output format is a currency.
 
 {{partial:admonition type='note'}}
- ARPAU cannot be used in conjunction with [aggregation formulas](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas). 
+ ARPAU can't be used in conjunction with [aggregation formulas](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas). 
 {{/partial:admonition}}
 
 ### AVG
 
 **Syntax:** AVG(event)
 
-* **Event:** Refers to the event you are interested in. This must be a letter that corresponds to an event in the left module of the chart control panel.
+* **Event:** Refers to the event that interests you. This must be a letter that corresponds to an event in the left module of the chart control panel.
 
-Returns the average number of times the event was triggered. This function is equivalent to `TOTALS(event)/UNIQUES(event)`. This setup will display the ratio of number of times `View Item Details` was triggered to the number of times `Add Item to Cart` was triggered, the average number of times `View
+Returns the average number of times users triggered the event. This function is the same as `TOTALS(event)/UNIQUES(event)`. This setup displays the ratio of number of times `View Item Details` was triggered to the number of times `Add Item to Cart` was triggered, the average number of times `View
  Item Details` was triggered, as well as the average number of times `Add Item
  to Cart` was triggered on the same chart.
 
@@ -141,20 +141,20 @@ Returns the average number of times the event was triggered. This function is eq
 
 **Syntax:** FREQPERCENTILE(event, percentage)
 
-* **Event:** Refers to the event you are interested in. This must be a letter that corresponds to an event in the Events card.
-* **Percentage:** Refers to the percentile you are interested in. This must be a value that is less than or equal to 1.
+* **Event:** Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card.
+* **Percentage:** Refers to the percentile that interests you. This value must be less than or equal to 1.
 
 Returns the inputted [percentile](https://en.wikipedia.org/wiki/Percentile) event frequency across all users. A percentile is a measure that indicates the value below which a given percentage of values fall. For example, the following formula shows the 90th percentile of users who triggered the `View Item Details` event.
 
 ![c_f_freqpercentile.png](/docs/output/img/event-segmentation/c-f-freqpercentile-png.png)
 
-You can then take this information and create a [behavioral cohort](/docs/analytics/behavioral-cohorts) of your power users and further analyze them to see what distinguishes them from users who are not in the cohort.
+You can then take this information and create a [behavioral cohort](/docs/analytics/behavioral-cohorts) of your power users and further analyze them to see what distinguishes them from users who aren't in the cohort.
 
 ### HIST
 
 **Syntax:** HIST(event)
 
-* **Event:** Refers to the event you are interested in. This must be a letter that corresponds to an event in the Events card.
+* **Event:** Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card.
 
 Returns the distribution of the event frequency per unique user over the selected time period. The following setup displays the distribution of event frequency for the `Complete Purchase` event.
 
@@ -166,7 +166,7 @@ The syntax for HIST varies slightly for the [User Sessions chart](https://help.a
 
 **Syntax**: HIST(session)
 
-* **Session:** Refers to the session you are interested in. This must be a letter that corresponds to a session in the Session card.
+* **Session:** Refers to the session that interests you. This must be a letter that corresponds to a session in the Session card.
 
 Returns the distribution of session durations (in seconds) over the selected time period. The following setup displays the distribution of the durations of all sessions.
 
@@ -176,14 +176,14 @@ Returns the distribution of session durations (in seconds) over the selected tim
 
 **Syntax:** PERCENTILE(event, percentage)
 
-* **Event:** Refers to the event you are interested in. This must be a letter that corresponds to an event in the Events card.
-* **Percentage:** Refers to the percentile you are interested in. This must be a value that is less than or equal to 1.
+* **Event:** Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card.
+* **Percentage:** Refers to the percentile that interests you. This value must be less than or equal to 1.
 
 {{partial:admonition type='note'}}
 This function will only work if you are grouping by a numerical property on the event.
 {{/partial:admonition}}
 
-Returns inputted [percentile](https://en.wikipedia.org/wiki/Percentile) of the property being grouped by. For example, the following formula will return the 90th percentile for revenue of all `Complete Purchase` events.
+Returns inputted [percentile](https://en.wikipedia.org/wiki/Percentile) of the property being grouped by. For example, the following formula returns the 90th percentile for revenue of all `Complete Purchase` events.
 
 ![c_f_percentile.png](/docs/output/img/event-segmentation/c-f-percentile-png.png)
 
@@ -193,16 +193,16 @@ Another example where the PERCENTILE formula can be useful is if you're tracking
 
 **Syntax:** PROPAVG(event)
 
-* **Event:** Refers to the event you are interested in. This must be a letter that corresponds to an event in the Events card.
-* This function will only work if you are grouping by a numerical property on the event. If grouping by multiple properties, the formula will perform the calculation with the first group-by clause.
+* **Event:** Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card.
+* This function will only work if you are grouping by a numerical property on the event. If grouping by multiple properties, the formula runs the calculation with the first group-by clause.
 
-Returns the average of the property values you are grouping by. This function is equivalent to `PROPSUM(event)/TOTALS(event)`.
+Returns the average of the property values you are grouping by. This function is the same as `PROPSUM(event)/TOTALS(event)`.
 
 {{partial:admonition type='note'}}
  The PROPAVG formula ignores events where the selected property value is `(none)`.
 {{/partial:admonition}}
 
-The following setup will show the average of the revenue generated by completed purchases on a given day.
+The following setup displays the average of the revenue generated by completed purchases on a given day.
 
 ![propavg_sidecontrols.png](/docs/output/img/event-segmentation/propavg-sidecontrols-png.png)
 
@@ -210,54 +210,53 @@ The following setup will show the average of the revenue generated by completed 
 
 **Syntax:** PROPCOUNT(event)
 
-* **Event:** Refers to the event you are interested in. This must be a letter that corresponds to an event in the Events card. If grouping by multiple properties, the formula will perform the calculation with the first group by clause.
+* **Event:** Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card. If grouping by multiple properties, the formula runs the calculation with the first group by clause.
 
-Returns the number of distinct property values for the property the event is grouped by. In this setup, the formula will retrieve the number of different departments covering all the items for which details were viewed:
+Returns the number of distinct property values for the property the event is grouped by. In this setup, the formula retrieves the number of different departments covering all the items for which details were viewed:
 
 ![propcount_sidecontrols.png](/docs/output/img/event-segmentation/propcount-sidecontrols-png.png)
 
-Note that `PROPCOUNT` is an **estimate** of distinct property values. This estimate is generated by a [HyperLogLog algorithm,](https://en.wikipedia.org/wiki/HyperLogLog) and its accuracy depends on amount of data it has to work with. Expect a relative error in the range of 0.1% for less than 12,000 unique values, and up to 0.5% for more than 12,000 unique property values, depending on the cardinality of the property. 
+Note that `PROPCOUNT` is an **estimate** of distinct property values. This estimate comes from a [HyperLogLog algorithm,](https://en.wikipedia.org/wiki/HyperLogLog) and its accuracy depends on amount of data it has to work with. Expect a relative error in the range of 0.1% for less than 12,000 unique values, and up to 0.5% for more than 12,000 unique property values, depending on the cardinality of the property. 
 
 ### PROPCOUNTAVG
 
 **Syntax:** PROPCOUNTAVG(event)
 
-* **Event:** Refers to the event you are interested in. This must be a letter that corresponds to an event in the Events card. If grouping by multiple properties, the formula will perform the calculation with the first group-by clause.
+* **Event:** Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card. If grouping by multiple properties, the formula runs the calculation with the first group-by clause.
 
 Returns the average number of distinct values each user has for a specified property.
 
-For example, imagine you're interested in the average number of song genres your music app subscribers listen to. Every time a song is played, a `Play Song or
- Video` event will trigger; each played song also captures a `Genre_Type` event property. Running `PROPCOUNTAVG` on `Play Song or Video` grouped by `Genre_Type` will give you the average number of unique `Genre_Type` values users who fire `PlaySong or Video` have.
+For example, imagine you're interested in the average number of song genres your music app subscribers listen to. Every time a user plays a song, a `Play Song or Video` event triggers; each played song also captures a `Genre_Type` event property. Running `PROPCOUNTAVG` on `Play Song or Video` grouped by `Genre_Type` gives you the average number of unique `Genre_Type` values users who fire `PlaySong or Video` have.
 
 ### PROPHIST
 
 **Syntax:** PROPHIST(event)
 
-* **Event:** Refers to the event you are interested in. This must be a letter that corresponds to an event in the Events card.
-* This function will only work if you are grouping by a numerical property on the event. If grouping by multiple properties, the formula will perform the calculation with the first group by clause.
+* **Event:** Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card.
+* This function will only work if you are grouping by a numerical property on the event. If grouping by multiple properties, the formula runs the calculation with the first group by clause.
 
-Returns the distribution of the property values you are grouping by over the selected time period. The following setup will display the distribution of revenue over the last 30 days.
+Returns the distribution of the property values you are grouping by over the selected time period. The following setup displays the distribution of revenue over the last 30 days.
 
-![prophist_sidecontrols.png](/docs/output/img/event-segmentation/prophist-sidecontrols-png.png)
+![prophist_sidecontrols.png](/docs/output/img/event-segmentation/prophist.png)
 
 ### PROPMAX
 
 **Syntax**: PROPMAX(event)
 
-* **Event:** returns the maximum value of the property you are grouping the specified event by. The property must be numeric. If grouping by multiple properties, the calculation will be performed using the first group-by clause.
+* **Event:** returns the maximum value of the property you are grouping the specified event by. The property must be numeric. If grouping by multiple properties, the calculation runs using the first group-by clause.
 
 ### PROPMIN
 
 **Syntax**: PROPMIN(event)
 
-* **Event:** returns the minimum value of the property you are grouping the specified event by. The property must be numeric. If grouping by multiple properties, the calculation will be performed using the first group-by clause.
+* **Event:** returns the minimum value of the property you are grouping the specified event by. The property must be numeric. If grouping by multiple properties, the calculation runs using the first group-by clause.
 
 ### PROPSUM
 
 **Syntax:** PROPSUM(event)
 
-* **Event:** Refers to the event you are interested in. This must be a letter that corresponds to an event in the Events card. The event must be grouped by the property you'd like to sum.
-* This function will only work if you are grouping by a numerical property on the event. If grouping by multiple properties, the formula will perform the calculation with the first group-by clause.
+* **Event:** Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card. The event must be grouped by the property you'd like to sum.
+* This function will only work if you are grouping by a numerical property on the event. If grouping by multiple properties, the formula runs the calculation with the first group-by clause.
 
 Returns the sum of the property values you are grouping the specified event by. For example, this visualization shows the total revenue generated by the `Complete Purchase` event.
 
@@ -267,7 +266,7 @@ The syntax for PROPSUM varies slightly for the [User Sessions chart](https://hel
 
 **Syntax**: PROPSUM(session)
 
-* **Session:** Refers to the session you are interested in. This must be a letter that corresponds to a session in the Session card.
+* **Session:** Refers to the session that interests you. This must be a letter that corresponds to a session in the Session card.
 
 Returns the total time (sum of the duration in seconds) of the specified session. For example, the following chart shows the total time (in seconds) summed across all sessions.
 
@@ -280,19 +279,19 @@ Returns the total time (sum of the duration in seconds) of the specified session
 * **Event:** Refers to the revenue event. This must be a letter that corresponds to an event in the Event card.
 * This function will only work if you are grouping by a numerical property on the event. Also,
 
-Returns the aggregate sum of the property, formatted as a currency. It is equivalent to `PROPSUM(event)`. For example, the following setup shows the total revenue by day generated by purchases:
+Returns the aggregate sum of the property, formatted as a currency. It's the same as `PROPSUM(event)`. For example, the following setup shows the total revenue by day generated by purchases:
 
 ![revtotal_sidecontrols.png](/docs/output/img/event-segmentation/revtotal-sidecontrols-png.png)
 
-As you can see in the screenshot above, the `$:` prefix is optional. Its presence simply ensures the output format will be as a currency.
+As you can see in the screenshot above, the `$:` prefix is optional. Its presence simply ensures the output format is a currency.
 
 ### TOTALS
 
 **Syntax:** TOTALS(event)
 
-* **Event:** Refers to the event you are interested in. This must be a letter that corresponds to an event in the left module of the chart control panel.
+* **Event:** Refers to the event that interests you. This must be a letter that corresponds to an event in the left module of the chart control panel.
 
-Returns the total number of times the event was triggered. This setup will show the total number of times an item's details were viewed, plus the total number of times an item was added to a cart.
+Returns the total number of times a user triggered the event. This setup shows the total number of times users viewed an item's details, plus the total number of times users added an item to a cart.
 
 ![custom_events_totals.png](/docs/output/img/event-segmentation/custom-events-totals-png.png)
 
@@ -300,7 +299,7 @@ Returns the total number of times the event was triggered. This setup will show 
 
 **Syntax:** UNIQUES(event)
 
-* **Event:** Refers to the event you are interested in. This must be a letter that corresponds to an event in the Events card.
+* **Event:** Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card.
 
 Returns the number of unique users who triggered the event. For example, the following setup shows the ratio of users who viewed an item's details to the users who added an item to their cart.
 
@@ -310,9 +309,9 @@ The syntax for UNIQUES varies slightly for the [User Sessions chart](https://hel
 
 **Syntax**: UNIQUES(session)
 
-* **Session:** Refers to the session you are interested in. This must be a letter that corresponds to a session in the Session card.
+* **Session:** Refers to the session that interests you. This must be a letter that corresponds to a session in the Session card.
 
-Returns the number of unique users who engaged in session(s) defined by the specified session. For example, the following setup shows the ratio of users who engaged in sessions longer than one minute to the users who engaged in sessions that contained at least one `Search Items` event.
+Returns the number of unique users who engaged in sessions defined by the specified session. For example, the following setup shows the ratio of users who engaged in sessions longer than one minute to the users who engaged in sessions that contained at least one `Search Items` event.
 
 ![userSessionsUNIQUES.png](/docs/output/img/event-segmentation/usersessionsuniques-png.png)
 
@@ -320,9 +319,9 @@ Returns the number of unique users who engaged in session(s) defined by the spec
 
 **Syntax:** EVENTTOTALS(session)
 
-* **Session:** Refers to the session you are interested in. This must be a letter that corresponds to a session in the Sessions card.
+* **Session:** Refers to the session that interests you. This must be a letter that corresponds to a session in the Sessions card.
 
-This formula metric is **only** available in the [User Sessions chart](https://help.amplitude.com/hc/en-us/articles/231275508-The-User-Sessions-chart-Track-engagement-frequency-and-duration). Returns the total number of events that were triggered during each session.
+This formula metric is **only** available in the [User Sessions chart](https://help.amplitude.com/hc/en-us/articles/231275508-The-User-Sessions-chart-Track-engagement-frequency-and-duration). Returns the total number of events triggered during each session.
 
 For example, the following setup shows the number of `Page Viewed` events across all sessions.
 
@@ -332,7 +331,7 @@ For example, the following setup shows the number of `Page Viewed` events across
 
 **Syntax:** SESSIONTOTALS(session)
 
-* **Session:** Refers to the session you are interested in. This must be a letter that corresponds to a session in the Sessions card.
+* **Session:** Refers to the session that interests you. This must be a letter that corresponds to a session in the Sessions card.
 
 This formula metric is **only** available in the [User Sessions chart](https://help.amplitude.com/hc/en-us/articles/231275508-The-User-Sessions-chart-Track-engagement-frequency-and-duration). It returns the number of sessions defined by the specified session.
 
@@ -346,22 +345,22 @@ For example, the following setup shows the total number of sessions by day over 
 
 **Syntax:** CUMSUM(metric, event)
 
-* **Metric:** The metric you wish to aggregate. This will be one of the metrics formulas listed above.
+* **Metric:** The metric you wish to aggregate. This is one of the metrics formulas listed above.
 
-Returns the metric for selected event with a running total of days/weeks/months over the chart's timeframe. 
+Returns the metric for selected event with a running total of days/weeks/months over the chart's time frame. 
 
-For example, this chart shows a daily [cumulative sum](https://help.amplitude.com/hc/en-us/articles/14056975720091#h_f2ff0863-0770-4a12-9bde-89311a099c64) of revenue from `Complete Purchase` events in the last 30 days. The data point for February 22nd will be a sum of revenue generated on February 20th, 21st, and 22nd.
+For example, this chart shows a daily [cumulative sum](https://help.amplitude.com/hc/en-us/articles/14056975720091#h_f2ff0863-0770-4a12-9bde-89311a099c64) of revenue from `Complete Purchase` events in the last 30 days. The data point for February 22nd is a sum of revenue generated on February 20th, 21st, and 22nd.
 
 ![CUMSUM_sidecontrols.png](/docs/output/img/event-segmentation/cumsum-sidecontrols-png.png)
 
-For `CUMSUM(UNIQUES,A)`, a deduplicated count of unique users will be returned for each data point. 
+`CUMSUM(UNIQUES,A)` returns a deduplicated count of unique users for each data point. 
 
 ### ROLLAVG
 
 **Syntax:** ROLLAVG(metric, event, # of intervals)
 
-* **Metric:** The metric you wish to aggregate. This will be one of the metrics formulas listed above.
-* **Event:** Refers to the event you are interested in. This must be a letter that corresponds to an event in the Events card.
+* **Metric:** The metric you wish to aggregate. This is one of the metrics formulas listed above.
+* **Event:** Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card.
 * **Number of intervals:** The number of five-minute intervals, hours, days, weeks, or months to include in the rolling average. For example, a daily chart allows rolling averages over daily intervals only. The maximum ranges for a rolling average are 36 five-minute intervals (this works out to three hours), 72 hours, 90 days, 12 weeks, or 12 months.
 
 Returns the metric for the event selected with a [rolling average](https://help.amplitude.com/hc/en-us/articles/14056975720091) over the interval selected. For example, the following chart shows you your weekly rolling average superimposed on top of your daily active users.
@@ -376,11 +375,11 @@ The blue line in this chart shows daily active users and the green line shows th
 
 **Syntax:** ROLLWIN(metric, event, # of five-minute intervals/hours/days/weeks/months)
 
-* **Metric:** The metric you wish to aggregate. This will be one of the metrics formulas listed above.
-* **Event:** Refers to the event you are interested in. This must be a letter that corresponds to an event in the Events card.
+* **Metric:** The metric you wish to aggregate. This is one of the metrics formulas listed above.
+* **Event:** Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card.
 * **Number of intervals:** The number of five-minute intervals, hours, days, weeks, or months to include in the rolling average. For example, a daily chart allows rolling averages over daily intervals only. The maximum ranges for a rolling average are 36 five-minute intervals (this works out to three hours), 72 hours, 90 days, 12 weeks, or 12 months.
 
-Returns the metric for the event selected with a [rolling window](/docs/analytics/charts/event-segmentation/event-segmentation-interpret-2#rolling-windows) of the number of days, weeks, or months you specify, where a rolling window aggregation is applied *after* a cohort filter, if one is in use. 
+Returns the metric for the event selected with a [rolling window](/docs/analytics/charts/event-segmentation/event-segmentation-interpret-2#rolling-windows) of the number of days, weeks, or months you specify, where a rolling window aggregation applies *after* a cohort filter, if one is in use. 
 
 For example, this chart first calculates the new users for each time interval and then performs the rolling window aggregation on top of that.
 
@@ -392,11 +391,11 @@ The day (or week, or month) the chart displays is the last day of the window.
 
 **Syntax**: ROLLWINBEFORE(metric, event, # of five-minute intervals/hours/days/weeks/months)
 
-* **Metric**: The metric you wish to aggregate. This will be one of the metrics formulas listed above.
-* **Event**: Refers to the event you are interested in. This must be a letter that corresponds to an event in the Events card.
+* **Metric**: The metric you wish to aggregate. This is one of the metrics formulas listed above.
+* **Event**: Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card.
 * **Number of intervals**: The number of five-minute intervals, hours, days, weeks, or months to include in the rolling average. For example, a daily chart allows rolling averages over daily intervals only. The maximum ranges for a rolling average are 36 five-minute intervals (this works out to three hours), 72 hours, 90 days, 12 weeks, or 12 months.
 
-Returns the metric for the event selected with a [rolling window](https://help.amplitude.com/hc/en-us/articles/14056975720091#h_d48f96e2-797c-45d9-bf87-6e5a5ac8ad28) of however many days/weeks/months inputted, where a rolling window aggregation is applied *before* a cohort filter, if one is in use. 
+Returns the metric for the event selected with a [rolling window](https://help.amplitude.com/hc/en-us/articles/14056975720091#h_d48f96e2-797c-45d9-bf87-6e5a5ac8ad28) of however many days/weeks/months inputted, where a rolling window aggregation applies *before* a cohort filter, if one is in use. 
 
 For example, this chart first calculates the rolling active users for each time interval and then applies the new user cohort filter on top of that.
 
@@ -408,9 +407,9 @@ For example, this chart first calculates the rolling active users for each time 
 
 **Syntax:** EXP(value)
 
-* **Value:** The value can be a constant or another function (e.g. the value you pass in could be `UNIQUES` of an event). The maximum value accepted is 700.
+* **Value:** The value can be a constant or another function (for example, the value you pass in could be `UNIQUES` of an event). The maximum value accepted is 700.
 
-Returns [e](https://en.wikipedia.org/wiki/E_(mathematical_constant)) to the power of value you have specified. For example, here we are computing e to the power of the average number of times users purchase tickets.
+Returns [e](https://en.wikipedia.org/wiki/E_(mathematical_constant)) to the power of value you have specified. For example, this formula computes *e* to the power of the average number of times users purchase tickets.
 
 ![expavg_sidecontrols.png](/docs/output/img/event-segmentation/expavg-sidecontrols-png.png)
 
@@ -418,7 +417,7 @@ Returns [e](https://en.wikipedia.org/wiki/E_(mathematical_constant)) to the po
 
 **Syntax: LN**(value)
 
-* **Value:** The value can be a constant or another function (e.g. the value you pass in could be `UNIQUES` of an event).
+* **Value:** The value can be a constant or another function (for example the value you pass in could be `UNIQUES` of an event).
 
 Returns the [natural logarithm](https://en.wikipedia.org/wiki/Natural_logarithm) of the value. This is logarithm to the base of mathematical constant [e](https://en.wikipedia.org/wiki/E_(mathematical_constant)). For example, `LN(UNIQUES(A))` would calculate the natural logarithm of the number of unique users who triggered event A.
 
@@ -426,10 +425,10 @@ Returns the [natural logarithm](https://en.wikipedia.org/wiki/Natural_logarithm
 
 **Syntax:** LOG(value, base)
 
-* **Value:** The value can be a constant or another function (e.g. the value you pass in could be `TOTALS` of an event).
-* **Base:** A constant. The base must be a constant and cannot contain another function.
+* **Value:** The value can be a constant or another function (for example the value you pass in could be `TOTALS` of an event).
+* **Base:** A constant. The base must be a constant and can't contain another function.
 
-Returns the [logarithm](https://en.wikipedia.org/wiki/Logarithm) of the value to the base. For example, the following formula will return the logarithm of the count of unique active users to base 3.
+Returns the [logarithm](https://en.wikipedia.org/wiki/Logarithm) of the value to the base. For example, the following formula returns the logarithm of the count of unique active users to base 3.
 
 ![log_sidecontrols.png](/docs/output/img/event-segmentation/log-sidecontrols-png.png)
 
@@ -437,9 +436,9 @@ Returns the [logarithm](https://en.wikipedia.org/wiki/Logarithm) of the value 
 
 **Syntax:** LOG10(value)
 
-* **Value:** The value can be a constant or another function (e.g. the value you pass in could be `AVG` of an event).
+* **Value:** The value can be a constant or another function (for example the value you pass in could be `AVG` of an event).
 
-Returns the [logarithm](https://en.wikipedia.org/wiki/Common_logarithm) of the value to base 10. For example, the following formula will return the logarithm of the average number of times `Complete Purchase` was triggered to base 10.
+Returns the [logarithm](https://en.wikipedia.org/wiki/Common_logarithm) of the value to base 10. For example, the following formula returns the logarithm of the average number of times users triggered `Complete Purchase` to base 10.
 
 ![log10_sidecontrols.png](/docs/output/img/event-segmentation/log10-sidecontrols-png.png)
 
@@ -447,8 +446,8 @@ Returns the [logarithm](https://en.wikipedia.org/wiki/Common_logarithm) of the 
 
 **Syntax:** POWER(value, exponent)
 
-* **Value:** The value can be a constant or another function (e.g. the value you pass in could be `TOTALS` of an event).
-* **Exponent:** A constant. The exponent must be a constant and cannot contain another function.
+* **Value:** The value can be a constant or another function (for example the value you pass in could be `TOTALS` of an event).
+* **Exponent:** A constant. The exponent must be a constant and can't contain another function.
 
 Returns the inputted value to the power of the exponent specified. For example, `POWER(UNIQUES(A), 2)` returns the number of unique users who triggered event A.
 
@@ -456,7 +455,7 @@ Returns the inputted value to the power of the exponent specified. For example, 
 
 **Syntax: SQRT(value)**
 
-* **Value:** The value can be a constant or another function (e.g. the value you pass in could be AVG of an event).
+* **Value:** The value can be a constant or another function (for example the value you pass in could be AVG of an event).
 
 Returns the [square root](https://en.wikipedia.org/wiki/Square_root) of the value. For example, `SQRT(TOTALS(A))` would return the square root of the total number of times users triggered event A.
 
@@ -464,9 +463,9 @@ Returns the [square root](https://en.wikipedia.org/wiki/Square_root) of the valu
 
 **Syntax:** TRENDLINE(value)
 
-* **Value:** The value can be a constant or another function (e.g. the value you pass in could be `UNIQUES` of an event).
+* **Value:** The value can be a constant or another function (for example the value you pass in could be `UNIQUES` of an event).
 
-Returns the trendline of the value. This is calculated with [ordinary least-squares linear regression](https://en.wikipedia.org/wiki/Ordinary_least_squares). It is highly recommended that you plot another custom formula alongside this one, so you can compare them Otherwise, the `TRENDLINE` function will simply give you a straight line with no context on a chart.
+Returns the [ordinary least-squares linear regression](https://en.wikipedia.org/wiki/Ordinary_least_squares) trendline of the value. You should strongly consider plotting another custom formula alongside this one, so you can compare them. Otherwise, the `TRENDLINE` function  simply gives you a straight line with no context on a chart.
 
 For example, use this function to see the trendline of number of users who purchase a song or video and compare it to the unique number of users.
 

@@ -9,9 +9,9 @@ this_article_will_help_you:
   - 'Create a chart in Amplitude and understand the components that make it work'
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1716572296
+updated_at: 1726001698
 ---
-**Charts** are the heart of almost any Amplitude analysis. To create a new chart, click *Create New > Analysis*, then select a new chart type from the Charts flyout.
+**Charts** are the heart of almost any Amplitude analysis. To create a new chart, click *Create > Chart*, then select a new chart type from the Charts fly-out.
 
 ### Feature availability
 
@@ -22,6 +22,8 @@ This feature is available to users on **all Amplitude plans**.
 This feature is **limited** for users on **Starter plans**. 
 
 * Organizations on a Starter plan can save up to ten charts
+* Organizations on a Starter plan can query up to one year’s worth of data
+* Organizations on a Plus plan can query up to two years’ worth of data
 
 For a high-level overview of each chart type, check out this [overview of charts and features](/docs/analytics/charts/find-the-right-chart).
 
@@ -33,12 +35,12 @@ To save your chart, click *Save*.
 
 If this is your first time saving your chart, fill in all the relevant information in the Save modal that appears. Give your chart a name and description, add it to a dashboard or notebook, and specify whether you want others in your organization to be able to find and view your dashboard.
 
-![create_chart_3.png](/docs/output/img/get-started/create_chart_3.png)
+![create_a_chart_1.png](/docs/output/img/get-started/create-a-chart-1.png)
 
 Once you've saved your chart, the *More* drop-down menu offers several options for managing and working with your chart:
 
 * **Unlisted:** This option enables other members of your organization to find your chart. Keep in mind that admins and managers can always find saved charts, whether they're listed or unlisted.
-* **Open Notebook View:** This opens the notebook flyout panel, where you can preview your chart in notebook format. You can also add your chart to a [notebook](/docs/analytics/notebooks) from here, by selecting the notebook you want and clicking *+ Add chart to notebook*.
+* **Open Notebook View:** This opens the notebook fly-out panel, where you can preview your chart in notebook format. You can also add your chart to a [notebook](/docs/analytics/notebooks) from here, by selecting the notebook you want and clicking *+ Add chart to notebook*.
 * **Export:** This enables you to share your chart as a PNG, PDF, CSV, or [shared link](/docs/analytics/share-external).
 * **Save As:** This lets you save a new copy of your chart.
 * **Move:** This lets you move your chart to a different space or folder.
@@ -48,7 +50,5 @@ Once you've saved your chart, the *More* drop-down menu offers several options f
 * **Archive:** You should archive a chart when it's no longer relevant to your analyses. Users can still search for archived charts in Search. Archiving a chart disables all [shared links](/docs/analytics/share-external) associated with that chart. However, when the chart is un-archived, the shared links reactivate.
 
 Once you’ve populated a chart with data, you can zoom in on it by dragging diagonally across the chart and creating a rectangle over the section of the chart you'd like to view in more detail. Restore the full view by clicking *Reset zoom*.
-
-![create_and_save_charts_1.gif](/docs/output/img/get-started/create_and_save_charts_1.gif)
 
 **Next:** [Keep your work organized with spaces](/docs/get-started/spaces).

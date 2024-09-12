@@ -518,9 +518,10 @@ The response is a JSON object with this schema:
 
 | Parameter | Description |
 | --- | --- |
+| `http_code` | Integer. Provides the HTTP error, if available.
+| `type` | String. Describes the type of error. |
 | `message` | String. Describes the error. |
-| `code` | Integer. Internal error code. |
-| `metadata` | JSON object. For bad request error (400) with invalid ID while `skip_invalid_ids=false`, this field has the `cohort_id` and `memberships_result` (list of membership JSON). The `memberships_result’`s `skipped_ids` can help identify which IDs were invalid in which operation. For other errors, this field isn't present. |
+| `metadata` | JSON object. Describes in more detail the cause of the error. For example, which user ID values are invalid. |
 
 ## Update cohort membership
 

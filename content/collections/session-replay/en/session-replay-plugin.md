@@ -231,25 +231,7 @@ if (nonEUCountryFlagEnabled) {
 }
 ```
 
-
-
-## Data retention
-
-Session replay uses existing Amplitude tools and APIs to handle privacy and deletion requests.
-
-{{partial:admonition type="note" heading="Consent management and Session Replay"}}
-While privacy laws and regulations vary across states and countries, certain constants exist, including the requirements to disclose in a privacy notice the categories of personal information you are collecting, the purposes for its use, and the categories of third parties with which personal information is shared. When implementing a session replay tool, you should review your privacy notice to make sure your disclosures remain accurate and complete. And as a best practice, review your notice with legal counsel to make sure it complies with the constantly evolving privacy laws and requirements applicable to your business and personal information data practices.
-{{/partial:admonition}}
-
-### Retention period
-
-If your Amplitude plan includes Session Replay, Amplitude retains raw replay data for 30 days from the date of ingestion. 
-
-If you purchase extra session volume, Amplitude retains raw replay data for 90 days from the date of ingestion. If you need a more strict policy, contact Amplitude support to set the value to 30 days.
-
-Changes to the retention period impact replays ingested after the change. Sessions captured and ingested before a retention period change retain the previous retention period.
-
-Replays that are outside of the retention period aren't viewable in Amplitude.
+{{partial:partials/session-replay/sr-retention}}
 
 ### DSAR API
 

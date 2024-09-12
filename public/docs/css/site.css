@@ -2194,6 +2194,8 @@ line-height: 1.25rem;
         margin: 0 0 15px;
         text-align: center
     }
+}th {
+    text-align: left;
 }.hover\:h-6:hover {
   height: 1.5rem;
 }.hover\:h-8:hover {
@@ -2298,4 +2300,3 @@ line-height: 1.25rem;
     height: 8rem;
   }
 }
-

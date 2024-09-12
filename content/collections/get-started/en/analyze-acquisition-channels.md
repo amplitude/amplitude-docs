@@ -8,7 +8,7 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1716571204
+updated_at: 1724881324
 ---
 Understanding how many and where your customers are coming from is crucial for any business, but particularly those in the e-commerce sector. Amplitude helps you understand how many customers are finding your store, how effective different campaigns are at creating new revenue, and which channels drive the most engagement.
 
@@ -29,19 +29,21 @@ You can customize this or any template by first converting it into a **dashboard
 
 To turn the template into a dashboard, follow these steps:
 
-1. From the *Replace Projects* dropdown, select the Amplitude project you’ll want to use this dashboard to track. If you want it to track the current project, just leave it as-is.
-2. From the *Replace Events* dropdowns, select the events you want to use in place of `New User` and `Any Active Event`.  
-  
-If you want to replace the New User event, you should choose an event that signals activity in your product from a new user—for example, `User Sign Up` or `Account Registration`.  
-  
-If you want to replace the `Any Active User` event with something more specific, scroll until you find the event you’re interested in and select it.  
-  
-For example, you could select a page view / navigation event to generate an understanding of traffic as it enters your site, and general navigation throughout. Or if you’re more interested in identifying traffic sources, you could select a property of your page view / navigation event that tracks the user's source. This is often a UTM parameter like `utm_source`.  
-  
-You are **not required** to replace either the New User or the Any Active Event events if you’d prefer not to.
-3. Click *Save As New Dashboard* and select *Keep and display saved replacement parameters*. Then click *Next*.
-4. Give your new dashboard a name and select a location to save it in. Then click *Save*.
+1. From the dropdown in the upper left, select the Amplitude project you want this dashboard to track. If you want it to track the current project, just leave it as-is.
+2. Under *Events*, select the events you want to use for the charts in this dashboard. The E-Commerce template is set up to track events for:
 
-Your dashboard is now ready for use.
+    - **Page View / Navigation**
+    - **Viewing Item**
+    - **Adding to Cart**
+    - **Completing Purchase**
+    - As well as properties for **Traffic Source**
+  
+For example, you could select a page view / navigation event to generate an understanding of traffic as it enters your site, and general navigation throughout. Or if you’re more interested in identifying traffic sources, you could select a property of your page view / navigation event that tracks the user's source. This is often a UTM parameter like `utm_source`.
+
+You don't have to supply an event or property for anything you aren't ready to track right now. 
+  
+3. Click *Save As Dashboard*, give your new dashboard a name, and select a location to save it in. Then click *Save*.
+
+Your dashboard is now ready to use.
 
 Check out [this article to learn more about dashboards](/docs/analytics/dashboard-create), and [this article to learn more about templates in Amplitude](/docs/analytics/templates).
