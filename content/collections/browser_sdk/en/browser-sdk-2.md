@@ -37,18 +37,30 @@ When you use the script loader and enable Autocapture, Browser SDK track interac
 ```bash
 npm install @amplitude/analytics-browser
 ```
-Import Amplitude into your project
+Import Amplitude into your project. When you use the script loader and enable Autocapture, Browser SDK track interactions on your site automatically. For more information, see [Autocapture](#autocapture).
 ```js
 import * as amplitude from '@amplitude/analytics-browser';
+
+amplitude.init('AMPLITUDE_API_KEY', {
+  autocapture: { //[tl! ~~:2]
+    elementInteractions: true
+  }
+});
 ```
 {{/partial:tab}}
 {{partial:tab name="yarn"}}
 ```bash
 yarn add @amplitude/analytics-browser
 ```
-Import Amplitude into your project
+Import Amplitude into your project. When you use the script loader and enable Autocapture, Browser SDK track interactions on your site automatically. For more information, see [Autocapture](#autocapture).
 ```js
 import * as amplitude from '@amplitude/analytics-browser';
+
+amplitude.init('AMPLITUDE_API_KEY', {
+  autocapture: { //[tl! ~~:2]
+    elementInteractions: true
+  }
+});
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
