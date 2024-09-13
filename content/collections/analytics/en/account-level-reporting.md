@@ -113,7 +113,13 @@ Clicking on an account will take you to that account’s page, where you can vie
 
 ![account_level_account_page.png](/docs/output/img/analytics/account_level_account_page.png)
 
-You will find the account’s most recent properties in the top panel. The account’s properties can be set three different ways: the [Group Identify API](https://www.docs.developers.amplitude.com/analytics/apis/group-identify-api/), the [Salesforce integration](/docs/data/source-catalog/salesforce), and by using Event Segmentation to create dynamic properties. These properties can be used to describe the account as whole (e.g. `30 day active users`, `account
+Find the account’s most recent properties in the top panel. Set the account's properties with one of the following:
+
+- the [Group Identify API](/docs/apis/analytics/group-identify)
+- the [Salesforce integration](/docs/data/source-catalog/salesforce)
+- Event Segmentation to create dynamic properties. 
+
+Use these properties to describe the account as whole (for example, `30 day active users`, `account manager`, `plan type`, or `renewal date`)
 
 If you're using the User Look-up to verify events and the properties set with them, they will not be visible in the *Info* view. You can find them by clicking *Raw* instead.
 
