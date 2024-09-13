@@ -95,5 +95,5 @@ To access the *Release Timeline*, follow these steps:
 3. Open the *Releases* tab.
 
 {{partial:admonition type='note'}}
-The release timeline view only populates new versions in real time. When backfilling historical data, these releases aren't considered new, as they happened in the past. Any backfilled releases can only be added manually to the timeline.
+The release timeline view only populates new versions in real time. When backfilling historical data, Amplitude doesn't consider these releases to be new, as they happened in the past. You must manually add any backfilled releases to the timeline.
 {{/partial:admonition}}
