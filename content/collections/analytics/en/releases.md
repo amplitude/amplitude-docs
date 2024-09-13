@@ -20,7 +20,7 @@ This feature is available to users on **some Amplitude plans only**. See the [pr
 
 ## Create a release
 
-Amplitude automatically creates releases for **all customers on paid plans**, but you can also create them manually.
+Amplitude automatically creates releases for **all customers on paid plans**, but you can create them manually.
 
 ### Automated releases
 
