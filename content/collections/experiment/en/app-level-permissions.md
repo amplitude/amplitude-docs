@@ -90,3 +90,7 @@ This table describes the various permissions included with each permission level
 | Edit project role        |        |        | Y                 | Y           |
 | Add user to organization |        |        |                   | Y           |
 | Edit organization role   |        |        |                   | Y           |
+
+| **Other**                | Viewer | Member | Manager (Project) | Admin (Org) |
+| ------------------------ | ------ | ------ | ----------------- | ----------- |
+| View Project API Key     | Y      | Y      | Y                 | Y           |
