@@ -7,7 +7,7 @@ category: charts
 ---
 This article covers frequently asked questions about the [Funnel Analysis](/docs/analytics/charts/funnel-analysis) chart.
 
-## Funnel Metrics
+## Funnel metrics
 
 {{partial:collapse name="Do funnels count by unique users or by event totals?"}}
 Either one. To switch from unique users to event totals, select *Totals* from the *Counting by* dropdown:
@@ -21,13 +21,13 @@ For event totals, the earliest-longest logic no longer applies. Amplitude consid
 You can use the Holding Property Constant feature to count by unique user-property pairs as well. For example, if you hold `Session ID` constant, you can count a user multiple times if they performed the funnel events in different sessions.
 
 {{partial:admonition type='note'}}
-In order to hold a property constant, it must exist in all events of the funnel.
+To hold a property constant, it must exist in all events of the funnel.
 {{/partial:admonition}}
 
 {{/partial:collapse}}
 
 {{partial:collapse name="Do funnel charts count conversion in 24-hour windows or by calendar dates?"}}
-The conversion window uses a **24-hour window** when looking at conversion from Step 1 to Step 2. It is not based on strict calendar dates.
+The conversion window uses a **24-hour window** when looking at conversion from Step 1 to Step 2. It's not based on strict calendar dates.
 
 ![funnels_FAQ_24_hour_window.png](/docs/output/img/faq/funnels-faq-24-hour-window-png.png)
 {{/partial:collapse}}
@@ -63,11 +63,9 @@ See more in [this help center article](/docs/analytics/charts/funnel-analysis/fu
 
 
 {{partial:collapse name="How is the median time to convert calculated?"}}
-When the funnel chart looks at the median time to convert in distribution view, it only takes the first conversion per user in the entire date range into account. When you switch to the time to convert over time view, we take the first conversion of each user in each day of the date range (e.g. If users can convert more than once in a day, only the first conversion of that day is considered).
+When the funnel chart looks at the median time to convert in distribution view, it only takes the first conversion per user in the entire date range into account. When you switch to the time to convert over time view, we take the first conversion of each user in each day of the date range (for example, if users can convert more than once in a day, only the first conversion of that day is considered).
 
 In both cases, we use [an approximate algorithm](https://metamarkets.com/2013/histograms/) to estimate the median time to convert. The median time to convert is only an approximation.
-
-![](/docs/output/img/faq/dpaf3D_0L1RNCWkqjfbc-I8KU0Wv12nsedi50Y7wlC0uukjqOmY9T4cMVwiSYvhA_qvCozNmAoZgvS2D3CF4n_UkMQMzwvJzpZgo7w5H8TVf_0FBeosPEBfG7grX5tnIJNkVYM8NpYKRbu_JOtDrlHE)
 {{/partial:collapse}}
 
 
