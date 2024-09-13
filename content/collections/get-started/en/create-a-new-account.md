@@ -34,7 +34,7 @@ When Amplitude verifies that it can receive events, click *Next* to create your 
 
 ## Other ways to install
 
-Amplitude supports other [integrations](/docs/data/source-catalog), [SDKs](/docs/sdks/analytics), and [API](docs/apis/analytics/http-v2) to help you start sending data.
+Amplitude supports other [integrations](/docs/data/source-catalog), [SDKs](/docs/sdks/analytics), and [API](/docs/apis/analytics/http-v2) to help you start sending data.
 
 For these methods, view the associated documentation for help getting started.
 

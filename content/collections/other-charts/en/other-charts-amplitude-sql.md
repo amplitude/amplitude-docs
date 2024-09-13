@@ -32,7 +32,7 @@ Find Amplitude SQL through *Create > Chart > View additional chart types.* You c
  This feature doesn't support queuing data for [Portfolio Views](/docs/admin/account-management/portfolio).
 {{/partial:admonition}}
 
-You can also connect directly to your Snowflake database through a terminal or 3rd-party application, like SQL Workbench or the [Snowflake connector for Python](https://docs.snowflake.net/manuals/user-guide/python-connector.html). [Contact Amplitude Support](/docs/hc/en-us/requests/new) or your Success Manager for your Snowflake credentials. 
+You can also connect directly to your Snowflake database through a terminal or 3rd-party application, like SQL Workbench or the [Snowflake connector for Python](https://docs.snowflake.net/manuals/user-guide/python-connector.html). [Contact Amplitude Support](https://support.amplitude.com) or your Success Manager for your Snowflake credentials. 
 
 ## Set up and syntax
 

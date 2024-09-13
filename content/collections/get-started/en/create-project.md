@@ -12,7 +12,7 @@ exclude_from_sitemap: false
 this_article_will_help_you:
   - 'Create a project in Amplitude'
 ---
-Once your [organization is set up](/docs/get-started/create-org) and users have joined it, you can begin adding **projects**. Each analysis you create belongs to a specific project. In Amplitude, a project is a way to subdivide your Amplitude organization into distinct territories—for example, you might want to create individual projects for different products, or for different areas or sections of your app. It’s a useful way to keep related analyses grouped together.
+Once your organization is set up and users have joined it, you can begin adding **projects**. Each analysis you create belongs to a specific project. In Amplitude, a project is a way to subdivide your Amplitude organization into distinct territories—for example, you might want to create individual projects for different products, or for different areas or sections of your app. It’s a useful way to keep related analyses grouped together.
 
 Each project in Amplitude has its own separate API key for sending data. For example, if you have one iOS project and one Android project within your organization, each app sends data to their respective API keys.
 
