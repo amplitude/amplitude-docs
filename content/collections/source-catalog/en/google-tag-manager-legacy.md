@@ -19,7 +19,7 @@ This is a legacy GTM template. Use the [latest template](/docs/data/source-catal
 
 ## Migration
 
-The Amplitude Analytics Legacy template, currently utilizing the [Maintenance Amplitude JavaScript SDK](/docs/sdks/analytics/browser/javascript-sdk) for data collection, is only slated for bug fixes until its eventual deprecation. use the [latest GTM template](../google-tag-manager-client/) that uses Amplitude's Marketing Analytics SDK for data collection. This not only ensures better support but also offers access to a host of new features.
+The Amplitude Analytics Legacy template, currently utilizing the [Maintenance Amplitude JavaScript SDK](/docs/sdks/analytics/browser/javascript-sdk) for data collection, is only slated for bug fixes until its eventual deprecation. use the [latest GTM template](/docs/data/source-catalog/google-tag-manager) that uses Amplitude's Marketing Analytics SDK for data collection. This not only ensures better support but also offers access to a host of new features.
 
 - The latest template isn't backwards compatible with this legacy template due to the non-backwards compatibility of the internal SDK. It does a cookie migration logic to help the transition of legacy cookies information to the latest cookie storage system.
 - For a comprehensive migration guide, see the [Migration guide](/docs/sdks/analytics/browser/migrate-from-javascript-sdk-to-browser-sdk-1-0).
