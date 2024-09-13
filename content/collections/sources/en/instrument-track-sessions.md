@@ -8,8 +8,8 @@ this_article_will_help_you:
   - 'Learn how to best incorporate sessions into your analyses'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718136903
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1726162729
 ---
 In Amplitude, sessions are a useful metric for understanding the frequency and duration of your users' engagement with your product. The most direct way to build a session-based analysis is with the [User Sessions chart](/docs/data/user-properties-and-events). 
 
@@ -39,6 +39,10 @@ This commonly occurs when sending data to Amplitude from Segment through a cloud
 ![SessionId.png](/docs/output/img/sources/sessionid-png.png)
 
 Events included in the same session are connected with a blue line, as shown above.
+
+Amplitude assigns a session to a specific date based on its actual start time. The start time must fall within a chart's selected date range in order for Amplitude to include it on that chart. 
+
+For example, consider a session that begins on May 17th at 8:00 PM and ends on May 18th at 1:30 AM. This session appears on charts where the selected date range includes the date on which the session began. In this example, that date range can begin no later than May 17th, **and** end no earlier than May 17th. If the chart's date range begins on May 18th, this session doesn't appear on the chart, even though the session was still active on that date.
 
 ### Start Session and End Session events
 

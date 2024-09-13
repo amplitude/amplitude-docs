@@ -7,7 +7,7 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1723581892
+updated_at: 1726163345
 ---
 Enterprise-level organizations often collect data that can include revenue data, personally identifiable information (PII), and other sensitive information. Amplitude’s **data access control (DAC)** feature enables these organizations to easily manage access to these categories of data, in a way that prevents unauthorized users from gaining access to it, and that helps prevent the data from inadvertently leaking out.
 
@@ -27,7 +27,7 @@ The user can then exclude the restricted data and view the chart (or cohort, das
 
 ## Set access for specific categories of sensitive data
 
-Setting access levels is a two-stage process. First, y**classify** your data. When that’s complete, you can set up **permissions**.
+Setting access levels is a two-stage process. First, **classify** your data. When that’s complete, you can set up **permissions**.
 
 {{partial:admonition type='note'}}
 DAC applies only to properties. It **doesn’t** apply to definitions or metadata.

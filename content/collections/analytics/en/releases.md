@@ -8,7 +8,7 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1724883801
+updated_at: 1726163151
 ---
 In Amplitude, a **release** represents a change in your product. It can be a major update like the launch of a new feature, a minor patch to fix a small bug, or the launch of an experiment. Releases are shown as a marker in your time-series charts when they occur.
 
@@ -16,7 +16,7 @@ In Amplitude, a **release** represents a change in your product. It can be a maj
 
 ### Feature availability
 
-This feature is available to users on **all Amplitude plans**. See the [pricing page](https://amplitude.com/pricing) for more details.
+This feature is available to users on **some Amplitude plans only**. See the [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Create a release
 

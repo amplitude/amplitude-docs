@@ -9,8 +9,8 @@ this_article_will_help_you:
   - "Use the account-level reporting feature\_when using certain Amplitude integrations, like Segment or Salesforce"
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717696950
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1726176421
 ---
 In Amplitude, the default level of reporting is the **individual user**, meaning your charts and analyses will all be based on data drawn from individual users. In some cases, you may need reports built around an **aggregated** unit of measurement—say, accounts, order IDs, or charts.
 
@@ -113,8 +113,13 @@ Clicking on an account will take you to that account’s page, where you can vie
 
 ![account_level_account_page.png](/docs/output/img/analytics/account_level_account_page.png)
 
-You will find the account’s most recent properties in the top panel. The account’s properties can be set three different ways: the [Group Identify API](https://www.docs.developers.amplitude.com/analytics/apis/group-identify-api/), the [Salesforce integration](https://www.docs.developers.amplitude.com/data/sources/salesforce-group/), and by using Event Segmentation to create dynamic properties. These properties can be used to describe the account as whole (e.g. `30 day active users`, `account
- manager`, `plan type`, `renewal date`, etc.).
+Find the account’s most recent properties in the top panel. Set the account's properties with one of the following:
+
+- the [Group Identify API](/docs/apis/analytics/group-identify)
+- the [Salesforce integration](/docs/data/source-catalog/salesforce)
+- Event Segmentation to create dynamic properties. 
+
+Use these properties to describe the account as whole (for example, `30 day active users`, `account manager`, `plan type`, or `renewal date`)
 
 If you're using the User Look-up to verify events and the properties set with them, they will not be visible in the *Info* view. You can find them by clicking *Raw* instead.
 
