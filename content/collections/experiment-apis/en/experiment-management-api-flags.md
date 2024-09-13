@@ -633,7 +633,7 @@ Edit a variant for a flag.
 |`key`| Optional | string | The variant key. |
 |`description`| Optional | string | Description for the variant.|
 |`name`| Optional | string | Name for the variant.|
-|`payload`| Optional | string | Optional payload. Value must be a valid JSON element.|
+|`payload`| Optional | string | Optional payload. Value must be a valid JSON element. This value replaces the existing value for the variant payload.|
 |`rolloutWeight`| Optional | number | Rollout weight for non-targeted users.|
 
 ### Response
