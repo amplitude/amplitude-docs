@@ -42,7 +42,7 @@ Events included in the same session are connected with a blue line, as shown abo
 
 Amplitude assigns a session to a specific date based on its actual start time. The start time must fall within a chart's selected date range in order for Amplitude to include it on that chart. 
 
-For example, consider a session that begins on May 17th at 8:00PM and ends on May 18th at 1:30AM. This session appears on charts where the selected date range includes the date on which the session began. In this example, that date range can begin no later than May 17th, **and** end no earlier than May 17th. If the chart's date range begins on May 18th, this session doesn't appear on the chart, even though the session was still active on that date.
+For example, consider a session that begins on May 17th at 8:00 PM and ends on May 18th at 1:30 AM. This session appears on charts where the selected date range includes the date on which the session began. In this example, that date range can begin no later than May 17th, **and** end no earlier than May 17th. If the chart's date range begins on May 18th, this session doesn't appear on the chart, even though the session was still active on that date.
 
 ### Start Session and End Session events
 
