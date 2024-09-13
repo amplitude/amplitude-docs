@@ -646,7 +646,7 @@ curl --request POST \
 ## Edit variant
 
 ```bash
-PATCH https://experiment.amplitude.com/api/1/experiments/<id>/variants/
+PATCH https://experiment.amplitude.com/api/1/experiments/<id>/variants/<variantKey>
 ```
 
 Edit a variant for an experiment.
@@ -665,7 +665,7 @@ Edit a variant for an experiment.
 |`key`| Optional | string | The variant key. |
 |`description`| Optional | string | Description for the variant.|
 |`name`| Optional | string | Name for the variant.|
-|`payload`| Optional | string | Optional payload. Value must be a valid JSON element.|
+|`payload`| Optional | string | Optional payload. Value must be a valid JSON element. This value replaces the existing value for the variant payload.|
 |`rolloutWeight`| Optional | number | Rollout weight for non-targeted users.|
 
 {{partial:admonition type="example" heading="Example request"}}
