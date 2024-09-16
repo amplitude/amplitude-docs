@@ -1,7 +1,7 @@
 ---
 id: 951b924e-d18a-44cc-b5b0-51142ffb4e75
 blueprint: session-replay
-title: 'Session Replay Wrapper for Segment'
+title: 'Session Replay Wrapper for Rudderstack'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
