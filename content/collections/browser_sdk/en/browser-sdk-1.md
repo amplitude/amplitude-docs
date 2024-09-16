@@ -20,6 +20,7 @@ exclude_from_sitemap: false
 source: 'https://www.docs.developers.amplitude.com/data/sdks/typescript-browser/'
 package_name: '@amplitude/analytics-browser'
 platform: Browser
+noindex: true
 ---
 The Browser SDK lets you send events to Amplitude.
 

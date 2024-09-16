@@ -15,6 +15,7 @@ bundle_url: 'https://www.npmjs.com/package/@amplitude/react-native'
 shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/react-native'
 package_name: '@amplitude/react-native'
 platform: 'React Native'
+noindex: true
 ---
 This is the official documentation for the Amplitude Analytics React Native SDK.
 

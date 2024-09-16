@@ -15,6 +15,7 @@ source: 'https://www.docs.developers.amplitude.com/data/sdks/ios/'
 package_name: Amplitude
 bundle_url: 'https://cocoapods.org/pods/Amplitude-iOS'
 platform: iOS
+noindex: true
 ---
 This is the official documentation for the Amplitude Analytics iOS SDK.
 

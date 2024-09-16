@@ -21,6 +21,7 @@ exclude_from_sitemap: false
 source: 'https://www.docs.developers.amplitude.com/data/sdks/javascript/'
 package_name: '@amplitude/analytics-browser'
 platform: Browser
+noindex: true
 ---
 This is the official documentation for the Amplitude Analytics JavaScript SDK.
 

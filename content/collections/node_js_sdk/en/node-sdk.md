@@ -18,6 +18,7 @@ migration_guide:
   - 1ca7ad5b-47f8-4709-b0f1-083941dc62c9
 package_name: '@amplitude/node'
 platform: Node
+noindex: true
 ---
 This is Amplitude Node.js SDK written in Typescript, the first backend SDK for Amplitude.
 
