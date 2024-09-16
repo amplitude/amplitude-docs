@@ -1,5 +1,5 @@
 ---
-id: 951b924e-d18a-44cc-b5b0-51142ffb4e75
+id: 5416910c-32f8-4e80-be0f-88a10509c029
 blueprint: session-replay
 title: 'Session Replay Wrapper for Rudderstack'
 landing: false
