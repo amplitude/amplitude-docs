@@ -22,7 +22,7 @@ Follow these steps to add a custom event:
 2. Next, click *Add event inline* to add a custom event. Add any number of custom events.
 
   {{partial:admonition type='note'}}
-  The in-line event that you create is relevant to that specific chart and isn't be accessible anywhere else unless you save it as a custom event. 
+  The in-line event that you create is relevant to that specific chart and isn't accessible anywhere else unless you save it as a custom event. 
   {{/partial:admonition}}
 
 3. If desired, hover on the event and click *Filter* to add event properties. Add as many filter properties as needed for each in-line event.
@@ -34,5 +34,5 @@ Follow these steps to add a custom event:
 5. Click *Remove* to remove properties and in-line events, as needed.
 
 {{partial:admonition type="note" heading=""}}
-Custom events can't contain other custom events. Also, *Show User Journeys*, *Explore Conversion Drivers* and *Show User Paths* aren't available on the Microscope for in-line event steps in funnels.
+Custom events can't contain other custom events. Also, *Show User Journeys*, *Explore Conversion Drivers* and *Show User Paths* aren't available from the Microscope for in-line event steps in funnels.
 {{/partial:admonition}}
