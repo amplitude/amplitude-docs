@@ -16,11 +16,11 @@ This document covers the necessary steps to:
 
 Review the offerings that are available for Segment and how that stacks up to Amplitude. 
 
-| Segment      | Amplitude |
-| ----------- | ----------- |
+| Segment                                                 | Amplitude                                                                             |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | [Connections](https://segment.com/product/connections/) | [Sources](/docs/data/source-catalog) & [Destinations](/docs/data/destination-catalog) |
-| [Profiles](https://segment.com/product/profiles/)   | [Audiences](/docs/cdp/audiences) |
-| [Protocols](https://segment.com/product/protocols/) | [Data Management](/docs/cdp) |
+| [Profiles](https://segment.com/product/profiles/)       | [Audiences](/docs/cdp/audiences)                                                      |
+| [Protocols](https://segment.com/product/protocols/)     | [Data Management](/docs/data)                                                          |
 
 {{partial:admonition type="info" heading="Recommended best practice"}}
 Follow a strict release process and [configure multiple environments](/docs/data/amplitude-data-settings). Validate changes within each environment before deploying.
@@ -41,17 +41,17 @@ For detailed instructions, see the documentation for the [source](/docs/data/sou
 
 Both Segment and Amplitude SDKs capture first party data by tracking user interactions. Other than some nuances around syntax, they work similarly. Here is high level mapping of concepts between Segment & Amplitude.
 
-| Segment   | Amplitude | Notes                                      |
-|-----------|-----------|--------------------------------------------|
-| write_key | api_key   | Unique key to validate source of the data. |
-| Workspace | Project   | [Projects](/docs/admin/account-management/manage-orgs-projects) allow you to organize your data.  |
-| User      | User      | User who is performing action.             |
-| Identify  | Identify  | Identify updates properties/attributes of the user.|
-| Track     | Event     | [Event](/docs/apis/analytics/http-v2/) in Amplitude tracks the action user is performing.|
-| Screen    | Event     | Create an Event to track Screen views.|
-| Page      | Event     | Create an Event to track Page views.|
-| Group     | Group     | Group is a collection of users. In Amplitude one user could belong to multiple groups. Each group can have properties/attributes that are then available to query/forward on actions performed by any user in the group.|
-| Plugins   | Plugins   | Plugins let you extend Amplitude by running a sequence of custom code on every event.|
+| Segment   | Amplitude | Notes                                                                                                                                                                                                                    |
+| --------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| write_key | api_key   | Unique key to validate source of the data.                                                                                                                                                                               |
+| Workspace | Project   | [Projects](/docs/admin/account-management/manage-orgs-projects) allow you to organize your data.                                                                                                                         |
+| User      | User      | User who is performing action.                                                                                                                                                                                           |
+| Identify  | Identify  | Identify updates properties/attributes of the user.                                                                                                                                                                      |
+| Track     | Event     | [Event](/docs/apis/analytics/http-v2/) in Amplitude tracks the action user is performing.                                                                                                                                |
+| Screen    | Event     | Create an Event to track Screen views.                                                                                                                                                                                   |
+| Page      | Event     | Create an Event to track Page views.                                                                                                                                                                                     |
+| Group     | Group     | Group is a collection of users. In Amplitude one user could belong to multiple groups. Each group can have properties/attributes that are then available to query/forward on actions performed by any user in the group. |
+| Plugins   | Plugins   | Plugins let you extend Amplitude by running a sequence of custom code on every event.                                                                                                                                    |
 
 
 {{partial:tabs tabs="Browser, iOS, Android"}}
