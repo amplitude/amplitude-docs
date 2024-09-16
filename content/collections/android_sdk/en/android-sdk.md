@@ -20,6 +20,7 @@ updated_at: 1721756261
 source: 'https://www.docs.developers.amplitude.com/data/sdks/android/'
 package_name: 'com.amplitude:android-sdk'
 platform: Android
+noindex: true
 ---
 This is the official documentation for the Amplitude Analytics Android SDK.
 
