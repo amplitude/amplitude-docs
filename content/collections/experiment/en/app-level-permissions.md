@@ -49,7 +49,7 @@ This is controlled by a organization-wide setting in *Experiment > Permissions >
 
 The default sets new flags and experiments as editable by all users in your organization. If you create a new flag or experiment, you can manually restrict access to that item after you create it.
 
-If you change the default and make new flags and experiments **viewable** instead of editable, all new flags and experiments have access restricted to editors only. Remove this restriction after you create the flag or experiment.
+If you change the default and make new flags and experiments **viewable** instead of editable, all new flags and experiments can only be modified by editors. Remove this restriction after you create the flag or experiment.
 
 If you create a flag or experiment through the [Management API](/docs/apis/experiment/experiment-management-api), they default to **editable** regardless of the organization setting.
 
