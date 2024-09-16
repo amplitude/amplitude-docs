@@ -76,7 +76,7 @@ Note that each percentage on this chart refers to the percentage of all users in
 
 Next, 20.7% of all users triggered `taxonomy: view event detail panel`, followed by 17.5% triggering `open event dropdown`. This 17.5% represents 2,725 users.
 
-Notice the same progressions in the Journey Map. Here we can also see that those 2,725 users took an average of 1 hour and 48 minutes to progress all the way through the path.
+Notice the same progressions in the Journey Map. Those 2,725 users took an average of 1 hour and 48 minutes to progress all the way through the path.
 
 ## Differences from the legacy versions of these charts
 

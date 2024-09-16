@@ -19,7 +19,7 @@ This feature is available on all Amplitude plans. For more information, see the 
 
 On the Basic Settings page, select the event that represents an active action in your product. By default, Amplitude sets `[Amplitude] Any Active Event` as the event.
 
-Next, select the retention intervals that are most meaningful to you. Set both Daily and Weekly intervals. Use Amplitude's [usage interval analysis](/docs/analytics/charts/retention-analysis/retention-analysis-usage-interval) to determine how long users go between triggering your critical event.
+Next, select the retention intervals that are most meaningful to you. Set both Daily and Weekly intervals. Use Amplitude's [usage interval analysis](/docs/analytics/charts/retention-analysis/retention-analysis-usage-interval) to learn how long users go between triggering your critical event.
 
 Configure breakdown properties for the Product Overview, Onboarding, and Retention views. Select up to three.
 
