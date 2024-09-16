@@ -1,7 +1,7 @@
 ---
 id: 52e1fdb9-b354-4012-b8de-d378c68cbf26
 blueprint: experiment
-title: 'App-level user permissions'
+title: 'Set app-level user permissions in Experiment'
 source: 'https://help.amplitude.com/hc/en-us/articles/4416438117147-Set-app-level-user-permissions-in-Experiment'
 this_article_will_help_you:
   - 'Set user permissions for Amplitude Experiment that are independent of and separate from those used in Amplitude Analytics'
@@ -34,18 +34,39 @@ To set app-level user permissions in Experiment, follow these steps:
 ## Flag-level access controls
 
 {{partial:admonition type='note'}}
-This feature is in open beta and is available to users on Enterprise plans only.
+This feature is available to users on Enterprise plans only.
 {{/partial:admonition}}
 
 With flag-level access controls, you can decide which Amplitude Experiment users can make changes to specific flags or experiments. 
 
-When flag-level access controls are enabled, users in your organization are unable to save changes to a flag or experiment unless they're specifically designated as an editor for it.
+When flag-level access controls are enabled, users in your organization are unable to save changes to restricted flags and experiments unless they're specifically designated as an editor for it. 
 
-For new flags and experiments, this access defaults to prohibiting edits from other users; manually add any users to the list of those permitted to edit them.
+### Default access for new flags and experiments
+
+All new flags and experiments can default to being restricted to the list of editors or editable by all users in your organization.
+
+This is controlled by a organization-wide setting in *Experiment > Permissions > Organization Settings*. Only users with the admin role can modify this setting.
+
+The default setting is that new flags and experiments will be *editable* by all users in your organization. Users who create a new flag or experiment can manually restrict access to the item after its creation.
+
+By switching the default setting to making new flags and experiments *viewable* instead of editable, all new flags and experiments will have restricted access to editors only. Users can manually remove this restriction after creating a new flag or experiment.
+
+Flags and experiments created through the management API will default to *editable* regardless of the organization setting.
+
+### Managing access to flags and experiments
 
 To edit the list of approved editors, navigate to *[flag or experiment] > More Actions > Manage Access*. Here, you can add individual users, or specify that the flag is editable by all users in your organization.
 
-After you grant a user editor permissions to your flag, Amplitude Experiment checks permissions, and that user needs edit access through their role. For example, if you assign a user the Viewer role and you add them as an editor to your flag, they can't to save changes until you assign them a role with editing privileges
+After you grant a user editor permissions to your flag, Amplitude Experiment checks permissions, and that user needs edit access through their role. For example, if you assign a user the Viewer role and you add them as an editor to your flag, they can't save changes until you assign them a role with editing privileges.
+
+Users will recieve a notification when they are added as an editor to a flag or experiment. You can control your notification settings in *Personal settings > Notifications > Updates about my experiments*
+
+### Bypassing access restrictions
+
+In situations where you need to make modifications to a restricted flag or experiment when no editor users are available, there are two ways to do this: 
+
+1. There is an exception made for users with the admin role, who are able to edit restricted flags and experiments even if the user is not in the list of editors.
+2. The management API is able to be used to edit all flags and experiments regardless of whether the item has restricted access.
 
 ## Permissions matrix
 
