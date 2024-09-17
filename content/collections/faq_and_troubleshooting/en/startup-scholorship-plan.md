@@ -21,7 +21,7 @@ To apply for the Scholarship plan, see [Startups](https://amplitude.com/startups
 What are the criteria to qualify for the Amplitude Startup Scholarship?
 To qualify, your company must meet the following criteria:
 
-* You’ve received less than $5 million in funding
+* You’ve received less than $10 million in funding
 * You have fewer than 20 employees
 {{/partial:collapse}}
 
