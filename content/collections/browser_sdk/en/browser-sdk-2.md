@@ -1306,7 +1306,7 @@ amplitude.init(AMPLITUDE_API_KEY, {
 });
 ```
 
-When remote config is enabled, the SDK fetches the remote configuration from the remote configuration endpoint.
+With remote config enabled, the SDK fetches the remote configuration from the remote configuration endpoint.
 
 {{partial:admonition type="note" heading=""}}
 Remote configuration supports Autocapture settings, and overrides settings you configure locally.
