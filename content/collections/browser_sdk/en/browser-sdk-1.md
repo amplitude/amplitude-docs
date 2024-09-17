@@ -1,7 +1,7 @@
 ---
 id: 8471af8b-e132-4073-8330-d5dd7bbbd8ae
 blueprint: browser_sdk
-title: 'Browser SDK 1'
+title: 'Browser SDK'
 sdk_status: maintenance
 article_type: core
 supported_languages:
@@ -15,6 +15,7 @@ shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/analytics-browser/v1.
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1726590563
 major_version: 1
+version_name: "Version 1"
 ampli_article: f7989230-bf1c-48aa-ad61-2bc2b3e15a8c
 exclude_from_sitemap: false
 source: 'https://www.docs.developers.amplitude.com/data/sdks/typescript-browser/'

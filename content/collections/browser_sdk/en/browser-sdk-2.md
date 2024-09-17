@@ -1,7 +1,7 @@
 ---
 id: 00d74a7b-23bd-4a24-86a1-92c046e7e1b5
 blueprint: browser_sdk
-title: 'Browser SDK 2'
+title: 'Browser SDK'
 sdk_status: current
 article_type: core
 supported_languages:
@@ -21,6 +21,7 @@ package_name: '@amplitude/analytics-browser'
 platform: Browser
 migration_guide:
   - 9b155be9-bb32-428c-9f49-6e00f9630547
+version_name: "Version 2"
 ---
 Amplitude's Browser SDK 2 lets you send events to Amplitude.
 

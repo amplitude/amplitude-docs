@@ -16,15 +16,6 @@ tree:
       -
         id: 31a76792-9d64-46aa-b222-49dc8e9bcdc2
         entry: f0bf544a-7505-45ef-89ad-e7fe6ec71fbf
-      -
-        id: 4f232c6e-ad32-4e73-a52f-9cf7126caae0
-        entry: 8471af8b-e132-4073-8330-d5dd7bbbd8ae
-      -
-        id: ed5e9870-6784-4e7f-b3e5-4d5119cda768
-        entry: f7989230-bf1c-48aa-ad61-2bc2b3e15a8c
-      -
-        id: 1ab3e6ba-6fe5-4a91-8533-9e07853cfc9a
-        entry: 9b155be9-bb32-428c-9f49-6e00f9630547
   -
     id: 9a81493c-ecba-4501-89c2-1edd20dd05ba
     title: Android
@@ -125,60 +116,3 @@ tree:
       -
         id: a4797ccf-8dee-4a78-b1d4-9d0324ec88bd
         entry: 9dc79fa3-30b2-4f67-954e-f03433c6cdbd
-  -
-    id: acbc627b-563b-4bc1-aac2-135c89700fa7
-    title: 'Maintenance SDKs'
-    children:
-      -
-        id: 8fc0dfc2-e350-43be-b29c-f37a3d3c6a75
-        title: 'Marketing Analytics SDK'
-        children:
-          -
-            id: c33fde3f-8844-43f0-a029-2465addf7d13
-            entry: 25904c6b-609d-4365-9660-2782ef50d52d
-          -
-            id: 990d6409-8048-4343-8153-93b36e5976b2
-            entry: eb4533a3-2075-49a0-83fa-e703afea78e7
-      -
-        id: e9479f1e-9372-444c-a1b2-30a6ab36be37
-        title: 'Javascript SDK'
-        children:
-          -
-            id: 55c92e01-c259-4d6b-b864-464d3daade0c
-            entry: e6b6889d-9d39-4f04-89a1-87f78db80f49
-          -
-            id: 3ac6069e-ab90-4800-8b78-5a934fc6b44e
-            entry: 6b771f94-bf3a-44ba-a6a7-6e5b58108f70
-          -
-            id: e43c8153-9b6b-4964-ac1e-8bc091312b24
-            entry: b7cc9d54-870a-40bc-93d8-a2ac15375e75
-      -
-        id: a4fceea8-aa18-4f66-9f8a-1379a8c545f8
-        entry: 7cab1dd1-18ad-4940-9379-ed2954c9afd3
-        title: 'React Native SDK (maintenance)'
-      -
-        id: 80ea8cf0-4ee6-466c-bafe-843fe7b10bf6
-        entry: 6d713118-1088-470d-bfe7-847fbb372ba8
-      -
-        id: 4e49c612-d861-4dbb-8847-5b07d161da49
-        title: 'Node SDK'
-        children:
-          -
-            id: 4f59f587-dd55-4b79-b706-124bd5efea96
-            entry: e3b9838b-8d35-49d8-ba91-5a0840cbc603
-          -
-            id: cf41fb91-d19d-4f93-9b7e-e02f23f6e9c1
-            entry: 5f0a9b3c-627c-4014-bb2e-d1ac1c465db9
-          -
-            id: 5152cf3d-bb31-4831-be9f-de0cc87e3b7b
-            entry: 1ca7ad5b-47f8-4709-b0f1-083941dc62c9
-      -
-        id: bbce87d4-0491-41f7-8dbe-fc58ceb1bc22
-        title: 'Android SDK 1.0'
-        children:
-          -
-            id: ca7772e4-bff2-40db-8baf-fe282004a2ce
-            entry: 9f4dcd07-e262-4c9b-b841-ebb721d37a6d
-          -
-            id: bf633f83-fa66-454c-b4b6-56cf288cffb6
-            entry: 016795b7-45ca-4daa-9458-85bf283a35cb

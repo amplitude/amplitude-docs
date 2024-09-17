@@ -1,7 +1,7 @@
 ---
 id: e6b6889d-9d39-4f04-89a1-87f78db80f49
 blueprint: browser_sdk
-title: 'Javascript SDK'
+title: 'Browser SDK'
 sdk_status: maintenance
 article_type: core
 supported_languages:
@@ -17,6 +17,7 @@ ampli_article: 6b771f94-bf3a-44ba-a6a7-6e5b58108f70
 migration_guide:
   - b7cc9d54-870a-40bc-93d8-a2ac15375e75
 major_version: 1
+version_name: "Javascript"
 exclude_from_sitemap: false
 source: 'https://www.docs.developers.amplitude.com/data/sdks/javascript/'
 package_name: '@amplitude/analytics-browser'
