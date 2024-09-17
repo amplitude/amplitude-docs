@@ -22,7 +22,7 @@ platform: Browser
 noindex: true
 current_version: 00d74a7b-23bd-4a24-86a1-92c046e7e1b5
 ---
-The Marketing Analytics Browser SDK extends the Browser SDK to identify users and events based on marketing channels. This library is open-source, check it out on [GitHub](https://github.com/amplitude/Amplitude-TypeScript/tree/v1.x/packages/marketing-analytics-browser).
+The Marketing Analytics Browser SDK extends the Browser SDK to identify users and events based on marketing channels. This library is open-source. Check it out on [GitHub](https://github.com/amplitude/Amplitude-TypeScript/tree/v1.x/packages/marketing-analytics-browser).
 
 {{partial:admonition type="deprecated" heading=""}}
 This is a maintenance SDK and will only receive bug fixes until deprecation. An improved version of Amplitude Browser SDK is now available. Amplitude Browser SDK 2.0 features default event tracking, improved marketing attribution tracking, simplified interface and a lighter weight package. Amplitude recommends the Browser SDK 2.0 for both product analytics and marketing analytics use cases. Upgrade to the latest [Browser SDK 2.0](/docs/sdks/analytics/browser/browser-sdk-2).

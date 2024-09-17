@@ -21,7 +21,7 @@ platform: Node
 noindex: true
 current_version: 8cbcfa2a-a300-48c8-b551-aee1b1423cdb
 ---
-This is Amplitude Node.js SDK written in Typescript, the first backend SDK for Amplitude.
+This is Amplitude Node.js SDK, written in Typescript, the first backend SDK for Amplitude.
 
 The client-side SDKs are optimized to track session and attribution for a single user or device. The Node SDK's focus is to offer a helpful developer experience to help back-end services reliably and correctly send events from many users and sources. 
 
