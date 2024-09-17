@@ -15,7 +15,7 @@ This integration snippet supports [Rudderstack Cloud-mode](https://www.ruddersta
 
 ## Before you begin
 
-Use the latest version of the Session Replay SDK, version {{sdk_versions:session_replay_standalone}}
+Use the latest version of the Session Replay SDK, which is {{sdk_versions:session_replay_standalone}}
 
 ## Install the wrapper
 
