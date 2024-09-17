@@ -1306,10 +1306,10 @@ amplitude.init(AMPLITUDE_API_KEY, {
 });
 ```
 
-When remote config is enabled, the SDK checks if remote configuration has been fetched within the same session. If so, it uses the remote configuration stored in the indexedDB. Otherwise, it fetches the remote configuration from the remote configuration endpoint.
+With remote config enabled, the SDK fetches the remote configuration from the remote configuration endpoint.
 
 {{partial:admonition type="note" heading=""}}
 Remote configuration supports Autocapture settings, and overrides settings you configure locally.
 {{/partial:admonition}}
 
-In Amplitude, navigate to *Data > Manage > Settings > Autocapture* to add or update a remote configuration.
+In Amplitude, navigate to *Data > Settings > Autocapture* to add or update a remote configuration.
