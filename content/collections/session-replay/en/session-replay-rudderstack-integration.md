@@ -19,7 +19,7 @@ Use the latest version of the Session Replay SDK, which is {{sdk_versions:sessio
 
 ## Install the wrapper
 
-Use npm or yarn to install the package, which includes the Amplitude Session Replay SDK.
+Use npm or yarn to install the package. This includes the Amplitude Session Replay SDK.
 
 {{partial:tabs tabs="npm, yarn"}}
 {{partial:tab name="npm"}}
