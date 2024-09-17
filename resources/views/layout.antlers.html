@@ -8,8 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta content="{{content | strip_tags | safe_truncate(100)}}" name="description">
   <meta name="google-site-verification" content="UHLjtoO7DV30dx3hVhwTOIWguEUr_VzS41msmq-uYKA" />
-  {{if noindex}}
+  {{if current_version}}
   <meta name="robots" content="noindex">
+  <link rel="canonical" href="{{current_version}}{{permalink}}{{/current_version}}" />
   {{/if}}
   <link rel="apple-touch-icon" sizes="180x180" href="/docs/assets/general/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/docs/assets/general/favicon-32x32.png">
