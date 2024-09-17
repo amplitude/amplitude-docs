@@ -7,7 +7,7 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1723742318
 ---
-Amplitude provides a wrapper to enable integration between Rudderstack and Amplitude's Session Replay.
+Amplitude provides a wrapper for integrating Rudderstack and Amplitude's Session Replay.
 
 {{partial:admonition type="note" heading=""}}
 This integration snippet supports [Rudderstack Cloud-mode](https://www.rudderstack.com/docs/destinations/rudderstack-connection-modes/#cloud-mode).
