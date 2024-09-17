@@ -12,7 +12,7 @@ bundle_url: 'https://www.npmjs.com/package/@amplitude/marketing-analytics-browse
 api_reference_url: 'https://amplitude.github.io/Amplitude-TypeScript/modules/_amplitude_marketing_analytics_browser.html'
 shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/marketing-analytics-browser.svg'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1721756294
+updated_at: 1726590549
 migration_guide:
   - eb4533a3-2075-49a0-83fa-e703afea78e7
 exclude_from_sitemap: false
@@ -20,8 +20,9 @@ source: 'https://www.docs.developers.amplitude.com/data/sdks/marketing-analytics
 package_name: '@amplitude/marketing-analytics-browser'
 platform: Browser
 noindex: true
+current_version: 00d74a7b-23bd-4a24-86a1-92c046e7e1b5
 ---
-The Marketing Analytics Browser SDK extends the Browser SDK to identify users and events based on marketing channels. This library is open-source, check it out on [GitHub](https://github.com/amplitude/Amplitude-TypeScript/tree/v1.x/packages/marketing-analytics-browser).
+The Marketing Analytics Browser SDK extends the Browser SDK to identify users and events based on marketing channels. This library is open-source. Check it out on [GitHub](https://github.com/amplitude/Amplitude-TypeScript/tree/v1.x/packages/marketing-analytics-browser).
 
 {{partial:admonition type="deprecated" heading=""}}
 This is a maintenance SDK and will only receive bug fixes until deprecation. An improved version of Amplitude Browser SDK is now available. Amplitude Browser SDK 2.0 features default event tracking, improved marketing attribution tracking, simplified interface and a lighter weight package. Amplitude recommends the Browser SDK 2.0 for both product analytics and marketing analytics use cases. Upgrade to the latest [Browser SDK 2.0](/docs/sdks/analytics/browser/browser-sdk-2).

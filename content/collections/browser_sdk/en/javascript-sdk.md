@@ -12,7 +12,7 @@ bundle_url: 'https://www.npmjs.com/package/amplitude-js'
 api_reference_url: 'https://amplitude.github.io/Amplitude-JavaScript/'
 shields_io_badge: 'https://img.shields.io/npm/v/amplitude-js.svg'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1721756287
+updated_at: 1726590527
 ampli_article: 6b771f94-bf3a-44ba-a6a7-6e5b58108f70
 migration_guide:
   - b7cc9d54-870a-40bc-93d8-a2ac15375e75
@@ -22,6 +22,7 @@ source: 'https://www.docs.developers.amplitude.com/data/sdks/javascript/'
 package_name: '@amplitude/analytics-browser'
 platform: Browser
 noindex: true
+current_version: 00d74a7b-23bd-4a24-86a1-92c046e7e1b5
 ---
 This is the official documentation for the Amplitude Analytics JavaScript SDK.
 

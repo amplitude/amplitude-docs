@@ -115,3 +115,10 @@ fields:
       type: entries
       display: Plugins
       localizable: false
+  -
+    handle: current_version
+    field:
+      max_items: 1
+      type: entries
+      display: 'Current version'
+      localizable: false
