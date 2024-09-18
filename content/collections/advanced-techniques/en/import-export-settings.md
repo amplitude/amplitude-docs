@@ -1,5 +1,6 @@
 ---
 id: d8fdb1b4-2027-4785-aea6-375d53143cf8
+published: false
 blueprint: advanced-technique
 title: 'Import or export experiment chart settings as JSON'
 source: 'https://help.amplitude.com/hc/en-us/articles/12347964006555-Import-or-export-experiment-chart-settings-as-JSON'
@@ -7,8 +8,8 @@ this_article_will_help_you:
   - 'Save experiment chart settings as JSON to your clipboard'
   - 'Import chart settings as JSON to your experiment results in analytics'
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1714079631
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1726682933
 ---
 Creating charts with aligning settings can be difficult and time consuming when analyzing experiment results in *both* Amplitude Experiment and Analytics. To combat this issue, users can import or export chart settings' data as JSON.
 
