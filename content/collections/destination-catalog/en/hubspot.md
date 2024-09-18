@@ -40,7 +40,7 @@ Keep these things in mind when sending events to HubSpot:
 ### Amplitude setup
 
 1. In Amplitude Data, navigate to *Catalog > Destinations*.
-2. Scroll down and click *HubSpot V2*.
+2. Scroll down and click *HubSpot*.
 3. Enter a sync name, then click *Create Sync*.
 4. Choose a HubSpot Account ID or authenticate with HubSpot. If you have an existing Account ID, re-authenticate to grant the necessary permissions from HubSpot.
 5. Toggle the *Send events* filter to select the events to send.
