@@ -13,7 +13,7 @@ updated_at: 1726689668
 ---
 At times, querying large datasets can be time consuming, resource-heavy, and difficult to execute. Amplitude's query engine can use a technique called **query time sampling** to optimize performance and reduce execution time.
 
-When query time sampling is enabled, Amplitude's query engine selects a representative subset of data—specifically, events based on a randomly selected 10% sample of users—for analysis. It then [up-samples](https://en.wikipedia.org/wiki/Oversampling_and_undersampling_in_data_analysis) the results, using advanced statistical methods like inverse sampling to extrapolate them to the entire population.
+With query time sampling enabled, Amplitude's query engine selects a representative subset of data—specifically, events based on a randomly selected 10% sample of users—for analysis. It then [up-samples](https://en.wikipedia.org/wiki/Oversampling_and_undersampling_in_data_analysis) the results, using advanced statistical methods like inverse sampling to extrapolate them to the entire population.
 
 {{partial:admonition type='note'}}
 Up-sampling is useful for functions that scale with the number of users, such as totals and uniques. Amplitude doesn't use it for functions that don't scale the same way, like average, min, and max. 
@@ -31,11 +31,11 @@ To enable query time sampling, follow these steps:
 
 1. From your Funnel Analysis, click the lightning bolt.
 
-2. The lightning bolt updates to show the percentage of the data set that the chart queries.
+The lightning bolt updates to show the percentage of the data set that the chart queries.
 
     ![testFunnelChart.png](/docs/output/img/charts/testfunnelchart-png.png)
 
-3. To query the full dataset, click *Sampled: 10%* to turn off query time sampling.
+2. To query the full dataset, click *Sampled: 10%* to turn off query time sampling.
 
 ## Set query time sampling as the default
 
@@ -50,4 +50,4 @@ Admin users can set query time sampling as the default for all new charts in a p
 Query time sampling can be a useful way to streamline your workflow, but it's important to keep a few things in mind:
 
 * It may not always be suitable for all types of analyses. These include queries with small datasets, queries that require a high level of granularity, or queries looking for property max, min, or count when the data is highly variable.
-* The following features are unavailable when query time sampling is enabled in Amplitude Analytics: create cohorts, set monitors and alerts, scale sampling during data ingestion, and account analysis.
+* The following features are unavailable with query time sampling enabled in Amplitude Analytics: create cohorts, set monitors and alerts, scale sampling during data ingestion, and account analysis.
