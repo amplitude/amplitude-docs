@@ -51,9 +51,9 @@ Once you select a file, specify whether the file contains Amplitude IDs, user ID
 
 ![Behavioral_Cohorts_15_Import_Cohort_from_File.png](/docs/output/img/analytics/Behavioral_Cohorts_15_Import_Cohort_from_File.png)
 
-### Re-import a cohort from a file
+### Replace a cohort from a file
 
-Manually uploaded cohorts can be re-imported. This lets you update your cohort in place, and avoid having to change all your charts to point to a new cohort.
+Manually uploaded cohorts can be replaced. This lets you update your cohort in place, and avoid having to change all your charts to point to a new cohort.
 
 ## Inline behavioral cohorts and interval cohorts
 
