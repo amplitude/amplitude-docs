@@ -1024,6 +1024,8 @@ video {
   height: max-content;
 }.h-screen {
   height: 100vh;
+}.h-5 {
+  height: 1.25rem;
 }.max-h-12 {
   max-height: 3rem;
 }.max-h-\[575px\] {

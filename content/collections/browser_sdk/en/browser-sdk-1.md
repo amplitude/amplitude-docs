@@ -13,9 +13,9 @@ bundle_url: 'https://www.npmjs.com/package/@amplitude/analytics-browser/v/1.13.4
 api_reference_url: 'https://amplitude.github.io/Amplitude-TypeScript/'
 shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/analytics-browser/v1.svg'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1726590563
+updated_at: 1726605317
 major_version: 1
-version_name: "Version 1"
+version_name: 'Version 1'
 ampli_article: f7989230-bf1c-48aa-ad61-2bc2b3e15a8c
 exclude_from_sitemap: false
 source: 'https://www.docs.developers.amplitude.com/data/sdks/typescript-browser/'
@@ -23,10 +23,12 @@ package_name: '@amplitude/analytics-browser'
 platform: Browser
 noindex: true
 current_version: 00d74a7b-23bd-4a24-86a1-92c046e7e1b5
+migration_guide:
+  - 9b155be9-bb32-428c-9f49-6e00f9630547
 ---
 The Browser SDK lets you send events to Amplitude.
 
-{{partial:admonition type="note" title="Browser SDK 2.0 now available"}}
+{{partial:admonition type="deprecated" title="Browser SDK 2.0 now available"}}
 An improved version of Amplitude Browser SDK is now available. Amplitude [Browser SDK 2.0](/docs/sdks/analytics/browser/browser-sdk-2) features default event tracking, improved marketing attribution tracking, simplified interface and a lighter weight package. Amplitude recommends the Browser SDK 2.0 for both product analytics and marketing analytics use cases. Upgrade to the latest Browser SDK 2.0. See the [Migration Guide](/docs/sdks/analytics/browser/migrate-from-browser-sdk-1-0-to-2-0) for more information.
 {{/partial:admonition}}
 

@@ -12,12 +12,10 @@ bundle_url: 'https://www.npmjs.com/package/amplitude-js'
 api_reference_url: 'https://amplitude.github.io/Amplitude-JavaScript/'
 shields_io_badge: 'https://img.shields.io/npm/v/amplitude-js.svg'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1726590527
+updated_at: 1726605342
 ampli_article: 6b771f94-bf3a-44ba-a6a7-6e5b58108f70
-migration_guide:
-  - b7cc9d54-870a-40bc-93d8-a2ac15375e75
 major_version: 1
-version_name: "Javascript"
+version_name: Javascript
 exclude_from_sitemap: false
 source: 'https://www.docs.developers.amplitude.com/data/sdks/javascript/'
 package_name: '@amplitude/analytics-browser'
