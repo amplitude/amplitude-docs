@@ -1,5 +1,6 @@
 ---
 id: ed7582d9-a06c-486f-8c18-0be2a1973629
+published: false
 blueprint: destination-catalog
 title: 'HubSpot event streaming v2'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
@@ -9,15 +10,13 @@ integration_type:
 partner_maintained: false
 integration_icon: partner-icons/hubspot.svg
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 source: 'https://www.docs.developers.amplitude.com/data/destinations/hubspot-event-streaming-v2/'
-updated_at: 1722034306
+updated_at: 1726695250
 ---
-[HubSpot](https://www.HubSpot.com/) is an easy to use and powerful CRM platform that enables scaling companies to sell, market and provide customer service from a unified UI. Amplitude's HubSpot streaming integration enables you to forward your Amplitude events and event properties straight to HubSpot with just a few clicks.
+<!--MZ: Unpublished 9/18/2024-->
 
-{{partial:admonition type="note" heading="This integration is in a closed beta"}}
-This feature is in Closed Beta and is in active development. Email [integrations@amplitude.com](mailto:integrations@amplitude.com) for more information. Unlike the [HubSpot streaming integration](/docs/data/destination-catalog/hubspot), this integration automatically creates the necessary custom event definitions and properties in HubSpot, rather than requiring you to create them manually. 
-{{/partial:admonition}}
+[HubSpot](https://www.hubspot.com/) is an easy to use and powerful CRM platform that enables scaling companies to sell, market and provide customer service from a unified UI. Amplitude's HubSpot streaming integration enables you to forward your Amplitude events and event properties straight to HubSpot with just a few clicks.
 
 ## Use cases
 
@@ -98,7 +97,7 @@ To disconnect HubSpot from within Amplitude, follow these steps:
 3. Follow the instructions displayed in the confirmation modal that appears.
 4. Click *Delete*.
 
-Disconnecting HubSpot means new data sent from this source will no longer be processed. Historical data from HubSpot won’t be deleted and can still be analyzed.
+Disconnecting HubSpot means Amplitude won't process new data sent from this source. Amplitude doesn't delete historical data from HubSpot, so you can still analyze it.
 
 ## Uninstall Amplitude from a HubSpot account
 
