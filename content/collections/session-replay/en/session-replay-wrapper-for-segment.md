@@ -3,6 +3,7 @@ id: 951b924e-d18a-44cc-b5b0-51142ffb4e75
 blueprint: session-replay
 title: 'Session Replay Wrapper for Segment'
 landing: false
+published: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1726769214
