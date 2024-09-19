@@ -6,8 +6,8 @@ source: 'https://help.amplitude.com/hc/en-us/articles/360053681271-Interpret-you
 this_article_will_help_you:
   - 'Draw conclusions about user behavior from your Stickiness chart'
   - 'Set up a behavioral cohort from your stickiness analysis'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717104143
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1726784017
 landing: true
 landing_blurb: 'Draw conclusions about user behavior from your Stickiness chart'
 ---
@@ -22,8 +22,6 @@ If you haven't done so already, be sure to read our article on [building a Stick
 ## Interpret your Stickiness chart
 
 In Amplitude, Stickiness can be measured in one of two ways: **cumulatively** or **non-cumulatively**. You can change this setting at the top of the Metrics Module at any time during your analysis.
-
-### interpret stickiness 1.png
 
 ### Non-cumulative stickiness
 
