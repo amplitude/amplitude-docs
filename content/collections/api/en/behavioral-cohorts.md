@@ -496,6 +496,8 @@ Content-Length: 280
 | `ids` | <span class="required">Required</span>. String\[\]. One or more user or Amplitude IDs to include in the cohort. Specify the ID type in the `id_type` field. |
 | `owner` | <span class="required">Required</span>. String. The login email of the cohort's owner in Amplitude. |
 | `published` | <span class="required">Required</span>. Boolean. Whether the cohort is discoverable or hidden. |
+| `skip_save` | <span class="optional">Optional</span>. Boolean. Set to `true` if you want to validate the upload without saving. Default is `false`. |
+| `skip_invalid_ids` | <span class="optional">Optional</span>. Boolean. Setting `skip_invalid_ids` to `true` skips invalid IDs and upload the remaining valid IDs. Setting this parameter to `false` ends the upload if the request has invalid IDs. Default is `true`. |
 | `existing_cohort_id` | <span class="optional">Optional</span>. String. The ID of an existing cohort. This replaces the contents for the specified cohort with the IDs uploaded in the request. For example, '1a2bc3d' is your cohort's ID, found in the cohort's URL. `https://analytics.amplitude.com/accountname/cohort/**1a2bc3d**`|
 
 ### Response
