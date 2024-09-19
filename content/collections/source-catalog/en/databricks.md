@@ -13,8 +13,8 @@ integration_category:
 partner_maintained: false
 integration_icon: partner-icons/databricks.svg
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1719008754
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1726777450
 source: 'https://www.docs.developers.amplitude.com/data/sources/databricks/'
 ---
 Amplitude's Databricks import source enables you to import data from Databricks to your Amplitude account. Databricks import uses the [Databricks Change Data Feed](https://docs.databricks.com/en/delta/delta-change-data-feed.html#use-delta-lake-change-data-feed-on-databricks) feature to securely access and extract live data from your Databricks workspace.
@@ -44,12 +44,12 @@ Before you start to configure the Databricks source in Amplitude, complete the f
 
 ### Find or create an all-purpose compute cluster
 
-Amplitude creates workflows in this cluster on your behalf to start sync jobs. When complete, copy the **Server hostname** and **HTTP path** values to use in a later step. Find both values on the **Configuration -> JDBC/ODBC** tab. For more information about cluster types, see [Compute](https://docs.databricks.com/en/compute/index.html).
+Amplitude creates workflows in this cluster on your behalf to start sync jobs. When complete, copy the server hostname and HTTP path values to use in a later step. Find both values on the *Configuration -> JDBC/ODBC* tab. For more information about cluster types, see [Compute](https://docs.databricks.com/en/compute/index.html).
 
 ![where to find server host name and HTTP path](statamic://asset::help_center_conversions::destinations/integrations-databricks-import-server-hostname-http-path.png)
 
 {{partial:admonition type="note" heading=""}}
-Ensure that the new cluster can run jobs by NOT having configs below in cluster's policy. See details in Databricks' article [Policy definition](https://docs.databricks.com/en/administration-guide/clusters/policy-definition.html#workload).
+Ensure the new cluster can run jobs by NOT having configs below in cluster's policy. See details in Databricks' article [Policy definition](https://docs.databricks.com/en/administration-guide/clusters/policy-definition.html#workload).
 
 ```json
 "workload_type.clients.jobs": {
@@ -95,17 +95,17 @@ GCP Databricks:
 
 ### Authentication
 
-Amplitude's Databricks import supports authentication with [personal access tokens for Databricks workspace users](https://docs.databricks.com/en/dev-tools/auth/pat.html#pat-user), or [personal access tokens for Service Principals](https://docs.databricks.com/en/dev-tools/auth/pat.html#pat-sp). Choose Workspace User authentication for faster setup, or Service Principal authentication for finer grained control. For more information, see Databrick's article [Authentication for Databricks Automation](https://docs.databricks.com/en/dev-tools/auth/index.html#authentication-for-databricks-automation---overview)
+Amplitude's Databricks import supports authentication with [personal access tokens for Databricks workspace users](https://docs.databricks.com/en/dev-tools/auth/pat.html#pat-user), or [personal access tokens for Service Principals](https://docs.databricks.com/en/dev-tools/auth/pat.html#pat-sp). Choose Workspace User authentication for faster setup, or Service Principal authentication for finer grained control. For more information, see [Authentication for Databricks Automation](https://docs.databricks.com/en/dev-tools/auth/index.html#authentication-for-databricks-automation---overview)
 
-#### Create a workspace user Personal Access Token (PAT)
+#### Create a workspace user personal access token (PAT)
 
-Amplitude's Databricks import uses Personal Access Tokens to authenticate. For the quickest setup, create a PAT for your workspace user in Databricks. For more information, see Databricks' article [Personal Access Tokens for Workspace Users](https://docs.databricks.com/en/dev-tools/auth/pat.html#databricks-personal-access-tokens-for-workspace-users)
+Amplitude's Databricks import uses personal access tokens to authenticate. For the quickest setup, create a PAT for your workspace user in Databricks. For more information, see Databricks' article [Personal Access Tokens for Workspace Users](https://docs.databricks.com/en/dev-tools/auth/pat.html#databricks-personal-access-tokens-for-workspace-users)
 
-#### Create a service principal Personal Access Token (PAT)
+#### Create a service principal personal access token (PAT)
 
 Amplitude recommends that you create a [service principal](https://docs.databricks.com/en/administration-guide/users-groups/service-principals.html) in Databricks to allow for more granular control of access.
 
-1. Follow [the Databricks instructions](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html) to create a service principal. Copy the **UUID** for use in a later step.
+1. Follow [the Databricks instructions](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html) to create a service principal. Copy the UUID for use in a later step.
 2. Generate a PAT on this Service Principal.
     
     - If you use AWS or GCP Databricks, follow the instructions in the article [Databricks personal access tokens for service principals](https://docs.databricks.com/en/dev-tools/auth/pat.html#databricks-personal-access-tokens-for-service-principals).
@@ -122,7 +122,7 @@ The service principal you created above requires the following permissions in Da
 
 ### Enable CDF on your tables
 
-Amplitude uses Databricks' Change Data Feed to continuously import data. To enable CDF on a Databricks table, see [Databricks | Enable change data feed](https://docs.databricks.com/en/delta/delta-change-data-feed.html#enable-change-data-feed)
+Amplitude uses the Databricks Change Data Feed to continuously import data. To enable CDF on a Databricks table, see [Databricks | Enable change data feed](https://docs.databricks.com/en/delta/delta-change-data-feed.html#enable-change-data-feed)
 
 ## Configure the Amplitude Databricks source
 
@@ -130,13 +130,13 @@ To add Databricks as a source in Amplitude, complete the following steps.
 
 ### Connect to Databricks
 
-1. In Amplitude Data, click **Catalog** and navigate to the **Sources** tab.
+1. In Amplitude Data, navigate to *Catalog -> Sources*.
 2. Search for **Databricks**.
-3. On the **Credentials** tab of the Connect Databricks screen, enter the credentials you configured during the Databricks configuration:
+3. On the *Credentials* tab of the *Connect Databricks* screen, enter the credentials you configured during the Databricks configuration:
     - Server hostname
     - HTTP Path
     - Personal Access Token (for the workspace user or Service Principal)
-4. Click **Next** to verify access.
+4. Click *Next* to verify access.
 
 ### Select data to import
 
@@ -144,8 +144,9 @@ To add Databricks as a source in Amplitude, complete the following steps.
     - [Event](/docs/get-started/what-is-amplitude#events)
     - [User properties](/docs/get-started/what-is-amplitude#user-properties)
     - [Group properties](/docs/analytics/account-level-reporting)
+    - [Profiles](/docs/data/profile-properties)
    
-    For the **Event** data type, optionally select **Sync User Properties** or **Sync Group Properties** to sync the corresponding properties *within* an event.
+    For the `Event` data type, optionally select *Sync User Properties* or *Sync Group Properties* to sync the corresponding properties **within** an event.
 
 2. Configure the SQL command that transforms data in Databricks before Amplitude imports it.
     - Amplitude treats each record in the SQL execution output as an event to be import. See the Example body in the [Batch Event Upload API](/docs/apis/analytics/batch-event-upload) documentation to ensure each record you import complies.
@@ -164,13 +165,13 @@ To add Databricks as a source in Amplitude, complete the following steps.
     from catalog.schema.table1;
     ```
 
-3. After you add the SQL, click **Test SQL**. Amplitude runs a test against your Databricks instance to ensure the SQL is valid. Click **Next**.
-4. Select the table version for initial import. The initial import brings everything the from table as of the selected version. Select **First** or **Latest**.
+3. After you add the SQL, click *Test SQL*. Amplitude runs a test against your Databricks instance to ensure the SQL is valid. Click *Next*.
+4. Select the table version for initial import. The initial import brings everything the from table as of the selected version. Select *First* or *Latest*.
     - `First` means first version, which is 0.  
     - `Latest` means latest version.
 5. Set the sync frequency. This frequency determines the interval at which Amplitude pulls data from Databricks.
 6. Enter a descriptive name for this instance of the source.
-7. The source appears in your workspace's Sources list.
+7. The source appears in the Sources list for your workspace.
 
 ## Verify data import
 
