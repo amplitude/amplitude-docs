@@ -4,9 +4,13 @@ blueprint: session-replay
 title: 'Session Replay iOS Standalone SDK'
 landing: false
 exclude_from_sitemap: false
-updated_by: 9d88465d-45b3-49e0-88f9-82b78932c7c5
-updated_at: 1724777219
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1726763554
 alpha: true
+instrumentation_guide: true
+platform: ios
+public: false
+parent: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
 ---
 {{partial:partials/session-replay/sr-ios-eap :when="alpha"}}
 

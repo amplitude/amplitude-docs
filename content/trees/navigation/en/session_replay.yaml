@@ -9,8 +9,8 @@ tree:
     id: 1565f25f-4a51-4ebf-a354-bf878a82b8cb
     entry: 7ad57931-a43f-4f50-97a9-5f2d69ea538a
   -
-    id: 1bc318e3-9db5-4981-8c37-dcf814cf43fe
-    title: 'Instrument Session Replay'
+    id: cdf959d6-ca68-4313-81e5-3261554b25ed
+    entry: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
     children:
       -
         id: 6573c21d-8fc2-4206-96bd-5041b7313ad4

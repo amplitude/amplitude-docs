@@ -6,12 +6,48 @@ tabs:
       -
         fields:
           -
+            handle: instrumentation_guide
+            field:
+              type: toggle
+              display: 'Instrumentation guide'
+              localizable: false
+              width: 33
+          -
+            handle: platform
+            field:
+              options:
+                browser: Browser
+                ios: iOS
+                android: Android
+                'third-party integration': '3rd party'
+              type: select
+              display: Platform
+              localizable: false
+              width: 33
+              if:
+                instrumentation_guide: 'equals true'
+          -
+            handle: public
+            field:
+              type: toggle
+              display: Public
+              localizable: false
+              width: 33
+              if:
+                instrumentation_guide: 'equals true'
+          -
+            handle: description
+            field:
+              type: markdown
+              display: Description
+              localizable: false
+              if:
+                instrumentation_guide: 'equals true'
+          -
             import: help_center_common
             config:
               title:
                 required: true
-      -
-        display: 'New Section'
   landing_page:
     display: 'Landing page'
     sections:
@@ -51,19 +87,10 @@ tabs:
               type: float
               display: 'Sitemap Priority'
               instructions: 'From 0.0 (lowest priority) to 1.0 (highest priority)'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: exclude_from_sitemap
             field:
-              default: false
               type: toggle
               display: 'Exclude from sitemap?'
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
