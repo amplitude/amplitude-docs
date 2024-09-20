@@ -75,55 +75,55 @@ To add Snowflake as a data source in your Amplitude project, follow these steps:
 
 7. Choose the import strategy and configure the data feed type as described in the [Select Import Strategy and Change Data Feed Type](#select-import-strategy-and-change-data-feed-type) section.
 
-## Select Import Strategy and Change Data Feed Type
+## Select import strategy and change data feed type
 
 Amplitude's Snowflake Data Import supports multiple strategies for importing data from Snowflake. Selecting the appropriate import strategy and change data feed type is crucial for ensuring that your data is accurately and efficiently imported into Amplitude.
 
-### Define Strategy
-
-#### 1. Select Data Type
+### Select the data type
 
 - **Event**: User actions associated with either a user ID or a device ID. May also include event properties.
 - **User Properties**: Dictionaries of user attributes that can be used to segment users. Associated with a user ID.
 - **Group Properties**: Dictionaries of group attributes applied to a group of users. Associated with a group name.
 - **Profiles**: Dictionaries of properties that are associated with a user profile. Profiles always display the most current data synced from your warehouse. Associated with a user ID.
 
-#### 2. Select Import Strategy
+### Select the import strategy
 
 - **Full Sync** (only for user and group properties): Periodically ingest the entire dataset, regardless of whether that data has already been imported. Useful for datasets that change over time but have no easy way to tell which rows have changed.
 - **Timestamp** (for events, user and group properties): Periodically ingest the most recent rows in the data, as determined by the provided Timestamp column.
 - **Change Data Capture** (for events and profiles): Periodically ingest data based on changes detected by Snowflake's Change Data Capture (CDC) feature.
 
-#### 3. (If applicable) Change Data Feed Type
+### Choose a data feed type
+
+{{partial:admonition type="tip" heading=""}}
+This step applies only to the Change Data Capture import strategy.
+{{/partial:admonition}}
 
 If you selected the Change Data Capture import strategy for Event import, you must choose the change data feed type:
 
 - **Ingestion Only**: Ingest data warehouse data with Amplitude's out-of-the-box enrichment services (ID resolution, property and attribution syncing, resolving location info, etc.).
 - **Continuous Sync**: Directly mirror the data in Snowflake with insert, update, and delete operations. This deactivates Amplitude's enrichment services to remain in sync with your source of truth.
 
-#### 4. Data Mutability Settings (only for Continuous Sync)
+### Data mutability settings
 
-- Enable or disable the ability to update and delete data records.
+{{partial:admonition type="note" heading="Data Mutability settings"}}
+If you chose Continuous Sync in the previous step, enable or disable the ability to update and delete data records.
+{{/partial:admonition}}
 
-### Comparison of Import Strategies
-
-To help you decide which Snowflake integration is best for you, refer to the table below:
-
-{{partial:partials/data/snowflake-import-strat-comp}}
-
-### Which Snowflake Integration is Best for Me?
+### Choose the best integration for your use case
 
 When choosing an integration strategy, consider the following:
 
-- **Use Full Sync** if you need to periodically ingest the entire dataset and cannot track which rows have changed. This method is suitable for smaller datasets where changes cannot be tracked incrementally. Note that it is not suitable for large datasets due to the overhead of ingesting all data each time.
+- **Full Sync**: Choose this option if you need to periodically ingest the entire dataset and can't track which rows have changed. This method is best for smaller datasets in which you can't track incrementally. This method isn't suitable for large datasets due to the overhead required to ingest all data each time.
 
-- **Use Timestamp Import** if your data can be incrementally imported using a monotonically increasing timestamp column that indicates when records are loaded into Snowflake. This is efficient and works well when new data is appended with timestamps.
+- **Timestamp Import**: Choose this option if you can incrementally import data using a monotonically increasing timestamp column that indicates when records when Snowflake loads the records. This is efficient and works well when you append new data with timestamps.
 
-- **Use Change Data Capture (CDC) Ingestion Only** if you want to import data based on changes detected by Snowflake's CDC feature while still using Amplitude's enrichment services. This method only supports insert operations.
+- **Change Data Capture (CDC) Ingestion Only**: Choose this option to import data based on changes detected by Snowflake's CDC feature while still using Amplitude's enrichment services. This method only supports insert operations.
 
-- **Use Change Data Capture (CDC) Continuous Sync** if you want to directly mirror the data in Snowflake with insert, update, and delete operations. This method disables Amplitude's enrichment services to remain in sync with your source of truth and is ideal when you need to keep Amplitude data fully synchronized with your Snowflake data, including mutations.
+- **Change Data Capture (CDC) Continuous Sync**: Choose this option to directly mirror the data in Snowflake with insert, update, and delete operations. This method disables Amplitude's enrichment services to remain in sync with your source of truth and is ideal when you need to keep Amplitude data fully synchronized with your Snowflake data, including mutations.
 
-### Prerequisites and Considerations for Change Data Capture
+{{partial:partials/data/snowflake-strat-comp}}
+
+### Prerequisites and considerations for CDC
 
 When using CDC Continuous Sync, be aware of the following limitations:
 
@@ -135,17 +135,17 @@ When using CDC Continuous Sync, be aware of the following limitations:
 
 - **Complex SQL Statements**: If a data source is represented as a complex SQL `SELECT` statement (for instance, with a `JOIN` clause), create a `VIEW` in your Snowflake account that wraps the data source to use it with a change-based import strategy.
 
-- **Avoid Table Deletion and Recreation**: Do not delete and recreate tables with the same name, as Snowflake CDC will not capture changes in this scenario. Use [incremental models](todo) with tools like dbt to prevent table replacement.
+- **Avoid Table Deletion and Recreation**: Don't delete and recreate tables with the same name, as Snowflake CDC doesn't capture changes in this scenario. Use [incremental models](todo) with tools like dbt to prevent table replacement.
 
-- **Column Deletion or Renaming**: Be aware that Snowflake CDC does not capture changes when a column is deleted or renamed. Deletion of columns won't be synced to Amplitude.
+- **Column Deletion or Renaming**: Be aware that Snowflake CDC doesn't capture changes when a column you delete or rename. Column deletion doesn't sync to Amplitude.
 
 - **Views with JOINs**: While Snowflake CDC is efficient, using Streams on Views that contain JOINs can have performance implications. Consider syncing joined data as User Profiles instead.
 
 - **Disable Change Tracking**: If you disable change tracking in Snowflake or disconnect the Amplitude source for a period longer than the value of `DATA_RETENTION_TIME_IN_DAYS`, Amplitude loses the ability to track historical changes. In this case, recreate the connection. To avoid duplicate events, ensure all events have an `insert_id` set, and recreate the connection within seven days.
 
-- **Amplitude Enrichment Services Disabled**: When using CDC **Continuous Sync**, Amplitude's enrichment services (e.g., ID resolution, property and attribution syncing, resolving location info) are disabled to remain in sync with your source of truth.
+- **Amplitude Enrichment Services Disabled**: When using CDC **Continuous Sync**, Amplitude disables enrichment services like ID resolution, property and attribution syncing, and resolving location info to remain in sync with your source of truth.
 
-## Migrate from custom SQL to Change Data Capture
+## Migrate from custom SQL to CDC
 
 To change the modeling method of your Snowflake source:
 
