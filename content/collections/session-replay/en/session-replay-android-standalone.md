@@ -5,8 +5,12 @@ title: 'Session Replay Android Standalone SDK'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1719337429
+updated_at: 1726763609
 alpha: true
+instrumentation_guide: true
+platform: android
+public: false
+parent: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
 ---
 {{partial:partials/session-replay/sr-android-eap :when="alpha"}}
 

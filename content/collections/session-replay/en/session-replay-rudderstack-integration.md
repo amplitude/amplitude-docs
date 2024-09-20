@@ -4,8 +4,13 @@ blueprint: session-replay
 title: 'Session Replay Wrapper for Rudderstack'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1723742318
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1726769228
+instrumentation_guide: true
+platform: 'third-party integration'
+public: true
+parent: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
+description: "Choose this option if you use Rudderstack for your site's analytics."
 ---
 Amplitude provides a wrapper for integrating Rudderstack and Amplitude's Session Replay.
 
