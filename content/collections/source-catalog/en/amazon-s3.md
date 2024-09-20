@@ -105,12 +105,12 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
         {
           "Effect": "Allow",
           "Principal": {
-            "AWS": "arn:aws:iam::{{amplitude_account}}:root" //[tl! ~~]
+            "AWS": "arn:aws:iam::<amplitude_account>:root" //[tl! ~~]
           },
           "Action": "sts:AssumeRole",
           "Condition": {
             "StringEquals": {
-              "sts:ExternalId": "{{external_id}}" //[tl! ~~]
+              "sts:ExternalId": "<external_id>" //[tl! ~~]
             }
           }
         }
@@ -118,10 +118,10 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
     }
     ```
 
-3. Create a new IAM policy, for example, `AmplitudeS3ReadOnlyAccess`. Use the entire example code that follows, but be sure to update **{{}}** in highlighted text.
+3. Create a new IAM policy, for example, `AmplitudeS3ReadOnlyAccess`. Use the entire example code that follows, but be sure to update **<>** in highlighted text.
 
-    - **{{bucket_name}}**: the s3 bucket name where your data is imported from.
-    - **{{prefix}}**: the optional prefix of files that you want to import, for example `filePrefix`. For folders, make sure prefix ends with `/`, for example `folder/`. For the root folder, keep prefix as empty.
+    - **<bucket_name>**: the s3 bucket name where your data is imported from.
+    - **\<prefix\>**: the optional prefix of files that you want to import, for example `filePrefix`. For folders, make sure prefix ends with `/`, for example `folder/`. For the root folder, keep prefix as empty.
 
     Example 1: IAM policy without prefix:
 
@@ -136,7 +136,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
           ],
           "Effect":"Allow",
           "Resource":[
-            "arn:aws:s3:::{{bucket_name}}"
+            "arn:aws:s3:::<bucket_name>"
           ],
           "Condition":{
             "StringLike":{
@@ -154,7 +154,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
             "s3:ListObjects"
           ],
           "Resource":[
-            "arn:aws:s3:::{{bucket_name}}/*" //[tl! ~~]
+            "arn:aws:s3:::<bucket_name>/*" //[tl! ~~]
           ]
         },
         {
@@ -165,7 +165,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
             "s3:GetBucketNotification"
           ],
           "Resource":[
-            "arn:aws:s3:::{{bucket_name}}" //[tl! ~~]
+            "arn:aws:s3:::<bucket_name>" //[tl! ~~]
           ]
         }
       ]
@@ -185,12 +185,12 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
           ],
           "Effect":"Allow",
           "Resource":[
-            "arn:aws:s3:::{{bucket_name}}"
+            "arn:aws:s3:::<bucket_name>"
           ],
           "Condition":{
             "StringLike":{
               "s3:prefix":[
-                "{{prefix}}*" //[tl! ~~]
+                "<prefix>*" //[tl! ~~]
               ]
             }
           }
@@ -203,7 +203,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
             "s3:ListObjects"
           ],
           "Resource":[
-            "arn:aws:s3:::{{bucket_name}}/{{prefix}}*" //[tl! ~~]
+            "arn:aws:s3:::<bucket_name>/<prefix>*" //[tl! ~~]
           ]
         },
         {
@@ -214,7 +214,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
             "s3:GetBucketNotification"
           ],
           "Resource":[
-            "arn:aws:s3:::{{bucket_name}}" //[tl! ~~]
+            "arn:aws:s3:::<bucket_name>" //[tl! ~~]
           ]
         }
       ]
