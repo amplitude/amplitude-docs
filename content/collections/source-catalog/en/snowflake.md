@@ -46,95 +46,109 @@ With Amplitude's Snowflake integration, you can ingest Snowflake data directly i
 Amplitude's Data Warehouse Import sometimes processes events in parallel, so time-ordered syncing of user and group properties on events isn't guaranteed in the same way as submitting events directly to the Identify and Group Identify APIs. 
 {{/partial:admonition}}
 
-## Modeling methods
-
-Amplitude's Snowflake Data Import supports two methods for importing data from Snowflake, Change Data Capture and Custom SQL Query.
-
-|                   | Change Data Capture                                                                                                                                                                                 | Custom SQL Query                                                                                                                |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Import data types | Event, User property, Group Property                                                                                                                                                               | Event, User property, Group Property                                                                                            |
-| Import strategy   | Change-based                                                                                                                                                                                       | Time-based, Full Sync (only for group and user properties)                                                                      |
-| When to use       | Recommended for most use cases, user-friendly, minimal SQL knowledge required. <br/>Limited data source selection functionality, consider creating Snowflake VIEW (see Prerequisites for details). | Use when data selection requires customization, even though it may lead to data discrepancies and higher costs if misconfigured |
-
-### Change Data Capture
-
-Change Data Capture identifies and captures changes made to data in a database and delivers those changes in real time to a downstream process or system.
-
-For the Snowflake source in Amplitude, Change Data Capture uses mechanisms available in Snowflake, [Time Travel](https://docs.snowflake.com/en/user-guide/data-time-travel) and [CHANGES](https://docs.snowflake.com/en/sql-reference/constructs/changes) clause, to identify changes made in the data source since the last successfully completed import job.
-
-#### Prerequisites and considerations
-
-- If a data source is represented as a complex SQL SELECT statement (for instance, with a JOIN clause), create a VIEW in your Snowflake account that wraps the data source to use it with a change-based import strategy.
-- Enable change tracking for the source table or view. See [Enabling Change Tracking on Views and Underlying Tables Snowflake](https://docs.snowflake.com/en/user-guide/streams-manage.html#label-enabling-change-tracking-views) for more information. 
-- `DATA_RETENTION_TIME_IN_DAYS` must be greater than or equal to `1`, but Amplitude recommends at least `7` days. Otherwise, the change-based import fails. For more details, see [Time Travel](https://docs.snowflake.com/en/user-guide/data-time-travel) in Snowflake's documentation. Setting `DATA_RETENTION_TIME_IN_DAYS` to  `0` disables the change tracking, and causes the connection to become unrecoverable. If this happens, recreate the source.
-- [Data field](#data-fields) requirements also apply.
-- (Optional, recommended) Ensure the data to be imported has a unique and immutable `insert_id` for each row to prevent data duplication if there are any unexpected issues. More about Amplitude deduplication and `insert_id` is [Event Deduplication](/docs/apis/analytics/http-v2/#event-deduplication).
-- If you disable change tracking in Snowflake, or disconnect the Amplitude source for a period longer than the value of `DATA_RETENTION_TIME_IN_DAYS`, Amplitude loses ability to track historical changes. In this case, recreate the connection. To avoid duplicate events, ensure all events have an `insert_id` set, and recreate the connection within seven days.
-- The initial import job transfers all data from the source. Subsequent jobs import the differences from the last successful import.
-- Snowflake [`CHANGES`](https://docs.snowflake.com/en/sql-reference/constructs/changes#usage-notes) limitations apply.
-
-### Custom SQL query
-
-The Custom SQL query supports time-based import of events, user properties, and group properties, and full syncs of user properties and group properties.
-
-For Time-based import, Amplitude requires that you use a monotonically increasing timestamp value. This value should show when the record loaded into the source table the SQL configuration is querying. The warehouse import tool brings data into Amplitude by continually updating the maximum value of the column referenced in the *Timestamp Column Name* input within the Import Config UI with each subsequent import.
-
-{{partial:admonition type="example" title=""}}
-Upon first import, Amplitude imports all the data returned from the query configured in the Import Config. Amplitude saves a reference of the maximum timestamp referenced in the *Timestamp Column Name*: `timestamp_1`. Upon subsequent import, Amplitude imports all data from the timestamp saved earlier (`timestamp_1`), to what's now the new maximum timestamp (`timestamp_2`). Then after that import, Amplitude saves `timestamp_2` as the new maximum timestamp.
-{{/partial:admonition}}
-
-## Add Snowflake as a source
+## Add Snowflake as a Source
 
 To add Snowflake as a data source in your Amplitude project, follow these steps:
 
-1. In Amplitude Data, navigate to *Catalog -> Sources*.
-2. In the Warehouse Sources section, click *Snowflake*.
+1. In Amplitude Data, navigate to **Catalog → Sources**.
+
+2. In the Warehouse Sources section, click **Snowflake**.
+
 3. Enter the required credentials for the Snowflake instance you want to connect:
-      - *Account*: Snowflake account name. Case sensitive. This is the first part of your Snowflake URL, before `snowflakecomputing.com`. Don't include             ".snowflakecomputing.com" in your account name. 
-      - *Database*: Name of the database where Amplitude can find the data.
-      - *Warehouse*: Used by Amplitude to execute SQL.
-      - *Username*: Used by Amplitude for authentication.
-      - *Password*: Used by Amplitude for authentication.
 
-    Amplitude offers password-based and key pair authentication for Snowflake.
-    If you want to use password authentication, select *Password* and enter your password in the *Password* field. If you want to use key pair authentication, select *Key pair* and then click *Generate Key*. Then provide the organization and account names in the format `ORGNAME-ACCOUNTNAME`.
+    - **Account**: Snowflake account name. Case sensitive. This is the first part of your Snowflake URL, before `snowflakecomputing.com`. Don't include ".snowflakecomputing.com" in your account name.
+    - **Database**: Name of the database where Amplitude can find the data.
+    - **Warehouse**: Used by Amplitude to execute SQL.
+    - **Username**: Used by Amplitude for authentication.
+    - **Password**: Used by Amplitude for authentication.
 
-4. Copy the autogenerated SQL query and run it in Snowflake to give Amplitude the proper permissions. 
-5. After running the query, click *Next* to test the connection.
-6. After the test is successful, click *Next* again to move on to the data selection stage.
-7. Choose the modeling method, either [Change Data Capture](#table-selection-ui-settings) or [Custom SQL Query](#custom-sql-query-settings).
+   Amplitude offers password-based and key pair authentication for Snowflake.
 
-### Change Data Capture settings
+    - If you want to use password authentication, select **Password** and enter your password in the **Password** field.
+    - If you want to use key pair authentication, select **Key pair** and then click **Generate Key**. Then provide the organization and account names in the format `ORGNAME-ACCOUNTNAME`.
 
-Configure the modeling method:
+4. Copy the autogenerated SQL query and run it in Snowflake to give Amplitude the proper permissions.
 
-- **Data source**: Choose a table or view from the left panel.
-- **Data type**: Select if the table maps to event, user property, or group property data.
-- **Frequency**: Select the interval with which Amplitude should check for changes in the Snowflake table.
+5. After running the query, click **Next** to test the connection.
 
-Map the required and custom fields: Setup name mapping between columns in the Snowflake data source and data field name that Amplitude requires. For more information, see [Data fields](#data-fields) below.
+6. After the test is successful, click **Next** again to move on to the data selection stage.
 
-When complete, click **Test Mapping** to verify the correct data appears under the right property in Amplitude.
+7. Choose the import strategy and configure the data feed type as described in the [Select Import Strategy and Change Data Feed Type](#select-import-strategy-and-change-data-feed-type) section.
 
-### Custom SQL query settings
+## Select Import Strategy and Change Data Feed Type
 
-Choose your configuration options: 
+Amplitude's Snowflake Data Import supports multiple strategies for importing data from Snowflake. Selecting the appropriate import strategy and change data feed type is crucial for ensuring that your data is accurately and efficiently imported into Amplitude.
 
-- *Type of data*: This tells Amplitude whether you're ingesting event data, user property data, or group property data.
-- *Type of import:*
-  - *Full Sync*: Amplitude periodically ingests the entire dataset, regardless of whether that data has already been imported. This is good for data sets where the row data changes over time, but there is no easy way to tell which rows have changed. Otherwise, the more efficient option would be a time-based import. This option isn't supported for ingesting event data.
-  - *Time-based*: Amplitude periodically ingests the most recent rows in the data, as determined by the provided *Timestamp* column. The first import brings in all available data, and later ingests any data with timestamps after the maximum timestamp seen during the last import job. To use this, include the timestamp of the data load into Snowflake. For more information on how this works, see [the time-based import](#time-based-import) section.
-- *Frequency*: Choose from several scheduling options ranging from five minutes to one month. With the one month option, Amplitude ingests data on the first of the month.
-- *SQL query*: This is the code for the query Amplitude uses to decide which data is ingested.
+### Define Strategy
 
-Finish the configuration:
+#### 1. Select Data Type
 
-1. After you've set your configuration options, click *Test SQL* to see how the data is coming through from your Snowflake instance. Errors appear on this screen.
-2. If there are no errors, click *Finish*. 
+- **Event**: User actions associated with either a user ID or a device ID. May also include event properties.
+- **User Properties**: Dictionaries of user attributes that can be used to segment users. Associated with a user ID.
+- **Group Properties**: Dictionaries of group attributes applied to a group of users. Associated with a group name.
+- **Profiles**: Dictionaries of properties that are associated with a user profile. Profiles always display the most current data synced from your warehouse. Associated with a user ID.
 
-Amplitude displays a notification indicating you enable the new Snowflake source and redirects you to the Sources listing page.
+#### 2. Select Import Strategy
 
-If you have any issues or questions while following this flow, contact the Amplitude team.
+- **Full Sync** (only for user and group properties): Periodically ingest the entire dataset, regardless of whether that data has already been imported. Useful for datasets that change over time but have no easy way to tell which rows have changed.
+- **Timestamp** (for events, user and group properties): Periodically ingest the most recent rows in the data, as determined by the provided Timestamp column.
+- **Change Data Capture** (for events and profiles): Periodically ingest data based on changes detected by Snowflake's Change Data Capture (CDC) feature.
+
+#### 3. (If applicable) Change Data Feed Type
+
+If you selected the Change Data Capture import strategy for Event import, you must choose the change data feed type:
+
+- **Ingestion Only**: Ingest data warehouse data with Amplitude's out-of-the-box enrichment services (ID resolution, property and attribution syncing, resolving location info, etc.).
+- **Continuous Sync**: Directly mirror the data in Snowflake with insert, update, and delete operations. This deactivates Amplitude's enrichment services to remain in sync with your source of truth.
+
+#### 4. Data Mutability Settings (only for Continuous Sync)
+
+- Enable or disable the ability to update and delete data records.
+
+### Comparison of Import Strategies
+
+To help you decide which Snowflake integration is best for you, refer to the table below:
+
+| **Import Strategy**       | **Data Types Supported**                  | **Change Data Feed Type** | **Data Mutability**                        | **Amplitude Enrichment Services**   | **Column Mapping Method**           | **When to Use**                                                                                                                       | **Considerations**                                                                                                                                                                                                                                                                    |
+|---------------------------|-------------------------------------------|---------------------------|--------------------------------------------|-------------------------------------|-------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Full Sync                 | User Properties, Group Properties         | N/A                       | N/A                                        | Enrichment services applied         | Custom SQL SELECT Query             | Use when you need to periodically ingest the entire dataset and cannot track changes incrementally.                                   | Not suitable for large datasets due to the need to ingest the entire dataset each time.                                                                                                                                                                                               |
+| Timestamp                 | Events, User Properties, Group Properties | N/A                       | N/A                                        | Enrichment services applied         | Custom SQL SELECT Query             | Use when you can track new data using a monotonically increasing timestamp column.                                                    | Requires a timestamp column that indicates when the record was loaded into Snowflake.                                                                                                                                                                                                 |
+| Change Data Capture (CDC) | Events                                    | Ingestion Only            | Insert operations only                     | Enrichment services applied         | UI-based table and column selection | Use when you want to import data based on changes detected by Snowflake's CDC feature, with Amplitude enrichment services.            | Requires change tracking to be enabled in Snowflake.                                                                                                                                                                                                                                  |
+| Change Data Capture (CDC) | Events, Profiles                          | Continuous Sync           | Supports insert, update, delete operations | Enrichment services **not** applied | UI-based table and column selection | Use when you want to directly mirror data in Snowflake, including updates and deletions, and keep Amplitude in sync with source data. | Disables Amplitude's enrichment services to remain in sync with the source of truth. Requires careful consideration of limitations, such as data retention settings in Snowflake and that deletions/renames of columns may not be captured. See limitations section for more details. |
+
+### Which Snowflake Integration is Best for Me?
+
+When choosing an integration strategy, consider the following:
+
+- **Use Full Sync** if you need to periodically ingest the entire dataset and cannot track which rows have changed. This method is suitable for smaller datasets where changes cannot be tracked incrementally. Note that it is not suitable for large datasets due to the overhead of ingesting all data each time.
+
+- **Use Timestamp Import** if your data can be incrementally imported using a monotonically increasing timestamp column that indicates when records are loaded into Snowflake. This is efficient and works well when new data is appended with timestamps.
+
+- **Use Change Data Capture (CDC) Ingestion Only** if you want to import data based on changes detected by Snowflake's CDC feature while still using Amplitude's enrichment services. This method only supports insert operations.
+
+- **Use Change Data Capture (CDC) Continuous Sync** if you want to directly mirror the data in Snowflake with insert, update, and delete operations. This method disables Amplitude's enrichment services to remain in sync with your source of truth and is ideal when you need to keep Amplitude data fully synchronized with your Snowflake data, including mutations.
+
+### Prerequisites and Considerations for Change Data Capture
+
+When using CDC Continuous Sync, be aware of the following limitations:
+
+- **Enable Change Tracking**: Enable change tracking for the source table or view. See [Enabling Change Tracking on Views and Underlying Tables](https://docs.snowflake.com/en/user-guide/streams-manage.html#label-enabling-change-tracking-views) in Snowflake's documentation.
+
+- **Data Retention Settings**: `DATA_RETENTION_TIME_IN_DAYS` must be greater than or equal to `1`, but Amplitude recommends at least `7` days. Otherwise, the change-based import fails. For more details, see [Time Travel](https://docs.snowflake.com/en/user-guide/data-time-travel) in Snowflake's documentation. Setting `DATA_RETENTION_TIME_IN_DAYS` to `0` disables the change tracking and causes the connection to become unrecoverable. If this happens, recreate the source.
+
+- **Unique and Immutable `insert_id`**: Ensure the data to be imported has a unique and immutable `insert_id` for each row to prevent data duplication if there are any unexpected issues. More about Amplitude deduplication and `insert_id` is available in [Event Deduplication](/docs/apis/analytics/http-v2/#event-deduplication).
+
+- **Complex SQL Statements**: If a data source is represented as a complex SQL `SELECT` statement (for instance, with a `JOIN` clause), create a `VIEW` in your Snowflake account that wraps the data source to use it with a change-based import strategy.
+
+- **Avoid Table Deletion and Recreation**: Do not delete and recreate tables with the same name, as Snowflake CDC will not capture changes in this scenario. Use [incremental models](todo) with tools like dbt to prevent table replacement.
+
+- **Column Deletion or Renaming**: Be aware that Snowflake CDC does not capture changes when a column is deleted or renamed. Deletion of columns won't be synced to Amplitude.
+
+- **Views with JOINs**: While Snowflake CDC is efficient, using Streams on Views that contain JOINs can have performance implications. Consider syncing joined data as User Profiles instead.
+
+- **Disable Change Tracking**: If you disable change tracking in Snowflake or disconnect the Amplitude source for a period longer than the value of `DATA_RETENTION_TIME_IN_DAYS`, Amplitude loses the ability to track historical changes. In this case, recreate the connection. To avoid duplicate events, ensure all events have an `insert_id` set, and recreate the connection within seven days.
+
+- **Amplitude Enrichment Services Disabled**: When using CDC **Continuous Sync**, Amplitude's enrichment services (e.g., ID resolution, property and attribution syncing, resolving location info) are disabled to remain in sync with your source of truth.
 
 ## Migrate from custom SQL to Change Data Capture
 
