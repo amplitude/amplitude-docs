@@ -151,7 +151,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
           "Effect":"Allow",
           "Action":[
             "s3:GetObject",
-            "s3:ListObjects"
+            "s3:ListBucket"
           ],
           "Resource":[
             "arn:aws:s3:::<bucket_name>/*" //[tl! ~~]
@@ -200,7 +200,7 @@ Follow these steps to give Amplitude read access to your AWS S3 bucket.
           "Effect":"Allow",
           "Action":[
             "s3:GetObject",
-            "s3:ListObjects"
+            "s3:ListBucket"
           ],
           "Resource":[
             "arn:aws:s3:::<bucket_name>/<prefix>*" //[tl! ~~]
