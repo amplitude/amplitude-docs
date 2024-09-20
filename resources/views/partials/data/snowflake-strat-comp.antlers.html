@@ -5,7 +5,6 @@
 <tr>
 <th><strong>Import Strategy</strong></th>
 <th><strong>Data Types Supported</strong></th>
-<th><strong>Change Data Feed Type</strong></th>
 <th><strong>Data Mutability</strong></th>
 <th><strong>Amplitude Enrichment Services</strong></th>
 <th><strong>Column Mapping Method</strong></th>
@@ -18,7 +17,6 @@
 <td>Full Sync</td>
 <td>User Properties, Group Properties</td>
 <td>N/A</td>
-<td>N/A</td>
 <td>Enrichment services applied</td>
 <td>Custom SQL SELECT Query</td>
 <td>Use when you need to periodically ingest the entire dataset and cannot track changes incrementally.</td>
@@ -28,16 +26,14 @@
 <td>Timestamp</td>
 <td>Events, User Properties, Group Properties</td>
 <td>N/A</td>
-<td>N/A</td>
 <td>Enrichment services applied</td>
 <td>Custom SQL SELECT Query</td>
 <td>Use when you can track new data using a monotonically increasing timestamp column.</td>
 <td>Requires a timestamp column that indicates when the record was loaded into Snowflake.</td>
 </tr>
 <tr>
-<td>Change Data Capture (CDC)</td>
+<td>CDC: Ingest only</td>
 <td>Events</td>
-<td>Ingestion Only</td>
 <td>Insert operations only</td>
 <td>Enrichment services applied</td>
 <td>UI-based table and column selection</td>
@@ -45,9 +41,8 @@
 <td>Requires change tracking to be enabled in Snowflake.</td>
 </tr>
 <tr>
-<td>Change Data Capture (CDC)</td>
+<td>CDC: Continuous Sync</td>
 <td>Events, Profiles</td>
-<td>Continuous Sync</td>
 <td>Supports insert, update, delete operations</td>
 <td>Enrichment services <strong>not</strong> applied</td>
 <td>UI-based table and column selection</td>
