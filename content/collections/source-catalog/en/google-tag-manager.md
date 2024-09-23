@@ -114,17 +114,16 @@ A tag type allows you to specify what kind of action or event should be tracked 
 
 Cookies are generated at the initialization stage. For more information on managing cookies, see the [cookie management details](/docs/sdks/analytics/browser/browser-sdk-2#cookie-management). Amplitude recommends that you initialize after obtaining cookie consent. Amplitude supports deferred initialization, so any event tracking that takes place before the init command will still be captured and won't be lost.
 
-##### Track default Amplitude events
+##### Autocapture
 
-Check this checkbox to enable default event tracking and configure the following default tracking events
+Check "Autocapture events" checkbox to enable autocapture the following event types. [More details](/docs/sdks/analytics/browser/browser-sdk-2#autocapture).
 
-The following configurations are available attribution options. [More details](/docs/sdks/analytics/browser/browser-sdk-2#track-marketing-attribution).
-
+- Track Marketing Attribution
 - Track Page Views
 - Track Sessions
 - Track Form Interactions
 - Track File Downloads
-- Track Marketing Attribution
+- Track Element Interactions
 
 | Name</  | Description | Default Value |
 | --- | --- | --- |
