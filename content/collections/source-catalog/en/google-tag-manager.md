@@ -125,6 +125,8 @@ Enable *Autocapture events* to enable autocapture for the following event types:
 - Track File Downloads
 - Track Element Interactions
 
+For more information, see [Browser SDK 2 | Autocapture](/docs/sdks/analytics/browser/browser-sdk-2#autocapture)
+
 | Name</  | Description | Default Value |
 | --- | --- | --- |
 | `Initial Empty Value` | `string`. Customize the initial empty value for attribution related user properties to any string value. | `EMPTY`|
