@@ -119,7 +119,7 @@ When choosing an integration strategy, consider the following:
 
 - **Change Data Capture (CDC) Ingestion Only**: Choose this option to import data based on changes detected by Snowflake's CDC feature while still using Amplitude's enrichment services. This method only supports insert operations.
 
-- **Change Data Capture (CDC) Continuous Sync**: Choose this option to directly mirror the data in Snowflake with insert, update, and delete operations. This method disables Amplitude's enrichment services to remain in sync with your source of truth and is ideal when you need to keep Amplitude data fully synchronized with your Snowflake data, including mutations.
+- **Change Data Capture (CDC) Continuous Sync**: Choose this option to directly mirror the data in Snowflake with insert, update, and delete operations based on changes detected by Snowflake's CDC feature. This method disables Amplitude's enrichment services to remain in sync with your source of truth and is ideal when you need to keep Amplitude data fully synchronized with your Snowflake data, including mutations.
 
 {{partial:partials/data/snowflake-strat-comp}}
 
@@ -130,18 +130,18 @@ When using CDC Continuous Sync, be aware of the following limitations:
 - **Enable Change Tracking**: Enable change tracking for the source table or view. See [Enabling Change Tracking on Views and Underlying Tables](https://docs.snowflake.com/en/user-guide/streams-manage.html#label-enabling-change-tracking-views) in Snowflake's documentation.
 
 - **Data Retention Settings**: `DATA_RETENTION_TIME_IN_DAYS` must be greater than or equal to `1`, but Amplitude recommends at least `7` days. Otherwise, the change-based import fails. For more details, see [Time Travel](https://docs.snowflake.com/en/user-guide/data-time-travel) in Snowflake's documentation. Setting `DATA_RETENTION_TIME_IN_DAYS` to `0` disables the change tracking and causes the connection to become unrecoverable. If this happens, recreate the source.
+- 
+- **Disable Change Tracking**: If you disable change tracking in Snowflake or disconnect the Amplitude source for a period longer than the value of `DATA_RETENTION_TIME_IN_DAYS`, Amplitude loses the ability to track historical changes. In this case, recreate the connection. To avoid duplicate events, ensure all events have an `insert_id` set, and recreate the connection within seven days.
 
 - **Unique and Immutable `insert_id`**: Ensure the data to be imported has a unique and immutable `insert_id` for each row to prevent data duplication if there are any unexpected issues. More about Amplitude deduplication and `insert_id` is available in [Event Deduplication](/docs/apis/analytics/http-v2/#event-deduplication).
 
-- **Complex SQL Statements**: If a data source is represented as a complex SQL `SELECT` statement (for instance, with a `JOIN` clause), create a `VIEW` in your Snowflake account that wraps the data source to use it with a change-based import strategy.
+- **Complex SQL Statements**: If a data source is represented as a complex SQL `SELECT` statement (for instance, with a `JOIN` clause), create a `VIEW` in your Snowflake account that wraps the data source to use it with a change-based import strategy. See [Streams on Views](https://docs.snowflake.com/en/user-guide/streams-intro#streams-on-views) for considerations when using CDC with views in Snowflake.
 
-- **Avoid Table Deletion and Recreation**: Don't delete and recreate tables with the same name, as Snowflake CDC doesn't capture changes in this scenario. Use [incremental models](todo) with tools like dbt to prevent table replacement.
+- **Views with JOINs**: While Snowflake CDC is efficient, using views that contain JOINs can have performance implications. Consider syncing joined data as User Profiles instead.
 
-- **Column Deletion or Renaming**: Be aware that Snowflake CDC doesn't capture changes when a column you delete or rename. Column deletion doesn't sync to Amplitude.
+- **Avoid Table Deletion and Recreation**: Don't delete and recreate tables with the same name, as Snowflake CDC doesn't capture changes in this scenario. Use [incremental models](https://docs.getdbt.com/docs/build/incremental-models) with tools like dbt to prevent table replacement.
 
-- **Views with JOINs**: While Snowflake CDC is efficient, using Streams on Views that contain JOINs can have performance implications. Consider syncing joined data as User Profiles instead.
-
-- **Disable Change Tracking**: If you disable change tracking in Snowflake or disconnect the Amplitude source for a period longer than the value of `DATA_RETENTION_TIME_IN_DAYS`, Amplitude loses the ability to track historical changes. In this case, recreate the connection. To avoid duplicate events, ensure all events have an `insert_id` set, and recreate the connection within seven days.
+- **Handling Schema Changes**: Adding new columns with default NULL values to CDC-tracked tables or views is supported. Other types of schema changes are not recommended. Snowflake CDC only reflects changes from DML statements. DDL statements that logically modify data (such as adding new columns with default values, dropping existing columns, or renaming columns) will affect future data sent to Amplitude, but Snowflake will not update historical data with changes caused by DDL statements. Hence, such updates won't be reflected in Amplitude for historical data.
 
 - **Amplitude Enrichment Services Disabled**: When using CDC **Continuous Sync**, Amplitude disables enrichment services like ID resolution, property and attribution syncing, and resolving location info to remain in sync with your source of truth.
 
