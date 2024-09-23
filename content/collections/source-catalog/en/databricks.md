@@ -37,6 +37,13 @@ For guided instructions to setting up this integration, view the [Loom video](ht
   - [views](https://docs.databricks.com/en/views/index.html)
   - [materialized views](https://docs.databricks.com/en/views/materialized.html)
   - [streaming tables](https://docs.databricks.com/en/delta-live-tables/index.html#streaming-table)
+- SQL input restrictions for Continuous Sync change data feed type:
+  - Only 1 source Delta Table (referred to as “main table”)
+  - Single SELECT statement 
+  - Currently, Common Table Expression (CTE) (i.e. WITH-clause) are not supported 
+  - Currently, set operations like UNION, INTERSECT, MINUS, EXCEPT are not supported 
+  - Statements with JOIN clause(-s) will use mutation metadata from the main table, ignoring the mutation history of joined table(-s). The latest version of data in the joined table(-s) will be used during data synchronization
+  - Explicit SQL validation may not cover all edge cases. For example, if more than 1 source table is provided, validation may succeed during source creation, but fail during import execution
 
 ## Configure Databricks
 
@@ -148,7 +155,12 @@ To add Databricks as a source in Amplitude, complete the following steps.
    
     For the `Event` data type, optionally select *Sync User Properties* or *Sync Group Properties* to sync the corresponding properties **within** an event.
 
-2. Configure the SQL command that transforms data in Databricks before Amplitude imports it.
+2. If you selected the Event or Profiles as data type, you must choose the change data feed type:
+
+- **Ingestion Only**: Ingest data warehouse data with Amplitude's out-of-the-box enrichment services (ID resolution, property and attribution syncing, resolving location info, etc.).
+- **Continuous Sync**: Directly mirror the data in Snowflake with insert, update, and delete operations. This deactivates Amplitude's enrichment services to remain in sync with your source of truth.
+
+3. Configure the SQL command that transforms data in Databricks before Amplitude imports it.
     - Amplitude treats each record in the SQL execution output as an event to be import. See the Example body in the [Batch Event Upload API](/docs/apis/analytics/batch-event-upload) documentation to ensure each record you import complies.
     - Amplitude can transform / import from only the tables you specify in step 1 above.
        - For example, if you have access to tables `A`, `B` and `C` but only selected `A` in step 1, then you can only import data from `A`.
