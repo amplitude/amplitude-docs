@@ -130,7 +130,7 @@ When using CDC Continuous Sync, be aware of the following limitations:
 - **Enable Change Tracking**: Enable change tracking for the source table or view. See [Enabling Change Tracking on Views and Underlying Tables](https://docs.snowflake.com/en/user-guide/streams-manage.html#label-enabling-change-tracking-views) in Snowflake's documentation.
 
 - **Data Retention Settings**: `DATA_RETENTION_TIME_IN_DAYS` must be greater than or equal to `1`, but Amplitude recommends at least `7` days. Otherwise, the change-based import fails. For more details, see [Time Travel](https://docs.snowflake.com/en/user-guide/data-time-travel) in Snowflake's documentation. Setting `DATA_RETENTION_TIME_IN_DAYS` to `0` disables the change tracking and causes the connection to become unrecoverable. If this happens, recreate the source.
-- 
+
 - **Disable Change Tracking**: If you disable change tracking in Snowflake or disconnect the Amplitude source for a period longer than the value of `DATA_RETENTION_TIME_IN_DAYS`, Amplitude loses the ability to track historical changes. In this case, recreate the connection. To avoid duplicate events, ensure all events have an `insert_id` set, and recreate the connection within seven days.
 
 - **Unique and Immutable `insert_id`**: Ensure the data to be imported has a unique and immutable `insert_id` for each row to prevent data duplication if there are any unexpected issues. More about Amplitude deduplication and `insert_id` is available in [Event Deduplication](/docs/apis/analytics/http-v2/#event-deduplication).
