@@ -116,7 +116,7 @@ Cookies are generated at the initialization stage. For more information on manag
 
 ##### Autocapture
 
-Check "Autocapture events" checkbox to enable autocapture the following event types. [More details](/docs/sdks/analytics/browser/browser-sdk-2#autocapture).
+Enable *Autocapture events* to enable autocapture for the following event types:
 
 - Track Marketing Attribution
 - Track Page Views
