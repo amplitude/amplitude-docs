@@ -23,30 +23,34 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1726777780
 ---
-With Amplitude's Snowflake integration, you can ingest Snowflake data directly into your Amplitude project. This article walks you through the steps needed to make that happen.
+With Amplitude's Snowflake integration, you can ingest Snowflake data directly into your Amplitude project. The integration supports four strategies to import your Snowflake data, depending on the data types you select.
 
+{{partial:admonition type="note" heading="Amplitude regional IP addresses"}}
+Depending on your company's network policy, you may need add these IP addresses to your allowlist in order for Amplitude's servers to access your Snowflake instance:
 
-## Considerations
+| Region | IP Addresses |
+| -------| ------------|
+| US | `52.33.3.219`, `35.162.216.242`, `52.27.10.221` |
+| EU | `3.124.22.25`, `18.157.59.125`, `18.192.47.195`|
 
-- Depending on your company's network policy, you may need add these IP addresses to your allowlist in order for Amplitude's servers to access your Snowflake instance:
-
-    - Amplitude US IP addresses:
-        - 52.33.3.219
-        - 35.162.216.242
-        - 52.27.10.221 
-    - Amplitude EU IP addresses:
-        - 3.124.22.25
-        - 18.157.59.125
-        - 18.192.47.195
+{{/partial:admonition}}
 
 ## Limits
 
 - Maximum running time for a single Snowflake SQL query is 12 hours.
+
 {{partial:admonition type="warning" title="User and Group properties sync"}}
 Amplitude's Data Warehouse Import sometimes processes events in parallel, so time-ordered syncing of user and group properties on events isn't guaranteed in the same way as submitting events directly to the Identify and Group Identify APIs. 
 {{/partial:admonition}}
 
-## Add Snowflake as a Source
+## Add and configure the Snowflake source
+
+Complete the following steps to configure the Snowflake source:
+
+1. [Define and verify the connection](#define-and-verify-the-connection)
+2. [Select data](#select-data)
+
+### Define and verify the connection
 
 To add Snowflake as a data source in your Amplitude project, follow these steps:
 
@@ -73,7 +77,13 @@ To add Snowflake as a data source in your Amplitude project, follow these steps:
 
 6. After the test is successful, click **Next** again to move on to the data selection stage.
 
-7. Choose the import strategy and configure the data feed type as described in the [Select Import Strategy and Change Data Feed Type](#select-import-strategy-and-change-data-feed-type) section.
+### Select data
+
+The data type you select informs the strategies and settings available to you for configuration.
+
+#### Event
+
+The **Event** data type includes user actions associated with either a user ID or a device ID and may also include event properties.
 
 ## Select import strategy and change data feed type
 
