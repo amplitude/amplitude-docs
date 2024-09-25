@@ -11,5 +11,5 @@ Keep the following in mind as you consider your sample rate:
 - Session quotas reset on the first of every month.
 - Use sample rate to distribute your session quota over the course of a month, rather than using your full quota at the beginning of the month.
 - To find the best sample rate, Amplitude recommends that you start low, for example `.01`. If this value doesn't capture enough replays, raise the rate over the course of a few days. For ways to monitor the number of session replays captured, see [View the number of captured sessions](/docs/session-replay#view-the-number-of-captured-sessions).
-- Replays with [processing errors](/docs/session-replay/session-replay-plugin#troubleshooting) don't cont toward your monthly quota. Replays that show a retention error message counted against the quota when it was still in the retention period.
+- Replays with [processing errors](/docs/session-replay/session-replay-plugin#troubleshooting) don't count toward your monthly quota. Replays with a retention error message have already been counted against the quota, when the session was still in the retention period.
 {{/markdown}}
