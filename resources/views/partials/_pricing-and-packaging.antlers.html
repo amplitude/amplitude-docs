@@ -1,0 +1,25 @@
+{{if pricing_information }}
+<div class="ml-8">
+<strong>Feature availablility</strong>
+<table class="mt-0">
+{{pricing_information}}
+<tr>
+<td>Starter</td>
+<td>{{starter:available ?= {{svg src="/docs/assets/general/checkmark-circle.svg"}}}}</td>
+</tr>
+<tr>
+<td>Plus</td>
+<td>{{plus:available ?= {{svg src="/docs/assets/general/checkmark-circle.svg"}}}}</td>
+</tr>
+<tr>
+<td>Growth</td>
+<td>{{growth:available ?= {{svg src="/docs/assets/general/checkmark-circle.svg"}}}}</td>
+</tr>
+<tr>
+<td>Enterprise</td>
+<td>{{enterprise:available ?= {{svg src="/docs/assets/general/checkmark-circle.svg"}}}}</td>
+</tr>
+{{/pricing_information}}
+</table>
+</div>
+{{/if}}

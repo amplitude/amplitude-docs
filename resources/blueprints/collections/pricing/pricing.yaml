@@ -1,0 +1,128 @@
+title: Pricing
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: false
+              validate:
+                - required
+          -
+            handle: description
+            field:
+              type: markdown
+              display: Description
+              localizable: false
+          -
+            handle: group
+            field:
+              options:
+                analytics: Analytics
+                session-replay: 'Session Replay'
+                experiment: Experiment
+                cdp: CDP
+                data: Data
+              type: select
+              display: Group
+              localizable: false
+          -
+            handle: starter
+            field:
+              type: group
+              display: Starter
+              localizable: false
+              fields:
+                -
+                  handle: available
+                  field:
+                    type: toggle
+                    display: Available
+                    localizable: false
+                    width: 33
+                -
+                  handle: notes
+                  field:
+                    type: text
+                    display: Notes
+                    localizable: false
+                    width: 66
+          -
+            handle: plus
+            field:
+              type: group
+              display: Plus
+              localizable: false
+              fields:
+                -
+                  handle: available
+                  field:
+                    type: toggle
+                    display: Available
+                    localizable: false
+                    width: 33
+                -
+                  handle: notes
+                  field:
+                    type: text
+                    display: Notes
+                    localizable: false
+                    width: 66
+          -
+            handle: growth
+            field:
+              type: group
+              display: Growth
+              localizable: false
+              fields:
+                -
+                  handle: available
+                  field:
+                    type: toggle
+                    display: Available
+                    localizable: false
+                    width: 33
+                -
+                  handle: notes
+                  field:
+                    type: text
+                    display: Notes
+                    localizable: false
+                    width: 66
+          -
+            handle: enterprise
+            field:
+              type: group
+              display: Enterprise
+              localizable: false
+              fields:
+                -
+                  handle: available
+                  field:
+                    type: toggle
+                    display: Available
+                    localizable: false
+                    width: 33
+                -
+                  handle: notes
+                  field:
+                    type: text
+                    display: Notes
+                    localizable: false
+                    width: 66
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

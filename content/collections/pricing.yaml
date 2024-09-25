@@ -1,0 +1,8 @@
+title: Pricing
+sites:
+  - en
+propagate: false
+revisions: false
+date_behavior:
+  past: public
+  future: private
