@@ -70,3 +70,7 @@ tree:
       -
         id: b36d4955-f9a8-4aa6-82f3-bea5a045138d
         entry: 14b08e52-7066-47c7-8b58-afe8ca107555
+      -
+        id: c26a152e-fcf9-411e-a576-be105c07519a
+        title: 'Set up single sign-on (SSO) for Amplitude using another service'
+        url: /docs/admin/single-sign-on/set-up-single-sign-on-sso-for-amplitude-using-another-service
