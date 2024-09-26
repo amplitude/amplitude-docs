@@ -61,6 +61,11 @@ There are three common errors users can run into while setting up the Facebook i
 **The Facebook Custom Audience Terms of Service weren't accepted**. Amplitude must be authorized by the Facebook ad account to use custom audiences. You must accept the Terms of Service to authorize Amplitude.
 
 - *Solution*: Accept the terms of service. You need to have Admin/Manager permissions on Amplitude and have the appropriate permissions on Facebook to accept the terms and services in the pop-up module.
+  - Please note that there are multiple levels of terms of service to accept:
+    - User level: visit https://www.facebook.com/ads/manage/customaudiences/tos.php to validate your acceptation of the rules.
+    - Business level: visit https://business.facebook.com/ads/manage/customaudiences/tos.php?business_id={BUSINESS_ID} to validate your acceptation of the rules at the business level. (Note: replace {BUSINESS_ID} with your own)
+    - Ad account level: for each ad account you might need to use, you'll have to make sure that their terms of services are also accepted. To do so, use the following URL by replacing {ACCOUNT_ID} with your ad account IDs (act_xxxx format): https://www.facebook.com/ads/manage/customaudiences/tos?{ACCOUNT_ID}.
+  - Once the terms of service have been accepted, disconnect and reconnect the facebook ads cohort sync integration to apply your changes.
 
 **Facebook didn't connect to Business Manager.** For security reasons, Facebook requires that ad accounts are associated with Business Manager. This integration doesn't work unless you've enabled Business Manager for your ad account.
 
