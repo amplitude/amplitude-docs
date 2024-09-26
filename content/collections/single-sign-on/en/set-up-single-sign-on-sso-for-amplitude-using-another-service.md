@@ -19,7 +19,7 @@ Read the introductory article on [single sign-on in Amplitude](docs/admin/single
 
 To set up SSO using a provider that isn't Auth0, G Suite, Microsoft Azure Active Directory, Okta, or OneLogin, click the gear icon in Amplitude and navigate to *Organization Settings > Access & SSO Settings*. Then, from the *Identity Provider* dropdown, select *Other*.
 
-  ![sso-other-1.png](/docs/output/img/single-sign-on/sso-other-1.png)
+  ![sso-other-1.png](/docs/output/img/single-sign-on/sso_other_1.png)
 
 Next, upload your **metadata file** and enter the **entity ID** and the **assertion consumer service URL** in the appropriate fields. The location of these resources differs from provider to provider, so be sure to have this information before you begin this process.
 
