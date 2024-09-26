@@ -55,6 +55,12 @@ When you **exclude** an element using CSS selectors, Amplitude replaces the elem
 
 {{/partial:tabs}}
 
+{{partial:admonition type="tip" heading="Avoid site performance issues with masking"}}
+If you experience a decrease ion site performance due to the number of [masking](/docs/session-replay/session-replay-standalone-sdk#mask-on-screen-data) rules you create, Amplitude recommends excluding or blocking content with the `.amp-block` class, rather than masking it.
+
+Blocking or excluding content replaces the element with a placeholder of the same dimensions.
+{{/partial:admonition}}
+
 ## How Session Replay resolves conflicts between the SDK and the UI
 
 When there are conflicts between the SDK and the Session Replay settings page around the handling of a particular element—whether Amplitude should mask, unmask, or exclude it—the **Session Replay settings page takes precedence**.

@@ -1,7 +1,7 @@
 ---
 id: 119727fe-3a6f-40c0-aa88-e1eab2da0cf6
 blueprint: destination-catalog
-title: 'HubSpot (cohort sync)'
+title: 'HubSpot (Cohort Sync)'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 connection: destination
 integration_type:

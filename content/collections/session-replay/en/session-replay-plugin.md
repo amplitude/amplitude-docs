@@ -1,12 +1,17 @@
 ---
 id: 99b87b72-07f8-4e08-9dcd-348f3c8976f3
 blueprint: session-replay
-title: 'Session Replay Plugin'
+title: 'Session Replay Browser SDK Plugin'
 source: 'https://www.docs.developers.amplitude.com/session-replay/sdks/standalone/'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1723582784
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1726769090
+instrumentation_guide: true
+platform: browser
+parent: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
+public: true
+description: 'Use the Session Replay plugin if you instrument your site with Amplitude Browser SDK 2.'
 ---
 {{partial:admonition type="note" heading="Session Replay instrumentation"}}
 Session Replay isn't enabled by default, and requires setup beyond the standard Amplitude instrumentation.
@@ -98,7 +103,7 @@ The Session Replay plugin scripts load asynchronously when you add them to the `
 
 | Name | Type | Required | Default | Description |
 | --- | --- | --- | --- | --- |
-| `sampleRate` | `number` | No | `0` | Use this option to control how many sessions to select for replay collection. The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. |
+| `sampleRate` | `number` | No | `0` | Use this option to control how many sessions to select for replay collection. The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. This field isn't required because Session Replay supports [Remote Configuration](/docs/admin/account-management/account-settings#session-replay-settings) of settings including Sample Rate. | 
 
 ### Track default session events
 
