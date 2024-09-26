@@ -5,8 +5,8 @@ title: 'Single sign-on (SSO) in Amplitude'
 source: 'https://help.amplitude.com/hc/en-us/articles/360002534392-Single-sign-on-SSO-in-Amplitude'
 this_article_will_help_you:
   - 'Understand the basics of using single sign-on in Amplitude'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717697644
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1727384112
 landing: true
 landing_blurb: "Integrate Amplitude with your business's SSO service."
 exclude_from_sitemap: false
@@ -18,6 +18,7 @@ exclude_from_sitemap: false
 * [Microsoft Azure Active Directory](/docs/admin/single-sign-on/azure-active-directory)
 * [Okta](/docs/admin/single-sign-on/okta)
 * [OneLogin](/docs/admin/single-sign-on/one-login)
+* [Other](/docs/admin/single-sign-on/set-up-single-sign-on-sso-for-amplitude-using-another-service) providers not specifically named
 
 Just click through to see more detailed information on setting up and configuring SSO with each of these services.
 
