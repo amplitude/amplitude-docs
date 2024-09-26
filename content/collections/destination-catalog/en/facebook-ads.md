@@ -65,7 +65,7 @@ There are three common errors users can run into while setting up the Facebook i
     - [User level](https://www.facebook.com/ads/manage/customaudiences/tos.php)
     - Business level: visit https://business.facebook.com/ads/manage/customaudiences/tos.php?business_id={BUSINESS_ID} to validate your acceptation of the rules at the business level. (Note: replace {BUSINESS_ID} with your own)
     - Ad account level: for each ad account you use, verify that their terms of service are accepted. To do so, use the following URL by replacing {ACCOUNT_ID} with your ad account IDs (act_xxxx format): https://www.facebook.com/ads/manage/customaudiences/tos?{ACCOUNT_ID}.
-  - After you verify the acceptance of all terms, disconnect and reconnect the Facebook Ads (Cohort sync) integration.
+  - After you accept all terms, disconnect and reconnect the Facebook Ads (Cohort sync) integration.
 
 **Facebook didn't connect to Business Manager.** For security reasons, Facebook requires that ad accounts are associated with Business Manager. This integration doesn't work unless you've enabled Business Manager for your ad account.
 
