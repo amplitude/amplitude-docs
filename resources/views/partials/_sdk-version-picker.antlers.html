@@ -1,8 +1,8 @@
 <div class="flex-initial place-self-start ml-4 text-sm p-2 inline w-max border border-amp-gray-200 rounded" x-data="{ open: false }"><button
     @click="open = !open" class="font-normal -mb-[11px] text-[#111827]">{{ version_name }} {{if sdk_status == 'current'}}{{svg src="/docs/assets/icons/ga.svg" class="fill-mint-700 inline h-5"}} {{elseif sdk_status == 'maintenance'}}{{svg src="/docs/assets/icons/maint.svg" class="fill-error-red inline h-5"}} {{/if}} {{svg src="/docs/assets/general/icon-chevron-down.svg" class="inline fill-[#111827]"}}</button>
    <div x-cloak x-show="open" x-transition @click.outside="open = false" class="mt-4 py-2 right-4 sm:right-auto absolute border border-amp-gray-100 rounded flex flex-col shadow-lg top-4 bg-white w-52 p-4 font-normal z-20">
-       {{ collection:browser_sdk article_type:is="core"}}
+       {{ collection :from="collection" article_type:is="core"}}
            <a class="no-underline pl-4 py-2 font-light hover:bg-amp-blue-950 hover:rounded inline" href="{{ url }}">{{ version_name }} {{if sdk_status == 'current'}}{{svg src="/docs/assets/icons/ga.svg" class="fill-mint-700 inline h-5"}} {{elseif sdk_status == 'maintenance'}}{{svg src="/docs/assets/icons/maint.svg" class="fill-error-red inline h-5"}} {{/if}}</a> 
-       {{ /collection:browser_sdk }}
+       {{ /collection }}
    </div>
 </div>

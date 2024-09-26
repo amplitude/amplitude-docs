@@ -122,3 +122,9 @@ fields:
       type: entries
       display: 'Current version'
       localizable: false
+  -
+    handle: version_name
+    field:
+      type: text
+      display: 'Version name'
+      localizable: false
