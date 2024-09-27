@@ -28,10 +28,10 @@ With Amplitude's Snowflake integration, you can ingest Snowflake data directly i
 {{partial:admonition type="note" heading="Amplitude regional IP addresses"}}
 Depending on your company's network policy, you may need add these IP addresses to your allowlist in order for Amplitude's servers to access your Snowflake instance:
 
-| Region | IP Addresses |
-| -------| ------------|
-| US | `52.33.3.219`, `35.162.216.242`, `52.27.10.221` |
-| EU | `3.124.22.25`, `18.157.59.125`, `18.192.47.195`|
+| Region | IP Addresses                                    |
+| ------ | ----------------------------------------------- |
+| US     | `52.33.3.219`, `35.162.216.242`, `52.27.10.221` |
+| EU     | `3.124.22.25`, `18.157.59.125`, `18.192.47.195` |
 
 {{/partial:admonition}}
 
@@ -47,10 +47,13 @@ Amplitude's Data Warehouse Import sometimes processes events in parallel, so tim
 
 Complete the following steps to configure the Snowflake source:
 
-1. [Define and verify the connection](#define-and-verify-the-connection)
+1. [Set up and verify the connection](#set-up-and-verify-the-connection)
 2. [Select data](#select-data)
+3. [Select the import strategy](#select-the-import-strategy)
+4. [Map your data](#map-your-data)
+5. [Schedule your sync](#schedule-your-sync)
 
-### Define and verify the connection
+### Set up and verify the connection
 
 To add Snowflake as a data source in your Amplitude project, follow these steps:
 
@@ -77,49 +80,55 @@ To add Snowflake as a data source in your Amplitude project, follow these steps:
 
 6. After the test is successful, click **Next** again to move on to the data selection stage.
 
-### Select data
+### Select the data type
 
 The data type you select informs the strategies and settings available to you for configuration.
 
-#### Event
-
-The **Event** data type includes user actions associated with either a user ID or a device ID and may also include event properties.
-
-## Select import strategy and change data feed type
-
-Amplitude's Snowflake Data Import supports multiple strategies for importing data from Snowflake. Selecting the appropriate import strategy and change data feed type is crucial for ensuring that your data is accurately and efficiently imported into Amplitude.
-
-### Select the data type
-
-- **Event**: User actions associated with either a user ID or a device ID. May also include event properties.
-- **User Properties**: Dictionaries of user attributes that can be used to segment users. Associated with a user ID.
-- **Group Properties**: Dictionaries of group attributes applied to a group of users. Associated with a group name.
-- **Profiles**: Dictionaries of properties that are associated with a user profile. Profiles always display the most current data synced from your warehouse. Associated with a user ID.
+| Data Type        | Description                                                                                                                                                              |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Event            | Includes user actions associated with either a user ID or a device ID and may also include event properties.                                                             |
+| User Properties  | Includes dictionaries of user attributes you can use to segment users. Each property is associated with a user ID.                                                       |
+| Group Properties | Includes dictionaries of group attributes that apply to a a group of users. Each property is associated with a group name.                                               |
+| Profiles         | Includes dictionaries of properties that relate to a user profile. Profiles display the most current data synced from your warehouse, and are associated with a user ID. |
 
 ### Select the import strategy
 
-- **Full Sync** (only for user and group properties): Periodically ingest the entire dataset, regardless of whether that data has already been imported. Useful for datasets that change over time but have no easy way to tell which rows have changed.
-- **Timestamp** (for events, user and group properties): Periodically ingest the most recent rows in the data, as determined by the provided Timestamp column.
-- **Change Data Capture** (for events and profiles): Periodically ingest data based on changes detected by Snowflake's Change Data Capture (CDC) feature.
+Select from the following strategies, depending on your data type selection. 
 
-### Choose a data feed type
+| Strategy  | Description                                                                                                                                        |
+| --------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Full Sync | Ingests the entire dataset on a defined schedule. This option is useful for datasets that change over time, but can't show which rows are changed. |
+| Timestamp | Ingests the most recent rows in the data on a schedule, as determined by the Timestamp column.                                                     |
+| Change data capture (CDC) | Ingests the most recent rows of data on a schedule, as determined by Snowflake's Change Data Capture feature. CDC supports customization of the Feed Type (for Event data) and Data Mutability Settings.|
 
-{{partial:admonition type="tip" heading=""}}
-This step applies only to the Change Data Capture import strategy.
+See the following table to understand which data types are compatible with which import strategies.
+
+| Data type | Supported import strategies |
+| -------| ----- |
+| Event | CDC, Timestamp |
+| User properties | Full Sync, Timestamp |
+| Group Properties | Full Sync, Timestamp |
+| Profiles | CDC |
+
+{{partial:admonition type="note" heading="Change Data Capture options"}}
+For the Event data type, the CDC strategy supports configuration of the CDC Feed Type. 
+
+Select *Ingestion Only* to ingest from your warehouse and include Amplitude's enrichment services like ID Resolution, property and attribution syncing, and location resolution.
+
+Select *Continuous Sync* to mirror your Snowflake data with support for `insert`, `update`, and `delete` operations. This option deactivates Amplitude's enrichment services to ensure you remain in sync with your source-of-truth.
+
+*Continuous Sync* also supports Data Mutability settings. Select which options to enable, `update` or `delete`. `insert` operations are always on.
 {{/partial:admonition}}
 
-If you selected the Change Data Capture import strategy for Event import, you must choose the change data feed type:
+### Map your data
 
-- **Ingestion Only**: Ingest data warehouse data with Amplitude's out-of-the-box enrichment services (ID resolution, property and attribution syncing, resolving location info, etc.).
-- **Continuous Sync**: Directly mirror the data in Snowflake with insert, update, and delete operations. This deactivates Amplitude's enrichment services to remain in sync with your source of truth.
+Depending on the Import Strategy you choose, you'll map your data with a SQL statement to transform the data (Timestamp, Full Sync) or use the Data Selection Tool to map column names directly to Amplitude properties.
 
-### Data mutability settings
+### Schedule your sync
 
-{{partial:admonition type="note" heading="Data Mutability settings"}}
-If you chose Continuous Sync in the previous step, enable or disable the ability to update and delete data records.
-{{/partial:admonition}}
+Provide a name for the source, and select the frequency with which Amplitude imports your data.
 
-### Choose the best integration for your use case
+## Choose the best integration for your use case
 
 When choosing an integration strategy, consider the following:
 
@@ -133,7 +142,7 @@ When choosing an integration strategy, consider the following:
 
 {{partial:partials/data/snowflake-strat-comp}}
 
-### Prerequisites and considerations for CDC
+## Prerequisites and considerations for CDC
 
 When using CDC Continuous Sync, be aware of the following limitations:
 
@@ -149,9 +158,9 @@ When using CDC Continuous Sync, be aware of the following limitations:
 
 - **Views with JOINs**: While Snowflake CDC is efficient, using views that contain JOINs can have performance implications. Consider syncing joined data as User Profiles instead.
 
-- **Avoid Table Deletion and Recreation**: Don't delete and recreate tables with the same name, as Snowflake CDC doesn't capture changes in this scenario. Use [incremental models](https://docs.getdbt.com/docs/build/incremental-models) with tools like dbt to prevent table replacement.
+- **Avoid Table Deletion and Recreation**: Don't delete and recreate tables with the same name, as Snowflake CDC doesn't capture changes in this scenario. Use [incremental models](https://docs.getdbt.com/docs/build/incremental-models) with tools like [dbt](https://www.getdbt.com/) to prevent table replacement.
 
-- **Handling Schema Changes**: Adding new columns with default NULL values to CDC-tracked tables or views is supported. Other types of schema changes are not recommended. Snowflake CDC only reflects changes from DML statements. DDL statements that logically modify data (such as adding new columns with default values, dropping existing columns, or renaming columns) will affect future data sent to Amplitude, but Snowflake will not update historical data with changes caused by DDL statements. Hence, such updates won't be reflected in Amplitude for historical data.
+- **Handling Schema Changes**: CDC supports adding new columns with default `NULL` values to CDC-tracked tables or views. Amplitude recommends against other kinds of schema changes. Snowflake CDC only reflects changes from DML statements. DDL statements that logically modify data (such as adding new columns with default values, dropping existing columns, or renaming columns) affect future data sent to Amplitude, but Snowflake doesn't update historical data with changes caused by DDL statements. As a result, Amplitude doesn't reflect these updates for historical data.
 
 - **Amplitude Enrichment Services Disabled**: When using CDC **Continuous Sync**, Amplitude disables enrichment services like ID resolution, property and attribution syncing, and resolving location info to remain in sync with your source of truth.
 
