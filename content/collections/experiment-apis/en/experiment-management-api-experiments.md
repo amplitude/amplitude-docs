@@ -119,7 +119,7 @@ curl --request GET \
             "state": "planning",
             "startDate": null,
             "endDate": null,
-            "experimentType": "hypothesis-testing"
+            "experimentType": "a-b-test"
         },
         "nextCursor": <cursorId>
     ]
@@ -210,7 +210,7 @@ curl --request GET \
     "state": "running",
     "startDate": "2023-07-29",
     "endDate": null,
-    "experimentType": "hypothesis-testing",
+    "experimentType": "a-b-test",
     "deleted": false,
     "tags": [],
     "createdBy: "x@amplitude.com"
@@ -299,7 +299,7 @@ curl --request GET \
             "state": "decision-made",
             "startDate": "2023-07-29",
             "endDate": "2023-07-29",
-            "experimentType": "hypothesis-testing"
+            "experimentType": "a-b-test"
         }
     },
     {
@@ -332,7 +332,7 @@ curl --request GET \
             "state": "planning",
             "startDate": null,
             "endDate": null,
-            "experimentType": "hypothesis-testing"
+            "experimentType": "a-b-test"
         }
     },
     {
@@ -365,7 +365,7 @@ curl --request GET \
             "state": "planning",
             "startDate": null,
             "endDate": null,
-            "experimentType": "hypothesis-testing"
+            "experimentType": "a-b-test"
         }
     }
 ]
@@ -454,7 +454,7 @@ curl --request GET \
         "state": "decision-made",
         "startDate": "2023-07-29",
         "endDate": "2023-07-29",
-        "experimentType": "hypothesis-testing"
+        "experimentType": "a-b-test"
     }
 }
 ```
@@ -1001,7 +1001,7 @@ Edit an experiment.
 |`targetSegments`| Optional | object | See the [`targetSegments`](#targetsegments) table for more information. When `targetSegments` object is provided, it will replace existing target segments. Note: cohorts are not supported at the moment. |
 |`enabled`| Optional | boolean | Property to activate or deactivate experiment. |
 |`archive`| Optional | boolean | Property to archive or unarchive experiment. |
-|`experimentType`| Optional | string | Experiment type, options include `no-harm`, `hypothesis-testing`, or `multi-arm-bandit`. |
+|`experimentType`| Optional | string | Experiment type, options include `a-b-test` or `multi-arm-bandit`. |
 |`stickyBucketing`| Optional | boolean | If true, the experiment uses [sticky bucketing](/docs/experiment/implementation#sticky-bucketing). |
 |`startDate`| Optional | string | Start date of the experiment in ISO 8601 format. |
 |`endDate`| Optional | string | End date of the experiment in ISO 8601 format. End date can be null. |
@@ -1048,7 +1048,7 @@ Edit an experiment.
     "evaluationMode": "remote",
     "rolloutPercentage": 0,
     "enabled": true,
-    "experimentType": "no-harm",
+    "experimentType": "a-b-test",
     "stickyBucketing": false,
     "startDate": "2023-07-31T10:26:00.996Z",
     "endDate": "2023-09-23T10:26:00.996Z",
@@ -1109,7 +1109,7 @@ Create a new experiment.
 |`targetSegments`| Optional | object | See the [`targetSegments`](#targetsegments) table for more information. |
 |`deployments`| Optional | string array | Array of deployments that the experiment should be assigned to. |
 |`evaluationMode`| Optional | string | Experiment evaluation mode; options include `remote` or `local`. |
-|`experimentType`| Optional | string | Experiment type; options include `hypothesis-testing`, `no-harm`, or `multi-arm-bandit`. |
+|`experimentType`| Optional | string | Experiment type; options include `a-b-test` or `multi-arm-bandit`. |
 
 #### variants
 
@@ -1202,7 +1202,7 @@ A string value representing operations on a property value. Possible values are:
     ],
     "deployments": ["<deploymentId>"],
     "evaluationMode": "remote",
-    "experimentType": "no-harm"
+    "experimentType": "a-b-test"
 }
 ```
 {{/partial:admonition}}
