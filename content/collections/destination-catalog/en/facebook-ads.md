@@ -63,7 +63,7 @@ There are three common errors users can run into while setting up the Facebook i
 - *Solution*: Accept the terms of service. You need Admin/Manager permissions in Amplitude, as well as the appropriate permissions on Facebook to accept the terms of service in the pop-up module.
   - There are several levels of terms of service:
     - [User level](https://www.facebook.com/ads/manage/customaudiences/tos.php)
-    - Business level: visit https://business.facebook.com/ads/manage/customaudiences/tos.php?business_id={BUSINESS_ID} to validate your acceptation of the rules at the business level. (Note: replace {BUSINESS_ID} with your own)
+    - Business level: visit https://business.facebook.com/ads/manage/customaudiences/tos.php?business_id={BUSINESS_ID} to accept the terms of service on behalf of the **business** account, which is different from the ad account or your own user account. (Replace {BUSINESS_ID} with your own ID.)
     - Ad account level: for each ad account you use, verify that their terms of service are accepted. To do so, use the following URL by replacing {ACCOUNT_ID} with your ad account IDs (act_xxxx format): https://www.facebook.com/ads/manage/customaudiences/tos?{ACCOUNT_ID}.
   - After you accept all terms, disconnect and reconnect the Facebook Ads (Cohort sync) integration.
 
