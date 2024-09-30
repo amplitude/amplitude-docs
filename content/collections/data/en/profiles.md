@@ -42,7 +42,7 @@ Set a [data retention period](https://docs.databricks.com/en/delta/history.html#
 To set up a profile in Amplitude, follow these steps:
 
 1. In Amplitude Data, navigate to Connections Overview. Then in the Sources panel, click Add More. Scroll down until you find the Snowflake tile and click it.
-2. In the *Set Up Connection* tab, connect Amplitude to your data warehouse by filling in all the relevant fields under *Snowflake Credentials*, which are  outlined in the [Snowflake Data Import guide](/docs/data/source-catalog/snowflake#add-snowflake-as-a-source). You can either create a new connection, or reuse an existing one. Click *Next* when you're done.
+2. On the *Set Up Connection* tab, connect Amplitude to your data warehouse by filling in all the relevant fields under *Snowflake Credentials*, which are  outlined in the [Snowflake Data Import guide](/docs/data/source-catalog/snowflake#add-snowflake-as-a-source). You can either create a new connection, or reuse an existing one. Click *Next* when you're done.
 3. You can see a list of your tables under *Select Table*. To begin column mapping, click the table you're interested in.
 4. In the list of required fields under *Column Mapping*, enter the column names in the appropriate fields to match columns to required fields. To add more fields, click *+ Add field*.
 5. On the *Select Data* tab, select the `profiles` data type. Amplitude pre-selects the required change data capture import strategy for you, which you can see under the *Select Import Strategy* dropdown:
