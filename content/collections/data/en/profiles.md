@@ -18,7 +18,7 @@ Profiles always display the most current data synced from your warehouse.
 ### Snowflake users
 If this is your first time importing data from this table, set a data retention time and enable change tracking in Snowflake with the following commands:
 
-```
+```sql
 ALTER TABLE DATAPL_DB_STAG.PUBLIC.PROFILES_PROPERTIES_TABLE_1 SET DATA_RETENTION_TIME_IN_DAYS = 7;
  
 ALTER TABLE DATAPL_DB_STAG.PUBLIC.PROFILES_PROPERTIES_TABLE_1 SET CHANGE_TRACKING = TRUE;
