@@ -36,7 +36,7 @@ Follow these instructions to [enable change tracking](https://docs.databricks.co
 * If you're working with an existing table, set the table property `delta.enableChangeDataFeed = true` in the `ALTER TABLE` command:
     `ALTER TABLE myDeltaTable SET TBLPROPERTIES (delta.enableChangeDataFeed = true)`
 
-You also have to set a [data retention period](https://docs.databricks.com/en/delta/history.html#configure-data-retention-for-time-travel-queries). This must be at least one day, but in most cases you should set this period to seven days or longer. If your retention period is too short, the import process can fail.
+Set a [data retention period](https://docs.databricks.com/en/delta/history.html#configure-data-retention-for-time-travel-queries). This must be at least one day, but in most cases you should set this period to seven days or longer. If your retention period is too short, the import process can fail.
 
 ## Set up a profile (Snowflake users)
 To set up a profile in Amplitude, follow these steps:
