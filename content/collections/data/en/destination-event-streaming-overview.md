@@ -21,7 +21,6 @@ With event streaming, you gain access to user-friendly, configuration-based tool
 
 ## Limitations
 
-- **Forwarding transformed data:** Amplitude event streaming only supports raw (untransformed) events, event properties, and user properties. [Transformed](/docs/data/transformations) events and properties (such as merged properties) aren't supported.
 - **Format for user properties:** All forwarded user properties are currently sent as strings except for [Braze streaming](/docs/data/destination-catalog/braze) and [Iterable streaming](/docs/data/destination-catalog/iterable) destinations
 - **Reserved keywords:** Specific keywords, including `_all` and `_identify`, can't be used as event names when streaming events from Amplitude.
 - **Historical data:** Amplitude's streaming integrations focus on data from the setup point forward. Historical data isn't included in this process, which ensures that Amplitude transmits only events captured post-configuration.
