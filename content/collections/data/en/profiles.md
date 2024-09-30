@@ -45,7 +45,7 @@ To set up a profile in Amplitude, follow these steps:
 2. In the *Set Up Connection* tab, connect Amplitude to your data warehouse by filling in all the relevant fields under *Snowflake Credentials*, which are  outlined in the [Snowflake Data Import guide](/docs/data/source-catalog/snowflake#add-snowflake-as-a-source). You can either create a new connection, or reuse an existing one. Click *Next* when you're done.
 3. You can see a list of your tables under *Select Table*. To begin column mapping, click the table you're interested in.
 4. In the list of required fields under *Column Mapping*, enter the column names in the appropriate fields to match columns to required fields. To add more fields, click *+ Add field*.
-5. in the *Select Data* tab, select the `profiles` data type. Amplitude pre-selects the required change data capture import strategy for you, which you can see under the *Select Import Strategy* dropdown:
+5. On the *Select Data* tab, select the `profiles` data type. Amplitude pre-selects the required change data capture import strategy for you, which you can see under the *Select Import Strategy* dropdown:
 
     * **Insert**: Always on, creates new profiles when added to your table.
     * **Update**: Syncs changes to values from your table to Amplitude.
