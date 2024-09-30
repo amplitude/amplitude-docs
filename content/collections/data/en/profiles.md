@@ -28,7 +28,7 @@ On Snowflake Standard Edition plans, the maximum retention time is one day. If y
 ### Databricks users
 Follow these instructions to [enable change tracking](https://docs.databricks.com/en/delta/delta-change-data-feed.html#enable):
 
-* If you're working with a new table, set the table property delta.enableChangeDataFeed = true in the `CREATE TABLE` command:
+* If you're working with a new table, set the table property `delta.enableChangeDataFeed = true` in the `CREATE TABLE` command:
     `CREATE TABLE student (id INT, name STRING, age INT) TBLPROPERTIES (delta.enableChangeDataFeed = true)`
     
     Also set `spark.databricks.delta.properties.defaults.enableChangeDataFeed = true` for all new tables.
