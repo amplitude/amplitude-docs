@@ -91,10 +91,7 @@ Amplitude provides a workbook with the most common use cases from other Amplitud
 
 ## Suggested Mixpanel to Amplitude taxonomy
 
-Amplitude provides the following to help your migration:
-
-* A suggested [Mixpanel to Amplitude Taxonomy](https://docs.google.com/spreadsheets/d/1lsZa6uZmcUmJdq-_sr5JawckMPiiQDCCzl_ytSYccNg/edit#gid434510064)for tracking a minimum set of Events, Event Properties, User Properties.
-* A [sample notebook](https://analytics.amplitude.com/share/db099a8a568447fb931b4f476fc0ecf6) containing helpful analysis and charts to get started.
+Amplitude provides a suggested [Mixpanel to Amplitude Taxonomy](https://docs.google.com/spreadsheets/d/1lsZa6uZmcUmJdq-_sr5JawckMPiiQDCCzl_ytSYccNg/edit#gid434510064)for tracking a minimum set of Events, Event Properties, User Properties.
 
 ## Recommended instrumentation
 
