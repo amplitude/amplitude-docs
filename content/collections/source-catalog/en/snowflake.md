@@ -26,7 +26,7 @@ updated_at: 1726777780
 With Amplitude's Snowflake integration, you can ingest Snowflake data directly into your Amplitude project. The integration supports four strategies to import your Snowflake data, depending on the data types you select.
 
 {{partial:admonition type="note" heading="Amplitude regional IP addresses"}}
-Depending on your company's network policy, you may need add these IP addresses to your allowlist in order for Amplitude's servers to access your Snowflake instance:
+Depending on your company's network policy, you may need to add these IP addresses to your allowlist in order for Amplitude's servers to access your Snowflake instance:
 
 | Region | IP Addresses                                    |
 | ------ | ----------------------------------------------- |
@@ -98,7 +98,7 @@ Select from the following strategies, depending on your data type selection.
 | Strategy  | Description                                                                                                                                        |
 | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Full Sync | Ingests the entire dataset on a defined schedule. This option is useful for datasets that change over time, but can't show which rows are changed. |
-| Timestamp | Ingests the most recent rows in the data on a schedule, as determined by the Timestamp column.                                                     |
+| Timestamp | Ingests the most recent rows on a schedule, as determined by the Timestamp column.                                                     |
 | Change data capture (CDC) | Ingests the most recent rows of data on a schedule, as determined by Snowflake's Change Data Capture feature. CDC supports customization of the Feed Type (for Event data) and Data Mutability Settings.|
 
 See the following table to understand which data types are compatible with which import strategies.
@@ -136,9 +136,9 @@ When choosing an integration strategy, consider the following:
 
 - **Timestamp Import**: Choose this option if you can incrementally import data using a monotonically increasing timestamp column that indicates when records when Snowflake loads the records. This is efficient and works well when you append new data with timestamps.
 
-- **Change Data Capture (CDC) Ingestion Only**: Choose this option to import data based on changes detected by Snowflake's CDC feature while still using Amplitude's enrichment services. This method only supports insert operations.
+- **Change Data Capture (CDC) Ingestion Only**: Choose this option to import data based on changes detected by Snowflake's CDC feature while still using Amplitude's enrichment services. This method only supports reading `INSERT` operations from the CDC
 
-- **Change Data Capture (CDC) Continuous Sync**: Choose this option to directly mirror the data in Snowflake with insert, update, and delete operations based on changes detected by Snowflake's CDC feature. This method disables Amplitude's enrichment services to remain in sync with your source of truth and is ideal when you need to keep Amplitude data fully synchronized with your Snowflake data, including mutations.
+- **Change Data Capture (CDC) Continuous Sync**: Choose this option to directly mirror the data in Snowflake with `INSERT`, `UPDATE`, and `DELETE` operations based on changes detected by Snowflake's CDC feature. This method disables Amplitude's enrichment services to remain in sync with your source of truth and is ideal when you need to keep Amplitude data fully synchronized with your Snowflake data. `UPDATE` and `DELETE` operations mutate data in Amplitude.
 
 {{partial:partials/data/snowflake-strat-comp}}
 
