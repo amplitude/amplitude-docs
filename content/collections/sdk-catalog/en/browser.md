@@ -9,4 +9,5 @@ updated_at: 1715798864
 template: sdk-landing
 logo: icons/js.svg
 exclude_from_sitemap: false
+current_sdk: /docs/sdks/analytics/browser/browser-sdk-2
 ---

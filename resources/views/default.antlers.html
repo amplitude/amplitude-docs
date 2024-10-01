@@ -4,7 +4,7 @@
     <div class="copy w-full">
       <div class="flex flex-row items-start">
         <h1 class="font-[Gellix] font-normal mb-5">{{ title }}</h1>
-        {{if article_type == "core"}}{{partial:partials/sdk-version-picker}}{{/if}}
+        {{if article_type == "core" && version_name}}{{partial:partials/sdk-version-picker}}{{/if}}
         {{if environment == 'local'}} <span class="text-xs text-gray-300 align-middle ml-auto"><a
             href="{{ environment == 'local' ? edit_url : {github_edit_url} }}"
             target="_blank">{{ svg src="/docs/assets/general/pencil.svg" class="fill-amp-gray-500 h-4 hover:h-6 transition-all" }}</a></span> {{/if}}

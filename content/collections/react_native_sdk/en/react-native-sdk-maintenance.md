@@ -8,7 +8,7 @@ source: 'https://www.docs.developers.amplitude.com/data/sdks/react-native/'
 supported_languages:
   - js
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1726590990
+updated_at: 1727813512
 github_link: 'https://github.com/amplitude/Amplitude-ReactNative'
 releases_url: 'https://github.com/amplitude/Amplitude-ReactNative/releases'
 bundle_url: 'https://www.npmjs.com/package/@amplitude/react-native'
@@ -17,6 +17,7 @@ package_name: '@amplitude/react-native'
 platform: 'React Native'
 noindex: true
 current_version: 1962c691-4ecd-4b0f-bff9-1807438bc582
+version_name: Maintenance
 ---
 This is the official documentation for the Amplitude Analytics React Native SDK.
 

@@ -9,4 +9,5 @@ updated_at: 1715798961
 logo: icons/python.svg
 exclude_from_sitemap: false
 template: sdk-landing
+current_sdk: /docs/sdks/analytics-sdks/python/python-sdk
 ---

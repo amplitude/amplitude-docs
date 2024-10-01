@@ -1,0 +1,8 @@
+title: 'SDK Navs'
+fields:
+  -
+    handle: sdk_version_nav
+    field:
+      type: list
+      display: 'SDK version nav'
+      localizable: false

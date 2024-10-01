@@ -8,8 +8,14 @@ tree:
     title: Browser
     children:
       -
-        id: 6b9b7260-5144-413f-85e9-06ed3bebd350
-        entry: 00d74a7b-23bd-4a24-86a1-92c046e7e1b5
+        id: 65e5efef-f37f-4d50-a595-033e524ed8bb
+        title: 'Browser SDK'
+        url: /docs/sdks/analytics/browser/browser-sdk-2
+        data:
+          sdk_version_nav:
+            - /docs/sdks/analytics/browser/browser-sdk-1
+            - /docs/sdks/analytics/browser/marketing-analytics-sdk
+            - /docs/sdks/analytics/browser/javascript-sdk
       -
         id: c8409c25-e62b-4d83-8432-9b189c05faa2
         entry: 5afa91b7-c12d-425a-b4b6-661061e5843a
@@ -23,6 +29,10 @@ tree:
       -
         id: 7841e9ff-22f3-416a-adcd-24cb6e331c03
         entry: 4e6f43a0-1f71-4b9d-9193-f45500b42188
+        title: 'Android SDK'
+        data:
+          sdk_version_nav:
+            - /docs/sdks/analytics/android/android-sdk
       -
         id: e502a56f-49f5-4672-8376-d2be2f072d93
         entry: 167c275e-0aad-4fd1-9658-43a25c4654d6
@@ -33,6 +43,9 @@ tree:
       -
         id: 6e62c57e-8cd3-493a-9216-6abf3d00b99f
         entry: 8cbcfa2a-a300-48c8-b551-aee1b1423cdb
+        data:
+          sdk_version_nav:
+            - /docs/sdks/analytics/node/node-sdk
       -
         id: e6a4c8d8-da76-435c-856d-625c0fb70476
         entry: 032ffb7e-a0ff-49d8-bcad-2407d7bd5573
@@ -63,6 +76,10 @@ tree:
       -
         id: c7cf4a2a-6857-4f4c-bda2-573abcecb955
         entry: 36708c4b-d35c-4a7e-9c31-1c1571d6a73f
+        title: 'iOS SDK'
+        data:
+          sdk_version_nav:
+            - /docs/sdks/analytics/ios/ios-sdk
       -
         id: 088f5b42-fcaf-41ec-a346-11f7dcc161d3
         entry: 4a49ddd0-6bd6-4758-9985-85149b794f13
@@ -96,6 +113,9 @@ tree:
       -
         id: c1414966-e4c4-4ee5-9f1d-da7fcf35ef43
         entry: 1962c691-4ecd-4b0f-bff9-1807438bc582
+        data:
+          sdk_version_nav:
+            - /docs/sdks/analytics/react-native/react-native-sdk-maintenance
       -
         id: 65569ef0-5671-458d-8790-02730d842728
         entry: 0d5a2d8a-7266-4442-807c-2f2f84fe1ae5

@@ -9,4 +9,5 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1715798968
 template: sdk-landing
+current_sdk: /docs/sdks/analytics/react-native/react-native-sdk
 ---
