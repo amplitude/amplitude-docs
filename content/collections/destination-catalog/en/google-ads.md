@@ -50,7 +50,7 @@ After you create the destination, you must configure the settings.
 5. Enter the [Google Ads Customer ID](https://support.google.com/google-ads/answer/1704344?hl=en): A Google Ads Customer ID is a unique identifier assigned to each advertiser or business that uses Google Ads. It helps Google track and manage accounts, campaigns, and billing information for advertisers. Find the Google Ads Customer ID at top-right when logged into Google Ads. Enter the ID **without** hyphens.
 6. Enter the [Google Ads Conversion Action ID](https://support.google.com/google-ads/thread/105330243?hl=en&sjid=5504033552721490234-EU): This is a unique identifier associated with a specific conversion action in Google Ads, and represents an action that you want your visitors or users to take. For example, make a purchase, submit a contact form, or sign up for a newsletter. Once the conversion action is visible on Google Ads, click it to visit the details page (path: `/conversions/detail`). The URL has a parameter `ctId=`. Copy the value of that parameter as the Conversion Action ID.
 7.  To send events ingested by Amplitude to Google Ads, toggle *Send Events* to *Enabled*. Expand the *Select and filter events* panel, and select which events to send. Amplitude recommends that you send only the events you need in Google Ads, rather than selecting *All Events*.
-9.  Map the `gclid` Amplitude property to the `GCLID` property in Google Ads.
+9.  Map the `gclid` Amplitude property to the `GCLID` property in Google Ads. This is the [Google Click identifier](https://support.google.com/google-ads/answer/9744275?hl=en).
 10. Save when finished.
 
 ### Setup tracking conversion in Google Ads
