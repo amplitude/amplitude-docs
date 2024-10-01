@@ -5,15 +5,21 @@ title: Profiles
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1727721833
+updated_at: 1727805387
 ---
-**Profiles** enable you to join customer profile data from your data warehouse with existing behavioral product data already in Amplitude. 
+**Profiles** enable you to join customer profile data from your data warehouse with existing behavioral product data already in Amplitude.
+
+{{partial:admonition type='note'}}
+This feature is currently in an **open beta**.
+{{/partial:admonition}}
 
 Profiles act as standalone properties, in that they aren't associated with specific events and are instead associated with a user profile. They're different from traditional user properties and offer the opportunity to conduct more expansive analyses.
 
 Profiles always display the most current data synced from your warehouse.
 
 ## Before you begin
+
+Regardless of whether you're using Snowflake or Databricks, Change Data Capture (CDC) **doesn't support replacing existing tables**. Instead, you must use incremental modeling. If the table you integrate with drops and replaces data, the connection breaks.
 
 ### Snowflake users
 If this is your first time importing data from this table, set a data retention time and enable change tracking in Snowflake with the following commands:
@@ -71,7 +77,14 @@ To set up a profile in Amplitude, follow these steps:
 7. Name the source and set the frequency at which Amplitude should refresh your profiles from the data warehouse. The default frequency is 12 hours, but you can change it.
 
 ## Data specifications
-Profiles supports a maximum of 200 warehouse properties, and supports known Amplitude users. A `user_id` must go with each profile.
+
+Profiles supports:
+* Up to 100 million users
+* Up to 200 profile properties
+* Up to 200 warehouse properties
+* Known Amplitude users 
+
+A `user_id` must go with each profile.
 
 | Field               | Description                                                                                                                   | Example                  |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
