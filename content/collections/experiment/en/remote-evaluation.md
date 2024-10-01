@@ -18,9 +18,9 @@ Remote evaluation involves making a request to Amplitude Experiment's evaluation
 
 ![](statamic://asset::help_center_conversions::experiment/server-side-remote-overview.drawio.png)
 
-## Targeting Capabilities
+## Targeting capabilities
 
-Remote evaluation targeting and identity resolution is powered by Amplitude Analytics' historical user data. Remote evaluation enables advanced features such as [Amplitude ID resolution](#amplitude-id-resolution), [IP geolocation](#geolocation), [property canonicalization](#canonicalization), [targeting behavioral cohorts](#cohort-membership), and historical [user properties](#user-properties).
+Remote evaluation targeting and identity resolution both use Amplitude Analytics' historical user data. Remote evaluation enables advanced features such as [Amplitude ID resolution](#amplitude-id-resolution), [IP geolocation](#geolocation), [property canonicalization](#canonicalization), [targeting behavioral cohorts](#cohort-membership), and historical [user properties](#user-properties).
 
 | <div class='big-column'>Feature</div> | Remote Evaluation | [Local Evaluation](/docs/experiment/local-evaluation) |
 | --- | --- | --- |
@@ -45,9 +45,9 @@ Amplitude ID resolution happens before additional [user enrichment](#user-enrich
 
 #### Geolocation
 
-If you use location based targeting in your flags, remote evaluation will automatically resolve location based on the client's IP and use a canonical `Country` user property to make targeting consistent and easy.
+If you use location based targeting in your flags, remote evaluation resolves location based on the client's IP and use a canonical `Country` user property to make targeting consistent and easy.
 
-The following fields are resolved via IP geolocation:
+The following fields resolve with IP geolocation:
 
 * Country
 * City
@@ -70,13 +70,15 @@ The following fields are canonicalized on remote evaluation:
 
 
 {{partial:admonition type="warning" heading="Race conditions"}}
-Targeting a recently set user property may cause a race between Amplitude Analytics ingesting and applying the user property, and Experiment accessing the user property. To avoid any races between a user property being set, and a remote evaluation accessing the user's properties, the user property should be sent explicitly in the remote fetch request.
+Targeting a recently set user property may cause a race between Amplitude Analytics ingesting and applying the user property, and Experiment accessing the user property. To avoid any races between a user property being set, and a remote evaluation accessing the user's properties, explicitly set the user property in the remote fetch request.
+
+When you pass user properties to the remote fetch request, those user properties don't update on associated analytics events.
 {{/partial:admonition}}
 
 The [resolved Amplitude ID](#amplitude-id-resolution) is used to access the user's current user properties based on historical analytics data. These user properties are merged with any user properties sent explicitly in the fetch request and which are then passed in for [evaluation](/docs/experiment/implementation).
 
 {{partial:admonition type="info" heading="User property merge priority"}}
-User properties sent explicitly in a remote fetch request are prioritized over user properties accessed from analytics.
+Amplitude prioritizes user properties sent explicitly in a remote fetch request over user properties accessed from analytics.
 {{/partial:admonition}}
 
 #### Cohort membership
