@@ -114,7 +114,6 @@ The **Event** table schema includes the following columns:
 - `server_upload_time`
 - `session_id`
 - `start_version`
-- `user_creation_time`
 - `user_id`
 - `user_properties`
 - `uuid`
