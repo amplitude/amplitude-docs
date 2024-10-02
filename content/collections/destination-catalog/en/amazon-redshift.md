@@ -141,7 +141,6 @@ The **Event** table schema includes the following columns:
 | `server_upload_time` | TIMESTAMP | Amplitude timestamp (UTC) of when Amplitude servers received the event. Example:  `2015-08-10T12:00:00.000000` |
 | `session_id` | BIGNUMERIC | The session start time in milliseconds since epoch. Example: 1396381378123 |
 | `start_version` | STRING | App version the user was first tracked on. Example: 1.0.0 |
-| `user_creation_time` | TIMESTAMP | `event_time` (UTC) of the user's first event. Example: `2015-08-10T12:00:00.000000` |
 | `user_id` | STRING | A readable ID specified by you. This should be something that doesn't change; for that reason, using the user's email address isn't recommended.  |
 | `user_properties` | SUPER |    |
 | `uuid` | STRING | A unique identifier per row (event sent). Example: bf0b9b2a-304d-11e6-934f-22000b56058f |
