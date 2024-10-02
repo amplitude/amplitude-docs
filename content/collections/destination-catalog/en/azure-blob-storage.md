@@ -133,7 +133,6 @@ The exported data JSON object schema is:
    "os_version": string,
    "amplitude_id": long,
    "processed_time": UTC ISO-8601 timestamp,
-   "user_creation_time": UTC ISO-8601 timestamp,
    "version_name": string,
    "ip_address": string,
    "paying": boolean,
