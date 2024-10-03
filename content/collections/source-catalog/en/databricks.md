@@ -42,13 +42,13 @@ For guided instructions to setting up this integration, view the [Loom video](ht
   - Only one source Delta Table (referred to as “main table”)
   - Single SELECT statement 
   - Common Table Expressions (CTE) (for example, WITH-clause) aren't supported 
-  - Set operations like `UNION`, `INTERSECT`, `MINUS`, EXCEPT aren't supported 
-  - Statements with a `JOIN` clause use mutation metadata from the main table, ignoring the mutation history of joined table. Amplitude uses the latest version of data in the joined table during data synchronization
-  - Explicit SQL validation may not cover all edge cases. For example, if you provide more than one source table, validation may succeed during source creation, but fail during import execution
+  - Set operations like `UNION`, `INTERSECT`, `MINUS`, and `EXCEPT` aren't supported 
+  - Statements with a `JOIN` clause use mutation metadata from the main table, ignoring the mutation history of the joined table. Amplitude uses the latest version of data in the joined table during data synchronization.
+  - Explicit SQL validation may not cover all edge cases. For example, if you provide more than one source table, validation may succeed during source creation, but fail during import execution.
 
 ## Configure Databricks
 
-Before you start to configure the Databricks source in Amplitude, complete the following tasks in Databricks.
+Before you start to configure the Databricks source in Amplitude, complete these tasks in Databricks:
 
 ### Find or create an all-purpose compute cluster
 
@@ -156,7 +156,7 @@ To add Databricks as a source in Amplitude, complete the following steps.
    
     For the `Event` data type, optionally select *Sync User Properties* or *Sync Group Properties* to sync the corresponding properties **within** an event.
 
-2. If you selected the Event or Profiles as data type, choose the change data feed type:
+2. If you selected `Event` or `Profiles` as the data type, choose the change data feed type:
 
 - **Ingestion Only**: Ingest data warehouse data with Amplitude's standard enrichment services like ID resolution, property and attribution syncing, and resolving location info.
 - **Continuous Sync**: Directly mirror the data in Snowflake with insert, update, and delete operations. This deactivates Amplitude's enrichment services to remain in sync with your source of truth.
