@@ -119,7 +119,9 @@ curl --request GET \
             "state": "planning",
             "startDate": null,
             "endDate": null,
-            "experimentType": "a-b-test"
+            "experimentType": "a-b-test",
+            "createdBy": "abc@amplitude.com",
+            "lastModifiedBy": "abc@amplitude.com"
         },
         "nextCursor": <cursorId>
     ]
