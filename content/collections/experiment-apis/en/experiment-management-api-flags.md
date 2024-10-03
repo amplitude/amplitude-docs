@@ -77,6 +77,8 @@ curl --request GET \
             "bucketingKey": "amplitude_id",
             "bucketingSalt": <bucketingSalt>,
             "bucketingUnit": "User",
+            "createdBy": "abc@amplitude.com",
+            "lastModifiedBy": "abc@amplitude.com",
             "variants": [
                 {
                     "key": "on"
