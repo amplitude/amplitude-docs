@@ -990,3 +990,17 @@ line-height: 1.25rem;
 th {
     text-align: left;
 }
+
+.snow-comp th:first-child, .snow-comp td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #fff; /* Optional: Keep the frozen column background intact */
+    z-index: 1; /* Ensure the first column stays above the scrolling part */
+    border-right: 1px solid #ddd;
+}
+
+.snow-comp td {
+    min-width: 200px;
+    word-wrap: break-word;
+    white-space: normal;
+}
