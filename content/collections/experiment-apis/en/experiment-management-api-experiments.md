@@ -51,7 +51,7 @@ Fetch a list of experiments including their configuration details. Results are o
 
 ### Response
 
-A successful request returns a `200 OK` response and a list of experiments encoded as JSON in the response body.
+A successful request returns a `200 OK` response and a list of experiments encoded as JSON in the response body. `createdAt` and `lastModifiedAt` are in UTC in ISO 8601 format.
 
 {{partial:tabs tabs="Request, Response"}}
 {{partial:tab name="Request"}}
@@ -121,7 +121,9 @@ curl --request GET \
             "endDate": null,
             "experimentType": "a-b-test",
             "createdBy": "abc@amplitude.com",
-            "lastModifiedBy": "abc@amplitude.com"
+            "lastModifiedBy": "abc@amplitude.com",
+            "createdAt":"2022-09-09T15:29:47.940Z",
+            "lastModifiedAt":"2023-01-25T11:43:41.073Z"
         },
         "nextCursor": <cursorId>
     ]
