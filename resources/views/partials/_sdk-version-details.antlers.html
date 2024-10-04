@@ -1,0 +1,6 @@
+{{if article_type == "core" && sdk_status != "current" }}
+{{partial:admonition type="deprecated" heading="Maintenance"}}
+This is a maintenance SDK, and recieves only bug fixes until deprecation. Upgrade to the latest version, <a href="{{current_version}}{{url}}{{/current_version}}">{{current_version}}{{title}} {{version_name}}{{/current_version}}</a>. For more information, see the {{migration_guide}}<a href="{{url}}">{{title}}</a>{{/migration_guide}}. 
+{{/partial:admonition}}
+
+{{/if}}

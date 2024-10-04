@@ -56,3 +56,10 @@ preferences:
         - title
         - slug
         - status
+    browser_sdk:
+      columns:
+        - title
+        - site
+        - slug
+        - status
+        - version_name

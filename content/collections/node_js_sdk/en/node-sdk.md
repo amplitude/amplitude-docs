@@ -11,7 +11,7 @@ releases_url: 'https://github.com/amplitude/Amplitude-Node/releases'
 bundle_url: 'https://www.npmjs.com/package/@amplitude/node'
 shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/node.svg'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1727813164
+updated_at: 1727981037
 ampli_article: 032ffb7e-a0ff-49d8-bcad-2407d7bd5573
 source: 'https://www.docs.developers.amplitude.com/data/sdks/node/'
 migration_guide:
@@ -20,7 +20,7 @@ package_name: '@amplitude/node'
 platform: Node
 noindex: true
 current_version: 8cbcfa2a-a300-48c8-b551-aee1b1423cdb
-version_name: 'Node SDK'
+version_name: Node
 ---
 This is Amplitude Node.js SDK, written in Typescript, the first backend SDK for Amplitude.
 

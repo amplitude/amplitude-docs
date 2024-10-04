@@ -1,7 +1,7 @@
 ---
 id: 8cbcfa2a-a300-48c8-b551-aee1b1423cdb
 blueprint: node_js_sdk
-title: 'Node.js SDK'
+title: 'Node SDK'
 sdk_status: current
 article_type: core
 major_version: 1
@@ -15,11 +15,11 @@ api_reference_url: 'https://amplitude.github.io/Amplitude-TypeScript/'
 shields_io_badge: 'https://img.shields.io/npm/v/@amplitude/analytics-node.svg'
 ampli_article: 5f0a9b3c-627c-4014-bb2e-d1ac1c465db9
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1727813155
+updated_at: 1727995138
 source: 'https://www.docs.developers.amplitude.com/data/sdks/typescript-node/'
 package_name: '@amplitude/analytics-node'
 platform: Node
-version_name: 'Node.js SDK'
+version_name: Node.js
 ---
 The Node.js SDK lets you send events to Amplitude.
 
