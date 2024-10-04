@@ -7,8 +7,8 @@ this_article_will_help_you:
   - 'Understand the purpose of the Retention Analysis chart and familiarize yourself with its interface'
   - 'Understand how Amplitude applies time to a retention analysis'
   - 'Build a Retention Analysis chart'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717102987
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1728058578
 landing: true
 landing_blurb: 'Understand the purpose of the Retention Analysis chart and familiarize yourself with its interface'
 ---
@@ -51,11 +51,13 @@ To build a Retention Analysis chart, follow these steps:
 3. Next, select at least one return event. You can choose up to two, and you can filter by properties on these events as well.  
   
 ![create_retention.gif](/docs/output/img/retention-analysis/create-retention-gif.gif)
+
 4. In the Segmentation Module, identify the user segment you want to include in this analysis. You can import a previously-saved segment by clicking the *Saved* dropdown and selecting the one you want from the list. Otherwise, Amplitude begins from the assumption that your analysis will target all users.  
   
 {{partial:admonition type='note'}}
 The user segment you select will only apply to the starting event.
 {{/partial:admonition}}
+
 5. If you do not want to import a previously-saved user segment, you can start building your own by adding properties. To do so, click *+ Filter by*, choose the property you want to include, and specify the property value you’re interested in.
 6. You can narrow your focus even further by telling Amplitude you only want to include users who have already performed certain actions. To do so, click *+ Performed*, then choose the event you’re interested in.
 7. If desired, add another user segment by clicking *+ Add Segment*, and repeating steps 5 and 6.  
