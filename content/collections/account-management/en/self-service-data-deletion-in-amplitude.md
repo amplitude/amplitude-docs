@@ -42,4 +42,4 @@ To create and submit a data deletion task, follow these steps:
 8. Click *Next* to move to the verification screen. If your task is set up the way you want it, click *Next* to confirm.
 9. Follow the instructions in the modal that appears and click *Delete*. **You can’t undo this action**.
 
-Go to the homepage at any time to view the statuses of all existing tasks. The speed at which Amplitude processes your deletion request depends on the current volume of requests.
+See the statuses of all existing tasks on the Home page. The speed at which Amplitude processes your deletion request depends on the current volume of requests.
