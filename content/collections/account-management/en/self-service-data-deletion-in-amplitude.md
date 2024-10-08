@@ -35,7 +35,7 @@ To create and submit a data deletion task, follow these steps:
 4. Under *Time Range*, set the beginning and ending dates for the data you want to delete. Times are based on server upload time, in UTC.
 5. Under *Delete*, click *Add events or properties*.
 6. From the dropdown, select the type of data you want to delete: an event, an event property, or a user property.
-7. For **events**, select the specific events you’d like to delete. Amplitude will delete those events **and all properties associated** with them.
+7. For **events**, select the specific events to delete. Amplitude will delete those events **and all properties associated** with them.
 
 For **properties**, select the properties you’d like to delete, and specify whether you want to delete them for **all** events or **specific** events only. If you want to delete for specific events only, select them in the next drop-down that appears.
 
