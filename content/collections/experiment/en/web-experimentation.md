@@ -28,7 +28,7 @@ This script tracks [experiment events](/docs/experiment/under-the-hood/event-tra
 {{partial:tab name="US Data Center"}}
 
   ```html
-  <script src="https://cdn.amplitude.com/script/API_KEY.experiment.js"><script>
+  <script src="https://cdn.amplitude.com/script/API_KEY.experiment.js"></script>
   ```
 
 {{/partial:tab}}
@@ -67,7 +67,7 @@ The synchronous script delivers the most seamless experience for your users. Tha
     }
   </script>
   <!-- The existing experiment script set to load asynchronously -->
-  <script async src="https://cdn.amplitude.com/script/API_KEY.experiment.js"><script>
+  <script async src="https://cdn.amplitude.com/script/API_KEY.experiment.js"></script>
   ```
 
 {{/partial:tab}}
