@@ -19,7 +19,7 @@ This feature is available to users on Growth and Enterprise plans. Growth users 
 
 Only users with Admin permissions can use this feature.
 
-**You can’t cancel your request** to delete data once your submitted request is in the Amplitude deletion queue.
+Once you submit your deletion request to Amplitude, you can't cancel it or remove it from the queue.
 
 ## Submit a data deletion task
 
