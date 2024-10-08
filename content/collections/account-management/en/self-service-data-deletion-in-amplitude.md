@@ -23,7 +23,9 @@ Once you submit your deletion request to Amplitude, you can't cancel it or remov
 
 ## Submit a data deletion task
 
-To delete your Amplitude data, you must create a **task**. You can request to delete events or properties. When you delete events, Amplitude will also delete all properties and property data associated with those events. When deleting properties, specify whether you want to limit deletion to properties attached to specific events, or to delete these properties for all events.
+To delete your Amplitude data, you must create a **task**. Self-service data deletion supports both events and properties. 
+
+When you delete events, Amplitude deletes all properties and property data associated with those events. When you delete properties, specify whether you want to limit deletion to properties attached to specific events, or to delete these properties for all events.
 
 Add up to five clauses to each deletion task.
 
