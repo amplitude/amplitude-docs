@@ -143,4 +143,4 @@ You can undelete a deleted event or property.
 
 ## Delete an entire user
 
-You may want to delete a user entirely. You can do so with the [User Privacy API](https://www.docs.developers.amplitude.com/analytics/apis/user-privacy-api/). This API lets you delete a user, their events, and any associated data, and will help you keep compliant with data laws and regulations.
+To delete a user entirely, use the [User Privacy API](/docs/apis/analytics/user-privacy). This API lets you delete a user, their events, and any associated data, and helps you keep compliant with data laws and regulations.
