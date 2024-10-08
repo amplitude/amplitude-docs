@@ -10,9 +10,11 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1723653538
+updated_at: 1728428110
 ---
 Data on Amplitude is immutable once ingested. Amplitude Data provides you with several methods to prevent invalid or incorrect data from appearing in your Amplitude analyses. You can create a drop filter, create a block filter, block events and properties, or delete events and properties. This article describes each technique, as well as the differences between them.
+
+To permanently delete data, use [Amplitude's self-service data deletion feature](/docs/admin/account-management/self-service-data-deletion-in-amplitude).
 
 ## Create a drop filter
 
@@ -141,4 +143,4 @@ You can undelete a deleted event or property.
 
 ## Delete an entire user
 
-You may want to delete a user entirely. You can do so with the [User Privacy API](https://www.docs.developers.amplitude.com/analytics/apis/user-privacy-api/). This API lets you delete a user, their events, and any associated data, and will help you keep compliant with data laws and regulations.
+To delete a user entirely, use the [User Privacy API](/docs/apis/analytics/user-privacy). This API lets you delete a user, their events, and any associated data, and helps you keep compliant with data laws and regulations.
