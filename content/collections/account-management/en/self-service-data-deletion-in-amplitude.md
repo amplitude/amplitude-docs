@@ -37,7 +37,7 @@ To create and submit a data deletion task, follow these steps:
 6. From the dropdown, select the type of data you want to delete: an event, an event property, or a user property.
 7. For **events**, select the specific events to delete. Amplitude will delete those events **and all properties associated** with them.
 
-For **properties**, select the properties you’d like to delete, and specify whether you want to delete them for **all** events or **specific** events only. If you want to delete for specific events only, select them in the next drop-down that appears.
+    For **properties**, select the properties you’d like to delete, and specify whether you want to delete them for **all** events or **specific** events only. If you want to delete for specific events only, select them in the next drop-down that appears.
 
 8. Click *Next* to move to the verification screen. If your task is set up the way you want it, click *Next* to confirm.
 9. Follow the instructions in the modal that appears and click *Delete*. **You can’t undo this action**.
