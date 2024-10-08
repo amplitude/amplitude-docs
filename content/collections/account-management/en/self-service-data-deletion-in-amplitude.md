@@ -15,7 +15,7 @@ Amplitude’s **self-service data deletion** feature lets you do this, without i
 
 ## Before you begin
 
-This feature is available to users on Growth and Enterprise plans only. Growth users get one deletion task, to include up to one billion events scanned, per month. Enterprise users get 10 tasks, each of which can include as many as one billion events scanned, per month.
+This feature is available to users on Growth and Enterprise plans. Growth users get one deletion task, to include up to one billion events scanned, per month. Enterprise users get 10 tasks, each of which can include as many as one billion events scanned, per month.
 
 Only users with Admin permissions can use this feature.
 
