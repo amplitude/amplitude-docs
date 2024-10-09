@@ -29,7 +29,7 @@ tree:
         entry: 11423e67-aee4-4d24-9501-229b6065861b
   -
     id: 5c207df6-c244-493a-ae56-ba8deaa66fd3
-    title: 'Plan your Data'
+    title: 'Plan your data'
     children:
       -
         id: 041a701a-fb09-4c3f-9250-452165d66d22
@@ -57,7 +57,7 @@ tree:
         entry: 0556731c-f68a-495e-b85f-8e813640d6b0
   -
     id: 3d58b9f0-3bf3-4b37-b7ba-e61969f66d14
-    title: 'Organize your Data'
+    title: 'Organize your data'
     children:
       -
         id: bb1a9f6b-7be3-4ac9-a242-acfd606af895
@@ -116,7 +116,7 @@ tree:
         entry: ba19562a-4957-464b-be1c-f86926c58289
   -
     id: e8cc25dc-5440-4548-8c35-17d9c672e4c7
-    title: 'Enrich your Data'
+    title: 'Enrich your data'
     children:
       -
         id: fe9f9788-bd92-4f42-b9da-fe8609659743
