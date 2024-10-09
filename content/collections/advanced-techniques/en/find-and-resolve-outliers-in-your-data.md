@@ -32,7 +32,7 @@ Boxplots are another way to identify outliers. Boxplots involve calculating the 
 
 [See this article for a more advanced version that takes skewed distributions into account](https://www.sciencedirect.com/science/article/abs/pii/S0167947307004434).
 
-Finally, you could also simply choose a specific percentile and designate everything beyond it as an outlier. You shouldn’t do this at random; instead, look at the plot of your dataset first, and work from there.
+Finally, you could choose a specific percentile and designate everything beyond it as an outlier. You shouldn’t do this at random; instead, look at the plot of your dataset first, and work from there.
 
 The correct definition for an outlier varies from case to case, and they often depend on the specifics of your business use case. Use your own domain knowledge to help you decide what does and doesn’t count as an outlier. 
 
