@@ -43,25 +43,25 @@ You can also view this metric in the [object management center](/docs/data/objec
 
 Experiment Results supports the formula functions listed here:
 
-**UNIQUES:**
+### UNIQUES
 
-**Syntax**: UNIQUES(event)
+**Syntax**: `UNIQUES(event)`
 
 * **Event:** Refers to the event you're interested in. This must be a letter corresponding to an event in the Events Module.
 
 Returns the number of unique users who triggered the event. 
 
-**TOTALS:**
+### TOTALS:
 
-**Syntax**: TOTALS(event)
+**Syntax**: `TOTALS(event)`
 
 * **Event:** Refers to the event you're interested in. This must be a letter corresponding to an event in the Events Module.
 
 Returns the total number of times users triggered the event.
 
-**PROPSUM:**
+### PROPSUM
 
-**Syntax**: PROPSUM(event)
+**Syntax**: `PROPSUM(event)`
 
 * **Event:** Refers to the event you're interested in. This must be a letter corresponding to an event in the Events Module.
 
@@ -69,9 +69,9 @@ This function only works when grouping by a numerical property on the event. If 
 
 Returns the sum of the property values you're grouping the specified event by.
 
-**PROPAVG:**
+### PROPAVG
 
-**Syntax**: PROPAVG(event)
+**Syntax**: `PROPAVG(event)`
 
 * **Event:** Refers to the event you're interested in. This must be a letter corresponding to an event in the Events Module.
 
@@ -81,19 +81,19 @@ Returns the average of the property values you're grouping by. This function is 
 
 ### PROPMAX
 
-**Syntax**: PROPMAX(event)
+**Syntax**: `PROPMAX(event)`
 
 * **Event:** Returns the maximum value of the property you're grouping the specified event by. The property must be numeric. If grouping by multiple properties, the calculation uses the first group-by clause.
 
 ### PROPMIN
 
-**Syntax**: PROPMIN(event)
+**Syntax**: `PROPMIN(event)`
 
 * **Event:** Returns the minimum value of the property you're grouping the specified event by. The property must be numeric. If grouping by multiple properties, the calculation uses the first group-by clause.
 
-**CONVERSIONRATE (closed beta):**
+### CONVERSIONRATE (closed beta)
 
-**Syntax:** CONVERSIONRATE(array of events, conversion window, latency offset)
+**Syntax:** `CONVERSIONRATE(array of events, conversion window, latency offset)`
 
 * **Array of Events:** Refer to the events in the funnel.
 * **Conversion window:** Refers to the conversion window of the funnel. The unit is in seconds.
@@ -107,9 +107,9 @@ Returns the conversion rate (< 1) from 1st event to nth event of the array. This
 
 ![](/docs/output/img/experiment-results/23576087044507)
 
-**CONVERSIONAVG (closed beta):**
+### CONVERSIONAVG (closed beta)
 
-**Syntax:** CONVERSIONAVG(array of events, conversion window, latency offset)
+**Syntax:** `CONVERSIONAVG(array of events, conversion window, latency offset)`
 
 * **Array of Events:** Refer to the events in the funnel.
 * **Conversion window:** Refers to the conversion window of the funnel. The unit is in seconds.
@@ -122,6 +122,18 @@ This function only works when grouping by a numerical property on the last event
 {{/partial:admonition}}
 
 Returns the average value of the given property among all the users who completed the conversion. This function internally uses Funnel Query to get the average value among the converted users.
+
+### PROPCOUNT
+
+**Syntax:** `PROPCOUNT(event)`
+
+* **Event:** Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card. If grouping by multiple properties, the formula runs the calculation with the first group by clause.
+
+Returns the number of distinct property values for the property the event is grouped by. In this setup, the formula retrieves the number of different departments covering all the items for which details were viewed:
+
+![propcount_sidecontrols.png](/docs/output/img/event-segmentation/propcount-sidecontrols-png.png)
+
+`PROPCOUNT` is an **estimate** of distinct property values. This estimate comes from a [HyperLogLog algorithm,](https://en.wikipedia.org/wiki/HyperLogLog) and its accuracy depends on amount of data it has to work with. Expect a relative error in the range of 0.1% for less than 12,000 unique values, and up to 0.5% for more than 12,000 unique property values, depending on the cardinality of the property. 
 
 ## Formula syntax
 
