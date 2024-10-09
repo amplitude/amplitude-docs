@@ -6,8 +6,10 @@ landing: true
 sourxe: 'https://www.docs.developers.amplitude.com/experiment/general/evaluation/implementation/'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718211564
+updated_at: 1728408092
 landing_blurb: 'Learn how to implement Amplitude Experiment in your product.'
+experiment_type:
+  - feature
 ---
 Evaluation refers to the act of determining which variant, if any, a user is bucketed into given a flag configuration. In short, evaluation is a function of a [user](/docs/experiment/data-model#users) and a [flag](/docs/experiment/data-model#flags-and-experiments) configuration which outputs a [variant](/docs/experiment/data-model#variants).
 

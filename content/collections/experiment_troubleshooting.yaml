@@ -1,6 +1,9 @@
 title: 'Experiment Troubleshooting'
+propagate: false
 template: default
 layout: layout
+taxonomies:
+  - experiment_type
 revisions: false
 route: '/experiment/troubleshooting/{slug}'
 sort_dir: asc

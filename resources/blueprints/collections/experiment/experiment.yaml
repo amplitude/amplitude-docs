@@ -32,6 +32,15 @@ tabs:
       -
         fields:
           -
+            handle: experiment_type
+            field:
+              type: terms
+              taxonomies:
+                - experiment_type
+              display: 'Experiment type'
+              mode: select
+              localizable: false
+          -
             handle: slug
             field:
               type: slug

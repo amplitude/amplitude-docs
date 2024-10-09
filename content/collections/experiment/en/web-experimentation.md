@@ -8,10 +8,11 @@ this_article_will_help_you:
 landing: false
 sourxe: 'https://www.docs.developers.amplitude.com/experiment/web/'
 exclude_from_sitemap: false
-updated_by: c0ecd457-5b72-4dc9-b683-18a736413d32
-updated_at: 1718652695
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1728408121
+experiment_type:
+  - web
 ---
-
 Amplitude's web experimentation provides a no-code solution running experiments on the web. [Copy the script snippet](#implement-the-web-experiment-script) for your Amplitude project into your site and begin running experiments immediately.
 
 {{partial:admonition type="beta" heading="Web Experimentation is in Beta"}}

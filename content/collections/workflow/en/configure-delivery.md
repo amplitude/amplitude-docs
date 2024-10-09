@@ -5,8 +5,11 @@ title: "Configure your experiment's delivery"
 source: 'https://help.amplitude.com/hc/en-us/articles/20009673705627-Configure-your-experiment-s-delivery'
 this_article_will_help_you:
   - 'Ensure your experiment is ready for testing'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1714514372
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1728407673
+landing: false
+experiment_type:
+  - feature
 ---
 Now that you've designed your experiment, the next step is making sure it's ready to be tested and launched. You'll specify the evaluation mode and bucketing unit (if you haven't already), specify the deployments that will house this experiment, double-check your variants, and identify members of your team who will participate in QA testing.
 

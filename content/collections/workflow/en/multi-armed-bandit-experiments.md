@@ -4,7 +4,9 @@ blueprint: workflow
 title: 'Multi-armed bandit experiments'
 landing: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718772564
+updated_at: 1728407663
+experiment_type:
+  - feature
 ---
 In a traditional A/B test, Amplitude Experiment assesses all the variants in your experiment until it reaches a statistically significant result. From there, you can choose to roll out the winning variant, or roll all users back to the control variant instead. Your decisions depend on why a particular variant outperformed the others.
 

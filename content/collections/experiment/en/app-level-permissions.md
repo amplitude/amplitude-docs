@@ -7,8 +7,11 @@ this_article_will_help_you:
   - 'Set user permissions for Amplitude Experiment that are independent of and separate from those used in Amplitude Analytics'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1720719003
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1728408045
+experiment_type:
+  - feature
+  - web
 ---
 Experiment app-level permissions enable Amplitude admins to manage access to Amplitude Experiment separately from [Amplitude Analytics permissions](/docs/admin/account-management/user-roles-permissions). Use this when you want to:
 

@@ -5,8 +5,10 @@ title: 'Remote evaluation'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717439192
+updated_at: 1728408102
 source: 'https://www.docs.developers.amplitude.com/experiment/general/evaluation/remote-evaluation/'
+experiment_type:
+  - feature
 ---
 Remote evaluation involves making a request to Amplitude Experiment's evaluation servers to fetch variants for a [user](/docs/experiment/data-model#users). Remote evaluation is the default way to evaluate users on client-side apps, but may also be used from a server-side environment.
 
@@ -88,4 +90,3 @@ Remote evaluation gets the user's cohort membership from analytics which enables
 {{partial:admonition type="warning" heading="Hourly cohort sync"}}
 Dynamic cohorts are synced hourly. Therefore, only use cohort targeting if the bucketing isn't time sensitive. Time sensitive user targeting should use user properties passed explicitly to the remote fetch request.
 {{/partial:admonition}}
-

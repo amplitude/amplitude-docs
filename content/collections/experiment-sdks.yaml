@@ -1,6 +1,9 @@
 title: 'Experiment SDKs'
+propagate: false
 template: default
 layout: layout
+taxonomies:
+  - experiment_type
 revisions: false
 route: '/sdks/experiment-sdks/{slug}'
 sort_dir: asc

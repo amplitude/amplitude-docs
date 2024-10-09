@@ -7,8 +7,11 @@ this_article_will_help_you:
   - 'Identify the logic behind setting an MDE so you can more confidently run your experiment'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1715102912
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1728408880
+experiment_type:
+  - feature
+  - web
 ---
 Before you run a experiment, set an MDE (minimum detectable effect) to estimate how you'll measure success. Think of MDE as the **minimum** change you're hoping to see by running your experiment. Without a fail-safe calculation available for the MDE, it can be tricky to set one. With Amplitude Experiment, the default MDE is 2%; however, as the MDE is strictly linked to your unique business needs, be thoughtful during each experiment's [design phase](/docs/experiment/workflow/define-goals). Considerations for setting the MDE should include the recommendation metric and any associated risks.
 

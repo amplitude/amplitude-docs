@@ -1,7 +1,10 @@
 title: 'Experiment Results'
+propagate: false
 template: default
 layout: layout
 mount: 0735ae42-9be5-4087-a96e-507894375fca
+taxonomies:
+  - experiment_type
 revisions: false
 route: '/analytics/charts/experiment-results/{slug}'
 sort_dir: asc

@@ -6,8 +6,11 @@ source: 'https://help.amplitude.com/hc/en-us/articles/360061270832-Troubleshoot-
 this_article_will_help_you:
   - 'Identify the cause of potentially unanticipated behaviors in Amplitude Experiment'
   - 'Fix any issues yourself, without contacting Amplitude support'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1714517153
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1728407729
+landing: false
+experiment_type:
+  - feature
 ---
 Sometimes, you will experience unexpected issues with creating and rolling out an experiment or flag. This can happen for a number of different reasons, several of which will be explored in this article.
 

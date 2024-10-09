@@ -1,6 +1,9 @@
 title: 'Experiment APIs'
+propagate: false
 template: default
 layout: layout
+taxonomies:
+  - experiment_type
 revisions: false
 route: '/apis/experiment/{slug}'
 sort_dir: asc

@@ -6,8 +6,11 @@ source: 'https://help.amplitude.com/hc/en-us/articles/4405839607579-Define-your-
 this_article_will_help_you:
   - 'Add recommendation and guardrail metrics to your experiment'
   - 'Create new metrics from scratch, and edit existing metrics'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1714515123
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1728407986
+landing: false
+experiment_type:
+  - feature
 ---
 An experiment can’t tell you anything without events to track. Adding metrics to your experiment occurs in the Goals segment of the experiment design panel. Here, you’ll tell Amplitude Experiment what you want your **recommendation metric** to be, as well as define any **secondary metrics**. The recommendation metric determines whether your hypothesis is accepted or rejected, and therefore, whether your experiment has succeeded or failed.
 

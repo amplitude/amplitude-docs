@@ -6,9 +6,11 @@ source: 'https://help.amplitude.com/hc/en-us/articles/11502996649371-Estimate-th
 this_article_will_help_you:
   - 'Understand the components of the duration estimator'
   - 'Use the duration estimator to plan experiment sample size and run time needed to reach statistical significance'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1720718556
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1728407976
 landing: false
+experiment_type:
+  - feature
 ---
 The duration estimator can help you calculate the sample size and experiment run time needed to reach [statistical significance](https://en.wikipedia.org/wiki/Statistical_significance) in your Amplitude experiment, and to help you decide if an experiment would be worthwhile.
 

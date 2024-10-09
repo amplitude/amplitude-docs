@@ -1,6 +1,9 @@
 title: 'Under the Hood'
+propagate: false
 template: default
 layout: layout
+taxonomies:
+  - experiment_type
 revisions: false
 route: '/experiment/under-the-hood/{slug}'
 sort_dir: asc

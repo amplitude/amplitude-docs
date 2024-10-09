@@ -5,7 +5,10 @@ title: 'Performance and caching'
 landing: false
 source: 'https://www.docs.developers.amplitude.com/experiment/general/performance-and-caching/'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1716917482
+updated_at: 1728422588
+experiment_type:
+  - feature
+  - web
 ---
 Amplitude Experiment [evaluation](/docs/experiment/implementation) supports two modes, [local](/docs/experiment/local-evaluation) and [remote](/docs/experiment/remote-evaluation), each with different performance metrics and tradeoffs.
 

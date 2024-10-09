@@ -6,8 +6,12 @@ source: 'https://help.amplitude.com/hc/en-us/articles/13448368364187-Finalize-yo
 this_article_will_help_you:
   - "Understand the default statistical preferences in your experiment's results"
   - 'Understand when to modify the default settings'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1714517514
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1728407742
+landing: false
+experiment_type:
+  - web
+  - feature
 ---
 Amplitude Experiment uses default statistical settings for experiment analyses: 
 

@@ -6,10 +6,12 @@ source: 'https://help.amplitude.com/hc/en-us/articles/360061687551-Create-a-new-
 this_article_will_help_you:
   - 'Create and initialize a new experiment'
   - 'Add context to your experiment description, so other stakeholders will understand it'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1724885023
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1728407995
 landing: true
 landing_blurb: 'Create a new experiment in Amplitude.'
+experiment_type:
+  - feature
 ---
 The decisions you make in the **design** phase set the stage for your experiment’s success. By putting more thought into your experiment’s purpose and goals before you start, you’ll be far more likely to glean useful, actionable insights from it.
 

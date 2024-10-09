@@ -6,7 +6,9 @@ landing: false
 sourxe: 'https://www.docs.developers.amplitude.com/experiment/general/evaluation/local-evaluation/'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1716333767
+updated_at: 1728408112
+experiment_type:
+  - feature
 ---
 Local evaluation runs [evaluation logic](/docs/experiment/implementation) in the SDK, saving you the overhead incurred by making a network request per user evaluation. The [sub-millisecond evaluation](/docs/experiment/under-the-hood/performance-and-caching) is perfect for latency-minded systems which need to be performant at scale.
 

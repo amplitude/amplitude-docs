@@ -4,6 +4,8 @@ sites:
 propagate: false
 template: default
 layout: layout
+taxonomies:
+  - experiment_type
 revisions: false
 route: '/experiment/{slug}'
 sort_dir: asc

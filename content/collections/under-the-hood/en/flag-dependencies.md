@@ -4,8 +4,10 @@ blueprint: under-the-hood
 title: 'Flag Dependencies'
 landing: false
 source: 'https://www.docs.developers.amplitude.com/experiment/general/flag-dependencies/'
-updated_by: 924ab613-3300-4c23-b6d6-2030761a8ea7
-updated_at: 1718742410
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1728425241
+experiment_type:
+  - feature
 ---
 Flag dependencies define relationships between flags to ensure evaluation order. The result of each flag's evaluation is then passed to all subsequent evaluations to decide if dependent flags should [evaluate](/docs/experiment/implementation#flag-dependencies) based on the result of the dependency.
 

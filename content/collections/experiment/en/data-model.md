@@ -6,8 +6,10 @@ landing: true
 sourxe: 'https://www.docs.developers.amplitude.com/experiment/general/data-model/'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717435427
+updated_at: 1728408080
 landing_blurb: 'See how Amplitude Experiment is structured.'
+experiment_type:
+  - feature
 ---
 At the top level in Amplitude is your **organization**. Within an organization, Amplitude Experiment follows the **project** structure defined by Amplitude Analytics. In short, all Experiment data must be associated with an Amplitude Analytics project.
 

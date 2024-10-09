@@ -7,8 +7,11 @@ this_article_will_help_you:
   - "Use the T-test to analyze your Amplitude Experiment's results"
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1715102534
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1728408863
+experiment_type:
+  - feature
+  - web
 ---
 It can be difficult to understand the benefits of running one statistical test over another, such as sequential testing versus the T-test. 
 

@@ -1,6 +1,9 @@
 title: 'Experiment Theory'
+propagate: false
 template: default
 layout: layout
+taxonomies:
+  - experiment_type
 revisions: false
 route: '/experiment/experiment-theory/{slug}'
 sort_dir: asc

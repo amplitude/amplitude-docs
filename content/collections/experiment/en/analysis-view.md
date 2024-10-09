@@ -8,7 +8,10 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1716329050
+updated_at: 1728408031
+experiment_type:
+  - feature
+  - web
 ---
 Within Amplitude Experiment, the **Experiment Analysis** view is where you’ll find the details of your experiment. Visible on the *Analysis* card under the *Activity* tab, it gives you a convenient way to quickly take in the most important, high-level statistical measurements that help you decide if your experiment was a success.
 
