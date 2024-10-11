@@ -9,7 +9,7 @@ exclude_from_sitemap: false
 updated_by: 36df5bf6-28d6-4b56-9bba-1c675073870d
 updated_at: 1728602881
 ---
-Bulk Model Management is a feature we build to help our customers efficiently manage ther Warehouse Native models without going through manual clicks using the UI. Instead of managing one model at a time, by following the model specification, Warehouse Native customers are able to edit multile models using a config file and create or update all models in one batch.
+Bulk Model Management is a feature we build to help our customers efficiently manage their Warehouse Native models. Instead of managing one model at a time, by following the model specification, Warehouse Native customers are able to edit multiple models using a config file and create or update models all at once.
 
 ## Approach
 
