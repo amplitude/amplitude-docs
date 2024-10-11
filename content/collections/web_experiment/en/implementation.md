@@ -5,7 +5,7 @@ title: Implement Web Experiment
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1728666781
 ---
-Amplitude's web experimentation requires a standalone script that you must add to your website. Paste the script into the `<head>` element of your site, as high as possible to avoid flickering.
+Amplitude's Web Experimentation requires a standalone script that you must add to your website. Paste the script into the `<head>` element of your site, as high as possible to avoid flickering.
 
 The script tracks [impression events](#) with the [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) already installed on your site, or a [third-party analytics SDK](#).
 
@@ -19,7 +19,7 @@ Replace `API_KEY` with your project's API key in one of the synchronous scripts 
 | EU | `<script src="https://cdn.eu.amplitude.com/script/API_KEY.experiment.js"></script>` |
 
 {{partial:admonition type="note" heading="Content security policies"}}
-If your site defines the `script-src` content policy directive, add `*.amplitude.com` and `unsafe-inline` to the policy. These additions enable loading the Web experiment script and visual editor on your site.
+If your site defines the `script-src` content policy directive, add `*.amplitude.com` and `unsafe-inline` to the policy. These additions enable loading the Web Experiment script and visual editor on your site.
 
 ```text
 Content-Security-Policy: script-src *.amplitude.com unsafe-inline;
@@ -75,11 +75,11 @@ The synchronous script above provides the best experience for your users. If you
 
 If you use a CDP other than Amplitude to send events, create an integration to provide user identity information and track events. If you don't create an integration, the script assumes you have Amplitude Browser SDK installed on the same site.
 
-The web experiment script supports common CDP integrations through an `integration` query parameter in the  script URL. 
+The Web Experiment script supports common CDP integrations through an `integration` query parameter in the  script URL. 
 
 #### Segment integration
 
-Web experimentation supports Segment by default. Add `integration=segment` as a query parameter to the script URL. For example, if you use Amplitude's US region:
+Web Experimentation supports Segment by default. Add `integration=segment` as a query parameter to the script URL. For example, if you use Amplitude's US region:
 
 ```html
 <!-- Replace API_KEY with your project's API key -->
@@ -88,7 +88,7 @@ Web experimentation supports Segment by default. Add `integration=segment` as a 
 
 #### Custom integrations
 
-Use the `IntegrationPlugin` interface to add a custom integration. Place the plugin script *before* the Web experiment script tag.
+Use the `IntegrationPlugin` interface to add a custom integration. Place the plugin script *before* the Web Experiment script tag.
 
 ```html
 <script>
@@ -116,7 +116,7 @@ window.experimentIntegration = {
 
 ### Content management systems
 
-Amplitude Web experiment supports any CMS that supports custom scripts. Amplitude provides plugins that support both Wordpress and Shopify to help you get running on those platforms.
+Amplitude Web Experiment supports any CMS that supports custom scripts. Amplitude provides plugins that support both Wordpress and Shopify to help you get running on those platforms.
 
 #### Wordpress
 
@@ -127,11 +127,11 @@ Amplitude's [Wordpress plugin](/docs/data/amplitude-wordpress-plugin) enables Am
 Amplitude's Shopify App enables Amplitude Analytics, Experiment, and Session Replay on your Shopify site.
 
 {{partial:admonition type="warning" heading="Shopify and flickering"}}
-The method Shopify uses to loads scripts on Shopify sites with web experiments to flicker. To avoid this, add the [asyncronous web script with the anti-flicker snippet](#async-script-with-anti-flicker-snippet) to your `theme.liquid` file.
+The method Shopify uses to loads scripts on Shopify sites with Web Experiments to flicker. To avoid this, add the [asyncronous web script with the anti-flicker snippet](#async-script-with-anti-flicker-snippet) to your `theme.liquid` file.
 {{/partial:admonition}}
 
 ### Tag managers
 
-Tag managers, like Google Tag Manager load scripts asynchronously, which causes flickering. Tag managers can be a good way to start using the visual editor to create variants in parallel if adding the Web experiment script takes time. Amplitude recommends against using tag managers in production.
+Tag managers, like Google Tag Manager load scripts asynchronously, which causes flickering. Tag managers can be a good way to start using the visual editor to create variants in parallel if adding the Web Experiment script takes time. Amplitude recommends against using tag managers in production.
 
 
