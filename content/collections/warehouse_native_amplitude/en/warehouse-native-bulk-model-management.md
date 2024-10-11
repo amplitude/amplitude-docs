@@ -21,7 +21,7 @@ A config file is a YAML-based file that customers can use to define their models
 
 We support both creation and update using the config file. If the model `name` exists, we update the existing model based on the `name`, if the `name` doesn't exist, we create a new model with that `name`. 
 
-### What happens to the Models not included in the config file
+### What happens to the models that are not included in the config file
 
 The model doesn't exist in the config file uploaded won't be touched, deleted or changed.
 
