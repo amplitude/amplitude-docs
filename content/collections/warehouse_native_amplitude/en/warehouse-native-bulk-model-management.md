@@ -44,7 +44,7 @@ Each model is identified by its model `name` which is the unique identifier acro
 ### How to create a config file
 
 - you can either download an example file or download all existing models using the UI to a config file to start with.
-- you can follow the instruction below to create a new config file to start with.
+- you can follow the instructions below to create a new config file to start with.
 
 ### How to apply the changes
 
