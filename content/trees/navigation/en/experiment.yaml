@@ -25,6 +25,25 @@ tree:
     title: 'Experiment APIs'
     url: /docs/apis/experiment
   -
+    id: 30d91180-5b83-4813-810e-6f53bb168fe2
+    title: 'Web experimentation'
+    children:
+      -
+        id: f7b0fbd0-d592-4912-82c4-b42f5b2762d8
+        entry: a5dc1793-29f7-4c23-a656-459def9c6b3f
+      -
+        id: e0ce4fe2-1000-4608-8d62-21c2a7e2b275
+        entry: 3ef0ccc6-5e0f-435b-9184-edb809f19210
+      -
+        id: 0dce35f4-9b7c-4fd5-aedc-b4e635799682
+        entry: 671d5f19-2b8a-463a-95be-f81de05e0860
+      -
+        id: f8c879f6-bc64-412a-b4a0-e4f339d2b610
+        entry: 7ade889d-c09c-48ee-8910-c4592bcc09b0
+      -
+        id: a19faf32-0833-4da0-a209-449ad752dcaf
+        entry: 23ff249c-45ab-488a-b8aa-ae8fde85249d
+  -
     id: b0291980-c279-43f0-879a-7f8dc63798db
     title: 'General knowledge'
     children:
