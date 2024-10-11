@@ -15,7 +15,7 @@ Bulk Model Management is a feature we build to help our customers efficiently ma
 
 ### Why YAML
 
-A config file is a YAML-based file that customers can use to define their models and upload it to commit changes. YAML is a human-friendly format which is easy to read and edit. We expect our customers to use code editor or any text editor or even AI to edit the model definition configuration to have the changes they want to make.
+A config file is a YAML-based file that customers can use to define their models and upload it to commit changes. YAML is a human-friendly format that is easy to read and edit. We expect our customers to use a text editor or even AI to edit the model definition configuration to generate the changes they want to make.
 
 ### Supported operations
 
