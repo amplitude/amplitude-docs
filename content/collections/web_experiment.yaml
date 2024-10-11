@@ -4,6 +4,7 @@ sites:
 propagate: false
 template: default
 layout: layout
+mount: 427fa0c0-c489-48df-a147-cfe636b803b8
 revisions: false
 route: '/experiment/web/{slug}'
 sort_dir: asc
@@ -16,4 +17,4 @@ preview_targets:
     url: '{permalink}'
     refresh: true
 inject:
-  nav_title: experiment
+  nav_title: web_experiment
