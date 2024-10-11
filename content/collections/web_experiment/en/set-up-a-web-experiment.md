@@ -1,27 +1,27 @@
 ---
 id: b8db5ecf-b7b0-432d-b1f3-19ae70d13291
 blueprint: web_experiment
-title: 'Set up a web experiment'
+title: 'Set up a Web Experiment'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1728677939
 this_article_will_help_you:
-  - 'Understand the difference between a web experiment and a feature experiment'
-  - 'Build a web experiment using the Visual Editor'
+  - 'Understand the difference between a Web Experiment and a feature experiment'
+  - 'Build a Web Experiment using the Visual Editor'
 ---
-Amplitude Experiment’s **web experiment** feature lets you create an A/B test or multi-armed bandit experiment **without new code**. Open your site in the [Visual Editor](#the-visual-editor), choose the elements you’d like to experiment with, and make changes to their content or properties directly. This allows for less-technical users to easily create experiments, and provides for a more intuitive process.
+Amplitude **Web Experiment** lets you create an A/B test or multi-armed bandit experiment **without new code**. Open your site in the [Visual Editor](#the-visual-editor), choose the elements you’d like to experiment with, and make changes to their content or properties directly. This allows for less-technical users to easily create experiments, and provides for a more intuitive process.
 
 ## Before you begin
 
-Before setting up a web experiment, you must implement the web experiment script on your site. [Learn more in our implementation documentation](/docs/experiment/web/implementation).
+Before setting up a Web Experiment, you must implement the Web Experiment script on your site. [Learn more in our implementation documentation](/docs/experiment/web/implementation).
 
-Keep in mind that creating a web experiment is a different process from creating a feature experiment, though there is overlap.
+Keep in mind that creating a Web Experiment is a different process from creating a feature experiment, though there is overlap.
 
-## Set up a web experiment
+## Run a web experiment
 
-To set up a web experiment, follow these steps:
+To set up a Web Experiment, follow these steps:
 
 1. In Amplitude Experiment, navigate to *Experiments > Create Experiment > Web Experiment*.
-2. In the *New Experiment* modal, give your experiment a name. Enter the URL of the page this experiment targets—Amplitude must be instrumented on that page—and select the appropriate project from the drop-down.
+2. In the *New Experiment* modal, give your experiment a name. Enter the URL for the page this experiment targets—Amplitude must be instrumented on that page—and select the appropriate project from the drop-down.
 
      You can also add a key, or specify the type of experiment—A/B test or multi-armed bandit.
 
@@ -32,7 +32,7 @@ To set up a web experiment, follow these steps:
 ![web-exp-1.png](/docs/output/img/workflow/web-exp-1.png)
 
 {{partial:admonition type='note'}}
-If the script isn’t present on the page you specified, Amplitude Experiment can’t open the Visual Editor, and will instead open the Site Setup panel and prompt you to implement the script.
+If the script isn’t present on the page you specified, Amplitude Experiment can’t open the Visual Editor, and will instead open the Site Setup panel and prompt you to [implement](/docs/experiment/web/implementation) the script.
 {{/partial:admonition}}
 
 4. To change text, colors, or other elements of the page’s UI, click *Element Changes*.
@@ -51,13 +51,13 @@ If the script isn’t present on the page you specified, Amplitude Experiment ca
 
 ![web-exp-4.png](/docs/output/img/workflow/web-exp-4.png)
 
-12. Next, target the users you want to include in this experiment. Audience targeting works differently for web experiments; [learn more here]([Visual Editor](/docs/experiment/web/targeting).
-13. The *Advanced* tab provides several additional options for your experiment, [which you can read about in this article](https://amplitude.com/docs/experiment/workflow/finalize-statistical-preferences). Note that several of the options discussed in that article are not available for web experiments.
-14. When you’re ready, click *Save and Close* to finish creating your web experiment.
+12. Next, target the users you want to include in this experiment. Audience targeting works differently for Web Experiments; [learn more here]([Visual Editor](/docs/experiment/web/targeting).
+13. The *Advanced* tab provides several additional options for your experiment, [which you can read about in this article](https://amplitude.com/docs/experiment/workflow/finalize-statistical-preferences). Note that several of the options discussed in that article are not available for Web Experiments.
+14. When you’re ready, click *Save and Close* to finish creating your Web Experiment.
 
 ### Set up a URL redirect experiment
 
-Another type of web experiment doesn’t involve the use of the Visual Editor at all. Instead, it relies on URL redirects, to send your users to another URL in place of the one hosting the experiment. 
+Another type of Web Experiment doesn’t involve the use of the Visual Editor at all. Instead, it relies on URL redirects, to send your users to another URL in place of the one hosting the experiment. 
 
 {{partial:admonition type='note'}}
 Setting up a URL redirect precludes you from using the Visual Editor. Don’t use this option unless you specifically want to use URL redirects instead of the Visual Editor.
