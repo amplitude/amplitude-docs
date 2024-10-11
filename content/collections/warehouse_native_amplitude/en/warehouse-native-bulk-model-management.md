@@ -23,7 +23,7 @@ We support both creation and update using the config file. If the model `name` e
 
 ### What happens to the models that are not included in the config file
 
-The model doesn't exist in the config file uploaded won't be touched, deleted or changed.
+The models that don't exist in the config file will not be altered.
 
 ### Model name is the unique identifier
 
