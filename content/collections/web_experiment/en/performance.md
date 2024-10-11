@@ -38,7 +38,7 @@ The cache control response header that configures CDN caching is:
 
 The browser cache serves the web experiment script without making a network request for 60 seconds, or the maximum amount of time if the server returns an error. This caching layer serves the script from memory (0ms latency) if a user loads multiple pages on your site, or reloads the same page within a one minute window.
 
-The cache control response header that configures brwoser caching is:
+The cache control response header that configures browser caching is:
 
 `max-age=60,stale-while-revalidate=3600`
 

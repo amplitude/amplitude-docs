@@ -79,7 +79,7 @@ The Web Experiment script supports common CDP integrations through an `integrati
 
 #### Segment integration
 
-Web Experimentation supports Segment by default. Add `integration=segment` as a query parameter to the script URL. For example, if you use Amplitude's US region:
+Web experimentation supports Segment by default. Add `integration=segment` as a query parameter to the script URL. For example, if you use Amplitude's US region:
 
 ```html
 <!-- Replace API_KEY with your project's API key -->
