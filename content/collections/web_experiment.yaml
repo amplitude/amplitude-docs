@@ -5,7 +5,7 @@ propagate: false
 template: default
 layout: layout
 revisions: false
-route: '/docs/experiment/web/{slug}'
+route: '/experiment/web/{slug}'
 sort_dir: asc
 date_behavior:
   past: public
