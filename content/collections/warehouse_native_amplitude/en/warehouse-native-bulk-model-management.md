@@ -48,7 +48,7 @@ Each model is identified by its model `name` which is the unique identifier acro
 
 ### How to apply the changes
 
-You can use the UI to upload the updated config file, all changes will be commited to the database in one transaction if everything is correct. The changes will be automatically rolled back if error happens. So it's an ALL or Nothing scenario.
+You can use the UI to upload the updated config file, all changes will be committed to the database in one transaction. The changes will be automatically rolled back if there is any error.
 
 
 ## Config Spec
