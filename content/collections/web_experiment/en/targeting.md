@@ -6,11 +6,11 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1728666803
 ---
 
-Web experiments target both pages and audiences. Amplitude evaluates page targeting first, then audience targeting. Both targeting methods evaluate locally in the browser when the page first loads.
+Web Experiments target both pages and audiences. Amplitude evaluates page targeting first, then audience targeting. Both targeting methods evaluate locally in the browser when the page first loads.
 
 ## Page targeting
 
-By default, a new web experiment targets the URL set on creation. This is the same URL that both the visual editor and Test & Preview tool use. To target multiple pages on your site, configure additional targeting rules.
+By default, a new Web Experiment targets the URL set on creation. This is the same URL that both the visual editor and Test & Preview tool use. To target multiple pages on your site, configure additional targeting rules.
 
 Include or exclude pages from targeting with a matching operator and a value. Amplitude recommends excluding pages only if your inclusion rules target multiple pages. For example, you could include all blog posts in an experiment, then exclude the most important posts to avoid any negative impact your variant may have.
 
@@ -28,7 +28,7 @@ Include or exclude pages from targeting with a matching operator and a value. Am
 
 ## Audience targeting
 
-By default, a new web experiment targets all users. Audience targeting enables you to target specific users for your experiment. Users who aren't targeted see the default experience, and don't count towards analysis.
+By default, a new Web Experiment targets all users. Audience targeting enables you to target specific users for your experiment. Users who aren't targeted see the default experience, and don't count towards analysis.
 
 If any segments match, Amplitude buckets that user into a variant based on the configured rollout and variant distribution. For a segment to match, it must meet all conditions you set.
 
@@ -47,8 +47,8 @@ If any segments match, Amplitude buckets that user into a variant based on the c
 
 ## Bucketing
 
-Bucketing refers to the variant a users sees, based on the rollout and distribution. Rollout is the percentage of users that should be in the experiment. Distribution defines which variant a user should see if they're in the rollout. Web experiment distributes variants evenly by default. Amplitude recommends this distribution.
+Bucketing refers to the variant a users sees, based on the rollout and distribution. Rollout is the percentage of users that should be in the experiment. Distribution defines which variant a user should see if they're in the rollout. Web Experiment distributes variants evenly by default. Amplitude recommends this distribution.
 
-Bucketing is consistent given the user has the same ID. Since most experiments bucket by Device ID, web experiment may put them in a different bucket if they visit on a new device, browser, or have private browsing enabled.
+Bucketing is consistent given the user has the same ID. Since most experiments bucket by Device ID, Web Experiment may put them in a different bucket if they visit on a new device, browser, or have private browsing enabled.
 
-Increasing rollout doesn't re-bucket users who're already in the rollout. For example, if your experiment is rolled out to 10% of users, and you increase the rollout to 50%, the original 10% of users aren't affected. If you change the *distribution* from evenly distributed to `20% -> control, 80% -> treatment`, users who were in the control will jump to the treatment.
+Increasing rollout doesn't re-bucket users who're already in the rollout. For example, if your experiment is rolled out to 10% of users, and you increase the rollout to 50%, the original 10% of users aren't affected. If you change the *distribution* from evenly distributed to `20% -> control, 80% -> treatment`, users who were in the control jump to the treatment.
