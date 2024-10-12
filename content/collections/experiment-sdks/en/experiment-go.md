@@ -198,8 +198,8 @@ func Initialize(apiKey string, config *Config) *Client
 | `apiKey` | required | The server [deployment key](/docs/experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
-{{partial:admonition type="tip" heading="Flag polling interval"}}
-Use the `FlagConfigPollingInterval` [configuration](#configuration-1) to determine the time flag configs take to update once modified (default 30s).
+{{partial:admonition type="tip" heading="Flag streaming"}}
+Use the `StreamUpdates` [configuration](#configuration-1) to push flag config updates to the SDK (default `false`), instead of polling every `FlagConfigPollingInterval` milliseconds. The time for SDK to receive the update after saving is generally under one second. It will revert to polling if streaming fails. Configure `FlagConfigPollingInterval` [configuration](#configuration-1) to set the time flag configs take to update once modified (default 30s), as well for fallback.
 {{/partial:admonition}}
 
 #### Configuration
@@ -220,6 +220,9 @@ If you're using Amplitude's EU data center, configure the `ServerZone` option on
 | `FlagConfigPollingInterval` | The interval to poll for updated flag configs after calling [`Start()`](#start) | `30 * time.Second` |
 | `FlagConfigPollerRequestTimeout` | The timeout for the request made by the flag config poller | `10 * time.Second` |
 | `AssignmentConfig` | Configuration for automatically tracking assignment events after an evaluation. | `nil` |
+| `StreamUpdates` | Enable streaming to replace polling for receiving flag config updates. Instead of polling every second, Amplitude servers push updates to SDK generally within one second. If the stream fails for any reason, it will revert to polling automatically and retry streaming after some interval. | `false` |
+| `StreamServerUrl` | The stream server url to stream from. | `https://stream.lab.amplitude.com` |
+| `StreamFlagConnTimeout` | The timeout for establishing a valid flag config stream. This includes time for establishing a connection to stream server and time for receiving initial flag configs. | `1500` |
 | `CohortSyncConfig` | Configuration to enable cohort downloading for [local evaluation cohort targeting](#local-evaluation-cohort-targeting). | `nil` |
 
 **AssignmentConfig**
