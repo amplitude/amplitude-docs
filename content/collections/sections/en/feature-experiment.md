@@ -3,8 +3,8 @@ id: 7ba36066-3d54-4874-a407-504b27d83a26
 blueprint: section
 title: 'Feature Experiment'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1729010738
+updated_by: c0ecd457-5b72-4dc9-b683-18a736413d32
+updated_at: 1729024562
 nav_title: experiment
 template: landing-page-experiment
 current-collection: experiment|experiment-apis|experiment-results|experiment-sdks|experiment-theory|workflow
@@ -35,8 +35,8 @@ landing_page_content:
     id: lxj7lgzm
     card_title: 'Web Experimentation'
     card_content: 'Run A/B, multivariate, and Multi-armed bandit experiments on the web without writing any code.'
-    cta: 'Get started with web experimenation'
-    entries_field: 99eb2927-ad52-424a-a04d-7e90a0ddfeb7
+    cta: 'Get started with web experimentation'
+    entries_field: b8db5ecf-b7b0-432d-b1f3-19ae70d13291
     type: card
     enabled: true
     external_link: false

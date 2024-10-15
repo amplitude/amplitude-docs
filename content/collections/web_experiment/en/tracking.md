@@ -32,6 +32,6 @@ Amplitude tracks the impression event per experiment, when Web Experiment applie
 2. **E** = The number of experiments you run per month
 3. **P** = The average number of page views per user, per month
 
-Impression Estimate = **M** * **E** * **P**
+Impressions Estimate = **M** * **E** * **P**
 
 This estimate provides an upper bound. Target specific pages and audiences, or roll out to a subset of users to reduce the total number of impressions.
