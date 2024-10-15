@@ -6,7 +6,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1728666798
 ---
 
-Actions define how variants modify your site. They relate to variants rather than a specific page, and apply to all pages that you target in your experiment.
+Actions define how variants modify your site. Actions relate to variants rather than a specific page, and apply to all pages that you target in your experiment.
 
 Experiment applies variant actions during evaluation. This happens on the initial page load and any time state pushes to or pops from the session history. History state changes also cause the SDK to revert all applied element change and custom code actions before reevaluating and reapplying actions with the update page in mind.
 
@@ -16,10 +16,10 @@ Element changes modify existing elements on your site. Web Experiment applies th
 
 The visual editor supports the following element changes:
 
-- Display: Show or remove the element from the DOM.
-- Visibility: Show or hide the element.
-- Text: Update an element's inner text, color, and size.
-- Background: Update a background image or color.
+- **Display**: Show or remove the element from the DOM.
+- **Visibility**: Show or hide the element.
+- **Text**: Update an element's inner text, color, and size.
+- **Background**: Update a background image or color.
 
 ## URL redirect
 
