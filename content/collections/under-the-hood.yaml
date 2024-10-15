@@ -1,8 +1,11 @@
 title: 'Under the Hood'
+sites:
+  - en
+propagate: false
 template: default
 layout: layout
 revisions: false
-route: '/experiment/under-the-hood/{slug}'
+route: '/feature-experiment/under-the-hood/{slug}'
 sort_dir: asc
 date_behavior:
   past: public
