@@ -7,7 +7,7 @@ updated_at: 1728666781
 ---
 Amplitude's Web Experimentation requires a standalone script that you must add to your website. Paste the script into the `<head>` element of your site, as high as possible to avoid flickering.
 
-The script tracks [impression events](docs/experiment/web/tracking) with the [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) already installed on your site, or a [third-party analytics SDK](#integrate-with-a-third-party-cdp).
+The script tracks [impression events](/docs/experiment/web/tracking) with the [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) already installed on your site, or a [third-party analytics SDK](#integrate-with-a-third-party-cdp).
 
 ## Add the experiment script
 
@@ -96,7 +96,7 @@ Web experimentation supports Segment by default. Add `integration=segment` as a 
 
 #### Tealium integration
 
-If you send events through [Tealium](docs/data/source-catalog/tealium) using Tealium iQ or Tealium AudienceStream & Universal Data Hub, then you don't need to set up an integration. Tealium loads the Amplitude Analytics SDK onto the site which integrates directly with the Web Experiment script.
+If you send events through [Tealium](/docs/data/source-catalog/tealium) using Tealium iQ or Tealium AudienceStream & Universal Data Hub, then you don't need to set up an integration. Tealium loads the Amplitude Analytics SDK onto the site which integrates directly with the Web Experiment script.
 
 #### Custom integrations
 
