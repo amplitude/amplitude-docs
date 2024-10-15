@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/experiment/:path*",
+      "destination": "/docs/feature-experiment/:path*",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/data/sources/salesforce-group",
       "destination": "/docs/data/source-catalog/salesforce-group",
       "statusCode": 301
