@@ -28,7 +28,7 @@ Web Experiment uses two layers of caching: CDN and Browser. This helps to provid
 
 ### CDN cache
 
-Amplitude caches the dynamic script on a CDN. When a user requests the script, their browser loads it from the CDN if another user loaded it in the same geographic area. The CDN cache has a max age of one minute, and serves stale content while the script reloads for up to one hour. The script serves a stale response if the origin returns an error for the maximum amount of time possible.
+Amplitude caches the Web Experiment script on a CDN. When a user requests the script, their browser loads it from the CDN if another user loaded it in the same geographic area. The CDN cache has a max age of one minute, and serves stale content while the script reloads for up to one hour. The script serves a stale response if the origin returns an error for the maximum amount of time possible.
 
 The cache control response header that configures CDN caching is:
 
@@ -36,7 +36,7 @@ The cache control response header that configures CDN caching is:
 
 ### Browser cache
 
-The browser cache serves the web experiment script without making a network request for 60 seconds, or the maximum amount of time if the server returns an error. This caching layer serves the script from memory (0ms latency) if a user loads multiple pages on your site, or reloads the same page within a one minute window.
+The browser cache serves the Web Experiment script without making a network request for 60 seconds, or the maximum amount of time if the server returns an error. This caching layer serves the script from memory (0ms latency) if a user loads multiple pages on your site, or reloads the same page within a one minute window.
 
 The cache control response header that configures browser caching is:
 
