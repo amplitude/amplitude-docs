@@ -9,142 +9,142 @@ exclude_from_sitemap: false
 updated_by: 36df5bf6-28d6-4b56-9bba-1c675073870d
 updated_at: 1728602881
 ---
-Bulk Model Management is a feature we build to help our customers efficiently manage their Warehouse Native models. Instead of managing one model at a time, by following the model specification, Warehouse Native customers are able to edit multiple models using a config file and create or update models all at once.
+Bulk Model Management helps you manage your warehouse native models. Instead of managing one model at a time, you can create or edit multiple models with one configuration file.
 
 ## Approach
 
+This section provides detail about the approach of using Bulk Model Management.
+
 ### Why YAML
 
-A config file is a YAML-based file that customers can use to define their models and upload it to commit changes. YAML is a human-friendly format that is easy to read and edit. We expect our customers to use a text editor or even AI to edit the model definition configuration to generate the changes they want to make.
+A configuration file is a YAML-based file that enables you to define your models. [YAML](https://yaml.org/) is a human-friendly format that's easy to read and edit in a standard text editor or IDE.
 
 ### Supported operations
 
-We support both creation and update using the config file. If the model `name` exists, we update the existing model based on the `name`, if the `name` doesn't exist, we create a new model with that `name`. 
+Warehouse-native Amplitude supports both create and update operations with the config file. If the model `name` exists, Amplitude updates the existing model based on that `name`. If the `name` doesn't exist, Amplitude creates a new model with that `name`. 
 
-### What happens to the models that are not included in the config file
+A model's `name` value is a unique identifier. Make sure model names in your configuration file are correct to ensure updates apply to the right model
 
-The models that don't exist in the config file will not be altered.
-
-### Model name is the unique identifier
-
-Each model is identified by its model `name` which is the unique identifier across all of the models. You need to make sure the model `name`s are correct so that the changes will be applied to the correct models.
-
+{{partial:admonition type="note" heading="What happens to models that aren't in the config file?"}}
+Amplitude ignores and doesn't alter models that aren't in the config file.
+{{/partial:admonition}}
 
 ### Supported model types
 
- All models types
+Warehouse-native Amplitude Bulk Model Management supports these model types:
 
- - Events
- - User properties (current)  
- - User properties (historical)
- - Group properties (current) 
- - Group properties (historical)
- - Event properties  
+- Events
+- User properties (current)  
+- User properties (historical)
+- Group properties (current) 
+- Group properties (historical)
+- Event properties  
 
-### How to create a config file
+## Create the configuration file
 
-- you can either download an example file or download all existing models using the UI to a config file to start with.
-- you can follow the instructions below to create a new config file to start with.
+To get started:
 
-### How to apply the changes
+- Download an example configuration file
+- Download all existing models using from Amplitude to a config file to start with.
+- Follow the [specification](#config-spec) below to create a new config file.
 
-You can use the UI to upload the updated config file, all changes will be committed to the database in one transaction. The changes will be automatically rolled back if there is any error.
+### Apply the changes
 
+Upload your configuration file to apply changes to your models. All changes commit to the database in one transaction, and roll back automatically if the process encounters an error.
 
-## Config Spec
+## Config specification
 
-### Field Descriptions
+For information about creating a configuration file, see the following sections.
 
-The following spec outlines the structure and purpose of various fields within the data modeling configuration. It is organized by sections, covering general fields, metadata, specifications, and model-specific fields.
+### Field descriptions
+
+The following specification outlines the structure and purpose of the fields in the data modeling configuration file.
 
 ### DataModel object
 
 | Field       | Type   | Description                                                                 |
 |-------------|--------|-----------------------------------------------------------------------------|
-| apiVersion  | string | Defines the API version for the data modeling configuration.                |
-| metadata    | object | Contains metadata used primarily to identify the target models.             |
-| spec        | object | Specifies the desired behavior and structure of the model.                  |
+| `apiVersion`  | string | Defines the API version for the data modeling configuration.                |
+| `metadata`    | object | Contains metadata used primarily to identify the target models.             |
+| `spec`        | object | Specifies the desired behavior and structure of the model.                  |
 
 ### Metadata object
 
 | Field       | Type   | Description                                                                             |
 |-------------|--------|-----------------------------------------------------------------------------------------|
-| org         | string | A unique identifier for the organization.                                               |
-| app         | string | A unique identifier for the app.                                                        |
-| integration | string | A unique identifier for the data's integration type. Currently only support `snowflake` |
+| `org`         | string | A unique identifier for the organization.                                               |
+| `app`         | string | A unique identifier for the app.                                                        |
+| `integration` | string | A unique identifier for the data's integration type. Currently only support `snowflake` |
 
 ### Spec object
 
 | Field       | Type   | Description                                                |
 |-------------|--------|------------------------------------------------------------|
-| models      | array  | A list of data models included in this specification.      |
+| `models`      | array  | A list of data models included in this specification.      |
 
 ### Model object
 
 | Field          | Type   | Description                                                                                                                                                                |
 |----------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| name           | string | The name of the model which is used as the unique identifier.                                                                                                              |
-| selection      | string | Specifies the selection type: either 'sql' or 'table'.                                                                                                                     |
-| type           | string | The type of model could be `event`, `current_user_properties`, `historical_user_properties`, `current_group_properties`, `historical_group_properties`, `event_properties` |
-| isActive       | bool   | Indicates the model's state (default is `true`). Reserved, currently, only `true` is supported.                                                                            |
-| tableConfig    | object | Configuration settings for table-based models.                                                                                                                             |
-| sqlConfig      | object | Configuration settings for SQL-based models.                                                                                                                               |
+| `name`           | string | The name of the model which is used as the unique identifier.                                                                                                              |
+| `selection`      | string | Specifies the selection type: either `sql` or `table`.                                                                                                                     |
+| `type`           | string | The type of model could be `event`, `current_user_properties`, `historical_user_properties`, `current_group_properties`, `historical_group_properties`, `event_properties` |
+| `isActive`       | bool   | Indicates the model's state (default is `true`). Reserved, currently, only `true` is supported.                                                                            |
+| `tableConfig`    | object | Configuration settings for table-based models.                                                                                                                             |
+| `sqlConfig`      | object | Configuration settings for SQL-based models.                                                                                                                               |
 
 ### TableConfig object
 
 | Field             | Type   | Description                                                                                                     |
 |-------------------|--------|-----------------------------------------------------------------------------------------------------------------|
-| database          | string | The name of the database being used.                                                                            |
-| schema            | string | The name of the schema within the database.                                                                     |
-| table             | string | The name of the table within the schema.                                                                        |
-| isMultiEventTable | bool   | Indicates if the table contains multiple event types (default is `false`). Only `false` is supported currently. |
-| multiEventConfig  | object | Configuration details for multi-event tables (currently not supported).                                         |
-| requiredFields    | object | Required fields necessary for defining the model based on its type.                                             |
-| additionalFields  | array  | Definitions and mappings for additional fields/columns in the table.                                            |
+| `database`          | string | The name of the database being used.                                                                            |
+| `schema`            | string | The name of the schema within the database.                                                                     |
+| `table`             | string | The name of the table within the schema.                                                                        |
+| `isMultiEventTable` | bool   | Indicates if the table contains multiple event types (default is `false`). Only `false` is supported currently. |
+| `multiEventConfig`  | object | Configuration details for multi-event tables (currently not supported).                                         |
+| `requiredFields`    | object | Required fields necessary for defining the model based on its type.                                             |
+| `additionalFields`  | array  | Definitions and mappings for additional fields/columns in the table.                                            |
 
 ### SQLConfig object
 
 | Field             | Type   | Description                                                                                                                            |
 |-------------------|--------|----------------------------------------------------------------------------------------------------------------------------------------|
-| query             | string | The SQL query used to define the model.                                                                                                |
-| isMultiEventTable | bool   | Reserved, Only `false` is supported currently. Indicates if the result is from a table with multiple event types (default is `false`). |
-| multiEventConfig  | object | Configuration details for multi-event tables.                                                                                          |
-| requiredFields    | object | Fields required to define the model for a specific type.                                                                               |
-| additionalFields  | array  | An array of mappings for additional fields.                                                                                            |
+| `query`             | string | The SQL query used to define the model.                                                                                                |
+| `isMultiEventTable` | bool   | Reserved, Only `false` is supported currently. Indicates if the result is from a table with multiple event types (default is `false`). |
+| `multiEventConfig`  | object | Configuration details for multi-event tables.                                                                                          |
+| `requiredFields`    | object | Fields required to define the model for a specific type.                                                                               |
+| `additionalFields`  | array  | An array of mappings for additional fields.                                                                                            |
 
 
 ### RequiredFields object (Event-Specific)
 
 | Field       | Type                   | Description                                                                      |
 |-------------|------------------------|----------------------------------------------------------------------------------|
-| eventTime   | object (field mapping) | Field mapping configuration for event time, with the default label "Event Time". |
-| userId      | object (field mapping) | Field mapping configuration for the user ID, with the default label "User ID".   |
+| `eventTime`   | object (field mapping) | Field mapping configuration for event time, with the default label "Event Time". |
+| `userId`      | object (field mapping) | Field mapping configuration for the user ID, with the default label "User ID".   |
 
 ### RequiredFields object (User Properties-Specific)
 
 | Field       | Type                   | Description                                                                      |
 |-------------|------------------------|----------------------------------------------------------------------------------|
-| userId      | object (field mapping) | Field mapping configuration for the user ID, with the default label "User ID".   |
+| `userId`      | object (field mapping) | Field mapping configuration for the user ID, with the default label "User ID".   |
 
 ### RequiredFields object (Group Properties-Specific)
 
 | Field       | Type                   | Description                                                                      |
 |-------------|------------------------|----------------------------------------------------------------------------------|
-| groupId     | object (field mapping) | Field mapping configuration for the group ID, with the default label "Group ID". |
+| `groupId`     | object (field mapping) | Field mapping configuration for the group ID, with the default label "Group ID". |
 
 ### FieldMapping object
 
 | Field   | Type   | Description                                                                                     |
 |---------|--------|-------------------------------------------------------------------------------------------------|
-| column  | string | The name of the column in the table or SQL result set.                                          |
-| label   | string | The label displayed in Amplitude, defaulting to a title-cased version of the `column` name.     |
-
-
+| `column`  | string | The name of the column in the table or SQL result set.                                          |
+| `label`   | string | The label displayed in Amplitude, defaulting to a title-cased version of the `column` name.     |
 
 ## Example
 
-```YAML
-
+```yaml
 apiVersion: warehouse/models/v1
 metadata:
   org: 12345
@@ -181,7 +181,7 @@ spec:
           - column: "prop_1"
           - column: "prop_2"
             label: "Prop 2"
-    - name: Add Song
+    - name: Add Song #[tl! collapse:start]
       selection: "table"
       isActive: true
       type: "event"
@@ -410,7 +410,7 @@ spec:
         additionalFields:
           - column: "prop_1"
           - column: "prop_2"
-            label: "Prop 2"
+            label: "Prop 2"  #[tl! collapse:end]
     - name: Event Properties Sql-based
       selection: "sql"
       isActive: true
