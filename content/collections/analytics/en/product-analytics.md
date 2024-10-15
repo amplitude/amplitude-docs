@@ -13,6 +13,30 @@ Amplitude's Out-of-the-box Product Analytics provides a single location in Ampli
 
 This feature is available on all Amplitude plans. For more information, see the [pricing page](https://amplitude.com/pricing).
 
+### Permissions
+
+Product Analytics permissions for editing views depend on both your role within a project, and your organization's [plan](https://amplitude.com/pricing).
+
+{{partial:collapse name="Product Analytics edit permissions"}}
+
+**Starter and Plus**
+
+| Role    | Default view | Custom view (yours) | Custom view (others) |
+| ------- | ------------ | ------------------- | -------------------- |
+| Admin   | ✅            | ✅                   | ✅                    |
+| Manager | ✅            | ✅                   | ✅                    |
+| Member  | ✅            | ✅                   | ✅                    |
+
+**Growth and Enterprise**
+
+| Role    | Default view | Custom view (yours) | Custom view (others) |
+| ------- | ------------ | ------------------- | -------------------- |
+| Admin   | ✅            | ✅                   | ✅                    |
+| Manager | ❌            | ✅                   | ✅                    |
+| Member  | ❌            | ✅                   | ✅                    |
+
+{{/partial:collapse}}
+
 {{partial:partials/web-product-analytics hub="Product"}}
 
 ### Basic settings

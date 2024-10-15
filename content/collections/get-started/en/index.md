@@ -10,13 +10,10 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1716571567
 ---
-If you’re reading this, you’re probably brand-new to Amplitude. Welcome!
-
-Our documentation has all kinds of valuable information for you as your usage of Amplitude grows. But for now, at the start of your Amplitude journey, this section will help you get Amplitude set up quickly, so you can be up and running as quickly as possible.
 
 Start by learning about organizations and projects in Amplitude (your analyses live in projects, and all your projects live in your organization): 
 
-* [Create your organization](/docs/get-started/create-org)
+* [Create a new aCCOUNT](/docs/get-started/create-a-new-account)
 * [Instrumentation pre-work](/docs/get-started/instrumentation-prework)
 * [Create a project in Amplitude](/docs/get-started/create-project)
 
