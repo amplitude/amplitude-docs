@@ -15,11 +15,9 @@ With Amplitude's Lookup Table feature, you can import your own data and map it t
 
 ### Feature availability
 
-This feature is available to users on **Enterprise plans only**.
+This feature is available to users on **Growth** or **Enterprise** plans.
 
-* This feature **is in closed beta**. Contact your Amplitude Customer Service Manager or Account Executive to get access.
-
-With them, you can:
+## Lookup table benefits
 
 * **Enrich data using ingested property values**. Say you've captured an event called `Purchased` with an event property named `SKU`. The `SKU` value itself doesn’t inherently hold a lot of meaning. But with your list of all the SKUs and their corresponding product names, you can use this feature to create a new property called `Product Name` and have it automatically populate based on that list.
 * **Bulk change or fix property values.** Imagine you've captured a user property called `Language Code` and passed in language codes (`en_US`, `fr_FR`, `de_DE`, etc.). This is difficult to read, so you want a `Language` property that maps to friendlier values like `English`, `French`, and `German`. Use this feature to create a new property called `Language` that maps the language codes to the language names.
