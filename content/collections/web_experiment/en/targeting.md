@@ -40,6 +40,7 @@ If any segments match, Amplitude buckets that user into a variant based on the c
 | Landing Page URL | The landing page URL is set once in session storage when the SDK loads. |
 | URL Query Parameters | The current query parameters on the page at the time of evaluation. Commonly used for UTM parameter targeting. |
 | Device Category | Target users by their device type. `Desktop`, `Mobile`, or `Tablet`. |
+| User Agent | Target based on the user agent. Useful for targeting bots. For example, exclude all users where user agent contains `Googlebot`. |
 | Cookies | The cookies in the window at the time of evaluation. |
 | Language | The language set in the user's browser. |
 | Browser | The user's browser: `Safari`, `Chrome`, `Firefox`, `Edge`, `Opera`. |
