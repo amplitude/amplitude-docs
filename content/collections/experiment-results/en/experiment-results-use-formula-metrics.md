@@ -131,9 +131,13 @@ Returns the average value of the given property among all the users who complete
 
 Returns the number of distinct property values for the property the event is grouped by. In this setup, the formula retrieves the number of different departments covering all the items for which details were viewed:
 
-![propcount_sidecontrols.png](/docs/output/img/event-segmentation/propcount-sidecontrols-png.png)
+![propcount_sidecontrols.png](/docs/output/img/experiment-results/propcount-sidecontrols-png.png)
 
-`PROPCOUNT` is an **estimate** of distinct property values. This estimate comes from a [HyperLogLog algorithm,](https://en.wikipedia.org/wiki/HyperLogLog) and its accuracy depends on amount of data it has to work with. Expect a relative error in the range of 0.1% for less than 12,000 unique values, and up to 0.5% for more than 12,000 unique property values, depending on the cardinality of the property. 
+`PROPCOUNT` is an **estimate** of distinct property values. This estimate comes from a [HyperLogLog algorithm,](https://en.wikipedia.org/wiki/HyperLogLog) and its accuracy depends on amount of data it has to work with. Expect a relative error in the range of 0.1% for less than 12,000 unique values, and up to 0.5% for more than 12,000 unique property values, depending on the cardinality of the property.
+
+{{partial:admonition type="note" heading=""}}
+`PROPCOUNT` supports only numeric event properties in Experiment.
+{{/partial:admonition}}
 
 ## Formula syntax
 
