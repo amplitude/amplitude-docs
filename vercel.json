@@ -7,6 +7,16 @@
       "statusCode": 301
     },
     {
+      "source": "/docs/data/destinations/sfmc-event-streaming",
+      "destination": "/docs/data/destination-catalog/salesforce-marketing-cloud-event-streaming",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/data/destinations/mailchimp-event-streaming",
+      "destination": "/docs/data/destination-catalog/mailchimp-event-stream",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/data/sources/salesforce-group",
       "destination": "/docs/data/source-catalog/salesforce-group",
       "statusCode": 301
