@@ -164,13 +164,13 @@ When using CDC Continuous Sync, keep the following things in mind:
 
 ## Migrate to Change Data Capture (CDC) Continuous Sync
 
-Best practices require you to create a new project to test sending data in and then mutating it. Once confirmed the data is mapped and being mutated correctly, we recommend to do the following in the project you’d like to have mutations performed in:
+Amplitude recommends that you create a new project to test sending and mutating data. When you confirm that data is mapped and mutated correctly, complete the following steps in your main project:
 
-1. Modifying your existing connection to have a filtering definition like `WHERE time < {cutOffDate}`, where `time` is event time and `cutOffDate` is tomorrow in milliseconds since epoch
-2. Waiting until tomorrow (in UTC timezone)
-3. Ensuring no new data is flowing in with the existing source connection
-4. Creating a new source with a filtering definition like `WHERE time >= {cutOffDate}`, where `time` is event time and `cutOffDate` is tomorrow in milliseconds since epoch
-5. Deleting the existing source connection
+1. Modify your existing connection to have a filtering definition like `WHERE time < {cutOffDate}`, where `time` is the event time and `cutOffDate` is tomorrow in milliseconds since epoch.
+2. Wait until the `cutOffDate` you set in the previous step.
+3. Verify that no new data flows in with the existing source connection.
+4. Create a **new** source with a filtering definition like `WHERE time >= {cutOffDate}`, where `time` is event time and `cutOffDate` is tomorrow in milliseconds since epoch.
+5. Delete the source connection you modified in step 1.
 
 ## Data fields
 
