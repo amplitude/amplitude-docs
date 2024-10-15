@@ -28,7 +28,7 @@ Paste or type your code into the window. 
 
 5. Click *Apply*.
 
-There is **no limit to the number of variants** you can add to an experiment, but adding too many can [make it harder for your experiment to reach statistical significance](/docs/experiment/advanced-techniques/multiple-hypothesis-testing). Try to keep your experiments limited to a handful of variants, at most.
+There is **no limit to the number of variants** you can add to an experiment, but adding too many can [make it harder for your experiment to reach statistical significance](/docs/feature-experiment/advanced-techniques/multiple-hypothesis-testing). Try to keep your experiments limited to a handful of variants, at most.
 
 Amplitude Experiment will always use the first variant listed as the control. You can change this by dragging a different variant to the top of the list. Whichever variant is labeled *A* when your experiment launches will be the control.
 
@@ -47,7 +47,7 @@ This can introduce bias into your experiment results. You should generally adher
 
 Non-uniform allocation ratios often happen inadvertently, when users change their rollouts and variants while an experiment is running.
 
-Amplitude Experiment gives you the option to use stratified sampling (i.e., non-uniform allocation ratios) if you need it. Just switch the *Allow rollout controls per segment* toggle to On. (This option will only be visible if you've selected [*Targeted Users*](/docs/experiment/workflow/define-audience).)
+Amplitude Experiment gives you the option to use stratified sampling (i.e., non-uniform allocation ratios) if you need it. Just switch the *Allow rollout controls per segment* toggle to On. (This option will only be visible if you've selected [*Targeted Users*](/docs/feature-experiment/workflow/define-audience).)
 
 This switch is visible only for experiments, and not for feature flags. It is disabled while your experiment is active.
 
@@ -61,4 +61,4 @@ Manually enter the percentage of your audience that should be eligible for bucke
 
 Note that Amplitude Experiment evaluates for users included in rule-based user segments before those not covered by a user segment. However, it evaluates for any individual user or device IDs prior to both.
 
-Next, it's time to [finalize your experiment's statistical settings](/docs/experiment/workflow/finalize-statistical-preferences).
+Next, it's time to [finalize your experiment's statistical settings](/docs/feature-experiment/workflow/finalize-statistical-preferences).

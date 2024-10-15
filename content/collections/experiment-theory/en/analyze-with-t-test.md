@@ -33,7 +33,7 @@ You can access the T-test settings from the *Plan* tab in Amplitude Experiment. 
 ![Screenshot](/docs/output/img/experiment-theory/screenshot.png)
 
 2. Under *Statistical Settings,* choose *T-test* as the *Test Type*, choose *1-sided* or *2-sided* based on the type of T-test you'd like to run. For example, if you want to do a two-sided T-test looking for an increase, select *Increase* in the primary metric and *2-sided T-test* in statistical settings.
-3. Enter the number of users needed under *Samples Per Variant Needed*. If you're unsure of the sample size to enter in *Samples Per Variant*, use Amplitude's duration estimator. To learn more, see our Help Center article on [planning experiments with the help of the duration estimator](/docs/experiment/workflow/experiment-estimate-duration).
+3. Enter the number of users needed under *Samples Per Variant Needed*. If you're unsure of the sample size to enter in *Samples Per Variant*, use Amplitude's duration estimator. To learn more, see our Help Center article on [planning experiments with the help of the duration estimator](/docs/feature-experiment/workflow/experiment-estimate-duration).
 
 ![exp_stat_settings.png](/docs/output/img/experiment-theory/exp-stat-settings-png.png)
 

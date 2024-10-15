@@ -52,7 +52,7 @@ The format of the user property is, `[Experiment] <flag_key>` and the value is t
 
 ## Assignment events
 
-Amplitude's evaluation servers or SDKs track assignment events as a result of either [remote evaluation](/docs/experiment/remote-evaluation), or [local evaluation](/docs/experiment/local-evaluation) using a server-side SDK configured for [automatic assignment tracking](#automatic-assignment-tracking). Use assignment events as a **heuristic exposure event** for server-side experiments, to **monitor** a flag or experiment while active, and to **debug** any issues. For server-side experiments where client-side exposure tracking isn't feasible, choose the Amplitude Assignment event as the exposure event when you set up your experiment.
+Amplitude's evaluation servers or SDKs track assignment events as a result of either [remote evaluation](/docs/feature-experiment/remote-evaluation), or [local evaluation](/docs/feature-experiment/local-evaluation) using a server-side SDK configured for [automatic assignment tracking](#automatic-assignment-tracking). Use assignment events as a **heuristic exposure event** for server-side experiments, to **monitor** a flag or experiment while active, and to **debug** any issues. For server-side experiments where client-side exposure tracking isn't feasible, choose the Amplitude Assignment event as the exposure event when you set up your experiment.
 
 You shouldn't need to track assignment events manually.
 
@@ -90,9 +90,9 @@ This is an example assignment event for a user, `123456789`, who was evaluated f
 
 ### Automatic assignment tracking
 
-Experiment supports automatic assignment tracking for [remote evaluation](/docs/experiment/remote-evaluation) by default. Remote evaluation requests that miss the CDN cache, and which contain a valid user or device ID, will trigger an assignment event to be tracked asynchronously after evaluation.
+Experiment supports automatic assignment tracking for [remote evaluation](/docs/feature-experiment/remote-evaluation) by default. Remote evaluation requests that miss the CDN cache, and which contain a valid user or device ID, will trigger an assignment event to be tracked asynchronously after evaluation.
 
-For server-side [local evaluation](/docs/experiment/local-evaluation), you may configure the local evaluation SDK on initialization to track assignment events on `evaluate()`. Amplitude deduplicates assignment events sent by server-side local evaluation SDKs  for each user using an `insert_id` that contains the user ID, device ID, hash of a canonicalized list of assigned flags and variants, and the date stamp. 
+For server-side [local evaluation](/docs/feature-experiment/local-evaluation), you may configure the local evaluation SDK on initialization to track assignment events on `evaluate()`. Amplitude deduplicates assignment events sent by server-side local evaluation SDKs  for each user using an `insert_id` that contains the user ID, device ID, hash of a canonicalized list of assigned flags and variants, and the date stamp. 
 
 In other words, you should expect one Assignment per evaluated user, per unique evaluation result, per day.
 
@@ -106,7 +106,7 @@ In other words, you should expect one Assignment per evaluated user, per unique 
 
 ## Exposure events
 
-An exposure event is a [strictly defined](#exposure-event) analytics event sent to Amplitude to inform Amplitude Experiment that a user was exposed to a variant of an [experiment or feature flag](/docs/experiment/data-model#flags-and-experiments). Exposure events contain the **flag key** and the **variant** of the flag or experiment that the user has been exposed to in the event's event properties.
+An exposure event is a [strictly defined](#exposure-event) analytics event sent to Amplitude to inform Amplitude Experiment that a user was exposed to a variant of an [experiment or feature flag](/docs/feature-experiment/data-model#flags-and-experiments). Exposure events contain the **flag key** and the **variant** of the flag or experiment that the user has been exposed to in the event's event properties.
 
 When Amplitude ingests an [exposure event](#exposure-event), it uses the flag key and variant to **set or unset user properties** on the user associated with the event. Setting user properties is essential for experiment analysis queries on primary and secondary success metrics.
 
@@ -118,7 +118,7 @@ The exposure event is simple enough to send through any analytics implementation
 | --- | --- | --- | --- |
 | **`$exposure`** | `flag_key` | Required | The flag or experiment key which the user is being exposed to. |
 | | `variant` | Optional | The variant for the flag or experiment that the user has been exposed to. If `null` or missing, the user property for the flag/experiment is unset, and the users is no longer a part of the experiment. |
-| | `experiment_key` | Optional | The key of the experiment that the user was exposed to. The experiment key is used to differentiate between two [runs of an experiment on the same flag key](/docs/experiment/troubleshooting/restart-an-experiment). |
+| | `experiment_key` | Optional | The key of the experiment that the user was exposed to. The experiment key is used to differentiate between two [runs of an experiment on the same flag key](/docs/feature-experiment/troubleshooting/restart-an-experiment). |
 
 {{partial:admonition type="example" heading="Example event JSON"}}
 This is an example exposure event for a user, `123456789`, who was exposed to the `treatment` variant of the experiment, `my-experiment`.

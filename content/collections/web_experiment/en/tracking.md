@@ -9,7 +9,7 @@ Web Experiment uses impression events for analysis and billing purposes. Impress
 
 ## Impressions
 
-The impression event is the same as the Feature Experiment [exposure event](/docs/experiment/under-the-hood/event-tracking#exposure-events), but has a different event type, `[Experiment] Impression`. Impression events contain the **flag key** and the **variant** of the flag or experiment that the user has been exposed to in the event's event properties.
+The impression event is the same as the Feature Experiment [exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events), but has a different event type, `[Experiment] Impression`. Impression events contain the **flag key** and the **variant** of the flag or experiment that the user has been exposed to in the event's event properties.
 
 When Amplitude ingests an impression event, it uses the flag key and variant to **set or unset user properties** on the user associated with the event. Setting user properties is essential for experiment analysis queries on primary and secondary success metrics.
 

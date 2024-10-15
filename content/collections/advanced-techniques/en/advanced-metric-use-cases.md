@@ -30,7 +30,7 @@ Follow these steps to use your experiment's metrics in a [Funnel Analysis chart]
 5. Click *+ Performed* to add filters with your experiment's flag key and variant.
 6. Set the date range for *any time since* to match the start date of your experiment.
 
-The results of your Funnel Analysis chart may vary slightly from those of your experiment. This is because funnel analyses and experiments don't handle users who [variant jump](/docs/experiment/troubleshooting/variant-jumping) the same way. 
+The results of your Funnel Analysis chart may vary slightly from those of your experiment. This is because funnel analyses and experiments don't handle users who [variant jump](/docs/feature-experiment/troubleshooting/variant-jumping) the same way. 
 
 For example, a funnel analysis includes all users who meet its filter requirements; then, based on those filtered users, it computes the conversion rate of the funnel. This means the funnel analysis may include a user **even if** they were exposed to your experiment's exposure event **after** they completed the funnel. 
 
@@ -59,4 +59,4 @@ This method filters both the numerator and the denominator of the mean values so
 
 Be cautious of analyzing your experiment's results based on just one subset. You may encounter a false positive when looking for true statistically significant results.
 
-Remember that when you run a [multiple hypothesis test](/docs/experiment/advanced-techniques/multiple-hypothesis-testing) in this situation, you're actually running a separate hypothesis test for each segment. You may see a positive lift with one subset and a negative with another subset. Your decision whether to roll out or roll back in these situations isn't clear-cut. One option is to roll out only to the group that shows positive lift.
+Remember that when you run a [multiple hypothesis test](/docs/feature-experiment/advanced-techniques/multiple-hypothesis-testing) in this situation, you're actually running a separate hypothesis test for each segment. You may see a positive lift with one subset and a negative with another subset. Your decision whether to roll out or roll back in these situations isn't clear-cut. One option is to roll out only to the group that shows positive lift.

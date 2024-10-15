@@ -11,7 +11,7 @@ updated_at: 1714517033
 ---
 Once you’ve designed your experiment and configured its delivery, you’re ready to test your experiment. Then, if all goes well, it’s time to launch it.
 
-On your Experiment Overview page, review the *Design* and *Delivery* cards. Make sure everything is set the way you planned it. Then click *Test Instrumentation* to send the experiment’s variants to the testers you designated when you [configured the experiment's delivery](/docs/experiment/workflow/configure-delivery).
+On your Experiment Overview page, review the *Design* and *Delivery* cards. Make sure everything is set the way you planned it. Then click *Test Instrumentation* to send the experiment’s variants to the testers you designated when you [configured the experiment's delivery](/docs/feature-experiment/workflow/configure-delivery).
 
 ## QA before rollout
 
@@ -64,4 +64,4 @@ If you roll back your experiment:
 
 If you opt to continue running, your experiment, you can enter a new end date.
 
-Now that you’ve rolled out your experiment, the next step is to [learn from it](/docs/experiment/workflow/experiment-learnings).
+Now that you’ve rolled out your experiment, the next step is to [learn from it](/docs/feature-experiment/workflow/experiment-learnings).

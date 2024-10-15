@@ -77,7 +77,7 @@ Returns the sum of the property values you're grouping the specified event by.
 
 This function only works when grouping by a numerical property on the event. If grouping by multiple properties, the formula runs the calculation with the first group-by clause.
 
-Returns the average of the property values you're grouping by. This function is equivalent to `PROPSUM(event)/TOTALS(event)`. [Learn more about how Amplitude calculates PROPAVG and PROPSUM in this article](/docs/experiment/under-the-hood/experiment-analysis-chart-calculation)
+Returns the average of the property values you're grouping by. This function is equivalent to `PROPSUM(event)/TOTALS(event)`. [Learn more about how Amplitude calculates PROPAVG and PROPSUM in this article](/docs/feature-experiment/under-the-hood/experiment-analysis-chart-calculation)
 
 ### PROPMAX
 
@@ -135,7 +135,7 @@ In your formulas, refer to events selected in the Events Module by their corresp
 
 ## How Amplitude calculates experiment data for formula metrics
 
-Before getting into how calculations of formula metrics work with experiment data, it’s important to understand the overall [Experiment Analysis view](/docs/experiment/analysis-view), which provides details for your experiment.
+Before getting into how calculations of formula metrics work with experiment data, it’s important to understand the overall [Experiment Analysis view](/docs/feature-experiment/analysis-view), which provides details for your experiment.
 
 For formula metrics, Amplitude computes the results for each function independently to find the mean and variance of each one. It then applies the arithmetic operators to the results of these individual functions.   
 

@@ -22,7 +22,7 @@ source: 'https://help.amplitude.com/hc/ja/articles/360062072631'
 A/Bテストを作成し、結果を表示するには、次のステップに従ってください：
 
 1. *新規作成>*分析>実験結果を*クリックします*。
-2. プライマリ指標モジュールで、*+ Add Metric*または*+* *Define single-use* metricをクリックして、プライマリ指標の設定を開始します。 3番目のオプションである*インポート*では、[実験設定をJSONとしてインポートできます](/docs/experiment/advanced-techniques/import-export-settings)。
+2. プライマリ指標モジュールで、*+ Add Metric*または*+* *Define single-use* metricをクリックして、プライマリ指標の設定を開始します。 3番目のオプションである*インポート*では、[実験設定をJSONとしてインポートできます](/docs/feature-experiment/advanced-techniques/import-export-settings)。
 3. シングルユース指標を追加する場合は、ドロップダウンメニューを使用して、**指標を定義***フライアウトパネルで*指標タイプを指定します：
 
 * * * * * ユニークコンバージョン
@@ -47,7 +47,7 @@ A/Bテストを作成し、結果を表示するには、次のステップに�
 
 7. *+ Add Experiment Variant*をクリックして、必要に応じて、実験セットアップを機能フラグングシステムに反映するために、さらにバリアントを追加します。
 
-Amplitudeは、統計結果を即座に計算し、結果にそれらを表示します。 結果では、デフォルトのシーケンシャルテストからTテストなど、実験の[統計設定](/docs/experiment/workflow/finalize-statistical-preferences)を変更することもできます。 
+Amplitudeは、統計結果を即座に計算し、結果にそれらを表示します。 結果では、デフォルトのシーケンシャルテストからTテストなど、実験の[統計設定](/docs/feature-experiment/workflow/finalize-statistical-preferences)を変更することもできます。 
 
 ## 結果を解釈する
 
@@ -55,7 +55,7 @@ Amplitudeは、統計結果を即座に計算し、結果にそれらを表示�
 
 * バリアントによるパフォーマンス
 * 時間の経過に伴う絶対パフォーマンスの信頼区間
-* [累積暴露](/docs/experiment/advanced-techniques/cumulative-exposure-change-slope)
+* [累積暴露](/docs/feature-experiment/advanced-techniques/cumulative-exposure-change-slope)
 
 ## 実験結果FAQ
 
@@ -67,6 +67,6 @@ Amplitudeは、統計結果を即座に計算し、結果にそれらを表示�
 
 ### 重要度に達するまでに時間がかかるのはなぜですか？
 
-[T-テスト](/docs/experiment/experiment-theory/analyze-with-t-test)では、実験結果がp値と信頼区間の計算を実行する前に、実験が指定されたサンプルサイズに達するまで待つ必要があります。
+[T-テスト](/docs/feature-experiment/experiment-theory/analyze-with-t-test)では、実験結果がp値と信頼区間の計算を実行する前に、実験が指定されたサンプルサイズに達するまで待つ必要があります。
 
 シーケンシャルテストでは、大きなMDEであっても、実験のリフトが小さい場合、統計的有意性に達するのに時間がかかる場合があります。Tテストは、通常、同じリフトを検出するためにサンプル数が少なくなります。
