@@ -10,7 +10,7 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715102912
 ---
-Before you run a experiment, set an MDE (minimum detectable effect) to estimate how you'll measure success. Think of MDE as the **minimum** change you're hoping to see by running your experiment. Without a fail-safe calculation available for the MDE, it can be tricky to set one. With Amplitude Experiment, the default MDE is 2%; however, as the MDE is strictly linked to your unique business needs, be thoughtful during each experiment's [design phase](/docs/experiment/workflow/define-goals). Considerations for setting the MDE should include the recommendation metric and any associated risks.
+Before you run a experiment, set an MDE (minimum detectable effect) to estimate how you'll measure success. Think of MDE as the **minimum** change you're hoping to see by running your experiment. Without a fail-safe calculation available for the MDE, it can be tricky to set one. With Amplitude Experiment, the default MDE is 2%; however, as the MDE is strictly linked to your unique business needs, be thoughtful during each experiment's [design phase](/docs/feature-experiment/workflow/define-goals). Considerations for setting the MDE should include the recommendation metric and any associated risks.
 
 ## MDE and the experiment type
 
@@ -28,7 +28,7 @@ Because the goal of the first update is to increase conversion rates, a success 
 The second update is needed to meet financial requirements. As a non-negotiable enhancement to the checkout process, a guardrail metric may help confirm that the additional payment method doesn't **decrease** completed sales for users in that process. Over the last four fiscal quarters, an average of 1% of users abandoned checkout after starting the process. Therefore, this guardrail metric would have a direction set to *decrease* and an MDE set to 1%.
 
 {{partial:admonition type='note'}}
-If running a [T-test](/docs/experiment/workflow/experiment-estimate-duration), Amplitude's duration estimator can also help set the MDE: Give yourself one month to run the experiment to get the estimated MDE.
+If running a [T-test](/docs/feature-experiment/workflow/experiment-estimate-duration), Amplitude's duration estimator can also help set the MDE: Give yourself one month to run the experiment to get the estimated MDE.
 {{/partial:admonition}}
 
 ## MDE and the recommendation metric

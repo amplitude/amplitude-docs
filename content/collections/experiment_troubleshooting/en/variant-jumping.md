@@ -50,7 +50,7 @@ Taking the following actions may cause a user to jump variants:
 * Updating mutual exclusion
 
 {{partial:admonition type="tip" heading="Avoid variant jumping by enabling sticky bucketing"}}
-Enabling sticky bucketing before making targeting changes prevents variant jumping. However, sticky bucketing may cause a [sample ratio mismatch (SRM)](/docs/experiment/troubleshooting/sample-ratio-mismatch).
+Enabling sticky bucketing before making targeting changes prevents variant jumping. However, sticky bucketing may cause a [sample ratio mismatch (SRM)](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch).
 {{/partial:admonition}}
 
 ### Anonymous identity merging

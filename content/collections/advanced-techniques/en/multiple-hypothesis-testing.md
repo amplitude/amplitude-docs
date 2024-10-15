@@ -42,7 +42,7 @@ The risk of a false positive result increases with each metric or variant you ad
 Fortunately, there are statistical tools used to compensate and correct for the multiple comparisons problem. Amplitude uses the **Bonferroni correction** to accomplish this.
 
 {{partial:admonition type='note'}}
- By default, the Bonferroni correction is set to on. In certain circumstances, you may manually toggle it off in your [statistical settings](/docs/experiment/workflow/finalize-statistical-preferences). 
+ By default, the Bonferroni correction is set to on. In certain circumstances, you may manually toggle it off in your [statistical settings](/docs/feature-experiment/workflow/finalize-statistical-preferences). 
 {{/partial:admonition}}
 
 ## Bonferroni correction

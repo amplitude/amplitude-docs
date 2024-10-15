@@ -70,7 +70,7 @@ source: 'https://help.amplitude.com/hc/ja/articles/13885412065179'
 
 この関数は、イベントの数値プロパティでグループ化されている場合のみ機能します。複数のプロパティでグループ化する場合、数式は、最初のグループバイクローズで計算を実行します。
 
-グループ化しているプロパティ値の平均を返します。 この関数は、`PROPSUM（イベント）/ TOTALS（イベント）`と同じです。 [この記事では、AmplitudeがPROPAVGとPROPSUMをどのように計算するかについて、さらに詳しく学んでください](/docs/experiment/under-the-hood/experiment-analysis-chart-calculation)
+グループ化しているプロパティ値の平均を返します。 この関数は、`PROPSUM（イベント）/ TOTALS（イベント）`と同じです。 [この記事では、AmplitudeがPROPAVGとPROPSUMをどのように計算するかについて、さらに詳しく学んでください](/docs/feature-experiment/under-the-hood/experiment-analysis-chart-calculation)
 
 ## 数式構文
 
@@ -84,7 +84,7 @@ source: 'https://help.amplitude.com/hc/ja/articles/13885412065179'
 
 ## Amplitudeが数式指標の実験データを計算する方法
 
-数式指標で実験データが計算される方法を理解する前に、[実験分析ビュー](/docs/experiment/analysis-view)全体を理解することが重要です。  
+数式指標で実験データが計算される方法を理解する前に、[実験分析ビュー](/docs/feature-experiment/analysis-view)全体を理解することが重要です。  
 
 数式指標では、Amplitudeは、各関数の結果を独立して計算し、各関数の平均と分散を示します。 算術演算子は、これらの個々の関数の結果に適用されます。   
 

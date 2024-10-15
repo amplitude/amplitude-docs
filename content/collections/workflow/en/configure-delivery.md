@@ -24,10 +24,10 @@ To configure your experiment's delivery, follow these steps:
       
     When you’re ready, click *Continue*.
 
-2. In the *Deployments* tab, select the deployments you’d like to use for this experiment or flag. In Amplitude Experiment, a deployment is where you can serve a group of flags or experiments for code execution. Learn more about deployments in the article on [configuring your experiment.](/docs/experiment/workflow/configure). When you’ve selected all the deployments you need, click *Continue*.
+2. In the *Deployments* tab, select the deployments you’d like to use for this experiment or flag. In Amplitude Experiment, a deployment is where you can serve a group of flags or experiments for code execution. Learn more about deployments in the article on [configuring your experiment.](/docs/feature-experiment/workflow/configure). When you’ve selected all the deployments you need, click *Continue*.
    
 3. Next, check your variants. Click *Continue* when you’re ready.
    
 4. The final step is adding the user or device, or cohort IDs of your QA testers, so that you can ensure your implementation has been successful. Add the appropriate IDs for each variant. You’ll want to assign each tester to only one variant, just as if they were users who had been bucketed into your experiment.
 
-  When you’re done, click *Save and Close*. It's time to [launch your experiment](/docs/experiment/workflow/experiment-test).
+  When you’re done, click *Save and Close*. It's time to [launch your experiment](/docs/feature-experiment/workflow/experiment-test).

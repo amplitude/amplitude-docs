@@ -8,7 +8,7 @@ updated_by: c0ecd457-5b72-4dc9-b683-18a736413d32
 updated_at: 1723477635
 ---
 
-A cohort is a static or dynamic set of users defined in Amplitude. For experiment use cases, cohorts are particularly useful for advanced audience targeting. That said, cohorts aren't always the best solution for targeting, so understanding how cohort targeting works with [local](/docs/experiment/local-evaluation) vs [remote](/docs/experiment/remote-evaluation) evaluation is important.
+A cohort is a static or dynamic set of users defined in Amplitude. For experiment use cases, cohorts are particularly useful for advanced audience targeting. That said, cohorts aren't always the best solution for targeting, so understanding how cohort targeting works with [local](/docs/feature-experiment/local-evaluation) vs [remote](/docs/feature-experiment/remote-evaluation) evaluation is important.
 
 Experiment cohort targeting currently only supports targeting **user** cohorts.
 

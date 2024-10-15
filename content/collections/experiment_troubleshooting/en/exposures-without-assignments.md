@@ -19,7 +19,7 @@ If you see a large number or percentage of users in the chart, be careful when i
 Exposure without assignment may also affect future experiments, so you should investigate and fix the issue. 
 
 {{partial:admonition type="note" heading=""}}
-This chart doesn't appear if you selected assignment event as the exposure event or if you are using [local evaluation](/docs/experiment/local-evaluation). 
+This chart doesn't appear if you selected assignment event as the exposure event or if you are using [local evaluation](/docs/feature-experiment/local-evaluation). 
 {{/partial:admonition}}
 
 {{partial:admonition type="note" heading=""}}

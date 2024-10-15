@@ -51,7 +51,7 @@ All SDKs send a request to Amplitude Experiment to decide what flag configuratio
 
 When assigning variants, the evaluation engine applies the targeting rules to a user context object, which represents the identity of an individual user. In client-side SDKs, this object-user relationship is set on initialization and passed to the server on every request for variants. In server-side SDKs, the user may change, and should be set on every request.
 
-When targeting individual users to assign variants, Experiment matches on any of the listed user identifiers, such as `user_id` and `device_id`. Using rule-based user segments, users match on any of the predefined properties (country, platform, etc.), or on custom properties specified in the user\_properties object. Read more about [defining experiment users in this article](/docs/experiment/data-model#users).
+When targeting individual users to assign variants, Experiment matches on any of the listed user identifiers, such as `user_id` and `device_id`. Using rule-based user segments, users match on any of the predefined properties (country, platform, etc.), or on custom properties specified in the user\_properties object. Read more about [defining experiment users in this article](/docs/feature-experiment/data-model#users).
 
 {{partial:admonition type='note'}}
 You should use the same user identifiers for Amplitude Experiment that you use for sending data to Amplitude Analytics. This way, identities resolve correctly, and data generated is correctly associated with the same user in Analytics.

@@ -126,7 +126,7 @@ if (variant.value === 'on') {
 
 ## Initialize the SDK
 
-Initialize the SDK in your application on startup. The [deployment key](/docs/experiment/data-model#deployments) argument you pass into the `apiKey` parameter must live in the same Amplitude project to which you send events.
+Initialize the SDK in your application on startup. The [deployment key](/docs/feature-experiment/data-model#deployments) argument you pass into the `apiKey` parameter must live in the same Amplitude project to which you send events.
 
 {{partial:tabs tabs="Amplitude, Third-party"}}
 {{partial:tab name="Amplitude"}}
@@ -308,7 +308,7 @@ start(user?: ExperimentUser): Promise<void>
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `user` | optional | Explicit [user](/docs/experiment/data-model#users) information to pass with the request to fetch variants. This user information is merged with user information provided from [integrations](#integrations) via the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. Also sets the user in the SDK for reuse. |
+| `user` | optional | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to fetch variants. This user information is merged with user information provided from [integrations](#integrations) via the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. Also sets the user in the SDK for reuse. |
 
 Call `start()` when your application is initializing, after user information is available to use to evaluate or [fetch](#fetch) variants. The returned promise resolves after loading local evaluation flag configurations and fetching remote evaluation variants.
 
@@ -339,12 +339,12 @@ await experiment.start(user);
 
 ### Fetch
 
-Fetches variants for a [user](/docs/experiment/data-model#users) and store the results in the client for fast access. This function [remote evaluates](/docs/experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
+Fetches variants for a [user](/docs/feature-experiment/data-model#users) and store the results in the client for fast access. This function [remote evaluates](/docs/feature-experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
 
 {{partial:admonition type="tip" heading="Fetch on user identity change"}}
 If you want the most up-to-date variants for the user, it's recommended that you call `fetch()` whenever the user state changes in a meaningful way. For example, if the user logs in and receives a user ID, or has a user property set which may effect flag or experiment targeting rules.
 
-Pass new **user properties** explicitly to `fetch()` instead of relying on user enrichment prior to [remote evaluation](/docs/experiment/remote-evaluation). This is because user properties that are synced remotely through a separate system have no timing guarantees with respect to `fetch()`--for example, a race.
+Pass new **user properties** explicitly to `fetch()` instead of relying on user enrichment prior to [remote evaluation](/docs/feature-experiment/remote-evaluation). This is because user properties that are synced remotely through a separate system have no timing guarantees with respect to `fetch()`--for example, a race.
 {{/partial:admonition}}
 
 ```js
@@ -353,7 +353,7 @@ fetch(user?: ExperimentUser, options?: FetchOptions): Promise<Client>
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `user`    | optional | Explicit [user](/docs/experiment/data-model#users) information to pass with the request to evaluate. This user information is merged with user information provided from [integrations](#integrations) via the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. |
+| `user`    | optional | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to evaluate. This user information is merged with user information provided from [integrations](#integrations) via the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. |
 | `options` | optional | Explicit flag keys to fetch.|
 
 {{partial:admonition type="beta" heading="Account-level bucketing and analysis (v1.5.6+)"}}
@@ -389,7 +389,7 @@ If `fetch()` times out (default 10 seconds) or fails for any reason, the SDK cli
 
 ### Variant
 
-Access a [variant](/docs/experiment/data-model#variants) for a [flag or experiment](/docs/experiment/data-model#flags-and-experiments) from the SDK client's local store.
+Access a [variant](/docs/feature-experiment/data-model#variants) for a [flag or experiment](/docs/feature-experiment/data-model#flags-and-experiments) from the SDK client's local store.
 
 {{partial:admonition type="info" heading="Automatic exposure tracking"}}
 When an [integration](#integrations) is used or a custom [exposure tracking provider](#exposure-tracking-provider) is set, `variant()` will automatically track an exposure event through the tracking provider. To disable this functionality, [configure](#configuration) `automaticExposureTracking` to be `false`, and track exposures manually using [`exposure()`](#exposure).
@@ -401,7 +401,7 @@ variant(key: string, fallback?: string | Variant): Variant
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `key` | required | The **flag key** to identify the [flag or experiment](/docs/experiment/data-model#flags-and-experiments) to access the variant for. |
+| `key` | required | The **flag key** to identify the [flag or experiment](/docs/feature-experiment/data-model#flags-and-experiments) to access the variant for. |
 | `fallback` | optional | The value to return if no variant was found for the given `flagKey`. |
 
 When determining which variant a user has been bucketed into, you'll want to compare the variant `value` to a well-known string.
@@ -416,7 +416,7 @@ if (variant.value === 'on') {
 ```
 
 {{partial:admonition type="info" heading="Access a variant's payload"}}
-A variant may also be configured with a dynamic [payload](/docs/experiment/data-model#variants) of arbitrary data. Access the `payload` field from the variant object after checking the variant's `value`.
+A variant may also be configured with a dynamic [payload](/docs/feature-experiment/data-model#variants) of arbitrary data. Access the `payload` field from the variant object after checking the variant's `value`.
 
 ```js
 const variant = experiment.variant('<FLAG_KEY>');
@@ -439,7 +439,7 @@ if (variant === 'control') {
 
 ### All
 
-Access all [variants](/docs/experiment/data-model#variants) stored by the SDK client.
+Access all [variants](/docs/feature-experiment/data-model#variants) stored by the SDK client.
 
 ```js
 all(): Variants
@@ -447,7 +447,7 @@ all(): Variants
 
 ### Clear
 
-Clear all [variants](/docs/experiment/data-model#variants) in the cache and storage.
+Clear all [variants](/docs/feature-experiment/data-model#variants) in the cache and storage.
 
 ```js
 clear(): void
@@ -461,7 +461,7 @@ experiment.clear();
 
 ### Exposure
 
-Manually track an [exposure event](/docs/experiment/under-the-hood/event-tracking#exposure-events) for the current variant of the given flag key through configured [integration](#integrations) or custom [exposure tracking provider](#exposure-tracking-provider). Generally used in conjunction with setting the `automaticExposureTracking` [configuration](#configuration) optional to `false`.
+Manually track an [exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) for the current variant of the given flag key through configured [integration](#integrations) or custom [exposure tracking provider](#exposure-tracking-provider). Generally used in conjunction with setting the `automaticExposureTracking` [configuration](#configuration) optional to `false`.
 
 ```js
 exposure(key: string): void
@@ -469,7 +469,7 @@ exposure(key: string): void
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `key` | required | The **flag key** to identify the [flag or experiment](/docs/experiment/data-model#flags-and-experiments) variant to track an [exposure event](/docs/experiment/under-the-hood/event-tracking#exposure-events) for. |
+| `key` | required | The **flag key** to identify the [flag or experiment](/docs/feature-experiment/data-model#flags-and-experiments) variant to track an [exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) for. |
 
 ```js
 const variant = experiment.variant('<FLAG_KEY>');
@@ -512,7 +512,7 @@ const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
 
 ### Exposure tracking provider
 
-Implementing an exposure tracking provider is highly recommended. [Exposure tracking](/docs/experiment/under-the-hood/event-tracking#exposure-events) increases the accuracy and reliability of experiment results and improves visibility into which flags and experiments a user is exposed to.
+Implementing an exposure tracking provider is highly recommended. [Exposure tracking](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) increases the accuracy and reliability of experiment results and improves visibility into which flags and experiments a user is exposed to.
 
 ```js title="ExposureTrackingProvider"
 export interface ExposureTrackingProvider {
@@ -532,7 +532,7 @@ const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
 
 ## Bootstrapping
 
-You may want to bootstrap the experiment client with an initial set of flags and variants when variants are obtained from an external source (for example, not from calling `fetch()` on the SDK client). Use cases include [local evaluation](/docs/experiment/local-evaluation), [server-side rendering](/docs/experiment/advanced-techniques/server-side-rendering), or integration testing on specific variants.
+You may want to bootstrap the experiment client with an initial set of flags and variants when variants are obtained from an external source (for example, not from calling `fetch()` on the SDK client). Use cases include [local evaluation](/docs/feature-experiment/local-evaluation), [server-side rendering](/docs/feature-experiment/advanced-techniques/server-side-rendering), or integration testing on specific variants.
 
 To bootstrap the client, set the flags and variants in the `initialVariants` [configuration](#configuration) object, then set the `source` to `Source.InitialVariants` so that the SDK client prefers the bootstrapped variants over any previously fetched & stored variants for the same flags.
 

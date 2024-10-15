@@ -18,11 +18,11 @@ logo: icons/go.svg
 ---
 Official documentation for Amplitude Experiment's server-side Go SDK implementation.
 
-This documentation is split into two sections for [remote](/docs/experiment/remote-evaluation) and [local](/docs/experiment/local-evaluation) evaluation:
+This documentation is split into two sections for [remote](/docs/feature-experiment/remote-evaluation) and [local](/docs/feature-experiment/local-evaluation) evaluation:
 
 ## Remote evaluation
 
-Implements fetching variants for a user via [remote evaluation](/docs/experiment/remote-evaluation).
+Implements fetching variants for a user via [remote evaluation](/docs/feature-experiment/remote-evaluation).
 
 ### Install
 
@@ -67,7 +67,7 @@ if variant.Value == "on" {
 
 ### Initialize
 
-The SDK client should be initialized in your server on startup. The [deployment key](/docs/experiment/data-model#deployments) argument passed into the `apiKey` parameter must live within the same project that you are sending analytics events to.
+The SDK client should be initialized in your server on startup. The [deployment key](/docs/feature-experiment/data-model#deployments) argument passed into the `apiKey` parameter must live within the same project that you are sending analytics events to.
 
 ```go
 func Initialize(apiKey string, config *Config) *Client
@@ -75,7 +75,7 @@ func Initialize(apiKey string, config *Config) *Client
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `apiKey` | required | The [deployment key](/docs/experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
+| `apiKey` | required | The [deployment key](/docs/feature-experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 ```go
@@ -104,7 +104,7 @@ If you're using Amplitude's EU data center, configure the `ServerZone` option on
 
 ### Fetch
 
-Fetches variants for a [user](/docs/experiment/data-model#users) and returns the results. This function [remote evaluates](/docs/experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
+Fetches variants for a [user](/docs/feature-experiment/data-model#users) and returns the results. This function [remote evaluates](/docs/feature-experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
 
 ```go
 func (c *Client) Fetch(user *experiment.User) (map[string]experiment.Variant, error)
@@ -112,7 +112,7 @@ func (c *Client) Fetch(user *experiment.User) (map[string]experiment.Variant, er
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
-| `user` | required | The [user](/docs/experiment/data-model#users) to remote fetch variants for. |
+| `user` | required | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for. |
 
 ```go
 user := &experiment.User{
@@ -141,7 +141,7 @@ if variant.Value == "on" {
 
 ## Local evaluation
 
-Implements evaluating variants for a user via [local evaluation](/docs/experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/experiment/local-evaluation#targeting-capabilities).
+Implements evaluating variants for a user via [local evaluation](/docs/feature-experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/feature-experiment/local-evaluation#targeting-capabilities).
 
 ### Install
 
@@ -183,10 +183,10 @@ go get github.com/amplitude/experiment-go-server
 
 ### Initialize
 
-Initializes a [local evaluation](/docs/experiment/local-evaluation) client.
+Initializes a [local evaluation](/docs/feature-experiment/local-evaluation) client.
 
 {{partial:admonition type="warning" heading="Server deployment key"}}
-You must [initialize](#initialize-1) the local evaluation client with a server [deployment](/docs/experiment/data-model#deployments) key to get access to local evaluation flag configs.
+You must [initialize](#initialize-1) the local evaluation client with a server [deployment](/docs/feature-experiment/data-model#deployments) key to get access to local evaluation flag configs.
 {{/partial:admonition}}
 
 ```go
@@ -195,7 +195,7 @@ func Initialize(apiKey string, config *Config) *Client
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `apiKey` | required | The server [deployment key](/docs/experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
+| `apiKey` | required | The server [deployment key](/docs/feature-experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 {{partial:admonition type="tip" heading="Flag polling interval"}}
@@ -257,7 +257,7 @@ if err != nil {
 
 ### Evaluate
 
-Executes the [evaluation logic](/docs/experiment/implementation) using the flags pre-fetched on [`Start()`](#start). Evaluate must be given a user object argument and can optionally be passed an array of flag keys if only a specific subset of required flag variants are required.
+Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags pre-fetched on [`Start()`](#start). Evaluate must be given a user object argument and can optionally be passed an array of flag keys if only a specific subset of required flag variants are required.
 
 {{partial:admonition type="tip" heading="Automatic assignment tracking"}}
 Set [`AssignmentConfig`](#configuration_1) to automatically track an assignment event to Amplitude when `EvaluateV2()` is called.
@@ -269,7 +269,7 @@ func (c *Client) EvaluateV2(user *experiment.User, flagKeys []string) (map[strin
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `user` | required | The [user](/docs/experiment/data-model#users) to evaluate. |
+| `user` | required | The [user](/docs/feature-experiment/data-model#users) to evaluate. |
 | `flagKeys` | optional | Specific flags or experiments to evaluate. If nil, or empty, all flags and experiments are evaluated. |
 
 ```go
