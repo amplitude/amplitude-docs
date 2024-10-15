@@ -44,8 +44,7 @@ Warehouse-native Amplitude Bulk Model Management supports these model types:
 
 To get started:
 
-- Download an example configuration file from the Amplitude UI by simply clicking `Update/Create Via YAML` button and then the `Download YAML File` button in the pop-up window if you haven't had any model.
-- Download all existing models using from Amplitude to a config file to start with by clicking `Update/Create Via YAML` button and then the `Download YAML File` button in the pop-up window if you have had models in Amplitude.
+- Download an example configuration file from Amplitude. On the *Data > Sources* tab of your warehouse-native project, click **Update/Create via YAML**. Click **Download YAML File** to generate a YAML file with all your project's models.
 - Follow the [specification](#config-spec) below to create a new config file.
 
 ### Apply the changes
