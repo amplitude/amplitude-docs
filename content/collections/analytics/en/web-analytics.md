@@ -21,6 +21,16 @@ Amplitude’s Out-of-the-box Web Analytics acts as a centralized hub where you c
 
 This feature is available to users on all Amplitude plans. See the [pricing page](https://amplitude.com/pricing) for more details.
 
+### Permissions
+
+Your ability to edit views in Web Analytics depends on your role within the project.
+
+| Role    | Default view | Custom view (yours) | Custom view (others) |
+| ------- | ------------ | ------------------- | -------------------- |
+| Admin   | ✅            | ✅                   | ✅                    |
+| Manager | ✅            | ✅                   | ✅                    |
+| Member  | ❌            | ❌                   | ❌                    |
+
 ## Before you begin
 
 If you haven’t already read up on the basics of building charts in Amplitude, you should do so before proceeding.
