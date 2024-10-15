@@ -19,7 +19,7 @@ The visual editor supports the following element changes:
 - **Display**: Show or remove the element from the DOM.
 - **Visibility**: Show or hide the element.
 - **Text**: Update an element's inner text, color, and size.
-- Background: Update a background image or color.
+- **Background**: Update a background image or color.
 
 ## URL redirect
 
@@ -99,16 +99,19 @@ If you want to insert your element into the parent element at a specific positio
 
 This example adds a discount code banner to the top of the page.
 
-HTML
-
-```html
-<div class="announcement-banner">
- <p>🎉 Big Sale: Get 25% off on all items! Use code <strong>SAVE25</strong></p>
-</div>
+{{partial:tabs tabs="JS, CSS, HTML"}}
+{{partial:tab name="JS"}}
+```js
+utils.waitForElement("body")
+  .then(function (e) {
+    e.insertBefore(html, e.firstChild);
+    utils.remove = function () {
+      html.remove();
+    }
+  });
 ```
-
-CSS
-
+{{/partial:tab}}
+{{partial:tab name="CSS"}}
 ```css
 .announcement-banner {
  background-color: #fafafa;
@@ -125,53 +128,57 @@ CSS
  font-size: 16px;
 }
 ```
-
-JavaScript
-
-```js
-utils.waitForElement("body")
-  .then(function (e) {
-    e.insertBefore(html, e.firstChild);
-    utils.remove = function () {
-      html.remove();
-    }
-  });
+{{/partial:tab}}
+{{partial:tab name="HTML"}}
+```html
+<div class="announcement-banner">
+ <p>🎉 Big Sale: Get 25% off on all items! Use code <strong>SAVE25</strong></p>
+</div>
 ```
+{{/partial:tab}}
+{{/partial:tabs}}
 
 #### Add a modal
 
 This example adds a modal to the page after a 1 second delay.
 
-HTML
+{{partial:tabs tabs="JS, CSS, HTML"}}
+{{partial:tab name="JS"}}
+```js
+var modal = html;
+utils.waitForElement("body").then(function (body) {
 
-```html
-<div class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2 class="modal-header">
-            <!-- TODO: Update modal header text -->
-            Join the mailing list!
-        </h2>
-        <p class="modal-body">
-            <!-- TODO: Update modal body text -->
-            To get updates on new posts to the blog
-            join the exclusive mailing list today!
-        </p>
-        <div class="cta-container">
-            <!-- TODO: Update button link -->
-            <a href="https://example.com">
-                <button class="cta-btn cta-btn-base">
-                    <!-- TODO: Update CTA button text -->
-                    Subscribe
-                </button>
-            </a>
-        </div>
-    </div>
-</div>
+    // Append the modal element to the body.
+    body.appendChild(modal);
+
+    // Get the close button element
+    var closeBtn = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the close button (x), close the modal
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Show the modal after a 1 second delay.
+    window.setTimeout(function () {
+        modal.style.display = "block";
+    }, 1000);
+
+    // Remove the modal on teardown.
+    utils.remove = function () {
+        modal.remove();
+    }
+});
 ```
-
-CSS
-
+{{/partial:tab}}
+{{partial:tab name="CSS"}}
 ```css
 /* TODO: Style the action button */
 .cta-btn {
@@ -256,39 +263,32 @@ CSS
     right: 20px;
 }
 ```
-
-JavaScript
-
-```js
-var modal = html;
-utils.waitForElement("body").then(function (body) {
-
-    // Append the modal element to the body.
-    body.appendChild(modal);
-
-    // Get the close button element
-    var closeBtn = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on the close button (x), close the modal
-    closeBtn.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-
-    // Show the modal after a 1 second delay.
-    window.setTimeout(function () {
-        modal.style.display = "block";
-    }, 1000);
-
-    // Remove the modal on teardown.
-    utils.remove = function () {
-        modal.remove();
-    }
-});
+{{/partial:tab}}
+{{partial:tab name="HTML"}}
+```html
+<div class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 class="modal-header">
+            <!-- TODO: Update modal header text -->
+            Join the mailing list!
+        </h2>
+        <p class="modal-body">
+            <!-- TODO: Update modal body text -->
+            To get updates on new posts to the blog
+            join the exclusive mailing list today!
+        </p>
+        <div class="cta-container">
+            <!-- TODO: Update button link -->
+            <a href="https://example.com">
+                <button class="cta-btn cta-btn-base">
+                    <!-- TODO: Update CTA button text -->
+                    Subscribe
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
 ```
+{{/partial:tab}}
+{{/partial:tabs}}
