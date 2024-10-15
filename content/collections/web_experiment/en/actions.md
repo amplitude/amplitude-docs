@@ -19,7 +19,7 @@ The visual editor supports the following element changes:
 - **Display**: Show or remove the element from the DOM.
 - **Visibility**: Show or hide the element.
 - **Text**: Update an element's inner text, color, and size.
-- **Background**: Update a background image or color.
+- Background: Update a background image or color.
 
 ## URL redirect
 
@@ -30,6 +30,10 @@ URL redirects retain any query parameters on the original page URL. For example,
 ## Custom code
 
 Web Experiment applies custom code actions as an optional part of the element changes action. With the custom code action, write custom JavaScript, CSS, and HTML for your site to add elements or customize your site in was the visual editor doesn't support.
+
+{{partial:admonition type="tip"}}
+Custom code can be used in tandem with the [element changes](#element-changes). For example, An engineer could build a custom code component with placeholder text, then a non-technical user could use the visual editor to edit the placeholder text without touching the custom code.
+{{/partial:admonition}}
 
 Web Experiment applies custom code to your site in the following order:
 
@@ -49,9 +53,9 @@ Web Experiment wraps any custom JavaScript in a function, and calls it when the 
 
 Web Experiment provides the following utilities:
 
-- `waitForElement(selector: string): Promise<Element>` returns a promise that resolves when it finds an element that matches the selector in the DOM. Uses `MutationObserver` to listen for elements.
+- `waitForElement(selector: string): Promise<Element>`: Returns a promise that resolves when it finds an element that matches the selector in the DOM. Uses `MutationObserver` to listen for elements.
 
-- `remove: (()=> void) | undefined` is a function that you can set inside the JavaScript you inject. Web Experiment calls this function on page change, when Amplitude reevaluates experiments and reapplies variants.
+- `remove: (()=> void) | undefined`: A function that you can set inside the JavaScript you inject. Web Experiment calls this function on page change, when Amplitude reevaluates experiments and reapplies variants.
 
     This function can be useful for cleaning up changes to the page in single page apps, where the page doesn't fully reload.
 
@@ -64,3 +68,227 @@ Web Experiment parses custom HTML as a DOM element, and passes it to the custom 
 ### CSS
 
 Custom CSS styles you can use to manipulate existing CSS classes and styles, or add new styles for elements you add with custom HTML. Web Experiment adds custom CSS to a `<style>` tag in the page's `<head>` element.
+
+### Examples
+
+{{partial:admonition type="tip"}}
+Generative AI like ChatGPT or equivalents are quite good at writing HTML and CSS for simple elements. The modal and banner examples below were both initially generated initially by ChatGPT, then modified.
+{{/partial:admonition}}
+
+#### Insert an element
+
+To insert an element onto your page, follow this simple pattern.
+
+1. Write the HTML and CSS for the element you want to add to the page.
+2. Identify the selector of the part element you want to insert your new element into. This is often just the `body`.
+3. Paste the following JavaScript code, and update `PARENT_SELECTOR` with the parent element selector from step 2.
+
+    ```js
+    utils.waitForElement("PARENT_SELECTOR")
+      .then(function (e) {
+        e.appendChild(html);
+        utils.remove = function () {
+            html.remove();
+        }
+      });
+    ```
+
+If you want to insert your element into the parent element at a specific position, use `insertBefore()` instead of `appendChild()`.
+
+#### Add a banner
+
+This example adds a discount code banner to the top of the page.
+
+HTML
+
+```html
+<div class="announcement-banner">
+ <p>🎉 Big Sale: Get 25% off on all items! Use code <strong>SAVE25</strong></p>
+</div>
+```
+
+CSS
+
+```css
+.announcement-banner {
+ background-color: #fafafa;
+ color: #333;
+ padding: 10px;
+ text-align: center;
+ font-family: Arial, sans-serif;
+ border-bottom: solid #e5e5e5;
+ border-bottom-width: 1px;
+}
+
+.announcement-banner p {
+ margin: 0;
+ font-size: 16px;
+}
+```
+
+JavaScript
+
+```js
+utils.waitForElement("body")
+  .then(function (e) {
+    e.insertBefore(html, e.firstChild);
+    utils.remove = function () {
+      html.remove();
+    }
+  });
+```
+
+#### Add a modal
+
+This example adds a modal to the page after a 1 second delay.
+
+HTML
+
+```html
+<div class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 class="modal-header">
+            <!-- TODO: Update modal header text -->
+            Join the mailing list!
+        </h2>
+        <p class="modal-body">
+            <!-- TODO: Update modal body text -->
+            To get updates on new posts to the blog
+            join the exclusive mailing list today!
+        </p>
+        <div class="cta-container">
+            <!-- TODO: Update button link -->
+            <a href="https://example.com">
+                <button class="cta-btn cta-btn-base">
+                    <!-- TODO: Update CTA button text -->
+                    Subscribe
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
+```
+
+CSS
+
+```css
+/* TODO: Style the action button */
+.cta-btn {
+    color: white;
+    background-color: #000;
+    border: #000 solid 1px;
+}
+.cta-btn:hover {
+    color: black;
+    background-color: #fff;
+    border: #000 solid 1px;
+}
+
+/*
+ * Modal Boilerplate
+ */
+
+/* Modal container */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Stay on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+/* Modal content box */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* Center the modal */
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid #888;
+    width: 40%; /* Width of the modal */
+    max-width: 800px;
+    position: relative;
+}
+
+/* Close button */
+.close {
+    color: #999;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal header */
+.modal-header {
+    margin: 0;
+    padding: 0 0 15px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Modal body */
+.modal-body {
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+/* Call to Action container */
+.cta-container {
+    text-align: right;
+}
+
+/* Call to Action button */
+.cta-btn-base {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    bottom: 20px;
+    right: 20px;
+}
+```
+
+JavaScript
+
+```js
+var modal = html;
+utils.waitForElement("body").then(function (body) {
+
+    // Append the modal element to the body.
+    body.appendChild(modal);
+
+    // Get the close button element
+    var closeBtn = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the close button (x), close the modal
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Show the modal after a 1 second delay.
+    window.setTimeout(function () {
+        modal.style.display = "block";
+    }, 1000);
+
+    // Remove the modal on teardown.
+    utils.remove = function () {
+        modal.remove();
+    }
+});
+```
