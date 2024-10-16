@@ -3,7 +3,7 @@ id: b8db5ecf-b7b0-432d-b1f3-19ae70d13291
 blueprint: web_experiment
 title: 'Set up a web experiment'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1728677939
+updated_at: 1729099005
 this_article_will_help_you:
   - 'Understand the difference between a Web Experiment and a feature experiment'
   - 'Build a Web Experiment using the Visual Editor'
@@ -54,13 +54,14 @@ If the script isn’t present on the page you specified, Amplitude Experiment ca
 
 Before running your web experiment, Amplitude recommends that you test and preview each variant. Once you're ready:
 
-1. Click the **Test & Preview** button. This doesn't start your experiment, it puts your experiment in test instrumentation mode. Only users who open the page with the preview link can see your changes.
-2. In the modal, select the variant you want to preview (usually the treatment) and select **Test in new window**.
-3. A new tab opens with the changes you made to the page applied.
+1. Click *Test & Preview*. This puts your experiment in test instrumentation mode, but it **doesn't** start your experiment. Only users who open the page with the preview link can see your changes.
+2. In the modal, select the variant you want to preview (usually the treatment) and select *Test in new window*.
+
+A new tab opens with the changes you made to the page applied.
 
 Test each variant at least once, and testing on more than one page if your experiment targets multiple pages.
 
-If you don't see your changes applied, **you may need to wait up to 60 seconds** for caches to refresh to see the updated preview. If the changes don't appear correctly after 60 seconds, there might be something wrong with the configuration.
+If you don't see your changes, **you may need to wait up to 60 seconds** for caches to refresh. If the changes don't appear correctly after that time, there might be something wrong with the configuration.
 
 ## The Visual Editor
 
