@@ -56,3 +56,5 @@ preferences:
         - title
         - slug
         - status
+    web_experiment:
+      after_save: create_another

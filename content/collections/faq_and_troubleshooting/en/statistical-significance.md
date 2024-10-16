@@ -26,7 +26,7 @@ Mean of baseline (B): ![mean baseline.png](/docs/output/img/faq/mean-baseline-pn
 
 
 {{partial:collapse name="Why are unique conversions considered in the calculations but not totals?"}}
-Amplitude uses unique conversions instead of totals when looking for statistical significance. This is because looking at totals makes false assumptions about a user's behavior in the funnel - meaning, the aggregate sum assumes that each time the user enters the funnel is independent of the previous time they entered. This behavior cannot be assumed when calculating for statistical significance, however reviewing totals could be beneficial for other analyses in the [experiment results chart](/docs/analytics/charts/experiment-results/experiment-results-dig-deeper) or the [Experiment end-to-end product](/docs/experiment/overview).
+Amplitude uses unique conversions instead of totals when looking for statistical significance. This is because looking at totals makes false assumptions about a user's behavior in the funnel - meaning, the aggregate sum assumes that each time the user enters the funnel is independent of the previous time they entered. This behavior cannot be assumed when calculating for statistical significance, however reviewing totals could be beneficial for other analyses in the [experiment results chart](/docs/analytics/charts/experiment-results/experiment-results-dig-deeper) or the [Experiment end-to-end product](/docs/feature-experiment/overview).
 {{/partial:collapse}}
 
 
@@ -34,7 +34,7 @@ Amplitude uses unique conversions instead of totals when looking for statistical
 Amplitude uses standardized statistical methods to calculate statistical significance. Keep in mind that the method used—either sequential testing or a two-tailed T-test—can vary depending on the feature you're using for analysis. By default, Amplitude Experiment and the Experiment Results chart use sequential testing, while the Funnel Analysis chart uses the two-tailed T-test. This means that if you're looking for similar results between analyses, the p-values may not match if your charts use different testing methods. 
 
 {{partial:admonition type='note'}}
- If you want to use the T-test to analyze your end-to-end Experiment or Experiment Results chart data, follow the steps in this [Help Center article](/docs/experiment/experiment-theory/analyze-with-t-test).  
+ If you want to use the T-test to analyze your end-to-end Experiment or Experiment Results chart data, follow the steps in this [Help Center article](/docs/feature-experiment/experiment-theory/analyze-with-t-test).  
 {{/partial:admonition}}
 
 **Interpreting stat sig results**

@@ -34,7 +34,7 @@ You may have heard of different variations and definitions of correlation. Well-
 Remember, **correlation is not causation**, so any hypotheses you come up with via a Compass analysis must still be **tested and verified** in the real world.
 
 {{partial:admonition type='note'}}
- Use [Amplitude Experiment](/docs/experiment/overview) to determine causality. 
+ Use [Amplitude Experiment](/docs/feature-experiment/overview) to determine causality. 
 {{/partial:admonition}}
 
 ### Why is correlation a good metric to use here?

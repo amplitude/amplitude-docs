@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/experiment/:path*",
+      "destination": "/docs/feature-experiment/:path*",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/data/destinations/sfmc-event-streaming",
       "destination": "/docs/data/destination-catalog/salesforce-marketing-cloud-event-streaming",
       "statusCode": 301
@@ -3209,6 +3214,11 @@
     {
       "destination": "/docs/data/data-structure-video-walkthrough",
       "source": "/docs/hc/en-us/articles/115001352151((?:-[a-zA-Z0-9-]+)?)",
+      "statusCode": 301
+    },
+    {
+      "destination": "/docs/web-experiment/implementation",
+      "source": "/docs/feature-experiment/web-experimentation",
       "statusCode": 301
     }
   ]

@@ -21,7 +21,7 @@ logo: icons/docker.svg
 The evaluation proxy is under active development. APIs are unstable and may change before general availability.
 {{/partial:admonition}}
 
-The Evaluation Proxy is a Service to enable, enhance, and optimize [local evaluation](/docs/experiment/local-evaluation) running within your infrastructure.
+The Evaluation Proxy is a Service to enable, enhance, and optimize [local evaluation](/docs/feature-experiment/local-evaluation) running within your infrastructure.
 
 ![](statamic://asset::help_center_conversions::experiment/evaluation-proxy.drawio.png)
 

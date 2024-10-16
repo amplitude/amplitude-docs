@@ -55,7 +55,7 @@ Select events that represent the steps in your onboarding funnel. For example st
 
 ### Features
 
-Select specific features for which you want to track engagement. Define features with tracked events (including custom events) or [Feature Flags](/docs/experiment/workflow/feature-flag-rollouts) that are a part of an experiment running in your product. Features you define are available on the Feature Engagement tab.
+Select specific features for which you want to track engagement. Define features with tracked events (including custom events) or [Feature Flags](/docs/feature-experiment/workflow/feature-flag-rollouts) that are a part of an experiment running in your product. Features you define are available on the Feature Engagement tab.
 
 To create a new feature based on an event:
 

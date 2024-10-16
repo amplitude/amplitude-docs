@@ -15,7 +15,7 @@ The cumulative exposures graph details the number of users who are **exposed to 
 Each user is only counted once, unless they are exposed to more than one experiment variant; in that case, they are counted once for each variant they see.
 
 {{partial:admonition type='note'}}
- Learn about [the difference between an assignment event and an exposure event here](/docs/experiment/key-terms).
+ Learn about [the difference between an assignment event and an exposure event here](/docs/feature-experiment/key-terms).
 {{/partial:admonition}}
 
 ## Interpreting the cumulative exposure graph
@@ -74,14 +74,14 @@ The cumulative exposures can flatten out over time when you’re targeting a [st
 
 For example, imagine a static cohort with 100 members. On the first day, your experiment was shown to 40 of those users. That leaves only 60 more users eligible to be included in the future. With each passing day, there are fewer and fewer users who can enter into the experiment in the first place, and the slope of your cumulative exposures graph will inevitably flatten. 
 
-If you’re using a static cohort in an experiment, consider rethinking how you’re using the [duration estimator](/docs/experiment/workflow/experiment-estimate-duration). Instead of **solving** for the sample size, you should ask what level of lift you can reasonably detect with this **fixed** sample size. 
+If you’re using a static cohort in an experiment, consider rethinking how you’re using the [duration estimator](/docs/feature-experiment/workflow/experiment-estimate-duration). Instead of **solving** for the sample size, you should ask what level of lift you can reasonably detect with this **fixed** sample size. 
 
 Whenever you use a cohort in this way, ask yourself whether the cohort is actually representative of a larger population that would show a similar lift if more users were exposed to the winning variant. You can’t assume this; doing so would be like running an experiment in one country and then assuming you’ll see the same impact in any other country. 
 
 ### Other possible causes for decreasing slope
 
 * Using a dynamic cohort that isn’t growing quickly enough, or the number of users that interact with your experiment might be limited.
-* How you handle [sticky bucketing](/docs/experiment/advanced-techniques/sticky-bucketing): If users enter the cohort and then exit, do you want them to continue to see the experiment (for consistency’s sake) even though they no longer meet the targeting criteria?
+* How you handle [sticky bucketing](/docs/feature-experiment/advanced-techniques/sticky-bucketing): If users enter the cohort and then exit, do you want them to continue to see the experiment (for consistency’s sake) even though they no longer meet the targeting criteria?
 * The experiment is initially shown to a group of users who are not representative of users exposed later. Users who have been using your product for 30 days may interact with the feature you’re testing differently than those who’ve been around for 100 days, for example. Consider running your experiment for longer than you had originally planned, to make sure you’re studying the effect of the treatment on a steady state of users.
 * Users gradually become numb to your experiment and stop responding to it after repeated exposures.
 

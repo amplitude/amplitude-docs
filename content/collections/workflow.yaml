@@ -1,8 +1,11 @@
 title: Workflow
+sites:
+  - en
+propagate: false
 template: default
 layout: layout
 revisions: false
-route: '/experiment/workflow/{slug}'
+route: '/feature-experiment/workflow/{slug}'
 sort_dir: asc
 date_behavior:
   past: public

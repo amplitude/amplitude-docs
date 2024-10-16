@@ -33,7 +33,7 @@ First and foremost, events will not appear in any Amplitude charts until instrum
 Finally, when working with an Impact Analysis chart, always keep in mind that correlation does not imply causation. 
 
 {{partial:admonition type='note'}}
- Use [Amplitude Experiment](/docs/experiment/overview) to determine causality. 
+ Use [Amplitude Experiment](/docs/feature-experiment/overview) to determine causality. 
 {{/partial:admonition}}
 
 ## Set up an Impact Analysis chart

@@ -120,7 +120,7 @@ The following functions make up the core of the Experiment client-side SDK.
 
 ### Initialize
 
-The SDK client should be initialized in your application on startup. The [deployment key](/docs/experiment/data-model#deployments) argument passed into the `apiKey` parameter must live within the same project that you are sending analytics events to.
+The SDK client should be initialized in your application on startup. The [deployment key](/docs/feature-experiment/data-model#deployments) argument passed into the `apiKey` parameter must live within the same project that you are sending analytics events to.
 
 {{partial:tabs tabs="Amplitude, Third party"}}
 {{partial:tab name="Amplitude"}}
@@ -140,7 +140,7 @@ func initialize(apiKey: String, config: ExperimentConfig) -> ExperimentClient
 
 | <div class='med-column'>Parameter</div> | Requirement | Description |
 | --- | --- | --- |
-| `apiKey` | required | The [deployment key](/docs/experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
+| `apiKey` | required | The [deployment key](/docs/feature-experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 The initializer returns a singleton instance, so subsequent initializations for the same instance name will always return the initial instance. To create multiple instances, use the `instanceName` [configuration](#configuration).
@@ -293,7 +293,7 @@ func start(_ user: ExperimentUser? = nil, completion: ((Error?) -> Void)? = nil)
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `user` | optional | Explicit [user](/docs/experiment/data-model#users) information to pass with the request to fetch variants. This user information is merged with user information provided from [integrations](#integrations) via the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. Also sets the user in the SDK for reuse. |
+| `user` | optional | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to fetch variants. This user information is merged with user information provided from [integrations](#integrations) via the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. Also sets the user in the SDK for reuse. |
 | `completion` | optional | The completion block, called when the SDK has finished starting. If fetch is called on start, the completion block is called after the fetch response is received. |
 
 Call `start()` when your application is initializing, after user information is available to use to evaluate or [fetch](#fetch) variants. The provided completion block is called after loading local evaluation flag configurations and fetching remote evaluation variants.
@@ -327,7 +327,7 @@ experiment.start(user) { error in
 
 ### Fetch
 
-Fetches variants for a [user](/docs/experiment/data-model#users) and store the results in the client for fast access. This function [remote evaluates](/docs/experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
+Fetches variants for a [user](/docs/feature-experiment/data-model#users) and store the results in the client for fast access. This function [remote evaluates](/docs/feature-experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
 
 ```swift
 func fetch(user: ExperimentUser?, options: FetchOptions?, completion: ((ExperimentClient, Error?) -> Void)?)
@@ -335,7 +335,7 @@ func fetch(user: ExperimentUser?, options: FetchOptions?, completion: ((Experime
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
-| `user` | optional | Explicit [user](/docs/experiment/data-model#users) information to pass with the request to evaluate. This user information is merged with user information provided from [integrations](#integrations) via the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. |
+| `user` | optional | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to evaluate. This user information is merged with user information provided from [integrations](#integrations) via the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. |
 | `options` | optional | Explicit flag keys to fetch.|
 | `completion` | optional | Callback when the variant fetch (success or failure). If the fetch request fails, the error is returned in the second parameter of this callback. |
 
@@ -360,7 +360,7 @@ experiment.fetch(user: nil, completion: nil)
 {{partial:admonition type="tip" heading="Fetch when user identity changes"}}
 If you want the most up-to-date variants for the user, it's recommended that you call `fetch()` whenever the user state changes in a meaningful way. For example, if the user logs in and receives a user ID, or has a user property set which may effect flag or experiment targeting rules.
 
-In the case of **user properties**, Amplitude recommends passing new user properties explicitly to `fetch()` instead of relying on user enrichment prior to [remote evaluation](/docs/experiment/remote-evaluation). This is because user properties that are synced remotely through a separate system have no timing guarantees with respect to `fetch()`--i.e. a race.
+In the case of **user properties**, Amplitude recommends passing new user properties explicitly to `fetch()` instead of relying on user enrichment prior to [remote evaluation](/docs/feature-experiment/remote-evaluation). This is because user properties that are synced remotely through a separate system have no timing guarantees with respect to `fetch()`--i.e. a race.
 {{/partial:admonition}}
 
 {{partial:admonition type="info" heading="Timeout and retries"}}
@@ -369,7 +369,7 @@ If `fetch()` times out (default 10 seconds) or fails for any reason, the SDK cli
 
 ### Variant
 
-Access a [variant](/docs/experiment/data-model#variants) for a [flag or experiment](/docs/experiment/data-model#flags-and-experiments) from the SDK client's local store.
+Access a [variant](/docs/feature-experiment/data-model#variants) for a [flag or experiment](/docs/feature-experiment/data-model#flags-and-experiments) from the SDK client's local store.
 
 {{partial:admonition type="info" heading="Automatic exposure tracking"}}
 When an [integration](#integrations) is used or a custom [exposure tracking provider](#exposure-tracking-provider) is set, `variant()` will automatically track an exposure event through the tracking provider. To disable this functionality, [configure](#configuration) `automaticExposureTracking` to be `false`, and track exposures manually using [`exposure()`](#exposure).
@@ -381,7 +381,7 @@ func variant(_ key: String, fallback: Variant? = nil) -> Variant
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `key` | required | The **flag key** to identify the [flag or experiment](/docs/experiment/data-model#flags-and-experiments) to access the variant for. |
+| `key` | required | The **flag key** to identify the [flag or experiment](/docs/feature-experiment/data-model#flags-and-experiments) to access the variant for. |
 | `fallback` | optional | The value to return if no variant was found for the given `flagKey`. |
 
 When determining which variant a user has been bucketed into, you'll want to compare the variant `value` to a well-known string.
@@ -397,7 +397,7 @@ if variant.value == "on" {
 
 ???info "Accessing the variant's payload"
 {{partial:admonition type="info" heading="Access the variant's payload"}}
-A variant may also be configured with a dynamic [payload](/docs/experiment/data-model#variants) of arbitrary data. Access the `payload` field from the variant object after checking the variant's `value`.
+A variant may also be configured with a dynamic [payload](/docs/feature-experiment/data-model#variants) of arbitrary data. Access the `payload` field from the variant object after checking the variant's `value`.
 
 The `payload` in iOS is of type `Any?`, so cast the payload to the expected type to retrieve the value. For example, if the payload is `{"key":"value"}`:
 
@@ -424,7 +424,7 @@ if variant.value == "control" {
 
 ### All
 
-Access all [variants](/docs/experiment/data-model#variants) stored by the SDK client.
+Access all [variants](/docs/feature-experiment/data-model#variants) stored by the SDK client.
 
 ```swift
 func all() -> [String:Variant]
@@ -432,7 +432,7 @@ func all() -> [String:Variant]
 
 ### Clear
 
-Clear all [variants](/docs/experiment/data-model#variants) in the cache and storage.
+Clear all [variants](/docs/feature-experiment/data-model#variants) in the cache and storage.
 
 ```swift
 func clear()
@@ -446,7 +446,7 @@ experiment.clear()
 
 ### Exposure
 
-Manually track an [exposure event](/docs/experiment/under-the-hood/event-tracking#exposure-events) for the current variant of the given flag key through configured [integration](#integrations) or custom [exposure tracking provider](#exposure-tracking-provider). Generally used in conjunction with setting the `automaticExposureTracking` [configuration](#configuration) optional to `false`.
+Manually track an [exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) for the current variant of the given flag key through configured [integration](#integrations) or custom [exposure tracking provider](#exposure-tracking-provider). Generally used in conjunction with setting the `automaticExposureTracking` [configuration](#configuration) optional to `false`.
 
 ```swift
 func exposure(key: String)
@@ -454,7 +454,7 @@ func exposure(key: String)
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `key` | required | The **flag key** to identify the [flag or experiment](/docs/experiment/data-model#flags-and-experiments) variant to track an [exposure event](/docs/experiment/under-the-hood/event-tracking#exposure-events) for. |
+| `key` | required | The **flag key** to identify the [flag or experiment](/docs/feature-experiment/data-model#flags-and-experiments) variant to track an [exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) for. |
 
 ```swift
 let variant = experiment.variant("<FLAG_KEY>")
@@ -498,7 +498,7 @@ let experiment = Experiment.initialize(apiKey: "<DEPLOYMENT_KEY>", config: confi
 
 ### Exposure tracking provider
 
-Implementing an exposure tracking provider is highly recommended. [Exposure tracking](/docs/experiment/under-the-hood/event-tracking#exposure-events) increases the accuracy and reliability of experiment results and improves visibility into which flags and experiments a user is exposed to.
+Implementing an exposure tracking provider is highly recommended. [Exposure tracking](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) increases the accuracy and reliability of experiment results and improves visibility into which flags and experiments a user is exposed to.
 
 ```swift
 protocol ExposureTrackingProvider {

@@ -2,7 +2,7 @@ title: 'Experiment Troubleshooting'
 template: default
 layout: layout
 revisions: false
-route: '/experiment/troubleshooting/{slug}'
+route: '/feature-experiment/troubleshooting/{slug}'
 sort_dir: asc
 date_behavior:
   past: public

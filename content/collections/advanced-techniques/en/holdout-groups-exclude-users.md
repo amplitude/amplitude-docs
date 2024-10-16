@@ -15,7 +15,7 @@ Sometimes it can be useful to keep a certain percentage of users from viewing an
 
 Amplitude Experiment lets you easily exclude users from your experiments by creating a **holdout** group. Holdout groups are especially useful for measuring the **long term** impact of your rolled-out variants, and measuring the lift of your experimentation program as a whole.
 
-For more information, see the article on [Flag Dependencies](/docs/experiment/under-the-hood/flag-dependencies#holdout-groups).
+For more information, see the article on [Flag Dependencies](/docs/feature-experiment/under-the-hood/flag-dependencies#holdout-groups).
 
 ### Feature availability
 
@@ -83,7 +83,7 @@ To create a pre-populated Experiment Results chart, follow these steps: 
 
    * Exposure event
    * Segments for *holdout* and *on*
-   * Statistical method set to [T-test](/docs/experiment/experiment-theory/analyze-with-t-test) (*Samples per variant needed* set to 10,000)
+   * Statistical method set to [T-test](/docs/feature-experiment/experiment-theory/analyze-with-t-test) (*Samples per variant needed* set to 10,000)
    * Analysis date range
 
 5. From here, select the primary metric and start analyzing the impact of your holdout group.
@@ -122,4 +122,4 @@ In this scenario, experiment A receives about half of the total traffic:
 
 Using holdout groups with mutual exclusion isn't forbidden, but be cautious of the potential traffic limits as you plan and roll out your experiments.
 
-Learn more in this [article about mutual exclusion groups](/docs/experiment/advanced-techniques/mutually-exclusive-experiments).
+Learn more in this [article about mutual exclusion groups](/docs/feature-experiment/advanced-techniques/mutually-exclusive-experiments).
