@@ -29,6 +29,10 @@ URL redirects retain any query parameters on the original page URL. For example,
 
 ## Custom code
 
+{{partial:admonition type="note"}}
+Custom code is available on **Growth** and **Enterprise** plans only.
+{{/partial:admonition}}
+
 Web Experiment applies custom code actions as an optional part of the element changes action. With the custom code action, write custom JavaScript, CSS, and HTML for your site to add elements or customize your site in was the visual editor doesn't support.
 
 {{partial:admonition type="tip"}}
