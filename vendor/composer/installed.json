@@ -7169,17 +7169,17 @@
         },
         {
             "name": "statamic/cms",
-            "version": "v5.3.0",
-            "version_normalized": "5.3.0.0",
+            "version": "v5.31.0",
+            "version_normalized": "5.31.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/statamic/cms.git",
-                "reference": "70e8836774a5c559c593db3cc75130d52a49f6ef"
+                "reference": "741db252614f8b68a86eb408fb07d03e9666c351"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/statamic/cms/zipball/70e8836774a5c559c593db3cc75130d52a49f6ef",
-                "reference": "70e8836774a5c559c593db3cc75130d52a49f6ef",
+                "url": "https://api.github.com/repos/statamic/cms/zipball/741db252614f8b68a86eb408fb07d03e9666c351",
+                "reference": "741db252614f8b68a86eb408fb07d03e9666c351",
                 "shasum": ""
             },
             "require": {
@@ -7205,7 +7205,7 @@
                 "symfony/lock": "^6.4",
                 "symfony/var-exporter": "^6.0",
                 "symfony/yaml": "^6.0 || ^7.0",
-                "ueberdosis/tiptap-php": "^1.1",
+                "ueberdosis/tiptap-php": "^1.4",
                 "voku/portable-ascii": "^2.0",
                 "wilderborn/partyline": "^1.0"
             },
@@ -7213,12 +7213,13 @@
                 "doctrine/dbal": "^3.6",
                 "fakerphp/faker": "~1.10",
                 "google/cloud-translate": "^1.6",
-                "laravel/pint": "^1.0",
+                "laravel/pint": "1.16.0",
                 "mockery/mockery": "^1.3.3",
-                "orchestra/testbench": "^8.0 || ^9.0",
-                "phpunit/phpunit": "^10.0"
+                "orchestra/testbench": "^8.14 || ^9.0",
+                "phpunit/phpunit": "^10.0",
+                "spatie/laravel-ray": "^1.37"
             },
-            "time": "2024-05-20T16:25:09+00:00",
+            "time": "2024-10-14T18:45:38+00:00",
             "type": "library",
             "extra": {
                 "download-dist": [
@@ -7263,7 +7264,7 @@
             ],
             "support": {
                 "issues": "https://github.com/statamic/cms/issues",
-                "source": "https://github.com/statamic/cms/tree/v5.3.0"
+                "source": "https://github.com/statamic/cms/tree/v5.31.0"
             },
             "funding": [
                 {
