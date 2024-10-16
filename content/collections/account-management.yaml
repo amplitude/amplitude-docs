@@ -1,4 +1,6 @@
 title: 'Account Management'
+sites:
+  - en
 template: default
 layout: layout
 revisions: false

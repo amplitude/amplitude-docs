@@ -4,9 +4,9 @@
       <div class="copy">
         <div class="flex flex-row items-start justify-between">
           <h1 class="font-[Gellix] font-normal mb-5">{{ title }}</h1>
-          <span class="ml-4 text-xs text-gray-300 align-middle"><a
-              href="{{ environment == 'local' ? edit_url : {github_edit_url} }}"
-              target="_blank">{{ svg src="/assets/general/pencil.svg" class="fill-amp-gray-500 h-6 hover:h-8 transition-all" }}</a></span>
+          {{if environment == 'local'}} <span class="ml-4 text-xs text-gray-300 align-middle"><a
+            href="{{ environment == 'local' ? edit_url : {github_edit_url} }}"
+            target="_blank">{{ svg src="/docs/assets/general/pencil.svg" class="fill-amp-gray-500 h-4 hover:h-6 transition-all" }}</a></span> {{/if}}
         </div>
         {{ partial:partials/sdk-details }}
         <div
