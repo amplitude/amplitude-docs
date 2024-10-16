@@ -9,6 +9,32 @@ You can find and compare releases at the [GitHub release page](https://github.co
 
 ## Unreleased
 
+## v15.14.2
+
+### Changed
+
+- Annotate return value of `Helper::validateOperationParams` as list https://github.com/webonyx/graphql-php/pull/1615
+
+## v15.14.1
+
+### Changed
+
+- Narrow type of execution errors from `array` to `list` https://github.com/webonyx/graphql-php/pull/1597
+
+## v15.14.0
+
+### Added
+
+- Allow native PHP enums as return values for SDL-based enums https://github.com/webonyx/graphql-php/pull/1608
+
+## v15.13.0
+
+### Added
+
+- Serialize valid `\BackedEnum` values in `GraphQL\Type\Definition\PhpEnumType` https://github.com/webonyx/graphql-php/pull/1604
+
+## v15.12.5
+
 ### Fixed
 
 - Avoid infinite recursion in `QueryDepth` validator https://github.com/webonyx/graphql-php/pull/1581

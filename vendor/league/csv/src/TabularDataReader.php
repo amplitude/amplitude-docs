@@ -26,15 +26,15 @@ use IteratorAggregate;
  * @method array first() returns the first record from the tabular data.
  * @method array nth(int $nth_record) returns the nth record from the tabular data.
  * @method mixed value(int|string $column = 0) returns a given value from the first element of the tabular data.
- * @method Iterator nthAsObject(int $nth, string $className, array $header = []) returns the nth record from the tabular data as an instance of the defined class name.
- * @method Iterator firstAsObject(string $className, array $header = []) returns the first record from the tabular data as an instance of the defined class name.
+ * @method object|null nthAsObject(int $nth, string $className, array $header = []) returns the nth record from the tabular data as an instance of the defined class name.
+ * @method object|null firstAsObject(string $className, array $header = []) returns the first record from the tabular data as an instance of the defined class name.
  * @method bool each(Closure $callback) iterates over each record and passes it to a closure. Iteration is interrupted if the closure returns false
  * @method bool exists(Closure $callback) tells whether at least one record satisfies the predicate.
  * @method mixed reduce(Closure $callback, mixed $initial = null) reduces the collection to a single value, passing the result of each iteration into the subsequent iteration
  * @method Iterator getObjects(string $className, array $header = []) Returns the tabular data records as an iterator object containing instance of the defined class name.
  * @method Iterator getRecordsAsObject(string $className, array $header = []) Returns the tabular data records as an iterator object containing instance of the defined class name.
  * @method TabularDataReader filter(Query\Predicate|Closure $predicate) returns all the elements of this collection for which your callback function returns `true`
- * @method TabularDataReader slice(int $offset, int $length = null) extracts a slice of $length elements starting at position $offset from the Collection.
+ * @method TabularDataReader slice(int $offset, ?int $length = null) extracts a slice of $length elements starting at position $offset from the Collection.
  * @method TabularDataReader sorted(Query\Sort|Closure $orderBy) sorts the Collection according to the closure provided see Statement::orderBy method
  * @method TabularDataReader select(string|int ...$columnOffsetOrName) extract a selection of the tabular data records columns.
  * @method TabularDataReader matchingFirstOrFail(string $expression) extract the first found fragment identifier of the tabular data or fail

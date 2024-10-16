@@ -13,25 +13,17 @@ declare(strict_types=1);
 
 namespace League\Csv\Query;
 
-use ArrayIterator;
-use Iterator;
-use IteratorIterator;
+use League\Csv\MapIterator;
 use LimitIterator;
-use Traversable;
 
 final class Limit
 {
     private function __construct(
         public readonly int $offset,
         public readonly int $length,
-    ){
-        if (0 > $this->offset) {
-            throw new QueryException(self::class.' expects the offset to be greater or equal to 0, '.$this->offset.' given.');
-        }
-
-        if (-1 > $this->length) {
-            throw new QueryException(self::class.' expects the length to be greater or equal to -1, '.$this->length.' given.');
-        }
+    ) {
+        0 <= $this->offset || throw new QueryException(self::class.' expects the offset to be greater or equal to 0, '.$this->offset.' given.');
+        -2 < $this->length || throw new QueryException(self::class.' expects the length to be greater or equal to -1, '.$this->length.' given.');
     }
 
     public static function new(int $offset, int $length): self
@@ -44,14 +36,6 @@ final class Limit
      */
     public function slice(iterable $value): LimitIterator
     {
-        return new LimitIterator(
-            match (true) {
-                $value instanceof Iterator => $value,
-                $value instanceof Traversable => new IteratorIterator($value),
-                default => new ArrayIterator($value),
-            },
-            $this->offset,
-            $this->length,
-        );
+        return new LimitIterator(MapIterator::toIterator($value), $this->offset, $this->length);
     }
 }

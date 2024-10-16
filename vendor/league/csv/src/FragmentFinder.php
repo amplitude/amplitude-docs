@@ -186,11 +186,11 @@ class FragmentFinder
         return match (true) {
             -1 === $start,
             null === $end => [
-                'selection' => $selection,
-                'start' => $start,
-                'end' => $start,
-                'length' => 1,
-                'columns' => [],
+            'selection' => $selection,
+            'start' => $start,
+            'end' => $start,
+            'length' => 1,
+            'columns' => [],
             ],
             '*' === $end => [
                 'selection' => $selection,
@@ -225,11 +225,11 @@ class FragmentFinder
         return match (true) {
             -1 === $start,
             $start >= $nbColumns => [
-                'selection' => $selection,
-                'start' => -1,
-                'end' => null,
-                'length' => -1,
-                'columns' => [],
+            'selection' => $selection,
+            'start' => -1,
+            'end' => null,
+            'length' => -1,
+            'columns' => [],
             ],
             null === $end => [
                 'selection' => $selection,
@@ -240,11 +240,11 @@ class FragmentFinder
             ],
             '*' === $end,
             $end > ($nbColumns - 1) => [
-                'selection' => $selection,
-                'start' => 0,
-                'end' => null,
-                'length' => -1,
-                'columns' => range($start, $nbColumns - 1),
+            'selection' => $selection,
+            'start' => 0,
+            'end' => null,
+            'length' => -1,
+            'columns' => range($start, $nbColumns - 1),
             ],
             default => [
                 'selection' => $selection,
@@ -358,8 +358,8 @@ class FragmentFinder
             ];
         }
 
-        $cellEndRow = filter_var($found['cer'], FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]);
-        $cellEndCol = filter_var($found['cec'], FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]);
+        $cellEndRow = filter_var($found['cer'] ?? '', FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]);
+        $cellEndCol = filter_var($found['cec'] ?? '', FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]);
 
         if (false === $cellEndRow || false === $cellEndCol) {
             return [
