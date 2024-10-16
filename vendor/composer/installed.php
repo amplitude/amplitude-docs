@@ -3,7 +3,7 @@
         'name' => 'statamic/statamic',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'fea1a004a4b393ad5012da1e0f1b6a823611ceca',
+        'reference' => '49085fd52be479990b7cd5ff52edcdae9af97d68',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -871,8 +871,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0|3.0',
-                1 => '3.0.0',
+                0 => '3.0.0',
+                1 => '1.0|2.0|3.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -1176,9 +1176,9 @@
             'dev_requirement' => false,
         ),
         'statamic/ssg' => array(
-            'pretty_version' => '3.0.1',
-            'version' => '3.0.1.0',
-            'reference' => '3bb1658d2b9c33f809071a7788c59d19ad6cc57c',
+            'pretty_version' => '3.0.2',
+            'version' => '3.0.2.0',
+            'reference' => 'ee7934f6ddbf974d75320d8b8bb50535d40de63f',
             'type' => 'statamic-addon',
             'install_path' => __DIR__ . '/../statamic/ssg',
             'aliases' => array(),
@@ -1187,7 +1187,7 @@
         'statamic/statamic' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'fea1a004a4b393ad5012da1e0f1b6a823611ceca',
+            'reference' => '49085fd52be479990b7cd5ff52edcdae9af97d68',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
