@@ -50,6 +50,18 @@ If the script isn’t present on the page you specified, Amplitude Experiment ca
 13. The *Advanced* tab provides several [additional options](/docs/feature-experiment/workflow/finalize-statistical-preferences) for your experiment. Note that several of the options discussed in that article are not available for Web Experiments.
 14. When you’re ready, click *Save and Close* to finish creating your Web Experiment.
 
+## Test and preview your web experiment
+
+Before running your web experiment, we recommend you test and preview each variant. Once you're ready:
+
+1. Click the **Test & Preview** button. This does start your experiment, it only puts your experiment in test instrumentation mode. Only users who open the page with the preview link will be able to see your changes.
+2. In the modal, select the variant you want to preview (usually the treatment) and select **Test in new window**.
+3. A new tab should open with the changes you made to the page applied.
+
+We recommend testing each variant at least once, and testing on more than one page if your experiment targets multiple pages.
+
+If you don't see your changes applied, **you may need to wait up to 60 seconds** for caches to refresh in order to see the updated preview. If the changes are still not applied correctly after 60 seconds, there is likely something wrong with the setup.
+
 ## The Visual Editor
 
 The Visual Editor loads the site located at the URL specified on experiment creation and loads an overlay on top of it. Every element of your site is accessible within the Visual Editor, for you to modify in whatever ways best suit your experiment’s needs.
