@@ -8,7 +8,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717439192
 source: 'https://www.docs.developers.amplitude.com/experiment/general/evaluation/remote-evaluation/'
 ---
-Remote evaluation involves making a request to Amplitude Experiment's evaluation servers to fetch variants for a [user](/docs/experiment/data-model#users). Remote evaluation is the default way to evaluate users on client-side apps, but may also be used from a server-side environment.
+Remote evaluation involves making a request to Amplitude Experiment's evaluation servers to fetch variants for a [user](/docs/feature-experiment/data-model#users). Remote evaluation is the default way to evaluate users on client-side apps, but may also be used from a server-side environment.
 
 **Client-side**
 
@@ -22,22 +22,22 @@ Remote evaluation involves making a request to Amplitude Experiment's evaluation
 
 Remote evaluation targeting and identity resolution both use Amplitude Analytics' historical user data. Remote evaluation enables advanced features such as [Amplitude ID resolution](#amplitude-id-resolution), [IP geolocation](#geolocation), [property canonicalization](#canonicalization), [targeting behavioral cohorts](#cohort-membership), and historical [user properties](#user-properties).
 
-| <div class='big-column'>Feature</div> | Remote Evaluation | [Local Evaluation](/docs/experiment/local-evaluation) |
+| <div class='big-column'>Feature</div> | Remote Evaluation | [Local Evaluation](/docs/feature-experiment/local-evaluation) |
 | --- | --- | --- |
-| [Consistent bucketing](/docs/experiment/implementation#consistent-bucketing) | ✅ | ✅ |
-| [Individual inclusions](/docs/experiment/implementation#individual-inclusions) | ✅ | ✅ |
-| [Targeting segments](/docs/experiment/implementation#targeting-segments) | ✅ | ✅ |
+| [Consistent bucketing](/docs/feature-experiment/implementation#consistent-bucketing) | ✅ | ✅ |
+| [Individual inclusions](/docs/feature-experiment/implementation#individual-inclusions) | ✅ | ✅ |
+| [Targeting segments](/docs/feature-experiment/implementation#targeting-segments) | ✅ | ✅ |
 | [Amplitude ID resolution](##amplitude-id-resolution) | ✅ | ❌ |
 | [User enrichment](##user-enrichment) | ✅ | ❌ |
-| [Sticky bucketing](/docs/experiment/implementation#sticky-bucketing) | ✅ | ❌ |
+| [Sticky bucketing](/docs/feature-experiment/implementation#sticky-bucketing) | ✅ | ❌ |
 
 ## Implementation
 
-Remote evaluation resolves the user within Amplitude and appends additional information to the user before passing the enriched user to the [evaluation implementation](/docs/experiment/implementation).
+Remote evaluation resolves the user within Amplitude and appends additional information to the user before passing the enriched user to the [evaluation implementation](/docs/feature-experiment/implementation).
 
 ### Amplitude ID resolution
 
-Amplitude ID resolution happens before additional [user enrichment](#user-enrichment), and is required if [bucketing](/docs/experiment/implementation#consistent-bucketing) by Amplitude ID.
+Amplitude ID resolution happens before additional [user enrichment](#user-enrichment), and is required if [bucketing](/docs/feature-experiment/implementation#consistent-bucketing) by Amplitude ID.
 
 [Learn more about Amplitude's advanced identity resolution.](/docs/cdp/sources/instrument-track-unique-users)
 
@@ -75,7 +75,7 @@ Targeting a recently set user property may cause a race between Amplitude Analyt
 When you pass user properties to the remote fetch request, those user properties don't update on associated analytics events.
 {{/partial:admonition}}
 
-The [resolved Amplitude ID](#amplitude-id-resolution) is used to access the user's current user properties based on historical analytics data. These user properties are merged with any user properties sent explicitly in the fetch request and which are then passed in for [evaluation](/docs/experiment/implementation).
+The [resolved Amplitude ID](#amplitude-id-resolution) is used to access the user's current user properties based on historical analytics data. These user properties are merged with any user properties sent explicitly in the fetch request and which are then passed in for [evaluation](/docs/feature-experiment/implementation).
 
 {{partial:admonition type="info" heading="User property merge priority"}}
 Amplitude prioritizes user properties sent explicitly in a remote fetch request over user properties accessed from analytics.
@@ -83,7 +83,7 @@ Amplitude prioritizes user properties sent explicitly in a remote fetch request 
 
 #### Cohort membership
 
-Remote evaluation gets the user's cohort membership from analytics which enables targeting by cohorts in [targeting segments](/docs/experiment/implementation#targeting-segments).
+Remote evaluation gets the user's cohort membership from analytics which enables targeting by cohorts in [targeting segments](/docs/feature-experiment/implementation#targeting-segments).
 
 {{partial:admonition type="warning" heading="Hourly cohort sync"}}
 Dynamic cohorts are synced hourly. Therefore, only use cohort targeting if the bucketing isn't time sensitive. Time sensitive user targeting should use user properties passed explicitly to the remote fetch request.

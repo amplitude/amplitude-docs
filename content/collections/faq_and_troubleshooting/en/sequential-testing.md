@@ -4,7 +4,7 @@ blueprint: faq_and_troubleshooting
 title: 'Sequential testing'
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/17767898439835'
 ---
-This article covers some frequently asked questions about [sequential testing](/docs/experiment/under-the-hood/experiment-sequential-testing).
+This article covers some frequently asked questions about [sequential testing](/docs/feature-experiment/under-the-hood/experiment-sequential-testing).
 
 
 {{partial:collapse name="What is the statistical power of this approach?"}}
@@ -94,7 +94,7 @@ The table below summarizes the number of rejections we have for different config
 Using the same basic configurations as before, we see that the number of rejections (out of 100 trials) is within our predetermined threshold of alpha = 0.05. With alpha set to 0.05, we know that only 5% of our experiments will yield false positives, as opposed to 30-50% when using a T-test. With sequential testing, we can confidently look at our results and conclude experiments at any time, without worrying about inflating false positives.
 
 {{partial:admonition type='note'}}
- Read about the [T-test in this help center article](/docs/experiment/experiment-theory/analyze-with-t-test), and more about the difference in testing options [in this blog](https://amplitude.com/blog/sequential-test-vs-t-test).
+ Read about the [T-test in this help center article](/docs/feature-experiment/experiment-theory/analyze-with-t-test), and more about the difference in testing options [in this blog](https://amplitude.com/blog/sequential-test-vs-t-test).
 {{/partial:admonition}}
 
 {{/partial:collapse}}

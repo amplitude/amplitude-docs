@@ -103,7 +103,7 @@ The Experiments tab shows any [experiments](/docs/experiment) of which the user 
 
 ### Flags
 
-The *Flags* tab lists the [feature flags](/docs/experiment/workflow/feature-flag-rollouts) enabled for this specific user.
+The *Flags* tab lists the [feature flags](/docs/feature-experiment/workflow/feature-flag-rollouts) enabled for this specific user.
 
 ## Portfolios
 

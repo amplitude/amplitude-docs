@@ -19,11 +19,11 @@ logo: icons/ruby.svg
 ---
 Official documentation for Amplitude Experiment's server-side Ruby SDK implementation.
 
-This documentation is split into two sections for [remote](/docs/experiment/remote-evaluation) and [local](/docs/experiment/local-evaluation) evaluation:
+This documentation is split into two sections for [remote](/docs/feature-experiment/remote-evaluation) and [local](/docs/feature-experiment/local-evaluation) evaluation:
 
 ## Remote evaluation
 
-Implements fetching variants for a user via [remote evaluation](/docs/experiment/remote-evaluation).
+Implements fetching variants for a user via [remote evaluation](/docs/feature-experiment/remote-evaluation).
 
 ### Install
 
@@ -81,7 +81,7 @@ end
 
 ### Initialize
 
-The SDK client should be initialized in your server on startup. The [deployment key](/docs/experiment/data-model#deployments) argument passed into the `apiKey` parameter must live within the same project that you are sending analytics events to.
+The SDK client should be initialized in your server on startup. The [deployment key](/docs/feature-experiment/data-model#deployments) argument passed into the `apiKey` parameter must live within the same project that you are sending analytics events to.
 
 ```ruby
 initialize_remote(apiKey, config = nil) : Client
@@ -89,7 +89,7 @@ initialize_remote(apiKey, config = nil) : Client
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `apiKey` | required | The [deployment key](/docs/experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
+| `apiKey` | required | The [deployment key](/docs/feature-experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 {{partial:admonition type="info" heading="Timeout and retry configuration"}}
@@ -121,7 +121,7 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 
 ### Fetch
 
-Fetches variants for a [user](/docs/experiment/data-model#users) and returns the results. This function [remote evaluates](/docs/experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
+Fetches variants for a [user](/docs/feature-experiment/data-model#users) and returns the results. This function [remote evaluates](/docs/feature-experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
 
 ```ruby
 fetch(user: AmplitudeExperiment::User) : Variants
@@ -129,7 +129,7 @@ fetch(user: AmplitudeExperiment::User) : Variants
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
-| `user` | required | The [user](/docs/experiment/data-model#users) to remote fetch variants for. |
+| `user` | required | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for. |
 
 ```ruby
 user = AmplitudeExperiment::User.new(
@@ -165,7 +165,7 @@ fetch_async(user: AmplitudeExperiment::User, &callback)
 
 | Parameter  | Requirement | Description                                                                                           |
 |------------|-------------|-------------------------------------------------------------------------------------------------------|
-| `user`     | required    | The [user](/docs/experiment/data-model#users) to remote fetch variants for.                         |
+| `user`     | required    | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for.                         |
 | `callback` | optional    | The callback to handle the variants. Callback takes two arguments: User object and returned Variants. |
 
 ```ruby
@@ -183,7 +183,7 @@ end
 
 ## Local evaluation
 
-Implements evaluating variants for a user via [local evaluation](/docs/experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/experiment/local-evaluation#targeting-capabilities).
+Implements evaluating variants for a user via [local evaluation](/docs/feature-experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/feature-experiment/local-evaluation#targeting-capabilities).
 
 ### Install
 
@@ -268,10 +268,10 @@ end
 
 ### Initialize
 
-Initializes a [local evaluation](/docs/experiment/local-evaluation) client.
+Initializes a [local evaluation](/docs/feature-experiment/local-evaluation) client.
 
 {{partial:admonition type="warning" heading="Server deployment key"}}
-You must [initialize](#initialize_1) the local evaluation client with a server [deployment](/docs/experiment/data-model#deployments) key to get access to local evaluation flag configs.
+You must [initialize](#initialize_1) the local evaluation client with a server [deployment](/docs/feature-experiment/data-model#deployments) key to get access to local evaluation flag configs.
 {{/partial:admonition}}
 
 ```ruby
@@ -280,7 +280,7 @@ AmplitudeExperiment.initialize_local(api_key)
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `apiKey` | required | The server [deployment key](/docs/experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
+| `apiKey` | required | The server [deployment key](/docs/feature-experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 {{partial:admonition type="tip" heading="Flag polling interval"}}
@@ -350,7 +350,7 @@ experiment.start
 
 ### Evaluate
 
-Executes the [evaluation logic](/docs/experiment/implementation) using the flags pre-fetched on [`start`](#start). You must give evaluate a user object argument, and can you can optionally pass it an array of flag keys if only a specific subset of required flag variants are required.
+Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags pre-fetched on [`start`](#start). You must give evaluate a user object argument, and can you can optionally pass it an array of flag keys if only a specific subset of required flag variants are required.
 
 {{partial:admonition type="tip" heading="Automatic assignment tracking"}}
 Set [`assignment_config`](#configuration_1) to automatically track an assignment event to Amplitude when `evaluate()` is called.
@@ -362,7 +362,7 @@ evaluate(user, flag_keys)
 
 | Parameter   | Requirement | Description |
 |-------------| --- | --- |
-| `user`      | required | The [user](/docs/experiment/data-model#users) to evaluate. |
+| `user`      | required | The [user](/docs/feature-experiment/data-model#users) to evaluate. |
 | `flag_keys` | optional | Specific flags or experiments to evaluate. If nil, or empty, all flags and experiments are evaluated. |
 
 ```ruby

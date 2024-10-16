@@ -34,7 +34,7 @@ Multi-armed bandit experiments use [Thompson sampling](https://en.wikipedia.org/
 
 ## Create a multi-armed bandit experiment
 
-Building a multi-armed bandit experiment is almost identical to [building an A/B test in Amplitude Experiment](/docs/experiment/overview). There are some differences, though. The next section covers them in more detail
+Building a multi-armed bandit experiment is almost identical to [building an A/B test in Amplitude Experiment](/docs/feature-experiment/overview). There are some differences, though. The next section covers them in more detail
 
 ## Differences between multi-armed bandits and A/B tests
 

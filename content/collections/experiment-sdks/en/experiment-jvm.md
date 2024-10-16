@@ -19,11 +19,11 @@ logo: icons/java.svg
 ---
 Official documentation for Amplitude Experiment's server-side JVM SDK implementation. This SDK may be used in **either Java or Kotlin** server-side implementations.
 
-This documentation has separate sections for [remote](/docs/experiment/remote-evaluation) and [local](/docs/experiment/local-evaluation) evaluation:
+This documentation has separate sections for [remote](/docs/feature-experiment/remote-evaluation) and [local](/docs/feature-experiment/local-evaluation) evaluation:
 
 ## Remote evaluation
 
-Implements fetching variants for a user via [remote evaluation](/docs/experiment/remote-evaluation).
+Implements fetching variants for a user via [remote evaluation](/docs/feature-experiment/remote-evaluation).
 
 ### Install
 
@@ -110,7 +110,7 @@ if (Variant.valueEquals(variant, "on")) {
 
 ### Initialize remote
 
-The SDK client should be initialized in your server on startup. The [deployment key](/docs/experiment/data-model#deployments) argument passed into the `apiKey` parameter must live within the same project that you are sending analytics events to.
+The SDK client should be initialized in your server on startup. The [deployment key](/docs/feature-experiment/data-model#deployments) argument passed into the `apiKey` parameter must live within the same project that you are sending analytics events to.
 
 {{partial:tabs tabs="Kotlin, Java"}}
 {{partial:tab name="Kotlin"}}
@@ -135,7 +135,7 @@ public RemoteEvaluationClient initializeRemote(
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `apiKey` | required | The [deployment key](/docs/experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
+| `apiKey` | required | The [deployment key](/docs/feature-experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 {{partial:tabs tabs="Kotlin, Java"}}
@@ -181,7 +181,7 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 
 ### Fetch
 
-Fetches variants for a [user](/docs/experiment/data-model#users) and returns the results. This function [remote evaluates](/docs/experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
+Fetches variants for a [user](/docs/feature-experiment/data-model#users) and returns the results. This function [remote evaluates](/docs/feature-experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
 
 {{partial:tabs tabs="Kotlin, Java"}}
 {{partial:tab name="Kotlin"}}
@@ -199,7 +199,7 @@ public CompletableFuture<Map<String, Variant>> fetch(@Nonnull ExperimentUser use
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
-| `user` | required | The [user](/docs/experiment/data-model#users) to remote fetch variants for. |
+| `user` | required | The [user](/docs/feature-experiment/data-model#users) to remote fetch variants for. |
 
 {{partial:tabs tabs="Kotlin, Java"}}
 {{partial:tab name="Kotlin"}}
@@ -263,7 +263,7 @@ if (Variant.valueEquals(variant, "on")) {
 
 ## Local evaluation
 
-Implements evaluating variants for a user via [local evaluation](/docs/experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/experiment/local-evaluation#targeting-capabilities).
+Implements evaluating variants for a user via [local evaluation](/docs/feature-experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/feature-experiment/local-evaluation#targeting-capabilities).
 
 ### Install
 
@@ -338,10 +338,10 @@ Map<String, Variant> variants = experiment.evaluate(user);
 
 ### Initialize local
 
-Initializes a [local evaluation](/docs/experiment/local-evaluation) client.
+Initializes a [local evaluation](/docs/feature-experiment/local-evaluation) client.
 
 {{partial:admonition type="warning" heading="Server deployment key"}}
-You must [initialize](#initialize-local) the local evaluation client with a server [deployment](/docs/experiment/data-model#deployments) key to get access to local evaluation flag configs.
+You must [initialize](#initialize-local) the local evaluation client with a server [deployment](/docs/feature-experiment/data-model#deployments) key to get access to local evaluation flag configs.
 {{/partial:admonition}}
 
 {{partial:tabs tabs="Kotlin, Java"}}
@@ -366,7 +366,7 @@ public LocalEvaluationClient initializeLocal(
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `apiKey` | required | The server [deployment key](/docs/experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
+| `apiKey` | required | The server [deployment key](/docs/feature-experiment/data-model#deployments) which authorizes fetch requests and determines which flags should be evaluated for the user. |
 | `config` | optional | The client [configuration](#configuration) used to customize SDK client behavior. |
 
 {{partial:admonition type="tip" heading="Flag polling interval"}}
@@ -433,7 +433,7 @@ You should wait for `start()` to return before calling [`evaluate()`](#evaluate)
 
 ### Evaluate
 
-Executes the [evaluation logic](/docs/experiment/implementation) using the flags pre-fetched on [`start()`](#start). Evaluate must be given a user object argument and can optionally be passed an array of flag keys if only a specific subset of required flag variants are required.
+Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags pre-fetched on [`start()`](#start). Evaluate must be given a user object argument and can optionally be passed an array of flag keys if only a specific subset of required flag variants are required.
 
 {{partial:admonition type="tip" heading="Automatic assignment tracking"}}
 Set [`assignmentConfiguration`](#configuration_1) to automatically track an assignment event to Amplitude when `evaluate()` is called.
@@ -455,7 +455,7 @@ public Map<String, Variant> evaluate(@Nonnull experimentUser, @Nonnull List<Stri
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `user` | required | The [user](/docs/experiment/data-model#users) to evaluate. |
+| `user` | required | The [user](/docs/feature-experiment/data-model#users) to evaluate. |
 | `flagKeys` | optional | Specific flags or experiments to evaluate. If empty, all flags and experiments are evaluated. |
 
 {{partial:tabs tabs="Kotlin, Java"}}

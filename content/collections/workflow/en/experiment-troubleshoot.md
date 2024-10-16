@@ -13,7 +13,7 @@ Sometimes, you will experience unexpected issues with creating and rolling out a
 
 ## Before you begin
 
-This article assumes that you understand how to set up and run an experiment in Amplitude Experiment. If you don't feel confident in your understanding, check out our Help Center articles on [an overview of Amplitude Experiment](/docs/experiment/overview) and [configuring your experiment](/docs/experiment/workflow/configure) before proceeding.
+This article assumes that you understand how to set up and run an experiment in Amplitude Experiment. If you don't feel confident in your understanding, check out our Help Center articles on [an overview of Amplitude Experiment](/docs/feature-experiment/overview) and [configuring your experiment](/docs/feature-experiment/workflow/configure) before proceeding.
 
 ## Experiment troubleshooting checklist
 
@@ -44,7 +44,7 @@ At times troubleshooting issues in your experiment may be out of your control. T
 
 ### Targeting on user properties is delayed
 
-Amplitude Experiment updates the targeting on cohorts each hour. Targeting on properties explicitly sent to Experiment is immediate and real-time. Targeting on user properties stores in Amplitude **can be delayed** by up to one hour, due to the [CDN](/docs/experiment/under-the-hood/experiment-performance-scaling).
+Amplitude Experiment updates the targeting on cohorts each hour. Targeting on properties explicitly sent to Experiment is immediate and real-time. Targeting on user properties stores in Amplitude **can be delayed** by up to one hour, due to the [CDN](/docs/feature-experiment/under-the-hood/experiment-performance-scaling).
 
 ### A user doesn't see the variant to which they were assigned
 
