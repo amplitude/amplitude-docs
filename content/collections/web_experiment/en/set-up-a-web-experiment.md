@@ -54,7 +54,7 @@ If the script isn’t present on the page you specified, Amplitude Experiment ca
 
 Before running your web experiment, we recommend you test and preview each variant. Once you're ready:
 
-1. Click the **Test & Preview** button. This does start your experiment, it only puts your experiment in test instrumentation mode. Only users who open the page with the preview link will be able to see your changes.
+1. Click the **Test & Preview** button. This doesn't start your experiment, it only puts your experiment in test instrumentation mode. Only users who open the page with the preview link will be able to see your changes.
 2. In the modal, select the variant you want to preview (usually the treatment) and select **Test in new window**.
 3. A new tab should open with the changes you made to the page applied.
 
