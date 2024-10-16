@@ -28,6 +28,10 @@ Include or exclude pages from targeting with a matching **operator** and a **val
 
 ## Audience targeting
 
+{{partial:admonition type="note"}}
+Audience targeting is not available on **Starter** plans. Upgrade to **Plus** to better target your users.
+{{/partial:admonition}}
+
 By default, a new Web Experiment targets all users. Audience targeting enables you to target specific users for your experiment. Users who aren't targeted see the default experience, and don't count towards analysis.
 
 If any segments match, Amplitude buckets that user into a variant based on the configured rollout and variant distribution. For a segment to match, it must meet all conditions you set.
