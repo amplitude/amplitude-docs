@@ -102,6 +102,9 @@ If you send events through [Tealium](/docs/data/source-catalog/tealium) using Te
 
 Use the `IntegrationPlugin` interface to add a custom integration. Place the plugin script *before* the Web Experiment script tag.
 
+* `getUser(): object`: Return the [experiment user](/docs/feature-experiment/data-model#users) object.
+* `track(): boolean`: Track the event through a 3rd party. Return `true` if the event was tracked. Returning false will cause the event to be persisted and retried at an interval.
+
 ```html
 <script>
 window.experimentIntegration = {
@@ -118,6 +121,7 @@ window.experimentIntegration = {
       e.eventType,
       e.eventProperties
     );
+    return true;
   }
 };
 </script>
