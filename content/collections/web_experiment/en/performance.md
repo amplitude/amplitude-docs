@@ -1,11 +1,15 @@
 ---
 id: 7ade889d-c09c-48ee-8910-c4592bcc09b0
 blueprint: web_experiment
-title: Web Experiment Performance
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1728666816
+title: 'Web Experiment performance'
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1729195974
 ---
 Web Experiment is built to minimize impact on page performance.
+
+{{partial:admonition type='note'}}
+See [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
+{{/partial:admonition}}
 
 ## Script size
 
