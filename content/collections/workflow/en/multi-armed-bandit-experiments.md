@@ -3,14 +3,14 @@ id: d368cb08-20c7-424f-ba2f-3d902fc10cb6
 blueprint: workflow
 title: 'Multi-armed bandit experiments'
 landing: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718772564
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1729185255
 ---
 In a traditional A/B test, Amplitude Experiment assesses all the variants in your experiment until it reaches a statistically significant result. From there, you can choose to roll out the winning variant, or roll all users back to the control variant instead. Your decisions depend on why a particular variant outperformed the others.
 
 But sometimes, that reason isn’t relevant. All you want is to decide which variant is performing the best and send as much traffic as possible to it. For example:
 
-- Optimizing hero images, messaging, color changes to UI elements, etc.
+- [Optimizing hero images, messaging, color changes to UI elements](/docs/web-experiment/set-up-a-web-experiment), etc.
 - In-product layout changes, like information hierarchy or order of operations
 - Optimizing menus or navigation
 - Ad optimization for seasonal or time-sensitive promotions or events
@@ -34,7 +34,7 @@ Multi-armed bandit experiments use [Thompson sampling](https://en.wikipedia.org/
 
 ## Create a multi-armed bandit experiment
 
-Building a multi-armed bandit experiment is almost identical to [building an A/B test in Amplitude Experiment](/docs/experiment/overview). There are some differences, though. The next section covers them in more detail
+Building a multi-armed bandit experiment is almost identical to [building an A/B test in Amplitude Experiment](/docs/feature-experiment/overview). There are some differences, though. The next section covers them in more detail
 
 ## Differences between multi-armed bandits and A/B tests
 

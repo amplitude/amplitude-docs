@@ -86,4 +86,4 @@ For example, consider the following holdout group and mutual exclusion group: 
 
 In this case, experiment A will receive 0.95 \* 0.5 = 0.475, or 47.5% of the total traffic.
 
-Learn more in this article about [working with holdout groups in Amplitude Experiment.](/docs/experiment/advanced-techniques/holdout-groups-exclude-users)
+Learn more in this article about [working with holdout groups in Amplitude Experiment.](/docs/feature-experiment/advanced-techniques/holdout-groups-exclude-users)

@@ -11,7 +11,7 @@ updated_at: 1714515123
 ---
 An experiment can’t tell you anything without events to track. Adding metrics to your experiment occurs in the Goals segment of the experiment design panel. Here, you’ll tell Amplitude Experiment what you want your **recommendation metric** to be, as well as define any **secondary metrics**. The recommendation metric determines whether your hypothesis is accepted or rejected, and therefore, whether your experiment has succeeded or failed.
 
-There’s a lot riding on your recommendation metric, so it’s important to choose the right one. If you’re not experienced in A/B testing, it can be hard to know which one that is. But if you know what to look for, your odds of a successful [variant](/docs/experiment/workflow/add-variants) improve dramatically:
+There’s a lot riding on your recommendation metric, so it’s important to choose the right one. If you’re not experienced in A/B testing, it can be hard to know which one that is. But if you know what to look for, your odds of a successful [variant](/docs/feature-experiment/workflow/add-variants) improve dramatically:
 
 * Try to identify the **single user action** that tells you if your variant is successful.
 * Measure an event that's **directly affected** by the change you’ve made in your variant.
@@ -30,7 +30,7 @@ Turn on the *Enable Recommendation* option to enable recommendations duration es
 1. In the *Goals* section of the experiment design panel, select your recommendation metric. You can do this from the *Metric* drop-down, or create a custom metric instead.
 2. Select the metric type. A *Success* metric states the goal **will** change by the goal amount and direction. *Guardrail* metrics state the goal **won't** change by the goal amount and direction.
 3. Next to *Direction*, specify whether you’re expecting the metric to increase or decrease.
-4. Optionally, set the minimally acceptable goal for the experiment, otherwise known as the **[minimum detectable effect](/docs/experiment/experiment-theory/experiment-set-mde)**. This is the minimum amount of difference between the control and the variant there should be for the experiment to be considered a positive result.
+4. Optionally, set the minimally acceptable goal for the experiment, otherwise known as the **[minimum detectable effect](/docs/feature-experiment/experiment-theory/experiment-set-mde)**. This is the minimum amount of difference between the control and the variant there should be for the experiment to be considered a positive result.
 5. To add secondary metrics, click *+ Add Metric* and repeat this process for each secondary metrics you want to include.
 
 The duration estimator estimates the time and sample size you need to achieve significant results in your experiment, given your metric settings. Amplitude Experiment pre-populates reasonable industry defaults based on historical data, but you can adjust the confidence level, statistical power, minimum detectable effect, standard deviation, and test type as needed.
@@ -44,7 +44,7 @@ If you don’t want to use any of the metrics in the drop-down list, you can cre
 3. Click *Select event …* to choose the metric event, which is the event that best represents that metric. Then click *Create*.
 
 {{partial:admonition type='note'}}
-By default, the Retention metric doesn't support [CUPED](/docs/experiment/workflow/finalize-statistical-preferences), exposure attribution settings, nor calendar day windows. Instead, the metric calculates exposure attribution settings using any exposure and the nth day value based on 24-hour window increments.
+By default, the Retention metric doesn't support [CUPED](/docs/feature-experiment/workflow/finalize-statistical-preferences), exposure attribution settings, nor calendar day windows. Instead, the metric calculates exposure attribution settings using any exposure and the nth day value based on 24-hour window increments.
 {{/partial:admonition}}
 
 ## Define the exposure event
@@ -53,8 +53,8 @@ In your experiment, open the Design Experiment panel, or the Analysis Settings, 
 
 Amplitude sends the `Amplitude exposure` event when your app calls `.variant()`. It sets the user properties Amplitude Experiment uses to conduct its analyses. When you use the Amplitude exposure event, you can be certain your app triggers the event at the correct time.
 
-You can select a custom exposure event instead. Click *Custom Exposure*, then *Select event …* to do so. There's a much greater risk of triggering a custom exposure event at the wrong time, which can lead to a [sample ratio mismatch](/docs/experiment/troubleshooting/sample-ratio-mismatch).
+You can select a custom exposure event instead. Click *Custom Exposure*, then *Select event …* to do so. There's a much greater risk of triggering a custom exposure event at the wrong time, which can lead to a [sample ratio mismatch](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch).
 
 For more information, see [this article about exposure events in Amplitude Experiment](https://www.docs.developers.amplitude.com/experiment/general/exposure-tracking/).
 
-The next step is defining your experiment's [audience](/docs/experiment/workflow/define-audience).
+The next step is defining your experiment's [audience](/docs/feature-experiment/workflow/define-audience).

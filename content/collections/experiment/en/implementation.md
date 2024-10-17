@@ -9,7 +9,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718211564
 landing_blurb: 'Learn how to implement Amplitude Experiment in your product.'
 ---
-Evaluation refers to the act of determining which variant, if any, a user is bucketed into given a flag configuration. In short, evaluation is a function of a [user](/docs/experiment/data-model#users) and a [flag](/docs/experiment/data-model#flags-and-experiments) configuration which outputs a [variant](/docs/experiment/data-model#variants).
+Evaluation refers to the act of determining which variant, if any, a user is bucketed into given a flag configuration. In short, evaluation is a function of a [user](/docs/feature-experiment/data-model#users) and a [flag](/docs/feature-experiment/data-model#flags-and-experiments) configuration which outputs a [variant](/docs/feature-experiment/data-model#variants).
 
 ![](statamic://asset::help_center_conversions::experiment/evaluation-implementation.drawio-1718211558.png)
 
@@ -27,7 +27,7 @@ For simple on/off flags, Amplitude recommends using the [all users segment](#all
 
 ### Flag dependencies
 
-A flag may define a [dependency](/docs/experiment/under-the-hood/flag-dependencies) on another flag's evaluation. If the dependency isn't met then no variant returns, otherwise the evaluation continues. Flag dependencies are currently utilized to implement [mutual exclusion groups](/docs/experiment/under-the-hood/flag-dependencies#mutual-exclusion-groups) and [holdout groups](/docs/experiment/under-the-hood/flag-dependencies#holdout-groups).
+A flag may define a [dependency](/docs/feature-experiment/under-the-hood/flag-dependencies) on another flag's evaluation. If the dependency isn't met then no variant returns, otherwise the evaluation continues. Flag dependencies are currently utilized to implement [mutual exclusion groups](/docs/feature-experiment/under-the-hood/flag-dependencies#mutual-exclusion-groups) and [holdout groups](/docs/feature-experiment/under-the-hood/flag-dependencies#holdout-groups).
 
 {{partial:admonition type="example" heading=""}}
 For example, Flag-2 may define a dependency on Flag-1 evaluating to the variant `on`.
@@ -49,7 +49,7 @@ Inclusions allow you to force bucket specific users (identified by either their 
 
 
 {{partial:admonition type="warning" heading=""}}
-Sticky bucketing should be used with care. Even if sticky bucketing is disabled, [consistent bucketing](#consistent-bucketing) means that users are still bucketed into the same variant given that the user and targeting rules remain static. Changing targeting rules on an active flag with sticky bucketing enabled may cause a [sample ratio mismatch (SRM)](/docs/experiment/troubleshooting/sample-ratio-mismatch), which may skew experiment results.
+Sticky bucketing should be used with care. Even if sticky bucketing is disabled, [consistent bucketing](#consistent-bucketing) means that users are still bucketed into the same variant given that the user and targeting rules remain static. Changing targeting rules on an active flag with sticky bucketing enabled may cause a [sample ratio mismatch (SRM)](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch), which may skew experiment results.
 {{/partial:admonition}}
 
 If sticky bucketing is enabled, a user will always get evaluated to the same previously bucketed variant, regardless of the current targeting. Sticky bucketing doesn't apply if the user hasn't been bucketed into a variant.
@@ -60,7 +60,7 @@ If sticky bucketing is enabled, a user will always get evaluated to the same pre
 Adding a target segment without defining any rules (where clauses) will capture all users even though the estimates show 0 users.
 {{/partial:admonition}}
 
-A [flag or experiment](/docs/experiment/data-model#flags-and-experiments) may have `0-n` targeting segments. Targeting segments are evaluated from top-to-bottom. If a user matches the segment targeting rule, then [consistent bucketing](#consistent-bucketing) based on the configured allocation percentage and variant distribution weights determines which variant, if any, the user is bucketed into.
+A [flag or experiment](/docs/feature-experiment/data-model#flags-and-experiments) may have `0-n` targeting segments. Targeting segments are evaluated from top-to-bottom. If a user matches the segment targeting rule, then [consistent bucketing](#consistent-bucketing) based on the configured allocation percentage and variant distribution weights determines which variant, if any, the user is bucketed into.
 
 ## All users segment
 

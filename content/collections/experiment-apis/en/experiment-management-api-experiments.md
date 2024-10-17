@@ -51,7 +51,7 @@ Fetch a list of experiments including their configuration details. Results are o
 
 ### Response
 
-A successful request returns a `200 OK` response and a list of experiments encoded as JSON in the response body.
+A successful request returns a `200 OK` response and a list of experiments encoded as JSON in the response body. `createdAt` and `lastModifiedAt` are in UTC in ISO 8601 format.
 
 {{partial:tabs tabs="Request, Response"}}
 {{partial:tab name="Request"}}
@@ -119,7 +119,11 @@ curl --request GET \
             "state": "planning",
             "startDate": null,
             "endDate": null,
-            "experimentType": "a-b-test"
+            "experimentType": "a-b-test",
+            "createdBy": "abc@amplitude.com",
+            "lastModifiedBy": "abc@amplitude.com",
+            "createdAt":"2022-09-09T15:29:47.940Z",
+            "lastModifiedAt":"2023-01-25T11:43:41.073Z"
         },
         "nextCursor": <cursorId>
     ]
@@ -1002,7 +1006,7 @@ Edit an experiment.
 |`enabled`| Optional | boolean | Property to activate or deactivate experiment. |
 |`archive`| Optional | boolean | Property to archive or unarchive experiment. |
 |`experimentType`| Optional | string | Experiment type, options include `a-b-test` or `multi-arm-bandit`. |
-|`stickyBucketing`| Optional | boolean | If true, the experiment uses [sticky bucketing](/docs/experiment/implementation#sticky-bucketing). |
+|`stickyBucketing`| Optional | boolean | If true, the experiment uses [sticky bucketing](/docs/feature-experiment/implementation#sticky-bucketing). |
 |`startDate`| Optional | string | Start date of the experiment in ISO 8601 format. |
 |`endDate`| Optional | string | End date of the experiment in ISO 8601 format. End date can be null. |
 |`exposureEvent`| Optional | object | See the [`exposureEvent`](#exposureevent) table for more information. If set to null, the Amplitude Exposure Event will be used. |

@@ -5,7 +5,7 @@ title: 'よくある質問：Amplitude Experimentで相互排反グループを�
 title_en: 'FAQ: Using Mutual Exclusion Groups in Amplitude Experiments'
 source: 'https://help.amplitude.com/hc/ja/articles/14753159500827'
 ---
-Amplitude Experimentでは、実験を[相互排反](/docs/experiment/advanced-techniques/mutually-exclusive-experiments)として設定できます。これは、ユーザーが同時に複数の実験を行うことができないことを意味します。例えば、実験Aが表示されたユーザーには実験Bが表示されず、その逆も同じです。
+Amplitude Experimentでは、実験を[相互排反](/docs/feature-experiment/advanced-techniques/mutually-exclusive-experiments)として設定できます。これは、ユーザーが同時に複数の実験を行うことができないことを意味します。例えば、実験Aが表示されたユーザーには実験Bが表示されず、その逆も同じです。
 
 **注**：ローカル評価による実験は、ローカル評価による相互排反グループにのみ追加できます。
 

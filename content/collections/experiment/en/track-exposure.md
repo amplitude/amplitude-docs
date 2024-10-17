@@ -10,7 +10,7 @@ updated_at: 1724885595
 this_article_will_help_you:
   - 'Learn how Amplitude Experiment tracks user exposures'
 ---
-When running an experiment, tracking which users were [exposed](/docs/experiment/under-the-hood/event-tracking#exposure-events) to your feature flag's variable experience is essential. Without it, you can't count on reliable results.
+When running an experiment, tracking which users were [exposed](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) to your feature flag's variable experience is essential. Without it, you can't count on reliable results.
 
 {{partial:admonition type='note'}}
 Exposure tracking is optional for feature flags that don't require analysis.
@@ -18,7 +18,7 @@ Exposure tracking is optional for feature flags that don't require analysis.
 
 ### Analytics REST API
 
-In this example, the [Analytics REST API v2.0](/docs/apis/analytics/http-v2) sends an [exposure event](/docs/experiment/under-the-hood/event-tracking#exposure-events)  to Amplitude with `curl`.
+In this example, the [Analytics REST API v2.0](/docs/apis/analytics/http-v2) sends an [exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events)  to Amplitude with `curl`.
 
 {{partial:partials/experiment/interactive-exposure-table}}
 
@@ -28,4 +28,4 @@ The flag is now active in your deployment, and your experiment has evaluated a u
 
 ### SDKs
 
-As with fetching variants, you can simplify exposure tracking using a client-side [Experiment SDK](/docs/sdks/experiment-sdks) in your app. Client-side Amplitude Experiment SDKs can [automatically track exposures](/docs/experiment/under-the-hood/event-tracking#automatic-exposure-tracking) through your installed analytics SDK whenever it accesses a variant from the variant store.
+As with fetching variants, you can simplify exposure tracking using a client-side [Experiment SDK](/docs/sdks/experiment-sdks) in your app. Client-side Amplitude Experiment SDKs can [automatically track exposures](/docs/feature-experiment/under-the-hood/event-tracking#automatic-exposure-tracking) through your installed analytics SDK whenever it accesses a variant from the variant store.

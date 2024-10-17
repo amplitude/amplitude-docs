@@ -13,7 +13,7 @@ In Amplitude Experiment, you can set experiments as mutually exclusive. This mea
  Experiments running with local evaluation can only be added to mutual exclusion groups running with local evaluation.
 {{/partial:admonition}}
 
-This article covers some frequently asked questions about [mutual exclusion groups](/docs/experiment/advanced-techniques/mutually-exclusive-experiments).
+This article covers some frequently asked questions about [mutual exclusion groups](/docs/feature-experiment/advanced-techniques/mutually-exclusive-experiments).
 
 
 {{partial:collapse name="Is it best to create a mutual exclusion group before launching an experiment?"}}
@@ -42,5 +42,5 @@ The same user may be exposed to more than one experiment, even if the experiment
 
 Another reason could be due to how [unique users are tracked in Amplitude](/docs/cdp/sources/instrument-track-unique-users). For example, a user could anonymously use more than one device before logging in to Amplitude. Until that user is identified and merged to its existing ID, Amplitude will assume it's a different user that is available for assignment.
 
-Or, the multiple exposures could be a case of [variant jumping](/docs/experiment/troubleshooting/variant-jumping), when a user is exposed to two or more variants for a single flag or experiment.
+Or, the multiple exposures could be a case of [variant jumping](/docs/feature-experiment/troubleshooting/variant-jumping), when a user is exposed to two or more variants for a single flag or experiment.
 {{/partial:collapse}}

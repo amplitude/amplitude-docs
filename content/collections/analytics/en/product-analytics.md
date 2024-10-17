@@ -13,6 +13,30 @@ Amplitude's Out-of-the-box Product Analytics provides a single location in Ampli
 
 This feature is available on all Amplitude plans. For more information, see the [pricing page](https://amplitude.com/pricing).
 
+### Permissions
+
+Product Analytics permissions for editing views depend on both your role within a project, and your organization's [plan](https://amplitude.com/pricing).
+
+{{partial:collapse name="Product Analytics edit permissions"}}
+
+**Starter and Plus**
+
+| Role    | Default view | Custom view (yours) | Custom view (others) |
+| ------- | ------------ | ------------------- | -------------------- |
+| Admin   | ✅            | ✅                   | ✅                    |
+| Manager | ✅            | ✅                   | ✅                    |
+| Member  | ✅            | ✅                   | ✅                    |
+
+**Growth and Enterprise**
+
+| Role    | Default view | Custom view (yours) | Custom view (others) |
+| ------- | ------------ | ------------------- | -------------------- |
+| Admin   | ✅            | ✅                   | ✅                    |
+| Manager | ❌            | ✅                   | ✅                    |
+| Member  | ❌            | ✅                   | ✅                    |
+
+{{/partial:collapse}}
+
 {{partial:partials/web-product-analytics hub="Product"}}
 
 ### Basic settings
@@ -31,7 +55,7 @@ Select events that represent the steps in your onboarding funnel. For example st
 
 ### Features
 
-Select specific features for which you want to track engagement. Define features with tracked events (including custom events) or [Feature Flags](/docs/experiment/workflow/feature-flag-rollouts) that are a part of an experiment running in your product. Features you define are available on the Feature Engagement tab.
+Select specific features for which you want to track engagement. Define features with tracked events (including custom events) or [Feature Flags](/docs/feature-experiment/workflow/feature-flag-rollouts) that are a part of an experiment running in your product. Features you define are available on the Feature Engagement tab.
 
 To create a new feature based on an event:
 

@@ -65,7 +65,7 @@ You can create and revoke these as needed by navigating to **Data** > **Settings
 
 ### Deployment Key
 
-When you create a [deployment](/docs/experiment/data-model), Experiment creates a key for that deployment. Whether the key is public or private depends on whether the deployment is client-side or server-side.
+When you create a [deployment](/docs/feature-experiment/data-model), Experiment creates a key for that deployment. Whether the key is public or private depends on whether the deployment is client-side or server-side.
 
 {{partial:admonition type="tip" heading="Client-side deployment keys are public"}}
 These deployments run on a client device, such as a web browser or mobile app. The key associated with client deployments can be viewed publicly and should be used in client-side SDKs. These keys are prepended with `client-`. Because this key is already public, you don't have to worry about it being compromised.

@@ -14,7 +14,7 @@ You’ve designed your experiment, rolled it out to your users, and given them e
 In the *Analysis* card, you’ll be able to tell at a glance whether your experiment has yielded **statistically-significant** results, as well as what those results actually are. Amplitude Experiment takes the information you gave it during the design and rollout phases and plugs them in for you automatically, so there’s no repetition of effort. It breaks the results out by variant, and provides you with a convenient, detailed tabular breakdown.
 
 {{partial:admonition type='note'}}
-This article continues directly from the [article in our Help Center on rolling out your experiment](/docs/experiment/workflow/experiment-test). If you haven’t read that and followed the process it describes, do so before continuing here.
+This article continues directly from the [article in our Help Center on rolling out your experiment](/docs/feature-experiment/workflow/experiment-test). If you haven’t read that and followed the process it describes, do so before continuing here.
 {{/partial:admonition}}
 
 Amplitude will not generate p-values or confidence intervals for experiments using binary metrics (i.e., unique conversions) until each variant has 100 users **and** 25 conversions. Experiments using non-binary metrics need only to reach 100 users per variant.
@@ -43,7 +43,7 @@ To generate and view experimental results, follow these steps:
     The exposure event is **not the same thing** as the assignment event. If, for example, you’re running an experiment on your pricing page, a user might be evaluated on the home page for the experiment—but if they don’t visit the pricing page, they'll never actually be exposed to it. For that reason, this user should not be considered to be part of the experiment.  
     {{/partial:admonition}}
   
-    To learn more about exposure events, see [this article in the Amplitude Developer Center](/docs/experiment/under-the-hood/event-tracking).  
+    To learn more about exposure events, see [this article in the Amplitude Developer Center](/docs/feature-experiment/under-the-hood/event-tracking).  
       
     The exposure definition's default state is collapsed. Click the expand icon below the metric table to expand.  
       
@@ -52,7 +52,7 @@ To generate and view experimental results, follow these steps:
     {{partial:admonition type='note'}}If you are running an A/B/n test, Amplitude Experiment displays the confidence interval / p-value for the control against each treatment individually. To instead see the comparison between two non-control treatments, either change the control variant, or open the test in Analytics and create a chart using the two treatments you're interested in.
     {{/partial:admonition}}
 
-3. If desired, adjust the experiment’s **confidence level**. The default is 95%. You can also [choose between a sequential test and a T-test](/docs/experiment/workflow/finalize-statistical-preferences).   
+3. If desired, adjust the experiment’s **confidence level**. The default is 95%. You can also [choose between a sequential test and a T-test](/docs/feature-experiment/workflow/finalize-statistical-preferences).   
   
     {{partial:admonition type='note'}}
     Lowering your experiment’s confidence level will make it more likely that your experiment achieves statistical significance, but the trade-off is that doing so increases the likelihood of a false positive.
@@ -60,7 +60,7 @@ To generate and view experimental results, follow these steps:
 
 4. Set the **time frame** for your experiment analysis, either from the selection of pre-set durations, or by opening the date picker and choosing a custom date range.
 
-    The tables, graphs, and charts shown in the Analysis section are explained in depth in the articles on [understanding the Experiment Analysis view](/docs/experiment/analysis-view) and [interpreting the cumulative exposures graph in Amplitude Experiment](/docs/experiment/advanced-techniques/cumulative-exposure-change-slope).
+    The tables, graphs, and charts shown in the Analysis section are explained in depth in the articles on [understanding the Experiment Analysis view](/docs/feature-experiment/analysis-view) and [interpreting the cumulative exposures graph in Amplitude Experiment](/docs/feature-experiment/advanced-techniques/cumulative-exposure-change-slope).
 
     {{partial:admonition type='note'}}
     Amplitude Experiment needs something to compare your control to in order to generate results. If you neglect to include **both** the control and **at least one** variant, your chart will not display anything.
@@ -76,7 +76,7 @@ Your preferred notification settings allow you to receive experiment updates by 
 Click the check box next to the desired notification:
 
 * **Experiment end reached:** You will receive this notification when your experiment is complete.
-* **SRM detected:** You will receive this notification if a [sample ratio mismatch](/docs/experiment/troubleshooting/sample-ratio-mismatch) issue is identified.
+* **SRM detected:** You will receive this notification if a [sample ratio mismatch](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch) issue is identified.
 * **Long-running experiments:** You will receive this notification when your long-running experiment is complete.
 * **Statsig for the primary metric is reached:** You will receive this notification when your experiment's primary metric has reached stat sig.
 

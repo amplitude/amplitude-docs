@@ -35,9 +35,9 @@ The JSON copied to your clipboard contains a set of fields that completely descr
 
 	* name - The custom name set for the variant.
 	* userPropertyValue - The variant value, used to build segment conditions when converting variants to segments in the chart.
-* bucketingGroupType - The unit of analysis. See [Experiment: Account Level Analysis](/docs/experiment/analysis-view) for more information.
-* userProperty - The Amplitude user property that identifies users exposed to each treatment. Used to build segment conditions when converting variants to segments in the chart. See [this article on event tracking in Amplitude](/docs/experiment/under-the-hood/event-tracking) for more information.
+* bucketingGroupType - The unit of analysis. See [Experiment: Account Level Analysis](/docs/feature-experiment/analysis-view) for more information.
+* userProperty - The Amplitude user property that identifies users exposed to each treatment. Used to build segment conditions when converting variants to segments in the chart. See [this article on event tracking in Amplitude](/docs/feature-experiment/under-the-hood/event-tracking) for more information.
 * metrics - An array of metric objects, including test direction, MDE, events, and analysis type.
 * experimentStartDate - The start date of the experiment.
 * experimentEndDate - The end date for the date picker, or today if the experiment is still running.
-* exposureEvent - The exposure event and filters for the experiment. When your experiment is configured to use the default Amplitude exposure event, the event type will always be "*[Experiment] Exposure"*. See [this article on exposure tracking in Amplitude](/docs/experiment/under-the-hood/event-tracking#exposure-event) for more information about exposure events.
+* exposureEvent - The exposure event and filters for the experiment. When your experiment is configured to use the default Amplitude exposure event, the event type will always be "*[Experiment] Exposure"*. See [this article on exposure tracking in Amplitude](/docs/feature-experiment/under-the-hood/event-tracking#exposure-event) for more information about exposure events.
