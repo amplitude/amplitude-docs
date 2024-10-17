@@ -87,7 +87,7 @@ Returns the average of the property values you're grouping by. This function is 
    
    Returns the number of distinct property values for the property the event is grouped by.
 
-   Note that PROPCOUNT is an estimate of distinct property values. This estimate comes from a [HyperLogLog algorithm](https://en.wikipedia.org/wiki/HyperLogLog), and its accuracy depends on amount of data it has to work with. Expect a relative error in the range of 0.1% for less than 12,000 unique values, and up to 0.5% for more than 12,000 unique property values, depending on the cardinality of the property.
+   `PROPCOUNT` is an estimate of distinct property values. This estimate comes from a [HyperLogLog algorithm](https://en.wikipedia.org/wiki/HyperLogLog), and its accuracy depends on amount of data it has to work with. Expect a relative error in the range of 0.1% for less than 12,000 unique values, and up to 0.5% for more than 12,000 unique property values, depending on the cardinality of the property.
 
 **PROPMAX**
 
