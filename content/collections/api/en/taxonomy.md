@@ -909,11 +909,11 @@ event_type=Onboard%20Start&event_property=Completed%20Task&type=boolean&is_requi
 |`event_property`| <span class="required">Required</span>. String. Name of the event property.|
 |`event_type`|<span class="optional">Optional</span>. String. Name of the event type to which the event property belongs to. If the event property already exists on this event type, Amplitude returns a `409 Conflict` error. If the event property already exists but not on this event type, Amplitiude creates an override for this property. If the event property doesn't exist anywhere, Amplitude doesn't create an override for this property.|
 |`description`|<span class="optional">Optional</span>. String. The event property's description.|
-|`type`| <span class="optional">Optional</span>. String. Available with Govern Add-on. The event property's data type. Acceptable values are `string`, `number`, `boolean`, `enum`, and `any`|
-|`regex`| <span class="optional">Optional</span>. String. Available with Govern Add-on. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}` Applies only to the `string` type.|
-|`enum_values`|<span class="optional">Optional</span>. String. Available with Govern Add-on. List of allowed values.|
-|`is_array_type`|<span class="optional">Optional</span>. Boolean. Available with Govern Add-on. Use the `type` parameter to set the type of array elements.|
-|`is_required`|<span class="optional">Optional</span>. Boolean. Available with Govern Add-on. Marks the property as required. When `true`, Amplitude flags events that are missing this property on the Taxonomy page in the web app.|
+|`type`| <span class="optional">Optional</span>. String. The event property's data type. Acceptable values are `string`, `number`, `boolean`, `enum`, and `any`|
+|`regex`| <span class="optional">Optional</span>. String. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}` Applies only to the `string` type.|
+|`enum_values`|<span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`. Only applicable to the `enum` type.|
+|`is_array_type`|<span class="optional">Optional</span>. Boolean. Use the `type` parameter to set the type of array elements.|
+|`is_required`|<span class="optional">Optional</span>. Boolean. Marks the property as required. When `true`, Amplitude flags events that are missing this property on the Taxonomy page in the web app.|
 |`classifications`|<span class="optional">Optional</span>. String. List of classifications applicable to this event property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties. Trying to set classifications on an overridden property results in an error. |
 
 #### 200 OK response
@@ -1211,12 +1211,12 @@ event_type=Onboard%20Start&description=User%20completed%20an%20onboarding%20task
 |`event_type`|<span class="optional">Optional</span>. Name of the event type to which the event properties belong to. If the event property already exists on this event type, Amplitude returns a `409 Conflict` error. If the event property already exists but not on this event type, Amplitude creates an override for this property. If the event property doesn't exist anywhere, Amplitude doesn't create an override for this property.|
 |`overrideScope`|<span class="optional">Optional</span>. Determines how we should act on this event property. Only applicable if event_type is present. If `overrideScope` is not present, Amplitude updates property override on the event if it exists on the event, or the shared property if no override exists on the event. With `overrideScope: "override"`, Amplitude creates an override if none exists on the event, then updates that overridden property, or it updates the existing override if one already exists. With `overrideScope: "shared"`, Amplitude removes the property override on the event if one exists on the event, then updates the shared property, or updates the shared property if no property override exists.|
 |`description`|<span class="optional">Optional</span>. String. The event property's description.|
-|`new_event_property_value`|<span class="optional">Optional</span>. String. Available with Govern Add-on. The new name of the event property.|
-|`type`| <span class="optional">Optional</span>. String. Available with Govern Add-on. The event property's data type. Acceptable values are `string`, `number`, `boolean`, `enum`, and `any`|
-|`regex`|<span class="optional">Optional</span>. String. Available with Govern Add-on. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}` |
-|`enum_values`| <span class="optional">Optional</span>. String. Available with Govern Add-on. List of allowed values.|
-|`is_array_type`| <span class="optional">Optional</span>. Boolean. Available with Govern Add-on.|
-|`is_required`| <span class="optional">Optional</span>. Boolean. Available with Govern Add-on. Marks the property as required.|
+|`new_event_property_value`|<span class="optional">Optional</span>. String. The new name of the event property.|
+|`type`| <span class="optional">Optional</span>. String. The event property's data type. Acceptable values are `string`, `number`, `boolean`, `enum`, and `any`|
+|`regex`|<span class="optional">Optional</span>. String. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}` |
+|`enum_values`| <span class="optional">Optional</span>. String. List of allowed values.|
+|`is_array_type`| <span class="optional">Optional</span>. Boolean. Specifies whether the property value is an array.|
+|`is_required`| <span class="optional">Optional</span>. Boolean. Marks the property as required.|
 |`classifications`|<span class="optional">Optional</span>. String. List of classifications applicable to this event property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties, and trying to set classifications on an overridden property results in an error. With `overrideScope: "override"`, Amplitude returns an error for the same reason mentioned in the previous point. |
 
 #### 200 OK response
@@ -1563,7 +1563,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 |<div class="big-column">Name</div>|Description|
 |-----|---------|
-|`user_property`|<span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`|
+|`user_property`|<span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`.|
 
 
 #### 200 OK response
@@ -1600,7 +1600,7 @@ A failed request returns a `404 Bad Request` status and an error message.
 }
 ```
 
-The Taxonomy API requires an **Enterprise plan**  account or the **Govern add-on** enabled. If your subscription doesn't qualify, the call results in a `404 Bad Request` response.
+The Taxonomy API requires an **Enterprise plan**  account. If your subscription doesn't qualify, the call results in a `404 Bad Request` response.
 
 ### Update a user property
 
@@ -1663,7 +1663,7 @@ new_user_property_value=subscription_type&description=The%20user's%20subscriptio
 
 |<div class="big-column">Name</div>|Description|
 |-----|---------|
-|`user_property`|<span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`|
+|`user_property`|<span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`.|
 
 #### Body parameters
 
@@ -1742,7 +1742,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 |<div class="big-column">Name</div>|Description|
 |-----|---------|
-|`user_property`|<span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`|
+|`user_property`|<span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`.|
 
 #### 200 OK response
 
@@ -1837,12 +1837,12 @@ group_type=Group%201&group_property=Group%20Property%201&type=boolean&descriptio
 
 |<div class="big-column">Name</div>|Description|
 |-----|---------|
-|`group_property`| <span class="required">Required</span>. String. Name of the group property. Prefix custom group properties with `grp:`|
+|`group_property`| <span class="required">Required</span>. String. Name of the group property. Prefix custom group properties with `grp:`.|
 |`group_type`|<span class="optional">Optional</span>. String. Name of the group type the group property belongs to. If the group type doesn't exist, Amplitude returns a `404 Not Found` error. If the group property already exists on this group type, Amplitude returns a `409 Conflict` error. If the group property already exists but not on this group type, Amplitude creates an override for this property. If the group property doesn't exist anywhere, Amplitude doesn't create an override for this property. If the group property exists and is an Amplitude-sourced group property, providing any extra arguments other than `group_property` and `group_type` results in an error because you can't edit Amplitude-sourced group properties. |
 |`description`|<span class="optional">Optional</span>. String. The group property's description.|
 |`type`| <span class="optional">Optional</span>. String. Data type of the group property. It must be one of `any` (default), `string` (default if array type is true), `number`, `boolean`, `enum`|
 |`regex`| <span class="optional">Optional</span>. String. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}` Applies only to the `string` type.|
-|`enum_values`|<span class="optional">Optional</span>. String. List of allowed values. Applies only to the `enum` type.|
+|`enum_values`|<span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`. Only applicable to the `enum` type.|
 |`is_array_type`|<span class="optional">Optional</span>. Boolean. Property is an array type.  Use the `type` parameter to set the type of array elements. |
 |`classifications`|<span class="optional">Optional</span>. String. List of classifications applicable to this group property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties, and trying to set classifications on an overridden property results in an error. |
 
@@ -2024,13 +2024,13 @@ group_type=Group%201
 
 |<div class="big-column">Name</div>|Description|
 |-----|---------|
-|`group_property`|<span class="required">Required</span>. The group property name. <ul><li>Prefix custom group properties with `grp:`</li></ul>|
+|`group_property`|<span class="required">Required</span>. The group property name. Prefix custom group properties with `grp:`.|
 
 #### Query or Body parameter
 
 |<div class="big-column">Name</div>|Description|
 |-----|---------|
-|`group_type`|<span class="optional">Optional</span>. Name of the group type. <ul><li>If `group_type` is provided, we return all group properties associated with this group type.</li><li>If `group_type` is not provided, we return all shared group properties in your tracking plan.</li></ul>|
+|`group_type`|<span class="optional">Optional</span>. Name of the group type. If `group_type` is provided, we return all group properties associated with this group type. If `group_type` is not provided, we return all shared group properties in your tracking plan.|
 
 #### 200 OK response
 
@@ -2129,7 +2129,7 @@ group_type=Group%201&description=First%20Group%20Property%20Updated&new_group_pr
 
 |<div class="big-column">Name</div>|Description|
 |-----|---------|
-|`group_property`|<span class="required">Required</span>. Name of the group property.  Prefix custom group properties with `grp:` Amplitude-sourced group properties (names without the `grp:` prefix) aren't editable. |
+|`group_property`|<span class="required">Required</span>. Name of the group property.  Prefix custom group properties with `grp:`. Amplitude-sourced group properties (names without the `grp:` prefix) aren't editable. |
 
 #### Body parameters
 
@@ -2141,9 +2141,9 @@ group_type=Group%201&description=First%20Group%20Property%20Updated&new_group_pr
 |`new_group_property_value`|<span class="optional">Optional</span>. String. The new name of the group property.|
 |`type`| <span class="optional">Optional</span>. String. Data type of the group property. It must be one of `any` (default), `string` (default if array type is true), `number`, `boolean`, `enum`|
 |`regex`|<span class="optional">Optional</span>. String. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}`  Applies only to the `string` type.|
-|`enum_values`| <span class="optional">Optional</span>. String. List of enum values. <ul><li>Only applicable to the `enum` type.</li></ul>|
-|`is_array_type`| <span class="optional">Optional</span>. Boolean. Property is an array type. <ul><li>Use the `type` parameter to set the type of array elements.</li></ul>|
-|`classifications`|<span class="optional">Optional</span>. String. List of classifications applicable to this group property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. <ul><li>You can only apply classifications on shared properties, and trying to set classifications on an overridden property results in an error. With `overrideScope: "override"`, Amplitude returns an error for the same reason mentioned in the previous point. |
+|`enum_values`| <span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`. Only applicable to the `enum` type.|
+|`is_array_type`| <span class="optional">Optional</span>. Boolean. Property is an array type. Use the `type` parameter to set the type of array elements.|
+|`classifications`|<span class="optional">Optional</span>. String. List of classifications applicable to this group property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties. Trying to set classifications on an overridden property results in an error. |
 
 #### 200 OK response
 
