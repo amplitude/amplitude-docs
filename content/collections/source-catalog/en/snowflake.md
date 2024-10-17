@@ -162,31 +162,15 @@ When using CDC Continuous Sync, keep the following things in mind:
 
 - **Amplitude enrichment services disabled**: When using CDC **Continuous Sync**, Amplitude disables enrichment services like ID resolution, property and attribution syncing, and resolving location info to remain in sync with your source of truth.
 
-## Migrate from custom SQL to CDC
+## Migrate to Change Data Capture (CDC) Continuous Sync
 
-To change the modeling method of your Snowflake source:
+Amplitude recommends that you create a new project to test sending and mutating data. When you confirm that data is mapped and mutated correctly, complete the following steps in your main project:
 
-1. (Optional, recommended). Ensure the data you plan to import has a unique and immutable `insert_id` in each row to prevent data duplication. For more information, see [Data deduplication](/docs/apis/analytics/http-v2/#event-deduplication).
-2. If the source uses complex SQL, including `JOIN` and `WHERE` clauses:
-      1. Create a [`VIEW`](https://docs.snowflake.com/en/user-guide/views-introduction) in your Snowflake account that wraps the data source.
-      2. Enable [Change Tracking](https://docs.snowflake.com/en/user-guide/streams-manage.html#label-enabling-change-tracking-views) on the new view.
-      3. Update the current Snowflake SQL import configuration to use the newly created view. Record the time of the update.
-      4. Ensure `Data synced as of` is greater than the time recorded in the previous step to prevent potential data discrepancy and failure to identify the data drift after the latest completed import job.
-3. Enable [Change Tracking](https://docs.snowflake.com/en/user-guide/streams-manage.html#label-enabling-change-tracking-views) on the source table or view, if you haven't done so. Record the time of the update.
-4. Ensure the existing connection has `Data synced as of` (presented on the source detail page) on or after `October 1, 2023, 12:00 AM UTC`. If it doesn't, either re-enable the connection and wait for `Data synced as of` to advance or consider creating a new import connection. Otherwise, Amplitude imports all data from the current source, which may cause data duplication.
-5. Ensure `Data synced as of` is greater than the time recorded in the step 3 to prevent potential data discrepancy and failure to identify the data drift after the latest completed import job.
-6. Disable the source from the *Manage Import Settings* dialog. If the source has a status of In-Progress, wait for the job to complete and the status changes to Disabled.
-7. Navigate to *Edit Import Config* and click *Convert To Table Select Import*.
-8. Re-enable the source.
-9. Monitor incoming data for one day to ensure the import works as expected.
-
-### Roll back to a custom SQL connection
-
-To revert to a custom SQL connection from an already migrated source, open the source configuration and click *Revert to SQL Query Import*.
-
-{{partial:admonition type="info" title="Snowflake data sources"}}
-When you roll back from the Change Data Capture to Custom SQL connection in the, use the same data source (table or view) in Snowflake to avoid inconsistencies.
-{{/partial:admonition}}
+1. Modify your existing connection to have a filtering definition like `WHERE time < {cutOffDate}`, where `time` is the event time and `cutOffDate` is tomorrow in milliseconds since epoch.
+2. Wait until the `cutOffDate` you set in the previous step.
+3. Verify that no new data flows in with the existing source connection.
+4. Create a **new** source with a filtering definition like `WHERE time >= {cutOffDate}`, where `time` is event time and `cutOffDate` is tomorrow in milliseconds since epoch.
+5. Delete the source connection you modified in step 1.
 
 ## Data fields
 

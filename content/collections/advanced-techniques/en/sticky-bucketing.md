@@ -28,7 +28,7 @@ When sticky bucketing is enabled, Amplitude Experiment checks whether a user alr
 If two or more experiment assignments occur within a few seconds of each other, Amplitude Experiment may not have time to apply sticky bucketing. 
 {{/partial:admonition}}
 
-Users do not get sticky bucketed to the **off** variant. Learn more about evaluation and exposure with these Amplitude resources: [evaluation flow chart](/docs/experiment/advanced-techniques/cumulative-exposure-change-slope), and [local evaluation targeting capabilities](https://www.docs.developers.amplitude.com/experiment/general/evaluation/local-evaluation/#targeting-capabilities).
+Users do not get sticky bucketed to the **off** variant. Learn more about evaluation and exposure with these Amplitude resources: [evaluation flow chart](/docs/feature-experiment/advanced-techniques/cumulative-exposure-change-slope), and [local evaluation targeting capabilities](https://www.docs.developers.amplitude.com/experiment/general/evaluation/local-evaluation/#targeting-capabilities).
 
 ## When to use sticky bucketing, and when not to
 

@@ -5,12 +5,16 @@ title: 'Integration Portal'
 landing: true
 landing_blurb: 'The Integration Portal is the starting point of your integration with Amplitude.'
 source: 'https://www.docs.developers.amplitude.com/partners/integration-portal/'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718647261
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1729184489
 ---
 The Amplitude Integration Portal is your gateway to enhancing collaboration and integration possibilities with Amplitude. As a valued partner, this portal opens up a world of opportunities to expand data connections for Amplitude customers while simplifying the integration process. 
 
 With the Integration Portal, partners gain access to a range of tools and resources that simplify and speed up the integration process. These tools typically include comprehensive documentation, code samples, and best practices, which guide developers through the necessary steps for integration.
+
+{{partial:admonition type='note'}}
+Access to the Integration Portal is by invitation only, and requires a minimum of three identifiable potential customers. These can be either existing or prospective Amplitude customers.
+{{/partial:admonition}}
 
 ## Getting started 
 

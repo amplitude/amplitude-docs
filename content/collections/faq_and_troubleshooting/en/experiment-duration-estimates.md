@@ -16,7 +16,7 @@ Amplitude Experiment uses the means, variances, and exposures of your control an
 
 
 {{partial:collapse name="What is the difference between the duration estimate and the duration estimator?"}}
-Amplitude calculates the duration estimate using sequential testing **as the experiment is running**. The duration estimator, however, uses [T-test](/docs/experiment/workflow/experiment-estimate-duration). 
+Amplitude calculates the duration estimate using sequential testing **as the experiment is running**. The duration estimator, however, uses [T-test](/docs/feature-experiment/workflow/experiment-estimate-duration). 
 {{/partial:collapse}}
 
 

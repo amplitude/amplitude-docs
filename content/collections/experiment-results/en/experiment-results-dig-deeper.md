@@ -26,7 +26,7 @@ There is also an [Experiment Results FAQ article](/docs/faq/experiment-analysis)
 To create an A/B test and see the results, follow these steps:
 
 1. Navigate to *Create* > *Chart* > *More* > *Experiment Results*.
-2. In the Primary Metric module, click *+ Add Metric* or *+* *Define single-use metric* to begin setting up your primary metric. A third option, *Import*, allows you to [import your experiment settings as JSON](/docs/experiment/advanced-techniques/import-export-settings).
+2. In the Primary Metric module, click *+ Add Metric* or *+* *Define single-use metric* to begin setting up your primary metric. A third option, *Import*, allows you to [import your experiment settings as JSON](/docs/feature-experiment/advanced-techniques/import-export-settings).
 3. If adding a single-use metric, use the drop-down menu to specify the **metric type** in the *Define Metric* fly out panel:
 
       * Unique conversions
@@ -39,10 +39,10 @@ To create an A/B test and see the results, follow these steps:
 
 	The first four are available for individual event metric analyses, while funnel conversion allows you to define a multi-step journey that users must complete for the conversion to count. The Formula metric allows you to [define a formula](/docs/analytics/charts/experiment-results/experiment-results-use-formula-metrics) centered around a selected event or events. 
 
-	The last option, Retention, allows you to measure the percentage of users who return to perform the selected event on a specific day (Return on nth day) after being exposed to the experiment. By default, the Retention metric doesn't support [CUPED](/docs/experiment/workflow/finalize-statistical-preferences), exposure attribution settings, nor calendar day windows. Instead, the metric calculates exposure attribution settings using any exposure and the nth day value based on 24-hour window increments.
+	The last option, Retention, allows you to measure the percentage of users who return to perform the selected event on a specific day (Return on nth day) after being exposed to the experiment. By default, the Retention metric doesn't support [CUPED](/docs/feature-experiment/workflow/finalize-statistical-preferences), exposure attribution settings, nor calendar day windows. Instead, the metric calculates exposure attribution settings using any exposure and the nth day value based on 24-hour window increments.
 
 	{{partial:admonition type='note'}}
-	Any of the above metrics can be used as a [custom metric during the design phase in Amplitude Experiment](/docs/experiment/workflow/define-goals). 
+	Any of the above metrics can be used as a [custom metric during the design phase in Amplitude Experiment](/docs/feature-experiment/workflow/define-goals). 
 	{{/partial:admonition}}
 
 4. Next, specify the event to use for this metric. You can also filter the event using a *+ where* clause. When you’re finished, click *Done*.   
@@ -60,18 +60,18 @@ To create an A/B test and see the results, follow these steps:
 
 7. Click *+ Add Experiment Variant* to add more variants as necessary to reflect the experiment setup in your feature flagging system.
 
-Amplitude calculates your statistical results on the fly and display them in the results. The results also allow you to modify your experiment's [statistical settings](/docs/experiment/workflow/finalize-statistical-preferences), such as from the default Sequential test to a T-test. 
+Amplitude calculates your statistical results on the fly and display them in the results. The results also allow you to modify your experiment's [statistical settings](/docs/feature-experiment/workflow/finalize-statistical-preferences), such as from the default Sequential test to a T-test. 
 
 ## Interpret your results
 
 While the specifics may vary depending on the metric types you’re using, you’ll see four charts depicting your results:
 
 * **Confidence interval of absolute performance over time**: This chart is for [sequential testing](https://help.amplitude.com/hc/en-us/articles/17767898439835) only. It can help you identify when the experiment reaches statistical significance; which occurs when the confidence interval no longer includes zero.
-* [**Cumulative exposure**](/docs/experiment/advanced-techniques/cumulative-exposure-change-slope): This chart details the number of users who are exposed to your experiment over time. The x-axis displays the first date of a user's exposure, and the y-axis displays a cumulative, running total of users exposed to the experiment.
+* [**Cumulative exposure**](/docs/feature-experiment/advanced-techniques/cumulative-exposure-change-slope): This chart details the number of users who are exposed to your experiment over time. The x-axis displays the first date of a user's exposure, and the y-axis displays a cumulative, running total of users exposed to the experiment.
 * **Performance by variant**: The title of this chart is the metric you're focused on. The chart shows the number of users who did each step of a funnel, or the means of each variant if the metric isn't a funnel.
 * **Mean over time** (cumulative or non-cumulative): This chart is like the Conversion Over Time graph in a funnel analysis except that it works for non-conversion metrics. The x-axis shows the date the user was first exposed, and the y-axis shows the mean of the selected metric for each variant. The chart gives the option for either a cumulative or non-cumulative view. The cumulative view can help smooth out noise and make interpretation easier.
 
-These charts are also helpful when [learning from your end-to-end experiment](/docs/experiment/overview). 
+These charts are also helpful when [learning from your end-to-end experiment](/docs/feature-experiment/overview). 
 
 {{partial:admonition type='note'}}
 By default, Amplitude selects the primary metric in experiment results. You can choose a different metric in the *Analysis* module. Click on the metric's name in the metric table to see its results. 

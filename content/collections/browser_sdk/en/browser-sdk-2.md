@@ -237,14 +237,14 @@ Click IDs are campaign identifiers included as URL query parameters. Ad platform
 | ------------- | ---------------------------------------------------------- |
 | `dclid`       | Google Marketing Platform click identifier                 |
 | `fbclid`      | Facebook click identifier                                  |
-| `gbraid`      | Google click identifdier on iOS for web-to-app measurement |
-| `wbraid`      | Google click identidier on iOS for app-to-web measurement  |
+| `gbraid`      | Google click identifier on iOS for web-to-app measurement |
+| `wbraid`      | Google click identifier on iOS for app-to-web measurement  |
 | `gclid`       | Google click identifier                                    |
 | `ko_click_id` | Kochava click identifier                                   |
 | `li_fat_id`   | LinkedIn click identifier                                  |
 | `msclkid`     | Microsoft click identifier                                 |
 | `rtd_cid`     | Reddit click identifier                                    |
-| `ttclid`      | TikTok click identidier                                    |
+| `ttclid`      | TikTok click identifier                                    |
 | `twclid`      | Twitter click identifier                                   |
 
 
@@ -620,7 +620,7 @@ envInstance.init(API_KEY_ENV, {
 
 User properties are details like device details, user preferences, or language to help you understand your users at the time they performed an action in your app.
 
-Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, and `remove` on individual user properties. Declare the operations via a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
+Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, and `remove` on individual user properties. Declare the operations through a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
 
 {{partial:admonition type="note" heading="Identify calls"}}
 If the SDK sends the Identify call after the event, the details of the call appear immediately in the user's profile in Amplitude. Results don't appear in chart results until the SDK sends another event after Identify. Identify calls affect events that happen after it. For more information, see [Overview of user properties and event properties](/docs/data/user-properties-and-events).
@@ -1036,7 +1036,7 @@ The following are common issues specific to Browser SDK. For more general common
 
 #### Ad blocker
 
-`Ad Blocker` might lead to event dropping. The following errors indicate that the tracking has been affected by `Ad Blocker`. When loading via a script tag, an error may appear in the console/network tab while loading the SDK script. When loaded with npm package, there could be errors in the network tab when trying to send events to the server. The errors might vary depending on the browser.
+`Ad Blocker` might lead to event dropping. The following errors indicate that the tracking has been affected by `Ad Blocker`. When loading through a script tag, an error may appear in the console/network tab while loading the SDK script. When loaded with npm package, there could be errors in the network tab when trying to send events to the server. The errors might vary depending on the browser.
 
 * Chrome (Ubuntu, MacOS)
 Console: error net::ERR_BLOCKED_BY_CLIENT
@@ -1096,10 +1096,10 @@ For example:
 Users who start on Site 1 and then navigate to Site 2 must have the device ID generated from Site 1 passed as a parameter to Site 2. Site 2 then needs to initialize the SDK with the device ID.
  The SDK can parse the URL parameter automatically if `deviceId` is in the URL query parameters.
 
-Starting from `v2.8.0`, the SDK can automatically get session ID from the URL to maintain the same session and ensure a continuous user journey.
+Starting from `v2.8.0`, the SDK can automatically get session ID from the URL to keep the same session and ensure a continuous user journey.
 
 1. From Site 1, grab the device ID from `getDeviceId()` and the session ID from `getSessionId()`.
-2. Pass the device ID and session ID to Site 2 via a URL parameter when the user navigates. (for example: `www.example.com?ampDeviceId=device_id_from_site_1&ampSessionId=1716245958483`)
+2. Pass the device ID and session ID to Site 2 through a URL parameter when the user navigates. (for example: `www.example.com?ampDeviceId=device_id_from_site_1&ampSessionId=1716245958483`)
 3. Initialize the Amplitude SDK on Site 2 with `init('API_KEY', null)`.
 
 If the `deviceId` and `sessionId` aren't set in `init('API_KEY', null, { deviceId: 'custom-device-id', sessionId: 1716245958483 })`, the SDK automatically falls back to using the URL parameters respectively.

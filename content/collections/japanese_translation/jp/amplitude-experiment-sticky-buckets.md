@@ -57,7 +57,7 @@ source: 'https://help.amplitude.com/hc/ja/articles/12939879862171'
 
 ## その他の資料
 
-[Interpret the cumulative exposures graph in Amplitude Experiment（Amplitude Experimentで累積露出グラフを解釈する）](/docs/experiment/advanced-techniques/cumulative-exposure-change-slope)
+[Interpret the cumulative exposures graph in Amplitude Experiment（Amplitude Experimentで累積露出グラフを解釈する）](/docs/feature-experiment/advanced-techniques/cumulative-exposure-change-slope)
 
 [Local evaluation targeting capabilities（ローカル評価ターゲット機能）](https://www.docs.developers.amplitude.com/experiment/general/evaluation/local-evaluation/#targeting-capabilities)
 

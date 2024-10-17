@@ -63,7 +63,7 @@ Amplitude uses different timestamps to ensure it reports your data accurately:
 
 * `client_event_time`: Local timestamp (UTC) when the device logged the event.
 * `client_upload_time`: Local timestamp (UTC) when the device uploaded the event.
-* `server_received_time`: Amplitude timestamp (UTC) when Amplitude's servers receive the event.
+* `server_received_time`: Amplitude timestamp (UTC) when Amplitude's servers receive the event. Amplitude defaults to `server_received_time` if the event doesn't contain a `client_upload_time`.
 * `server_upload_time`: Amplitude timestamp (UTC) when the event is ingested into Amplitude's ingestion system. This timestamp isn't used to calculate `event_time`, but it's available to reference in the raw data.
 * `event_time`: Amplitude timestamp (UTC) which is the `client_event_time` adjusted by the difference between `server_received_time` and `client_upload_time`, specifically:
 
@@ -103,7 +103,7 @@ The Experiments tab shows any [experiments](/docs/experiment) of which the user 
 
 ### Flags
 
-The *Flags* tab lists the [feature flags](/docs/experiment/workflow/feature-flag-rollouts) enabled for this specific user.
+The *Flags* tab lists the [feature flags](/docs/feature-experiment/workflow/feature-flag-rollouts) enabled for this specific user.
 
 ## Portfolios
 

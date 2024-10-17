@@ -36,4 +36,4 @@ There is no limit on the number of user segments you can include here. Any user 
 Caching expiration differs with the properties you use to define user segments. All user properties always include the latest values your product has sent, defaulting to the most recent value if Amplitude hasn't received your product’s data. Cohorts sync every hour.
 {{/partial:admonition}}
 
-The next step is [setting up your experiment’s variants](/docs/experiment/workflow/add-variants).
+The next step is [setting up your experiment’s variants](/docs/feature-experiment/workflow/add-variants).
