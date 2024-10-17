@@ -9,7 +9,7 @@ this_article_will_help_you:
 landing: true
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1725919213
+updated_at: 1729182856
 landing_blurb: 'Understand the different kinds of formula metrics supported by the Experiment Results chart'
 ---
 In an Experiment Results chart, using a **formula metric** offers you greater flexibility when performing analyses. A formula metric is a metric that consists of:
@@ -43,7 +43,7 @@ You can also view this metric in the [object management center](/docs/data/objec
 
 Experiment Results supports the formula functions listed here:
 
-**UNIQUES:**
+**UNIQUES**
 
 **Syntax**: UNIQUES(event)
 
@@ -51,7 +51,7 @@ Experiment Results supports the formula functions listed here:
 
 Returns the number of unique users who triggered the event. 
 
-**TOTALS:**
+**TOTALS**
 
 **Syntax**: TOTALS(event)
 
@@ -59,7 +59,7 @@ Returns the number of unique users who triggered the event. 
 
 Returns the total number of times users triggered the event.
 
-**PROPSUM:**
+**PROPSUM**
 
 **Syntax**: PROPSUM(event)
 
@@ -69,7 +69,7 @@ This function only works when grouping by a numerical property on the event. If 
 
 Returns the sum of the property values you're grouping the specified event by.
 
-**PROPAVG:**
+**PROPAVG**
 
 **Syntax**: PROPAVG(event)
 
@@ -77,21 +77,31 @@ Returns the sum of the property values you're grouping the specified event by.
 
 This function only works when grouping by a numerical property on the event. If grouping by multiple properties, the formula runs the calculation with the first group-by clause.
 
-Returns the average of the property values you're grouping by. This function is equivalent to `PROPSUM(event)/TOTALS(event)`. [Learn more about how Amplitude calculates PROPAVG and PROPSUM in this article](/docs/feature-experiment/under-the-hood/experiment-analysis-chart-calculation)
+Returns the average of the property values you're grouping by. This function is the same as `PROPSUM(event)/TOTALS(event)`. [Learn more about how Amplitude calculates PROPAVG and PROPSUM in this article](/docs/feature-experiment/under-the-hood/experiment-analysis-chart-calculation)
 
-### PROPMAX
+**PROPCOUNT**
 
-**Syntax**: PROPMAX(event)
+**Syntax: PROPCOUNT(event)**
+
+* Event: Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card. The event property must be a number. If grouping by multiple properties, the formula runs the calculation with the first group by clause.
+   
+   Returns the number of distinct property values for the property the event is grouped by.
+
+   `PROPCOUNT` is an estimate of distinct property values. This estimate comes from a [HyperLogLog algorithm](https://en.wikipedia.org/wiki/HyperLogLog), and its accuracy depends on amount of data it has to work with. Expect a relative error in the range of 0.1% for less than 12,000 unique values, and up to 0.5% for more than 12,000 unique property values, depending on the cardinality of the property.
+
+**PROPMAX**
+
+**Syntax:** PROPMAX(event)
 
 * **Event:** Returns the maximum value of the property you're grouping the specified event by. The property must be numeric. If grouping by multiple properties, the calculation uses the first group-by clause.
 
-### PROPMIN
+**PROPMIN**
 
-**Syntax**: PROPMIN(event)
+**Syntax:** PROPMIN(event)
 
 * **Event:** Returns the minimum value of the property you're grouping the specified event by. The property must be numeric. If grouping by multiple properties, the calculation uses the first group-by clause.
 
-**CONVERSIONRATE (closed beta):**
+**CONVERSIONRATE (closed beta)**
 
 **Syntax:** CONVERSIONRATE(array of events, conversion window, latency offset)
 
@@ -107,7 +117,7 @@ Returns the conversion rate (< 1) from 1st event to nth event of the array. This
 
 ![](/docs/output/img/experiment-results/23576087044507)
 
-**CONVERSIONAVG (closed beta):**
+**CONVERSIONAVG (closed beta)**
 
 **Syntax:** CONVERSIONAVG(array of events, conversion window, latency offset)
 
@@ -135,7 +145,7 @@ In your formulas, refer to events selected in the Events Module by their corresp
 
 ## How Amplitude calculates experiment data for formula metrics
 
-Before getting into how calculations of formula metrics work with experiment data, it’s important to understand the overall [Experiment Analysis view](/docs/feature-experiment/analysis-view), which provides details for your experiment.
+Before getting into how calculations of formula metrics work with experiment data, it’s important to understand the [Experiment Analysis view](/docs/feature-experiment/analysis-view), which provides details for your experiment.
 
 For formula metrics, Amplitude computes the results for each function independently to find the mean and variance of each one. It then applies the arithmetic operators to the results of these individual functions.   
 
@@ -164,6 +174,6 @@ If you set X equal to TOTALS(A) and Y equal to TOTALS(B), the following statemen
     Variance: ![](/docs/output/img/experiment-results/23576087077403){.inline}
     Mean: `E[X / Y] = E[X] / E[Y]`
 
-Once you have the mean and variance of the overall formula metric, you can calculate the confidence interval chart and the p-values.
+Once you have the mean and variance of the formula metric, you can calculate the confidence interval chart and the p-values.
 
 `Formula / Metric: TOTALS(A) / TOTALS(B)`

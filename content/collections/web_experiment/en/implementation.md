@@ -1,13 +1,17 @@
 ---
 id: a5dc1793-29f7-4c23-a656-459def9c6b3f
 blueprint: web_experiment
-title: Implement Web Experiment
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1728666781
+title: 'Implement Web Experiment'
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1729196004
 ---
 Amplitude's Web Experimentation requires a standalone script that you must add to your website. Paste the script into the `<head>` element of your site, as high as possible to avoid flickering.
 
 The script tracks [impression events](/docs/experiment/web/tracking) with the [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) already installed on your site, or a [third-party analytics SDK](#integrate-with-a-third-party-cdp).
+
+{{partial:admonition type='note'}}
+See [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
+{{/partial:admonition}}
 
 ## Add the experiment script
 

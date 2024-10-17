@@ -9,7 +9,7 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1725396408
+updated_at: 1729181305
 ---
 This article explains how to take advantage of the different features offered by [spaces](/docs/get-started/spaces) before continuing.
 
@@ -41,7 +41,9 @@ A shortcut is a way to add content to multiple spaces and folders. Anyone can cr
 
 ## Manage space members
 
-You can add new members to your space, or manage the access permissions of current space members, through the *Manage Members* button.
+You can add new members to your space, or manage the access permissions of current space members, through the *Manage Members* button. 
+
+When you add a member to a space as a viewer or editor, they can view or edit all content within that space. The only exception is when the member lacks permissions for a particular project with content stored in the space. **Project permissions always take priority over space-level permissions.**
 
 There are three levels of permissions:
 

@@ -3,12 +3,16 @@ id: b8db5ecf-b7b0-432d-b1f3-19ae70d13291
 blueprint: web_experiment
 title: 'Set up a web experiment'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1729099005
+updated_at: 1729195945
 this_article_will_help_you:
   - 'Understand the difference between a Web Experiment and a feature experiment'
   - 'Build a Web Experiment using the Visual Editor'
 ---
-Amplitude **Web Experiment** lets you create an A/B or multi-armed bandit experiment **without new code**. Open your site in the [Visual Editor](#the-visual-editor), choose the elements you’d like to experiment with, and make changes to their content or properties directly. This allows for less-technical users to easily create experiments without engineering resources.
+Amplitude **Web Experiment** lets you create an A/B or [multi-armed bandit experiment](/docs/feature-experiment/workflow/multi-armed-bandit-experiments) **without new code**. Open your site in the [Visual Editor](#the-visual-editor), choose the elements you’d like to experiment with, and make changes to their content or properties directly. This allows for less-technical users to easily create experiments without engineering resources.
+
+{{partial:admonition type='note'}}
+See [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
+{{/partial:admonition}}
 
 ## Before you begin
 
@@ -24,7 +28,7 @@ To set up a web experiment, follow these steps:
 2. In the *New Experiment* modal, give your experiment a name. Enter the URL for a page this experiment targets—Amplitude must be instrumented on that page—and select the appropriate project from the drop-down.
 3. If the script is present on the page you specified, Amplitude Experiment will open the page in the [Visual Editor](#the-visual-editor), as a new variant in your experiment.
 
-     You have two options for the treatment variant action: [element changes](/docs/web-experiment/actions#element-changes) or [URL redirect](/docs/web-experiment/actions#url-redirect). Lets assume we're changing elements.
+     You have two options for the treatment variant action: [element changes](/docs/web-experiment/actions#element-changes) or [URL redirect](/docs/web-experiment/actions#url-redirect).
 
 ![web-exp-1.png](/docs/output/img/workflow/web-exp-1.png)
 
