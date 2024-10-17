@@ -1,14 +1,17 @@
 ---
 id: 3ef0ccc6-5e0f-435b-9184-edb809f19210
 blueprint: web_experiment
-title: Web Experiment Actions
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1728666798
+title: 'Web Experiment actions'
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1729195880
 ---
-
 Actions define how variants modify your site. Actions relate to variants rather than a specific page, and apply to all pages that you target in your experiment.
 
 Experiment applies variant actions during evaluation. This happens on the initial page load and any time state pushes to or pops from the session history. History state changes also cause the SDK to revert all applied element change and custom code actions before reevaluating and reapplying actions with the update page in mind.
+
+{{partial:admonition type='note'}}
+See [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
+{{/partial:admonition}}
 
 ## Element changes
 

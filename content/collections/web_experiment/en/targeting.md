@@ -1,12 +1,15 @@
 ---
 id: 671d5f19-2b8a-463a-95be-f81de05e0860
 blueprint: web_experiment
-title: Web Experiment Targeting
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1728666803
+title: 'Web Experiment targeting'
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1729195990
 ---
-
 Web Experiments target both pages and audiences. Amplitude evaluates page targeting first, then audience targeting. Both targeting methods evaluate locally in the browser when the page first loads.
+
+{{partial:admonition type='note'}}
+See [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
+{{/partial:admonition}}
 
 ## Page targeting
 
