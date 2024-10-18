@@ -1217,7 +1217,7 @@ event_type=Onboard%20Start&description=User%20completed%20an%20onboarding%20task
 |`enum_values`| <span class="optional">Optional</span>. String. List of allowed values.|
 |`is_array_type`| <span class="optional">Optional</span>. Boolean. Specifies whether the property value is an array.|
 |`is_required`| <span class="optional">Optional</span>. Boolean. Marks the property as required.|
-|`classifications`|<span class="optional">Optional</span>. String. List of classifications applicable to this event property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties, and trying to set classifications on an overridden property results in an error. With `overrideScope: "override"`, Amplitude returns an error for the same reason mentioned in the previous point. |
+|`classifications`|<span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this event property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties, and trying to set classifications on an overridden property results in an error. With `overrideScope: "override"`, Amplitude returns an error for the same reason mentioned in the previous point. |
 
 #### 200 OK response
 
@@ -1391,7 +1391,7 @@ user_property=User%20Type&description=Describes%20whether%20the%20user%20is%20a%
 |`regex`| <span class="optional">Optional</span>. String. Regular expression or custom regex used for pattern matching and more complex values. For example, 'zip code' property must have pattern `[0-9]{5}`.|
 |`enum_values`|<span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`.|
 |`is_array_type`|<span class="optional">Optional</span>. Boolean. Specifies whether the property value is an array.|
-|`classifications`|<span class="optional">Optional</span>. String. List of classifications applicable to this user property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. |
+|`classifications`|<span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this user property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. |
 
 #### Response
 
@@ -1675,7 +1675,7 @@ new_user_property_value=subscription_type&description=The%20user's%20subscriptio
 |`regex`| <span class="optional">Optional</span>. String. Regular expression or custom regex used for pattern matching and more complex values. For example, 'zip code' property must have pattern `[0-9]{5}`. Only applicable to the `string` type.|
 |`enum_values`| <span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`. Only applicable to the `enum` type.|
 |`is_array_type`|<span class="optional">Optional</span>. Boolean. Specifies whether the property value is an array. Use the `type` parameter to set the type of array elements.|
-|`classifications`|<span class="optional">Optional</span>. String. List of classifications applicable to this user property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. |
+|`classifications`|<span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this user property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. |
 
 #### Response
 
@@ -1844,7 +1844,7 @@ group_type=Group%201&group_property=Group%20Property%201&type=boolean&descriptio
 |`regex`| <span class="optional">Optional</span>. String. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}` Applies only to the `string` type.|
 |`enum_values`|<span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`. Only applicable to the `enum` type.|
 |`is_array_type`|<span class="optional">Optional</span>. Boolean. Property is an array type.  Use the `type` parameter to set the type of array elements. |
-|`classifications`|<span class="optional">Optional</span>. String. List of classifications applicable to this group property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties, and trying to set classifications on an overridden property results in an error. |
+|`classifications`|<span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this group property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties, and trying to set classifications on an overridden property results in an error. |
 
 #### 200 OK response
 
@@ -2143,7 +2143,7 @@ group_type=Group%201&description=First%20Group%20Property%20Updated&new_group_pr
 |`regex`|<span class="optional">Optional</span>. String. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}`  Applies only to the `string` type.|
 |`enum_values`| <span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`. Only applicable to the `enum` type.|
 |`is_array_type`| <span class="optional">Optional</span>. Boolean. Property is an array type. Use the `type` parameter to set the type of array elements.|
-|`classifications`|<span class="optional">Optional</span>. String. List of classifications applicable to this group property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties. Trying to set classifications on an overridden property results in an error. |
+|`classifications`|<span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this group property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties. Trying to set classifications on an overridden property results in an error. |
 
 #### 200 OK response
 
