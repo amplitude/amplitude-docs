@@ -1932,7 +1932,7 @@ group_type=Group%201
 
 |<div class="big-column">Name</div>|Description|
 |-----|---------|
-|`group_type`|<span class="optional">Optional</span>. Name of the group type.  If `group_type` is present, Amplitude returns all group properties associated with this group type. If `group_type` isn't present, Amplitude returns all shared group properties in your tracking plan.|
+|`group_type`|<span class="optional">Optional</span>. Name of the group type. If `group_type` is present, Amplitude returns all group properties associated with this group type. If `group_type` isn't present, Amplitude returns all shared group properties in your tracking plan.|
 
 #### 200 OK response
 
