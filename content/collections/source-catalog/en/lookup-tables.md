@@ -40,6 +40,15 @@ To set up this integration, you need the following:
 4. Map your property.
 5. When you're done mapping, click **Finish**.
 
+{{partial:admonition type="note" heading="Lookup tables and Portfolio"}}
+If your project has Portfolio enabled, create a Lookup Table through Lookup Properties:
+
+1. In Amplitude Data, navigate to the *Properties* tab.
+2. On the Properties tab, navigate to *Lookup*.
+3. Click *+Create Lookup*.
+4. Upload a CSV file, and map the primary column to an Amplitude property.
+{{/partial:admonition}}
+
 ## Update a lookup table
 
 If you want to create a new lookup property or that mapped property is wrong, you can update the lookup table.
