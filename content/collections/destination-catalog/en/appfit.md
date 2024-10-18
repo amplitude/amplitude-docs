@@ -14,82 +14,54 @@ integration_category:
 partner_doc_link: 'https://support.appsflyer.com/hc/en-us/articles/211200306-Amplitude-integration-with-AppsFlyer'
 short_description: 'AppsFlyer helps brands make good choices for their business and their customers with its advanced measurement, data analytics, deep linking, engagement, fraud protection, data clean room, and privacy-preserving technologies.'
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713481965
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1729279891
 partner_maintained: false
 integration_icon: partner-icons/appfit.svg
 ---
-Amplitude CDP's AppsFlyer streaming integration enables you to forward your Amplitude events straight to [AppsFlyer](https://www.appsflyer.com/) with just a few clicks.
+Connect AppFit to your Amplitude account and get a top-level dashboard for your mobile phone, as well as weekly reminders to review your metrics. If you see a metric that doesn't look right, AppFit lets you flag it and add comments so everyone can discuss what's going on right from their phone.
 
+## Before you begin
+
+Keep these things in mind when sending events to AppFit:
+
+* You must enable this integration in each Amplitude project you want to use it in.
+* You need an AppFit account to enable this integration.
+* Amplitude sends selected user, event, and group properties along with the event.
 
 ## Setup
+For more detailed information on setting up this integration than what's contained in this section, see the Appfit documentation.
 
-### Prerequisites
+### Appfit setup
 
-To configure streaming from Amplitude to AppsFlyer, you need the following information from AppsFlyer.
+To configure an event streaming integration from Amplitude to Appfit, you need the Server Secret Key from Appfit.
 
-- **AppsFlyer S2S Key**: The AppsFlyer S2S Key used for authentication. See the [AppsFlyer documentation](https://support.appsflyer.com/hc/en-us/articles/360004562377-Managing-API-and-Server-to-server-S2S-tokens) for help locating your S2S Key.
-- **AppsFlyer App ID**: The AppsFlyer identifier for your app. It's located in AppsFlyer App Settings and can also be retrieved from the URL in your AppsFlyer Dashboards.
+### Amplitude setup
 
-### Create a new sync
+1. In Amplitude Data, navigate to *Catalog > Destinations*.
+2. In the Event Streaming section, click *Appfit*.
+3. Enter a sync name, then click *Create Sync*.
+4. Toggle *Status* from disabled to enabled.
+5. Paste your Appfit Server Secret Key.
+6. Toggle the *Send events* filter to select the events to send. You can send all events, but Amplitude recommends choosing only the most important ones.
+7. When finished, enable the destination and save.
 
-1. In Amplitude Data, click **Catalog** and select the **Destinations** tab.
-2. In the Event Streaming section, click **AppsFlyer**.
-3. Enter a sync name, then click **Create Sync**.
+## Typical use cases
 
-### Enter credentials
+### Early-stage teams
 
-1. Select your **AppsFlyer S2S Key**.
-2. Enter your **AppsFlyer App ID**.
+* Weekly metrics reviews for quick progress assessment
+* Team goal-setting and progress tracking for alignment and focus
+* Data automation from various sources to save time on data entry
 
-### Configure event forwarding
+### Mature development teams
 
-Under **Send Events**, make sure the toggle is enabled ("Events are sent to AppsFlyer") if you want to stream events to AppsFlyer. When enabled, events are automatically forwarded to AppsFlyer when they're ingested in Amplitude. Events aren't sent on a schedule or on-demand using this integration.
+* Focused metrics tracking to monitor specific product or business metrics
+* Customized goal-setting for tailored objectives
+* Progress visualization for data-driven decision making
 
-1. In **Select and filter events** choose which events you want to send. Choose only the events you need in AppsFlyer. _Transformed events aren't supported._
+### High-level executives
 
-{{partial:admonition type="warning" title="Events for non-AppsFlyer users not supported"}}
-AppsFlyer requires that all events have an **AppsFlyer ID** present. If you have selected any events to send to AppsFlyer that may not have an **AppsFlyer ID**, add a filter to send only events where the **AppsFlyer ID** is present. Otherwise, your delivery metrics may be affected.
-{{/partial:admonition}}
-
-2. In **Map properties to destination**:
-    _Transformed user properties aren't supported._
-
-    1. Select an Amplitude user property that corresponds to your [**AppsFlyer ID**](https://support.appsflyer.com/hc/en-us/articles/4408847686161-Device-identifiers#appsflyer-id), from the left dropdown.
-    2. (recommended) Map an Amplitude user property to [AppsFlyer **Customer User ID**](https://support.appsflyer.com/hc/en-us/articles/4408847686161-Device-identifiers#customer-user-id).
-        1. Select an Amplitude user property that corresponds to your AppsFlyer **Customer User ID**, from the left dropdown.
-        2. Select **Customer User ID**, from the corresponding right dropdown.
-    3. (recommended) Map Amplitude user properties to AppsFlyer device identifiers. It's recommended that you map Amplitude properties to as many of AppsFlyer [GAID, Amazon Advertising ID, OAID, and IMEI](https://support.appsflyer.com/hc/en-us/articles/4408847686161-Device-identifiers#android-device-identifiers) (for Android) or [IDFA and IDFV](https://support.appsflyer.com/hc/en-us/articles/4408847686161-Device-identifiers#apple-device-identifiers) (for Apple) as possible.
-        1. Select an Amplitude user property that corresponds to an AppsFlyer device identifier, from the left dropdown.
-        2. Select the AppsFlyer device identifier, from the corresponding right dropdown.
-    4. (optional) Map other Amplitude user properties to AppsFlyer properties.
-        1. Select an Amplitude user property that corresponds to an AppsFlyer property, from the left dropdown.
-        2. Select the AppsFlyer property, from the corresponding right dropdown.
-
-    See the full list of [AppsFlyer properties that are supported by Amplitude](#supported-appsflyer-properties).
-
-2. (optional) In **Select additional properties**, select any more event and user properties you want to send to AppsFlyer. If you don't select any properties here, Amplitude doesn't send any. These properties are sent to AppsFlyer as [AppsFlyer event values](https://dev.appsflyer.com/hc/reference/post_s2s_inappevent). _Transformed event properties and transformed user properties aren't supported._
-
-### Enable sync
-
-When satisfied with your configuration, at the top of the page toggle the **Status** to "Enabled" and click **Save**.
-
-### Supported AppsFlyer properties
-
-| Parameter Name        | Required              | Recommended         |
-|-----------------------|:---------------------:|:-------------------:|
-| **AppsFlyer ID**      | ✅   |                     |
-| Customer User ID      |                       | ✅ |
-| Advertising ID (GAID) |                       | ✅ |
-| Amazon AID            |                       | ✅ |
-| OAID                  |                       | ✅ |
-| IMEI                  |                       | ✅ |
-| IDFA                  |                       | ✅ |
-| IDFV                  |                       | ✅ |
-| AF Content ID         |                       |                     |
-| AF Content Type       |                       |                     |
-| AF Currency           |                       |                     |
-| AF Revenue            |                       |                     |
-| Event Currency        |                       |                     |
-| iOS ATTrackingManager |                       |                     |
-| IP Address            |                       |                     |
+* Weekly business overview with key metrics and trends
+* Goal tracking at a glance across departments or business units
+* Timely reminders and notifications to make informed decisions
