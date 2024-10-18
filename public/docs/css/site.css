@@ -2204,6 +2204,11 @@ line-height: 1.25rem;
     min-width: 200px;
     word-wrap: break-word;
     white-space: normal;
+}/* Basic styles for the image gallery */img.expandable-image {
+    /* width: 200px; */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }.hover\:h-6:hover {
   height: 1.5rem;
 }.hover\:h-8:hover {
