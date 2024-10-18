@@ -46,7 +46,6 @@ Warehouse-native Amplitude doesn't support the following [formulas](/docs/analyt
 
 * HIST
 * PERCENTILE
-* PROPCOUNT
 * ROLLWINBEFORE
 * CUMSUM
 * ACTIVE
