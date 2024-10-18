@@ -12,8 +12,8 @@ lede: |-
   The Taxonomy API grants Scholarship, Growth, and Enterprise users the ability to programmatically plan their event schema in the Taxonomy tab.
 
   The Taxonomy API lets you create, get, update, and delete categories, event types, event properties, and user properties.
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1716312370
+updated_by: 041236eb-2ea6-439c-908d-304b6af535e3
+updated_at: 1729030019
 summary: 'Create, get, update, and delete categories, event types, event properties, and user properties.'
 ---
 ## Considerations
@@ -117,7 +117,7 @@ A successful request returns a `200 OK` response with a JSON body:
 
 ```json
 {
-    "success" : true 
+    "success" : true
 }
 ```
 
@@ -218,7 +218,7 @@ This example get the ID for the event category named "Attribution".
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://amplitude.com/api/2/taxonomy/category/Attribution' \
---header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='    
+--header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
 {{partial:tab name="HTTP"}}
@@ -361,7 +361,7 @@ Delete an event category. Send a `DELETE` request with the category ID.
 
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
-```bash 
+```bash
 curl --location --request DELETE 'https://amplitude.com/api/2/taxonomy/category/:category_id' \
 -u '{api_key}:{secret_key}'
 ```
@@ -506,7 +506,7 @@ A successful request returns a `200 OK` response with a JSON body:
 
 ```json
 {
-    "success" : true 
+    "success" : true
 }
 ```
 
@@ -906,15 +906,15 @@ event_type=Onboard%20Start&event_property=Completed%20Task&type=boolean&is_requi
 
 |<div class="big-column">Name</div>|Description|
 |-----|---------|
-|`event_type`|<span class="required">Required</span>. String. Name of the event type to which the event properties belong to. |
 |`event_property`| <span class="required">Required</span>. String. Name of the event property.|
+|`event_type`|<span class="optional">Optional</span>. String. Name of the event type to which the event property belongs to. If the event property already exists on this event type, Amplitude returns a `409 Conflict` error. If the event property already exists but not on this event type, Amplitiude creates an override for this property. If the event property doesn't exist anywhere, Amplitude doesn't create an override for this property.|
 |`description`|<span class="optional">Optional</span>. String. The event property's description.|
-|`type`| <span class="optional">Optional</span>. String. Available with Govern Add-on. The event property's data type. Acceptable values are `string`, `number`, `boolean`, `enum`, and `any`|
-|`regex`| <span class="optional">Optional</span>. String. Available with Govern Add-on. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}`|
-|`enum_values`|<span class="optional">Optional</span>. String. Available with Govern Add-on. List of allowed values.|
-|`is_array_type`|<span class="optional">Optional</span>. Boolean. Available with Govern Add-on.|
-|`is_required`|<span class="optional">Optional</span>. Boolean. Available with Govern Add-on. Marks the property as required. When `true`, Amplitude flags events that are missing this property on the Taxonomy page in the web app.|
-
+|`type`| <span class="optional">Optional</span>. String. The event property's data type. Acceptable values are `string`, `number`, `boolean`, `enum`, and `any`|
+|`regex`| <span class="optional">Optional</span>. String. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}` Applies only to the `string` type.|
+|`enum_values`|<span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`. Only applicable to the `enum` type.|
+|`is_array_type`|<span class="optional">Optional</span>. Boolean. Use the `type` parameter to set the type of array elements.|
+|`is_required`|<span class="optional">Optional</span>. Boolean. Marks the property as required. When `true`, Amplitude flags events that are missing this property on the Taxonomy page in the web app.|
+|`classifications`|<span class="optional">Optional</span>. String. List of classifications applicable to this event property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties. Trying to set classifications on an overridden property results in an error. |
 
 #### 200 OK response
 
@@ -943,7 +943,7 @@ If there is a problem with your request, the request returns a `409 Conflict` st
 
 ### Get event properties
 
-Get an event's properties.
+Get shared or event-specific event properties.
 
 `GET https://amplitude.com/api/2/taxonomy/event-property`
 
@@ -1002,7 +1002,7 @@ event_type=Onboard%20Start
 
 |<div class="big-column">Name</div>|Description|
 |-----|---------|
-|`event_type`|<span class="required">Required</span>. Name of the event type to which the event properties belong to.|
+|`event_type`|<span class="optional">Optional</span>. Name of the event type to which the event properties belong to. If `event_type` is present, Amplitude returns all event properties associated with this event type. If `event_type` isn't present, Amplitude returns all shared event properties in your tracking plan.|
 
 #### 200 OK response
 
@@ -1020,7 +1020,8 @@ A successful request returns a `200 OK` status and a JSON body with a list of ev
             "regex": null,
             "enum_values": null,
             "is_array_type": false,
-            "is_required": false
+            "is_required": false,
+            "classifications": ["PII"]
         },
         {
             "event_property": "Completed Tutorial",
@@ -1030,7 +1031,8 @@ A successful request returns a `200 OK` status and a JSON body with a list of ev
             "regex": null,
             "enum_values": null,
             "is_array_type": false,
-            "is_required": false
+            "is_required": false,
+            "classifications": []
         }
     ]
 }
@@ -1038,7 +1040,7 @@ A successful request returns a `200 OK` status and a JSON body with a list of ev
 
 ### Get a single event property
 
-Get a single event property. Send a `GET` request with the event property name as a path parameter, and the event name in the body.
+Get a single event property. Send a `GET` request with the event property name as a path parameter and, optionally, the event name in the body.
 
 `GET https://amplitude.com/api/2/taxonomy/event-property`
 
@@ -1100,7 +1102,7 @@ event_type=Onboard%20Start
 
 |<div class="big-column">Name</div>|Description|
 |-----|---------|
-|`event_type`|<span class="required">Required</span>. Name of the event type to which the event properties belong to.|
+|`event_type`|<span class="optional">Optional</span>. Name of the event type to which the event properties belong to. If `event_type` is present, Amplitude returns all event properties associated with this event type.  If `event_type` isn't present, Amplitude returns all shared properties in your tracking plan.|
 
 #### 200 OK response
 
@@ -1117,7 +1119,8 @@ A successful request returns a  `200 OK` status and a JSON body containing infor
         "regex": null,
         "enum_values": null,
         "is_array_type": false,
-        "is_required": false
+        "is_required": false,
+        "classifications": ["PII"]
     }
 }
 ```
@@ -1205,14 +1208,16 @@ event_type=Onboard%20Start&description=User%20completed%20an%20onboarding%20task
 
 |<div class="big-column">Name</div>|Description|
 |-----|---------|
-|`event_type`|<span class="required">Required</span>. Name of the event type to which the event properties belong to.|
+|`event_type`|<span class="optional">Optional</span>. Name of the event type to which the event properties belong to. If the event property already exists on this event type, Amplitude returns a `409 Conflict` error. If the event property already exists but not on this event type, Amplitude creates an override for this property. If the event property doesn't exist anywhere, Amplitude doesn't create an override for this property.|
+|`overrideScope`|<span class="optional">Optional</span>. Determines how we should act on this event property. Only applicable if event_type is present. If `overrideScope` is not present, Amplitude updates property override on the event if it exists on the event, or the shared property if no override exists on the event. With `overrideScope: "override"`, Amplitude creates an override if none exists on the event, then updates that overridden property, or it updates the existing override if one already exists. With `overrideScope: "shared"`, Amplitude removes the property override on the event if one exists on the event, then updates the shared property, or updates the shared property if no property override exists.|
 |`description`|<span class="optional">Optional</span>. String. The event property's description.|
-|`new_event_property_value`|<span class="optional">Optional</span>. String. Available with Govern Add-on. The new name of the event property.|
-|`type`| <span class="optional">Optional</span>. String. Available with Govern Add-on. The event property's data type. Acceptable values are `string`, `number`, `boolean`, `enum`, and `any`|
-|`regex`|<span class="optional">Optional</span>. String. Available with Govern Add-on. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}` |
-|`enum_values`| <span class="optional">Optional</span>. String. Available with Govern Add-on. List of allowed values.|
-|`is_array_type`| <span class="optional">Optional</span>. Boolean. Available with Govern Add-on.|
-|`is_required`| <span class="optional">Optional</span>. Boolean. Available with Govern Add-on. Marks the property as required.|
+|`new_event_property_value`|<span class="optional">Optional</span>. String. The new name of the event property.|
+|`type`| <span class="optional">Optional</span>. String. The event property's data type. Acceptable values are `string`, `number`, `boolean`, `enum`, and `any`|
+|`regex`|<span class="optional">Optional</span>. String. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}` |
+|`enum_values`| <span class="optional">Optional</span>. String. List of allowed values.|
+|`is_array_type`| <span class="optional">Optional</span>. Boolean. Specifies whether the property value is an array.|
+|`is_required`| <span class="optional">Optional</span>. Boolean. Marks the property as required.|
+|`classifications`|<span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this event property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties, and trying to set classifications on an overridden property results in an error. With `overrideScope: "override"`, Amplitude returns an error for the same reason mentioned in the previous point. |
 
 #### 200 OK response
 
@@ -1241,7 +1246,7 @@ Some failed requests return a `409 Conflict` and an error message with more deta
 
 ### Delete an event property
 
-Delete an event property. Send a `DELETE` request with the event property as a path parameter and the event type in the request body. 
+Delete an event property. Send a `DELETE` request with the event property as a path parameter and the event type in the request body.
 
 `DELETE https://amplitude.com/api/2/taxonomy/event-property/:event-property`
 
@@ -1386,6 +1391,7 @@ user_property=User%20Type&description=Describes%20whether%20the%20user%20is%20a%
 |`regex`| <span class="optional">Optional</span>. String. Regular expression or custom regex used for pattern matching and more complex values. For example, 'zip code' property must have pattern `[0-9]{5}`.|
 |`enum_values`|<span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`.|
 |`is_array_type`|<span class="optional">Optional</span>. Boolean. Specifies whether the property value is an array.|
+|`classifications`|<span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this user property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. |
 
 #### Response
 
@@ -1393,13 +1399,13 @@ This request returns either a true or false response.
 
 ```json
 {
-    "success" : true 
+    "success" : true
 }
 ```
 
 ```json
 {
-    "success" : false 
+    "success" : false
 }
 ```
 
@@ -1439,7 +1445,8 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "type": null,
             "enum_values": null,
             "regex": null,
-            "is_array_type": false
+            "is_array_type": false,
+            "classifications": ["PII"]
         }, //[tl! collapse:start]
         {
             "user_property": "event_id",
@@ -1447,7 +1454,8 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "type": null,
             "enum_values": null,
             "regex": null,
-            "is_array_type": false
+            "is_array_type": false,
+            "classifications": []
         },
         {
             "user_property": "amplitude_id",
@@ -1455,7 +1463,8 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "type": null,
             "enum_values": null,
             "regex": null,
-            "is_array_type": false
+            "is_array_type": false,
+            "classifications": []
         },
         {
             "user_property": "location_lat",
@@ -1463,7 +1472,8 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "type": null,
             "enum_values": null,
             "regex": null,
-            "is_array_type": false
+            "is_array_type": false,
+            "classifications": []
         },
         {
             "user_property": "location_lng",
@@ -1471,7 +1481,8 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "type": null,
             "enum_values": null,
             "regex": null,
-            "is_array_type": false
+            "is_array_type": false,
+            "classifications": []
         },
         {
             "user_property": "server_upload_time",
@@ -1479,7 +1490,8 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "type": null,
             "enum_values": null,
             "regex": null,
-            "is_array_type": false
+            "is_array_type": false,
+            "classifications": []
         },
         {
             "user_property": "session_id",
@@ -1487,7 +1499,8 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "type": null,
             "enum_values": null,
             "regex": null,
-            "is_array_type": false
+            "is_array_type": false,
+            "classifications": []
         },
         {
             "user_property": "user_id",
@@ -1495,7 +1508,8 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "type": null,
             "enum_values": null,
             "regex": null,
-            "is_array_type": false
+            "is_array_type": false,
+            "classifications": []
         } //[tl! collapse:end]
     ]
 }
@@ -1549,7 +1563,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 |<div class="big-column">Name</div>|Description|
 |-----|---------|
-|`user_property`|<span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`|
+|`user_property`|<span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`.|
 
 
 #### 200 OK response
@@ -1565,7 +1579,8 @@ A successful request returns a `200 OK` response and a JSON body with user prope
         "type": null,
         "enum_values": null,
         "regex": null,
-        "is_array_type": false
+        "is_array_type": false,
+        "classifications": ["PII"]
     }
 }
 ```
@@ -1585,7 +1600,7 @@ A failed request returns a `404 Bad Request` status and an error message.
 }
 ```
 
-The Taxonomy API requires an **Enterprise plan**  account or the **Govern add-on** enabled. If your subscription doesn't qualify, the call results in a `404 Bad Request` response. 
+The Taxonomy API requires an **Enterprise plan**  account. If your subscription doesn't qualify, the call results in a `404 Bad Request` response.
 
 ### Update a user property
 
@@ -1617,7 +1632,7 @@ new_user_property_value=VALUE&description=DESCRIPTION
 {{/partial:tabs}}
 
 {{partial:collapse name="Example: Update a user property"}}
-This example updates a user property called "user_type" to be named "subscription_type", adds a description of "The user's subscription type", and changes the property's data type to `string`. The user property is prefixed with `gp:` in the path because it's a custom user property. 
+This example updates the `user_type` user property to be named `subscription_type`, adds a description of "The user's subscription type", and changes the property's data type to `string`. The user property is prefixed with `gp:` in the path because it's a custom user property.
 
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
@@ -1648,7 +1663,7 @@ new_user_property_value=subscription_type&description=The%20user's%20subscriptio
 
 |<div class="big-column">Name</div>|Description|
 |-----|---------|
-|`user_property`|<span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`|
+|`user_property`|<span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`.|
 
 #### Body parameters
 
@@ -1657,9 +1672,10 @@ new_user_property_value=subscription_type&description=The%20user's%20subscriptio
 |`new_user_property_value`| <span class="optional">Optional</span>. String. New name of the user property type.|
 |`description`| <span class="optional">Optional</span>. String. Details to add to the user property type.|
 |`type`|<span class="optional">Optional</span>. String. The user property's data type. Acceptable values are `string`, `number`, `boolean`, `enum`, and `any`.|
-|`regex`| <span class="optional">Optional</span>. String. Regular expression or custom regex used for pattern matching and more complex values. For example, 'zip code' property must have pattern `[0-9]{5}`.|
-|`enum_values`| <span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`.|
-|`is_array_type`|<span class="optional">Optional</span>. Boolean. Specifies whether the property value is an array.|
+|`regex`| <span class="optional">Optional</span>. String. Regular expression or custom regex used for pattern matching and more complex values. For example, 'zip code' property must have pattern `[0-9]{5}`. Only applicable to the `string` type.|
+|`enum_values`| <span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`. Only applicable to the `enum` type.|
+|`is_array_type`|<span class="optional">Optional</span>. Boolean. Specifies whether the property value is an array. Use the `type` parameter to set the type of array elements.|
+|`classifications`|<span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this user property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. |
 
 #### Response
 
@@ -1667,19 +1683,19 @@ This request returns either a true or false response.
 
 ```json
 {
-    "success" : true 
+    "success" : true
 }
 ```
 
 ```json
 {
-    "success" : false 
+    "success" : false
 }
 ```
 
 ### Delete a user property
 
-Deletes a single user property, by name. 
+Deletes a single user property, by name.
 
 `DELETE https://amplitude.com/api/2/taxonomy/user-property/USER_PROPERTY`
 
@@ -1726,7 +1742,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 |<div class="big-column">Name</div>|Description|
 |-----|---------|
-|`user_property`|<span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`|
+|`user_property`|<span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`.|
 
 #### 200 OK response
 
@@ -1748,6 +1764,407 @@ A failed request returns a `409 Bad Request` status and an error message.
     "errors": [
         {
             "message": "Attempted to remove a user property, \"sdf\", that is not a planned user property."
+        }
+    ]
+}
+```
+
+## Group property
+
+Group properties are properties at the account level. They apply to all users who belong to that account.
+
+### Create a group property
+
+Create a group property. Send a `POST` request to the endpoint with the required information in the body.
+
+`POST https://amplitude.com/api/2/taxonomy/group-property`
+
+{{partial:tabs tabs="cURL, HTTP"}}
+{{partial:tab name="cURL"}}
+```bash
+curl --location --request POST 'https://amplitude.com/api/2/taxonomy/group-property' \
+-u '{api_key}:{secret_key}' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'group_type=GROUP_TYPE' \
+--data-urlencode 'group_property=GROUP_PROPERTY' \
+```
+{{/partial:tab}}
+{{partial:tab name="HTTP"}}
+```bash
+POST /api/2/taxonomy/group-property HTTP/1.1
+Host: amplitude.com
+Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 94
+
+group_type=GROUP_TYPE&group_property=GROUP_PROPERTY
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+{{partial:collapse name="Example: Create a group property"}}
+This example creates the group property `Group Property 1` with the description "First group property" for the group `Group 1`. The group property is a boolean type.
+
+{{partial:tabs tabs="cURL, HTTP"}}
+{{partial:tab name="cURL"}}
+```bash
+
+curl --location --request POST 'https://amplitude.com/api/2/taxonomy/group-property' \
+--header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=' \
+--data-urlencode 'group_type=Group 1' \
+--data-urlencode 'group_property=Group Property 1' \
+--data-urlencode 'description=First Group Property' \
+--data-urlencode 'type=boolean'
+
+```
+{{/partial:tab}}
+{{partial:tab name="HTTP"}}
+```bash
+
+POST /api/2/taxonomy/group-property HTTP/1.1
+Host: amplitude.com
+Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
+
+Content-Length: 144
+
+group_type=Group%201&group_property=Group%20Property%201&type=boolean&description=First%20Group%20Property
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+{{/partial:collapse}}
+
+#### Body parameters
+
+|<div class="big-column">Name</div>|Description|
+|-----|---------|
+|`group_property`| <span class="required">Required</span>. String. Name of the group property. Prefix custom group properties with `grp:`.|
+|`group_type`|<span class="optional">Optional</span>. String. Name of the group type the group property belongs to. If the group type doesn't exist, Amplitude returns a `404 Not Found` error. If the group property already exists on this group type, Amplitude returns a `409 Conflict` error. If the group property already exists but not on this group type, Amplitude creates an override for this property. If the group property doesn't exist anywhere, Amplitude doesn't create an override for this property. If the group property exists and is an Amplitude-sourced group property, providing any extra arguments other than `group_property` and `group_type` results in an error because you can't edit Amplitude-sourced group properties. |
+|`description`|<span class="optional">Optional</span>. String. The group property's description.|
+|`type`| <span class="optional">Optional</span>. String. Data type of the group property. It must be one of `any` (default), `string` (default if array type is true), `number`, `boolean`, `enum`|
+|`regex`| <span class="optional">Optional</span>. String. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}` Applies only to the `string` type.|
+|`enum_values`|<span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`. Only applicable to the `enum` type.|
+|`is_array_type`|<span class="optional">Optional</span>. Boolean. Property is an array type.  Use the `type` parameter to set the type of array elements. |
+|`classifications`|<span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this group property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties, and trying to set classifications on an overridden property results in an error. |
+
+#### 200 OK response
+
+A successful request returns a `200 OK` status and a JSON body.
+
+```json
+{
+    "success": true
+}
+```
+
+#### 409 conflict response
+
+If there's a problem with your request, the request returns a `409 Conflict` status and a JSON body with more information.
+
+```json
+{
+    "success": false,
+    "errors": [
+        {
+            "message": "Attempted to add a group property, \"Group Property 1\", that already exists."
+        }
+    ]
+}
+```
+
+### Get group properties
+
+Get shared or group-specific group properties.
+
+`GET https://amplitude.com/api/2/taxonomy/group-property`
+
+{{partial:tabs tabs="cURL, HTTP"}}
+{{partial:tab name="cURL"}}
+```bash
+
+curl --location --request GET 'https://amplitude.com/api/2/taxonomy/group-property' \
+-u '{api_key}:{secret_key}' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'group_type=GROUP_TYPE'
+```
+{{/partial:tab}}
+{{partial:tab name="HTTP"}}
+```bash
+
+GET /api/2/taxonomy/group-property HTTP/1.1
+Host: amplitude.com
+Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
+
+group_type=GROUP_TYPE
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+{{partial:collapse name="Example: get all of a group's properties"}}
+This example gets all group properties for the "Group 1" group type.
+
+{{partial:tabs tabs="cURL, HTTP"}}
+{{partial:tab name="cURL"}}
+```bash
+
+curl --location --request GET 'https://amplitude.com/api/2/taxonomy/group-property' \
+--header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA==' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'group_type=Group 1'
+
+```
+{{/partial:tab}}
+{{partial:tab name="HTTP"}}
+```bash
+
+GET /api/2/taxonomy/group-property HTTP/1.1
+Host: amplitude.com
+Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA==
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 26
+
+group_type=Group%201
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+{{/partial:collapse}}
+
+#### Body parameters
+
+|<div class="big-column">Name</div>|Description|
+|-----|---------|
+|`group_type`|<span class="optional">Optional</span>. Name of the group type. If `group_type` is present, Amplitude returns all group properties associated with this group type. If `group_type` isn't present, Amplitude returns all shared group properties in your tracking plan.|
+
+#### 200 OK response
+
+A successful request returns a `200 OK` status and a JSON body with a list of group properties and their data.
+
+```json
+{
+    "success": true,
+    "data": [
+        {
+            "group_type": "Group 1",
+            "group_property": "grp:Group Property 1",
+            "description": "First Group Property",
+            "type": "string",
+            "enum_values": null,
+            "regex": null,
+            "is_array_type": false,
+            "classifications": ["PII"]
+        },
+        {
+            "group_type": "Group 1",
+            "group_property": "grp:Group Property 2",
+            "description": "Second Group Property",
+            "type": "string",
+            "enum_values": null,
+            "regex": null,
+            "is_array_type": false,
+            "classifications": []
+        },
+    ]
+}
+```
+
+### Get a single group property
+
+Get a single group property. Send a `GET` request with the group property name as a path parameter and, optionally, the group type in the body.
+
+`GET https://amplitude.com/api/2/taxonomy/group-property/:group_property`
+
+{{partial:tabs tabs="cURL, HTTP"}}
+{{partial:tab name="cURL"}}
+```bash
+curl --location --request GET 'https://amplitude.com/api/2/taxonomy/group-property/GROUP_PROPERTY' \
+-u '{api_key}:{secret_key}' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'group_type=GROUP_TYPE'
+```
+{{/partial:tab}}
+{{partial:tab name="HTTP"}}
+```bash
+GET /api/2/taxonomy/group-property/GROUP_PROPERTY HTTP/1.1
+Host: amplitude.com
+Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
+
+group_type=GROUP_TYPE
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+{{partial:collapse name="Example: Get a property from a specific group type"}}
+This example gets a group property named `Group Property 1` for the `Group 1` group type.
+
+{{partial:tabs tabs="cURL, HTTP"}}
+{{partial:tab name="cURL"}}
+```bash
+
+curl --location --request GET 'https://amplitude.com/api/2/taxonomy/group-property/grp%3AGroup%20Property%201 \
+--header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'group_type=Group 1'
+```
+{{/partial:tab}}
+{{partial:tab name="HTTP"}}
+```bash
+
+GET /api/2/taxonomy/group-property/grp%3AGroup%20Property%201 HTTP/1.1
+Host: amplitude.com
+Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA==
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 26
+
+group_type=Group%201
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+{{/partial:collapse}}
+
+#### Path parameters
+
+|<div class="big-column">Name</div>|Description|
+|-----|---------|
+|`group_property`|<span class="required">Required</span>. The group property name. Prefix custom group properties with `grp:`.|
+
+#### Query or Body parameter
+
+|<div class="big-column">Name</div>|Description|
+|-----|---------|
+|`group_type`|<span class="optional">Optional</span>. Name of the group type. If `group_type` is provided, we return all group properties associated with this group type. If `group_type` is not provided, we return all shared group properties in your tracking plan.|
+
+#### 200 OK response
+
+A successful request returns a  `200 OK` status and a JSON body containing information about the group property.
+
+```json
+{
+    "success": true,
+    "data": {
+            "group_type": "Group 1",
+            "group_property": "grp:Group Property 1",
+            "description": "First Group Property",
+            "type": "string",
+            "enum_values": null,
+            "regex": null,
+            "is_array_type": false,
+            "classifications": ["PII"]
+    },
+}
+```
+
+#### 400 Bad Request response
+
+If Amplitude can't find the group property, or you configure the request incorrectly, it returns a `400 Bad Request` response and an error message.
+
+```json
+{
+    "success": false,
+    "errors": [
+        {
+            "message": "Not found"
+        }
+    ]
+}
+```
+
+### Update group property
+
+Update a group property.
+
+`PUT https://amplitude.com/api/2/taxonomy/group-property/:group_property`
+
+{{partial:tabs tabs="cURL, HTTP"}}
+{{partial:tab name="cURL"}}
+```bash
+curl --location --request PUT 'https://amplitude.com/api/2/taxonomy/group-property/GROUP_PROPERTY' \
+-u '{api_key}:{secret_key}' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'group_type=GROUP_TYPE' \
+```
+{{/partial:tab}}
+{{partial:tab name="HTTP"}}
+```bash
+
+PUT /api/2/taxonomy/group-property/GROUP_PROPERTY HTTP/1.1
+Host: amplitude.com
+Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 24
+
+group_type=GROUP_NAME
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+{{partial:collapse name="Example: Update a group property"}}
+This example updates the "Group Property 1" property. It changes the name to "Group Property 1 - Renamed" and adds a description.
+
+{{partial:tabs tabs="cURL, HTTP"}}
+{{partial:tab name="cURL"}}
+```bash
+
+curl --location --request PUT 'https://amplitude.com/api/2/taxonomy/group-property/grp:Group Property 1' \
+--header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA==' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'description=First Group Property Updated' \
+--data-urlencode 'new_group_property_value=grp:Group Property - Renamed' \
+```
+{{/partial:tab}}
+{{partial:tab name="HTTP"}}
+```bash
+
+PUT /api/2/taxonomy/group-property/grp:Group Property 1 HTTP/1.1
+Host: amplitude.com
+Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA==
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 130
+
+group_type=Group%201&description=First%20Group%20Property%20Updated&new_group_property_value=grp%3AGroup%20Property%201%20Renamed
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+{{/partial:collapse}}
+
+#### Path parameters
+
+|<div class="big-column">Name</div>|Description|
+|-----|---------|
+|`group_property`|<span class="required">Required</span>. Name of the group property.  Prefix custom group properties with `grp:`. Amplitude-sourced group properties (names without the `grp:` prefix) aren't editable. |
+
+#### Body parameters
+
+|<div class="big-column">Name</div>|Description|
+|-----|---------|
+|`group_type`|<span class="optional">Optional</span>. Name of the group type the group property belongs to.  If the group type doesn't exist, Amplitude returns a `404 Not Found` error. |
+|`overrideScope`|<span class="optional">Optional</span>. Determines how we should act on this group property.  Only applicable if `group_type` is present. If `overrideScope` is not present, Amplitude updates property override on the group type if it exists on the group type, or the shared property if no override exists on the group type. With `overrideScope: "override"`, Amplitude creates an override if none exists on the group type, then updates that overridden property, or updates the existing override if one already exists. With `overrideScope: "shared"`, Amplitude removes the property override on the group type if one exists on the group type, then updates the shared property, or it updates the shared property if no property override exists.|
+|`description`|<span class="optional">Optional</span>. String. Description of the group property.|
+|`new_group_property_value`|<span class="optional">Optional</span>. String. The new name of the group property.|
+|`type`| <span class="optional">Optional</span>. String. Data type of the group property. It must be one of `any` (default), `string` (default if array type is true), `number`, `boolean`, `enum`|
+|`regex`|<span class="optional">Optional</span>. String. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}`  Applies only to the `string` type.|
+|`enum_values`| <span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`. Only applicable to the `enum` type.|
+|`is_array_type`| <span class="optional">Optional</span>. Boolean. Property is an array type. Use the `type` parameter to set the type of array elements.|
+|`classifications`|<span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this group property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties. Trying to set classifications on an overridden property results in an error. |
+
+#### 200 OK response
+
+A successful request returns a `200 OK` status and a JSON body.
+
+```json
+{
+    "success": true
+}
+```
+
+#### 409 conflict response
+
+Some failed requests return a `409 Conflict` and an error message with more details.
+
+```json
+{
+    "success": false,
+    "errors": [
+        {
+            "message": "Attempted to update classifications for an overridden group property, \"grp:Group Property 1\" on group type \"Group 1\". Call the Update API without the \"group_type\" parameter to update classifications of the shared property."
         }
     ]
 }
