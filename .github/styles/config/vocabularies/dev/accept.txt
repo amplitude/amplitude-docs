@@ -246,3 +246,4 @@ Wix
 Squarespace
 Clickthrough
 [Aa]utocapture
+Appfit
