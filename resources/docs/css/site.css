@@ -1004,3 +1004,11 @@ th {
     word-wrap: break-word;
     white-space: normal;
 }
+
+/* Basic styles for the image gallery */
+img.expandable-image {
+    /* width: 200px; */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
