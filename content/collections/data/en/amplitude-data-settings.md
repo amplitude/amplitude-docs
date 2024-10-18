@@ -35,7 +35,7 @@ Make sure you’ve configured your settings **before** setting up your first Amp
 | Member  | Modify the tracking plan for approval                                                     |
 | Viewer  | View the tracking plan and comment                                                        |
 
-You may also limit data management access while keeping role permissions the same within certain projects. See [The Permissions Tab](#the-permissions-tab) for more details.
+You may also restrict data management access while keeping permissions the same for other areas of Amplitude. See [The Permissions Tab](#the-permissions-tab) for more details.
 
 {{partial:admonition type="info" heading=""}}
 If you disable the _Require team reviews to make changes to the main branch_ option in the project settings, members can modify the tracking plan; however, receiving approval would no longer be required. All other permissions remain the same.
