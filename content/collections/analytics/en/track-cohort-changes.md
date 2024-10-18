@@ -16,19 +16,19 @@ Cohort population over time is part of Amplitude's [Behavioral Cohorts](/docs/an
 
 To view changes in a cohort population over time, navigate to the Cohort Details page and scroll below the cohort definition:
 
-![population over time.png](/docs/output/img/analytics/population over time.png)
+![population over time](/docs/output/img/analytics/population-over-time.png)
 
-Cohort population over time will show you, as a time series, the **number of users** who meet a cohort definition on each day over a predefined time.
+Cohort population over time shows, as a time series, the **number of users** who meet a cohort definition on each day over a predefined time.
 
 Let’s say you want to define a [behavioral cohort](/docs/analytics/behavioral-cohorts) of power users as those who have triggered at least 50 active events in the past 30 days:
 
 ![Cohort_Pop_2.png](/docs/output/img/analytics/Cohort_Pop_2.png)
 
-There are 15,391 users in this cohort. The cohort population over time graph will show you what that number was each day, over the past 30 days:
+There are 15,391 users in this cohort. The cohort population over time graph shows you what that number was each day, over the past 30 days:
 
 ![pasted_image_0.png](/docs/output/img/analytics/pasted_image_0.png)
 
-In the graph above, the number of users who met the criteria for the 30-day period ending September 6 was 14,988. This means 14,988 users fired more than 50 active events between 7 August and 6 September. From the graph, you can see your power user cohort population has been steady over the last month. Knowing this will help you assess the effectiveness of any campaigns or releases from your team.
+In the graph above, the number of users who met the criteria for the 30-day period ending September 6 was 14,988. This means 14,988 users fired more than 50 active events between 7 August and 6 September. From the graph, you can see your power user cohort population has been steady over the last month. Knowing this can help you assess the effectiveness of any campaigns or releases from your team.
 
 Cohort population over time can also help in other situations:
 
@@ -43,13 +43,13 @@ Cohort population over time can also help in other situations:
 
 **Can I adjust the date range or level of detail?**
 
-Unfortunately, not at this time.
+No, this isn't available.
 
 **I don’t see cohort population under my cohort. Is this expected?**
 
-Cohort population is only supported for **dynamic cohorts**, i.e. cohorts that can be recomputed according to specified criteria. It is not supported for static cohorts. Examples of static cohorts include those imported from a CSV file, or created using Microscope within charts.
+Cohort population is only supported for **dynamic cohorts**, or, cohorts that can Amplitude can recompute according to specified criteria. It doesn't support static cohorts. Examples of static cohorts include those imported from a CSV file, or created using Microscope within charts.
 
-Additionally, the following cohorts are not supported:
+Additionally, the following cohorts aren't supported:
 
 * cohorts that contain "had user property most recently" in the definition
 * cohorts that have more than 10 OR clauses in the definition
