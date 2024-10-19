@@ -95,13 +95,13 @@ For any unplanned events, event properties, event property types, user propertie
 
 Click _Save_ to implement any changes you make to your schema settings.
 
-## The Permissions Tab
+## The Permissions tab
 
 Your company may want to limit the number of people who have access to perform Data Management functions. For example, you may want most of your users to have the Member role so they can create dashboards and charts but prefer that custom event creation and other data management features be limited to managers or administrators.
 
 In the permissions tab, you can add additional restrictions for selected roles, limiting data management access while keeping other permissions for those roles.
 
-Under Restrict access in Amplitude Data, you can specify from the following options to restrict permissions to the viewer level on a per-project basis:
+Under Restrict access in Amplitude Data, specify from the following options to restrict permissions to the viewer level on a per-project basis:
 
 - Use Default Restrictions
 - Restrict Members
@@ -111,6 +111,6 @@ Then, click _Save_.
 
 The Permissions tab is only visible to admins and permission restrictions cannot be applied to admins themselves.
 
-### Copy to Other Projects
+### Copy to other projects
 
-You can also copy current permission restriction settings to other projects by clicking on the _Copy to Other Projects_ button. To copy settings, select the desired projects and click _Save_.
+Click _Copy to Other Projects_ to apply the current permission restriction settings to another project.
