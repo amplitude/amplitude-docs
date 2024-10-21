@@ -109,7 +109,7 @@ Under Restrict access in Amplitude Data, specify from the following options to r
 
 Then, click _Save_.
 
-The Permissions tab is only visible to admins and permission restrictions cannot be applied to admins themselves.
+Permission restrictions are available for Enterprise customers only and the Permissions tab is only visible to administrators.
 
 ### Copy to other projects
 
