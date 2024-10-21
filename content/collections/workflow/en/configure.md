@@ -26,7 +26,7 @@ To create a deployment follow these steps:
 * **Client-side**: These deployments run on a client device, such as a web browser or mobile app. The deployment key associated with client deployments is publicly viewable and should be used in client-side SDKs.
 * **Server-side:** These deployments run on a server you control, such as a web server or batch processing system. Keep the deployment key associated with server deployments secret and use it server-side SDKs. Server-side keys can access the REST API for flag evaluation. If, instead of running a full-blown experiment, you only need to evaluate flags using the REST API, you should create a server-side deployment.
 
-1. Click *Add Deployment*. Amplitude Experiment creates your deployments and automatically generate keys to copy and use.
+4. Click *Add Deployment*. Amplitude Experiment creates your deployments and automatically generate keys to copy and use.
 
 ## Install the SDK
 
