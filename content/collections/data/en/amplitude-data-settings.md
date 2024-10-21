@@ -97,9 +97,9 @@ Click _Save_ to implement any changes you make to your schema settings.
 
 ## The Permissions tab
 
-Your company may want to limit the number of people who have access to perform Data Management functions. For example, you may want most of your users to have the Member role so they can create dashboards and charts but prefer that custom event creation and other data management features be limited to managers or administrators.
+With data permissions restrictions, you can limit who can perform Data Management functions. For example, you might want most of your users to have the Member role so they can create dashboards and charts, but limit custom event creation and other data management features to managers or administrators.
 
-In the permissions tab, you can add additional restrictions for selected roles, limiting data management access while keeping other permissions for those roles.
+In the permissions tab, you can add additional restrictions for selected roles, limiting data management access while keeping other permissions unchanged for those roles.
 
 Under Restrict access in Amplitude Data, specify from the following options to restrict permissions to the viewer level on a per-project basis:
 
