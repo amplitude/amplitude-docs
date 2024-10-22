@@ -159,19 +159,19 @@ Where `W` is your winsorization value.
 
 All the methods discussed for `sum of property` events work for `average of property` events; simply replace `sum` with `average`.
 
-#### Funnel totals
+### Funnel totals
 
 Approximate this as totals of the last step of the funnel. 
 
-#### Sum of last step of funnel
+### Sum of last step of funnel
 
 Approximate this as a prop sum of the last step of the funnel. 
 
-#### Prop min / prop max
+### Prop min / prop max
 
 Cohorts don’t support prop min or prop max; however, computations do. Add filters on computations in the segment controls to access them. 
 
-#### Winsorization in Experiment
+## Winsorization in Experiment
 
 Amplitude Experiment supports max winsorization for all metric types except uniques, funnel uniques, and retention. This is only available for users on Enterprise plans. 
 
