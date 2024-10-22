@@ -50,7 +50,7 @@ Don't name your variants **OFF**. This is a reserved name for fallbacks in Ampli
 
 Continuing from the previous section, you can now use the flag you've created to roll out a new feature.
 
-1. In the *Allocation* panel, you can define **user segments** that will see your new feature, specify the percentage of users you’ll roll it out to.
+1. In the *Assignment* panel, you can define **user segments** that will see your new feature, specify the percentage of users you’ll roll it out to.
 
     Defining a user segment is useful if you’d like to limit your rollout to users in a specific geographical location, or those who belong to certain demographic groups, or those who meet certain usage thresholds in your product (for example power users).
 
