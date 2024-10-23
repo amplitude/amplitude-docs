@@ -163,8 +163,7 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 | --- | --- | --- |
 | `debug` | Set to `true` to enable debug logging. | `false` |
 | `serverZone` | The Amplitude data center to use. Either `ServerZone.US` or `ServerZone.EU`. | `ServerZone.US` |
-| `serverUrl` | The cohort server endpoint from which to fetch cohort data. For hitting the EU data center, set `serverZone` to `ServerZone.EU`.
-Setting this value will override serverZone defaults. | `https://api.lab.amplitude.com` |
+| `serverUrl` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
 | `fetchTimeoutMillis` |  The timeout for fetching variants in milliseconds. This timeout only applies to the initial request, not subsequent retries | `500` |
 | `fetchRetries` | The number of retries to attempt if a request to fetch variants fails. | `1` |
 | `fetchRetryBackoffMinMillis` | The minimum (initial) backoff after a request to fetch variants fails. This delay is scaled by the `fetchRetryBackoffScalar` | `0` |
