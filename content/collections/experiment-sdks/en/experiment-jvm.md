@@ -163,7 +163,8 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 | --- | --- | --- |
 | `debug` | Set to `true` to enable debug logging. | `false` |
 | `serverZone` | The Amplitude data center to use. Either `ServerZone.US` or `ServerZone.EU`. | `ServerZone.US` |
-| `serverUrl` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
+| `serverUrl` | The cohort server endpoint from which to fetch cohort data. For hitting the EU data center, set `serverZone` to `ServerZone.EU`.
+Setting this value will override serverZone defaults. | `https://api.lab.amplitude.com` |
 | `fetchTimeoutMillis` |  The timeout for fetching variants in milliseconds. This timeout only applies to the initial request, not subsequent retries | `500` |
 | `fetchRetries` | The number of retries to attempt if a request to fetch variants fails. | `1` |
 | `fetchRetryBackoffMinMillis` | The minimum (initial) backoff after a request to fetch variants fails. This delay is scaled by the `fetchRetryBackoffScalar` | `0` |
@@ -178,7 +179,8 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 | `secretKey` | The analytics secret key                                                                             | *required* |
 | `maxCohortSize` | The maximum size of cohort that the SDK will download. Cohorts larger than this size won't download. | `2147483647` |
 | `cohortPollingIntervalMillis` | The interval, in milliseconds, to poll Amplitude for cohort updates (60000 minimum).                 | `60000` |
-| `cohortServerUrl`                  | The host to fetch local evaluation cohorts from.                                                     | `https://cohort-v2.lab.amplitude.com` |
+| `cohortServerUrl`                  | The cohort server endpoint from which to fetch cohort data. For hitting the EU data center, set `serverZone` to `ServerZone.EU`.
+Setting this value will override `serverZone` defaults.                                                     | `https://cohort-v2.lab.amplitude.com` |
 
 ### Fetch
 

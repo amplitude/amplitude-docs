@@ -269,7 +269,8 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 | `secretKey`                        | The analytics secret key                                                                                     | *required* |
 | `maxCohortSize`                    | The maximum size of cohort that the SDK will download. Cohorts larger than this size will not be downloaded. | `2147483647` |
 | `cohortPollingIntervalMillis`      | The interval, in milliseconds, to poll Amplitude for cohort updates (60000 minimum).                         | `60000` |
-| `cohortServerUrl`                  | The host to fetch local evaluation cohorts from.                                                             | `https://cohort-v2.lab.amplitude.com` |
+| `cohortServerUrl`                  | The cohort server endpoint from which to fetch cohort data. For hitting the EU data center, set `serverZone` to `eu`.
+Setting this value will override `serverZone` defaults.                                                             | `https://cohort-v2.lab.amplitude.com` |
 
 ### Start
 
