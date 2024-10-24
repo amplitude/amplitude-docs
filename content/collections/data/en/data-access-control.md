@@ -40,6 +40,10 @@ DAC applies only to properties. It **doesn’t** apply to definitions or metadat
 3. In the details panel that opens, click the *Classification* drop-down and select all relevant classifications for this property. Then click *Send*.
 4. Repeat steps 2 and 3 for each property you want to classify.
 
+{{partial:admonition type="warning" heading="Classifying the User ID property"}}
+If you classify `user_id`, users without access to that classification can't use [Event Explorer](/docs/analytics/charts/event-explorer).
+{{/partial:admonition}}
+
 ### Set up permissions
 
 1. Navigate to *Settings > Organization settings > Groups* and click the name of the group you’re interested in. You can also [create a new group](/docs/admin/account-management/manage-permission-groups#create-a-group).
