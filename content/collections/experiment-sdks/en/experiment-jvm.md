@@ -172,12 +172,14 @@ If you're using Amplitude's EU data center, configure the `serverZone` option on
 
 **CohortSyncConfig**
 
-| <div class="big-column">Name</div> | Description | Default Value |
-| --- | --- | --- |
-| `apiKey` | The analytics API key and NOT the experiment deployment key | *required* |
-| `secretKey` | The analytics secret key | *required* |
+| <div class="big-column">Name</div> | Description                                                                                          | Default Value |
+| --- |------------------------------------------------------------------------------------------------------| --- |
+| `apiKey` | The analytics API key and NOT the experiment deployment key                                          | *required* |
+| `secretKey` | The analytics secret key                                                                             | *required* |
 | `maxCohortSize` | The maximum size of cohort that the SDK will download. Cohorts larger than this size won't download. | `2147483647` |
-| `cohortPollingIntervalMillis` | The interval, in milliseconds, to poll Amplitude for cohort updates (60000 minimum). | `60000` |
+| `cohortPollingIntervalMillis` | The interval, in milliseconds, to poll Amplitude for cohort updates (60000 minimum).                 | `60000` |
+| `cohortServerUrl`                  | The cohort server endpoint from which to fetch cohort data. For hitting the EU data center, set `serverZone` to `ServerZone.EU`.
+Setting this value will override `serverZone` defaults.                                                     | `https://cohort-v2.lab.amplitude.com` |
 
 ### Fetch
 
