@@ -45,7 +45,7 @@ To generate and view experimental results, follow these steps:
   
     To learn more about exposure events, see [this article in the Amplitude Developer Center](/docs/feature-experiment/under-the-hood/event-tracking).  
       
-    You can see the chart definition by clicking on the "Chart Controls" button.
+Click _Chart Controls_ to see the chart definition. 
       
     You can also create a chart in Amplitude Analytics from this experiment by clicking *Open in Chart*.  
       
