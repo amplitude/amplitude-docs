@@ -9,9 +9,11 @@ integration_type:
 partner_maintained: false
 integration_icon: partner-icons/hubspot.svg
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 source: 'https://www.docs.developers.amplitude.com/data/destinations/hubspot-event-streaming-v2/'
-updated_at: 1722034306
+updated_at: 1729799671
+integration_category:
+  - marketing-automation
 ---
 [HubSpot](https://www.hubspot.com/) is an easy to use and powerful CRM platform that enables scaling companies to sell, market and provide customer service from a unified UI. Amplitude's HubSpot streaming integration enables you to forward your Amplitude events and event properties straight to HubSpot with just a few clicks.
 
