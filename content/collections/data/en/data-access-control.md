@@ -19,11 +19,16 @@ For example, when an unauthorized user tries to view a chart that includes restr
 Organization admins always have access to all data classifications, regardless of any DAC restrictions.
 {{/partial:admonition}}
 
-When a user encounters a chart they’re unable to view because of the presence of restricted data, Amplitude specifies the properties or cohorts DAC has blocked. 
+When a user encounters a chart they can't view because of the presence of restricted data, Amplitude specifies the properties or cohorts DAC has blocked. 
 
 ![chart_with_pii.png](/docs/output/img/account-management/chart_with_pii.png)
 
-The user can then exclude the restricted data and view the chart (or cohort, dashboard, notebook, or user session) without it.
+They can then exclude the restricted data and view the chart (or cohort, dashboard, notebook, or user session) without it.
+
+With DAC enabled, Amplitude hides properties that you classify from the Event Stream and User or Account lookup pages. When your project's users encounter classified data, Amplitude displays the value as `[DAC Restricted]`.
+
+The same restrictions apply to Ask Amplitude.
+
 
 ## Set access for specific categories of sensitive data
 
