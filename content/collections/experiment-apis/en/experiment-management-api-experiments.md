@@ -979,6 +979,10 @@ curl --request DELETE \
 
 ## Edit
 
+{{partial:admonition type='note'}}
+We do not currently support editing web experiments.
+{{/partial:admonition}}
+
 ```bash
 PATCH https://experiment.amplitude.com/api/1/experiments/{id}
 ```
@@ -1097,7 +1101,7 @@ curl --request PATCH \
 POST https://experiment.amplitude.com/api/1/experiments
 ```
 
-Create a new experiment.
+Create a new feature experiment.
 
 ### Request body
 
