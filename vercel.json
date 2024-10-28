@@ -93,7 +93,7 @@
     },
     {
       "destination": "/docs/data/destination-catalog/marketo",
-      "source": "/data/destinations/marketo-cohort",
+      "source": "/docs/data/destinations/marketo-cohort",
       "statusCode": 301
     },
     {
