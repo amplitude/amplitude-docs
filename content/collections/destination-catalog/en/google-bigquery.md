@@ -135,3 +135,21 @@ The Merged User table schema contains the following:
 | `merge_event_time`                   | TIMESTAMP    | The time of the event a user's new Amplitude ID was associated with their original Amplitude ID.             |
 | `merge_server_time`                  | TIMESTAMP    | The server time of the event when a user's new Amplitude ID was associated with their original Amplitude ID. |
 | `merged_amplitude_id`                | NUMBER(38,0) | The originally assigned Amplitude ID when the user is first created.                                         |
+
+## BigQuery deduplication table
+
+To create a deduplication table in BigQuery:
+
+```sql
+CREATE OR REPLACE TABLE FUNCTION `amplitude_bq_ingestion`.deduplicated_EVENTS(start_date DATE, end_date DATE)
+AS
+SELECT *
+FROM (SELECT *,
+             ROW_NUMBER() OVER (
+                 PARTITION BY uuid
+                 ) rn
+      FROM `amplitude_bq_ingestion`.`EVENTS`
+      WHERE DATE(event_time) >= start_date
+        and DATE(event_time) <= end_date) t
+WHERE rn = 1;
+```
