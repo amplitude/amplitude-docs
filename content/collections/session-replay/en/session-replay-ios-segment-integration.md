@@ -22,6 +22,10 @@ If you use Segment using other options, choose the [standalone implementation](/
 
 Session Replay captures changes to an app's view tree, this means the main view and all it's child views recursively. It then replays these changes to build a video-like replay. For example, at the start of a session, Session Replay captures a full snapshot of the app's view tree. As the user interacts with the app, Session Replay captures each change to the view as a diff. When you watch the replay of a session, Session Replay applies each diff back to the original view tree in sequential order, to construct the replay. Session replays have no maximum length.
 
+{{partial:admonition type="tip" heading="Report issues"}}
+To report issues with Session Replay for iOS, see the [AmplitudeSessionReplay-ios GitHub repository](https://github.com/amplitude/AmplitudeSessionReplay-ios).
+{{/partial:admonition}}
+
 ## Before you begin
 
 Use the latest version of the Session Replay iOS Segment Plugin above `{{sdk_versions:session_replay_ios}}`.

@@ -20,6 +20,10 @@ If you use Segment through their Analytics-Swift SDK and [Amplitude (Actions) de
 
 {{partial:partials/session-replay/sr-ios-performance}}
 
+{{partial:admonition type="tip" heading="Report issues"}}
+To report issues with Session Replay for iOS, see the [AmplitudeSessionReplay-ios GitHub repository](https://github.com/amplitude/AmplitudeSessionReplay-ios).
+{{/partial:admonition}}
+
 ## Before you begin
 
 Use the latest version of the Session Replay SDK above version `{{sdk_versions:session_replay_ios}}`. For a list of available versions, see the [release versions](https://github.com/amplitude/AmplitudeSessionReplay-iOS/tags) on GitHub.
