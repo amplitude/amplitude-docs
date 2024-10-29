@@ -14,6 +14,10 @@ parent: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
 
 This article covers the installation of Session Replay for Android using the standalone SDK. If you use a provider other than Amplitude for in-product analytics, choose this option. If your app is already instrumented with Amplitude Android SDK, use the [Session Replay Android SDK Plugin](/docs/session-replay/session-replay-android-plugin).
 
+{{partial:admonition type="tip" heading="Report issues"}}
+To report issues with Session Replay for Android, see the [AmplitudeSessionReplay-Android GitHub repository](https://github.com/amplitude/AmplitudeSessionReplay-Android).
+{{/partial:admonition}}
+
 {{partial:partials/session-replay/sr-android-performance}}
 
 ## Before you begin
