@@ -5,12 +5,13 @@ title: 'Session Replay iOS Standalone SDK'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1726763554
+updated_at: 1730234357
 alpha: true
 instrumentation_guide: true
 platform: ios
-public: false
+public: true
 parent: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
+description: 'Choose this option if you use an iOS analytics provider other than Amplitude.'
 ---
 This article covers the installation of Session Replay for iOS using the standalone SDK. If you use a provider other than Amplitude for in-product analytics, choose this option. 
 
