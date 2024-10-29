@@ -6,13 +6,11 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1726763609
-alpha: true
 instrumentation_guide: true
 platform: android
 public: false
 parent: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
 ---
-{{partial:partials/session-replay/sr-android-eap :when="alpha"}}
 
 This article covers the installation of Session Replay for Android using the standalone SDK. If you use a provider other than Amplitude for in-product analytics, choose this option. If your app is already instrumented with Amplitude Android SDK, use the [Session Replay Android SDK Plugin](/docs/session-replay/session-replay-android-plugin).
 
@@ -85,14 +83,8 @@ sessionReplay.flush()
 
 Pass the following configuration options when you initialize the Session Replay SDK.
 
-| Name      | Type      | Required | Default         | Description                                                                                                                                                                                                                                                                                                                   |
-| --------- |-----------| -------- |-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `deviceId` | `String`  | Yes      | `null`          | Sets an identifier for the device running your application.                                                                                                                                                                                                                                                                   |
-| `sessionId` | `Long`    | Yes      | `null`          | Sets an identifier for the users current session. The value must be in milliseconds since epoch (Unix Timestamp).                                                                                                                                                                                                             |
-| `sampleRate` | `Number`  | No       | `0.0`           | Use this option to control how many sessions to select for replay collection. <br></br>The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. |
-| `optOut`  | `Boolean` | No       | `false`         | Sets permission to collect replays for sessions. Setting a value of true prevents Amplitude from collecting session replays.                                                                                                                                                                                                  |
-| `logger`  | `Logger`  | No       | `LogcatLogger`  | Sets a custom `logger` class from the Logger to emit log messages to desired destination. Set to `null` to disable logging.                                                                                                                                                                                                   |
-| `serverZone` | `ServerZone`  | No       | `ServerZone.US` | `ServerZone.EU` or `ServerZone.US`. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center.     
+{{partial:partials/session-replay/sr-android-config}}
+   
 
 {{partial:partials/session-replay/sr-android-mask-data}}
 
