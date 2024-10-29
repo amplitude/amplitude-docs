@@ -38,10 +38,10 @@ Amplitude recommends you to use **Amplitude defined exposure or assignment event
     </tbody>
 </table>
 
-{{partial:admonition type="note" heading="Event volument billing and property limits"}}
-If your organization has Amplitude Experiment's *End-to-end* feature flagging and experimentation solution, Amplitude-defined [assignment](#assignment-events) and [exposure](#exposure-events) **don't count** toward your organization's event volume billing. Further, experiment user properties and event properties don't count towards your project property limits.
+{{partial:admonition type="note" heading="Event volume billing and property limits"}}
+Exposure (`[Experiment] Exposure`) and assignment (`[Experiment] Assignment`) events don't count toward your organization's event volume.
 
-If your organization has only purchased *Experiment Results* then all Experiment events are billed in full.
+If you use other events in place of `[Experiment] Exposure` or `[Experiment] Assignment`, those events do count toward your event volume.
 {{/partial:admonition}}
 
 ## Experiment user properties
@@ -52,7 +52,7 @@ The format of the user property is, `[Experiment] <flag_key>` and the value is t
 
 ## Assignment events
 
-Amplitude's evaluation servers or SDKs track assignment events as a result of either [remote evaluation](/docs/feature-experiment/remote-evaluation), or [local evaluation](/docs/feature-experiment/local-evaluation) using a server-side SDK configured for [automatic assignment tracking](#automatic-assignment-tracking). Use assignment events as a **heuristic exposure event** for server-side experiments, to **monitor** a flag or experiment while active, and to **debug** any issues. For server-side experiments where client-side exposure tracking isn't feasible, choose the Amplitude Assignment event as the exposure event when you set up your experiment.
+Amplitude's evaluation servers or SDKs track assignment events as a result of either [remote evaluation](/docs/feature-experiment/remote-evaluation), or [local evaluation](/docs/feature-experiment/local-evaluation) using a server-side SDK configured for [automatic assignment tracking](#automatic-assignment-tracking). Use assignment events as a **heuristic exposure event** for server-side experiments, to **monitor** a flag or experiment while active, and to **debug** any issues. For server-side experiments where client-side exposure tracking isn't possible, choose the Amplitude Assignment event as the exposure event when you set up your experiment.
 
 You shouldn't need to track assignment events manually.
 
