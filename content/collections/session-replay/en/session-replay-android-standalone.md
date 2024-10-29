@@ -40,7 +40,7 @@ The Standalone SDK doesn't provide Session management capabilities. Your applica
 Add the [latest version](https://central.sonatype.com/artifact/com.amplitude/session-replay-android/versions) Session Replay SDK to your project dependencies.
 
 ```kotlin
-implementation("com.amplitude:session-replay-android:@{$ android.session_replay.version $}")
+implementation("com.amplitude:session-replay-android:{{sdk_versions:session_replay_android_standalone}}")
 ```
 
 Configure your application code.
