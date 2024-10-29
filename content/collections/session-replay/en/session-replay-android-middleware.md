@@ -42,7 +42,7 @@ Add the [latest version](https://central.sonatype.com/artifact/com.amplitude/mid
 
 ```kotlin
 // Install latest version from Maven Central
-implementation("com.amplitude:middleware-session-replay-android:@{$ android.session_replay.version $}")
+implementation("com.amplitude:middleware-session-replay-android:{{sdk_versions:session_replay_android_standalone}}")
 // You will also need the (maintenance) Amplitude Analytics SDK if it's not already installed
 implementation("com.amplitude:android-sdk:[2.40.1,3.0.0]")
 ```
