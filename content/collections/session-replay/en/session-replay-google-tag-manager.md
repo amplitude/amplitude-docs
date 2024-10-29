@@ -5,10 +5,10 @@ title: 'Implement Session Replay with Google Tag Manager'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1726769208
+updated_at: 1730234504
 source: 'https://www.docs.developers.amplitude.com/session-replay/tag-managers/google-tag-manager/'
 instrumentation_guide: true
-platform: 'third-party integration'
+platform: browser
 parent: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
 public: true
 description: 'Choose this option if you use Google Tag Manager to instrument Amplitude on your site.'

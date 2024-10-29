@@ -5,12 +5,13 @@ title: 'Session Replay iOS Segment Integration'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1726763546
+updated_at: 1730234404
 alpha: true
 instrumentation_guide: true
 platform: ios
-public: false
+public: true
 parent: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
+description: "Choose this option if you use Segment's Amplitude (Actions) destination to send analytics data to Amplitude."
 ---
 This article covers the installation of Session Replay using the Session Replay iOS Segment plugin. If your app is already instrumented with Segment using their Analytics-Swift library and Amplitude (Actions) destination, use this option.
 

@@ -1,11 +1,12 @@
 ---
 id: 78d50fa5-972c-4705-a9cf-f844551768d1
+published: false
 blueprint: session-replay
 title: 'Session Replay iOS Middleware'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1726763562
+updated_at: 1730234244
 alpha: true
 instrumentation_guide: true
 platform: ios

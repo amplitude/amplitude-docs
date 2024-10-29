@@ -1,7 +1,7 @@
 {{collection:session-replay public:is="true" as="entries"}}
 {{entries group_by="platform"}}
 {{groups}}
-<h2>{{group | ucfirst}}</h2>
+<h2>{{if group == "ios"}}iOS {{else}}{{group | ucfirst}}{{/if}}</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
 {{items}}
 <a href="{{ url }}">
