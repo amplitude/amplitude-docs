@@ -12,13 +12,9 @@ platform: ios
 public: false
 parent: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
 ---
-{{partial:partials/session-replay/sr-ios-eap :when="alpha"}}
-
 This article covers the installation of Session Replay using the Session Replay iOS Segment plugin. If your app is already instrumented with Segment using their Analytics-Swift library and Amplitude (Actions) destination, use this option.
 
-If your app is already instrumented with [(latest) iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk), use the [Session Replay iOS SDK Plugin](/docs/session-replay/session-replay-ios-plugin).
-
-If your app is already instrumented with [(maintenance) iOS SDK](/docs/sdks/analytics/ios/ios-sdk), use the [Session Replay iOS SDK Middleware](/docs/session-replay/session-replay-ios-middleware).
+If your app is already instrumented with an  [Amplitude iOS SDK](/docs/sdks/analytics/ios/ios-swift-sdk), use the [Session Replay iOS SDK Plugin](/docs/session-replay/session-replay-ios-plugin).
 
 If you use Segment using other options, choose the [standalone implementation](/docs/session-replay/session-replay-ios-standalone-sdk).
 
@@ -89,11 +85,7 @@ analytics.add(plugin: AmplitudeSegmentSessionReplayPlugin(amplitudeApiKey: API_K
 
 Pass the following option when you initialize the Session Replay plugin:
 
-| Name              | Type      | Required | Default         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| ----------------- | --------- | -------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `amplitudeApiKey`       | `String` | Yes       | `nil`          | The API key for the Amplitude project Segment is writing to.|
-| `sampleRate`      | `Float`  | No       | `0`             | Use this option to control how many sessions to select for replay collection. <br></br>The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. |
-| `serverZone` | `ServerZone`  | No       | `ServerZone.US` | `ServerZone.EU` or `ServerZone.US`. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center. |
+{{partial:partials/session-replay/sr-ios-config}}
 
 {{partial:partials/session-replay/sr-ios-mask-data}}
 
