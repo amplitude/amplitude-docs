@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "120ba724b0f0942e7ce89212c2f15e3e",
+    "content-hash": "6c84711289e96e63ebb54978a6a9d039",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -4633,16 +4633,16 @@
         },
         {
             "name": "statamic/cms",
-            "version": "v5.3.0",
+            "version": "v5.35.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/statamic/cms.git",
-                "reference": "70e8836774a5c559c593db3cc75130d52a49f6ef"
+                "reference": "8ea5a19a74ad8a1127356dc3d147f3b618b0f10b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/statamic/cms/zipball/70e8836774a5c559c593db3cc75130d52a49f6ef",
-                "reference": "70e8836774a5c559c593db3cc75130d52a49f6ef",
+                "url": "https://api.github.com/repos/statamic/cms/zipball/8ea5a19a74ad8a1127356dc3d147f3b618b0f10b",
+                "reference": "8ea5a19a74ad8a1127356dc3d147f3b618b0f10b",
                 "shasum": ""
             },
             "require": {
@@ -4668,7 +4668,7 @@
                 "symfony/lock": "^6.4",
                 "symfony/var-exporter": "^6.0",
                 "symfony/yaml": "^6.0 || ^7.0",
-                "ueberdosis/tiptap-php": "^1.1",
+                "ueberdosis/tiptap-php": "^1.4",
                 "voku/portable-ascii": "^2.0",
                 "wilderborn/partyline": "^1.0"
             },
@@ -4676,10 +4676,11 @@
                 "doctrine/dbal": "^3.6",
                 "fakerphp/faker": "~1.10",
                 "google/cloud-translate": "^1.6",
-                "laravel/pint": "^1.0",
+                "laravel/pint": "1.16.0",
                 "mockery/mockery": "^1.3.3",
-                "orchestra/testbench": "^8.0 || ^9.0",
-                "phpunit/phpunit": "^10.0"
+                "orchestra/testbench": "^8.14 || ^9.0",
+                "phpunit/phpunit": "^10.0",
+                "spatie/laravel-ray": "^1.37"
             },
             "type": "library",
             "extra": {
@@ -4724,7 +4725,7 @@
             ],
             "support": {
                 "issues": "https://github.com/statamic/cms/issues",
-                "source": "https://github.com/statamic/cms/tree/v5.3.0"
+                "source": "https://github.com/statamic/cms/tree/v5.35.0"
             },
             "funding": [
                 {
@@ -4732,7 +4733,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-05-20T16:25:09+00:00"
+            "time": "2024-10-28T14:06:17+00:00"
         },
         {
             "name": "statamic/ssg",

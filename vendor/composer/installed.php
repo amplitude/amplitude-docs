@@ -3,7 +3,7 @@
         'name' => 'statamic/statamic',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'fea1a004a4b393ad5012da1e0f1b6a823611ceca',
+        'reference' => '85fc97a6b15f48aebb0e162752789b4813bd4059',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -871,8 +871,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0|3.0',
-                1 => '3.0.0',
+                0 => '3.0.0',
+                1 => '1.0|2.0|3.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -1167,9 +1167,9 @@
             'dev_requirement' => false,
         ),
         'statamic/cms' => array(
-            'pretty_version' => 'v5.3.0',
-            'version' => '5.3.0.0',
-            'reference' => '70e8836774a5c559c593db3cc75130d52a49f6ef',
+            'pretty_version' => 'v5.35.0',
+            'version' => '5.35.0.0',
+            'reference' => '8ea5a19a74ad8a1127356dc3d147f3b618b0f10b',
             'type' => 'library',
             'install_path' => __DIR__ . '/../statamic/cms',
             'aliases' => array(),
@@ -1187,7 +1187,7 @@
         'statamic/statamic' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'fea1a004a4b393ad5012da1e0f1b6a823611ceca',
+            'reference' => '85fc97a6b15f48aebb0e162752789b4813bd4059',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
