@@ -1,11 +1,12 @@
 ---
 id: c412bf9e-bbad-4063-bcf4-20cf2b3c2a01
+published: false
 blueprint: session-replay
 title: 'Session Replay Android Middleware'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1726763603
+updated_at: 1730227454
 alpha: true
 instrumentation_guide: true
 platform: android
