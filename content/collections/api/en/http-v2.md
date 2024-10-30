@@ -2030,7 +2030,8 @@ Possible reasons for an invalid request:
 | `throttled_events`                 | [integer]. Array of indexes in the events array indicating events whose `user_id` or `device_id` got throttled               |
 
 ### 403 (forbidden)
-[403 Forbidden](https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.3). The request is blocked by our Web Application Firewall (WAF).
+
+[403 Forbidden](https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.3). The request is blocked by Amplitude's Web Application Firewall (WAF).
 
 Possible reasons for the response:
 
