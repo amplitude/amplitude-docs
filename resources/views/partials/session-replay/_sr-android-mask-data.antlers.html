@@ -30,13 +30,4 @@ import com.amplitude.android.SessionReplay
 | `mask(view: View)`   | To mask text within non-input views, call `SessionReplay.mask(view)` where `view` is a reference to the text input you want to mask. When masked, Session Replay captures masked text as a series of asterisks.                                                                     |
 | `block(view: View)`  | To block a non-text view, call `SessionReplay.unmask(view)` where `view` is a reference to the View you want to block. Session Replay replaces blocked views with a placeholder of the same dimensions.                                                                             |
 
-#### Privacy Modifiers for Jetpack Compose
-
-Three privacy Modifiers are included. `Modifier.ampUnmask().ampMask().ampBlock()`. When combined the most private modifier wins.
-
-| Method        | Description                                                                                                                                                                                                                                      |
-|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `ampUnmask()` | Session Replay masks all text input views by default. When a user enters text into an input view, Session Replay captures asterisks in place of text. To *unmask* a text input, add `Modifier.ampUnmask()` to the Composable you want to unmask. |
-| `ampMask()`   | To mask text within non-input views, call `Modifier.ampMask()` to the Composable you want to mask. When masked, Session Replay captures masked text as a series of asterisks.                                                                    |
-| `ampBlock()` | To block a non-text view, call `Modifier.ampBlock()` to the Composable you want to block. Session Replay replaces blocked views with a placeholder of the same dimensions.                                                                       |
 {{/markdown}}

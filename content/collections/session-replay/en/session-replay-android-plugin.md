@@ -5,10 +5,10 @@ title: 'Session Replay Android Plugin'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1730234452
+updated_at: 1730306282
 instrumentation_guide: true
 platform: android
-public: true
+public: false
 parent: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
 description: 'Choose this option if you use an Amplitude Android SDK to instrument your Android application.'
 ---
@@ -56,8 +56,8 @@ The Session Replay Middleware requires that:
 
 ## Quickstart
 
-{{partial:tabs tabs="Plugin, Middleware"}}
-{{partial:tab name="Plugin"}}
+{{partial:tabs tabs="Kotlin SDK, Legacy SDK"}}
+{{partial:tab name="Kotlin SDK"}}
 Add the [latest version](https://central.sonatype.com/artifact/com.amplitude/plugin-session-replay-android/versions) of the plugin to your project dependencies.
 
 ```kotlin
@@ -90,7 +90,7 @@ amplitude.add(sessionReplayPlugin)
 amplitude.flush()
 ```
 {{/partial:tab}}
-{{partial:tab name="Middleware"}}
+{{partial:tab name="Legacy SDK"}}
 Add the [latest version](https://central.sonatype.com/artifact/com.amplitude/middleware-session-replay-android/versions) of the session replay middleware to your project dependencies
 
 
@@ -244,7 +244,7 @@ Session Replay supports attaching to a single instance of the Amplitude SDK. If 
 
 ### Captured sessions contain limited information
 
-Session Replay requires that the Android SDK send `[Amplitude] Session Start` and `[Amplitude] Session End` events, at a minimum. If you instrument events outside of the Android SDK, Amplitude doesn't tag those events as part of the session replay. This means you can't use tools like Funnel, Segmentation, or Journeys charts to find session replays. You can find session replays with the User Sessions chart or through User Lookup.
+Session Replay requires that the Android SDK send at least one event that includes Session Replay ID. If you instrument events outside of the Android SDK, Amplitude doesn't tag those events as part of the session replay. This means you can't use tools like Funnel, Segmentation, or Journeys charts to find session replays. You can find session replays with the User Sessions chart or through User Lookup.
 
 If you use a method other than the Android SDK to instrument your events, consider using the [Session Replay Standalone SDK for Android](/docs/session-replay/session-replay-android-standalone/).
 
