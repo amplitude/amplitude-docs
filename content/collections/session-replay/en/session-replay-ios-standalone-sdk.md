@@ -121,13 +121,7 @@ Pass the following configuration options when you initialize the Session Replay 
 | `enableRemoteConfig`  | `boolean` | No       | `true`           | Enables or disables [remote configuration ](#remote-configuration) for this instance of Session Replay.                                                                                                                                                                                                              |
 | `serverUrl`           | `string`  | No       | `null`           | Explicitly set the server URL. Use this setting for proxy configuration.                                                                                                                                                                                                                                             |
 
-### Remote configuration
-
-Enable remote configuration to set Sample Rate and Masking Level in Amplitude. 
-
-{{partial:admonition type="note" heading="Remote configuration and testing"}}
-When you enable remote configuration, settings you define in Amplitude take precedence over settings you define locally in the SDK. As a result, while testing your application, Amplitude recommends that you **disable** remote configuration to ensure you can set `sampleRate` to `1`, and ensure you capture test sessions.
-{{/partial:admonition}}
+{{partial:partials/session-replay/sr-remote-config-test}}
 
 {{partial:partials/session-replay/sr-ios-mask-data}}
 
