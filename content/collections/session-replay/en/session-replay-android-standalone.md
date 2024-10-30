@@ -87,8 +87,24 @@ sessionReplay.flush()
 
 Pass the following configuration options when you initialize the Session Replay SDK.
 
-{{partial:partials/session-replay/sr-android-config}}
-   
+| Name      | Type      | Required | Default         | Description                                                                                                                                                                                                                                                                                                                   |
+| --------- |-----------| -------- |-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `deviceId` | `String`  | Yes      | `null`          | Sets an identifier for the device running your application.                                                                                                                                                                                                                                                                   |
+| `sessionId` | `Long`    | Yes      | `null`          | Sets an identifier for the users current session. The value must be in milliseconds since epoch (Unix Timestamp).                                                                                                                                                                                                             |
+| `sampleRate` | `Number`  | No       | `0.0`           | Use this option to control how many sessions to select for replay collection. <br></br>The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. |
+| `optOut`  | `Boolean` | No       | `false`         | Sets permission to collect replays for sessions. Setting a value of true prevents Amplitude from collecting session replays.                                                                                                                                                                                                  |
+| `logger`  | `Logger`  | No       | `LogcatLogger`  | Sets a custom `logger` class from the Logger to emit log messages to desired destination. Set to `null` to disable logging.                                                                                                                                                                                                   |
+| `serverZone` | `ServerZone`  | No       | `ServerZone.US` | `ServerZone.EU` or `ServerZone.US`. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center.     
+| `enableRemoteConfig`  | `boolean` | No       | `true`           | Enables or disables [remote configuration ](#remote-configuration) for this instance of Session Replay.                                                                                                                                                                                                              |
+
+### Remote configuration
+
+Enable remote configuration to set Sample Rate and Masking Level in Amplitude. 
+
+{{partial:admonition type="note" heading="Remote configuration and testing"}}
+When you enable remote configuration, settings you define in Amplitude take precedence over settings you define locally in the SDK. As a result, while testing your application, Amplitude recommends that you **disable** remote configuration to ensure you can set `sampleRate` to `1`, and ensure you capture test sessions.
+{{/partial:admonition}}
+
 
 {{partial:partials/session-replay/sr-android-mask-data}}
 
