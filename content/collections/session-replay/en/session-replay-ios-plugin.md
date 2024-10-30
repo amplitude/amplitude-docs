@@ -154,7 +154,19 @@ amplitude.initializeApiKey(API_KEY)
 
 Pass the following option when you initialize the Session Replay plugin:
 
-{{partial:partials/session-replay/sr-ios-config}}
+| Name                  | Type      | Required | Default          | Description                                                                                                                                                                                                                                                                                                          |
+| --------------------- | --------- | -------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sampleRate`          | `number`  | No       | `0`              | Use this option to control how many sessions to select for replay collection. The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. |
+| `enableRemoteConfig`  | `boolean` | No       | `true`           | Enables or disables [remote configuration ](#remote-configuration) for this instance of Session Replay.                                                                                                                                                                                                              |
+
+### Remote configuration
+
+Enable remote configuration to set Sample Rate and Masking Level in Amplitude. 
+
+{{partial:admonition type="note" heading="Remote configuration and testing"}}
+When you enable remote configuration, settings you define in Amplitude take precedence over settings you define locally in the SDK. As a result, while testing your application, Amplitude recommends that you **disable** remote configuration to ensure you can set `sampleRate` to `1`, and ensure you capture test sessions.
+{{/partial:admonition}}
+
 
 {{partial:partials/session-replay/sr-ios-mask-data}}
 
