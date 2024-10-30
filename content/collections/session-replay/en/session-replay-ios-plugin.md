@@ -44,9 +44,9 @@ Use the latest version of the Session Replay Middleware above version `{{sdk_ver
 
 The Session Replay Middleware requires that:
 
-1. Your application runs on iOS or iPadOS.
-2. You are using `8.22.0` or higher of the [(maintenance) Amplitude iOS SDK](/docs/sdks/analytics/ios/ios-sdk).
-3. You can provide a device ID to the SDK.
+* Your application runs on iOS or iPadOS.
+* You are using `8.22.0` or higher of the [(maintenance) Amplitude iOS SDK](/docs/sdks/analytics/ios/ios-sdk).
+* You can provide a device ID to the SDK.
 
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -156,7 +156,7 @@ Pass the following option when you initialize the Session Replay plugin:
 
 | Name                  | Type      | Required | Default          | Description                                                                                                                                                                                                                                                                                                          |
 | --------------------- | --------- | -------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `sampleRate`          | `number`  | No       | `0`              | Use this option to control how many sessions to select for replay collection. The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. |
+| `sampleRate`          | `number`  | No       | `0`              | Use this option to control how many sessions to select for replay collection. The number should be a decimal between 0 and 1 (for example, `0.4`), representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. |
 | `enableRemoteConfig`  | `boolean` | No       | `true`           | Enables or disables [remote configuration ](#remote-configuration) for this instance of Session Replay.                                                                                                                                                                                                              |
 
 {{partial:partials/session-replay/sr-remote-config-test}}

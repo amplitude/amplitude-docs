@@ -16,9 +16,11 @@ This article covers the installation of Session Replay using the Android SDK plu
 
 {{partial:partials/session-replay/sr-android-performance}}
 
-Session Replay captures changes to an app's view tree, this means the main view and all it's child views recursively. It then replays these changes to build a video-like replay. 
+Session Replay captures changes to an app's **view tree**. The view tree includes the main view and all child views recursively. It then replays these changes to build a video-like replay. 
 
-For example, at the start of a session, Session Replay captures a full snapshot of the app's view tree. As the user interacts with the app, Session Replay captures each change to the view as a diff. When you watch the replay of a session, Session Replay applies each diff back to the original view tree in sequential order, to construct the replay. Session replays have no maximum length.
+For example, at the start of a session, Session Replay captures a full snapshot of the app's view tree. As the user interacts with the app, Session Replay captures each change to the view as a diff. Later, Session Replay constructs the replay of this session by applying each of these diffs to the original view tree in sequential order. 
+
+Session replays have no maximum length.
 
 {{partial:admonition type="tip" heading="Report issues"}}
 To report issues with Session Replay for Android, see the [AmplitudeSessionReplay-Android GitHub repository](https://github.com/amplitude/AmplitudeSessionReplay-Android).
@@ -30,7 +32,7 @@ The method you use depends on the version of the Amplitude Android SDK you use.
 
 {{partial:tabs tabs="Android-Kotlin, Android (maintenance)"}}
 {{partial:tab name="Android-Kotlin"}}
-If you use the current [Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk), use the instructions for the Android Plugin.
+If you use the current [Android-Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk), follow the instructions for the Android Plugin.
 
 Use the latest version of the Session Replay plugin above `{{sdk_versions:session_replay_android_plugin}}`. For a list of all available versions, see [Maven Central](https://central.sonatype.com/artifact/com.amplitude/plugin-session-replay-android/versions).
 
@@ -46,9 +48,9 @@ Use the latest version of the Session Replay Middleware above version `{{sdk_ver
 
 The Session Replay Middleware requires that:
 
-1. Your application is Android-based.
+* Your application is Android-based.
 2. You are using `2.40.1` or higher of the [(maintenance) Amplitude Android SDK](/docs/sdks/analytics/android/android-sdk).
-3. You can provide a device ID to the SDK.
+* You can provide a device ID to the SDK.
 {{/partial:tab}}
 {{/partial:tabs}}
 
@@ -238,7 +240,7 @@ Session Replay supports attaching to a single instance of the Amplitude SDK. If 
 
 ### Captured sessions contain limited information
 
-Session Replay requires that the Android SDK send at least one event that includes Session Replay ID. If you instrument events outside of the Android SDK, Amplitude doesn't tag those events as part of the session replay. This means you can't use tools like Funnel, Segmentation, or Journeys charts to find session replays. You can find session replays with the User Sessions chart or through User Lookup.
+Session Replay requires that the Android SDK send at least one event that includes Session Replay ID. If you instrument events outside of the Android SDK, Amplitude doesn't tag those events as part of the session replay. This means you can't use tools like Funnel Analysis, Segmentation, or Journeys charts to find session replays. You can find session replays with the User Sessions chart or through User Lookup.
 
 If you use a method other than the Android SDK to instrument your events, consider using the [Session Replay Standalone SDK for Android](/docs/session-replay/session-replay-android-standalone/).
 
