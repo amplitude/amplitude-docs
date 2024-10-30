@@ -2036,7 +2036,7 @@ Possible reasons for an invalid request:
 Possible reasons for the response:
 
 - The request contains invalid values within the Header, Body, and/or URI that match our security filters
-- The request is from a sanctioned region that we are not allowed to accept requests from
+- The request is from a sanctioned region from which Amplitude isn't allowed to accept requests.
 
 ```json
 {
