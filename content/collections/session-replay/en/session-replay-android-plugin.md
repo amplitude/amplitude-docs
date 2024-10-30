@@ -49,7 +49,7 @@ Use the latest version of the Session Replay Middleware above version `{{sdk_ver
 The Session Replay Middleware requires that:
 
 * Your application is Android-based.
-2. You are using `2.40.1` or higher of the [(maintenance) Amplitude Android SDK](/docs/sdks/analytics/android/android-sdk).
+* You are using `2.40.1` or higher of the [(maintenance) Amplitude Android SDK](/docs/sdks/analytics/android/android-sdk).
 * You can provide a device ID to the SDK.
 {{/partial:tab}}
 {{/partial:tabs}}
