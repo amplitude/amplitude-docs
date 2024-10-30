@@ -2,6 +2,16 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source":"/docs/session-replay/session-replay-ios-middleware",
+      "destination": "/docs/session-replay/session-replay-ios-plugin",
+      "statusCode": 301
+    },
+    {
+      "source":"/docs/session-replay/session-replay-android-middleware",
+      "destination": "/docs/session-replay/session-replay-android-plugin",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/data/destinations/sfmc-event-streaming",
       "destination": "/docs/data/destination-catalog/salesforce-marketing-cloud-event-streaming",
       "statusCode": 301
