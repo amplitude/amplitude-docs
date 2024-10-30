@@ -1,13 +1,23 @@
 {{markdown}}
 ### Mask on-screen data
 
-By default session replay hides all user input (EditText, inputType="password")
+The Session Replay SDK offers three ways to mask user input, text, and other View components.
 
-The Session Replay SDK offers three ways to mask user input, text, and other View components. This can be enabled in both the layout XML and Kotlin/Java code.
+#### Mask level
+
+Session Replay for Android supports three levels of masking, configurable with the the `maskLevel` config option.
+
+Use this option in the Session Replay configuration.
+
+| Mask level | Description |
+| ------| -----|
+| `light` | Masks all password, email address, and phone numbers. **Doesn't** block credit card numbers. |
+| `medium` | Masks all editable text views. |
+| `conservative` | Masks all text views. | 
 
 #### Privacy tags in layout XML
 
-Privacy control
+Use this option in your application's layout XML.
 
 | View              | Description                                                                                                                                                                                                                                                                                 |
 |-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -18,7 +28,7 @@ Privacy control
 
 #### Privacy methods on the Session Replay SDK
 
-To use privacy methods first import the SessionReplay class. Then call one of the methods below.
+Import the `SessionReplay` class, then call one of the methods below from your application's code.
 
 ```kotlin
 import com.amplitude.android.SessionReplay

@@ -96,6 +96,7 @@ Pass the following configuration options when you initialize the Session Replay 
 | `logger`  | `Logger`  | No       | `LogcatLogger`  | Sets a custom `logger` class from the Logger to emit log messages to desired destination. Set to `null` to disable logging.                                                                                                                                                                                                   |
 | `serverZone` | `ServerZone`  | No       | `ServerZone.US` | `ServerZone.EU` or `ServerZone.US`. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center.     
 | `enableRemoteConfig`  | `boolean` | No       | `true`           | Enables or disables [remote configuration ](#remote-configuration) for this instance of Session Replay.                                                                                                                                                                                                              |
+| `maskLevel` | `String` | No | `medium` | Sets the [privacy mask level](#mask-level). | 
 
 {{partial:partials/session-replay/sr-remote-config-test}}
 

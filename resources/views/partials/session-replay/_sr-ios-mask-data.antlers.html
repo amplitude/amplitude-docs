@@ -1,9 +1,19 @@
 {{markdown}}
 ### Block on-screen data
 
-By default session replay hides all user inputs with `isSecureTextEntry = true`.
+Session Replay supports three ways to block sensitive on-screen data.
 
-Further sensitive views can be can be selectively hidden.
+#### Mask level
+
+Session Replay for iOS supports three levels of masking, configurable with the the `maskLevel` config option.
+
+Use this option in the Session Replay configuration.
+
+| Mask level | Description |
+| ------| -----|
+| `light` | Masks all password, email address, credit card numbers, and phone numbers.|
+| `medium` | Masks all editable text views. |
+| `conservative` | Masks all text views. | 
 
 #### Privacy methods for UIKit
 
