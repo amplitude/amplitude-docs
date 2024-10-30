@@ -506,7 +506,12 @@ The response is a JSON object with this schema:
 
 ```json
 {
-    "cohort_id": "COHORT_ID"
+    "cohortId": "COHORT_ID",
+    "metadata": {
+        "matched": 1234,
+        "totals": 1232,
+        "invalid_ids_sample": ["INVALID_ID1", "INVALID_ID2"]
+    }
 }
 ```
 
