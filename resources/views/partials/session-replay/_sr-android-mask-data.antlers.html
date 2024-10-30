@@ -1,13 +1,23 @@
 {{markdown}}
 ### Mask on-screen data
 
-By default session replay hides all user input (EditText, inputType="password")
+The Session Replay SDK offers three ways to mask user input, text, and other view components.
 
-The Session Replay SDK offers three ways to mask user input, text, and other View components. This can be enabled in both the layout XML and Kotlin/Java code.
+#### Mask level
+
+Session Replay for Android supports three levels of masking, configurable with the the `maskLevel` config option.
+
+Use this option in the Session Replay configuration.
+
+| Mask level | Description |
+| ------| -----|
+| `light` | Masks all password, email address, and phone numbers. **Doesn't** block credit card numbers. |
+| `medium` | Masks all editable text views. |
+| `conservative` | Masks all text views. | 
 
 #### Privacy tags in layout XML
 
-Privacy control
+Use this option in your application's layout XML.
 
 | View              | Description                                                                                                                                                                                                                                                                                 |
 |-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -18,7 +28,7 @@ Privacy control
 
 #### Privacy methods on the Session Replay SDK
 
-To use privacy methods first import the SessionReplay class. Then call one of the methods below.
+Import the `SessionReplay` class, then call one of the methods below from your application's code.
 
 ```kotlin
 import com.amplitude.android.SessionReplay
@@ -30,13 +40,4 @@ import com.amplitude.android.SessionReplay
 | `mask(view: View)`   | To mask text within non-input views, call `SessionReplay.mask(view)` where `view` is a reference to the text input you want to mask. When masked, Session Replay captures masked text as a series of asterisks.                                                                     |
 | `block(view: View)`  | To block a non-text view, call `SessionReplay.unmask(view)` where `view` is a reference to the View you want to block. Session Replay replaces blocked views with a placeholder of the same dimensions.                                                                             |
 
-#### Privacy Modifiers for Jetpack Compose
-
-Three privacy Modifiers are included. `Modifier.ampUnmask().ampMask().ampBlock()`. When combined the most private modifier wins.
-
-| Method        | Description                                                                                                                                                                                                                                      |
-|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `ampUnmask()` | Session Replay masks all text input views by default. When a user enters text into an input view, Session Replay captures asterisks in place of text. To *unmask* a text input, add `Modifier.ampUnmask()` to the Composable you want to unmask. |
-| `ampMask()`   | To mask text within non-input views, call `Modifier.ampMask()` to the Composable you want to mask. When masked, Session Replay captures masked text as a series of asterisks.                                                                    |
-| `ampBlock()` | To block a non-text view, call `Modifier.ampBlock()` to the Composable you want to block. Session Replay replaces blocked views with a placeholder of the same dimensions.                                                                       |
 {{/markdown}}

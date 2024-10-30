@@ -5,26 +5,27 @@ title: 'Session Replay iOS Segment Integration'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1726763546
+updated_at: 1730306275
 alpha: true
 instrumentation_guide: true
 platform: ios
 public: false
 parent: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
+description: "Choose this option if you use Segment's Amplitude (Actions) destination to send analytics data to Amplitude."
 ---
-{{partial:partials/session-replay/sr-ios-eap :when="alpha"}}
-
 This article covers the installation of Session Replay using the Session Replay iOS Segment plugin. If your app is already instrumented with Segment using their Analytics-Swift library and Amplitude (Actions) destination, use this option.
 
-If your app is already instrumented with [(latest) iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk), use the [Session Replay iOS SDK Plugin](/docs/session-replay/session-replay-ios-plugin).
-
-If your app is already instrumented with [(maintenance) iOS SDK](/docs/sdks/analytics/ios/ios-sdk), use the [Session Replay iOS SDK Middleware](/docs/session-replay/session-replay-ios-middleware).
+If your app is already instrumented with an  [Amplitude iOS SDK](/docs/sdks/analytics/ios/ios-swift-sdk), use the [Session Replay iOS SDK Plugin](/docs/session-replay/session-replay-ios-plugin).
 
 If you use Segment using other options, choose the [standalone implementation](/docs/session-replay/session-replay-ios-standalone-sdk).
 
 {{partial:partials/session-replay/sr-ios-performance}}
 
 Session Replay captures changes to an app's view tree, this means the main view and all it's child views recursively. It then replays these changes to build a video-like replay. For example, at the start of a session, Session Replay captures a full snapshot of the app's view tree. As the user interacts with the app, Session Replay captures each change to the view as a diff. When you watch the replay of a session, Session Replay applies each diff back to the original view tree in sequential order, to construct the replay. Session replays have no maximum length.
+
+{{partial:admonition type="tip" heading="Report issues"}}
+To report issues with Session Replay for iOS, see the [AmplitudeSessionReplay-ios GitHub repository](https://github.com/amplitude/AmplitudeSessionReplay-ios).
+{{/partial:admonition}}
 
 ## Before you begin
 
@@ -89,11 +90,7 @@ analytics.add(plugin: AmplitudeSegmentSessionReplayPlugin(amplitudeApiKey: API_K
 
 Pass the following option when you initialize the Session Replay plugin:
 
-| Name              | Type      | Required | Default         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| ----------------- | --------- | -------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `amplitudeApiKey`       | `String` | Yes       | `nil`          | The API key for the Amplitude project Segment is writing to.|
-| `sampleRate`      | `Float`  | No       | `0`             | Use this option to control how many sessions to select for replay collection. <br></br>The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. |
-| `serverZone` | `ServerZone`  | No       | `ServerZone.US` | `ServerZone.EU` or `ServerZone.US`. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center. |
+{{partial:partials/session-replay/sr-ios-config}}
 
 {{partial:partials/session-replay/sr-ios-mask-data}}
 

@@ -5,16 +5,18 @@ title: 'Session Replay Android Standalone SDK'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1726763609
-alpha: true
+updated_at: 1730306287
 instrumentation_guide: true
 platform: android
 public: false
 parent: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
+description: 'Choose this option if you use a third-party analytics provider to instrument your Android application.'
 ---
-{{partial:partials/session-replay/sr-android-eap :when="alpha"}}
-
 This article covers the installation of Session Replay for Android using the standalone SDK. If you use a provider other than Amplitude for in-product analytics, choose this option. If your app is already instrumented with Amplitude Android SDK, use the [Session Replay Android SDK Plugin](/docs/session-replay/session-replay-android-plugin).
+
+{{partial:admonition type="tip" heading="Report issues"}}
+To report issues with Session Replay for Android, see the [AmplitudeSessionReplay-Android GitHub repository](https://github.com/amplitude/AmplitudeSessionReplay-Android).
+{{/partial:admonition}}
 
 {{partial:partials/session-replay/sr-android-performance}}
 
@@ -38,7 +40,7 @@ The Standalone SDK doesn't provide Session management capabilities. Your applica
 Add the [latest version](https://central.sonatype.com/artifact/com.amplitude/session-replay-android/versions) Session Replay SDK to your project dependencies.
 
 ```kotlin
-implementation("com.amplitude:session-replay-android:@{$ android.session_replay.version $}")
+implementation("com.amplitude:session-replay-android:{{sdk_versions:session_replay_android_standalone}}")
 ```
 
 Configure your application code.
@@ -93,6 +95,10 @@ Pass the following configuration options when you initialize the Session Replay 
 | `optOut`  | `Boolean` | No       | `false`         | Sets permission to collect replays for sessions. Setting a value of true prevents Amplitude from collecting session replays.                                                                                                                                                                                                  |
 | `logger`  | `Logger`  | No       | `LogcatLogger`  | Sets a custom `logger` class from the Logger to emit log messages to desired destination. Set to `null` to disable logging.                                                                                                                                                                                                   |
 | `serverZone` | `ServerZone`  | No       | `ServerZone.US` | `ServerZone.EU` or `ServerZone.US`. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center.     
+| `enableRemoteConfig`  | `boolean` | No       | `true`           | Enables or disables [remote configuration ](#remote-configuration) for this instance of Session Replay.                                                                                                                                                                                                              |
+| `maskLevel` | `String` | No | `medium` | Sets the [privacy mask level](#mask-level). | 
+
+{{partial:partials/session-replay/sr-remote-config-test}}
 
 {{partial:partials/session-replay/sr-android-mask-data}}
 
