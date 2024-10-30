@@ -97,14 +97,7 @@ Pass the following configuration options when you initialize the Session Replay 
 | `serverZone` | `ServerZone`  | No       | `ServerZone.US` | `ServerZone.EU` or `ServerZone.US`. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center.     
 | `enableRemoteConfig`  | `boolean` | No       | `true`           | Enables or disables [remote configuration ](#remote-configuration) for this instance of Session Replay.                                                                                                                                                                                                              |
 
-### Remote configuration
-
-Enable remote configuration to set Sample Rate and Masking Level in Amplitude. 
-
-{{partial:admonition type="note" heading="Remote configuration and testing"}}
-When you enable remote configuration, settings you define in Amplitude take precedence over settings you define locally in the SDK. As a result, while testing your application, Amplitude recommends that you **disable** remote configuration to ensure you can set `sampleRate` to `1`, and ensure you capture test sessions.
-{{/partial:admonition}}
-
+{{partial:partials/session-replay/sr-remote-config-test}}
 
 {{partial:partials/session-replay/sr-android-mask-data}}
 
