@@ -12,7 +12,7 @@ public: false
 parent: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
 description: 'Choose this option if you use an Amplitude iOS SDK to instrument your iOS application.'
 ---
-This article covers the installation of Session Replay using the iOS plugin. If your app is already instrumented with the an Amplitude [iOS SDK](/docs/sdks/analytics/ios), use this option.
+This article covers the installation of Session Replay using the iOS plugin. If your app is already instrumented with the the Amplitude [iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk) or legacy Amplitude [iOS SDK](/docs/sdks/analytics/ios/ios-sdk), use this option.
 
 If you use Segment through their Analytics-Swift SDK and [Amplitude (Actions) destination](https://segment.com/docs/connections/destinations/catalog/actions-amplitude/), choose the [Segment Plugin](/docs/session-replay/session-replay-ios-segment-integration).
 
