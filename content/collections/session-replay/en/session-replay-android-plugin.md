@@ -230,8 +230,6 @@ Amplitude recommends setting `flushEventsOnClose = true` in the Amplitude SDK Co
 
 {{partial:partials/session-replay/sr-android-known-limitations}}
 
-- When using the plugin, session events must be enabled on the SDK. Learn more in [Tracking default sessions events](#track-default-session-events).
-
 ### Multiple Amplitude instances
 
 Session Replay supports attaching to a single instance of the Amplitude SDK. If you have more than one instance instrumented in your application, make sure to start Session Replay on the instance that most relates to your project.
