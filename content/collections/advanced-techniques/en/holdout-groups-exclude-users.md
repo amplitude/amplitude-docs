@@ -9,7 +9,7 @@ this_article_will_help_you:
   - 'Delve deeper into holdout groups with use case examples'
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1719503550
+updated_at: 1730484258
 ---
 Sometimes it can be useful to keep a certain percentage of users from viewing an experiment. This is especially true when measuring the long-term, combined effects of multiple experiments. Statistical significance in one experiment may not reflect the true, cumulative impact of your experiments.
 
@@ -34,12 +34,8 @@ When using holdout groups, there are a few things to keep in mind:
 
 To create a holdout group and add your experiments to it, follow these steps:
 
-1. In Amplitude Experiment, navigate to the *Experiment Groups* tab in the Experiments page. Here, you can see all your holdout groups and be able to create new ones.
-2. To add a new holdout group to your project, click *Add a new holdout group*.
-
-![Screenshot](/docs/output/img/advanced-techniques/screenshot.png)
-
-If you have existing groups, click *Create A New Group*, and then select *Holdout Group* in the drawer.
+1. In Amplitude Experiment, navigate to the *Mutex and Holdouts* tab in the Experiments page. Here, you can see all your holdout groups and be able to create new ones.
+2. To add a new holdout group to your project, click *Add a new holdout group*. If you have existing groups, click *Create A New Group*, and then select *Holdout Group* in the drawer.
 
 3. In the *Holdout group settings* modal, enter the name, description, and holdout percentage for the group. You can also view and change advanced settings such as the evaluation mode and bucketing key of your group.
 
@@ -60,15 +56,14 @@ Don't add the same users nor cohorts to both the *Include a holdout* and *Exclud
 
 Manage your holdout groups from the *Experiment Groups* tab or from within an experiment:
 
-1. In the *Experiment Groups* tab, scroll down the table until you find the group you want to edit.
+1. In the *Mutex and Holdout* tab, scroll down the table until you find the group you want to edit.
 2. Click the edit icon.
 3. Make your changes in the *Holdout group settings* modal and click *Save*.
 
 If you are within an experiment that's part of a holdout group, follow these steps: 
 
-1. Navigate to the *Configure* tab.
-2. Click the name of the group you want to edit.
-3. Make your changes in the *Holdout group settings* modal and click *Save*.
+1. Click the name of the group you want to edit.
+2. Make your changes in the *Holdout group settings* modal and click *Save*.
 
 ## Analyze a holdout group
 
@@ -76,7 +71,7 @@ Analyze your holdout groups using an Experiment Results chart.
 
 To create a pre-populated Experiment Results chart, follow these steps: 
 
-1. Navigate to the Experiments page and open the *Experiment Groups* tab.
+1. Navigate to the Experiments page and open the *Mutex and Holdout* tab.
 2. Find the holdout group you want to analyze and click the chart icon.
 3. Click *Open in Analytics*.
 4. A new Experiment Results chart opens, with the following fields complete:
