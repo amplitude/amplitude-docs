@@ -46,7 +46,7 @@ implementation("com.amplitude:session-replay-android:{{sdk_versions:session_repl
 Configure your application code.
 
 1. Create a  `val sessionReplay = SessionReplay()` object to begin collecting replays. Pass the API key, session identifier, and device identifier.
-2. When the session identifier changes, pass the new value to Amplitude with `sessionReplay.setSessionId`.
+2. When the session or device identifier changes, pass the new value to Amplitude with `sessionReplay.setSessionId` or `sessionReplay.setDeviceId`.
 3. Collect Session Replay properties to send with other event properties with `sessionReplay.getSessionReplayProperties`
 4. Call `sessionReplay.flush` to send session replay data to Amplitude. Always call `flush` before exiting the app or sending it to the background. For longer sessions, call `flush` often to prevent high memory use (alpha).
 
@@ -77,6 +77,13 @@ ThirdPartyAnalytics.track(
 ThirdPartyAnalytics.setSessionId(sessionId)
 // Update the session ID in session replay
 sessionReplay.setSessionId(ThirdPartyAnalytics.getSessionId())
+
+// Handle device ID change
+// When the device ID changes
+ThirdPartyAnalytics.setDeviceId(deviceId)
+//Update the device ID in session replay
+sessionReplay.setDeviceId(ThirdPartyAnalytics.getDeviceId())
+
 
 // Send session replay data to the server
 // This should always be called before app exit

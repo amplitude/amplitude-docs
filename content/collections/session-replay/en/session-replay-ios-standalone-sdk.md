@@ -94,7 +94,7 @@ ThirdPartyAnalytics.track(event)
 
 // Handle session ID changes
 // Whenever the session ID changes
-ThirdPartyAnalytics.setSessionId(sessionId)
+ThirdPartyAnalytics.setSessionId(deviceId)
 // Update the session ID in session replay
 sessionReplay.sessionId = ThirdPartyAnalytics.getSessionId()
 
