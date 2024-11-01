@@ -243,4 +243,4 @@ Amplitude supports the use of several common performance marketing metrics. [Cre
     * Grouped by: `ad_metrics.impressions`
 * Event B: `Daily ad metric`
     * Grouped by: `ad_metrics.clicks`
-* Formula: %: `PROPSUM(A) / PROPSUM(B)
+* Formula: %: `PROPSUM(A) / PROPSUM(B)`
