@@ -21,6 +21,9 @@ This feature is available on all plans, and requires the following:
 * [Amplitude Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) 2.10.0 or higher
 * The SDK's `config.autocapture.elementInteractions` option set to `true`. For more information, see [Browser SDK Configuration](/docs/sdks/analytics/browser/browser-sdk-2#configure-the-sdk).
 
+{{partial:admonition type="note" heading=""}}
+Visual Labeling is available to Amplituded users with the role **Member** and above.
+{{/partial:admonition}}
 
 ## Create a labeled event with visual labeling
 
