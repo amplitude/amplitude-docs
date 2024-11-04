@@ -3,21 +3,21 @@
     <div>
         <breadcrumb v-if="breadcrumbs" :url="breadcrumbs[1].url" :title="breadcrumbs[1].text" />
 
-        <div class="flex items-center mb-6">
-            <h1 class="flex-1">
-                <div class="flex items-center">
+        <div class="flex items-baseline mb-6">
+            <h1 class="flex-1 self-start rtl:ml-4 ltr:mr-4">
+                <div class="flex items-baseline">
                     <span v-if="! isCreating"
-                        class="little-dot rtl:ml-2 ltr:mr-2"
+                        class="little-dot rtl:ml-2 ltr:mr-2 -top-1"
                         :class="{ 'bg-green-600': published, 'bg-gray-600': !published }" />
-                    <span v-html="$options.filters.striptags(title)" />
+                    <span class="break-overflowing-words" v-html="$options.filters.striptags(title)" />
                 </div>
             </h1>
 
-            <dropdown-list class="rtl:ml-4 ltr:mr-4" v-if="canEditBlueprint">
-                <dropdown-item :text="__('Edit Blueprint')" :redirect="actions.editBlueprint" />
+            <dropdown-list class="rtl:ml-4 ltr:mr-4" v-if="canEditBlueprint || hasItemActions">
+                <dropdown-item :text="__('Edit Blueprint')" v-if="canEditBlueprint" :redirect="actions.editBlueprint" />
                 <li class="divider" />
                 <data-list-inline-actions
-                    v-if="!isCreating"
+                    v-if="!isCreating && hasItemActions"
                     :item="values.id"
                     :url="itemActionUrl"
                     :actions="itemActions"
@@ -112,20 +112,20 @@
 
                                 <div :class="{ 'hi': !shouldShowSidebar }">
 
-                                    <div class="p-4 flex items-center -mx-2" v-if="showLivePreviewButton || showVisitUrlButton">
+                                    <div class="p-3 flex items-center space-x-2" v-if="showLivePreviewButton || showVisitUrlButton">
                                         <button
-                                            class="flex items-center justify-center btn-flat w-full mx-2 px-2"
+                                            class="flex items-center justify-center btn w-full"
                                             v-if="showLivePreviewButton"
                                             @click="openLivePreview">
-                                            <svg-icon name="light/synchronize" class="h-4 w-4 rtl:ml-2 ltr:mr-2" />
+                                            <svg-icon name="light/synchronize" class="h-4 w-4 rtl:ml-2 ltr:mr-2 shrink-0" />
                                             <span>{{ __('Live Preview') }}</span>
                                         </button>
                                         <a
-                                            class="flex items-center justify-center btn-flat w-full mx-2 px-2"
+                                            class="flex items-center justify-center btn w-full"
                                             v-if="showVisitUrlButton"
                                             :href="permalink"
                                             target="_blank">
-                                            <svg-icon name="light/external-link" class="w-4 h-4 rtl:ml-2 ltr:mr-2" />
+                                            <svg-icon name="light/external-link" class="w-4 h-4 rtl:ml-2 ltr:mr-2 shrink-0" />
                                             <span>{{ __('Visit URL') }}</span>
                                         </a>
                                     </div>
@@ -299,6 +299,7 @@ export default {
         createAnotherUrl: String,
         listingUrl: String,
         previewTargets: Array,
+        hasTemplate: Boolean,
     },
 
     data() {
@@ -361,11 +362,11 @@ export default {
         },
 
         showLivePreviewButton() {
-            return !this.isCreating && this.isBase && this.livePreviewUrl;
+            return !this.isCreating && this.isBase && this.livePreviewUrl && this.showVisitUrlButton;
         },
 
         showVisitUrlButton() {
-            return !!this.permalink;
+            return !!this.permalink && this.hasTemplate;
         },
 
         isBase() {

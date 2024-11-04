@@ -5,15 +5,15 @@
                     <svg-icon :name="icon"></svg-icon>
                 </button>
             </template>
-            <dropdown-item @click="prefer('light')" class="flex items-center space-x-2">
+            <dropdown-item @click="prefer('light')" class="flex items-center space-x-2 rtl:space-x-reverse">
                 <svg-icon name="regular/light-mode" class="h-4 w-4"></svg-icon>
                 <span>{{ __('Light') }}</span>
             </dropdown-item>
-            <dropdown-item @click="prefer('dark')" class="flex items-center space-x-2">
+            <dropdown-item @click="prefer('dark')" class="flex items-center space-x-2 rtl:space-x-reverse">
                 <svg-icon name="regular/dark-mode" class="h-4 w-4"></svg-icon>
                 <span>{{ __('Dark') }}</span>
             </dropdown-item>
-            <dropdown-item @click="prefer('auto')" class="flex items-center space-x-2">
+            <dropdown-item @click="prefer('auto')" class="flex items-center space-x-2 rtl:space-x-reverse">
                 <svg-icon name="regular/system" class="h-4 w-4"></svg-icon>
                 <span>{{ __('System') }}</span>
             </dropdown-item>
@@ -54,8 +54,12 @@ export default {
                     : 'light';
             }
         },
-        theme(theme) {
-            document.documentElement.classList.toggle('dark', theme === 'dark');
+        theme: {
+            immediate: true,
+            handler(theme) {
+                document.documentElement.classList.toggle('dark', theme === 'dark');
+                Statamic.darkMode = theme === 'dark';
+            }
         }
     },
     created() {
@@ -66,7 +70,16 @@ export default {
     methods: {
         prefer(mode) {
             this.preference = mode;
-            this.$preferences.set('theme', mode === 'auto' ? null : mode);
+
+            // Saving to user preference allows it to persist across browsers, whereas saving to local
+            // storage allows it to work before the user is authenticated, e.g. on the login screen.
+            if (mode === 'auto') {
+                this.$preferences.remove('theme');
+                localStorage.removeItem('statamic.theme');
+            } else {
+                this.$preferences.set('theme', mode);
+                localStorage.setItem('statamic.theme', mode);
+            }
         }
     }
 }
