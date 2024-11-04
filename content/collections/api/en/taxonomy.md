@@ -9,7 +9,7 @@ eu_endpoint: 'https://analytics.eu.amplitude.com/api/2/'
 postman_link: 'https://www.postman.com/amplitude-dev-docs/workspace/amplitude-developers/folder/20044411-4b8180c4-e06e-478a-9c96-0ccf6cf652e2?action=share&source=copy-link&creator=29131806&ctx=documentation'
 api_status: ga
 lede: |-
-  The Taxonomy API grants Scholarship, Growth, and Enterprise users the ability to programmatically plan their event schema in the Taxonomy tab.
+  The Taxonomy API grants Enterprise users the ability to programmatically plan their event schema in the Taxonomy tab.
 
   The Taxonomy API lets you create, get, update, and delete categories, event types, event properties, and user properties.
 updated_by: 041236eb-2ea6-439c-908d-304b6af535e3
