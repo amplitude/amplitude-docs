@@ -64,5 +64,5 @@ Custom events and transformed properties follow the configurations set in your A
 
 
 {{partial:collapse name="How can I enable channel classifiers for my event stream?"}}
-Support for channel classifiers to be selected in the event streaming sync config is available on request. Email integrations@Amplitude.com with your Organization ID and App IDs if you're interested in understanding how to get access to this capability.
+Support for selecting channel classifiers in the event streaming sync config is available on request. Email integrations@Amplitude.com with your organization ID and app IDs for access.
 {{/partial:collapse}}
