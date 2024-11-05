@@ -70,7 +70,7 @@ To migrate to `@amplitude/analytics-browser@2+`, update your dependencies and in
 {{partial:admonition type="warning" heading="Breaking changes"}}
 When migrating to `@amplitude/analytics-browser@2+`, your implementation may experience disruption to web attribution. Before you upgrade, choose whether attribution occurs during a session. After upgrading, attribution can happen during the session, and is no longer configurable.
 
-In both versions, attribution can happen during initialization.
+In both versions, attribution can occur during initialization.
 {{/partial:admonition}}
 
 ## Terminology
@@ -107,11 +107,11 @@ For Node projects, update your dependency list in package.json.
 
 ## Instrumentation
 
-Browser SDK 2.0 offers an API to instrument events. To migrate to the Browser SDK 2.0, you need to update a few calls. The following sections detail which calls have changed.
+Browser SDK 2.0 offers an API to instrument events. To migrate to the Browser SDK 2.0, update a few calls. The following sections detail which calls have changed.
 
 ## Initialization
 
-Like all other calls, `getInstance()` has been removed. To initialize the SDK, call `init()`, with the same parameters. However, `config` comes in a different shape. See [Configuration](#configuration).
+`getInstance()` has been removed. To initialize the SDK, call `init()`, with the same parameters. However, `config` comes in a different shape. See [Configuration](#configuration).
 
 {{partial:tabs tabs="amplitude-js, @amplitude/analytics-browser@2+"}}
 {{partial:tab name="amplitude-js"}}
@@ -161,7 +161,7 @@ amplitude.init(API_KEY, OPTIONAL_USER_ID, config)
 |`config.optOut`|`config.optOut`|
 |`config.onError`|NOT SUPPORTED|
 |`config.onExitPage`|NOT SUPPORTED. See [Flush](#flush-or-onexitpage).|
-|`config.platform`|NOT SUPPORTED. `platform` is not supported at configuration level. But it still exist in event object. You can overwrite this by either assign a platform while tracking an event, or enriching the event.platform using enrichment plugin. See [Plugins](#plugins).|
+|`config.platform`|NOT SUPPORTED. `platform` isn't supported at the configuration level, but it does still exist in the event object. Overwrite this by either assigning a platform while tracking an event, or enriching the event.platform using the enrichment plugin. See [Plugins](#plugins).|
 |`config.savedMaxCount`|NOT SUPPORTED|
 |`config.saveEvents`|NOT SUPPORTED|
 |`config.saveParamsReferrerOncePerSession`|NOT SUPPORTED.|
@@ -184,7 +184,7 @@ amplitude.init(API_KEY, OPTIONAL_USER_ID, config)
 
 ## Tracking events
 
-The maintenance Browser SDK offered a variety of `logEvent` APIs like `logEventWithTimestamp`, `logEventWithGroups` to override specific properties in the event payload. Amplitude has simplified all these variations into a unified `track` API in `@amplitude/analytics-browser@2+`.
+The maintenance Browser SDK offered a variety of `logEvent` APIs like `logEventWithTimestamp`, `logEventWithGroups` to override specific properties in the event payload. Instead of these, use the unified `track` API in `@amplitude/analytics-browser@2+`.
 
 ### logEvent()
 
@@ -318,7 +318,7 @@ The APIs for setting user properties are the same, except for the removal of `ge
 ### setUserId()
 
 {{partial:admonition type="warning" heading="Minimum identifier length"}}
-The maintenance SDK uses an old SDK endpoint (`api2.amplitude.com`) which enforces no length limit for `deviceId` and `userId`. The latest SDK uses Amplitude's HTTP V2 API (`api2.amplitude.com/2/httpapi`) and requires identifiers to be at least 5 characters by default. When you migrate to the latest SDK, set `config.minIdLength` to a smaller value if you allowed identifiers with fewer than 5 characters.
+The maintenance SDK uses an old SDK endpoint (`api2.amplitude.com`) which enforces no length limit for `deviceId` and `userId`. The latest SDK uses Amplitude's HTTP V2 API (`api2.amplitude.com/2/httpapi`) and requires identifiers to be at least five characters by default. When you migrate to the latest SDK, set `config.minIdLength` to a smaller value if you allowed identifiers with fewer than five characters.
 {{/partial:admonition}}
 
 Set a `userId` when you invoke `amplitude` without calling `getInstance()`
@@ -341,7 +341,7 @@ amplitude.setUserId(userId)
 ### setDeviceId()
 
 {{partial:admonition type="warning" heading="Minimum identifier length"}}
-The maintenance SDK uses an old SDK endpoint (`api2.amplitude.com`) which enforces no length limit for `deviceId` and `userId`. The latest SDK uses Amplitude's HTTP V2 API (`api2.amplitude.com/2/httpapi`) and requires identifiers to be at least 5 characters by default. When you migrate to the latest SDK, set `config.minIdLength` to a smaller value if you allowed identifiers with fewer than 5 characters.
+The maintenance SDK uses an old SDK endpoint (`api2.amplitude.com`) which enforces no length limit for `deviceId` and `userId`. The latest SDK uses Amplitude's HTTP V2 API (`api2.amplitude.com/2/httpapi`) and requires identifiers to be at least five characters by default. When you migrate to the latest SDK, set `config.minIdLength` to a smaller value if you allowed identifiers with fewer than five characters.
 {{/partial:admonition}}
 
 Set a `deviceId` when you invoke `amplitude` without calling `getInstance()`
@@ -382,7 +382,7 @@ amplitude.setSessionId(sessionId)
 
 ### clearUserProperties()
 
-The `clearUserProperties` API has been removed, use the unified `identify` API to remove user properties. 
+The `clearUserProperties` API has been removed. Use the unified `identify` API to remove user properties. 
 
 {{partial:tabs tabs="amplitude-js, @amplitude/analytics-browser@2+"}}
 {{partial:tab name="amplitude-js"}}
@@ -401,7 +401,7 @@ amplitude.identify(
 
 ### setUserProperties()
 
-The `setUserProperties` API has been removed, use the unified `identify` API to add user properties. 
+The `setUserProperties` API has been removed. Use the unified `identify` API to add user properties. 
 
 {{partial:tabs tabs="amplitude-js, @amplitude/analytics-browser@2+"}}
 {{partial:tab name="amplitude-js"}}
@@ -526,7 +526,7 @@ export class LibraryModifierPlugin implements EnrichmentPlugin {
 }
 ```
 
-To install your custom plugin, use `add()` with your custom plugin as parameter.
+To install your custom plugin, use `add()` with your custom plugin as a parameter.
 
 ```typescript
 import * as amplitude from '@amplitude/analytics-browser'
@@ -554,7 +554,7 @@ amplitude.getInstance().enableTracking()
 ```
 {{/partial:tab}}
 {{partial:tab name="@amplitude/analytics-browser@2+"}}
-Call `init()` at a later time than `track()`. All `track()` calls are then processed after initialization completes.
+Call `init()` at a later time than `track()`. All `track()` calls are processed after initialization completes.
 
 ```typescript
 amplitude.track("Event 1")
@@ -568,18 +568,18 @@ amplitude.init(API_KEY, OPTIONAL_USER_ID)
 
 ### Web attribution
 
-In `amplitude-js`, web attribution is enabled by enabling the following configurations:
+In `amplitude-js`, enable web attribution through the following configurations:
 
 * `config.includeGclid`
 * `config.includeFbclid`
 * `config.includeReferrer`
 * `config.includeUtm`
 
-In `@amplitude/analytics-browser@2+`, the web attribution is controlled by a single configuration `config.autocapture.attribution` which by default is set to `true` and captures all campaign parameters. This configuration collects the same campaign parameters supported in `amplitude-js`.
+In `@amplitude/analytics-browser@2+`, the single configuration `config.autocapture.attribution` controls the web attribution. This configuration's default setting is `true`, and it captures all campaign parameters. These are the same campaign parameters supported in `amplitude-js`.
 
 ### Flush or onExitPage
 
-There are certain scenarios that warrant sending events immediately, like when a user navigates away from a page. This is a common scenario when tracking button clicks that directs the user to another page while sending event payload in batches.
+Sometimes you should send events immediately, like when a user navigates away from a page. This is common when tracking button clicks that direct the user to another page while sending event payload in batches.
 
 In `amplitude-js` do this by using `onExitPage()` callback.
 
@@ -608,7 +608,7 @@ window.addEventListener('pagehide', () => {
 
 ### Callback
 
-For `amplitude-js`, one `init` callback function for executing any function after initialization and two separate callback functions are passed for success and error network request. With `@amplitude/analytics-browser@2+` supporting Promises (and async/await), the asynchronous methods like `init()`, `track()`, `identify()`, `groupIdentify()` return a custom promise interface.
+`amplitude-js` passes one `init` callback function for executing any function after initialization and two separate callback functions for success and error network requests. With `@amplitude/analytics-browser@2+` supporting promises (and async/await), the asynchronous methods like `init()`, `track()`, `identify()`, `groupIdentify()` return a custom promise interface.
 
 ```javascript
 const initResult = await amplitude.init("YOUR_API_KEY").promise
