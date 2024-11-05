@@ -68,7 +68,7 @@ Browser SDK 2.0 isn't backwards compatible with `amplitude-js`.
 To migrate to `@amplitude/analytics-browser@2+`, update your dependencies and instrumentation.
 
 {{partial:admonition type="warning" heading="Breaking changes"}}
-Migration to `@amplitude/analytics-browser@2+` may result in changes that can cause disruption to Web Attribution in your implementation. Before you upgrade, you can choose if attribution occurs during a session, or not. After you upgrade, attribution can happen during the session, and is no longer configurable.
+When migrating to `@amplitude/analytics-browser@2+`, your implementation may experience disruption to web attribution. Before you upgrade, choose whether attribution occurs during a session. After upgrading, attribution can happen during the session, and is no longer configurable.
 
 In both versions, attribution can happen during initialization.
 {{/partial:admonition}}
