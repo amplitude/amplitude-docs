@@ -44,13 +44,62 @@ To configure an Event Streaming integration from Amplitude to Moloco Commerce Me
 
 1. In Amplitude Data, click **Catalog** and select the **Destinations** tab.
 2. In the Event Streaming section, click **Moloco**.
-3. Enter a sync name, then click **Create Sync**.
+3. Enter a sync name, then click **Create Sync**. (NOTE: This should be created per event type). Supported values are the following
+  - ADD_TO_CART
+  - ADD_TO_WISHLIST
+  - HOME
+  - ITEM_SEARCH_VIEW
+  - LAND
+  - PAGE_VIEW
+  - PURHCASE
+  - SEARCH
 4. Toggle Status from **Disabled** to **Enabled**.
-5. Paste your **REST API Key** and **Platform ID**.
+5. Fill in the following fields
+    1. **REST API Key**: This is the API key provided by moloco
+    2. **Platform ID**: Identifier of the platform (EX. `Moloco Demo Test`)
+    3. **Event Type** Type of the event this destination delivers. (Available options are provided in 3.)
+    4. **Platform Name**: Name of the platform. Should be all lower-cased and replace underscore (_) and empty spaces with a hyphen (-)
 6. Toggle the **Send events**.
 7. In **Select and filter events** choose which events you want to send. Choose only the events you need in Moloco. *Transformed events aren't supported.*
 8. Under **Map properties to destination**, choose your user identifier and map specific Amplitude properties from Amplitude to Moloco.
 9. When satisfied with your configuration, click **Save**.
+
+### Event Types
+The following chart provides detailed information for each event type.
+| Event Type       | Description                                                              | Additional Required Fields                                                 |
+|------------------|--------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| HOME             | A shopper viewed your website's main or home page.                       |                                                                           |
+| PAGE_VIEW        | A shopper visited a page other than the product detail pages or the home page of your site. | page_id <br> *Anything that can identify the page uniquely. Use `window.location.pathname` if unsure.* |
+| ITEM_PAGE_VIEW   | A shopper visited a product detail page.                                 | items                                                                     |
+| ADD_TO_CART      | A shopper added an item to the cart.                                     | items                                                                     |
+| ADD_TO_WISHLIST  | A shopper put an item into the wish list.                                | items                                                                     |
+| SEARCH           | A shopper searches items with keywords or phrases from your site.        | search_query                                                              |
+| PURCHASE         | A shopper purchased a product.                                           | items, revenue                                                            |
+| LAND             | A shopper visited your website from an external source (e.g., Google Shopping). | referrer_page_id                                                       |
+
+### Mapping Chart
+Please refer to the following chart for the mapping section.
+| Moloco Field            | Type   | Required | Native   | Amplitude Property | Description                                                                  | Example                                 |
+|-------------------------|--------|----------|----------|--------------------|------------------------------------------------------------------------------|-----------------------------------------|
+| platform                | string | Y        | Platform |                    | The type of the channel                                                     | Android                                 |
+| event_id                | int    | Y        | Event ID |                    | Unique identifier of an event                                               | 1234567890                              |
+| user_id                 | string | N        | User ID  |                    | Unique identifier of a user                                                 | testUserID                              |
+| os_name                 | string | N        |          |                    | The device’s OS                                                             | Android                                 |
+| os_version              | string | N        |          |                    | The version of the device’s OS                                              | 9.1                                     |
+| device_type             | string | N        | Device type |               | The model of the device                                                     | Samsung Galaxy Note 4                   |
+| device_persistent_id    | string | N        | Device ID |                    | The UDID of the device used for the event                                   | English                                 |
+| custom_id               | string | N        | Session ID |                  | Session ID                                                                  | 12345678912345678                       |
+| language                | string | N        | Language  |                   | Language setting of the device                                              | English                                 |
+| ip_address              | string | N        | IP Address |                  | IP Address of the device                                                    | 198.0.0.1                               |
+| library                 | string | N        | Library   |                   | Library/User Agent of the device                                            | amplitude-android/3.2.1                 |
+| shipping_charge_currency| string | N        |          |                    | The shipping charge’s currency in ISO-4217                                  | USD                                     |
+| shipping_charge_amount  | double | N        |          |                    | The shipping charge without currency (15.5 if $15.5)                        | 15.5                                    |
+| revenue_currency        | string | N        |          |                    | The revenue’s currency in ISO-4217                                          | USD                                     |
+| revenue_amount          | double | N        |          |                    | The entire revenue of the event without currency (15.5 if $15.5)            | 15.5                                    |
+| page_id                 | string | N        |          |                    | Page ID should be a uniquely assigned value for each page in the app or website. Provide a string that can identify the context of the event. Any value will be acceptable if it helps identify unique pages. | - electronics <br> - categories/12312 <br> - Azd911d <br> - /classes/foo/lectures |
+| referrer_page_id        | string | N        |          |                    | Similar to the referrer in HTTP, this value indicates which page the user came to the current page from. | https://mycommerce.com/category/furniture |
+| search_query            | string | N        |          |                    | Query string for the search                                                 | microwave ovens                         |
+| items                   | obj    | N        |          |                    | Items information. Details can be found below.                              |                                         |
 
 ## Use Cases
 
