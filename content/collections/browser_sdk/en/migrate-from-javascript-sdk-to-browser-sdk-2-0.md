@@ -56,12 +56,12 @@ sdk_version_comparison:
 
 Amplitude Browser SDK 2.0 (`@amplitude/analytics-browser@2+`) features:
 
-* a plugin architecture
-* built-in type definition
-* broader support for front-end frameworks
-* autocapture
-* improved maketing attribution tracking
-* the same interfaces across platform with other Amplitude SDKs
+* Plugin architecture
+* Built-in type definition
+* Broader support for front-end frameworks
+* Autocapture
+* Improved marketing attribution tracking
+* Identical interfaces across platform with other Amplitude SDKs
 
 Browser SDK 2.0 isn't backwards compatible with `amplitude-js`.
 
