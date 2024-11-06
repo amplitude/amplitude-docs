@@ -42,7 +42,7 @@ To configure an Event Streaming integration from Amplitude to Moloco Commerce Me
 
 ### Amplitude setup
 
-1. In Amplitude Data, click **Catalog** and select the **Destinations** tab.
+1. In Amplitude Data, click *Catalog* and select the *Destinations* tab.
 2. In the Event Streaming section, click **Moloco**.
 3. Enter a sync name using one of the following values. Then click *Create Sync*. Create a sync for each event type.
   - `ADD_TO_CART`
