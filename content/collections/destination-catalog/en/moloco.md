@@ -107,6 +107,6 @@ See the following chart for the mapping section.
 
 ## Use cases
 
-* **Real-time User Segmentation:** By sending streaming data from Amplitude, which is a comprehensive analytics platform, to Moloco, you can create real-time user segments based on various attributes and behaviors. This enables you to target specific user groups with personalized advertisements and optimize campaign performance accordingly.
+* **Real-time user segmentation:** By sending streaming data from Amplitude to Moloco, you can create real-time user segments based on various attributes and behaviors. This enables you to target specific user groups with personalized advertisements and optimize campaign performance accordingly.
 * **Dynamic Ad Creative Optimization:** By integrating Amplitude's streaming data with Moloco's machine learning engine, you can leverage real-time user insights to dynamically optimize ad creative elements. This includes dynamically adjusting ad content, images, offers, and calls to action based on user preferences and behaviors, resulting in more engaging and effective advertisements.
 * **Behavioral Retargeting:** Amplitude captures user behavior data across various touchpoints, providing valuable insights into user engagement and conversion patterns. By streaming this data to Moloco, you can implement behavioral retargeting strategies, where users who have shown specific behaviors or indicated interest in certain products or services are retargeted with relevant ads across different channels and devices.
