@@ -38,7 +38,7 @@ Keep these things in mind when sending events to Moloco Commerce Media (MCM):
 
 To configure an Event Streaming integration from Amplitude to Moloco Commerce Media (MCM), you need the following information from Moloco Commerce Media (MCM):
 
-- **REST API Key:** To start sending data into Moloco Commerce Media (MCM), you need an API Key. Moloco uses this key to authenticate your requests to the API and connect the data with your account. Find this in your Moloco Commerce Media (MCM) account. 
+- **REST API Key:** To send data into Moloco Commerce Media (MCM), you need an API Key. Moloco uses this key to authenticate your requests to the API and connect the data with your account. Find this in your Moloco Commerce Media (MCM) account. 
 
 ### Amplitude setup
 
