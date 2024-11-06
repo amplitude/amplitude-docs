@@ -29,7 +29,7 @@ Keep these things in mind when sending events to Moloco Commerce Media (MCM):
 - You must enable this integration in each Amplitude project you want to use it in.
 - The Amplitude integration is only compatible with Moloco Commerce Media (MCM). 
 - You need a Moloco Commerce Media (MCM) account to enable this integration.
-- Amplitude matches the **User_id** to the ID field within Moloco Commerce Media (MCM) to associated events. If a user with that id doesn't exist within Moloco Commerce Media (MCM), a user is created. Make sure that the Amplitude `User_id` field matches the Moloco **Identity ID** to avoid user duplication.
+- Amplitude matches the **user ID** to the ID field within Moloco Commerce Media (MCM) to associated events. If a user with that ID doesn't exist within Moloco Commerce Media (MCM), Amplitude creates one. Make sure that the Amplitude `user_id` field matches the Moloco **Identity ID** to avoid user duplication.
 - Amplitude sends all user properties along with the event.
 
 ## Setup
