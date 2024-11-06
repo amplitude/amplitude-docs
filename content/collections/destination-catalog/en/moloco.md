@@ -62,7 +62,7 @@ To configure an Event Streaming integration from Amplitude to Moloco Commerce Me
 6. Toggle the **Send events**.
 7. In **Select and filter events** choose which events you want to send. Choose only the events you need in Moloco. *Transformed events aren't supported.*
 8. Under *Map properties to destination*, choose your user identifier and map specific Amplitude properties from Amplitude to Moloco.
-9. When satisfied with your configuration, click **Save**.
+9. When satisfied with your configuration, click *Save*.
 
 ### Event types
 
