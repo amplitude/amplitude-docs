@@ -11,10 +11,10 @@ integration_category:
 partner_maintained: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713810665
+updated_at: 1730928206
 source: 'https://www.docs.developers.amplitude.com/data/destinations/plotline-cohort/'
+integration_icon: partner-icons/plotline.svg
 ---
-
 [Plotline](https://www.plotline.so/) enables Product and marketing teams to configure in-app nudges to improve feature adoption and drive conversions. Fully no-code.
 
 ## Considerations
