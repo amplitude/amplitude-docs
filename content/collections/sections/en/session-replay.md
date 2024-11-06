@@ -5,13 +5,15 @@ title: 'Session Replay'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1730489376
+updated_at: 1730929249
 nav_title: session_replay
 hide_toc: false
 ---
 Sometimes you need to go beyond a funnel analysis to understand the "why" behind your product metrics. Amplitude’s built-in Session Replay feature gives full visibility in the customer journey by uncovering qualitative insights from your quantitative data. It brings digital experiences to life, unlocking growth bottlenecks and giving you the confidence to take appropriate action.
 
 Find Session Replay in the left-hand sidebar in Amplitude Analytics.
+
+[View and modify Session Replay settings in your organization settings](/docs/admin/account-management/account-settings#session-replay-settings).
 
 ## Feature availability
 
@@ -48,7 +50,7 @@ To use Session Replay in a chart, follow these steps:
 3. Check the *Streams with session replays* box.
 4. Click *Play Session* in the event stream to play the events directly below it.
 
-![UserStreams.png](/docs/output/img/session-replay/userstreams-png.png)
+![UserStreams.png](/docs/output/img/session-replay/userstreams-2.png)
 
 The replay view appears in the right-hand panel, where you can: 
 
@@ -57,6 +59,7 @@ The replay view appears in the right-hand panel, where you can: 
 * Skip forward and backwards by 10-second increments
 * Speed up and down
 * Skip periods of inactivity
+* Navigate to the standalone replay page and watch with event sync
 * Copy and share the replay's URL
 
 The user’s cursor movement displays as a red line, and masked HTML elements appear as a series of asterisks. Session Replay shows the timestamp of the session as it occurred.
