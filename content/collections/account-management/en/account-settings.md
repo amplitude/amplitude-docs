@@ -6,7 +6,7 @@ source: 'https://help.amplitude.com/hc/en-us/articles/235649848-The-Settings-pag
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1721163957
+updated_at: 1730929932
 this_article_will_help_you:
   - 'Manage organizational and project-level settings'
 ---
@@ -44,13 +44,17 @@ Click *View Usage Over Time* in the session capture card to review usage specifi
 From the project list, you can:
 
 - View a list of projects that are capturing replays, along with their sample rate and current instrumentation status.
-- Toggle Session Capture on or off for a specific project. Turning off session capture for a specific project only applies to future sessions.
-Click a project name to modify the sample rate, or percentage of user sessions captured. Modifying the sample rate in settings overrides the existing SDK implementation's sample rate, and may take several minutes to take effect.
+- Toggle *Session Capture* on or off for a specific project. Turning off session capture for a specific project only applies to future sessions.
 
-    From the sampling module, click View User Sessions Chart to view an estimate of the total sessions captured on a monthly basis. 
+    Click a project name to modify the sample rate, or percentage of user sessions captured. Modifying the sample rate in settings overrides the existing SDK implementation's sample rate, and may take several minutes to take effect.
+    
+    ![session_replay_settings.png](/docs/output/img/account-management/session_replay_settings.png)
+
+    From the sampling module, click *View User Sessions Chart* to view an estimate of the total sessions captured on a monthly basis. 
 
 - Click *+ Select Project* from the bottom of the list to add a project. Projects can't be removed once added.
-By default, the project's session capture are set to `on`, and its sample rate matches the rate established in your SDK implementation. Adding a project via the SDK doesn't automatically add it to the list. However, an admin adding a new organization via the organizational settings adds a project to the list with session capture set to on and a sample rate of 100%.
+
+     By default, the project's session capture are set to `on`, and its sample rate matches the rate established in your SDK implementation. Adding a project via the SDK doesn't automatically add it to the list. However, an admin adding a new organization via the organizational settings adds a project to the list with session capture set to on and a sample rate of 100%.
 
 {{partial:admonition type="note" heading=""}}
 Replays are captured only if instrumentation is accurate and complete, and a sample rate is set. Be sure to use the most recent [SDK](/docs/sdks) for best results.
