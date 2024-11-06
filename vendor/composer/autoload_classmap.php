@@ -6732,7 +6732,6 @@ return array(
     'Statamic\\Http\\Controllers\\CP\\Updater\\UpdateProductController' => $vendorDir . '/statamic/cms/src/Http/Controllers/CP/Updater/UpdateProductController.php',
     'Statamic\\Http\\Controllers\\CP\\Updater\\UpdaterController' => $vendorDir . '/statamic/cms/src/Http/Controllers/CP/Updater/UpdaterController.php',
     'Statamic\\Http\\Controllers\\CP\\Users\\AccountController' => $vendorDir . '/statamic/cms/src/Http/Controllers/CP/Users/AccountController.php',
-    'Statamic\\Http\\Controllers\\CP\\Users\\ExtractsFromUserFields' => $vendorDir . '/statamic/cms/src/Http/Controllers/CP/Users/ExtractsFromUserFields.php',
     'Statamic\\Http\\Controllers\\CP\\Users\\PasswordController' => $vendorDir . '/statamic/cms/src/Http/Controllers/CP/Users/PasswordController.php',
     'Statamic\\Http\\Controllers\\CP\\Users\\RolesController' => $vendorDir . '/statamic/cms/src/Http/Controllers/CP/Users/RolesController.php',
     'Statamic\\Http\\Controllers\\CP\\Users\\UserActionController' => $vendorDir . '/statamic/cms/src/Http/Controllers/CP/Users/UserActionController.php',
