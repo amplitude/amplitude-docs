@@ -9,7 +9,7 @@ eu_endpoint: 'https://analytics.eu.amplitude.com/api/2/'
 postman_link: 'https://www.postman.com/amplitude-dev-docs/workspace/amplitude-developers/folder/20044411-4b8180c4-e06e-478a-9c96-0ccf6cf652e2?action=share&source=copy-link&creator=29131806&ctx=documentation'
 api_status: ga
 lede: |-
-  The Taxonomy API grants Enterprise users the ability to programmatically plan their event schema in the Taxonomy tab.
+  The Taxonomy API grants `Enterprise` users the ability to programmatically plan their event schema in the Taxonomy tab.
 
   The Taxonomy API lets you create, get, update, and delete categories, event types, event properties, and user properties.
 updated_by: 041236eb-2ea6-439c-908d-304b6af535e3
@@ -603,20 +603,20 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 {{/partial:tabs}}
 
 {{partial:collapse name="Example: Get an event type by name"}}
-This example gets the "Event 2" event type. This is a custom event, so it has a `ce:` prefix.
+This example gets the "Event 2" event type.
 
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 
-curl --location --request GET 'https://amplitude.com/api/2/taxonomy/event/ce:Event 2' \
+curl --location --request GET 'https://amplitude.com/api/2/taxonomy/event/Event 2' \
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
 {{partial:tab name="HTTP"}}
 ```bash
 
-curl --location --request GET 'https://amplitude.com/api/2/taxonomy/event/ce:Event 2' \
+curl --location --request GET 'https://amplitude.com/api/2/taxonomy/event/Event 2' \
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
@@ -627,7 +627,7 @@ curl --location --request GET 'https://amplitude.com/api/2/taxonomy/event/ce:Eve
 
 |<div class="big-column">Name</div>| Description|
 |----|-----|
-|`event_type`| <span class="required">Required</span>. String. The event name. Prefix custom event types with `ce:`.|
+|`event_type`| <span class="required">Required</span>. String. The event name.|
 
 
 #### 200 OK response
@@ -638,7 +638,7 @@ A successful request returns a `200 OK` status and a JSON body with the event ty
 {
     "success": true,
     "data": {
-        "event_type": "ce:Event 2",
+        "event_type": "Event 2",
         "category": {
             "name": "Conversion Events"
         },
@@ -690,12 +690,12 @@ category=NEW_CATEGORY_NAME&display_name=NEW_EVENT_TYPE_DISPLAY_NAME
 {{/partial:tabs}}
 
 {{partial:collapse name="Example: Update an event type"}}
-This example updates the event type "OnboardingBegin" with the category "Onboarding", event type name "OnboardStart", the display name "Onboarding Start", and a description of "User signed in and completed an onboarding task from modal". Because the event type is custom, it has the `ce:` prefix.
+This example updates the event type "OnboardingBegin" with the category "Onboarding", event type name "OnboardStart", the display name "Onboarding Start", and a description of "User signed in and completed an onboarding task from modal".
 
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
-curl --location --request PUT 'https://amplitude.com/api/2/taxonomy/event/ce:OnboardBegin' \
+curl --location --request PUT 'https://amplitude.com/api/2/taxonomy/event/OnboardBegin' \
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'new_event_type=OnboardStart' \
@@ -707,8 +707,7 @@ curl --location --request PUT 'https://amplitude.com/api/2/taxonomy/event/ce:Onb
 {{/partial:tab}}
 {{partial:tab name="HTTP"}}
 ```bash
-
-PUT /api/2/taxonomy/event/ce:OnboardBegin HTTP/1.1
+PUT /api/2/taxonomy/event/OnboardBegin HTTP/1.1
 Host: amplitude.com
 Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 Content-Type: application/x-www-form-urlencoded
@@ -724,7 +723,7 @@ new_event_type=OnboardStart&category=Onboarding&description=User%20signed%20in%2
 
 |<div class="big-column">Name</div>| Description|
 |----|-----|
-|`event_type`| <span class="required">Required</span>. String. The event name. Prefix custom event types with `ce:`. |
+|`event_type`| <span class="required">Required</span>. String. The event name.|
 
 #### Body parameters
 
@@ -754,7 +753,7 @@ If there is a problem with your request, the request returns a `409 Conflict` st
     "success": false,
     "errors": [
         {
-            "message": "Attempted to change the event display name for event \"ce:Event\", but the event is not in schema."
+            "message": "Attempted to change the event display name for event \"Event\", but the event is not in schema."
         }
     ]
 }
@@ -783,13 +782,13 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 {{/partial:tabs}}
 
 {{partial:collapse name="Example: Delete an event type"}}
-This example deletes the event type "Event1". Because the event type is custom, it has the `ce:` prefix.
+This example deletes the event type "Event1".
 
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 
-curl --location --request DELETE 'https://amplitude.com/api/2/taxonomy/event/ce:Event1' \
+curl --location --request DELETE 'https://amplitude.com/api/2/taxonomy/event/Event1' \
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=' \
 
 ```
@@ -797,7 +796,7 @@ curl --location --request DELETE 'https://amplitude.com/api/2/taxonomy/event/ce:
 {{partial:tab name="HTTP"}}
 ```bash
 
-DELETE /api/2/taxonomy/event/ce:Event1 HTTP/1.1
+DELETE /api/2/taxonomy/event/Event1 HTTP/1.1
 Host: amplitude.com
 Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
@@ -810,7 +809,15 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 |<div class="big-column">Name</div>| Description|
 |----|-----|
-|`event_type`| <span class="required">Required</span>. The name of the event type. Prefix custom event types with `ce:`. |
+|`event_type`| <span class="required">Required</span>. The name of the event type.|
+
+#### Behavior
+
+* If the event type is `live`, it is marked as deleted.
+* If the event type is `unexpected`, it is added to the tracking plan and marked as deleted.
+* If the event type is `planned`, it is removed from the tracking plan.
+* If the event type is `transformed` or part of a transformation, an error is returned because transformed event types cannot be deleted.
+* If the event type is `deleted` or `not found`, an error is returned.
 
 #### 200 OK response
 
@@ -822,16 +829,96 @@ A successful request returns a `200 OK` status and a JSON body.
 }
 ```
 
-#### 409 conflict response
+#### 4XX responses
 
-If there is a problem with your request, the request returns a `409 Conflict` status, and a JSON body with more information.
+If there is a problem with your request, the request returns a `4XX` status, and a JSON body with more information.
 
 ```json
 {
     "success": false,
     "errors": [
         {
-            "message": "Attempted to remove an event, \"ce:Event1\", that is not a planned event."
+            "message": "Not found"
+        }
+    ]
+}
+```
+
+### Restore an event type
+
+Restore an event type.
+
+`POST https://amplitude.com/api/2/taxonomy/event/:event_type/restore`
+
+{{partial:tabs tabs="cURL, HTTP"}}
+{{partial:tab name="cURL"}}
+```bash
+curl --location --request POST 'https://amplitude.com/api/2/taxonomy/event/EVENT_TYPE/restore'
+-u '{api_key}:{secret_key}'
+```
+{{/partial:tab}}
+{{partial:tab name="HTTP"}}
+```bash
+POST /api/2/taxonomy/event/EVENT_TYPE/restore HTTP/1.1
+Host: amplitude.com
+Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+{{partial:collapse name="Example: Restore an event type"}}
+This example restores the event type "Event1".
+
+{{partial:tabs tabs="cURL, HTTP"}}
+{{partial:tab name="cURL"}}
+```bash
+curl --location --request POST 'https://amplitude.com/api/2/taxonomy/event/Event1/restore' \
+--header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
+
+```
+{{/partial:tab}}
+{{partial:tab name="HTTP"}}
+```bash
+POST /api/2/taxonomy/event/Event1/restore HTTP/1.1
+Host: amplitude.com
+Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
+
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+{{/partial:collapse}}
+
+#### Path parameters
+
+|<div class="big-column">Name</div>| Description|
+|----|-----|
+|`event_type`| <span class="required">Required</span>. The name of the event type.|
+
+#### Behavior
+
+* If the event type is `deleted`, it is restored.
+* If the event type is `not deleted` or `not found`, an error is returned.
+
+#### 200 OK response
+
+A successful request returns a `200 OK` status and a JSON body.
+
+```json
+{
+    "success": true
+}
+```
+
+#### 4XX responses
+
+If there is a problem with your request, the request returns a `4XX` status, and a JSON body with more information.
+
+```json
+{
+    "success": false,
+    "errors": [
+        {
+            "message": "Not found"
         }
     ]
 }
@@ -1246,7 +1333,7 @@ Some failed requests return a `409 Conflict` and an error message with more deta
 
 ### Delete an event property
 
-Delete an event property. Send a `DELETE` request with the event property as a path parameter and the event type in the request body.
+Delete an event property. Send a `DELETE` request with the event property as a path parameter and optionally, the event type in the request body.
 
 `DELETE https://amplitude.com/api/2/taxonomy/event-property/:event-property`
 
@@ -1309,8 +1396,83 @@ event_type=Onboarding%20Start
 
 |<div class="big-column">Name</div>|Description|
 |-----|---------|
-|`event_type`|<span class="required">Required</span>. Name of the event type to which the event properties belong to.|
+|`event_type`|<span class="optional">Optional</span>. Name of the event type to which the event properties belong to.|
 
+#### Behavior
+
+* If the event type is provided
+    * If the event property `exists` on the event type, it is removed from the event type.
+    * If the event property `does not exist` on the event type, an error is returned.
+* If the event type is not provided, Amplitude operates on the global event property
+    * If the event property is `live`, it is marked as deleted.
+    * If the event property is `unexpected`, it is added to the tracking plan and marked as deleted.
+    * If the event property is `planned`, it is removed from the tracking plan.
+    * If the event property is `transformed` or part of a transformation, an error is returned because transformed event properties cannot be deleted.
+    * If the event property is `deleted` or `not found`, an error is returned.
+
+#### 200 OK response
+
+A successful request returns a `200 OK` status and a JSON body.
+
+```json
+{
+    "success": true
+}
+```
+
+### Restore an event property
+
+Restore an event property. Send a `POST` request with the event property as a path parameter.
+
+`POST https://amplitude.com/api/2/taxonomy/event-property/:event-property/restore`
+
+{{partial:tabs tabs="cURL, HTTP"}}
+{{partial:tab name="cURL"}}
+```bash
+curl --location --request POST 'https://amplitude.com/api/2/taxonomy/event-property/EVENT_PROPERTY/restore' \
+--header 'Authorization: Basic {api-key}:{secret-key}' # credentials must be base64 encoded
+```
+{{/partial:tab}}
+{{partial:tab name="HTTP"}}
+```bash
+POST /api/2/taxonomy/event-property/EVENT_PROPERTY/restore HTTP/1.1
+Host: amplitude.com
+Authorization: Basic {api-key}:{secret-key} # credentials must be base64 encoded
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+{{partial:collapse name="Example: Delete an event property"}}
+This example restores the event property "Completed Task".
+
+{{partial:tabs tabs="cURL, HTTP"}}
+{{partial:tab name="cURL"}}
+```bash
+curl --location --request POST 'https://amplitude.com/api/2/taxonomy/event-property/Completed Task/restore' \
+--header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
+```
+{{/partial:tab}}
+{{partial:tab name="HTTP"}}
+```bash
+POST /api/2/taxonomy/event-property/Completed Task/restore HTTP/1.1
+Host: amplitude.com
+Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+{{/partial:collapse}}
+
+
+#### Path parameters
+
+|<div class="big-column">Name</div>|Description|
+|-----|---------|
+|`event_property`|<span class="required">Required</span>. The event property name.|
+
+#### Behavior
+
+* If the event property is `deleted`, it is restored.
+* If the event property is `not deleted` or `not found`, an error is returned.
 
 #### 200 OK response
 
@@ -1708,7 +1870,6 @@ curl --location --request DELETE 'https://amplitude.com/api/2/taxonomy/user-prop
 {{/partial:tab}}
 {{partial:tab name="HTTP"}}
 ```bash
-
 DELETE /api/2/taxonomy/user-property/USER_PROPERTY HTTP/1.1
 Host: amplitude.com
 Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
@@ -1729,7 +1890,6 @@ curl --location --request DELETE 'https://amplitude.com/api/2/taxonomy/user-prop
 {{/partial:tab}}
 {{partial:tab name="HTTP"}}
 ```bash
-
 DELETE /api/2/taxonomy/user-property/gp:interests HTTP/1.1
 Host: amplitude.com
 Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
@@ -1744,6 +1904,15 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 |-----|---------|
 |`user_property`|<span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`.|
 
+#### Behavior
+
+* If the user property is `live`, it is marked as deleted.
+* If the user property is `unexpected`, it is added to tracking plan and marked as deleted.
+* If the user property is `planned`, it is removed from the tracking plan.
+* If the user property is `transformed` or part of a transformation, an error is returned as transformed user properties cannot be deleted.
+* If the user property is an `Amplitude User Property`, an error is returned because Amplitude user properties cannot be deleted.
+* If the user property is `deleted` or `not found`, an error is returned.
+
 #### 200 OK response
 
 A successful request returns a `200 OK` response and a JSON message.
@@ -1754,18 +1923,68 @@ A successful request returns a `200 OK` response and a JSON message.
 }
 ```
 
-#### 409 conflict response
 
-A failed request returns a `409 Bad Request` status and an error message.
+### Restore a user property
+
+Restore a single user property, by name.
+
+`POST https://amplitude.com/api/2/taxonomy/user-property/USER_PROPERTY/restore`
+
+{{partial:tabs tabs="cURL, HTTP"}}
+{{partial:tab name="cURL"}}
+```bash
+curl --location --request POST 'https://amplitude.com/api/2/taxonomy/user-property/USER_PROPERTY/restore' \
+-u '{api_key}:{secret_key}'
+```
+{{/partial:tab}}
+{{partial:tab name="HTTP"}}
+```bash
+POST /api/2/taxonomy/user-property/USER_PROPERTY/restore HTTP/1.1
+Host: amplitude.com
+Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
+
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+{{partial:collapse name="Example: Restore a user property"}}
+This example restores a custom user property "interests". Notice that the user property is prefixed with `gp:`.
+
+{{partial:tabs tabs="cURL, HTTP"}}
+{{partial:tab name="cURL"}}
+```bash
+curl --location --request POST 'https://amplitude.com/api/2/taxonomy/user-property/gp:interests/restore' \
+--header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
+```
+{{/partial:tab}}
+{{partial:tab name="HTTP"}}
+```bash
+POST /api/2/taxonomy/user-property/gp:interests/restore HTTP/1.1
+Host: amplitude.com
+Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+{{/partial:collapse}}
+
+#### Path parameters
+
+|<div class="big-column">Name</div>|Description|
+|-----|---------|
+|`user_property`|<span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`.|
+
+#### Behavior
+
+* If the user property is `deleted`, it is restored.
+* If the user property is `not deleted` or `not found`, an error is returned.
+
+#### 200 OK response
+
+A successful request returns a `200 OK` response and a JSON message.
 
 ```json
 {
-    "success": false,
-    "errors": [
-        {
-            "message": "Attempted to remove a user property, \"sdf\", that is not a planned user property."
-        }
-    ]
+    "success": true
 }
 ```
 
