@@ -1,5 +1,5 @@
 ---
-id: b7cc9d54-870a-40bc-93d8-a2ac15375e75
+id: 57ba371b-f74f-4606-bc62-6405b4375f61
 blueprint: browser_sdk
 title: 'Migrate from Javascript SDK to Browser SDK 2.0'
 sdk_status: maintenance
@@ -10,7 +10,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1714669940
 parent: e6b6889d-9d39-4f04-89a1-87f78db80f49
 exclude_from_sitemap: false
-source: https://www.docs.developers.amplitude.com/data/sdks/typescript-browser/migration/
+source: 'https://www.docs.developers.amplitude.com/data/sdks/typescript-browser/migration/'
 sdk_version_comparison:
   -
     cells:
@@ -53,7 +53,6 @@ sdk_version_comparison:
       - 'Supported, with configuration.'
       - 'Not supported'
 ---
-
 Amplitude Browser SDK 2.0 (`@amplitude/analytics-browser@2+`) features:
 
 * Plugin architecture
