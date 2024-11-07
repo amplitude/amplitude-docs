@@ -9,7 +9,7 @@ eu_endpoint: 'https://analytics.eu.amplitude.com/api/2/'
 postman_link: 'https://www.postman.com/amplitude-dev-docs/workspace/amplitude-developers/folder/20044411-4b8180c4-e06e-478a-9c96-0ccf6cf652e2?action=share&source=copy-link&creator=29131806&ctx=documentation'
 api_status: ga
 lede: |-
-  The Taxonomy API grants `Enterprise` users the ability to programmatically plan their event schema in the Taxonomy tab.
+  The Taxonomy API grants Enterprise users the ability to programmatically plan their event schema in the Taxonomy tab.
 
   The Taxonomy API lets you create, get, update, and delete categories, event types, event properties, and user properties.
 updated_by: 041236eb-2ea6-439c-908d-304b6af535e3
@@ -603,7 +603,7 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 {{/partial:tabs}}
 
 {{partial:collapse name="Example: Get an event type by name"}}
-This example gets the "Event 2" event type.
+This example gets the 'Event 2' event type.
 
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
@@ -690,7 +690,7 @@ category=NEW_CATEGORY_NAME&display_name=NEW_EVENT_TYPE_DISPLAY_NAME
 {{/partial:tabs}}
 
 {{partial:collapse name="Example: Update an event type"}}
-This example updates the event type "OnboardingBegin" with the category "Onboarding", event type name "OnboardStart", the display name "Onboarding Start", and a description of "User signed in and completed an onboarding task from modal".
+This example updates the event type `OnboardingBegin` with the category `Onboarding`, event type name `OnboardStart`, the display name "Onboarding Start", and a description of "User signed in and completed an onboarding task from modal".
 
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
@@ -782,7 +782,7 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 {{/partial:tabs}}
 
 {{partial:collapse name="Example: Delete an event type"}}
-This example deletes the event type "Event1".
+This example deletes the event type `Event1`.
 
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
@@ -831,7 +831,7 @@ A successful request returns a `200 OK` status and a JSON body.
 
 #### 4XX responses
 
-If there is a problem with your request, the request returns a `4XX` status, and a JSON body with more information.
+If there's a problem with the request, Amplitude returns a `4XX` status, and a JSON body with more information.
 
 ```json
 {
@@ -911,7 +911,7 @@ A successful request returns a `200 OK` status and a JSON body.
 
 #### 4XX responses
 
-If there is a problem with your request, the request returns a `4XX` status, and a JSON body with more information.
+If there's a problem with your request, Amplitude returns a `4XX` status, and a JSON body with more information.
 
 ```json
 {
@@ -1333,7 +1333,7 @@ Some failed requests return a `409 Conflict` and an error message with more deta
 
 ### Delete an event property
 
-Delete an event property. Send a `DELETE` request with the event property as a path parameter and optionally, the event type in the request body.
+Delete an event property. Send a `DELETE` request with the event property as a path parameter and, optionally, the event type in the request body.
 
 `DELETE https://amplitude.com/api/2/taxonomy/event-property/:event-property`
 
@@ -1396,18 +1396,18 @@ event_type=Onboarding%20Start
 
 |<div class="big-column">Name</div>|Description|
 |-----|---------|
-|`event_type`|<span class="optional">Optional</span>. Name of the event type to which the event properties belong to.|
+|`event_type`|<span class="optional">Optional</span>. Name of the event type to which the event properties belong.|
 
 #### Behavior
 
-* If the event type is provided
-    * If the event property `exists` on the event type, it is removed from the event type.
+* If the event type is provided:
+    * If the event property `exists` on the event type, it's removed from the event type.
     * If the event property `does not exist` on the event type, an error is returned.
-* If the event type is not provided, Amplitude operates on the global event property
-    * If the event property is `live`, it is marked as deleted.
-    * If the event property is `unexpected`, it is added to the tracking plan and marked as deleted.
-    * If the event property is `planned`, it is removed from the tracking plan.
-    * If the event property is `transformed` or part of a transformation, an error is returned because transformed event properties cannot be deleted.
+* If the event type isn't provided, Amplitude operates on the global event property.
+    * If the event property is `live`, it's marked as deleted.
+    * If the event property is `unexpected`, it's added to the tracking plan and marked as deleted.
+    * If the event property is `planned`, it's removed from the tracking plan.
+    * If the event property is `transformed` or part of a transformation, an error is returned because transformed event properties can't be deleted.
     * If the event property is `deleted` or `not found`, an error is returned.
 
 #### 200 OK response
@@ -1471,7 +1471,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 #### Behavior
 
-* If the event property is `deleted`, it is restored.
+* If the event property is `deleted`, it's restored.
 * If the event property is `not deleted` or `not found`, an error is returned.
 
 #### 200 OK response
@@ -1906,11 +1906,11 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 #### Behavior
 
-* If the user property is `live`, it is marked as deleted.
-* If the user property is `unexpected`, it is added to tracking plan and marked as deleted.
-* If the user property is `planned`, it is removed from the tracking plan.
-* If the user property is `transformed` or part of a transformation, an error is returned as transformed user properties cannot be deleted.
-* If the user property is an `Amplitude User Property`, an error is returned because Amplitude user properties cannot be deleted.
+* If the user property is `live`, it's marked as deleted.
+* If the user property is `unexpected`, it's added to tracking plan and marked as deleted.
+* If the user property is `planned`, it's removed from the tracking plan.
+* If the user property is `transformed` or part of a transformation, an error is returned, because transformed user properties can't be deleted.
+* If the user property is an `Amplitude User Property`, an error is returned, because Amplitude user properties can't be deleted.
 * If the user property is `deleted` or `not found`, an error is returned.
 
 #### 200 OK response
@@ -1948,7 +1948,7 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 {{/partial:tabs}}
 
 {{partial:collapse name="Example: Restore a user property"}}
-This example restores a custom user property "interests". Notice that the user property is prefixed with `gp:`.
+This example restores a custom user property `interests`. Notice that the user property is prefixed with `gp:`.
 
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
@@ -1975,7 +1975,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 #### Behavior
 
-* If the user property is `deleted`, it is restored.
+* If the user property is `deleted`, it's restored.
 * If the user property is `not deleted` or `not found`, an error is returned.
 
 #### 200 OK response
