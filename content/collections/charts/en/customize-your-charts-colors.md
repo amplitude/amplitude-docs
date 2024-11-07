@@ -19,11 +19,11 @@ Chart color themes are available to organizations on an **Enterprise** plan. For
 
 ## Apply a theme to a new or existing chart
 
-On any individual chart, click *More* above the chart, and select *Change Chart Color Theme*. The Change theme panel appears.
+1. On any individual chart, click *More* above the chart, and select *Change Chart Color Theme*. The Change theme panel appears.
 
-Select from any default or org-level theme, or create your own.
+2. Select from any default or org-level theme, or create your own.
 
-Save the chart to apply the theme.
+3. Save the chart to apply the theme.
 
 {{partial:admonition type="note" heading="Chart-level themes"}}
 Themes you apply to charts apply to that chart, only. 
