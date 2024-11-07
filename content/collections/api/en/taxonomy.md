@@ -1488,9 +1488,6 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 | `deleted` | Restores the event property |
 | `not deleted` or `not found` | Returns an error|
 
-* If the event property is `deleted`, it's restored.
-* If the event property is `not deleted` or `not found`, an error is returned.
-
 #### 200 OK response
 
 A successful request returns a `200 OK` status and a JSON body.
