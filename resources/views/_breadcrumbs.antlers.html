@@ -1,6 +1,6 @@
 <div class="flex flex-row flex-nowrap w-full text-sm pl-6 lg:pl-8 text-gray-400">
     {{if segment_2}}
-    {{nav:breadcrumbs include_home="false"}}
+    {{nav:breadcrumbs include_home="false" trim="false"}}
     <div class="mr-2 text-s text-gray-500 "><a class="{{if is_current}}font-semibold{{/if}}"
         href="{{url}}">{{title}}</a></div>
     {{if !is_current}}<span class="mr-2">/</span>{{/if}}
