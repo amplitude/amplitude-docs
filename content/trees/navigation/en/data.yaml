@@ -193,6 +193,9 @@ tree:
     title: Integrations
     children:
       -
+        id: 63ab8319-78a6-419f-b612-b3a1a23b7dac
+        entry: 4acc238e-a2ef-4cee-b123-dd16e08c3dfd
+      -
         id: ba48c936-bb37-4f7b-ae36-ca8804ce77ba
         title: Sources
         children:

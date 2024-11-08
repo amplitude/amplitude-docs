@@ -1,0 +1,77 @@
+title: Starter
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: false
+              validate:
+                - required
+          -
+            handle: content
+            field:
+              type: markdown
+              display: Content
+              localizable: false
+              antlers: true
+          -
+            handle: categories
+            field:
+              type: replicator
+              display: Categories
+              localizable: false
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    category:
+                      display: Category
+                      fields:
+                        -
+                          handle: category_name
+                          field:
+                            type: text
+                            display: 'Category name'
+                            localizable: false
+                        -
+                          handle: description
+                          field:
+                            type: markdown
+                            display: Description
+                            localizable: false
+                        -
+                          handle: integrations
+                          field:
+                            create: false
+                            collections:
+                              - source-catalog
+                              - destination-catalog
+                            type: entries
+                            display: Integrations
+                            localizable: false
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - data
+              max_items: 1
+              listable: false
+              localizable: true
