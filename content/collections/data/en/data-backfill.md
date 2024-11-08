@@ -24,7 +24,7 @@ Typically you don't need to check historical data often, but still want it to be
  As a result, if Amplitude records a user as new on June 1 2021 and you backfill the data for the user from February 1 2021, then Amplitude defines the user is new on February 1 2021.
 - Backfilling can compromise your app data. If there is a mismatch between the current user ID and the backfilled user ID, then Amplitude interprets the two distinct User IDs as two distinct users. 
 As a result, users are double counted. Because Amplitude can't delete data after it's recorded, you may have to create a new project to prevent data issues. 
-- Amplitude uses the Device ID and User ID fields to compute the Amplitude ID. For more information, see [Track unique users](/docs/cdp/sources/instrument-track-unique-users).
+- Amplitude uses the Device ID and User ID fields to compute the Amplitude ID. For more information, see [Track unique users](/docs/data/sources/instrument-track-unique-users).
 - Events in the backfill count toward your monthly event volume.
 
 ## Limits 

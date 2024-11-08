@@ -39,7 +39,7 @@ Remote evaluation resolves the user within Amplitude and appends additional info
 
 Amplitude ID resolution happens before additional [user enrichment](#user-enrichment), and is required if [bucketing](/docs/feature-experiment/implementation#consistent-bucketing) by Amplitude ID.
 
-[Learn more about Amplitude's advanced identity resolution.](/docs/cdp/sources/instrument-track-unique-users)
+[Learn more about Amplitude's advanced identity resolution.](/docs/data/sources/instrument-track-unique-users)
 
 ### User enrichment
 

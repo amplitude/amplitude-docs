@@ -57,7 +57,7 @@ Enabling sticky bucketing before making targeting changes prevents variant jumpi
 
 The way Amplitude handles anonymous users can sometimes lead to variant jumping. Specifically, Amplitude merges anonymous IDs with the correct existing user IDs (if one exists) as soon as it has enough information to do so. This may happen if a user uses your app on different devices without logging in, or if the device ID regenerates upon logout.
 
-[Learn more about Amplitude's identity resolution and merging users.](/docs/cdp/sources/instrument-track-unique-users)
+[Learn more about Amplitude's identity resolution and merging users.](/docs/data/sources/instrument-track-unique-users)
 
 To identify this type of variant jumping, look for the assignment event where the user jumped between variants. Then compare the value of the Amplitude ID for both events. If it's different for both events, it's probably the result of anonymous identity merging.
 
@@ -98,7 +98,7 @@ If you keep a consistent device ID across logins, you can easily check for this 
 
 ### Inconsistent identity input between assignment and exposure
 
-In Amplitude, the user ID and device ID properties are essential to identify your user and [resolve their Amplitude ID](/docs/cdp/sources/instrument-track-unique-users). If the device ID or user ID used to fetch and evaluate assignments is different from the device ID and user ID used to track the exposure event, you may see variant jumping, SRMs, and inconsistent or unexpected bucketing behavior.
+In Amplitude, the user ID and device ID properties are essential to identify your user and [resolve their Amplitude ID](/docs/data/sources/instrument-track-unique-users). If the device ID or user ID used to fetch and evaluate assignments is different from the device ID and user ID used to track the exposure event, you may see variant jumping, SRMs, and inconsistent or unexpected bucketing behavior.
 
 For example, you may be sending events through a proxy or CDP that masks IDs before sending to Amplitude. In this case, the identity used to fetch variants would be different from the identity included in the exposure events.
 

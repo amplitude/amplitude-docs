@@ -20,7 +20,7 @@ Start by identifying—as specifically as possible—your business goals. What a
 
 ## Understand how Amplitude identifies and tracks users
 
-If you're not properly tracking your users, you can't get what you need from Amplitude. It's as simple as that. Be sure to **read and understand** this article on [how Amplitude identifies and tracks unique users](/docs/cdp/sources/instrument-track-unique-users) before you get started with instrumentation.
+If you're not properly tracking your users, you can't get what you need from Amplitude. It's as simple as that. Be sure to **read and understand** this article on [how Amplitude identifies and tracks unique users](/docs/data/sources/instrument-track-unique-users) before you get started with instrumentation.
 
 ## Organize events and related properties
 

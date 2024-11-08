@@ -40,7 +40,7 @@ Event properties are details about events. For example, when someone presses the
 
 A user is the specific individual who completed an interaction with your product. Amplitude analyses depend on accurately tracking **unique users**. This is often trickier than it sounds, because your users can log in and out at will, browse anonymously, or use multiple devices. 
 
-Learn more about how to [identify your users](/docs/get-started/understand-user-activity) and [how Amplitude tracks unique users](/docs/cdp/sources/instrument-track-unique-users) by using a combination of device IDs, user IDs, and Amplitude IDs.
+Learn more about how to [identify your users](/docs/get-started/understand-user-activity) and [how Amplitude tracks unique users](/docs/data/sources/instrument-track-unique-users) by using a combination of device IDs, user IDs, and Amplitude IDs.
 
 #### User properties
 
@@ -50,6 +50,6 @@ User properties are details about users. For example, use them to keep track of 
 
 A session is the duration a user has your app in the foreground or has your website open. Sessions are useful for understanding the frequency and duration of your users' engagement with your product. Amplitude assigns a session ID to each session, and all events within the same session share the same session ID. To send data, Amplitude SDKs automatically generate and manage session IDs. However, you have to manage session IDs yourself, using HTTP APIs. 
 
-You can learn more about [how Amplitude tracks sessions](/docs/cdp/sources/instrument-track-sessions).
+You can learn more about [how Amplitude tracks sessions](/docs/data/sources/instrument-track-sessions).
 
 If you are new to Amplitude, you should complete [this course](https://academy.amplitude.com/path/getting-started-with-amplitude-analytics-learning-path) to get started and learn more [helpful definitions](/docs/get-started/helpful-definitions).

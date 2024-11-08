@@ -9,7 +9,7 @@ Amplitudeの番号は、他のベンダー（例えば、Google Analytics、Mixp
 
 ## 開始する前に
 
-この記事では、Amplitudeがユーザーとセッションをどのようにトラックするかを理解していることを示しています。 理解に自信がない場合は、続行する前に、[ユニークユーザーのトラッキング](/docs/cdp/sources/instrument-track-unique-users)と[Amplitudeのセッションの定義](/docs/cdp/sources/instrument-track-sessions)に関するヘルプセンターの記事をご覧ください。
+この記事では、Amplitudeがユーザーとセッションをどのようにトラックするかを理解していることを示しています。 理解に自信がない場合は、続行する前に、[ユニークユーザーのトラッキング](/docs/data/sources/instrument-track-unique-users)と[Amplitudeのセッションの定義](/docs/data/sources/instrument-track-sessions)に関するヘルプセンターの記事をご覧ください。
 
 ## データ矛盾のチェックリスト
 

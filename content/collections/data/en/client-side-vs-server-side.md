@@ -40,7 +40,7 @@ Amplitude's server-side sources include these SDKs and APIs:
 
 ## Third-party sources
 
-Third-party is another kind of source. These sources let you import data from other platforms into Amplitude. These sources all require that you have an account with the third-party sources, and each have different setup requirements. You can see all third-party sources in the [Source catalog](../../sources/).
+Third-party is another kind of source. These sources let you import data from other platforms into Amplitude. These sources all require that you have an account with the third-party sources, and each have different setup requirements. You can see all third-party sources in the [Source catalog](/docs/data/source-catalog).
 
 ## How to choose
 
