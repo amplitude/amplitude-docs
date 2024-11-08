@@ -152,7 +152,7 @@ To add Databricks as a source in Amplitude, complete the following steps.
     - [Event](/docs/get-started/what-is-amplitude#events)
     - [User properties](/docs/get-started/what-is-amplitude#user-properties)
     - [Group properties](/docs/analytics/account-level-reporting)
-    - [Profiles](/docs/data/profile-properties)
+    - [Profiles](/docs/data/profiles)
    
     For the `Event` data type, optionally select *Sync User Properties* or *Sync Group Properties* to sync the corresponding properties **within** an event.
 

@@ -18,7 +18,7 @@ We recommend using Pathfinder to see the top common paths users can take to conv
 
 Be sure to read our article on [building charts in Amplitude](/docs/get-started/helpful-definitions).
 
-You'll also want to read up on [session IDs and how Amplitude tracks sessions,](/docs/cdp/sources/instrument-track-sessions).
+You'll also want to read up on [session IDs and how Amplitude tracks sessions,](/docs/data/sources/instrument-track-sessions).
 
 You should also keep in mind that all paths in Pathfinder are tracked in individual sessions. This means that if you're sending Amplitude events via the [HTTP API](/docs/apis/analytics/http-v2) or through another pipeline, you must send a `session_id` with the event. If you don't, your product's path views won't be accurate.
 
@@ -64,7 +64,7 @@ Your Pathfinder chart will consist of two separate visualizations: the flowing s
 
 Once you've selected an event to begin or end your paths with, Amplitude will generate all event node paths (up to 15) that meet the following conditions:
 
-1. Either the event node is an [[Amplitude] Start Session](/docs/cdp/sources/instrument-track-sessions), or
+1. Either the event node is an [[Amplitude] Start Session](/docs/data/sources/instrument-track-sessions), or
 2. The percentage of users in the node is greater than or equal to the zoom threshold
 
 The sankey diagram (the flow diagram) shows all the paths starting or ending with a specific event. Each step is labeled. The label tells you the event fired at that step in the sequence, as well as the frequency the event was fired at that stage in the sequence.

@@ -27,7 +27,7 @@ Amplitudeで設定したユーザーIDは**変更できません**。
 
 プロダクトが現時点でユーザIDを割り当てていない場合は、このセクションは飛ばしてください。
 
-次のステップに進む前に、[Amplitudeが固有ユーザーを特定する方法に関するこちらの記事](/docs/cdp/sources/instrument-track-unique-users)をお読みください。必要なすべての情報がこの記事に記載されています。
+次のステップに進む前に、[Amplitudeが固有ユーザーを特定する方法に関するこちらの記事](/docs/data/sources/instrument-track-unique-users)をお読みください。必要なすべての情報がこの記事に記載されています。
 
 ## ユーザーIDを設定する際のベストプラクティス
 

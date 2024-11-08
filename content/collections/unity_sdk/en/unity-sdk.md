@@ -324,7 +324,7 @@ Calling `logRevenue` generates up to 2 different event types in the platform:
 - '[Amplitude] Revenue': This event is logged for all revenue events, regardless of whether verification is turned on.
 - '[Amplitude] Revenue (Verified/Unverified)': These revenue events will contain the actual '$revenue' property.
 
-You can't change the default names given to these client-side revenue events in the raw data but you do have the option to modify the [display name](/docs/admin/account-management/account-settings#events). To learn more about tracking revenue, see the documentation [here](/docs/cdp/sources/instrument-track-revenue).
+You can't change the default names given to these client-side revenue events in the raw data but you do have the option to modify the [display name](/docs/admin/account-management/account-settings#events). To learn more about tracking revenue, see the documentation [here](/docs/data/sources/instrument-track-revenue).
 
 | Name  | Description  |
 | --- | --- |
@@ -428,7 +428,7 @@ Amplitude.Instance.init(AMPLITUDE_API_KEY, "USER_ID");
 ```
 
 Don't assign users a User ID that could change as each unique User ID is interpreted as a unique user in Amplitude.
-See [Track unique users in Amplitude](/docs/cdp/sources/instrument-track-unique-users) for more information.
+See [Track unique users in Amplitude](/docs/data/sources/instrument-track-unique-users) for more information.
 
 ## Advanced topics
 
