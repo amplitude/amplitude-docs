@@ -17,6 +17,6 @@ The user count can **increase** when events that occurred in the past are ingest
 
 The user count can **decrease** when user records are merged.
 
-Amplitude uses a system of user IDs, device IDs, and Amplitude IDs to [track unique users](/docs/cdp/sources/instrument-track-unique-users). If some of your users don't have user IDs, or if you have a lot of anonymous events, these anonymous events are first assigned to an anonymous profile, and then later merged into a known profile.
+Amplitude uses a system of user IDs, device IDs, and Amplitude IDs to [track unique users](/docs/data/sources/instrument-track-unique-users). If some of your users don't have user IDs, or if you have a lot of anonymous events, these anonymous events are first assigned to an anonymous profile, and then later merged into a known profile.
 
 Your data will eventually stabilize, as anonymous users come back and merge into existing profiles. The amount of time this takes depends on user behavior (how often they return to your product) as well as your settings (how often you batch events). Users who interact with your product every day will display shorter delays in merging, while those who return less frequently will have longer delays.

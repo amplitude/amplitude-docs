@@ -65,7 +65,7 @@ Amplitudeは、「amplitude\_attribution\_ids」というフィールドの下�
 
 計測が広告IDをキャプチャしない問題を解決するには、[広告IDのトラッキング](https://developers.amplitude.com/docs/ios#advertising-id)ドキュメントで説明されているように、広告IDトラッキングが有効になっていることを確認してください。
 
-JavascriptまたはReact Native SDkを使用している場合、広告IDを自動的に追跡する可能性がない場合は、[HTTP API](/docs/cdp/sources/instrument-track-unique-users)できます）。
+JavascriptまたはReact Native SDkを使用している場合、広告IDを自動的に追跡する可能性がない場合は、[HTTP API](/docs/data/sources/instrument-track-unique-users)できます）。
 
 ### トラブルシューティング：マッピングが72時間以内に作成されなかった
 

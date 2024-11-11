@@ -25,7 +25,7 @@ MTU-based pricing is available for all Amplitude plans. Customers who use sampli
 
 ## Track your MTUs
 
-The first step in setting up MTU tracking is to understand [how Amplitude tracks unique users](/docs/cdp/sources/instrument-track-unique-users). The best way to ensure accurate counting of MTUs is to support a one-to-one correlation between user IDs and actual users.
+The first step in setting up MTU tracking is to understand [how Amplitude tracks unique users](/docs/data/sources/instrument-track-unique-users). The best way to ensure accurate counting of MTUs is to support a one-to-one correlation between user IDs and actual users.
 
 {{partial:admonition type='note'}}
 If you're using test data and generating fictitious user IDs for testing purposes, **each** of these test users are also included in your MTU count.

@@ -71,7 +71,7 @@ Session Replay is available in the following Amplitude chart types, with these r
 * **Event Segmentation**: Session replay is available for all six measures.
 * **Funnel Analysis**: Session replay is only available for the conversion measure. For Funnel Analysis charts, the order of events appears in chronological order (oldest to newest).
 * **Journeys**: Session replay is available on the Pathfinder and Journey Map visualizations.
-* **User Sessions**: Session replay is available for all six measures. This chart won’t allow session replays for [custom defined sessions](/docs/cdp/sources/instrument-track-sessions).
+* **User Sessions**: Session replay is available for all six measures. This chart won’t allow session replays for [custom defined sessions](/docs/data/sources/instrument-track-sessions).
 
 ### View Session Replay from your homepage
 
@@ -134,7 +134,7 @@ With Session Replay, you can:
 There are some limitations when using Session Replay:
 
 * Session Replay is available for web-based applications only. This includes mobile web. Desktop applications aren't supported.
-* Session Replay supports standard session definitions only. [Custom session definitions](/docs/cdp/sources/instrument-track-sessions) aren't supported.
+* Session Replay supports standard session definitions only. [Custom session definitions](/docs/data/sources/instrument-track-sessions) aren't supported.
 * Session Replay can only be used to segment by users, and isn't available for [account-level reporting](/docs/analytics/account-level-reporting).
 * If you are in a portfolio view, you can see replays for different users under different projects. However, keep in mind that Session Replay doesn't stitch together replays from a single user across multiple projects. If a user begins a session in one project and then continues to a second project, Amplitude Analytics generates separate replays for that user for each project.
 * Session Replay doesn't capture these unsupported HTML elements:

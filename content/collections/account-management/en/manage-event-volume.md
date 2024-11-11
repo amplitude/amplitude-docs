@@ -73,7 +73,7 @@ This process does not apply retroactively. Additionally, the following propertie
 
 ### Anonymous users
 
-Although Amplitude prioritizes [identifying and tracking unique users](/docs/cdp/sources/instrument-track-unique-users), ingestion-side sampling can sometimes lead to inaccuracies when it comes to anonymous users. For example, if an anonymous user triggers an event from a new device, that user will be assigned a new Amplitude ID and will be sampled based on that new ID. Even if it's determined at a later time that this user was actually a previous user using a new device, there is **no way** to retroactively link the paired events to the particular user's previous Amplitude ID. Since the **sampling of events is based on the Amplitude ID at the time the event was ingested**, analyses that rely on user behavior on new devices may be inaccurate or skewed.
+Although Amplitude prioritizes [identifying and tracking unique users](/docs/data/sources/instrument-track-unique-users), ingestion-side sampling can sometimes lead to inaccuracies when it comes to anonymous users. For example, if an anonymous user triggers an event from a new device, that user will be assigned a new Amplitude ID and will be sampled based on that new ID. Even if it's determined at a later time that this user was actually a previous user using a new device, there is **no way** to retroactively link the paired events to the particular user's previous Amplitude ID. Since the **sampling of events is based on the Amplitude ID at the time the event was ingested**, analyses that rely on user behavior on new devices may be inaccurate or skewed.
 
 ## Accuracy benchmarks
 

@@ -467,7 +467,7 @@ Calling `logRevenueV2` generates a revenue event type:
 - [Amplitude] Revenue: This event is logged for all revenue events, regardless of whether verification is enabled.
 
 You can't change the default names given to these client-side revenue events in the raw data but you do have the option to change the [display name](/docs/admin/account-management/account-settings).
- To learn more about tracking revenue, see the documentation [here](/docs/cdp/sources/instrument-track-revenue).
+ To learn more about tracking revenue, see the documentation [here](/docs/data/sources/instrument-track-revenue).
 
 {{partial:admonition type="note" heading=""}}
 Amplitude doesn't support currency conversion. Normalize all revenue data to your currency of choice before sending it to Amplitude.
@@ -540,11 +540,11 @@ amplitude.getInstance().init(AMPLITUDE_API_KEY, 'USER_ID');
 ```
 
 Don't assign users a user ID that could change, because each unique user ID represents a unique user in Amplitude. For more information see
- [Track unique users in Amplitude](/docs/cdp/sources/instrument-track-unique-users) in the Help Center.
+ [Track unique users in Amplitude](/docs/data/sources/instrument-track-unique-users) in the Help Center.
 
 ## Logged out and anonymous users
 
-Amplitude [merges user data](/docs/cdp/sources/instrument-track-unique-users), so any events associated with a known `userId` or `deviceId` are linked the existing user.
+Amplitude [merges user data](/docs/data/sources/instrument-track-unique-users), so any events associated with a known `userId` or `deviceId` are linked the existing user.
  If a user logs out, Amplitude can merge that user's logged-out events to the user's record. You can change this behavior and log those events to an anonymous user instead.
 
 To log events to an anonymous user:

@@ -14,7 +14,7 @@ Sometimes, Amplitude's numbers may differ from those provided by other vendors. 
 
 ## Before you begin
 
-This article assumes that you understand how Amplitude tracks users and sessions. If you don't feel confident in your understanding, check out our articles on [tracking unique users](/docs/cdp/sources/instrument-track-unique-users) and on [the definition of a session in Amplitude](/docs/cdp/sources/instrument-track-sessions) before proceeding.
+This article assumes that you understand how Amplitude tracks users and sessions. If you don't feel confident in your understanding, check out our articles on [tracking unique users](/docs/data/sources/instrument-track-unique-users) and on [the definition of a session in Amplitude](/docs/data/sources/instrument-track-sessions) before proceeding.
 
 ## Data discrepancy checklist
 

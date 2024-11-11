@@ -4,7 +4,7 @@ blueprint: faq_and_troubleshooting
 title: 'User Sessions'
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/17645167873691'
 ---
-This article covers frequently asked questions about the [User Sessions](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) chart and sessions in the event streams. Please also refer to [Track sessions](/docs/cdp/sources/instrument-track-sessions) for how Amplitude defines and calculates sessions.
+This article covers frequently asked questions about the [User Sessions](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) chart and sessions in the event streams. Please also refer to [Track sessions](/docs/data/sources/instrument-track-sessions) for how Amplitude defines and calculates sessions.
 
 
 {{partial:collapse name="Why is my User Sessions chart empty?"}}
@@ -17,16 +17,16 @@ There are two likely causes when you see a large number of users in the “0 sec
 
 **Potential cause #1: Out-of-session events**
 
-Amplitude considers events sent using the [HTTP API](/docs/cdp/sources/instrument-track-sessions) is calculated based on the formula:
+Amplitude considers events sent using the [HTTP API](/docs/data/sources/instrument-track-sessions) is calculated based on the formula:
 
 max(client_event_time) - session_id
 
-If you want these events to be considered part of a session, the [session ID](/docs/cdp/sources/instrument-track-sessions) should be a timestamp reflecting the beginning of the session in epoch time.
+If you want these events to be considered part of a session, the [session ID](/docs/data/sources/instrument-track-sessions) should be a timestamp reflecting the beginning of the session in epoch time.
 
 **Potential cause #2: You're tracking the Start Session event, but no other events**
 
 If your project permits sending start or end session events (which you can enable using [Android SDK](https://help.amplitude.com/hc/en-us/articles/115002935588-Android-SDK-Installation#tracking-sessions) or [iOS SDK](https://help.amplitude.com/hc/en-us/articles/115002278527-iOS-SDK-Installation#tracking-sessions)), anytime your app launches in the foreground, it will send a `Start
- Session` to Amplitude. If Amplitude receives no other events to log after this, it sets the [session length](/docs/cdp/sources/instrument-track-sessions) to zero.
+ Session` to Amplitude. If Amplitude receives no other events to log after this, it sets the [session length](/docs/data/sources/instrument-track-sessions) to zero.
 
 Amplitude's [Microscope](/docs/analytics/microscope) feature lets you examine a given user’s activity, so you can quickly determine whether either of these potential causes is the issue.
 {{/partial:collapse}}
