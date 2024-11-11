@@ -1,7 +1,7 @@
 {{markdown}}
 ### Replay length and session length don't match
 
-In some scenarios, the length of a replay may exceed the time between the `[Amplitude] Start Session` and `[Amplitude] End Session` events. This happens when a user closes their browser or browser tab and `[Amplitude] End Session` occurs, but the Browser SDK and Session Replay plugin haven't processed it. When the user visits that page again, the SDK and plugin process the event and send it to Amplitude, along with the replay. You can verify this scenario occurs if you see a discrepancy between the `End Session Client Event Time` and the `Client Upload Time`.
+In some scenarios, the length of a replay may exceed the time between the `[Amplitude] Start Session` and `[Amplitude] End Session` events. This happens when a user closes their browser or browser tab and `[Amplitude] End Session` occurs, but the Browser SDK and Session Replay plugin haven't yet processed it. When the user visits that page again, the SDK and plugin process the event and send it to Amplitude, along with the replay. You can verify this scenario occurs if you see a discrepancy between the `End Session Client Event Time` and the `Client Upload Time`.
 
 Session replays may not appear in Amplitude due to:
 
