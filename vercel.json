@@ -1733,7 +1733,7 @@
     },
     {
       "destination": "/docs/data/sources/instrument-track-sessions",
-      "source": "/docs/cdp/sources/instrument-track-sessions",
+      "source": "/docs/data/sources/instrument-track-sessions",
       "statusCode": 301
     },
     {
@@ -1763,7 +1763,7 @@
     },
     {
       "destination": "/docs/data/sources/instrument-track-revenue",
-      "source": "/docs/cdp/sources/instrument-track-revenue",
+      "source": "/docs/data/sources/instrument-track-revenue",
       "statusCode": 301
     },
     {
@@ -1773,7 +1773,7 @@
     },
     {
       "destination": "/docs/data/sources/instrument-track-unique-users",
-      "source": "/docs/cdp/sources/instrument-track-unique-users",
+      "source": "/docs/data/sources/instrument-track-unique-users",
       "statusCode": 301
     },
     {
@@ -2003,7 +2003,7 @@
     },
     {
       "destination": "/docs/data/sources/connect-to-source",
-      "source": "/docs/cdp/sources/connect-to-source",
+      "source": "/docs/data/sources/connect-to-source",
       "statusCode": 301
     },
     {

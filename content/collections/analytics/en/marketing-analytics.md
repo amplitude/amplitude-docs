@@ -17,9 +17,9 @@ This article explains how Amplitude defines sessions and related metrics, the fu
 
 Events are at the core of Amplitude Analytics, but tracking users and sessions also help to build the full picture of user engagement and the customer journey:
 
-* **Users**: Distinct individuals who interact with your product. Amplitude identifies users through cookies, device IDs, or other tracking mechanisms. [Read more about how Amplitude tracks unique users in this article](/docs/cdp/sources/instrument-track-unique-users).
+* **Users**: Distinct individuals who interact with your product. Amplitude identifies users through cookies, device IDs, or other tracking mechanisms. [Read more about how Amplitude tracks unique users in this article](/docs/data/sources/instrument-track-unique-users).
 * **Events**: Individual actions or interactions that occur within the product, such as page views, button clicks, form submissions, or purchases. Each event is timestamped and carries relevant attributes that Amplitude calls properties. [See the article on determining events to track for more details](/docs/get-started/select-events).
-* **Sessions**: A series of events that represent a user's visit or engagement with your product. Think of sessions like chapters in a book that group events together chronologically. Sessions typically have a start time (the first event) and an end time (after a period of inactivity). [See the session definition article for more information](/docs/cdp/sources/instrument-track-sessions).
+* **Sessions**: A series of events that represent a user's visit or engagement with your product. Think of sessions like chapters in a book that group events together chronologically. Sessions typically have a start time (the first event) and an end time (after a period of inactivity). [See the session definition article for more information](/docs/data/sources/instrument-track-sessions).
 
 To better understand the differences between users, events, and sessions, look at an example of how they’re tracked.
 
@@ -73,7 +73,7 @@ Amplitude also tracks the following session-based metrics:
 * **Session Entries**: The first non-null property value observed within a session, also known as the entry point for the session.
 * **Session Exits**: The final non-null property value observed within a session, also known as the exit point for the session.
 
-These session-based measures help to better grasp how users first engage with or last engage with your product, as well as how much time they’re spending within it. [See the session definition article for more information](/docs/cdp/sources/instrument-track-sessions).
+These session-based measures help to better grasp how users first engage with or last engage with your product, as well as how much time they’re spending within it. [See the session definition article for more information](/docs/data/sources/instrument-track-sessions).
 
 The next example showcases sessions for User 1 and User 2, but notice the channel for each event, as well as each session’s entry and exit points:
 

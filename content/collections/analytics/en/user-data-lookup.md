@@ -99,7 +99,7 @@ The *Cohorts* tab enables you to check if the user is in any of your project's c
 
 ### Experiments
 
-The Experiments tab shows any [experiments](/docs/experiment) of which the user is a part.
+The Experiments tab shows any [feature experiments](/docs/feature-experiment) or [web experiments](/docs/web-experiment) of which the user is a part.
 
 ### Flags
 

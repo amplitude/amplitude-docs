@@ -48,7 +48,7 @@ User opt-outs **must be honored**. If you know advertising IDs are tracked prope
 
 ### Solution: Tracking advertising IDs
 
-If you are using the Javascript—which lack the ability to track advertising IDs automatically—you will have to send an Amplitude event with the advertising ID via the [HTTP API](/docs/cdp/sources/instrument-track-unique-users).
+If you are using the Javascript—which lack the ability to track advertising IDs automatically—you will have to send an Amplitude event with the advertising ID via the [HTTP API](/docs/data/sources/instrument-track-unique-users).
 
 ## Troubleshoot: Mapping was not made within 72 hours
 

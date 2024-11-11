@@ -130,7 +130,7 @@ Super properties in Mixpanel are properties that attach to all subsequent events
 * Mixpanel uses a combination of `distinct_id` (a randomly generated identifier on a specific platform) and `user_id` (explicitly set by the instrumenting teams) to identify a user with the `'mixpanel.identify()'` method.
 * Amplitude uses a combination of `device_id` (a randomly generated id on a specific platform) and `user_id` (explicitly set by the instrumenting teams) to identify a user with the `'amplitude.identify()'` method.
 
-For more on how Amplitude resolves user identifies, see [Track unique users](/docs/cdp/sources/instrument-track-unique-users)
+For more on how Amplitude resolves user identifies, see [Track unique users](/docs/data/sources/instrument-track-unique-users)
 
 ### Migrate existing historical data from Mixpanel to Amplitude
 

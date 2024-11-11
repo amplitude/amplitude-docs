@@ -25,7 +25,7 @@ This feature is available to users on **Growth** and **Enterprise plans** only. 
 
 Events don't appear in any Amplitude charts until instrumentation is complete, so make sure you've got that done. Before you begin, see the article about [building charts in Amplitude](/docs/get-started/helpful-definitions).
 
-See the [tracking revenue](/docs/cdp/sources/instrument-track-revenue) documentation to learn how to track revenue events. For example, if you use [Amplitude's SDKs](/docs/sdks/analytics), call `logRevenueV2()`  with the provided revenue interface. If you track in-app purchases (IAPs), use Amplitude's revenue authentication system.  
+See the [tracking revenue](/docs/data/sources/instrument-track-revenue) documentation to learn how to track revenue events. For example, if you use [Amplitude's SDKs](/docs/sdks/analytics), call `logRevenueV2()`  with the provided revenue interface. If you track in-app purchases (IAPs), use Amplitude's revenue authentication system.  
 
 {{partial:admonition type='note'}}
 Amplitude doesn't support currency conversion. The revenue value you send Amplitude is what's aggregated and displayed. If you get revenue in different currencies, normalize to a single currency before you send any revenue data to Amplitude.

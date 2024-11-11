@@ -2,6 +2,7 @@
 title: "The Pathfinder Users chart: see the paths your users take through your product"
 source: "https://help.amplitude.com/hc/en-us/articles/235777567-The-Pathfinder-Users-chart-see-the-paths-your-users-take-through-your-product"
 id: 8a84c13d-eec2-4ad3-a0f8-2d5242390af9
+published: false
 ---
 
 {{partial:admonition type='note'}}
@@ -55,7 +56,7 @@ In the chart shown below, the starting event is '[Amplitude] Start Session'. The
 
 ![](/docs/output/img/legacy-charts/Screen_Shot_2016-12-02_at_3.01.42_PM.png)
 
-If you're using Amplitude's default [`session_id`](/docs/cdp/sources/instrument-track-sessions) to group events into sessions, events in a given session will be ordered by `event_time` instead. 
+If you're using Amplitude's default [`session_id`](/docs/data/sources/instrument-track-sessions) to group events into sessions, events in a given session will be ordered by `event_time` instead. 
 
 ### Expand events by property
 

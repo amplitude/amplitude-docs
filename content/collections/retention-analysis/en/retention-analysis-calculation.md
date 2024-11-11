@@ -64,7 +64,7 @@ However, when the analysis is still in progress, the graph can **curve up** and 
 
 Accordingly, the denominator value in the Microscope for a single day will be the sum of the users who have completed that day’s retention interval. This value is not shown in the breakdown table.
 
-![](/docs/output/img/retention-analysis/i9GRGIY6n-UT9VyUMTrr0fAGUoEDqEwPYAmYaj0G2qMOi4tpTeeyWSB39W051OuDgOxkTAUace1Lureo0GurkEmiA53YwD1OjfcLS8MWagNojgyqhotTHMiOA8qAo2DlaOSBDZaioWWBFxwiwHpyMY4)
+![](/docs/output/img/retention-analysis/i9GRGIY6n-UT9VyUMTrr0fAGUoEDqEwPYAmYaj0G2qMOi4tpTeeyWSB39W051OuDgOxkTAUace1Lureo0GurkEmiA53YwD1OjfcLS8MWagNojgyqhotTHMiOA8qAo2DlaOSBDZaioWWBFxwiwHpyMY4.png)
 
 ## Return On
 

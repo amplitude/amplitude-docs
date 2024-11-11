@@ -16,12 +16,12 @@ landing_blurb: 'Use field shortcuts to query your Snowflake database in Amplitud
 Because [Amplitude SQL](/docs/analytics/charts/other-charts/other-charts-amplitude-sql) is built directly into the Amplitude chart experience, you can leverage much of the same familiar Amplitude user interface, such as the [datepicker](https://help.amplitude.com/hc/en-us/articles/18133682827419-The-datepicker) chart saving experience. You can do this by using Amplitude SQL's special fields for powerful shortcuts:
 
 * **`$date`:** When using this shortcut, the time range chosen by the datepicker is automatically applied and will update the query over time. It refers to the event time on the event and will respect the timezone the project has been set to. Otherwise, Amplitude SQL will return data in UTC. This must be used in conjunction with **`$events`**.
-* **`$events`:** The shorthand used to refer to the table in your current project. When using this table, [merged users](/docs/cdp/sources/instrument-track-unique-users) are automatically handled. Note: This must be used in conjunction with **`$date`**.
+* **`$events`:** The shorthand used to refer to the table in your current project. When using this table, [merged users](/docs/data/sources/instrument-track-unique-users) are automatically handled. Note: This must be used in conjunction with **`$date`**.
 * **`$amplitude_id`:** The original Amplitude ID for the user. Use this field to automatically handle merged users.
 
 ## Table schema
 
-Amplitude SQL uses a one-table schema. The table, `$events`, handles the [merged user](/docs/cdp/sources/instrument-track-unique-users) mappings automatically. But, the merged users table will also be available to view. This will allow you to quickly see the number of users that have been merged into one.
+Amplitude SQL uses a one-table schema. The table, `$events`, handles the [merged user](/docs/data/sources/instrument-track-unique-users) mappings automatically. But, the merged users table will also be available to view. This will allow you to quickly see the number of users that have been merged into one.
 
 The following tables show the schema of `$events` and merged users. 
 
@@ -71,7 +71,7 @@ The following tables show the schema of `$events` and merged users. 
 
 ### Merged users table
 
-See [this article to learn more about how Amplitude tracks unique users](/docs/cdp/sources/instrument-track-unique-users).
+See [this article to learn more about how Amplitude tracks unique users](/docs/data/sources/instrument-track-unique-users).
 
 | Column              | Data type    | Description                                                                                                  |
 | ------------------- | ------------ | ------------------------------------------------------------------------------------------------------------ |

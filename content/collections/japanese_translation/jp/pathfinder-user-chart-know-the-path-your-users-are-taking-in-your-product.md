@@ -47,7 +47,7 @@ Amplitudeの**パスファインダーユーザー**チャートはあなたの�
 
 ![](/docs/output/img/jp/Screen_Shot_2016-12-02_at_3.01.42_PM.png)
 
-Amplitudeのデフォルトの[`session_id`](/docs/cdp/sources/instrument-track-sessions)を使ってイベントをセッションにグループ化している場合は、1つのセッション内のイベントは`event_time`順に並べられます。 
+Amplitudeのデフォルトの[`session_id`](/docs/data/sources/instrument-track-sessions)を使ってイベントをセッションにグループ化している場合は、1つのセッション内のイベントは`event_time`順に並べられます。 
 
 ### プロパティ別にイベントを展開する
 
