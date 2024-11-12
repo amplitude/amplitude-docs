@@ -9,15 +9,13 @@ this_article_will_help_you:
   - 'Manage your dashboards'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1724883715
-
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1731444719
+academy_link: 'https://academy.amplitude.com/use-dashboards-and-starter-templates-to-monitor-important-metrics/1372313/scorm/w84tdkh3z11p'
+academy_title: 'Use Dashboards and Starter Templates to Monitor Important Metrics'
+academy_description: "Learn how Dashboards can be used to monitor important metrics at a glance, as well as how to use Amplitude's pre-built Dashboard Starter Templates."
 ---
 With dashboards, you can collect all your relevant charts into a single, convenient view. You can save multiple reports into a single page view, rather than viewing each individual report in isolation. You can even save cross-project charts into the same dashboard, for side-by-side comparisons.  
-
-{{partial:admonition type='note'}}
-You may also find [this Academy course](https://academy.amplitude.com/use-dashboards-and-starter-templates-to-monitor-important-metrics/1372313/scorm/w84tdkh3z11p) on dashboards helpful.
-{{/partial:admonition}}
 
 ## Before you begin
 
@@ -91,17 +89,17 @@ For any chart or query that segments on a cohort, the segmented cohort automatic
 
 There are three ways you can add a Session Replay to a dashboard or notebook:
 
-* From the Session Replay page itself (accessible via the homepage and Session Replay search)
+* From the Session Replay page itself (accessible from the homepage and Session Replay search)
 * From within [User Look-Up](/docs/analytics/user-data-lookup)
 * From within an individual chart
 
 ### Designate your dashboard as "official"
 
-In many organizations, it can be challenging for Amplitude users to identify the charts and dashboards they can rely on as a “source of truth”—in other words, dashboards the organization trusts to be accurate, up to date, and relevant. This is especially true in analysis-heavy organizations, where the sheer volume of ad hoc analyses generated can overwhelm source-of-truth content. By making this content easier to find and reference, Amplitude’s Official Dashboards feature can help newer users find their footing more quickly, and ramp up to generating productive analyses sooner.
+In many organizations, it can be challenging for Amplitude users to identify the charts and dashboards they can rely on as a “source of truth”—in other words, dashboards the organization trusts to be accurate, up to date, and relevant. This is especially true in analysis-heavy organizations, where the sheer volume of ad-hoc analyses generated can overwhelm source-of-truth content. By making this content easier to find and reference, Amplitude’s Official Dashboards feature can help newer users find their footing more quickly, and ramp up to generating productive analyses sooner.
 
 By designating a dashboard as “official,” you’re telling all Amplitude users in your organization that they can trust the content they find on it to be current, accurate, and vetted. It’s an excellent tool for tracking and broadcasting company-wide KPIs, team-specific KPIs, final analysis for a feature or experiment, or for onboarding new employees and team members.
 
-This feature is only available for users on Growth, Scholarship, and Enterprise plans.
+This feature is only available for users on the Enterprise plan.
 
 {{partial:admonition type='note'}}
  Only an admin or manager can designate an official dashboard.
@@ -129,7 +127,7 @@ This feature is only available to customers on a Scholarship, Growth, or Enterpr
 
 To comment, click *More > Comment*. You can also mention colleagues by typing their name after "@". They receive an Amplitude notification.
 
-You can also receive a notification via Slack. See [this article for more information on how to integrate Amplitude and Slack](/docs/analytics/integrate-slack).  
+You can also receive a notification through Slack. See [this article for more information on how to integrate Amplitude and Slack](/docs/analytics/integrate-slack).  
 
 ## Copy, download, export, refresh, or archive your dashboard
 
