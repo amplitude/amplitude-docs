@@ -1767,11 +1767,6 @@
       "statusCode": 301
     },
     {
-      "destination": "/docs/data/sources/instrument-track-sessions",
-      "source": "/docs/data/sources/instrument-track-sessions",
-      "statusCode": 301
-    },
-    {
       "destination": "/docs/data/user-properties-and-events",
       "source": "/docs/hc/en-us/articles/115002380567((?:-[a-zA-Z0-9-]+)?)",
       "statusCode": 301
