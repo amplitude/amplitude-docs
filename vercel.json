@@ -2,6 +2,36 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source":"/docs/data/ampli-sdk-overview",
+      "destination": "/docs/sdks/ampli",
+      "statusCode": 301
+    },
+    {
+      "source":"/docs/amplitude-experiment",
+      "destination": "/docs/feature-experiment",
+      "statusCode": 301
+    },
+    {
+      "source":"/docs/data/sdks/ios",
+      "destination": "/docs/sdks/analytics/ios/ios-swift-sdk",
+      "statusCode": 301
+    },
+    {
+      "source":"/docs/data/sdks/marketing-analytics-browser",
+      "destination": "/docs/sdks/analytics/browser/marketing-analytics-sdk",
+      "statusCode": 301
+    },
+    {
+      "source":"/docs/get-started/create-org",
+      "destination": "/docs/web-experiment/tracking",
+      "statusCode": 301
+    },
+    {
+      "source":"/docs/feature-experiment/web/tracking",
+      "destination": "/docs/web-experiment/tracking",
+      "statusCode": 301
+    },
+    {
       "source":"/docs/session-replay/session-replay-ios-middleware",
       "destination": "/docs/session-replay/session-replay-ios-plugin",
       "statusCode": 301
@@ -273,7 +303,7 @@
     },
     {
       "destination": "/docs/sdks/analytics/android",
-      "source": "/docs/data/android",
+      "source": "/docs/data/sdks/android",
       "statusCode": 301
     },
     {
@@ -1069,6 +1099,11 @@
     {
       "destination": "/docs/sdks/analytics/node",
       "source": "/docs/data/sdks/typescript-node",
+      "statusCode": 301
+    },
+    {
+      "destination": "/docs/sdks/analytics/node",
+      "source": "/docs/data/sdks/node",
       "statusCode": 301
     },
     {
@@ -1907,7 +1942,7 @@
       "statusCode": 301
     },
     {
-      "destination": "/docs/get-started/create-org",
+      "destination": "/docs/get-started/create-a-new-account",
       "source": "/docs/hc/en-us/articles/16796682982427((?:-[a-zA-Z0-9-]+)?)",
       "statusCode": 301
     },
