@@ -60,7 +60,7 @@ Applying a channel classifier of `CPC only` results in `email` and `website` bei
 
 ## Use cases
 
-* **Blended views:** Easily create top level blended views of all paid and all organic traffic to easily see how efficiency and performance has changed over time.
+* **Blended views:** Easily create top level blended views of all paid and all organic traffic to easily see how efficiency and performance have changed over time.
 * **High-level channels:** Break down your core metrics according to the common definitions of channels you already use in [Google Analytics](https://support.google.com/analytics/answer/6010097?hl=en#zippy=%2Cin-this-article) and [Adobe](https://experienceleague.adobe.com/docs/analytics/components/marketing-channels/c-getting-started-mchannel.html?lang=en).
 * **Channels with campaigns:** Add a property denoting a campaign as a column in your channel definitions, to break down metrics by campaign channels.
 * **Attribution:** Use channels in conjunction with attribution models in data tables to evaluate the breakdown of a metric by first, last, or a custom attribution definition.
