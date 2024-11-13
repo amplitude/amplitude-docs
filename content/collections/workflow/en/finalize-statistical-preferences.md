@@ -13,11 +13,11 @@ Amplitude Experiment uses default statistical settings for experiment analyses:�
 
 ![defaultStatsPreferences.png](/docs/output/img/workflow/defaultstatspreferences-png.png)
 
-* [*CUPED*](#h_01HE38BAB9VTN0VAJAW82N0HPE) toggled off
-* [*Bonferroni Correction*](#h_01HE38BAB9CBH14RCNRC41W6ME) toggled on
-* [*Custom Exposure Settings*](#h_01HE38BAB98K3025S9N0DMJDJD) toggled off
-* [*Test Type*](#h_01HE38BAB9KMN7NYC7AMXNA3ZB) set to Sequential
-* [*Confidence Level*](#h_01HE38BAB9QWB3XTM2AAJZRKP8) set to 95%
+* [*CUPED*](#cuped) toggled off
+* [*Bonferroni Correction*](#bonferroni-correction) toggled on
+* [*Custom Exposure Settings*](#custom-exposure-settings) toggled off
+* [*Test Type*](#test-type) set to Sequential
+* [*Confidence Level*](#confidence-level) set to 95%
 
 As you review your results, your experiment may benefit from modifying one or more of the default settings. To modify the default statistical preferences, follow the steps below:
 
