@@ -120,7 +120,7 @@ This table lists revenue-related events sent from Stripe to Amplitude. They allo
 | Charges and refunds | `charge.failed` | Occurs when a failed charge attempt occurs. |
 | Invoices | `invoice.payment_succeeded` | Occurs when an invoice payment attempt succeeds. |
 | Invoices | `invoice.paid` | Occurs when an invoice payment attempt succeeds or an invoice is marked as paid out-of-band. |
-| Invoices | `invoice.finalized` | Occurs when a draft invoice can’t be finalized. See the invoice’s last finalization error for details. |
+| Invoices | `invoice.finalized` | Occurs when a draft invoice is finalized and updated to an open invoice. |
 | Invoices | `invoice.marked_uncollectible` | Occurs when an invoice is marked uncollectible. |
 | Invoices | `invoice.payment_failed` | Occurs when an invoice payment attempt fails. |
 | Invoices | `invoice.voided` | Occurs when an invoice is voided. |
