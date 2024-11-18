@@ -52,7 +52,7 @@ To build a Compass chart, follow these steps:
       * [Amplitude] 4th Week Retention
       * [Amplitude] 2nd Month Retention
 
-	Users are included in these cohorts if they were new during the time frame of your analysis, and if they fired an active event in the week (or month) listed after they were new.
+	These cohorts include users who were new during the time frame of your analysis, and if they fired an active event in the week (or month) listed after they were new.
 
 1. Set the date range of your analysis with the date picker.
 
