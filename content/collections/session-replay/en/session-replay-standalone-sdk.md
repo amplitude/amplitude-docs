@@ -5,12 +5,11 @@ title: 'Session Replay Standalone SDK'
 source: 'https://www.docs.developers.amplitude.com/session-replay/sdks/plugin/'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1726768267
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1731621403
 instrumentation_guide: true
 platform: browser
 public: true
-parent: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
 description: 'If you use a provider other than Amplitude for in-product analytics, choose this option.'
 ---
 {{partial:admonition type="note" heading="Session Replay instrumentation"}}
@@ -140,7 +139,7 @@ Pass the following configuration options when you initialize the Session Replay 
 | ----------------- | --------- | -------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `deviceId`        | `string`  | Yes      | `undefined`     | Sets an identifier for the device running your application.                                                                                                                                                                                                                                                          |
 | `sessionId`       | `number`  | Yes      | `undefined`     | Sets an identifier for the users current session. The value must be in milliseconds since epoch (Unix Timestamp).                                                                                                                                                                                                    |
-| `sampleRate`      | `number`  | No       | `0`             | Use this option to control how many sessions to select for replay collection. The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. |
+| `sampleRate`      | `number`  | No       | `0`             | Use this option to control how many sessions to select for replay collection. The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. Sample rates as small as six decimal places (`0.000001`) are supported. |
 | `optOut`          | `boolean` | No       | `false`         | Sets permission to collect replays for sessions. Setting a value of true prevents Amplitude from collecting session replays.                                                                                                                                                                                         |
 | `flushMaxRetries` | `number`  | No       | `5`             | Sets the maximum number of retries for failed upload attempts. This is only applicable to errors that Amplitude can retry.                                                                                                                                                                                           |
 | `logLevel`        | `number`  | No       | `LogLevel.Warn` | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. Sets the log level.                                                                                                                                                                                                |
