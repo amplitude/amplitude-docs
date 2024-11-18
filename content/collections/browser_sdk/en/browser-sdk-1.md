@@ -657,7 +657,7 @@ All asynchronous APIs are optionally awaitable through a Promise interface. This
 {{partial:tabs tabs="Promise, async/await"}}
 {{partial:tab name="Promise"}}
 ```ts
-amplitude.init("apikey", "12321.com").promise.then(function(result) { 
+amplitude.init("apikey", "12321.com").promise.then(function() { 
   // init callback
 })
 
