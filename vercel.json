@@ -2027,11 +2027,6 @@
       "statusCode": 301
     },
     {
-      "destination": "/docs/data/sources/connect-to-source",
-      "source": "/docs/data/sources/connect-to-source",
-      "statusCode": 301
-    },
-    {
       "destination": "/docs/data/update-property-data-type",
       "source": "/docs/hc/en-us/articles/17050314884635((?:-[a-zA-Z0-9-]+)?)",
       "statusCode": 301
