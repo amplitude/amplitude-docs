@@ -15,7 +15,7 @@ For more complex analyses, it's important to understand how Amplitude Analytics 
 
 * If your group-by includes a large number of different property values, Amplitude Analytics displays the top 100 group-by results. With multiple top-level group-bys, the limit is 500.
 * If you're nesting group-bys, Amplitude Analytics applies the limit to each one separately. For example, if you have a top-level group-by around the `city` property, where the limit is 100, Amplitude Analytics only displays the top 100 group-by results. If you add a second-level group-by around the `email` property, a maximum of 100 emails display for each city.
-* Any metric with attribution has a limit of ten results.
+* Any metric with attribution has a limit of 20 results.
 * If your Data Table includes metrics with different limits, the **smallest** row limit applies.
 * If your table contains metrics that aren't segmentation-based (like conversion, attribution, or session), **and** you're doing multiple group-bys, you may see fewer results than the limits described here might suggest. Contact your CSM or Amplitude Support if this is an issue.
 
