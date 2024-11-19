@@ -673,8 +673,8 @@ func main() {
 
 | Name    | Description                                                                                                                |
 | ------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `start` | <span class="required">Required</span>. First hour included in data series, formatted `YYYYMMDD`. For example, `20220201`. |
-| `end`   | <span class="required">Required</span>. Last hour included in data series, formatted `YYYYMMDD` For example, `20220201`.   |
+| `start_day` | <span class="required">Required</span>. First hour included in data series, formatted `YYYY-MM-DD`. For example, `20220201`. |
+| `end_day`   | <span class="required">Required</span>. Last hour included in data series, formatted `YYYY-MM-DD` For example, `20220201`.   |
 
 ### Response
 
