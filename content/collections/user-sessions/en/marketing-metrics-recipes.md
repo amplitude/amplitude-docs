@@ -15,7 +15,7 @@ Amplitude Analytics provides a multitude of insights into the success of your pr
 
 If you haven’t already read up on the basics of [building charts in Amplitude](/docs/analytics/charts/build-charts-add-events), you should do so before proceeding.
 
-Some of the setup instructions in this article require the use of custom formulas. See this article to read more about [custom formula metrics, syntax, and definitions](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas).
+Some setup instructions in this article require the use of custom formulas. See this article to read more about [custom formula metrics, syntax, and definitions](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas).
 
 ## Metric recipes
 

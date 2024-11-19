@@ -109,8 +109,8 @@ The *Flags* tab lists the [feature flags](/docs/feature-experiment/workflow/feat
 
 User event streams are supported in both projects and portfolios. To find a user stream in a portfolio, navigate to the User & Account Look-Up tab and select the portfolio from the dropdown.
 
-{{partial:admonition type="note" heading=""}}
-Only portfolios consisting of five or fewer projects are supported.
+{{partial:admonition type="note" heading="Portfolio project limits"}}
+Portfolios support up to five projects. If your use case requires more, contact your account team to unlock up to 10 projects in a portfolio.
 {{/partial:admonition}}
 
-User properties can only be viewed at a project (not portfolio) level. This is because properties may be different for the same user in different projects.
+User properties are viewable at a project (not portfolio) level. This is because properties may be different for the same user in different projects.
