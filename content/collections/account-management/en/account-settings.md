@@ -54,7 +54,9 @@ From the project list, you can:
 
 - Click *+ Select Project* from the bottom of the list to add a project. Projects can't be removed once added.
 
-     By default, the project's session capture is set to `on`, and its sample rate matches the rate set in your SDK implementation. Adding a project with the SDK doesn't automatically add it to the list. For new organizations that implement session replay, replay capture is set to `on`, and the sample rate is set to `1` for testing. Reduce the sample rate before moving to production. You can modify these settings later if you need to do so.
+    By default, the project's session capture is set to `on`, and its sample rate matches the rate set in your SDK implementation. Adding a project with the SDK doesn't automatically add it to the list of projects with Session Replay enabled. If you want to manage Session Replay settings from the Settings page, add it to the list manually with the **Add Project** picker.
+     
+    For new organizations that implement session replay, replay capture is set to `on`, and the sample rate is set to `1` for testing. Reduce the sample rate before moving to production. You can modify these settings later if you need to do so.
 
 {{partial:admonition type="note" heading=""}}
 Replays are captured only if instrumentation is accurate and complete, and a sample rate is set. Be sure to use the most recent [SDK](/docs/sdks) for best results.
