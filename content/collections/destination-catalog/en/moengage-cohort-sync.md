@@ -19,8 +19,7 @@ Amplitude's MoEngage integration allows you to send hyper-targeted behavioral au
 
 ## Considerations
 
-- This integration is available for Growth and Enterprise customers.
-- To use this integration, you  need a MoEngage account, an understanding of Amplitude behavioral cohorts, and an Amplitude user property that matches what you're using for your User ID field in MoEngage.
+To use this integration, you  need a MoEngage account, an understanding of Amplitude behavioral cohorts, and an Amplitude user property that matches what you're using for your User ID field in MoEngage.
 
 ## Setup
 
