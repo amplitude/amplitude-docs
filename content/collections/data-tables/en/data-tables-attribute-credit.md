@@ -112,7 +112,7 @@ Each metric type supports a specific set of attribution types:
     * custom
     * markov
 
-* **property sum**, **revenue total**, and **formula**
+* **property sum**, **revenue total**, and **formula** (clauses: uniques, totals, propmax, propmin, propavg, propsum)
     * first touch
     * last touch
     * participation
