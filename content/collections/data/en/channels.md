@@ -15,7 +15,7 @@ Marketers often want to define their acquisition channels based on [UTM](/docs/g
 
 For example, you may want to understand the distribution of organic traffic to your site. Define a version of your channels that includes the known social and search domains at that time. When a new social or search channel becomes prevalent, you can update your organic search definition and your existing charts update **retroactively** to reflect the new definition.
 
-![image2.png](/docs/output/img/data/image2-png.png)
+![image2.png](/docs/output/img/data/channel-classifier.png)
 
 ### Feature availability
 
