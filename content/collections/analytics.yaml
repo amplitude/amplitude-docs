@@ -1,6 +1,10 @@
 title: Analytics
+sites:
+  - en
+propagate: false
 template: default
 layout: layout
+mount: 6f3e741c-87b3-4e68-ae6d-ce393bab69d1
 revisions: false
 route: '/analytics/{slug}'
 sort_dir: asc
