@@ -1792,11 +1792,6 @@
       "statusCode": 301
     },
     {
-      "destination": "/docs/data/sources/instrument-track-revenue",
-      "source": "/docs/data/sources/instrument-track-revenue",
-      "statusCode": 301
-    },
-    {
       "destination": "/docs/data/sources/instrument-track-unique-users",
       "source": "/docs/hc/en-us/articles/115003135607((?:-[a-zA-Z0-9-]+)?)",
       "statusCode": 301
