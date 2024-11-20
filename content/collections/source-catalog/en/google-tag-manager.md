@@ -344,7 +344,7 @@ Tracking the revenue event for a user. Revenue instances store each revenue tran
 
 ### Flush events
 
-The flush method prompts the client to send [buffered events](/docs/sdks/analytics/browser/browser-sdk-2/#flush-the-event-buffer). You don't need to call the `flush` tag type manually, it triggers based on either `flushIntervalMillis` or `flushQueueSize`, whichever comes first. To avoid event loss due to browser closure, consider enabling the `sendBeacon` transport in the configuration options, or set the transport type to `sendBeacon` when `pagehide`. 
+The flush method prompts the client to send [buffered events](/docs/sdks/analytics/browser/browser-sdk-2/#flush-the-event-buffer). You don't need to call the `flush` tag type manually, it triggers based on either `flushIntervalMillis` or `flushQueueSize`, whichever comes first. To avoid event loss due to browser closure, consider setting `transport` in the configuration options to `beacon`, or call `amplitude.setTransport('beacon')` at the event `pagehide`. For more information, see [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2#set-the-transport-to-use-beacon-only-when-exiting-page).
 
 Reduce the `flushQueueSize` and `flushIntervalMillis` according to your event traffic load, ensuring events don't get stuck on the client.
 
