@@ -131,9 +131,7 @@ final class Stream implements SeekableIterator
         $resource = fopen(...$args);
         restore_error_handler();
 
-        if (!is_resource($resource)) {
-            throw UnavailableStream::dueToPathNotFound($path);
-        }
+        is_resource($resource) || throw UnavailableStream::dueToPathNotFound($path);
 
         $instance = new self($resource);
         $instance->should_close_stream = true;
@@ -187,9 +185,7 @@ final class Stream implements SeekableIterator
         set_error_handler(fn (int $errno, string $errstr, string $errfile, int $errline) => true);
         $res = stream_filter_append($this->stream, $filtername, $read_write, $params ?? []);
         restore_error_handler();
-        if (!is_resource($res)) {
-            throw InvalidArgument::dueToStreamFilterNotFound($filtername);
-        }
+        is_resource($res) || throw InvalidArgument::dueToStreamFilterNotFound($filtername);
 
         $this->filters[$filtername][] = $res;
     }
@@ -292,13 +288,8 @@ final class Stream implements SeekableIterator
      */
     public function rewind(): void
     {
-        if (!$this->is_seekable) {
-            throw UnavailableFeature::dueToMissingStreamSeekability();
-        }
-
-        if (false === rewind($this->stream)) {
-            throw new RuntimeException('Unable to rewind the document.');
-        }
+        $this->is_seekable || throw UnavailableFeature::dueToMissingStreamSeekability();
+        false !== rewind($this->stream) || throw new RuntimeException('Unable to rewind the document.');
 
         $this->offset = 0;
         $this->value = false;
@@ -355,9 +346,7 @@ final class Stream implements SeekableIterator
      */
     public function setMaxLineLen(int $maxLength): void
     {
-        if (0 > $maxLength) {
-            throw new ValueError(' Argument #1 ($maxLength) must be greater than or equal to 0');
-        }
+        0 <= $maxLength || throw new ValueError(' Argument #1 ($maxLength) must be greater than or equal to 0');
 
         $this->maxLength = $maxLength;
     }
@@ -429,9 +418,7 @@ final class Stream implements SeekableIterator
      */
     public function seek(int $offset): void
     {
-        if ($offset < 0) {
-            throw InvalidArgument::dueToInvalidSeekingPosition($offset, __METHOD__);
-        }
+        $offset >= 0 || throw InvalidArgument::dueToInvalidSeekingPosition($offset, __METHOD__);
 
         $this->rewind();
         while ($this->key() !== $offset && $this->valid()) {
@@ -461,7 +448,7 @@ final class Stream implements SeekableIterator
      *
      * @see https://www.php.net/manual/en/splfileobject.fread.php
      *
-     * @param int<0, max> $length The number of bytes to read
+     * @param int<1, max> $length The number of bytes to read
      */
     public function fread(int $length): string|false
     {
@@ -506,5 +493,20 @@ final class Stream implements SeekableIterator
     public function fflush(): bool
     {
         return fflush($this->stream);
+    }
+
+    /**
+     * Gets file size.
+     *
+     * @see https://www.php.net/manual/en/splfileinfo.getsize.php
+     */
+    public function getSize(): int|false
+    {
+        return fstat($this->stream)['size'] ?? false;
+    }
+
+    public function getContents(?int $length = null, int $offset = -1): string|false
+    {
+        return stream_get_contents($this->stream, $length, $offset);
     }
 }

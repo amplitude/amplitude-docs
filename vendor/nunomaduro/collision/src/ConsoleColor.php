@@ -102,7 +102,7 @@ class ConsoleColor
             } elseif ($this->isValidStyle($s)) {
                 $sequences[] = $this->styleSequence($s);
             } else {
-                throw new ShouldNotHappen();
+                throw new ShouldNotHappen;
             }
         }
 
@@ -218,7 +218,10 @@ class ConsoleColor
 
         preg_match(self::COLOR256_REGEXP, $style, $matches);
 
+        // @phpstan-ignore-next-line
         $type = $matches[1] === 'bg_' ? self::BACKGROUND : self::FOREGROUND;
+
+        // @phpstan-ignore-next-line
         $value = $matches[2];
 
         return "$type;5;$value";

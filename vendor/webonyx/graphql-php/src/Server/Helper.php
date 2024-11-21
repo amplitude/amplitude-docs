@@ -140,7 +140,7 @@ class Helper
      * Checks validity of OperationParams extracted from HTTP request and returns an array of errors
      * if params are invalid (or empty array when params are valid).
      *
-     * @return array<int, RequestError>
+     * @return list<RequestError>
      *
      * @api
      */
@@ -197,7 +197,7 @@ class Helper
      */
     public function executeOperation(ServerConfig $config, OperationParams $op)
     {
-        $promiseAdapter = $config->getPromiseAdapter() ?? Executor::getPromiseAdapter();
+        $promiseAdapter = $config->getPromiseAdapter() ?? Executor::getDefaultPromiseAdapter();
         $result = $this->promiseToExecuteOperation($promiseAdapter, $config, $op);
 
         if ($promiseAdapter instanceof SyncPromiseAdapter) {
@@ -222,7 +222,7 @@ class Helper
      */
     public function executeBatch(ServerConfig $config, array $operations)
     {
-        $promiseAdapter = $config->getPromiseAdapter() ?? Executor::getPromiseAdapter();
+        $promiseAdapter = $config->getPromiseAdapter() ?? Executor::getDefaultPromiseAdapter();
 
         $result = [];
         foreach ($operations as $operation) {
