@@ -81,7 +81,7 @@ Returns the average of the property values you're grouping by. This function is 
 
 ### PROPCOUNT
 
-**Syntax**: `PROPMAX(event)`
+**Syntax**: `PROPCOUNT(event)`
 
 * Event: Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card. The event property must be a number. If grouping by multiple properties, the formula runs the calculation with the first group by clause.
    
@@ -91,7 +91,7 @@ Returns the average of the property values you're grouping by. This function is 
 
 ### PROPMAX
 
-**Syntax:** PROPMAX(event)
+**Syntax:** `PROPMAX(event)`
 
 * **Event:** Returns the maximum value of the property you're grouping the specified event by. The property must be numeric. If grouping by multiple properties, the calculation uses the first group-by clause.
 
