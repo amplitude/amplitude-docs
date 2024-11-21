@@ -12,7 +12,7 @@ fields:
       type: list
       display: 'This article will help you...'
       instructions: 'Add items that a reader will learn in this article.'
-      localizable: false
+      localizable: true
   -
     handle: content
     field:
@@ -31,7 +31,7 @@ fields:
       antlers: true
       type: markdown
       display: Content
-      localizable: false
+      localizable: true
   -
     handle: faq_link
     field:

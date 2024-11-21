@@ -2,8 +2,13 @@ en:
   name: '{{ config:app:name }}'
   url: /docs
   locale: en_US
+  lang: en
 jp:
   name: '{{ config:app:name }} - Japanese'
   url: /docs/jp
   locale: ja-JP
   lang: ja
+ko:
+  name: '{{ config:app:name }} - Korean'
+  url: /docs/ko
+  locale: ko

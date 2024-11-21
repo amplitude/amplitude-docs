@@ -1,5 +1,11 @@
 title: Analytics
+sites:
+  - en
+  - jp
+  - ko
+propagate: false
 template: default
+auto_generate_titles: false
 layout: layout
 revisions: false
 route: '/analytics/{slug}'
