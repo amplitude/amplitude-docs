@@ -40,7 +40,7 @@ The duration estimator estimates the time and sample size you need to achieve si
 If you don’t want to use any of the metrics in the drop-down list, you can create a new metric. To do so, follow these steps:
 
 1. Under *Metric*, click *Create a custom metric*.
-2. In the *Metric* panel that opens, give your new metric a name and a description, then select its type. A metric can be one of six specific types: unique conversions, event totals, formula, funnel conversions, return on retention, sum of property value, or the average of property value.
+2. In the *Metric* panel that opens, give your new metric a name and a description, then select its type. A metric can be one of seven specific types: unique conversions, event totals, formula, funnel conversions, return on retention, sum of property value, or the average of property value.
 3. Click *Select event …* to choose the metric event, which is the event that best represents that metric. Then click *Create*.
 
 {{partial:admonition type='note'}}
