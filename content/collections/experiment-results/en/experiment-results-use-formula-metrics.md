@@ -91,7 +91,7 @@ Returns the average of the property values you're grouping by. This function is 
 
 ### PROPMAX
 
-**Syntax:** PROPMAX(event)
+**Syntax:** `PROPMAX(event)`
 
 * **Event:** Returns the maximum value of the property you're grouping the specified event by. The property must be numeric. If grouping by multiple properties, the calculation uses the first group-by clause.
 
