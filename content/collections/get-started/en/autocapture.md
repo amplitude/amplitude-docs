@@ -15,11 +15,11 @@ Starting with version 2.10.0, the Amplitude Browser SDK includes Autocapture to 
 
 ### Install the Browser SDK
 
-To get started with Autocapture, install the latest version of the Browser SDK ({{sdk_versions:browser}}).
+To get started with Autocapture, install the latest version of the Browser SDK ({{sdk_versions:browser}}) with the unified script loader, npm, or yarn.
 
 {{partial:tabs tabs="Script Loader, npm, yarn"}}
 {{partial:tab name="Script Loader"}}
-{{partial:partials/code/snippet autocapture="true"}}
+{{partial:partials/code/snippet autocapture="true" unified="true"}}
 {{/partial:tab}}
 {{partial:tab name="npm"}}
 ```bash
