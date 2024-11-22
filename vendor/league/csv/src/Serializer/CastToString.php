@@ -30,18 +30,20 @@ final class CastToString implements TypeCasting
         [$this->type, $this->isNullable] = $this->init($reflectionProperty);
     }
 
-    public function setOptions(?string $default = null): void
-    {
+    public function setOptions(
+        ?string $default = null,
+        bool $emptyStringAsNull = false,
+    ): void {
         $this->default = $default;
     }
 
     /**
      * @throws TypeCastingFailed
      */
-    public function toVariable(?string $value): ?string
+    public function toVariable(mixed $value): ?string
     {
-        $returnedValue = match(true) {
-            null !== $value => $value,
+        $returnedValue = match (true) {
+            is_string($value) => $value,
             $this->isNullable => $this->default,
             default => throw TypeCastingFailed::dueToNotNullableType($this->type->value),
         };
@@ -77,9 +79,7 @@ final class CastToString implements TypeCasting
             }
         }
 
-        if (null === $type) {
-            throw throw MappingFailed::dueToTypeCastingUnsupportedType($reflectionProperty, $this, 'string', 'mixed', 'null');
-        }
+        null !== $type || throw throw MappingFailed::dueToTypeCastingUnsupportedType($reflectionProperty, $this, 'string', 'mixed', 'null');
 
         return [$type[0], $isNullable];
     }

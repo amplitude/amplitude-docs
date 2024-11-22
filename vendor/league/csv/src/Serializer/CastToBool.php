@@ -32,17 +32,20 @@ final class CastToBool implements TypeCasting
         [$this->type, $this->isNullable] = $this->init($reflectionProperty);
     }
 
-    public function setOptions(?bool $default = null): void
-    {
+    public function setOptions(
+        ?bool $default = null,
+        bool $emptyStringAsNull = false,
+    ): void {
         $this->default = $default;
     }
 
     /**
      * @throws TypeCastingFailed
      */
-    public function toVariable(?string $value): ?bool
+    public function toVariable(mixed $value): ?bool
     {
         $returnValue = match (true) {
+            is_bool($value) => $value,
             null !== $value => filter_var($value, Type::Bool->filterFlag()),
             $this->isNullable => $this->default,
             default => throw TypeCastingFailed::dueToNotNullableType('boolean'),
