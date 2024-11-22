@@ -76,15 +76,15 @@ final class Writer
      * Creates an instance of the writer.
      */
     public function __construct(
-        SolutionsRepository $solutionsRepository = null,
-        OutputInterface $output = null,
-        ArgumentFormatter $argumentFormatter = null,
-        Highlighter $highlighter = null
+        ?SolutionsRepository $solutionsRepository = null,
+        ?OutputInterface $output = null,
+        ?ArgumentFormatter $argumentFormatter = null,
+        ?Highlighter $highlighter = null
     ) {
-        $this->solutionsRepository = $solutionsRepository ?: new NullSolutionsRepository();
-        $this->output = $output ?: new ConsoleOutput();
-        $this->argumentFormatter = $argumentFormatter ?: new ArgumentFormatter();
-        $this->highlighter = $highlighter ?: new Highlighter();
+        $this->solutionsRepository = $solutionsRepository ?: new NullSolutionsRepository;
+        $this->output = $output ?: new ConsoleOutput;
+        $this->argumentFormatter = $argumentFormatter ?: new ArgumentFormatter;
+        $this->highlighter = $highlighter ?: new Highlighter;
     }
 
     public function write(Inspector $inspector): void

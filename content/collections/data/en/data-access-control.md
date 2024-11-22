@@ -29,7 +29,6 @@ With DAC enabled, Amplitude hides properties that you classify from the Event St
 
 The same restrictions apply to Ask Amplitude.
 
-
 ## Set access for specific categories of sensitive data
 
 Setting access levels is a two-stage process. First, **classify** your data. When that’s complete, you can set up **permissions**.
@@ -74,6 +73,8 @@ Update user and group access from the Overview page, or navigate to Data to upda
 
 Use the project switcher to see classifications for each project, and click *Classify Data* to open that project's tracking plan, where you can manually classify properties.
 
+To customize the error message that your internal users see when they try to access a restricted chart or cohort, click **Customize Restricted Access Message**. On the resulting modal, edit the error message and include any links to internal documentation that may be helpful.
+
 ## Notifications
 
 Users who navigate to a restricted chart or cohort have the option to contact an administrator in their organization to request access. Amplitude sends this request to all organization administrators.
@@ -81,6 +82,16 @@ Users who navigate to a restricted chart or cohort have the option to contact an
 {{partial:admonition type="note" heading="Turn off access request notifications"}}
 Administrators can deselect the `Someone requests access to a property classified by Data Access Controls` notification in *Personal Settings > Notifications* to opt out of these notifications.
 {{/partial:admonition}}
+
+## Exports and subscriptions
+
+DAC enforcement applies to all exports and subscriptions in Amplitude. This means:
+
+* If a user clicks **Download Users** from the [microscope](/docs/analytics/microscope) in a chart, the CSV export excludes properties with classifications they can't access.
+* If a user tries to export a CSV from a dashboard, the export excludes charts they can't access.
+* If a user tries to export a PDF or PNG from a dashboard, the export obfuscates charts and cohorts they can't access.
+* If a user tries to subscribe to a chart they can't access, Amplitude cancels the subscription and the user doesn't get a notification or email.
+* If a user tries to subscribe to or create alerts for a dashboard, the email obfuscates the charts and cohorts they can't access.
 
 ## Manage classifications with the Taxonomy API
 

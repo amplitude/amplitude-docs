@@ -77,9 +77,9 @@ final class Highlighter
     /**
      * Creates an instance of the Highlighter.
      */
-    public function __construct(ConsoleColor $color = null, bool $UTF8 = true)
+    public function __construct(?ConsoleColor $color = null, bool $UTF8 = true)
     {
-        $this->color = $color ?: new ConsoleColor();
+        $this->color = $color ?: new ConsoleColor;
 
         foreach (self::DEFAULT_THEME as $name => $styles) {
             if (! $this->color->hasTheme($name)) {
@@ -249,7 +249,7 @@ final class Highlighter
         return $lines;
     }
 
-    private function lineNumbers(array $lines, int $markLine = null): string
+    private function lineNumbers(array $lines, ?int $markLine = null): string
     {
         $lineStrlen = strlen((string) ((int) array_key_last($lines) + 1));
         $lineStrlen = $lineStrlen < self::WIDTH ? self::WIDTH : $lineStrlen;
