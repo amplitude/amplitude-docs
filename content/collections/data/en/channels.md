@@ -19,7 +19,8 @@ For example, you may want to understand the distribution of organic traffic to y
 
 ### Feature availability
 
-This feature is available to users on **Growth** and **Enterprise plans** only.
+* Starter and Plus plans can create one classifier.
+* Growth and Enterprise plans can create unlimited classifiers.
 
 ## Create a channel
 
