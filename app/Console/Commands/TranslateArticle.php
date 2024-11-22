@@ -30,7 +30,7 @@ class TranslateArticle extends Command
      */
     public function handle()
     {
-        $authKey = "b71b871b-be23-42ce-8e56-dd297e9d0bb1:fx"; // Replace with your key
+        $authKey = getenv('DEEPL_API_KEY'); // Replace with your key
         $translator = new \DeepL\Translator($authKey);
         $site = $this->argument('site');
 
