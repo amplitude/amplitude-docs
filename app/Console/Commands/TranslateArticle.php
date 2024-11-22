@@ -33,6 +33,7 @@ class TranslateArticle extends Command
         $authKey = getenv('DEEPL_API_KEY'); // Replace with your key
         $translator = new \DeepL\Translator($authKey);
         $site = $this->argument('site');
+        $debug = false;
 
         switch ($site) {
             case 'ko':
@@ -80,9 +81,9 @@ class TranslateArticle extends Command
         }
 
         $ignorePatterns = [
-            '/\{\{.*?\}\}/u',                        // Ignore text inside {{ }}
-            '/!\[(.*?)\]\((.*?)(?:\s+"(.*?)")?\)/u', // markdown image links
-            '/\[(.*?)\]\((.*?)\)/u',                // ignore links
+            '/\{\{.*?\}\}/su',                        // Ignore text inside {{ }}
+            '/!\[(.*?)\]\((.*?)(?:\s+"(.*?)")?\)/su', // markdown image links
+            '/\[(.*?)\]\((.*?)\)/su',                // ignore links
         ];
         
         // Extract ignored parts and replace them with unique placeholders
@@ -91,26 +92,35 @@ class TranslateArticle extends Command
         
         foreach ($ignorePatterns as $pattern) {
             $preprocessedContent = preg_replace_callback($pattern, function ($matches) use (&$ignoredParts) {
-                $placeholder = "{{placeholder_" . count($ignoredParts)."}}"; // Generate a unique placeholder
-                $ignoredParts[$placeholder] = $matches[0]; // Store the ignored text
-                return $placeholder; // Replace with the unique placeholder
+                $placeholder = "{{__unique_placeholder_" . count($ignoredParts) . "__}}";
+                $ignoredParts[$placeholder] = $matches[0];
+                return $placeholder;
             }, $preprocessedContent);
         }
         // Translate the preprocessed content
-        $translatedText = $translator->translateText($preprocessedContent, null, $language);
-        
-        // Reintegration: Replace placeholders with their original ignored text
-       $finalContent = $translatedText->text;
-        foreach ($ignoredParts as $placeholder => $ignoredPart) {
-            $finalContent = str_replace($placeholder, $ignoredPart, $finalContent);
-        }
 
-        $translated_entry = Entry::make()
-                            ->collection($collectionHandle)
-                            ->locale($siteHandle)
-                            ->slug($slug)
-                            ->published(true)
-                            ->data(['title' => $title_translated->text, 'origin'=> $article_id, 'this_article_will_help_you' => $goals_translated, 'content' => $finalContent])
-                            ->save();
+        if (!$debug) {
+            # code.
+            try {
+                $translatedText = $translator->translateText($preprocessedContent, null, $language);
+                $finalContent = $translatedText->text;
+            
+                // Replace placeholders with their original content
+                foreach ($ignoredParts as $placeholder => $ignoredPart) {
+                    $finalContent = str_replace($placeholder, $ignoredPart, $finalContent);
+                }
+            } catch (\Exception $e) {
+                $this->error('Error during translation: ' . $e->getMessage());
+                return Command::FAILURE;
+            }
+
+            $translated_entry = Entry::make()
+                                    ->collection($collectionHandle)
+                                    ->locale($siteHandle)
+                                    ->slug($slug)
+                                    ->published(true)
+                                    ->data(['title' => $title_translated->text, 'origin'=> $article_id, 'this_article_will_help_you' => $goals_translated, 'content' => $finalContent])
+                                    ->save();
+        }
     }                   
 }   
