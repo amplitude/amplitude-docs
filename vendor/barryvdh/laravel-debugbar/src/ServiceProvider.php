@@ -2,17 +2,17 @@
 
 namespace Barryvdh\Debugbar;
 
-use Barryvdh\Debugbar\Middleware\DebugbarEnabled;
 use Barryvdh\Debugbar\Middleware\InjectDebugbar;
 use DebugBar\DataFormatter\DataFormatter;
 use DebugBar\DataFormatter\DataFormatterInterface;
 use Illuminate\Container\Container;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\Http\Kernel;
+use Illuminate\Routing\Events\ResponsePrepared;
 use Illuminate\Routing\Router;
+use Illuminate\Session\CookieSessionHandler;
 use Illuminate\Session\SessionManager;
 use Illuminate\Support\Collection;
-use Barryvdh\Debugbar\Facade as DebugBar;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
@@ -32,15 +32,11 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         );
 
         $this->app->singleton(LaravelDebugbar::class, function ($app) {
-            $debugbar = new LaravelDebugbar($app);
+            return new LaravelDebugbar($app);
+        });
 
-            if ($app->bound(SessionManager::class)) {
-                $sessionManager = $app->make(SessionManager::class);
-                $httpDriver = new SymfonyHttpDriver($sessionManager);
-                $debugbar->setHttpDriver($httpDriver);
-            }
-
-            return $debugbar;
+        $this->app->singleton(SymfonyHttpDriver::class, function ($app) {
+            return new SymfonyHttpDriver($app->make(SessionManager::class));
         });
 
         $this->app->alias(LaravelDebugbar::class, 'debugbar');
@@ -104,7 +100,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         $configPath = __DIR__ . '/../config/debugbar.php';
         $this->publishes([$configPath => $this->getConfigPath()], 'config');
 
-        $this->loadRoutesFrom(realpath(__DIR__ . '/debugbar-routes.php'));
+        $this->loadRoutesFrom(__DIR__ . '/debugbar-routes.php');
 
         $this->registerMiddleware(InjectDebugbar::class);
 
@@ -129,16 +125,6 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     protected function getConfigPath()
     {
         return config_path('debugbar.php');
-    }
-
-    /**
-     * Publish the config file
-     *
-     * @param  string $configPath
-     */
-    protected function publishConfig($configPath)
-    {
-        $this->publishes([$configPath => config_path('debugbar.php')], 'config');
     }
 
     /**

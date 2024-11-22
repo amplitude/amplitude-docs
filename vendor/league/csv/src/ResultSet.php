@@ -18,13 +18,11 @@ use CallbackFilterIterator;
 use Closure;
 use Generator;
 use Iterator;
-use IteratorIterator;
 use JsonSerializable;
 use League\Csv\Serializer\Denormalizer;
 use League\Csv\Serializer\MappingFailed;
 use League\Csv\Serializer\TypeCastingFailed;
 use LimitIterator;
-use Traversable;
 
 use function array_filter;
 use function array_flip;
@@ -56,9 +54,7 @@ class ResultSet implements TabularDataReader, JsonSerializable
      */
     public function __construct(Iterator|array $records, array $header = [])
     {
-        if ($header !== array_filter($header, is_string(...))) {
-            throw SyntaxError::dueToInvalidHeaderColumnNames();
-        }
+        $header === array_filter($header, is_string(...)) || throw SyntaxError::dueToInvalidHeaderColumnNames();
 
         $this->header = array_values($this->validateHeader($header));
         $this->records = match (true) {
@@ -101,11 +97,7 @@ class ResultSet implements TabularDataReader, JsonSerializable
      */
     public static function createFromRecords(iterable $records = []): self
     {
-        return new self(match (true) {
-            $records instanceof Iterator => $records,
-            $records instanceof Traversable => new IteratorIterator($records),
-            default => new ArrayIterator($records),
-        });
+        return new self(MapIterator::toIterator($records));
     }
 
     /**
@@ -180,9 +172,7 @@ class ResultSet implements TabularDataReader, JsonSerializable
      */
     public function chunkBy(int $recordsCount): iterable
     {
-        if ($recordsCount < 1) {
-            throw InvalidArgument::dueToInvalidChunkSize($recordsCount, __METHOD__);
-        }
+        $recordsCount > 0 || throw InvalidArgument::dueToInvalidChunkSize($recordsCount, __METHOD__);
 
         $header = $this->getHeader();
         $records = [];
@@ -269,17 +259,42 @@ class ResultSet implements TabularDataReader, JsonSerializable
         return new self(new MapIterator($this, $callback), $hasHeader ? $header : []);
     }
 
+    /**
+     * EXPERIMENTAL WARNING! This method implementation will change in the next major point release.
+     *
+     * Extract all found fragment identifiers for the specifield tabular data
+     *
+     * @experimental since version 9.12.0
+     *
+     * @throws SyntaxError
+     * @return iterable<int, TabularDataReader>
+     */
     public function matching(string $expression): iterable
     {
         return FragmentFinder::create()->findAll($expression, $this);
     }
 
+    /**
+     * EXPERIMENTAL WARNING! This method implementation will change in the next major point release.
+     *
+     * Extract the first found fragment identifier of the tabular data or returns null
+     *
+     * @experimental since version 9.12.0
+     *
+     * @throws SyntaxError
+     */
     public function matchingFirst(string $expression): ?TabularDataReader
     {
         return FragmentFinder::create()->findFirst($expression, $this);
     }
 
     /**
+     * EXPERIMENTAL WARNING! This method implementation will change in the next major point release.
+     *
+     * Extract the first found fragment identifier of the tabular data or fail
+     *
+     * @experimental since version 9.12.0
+     *
      * @throws SyntaxError
      * @throws FragmentNotFound
      */
@@ -329,10 +344,7 @@ class ResultSet implements TabularDataReader, JsonSerializable
      */
     protected function prepareHeader(array $header): array
     {
-        if ($header !== array_filter($header, is_string(...))) {
-            throw SyntaxError::dueToInvalidHeaderColumnNames();
-        }
-
+        $header === array_filter($header, is_string(...)) || throw SyntaxError::dueToInvalidHeaderColumnNames();
         $header = $this->validateHeader($header);
         if ([] === $header) {
             $header = $this->header;
@@ -388,9 +400,7 @@ class ResultSet implements TabularDataReader, JsonSerializable
 
     public function nth(int $nth_record): array
     {
-        if ($nth_record < 0) {
-            throw InvalidArgument::dueToInvalidRecordOffset($nth_record, __METHOD__);
-        }
+        0 <= $nth_record || throw InvalidArgument::dueToInvalidRecordOffset($nth_record, __METHOD__);
 
         $iterator = new LimitIterator($this->getIterator(), $nth_record, 1);
         $iterator->rewind();

@@ -17,6 +17,7 @@ use DOMAttr;
 use DOMDocument;
 use DOMElement;
 use DOMException;
+use Exception;
 
 /**
  * Converts tabular data into a DOMDocument object.
@@ -62,6 +63,26 @@ class XMLConverter
     }
 
     /**
+     * Sends and makes the XML structure downloadable via HTTP.
+     *.
+     * Returns the number of characters read from the handle and passed through to the output.
+     *
+     * @throws Exception
+     */
+    public function download(iterable $records, ?string $filename = null, string $encoding = 'utf-8', bool $formatOutput = false): int|false
+    {
+        $document = $this->convert($records);
+        $document->encoding = $encoding;
+        $document->formatOutput = $formatOutput;
+
+        if (null !== $filename) {
+            HttpHeaders::forFileDownload($filename, 'application/xml; charset='.strtolower($encoding));
+        }
+
+        return $document->save('php://output');
+    }
+
+    /**
      * Creates a new DOMElement related to the given DOMDocument.
      *
      * **DOES NOT** attach to the DOMDocument
@@ -70,8 +91,7 @@ class XMLConverter
     {
         $root = $doc->createElement($this->root_name);
         foreach ($records as $offset => $record) {
-            $node = $this->recordToElement($doc, $record, $offset);
-            $root->appendChild($node);
+            $root->appendChild($this->recordToElement($doc, $record, $offset));
         }
 
         return $root;

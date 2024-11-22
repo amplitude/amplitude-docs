@@ -16,7 +16,7 @@ Amplitude's onboarding helps you to get data into your new organization as quick
 
 Once you sign up and activate your account, Amplitude prompts you to connect your first application with a single snippet. Enable [Session Replay](/docs/session-replay) and [Autocapture](/docs/data/autocapture) to enable those features automatically.
 
-{{partial:partials/code/snippet autocapture="true" session_replay="true"}}
+{{partial:partials/code/snippet autocapture="true" session_replay="true" unified="true"}}
 
 {{partial:admonition type="note" heading="Session Replay sample rate"}}
 When you add Session Replay to the snippet, Amplitude sets the Sample Rate to `1`. This ensures you can verify the implementation during testing. In production, Amplitude recommends you set this value lower to account for your monthly quota. For more information, see [Session Replay Plugin | Sampling rate](/docs/session-replay/session-replay-plugin#sampling-rate)
