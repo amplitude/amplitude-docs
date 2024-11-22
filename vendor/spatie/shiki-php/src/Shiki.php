@@ -8,7 +8,10 @@ use Symfony\Component\Process\Process;
 
 class Shiki
 {
-    protected string $defaultTheme;
+    /**
+     * @var string|array<string, string> Can be a single theme or an array with a light and a dark theme.
+     */
+    protected mixed $defaultTheme;
 
     private static ?string $customWorkingDirPath = null;
 
@@ -17,10 +20,13 @@ class Shiki
         static::$customWorkingDirPath = $path;
     }
 
+    /**
+     * @param string|array<string, string>|null $theme Can be a single theme or an array with a light and a dark theme.
+     */
     public static function highlight(
         string $code,
         ?string $language = null,
-        ?string $theme = null,
+        mixed $theme = null,
         ?array $highlightLines = null,
         ?array $addLines = null,
         ?array $deleteLines = null,
@@ -37,12 +43,47 @@ class Shiki
         ]);
     }
 
-    public function __construct(string $defaultTheme = 'nord')
+    public function getAvailableLanguages(): array
+    {
+        $shikiResult = $this->callShiki('languages');
+
+        $languages = json_decode($shikiResult, true);
+
+        sort($languages);
+
+        return $languages;
+    }
+
+    /**
+     * @param string|array<string, string> $defaultTheme Can be a single theme or an array with a light and a dark theme.
+     */
+    public function __construct(mixed $defaultTheme = 'nord')
     {
         $this->defaultTheme = $defaultTheme;
     }
 
-    public function highlightCode(string $code, string $language, ?string $theme = null, ?array $options = []): string
+    public function getAvailableThemes(): array
+    {
+        $shikiResult = $this->callShiki('themes');
+
+        return json_decode($shikiResult, true);
+    }
+
+    public function languageIsAvailable(string $language): bool
+    {
+        $shikiResult = $this->callShiki('aliases');
+
+        $aliases = json_decode($shikiResult, true);
+
+        return in_array($language, $aliases);
+    }
+
+    public function themeIsAvailable(string $theme): bool
+    {
+        return in_array($theme, $this->getAvailableThemes());
+    }
+
+    public function highlightCode(string $code, string $language, mixed $theme = null, ?array $options = []): string
     {
         $theme = $theme ?? $this->defaultTheme;
 

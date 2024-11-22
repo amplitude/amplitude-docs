@@ -3,6 +3,7 @@
 This is the primary facade for fulfilling GraphQL operations.
 See [related documentation](executing-queries.md).
 
+@phpstan-import-type ArgsMapper from Executor
 @phpstan-import-type FieldResolver from Executor
 
 @see \GraphQL\Tests\GraphQLTest
@@ -162,6 +163,17 @@ static function getStandardValidationRules(): array
  * @api
  */
 static function setDefaultFieldResolver(callable $fn): void
+```
+
+```php
+/**
+ * Set default args mapper implementation.
+ *
+ * @phpstan-param ArgsMapper $fn
+ *
+ * @api
+ */
+static function setDefaultArgsMapper(callable $fn): void
 ```
 
 ## GraphQL\Type\Definition\Type
@@ -1341,8 +1353,9 @@ const CLASS_MAP = [
 
 Implements the "Evaluating requests" section of the GraphQL specification.
 
+@phpstan-type ArgsMapper callable(array<string, mixed>, FieldDefinition, FieldNode, mixed): mixed
 @phpstan-type FieldResolver callable(mixed, array<string, mixed>, mixed, ResolveInfo): mixed
-@phpstan-type ImplementationFactory callable(PromiseAdapter, Schema, DocumentNode, mixed, mixed, array<mixed>, ?string, callable): ExecutorImplementation
+@phpstan-type ImplementationFactory callable(PromiseAdapter, Schema, DocumentNode, mixed, mixed, array<mixed>, ?string, callable, callable): ExecutorImplementation
 
 @see \GraphQL\Tests\Executor\ExecutorTest
 
@@ -1388,6 +1401,7 @@ static function execute(
  * @param array<string, mixed>|null $variableValues
  *
  * @phpstan-param FieldResolver|null $fieldResolver
+ * @phpstan-param ArgsMapper|null $argsMapper
  *
  * @api
  */
@@ -1399,7 +1413,8 @@ static function promiseToExecute(
     $contextValue = null,
     ?array $variableValues = null,
     ?string $operationName = null,
-    ?callable $fieldResolver = null
+    ?callable $fieldResolver = null,
+    ?callable $argsMapper = null
 ): GraphQL\Executor\Promise\Promise
 ```
 
@@ -1424,14 +1439,14 @@ locations?: array<int, array{line: int, column: int}>,
 path?: array<int, int|string>,
 extensions?: array<string, mixed>
 }
-@phpstan-type SerializableErrors array<int, SerializableError>
+@phpstan-type SerializableErrors list<SerializableError>
 @phpstan-type SerializableResult array{
 data?: array<string, mixed>,
 errors?: SerializableErrors,
 extensions?: array<string, mixed>
 }
 @phpstan-type ErrorFormatter callable(\Throwable): SerializableError
-@phpstan-type ErrorsHandler callable(array<Error> $errors, ErrorFormatter $formatter): SerializableErrors
+@phpstan-type ErrorsHandler callable(list<Error> $errors, ErrorFormatter $formatter): SerializableErrors
 
 @see \GraphQL\Tests\Executor\ExecutionResultTest
 
@@ -1455,7 +1470,7 @@ public $data;
  *
  * @api
  *
- * @var array<Error>
+ * @var list<Error>
  */
 public $errors;
 
@@ -1642,7 +1657,7 @@ will be created from the provided schema.
  *
  * @throws \Exception
  *
- * @return array<int, Error>
+ * @return list<Error>
  *
  * @api
  */
@@ -2225,7 +2240,7 @@ function parseRequestParams(string $method, array $bodyParams, array $queryParam
  * Checks validity of OperationParams extracted from HTTP request and returns an array of errors
  * if params are invalid (or empty array when params are valid).
  *
- * @return array<int, RequestError>
+ * @return list<RequestError>
  *
  * @api
  */
@@ -2409,6 +2424,7 @@ Build instance of @see \GraphQL\Type\Schema out of schema language definition (s
 See [schema definition language docs](schema-definition-language.md) for details.
 
 @phpstan-import-type TypeConfigDecorator from ASTDefinitionBuilder
+@phpstan-import-type FieldConfigDecorator from ASTDefinitionBuilder
 
 @phpstan-type BuildSchemaOptions array{
 assumeValid?: bool,
@@ -2439,6 +2455,7 @@ assumeValidSDL?: bool
  * @param DocumentNode|Source|string $source
  *
  * @phpstan-param TypeConfigDecorator|null $typeConfigDecorator
+ * @phpstan-param FieldConfigDecorator|null $fieldConfigDecorator
  *
  * @param array<string, bool> $options
  *
@@ -2452,7 +2469,12 @@ assumeValidSDL?: bool
  * @throws InvariantViolation
  * @throws SyntaxError
  */
-static function build($source, ?callable $typeConfigDecorator = null, array $options = []): GraphQL\Type\Schema
+static function build(
+    $source,
+    ?callable $typeConfigDecorator = null,
+    array $options = [],
+    ?callable $fieldConfigDecorator = null
+): GraphQL\Type\Schema
 ```
 
 ```php
@@ -2465,6 +2487,7 @@ static function build($source, ?callable $typeConfigDecorator = null, array $opt
  * has no resolve methods, so execution will use default resolvers.
  *
  * @phpstan-param TypeConfigDecorator|null $typeConfigDecorator
+ * @phpstan-param FieldConfigDecorator|null $fieldConfigDecorator
  *
  * @param array<string, bool> $options
  *
@@ -2480,7 +2503,8 @@ static function build($source, ?callable $typeConfigDecorator = null, array $opt
 static function buildAST(
     GraphQL\Language\AST\DocumentNode $ast,
     ?callable $typeConfigDecorator = null,
-    array $options = []
+    array $options = [],
+    ?callable $fieldConfigDecorator = null
 ): GraphQL\Type\Schema
 ```
 
