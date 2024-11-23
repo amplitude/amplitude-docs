@@ -12,11 +12,11 @@ Remote evaluation involves making a request to Amplitude Experiment's evaluation
 
 **Client-side**
 
-![](statamic://asset::help_center_conversions::experiment/client-side-overview.drawio.png)
+![](statamic://asset::help_center_conversions::experiment/client-side-overview.drawio.svg)
 
 **Server-side**
 
-![](statamic://asset::help_center_conversions::experiment/server-side-remote-overview.drawio.png)
+![](statamic://asset::help_center_conversions::experiment/server-side-remote-overview.drawio.svg)
 
 ## Targeting capabilities
 
