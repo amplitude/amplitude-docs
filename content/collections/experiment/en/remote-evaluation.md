@@ -35,6 +35,8 @@ Remote evaluation targeting and identity resolution both use Amplitude Analytics
 
 Remote evaluation resolves the user within Amplitude and appends additional information to the user before passing the enriched user to the [evaluation implementation](/docs/feature-experiment/implementation).
 
+![](statamic://asset::help_center_conversions::experiment/remote-evaluation.drawio.svg)
+
 ### Amplitude ID resolution
 
 Amplitude ID resolution happens before additional [user enrichment](#user-enrichment), and is required if [bucketing](/docs/feature-experiment/implementation#consistent-bucketing) by Amplitude ID.
