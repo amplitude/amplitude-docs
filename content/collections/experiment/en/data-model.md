@@ -13,7 +13,7 @@ At the top level in Amplitude is your **organization**. Within an organization, 
 
 [Flags](#flags-and-experiments), [experiments](#flags-and-experiments), and [deployments](#deployments) all live within an Amplitude project.
 
-![](statamic://asset::help_center_conversions::experiment/data-model.drawio.png)
+![](statamic://asset::help_center_conversions::experiment/data-model.drawio.svg)
 
 ## Projects
 
