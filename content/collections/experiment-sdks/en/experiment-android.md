@@ -29,13 +29,13 @@ dependencies {
 }
 ```
 
-{{partial:collapse name="Quick Start"}}
-The right way to initialize the Experiment SDK depends on whether you use an Amplitude SDK for analytics or a third party, like Segment.
+{{partial:admonition type="tip" heading="Quick start"}}
+The right way to initialize the Experiment SDK depends on whether you use an Amplitude SDK for analytics or a third party (for example, Segment).
 
 {{partial:tabs tabs="Amplitude, Third party"}}
 {{partial:tab name="Amplitude"}}
 1. [Initialize the experiment client](#initialize)
-2. [Start the SDK](#start)
+2. [Fetch variants](#fetch)
 3. [Access a flag's variant](#variant)
 
 ```kotlin
@@ -49,9 +49,13 @@ class MyApplication : Application() {
             this, "DEPLOYMENT_KEY", ExperimentConfig()
         )
 
-        // (2) Fetch variants for a user
+        // (2) Fetch variants
         try {
-            client.start().get()
+            // NOTE: The future returned resolves after a network call. Do not
+            //       wait for this future on the main application thread in
+            //       production applications to avoid ANR if the user has a poor
+            //       network connection.
+            client.fetch().get()
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -70,7 +74,7 @@ class MyApplication : Application() {
 {{/partial:tab}}
 {{partial:tab name="Third party"}}
 1. [Initialize the experiment client](#initialize)
-2. [Start the SDK with the user](#start)
+2. [Fetch variants for a user](#fetch)
 3. [Access a flag's variant](#variant)
 
 ```kotlin
@@ -102,7 +106,11 @@ class MyApplication : Application() {
            .userProperty("premium", true)
            .build()
        try {
-           client.start().get()
+            // NOTE: The future returned resolves after a network call. Do not
+            //       wait for this future on the main application thread in
+            //       production applications to avoid ANR if the user has a poor
+            //       network connection.
+           client.fetch(user).get()
        } catch (e: Exception) {
            e.printStackTrace()
        }
@@ -117,16 +125,12 @@ class MyApplication : Application() {
    }
 }
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
+{{/partial:admonition}}
 
-{{/partial:collapse}}
-
-## Core functions
-
-The following functions make up the core of the Experiment client-side SDK.
-
-### Initialize
+## Initialize
 
 The SDK client should be initialized in your application on startup. The [deployment key](/docs/feature-experiment/data-model#deployments) argument passed into the `apiKey` parameter must live within the same project that you are sending analytics events to.
 
@@ -169,7 +173,7 @@ val experiment = Experiment.initialize(context, "DEPLOYMENT_KEY", ExperimentConf
 {{/partial:tab}}
 {{/partial:tabs}}
 
-#### Configuration
+### Configuration
 
 SDK client configuration occurs during initialization.
 
@@ -197,7 +201,7 @@ SDK client configuration occurs during initialization.
 If you use Amplitude's EU data center, configure the `serverZone` option on initialization to `ServerZone.EU`.
 {{/partial:admonition}}
 
-#### Integrations
+### Integrations
 
 If you use either Amplitude or Segment Analytics SDKs to track events into Amplitude, set up an integration on initialization. Integrations automatically implement [provider](#providers) interfaces to enable a more streamlined developer experience by making it easier to **manage user identity** and **track exposures events**.
 
@@ -222,7 +226,7 @@ val experiment = Experiment.initializeWithAmplitudeAnalytics( //[tl! ~~]
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
-If you use a custom instance name for analytics, set the same value in the `instanceName` configuration option in the Experiment SDK. 
+If you use a custom instance name for analytics, set the same value in the `instanceName` configuration option in the Experiment SDK.
 
 Using the integration initializer will automatically configure implementations of the [user provider](#user-provider) and [exposure tracking provider](#exposure-tracking-provider) interfaces to pull user data from the Amplitude Analytics SDK and track exposure events.
 
@@ -299,7 +303,7 @@ val experiment = Experiment.initialize(context, "DEPLOYMENT_KEY", config)
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
-When [starting the SDK](#start), pass the segment anonymous ID and user ID for the device ID and user ID, respectively.
+When [fetching variants](#fetch), pass the segment anonymous ID and user ID for the device ID and user ID, respectively.
 
 {{partial:tabs tabs="Java, Kotlin"}}
 {{partial:tab name="Java"}}
@@ -311,7 +315,7 @@ try {
         .userId(userId)
         .deviceId(deviceId)
         .build();
-    experiment.start(user).get();
+    experiment.fetch(user).get();
 } catch (Exception e) {
     e.printStackTrace();
 }
@@ -326,7 +330,7 @@ try {
         .userId(userId)
         .deviceId(deviceId)
         .build()
-    experiment.start(user).get()
+    experiment.fetch(user).get()
 } catch (e: Exception) {
     e.printStackTrace()
 }
@@ -335,51 +339,7 @@ try {
 {{/partial:tabs}}
 {{/partial:collapse}}
 
-### Start
-
-Start the Experiment SDK to get flag configurations from the server and fetch remote evaluation variants for the user. The SDK is ready once the returned future resolves.
-
-```kotlin
-fun start(user: ExperimentUser? = null): Future<ExperimentClient>
-```
-
-| Parameter | Requirement | Description |
-| --- | --- | --- |
-| `user` | optional | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to fetch variants. This user information is merged with user information provided from [integrations](#integrations) via the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. Also sets the user in the SDK for reuse. | `null` |
-
-Call `start()` when your application is initializing, after user information is available to use to evaluate or [fetch](#fetch) variants. The returned future resolves after loading local evaluation flag configurations and fetching remote evaluation variants.
-
-Configure the behavior of `start()` by setting `fetchOnStart` in the SDK configuration on initialization to improve performance based on the needs of your application.
-
-* If your application never relies on remote evaluation, set `fetchOnStart` to `false` to avoid increased startup latency caused by remote evaluation.
-* If your application relies on remote evaluation, but not right at startup, you may set `fetchOnStart` to `false` and call `fetch()` and await the future separately.
-
-{{partial:tabs tabs="Amplitude, Third-party"}}
-{{partial:tab name="Amplitude"}}
-```kotlin
-try {
-    experiment.start().get();
-} catch (e: Exception) {
-    e.printStackTrace();
-}
-```
-{{/partial:tab}}
-{{partial:tab name="Third-party"}}
-```kotlin
-ExperimentUser user = ExperimentUser.builder()
-    .userId("user@company.com")
-    .userProperty("premium", true)
-    .build();
-try {
-    experiment.start(user).get();
-} catch (e: Exception) {
-    e.printStackTrace();
-}
-```
-{{/partial:tab}}
-{{/partial:tabs}}
-
-### Fetch
+## Fetch
 
 Fetches variants for a [user](/docs/feature-experiment/data-model#users) and store the results in the client for fast access. This function [remote evaluates](/docs/feature-experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
 
@@ -444,11 +404,57 @@ If you want the most up-to-date variants for the user, it's recommended that you
 In the case of **user properties**, Amplitude recommends passing new user properties explicitly to `fetch()` instead of relying on user enrichment prior to [remote evaluation](/docs/feature-experiment/remote-evaluation). This is because user properties that are synced remotely through a separate system have no timing guarantees with respect to `fetch()` -- for example, a race.
 {{/partial:admonition}}
 
-{{partial:admonition type="info" heading="Timeout and retries"}}
 If `fetch()` times out (default 10 seconds) or fails for any reason, the SDK client will return and retry in the background with back-off. You may configure the timeout or disable retries in the [configuration options](#configuration) when the SDK client is initialized.
+
+## Start
+
+{{partial:admonition type="info" heading="Fetch vs start"}}
+Use `start` if you're using client-side [local evaluation](/docs/feature-experiment/local-evaluation). If you're only using [remote evaluation](/docs/feature-experiment/remote-evaluation), call [fetch](#fetch) instead of `start`.
 {{/partial:admonition}}
 
-### Variant
+Start the Experiment SDK to get flag configurations from the server and fetch remote evaluation variants for the user. The SDK is ready once the returned future resolves.
+
+```kotlin
+fun start(user: ExperimentUser? = null): Future<ExperimentClient>
+```
+
+| Parameter | Requirement | Description |
+| --- | --- | --- |
+| `user` | optional | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to fetch variants. This user information is merged with user information provided from [integrations](#integrations) via the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. Also sets the user in the SDK for reuse. | `null` |
+
+Call `start()` when your application is initializing, after user information is available to use to evaluate or [fetch](#fetch) variants. The returned future resolves after loading local evaluation flag configurations and fetching remote evaluation variants.
+
+Configure the behavior of `start()` by setting `fetchOnStart` in the SDK configuration on initialization to improve performance based on the needs of your application.
+
+* If your application never relies on remote evaluation, set `fetchOnStart` to `false` to avoid increased startup latency caused by remote evaluation.
+* If your application relies on remote evaluation, but not right at startup, you may set `fetchOnStart` to `false` and call `fetch()` and await the future separately.
+
+{{partial:tabs tabs="Amplitude, Third-party"}}
+{{partial:tab name="Amplitude"}}
+```kotlin
+try {
+    experiment.start().get();
+} catch (e: Exception) {
+    e.printStackTrace();
+}
+```
+{{/partial:tab}}
+{{partial:tab name="Third-party"}}
+```kotlin
+ExperimentUser user = ExperimentUser.builder()
+    .userId("user@company.com")
+    .userProperty("premium", true)
+    .build();
+try {
+    experiment.start(user).get();
+} catch (e: Exception) {
+    e.printStackTrace();
+}
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+## Variant
 
 Access a [variant](/docs/feature-experiment/data-model#variants) for a [flag or experiment](/docs/feature-experiment/data-model#flags-and-experiments) from the SDK client's local store.
 
@@ -550,7 +556,7 @@ if (variant.value == "control") {
 {{/partial:tab}}
 {{/partial:tabs}}
 
-### All
+## All
 
 Access all [variants](/docs/feature-experiment/data-model#variants) stored by the SDK client.
 
@@ -571,7 +577,7 @@ experiment.all()
 {{/partial:tab}}
 {{/partial:tabs}}
 
-### Clear
+## Clear
 
 Clear all [variants](/docs/feature-experiment/data-model#variants) in the cache and storage.
 
@@ -594,7 +600,7 @@ experiment.clear()
 {{/partial:tab}}
 {{/partial:tabs}}
 
-### Exposure
+## Exposure
 
 Manually track an [exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) for the current variant of the given flag key through configured [integration](#integrations) or custom [exposure tracking provider](#exposure-tracking-provider). Generally used in conjunction with setting the `automaticExposureTracking` [configuration](#configuration) optional to `false`.
 
