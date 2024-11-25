@@ -45,7 +45,7 @@ The right way to initialize the Experiment SDK depends on whether you use an Amp
 {{partial:tabs tabs="Amplitude, Third party"}}
 {{partial:tab name="Amplitude"}}
 1. [Initialize the experiment client](#initialize)
-2. [Start the SDK](#start)
+2. [Fetch variants](#fetch)
 3. [Access a flag's variant](#variant)
 
 ```swift
@@ -55,8 +55,8 @@ let experiment = Experiment.initializeWithAmplitudeAnalytics(
     config: ExperimentConfigBuilder().build()
 )
 
-// (2) Start the SDK
-experiment.start() { error in
+// (2) Fetch variants
+experiment.fetch(user: nil) { error in
 
     // (3) Lookup a flag's variant
     let variant = experiment.variant("FLAG_KEY")
@@ -70,7 +70,7 @@ experiment.start() { error in
 {{/partial:tab}}
 {{partial:tab name="Third party"}}
 1. [Initialize the experiment client](#initialize)
-2. [Start the SDK with a user](#fetch)
+2. [Fetch variants for a user](#fetch)
 3. [Access a flag's variant](#variant)
 
 ```swift
@@ -93,13 +93,13 @@ let experiment = Experiment.initialize(
        .exposureTrackingProvider(ExposureTracker())
        .build()
 )
-// (2) Start the SDK with the user.
+// (2) Fetch variants with the user.
 let user = ExperimentUserBuilder()
    .userId("user@company.com")
    .deviceId("abcdefg")
    .userProperty("premium", value: true)
    .build()
-experiment.start(user) { error in
+experiment.fetch(user: user) { error in
 
    // (3) Lookup a flag's variant
    let variant = experiment.variant("FLAG_KEY")
@@ -114,11 +114,7 @@ experiment.start(user) { error in
 {{/partial:tabs}}
 {{/partial:admonition}}
 
-## Core functions
-
-The following functions make up the core of the Experiment client-side SDK.
-
-### Initialize
+## Initialize
 
 The SDK client should be initialized in your application on startup. The [deployment key](/docs/feature-experiment/data-model#deployments) argument passed into the `apiKey` parameter must live within the same project that you are sending analytics events to.
 
@@ -178,7 +174,7 @@ let experiment = Experiment.initialize(
 {{/partial:tab}}
 {{/partial:tabs}}
 
-#### Configuration
+### Configuration
 
 The SDK client can be configured once on initialization.
 
@@ -209,7 +205,7 @@ The SDK client can be configured once on initialization.
 If you're using Amplitude's EU data center, configure the `serverZone` option on initialization to `.EU`.
 {{/partial:admonition}}
 
-#### Integrations
+### Integrations
 
 If you use either Amplitude or Segment Analytics SDKs to track events into Amplitude, you'll want to set up an integration on initialization. Integrations automatically implement [provider](#providers) interfaces to enable a more streamlined developer experience by making it easier to **manage user identity** and **track exposures events**.
 
@@ -283,49 +279,7 @@ experiment.fetch(user: user, completion: nil)
 
 {{/partial:collapse}}
 
-### Start
-
-Start the SDK by getting flag configurations from the server and fetching remote evaluation variants for the user. The SDK is ready once the completion callback is called.
-
-```js
-func start(_ user: ExperimentUser? = nil, completion: ((Error?) -> Void)? = nil)
-```
-
-| Parameter | Requirement | Description |
-| --- | --- | --- |
-| `user` | optional | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to fetch variants. This user information is merged with user information provided from [integrations](#integrations) via the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. Also sets the user in the SDK for reuse. |
-| `completion` | optional | The completion block, called when the SDK has finished starting. If fetch is called on start, the completion block is called after the fetch response is received. |
-
-Call `start()` when your application is initializing, after user information is available to use to evaluate or [fetch](#fetch) variants. The provided completion block is called after loading local evaluation flag configurations and fetching remote evaluation variants.
-
-Configure the behavior of `start()` by setting `fetchOnStart` in the SDK configuration on initialization to improve performance based on the needs of your application.
-
-* If your application never relies on remote evaluation, set `fetchOnStart` to `false` to avoid increased startup latency caused by remote evaluation.
-* If your application relies on remote evaluation, but not right at startup, you may set `fetchOnStart` to `false` and call `fetch()` separately.
-* 
-{{partial:tabs tabs="Amplitude, Third party"}}
-{{partial:tab name="Amplitude"}}
-```swift
-experiment.start() { error in 
-    // SDK Started
-}
-```
-{{/partial:tab}}
-{{partial:tab name="Third party"}}
-```swift
-let user = ExperimentUserBuilder()
-    .userId("user@company.com")
-    .deviceId("abcdefg")
-    .userProperty("premium", value: true)
-    .build()
-experiment.start(user) { error in
-    // SDK Started
-}
-```
-{{/partial:tab}}
-{{/partial:tabs}}
-
-### Fetch
+## Fetch
 
 Fetches variants for a [user](/docs/feature-experiment/data-model#users) and store the results in the client for fast access. This function [remote evaluates](/docs/feature-experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
 
@@ -363,11 +317,55 @@ If you want the most up-to-date variants for the user, it's recommended that you
 In the case of **user properties**, Amplitude recommends passing new user properties explicitly to `fetch()` instead of relying on user enrichment prior to [remote evaluation](/docs/feature-experiment/remote-evaluation). This is because user properties that are synced remotely through a separate system have no timing guarantees with respect to `fetch()`--i.e. a race.
 {{/partial:admonition}}
 
-{{partial:admonition type="info" heading="Timeout and retries"}}
 If `fetch()` times out (default 10 seconds) or fails for any reason, the SDK client will return and retry in the background with back-off. You may configure the timeout or disable retries in the [configuration options](#configuration) when the SDK client is initialized.
+
+## Start
+
+{{partial:admonition type="info" heading="Fetch vs start"}}
+Use `start` if you're using client-side [local evaluation](/docs/feature-experiment/local-evaluation). If you're only using [remote evaluation](/docs/feature-experiment/remote-evaluation), call [fetch](#fetch) instead of `start`.
 {{/partial:admonition}}
 
-### Variant
+Start the SDK by getting flag configurations from the server and fetching remote evaluation variants for the user. The SDK is ready once the completion callback is called.
+
+```js
+func start(_ user: ExperimentUser? = nil, completion: ((Error?) -> Void)? = nil)
+```
+
+| Parameter | Requirement | Description |
+| --- | --- | --- |
+| `user` | optional | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to fetch variants. This user information is merged with user information provided from [integrations](#integrations) via the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. Also sets the user in the SDK for reuse. |
+| `completion` | optional | The completion block, called when the SDK has finished starting. If fetch is called on start, the completion block is called after the fetch response is received. |
+
+Call `start()` when your application is initializing, after user information is available to use to evaluate or [fetch](#fetch) variants. The provided completion block is called after loading local evaluation flag configurations and fetching remote evaluation variants.
+
+Configure the behavior of `start()` by setting `fetchOnStart` in the SDK configuration on initialization to improve performance based on the needs of your application.
+
+* If your application never relies on remote evaluation, set `fetchOnStart` to `false` to avoid increased startup latency caused by remote evaluation.
+* If your application relies on remote evaluation, but not right at startup, you may set `fetchOnStart` to `false` and call `fetch()` separately.
+
+{{partial:tabs tabs="Amplitude, Third party"}}
+{{partial:tab name="Amplitude"}}
+```swift
+experiment.start() { error in
+    // SDK Started
+}
+```
+{{/partial:tab}}
+{{partial:tab name="Third party"}}
+```swift
+let user = ExperimentUserBuilder()
+    .userId("user@company.com")
+    .deviceId("abcdefg")
+    .userProperty("premium", value: true)
+    .build()
+experiment.start(user) { error in
+    // SDK Started
+}
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+## Variant
 
 Access a [variant](/docs/feature-experiment/data-model#variants) for a [flag or experiment](/docs/feature-experiment/data-model#flags-and-experiments) from the SDK client's local store.
 
@@ -422,7 +420,7 @@ if variant.value == "control" {
 }
 ```
 
-### All
+## All
 
 Access all [variants](/docs/feature-experiment/data-model#variants) stored by the SDK client.
 
@@ -430,7 +428,7 @@ Access all [variants](/docs/feature-experiment/data-model#variants) stored by th
 func all() -> [String:Variant]
 ```
 
-### Clear
+## Clear
 
 Clear all [variants](/docs/feature-experiment/data-model#variants) in the cache and storage.
 
@@ -444,7 +442,7 @@ You can call `clear` after user logout to clear the variants in cache and storag
 experiment.clear()
 ```
 
-### Exposure
+## Exposure
 
 Manually track an [exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) for the current variant of the given flag key through configured [integration](#integrations) or custom [exposure tracking provider](#exposure-tracking-provider). Generally used in conjunction with setting the `automaticExposureTracking` [configuration](#configuration) optional to `false`.
 

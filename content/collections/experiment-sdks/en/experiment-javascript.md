@@ -55,16 +55,15 @@ yarn add @amplitude/experiment-js-client
 {{/partial:tab}}
 {{/partial:tabs}}
 
-## Quickstart
+{{partial:admonition type="tip" heading="Quick start"}}
+The right way to initialize the Experiment SDK depends on whether you use an Amplitude SDK for analytics or a third party (for example, Segment).
 
-The method you use to initialize the Experiment SDK depends on the method you use to instrument your analytics, using an Amplitude SDK or a third-party, like Segment. Both options require the same steps:
-
-1. Initialize the Experiment client
-2. Start the SDK
-3. Access a flag's variant
-
-{{partial:tabs tabs="Amplitude, Third-party"}}
+{{partial:tabs tabs="Amplitude, Third party"}}
 {{partial:tab name="Amplitude"}}
+1. [Initialize the experiment client](#initialize)
+2. [Fetch variants](#fetch)
+3. [Access a flag's variant](#variant)
+
 ```js
 import { Experiment } from '@amplitude/experiment-js-client';
 
@@ -73,8 +72,8 @@ const experiment = Experiment.initializeWithAmplitudeAnalytics(
     'DEPLOYMENT_KEY'
 );
 
-// (2) Start the SDK and await the promise result.
-await experiment.start();
+// (2) Fetch variants and await the promise result.
+await experiment.fetch();
 
 // (3) Lookup a flag's variant.
 const variant = experiment.variant('FLAG_KEY');
@@ -84,8 +83,13 @@ if (variant.value === 'on') {
     // Flag is off
 }
 ```
+
 {{/partial:tab}}
-{{partial:tab name="Third-party"}}
+{{partial:tab name="Third party"}}
+1. [Initialize the experiment client](#initialize)
+2. [Fetch variants for a user](#fetch)
+3. [Access a flag's variant](#variant)
+
 ```js
 import { Experiment } from '@amplitude/experiment-js-client';
 
@@ -103,7 +107,7 @@ const experiment = Experiment.initialize(
     }
 );
 
-// (2) Start the SDK with the user and await the promise result.
+// (2) Fetch variants with the user and await the promise result.
 const user = {
     user_id: 'user@company.com',
     device_id: 'abcdefg',
@@ -111,7 +115,7 @@ const user = {
         premium: true,
     },
 }
-await experiment.start(user);
+await experiment.fetch(user);
 
 // (3) Lookup a flag's variant.
 const variant = experiment.variant('FLAG_KEY');
@@ -121,10 +125,12 @@ if (variant.value === 'on') {
     // Flag is off
 }
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
+{{/partial:admonition}}
 
-## Initialize the SDK
+## Initialize
 
 Initialize the SDK in your application on startup. The [deployment key](/docs/feature-experiment/data-model#deployments) argument you pass into the `apiKey` parameter must live in the same Amplitude project to which you send events.
 
@@ -175,7 +181,7 @@ const experiment = Experiment.initialize(
 {{/partial:tab}}
 {{/partial:tabs}}
 
-## Configuration
+### Configuration
 
 Configure the SDK client once during initialization.
 
@@ -244,10 +250,10 @@ analytics.ready(() => {
 });
 ```
 
-When [starting the SDK](#start), pass the segment anonymous ID and user ID for the device ID and user ID, respectively.
+When [fetching variants](#fetch), pass the segment anonymous ID and user ID for the device ID and user ID, respectively.
 
 ```js
-await experiment.start({
+await experiment.fetch({
     user_id: analytics.user().id(),
     device_id: analytics.user().analyticsId(),
 });
@@ -298,7 +304,59 @@ const experiment = Experiment.initialize("DEPLOYMENT_KEY", {
 
 {{/partial:collapse}}
 
-### Start
+## Fetch
+
+Fetches variants for a [user](/docs/feature-experiment/data-model#users) and store the results in the client for fast access. This function [remote evaluates](/docs/feature-experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
+
+{{partial:admonition type="tip" heading="Fetch on user identity change"}}
+If you want the most up-to-date variants for the user, it's recommended that you call `fetch()` whenever the user state changes in a meaningful way. For example, if the user logs in and receives a user ID, or has a user property set which may effect flag or experiment targeting rules.
+
+Pass new **user properties** explicitly to `fetch()` instead of relying on user enrichment prior to [remote evaluation](/docs/feature-experiment/remote-evaluation). This is because user properties that are synced remotely through a separate system have no timing guarantees with respect to `fetch()`--for example, a race.
+{{/partial:admonition}}
+
+```js
+fetch(user?: ExperimentUser, options?: FetchOptions): Promise<Client>
+```
+
+| Parameter | Requirement | Description |
+| --- | --- | --- |
+| `user`    | optional | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to evaluate. This user information is merged with user information provided from [integrations](#integrations) via the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. |
+| `options` | optional | Explicit flag keys to fetch.|
+
+{{partial:collapse name="Account-level bucketing and analysis (v1.5.6+)"}}
+If your organization has purchased the [Accounts add-on](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users. Reach out to your representative to gain access to this beta feature.
+
+Groups must either be included in the user sent with the fetch request (recommended), or identified with the user via a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or via [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
+
+```js
+await fetch({groups: {'org name': ['Amplitude']}});
+```
+{{/partial:collapse}}
+
+```js
+const user = {
+    user_id: 'user@company.com',
+    device_id: 'abcdefg',
+    user_properties: {
+        'premium': true,
+    },
+};
+await experiment.fetch(user);
+```
+
+If you're using an [integration](#integrations) or a custom [user provider](#user-provider) then you can fetch without inputting the user.
+
+```js
+await experiment.fetch();
+```
+
+If `fetch()` times out (default 10 seconds) or fails for any reason, the SDK client will return and retry in the background with back-off. You may configure the timeout or disable retries in the [configuration options](#configuration) when the SDK client is initialized.
+
+## Start
+
+{{partial:admonition type="info" heading="Fetch vs start"}}
+Use `start` if you're using client-side [local evaluation](/docs/feature-experiment/local-evaluation). If you're only using [remote evaluation](/docs/feature-experiment/remote-evaluation), call [fetch](#fetch) instead of `start`.
+{{/partial:admonition}}
 
 Start the SDK by getting flag configurations from the server and fetching remote evaluation variants for the user. The SDK is ready once the returned promise resolves.
 
@@ -337,57 +395,7 @@ await experiment.start(user);
 {{/partial:tab}}
 {{/partial:tabs}}
 
-### Fetch
-
-Fetches variants for a [user](/docs/feature-experiment/data-model#users) and store the results in the client for fast access. This function [remote evaluates](/docs/feature-experiment/remote-evaluation) the user for flags associated with the deployment used to initialize the SDK client.
-
-{{partial:admonition type="tip" heading="Fetch on user identity change"}}
-If you want the most up-to-date variants for the user, it's recommended that you call `fetch()` whenever the user state changes in a meaningful way. For example, if the user logs in and receives a user ID, or has a user property set which may effect flag or experiment targeting rules.
-
-Pass new **user properties** explicitly to `fetch()` instead of relying on user enrichment prior to [remote evaluation](/docs/feature-experiment/remote-evaluation). This is because user properties that are synced remotely through a separate system have no timing guarantees with respect to `fetch()`--for example, a race.
-{{/partial:admonition}}
-
-```js
-fetch(user?: ExperimentUser, options?: FetchOptions): Promise<Client>
-```
-
-| Parameter | Requirement | Description |
-| --- | --- | --- |
-| `user`    | optional | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to evaluate. This user information is merged with user information provided from [integrations](#integrations) via the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. |
-| `options` | optional | Explicit flag keys to fetch.|
-
-{{partial:admonition type="beta" heading="Account-level bucketing and analysis (v1.5.6+)"}}
-If your organization has purchased the [Accounts add-on](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users. Reach out to your representative to gain access to this beta feature.
-
-Groups must either be included in the user sent with the fetch request (recommended), or identified with the user via a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or via [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
-
-```js
-await fetch({groups: {'org name': ['Amplitude']}});
-```
-{{/partial:admonition}}
-
-```js
-const user = {
-    user_id: 'user@company.com',
-    device_id: 'abcdefg',
-    user_properties: {
-        'premium': true,
-    },
-};
-await experiment.fetch(user);
-```
-
-If you're using an [integration](#integrations) or a custom [user provider](#user-provider) then you can fetch without inputting the user.
-
-```js
-await experiment.fetch();
-```
-
-{{partial:admonition type="info" heading="Timeout and retries"}}
-If `fetch()` times out (default 10 seconds) or fails for any reason, the SDK client will return and retry in the background with back-off. You may configure the timeout or disable retries in the [configuration options](#configuration) when the SDK client is initialized.
-{{/partial:admonition}}
-
-### Variant
+## Variant
 
 Access a [variant](/docs/feature-experiment/data-model#variants) for a [flag or experiment](/docs/feature-experiment/data-model#flags-and-experiments) from the SDK client's local store.
 
@@ -437,7 +445,7 @@ if (variant === 'control') {
 }
 ```
 
-### All
+## All
 
 Access all [variants](/docs/feature-experiment/data-model#variants) stored by the SDK client.
 
@@ -445,7 +453,7 @@ Access all [variants](/docs/feature-experiment/data-model#variants) stored by th
 all(): Variants
 ```
 
-### Clear
+## Clear
 
 Clear all [variants](/docs/feature-experiment/data-model#variants) in the cache and storage.
 
@@ -459,7 +467,7 @@ You can call `clear` after user logout to clear the variants in cache and storag
 experiment.clear();
 ```
 
-### Exposure
+## Exposure
 
 Manually track an [exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) for the current variant of the given flag key through configured [integration](#integrations) or custom [exposure tracking provider](#exposure-tracking-provider). Generally used in conjunction with setting the `automaticExposureTracking` [configuration](#configuration) optional to `false`.
 
