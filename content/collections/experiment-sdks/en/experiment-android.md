@@ -420,7 +420,7 @@ fun start(user: ExperimentUser? = null): Future<ExperimentClient>
 
 | Parameter | Requirement | Description |
 | --- | --- | --- |
-| `user` | optional | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to fetch variants. This user information is merged with user information provided from [integrations](#integrations) via the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. Also sets the user in the SDK for reuse. | `null` |
+| `user` | optional | Explicit [user](/docs/feature-experiment/data-model#users) information to pass with the request to fetch variants. This user information is merged with user information provided from [integrations](#integrations) through the [user provider](#user-provider), preferring properties passed explicitly to `fetch()` over provided properties. Also sets the user in the SDK for reuse. | `null` |
 
 Call `start()` when your application is initializing, after user information is available to use to evaluate or [fetch](#fetch) variants. The returned future resolves after loading local evaluation flag configurations and fetching remote evaluation variants.
 
