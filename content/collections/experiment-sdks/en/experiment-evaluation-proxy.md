@@ -23,7 +23,7 @@ The evaluation proxy is under active development. APIs are unstable and may chan
 
 The Evaluation Proxy is a Service to enable, enhance, and optimize [local evaluation](/docs/feature-experiment/local-evaluation) running within your infrastructure.
 
-![](statamic://asset::help_center_conversions::experiment/evaluation-proxy.drawio.png)
+![](statamic://asset::help_center_conversions::experiment/evaluation-proxy.drawio.svg)
 
 * **Enable local evaluation on unsupported platforms**: Use remote [Evaluation APIs](/docs/apis/experiment/experiment-evaluation-api) and [SDKs](/docs/sdks/experiment-sdks) to run local evaluation in your infrastructure.
 

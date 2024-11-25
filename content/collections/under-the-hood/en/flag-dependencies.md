@@ -34,7 +34,7 @@ For more information, see [Flag Prerequisites](/docs/feature-experiment/advanced
 
 ## Mutual exclusion groups
 
-![Mutual exclusion group](statamic://asset::help_center_conversions::experiment/mutex-group.drawio.png)
+![Mutual exclusion group](statamic://asset::help_center_conversions::experiment/mutex-group.drawio.svg)
 
 *Available for experiments only*
 
@@ -46,7 +46,7 @@ For more information, see [Set up and run mutually exclusive experiments](/docs/
 
 ## Holdout groups
 
-![](statamic://asset::help_center_conversions::experiment/holdout-group.drawio.png)
+![](statamic://asset::help_center_conversions::experiment/holdout-group.drawio.svg)
 
 *Available for experiments only*
 
