@@ -38,6 +38,7 @@ Depending on your company's network policy, you may need to add these IP address
 ## Limits
 
 - Maximum running time for a single Snowflake SQL query is 12 hours.
+- Max batch size for a single Snowflake SQL query is 1B events. 
 
 {{partial:admonition type="warning" title="User and Group properties sync"}}
 Amplitude's Data Warehouse Import sometimes processes events in parallel, so time-ordered syncing of user and group properties on events isn't guaranteed in the same way as submitting events directly to the Identify and Group Identify APIs. 
@@ -111,7 +112,7 @@ See the following table to understand which data types are compatible with which
 {{partial:admonition type="note" heading="Change Data Capture options"}}
 For the `Event` data type, the CDC strategy supports configuration of the CDC feed type. 
 
-Select *Ingestion Only* to ingest from your warehouse and include Amplitude's enrichment services like ID Resolution, property and attribution syncing, and location resolution.
+Select *Append Only* to ingest from your warehouse and include Amplitude's enrichment services like ID Resolution, property and attribution syncing, and location resolution.
 
 Select *Continuous Sync* to mirror your Snowflake data with support for `insert`, `update`, and `delete` operations. This option deactivates Amplitude's enrichment services to ensure you remain in sync with your source-of-truth.
 
@@ -134,7 +135,7 @@ When choosing an integration strategy, consider the following:
 
 - **Timestamp Import**: Choose this option if you can incrementally import data using a monotonically increasing timestamp column that indicates when records when Snowflake loads the records. This is efficient and works well when you append new data with timestamps.
 
-- **Change Data Capture (CDC) Ingestion Only**: Choose this option to import data based on changes detected by Snowflake's CDC feature while still using Amplitude's enrichment services. This method only supports reading `INSERT` operations from the CDC
+- **Change Data Capture (CDC) Append Only**: Choose this option to import data based on changes detected by Snowflake's CDC feature while still using Amplitude's enrichment services. This method only supports reading `INSERT` operations from the CDC
 
 - **Change Data Capture (CDC) Continuous Sync**: Choose this option to directly mirror the data in Snowflake with `INSERT`, `UPDATE`, and `DELETE` operations based on changes detected by Snowflake's CDC feature. This method disables Amplitude's enrichment services to remain in sync with your source of truth and is ideal when you need to keep Amplitude data fully synchronized with your Snowflake data. `UPDATE` and `DELETE` operations mutate data in Amplitude.
 
