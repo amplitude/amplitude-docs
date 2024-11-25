@@ -5,8 +5,8 @@ title: 'Amplitude SQL: Getting started with Query'
 source: 'https://help.amplitude.com/hc/en-us/articles/115001902492-Amplitude-SQL-Getting-started-with-Query'
 this_article_will_help_you:
   - 'Query your Snowflake database using custom SQL'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1725396332
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1732570633
 landing: true
 landing_blurb: 'Query your Snowflake database using custom SQL'
 ---
@@ -55,8 +55,7 @@ By default, Amplitude SQL shows a simple SQL query for events your users have pe
 * `COUNT($amplitude_id)` as *Totals* (total count of users)
 
 The highlighting of the SQL syntax should help you distinguish SQL commands from the rest of your query. 
-
-![Screen_Shot_sql-1.png](/docs/output/img/other-charts/sql-1.png)
+![](statamic://asset::help_center_conversions::other-charts/sql-1a.png)
 
 Amplitude SQL also supports autocomplete of columns in the table.
 
@@ -67,7 +66,7 @@ Once you're finished building your SQL query, click *Compute* to run it. When yo
 * Query results appear in a data table.
 * A time series chart of the results appears below the table.
 
-![Screen Shot 2019-10-30 at 10.03.11.png](/docs/output/img/other-charts/screen-shot-2019-10-30-at-10-03-11-png.png)
+![](statamic://asset::help_center_conversions::other-charts/sql-2.png)
 
 Use the set of controls below the query editor to customize the time series visualization. Your options include all the fields you return in your SQL `SELECT` statement. For example, in the query above, these are *DATE*, *UNIQUES*, and *TOTALS*.
 

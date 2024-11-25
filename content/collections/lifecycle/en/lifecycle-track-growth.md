@@ -7,7 +7,7 @@ this_article_will_help_you:
   - 'Understand the benefits of a lifecycle analysis'
   - 'Set up a Lifecycle chart'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717104866
+updated_at: 1732570270
 landing: true
 landing_blurb: 'Understand the benefits of a lifecycle analysis'
 ---
@@ -51,7 +51,7 @@ To build a Lifecycle chart, follow these steps:
 6. You can narrow your focus even further by telling Amplitude you only want to include users who have already performed certain actions. To do so, click *Select event...*, then choose the event you’re interested in.
 7. In the Metrics Module, set your **usage interval**. If a user fires your selected event within the usage interval, Amplitude will consider them current; otherwise, for the purposes of this analysis, they are considered dormant. Your chart will display the results in the interval you've selected.
 
-![growth lifecycle.png](/docs/output/img/lifecycle/growth-lifecycle-png.png)
+![](statamic://asset::help_center_conversions::lifecycle/lifecycle-1.png)
 
 This example shows a daily lifecycle chart with an interval of 7 days (August 1 to August 7). Each day includes blue and red buckets defined as active users (blue) versus dormant users (red). Users cannot be in more than one bucker per interval. 
 
