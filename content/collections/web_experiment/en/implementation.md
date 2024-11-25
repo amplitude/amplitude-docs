@@ -134,15 +134,15 @@ window.experimentIntegration = {
 
 [Contact support](https://amplitude.zendesk.com/hc/en-us/requests/new) for help with a custom integration for your CDP.
 
-### Content management systems
+## Content management systems
 
 Amplitude Web Experiment supports any CMS that supports custom scripts. Amplitude provides plugins that support both Wordpress and Shopify to help you get running on those platforms.
 
-#### Wordpress
+### Wordpress
 
 Amplitude's [Wordpress plugin](/docs/data/amplitude-wordpress-plugin) enables Amplitude Analytics, Experiment, and Session Replay.
 
-#### Shopify
+### Shopify
 
 [Amplitude's Shopify App](https://apps.shopify.com/amplitude) enables Amplitude Analytics, Experiment, and Session Replay on your Shopify site.
 
@@ -150,11 +150,11 @@ Amplitude's [Wordpress plugin](/docs/data/amplitude-wordpress-plugin) enables Am
 The method Shopify uses to loads Amplitude's Shopify app causes flickering. To avoid this, add the [asynchronous web script with the anti-flicker snippet](#async-script-with-anti-flicker-snippet) to your `theme.liquid` file.
 {{/partial:admonition}}
 
-### Tag managers
+## Tag managers
 
 Tag managers, like Google Tag Manager load scripts asynchronously, which causes flickering. Tag managers can be a good way to start using the visual editor to create variants in parallel if adding the Web Experiment script directly to the page takes time. Amplitude recommends against using tag managers in production.
 
-#### Google Tag Manager (GTM)
+### Google Tag Manager (GTM)
 
 {{partial:admonition type="warning" heading="Causes Flicker"}}
 Implementing Web Experiment with a tag manager will cause flicker. Only use a tag manager when getting started, if adding the script to the site is out of the question in the short-term.
