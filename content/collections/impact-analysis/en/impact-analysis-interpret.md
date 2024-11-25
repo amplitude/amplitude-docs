@@ -7,7 +7,7 @@ this_article_will_help_you:
   - 'Interpret the results of your Impact Analysis chart'
   - 'Effectively and appropriately use causal inference'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717104396
+updated_at: 1732570172
 landing: true
 landing_blurb: 'Effectively and appropriately use causal inference to interpret your Impact Analysis'
 ---
@@ -17,7 +17,7 @@ The [Impact Analysis chart](/docs/analytics/charts/impact-analysis/impact-analys
 
 The Impact Analysis chart plots the outcome event on a relative *n*-day basis, from the time each user triggered the treatment event for the first time. Amplitude lines up each user's relative timeline for you, so you can easily see the pattern. The center line represents the day or week the users first triggered the event.
 
-![impact analysis 1.5.png](/docs/output/img/impact-analysis/impact-analysis-1-5-png.png)
+![](statamic://asset::help_center_conversions::impact-analysis/ia-1.png)
 
 In the above example, you can see that the users who favorited a song for the first time between November 1st and November 30 played an average of just over three songs or videos per day in the week after they first tried favoriting. By contrast, those users only played an average of around two songs per day in the week before they discovered the favoriting feature.
 

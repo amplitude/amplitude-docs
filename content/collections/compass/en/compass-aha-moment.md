@@ -6,8 +6,8 @@ source: 'https://help.amplitude.com/hc/en-us/articles/235147347-The-Compass-char
 this_article_will_help_you:
   - 'Understand the Compass chart interface'
   - 'Build a Compass chart to identify user behaviors that best predict retention'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1731622194
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1732569584
 landing: true
 landing_blurb: 'Build a Compass chart to identify user behaviors that best predict retention'
 ---
@@ -29,7 +29,7 @@ First of all, events can't appear in any Amplitude charts until instrumentation 
 
 The Compass chart doesn't work the same way most other Amplitude charts work. There's no *Event* Module, no *Segmentation* Module, and no *Measured As* Module:
 
-  ![compass 1a.png](/docs/output/img/compass/compass-1a.png)
+![](statamic://asset::help_center_conversions::compass/compass-1.png)
 
 When you first open a Compass chart, you see a heat map view that shows the likelihood of retaining new users into their second week, based on both the events they trigger and when they trigger them. In this example, we see that users who start a session on their first day are less likely to retain. This is probably because **all** new users start a session on their first day—they have to start a session to become a new user in the first place, and since they haven't yet had a chance to interact with your product beyond that, it's not an especially predictive event.
 
