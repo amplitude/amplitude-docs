@@ -14,10 +14,7 @@ The [Amplitude Shopify Plugin](https://apps.shopify.com/amplitude) enables you t
 
 ## Considerations
 
-* Performance: The packages Amplitude provides are roughly 167kb total size, but will vary depending on which products you use. In testing, Shopify stores with Amplitude installed registered an average lighthouse score of 96, compared to an average score of 98 without Amplitude.
-
-* Session replay may not display as expected. Shopify’s UI relies on animations, specifically the fade-in animation. Session Replay doesn't capture the animation consistently, which may cause elements to appear missing.
-
+* Performance: The packages Amplitude provides are roughly 167kb total size, but vary depending on which products you use. In testing, Shopify stores with Amplitude installed registered an average lighthouse score of 96, compared to an average score of 98 without Amplitude.
 
 ## Plugin details
 
@@ -42,6 +39,14 @@ By default, the Shopify plugin captures the following event properties:
   - `[Amplitude] Variant Title`
   - `[Amplitude] Title`
   - `[Amplitude] Vendor`
+
+### Session Replay
+
+
+### Web Experimentation
+
+
+
 
 ## Install the plugin
 
