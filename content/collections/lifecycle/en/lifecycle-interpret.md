@@ -7,7 +7,7 @@ this_article_will_help_you:
   - 'Interpret the results of your Lifecycle chart'
   - 'Switch between chart types'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717104873
+updated_at: 1732570352
 landing: true
 landing_blurb: 'Interpret the results of your Lifecycle chart'
 ---
@@ -43,7 +43,7 @@ There are also two other views for your Lifecycle chart: Dormant and Pulse.
 
 The Dormant chart shows the distribution of dormant users for a particular day, week, or month. For example, a dormant new user on November 21st (shown in the bar between November 20th and November 21st) is a user who was new on November 20th but became dormant on November 21st.
 
-![dormant lifecycle.png](/docs/output/img/lifecycle/dormant-lifecycle-png.png)
+![](statamic://asset::help_center_conversions::lifecycle/lifecycle-dormant.png)
 
 ### Pulse
 
@@ -60,4 +60,4 @@ Broadly speaking:
 
 For example, in the chart below, pulse was 0.95 between December 5th and December 11th. This means we lost more users in that interval than we gained or resurrected.
 
-![pulse lifecycle.png](/docs/output/img/lifecycle/pulse-lifecycle-png.png)
+![](statamic://asset::help_center_conversions::lifecycle/lifecycle-pulse.png)

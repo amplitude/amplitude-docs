@@ -29,7 +29,7 @@ You can update your plan in two ways:
 
 ### Create a source
 
-[Sources](/docs/cdp/sources/connect-to-source) represent the originating source of the data being sent to Amplitude. (For example, your iOS, Android, Web, and Backend.) When using the [Ampli Developer experience](/docs/sdks/ampli), you’ll need to create a source to generate the correct tracking library.
+[Sources](/docs/data/sources/connect-to-source) represent the originating source of the data being sent to Amplitude. (For example, your iOS, Android, Web, and Backend.) When using the [Ampli Developer experience](/docs/sdks/ampli), you’ll need to create a source to generate the correct tracking library.
 
 To create a source, follow these steps:
 

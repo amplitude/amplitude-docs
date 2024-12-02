@@ -44,7 +44,7 @@ Server-side SDKs can target cohorts if configured to do so. **Only User IDs can 
 
 Local evaluation is just [evaluation](/docs/feature-experiment/implementation)--a function which takes a [user](/docs/feature-experiment/data-model#users) and a [flag](/docs/feature-experiment/data-model#flags-and-experiments) as input, and outputs a [variant](/docs/feature-experiment/data-model#variants).
 
-![](statamic://asset::help_center_conversions::experiment/local-evaluation.drawio.png)
+![](statamic://asset::help_center_conversions::experiment/local-evaluation.drawio.svg)
 
 The SDK loads flag configuration updates from the server on startup and stores them in memory for access prior to each evaluation. After startup, the SDK begins polling for flag configuration updates from the server.
 

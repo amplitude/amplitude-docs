@@ -1,6 +1,17 @@
 # Release Notes for 10.x
 
-## [Unreleased](https://github.com/laravel/framework/compare/v10.48.19...10.x)
+## [Unreleased](https://github.com/laravel/framework/compare/v10.48.23...10.x)
+
+## [v10.48.23](https://github.com/laravel/framework/compare/v10.48.22...v10.48.23) - 2024-11-12
+
+* [10.x] Ensure headers are only attached to illuminate responses by [@timacdonald](https://github.com/timacdonald) in https://github.com/laravel/framework/pull/53019
+* [10.x] Fix append and prepend batch to chain by [@Bencute](https://github.com/Bencute) in https://github.com/laravel/framework/pull/53455
+
+## [v10.48.22](https://github.com/laravel/framework/compare/v10.48.20...v10.48.22) - 2024-09-12
+
+## [v10.48.20](https://github.com/laravel/framework/compare/v10.48.19...v10.48.20) - 2024-08-09
+
+* [10.x] fix: prevent casting empty string to array from triggering json error by [@calebdw](https://github.com/calebdw) in https://github.com/laravel/framework/pull/52415
 
 ## [v10.48.19](https://github.com/laravel/framework/compare/v10.48.18...v10.48.19) - 2024-08-06
 

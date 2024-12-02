@@ -119,3 +119,7 @@ To delete your transformation, follow these steps:
 ![undoTransformation.png](/docs/output/img/data/undotransformation-png.png)
 
 Deleting a transformation **doesn't** delete the original events.
+
+## Transformed events and custom events
+
+{{partial:partials/custom-vs-transformed-events}}

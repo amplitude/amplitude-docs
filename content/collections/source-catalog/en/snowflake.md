@@ -38,6 +38,7 @@ Depending on your company's network policy, you may need to add these IP address
 ## Limits
 
 - Maximum running time for a single Snowflake SQL query is 12 hours.
+- Max batch size for a single Snowflake SQL query is 1B events. 
 
 {{partial:admonition type="warning" title="User and Group properties sync"}}
 Amplitude's Data Warehouse Import sometimes processes events in parallel, so time-ordered syncing of user and group properties on events isn't guaranteed in the same way as submitting events directly to the Identify and Group Identify APIs. 
@@ -111,7 +112,7 @@ See the following table to understand which data types are compatible with which
 {{partial:admonition type="note" heading="Change Data Capture options"}}
 For the `Event` data type, the CDC strategy supports configuration of the CDC feed type. 
 
-Select *Ingestion Only* to ingest from your warehouse and include Amplitude's enrichment services like ID Resolution, property and attribution syncing, and location resolution.
+Select *Append Only* to ingest from your warehouse and include Amplitude's enrichment services like ID Resolution, property and attribution syncing, and location resolution.
 
 Select *Continuous Sync* to mirror your Snowflake data with support for `insert`, `update`, and `delete` operations. This option deactivates Amplitude's enrichment services to ensure you remain in sync with your source-of-truth.
 
@@ -134,7 +135,7 @@ When choosing an integration strategy, consider the following:
 
 - **Timestamp Import**: Choose this option if you can incrementally import data using a monotonically increasing timestamp column that indicates when records when Snowflake loads the records. This is efficient and works well when you append new data with timestamps.
 
-- **Change Data Capture (CDC) Ingestion Only**: Choose this option to import data based on changes detected by Snowflake's CDC feature while still using Amplitude's enrichment services. This method only supports reading `INSERT` operations from the CDC
+- **Change Data Capture (CDC) Append Only**: Choose this option to import data based on changes detected by Snowflake's CDC feature while still using Amplitude's enrichment services. This method only supports reading `INSERT` operations from the CDC
 
 - **Change Data Capture (CDC) Continuous Sync**: Choose this option to directly mirror the data in Snowflake with `INSERT`, `UPDATE`, and `DELETE` operations based on changes detected by Snowflake's CDC feature. This method disables Amplitude's enrichment services to remain in sync with your source of truth and is ideal when you need to keep Amplitude data fully synchronized with your Snowflake data. `UPDATE` and `DELETE` operations mutate data in Amplitude.
 
@@ -229,7 +230,7 @@ To use a group property:
 
 ## SQL query examples
 
-To make the data selection step a bit easier, here are few example SQL snippets to get you started.
+To make the data selection step easier, here are few example SQL snippets to get you started.
 
 ### Event data example
 
@@ -263,18 +264,242 @@ FROM DATABASE_NAME.SCHEMA_NAME.TABLE_OR_VIEW_NAME
 
 ### Common snippets
 
-Creating a JSON Object:
+Create a JSON Object:
 
-`OBJECT_CONSTRUCT('city', CITY, 'state', STATE) as "user_properties"`
+```sql
+OBJECT_CONSTRUCT('city', CITY, 'state', STATE) as "user_properties"
+```
 
-Converting timestamp column to milliseconds:
+Convert a timestamp column to milliseconds:
 
-`DATE_PART('EPOCH_MILLISECOND', TIMESTAMP_COLUMN) as "time"`
+```sql
+DATE_PART('EPOCH_MILLISECOND', TIMESTAMP_COLUMN) as "time"
+```
 
-Converting milliseconds to TIMESTAMP_NTZ format needed for time-based import. This example uses the `scale` argument set to `3` to convert to milliseconds. See the [Snowflake documentation](https://docs.snowflake.com/en/sql-reference/functions/to_timestamp.html) for more details.
+Convert milliseconds to the `TIMESTAMP_NTZ` format needed for time-based import. This example uses the `scale` argument set to `3` to convert to milliseconds. See the [Snowflake documentation](https://docs.snowflake.com/en/sql-reference/functions/to_timestamp.html) for more details.
 
-`TO_TIMESTAMP_NTZ(TIME_COLUMN_IN_MILLIS, 3) as "update_time_column"`
+```sql
+TO_TIMESTAMP_NTZ(TIME_COLUMN_IN_MILLIS, 3) as "update_time_column"
+```
 
-Converting a timestamp column with a timezone to TIMESTAMP_NTZ format needed for time-based import.
+Convert a timestamp column with a timezone to `TIMESTAMP_NTZ` format needed for time-based import.
 
-`TO_TIMESTAMP_NTZ(CONVERT_TIMEZONE('UTC', TIMESTAMP_TZ_COLUMN)) as "update_time_column"`
+```sql
+TO_TIMESTAMP_NTZ(CONVERT_TIMEZONE('UTC', TIMESTAMP_TZ_COLUMN)) as "update_time_column"
+```
+
+## SQL troubleshooting
+
+The following sections provide example SQL queries you can use to configure your import connectors.
+
+### Required event properties
+
+The Snowflake SQL queries you write for Amplitude's data warehouse import connectors must return specific columns that match Amplitude's Event API schema. Use the following examples to help structure your query.
+
+{{partial:tabs tabs="Basic template, Complete template"}}
+{{partial:tab name="Basic template"}}
+```sql
+SELECT
+    event_type,             -- String: Name of the event
+    user_id,                -- String: Unique identifier for the user
+    EXTRACT(EPOCH_MILLISECOND FROM event_timestamp) as time  -- Timestamp in milliseconds
+FROM your_events_table
+```
+{{/partial:tab}}
+{{partial:tab name="Complete template"}}
+```sql
+SELECT
+    event_name as event_type,
+    user_identifier as user_id,
+    EXTRACT(EPOCH_MILLISECOND FROM event_timestamp) as time,
+    device_id,
+    session_id,
+    
+    -- Event Properties as JSON object using OBJECT_CONSTRUCT
+    OBJECT_CONSTRUCT(
+        'property1', property1_value,
+        'property2', property2_value,
+        'category', category,
+        'value', amount
+    ) as event_properties,
+    -- [tl! collapse:start ]
+    -- User Properties as JSON object
+    OBJECT_CONSTRUCT(
+        'user_type', user_type,
+        'subscription_status', subscription_status,
+        'city', data:address:city::string,
+        'last_updated', TO_VARCHAR(last_updated)
+    ) as user_properties,
+
+    app_version,
+    platform,
+    os_name,
+    os_version,
+    device_brand,
+    device_manufacturer,
+    device_model,
+    carrier,
+    country,
+    region,
+    city,
+    dma,
+    language,
+    price::FLOAT as price,
+    quantity::INTEGER as quantity,
+    revenue::FLOAT as revenue,
+    product_id as productId,
+    revenue_type as revenueType,
+    location_lat::FLOAT as location_lat,
+    location_lng::FLOAT as location_lng,
+    ip
+    -- [tl! collapse:end ]
+FROM your_events_table
+WHERE event_timestamp >= DATEADD(day, -7, CURRENT_DATE())
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+### Basic event query with properties
+
+```sql
+SELECT
+    event_name as event_type,
+    user_id,
+    EXTRACT(EPOCH_MILLISECOND FROM event_timestamp) as time,
+    device_id,
+    -- Construct event properties from multiple columns
+    OBJECT_CONSTRUCT(
+        'page_name', page_name,
+        'button_id', button_id,
+        'interaction_type', interaction_type,
+        'duration_ms', duration_ms
+    ) as event_properties,
+    -- Construct user properties
+    OBJECT_CONSTRUCT(
+        'account_type', account_type,
+        'subscription_tier', subscription_tier,
+        'last_login', TO_VARCHAR(last_login_date)
+    ) as user_properties,
+    platform,
+    app_version
+FROM app_events
+WHERE event_timestamp >= DATEADD(day, -7, CURRENT_DATE())
+```
+
+### Snowflake-specific features and best practices
+
+The following are examples of Snowflake-specific features and best practices.
+
+#### Working with JSON
+
+```sql
+-- Combining multiple JSON objects
+SELECT
+    event_type,
+    user_id,
+    EXTRACT(EPOCH_MILLISECOND FROM event_timestamp) as time,
+    OBJECT_CONSTRUCT(
+        'base_properties', base_properties,  -- existing JSON column
+        'additional_data', OBJECT_CONSTRUCT(
+            'new_field1', value1,
+            'new_field2', value2
+        )
+    ) as event_properties
+FROM events
+
+-- Parsing JSON fields
+SELECT
+    event_type,
+    user_id,
+    time,
+    PARSE_JSON(raw_properties):field_name::string as extracted_value
+FROM events
+```
+
+#### Handling timestamps
+
+```sql
+-- Converting different timestamp formats
+SELECT
+    event_type,
+    user_id,
+    CASE
+        WHEN TRY_TO_TIMESTAMP(timestamp_string) IS NOT NULL 
+            THEN EXTRACT(EPOCH_MILLISECOND FROM TRY_TO_TIMESTAMP(timestamp_string))
+        WHEN TRY_TO_TIMESTAMP_NTZ(timestamp_string) IS NOT NULL 
+            THEN EXTRACT(EPOCH_MILLISECOND FROM TRY_TO_TIMESTAMP_NTZ(timestamp_string))
+        ELSE NULL
+    END as time
+FROM events
+```
+
+#### Data validation queries
+
+```sql
+-- Validate required fields
+SELECT COUNT(*)
+FROM (
+    YOUR_QUERY_HERE
+) t
+WHERE event_type IS NULL
+    OR user_id IS NULL
+    OR time IS NULL;
+
+-- Validate JSON structure
+SELECT COUNT(*)
+FROM (
+    YOUR_QUERY_HERE
+) t
+WHERE NOT (
+    TRY_CAST(event_properties AS OBJECT) IS NOT NULL
+    AND TRY_CAST(user_properties AS OBJECT) IS NOT NULL
+);
+
+-- Validate timestamp range
+SELECT
+    MIN(time) as min_time,
+    MAX(time) as max_time,
+    TIMEADD(millisecond, MIN(time), '1970-01-01'::timestamp) as min_readable_time,
+    TIMEADD(millisecond, MAX(time), '1970-01-01'::timestamp) as max_readable_time
+FROM (
+    YOUR_QUERY_HERE
+) t;
+```
+
+## Performance optimization tips
+
+Use the following examples to help optimize the performance of your integration.
+
+### Use clustering keys
+
+Use the appropriate clusting keys on your source tables.
+
+```sql
+ALTER TABLE your_events_table CLUSTER BY (event_timestamp, user_id);
+```
+
+### Use materialized views
+
+Use materialized views for complex transformations.
+
+```sql
+CREATE MATERIALIZED VIEW amplitude_ready_events AS
+SELECT
+    -- Your transformed columns here
+FROM source_events;
+```
+
+### Date partitioning in WHERE clauses
+
+```sql
+WHERE event_timestamp >= DATEADD(day, -7, CURRENT_DATE())
+  AND event_timestamp < CURRENT_DATE()
+```
+
+### Micro-partitions
+
+```sql
+SELECT ...
+FROM your_table
+WHERE TO_DATE(event_timestamp) BETWEEN '2024-01-01' AND '2024-01-31'
+```

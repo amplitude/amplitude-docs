@@ -678,7 +678,7 @@ class Asset implements Arrayable, ArrayAccess, AssetContract, Augmentable, Conta
     /**
      * Clear meta and filesystem listing caches.
      */
-    private function clearCaches()
+    protected function clearCaches()
     {
         $this->meta = null;
         Cache::forget($this->metaCacheKey());
@@ -1071,12 +1071,12 @@ class Asset implements Arrayable, ArrayAccess, AssetContract, Augmentable, Conta
         return $this->selectedQueryRelations;
     }
 
-    private function hasDimensions()
+    public function hasDimensions()
     {
         return $this->isImage() || $this->isSvg() || $this->isVideo();
     }
 
-    private function hasDuration()
+    public function hasDuration()
     {
         return $this->isAudio() || $this->isVideo();
     }

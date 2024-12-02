@@ -5,24 +5,25 @@ title: 'Session Replay iOS Standalone SDK'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1726763554
+updated_at: 1730306269
 alpha: true
 instrumentation_guide: true
 platform: ios
 public: false
 parent: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
+description: 'Choose this option if you use an iOS analytics provider other than Amplitude.'
 ---
-{{partial:partials/session-replay/sr-ios-eap :when="alpha"}}
-
 This article covers the installation of Session Replay for iOS using the standalone SDK. If you use a provider other than Amplitude for in-product analytics, choose this option. 
 
-If your app is already instrumented with [(latest) iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk), use the [Session Replay iOS SDK Plugin](/docs/session-replay/session-replay-ios-plugin).
-
-If your app is already instrumented with [(maintenance) iOS SDK](/docs/sdks/analytics/ios/ios-sdk), use the [Session Replay iOS SDK Middleware](/docs/session-replay/session-replay-ios-middleware).
+If your app is already instrumented with an  [Amplitude iOS SDK](/docs/sdks/analytics/ios/ios-swift-sdk), use the [Session Replay iOS SDK Plugin](/docs/session-replay/session-replay-ios-plugin).
 
 If you use Segment through their Analytics-Swift SDK and [Amplitude (Actions) destination](https://segment.com/docs/connections/destinations/catalog/actions-amplitude/), choose the [Segment Plugin](/docs/session-replay/session-replay-ios-segment-integration).
 
 {{partial:partials/session-replay/sr-ios-performance}}
+
+{{partial:admonition type="tip" heading="Report issues"}}
+To report issues with Session Replay for iOS, see the [AmplitudeSessionReplay-ios GitHub repository](https://github.com/amplitude/AmplitudeSessionReplay-ios).
+{{/partial:admonition}}
 
 ## Before you begin
 
@@ -93,7 +94,7 @@ ThirdPartyAnalytics.track(event)
 
 // Handle session ID changes
 // Whenever the session ID changes
-ThirdPartyAnalytics.setSessionId(sessionId)
+ThirdPartyAnalytics.setSessionId(deviceId)
 // Update the session ID in session replay
 sessionReplay.sessionId = ThirdPartyAnalytics.getSessionId()
 
@@ -108,15 +109,19 @@ sessionReplay.deviceId = ThirdPartyAnalytics.getDeviceId()
 
 Pass the following configuration options when you initialize the Session Replay SDK.
 
-| Name         | Type         | Required | Default         | Description                                                                                                                                                                                                                                                                                                                   |
-| ------------ | ------------ | -------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `apiKey`     | `String`     | No       | `null`          | Sets the Amplitude API Key.                                                                                                                                                                                                                                                                                                   |
-| `deviceId`   | `String`     | No       | `null`          | Sets an identifier for the device running your application.                                                                                                                                                                                                                                                                   |
-| `sessionId`  | `Long`       | No       | `-1`            | Sets an identifier for the users current session. The value must be in milliseconds since epoch (Unix Timestamp), or `-1` to show `sessionId` isn't set.                                                                                                                                                                   |
-| `sampleRate` | `Number`     | No       | `0.0`           | Use this option to control how many sessions to select for replay collection. <br></br>The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. |
-| `optOut`     | `Boolean`    | No       | `false`         | Sets permission to collect replays for sessions. Setting a value of true prevents Amplitude from collecting session replays.                                                                                                                                                                                                  |
-| `logger`     | `Logger`     | No       | `ConsoleLogger` | Sets a custom `logger` class from the Logger to emit log messages to desired destination. Set to `null` to disable logging.                                                                                                                                                                                                   |
-| `serverZone` | `ServerZone` | No       | `ServerZone.US` | `ServerZone.EU` or `ServerZone.US`. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center.                                                                                                                                                                                          |
+| Name                  | Type      | Required | Default          | Description                                                                                                                                                                                                                                                                                                          |
+| --------------------- | --------- | -------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `apiKey`              | `String`  | No       | `null`           | Sets the Amplitude API Key.                                                                                                                                                                                                                                                                                                 |
+| `deviceId`            | `string`  | Yes      | `undefined`      | Sets an identifier for the device running your application.                                                                                                                                                                                                                                                          |
+| `sessionId`           | `number`  | Yes      | `undefined`      | Sets an identifier for the users current session. The value must be in milliseconds since epoch (Unix Timestamp).                                                                                                                                                                                                    |
+| `sampleRate`          | `number`  | No       | `0`              | Use this option to control how many sessions to select for replay collection. The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. |
+| `optOut`              | `boolean` | No       | `false`          | Sets permission to collect replays for sessions. Setting a value of true prevents Amplitude from collecting session replays.                                                                                                                                                                                         |
+| `logger`              | `Logger`  | No       | `ConsoleLogger`  | Sets a custom `logger` class from the Logger to emit log messages to desired destination. Set to `null` to disable logging.                                                                                                                                                                                                   |
+| `serverZone`          | `string`  | No       | `US`             | EU or US. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center.                                                                                                                                                                                                           |
+| `enableRemoteConfig`  | `boolean` | No       | `true`           | Enables or disables [remote configuration ](#remote-configuration) for this instance of Session Replay.                                                                                                                                                                                                              |
+| `serverUrl`           | `string`  | No       | `null`           | Explicitly set the server URL. Use this setting for proxy configuration.                                                                                                                                                                                                                                             |
+
+{{partial:partials/session-replay/sr-remote-config-test}}
 
 {{partial:partials/session-replay/sr-ios-mask-data}}
 

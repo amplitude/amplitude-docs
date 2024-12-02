@@ -25,7 +25,7 @@ This feature is available to users on **all Amplitude plans**. See our [pricing 
 
 Be sure to read our article on [building charts in Amplitude](/docs/get-started/helpful-definitions).
 
-You'll also want to read up on [session IDs and how Amplitude tracks sessions,](/docs/cdp/sources/instrument-track-sessions).
+You'll also want to read up on [session IDs and how Amplitude tracks sessions,](/docs/data/sources/instrument-track-sessions).
 
 {{partial:admonition type='note'}}
  This article describes features that are not yet available to all users.

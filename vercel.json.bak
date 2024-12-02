@@ -321,7 +321,7 @@
     },
     {
       "source": "/docs/hc/en-us/articles/16806069264539",
-      "destination": "/docs/cdp/sources/connect-to-source",
+      "destination": "/docs/data/sources/connect-to-source",
       "statusCode": 301
     },
     {
@@ -676,7 +676,7 @@
     },
     {
       "source": "/docs/hc/en-us/articles/115003116888",
-      "destination": "/docs/cdp/sources/instrument-track-revenue",
+      "destination": "/docs/data/sources/instrument-track-revenue",
       "statusCode": 301
     },
     {
@@ -801,7 +801,7 @@
     },
     {
       "source": "/docs/hc/en-us/articles/115002323627",
-      "destination": "/docs/cdp/sources/instrument-track-sessions",
+      "destination": "/docs/data/sources/instrument-track-sessions",
       "statusCode": 301
     },
     {
@@ -911,7 +911,7 @@
     },
     {
       "source": "/docs/hc/en-us/articles/115003135607",
-      "destination": "/docs/cdp/sources/instrument-track-unique-users",
+      "destination": "/docs/data/sources/instrument-track-unique-users",
       "statusCode": 301
     },
     {
@@ -2836,7 +2836,7 @@
     },
     {
       "source": "/docs/hc/en-us/articles/16806069264539-Connect-to-a-source",
-      "destination": "/docs/cdp/sources/connect-to-source",
+      "destination": "/docs/data/sources/connect-to-source",
       "statusCode": 301
     },
     {
@@ -3056,7 +3056,7 @@
     },
     {
       "source": "/docs/hc/en-us/articles/115003116888-Track-revenue",
-      "destination": "/docs/cdp/sources/instrument-track-revenue",
+      "destination": "/docs/data/sources/instrument-track-revenue",
       "statusCode": 301
     },
     {
@@ -3126,7 +3126,7 @@
     },
     {
       "source": "/docs/hc/en-us/articles/115002323627-Track-sessions",
-      "destination": "/docs/cdp/sources/instrument-track-sessions",
+      "destination": "/docs/data/sources/instrument-track-sessions",
       "statusCode": 301
     },
     {
@@ -3201,12 +3201,12 @@
     },
     {
       "source": "/docs/hc/en-us/articles/115003135607-Track-unique-users",
-      "destination": "/docs/cdp/sources/instrument-track-unique-users",
+      "destination": "/docs/data/sources/instrument-track-unique-users",
       "statusCode": 301
     },
     {
       "source": "/docs/hc/en-us/articles/115003135607",
-      "destination": "/docs/cdp/sources/instrument-track-unique-users",
+      "destination": "/docs/data/sources/instrument-track-unique-users",
       "statusCode": 301
     },
     {

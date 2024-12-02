@@ -324,7 +324,7 @@ amplitude.init(API_KEY, OPTIONAL_USER_ID, {
 });
 ```
 
-A session is the period of time a user has your website open. See [How Amplitude defines sessions](/docs/cdp/sources/instrument-track-sessions) for more information. When a new session starts, Amplitude tracks a session start event is and is the first event of the session. The event type for session start is `[Amplitude] Start Session`. When an existing session ends, Amplitude tracks `[Amplitude] End Sessions`, which is the last event of the session.
+A session is the period of time a user has your website open. See [How Amplitude defines sessions](/docs/data/sources/instrument-track-sessions) for more information. When a new session starts, Amplitude tracks a session start event is and is the first event of the session. The event type for session start is `[Amplitude] Start Session`. When an existing session ends, Amplitude tracks `[Amplitude] End Sessions`, which is the last event of the session.
 
 ### Track form interactions
 
@@ -657,7 +657,7 @@ All asynchronous APIs are optionally awaitable through a Promise interface. This
 {{partial:tabs tabs="Promise, async/await"}}
 {{partial:tab name="Promise"}}
 ```ts
-amplitude.init("apikey", "12321.com").promise.then(function(result) { 
+amplitude.init("apikey", "12321.com").promise.then(function() { 
   // init callback
 })
 

@@ -4,7 +4,7 @@ blueprint: revenue-ltv
 title: "The Revenue LTV chart: Track how well you're monetizing new users"
 source: 'https://help.amplitude.com/hc/en-us/articles/230680867-The-Revenue-LTV-chart-Track-how-well-you-re-monetizing-new-users'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717103855
+updated_at: 1732570506
 landing: true
 landing_blurb: 'Analyze new-user monetization with a time horizon of as much as twelve months into the past'
 ---
@@ -25,7 +25,7 @@ This feature is available to users on **Growth** and **Enterprise plans** only. 
 
 Events don't appear in any Amplitude charts until instrumentation is complete, so make sure you've got that done. Before you begin, see the article about [building charts in Amplitude](/docs/get-started/helpful-definitions).
 
-See the [tracking revenue](/docs/cdp/sources/instrument-track-revenue) documentation to learn how to track revenue events. For example, if you use [Amplitude's SDKs](/docs/sdks/analytics), call `logRevenueV2()`  with the provided revenue interface. If you track in-app purchases (IAPs), use Amplitude's revenue authentication system.  
+See the [tracking revenue](/docs/data/sources/instrument-track-revenue) documentation to learn how to track revenue events. For example, if you use [Amplitude's SDKs](/docs/sdks/analytics), call `logRevenueV2()`  with the provided revenue interface. If you track in-app purchases (IAPs), use Amplitude's revenue authentication system.  
 
 {{partial:admonition type='note'}}
 Amplitude doesn't support currency conversion. The revenue value you send Amplitude is what's aggregated and displayed. If you get revenue in different currencies, normalize to a single currency before you send any revenue data to Amplitude.
@@ -45,9 +45,7 @@ To build a Revenue LTV chart, follow these steps:
 You don't have to use a revenue property here, it's the most common use case of the Revenue LTV chart.
 {{/partial:admonition}}
 
-1. Add properties to the revenue event by clicking on *+ where*, selecting the property name, and specifying the property value you’re interested in. You can add as many properties as you like, one at a time.  
-  
-	![revenue_LTV_basic_screenshot.png](/docs/output/img/revenue-ltv/revenue-ltv-basic-screenshot-png.png)  
+1. Add properties to the revenue event by clicking on *+ Filter*, selecting the property name, and specifying the property value you’re interested in. You can add as many properties as you like, one at a time.  
 		
 	{{partial:admonition type='note'}}
 	These properties must be explicitly sent **by you** via Amplitude's SDKs when you log revenue events.  
@@ -71,7 +69,7 @@ You don't have to use a revenue property here, it's the most common use case of 
 
 6. Choose the measure you'd like to use for this analysis.  
   
-	![revenue_LTV_screenshot_2.png](/docs/output/img/revenue-ltv/revenue-ltv-screenshot-2-png.png)  
+	![](statamic://asset::help_center_conversions::revenue-ltv/rev-ltv-3.png) 
 	
 	* **Total Revenue**: This shows the total revenue received during the time frame of your analysis. Specifically, it's the sum of all total revenue from all new users, beginning the day they sent their first Amplitude event. You can break this out on an hourly, daily, weekly, monthly, or quarterly frequency.
 	* **New Paying Users**: This shows the number of users who triggered a revenue event for the first time during the specified hour/day/week/month after their cohort's start date.

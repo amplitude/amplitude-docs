@@ -23,7 +23,7 @@ Let's say your product's critical event is `Purchase Song or Video`. You can sel
 
 For example, the highlighted data point tells us that 65.4% of your users have a median interval of four days or fewer between each `Purchase Song or Video` event. This inflection point can be interpreted as your usage interval. You can use this usage interval to create a [Return On (Custom)](/docs/analytics/charts/retention-analysis/retention-analysis-interpret) chart or a [Lifecycle](/docs/analytics/charts/lifecycle/lifecycle-track-growth) chart. In this case, it looks like four days is the expected usage interval for active users with the critical event of `Purchase Song or Video`.
 
-![](/docs/output/img/retention-analysis/KiqoU43o_Cws3qYg9f1vK9PBWbnYg2LAREIn_BuYEP7At-hkWclSCblLztzVNe5h3bhd6jNx6pnmbA_Iai8j3fGp-w4aciOz34utjM1-jBlWjsxxK0u5f05c8cFJ4ofmJjQ8bNhmK6_Jfei0-cpoDts)
+![](/docs/output/img/retention-analysis/KiqoU43o_Cws3qYg9f1vK9PBWbnYg2LAREIn_BuYEP7At-hkWclSCblLztzVNe5h3bhd6jNx6pnmbA_Iai8j3fGp-w4aciOz34utjM1-jBlWjsxxK0u5f05c8cFJ4ofmJjQ8bNhmK6_Jfei0-cpoDts.png)
 
 {{partial:admonition type='note'}}
 To learn more about how to find your critical event, check out this [blog post](https://blog.amplitude.com/user-retention-app-critical-event).

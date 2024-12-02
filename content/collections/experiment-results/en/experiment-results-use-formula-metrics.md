@@ -9,7 +9,7 @@ this_article_will_help_you:
 landing: true
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1729182856
+updated_at: 1731622844
 landing_blurb: 'Understand the different kinds of formula metrics supported by the Experiment Results chart'
 ---
 In an Experiment Results chart, using a **formula metric** offers you greater flexibility when performing analyses. A formula metric is a metric that consists of:
@@ -81,7 +81,7 @@ Returns the average of the property values you're grouping by. This function is 
 
 ### PROPCOUNT
 
-**Syntax**: `PROPMAX(event)`
+**Syntax**: `PROPCOUNT(event)`
 
 * Event: Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card. The event property must be a number. If grouping by multiple properties, the formula runs the calculation with the first group by clause.
    
@@ -91,7 +91,7 @@ Returns the average of the property values you're grouping by. This function is 
 
 ### PROPMAX
 
-**Syntax:** PROPMAX(event)
+**Syntax:** `PROPMAX(event)`
 
 * **Event:** Returns the maximum value of the property you're grouping the specified event by. The property must be numeric. If grouping by multiple properties, the calculation uses the first group-by clause.
 
@@ -148,6 +148,15 @@ Returns the number of distinct property values for the property the event is gro
 {{partial:admonition type="note" heading=""}}
 `PROPCOUNT` supports only numeric event properties in Experiment.
 {{/partial:admonition}}
+
+### REVENUETOTAL
+
+**Syntax:** `$:REVENUETOTAL(event)`
+
+* **Event:** Refers to the revenue event. This must be a letter that corresponds to an event in the Event card. 
+* This function only works if you are grouping by a numerical property on the event. 
+
+Returns the aggregate sum of the property, formatted as a currency. It's the same as `PROPSUM(event)`. The `$:` prefix is optional. Its presence ensures the output format is a currency.
 
 ## Formula syntax
 

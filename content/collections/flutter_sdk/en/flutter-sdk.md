@@ -457,7 +457,7 @@ These features aren't supported in Flutter web:
 
 - `enableCoppaControl`
 - `disableCoppaControl`
-- `trackingSessionEvents`. While Flutter Web doesn’t support the ability to send `Start Session` and `End Session` events automatically, the SDK will automatically track session IDs. You can use this for common session-based analyses like the User Session and Pathfinder charts. See our help docs on tracking sessions in Amplitude to [learn more](/docs/cdp/sources/instrument-track-sessions).
+- `trackingSessionEvents`. While Flutter Web doesn’t support the ability to send `Start Session` and `End Session` events automatically, the SDK will automatically track session IDs. You can use this for common session-based analyses like the User Session and Pathfinder charts. See our help docs on tracking sessions in Amplitude to [learn more](/docs/data/sources/instrument-track-sessions).
 - `useAppSetIdForDeviceId`
 
 #### Use

@@ -79,4 +79,4 @@ Each CSV file contains a list of users, with data broken into the following colu
 
 - ` amplitudeID`: The internal Amplitude identifier for the user.
 - ` userID`: Your unique database identifier for the user.
-- ` userProperty`: The value for a user property you added in step 3 of the [send a cohort section](/data/destinations/amazon-s3-cohort/#send-a-cohort); there is one column for each user property. In portfolio projects, there is a separate column for each source app.
+- ` userProperty`: The value for a user property you added in step 3 of the [send a cohort section](#send-a-cohort); there is one column for each user property. In portfolio projects, there is a separate column for each source app.

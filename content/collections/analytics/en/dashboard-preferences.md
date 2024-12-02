@@ -9,8 +9,8 @@ this_article_will_help_you:
   - 'View your dashboards in full-screen mode'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717692809
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1730484422
 ---
 #### This article will help you:
 
@@ -33,7 +33,7 @@ Your KPI options are limited to Average Session Length and Average Sessions Per 
 Some charts in your dashboard have the *Show Summary Metrics* option to display summary metrics at the top of the chart. There are some restrictions to note for the applicable charts: 
 
 * **Event Segmentation**: Summary metrics are not available for the frequency metric nor bar charts.
-* **Funnel Analysis**: Summary metrics are only available for conversion charts with a single series–meaning, one user segment without a group-by filter.
+* **Funnel Analysis**: When using "measured as conversion," summary metrics are only available for conversion charts with a single series–meaning, one user segment without a group-by filter.
 * **User Sessions**: Summary metrics are not available for the distribution of session length metric.
 
 Follow the below steps to turn on or off summary metrics:

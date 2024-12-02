@@ -7,8 +7,8 @@ this_article_will_help_you:
   - 'Understand the cumulative exposures graph in Amplitude Experiment'
   - 'Gain a deeper understanding of analyzing cumulative exposure results with examples'
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718228350
+updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
+updated_at: 1730930146
 ---
 The cumulative exposures graph details the number of users who are **exposed to your experiment over time**. The x-axis displays the date when the user was first exposed to your experiment; the y-axis displays a cumulative, running total of the number of users exposed to the experiment. 
 
@@ -27,8 +27,8 @@ This article will discuss cumulative exposure results with:
 
 Be sure to check out other help center articles on interpreting cumulative exposure results with: 
 
-* An inflection point or a flattened slope
-* Divergent lines (similar or different slopes)
+* [An inflection point or a flattened slope](/docs/feature-experiment/advanced-techniques/cumulative-exposure-inflection-points)
+* [Divergent lines (similar or different slopes)](/docs/feature-experiment/advanced-techniques/cumulative-exposure-divergent-lines)
 
 ## Increasing slope
 

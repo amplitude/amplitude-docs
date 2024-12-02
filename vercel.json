@@ -2,6 +2,46 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source":"/docs/data/ampli-sdk-overview",
+      "destination": "/docs/sdks/ampli",
+      "statusCode": 301
+    },
+    {
+      "source":"/docs/amplitude-experiment",
+      "destination": "/docs/feature-experiment",
+      "statusCode": 301
+    },
+    {
+      "source":"/docs/data/sdks/ios",
+      "destination": "/docs/sdks/analytics/ios/ios-swift-sdk",
+      "statusCode": 301
+    },
+    {
+      "source":"/docs/data/sdks/marketing-analytics-browser",
+      "destination": "/docs/sdks/analytics/browser/marketing-analytics-sdk",
+      "statusCode": 301
+    },
+    {
+      "source":"/docs/get-started/create-org",
+      "destination": "/docs/web-experiment/tracking",
+      "statusCode": 301
+    },
+    {
+      "source":"/docs/feature-experiment/web/tracking",
+      "destination": "/docs/web-experiment/tracking",
+      "statusCode": 301
+    },
+    {
+      "source":"/docs/session-replay/session-replay-ios-middleware",
+      "destination": "/docs/session-replay/session-replay-ios-plugin",
+      "statusCode": 301
+    },
+    {
+      "source":"/docs/session-replay/session-replay-android-middleware",
+      "destination": "/docs/session-replay/session-replay-android-plugin",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/data/destinations/sfmc-event-streaming",
       "destination": "/docs/data/destination-catalog/salesforce-marketing-cloud-event-streaming",
       "statusCode": 301
@@ -93,7 +133,7 @@
     },
     {
       "destination": "/docs/data/destination-catalog/marketo",
-      "source": "/data/destinations/marketo-cohort",
+      "source": "/docs/data/destinations/marketo-cohort",
       "statusCode": 301
     },
     {
@@ -263,7 +303,7 @@
     },
     {
       "destination": "/docs/sdks/analytics/android",
-      "source": "/docs/data/android",
+      "source": "/docs/data/sdks/android",
       "statusCode": 301
     },
     {
@@ -1062,6 +1102,11 @@
       "statusCode": 301
     },
     {
+      "destination": "/docs/sdks/analytics/node",
+      "source": "/docs/data/sdks/node",
+      "statusCode": 301
+    },
+    {
       "destination": "/docs/sdks/analytics/node/node-js-ampli-wrapper",
       "source": "/docs/data/sdks/typescript-node/ampli",
       "statusCode": 301
@@ -1722,11 +1767,6 @@
       "statusCode": 301
     },
     {
-      "destination": "/docs/data/sources/instrument-track-sessions",
-      "source": "/docs/cdp/sources/instrument-track-sessions",
-      "statusCode": 301
-    },
-    {
       "destination": "/docs/data/user-properties-and-events",
       "source": "/docs/hc/en-us/articles/115002380567((?:-[a-zA-Z0-9-]+)?)",
       "statusCode": 301
@@ -1752,18 +1792,8 @@
       "statusCode": 301
     },
     {
-      "destination": "/docs/data/sources/instrument-track-revenue",
-      "source": "/docs/cdp/sources/instrument-track-revenue",
-      "statusCode": 301
-    },
-    {
       "destination": "/docs/data/sources/instrument-track-unique-users",
       "source": "/docs/hc/en-us/articles/115003135607((?:-[a-zA-Z0-9-]+)?)",
-      "statusCode": 301
-    },
-    {
-      "destination": "/docs/data/sources/instrument-track-unique-users",
-      "source": "/docs/cdp/sources/instrument-track-unique-users",
       "statusCode": 301
     },
     {
@@ -1902,7 +1932,7 @@
       "statusCode": 301
     },
     {
-      "destination": "/docs/get-started/create-org",
+      "destination": "/docs/get-started/create-a-new-account",
       "source": "/docs/hc/en-us/articles/16796682982427((?:-[a-zA-Z0-9-]+)?)",
       "statusCode": 301
     },
@@ -1989,11 +2019,6 @@
     {
       "destination": "/docs/data/sources/connect-to-source",
       "source": "/docs/hc/en-us/articles/16806069264539((?:-[a-zA-Z0-9-]+)?)",
-      "statusCode": 301
-    },
-    {
-      "destination": "/docs/data/sources/connect-to-source",
-      "source": "/docs/cdp/sources/connect-to-source",
       "statusCode": 301
     },
     {

@@ -40,7 +40,7 @@ If you're using individual inclusions for cohorts, Amplitude Experiment also app
 {{partial:collapse name="Why is a user being exposed to more than one experiment with mutual exclusion set up?"}}
 The same user may be exposed to more than one experiment, even if the experiments are set up for mutual exclusion. This could be due to the way Amplitude orders its operations when assigning users to experiments (see further explanation in the answer to the question above).
 
-Another reason could be due to how [unique users are tracked in Amplitude](/docs/cdp/sources/instrument-track-unique-users). For example, a user could anonymously use more than one device before logging in to Amplitude. Until that user is identified and merged to its existing ID, Amplitude will assume it's a different user that is available for assignment.
+Another reason could be due to how [unique users are tracked in Amplitude](/docs/data/sources/instrument-track-unique-users). For example, a user could anonymously use more than one device before logging in to Amplitude. Until that user is identified and merged to its existing ID, Amplitude will assume it's a different user that is available for assignment.
 
 Or, the multiple exposures could be a case of [variant jumping](/docs/feature-experiment/troubleshooting/variant-jumping), when a user is exposed to two or more variants for a single flag or experiment.
 {{/partial:collapse}}

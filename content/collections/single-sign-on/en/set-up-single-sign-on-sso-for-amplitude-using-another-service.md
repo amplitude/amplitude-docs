@@ -13,7 +13,7 @@ You may want to set up single sign-on (SSO) using a custom-built SSO provider, o
 
 ## Before you begin
 
-Read the introductory article on [single sign-on in Amplitude](docs/admin/single-sign-on/sso) to get a basic understanding of the basic requirements.
+Read the introductory article on [single sign-on in Amplitude](/docs/admin/single-sign-on/sso) to get a basic understanding of the basic requirements.
 
 ## Set up SSO for an unlisted ("Other") SSO provider
 

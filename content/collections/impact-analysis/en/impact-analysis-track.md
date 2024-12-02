@@ -7,7 +7,7 @@ this_article_will_help_you:
   - 'Understand the benefits of an Impact Analysis chart to uncover feature affects on user behavior'
   - 'Set up an Impact Analysis chart'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717104542
+updated_at: 1732570213
 landing: true
 landing_blurb: 'Understand the benefits of an Impact Analysis chart'
 ---
@@ -15,7 +15,7 @@ With Amplitude's **Impact Analysis** chart, you can discover how first-time enga
 
 For example, a product manager of a music app can use Impact Analysis to see changes in the average number of times users play a song after they first discover the ability to 'favorite' songs:
 
-![impact analysis 1.png](/docs/output/img/impact-analysis/impact-analysis-1-png.png)
+![](statamic://asset::help_center_conversions::impact-analysis/ia-1.png)
 
 Use the Impact Analysis chart to:
 
