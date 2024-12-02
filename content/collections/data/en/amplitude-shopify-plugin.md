@@ -49,11 +49,11 @@ The Shopify plugin captures Amplitude's default events and Shopify's standard [e
 
 ### Session Replay
 
+tbd
 
 ### Web Experimentation
 
-
-
+tbd
 
 ## Install the plugin
 
