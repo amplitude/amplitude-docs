@@ -21,7 +21,7 @@ Once set, you can't change user IDs in Amplitude.
 
 If your product doesn't currently assign user IDs, then feel free to skip this section.
 
-Before continuing on to the next step, be sure to see [this article about how Amplitude identifies unique users](/docs/cdp/sources/instrument-track-unique-users) for all the details you need to know.
+Before continuing on to the next step, be sure to see [this article about how Amplitude identifies unique users](/docs/data/sources/instrument-track-unique-users) for all the details you need to know.
 
 ## Best practices for setting user IDs
 

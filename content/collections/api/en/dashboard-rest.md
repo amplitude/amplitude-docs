@@ -725,7 +725,8 @@ Retrieves totals for the "watch_tutorial" event between August 1 and August 31.
 {{partial:tab name="cURL"}}
 ```curl
 curl --location -g --request GET 'https://amplitude.com/api/2/events/segmentation?e={"event_type":"watch_tutorial"}&start=20210801&end=20210831&m=totals'
---heade
+--header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
+```
 {{/partial:tab}}
 {{partial:tab name="HTTP"}}
 ```bash

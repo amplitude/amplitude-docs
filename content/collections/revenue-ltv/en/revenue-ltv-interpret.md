@@ -6,7 +6,7 @@ source: 'https://help.amplitude.com/hc/en-us/articles/14453697446043-Interpret-y
 this_article_will_help_you:
   - 'Identify the strengths and weaknesses of your approach to new-user monetization'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717103772
+updated_at: 1732570433
 landing: true
 landing_blurb: 'Identify the strengths and weaknesses of your approach to new-user monetization'
 ---
@@ -32,10 +32,10 @@ As a further example, imagine you are looking at Day 10. If some users started u
 
 The breakdown table below the chart can show the data broken up by cohorts of users who started on the same day. Click the triangle next to *All Users* to expand.
 
-![interpret reven ue 1.png](/docs/output/img/revenue-ltv/interpret-reven-ue-1-png.png)
+![](statamic://asset::help_center_conversions::revenue-ltv/rev-ltv-1.png)
 
 You can set up and interpret any Revenue LTV chart easily, as the user interface allows you to read the parameters like a sentence. For example, the following chart shows you a visualization of all revenue events fired by your users, measured by the average revenue per user daily in the last 30 days.
 
-![interpret revenue 2.png](/docs/output/img/revenue-ltv/interpret-revenue-2-png.png)
+![](statamic://asset::help_center_conversions::revenue-ltv/rev-ltv-2.png)
 
 You can also hover over the individual data points to see the actual amounts.

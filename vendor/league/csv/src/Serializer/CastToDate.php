@@ -58,7 +58,7 @@ final class CastToDate implements TypeCasting
         ?string $default = null,
         ?string $format = null,
         DateTimeZone|string|null $timezone = null,
-        ?string $className = null
+        ?string $className = null,
     ): void {
         $this->class = match (true) {
             !interface_exists($this->class) && !Type::Mixed->equals($this->type) => $this->class,
@@ -79,7 +79,7 @@ final class CastToDate implements TypeCasting
     /**
      * @throws TypeCastingFailed
      */
-    public function toVariable(?string $value): DateTimeImmutable|DateTime|null
+    public function toVariable(mixed $value): DateTimeImmutable|DateTime|null
     {
         return match (true) {
             null !== $value && '' !== $value => $this->cast($value),
@@ -91,8 +91,18 @@ final class CastToDate implements TypeCasting
     /**
      * @throws TypeCastingFailed
      */
-    private function cast(string $value): DateTimeImmutable|DateTime
+    private function cast(mixed $value): DateTimeImmutable|DateTime
     {
+        if ($value instanceof DateTimeInterface) {
+            if ($value instanceof $this->class) {
+                return $value;
+            }
+
+            return ($this->class)::createFromInterface($value);
+        }
+
+        is_string($value) || throw TypeCastingFailed::dueToInvalidValue($value, $this->class);
+
         try {
             $date = null !== $this->format ?
                 ($this->class)::createFromFormat($this->format, $value, $this->timezone) :
@@ -134,9 +144,7 @@ final class CastToDate implements TypeCasting
             }
         }
 
-        if (null === $type) {
-            throw throw MappingFailed::dueToTypeCastingUnsupportedType($reflectionProperty, $this, DateTimeInterface::class, 'mixed');
-        }
+        null !== $type || throw throw MappingFailed::dueToTypeCastingUnsupportedType($reflectionProperty, $this, DateTimeInterface::class, 'mixed');
 
         /** @var class-string<DateTimeInterface> $className */
         $className = $type[1]->getName();

@@ -13,7 +13,7 @@ landing_blurb: 'Understand the different ways time can affect your Retention Ana
 ---
 In a Retention Analysis chart, there are two ways to define a day: a rolling **24-hour window** or a **strict calendar date**. The method you choose can affect your results.
 
-![](/docs/output/img/retention-analysis/20460042102939)
+![](/docs/output/img/retention-analysis/20460042102939.png)
 
 Amplitude treats a day as a **rolling 24-hour window** by default, which is different for each user. Each day will be **exactly the same length**, no matter when the user triggered the starting event. For example:
 

@@ -2029,6 +2029,30 @@ Possible reasons for an invalid request:
 | `throttled_devices`                | Object. A map from device_id to its current events per second rate, for all devices that exceed the app's current threshold. |
 | `throttled_events`                 | [integer]. Array of indexes in the events array indicating events whose `user_id` or `device_id` got throttled               |
 
+### 403 (forbidden)
+
+[403 Forbidden](https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.3). The request is blocked by Amplitude's Web Application Firewall (WAF).
+
+Possible reasons for the response:
+
+- The request contains invalid values within the Header, Body, and/or URI that match our security filters
+- The request is from a sanctioned region from which Amplitude isn't allowed to accept requests.
+
+```json
+{
+  "code": 403,
+  "error": "Forbidden"
+}
+
+```
+
+#### Properties
+
+| Name    | Description                |
+| ------- | -------------------------- |
+| `code`  | Integer. 403 error code    |
+| `error` | String. Error description. |
+
 ### 413 (payload too large)
 
 [413 Payload Too Large](https://tools.ietf.org/html/rfc7231#section-6.5.11). The payload size is too big (request size exceeds 1MB). Split your events array payload into multiple requests and try again.

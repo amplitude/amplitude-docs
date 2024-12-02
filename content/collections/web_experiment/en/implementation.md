@@ -7,7 +7,7 @@ updated_at: 1729196004
 ---
 Amplitude's Web Experimentation requires a standalone script that you must add to your website. Paste the script into the `<head>` element of your site, as high as possible to avoid flickering.
 
-The script tracks [impression events](/docs/experiment/web/tracking) with the [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) already installed on your site, or a [third-party analytics SDK](#integrate-with-a-third-party-cdp).
+The script tracks [impression events](/docs/web-experiment/tracking#impressions) with the [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) already installed on your site, or a [third-party analytics SDK](#integrate-with-a-third-party-cdp).
 
 {{partial:admonition type='note'}}
 See [Amplitude's pricing page](https://amplitude.com/pricing) to find out if this feature is available on your Amplitude plan.
@@ -134,15 +134,15 @@ window.experimentIntegration = {
 
 [Contact support](https://amplitude.zendesk.com/hc/en-us/requests/new) for help with a custom integration for your CDP.
 
-### Content management systems
+## Content management systems
 
 Amplitude Web Experiment supports any CMS that supports custom scripts. Amplitude provides plugins that support both Wordpress and Shopify to help you get running on those platforms.
 
-#### Wordpress
+### Wordpress
 
 Amplitude's [Wordpress plugin](/docs/data/amplitude-wordpress-plugin) enables Amplitude Analytics, Experiment, and Session Replay.
 
-#### Shopify
+### Shopify
 
 [Amplitude's Shopify App](https://apps.shopify.com/amplitude) enables Amplitude Analytics, Experiment, and Session Replay on your Shopify site.
 
@@ -150,11 +150,11 @@ Amplitude's [Wordpress plugin](/docs/data/amplitude-wordpress-plugin) enables Am
 The method Shopify uses to loads Amplitude's Shopify app causes flickering. To avoid this, add the [asynchronous web script with the anti-flicker snippet](#async-script-with-anti-flicker-snippet) to your `theme.liquid` file.
 {{/partial:admonition}}
 
-### Tag managers
+## Tag managers
 
 Tag managers, like Google Tag Manager load scripts asynchronously, which causes flickering. Tag managers can be a good way to start using the visual editor to create variants in parallel if adding the Web Experiment script directly to the page takes time. Amplitude recommends against using tag managers in production.
 
-#### Google Tag Manager (GTM)
+### Google Tag Manager (GTM)
 
 {{partial:admonition type="warning" heading="Causes Flicker"}}
 Implementing Web Experiment with a tag manager will cause flicker. Only use a tag manager when getting started, if adding the script to the site is out of the question in the short-term.

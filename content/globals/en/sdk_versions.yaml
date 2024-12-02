@@ -1,10 +1,10 @@
-browser: 2.11.7
-browser_sdk_sha: sha384-8fNco6Xiv+HOa+SIVGKVjByyY5LyircydGlHS9mXcHJpapcgF98L6UNOlauMTxJq
+browser: 2.11.9
 visual_labeling_plugin: 1.0.0
-session_replay_plugin: 1.6.24
+session_replay_plugin: 1.8.1
 session_replay_standalone: 1.13.8
-session_replay_android_plugin: 0.6.5
-session_replay_android_standalone: 0.6.5
-session_replay_ios: 0.0.2
+session_replay_android_plugin: 0.15.2
+session_replay_android_standalone: 0.15.2
+session_replay_android_middleware: 0.15.2
+session_replay_ios: 0.0.11
 experiment_android: 1.12.1
 session_replay_segment_wrapper: 0.3.1

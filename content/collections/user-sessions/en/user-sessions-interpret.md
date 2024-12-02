@@ -46,7 +46,7 @@ Amplitude records sessions on either the server side or the client side. Additio
 * **Client side (mobile):** When using Amplitude's mobile SDKs, events triggered within 5 minutes of each other are, by default, counted towards the current session. The time of the first event marks the start time of a session, and the last event triggered marks the end time of a session. For example, the first event could be marked by an 'Open App' event. In addition, Amplitude will count events sent within five minutes of each other towards the current session.
 * **Client side (web):** When using Amplitude's JavaScript SDK, events triggered within 30 minutes of each other are, by default, counted towards the current session. The time of the first event marks the start time of a session, and the last event triggered marks the end time of a session.
 
-Additionally, you can define a session without instrumenting your events first, by setting a [custom session property](/docs/cdp/sources/instrument-track-sessions).
+Additionally, you can define a session without instrumenting your events first, by setting a [custom session property](/docs/data/sources/instrument-track-sessions).
 
 {{partial:admonition type='note'}}
 The User Sessions chart will only display data if you are sending a session ID with your events. Amplitude's SDKs will handle this for you automatically, unless you flag an event as out-of-session (assigning the session ID a value of '-1'). However, if you're using Amplitude's HTTP API, you'll have to explicitly send a  `session_id` with your events.

@@ -256,7 +256,6 @@ if (typeof(PhpDebugBar) == 'undefined') {
 
         render: function() {
             this.$tab = $('<a />').addClass(csscls('tab'));
-
             this.$icon = $('<i />').appendTo(this.$tab);
             this.bindAttr('icon', function(icon) {
                 if (icon) {
@@ -285,6 +284,9 @@ if (typeof(PhpDebugBar) == 'undefined') {
             this.bindAttr('data', function(data) {
                 if (this.has('widget')) {
                     this.get('widget').set('data', data);
+                    if (!$.isEmptyObject(data)) {
+                        this.$tab.show();
+                    }
                 }
             })
         }
@@ -423,9 +425,14 @@ if (typeof(PhpDebugBar) == 'undefined') {
             this.firstTabName = null;
             this.activePanelName = null;
             this.activeDatasetId = null;
+            this.hideEmptyTabs = false;
             this.datesetTitleFormater = new DatasetTitleFormater(this);
             this.options.bodyMarginBottomHeight = parseInt($('body').css('margin-bottom'));
-            this.isIframe = window.self !== window.top;
+            try {
+                this.isIframe = window.self !== window.top && window.top.phpdebugbar;
+            } catch (error) {
+                this.isIframe = false;
+            }
             this.registerResizeHandler();
         },
 
@@ -637,7 +644,10 @@ if (typeof(PhpDebugBar) == 'undefined') {
                 } else {
                     self.showTab(name);
                 }
-            });
+            })
+            if (this.hideEmptyTabs) {
+                tab.$tab.hide();
+            }
             tab.$tab.attr('data-collector', name);
             tab.$el.attr('data-collector', name);
             tab.$el.appendTo(this.$body);
@@ -934,6 +944,7 @@ if (typeof(PhpDebugBar) == 'undefined') {
          * @return {String} Dataset's id
          */
         addDataSet: function(data, id, suffix, show) {
+            if (!data || !data.__meta) return;
             if (this.isIframe) {
                 window.top.phpdebugbar.addDataSet(data, id, '(iframe)' + (suffix || ''), show);
                 return;
@@ -1049,6 +1060,10 @@ if (typeof(PhpDebugBar) == 'undefined') {
             } else {
                 this.$openbtn.hide();
             }
+        },
+
+        setHideEmptyTabs: function(hideEmpty) {
+            this.hideEmptyTabs = hideEmpty;
         },
 
         /**

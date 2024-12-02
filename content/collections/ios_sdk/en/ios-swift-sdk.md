@@ -882,7 +882,7 @@ Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 {{/partial:tab}}
 {{/partial:tabs}}
 
-Amplitude [merges user data](/docs/cdp/sources/instrument-track-unique-users), so any events associated with a known `userId` or `deviceId` are linked the existing user.
+Amplitude [merges user data](/docs/data/sources/instrument-track-unique-users), so any events associated with a known `userId` or `deviceId` are linked the existing user.
  If a user logs out, Amplitude can merge that user's logged-out events to the user's record. You can change this behavior and log those events to an anonymous user instead.
 
 To log events to an anonymous user:

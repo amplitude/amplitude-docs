@@ -25,8 +25,7 @@ By integrating Productboard with Amplitude, you can filter customer feedback ba
 
 ## Considerations
 
-- This integration is available for Growth and Enterprise customers.
-- With this integration, you can choose whether to use Amplitude User_ID, Email or both as the user identifier for matching users across Amplitude and Productboard.
+With this integration, you can choose whether to use Amplitude User_ID, Email or both as the user identifier for matching users across Amplitude and Productboard.
 
 ## Setup
 

@@ -1,11 +1,12 @@
 ---
 id: c412bf9e-bbad-4063-bcf4-20cf2b3c2a01
+published: false
 blueprint: session-replay
 title: 'Session Replay Android Middleware'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1726763603
+updated_at: 1730227454
 alpha: true
 instrumentation_guide: true
 platform: android
@@ -41,7 +42,7 @@ Add the [latest version](https://central.sonatype.com/artifact/com.amplitude/mid
 
 ```kotlin
 // Install latest version from Maven Central
-implementation("com.amplitude:middleware-session-replay-android:@{$ android.session_replay.version $}")
+implementation("com.amplitude:middleware-session-replay-android:{{sdk_versions:session_replay_android_standalone}}")
 // You will also need the (maintenance) Amplitude Analytics SDK if it's not already installed
 implementation("com.amplitude:android-sdk:[2.40.1,3.0.0]")
 ```

@@ -51,6 +51,7 @@ Recommended for the majority of Amplitude users in your organization. Members ha
 * Create [custom events](https://help.amplitude.com/hc/en-us/articles/16805886899483-Custom-events)
 * Create [team spaces](https://help.amplitude.com/hc/en-us/articles/360016524911)
 * Edit [releases](https://help.amplitude.com/hc/en-us/articles/360017800371)
+* Label events with [Visual Labeling](/docs/data/visual-labeling)
 
 {{partial:admonition type="note" heading=""}}
 Members can't search for undiscoverable content.

@@ -22,7 +22,7 @@ source: 'https://help.amplitude.com/hc/ja/articles/360062072631'
 A/Bテストを作成し、結果を表示するには、次のステップに従ってください：
 
 1. *新規作成>*分析>実験結果を*クリックします*。
-2. プライマリ指標モジュールで、*+ Add Metric*または*+* *Define single-use* metricをクリックして、プライマリ指標の設定を開始します。 3番目のオプションである*インポート*では、[実験設定をJSONとしてインポートできます](/docs/feature-experiment/advanced-techniques/import-export-settings)。
+2. プライマリ指標モジュールで、*+ Add Metric*または*+* *Define single-use* metricをクリックして、プライマリ指標の設定を開始します。 
 3. シングルユース指標を追加する場合は、ドロップダウンメニューを使用して、**指標を定義***フライアウトパネルで*指標タイプを指定します：
 
 * * * * * ユニークコンバージョン

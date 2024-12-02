@@ -14,12 +14,11 @@ category: 'Cohort syncing'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 connection: destination
 partner_maintained: false
-integration_icon: partner-icons/infobip.svg
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713478935
+updated_at: 1730929512
+integration_icon: partner-icons/infobip1.svg
 ---
-
 [Infobip](https://www.infobip.com/) is a global leader in omnichannel engagement powering a broad range of messaging channels, tools, and solutions for advanced customer engagement, authentication, and security.
 
 This integration lets you send targeted messages using the specific cohorts you've created in Amplitude.

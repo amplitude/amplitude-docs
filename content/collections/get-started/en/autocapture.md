@@ -15,11 +15,11 @@ Starting with version 2.10.0, the Amplitude Browser SDK includes Autocapture to 
 
 ### Install the Browser SDK
 
-To get started with Autocapture, install the latest version of the Browser SDK ({{sdk_versions:browser}}).
+To get started with Autocapture, install the latest version of the Browser SDK ({{sdk_versions:browser}}) with the unified script loader, npm, or yarn.
 
 {{partial:tabs tabs="Script Loader, npm, yarn"}}
 {{partial:tab name="Script Loader"}}
-{{partial:partials/code/snippet autocapture="true"}}
+{{partial:partials/code/snippet autocapture="true" unified="true"}}
 {{/partial:tab}}
 {{partial:tab name="npm"}}
 ```bash
@@ -67,14 +67,16 @@ If your web app configures the strict Content Security Policy (CSP) for security
 
 ### Events
 
-| Event           | Description                                              | Properties                                                                                                                                                                                       |
-| --------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Page viewed     | Captures when a user loads a page on your site.          | Page counter, Page domain, Page location, Page path, Page title, Page URL, Session Replay ID (if enabled), Referrer, [Attribution](#marketing-attribution), [User properties](#user-properties). |
-| Start session   | Captures when a user starts a session on your site.      | Session Replay ID (if enabled), [User properties](#user-properties).                                                                                                                             |
-| End session     | Captures when a user ends a session on your site.        | [User properties](#user-properties).                                                                                                                                                             |
-| Form started    | Captures when a user interacts with a form on your site. | Form destination, Session Replay ID (if enabled), [User properties](#user-properties).                                                                                                           |
-| Form submitted  | Captures when a user submits a form on your site.        | Form destination, Session Replay ID (if enabled), [User properties](#user-properties).                                                                                                           |
-| File downloaded | Captures when a user downloads a file from your site.    | File extension, File name, Link text, Link URL, Session Replay ID (if enabled),                                                                                                                  |
+| Event           | Description                                                                                    | Properties                                                                                                                                                                                                                                                                |
+| --------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Page viewed     | Captures when a user loads a page on your site.                                                | Page counter, Page domain, Page location, Page path, Page title, Page URL, Session Replay ID (if enabled), Referrer, [Attribution](#marketing-attribution), [User properties](#user-properties).                                                                          |
+| Start session   | Captures when a user starts a session on your site.                                            | Session Replay ID (if enabled), [User properties](#user-properties).                                                                                                                                                                                                      |
+| End session     | Captures when a user ends a session on your site.                                              | [User properties](#user-properties).                                                                                                                                                                                                                                      |
+| Form started    | Captures when a user interacts with a form on your site.                                       | Form destination, Session Replay ID (if enabled), [User properties](#user-properties).                                                                                                                                                                                    |
+| Form submitted  | Captures when a user submits a form on your site.                                              | Form destination, Session Replay ID (if enabled), [User properties](#user-properties).                                                                                                                                                                                    |
+| File downloaded | Captures when a user downloads a file from your site.                                          | File extension, File name, Link text, Link URL, Session Replay ID (if enabled),                                                                                                                                                                                           |
+| Element clicked | Captures when a user clicks an element on the page.                                            | Element Aria Label, Element Class, Element Hierarchy, Element Href, Element ID, Element Parent Label, Element Position Left, Element Position Top, Element Selector, Element Tag, Element Text, Page Title, Page URL, Session Replay ID, Viewport Height, Viewport Width. |
+| Element changed | Captures form element interactions, such as changes a dropdown or inputs text into a text box. | Element Class, Element Hierarchy, Element ID, Element Parent Label, Element Position Left, Element Position Top, Element Tag, Page Title, Page URL, Session Replay ID, Viewport Height, Viewport Width.                                                                   |
 
 For more information, see Autocapture in the [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2#autocapture) documentation. 
 
@@ -148,8 +150,8 @@ Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 | Application updated      | Captures when a user opens the app for the first time after they update it.  |                                      |
 | Application opened       | Captures when a user launches or foregrounds the app after the first open.   |                                      |
 | Application backgrounded | Captures when a user backgrounds the application.                            |                                      |
-| Screen viewed            | Captures when a user views a screen in your app.                               | Screen name                          |
-| Element Interacted            | Captures when a user interacts with the UI elements in your app.                               | Element properties                          |
+| Screen viewed            | Captures when a user views a screen in your app.                             | Screen name                          |
+| Element Interacted       | Captures when a user interacts with the UI elements in your app.             | Element properties                   |
 
 ### User properties
 
@@ -210,9 +212,9 @@ Amplitude amplitude = new Amplitude(configuration);
 | Application updated      | Captures when a user opens the app for the first time after they update it.  |                                      |
 | Application opened       | Captures when a user launches or foregrounds the app after the first open.   |                                      |
 | Application backgrounded | Captures when a user backgrounds the application.                            |                                      |
-| Screen viewed            | Captures when a user views a screen in your app.                               | Screen name                          |
-| Deep link opened            | Captures when a user opens a deep link in your app.                               | URL and referrer information                          |
-| Element Interacted            | Captures when a user interacts with the UI elements in your app.                               | Element properties                          |
+| Screen viewed            | Captures when a user views a screen in your app.                             | Screen name                          |
+| Deep link opened         | Captures when a user opens a deep link in your app.                          | URL and referrer information         |
+| Element Interacted       | Captures when a user interacts with the UI elements in your app.             | Element properties                   |
 
 ### User properties
 
