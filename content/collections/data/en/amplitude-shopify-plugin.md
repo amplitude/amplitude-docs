@@ -20,25 +20,32 @@ The [Amplitude Shopify Plugin](https://apps.shopify.com/amplitude) enables you t
 
 The Shopify plugin installs a version of the [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2), and adds the script before the `</head>` tag on each of your site's pages.
 
-By default, the Shopify plugin captures the following event properties:
+The Shopify plugin captures Amplitude's default events and Shopify's standard [events](https://shopify.dev/docs/api/web-pixels-api/standard-events).
 
-- `[Amplitude] Quantity`
-- `[Amplitude] SKU`
-- `[Amplitude] Price`
-- `[Amplitude] Currency Code`
-- `[Amplitude] Type`
-- `[Amplitude] Variant Title`
-- `[Amplitude] Title`
-- `[Amplitude] Vendor`
-- `[Amplitude] Products`
-  - `[Amplitude] Quantity`
-  - `[Amplitude] SKU`
-  - `[Amplitude] Price`
-  - `[Amplitude] Currency Code`
-  - `[Amplitude] Type`
-  - `[Amplitude] Variant Title`
-  - `[Amplitude] Title`
-  - `[Amplitude] Vendor`
+{{partial:collapse name="Shopify plugin events and event properties"}}
+
+| Event                            | Source    | Properties                                                                                                                                                                                                                                                                |
+| -------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Page viewed                      | Amplitude | Page counter, Page domain, Page location, Page path, Page title, Page URL, Session Replay ID (if enabled), Referrer, [Attribution](#marketing-attribution), [User properties](#user-properties).                                                                          |
+| Start session                    | Amplitude | Session Replay ID (if enabled), [User properties](#user-properties).                                                                                                                                                                                                      |
+| End session                      | Amplitude | [User properties](#user-properties).                                                                                                                                                                                                                                      |
+| Form started                     | Amplitude | Form destination, Session Replay ID (if enabled), [User properties](#user-properties).                                                                                                                                                                                    |
+| Form submitted                   | Amplitude | Form destination, Session Replay ID (if enabled), [User properties](#user-properties).                                                                                                                                                                                    |
+| File downloaded                  | Amplitude | File extension, File name, Link text, Link URL, Session Replay ID (if enabled),                                                                                                                                                                                           |
+| Element clicked                  | Amplitude | Element Aria Label, Element Class, Element Hierarchy, Element Href, Element ID, Element Parent Label, Element Position Left, Element Position Top, Element Selector, Element Tag, Element Text, Page Title, Page URL, Session Replay ID, Viewport Height, Viewport Width. |
+| Element changed                  | Amplitude | Element Class, Element Hierarchy, Element ID, Element Parent Label, Element Position Left, Element Position Top, Element Tag, Page Title, Page URL, Session Replay ID, Viewport Height, Viewport Width.                                                                   |
+| Collection viewed                | Shopify   | Collection title                                                                                                                                                                                                                                                          |
+| Product viewed                   | Shopify   | Quantity, SKU, Price, Currency Code, Type, Variant Title, Title, Vendor, Products                                                                                                                                                                                         |
+| Product added to cart            | Shopify   | Quantity, SKU, Price, Currency Code, Type, Variant Title, Title, Vendor, Products                                                                                                                                                                                         |
+| Product removed from cart        | Shopify   | Quantity, SKU, Price, Currency Code, Type, Variant Title, Title, Vendor, Products                                                                                                                                                                                         |
+| Checkout started                 | Shopify   | Discounted amount, Total price, Currency code, Products                                                                                                                                                                                                                   |
+| Checkout contact info submitted  | Shopify   | --                                                                                                                                                                                                                                                                        |
+| Checkout address info submitted  | Shopify   | --                                                                                                                                                                                                                                                                        |
+| Checkout shipping info submitted | Shopify   | --                                                                                                                                                                                                                                                                        |
+| Order created                    | Shopify   | Customer, Products                                                                                                                                                                                                                                                        |
+| Search submitted                 | Shopify   | Search query                                                                                                                                                                                                                                                              |
+
+{{/partial:collapse}}
 
 ### Session Replay
 
@@ -54,7 +61,8 @@ To add the plugin to your Shopify store:
 
 1. Log in to your Shopify account and find the plugin in the [Shopify App Store](https://apps.shopify.com/amplitude). Click *Install*.
 2. Confirm the required plugin permissions and click *Install*.
-3. Locate your project's API key and add it to the Amplitude Settings page in Shopify. Click *Connect*.
+3. Locate your project's API key and add it to the Amplitude Settings page in Shopify.
+4. Specify where you'll store your data. Click *Connect*.
 
     {{partial:admonition type="note" heading="Ad blocking software"}}
     If any ad blocking software is running in your browser, disable it to ensure the plugin setup step can communicate with Amplitude.
