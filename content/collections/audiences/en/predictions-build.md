@@ -23,31 +23,31 @@ Be sure to check out our other articles on predictions: [Predictions: use Amplit
 To build a prediction in Amplitude Audiences, follow these steps:
 
 1. Navigate to *Cohorts & Audiences* and click *Predictions* in the left rail. Then click *+ Create Prediction*.
-2. Next, you'll be able to **apply this prediction to all users** who’ve been active in the last 90 days by clicking on *Start with All Users*, **or define your own** starting cohort.
-3. If you choose to define your own starting cohort, the first step is selecting the users who will be included in the cohort. Under *Define starting cohort*, select the events, properties, or statuses that users in your cohort share.
-4. Next, **specify the action you want the starting cohort to take**. Under *Define future outcome*, you can specify events you want—or don’t want—your users to fire, the properties you want them to have after taking an action, or some combination of all three. Be sure to specify the time frame in which you want your users to take this future action.  
+2. Next, click *Start with All Users* to apply this prediction to all user who’ve been active in the last 90 days, or define your own starting cohort.
+3. If you choose to define your own starting cohort, select the users to include in the cohort. Under *Define starting cohort*, select the events, properties, or statuses that users in your cohort share.
+4. Next, specify the action you want the starting cohort to take. Under *Define future outcome*, specify the events you want, or don’t want, your users to fire, the properties you want them to have after taking an action, or some combination of all three. Be sure to specify the time frame in which you want your users to take this future action.  
   
 {{partial:admonition type='tip'}}
 Another way to think about a prediction is as a **cohort transition**: you’re predicting the relative likelihood of a user to transition from Cohort A (the starting cohort) to Cohort B (the future outcome) in the coming week.
 {{/partial:admonition}}
 
 5. If desired, **you may choose to add optional settings** under *Advanced Model Configuration*. This section allows you to further define your starting cohort by either including or excluding specific user properties. Click *Add Feature* under *Include* or *Exclude* to search for user properties to further define your starting cohort. Click *Save*.
-6. **Give your prediction a name and add a brief description. Then click *Save*****.** It will take about an hour for Amplitude Audiences to build your prediction. You’ll receive an email when the process is done.
+6. Give your prediction a name and add a brief description. Then click *Save*. It takes about an hour for Amplitude Audiences to build your prediction. Amplitude sends you an email when the prediction is ready.
 
 ## Analyze your prediction
 
 Once Amplitude Audiences has finished building your prediction, you’ll want to take a look at the results. Depending on what you see, you’ll either save the prediction as a cohort, or start over with a new prediction.
 
-1. To view the results of your prediction, click the *Predictions* tab from the Cohorts & Audiences page. This will show you a list of all the predictions created so far.
+1. To view the results of your prediction, click the *Predictions* tab from the Cohorts & Audiences page. This shows you a list of all the predictions created so far.
 2. Find your prediction and click it to open the prediction explorer's *Audience analysis* tab. Here, you’ll see the distribution of all users in your starting cohort:
 
-* The Y-axis shows the likelihood a user will convert (i.e., arrive at the future outcome you specified earlier)
-* The X-axis shows the percentile of users
+   * The Y-axis shows the likelihood a user converts (for example, arrive at the future outcome you specified earlier)
+   * The X-axis shows the percentile of users
 
 You can select a range of users by percentile and see how many users fall in the range, the predicted conversion rate of users in that range, and the likelihood of conversion for those users relative to the average.
 
 {{partial:admonition type='note'}}
-**Percentile and probability are not the same thing**. If you select the 80% - 100% percentile range, this does NOT mean the users in it have an 80% - 99% probability to convert. Instead, it means they’re in the top 20% of users, as ranked by probability to convert.
+Percentile and probability aren't the same thing. If you select the 80% - 100% percentile range, this doesn't mean the users in it have an 80% - 99% probability to convert. Instead, it means they’re in the top 20% of users, as ranked by probability to convert.
 {{/partial:admonition}}
 
 ### Feature importance
@@ -58,31 +58,31 @@ The *Events* tab in *Feature Importance* houses a table with the following colum
 
 * The *Ratio* column is a ranking of events or properties according to their importance to the model. It’s computed by comparing the percentage of users in the selected percentile range who fire an event  to those not in the selected percentile range.
 * The *Event* column lists the ranked events.
-* The *% in Range* column specifies the percentage of users in the selected percentile range who fired the respective event. Sort by this column to rank events according to overall level of engagement.
-* The *% not in range* column calculates the percentage of users that performed the event but are not in the selected cohort.
-* The *Frequency* column displays the average number of times a user in the selected range fires an event. Sort by this column to rank events according to overall level of engagement.
+* The *% in Range* column specifies the percentage of users in the selected percentile range who fired the respective event. Sort by this column to rank events according to total level of engagement.
+* The *% not in range* column calculates the percentage of users that performed the event but aren't in the selected cohort.
+* The *Frequency* column displays the average number of times a user in the selected range fires an event. Sort by this column to rank events according to total level of engagement.
 
-Narrow down your list of ranked events by clicking*Showing Significant Events* to modify which events you see in the table, or click the calendar icon to change the specified time frame and offset. Note that the modified time frame will apply to both the *Events* and *User Properties* tabs.
+Click *Showing Significant Events* to narrow down your list of ranked events and modify which events you see in the table, or click the calendar icon to change the specified time frame and offset. The modified time frame applies to both the *Events* and *User Properties* tabs.
 
-The *User Properties* tab allows you to view rankings of user properties and their importance to the prediction's model. Click *Select Property* to choose a user property for review. Similar to the Events table, the *User Properties* table will rank property values by *Ratio*, *% in range*, and *% not in range* columns. If desired, you can check the box next to *Show Hidden Property Values* to ensure they're visible in the table's results. 
+The *User Properties* tab allows you to view rankings of user properties and their importance to the prediction's model. Click *Select Property* to choose a user property for review. Like the Events table, the *User Properties* table ranks property values by *Ratio*, *% in range*, and *% not in range* columns. If desired, you can check the box next to *Show Hidden Property Values* to ensure they're visible in the table's results. 
 
 ### Model performance
 
-At this point, you’ll want to evaluate whether your prediction is accurate or not. Amplitude Audiences provides metrics for you to accomplish this in the *Model performance* tab:
+At this point, you can evaluate the accuracy of your prediction. Amplitude provides metrics for you to do this in the *Model performance* tab:
 
 * **True Positive Rate**: this is the ratio of predicted users who convert
-* **False Positive Rate**: this is the ratio of predicted users who do not convert
-* **AUC**, aka Accuracy: technically, this is the area under the curve, a measure that weighs both true positive and false positive rates
-* **Log loss****, aka** p**redicted vs actuals**: this compares the predicted conversion rates to observed historical conversion rates and gives you the difference, in percentage terms
+* **False Positive Rate**: this is the ratio of predicted users who don't convert
+* **AUC**, or Accuracy: technically, this is the area under the curve, a measure that weighs both true positive and false positive rates
+* **Log loss**, or predicted vs actuals: this compares the predicted conversion rates to observed historical conversion rates and gives you the difference, in percentage terms
 
-Generally speaking, a good model will have an accuracy of at least 70%. Any model with an accuracy of 50% or less will be no better than a coin flip in its predictive ability.
+Generally speaking, a good model has an accuracy of at least 70%. Any model with an accuracy of 50% or less is no better than a coin flip in its predictive ability.
 
 ### Tips for a good predictive model
 
-* **Outcome event has at least 50** **unique actions per day:** Ensure that the outcome event has at least 50 (ideally 100) unique user actions every day. If the conversion numbers are below this threshold the model will not detect signals and it will recommend the same content for all users.
-* **Ensure user cohort to be targeted for Audiences between 1K and 10M users**: If the user population is under 1K they cannot utilize Audiences at a 1:1 level, if it's above we will have to filter the cohort.
-* **Use a large enough dataset:** The more data you have, the more accurate your recommendations will be. Amplitude Audiences requires a minimum of 10,000 events per user to build a prediction.
-* **Relevant events in Amplitude related to desired outcome:** Cross reference the desired outcome and confirm the appropriate events are already being sent into Amplitude. These are typically `Purchase` or `Transaction completed`.
+* **Outcome event has at least 50** **unique actions per day**: Ensure that the outcome event has at least 50 (ideally 100) unique user actions every day. If the conversion numbers are below this threshold the model doesn't detect signals and it recommends the same content for all users.
+* **Ensure the targeted user cohort for Audiences has between 1K and 10M users**: If the user population is under 1K they can't use Audiences at a 1:1 level. If the population is greater than 10M users, Amplitude filters the cohort.
+* **Use a large enough dataset**: The more data you have, the more accurate your recommendations is. Amplitude requires a minimum of 10,000 events per user to build a prediction.
+* **Relevant events in Amplitude related to desired outcome**: Cross reference the desired outcome and confirm the appropriate events are already instrumented. These are typically `Purchase` or `Transaction completed`.
 
 ## Build a cohort from your prediction
 
@@ -93,9 +93,9 @@ To save your prediction as a cohort, follow these steps:
 1. Use the slider to select the desired percentile range on the chart. Then click *Save as predictive cohort*.
 2. Give your cohort a name and click *Save*.
 
-While it can be tempting to just slice the starting cohort into two sections—i.e., top 20% vs bottom 80%, or top 50% vs bottom 50%—other approaches can give you far more useful results:
+While it can be tempting to just slice the starting cohort into two sections, for example, top 20% vs bottom 80%, or top 50% vs bottom 50%, other approaches can give you far more useful results:
 
-* **Probability inflection**: Find the spot where the distribution graph spikes exponentially, and split users along the spikes. This will group users into broadly similar buckets of predicted conversion rates.
+* **Probability inflection**: Find the spot where the distribution graph spikes exponentially, and split users along the spikes. This groups users into broadly similar buckets of predicted conversion rates.
 * **Sample size:** If you have an idea of how many users you want to target in a growth campaign, then select that percentage on the right side of the chart. For example, if you want to target 2000 users and you have 20,000 users in the starting cohort, then simply select the top 10%.
 * **Minimum detectable lift.** If you plan to target the selected users in a growth campaign, make sure the sample size is large enough to detect incremental lift. For example, if the top 20% of a prediction is 20,000 users, but the predicted conversion rate is 1%, you won’t be able to detect lift at statistically significant levels. Instead, you must increase the sample size to top 45% of users at 45,000 users.
 
