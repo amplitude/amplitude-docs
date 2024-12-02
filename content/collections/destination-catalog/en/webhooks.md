@@ -14,7 +14,8 @@ integration_category:
 partner_maintained: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718907206
+updated_at: 1733180741
+integration_icon: partner-icons/webhook.svg
 ---
 Amplitude's Webhook integration enables you to forward your Amplitude events and users to custom webhooks. This is a light-weight way to set a stream of event and user data out of Amplitude, to a URL of your choosing to enable any of your use cases.
 
