@@ -47,13 +47,10 @@ The Shopify plugin captures Amplitude's default events and Shopify's standard [e
 
 {{/partial:collapse}}
 
-### Session Replay
+The plugin includes the following Amplitude features, which you can use to better understand your users, and improve your store's performance:
 
-tbd
-
-### Web Experimentation
-
-tbd
+* [Session Replay](/docs/session-replay)
+* [Web Experiment](/docs/web-experiment)
 
 ## Install the plugin
 
@@ -62,7 +59,7 @@ To add the plugin to your Shopify store:
 1. Log in to your Shopify account and find the plugin in the [Shopify App Store](https://apps.shopify.com/amplitude). Click *Install*.
 2. Confirm the required plugin permissions and click *Install*.
 3. Locate your project's API key and add it to the Amplitude Settings page in Shopify.
-4. Specify where you'll store your data. Click *Connect*.
+4. Select your Amplitude data region. Click *Connect*.
 
     {{partial:admonition type="note" heading="Ad blocking software"}}
     If any ad blocking software is running in your browser, disable it to ensure the plugin setup step can communicate with Amplitude.
