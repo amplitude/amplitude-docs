@@ -6,13 +6,19 @@ this_article_will_help_you:
   - 'Set up and use the Stripe integration for Amplitude'
 partner_maintained: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1731612715
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1733248873
+connection: source
+integration_icon: partner-icons/stripe.svg
+integration_type:
+  - raw-events
+integration_category:
+  - other
 ---
 This integration allows you to import revenue events from [Stripe](https://stripe.com/) into Amplitude, enabling seamless tracking and analysis of your Stripe financial data in Amplitude.
 
 {{partial:admonition type='note'}}
-This integration is currently in beta and is maintained by Amplitude. For assistance, [contact Amplitude support](https://amplitude.zendesk.com/hc/en-us/requests/new).
+This integration is in beta and is maintained by Amplitude. For help, [contact Amplitude support](https://amplitude.zendesk.com/hc/en-us/requests/new).
 {{/partial:admonition}}
 
 ## Before you begin
@@ -93,7 +99,7 @@ Here are some key charts and metrics you can track once you’ve set up the inte
 
 1. **Select an event**: Choose the event that represents successful transactions or orders, such as `[Stripe] invoice.payment_succeeded`.
 2. **Set a metric**: Use *Uniques* to count the unique occurrences of the event.
-3. **Group by product**: Group the data by the product name or description using the *Description* field (or a similar product-related field). This will break down the number of orders per product.
+3. **Group by product**: Group the data by the product name or description using the *Description* field (or a similar product-related field). This breaks down the number of orders per product.
 4. **Apply segmentation**: Choose *All Users* for a complete overview of the number of orders for each product made by all users.
 
  ![stripe_obp.png](/docs/output/img/sources/stripe_obp.png)
@@ -111,31 +117,31 @@ Here are some key charts and metrics you can track once you’ve set up the inte
 
 This table lists revenue-related events sent from Stripe to Amplitude. They allow you to track financial transactions such as charges, refunds, invoices, and payments. For more detailed information on the properties associated with each event, [refer to the official Stripe events documentation](https://docs.stripe.com/api/events/types).
 
-| Category | Stripe event | Description |
-|----------|--------------|-------------|
-| Charges and refunds | `charge.succeeded` | Occurs when a charge is successful. |
-| Charges and refunds | `charge.refunded` | Occurs when a charge is refunded, including partial refunds. |
-| Charges and refunds | `charge.captured` | Occurs when a previously uncaptured charge is captured. |
-| Charges and refunds | `charge.updated` | Occurs when a charge description or metadata is updated, or upon an asynchronous capture. |
-| Charges and refunds | `charge.failed` | Occurs when a failed charge attempt occurs. |
-| Invoices | `invoice.payment_succeeded` | Occurs when an invoice payment attempt succeeds. |
-| Invoices | `invoice.paid` | Occurs when an invoice payment attempt succeeds or an invoice is marked as paid out-of-band. |
-| Invoices | `invoice.finalized` | Occurs when a draft invoice is finalized and updated to an open invoice. |
-| Invoices | `invoice.marked_uncollectible` | Occurs when an invoice is marked uncollectible. |
-| Invoices | `invoice.payment_failed` | Occurs when an invoice payment attempt fails. |
-| Invoices | `invoice.voided` | Occurs when an invoice is voided. |
-| Invoices | `invoice.sent` | Occurs when an invoice email is sent. |
-| Invoices | `invoice.created` | Occurs when a new invoice is created. To learn how webhooks can be used with this event, and how they can affect it, see Using Webhooks with Subscriptions. |
-| Payment intents | `payment_intent.succeeded` | Occurs when a `PaymentIntent` has successfully completed payment. This event is a special `$revenue` event in Amplitude. |
-| Payment intents | `payment_intent.canceled` | Occurs when a `PaymentIntent` is canceled. |
-| Payment intents | `payment_intent.payment_failed` | Occurs when a `PaymentIntent` has failed the attempt to create a payment method or a payment. |
-| Payment intents | `payment_intent.amount_capturable_updated` | Occurs when a `PaymentIntent` has funds to be captured. Check the `amount_capturable` property on the `PaymentIntent` to determine the amount that can be captured. You may capture the `PaymentIntent` with an `amount_to_capture` value up to the specified amount. [Learn more about capturing PaymentIntents](https://docs.stripe.com/api/payment_intents/capture). |
-| Checkout sessions | `checkout.session.completed` | Occurs when a checkout session has been successfully completed. |
-| Checkout sessions | `checkout.session.async_payment_succeeded` | Occurs when a payment intent using a delayed payment method succeeds. |
-| Checkout sessions | `checkout.session.async_payment_failed` | Occurs when a payment intent using a delayed payment method fails. |
-| Application fees | `application_fee.created` | Occurs when an application fee is created on a charge. |
-| Application fees | `application_fee.refunded` | Occurs when an application fee is refunded, whether from refunding a charge or from [refunding the application fee directly](https://docs.stripe.com/api/events/types#fee_refunds). This includes partial refunds. |
-| Application fees | `application_fee.refund.updated` | Occurs when an application fee refund is updated. |
-| Balance | `balance.available` | Occurs when your Stripe balance has been updated. By default, Stripe automatically transfers funds in your balance to your bank account on a daily basis. This event is not triggered for negative transactions. |
-| Issuing | `issusing_authorization.created` | Occurs when an authorization is created. |
-| Issuing | `issusing_transaction.created` | Occurs when an issuing transaction is created. |
+| Category            | Stripe event                               | Description                                                                                                                                                                                                                                                                                                                                                             |
+| ------------------- | ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Charges and refunds | `charge.succeeded`                         | Occurs when a charge is successful.                                                                                                                                                                                                                                                                                                                                     |
+| Charges and refunds | `charge.refunded`                          | Occurs when a charge is refunded, including partial refunds.                                                                                                                                                                                                                                                                                                            |
+| Charges and refunds | `charge.captured`                          | Occurs when a previously uncaptured charge is captured.                                                                                                                                                                                                                                                                                                                 |
+| Charges and refunds | `charge.updated`                           | Occurs when a charge description or metadata is updated, or upon an asynchronous capture.                                                                                                                                                                                                                                                                               |
+| Charges and refunds | `charge.failed`                            | Occurs when a failed charge attempt occurs.                                                                                                                                                                                                                                                                                                                             |
+| Invoices            | `invoice.payment_succeeded`                | Occurs when an invoice payment attempt succeeds.                                                                                                                                                                                                                                                                                                                        |
+| Invoices            | `invoice.paid`                             | Occurs when an invoice payment attempt succeeds or an invoice is marked as paid out-of-band.                                                                                                                                                                                                                                                                            |
+| Invoices            | `invoice.finalized`                        | Occurs when a draft invoice is finalized and updated to an open invoice.                                                                                                                                                                                                                                                                                                |
+| Invoices            | `invoice.marked_uncollectible`             | Occurs when an invoice is marked uncollectible.                                                                                                                                                                                                                                                                                                                         |
+| Invoices            | `invoice.payment_failed`                   | Occurs when an invoice payment attempt fails.                                                                                                                                                                                                                                                                                                                           |
+| Invoices            | `invoice.voided`                           | Occurs when an invoice is voided.                                                                                                                                                                                                                                                                                                                                       |
+| Invoices            | `invoice.sent`                             | Occurs when an invoice email is sent.                                                                                                                                                                                                                                                                                                                                   |
+| Invoices            | `invoice.created`                          | Occurs when a new invoice is created. To learn how webhooks can be used with this event, and how they can affect it, see Using Webhooks with Subscriptions.                                                                                                                                                                                                             |
+| Payment intents     | `payment_intent.succeeded`                 | Occurs when a `PaymentIntent` has successfully completed payment. This event is a special `$revenue` event in Amplitude.                                                                                                                                                                                                                                                |
+| Payment intents     | `payment_intent.canceled`                  | Occurs when a `PaymentIntent` is canceled.                                                                                                                                                                                                                                                                                                                              |
+| Payment intents     | `payment_intent.payment_failed`            | Occurs when a `PaymentIntent` has failed the attempt to create a payment method or a payment.                                                                                                                                                                                                                                                                           |
+| Payment intents     | `payment_intent.amount_capturable_updated` | Occurs when a `PaymentIntent` has funds to be captured. Check the `amount_capturable` property on the `PaymentIntent` to determine the amount that can be captured. You may capture the `PaymentIntent` with an `amount_to_capture` value up to the specified amount. [Learn more about capturing PaymentIntents](https://docs.stripe.com/api/payment_intents/capture). |
+| Checkout sessions   | `checkout.session.completed`               | Occurs when a checkout session has been successfully completed.                                                                                                                                                                                                                                                                                                         |
+| Checkout sessions   | `checkout.session.async_payment_succeeded` | Occurs when a payment intent using a delayed payment method succeeds.                                                                                                                                                                                                                                                                                                   |
+| Checkout sessions   | `checkout.session.async_payment_failed`    | Occurs when a payment intent using a delayed payment method fails.                                                                                                                                                                                                                                                                                                      |
+| Application fees    | `application_fee.created`                  | Occurs when an application fee is created on a charge.                                                                                                                                                                                                                                                                                                                  |
+| Application fees    | `application_fee.refunded`                 | Occurs when an application fee is refunded, whether from refunding a charge or from [refunding the application fee directly](https://docs.stripe.com/api/events/types#fee_refunds). This includes partial refunds.                                                                                                                                                      |
+| Application fees    | `application_fee.refund.updated`           | Occurs when an application fee refund is updated.                                                                                                                                                                                                                                                                                                                       |
+| Balance             | `balance.available`                        | Occurs when your Stripe balance has been updated. By default, Stripe automatically transfers funds in your balance to your bank account on a daily basis. This event is not triggered for negative transactions.                                                                                                                                                        |
+| Issuing             | `issusing_authorization.created`           | Occurs when an authorization is created.                                                                                                                                                                                                                                                                                                                                |
+| Issuing             | `issusing_transaction.created`             | Occurs when an issuing transaction is created.                                                                                                                                                                                                                                                                                                                          |
