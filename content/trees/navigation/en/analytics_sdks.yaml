@@ -25,12 +25,6 @@ tree:
       -
         id: 1ab3e6ba-6fe5-4a91-8533-9e07853cfc9a
         entry: 9b155be9-bb32-428c-9f49-6e00f9630547
-      -
-        id: 5252128d-b817-4ada-a752-34de5728894e
-        entry: b7cc9d54-870a-40bc-93d8-a2ac15375e75
-      -
-        id: e2ad25cd-51f1-477e-b458-b8c3d4dcbb54
-        entry: 57ba371b-f74f-4606-bc62-6405b4375f61
   -
     id: 9a81493c-ecba-4501-89c2-1edd20dd05ba
     title: Android
@@ -158,6 +152,9 @@ tree:
           -
             id: e43c8153-9b6b-4964-ac1e-8bc091312b24
             entry: b7cc9d54-870a-40bc-93d8-a2ac15375e75
+          -
+            id: e2ad25cd-51f1-477e-b458-b8c3d4dcbb54
+            entry: 57ba371b-f74f-4606-bc62-6405b4375f61
       -
         id: a4fceea8-aa18-4f66-9f8a-1379a8c545f8
         entry: 7cab1dd1-18ad-4940-9379-ed2954c9afd3
