@@ -18,7 +18,14 @@ The [Amplitude Shopify Plugin](https://apps.shopify.com/amplitude) enables you t
 
 ## Plugin details
 
-The Shopify plugin installs a version of the [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2), and adds the script before the `</head>` tag on each of your site's pages.
+The Shopify plugin installs a version of the [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2), and adds the script before the `</head>` tag on each of your site's pages. This script also includes the following Amplitude features:
+
+* [Session Replay](/docs/session-replay)
+* [Web Experiment](/docs/web-experiment)
+
+{{partial:admonition type="warning" heading="Shopify and flickering"}}
+The method Shopify uses to loads Amplitude's Shopify app causes flickering. To avoid this, add the [asynchronous web script with the anti-flicker snippet](#async-script-with-anti-flicker-snippet) to your `theme.liquid` file.
+{{/partial:admonition}}
 
 The Shopify plugin captures Amplitude's default events and Shopify's standard [events](https://shopify.dev/docs/api/web-pixels-api/standard-events).
 
@@ -42,15 +49,17 @@ The Shopify plugin captures Amplitude's default events and Shopify's standard [e
 | Checkout contact info submitted  | Shopify   | --                                                                                                                                                                                                                                                                        |
 | Checkout address info submitted  | Shopify   | --                                                                                                                                                                                                                                                                        |
 | Checkout shipping info submitted | Shopify   | --                                                                                                                                                                                                                                                                        |
+| Checkout completed               | Shopify   | Total tax, Discount amount, Subtotal price, Currency code, Customer id, Products                                                                                                                                                                                          |
 | Order created                    | Shopify   | Customer, Products                                                                                                                                                                                                                                                        |
 | Search submitted                 | Shopify   | Search query                                                                                                                                                                                                                                                              |
 
 {{/partial:collapse}}
 
-The plugin includes the following Amplitude features, which you can use to better understand your users, and improve your store's performance:
+{{partial:admonition type="note" heading="Checkout completed vs Order created"}}
+In most scenarios, when a customer completes the checkout flow, Shopify fires the Checkout complete event, then the Order created event. If you create an order manually from your store's Admin page, only the Order created event fires. The Checkout complete event is specific to a customer completing the checkout flow.
+{{/partial:admonition}}
 
-* [Session Replay](/docs/session-replay)
-* [Web Experiment](/docs/web-experiment)
+User ID is set using the email address or phone number the customer enters in the Contact section of the checkout. 
 
 ## Install the plugin
 
