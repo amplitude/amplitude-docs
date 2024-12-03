@@ -1,5 +1,6 @@
 ---
 id: 9aa828e6-8ccc-4177-a2eb-1bcd010cb521
+published: false
 blueprint: source-catalog
 title: Stripe
 this_article_will_help_you:
@@ -7,7 +8,7 @@ this_article_will_help_you:
 partner_maintained: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1733248873
+updated_at: 1733258526
 connection: source
 integration_icon: partner-icons/stripe.svg
 integration_type:
