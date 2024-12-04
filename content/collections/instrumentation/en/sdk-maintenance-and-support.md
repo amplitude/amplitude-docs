@@ -184,8 +184,8 @@ version_support_matrix:
     icon: icons/ts-small.svg
     name: Amplitude-TypeScript
     version: 1.x
-    phase: Maint
-    ga_date: '2023-06-29'
+    phase: EOS
+    ga_date: '2024-12-04'
     type: sdk_tool
     enabled: true
   -
@@ -194,8 +194,8 @@ version_support_matrix:
     icon: icons/js-sm.svg
     name: Amplitude-JavaScript
     version: '1.x - 8.x'
-    phase: Maint
-    ga_date: '2023-06-29'
+    phase: EOS
+    ga_date: '2024-12-04'
     type: sdk_tool
     enabled: true
   -
@@ -224,8 +224,8 @@ version_support_matrix:
     icon: icons/ts-small.svg
     name: Amplitude-TypeScript
     version: 1.x
-    phase: Maint
-    ga_date: '2023-06-29'
+    phase: EOS
+    ga_date: '2024-12-04'
     notes: 'Replaced by Browser 2.0'
     type: sdk_tool
     enabled: true
@@ -250,7 +250,7 @@ version_support_matrix:
     type: sdk_tool
     enabled: true
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1719941719
+updated_at: 1733356647
 ---
 ## Overview
 
@@ -264,17 +264,15 @@ The Amplitude SDK and Tools release versions are in the form of `X.Y.Z` where `X
 
 ## SDK major version life-cycle
 
-The life-cycle for major SDKs and Tools versions consists of 5 phases:
+The life-cycle for major SDKs and Tools versions consists of four phases:
 
 - **Developer Preview (Beta) (Phase 0)** - During this phase, SDKs are fully supported, and can used in production environments, however, there may be breaking changes without a new major version release. If used in a production environment, Amplitude recommends setting a fixed version, updating regularly, and testing after each update. These SDKs provide early access to the latest features and allow for user feedback prior to GA. Once Amplitude identifies a release to be a stable product, it may mark it as GA.
 
 - **General Availability (GA) (Phase 1)** - During this phase, SDKs are fully supported. Amplitude provides regular SDK releases that include support for new services, API updates for existing services, as well as bug and security fixes. For Tools, Amplitude provides regular releases that include new feature updates and bug fixes.
 
-- **Maintenance Announcement (Phase 2)** - Amplitude makes a public announcement at least 6 months before an SDK or Tool enters maintenance mode. During this period, the SDK continues to be fully supported. Typically, Amplitude announces maintenance mode at the same time as the next major version moves to GA.
+- **Maintenance (Phase 2)** - During the maintenance mode, Amplitude limits SDK releases to address critical bug fixes and security issues only. An SDK doesn't receive API updates for new or existing services, or updates to support new regions. Maintenance mode has a default duration of at least 12 months, unless otherwise specified. When a new major version reaches GA, the previous version enters maintenance.
 
-- **Maintenance (Phase 3)** - During the maintenance mode, Amplitude limits SDK releases to address critical bug fixes and security issues only. An SDK doesn't receive API updates for new or existing services, or updates to support new regions. Maintenance mode has a default duration of at least 12 months, unless otherwise specified.
-
-- **End-of-Support (EOL) (Phase 4)** - When an SDK reaches end-of support, it no longer receive updates or releases. Already published releases continue to be available through public package managers and the code remains on GitHub. Amplitude may archive the GitHub repository. Use SDKs that have reached end-of-support at your own discretion. Amplitude recommends users upgrade to the new major version.
+- **End-of-Support (EOL) (Phase 3)** - When an SDK reaches end-of support, it no longer receive updates or releases. Already published releases continue to be available through public package managers and the code remains on GitHub. Amplitude may archive the GitHub repository. Use SDKs that have reached end-of-support at your own discretion. Amplitude recommends users upgrade to the new major version.
 
 ## Dependency life-cycle
 
@@ -292,20 +290,6 @@ Amplitude's policy is to continue supporting SDK dependencies for at least 6 mon
 {{partial:admonition type="note" heading=""}}
 Amplitude reserves the right to stop support for an underlying dependency without increasing the major SDK version
 {{/partial:admonition}}
-
-## Communication methods
-
-Amplitude communicates maintenance announcements in several ways:
-
-- An email announcement to affected accounts, announcing plans to end support for the specific SDK version. The email outlines the path to end-of-support, specify the campaign timelines, and provide upgrade guidance.
-
-- Amplitude updates [SDK documentation](/docs/sdks), such as [API reference documentation](/docs/apis), user guides, SDK product marketing pages, and GitHub README docs to share the campaign timeline and provide guidance on upgrading affected applications.
-
-- Amplitude publishes blog post in the [Amplitude Community](https://community.amplitude.com/) that outlines the path to end-of-support, as well as reiterates the campaign timelines.
-
-- Amplitude adds deprecation warnings to the SDKs, outlining the path to end-of-support and linking to the SDK documentation.
-
-To see the list of available major versions of Amplitude SDKs and Tools and where they're in their maintenance life cycle, see Amplitude SDKs and Tools version support matrix.
 
 ## SDKs and Tools version support matrix
 
