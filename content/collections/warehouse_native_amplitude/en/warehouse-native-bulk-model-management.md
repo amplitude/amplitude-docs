@@ -88,7 +88,6 @@ The following specification outlines the structure and purpose of the fields in 
 | `name`           | string | The name of the model which is used as the unique identifier.                                                                                                              |
 | `selection`      | string | Specifies the selection type: either `sql` or `table`.                                                                                                                     |
 | `type`           | string | The type of model could be `event`, `current_user_properties`, `historical_user_properties`, `current_group_properties`, `historical_group_properties`, `event_properties` |
-| `isActive`       | bool   | Indicates the model's state (default is `true`). Reserved, currently, only `true` is supported.                                                                            |
 | `tableConfig`    | object | Configuration settings for table-based models.                                                                                                                             |
 | `sqlConfig`      | object | Configuration settings for SQL-based models.                                                                                                                               |
 
@@ -153,7 +152,6 @@ spec:
   models:
     - name: Play Song
       selection: "table"
-      isActive: true
       type: "event"
       tableConfig:
         database: "DB_1234"
@@ -182,7 +180,6 @@ spec:
             label: "Prop 2"
     - name: Add Song #[tl! collapse:start]
       selection: "table"
-      isActive: true
       type: "event"
       tableConfig:
         database: "DB_1234"
@@ -202,7 +199,6 @@ spec:
             label: "Prop 2"
     - name: Pause Song
       selection: "sql"
-      isActive: true
       type: event
       sqlConfig:
         query: "SELECT * FROM schema_main.all_events"
@@ -229,7 +225,6 @@ spec:
             label: "Prop 2"
     - name: Delete Song
       selection: "sql"
-      isActive: false
       type: "event"
       sqlConfig:
         query: "SELECT * FROM schema_main.delete_songs"
@@ -247,7 +242,6 @@ spec:
             label: "Prop 2"
     - name: Current User Property Table-based
       selection: "table"
-      isActive: true
       type: "current_user_properties"
       tableConfig:
         database: "DB_1234"
@@ -263,7 +257,6 @@ spec:
             label: "Prop 2"
     - name: Current User Property sql-based
       selection: "sql"
-      isActive: true
       type: "current_user_properties"
       sqlConfig:
         query: "SELECT * FROM schema_main.current_user_properties"
@@ -277,7 +270,6 @@ spec:
             label: "Prop 2"
     - name: Historical User Property Table-based
       selection: "table"
-      isActive: true
       type: "current_user_properties"
       tableConfig:
         database: "DB_1234"
@@ -299,7 +291,6 @@ spec:
             label: "Prop 2"
     - name: Historical User Property sql-based
       selection: "sql"
-      isActive: true
       type: "historical_user_properties"
       sqlConfig:
         query: "SELECT * FROM schema_main.current_user_properties"
@@ -319,7 +310,6 @@ spec:
             label: "Prop 2"
     - name: Current Group Properties Table-based
       selection: "table"
-      isActive: true
       type: "current_group_properties"
       eventJoinField: "GROUP_ID"
       tableConfig:
@@ -336,7 +326,6 @@ spec:
             label: "Prop 2"
     - name: Current Group Properties Sql-based
       selection: "sql"
-      isActive: true
       type: "current_group_properties"
       eventJoinField: "GROUP_ID"
       sqlConfig:
@@ -351,7 +340,6 @@ spec:
             label: "Prop 2"
     - name: Historical Group Properties Table-based
       selection: "table"
-      isActive: true
       type: "historical_group_properties"
       eventJoinField: "GROUP_ID"
       tableConfig:
@@ -374,7 +362,6 @@ spec:
             label: "Prop 2"
     - name: Historical Group Properties Sql-based
       selection: "sql"
-      isActive: true
       type: "historical_group_properties"
       eventJoinField: "GROUP_ID"
       sqlConfig:
@@ -395,7 +382,6 @@ spec:
             label: "Prop 2"
     - name: Event Properties Table-based
       selection: "table"
-      isActive: true
       type: "event_properties"
       eventJoinField: "EVENT_ID"
       tableConfig:
@@ -412,7 +398,6 @@ spec:
             label: "Prop 2"  #[tl! collapse:end]
     - name: Event Properties Sql-based
       selection: "sql"
-      isActive: true
       type: "event_properties"
       eventJoinField: "EVENT_ID"
       sqlConfig:
