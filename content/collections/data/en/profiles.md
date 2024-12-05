@@ -7,7 +7,7 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1727805387
 ---
-**Profiles** enable you to join customer profile data from your data warehouse with existing behavioral product data already in Amplitude.
+Profiles enable you to join customer profile data from your data warehouse with existing behavioral product data already in Amplitude.
 
 {{partial:admonition type='note'}}
 This feature is currently in an **open beta**.
@@ -20,6 +20,15 @@ Profiles always display the most current data synced from your warehouse.
 ## Before you begin
 
 Regardless of whether you're using Snowflake or Databricks, Change Data Capture (CDC) **doesn't support replacing existing tables**. Instead, you must use incremental modeling. If the table you integrate with drops and replaces data, the connection breaks.
+
+### Profiles limits
+
+| Plan       | Limits                                                      |
+| ---------- | ----------------------------------------------------------- |
+| Enterprise | 1 billion operations (insert / update / delete) per month   |
+| Growth     | 300 million operations (insert / update / delete) per month |
+
+Each profile must associate to a `user_id`.
 
 ### Snowflake users
 If this is your first time importing data from this table, set a data retention time and enable change tracking in Snowflake with the following commands:
@@ -48,7 +57,7 @@ Set a [data retention period](https://docs.databricks.com/en/delta/history.html#
 To set up a profile in Amplitude, follow these steps:
 
 1. In Amplitude Data, navigate to *Connections Overview*. Then in the *Sources panel*, click *Add More*. Scroll down until you find the Snowflake tile and click it.
-2. On the *Set Up Connection* tab, connect Amplitude to your data warehouse by filling in all the relevant fields under *Snowflake Credentials*, which are  outlined in the [Snowflake Data Import guide](/docs/data/source-catalog/snowflake#add-snowflake-as-a-source). You can either create a new connection, or reuse an existing one. Click *Next* when you're done.
+2. On the *Set Up Connection* tab, connect Amplitude to your data warehouse by filling in all the relevant fields under *Snowflake Credentials*, which are outlined in the [Snowflake Data Import guide](/docs/data/source-catalog/snowflake#add-snowflake-as-a-source). You can either create a new connection, or reuse an existing one. Click *Next* when you're done.
 3. You can see a list of your tables under *Select Table*. To begin column mapping, click the table you're interested in.
 4. In the list of required fields under *Column Mapping*, enter the column names in the appropriate fields to match columns to required fields. To add more fields, click *+ Add field*.
 5. On the *Select Data* tab, select the `profiles` data type. Amplitude pre-selects the required change data capture import strategy for you, which you can see under the *Select Import Strategy* dropdown:
@@ -78,18 +87,10 @@ To set up a profile in Amplitude, follow these steps:
 
 ## Data specifications
 
-Profiles supports:
-* Up to 100 million users
-* Up to 200 profile properties
-* Up to 200 warehouse properties
-* Known Amplitude users 
-
-A `user_id` must go with each profile.
-
-| Field               | Description                                                                                                                   | Example                  |
-| ------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
-| `user_id`             | Identifier for the user. Must have a minimum length of 5.                                                                     | 
-| `Profile Property 1`  | Profile property set at the user level. The value of this field is the value from the customer’s source since last sync. |
+| Field                | Description                                                                                                              | Example |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------- |
+| `user_id`            | Identifier for the user. Must have a minimum length of 5.                                                                |
+| `Profile Property 1` | Profile property set at the user level. The value of this field is the value from the customer’s source since last sync. |
 | `Profile Property 2` | Profile property set at the user level. The value of this field is the value from the customer’s source since last sync. |
 
 Example:
