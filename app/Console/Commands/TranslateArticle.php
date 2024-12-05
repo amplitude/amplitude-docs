@@ -8,6 +8,7 @@ use Statamic\Facades\YAML;
 use Deepl\Translator;
 use Statamic\Facades\Collection;
 use Statamic\Facades\Site;
+use function Laravel\Prompts\text;
 
 class TranslateArticle extends Command
 {
@@ -48,9 +49,10 @@ class TranslateArticle extends Command
             
     
 
-        $article_id = "19c03845-d834-4777-af7c-904a6fa82cd7";
+        // $article_id = "19c03845-d834-4777-af7c-904a6fa82cd7";
+        
+        $article_id = text('Enter the article ID');
         $entry = Entry::find($article_id);
-
         $content = $entry->get('content');
         $title = $entry->title;
         $goals = $entry->get('this_article_will_help_you');

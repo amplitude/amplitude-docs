@@ -123,5 +123,4 @@ return array(
     'Archetype\\Tests\\' => array($vendorDir . '/ajthinking/archetype/tests'),
     'Archetype\\' => array($vendorDir . '/ajthinking/archetype/src'),
     'App\\' => array($baseDir . '/app', $vendorDir . '/laravel/pint/app'),
-    'Amplitude\\Translator\\' => array($vendorDir . '/amplitude/translator/src'),
 );

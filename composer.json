@@ -11,10 +11,10 @@
     "type": "project",
     "require": {
         "php": "^8.1",
-        "amplitude/translator": "*@dev",
         "deeplcom/deepl-php": "^1.10",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.8",
+        "laravel/prompts": "^0.1.25",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
         "pecotamic/sitemap": "^1.4",
@@ -83,11 +83,5 @@
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ]
-    },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "addons/amplitude/translator"
-        }
-    ]
+    }
 }

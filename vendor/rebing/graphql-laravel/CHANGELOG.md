@@ -1,7 +1,13 @@
 CHANGELOG
 =========
 
-[Next release](https://github.com/rebing/graphql-laravel/compare/9.6.0...master)
+[Next release](https://github.com/rebing/graphql-laravel/compare/9.7.0...master)
+
+2024-11-22, 9.7.0
+-----------------
+
+## Fixed
+- Fixes for implicit nullability deprecation (PHP 8.4 compat) [\#1152 / duncanmcclean](https://github.com/rebing/graphql-laravel/pull/1152)
 
 2024-08-23, 9.6.0
 -----------------

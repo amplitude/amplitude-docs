@@ -11,9 +11,9 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
-        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
+        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '662a729f963d39afe703c9d9b7ab4a8c' => __DIR__ . '/..' . '/symfony/polyfill-php83/bootstrap.php',
@@ -310,7 +310,6 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
             'Archetype\\Tests\\' => 16,
             'Archetype\\' => 10,
             'App\\' => 4,
-            'Amplitude\\Translator\\' => 21,
         ),
     );
 
@@ -791,10 +790,6 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
             0 => __DIR__ . '/../..' . '/app',
             1 => __DIR__ . '/..' . '/laravel/pint/app',
         ),
-        'Amplitude\\Translator\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/amplitude/translator/src',
-        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -822,8 +817,8 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
         'AMFReader' => __DIR__ . '/..' . '/james-heinrich/getid3/getid3/module.audio-video.flv.php',
         'AMFStream' => __DIR__ . '/..' . '/james-heinrich/getid3/getid3/module.audio-video.flv.php',
         'AVCSequenceParameterSetReader' => __DIR__ . '/..' . '/james-heinrich/getid3/getid3/module.audio-video.flv.php',
-        'Amplitude\\Translator\\ServiceProvider' => __DIR__ . '/..' . '/amplitude/translator/src/ServiceProvider.php',
         'App\\Console\\Commands\\TranslateArticle' => __DIR__ . '/../..' . '/app/Console/Commands/TranslateArticle.php',
+        'App\\Console\\Commands\\testCreate' => __DIR__ . '/../..' . '/app/Console/Commands/testCreate.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
@@ -4423,6 +4418,7 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
         'Monolog\\Handler\\WebRequestRecognizerTrait' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Handler/WebRequestRecognizerTrait.php',
         'Monolog\\Handler\\WhatFailureGroupHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Handler/WhatFailureGroupHandler.php',
         'Monolog\\Handler\\ZendMonitorHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Handler/ZendMonitorHandler.php',
+        'Monolog\\JsonSerializableDateTimeImmutable' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/JsonSerializableDateTimeImmutable.php',
         'Monolog\\Level' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Level.php',
         'Monolog\\LogRecord' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/LogRecord.php',
         'Monolog\\Logger' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Logger.php',
@@ -6578,6 +6574,7 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
         'Spatie\\FlareClient\\Context\\RequestContextProvider' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Context/RequestContextProvider.php',
         'Spatie\\FlareClient\\Contracts\\ProvidesFlareContext' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Contracts/ProvidesFlareContext.php',
         'Spatie\\FlareClient\\Enums\\MessageLevels' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Enums/MessageLevels.php',
+        'Spatie\\FlareClient\\Enums\\OverriddenGrouping' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Enums/OverriddenGrouping.php',
         'Spatie\\FlareClient\\Flare' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Flare.php',
         'Spatie\\FlareClient\\FlareMiddleware\\AddDocumentationLinks' => __DIR__ . '/..' . '/spatie/flare-client-php/src/FlareMiddleware/AddDocumentationLinks.php',
         'Spatie\\FlareClient\\FlareMiddleware\\AddEnvironmentInformation' => __DIR__ . '/..' . '/spatie/flare-client-php/src/FlareMiddleware/AddEnvironmentInformation.php',
@@ -9123,9 +9120,11 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
         'Symfony\\Component\\String\\Inflector\\EnglishInflector' => __DIR__ . '/..' . '/symfony/string/Inflector/EnglishInflector.php',
         'Symfony\\Component\\String\\Inflector\\FrenchInflector' => __DIR__ . '/..' . '/symfony/string/Inflector/FrenchInflector.php',
         'Symfony\\Component\\String\\Inflector\\InflectorInterface' => __DIR__ . '/..' . '/symfony/string/Inflector/InflectorInterface.php',
+        'Symfony\\Component\\String\\Inflector\\SpanishInflector' => __DIR__ . '/..' . '/symfony/string/Inflector/SpanishInflector.php',
         'Symfony\\Component\\String\\LazyString' => __DIR__ . '/..' . '/symfony/string/LazyString.php',
         'Symfony\\Component\\String\\Slugger\\AsciiSlugger' => __DIR__ . '/..' . '/symfony/string/Slugger/AsciiSlugger.php',
         'Symfony\\Component\\String\\Slugger\\SluggerInterface' => __DIR__ . '/..' . '/symfony/string/Slugger/SluggerInterface.php',
+        'Symfony\\Component\\String\\TruncateMode' => __DIR__ . '/..' . '/symfony/string/TruncateMode.php',
         'Symfony\\Component\\String\\UnicodeString' => __DIR__ . '/..' . '/symfony/string/UnicodeString.php',
         'Symfony\\Component\\Translation\\CatalogueMetadataAwareInterface' => __DIR__ . '/..' . '/symfony/translation/CatalogueMetadataAwareInterface.php',
         'Symfony\\Component\\Translation\\Catalogue\\AbstractOperation' => __DIR__ . '/..' . '/symfony/translation/Catalogue/AbstractOperation.php',

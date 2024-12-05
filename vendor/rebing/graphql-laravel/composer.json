@@ -44,13 +44,15 @@
     },
     "require-dev": {
         "ext-pdo_sqlite": "*",
+        "fakerphp/faker": "^1.6",
         "friendsofphp/php-cs-fixer": "^3",
-        "mfn/php-cs-fixer-config": "^2",
-        "mockery/mockery": "^1.2",
-        "phpstan/phpstan": "^1",
         "larastan/larastan": "^2",
-        "orchestra/testbench": "^8.0|^9.0",
-        "phpunit/phpunit": "^10.5",
+        "laravel/framework": "^10.0|^11.0",
+        "mfn/php-cs-fixer-config": "^2",
+        "mockery/mockery": "^1.5",
+        "orchestra/testbench-core": "^8.0|^9.0",
+        "phpstan/phpstan": "^1",
+        "phpunit/phpunit": "^10.5.32",
         "thecodingmachine/phpstan-safe-rule": "^1"
     },
     "autoload": {
@@ -68,7 +70,7 @@
         "phpstan-baseline": "phpstan analyse --memory-limit=512M --generate-baseline",
         "lint": "php-cs-fixer fix --diff --dry-run",
         "fix-style": "php-cs-fixer fix",
-        "tests": "phpunit"
+        "tests": "LOG_DEPRECATIONS_CHANNEL=errorlog phpunit"
     },
     "extra": {
         "branch-alias": {
