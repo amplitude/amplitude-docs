@@ -80,6 +80,8 @@ Click the check box next to the desired notification:
 * **Long-running experiments:** You will receive this notification when your long-running experiment is complete.
 * **Statsig for the recommendation metric is reached:** You will receive this notification when your experiment's recommendation metric has reached stat sig.
 
+Amplitude Experiment sends a notification to the editors of the experiment.
+
 ## What’s next?
 
 It’s important to remember that no experiment is a failure. Even if you didn’t get the results you were hoping for, you can still learn something from the process—even if your test didn’t reach stat sig. Use your results as a springboard to asking hard questions about the changes you made, the outcomes you saw, what your customers expect from your product, and how you can deliver that.
