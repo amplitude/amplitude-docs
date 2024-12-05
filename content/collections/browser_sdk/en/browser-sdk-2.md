@@ -29,10 +29,14 @@ Amplitude's Browser SDK 2 lets you send events to Amplitude.
 
 Install the dependency with npm, yarn, or the script loader.
 
-{{partial:tabs tabs="Script loader, npm, yarn"}}
+{{partial:tabs tabs="Unified script, Script loader, npm, yarn"}}
+{{partial:tab name="Unified script"}}
+When you use the unified script and enable Autocapture, Browser SDK track interactions on your site automatically. For more information, see [Autocapture](#autocapture).
+{{partial:partials/code/snippet autocapture="true" unified="true"}}
+{{/partial:tab}}
 {{partial:tab name="Script loader"}}
 When you use the script loader and enable Autocapture, Browser SDK track interactions on your site automatically. For more information, see [Autocapture](#autocapture).
-{{partial:partials/code/snippet autocapture="true" unified="true"}}
+{{partial:partials/code/snippet unified="false" autocapture="true"}}
 {{/partial:tab}}
 {{partial:tab name="npm"}}
 ```bash

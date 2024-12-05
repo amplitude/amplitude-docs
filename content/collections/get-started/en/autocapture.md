@@ -17,18 +17,31 @@ Starting with version 2.10.0, the Amplitude Browser SDK includes Autocapture to 
 
 To get started with Autocapture, install the latest version of the Browser SDK ({{sdk_versions:browser}}) with the unified script loader, npm, or yarn.
 
-{{partial:tabs tabs="Script Loader, npm, yarn"}}
-{{partial:tab name="Script Loader"}}
+{{partial:tabs tabs="Unified script, Script loader, npm, yarn"}}
+{{partial:tab name="Unified script"}}
+When you use the unified script and enable Autocapture, Browser SDK track interactions on your site automatically. For more information, see [Autocapture](#autocapture).
 {{partial:partials/code/snippet autocapture="true" unified="true"}}
+{{/partial:tab}}
+{{partial:tab name="Script loader"}}
+When you use the script loader and enable Autocapture, Browser SDK track interactions on your site automatically. For more information, see [Autocapture](#autocapture).
+{{partial:partials/code/snippet unified="false" autocapture="true"}}
 {{/partial:tab}}
 {{partial:tab name="npm"}}
 ```bash
 npm install @amplitude/analytics-browser
 ```
+Import Amplitude into your project
+```js
+import * as amplitude from '@amplitude/analytics-browser';
+```
 {{/partial:tab}}
 {{partial:tab name="yarn"}}
 ```bash
 yarn add @amplitude/analytics-browser
+```
+Import Amplitude into your project
+```js
+import * as amplitude from '@amplitude/analytics-browser';
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
