@@ -143,6 +143,10 @@ When choosing an integration strategy, consider the following:
 
 ## Prerequisites and considerations for CDC
 
+{{partial:admonition type="note" heading="CDC and event volume"}}
+By using CDC, Snowflake sends consolidated row `INSERT`, `UPDATE`, and `DELETE` operations to Amplitude based on your sync frequency. This means that multiple operations can be made to an event during the sync window and they only count as one event against your existing event volume. However, any operation made to an event outside of the sync window counts as an additional event against your existing event volume. This may impact the rate at which you use your existing event volume. Contact sales to purchase additional event volume, if needed.
+{{/partial:admonition}}
+
 When using CDC Continuous Sync, keep the following things in mind:
 
 - **Enable Change Tracking**: Enable change tracking for the source table or view. See [Enabling Change Tracking on Views and Underlying Tables](https://docs.snowflake.com/en/user-guide/streams-manage.html#label-enabling-change-tracking-views) in Snowflake's documentation.
