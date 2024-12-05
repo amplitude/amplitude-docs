@@ -78,7 +78,9 @@ Click the check box next to the desired notification:
 * **Experiment end reached:** You will receive this notification when your experiment is complete.
 * **SRM detected:** You will receive this notification if a [sample ratio mismatch](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch) issue is identified.
 * **Long-running experiments:** You will receive this notification when your long-running experiment is complete.
-* **Statsig for the primary metric is reached:** You will receive this notification when your experiment's recommendation metric has reached stat sig.
+* **Statsig for the recommendation metric is reached:** You will receive this notification when your experiment's recommendation metric has reached stat sig.
+
+Amplitude Experiment sends a notification to the editors of the experiment.
 
 ## What’s next?
 
