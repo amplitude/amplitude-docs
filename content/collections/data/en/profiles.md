@@ -28,7 +28,7 @@ Regardless of whether you're using Snowflake or Databricks, Change Data Capture 
 | Enterprise | 1 billion operations (insert / update / delete) per month   |
 | Growth     | 300 million operations (insert / update / delete) per month |
 
-Each profile must associate to a `user_id`.
+Each profile must reference a `user_id`.
 
 ### Snowflake users
 If this is your first time importing data from this table, set a data retention time and enable change tracking in Snowflake with the following commands:
