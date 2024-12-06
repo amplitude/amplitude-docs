@@ -193,7 +193,7 @@ The SDK client can be configured once on initialization.
 | `fetchOnStart` | If true or nil, always [fetch](#fetch) remote evaluation variants on [start](#start). If false, never fetch on start. | `true` |
 | `pollOnStart` | Poll for local evaluation flag configuration updates once per minute on [start](#start). | `true` |
 | `automaticFetchOnAmplitudeIdentityChange` | Only matters if you use the `initializeWithAmplitudeAnalytics` initialization function to seamlessly integrate with the Amplitude Analytics SDK. If `true` any change to the user ID, device ID or user properties from analytics will trigger the experiment SDK to fetch variants and update it's cache. | `false` |
-| `userProvider` | An interface used to provide the user object to `fetch()` when called. See [Experiment User](https://developers.experiment.amplitude.com/docs/experiment-user#user-providers) for more information. | `null` |
+| `userProvider` | An interface used to provide the user object to `fetch()` when called. | `null` |
 | `exposureTrackingProvider` | Implement and configure this interface to track exposure events through the experiment SDK, either automatically or explicitly. | `null` |
 | `instanceName` | Custom instance name for experiment SDK instance. **The value of this field is case-sensitive.** | `null` |
 | `initialFlags` | A JSON string representing an initial set of flag configurations to use for local evaluation. | `undefined` |
