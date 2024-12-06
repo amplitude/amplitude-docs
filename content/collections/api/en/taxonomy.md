@@ -107,9 +107,9 @@ category_name=Attribution
 #### Body parameters
 
 
-|<div class="big-column">Name</div>| Description|
-|-----|------|
-|`category_name` |<span class="required">Required</span>. Name of the category.|
+| <div class="big-column">Name</div> | Description                                                   |
+| ---------------------------------- | ------------------------------------------------------------- |
+| `category_name`                    | <span class="required">Required</span>. Name of the category. |
 
 #### Response
 
@@ -233,9 +233,9 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 #### Path parameters
 
-|<div class="big-column">Name</div>| Description|
-|----|-----|
-|`category_name`| <span class="required">Required</span>. The name of the category|
+| <div class="big-column">Name</div> | Description                                                      |
+| ---------------------------------- | ---------------------------------------------------------------- |
+| `category_name`                    | <span class="required">Required</span>. The name of the category |
 
 #### Response
 
@@ -318,15 +318,15 @@ category_name=Converted
 
 #### Path parameters
 
-|<div class="big-column">Name</div>| Description|
-|----|-----|
-|`category_id`| <span class="required">Required</span>. The ID of the category|
+| <div class="big-column">Name</div> | Description                                                    |
+| ---------------------------------- | -------------------------------------------------------------- |
+| `category_id`                      | <span class="required">Required</span>. The ID of the category |
 
 #### Body parameters
 
-|<div class="big-column">Name</div>| Description|
-|----|-----|
-|`category_name`| <span class="required">Required</span>. The new name of the category|
+| <div class="big-column">Name</div> | Description                                                          |
+| ---------------------------------- | -------------------------------------------------------------------- |
+| `category_name`                    | <span class="required">Required</span>. The new name of the category |
 
 #### 200 ok response
 
@@ -397,9 +397,9 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 #### Path parameters
 
-|<div class="big-column">Name</div>| Description|
-|----|-----|
-|`category_id`| <span class="required">Required</span>. The ID of the category|
+| <div class="big-column">Name</div> | Description                                                    |
+| ---------------------------------- | -------------------------------------------------------------- |
+| `category_id`                      | <span class="required">Required</span>. The ID of the category |
 
 #### 200 ok response
 
@@ -494,11 +494,11 @@ event_type=Onboard%20Start&category=Onboarding&description=My%20new%20onboarding
 
 #### Body parameters
 
-|<div class="big-column">Name</div>| Description|
-|-----|------|
-|`event_type` |<span class="required">Required</span>. String. The event name.|
-|`category`|<span class="optional">Optional</span>. String. The event type's category.|
-|`description`| <span class="optional">Optional</span>. String. Details about the event type.|
+| <div class="big-column">Name</div> | Description                                                                   |
+| ---------------------------------- | ----------------------------------------------------------------------------- |
+| `event_type`                       | <span class="required">Required</span>. String. The event name.               |
+| `category`                         | <span class="optional">Optional</span>. String. The event type's category.    |
+| `description`                      | <span class="optional">Optional</span>. String. Details about the event type. |
 
 #### 200 ok response
 
@@ -603,20 +603,20 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 {{/partial:tabs}}
 
 {{partial:collapse name="Example: Get an event type by name"}}
-This example gets the "Event 2" event type. This is a custom event, so it has a `ce:` prefix.
+This example gets the 'Event 2' event type.
 
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 
-curl --location --request GET 'https://amplitude.com/api/2/taxonomy/event/ce:Event 2' \
+curl --location --request GET 'https://amplitude.com/api/2/taxonomy/event/Event 2' \
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
 {{partial:tab name="HTTP"}}
 ```bash
 
-curl --location --request GET 'https://amplitude.com/api/2/taxonomy/event/ce:Event 2' \
+curl --location --request GET 'https://amplitude.com/api/2/taxonomy/event/Event 2' \
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
 ```
 {{/partial:tab}}
@@ -625,9 +625,9 @@ curl --location --request GET 'https://amplitude.com/api/2/taxonomy/event/ce:Eve
 
 #### Path parameters
 
-|<div class="big-column">Name</div>| Description|
-|----|-----|
-|`event_type`| <span class="required">Required</span>. String. The event name. Prefix custom event types with `ce:`.|
+| <div class="big-column">Name</div> | Description                                                     |
+| ---------------------------------- | --------------------------------------------------------------- |
+| `event_type`                       | <span class="required">Required</span>. String. The event name. |
 
 
 #### 200 OK response
@@ -638,7 +638,7 @@ A successful request returns a `200 OK` status and a JSON body with the event ty
 {
     "success": true,
     "data": {
-        "event_type": "ce:Event 2",
+        "event_type": "Event 2",
         "category": {
             "name": "Conversion Events"
         },
@@ -690,12 +690,12 @@ category=NEW_CATEGORY_NAME&display_name=NEW_EVENT_TYPE_DISPLAY_NAME
 {{/partial:tabs}}
 
 {{partial:collapse name="Example: Update an event type"}}
-This example updates the event type "OnboardingBegin" with the category "Onboarding", event type name "OnboardStart", the display name "Onboarding Start", and a description of "User signed in and completed an onboarding task from modal". Because the event type is custom, it has the `ce:` prefix.
+This example updates the event type `OnboardingBegin` with the category `Onboarding`, event type name `OnboardStart`, the display name "Onboarding Start", and a description of "User signed in and completed an onboarding task from modal".
 
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
-curl --location --request PUT 'https://amplitude.com/api/2/taxonomy/event/ce:OnboardBegin' \
+curl --location --request PUT 'https://amplitude.com/api/2/taxonomy/event/OnboardBegin' \
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'new_event_type=OnboardStart' \
@@ -707,8 +707,7 @@ curl --location --request PUT 'https://amplitude.com/api/2/taxonomy/event/ce:Onb
 {{/partial:tab}}
 {{partial:tab name="HTTP"}}
 ```bash
-
-PUT /api/2/taxonomy/event/ce:OnboardBegin HTTP/1.1
+PUT /api/2/taxonomy/event/OnboardBegin HTTP/1.1
 Host: amplitude.com
 Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 Content-Type: application/x-www-form-urlencoded
@@ -722,18 +721,18 @@ new_event_type=OnboardStart&category=Onboarding&description=User%20signed%20in%2
 
 #### Path parameters
 
-|<div class="big-column">Name</div>| Description|
-|----|-----|
-|`event_type`| <span class="required">Required</span>. String. The event name. Prefix custom event types with `ce:`. |
+| <div class="big-column">Name</div> | Description                                                     |
+| ---------------------------------- | --------------------------------------------------------------- |
+| `event_type`                       | <span class="required">Required</span>. String. The event name. |
 
 #### Body parameters
 
-|<div class="big-column">Name</div>| Description|
-|----|-----|
-|`new_event_type`| <span class="optional">Optional</span>. String. The event type's new name.|
-|`category`|<span class="optional">Optional</span>. Current category name of the event type.|
-|`description`| <span class="optional">Optional</span>. String. Details to add to the event type.|
-|`display_name`| <span class="optional">Optional</span>. String. Display name of an event type. You can update the display name for an event type after it's ingested into Amplitude.|
+| <div class="big-column">Name</div> | Description                                                                                                                                                          |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `new_event_type`                   | <span class="optional">Optional</span>. String. The event type's new name.                                                                                           |
+| `category`                         | <span class="optional">Optional</span>. Current category name of the event type.                                                                                     |
+| `description`                      | <span class="optional">Optional</span>. String. Details to add to the event type.                                                                                    |
+| `display_name`                     | <span class="optional">Optional</span>. String. Display name of an event type. You can update the display name for an event type after it's ingested into Amplitude. |
 
 #### 200 OK response
 
@@ -754,7 +753,7 @@ If there is a problem with your request, the request returns a `409 Conflict` st
     "success": false,
     "errors": [
         {
-            "message": "Attempted to change the event display name for event \"ce:Event\", but the event is not in schema."
+            "message": "Attempted to change the event display name for event \"Event\", but the event is not in schema."
         }
     ]
 }
@@ -783,13 +782,13 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 {{/partial:tabs}}
 
 {{partial:collapse name="Example: Delete an event type"}}
-This example deletes the event type "Event1". Because the event type is custom, it has the `ce:` prefix.
+This example deletes the event type `Event1`.
 
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
 
-curl --location --request DELETE 'https://amplitude.com/api/2/taxonomy/event/ce:Event1' \
+curl --location --request DELETE 'https://amplitude.com/api/2/taxonomy/event/Event1' \
 --header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=' \
 
 ```
@@ -797,7 +796,7 @@ curl --location --request DELETE 'https://amplitude.com/api/2/taxonomy/event/ce:
 {{partial:tab name="HTTP"}}
 ```bash
 
-DELETE /api/2/taxonomy/event/ce:Event1 HTTP/1.1
+DELETE /api/2/taxonomy/event/Event1 HTTP/1.1
 Host: amplitude.com
 Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
@@ -808,9 +807,19 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 #### Path parameters
 
-|<div class="big-column">Name</div>| Description|
-|----|-----|
-|`event_type`| <span class="required">Required</span>. The name of the event type. Prefix custom event types with `ce:`. |
+| <div class="big-column">Name</div> | Description                                                         |
+| ---------------------------------- | ------------------------------------------------------------------- |
+| `event_type`                       | <span class="required">Required</span>. The name of the event type. |
+
+#### Behavior
+
+| Event type               | Behavior in Amplitude                                               |
+| ------------------------ | ------------------------------------------------------------------- |
+| `live`                   | Marks the event as deleted                                          |
+| `unexpected`             | Adds the event to the tracking plan, then marks it as `deleted`     |
+| `planned`                | Removes the event from the tracking plan                            |
+| `transformed`            | Returns an error because `transformed` event types aren't deletable |
+| `deleted` or `not found` | Returns an error                                                    |
 
 #### 200 OK response
 
@@ -822,16 +831,98 @@ A successful request returns a `200 OK` status and a JSON body.
 }
 ```
 
-#### 409 conflict response
+#### 4XX responses
 
-If there is a problem with your request, the request returns a `409 Conflict` status, and a JSON body with more information.
+If there's a problem with the request, Amplitude returns a `4XX` status, and a JSON body with more information.
 
 ```json
 {
     "success": false,
     "errors": [
         {
-            "message": "Attempted to remove an event, \"ce:Event1\", that is not a planned event."
+            "message": "Not found"
+        }
+    ]
+}
+```
+
+### Restore an event type
+
+Restore an event type.
+
+`POST https://amplitude.com/api/2/taxonomy/event/:event_type/restore`
+
+{{partial:tabs tabs="cURL, HTTP"}}
+{{partial:tab name="cURL"}}
+```bash
+curl --location --request POST 'https://amplitude.com/api/2/taxonomy/event/EVENT_TYPE/restore'
+-u '{api_key}:{secret_key}'
+```
+{{/partial:tab}}
+{{partial:tab name="HTTP"}}
+```bash
+POST /api/2/taxonomy/event/EVENT_TYPE/restore HTTP/1.1
+Host: amplitude.com
+Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+{{partial:collapse name="Example: Restore an event type"}}
+This example restores the event type "Event1".
+
+{{partial:tabs tabs="cURL, HTTP"}}
+{{partial:tab name="cURL"}}
+```bash
+curl --location --request POST 'https://amplitude.com/api/2/taxonomy/event/Event1/restore' \
+--header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
+
+```
+{{/partial:tab}}
+{{partial:tab name="HTTP"}}
+```bash
+POST /api/2/taxonomy/event/Event1/restore HTTP/1.1
+Host: amplitude.com
+Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
+
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+{{/partial:collapse}}
+
+#### Path parameters
+
+| <div class="big-column">Name</div> | Description                                                         |
+| ---------------------------------- | ------------------------------------------------------------------- |
+| `event_type`                       | <span class="required">Required</span>. The name of the event type. |
+
+#### Behavior
+
+| Event type                   | Behavior in Amplitude |
+| ---------------------------- | --------------------- |
+| `deleted`                    | Restores the event    |
+| `not deleted` or `not found` | Returns an error      |
+
+#### 200 OK response
+
+A successful request returns a `200 OK` status and a JSON body.
+
+```json
+{
+    "success": true
+}
+```
+
+#### 4XX responses
+
+If there's a problem with your request, Amplitude returns a `4XX` status, and a JSON body with more information.
+
+```json
+{
+    "success": false,
+    "errors": [
+        {
+            "message": "Not found"
         }
     ]
 }
@@ -871,7 +962,7 @@ event_type=EVENT_TYPE&event_property=EVENT_PROPERTY
 {{/partial:tabs}}
 
 {{partial:collapse name="Example: Create an event property"}}
-This example creates the event property "Completed Task" with the description "User completed any onboarding task" for the event "Onboarding Start". The event property is a boolean type, is not required.
+This example creates the event property "Completed Task" with the description "User completed any onboarding task" for the event "Onboarding Start". The event property is a boolean type, isn't required.
 
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
@@ -904,17 +995,17 @@ event_type=Onboard%20Start&event_property=Completed%20Task&type=boolean&is_requi
 
 #### Body parameters
 
-|<div class="big-column">Name</div>|Description|
-|-----|---------|
-|`event_property`| <span class="required">Required</span>. String. Name of the event property.|
-|`event_type`|<span class="optional">Optional</span>. String. Name of the event type to which the event property belongs to. If the event property already exists on this event type, Amplitude returns a `409 Conflict` error. If the event property already exists but not on this event type, Amplitiude creates an override for this property. If the event property doesn't exist anywhere, Amplitude doesn't create an override for this property.|
-|`description`|<span class="optional">Optional</span>. String. The event property's description.|
-|`type`| <span class="optional">Optional</span>. String. The event property's data type. Acceptable values are `string`, `number`, `boolean`, `enum`, and `any`|
-|`regex`| <span class="optional">Optional</span>. String. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}` Applies only to the `string` type.|
-|`enum_values`|<span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`. Only applicable to the `enum` type.|
-|`is_array_type`|<span class="optional">Optional</span>. Boolean. Use the `type` parameter to set the type of array elements.|
-|`is_required`|<span class="optional">Optional</span>. Boolean. Marks the property as required. When `true`, Amplitude flags events that are missing this property on the Taxonomy page in the web app.|
-|`classifications`|<span class="optional">Optional</span>. String. List of classifications applicable to this event property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties. Trying to set classifications on an overridden property results in an error. |
+| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `event_property`                   | <span class="required">Required</span>. String. Name of the event property.                                                                                                                                                                                                                                                                                                                                                                |
+| `event_type`                       | <span class="optional">Optional</span>. String. Name of the event type to which the event property belongs to. If the event property already exists on this event type, Amplitude returns a `409 Conflict` error. If the event property already exists but not on this event type, Amplitiude creates an override for this property. If the event property doesn't exist anywhere, Amplitude doesn't create an override for this property. |
+| `description`                      | <span class="optional">Optional</span>. String. The event property's description.                                                                                                                                                                                                                                                                                                                                                          |
+| `type`                             | <span class="optional">Optional</span>. String. The event property's data type. Acceptable values are `string`, `number`, `boolean`, `enum`, and `any`                                                                                                                                                                                                                                                                                     |
+| `regex`                            | <span class="optional">Optional</span>. String. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}` Applies only to the `string` type.                                                                                                                                                                                                          |
+| `enum_values`                      | <span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`. Only applicable to the `enum` type.                                                                                                                                                                                                                                                                          |
+| `is_array_type`                    | <span class="optional">Optional</span>. Boolean. Use the `type` parameter to set the type of array elements.                                                                                                                                                                                                                                                                                                                               |
+| `is_required`                      | <span class="optional">Optional</span>. Boolean. Marks the property as required. When `true`, Amplitude flags events that are missing this property on the Taxonomy page in the web app.                                                                                                                                                                                                                                                   |
+| `classifications`                  | <span class="optional">Optional</span>. String. List of classifications applicable to this event property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties. Trying to set classifications on an overridden property results in an error.                                                                                                                               |
 
 #### 200 OK response
 
@@ -1000,9 +1091,9 @@ event_type=Onboard%20Start
 
 #### Body parameters
 
-|<div class="big-column">Name</div>|Description|
-|-----|---------|
-|`event_type`|<span class="optional">Optional</span>. Name of the event type to which the event properties belong to. If `event_type` is present, Amplitude returns all event properties associated with this event type. If `event_type` isn't present, Amplitude returns all shared event properties in your tracking plan.|
+| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                                                                                     |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `event_type`                       | <span class="optional">Optional</span>. Name of the event type to which the event properties belong to. If `event_type` is present, Amplitude returns all event properties associated with this event type. If `event_type` isn't present, Amplitude returns all shared event properties in your tracking plan. |
 
 #### 200 OK response
 
@@ -1094,15 +1185,15 @@ event_type=Onboard%20Start
 
 #### Path parameters
 
-|<div class="big-column">Name</div>|Description|
-|-----|---------|
-|`event_property`|<span class="required">Required</span>. The event property name.|
+| <div class="big-column">Name</div> | Description                                                      |
+| ---------------------------------- | ---------------------------------------------------------------- |
+| `event_property`                   | <span class="required">Required</span>. The event property name. |
 
 #### Body parameter
 
-|<div class="big-column">Name</div>|Description|
-|-----|---------|
-|`event_type`|<span class="optional">Optional</span>. Name of the event type to which the event properties belong to. If `event_type` is present, Amplitude returns all event properties associated with this event type.  If `event_type` isn't present, Amplitude returns all shared properties in your tracking plan.|
+| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                                                                                |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `event_type`                       | <span class="optional">Optional</span>. Name of the event type to which the event properties belong to. If `event_type` is present, Amplitude returns all event properties associated with this event type.  If `event_type` isn't present, Amplitude returns all shared properties in your tracking plan. |
 
 #### 200 OK response
 
@@ -1200,24 +1291,24 @@ event_type=Onboard%20Start&description=User%20completed%20an%20onboarding%20task
 
 #### Path parameters
 
-|<div class="big-column">Name</div>|Description|
-|-----|---------|
-|`event-property`|<span class="required">Required</span>. Name of the event property.|
+| <div class="big-column">Name</div> | Description                                                         |
+| ---------------------------------- | ------------------------------------------------------------------- |
+| `event-property`                   | <span class="required">Required</span>. Name of the event property. |
 
 #### Body parameters
 
-|<div class="big-column">Name</div>|Description|
-|-----|---------|
-|`event_type`|<span class="optional">Optional</span>. Name of the event type to which the event properties belong to. If the event property already exists on this event type, Amplitude returns a `409 Conflict` error. If the event property already exists but not on this event type, Amplitude creates an override for this property. If the event property doesn't exist anywhere, Amplitude doesn't create an override for this property.|
-|`overrideScope`|<span class="optional">Optional</span>. Determines how we should act on this event property. Only applicable if event_type is present. If `overrideScope` is not present, Amplitude updates property override on the event if it exists on the event, or the shared property if no override exists on the event. With `overrideScope: "override"`, Amplitude creates an override if none exists on the event, then updates that overridden property, or it updates the existing override if one already exists. With `overrideScope: "shared"`, Amplitude removes the property override on the event if one exists on the event, then updates the shared property, or updates the shared property if no property override exists.|
-|`description`|<span class="optional">Optional</span>. String. The event property's description.|
-|`new_event_property_value`|<span class="optional">Optional</span>. String. The new name of the event property.|
-|`type`| <span class="optional">Optional</span>. String. The event property's data type. Acceptable values are `string`, `number`, `boolean`, `enum`, and `any`|
-|`regex`|<span class="optional">Optional</span>. String. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}` |
-|`enum_values`| <span class="optional">Optional</span>. String. List of allowed values.|
-|`is_array_type`| <span class="optional">Optional</span>. Boolean. Specifies whether the property value is an array.|
-|`is_required`| <span class="optional">Optional</span>. Boolean. Marks the property as required.|
-|`classifications`|<span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this event property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties, and trying to set classifications on an overridden property results in an error. With `overrideScope: "override"`, Amplitude returns an error for the same reason mentioned in the previous point. |
+| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `event_type`                       | <span class="optional">Optional</span>. Name of the event type to which the event properties belong to. If the event property already exists on this event type, Amplitude returns a `409 Conflict` error. If the event property already exists but not on this event type, Amplitude creates an override for this property. If the event property doesn't exist anywhere, Amplitude doesn't create an override for this property.                                                                                                                                                                                                                                                                                                |
+| `overrideScope`                    | <span class="optional">Optional</span>. Determines how we should act on this event property. Only applicable if event_type is present. If `overrideScope` is not present, Amplitude updates property override on the event if it exists on the event, or the shared property if no override exists on the event. With `overrideScope: "override"`, Amplitude creates an override if none exists on the event, then updates that overridden property, or it updates the existing override if one already exists. With `overrideScope: "shared"`, Amplitude removes the property override on the event if one exists on the event, then updates the shared property, or updates the shared property if no property override exists. |
+| `description`                      | <span class="optional">Optional</span>. String. The event property's description.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `new_event_property_value`         | <span class="optional">Optional</span>. String. The new name of the event property.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| `type`                             | <span class="optional">Optional</span>. String. The event property's data type. Acceptable values are `string`, `number`, `boolean`, `enum`, and `any`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `regex`                            | <span class="optional">Optional</span>. String. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `enum_values`                      | <span class="optional">Optional</span>. String. List of allowed values.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `is_array_type`                    | <span class="optional">Optional</span>. Boolean. Specifies whether the property value is an array.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `is_required`                      | <span class="optional">Optional</span>. Boolean. Marks the property as required.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `classifications`                  | <span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this event property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties, and trying to set classifications on an overridden property results in an error. With `overrideScope: "override"`, Amplitude returns an error for the same reason mentioned in the previous point.                                                                                                                                                                                                                        |
 
 #### 200 OK response
 
@@ -1246,7 +1337,7 @@ Some failed requests return a `409 Conflict` and an error message with more deta
 
 ### Delete an event property
 
-Delete an event property. Send a `DELETE` request with the event property as a path parameter and the event type in the request body.
+Delete an event property. Send a `DELETE` request with the event property as a path parameter and, optionally, the event type in the request body.
 
 `DELETE https://amplitude.com/api/2/taxonomy/event-property/:event-property`
 
@@ -1301,16 +1392,101 @@ event_type=Onboarding%20Start
 
 #### Path parameters
 
-|<div class="big-column">Name</div>|Description|
-|-----|---------|
-|`event_property`|<span class="required">Required</span>. The event property name.|
+| <div class="big-column">Name</div> | Description                                                      |
+| ---------------------------------- | ---------------------------------------------------------------- |
+| `event_property`                   | <span class="required">Required</span>. The event property name. |
 
 #### Body parameter
 
-|<div class="big-column">Name</div>|Description|
-|-----|---------|
-|`event_type`|<span class="required">Required</span>. Name of the event type to which the event properties belong to.|
+| <div class="big-column">Name</div> | Description                                                                                          |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `event_type`                       | <span class="optional">Optional</span>. Name of the event type to which the event properties belong. |
 
+#### Behavior
+
+If the event type is available:
+
+| Event property   | Behavior in Amplitude          |
+| ---------------- | ------------------------------ |
+| `exists`         | Removes it from the event type |
+| `does not exist` | Returns an error               |
+
+If the event type isn't available, Amplitude operates on the global event property.
+
+| Event property   | Behavior in Amplitude          |
+| ---------------- | ------------------------------ |
+| `live` | Marks the event property as `deleted` |
+| `unexpected` | Adds the event property to the tracking plan, and marks it as `deleted` |
+| `planned` | Removes the event property from the tracking plan |
+| `transformed` | Returns an error because transformed event properties aren't deletable |
+| `deleted` or `not found` | Returns an error. |
+
+
+#### 200 OK response
+
+A successful request returns a `200 OK` status and a JSON body.
+
+```json
+{
+    "success": true
+}
+```
+
+### Restore an event property
+
+Restore an event property. Send a `POST` request with the event property as a path parameter.
+
+`POST https://amplitude.com/api/2/taxonomy/event-property/:event-property/restore`
+
+{{partial:tabs tabs="cURL, HTTP"}}
+{{partial:tab name="cURL"}}
+```bash
+curl --location --request POST 'https://amplitude.com/api/2/taxonomy/event-property/EVENT_PROPERTY/restore' \
+--header 'Authorization: Basic {api-key}:{secret-key}' # credentials must be base64 encoded
+```
+{{/partial:tab}}
+{{partial:tab name="HTTP"}}
+```bash
+POST /api/2/taxonomy/event-property/EVENT_PROPERTY/restore HTTP/1.1
+Host: amplitude.com
+Authorization: Basic {api-key}:{secret-key} # credentials must be base64 encoded
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+{{partial:collapse name="Example: Delete an event property"}}
+This example restores the event property "Completed Task".
+
+{{partial:tabs tabs="cURL, HTTP"}}
+{{partial:tab name="cURL"}}
+```bash
+curl --location --request POST 'https://amplitude.com/api/2/taxonomy/event-property/Completed Task/restore' \
+--header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
+```
+{{/partial:tab}}
+{{partial:tab name="HTTP"}}
+```bash
+POST /api/2/taxonomy/event-property/Completed Task/restore HTTP/1.1
+Host: amplitude.com
+Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+{{/partial:collapse}}
+
+
+#### Path parameters
+
+| <div class="big-column">Name</div> | Description                                                      |
+| ---------------------------------- | ---------------------------------------------------------------- |
+| `event_property`                   | <span class="required">Required</span>. The event property name. |
+
+#### Behavior
+
+| Event property   | Behavior in Amplitude          |
+| ---------------- | ------------------------------ |
+| `deleted` | Restores the event property |
+| `not deleted` or `not found` | Returns an error|
 
 #### 200 OK response
 
@@ -1383,15 +1559,15 @@ user_property=User%20Type&description=Describes%20whether%20the%20user%20is%20a%
 
 #### Body parameter
 
-|<div class="big-column">Name</div>|Description|
-|-----|---------|
-|`user_property`|<span class="required">Required</span>. String. Name of the user property type.|
-|`description`|<span class="optional">Optional</span>. String. Details to add to the user property type.|
-|`type`|<span class="optional">Optional</span>. String. The user property's data type. Acceptable values are `string`, `number`, `boolean`, `enum`, and `any`.|
-|`regex`| <span class="optional">Optional</span>. String. Regular expression or custom regex used for pattern matching and more complex values. For example, 'zip code' property must have pattern `[0-9]{5}`.|
-|`enum_values`|<span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`.|
-|`is_array_type`|<span class="optional">Optional</span>. Boolean. Specifies whether the property value is an array.|
-|`classifications`|<span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this user property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. |
+| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                   |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `user_property`                    | <span class="required">Required</span>. String. Name of the user property type.                                                                                                                                                               |
+| `description`                      | <span class="optional">Optional</span>. String. Details to add to the user property type.                                                                                                                                                     |
+| `type`                             | <span class="optional">Optional</span>. String. The user property's data type. Acceptable values are `string`, `number`, `boolean`, `enum`, and `any`.                                                                                        |
+| `regex`                            | <span class="optional">Optional</span>. String. Regular expression or custom regex used for pattern matching and more complex values. For example, 'zip code' property must have pattern `[0-9]{5}`.                                          |
+| `enum_values`                      | <span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`.                                                                                                                 |
+| `is_array_type`                    | <span class="optional">Optional</span>. Boolean. Specifies whether the property value is an array.                                                                                                                                            |
+| `classifications`                  | <span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this user property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. |
 
 #### Response
 
@@ -1561,9 +1737,9 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 ##### Path parameters
 
-|<div class="big-column">Name</div>|Description|
-|-----|---------|
-|`user_property`|<span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`.|
+| <div class="big-column">Name</div> | Description                                                                                               |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `user_property`                    | <span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`. |
 
 
 #### 200 OK response
@@ -1661,21 +1837,21 @@ new_user_property_value=subscription_type&description=The%20user's%20subscriptio
 
 #### Path parameters
 
-|<div class="big-column">Name</div>|Description|
-|-----|---------|
-|`user_property`|<span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`.|
+| <div class="big-column">Name</div> | Description                                                                                               |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `user_property`                    | <span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`. |
 
 #### Body parameters
 
-|<div class="big-column">Name</div>|Description|
-|-----|---------|
-|`new_user_property_value`| <span class="optional">Optional</span>. String. New name of the user property type.|
-|`description`| <span class="optional">Optional</span>. String. Details to add to the user property type.|
-|`type`|<span class="optional">Optional</span>. String. The user property's data type. Acceptable values are `string`, `number`, `boolean`, `enum`, and `any`.|
-|`regex`| <span class="optional">Optional</span>. String. Regular expression or custom regex used for pattern matching and more complex values. For example, 'zip code' property must have pattern `[0-9]{5}`. Only applicable to the `string` type.|
-|`enum_values`| <span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`. Only applicable to the `enum` type.|
-|`is_array_type`|<span class="optional">Optional</span>. Boolean. Specifies whether the property value is an array. Use the `type` parameter to set the type of array elements.|
-|`classifications`|<span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this user property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. |
+| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                   |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `new_user_property_value`          | <span class="optional">Optional</span>. String. New name of the user property type.                                                                                                                                                           |
+| `description`                      | <span class="optional">Optional</span>. String. Details to add to the user property type.                                                                                                                                                     |
+| `type`                             | <span class="optional">Optional</span>. String. The user property's data type. Acceptable values are `string`, `number`, `boolean`, `enum`, and `any`.                                                                                        |
+| `regex`                            | <span class="optional">Optional</span>. String. Regular expression or custom regex used for pattern matching and more complex values. For example, 'zip code' property must have pattern `[0-9]{5}`. Only applicable to the `string` type.    |
+| `enum_values`                      | <span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`. Only applicable to the `enum` type.                                                                             |
+| `is_array_type`                    | <span class="optional">Optional</span>. Boolean. Specifies whether the property value is an array. Use the `type` parameter to set the type of array elements.                                                                                |
+| `classifications`                  | <span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this user property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. |
 
 #### Response
 
@@ -1708,7 +1884,6 @@ curl --location --request DELETE 'https://amplitude.com/api/2/taxonomy/user-prop
 {{/partial:tab}}
 {{partial:tab name="HTTP"}}
 ```bash
-
 DELETE /api/2/taxonomy/user-property/USER_PROPERTY HTTP/1.1
 Host: amplitude.com
 Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
@@ -1729,7 +1904,6 @@ curl --location --request DELETE 'https://amplitude.com/api/2/taxonomy/user-prop
 {{/partial:tab}}
 {{partial:tab name="HTTP"}}
 ```bash
-
 DELETE /api/2/taxonomy/user-property/gp:interests HTTP/1.1
 Host: amplitude.com
 Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
@@ -1740,9 +1914,20 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 #### Path parameters
 
-|<div class="big-column">Name</div>|Description|
-|-----|---------|
-|`user_property`|<span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`.|
+| <div class="big-column">Name</div> | Description                                                                                               |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `user_property`                    | <span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`. |
+
+#### Behavior
+
+| User property   | Behavior in Amplitude          |
+| ---------------- | ------------------------------ |
+| `live` | Marks the user property as `deleted` |
+| `unexpected` | Adds the user property to the tracking plan, and marks it as `deleted` |
+| `planned` | Removes the user property from the tracking plan |
+| `transformed` | Returns an error. Transformed user properties aren't deletable |
+| `Amplitude User Property` | Returns an error. Amplitude user properties aren't deletable |
+| `deleted` or `not found` | Returns an error |
 
 #### 200 OK response
 
@@ -1754,18 +1939,70 @@ A successful request returns a `200 OK` response and a JSON message.
 }
 ```
 
-#### 409 conflict response
 
-A failed request returns a `409 Bad Request` status and an error message.
+### Restore a user property
+
+Restore a single user property, by name.
+
+`POST https://amplitude.com/api/2/taxonomy/user-property/USER_PROPERTY/restore`
+
+{{partial:tabs tabs="cURL, HTTP"}}
+{{partial:tab name="cURL"}}
+```bash
+curl --location --request POST 'https://amplitude.com/api/2/taxonomy/user-property/USER_PROPERTY/restore' \
+-u '{api_key}:{secret_key}'
+```
+{{/partial:tab}}
+{{partial:tab name="HTTP"}}
+```bash
+POST /api/2/taxonomy/user-property/USER_PROPERTY/restore HTTP/1.1
+Host: amplitude.com
+Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
+
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+{{partial:collapse name="Example: Restore a user property"}}
+This example restores a custom user property `interests`. Notice that the user property is prefixed with `gp:`.
+
+{{partial:tabs tabs="cURL, HTTP"}}
+{{partial:tab name="cURL"}}
+```bash
+curl --location --request POST 'https://amplitude.com/api/2/taxonomy/user-property/gp:interests/restore' \
+--header 'Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA='
+```
+{{/partial:tab}}
+{{partial:tab name="HTTP"}}
+```bash
+POST /api/2/taxonomy/user-property/gp:interests/restore HTTP/1.1
+Host: amplitude.com
+Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+{{/partial:collapse}}
+
+#### Path parameters
+
+| <div class="big-column">Name</div> | Description                                                                                               |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `user_property`                    | <span class="required">Required</span>. The user property name. Prefix custom user properties with `gp:`. |
+
+#### Behavior
+
+| User property   | Behavior in Amplitude          |
+| ---------------- | ------------------------------ |
+| `deleted` | Restores the user property |
+| `not deleted` or `not found` | Returns an error |
+
+#### 200 OK response
+
+A successful request returns a `200 OK` response and a JSON message.
 
 ```json
 {
-    "success": false,
-    "errors": [
-        {
-            "message": "Attempted to remove a user property, \"sdf\", that is not a planned user property."
-        }
-    ]
+    "success": true
 }
 ```
 
@@ -1835,16 +2072,16 @@ group_type=Group%201&group_property=Group%20Property%201&type=boolean&descriptio
 
 #### Body parameters
 
-|<div class="big-column">Name</div>|Description|
-|-----|---------|
-|`group_property`| <span class="required">Required</span>. String. Name of the group property. Prefix custom group properties with `grp:`.|
-|`group_type`|<span class="optional">Optional</span>. String. Name of the group type the group property belongs to. If the group type doesn't exist, Amplitude returns a `404 Not Found` error. If the group property already exists on this group type, Amplitude returns a `409 Conflict` error. If the group property already exists but not on this group type, Amplitude creates an override for this property. If the group property doesn't exist anywhere, Amplitude doesn't create an override for this property. If the group property exists and is an Amplitude-sourced group property, providing any extra arguments other than `group_property` and `group_type` results in an error because you can't edit Amplitude-sourced group properties. |
-|`description`|<span class="optional">Optional</span>. String. The group property's description.|
-|`type`| <span class="optional">Optional</span>. String. Data type of the group property. It must be one of `any` (default), `string` (default if array type is true), `number`, `boolean`, `enum`|
-|`regex`| <span class="optional">Optional</span>. String. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}` Applies only to the `string` type.|
-|`enum_values`|<span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`. Only applicable to the `enum` type.|
-|`is_array_type`|<span class="optional">Optional</span>. Boolean. Property is an array type.  Use the `type` parameter to set the type of array elements. |
-|`classifications`|<span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this group property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties, and trying to set classifications on an overridden property results in an error. |
+| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `group_property`                   | <span class="required">Required</span>. String. Name of the group property. Prefix custom group properties with `grp:`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `group_type`                       | <span class="optional">Optional</span>. String. Name of the group type the group property belongs to. If the group type doesn't exist, Amplitude returns a `404 Not Found` error. If the group property already exists on this group type, Amplitude returns a `409 Conflict` error. If the group property already exists but not on this group type, Amplitude creates an override for this property. If the group property doesn't exist anywhere, Amplitude doesn't create an override for this property. If the group property exists and is an Amplitude-sourced group property, providing any extra arguments other than `group_property` and `group_type` results in an error because you can't edit Amplitude-sourced group properties. |
+| `description`                      | <span class="optional">Optional</span>. String. The group property's description.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| `type`                             | <span class="optional">Optional</span>. String. Data type of the group property. It must be one of `any` (default), `string` (default if array type is true), `number`, `boolean`, `enum`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `regex`                            | <span class="optional">Optional</span>. String. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}` Applies only to the `string` type.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| `enum_values`                      | <span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`. Only applicable to the `enum` type.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| `is_array_type`                    | <span class="optional">Optional</span>. Boolean. Property is an array type.  Use the `type` parameter to set the type of array elements.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `classifications`                  | <span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this group property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties, and trying to set classifications on an overridden property results in an error.                                                                                                                                                                                                                                                                                                                                                        |
 
 #### 200 OK response
 
@@ -1930,9 +2167,9 @@ group_type=Group%201
 
 #### Body parameters
 
-|<div class="big-column">Name</div>|Description|
-|-----|---------|
-|`group_type`|<span class="optional">Optional</span>. Name of the group type. If `group_type` is present, Amplitude returns all group properties associated with this group type. If `group_type` isn't present, Amplitude returns all shared group properties in your tracking plan.|
+| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                                             |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `group_type`                       | <span class="optional">Optional</span>. Name of the group type. If `group_type` is present, Amplitude returns all group properties associated with this group type. If `group_type` isn't present, Amplitude returns all shared group properties in your tracking plan. |
 
 #### 200 OK response
 
@@ -2022,15 +2259,15 @@ group_type=Group%201
 
 #### Path parameters
 
-|<div class="big-column">Name</div>|Description|
-|-----|---------|
-|`group_property`|<span class="required">Required</span>. The group property name. Prefix custom group properties with `grp:`.|
+| <div class="big-column">Name</div> | Description                                                                                                  |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `group_property`                   | <span class="required">Required</span>. The group property name. Prefix custom group properties with `grp:`. |
 
 #### Query or Body parameter
 
-|<div class="big-column">Name</div>|Description|
-|-----|---------|
-|`group_type`|<span class="optional">Optional</span>. Name of the group type. If `group_type` is provided, we return all group properties associated with this group type. If `group_type` is not provided, we return all shared group properties in your tracking plan.|
+| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                                |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `group_type`                       | <span class="optional">Optional</span>. Name of the group type. If `group_type` is provided, we return all group properties associated with this group type. If `group_type` is not provided, we return all shared group properties in your tracking plan. |
 
 #### 200 OK response
 
@@ -2127,23 +2364,23 @@ group_type=Group%201&description=First%20Group%20Property%20Updated&new_group_pr
 
 #### Path parameters
 
-|<div class="big-column">Name</div>|Description|
-|-----|---------|
-|`group_property`|<span class="required">Required</span>. Name of the group property.  Prefix custom group properties with `grp:`. Amplitude-sourced group properties (names without the `grp:` prefix) aren't editable. |
+| <div class="big-column">Name</div> | Description                                                                                                                                                                                            |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `group_property`                   | <span class="required">Required</span>. Name of the group property.  Prefix custom group properties with `grp:`. Amplitude-sourced group properties (names without the `grp:` prefix) aren't editable. |
 
 #### Body parameters
 
-|<div class="big-column">Name</div>|Description|
-|-----|---------|
-|`group_type`|<span class="optional">Optional</span>. Name of the group type the group property belongs to.  If the group type doesn't exist, Amplitude returns a `404 Not Found` error. |
-|`overrideScope`|<span class="optional">Optional</span>. Determines how we should act on this group property.  Only applicable if `group_type` is present. If `overrideScope` is not present, Amplitude updates property override on the group type if it exists on the group type, or the shared property if no override exists on the group type. With `overrideScope: "override"`, Amplitude creates an override if none exists on the group type, then updates that overridden property, or updates the existing override if one already exists. With `overrideScope: "shared"`, Amplitude removes the property override on the group type if one exists on the group type, then updates the shared property, or it updates the shared property if no property override exists.|
-|`description`|<span class="optional">Optional</span>. String. Description of the group property.|
-|`new_group_property_value`|<span class="optional">Optional</span>. String. The new name of the group property.|
-|`type`| <span class="optional">Optional</span>. String. Data type of the group property. It must be one of `any` (default), `string` (default if array type is true), `number`, `boolean`, `enum`|
-|`regex`|<span class="optional">Optional</span>. String. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}`  Applies only to the `string` type.|
-|`enum_values`| <span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`. Only applicable to the `enum` type.|
-|`is_array_type`| <span class="optional">Optional</span>. Boolean. Property is an array type. Use the `type` parameter to set the type of array elements.|
-|`classifications`|<span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this group property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties. Trying to set classifications on an overridden property results in an error. |
+| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `group_type`                       | <span class="optional">Optional</span>. Name of the group type the group property belongs to.  If the group type doesn't exist, Amplitude returns a `404 Not Found` error.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `overrideScope`                    | <span class="optional">Optional</span>. Determines how we should act on this group property.  Only applicable if `group_type` is present. If `overrideScope` is not present, Amplitude updates property override on the group type if it exists on the group type, or the shared property if no override exists on the group type. With `overrideScope: "override"`, Amplitude creates an override if none exists on the group type, then updates that overridden property, or updates the existing override if one already exists. With `overrideScope: "shared"`, Amplitude removes the property override on the group type if one exists on the group type, then updates the shared property, or it updates the shared property if no property override exists. |
+| `description`                      | <span class="optional">Optional</span>. String. Description of the group property.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `new_group_property_value`         | <span class="optional">Optional</span>. String. The new name of the group property.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `type`                             | <span class="optional">Optional</span>. String. Data type of the group property. It must be one of `any` (default), `string` (default if array type is true), `number`, `boolean`, `enum`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `regex`                            | <span class="optional">Optional</span>. String. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}`  Applies only to the `string` type.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `enum_values`                      | <span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`. Only applicable to the `enum` type.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `is_array_type`                    | <span class="optional">Optional</span>. Boolean. Property is an array type. Use the `type` parameter to set the type of array elements.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `classifications`                  | <span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this group property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties. Trying to set classifications on an overridden property results in an error.                                                                                                                                                                                                                                                                                                                                                                               |
 
 #### 200 OK response
 
