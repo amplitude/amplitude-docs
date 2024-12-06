@@ -59,7 +59,7 @@ The confidence level in a multi-armed bandit experiment has a different role tha
 
 In multi-armed bandit experiments, the role of the minimum detectable effect (MDE) is to help calculate the duration estimate. Since these experiments are automated and about optimization, the MDE doesn't affect the experiment once it’s running.
 
-When calculating the duration estimate prior to starting the experiment, Amplitude Experiment simulates what would happen if the same baseline mean (computed from historical data) is shared by all variants except one: when measuring an increase, this variant would have `mean * (1+MDE)`; when measuring a decrease, it would be mean * (1-MDE). From there, Amplitude Experiment calculates how long it could take for the multi-armed bandit to assign all traffic to one variant. The duration estimate is capped at 31 days.
+When calculating the duration estimate prior to starting the experiment, Amplitude Experiment simulates what would happen if the same baseline mean (computed from historical data) is shared by all variants except one: when measuring an increase, this variant would have `mean * (1+MDE)`; when measuring a decrease, it would be `mean * (1-MDE)`. From there, Amplitude Experiment calculates how long it could take for the multi-armed bandit to assign all traffic to one variant. The duration estimate is capped at 31 days.
 
 ### Displayed results
 
@@ -70,6 +70,6 @@ The data quality card isn't visible for multi-armed bandit experiments. Most of 
 The Bandits card is very similar to the non-cumulative exposure chart in the Monitor card, but is normalized to 100%, enabling you to easily visualize the percentage of traffic each variant is getting on that day.
 
 ## Notifications
-When a multi-armed bandit allocates 70%, 80%, 90%, and 100% of an experiment’s traffic to a variant, Amplitude Experiment sends a notification to the creator of the experiment. These can be through either Slack or email. 
+When a multi-armed bandit allocates 70%, 80%, 90%, and 100% of an experiment’s traffic to a variant, Amplitude Experiment sends a notification to the editors of the experiment. If the bandit takes a long time to terminate or the end date is reached, then Amplitude Experiment also sends a notification. These can be through either Slack or email. For more information, see [Integrate Slack with Amplitude](/docs/analytics/integrate-slack).
 
 To set up your notifications, navigate to Settings > Personal settings > Notifications.
