@@ -70,6 +70,6 @@ The data quality card isn't visible for multi-armed bandit experiments. Most of 
 The Bandits card is very similar to the non-cumulative exposure chart in the Monitor card, but is normalized to 100%, enabling you to easily visualize the percentage of traffic each variant is getting on that day.
 
 ## Notifications
-When a multi-armed bandit allocates 70%, 80%, 90%, and 100% of an experiment’s traffic to a variant, Amplitude Experiment sends a notification to the editors of the experiment. If the bandit will take a long time to terminate or the end date is reached, then Amplitude Experiment will also send a notification. These can be through either Slack or email. To setup notifications in Slack, follow the instructions [here](/docs/analytics/integrate-slack).
+When a multi-armed bandit allocates 70%, 80%, 90%, and 100% of an experiment’s traffic to a variant, Amplitude Experiment sends a notification to the editors of the experiment. If the bandit takes a long time to terminate or the end date is reached, then Amplitude Experiment also sends a notification. These can be through either Slack or email. For more information, see [Integrate Slack with Amplitude](/docs/analytics/integrate-slack).
 
 To set up your notifications, navigate to Settings > Personal settings > Notifications.
