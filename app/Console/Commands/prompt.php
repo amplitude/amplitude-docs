@@ -162,7 +162,8 @@ class prompt extends Command
             options: fn (string $value) => $collectionsList
                 ->filter(fn ($title) => Str::contains($title, $value, ignoreCase: true))
                 ->values()
-                ->all()
+                ->all(),
+            required: true
         );
                     
         // Get the collection details
