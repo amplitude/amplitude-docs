@@ -255,15 +255,15 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 
 **LocalEvaluationConfig**
 
-| <div class="big-column">Name</div> | Description | Default Value |
-| --- | --- | --- |
-| `debug` | Set to `true` to enable debug logging. | `false` |
-| `server_zone` | The Amplitude data center to use. Either `ServerZone.US` or `ServerZone.EU` | `ServerZone.US` |
-| `server_url` | The host to fetch flag configurations from. | `https://api.lab.amplitude.com` |
-| `flag_config_polling_interval_millis` | The interval to poll for updated flag configs after calling [`start()`](#start) | `30000` |
-| `flag_config_poller_request_timeout_millis` | The timeout for the request made by the flag config poller | `10000` |
-| `assignment_config` | Configuration for automatically tracking assignment events after an evaluation. | `None` |
-| `cohort_sync_config` | Configuration to enable cohort downloading for [local evaluation cohort targeting](#local-evaluation-cohort-targeting). | `None` |
+| <div class="big-column">Name</div> | Description                                                                                                             | Default Value                   |
+| --- |-------------------------------------------------------------------------------------------------------------------------|---------------------------------|
+| `debug` | Set to `True` to enable debug logging.                                                                                  | `False`                         |
+| `server_zone` | The Amplitude data center to use. Either `ServerZone.US` or `ServerZone.EU`                                             | `ServerZone.US`                 |
+| `server_url` | The host to fetch flag configurations from.                                                                             | `https://api.lab.amplitude.com` |
+| `flag_config_polling_interval_millis` | The interval to poll for updated flag configs after calling [`start()`](#start)                                         | `30000`                         |
+| `flag_config_poller_request_timeout_millis` | The timeout for the request made by the flag config poller                                                              | `10000`                         |
+| `assignment_config` | Configuration for automatically tracking assignment events after an evaluation.                                         | `None`                          |
+| `cohort_sync_config` | Configuration to enable cohort downloading for [local evaluation cohort targeting](#local-evaluation-cohort-targeting). | `None`                          |
 
 **AssignmentConfig**
 
