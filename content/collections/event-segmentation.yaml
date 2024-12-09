@@ -1,4 +1,9 @@
 title: 'Event Segmentation'
+sites:
+  - en
+  - jp
+  - ko
+propagate: false
 template: default
 layout: layout
 mount: d0943b9a-8fef-42c5-98f9-063739a68867
