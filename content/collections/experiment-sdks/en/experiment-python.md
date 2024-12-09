@@ -271,6 +271,7 @@ If you're using Amplitude's EU data center, configure the `server_zone` option o
 | --- | --- | --- |
 | `api_key` | The analytics API key and NOT the experiment deployment key | *required* |
 | `cache_capacity` | The maximum number of assignments stored in the assignment cache | `65536` |
+| `send_evaluated_props`| Set to `True` to send properties of the evaluated user in assignment events | `False` |
 | [Analytics SDK Options](/docs/sdks/analytics-sdks/python/python-sdk#configuration) | Options to configure the underlying Amplitude Analytics SDK used to track assignment events |  |
 
 **CohortSyncConfig**
