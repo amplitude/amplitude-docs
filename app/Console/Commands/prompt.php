@@ -1,7 +1,7 @@
 <?php
 /**
  * TODO:
- * 
+ *  1. Hide already translated items from the collection table
  */
 namespace App\Console\Commands;
 
@@ -44,7 +44,7 @@ class prompt extends Command
     public function deepl($content, $language){
         $authKey = getenv('DEEPL_API_KEY'); 
         $translator = new \DeepL\Translator($authKey);
-        return $translator->translateText($content, null, $language);
+        return $translator->translateText($content, ["model_type" => "prefer_quality_optimized"], $language);
     } 
 
     public function preProcess($content){
@@ -213,16 +213,17 @@ class prompt extends Command
                     
         // Get the collection details
         $collectionDetails = Entry::whereCollection($collection[0]);
-
         $results = [];
         // Iterate through and build the array that powers the table
         foreach ($collectionDetails as $object) {
-            $results[] = [
-                'id' => $object->id,
-                'title' => $object->title,
-                'ko' => $object->ko ? '✅' : '❌',
-                'jp' => $object->jp ? '✅' : '❌',
-            ];
+            if ($object->locale == 'en') {
+                $results[] = [
+                    'id' => $object->id,
+                    'title' => $object->title,
+                    'ko' => $object->ko ? '✅' : '❌',
+                    'jp' => $object->jp ? '✅' : '❌',
+                ];
+            }
         }
        
         // Render the info table
