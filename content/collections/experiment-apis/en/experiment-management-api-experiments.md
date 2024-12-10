@@ -1108,7 +1108,7 @@ Create a new feature experiment.
 |<div class="med-big-column">Name</div>|Requirement|Type|Description|
 |---|---|---|---|
 |`projectId`| Required | string | The project's ID. |
-|`key`| Required | string | The experiment key. |
+|`key`| Required | string | The flag key. |
 |`name`| Optional | string | The experiment name. |
 |`description`| Optional | string | Description for the experiment.|
 |`variants`| Optional | object array | Array of [`variants`](#variants). |
