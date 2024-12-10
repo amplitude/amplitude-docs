@@ -10,6 +10,7 @@ return array(
     'AMFStream' => $vendorDir . '/james-heinrich/getid3/getid3/module.audio-video.flv.php',
     'AVCSequenceParameterSetReader' => $vendorDir . '/james-heinrich/getid3/getid3/module.audio-video.flv.php',
     'App\\Console\\Commands\\TranslateArticle' => $baseDir . '/app/Console/Commands/TranslateArticle.php',
+    'App\\Console\\Commands\\prompt' => $baseDir . '/app/Console/Commands/prompt.php',
     'App\\Console\\Commands\\testCreate' => $baseDir . '/app/Console/Commands/testCreate.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',

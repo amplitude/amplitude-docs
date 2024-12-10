@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * TODO:
+ * 
+ */
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
@@ -13,6 +16,7 @@ use function Laravel\Prompts\select;
 use function Laravel\Prompts\text;
 use function Laravel\Prompts\multiselect;
 use function Laravel\Prompts\info;
+use function Laravel\Prompts\confirm;
 
 
 class prompt extends Command
@@ -36,9 +40,19 @@ class prompt extends Command
      * Takes article ID and locales as input
      */
 
-    public function translate($article_id, $locales) {
+
+    public function deepl($content, $language){
         $authKey = getenv('DEEPL_API_KEY'); 
         $translator = new \DeepL\Translator($authKey);
+        return $translator->translateText($content, null, $language);
+    } 
+
+    public function preProcess($content){
+        
+    }
+
+    public function translate($article_id, $locales) {
+        
         $debug = false;
             
         $entry = Entry::find($article_id);
@@ -48,8 +62,10 @@ class prompt extends Command
         $collectionHandle = $entry->collection;
         $blueprint = $entry->blueprint;
         $slug = $entry->slug;
+        $exists = false;
 
         $goals_translated = [];
+
 
         // Run translation for each locale passed
         foreach ($locales as $locale) {
@@ -89,17 +105,32 @@ class prompt extends Command
                     return $placeholder;
                 }, $preprocessedContent);
             }
-            // Translate the preprocessed content
+            
+            // If a translation exists for the languge, show the date it was completed, and give an option to proceed.
+            if ($entry->$locale) {
+                $existing_translation = Entry::find($entry->$locale);
+                $last_translated = date('Y-m-d H:i:s',$existing_translation->translated_on);
+                $confirm = confirm(
+                    label: "This article already had a {$locale} translation and was last translated on {$last_translated}. Continue?"
+                );
+
+                if (!$confirm) {
+                    info("Exiting");
+                    continue;
+                }
+                $exists = true;
+            };
 
             if (!$debug) {
                 try {
-                    $title_translated = $translator->translateText($title, null, $language);
+                    //$title_translated = $translator->translateText($title, null, $language);
+                    $title_translated = prompt::deepl($title, $language);
                     foreach($goals as $goal) {
-                        $goal_translated = $translator->translateText($goal, null, $language);
+                        $goal_translated = prompt::deepl($goal, $language);
                         array_push($goals_translated, $goal_translated->text);
                     }
 
-                    $translatedText = $translator->translateText($preprocessedContent, null, $language);
+                    $translatedText = prompt::deepl($preprocessedContent, $language);
                     $finalContent = $translatedText->text;
                 
                     // Replace placeholders with their original content
@@ -111,19 +142,33 @@ class prompt extends Command
                     return Command::FAILURE;
                 }
 
+                if ($exists) {
+                    $existing_translation->data(['title' => $title_translated->text, 'origin'=> $article_id, 'this_article_will_help_you' => $goals_translated, 'content' => $finalContent, 'translated_on' => time()]);
+                    $existing_translation->save();
+                    $exists = false;
+                } else {
                 $translated_entry = Entry::make()
                                         ->collection($collectionHandle)
                                         ->locale($siteHandle)
                                         ->slug($slug)
                                         ->published(true)
-                                        ->data(['title' => $title_translated->text, 'origin'=> $article_id, 'this_article_will_help_you' => $goals_translated, 'content' => $finalContent])
-                                        ->save();
-                }
-                info("{$title} has been translated to {$locale}.");
-                // Write back to the original article that a translation exists
-                $original_entry = Entry::find($article_id);
-                $original_entry->set($locale, true)->save();
+                                        ->data(['title' => $title_translated->text, 'origin'=> $article_id, 'this_article_will_help_you' => $goals_translated, 'content' => $finalContent, 'translated_on' => time()]);
+
+                    if ($translated_entry->save()) {
+                        // After successful save, get the entry ID
+                        $newEntryId = $translated_entry->id();
+                    } else {
+                        echo "Failed to save the entry.";
+                    }   
+                    info("{$title} has been translated to {$locale}. The id of the new entry is {$translated_entry->id()}");
+                    // Write back to the original article that a translation exists
+                    $original_entry = Entry::find($article_id);
+                    $original_entry->set($locale, $newEntryId)->save();                   
+    
+                }  
             }
+
+        }
 
         
     }

@@ -818,6 +818,7 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
         'AMFStream' => __DIR__ . '/..' . '/james-heinrich/getid3/getid3/module.audio-video.flv.php',
         'AVCSequenceParameterSetReader' => __DIR__ . '/..' . '/james-heinrich/getid3/getid3/module.audio-video.flv.php',
         'App\\Console\\Commands\\TranslateArticle' => __DIR__ . '/../..' . '/app/Console/Commands/TranslateArticle.php',
+        'App\\Console\\Commands\\prompt' => __DIR__ . '/../..' . '/app/Console/Commands/prompt.php',
         'App\\Console\\Commands\\testCreate' => __DIR__ . '/../..' . '/app/Console/Commands/testCreate.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
