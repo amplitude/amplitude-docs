@@ -1034,10 +1034,10 @@ video {
   width: 33.333333%;
 }.w-12 {
   width: 3rem;
+}.w-14 {
+  width: 3.5rem;
 }.w-16 {
   width: 4rem;
-}.w-32 {
-  width: 8rem;
 }.w-4 {
   width: 1rem;
 }.w-48 {
@@ -1057,8 +1057,6 @@ video {
 }.w-max {
   width: -moz-max-content;
   width: max-content;
-}.w-14 {
-  width: 3.5rem;
 }.min-w-\[712px\] {
   min-width: 712px;
 }.max-w-12 {
@@ -1376,6 +1374,9 @@ video {
   font-family: Gellix;
 }.font-sans {
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }.text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -1406,6 +1407,9 @@ video {
 }.text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }.font-bold {
   font-weight: 700;
 }.font-light {
@@ -2219,10 +2223,6 @@ line-height: 1.25rem;
   height: 1.5rem;
 }.hover\:h-8:hover {
   height: 2rem;
-}.hover\:w-32:hover {
-  width: 8rem;
-}.hover\:w-48:hover {
-  width: 12rem;
 }.hover\:w-36:hover {
   width: 9rem;
 }.hover\:rounded:hover {
