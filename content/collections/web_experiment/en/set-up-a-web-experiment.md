@@ -50,8 +50,10 @@ If the script isn’t present on the page you specified, Amplitude Experiment ca
 
 ![web-exp-4.png](/docs/output/img/workflow/web-exp-4.png)
 
+You can also exclude the experiment from running on certain pages. 
+
 12. Next, target the users you want to include in this experiment. If you're familiar with feature experiment targeting, Web Experiment [audience targeting](/docs/web-experiment/targeting#audience-targeting) works differently.
-13. The *Advanced* tab provides several [additional options](/docs/feature-experiment/workflow/finalize-statistical-preferences) for your experiment. Note that several of the options discussed in that article are not available for Web Experiments.
+13. The *Advanced* tab provides several [additional options](/docs/feature-experiment/workflow/finalize-statistical-preferences) for your experiment.
 14. When you’re ready, click *Save and Close* to finish creating your Web Experiment.
 
 ## Test and preview your web experiment
