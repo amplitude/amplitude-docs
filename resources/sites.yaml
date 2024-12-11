@@ -3,12 +3,18 @@ en:
   url: /docs
   locale: en_US
   lang: en
+  attributes:
+    flag: 🇺🇸
 jp:
   name: '{{ config:app:name }} - Japanese'
   url: /docs/jp
   locale: ja-JP
   lang: ja
+  attributes:
+    flag: 🇯🇵
 ko:
   name: '{{ config:app:name }} - Korean'
   url: /docs/ko
   locale: ko
+  attributes:
+    flag: 🇰🇷

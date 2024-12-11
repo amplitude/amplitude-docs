@@ -12,7 +12,16 @@ landing_blurb: 'Use events and properties to create an Event Segmentation analys
 academy_link: 'https://academy.amplitude.com/understand-user-behavior-with-the-event-segmentation-chart?utm_source=help_center&utm_medium=academy_object&utm_campaign=content_page'
 academy_description: 'Learn to understand your users and what drives their behavior with the Event Segmentation chart'
 academy_title: 'Understand User Behavior with the Event Segmentation Chart'
+translations:
+  -
+    locale: ko
+    id: 9215c03e-bf2a-4715-b7c3-cbf1979f6969
+  -
+    locale: jp
+    id: ced17401-c4a3-46fe-acf9-1538c0969d2d
 ---
+
+
 For most users, Event Segmentation is the foundational Amplitude chart. It shows what your users are doing in your product. With the **Event Segmentation chart**, you can build analyses that:
 
 * Measure the top events performed over a selected time period
