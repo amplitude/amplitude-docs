@@ -433,6 +433,23 @@ public void start();
 
 You should wait for `start()` to return before calling [`evaluate()`](#evaluate) to ensure that flag configs are available for use in evaluation.
 
+### Stop
+
+Shuts down the local evaluation client, stopping background processes for updating flag configs and cohorts. 
+
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+fun stop()
+```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+public void stop();
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
 ### Evaluate
 
 Executes the [evaluation logic](/docs/feature-experiment/implementation) using the flags pre-fetched on [`start()`](#start). Evaluate must be given a user object argument and can optionally be passed an array of flag keys if only a specific subset of required flag variants are required.
