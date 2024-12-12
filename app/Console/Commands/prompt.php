@@ -10,6 +10,7 @@ use Statamic\Facades\Collection;
 use Statamic\Facades\Entry;
 use Illuminate\Support\Str;
 use Statamic\Facades\Site;
+use OpenAI;
 use function Laravel\Prompts\multisearch;
 use function Laravel\Prompts\table;
 use function Laravel\Prompts\select;
@@ -47,8 +48,51 @@ class prompt extends Command
         return $translator->translateText($content, null, $language, ["model_type" => "prefer_quality_optimized"]);
     } 
 
-    public function preProcess($content){
+    public function openai($content, $language){
+        $authKey = getenv('OPENAI_API_KEY');
+        $client = OpenAI::client($authKey);
+
+        $systemPrompt = "You are a professional translator with expertise in technical documentation and marketing content. 
+        Translate the following text while:
+        1. Maintaining all markdown formatting
+        2. Preserving any HTML tags
+        3. Keeping code snippets unchanged
+        4. Ensuring cultural appropriateness
+        5. Maintaining the original tone and style
+        6. Preserving any special placeholders or variables
+        7. Ignore any content between {{ and }}.
         
+        Translate only the human-readable text.";
+
+        $text = $content;
+
+        $messages = array(
+           array("role"=> "system", "content"=> $systemPrompt),
+           array("role"=> "user", "content"=> "Translate the following text to {$language}. Preserve all formatting, markdown, and special characters:\n\n{$text}")
+        );
+
+        $response = $client->chat()->create([
+            'model'=> 'gpt-4',
+            'messages'=> $messages,
+            'temperature' => 0.3,
+            'max_tokens' => 2000
+        ]);
+
+        return $response->choices[0]->message->content;
+
+
+    }
+
+    public function selectTranslator($translator, $content, $language){
+        switch ($translator) {
+            case 'deepl':
+                prompt::deepl($content, $language);
+                break;
+            
+            case 'openai':
+                prompt::openai($content, $language);
+                break;
+        }
     }
 
     public function translate($article_id, $locales) {
@@ -65,6 +109,12 @@ class prompt extends Command
         $exists = false;
 
         $goals_translated = [];
+
+        $translator = select('Which service do you want to use to translate?',
+        options: [
+            'deepl' => 'DeepL',
+            'openai' => 'OpenAI']
+        );
 
 
         // Run translation for each locale passed
@@ -129,13 +179,13 @@ class prompt extends Command
 
             if (!$debug) {
                 try {
-                    $title_translated = prompt::deepl($title, $language);
+                    $title_translated = prompt::selectTranslator($translator, $title, $language);
                     foreach($goals as $goal) {
-                        $goal_translated = prompt::deepl($goal, $language);
+                        $goal_translated = prompt::selectTranslator($translator, $goal, $language);
                         array_push($goals_translated, $goal_translated->text);
                     }
 
-                    $translatedText = prompt::deepl($preprocessedContent, $language);
+                    $translatedText = prompt::selectTranslator($translator, $preprocessedContent, $language);
                     $finalContent = $translatedText->text;
                 
                     // Replace placeholders with their original content
@@ -276,14 +326,17 @@ class prompt extends Command
 
         $method = select(
             label: 'How do you want to translate content?',
-            options: ['By article', 'By collection']
+            options: ['By article', 'By collection', 'OpenAI Test']
         );
+
 
         switch ($method) {
             case 'By article':
                 prompt::article();
             case 'By collection':
                 prompt::collection();
+            case 'OpenAI Test':
+                prompt::openai($test);
         };
 
     }

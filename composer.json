@@ -17,6 +17,7 @@
         "laravel/prompts": "^0.1.25",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
+        "openai-php/client": "^0.10.3",
         "pecotamic/sitemap": "^1.4",
         "spatie/fork": "^1.2",
         "statamic/cms": "5.35.0",

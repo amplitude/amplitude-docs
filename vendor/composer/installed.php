@@ -3,7 +3,7 @@
         'name' => 'statamic/statamic',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '46a8f9bc7fed3964282b05b8e6791f5f79f222fb',
+        'reference' => '89a5080fb3820ea979fe9011c7c4dd1e3f4cdb79',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -679,6 +679,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'openai-php/client' => array(
+            'pretty_version' => 'v0.10.3',
+            'version' => '0.10.3.0',
+            'reference' => '4a565d145e0fb3ea1baba8fffe39d86c56b6dc2c',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../openai-php/client',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'pecotamic/sitemap' => array(
             'pretty_version' => '1.4.7',
             'version' => '1.4.7.0',
@@ -1229,7 +1238,7 @@
         'statamic/statamic' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '46a8f9bc7fed3964282b05b8e6791f5f79f222fb',
+            'reference' => '89a5080fb3820ea979fe9011c7c4dd1e3f4cdb79',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
