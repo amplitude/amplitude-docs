@@ -19,10 +19,10 @@ Correlation is a measure of how two statistical variables relate to each other. 
 
 Amplitude categorizes correlation scores like this:
 
-* **Highly Predictive**: correlation >= 0.4
-* **Moderately Predictive**: 0.3 <= correlation < 0.4
-* **Slightly Predictive**: 0.2 <= correlation < 0.3
-* **Not Predictive**: correlation < 0.2
+* **Highly Predictive**: |correlation| >= 0.4
+* **Moderately Predictive**: 0.3 <= |correlation| < 0.4
+* **Slightly Predictive**: 0.2 <= |correlation| < 0.3
+* **Not Predictive**: |correlation| < 0.2
 
 In a Compass chart, the two variables to be correlated are:
 
