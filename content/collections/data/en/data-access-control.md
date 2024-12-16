@@ -39,7 +39,7 @@ DAC applies only to properties. It **doesn’t** apply to definitions or metadat
 
 ### Classify properties
 
-1. In Amplitude Data, navigate to *Properties* and select the tab that contains the properties you want to classify. 
+1. In Amplitude Data, navigate to *Properties* and select the tab that contains the properties you want to classify. DAC enables you to classify User, Event, and Group properties in your tracking plan with the exception of Amplitude ID, Version, Platform, Group ID, and Group name.
 2. Click the name of the property you’re interested in. You can manage event, user, and group properties directly; derived properties inherit all the classifications of their parent properties.
 3. In the details panel that opens, click the *Classification* drop-down and select all relevant classifications for this property. Then click *Send*.
 4. Repeat steps 2 and 3 for each property you want to classify.
@@ -74,6 +74,10 @@ Update user and group access from the Overview page, or navigate to Data to upda
 Use the project switcher to see classifications for each project, and click *Classify Data* to open that project's tracking plan, where you can manually classify properties.
 
 To customize the error message that your internal users see when they try to access a restricted chart or cohort, click **Customize Restricted Access Message**. On the resulting modal, edit the error message and include any links to internal documentation that may be helpful.
+
+{{partial:admonition type="note" heading=""}}
+When you customize the restricted message, the message applies to your organization, not just the project.
+{{/partial:admonition}}
 
 ## Notifications
 
