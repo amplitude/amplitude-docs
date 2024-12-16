@@ -9,6 +9,13 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717101776
 landing: true
 landing_blurb: 'Choose the most appropriate way to measure and display the results of your event segmentation analysis'
+translations:
+  -
+    locale: ko
+    id: f9adca52-1bb1-4330-9e82-cd4977ce8bab
+  -
+    locale: jp
+    id: 411bb981-9c55-4a82-891f-977b75721c26
 ---
 Amplitude offers you several different ways of looking at your [event segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) results. In this section, we'll explain the differences between them.
 

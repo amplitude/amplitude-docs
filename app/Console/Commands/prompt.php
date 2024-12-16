@@ -18,6 +18,8 @@ use function Laravel\Prompts\text;
 use function Laravel\Prompts\multiselect;
 use function Laravel\Prompts\info;
 use function Laravel\Prompts\confirm;
+use function Laravel\Prompts\spin;
+
 
 
 class prompt extends Command
@@ -27,7 +29,7 @@ class prompt extends Command
      *
      * @var string
      */
-    protected $signature = 'app:prompt';
+    protected $signature = 'app:translate';
 
     /**
      * The console command description.
@@ -45,7 +47,12 @@ class prompt extends Command
     public function deepl($content, $language){
         $authKey = getenv('DEEPL_API_KEY'); 
         $translator = new \DeepL\Translator($authKey);
-        return $translator->translateText($content, null, $language, ["model_type" => "prefer_quality_optimized"]);
+        $translated_content =  spin(
+            message: "Translating to {$language}",
+            callback: fn () =>$translator->translateText($content, null, $language, ["model_type" => "prefer_quality_optimized"])
+        );
+
+        return $translated_content;
     } 
 
     public function openai($content, $language){
@@ -110,11 +117,11 @@ class prompt extends Command
 
         $goals_translated = [];
 
-        $translator = select('Which service do you want to use to translate?',
-        options: [
-            'deepl' => 'DeepL',
-            'openai' => 'OpenAI']
-        );
+        // $translator = select('Which service do you want to use to translate?',
+        // options: [
+        //     'deepl' => 'DeepL',
+        //     'openai' => 'OpenAI']
+        // );
 
 
         // Run translation for each locale passed
@@ -159,9 +166,9 @@ class prompt extends Command
             // If a translation exists for the languge, show the date it was completed, and give an option to proceed.
             if ($entry->translations) {
                 $translation_id = "";
-                foreach ($entry->translations as $key => $value) {
-                    if ($key === $locale) {
-                        $translation_id = $value;
+                foreach ($entry->translations as $translation) {
+                    if ($translation['locale'] === $locale) {
+                        $translation_id = $translation['id'];
                     }
                 }
                 $existing_translation = Entry::find($translation_id);
@@ -179,13 +186,13 @@ class prompt extends Command
 
             if (!$debug) {
                 try {
-                    $title_translated = prompt::selectTranslator($translator, $title, $language);
+                    $title_translated = prompt::deepl($title, $language);
                     foreach($goals as $goal) {
-                        $goal_translated = prompt::selectTranslator($translator, $goal, $language);
+                        $goal_translated = prompt::deepl($goal, $language);
                         array_push($goals_translated, $goal_translated->text);
                     }
 
-                    $translatedText = prompt::selectTranslator($translator, $preprocessedContent, $language);
+                    $translatedText = prompt::deepl($preprocessedContent, $language);
                     $finalContent = $translatedText->text;
                 
                     // Replace placeholders with their original content
@@ -241,7 +248,8 @@ class prompt extends Command
             options: [
                 'ko' => 'Korean',
                 'jp' => 'Japanese'
-            ]
+            ],
+            required: true
         ); 
 
         return $sites;
@@ -280,8 +288,8 @@ class prompt extends Command
                 $results[] = [
                     'id' => $object->id,
                     'title' => $object->title,
-                    'ko' => $object->ko ? '✅' : '❌',
-                    'jp' => $object->jp ? '✅' : '❌',
+                    'ko' => $object->translations['locale'] == 'ko' ? '✅' : '❌',
+                    'jp' => $object->translations['locale'] == 'jp' ? '✅' : '❌',
                 ];
             }
         }
@@ -326,17 +334,17 @@ class prompt extends Command
 
         $method = select(
             label: 'How do you want to translate content?',
-            options: ['By article', 'By collection', 'OpenAI Test']
+            options: ['By article', 'By collection']
         );
 
 
         switch ($method) {
             case 'By article':
                 prompt::article();
+                break;
             case 'By collection':
                 prompt::collection();
-            case 'OpenAI Test':
-                prompt::openai($test);
+                break;
         };
 
     }
