@@ -38,7 +38,7 @@ The **proportion above threshold** tells you how many new users actually trigger
 
 One way to change the proportion is by increasing the number of performance days in the window (Amplitude allows between one to seven days). More performance days gives users more time to reach the threshold, hence increasing the proportion. If you are investigating an event property, consider looking at the complete event, as that may have a high enough proportion above the threshold.
 
-Note that there is no perfect proportion above the threshold. Too low and it's unlikely you can get new users to perform that event that many times; too high and you don't have any room for improvement.
+There's no perfect proportion above the threshold. Too low and it's unlikely you can get new users to perform that event that many times; too high and you don't have any room for improvement.
 
 There are some extreme cases where a low proportion above the threshold can still result in a high correlation. For example, if a web application has high traffic but forces login for all new users.
 
