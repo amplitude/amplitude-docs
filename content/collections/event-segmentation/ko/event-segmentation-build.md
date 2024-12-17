@@ -17,7 +17,7 @@ translated_on: 1734470108
 ### 機能の可用性
 この機能は、**すべてのAmplitudeプラン**のユーザーがご利用いただけます。詳細は、[価格ページ](https://amplitude.com/pricing)をご覧ください。
 ## 作業を始める前に
-まだ「[Amplitudeでチャートを作成する]（/docs/analytics/charts/build-charts-add-events）」の基本を読んでいない場合は、先に進む前に目を通しておく必要があります。
+まだ「[Amplitudeでチャートを作成する](/docs/analytics/charts/build-charts-add-events)」の基本を読んでいない場合は、先に進む前に目を通しておく必要があります。
 この記事を参照して、[イベントセグメンテーションチャートに最適な指標の選択方法](/docs/analytics/charts/event-segmentation/event-segmentation-choose-measurement)についてお読みください。
 ## イベントセグメンテーション分析の設定
 イベントセグメンテーション分析では、異なるグループのユーザーが製品内で何を行っているかが示されます。Amplitudeに、どのイベントに興味があり、どのユーザーを分析に含めるべきかを伝える必要があります。
