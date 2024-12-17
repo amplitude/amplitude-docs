@@ -12,6 +12,10 @@ With Ask Amplitude, you can:
 - Navigate to different parts of Amplitude.
 - Create multiple threads and share them with other members of your organization.
 
+## Feature availability
+
+Ask Amplitude is available to users on all Amplitude plans.
+
 ## Ask Amplitude, OpenAI, and Large Language Model (LLM) use
 
 Ask Amplitude uses a third-party LLM (through the OpenAI API) to understand requests and choose how to respond to questions. OpenAI decides which actions to take (for example, creating a chart versus searching) and synthesizes that information into response messages.
@@ -20,11 +24,11 @@ To power Ask Amplitude, Amplitude may send the following data to the OpenAI API:
 - Chart definition metadata (for example, events and properties, metrics, or time range).
 - Taxonomy information, like names and descriptions for events or properties.
 - The names of dashboards, projects, users, and other metadata objects in your organization.
-- The aggregated results of charts.
+- The aggregated results of charts (including the underlying event data for the charts you select).
 
 ### Your data and information
 
-Amplitude sends the conversation thread history between you and Ask Amplitude to the OpenAI API. However, the OpenAI API **doesn't receive** your customer data. **OpenAI doesn't store or train on** any of your Amplitude data.
+Amplitude sends the conversation thread history between you and Ask Amplitude to the OpenAI API, including the data outlined above. OpenAI doesn't train its models on your Amplitude data, and any of your data that's sent to OpenAI is deleted within 30 days. 
 
 ## Chart creation with Ask Amplitude
 
@@ -39,10 +43,10 @@ Sometimes, you may have different versions of the same property, like variations
 Yes, there are three scenarios where Amplitude may send property values to OpenAI:
 
 1. **Filter Selection**: To choose values for filters, Ask Amplitude looks at possible values. This uses the same metadata as when you select a value from the property dropdown in charts. For example when you ask "How many users signed up on the free plan?", Amplitude would check the values of the `plan` property.
-2. **Suggestion Generation**:  Uses the same mechanics as the first scenario.  For example, when you ask a question, and Ask Amplitude suggests `Filter by Country = United States` as a follow up.
+2. **Suggestion Generation**:  Uses the same mechanics as the first scenario. For example, when you ask a question, and Ask Amplitude suggests `Filter by Country = United States` as a follow up.
 3. **User Input + Chat History**: Ask Amplitude sends all user-typed input  to OpenAI, so if specific property values are described, Ask Amplitude sends them to OpenAI
 
-Amplitude pays to guarantee OpenAI doesn't store or train on any data that is sent to their API from Ask Amplitude.
+Amplitude pays to guarantee OpenAI doesn't store or train on any data that's sent to their API from Ask Amplitude.
 
 ### What are the differences between this version of Ask Amplitude and the last one?
 
@@ -50,7 +54,7 @@ While both versions have similar underlying chart creation capabilities, the sco
 
 ### How can I get more accurate responses?
 
-The best way to improve your responses from Ask Amplitude is with good data quality. For example, always label your events events cleanly and clearly, and include descriptions. Use Amplitude's Data Assistant and other data governance tools to help keep your taxonomy clean.
+The best way to improve your responses from Ask Amplitude is with good data quality. For example, always label your events cleanly and clearly, and include descriptions. Use Amplitude's Data Assistant and other data governance tools to help keep your taxonomy clean.
 
 Otherwise, declarative statements of intent that use the specific terminology tend to work best. For example:
 - "Create a chart of total event counts for A, B, and C."
@@ -59,3 +63,7 @@ Otherwise, declarative statements of intent that use the specific terminology te
 - "Show this as conversion over time."
 - "Group this chart by X."
 - "Filter this by X = Y."
+
+### Can I uses Ask Amplitude if I have a BAA in place with Amplitude?
+
+No. For more information, contact your Amplitude representative.
