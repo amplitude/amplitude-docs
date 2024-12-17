@@ -8,6 +8,15 @@ function updateUrl() {
     document.getElementById('curl_url').textContent = url;
 }
 
+function updateTrack() {
+    const shouldNotTrack = document.getElementById('track_assignment').value === 'no-track';
+    if (shouldNotTrack) {
+        document.getElementById('x-amp-exp-track-line').style.display = 'block';
+    } else {
+        document.getElementById('x-amp-exp-track-line').style.display = 'none';
+    }
+}
+
 document.getElementById('curl_url').textContent = 'https://api.lab.amplitude.com/v1/vardata?';
 setupApiTable({
     'deployment_key': false,
@@ -39,11 +48,14 @@ setupApiTable({
     if (context && context.length > 0) {
         uri += '&context=' + context;
     }
+    const headers = {
+        'Authorization': 'Api-Key ' + deploymentKey,
+    };
+    if (trackAssignment === 'no-track') {
+        headers['X-Amp-Exp-Track'] = 'no-track';
+    }
     const response = await fetch(uri, {
-        headers: {
-            'Authorization': 'Api-Key ' + deploymentKey,
-            'X-Amp-Exp-Track': trackAssignment === 'track' ? 'track' : 'no-track'
-        },
+        headers: headers,
     });
     if (response.status != 200) {
         const body = await response.text();
