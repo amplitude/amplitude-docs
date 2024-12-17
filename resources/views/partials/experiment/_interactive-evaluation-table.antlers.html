@@ -39,9 +39,9 @@
         </label>
         <label for="" class="block">
             <span class="text-xs text-mountain-mist-300">Track assignment</span>
-            <select class="mt-1 block w-full" name="track_assignment" id="track_assignment">
-                <option value="true">Yes</option>
-                <option value="false">No</option>
+            <select class="mt-1 block w-full" name="track_assignment" id="track_assignment" onchange="updateTrack()">
+                <option value="track">Yes</option>
+                <option value="no-track">No</option>
             </select>
         </label>
         <button class="md-button w-1/2 border rounded py-1 hover:bg-amp-blue-900 transition-colors" id="at-action-button">Send</button>

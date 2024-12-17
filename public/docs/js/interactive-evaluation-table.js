@@ -13,7 +13,11 @@ function updateUrl() {
   var url = serverZone === 'US' ? 'https://api.lab.amplitude.com/v1/vardata?' : 'https://api.lab.eu.amplitude.com/v1/vardata?';
   document.getElementById('curl_url').textContent = url;
 }
+  function updateTrack() {
+    document.getElementById('curl_track_assignment').textContent = document.getElementById('track_assignment').value;
+  }
 document.getElementById('curl_url').textContent = 'https://api.lab.amplitude.com/v1/vardata?';
+document.getElementById('curl_track_assignment').textContent = 'track';
 setupApiTable({
   'deployment_key': false,
   'user_id': true,
@@ -52,7 +56,7 @@ setupApiTable({
           return fetch(uri, {
             headers: {
               'Authorization': 'Api-Key ' + deploymentKey,
-              'X-Amp-Exp-Track': trackAssignment === 'true' ? undefined : 'no-track'
+              'X-Amp-Exp-Track': trackAssignment === 'track' ? 'track' : 'no-track'
             }
           });
         case 14:
