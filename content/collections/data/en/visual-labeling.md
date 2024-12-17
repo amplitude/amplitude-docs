@@ -33,7 +33,7 @@ To use Visual Labeling to create new labeled events, follow these steps:
 2. Enter the URL of the site or application you want to label, and click *Start Labeling*. Amplitude opens your website or app in a new tab, with the visual labeling toolbar at the top of the page.
 3. Click an element you want to label, the visual labeling overlay appears. Click *Navigate* to navigate to a different part of site that you want to label.
 4. In the visual labeling overlay, enter a name and description for your labeled event. Select if tracking should happen when a user clicks the element, or when it changes. Visual labeling uses the `clicked` event by default. Refine the definition and select filters as needed. When you're done, click *Save*.
-5. Amplitude saves the labeled event and displays a confirmation with an option to view the labeled event.
+5. Amplitude saves the labeled event and displays a confirmation with an option to view the labeled event. Visual Labeling prevents saving events with duplicate names or definitions.
 6. Repeat steps three through five for each event you want to label.
 7. When you're done labeling, return to Amplitude. Here, you can manually update the tag, text, selector, and page URL of each labeled event.
 
@@ -50,8 +50,26 @@ When your site's code changes, you may need to update the definition of your lab
 To edit your labeled events, follow these steps:
 
 1. Open Amplitude Data and click *Events* in the left rail. Then click the *Labeled Events* tab.
-2. Select the labeled event you want to edit. In the fly-out tab, click *Edit*.
+2. Select the labeled event you want to edit. In the flyout tab, click *Edit*.
 3. If your event is no longer collecting data because of a site change, add another condition on the bottom by clicking *Select action...*. Once added, add a new condition based on your new site structure.
+
+### Repair a labeled event
+
+Sometimes, changes to your site's DOM can break Visual Labeling's reference to the specific element on your site. In situations like this, Visual Labeling supports repairing events you already labeled.
+
+To repair a labeled event:
+
+1. Open Amplitude Data and click *Events* in the left rail. In the main section, click the Labeled Events tab.
+2. Select a labeled event. In the flyout tab, you can see:
+   1. A chart that depicts the number of times the event Amplitude saw over the last 30 days.
+   2. Charts for each definition you've added to the labeled event.
+3. To repair an event that doesn't have event volume, click *Repair*. This opens the Visual Labeling flow with the context of the selected event. 
+4. Select a new element on the page to update the labeled event's definition.
+5. Click *Save* to exit the Visual Labeler and apply the updated definition.
+
+{{partial:admonition type="tip" heading="Labeled event break detection"}}
+Amplitude shows a warning in the Events list next to event definitions that may need repair.
+{{/partial:admonition}}
 
 ## Labeled events and event volume
 
@@ -63,8 +81,8 @@ In both cases, the increase in daily events comes from tracking click and page c
 
 ## Limitations
 
-* **Event streams**: Labeled events are not available in live events, or in the event stream in user lookup and Session Replay. The raw `Element clicked` and `Element changed` events are visible instead.
-* **Google Chrome extension**: The Amplitude Event Explorer Chrome extension only displays raw events from the browser, so labeled events will not appear.
+* **Event streams**: Labeled events aren't available in live events, or in the event stream in user lookup and Session Replay. The raw `Element clicked` and `Element changed` events are visible instead.
+* **Google Chrome extension**: The Amplitude Event Explorer Chrome extension only displays raw events from the browser, so labeled events don't appear.
 * **Destination event streaming**: You can't send labeled events to destinations with [event streaming](/docs/data/destination-event-streaming-overview). You can use your labeled events to define cohorts and then use cohort syncing to integrate with (other destinations)[/docs/data/destination-catalog].
 
 ## Troubleshooting
