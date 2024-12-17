@@ -18,3 +18,4 @@ ko:
   locale: ko
   attributes:
     flag: 🇰🇷
+    test: test
