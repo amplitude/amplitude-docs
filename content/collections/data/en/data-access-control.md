@@ -11,6 +11,12 @@ updated_at: 1726163345
 ---
 Enterprise-level organizations often collect data that can include revenue data, personally identifiable information (PII), and other sensitive information. Amplitude’s **data access control (DAC)** feature enables these organizations to easily manage access to these categories of data, in a way that prevents unauthorized users from gaining access to it, and that helps prevent the data from inadvertently leaking out.
 
+## Feature availability
+
+Data Access Control is available to organizations on the Enterprise plan.
+
+## Data Access Controls
+
 DAC works within Amplitude’s Groups framework. Admins grant or restrict access to PII, revenue data, and sensitive information to all members of a group. From there, they can [add or remove users from these groups](/docs/admin/account-management/manage-permission-groups#edit-a-group) as access requirements change, either on an individual or organizational level.
 
 For example, when an unauthorized user tries to view a chart that includes restricted information, Amplitude blocks the chart from loading on the user’s screen. Those users are also unable to create new charts that might include restricted data. This is true not only for charts, but also for cohorts, dashboards, notebooks, and user sessions.
