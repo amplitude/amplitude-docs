@@ -7,6 +7,7 @@ function updateUrl() {
         'https://api.lab.eu.amplitude.com/v1/vardata?';
     document.getElementById('curl_url').textContent = url;
 }
+
 document.getElementById('curl_url').textContent = 'https://api.lab.amplitude.com/v1/vardata?';
 setupApiTable({
     'deployment_key': false,
@@ -14,12 +15,14 @@ setupApiTable({
     'device_id': true,
     'flag_key': true,
     'context': true,
+    'track_assignment': false
 }, async function (fields) {
     const deploymentKey = fields['deployment_key'];
     const userId = fields['user_id'];
     const deviceId = fields['device_id'];
     const flagKey = fields['flag_key'];
     const context = fields['context'];
+    const trackAssignment = fields['track_assignment'];
     localStorage.setItem('deployment_key', deploymentKey);
     const serverZone = document.getElementById('server-zone').value;
     let uri = serverZone === 'US' ? 'https://api.lab.amplitude.com/v1/vardata?' :
@@ -39,6 +42,7 @@ setupApiTable({
     const response = await fetch(uri, {
         headers: {
             'Authorization': 'Api-Key ' + deploymentKey,
+            'X-Amp-Exp-Track': trackAssignment === 'track' ? 'track' : 'no-track'
         },
     });
     if (response.status != 200) {
