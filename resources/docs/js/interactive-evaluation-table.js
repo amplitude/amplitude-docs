@@ -1,12 +1,14 @@
 document.getElementById('deployment_key').value =
     localStorage.getItem('deployment_key') || '';
 
-function updateUrl() {
+
+document.getElementById('server-zone').addEventListener("change", function(){
     const serverZone = document.getElementById('server-zone').value;
     const url = serverZone === 'US' ? 'https://api.lab.amplitude.com/v1/vardata?' :
         'https://api.lab.eu.amplitude.com/v1/vardata?';
     document.getElementById('curl_url').textContent = url;
-}
+})
+
 document.getElementById('curl_url').textContent = 'https://api.lab.amplitude.com/v1/vardata?';
 setupApiTable({
     'deployment_key': false,
