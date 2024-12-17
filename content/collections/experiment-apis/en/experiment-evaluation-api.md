@@ -27,6 +27,13 @@ The REST API authenticates the request using your [deployment](/docs/feature-exp
 | `flag_key`                         | A specific flag key to get the variant of. If empty/missing, Experiment evaluates all flags & experiments associated with the deployment key.                   |
 | `context`                          | JSON string consisting of a full user context. Set user properties in the `user_properties` field (for example: `{"user_properties":{"premium":true}}`). |
 
+## Headers
+
+| <div class="big-column">Name</div> | Description                                                            |
+|------------------------------|------------------------------------------------------------------------|
+| `X-Amp-Exp-Track`                           | Set to `no-track` to not track an assignment event for the evaluation. |
+
+
 ## Responses
 
 ### 200 OK

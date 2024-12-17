@@ -19,10 +19,11 @@ setupApiTable({
   'user_id': true,
   'device_id': true,
   'flag_key': true,
-  'context': true
+  'context': true,
+  'track_assignment': true
 }, /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(fields) {
-    var deploymentKey, userId, deviceId, flagKey, context, serverZone, uri, response, body, result;
+    var deploymentKey, userId, deviceId, flagKey, context, trackAssignment, serverZone, uri, response, body, result;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
@@ -31,6 +32,7 @@ setupApiTable({
           deviceId = fields['device_id'];
           flagKey = fields['flag_key'];
           context = fields['context'];
+          trackAssignment = fields['track_assignment'];
           localStorage.setItem('deployment_key', deploymentKey);
           serverZone = document.getElementById('server-zone').value;
           uri = serverZone === 'US' ? 'https://api.lab.amplitude.com/v1/vardata?' : 'https://api.lab.eu.amplitude.com/v1/vardata?';
@@ -49,7 +51,8 @@ setupApiTable({
           _context.next = 14;
           return fetch(uri, {
             headers: {
-              'Authorization': 'Api-Key ' + deploymentKey
+              'Authorization': 'Api-Key ' + deploymentKey,
+              'X-Amp-Exp-Track': trackAssignment === 'true' ? undefined : 'no-track'
             }
           });
         case 14:
