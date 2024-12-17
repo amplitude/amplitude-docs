@@ -8,14 +8,14 @@ function updateUrl() {
     document.getElementById('curl_url').textContent = url;
 }
 
-function updateTrack() {
+document.getElementById('track_assignment').addEventListener("change", function(){
     const shouldNotTrack = document.getElementById('track_assignment').value === 'no-track';
     if (shouldNotTrack) {
         document.getElementById('x-amp-exp-track-line').style.display = 'block';
     } else {
         document.getElementById('x-amp-exp-track-line').style.display = 'none';
     }
-}
+});
 
 document.getElementById('curl_url').textContent = 'https://api.lab.amplitude.com/v1/vardata?';
 setupApiTable({
