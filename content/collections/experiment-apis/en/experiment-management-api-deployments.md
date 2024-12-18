@@ -27,10 +27,10 @@ Fetch a list of deployments that experiments or flags can be assigned to.
 
 ### Query parameters
 
-|Name|Description|
-|---|----|
-|`limit`| The max number of deployments to be returned. Capped at 1000.|
-|`cursor`| The offset to start the "page" of results from.|
+|Name|Requirement|Type|Description|
+|---|----|----|----|
+|`limit`| Optional | number | The max number of deployments to be returned. Capped at 1000.|
+|`cursor`| Optional | number | The offset to start the "page" of results from.|
 
 ### Response
 
@@ -78,10 +78,10 @@ Create a deployment that experiments or flags can be assigned to.
 
 ### Query parameters
 
-|Name|Description|
-|---|----|
+|Name|Requirement|Type|Description|
+|---|----|----|----|
 |`projectId`| Required | string | The project's ID. |
-|`label`| Required | Deployment's label. Must contain alphanumeric and/or `_`, `-` characters. |
+|`label`| Required | string | Deployment's label. Must contain alphanumeric and/or `_`, `-` characters. |
 |`type`| Required | string | Deployment's type.  Must be either `client` or `server`. |
 
 {{partial:admonition type="example" heading="Request"}}
@@ -125,10 +125,10 @@ Edit a deployment that experiments or flags can be assigned to.
 
 ### Query parameters
 
-|Name|Description|
-|---|----|
-|`label`| Optional | Deployment's label. Must contain alphanumeric and/or `_`, `-` characters. |
-|`archive`| Optional | string | Soft delete or restore deployment. |
+|Name|Requirement|Type|Description|
+|---|----|----|----|
+|`label`| Optional | string | Deployment's label. Must contain alphanumeric and/or `_`, `-` characters. |
+|`archive`| Optional | boolean | Soft delete or restore deployment. |
 
 {{partial:admonition type="example" heading="Request"}}
 ```json
