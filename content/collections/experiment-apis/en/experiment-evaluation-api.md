@@ -20,12 +20,12 @@ The REST API authenticates the request using your [deployment](/docs/feature-exp
 
 ## Query parameters
 
-| <div class="big-column">Name</div> | Description                                                                                                                                              |
-| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `user_id`                          | The user's ID.                                                                                                                                           |
-| `device_id`                        | The user's device ID.                                                                                                                                    |
-| `flag_key`                         | A specific flag key to get the variant of. If empty/missing, Experiment evaluates all flags & experiments associated with the deployment key.                   |
-| `context`                          | JSON string consisting of a full user context. Set user properties in the `user_properties` field (for example: `{"user_properties":{"premium":true}}`). |
+| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                     |
+| ---------------------------------- |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `user_id`                          | The user's ID.                                                                                                                                                                                                                  |
+| `device_id`                        | The user's device ID.                                                                                                                                                                                                           |
+| `flag_key`                         | Specific flag keys to get the variants of. Multiple flag keys should be separated by commas, e.g. `flag_key=flag-A,flag-B`.  If empty/missing, Experiment evaluates all flags & experiments associated with the deployment key. |
+| `context`                          | JSON string consisting of a full user context. Set user properties in the `user_properties` field (for example: `{"user_properties":{"premium":true}}`).                                                                        |
 
 ## Headers
 
