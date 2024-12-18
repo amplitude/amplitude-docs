@@ -1027,7 +1027,7 @@ Edit an experiment.
 
 |<div class="med-big-column">Name</div>|Requirement|Type|Description|
 |---|---|---|---|
-|`group_type`| Optional | string | Group type of the filter; can be null. Can be `User` value or one of the group values, eg `org_id`, `org name` |
+|`group_type`| Optional | string | Group type of the filter; can be null. Can be `User` value or one of the group values, for example `org_id` or `org name` |
 |`subprop_key`| Required | string | Filter's key; cannot be null. |
 |`subprop_op`| Required | string | The [operation](#subprop_op) to use in this filter. |
 |`subprop_type`| Required | string | Either `event`, `user` or `group` indicating that the property is either an event, user or group property, respectively. |
