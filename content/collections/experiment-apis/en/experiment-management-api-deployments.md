@@ -107,7 +107,7 @@ curl --request POST \
 ```
 {{/partial:admonition}}
 
-{{partial:admonition type="exampl" heading=""}}
+{{partial:admonition type="example" heading=""}}
 ```json
     {
         "id": <id>
