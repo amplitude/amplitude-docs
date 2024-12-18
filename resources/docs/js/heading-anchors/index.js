@@ -22,9 +22,12 @@ export default function () {
         })
   
         const clipboard = new ClipboardJS(headings[i], {
-          text: () => `${window.location.origin}${window.location.pathname}#${headings[i].getAttribute('id')}`
-        })
-  
+          text: () => {
+            const rawText = `${window.location.origin}${window.location.pathname}#${headings[i].getAttribute('id')}`;
+            return rawText.replace(/[^a-zA-Z0-9]/g, '');
+          }
+        });
+          
         clipboard.on('success', function(e) {
           tooltip.show()
   
