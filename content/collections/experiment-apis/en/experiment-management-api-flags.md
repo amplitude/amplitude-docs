@@ -576,6 +576,7 @@ Create a new variant for a flag
 | `payload`                              | Optional    | string | Optional payload. Value must be a valid JSON element. |
 | `rolloutWeight`                        | Optional    | number | Rollout weight for non-targeted users.                |
 
+
 {{partial:admonition type="example" heading="Example request"}}
 ```json
 {

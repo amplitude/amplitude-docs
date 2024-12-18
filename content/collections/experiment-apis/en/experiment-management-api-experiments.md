@@ -9,6 +9,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1734485610
 ---
+
 | <div class="big-column">Name</div>                                | Description                                                |
 | ----------------------------------------------------------------- | ---------------------------------------------------------- |
 | [List](#list)                                                     | List of experiments including their configuration details. |
@@ -1031,6 +1032,7 @@ Edit an experiment.
 | `subprop_op`                           | Required    | string       | The [operation](#subprop_op) to use in this filter.                                                                      |
 | `subprop_type`                         | Required    | string       | Either `event`, `user` or `group` indicating that the property is either an event, user or group property, respectively. |
 | `subprop_value`                        | Required    | string array | A list of values to filter the event property by.                                                                        |
+
 
 #### subprop_op
 
