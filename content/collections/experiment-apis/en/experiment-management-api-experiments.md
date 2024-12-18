@@ -1029,7 +1029,7 @@ Edit an experiment.
 |---|---|---|---|
 |`group_type`| Optional | string | Group type of the filter; can be null. Can be `User` value or one of the group values, eg `org _id`, `org name` |
 |`subprop_key`| Required | string | Filter's key; can be null. |
-|`subprop_op`| Required | string | The [operation](#subprop_op) to use in this filter. |
+|`subprop_op`| Required | string | The [operation](#subprop%5Fop) to use in this filter. |
 |`subprop_type`| Required | string | Either `event`, `user` or `group` indicating that the property is either an event, user or group property, respectively. |
 |`subprop_value`| Required | string array | A list of values to filter the event property by. |
 
