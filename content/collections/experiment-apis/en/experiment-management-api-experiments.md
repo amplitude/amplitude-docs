@@ -30,7 +30,7 @@ updated_at: 1717531457
 | [Add deployment](#create-deployment) | Add a deployment to an experiment. |
 | [Remove deployment](#remove-deployment) | Remove a deployment from an experiment. |
 | [Edit](#edit) | Edit experiment. |
-| [Create](#create) | Create a new experiment. |
+| [Create](#create) | Create a new feature experiment. |
 
 
 ## List
@@ -1027,8 +1027,8 @@ Edit an experiment.
 
 |<div class="med-big-column">Name</div>|Requirement|Type|Description|
 |---|---|---|---|
-|`group_type`| Optional | string | Group type of the filter; can be null. Can be `User` value or one of the group values, eg `org _id`, `org name` |
-|`subprop_key`| Required | string | Filter's key; can be null. |
+|`group_type`| Optional | string | Group type of the filter; can be null. Can be `User` value or one of the group values, eg `org_id`, `org name` |
+|`subprop_key`| Required | string | Filter's key; cannot be null. |
 |`subprop_op`| Required | string | The [operation](#subprop_op) to use in this filter. |
 |`subprop_type`| Required | string | Either `event`, `user` or `group` indicating that the property is either an event, user or group property, respectively. |
 |`subprop_value`| Required | string array | A list of values to filter the event property by. |
