@@ -9,8 +9,6 @@ document.getElementById('server-zone').addEventListener("change", function(){
     document.getElementById('curl_url').textContent = url;
 })
 
-}
-
 document.getElementById('track_assignment').addEventListener("change", function(){
     const shouldNotTrack = document.getElementById('track_assignment').value === 'no-track';
     if (shouldNotTrack) {
@@ -25,14 +23,14 @@ setupApiTable({
     'deployment_key': false,
     'user_id': true,
     'device_id': true,
-    'flag_key': true,
+    'flag_keys': true,
     'context': true,
     'track_assignment': false
 }, async function (fields) {
     const deploymentKey = fields['deployment_key'];
     const userId = fields['user_id'];
     const deviceId = fields['device_id'];
-    const flagKey = fields['flag_key'];
+    const flagKeys = fields['flag_keys'];
     const context = fields['context'];
     const trackAssignment = fields['track_assignment'];
     localStorage.setItem('deployment_key', deploymentKey);
@@ -45,8 +43,8 @@ setupApiTable({
     if (deviceId && deviceId.length > 0) {
         uri += '&device_id=' + deviceId;
     }
-    if (flagKey && flagKey.length > 0) {
-        uri += '&flag_key=' + flagKey;
+    if (flagKeys && flagKeys.length > 0) {
+        uri += '&flag_keys=' + flagKeys;
     }
     if (context && context.length > 0) {
         uri += '&context=' + context;
