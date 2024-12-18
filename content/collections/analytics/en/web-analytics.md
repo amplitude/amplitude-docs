@@ -59,7 +59,7 @@ Follow these steps to analyze metrics in Out-of-the-box Web Analytics:
     * **All users**: Users who triggered any event during the selected date range.
     * **Active users**: Users who triggered at least one active event during the selected date range.
     * **New users**: Users who triggered at least one new user event during the selected date range.
-    * **Mobile web**: Users who triggered events on a web platform from an Apple iPad or Android device.
+    * **Mobile web**: Users who triggered events on a web platform from an Apple iPad, Apple iPhone, or Android device.
     * **Desktop web**: Users who triggered events on a web platform from a Mac or Windows device.
 
 From there, use the data table to further your analysis: 
