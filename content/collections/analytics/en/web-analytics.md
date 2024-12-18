@@ -82,4 +82,4 @@ Follow these steps to manage settings, create goals, or customize tracked events
    * For *Breakdown*, choose the default channels you want to display, as well as your campaign and page engagement properties.
    * Set *Conversion Funnel* settings by choosing the events that make up your funnel.
 
-If *Goals*, choose the key events or metrics you'd like to set up as additional metrics. Goals can be broken down by channels, campaigns, or pages.
+If *Goals*, choose the key events or metrics you'd like to set up as additional metrics. Break down goals by  channels, campaigns, or pages.
