@@ -59,7 +59,7 @@ Follow these steps to analyze metrics in Out-of-the-box Web Analytics:
     * **All users**: Users who triggered any event during the selected date range.
     * **Active users**: Users who triggered at least one active event during the selected date range.
     * **New users**: Users who triggered at least one new user event during the selected date range.
-    * **Mobile web**: Users who triggered events on a web platform from an Apple iPad or Android device.
+    * **Mobile web**: Users who triggered events on a web platform from an Apple iPad, Apple iPhone, or Android device.
     * **Desktop web**: Users who triggered events on a web platform from a Mac or Windows device.
 
 From there, use the data table to further your analysis: 
@@ -82,4 +82,4 @@ Follow these steps to manage settings, create goals, or customize tracked events
    * For *Breakdown*, choose the default channels you want to display, as well as your campaign and page engagement properties.
    * Set *Conversion Funnel* settings by choosing the events that make up your funnel.
 
-If *Goals*, choose the key events or metrics you'd like to set up as additional metrics. Goals can be broken down by channels, campaigns, or pages.
+If *Goals*, choose the key events or metrics you'd like to set up as additional metrics. Break down goals by  channels, campaigns, or pages.

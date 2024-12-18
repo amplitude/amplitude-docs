@@ -392,8 +392,6 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 
 ### Query parameters
 
-### Query parameters
-
 |Name|Description|
 |-----|----------|
 |`start`| <span class="required">Required</span>. First date included in data series, formatted YYYYMMDD (for example "20221001").|
