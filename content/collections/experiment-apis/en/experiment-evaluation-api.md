@@ -20,12 +20,12 @@ The REST API authenticates the request using your [deployment](/docs/feature-exp
 
 ## Query parameters
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                     |
-| ---------------------------------- |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `user_id`                          | The user's ID.                                                                                                                                                                                                                  |
-| `device_id`                        | The user's device ID.                                                                                                                                                                                                           |
-| `flag_key`                         | Specific flag keys to get the variants of. Multiple flag keys should be separated by commas, e.g. `flag_key=flag-A,flag-B`.  If empty/missing, Experiment evaluates all flags & experiments associated with the deployment key. |
-| `context`                          | JSON string consisting of a full user context. Set user properties in the `user_properties` field (for example: `{"user_properties":{"premium":true}}`).                                                                        |
+| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                      |
+|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `user_id`                          | The user's ID.                                                                                                                                                                                                                   |
+| `device_id`                        | The user's device ID.                                                                                                                                                                                                            |
+| `flag_keys`                        | Specific flag keys to get the variants of. Multiple flag keys should be separated by commas, e.g. `flag_keys=flag-A,flag-B`.  If empty/missing, Experiment evaluates all flags & experiments associated with the deployment key. |
+| `context`                          | JSON string consisting of a full user context. Set user properties in the `user_properties` field (for example: `{"user_properties":{"premium":true}}`).                                                                         |
 
 ## Headers
 
@@ -38,7 +38,7 @@ The REST API authenticates the request using your [deployment](/docs/feature-exp
 
 ### 200 OK
 
-A successful request returns a `200` response and a map of flag key to variants. If `flag_key` isn't provided, Experiment evaluates all flags associated with the deployment key in the authorization header.
+A successful request returns a `200` response and a map of flag key to variants. If `flag_keys` isn't provided, Experiment evaluates all flags associated with the deployment key in the authorization header.
 
 #### Response body
 
@@ -46,7 +46,7 @@ The response body is a JSON object keyed by the flag key. The value for a given 
 
 ```json
 {
-    "<flag_key>": {
+    "<flag_keys>": {
         "key": "<variant_value>",
         "payload": <variant_payload>
     },
