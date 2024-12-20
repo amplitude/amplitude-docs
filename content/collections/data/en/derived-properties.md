@@ -235,69 +235,81 @@ This output is a double type (for example. 2.0).
 
 ```
 IF(  
-DATE_TIME_FORMATTER(  
-PROPERTY(  
-'publishDate',  
-'event'  
-),  
-"yyyy-MM-dd'T'HH:mm:ssX",  
-'yyyy-MM-dd'  
-) contains '-',  
-DATE_TIME_FORMATTER(  
-PROPERTY(  
-'publishDate',  
-'event'  
-),  
-"yyyy-MM-dd'T'HH:mm:ssX",  
-'yyyy-MM-dd'  
-),  
-IF(  
-DATE_TIME_FORMATTER(  
-PROPERTY(  
-'publishDate',  
-'event'  
-),  
-"yyyy-MM-dd HH:mm:ss",  
-'yyyy-MM-dd'  
-) contains '-',  
-DATE_TIME_FORMATTER(  
-PROPERTY(  
-'publishDate',  
-'event'  
-),  
-"yyyy-MM-dd HH:mm:ss",  
-'yyyy-MM-dd'  
-),  
-DATE_TIME_FORMATTER(  
-PROPERTY(  
-'publishDate',  
-'event'  
-),  
-"yyyy-MM-dd",  
-'yyyy-MM-dd'  
-)  
-)  
-)IF(DATE_TIME_FORMATTER(  
- $60 ,  
- "yyyy-MM-dd'T'HH:mm:ssX",  
- 'yyyy-MM-dd'  
-) contains '-', DATE_TIME_FORMATTER(  
- $61  ,  
- "yyyy-MM-dd'T'HH:mm:ssX",  
- 'yyyy-MM-dd'  
-), IF(DATE_TIME_FORMATTER(  
- $72 ,  
- "yyyy-MM-dd HH:mm:ss",  
- 'yyyy-MM-dd'  
-) contains '-', DATE_TIME_FORMATTER(  
- $73 ,  
- "yyyy-MM-dd HH:mm:ss",  
- 'yyyy-MM-dd'  
-), DATE_TIME_FORMATTER(  
- $76 ,  
- "yyyy-MM-dd",  
- 'yyyy-MM-dd'  
-)))
+    DATE_TIME_FORMATTER(  
+        PROPERTY(  
+            'publishDate',  
+            'event'  
+        ),  
+        "yyyy-MM-dd'T'HH:mm:ssX",  
+        'yyyy-MM-dd'  
+    ) 
+    contains '-',  
+    DATE_TIME_FORMATTER(  
+        PROPERTY(  
+            'publishDate',  
+            'event'  
+        ),  
+        "yyyy-MM-dd'T'HH:mm:ssX",  
+        'yyyy-MM-dd'  
+    ),  
+    IF(  
+        DATE_TIME_FORMATTER(  
+            PROPERTY(  
+                'publishDate',  
+                'event'  
+            ),  
+            "yyyy-MM-dd HH:mm:ss",  
+            'yyyy-MM-dd'  
+        ) 
+        contains '-',  
+        DATE_TIME_FORMATTER(  
+            PROPERTY(  
+                'publishDate',  
+                'event'  
+            ),  
+            "yyyy-MM-dd HH:mm:ss",  
+            'yyyy-MM-dd'  
+        ),  
+        DATE_TIME_FORMATTER(  
+            PROPERTY(  
+                'publishDate',  
+                'event'  
+            ),  
+            "yyyy-MM-dd",  
+            'yyyy-MM-dd'  
+        )  
+    )  
+)
+IF(
+    DATE_TIME_FORMATTER(  
+        $60,  
+        "yyyy-MM-dd'T'HH:mm:ssX",  
+        'yyyy-MM-dd'  
+    ) 
+    contains '-', 
+    DATE_TIME_FORMATTER(  
+        $61,  
+        "yyyy-MM-dd'T'HH:mm:ssX",  
+        'yyyy-MM-dd'  
+    ), 
+    IF(
+        DATE_TIME_FORMATTER(  
+            $72,  
+            "yyyy-MM-dd HH:mm:ss",  
+            'yyyy-MM-dd'  
+        ) contains '-', 
+        DATE_TIME_FORMATTER(  
+            $73 ,  
+            "yyyy-MM-dd HH:mm:ss",  
+            'yyyy-MM-dd'  
+        ), 
+        DATE_TIME_FORMATTER(  
+            $76 ,  
+            "yyyy-MM-dd",  
+            'yyyy-MM-dd'  
+        )
+    )
+)
 ```
 
 Sample output:
@@ -310,14 +322,13 @@ One way to format dates to Standard Date Format is to use a series of IF stateme
 
 ```
 CONCAT(  
-REGEXEXTRACT(  
-PROPERTY(  
-'Subscription Start Date',  
-'user'  
-),  
-'dddd-dd'  
-),  
-"-01"  
+    REGEXEXTRACT(  
+        PROPERTY(  
+            'Subscription Start Date',  
+            'user'  
+        ),  
+        'dddd-dd'  
+    ), "-01"  
 )
 ```
 
