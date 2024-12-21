@@ -49,8 +49,7 @@ This is Amplitude's recommendation for backfilling large amounts of data:
     2. Partition those events into requests based on `device_id` or `user_id`.
     3. Send your requests concurrently/in parallel to Amplitude.
 
-To optimize this process further, add aggressive retry logic with high timeouts. Continue to retry until you receive a 200 response. If you send an `insert_id`, 
-then Amplitude deduplicates data that has the same `insert_id` sent within 7 days of each other. 
+To optimize this process further, add aggressive retry logic with high timeouts. Continue to retry until you receive a 200 response. If you send an `insert_id`, then Amplitude deduplicates data that has the same `insert_id` sent within 7 days of each other. 
 
 ### Skip user properties sync
 
@@ -89,7 +88,7 @@ The event appears in Amplitude as:
         "device_id": "",
         "event_type": "Button Clicked",
         "user_properties":{
-            "city":"New York"
+            "city":"New York",
             "subscriptionStatus":"active"
         }
     }
@@ -154,8 +153,7 @@ Any new event still has `"city":"New York"`, but this event displays `"city":"Sa
 
 ### Timing
 
-If you send data that has a timestamp of 30 days or older, then it can take up to 48 hours to appear in some parts of Amplitude system. Use the [User Activity tab](/docs/analytics/user-data-lookup)
- to check the events that you are sending as that updates in real-time regardless of the time of the event.
+If you send data that has a timestamp of 30 days or older, then it can take up to 48 hours to appear in some parts of Amplitude system. Use the [User Activity tab](/docs/analytics/user-data-lookup) to check the events that you are sending as that updates in real-time regardless of the time of the event.
 
 ### Resources
 
