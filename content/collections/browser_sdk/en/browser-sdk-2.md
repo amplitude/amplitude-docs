@@ -1269,6 +1269,8 @@ Amplitude tracks changes in marketing attribution in two scenarios: during SDK i
 
 ![Diagram of whether tracking a campaign on SDK initialization](/docs/output/img/sdk/isNewCampaign.drawio.svg)
 
+To debug, you can get the referrer by typing `document.referrer` in your Browser console and compare it with your `config.autocapture.attribution.excludeReferrers`. If `document.referrer` is empty, then it's considered as a direct traffic. You can get the session ID under `AMP_{last 10 digits of your API key}` on the "Cookies" tab of the [Ampitude Chrome extension](/docs/data/chrome-extension-debug) and get the previous campaign stored under `AMP_MKTG_{last 10 digits of your API key}`.
+
 ##### Processing the event
 
 - At the start of a session, the referrer isn't excluded, and campaign has any change.
