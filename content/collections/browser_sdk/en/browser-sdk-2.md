@@ -1256,16 +1256,18 @@ amplitude.init(AMPLITUDE_API_KEY, {
 
 ### Marketing Attribution Tracking
 
-Amplitude tracks marketing attribution and exclude all the referrer from all subdomain by default. Once you enable marketing attribution tracking, Amplitude generates `identify` events to assign the campaign value in certain cases. This ensures that user properties update and influence future events.
+Amplitude tracks marketing attribution and excludes all referrers from subdomains by default. Once you enable marketing attribution tracking, Amplitude generates `identify` events to assign the campaign values as user properties in specific scenarios. Refer to the following section to learn when Amplitude tracks marketing attribution and updates user properties.
 
 #### Tracking scenarios
 
-Amplitude track marketing attribution changes while
+Amplitude tracks changes in marketing attribution in two scenarios: during SDK initialization and event processing.
 
 ##### Amplitude SDK initialization (Hard page refresh)
 
 - At the start of a session, the referrer isn't excluded and campaign has any change or customer first visit.
 - In the middle of the session, the referrer isn't excluded, not direct traffic, and campaign has any change.
+
+![Diagram of whether tracking a campaign on SDK initialization](/docs/output/img/sdk/isNewCampaign.drawio.svg)
 
 ##### Processing the event
 
