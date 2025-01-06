@@ -1,17 +1,26 @@
 ---
 id: b96bbcc2-34af-47fd-95cc-006065f6f4da
 blueprint: destination-catalog
-title: 'Send Cohorts to Twitter Ads'
+title: 'Twitter Ads'
 description: 'Send Amplitude cohorts to Twitter Ads to create audiences for more personalized campaigns.'
+connection: destination
+integration_type:
+  - cohorts
+integration_category:
+  - ad-networks
+partner_maintained: false
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1736197854
+integration_icon: partner-icons/x.svg
 ---
 Send Amplitude cohorts to Twitter Ads to create audiences for more personalized campaigns. 
 
-## Setup
+## Prerequisites
 
-### Prerequisites
 Your Twitter Ads account must have standard access. If it doesn't, request the necessary permissions on Twitter Ads Developer Portal.
 
-### Amplitude setup
+## Amplitude setup
 
 1. In Amplitude Data, click **Catalog** and select the **Destinations** tab.
 2. In the Cohort section, click **Twitter Ads**.
@@ -36,4 +45,3 @@ You must send **at least one uniquely identifiable key** (like email or device
 5. Save when finished.
 
 In Twitter Ads you should see the cohort in the audience manager. It may take Twitter up to 24-48 hours to populate the sync. For privacy purposes, the user list size shows as zero until the list has at least 100 members. After that, the size is rounded to the two most significant digits.
-
