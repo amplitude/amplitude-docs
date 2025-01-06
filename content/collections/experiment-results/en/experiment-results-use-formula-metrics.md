@@ -33,7 +33,7 @@ To add a formula metric to your Experiment Results chart, follow these steps:
 
 3. Click *Select event ...* to begin selecting events to include in your formula metric. Repeat this step until you've selected all the events you need.
 
-2. In the *Formula* box, enter the formula for calculating your formula metric. [Click here for a list of formulas Experiment Results supports](#Supported-formula-functions), or [here for an explanation of formula syntax](#Formula-syntax).
+2. In the *Formula* box, enter the formula for calculating your formula metric. [Click here for a list of formulas Experiment Results supports](#supported-formula-functions), or [here for an explanation of formula syntax](#formula-syntax).
 
 3. Add a name for this new formula metric. Click *Apply* when you're done. The metric now appears in your Experiment Results chart.
 
