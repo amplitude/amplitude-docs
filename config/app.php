@@ -5,6 +5,11 @@ use Illuminate\Support\ServiceProvider;
 
 return [
 
+    // Vercel environment variables
+
+    'vercel_prod_url' => env('VERCEL_PROJECT_PRODUCTION_URL'),
+    'vercel_url' => env('VERCEL_URL'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
