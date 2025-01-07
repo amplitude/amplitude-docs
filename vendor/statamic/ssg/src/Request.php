@@ -30,7 +30,8 @@ class Request extends \Illuminate\Http\Request
 
     public function getHttpHost(): string
     {
-        $withoutScheme = rtrim(explode('://', $this->config['base_url'])[1], '/');
+        //$withoutScheme = rtrim(explode('://', $this->config['base_url'])[1], '/');
+        $withoutScheme = $this->config['base_url'];
 
         $length = strlen($this->getBaseUrl());
 
@@ -39,8 +40,8 @@ class Request extends \Illuminate\Http\Request
 
     protected function prepareBaseUrl(): string
     {
-        $withoutScheme = rtrim(explode('://', $this->config['base_url'])[1], '/');
-
+        //$withoutScheme = rtrim(explode('://', $this->config['base_url'])[1], '/');
+        $withoutScheme = $this->config['base_url'];
         $base = Arr::get(explode('/', $withoutScheme), 1, '');
 
         return $base !== '' ? '/'.$base : $base;
