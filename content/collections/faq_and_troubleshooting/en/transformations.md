@@ -39,7 +39,7 @@ Transformations are retroactive, so this is unfortunately not possible.
 
 
 {{partial:collapse name="Which value takes priority in a property merge?"}}
-Let's use an example here: For one instance of event A, you send the event property `event prop` = `true`; for another instance of event A, you send event property `event_property` = `false`. B of these event properties are then merged into `EVENT
+Let's use an example here: For one instance of event A, you send the event property `event prop` = `true`; for another instance of event A, you send event property `event_property` = `false`. Both of these event properties are then merged into `EVENT
  PROPERTY`.
 
 In this situation, when you query on event A and group by `EVENT PROPERTY`, this user will populate twice. You will see one data point for the `true` value and one for `false`.
