@@ -1129,7 +1129,7 @@ Unlike standard network requests, sendBeacon sends events in the background, eve
 {{partial:admonition type="warning" heading=""}}
 `sendBeacon` sends events in the background. As a result, events `sendBeacon` dispatches don't return a server response. Keep the following in mind if you use `sendBeacon`:
 
-1. You might end up losing events becase there is no retry, even when 4xx or 5xx responses occur.
+1. There is no retry, even for 4xx or 5xx responses. As a result, you may lose events.
 2. Unlike `fetch`, which returns a response that the SDK waits for before sending another request to guarantee event order received by the server, `sendBeacon` may send events in parallel, potentially resulting in the server receiving events out of order. This can lead to some UTM properties not being set for session start events for example.
 {{/partial:admonition}}
 
