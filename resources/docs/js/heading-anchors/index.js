@@ -23,8 +23,9 @@ export default function () {
   
         const clipboard = new ClipboardJS(headings[i], {
           text: () => {
-            const rawText = `${window.location.origin}${window.location.pathname}#${headings[i].getAttribute('id')}`;
-            return rawText.replace(/[^a-zA-Z0-9]/g, '');
+            const id = headings[i].getAttribute('id').replace(/[^a-zA-Z0-9-]/g, '');
+            const rawText = `${window.location.origin}${window.location.pathname}#${id}`;
+            return rawText;
           }
         });
           

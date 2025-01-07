@@ -67,7 +67,7 @@ Also, when using a *during* cohort (as opposed to *in each*; [see this article o
 
 Your in-line cohort—in which you’re segmenting for users who completed one or more purchases in the current period, and completed two or more purchases in the previous period (90 days, in this case)—should now look like this:
 
-![in-line cohort segment.png](/docs/output/img/analytics/in-line cohort segment.png)
+![in-line cohort segment.png](/docs/output/img/analytics/in-line-cohort-segment.png)
 
 By applying the rolling window and offset to the previous period event, you've essentially shifted this cohort to a time in the past. This process offsets **only** the in-line cohort, and **not** the event selected in the Event Module. 
 

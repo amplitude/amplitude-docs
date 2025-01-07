@@ -611,13 +611,13 @@ Create a new variant for an experiment.
 
 ### Request body
 
-| <div class="med-big-column">Name</div> | Requirement | Type   | Description                                           |
-| -------------------------------------- | ----------- | ------ | ----------------------------------------------------- |
-| `key`                                  | Required    | string | The variant key.                                      |
-| `description`                          | Optional    | string | Description for the variant.                          |
-| `name`                                 | Optional    | string | Name for the variant.                                 |
-| `payload`                              | Optional    | string | Optional payload. Value must be a valid JSON element. |
-| `rolloutWeight`                        | Optional    | number | Rollout weight for non-targeted users.                |
+|<div class="med-big-column">Name</div>|Requirement|Type|Description|
+|---|---|---|---|
+|`key`| Required | string | The variant key. |
+|`description`| Optional | string | Description for the variant.|
+|`name`| Optional | string | Name for the variant.|
+|`payload`| Optional | JSON | Optional payload. Value must be a valid JSON element.|
+|`rolloutWeight`| Optional | number | Rollout weight for non-targeted users.|
 
 
 {{partial:admonition type="example" heading="Request"}}
@@ -664,13 +664,13 @@ Edit a variant for an experiment.
 
 ### Request body
 
-| <div class="med-big-column">Name</div> | Requirement | Type   | Description                                                                                                           |
-| -------------------------------------- | ----------- | ------ | --------------------------------------------------------------------------------------------------------------------- |
-| `key`                                  | Optional    | string | The variant key.                                                                                                      |
-| `description`                          | Optional    | string | Description for the variant.                                                                                          |
-| `name`                                 | Optional    | string | Name for the variant.                                                                                                 |
-| `payload`                              | Optional    | string | Optional payload. Value must be a valid JSON element. This value replaces the existing value for the variant payload. |
-| `rolloutWeight`                        | Optional    | number | Rollout weight for non-targeted users.                                                                                |
+|<div class="med-big-column">Name</div>|Requirement|Type|Description|
+|---|---|---|---|
+|`key`| Optional | string | The variant key. |
+|`description`| Optional | string | Description for the variant.|
+|`name`| Optional | string | Name for the variant.|
+|`payload`| Optional | JSON | Optional payload. Value must be a valid JSON element. This value replaces the existing value for the variant payload.|
+|`rolloutWeight`| Optional | number | Rollout weight for non-targeted users.|
 
 {{partial:admonition type="example" heading="Example request"}}
 ```json
@@ -980,7 +980,7 @@ curl --request DELETE \
 ## Edit
 
 {{partial:admonition type='note'}}
-Web Experimentation doesn't support the editing of experiments. Attempts to edit a web experiment return a `501` error.
+Web Experimentation doesn't support the editing of experiments. Attempts to edit a web experiment return a `405` error.
 {{/partial:admonition}}
 
 ```bash
@@ -1124,12 +1124,12 @@ Create a new feature experiment.
 
 The `variants` field contains these objects.
 
-| <div class="med-big-column">Name</div> | Requirement | Type   | Description                                           |
-| -------------------------------------- | ----------- | ------ | ----------------------------------------------------- |
-| `key`                                  | Required    | string | The key (a.k.a value) of the variant.                 |
-| `payload`                              | Optional    | string | Optional payload. Value must be a valid JSON element. |
-| `name`                                 | Optional    | string | The variant name.                                     |
-| `description`                          | Optional    | string | The variant description.                              |
+|<div class="med-big-column">Name</div>|Requirement|Type|Description|
+|---|---|---|---|
+|`key`| Required | string | The key (a.k.a value) of the variant. |
+|`payload`| Optional | JSON | Optional payload. Value must be a valid JSON element. |
+|`name`| Optional | string | The variant name. |
+|`description`| Optional | string | The variant description. |
 
 #### targetSegments
 

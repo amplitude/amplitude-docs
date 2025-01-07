@@ -44,9 +44,9 @@ Using this API doesn't prevent future user tracking for the deleted users. To le
 
 ## Limits
 
-The endpoint `/api/2/deletions/users` has a rate limit of 1 HTTP request per second. Each HTTP request can contain up to 100 `amplitude_ids` or `user_ids`.
+The endpoint `/api/2/deletions/users` has a rate limit of 1 HTTP request per second. Each HTTP request can contain up to 100 `amplitude_ids` or `user_ids`. Additionally, there is a limit of 8 requests running in parallel for a given project. 
 
-Make up to 100 deletion requests per second if you batch 100 users in each request.
+Make up to 100 deletion requests per second if you batch 100 users in each request. 
 
 ## Delete users
 
