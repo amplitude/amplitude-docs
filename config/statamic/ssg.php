@@ -14,6 +14,7 @@ return [
     */
 
     'base_url' => config('app.url'),
+    'vercel_url' => config('app.vercel_url'),
 
     /*
     |--------------------------------------------------------------------------
