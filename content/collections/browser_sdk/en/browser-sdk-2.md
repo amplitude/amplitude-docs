@@ -1127,10 +1127,10 @@ amplitude.track("event")
 Unlike standard network requests, sendBeacon sends events in the background, even if the user closes the browser or leaves the page.
 
 {{partial:admonition type="warning" heading=""}}
-`sendBeacon` sends events in the background. As a result, events `sendBeacon` dispatches don't return a server response. Keep the following in mind if you use `sendBeacon`:
+`sendBeacon` sends events in the background. As a result, events dispatched by `sendBeacon` don't return server responses. Keep the following in mind if you use `sendBeacon`:
 
-1. There is no retry, even for 4xx or 5xx responses. As a result, you may lose events.
-2. Unlike `fetch`, for which the SDK waits for a response before it sends another request, `sendBeacon` can send events in parallel. This can result in the server receiving events out of order, and lead to some UTM properties not being set for session start events for example.
+1. Requests are not retried, including failed requests with 4xx or 5xx responses, so events may be lost.
+2. Event order cannot be guaranteed, as `sendBeacon` may send events in parallel. This can lead to some UTM properties not being set, e.g. for session start events. In contrast, while using `fetch`, the SDK waits for responses before proceeding, guaranteeing event order.
 {{/partial:admonition}}
 
 #### Set the transport to use sendBeacon for all events
