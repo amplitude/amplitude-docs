@@ -47,8 +47,8 @@ When you add a member to a space as a viewer or editor, they can view or edit al
 
 There are three levels of permissions:
 
-* **Can add**: The user can add items or folders, or move existing content.
 * **Can edit**: The user can edit, archive, and save changes to all content in the space.
+* **Can add**: The user can add items or folders, or move existing content.
 * **Can view**: The user can only view the content residing in the space.
 
 To add a new member to a space, follow these steps:
