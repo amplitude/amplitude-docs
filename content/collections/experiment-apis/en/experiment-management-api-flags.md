@@ -816,6 +816,7 @@ A successful request returns a `200 OK` response and `OK` text.
 ```bash
 curl --request DELETE \
     --url 'https://experiment.amplitude.com/api/1/flags/<id>/variants/<variantKey>/bulk-delete-users' \
+    --header 'Content-Type: application/json' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>' \
     --data '{"users":<["id1", "id2", "id3"]>}'
@@ -904,6 +905,7 @@ A successful request returns a `200 OK` response and `OK` text.
 ```bash
 curl --request POST \
     --url 'https://experiment.amplitude.com/api/1/flags/<id>/deployments' \
+    --header 'Content-Type: application/json' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
     --data '{"deployments":[<deploymentId>]}'
