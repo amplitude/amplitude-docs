@@ -35,6 +35,32 @@ Add `platform :ios, '13.0'` to your Podfile. Run `pod install` under the ios d
 
 To enable Bitcode, follow Flutter's [documentation](https://github.com/flutter/flutter/wiki/Creating-an-iOS-Bitcode-enabled-app).
 
+### Web installation (optional)
+
+Our Flutter SDK uses our [Browser SDK 2](https://amplitude.com/docs/sdks/analytics/browser/browser-sdk-2) under the hood
+for Flutter Web using Dart's JavaScript interop. This involves making our SDK available within the global JS scope. Append
+the following Browser SDK 2 snippet into `web/index.html` in your Flutter project to do so.
+
+```html
+<script type="text/javascript">
+  !function(){"use strict";!function(e,t){var r=e.amplitude||{_q:[],_iq:{}}
+  ;if(r.invoked)e.console&&console.error&&console.error("Amplitude snippet has been loaded.")
+  ;else{var n=function(e,t){e.prototype[t]=function(){return this._q.push({name:t,args:Array.prototype.slice.call(arguments,0)}),this}}
+  ,s=function(e,t,r){return function(n){e._q.push({name:t,args:Array.prototype.slice.call(r,0),resolve:n})}}
+  ,o=function(e,t,r){e._q.push({name:t,args:Array.prototype.slice.call(r,0)})}
+  ,i=function(e,t,r){e[t]=function(){if(r)return{promise:new Promise(s(e,t,Array.prototype.slice.call(arguments)))};o(e,t,Array.prototype.slice.call(arguments))}}
+  ,a=function(e){for(var t=0;t<g.length;t++)i(e,g[t],!1);for(var r=0;r<m.length;r++)i(e,m[r],!0)}
+  ;r.invoked=!0;var c=t.createElement("script")
+  ;c.type="text/javascript",c.integrity="sha384-R0H1kXlk6r2aEQMtwVcPolpk0NAuIqM/8NlxAv24Gr3/PBJPl+9elu0bc3o/FDjR",c.crossOrigin="anonymous",c.async=!0
+  ,c.src="https://cdn.amplitude.com/libs/analytics-browser-2.11.10-min.js.gz"
+  ,c.onload=function(){e.amplitude.runQueuedFunctions||console.log("[Amplitude] Error: could not load SDK")}
+  ;var l=t.getElementsByTagName("script")[0];l.parentNode.insertBefore(c,l);for(var u=function(){return this._q=[],this}
+  ,p=["add","append","clearAll","prepend","set","setOnce","unset","preInsert","postInsert","remove","getUserProperties"],d=0;d<p.length;d++)n(u,p[d]);r.Identify=u
+  ;for(var f=function(){return this._q=[],this},v=["getEventProperties","setProductId","setQuantity","setPrice","setRevenue","setRevenueType","setEventProperties"],y=0;y<v.length;y++)n(f,v[y]);r.Revenue=f;var g=["getDeviceId","setDeviceId","getSessionId","setSessionId","getUserId","setUserId","setOptOut","setTransport","reset","extendSession"],m=["init","add","remove","track","logEvent","identify","groupIdentify","setGroup","revenue","flush"]
+  ;a(r),r.createInstance=function(e){return r._iq[e]={_q:[]},a(r._iq[e]),r._iq[e]},e.amplitude=r}}(window,document)}();
+</script>
+```
+
 ## Initialize the SDK
 
 Before you instrument your application, initialize the SDK with your Amplitude project's API key.
@@ -54,12 +80,12 @@ class YourClass {
     // Wait until the SDK is initialized
     await amplitude.isBuilt;
 
-    // Track an event   
+    // Track an event
     amplitude.track(BaseEvent(
-        eventType: 'BUTTON_CLICKED', 
+        eventType: 'BUTTON_CLICKED',
         eventProperties: {'Hover Time': '100ms'},
     ));
-    
+
     // Send events to the server
     amplitude.flush()
   }
@@ -75,25 +101,30 @@ class YourClass {
 | `flushIntervalMillis` | `int`. The amount of time SDK attempts to upload the unsent events to the server or reaches the `flushQueueSize` threshold. The value is in milliseconds. | `30000` |
 | `instanceName` | `String`. The name of the instance. Instances with the same name shares storage and identity. For isolated storage and identity use a unique `instanceName` for each instance.  | `$default_instance`|
 | `optOut` | `bool`. Opt the user out of tracking. | `false` |
-| `logLevel` | `LogLevel` The log level. `LogLevel.off`, `LogLevel.error`, `LogLevel.warn`, `LogLevel.log`, `LogLevel.debug` | `LogLevel.warn` | 
+| `logLevel` | `LogLevel` The log level. `LogLevel.off`, `LogLevel.error`, `LogLevel.warn`, `LogLevel.log`, `LogLevel.debug` | `LogLevel.warn` |
 | `minIdLength` | `int`. The minimum length for user id or device id. | `5` |
 | `partnerId` | `int`. The partner id for partner integration. | `null` |
 | `flushMaxRetries` | `int`. Maximum retry times.  | `5` |
 | `useBatch` | `bool`. Whether to use batch API. | `false` |
 | `serverZone` | `ServerZone`. `ServerZone.us` or `ServerZone.eu`. The server zone to send to. Adjust server URL based on this config. | `ServerZone.us` |
 | `serverUrl` | `String`. The server URL events upload to. | `https://api2.amplitude.com/2/httpapi` |
-| `minTimeBetweenSessionsMillis` | `int`. The amount of time for session timeout. The value is in milliseconds. | `300000` |
-| `defaultTracking` | `DefaultTrackingOptions`. Options to control the default events tracking. | Check [Tracking default events](#tracking-default-events). |
+| `minTimeBetweenSessionsMillis` | `int`. The amount of time for session timeout. The value is in milliseconds. Defaults to 300,000 (5 minutes) for iOS/Android and 1,800,000 (30 minuts) for Web. Overriding this value will change the session timeout for all platforms. This maps to `minTimeBetweenSessionsMillis` for iOS/Android and `sessionTimeout` for Web.| `300000` |
 | `trackingOptions` | `TrackingOptions`. Options to control the values tracked in SDK. | `enable` |
 
 ### Configuration for Android and iOS
 
 | Name  | Description | Default Value |
 | --- | --- | --- |
+| `defaultTracking` | `DefaultTrackingOptions`. Options to control the default events tracking. | Check [Tracking default events](#tracking-default-events). |
 | `enableCoppaControl` | `bool`. Whether to enable COPPA control for tracking options. | `false` |
 | `flushEventsOnClose` | `bool`. Flush unsent events on app close. | `true` |
 | `identifyBatchIntervalMillis` | `int`. The amount of time SDK attempts to batch intercepted identify events. The value is in milliseconds| `30000` |
 | `migrateLegacyData` | `bool`. Whether to migrate maintenance Android SDK and maintenance iOS SDK data (events, user/device ID). Learn more at the configuration section of the underlying [Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk/#configuration) and [Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk/#configuration). | `true`|
+
+### Configuration for Web and Android
+| Name  | Description | Default Value |
+| --- | --- | --- |
+| `deviceId` | `String`. The device ID to use for this device. If no deviceID is provided one will be generated automatically. | `null` |
 
 ### Configuration for Android
 
@@ -102,6 +133,21 @@ class YourClass {
 | `locationListening` | `bool`. Whether to enable Android location service. Learn more [here](/docs/sdks/analytics/android/android-kotlin-sdk/#location-tracking).| `true` |
 | `useAdvertisingIdForDeviceId` | `bool`. Whether to use advertising id as device id. Check [here](/docs/sdks/analytics/android/android-kotlin-sdk/#advertiser-id) for required module and permission. | `false` |
 | `useAppSetIdForDeviceId` | `bool`.  Whether to use app set id as device id. Check [here](/docs/sdks/analytics/android/android-kotlin-sdk/#app-set-id) for required module and permission. | `false` |
+
+### Configuration for Web
+| Name  | Description | Default Value |
+| --- | --- | --- |
+| `appVersion` | `String`. Sets an app version for events tracked. This can be the version of your application. For example: "1.0.0". | `null` |
+| `cookieOptions.domain` | `String`. Sets the domain property of cookies created. | `null` |
+| `cookieOptions.expiration` | `int`. Sets expiration of cookies created in days. | 365 days |
+| `cookieOptions.sameSite` | `String`. Sets `SameSite` property of cookies created. | `null` |
+| `cookieOptions.secure` | `bool`. Sets `Secure` property of cookies created. | `null` |
+| `cookieOptions.upgrade` | `bool`. Sets upgrading from cookies created by [maintenance Browser SDK](/docs/sdks/analytics/browser/javascript-sdk). If `true`, new Browser SDK deletes cookies created by maintenance Browser SDK. If `false`, Browser SDK keeps cookies created by maintenance Browser SDK. | `null` |
+| `identityStorage` | `String`. Sets storage API for user identity. Options include cookie for document.cookie, localStorage for localStorage, or none to opt-out of persisting user identity. | `cookie` |
+| `userId` | `String`. Sets an identifier for the tracked user. Must have a minimum length of 5 characters unless overridden with the minIdLength option. | `null` |
+| `transport` | `String`. Sets request API to use by name. Options include fetch for fetch, xhr for XMLHTTPRequest, or beacon for navigator.sendBeacon. | `fetch` |
+| `fetchRemoteConfig` | `bool`. Whether the SDK fetches remote configuration. See [here](https://amplitude.com/docs/sdks/analytics/browser/browser-sdk-2#remote-configuration) for more information. | `false` |
+
 
 ### Configure batching behavior
 
