@@ -428,7 +428,7 @@ Browser SDK tracks the following information in page view events.
 | `event_properties.[Amplitude] Page URL`      | `string`. The value of page URL.                                                                                                                    | location.href.split('?')[0] or ``.                                |
 | `event_properties.${CampaignParam}`          | `string`. The value of `UTMParameters` `ReferrerParameters` `ClickIdParameters` if has any. Check [here](./#web-attribution) for the possible keys. | Any undefined `campaignParam` or `undefined`.                     |
 | `event_properties.[Amplitude] Page Counter`  | `integer`. The count of pages viewed in the session.                                                                                                | `1`                                                               |
-| `event_properties.refferer`                  | `string`. The full URL of the users previous page.                                                                                                  | `https://amplitude.com/docs/sdks/analytics/browser/browser-sdk-2` |
+| `event_properties.referrer`                  | `string`. The full URL of the users previous page.                                                                                                  | `https://amplitude.com/docs/sdks/analytics/browser/browser-sdk-2` |
 | `event_properties.referring_domain`          | `string`. The domain of the page referrer. `amplitude.com`                                                                                          |
 
 

@@ -18,11 +18,11 @@ You may also find [this course](https://academy.amplitude.com/amplitude-analytic
 
 The person who sets user permissions is the **admin**. The admin is the first user of any Amplitude organization, and each organization must have at least one admin (any admin can designate other users as admins as well). When new users are first invited to an organization, they're assigned the **viewer** role by default.
 
-In Amplitude, user permissions exist at the **organization** level. Once assigned a permission level, a user in an organization has the same level of access to *all* projects within that organization. 
+## User roles and permissions in Amplitude
+
+In Amplitude, user permissions exist at the **organization** level. Once assigned a permission level, a user in an organization has the same level of access to all projects within that organization. 
 
 [Learn more about how to create and manage organizations and projects](/docs/admin/account-management/manage-users).
-
-## User roles and permissions in Amplitude
 
 
 ### Viewer
@@ -38,7 +38,7 @@ Recommended role for third parties, if you don't want them creating content that
 * Set custom [monitors](/docs/analytics/insights) and subscribe to them
 * Share content they create with others
 
-Note that viewers:
+Viewers:
 * *Can't* create anything that's discoverable, including saved segments
 * *Can't* create shareable links
 * *Can't* export data to third-party integration partners
@@ -71,6 +71,7 @@ Recommended for users who need access to all content created within Amplitude (d
 * Mark content as "Official Content"
 * Add and edit data sources and data destinations
 * Transfer ownership of content they don’t own
+* Create, modify, delete derived properties
 
 ### Admin
 The highest-level permissions set in an organization. Amplitude recommends limiting the number of users in an organization who are Admins. Only existing administrators can grant or revoke the Admin role. Admins have all manager-level permissions, plus:
