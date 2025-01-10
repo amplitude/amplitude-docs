@@ -37,9 +37,7 @@ To enable Bitcode, follow Flutter's [documentation](https://github.com/flutter/
 
 ### Web installation (optional)
 
-Our Flutter SDK uses our [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2) under the hood
-for Flutter Web using Dart's JavaScript interop. This involves making our SDK available within the global JS scope. Append
-the following Browser SDK 2 snippet into `web/index.html` in your Flutter project to do so.
+The Flutter SDK uses Dart's JavaScript interoperability to enable [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2) for Flutter Web. This requires that you make the SDK available within the global JavaScript scope. Add the following Browser SDK 2 snippet to `web/index.html` in your Flutter project:
 
 ```html
 <script type="text/javascript">
@@ -94,64 +92,68 @@ class YourClass {
 
 ## Configure the SDK
 
-| Name  | Description | Default Value |
-| --- | --- | --- |
-| `apiKey` | `String`. The apiKey of your project. | `null` |
-| `flushQueueSize` | `int`. SDK attempts to upload once unsent event count exceeds the event upload threshold or reaches `flushIntervalMillis` interval.  | `30` |
-| `flushIntervalMillis` | `int`. The amount of time SDK attempts to upload the unsent events to the server or reaches the `flushQueueSize` threshold. The value is in milliseconds. | `30000` |
-| `instanceName` | `String`. The name of the instance. Instances with the same name shares storage and identity. For isolated storage and identity use a unique `instanceName` for each instance.  | `$default_instance`|
-| `optOut` | `bool`. Opt the user out of tracking. | `false` |
-| `logLevel` | `LogLevel` The log level. `LogLevel.off`, `LogLevel.error`, `LogLevel.warn`, `LogLevel.log`, `LogLevel.debug` | `LogLevel.warn` |
-| `minIdLength` | `int`. The minimum length for user id or device id. | `5` |
-| `partnerId` | `int`. The partner id for partner integration. | `null` |
-| `flushMaxRetries` | `int`. Maximum retry times.  | `5` |
-| `useBatch` | `bool`. Whether to use batch API. | `false` |
-| `serverZone` | `ServerZone`. `ServerZone.us` or `ServerZone.eu`. The server zone to send to. Adjust server URL based on this config. | `ServerZone.us` |
-| `serverUrl` | `String`. The server URL events upload to. | `https://api2.amplitude.com/2/httpapi` |
-| `minTimeBetweenSessionsMillis` | `int`. The amount of time for session timeout. The value is in milliseconds. Defaults to 300,000 (5 minutes) for iOS/Android and 1,800,000 (30 minutes) for Web. Overriding this value changes the session timeout for all platforms. This maps to `minTimeBetweenSessionsMillis` for iOS/Android and `sessionTimeout` for Web.| `300000` |
-| `trackingOptions` | `TrackingOptions`. Options to control the values tracked in SDK. | `enable` |
+| Name                           | Description                                                                                                                                                                                                                                                                                                                     | Default Value                          |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| `apiKey`                       | `String`. The apiKey of your project.                                                                                                                                                                                                                                                                                           | `null`                                 |
+| `flushQueueSize`               | `int`. SDK attempts to upload once unsent event count exceeds the event upload threshold or reaches `flushIntervalMillis` interval.                                                                                                                                                                                             | `30`                                   |
+| `flushIntervalMillis`          | `int`. The amount of time SDK attempts to upload the unsent events to the server or reaches the `flushQueueSize` threshold. The value is in milliseconds.                                                                                                                                                                       | `30000`                                |
+| `instanceName`                 | `String`. The name of the instance. Instances with the same name shares storage and identity. For isolated storage and identity use a unique `instanceName` for each instance.                                                                                                                                                  | `$default_instance`                    |
+| `optOut`                       | `bool`. Opt the user out of tracking.                                                                                                                                                                                                                                                                                           | `false`                                |
+| `logLevel`                     | `LogLevel` The log level. `LogLevel.off`, `LogLevel.error`, `LogLevel.warn`, `LogLevel.log`, `LogLevel.debug`                                                                                                                                                                                                                   | `LogLevel.warn`                        |
+| `minIdLength`                  | `int`. The minimum length for user id or device id.                                                                                                                                                                                                                                                                             | `5`                                    |
+| `partnerId`                    | `int`. The partner id for partner integration.                                                                                                                                                                                                                                                                                  | `null`                                 |
+| `flushMaxRetries`              | `int`. Maximum retry times.                                                                                                                                                                                                                                                                                                     | `5`                                    |
+| `useBatch`                     | `bool`. Whether to use batch API.                                                                                                                                                                                                                                                                                               | `false`                                |
+| `serverZone`                   | `ServerZone`. `ServerZone.us` or `ServerZone.eu`. The server zone to send to. Adjust server URL based on this config.                                                                                                                                                                                                           | `ServerZone.us`                        |
+| `serverUrl`                    | `String`. The server URL events upload to.                                                                                                                                                                                                                                                                                      | `https://api2.amplitude.com/2/httpapi` |
+| `minTimeBetweenSessionsMillis` | `int`. The amount of time for session timeout. The value is in milliseconds. Defaults to 300,000 (5 minutes) for iOS/Android and 1,800,000 (30 minutes) for Web. Overriding this value changes the session timeout for all platforms. This maps to `minTimeBetweenSessionsMillis` for iOS/Android and `sessionTimeout` for Web. | `300000`                               |
+| `trackingOptions`              | `TrackingOptions`. Options to control the values tracked in SDK.                                                                                                                                                                                                                                                                | `enable`                               |
 
 ### Configuration for Android and iOS
 
-| Name  | Description | Default Value |
-| --- | --- | --- |
-| `defaultTracking` | `DefaultTrackingOptions`. Options to control the default events tracking. | Check [Tracking default events](#tracking-default-events). |
-| `enableCoppaControl` | `bool`. Whether to enable COPPA control for tracking options. | `false` |
-| `flushEventsOnClose` | `bool`. Flush unsent events on app close. | `true` |
-| `identifyBatchIntervalMillis` | `int`. The amount of time SDK attempts to batch intercepted identify events. The value is in milliseconds| `30000` |
-| `migrateLegacyData` | `bool`. Whether to migrate maintenance Android SDK and maintenance iOS SDK data (events, user/device ID). Learn more at the configuration section of the underlying [Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk/#configuration) and [Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk/#configuration). | `true`|
+| Name                          | Description                                                                                                                                                                                                                                                                                                              | Default Value                                              |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------- |
+| `defaultTracking`             | `DefaultTrackingOptions`. Options to control the default events tracking.                                                                                                                                                                                                                                                | Check [Tracking default events](#tracking-default-events). |
+| `enableCoppaControl`          | `bool`. Whether to enable COPPA control for tracking options.                                                                                                                                                                                                                                                            | `false`                                                    |
+| `flushEventsOnClose`          | `bool`. Flush unsent events on app close.                                                                                                                                                                                                                                                                                | `true`                                                     |
+| `identifyBatchIntervalMillis` | `int`. The amount of time SDK attempts to batch intercepted identify events. The value is in milliseconds                                                                                                                                                                                                                | `30000`                                                    |
+| `migrateLegacyData`           | `bool`. Whether to migrate maintenance Android SDK and maintenance iOS SDK data (events, user/device ID). Learn more at the configuration section of the underlying [Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk/#configuration) and [Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk/#configuration). | `true`                                                     |
 
 ### Configuration for web and Android
-| Name  | Description | Default Value |
-| --- | --- | --- |
-| `deviceId` | `String`. The device ID to use for this device. If no deviceID is provided, one is generated automatically. | `null` |
+
+| Name       | Description                                                                                                 | Default Value |
+| ---------- | ----------------------------------------------------------------------------------------------------------- | ------------- |
+| `deviceId` | `String`. The device ID to use for this device. If you don't provide a `deviceId`, Amplitude generates one. | `null`        |
 
 ### Configuration for Android
 
-| Name  | Description | Default Value |
-| --- | --- | --- |
-| `locationListening` | `bool`. Whether to enable Android location service. Learn more [here](/docs/sdks/analytics/android/android-kotlin-sdk/#location-tracking).| `true` |
-| `useAdvertisingIdForDeviceId` | `bool`. Whether to use advertising id as device id. Check [here](/docs/sdks/analytics/android/android-kotlin-sdk/#advertiser-id) for required module and permission. | `false` |
-| `useAppSetIdForDeviceId` | `bool`.  Whether to use app set id as device id. Check [here](/docs/sdks/analytics/android/android-kotlin-sdk/#app-set-id) for required module and permission. | `false` |
+| Name                          | Description                                                                                                                                                          | Default Value |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `locationListening`           | `bool`. Whether to enable Android location service. Learn more [here](/docs/sdks/analytics/android/android-kotlin-sdk/#location-tracking).                           | `true`        |
+| `useAdvertisingIdForDeviceId` | `bool`. Whether to use advertising id as device id. Check [here](/docs/sdks/analytics/android/android-kotlin-sdk/#advertiser-id) for required module and permission. | `false`       |
+| `useAppSetIdForDeviceId`      | `bool`.  Whether to use app set id as device id. Check [here](/docs/sdks/analytics/android/android-kotlin-sdk/#app-set-id) for required module and permission.       | `false`       |
 
 ### Configuration for web
-| Name  | Description | Default Value |
-| --- | --- | --- |
-| `appVersion` | `String`. Sets an app version for events tracked. This can be the version of your application. For example: "1.0.0". | `null` |
-| `cookieOptions.domain` | `String`. Sets the domain property of cookies created. | `null` |
-| `cookieOptions.expiration` | `int`. Sets expiration of cookies created in days. | 365 days |
-| `cookieOptions.sameSite` | `String`. Sets `SameSite` property of cookies created. | `null` |
-| `cookieOptions.secure` | `bool`. Sets `Secure` property of cookies created. | `null` |
-| `cookieOptions.upgrade` | `bool`. Sets upgrading from cookies created by [maintenance Browser SDK](/docs/sdks/analytics/browser/javascript-sdk). If `true`, new Browser SDK deletes cookies created by maintenance Browser SDK. If `false`, Browser SDK keeps cookies created by maintenance Browser SDK. | `null` |
-| `identityStorage` | `String`. Sets storage API for user identity. Options include cookie for document.cookie, localStorage for localStorage, or none to opt-out of persisting user identity. | `cookie` |
-| `userId` | `String`. Sets an identifier for the tracked user. Must have a minimum length of 5 characters unless overridden with the minIdLength option. | `null` |
-| `transport` | `String`. Sets request API to use by name. Options include fetch for fetch, xhr for XMLHTTPRequest, or beacon for navigator.sendBeacon. | `fetch` |
-| `fetchRemoteConfig` | `bool`. Whether the SDK fetches remote configuration. See [here](https://amplitude.com/docs/sdks/analytics/browser/browser-sdk-2#remote-configuration) for more information. | `false` |
+
+| Name                       | Description                                                                                                                                                                                                                                                                     | Default Value |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `appVersion`               | `String`. Sets an app version for events tracked. This can be the version of your application. For example: "1.0.0".                                                                                                                                                            | `null`        |
+| `cookieOptions.domain`     | `String`. Sets the domain property of cookies created.                                                                                                                                                                                                                          | `null`        |
+| `cookieOptions.expiration` | `int`. Sets expiration of cookies created in days.                                                                                                                                                                                                                              | 365 days      |
+| `cookieOptions.sameSite`   | `String`. Sets `SameSite` property of cookies created.                                                                                                                                                                                                                          | `null`        |
+| `cookieOptions.secure`     | `bool`. Sets `Secure` property of cookies created.                                                                                                                                                                                                                              | `null`        |
+| `cookieOptions.upgrade`    | `bool`. Sets upgrading from cookies created by [maintenance Browser SDK](/docs/sdks/analytics/browser/javascript-sdk). If `true`, new Browser SDK deletes cookies created by maintenance Browser SDK. If `false`, Browser SDK keeps cookies created by maintenance Browser SDK. | `null`        |
+| `identityStorage`          | `String`. Sets storage API for user identity. Options include cookie for `document.cookie`, `localStorage` for `localStorage`, or none to opt-out of persisting user identity.                                                                                                        | `cookie`      |
+| `userId`                   | `String`. Sets an identifier for the tracked user. Must have a minimum length of 5 characters unless overridden with the minIdLength option.                                                                                                                                    | `null`        |
+| `transport`                | `String`. Sets request API to use by name. Options include `fetch` for `fetch`, `xhr` for `XMLHTTPRequest`, or `beacon` for `navigator.sendBeacon`.                                                                                                                                         | `fetch`       |
+| `fetchRemoteConfig`        | `bool`. Whether the SDK fetches remote configuration. See [here](https://amplitude.com/docs/sdks/analytics/browser/browser-sdk-2#remote-configuration) for more information.                                                                                                    | `false`       |
 
 
 ### Configure batching behavior
 
-To support high-performance environments, the SDK sends events in batches. Every event logged by the `track` method is queued in memory. Events are flushed in batches in background. You can customize batch behavior with `flushQueueSize` and `flushIntervalMillis`. By default, the serverUrl will be `https://api2.amplitude.com/2/httpapi`. For customers who want to send large batches of data at a time, set `useBatch` to `true` to set `setServerUrl` to batch event upload API `https://api2.amplitude.com/batch`. Both the regular mode and the batch mode use the same events upload threshold and flush time intervals.
+To support high-performance environments, the SDK sends events in batches. Every event logged by the `track` method queues in memory. The SDK flushes in batches in the background. Customize batch behavior with `flushQueueSize` and `flushIntervalMillis`. By default, the `serverUrl` is `https://api2.amplitude.com/2/httpapi`. 
+
+If you need to send large batches of data at once, set `useBatch` to `true` to set `setServerUrl` to the batch event upload API `https://api2.amplitude.com/batch`. Both the regular mode and the batch mode use the same events upload threshold and flush time intervals.
 
 ```dart
 final Amplitude analytics = Amplitude(Configuration(
@@ -194,10 +196,10 @@ Refer to the [BaseEvent](https://github.com/amplitude/Amplitude-Flutter/blob/bet
 
 ## Identify
 
-Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, and `remove` on individual user properties. Declare the operations via a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
+Identify is for setting the user properties of a particular user without sending any event. The SDK supports the operations `set`, `setOnce`, `unset`, `add`, `append`, `prepend`, `preInsert`, `postInsert`, and `remove` on individual user properties. Declare the operations with a provided Identify interface. You can chain together multiple operations in a single Identify object. The Identify object is then passed to the Amplitude client to send to the server.
 
 {{partial:admonition type="note" heading=""}}
-If the Identify call is sent after the event, the results of operations will be visible immediately in the dashboard user's profile area, but it will not appear in chart result until another event is sent after the Identify call. So the identify call only affects events going forward. More details [here](/docs/data/user-properties-and-events).
+If you send the Identify call after the event, the results of operations are visible immediately in the dashboard user's profile area, but it doesn't appear in chart results until the SDK sends another event after the Identify call. As a result, the identify call only affects events going forward. For more information, see [User Properties and Events](/docs/data/user-properties-and-events).
 {{/partial:admonition}}
 
 You can handle the identity of a user using the identify methods. Proper use of these methods can connect events to the correct user as they move across devices, browsers, and other platforms. Send an identify call containing those user property operations to Amplitude server to tie a user's events with specific user properties.
@@ -216,11 +218,11 @@ The SDK can track more default events. You can configure it to track the followi
 - App lifecycles
 - Deep links (now only available on Android)
 
-| Name | Type | Default Value | Description |
-|-|-|-|-|
-`config.defaultTracking.sessions` | Optional. `bool` | `true` | Enables session tracking. If value is `true`, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting is `false`, Amplitude tracks `sessionId` only.<br /><br />See [Tracking sessions](#tracking-sessions) for more information.|
-`config.defaultTracking.appLifecycles` | Optional. `bool` | `false` | Enables application lifecycle events tracking. If value is `true`, Amplitude tracks application installed, application updated, application opened, and application backgrounded events.<br /><br />Event properties tracked includes: `[Amplitude] Version`,<br /> `[Amplitude] Build`,<br /> `[Amplitude] Previous Version`, `[Amplitude] Previous Build`, `[Amplitude] From Background`<br /><br />See [Tracking application lifecycles](#tracking-application-lifecycles) for more information.|
-`config.defaultTracking.deepLinks` | Optional. `bool` | `false` | Only available on Android. It enables deep link tracking. If value is `true`, Amplitude tracks deep link opened events.<br /><br />Event properties tracked includes: `[Amplitude] Link URL`, `[Amplitude] Link Referrer`<br /><br />See [Tracking deep links](#tracking-deep-links) for more information.|
+| Name                                   | Type             | Default Value | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| -------------------------------------- | ---------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `config.defaultTracking.sessions`      | Optional. `bool` | `true`        | Enables session tracking. If value is `true`, Amplitude tracks session start and session end events otherwise, Amplitude doesn't track session events. When this setting is `false`, Amplitude tracks `sessionId` only.<br /><br />See [Tracking sessions](#tracking-sessions) for more information.                                                                                                                                                                                                |
+| `config.defaultTracking.appLifecycles` | Optional. `bool` | `false`       | Enables application lifecycle events tracking. If value is `true`, Amplitude tracks application installed, application updated, application opened, and application backgrounded events.<br /><br />Event properties tracked includes: `[Amplitude] Version`,<br /> `[Amplitude] Build`,<br /> `[Amplitude] Previous Version`, `[Amplitude] Previous Build`, `[Amplitude] From Background`<br /><br />See [Tracking application lifecycles](#tracking-application-lifecycles) for more information. |
+| `config.defaultTracking.deepLinks`     | Optional. `bool` | `false`       | Only available on Android. It enables deep link tracking. If value is `true`, Amplitude tracks deep link opened events.<br /><br />Event properties tracked includes: `[Amplitude] Link URL`, `[Amplitude] Link Referrer`<br /><br />See [Tracking deep links](#tracking-deep-links) for more information.                                                                                                                                                                                          |
 
 You can enable Amplitude to start tracking all events mentioned above, use the code sample below. Otherwise, you can omit the configuration to keep only session tracking enabled.
 
@@ -347,7 +349,7 @@ amplitude.setGroup('sport', ['tennis', 'soccer']);
 ```
 {{/partial:admonition}}
 
-You can also set **event-level groups** by passing an `Event` Object with `groups` to `track`. With event-level groups, the group designation applies only to the specific event being logged, and doesn't persist on the user unless you explicitly set it with `setGroup`.
+You can also set **event-level groups** by passing an `Event` Object with `groups` to `track`. With event-level groups, the group designation applies only to the specific logged event, and doesn't persist on the user unless you explicitly set it with `setGroup`.
 
 ```dart
 amplitude.track(BaseEvent('event type',
@@ -384,14 +386,14 @@ final revenue = Revenue()
 amplitude.revenue(revenue);
 ```
 
-| Name   | Description  |
-| --- | --- |
-| `productId` | Optional. String. An identifier for the product. Amplitude recommends something like the Google Play Store product ID. Defaults to `null`.|
-| `quantity `| Required. Integer. The quantity of products purchased. Note: revenue = quantity * price. Defaults to 1 |
-| `price `| Required. Double. The price of the products purchased, and this can be negative. Note: revenue = quantity * price. Defaults to `null`.|
-| `revenueType`| Optional, but required for revenue verification. String. The revenue type (for example, tax, refund, income). Defaults to `null`.|
-| `receipt`| Optional. String. The receipt identifier of the revenue. For example, "123456". Defaults to `null`. |
-| `receiptSignature`| Optional, but required for revenue verification. String. Defaults to `null`. |
+| Name               | Description                                                                                                                                |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `productId`        | Optional. String. An identifier for the product. Amplitude recommends something like the Google Play Store product ID. Defaults to `null`. |
+| `quantity `        | Required. Integer. The quantity of products purchased. Note: revenue = quantity * price. Defaults to 1                                     |
+| `price `           | Required. Double. The price of the products purchased, and this can be negative. Note: revenue = quantity * price. Defaults to `null`.     |
+| `revenueType`      | Optional, but required for revenue verification. String. The revenue type (for example, tax, refund, income). Defaults to `null`.          |
+| `receipt`          | Optional. String. The receipt identifier of the revenue. For example, "123456". Defaults to `null`.                                        |
+| `receiptSignature` | Optional, but required for revenue verification. String. Defaults to `null`.                                                               |
 
 ## Custom user ID
 
