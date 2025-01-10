@@ -108,7 +108,7 @@ class YourClass {
 | `useBatch` | `bool`. Whether to use batch API. | `false` |
 | `serverZone` | `ServerZone`. `ServerZone.us` or `ServerZone.eu`. The server zone to send to. Adjust server URL based on this config. | `ServerZone.us` |
 | `serverUrl` | `String`. The server URL events upload to. | `https://api2.amplitude.com/2/httpapi` |
-| `minTimeBetweenSessionsMillis` | `int`. The amount of time for session timeout. The value is in milliseconds. Defaults to 300,000 (5 minutes) for iOS/Android and 1,800,000 (30 minuts) for Web. Overriding this value will change the session timeout for all platforms. This maps to `minTimeBetweenSessionsMillis` for iOS/Android and `sessionTimeout` for Web.| `300000` |
+| `minTimeBetweenSessionsMillis` | `int`. The amount of time for session timeout. The value is in milliseconds. Defaults to 300,000 (5 minutes) for iOS/Android and 1,800,000 (30 minutes) for Web. Overriding this value changes the session timeout for all platforms. This maps to `minTimeBetweenSessionsMillis` for iOS/Android and `sessionTimeout` for Web.| `300000` |
 | `trackingOptions` | `TrackingOptions`. Options to control the values tracked in SDK. | `enable` |
 
 ### Configuration for Android and iOS
@@ -121,10 +121,10 @@ class YourClass {
 | `identifyBatchIntervalMillis` | `int`. The amount of time SDK attempts to batch intercepted identify events. The value is in milliseconds| `30000` |
 | `migrateLegacyData` | `bool`. Whether to migrate maintenance Android SDK and maintenance iOS SDK data (events, user/device ID). Learn more at the configuration section of the underlying [Kotlin SDK](/docs/sdks/analytics/android/android-kotlin-sdk/#configuration) and [Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk/#configuration). | `true`|
 
-### Configuration for Web and Android
+### Configuration for web and Android
 | Name  | Description | Default Value |
 | --- | --- | --- |
-| `deviceId` | `String`. The device ID to use for this device. If no deviceID is provided one will be generated automatically. | `null` |
+| `deviceId` | `String`. The device ID to use for this device. If no deviceID is provided, one is generated automatically. | `null` |
 
 ### Configuration for Android
 
@@ -134,7 +134,7 @@ class YourClass {
 | `useAdvertisingIdForDeviceId` | `bool`. Whether to use advertising id as device id. Check [here](/docs/sdks/analytics/android/android-kotlin-sdk/#advertiser-id) for required module and permission. | `false` |
 | `useAppSetIdForDeviceId` | `bool`.  Whether to use app set id as device id. Check [here](/docs/sdks/analytics/android/android-kotlin-sdk/#app-set-id) for required module and permission. | `false` |
 
-### Configuration for Web
+### Configuration for web
 | Name  | Description | Default Value |
 | --- | --- | --- |
 | `appVersion` | `String`. Sets an app version for events tracked. This can be the version of your application. For example: "1.0.0". | `null` |
