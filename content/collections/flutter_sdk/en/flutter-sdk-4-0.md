@@ -37,7 +37,7 @@ To enable Bitcode, follow Flutter's [documentation](https://github.com/flutter/
 
 ### Web installation (optional)
 
-Our Flutter SDK uses our [Browser SDK 2](https://amplitude.com/docs/sdks/analytics/browser/browser-sdk-2) under the hood
+Our Flutter SDK uses our [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2) under the hood
 for Flutter Web using Dart's JavaScript interop. This involves making our SDK available within the global JS scope. Append
 the following Browser SDK 2 snippet into `web/index.html` in your Flutter project to do so.
 
