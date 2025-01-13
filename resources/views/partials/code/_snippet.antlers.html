@@ -9,7 +9,8 @@
 <script>
   window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));
   window.amplitude.init('AMPLITUDE_API_KEY', {
-    "fetchRemoteConfig":true, "autocapture":true
+    fetchRemoteConfig: true,
+    autocapture: true
   });
 </script>
 {{/partial:tab}}
@@ -19,7 +20,9 @@
 <script>
   window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));
   window.amplitude.init('AMPLITUDE_API_KEY', {
-    "fetchRemoteConfig":true, "autocapture":true
+    serverZone: 'EU',
+    fetchRemoteConfig: true,
+    autocapture: true
   });
 </script>
 ```
@@ -36,7 +39,8 @@
 
 <script>
   window.amplitude.init('AMPLITUDE_API_KEY', {
-    "fetchRemoteConfig":true, "autocapture":true
+    fetchRemoteConfig: true,
+    autocapture: true
   });
 </script>
 ```
@@ -47,7 +51,9 @@
 
 <script>
   window.amplitude.init('AMPLITUDE_API_KEY', {
-    "fetchRemoteConfig":true, "autocapture":true
+    serverZone: 'EU',
+    fetchRemoteConfig: true,
+    autocapture: true
   });
 </script>
 ```
