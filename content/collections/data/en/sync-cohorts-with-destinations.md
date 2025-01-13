@@ -8,7 +8,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1736374369
 ---
 
-You can synchronize the cohorts your create in Amplitude, with third-party [destinations](/docs/data/destination-catalog) like ad networks, attribution provividers, and marketing automation platforms.
+You can synchronize the cohorts your create in Amplitude, with third-party [destinations](/docs/data/destination-catalog) like ad networks, attribution providers, and marketing automation platforms.
 
 The sync cadence you define impacts both the frequency with which Amplitude sends cohort or cohort updates to the destination, and the destinations that are available.
 
