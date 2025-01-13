@@ -3,6 +3,11 @@
 {{markdown}}
 ```html
 <script src="https://cdn.amplitude.com/script/AMPLITUDE_API_KEY.js"></script>
+<!--
+For EU customers, use the following script instead:
+<script src="https://cdn.eu.amplitude.com/script/AMPLITUDE_API_KEY.js"></script>
+-->
+
 <script>
   window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));
   window.amplitude.init('AMPLITUDE_API_KEY', {
@@ -16,6 +21,11 @@
 {{markdown}}
 ```html
 <script src="https://cdn.amplitude.com/script/AMPLITUDE_API_KEY.js"></script>
+<!--
+For EU customers, use the following script instead:
+<script src="https://cdn.eu.amplitude.com/script/AMPLITUDE_API_KEY.js"></script>
+-->
+
 <script>
   window.amplitude.init('AMPLITUDE_API_KEY', {
     "fetchRemoteConfig":true, "autocapture":true
