@@ -1,12 +1,10 @@
 {{if unified}}
 {{if session_replay&&autocapture}}
 {{markdown}}
+{{partial:tabs tabs="US, EU"}}
+{{partial:tab name="US"}}
 ```html
 <script src="https://cdn.amplitude.com/script/AMPLITUDE_API_KEY.js"></script>
-<!--
-For EU customers, use the following script instead:
-<script src="https://cdn.eu.amplitude.com/script/AMPLITUDE_API_KEY.js"></script>
--->
 
 <script>
   window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));
@@ -14,17 +12,27 @@ For EU customers, use the following script instead:
     "fetchRemoteConfig":true, "autocapture":true
   });
 </script>
+{{/partial:tab}}
+{{partial:tab name="EU"}}
 ```
+<script src="https://cdn.eu.amplitude.com/script/AMPLITUDE_API_KEY.js"></script>
+<script>
+  window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));
+  window.amplitude.init('AMPLITUDE_API_KEY', {
+    "fetchRemoteConfig":true, "autocapture":true
+  });
+</script>
+```
+{{/partial:tab}}
+{{/partial:tabs}}
 {{/markdown}}
 
 {{elseif autocapture}}
 {{markdown}}
+{{partial:tabs tabs="US, EU"}}
+{{partial:tab name="US"}}
 ```html
 <script src="https://cdn.amplitude.com/script/AMPLITUDE_API_KEY.js"></script>
-<!--
-For EU customers, use the following script instead:
-<script src="https://cdn.eu.amplitude.com/script/AMPLITUDE_API_KEY.js"></script>
--->
 
 <script>
   window.amplitude.init('AMPLITUDE_API_KEY', {
@@ -32,10 +40,24 @@ For EU customers, use the following script instead:
   });
 </script>
 ```
+{{/partial:tab}}
+{{partial:tab name="EU"}}
+```html
+<script src="https://cdn.eu.amplitude.com/script/AMPLITUDE_API_KEY.js"></script>
+
+<script>
+  window.amplitude.init('AMPLITUDE_API_KEY', {
+    "fetchRemoteConfig":true, "autocapture":true
+  });
+</script>
+```
+{{/partial:tab}}
+{{/partial:tabs}}
 {{/markdown}}
 {{elseif session_replay}}
 
 {{markdown}}
+
 ```html
 <script src="https://cdn.amplitude.com/libs/analytics-browser-{{sdk_versions.browser}}-min.js.gz"></script>
 <script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-{{sdk_versions.session_replay_plugin}}-min.js.gz"></script>
