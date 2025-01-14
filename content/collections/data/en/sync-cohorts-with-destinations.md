@@ -27,7 +27,7 @@ Use a Real-time sync to ensure the destination has the most up-to-date informati
 Amplitude recommends Real-time syncs for cohorts that require minute-by-minute precision and don't change by a large number of users from minute to minute. If you choose Real-time syncing, and notice in the sync history that most syncs update `0` users, hourly sync may work better for your use case.
 
 {{partial:admonition type="warning" heading="Real-time sync limitations"}}
-Real-time sync supports all cohort types except:
+Real-time sync supports cohorts of 1,000,000 users or fewer, and all cohort types except:
 
 * Funnel
 * Retention
