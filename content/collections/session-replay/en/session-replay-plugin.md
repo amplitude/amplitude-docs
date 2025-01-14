@@ -133,11 +133,11 @@ amplitude.init(API_KEY, USER, {
 {{/partial:tabs}}
 
 {{partial:admonition type="info" heading="Session Start and Session End events"}}
-Beginning with plugin version 1.1.0, Session Replay no longer requires `Session Start` and `Session End` events, but does capture them by default. To disable capture of these events, set `forceSessionTracking: false`:
+Beginning with plugin version 1.12.1, Session Replay no longer captures `Session Start` and `Session End` eventsby default. To enable capture of these events, set `forceSessionTracking: true`:
 
 ```js
 const sessionReplayTracking = window.sessionReplay.plugin({ 
- forceSessionTracking: false, 
+ forceSessionTracking: true, // Enable capture of Session Start and Session End events
  sampleRate: 1, // 100% sample rate, should reduce for production traffic. 
 }); 
 
