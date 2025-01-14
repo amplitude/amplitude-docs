@@ -224,6 +224,10 @@ if (nonEUCountryFlagEnabled) {
 }
 ```
 
+### WebView support (Beta)
+
+By default, web views are blocked in a session replay recording. To enable these components, you can manually unmask views by using the instructions [here](#block-on-screen-data)
+
 {{partial:partials/session-replay/sr-data-retention}}
 
 {{partial:partials/session-replay/sr-ios-storage}}
