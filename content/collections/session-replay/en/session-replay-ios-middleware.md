@@ -1,17 +1,15 @@
 ---
 id: 78d50fa5-972c-4705-a9cf-f844551768d1
-published: false
 blueprint: session-replay
 title: 'Session Replay iOS Middleware'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1730234244
+updated_at: 1736887815
 alpha: true
 instrumentation_guide: true
 platform: ios
 public: false
-parent: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
 ---
 {{partial:partials/session-replay/sr-ios-eap :when="alpha"}}
 
@@ -153,9 +151,7 @@ if (nonEUCountryFlagEnabled) {
 amplitude.initializeApiKey(API_KEY)
 ```
 
-### WebView support (Beta)
-
-By default, web views are blocked in a session replay recording. To enable these components, you can manually unmask views by using the instructions [here](#block-on-screen-data)
+{{partial:partials/session-replay/sr-ios-webview}}
 
 {{partial:partials/session-replay/sr-data-retention}}
 
