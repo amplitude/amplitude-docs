@@ -158,11 +158,7 @@ if (nonEUCountryFlagEnabled) {
 }
 ```
 
-### WebView and MapView support (Beta)
-
-By default, web views and map views are excluded from session replay recordings. To include these components, you can manually unmask views by following the instructions [here](#mask-on-screen-data).
-
-Web View session replay operates by injecting JavaScript code into the rendered page. To facilitate this, the SDK enables `javaScriptEnabled` on the webview that is being unmasked for recording.
+{{partial:partials/session-replay/sr-android-webview-mapview}}
 
 {{partial:partials/session-replay/sr-data-retention}}
 
