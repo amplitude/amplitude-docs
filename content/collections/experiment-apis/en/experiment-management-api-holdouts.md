@@ -194,14 +194,14 @@ Create a new holdout group.
 |---|---|---|---|
 | `projectId` | Required | number | Project id of the holdout group. |
 | `name` | Required | string | The holdout group name. |
-| `key` | Optional | string | The holdout group key. Must be unique across all flags, experiments, holdout groups, and mutex groups. If not specified, a random one is generated. |
+| `key` | Optional | string | The holdout group key. Must be unique. If not specified, it generates a random key. |
 | `description` | Optional | string | The holdout group description. |
 | `holdoutPercentage` | Required | number | Holdout percentage. An integer number between 1 and 99 inclusively. |
 | `evaluationMode` | Optional | string | Evaluation mode, options are `local` and `remote`. Defaulted to `remote` |
 | `bucketingKey` | Optional | string | Bucketing key. Defaulted to "amplitude_id" |
-| `experiments` | Optional | number array | List of experiment ids to be included in this holdout group. Experiment evaluation mode must be compatible with holdout group's evaluation mode. |
-| `individualInclusion` | Optional | string array | List of user ids or device ids to be included in this holdout group (never experience the experiments). |
-| `individualExclusion` | Optional | string array | List of user ids or device ids to be excluded in this holdout group (may experience the experiments). |
+| `experiments` | Optional | number array | List of experiment ids to include in this holdout group. Experiment evaluation mode must be compatible with holdout group's evaluation mode. |
+| `individualInclusion` | Optional | string array | List of user ids or device ids to include in this holdout group (never experience the experiments). |
+| `individualExclusion` | Optional | string array | List of user ids or device ids to exclude in this holdout group (may experience the experiments). |
 
 {{partial:admonition type="example" heading="Example request"}}
 ```json
