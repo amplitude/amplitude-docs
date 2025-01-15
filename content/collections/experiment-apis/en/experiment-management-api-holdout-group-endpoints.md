@@ -28,7 +28,7 @@ Fetch a list of holdout groups including their configuration details.
 
 | Name| Description |
 | --- | --- |
-| `limit` | The max number of mutex groups to be returned. Capped at 1000. |
+| `limit` | The max number of holdout groups to return. Capped at 1000. |
 | `cursor` | The offset to start the "page" of results from. |
 
 ### Response
@@ -148,10 +148,10 @@ Edit a holdout group.
 |---|---|---|---|
 | `name` | Optional | string | The holdout group name. |
 | `description` | Optional | string | The holdout group description. |
-| `experiments` | Optional | number array | List of experiment ids to be included in this holdout group. Experiment evaluation mode must be compatible with holdout group's evaluation mode. |
-| `individualInclusion` | Optional | string array | List of user ids or device ids to be included in this holdout group (never experience the experiments). |
-| `individualExclusion` | Optional | string array | List of user ids or device ids to be excluded in this holdout group (may experience the experiments). |
-|`archive`| Optional | boolean | Property to archive or unarchive holdout group. The holdout group will be set as deleted and removed from all child experiments’ parent dependencies. |
+| `experiments` | Optional | number array | List of experiment ids to include in this holdout group. Experiment evaluation mode must be compatible with holdout group's evaluation mode. |
+| `individualInclusion` | Optional | string array | List of user ids or device ids to include in this holdout group (never experience the experiments). |
+| `individualExclusion` | Optional | string array | List of user ids or device ids to exclude in this holdout group (may experience the experiments). |
+|`archive`| Optional | boolean | Property to archive holdout group. Set the holdout group as deleted and remove from all child experiments’ parent dependencies. |
 
 {{partial:admonition type="example" heading="Example request"}}
 ```json
@@ -194,7 +194,7 @@ Create a new holdout group.
 |---|---|---|---|
 | `projectId` | Required | number | Project id of the holdout group. |
 | `name` | Required | string | The holdout group name. |
-| `key` | Optional | string | The holdout group key. Must be unique across all flags, experiments, holdout groups, and mutex groups. If not specified, one will be generated. |
+| `key` | Optional | string | The holdout group key. Must be unique across all flags, experiments, holdout groups, and mutex groups. If not specified, a random one is generated. |
 | `description` | Optional | string | The holdout group description. |
 | `holdoutPercentage` | Required | number | Holdout percentage. An integer number between 1 and 99 inclusively. |
 | `evaluationMode` | Optional | string | Evaluation mode, options are `local` and `remote`. Defaulted to `remote` |
