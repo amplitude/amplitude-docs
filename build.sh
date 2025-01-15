@@ -30,5 +30,5 @@ php artisan key:generate
  
 # BUILD STATIC SITE
 npm run prod
-php please stache:warm
+php please stache:warm -n -q
 php please ssg:generate --workers=4
