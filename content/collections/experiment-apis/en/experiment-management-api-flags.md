@@ -10,6 +10,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717531451
 ---
+
 | <div class="big-column">Name</div>                                | Description                                          |
 | ----------------------------------------------------------------- | ---------------------------------------------------- |
 | [List](#list)                                                     | List of flags including their configuration details. |
@@ -32,7 +33,6 @@ updated_at: 1717531451
 | [Edit](#edit)                                                     | Edit flag.                                           |
 | [Create](#create)                                                 | Create a new flag.                                   |
 
-
 ## List
 
 ```bash
@@ -43,10 +43,12 @@ Fetch a list of flags including their configuration details. Results are ordered
 
 ### Query parameters
 
-| Name     | Description                                             |
-| -------- | ------------------------------------------------------- |
-| `limit`  | The max number of flags to be returned. Capped at 1000. |
-| `cursor` | The offset to start the "page" of results from.         |
+| Name        | Description                                             |
+| ----------- | ------------------------------------------------------- |
+| `key`       | Filter flags that have flag key matches this value.     |
+| `projectId` | Filter flags that belongs to this project.              |
+| `limit`     | The max number of flags to be returned. Capped at 1000. |
+| `cursor`    | The offset to start the "page" of results from.         |
 
 ### Response
 
@@ -54,14 +56,17 @@ A successful request returns a `200 OK` response and a list of flags encoded as 
 
 {{partial:tabs tabs="Request, Response"}}
 {{partial:tab name="Request"}}
+
 ```bash
 curl --request GET \
 --url 'https://experiment.amplitude.com/api/1/flags?limit=1000' \
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer <management-api-key>'
 ```
+
 {{/partial:tab}}
 {{partial:tab name="Response"}}
+
 ```json
 {
     "flags": [
@@ -107,12 +112,21 @@ curl --request GET \
                         "on": 1
                     }
                 }
-            ]
+            ],
+            "parentDependencies": {
+                "flags": {
+                    "12345": [
+                        "on"
+                    ]
+                },
+                "operator": "all"
+            }
         }
     ],
     "nextCursor": <cursorId>
 }
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
 
@@ -136,14 +150,17 @@ A successful request returns a `200 OK` response and a JSON object with the flag
 
 {{partial:tabs tabs="Request, Response"}}
 {{partial:tab name="Request"}}
+
 ```bash
 curl --request GET \
     --url 'https://experiment.amplitude.com/api/1/flags/<id>' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
 ```
+
 {{/partial:tab}}
 {{partial:tab name="Response"}}
+
 ```json
 {
     "id": <id>,
@@ -186,9 +203,18 @@ curl --request GET \
             }
         }
     ],
+    "parentDependencies": {
+        "flags": {
+            "12345": [
+                "on"
+            ]
+        },
+        "operator": "all"
+    },
     "deleted": false
 }
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
 
@@ -212,14 +238,17 @@ A successful request returns a `200 OK` response and a list of flag's versions e
 
 {{partial:tabs tabs="Request, Response"}}
 {{partial:tab name="Request"}}
+
 ```bash
 curl --request GET \
     --url 'https://experiment.amplitude.com/api/1/flags/<id>/versions' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
 ```
+
 {{/partial:tab}}
 {{partial:tab name="Response"}}
+
 ```json
 [
     {
@@ -346,6 +375,7 @@ curl --request GET \
     }
 ] //[tl! collapse:end]
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
 
@@ -370,14 +400,17 @@ A successful request returns a `200 OK` response and a JSON object with details 
 
 {{partial:tabs tabs="Request, Response"}}
 {{partial:tab name="Request"}}
+
 ```bash
 curl --request GET \
     --url 'https://experiment.amplitude.com/api/1/flags/<id>/versions/<versionId>' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
 ```
+
 {{/partial:tab}}
 {{partial:tab name="Response"}}
+
 ```json
 {
     "createdAt": "2023-07-29T03:32:49.594Z",
@@ -427,6 +460,7 @@ curl --request GET \
     }
 }
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
 
@@ -450,25 +484,29 @@ A successful request returns a `200 OK` response and a list of variants encoded 
 
 {{partial:tabs tabs="Request, Response"}}
 {{partial:tab name="Request"}}
+
 ```bash
 curl --request GET \
     --url 'https://experiment.amplitude.com/api/1/flags/<id>/variants' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
 ```
+
 {{/partial:tab}}
 {{partial:tab name="Response"}}
+
 ```json
 [
-    {
-        "key": "on",
-        "name": "",
-        "payload": {},
-        "description": "",
-        "rolloutWeight": 1
-    }
+  {
+    "key": "on",
+    "name": "",
+    "payload": {},
+    "description": "",
+    "rolloutWeight": 1
+  }
 ]
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
 
@@ -493,14 +531,17 @@ A successful request returns a `200 OK` response and a JSON object with details 
 
 {{partial:tabs tabs="Request, Response"}}
 {{partial:tab name="Request"}}
+
 ```bash
 curl --request GET \
     --url 'https://experiment.amplitude.com/api/1/flags/<id>/variants/<variantKey>' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
 ```
+
 {{/partial:tab}}
 {{partial:tab name="Response"}}
+
 ```bash
 {
     "key": "on",
@@ -510,6 +551,7 @@ curl --request GET \
     "rolloutWeight": 1
 }
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
 
@@ -534,14 +576,17 @@ A successful request returns a `200 OK` response and a list of inclusions of fla
 
 {{partial:tabs tabs="Request, Response"}}
 {{partial:tab name="Request"}}
+
 ```bash
 curl --request GET \
     --url 'https://experiment.amplitude.com/api/1/flags/<id>/variants/<variantKey>/users' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
 ```
+
 {{/partial:tab}}
 {{partial:tab name="Response"}}
+
 ```bash
 [
     <user>@<your-company-email>,
@@ -576,17 +621,18 @@ Create a new variant for a flag
 | `payload`                              | Optional    | string | Optional payload. Value must be a valid JSON element. |
 | `rolloutWeight`                        | Optional    | number | Rollout weight for non-targeted users.                |
 
-
 {{partial:admonition type="example" heading="Example request"}}
+
 ```json
 {
-    "key": "new-variant-key",
-    "description": "optional description for variant",
-    "name": "optional name for variant",
-    "payload": {"variant-payload": "example payload"},
-    "rolloutWeight": 0
+  "key": "new-variant-key",
+  "description": "optional description for variant",
+  "name": "optional name for variant",
+  "payload": { "variant-payload": "example payload" },
+  "rolloutWeight": 0
 }
 ```
+
 {{/partial:admonition}}
 
 ### Response
@@ -594,6 +640,7 @@ Create a new variant for a flag
 A successful request returns a `200 OK` response and `OK` text.
 
 {{partial:admonition type="example" heading="Request"}}
+
 ```bash
 curl --request POST \
     --url 'https://experiment.amplitude.com/api/1/flags/<id>/variants' \
@@ -602,6 +649,7 @@ curl --request POST \
     --header 'Authorization: Bearer <management-api-key>' \
     --data '{"key":"<key>","name":"<name>","description":"<description>","payload":"<payload>","rolloutWeight":<rolloutWeight>}'
 ```
+
 {{/partial:admonition}}
 
 ## Edit variant
@@ -620,15 +668,17 @@ Edit a variant for a flag.
 | `variantKey` | Required    | string | The variant's key. |
 
 {{partial:admonition type="example" heading="Example request"}}
+
 ```json
 {
-    "key": "updated-variant-key",
-    "description": "updated optional description for variant",
-    "name": "optional name for variant",
-    "payload": {"variant-payload": "example payload"},
-    "rolloutWeight": 0
+  "key": "updated-variant-key",
+  "description": "updated optional description for variant",
+  "name": "optional name for variant",
+  "payload": { "variant-payload": "example payload" },
+  "rolloutWeight": 0
 }
 ```
+
 {{/partial:admonition}}
 
 ### Request body
@@ -646,6 +696,7 @@ Edit a variant for a flag.
 A successful request returns a `200 OK` response and `OK` text.
 
 {{partial:admonition type="example" heading="Request"}}
+
 ```bash
 curl --request PATCH \
     --url 'https://experiment.amplitude.com/api/1/flags/<id>/variants/<variantKey>' \
@@ -654,6 +705,7 @@ curl --request PATCH \
     --header 'Authorization: Bearer <management-api-key>' \
     --data '{"key":"<key>","name":"<name>","description":"<description>","payload":"<payload>","rolloutWeight":<rolloutWeight>}'
 ```
+
 {{/partial:admonition}}
 
 ## Remove variant
@@ -676,12 +728,14 @@ Remove a variant from a flag.
 A successful request returns a `200 OK` response and `OK` text.
 
 {{partial:admonition type="example" heading="Request"}}
+
 ```bash
 curl --request DELETE \
     --url 'https://experiment.amplitude.com/api/1/flags/<id>/variants/<variantKey>' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
 ```
+
 {{/partial:admonition}}
 
 ## Add users to variant
@@ -706,11 +760,15 @@ Add inclusions (users or devices) to flag's variant.
 | `inclusions`                           | Required    | object | Contains an string array of user or device ids. |
 
 {{partial:admonition type="example" heading="Example request"}}
+
 ```json
 {
-    "inclusions": ["<user1>@<your-company-email>, <user2>@<your-company-email>, <userId>"]
+  "inclusions": [
+    "<user1>@<your-company-email>, <user2>@<your-company-email>, <userId>"
+  ]
 }
 ```
+
 {{/partial:admonition}}
 
 ### Response
@@ -718,6 +776,7 @@ Add inclusions (users or devices) to flag's variant.
 A successful request returns a `200 OK` response and `OK` text.
 
 {{partial:admonition type="example" heading="Request"}}
+
 ```bash
 curl --request POST \
     --url 'https://experiment.amplitude.com/api/1/flags/<id>/variants/<variantKey>/users' \
@@ -726,6 +785,7 @@ curl --request POST \
     --header 'Authorization: Bearer <management-api-key>' \
     --data '{"inclusions":<["id1", "id2", "id3"]>}'
 ```
+
 {{/partial:admonition}}
 
 ## Remove users from variant
@@ -749,12 +809,14 @@ Remove inclusions (users or devices) from flag's variant.
 A successful request returns a `200 OK` response and `OK` text.
 
 {{partial:admonition type="example" heading="Request"}}
+
 ```bash
 curl --request DELETE \
     --url 'https://experiment.amplitude.com/api/1/flags/<id>/variants/<variantKey>/users/<userIndex>' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
 ```
+
 {{/partial:admonition}}
 
 ## Remove all users from variant
@@ -772,18 +834,19 @@ Remove all inclusions (users or devices) from flag's variant.
 | `id`         | Required    | string | The flag's ID.     |
 | `variantKey` | Required    | string | The variant's key. |
 
-
 ### Response
 
 A successful request returns a `200 OK` response and `OK` text.
 
 {{partial:admonition type="example" heading="Request"}}
+
 ```bash
 curl --request DELETE \
     --url 'https://experiment.amplitude.com/api/1/flags/<id>/variants/<variantKey>/users' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
 ```
+
 {{/partial:admonition}}
 
 ## Bulk remove users from variant
@@ -801,7 +864,6 @@ Bulk remove users or devices from flag's variant. Limited to 100 per request.
 | `id`         | Required    | string | The flag's ID.     |
 | `variantKey` | Required    | string | The variant's key. |
 
-
 ### Request body
 
 | <div class="med-big-column">Name</div> | Requirement | Type   | Description                                     |
@@ -813,6 +875,7 @@ Bulk remove users or devices from flag's variant. Limited to 100 per request.
 A successful request returns a `200 OK` response and `OK` text.
 
 {{partial:admonition type="example" heading="Request"}}
+
 ```bash
 curl --request DELETE \
     --url 'https://experiment.amplitude.com/api/1/flags/<id>/variants/<variantKey>/bulk-delete-users' \
@@ -821,6 +884,7 @@ curl --request DELETE \
     --header 'Authorization: Bearer <management-api-key>' \
     --data '{"users":<["id1", "id2", "id3"]>}'
 ```
+
 {{/partial:admonition}}
 
 ## List deployments
@@ -833,10 +897,9 @@ List all deployments for a flag.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description                                                                                                              |
-| ------------ | ----------- | ------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `id`         | Required    | string | The flag's ID.                                                                                                           |
-
+| Name | Requirement | Type   | Description    |
+| ---- | ----------- | ------ | -------------- |
+| `id` | Required    | string | The flag's ID. |
 
 ### Response
 
@@ -844,14 +907,17 @@ A successful request returns a `200 OK` response and an array of JSON objects wi
 
 {{partial:tabs tabs="Request, Response"}}
 {{partial:tab name="Request"}}
+
 ```bash
 curl --request GET \
     --url 'https://experiment.amplitude.com/api/1/flags/<id>/deployments' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
 ```
+
 {{/partial:tab}}
 {{partial:tab name="Response"}}
+
 ```json
 [
     {
@@ -863,6 +929,7 @@ curl --request GET \
     }
 ]
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
 
@@ -876,9 +943,9 @@ Add a deployment for a flag.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description                                                                                                              |
-| ------------ | ----------- | ------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `id`         | Required    | string | The object's ID.                                                                                                           |
+| Name | Requirement | Type   | Description      |
+| ---- | ----------- | ------ | ---------------- |
+| `id` | Required    | string | The object's ID. |
 
 ### Request body
 
@@ -887,21 +954,23 @@ Add a deployment for a flag.
 | `deployments`                          | Required    | object | Contains an string array of deployment ids. |
 
 {{partial:admonition type="example" heading="Example request"}}
+
 ```json
 {
     "deployments": [<deploymentId>]
 }
 ```
+
 {{/partial:admonition}}
 
 ???example "Example request (click to open)"
-
 
 ### Response
 
 A successful request returns a `200 OK` response and `OK` text.
 
 {{partial:admonition type="example" heading="Request"}}
+
 ```bash
 curl --request POST \
     --url 'https://experiment.amplitude.com/api/1/flags/<id>/deployments' \
@@ -910,6 +979,7 @@ curl --request POST \
     --header 'Authorization: Bearer <management-api-key>'
     --data '{"deployments":[<deploymentId>]}'
 ```
+
 {{/partial:admonition}}
 
 ## Remove deployment
@@ -922,23 +992,24 @@ Remove a deployment from a flag.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description                                                                                                              |
-| ------------ | ----------- | ------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `id`         | Required    | string | The flag's ID.                                                                                                           |
-| `deploymentID` | Required    | string | The deployment's ID.                                                                                                       |
-
+| Name           | Requirement | Type   | Description          |
+| -------------- | ----------- | ------ | -------------------- |
+| `id`           | Required    | string | The flag's ID.       |
+| `deploymentID` | Required    | string | The deployment's ID. |
 
 ### Response
 
 A successful request returns a `200 OK` response and `OK` text.
 
 {{partial:admonition type="example" heading="Request"}}
+
 ```bash
 curl --request DELETE \
     --url 'https://experiment.amplitude.com/api/1/flags/<id>/deployments/<deploymentId>' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
 ```
+
 {{/partial:admonition}}
 
 ## Edit
@@ -951,9 +1022,9 @@ Edit a flag.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description                                                                                                              |
-| ------------ | ----------- | ------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `id`         | Required    | string | The flag's ID.                                                                                                           |
+| Name | Requirement | Type   | Description    |
+| ---- | ----------- | ------ | -------------- |
+| `id` | Required    | string | The flag's ID. |
 
 ### Request body
 
@@ -972,19 +1043,21 @@ Edit a flag.
 | `tags`                                 | Optional    | string array | A list of tags for the flag. Tags are added and deleted by the same operation. If you would like to add new tags to the existing ones, you should fetch a list of all flag tags first.                     |
 
 {{partial:admonition type="example" heading="Example request"}}
+
 ```json
 {
-    "name": "updated name",
-    "description": "updated description",
-    "bucketingKey": "amplitude_id",
-    "bucketingSalt": "<bucketingSalt>",
-    "bucketingUnit": "org id",
-    "evaluationMode": "remote",
-    "rolloutPercentage": 0,
-    "enabled": false,
-    "tags": ["prod", "staging"]
+  "name": "updated name",
+  "description": "updated description",
+  "bucketingKey": "amplitude_id",
+  "bucketingSalt": "<bucketingSalt>",
+  "bucketingUnit": "org id",
+  "evaluationMode": "remote",
+  "rolloutPercentage": 0,
+  "enabled": false,
+  "tags": ["prod", "staging"]
 }
 ```
+
 {{/partial:admonition}}
 
 ### Response
@@ -992,6 +1065,7 @@ Edit a flag.
 A successful request returns a `200 OK` response.
 
 {{partial:admonition type="example" heading="response"}}
+
 ```bash
 curl --request PATCH \
     --url 'https://experiment.amplitude.com/api/1/flags/<id>' \
@@ -1000,6 +1074,7 @@ curl --request PATCH \
     --header 'Authorization: Bearer <management-api-key>' \
     --data '{"enabled":<enabled>,"rolloutPercentage":<rolloutPercentage>}'
 ```
+
 {{/partial:admonition}}
 
 ## Create
@@ -1077,44 +1152,43 @@ A string value representing operations on a property value. Possible values are:
 - `glob match`
 - `glob does not match`
 
-
 {{partial:admonition type="example" heading="Example request"}}
+
 ```json
 {
-    "projectId":"<projectId>",
-    "name": "Analyze button clicks",
-    "key": "analyze-button-clicks",
-    "description": "analyze button clicks on the main page",
-    "variants": [
+  "projectId": "<projectId>",
+  "name": "Analyze button clicks",
+  "key": "analyze-button-clicks",
+  "description": "analyze button clicks on the main page",
+  "variants": [
+    {
+      "key": "on"
+    }
+  ],
+  "rolloutWeights": { "on": 1 },
+  "targetSegments": [
+    {
+      "name": "Segment 1",
+      "conditions": [
         {
-            "key": "on"
+          "prop": "country",
+          "op": "is",
+          "type": "property",
+          "values": ["United States"]
         }
-    ],
-    "rolloutWeights": {"on": 1},
-    "targetSegments": [
-        {
-            "name": "Segment 1",
-            "conditions": [
-                {
-                    "prop": "country",
-                    "op": "is",
-                    "type": "property",
-                    "values": [
-                        "United States"
-                    ]
-                }
-            ],
-            "percentage": 0,
-            "bucketingKey": "amplitude_id",
-            "rolloutWeights": {
-                "on": 1
-            }
-        }
-    ],
-    "deployments": ["<deploymentId>"],
-    "evaluationMode": "remote"
+      ],
+      "percentage": 0,
+      "bucketingKey": "amplitude_id",
+      "rolloutWeights": {
+        "on": 1
+      }
+    }
+  ],
+  "deployments": ["<deploymentId>"],
+  "evaluationMode": "remote"
 }
 ```
+
 {{/partial:admonition}}
 
 ### Response
@@ -1123,6 +1197,7 @@ A successful request returns a `200 OK` response and a JSON object with the flag
 
 {{partial:tabs tabs="Request, Response"}}
 {{partial:tab name="Request"}}
+
 ```bash
 curl --request POST \
     --url 'https://experiment.amplitude.com/api/1/flags' \
@@ -1131,14 +1206,16 @@ curl --request POST \
     --header 'Authorization: Bearer <management-api-key>' \
     --data '{"projectId":"<projectId>","key":"<key>"}'
 ```
+
 {{/partial:tab}}
 {{partial:tab name="Response"}}
+
 ```json
 {
-    "id": "<id>",
-    "url": "http://experiment.amplitude.com/amplitude/<projectId>/config/<id>"
+  "id": "<id>",
+  "url": "http://experiment.amplitude.com/amplitude/<projectId>/config/<id>"
 }
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
-
