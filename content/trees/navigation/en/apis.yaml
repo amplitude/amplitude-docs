@@ -115,6 +115,14 @@ tree:
             entry: 223ccb37-444f-430f-8910-0c1d079aca89
             title: 'Flag Endpoints'
           -
+            id: 5ae253b2-984b-4164-8353-0d4cf4ad1dcb
+            entry: 5db6cfbc-7a6a-4de3-ad8e-b8172866ae05
+            title: 'Holdout Group Endpoints'
+          -
+            id: 65bc05f2-ef86-43ea-aed9-7424daa16c9c
+            entry: 3705cc5b-d26c-4a8d-92a3-f3fcb4b8196d
+            title: 'Mutex Group Endpoints'
+          -
             id: 446b9af8-4242-466e-a2e6-9a117c7fca98
             entry: 8554f01f-abfc-4669-ae44-f00f5d2b4ccd
             title: 'Version Endpoints'

@@ -2,6 +2,7 @@
 id: 3705cc5b-d26c-4a8d-92a3-f3fcb4b8196d
 blueprint: experiment-api
 title: 'Experiment Management API Mutex Group Endpoints'
+source: 'https://www.docs.developers.amplitude.com/experiment/apis/management-api/mutexs/'
 author: 8b3cc0f4-f0bb-4156-90b4-90317d4c2d8a
 landing: false
 parent: f64a356a-2a9a-44e3-a482-f429a565a12c

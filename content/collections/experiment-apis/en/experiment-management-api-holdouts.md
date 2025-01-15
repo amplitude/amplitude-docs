@@ -2,6 +2,7 @@
 id: 5db6cfbc-7a6a-4de3-ad8e-b8172866ae05
 blueprint: experiment-api
 title: 'Experiment Management API Holdout Group Endpoints'
+source: 'https://www.docs.developers.amplitude.com/experiment/apis/management-api/holdouts/'
 author: 8b3cc0f4-f0bb-4156-90b4-90317d4c2d8a
 landing: false
 parent: f64a356a-2a9a-44e3-a482-f429a565a12c
