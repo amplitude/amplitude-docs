@@ -24,16 +24,27 @@ This is the official documentation for the Amplitude Analytics Flutter SDK. The 
 
     ```yml
     dependencies:
-        amplitude_flutter: ^4.0.0-beta.1
+        amplitude_flutter: ^4.0.0-beta.7
     ```
 
 2. Run `flutter pub get` in the terminal to install the SDK.
 
 ### iOS installation
 
-Add `platform :ios, '13.0'` to your Podfile. Run `pod install` under the ios directory of your Flutter project to update the CocoaPods dependencies.
+Add `platform :ios, '13.0'` to your Podfile. Run `pod install` in the ios directory of your Flutter project to update the CocoaPods dependencies.
 
 To enable Bitcode, follow Flutter's [documentation](https://github.com/flutter/flutter/wiki/Creating-an-iOS-Bitcode-enabled-app).
+
+### macOS installation
+
+Add `platform :osx, '10.15'` to your Podfile. Run `pod install` in the macos directory of your Flutter project to update the CocoaPods dependencies.
+Ensure your app has the `com.apple.security.network.client` entitlement to be able to send requests. Manually edit the `macos/Runner/Release.entitlements` and `macos/Runner/DebugProfile.entitlements` files to include:
+
+```xml
+	<key>com.apple.security.network.client</key>
+	<true/>
+```
+See [Flutter's documentation](https://docs.flutter.dev/platform-integration/macos/building#setting-up-entitlements) for more information.
 
 ### Web installation (optional)
 
@@ -151,7 +162,7 @@ class YourClass {
 
 ### Configure batching behavior
 
-To support high-performance environments, the SDK sends events in batches. Every event logged by the `track` method queues in memory. The SDK flushes in batches in the background. Customize batch behavior with `flushQueueSize` and `flushIntervalMillis`. By default, the `serverUrl` is `https://api2.amplitude.com/2/httpapi`. 
+To support high-performance environments, the SDK sends events in batches. Every event logged by the `track` method queues in memory. The SDK flushes in batches in the background. Customize batch behavior with `flushQueueSize` and `flushIntervalMillis`. By default, the `serverUrl` is `https://api2.amplitude.com/2/httpapi`.
 
 If you need to send large batches of data at once, set `useBatch` to `true` to set `setServerUrl` to the batch event upload API `https://api2.amplitude.com/batch`. Both the regular mode and the batch mode use the same events upload threshold and flush time intervals.
 
