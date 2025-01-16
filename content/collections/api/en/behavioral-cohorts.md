@@ -49,9 +49,9 @@ Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 
 ### Query parameters
 
-| Name|Description|
-|----|-----|
-|`includeSyncInfo`|<span class="optional">Optional</span>. Boolean. Set to true to include cohort sync metadata in response (one-time + disabled sync will be excluded) .|
+| Name              | Description                                                                                                                                            |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `includeSyncInfo` | <span class="optional">Optional</span>. Boolean. Set to true to include cohort sync metadata in response (one-time + disabled sync will be excluded) . |
 
 ### Response
 
@@ -243,17 +243,17 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 ### Path parameters
 
-|Name|Description|
-|----|-----------|
-|`id`|<span class="required">Required</span>. Cohort ID.|
+| Name | Description                                        |
+| ---- | -------------------------------------------------- |
+| `id` | <span class="required">Required</span>. Cohort ID. |
 
 
 ### Query parameters
 
-| Name|Description|
-|----|-----|
-|`props`|<span class="optional">Optional</span>. Integer. Set to 1 to include user properties in the response object. Set this to `0` or unset if the request keeps timing out.|
-|`propKeys`|<span class="optional">Optional</span>. string[]. One or more user properties to include in the response. Add as many `propKeys` parameters as needed. If left undefined and props=1, response object returns all available user properties.|
+| Name       | Description                                                                                                                                                                                                                                  |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `props`    | <span class="optional">Optional</span>. Integer. Set to 1 to include user properties in the response object. Set this to `0` or unset if the request keeps timing out.                                                                       |
+| `propKeys` | <span class="optional">Optional</span>. string[]. One or more user properties to include in the response. Add as many `propKeys` parameters as needed. If left undefined and props=1, response object returns all available user properties. |
 
 ### Response
 
@@ -310,9 +310,9 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 ### Path parameters
 
-|Name|Description|
-|----|-----------|
-|`request_id`|<span class="required">Required</span>. The request ID retrieved with the [get one cohort](#get-one-cohort) request.|
+| Name         | Description                                                                                                          |
+| ------------ | -------------------------------------------------------------------------------------------------------------------- |
+| `request_id` | <span class="required">Required</span>. The request ID retrieved with the [get one cohort](#get-one-cohort) request. |
 
 
 ### Response
@@ -381,9 +381,9 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 ### Path parameters
 
-|Name|Description|
-|----|-----------|
-|`request_id`|<span class="required">Required</span>. The request ID retrieved with the [get one cohort](#get-one-cohort) request.|
+| Name         | Description                                                                                                          |
+| ------------ | -------------------------------------------------------------------------------------------------------------------- |
+| `request_id` | <span class="required">Required</span>. The request ID retrieved with the [get one cohort](#get-one-cohort) request. |
 
 - For small cohorts, the response body contains the cohort data.
 - For large cohorts, you must download the data. If the cohort is large, the response redirects with a 302 response code to a pre-signed Amazon S3 download URL. The download URL is valid for one minute, access it immediately.
@@ -404,6 +404,7 @@ curl --location --request POST 'https://amplitude.com/api/3/cohorts/upload' \
     "name": "Cohort Name",
     "app_id": amplitude_project,
     "id_type": "BY_AMP_ID",
+    "cg": "group_id",
     "ids": [
             "amplitude_id",
             "amplitude_id"
@@ -425,6 +426,7 @@ Content-Length: 201
 "name": "Cohort Name",
 "app_id": amplitude_project,
 "id_type": "BY_AMP_ID",
+"cg": "group_id",
 "ids": [
             "amplitude_id",
             "amplitude_id"
@@ -488,17 +490,18 @@ Content-Length: 280
 
 ### Body parameters
 
-| <div class="big-column">Parameter</div> | Description |
-| --- | --- |
-| `name` | <span class="required">Required</span>. String. A name for the cohort. |
-| `app_id` | <span class="required">Required</span>. Integer. An identifier for the Amplitude project containing the cohort. |
-| `id_type` | <span class="required">Required</span>. String. The kind of ID sent in the ids field. Valid options are `BY_AMP_ID` or `BY_USER_ID`. |
-| `ids` | <span class="required">Required</span>. String\[\]. One or more user or Amplitude IDs to include in the cohort. Specify the ID type in the `id_type` field. |
-| `owner` | <span class="required">Required</span>. String. The login email of the cohort's owner in Amplitude. |
-| `published` | <span class="required">Required</span>. Boolean. Whether the cohort is discoverable or hidden. |
-| `skip_save` | <span class="optional">Optional</span>. Boolean. Set to `true` if you want to validate the upload without saving. Default is `false`. |
-| `skip_invalid_ids` | <span class="optional">Optional</span>. Boolean. Setting `skip_invalid_ids` to `true` skips invalid IDs and upload the remaining valid IDs. Setting this parameter to `false` ends the upload if the request has invalid IDs. Default is `true`. |
-| `existing_cohort_id` | <span class="optional">Optional</span>. String. The ID of an existing cohort. This replaces the contents for the specified cohort with the IDs uploaded in the request. For example, '1a2bc3d' is your cohort's ID, found in the cohort's URL. `https://analytics.amplitude.com/accountname/cohort/**1a2bc3d**`|
+| <div class="big-column">Parameter</div> | Description                                                                                                                                                                                                                                                                                                     |
+| --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`                                  | <span class="required">Required</span>. String. A name for the cohort.                                                                                                                                                                                                                                          |
+| `app_id`                                | <span class="required">Required</span>. Integer. An identifier for the Amplitude project containing the cohort.                                                                                                                                                                                                 |
+| `id_type`                               | <span class="required">Required</span>. String. The kind of ID sent in the ids field. Valid options are `BY_AMP_ID` or `BY_USER_ID`.                                                                                                                                                                            |
+| `cg`                                    | <span class="optional">Optional</span>. String. Enter the name of an existing group to create a cohort based on it.
+| `ids`                                   | <span class="required">Required</span>. String\[\]. One or more user or Amplitude IDs to include in the cohort. Specify the ID type in the `id_type` field.                                                                                                                                                     |
+| `owner`                                 | <span class="required">Required</span>. String. The login email of the cohort's owner in Amplitude.                                                                                                                                                                                                             |
+| `published`                             | <span class="required">Required</span>. Boolean. Whether the cohort is discoverable or hidden.                                                                                                                                                                                                                  |
+| `skip_save`                             | <span class="optional">Optional</span>. Boolean. Set to `true` if you want to validate the upload without saving. Default is `false`.                                                                                                                                                                           |
+| `skip_invalid_ids`                      | <span class="optional">Optional</span>. Boolean. Setting `skip_invalid_ids` to `true` skips invalid IDs and upload the remaining valid IDs. Setting this parameter to `false` ends the upload if the request has invalid IDs. Default is `true`.                                                                |
+| `existing_cohort_id`                    | <span class="optional">Optional</span>. String. The ID of an existing cohort. This replaces the contents for the specified cohort with the IDs uploaded in the request. For example, '1a2bc3d' is your cohort's ID, found in the cohort's URL. `https://analytics.amplitude.com/accountname/cohort/**1a2bc3d**` |
 
 ### Response
 
@@ -517,18 +520,18 @@ The response is a JSON object with this schema:
 
 #### Response errors
 
-| Parameter | Type | Description |
-| --- | --- | --- |
-| error | [error json](#update-cohort-error-response-json) | Error details.  |
+| Parameter | Type                                             | Description    |
+| --------- | ------------------------------------------------ | -------------- |
+| error     | [error json](#update-cohort-error-response-json) | Error details. |
 
 #### Upload cohort error response JSON
 
-| Parameter | Description |
-| --- | --- |
-| `http_code` | Integer. Provides the HTTP error, if available.
-| `type` | String. Describes the type of error. |
-| `message` | String. Describes the error. |
-| `metadata` | JSON object. Describes in more detail the cause of the error. For example, which user ID values are invalid. |
+| Parameter   | Description                                                                                                  |
+| ----------- | ------------------------------------------------------------------------------------------------------------ |
+| `http_code` | Integer. Provides the HTTP error, if available.                                                              |
+| `type`      | String. Describes the type of error.                                                                         |
+| `message`   | String. Describes the error.                                                                                 |
+| `metadata`  | JSON object. Describes in more detail the cause of the error. For example, which user ID values are invalid. |
 
 ## Update cohort membership
 
@@ -677,32 +680,32 @@ Perform incremental update (add / remove) to existing cohort membership.
 
 ### Request body
 
-| Parameter | Description |
-| --- | --- |
-| `cohort_id` | <span class="required">Required</span>. String. The ID of an existing cohort. This updates the membership for the specified cohort with the IDs being uploaded in this request. |
-| `count_group` | <span class="optional">Optional</span>. String. The count group of the given IDs. This must be the same as the cohort’s existing count group. `Count_group` defaults to User. |
-| `memberships` | <span class="required">Required</span>. List of [membership json](https://developers.amplitude.com/docs/behavioral-cohorts-api#membershipjson) An array of JSON objects identifying IDs to add or remove. |
+| Parameter          | Description                                                                                                                                                                                                                                                                              |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `cohort_id`        | <span class="required">Required</span>. String. The ID of an existing cohort. This updates the membership for the specified cohort with the IDs being uploaded in this request.                                                                                                          |
+| `count_group`      | <span class="optional">Optional</span>. String. The count group of the given IDs. This must be the same as the cohort’s existing count group. `Count_group` defaults to User.                                                                                                            |
+| `memberships`      | <span class="required">Required</span>. List of [membership json](https://developers.amplitude.com/docs/behavioral-cohorts-api#membershipjson) An array of JSON objects identifying IDs to add or remove.                                                                                |
 | `skip_invalid_ids` | <span class="optional">Optional</span>. Boolean. Setting this parameter to `false` ends the request without updating cohort membership if the request has invalid IDs. Setting `skip_invalid_ids` to `true` skips invalid IDs while applying the remaining valid ids. Default is `true`. |
 
 #### Memberships request JSON
 
-| Parameter | Description |
-| --- | --- |
-| `ids` | <span class="required">Required</span>. String\[\]. List of IDs to add or remove. |
-| `id_type` | <span class="required">Required</span>. String. The kind of ID sent in the `ids` field. Valid options are: *\- BY_ID* *\- BY_NAME* For User `count_group`, BY_ID is amplitude ID and BY_NAME is user ID. For any other `count_group`, `BY_ID` is group ID and `BY_NAME` is group name. |
-| `operation` | <span class="required">Required</span>. String. The operation to apply on `ids` field. Valid options are: `ADD` and `REMOVE` |
+| Parameter   | Description                                                                                                                                                                                                                                                                            |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ids`       | <span class="required">Required</span>. String\[\]. List of IDs to add or remove.                                                                                                                                                                                                      |
+| `id_type`   | <span class="required">Required</span>. String. The kind of ID sent in the `ids` field. Valid options are: *\- BY_ID* *\- BY_NAME* For User `count_group`, BY_ID is amplitude ID and BY_NAME is user ID. For any other `count_group`, `BY_ID` is group ID and `BY_NAME` is group name. |
+| `operation` | <span class="required">Required</span>. String. The operation to apply on `ids` field. Valid options are: `ADD` and `REMOVE`                                                                                                                                                           |
 
 ### Response
 
-| Parameter | Description |
-| --- | --- |
-| `cohort_id` | String. The ID of an existing cohort for which the membership information was updated. |
+| Parameter            | Description                                                                                                                                                  |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `cohort_id`          | String. The ID of an existing cohort for which the membership information was updated.                                                                       |
 | `memberships_result` | List of [`memberships_result` json](#memberships-response-json). An array of JSON objects identifying result of membership update (add or remove) operation. |
 
 #### Memberships response JSON
 
-| Parameter | Description |
-| --- | --- |
-| `skipped_ids` | List of strings. List of skipped IDs in the membership operation entry.|
-| `id_type` | String. The kind of ID sent for the `ids` field in this membership operation entry. |
-| `operation` | String. The operation applied on `ids` field in this membership operation entry |
+| Parameter     | Description                                                                         |
+| ------------- | ----------------------------------------------------------------------------------- |
+| `skipped_ids` | List of strings. List of skipped IDs in the membership operation entry.             |
+| `id_type`     | String. The kind of ID sent for the `ids` field in this membership operation entry. |
+| `operation`   | String. The operation applied on `ids` field in this membership operation entry     |
