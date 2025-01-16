@@ -63,7 +63,7 @@ Remote properties enable advanced targeting based on [Amplitude ID resolution](/
 
 | Parameter                  | Description                                                                                            |
 |----------------------------|--------------------------------------------------------------------------------------------------------|
-| Enriched User Properties   | Properties resolved via [user enrichment](/docs/feature-experiment/remote-evaluation#user-enrichment). |
+| Enriched User Properties   | Properties resolved through [user enrichment](/docs/feature-experiment/remote-evaluation#user-enrichment). |
 | Amplitude User Properties  | Amplitude Analytics' historical user data.                                                             |
 | Experiment User Properties | The variant assigned to the user in other experiments.                                                 |
 | User Cohorts               | A set of [users](/docs/feature-experiment/cohort-targeting) defined in Amplitude.             |
