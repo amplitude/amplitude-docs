@@ -59,7 +59,7 @@ Local properties are available on the client-side without the need for network r
 
 ### Remote properties
 
-Remote properties enable advanced targeting based on [Amplitude ID resolution](#amplitude-id-resolution), [IP geolocation](#geolocation), [property canonicalization](#canonicalization), [behavioral cohorts](#cohort-membership), and historical [user properties](#user-properties). Targeting remote properties may increase page display latency since network requests are required.
+Remote properties enable advanced targeting based on [Amplitude ID resolution](/docs/feature-experiment/remote-evaluation#amplitude-id-resolution), [IP geolocation](/docs/feature-experiment/remote-evaluation#geolocation), [property canonicalization](/docs/feature-experiment/remote-evaluation#canonicalization), [behavioral cohorts](/docs/feature-experiment/remote-evaluation#cohort-membership), and historical [user properties](/docs/feature-experiment/remote-evaluation#user-properties). Targeting remote properties may increase page display latency since network requests are required.
 
 | Parameter                  | Description                                                                                            |
 |----------------------------|--------------------------------------------------------------------------------------------------------|
@@ -70,7 +70,7 @@ Remote properties enable advanced targeting based on [Amplitude ID resolution](#
 
 #### Page display delay
 
-For a given page [targeted](/docs/web-experiment/targeting#page-targeting) by active web experiments, an anti-flicker overlay will be injected if at least one experiment targets the page and has "Anti-flicker" enabled. The overlay is a blank element that covers you page while it loads, and will be removed when either the remote properties are evaluated, or after a 1-second timeout.
+For a given page [targeted](/docs/web-experiment/targeting#page-targeting) by active web experiments, Amplitude injects an anti-flicker overlay will be injected if at least one experiment targets the page and has "Anti-flicker" enabled. The overlay is a blank element that covers your page while it loads. Amplitude removes the overlay after it evaluates the remote properties, or after a 1-second timeout.
 
 ## Bucketing
 
