@@ -66,11 +66,11 @@ Remote properties enable advanced targeting based on [Amplitude ID resolution](#
 | Enriched User Properties   | Properties resolved via [user enrichment](/docs/feature-experiment/remote-evaluation#user-enrichment). |
 | Amplitude User Properties  | Amplitude Analytics' historical user data.                                                             |
 | Experiment User Properties | The variant assigned to the user in other experiments.                                                 |
-| User Cohorts               | [Target](/docs/feature-experiment/cohort-targeting) a set of users defined in Amplitude.               |
+| User Cohorts               | A set of [users](/docs/feature-experiment/cohort-targeting) defined in Amplitude.             |
 
 #### Page display delay
 
-For a given page targeted by active web experiments, an [anti-flicker overlay](/docs/web-experiment/implementation#async-script-with-anti-flicker-snippet) will be injected if at least 1 experiment targets the page and has "Page Display Delay" enabled. The overlay will be removed when either the remote properties are evaluated, or after a 1-second timeout.
+For a given page [targeted](/docs/web-experiment/targeting#page-targeting) by active web experiments, an anti-flicker overlay will be injected if at least one experiment targets the page and has "Anti-flicker" enabled. The overlay is a blank element that covers you page while it loads, and will be removed when either the remote properties are evaluated, or after a 1-second timeout.
 
 ## Bucketing
 
