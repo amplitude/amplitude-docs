@@ -41,7 +41,7 @@ If any segments match, Amplitude buckets that user into a variant based on the c
 
 ### Local properties
 
-Local properties are available on the client-side without the need for network requests and can be evaluated with little to no latency.
+Local properties are available client-side and don't require network requests. This enables Amplitude to evaluate them with low latency.
 
 | Parameter            | Description                                                                                                                                                                                                                                                                                                                          |
 |----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
