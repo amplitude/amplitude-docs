@@ -78,4 +78,4 @@ Bucketing refers to the variant a users sees, based on the rollout and distribut
 
 Bucketing is consistent given the user has the same ID. Since most experiments bucket by Device ID, Web Experiment may put them in a different bucket if they visit on a new device, browser, or have private browsing enabled.
 
-Increasing rollout doesn't re-bucket users who're already in the rollout. For example, if your experiment is rolled out to 10% of users, and you increase the rollout to 50%, the original 10% of users aren't affected. If you change the *distribution* from evenly distributed to `20% -> control, 80% -> treatment`, users who were in the control jump to the treatment.
+Increasing rollout doesn't re-bucket users who're already in the rollout. For example, if your experiment has rolled out to 10% of users, and you increase the rollout to 50%, the original 10% of users aren't affected. If you change the *distribution* from evenly distributed to `20% -> control, 80% -> treatment`, users who were in the control jump to the treatment.
