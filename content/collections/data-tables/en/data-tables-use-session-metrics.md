@@ -14,10 +14,10 @@ Sometimes considered "legacy metrics," **session metrics**, like bounce rate or 
 
 ![image1.png](/docs/output/img/data-tables/image1-png.png)
 
-In Amplitude Analytics, you can find session metrics in the Data Tables charts, on the *Metrics* tab. Other than session totals, session metrics—bounce rate, exit rate, entry rate, entries, and exits—are not available as standalone metrics in Amplitude Analytics. Instead, these session metrics are calculated from the group-by you select, and will only include **active events** in the computation. Amplitude Analytics uses the group-by to determine how many values are present, and the sequence to be used for calculation. 
+In Amplitude Analytics, you can find session metrics in the Data Tables charts, on the *Metrics* tab. Other than session totals, session metrics—bounce rate, exit rate, entry rate, entries, and exits—aren't available as standalone metrics in Amplitude Analytics. Instead, Amplitude calculates these session metrics from the group-by you select, and will only include **active events** in the computation. Amplitude Analytics uses the group-by to decide how many values are present, and the sequence to be used for calculation. 
 
 {{partial:admonition type='note'}}
- In addition to bounce, exit, and entry rates, other marketing metrics can be analyzed using Amplitude charts. Read this [Help Center article for recipes to recreate common marketing analytics](https://help.amplitude.com/hc/en-us/articles/23990255180443-Marketing-metrics-recipes). 
+Analyze other marketing metrics with Amplitude charts. See [Marketing metrics recipes](/docs/analytics/charts/user-sessions/marketing-metrics-recipes). 
 {{/partial:admonition}}
 
 ### Feature availability
@@ -26,15 +26,15 @@ This feature is available to users on **Growth** and **Enterprise plans** only. 
 
 ## Select a good group-by property
 
-The most common properties to select for your group-by are page- or screen-level properties that change as a user interacts with your app or site. These work well because they are likely to vary between most of the relevant events, and are set frequently enough to signal a bounce when needed.
+The most common properties to select for your group-by are page- or screen-level properties that change as a user interacts with your app or site. These work well because they're likely to vary between most of the relevant events, and are set frequently enough to signal a bounce when needed.
 
 {{partial:admonition type='note'}}
- Session metrics cannot combine more than one top-level group-by.
+ Session metrics can't combine more than one top-level group-by.
 {{/partial:admonition}}
 
 ## Example: Group-bys and session metrics
 
-Amplitude Analytics will use the number of values of your group-by property to determine whether to classify a session as a specific metric, such as bounce, entry, or exit.
+Amplitude uses the number of values of your group-by property to decide whether to classify a session as a specific metric, such as bounce, entry, or exit.
 
 Here are three example sessions:
 
@@ -65,11 +65,11 @@ Here are three example sessions:
 	`Amt` = $15  
 	`Prod` = 1
 
-A `Page View` event is either a default event captured via the Browser SDK, specified via the settings in Amplitude’s Marketing Space, or defined in a Data Tables analysis as a bounce rate metric.
+A `Page View` event is either a default event captured through the Browser SDK, specified in the settings in Amplitude’s Marketing Space, or defined in a Data Tables analysis as a bounce rate metric.
 
 ### Bounce
 
-A bounce is a session where only one `Page View` event is triggered; this is also known as a single-page session. 
+A bounce is a session where the user triggers only one `Page View` event. This is also known as a single-page session. 
 
 Amplitude calculates the bounce rate as a percentage based on the following formula: 
 
@@ -77,14 +77,14 @@ Amplitude calculates the bounce rate as a percentage based on the following form
 count of single-page sessions / the **total** number of sessions
 ```
 
-Bounce rates with a group-by are calculated by:
+Amplitude calculates bounce rates with a group-by by:
 
 ```
 count of single-page sessions grouped by the first **non-null** property value /   
 the total number of sessions grouped by the first **non-null** property value
 ```
 
-To determine if the example sessions above are a bounce:
+To decide if the example sessions above are a bounce:
 
 * Regardless of the group-by property, like `Page` or `Name`, **Session 1** would **not** be counted as a bounce because it contains more than one `Page View` event.
 * **Session 2** only contains one `Page View` event. If you grouped by the `Name` event property, Amplitude Analytics **will** classify this session as a bounce. It would be grouped by the `Name` value of "1A" since it appears first in the session, and the bounce rate would be 1 / 2 (50 percent).
@@ -106,19 +106,19 @@ the number of entries or exits / the **total** number of sessions
 
 Example, for the same sessions above:
 
-* If you group by the `Name` event property, both the entry and exit rates will be grouped under "1A" because it's the first property value of `Name`. The entry rate would be 2 / 3 (66.66 percent) and the exit rate 1 / 3, or 33.33 percent.
-* If you group by the `Page` event property, the entry and exit rates will be grouped by “B.” The entry rate would be 1 / 3, or roughly 33.33 percent. The exit rate would be 2 / 3 (66.66 percent).
+* If you group by the `Name` event property, both the entry and exit rates are grouped under "1A" because it's the first property value of `Name`. The entry rate would be 2 / 3 (66.66 percent) and the exit rate 1 / 3, or 33.33 percent.
+* If you group by the `Page` event property, the entry and exit rates are grouped by “B.” The entry rate would be 1 / 3, or roughly 33.33 percent. The exit rate would be 2 / 3 (66.66 percent).
 
 ## Differences between session totals and PROPCOUNT(session IDs)
 
 It's common to want to compare results of one Amplitude chart versus another, but not all chart analyses are interchangeable.
 
-For example, you cannot compare the results of a session totals query in a Session Metrics chart versus the [PROPCOUNT](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas)(session IDs) formula in the Event Segmentation chart.
+For example, you can't compare the results of a session totals query in a Session Metrics chart versus the [PROPCOUNT](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas)(session IDs) formula in the Event Segmentation chart.
 
-These two analyses cannot be compared because of the following differences in their logic:
+These two analyses can't be compared because of the following differences in their logic:
 
 | Session totals query in Session Metrics chart                 | PROPCOUNT(session IDs) formula in an Event Segmentation chart                                                                                                                                                                                                                                                                                            |
 | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Measures an **exact** total                                        | Measures an **estimate** of distinct property values                                                                                                                                                                                                                                                                                                             |
-| Measurement **counts unique pairings** of user IDs and session IDs | **Does not count unique pairings** of user IDs and session IDs, and will have different results when multiple users have the same session ID                                                                                                                                                                                                                       |
-|                                                                    | Session IDs are not tracked for [custom session](https://help.amplitude.com/hc/en-us/articles/115002323627-Track-sessions#h_a832c1ce-717a-4ab3-b205-9d7ed418ef1a "https://help.amplitude.com/hc/en-us/articles/115002323627-Track-sessions#h_a832c1ce-717a-4ab3-b205-9d7ed418ef1a") definitions, so they cannot be counted with the PROPCOUNT(session IDs) formula |
+| Measurement **counts unique pairings** of user IDs and session IDs | **Does not count unique pairings** of user IDs and session IDs, and have different results when multiple users have the same session ID                                                                                                                                                                                                                       |
+|                                                                    | Session IDs aren't tracked for [custom session](/docs/data/sources/instrument-track-sessions#custom-session-property) definitions, so they cannot be counted with the PROPCOUNT(session IDs) formula |

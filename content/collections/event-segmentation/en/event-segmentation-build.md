@@ -16,17 +16,17 @@ academy_title: 'Understand User Behavior with the Event Segmentation Chart'
 For most users, Event Segmentation is the foundational Amplitude chart. It shows what your users are doing in your product. With the **Event Segmentation chart**, you can build analyses that:
 
 * Measure the top events performed over a selected time period
-* Analyze how often events are triggered
+* Analyze how often users trigger events
 * Determine the count of unique users triggering events in your product
 * Clarify which users tend to trigger certain events
 
-Like most Amplitude charts, Event Segmentation charts are built by combining events and event properties with user segments. These can be simple—like, for example, counting the number of users firing a specific event—or they can be intricate formulas of events. 
+Like most Amplitude charts, Event Segmentation charts combine events and event properties with user segments. These can be simple—like, for example, counting the number of users firing a specific event—or they can be intricate formulas of events. 
 
-This article will outline the steps required to build a segmentation analysis in Amplitude.
+This article describes the steps required to build a segmentation analysis in Amplitude.
 
 ### Feature availability
 
-This feature is available to users on **all Amplitude plans**. See our [pricing page](https://amplitude.com/pricing) for more details.
+This feature is available to users on **all Amplitude plans**. See the [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
 
@@ -44,7 +44,7 @@ You can include both active and inactive events in your segmentation analyses, b
 
 To build an Event Segmentation chart, follow these steps:
 
-1. In the Events Module, select the starting event or metric. You can choose a specific event that is instrumented in Amplitude, or you can tell Amplitude to consider any event as the starting event for this analysis, by selecting *Any Event* from the list of available events.  
+1. In the Events Module, select the starting event or metric. You can choose a specific event that's instrumented in Amplitude, or you can tell Amplitude to consider any event as the starting event for this analysis, by selecting *Any Event* from the list of available events.  
   
     You can also [create an in-line custom event](/docs/analytics/charts/event-segmentation/event-segmentation-in-line-events) or [create a new metric](/docs/analytics/charts/data-tables/data-tables-create-metric) at this point, if you need to.
 
@@ -56,22 +56,22 @@ To build an Event Segmentation chart, follow these steps:
    
 3. Next, select another event to include, if desired. You can choose up to ten, and you can add properties to these events as well.
 
-4. In the Measured As Module, specify how you'd like to measure your results. Unique users and event totals are the most commonly-used, but you have several other options to select from. For details, see the [Choose the right measurement section](#h_01GVGPDKW7VFAVB62CNXJ8BVEC) below.
+4. In the Measured As Module, specify how you'd like to measure your results. Unique users and event totals are the most commonly used, but you have several other options to select from.
 
-5. In the Segmentation Module, identify the user segment you want to include in this analysis. You can import a previously-saved segment by clicking *Saved* and selecting the one you want from the list. Otherwise, Amplitude begins from the assumption that your analysis will target all users.  
+5. In the Segmentation Module, identify the user segment you want to include in this analysis. You can import a already saved segment by clicking *Saved* and selecting the one you want from the list. Otherwise, Amplitude begins from the assumption that your analysis targets all users.  
   
 {{partial:admonition type='note'}}
-The user segment you select will apply to all selected events.
+The user segment you select applies to all selected events.
 {{/partial:admonition}}
 
-6. If you do not want to import a previously-saved user segment, you can start building your own by adding properties. To do so, click *+ Filter by*, choose the property you want to include, and specify the property value you’re interested in.
+1. If you don't want to import an already saved user segment, you can start building your own by adding properties. To do so, click *+ Filter by*, choose the property you want to include, and specify the property value you’re interested in.
 
-7. You can narrow your focus even further by telling Amplitude you only want to include users who have already performed certain actions. To do so, click *+ Performed*, then choose the event you’re interested in.
+2. You can narrow your focus even further by telling Amplitude you only want to include users who have already performed certain actions. To do so, click *+ Performed*, then choose the event you’re interested in.
 
-8. If desired, add another user segment by clicking *+ Add Segment*, and repeating steps 6 and 7.
+3. If desired, add another user segment by clicking *+ Add Segment*, and repeating steps 6 and 7.
 
 {{partial:admonition type='note'}}
-You can break out your starting event by user properties by clicking *Group segment by* in the Segmentation Module, if desired. For example, if you wanted to group users by the cities they were in when they triggered the starting event, you would select *City* from the property list. Amplitude will then break out the segmentation analysis on a city-by-city basis.
+You can break out your starting event by user properties by clicking *Group segment by* in the Segmentation Module, if desired. For example, if you wanted to group users by the cities they were in when they triggered the starting event, you would select *City* from the property list. Amplitude breaks out the segmentation analysis on a city-by-city basis.
 {{/partial:admonition}}
 
 In the chart area, you should now see your Event Segmentation chart, along with a tabular view of your results. 
