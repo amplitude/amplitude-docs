@@ -70,7 +70,7 @@ Remote properties enable advanced targeting based on [Amplitude ID resolution](/
 
 #### Page display delay
 
-For a given page [targeted](/docs/web-experiment/targeting#page-targeting) by active web experiments, Amplitude injects an anti-flicker overlay will be injected if at least one experiment targets the page and has "Anti-flicker" enabled. The overlay is a blank element that covers your page while it loads. Amplitude removes the overlay after it evaluates the remote properties, or after a 1-second timeout.
+For a given page [targeted](/docs/web-experiment/targeting#page-targeting) by active web experiments, Amplitude injects an anti-flicker overlay if at least one experiment targets the page and has "Anti-flicker" enabled. The overlay is a blank element that covers your page while it loads. Amplitude removes the overlay after it evaluates the remote properties, or after a 1-second timeout.
 
 ## Bucketing
 
