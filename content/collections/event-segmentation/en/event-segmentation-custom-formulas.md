@@ -349,7 +349,7 @@ For example, the following setup shows the total number of sessions by day over 
 
 Returns the metric for selected event with a running total of days/weeks/months over the chart's time frame. 
 
-For example, this chart shows a daily [cumulative sum](https://help.amplitude.com/hc/en-us/articles/14056975720091#h_f2ff0863-0770-4a12-9bde-89311a099c64) of revenue from `Complete Purchase` events in the last 30 days. The data point for February 22nd is a sum of revenue generated on February 20th, 21st, and 22nd.
+For example, this chart shows a daily [cumulative sum](/docs/analytics/charts/event-segmentation/event-segmentation-interpret-2#cumulative-sum) of revenue from `Complete Purchase` events in the last 30 days. The data point for February 22nd is a sum of revenue generated on February 20th, 21st, and 22nd.
 
 ![CUMSUM_sidecontrols.png](/docs/output/img/event-segmentation/cumsum-sidecontrols-png.png)
 
@@ -395,7 +395,7 @@ The day (or week, or month) the chart displays is the last day of the window.
 * **Event**: Refers to the event that interests you. This must be a letter that corresponds to an event in the Events card.
 * **Number of intervals**: The number of five-minute intervals, hours, days, weeks, or months to include in the rolling average. For example, a daily chart allows rolling averages over daily intervals only. The maximum ranges for a rolling average are 36 five-minute intervals (this works out to three hours), 72 hours, 90 days, 12 weeks, or 12 months.
 
-Returns the metric for the event selected with a [rolling window](https://help.amplitude.com/hc/en-us/articles/14056975720091#h_d48f96e2-797c-45d9-bf87-6e5a5ac8ad28) of however many days/weeks/months inputted, where a rolling window aggregation applies *before* a cohort filter, if one is in use. 
+Returns the metric for the event selected with a [rolling window](/docs/analytics/charts/event-segmentation/event-segmentation-interpret-2#rolling-windows) of however many days/weeks/months inputted, where a rolling window aggregation applies *before* a cohort filter, if one is in use. 
 
 For example, this chart first calculates the rolling active users for each time interval and then applies the new user cohort filter on top of that.
 

@@ -29,7 +29,7 @@ Session Replay is **not** enabled by default, and requires instrumentation beyon
 
 You can launch a session replay from a user’s event stream, inside a chart, or from your homepage. Replays are generally available for viewing five minutes after a session begins.
 
-When viewing a session replay from your [homepage](#h_01HFD88N1M03EH9D8VF32QBBYQ) or from a [search](#h_01HK600KD02WEC77KE4HYMKHY6), the user's event stream syncs with the replay. You can select an event from the stream, and the replay jumps to that point in the session. (This feature isn't available when [viewing a replay from a chart](#h_01HFD818NE7FH2D85NS1VTCHYQ).)
+When viewing a session replay from your homepage or from a search, the user's event stream syncs with the replay. You can select an event from the stream, and the replay jumps to that point in the session. (This feature isn't available when viewing a replay from a chart.)
 
 ![image-20240109-232506.png](/docs/output/img/session-replay/image-20240109-232506-png.png)
 

@@ -11,11 +11,11 @@ updated_at: 1724963398
 landing: true
 landing_blurb: 'Understand how Amplitude calculates retention for different cohorts'
 ---
-Amplitude's methods for calculating retention are straightforward. However, you should familiarize yourself with them, and understand the differences that do exist. This will help you develop a nuanced understanding of the Retention Analysis chart.
+Amplitude's methods for calculating retention are straightforward. However, you should familiarize yourself with them, and understand the differences that do exist. This helps you develop a nuanced understanding of the Retention Analysis chart.
 
 ## Return On or After
 
-Return On or After retention is calculated a bit differently depending on if you’re looking at a specific cohort entry date for your segment or overall. Overall retention (e.g. All Users) is what’s displayed in the visualization and the first row of the breakdown table below it.
+Return On or After retention is calculated a bit differently depending on if you’re looking at a specific cohort entry date for your segment or overall. Overall retention (for example, All Users) is what’s displayed in the visualization and the first row of the breakdown table below it.
 
 Because Return On or After retention measures users that returned on the Xth day **or later**, the numerator will include users in **all data points prior** to when they triggered an event. A user who triggers the event on day two, for example, will also be included in the data point for days one and zero.
 
@@ -90,7 +90,7 @@ A user can trigger the return event on multiple days and be counted on each day.
 As with Return On or After retention, when the analysis time frame is complete, the denominator value in the Microscope for any day will be consistent with the total number of users for overall retention. When the analysis is still in progress, the denominator value in the Microscope for a single day will be the sum of the users who have completed that day’s retention interval. This value is not shown in the breakdown table.
 
 {{partial:admonition type='note'}}
-In bar chart format, the X axis will include the most common units of time ([days, weeks, months](/docs/analytics/charts/retention-analysis/retention-analysis-time)) by default. You can customize this using [Return On (Custom)](https://help.amplitude.com/hc/en-us/articles/4402840087181#h_01FA68RVF9FY09M7BXB66SGVWX).
+In bar chart format, the X axis will include the most common units of time ([days, weeks, months](/docs/analytics/charts/retention-analysis/retention-analysis-time)) by default. You can customize this using [Return On (Custom)](https://amplitude.com/docs/analytics/charts/retention-analysis/retention-analysis-interpret#return-on-custom-formerly-known-as-custom).
 {{/partial:admonition}}
 
 Additionally, the overall row represents the sum of the cohort entry date rows below it. Similar to Return On or After retention, if data is incomplete (cells noted with an \*), they are excluded from the overall row's total (e.g. the sum of each row for Day 3 won't add to the overall Day 3 value).

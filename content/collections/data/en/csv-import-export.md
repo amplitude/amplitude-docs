@@ -13,9 +13,9 @@ updated_at: 1718824177
 ---
 In Amplitude Data, you can view and manage event types, event properties, and user properties piece by piece, but you may want to see a holistic view of your entire tracking plan's schema and make bulk changes to the schema instead.
 
-Amplitude lets you import and export your schema via .CSV to plan new events and properties, edit categories and descriptions, and generate bulk changes.
+Amplitude lets you import and export your schema with .CSV to plan new events and properties, edit categories and descriptions, and generate bulk changes.
 
-This article will discuss the differences between using import and export for events and event properties versus user properties.
+This article covers the differences between using import and export for events and event properties versus user properties.
 
 ## Events and event properties
 
@@ -23,11 +23,11 @@ Follow the below steps to import or export events and event properties:
 
 1. Navigate to Data, and click *Events* under your tracking plan in the left side pane.
 2. If you wish to import, click the import icon to open the import modal.
-3. If your import file is ready to upload and follows the [expected schema for events and event properties](#h_01HN467J5969YRB1J9MG80MTBN), you can drag and drop your .CSV file or click *Upload* and choose the file from your desired location. If not, click *template* to download a template .CSV to update for importing.
+3. If your import file is ready to upload and follows the [expected schema for events and event properties](#events-and-event-properties-file-schema), you can drop your .CSV file or click *Upload* and choose the file from your desired location. If not, click *template* to download a template .CSV to update for importing.
 
     ![](/docs/output/img/data/22418776497947.png)
 
-    The imported events and event properties will appear in a branch named *import*.
+    The imported events and event properties appear in a branch named *import*.
 
 4. Once you’re sure the imported tracking plan updates are correct, you can [merge the changes back into the main branch](/docs/data/data-planning-workflow).
 5. If you want to export events and event properties from your tracking plan, click the export icon instead.
@@ -35,10 +35,10 @@ Follow the below steps to import or export events and event properties:
 
 ![](/docs/output/img/data/22418907241627.png)
 
-Downloaded .CSV files of your tracking plan contain additional fields not required for import. The next section will define the events and event properties .CSV import file structure and the [additional columns seen in the exported file](#01HNB56QS6HYFRW8BSRRXBC716).
+Downloaded .CSV files of your tracking plan contain additional fields not required for import. The next section defines the events and event properties .CSV import file structure and the [additional columns seen in the exported file](#events-and-event-properties-file-schema).
 
 {{partial:admonition type="note" heading=""}}
-The import and export features do not support custom events, transformations, nor default Amplitude entities.
+The import and export features don't support custom events, transformations, nor default Amplitude entities.
 {{/partial:admonition}}
 
 ## Events and event properties file schema
@@ -47,13 +47,13 @@ The events and event properties .CSV file requires a specific schema for a succe
 
 * The file's header must contain all listed fields.
 * The fields can be in any order, but their names and values must be exact in spelling and capitalization to ensure a successful import process.
-* Some fields require a value depending on entity type, and are notated as such in the table below.
+* Some fields require a value depending on entity type, as indicated in the following list.
 
 **Action**
 * Definition: Action to perform on a particular entity
 * Values:
-    * `Ignore`: No changes will be made to the entity nor its subproperties
-    * `Remove`: Event and property groups can be removed from the tracking plan. The remove value will not affect individual properties. Removing an event or property group will disassociate related properties, and will change a live property’s status to unexpected. The remove value does not delete an entity, nor does it stop ingestion.
+    * `Ignore`: No changes made to the entity nor its subproperties
+    * `Remove`: Event and property groups can be removed from the tracking plan. The remove value doesn't affect individual properties. Removing an event or property group disassociates related properties, and changes a live property’s status to unexpected. The remove value doesn't delete an entity, nor does it stop ingestion.
     * `<blank>`: Creates or updates an entity and it’s associated sub-entities
 * For events, event properties, property groups property group properties
 
@@ -69,7 +69,7 @@ The events and event properties .CSV file requires a specific schema for a succe
 * Definition: Denotes if an array property value type has unique items
 * Values:
     * `TRUE`: Array has unique items
-    * `<any>`: Assumes array does not have unique items
+    * `<any>`: Assumes array doesn't have unique items
 * For event properties and property group properties
 
 **Const value**
@@ -85,7 +85,7 @@ The events and event properties .CSV file requires a specific schema for a succe
 * Definition: Description of an event’s activity
 * Values:
     * `Active`
-    * `Inactive`. Marking an event as inactive is applied retroactively and immediately, and will exclude the event from the `Any Active Event` metric.
+    * `Inactive`. Marking an event as inactive applies retroactively and immediately, and excludes the event from the `Any Active Event` metric.
 * For events
 
 **Event category**
@@ -116,7 +116,7 @@ The events and event properties .CSV file requires a specific schema for a succe
 * Definition: Denotes if a property with number property value type is an integer
 * Values:
     * `True`: Property is an integer
-    * `False` or `<blank>`: Property is not an integer
+    * `False` or `<blank>`: Property isn't an integer
 * For event properties and property group properties
 
 **Object type**
@@ -142,7 +142,7 @@ The events and event properties .CSV file requires a specific schema for a succe
 * **Required** for events
 
 **Property group names**
-* Definition: Property group that is associated with the event
+* Definition: Property group that's associated with the event
 * For events
 
 **Property description**
@@ -171,7 +171,7 @@ The events and event properties .CSV file requires a specific schema for a succe
 * Definition: Denotes if the property is an array
 * Values:
     * `True`: Property is an array
-    * `False` or `<blank>`: Property is not an array
+    * `False` or `<blank>`: Property isn't an array
 * For event properties and property group properties
 
 **Property regex**
@@ -196,7 +196,7 @@ The events and event properties .CSV file requires a specific schema for a succe
 The following list includes additional fields found in the .CSV export of your tracking plan’s events and event properties.
 
 **Action**
-* Definition: The default action to perform on a particular entity. This field exists in the import template, but the downloaded file will automatically include default values.
+* Definition: The default action to perform on a particular entity. This field exists in the import template, but the downloaded file includes default values.
 * Values:
     * `Ignore`: The user property is unexpected, blocked or deleted.
     * `<blank>`: The user property is planned or live.
@@ -228,11 +228,11 @@ Follow the below steps to import or export user properties:
 
 1. Navigate to Data, and click *Properties* under *Tracking Plan* in the left side pane. Then click *User Properties*.
 2. Click the import icon to open the import modal.
-3. If your import file is ready to upload and follows the [expected user properties schema](#h_01HNB5CSJY8QWZXPWXPJYK1JHQ), you can drag and drop your .CSV file or click Upload and choose the file from your desired location. If not, click *template* to download a template .CSV to update for importing.
+3. If your import file is ready to upload and follows the [expected user properties schema](#user-properties-file-schema), you can drop your .CSV file or click Upload and choose the file from your desired location. If not, click *template* to download a template .CSV to update for importing.
 
 ![](/docs/output/img/data/22418907248795.png)
 
-The imported events and event properties will appear in a branch named *import*.
+The imported events and event properties appear in a branch named *import*.
 
 4. Once you’re sure the imported tracking plan updates are correct, you can [merge the changes back into the main branch](/docs/data/data-planning-workflow).
 5. If you want to export user properties from your tracking plan, click the export icon instead.
@@ -240,7 +240,7 @@ The imported events and event properties will appear in a branch named *import*.
 
 **![](/docs/output/img/data/22418912795163.png)**
 
-The next section will define the user properties .CSV import file structure and the [additional columns seen in the user properties export](#h_01HN4703NR0H9FRFDPZ610WCWN).
+The next section defines the user properties .CSV import file structure and the [additional columns seen in the user properties export](#user-properties-file-schema).
 
 ## User properties file schema
 
@@ -248,13 +248,13 @@ The list below highlights the required schema for the user properties .CSV file 
 
 * The file's header must contain all listed fields.
 * The fields can be in any order, but their names and values must be exact in spelling and capitalization to ensure a successful import process.
-* Some fields require a value and are notated as such in the table below.
+* Some fields require a value as indicated in the following list.
 
 **Action**
 * Definition: Action to perform on a particular user property
 * Values:
     * `Ignore`: No changes will be made to the user property.
-    * `Remove`: User property will be removed from the tracking plan. The remove value does not delete a user property, nor does it stop its ingestion.
+    * `Remove`: User property will be removed from the tracking plan. The remove value doesn't delete a user property, nor does it stop its ingestion.
     * `<blank>`: Creates the user property if it did not already exist; or updates the user property if it did exist.
 
 **Array min items**
@@ -267,7 +267,7 @@ The list below highlights the required schema for the user properties .CSV file 
 * Definition: Denotes if an array property value type has unique items
 * Values:
     * `TRUE`: Array has unique items
-    * `<any>`: Assumes array does not have unique items
+    * `<any>`: Assumes array doesn't have unique items
 
 **Const value**
 * Definition: Const value for properties with a const property value type
@@ -286,7 +286,7 @@ The list below highlights the required schema for the user properties .CSV file 
 * Definition: Denotes if a property with number property value type is an integer
 * Values: 
     * `True`: Property is an integer
-    * `False` or `<blank>`: Property is not an integer
+    * `False` or `<blank>`: Property isn't an integer
 
 **Property type**
 * Definition: User property type
@@ -313,7 +313,7 @@ The list below highlights the required schema for the user properties .CSV file 
 * Definition: Denotes if the property is an array
 * Values:
     * `True`: Property is an array
-    * `False` or `<blank>`: Property is not an array
+    * `False` or `<blank>`: Property isn't an array
 
 **Property regex** 
 * Definition: Regular expression (Regex) values for properties with a string property value type
