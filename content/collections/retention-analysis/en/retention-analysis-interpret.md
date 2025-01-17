@@ -77,7 +77,7 @@ The method Amplitude uses to calculate Return On or After retention depends on w
 
 Return On retention tells you the percentage of users that came back to trigger your return event **on a specific day** after triggering your starting event. The retention value for day 7, for example, tells you the percentage of users who returned on day 7 after their first use.
 
-Regardless of whether you are looking at retention for all users or for specific cohort entry dates, Amplitude will use only one method to calculate Return On retention (unlike [Return On or After](#return-on-or-after-formerly-known-as-unbounded)). Both the chart and the first row of the breakdown table below it show overall retention by default.
+Regardless of whether you are looking at retention for all users or for specific cohort entry dates, Amplitude uses only one method to calculate Return On retention (unlike [Return On or After](#return-on-or-after-formerly-known-as-unbounded)). Both the chart and the first row of the breakdown table below it show overall retention by default.
 
 ![](/docs/output/img/retention-analysis/bRG3OPRhMIRWdC_WcGmL-UrlhHJHoR42SWDFwmzirvTGgdI-p0g4HjFTpa0UtiBoDUhDlIhC6RD4jtv-M3ZkecC11Z-5FCHc8TBGQjwdZ5KydLB_KkuWS_4yH3mbWCNa9fU4uQi5Hj2SXjC5Ug-tvLU.png){.expandable-image}
 

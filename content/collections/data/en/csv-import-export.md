@@ -254,7 +254,7 @@ The list below highlights the required schema for the user properties .CSV file 
 * Definition: Action to perform on a particular user property
 * Values:
     * `Ignore`: No changes will be made to the user property.
-    * `Remove`: User property will be removed from the tracking plan. The remove value doesn't delete a user property, nor does it stop its ingestion.
+    * `Remove`:  The user property is removed from the tracking plan. The removed value doesn't delete a user property, nor does it stop its ingestion.
     * `<blank>`: Creates the user property if it did not already exist; or updates the user property if it did exist.
 
 **Array min items**
