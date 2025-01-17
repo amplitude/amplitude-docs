@@ -24,43 +24,43 @@ Amplitude automatically creates releases for **all customers on paid plans**, bu
 
 ### Automated releases
 
-If you're on a paid plan, Amplitude continuously listens for a new value for the `Version` user property. When a new value is detected, Amplitude automatically creates a release the next day. It applies the following heuristics when creating a new release:
+If you're on a paid plan, Amplitude continuously listens for a new value for the `Version` user property. When Amplitude detects a new value, it automatically creates a release the next day. It applies the following heuristics when creating a new release:
 
-* A release must follow [semantic versioning format](https://semver.org/): `major.minor.patch` where `.patch` is optional. For example, `Version = 12345` doesn't automatically create a release, but `Version = 123.45.6` does.
-* Development projects (projects that contain names like "Test", "Development", "Staging," etc.) are excluded from automatic release generation.
-* If you are sending event data server side via Amplitude's HTTP/Batch API, use the `app_version` user property.
+* A release must follow [semantic versioning format](https://semver.org/): `major.minor.patch` with `.patch` as optional. For example, `Version = 12345` doesn't automatically create a release, but `Version = 123.45.6` does.
+* Amplitude excludes development projects (projects that contain names like "Test", "Development", "Staging," etc.) from automatic release generation.
+* If you send event data server-side through Amplitude's HTTP/Batch API, use the `app_version` user property.
 
 Automated releases aren't created retroactively for backfilled data.
 
 #### Configure an automated release
 
-You can configure automated release detection in the *Release Timeline*, if you are an admin or manager. Simply click the settings icon to gain access to the *Project Settings* fly-out panel. Here you can enable or disable automatic release detection and automatic annotation.
+You can configure automated release detection in the *Release Timeline*, if you are an admin or manager. Simply click the settings icon to gain access to the *Project Settings* fly out panel. Here you can enable or disable automatic release detection and automatic annotation.
 
 ### Manual releases
 
-If your product doesn't use semantic versioning, or you aren't on one of a paid plans, you can manually create a release from the [release timeline](#the-release-timeline-view) frame, or via the Microscope in a chart.
+If your product doesn't use semantic versioning, or you aren't on one of a paid plans, you can manually create a release from the [release timeline](#the-release-timeline-view) frame, or from the Microscope in a chart.
 
 To create a manual release, click *Create Release* and fill in the modal that appears:
 
 ![create_release.png](/docs/output/img/analytics/create-release-png.png)
 
 * **Release name**: The name of the release. This is visible on charts and in the *Release Timeline*.
-* **Version**: The `Version` user property that defines the product change. Amplitude uses this field to show you any new events introduced in the release, via the [Release Report](#the-release-report). The Version field selected must be an existing value in your data.
+* **Version**: The `Version` user property that defines the product change. Amplitude uses this field to show you any new events introduced in the release, in the [Release Report](#the-release-report). The Version field selected must be an existing value in your data.
 * **Description**: The product change brought about in the release. This is visible in the release timeline view.
-* **Release date**:The date the release was shipped.
+* **Release date**:The date the release shipped.
 * **End date**: The end date of the release rollout.
-* **Platform(s)**: The `Platform`(s) this release applies to.
+* **Platforms**: The `Platform`(s) this release applies to.
 * **Visibility**: Whether the release is visible on all charts or not.
 
 ### Releases API
 
-Releases can also be created programmatically by using the [Releases API](https://developers.amplitude.com/docs/releases-api). This allows you to integrate the creation of releases into your own internal deployment processes.
+Create releases programmatically with the [Releases API](https://developers.amplitude.com/docs/releases-api). This allows you to integrate the creation of releases into your own internal deployment processes.
 
 ## Edit a release
 
-Releases that have been manually created or automatically detected can be edited to add additional context and information to the release. To do so, open the release from within the release timeline view and click *Edit.*
+Edit releases that were manually created or automatically detected can to add additional context and information to the release. To do so, open the release from within the release timeline view and click *Edit.*
 
-By default, all releases are visible across all charts. You can toggle the visibility of a release from the [release report](#h_799812257551539302332607) page (this view), or the release timeline view.
+By default, all releases are visible across all charts. You can toggle the visibility of a release from the [release report](#the-release-report) page (this view), or the release timeline view.
 
 ## The release report
 
@@ -70,13 +70,13 @@ In the *Metrics* section, you can see the number of unique users who have been e
 
 ![release_report.png](/docs/output/img/analytics/release-report-png.png)
 
-If new events were included in that release, Amplitude shows them in the table to the right of *Metrics*. The *% Active* metrics shows you the percentage of your active user base who are triggering the new events detected since the release date.
+If the release includes new events, Amplitude shows them in the table to the right of *Metrics*. The *% Active* metrics shows you the percentage of your active user base who are triggering the new events detected since the release date.
 
-The *Adoption* section shows a time series depicting adoption of your release since its launch date. The time series is limited to 30 days since the start of the release.
+The *Adoption* section shows a time series depicting adoption of your release since its launch date. Amplitude limits the time series to 30 days since the start of the release.
 
 ### Add items to a release
 
-You can link to other Amplitude content via the *Analyses* section. This makes it easy for others in your organization to understand how the experiences you've launched have performed, and the impact they've had on your users.
+You can link to other Amplitude content in the *Analyses* section. This makes it easy for others in your organization to understand how the experiences you've launched have performed, and the impact they've had on your users.
 
 Use releases to distribute both context and outcomes across your team.
 
