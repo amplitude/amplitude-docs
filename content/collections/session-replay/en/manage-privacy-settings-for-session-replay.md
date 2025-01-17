@@ -14,7 +14,7 @@ For many organizations, data privacy, security, and PII are more pressing concer
 
 This is why Amplitude’s Session Replay feature enables you to specify the types of user data displayed during a replay. These privacy settings are flexible enough to adhere to your company’s legal and security requirements, no matter what they are. Once they’re set, you can enjoy the peace of mind that comes with knowing that nothing can inadvertently fall through the cracks.
 
-When these privacy settings are active, Amplitude **masks** the user data you specify in all session replays you create and view. Masking data prevents Amplitude from collecting it from your product in the first place. It **doesn't** remove the data from your own product data repository.
+When these privacy settings are active, Amplitude **masks** the user data you specify in all session replays you create and view. Masking data prevents Amplitude from receiving it from your product in the first place. It **doesn't** remove the data from your own product data repository.
 
 ## Masking levels
 
@@ -65,15 +65,15 @@ Blocking or excluding content replaces the element with a placeholder of the sam
 
 When there are conflicts between the SDK and the Session Replay settings page around the handling of a particular element—whether Amplitude should mask, unmask, or exclude it—the **Session Replay settings page takes precedence**.
 
-For example, imagine you’ve used the Session Replay settings page to mask `.selector1` and unmask `.selector2`. But an engineer has made a change to the SDK that masks `.selector3`—and at the same time, they inadvertently **un**masked `.selector1`.
+For example, imagine you’ve used the Session Replay settings page to mask `.selector1` and unmask `.selector2`. But an engineer has made a change to the SDK that masks `.selector3`—and at the same time, they inadvertently unmasked `.selector1`.
 
 When this happens, Session Replay combines the settings from the SDK and the UI, but the settings specified for `.selector1` in the UI take precedence:
 
-|	| .selector1	| .selector2	| .selector3 |
-|---|-----------|-----------|----------|
-|Session Replay settings| MASK | UNMASK | |	
-|SDK settings |	UNMASK | | MASK |
-|End results | MASK | UNMASK | MASK |
+|                         | .selector1 | .selector2 | .selector3 |
+| ----------------------- | ---------- | ---------- | ---------- |
+| Session Replay settings | MASK       | UNMASK     |            |
+| SDK settings            | UNMASK     |            | MASK       |
+| End results             | MASK       | UNMASK     | MASK       |
 
 {{partial:admonition type="note" heading="Remote configuration"}}
 If remote configuration is enabled, and fails to load, Session Replay doesn't capture any sessions. This ensures that Amplitude respects any privacy settings you define in the Admin interface, and you don't accidentally capture sensitive data.
