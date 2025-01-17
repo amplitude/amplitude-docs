@@ -11,9 +11,9 @@ Use this option in the Session Replay configuration.
 
 | Mask level | Description |
 | ------| -----|
-| `light` | Masks all password, email address, credit card numbers, and phone numbers.|
-| `medium` | Masks all editable text views. |
-| `conservative` | Masks all text views. | 
+| `light` | Masks all password, email address, credit card numbers, phone numbers and web views.|
+| `medium` | Masks all editable text views and web views. |
+| `conservative` | Masks all text views and web views. | 
 
 #### Privacy methods for UIKit
 
@@ -25,7 +25,7 @@ import AmplitudeSessionReplay
 
 | Variable             | Description                                                                                                                                                                                                                                                                                            |
 |----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `amp_isBlocked`      | Set `view.amp_isBlocked` to selectively replace a view and its subviews with a placeholder in session replays. UITextViews and UITextFields are automatically blocked.  |                                                                          |
+| `amp_isBlocked`      | Set `view.amp_isBlocked` to selectively replace a view and its subviews with a placeholder in session replays. UITextViews and UITextFields are automatically blocked. To unblock a view that is masked by default, set the this value to false  |                                                                          |
 
 #### Privacy Modifiers for SwiftUI
 
@@ -37,6 +37,6 @@ import AmplitudeSessionReplay
 
 | Modifier                          | Description                                                                                                                                  |
 |-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| `amp_setBlocked(_ blocked: Bool)` | Add the `amp_setBlocked()` modifier to a `View` to selectively replace a view and its subviews with a placeholder in session replays.        |
+| `amp_setBlocked(_ blocked: Bool)` | Add the `amp_setBlocked()` modifier to a `View` to selectively replace a view and its subviews with a placeholder in session replays. To unblock a view that is masked by default, set the this value to false       |
 
 {{/markdown}}
