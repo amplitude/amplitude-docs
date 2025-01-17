@@ -116,7 +116,7 @@ POST https://your.domain/lists/$listId/remove
         'traits': {
             '[Amplitude] {$cohort_name}: {$cohort_id}': True / False
         },
-        'userId': ‘$user_id',
+        'userId': ‘$user_id’,
         'context': {
             'integration': {
                 'name': 'Amplitude Cohort Sync',
