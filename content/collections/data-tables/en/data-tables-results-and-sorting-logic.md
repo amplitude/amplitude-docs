@@ -33,14 +33,14 @@ When using multiple metrics, sorting by a particular column displays data for al
 
 Results exported to .CSV have row limits based on the metric type. If the data table contains multiple metrics of different kinds, the smallest row limit applies. Amplitude Analytics prunes rows exceeding the limit, and they don't appear in the exported .CSV.
 
-* Event segmentation metrics **without** attribution are limited to 10,000 rows.
-* Funnel metrics **without** attribution are limited to 300 rows.
-* Session metrics are limited to 100 rows.
-* Any metric **with** attribution is limited to ten rows.
+* Event segmentation metrics **without** attribution have a limit of 10,000 rows.
+* Funnel metrics **without** attribution have a limit of 300 rows.
+* Session metrics have a limit of 100 rows.
+* Any metric **with** attribution has a  limit of 20 rows.
 
 ## Limits for Dashboard REST API queries
 
-With results queried from the Dashboard REST API, event segmentation metrics are limited to 1000 rows. This is the only difference from the .CSV limits described in the previous section.
+With results queried from the Dashboard REST API, event segmentation metrics have a limit of 1000 rows. This is the only difference from the .CSV limits described in the previous section.
 
 ## How time properties work in Data Tables
 
@@ -49,7 +49,7 @@ When you apply time properties as group-bys, all limits described above apply to
 ### Examples:
 
 * If you are using multiple top-level group-bys, the display limit is 500 rows.   
-If, for example, you add another top-level group-by for the month property (a time-related property), and the date range includes three months (and thus, three different values for the property), up to 1500 rows (500 rows \* three property values) will be displayed in your Data Table.
+If, for example, you add another top-level group-by for the month property (a time-related property), and the date range includes three months (and thus, three different values for the property), up to 1500 rows (500 rows \* three property values) display in the Data Table.
 * If you export a funnel metric without attribution, grouped by a non-time property, the .CSV export result limit is 300 rows.   
-If, for example, you add another top-level group-by for the day property (a time property), and the date range includes seven days (and thus, seven different values for the property), up to 2100 rows (300 rows * seven property values) will be exported to your .CSV.
+If, for example, you add another top-level group-by for the day property (a time property), and the date range includes seven days (and thus, seven different values for the property), up to 2100 rows (300 rows * seven property values) export to your .CSV.
 *  The 10,000 row limit for event segmentation metrics without attribution **doesn't apply** if the final group-by in the top level group includes a time property.

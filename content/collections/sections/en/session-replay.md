@@ -29,7 +29,7 @@ Session Replay is **not** enabled by default, and requires instrumentation beyon
 
 You can launch a session replay from a user’s event stream, inside a chart, or from your homepage. Replays are generally available for viewing five minutes after a session begins.
 
-When viewing a session replay from your [homepage](#h_01HFD88N1M03EH9D8VF32QBBYQ) or from a [search](#h_01HK600KD02WEC77KE4HYMKHY6), the user's event stream syncs with the replay. You can select an event from the stream, and the replay jumps to that point in the session. (This feature isn't available when [viewing a replay from a chart](#h_01HFD818NE7FH2D85NS1VTCHYQ).)
+When viewing a session replay from your homepage or from a search, the user's event stream syncs with the replay. You can select an event from the stream, and the replay jumps to that point in the session. (This feature isn't available when viewing a replay from a chart.)
 
 ![image-20240109-232506.png](/docs/output/img/session-replay/image-20240109-232506-png.png)
 
@@ -46,15 +46,12 @@ Find the user with User Look-Up (you’ll need their user ID to do this), then c
 To use Session Replay in a chart, follow these steps:
 
 1. Open the Amplitude chart that contains the events you want to look at.
-2. Open the [Microscope](/docs/analytics/microscope) and click *View User Streams*.
+2. Open the [Microscope](/docs/analytics/microscope) and click *Watch Session Replays*.
 3. Check the *Streams with session replays* box.
-4. Click *Play Session* in the event stream to play the events directly below it.
 
-![UserStreams.png](/docs/output/img/session-replay/userstreams-2.png)
+The replay modal appears, where you can: 
 
-The replay view appears in the right-hand panel, where you can: 
-
-* Expand the view
+* Browse the available replays that correspond to the specific data point on the chart
 * Pause replay
 * Skip forward and backwards by 10-second increments
 * Speed up and down
@@ -72,6 +69,7 @@ Session Replay is available in the following Amplitude chart types, with these r
 * **Funnel Analysis**: Session replay is only available for the conversion measure. For Funnel Analysis charts, the order of events appears in chronological order (oldest to newest).
 * **Journeys**: Session replay is available on the Pathfinder and Journey Map visualizations.
 * **User Sessions**: Session replay is available for all six measures. This chart won’t allow session replays for [custom defined sessions](/docs/data/sources/instrument-track-sessions).
+* **Experiment charts**: Session replay is available on all Experiment charts.
 
 ### View Session Replay from your homepage
 
@@ -93,7 +91,7 @@ To see an approximation of the number of sessions that have associated replays, 
 
 Session replay gives you two options for searching replays: either by date, or with a filter.
 
-1. Navigate to *Users & Sessions—>Session Replays* to see the complete list of session replays available for viewing.
+1. Navigate to *Session Replay* to see the complete list of session replays available for viewing.
 2. To narrow the list by date, click the calendar icon just above the list and select the starting and ending dates you'd like to use. You can also use a preset timeframe—seven days, 30 days, 60 days, or 90 days—by clicking on the appropriate button.
 
 Filtered results by date or time frame match the project's timezone.
