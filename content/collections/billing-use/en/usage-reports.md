@@ -66,7 +66,7 @@ To export the report as a PDF or PNG, click the export icon in the upper-right c
 
 The Events Usage tab provides a downloadable, **organization-level** usage report in .CSV or JSON format, detailing use of events across all projects and portfolios within your org. This helps organization admins review Amplitude use across your company. Generate an up-to-date report whenever you like by clicking *Generate Report*.
 
-Amplitude measures event use by **queries**. Amplitude defines a query as the **selection of an event** in the definition of a chart, segment, or cohort. When you use [custom events](/docs/analytics/charts/event-segmentation/event-segmentation-in-line-events) or metrics that are composed of multiple events, queries for **each component event** are tallied separately.
+Amplitude measures event use by **queries**. Amplitude defines a query as the **selection of an event** in the definition of a chart, segment, or cohort. When you use [custom events](/docs/analytics/charts/event-segmentation/event-segmentation-in-line-events) or metrics that are composed of multiple events,  Amplitude tallies queries for each component event separately.
 
 ![Screenshot_2023-04-24_at_17.47.39.png](/docs/output/img/billing-use/screenshot-2023-04-24-at-17-47-39-png.png)
 
