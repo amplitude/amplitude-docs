@@ -40,46 +40,70 @@ Content-Security-Policy: script-src *.amplitude.com unsafe-inline;
 
 ### Async script with anti-flicker snippet
 
-The synchronous script above provides the best experience for your users. If you need to load the script asynchronously, include the following anti-flicker snippet:
+The synchronous script above provides the best experience for your users. If you need to load the script asynchronously, include the following anti-flicker snippet which masks elements on the page until all changes are applied. Replace `API_KEY` with your project's API key and optionally set the timeout to remove the anti-flicker mask.
 
 {{partial:tabs tabs="US Data Center, EU Data Center"}}
 {{partial:tab name="US Data Center"}}
+
 ```html
-<!-- The anti-flicker snippet. Should be set above the async experiment script -->
 <script>
-  // Set a timeout in milliseconds for the anti-flicker.
-  var timeout = 1000; //[tl! ~~]
-  var id = "amp-exp-css";
-  if (!document.getElementById(id)) {
-    var s = document.createElement("style");
-    s.id = id;
-    s.innerText = "* { visibility: hidden !important; background-image: none !important; }";
-    document.head.appendChild(s);
-    window.setTimeout(function () {s.remove()}, timeout);
-  }
+  (function(d, h){
+    // TODO: Replace API_KEY with your API key.
+    var apiKey = "API_KEY"; //[tl! ~~]
+    // TODO: Set a timeout in milliseconds for the anti-flicker.
+    var timeout = 1000; //[tl! ~~]
+    // Hides the page and loads the script. Shows page if script fails to load,
+    // otherwise the script shows the page.
+    var id = "amp-exp-css";
+    try {
+      if (!d.getElementById(id)) {
+        var st = d.createElement("style");
+        st.id = id;
+        st.innerText = "* { visibility: hidden !important; background-image: none !important; }";
+        h.appendChild(st);
+        window.setTimeout(function () {st.remove()}, timeout);
+        var sc = d.createElement("script");
+        sc.src = "https://cdn.amplitude.com/script/"+apiKey+".experiment.js";
+        sc.async = true;
+        sc.onerror = function () {st.remove()};
+        h.insertBefore(sc, d.currentScript || h.lastChild);
+      }
+    } catch {console.error(e)}
+  })(document, document.head);
 </script>
-<!-- Replace API_KEY with your project's API key -->
-<script async src="https://cdn.amplitude.com/script/API_KEY.experiment.js"></script>
 ```
+
 {{/partial:tab}}
 {{partial:tab name="EU Data Center"}}
+
 ```html
-<!-- The anti-flicker snippet. Should be set above the async experiment script -->
 <script>
-  // Set a timeout in milliseconds for the anti-flicker.
-  var timeout = 1000; //[tl! ~~]
-  var id = "amp-exp-css";
-  if (!document.getElementById(id)) {
-    var s = document.createElement("style");
-    s.id = id;
-    s.innerText = "* { visibility: hidden !important; background-image: none !important; }";
-    document.head.appendChild(s);
-    window.setTimeout(function () {s.remove()}, timeout);
-  }
+  (function(d, h){
+    // TODO: Replace API_KEY with your API key.
+    var apiKey = "API_KEY"; //[tl! ~~]
+    // TODO: Set a timeout in milliseconds for the anti-flicker.
+    var timeout = 1000; //[tl! ~~]
+    // Hides the page and loads the script. Shows page if script fails to load,
+    // otherwise the script shows the page.
+    var id = "amp-exp-css";
+    try {
+      if (!d.getElementById(id)) {
+        var st = d.createElement("style");
+        st.id = id;
+        st.innerText = "* { visibility: hidden !important; background-image: none !important; }";
+        h.appendChild(st);
+        window.setTimeout(function () {st.remove()}, timeout);
+        var sc = d.createElement("script");
+        sc.src = "https://cdn.eu.amplitude.com/script/"+apiKey+".experiment.js";
+        sc.async = true;
+        sc.onerror = function () {st.remove()};
+        h.insertBefore(sc, d.currentScript || h.lastChild);
+      }
+    } catch {console.error(e)}
+  })(document, document.head);
 </script>
-<!-- Replace API_KEY with your project's API key -->
-<script async src="https://cdn.eu.amplitude.com/script/API_KEY.experiment.js"></script>
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
 
@@ -108,6 +132,7 @@ Implement the `IntegrationPlugin` interface and set the `experimentIntegration` 
 
 * `getUser(): object`: Return the [experiment user](/docs/feature-experiment/data-model#users) object.
 * `track(): boolean`: Track the event through a 3rd party. Return `true` if the event was tracked. Returning `false` causes the event to be persisted and retried at an interval.
+* `setup(): Promise<void>`: (Optional) Set up the integration asynchronously. Returns a promise which should be resolved when the integration is ready to return user information from `getUser()`.
 
 ```html
 <script>
