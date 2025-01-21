@@ -32,10 +32,12 @@ Amplitude supports using any event type to define a time spent metric. However, 
 
 Time spent metrics are available in data tables. Use these metrics to gain insight into user behavior like:
 
-* **Total time spent on page**: The cumulative time spent by all users on a specific page or set of pages.
-* **Time spent per user**: The average time users spend viewing pages on your site.
-* **Time spent per page view**: The average time spent per page view event.
-* **Time spent per session**: The average time spent on page views per session.
+| Metric                   | Definition                                                                                                                       |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| Total time spent on page | The cumulative time spent by all users on a specific page or set of pages. <br /> <code>TimeSpent(PV)</code>                     |
+| Time spent per user      | The average time users spend viewing pages on your site. <br /> <code>TimeSpent(PV) / Uniques(PV where TimeSpent(PV) > 0)</code> |
+| Time spent per page view | The average time spent per page view event. <br /> <code>TimeSpent(PV) / Totals(PV where TimeSpent(PV) > 0)</code>               |
+| Time spent per session   | The average time spent on page views per session. <br /> <code>TimeSpent(PV) / SessionTotals(where TimeSpent(PV) > 0)            |
 
 Time spent metrics return results in the specified unit of time, for example seconds, minutes, or hours.
 
@@ -53,5 +55,3 @@ To create a new time spent metric:
 4. In the *Metric Type* selection, scroll down to the **Time Spent** metrics and select the metric you want to use.
 5. Optionally apply a filter to the event and select the unit of time.
 6. Click *Save*.
-
-## Computation semantics
