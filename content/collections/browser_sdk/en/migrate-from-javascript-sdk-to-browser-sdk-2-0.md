@@ -79,7 +79,7 @@ In both versions, attribution can occur during initialization.
 
 ## Dependency
 
-For snippet installation, update your project's [snippet loader](https://github.com/amplitude/Amplitude-TypeScript/tree/v2.x/packages/analytics-browser#using-script-loader).
+For snippet installation, update your project's [snippet loader](/docs/sdks/analytics/browser/browser-sdk-2#install-the-sdk).
 
 For Node projects, update your dependency list in package.json.
 
