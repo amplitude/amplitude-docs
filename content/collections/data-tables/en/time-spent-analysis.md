@@ -24,9 +24,17 @@ In the following example, the timeline represents a set of consecutive page view
 
 Amplitude supports using any event type to define a time spent metric. However, page view events are most commonly used for this analysis. You can define page view events a few ways:
 
-* **Primitive page view event**: A basic event specifically designed to track page views. For example, the pre-defined `[Amplitude] Page View` event. ![](statamic://asset::help_center_conversions::data-tables/primitive.png)
-* **Any active event where Event Name = 'Page View'**: Some taxonomies define page view at the property level. Use a filter to limit event selection to names that contain `page view`. ![](statamic://asset::help_center_conversions::data-tables/filter.png)
-* **Custom page view event**: A combination of primitive events that collectively represent a page view. ![](statamic://asset::help_center_conversions::data-tables/custom.png)
+* **Primitive page view event**: A basic event specifically designed to track page views. For example, the pre-defined `[Amplitude] Page View` event. 
+  
+  ![](statamic://asset::help_center_conversions::data-tables/primitive.png)
+  
+* **Any active event where Event Name = 'Page View'**: Some taxonomies define page view at the property level. Use a filter to limit event selection to names that contain `page view`. 
+  
+  ![](statamic://asset::help_center_conversions::data-tables/filter.png)
+
+* **Custom page view event**: A combination of primitive events that collectively represent a page view. 
+  
+  ![](statamic://asset::help_center_conversions::data-tables/custom.png)
 
 ## Use time spent metrics in data tables
 
