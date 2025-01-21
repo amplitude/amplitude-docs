@@ -107,7 +107,15 @@ Below are the cache times for charts. **Cache times for dashboards, REST API req
 If you're measuring time on the date picker using the "between" option, the query times listed above apply to any range of that duration, and not just the most recent. For instance, a chart generated in 2023 that examines monthly data collected between January 2020 and June 2020 (a six-month span that's not the most recent six months) is cached for 24 hours.
 {{/partial:admonition}}
 
-{{#
+## Releases and annotations
+
+* **Add an annotation** to your chart on the specific date of the data point you've selected, such as the dates of a feature release or a marketing campaign. Annotations appear as purple vertical lines in your chart, and they can be removed in your project's [Settings page](/docs/admin/account-management/account-settings). There are some limits to annotations:
+  * Only users with Admin or Manager permission levels can create annotations.
+  * Chart-specific annotations are only available for Event Segmentation and User Sessions charts.
+  * Annotations don't support public links and aren't accessible in dashboards or notebooks.
+* **Create a release**. A **release** represents a change in your product. See [this Help Center article for more information on releases in Amplitude](/docs/analytics/releases). 
+
+
 ## Keyboard shortcuts
 
 {{partial:admonition type="note" heading="Shortcut availability"}}
@@ -127,4 +135,3 @@ Keyboard shortcuts are available on the creation page for all charts, except Dat
 | `Shift`+`n` | New chart             | Equivalent to clicking `New chart`.                                                                                                                                                                                                                                        |
 | `Shift`+`?` | Toggle shortcut modal | This shortcut hides or displays a modal that describes the available keyboard shortcuts.                                                                                                                                                                                   |
 
-#}}
