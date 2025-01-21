@@ -32,11 +32,9 @@ To bring up the Microscope menu, simply click on a data point in any supported c
 
 From here, you can:
 
-* **Add an annotation** to your chart on the specific date of the data point you've selected, such as the dates of a feature release or a marketing campaign. Annotations appear as purple vertical lines in your chart, and they can be removed in your project's [Settings page](/docs/admin/account-management/account-settings). There are some limits to annotations:
-  * Only users with Admin or Manager permission levels can create annotations.
-  * Chart-specific annotations are only available for Event Segmentation and User Sessions charts.
-  * Annotations don't support public links and aren't accessible in dashboards or notebooks.
-* **Create a release**. A **release** represents a change in your product. See [this Help Center article for more information on releases in Amplitude](/docs/analytics/releases).
+* **Zoom In** on a data point by going down to the next time interval granularity, for example when you click a dat point in a weekly chart and zoom in, the chart updates to daily granularity, and the time period in the date picker update to be the same as the time period of the original data point.
+* **Filter By** to quickly drill down and focus on the series.
+* **Exclude** or remove distracting or irrelevant series from the analysis.
 * **Create a cohort** of the users that make up the selected data point, which you can then further analyze by applying this [cohort](/docs/analytics/behavioral-cohorts) to other charts in Amplitude. When you apply a group in the Segmentation Module, you can also create a group cohort from here.
 * **View a list of all the users** in the selected data point. Click a user ID to open that user's profile in the *User Activity* tab. If you are an Enterprise customer with [account-level reporting](/docs/analytics/account-level-reporting), you can also use Microscope to view the groups in a data point. Click any group to see a list of users in that group, in the *User Activity* tab.
 * **Download all the users** (up to 1 million) that make up the selected data point, in the form of a .CSV file. This file also contains each user's most-recently sent user property values.
@@ -44,10 +42,10 @@ From here, you can:
 {{partial:admonition type="note" heading=""}}
 If you are conducting [account-level reporting](/docs/analytics/account-level-reporting) analysis, you can opt to download the groups included in a certain data point or bucket. The .CSV file includes the following four columns:
 
-* **group_id:** The unique ID of a particular group name (much like Amplitude ID). When Amplitude sees a new group value or group name, Amplitude assigns a unique `group_id` to the unique group name.
-* **group_name:** The group property value (like the user ID). For example, if your count-by was for the group `Company`, then the `group_name` could be `Amplitude`. The `group_name` values are set by you.
-* **first_time:** The Unix timestamp denoting when Amplitude first saw that group.
-* **creator_amplitude_id:** The `amplitude_id` that sent the event creating the group.
+* `group_id`: The unique ID of a particular group name (much like Amplitude ID). When Amplitude sees a new group value or group name, Amplitude assigns a unique `group_id` to the unique group name.
+* `group_name`: The group property value (like the user ID). For example, if your count-by was for the group `Company`, then the `group_name` could be `Amplitude`. The `group_name` values are set by you.
+* `first_time`: The Unix timestamp denoting when Amplitude first saw that group.
+* `creator_amplitude_id`: The `amplitude_id` that sent the event creating the group.
 
 Additionally, you can **show user paths**, **view user streams**, and **explore conversion drivers**. Read more about them below.
 {{/partial:admonition}}
