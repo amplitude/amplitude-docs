@@ -132,7 +132,7 @@ Implement the `IntegrationPlugin` interface and set the `experimentIntegration` 
 
 * `getUser(): object`: Return the [experiment user](/docs/feature-experiment/data-model#users) object.
 * `track(): boolean`: Track the event through a 3rd party. Return `true` if the event was tracked. Returning `false` causes the event to be persisted and retried at an interval.
-* `setup(): Promise<void>`: (Optional) Set up the integration asynchronously. Returns a promise which resolves when the integration is ready to return user information from `getUser()`.
+* `setup(): Promise<void>`: (Optional) Set up the integration asynchronously. Returns a promise which must resolve when the integration is ready to return user information from `getUser()`.
 
 ```html
 <script>
