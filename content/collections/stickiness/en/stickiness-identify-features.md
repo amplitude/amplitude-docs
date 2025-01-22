@@ -28,7 +28,7 @@ As described above, a Stickiness chart shows how often your users are firing spe
 
 To build a Stickiness analysis, follow these steps:
 
-1. To open a new Stickiness chart, click *Create* *New > Reports*, then select *Stickiness* from the list of available charts.
+1. To open a new Stickiness chart, click *Create > Chart > View additional chart types*, then select *Stickiness* from the list of available charts.
 2. In the Events Module, select the event you're interested in. You can choose a specific event that's instrumented in Amplitude, or you can tell Amplitude to consider any event for this analysis, by selecting *Any Event* from the list of available events.
 3. If desired, add properties to your starting event by clicking on *+ where*, selecting the property name, and specifying the property value you’re interested in.  
   

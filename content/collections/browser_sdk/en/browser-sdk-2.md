@@ -89,7 +89,7 @@ amplitude.init(AMPLITUDE_API_KEY, 'user@amplitude.com', options);
 | `flushQueueSize`           | `number`. Sets the maximum number of events batched in a single upload attempt.                                                                                                                                                                                                    | 30 events                               |
 | `flushMaxRetries`          | `number`. Sets the maximum number of retries for failed upload attempts. This is only applicable to errors that the SDK can retry.                                                                                                                                                 | 5 times.                                |
 | `logLevel`                 | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`. Sets the log level.                                                                                                                                                              | `LogLevel.Warn`                         |
-| `loggerProvider `          | `Logger`. Sets a custom `loggerProvider` class from the Logger to emit log messages to desired destination.                                                                                                                                                                        | `Amplitude Logger`                      |
+| `loggerProvider `          | `Logger`. Sets a custom `loggerProvider` class that implements the [Logger interface](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-types/src/logger.ts#L1-L8) to emit log messages to a specified destination.                                                                                                                                                                        | [Amplitude Logger](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/logger.ts)                      |
 | `minIdLength`              | `number`. Sets the minimum length for the value of `userId` and `deviceId` properties.                                                                                                                                                                                             | `5`                                     |
 | `optOut`                   | `boolean`. Sets permission to track events. Setting a value of `true` prevents Amplitude from tracking and uploading events.                                                                                                                                                       | `false`                                 |
 | `serverUrl`                | `string`. Sets the URL where events are upload to.                                                                                                                                                                                                                                 | `https://api2.amplitude.com/2/httpapi`  |
@@ -428,7 +428,7 @@ Browser SDK tracks the following information in page view events.
 | `event_properties.[Amplitude] Page URL`      | `string`. The value of page URL.                                                                                                                    | location.href.split('?')[0] or ``.                                |
 | `event_properties.${CampaignParam}`          | `string`. The value of `UTMParameters` `ReferrerParameters` `ClickIdParameters` if has any. Check [here](./#web-attribution) for the possible keys. | Any undefined `campaignParam` or `undefined`.                     |
 | `event_properties.[Amplitude] Page Counter`  | `integer`. The count of pages viewed in the session.                                                                                                | `1`                                                               |
-| `event_properties.refferer`                  | `string`. The full URL of the users previous page.                                                                                                  | `https://amplitude.com/docs/sdks/analytics/browser/browser-sdk-2` |
+| `event_properties.referrer`                  | `string`. The full URL of the users previous page.                                                                                                  | `https://amplitude.com/docs/sdks/analytics/browser/browser-sdk-2` |
 | `event_properties.referring_domain`          | `string`. The domain of the page referrer. `amplitude.com`                                                                                          |
 
 
@@ -1127,7 +1127,10 @@ amplitude.track("event")
 Unlike standard network requests, sendBeacon sends events in the background, even if the user closes the browser or leaves the page.
 
 {{partial:admonition type="warning" heading=""}}
-Because `sendBeacon` sends events in the background, events dispatched from `sendBeacon` don't return a server response and can't be retried when they encounter failures like 4xx or 5xx errors. You can address these retry issues by sending one event/request, but this could increase the network load and the likelihood of throttling.
+`sendBeacon` sends events in the background. As a result, events dispatched by `sendBeacon` don't return server responses. Keep the following in mind if you use `sendBeacon`:
+
+1. Requests are not retried, including failed requests with 4xx or 5xx responses, so events may be lost.
+2. Event order cannot be guaranteed, as `sendBeacon` may send events in parallel. This can lead to some UTM properties not being set, for example for session start events. In contrast, while using `fetch`, the SDK waits for responses before proceeding, guaranteeing event order.
 {{/partial:admonition}}
 
 #### Set the transport to use sendBeacon for all events
@@ -1256,16 +1259,20 @@ amplitude.init(AMPLITUDE_API_KEY, {
 
 ### Marketing Attribution Tracking
 
-Amplitude tracks marketing attribution and exclude all the referrer from all subdomain by default. Once you enable marketing attribution tracking, Amplitude generates `identify` events to assign the campaign value in certain cases. This ensures that user properties update and influence future events.
+Amplitude tracks marketing attribution and excludes all referrers from subdomains by default. Learn more about [exclude referrers](/docs/sdks/analytics/browser/browser-sdk-2#exclude-referrers). Once you enable marketing attribution tracking, Amplitude generates `identify` events to assign the campaign values as user properties in specific scenarios. Refer to the following section to learn when Amplitude tracks marketing attribution and updates user properties.
 
 #### Tracking scenarios
 
-Amplitude track marketing attribution changes while
+Amplitude tracks changes in marketing attribution in two scenarios: during SDK initialization and event processing.
 
 ##### Amplitude SDK initialization (Hard page refresh)
 
 - At the start of a session, the referrer isn't excluded and campaign has any change or customer first visit.
 - In the middle of the session, the referrer isn't excluded, not direct traffic, and campaign has any change.
+
+![Diagram of whether tracking a campaign on SDK initialization](/docs/output/img/sdk/isNewCampaign.drawio.svg)
+
+To debug, you can get the referrer by typing `document.referrer` in your Browser console and compare it with your `config.autocapture.attribution.excludeReferrers`. If `document.referrer` is empty, then it's considered as a direct traffic. You can get the session ID under `AMP_{last 10 digits of your API key}` on the "Cookies" tab of the [Ampitude Chrome extension](/docs/data/chrome-extension-debug) and get the previous campaign stored under `AMP_MKTG_{last 10 digits of your API key}`.
 
 ##### Processing the event
 

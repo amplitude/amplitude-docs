@@ -25,11 +25,6 @@ Save time when repeating common analyses and make it simpler for new team member
 
 This feature is available to users on **Growth** and **Enterprise plans** only.
 
-## Before you begin
-
-* [Permissions](#h_099bd27f-05f2-43d7-a046-bf07278b75b1) function similarly to dashboard permissions.
-* [Use cases](#h_09abb12c-6c2b-4a5a-94ff-1462aaea0f73) for templates and the bulk filter feature on Dashboards are different.
-
 ## Create a template
 
 To create a template, you must start from a dashboards. For detailed instructions, see the section on [templatizing a dashboard in this Help Center article](/docs/analytics/dashboard-create).

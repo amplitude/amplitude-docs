@@ -42,7 +42,7 @@ Before you begin, log in to your [Google Ads Manager account](https://ads.googl
 4. Set up the fields necessary for Amplitude to begin syncing to Google Ads. There are three possible match types in Google Ads, referred to as the **upload key type**:
 
     - **Contact Info**: This key type matches on a user's email address (phone number, first name, last name, country, and zip code are also supported, not recommended).
-    - **Mobile Advertising ID**: This key type matches on IDFA and AAID mobile device IDs. Amplitude doesn't recommend using Amplitude's Device ID column because you may experience low matching rates due to Amplitude populating IDFV if it isn't able to get AAID and IDFA, which you can read more about [here](https://help.amplitude.com/hc/en-us/articles/115003135607-Tracking-Unique-Users#h_7cf7c47f-ec71-4e15-8c47-a2bda5d84186).
+    - **Mobile Advertising ID**: This key type matches on IDFA and AAID mobile device IDs. Amplitude doesn't recommend using Amplitude's Device ID column because you may experience low matching rates due to Amplitude populating IDFV if it isn't able to get AAID and IDFA. For more information, see [Track unique users](/docs/data/sources/instrument-track-unique-users#how-amplitude-identifies-unique-users).
   
       You also need to define an App ID if you choose this upload key type. App ID is a string that uniquely identifies a mobile application from which the data was collected. For iOS, the ID string is the 9 digit string that appears at the end of an App Store URL. For Android, the ID string is the application's package name. You can define multiple for the same project so you can sync under different apps if needed, and you can select which one you would like to at the time of making the sync.
   

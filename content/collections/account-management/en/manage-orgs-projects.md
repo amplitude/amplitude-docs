@@ -66,19 +66,26 @@ To delete a project, follow these steps:
 
 ## Change your name or URL, or delete your organization
 
-If you're a Growth or Enterprise customer, reach out to your CSM to help you change your organization's name or URL, or to help delete your organization. 
+If you're a **Growth** or **Enterprise** customer, contact your CSM to help you change your organization's name or URL, or delete your organization. If you don't know your CSM, use Amplitude's in-product chat.
 
-If you're unsure who your CSM is or don't have one, follow the steps below to request a change:
+1. Log in to your account:
+   * US Region: [https://app.amplitude.com/login ](https://app.amplitude.com/login)
+   * EU Region: [https://app.eu.amplitude.com/login](https://app.eu.amplitude.com/login)
 
-1. To request a URL or name change, go to [support.amplitude.com](https://support.amplitude.com/), select *Service Task* as the request type, and then *Org url/name change* as the service task. 
-You must be an admin of your organization to submit this request. If there are no admins with your organization, include that fact in the *Why are you making this change?* section of the form.
+2. In the upper-right corner of the Amplitude app, click the Help icon, then click *Chat with us*.
+3. Click *Get answer now with AI*, and enter `Talk to a person` in the chat. A dialog appears with your CSM's name and contact email.
 
-1. To request to delete an org, go to [support.amplitude.com](https://support.amplitude.com/), select *Service Task* as the request type, and then *Org Deletion* as the service task.
-If there are no admins with your organization, include that fact in the *Why are you deleting your Amplitude organization?* section of the form.
+If you're on another plan type, and don't have a CSM or AE:
 
-1. For each request, you must use the email address that exists on the *Team Members* page.
-2. Click *Submit* once you complete the form. Amplitude sends a copy of the submitted request by email.
-3. When Support processes the request, they send a confirmation email.
+{{partial:admonition type="note" heading=""}}
+Amplitude requires that you use the same email address listed on the Team Members page, and can't process requests from an unknown email address.
+{{/partial:admonition}}
+
+1. To request an organization URL or name change, go to [https://support.amplitude.com](https://support.amplitude.com), select the *Service Task* request type, and *Org url/name change* as the service task.
+
+2. To request an organization deletion, go to [https://support.amplitude.com](https://support.amplitude.com), select the *Service Task* request type, and *Org Deletion* as the service task.
+
+3. Click *Submit* to complete the form. Amplitude dsends a copy of the request to your email, and responds by email when the request is complete.
 
 {{partial:admonition type='note'}}
 The Amplitude Support team responds to these requests the first Monday of each month, or the following Tuesday if Monday is an observed holiday. The support team includes all requests sent before 9 AM Pacific Time on the first Monday of each month in the batch. 
