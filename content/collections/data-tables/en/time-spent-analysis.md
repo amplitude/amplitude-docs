@@ -28,7 +28,7 @@ Amplitude supports using any event type to define a time spent metric. However, 
   
   ![](statamic://asset::help_center_conversions::data-tables/primitive.png)
   
-* **Any active event where Event Name = 'Page View'**: Some taxonomies define page view at the property level. Use a filter to limit event selection to names that contain `page view`. 
+* **Any active event where Event Name ∈ 'Page View'**: Some taxonomies define page view at the property level. Use a filter to limit event selection to names that contain `page view`. 
   
   ![](statamic://asset::help_center_conversions::data-tables/filter.png)
 
