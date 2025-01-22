@@ -205,7 +205,7 @@ The options argument allows you to pass [Amplitude fields](/docs/apis/analytics/
 ```java
 Ampli.getInstance().identify(
     userId,
-    Identify.builder().userProp("A trait associated with this user"),.build(),
+    Identify.builder().userProp("A trait associated with this user").build(),
     new EventOptions().setDeviceId(deviceId).setUserId("some-user"),
 );
 ```
