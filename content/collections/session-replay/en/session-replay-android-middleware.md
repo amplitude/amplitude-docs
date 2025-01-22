@@ -158,6 +158,8 @@ if (nonEUCountryFlagEnabled) {
 }
 ```
 
+{{partial:partials/session-replay/sr-android-webview-mapview}}
+
 {{partial:partials/session-replay/sr-data-retention}}
 
 {{partial:partials/session-replay/sr-android-storage}}

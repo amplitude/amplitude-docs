@@ -52,7 +52,7 @@ You can track anonymous behavior across two different domains. For example, imag
 To track an anonymous user who starts on Site 1 and navigates to Site 2, you'll need to pass the device ID from Site 1 as a parameter to Site 2. After that, you'll have to reinitialize the SDK with the passed device ID:
 
 1. From Site 1, grab the device ID from `amplitude.options.deviceId`.
-2. Pass the device ID to Site 2 via a URL parameter or third party cookie.
+2. Pass the device ID to Site 2 with a URL parameter or third party cookie.
 3. Initialize the Amplitude SDK on Site 2 with `amplitude.init('YOUR\_API\_KEY', null, {deviceId: '$DEVICE_ID'})`.
 
 ## How Amplitude assigns Amplitude IDs
@@ -147,12 +147,12 @@ Finally, an event is logged anonymously on device Z. This events gets an Amplitu
 In this scenario, the anonymous events on device Z have two different Amplitude IDs, even though there's just one user ID associated with the device. Amplitude interprets this to mean that both Amplitude IDs 8 and 9 refer to a single user: David. When this happens, Amplitude will **merge** these IDs, so only one user will be counted. This merge can only happen because the event with Amplitude ID 9 did not have a User ID present.
 
 {{partial:admonition type='note'}}
-if you're using Redshift, the data are immutable, and the anonymous event will still have an Amplitude ID of 9 in the raw data. See the below [merged users](#h_c323d7e5-4662-4a36-b0a1-5110a341e80c) section for more details.
+if you're using Redshift, the data are immutable, and the anonymous event will still have an Amplitude ID of 9 in the raw data. See the below [merged users](#merged-users) section for more details.
 {{/partial:admonition}}
 
 ## Merged users
 
-The merged user problem arises when Amplitude determines that an anonymous user—i.e., one whose only ID is a device ID—is actually a recognized user with an Amplitude ID.
+The merged user problem arises when Amplitude determines that an anonymous user, for example, one whose only ID is a device ID—is actually a recognized user with an Amplitude ID.
 
 For example, when a user gets a new device, they'll log events in your product anonymously before signing in. To Amplitude, these anonymous events appear to be coming from a new user, so they're mapped to a new Amplitude ID.
 
@@ -168,7 +168,7 @@ Amplitude solves this problem by cross referencing the list of Amplitude IDs wit
 **Important Note:**
 
 * User IDs **cannot be merged**. If you create a new user ID for an existing user, Amplitude will only recognize them as different unique users.
-* This merged users solution **does not apply** to the raw data in Amazon [Redshift](/docs/data/destination-catalog/amazon-redshift), as the database contains the raw event logs and not a merged users table. Without this merged users logic, we have seen an average change of about 5% in DAU numbers for our users with higher-than-average change for web data. Merged users **are** available in Snowflake via [Query](https://help.amplitude.com/hc/en-us/articles/115001902492).
+* This merged users solution **does not apply** to the raw data in Amazon [Redshift](/docs/data/destination-catalog/amazon-redshift), as the database contains the raw event logs and not a merged users table. Without this merged users logic, we have seen an average change of about 5% in DAU numbers for our users with higher-than-average change for web data. Merged users **are** available in Snowflake with [Query](/docs/analytics/charts/other-charts/other-charts-amplitude-sql).
 
 ### Event IDs, device IDs, and merging users
 
@@ -185,4 +185,4 @@ When users are merged, the event ID count continues on a device-by-device basis:
 
 If the product data is ever cleared (for example, if a user deletes the app and reinstalls), the Event ID will reset to 1 . When a user deletes the app and reinstalls, Amplitude will usually generate a new Device ID as well, which will subsequently trigger a new merging.
 
-When users are merged, the user could "lose" user property values that were never meant to be changed (e.g. 'Start Version' or initial UTM parameters) because the new user property values will overwrite the original user property values. If you are a paying customer and this affects you, please reach out to our Support team.
+When users are merged, the user could "lose" user property values that were never meant to be changed (for example 'Start Version' or initial UTM parameters) because the new user property values will overwrite the original user property values. If you are a paying customer and this affects you, please reach out to our Support team.
