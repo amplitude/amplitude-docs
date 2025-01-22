@@ -11,9 +11,9 @@ Use this option in the Session Replay configuration.
 
 | Mask level | Description |
 | ------| -----|
-| `light` | Masks all password, email address, and phone numbers. **Doesn't** block credit card numbers. |
-| `medium` | Masks all editable text views. |
-| `conservative` | Masks all text views. | 
+| `light` | Masks all password, email address, phone numbers, web views and map views. **Doesn't** block credit card numbers. |
+| `medium` | Masks all editable text views, web views and map views. |
+| `conservative` | Masks all text views, web views and map views | 
 
 #### Privacy tags in layout XML
 
@@ -24,6 +24,7 @@ Use this option in your application's layout XML.
 | `<EditText>`      | Session Replay masks all text input fields by default. When a users enters text into an input field, Session Replay captures asterisks in place of text. To *unmask* a text input, add the tag `amp-unmask`. For example: `<EditText android:tag="amp-unmask" android:text="Unmask this">`. |
 | `<TextView>`      | To mask text within non-input elements, add the tag `amp-mask`. For example, `<TextView android:tag="amp-mask" android:text="Mask this"/>`. When masked, Session Replay captures masked text as a series of asterisks.                                                                      |
 | non-text elements | To block a non-text element, add the tag `amp-block`. For example, `<ImageView android:tag="amp-block"/>`. Session Replay replaces blocked elements with a placeholder of the same dimensions.                                                                                              |
+| <WebView> | To unmask a web view, add the `amp-unmask` tag. For example, `<WebView android:tag="amp-block"/>`.                                                                                              |
 
 
 #### Privacy methods on the Session Replay SDK
@@ -36,7 +37,7 @@ import com.amplitude.android.SessionReplay
 
 | Method               | Description                                                                                                                                                                                                                                                                         |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `unmask(view: View)` | Session Replay masks all text input views by default. When a user enters text into an input view, Session Replay captures asterisks in place of text. To *unmask* a text input, call `SessionReplay.unmask(view)` where `view` is a reference to the text input you want to unmask. |
+| `unmask(view: View)` | To unmask a view manually, call `SessionReplay.unmask(view)` where `view` is a reference to any view that is masked. |
 | `mask(view: View)`   | To mask text within non-input views, call `SessionReplay.mask(view)` where `view` is a reference to the text input you want to mask. When masked, Session Replay captures masked text as a series of asterisks.                                                                     |
 | `block(view: View)`  | To block a non-text view, call `SessionReplay.unmask(view)` where `view` is a reference to the View you want to block. Session Replay replaces blocked views with a placeholder of the same dimensions.                                                                             |
 
