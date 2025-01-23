@@ -39,18 +39,38 @@ By default, a new Web Experiment targets all users. Audience targeting enables y
 
 If any segments match, Amplitude buckets that user into a variant based on the configured rollout and variant distribution. For a segment to match, it must meet all conditions you set.
 
-| Parameter | Description |
-| --- | --- |
-| New Users | A new user is first seen after a specified date. When the Web Experiment SDK first sees a user, it stores the date in local storage when the SDK loads then is never updated. May not function as intended shortly after the initial script installation, when all users are new. This **isn't** the same as new user queries in charts and cohorts. |
-| Returning Users | A returning user is a user first seen before a certain date. Same local considerations apply as with New Users. |
-| Referring URL | Matches users who land on your site from a specific referrer. For more information, see [document.referrer](https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer) on MDN. |
-| Landing Page URL | The landing page URL is set once in session storage when the SDK loads. |
-| URL Query Parameters | The current query parameters on the page at the time of evaluation. Commonly used for UTM parameter targeting. |
-| Device Category | Target users by their device type. `Desktop`, `Mobile`, or `Tablet`. |
-| User Agent | Target based on the user agent. Useful for targeting bots. For example, exclude all users where user agent contains `Googlebot`. |
-| Cookies | The cookies in the window at the time of evaluation. |
-| Language | The language set in the user's browser. |
-| Browser | The user's browser: `Safari`, `Chrome`, `Firefox`, `Edge`, `Opera`. |
+### Local properties
+
+Local properties are available client-side and don't require network requests. This enables Amplitude to evaluate them with low latency.
+
+| Parameter            | Description                                                                                                                                                                                                                                                                                                                          |
+|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| New Users            | A new user is first seen after a specified date. When the Web Experiment SDK first sees a user, it stores the date in local storage when the SDK loads then is never updated. May not function as intended shortly after the initial script installation, when all users are new. This **isn't** the same as new user queries in charts and cohorts. |
+| Returning Users      | A returning user is a user first seen before a certain date. Same local considerations apply as with New Users.                                                                                                                                                                                                                      |
+| Referring URL        | Matches users who land on your site from a specific referrer. For more information, see [document.referrer](https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer) on MDN.                                                                                                                                              |
+| Landing Page URL     | The landing page URL is set once in session storage when the SDK loads.                                                                                                                                                                                                                                                              |
+| URL Query Parameters | The current query parameters on the page at the time of evaluation. Commonly used for UTM parameter targeting.                                                                                                                                                                                                                       |
+| Device Category      | Target users by their device type. `Desktop`, `Mobile`, or `Tablet`.                                                                                                                                                                                                                                                                 |
+| User Agent           | Target based on the user agent. Useful for targeting bots. For example, exclude all users where user agent contains `Googlebot`.                                                                                                                                                                                                     |
+| Cookies              | The cookies in the window at the time of evaluation.                                                                                                                                                                                                                                                                                 |
+| Language             | The language set in the user's browser.                                                                                                                                                                                                                                                                                              |
+| Browser              | The user's browser: `Safari`, `Chrome`, `Firefox`, `Edge`, `Opera`.                                                                                                                                                                                                                                                                  |
+| Freeform properties  | Custom properties for the user set using the [`IntegrationPlugin`](/docs/web-experiment/implementation#integrate-with-a-third-party-cdp).                                                                                                                                                                                    |
+
+### Remote properties
+
+Remote properties enable advanced targeting based on [Amplitude ID resolution](/docs/feature-experiment/remote-evaluation#amplitude-id-resolution), [IP geolocation](/docs/feature-experiment/remote-evaluation#geolocation), [property canonicalization](/docs/feature-experiment/remote-evaluation#canonicalization), [behavioral cohorts](/docs/feature-experiment/remote-evaluation#cohort-membership), and historical [user properties](/docs/feature-experiment/remote-evaluation#user-properties). Targeting remote properties may increase page display latency since network requests are required.
+
+| Parameter                  | Description                                                                                            |
+|----------------------------|--------------------------------------------------------------------------------------------------------|
+| Enriched User Properties   | Properties resolved through [user enrichment](/docs/feature-experiment/remote-evaluation#user-enrichment). |
+| Amplitude User Properties  | Amplitude Analytics' historical user data.                                                             |
+| Experiment User Properties | The variant assigned to the user in other experiments.                                                 |
+| User Cohorts               | A set of [users](/docs/feature-experiment/cohort-targeting) defined in Amplitude.             |
+
+#### Page display delay
+
+For a given page [targeted](/docs/web-experiment/targeting#page-targeting) by active web experiments, Amplitude injects an anti-flicker overlay if at least one experiment targets the page and has "Anti-flicker" enabled. The overlay is a blank element that covers your page while it loads. Amplitude removes the overlay after it evaluates the remote properties, or after a 1-second timeout.
 
 ## Bucketing
 
@@ -58,4 +78,4 @@ Bucketing refers to the variant a users sees, based on the rollout and distribut
 
 Bucketing is consistent given the user has the same ID. Since most experiments bucket by Device ID, Web Experiment may put them in a different bucket if they visit on a new device, browser, or have private browsing enabled.
 
-Increasing rollout doesn't re-bucket users who're already in the rollout. For example, if your experiment is rolled out to 10% of users, and you increase the rollout to 50%, the original 10% of users aren't affected. If you change the *distribution* from evenly distributed to `20% -> control, 80% -> treatment`, users who were in the control jump to the treatment.
+Increasing rollout doesn't re-bucket users who're already in the rollout. For example, if your experiment has rolled out to 10% of users, and you increase the rollout to 50%, the original 10% of users aren't affected. If you change the *distribution* from evenly distributed to `20% -> control, 80% -> treatment`, users who were in the control jump to the treatment.
