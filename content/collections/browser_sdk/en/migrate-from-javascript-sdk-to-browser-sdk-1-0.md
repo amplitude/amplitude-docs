@@ -29,9 +29,14 @@ sdk_version_comparison:
       - 'Amplitude Logger by default. Not customizable.'
   -
     cells:
-      - 'Storage provider'
+      - 'Storage provider for unsent events'
       - 'LocalStorage by default. Fully customizable.'
-      - 'Limited storage - cookies, localStorage, sessionStorage, or none available. Not able to be customized.'
+      - 'LocalStorage. Not configurable'
+  -
+    cells:
+      - 'Identity storage'
+      - 'Cookie stoage by default. local storage, session storage and no storage supported'
+      - 'The same'
   -
     cells:
       - Customization
@@ -161,7 +166,7 @@ amplitude.init(API_KEY, OPTIONAL_USER_ID, config)
 |`config.saveParamsReferrerOncePerSession`|`config.attribution.trackNewCampaigns`. Opposite of `saveParamsReferrerOncePerSession`. See [configuration](../#configuration). |
 |`config.secureCookie`|`config.cookieSecure`|
 |`config.sessionTimeout`|`config.sessionTimeout`|
-|`config.storage`|`config.storageProvider`|
+|`config.storage`|`config.identityStorage`|
 |`config.trackingOptions`|`config.trackingOptions`|
 |`config.transport`|`config.transportProvider`|
 |`config.unsetParamsReferrerOnNewSession`|NOT SUPPORTED. Default behavior.|
