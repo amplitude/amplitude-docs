@@ -91,14 +91,14 @@ A tag type allows you to specify the type of action or event to track in your ap
 ### Initialize
 
 {{partial:admonition type="note" title=""}}
-`init` operates as a separate tag type that you need to create. Although Amplidue provides deferred initialization, events aren't sent to Amplitude until the `init` tag is fired.
+`init` operates as a separate tag type that you need to create. Although Amplitude provides deferred initialization, events aren't sent to Amplitude until the `init` fires.
 {{/partial:admonition}}
 
 Amplitude generates cookies at the initialization stage. For more information on managing cookies, see the [cookie management details](/docs/sdks/analytics/browser/browser-sdk-2#cookie-management). Amplitude recommends that you initialize after obtaining cookie consent. Amplitude supports deferred initialization, and captures any events that take place before the `init` command.
 
 #### API Key
 
-Copy your Amplitude project API Key in the API Key field. For EU residency, your project API Key is under `analytics.eu.amplitude.com`. Each project has different API Key, make sure you are copy the API Key from the right project. Go to **Settings -> Projects -> click the right project name from the list** to find your project API Key. Check [here](/docs/apis/authentication) for more details.
+Copy your Amplitude project API Key in the API Key field. For EU residency, your project API Key is under `analytics.eu.amplitude.com`. Each project has different API Key, make sure you are copy the API Key from the right project. Go to **Settings -> Projects -> click the right project name from the list** to find your project API Key. For more information, see [API Authentication(/docs/apis/authentication).
 
 #### Autocapture options
 
@@ -369,7 +369,7 @@ Check the `Opt current user out of tracking` checkbox to opt user out of trackin
 All tags fire based on events. When Google Tag Manager registers an event, it evaluates event triggers and fires tags. See [Trigger types](https://support.google.com/tagmanager/topic/7679108?sjid=4311393792871502449-NA) for the available triggers in GTM. 
 
 {{partial:admonition type="note" title=""}}
-Typically `init` tag is the first thing you need to fire on the page. It's common to fire the `init` tag using `All Pages` or `Initialization - All Pages` triggers. You can also defer the `init` tag until you receive a signal and fire it using customized triggers, such as a consent grant. All other tags wait for the `init` tag to fire before they can send to Amplitude.
+In most cases, the `init` tag is the first thing you need to fire on the page. It's common to fire the `init` tag using the `All Pages` or `Initialization - All Pages` triggers. You can defer the `init` tag until you receive a signal and fire it with customized triggers, such as a consent grant. All other tags wait for the `init` tag to fire before they can send to Amplitude.
 {{/partial:admonition}}
 
 ## Add a custom plugin
@@ -392,7 +392,11 @@ For example, the HTML to add an event property to default page view events:
 </script>
 ```
 
-Since GTM loads a template only when a tag of it is fired, it’s important to configure tag sequencing to ensure the plugin is added at the beginning and applies to all subsequent events. To do this, set up the custom HTML tag that adds the plugin as the setup tag for the init tag. Additionally, configure a flush tag as the setup tag for the custom HTML tag. Ensure the sequencing follows this order: flush tag → custom HTML tag (to add plugins) → init tag.
+GTM loads templates only when a tag based on that template fires. As a result, it's important to configure the sequencing of tags to ensure the plugin loads at the beginning, and applies to all following events. To do this, create a custom HTML tag that adds the plugin as the setup tag for the init tag. Then, configure a flush tag as the setup tag for the custom HTML tag. Be sure to sequence the tags in this order:
+
+* Flush
+* Custom HTML
+* init
 
 ## Common Issues
 
