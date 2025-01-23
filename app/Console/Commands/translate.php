@@ -89,6 +89,7 @@ class translate extends Command
         $blueprint = $entry->blueprint;
         $slug = $entry->slug;
         $goals_translated = [];
+        $language = "";
 
         $extractionResult = translate::extractTranslatableContent($content);
         $translatableParts = $extractionResult['parts'];
@@ -116,7 +117,7 @@ class translate extends Command
             $progress = progress(label: 'Translating content', steps: $contentSize);
             $progress->start();
             $translatedParts = array_map(function($part) use ($progress) {
-                $translation = translate::deepl($part, 'ja');
+                $translation = translate::deepl($part, 'ko');
                 $progress->advance();
                 return $translation;
             }, $translatableParts);
