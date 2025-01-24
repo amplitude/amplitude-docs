@@ -18,13 +18,13 @@ partner_maintained: false
 integration_icon: partner-icons/ga4.svg
 exclude_from_sitemap: false
 ---
-With Amplitude's Google Analytics 4 integration, you can ingest Google Analutics 4 data into your Amplitude project.
+With Amplitude's Google Analytics 4 integration, you can ingest Google Analytics 4 data into your Amplitude project.
 
 ## Prerequisites
 
 To get started with import from GA4, you need to take care of a few prerequisites.
 
-* [Set up a BigQuery Link.](https://support.google.com/analytics/answer/9823238?hl=en) 
+* [Set up a BigQuery Link.](https://support.google.com/analytics/answer/9823238?hl=en)
 * [Create a GCS bucket.](https://cloud.google.com/storage/docs/creating-buckets) Amplitude recommends one dedicated to this purpose. The ingestion process must offload data to a GCS bucket before ingesting it into Amplitude. This is due to BigQuery's limited export options.
 * [Create a Service Account](https://cloud.google.com/iam/docs/service-accounts-create#console) with permissions granted for the bucket and tables you want to ingest, then [get the service account key](https://cloud.google.com/iam/docs/keys-create-delete). The Service Account must have the following roles granted to it:
   * **BigQuery**
@@ -52,7 +52,7 @@ Here’s a step-by-step breakdown of how Amplitude imports your GA4 data:
 
 2. Unload Data from BigQuery to Your GCS Bucket
 
-    To handle BigQuery’s export limitations (e.g., export size restrictions), we unload your data from BigQuery to the GCS bucket you provided. This ensures data readiness for ingestion into Amplitude.
+    To handle BigQuery’s export limitations (for example, export size restrictions), we unload your data from BigQuery to the GCS bucket you provided. This ensures data readiness for ingestion into Amplitude.
 
     * Delay Handling:
 
@@ -65,16 +65,16 @@ Here’s a step-by-step breakdown of how Amplitude imports your GA4 data:
         If there’s a backlog, we use a catch-up strategy to process data in batches of 10 tables per day. For example:
 
         * If you configure your import to start from the event table on 2025-01-01, and today’s date is 2025-01-24, we import:
-          * 2025-01-01 to 2025-01-10 on 2025-01-24.
-          * 2025-01-11 to 2025-01-20 on 2025-01-25.
-          * 2025-01-21 to 2025-01-23 on 2025-01-26.
+          * 2025-01-01 to 2025-01-10 in the first batch on 2025-01-24.
+          * 2025-01-11 to 2025-01-20 in the second batch on 2025-01-25.
+          * 2025-01-21 to 2025-01-23 in the thrid batch on 2025-01-26.
           * 2025-01-24 on 2025-01-27 (due to the 72-hour delay for daily exports).
 
     During the unload process, we also transform your data into the format required by Amplitude for seamless ingestion.
 
 3. Import Data from GCS to Amplitude
 
-    Once your data is synced to the specified GCS bucket, it will be imported into Amplitude. Please note that it may take some time for your data to be fully available in Amplitude. We appreciate your patience during this process.
+    Once data is ready in GCS bucket, we will import data into Amplitude on your behalf.
 
 ## Add GA4 as a source
 
