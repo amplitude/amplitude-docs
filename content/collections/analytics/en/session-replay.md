@@ -39,6 +39,10 @@ When viewing a session replay from your [homepage](#h_01HFD88N1M03EH9D8VF32QBBYQ
 
 There is no limit on the length of a session that can be viewed as a replay.
 
+{{partial:admonition type="note" heading=""}}
+Event names with a *sparkle* icon indicate that we've generated a name to provide more context around the action a user is taking. These are Autocapture events ingested as `Page Viewed`, `Element Clicked`, and `Element Changed`, but we're using property information to make them more valuable in the event stream. You can click on any of them to see their ingested name and properties.
+{{/partial:admonition}}
+
 **NOTE:** By default, Amplitude will store your replays for 90 days. Upon request, this can be changed to 30 days to comply with stricter privacy requirements. If you change your retention period, the changes will apply only to new sessions, and not those that pre-date the change.
 
 To access Session Replay from a user’s event stream, use the [User Lookup](/docs/analytics/user-data-lookup) feature.

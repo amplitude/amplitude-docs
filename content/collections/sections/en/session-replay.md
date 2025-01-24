@@ -35,9 +35,13 @@ When viewing a session replay from your homepage or from a search, the user's ev
 
 Session Replay supports user sessions of any length.
 
+{{partial:admonition type="note" heading=""}}
+Event names with a *sparkle* icon indicate that we've generated a name to provide more context around the action a user is taking. These are Autocapture events ingested as `Page Viewed`, `Element Clicked`, and `Element Changed`, but we're using property information to make them more valuable in the event stream. You can click on any of them to see their ingested name and properties.
+{{/partial:admonition}}
+
 ### View Session Replay from User Look-Up
 
-To access Session Replay from a user’s event stream, use the [User Look-Up](/docs/analytics/user-data-lookup) feature. This can be helpful if a user has reported a potential bug during their session, or if you want to understand whether a user's experience is representative of a bigger trend. 
+To access Session Replay from a user’s event stream, use the [User Look-Up](/docs/analytics/user-data-lookup) feature. This can be helpful if a user has reported a potential bug during their session, or if you want to understand whether a user's experience is representative of a bigger trend.
 
 Find the user with User Look-Up (you’ll need their user ID to do this), then click *Play Session* next to the session you're looking for in the event stream. The replay appears to the right, where you can review session activity. You can generate a link to share the replay with your team from the view in a User Look-Up event stream. Click *Copy URL* from the view to copy the link. 
 
