@@ -42,6 +42,40 @@ To get started with import from GA4, you need to take care of a few prerequisite
     * 18.157.59.125
     * 18.192.47.195
 
+## How Amplitude imports your GA4 data
+
+Here’s a step-by-step breakdown of how Amplitude imports your GA4 data:
+
+1. Export GA4 Data to BigQuery
+
+    First, your GA4 data is exported to your BigQuery project through BigQuery Linking. This process sets up an automated flow of event data from GA4 to BigQuery.
+
+2. Unload Data from BigQuery to Your GCS Bucket
+
+    To handle BigQuery’s export limitations (e.g., export size restrictions), we unload your data from BigQuery to the GCS bucket you provided. This ensures data readiness for ingestion into Amplitude.
+
+    * Delay Handling:
+
+      To ensure your data is complete, we account for [delays caused by GA4’s export process](https://support.google.com/analytics/answer/9358801?hl=en):
+      * 72 hours for daily exports.
+      * 24 hours for streaming exports.
+
+    * Catch-up Importing:
+
+        If there’s a backlog, we use a catch-up strategy to process data in batches of 10 tables per day. For example:
+
+        * If you configure your import to start from the event table on 2025-01-01, and today’s date is 2025-01-24, we import:
+          * 2025-01-01 to 2025-01-10 on 2025-01-24.
+          * 2025-01-11 to 2025-01-20 on 2025-01-25.
+          * 2025-01-21 to 2025-01-23 on 2025-01-26.
+          * 2025-01-24 on 2025-01-27 (due to the 72-hour delay for daily exports).
+
+    During the unload process, we also transform your data into the format required by Amplitude for seamless ingestion.
+
+3. Import Data from GCS to Amplitude
+
+    Once your data is synced to the specified GCS bucket, it will be imported into Amplitude. Please note that it may take some time for your data to be fully available in Amplitude. We appreciate your patience during this process.
+
 ## Add GA4 as a source
 
 To add GA4 as a data source in your Amplitude project, follow these steps.
