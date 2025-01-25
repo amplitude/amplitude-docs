@@ -107,9 +107,7 @@ If you encounter any issues or have questions during the setup process, reach ou
 
 ## BigQuery SQL tips
 
-Keep the following in mind as you work with BigQuery SQL. d
-
-The BigQuery SQL helper provides tips and best practices to help you navigate BigQuery’s SQL queries, which we know can sometimes be confusing. These guidelines are designed to make it easier for you to work with your data efficiently.
+These tips and best practices to help you navigate BigQuery’s SQL queries, which differ from other SQL queries in some ways.
 
 ### Properties fields
 
