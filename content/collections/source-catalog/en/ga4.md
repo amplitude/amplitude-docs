@@ -48,39 +48,39 @@ Here’s a step-by-step breakdown of how Amplitude imports your GA4 data:
 
 1. Export GA4 Data to BigQuery
 
-    First, your GA4 data is exported to your BigQuery project through BigQuery Linking. This process sets up an automated flow of event data from GA4 to BigQuery.
+    First, Amplitude exports your GA4 data to your BigQuery project through BigQuery Linking. This process creates an automated flow of event data from GA4 to BigQuery.
 
 2. Unload Data from BigQuery to Your GCS Bucket
 
-    To handle BigQuery’s export limitations (for example, export size restrictions), we unload your data from BigQuery to the GCS bucket you provided. This ensures data readiness for ingestion into Amplitude.
+    To handle BigQuery’s export limitations (for example, export size restrictions), Amplitude unloads your data from BigQuery to the GCS bucket you provided. This ensures data readiness for ingestion into Amplitude.
 
     * Delay Handling:
 
-      To ensure your data is complete, we account for [delays caused by GA4’s export process](https://support.google.com/analytics/answer/9358801?hl=en):
+      To ensure your data is complete, Amplitude accounts for [delays caused by GA4’s export process](https://support.google.com/analytics/answer/9358801?hl=en):
       * 72 hours for daily exports.
       * 24 hours for streaming exports.
 
     * Catch-up Importing:
 
-        If there’s a backlog, we use a catch-up strategy to process data in batches of 10 tables per day. For example:
+        If there’s a backlog, Amplitude uses a catch-up strategy to process data in batches of 10 tables per day. For example:
 
-        * If you configure your import to start from the event table on 2025-01-01, and today’s date is 2025-01-24, we import:
+        * If you configure your import to start from the event table on 2025-01-01, and today’s date is 2025-01-24, Amplitude imports:
           * 2025-01-01 to 2025-01-10 in the first batch on 2025-01-24.
           * 2025-01-11 to 2025-01-20 in the second batch on 2025-01-25.
           * 2025-01-21 to 2025-01-23 in the third batch on 2025-01-26.
           * 2025-01-24 on 2025-01-27 (due to the 72-hour delay for daily exports).
 
-    During the unload process, we also transform your data into the format required by Amplitude for seamless ingestion.
+    During the unload process, Amplitude also transforms your data into the format it requires for seamless ingestion.
 
 3. Import Data from GCS to Amplitude
 
-    Once data is ready in GCS bucket, we will import data into Amplitude on your behalf.
+    Once data is ready in the GCS bucket, Amplitude imports the data on your behalf.
 
 ## Add GA4 as a source
 
 To add GA4 as a data source in your Amplitude project, follow these steps.
 
-1. From your home page, click **Data**, **Catalog** and select the **Sources** tab.
+1. In Amplitude, click **Data**, **Catalog** and select the **Sources** tab.
 
 2. In the **Data Warehouse** section, Click **Google Analytics 4**.
 
@@ -95,13 +95,13 @@ To add GA4 as a data source in your Amplitude project, follow these steps.
       * Important Notes: Amplitude imports data continuously, starting from the first table provided. However, due to [GA4’s data export delays](https://support.google.com/analytics/answer/9358801?hl=en):
         * Daily tables have a 72-hour delay.
         * Streaming tables have a 24-hour delay.
-      * For example, if you start importing on 2025-01-01 and today’s date is 2025-01-05, Amplitude will import data for 2025-01-01 and 2025-01-02 first. On the next day (2025-01-06), the import will include 2025-01-03. This process ensures complete data import, as importing too early may result in incomplete data.
+      * For example, if you start importing on 2025-01-01 and today’s date is 2025-01-05, Amplitude  imports data for 2025-01-01 and 2025-01-02 first. On the next day (2025-01-06), the import includes 2025-01-03. This process ensures complete data import, as importing too early may result in incomplete data.
   
-5. After configuring your options, click **Next**. Amplitude will execute a pre-defined SQL query to verify data import from BigQuery. GA4 data will be transformed into a format compatible with Amplitude. Refer to the [Amplitude HTTP V2 API documentation](https://amplitude.com/docs/apis/analytics/http-v2#event-array-keys) for required fields.
+5. After configuring your options, click **Next**. Amplitude executes a pre-defined SQL query to verify the data import from BigQuery. Amplitude transforms GA4 data into a compatible format. Refer to the [Amplitude HTTP V2 API documentation](/docs/apis/analytics/http-v2#event-array-keys) for required fields.
 
     * Editing SQL:  The pre-defined query typically handles all required fields, but you can customize it to include additional fields if needed.
 
-6. If no errors occur, click **Next**. Enter a source name and click **Save**. A notification will confirm that the GA4 source has been successfully enabled. You’ll then be redirected to the Sources listing page, where the newly created GA4 source will appear.
+6. If no errors occur, click **Next**. Enter a source name and click **Save**. A notification confirms that the GA4 source has been successfully enabled. The Sources listing page loads, where the newly created GA4 source appears in the list.
 
 If you encounter any issues or have questions during the setup process, reach out to the Amplitude team for support: [Contact Support](https://gethelp.amplitude.com/hc/en-us/requests/new)
 
@@ -109,11 +109,11 @@ If you encounter any issues or have questions during the setup process, reach ou
 
 ### Properties fields
 
-Many Amplitude features are powered by "properties" fields, which are composed of property keys and property values. The most common of these properties fields are `event_properties` and `user_properties`.
+"Properties" fields, comprised of property keys and values, power many Amplitude features. The most common of these properties fields are `event_properties` and `user_properties`.
 
-In order for these sets of keys and values to be correctly ingested into Amplitude, they must be exported from BigQuery as raw JSON, not as JSON strings. BigQuery doesn't have great support for JSON, but the following describes how to make sure your data is exported from BigQuery and imported to Amplitude without errors.
+For Amplitude to correctly ingest these sets of keys and values, they must be exported from BigQuery as raw JSON, not as JSON strings. BigQuery doesn't have strong support for JSON, but the following describes how to make sure your data is exports from BigQuery and imports to Amplitude without errors.
 
-The properties fields are sourced from columns with a [STRUCT](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#struct_type) type. The struct type is the field type that represents a key-value structure and is exported from BigQuery in raw JSON format.
+The properties fields come from columns with a [STRUCT](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#struct_type) type. The struct type is the field type that represents a key-value structure and is exported from BigQuery in raw JSON format.
 
 If your source table doesn't have the event or user properties organized in a struct type column, you can create it in your select SQL. For example, if your event properties are all flattened into their own columns, you can compose your `event_properties` into a struct like so:
 
@@ -126,16 +126,16 @@ FROM your_table;
 ```
 
 {{partial:admonition type="warning" title=""}}
-You can't have spaces in struct field names even if they are enclosed in back ticks or single quotes.
+You can't have spaces in struct field names even if you enclose them in back ticks or single quotes.
 {{/partial:admonition}}
 
 ### Properties from a JSON string field
 
 If you have your event or user properties formatted as JSON as a string field, you still must reconstruct the properties field in the select SQL as a STRUCT. BigQuery exports String fields as String even if the contents are JSON. Amplitude's event validation rejects these.
 
-You can extract values from your JSON String field, though, to use in your properties STRUCT. Use the [JSON_EXTRACT_SCALAR](https://cloud.google.com/bigquery/docs/reference/standard-sql/json_functions#json_extract_scalar) function to access the values in your string as follows. If your EVENT_PROPERTIES column in the table contains a JSON String like:
+You can extract values from your JSON String field, though, to use in your properties STRUCT. Use the [JSON_EXTRACT_SCALAR](https://cloud.google.com/bigquery/docs/reference/standard-sql/json_functions#json_extract_scalar) function to access the values in your string as follows. If the `EVENT_PROPERTIES` column in the table contains a JSON String like:
 
-`"{\"record count\":\"50\",\"region\":\"eu-central-1\"}"` which is shown in the BigQuery UI like `{"record count":"50","region":"eu-central-1"})`, then you can extract the values from the JSON String like this:
+`"{\"record count\":\"50\",\"region\":\"eu-central-1\"}"` which displays in the BigQuery UI as `{"record count":"50","region":"eu-central-1"})`, then you can extract the values from the JSON String with the following SQL:
 
 ```sql
 SELECT STRUCT(
@@ -145,6 +145,7 @@ SELECT STRUCT(
 FROM your_table;
 ```
 
-### String literals
+{{partial:admonition type="warning" heading="BiqQuery string literal support"}}
+Unlike other data warehouse products, BigQuery treats "double-quoted strings" as string literals. This means that you can't use them to quote identifiers like column names or table names, or the SQL fails to execute in BigQuery.
+{{/partial:admonition}}
 
-Be aware that, unlike other data warehouse products, BigQuery treats "double-quoted strings" as string literals. This means that you can't use them to quote identifiers like column names or table names, or the SQL fails to execute in BigQuery.
