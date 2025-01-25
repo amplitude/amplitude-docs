@@ -105,7 +105,9 @@ To add GA4 as a data source in your Amplitude project, follow these steps.
 
 If you encounter any issues or have questions during the setup process, reach out to the Amplitude team for support: [Contact Support](https://gethelp.amplitude.com/hc/en-us/requests/new)
 
-## BigQuery SQL helper
+## BigQuery SQL tips
+
+Keep the following in mind as you work with BigQuery SQL. d
 
 ### Properties fields
 
