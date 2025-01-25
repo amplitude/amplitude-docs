@@ -109,6 +109,8 @@ If you encounter any issues or have questions during the setup process, reach ou
 
 Keep the following in mind as you work with BigQuery SQL. d
 
+The BigQuery SQL helper provides tips and best practices to help you navigate BigQuery’s SQL queries, which we know can sometimes be confusing. These guidelines are designed to make it easier for you to work with your data efficiently.
+
 ### Properties fields
 
 "Properties" fields, comprised of property keys and values, power many Amplitude features. The most common of these properties fields are `event_properties` and `user_properties`.
