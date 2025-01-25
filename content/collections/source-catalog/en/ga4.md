@@ -67,7 +67,7 @@ Here’s a step-by-step breakdown of how Amplitude imports your GA4 data:
         * If you configure your import to start from the event table on 2025-01-01, and today’s date is 2025-01-24, we import:
           * 2025-01-01 to 2025-01-10 in the first batch on 2025-01-24.
           * 2025-01-11 to 2025-01-20 in the second batch on 2025-01-25.
-          * 2025-01-21 to 2025-01-23 in the thrid batch on 2025-01-26.
+          * 2025-01-21 to 2025-01-23 in the third batch on 2025-01-26.
           * 2025-01-24 on 2025-01-27 (due to the 72-hour delay for daily exports).
 
     During the unload process, we also transform your data into the format required by Amplitude for seamless ingestion.
