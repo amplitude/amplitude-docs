@@ -31,9 +31,9 @@ To enable query time sampling, follow these steps:
 
 1. From your Funnel Analysis, click the lightning bolt.
 
-The lightning bolt updates to show the percentage of the data set that the chart queries.
+    The lightning bolt updates to show the percentage of the data set that the chart queries.
 
-    ![testFunnelChart.png](/docs/output/img/charts/testfunnelchart-png.png)
+  ![testFunnelChart.png](/docs/output/img/charts/testfunnelchart-png.png)
 
 2. To query the full dataset, click *Sampled: 10%* to turn off query time sampling.
 
