@@ -39,9 +39,9 @@ By default, a new Web Experiment targets all users. Audience targeting enables y
 
 If any segments match, Amplitude buckets that user into a variant based on the configured rollout and variant distribution. For a segment to match, it must meet all conditions you set.
 
-### Local properties
+### Browser properties (local)
 
-Local properties are available client-side and don't require network requests. This enables Amplitude to evaluate them with low latency.
+Browser properties are available client-side and don't require network requests. This enables Amplitude to evaluate them with low latency.
 
 | Parameter            | Description                                                                                                                                                                                                                                                                                                                          |
 |----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -57,9 +57,13 @@ Local properties are available client-side and don't require network requests. T
 | Browser              | The user's browser: `Safari`, `Chrome`, `Firefox`, `Edge`, `Opera`.                                                                                                                                                                                                                                                                  |
 | Freeform properties  | Custom properties for the user set using the [`IntegrationPlugin`](/docs/web-experiment/implementation#integrate-with-a-third-party-cdp).                                                                                                                                                                                    |
 
-### Remote properties
+### User properties (remote)
 
-Remote properties enable advanced targeting based on [Amplitude ID resolution](/docs/feature-experiment/remote-evaluation#amplitude-id-resolution), [IP geolocation](/docs/feature-experiment/remote-evaluation#geolocation), [property canonicalization](/docs/feature-experiment/remote-evaluation#canonicalization), [behavioral cohorts](/docs/feature-experiment/remote-evaluation#cohort-membership), and historical [user properties](/docs/feature-experiment/remote-evaluation#user-properties). Targeting remote properties may increase page display latency since network requests are required.
+{{partial:admonition type='note'}}
+Web experiment user property targeting is not available on Starter or Plus plans.
+{{/partial:admonition}}
+
+You can perform advanced targeting based on [Amplitude ID resolution](/docs/feature-experiment/remote-evaluation#amplitude-id-resolution), [IP geolocation](/docs/feature-experiment/remote-evaluation#geolocation), [property canonicalization](/docs/feature-experiment/remote-evaluation#canonicalization), [behavioral cohorts](/docs/feature-experiment/remote-evaluation#cohort-membership), and historical [user properties](/docs/feature-experiment/remote-evaluation#user-properties). Targeting user properties may increase page display latency since network requests are required.
 
 | Parameter                  | Description                                                                                            |
 |----------------------------|--------------------------------------------------------------------------------------------------------|
