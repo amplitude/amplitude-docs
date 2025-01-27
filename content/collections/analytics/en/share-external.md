@@ -20,7 +20,6 @@ This feature is available to users on **Growth** and **Enterprise plans** only.
 
 * Remember, public links can be shared with anyone until you revoke the link. On the Enterprise plan, anyone with the password can access your links prior to their expiration.
 * Once you revoke a link, you will not be able to re-enable it. Users who click revoked links will be directed to a 404 page.
-* Public links are not supported for [Personas](/docs/analytics/charts/compass/compass-aha-moment) charts.
 * If you share a public link to a notebook or a dashboard that contains a [Journeys](/docs/analytics/charts/journeys/journeys-understand-paths) chart, that chart will not be visible to the recipient of that link. (Journeys charts can instead be viewed via direct public links to the chart itself.)
 * Charts are cached for ten minutes for everyone.
 
