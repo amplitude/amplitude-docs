@@ -13,59 +13,113 @@ You’ve designed your experiment, rolled it out to your users, and given them e
 
 In the *Analysis* card, you’ll be able to tell at a glance whether your experiment has yielded **statistically-significant** results, as well as what those results actually are. Amplitude Experiment takes the information you gave it during the design and rollout phases and plugs them in for you automatically, so there’s no repetition of effort. It breaks the results out by variant, and provides you with a convenient, detailed tabular breakdown.
 
-{{partial:admonition type='note'}}
-This article continues directly from the [article in our Help Center on rolling out your experiment](/docs/feature-experiment/workflow/experiment-test). If you haven’t read that and followed the process it describes, do so before continuing here.
+Amplitude doesn't generate p-values or confidence intervals for experiments using binary metrics (for example, unique conversions) until each variant has 100 users **and** 25 conversions. Experiments using non-binary metrics need only to reach 100 users per variant.
+
+## Filter card
+
+On the Filter card, set criteria that updates the analysis on the page. Filter your experiment results with the following:
+
+* Date
+* Segment
+* Property
+
+### Date filter
+
+The date filter defaults to your experiment's start and end date. Adjust the range to scope experiment results to those specific dates.
+
+### Segment filter
+
+The segment filter enables you to select predefined segments, or create one ad-hoc. Predefined Experiment segments include:
+* All exposed users
+* Testers
+* Exclude testers
+* Exclude users who variant jumped
+
+These segments update in real-time.
+
+Click *+Create Segment* to open the Segment builder, where you can define a new segment on the fly. Segments you create in one experiment are available across all other experiments, and appear in the *All Saved Segments* category.
+
+### Property filter
+
+Filter your experiment results based on user or event properties. For example, create a filter that excludes users from a specific country or geographic region, or users that have a specific account type on your platform.
+
+## Data Quality card
+
+{{partial:admonition type="note" heading="Availability"}}
+Data Quality is available to organizations with access to Experiment who have recommendations enabled.
 {{/partial:admonition}}
 
-Amplitude will not generate p-values or confidence intervals for experiments using binary metrics (i.e., unique conversions) until each variant has 100 users **and** 25 conversions. Experiments using non-binary metrics need only to reach 100 users per variant.
+Data Quality checks the setup, instrumentation, and statistical integrity of your experiment as it runs, and alerts you to issues it finds.
 
-## View results
+When you expand a category, or click *Guide*, the Data Quality Guide opens in a side panel where you can address or dismiss issues 
 
-To generate and view experimental results, follow these steps:  
+## Summary card
 
-1. In your experiment, the *Activity* page includes two sections to view your results. The *Summary* section and the *Analysis* card. The *Summary* section will describe your experiment's hypothesis and note whether it has or has not reached statistical significance.  
+The Summary card describes your experiment's hypothesis and lets you know if it's reached statistical significance. 
 
-    An experiment is said to be **statistically significant** when we can confidently say that the results are highly unlikely to have occurred due to random chance. (More technically, it’s when we reject the null hypothesis.) That might sound pretty subjective, but it’s grounded solidly in statistics. Stat sig relies on a variant’s **p-value**, which is the probability of observing the data we see, assuming there is no difference between the variant and the control. If this probability drops below a certain threshold (statisticians refer to this threshold as the **alpha**), then we consider our experiment to have achieved statistical significance.
+{{partial:admonition type="note" heading="Statisical significance and Amplitude"}}
+Amplitude considers an experiment to be **statistically significant** when Amplitude can confidently say that the results are unlikely to have occurred due to random chance. More technically, it’s when Amplitude rejects the null hypothesis. That may sound subjective, but it’s grounded solidly in statistics. Statistical significance relies on a variant’s **p-value**, which is a value that represents the likelihood that your results occurred by chance. A lower p-value means your results are probably not random, and there's evidence to support your hypothesis. If this value drops below a threshold, Amplitude considers the experiment to be statistically significant.
+{{/partial:admonition}}
 
-    The *Summary* section will display a badge labeled *Significant* if stat sig was met, and a badge labeled *Not Significant* if stat sig was not met.
+The Summary card displays a badge labeled *Significant* if the experiment reached statistical significance, and a badge labeled *Not Significant* if it didn't. This card can display several badges at once:
 
-    The *Summary* section may include multiple badges simultaneously:
+* *Inconclusive*: the test was inconclusive for the primary metric.
+* *Above Goal* or *Below Goal:* the primary metric's mean was either **above** or **below** its goal depending on the direction of the test (increase = above, decrease = below).
+* *Above Control* or *Below Control:* the primary metric's mean was either **above** or **below** the control's mean, depending on the direction of the test (increase = above, decrease = below). These badges are only relevant to stat sig results.
 
-    * *Inconclusive*: the test was inconclusive for the primary metric.
-    * *Above Goal* or *Below Goal:* the primary metric's mean was either **above** or **below** its goal depending on the direction of the test (increase = above, decrease = below).
-    * *Above Control* or *Below Control:* the primary metric's mean was either **above** or **below** the control's mean, depending on the direction of the test (increase = above, decrease = below). These badges are only relevant to stat sig results.
+![summary.png](/docs/output/img/workflow/summary-png.png)
 
-    ![summary.png](/docs/output/img/workflow/summary-png.png)
 
-2. At the top of the *Analysis* section is an overview of how your experiment performed, broken down by metric and variant. Below that is the experiment's **exposure definition:** how many variants were shown, what the primary metric was, and what the **exposure event** was. This is the event users will have to fire before being included in an experiment.  
+## Analysis card
+
+At the top of the Analysis card is an overview that explains how your experiment performed, broken down by metric and variant. Below that, a collection of experiment results charts, which you can analyze by metric, display information about:
+
+* Confidence intervals
+* Cumulative exposure*
+* Event totals
+* Mean value over time
+
+\* Cumulative exposure tracks the experiment as a whole.
+
+
+{{partial:admonition type="tip" heading="Chart filtering"}}
+The Experiment Results chart on the Activity tab responds to the selections you make in the [Filter card](#filter-card).
+{{/partial:admonition}}
+
+{{#
+We don't label the exposure event on this screen anywhere. Seems out of place in this article.
+{{partial:admonition type='note'}}
+The exposure event isn't the same as the assignment event. If, for example, you’re running an experiment on your pricing page, Amplitude might evaluate a user on the home page for the experiment—but if they don’t visit the pricing page, they aren't exposed to it. For that reason, Amplitude recommends you don't consider this user to be part of the experiment.  
+{{/partial:admonition}}
   
-    {{partial:admonition type='note'}}
-    The exposure event is **not the same thing** as the assignment event. If, for example, you’re running an experiment on your pricing page, a user might be evaluated on the home page for the experiment—but if they don’t visit the pricing page, they'll never actually be exposed to it. For that reason, this user should not be considered to be part of the experiment.  
-    {{/partial:admonition}}
+To learn more about exposure events, see [Event Tracking](/docs/feature-experiment/under-the-hood/event-tracking).  
+#}} 
+    
+Click _Chart Controls_ to see the chart definition. 
+    
+Click *Open in Chart* to open a copy of the Experiment Results in a new chart.
+    
+{{partial:admonition type='note'}}
+If you are running an A/B/n test, Amplitude Experiment displays the confidence interval / p-value for the control against each treatment individually. To instead see the comparison between two non-control treatments, either change the control variant, or open the test in Analytics and create a chart using the two treatments you're interested in.
+{{/partial:admonition}}
+
+If desired, adjust the experiment’s **confidence level**. The default is 95%. You can also [choose between a sequential test and a T-test](/docs/feature-experiment/workflow/finalize-statistical-preferences).   
   
-    To learn more about exposure events, see [this article in the Amplitude Developer Center](/docs/feature-experiment/under-the-hood/event-tracking).  
-      
-    Click _Chart Controls_ to see the chart definition. 
-      
-    You can also create a chart in Amplitude Analytics from this experiment by clicking *Open in Chart*.  
-      
-    {{partial:admonition type='note'}}If you are running an A/B/n test, Amplitude Experiment displays the confidence interval / p-value for the control against each treatment individually. To instead see the comparison between two non-control treatments, either change the control variant, or open the test in Analytics and create a chart using the two treatments you're interested in.
-    {{/partial:admonition}}
+{{partial:admonition type='note'}}
+Lowering your experiment’s confidence level makes it more likely that your experiment achieves statistical significance, but the trade-off is that doing so increases the likelihood of a false positive.
+{{/partial:admonition}}
 
-3. If desired, adjust the experiment’s **confidence level**. The default is 95%. You can also [choose between a sequential test and a T-test](/docs/feature-experiment/workflow/finalize-statistical-preferences).   
-  
-    {{partial:admonition type='note'}}
-    Lowering your experiment’s confidence level will make it more likely that your experiment achieves statistical significance, but the trade-off is that doing so increases the likelihood of a false positive.
-    {{/partial:admonition}}
+## Diagnostics card
 
-4. Set the **time frame** for your experiment analysis, either from the selection of pre-set durations, or by opening the date picker and choosing a custom date range.
+The Diagnostics card provides information about how your experiment is delivering. It shows charts about:
 
-    The tables, graphs, and charts shown in the Analysis section are explained in depth in the articles on [understanding the Experiment Analysis view](/docs/feature-experiment/analysis-view) and [interpreting the cumulative exposures graph in Amplitude Experiment](/docs/feature-experiment/advanced-techniques/cumulative-exposure-change-slope).
+* Assignment events (cumulative and non-cumulative)
+* Exposure events (cumulative and non-cumulative)
+* Assignment to exposure conversion
+* Variant jumping
+* Anonymous exposures
 
-    {{partial:admonition type='note'}}
-    Amplitude Experiment needs something to compare your control to in order to generate results. If you neglect to include **both** the control and **at least one** variant, your chart will not display anything.
-    {{/partial:admonition}}
-
+For more control, open any of these charts in the chart build.
 
 ## Interpret notifications
 
@@ -75,10 +129,10 @@ Your preferred notification settings allow you to receive experiment updates by 
 
 Click the check box next to the desired notification:
 
-* **Experiment end reached:** You will receive this notification when your experiment is complete.
-* **SRM detected:** You will receive this notification if a [sample ratio mismatch](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch) issue is identified.
-* **Long-running experiments:** You will receive this notification when your long-running experiment is complete.
-* **Statsig for the recommendation metric is reached:** You will receive this notification when your experiment's recommendation metric has reached stat sig.
+* **Experiment end reached:** Amplitude sends this notification when your experiment is complete.
+* **SRM detected:** Amplitude sends this notification if it identifies a [sample ratio mismatch](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch) issue.
+* **Long-running experiments:** Amplitude sends this notification when your long-running experiment is complete.
+* **Statsig for the recommendation metric is reached:** Amplitude sends this notification when your experiment's recommendation metric has reached stat sig.
 
 Amplitude Experiment sends a notification to the editors of the experiment.
 

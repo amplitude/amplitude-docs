@@ -23,7 +23,7 @@ Hover over a metric's name to see its definition.
 Click the metric dropdown below the table to update analysis charts for that metric: confidence interval over time, mean over time, and the bar chart or funnel chart.
 
 {{partial:admonition type='note'}}
-If you want to look at segments of users, from the *Analysis* card click *Open in Chart,* then add a *where* clause by clicking on *Select property... .* This allows you to review results by a specific group of users. 
+If you want to look at segments of users, use the filter card at the top of the *Analysis* tab.
 {{/partial:admonition}}
 
 ##  Significance
