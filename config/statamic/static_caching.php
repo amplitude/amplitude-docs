@@ -41,6 +41,7 @@ return [
                 'directory' => 0755, 
                 'file' => 0644, 
             ],
+        ],
 
     ],
 
