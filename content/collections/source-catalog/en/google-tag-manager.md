@@ -34,10 +34,6 @@ While this updated template offers additional features and improvements, it may 
 Check the breaking changes checklist at [here](#breaking-changes-checklist).
 {{/partial:admonition}}
 
-{{partial:admonition type="warning" title=""}}
-Due to inherent limitations of GTM, certain features, such as plugins, aren't supported in this GTM template. You are still able to add plugins using the Custom HTML tag, but because of how the SDK gets loaded in GTM, this could lead to missing data.
-{{/partial:admonition}}
-
 {{partial:admonition type="note" title=""}}
 Ensure to consistently update your Amplitude GTM template to the latest version for an enhanced feature set, crucial bug fixes, and a significantly improved user experience.
 {{/partial:admonition}}
@@ -48,7 +44,7 @@ If you're working on a new implementation, configure your container first.
 
 1. Name the container using your site's URL.
 2. Select the `Web` target platform.
-3. Click *Create*. 
+3. Click *Create*.
 
 ## Add the template
 
@@ -60,16 +56,6 @@ Navigate to the *Tags* tab. Click *New*, and select the Amplitude Analytics Brow
 
 ## Configure the tag
 
-Amplitude provides a list of tag types. You might also create a Custom HTML tag to do customization, like cross domain tracking or others. For successful tracking in Amplitude, ensure that the Amplitude tag loads before the Custom HTML tag, which is being used to call Amplitude. The sequence in which the tags load can significantly influence the outcome. [Time sequence](https://support.google.com/tagmanager/answer/6238868) might be helpful in this case. Check [this section](#access-amplitude-instance) for accessing the Amplitude instance in the Custom HTML tag. 
-
-{{partial:admonition type="note" title=""}}
-Amplitude recommends that you install Amplitude through a method *other* than a custom HTML tag.
-{{/partial:admonition}}
- 
-### API Key
-
-Copy your Amplitude project API Key in the API Key field. For EU residency, your project API Key is under `analytics.eu.amplitude.com`. Each project has different API Key, make sure you are copy the API Key from the right project. Go to **Settings -> Projects -> click the right project name from the list** to find your project API Key. Check [here](/docs/apis/authentication) for more details.
-
 ### Instance name
 
 If you plan to run more than one Amplitude instance, each with distinct API keys or initialization options, assign an `Instance Name` to each one. Amplitude links tags with the same `Instance Name` and uses the API key of the Initialization tag for that `Instance Name`.
@@ -78,9 +64,7 @@ If you plan to run more than one Amplitude instance, each with distinct API keys
 This approach can also prevent missing events if different versions of the Amplitude SDK coexist in your system.
 {{/partial:admonition}}
 
-If you have a Custom HTML tag, you might need to access `amplitude` instance in your script tag.
-
-#### With default instance name 
+You can access `amplitude` instance in a Custom HTML tag.
 
 ```js
 // For amplitude-js-gtm@3.1.4 and above
@@ -107,10 +91,14 @@ A tag type allows you to specify the type of action or event to track in your ap
 ### Initialize
 
 {{partial:admonition type="note" title=""}}
-`init` operates as a separate tag type that you need to create. Although Amplidue provides deferred initialization, events aren't sent to Amplitude until the `init` tag has is active.
+`init` operates as a separate tag type that you need to create. Although Amplitude provides deferred initialization, events aren't sent to Amplitude until the `init` fires.
 {{/partial:admonition}}
 
 Amplitude generates cookies at the initialization stage. For more information on managing cookies, see the [cookie management details](/docs/sdks/analytics/browser/browser-sdk-2#cookie-management). Amplitude recommends that you initialize after obtaining cookie consent. Amplitude supports deferred initialization, and captures any events that take place before the `init` command.
+
+#### API Key
+
+Copy your Amplitude project API Key in the API Key field. For EU residency, your project API Key is under `analytics.eu.amplitude.com`. Each project has different API Key, make sure you are copy the API Key from the right project. Go to **Settings -> Projects -> click the right project name from the list** to find your project API Key. For more information, see [API Authentication(/docs/apis/authentication).
 
 #### Autocapture options
 
@@ -376,13 +364,40 @@ Use `reset` when a user has logs  out. It includes 2 operations: `setUserId(unde
 
 Check the `Opt current user out of tracking` checkbox to opt user out of tracking. For more information, see [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2/#opt-users-out-of-tracking).
 
-### Define your trigger
+## Define your trigger
 
 All tags fire based on events. When Google Tag Manager registers an event, it evaluates event triggers and fires tags. See [Trigger types](https://support.google.com/tagmanager/topic/7679108?sjid=4311393792871502449-NA) for the available triggers in GTM. 
 
 {{partial:admonition type="note" title=""}}
-Typically `init` tag is the first thing you need to fire on the page. It's common to fire the `init` tag using `All Pages` or `Initialization - All Pages` triggers. You can also defer the `init` tag until you receive a signal and fire it using customized triggers, such as a consent grant. All other tags wait for the `init` tag to fire before they can send to Amplitude. 
+In most cases, the `init` tag is the first thing you need to fire on the page. It's common to fire the `init` tag using the `All Pages` or `Initialization - All Pages` triggers. You can defer the `init` tag until you receive a signal and fire it with customized triggers, such as a consent grant. All other tags wait for the `init` tag to fire before they can send to Amplitude.
 {{/partial:admonition}}
+
+## Add a custom plugin
+
+Plugins allow you to modify events. To learn more, refer to the [Browser SDK plugins documentation](/docs/sdks/analytics/browser/browser-sdk-2#plugins). You can add custom plugins by using a custom HTML tag.
+
+For example, the HTML to add an event property to default page view events:
+
+```HTML
+<script>
+  window.amplitudeGTM.add({
+    name: "page-view-enrichment-plugin",
+    execute: function(event) {  
+      if(event.event_type === "[Amplitude] Page Viewed"){
+        event.event_properties["custom_key"] = "custom_value";
+      }
+      return event;
+    }
+  });
+</script>
+```
+
+GTM loads templates only when a tag based on that template fires. As a result, it's important to configure the sequencing of tags to ensure the plugin loads at the beginning, and applies to all following events. To do this, create a custom HTML tag that adds the plugin as the setup tag for the init tag. Then, configure a flush tag as the setup tag for the custom HTML tag. Be sure to sequence the tags in this order:
+
+* Flush
+* Custom HTML
+* init
+
 ## Common Issues
 
 These are common issues encountered with the GTM template. For further troubleshooting of your GTM instance, please refer to the GTM Help Center.
@@ -418,6 +433,18 @@ Starting from template version `15cce` (library version `amplitude-ts-gtm/3.7.12
 ### How to pass other types for identify/groupIdentify value
 
 Hard coding the value in your tag forces the input into a `string` type. To use other types like `number` or `boolean`, create a GTM variable, specifically a Data Layer Variable.
+
+### Why my data layer is correct but events are wrong?
+
+This issue occurs when a tag reads a value from a variable the data layer, and two values are pushed to the data layer within a short time. The expected behavior is that two events are tracked with different values. However, what actually happens is that both events have the second (most recently pushed) value.
+
+This happens because when the first value is pushed to the data layer, the data layer updates the value but doesn’t trigger the event. When the second value is pushed, the data layer updats the value again and triggers two events, both reading the second value.
+
+{{partial:admonition type="note" title=""}}
+This is a known limitation of GTM. Follow [Google's documentation](https://developers.google.com/tag-platform/devguides/datalayer?hl=en#how_data_layer_information_is_processed) to resolve it by adding an event name.
+{{/partial:admonition}}
+
+If you've already added an event name to a message and this issue still happens, check whether the track tag has a setup tag. Setup tag can delay the track tag, causing it to read the data layer variable after it has been overwritten with the latest value. Removing the setup tag should resolve this issue.
 
 ## Breaking changes checklist
 

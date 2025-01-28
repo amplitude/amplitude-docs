@@ -31,7 +31,7 @@ This feature is available to users on **Plus**, **Growth**, and **Enterprise** *
 ## Before you begin
 
 * Only admins, managers, and members can create custom events.
-* Custom events are available only in the Event Segmentation, Funnel Analysis, Retention Analysis, Lifecycle, Stickiness, Impact Analysis, Pathfinder, and Compass charts.
+* Custom events are available only in the Event Segmentation, Funnel Analysis, Retention Analysis, Lifecycle, Stickiness, Impact Analysis, Pathfinder, Experiment Results, and Compass charts.
 * You can't query on custom events in Redshift.
 * All custom events have the prefix `[Custom]` before the event name in your charts.
 * Editing or renaming custom events used in other charts break those charts. Amplitude continues to query the named value until you manually change it on any charts that use it. Amplitude displays a warning when making any edits to custom events.

@@ -63,7 +63,7 @@ After setup is complete, check the status of your exports from the integration.
 
 You can backfill historical data to S3 by manually exporting data.
 
-1. Go to the Google Cloud Storage export connection page created in the section above.
+1. Go to the Amazon S3 export connection page created in the section above.
 2. Go to **Backfills** tab.
 3. Select the desired date range. 
 4. Click **Start Backfill**. 

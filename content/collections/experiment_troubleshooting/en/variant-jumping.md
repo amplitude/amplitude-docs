@@ -21,7 +21,7 @@ To find a user who has jumped variants, follow these steps:
 
 1. Navigate to the diagnostics card of your experiment.
 2. Find the variant jumping charts, and click *Open in Chart*.
-3. Click the bar for users who jumped variants and click *View User Streams*. (You may need to use uniques instead of a formula.)
+3. Click the bar for users who jumped variants and click *View User Streams*.
 
 It's often helpful to only show assignment and exposure events in the user timeline.
 

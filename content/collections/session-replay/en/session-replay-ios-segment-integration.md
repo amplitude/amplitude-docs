@@ -152,6 +152,8 @@ if (nonEUCountryFlagEnabled) {
 }
 ```
 
+{{partial:partials/session-replay/sr-ios-webview}}
+
 {{partial:partials/session-replay/sr-data-retention}}
 
 {{partial:partials/session-replay/sr-ios-storage}}

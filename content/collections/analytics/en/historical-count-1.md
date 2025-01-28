@@ -42,8 +42,8 @@ Other important things to note about this feature:
 
 This article is part 1 of a series on Historical Count. Be sure to read the next Help Center articles in the series: 
 
-* Historical Count, part 2: Order of operations
-* Historical Count, part 3: Funnel analyses and behavioral cohorts
+* [Historical Count, part 2: Order of operations](/docs/analytics/historical-count-2)
+* [Historical Count, part 3: Funnel analyses and behavioral cohorts](/docs/analytics/historical-count-3)
 
 ## How Amplitude defines Historical Count
 
@@ -58,7 +58,7 @@ For example, let's say a user performed the `Play Song` event for the first tim
 To apply a Historical Count filter, follow these steps:
 
 1. In your Events Module, choose the event you're interested in. Then click *+ Filter by*.
-2. Scroll down to *Amplitude Event Properties* and select *Historical Count**.*
+2. Scroll down to *Amplitude Event Properties* and select *Historical Count*.
 3. Choose the correct operator and specify the *N*-value (first through fifth) that you're interested in.
 
 ![historical_count_1.gif](/docs/output/img/analytics/historical-count-1-gif.gif)
