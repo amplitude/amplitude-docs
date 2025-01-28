@@ -222,7 +222,7 @@ Create a new holdout group.
 
 ### Response
 
-A successful request returns a `200 OK` response and a JSON object with the holdout group's id and url.
+A successful request returns a `200 OK` response and a JSON object with the holdout group's id and URL.
 
 {{partial:tabs tabs="Request, Response"}}
 {{partial:tab name="Request"}}
