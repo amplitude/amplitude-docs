@@ -156,3 +156,15 @@ The Merged User table schema contains the following:
 | `merge_event_time` |TIMESTAMP | The time of the event a user's new Amplitude ID was associated with their original Amplitude ID.  |
 | `merge_server_time` | TIMESTAMP | The server time of the event when a user's new Amplitude ID was associated with their original Amplitude ID. |
 | `merged_amplitude_id` | NUMBER(38,0) | The originally assigned Amplitude ID when the user is first created.  |
+
+## Common errors and solutions
+
+When exporting data to Redshift, you may encounter some common errors. Below are a running list of the errors and their associated solutions.
+
+### String length exceeded DDL error
+
+This error occurs when the length of a string exceeds the maximum allowed length defined in the table schema. To avoid this error, please ensure that the data being exported conforms to the schema definitions.
+
+**Solution:**
+1. **Validate Data Length:** Before exporting data, validate the length of string fields to ensure they don't exceed the maximum allowed length.
+2. **Adjust Schema:** If necessary, adjust the schema to accommodate longer strings by increasing the length of the VARCHAR fields.
