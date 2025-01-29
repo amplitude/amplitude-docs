@@ -1298,6 +1298,8 @@ SPA typically don't experience a true page load after a visitor enters the site,
 
 Beginning with version 2.10.0, the Amplitude Browser SDK supports remote configuration. By default, the SDK disables this feature.
 
+Autocapture supports remote configuration options for tracking default events, which will override your client-side configuration when this setting is enabled. You can find your remote configuration options in Data > Settings > Autocapture. 
+
 To enable remote config, add `fetchRemoteConfig: true` to the `amplitude.init()` call as shown below.
 
 ```ts
@@ -1305,8 +1307,6 @@ amplitude.init(AMPLITUDE_API_KEY, {
   fetchRemoteConfig: true
 });
 ```
-
-With remote config enabled, the SDK fetches the remote configuration from the remote configuration endpoint.
 
 {{partial:admonition type="note" heading=""}}
 Remote configuration supports Autocapture settings, and overrides settings you configure locally.
