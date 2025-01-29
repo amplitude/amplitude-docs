@@ -13,10 +13,6 @@ Sometimes, you may need to permanently remove data from your Amplitude projects.
 
 Amplitude’s **self-service data deletion** feature lets you do this, without involving Amplitude personnel. Specify which events or properties you want to delete and send your deletion request to the Amplitude deletion queue.
 
-{{partial:admonition type='note'}}
-This feature is in **open beta** and is only available to customers in North America.
-{{/partial:admonition}}
-
 ## Before you begin
 
 This feature is available to users on Growth and Enterprise plans.
