@@ -29,11 +29,22 @@ The date filter defaults to your experiment's start and end date. Adjust the ran
 
 ### Segment filter
 
-The segment filter enables you to select predefined segments, or create one ad-hoc. Predefined Experiment segments include:
-* All exposed users
-* Testers
-* Exclude testers
-* Exclude users who variant jumped
+The segment filter enables you to select predefined segments, or create one ad-hoc. Predefined segments include:
+* Experiment
+  * All exposed users. Users who were exposed to a variant.
+  * Testers. Users added as "testers" during experiment configuration.
+  * Exclude testers. Excludes users added as "testers" during experiment configuration
+  * Exclude users who variant jumped. Excludes users who were exposed to more than one variant.
+* Amplitude
+  * New user. Users who triggered at least one new user event during the selected date range.
+  * Mobile web. Users who triggered events on the web from a mobile device.
+  * Desktop web. Users who triggered events on the web from a desktop device.
+
+{{partial:admonition type="note" heading="Support for segments"}}
+The Testers and Exclude Testers segments are available on feature experiments that use [Remote evaluation](/docs/feature-experiment/remote-evaluation).
+
+The Exclude users who variant jumped segment is available on experiment types other than [multi-armed bandit](/docs/feature-experiment/workflow/multi-armed-bandit-experiments).
+{{/partial:admonition}}
 
 These segments update in real-time.
 
@@ -41,7 +52,7 @@ Click *+Create Segment* to open the Segment builder, where you can define a new 
 
 ### Property filter
 
-Filter your experiment results based on user or event properties. For example, create a filter that excludes users from a specific country or geographic region, or users that have a specific account type on your platform.
+Filter your experiment results based on user properties. For example, create a filter that excludes users from a specific country or geographic region, or users that have a specific account type on your platform.
 
 ## Data Quality card
 
@@ -54,6 +65,10 @@ Data Quality checks the setup, instrumentation, and statistical integrity of you
 When you expand a category, or click *Guide*, the Data Quality Guide opens in a side panel where you can address or dismiss issues 
 
 ## Summary card
+
+{{partial:admonition type="note" heading="Availability"}}
+Summary is available to organizations with access to Experiment who have recommendations enabled.
+{{/partial:admonition}}
 
 The Summary card describes your experiment's hypothesis and lets you know if it's reached statistical significance. 
 
@@ -79,22 +94,12 @@ At the top of the Analysis card is an overview that explains how your experiment
 * Event totals
 * Mean value over time
 
-\* Cumulative exposure tracks the experiment as a whole.
-
+For more information, see [Dig deeper into experimentation data with Experiment Results](/docs/analytics/charts/experiment-results/experiment-results-dig-deeper#interpret-your-results.)
 
 {{partial:admonition type="tip" heading="Chart filtering"}}
 The Experiment Results chart on the Activity tab responds to the selections you make in the [Filter card](#filter-card).
 {{/partial:admonition}}
-
-{{#
-We don't label the exposure event on this screen anywhere. Seems out of place in this article.
-{{partial:admonition type='note'}}
-The exposure event isn't the same as the assignment event. If, for example, you’re running an experiment on your pricing page, Amplitude might evaluate a user on the home page for the experiment—but if they don’t visit the pricing page, they aren't exposed to it. For that reason, Amplitude recommends you don't consider this user to be part of the experiment.  
-{{/partial:admonition}}
   
-To learn more about exposure events, see [Event Tracking](/docs/feature-experiment/under-the-hood/event-tracking).  
-#}} 
-    
 Click _Chart Controls_ to see the chart definition. 
     
 Click *Open in Chart* to open a copy of the Experiment Results in a new chart.
@@ -116,8 +121,9 @@ The Diagnostics card provides information about how your experiment is deliverin
 * Assignment events (cumulative and non-cumulative)
 * Exposure events (cumulative and non-cumulative)
 * Assignment to exposure conversion
-* Variant jumping
-* Anonymous exposures
+* [Variant jumping](/docs/feature-experiment/troubleshooting/variant-jumping)
+* Anonymous exposures (cumulative and non-cumulative)
+* [Exposures without Assignments](/docs/feature-experiment/troubleshooting/exposures-without-assignments) (cumulative and non-cumulative)
 
 For more control, open any of these charts in the chart build.
 
