@@ -19,7 +19,10 @@ This feature is in **open beta** and is only available to customers in North Ame
 
 ## Before you begin
 
-This feature is available to users on Growth and Enterprise plans. Growth users get one deletion task, to include up to one billion events scanned, per month. Enterprise users get 10 tasks, each of which can include as many as one billion events scanned, per month.
+This feature is available to users on Growth and Enterprise plans.
+
+* Accounts on the Growth plan can scan up to one billion (1,000,000,000) events per month.
+* Accounts on the Enterprise plan can scan up to ten billion (10,000,000,000) events per month.
 
 Self-service data deletion requires Administrator privileges.
 
