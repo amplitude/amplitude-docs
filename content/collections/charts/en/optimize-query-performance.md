@@ -21,9 +21,7 @@ Up-sampling is useful for functions that scale with the number of users, such as
 
 ### Feature availability
 
-This feature is available to users on **all Amplitude plans**. See our [pricing page](https://amplitude.com/pricing) for more details.
-
-* Query time sampling is available for Event Segmentation and Funnel Analysis charts only.
+This feature is available to users on **all Amplitude plans**. 
 
 ## Enable query time sampling
 
