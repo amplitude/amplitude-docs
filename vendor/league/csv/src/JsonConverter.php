@@ -15,6 +15,7 @@ namespace League\Csv;
 
 use BadMethodCallException;
 use Closure;
+use Deprecated;
 use Exception;
 use InvalidArgumentException;
 use Iterator;
@@ -52,49 +53,48 @@ use const JSON_THROW_ON_ERROR;
  * @template T
  *
  * @method JsonConverter withHexTag() adds the JSON_HEX_TAG flag
- * @method JsonConverter withoutHexTag() adds the JSON_HEX_TAG flag
+ * @method JsonConverter withoutHexTag() removes the JSON_HEX_TAG flag
  * @method bool useHexTag() tells whether the JSON_HEX_TAG flag is used
  * @method JsonConverter withHexAmp() adds the JSON_HEX_TAG flag
- * @method JsonConverter withoutHexAmp() adds the JSON_HEX_TAG flag
+ * @method JsonConverter withoutHexAmp() removes the JSON_HEX_TAG flag
  * @method bool useHexAmp() tells whether the JSON_HEX_TAG flag is used
  * @method JsonConverter withHexApos() adds the JSON_HEX_TAG flag
- * @method JsonConverter withoutHexApos() adds the JSON_HEX_TAG flag
+ * @method JsonConverter withoutHexApos() removes the JSON_HEX_TAG flag
  * @method bool useHexApos() tells whether the JSON_HEX_TAG flag is used
  * @method JsonConverter withHexQuot() adds the JSON_HEX_TAG flag
- * @method JsonConverter withoutHexQuot() adds the JSON_HEX_TAG flag
+ * @method JsonConverter withoutHexQuot() removes the JSON_HEX_TAG flag
  * @method bool useHexQuot() tells whether the JSON_HEX_TAG flag is used
  * @method JsonConverter withForceObject() adds the JSON_HEX_TAG flag
- * @method JsonConverter withoutForceObject() adds the JSON_HEX_TAG flag
+ * @method JsonConverter withoutForceObject() removes the JSON_HEX_TAG flag
  * @method bool useForceObject() tells whether the JSON_HEX_TAG flag is used
  * @method JsonConverter withNumericCheck() adds the JSON_HEX_TAG flag
- * @method JsonConverter withoutNumericCheck() adds the JSON_HEX_TAG flag
+ * @method JsonConverter withoutNumericCheck() removes the JSON_HEX_TAG flag
  * @method bool useNumericCheck() tells whether the JSON_HEX_TAG flag is used
  * @method JsonConverter withUnescapedSlashes() adds the JSON_HEX_TAG flag
- * @method JsonConverter withoutUnescapedSlashes() adds the JSON_HEX_TAG flag
+ * @method JsonConverter withoutUnescapedSlashes() removes the JSON_HEX_TAG flag
  * @method bool useUnescapedSlashes() tells whether the JSON_HEX_TAG flag is used
- * @method JsonConverter withPrettyPrint() adds the JSON_HEX_TAG flag
- * @method JsonConverter withoutPrettyPrint() adds the JSON_HEX_TAG flag
+ * @method JsonConverter withoutPrettyPrint() removes the JSON_PRETTY_PRINT flag
  * @method bool usePrettyPrint() tells whether the JSON_HEX_TAG flag is used
  * @method JsonConverter withUnescapedUnicode() adds the JSON_HEX_TAG flag
- * @method JsonConverter withoutUnescapedUnicode() adds the JSON_HEX_TAG flag
+ * @method JsonConverter withoutUnescapedUnicode() removes the JSON_HEX_TAG flag
  * @method bool useUnescapedUnicode() tells whether the JSON_HEX_TAG flag is used
  * @method JsonConverter withPartialOutputOnError() adds the JSON_HEX_TAG flag
- * @method JsonConverter withoutPartialOutputOnError() adds the JSON_HEX_TAG flag
+ * @method JsonConverter withoutPartialOutputOnError() removes the JSON_HEX_TAG flag
  * @method bool usePartialOutputOnError() tells whether the JSON_HEX_TAG flag is used
  * @method JsonConverter withPreserveZeroFraction() adds the JSON_HEX_TAG flag
- * @method JsonConverter withoutPreserveZeroFraction() adds the JSON_HEX_TAG flag
+ * @method JsonConverter withoutPreserveZeroFraction() removes the JSON_HEX_TAG flag
  * @method bool usePreserveZeroFraction() tells whether the JSON_HEX_TAG flag is used
  * @method JsonConverter withUnescapedLineTerminators() adds the JSON_HEX_TAG flag
- * @method JsonConverter withoutUnescapedLineTerminators() adds the JSON_HEX_TAG flag
+ * @method JsonConverter withoutUnescapedLineTerminators() removes the JSON_HEX_TAG flag
  * @method bool useUnescapedLineTerminators() tells whether the JSON_HEX_TAG flag is used
  * @method JsonConverter withInvalidUtf8Ignore() adds the JSON_HEX_TAG flag
- * @method JsonConverter withoutInvalidUtf8Ignore() adds the JSON_HEX_TAG flag
+ * @method JsonConverter withoutInvalidUtf8Ignore() removes the JSON_HEX_TAG flag
  * @method bool useInvalidUtf8Ignore() tells whether the JSON_HEX_TAG flag is used
  * @method JsonConverter withInvalidUtf8Substitute() adds the JSON_HEX_TAG flag
- * @method JsonConverter withoutInvalidUtf8Substitute() adds the JSON_HEX_TAG flag
+ * @method JsonConverter withoutInvalidUtf8Substitute() removes the JSON_HEX_TAG flag
  * @method bool useInvalidUtf8Substitute() tells whether the JSON_HEX_TAG flag is used
  * @method JsonConverter withThrowOnError() adds the JSON_HEX_TAG flag
- * @method JsonConverter withoutThrowOnError() adds the JSON_HEX_TAG flag
+ * @method JsonConverter withoutThrowOnError() removes the JSON_HEX_TAG flag
  * @method bool useThrowOnError() tells whether the JSON_HEX_TAG flag is used
  */
 final class JsonConverter
@@ -135,12 +135,12 @@ final class JsonConverter
     /**
      * @param int<1, max> $depth
      * @param int<1, max> $indentSize
-     * @param ?Closure(T, array-key): mixed $formatter
+     * @param ?callable(T, array-key): mixed $formatter
      * @param int<1, max> $chunkSize
      *
      * @throws InvalidArgumentException
      */
-    private function __construct(int $flags, int $depth, int $indentSize, ?Closure $formatter, int $chunkSize)
+    private function __construct(int $flags, int $depth, int $indentSize, ?callable $formatter, int $chunkSize)
     {
         json_encode([], $flags & ~JSON_THROW_ON_ERROR, $depth);
 
@@ -151,7 +151,7 @@ final class JsonConverter
         $this->flags = $flags;
         $this->depth = $depth;
         $this->indentSize = $indentSize;
-        $this->formatter = $formatter;
+        $this->formatter = ($formatter instanceof Closure || null === $formatter) ? $formatter : $formatter(...);
         $this->chunkSize = $chunkSize;
 
         // Initialize settings and closure to use for conversion.
@@ -227,6 +227,20 @@ final class JsonConverter
             str_starts_with($name, 'with') => $this->addFlags(self::methodToFlag($name, 4)),
             str_starts_with($name, 'use') => $this->useFlags(self::methodToFlag($name, 3)),
             default => throw new BadMethodCallException('The method "'.self::class.'::'.$name.'" does not exist.'),
+        };
+    }
+
+    /**
+     * @param int<1, max>|null $indentSize
+     */
+    public function withPrettyPrint(?int $indentSize = null): self
+    {
+        $flags = $this->flags | JSON_PRETTY_PRINT;
+        $indentSize = $indentSize ?? $this->indentSize;
+
+        return match (true) {
+            $flags === $this->flags && $indentSize === $this->indentSize => $this,
+            default => new self($flags, $this->depth, $indentSize, $this->formatter, $this->chunkSize),
         };
     }
 
@@ -318,19 +332,6 @@ final class JsonConverter
     /**
      * Set the indentation size.
      *
-     * @param int<1, max> $indentSize
-     */
-    public function indentSize(int $indentSize): self
-    {
-        return match ($indentSize) {
-            $this->indentSize => $this,
-            default => new self($this->flags, $this->depth, $indentSize, $this->formatter, $this->chunkSize),
-        };
-    }
-
-    /**
-     * Set the indentation size.
-     *
      * @param int<1, max> $chunkSize
      */
     public function chunkSize(int $chunkSize): self
@@ -344,7 +345,7 @@ final class JsonConverter
     /**
      * Set a callback to format each item before json encode.
      */
-    public function formatter(?Closure $formatter): self
+    public function formatter(?callable $formatter): self
     {
         return new self($this->flags, $this->depth, $this->indentSize, $formatter, $this->chunkSize);
     }
@@ -365,7 +366,7 @@ final class JsonConverter
             HttpHeaders::forFileDownload($filename, 'application/json; charset=utf-8');
         }
 
-        return $this->save($records, new SplFileObject('php://output', 'w'));
+        return $this->save($records, new SplFileObject('php://output', 'wb'));
     }
 
     /**
@@ -408,9 +409,9 @@ final class JsonConverter
         $stream = match (true) {
             $destination instanceof Stream,
             $destination instanceof SplFileObject => $destination,
-            $destination instanceof SplFileInfo => $destination->openFile(mode:'w', context: $context),
+            $destination instanceof SplFileInfo => $destination->openFile(mode:'wb', context: $context),
             is_resource($destination) => Stream::createFromResource($destination),
-            is_string($destination) => Stream::createFromPath($destination, 'w', $context),
+            is_string($destination) => Stream::createFromPath($destination, 'wb', $context),
             default => throw new TypeError('The destination path must be a filename, a stream or a SplFileInfo object.'),
         };
         $bytes = 0;
@@ -481,5 +482,25 @@ final class JsonConverter
         }
 
         yield ($this->jsonEncodeChunk)([$offset => $current]).$this->end;
+    }
+
+    /**
+     * DEPRECATION WARNING! This method will be removed in the next major point release.
+     *
+     * @see JsonConverter::withPrettyPrint()
+     * @deprecated Since version 9.19.0
+     * @codeCoverageIgnore
+     *
+     * Set the indentation size.
+     *
+     * @param int<1, max> $indentSize
+     */
+    #[Deprecated(message:'use League\Csv\JsonConverter::withPrettyPrint() instead', since:'league/csv:9.19.0')]
+    public function indentSize(int $indentSize): self
+    {
+        return match ($indentSize) {
+            $this->indentSize => $this,
+            default => new self($this->flags, $this->depth, $indentSize, $this->formatter, $this->chunkSize),
+        };
     }
 }
