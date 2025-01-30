@@ -1,0 +1,40 @@
+title: 'Guides and Survey'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            import: help_center_common
+            config:
+              title:
+                required: true
+  landing_page:
+    display: 'Landing Page'
+    sections:
+      -
+        display: 'New Section'
+        fields:
+          -
+            import: article_common
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - guides_and_surveys
+              max_items: 1
+              listable: false
+              localizable: true
