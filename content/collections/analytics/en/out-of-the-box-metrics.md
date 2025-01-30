@@ -31,5 +31,16 @@ Regardless of where you use them, for example in a [Data Table](docs/analytics/c
 
 ## Edit existing metrics
 
-Access OOTB metrics from any [Data Table](docs/analytics/charts/data-tables) or [Event Segmentation](/docs/analytics/charts/event-segmentation) chart,
+Access OOTB metrics from any [Data Table](docs/analytics/charts/data-tables) or [Event Segmentation](/docs/analytics/charts/event-segmentation) chart. To edit an OOTB metric:
 
+1. Add the metric to the chart.
+2. Hover over the metric name and click the pencil icon, or click **Edit Metric** on the *More options* menu.
+3. The Metric dialog appears. Update the definition and click **Save**. 
+   
+   The updated definition applies across your project. This includes changes to the label. Changes apply to charts you create going forward, and any chart that includes the metric definition.
+
+For information about creating metrics from scratch, see [Create a metric](/docs/analytics/charts/data-tables/data-tables-create-metric)
+
+{{partial:admonition type="note" heading="Permissions"}}
+Editing an OOTB metric requires the **Manager** [role](/docs/admin/account-management/user-roles-permissions) or higher.
+{{/partial:admonition}}
