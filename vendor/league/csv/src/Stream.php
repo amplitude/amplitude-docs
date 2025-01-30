@@ -81,13 +81,18 @@ final class Stream implements SeekableIterator
 
     public function __destruct()
     {
-        array_walk_recursive($this->filters, fn ($filter): bool => @stream_filter_remove($filter));
+        set_error_handler(fn (int $errno, string $errstr, string $errfile, int $errline) => true);
 
-        if ($this->should_close_stream) {
-            set_error_handler(fn (int $errno, string $errstr, string $errfile, int $errline) => true);
+        array_walk_recursive($this->filters, static function ($filter): void {
+            if (is_resource($filter)) {
+                stream_filter_remove($filter);
+            }
+        });
+        if ($this->should_close_stream && is_resource($this->stream)) {
             fclose($this->stream);
-            restore_error_handler();
         }
+
+        restore_error_handler();
 
         unset($this->stream);
     }
@@ -105,6 +110,14 @@ final class Stream implements SeekableIterator
             'escape' => $this->escape,
             'stream_filters' => array_keys($this->filters),
         ];
+    }
+
+    /**
+     * Returns the actual mode used to open the resource stream.
+     */
+    public function getMode(): string
+    {
+        return stream_get_meta_data($this->stream)['mode'];
     }
 
     public function ftell(): int|false
@@ -180,10 +193,27 @@ final class Stream implements SeekableIterator
      *
      * @throws InvalidArgument if the filter can not be appended
      */
-    public function appendFilter(string $filtername, int $read_write, ?array $params = null): void
+    public function appendFilter(string $filtername, int $read_write, mixed $params = null): void
     {
         set_error_handler(fn (int $errno, string $errstr, string $errfile, int $errline) => true);
-        $res = stream_filter_append($this->stream, $filtername, $read_write, $params ?? []);
+        $res = stream_filter_append($this->stream, $filtername, $read_write, $params);
+        restore_error_handler();
+        is_resource($res) || throw InvalidArgument::dueToStreamFilterNotFound($filtername);
+
+        $this->filters[$filtername][] = $res;
+    }
+
+    /**
+     * Appends a filter.
+     *
+     * @see http://php.net/manual/en/function.stream-filter-append.php
+     *
+     * @throws InvalidArgument if the filter can not be appended
+     */
+    public function prependFilter(string $filtername, int $read_write, mixed $params = null): void
+    {
+        set_error_handler(fn (int $errno, string $errstr, string $errfile, int $errline) => true);
+        $res = stream_filter_prepend($this->stream, $filtername, $read_write, $params);
         restore_error_handler();
         is_resource($res) || throw InvalidArgument::dueToStreamFilterNotFound($filtername);
 
