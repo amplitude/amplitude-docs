@@ -21,9 +21,7 @@ Up-sampling is useful for functions that scale with the number of users, such as
 
 ### Feature availability
 
-This feature is available to users on **all Amplitude plans**. See our [pricing page](https://amplitude.com/pricing) for more details.
-
-* Query time sampling is available for Event Segmentation and Funnel Analysis charts only.
+This feature is available to users on **all Amplitude plans**. 
 
 ## Enable query time sampling
 
@@ -36,14 +34,6 @@ To enable query time sampling, follow these steps:
   ![testFunnelChart.png](/docs/output/img/charts/testfunnelchart-png.png)
 
 2. To query the full dataset, click *Sampled: 10%* to turn off query time sampling.
-
-## Set query time sampling as the default
-
-Admin users can set query time sampling as the default for all new charts in a project. To do so, follow these steps:
-
-1. Click the gear icon to view your organizational settings.
-2. Click *Projects.*
-3. Choose the project you'd like to modify and switch the *Query time sampling* toggle to On.
 
 ## Caveats
 
