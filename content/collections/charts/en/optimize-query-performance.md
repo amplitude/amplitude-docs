@@ -35,14 +35,6 @@ To enable query time sampling, follow these steps:
 
 2. To query the full dataset, click *Sampled: 10%* to turn off query time sampling.
 
-## Set query time sampling as the default
-
-Admin users can set query time sampling as the default for all new charts in a project. To do so, follow these steps:
-
-1. Click the gear icon to view your organizational settings.
-2. Click *Projects.*
-3. Choose the project you'd like to modify and switch the *Query time sampling* toggle to On.
-
 ## Caveats
 
 Query time sampling can be a useful way to streamline your workflow, but it's important to keep a few things in mind:
