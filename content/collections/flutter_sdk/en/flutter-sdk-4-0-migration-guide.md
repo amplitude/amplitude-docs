@@ -40,7 +40,7 @@ Open `Podfile` and update:
 
 Run `pod install` under the ios directory of your Flutter project to update the CocoaPods dependencies.
 
-For Flutter Web, replace the Amplitude-JavaScript snippet located at `web/index.html` with the following Browser SDK 2 snippet:
+For Flutter Web, replace the "Amplitude-JavaScript" snippet located at `web/index.html` with the following "Browser SDK 2" snippet:
 ```html
 <script type="text/javascript">
   !function(){"use strict";!function(e,t){var r=e.amplitude||{_q:[],_iq:{}}
