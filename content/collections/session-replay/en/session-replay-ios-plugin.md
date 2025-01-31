@@ -5,11 +5,10 @@ title: 'Session Replay iOS Plugin'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1730306264
+updated_at: 1738344736
 instrumentation_guide: true
 platform: ios
-public: false
-parent: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
+public: true
 description: 'Choose this option if you use an Amplitude iOS SDK to instrument your iOS application.'
 ---
 This article covers the installation of Session Replay using the iOS plugin. If your app is already instrumented with the the Amplitude [iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk) or legacy Amplitude [iOS SDK](/docs/sdks/analytics/ios/ios-sdk), use this option.
