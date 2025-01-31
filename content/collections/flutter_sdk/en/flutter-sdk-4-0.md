@@ -18,6 +18,16 @@ package_name: amplitude_flutter
 ---
 This is the official documentation for the Amplitude Analytics Flutter SDK. The Flutter SDK lets you send events from your Flutter application to Amplitude.
 
+## Compatibility
+
+From Amplitude Flutter v4, we bump up the kotlin version to v1.9.22 to support latest Gradle.
+
+The following matrix lists the minimum support for Amplitude Flutter SDK version.
+
+| Amplitude Flutter |  Dart   | Flutter | Gradle | Android Gradle Plugin | Kotlin Gradle Plugin |
+|-------------------|---------|---------|--------|-----------------------|-----------------------|
+| >= 4.0.0          | >=3.3   | >=3.7   | 8.2    | 8.2.2                 | 1.9.22                |
+
 ## Install the SDK
 
 1. Go to the `pubspec.yaml` file and add Amplitude SDK as a dependency.
