@@ -31,10 +31,12 @@ To create a channel, follow these steps:
 1. Navigate to the *Properties* section of Amplitude Data and open the *Channels* tab.
 2. Click *+ Add Channel Classifier.* A pre-built, default channel definition screen opens. Optionally, click the default channel title (*Channel*) to edit the name. You can also add a description below it, if you like.
 3. To begin creating the definition of the channel, start from the default template or click *Clear Table* to clear the table's contents.  
-  
-    ![image2.gif](/docs/output/img/data/image2-gif.gif)  
       
     You can add multiple properties to a row to create a more complex classifier.
+
+    {{partial:admonition type="tip" heading=""}}
+    Amplitude recommends using user properties rather than event properties for channels because Amplitude applies user properties to future events that a user triggers. For more information, see [About user properties and event properties](/docs/data/user-properties-and-events#how-amplitude-updates-user-properties).
+    {{/partial:admonition}}
 
 4. Add one row for each channel you would like to define. For example, you can add rows labeled `Paid`, `Organic`, `Referral`, and `Direct` to create a high-level channel definition.
 5. Fill the values for each row. Each cell must evaluate to `True` for an event to classify to that channel.
