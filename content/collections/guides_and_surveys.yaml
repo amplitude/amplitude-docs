@@ -6,7 +6,7 @@ template: default
 layout: layout
 mount: 8255e7a7-7275-4629-8512-e42b0da92456
 revisions: false
-route: '/guides-and-surveys/{slug}'
+route: '/guides-and-surveys/{{section}}/{{slug}}'
 sort_dir: asc
 date_behavior:
   past: public
