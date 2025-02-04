@@ -37,7 +37,7 @@ When debugging a user timeline, keep these things in mind:
 Normal variant jumping may occur due to:
 
 * [Targeting changes](#targeting-changes): Someone has made changes to targeting rules while your experiment is running.
-* [Anonymous identity merging](#anonymous-identity-merging): Anonymous users, bucketed by Amplitude ID, may receive different variants until they're eventually resolved via a matching user ID.
+* [Anonymous identity merging](#anonymous-identity-merging): Anonymous users, bucketed by Amplitude ID, may receive different variants until they're eventually resolved through a matching user ID.
 
 ### Targeting changes
 
@@ -113,4 +113,4 @@ Another common case is simple overlooked implementation error. For example, the 
 
 ## Remove users who variant jumped from experiment analysis
 
-As you analyze results, be careful when you remove data, as you may introduce bias in your results. It's better to understand the cause of variant jumping and fix any implementation bugs, so this doesn't happen again in future  experiments. If you feel that removing users who jumped variants is the best course of action, click *All Exposed Users* and enable *Exclude users who variant jumped*.
+As you analyze results, be careful when you remove data, as you may introduce bias in your results. It's better to understand the cause of variant jumping and fix any implementation bugs, so this doesn't happen again in future  experiments. If you feel that removing users who jumped variants is the best course of action, use the Filter card on the Experiment Analysis tab. If the `All exposed users` segment, is enabled by default, click it and select *Experiment Segments > Exclude users who variant jumped*.
