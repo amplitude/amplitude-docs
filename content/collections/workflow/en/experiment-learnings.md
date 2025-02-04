@@ -99,8 +99,6 @@ For more information, see [Dig deeper into experimentation data with Experiment 
 {{partial:admonition type="tip" heading="Chart filtering"}}
 The Experiment Results chart on the Activity tab responds to the selections you make in the [Filter card](#filter-card).
 {{/partial:admonition}}
-  
-Click _Chart Controls_ to see the chart definition. 
     
 Click *Open in Chart* to open a copy of the Experiment Results in a new chart.
     
