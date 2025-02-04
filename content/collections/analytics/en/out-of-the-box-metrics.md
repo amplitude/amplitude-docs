@@ -7,7 +7,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1738269005
 ---
-Amplitude’s Out-of-the-Box (OOTB) metrics provide consistent, validated definitions for common performance indicators. Whether you’re tracking page views on the web, ad performance, or time spent, OOTB metrics share one synced definition across all your Amplitude projects. When you edit an OOTB metric once, it updates everywhere—saving you time, reducing errors, and aligning teams around a single source of truth.
+Amplitude’s Out-of-the-Box (OOTB) metrics provide consistent, validated definitions for common performance indicators. OOTB metrics share one synced definition across all your Amplitude projects. When you edit an OOTB metric once, it updates everywhere within a project—saving you time, reducing errors, and aligning teams around a single source of truth.
 
 ## Advantages of OOTB metrics
 
@@ -31,7 +31,7 @@ Regardless of where you use them, for example in a [Data Table](docs/analytics/c
 
 ## Edit existing metrics
 
-Access OOTB metrics from any [Data Table](docs/analytics/charts/data-tables) or [Event Segmentation](/docs/analytics/charts/event-segmentation) chart. To edit an OOTB metric:
+Access OOTB metrics from a [Data Table](docs/analytics/charts/data-tables), [Event Segmentation](/docs/analytics/charts/event-segmentation) chart, or the Web Analytics settings. To edit an OOTB metric:
 
 1. Add the metric to the chart.
 2. Hover over the metric name and click the pencil icon, or click **Edit Metric** on the *More options* menu.
