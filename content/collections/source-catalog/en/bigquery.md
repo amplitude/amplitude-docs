@@ -53,7 +53,7 @@ To get started with importing from BigQuery, you need to take care of a few prer
         - 18.192.47.195
 
 {{partial:admonition type="warning" title="User and Group properties sync"}}
-Amplitude's Data Warehouse Import sometimes processes events in parallel, so time-ordered syncing of user and group properties on events is not guaranteed in the same way as submitting events directly to the Identify and Group Identify APIs. 
+Amplitude's Data Warehouse Import sometimes processes events in parallel, so time-ordered syncing of user and group properties on events isn't guaranteed in the same way as submitting events directly to the Identify and Group Identify APIs. 
 {{/partial:admonition}}
 
 ## Add BigQuery as a source
@@ -151,8 +151,59 @@ FROM your_table;
 ```
 
 {{partial:admonition type="warning" title=""}}
-You can't have spaces in struct field names even if they are enclosed in back ticks or single quotes.
+You can't have spaces in struct field names even if they're enclosed in back ticks or single quotes.
 {{/partial:admonition}}
+
+#### Reconstructing Event or User Properties from RECORD Type and REPEATED Mode Fields
+
+If you have `event_properties` or `user_properties` fields with RECORD type and REPEATED mode, you may need to transform them into a valid format before ingesting them into Amplitude.
+
+Here are two approaches to achieve this transformation:
+
+- Reconstruct the properties into a JSON object using PARSE_JSON, ensuring all values are properly formatted:
+
+``` sql
+PARSE_JSON(CONCAT('{',
+    (
+      SELECT STRING_AGG(
+          CONCAT('"', key, '":"',
+            COALESCE(
+              NULLIF(CODE_POINTS_TO_STRING(
+                ARRAY((
+                  SELECT * FROM UNNEST((
+                    SELECT TO_CODE_POINTS(CAST(value.string_value AS STRING))
+                  )) AS code_points
+                  WHERE code_points > 31 AND code_points != 34 AND code_points != 92
+                ))
+              ), ''),
+              NULLIF(CAST(value.int_value AS STRING), ''),
+              NULLIF(CAST(value.float_value AS STRING), ''), 
+              NULLIF(CAST(value.double_value AS STRING), '')
+            ),
+            '"'
+          )
+      ) FROM UNNEST(event_properties)
+    ),
+    '}'
+  )) AS event_properties
+```
+
+- Extract individual key-value pairs directly:
+
+```sql
+(SELECT value.string_value FROM UNNEST(event_params) WHERE key = 'key1') AS key1,
+(SELECT value.string_value FROM UNNEST(event_params) WHERE key = 'key2') AS key2
+```
+
+Once you’ve transformed the event properties, you need to format them as a STRUCT to be ingested by Amplitude:
+
+```sql
+STRUCT
+(
+  action AS action,
+  field AS field
+) AS event_properties
+```
 
 ### Properties from a JSON string field
 
