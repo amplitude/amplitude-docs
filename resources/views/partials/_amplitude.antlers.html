@@ -54,7 +54,7 @@
 <script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.7.0-min.js.gz"></script>
 <script src="https://cdn.amplitude.com/engagement-browser/prod/index.min.js.gz"></script>
 <script>
-    window.amplitude.init('8ec8f5cbeaf93a6717831a55add2d7a4', {
+    window.amplitude.init('{{config:app:analytics-key}}', {
         defaultTracking: true,
         identityStorage: 'localStorage',
         autocapture: { elementInteractions: true }
