@@ -8,3 +8,4 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1738273703
 section: guides
 ---
+Guides are versatile, in-product messages that gently nudge your users toward completing specific tasks, exploring new features, or learning more about your product. Unlike traditional popups that can feel interruptive, guides focus on being helpful and timely. Guides use behavioral triggers, strike detection, and rate-limiting mechanisms to avoid annoying users.
