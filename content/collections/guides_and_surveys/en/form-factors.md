@@ -94,6 +94,11 @@ When you add a Button, you can choose what happens when users click or tap that 
 | Go forward    | Advance to the next step in the guide.                                                                   |
 | Go to step    | Go to the specified step in the guide.                                                                   |
 
+#### Image
 
+Upload an image to include in your experience. The experience's layout determines the image's position.
 
+#### Movie
+
+Paste the URL of a video (YouTube, Vimeo, Loom, Vidyard, or .MP4 file). Like images, layout determines a movie's position.
 
