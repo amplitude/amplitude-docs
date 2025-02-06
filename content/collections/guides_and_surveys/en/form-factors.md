@@ -7,7 +7,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1738273292
 section: guides
 ---
-Guides and Surveys include five form factors you can chose from.
+Guides and Surveys include five form factors you can chose from. Each form factor has a set of properties that control how it behaves to the end user.
 
 ## Form factors
 
@@ -94,14 +94,6 @@ When you add a Button, you can choose what happens when users click or tap that 
 | Go forward    | Advance to the next step in the guide.                                                                   |
 | Go to step    | Go to the specified step in the guide.                                                                   |
 
-## Status
 
-Statuses enable you to manage if and when your guide displays.
-
-| Status    | Description                                                                                                                    |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Draft     | Enables you to make changes to and test the guide, but the guide doesn't appear to users.                                      |
-| Published | The guide is live. Any changes you make to a published guide appear to users as soon as you save the guide.                    |
-| Schedule  | Define specific start and end dates during which your guide appears. Start and end times use the timezone set on your project. |
 
 
