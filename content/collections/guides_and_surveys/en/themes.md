@@ -4,8 +4,9 @@ blueprint: guides_and_survey
 title: Themes
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1738704255
-landing: false
+updated_at: 1738949395
+landing: true
+landing_blurb: 'Discover how themes can enforce your brand identity in the guides and surveys you create.'
 ---
 Guides and Surveys should match your branding and feel like part of your product. Themes gives you control over your Guides and Survey's appearance.
 

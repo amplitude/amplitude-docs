@@ -1,11 +1,13 @@
 ---
 id: 5a11feec-0efc-453c-9bf1-45d36f57ce81
 blueprint: guides_and_survey
-title: 'Form factors and properties'
+title: 'Guide form factors and properties'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1738273292
+updated_at: 1738949006
 section: guides
+landing: true
+landing_blurb: 'Learn about the form factors available to guides, and the customization properties they contain.'
 ---
 Guides and Surveys include five form factors you can chose from. Each form factor has a set of properties that control how it behaves to the end user.
 
@@ -101,4 +103,3 @@ Upload an image to include in your experience. The experience's layout determine
 #### Movie
 
 Paste the URL of a video (YouTube, Vimeo, Loom, Vidyard, or .MP4 file). Like images, layout determines a movie's position.
-

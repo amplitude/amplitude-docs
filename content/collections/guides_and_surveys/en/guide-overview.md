@@ -7,6 +7,7 @@ parent: 2ce5d590-00c1-46a4-aad9-39465ed1eacf
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1738273703
 section: guides
+landing_blurb: "See how you can use guides, and the templates available to you."
 ---
 Guides are versatile, in-product messages that gently nudge your users toward completing specific tasks, exploring new features, or learning more about your product. Unlike traditional popups that can feel interruptive, guides focus on being helpful and timely. Guides use behavioral triggers, strike detection, and rate-limiting mechanisms to avoid annoying users.
 
@@ -16,7 +17,7 @@ When you create a new guide, you can start with a blank guide, or use a template
 
 | Template     | Use case                                                                                               |
 | ------------ | ------------------------------------------------------------------------------------------------------ |
-| Tour         | Guide users to explore your product.                                                                   |
+| Tour         | Guide users to explore your product. <button class="text-amp-blue-500" onclick="amplitude.track('Launch Tour')">View a tour</button>                                                                   |
 | Announcement | Tell your users something, like information about a product changes, company updates, or new features. |
 | Checklists   | Help your users complete tasks by showing them step-by-step instructions.                              |
 | Banners      | Highlight important messages or alerts.                                                                |

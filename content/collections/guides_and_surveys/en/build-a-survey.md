@@ -6,6 +6,7 @@ author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1738273389
 section: surveys
+landing_blurb: See what goes in to building a survey, and how they differ from guides.
 ---
 The survey build experience contains many of the same features at the guide builder, and uses a subset of the available [form factors](/docs/guides-and-surveys/guides/form-factors#form-factors) (modal, popover, pin) and [properties](/docs/guides-and-surveys/guides/form-factors#properties).
 

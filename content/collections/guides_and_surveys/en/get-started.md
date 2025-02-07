@@ -4,8 +4,9 @@ blueprint: guides_and_survey
 title: 'Get Started'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1738610447
-landing: false
+updated_at: 1738948939
+landing: true
+landing_blurb: 'Learn about Guides and Surveys overview and available charts'
 ---
 Before you get started with Guides and Surveys, install the SDK on your website or application.
 

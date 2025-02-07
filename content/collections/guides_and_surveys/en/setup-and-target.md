@@ -7,6 +7,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1738796196
 section: guides
 landing: false
+landing_blurb: "See how you can use guides, and the templates available to you."
 ---
 Guides offer targeting and triggering options to ensure your guide appears when it should, to who it should.
 
