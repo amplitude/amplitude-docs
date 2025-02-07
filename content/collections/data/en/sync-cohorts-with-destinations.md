@@ -20,6 +20,14 @@ Use a one-time sync to send a cohort to your destination once. Use this option i
 
 Use a scheduled sync to ensure Amplitude sends cohort updates to your destination on an **hourly** or **daily** basis. Amplitude queues sync jobs throughout the hour or day, depending on your selection. As a result, you can't select the time of day that a sync occurs.
 
+{{partial:admonition type="note" heading="Scheduled sync timing"}}
+Amplitude schedules a time to sync the cohort as soon as you create a new cohort, or update the sync details.
+
+The first sync occurs as right after Amplitude schedules it. As a result, the first two syncs may occur more frequently than every 24 hours.
+
+If you don't update the sync, future sync jobs run around the same time within the time period.
+{{/partial:admonition}}
+
 ## Real-time sync
 
 Use a Real-time sync to ensure the destination has the most up-to-date information about your cohort. Real-time sync checks for updates, and sends them to the destination every minute.
