@@ -15,6 +15,7 @@ namespace League\Csv;
 
 use Closure;
 use Countable;
+use Deprecated;
 use Iterator;
 use IteratorAggregate;
 
@@ -31,6 +32,7 @@ use IteratorAggregate;
  * @method bool each(Closure $callback) iterates over each record and passes it to a closure. Iteration is interrupted if the closure returns false
  * @method bool exists(Closure $callback) tells whether at least one record satisfies the predicate.
  * @method mixed reduce(Closure $callback, mixed $initial = null) reduces the collection to a single value, passing the result of each iteration into the subsequent iteration
+ * @method Iterator map(callable $callback) Run a map over each container members.
  * @method Iterator getObjects(string $className, array $header = []) Returns the tabular data records as an iterator object containing instance of the defined class name.
  * @method Iterator getRecordsAsObject(string $className, array $header = []) Returns the tabular data records as an iterator object containing instance of the defined class name.
  * @method TabularDataReader filter(Query\Predicate|Closure $predicate) returns all the elements of this collection for which your callback function returns `true`
@@ -126,16 +128,10 @@ interface TabularDataReader extends Countable, IteratorAggregate
      *
      * @throws UnableToProcessCsv if argument is less than 0
      */
+    #[Deprecated(message:'use League\Csv\TabularDataReader::nth() instead', since:'league/csv:9.9.0')]
     public function fetchOne(int $nth_record = 0): array;
 
     /**
-     * DEPRECATION WARNING! This method will be removed in the next major point release.
-     *
-     * @deprecated since version 9.8.0
-     *
-     * @see ::fetchColumnByName
-     * @see ::fetchColumnByOffset
-     *
      * Returns a single column from the next record of the tabular data.
      *
      * By default, if no value is supplied the first column is fetched

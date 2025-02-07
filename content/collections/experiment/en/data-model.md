@@ -105,6 +105,8 @@ Supported Experiment SDKs:
 * [JavaScript](/docs/sdks/experiment-sdks/experiment-javascript#fetch)
 {{/partial:admonition}}
 
+### Full user definition
+
 {{partial:collapse name="Full user definition"}}
 ```json
 {

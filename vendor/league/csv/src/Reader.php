@@ -15,6 +15,7 @@ namespace League\Csv;
 
 use CallbackFilterIterator;
 use Closure;
+use Deprecated;
 use Iterator;
 use JsonSerializable;
 use League\Csv\Serializer\Denormalizer;
@@ -329,32 +330,46 @@ class Reader extends AbstractCsv implements TabularDataReader, JsonSerializable
     }
 
     /**
-     * @param Closure(array<mixed>, array-key=): (void|bool|null) $callback
+     * @param callable(array<mixed>, array-key=): (void|bool|null) $callback
      */
-    public function each(Closure $callback): bool
+    public function each(callable $callback): bool
     {
         return ResultSet::createFromTabularDataReader($this)->each($callback);
     }
 
     /**
-     * @param Closure(array<mixed>, array-key=): bool $callback
+     * @param callable(array<mixed>, array-key=): bool $callback
      */
-    public function exists(Closure $callback): bool
+    public function exists(callable $callback): bool
     {
         return ResultSet::createFromTabularDataReader($this)->exists($callback);
     }
 
     /**
-     * @param Closure(TInitial|null, array<mixed>, array-key=): TInitial $callback
+     * @param callable(TInitial|null, array<mixed>, array-key=): TInitial $callback
      * @param TInitial|null $initial
      *
      * @template TInitial
      *
      * @return TInitial|null
      */
-    public function reduce(Closure $callback, mixed $initial = null): mixed
+    public function reduce(callable $callback, mixed $initial = null): mixed
     {
         return ResultSet::createFromTabularDataReader($this)->reduce($callback, $initial);
+    }
+
+    /**
+     * Run a map over each container members.
+     *
+     * @template TMap
+     *
+     * @param callable(array, int): TMap $callback
+     *
+     * @return Iterator<TMap>
+     */
+    public function map(callable $callback): Iterator
+    {
+        return MapIterator::fromIterable($this, $callback);
     }
 
     /**
@@ -614,6 +629,7 @@ class Reader extends AbstractCsv implements TabularDataReader, JsonSerializable
      * @deprecated since version 9.9.0
      * @codeCoverageIgnore
      */
+    #[Deprecated(message:'use League\Csv\Reader::nth() instead', since:'league/csv:9.9.0')]
     public function fetchOne(int $nth_record = 0): array
     {
         return $this->nth($nth_record);
@@ -633,6 +649,7 @@ class Reader extends AbstractCsv implements TabularDataReader, JsonSerializable
      * @throws MappingFailed
      * @throws TypeCastingFailed
      */
+    #[Deprecated(message:'use League\Csv\Reader::getRecordsAsObject() instead', since:'league/csv:9.15.0')]
     public function getObjects(string $className, array $header = []): Iterator
     {
         return $this->getRecordsAsObject($className, $header);

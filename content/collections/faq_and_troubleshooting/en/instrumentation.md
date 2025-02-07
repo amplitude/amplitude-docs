@@ -3,11 +3,13 @@ id: 1ae531b1-d015-4e67-a80d-e66e32b037cc
 blueprint: faq_and_troubleshooting
 title: Instrumentation
 source: 'https://amplitude.zendesk.com/hc/en-us/articles/360052358472'
+landing: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1738264824
 ---
 This article covers some frequently asked questions about Amplitude instrumentation.
 
-Can values be deleted or altered after ingestion?
-{{partial:collapse name=""}}
+{{partial:collapse name="Can values be deleted or altered after ingestion?"}}
 Once data is ingested into Amplitude, it cannot be altered. Amplitude's current architecture is based on pre-aggregated sets by the hour, day, week, and month, for both users and events. This allows Amplitude to easily perform large-scale queries, but it does require the data to be immutable. 
 
 Data can be deleted at the individual user level in compliance with GDPR and other privacy laws via the User Privacy API. More details on this API can be found [here](/docs/apis/analytics/user-privacy).

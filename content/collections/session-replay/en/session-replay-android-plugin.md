@@ -5,11 +5,10 @@ title: 'Session Replay Android Plugin'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1730306282
+updated_at: 1738344760
 instrumentation_guide: true
 platform: android
-public: false
-parent: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
+public: true
 description: 'Choose this option if you use an Amplitude Android SDK to instrument your Android application.'
 ---
 This article covers the installation of Session Replay using the Android SDK plugin. If your app is already instrumented with Amplitude, use this option. If you use a provider other than Amplitude for in-product analytics, choose the [standalone implementation](/docs/session-replay/session-replay-android-standalone).
