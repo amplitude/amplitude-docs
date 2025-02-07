@@ -19,7 +19,7 @@ Sticky bucketing is only available on experiments not flags.
 {{/partial:admonition}}
 
 {{partial:admonition type='note'}}
- Amplitude Experiment uses [consistent bucketing](https://www.docs.developers.amplitude.com/experiment/general/evaluation/implementation/#consistent-bucketing) and a [deterministic hashing algorithm](https://www.docs.developers.amplitude.com/experiment/general/evaluation/implementation/#hashing), which keeps users bucketed into their original variants as long as you don’t change anything. 
+ Amplitude Experiment uses [consistent bucketing](/docs/feature-experiment/implementation#consistent-bucketing) and a [deterministic hashing algorithm](/docs/feature-experiment/implementation#hashing), which keeps users bucketed into their original variants as long as you don’t change anything. 
 {{/partial:admonition}}
 
 ## How sticky bucketing works
