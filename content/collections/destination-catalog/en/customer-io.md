@@ -21,7 +21,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1713478471
 ---
 
-Amplitude CDP's Customer.io streaming integration enables you to forward your Amplitude events and users straight to [Customer.io](https://customer.io/) with just a few clicks.
+Amplitude Activation's Customer.io streaming integration enables you to forward your Amplitude events and users straight to [Customer.io](https://customer.io/) with just a few clicks.
 
 ## Setup
 

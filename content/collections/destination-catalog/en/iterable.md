@@ -20,7 +20,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1713478985
 ---
 
-Amplitude CDP's Iterable streaming integration enables you to forward your Amplitude events and users straight to [Iterable](https://iterable.com/) with just a few clicks.
+Amplitude Activation's Iterable streaming integration enables you to forward your Amplitude events and users straight to [Iterable](https://iterable.com/) with just a few clicks.
 
 ## Setup
 

@@ -17,7 +17,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1713562727
 ---
-Amplitude CDP's Google Analytics 4 (iOS/Android) streaming integration enables you to forward your Amplitude events and users straight to Google Analytics 4 (iOS/Android) with just a few clicks.
+Amplitude Activation's Google Analytics 4 (iOS/Android) streaming integration enables you to forward your Amplitude events and users straight to Google Analytics 4 (iOS/Android) with just a few clicks.
 
 {{partial:admonition type="note" title="Choose the correct Google Analytics 4 destination"}}
 Google Analytics 4 (Web) destination works with a web application instrumented with Google Tag (gtag.js). If you are working with an iOS or Android mobile application using Firebase, set up a [Google Analytics 4 (iOS/Android)](/docs/data/destination-catalog/google-analytics-4-web) destination.
