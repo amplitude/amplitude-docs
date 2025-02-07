@@ -1,10 +1,11 @@
 ---
 id: f422c82d-a9d7-404a-8f56-211e014453c6
 blueprint: guides_and_survey
-title: Guides and Surveys SDK
-landing: false
+title: 'Guides and Surveys SDK'
+landing: true
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1738690842
+updated_at: 1738949573
+landing_blurb: 'Ensure your site or application is ready for Guides and Surveys.'
 ---
 Amplitude's Guides and Surveys SDK enables you to deploy [Guides and Surveys](/docs/guides-and-surveys) on your website or application.
 

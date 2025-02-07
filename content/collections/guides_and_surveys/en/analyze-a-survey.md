@@ -6,6 +6,7 @@ author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1738273400
 section: surveys
+landing_blurb: Explore the options available to you as you analyze survey results.
 ---
 Amplitude provides you with both high level data in the form of aggregate use and engagement of your surveys, and response level information about individual responses and who left them. This analysis is available in the survey itself.
 
