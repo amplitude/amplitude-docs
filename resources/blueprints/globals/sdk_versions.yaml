@@ -12,13 +12,7 @@ tabs:
               display: Browser
               width: 50
               localizable: false
-          -
-            handle: browser_sdk_sha
-            field:
-              type: text
-              display: 'Browser SDK SHA'
-              localizable: false
-              width: 50
+              instructions: '[link](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-browser/CHANGELOG.md)'
           -
             handle: android
             field:
@@ -26,6 +20,7 @@ tabs:
               display: Android
               width: 50
               localizable: false
+              instructions: '[link](https://github.com/amplitude/Amplitude-Kotlin/releases)'
           -
             handle: node
             field:
@@ -33,6 +28,7 @@ tabs:
               display: Node
               width: 50
               localizable: false
+              instructions: '[link](https://www.npmjs.com/package/@amplitude/analytics-node?activeTab=readme)'
           -
             handle: ios
             field:
@@ -40,6 +36,7 @@ tabs:
               display: iOS
               width: 50
               localizable: false
+              instructions: '[link](https://github.com/amplitude/Amplitude-Swift/releases)'
           -
             handle: java
             field:
@@ -47,6 +44,7 @@ tabs:
               display: Java
               width: 50
               localizable: false
+              instructions: '[link](https://github.com/amplitude/Amplitude-Java/releases)'
           -
             handle: react_native
             field:
@@ -54,6 +52,7 @@ tabs:
               display: 'React Native'
               width: 50
               localizable: false
+              instructions: '[link](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-react-native/CHANGELOG.md)'
           -
             handle: flutter
             field:
@@ -61,6 +60,7 @@ tabs:
               display: Flutter
               width: 50
               localizable: false
+              instructions: '[link](https://github.com/amplitude/Amplitude-Flutter/releases)'
           -
             handle: python
             field:
@@ -68,6 +68,7 @@ tabs:
               display: Python
               width: 50
               localizable: false
+              instructions: '[link](https://github.com/amplitude/Amplitude-Python/releases)'
           -
             handle: unity
             field:
@@ -75,6 +76,7 @@ tabs:
               display: Unity
               width: 50
               localizable: false
+              instructions: '[link](https://github.com/amplitude/unity-plugin/releases)'
           -
             handle: unreal
             field:
@@ -82,6 +84,7 @@ tabs:
               display: Unreal
               width: 50
               localizable: false
+              instructions: '[link](https://github.com/amplitude/Amplitude-Unreal/releases)'
           -
             handle: go
             field:
@@ -89,6 +92,7 @@ tabs:
               display: Go
               width: 50
               localizable: false
+              instructions: '[link](https://github.com/amplitude/analytics-go/releases)'
           -
             handle: visual_labeling_plugin
             field:
@@ -106,6 +110,7 @@ tabs:
               display: 'Session Replay Plugin'
               width: 50
               localizable: false
+              instructions: '[link](https://github.com/amplitude/Amplitude-TypeScript/blob/v1.x/packages/plugin-session-replay-browser/CHANGELOG.md)'
           -
             handle: session_replay_standalone
             field:
@@ -113,6 +118,7 @@ tabs:
               display: 'Session Replay Standalone'
               width: 50
               localizable: false
+              instructions: '[link](https://github.com/amplitude/Amplitude-TypeScript/blob/v1.x/packages/session-replay-browser/CHANGELOG.md)'
           -
             handle: session_replay_android_plugin
             field:
@@ -120,6 +126,7 @@ tabs:
               display: 'Session Replay Android Plugin'
               width: 50
               localizable: false
+              instructions: '[link](https://github.com/amplitude/session-replay-android/blob/main/CHANGELOG.md)'
           -
             handle: session_replay_android_standalone
             field:
@@ -127,6 +134,7 @@ tabs:
               display: 'Session Replay Android Standalone'
               width: 50
               localizable: false
+              instructions: '[link](https://github.com/amplitude/session-replay-android/blob/main/CHANGELOG.md)'
           -
             handle: session_replay_ios
             field:
@@ -134,6 +142,7 @@ tabs:
               display: 'Session Replay iOS'
               localizable: false
               width: 50
+              instructions: '[link](https://github.com/amplitude/session-replay-ios/blob/main/CHANGELOG.md)'
       -
         display: Experiment
         fields:

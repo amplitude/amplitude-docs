@@ -8,6 +8,14 @@ updated_at: 1737484059
 ---
 Amplitude calculates the time spent on an event as the duration between consecutive events of the specified type. To prevent long periods of inactivity from skewing the analysis, Amplitude applies a 30 minute timeout. If no events of the specified type occur within a 30 minute window, Amplitude closes the current time spent window, and begins a new window with the next event.
 
+## Feature availability
+
+Time spent analysis, like other custom metrics, is available to accounts on the Growth or Enterprise plan. For more information, see the [Amplitude pricing page](https://amplitude.com/pricing).
+
+{{partial:admonition type="beta" heading=""}}
+The metrics discussed in this article are in Beta, and may not be available to all Growth and Enterprise accounts. For more information, contact your Amplitude account representative.
+{{/partial:admonition}}
+
 When you specify a group-by property, for example `page URL` or `page type`, any change in its value resets the time spent window. This ensures that Amplitude can accurately attribute time spent to the specific value of the group-by property at the beginning of each window.
 
 In the following example, the timeline represents a set of consecutive page views and their associated page types.
@@ -46,6 +54,10 @@ Time spent metrics are available in data tables. Use these metrics to gain insig
 | Time spent per user      | The average time users spend viewing pages on your site. <br /> <code>TimeSpent(PV) / Uniques(PV where TimeSpent(PV) > 0)</code> |
 | Time spent per page view | The average time spent per page view event. <br /> <code>TimeSpent(PV) / Totals(PV where TimeSpent(PV) > 0)</code>               |
 | Time spent per session   | The average time spent on page views per session. <br /> <code>TimeSpent(PV) / SessionTotals(where TimeSpent(PV) > 0)            |
+
+{{partial:admonition type="note" heading=""}}
+The computation of time spent per user, per page view, and per session metrics are dependent on an internal metric used as the denominator. As a result, Amplitude doesn't support calculating these metrics as a formula.
+{{/partial:admonition}}
 
 Time spent metrics return results in the specified unit of time, for example seconds, minutes, or hours.
 
