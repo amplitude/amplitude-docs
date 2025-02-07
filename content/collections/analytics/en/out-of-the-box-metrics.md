@@ -18,7 +18,7 @@ Amplitude’s Out-of-the-Box (OOTB) metrics provide consistent, validated defini
 
 Amplitude provides the following metrics for web analytics, which use the `[Amplitude] Page Viewed` event:
 
-* Visitors
+* Visitors 
 * Page Views
 * Bounce Rate
 * Entry Rate
@@ -26,6 +26,12 @@ Amplitude provides the following metrics for web analytics, which use the `[Ampl
 * Page Views per Session
 * Session Entries
 * Session Exits
+
+{{partial:admonition type="note" heading="Metrics available to event segmentation charts"}}
+Event Segmentation charts support the Visitors and Page Views metrics.
+
+All metrics are available in a data table.
+{{/partial:admonition}}
 
 Regardless of where you use them, for example in a [Data Table](docs/analytics/charts/data-tables), [Event Segmentation](/docs/analytics/charts/event-segmentation) chart, or OOTB Web Analytics, they reference the same underlying definitions. Updates you make to the metric definition in one place applies everywhere else you use that metric.
 
