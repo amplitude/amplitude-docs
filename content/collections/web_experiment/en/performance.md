@@ -52,4 +52,4 @@ Web Experiment evaluation runs locally with information available synchronously 
 
 ## Ad blockers
 
-Amplitude can't idenitify users who have ad blocking software enabled. As a result, those users don't log assignment events or impressions, and don't experience the experiment.
+Amplitude can't identify users who have ad blocking software enabled. As a result, those users don't log assignment events or impressions, and don't experience the experiment.
