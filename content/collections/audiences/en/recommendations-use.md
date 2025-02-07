@@ -23,9 +23,7 @@ You can give a recommendation access to the Profile API by navigating to the *Sy
 
 The Profile API is a REST endpoint, queryable by user ID or device ID and serving JSON responses on a per user basis:
 
-|  |
-| --- |
-| `https://profile-api.amplitude.com/v1/userprofile` |
+`https://profile-api.amplitude.com/v1/userprofile`
 
 To authenticate to use the API, use the **Secret Key** from the project settings in Amplitude (*Settings → Projects → [select project] → General*).
 
@@ -33,37 +31,36 @@ Query parameters are set to specify the user ID and the recommendation. Results 
 
 The following example request returns the results for a specific user and recommendation. The ID for a specific recommendation is found in the *Details* section of a recommendation page.
 
-|  |
-| --- |
-| `curl -H "Authorization: Api-Key Secret-Key" 'https://profile-api.amplitude.com/v1/userprofile?user_id=myuser&rec_id=s234ssg'` |
+```bash
+curl -H "Authorization: Api-Key Secret-Key" 'https://profile-api.amplitude.com/v1/userprofile?user_id=myuser&rec_id=s234ssg'`
+```
 
 A sample response for this query is:
 
-|  |
-| --- |
-| {
-`"userData": {`
-`"recommendations":
- [` 
-`{` 
-`"rec_id":
- "s234ssg",` 
-`"is_control":
- true,` 
-`"items":
- ["investing-101", "mortgage-rates-primer", "retirement-goals",
- "what-is-a-cd", "setting-up-direct-deposit"],` 
-`"recommendation_source":
- "recommendations_model_v2",` 
-`"last_updated":1.61419226E9` 
-`},` 
-`...` 
-        ],
-`"user_id":"myuser",` 
-`"device_id":"bef34a71-62cd-5b2e-af2f-58cd2eabb4d9",` 
-`"amp_props":null`
-`}`
-} |
+```json
+{
+  "userData": {
+    "recommendations": [
+      {
+        "rec_id": "s234ssg",
+        "is_control": true,
+        "items": [
+          "investing-101",
+          "mortgage-rates-primer",
+          "retirement-goals",
+          "what-is-a-cd",
+          "setting-up-direct-deposit"
+        ],
+        "recommendation_source": "recommendations_model_v2",
+        "last_updated": 1614192260
+      }
+    ],
+    "user_id": "myuser",
+    "device_id": "bef34a71-62cd-5b2e-af2f-58cd2eabb4d9",
+    "amp_props": null
+  }
+}
+```
 
 The response contains three key pieces of information:
 
@@ -73,79 +70,61 @@ The response contains three key pieces of information:
 
 The API can also be used to retrieve user properties, predictions, and cohort membership. The following example sends a request to retrieve a recommendation, all user properties, a prediction and cohort memberships:
 
-|  |
-| --- |
-| `curl -H "Authorization: Api-Key Secret-Key" 'https://profile-api.amplitude.com/v1/userprofile?user_id=myuser&rec_id=s234ssg&get_amp_props=true&prediction_id=t456tth&get_cohorts=true'`  |
+```bash
+curl -H "Authorization: Api-Key Secret-Key" 'https://profile-api.amplitude.com/v1/userprofile?user_id=myuser&rec_id=s234ssg&get_amp_props=true&prediction_id=t456tth&get_cohorts=true'
+```
 
 A sample response for this query is:
 
-|  |
-| --- |
-| `{`
-`"userData": {`
-`"user_id": "myuser",` 
-`"device_id":"bef34a71-62cd-5b2e-af2f-58cd2eabb4d9",` 
-`"amp_props":
- {` 
-`"country":
- "United States",` 
-`"city":"Springfield",` 
-`"first_used":"2019-04-30",` 
-`"language":"English",` 
-`"carrier":"Verizon",` 
-`"last_used":"2021-02-25"` 
-`"plan_type":
- "starter",` 
-`"device":"samsung
- samsung SM-N976V",` 
-`"os":
- "android 30",` 
-`"app_version":"6.1.0",` 
-`"gp:membership_points":
- "1752",` 
-`"gp:initial_utm_campaign":
- "abcd",` 
-`"gp:email":"user@example.com",` 
-`},`
-`"recommendations":
- [` 
-`{` 
-`"rec_id":
- "s234ssg",` 
-`"is_control":
- true,` 
-`"items":
- ["investing-101", "mortgage-rates-primer", "retirement-goals",
- "what-is-a-cd", "setting-up-direct-deposit"],` 
-`"is_control":
- false,` 
-`"recommendation_source":
- "recommendations_model_v2",` 
-`"last_updated":1.61419226E9` 
-`},` 
-`...` 
-`],`
-`"predictions":
- [` 
-`{` 
-`"name":
- "Likelihood to Convert",` 
-`"percentile":
- 97.5,` 
-`"pred_id":
- "t456tth",` 
-`"probability":
- 0.734` 
-`},` 
-`...` 
-`],`
-`"cohort_memberships":
- [` 
-`"u567uui",` 
-`...` 
-`]`
-`}`
-`}` |
+```json
+{
+  "userData": {
+    "user_id": "myuser",
+    "device_id": "bef34a71-62cd-5b2e-af2f-58cd2eabb4d9",
+    "amp_props": {
+      "country": "United States",
+      "city": "Springfield",
+      "first_used": "2019-04-30",
+      "language": "English",
+      "carrier": "Verizon",
+      "last_used": "2021-02-25",
+      "plan_type": "starter",
+      "device": "samsung samsung SM-N976V",
+      "os": "android 30",
+      "app_version": "6.1.0",
+      "gp:membership_points": "1752",
+      "gp:initial_utm_campaign": "abcd",
+      "gp:email": "user@example.com"
+    },
+    "recommendations": [
+      {
+        "rec_id": "s234ssg",
+        "items": [
+          "investing-101",
+          "mortgage-rates-primer",
+          "retirement-goals",
+          "what-is-a-cd",
+          "setting-up-direct-deposit"
+        ],
+        "is_control": false,
+        "recommendation_source": "recommendations_model_v2",
+        "last_updated": 1614192260
+      }
+    ],
+    "predictions": [
+      {
+        "name": "Likelihood to Convert",
+        "percentile": 97.5,
+        "pred_id": "t456tth",
+        "probability": 0.734
+      }
+    ],
+    "cohort_memberships": [
+      "u567uui"
+    ]
+  }
+}
+```
 
 ### Integrate the API
 
