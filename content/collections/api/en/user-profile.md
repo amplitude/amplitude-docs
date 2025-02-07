@@ -12,7 +12,12 @@ updated_at: 1716312404
 lede: 'The User Profile API serves Amplitude user profiles, which include user properties, computed user properties, a list of cohort IDs of cohorts that the user is in, and recommendations.'
 summary: 'Fetch a user profile, which include user properties, computed properties, a list of cohort IDs, and recommendations.'
 ---
+
 ## Considerations
+
+{{partial:admonition type="warning" heading="Server-side API"}}
+Amplitude recommends that you use the User Profile API server-side only. Calling the API from the client may expose your project's secret key.
+{{/partial:admonition}}
 
 **Default experiences**
 
