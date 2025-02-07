@@ -100,4 +100,4 @@ The top-most chart on the Insights tab is the Performance Overview. Here, Amplit
 | -------------------------- | --------------------------------------------------------------------------------------------- |
 | Guides / Surveys viewed    | The number of times the guide or survey was shown to users.                                   |
 | Guides / Surveys completed | The number of times the guide or survey was completed by users.                               |
-| Trend graph                | Trakcs the view or completion count over the time range specified in the date range selector. |
+| Trend graph                | Tracks the view or completion count over the time range specified in the date range selector. |
