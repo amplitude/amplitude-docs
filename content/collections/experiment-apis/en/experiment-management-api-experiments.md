@@ -32,7 +32,6 @@ updated_at: 1734485610
 | [Edit](#edit)                                                     | Edit experiment.                                           |
 | [Create](#create)                                                 | Create a new experiment.                                   |
 
-
 ## List
 
 ```bash
@@ -45,6 +44,8 @@ Fetch a list of experiments including their configuration details. Results are o
 
 | Name              | Description                                                                                                                               |
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `key`             | Filter experiments that have experiment key matches this value.                                                                           |
+| `projectId`       | Filter experiments that belongs to this project.                                                                                          |
 | `limit`           | The max number of experiments to be returned. Capped at 1000.                                                                             |
 | `cursor`          | The offset to start the "page" of results from.                                                                                           |
 | `includeArchived` | Optional. Boolean. By default it is false. When false, only return active experiments. When true, return active and archived experiments. |
@@ -55,14 +56,17 @@ A successful request returns a `200 OK` response and a list of experiments encod
 
 {{partial:tabs tabs="Request, Response"}}
 {{partial:tab name="Request"}}
+
 ```bash
 curl --request GET \
 --url 'https://experiment.amplitude.com/api/1/experiments?limit=1000' \
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer <management-api-key>'
 ```
+
 {{/partial:tab}}
 {{partial:tab name="Response"}}
+
 ```json
 {
     "experiments": [
@@ -115,6 +119,14 @@ curl --request GET \
                     }
                 }
             ],
+            "parentDependencies": {
+                "flags": {
+                    "12345": [
+                        "slot-1"
+                    ]
+                },
+                "operator": "all"
+            },
             "stickyBucketing": false,
             "state": "planning",
             "startDate": null,
@@ -129,6 +141,7 @@ curl --request GET \
     ]
 }
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
 
@@ -152,14 +165,17 @@ A successful request returns a `200 OK` response and a JSON object with the expe
 
 {{partial:tabs tabs="Request, Response"}}
 {{partial:tab name="Request"}}
+
 ```bash
 curl --request GET \
     --url 'https://experiment.amplitude.com/api/1/experiments/<id>' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
 ```
+
 {{/partial:tab}}
 {{partial:tab name="Response"}}
+
 ```bash
 {
     "id": <id>,
@@ -210,6 +226,14 @@ curl --request GET \
             }
         }
     ],
+    "parentDependencies": {
+        "flags": {
+            "12345": [
+                "slot-1"
+            ]
+        },
+        "operator": "all"
+    },
     "stickyBucketing": false,
     "state": "running",
     "startDate": "2023-07-29",
@@ -220,6 +244,7 @@ curl --request GET \
     "createdBy: "x@amplitude.com"
 }
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
 
@@ -243,14 +268,17 @@ A successful request returns a `200 OK` response and a list of experiment's vers
 
 {{partial:tabs tabs="Request, Response"}}
 {{partial:tab name="Request"}}
+
 ```bash
 curl --request GET \
     --url 'https://experiment.amplitude.com/api/1/experiments/<id>/versions' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
 ```
+
 {{/partial:tab}}
 {{partial:tab name="Response"}}
+
 ```json
 [
     {
@@ -374,9 +402,9 @@ curl --request GET \
     }
 ]
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
-
 
 ## Get version details
 
@@ -399,14 +427,17 @@ A successful request returns a `200 OK` response and a JSON object with details 
 
 {{partial:tabs tabs="Request, Response"}}
 {{partial:tab name="Request"}}
+
 ```curl
 curl --request GET \
     --url 'https://experiment.amplitude.com/api/1/experiments/<id>/versions/<versionId>' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
 ```
+
 {{/partial:tab}}
 {{partial:tab name="Response"}}
+
 ```json
 {
     "createdAt": "2023-07-29T03:30:18.427Z",
@@ -462,6 +493,7 @@ curl --request GET \
     }
 }
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
 
@@ -485,32 +517,36 @@ A successful request returns a `200 OK` response and a list of variants encoded 
 
 {{partial:tabs tabs="Request, Response"}}
 {{partial:tab name="Request"}}
+
 ```bash
 curl --request GET \
     --url 'https://experiment.amplitude.com/api/1/experiments/<id>/variants' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
 ```
+
 {{/partial:tab}}
 {{partial:tab name="Response"}}
+
 ```json
 [
-    {
-        "key": "control",
-        "name": "",
-        "payload": {},
-        "description": "",
-        "rolloutWeight": 1
-    },
-    {
-        "key": "treatment",
-        "name": "",
-        "payload": {},
-        "description": "",
-        "rolloutWeight": 1
-    }
+  {
+    "key": "control",
+    "name": "",
+    "payload": {},
+    "description": "",
+    "rolloutWeight": 1
+  },
+  {
+    "key": "treatment",
+    "name": "",
+    "payload": {},
+    "description": "",
+    "rolloutWeight": 1
+  }
 ]
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
 
@@ -535,14 +571,17 @@ A successful request returns a `200 OK` response and a JSON object with details 
 
 {{partial:tabs tabs="Request, Response"}}
 {{partial:tab name="Request"}}
+
 ```bash
 curl --request GET \
     --url 'https://experiment.amplitude.com/api/1/experiments/<id>/variants/<variantKey>' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
 ```
+
 {{/partial:tab}}
 {{partial:tab name="Response"}}
+
 ```bash
 {
     "key": "control",
@@ -552,9 +591,9 @@ curl --request GET \
     "rolloutWeight": 1
 }
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
-
 
 ## Get variant inclusions
 
@@ -577,23 +616,26 @@ A successful request returns a `200 OK` response and a list of inclusions of exp
 
 {{partial:tabs tabs="Request, Response"}}
 {{partial:tab name="Request"}}
+
 ```bash
 curl --request GET \
     --url 'https://experiment.amplitude.com/api/1/experiments/<id>/variants/<variantKey>/users' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
 ```
+
 {{/partial:tab}}
 {{partial:tab name="Response"}}
+
 ```bash
 [
     <user>@<your-company-email>,
     <userId>
 ]
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
-
 
 ## Create variant
 
@@ -611,25 +653,26 @@ Create a new variant for an experiment.
 
 ### Request body
 
-|<div class="med-big-column">Name</div>|Requirement|Type|Description|
-|---|---|---|---|
-|`key`| Required | string | The variant key. |
-|`description`| Optional | string | Description for the variant.|
-|`name`| Optional | string | Name for the variant.|
-|`payload`| Optional | JSON | Optional payload. Value must be a valid JSON element.|
-|`rolloutWeight`| Optional | number | Rollout weight for non-targeted users.|
-
+| <div class="med-big-column">Name</div> | Requirement | Type   | Description                                           |
+| -------------------------------------- | ----------- | ------ | ----------------------------------------------------- |
+| `key`                                  | Required    | string | The variant key.                                      |
+| `description`                          | Optional    | string | Description for the variant.                          |
+| `name`                                 | Optional    | string | Name for the variant.                                 |
+| `payload`                              | Optional    | JSON   | Optional payload. Value must be a valid JSON element. |
+| `rolloutWeight`                        | Optional    | number | Rollout weight for non-targeted users.                |
 
 {{partial:admonition type="example" heading="Request"}}
+
 ```json
 {
-    "key": "new-variant-key",
-    "description": "optional description for variant",
-    "name": "optional name for variant",
-    "payload": {"variant-payload": "example payload"},
-    "rolloutWeight": 0
+  "key": "new-variant-key",
+  "description": "optional description for variant",
+  "name": "optional name for variant",
+  "payload": { "variant-payload": "example payload" },
+  "rolloutWeight": 0
 }
 ```
+
 {{/partial:admonition}}
 
 ### Response
@@ -637,6 +680,7 @@ Create a new variant for an experiment.
 A successful request returns a `200 OK` response and `OK` text.
 
 {{partial:admonition type="example" heading="Example request"}}
+
 ```bash
 curl --request POST \
     --url 'https://experiment.amplitude.com/api/1/experiments/<id>/variants' \
@@ -645,6 +689,7 @@ curl --request POST \
     --header 'Authorization: Bearer <management-api-key>' \
     --data '{"key":"<key>","name":"<name>","description":"<description>","payload":"<payload>","rolloutWeight":<rolloutWeight>}'
 ```
+
 {{/partial:admonition}}
 
 ## Edit variant
@@ -664,24 +709,26 @@ Edit a variant for an experiment.
 
 ### Request body
 
-|<div class="med-big-column">Name</div>|Requirement|Type|Description|
-|---|---|---|---|
-|`key`| Optional | string | The variant key. |
-|`description`| Optional | string | Description for the variant.|
-|`name`| Optional | string | Name for the variant.|
-|`payload`| Optional | JSON | Optional payload. Value must be a valid JSON element. This value replaces the existing value for the variant payload.|
-|`rolloutWeight`| Optional | number | Rollout weight for non-targeted users.|
+| <div class="med-big-column">Name</div> | Requirement | Type   | Description                                                                                                           |
+| -------------------------------------- | ----------- | ------ | --------------------------------------------------------------------------------------------------------------------- |
+| `key`                                  | Optional    | string | The variant key.                                                                                                      |
+| `description`                          | Optional    | string | Description for the variant.                                                                                          |
+| `name`                                 | Optional    | string | Name for the variant.                                                                                                 |
+| `payload`                              | Optional    | JSON   | Optional payload. Value must be a valid JSON element. This value replaces the existing value for the variant payload. |
+| `rolloutWeight`                        | Optional    | number | Rollout weight for non-targeted users.                                                                                |
 
 {{partial:admonition type="example" heading="Example request"}}
+
 ```json
 {
-    "key": "updated-variant-key",
-    "description": "updated-optional description for variant",
-    "name": "optional name for variant",
-    "payload": {"variant-payload": "example payload"},
-    "rolloutWeight": 10
+  "key": "updated-variant-key",
+  "description": "updated-optional description for variant",
+  "name": "optional name for variant",
+  "payload": { "variant-payload": "example payload" },
+  "rolloutWeight": 10
 }
 ```
+
 {{/partial:admonition}}
 
 ### Response
@@ -689,6 +736,7 @@ Edit a variant for an experiment.
 A successful request returns a `200 OK` response and `OK` text.
 
 {{partial:admonition type="example" heading="Request"}}
+
 ```curl
 curl --request PATCH \
     --url 'https://experiment.amplitude.com/api/1/experiments/<id>/variants/<variantKey>' \
@@ -697,6 +745,7 @@ curl --request PATCH \
     --header 'Authorization: Bearer <management-api-key>' \
     --data '{"key":"<key>","name":"<name>","description":"<description>","payload":"<payload>","rolloutWeight":<rolloutWeight>}'
 ```
+
 {{/partial:admonition}}
 
 ## Remove variant
@@ -719,12 +768,14 @@ Remove a variant from an experiment.
 A successful request returns a `200 OK` response and `OK` text.
 
 {{partial:admonition type="example" heading="Request"}}
+
 ```curl
 curl --request DELETE \
     --url 'https://experiment.amplitude.com/api/1/experiments/<id>/variants/<variantKey>' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
 ```
+
 {{/partial:admonition}}
 
 ## Add users to variant
@@ -743,11 +794,13 @@ Add inclusions (users or devices) to experiment's variant.
 | `variantKey` | Required    | string | The variant's key. |
 
 {{partial:admonition type="example" heading="Example request"}}
+
 ```bash
 {
     "inclusions": [<user1>@<your-company-email>, <user2>@<your-company-email>, <userId>]
 }
 ```
+
 {{/partial:admonition}}
 
 ### Request body
@@ -761,6 +814,7 @@ Add inclusions (users or devices) to experiment's variant.
 A successful request returns a `200 OK` response and `OK` text.
 
 {{partial:admonition type="example" heading="Request"}}
+
 ```curl
 curl --request POST \
     --url 'https://experiment.amplitude.com/api/1/experiments/<id>/variants/<variantKey>/users' \
@@ -769,6 +823,7 @@ curl --request POST \
     --header 'Authorization: Bearer <management-api-key>' \
     --data '{"inclusions":<["id1", "id2", "id3"]>}'
 ```
+
 {{/partial:admonition}}
 
 ## Remove users from variant
@@ -792,12 +847,14 @@ Remove inclusions (users or devices) from experiment's variant.
 A successful request returns a `200 OK` response and `OK` text.
 
 {{partial:admonition type="example" heading="Request"}}
+
 ```curl
 curl --request DELETE \
     --url 'https://experiment.amplitude.com/api/1/experiments/<id>/variants/<variantKey>/users/<userIndex>' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
 ```
+
 {{/partial:admonition}}
 
 ## Remove all users from variant
@@ -820,12 +877,14 @@ Remove all inclusions (users or devices) from experiment's variant.
 A successful request returns a `200 OK` response and `OK` text.
 
 {{partial:admonition type="example" heading="Request"}}
+
 ```curl
 curl --request DELETE \
     --url 'https://experiment.amplitude.com/api/1/experiments/<id>/variants/<variantKey>/users' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
 ```
+
 {{/partial:admonition}}
 
 ## Bulk remove users from variant
@@ -854,13 +913,16 @@ Bulk remove users or devices from experiment's variant. Limited to 100 per reque
 A successful request returns a `200 OK` response and `OK` text.
 
 {{partial:admonition type="example" heading="Request"}}
+
 ```curl
 curl --request DELETE \
     --url 'https://experiment.amplitude.com/api/1/experiments/<id>/variants/<variantKey>/bulk-delete-users' \
+    --header 'Content-Type: application/json' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>' \
     --data '{"users":<["id1", "id2", "id3"]>}'
 ```
+
 {{/partial:admonition}}
 
 ## List deployments
@@ -883,14 +945,17 @@ A successful request returns a `200 OK` response and an array of JSON objects wi
 
 {{partial:tabs tabs="Request, Response"}}
 {{partial:tab name="Request"}}
+
 ```curl
 curl --request GET \
     --url 'https://experiment.amplitude.com/api/1/experiments/<id>/deployments' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
 ```
+
 {{/partial:tab}}
 {{partial:tab name="Response"}}
+
 ```json
 [
     {
@@ -902,6 +967,7 @@ curl --request GET \
     }
 ]
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
 
@@ -926,26 +992,30 @@ Add a deployment to an experiment.
 | `deployments`                          | Required    | object | Contains an string array of deployment ids. |
 
 {{partial:admonition type="example" heading="Example request"}}
+
 ```json
 {
-    "deployments": ["<deploymentId>"]
+  "deployments": ["<deploymentId>"]
 }
 ```
-{{/partial:admonition}}
 
+{{/partial:admonition}}
 
 ### Response
 
 A successful request returns a `200 OK` response and `OK` text.
 
 {{partial:admonition type="example" heading="Request"}}
+
 ```curl
 curl --request POST \
     --url 'https://experiment.amplitude.com/api/1/experiments/<id>/deployments' \
+    --header 'Content-Type: application/json' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
     --data '{"deployments":[<deploymentId>]}'
 ```
+
 {{/partial:admonition}}
 
 ## Remove deployment
@@ -968,14 +1038,15 @@ Remove a deployment from an experiment.
 A successful request returns a `200 OK` response and `OK` text.
 
 {{partial:admonition type="example" heading="Request"}}
+
 ```bash
 curl --request DELETE \
     --url 'https://experiment.amplitude.com/api/1/experiments/<id>/deployments/<deploymentId>' \
     --header 'Accept: application/json' \
     --header 'Authorization: Bearer <management-api-key>'
 ```
-{{/partial:admonition}}
 
+{{/partial:admonition}}
 
 ## Edit
 
@@ -991,9 +1062,9 @@ Edit an experiment.
 
 ### Path variables
 
-| Name         | Requirement | Type   | Description        |
-| ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | Experiment's ID.   |
+| Name | Requirement | Type   | Description      |
+| ---- | ----------- | ------ | ---------------- |
+| `id` | Required    | string | Experiment's ID. |
 
 ### Request body
 
@@ -1033,7 +1104,6 @@ Edit an experiment.
 | `subprop_type`                         | Required    | string       | Either `event`, `user` or `group` indicating that the property is either an event, user or group property, respectively. |
 | `subprop_value`                        | Required    | string array | A list of values to filter the event property by.                                                                        |
 
-
 #### subprop_op
 
 - `is`
@@ -1048,44 +1118,44 @@ Edit an experiment.
 - `glob does not match`
 
 {{partial:admonition type="example" heading="Example request"}}
+
 ```json
 {
-    "name": "updated name",
-    "description": "updated description",
-    "bucketingKey": "amplitude_id",
-    "bucketingSalt": "<bucketingSalt>",
-    "evaluationMode": "remote",
-    "rolloutPercentage": 0,
-    "enabled": true,
-    "experimentType": "a-b-test",
-    "stickyBucketing": false,
-    "startDate": "2023-07-31T10:26:00.996Z",
-    "endDate": "2023-09-23T10:26:00.996Z",
-    "tags": ["prod", "staging"],
-    "exposureEvent": {
-        "event_type": "_active",
-        "filters": [
-            {
-                "group_type": "User",
-                "subprop_key": "amplitude_day_of_week",
-                "subprop_op": "is",
-                "subprop_type": "day_time_prop",
-                "subprop_value": [
-                    "Tuesday"
-                ]
-            }
-        ]
-    }
+  "name": "updated name",
+  "description": "updated description",
+  "bucketingKey": "amplitude_id",
+  "bucketingSalt": "<bucketingSalt>",
+  "evaluationMode": "remote",
+  "rolloutPercentage": 0,
+  "enabled": true,
+  "experimentType": "a-b-test",
+  "stickyBucketing": false,
+  "startDate": "2023-07-31T10:26:00.996Z",
+  "endDate": "2023-09-23T10:26:00.996Z",
+  "tags": ["prod", "staging"],
+  "exposureEvent": {
+    "event_type": "_active",
+    "filters": [
+      {
+        "group_type": "User",
+        "subprop_key": "amplitude_day_of_week",
+        "subprop_op": "is",
+        "subprop_type": "day_time_prop",
+        "subprop_value": ["Tuesday"]
+      }
+    ]
+  }
 }
 ```
-{{/partial:admonition}}
 
+{{/partial:admonition}}
 
 ### Response
 
 A successful request returns a `200 OK` response.
 
 {{partial:admonition type="example" heading="Request"}}
+
 ```curl
 curl --request PATCH \
     --url 'https://experiment.amplitude.com/api/1/experiments/<id>' \
@@ -1094,6 +1164,7 @@ curl --request PATCH \
     --header 'Authorization: Bearer <management-api-key>' \
     --data '{"enabled":<enabled>,"rolloutPercentage":<rolloutPercentage>}'
 ```
+
 {{/partial:admonition}}
 
 ## Create
@@ -1124,12 +1195,12 @@ Create a new feature experiment.
 
 The `variants` field contains these objects.
 
-|<div class="med-big-column">Name</div>|Requirement|Type|Description|
-|---|---|---|---|
-|`key`| Required | string | The key (a.k.a value) of the variant. |
-|`payload`| Optional | JSON | Optional payload. Value must be a valid JSON element. |
-|`name`| Optional | string | The variant name. |
-|`description`| Optional | string | The variant description. |
+| <div class="med-big-column">Name</div> | Requirement | Type   | Description                                           |
+| -------------------------------------- | ----------- | ------ | ----------------------------------------------------- |
+| `key`                                  | Required    | string | The key (a.k.a value) of the variant.                 |
+| `payload`                              | Optional    | JSON   | Optional payload. Value must be a valid JSON element. |
+| `name`                                 | Optional    | string | The variant name.                                     |
+| `description`                          | Optional    | string | The variant description.                              |
 
 #### targetSegments
 
@@ -1173,47 +1244,47 @@ A string value representing operations on a property value. Possible values are:
 - `glob does not match`
 
 {{partial:admonition type="example" heading="Example request"}}
+
 ```json
 {
-    "projectId":"<projectId>",
-    "name": "Analyze button clicks experiment",
-    "key": "analyze-button-clicks-experiment",
-    "description": "analyze button clicks on the main page",
-    "variants": [
+  "projectId": "<projectId>",
+  "name": "Analyze button clicks experiment",
+  "key": "analyze-button-clicks-experiment",
+  "description": "analyze button clicks on the main page",
+  "variants": [
+    {
+      "key": "control"
+    },
+    {
+      "key": "treatment"
+    }
+  ],
+  "rolloutWeights": { "control": 1, "treatment": 1 },
+  "targetSegments": [
+    {
+      "name": "Segment 1",
+      "conditions": [
         {
-            "key": "control"
-        },
-        {
-            "key": "treatment"
+          "prop": "country",
+          "op": "is",
+          "type": "property",
+          "values": ["United States"]
         }
-    ],
-    "rolloutWeights": {"control": 1, "treatment": 1},
-    "targetSegments": [
-        {
-            "name": "Segment 1",
-            "conditions": [
-                {
-                    "prop": "country",
-                    "op": "is",
-                    "type": "property",
-                    "values": [
-                        "United States"
-                    ]
-                }
-            ],
-            "percentage": 0,
-            "bucketingKey": "amplitude_id",
-            "rolloutWeights": {
-                "control": 1,
-                "treatment": 1
-            }
-        }
-    ],
-    "deployments": ["<deploymentId>"],
-    "evaluationMode": "remote",
-    "experimentType": "a-b-test"
+      ],
+      "percentage": 0,
+      "bucketingKey": "amplitude_id",
+      "rolloutWeights": {
+        "control": 1,
+        "treatment": 1
+      }
+    }
+  ],
+  "deployments": ["<deploymentId>"],
+  "evaluationMode": "remote",
+  "experimentType": "a-b-test"
 }
 ```
+
 {{/partial:admonition}}
 
 ### Response
@@ -1222,6 +1293,7 @@ A successful request returns a `200 OK` response and a JSON object with the expe
 
 {{partial:tabs tabs="Request, Response"}}
 {{partial:tab name="Request"}}
+
 ```bash
 curl --request POST \
     --url 'https://experiment.amplitude.com/api/1/experiments' \
@@ -1230,13 +1302,16 @@ curl --request POST \
     --header 'Authorization: Bearer <management-api-key>' \
     --data '{"projectId":"<projectId>","key":"<key>"}'
 ```
+
 {{/partial:tab}}
 {{partial:tab name="Response"}}
+
 ```json
 {
-    "id": "<id>",
-    "url": "http://experiment.amplitude.com/amplitude/<projectId>/config/<id>"
+  "id": "<id>",
+  "url": "http://experiment.amplitude.com/amplitude/<projectId>/config/<id>"
 }
 ```
+
 {{/partial:tab}}
 {{/partial:tabs}}
