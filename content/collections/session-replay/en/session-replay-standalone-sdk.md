@@ -510,3 +510,22 @@ amplitude.remove('amplitude');
 // session replay properties
 amplitude.track('event name')
 ```
+
+### Troubleshoot Segment integration
+
+Ensure that `getSessionReplayProperties()` returns a valid value in the format as follows `cb6ade06-cbdf-4e0c-8156-32c2863379d6/1699922971244`. 
+
+The value provided by `getSessionReplayProperties()` represents the concatenation of `deviceId` and `sessionId` in the format `${deviceId}/${sessionId}`. 
+
+If the instance returns empty, your Segment middleware may not have populated the values for the Amplitude integration field `payload.obj.integrations['Actions Amplitude']`. If this happens, add the following `setTimeout` wrapper to ensure this field populate with a valid value.
+
+```js
+SegmentAnalytics.addSourceMiddleware(({ payload, next, integrations }) => {
+  	const storedSessionId = getStoredSessionId()
+	setTimeout(() => { //[tl! ~~:2]
+      ... // Rest of the Segment integrations code
+	}, 0) 
+	next(payload)
+});
+```
+
