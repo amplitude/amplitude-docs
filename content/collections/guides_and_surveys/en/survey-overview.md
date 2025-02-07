@@ -13,7 +13,7 @@ Surveys are a source of user feedback. Like [guides](/docs/guides-and-surveys/gu
 
 ## Survey templates
 
-Surveys offer different templates than [guides](/docs/guides-and-surveys/guides/guide-templates). When you create a new survey, you can start with a blank guide, or use a template. Guides includes the following templates:survey
+Surveys offer different templates than [guides](/docs/guides-and-surveys/guides/guide-templates). When you create a new survey, you can start with a blank guide, or use a template. Guides includes the following templates:
 
 | Template      | Use case                                                                                                                 |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------ |
