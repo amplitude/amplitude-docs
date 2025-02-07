@@ -15,6 +15,10 @@ Sticky bucketing ensures that a user will continue to see the same variant even 
 Sticky bucketing is often used as a defense mechanism against [variant jumping](https://www.docs.developers.amplitude.com/experiment/guides/troubleshooting/variant-jumping/): when a user is exposed to two or more variants for a single flag or experiment. However, simply enabling sticky bucketing does not guarantee that you’ll never see variant jumping. For example, it may still occur if your experiment includes both a logged-out and a logged-in experience, since a user may have a different Amplitude ID when they are logged in versus not.
 
 {{partial:admonition type='note'}}
+Sticky bucketing is only available on experiments not flags.
+{{/partial:admonition}}
+
+{{partial:admonition type='note'}}
  Amplitude Experiment uses [consistent bucketing](https://www.docs.developers.amplitude.com/experiment/general/evaluation/implementation/#consistent-bucketing) and a [deterministic hashing algorithm](https://www.docs.developers.amplitude.com/experiment/general/evaluation/implementation/#hashing), which keeps users bucketed into their original variants as long as you don’t change anything. 
 {{/partial:admonition}}
 
