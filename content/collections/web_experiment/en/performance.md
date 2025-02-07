@@ -49,3 +49,7 @@ The cache control response header that configures browser caching is:
 ## Evaluation
 
 Web Experiment evaluation runs locally with information available synchronously in the browser. As a result, evaluation is CPU bound and usually takes less than 1ms to evaluate and apply variant actions.
+
+## Ad blockers
+
+Amplitude can't idenitify users who have ad blocking software enabled. As a result, those users don't log assignment events or impressions, and don't experience the experiment.
