@@ -171,6 +171,8 @@ When using CDC Continuous Sync, keep the following things in mind:
   
   To delete all data associated with an end-user from Amplitude's systems, deleting the user from your data warehouse isn't enough. This process requires a User Privacy API request to ensure the user's data is removed from Amplitude's systems
 
+- CDC Continuous Sync events and mutations don't support unknown users. Rows must contain a user id or Amplitude drops the event. If you have a high volume of anonymous events, Amplitude recommends against using this mode. 
+
 ## Migrate to Change Data Capture (CDC) Continuous Sync
 
 Amplitude recommends that you create a new project to test sending and mutating data. When you confirm that data is mapped and mutated correctly, complete the following steps in your main project:
