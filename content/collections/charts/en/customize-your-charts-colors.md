@@ -15,7 +15,7 @@ You can update the color theme of your charts in Amplitude to match your brand's
 
 ### Availability
 
-Chart color themes are available to organizations on an **Enterprise** plan. For more information, see [Amplitude's pricing page](https://amplitude.com/pricing).
+Chart color themes are available to organizations on a **Growth** or **Enterprise** plan. For more information, see [Amplitude's pricing page](https://amplitude.com/pricing).
 
 ## Apply a theme to a new or existing chart
 

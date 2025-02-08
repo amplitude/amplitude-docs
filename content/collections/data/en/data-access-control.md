@@ -45,7 +45,16 @@ DAC applies only to properties. It **doesn’t** apply to definitions or metadat
 
 ### Classify properties
 
-1. In Amplitude Data, navigate to *Properties* and select the tab that contains the properties you want to classify. DAC enables you to classify User, Event, and Group properties in your tracking plan with the exception of Amplitude ID, Version, Platform, Group ID, and Group name.
+1. In Amplitude Data, navigate to *Properties* and select the tab that contains the properties you want to classify. DAC enables you to classify User, Event, and Group properties in your tracking plan except Amplitude ID, Version, Platform, Group ID, and Group name.
+  
+    {{partial:admonition type="note" heading="Properties not eligible for classification"}}
+    Amplitude doesn't support classifying transformed properties or unexpected properties. 
+    
+    Transformed properties inherit classification from its component properties.
+
+    To classify an unexpected property, add it to your tracking plan.
+    {{/partial:admonition}}
+
 2. Click the name of the property you’re interested in. You can manage event, user, and group properties directly; derived properties inherit all the classifications of their parent properties.
 3. In the details panel that opens, click the *Classification* drop-down and select all relevant classifications for this property. Then click *Send*.
 4. Repeat steps 2 and 3 for each property you want to classify.

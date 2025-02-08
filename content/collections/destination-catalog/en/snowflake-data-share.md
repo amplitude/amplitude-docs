@@ -16,7 +16,7 @@ integration_icon: partner-icons/snowflake.svg
 integration_type:
   - event-streaming
 ---
-Get access to your Amplitude events via Snowflake's Data Share product.
+Get access to your Amplitude events through Snowflake's Data Share product.
 
 Amplitude supports [Snowflake’s Data Share](https://docs.snowflake.com/en/user-guide/data-sharing-intro.html) integration to give customers access to their event data that lives within Amplitude. Amplitude’s integration currently supports sharing a Raw Events table and a Merged ID table. 
 
@@ -44,6 +44,11 @@ You need admin/manager privileges in Amplitude, as well as a role that allows yo
       - **Account Name**: This is the account name on your Snowflake account. It's the first part of your Snowflake URL, after `https://` and before 'snowflakecomputing.com'. For example, if your Snowflake URL is `http://amplitude.snowflakecomputing.com`, then you should enter `amplitude`.
       - **Org Name**: This is the name of your Snowflake organization.
 4. Choose which data to include in this export: *Raw events every 5 minutes*, *Merged IDs every hour*, or both. For events, you can also specify filtering conditions to only export events that meet certain criteria.
+
+    {{partial:admonition type="note" heading=""}}
+    The option you choose here reflects the interval *after* Amplitude injests the data.
+    {{/partial:admonition}}
+
 5. Click **Next**, enter the name of this Snowflake export and click Finish.
 
 When complete, Amplitude sends all future events to Snowflake with Data Share.

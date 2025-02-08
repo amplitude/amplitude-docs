@@ -26,7 +26,7 @@ This feature is available on Plus, Growth, or Enterprise plans. For more informa
 
 ## Example use cases
 
-1. **Example 1:** If you stream events to AppsFlyer, which requires unique event names for attribution and doesn’t understand event properties, you had to create custom events in the backend and resend them to Amplitude CDP. With this feature, you can now use Amplitude Data to rename your events before sending them to AppsFlyer. This streamlines your process, reducing duplicate ingestion and optimizing event volume.
+1. **Example 1:** If you stream events to AppsFlyer, which requires unique event names for attribution and doesn’t understand event properties, you had to create custom events in the backend and resend them to Amplitude Activation. With this feature, you can now use Amplitude Data to rename your events before sending them to AppsFlyer. This streamlines your process, reducing duplicate ingestion and optimizing event volume.
 2. **Example 2:** If you want to stream derived properties from Amplitude to Braze to improve your campaign effectiveness, you can now select derived properties in sync filters and include them when sending more properties. This means you can run more targeted and efficient campaigns using the enriched event data from Amplitude.
 
 ## Considerations

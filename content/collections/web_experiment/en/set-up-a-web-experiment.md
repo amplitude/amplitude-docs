@@ -32,13 +32,13 @@ To set up a web experiment, follow these steps:
 
     ![web-exp-1.png](/docs/output/img/workflow/web-exp-1.png)
 
-{{partial:admonition type='note'}}
-If the script isn’t present on the page you specify, Amplitude Experiment can’t open the Visual Editor, and opens the Site Setup panel and prompt you to [implement](/docs/web-experiment/implementation) the script.
-{{/partial:admonition}}
+    {{partial:admonition type='warning'}}
+    If the script isn’t present on the page you specify, or if you have an ad blocker or other privacy extension enabled, Amplitude Experiment can’t open the Visual Editor, and opens the Site Setup panel and prompt you to [implement](/docs/web-experiment/implementation) the script.
+    {{/partial:admonition}}
 
-1. To change text, colors, or other elements of the page’s UI, click *Element Changes*.
-2. Click the element you want to change.
-3. The element’s editing panel opens on the right-hand side. Edit the element’s display mode, visibility, text, background, color, or size here. Then click *Apply*.
+4. To change text, colors, or other elements of the page’s UI, click *Element Changes*.
+5. Click the element you want to change.
+6. The element’s editing panel opens on the right-hand side. Edit the element’s display mode, visibility, text, background, color, or size here. Then click *Apply*.
 
     ![web-exp-2.png](/docs/output/img/workflow/web-exp-2.png)
 
@@ -68,6 +68,10 @@ A new tab opens with the changes you made to the page applied.
 Test each variant at least once, and testing on more than one page if your experiment targets multiple pages.
 
 If you don't see your changes, **you may need to wait up to 60 seconds** for caches to refresh. If the changes don't appear correctly after that time, there might be something wrong with the configuration.
+
+{{partial:admonition type="warning" heading="Ad blockers"}}
+Ad blocking plugins or extensions may prevent you from testing and previewing your experiment. 
+{{/partial:admonition}}
 
 ## The Visual Editor
 
