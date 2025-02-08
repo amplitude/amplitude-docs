@@ -61,5 +61,6 @@ Yes. Once you change the custom session definition, all sessions, including thos
 It does not affect the raw data, and you can revert it to the default session definition at any time.
 {{/partial:collapse}}
 
-Does a server-side integration between Amplitude and Segment provide a Session ID automatically?
+{{partial:collapse name="Does a server-side integration between Amplitude and Segment provide a Session ID automatically?"}}
 Please see [the FAQ article on Segment / Amplitude integration](/docs/faq/segment-amplitude-integration) to learn more.
+{{/partial:collapse}}
