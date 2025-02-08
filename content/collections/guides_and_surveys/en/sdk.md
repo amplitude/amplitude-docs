@@ -46,7 +46,7 @@ amplitude.add(engagementPlugin());
 
 ## Initialize the SDK
 
-Using the Guides and Surveys standalone SDK with a third-party analytics provider requires extra configuration to help map properties to Amplitude. This initialization code accepts parameters that define the user and any integrations.
+Using the Guides and Surveys standalone SDK requires extra configuration to help map properties to Amplitude. This initialization code accepts parameters that define the user and any integrations.
 
 ```js
 boot(options: BootOptions): Promise<void>
@@ -99,7 +99,6 @@ analytics.ready(() => {
 });
 
     // (Optional) Forward events from segment to do event-based triggers for Guides and Surveys. These events aren't sent to the server
-    // This doesn't handle listening to page views. If you require this functionality, add another .on() call.
     analytics.on('track', (event, properties, options) => {
   	  window.engagement.forwardEvent({ event_type: event, event_properties: properties});
     });
@@ -110,7 +109,7 @@ analytics.ready(() => {
 });
 ```
 
-## Forward event
+#### Forward event
 
 Trigger Guides and Surveys programmatically.
 
@@ -158,24 +157,6 @@ window.engagement.setThemeMode("dark_mode");
 window.engagement.setThemeMode("light_mode");
 ```
 
-## Integrations
-
-Add tracking capability to the Guides and Surveys SDK to enable monitoring of survey interactions.
-
-```js
-addIntegration(integration: Integration): void
-```
-
-| Parameter     | Type          | Description                                               |
-| ------------- | ------------- | --------------------------------------------------------- |
-| `integration` | `Integration` | Required. Integration implementation for tracking events. |
-
-```js
-interface Integration {
-  track: (event: Event) => void;
-}
-```
-
 ## Router configuration
 
 Configure how Guides and Surveys handles URLs in a single page application (SPA).
@@ -200,19 +181,6 @@ const MyComponent = () => {
   }, []);
 };
 ```
-
-## Forward event
-
-Trigger Guides and Surveys programmatically.
-
-```js
-forwardEvent(event: Event): void
-```
-
-| Parameter | Type    | Description                                                                                                             |
-| --------- | ------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `event`   | `Event` | Required. An [event](/docs/sdks/analytics/browser/browser-sdk-2#track-an-event) object that launches a guide or survey. |
-
 
 ## Reset
 
