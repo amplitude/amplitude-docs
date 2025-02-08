@@ -23,7 +23,7 @@ Send Amplitude cohorts to Google Ads to create audiences for more personalized c
 ## Considerations
 
 - You should have an understanding of [Amplitude Audiences](https://help.amplitude.com/hc/en-us/articles/360028552471-Amplitude-Engage) and [Behavioral Cohorts](https://help.amplitude.com/hc/en-us/articles/231881448) before setting up this integration.
-- You need a Google Ads Manager account.
+- You need a Google Ads account.
 - You should already have identified an Amplitude user property that matches what you're using for your user ID field in Google Ads.
 - The integration is enabled on a per-project basis.
 - It takes 6 to 48 hours for a list to be populated with members, so you’ll most likely see an “In Progress” status (on the Google Ads UI) if you upload to an audience list more frequently than once every 12 hours.
@@ -32,7 +32,7 @@ Send Amplitude cohorts to Google Ads to create audiences for more personalized c
 
 ### Prerequisites
 
-Before you begin, log in to your [Google Ads Manager account](https://ads.google.com/home/).
+Before you begin, log in to your [Google Ads account](https://ads.google.com/home/).
 
 ### Amplitude setup
 

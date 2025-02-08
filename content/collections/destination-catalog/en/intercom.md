@@ -23,7 +23,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1713478974
 ---
 
-Amplitude CDP's Intercom streaming integration enables you to forward your Amplitude events and users straight to [Intercom](https://www.intercom.com/) with just a few clicks.
+Amplitude Activation's Intercom streaming integration enables you to forward your Amplitude events and users straight to [Intercom](https://www.intercom.com/) with just a few clicks.
 
 ## Setup
 

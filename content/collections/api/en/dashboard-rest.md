@@ -573,6 +573,10 @@ Returns a JSON object with this schema:
 
 Get the list of events with the current week's totals, uniques, and % DAU (daily active users).
 
+{{partial:admonition type="note" heading=""}}
+This endpoint returns events that are visible. Hidden events aren't returned by the API.
+{{/partial:admonition}}
+
 `GET https://amplitude.com/api/2/events/list`
 
 {{partial:tabs tabs="cURL, HTTP"}}
