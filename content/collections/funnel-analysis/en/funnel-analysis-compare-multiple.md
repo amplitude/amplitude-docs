@@ -8,7 +8,7 @@ this_article_will_help_you:
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717015094
 ---
-In a Funnel Analysis chart, you can compare up to three events within a single conversion step. After [step 4 of building your funnel](/docs/analytics/charts/funnel-analysis/funnel-analysis-build), select *Compare Event*from the *Options* fly-out menu, and then select the events to compare.
+In a Funnel Analysis chart, you can compare up to three events within a single conversion step. After [step 4 of building your funnel](/docs/analytics/charts/funnel-analysis/funnel-analysis-build), select *Compare Event* from the *Options* fly-out menu, and then select the events to compare.
 
 ![multiple_CEsin_funnel.png](/docs/output/img/funnel-analysis/multiple-cesin-funnel-png.png)
 
