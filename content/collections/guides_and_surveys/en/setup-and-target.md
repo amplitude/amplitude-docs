@@ -111,3 +111,22 @@ Access guide settings with the gear icon at the top of the builder.
 | Duration          | How long the snooze lasts. The guide doesn't re-appear for the user until at least that much time has passed.                        |
 | Show on all steps | If disabled, the guide’s first step is the only step with a snooze option.                                                           |
 | Show step counter | Adds a step counter to each step in the guide. For example, on a guide with five steps, the user would see `2/5` on the second step. |
+
+## Active state
+
+When a user first views a guide or survey, it becomes "active". It remains active until that user completes or dismisses it. For example:
+
+* A user sees a guide on your homepage.
+* They navigate to the contact page.
+* The guide remains active even though the trigger condition wasn't met. As a result, the guide follows the user to the contact page.
+
+If a guide or survey is temporarily hidden, Amplitude doesn't show it to the user, but it remains active. Once the `temporarily hide if` rules aren't met, the active guide or survey is eligible for display again.
+
+### Tiebreakers when multiple guides are eligible for display
+
+When you have more than one guide or survey that are eligible for display at the same time, Amplitude uses these tiebreakers to decide which experience to show:
+
+1. Amplitude shows active guides or surveys before inactive.
+2. Priority
+3. Most recently seen (relevant for active guides and surveys only)
+4. Most recently created
