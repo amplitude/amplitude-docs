@@ -18,6 +18,14 @@ tabs:
         fields:
           -
             import: article_common
+  glossary:
+    display: Glossary
+    sections:
+      -
+        display: 'New Section'
+        fields:
+          -
+            import: analytics_glossary
   sidebar:
     display: Sidebar
     sections:
