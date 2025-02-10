@@ -14,6 +14,18 @@ Amplitude provides you with both high level data in the form of aggregate use an
 
 A survey's Insights tab contains information to help you understand how your surveys are performing. It tracks responses, identifies trends, and filters data so you can make better decisions based on user feedback.
 
+### Type-specific insights
+
+Some survey types offer insights that are specific to the type of data they capture.
+
+#### NPS
+
+NPS survey questions enable a breakdown of promoters (score: 8 - 10), passives (score: 6,7), and detractors (score: 0 - 5). To calculate the NPS, subtract `% detractors` from `% promoters`.
+
+#### List
+
+See the breakdown of responses by option.
+
 ### Filter card
 
 The Filter card enables you to narrow the scope of your analysis to a specific date range, segment, or property condition. For example, look at a users on a specific account tier engaged, or find look at users who performed a specific action.
