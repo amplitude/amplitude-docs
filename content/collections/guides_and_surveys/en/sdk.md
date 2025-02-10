@@ -11,7 +11,9 @@ Amplitude's Guides and Surveys SDK enables you to deploy [Guides and Surveys](/d
 
 ## Install the SDK
 
-Guides and Surveys supports different installation options to work best with your existing Amplitude implementation, if you have one. 
+Guides and Surveys supports different installation options to work best with your existing Amplitude implementation, if you have one.
+
+### Amplitude Browser SDK
 
 Install the Guides and Surveys SDK with a script, or as a package with npm or Yarn.
 
@@ -20,6 +22,7 @@ Install the Guides and Surveys SDK with a script, or as a package with npm or Ya
 Place the script tag below your Amplitude script tag.
 ```html
 <script src="https://cdn.amplitude.com/script/API_KEY.engagement.js"></script>
+<script>amplitude.add(window.engagement.plugin())</script>
 ```
 {{/partial:tab}}
 {{partial:tab name="npm"}}
@@ -44,9 +47,9 @@ amplitude.add(engagementPlugin());
 {{/partial:tab}}
 {{/partial:tabs}}
 
-## Initialize the SDK
+### Third-party analytics provider
 
-Using the Guides and Surveys standalone SDK requires extra configuration to help map properties to Amplitude. This initialization code accepts parameters that define the user and any integrations.
+Using the Guides and Surveys standalone SDK with another analytics provider requires extra configuration to help map properties to Amplitude. This initialization code accepts parameters that define the user and any integrations.
 
 ```js
 boot(options: BootOptions): Promise<void>
@@ -132,6 +135,25 @@ window.engagement
 ```
 
 If the response is `undefined`, Guides and Surveys isn't installed properly.
+
+#### Content Security Policy (CSP)
+
+If your organization has a strict Content Security Policy (CSP), Guides and Surveys requires some additions to ensure smooth operation.
+
+When you use the Amplitude Browser SDK 2 for analytics, add the following items to your CSP:
+
+```text
+script-src: https://*.amplitude.com;
+connect-src: https://*.amplitude.com;
+```
+
+Regardless of the analytics provider you use, Guides and Surveys requires the following additions:
+
+```text
+img-src: https://*.amplitude.com;
+media-src: https://*.amplitude.com;
+style-src: https://*.amplitude.com;
+```
 
 
 ## Manage themes
