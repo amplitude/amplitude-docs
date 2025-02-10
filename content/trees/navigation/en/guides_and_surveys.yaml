@@ -12,6 +12,9 @@ tree:
     id: ad52c7aa-af7f-4141-aa85-c1953f5f1dc3
     entry: 3fc426d8-2e6e-4345-83cd-fe4935c330bb
   -
+    id: 78d24f80-297a-4d50-a6df-4a84b98486b9
+    entry: d402c648-6218-4450-b216-0439206e1206
+  -
     id: 6c5428c2-6e5b-424b-b470-adb40f091f37
     title: Guides
     children:
