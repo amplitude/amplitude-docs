@@ -4,7 +4,7 @@ blueprint: guides_and_survey
 title: 'Analytics Glossary'
 landing: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1739213463
+updated_at: 1739222791
 glossary:
   -
     id: m6zctaju
@@ -21,6 +21,15 @@ glossary:
         event_name: 'Is From Debug Mode'
         data_type: boolean
         event_description: 'True when the event was sent from preview mode. Use this property to filter administrative activity.'
+      -
+        id: m6zkam1u
+        event_name: 'Lifecycle UUID'
+        data_type: string
+        event_description: |-
+          Enables grouping of Guides and Surveys events by lifecycle.
+          A guide's or survey’s "lifecycle" starts when it is triggered and ends when it is completed or dismissed. Lifecycle is independent of the application sessions.
+
+          Lifecycle UUID is useful for analyzing events for a given guide/survey across multiple app sessions.
       -
         id: m6zd4uip
         event_name: Page
@@ -91,7 +100,6 @@ glossary:
         id: m6zdxj4f
         event_name: 'Rage closed'
         event_description: 'The guide or survey was closed within two seconds of appearing.'
-        event_specific_properties:
       -
         id: m6zdxx5e
         event_name: Completed
@@ -105,7 +113,6 @@ glossary:
           5. On a list or rating survey with no question on the last step, the user selects any option.
 
           This event doesn't fire on Tooltips.
-        event_specific_properties:
     type: event_set
     enabled: true
   -

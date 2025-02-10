@@ -9,6 +9,10 @@ landing: false
 ---
 Knowing what your users respond to best is tricky. To help with this challenge, Guides and Surveys works with Amplitude Experiment.
 
+{{partial:admonition type="note" heading="Experiment SDK not required"}}
+When you install the [Guides and Surveys SDK](/docs/guides-and-surveys/sdk), you get everything you need to run experiments on your Guides and Surveys.
+{{/partial:admonition}}
+
 ## Run an experiment
 
 To add experimentation to your guide or survey, click the add experiment icon. 
@@ -57,7 +61,7 @@ If you're ready to conclude experiment, navigate to the experiment's configurati
 
 | Option                      | Description                                                                                                                                                                                                                                                                                               |
 | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Complete experiment         | Declare a winner. If one of the variants is the winner, Amplitude archives the associated guide or survey, and publishes a new guide that contains only the winning variant.<br/><br/>If you select the control, the experiment completes, and Amplitude archives the corresponding guide or survey. |
+| Complete experiment         | Declare a winner. If one of the variants is the winner, Amplitude archives the losing variant, and publishes the winning variant.<br/><br/>If you select the control, the experiment returns to a state as if you just created it, and sets the rollout of the control variant to 100%.  |
 | Continue running experiment | The experiment remains live, enabling you to collect more data.                                                                                                                                                                                                                                           |
 
 ## Insights
