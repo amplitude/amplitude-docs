@@ -1051,7 +1051,7 @@ curl --request DELETE \
 ## Edit
 
 {{partial:admonition type='note'}}
-Web Experimentation doesn't support the editing of experiments. Attempts to edit a web experiment return a `405` error.
+Neither Web Experimentation or Guides and Surveys support editing experiments. Attempts to edit a web experiment or a guides and surveys experiment return a `405` error.
 {{/partial:admonition}}
 
 ```bash
