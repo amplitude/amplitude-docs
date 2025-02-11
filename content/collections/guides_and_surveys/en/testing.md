@@ -24,7 +24,7 @@ Preview mode is accessible from the builder:
 
 1. Open a guide or survey.
 2. Click **Test & Preview**.
-3. Enter the URL of the page with the [Guides and Sureys SDK](/docs/guides-and-surveys/sdk) installed.
+3. Enter the URL of the page with the [Guides and Surveys SDK](/docs/guides-and-surveys/sdk) installed.
 4. Amplitude verifies that the SDK is available on the URL, and opens it in a new tab with the preview bar visible.
 
 ![](statamic://asset::help_center_conversions::guides-surveys/preview-bar.png)
