@@ -160,6 +160,7 @@ When you see this error in a replay, one of the following may have happened:
 If you see this error:
 
 * **Check for throttle errors**. Open the [Ingestion Monitor](/docs/session-replay/ingestion-monitor). Check for a spike `429` throttling errors. If you know a period of high traffic is coming up due to a campaign or other event, contact [Amplitude Support](https://gethelp.amplitude.com/hc/en-us) for a temporary change to the throttle threshold.
+* **Leave in-product feedback**. Leave a thumbs-down if the replay you're viewing doesn't meet expectation.
 * **Contact Amplitude**. If you see issues in replace collection that you think might relate to missing data, contact [Amplitude Support](https://gethelp.amplitude.com/hc/en-us).
 
 ### Replay temporarily unavailable due to ingestion delay
