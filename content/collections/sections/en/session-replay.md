@@ -142,3 +142,28 @@ There are some limitations when using Session Replay:
 	* Lottie Animations (web and mobile)
 	* iFrames not from origin
 	* Assets that require authentication, like fonts, CSS files, and images
+
+## Troubleshoot replay playback
+
+Sometimes, replays may appear missing or otherwise unavailable for playback. The causes of these issues, and steps you can take to to mitigate them depend on the issue.
+
+### Parts of this session weren't captured
+
+If you experience this error, parts of a replay may show as inactive periods because Amplitude doesn't capture any user interaction during that period. Sometimes, it impacts the entire replay.
+
+When you see this error in a replay, one of the following may have happened:
+
+* **The user closed the browser**. Amplitude captures and uploads session replays as users use your product. If they leave the app or close their browser before the session replay uploads, some parts of the replay appear to be missing in Amplitude and unavailable for playback.
+* **Network issues**. If the user on your site or app experiences network degradation, their replay may fail to upload. If you notice pattern, or commonly experience this issue, contact [Amplitude Support](https://gethelp.amplitude.com/hc/en-us).
+* **Requests throttled**. During holiday periods, special events, or other peak times, traffic to your site or app may spike resulting in a large volume of session replays. In these instances, Amplitude may throttle uploads to keep system performance.
+
+If you see this error:
+
+* **Check for throttle errors**. Open the [Ingestion Monitor](/docs/session-replay/ingestion-monitor). Check for a spike `429` throttling errors. If you know a period of high traffic is coming up due to a campaign or other event, contact [Amplitude Support](https://gethelp.amplitude.com/hc/en-us) for a temporary change to the throttle threshold.
+* **Contact Amplitude**. If you see issues in replace collection that you think might relate to missing data, contact [Amplitude Support](https://gethelp.amplitude.com/hc/en-us).
+
+### Replay temporarily unavailable due to ingestion delay
+
+This message appears when you view a replay that Amplitude ingested within the last five minutes. It takes Amplitude one or two minutes to make a replay available for playback.
+
+Live replays that are longer than five minutes become available for playback as soon as Amplitude receives enough data to generate the replay. Refresh the page for the most recent replay data.
