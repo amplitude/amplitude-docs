@@ -112,18 +112,6 @@ analytics.ready(() => {
 });
 ```
 
-#### Forward event
-
-Trigger Guides and Surveys programmatically.
-
-```js
-forwardEvent(event: Event): void
-```
-
-| Parameter | Type  | Description                                                                                                                       |
-| --------- | ----- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `event`   | Event | Required. An [event](/docs/sdks/analytics/browser/browser-sdk-2#track-an-event) object that launches a guide or survey. |
-
 {{/partial:collapse}}
 
 ### Verify installation and initialization
@@ -246,6 +234,19 @@ gs.show(key: string, stepIndex?: number): void
 | ----------- | -------- | --------------------------------------------------------------------------------- |
 | `key`       | `string` | Required. The guide or survey's key.                                              |
 | `stepIndex` | `number` | Required. The zero-based index of the step to show. Defaults to the initial step. |
+
+## Forward event
+
+Trigger Guides and Surveys programmatically.
+
+```js
+forwardEvent(event: Event): void
+```
+
+| Parameter | Type  | Description                                                                                                                       |
+| --------- | ----- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `event`   | Event | Required. An [event](/docs/sdks/analytics/browser/browser-sdk-2#track-an-event) object that launches a guide or survey. |
+
 
 ## Close all
 
