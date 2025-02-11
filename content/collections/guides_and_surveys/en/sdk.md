@@ -52,7 +52,7 @@ amplitude.add(engagementPlugin());
 Using the Guides and Surveys standalone SDK with another analytics provider requires extra configuration to help map properties to Amplitude. This initialization code accepts parameters that define the user and any integrations.
 
 ```js
-boot(options: BootOptions): Promise<void>
+engagement.boot(options: BootOptions): Promise<void>
 ```
 
 | Parameter              | Type                           | Description                                                             |
@@ -149,7 +149,7 @@ style-src: https://*.amplitude.com;
 Configure the visual theme that displays to the user.
 
 ```js
-setThemeMode(mode: ThemeMode): void
+engagement.setThemeMode(mode: ThemeMode): void
 ```
 
 | Parameter | Type                              | Description                          |
@@ -172,7 +172,7 @@ window.engagement.setThemeMode("light_mode");
 Configure how Guides and Surveys handles URLs in a single page application (SPA).
 
 ```js
-setRouter(routerFn: (url: string) => void): void
+engagement.setRouter(routerFn: (url: string) => void): void
 ```
 
 | Parameter  | Type                    | Description                                           |
@@ -197,7 +197,7 @@ const MyComponent = () => {
 Reset a guide or survey to a specific step.
 
 ```js
-gs.reset(key: string, stepIndex?: number)
+engagement.gs.reset(key: string, stepIndex?: number)
 ```
 
 | Parameter   | Type     | Description                                                                           |
@@ -210,7 +210,7 @@ gs.reset(key: string, stepIndex?: number)
 Retrieve a list of visible guides or surveys
 
 ```js
-ga.list(): Array<GuideOrSurvey>
+engagement.gs.list(): Array<GuideOrSurvey>
 ```
 
 ```js
@@ -227,7 +227,7 @@ interface GuideOrSuvey {
 Display a specific guide or survey.
 
 ```js
-gs.show(key: string, stepIndex?: number): void
+engagement.gs.show(key: string, stepIndex?: number): void
 ```
 
 | Parameter   | Type     | Description                                                                       |
@@ -240,7 +240,7 @@ gs.show(key: string, stepIndex?: number): void
 Trigger Guides and Surveys programmatically.
 
 ```js
-forwardEvent(event: Event): void
+engagement.forwardEvent(event: Event): void
 ```
 
 | Parameter | Type  | Description                                                                                                                       |
@@ -253,5 +253,5 @@ forwardEvent(event: Event): void
 Close all active guides and surveys.
 
 ```js
-gs.closeAll(): void
+engagement.gs.closeAll(): void
 ```
