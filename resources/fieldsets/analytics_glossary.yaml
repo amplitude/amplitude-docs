@@ -1,0 +1,98 @@
+title: 'Analytics glossary'
+fields:
+  -
+    handle: glossary
+    field:
+      type: replicator
+      display: Glossary
+      localizable: false
+      sets:
+        glossary_set:
+          display: 'Glossary Set'
+          sets:
+            glossary_set:
+              display: 'Property set'
+              fields:
+                -
+                  handle: glossary_section_title
+                  field:
+                    type: text
+                    display: 'Glossary section title'
+                    localizable: false
+                -
+                  handle: glossary_section_description
+                  field:
+                    type: markdown
+                    display: 'Glossary section description'
+                    localizable: false
+                -
+                  handle: glossary_row
+                  field:
+                    type: grid
+                    display: 'Glossary row'
+                    localizable: false
+                    mode: stacked
+                    fields:
+                      -
+                        handle: event_name
+                        field:
+                          type: text
+                          display: 'Event name'
+                          localizable: false
+                          width: 50
+                      -
+                        handle: data_type
+                        field:
+                          type: text
+                          display: 'Data type'
+                          localizable: false
+                          width: 50
+                      -
+                        handle: event_description
+                        field:
+                          type: markdown
+                          display: 'Event description'
+                          localizable: false
+            event_set:
+              display: 'Event set'
+              fields:
+                -
+                  handle: glossary_section_title
+                  field:
+                    type: text
+                    display: 'Glossary section title'
+                    localizable: false
+                -
+                  handle: glossary_section_description
+                  field:
+                    type: markdown
+                    display: 'Glossary section description'
+                    localizable: false
+                -
+                  handle: event_row
+                  field:
+                    type: grid
+                    display: 'Event row'
+                    localizable: false
+                    mode: stacked
+                    fields:
+                      -
+                        handle: event_name
+                        field:
+                          type: text
+                          display: 'Event name'
+                          localizable: false
+                      -
+                        handle: event_description
+                        field:
+                          type: markdown
+                          display: 'Event description'
+                          localizable: false
+                          width: 50
+                      -
+                        handle: event_specific_properties
+                        field:
+                          type: markdown
+                          display: 'Event-specific properties'
+                          localizable: false
+                          width: 50
