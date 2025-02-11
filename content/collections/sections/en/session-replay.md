@@ -153,7 +153,7 @@ If you experience this error, parts of a replay may show as inactive periods bec
 
 When you see this error in a replay, one of the following may have happened:
 
-* **The user closed the browser**. Amplitude captures and uploads session replays as users use your product. If they leave the app or close their browser before the session replay uploads, some parts of the replay appear to be missing in Amplitude and unavailable for playback.
+* **The user closed the browser**. Amplitude captures and uploads session replays as users use your product. If they leave the app or close their browser before the session replay upload completes, some parts of the replay appear to be missing in Amplitude and unavailable for playback.
 * **Network issues**. If the user on your site or app experiences network degradation, their replay may fail to upload. If you notice pattern, or commonly experience this issue, contact [Amplitude Support](https://gethelp.amplitude.com/hc/en-us).
 * **Requests throttled**. During holiday periods, special events, or other peak times, traffic to your site or app may spike resulting in a large volume of session replays. In these instances, Amplitude may throttle uploads to keep system performance.
 
