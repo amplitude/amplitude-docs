@@ -89,3 +89,10 @@ While using Microscope in a supported chart, click on *View User Streams*. Check
 In a funnel chart, click into any step after the initial event to enable the **Explore Conversion Drivers** feature. This allows you to explore events triggered **between** funnel steps for converted and dropped-off users.
 
 For more information, see [Amplitude's conversion drivers feature](/docs/analytics/charts/funnel-analysis/funnel-analysis-identify-conversion-drivers).
+
+## Create a guide or survey from Microscope
+
+On a chart, click a data point to launch microscope. Select *Guide these users* or *Survey these users* to create a guide or survey targeted to that set of users. Amplitude then:
+
+* Creates a cohort based on the chart criteria and data.
+* Creates and launches a new guide or survey, with the cohort added to targeting.
