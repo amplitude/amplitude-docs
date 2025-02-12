@@ -58,7 +58,7 @@ You can choose up to ten events from a user's event stream to view in a funnel o
 ![event_stream_to_chart.png](/docs/output/img/analytics/event_stream_to_chart.png)
 
 {{partial:admonition type="note" heading=""}}
-Event names with a *sparkle* icon indicate that we've generated a name to provide more context around the action a user is taking. These are Autocapture events ingested as `Page Viewed`, `Element Clicked`, and `Element Changed`, but we're using property information to make them more valuable in the event stream. You can click on any of them to see their ingested name and properties.
+Event names with a *sparkle* icon indicate that Amplitude has generated a name to provide more context around the action a user is taking. These are Autocapture events ingested as `Page Viewed`, `Element Clicked`, and `Element Changed`, but Amplitude uses property information to make them more valuable in the event stream. Click any of them to see their ingested name and properties.
 {{/partial:admonition}}
 
 #### Raw data fields
