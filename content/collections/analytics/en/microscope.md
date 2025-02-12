@@ -79,7 +79,7 @@ When using Microscope in an [Event Segmentation](/docs/analytics/charts/event-se
 If you have a specific event selected, it's highlighted in the user's stream. You can also choose to show certain event properties as well. Click a user ID or any event in a user's stream to view their profile in the *[User Activity](/docs/analytics/user-data-lookup)* tab.
 
 {{partial:admonition type="note" heading=""}}
-Event names with a *sparkle* icon indicate that we've generated a name to provide more context around the action a user is taking. These are Autocapture events ingested as `Page Viewed`, `Element Clicked`, and `Element Changed`, but we're using property information to make them more valuable in the event stream. You can click on any of them to see their ingested name and properties.
+Event names with a *sparkle* icon indicate that Amplitude has generated a name to provide more context around the action a user is taking. These are Autocapture events ingested as `Page Viewed`, `Element Clicked`, and `Element Changed`, but Amplitude uses property information to make them more valuable in the event stream. Click any of them to see their ingested name and properties.
 {{/partial:admonition}}
 
 ### View Session Replay from a user's event stream
