@@ -56,8 +56,8 @@ Do not enable sticky bucketing when:
 
 Follow these steps to see if a user was subject to sticky bucketing:
 
-1. Check the Experiment Assignment events in the user's [event stream](/docs/analytics/user-data-lookup). (You can only do this if you have not blocked the Experiment Assignment events in Govern or Data).
-2. Find the user property with `.details` that corresponds to the experiment flag key you are interested in. This will show the version of the flag that was evaluated, and which targeting rule applies to the user. This can also be helpful for debugging assignment issues.
+1. Check the Experiment Assignment events in the user's [event stream](/docs/analytics/user-data-lookup). (You can only do this if you have not blocked the Experiment Assignment events in Data).
+2. Find the event property with `.details` that corresponds to the experiment flag key you are interested in. This will show the version of the flag that was evaluated, and which targeting rule applies to the user. This can also be helpful for debugging assignment issues.
 
 ![image2.png](/docs/output/img/advanced-techniques/image2-png.png)
 
