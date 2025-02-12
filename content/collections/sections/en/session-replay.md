@@ -36,7 +36,7 @@ When viewing a session replay from your homepage or from a search, the user's ev
 Session Replay supports user sessions of any length.
 
 {{partial:admonition type="note" heading=""}}
-Event names with a *sparkle* icon indicate that we've generated a name to provide more context around the action a user is taking. These are Autocapture events ingested as `Page Viewed`, `Element Clicked`, and `Element Changed`, but we're using property information to make them more valuable in the event stream. You can click on any of them to see their ingested name and properties.
+Event names with a *sparkle* icon indicate that Amplitude has generated a name to provide more context around the action a user is taking. These are Autocapture events ingested as `Page Viewed`, `Element Clicked`, and `Element Changed`, but Amplitude uses property information to make them more valuable in the event stream. Click any of them to see their ingested name and properties.
 {{/partial:admonition}}
 
 ### View Session Replay from User Look-Up
