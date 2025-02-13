@@ -41,7 +41,7 @@ You can always revisit this decision after you've made it.
 
 ## QA after rollout
 
-After rollout, you’ll be able to track how many of your users have been exposed to each variant on a daily basis. The *Monitor* card on the Experiment Overview page breaks this out for you in both chart and tabular form.
+After rollout, you’ll be able to track how many of your users have been exposed to each variant on a daily basis. The *Diagnostics* card on the Experiment Overview page breaks this out for you in both chart and tabular form.
 
 This is a useful way to QA the assignment process. If you notice that one variant is enrolling significantly more or significantly fewer users than you expected, it could indicate an issue you should investigate.
 
