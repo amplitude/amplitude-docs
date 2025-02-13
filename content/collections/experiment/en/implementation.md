@@ -82,7 +82,7 @@ The bucketing logic is split into two steps. The first step, [allocation bucketi
 
 ### Hashing
 
-Amplitude Experiment's consistent bucketing utilizes the [`murmur3`](https://en.wikipedia.org/wiki/MurmurHash) consistent hashing algorithm on the value of the bucketing key for the given segment. If either the bucketing salt or the bucketing value changes
+Amplitude Experiment's consistent bucketing utilizes the [`murmur3`](https://en.wikipedia.org/wiki/MurmurHash) consistent hashing algorithm on the value of the bucketing key for the given segment. If either the bucketing salt or the bucketing value changes, the output of the hash will be different, and it is possible that the user may [variant jump](docs/feature-experiment/troubleshooting/variant-jumping). 
 
 ```text
 murmur3_x86_32("bucketing_salt/bucketing_value")
