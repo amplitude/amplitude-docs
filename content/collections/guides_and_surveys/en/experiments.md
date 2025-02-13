@@ -29,9 +29,9 @@ Your first decision involves the type of experiment you want to run. Guides and 
 
 Choose an A/B test and create two variants of the same Guide. Amplitude decides the winner based on the data it receives. Access results just like any other experiment you run in Amplitude.
 
-#### Multi-arm bandit test
+#### Multi-armed bandit test
 
-Choose a Multi-armed Bandit test for a smarter, more dynamic approach to testing. With multi-arm bandit experiments, the system allocates more traffic to the higher-performing variant in real-time, helping you optimize faster.
+Choose a [Multi-armed Bandit](/docs/feature-experiment/workflow/multi-armed-bandit-experiments) test for a smarter, more dynamic approach to testing. With multi-armed bandit experiments, the system allocates more traffic to the higher-performing variant in real-time, helping you optimize faster.
 
 ### Configure variants
 
