@@ -52,7 +52,7 @@ export { ExperimentServer };
 On each request, fetch variants using the server side SDK. The result is a plain JavaScript object mapping feature keys to variant values. You should store the result where your rendering code can access it in both server side and client side contexts.
 
 ```js
-const allFlags = await experimentServer.fetch({
+const allFlags = await experimentServer.fetchV2({
   id: 'userId',
 });
 
