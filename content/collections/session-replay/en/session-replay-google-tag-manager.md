@@ -31,7 +31,7 @@ To instrument Session Replay with Google Tag Manager:
 
 2. In Google Tag Manager, create a new tag using the Amplitude template, or edit an existing tag you created based on the template.
 3. In the tag's *Initialization* section, select **Enable Session Replay Plugin**.
-4. In Amplitude, navigate to *Organization Settings > Session Replay Settings*. Update any [masking](/docs/session-replay/session-replay-standalone-sdk#mask-on-screen-data), [sample rate](/docs/session-replay/session-replay-standalone-sdk#sampling-rate), or other settings.
+4. In Amplitude, navigate to *Organization Settings > Session Replay Settings*. Update any [masking](/docs/session-replay/session-replay-plugin#mask-on-screen-data), [sample rate](/docs/session-replay/session-replay-plugin#sampling-rate), or other settings.
 
 ## Troubleshooting
 
