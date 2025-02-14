@@ -14,7 +14,7 @@ This feature is available on all Amplitude plans. For more information, see the 
 
 ## Supported metric types
 
-Entry / Exist analysis supports the following metric types:
+Entry / Exit analysis supports the following metric types:
 
 * **Uniques**: The count of unique users
 * **Event totals**: The total number of events
