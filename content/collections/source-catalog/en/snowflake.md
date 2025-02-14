@@ -44,6 +44,11 @@ Depending on your company's network policy, you may need to add these IP address
 Amplitude's Data Warehouse Import sometimes processes events in parallel, so time-ordered syncing of user and group properties on events isn't guaranteed in the same way as submitting events directly to the Identify and Group Identify APIs. 
 {{/partial:admonition}}
 
+{{partial:admonition type="note" heading="Long running queries"}}
+To ensure that your import queries do not get canceled, set `ABORT_DETACHED_QUERY` to `FALSE`
+at the account level.
+{{/partial:admonition}}
+
 ## Add and configure the Snowflake source
 
 Complete the following steps to configure the Snowflake source:
