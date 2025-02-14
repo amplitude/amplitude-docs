@@ -45,7 +45,7 @@ Amplitude's Data Warehouse Import sometimes processes events in parallel, so tim
 {{/partial:admonition}}
 
 {{partial:admonition type="note" heading="Long running queries"}}
-To ensure that your import queries do not get canceled, set `ABORT_DETACHED_QUERY` to `FALSE`
+To ensure that your import queries aren't canceled, set `ABORT_DETACHED_QUERY` to `FALSE`
 at the account level.
 {{/partial:admonition}}
 

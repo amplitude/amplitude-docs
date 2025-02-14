@@ -52,10 +52,6 @@ The user segment you select will only apply to the starting event.
 9. If desired, add another user segment by clicking *+ Add Segment*, and repeating steps 6 and 7.
 
 ![segment.gif](/docs/output/img/funnel-analysis/segment-gif.gif)  
-  
-{{partial:admonition type='note'}}
- You can break out your starting event by user properties by clicking *… + Group by* in the Events module, if desired. For example, if you wanted to group users by the cities they were in when they fired the starting event, you would select *City* from the property list. Amplitude breaks out the retention analysis on a city-by-city basis. However, you will only be able to include one user segment in your analysis. 
-{{/partial:admonition}}
 
 Your new funnel analysis should now be visible in the chart module.
 
