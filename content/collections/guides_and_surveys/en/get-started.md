@@ -24,7 +24,7 @@ This tab provides a single location to track how well your in-product guidance p
 
 ![](statamic://asset::help_center_conversions::guides-surveys/filter-overview.png)
 
-The Filter card enables you to narrow the scope of your analysis to a specific date range, segment, or property condition. For example, look at a users on a specific account tier engaged, or find look at users who performed a specific action.
+The Filter card enables you to narrow the scope of your analysis to a specific date range, segment, or property condition. For example, look at a users on a specific account tier engaged, or find users who performed a specific action.
 
 ### Views and completions over time
 
