@@ -1,8 +1,8 @@
 ---
 id: 2bf2ce66-3b9f-4021-81b0-28d9661af92e
 blueprint: flutter_sdk
-title: 'Flutter SDK 4.0'
-sdk_status: Beta
+title: 'Flutter SDK 4'
+sdk_status: current
 article_type: core
 major_version: 40
 supported_languages:
