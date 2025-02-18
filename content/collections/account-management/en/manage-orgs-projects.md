@@ -85,7 +85,7 @@ Amplitude requires that you use the same email address listed on the Team Member
 
 2. To request an organization deletion, go to [https://support.amplitude.com](https://support.amplitude.com), select the *Service Task* request type, and *Org Deletion* as the service task.
 
-3. Click *Submit* to complete the form. Amplitude dsends a copy of the request to your email, and responds by email when the request is complete.
+3. Click *Submit* to complete the form. Amplitude sends a copy of the request to your email, and responds by email when the request is complete.
 
 {{partial:admonition type='note'}}
 The Amplitude Support team responds to these requests the first Monday of each month, or the following Tuesday if Monday is an observed holiday. The support team includes all requests sent before 9 AM Pacific Time on the first Monday of each month in the batch. 
