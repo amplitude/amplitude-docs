@@ -39,6 +39,19 @@ You can update a user property's display from the *User Properties* tab on the *
 
 Hide events from appearing in areas of Amplitude where you don't want them. For example, you can hide high volume events from your user stream to make the data that appears more effective.
 
+Support for updating an event's visibility depends on the event type.
+
+| Event type         | Editable?                                                | Edit location                      |
+| ------------------ | -------------------------------------------------------- | ---------------------------------- |
+| Default events     | Must be in the tracking plan, and have `Modify` enabled. | Table menu, table row, side panel. |
+| Transformed events | Yes. Hiding from event streams isn't supported.          | Side panel                         |
+| Live events        | Yes                                                      | Table menu, table row, side panel. |
+| Planned events     | No                                                       |                                    |
+| Unexpected events  | No                                                       |                                    |
+| Blocked events     | Yes                                                      | Table menu, table row, side panel. |
+| Deleted events     | No                                                       |                                    |
+
+
 To update an event's visibility:
 
 1. Navigate to *Data > Events*.
