@@ -122,7 +122,7 @@ Specify the maximum dimensions for each type of widget.
 | Modal         | Max content width   |
 | Popover / pin | Max content width   |
 | Tooltip       | Max width           |
-| Checklist     | Width, Max-height   |
+| Checklist     | Max Width, Max-height   |
 
 ### Animations
 
