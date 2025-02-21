@@ -13,7 +13,7 @@ updated_at: 1718232315
 sourxe: 'https://help.amplitude.com/hc/en-us/articles/360061270232-Amplitude-Experiment-overview-Optimize-your-product-experience-through-A-B-testing'
 landing_blurb: 'Learn the value of experimentation in your product.'
 ---
-For decades, product teams have relied on **experimentation** as a way to prioritize and implement product adjustments. But it’s never been easy. Because of that, these experiments often just tweak peripheral issues around the margins, instead of driving the big-picture changes that optimize the overall product experience. 
+For decades, product teams have relied on **experimentation** as a way to prioritize and implement product adjustments. But it’s never been easy. Because of that, these experiments often just tweak peripheral issues around the margins, instead of driving the big-picture changes that optimize the overall product experience.
 
 Amplitude Experiment is a workflow-driven behavioral experimentation platform that actually **accelerates your roadmaps**, letting you focus on making better decisions and building better products.
 
