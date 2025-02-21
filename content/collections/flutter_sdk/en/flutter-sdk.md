@@ -1,8 +1,8 @@
 ---
 id: 91ff3c42-e0d0-493c-9fe4-65262f814883
 blueprint: flutter_sdk
-title: 'Flutter SDK'
-sdk_status: current
+title: 'Flutter SDK 3'
+sdk_status: maintenance
 article_type: core
 supported_languages:
   - dart
@@ -21,6 +21,10 @@ bundle_url: 'https://pub.dev/packages/amplitude_flutter'
 platform: Flutter
 ---
 This is the official documentation for the Amplitude Analytics Flutter SDK.
+
+{{partial:admonition type="note" title="Flutter SDK 4.0 now available"}}
+An improved version of Amplitude Flutter SDK is now available. Amplitude [Flutter SDK 4.0](/docs/sdks/analytics/flutter/flutter-sdk-4-0) features default event tracking, improved marketing attribution tracking, and macOS support. Amplitude recommends the Flutter SDK 4.0 for both product analytics and marketing analytics use cases. Upgrade to the latest Flutter SDK 4.0. See the [Migration Guide](/docs/sdks/analytics/flutter/flutter-4-0-migration-guide) for more information.
+{{/partial:admonition}}
 
 ## Compatibility
 
