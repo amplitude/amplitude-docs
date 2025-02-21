@@ -233,7 +233,7 @@ engagement.gs.show(key: string, stepIndex?: number): void
 | Parameter   | Type     | Description                                                                       |
 | ----------- | -------- | --------------------------------------------------------------------------------- |
 | `key`       | `string` | Required. The guide or survey's key.                                              |
-| `stepIndex` | `number` | Required. The zero-based index of the step to show. Defaults to the initial step. |
+| `stepIndex` | `number` | The zero-based index of the step to show. Defaults to the initial step if not provided. |
 
 ## Forward event
 
