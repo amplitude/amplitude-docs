@@ -43,6 +43,17 @@ To use Visual Labeling to create new labeled events, follow these steps:
 
 8. You can select another element to continue labeling or click "Back to Amplitude" if you're done.
 
+### Avoid event duplication
+
+Amplitude detects events that you label which:
+
+* Have a similar definition to other labeled events
+* Have the same name as another labeled event
+
+When you see the `Event has a similar definition` warning, click **View** to compare your new event to the existing events. When you click through the similar definitions, Amplitude highlights elements on screen that define your event.
+
+When you see the `This labeled event already exists` warning, click **View** to open the existing event.
+
 ## Edit a labeled event
 
 When your site's code changes, you may need to update the definition of your labeled events to match. Since Autocapture consistently captures the raw click events, you can update the definition of your labeled events and fix any gaps in your data.
