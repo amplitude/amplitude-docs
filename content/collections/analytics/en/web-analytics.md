@@ -86,6 +86,6 @@ If *Goals*, choose the key events or metrics you'd like to set up as additional 
 
 ## Create a web experiment for specific URLs
 
-On the Page Engagement tab of Web Analyitcs, when you breakdown your data by Page URL, you can create a [web experiment](/docs/web-experiment) from the table.
+On the Page Engagement tab of Web Analytics, when you breakdown your data by Page URL, you can create a [web experiment](/docs/web-experiment) from the table.
 
 Click the flask icon in the Action column of the table, and the New Web Experiment dialog appears pre-populated with the targeted page URL.
