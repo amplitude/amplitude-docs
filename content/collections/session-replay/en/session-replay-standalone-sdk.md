@@ -283,7 +283,7 @@ Keep the following limitations in mind as you implement Session Replay:
   - A known user begins on the marketing site, and logs in to the web application.
   - Amplitude captures both sessions.
   - The replay for each session is available for view in the host project.
-- Session Replay supports standard session definitions, and doesn't support [custom session definitions](/docs/data/sources/instrument-track-sessions).
+- Session Replay supports default session definitions, and doesn't support time-based or [custom session definitions](/docs/data/sources/instrument-track-sessions).
 - Session Replay can't capture the following HTML elements:
   - Canvas
   - WebGL
