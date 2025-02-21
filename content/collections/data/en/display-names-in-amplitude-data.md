@@ -11,7 +11,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1722895571
 ---
-By default, an event's display name in Amplitude Data is the same is you described in the tracking plan. However, these can be difficult to read, understand, and incorporate directly into your analyses. For this reason, you can give your events and user properties new display names that offer an easy-to-read description of their purpose and content.
+By default, an event's display name in Amplitude data is the same as the ingested name. However, these can be difficult to read, understand, and incorporate directly into your analyses. For this reason, you can give your events and user properties new display names that offer an easy-to-read description of their purpose and content.
 
 {{partial:admonition type="note" heading=""}}
 This only applies to active events and user properties that you added to your tracking plan, and doesn't apply to custom events. It changes the display name of the event or property within the Amplitude UI and doesn't change the raw data.
@@ -37,11 +37,11 @@ You can update a user property's display from the *User Properties* tab on the *
 
 ## Update an event's visibility
 
-Hide events from appearing in areas of Amplitude where you don't want them. For example, you can hide high volume events from your user stream to make the data that appears more effective.
+Hide events from appearing in areas of Amplitude where you don't want them. For example, you can hide noisy events from your user stream to make the data that appears more effective.
 
 Support for updating an event's visibility depends on the event type.
 
-| Event type         | Editable?                                                | Edit location                      |
+| Event type         | Editable?                                                | Where to edit                      |
 | ------------------ | -------------------------------------------------------- | ---------------------------------- |
 | Default events     | Must be in the tracking plan, and have `Modify` enabled. | Table menu, table row, side panel. |
 | Transformed events | Yes. Hiding from event streams isn't supported.          | Side panel                         |
@@ -50,7 +50,6 @@ Support for updating an event's visibility depends on the event type.
 | Unexpected events  | No                                                       |                                    |
 | Blocked events     | Yes                                                      | Table menu, table row, side panel. |
 | Deleted events     | No                                                       |                                    |
-
 
 To update an event's visibility:
 
