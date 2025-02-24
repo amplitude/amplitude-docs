@@ -11,9 +11,6 @@ tree:
         entry: 1623ff4b-4f76-411c-bbe4-2f38614ffc9a
         title: 'Create a new feature experiment'
       -
-        id: 481adc35-989a-4465-92f6-e871ae33ab75
-        entry: 99eb2927-ad52-424a-a04d-7e90a0ddfeb7
-      -
         id: 1f131d74-cfb7-43b6-b218-1c3974e04d36
         entry: 665e15c4-7194-4898-9cca-b58251cc79a2
   -
@@ -69,6 +66,9 @@ tree:
           -
             id: 707402a6-d5fb-4432-915a-32c1f59f457a
             entry: c43935f9-32e2-4ac9-82ed-9513d66203b8
+          -
+            id: 9e0796bf-3439-4f98-a8ad-cfefea14aee1
+            entry: f544b5a1-0689-4137-ab14-690903ae7902
           -
             id: 18ca4c64-6388-4dc1-8a17-f93ee5cb458a
             entry: c3d4aec1-92db-4f44-b847-19d6f31f1add
