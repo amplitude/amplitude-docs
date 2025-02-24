@@ -11,16 +11,18 @@ This article covers some frequently asked questions about how to modify or delet
 
 
 {{partial:collapse name="How do I modify events that have already been ingested by Amplitude?"}}
-It is not possible to modify events that have already been ingested. However, there is a potential workaround:
+If your account is on a the Growth or Enterprise plan, see [Self-service data deletion in Amplitude](/docs/admin/account-management/self-service-data-deletion-in-amplitude).
+
+For other account types, direct modification isn't possible, but as a workaround, you can:
 
 1. Export all project data using the [Export API](/docs/apis/analytics/export)
-2. Clean the data (i.e make the required changes to the data)
+2. Clean the data (for example, make the required changes to the data)
 3. Upload the cleaned data into a **new project** using the [Batch API](/docs/apis/analytics/batch-event-upload)
 {{/partial:collapse}}
 
 
 {{partial:collapse name="I updated user properties using the Identify API. Why are there still 'none' values in my charts?"}}
-Using the Identify API only updates user property values for future events. Data that Amplitude has already ingested cannot be changed. The user will have to fire another event in order for Amplitude to apply the updated property value. More details on how user properties are updated can be found [here](/docs/data/user-properties-and-events). 
+Using the Identify API only updates user property values for future events. You can't change data that Amplitude has already ingested. You need to fire another event for Amplitude to apply the updated property value. More details on how user properties are updated can be found [here](/docs/data/user-properties-and-events). 
 
 {{/partial:collapse}}
 

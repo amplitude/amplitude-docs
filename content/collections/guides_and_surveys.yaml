@@ -1,0 +1,22 @@
+title: 'Guides and Surveys'
+sites:
+  - en
+propagate: false
+template: default
+layout: layout
+mount: 8255e7a7-7275-4629-8512-e42b0da92456
+revisions: false
+route: '/guides-and-surveys/{{section}}/{{slug}}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: guides_and_surveys
+structure:
+  root: false

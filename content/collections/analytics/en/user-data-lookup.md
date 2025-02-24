@@ -21,7 +21,7 @@ To search for a specific user:
 
 1. In Amplitude, navigate to *Users > User Profiles*.
 2. In the search box above the active user list, enter the user ID or device ID, or click *Advanced Search* to search by user property values.
-  
+
 Searching by user property values displays a list of users who match the criteria you specified, **and** who triggered at least one active event in the last six months.
 
 When you find the user you're looking for, click their ID to view their user profile. The profile has two sections: the **user details** section—where the user's most-recent properties are visible—and the **user history** section, which contains the user's entire event history and displays all events received from them for a given day, which you can specify using the date picker.
@@ -32,7 +32,7 @@ User details displays properties that describe the user, and allows you to custo
 
 ## User history
 
-The user history panel has 6 tabs, Activity, Insights, Session Replays, Cohorts, Experiments, and Flags. 
+The user history panel has 6 tabs, Activity, Insights, Session Replays, Cohorts, Experiments, and Flags.
 
 ### Activity
 
@@ -56,6 +56,10 @@ You can choose up to ten events from a user's event stream to view in a funnel o
 2. Click *Create Chart* and choose *Segmentation* or *Funnel* to visualize the user's event stream data.
 
 ![event_stream_to_chart.png](/docs/output/img/analytics/event_stream_to_chart.png)
+
+{{partial:admonition type="note" heading=""}}
+Event names with a *sparkle* icon indicate that Amplitude has generated a name to provide more context around the action a user is taking. These are Autocapture events ingested as `Page Viewed`, `Element Clicked`, and `Element Changed`, but Amplitude uses property information to make them more valuable in the event stream. Click any of them to see their ingested name and properties.
+{{/partial:admonition}}
 
 #### Raw data fields
 

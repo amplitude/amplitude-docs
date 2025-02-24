@@ -47,14 +47,14 @@ final class Column implements Sort
     }
 
     /**
-     * @param ?Closure(mixed, mixed): int $callback
+     * @param (callable(mixed, mixed): int)|(Closure(mixed, mixed): int)|null $callback
      *
      * @throws QueryException
      */
     public static function sortOn(
         string|int $column,
         string|int $direction,
-        ?Closure $callback = null
+        Closure|callable|null $callback = null
     ): self {
 
         $operator = match (true) {
@@ -68,11 +68,13 @@ final class Column implements Sort
             default => throw new QueryException('Unknown or unsupported ordering operator value: '.$direction),
         };
 
-        return new self(
-            $operator,
-            $column,
-            $callback ?? static fn (mixed $first, mixed $second): int => $first <=> $second
-        );
+        $callback = match (true) {
+            null === $callback => static fn (mixed $first, mixed $second): int => $first <=> $second,
+            $callback instanceof Closure => $callback,
+            default => $callback(...),
+        };
+
+        return new self($operator, $column, $callback);
     }
 
     /**

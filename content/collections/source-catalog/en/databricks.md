@@ -54,6 +54,9 @@ For guided instructions to setting up this integration, view the [Loom video](ht
 By using CDF, Databricks sends consolidated row `INSERT`, `UPDATE`, and `DELETE` operations to Amplitude based on your sync frequency. This means that multiple operations can be made to an event during the sync window and they only count as one event against your existing event volume. However, any operation made to an event outside of the sync window counts as an additional event against your existing event volume. This may impact the rate at which you use your existing event volume. Contact sales to purchase additional event volume, if needed.
 {{/partial:admonition}}
 
+- CDC Continuous Sync events and mutations don't support unknown users. Rows must contain a user id or Amplitude drops the event. If you have a high volume of anonymous events, Amplitude recommends against using this mode. 
+
+
 ## Configure Databricks
 
 Before you start to configure the Databricks source in Amplitude, complete these tasks in Databricks:

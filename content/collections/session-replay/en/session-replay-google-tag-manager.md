@@ -16,58 +16,28 @@ description: 'Choose this option if you use Google Tag Manager to instrument Amp
 Instrumenting Amplitude Session Replay with Google Tag Manager requires a different procedure than with the standard [Browser SDK Plugin](/docs/session-replay/session-replay-plugin). 
 
 {{partial:admonition type="note"}}
-This article pertains to **client-sided** GTM instrumentations **only**. It doesn't address server-sided GTM instrumentation.
+This article pertains to **client-side** GTM instrumentations **only**.
 {{/partial:admonition}}
+
+## Enable Session Replay
 
 To instrument Session Replay with Google Tag Manager:
 
 1. Add the [Google Tag Manager Web Template for Amplitude Analytics Browser SDK](/docs/data/source-catalog/google-tag-manager) if it's not yet enabled.
-2. In Google Tag Manager, create an **init** tag with the same API key as your Amplitude Project. This is the project that receives the session replays.
-   1. Set the **Trigger** to `Initialization`.
-   2. Amplitude recommends that you enable default event tracking for better search support with Session Replay. Default events count against your event quota.
-3. Create a **Custom HTML** tag for Session Replay, and paste the code shown below.
-4. Set **Trigger** for the Session Replay Tag to `Initialization`.
-5. Sequence the Amplitude Initialization Tag to fire **after** the Session Replay tag. 
-6. Deploy the tags. Replays should begin to appear on the home page of the Amplitude app. Ensure that you're looking at the correct project.
 
-```html 
-<script>
-    function loadAsync(src, callback) {
-      var script = document.createElement('script');
-      script.src = src;
-      if (script.readyState) { // IE, incl. IE9
-        script.onreadystatechange = function() {
-            if (script.readyState === "loaded" || script.readyState === "complete") {
-                script.onreadystatechange = null;
-                callback();
-            }
-        };
-      } else {
-        script.onload = function() { // Other browsers
-            callback();
-        };
-      }
-      document.getElementsByTagName('head')[0].appendChild(script);
-    }
+  {{partial:admonition type="note" heading="Update the Amplitude tag template"}}
+  A Session Replay toggle is available in the latest version of the Amplitude Analytics Browser SDK template.
+  {{/partial:admonition}}
 
-    loadAsync("https://cdn.amplitude.com/libs/plugin-session-replay-browser-{{sdk_versions:session_replay_plugin}}-min.js.gz", 
-      function () {
-        var sessionReplayTracking = window.sessionReplay.plugin({sampleRate: 1});
-        window.amplitude.add(sessionReplayTracking).promise;
-    });
-
-</script>
-```
-
-{{partial:admonition type="info" heading="Sample rate"}}
-The sample rate in this sample is set to 1, or 100%, which means every session is captured. This is good for testing, but not recommended for production. For more information, see [Session Replay Plugin | Sample Rate](/docs/session-replay/session-replay-plugin#sampling-rate).
-{{/partial:admonition}}
+2. In Google Tag Manager, create a new tag using the Amplitude template, or edit an existing tag you created based on the template.
+3. In the tag's *Initialization* section, select **Enable Session Replay Plugin**.
+4. In Amplitude, navigate to *Organization Settings > Session Replay Settings*. Update any [masking](/docs/session-replay/session-replay-plugin#mask-on-screen-data), [sample rate](/docs/session-replay/session-replay-plugin#sampling-rate), or other settings.
 
 ## Troubleshooting
 
 Multiple instantiation of the Amplitude SDKs. This is a common problem seen with GTM and other code injection frameworks. Ensure that the initialization logic is only run once on your app. This could happen if:
 
-- There is more than 1 “Init Tag” or another custom tag that’s running Amplitude. 
+- There is more than 1 "Init Tag" or another custom tag that’s running Amplitude. 
 - You have another Code Injection Framework (for example, SquareSpace or Bubble) that also runs Amplitude. 
 
 This template uses the Amplitude Browser SDK Plugin. For help troubleshooting, see [Troubleshooting | Session Replay Plugin](/docs/session-replay/session-replay-plugin#troubleshooting)

@@ -80,9 +80,16 @@ Amplitude Experiment's bucketing is consistent based on the user, bucketing key,
 
 The bucketing logic is split into two steps. The first step, [allocation bucketing](#allocation-bucketing), determines if the user should be allocated a variant based on the allocation percentage. The second step, [variant bucketing](#variant-bucketing) runs only if the user has been allocated in step one. Both steps use the same consistent hash function in slightly different ways.
 
+The bucketing salt enables experiment allocation to be statistically independent. Without it, if Amplitude allocates a user to the treatment, they'd get the treatment in every experiment.
+
+There are two cases in which you may need to update the bucketing salt:
+
+1. You want to re-randomize users because of a bug or other issue in your experiment. In this case, update the salt to a new random string.
+2. You want the evaluation of two experiments to be the same. In this case, update the salt to be the same in both projects.
+
 ### Hashing
 
-Amplitude Experiment's consistent bucketing utilizes the [`murmur3`](https://en.wikipedia.org/wiki/MurmurHash) consistent hashing algorithm on the value of the bucketing key for the given segment. If either the bucketing salt or the bucketing value changes
+Amplitude Experiment's consistent bucketing uses the [`murmur3`](https://en.wikipedia.org/wiki/MurmurHash) consistent hashing algorithm on the value of the bucketing key for the given segment. If either the bucketing salt or the bucketing value changes, the output of the hash changes and it's possible that the user may [variant jump](/docs/feature-experiment/troubleshooting/variant-jumping). 
 
 ```text
 murmur3_x86_32("bucketing_salt/bucketing_value")

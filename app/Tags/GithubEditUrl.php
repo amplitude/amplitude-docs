@@ -13,7 +13,7 @@ class GithubEditUrl extends \Statamic\Tags\Tags
      * @return string|array
      */
 
-    private $endpoint = 'https://github.com/amplitude/amplitude-docs/blob/main/content/';
+    private $endpoint = 'https://github.com/amplitude/amplitude-docs/edit/DOC-425_guides-and-surveys/content/';
 
     public function index()
     {

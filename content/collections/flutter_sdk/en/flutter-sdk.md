@@ -1,8 +1,8 @@
 ---
 id: 91ff3c42-e0d0-493c-9fe4-65262f814883
 blueprint: flutter_sdk
-title: 'Flutter SDK'
-sdk_status: current
+title: 'Flutter SDK 3'
+sdk_status: maintenance
 article_type: core
 supported_languages:
   - dart
@@ -21,6 +21,21 @@ bundle_url: 'https://pub.dev/packages/amplitude_flutter'
 platform: Flutter
 ---
 This is the official documentation for the Amplitude Analytics Flutter SDK.
+
+{{partial:admonition type="note" title="Flutter SDK 4.0 now available"}}
+An improved version of Amplitude Flutter SDK is now available. Amplitude [Flutter SDK 4.0](/docs/sdks/analytics/flutter/flutter-sdk-4-0) features default event tracking, improved marketing attribution tracking, and macOS support. Amplitude recommends the Flutter SDK 4.0 for both product analytics and marketing analytics use cases. Upgrade to the latest Flutter SDK 4.0. See the [Migration Guide](/docs/sdks/analytics/flutter/flutter-4-0-migration-guide) for more information.
+{{/partial:admonition}}
+
+## Compatibility
+
+From Amplitude Flutter v3.11.0, we bump up the kotlin version to v1.7.10 to support latest Gradle. For Gradle Version lower than v6.7.1, we recommend to use the Amplitude Flutter v3.10.0. The following matrix lists the minimum support for Amplitude Flutter SDK version.
+
+From Amplitude Flutter 3.16.5, we switched from `package:js ^v0.6.3` to using `dart:js_interop` for Flutter web, which requires dart 3.1+.
+
+|Amplitude Flutter  |Dart    |Gradle   |Android Gradle Plugin|Kotlin Gradle Plugin|
+|-------------------|--------|---------|---------------------|--------------------|
+| >= 3.16.5         | >= 3.1 |   6.7.1 | 3.6.4               | 1.7.10             |
+| >= 3.11 <= 3.16.4 | >=2.12 |   6.7.1 | 3.6.4               | 1.7.10             |
 
 ## Install the SDK
 
@@ -86,7 +101,7 @@ For other default configurations:
 | `setOptOut()` | `bool`. Opt the user out of tracking. For example, `Amplitude.getInstance().setOptOut(true)`.| `false` |
 | `trackingSessionEvents()` | `bool`. Whether to automatically log "[Amplitude] Session Start" and "[Amplitude] Session End" session events corresponding to the start and end of a user's session. Not supported on Flutter Web. [Learn more](/docs/#flutter-web-support). | `false` |
 | `useAppSetIdForDeviceId()` | Only for Android. Whether to use app ser id as device id on Android side.  Check [here](../android/#app-set-id) for the required module and permission. For example, `Amplitude.getInstance().useAppSetIdForDeviceId(true)` | By default, the deviceId will be UUID+"R" |
-    
+
 ### Configure batching behavior
 
 To support high-performance environments, the SDK sends events in batches. Every event logged by the `logEvent` method is queued in memory. Events are flushed in batches in background. You can customize batch behavior with `setEventUploadThreshold`. By default, the serverUrl will be `https://api2.amplitude.com/`. This SDK doesn't support batch mode, the [batch API](/docs/apis/analytics/batch-event-upload) endpoint.
@@ -316,7 +331,7 @@ If Joe is in 'sport' 'tennis' and 'soccer', then the `groupName` would be '["ten
 Amplitude.getInstance().setGroup("sport", ["tennis", "soccer"]);
 ```
 {{/partial:admonition}}
-    
+
 
 {{partial:admonition type="note" heading=""}}
 Event-level groups is unavailable and its availability is yet to be determined.

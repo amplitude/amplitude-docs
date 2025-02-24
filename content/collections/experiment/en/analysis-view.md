@@ -8,11 +8,13 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1716329050
+updated_at: 1740166938
 ---
 Within Amplitude Experiment, the **Experiment Analysis** view is where you’ll find the details of your experiment. Visible on the *Analysis* card under the *Activity* tab, it gives you a convenient way to quickly take in the most important, high-level statistical measurements that help you decide if your experiment was a success.
 
 This article describes what each of the columns in this table means, and how they relate to your experiment.
+
+![](statamic://asset::help_center_conversions::experiment/exp-analysis.png)
 
 ## Metric name and variant
 
@@ -26,19 +28,9 @@ Click the metric dropdown below the table to update analysis charts for that met
 If you want to look at segments of users, use the filter card at the top of the *Analysis* tab.
 {{/partial:admonition}}
 
-##  Significance
-
-**Significance** is the likelihood that the performance displayed for each test variant is actually different from zero, and isn't due to random fluctuations in the data. The higher this value is, the more confident you can be in your results. More formally, this is *1 - p-value*.
-
 ## Relative performance
 
-**Relative performance** measures the relative difference between how the variant performed and how the control performed. In other words, it measures the difference between how the variant performed and how the control performed. (In other products, this is often called **relative lift**.) You can cross-check this value by expanding a single metric’s section and then dividing the absolute lift for a variant by the absolute value of the control for that metric. 
-
-## Absolute value
-
-The specific meaning of the **absolute value** column depends on the metric type. For **unique** conversions, Experiment expresses values as a percentage, indicating the percentage of users (over the total number of exposed users) who converted for each variant. The numerator (Conversions) and denominator (Exposures) appear below the percentage. 
-
-Otherwise, the value indicates the **aggregate** (total events, sum of property value, average of property value) per exposed user. The denominator used here is the total number of exposures. For example, 10 total events / 4 exposures = on average, an exposed user had 2.5 conversion events.
+**Relative performance** measures the relative difference between how the variant performed and how the control performed. In other words, it measures the difference between how the variant performed and how the control performed. (In other products, this is often called **relative lift**.) You can cross-check this value by expanding a single metric’s section and then dividing the absolute lift for a variant by the absolute value of the control for that metric.
 
 ## Confidence interval
 
@@ -53,3 +45,14 @@ The confidence interval shown reveals characteristics about what the experiment 
 * Confidence Interval **less than** 0: Amplitude Experiment has accumulated enough observations to reach statistical significance, and you can conclude that the variant has a **negative effect** compared to control. If, as in the last example, you look at lift, expect a variant with a confidence interval less than zero to perform worse than the control.
 
 If you have multiple variants, select the one you want to view in the confidence interval chart from the drop-down above the chart.
+
+## Significance
+
+**Significance** is the likelihood that the performance displayed for each test variant is actually different from zero, and isn't due to random fluctuations in the data. The higher this value is, the more confident you can be in your results. More formally, this is *1 - p-value*.
+
+## Absolute value
+
+The specific meaning of the **absolute value** column depends on the metric type. For **unique** conversions, Experiment expresses values as a percentage, indicating the percentage of users (over the total number of exposed users) who converted for each variant. The numerator (Conversions) and denominator (Exposures) appear below the percentage. 
+
+Otherwise, the value indicates the **aggregate** (total events, sum of property value, average of property value) per exposed user. The denominator used here is the total number of exposures. For example, 10 total events / 4 exposures = on average, an exposed user had 2.5 conversion events.
+

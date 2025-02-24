@@ -41,6 +41,11 @@ Here is how Amplitude determines each variable in the formula:
 - Number of days: This is the number of days in the query.
 - Number of conditions: This is the number of segments plus the number of conditions within the segments applied to the chart you are looking at. Each group by counts as 4 segments.
 
+{{partial:admonition type="note" heading="Segments and conditions"}}
+* Segments are comparison groups. For more information, see [Add user segments](/docs/analytics/charts/build-charts-add-user-segments#add-more-segments).
+* Conditions represent top-level filters. Cohorts, `WHERE`, and "who performed/did" are all conditions in Amplitude. Event filters **don't** count as conditions with regards to API costs.
+{{/partial:admonition}}
+
 Different chart types have different costs. For all endpoints not listed here, the cost is 1.
 Here are the limits for these endpoints, measured in the cost per query:
 
@@ -572,6 +577,10 @@ Returns a JSON object with this schema:
 ## Get events list
 
 Get the list of events with the current week's totals, uniques, and % DAU (daily active users).
+
+{{partial:admonition type="note" heading=""}}
+This endpoint returns events that are visible. Hidden events aren't returned by the API.
+{{/partial:admonition}}
 
 `GET https://amplitude.com/api/2/events/list`
 

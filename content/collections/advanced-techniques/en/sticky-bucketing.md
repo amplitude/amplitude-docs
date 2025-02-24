@@ -15,7 +15,11 @@ Sticky bucketing ensures that a user will continue to see the same variant even 
 Sticky bucketing is often used as a defense mechanism against [variant jumping](https://www.docs.developers.amplitude.com/experiment/guides/troubleshooting/variant-jumping/): when a user is exposed to two or more variants for a single flag or experiment. However, simply enabling sticky bucketing does not guarantee that you’ll never see variant jumping. For example, it may still occur if your experiment includes both a logged-out and a logged-in experience, since a user may have a different Amplitude ID when they are logged in versus not.
 
 {{partial:admonition type='note'}}
- Amplitude Experiment uses [consistent bucketing](https://www.docs.developers.amplitude.com/experiment/general/evaluation/implementation/#consistent-bucketing) and a [deterministic hashing algorithm](https://www.docs.developers.amplitude.com/experiment/general/evaluation/implementation/#hashing), which keeps users bucketed into their original variants as long as you don’t change anything. 
+Sticky bucketing is only available on experiments not flags.
+{{/partial:admonition}}
+
+{{partial:admonition type='note'}}
+ Amplitude Experiment uses [consistent bucketing](/docs/feature-experiment/implementation#consistent-bucketing) and a [deterministic hashing algorithm](/docs/feature-experiment/implementation#hashing), which keeps users bucketed into their original variants as long as you don’t change anything. 
 {{/partial:admonition}}
 
 ## How sticky bucketing works
@@ -52,8 +56,8 @@ Do not enable sticky bucketing when:
 
 Follow these steps to see if a user was subject to sticky bucketing:
 
-1. Check the Experiment Assignment events in the user's [event stream](/docs/analytics/user-data-lookup). (You can only do this if you have not blocked the Experiment Assignment events in Govern or Data).
-2. Find the user property with `.details` that corresponds to the experiment flag key you are interested in. This will show the version of the flag that was evaluated, and which targeting rule applies to the user. This can also be helpful for debugging assignment issues.
+1. Check the Experiment Assignment events in the user's [event stream](/docs/analytics/user-data-lookup). (You can only do this if you have not blocked the Experiment Assignment events in Data).
+2. Find the event property with `.details` that corresponds to the experiment flag key you are interested in. This will show the version of the flag that was evaluated, and which targeting rule applies to the user. This can also be helpful for debugging assignment issues.
 
 ![image2.png](/docs/output/img/advanced-techniques/image2-png.png)
 

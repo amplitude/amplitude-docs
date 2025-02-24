@@ -37,10 +37,8 @@
       display: none !important;
     }
   </style>
-
+  {{partial:partials/_amplitude}}
   {{if environment == 'production' || environment=='test' }}
-    {{partial:partials/_amplitude}}
-    {{else}}
     <script>
       function academyClick(link){
           console.log(link)

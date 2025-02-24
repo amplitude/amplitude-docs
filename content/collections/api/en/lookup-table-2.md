@@ -50,7 +50,7 @@ Create a Lookup Table object by uploading a CSV that maps an existing property t
 ```curl
 curl -L -X POST 'https://data-api.amplitude.com/api/3/lookup_table' \
         -u API_KEY:SECRET_KEY \
-        -F 'file=@"/path/to/file.csv"' \
+        -F 'file=@"/path/to/file.csv";type=text/csv' \
         -F 'name=":name"' \
         -F 'key=":key"' \
         -F 'property="{\"value\": \":propertyName\", \"type\": \":propertyType\", \"groupType\":  \":propertyGroupType\"}";type=application/json'
@@ -218,7 +218,7 @@ Override a Lookup Table object by uploading a CSV that replaces the CSV already 
 ```curl
 curl -L -X PUT 'https://data-api.amplitude.com/api/3/lookup_table/:name' \
         -u API_KEY:SECRET_KEY \
-        -F 'file=@"/path/to/file.csv"' \
+        -F 'file=@"/path/to/file.csv";type=text/csv' \
         -F 'property="{\"value\": \":propertyName\", \"type\": \":propertyType\", \"groupType\":  \":propertyGroupType\"}";type=application/json'
 ```
 {{/partial:tab}}
@@ -294,7 +294,7 @@ Update a Lookup Table's columns and data. If you provide a CSV file, the file is
 ```curl
 curl -L -X PATCH 'https://data-api.amplitude.com/api/3/lookup_table/:name' \
         -u API_KEY:SECRET_KEY
-        -F 'file=@"/path/to/file.csv"' \
+        -F 'file=@"/path/to/file.csv";type=text/csv' \
         -F 'property="{\"value\": \":propertyName\", \"type\": \":propertyType\", \"groupType\":  \":propertyGroupType\"}";type=application/json'
 ```
 {{/partial:tab}}

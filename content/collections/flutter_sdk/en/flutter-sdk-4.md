@@ -1,8 +1,8 @@
 ---
 id: 2bf2ce66-3b9f-4021-81b0-28d9661af92e
 blueprint: flutter_sdk
-title: 'Flutter SDK 4.0'
-sdk_status: Beta
+title: 'Flutter SDK 4'
+sdk_status: current
 article_type: core
 major_version: 40
 supported_languages:
@@ -17,6 +17,16 @@ platform: Flutter
 package_name: amplitude_flutter
 ---
 This is the official documentation for the Amplitude Analytics Flutter SDK. The Flutter SDK lets you send events from your Flutter application to Amplitude.
+
+## Compatibility
+
+From Amplitude Flutter v4, we bump up the kotlin version to v1.9.22 to support latest Gradle.
+
+The following matrix lists the minimum support for Amplitude Flutter SDK version.
+
+| Amplitude Flutter |  Dart   | Flutter | Gradle | Android Gradle Plugin | Kotlin Gradle Plugin |
+|-------------------|---------|---------|--------|-----------------------|-----------------------|
+| >= 4.0.0          | >=3.3   | >=3.7   | 8.2    | 8.2.2                 | 1.9.22                |
 
 ## Install the SDK
 
