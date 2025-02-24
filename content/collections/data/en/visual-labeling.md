@@ -43,6 +43,17 @@ To use Visual Labeling to create new labeled events, follow these steps:
 
 8. You can select another element to continue labeling or click "Back to Amplitude" if you're done.
 
+### Avoid event duplication
+
+Amplitude detects events that you label which:
+
+* Have a similar definition to other labeled events
+* Have the same name as another labeled event
+
+When you see the `Event has a similar definition` warning, click **View** to compare your new event to the existing events. When you click through the similar definitions, Amplitude highlights elements on screen that define your event.
+
+When you see the `This labeled event already exists` warning, click **View** to open the existing event.
+
 ## Edit a labeled event
 
 When your site's code changes, you may need to update the definition of your labeled events to match. Since Autocapture consistently captures the raw click events, you can update the definition of your labeled events and fix any gaps in your data.
@@ -66,6 +77,12 @@ To repair a labeled event:
 3. To repair an event that doesn't have event volume, click *Repair*. This opens the Visual Labeling flow with the context of the selected event. 
 4. Select a new element on the page to update the labeled event's definition.
 5. Click *Save* to exit the Visual Labeler and apply the updated definition
+
+### Find misconfigured events
+
+Amplitude provides information to let you know if a labeled event isn't working as it should.
+
+Navigate to *Data > Events*, and open the Labeled Events tab. The **Recency** column shows the last time Amplitude tracked each event. Events that weren't seen recently may show an issue with the event definition.
 
 ## Labeled events and event volume
 
