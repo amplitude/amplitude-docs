@@ -25,7 +25,7 @@ The REST API authenticates the request using your [deployment](/docs/feature-exp
 | `user_id`                          | The user's ID.                                                                                                                                                                                                                   |
 | `device_id`                        | The user's device ID.                                                                                                                                                                                                            |
 | `flag_keys`                        | Specific flag keys to get the variants of. Multiple flag keys should be separated by commas, e.g. `flag_keys=flag-A,flag-B`.  If empty/missing, Experiment evaluates all flags & experiments associated with the deployment key. |
-| `context`                          | JSON string consisting of a full user context. Set user properties in the `user_properties` field (for example: `{"user_properties":{"premium":true}}`).                                                                         |
+| `context`                          | JSON string consisting of a full user context. Set user properties in the `user_properties` field (for example: `{"user_properties":{"premium":true}}`). For more information about user context, see the definition in the [Data Model](/docs/feature-experiment/data-model#full-user-definition).                                                                         |
 
 ## Headers
 

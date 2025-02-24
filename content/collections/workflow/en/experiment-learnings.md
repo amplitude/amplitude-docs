@@ -60,7 +60,7 @@ Filter your experiment results based on user properties. For example, create a f
 Data Quality is available to organizations with access to Experiment who have recommendations enabled.
 {{/partial:admonition}}
 
-Data Quality checks the setup, instrumentation, and statistical integrity of your experiment as it runs, and alerts you to issues it finds.
+Amplitude doesn't generate p-values or confidence intervals for experiments using binary metrics (for example, unique conversions) until each variant has 100 users **and** 25 conversions. Experiments using non-binary metrics need only to reach 100 users per variant.
 
 When you expand a category, or click *Guide*, the Data Quality Guide opens in a side panel where you can address or dismiss issues 
 
@@ -139,10 +139,14 @@ Click the check box next to the desired notification:
 * **SRM detected:** Amplitude sends this notification if it identifies a [sample ratio mismatch](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch) issue.
 * **Long-running experiments:** Amplitude sends this notification when your long-running experiment is complete.
 * **Statsig for the recommendation metric is reached:** Amplitude sends this notification when your experiment's recommendation metric has reached stat sig.
+* **Experiment end reached:** You receive this notification when your experiment is complete.
+* **SRM detected:** You receive this notification if Amplitude identifies a [sample ratio mismatch](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch) issue.
+* **Long-running experiments:** You receive this notification when your long-running experiment is complete.
+* **Statsig for the recommendation metric is reached:** You receive this notification when your experiment's recommendation metric has reached stat sig.
 
 Amplitude Experiment sends a notification to the editors of the experiment.
 
-## What’s next?
+## Next steps
 
 It’s important to remember that no experiment is a failure. Even if you didn’t get the results you were hoping for, you can still learn something from the process—even if your test didn’t reach stat sig. Use your results as a springboard to asking hard questions about the changes you made, the outcomes you saw, what your customers expect from your product, and how you can deliver that.
 

@@ -5,8 +5,8 @@ title: 'Attribute credit to multiple acquisition touch points'
 source: 'https://help.amplitude.com/hc/en-us/articles/6040784295195-Attribute-credit-to-multiple-acquisition-touch-points'
 this_article_will_help_you:
   - 'Understand how specific touch points are contributing to your marketing outcomes'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1726093726
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1738271039
 landing: true
 landing_blurb: 'Understand how specific touch points are contributing to your marketing outcomes'
 ---
@@ -73,7 +73,7 @@ If the pre-built attribution models don't meet your needs, you can also create a
     {{/partial:admonition}}
 5. Set the default lookback window for the model. Optionally, lock the window to ensure others using this model will only be able to use that lookback window.
 6. Decide whether you want to share the custom model with others in your organization.
-7. If desired, exclude property values from attribution. This may be useful if you don't want to assign credit to a particular value (e.g. direct website visits or email).
+7. If desired, exclude property values from attribution. This may be useful if you don't want to assign credit to a particular value (for example, direct website visits or email).
 8. Click on *Save* to confirm the change, save the model (for yourself and/or others to use in the future), and see the table results with the attribution model applied.  
   
 ![image1.png](/docs/output/img/data-tables/image1-png.png)
@@ -121,6 +121,16 @@ Each metric type supports a specific set of attribution types:
     * inverse j-shaped
     * u-shaped
     * custom
+
+## Attribution with multiple properties
+
+The attribution model applies only to the property in the outermost group by level. Properties in inner group by levels don't undergo attribution modeling. Instead, they inherit their values from the attributed event.
+
+![](statamic://asset::help_center_conversions::data-tables/attribution-model.png)
+
+In this example, the attribution model applies only to the `Channel`, as its the outermost group by property.
+
+`utm_source`, as an inner group by property derives its value from the attributed events, rather than applying attribution separately.
 
 ## Attribution example calculation
 

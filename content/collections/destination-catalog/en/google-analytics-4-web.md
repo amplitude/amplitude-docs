@@ -3,7 +3,7 @@ id: 9066a0a1-19b7-4291-887a-8af4375ff471
 blueprint: destination-catalog
 use_cases:
   - "The use case with streaming events from Amplitude to Google Analytics 4 (GA4) involves leveraging Amplitude's robust event tracking capabilities to seamlessly forward event data to GA4. This integration enables businesses to gain comprehensive insights into user behavior, engagement, and interactions across their digital platforms. By combining Amplitude's analytics with GA4's advanced capabilities, organizations can track conversions, measure user engagement, identify trends, and optimize content effectively. This integration facilitates data-driven decision-making, empowering businesses to refine their marketing strategies, enhance digital experiences, and drive better outcomes across their web and mobile platforms."
-short_description: "Amplitude CDP's Google Analytics 4 (iOS/Android) streaming integration enables you to forward your Amplitude events and users straight to Google Analytics 4 (iOS/Android) with just a few clicks."
+short_description: "Amplitude Activation's Google Analytics 4 (iOS/Android) streaming integration enables you to forward your Amplitude events and users straight to Google Analytics 4 (iOS/Android) with just a few clicks."
 integration_category:
   - marketing-analytics
 integration_type:
@@ -20,7 +20,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1713478576
 ---
 
-Amplitude CDP's Google Analytics 4 (Web) streaming integration enables you to forward your Amplitude events and users straight to Google Analytics 4 (Web) with just a few clicks.
+Amplitude Activation's Google Analytics 4 (Web) streaming integration enables you to forward your Amplitude events and users straight to Google Analytics 4 (Web) with just a few clicks.
 
 {{partial:admonition type="note" title="Choose the correct Google Analytics 4 destination"}}
 Google Analytics 4 (Web) destination works with a web application instrumented with Google Tag (gtag.js). If you are working with an iOS or Android mobile application using Firebase, set up a [Google Analytics 4 (iOS/Android)](/docs/data/destination-catalog/google-analytics-4-ios-android) destination.
@@ -28,7 +28,7 @@ Google Analytics 4 (Web) destination works with a web application instrumented w
 
 ## Use cases
 
-When you send events from Amplitude to Google Analytics 4, you enrich Google Analytics 4's data collection capabilities, deepen understanding of user journeys, and integrate product and marketing insights. This approach optimizes user acquisition and retention, and enhances the overall user experience. For more information, see Amplitude's blog post [GA4 as an Amplitude CDP Destination: Hybrid Tracking Method for Full User Journey Analysis](https://amplitude.com/blog/GA4-amplitude-hybrid-tracking) that walks through the end-to-end use case for this Google Analytics 4 streaming integration.
+When you send events from Amplitude to Google Analytics 4, you enrich Google Analytics 4's data collection capabilities, deepen understanding of user journeys, and integrate product and marketing insights. This approach optimizes user acquisition and retention, and enhances the overall user experience. For more information, see Amplitude's blog post [GA4 as an Amplitude Activation Destination: Hybrid Tracking Method for Full User Journey Analysis](https://amplitude.com/blog/GA4-amplitude-hybrid-tracking) that walks through the end-to-end use case for this Google Analytics 4 streaming integration.
 
 ## Setup
 

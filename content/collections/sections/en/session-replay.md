@@ -35,9 +35,13 @@ When viewing a session replay from your homepage or from a search, the user's ev
 
 Session Replay supports user sessions of any length.
 
+{{partial:admonition type="note" heading=""}}
+Event names with a *sparkle* icon indicate that Amplitude has generated a name to provide more context around the action a user is taking. These are Autocapture events ingested as `Page Viewed`, `Element Clicked`, and `Element Changed`, but Amplitude uses property information to make them more valuable in the event stream. Click any of them to see their ingested name and properties.
+{{/partial:admonition}}
+
 ### View Session Replay from User Look-Up
 
-To access Session Replay from a user’s event stream, use the [User Look-Up](/docs/analytics/user-data-lookup) feature. This can be helpful if a user has reported a potential bug during their session, or if you want to understand whether a user's experience is representative of a bigger trend. 
+To access Session Replay from a user’s event stream, use the [User Look-Up](/docs/analytics/user-data-lookup) feature. This can be helpful if a user has reported a potential bug during their session, or if you want to understand whether a user's experience is representative of a bigger trend.
 
 Find the user with User Look-Up (you’ll need their user ID to do this), then click *Play Session* next to the session you're looking for in the event stream. The replay appears to the right, where you can review session activity. You can generate a link to share the replay with your team from the view in a User Look-Up event stream. Click *Copy URL* from the view to copy the link. 
 
@@ -142,3 +146,29 @@ There are some limitations when using Session Replay:
 	* Lottie Animations (web and mobile)
 	* iFrames not from origin
 	* Assets that require authentication, like fonts, CSS files, and images
+
+## Troubleshoot replay playback
+
+Sometimes, replays may appear missing or otherwise unavailable for playback. The causes of these issues, and steps you can take to to mitigate them depend on the issue.
+
+### Parts of this session weren't captured
+
+If you experience this error, parts of a replay may show as inactive periods because Amplitude doesn't capture any user interaction during that period. Sometimes, it impacts the entire replay.
+
+When you see this error in a replay, one of the following may have happened:
+
+* **The user closed the browser**. Amplitude captures and uploads session replays as users use your product. If they leave the app or close their browser before the session replay upload completes, some parts of the replay appear to be missing in Amplitude and unavailable for playback.
+* **Network issues**. If the user on your site or app experiences network degradation, their replay may fail to upload. If you notice pattern, or commonly experience this issue, contact [Amplitude Support](https://gethelp.amplitude.com/hc/en-us).
+* **Requests throttled**. During holiday periods, special events, or other peak times, traffic to your site or app may spike resulting in a large volume of session replays. In these instances, Amplitude may throttle uploads to keep system performance.
+
+If you see this error:
+
+* **Check for throttle errors**. Open the [Ingestion Monitor](/docs/session-replay/ingestion-monitor). Check for a spike `429` throttling errors. If you know a period of high traffic is coming up due to a campaign or other event, contact [Amplitude Support](https://gethelp.amplitude.com/hc/en-us) for a temporary change to the throttle threshold.
+* **Leave in-product feedback**. Leave a thumbs-down if the replay you're viewing doesn't meet expectation.
+* **Contact Amplitude**. If you see issues in replace collection that you think might relate to missing data, contact [Amplitude Support](https://gethelp.amplitude.com/hc/en-us).
+
+### Replay temporarily unavailable due to ingestion delay
+
+This message appears when you view a replay that Amplitude ingested within the last five minutes. It takes Amplitude one or two minutes to make a replay available for playback.
+
+Live replays that are longer than five minutes become available for playback as soon as Amplitude receives enough data to generate the replay. Refresh the page for the most recent replay data.

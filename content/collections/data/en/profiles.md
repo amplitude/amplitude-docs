@@ -9,11 +9,7 @@ updated_at: 1727805387
 ---
 Profiles enable you to join customer profile data from your data warehouse with existing behavioral product data already in Amplitude.
 
-{{partial:admonition type='note'}}
-This feature is currently in an **open beta**.
-{{/partial:admonition}}
-
-Profiles act as standalone properties, in that they aren't associated with specific events and are instead associated with a user profile. They're different from traditional user properties and offer the opportunity to conduct more expansive analyses.
+They act as standalone properties, in that they aren't associated with specific events and are instead associated with a user profile. They're different from traditional user properties and offer the opportunity to conduct more expansive analyses.
 
 Profiles always display the most current data synced from your warehouse.
 

@@ -44,6 +44,11 @@ Depending on your company's network policy, you may need to add these IP address
 Amplitude's Data Warehouse Import sometimes processes events in parallel, so time-ordered syncing of user and group properties on events isn't guaranteed in the same way as submitting events directly to the Identify and Group Identify APIs. 
 {{/partial:admonition}}
 
+{{partial:admonition type="note" heading="Long running queries"}}
+To ensure that your import queries aren't canceled, set `ABORT_DETACHED_QUERY` to `FALSE`
+at the account level.
+{{/partial:admonition}}
+
 ## Add and configure the Snowflake source
 
 Complete the following steps to configure the Snowflake source:
@@ -170,6 +175,8 @@ When using CDC Continuous Sync, keep the following things in mind:
 - **User Privacy API**: The [User Privacy API](/docs/apis/analytics/user-privacy) deletes previously ingested data and doesn't prevent Amplitude from processing new information about a user. When you use CDC, you must stop sending data about a user before you delete them with the User Privacy API. This ensures that Amplitude doesn't recreate the user in the next sync. 
   
   To delete all data associated with an end-user from Amplitude's systems, deleting the user from your data warehouse isn't enough. This process requires a User Privacy API request to ensure the user's data is removed from Amplitude's systems
+
+- CDC Continuous Sync events and mutations don't support unknown users. Rows must contain a user id or Amplitude drops the event. If you have a high volume of anonymous events, Amplitude recommends against using this mode. 
 
 ## Migrate to Change Data Capture (CDC) Continuous Sync
 

@@ -93,6 +93,20 @@ There are three ways you can add a Session Replay to a dashboard or notebook:
 * From within [User Look-Up](/docs/analytics/user-data-lookup)
 * From within an individual chart
 
+### Add an image or video to your dashboard
+
+Amplitude dashboards support adding images or video content.
+
+To add a video to a dashboard:
+
+1. On the dashboard, click *+Add Content > Video*.
+2. In the new section that appears, past the URL of a Loom, Vimeo, Zoom, or YouTube video.
+
+To add an image:
+
+1. On the dashboard, click *+Add Content > Image*. The system tray opens.
+2. Select the image file on your computer to upload. Amplitude dashboards support the following image types: `.jpg,.jpeg,.jpe,.jif,.jfif,.jfi,.gif,.png,.apng,.svg,.svgz,.bmp,.dib,.ico`.
+
 ### Designate your dashboard as "official"
 
 In many organizations, it can be challenging for Amplitude users to identify the charts and dashboards they can rely on as a “source of truth”—in other words, dashboards the organization trusts to be accurate, up to date, and relevant. This is especially true in analysis-heavy organizations, where the sheer volume of ad-hoc analyses generated can overwhelm source-of-truth content. By making this content easier to find and reference, Amplitude’s Official Dashboards feature can help newer users find their footing more quickly, and ramp up to generating productive analyses sooner.

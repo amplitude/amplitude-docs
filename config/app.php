@@ -17,6 +17,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Statamic'),
+    'analytics-key' => env('AMPLITUDE_API_KEY'),
 
     /*
     |--------------------------------------------------------------------------
