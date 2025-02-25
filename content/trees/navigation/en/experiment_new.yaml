@@ -1,0 +1,207 @@
+tree:
+  -
+    id: ee7f396f-b3b2-405f-b890-35efff9aad98
+    title: 'Experiment planning'
+    children:
+      -
+        id: 5b758f2e-001d-40b1-8fed-1c69d5d6cd75
+        title: Overview
+        url: '#'
+      -
+        id: 6fc77c6f-4382-4021-9ad3-276d7ec53b9c
+        title: 'Feature vs Web'
+        url: '#'
+      -
+        id: 0369a570-2463-4670-a71e-42073a523fb6
+        title: Evaluation
+        children:
+          -
+            id: dd5dc548-3608-4fe6-b310-2bd5c593a678
+            title: Overview
+          -
+            id: edac28c9-5226-4f63-a3cd-4d6e2b6cd6c5
+            title: Local
+          -
+            id: e2cf6ccc-9560-434d-95c8-31d66fe65e21
+            title: Remote
+      -
+        id: fcdfed9e-2ed3-41b3-8ce6-75022b53aadb
+        title: 'Statistics methods'
+        children:
+          -
+            id: 6502e61c-cc2e-4a89-8019-2da934c48e67
+            title: Sequential
+          -
+            id: 8e7e4dd8-b3d1-4a99-9b61-cf70bf2b6711
+            title: T-Test
+          -
+            id: a990729e-aa3c-4055-8f01-9abfe37e678f
+            title: Bayesian
+          -
+            id: 973d13ec-b6a1-41ee-98d2-1f2fdcd7999c
+            title: 'Thompson Sampling (MAB)'
+      -
+        id: a76c5d53-41be-41bd-b5ab-457308c52ca5
+        title: 'Reduce the chance of error'
+        url: '#'
+      -
+        id: 7687738f-107d-4472-b889-959cff3a257b
+        title: 'Group Experiments'
+        children:
+          -
+            id: 1b03ec51-43fa-4ed6-8aa5-88b877f724ed
+            title: 'Mutual Exclusion'
+          -
+            id: e49f75d1-d6ec-4a80-ae88-f73cab033b6e
+            title: Holdouts
+      -
+        id: 518668a6-c903-4d6f-a12d-67c9dbd12f6e
+        title: 'Experiment Goals'
+        children:
+          -
+            id: 0fb2900a-ce60-427b-b11d-d94dd5b20288
+            title: 'Primary and Secondary Metrics'
+          -
+            id: 950d1b2a-b4d3-4983-8492-8cbec20bf334
+            title: 'Guardrail vs Success'
+          -
+            id: fa302af4-9702-446e-94c9-f13d61b4a7c6
+            title: Direction
+          -
+            id: 39f72a9d-2eaf-4f62-9298-880af310dc74
+            title: 'Minimum Detectable Effect (MDE)'
+          -
+            id: dd58992a-5411-4784-b58c-26631507ef61
+            title: Winsorization
+          -
+            id: d7c67cfa-71b1-4c8e-b2f5-82a53e1384e6
+            title: CUPED
+          -
+            id: fc0424d3-f3f0-4a43-b73f-79079d378cf8
+            title: Attribution
+          -
+            id: 0ffa4266-1f23-47e0-9428-57a16161fead
+            title: Window
+      -
+        id: 4951c818-2f8c-485d-9b1c-c05c7118d328
+        title: 'Experiment Rollout'
+        url: '#'
+      -
+        id: 0d76211f-54c2-408b-b351-75bde3d8b47d
+        title: 'Exposure Events'
+        children:
+          -
+            id: 8d33b834-fd65-4a1e-965f-9b0ddca1b3fe
+            title: 'Exposure Event'
+          -
+            id: 638ea5bd-2732-484c-8f39-422dce1cd593
+            title: 'Custom Exposure'
+          -
+            id: 8e54e2b3-8da9-4ef1-bf4b-b3a0f3c457d5
+            title: 'Proxy Exposure'
+      -
+        id: 95c4d2cc-4a3e-44b8-b489-e5cf24d86f5d
+        title: Bucketing
+        url: '#'
+  -
+    id: 4d4e9e5a-6bd7-4b79-a62a-f16c8a343a14
+    title: 'Create an Experiment'
+    children:
+      -
+        id: b8d508e3-ffd2-4874-aec4-89d4db467adc
+        title: 'Project configuration'
+        url: '#'
+      -
+        id: 20fe7003-1f52-4f34-a611-19beb33a9d96
+        title: 'Build a feature experiment'
+        children:
+          -
+            id: 58a871e6-c55c-4ddb-a68e-21ef29c36ce1
+            title: 'Create new'
+          -
+            id: 4a620d78-c9d1-4728-be96-6ad59481918e
+            title: 'Define goals'
+          -
+            id: c792cc6e-03a1-4572-b46e-196cb72c3ee5
+            title: 'Exposure Event'
+          -
+            id: 606da913-1be4-4d24-b513-4948a5541a4d
+            title: Variants
+          -
+            id: 6ead4dd9-938f-4681-af9d-11df3757edf1
+            title: Targeting
+          -
+            id: 76340b59-9aa1-4e36-b01a-736a1d3bf4c1
+            title: 'Analysis settings'
+          -
+            id: 2b56f23c-cfa8-4916-bcc9-8207daf700c4
+            title: 'Duration estimate'
+      -
+        id: 238194fc-de72-4a0c-9375-1db2ef484be1
+        title: 'Build a web experiment'
+        children:
+          -
+            id: a139b8f2-aaeb-4d64-ae62-1c5b50e007d2
+            title: 'Create new'
+          -
+            id: 4422c4e0-e1cc-482b-92b7-5736cbd96a54
+            title: 'Site setup'
+          -
+            id: a68b6dbd-c506-4cce-bafd-c031ca754be1
+            title: Variants
+          -
+            id: 6ce22724-4647-49a4-af21-dec919458d54
+            title: Goals
+          -
+            id: abc896a4-20ff-4034-99b8-043ad034a101
+            title: Pages
+          -
+            id: 8c96d808-7d9d-4fcb-8b94-9057e50ba3a3
+            title: Targeting
+          -
+            id: dc4b9362-895d-49bb-99cc-4979c91eb318
+            title: Advanced
+  -
+    id: afad0d93-16b3-4be5-b6ab-9bb08149290a
+    title: 'Test your experiment'
+    children:
+      -
+        id: 4c88d378-9848-42fe-a086-c72d65240e11
+        title: Deployment
+        url: '#'
+      -
+        id: f766a02b-07be-4a05-8ff5-e3c9836f4d4d
+        title: Dependencies
+        url: '#'
+      -
+        id: 98f91599-6997-47d7-a9be-a7cd27dec0f8
+        title: 'Define testers'
+        url: '#'
+  -
+    id: bf7ee859-f057-4f4c-8dfa-206da4267435
+    title: 'Analyze your experiment'
+    children:
+      -
+        id: c05db79b-c8eb-48f7-95fb-94a318074f67
+        title: 'Experiment Analysis View'
+        url: '#'
+      -
+        id: bd640958-dbf1-404e-86ae-d1719e1d9dac
+        title: 'Understand traffic distribution'
+        url: '#'
+      -
+        id: 1a0b830f-986b-42e5-aebf-4a313566e0c2
+        title: 'Variant jumping'
+        url: '#'
+      -
+        id: ce6c5491-3a42-4238-b855-47b394d3e5a5
+        title: 'Anonymous exposures'
+        url: '#'
+      -
+        id: 573e2fca-63f4-4ef3-9767-566388ff3da3
+        title: 'Exposures without assignments'
+        url: '#'
+      -
+        id: aad2bd67-1092-43b9-8d22-ffd1991bcf42
+        title: 'Rollout options'
+        url: '#'
