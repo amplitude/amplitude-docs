@@ -5,18 +5,27 @@ title: 'Dimensional Analysis'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1737480058
+updated_at: 1740515903
 ---
-
 Sometimes, you might want to remove QA users or other internal traffic from your analyses because they're not representative of your customer base, and may skew results.
 
 Amplitude's Dimensional Analysis capabilities enable you to exclude groups of users that you define from analysis on a per-experiment basis.
 
 ## Define your testers
 
-In your Feature Experiment, use Targeting settings to define your test users.
+In Feature Experiment, use the Targeting settings to define your test users.
 
-Oftentimes you may want to remove QA users or your internal traffic from analysis because those users are not representative of your customer base and may skew results. You can do this by clicking on the "All Users" dropdown and selecting "All Users without testing users". Doing so will remove the users in the "Testing" section on the "Settings" tab from the analysis you are seeing. If you have selected multiple targeting segments, you may want to analyze each of the segments individually because you may see a lift in iOS for example but not on android. You can do this with a single click by clicking on the segment name in the "All Users" dropdown. The users in
-"Testing" section on the "Settings" tab will also be filtered out from the analysis and diagnostics charts.
-It can be helpful to investigate the impact of experiments on specific user segments. Experiments that are not statistically significant overall can often contain a small group of users for which the result is statistically significant. Likewise, for statistically significant results, the overall performance can be driven by a small segment of users.
-You can further investigate the impact of the experiment on specific user segments by clicking on the "All Users" button to look at particular Amplitude out of the box segments, saved segments, or cohorts. If you want to add other user property filters, you can click on the "Add Filter" button.
+![](statamic://asset::help_center_conversions::experiment/targeting-test-users.png)
+
+Add users by `User ID` or `Device ID`, or using a cohort. Test users are assigned a variant, which Amplitude ensures they see each time they're exposed.
+
+## Filter test users
+
+![](statamic://asset::help_center_conversions::experiment/exclude-testers.png)
+
+If you want to remove QA users or internal traffic from analysis because those users aren't representative of your customer base and may skew results. To remove users from an analysis, click the **All exposed users* dropdown and select `Exclude testers`. This removes the users in the "Testing" section on the "Settings" tab from the analysis. 
+
+If you selected multiple targeting segments, analyze each segment individually because you may see a lift in one segment. Click the segment name in the "All Users" dropdown. This also filters testing users from your analysis
+
+It can be helpful to investigate the impact of experiments on specific user segments. Experiments that aren't statistically significant can often contain a small group of users for which the result is statistically significant. Likewise, for statistically significant results, small segments of users can drive performance of the experiment.
+
