@@ -15,7 +15,7 @@ Sticky bucketing ensures that a user will continue to see the same variant even 
 Sticky bucketing is often used as a defense mechanism against [variant jumping](https://www.docs.developers.amplitude.com/experiment/guides/troubleshooting/variant-jumping/): when a user is exposed to two or more variants for a single flag or experiment. However, simply enabling sticky bucketing does not guarantee that you’ll never see variant jumping. For example, it may still occur if your experiment includes both a logged-out and a logged-in experience, since a user may have a different Amplitude ID when they are logged in versus not.
 
 {{partial:admonition type='note'}}
-Sticky bucketing is only available on experiments not flags.
+Sticky bucketing is only available on feature experiments not flags.
 {{/partial:admonition}}
 
 {{partial:admonition type='note'}}
@@ -37,6 +37,10 @@ Users do not get sticky bucketed to the **off** variant. Learn more about evalua
 ## When to use sticky bucketing, and when not to
 
 This section provides examples of when to enable sticky bucketing versus when not to. Note that this is not intended to be an exhaustive list. There are also cases where the results would be the same, regardless of whether sticky bucketing was on or off. An example might be an experiment where you’re targeting everyone who views your home page, and you do not touch any of the experiment controls while the experiment is running. 
+
+{{partial:admonition type='note'}}
+Remember that if you are targeting a dynamic cohort that users can flow in and out of the cohort. Users could see "treatment" and then "off" if sticky bucketing is not enabled.
+{{/partial:admonition}}
 
 #### Enable sticky bucketing when:
 
