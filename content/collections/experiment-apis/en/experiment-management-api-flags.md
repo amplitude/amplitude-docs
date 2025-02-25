@@ -85,7 +85,7 @@ curl --request GET \
             "createdBy": "abc@amplitude.com",
             "lastModifiedBy": "abc@amplitude.com",
             "createdAt":"2022-09-09T15:29:47.940Z",
-            "lastModifiedAt":"2023-01-25T11:43:41.073Z"
+            "lastModifiedAt":"2023-01-25T11:43:41.073Z",
             "variants": [
                 {
                     "key": "on"
