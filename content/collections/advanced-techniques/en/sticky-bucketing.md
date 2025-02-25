@@ -38,6 +38,10 @@ Users do not get sticky bucketed to the **off** variant. Learn more about evalua
 
 This section provides examples of when to enable sticky bucketing versus when not to. Note that this is not intended to be an exhaustive list. There are also cases where the results would be the same, regardless of whether sticky bucketing was on or off. An example might be an experiment where you’re targeting everyone who views your home page, and you do not touch any of the experiment controls while the experiment is running. 
 
+{{partial:admonition type='note'}}
+Remember that if you are targeting a dynamic cohort that users can flow in and out of the cohort. Users could see "treatment" and then "off" if sticky bucketing is not enabled.
+{{/partial:admonition}}
+
 #### Enable sticky bucketing when:
 
 * You want to **give the user a consistent experience**, even if the user property you’re targeting changes. For example, if you’re running an experiment only in the United States, enabling sticky bucketing would ensure your users would see the same variant if they happened to travel outside the country.
