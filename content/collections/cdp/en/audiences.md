@@ -1,12 +1,12 @@
 ---
 id: 598de42f-58b0-4349-894d-1c8a8495e953
 blueprint: cdp
-title: 'Amplitude Audiences overview'
+title: 'Activation overview'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1729265369
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1740517840
 source: 'https://help.amplitude.com/hc/en-us/articles/360028552471-Amplitude-Audiences-overview-Drive-conversions-with-true-one-to-one-personalization'
 this_article_will_help_you:
   - 'Find the right resources to plan and execute an effective personalization campaign'
