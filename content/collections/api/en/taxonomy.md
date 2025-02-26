@@ -494,11 +494,22 @@ event_type=Onboard%20Start&category=Onboarding&description=My%20new%20onboarding
 
 #### Body parameters
 
-| <div class="big-column">Name</div> | Description                                                                   |
-| ---------------------------------- | ----------------------------------------------------------------------------- |
-| `event_type`                       | <span class="required">Required</span>. String. The event name.               |
-| `category`                         | <span class="optional">Optional</span>. String. The event type's category.    |
-| `description`                      | <span class="optional">Optional</span>. String. Details about the event type. |
+| <div class="big-column">Name</div> | Description                                                                               |
+| ---------------------------------- | ----------------------------------------------------------------------------------------- |
+| `event_type`                       | <span class="required">Required</span>. String. The event name.                           |
+| `category`                         | <span class="optional">Optional</span>. String. The event type's category.                |
+| `description`                      | <span class="optional">Optional</span>. String. Details about the event type.             |
+| `is_active`                         | <span class="optional">Optional</span>. Boolean. Activity of the event type.             |
+| `is_hidden_from_dropdowns` | <span class="optional">Optional</span>. Boolean. Event type is hidden from dropdowns.             |
+| `is_hidden_from_persona_results` | <span class="optional">Optional</span>. Boolean. Event type is hidden from persona results. |
+| `is_hidden_from_pathfinder` |  <span class="optional">Optional</span>. Boolean. Event type is hidden from pathfinder.          |
+| `is_hidden_from_timeline` | <span class="optional">Optional</span>. Boolean. Event type is hidden from timeline.               |
+| `tags`                             | <span class="optional">Optional</span>. String. List of tags, separated by a comma.       |
+| `owner`                             | <span class="optional">Optional</span>. String. Owner of the event type.                 |
+
+{{partial:admonition type="note" heading=""}}
+`is_hidden_from_dropdowns`, `is_hidden_from_persona_results`, `is_hidden_from_pathfinder` and `is_hidden_from_timeline` properties can only be set on ingested event types.
+{{/partial:admonition}}
 
 #### 200 ok response
 
@@ -567,14 +578,28 @@ A successful request returns a `200 OK` status with a JSON body:
             "category": {
                 "name": "Attribution Events"
             },
-            "description": null
+            "description": null,
+            "is_active": false,
+            "is_hidden_from_dropdowns": false,
+            "is_hidden_from_persona_results": false,
+            "is_hidden_from_pathfinder": false,
+            "is_hidden_from_timeline": false,
+            "tags": [],
+            "owner": null
         },
         {
             "event_type": "Conversation",
             "category": {
                 "name": "Conversion Events"
             },
-            "description": "This event is fired when a user converts."
+            "description": "This event is fired when a user converts.",
+            "is_active": false,
+            "is_hidden_from_dropdowns": false,
+            "is_hidden_from_persona_results": false,
+            "is_hidden_from_pathfinder": false,
+            "is_hidden_from_timeline": false,
+            "tags": [],
+            "owner": null
         }
     ]
 }
@@ -642,7 +667,14 @@ A successful request returns a `200 OK` status and a JSON body with the event ty
         "category": {
             "name": "Conversion Events"
         },
-        "description": null
+        "description": null,
+        "is_active": false,
+        "is_hidden_from_dropdowns": false,
+        "is_hidden_from_persona_results": false,
+        "is_hidden_from_pathfinder": false,
+        "is_hidden_from_timeline": false,
+        "tags": [],
+        "owner": null
     }
 }
 ```
@@ -733,6 +765,17 @@ new_event_type=OnboardStart&category=Onboarding&description=User%20signed%20in%2
 | `category`                         | <span class="optional">Optional</span>. Current category name of the event type.                                                                                     |
 | `description`                      | <span class="optional">Optional</span>. String. Details to add to the event type.                                                                                    |
 | `display_name`                     | <span class="optional">Optional</span>. String. Display name of an event type. You can update the display name for an event type after it's ingested into Amplitude. |
+| `is_active`                         | <span class="optional">Optional</span>. Boolean. Activity of the event type.                                                                                        |
+| `is_hidden_from_dropdowns` | <span class="optional">Optional</span>. Boolean. Event type is hidden from dropdowns.                                                                                        |
+| `is_hidden_from_persona_results` | <span class="optional">Optional</span>. Boolean. Event type is hidden from persona results.                                                                            |
+| `is_hidden_from_pathfinder` |  <span class="optional">Optional</span>. Boolean. Event type is hidden from pathfinder.                                                                                     |
+| `is_hidden_from_timeline` | <span class="optional">Optional</span>. Boolean. Event type is hidden from timeline.                                                                                          |
+| `tags`                             | <span class="optional">Optional</span>. String. List of tags, separated by a comma.                                                                                  |
+| `owner`                             | <span class="optional">Optional</span>. String. Owner of the event type.                                                                                            |
+
+{{partial:admonition type="note" heading=""}}
+`is_hidden_from_dropdowns`, `is_hidden_from_persona_results`, `is_hidden_from_pathfinder` and `is_hidden_from_timeline` properties can only be set on ingested event types.
+{{/partial:admonition}}
 
 #### 200 OK response
 
@@ -1005,7 +1048,12 @@ event_type=Onboard%20Start&event_property=Completed%20Task&type=boolean&is_requi
 | `enum_values`                      | <span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`. Only applicable to the `enum` type.                                                                                                                                                                                                                                                                          |
 | `is_array_type`                    | <span class="optional">Optional</span>. Boolean. Use the `type` parameter to set the type of array elements.                                                                                                                                                                                                                                                                                                                               |
 | `is_required`                      | <span class="optional">Optional</span>. Boolean. Marks the property as required. When `true`, Amplitude flags events that are missing this property on the Taxonomy page in the web app.                                                                                                                                                                                                                                                   |
+| `is_hidden`                    | <span class="optional">Optional</span>. Boolean. Hide the property from chart dropdowns.                                                                                                                                                                                                                                                                                                                                                       |
 | `classifications`                  | <span class="optional">Optional</span>. String. List of classifications applicable to this event property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties. Trying to set classifications on an overridden property results in an error.                                                                                                                               |
+
+{{partial:admonition type="note" heading=""}}
+`is_hidden` property can only be set on ingested properties.
+{{/partial:admonition}}
 
 #### 200 OK response
 
@@ -1112,6 +1160,7 @@ A successful request returns a `200 OK` status and a JSON body with a list of ev
             "enum_values": null,
             "is_array_type": false,
             "is_required": false,
+            "is_hidden": false,
             "classifications": ["PII"]
         },
         {
@@ -1123,6 +1172,7 @@ A successful request returns a `200 OK` status and a JSON body with a list of ev
             "enum_values": null,
             "is_array_type": false,
             "is_required": false,
+            "is_hidden": false,
             "classifications": []
         }
     ]
@@ -1211,6 +1261,7 @@ A successful request returns a  `200 OK` status and a JSON body containing infor
         "enum_values": null,
         "is_array_type": false,
         "is_required": false,
+        "is_hidden": false,
         "classifications": ["PII"]
     }
 }
@@ -1308,7 +1359,12 @@ event_type=Onboard%20Start&description=User%20completed%20an%20onboarding%20task
 | `enum_values`                      | <span class="optional">Optional</span>. String. List of allowed values.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | `is_array_type`                    | <span class="optional">Optional</span>. Boolean. Specifies whether the property value is an array.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `is_required`                      | <span class="optional">Optional</span>. Boolean. Marks the property as required.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `is_hidden`                    | <span class="optional">Optional</span>. Boolean. Hide the property from chart dropdowns.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | `classifications`                  | <span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this event property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties, and trying to set classifications on an overridden property results in an error. With `overrideScope: "override"`, Amplitude returns an error for the same reason mentioned in the previous point.                                                                                                                                                                                                                        |
+
+{{partial:admonition type="note" heading=""}}
+`is_hidden` property can only be set on ingested properties.
+{{/partial:admonition}}
 
 #### 200 OK response
 
@@ -1567,7 +1623,12 @@ user_property=User%20Type&description=Describes%20whether%20the%20user%20is%20a%
 | `regex`                            | <span class="optional">Optional</span>. String. Regular expression or custom regex used for pattern matching and more complex values. For example, 'zip code' property must have pattern `[0-9]{5}`.                                          |
 | `enum_values`                      | <span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`.                                                                                                                 |
 | `is_array_type`                    | <span class="optional">Optional</span>. Boolean. Specifies whether the property value is an array.                                                                                                                                            |
+| `is_hidden`                    | <span class="optional">Optional</span>. Boolean. Hide the property from chart dropdowns.                                                                                                                                                          |
 | `classifications`                  | <span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this user property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. |
+
+{{partial:admonition type="note" heading=""}}
+`is_hidden` property can only be set on ingested properties.
+{{/partial:admonition}}
 
 #### Response
 
@@ -1622,6 +1683,7 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "enum_values": null,
             "regex": null,
             "is_array_type": false,
+            "is_hidden": false,
             "classifications": ["PII"]
         }, //[tl! collapse:start]
         {
@@ -1631,6 +1693,7 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "enum_values": null,
             "regex": null,
             "is_array_type": false,
+            "is_hidden": false,
             "classifications": []
         },
         {
@@ -1640,6 +1703,7 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "enum_values": null,
             "regex": null,
             "is_array_type": false,
+            "is_hidden": false,
             "classifications": []
         },
         {
@@ -1649,6 +1713,7 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "enum_values": null,
             "regex": null,
             "is_array_type": false,
+            "is_hidden": false,
             "classifications": []
         },
         {
@@ -1658,6 +1723,7 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "enum_values": null,
             "regex": null,
             "is_array_type": false,
+            "is_hidden": false,
             "classifications": []
         },
         {
@@ -1667,6 +1733,7 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "enum_values": null,
             "regex": null,
             "is_array_type": false,
+            "is_hidden": false,
             "classifications": []
         },
         {
@@ -1676,6 +1743,7 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "enum_values": null,
             "regex": null,
             "is_array_type": false,
+            "is_hidden":false,
             "classifications": []
         },
         {
@@ -1685,6 +1753,7 @@ A successful request returns a `200 OK` response and a JSON body with user prope
             "enum_values": null,
             "regex": null,
             "is_array_type": false,
+            "is_hidden": false,
             "classifications": []
         } //[tl! collapse:end]
     ]
@@ -1756,6 +1825,7 @@ A successful request returns a `200 OK` response and a JSON body with user prope
         "enum_values": null,
         "regex": null,
         "is_array_type": false,
+        "is_hidden": false,
         "classifications": ["PII"]
     }
 }
@@ -1851,7 +1921,12 @@ new_user_property_value=subscription_type&description=The%20user's%20subscriptio
 | `regex`                            | <span class="optional">Optional</span>. String. Regular expression or custom regex used for pattern matching and more complex values. For example, 'zip code' property must have pattern `[0-9]{5}`. Only applicable to the `string` type.    |
 | `enum_values`                      | <span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`. Only applicable to the `enum` type.                                                                             |
 | `is_array_type`                    | <span class="optional">Optional</span>. Boolean. Specifies whether the property value is an array. Use the `type` parameter to set the type of array elements.                                                                                |
+| `is_hidden`                    | <span class="optional">Optional</span>. Boolean. Hide the property from chart dropdowns.                                                                                                                                                          |
 | `classifications`                  | <span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this user property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. |
+
+{{partial:admonition type="note" heading=""}}
+`is_hidden` property can only be set on ingested properties.
+{{/partial:admonition}}
 
 #### Response
 
@@ -2081,7 +2156,12 @@ group_type=Group%201&group_property=Group%20Property%201&type=boolean&descriptio
 | `regex`                            | <span class="optional">Optional</span>. String. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}` Applies only to the `string` type.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | `enum_values`                      | <span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`. Only applicable to the `enum` type.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | `is_array_type`                    | <span class="optional">Optional</span>. Boolean. Property is an array type.  Use the `type` parameter to set the type of array elements.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `is_hidden`                    | <span class="optional">Optional</span>. Boolean. Hide the property from chart dropdowns.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | `classifications`                  | <span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this group property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties, and trying to set classifications on an overridden property results in an error.                                                                                                                                                                                                                                                                                                                                                        |
+
+{{partial:admonition type="note" heading=""}}
+`is_hidden` property can only be set on ingested properties.
+{{/partial:admonition}}
 
 #### 200 OK response
 
@@ -2187,6 +2267,7 @@ A successful request returns a `200 OK` status and a JSON body with a list of gr
             "enum_values": null,
             "regex": null,
             "is_array_type": false,
+            "is_hidden": false,
             "classifications": ["PII"]
         },
         {
@@ -2197,6 +2278,7 @@ A successful request returns a `200 OK` status and a JSON body with a list of gr
             "enum_values": null,
             "regex": null,
             "is_array_type": false,
+            "is_hidden": false,
             "classifications": []
         },
     ]
@@ -2284,6 +2366,7 @@ A successful request returns a  `200 OK` status and a JSON body containing infor
             "enum_values": null,
             "regex": null,
             "is_array_type": false,
+            "is_hidden": false,
             "classifications": ["PII"]
     },
 }
@@ -2380,7 +2463,12 @@ group_type=Group%201&description=First%20Group%20Property%20Updated&new_group_pr
 | `regex`                            | <span class="optional">Optional</span>. String. Regular expression, custom regex used for pattern matching or more complex values. For example, property zip code must have pattern `[0-9]{5}`  Applies only to the `string` type.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | `enum_values`                      | <span class="optional">Optional</span>. String. List of allowed values, separated by comma. For example: `red, yellow, blue`. Only applicable to the `enum` type.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | `is_array_type`                    | <span class="optional">Optional</span>. Boolean. Property is an array type. Use the `type` parameter to set the type of array elements.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `is_hidden`                    | <span class="optional">Optional</span>. Boolean. Hide the property from chart dropdowns.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | `classifications`                  | <span class="optional">Optional</span>. String. Only available if Data Access Controls is enabled at the account level. List of classifications applicable to this group property. Valid classifications are `PII`, `SENSITIVE` and `REVENUE`. You can only apply classifications on shared properties. Trying to set classifications on an overridden property results in an error.                                                                                                                                                                                                                                                                                                                                                                               |
+
+{{partial:admonition type="note" heading=""}}
+`is_hidden` property can only be set on ingested properties.
+{{/partial:admonition}}
 
 #### 200 OK response
 
