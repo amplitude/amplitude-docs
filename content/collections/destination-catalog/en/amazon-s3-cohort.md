@@ -16,6 +16,10 @@ updated_at: 1720113620
 
 Set up this integration to send cohorts to an Amazon S3 bucket. This enables you to export groups of users out of Amplitude and synchronize them with other databases or stored procedures you've built off your Amazon S3 bucket. From there, you can use Amplitude cohorts in internal analytics dashboards and internal personalization engines.
 
+{{partial:admonition type="note" title=""}}
+We recently updated our security model to align with AWS best practices. New setups now default to IAM role-based access to improve security and prevent over-permissioning. Existing S3 destinations remain unchanged to avoid disruption. If you would like to update your old destinations to IAM roles, you will need to delete your existing connection and reconfigure the cohort sync destination, as it will be set up with the new access model.
+{{/partial:admonition}}
+
 ## Setup
 
 ### Prerequisites
