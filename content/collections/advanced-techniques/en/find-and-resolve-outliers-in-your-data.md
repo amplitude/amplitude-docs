@@ -183,8 +183,8 @@ As a best practice, avoid winsorizing more than 5% of your data. If, for example
 
 ## Log transform in Experiment
 
-In addition to Winsorization, Amplitude Experiment also support log transforms as an alternative solution to outliers. This is only available for users on Enterprise plans. 
+Like Winsorization, Amplitude Experiment also supports log transforms as an alternative solution to outliers. This is only available for users on Enterprise plans. 
 
-When switched on, Amplitude Experiment applies the log transformation at a per-metric level. We use logarithm with base `e`. We do `ln(1+x)` to deal with the case where x = 0. x is the metrics value for a particular user. If 1+x <= 0, we return 0 for the metric value for that individual user. 
+When enabled, Amplitude Experiment applies the log transformation at a per-metric level. It uses logarithm with base `e`. Experiment uses `ln(1+x)` to deal with the case where `x = 0`.` x` is the metrics value for a particular user. If `1+x <= 0`, Experiment returns `0` for the metric value for that individual user. 
 
-If both winsorization and log transform are turned on, winsorization applies first and then the log transform. 
+If you enable both winsorization and log transform, winsorization applies first and then the log transform. 
