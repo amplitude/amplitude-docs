@@ -180,3 +180,11 @@ When switched on, Amplitude Experiment applies winsorization at the per-metric l
 In the metrics table, hovering over the cell will show how many users were winsorized.
 
 As a best practice, avoid winsorizing more than 5% of your data. If, for example, 10% of your data are outliers, it’s better to investigate that group separately and run two different analyses. You can also see if there are more outliers in one variant than another. For formula metrics, Amplitude applies the same winsorization value to each term.
+
+## Log transform in Experiment
+
+In addition to Winsorization, Amplitude Experiment also support log transforms as an alternative solution to outliers. This is only available for users on Enterprise plans. 
+
+When switched on, Amplitude Experiment applies the log transformation at a per-metric level. We use logarithm with base `e`. We do `ln(1+x)` to deal with the case where x = 0. x is the metrics value for a particular user. If 1+x <= 0, we return 0 for the metric value for that individual user. 
+
+If both winsorization and log transform are turned on, winsorization applies first and then the log transform. 
