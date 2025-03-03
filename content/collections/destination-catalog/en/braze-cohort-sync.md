@@ -55,8 +55,10 @@ To configure a cohort integration from Amplitude to Braze, you need the followin
 1. In Amplitude Data, click **Catalog** and select the **Destinations** tab.
 2. In the Cohort section, click **Braze**.
 3. Enter your App Group REST API key, select your endpoint, and paste your Data Import Key.
-4. Select an Amplitude User Property and a Braze target object. 
-5. When finished, save.
+4. Select an Amplitude User Property and a Braze target object.
+  a. If you have selected "User alias" as the target object, ensure that you also populate the "User alias label" field.
+  b. If you did not select "User alias" as the target object, you can leave the "User alias label" field empty.
+6. When finished, save.
 
 ## Send a cohort
 
