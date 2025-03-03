@@ -9,4 +9,7 @@ exclude_from_sitemap: false
 updated_by: 13054dd3-3dcd-4d55-aaaf-13bb99388147
 updated_at: 1740661708
 ---
-Deleting experiments and feature flags you no longer need is simple. You'll find both options from the "more" menu in the top right of your experiment. Click the three dots to open the menu and choose either *Deactivate flag* or, if you'd prefer to archive the experiment, *Archive*.
+You can delete experiments and feature flags from your Amplitude portals with the steps below:
+
+1. In the top right of your experiment,  select the three dots to open the **more** menu.
+2. Choose *Deactivate flag* or *Archive* to archive the experiment.

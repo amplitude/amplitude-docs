@@ -10,11 +10,15 @@ this_article_will_help_you:
   - 'Learn how to activate your experiment.'
   - 'Learn how to analyze your results.'
 ---
-At this point, you’re ready to roll out your experiment to your users. Click *Start Experiment*, and your experiment will be live.
+When your experiment is set up, you can select *Start Experiments* to send it to live users.
 
 ## Analyze your results
 
-After your experiment goes live, you can generate and view your results at any time. Experiment will tell you when your experiment has reached **statistical significance**, and it gives you all the data you need to analyze and interpret your results, and to apply those learnings to your product experience going forward.
+After your experiment goes live, you can generate and view your results at any time. When your experiment reaches **statistical significance*
+
+ Experiment actively informs you when the results reach 
+
+Experiment will tell you when your experiment has reached **statistical significance**, and it gives you all the data you need to analyze and interpret your results, and to apply those learnings to your product experience going forward.
 
 To learn more about how to design, roll out, and learn from experiments, check out our [articles on the experimentation workflow](/docs/feature-experiment/workflow/create).
 
