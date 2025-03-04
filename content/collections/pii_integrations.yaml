@@ -1,0 +1,17 @@
+title: 'PII Integrations'
+sites:
+  - en
+propagate: false
+template: default
+layout: layout
+revisions: false
+route: '/data/pii/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
