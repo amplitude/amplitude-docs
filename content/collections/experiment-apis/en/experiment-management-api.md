@@ -29,7 +29,7 @@ The management API uses the HTTP Authorization header for authentication.
 
 The header must be: `Authorization: Bearer <management-api-key>`.
 
-{{partial:admonition type="warning" heading="Management API keuys"}}
+{{partial:admonition type="warning" heading="Management API keys"}}
 Management API keys are different from the deployment keys used to fetch flag variants. They're created and managed via the Management API link in the Experiment sidebar.
 {{/partial:admonition}}
 
