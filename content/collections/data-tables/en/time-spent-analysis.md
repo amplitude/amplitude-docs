@@ -32,16 +32,16 @@ In the following example, the timeline represents a set of consecutive page view
 
 Amplitude supports using any event type to define a time spent metric. However, page view events are most commonly used for this analysis. You can define page view events a few ways:
 
-* **Primitive page view event**: A basic event specifically designed to track page views. For example, the pre-defined `[Amplitude] Page View` event. 
-  
+* **Primitive page view event**: A basic event specifically designed to track page views. For example, the pre-defined `[Amplitude] Page View` event.
+
   ![](statamic://asset::help_center_conversions::data-tables/primitive.png)
-  
-* **Any active event where Event Name ∈ 'Page View'**: Some taxonomies define page view at the property level. Use a filter to limit event selection to names that contain `page view`. 
-  
+
+* **Any active event where Event Name ∈ 'Page View'**: Some taxonomies define page view at the property level. Use a filter to limit event selection to names that contain `page view`.
+
   ![](statamic://asset::help_center_conversions::data-tables/filter.png)
 
-* **Custom page view event**: A combination of primitive events that collectively represent a page view. 
-  
+* **Custom page view event**: A combination of primitive events that collectively represent a page view.
+
   ![](statamic://asset::help_center_conversions::data-tables/custom.png)
 
 ## Use time spent metrics in data tables
@@ -52,11 +52,11 @@ Time spent metrics are available in data tables. Use these metrics to gain insig
 | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
 | Total time spent on page | The cumulative time spent by all users on a specific page or set of pages. <br /> <code>TimeSpent(PV)</code>                     |
 | Time spent per user      | The average time users spend viewing pages on your site. <br /> <code>TimeSpent(PV) / Uniques(PV where TimeSpent(PV) > 0)</code> |
-| Time spent per page view | The average time spent per page view event. <br /> <code>TimeSpent(PV) / Totals(PV where TimeSpent(PV) > 0)</code>               |
+| Time spent per page      | The average time spent per page event. <br /> <code>TimeSpent(PV) / Totals(PV where TimeSpent(PV) > 0)</code>               |
 | Time spent per session   | The average time spent on page views per session. <br /> <code>TimeSpent(PV) / SessionTotals(where TimeSpent(PV) > 0)            |
 
 {{partial:admonition type="note" heading=""}}
-The computation of time spent per user, per page view, and per session metrics are dependent on an internal metric used as the denominator. As a result, Amplitude doesn't support calculating these metrics as a formula.
+The computation of time spent per user, per page, and per session metrics are dependent on an internal metric used as the denominator. As a result, Amplitude doesn't support calculating these metrics as a formula.
 {{/partial:admonition}}
 
 Time spent metrics return results in the specified unit of time, for example seconds, minutes, or hours.
