@@ -12,10 +12,6 @@ Amplitude calculates the time spent on an event as the duration between consecut
 
 Time spent analysis, like other custom metrics, is available to accounts on the Growth or Enterprise plan. For more information, see the [Amplitude pricing page](https://amplitude.com/pricing).
 
-{{partial:admonition type="beta" heading=""}}
-The metrics discussed in this article are in Beta, and may not be available to all Growth and Enterprise accounts. For more information, contact your Amplitude account representative.
-{{/partial:admonition}}
-
 When you specify a group-by property, for example `page URL` or `page type`, any change in its value resets the time spent window. This ensures that Amplitude can accurately attribute time spent to the specific value of the group-by property at the beginning of each window.
 
 In the following example, the timeline represents a set of consecutive page views and their associated page types.
