@@ -4,7 +4,7 @@ blueprint: destination-catalog
 title: 'Braze (Cohort Sync)'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 connection: destination
-source: https://www.docs.developers.amplitude.com/data/destinations/braze-cohort/
+source: 'https://www.docs.developers.amplitude.com/data/destinations/braze-cohort/'
 integration_type:
   - cohorts
 integration_category:
@@ -12,15 +12,12 @@ integration_category:
 partner_doc_link: 'https://www.braze.com/docs/partners/data_and_infrastructure_agility/analytics/amplitude/amplitude_audiences/#sync-user-traits-and-computations'
 partner_maintained: false
 integration_icon: partner-icons/braze.svg
-use_cases:
-  - 'Sending Cohorts to Braze: This feature empowers organizations to utilize their Amplitude cohorts within Braze for targeted marketing campaigns. By seamlessly transferring cohort data, customers can craft personalized messaging strategies tailored to specific customer segments. This enhances user acquisition, retention, and overall customer satisfaction by delivering relevant content based on individual behavior and preferences.'
 short_description: 'A comprehensive customer engagement platform that powers relevant experiences between consumers and brands they love. Braze helps foster human connection through interactive conversations across channels.'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713560326
+updated_at: 1741128670
 ---
-
-Amplitude Data's Braze integration lets you send your Amplitude cohorts straight to Braze with just a few clicks.
+Amplitude Data's Braze integration lets you send your Amplitude cohorts to Braze with just a few clicks.
 
 ## Considerations
 
@@ -29,9 +26,7 @@ Amplitude Data's Braze integration lets you send your Amplitude cohorts straight
 - For more details on using this integration in Braze, see the [Braze documentation](https://www.braze.com/docs/partners/data_and_infrastructure_agility/analytics/amplitude/amplitude_audiences/).
 - You must have a Braze account. 
 
-## Setup
-
-### Prerequisites
+## Prerequisites
 
 To configure a cohort integration from Amplitude to Braze, you need the following information from Braze:
 
@@ -50,7 +45,7 @@ To configure a cohort integration from Amplitude to Braze, you need the followin
      - In Braze, click **Settings**, click **API Keys** and then click **Create New API Key** OR choose an existing API key.
      - Find this in your Braze Developer Console. See the [Braze documentation](https://www.braze.com/docs/api/basics/#rest-api-key) for more detail.
 
-### Amplitude setup 
+## Amplitude setup 
 
 1. In Amplitude Data, click **Catalog** and select the **Destinations** tab.
 2. In the Cohort section, click **Braze**.
@@ -65,7 +60,7 @@ To sync your first cohort, follow these steps:
 1. In Amplitude, open the cohort you want to sync, then click **Sync**.
 2. Select Braze, then click **Next**.
 3. Choose the account you want to sync to.
-4. Choose the sync cadence.
+4. Choose the sync cadence. Select **One-Time Sync**, **Scheduled Sync**, or **Real-Time sync**. For more information about cohort syncing, see [Sync to third-party destinations](/docs/data/audiences/third-party-syncs).
 5. When finished, save your work.
 
 ## Use the cohort in Braze
