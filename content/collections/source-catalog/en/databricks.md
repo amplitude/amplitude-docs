@@ -136,7 +136,7 @@ The service principal you created above requires the following permissions in Da
 | ---------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------------- |
 | Workspace  | Grants access to your Databricks workspace.                                          | *Workspace → <workspace_name> → Permissions → Add permissions* <br/> Add the service principal you create with the User permission, click Save. |
 | Table      | Grants access to list tables and read data.                                          | *Catalog → pick the catalog→ Permissions → Grant* <br/> Select the `Data Reader` permission (`USE CATALOG`, `USE SCHEMA`, `EXECUTE`, `READ VOLUME`, `SELECT`).             |
-| Cluster    | Grants access to connect to the cluster and run workflows on your behalf             | *Compute → All-purpose compute → Edit Permission*  <br/> Add the `Add Can Attach To` permission to the service principal.            |
+| Cluster    | Grants access to connect to the cluster and run workflows on your behalf             | *Compute → All-purpose compute → Edit Permission*  <br/> Add the `Can Restart` permission to the service principal.            |
 | Export     | Enables the service principal to unload your data through spark and export it to S3. | Run the SQL commands below in any notebook: ```GRANT MODIFY ON ANY FILE TO `<service_principal_uuid>`;``` ```GRANT SELECT ON ANY FILE TO `<service_principal_uuid>`;```                                    |
 
 ### Enable CDF on your tables
