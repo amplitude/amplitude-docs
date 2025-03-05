@@ -15,8 +15,8 @@ If, on the other hand, you’re planning a phased feature rollout instead, your 
 Behind the scenes, experiments and flags are very similar, but the basic difference is this: An experiment helps you make sure you’re building the right thing for your business, while feature flags allow seamless feature releases and rollbacks. This is because an experiment has metrics and a feature flag does not, giving you greater flexibility to mess with controls without breaking anything.
 {{/partial:admonition}}
 
-Once you’ve configured your deployment, go straight to creating your variants. The basic idea—i.e., a new and different product experience that some users see but others do not—remains the same. But instead of exploring how different user segments react to different user experiences, you’ll be choosing which users get access to new features first. When working with feature flags, the variant represents code for a new feature that isn’t yet released to your entire user base.
+Once you’ve configured your deployment, go straight to creating your variants. The basic idea, a new and different product experience that some users see but others do not—remains the same. But instead of exploring how different user segments react to different user experiences, you’ll be choosing which users get access to new features first. When working with feature flags, the variant represents code for a new feature that isn’t yet released to your entire user base.
 
-You’ll still allocate users to your variants as you would if you were running an experiment, and activating your flag is as simple as switching on your experiment.
+You are allocating users to your variants as you would if you were running an experiment, and activating your flag is as simple as switching on your experiment.
 
 Check out this article to [learn more about feature flags and how they work in Amplitude Experiment](/docs/feature-experiment/workflow/feature-flag-rollouts).
