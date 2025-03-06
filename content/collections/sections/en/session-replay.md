@@ -135,7 +135,6 @@ With Session Replay, you can:
 
 There are some limitations when using Session Replay:
 
-* Session Replay is available for web-based applications only. This includes mobile web. Desktop applications aren't supported.
 * Session Replay supports standard session definitions only. [Custom session definitions](/docs/data/sources/instrument-track-sessions) aren't supported.
 * Session Replay can only be used to segment by users, and isn't available for [account-level reporting](/docs/analytics/account-level-reporting).
 * If you are in a portfolio view, you can see replays for different users under different projects. However, keep in mind that Session Replay doesn't stitch together replays from a single user across multiple projects. If a user begins a session in one project and then continues to a second project, Amplitude Analytics generates separate replays for that user for each project.
