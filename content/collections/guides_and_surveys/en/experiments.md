@@ -7,10 +7,10 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1738869164
 landing: false
 ---
-Knowing what your users respond to best is tricky. To help with this challenge, Guides and Surveys works with Amplitude Experiment.
+Knowing what your users respond to best is tricky. To help with this challenge, Guides and Surveys works with Amplitude Experiment. When you install the [Guides and Surveys SDK](/docs/guides-and-surveys/sdk), you get everything you need to run experiments on your Guides and Surveys.
 
-{{partial:admonition type="note" heading="Experiment SDK not required"}}
-When you install the [Guides and Surveys SDK](/docs/guides-and-surveys/sdk), you get everything you need to run experiments on your Guides and Surveys.
+{{partial:admonition type="note" heading="Manager or Administrator role required"}}
+Running an experiment on your guide or survey requires the Manager role at a minimum. For more information about how roles impact who can use Guides and Surveys, see [Getting Started | Roles and Permissions](/docs/guides-and-surveys/get-started#roles-and-permissions).
 {{/partial:admonition}}
 
 ## Run an experiment
