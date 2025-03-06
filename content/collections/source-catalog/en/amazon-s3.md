@@ -23,8 +23,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1713819912
 ---
-With Amplitude’s Amazon S3 Import, you can import event, group properties, or user properties into your Amplitude projects from an AWS S3 bucket. Use Amazon S3 Import to backfill large amounts of existing data, connect existing data pipelines to Amplitude, and ingest large volumes of data where you need high throughput and latency is less sensitive.
-
+With Amplitude’s Amazon S3 Import, you can import and mutate event data, and sync user or group properties into your Amplitude projects from an AWS S3 bucket. Use Amazon S3 Import to backfill large amounts of existing data, connect existing data pipelines to Amplitude, and ingest large volumes of data where you need high throughput and latency is less sensitive.
 
 During setup, you configure conversion rules to control how events are instrumented. After Amazon S3 Import is set up and enabled, Amplitude's ingestion service continuously discovers data files in S3 buckets and then converts and ingest events.
 
@@ -36,6 +35,8 @@ Amazon S3 Import setup has four main phases:
 4. Test.
 
 ## Getting started
+
+Keep the following in mind as you plan and implement the Amazon S3 connection.
 
 ### Prerequisites
 
@@ -54,9 +55,13 @@ The files you want to send to Amplitude must follow some basic requirements:
 - Files contain events, with one event per line.
 - Files are uploaded in the events’ chronological order.
 - Filenames are unique.
-- The file wasn't ingested by the S3 import. After a file is ingested by a S3 import source, the same S3 import source doesn't process the file again, even if the file receives an update.
+- Amplitude processes files exactly once. You can’t edit files once you upload them to the S3 bucket. If you do edit a file after you upload it, there’s no guarantee that Amplitude processes the most recent version of the file.
 - File size must be greater than 1MB and smaller than 1GB.
 - Files are compressed or uncompressed JSON, CSV, or parquet files.
+- For mutations, keep the following constraints in mind:
+  - Event mutations require a user ID
+  - `INSERT`, `UPDATE`, and `DELETE` events are permitted. If you don't provide a mutation type, Amplitude defaults to `DELETE`.
+  - Continuous Sync events and mutations don't support unknown users. If a row doesn't contain a user ID, Amplitude drops the event. If you have a high volume of anonymous events, Amplitude recommends against using this mode.
 
 ### Limits
 
@@ -77,6 +82,10 @@ If your network policy requires, add the following IP addresses to your allowlis
    - 3.124.22.25
    - 18.157.59.125
    - 18.192.47.195
+
+{{partial:admonition type="note" heading="CDC and event volume"}}
+By using mutations, Amplitude consolidates `INSERT`, `UPDATE`, and `DELETE` operations to per row mutations based on your sync frequency. This means that Amplitude can make multiple operations to an event during the sync window and they only count as one event against your existing event volume. However, any operation made to an event outside of the sync window counts as an additional event against your existing event volume. This may impact the rate at which you use your existing event volume. Contact sales to purchase additional event volume, if needed.
+{{/partial:admonition}}
 
 ### Deduplication with `insert_id`
 
@@ -256,7 +265,7 @@ When you have your bucket details, create the Amazon S3 Import source.
 
 A banner confirms you’ve created and enabled your source. Click **Finish** to go back to the list of data sources. Next, you must create your converter configuration.
 
-Amplitude continuously scans buckets to discover new files as they're added. Data is available in charts within 30 seconds of ingestion.
+Amplitude continuously scans buckets to discover new files as they're added.
 
 ### Optional: Manage event notifications
 
@@ -276,14 +285,14 @@ To enable the feature, you can either enable it when you create the source, or m
 
 Your converter configuration gives the S3 vacuum this information:
 
-- A pattern that tells Amplitude what a valid data file looks like. For example:**“\\w+\_\\d{4}-\\d{2}-\\d{2}.json.gz”**
+- A pattern that tells Amplitude what a valid data file looks like. For example: `\w+\_\d{4}-\d{2}-\d{2}.json.gz`
 - Whether the file is compressed, and if so, how.
 - The file’s format. For example: CSV (with a particular delimiter), or lines of JSON objects.
 - How to map each row from the file to an Amplitude event.
 
 ### Guided converter creation
 
-You can create converters via Amplitude's new guided converter creation interface. This lets you map and transform fields visually, removing the need to manually write a JSON configuration file. Behind the scenes, the UI compiles down to the existing JSON configuration language used at Amplitude.
+You can create converters through Amplitude's new guided converter creation interface. This lets you map and transform fields visually, removing the need to manually write a JSON configuration file. Behind the scenes, the UI compiles down to the existing JSON configuration language used at Amplitude.
 
 First, note the different data types you can import: **Event**, **User Property** and **Group Property** data.
 
@@ -347,5 +356,5 @@ To enable the source:
 ## Troubleshooting
 
 - Make sure you give access to the correct Amplitude account. Use the same data center as your organization. For more information, see [Give Amplitude access to your S3 bucket](#give-amplitude-access-to-your-s3-bucket).
-- Amplitude don't support dot characters in bucket names. Ensure your bucket names consist of lower-case letters, numbers, and dashes.
+- Amplitude doesn't support dot characters in bucket names. Ensure your bucket names consist of lower-case letters, numbers, and dashes.
 - You can use an existing bucket that you own. Update the bucket's policy with the output from the Amplitude wizard to ensure compatibility.
