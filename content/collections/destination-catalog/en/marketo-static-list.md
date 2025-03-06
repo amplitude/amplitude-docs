@@ -31,6 +31,7 @@ This page is about the Marketo Static List destination. Unlike the [Marketo Coho
 
 - Email values are case-sensitive. If you use email addresses to map users between Amplitude and Marketo, the email address must be consistent between both systems.
 - Marketo generates Amplitude users that don't already exist in Marketo.
+- The integration doesn't support cohorts larger than 3,000,000.
 
 ## Setup
 
