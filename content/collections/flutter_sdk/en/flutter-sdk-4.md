@@ -34,7 +34,7 @@ The following matrix lists the minimum support for Amplitude Flutter SDK version
 
     ```yml
     dependencies:
-        amplitude_flutter: ^4.0.0-beta.7
+        amplitude_flutter: ^4.1.0
     ```
 
 2. Run `flutter pub get` in the terminal to install the SDK.
