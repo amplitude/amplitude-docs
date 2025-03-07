@@ -8,11 +8,28 @@ updated_at: 1738948939
 landing: true
 landing_blurb: 'Learn about Guides and Surveys overview and available charts'
 ---
-Before you get started with Guides and Surveys, install the SDK on your website or application.
-
-{{# LINK TO SDK WITH CONTEXT HERE #}}
+Before you get started with Guides and Surveys, install the [SDK](docs/guides-and-surveys/sdk) on your website or application.
 
 Click Guides and Surveys in the left navigation in Amplitude to get started.
+
+## Roles and permissions
+
+Guides and Surveys permissions enable you to override a user's base level Amplitude [role](/docs/admin/account-management/user-roles-permissions) to grant a different level of access specifically for Guides and Surveys.
+
+| Guides and Surveys role | Access                                                                                                       |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------ |
+| No access | Can't view the Guides and Surveys section. |
+| Viewer                  | Can view Guides and Surveys, but can't edit or run experiments.                                              |
+| Member                  | Can edit draft Guides and Surveys. Can't publish or edit published guides or surveys. Can't run experiments. |
+| Manager                 | Full access to Guides and Surveys.                                                                           |
+| Administrator           | Full access to Guides and Surveys.                                                                           |
+
+To update a user's access to Guides and Surveys:
+
+1. Navigate to *Guides and Surveys > Permissions*. A list of your organization's users appears.
+2. Select one or more users, then click **Manage Project Access**.
+3. If your organization has more than one project, select the individual projects for which you need to update the user's role.
+4. Select the update role on a per-project basis.
 
 ## Overview
 
