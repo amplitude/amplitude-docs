@@ -6,7 +6,7 @@ source: 'https://help.amplitude.com/hc/en-us/articles/9980355191579-Object-manag
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1722896250
+updated_at: 1741388007
 ---
 Amplitude's object management feature lets you centrally manage analysis objects. Analysis objects are the reusable building blocks of your analyses, including [custom events](/docs/data/custom-events), [metrics](#metrics), [segments](/docs/analytics/behavioral-cohorts). 
 
@@ -30,9 +30,7 @@ Object management is available to accounts on Enterprise plans. For more informa
 
 ## Manage your analysis objects
 
-To access the Object Management page, click Object Management in the toolbar.
-
-![](statamic://asset::help_center_conversions::data/obj-management.png)
+Access Object Management from the left nav.
 
 From the *Object Management* page, click *+ Create New* and select the type of object you'd like to create. Follow the prompts in the modal that appears (it's different for each type).
 
