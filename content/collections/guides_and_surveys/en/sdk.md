@@ -51,6 +51,24 @@ amplitude.add(engagementPlugin());
 
 Using the Guides and Surveys standalone SDK with another analytics provider requires extra configuration to help map properties to Amplitude. This initialization code accepts parameters that define the user and any integrations.
 
+First, call `init` to initialize the SDK. After calling this function, it will be possible to acccess `window.engagement` and call the SDK functions.
+
+
+```js
+engagement.init(apiKey: string, initOptions: InitOptions): void
+```
+
+| Parameter                | Type                                                                                                                         | Description                                                                                                                                                                    |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `apiKey`                 | `string`                                                                                                                     | Required. API key of the Amplitude project you want to use.                                                                                                                    |
+| `initOptions.serverZone` | `EU` or `US`                                                                                                                 | Optional. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center. Default: `US`                                                       |
+| `initOptions.logger`     | [Logger interface](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-types/src/logger.ts#L1-L8) | Optional. Sets a custom loggign provider class. Default: [Amplitude Logger](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/logger.ts) |
+| `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`.                            | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                         |
+
+
+However, Guides and Surveys will not be fully functional until you call `boot`:
+
+
 ```js
 engagement.boot(options: BootOptions): Promise<void>
 ```
@@ -67,10 +85,10 @@ await window.engagement.boot({
     user_id: 'USER_ID', //[tl! ~~:1]
     device_id: 'DEVICE_ID',
     user_properties: {},
-  },   
+  },
   integrations: [
     {
-      track: (event) => { 
+      track: (event) => {
         analytics.track(event.event_type, event.event_properties)
       }
     },
@@ -185,7 +203,7 @@ import { useNavigate } from "react-router-dom";
 
 const MyComponent = () => {
   const navigate = useNavigate();
-  
+
   React.useEffect(() => {
     window.engagement.setRouter((newUrl) => navigate(newUrl));
   }, []);
@@ -230,9 +248,9 @@ Display a specific guide or survey.
 engagement.gs.show(key: string, stepIndex?: number): void
 ```
 
-| Parameter   | Type     | Description                                                                       |
-| ----------- | -------- | --------------------------------------------------------------------------------- |
-| `key`       | `string` | Required. The guide or survey's key.                                              |
+| Parameter   | Type     | Description                                                                             |
+| ----------- | -------- | --------------------------------------------------------------------------------------- |
+| `key`       | `string` | Required. The guide or survey's key.                                                    |
 | `stepIndex` | `number` | The zero-based index of the step to show. Defaults to the initial step if not provided. |
 
 ## Forward event
@@ -243,8 +261,8 @@ Trigger Guides and Surveys programmatically.
 engagement.forwardEvent(event: Event): void
 ```
 
-| Parameter | Type  | Description                                                                                                                       |
-| --------- | ----- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Parameter | Type  | Description                                                                                                             |
+| --------- | ----- | ----------------------------------------------------------------------------------------------------------------------- |
 | `event`   | Event | Required. An [event](/docs/sdks/analytics/browser/browser-sdk-2#track-an-event) object that launches a guide or survey. |
 
 
