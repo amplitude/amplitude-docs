@@ -18,6 +18,7 @@ Guides and Surveys permissions enable you to override a user's base level Amplit
 
 | Guides and Surveys role | Access                                                                                                       |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------ |
+| No access | Can't view the Guides and Surveys section. |
 | Viewer                  | Can view Guides and Surveys, but can't edit or run experiments.                                              |
 | Member                  | Can edit draft Guides and Surveys. Can't publish or edit published guides or surveys. Can't run experiments. |
 | Manager                 | Full access to Guides and Surveys.                                                                           |
