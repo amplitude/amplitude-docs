@@ -30,14 +30,11 @@ The following matrix lists the minimum support for Amplitude Flutter SDK version
 
 ## Install the SDK
 
-1. Go to the `pubspec.yaml` file and add Amplitude SDK as a dependency.
+Run the following command to get the latest version of `amplitude_flutter`, add it to your `pubspec.yaml`, then retrieve dependencies:
 
-    ```yml
-    dependencies:
-        amplitude_flutter: ^4.0.0-beta.7
+    ```bash
+    flutter pub add amplitude_flutter
     ```
-
-2. Run `flutter pub get` in the terminal to install the SDK.
 
 ### iOS installation
 
