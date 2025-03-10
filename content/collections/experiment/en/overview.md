@@ -49,19 +49,19 @@ Here’s an example of a hypothesis statement:
 
 “User churn in our onboarding funnel is significantly higher than industry average. Product data suggests our funnel may be too confusing; we believe we can fix it by consolidating steps two and three in the funnel. As a result of this change, we expect onboarding churn to decrease by 20%.”
 
-The hypothesis statements you use will be different, particularly around the problem definition stage. For example, your question may be more exploratory in nature (for example "why are so many users dropping out of our onboarding funnel?") or you may be more interested in testing different solutions to a problem you already understand ("we've come up with several potential UI changes to rectify a known user pain point; which one works best?"). Still, this basic template is a good one to follow, especially if you’re new to experimentation.
+The hypothesis statements you use are different, particularly around the problem definition stage. For example, your question may be more exploratory in nature (for example "why are so many users dropping out of our onboarding funnel?") or you may be more interested in testing different solutions to a problem you already understand ("we've come up with several potential UI changes to rectify a known user pain point; which one works best?"). Still, this basic template is a good one to follow, especially if you’re new to experimentation.
 
 ## Pick a metric
 
-Take a look at the last sentence in that hypothesis statement. What do you notice about it? For one thing, it includes a specific measurement of how you expect user behavior to change—onboarding churn will decrease by 20%. This is what will determine whether your experiment is a success: either you’ll hit this number, or you won’t.
+Take a look at the last sentence in that hypothesis statement. What do you notice about it? For one thing, it includes a specific measurement of how you expect user behavior to change—onboarding churn decreases by 20%. This is what decides if your experiment is a success: either you’ll hit this number, or you won’t.
 
-But how will you know? You need a way to measure that decrease in churn. To do that, you’ll need a **metric**. In Amplitude Experiment, any event you log in Amplitude Analytics can serve as an experiment metric. For the example experiment described above, you’d want to use the event your product uses to track drop-off in your funnels as your metric.
+But how do you know? You need a way to measure that decrease in churn. To do that, you’ll need a **metric**. In Amplitude Experiment, any event you log in Amplitude Analytics can serve as an experiment metric. For the example experiment described above, you’d want to use the event your product uses to track drop-off in your funnels as your metric.
 
 ## Create a variant
 
 You could roll out the new onboarding process to all users, but that wouldn't let you know if the changes are responsible for any improvement in onboarding churn. Plus, if the churn rate worsens, it could be due to design issues, random chance, or an external factor—and you'd never know for sure.
 
-To solve this, create a treatment variant: a different user experience shown to a percentage of users. In this case, it’s the new onboarding process. Some users will see the current process (**control**), while others will see the new version. The differences in user responses will determine the experiment's success.
+To solve this, create a treatment variant: a different user experience shown to a percentage of users. In this case, it’s the new onboarding process. Some users may see the current process (**control**), while others may see the new version. The differences in user responses determines the experiment's success.
 
 When creating variants, keep changes minimal (ideally one change) and ensure they are noticeably different. This way, you can confidently attribute any behavioral differences to your changes.
 
