@@ -15,7 +15,7 @@ landing_blurb: 'Learn the value of experimentation in your product.'
 ---
 For decades, product teams have relied on **experimentation** as a way to rank and implement product adjustments. But it’s never been easy. Because of that, these experiments often just tweak peripheral issues around the margins, instead of driving the big-picture changes that optimize the product experience.
 
-Amplitude Experiment is a workflow-driven behavioral experimentation platform that actually **accelerates your roadmaps**, letting you focus on making better decisions and building better products.
+Amplitude Experiment is a workflow-driven behavioral experimentation platform that actually **accelerates** your roadmap, letting you focus on making better decisions and building better products.
 
 With Experiment, you can easily **modify and configure product experiences** for unique audiences through:
 
@@ -41,15 +41,15 @@ Once you’ve done that, you’re ready to **configure your experiment**. This m
 
 ## Create a hypothesis
 
-Next, reach back to the mission statement you came up with for your experiment. This will serve as the foundation for your experiment’s **hypothesis**. What’s a hypothesis? Think of it as a prediction of how your experiment is likely to turn out. This is how you’ll know if your experiment succeeds or fails.
+Start with the mission statement for your experiment, which forms the basis of your hypothesis—a prediction of how the experiment could turn out and how you can identify success.
 
-But this **problem** statement is only the first part of a hypothesis. There are two others: a proposed **solution**, and a predicted **result**. The first is essentially a description of the changes you want to make to fix your problem—for example, consolidate two steps of the onboarding process into one—while the second is what you expect the results to be: i.e., “decrease onboarding churn by 20%.”
+A hypothesis includes three parts: a problem statement, a proposed solution, and a predicted result. The problem defines the issue (for example, confusing onboarding steps), the solution describes the change (such as merging two steps), and the result is your expected outcome (for instance, reducing churn by 20%).
 
 Here’s an example of a hypothesis statement:
 
-“User churn in our onboarding funnel is significantly higher than industry average. Product data suggests our funnel may be too confusing; we believe this can be fixed by consolidating steps two and three in the funnel. As a result of this change, we expect onboarding churn to decrease by 20%.”
+“User churn in our onboarding funnel is significantly higher than industry average. Product data suggests our funnel may be too confusing; we believe we can fix it by consolidating steps two and three in the funnel. As a result of this change, we expect onboarding churn to decrease by 20%.”
 
-The hypothesis statements you use will be different, particularly around the problem definition stage. For example, your question may be more exploratory in nature—i.e., "why are so many users dropping out of our onboarding funnel?"—or you may be more interested in testing different solutions to a problem you already understand ("we've come up with several potential UI changes to rectify a known user pain point; which one works best?"). Still, this basic template is a good one to follow, especially if you’re new to experimentation.
+The hypothesis statements you use will be different, particularly around the problem definition stage. For example, your question may be more exploratory in nature (for example "why are so many users dropping out of our onboarding funnel?") or you may be more interested in testing different solutions to a problem you already understand ("we've come up with several potential UI changes to rectify a known user pain point; which one works best?"). Still, this basic template is a good one to follow, especially if you’re new to experimentation.
 
 ## Pick a metric
 
