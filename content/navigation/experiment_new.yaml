@@ -1,0 +1,10 @@
+title: Experiment-new
+collections:
+  - experiment-apis
+  - experiment_analysis
+  - experiment_create
+  - experiment_integrations
+  - experiment_feature_flags
+  - sections
+  - experiment_planning_framework
+max_depth: 3
