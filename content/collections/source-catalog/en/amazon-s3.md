@@ -251,31 +251,24 @@ When you have your bucket details, create the Amazon S3 Import source.
     - **AWS Role ARN**. Required.
     - **AWS External ID**. Required.
     - **AWS Region**, Required.
-5. Optional: enable **S3 Event Notification**. See [Manage Event Notifications](#optional-manage-event-notifications) for more information.
+5. Optional: enable **S3 Event Notification**. 
+  
+  * Event notification enables Amplitude's ingestion service discover data in your S3 bucket faster. Compared to the approach of scanning buckets, the ingestion service discovers new data based on notifications that S3 publishes. This feature reduces the time it takes to find new data.
+  * Use this feature if you want near-real-time import. Amplitude discovers new data within 30 seconds with notifications enabled.
+  * Before you enable notifications, keep the following in mind:
+    * The IAM role you use most have permission to configure bucket event notifications.
+    * The bucket can't have existing event notifications. This is a limit that Amazon imposes on S3 buckets.
+    * Notifications don't apply retroactively.
 6. Click **Test Credentials** after you’ve filled out all the values. You can’t edit these values from the UI after you create the source, so make sure that all the info is correct before clicking **Next**.
 7. Enter a **Data Source Name** and a **Description** (optional) and save your source. You can edit these details from Settings.
 
-Click **Finish** to go back to the list of data sources. Next, create your converter configuration.
+ Next, create your converter configuration.
 
 Amplitude continuously scans buckets to discover new files as they're added.
 
-#### Optional: Manage event notifications
-
-Event Notification lets the Amplitude ingestion service discover data in your S3 bucket faster. Compared to the current approach of scanning buckets, it discovers new data based on notifications published by S3. This feature reduces the time it takes to find new data.
-
-Use this feature if you want to achieve near real-time import with Amplitude Amazon S3 import. Usually, Amplitude discovers new data files within 30 seconds.
-
-#### Considerations
-
-- The IAM role used must have required permission to configure S3 bucket event notifications.
-- The bucket can’t already have existing event notifications This is a limitation on the Amazon S3 side.
-- The notifications only apply to files uploaded after you enable event notifications.
-
-To enable the feature, you can either enable it when you create the source, or manage the data source and toggle **S3 Event Notification**.
-
 ### Select the file
 
-1. Specify the compression type, file name, and regular expression pattern for your files. The boilerplate of your converter file prepopulates based on the selections you make during this step. Click **See Preview** to test the configuration.
+1. Specify the file type, compression type, and regular expression pattern for your files. The boilerplate of your converter file prepopulates based on the selections you make during this step. Click **See Preview** to test the configuration.
 2. Click Next.
 
 {{partial:admonition type="note" heading=""}}
