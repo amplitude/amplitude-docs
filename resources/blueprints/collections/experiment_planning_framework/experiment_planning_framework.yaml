@@ -18,6 +18,12 @@ tabs:
                 -
                   key: group-experiments
                   value: null
+                -
+                  key: goals
+                  value: null
+                -
+                  key: exposure-events
+                  value: null
               type: select
               display: Group
               instructions: 'Which group does this article belong to? Group defines the third fourth segment in the URL, after `planning-framework`.'

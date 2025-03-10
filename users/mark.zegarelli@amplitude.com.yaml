@@ -60,3 +60,5 @@ preferences:
       after_save: create_another
     experiment_feature_flags:
       after_save: create_another
+    experiment_planning_framework:
+      after_save: create_another
