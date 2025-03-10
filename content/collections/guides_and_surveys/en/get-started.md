@@ -4,11 +4,11 @@ blueprint: guides_and_survey
 title: 'Get Started'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1738948939
+updated_at: 1741625702
 landing: true
 landing_blurb: 'Learn about Guides and Surveys overview and available charts'
 ---
-Before you get started with Guides and Surveys, install the [SDK](docs/guides-and-surveys/sdk) on your website or application.
+Before you get started with Guides and Surveys, install the [SDK](/docs/guides-and-surveys/sdk) on your website or application.
 
 Click Guides and Surveys in the left navigation in Amplitude to get started.
 
