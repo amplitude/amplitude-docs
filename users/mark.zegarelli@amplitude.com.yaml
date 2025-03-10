@@ -58,3 +58,5 @@ preferences:
         - status
     web_experiment:
       after_save: create_another
+    experiment_feature_flags:
+      after_save: create_another

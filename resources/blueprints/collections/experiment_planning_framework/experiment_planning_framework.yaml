@@ -1,0 +1,40 @@
+title: 'Experiment Planning Framework'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: group
+            field:
+              options:
+                -
+                  key: evaluation
+                  value: null
+                -
+                  key: stats-methods
+                  value: null
+                -
+                  key: group-experiments
+                  value: null
+              type: select
+              display: Group
+              instructions: 'Which group does this article belong to? Group defines the third fourth segment in the URL, after `planning-framework`.'
+              localizable: false
+          -
+            import: help_center_common
+            config:
+              title:
+                required: true
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
