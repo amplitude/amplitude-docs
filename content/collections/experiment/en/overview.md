@@ -59,11 +59,11 @@ But how will you know? You need a way to measure that decrease in churn. To do t
 
 ## Create a variant
 
-At this point, you *could* go ahead and just roll out the new onboarding process to all your users and see what happens. But if you were to do that, you won’t know if the product changes you made were responsible for any improvement in your onboarding churn rate. And what if that rate gets *worse* after you roll out the new funnel? It could be the result of poor design choices, random chance, or some external influence you didn’t consider—but you’ll never know for sure. 
+You could roll out the new onboarding process to all users, but that wouldn't let you know if the changes are responsible for any improvement in onboarding churn. Plus, if the churn rate worsens, it could be due to design issues, random chance, or an external factor—and you'd never know for sure.
 
-This is why you’ll need to create at least one **treatment** **variant** for your experiment. A treatment variant is simply a different user experience that you’ll show to a percentage of your users. Keeping with the example we’ve been using, the variant here would be the new, streamlined version of the onboarding process. Some of your users will see that, while others will see the current process instead (known as the **control**). It’s the differences in how your users respond to each variant that will determine the experiment’s success.
+To solve this, create a treatment variant: a different user experience shown to a percentage of users. In this case, it’s the new onboarding process. Some users will see the current process (**control**), while others will see the new version. The differences in user responses will determine the experiment's success.
 
-When coming up with variants, it’s good practice to keep the number of changes in each one low (if you can get that number down to one, so much the better). It’s also good to make sure the variants are noticeably different from each other. This way, you can be confident that users in each variant segment are truly experiencing the product differently from each other, and that your changes are what’s driving any differences in behavior between the segments.
+When creating variants, keep changes minimal (ideally one change) and ensure they are noticeably different. This way, you can confidently attribute any behavioral differences to your changes.
 
 ## Decide who will see the variant
 
