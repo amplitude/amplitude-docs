@@ -63,9 +63,9 @@ You could roll out the new onboarding process to all users, but that wouldn't le
 
 To solve this, create a treatment variant: a different user experience shown to a percentage of users. In this case, it’s the new onboarding process. Some users may see the current process (**control**), while others may see the new version. The differences in user responses determines the experiment's success.
 
-When creating variants, keep changes minimal (ideally one change) and ensure they are noticeably different. This way, you can confidently attribute any behavioral differences to your changes.
+When creating variants, keep changes minimal (ideally one change) and ensure they're noticeably different. This way, you can confidently attribute any behavioral differences to your changes.
 
-## Decide who will see the variant
+## Decide which user sees the variant
 
 The most common bucketing unit is “user”. However, if you’re a B2B business or are utilizing the collaboration feature, you might want to use a bucketing unit such as “organization” or company\_id, which means that every user within the same organization could see the same variant. This can help reduce product-related confusion caused by disparate user interfaces if people are sitting next to their coworkers. Another reason for bucketing by company\_id is to reduce the load on your customer support team. It's easier for the customer support team to know which accounts have which features enabled. Either way, you want to make sure the Stable Unit Treatment Value Assumption ([SUTVA](https://blogs.iq.harvard.edu/violations_of_s#:~:text=Methods%20for%20causal%20inference%2C%20in,treatments%20of%20others%20around%20him)) holds for whatever bucketing unit you choose to best ensure inference. 
 
@@ -75,7 +75,7 @@ The most common bucketing unit is “user”. However, if you’re a B2B busines
 
 ## Allocate users
 
-Decide how many users are shown your variants by rolling the experiment out to the entire user base or just a fraction. Specify the number of users for the control and variant experiences, define user segments to include or exclude, and even target specific user or device IDs.
+Decide how many users should see your variants by rolling the experiment out to the entire user base or just a fraction. Specify the number of users for the control and variant experiences, define user segments to include or exclude, and even target specific user or device IDs.
 
 ## Activate your experiment and analyze your results
 
@@ -87,7 +87,7 @@ After your experiment goes live, you can generate and view your results at any t
 
  Experiment actively informs you when the results reach 
 
-Experiment will tell you when your experiment has reached **statistical significance**, and it gives you all the data you need to analyze and interpret your results, and to apply those learnings to your product experience going forward.
+Experiment shows you when your experiment has reached **statistical significance**, and it gives you all the data you need to analyze and interpret your results, and to apply the understanding to your product experience going forward.
 
 To learn more about how to design, roll out, and learn from experiments, check out our [articles on the experimentation workflow](/docs/feature-experiment/workflow/create).
 
@@ -97,13 +97,13 @@ To learn more about how to design, roll out, and learn from experiments, check o
 
 ## Create a feature flag
 
-If, on the other hand, you’re planning a phased feature rollout instead, your workflow is even simpler. Because you’re not asking a question about user behavior in your product, you don’t need to worry about creating a hypothesis, picking a metric, or analyzing your results. All you have to do is create a **feature flag**.
+If you’re planning a phased feature rollout instead, your workflow is even simpler. Because you’re not asking a question about user behavior in your product, you don’t need to worry about creating a hypothesis, picking a metric, or analyzing your results. All you have to do is create a **feature flag**.
 
 {{partial:admonition type='note'}}
-Behind the scenes, experiments and flags are very similar, but the basic difference is this: An experiment helps you make sure you’re building the right thing for your business, while feature flags allow seamless feature releases and rollbacks. This is because an experiment has metrics and a feature flag does not, giving you greater flexibility to mess with controls without breaking anything.
+Behind the scenes, experiments and flags are very similar, but the basic difference is this: An experiment helps you make sure you’re building the right thing for your business, while feature flags allow seamless feature releases and rollbacks. This is because an experiment has metrics and a feature flag doesn't, giving you greater flexibility to mess with controls without breaking anything.
 {{/partial:admonition}}
 
-Once you’ve configured your deployment, go straight to creating your variants. The basic idea, a new and different product experience that some users see but others do not—remains the same. But instead of exploring how different user segments react to different user experiences, you’ll be choosing which users get access to new features first. When working with feature flags, the variant represents code for a new feature that isn’t yet released to your entire user base.
+Once you’ve configured your deployment, go straight to creating your variants. The basic idea, a new and different product experience that some users see but others don't—remains the same. But instead of exploring how different user segments react to different user experiences, you’ll be choosing which users get access to new features first. When working with feature flags, the variant represents code for a new feature that isn’t yet released to your entire user base.
 
 You are allocating users to your variants as you would if you were running an experiment, and activating your flag is as simple as switching on your experiment.
 
