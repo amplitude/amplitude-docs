@@ -16,10 +16,21 @@ tabs:
             handle: platform
             field:
               options:
-                browser: Browser
-                ios: iOS
-                android: Android
-                'third-party integration': '3rd party'
+                -
+                  key: browser
+                  value: Browser
+                -
+                  key: ios
+                  value: iOS
+                -
+                  key: android
+                  value: Android
+                -
+                  key: 'third-party integration'
+                  value: '3rd party'
+                -
+                  key: react-native
+                  value: 'React Native'
               type: select
               display: Platform
               localizable: false
