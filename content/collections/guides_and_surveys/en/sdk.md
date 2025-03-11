@@ -53,7 +53,6 @@ Using the Guides and Surveys standalone SDK with another analytics provider requ
 
 First, call `init` to initialize the SDK. After calling this function, you can access `window.engagement` and call the SDK functions:
 
-
 ```js
 engagement.init(apiKey: string, initOptions: InitOptions): void
 ```
