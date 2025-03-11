@@ -35,15 +35,16 @@ The segment filter enables you to select predefined segments, or create one ad-h
   * Testers. Users added as "testers" during experiment configuration.
   * Exclude testers. Excludes users added as "testers" during experiment configuration
   * Exclude users who variant jumped. Excludes users who were exposed to more than one variant.
+  * Exclude testers and variant jumpers. Excluses users added as "testers" during experiment configuration and users who were exposed to more than one variant.
 * Amplitude
   * New user. Users who triggered at least one new user event during the selected date range.
   * Mobile web. Users who triggered events on the web from a mobile device.
   * Desktop web. Users who triggered events on the web from a desktop device.
 
 {{partial:admonition type="note" heading="Support for segments"}}
-The Testers and Exclude Testers segments are available on feature experiments that use [Remote evaluation](/docs/feature-experiment/remote-evaluation).
+The Testers, Exclude Testers, and exclude testers and variant jumpers segments are available on feature experiments that use [Remote evaluation](/docs/feature-experiment/remote-evaluation).
 
-The Exclude users who variant jumped segment is available on experiment types other than [multi-armed bandit](/docs/feature-experiment/workflow/multi-armed-bandit-experiments).
+The Exclude users who variant jumped segment and and exclude testers and variant jumpers segment are available on experiment types other than [multi-armed bandit](/docs/feature-experiment/workflow/multi-armed-bandit-experiments).
 {{/partial:admonition}}
 
 These segments update in real-time.
