@@ -51,7 +51,7 @@ amplitude.add(engagementPlugin());
 
 Using the Guides and Surveys standalone SDK with another analytics provider requires extra configuration to help map properties to Amplitude. This initialization code accepts parameters that define the user and any integrations.
 
-First, call `init` to initialize the SDK. After calling this function, it will be possible to acccess `window.engagement` and call the SDK functions:
+First, call `init` to initialize the SDK. After calling this function, you can access `window.engagement` and call the SDK functions:
 
 
 ```js
