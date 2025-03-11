@@ -65,7 +65,7 @@ engagement.init(apiKey: string, initOptions: InitOptions): void
 | `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`.                            | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                         |
 
 
-However, Guides and Surveys will not be fully functional until you call `boot`:
+However, Guides and Surveys isn't fully functional until you call `boot`:
 
 
 ```js
