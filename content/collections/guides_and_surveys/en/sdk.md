@@ -184,7 +184,7 @@ Connect Guides and Surveys with Segment:
 ```ts
 import { init as engagementInit } from '@amplitude/engagement-browser';
 
-engagementInit("API_KEY");
+engagementInit("API_KEY", { serverZone: "US" });
 
 analytics.ready(() => {
   await window.engagement.boot({
