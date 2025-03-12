@@ -37,21 +37,24 @@ Recommended role for third parties, if you don't want them creating content that
 * Edit their own [email subscriptions](/docs/analytics/dashboard-create)
 * Set custom [monitors](/docs/analytics/insights) and subscribe to them
 * Share content they create with others
+* View Guides and Surveys
 
 Viewers:
-* *Can't* create anything that's discoverable, including saved segments
-* *Can't* create shareable links
-* *Can't* export data to third-party integration partners
+* Can't create anything that's discoverable, including saved segments
+* Can't create shareable links
+* Can't export data to third-party integration partners
+* Can't create a guide or survey
 
 ### Member
 
 Recommended for the majority of Amplitude users in your organization. Members have all viewer-level permissions, plus:
 
 * Create discoverable dashboards, charts, behavioral cohorts, and saved segments
-* Create [custom events](https://help.amplitude.com/hc/en-us/articles/16805886899483-Custom-events)
-* Create [team spaces](https://help.amplitude.com/hc/en-us/articles/360016524911)
-* Edit [releases](https://help.amplitude.com/hc/en-us/articles/360017800371)
+* Create [custom events](/docs/data/custom-events)
+* Create [team spaces](/docs/analytics/collaborate-with-spaces)
+* Edit [releases](/docs/analytics/releases)
 * Label events with [Visual Labeling](/docs/data/visual-labeling)
+* Edit unpublished guides or surveys. 
 
 {{partial:admonition type="note" heading=""}}
 Members can't search for undiscoverable content.
@@ -72,8 +75,10 @@ Recommended for users who need access to all content created within Amplitude (d
 * Add and edit data sources and data destinations
 * Transfer ownership of content they don’t own
 * Create, modify, delete derived properties
+* Full access to Guides and Surveys
 
 ### Admin
+
 The highest-level permissions set in an organization. Amplitude recommends limiting the number of users in an organization who are Admins. Only existing administrators can grant or revoke the Admin role. Admins have all manager-level permissions, plus:
 
 * Remove shared chart and dashboard links
@@ -81,6 +86,7 @@ The highest-level permissions set in an organization. Amplitude recommends limit
 * Create [permission groups](/docs/admin/account-management/manage-permission-groups)
 * Delete organization or change organization name and URL (the Admin must submit this request to the Amplitude Support team)
 * Change org Admins
+* Full access to Guides and Surveys
 
 ### All users
 * *Can't* change full name of other users

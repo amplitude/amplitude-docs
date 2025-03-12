@@ -75,7 +75,7 @@ The structure of your data within a data warehouse or data lake affects Amplitud
    * SQL Query provides more flexibility for base table creation. Join tables, filter rows and use any level of SQL you need to create the base table.
 
 3. When the table is finished, complete the required fields. Supported data types are listed in the data types table at the top of this article.
-4. Map the columns in the table or view you select.
+4. Map the columns in the table you select.
 5. Select or deselect any columns in the table.
 
     {{partial:admonition type="note" heading=""}}
