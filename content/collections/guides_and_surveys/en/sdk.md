@@ -101,14 +101,13 @@ analytics.ready(() => {
   ],
 });
 
-    // (Optional) Forward events from segment to do event-based triggers for Guides and Surveys. These events aren't sent to the server
-    analytics.on('track', (event, properties, options) => {
-  	  window.engagement.forwardEvent({ event_type: event, event_properties: properties});
-    });
+// (Optional) Forward events from segment to do event-based triggers for Guides and Surveys. These events aren't sent to the server
+analytics.on('track', (event, properties, options) => {
+  window.engagement.forwardEvent({ event_type: event, event_properties: properties});
+});
 
-    analytics.on('page', (event, properties, options) => {
-  	  window.engagement.forwardEvent({ event_type: event, event_properties: properties});
-    });
+analytics.on('page', (event, properties, options) => {
+  window.engagement.forwardEvent({ event_type: event, event_properties: properties});
 });
 ```
 
