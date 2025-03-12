@@ -99,29 +99,30 @@ The data type you select defines the strategies and settings available to you fo
 
 Select from the following strategies, depending on your data type selection. 
 
-| Strategy  | Description                                                                                                                                        |
-| --------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Full Sync | Ingests the entire dataset on a defined schedule. This option is useful for datasets that change over time, but can't show which rows are changed. |
-| Timestamp | Ingests the most recent rows on a schedule, as determined by the Timestamp column.                                                     |
-| Change data capture (CDC) | Ingests the most recent rows of data on a schedule, as determined by Snowflake's Change Data Capture feature. CDC supports customization of the feed type (for event data) and data mutability settings.|
+| Strategy             | Description                                                                                                                                                                                                                                                              |
+|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Full Sync            | Ingests the entire dataset on a defined schedule. This option is useful for datasets that change over time, but can't show which rows are changed.                                                                                                                       |
+| Timestamp            | Ingests the most recent rows on a schedule, as determined by the Timestamp column.                                                                                                                                                                                       |
+| Ingestion Only Sync  | Ingests the most recent rows of data on a schedule, as determined by Snowflake's Change Data Capture feature. All of Amplitude's out-of-the-box enrichment services are supported.                                                                                       |
+| Mirror Sync          | Directly mirror the data in your warehouse with insert, update, and delete operations. This deactivates Amplitude's enrichment services ( user property syncing, group property syncing, taxonomy validation) for this data to remain in sync with your source of truth. |
 
 See the following table to understand which data types are compatible with which import strategies.
 
-| Data type | Supported import strategies |
-| -------| ----- |
-| Event | CDC, Timestamp |
-| User properties | Full Sync, Timestamp |
-| Group Properties | Full Sync, Timestamp |
-| Profiles | CDC |
+| Data type        | Supported import strategies                 |
+|------------------|---------------------------------------------|
+| Event            | Mirror Sync, Ingestion Only Sync, Timestamp |
+| User properties  | Full Sync, Timestamp                        |
+| Group Properties | Full Sync, Timestamp                        |
+| Profiles         | Mirror Sync                                 |
 
 {{partial:admonition type="note" heading="Change Data Capture options"}}
-For the `Event` data type, the CDC strategy supports configuration of the CDC feed type. 
+For the `Event` data type, the Sync Strategies support configuration of the CDC feed type. 
 
-Select *Append Only* to ingest from your warehouse and include Amplitude's enrichment services like ID Resolution, property and attribution syncing, and location resolution.
+Select *Ingestion Only Sync* to ingest from your warehouse and include Amplitude's enrichment services like ID Resolution, property and attribution syncing, and location resolution.
 
-Select *Continuous Sync* to mirror your Snowflake data with support for `insert`, `update`, and `delete` operations. This option deactivates Amplitude's enrichment services to ensure you remain in sync with your source-of-truth.
+Select *Mirror Sync* to mirror your Snowflake data with support for `insert`, `update`, and `delete` operations. This option deactivates Amplitude's enrichment services to ensure you remain in sync with your source-of-truth.
 
-*Continuous Sync* also supports Data Mutability settings. Select which options to enable, `update` or `delete`. `insert` operations are always on.
+*Mirror Sync* also supports Data Mutability settings. Select which options to enable, `update` or `delete`. `insert` operations are always on.
 {{/partial:admonition}}
 
 ### Map your data
@@ -140,9 +141,9 @@ When choosing an integration strategy, consider the following:
 
 - **Timestamp Import**: Choose this option if you can incrementally import data using a monotonically increasing timestamp column that indicates when records when Snowflake loads the records. This is efficient and works well when you append new data with timestamps.
 
-- **Change Data Capture (CDC) Append Only**: Choose this option to import data based on changes detected by Snowflake's CDC feature while still using Amplitude's enrichment services. This method only supports reading `INSERT` operations from the CDC
+- **Ingestion Only Sync**: Choose this option to import data based on changes detected by Snowflake's CDC feature while still using Amplitude's enrichment services. This method only supports reading `INSERT` operations from the CDC
 
-- **Change Data Capture (CDC) Continuous Sync**: Choose this option to directly mirror the data in Snowflake with `INSERT`, `UPDATE`, and `DELETE` operations based on changes detected by Snowflake's CDC feature. This method disables enrichment services to maintain a mirror of Snowflake data in Amplitude. `UPDATE` and `DELETE` operations mutate data in Amplitude.
+- **Mirror Sync**: Choose this option to directly mirror the data in Snowflake with `INSERT`, `UPDATE`, and `DELETE` operations based on changes detected by Snowflake's CDC feature. This method disables enrichment services to maintain a mirror of Snowflake data in Amplitude. `UPDATE` and `DELETE` operations mutate data in Amplitude.
 
 {{partial:partials/data/snowflake-strat-comp}}
 
@@ -152,7 +153,7 @@ When choosing an integration strategy, consider the following:
 By using CDC, Snowflake sends consolidated row `INSERT`, `UPDATE`, and `DELETE` operations to Amplitude based on your sync frequency. This means that multiple operations can be made to an event during the sync window and they only count as one event against your existing event volume. However, any operation made to an event outside of the sync window counts as an additional event against your existing event volume. This may impact the rate at which you use your existing event volume. Contact sales to purchase additional event volume, if needed.
 {{/partial:admonition}}
 
-When using CDC Continuous Sync, keep the following things in mind:
+When using Mirror Sync Sync, keep the following things in mind:
 
 - **Enable Change Tracking**: Enable change tracking for the source table or view. See [Enabling Change Tracking on Views and Underlying Tables](https://docs.snowflake.com/en/user-guide/streams-manage.html#label-enabling-change-tracking-views) in Snowflake's documentation.
 
@@ -170,15 +171,15 @@ When using CDC Continuous Sync, keep the following things in mind:
 
 - **Handling schema changes**: CDC supports adding new columns with default `NULL` values to CDC-tracked tables or views. Amplitude recommends against other kinds of schema changes. Snowflake CDC only reflects changes from DML statements. DDL statements that logically modify data (such as adding new columns with default values, dropping existing columns, or renaming columns) affect future data sent to Amplitude, but Snowflake doesn't update historical data with changes caused by DDL statements. As a result, Amplitude doesn't reflect these updates for historical data.
 
-- **Amplitude enrichment services disabled**: When using CDC **Continuous Sync**, Amplitude disables enrichment services like ID resolution, property and attribution syncing, and resolving location info to remain in sync with your source of truth.
+- **Amplitude enrichment services disabled**: When using **Mirror Sync**, Amplitude disables enrichment services like ID resolution, property and attribution syncing, and resolving location info to remain in sync with your source of truth.
 
 - **User Privacy API**: The [User Privacy API](/docs/apis/analytics/user-privacy) deletes previously ingested data and doesn't prevent Amplitude from processing new information about a user. When you use CDC, you must stop sending data about a user before you delete them with the User Privacy API. This ensures that Amplitude doesn't recreate the user in the next sync. 
   
   To delete all data associated with an end-user from Amplitude's systems, deleting the user from your data warehouse isn't enough. This process requires a User Privacy API request to ensure the user's data is removed from Amplitude's systems
 
-- CDC Continuous Sync events and mutations don't support unknown users. Rows must contain a user id or Amplitude drops the event. If you have a high volume of anonymous events, Amplitude recommends against using this mode. 
+- Mirror Sync events and mutations don't support unknown users. Rows must contain a user id or Amplitude drops the event. If you have a high volume of anonymous events, Amplitude recommends against using this mode. 
 
-## Migrate to Change Data Capture (CDC) Continuous Sync
+## Migrate to Change Data Capture (CDC) Mirror Sync
 
 Amplitude recommends that you create a new project to test sending and mutating data. When you confirm that data is mapped and mutated correctly, complete the following steps in your main project:
 
