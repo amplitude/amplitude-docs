@@ -63,6 +63,7 @@ engagement.init(apiKey: string, options: { serverZone: "US" | "EU" }): void
 | ---------------------- | ------------------------------ | ----------------------------------------------------------------------- |
 | `apiKey`               | `string`                       | Required. The API key of the Amplitude project to load.                 |
 | `options.serverZone`   | `"US"` or `"EU"`               | Required. What server zone to send requests to.                         |
+
 {{/partial:collapse}}
 
 This initialization code accepts parameters that define the user and any integrations.
@@ -93,6 +94,7 @@ await window.engagement.boot({
   ],
 });
 ```
+
 
 {{partial:collapse name="Initialize with Segment analytics"}}
 Initializing the SDK and launching a guide or survey with third-party analytics requires a few more steps.
