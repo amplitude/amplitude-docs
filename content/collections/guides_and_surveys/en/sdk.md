@@ -82,35 +82,85 @@ await window.engagement.boot({
 Initializing the SDK and launching a guide or survey with third-party analytics requires a few more steps.
 
 First, the initialization code requires you to map the `user_id` and `device_id` fields, and optionally configure event forwarding to enable event-based triggers.
-```js
+
+
+{{partial:tabs tabs="script, npm"}}
+{{partial:tab name="script"}}
+Place the script tag below your Amplitude script tag.
+```html
+<script src="https://cdn.amplitude.com/script/API_KEY.engagement.js"></script>
+<script>amplitude.add(window.engagement.plugin())</script>
+
 analytics.ready(() => {
-   await window.engagement.boot({
-  user: {
-    // User Provider: Guides and Surveys requires either user_id or device_id for user identification
-    user_id: analytics.user().id(),
-    device_id: analytics.user().anonymousId(),
-    user_properties: {},
-  },
-  integrations: [
-    {
-     // Tracking Provider: Pass Guides and Surveys events to the 3rd party analytics provier
-      track: (event) => {
-        analytics.track(event.event_type, event.event_properties)
-      }
+  await window.engagement.boot({
+    user: {
+      // User Provider: Guides and Surveys requires either user_id or device_id for user identification
+      user_id: analytics.user().id(),
+      device_id: analytics.user().anonymousId(),
+      user_properties: {},
     },
-  ],
-});
+    integrations: [
+      {
+        // Tracking Provider: Pass Guides and Surveys events to the 3rd party analytics provier
+        track: (event) => {
+          analytics.track(event.event_type, event.event_properties)
+        }
+      },
+    ],
+  });
 
-// (Optional) Forward events from segment to do event-based triggers for Guides and Surveys. These events aren't sent to the server
-analytics.on('track', (event, properties, options) => {
-  window.engagement.forwardEvent({ event_type: event, event_properties: properties});
-});
+  // (Optional) Forward events from segment to do event-based triggers for Guides and Surveys. These events aren't sent to the server
+  analytics.on('track', (event, properties, options) => {
+    window.engagement.forwardEvent({ event_type: event, event_properties: properties});
+  });
 
-analytics.on('page', (event, properties, options) => {
-  window.engagement.forwardEvent({ event_type: event, event_properties: properties});
+  analytics.on('page', (event, properties, options) => {
+    window.engagement.forwardEvent({ event_type: event, event_properties: properties});
+  });
 });
 ```
+{{/partial:tab}}
+{{partial:tab name="npm"}}
+Import the Guides and Surveys package
+```bash
+npm install @amplitude/engagement-browser
+```
 
+Connect Guides and Surveys with Segment:
+```ts
+import { init as engagementInit } from '@amplitude/engagement-browser';
+engagementInit(engagementPlugin());
+
+analytics.ready(() => {
+  await window.engagement.boot({
+    user: {
+      // User Provider: Guides and Surveys requires either user_id or device_id for user identification
+      user_id: analytics.user().id(),
+      device_id: analytics.user().anonymousId(),
+      user_properties: {},
+    },
+    integrations: [
+      {
+        // Tracking Provider: Pass Guides and Surveys events to the 3rd party analytics provier
+        track: (event) => {
+          analytics.track(event.event_type, event.event_properties)
+        }
+      },
+    ],
+  });
+
+  // (Optional) Forward events from segment to do event-based triggers for Guides and Surveys. These events aren't sent to the server
+  analytics.on('track', (event, properties, options) => {
+    window.engagement.forwardEvent({ event_type: event, event_properties: properties});
+  });
+
+  analytics.on('page', (event, properties, options) => {
+    window.engagement.forwardEvent({ event_type: event, event_properties: properties});
+  });
+});
+```
+{{/partial:tab}}
+{{/partial:tabs}}
 {{/partial:collapse}}
 
 ### Verify installation and initialization
