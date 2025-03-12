@@ -51,7 +51,9 @@ amplitude.add(engagementPlugin());
 
 Using the Guides and Surveys standalone SDK with another analytics provider requires extra configuration to help map properties to Amplitude.
 
-Calling `init` is only required when loading Guides and Surveys via NPM. If you're using the script installation, skip straight to calling `boot`.
+{{partial:collapse name="Usign NPM or Yarn"}}
+
+Calling `init` is only required when loading Guides and Surveys via NPM or Yarn. If you're using the script installation, skip straight to calling `boot`.
 
 ```js
 engagement.init(apiKey: string): void
@@ -60,10 +62,7 @@ engagement.init(apiKey: string): void
 | Parameter              | Type                           | Description                                                             |
 | ---------------------- | ------------------------------ | ----------------------------------------------------------------------- |
 | `apiKey`               | `string`                       | Required. The API key of the Amplitude project to load.                 |
-
-```js
-await window.engagement.init("API_KEY");
-```
+{{/partial:collapse}}
 
 This initialization code accepts parameters that define the user and any integrations.
 
