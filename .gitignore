@@ -68,6 +68,9 @@ node_modules/
 # users
 users/
 
+# jetbrains-based editors
+.idea/
+
 
 public/hot
 public/storage
