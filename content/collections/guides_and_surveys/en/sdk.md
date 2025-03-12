@@ -56,12 +56,13 @@ Using the Guides and Surveys standalone SDK with another analytics provider requ
 Calling `init` is only required when loading Guides and Surveys via NPM or Yarn. If you're using the script installation, skip straight to calling `boot`.
 
 ```js
-engagement.init(apiKey: string): void
+engagement.init(apiKey: string, options: { serverZone: "US" | "EU" }): void
 ```
 
 | Parameter              | Type                           | Description                                                             |
 | ---------------------- | ------------------------------ | ----------------------------------------------------------------------- |
 | `apiKey`               | `string`                       | Required. The API key of the Amplitude project to load.                 |
+| `options.serverZone`   | `"US"` or `"EU"`               | Required. What server zone to send requests to.                         |
 {{/partial:collapse}}
 
 This initialization code accepts parameters that define the user and any integrations.
@@ -142,7 +143,7 @@ Connect Guides and Surveys with Segment:
 ```ts
 import { init as engagementInit } from '@amplitude/engagement-browser';
 
-engagementInit("API_KEY");
+engagementInit("API_KEY", { serverZone: "US" });
 
 analytics.ready(() => {
   await window.engagement.boot({
