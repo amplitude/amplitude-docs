@@ -12,6 +12,7 @@ releases_url: 'https://github.com/amplitude/Amplitude-Flutter/releases'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1721756317
+shields_io_badge: 'https://img.shields.io/pub/v/amplitude_flutter.svg'
 source: 'https://www.docs.developers.amplitude.com/data/sdks/flutter-4/'
 platform: Flutter
 package_name: amplitude_flutter
@@ -131,7 +132,7 @@ class YourClass {
 
 | Name                          | Description                                                                                                                                                                                                                                                                                                              | Default Value                                              |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------- |
-| `defaultTracking`             | `DefaultTrackingOptions`. Options to control the default events tracking.                                                                                                                                                                                                                                                | Check [Tracking default events](#tracking-default-events). |
+| `defaultTracking`             | `DefaultTrackingOptions`. Options to control the default events tracking.                                                                                                                                                                                                                                                | Check [Tracking default events](#track-default-events). |
 | `enableCoppaControl`          | `bool`. Whether to enable COPPA control for tracking options.                                                                                                                                                                                                                                                            | `false`                                                    |
 | `flushEventsOnClose`          | `bool`. Flush unsent events on app close.                                                                                                                                                                                                                                                                                | `true`                                                     |
 | `identifyBatchIntervalMillis` | `int`. The amount of time SDK attempts to batch intercepted identify events. The value is in milliseconds                                                                                                                                                                                                                | `30000`                                                    |
