@@ -43,7 +43,7 @@ Out-of-the-box Marketing Analytics offers four sets of insights with default met
 
 - **Traffic by Channel**: Provides an overview of users visiting your product by channel. Metrics include visitors, bounce rate, session totals, average session duration, sessions per user, and marketing analytics views.
 - **Traffic by Campaign**: Provides an overview of the users visiting your product by campaign. Metrics include visitors, bounce rate, session totals, average session duration, sessions per user, and any defined goals.
-- **Ads**: Provides a overview of your ad campaigns (i.e., Google Ads and Facebook Ads) with key metrics like Impressions, Clicks, CTR, CPC, CAC, and ROAS, plus flexible settings for acquisition and revenue tracking.
+- **Ads**: Provides an overview of your ad campaigns (i.e., Google Ads and Facebook Ads) with key metrics like Impressions, Clicks, CTR (Click-Through Rate), CPC (Cost Per Click), CAC (Customer Acquisition Cost), and ROAS (Return on Ad Spend), plus flexible settings for acquisition and revenue tracking.
 - **Page Engagement**: Details user engagement by page. Metrics include visitors, page views, bounce rate, page views per session, entry rate, exit rate, and any defined goals.
 - **Conversion**: Provides over-time and aggregated analyses of user conversion based on your defined funnel. Metrics include overall conversion and step-by-step conversion.
 
