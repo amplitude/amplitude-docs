@@ -38,7 +38,7 @@ For guided instructions to setting up this integration, view the [Loom video](ht
   - [materialized views](https://docs.databricks.com/en/views/materialized.html)
   - [streaming tables](https://docs.databricks.com/en/delta-live-tables/index.html#streaming-table)
 
-- SQL input restrictions for Continuous Sync change data feed type:
+- SQL input restrictions for Mirror Sync change data feed type:
   - Only one source Delta Table (referred to as “main table”)
   - Single SELECT statement 
   - Common Table Expressions (CTE) (for example, WITH-clause) aren't supported 
@@ -54,7 +54,7 @@ For guided instructions to setting up this integration, view the [Loom video](ht
 By using CDF, Databricks sends consolidated row `INSERT`, `UPDATE`, and `DELETE` operations to Amplitude based on your sync frequency. This means that multiple operations can be made to an event during the sync window and they only count as one event against your existing event volume. However, any operation made to an event outside of the sync window counts as an additional event against your existing event volume. This may impact the rate at which you use your existing event volume. Contact sales to purchase additional event volume, if needed.
 {{/partial:admonition}}
 
-- CDC Continuous Sync events and mutations don't support unknown users. Rows must contain a user id or Amplitude drops the event. If you have a high volume of anonymous events, Amplitude recommends against using this mode. 
+- Mirror Sync events and mutations don't support unknown users. Rows must contain a user id or Amplitude drops the event. If you have a high volume of anonymous events, Amplitude recommends against using this mode. 
 
 
 ## Configure Databricks
@@ -167,10 +167,10 @@ To add Databricks as a source in Amplitude, complete the following steps.
    
     For the `Event` data type, optionally select *Sync User Properties* or *Sync Group Properties* to sync the corresponding properties **within** an event.
 
-2. If you selected `Event` or `Profiles` as the data type, choose the change data feed type:
+2. If you selected `Event` as the data type, choose the import strategy:
 
-- **Ingestion Only**: Ingest data warehouse data with Amplitude's standard enrichment services like ID resolution, property and attribution syncing, and resolving location info.
-- **Continuous Sync**: Directly mirror the data in Snowflake with insert, update, and delete operations. This deactivates Amplitude's enrichment services to remain in sync with your source of truth.
+- **Ingestion Only Sync**: Ingest data warehouse data with Amplitude's standard enrichment services like ID resolution, property and attribution syncing, and resolving location info.
+- **Mirror Sync**: Directly mirror the data in Snowflake with insert, update, and delete operations. This deactivates Amplitude's enrichment services to remain in sync with your source of truth.
 
 3. Configure the SQL command that transforms data in Databricks before Amplitude imports it.
     - Amplitude treats each record in the SQL execution output as an event to be import. See the Example body in the [Batch Event Upload API](/docs/apis/analytics/batch-event-upload) documentation to ensure each record you import complies.
