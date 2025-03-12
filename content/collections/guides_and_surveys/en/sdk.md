@@ -53,7 +53,7 @@ Using the Guides and Surveys standalone SDK with another analytics provider requ
 
 {{partial:collapse name="Usign NPM or Yarn"}}
 
-Calling `init` is only required when loading Guides and Surveys via NPM or Yarn. If you're using the script installation, skip straight to calling `boot`.
+Calling `init` is only required when loading Guides and Surveys using NPM or Yarn. If you're using the script installation, skip straight to calling `boot`.
 
 ```js
 engagement.init(apiKey: string, options: { serverZone: "US" | "EU" }): void
