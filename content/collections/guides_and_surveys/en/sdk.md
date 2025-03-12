@@ -86,11 +86,8 @@ First, the initialization code requires you to map the `user_id` and `device_id`
 
 {{partial:tabs tabs="script, npm"}}
 {{partial:tab name="script"}}
-Place the script tag below your Amplitude script tag.
-```html
-<script src="https://cdn.amplitude.com/script/API_KEY.engagement.js"></script>
-<script>amplitude.add(window.engagement.plugin())</script>
-
+Make sure you've added the Engagement script tag to your site before continuing.
+```js
 analytics.ready(() => {
   await window.engagement.boot({
     user: {
@@ -129,7 +126,8 @@ npm install @amplitude/engagement-browser
 Connect Guides and Surveys with Segment:
 ```ts
 import { init as engagementInit } from '@amplitude/engagement-browser';
-engagementInit(engagementPlugin());
+
+engagementInit("API_KEY");
 
 analytics.ready(() => {
   await window.engagement.boot({
