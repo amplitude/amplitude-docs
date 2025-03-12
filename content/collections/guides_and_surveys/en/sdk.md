@@ -59,21 +59,6 @@ Calling `init` is only required when loading Guides and Surveys using NPM or Yar
 engagement.init(apiKey: string, options: { serverZone: "US" | "EU" }): void
 ```
 
-| Parameter              | Type                           | Description                                                             |
-| ---------------------- | ------------------------------ | ----------------------------------------------------------------------- |
-| `apiKey`               | `string`                       | Required. The API key of the Amplitude project to load.                 |
-| `options.serverZone`   | `"US"` or `"EU"`               | Required. What server zone to send requests to.                         |
-
-{{/partial:collapse}}
-
-This initialization code accepts parameters that define the user and any integrations.
-
-First, call `init` to initialize the SDK. After calling this function, you can access `window.engagement` and call the SDK functions:
-
-```js
-engagement.init(apiKey: string, initOptions: InitOptions): void
-```
-
 | Parameter                | Type                                                                                                                         | Description                                                                                                                                                                    |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `apiKey`                 | `string`                                                                                                                     | Required. API key of the Amplitude project you want to use.                                                                                                                    |
@@ -81,8 +66,11 @@ engagement.init(apiKey: string, initOptions: InitOptions): void
 | `initOptions.logger`     | [Logger interface](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-types/src/logger.ts#L1-L8) | Optional. Sets a custom logging provider class. Default: [Amplitude Logger](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/logger.ts) |
 | `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`.                            | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                         |
 
+After calling this function, you can access `window.engagement` and call the SDK functions. However, Guides and Surveys isn't fully functional until you call `boot`.
 
-However, Guides and Surveys isn't fully functional until you call `boot`:
+{{/partial:collapse}}
+
+This initialization code accepts parameters that define the user and any integrations.
 
 
 ```js
