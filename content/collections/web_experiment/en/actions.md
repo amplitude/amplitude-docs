@@ -19,10 +19,11 @@ Element changes modify existing elements on your site. Web Experiment applies th
 
 The visual editor supports the following element changes:
 
-- **Display**: Show or remove the element from the DOM.
-- **Visibility**: Show or hide the element.
-- **Text**: Update an element's inner text, color, and size.
-- **Background**: Update a background image or color.
+- **[Display](/docs/web-experiment/set-up-a-web-experiment#display-and-visibility)**: Show or remove the element from the DOM.
+- **[Visibility](/docs/web-experiment/set-up-a-web-experiment#display-and-visibility)**: Show or hide the element.
+- **[Text](/docs/web-experiment/set-up-a-web-experiment#text)**: Update an element's inner text, color, and size.
+- **[Background](/docs/web-experiment/set-up-a-web-experiment#background)**: Update a background image or color.
+- **[Move](/docs/web-experiment/set-up-a-web-experiment#move)**: Move the position of an element.
 
 ## URL redirect
 
