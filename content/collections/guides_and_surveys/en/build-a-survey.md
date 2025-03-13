@@ -54,4 +54,4 @@ This logic asks a followup question to users who gave a 1-3, and shows a thank y
 
 ## Setup and target your survey
 
-Setup and targeting of surveys works the same as for [guides](docs/guides-and-surveys/guides/setup-and-target). Follow those instructions for your survey.
+Setup and targeting of surveys works the same as for [guides](/docs/guides-and-surveys/guides/setup-and-target). Follow those instructions for your survey.
