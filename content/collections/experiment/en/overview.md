@@ -79,7 +79,7 @@ Decide how many users should see your variants by rolling the experiment out to 
 
 ## Activate your experiment and analyze your results
 
-When your experiment is set up, you can select *Start Experiments* to send it to live users.
+When your experiment is set up, select *Start Experiments* to enable the experiment and expose it users.
 
 ## Analyze your results
 
