@@ -16,9 +16,9 @@ Amplitude’s Out-of-the-Box (OOTB) metrics provide consistent, validated defini
 
 ## Available metrics
 
-Amplitude provides the following metrics for web analytics, which use the `[Amplitude] Page Viewed` event:
+Amplitude provides the following metrics for marketing analytics, which use the `[Amplitude] Page Viewed` event:
 
-* Visitors 
+* Visitors
 * Page Views
 * Bounce Rate
 * Entry Rate
@@ -33,16 +33,16 @@ Event Segmentation charts support the Visitors and Page Views metrics.
 All metrics are available in a data table.
 {{/partial:admonition}}
 
-Regardless of where you use them, for example in a [Data Table](docs/analytics/charts/data-tables), [Event Segmentation](/docs/analytics/charts/event-segmentation) chart, or OOTB Web Analytics, they reference the same underlying definitions. Updates you make to the metric definition in one place applies everywhere else you use that metric.
+Regardless of where you use them, for example in a [Data Table](docs/analytics/charts/data-tables), [Event Segmentation](/docs/analytics/charts/event-segmentation) chart, or OOTB Marketing Analytics, they reference the same underlying definitions. Updates you make to the metric definition in one place applies everywhere else you use that metric.
 
 ## Edit existing metrics
 
-Access OOTB metrics from a [Data Table](docs/analytics/charts/data-tables), [Event Segmentation](/docs/analytics/charts/event-segmentation) chart, or the Web Analytics settings. To edit an OOTB metric:
+Access OOTB metrics from a [Data Table](docs/analytics/charts/data-tables), [Event Segmentation](/docs/analytics/charts/event-segmentation) chart, or the Marketing Analytics settings. To edit an OOTB metric:
 
 1. Add the metric to the chart.
 2. Hover over the metric name and click the pencil icon, or click **Edit Metric** on the *More options* menu.
-3. The Metric dialog appears. Update the definition and click **Save**. 
-   
+3. The Metric dialog appears. Update the definition and click **Save**.
+
    The updated definition applies across your project. This includes changes to the label. Changes apply to charts you create going forward, and any chart that includes the metric definition.
 
 For information about creating metrics from scratch, see [Create a metric](/docs/analytics/charts/data-tables/data-tables-create-metric)
