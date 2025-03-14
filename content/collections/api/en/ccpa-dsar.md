@@ -5,6 +5,7 @@ title: 'Data Subject Access Request API'
 source: 'https://www.docs.developers.amplitude.com/analytics/apis/ccpa-dsar-api/'
 auth_method: http_basic
 standard_endpoint: 'https://amplitude.com/api/2/dsar/requests'
+eu_endpoint: 'https://analytics.eu.amplitude.com/api/2/dsar/requests'
 postman_link: 'https://www.postman.com/amplitude-dev-docs/workspace/amplitude-developers/folder/20044411-9debb5b3-8c58-4eed-b2e5-33f4717b9fc1?action=share&source=copy-link&creator=29131806&ctx=documentation'
 lede: 'The California Consumer Privacy Act (CCPA) requires businesses to provide all data about an end user upon request. This Data Subject Access Request (DSAR) API makes it easy to retrieve all data about a user.'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
