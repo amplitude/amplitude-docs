@@ -84,6 +84,22 @@ For Amplitude's time-based import option, it's best practice to use a monotonica
 Upon first import, Amplitude imports all the data returned from the query configured in the Import Config. Amplitude saves a reference of the maximum timestamp referenced in the *Timestamp Column Name*: `timestamp_1`. Upon subsequent import, Amplitude imports all data from the previously saved timestamp (`timestamp_1`), to what's now the new maximum timestamp (`timestamp_2`). Then after that import, Amplitude saves `timestamp_2` as the new maximum timestamp.
 {{/partial:admonition}}
 
+## BigQuery export statement limitations
+
+When creating SQL queries for BigQuery imports, it's important to be aware of certain limitations with BigQuery's export statements. Amplitude uses BigQuery's export functionality to extract data for ingestion.
+
+{{partial:admonition type="warning" title="Meta tables restriction"}}
+BigQuery export statements cannot reference meta tables in queries. This includes INFORMATION_SCHEMA views, system tables, or wildcard tables. If your query references any of these meta tables, you'll receive an error similar to: `EXPORT DATA statement cannot reference meta tables in the queries`.
+{{/partial:admonition}}
+
+To avoid this limitation:
+- Ensure your SQL query only references standard tables and views
+- Do not include references to INFORMATION_SCHEMA views
+- Avoid using system tables in your query
+- Do not use wildcard tables in your import queries
+
+For more information on BigQuery export statement limitations, refer to the [BigQuery documentation](https://cloud.google.com/bigquery/docs/reference/standard-sql/export-statements).
+
 ## Mandatory data fields
 
 Include the mandatory fields for the data type when you create the SQL query. These tables outline the mandatory and optional fields for each data type. Find a list of other supported fields for events in the [HTTP V2 API documentation](/docs/apis/analytics/http-v2#keys-for-the-event-argument) and  for user properties in the [Identify API documentation](/docs/apis/analytics/identify#identification-parameter-keys). Add any columns not in those lists to either `event_properties` or `user_properties`, otherwise it's ignored. 
@@ -215,7 +231,7 @@ You can extract values from your JSON String field, though, to use in your prope
 
 ```sql
 SELECT STRUCT(
-   JSON_EXTRACT_SCALAR(EVENT_PROPERTIES, "$.record count") AS record_count,
+    JSON_EXTRACT_SCALAR(EVENT_PROPERTIES, "$.record count") AS record_count,
    JSON_EXTRACT_SCALAR(EVENT_PROPERTIES, "$.region") AS region
 ) as event_properties
 FROM your_table;
