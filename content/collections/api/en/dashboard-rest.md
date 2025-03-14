@@ -144,18 +144,18 @@ You can use the Dashboard REST API to export data from data tables. Just query a
 ## Get results from an existing chart
 
 Get JSON results from any saved chart via chart ID.
-`GET https://amplitude.com/api/3/chart/chart_id/query`
+`GET https://amplitude.com/api/3/chart/chart_id/csv`
 
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
-curl --location --request GET 'https://amplitude.com/api/3/chart/:chart_id/query' \
+curl --location --request GET 'https://amplitude.com/api/3/chart/:chart_id/csv' \
 -u '{api_key}:{secret_key}'
 ```
 {{/partial:tab}}
 {{partial:tab name="HTTP"}}
 ```bash
-GET /api/3/chart/:chart_id/query HTTP/1.1
+GET /api/3/chart/:chart_id/csv HTTP/1.1
 Host: amplitude.com
 Authorization: Basic {api-key}:{secret-key} #credentials must be base64 encoded
 ```
