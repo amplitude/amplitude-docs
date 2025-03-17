@@ -182,6 +182,8 @@ if (nonEUCountryFlagEnabled) {
 
 {{partial:partials/session-replay/sr-ios-webview}}
 
+{{partial:partials/session-replay/sr-ios-mapview-support}}
+
 {{partial:partials/session-replay/sr-data-retention}}
 
 {{partial:partials/session-replay/sr-ios-storage}}
@@ -189,36 +191,3 @@ if (nonEUCountryFlagEnabled) {
 {{partial:partials/session-replay/sr-ios-known-limitations}}
 
 {{partial:partials/session-replay/sr-ios-troubleshooting}}
-
-### Session replays don't appear in Amplitude 
-
-Session replays may not appear in Amplitude due to:
-
-- Lack of connectivity
-- Sampling
-- Sessions not including the Session Replay ID property
-
-#### Lack of connectivity
-
-Ensure your app has access to the internet then try again.
-
-#### Sampling
-
-As mentioned above, the default `sampleRate` for Session Replay is `0`. Update the rate to a higher number. For more information see, [Sampling rate](#sampling-rate).
-
-#### Some sessions don't include the Session Replay ID property
-
-Session replay doesn't require that all events in a session have the `[Amplitude] Session Replay ID` property, only that one event in the session has it. Reasons why `[Amplitude] Session Replay ID`  may not be present in an event include:
-
-- The user may have opted out or the session may not be part of the sample set given the current `sampleRate`. Increasing the `sampleRate` captures more sessions.
-- Amplitude events may still send through your provider, but `getSessionReplayProperties()` doesn't return the `[Amplitude] Session Replay ID` property. This can result from `optOut` and `sampleRate` configuration settings. Check that `optOut` and `sampleRate` are set to include the session.
-
-### Session Replay processing errors
-
-In general, replays should be available within minutes of ingestion. Delays or errors may be the result of one or more of the following:
-
-- Mismatching API keys or Device IDs. This can happen if Session Replay and standard event instrumentation use different API keys or Device IDs.
-- Session Replay references the wrong project.
-- Short sessions. If a users bounces within a few seconds of initialization, the SDK may not have time to upload replay data.
-- Page instrumentation. If Session Replay isn't implemented on all pages a user visits, their session may not capture properly.
-- Replays older than the set [retention period](#retention-period) (defaults to 90 days).
