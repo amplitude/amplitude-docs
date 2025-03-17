@@ -86,19 +86,15 @@ Upon first import, Amplitude imports all the data returned from the query config
 
 ## BigQuery export statement limitations
 
-When creating SQL queries for BigQuery imports, it's important to be aware of certain limitations with BigQuery's export statements. Amplitude uses BigQuery's export functionality to extract data for ingestion.
-
-{{partial:admonition type="warning" title="Meta tables restriction"}}
-BigQuery export statements cannot reference meta tables in queries. This includes INFORMATION_SCHEMA views, system tables, or wildcard tables. If your query references any of these meta tables, you'll receive an error similar to: `EXPORT DATA statement cannot reference meta tables in the queries`.
-{{/partial:admonition}}
+BigQuery export statements can't reference meta tables in queries. This includes `INFORMATION_SCHEMA` views, system tables, or wildcard tables. If your query references any of these meta tables, Amplitude reports an error like: `EXPORT DATA statement cannot reference meta tables in the queries`.
 
 To avoid this limitation:
 - Ensure your SQL query only references standard tables and views
-- Do not include references to INFORMATION_SCHEMA views
+- Don't include references to `INFORMATION_SCHEM`A views
 - Avoid using system tables in your query
-- Do not use wildcard tables in your import queries
+- Don't use wildcard tables in your import queries
 
-For more information on BigQuery export statement limitations, refer to the [BigQuery documentation](https://cloud.google.com/bigquery/docs/reference/standard-sql/export-statements).
+For more information about BigQuery export statement limitations, see Google's article [Export statements in GoogleSQ](https://cloud.google.com/bigquery/docs/reference/standard-sql/export-statements).
 
 ## Mandatory data fields
 
