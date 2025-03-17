@@ -8,8 +8,6 @@ For more information about individual statuses and errors, see the [Session Repl
 
 Session Replay supports attaching to a single instance of the Amplitude SDK. If you have more than one instance instrumented in your application, make sure to start Session Replay on the instance that most relates to your project.
 
-{{partial:partials/session-replay/sr-ios-troubleshooting}}
-
 ### Replay length and session length don't match
 
 In some scenarios, the length of a replay may exceed the time between the `[Amplitude] Start Session` and `[Amplitude] End Session` events. This happens when a user closes the `[Amplitude] End Session` occurs, but before the iOS SDK and Session Replay middleware can process it. When the user uses the app again, the SDK and middleware process the event and send it to Amplitude, along with the replay. You can verify this scenario occurs if you see a discrepancy between the `End Session Client Event Time` and the `Client Upload Time`.
