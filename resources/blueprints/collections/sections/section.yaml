@@ -62,6 +62,14 @@ tabs:
               max_items: 1
               listable: false
               localizable: true
+          -
+            handle: academy_course
+            field:
+              type: entries
+              display: 'Academy Course'
+              localizable: false
+              collections:
+                - academy_content
   alt_sitemap:
     display: 'Alt Sitemap'
     sections:

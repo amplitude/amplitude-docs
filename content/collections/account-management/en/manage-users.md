@@ -8,8 +8,10 @@ this_article_will_help_you:
 landing: true
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717697668
+updated_at: 1742323697
 landing_blurb: "Manage your project's users and permissions."
+academy_course:
+  - aa8cb42c-8302-4c76-b28d-0cb1a579fe46
 ---
 Before a user can gain access to any Amplitude projects, you will have to add them to your Amplitude organization. You should do this immediately after creating an organization. Additionally, you’ll probably need to add new team members on a case-by-case basis as your organization changes and grows.
 
