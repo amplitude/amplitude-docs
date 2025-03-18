@@ -5,9 +5,9 @@ title: 'Session Replay iOS Plugin'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1738344736
+updated_at: 1742315917
 instrumentation_guide: true
-platform: ios
+platform: mobile
 public: true
 description: 'Choose this option if you use an Amplitude iOS SDK to instrument your iOS application.'
 ---

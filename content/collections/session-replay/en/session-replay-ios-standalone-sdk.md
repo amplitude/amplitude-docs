@@ -5,10 +5,10 @@ title: 'Session Replay iOS Standalone SDK'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1738344750
+updated_at: 1742315929
 alpha: true
 instrumentation_guide: true
-platform: ios
+platform: mobile
 public: true
 description: 'Choose this option if you use an iOS analytics provider other than Amplitude.'
 ---

@@ -6,10 +6,10 @@ title: 'Session Replay iOS Middleware'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1738344743
+updated_at: 1742315923
 alpha: true
 instrumentation_guide: true
-platform: ios
+platform: mobile
 public: true
 ---
 {{partial:partials/session-replay/sr-ios-eap :when="alpha"}}
