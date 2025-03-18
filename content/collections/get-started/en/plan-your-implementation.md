@@ -5,8 +5,10 @@ title: 'Plan your implementation'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718901888
+updated_at: 1742328299
 source: /docs/analytics/plan-your-set-up
+academy_course:
+  - 5bdab705-c0c7-40c3-b19d-5d2e28f28b59
 ---
 This article describes how to successfully set up and get familiar with Amplitude basics.
 

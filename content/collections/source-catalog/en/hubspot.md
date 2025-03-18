@@ -22,7 +22,9 @@ partner_maintained: false
 integration_icon: partner-icons/hubspot.svg
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1713825381
+updated_at: 1742328508
+academy_course:
+  - d3e59510-fa0c-4d7a-978f-11d944a2755e
 ---
 [HubSpot](http://www.hubspot.com/) is an all-in-one marketing tool that helps attract new leads and convert them into paying customers, with features like landing page creation and email automation.
 

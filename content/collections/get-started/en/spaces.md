@@ -7,8 +7,10 @@ this_article_will_help_you:
   - 'Organize your analyses in multiple **spaces**'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1724879868
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1742328240
+academy_course:
+  - 46517037-8185-4438-afbd-4ba6f18249ea
 ---
 Some of the most valuable analyses are the result of collaborations among teammates. **Spaces** help product teams subscribe to and organize analyses shared in Amplitude.
 

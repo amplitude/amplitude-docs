@@ -4,9 +4,11 @@ blueprint: data
 title: 'Overview of Amplitude Data'
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1722894813
+updated_at: 1742328469
 landing: true
 landing_blurb: 'Get up to speed with Amplitude Data.'
+academy_course:
+  - dac76bfe-1d9f-49a5-bc64-7e2f45fb9719
 ---
 To get the most out of Amplitude, building a data catalog your team understands and trusts is critical. Amplitude Data provides governance tools to help you define, track, verify, and improve your data across the platform.
 
