@@ -17,4 +17,14 @@
     </a>
     {{/faq_link}}
     {{/if}}
+    {{if academy_course}}
+    {{academy_course}}
+    <a href="{{ academy_url }}" target="_blank">
+        <div class="border border-amp-blue-500 rounded h-64 md:h-60 p-4 hover:shadow-lg transition-shadow text-black-900">
+        <p class="mt-0 leading-6 font-[Gellix] text-[1.25rem] flex flex-row items-center" >{{svg src="/docs/assets/general/help.svg" class="inline fill-amp-blue-500 mr-2"}}<span>{{ title }}</span></p>
+            <div class="mb-0 text-[.875rem] leading-5 text-amp-gray-600 landing-blurb">{{academy_short_description}}</div>
+        </div>
+    </a>
+    {{/academy_course}}
+    {{/if}}
 </div>

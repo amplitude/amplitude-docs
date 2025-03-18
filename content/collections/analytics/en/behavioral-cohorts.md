@@ -7,8 +7,10 @@ author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 landing: true
 landing_blurb: 'In Amplitude, a **cohort** is a group of users who share a trait or set of traits.'
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1725397068
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1742328369
+academy_course:
+  - 3161a9ef-14ce-41e6-80d1-9d13e5017d86
 ---
 In Amplitude, a **cohort** is a group of users who share a trait or set of traits. There are two different types of cohorts: [predictive cohorts](/docs/cdp/audiences/predictions) and **behavioral cohorts**. 
 
