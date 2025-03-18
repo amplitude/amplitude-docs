@@ -7281,6 +7281,61 @@
             "install-path": "../statamic/cms"
         },
         {
+            "name": "statamic/eloquent-driver",
+            "version": "v4.18.0",
+            "version_normalized": "4.18.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/statamic/eloquent-driver.git",
+                "reference": "b5ed5ba2b794b753449f5d2dfdd8c445fefdfb09"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/statamic/eloquent-driver/zipball/b5ed5ba2b794b753449f5d2dfdd8c445fefdfb09",
+                "reference": "b5ed5ba2b794b753449f5d2dfdd8c445fefdfb09",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1",
+                "statamic/cms": "^5.18"
+            },
+            "require-dev": {
+                "doctrine/dbal": "^3.8",
+                "laravel/pint": "^1.0",
+                "orchestra/testbench": "^8.0 || ^9.0.2",
+                "phpunit/phpunit": "^9.4 || ^10.0 || ^11.0"
+            },
+            "time": "2024-11-20T08:00:32+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Statamic\\Eloquent\\ServiceProvider"
+                    ]
+                },
+                "statamic": {
+                    "name": "Eloquent Driver",
+                    "description": "Allows you to store Statamic data in a database."
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Statamic\\Eloquent\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Allows you to store Statamic data in a database.",
+            "support": {
+                "issues": "https://github.com/statamic/eloquent-driver/issues",
+                "source": "https://github.com/statamic/eloquent-driver/tree/v4.18.0"
+            },
+            "install-path": "../statamic/eloquent-driver"
+        },
+        {
             "name": "statamic/ssg",
             "version": "3.0.2",
             "version_normalized": "3.0.2.0",
