@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0fd597009df4c47c68444d5a8b8bb95f",
+    "content-hash": "c74294934e2039df3ce15634ff124a6c",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -2473,73 +2473,6 @@
             "time": "2025-01-27T12:07:53+00:00"
         },
         {
-            "name": "masterminds/html5",
-            "version": "2.9.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Masterminds/html5-php.git",
-                "reference": "f5ac2c0b0a2eefca70b2ce32a5809992227e75a6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Masterminds/html5-php/zipball/f5ac2c0b0a2eefca70b2ce32a5809992227e75a6",
-                "reference": "f5ac2c0b0a2eefca70b2ce32a5809992227e75a6",
-                "shasum": ""
-            },
-            "require": {
-                "ext-dom": "*",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.7.21 || ^6 || ^7 || ^8 || ^9"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.7-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Masterminds\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Matt Butcher",
-                    "email": "technosophos@gmail.com"
-                },
-                {
-                    "name": "Matt Farina",
-                    "email": "matt@mattfarina.com"
-                },
-                {
-                    "name": "Asmir Mustafic",
-                    "email": "goetas@gmail.com"
-                }
-            ],
-            "description": "An HTML5 parser and serializer.",
-            "homepage": "http://masterminds.github.io/html5-php",
-            "keywords": [
-                "HTML5",
-                "dom",
-                "html",
-                "parser",
-                "querypath",
-                "serializer",
-                "xml"
-            ],
-            "support": {
-                "issues": "https://github.com/Masterminds/html5-php/issues",
-                "source": "https://github.com/Masterminds/html5-php/tree/2.9.0"
-            },
-            "time": "2024-03-31T07:05:07+00:00"
-        },
-        {
             "name": "michelf/php-smartypants",
             "version": "1.8.1",
             "source": {
@@ -3093,99 +3026,6 @@
                 }
             ],
             "time": "2024-11-21T10:36:35+00:00"
-        },
-        {
-            "name": "openspout/openspout",
-            "version": "v4.29.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/openspout/openspout.git",
-                "reference": "ec83106bc3922fe94c9d37976ba6b7259511c4c5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/openspout/openspout/zipball/ec83106bc3922fe94c9d37976ba6b7259511c4c5",
-                "reference": "ec83106bc3922fe94c9d37976ba6b7259511c4c5",
-                "shasum": ""
-            },
-            "require": {
-                "ext-dom": "*",
-                "ext-fileinfo": "*",
-                "ext-filter": "*",
-                "ext-libxml": "*",
-                "ext-xmlreader": "*",
-                "ext-zip": "*",
-                "php": "~8.3.0 || ~8.4.0"
-            },
-            "require-dev": {
-                "ext-zlib": "*",
-                "friendsofphp/php-cs-fixer": "^3.71.0",
-                "infection/infection": "^0.29.14",
-                "phpbench/phpbench": "^1.4.0",
-                "phpstan/phpstan": "^2.1.8",
-                "phpstan/phpstan-phpunit": "^2.0.4",
-                "phpstan/phpstan-strict-rules": "^2.0.3",
-                "phpunit/phpunit": "^12.0.7"
-            },
-            "suggest": {
-                "ext-iconv": "To handle non UTF-8 CSV files (if \"php-mbstring\" is not already installed or is too limited)",
-                "ext-mbstring": "To handle non UTF-8 CSV files (if \"iconv\" is not already installed)"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.3.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "OpenSpout\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Adrien Loison",
-                    "email": "adrien@box.com"
-                }
-            ],
-            "description": "PHP Library to read and write spreadsheet files (CSV, XLSX and ODS), in a fast and scalable way",
-            "homepage": "https://github.com/openspout/openspout",
-            "keywords": [
-                "OOXML",
-                "csv",
-                "excel",
-                "memory",
-                "odf",
-                "ods",
-                "office",
-                "open",
-                "php",
-                "read",
-                "scale",
-                "spreadsheet",
-                "stream",
-                "write",
-                "xlsx"
-            ],
-            "support": {
-                "issues": "https://github.com/openspout/openspout/issues",
-                "source": "https://github.com/openspout/openspout/tree/v4.29.1"
-            },
-            "funding": [
-                {
-                    "url": "https://paypal.me/filippotessarotto",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/Slamdunk",
-                    "type": "github"
-                }
-            ],
-            "time": "2025-03-11T14:40:46+00:00"
         },
         {
             "name": "pecotamic/sitemap",
@@ -4797,67 +4637,6 @@
             "time": "2024-11-06T09:52:06+00:00"
         },
         {
-            "name": "spatie/simple-excel",
-            "version": "3.7.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/simple-excel.git",
-                "reference": "53546918bb480f7876c8ed295860408ded2e0ebf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/simple-excel/zipball/53546918bb480f7876c8ed295860408ded2e0ebf",
-                "reference": "53546918bb480f7876c8ed295860408ded2e0ebf",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "^9.0|^10.0|^11.0|^12.0",
-                "openspout/openspout": "^4.19",
-                "php": "^8.1"
-            },
-            "require-dev": {
-                "pestphp/pest-plugin-laravel": "^1.3|^2.3|^3.0",
-                "phpunit/phpunit": "^9.4|^10.5|^11.0|^12.0",
-                "spatie/pest-plugin-snapshots": "^1.1|^2.1",
-                "spatie/phpunit-snapshot-assertions": "^4.0|^5.1",
-                "spatie/temporary-directory": "^1.2|^2.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\SimpleExcel\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Read and write simple Excel and CSV files",
-            "homepage": "https://github.com/spatie/simple-excel",
-            "keywords": [
-                "simple-excel",
-                "spatie"
-            ],
-            "support": {
-                "source": "https://github.com/spatie/simple-excel/tree/3.7.2"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/spatie",
-                    "type": "github"
-                }
-            ],
-            "time": "2025-02-14T12:47:34+00:00"
-        },
-        {
             "name": "statamic/cms",
             "version": "v5.35.0",
             "source": {
@@ -5012,62 +4791,6 @@
                 "source": "https://github.com/statamic/eloquent-driver/tree/v4.18.0"
             },
             "time": "2024-11-20T08:00:32+00:00"
-        },
-        {
-            "name": "statamic/importer",
-            "version": "v1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/statamic/importer.git",
-                "reference": "6a7cc151328e9e9ca5cd35dbd7c9aaa9b245c90f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/statamic/importer/zipball/6a7cc151328e9e9ca5cd35dbd7c9aaa9b245c90f",
-                "reference": "6a7cc151328e9e9ca5cd35dbd7c9aaa9b245c90f",
-                "shasum": ""
-            },
-            "require": {
-                "pixelfear/composer-dist-plugin": "^0.1.5",
-                "spatie/simple-excel": "^3.7",
-                "statamic/cms": "^5.35.0",
-                "symfony/dom-crawler": "^7.1"
-            },
-            "require-dev": {
-                "laravel/pint": "^1.18",
-                "orchestra/testbench": "^8.0 || ^9.0.2",
-                "phpunit/phpunit": "^10.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Statamic\\Importer\\ServiceProvider"
-                    ]
-                },
-                "statamic": {
-                    "name": "Importer",
-                    "description": "Allows you to easily import content and users into Statamic. Supports CSV and XML files."
-                },
-                "download-dist": {
-                    "url": "https://github.com/statamic/importer/releases/download/{$version}/dist.tar.gz",
-                    "path": "dist"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Statamic\\Importer\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "support": {
-                "issues": "https://github.com/statamic/importer/issues",
-                "source": "https://github.com/statamic/importer/tree/v1.0.2"
-            },
-            "time": "2024-10-28T20:34:07+00:00"
         },
         {
             "name": "statamic/ssg",
@@ -5478,73 +5201,6 @@
                 }
             ],
             "time": "2024-09-25T14:20:29+00:00"
-        },
-        {
-            "name": "symfony/dom-crawler",
-            "version": "v7.2.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/dom-crawler.git",
-                "reference": "19cc7b08efe9ad1ab1b56e0948e8d02e15ed3ef7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/19cc7b08efe9ad1ab1b56e0948e8d02e15ed3ef7",
-                "reference": "19cc7b08efe9ad1ab1b56e0948e8d02e15ed3ef7",
-                "shasum": ""
-            },
-            "require": {
-                "masterminds/html5": "^2.6",
-                "php": ">=8.2",
-                "symfony/polyfill-ctype": "~1.8",
-                "symfony/polyfill-mbstring": "~1.0"
-            },
-            "require-dev": {
-                "symfony/css-selector": "^6.4|^7.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\DomCrawler\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Eases DOM navigation for HTML and XML documents",
-            "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/dom-crawler/tree/v7.2.4"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2025-02-17T15:53:07+00:00"
         },
         {
             "name": "symfony/error-handler",
