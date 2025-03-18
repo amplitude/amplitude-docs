@@ -40,6 +40,19 @@ abstract class Command extends BaseCommand
     }
 
     /**
+     * getApplication, but is guaranteed to return a Shell instance.
+     */
+    protected function getShell(): Shell
+    {
+        $shell = $this->getApplication();
+        if (!$shell instanceof Shell) {
+            throw new \RuntimeException('PsySH Commands require an instance of Psy\Shell');
+        }
+
+        return $shell;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function asText(): string
@@ -140,9 +153,11 @@ abstract class Command extends BaseCommand
                     $default = '';
                 }
 
+                $name = $argument->getName();
+                $pad = \str_pad('', $max - \strlen($name));
                 $description = \str_replace("\n", "\n".\str_pad('', $max + 2, ' '), $argument->getDescription());
 
-                $messages[] = \sprintf(" <info>%-{$max}s</info> %s%s", $argument->getName(), $description, $default);
+                $messages[] = \sprintf(' <info>%s</info>%s %s%s', $name, $pad, $description, $default);
             }
 
             $messages[] = '';
