@@ -1,0 +1,69 @@
+title: 'Academy Content'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: false
+              validate:
+                - required
+          -
+            handle: academy_asset_type
+            field:
+              options:
+                -
+                  key: learning-path
+                  value: 'Learning Path'
+                -
+                  key: chart-deep-dive
+                  value: 'Chart Deep Dive'
+                -
+                  key: course
+                  value: Course
+                -
+                  key: course-video
+                  value: 'Course (video)'
+              type: select
+              display: 'Academy Asset Type'
+              localizable: false
+              width: 50
+          -
+            handle: academy_cta
+            field:
+              character_limit: 50
+              type: text
+              display: 'Academy CTA'
+              localizable: false
+              width: 50
+          -
+            handle: academy_url
+            field:
+              input_type: url
+              type: text
+              display: 'Academy URL'
+              localizable: false
+              width: 50
+          -
+            handle: academy_short_description
+            field:
+              type: markdown
+              display: 'Academy Short Description'
+              localizable: false
+              width: 50
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

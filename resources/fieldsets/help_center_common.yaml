@@ -47,30 +47,10 @@ fields:
       display: 'Related Academy course'
       localizable: false
   -
-    handle: academy_link
+    handle: academy_course
     field:
-      input_type: url
-      type: text
-      display: 'Academy link'
-      localizable: false
-      width: 50
-  -
-    handle: academy_title
-    field:
-      type: text
-      display: 'Academy course title'
-      localizable: false
-      width: 50
-  -
-    handle: academy_description
-    field:
-      buttons:
-        - bold
-        - italic
-        - unorderedlist
-        - orderedlist
-        - link
-        - table
-      type: markdown
-      display: 'Academy description'
+      collections:
+        - academy_content
+      type: entries
+      display: 'Academy Course'
       localizable: false
