@@ -6,8 +6,8 @@ title: 'Session Replay React Native SDK Plugin'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1741713791
-platform: react-native
+updated_at: 1742315957
+platform: mobile
 public: true
 description: 'Use this plugin if you instrument your application with the Amplitude React Native SDK.'
 ---
