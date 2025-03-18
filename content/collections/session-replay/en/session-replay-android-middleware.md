@@ -164,8 +164,8 @@ if (nonEUCountryFlagEnabled) {
 
 {{partial:partials/session-replay/sr-android-storage}}
 
-{{partial:partials/session-replay/sr-android-jetpack-compose}}
-
 Amplitude recommends setting `amplitude.setFlushEventsOnClose(true)` in the Amplitude SDK Configuration (the default) to send session data to the server on each app exit.
+
+{{partial:partials/session-replay/sr-android-jetpack-compose}}
 
 {{partial:partials/session-replay/sr-android-known-limitations}}
