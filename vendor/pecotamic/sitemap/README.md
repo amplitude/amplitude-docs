@@ -72,4 +72,4 @@ class AppServiceProvider extends Provider
 
 ## Credits
 
-Thanks for code contribution to [Prageeth Silva](/prageeth) and [Poh Nean](/pohnean).
+Thanks for code contribution to [Prageeth Silva](/prageeth), [Poh Nean](/pohnean) and [Frederik Sauer](/FrittenKeeZ).
