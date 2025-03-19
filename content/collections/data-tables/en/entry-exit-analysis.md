@@ -47,7 +47,7 @@ For each session that contains the event specified in the column:
 
 1. Amplitude identifies all relevant sessions.
 2. For each session:
-   
+
     * Amplitude extracts the first property value of an active event for Entry Analysis
     * Amplitude extracts the last property value of an active event for Exit Analysis
 
@@ -60,7 +60,7 @@ Amplitude uses the following formulas to compute the metrics that support Entry 
 | Metric Type                     | Formula                  |
 | ------------------------------- | ------------------------ |
 | Uniques                         | `UNIQUES(A)`             |
-| Event totals                    | `EVENTTOTALS(A)`         |
+| Event totals                    | `TOTALS(A)`              |
 | Prop sum                        | `PROPSUM(A)`             |
 | Session totals (Entry analysis) | Like **Session Entries** |
 | Session totals (Exit analysis)  | Like **Session Exits**   |
