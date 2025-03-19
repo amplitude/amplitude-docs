@@ -166,62 +166,6 @@ if (nonEUCountryFlagEnabled) {
 
 Amplitude recommends setting `amplitude.setFlushEventsOnClose(true)` in the Amplitude SDK Configuration (the default) to send session data to the server on each app exit.
 
+{{partial:partials/session-replay/sr-android-jetpack-compose}}
+
 {{partial:partials/session-replay/sr-android-known-limitations}}
-
-### Multiple Amplitude instances
-
-Session Replay supports attaching to a single instance of the Amplitude SDK. If you have more than one instance instrumented in your application, make sure to start Session Replay on the instance that most relates to your project.
-
-{{partial:partials/session-replay/sr-android-troubleshooting}}
-
-### Captured sessions contain limited information
-
-Session Replay requires that the Android SDK sets `sessionId` and `deviceId` at a minimum. If you instrument events outside of the Android SDK, Amplitude doesn't tag those events as part of the session replay. This means you can't use tools like Funnel, Segmentation, or Journeys charts to find session replays. You can find session replays with the User Sessions chart or through User Lookup.
-
-If you use a method other than the Android SDK to instrument your events, consider using the [Session Replay Standalone SDK for Android](/docs/session-replay/session-replay-android-standalone).
-
-### Replay length and session length don't match
-
-In some scenarios, the length of a replay may exceed the time between the `[Amplitude] Start Session` and `[Amplitude] End Session` events. This happens when a user closes the `[Amplitude] End Session` occurs, but before the Android SDK and Session Replay middleware can process it. When the user visits the app again, the SDK and middleware process the event and send it to Amplitude, along with the replay. You can verify this scenario occurs if you see a discrepancy between the `End Session Client Event Time` and the `Client Upload Time`.
-
-### Session replays don't appear in Amplitude
-
-Session replays may not appear in Amplitude due to:
-
-- Lack of connectivity
-- Failed to flush recording before exiting the app
-- No events triggered through the Android SDK in the current session
-- Sampling
-
-#### Lack of connectivity
-
-Ensure your app has access to the internet then try again.
-
-#### No events triggered through the Android SDK in the current session
-
-Session Replay requires that at least one event in the user's session has the `[Amplitude] Session Replay ID` property. If you instrument your events with a method other than the [Android SDK](/docs/sdks/analytics/android/android-kotlin-sdk), the Android SDK may send only the default Session Start and Session End events, which don't include this property.
-
-For local testing, you can force a Session Start event to ensure that Session Replay functions.
-
-1. In Amplitude, in the User Lookup Event Stream, you should see a Session Start event that includes the `[Amplitude] Session Replay ID` property. After processing, the Play Session button should appear for that session.
-
-#### Sampling
-
-As mentioned above, the default `sampleRate` for Session Replay is `0`. Update the rate to a higher number. For more information see, [Sampling rate](#sampling-rate).
-
-#### Some sessions don't include the Session Replay ID property
-
-Session replay doesn't require that all events in a session have the `[Amplitude] Session Replay ID` property, only that one event in the session has it. Reasons why `[Amplitude] Session Replay ID`  may not be present in an event include:
-
-- The user may have opted out or may not be part of the sample set given the current `sampleRate`. Increasing the `sampleRate` captures more sessions.
-- Amplitude events may still send through your provider, but `getSessionReplayProperties()` doesn't return the `[Amplitude] Session Replay ID` property. This can result from `optOut` and `sampleRate` configuration settings. Check that `optOut` and `sampleRate` are set to include the session.
-
-### Session Replay processing errors
-
-In general, replays should be available within minutes of ingestion. Delays or errors may be the result of one or more of the following:
-
-- Mismatching API keys or Device IDs. This can happen if Session Replay and standard event instrumentation use different API keys or Device IDs.
-- Session Replay references the wrong project.
-- Short sessions. If a users bounces within a few seconds of initialization, the SDK may not have time to upload replay data.
-- Page instrumentation. If Session Replay isn't implemented on all pages a user visits, their session may not capture properly.
-- Replays older than the set [retention period](#retention-period) (defaults to 90 days).
