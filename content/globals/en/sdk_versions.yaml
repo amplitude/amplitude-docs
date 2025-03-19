@@ -10,9 +10,10 @@ unity: '2.8'
 unreal: 0.1.0
 go: 1.0.2
 visual_labeling_plugin: 1.0.0
-session_replay_plugin: 1.13.2
+session_replay_plugin: 1.13.6
 session_replay_standalone: 1.19.1
 session_replay_android_plugin: 0.18.0
 session_replay_android_standalone: 0.18.0
+session_replay_react_native_plugin: 0.2.8
 session_replay_ios: 0.1.3
 experiment_android: 1.12.1

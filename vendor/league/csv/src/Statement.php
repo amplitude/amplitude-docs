@@ -29,13 +29,17 @@ use function array_values;
 use function is_string;
 
 /**
- * Criteria to filter a {@link TabularDataReader} object.
+ * Criteria to filter a {@link TabularData} object.
  *
  * @phpstan-import-type ConditionExtended from Query\PredicateCombinator
  * @phpstan-import-type OrderingExtended from Query\SortCombinator
  */
 class Statement
 {
+    final protected const COLUMN_ALL = 0;
+    final protected const COLUMN_INCLUDE = 1;
+    final protected const COLUMN_EXCLUDE = 2;
+
     /** @var array<ConditionExtended> Callables to filter the iterator. */
     protected array $where = [];
     /** @var array<OrderingExtended> Callables to sort the iterator. */
@@ -46,45 +50,37 @@ class Statement
     protected int $limit = -1;
     /** @var array<string|int> */
     protected array $select = [];
+    /** @var self::COLUMN_* */
+    protected int $select_mode = self::COLUMN_ALL;
 
     /**
-     * @param ?callable(array, array-key): bool $where, Deprecated argument use Statement::where instead
-     * @param int $offset, Deprecated argument use Statement::offset instead
-     * @param int $limit, Deprecated argument use Statement::limit instead
-     *
-     * @throws Exception
-     * @throws InvalidArgument
-     * @throws ReflectionException
-     */
-    public static function create(?callable $where = null, int $offset = 0, int $limit = -1): self
-    {
-        $stmt = new self();
-        if (null !== $where) {
-            $stmt = $stmt->where($where);
-        }
-
-        if (0 !== $offset) {
-            $stmt = $stmt->offset($offset);
-        }
-
-        if (-1 !== $limit) {
-            $stmt = $stmt->limit($limit);
-        }
-
-        return $stmt;
-    }
-
-    /**
-     * Sets the Iterator element columns.
+     * Select all the columns from the tabular data that MUST BE present in the ResultSet.
      */
     public function select(string|int ...$columns): self
     {
-        if ($columns === $this->select) {
+        if ($columns === $this->select && self::COLUMN_INCLUDE === $this->select_mode) {
             return $this;
         }
 
         $clone = clone $this;
         $clone->select = $columns;
+        $clone->select_mode = [] === $columns ? self::COLUMN_ALL : self::COLUMN_INCLUDE;
+
+        return $clone;
+    }
+
+    /**
+     * Select all the columns from the tabular data that MUST NOT BE present in the ResultSet.
+     */
+    public function selectAllExcept(string|int ...$columns): self
+    {
+        if ($columns === $this->select && self::COLUMN_EXCLUDE === $this->select_mode) {
+            return $this;
+        }
+
+        $clone = clone $this;
+        $clone->select = $columns;
+        $clone->select_mode = [] === $columns ? self::COLUMN_ALL : self::COLUMN_EXCLUDE;
 
         return $clone;
     }
@@ -313,15 +309,19 @@ class Statement
     }
 
     /**
-     * Executes the prepared Statement on the {@link TabularDataReader} object.
+     * Executes the prepared Statement on the {@link TabularData} object.
      *
      * @param array<string> $header an optional header to use instead of the tabular data header
      *
      * @throws InvalidArgument
      * @throws SyntaxError
      */
-    public function process(TabularDataReader $tabular_data, array $header = []): TabularDataReader
+    public function process(TabularData $tabular_data, array $header = []): TabularDataReader
     {
+        if (!$tabular_data instanceof TabularDataReader) {
+            $tabular_data = ResultSet::from($tabular_data);
+        }
+
         if ([] === $header) {
             $header = $tabular_data->getHeader();
         }
@@ -339,7 +339,13 @@ class Statement
             $iterator = Query\Limit::new($this->offset, $this->limit)->slice($iterator);
         }
 
-        return (new ResultSet($iterator, $header))->select(...$this->select);
+        $iterator = new ResultSet($iterator, $header);
+
+        return match ($this->select_mode) {
+            self::COLUMN_EXCLUDE => $iterator->selectAllExcept(...$this->select),
+            self::COLUMN_INCLUDE => $iterator->select(...$this->select),
+            default => $iterator,
+        };
     }
 
     /**
@@ -473,5 +479,40 @@ class Statement
         $it->uasort($compare);
 
         return $it;
+    }
+
+
+    /**
+     * DEPRECATION WARNING! This method will be removed in the next major point release.
+     *
+     * @param ?callable(array, array-key): bool $where , Deprecated argument use Statement::where instead
+     * @param int $offset, Deprecated argument use Statement::offset instead
+     * @param int $limit, Deprecated argument use Statement::limit instead
+     *
+     * @throws Exception
+     * @throws InvalidArgument
+     * @throws ReflectionException
+     *
+     * @see Statement::__construct()
+     * @deprecated Since version 9.22.0
+     * @codeCoverageIgnore
+     */
+    #[Deprecated(message:'use League\Csv\Statement::__construct() instead', since:'league/csv:9.22.0')]
+    public static function create(?callable $where = null, int $offset = 0, int $limit = -1): self
+    {
+        $stmt = new self();
+        if (null !== $where) {
+            $stmt = $stmt->where($where);
+        }
+
+        if (0 !== $offset) {
+            $stmt = $stmt->offset($offset);
+        }
+
+        if (-1 !== $limit) {
+            $stmt = $stmt->limit($limit);
+        }
+
+        return $stmt;
     }
 }

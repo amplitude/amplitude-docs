@@ -84,6 +84,18 @@ For Amplitude's time-based import option, it's best practice to use a monotonica
 Upon first import, Amplitude imports all the data returned from the query configured in the Import Config. Amplitude saves a reference of the maximum timestamp referenced in the *Timestamp Column Name*: `timestamp_1`. Upon subsequent import, Amplitude imports all data from the previously saved timestamp (`timestamp_1`), to what's now the new maximum timestamp (`timestamp_2`). Then after that import, Amplitude saves `timestamp_2` as the new maximum timestamp.
 {{/partial:admonition}}
 
+## BigQuery export statement limitations
+
+BigQuery export statements can't reference meta tables in queries. This includes `INFORMATION_SCHEMA` views, system tables, or wildcard tables. If your query references any of these meta tables, Amplitude reports an error like: `EXPORT DATA statement cannot reference meta tables in the queries`.
+
+To avoid this limitation:
+- Ensure your SQL query only references standard tables and views
+- Don't include references to `INFORMATION_SCHEM`A views
+- Avoid using system tables in your query
+- Don't use wildcard tables in your import queries
+
+For more information about BigQuery export statement limitations, see Google's article [Export statements in GoogleSQ](https://cloud.google.com/bigquery/docs/reference/standard-sql/export-statements).
+
 ## Mandatory data fields
 
 Include the mandatory fields for the data type when you create the SQL query. These tables outline the mandatory and optional fields for each data type. Find a list of other supported fields for events in the [HTTP V2 API documentation](/docs/apis/analytics/http-v2#keys-for-the-event-argument) and  for user properties in the [Identify API documentation](/docs/apis/analytics/identify#identification-parameter-keys). Add any columns not in those lists to either `event_properties` or `user_properties`, otherwise it's ignored. 
@@ -215,7 +227,7 @@ You can extract values from your JSON String field, though, to use in your prope
 
 ```sql
 SELECT STRUCT(
-   JSON_EXTRACT_SCALAR(EVENT_PROPERTIES, "$.record count") AS record_count,
+    JSON_EXTRACT_SCALAR(EVENT_PROPERTIES, "$.record count") AS record_count,
    JSON_EXTRACT_SCALAR(EVENT_PROPERTIES, "$.region") AS region
 ) as event_properties
 FROM your_table;
