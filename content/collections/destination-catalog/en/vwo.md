@@ -13,10 +13,6 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1742423712
 ---
-| NOTE: The VWO-Amplitude integration is currently unavailable in the EU region. Our team is working on this, and it is expected to be available soon. |
-| :---- |
-
-
 {{partial:admonition type="note" heading="Partner-maintained integration"}}
 VWO maintains this integration. For questions or concerns about functionality, contact [VWO](https://vwo.com/contact-us/).
 {{/partial:admonition}}
