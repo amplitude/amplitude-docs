@@ -5,9 +5,9 @@ title: 'Session Replay Android Standalone SDK'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1738344768
+updated_at: 1742315950
 instrumentation_guide: true
-platform: android
+platform: mobile
 public: true
 description: 'Choose this option if you use a third-party analytics provider to instrument your Android application.'
 ---

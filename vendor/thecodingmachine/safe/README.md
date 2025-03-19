@@ -1,9 +1,7 @@
-[![Latest Stable Version](https://poser.pugx.org/thecodingmachine/safe/v/stable.svg)](https://packagist.org/packages/thecodingmachine/safe)
+[![Latest Version](https://poser.pugx.org/thecodingmachine/safe/v/stable.svg)](https://packagist.org/packages/thecodingmachine/safe)
 [![Total Downloads](https://poser.pugx.org/thecodingmachine/safe/downloads.svg)](https://packagist.org/packages/thecodingmachine/safe)
-[![Latest Unstable Version](https://poser.pugx.org/thecodingmachine/safe/v/unstable.svg)](https://packagist.org/packages/thecodingmachine/safe)
 [![License](https://poser.pugx.org/thecodingmachine/safe/license.svg)](https://packagist.org/packages/thecodingmachine/safe)
-[![Build Status](https://travis-ci.org/thecodingmachine/safe.svg?branch=master)](https://travis-ci.org/thecodingmachine/safe)
-[![Continuous Integration](https://github.com/thecodingmachine/safe/workflows/Continuous%20Integration/badge.svg)](https://github.com/thecodingmachine/safe/actions)
+[![Tests](https://github.com/thecodingmachine/safe/workflows/Tests/badge.svg)](https://github.com/thecodingmachine/safe/actions)
 [![codecov](https://codecov.io/gh/thecodingmachine/safe/branch/master/graph/badge.svg)](https://codecov.io/gh/thecodingmachine/safe)
 
 Safe PHP
@@ -86,13 +84,13 @@ $content = file_get_contents('foobar.json');
 Use composer to install Safe-PHP:
 
 ```bash
-$ composer require thecodingmachine/safe
+composer require thecodingmachine/safe
 ```
 
 *Highly recommended*: install PHPStan and PHPStan extension:
 
 ```bash
-$ composer require --dev thecodingmachine/phpstan-safe-rule
+composer require --dev thecodingmachine/phpstan-safe-rule
 ```
 
 Now, edit your `phpstan.neon` file and add these rules:
@@ -113,7 +111,7 @@ tool that performs instant refactoring of your application.
 Run
 
 ```bash
-$ composer require --dev rector/rector
+composer require --dev rector/rector
 ```
 
 to install `rector/rector`.
