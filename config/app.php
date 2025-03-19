@@ -18,6 +18,8 @@ return [
 
     'name' => env('APP_NAME', 'Statamic'),
     'analytics-key' => env('AMPLITUDE_API_KEY'),
+    'algolia-key' => env('ALGOLIA_API_KEY'),
+    'algolia-app' => env('ALGOLIA_APP'),
 
     /*
     |--------------------------------------------------------------------------
