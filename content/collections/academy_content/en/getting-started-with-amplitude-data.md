@@ -1,7 +1,7 @@
 ---
 id: dac76bfe-1d9f-49a5-bc64-7e2f45fb9719
 blueprint: academy_content
-title: 'Getting Started with Amplitude Data'
+title: 'Get Started with Amplitude Data'
 academy_asset_type: Course
 academy_cta: 'Learn Amplitude Data'
 academy_url: 'https://academy.amplitude.com/getting-started-with-amplitude-data'
