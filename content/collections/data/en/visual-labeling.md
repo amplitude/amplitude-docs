@@ -97,6 +97,7 @@ In both cases, the increase in daily events comes from tracking click and page c
 * **Event streams**: Labeled events aren't available in live events, or in the event stream in user lookup and Session Replay. The raw `Element clicked` and `Element changed` events are visible instead.
 * **Google Chrome extension**: The Amplitude Event Explorer Chrome extension only displays raw events from the browser, so labeled events don't appear.
 * **Destination event streaming**: You can't send labeled events to destinations with [event streaming](/docs/data/destination-event-streaming-overview). You can use your labeled events to define cohorts and then use cohort syncing to integrate with (other destinations)[/docs/data/destination-catalog].
+* **Content Security Policy (CSP)**: Amplitude requires cross-tab communication between your site and Amplitude. If you're CSP is set to `cross-origin-opener-policy: same-origin`, Visual Labeling may not function.
 
 ## Troubleshooting
 
