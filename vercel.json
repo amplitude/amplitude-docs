@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/hc/en-us/articles/360047138392((?:-[a-zA-Z0-9-]+)?)",
+      "destination": "/docs/data/display-names-in-amplitude-data",
+      "statusCode": 301
+    },
+    {
       "source":"/docs/data/ampli-sdk-overview",
       "destination": "/docs/sdks/ampli",
       "statusCode": 301
