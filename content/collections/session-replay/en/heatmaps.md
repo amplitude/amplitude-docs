@@ -59,5 +59,5 @@ To create a new Heatmap:
    - **Starts with**: Enter a string that matches pages that begin with a specific string.
 5. Optionally segment the users whose interactions you want to view.
 6. Select the [Map Type](#map-types).
-7. Select the Device to change the width of the heatmap, and automatically filter out users who were on other devices. For example, if you select **Mobile**, Amplitude shows a mobile rendition of the page, and filters the engagements to only those that came from the selected device.
+7. Select the Device to change the width of the heatmap, and automatically filter out users who were on other devices. For example, if you select **Mobile**, Amplitude shows a mobile rendition of the web page, and filters the engagements to only those that came from the selected device type.
 8. Optionally change the screenshot. Amplitude captures different background images of your page. Change the screenshot to show hidden UI elements. For example, if you have a search modal that appears instead of a traditional search box, if Amplitude captures a session where that element is present, it can display it on the screenshot.
