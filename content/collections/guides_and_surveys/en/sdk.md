@@ -7,6 +7,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1738949573
 landing_blurb: 'Ensure your site or application is ready for Guides and Surveys.'
 ---
+
 Amplitude's Guides and Surveys SDK enables you to deploy [Guides and Surveys](/docs/guides-and-surveys) on your website or application.
 
 ## Install the SDK
@@ -108,7 +109,7 @@ Finally, if you want to use *On event tracked* [triggers](/docs/guides-and-surve
 analytics.on('track', (event, properties, options) => { // Example for Segment Analytics
   window.engagement.forwardEvent({ event_type: event, event_properties: properties});
 });
-
+```
 
 
 {{partial:collapse name="Initialize with Segment analytics"}}
