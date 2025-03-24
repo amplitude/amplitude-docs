@@ -12,7 +12,11 @@ Heatmaps provide a visual representation of user engagement on your website or a
 
 ### Feature availability
 
-Heatmaps are available to customers on **Growth** and **Enterprise** plans who use Session Replay. For more information, see the [pricing page](https://amplitude.com/pricing).
+Heatmaps are available to customers on **Growth** and **Enterprise** plans who have the Session Replay addon.
+
+{{partial:admonition type="note" heading="Client availiability"}}
+Heatmaps are available on web-based session replays only, and don't support mobile apps or SDKs.
+{{/partial:admonition}}
 
 ## Map types
 
