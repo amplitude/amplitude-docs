@@ -10,21 +10,25 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1726163151
 ---
-In Amplitude, a **release** represents a change in your product. It can be a major update like the launch of a new feature, a minor patch to fix a small bug, or the launch of an experiment. Releases are shown as a marker in your time-series charts when they occur.
+In Amplitude, a **release** represents a change in your product. It can be a major update like the launch of a new feature, a minor patch to fix a small bug, or the launch of an experiment. Releases display as a marker in your time-series charts when they occur.
 
 ![release_line_chart.png](/docs/output/img/analytics/release-line-chart-png.png)
 
 ### Feature availability
 
-This feature is available to users on **some Amplitude plans only**. See the [pricing page](https://amplitude.com/pricing) for more details.
+* Users on **Growth** or **Enterprise** plans can take advantage of [automated releases](#automated-releases).
+* Users on the **Plus** plan can create [manual releases](#manual-releases).
+
+For more information, see the [pricing page](https://amplitude.com/pricing).
+
 
 ## Create a release
 
-Amplitude automatically creates releases for **all customers on paid plans**, but you can also create them manually.
+Amplitude automatically creates releases for customers on **Growth** and **Enterprise** plans. **Plus** plan users can manually create releases.
 
 ### Automated releases
 
-If you're on a paid plan, Amplitude continuously listens for a new value for the `Version` user property. When Amplitude detects a new value, it automatically creates a release the next day. It applies the following heuristics when creating a new release:
+If you're on a **Growth** or **Enterprise** plan, Amplitude continuously listens for a new value for the `Version` user property. When Amplitude detects a new value, it automatically creates a release the next day. It applies the following heuristics when creating a new release:
 
 * A release must follow [semantic versioning format](https://semver.org/): `major.minor.patch` with `.patch` as optional. For example, `Version = 12345` doesn't automatically create a release, but `Version = 123.45.6` does.
 * Amplitude excludes development projects (projects that contain names like "Test", "Development", "Staging," etc.) from automatic release generation.
@@ -38,7 +42,7 @@ You can configure automated release detection in the *Release Timeline*, if you 
 
 ### Manual releases
 
-If your product doesn't use semantic versioning, or you aren't on one of a paid plans, you can manually create a release from the [release timeline](#the-release-timeline-view) frame, or from the Microscope in a chart.
+If your product doesn't use semantic versioning, or you're on the **Plus** plan, you can manually create a release from the [release timeline](#the-release-timeline-view) frame, or from the Microscope in a chart.
 
 To create a manual release, click *Create Release* and fill in the modal that appears:
 
