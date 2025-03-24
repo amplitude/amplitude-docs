@@ -50,12 +50,12 @@ amplitude.add(engagementPlugin());
 
 ### Third-party analytics provider
 
-If you don't use the Amplitude Analytics [Browser SDK 2](https://amplitude.com/docs/sdks/analytics/browser/browser-sdk-2), you can still use Guides and Surveys but you need to configure the SDK to work with your third-party analytics provider. First, add the SDK to your project using the script tag, or via npm or Yarn as outlined above.
-But, instead of calling `amplitude.add(window.engagement.plugin())`, you'll need to call `init` and `boot`.
+If you don't use the Amplitude Analytics [Browser SDK 2](https://amplitude.com/docs/sdks/analytics/browser/browser-sdk-2), you can still use Guides and Surveys but you need to configure the SDK to work with your third-party analytics provider. First, add the SDK to your project using the script tag, or through npm or Yarn as outlined above.
+But, instead of calling `amplitude.add(window.engagement.plugin())`, you need to call `init` and `boot`.
 
 #### Initialize SDK
 
-Calling `init` will fully initialize the bundle and register `engagement` on the global window object.
+Calling `init` fully initializes the bundle and registers `engagement` on the global window object.
 
 ```js
 engagement.init(apiKey: string, options: { serverZone: "US" | "EU", logger: Logger, logLevel: LogLevel }): void
@@ -70,9 +70,9 @@ engagement.init(apiKey: string, options: { serverZone: "US" | "EU", logger: Logg
 
 After calling this function, you can access `window.engagement` and call the SDK functions. However, Guides and Surveys isn't fully functional until you call `boot`.
 
-#### Boot User
+#### Boot user
 
-The final step before guides and surveys will show to your end-users is to call `boot`. This method will trigger targeting resolution of your live guides and surveys. It will also establish the connection from the Guides and Surveys SDK to your third-party analytics provider. It is important to call this method only once for a given user session unless you want to change the active user.
+The final step before guides and surveys can show to your end-users is to call `boot`. This method triggers targeting resolution of your live guides and surveys. It also establishes the connection from the Guides and Surveys SDK to your third-party analytics provider. This method should be called only once for a given session unless you want to change the active user.
 
 
 
@@ -322,7 +322,7 @@ engagement.gs.reset(key: string, stepIndex?: number)
 
 ## List
 
-Retrieve a list of all live guides and surveys that are known to the SDK along with their status.
+Retrieve a list of all live guides and surveys along with their status.
 
 ```js
 engagement.gs.list(): Array<GuideOrSurvey>
