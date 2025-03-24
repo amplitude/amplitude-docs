@@ -122,6 +122,8 @@ First, the initialization code requires you to map the `user_id` and `device_id`
 {{partial:tab name="script"}}
 Make sure you've added the Engagement script tag to your site before continuing.
 ```js
+window.engagement.init("API_KEY", { serverZone: "US" });
+
 analytics.ready(() => {
   await window.engagement.boot({
     user: {
