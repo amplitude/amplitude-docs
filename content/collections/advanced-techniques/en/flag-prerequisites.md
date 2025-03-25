@@ -6,31 +6,31 @@ exclude_from_sitemap: false
 updated_by: 04dfbed9-a0fd-4d6a-bf64-d31bebb05bdc
 updated_at: 1719252081
 ---
-As you run new experiments or roll out new feature flags, you may have features that are only relevant to users if another feature has been enabled for them. You may want to evaluate those dependencies first and then use those results in the evaluation of your flag or experiment.
+When running experiments or rolling out feature flags, some features may only be relevant if another feature is enabled. You can evaluate these dependencies first and use the results in your flag or experiment evaluation.
 
-Amplitude Experiment allows you to create dependencies for your flags and experiments on prerequisite flags or experiments.
+Amplitude Experiment lets you create dependencies based on prerequisite flags or experiments.
 
 ### Feature availability
 
-This feature is available to users on **Enterprise plans** who have **purchased Amplitude Experiment**. See the [pricing page](https://amplitude.com/pricing) for more details.
+This feature is available to Enterprise plan users who have purchased Amplitude Experiment. See the [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Configuring flag prerequisites
 
-Configure flag prerequisites in the _Dependencies card_, which you can find below the _Overview card_ for experiments and below the _Settings card_ for flags.
+You can configure flag prerequisites in the Dependencies card, located below the Overview card for experiments and below the Settings card for flags.
 
-For a given flag or experiment, this card provides a summary of all flag dependencies including its prerequisite flags, experiments, mutual exclusion, and holdout groups as well as a list of the flags and experiments that are dependent on it.
+This card provides a summary of all flag dependencies, including prerequisite flags, experiments, mutual exclusions, and holdout groups, as well as a list of flags and experiments dependent on it.
 
-1. To configure new prerequisites, click the edit icon.
-2. In the Dependencies edit drawer, click _Add Dependency_ to add a new prerequisite flag or experiment.
-3. Select the flag or experiment you wish to create the dependency on.
+1. To configure new prerequisites, select the edit icon.
+2. In the Dependencies edit drawer, select _Add Dependency_ to add a new prerequisite flag or experiment.
+3. Select the flag or experiment you want to create the dependency on.
 
 	{{partial:admonition type='note'}}
 	Flags and experiments are eligible to be used as a prerequisite if:
 
 	- They're in the same project.
-	- They have compatible evaluation modes. Local evaluation mode flags and experiments can only have local evaluation mode prerequisites. Remote evaluation mode flags and experiments can have both remote and local prerequisites.
+	- They've compatible evaluation modes. Local evaluation mode flags and experiments can only have local evaluation mode prerequisites, while remote evaluation mode flags and experiments can have both remote and local prerequisites.
 
-	You can't add a prerequisite that would cause a circular dependency loop.
+	You can’t add a prerequisite that would create a circular dependency loop.
 	{{/partial:admonition}}
 
 1. Then, select the variants that you want to be dependent on. _Off_ is a special value that represents when users weren't included in the prerequisite flag or experiment.
