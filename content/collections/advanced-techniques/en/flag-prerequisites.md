@@ -38,7 +38,7 @@ This card provides a summary of all flag dependencies, including prerequisite fl
 
 ## Workflow considerations
 
-Before you activate a flag or start an experiment, ensure that prerequisite flags are active and variant assignment works as intended. You can't start the experiment until prerequisite flags and experiments are activated.
+Before you activate a flag or start an experiment, ensure that prerequisite flags are active and variant assignment works as intended. You need to activate prerequisite flags and experiments before starting the experiment.
 
 For flags and experiments with dependents, Amplitude prevents the following actions:
 
@@ -86,9 +86,9 @@ This example contains a primary-feature flag and sub-feature flags that list the
 
 The primary-feature flag targets all users where the user property premium is true with 100% allocation. Therefore, sub-features are only evaluated if the user has the required user property and meets the sub-feature's criteria—unless the user is individually included in the sub-feature's testers section.
 
-- The sub-feature-1 flag includes additional targeting criteria for users where the user property beta is true. To be assigned sub-feature-1, a user must have both the premium and beta user properties set to true.
-- The sub-feature-2 flag allocates 100% of users. All users with the premium user property set to true are assigned.
-- The sub-feature-3 flag allocates 0% of users. No users are assigned to sub-feature-3, even if the premium user property is true.
+- The sub-feature-1 flag includes additional targeting criteria for users where the user property beta is true. A user must have both the premium and beta user properties set to true before they can set to sub-feature-1.
+- The sub-feature-2 flag allocates 100% of users. All users with the premium user property set to true receive the flag.
+- The sub-feature-3 flag allocates 0% of users. No users have sub-feature-3, even if the premium user property is true.
 
 ### Chained mutual exclusion groups
 
