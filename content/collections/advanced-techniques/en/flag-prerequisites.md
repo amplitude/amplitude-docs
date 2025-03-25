@@ -33,23 +33,24 @@ This card provides a summary of all flag dependencies, including prerequisite fl
 	You can’t add a prerequisite that would create a circular dependency loop.
 	{{/partial:admonition}}
 
-1. Then, select the variants that you want to be dependent on. _Off_ is a special value that represents when users weren't included in the prerequisite flag or experiment.
-2. To finish adding the dependency, click _Save_.
+1. Then, select the variants that you want to be dependent on. Off is a special value that represents when users weren't included in the prerequisite flag or experiment.
+2. To finish adding the dependency, select Save.
 
 ## Workflow considerations
 
-Before you activate a flag or start an experiment, ensure that prerequisite flags are active and variant assignment works as intended. You can't start the experiment until prerequisite flags and activate experiments.
+Before you activate a flag or start an experiment, ensure that prerequisite flags are active and variant assignment works as intended. You can't start the experiment until prerequisite flags and experiments are activated.
 
 For flags and experiments with dependents, Amplitude prevents the following actions:
 
-- Deleting a variant or changing the variant key of a variant that another flag or experiment is dependent on.
+- Deleting a variant or changing the variant key of a variant that another flag or experiment depends on.
+
 - Archiving that flag or experiment.
 
 ## Example with evaluation details
 
-This example provides you more information about how evaluation works when there are prerequisite flags.
+This example provides more information about how evaluation works when there are prerequisite flags.
 
-Example scenario: I want to ensure that my new feature flag (Flag-B) rolls out to users who have seen another feature (Flag-A). In Flag-B, I have added a dependency for the _on_ variant of Flag-A and activated both flags.
+Example scenario: I want to ensure that my new feature flag (Flag-B) rolls out to users who have seen another feature (Flag-A). In Flag-B, I’ve added a dependency for the on variant of Flag-A and activated both flags.
 
 When Amplitude evaluates users for Flag-B:
 
@@ -59,7 +60,7 @@ When Amplitude evaluates users for Flag-B:
  
 2. Evaluate the user for dependencies, in this case: Flag-A. 
 
-   - If the user doesn't receive the _on_ variant for Flag-A, Amplitude excludes them from Flag-B.
+   - If the user doesn't receive the on variant for Flag-A, Amplitude excludes them from Flag-B.
 
 3. Evaluate the user for Flag-B.
 
