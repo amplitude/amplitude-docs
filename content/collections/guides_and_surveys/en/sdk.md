@@ -362,7 +362,7 @@ engagement.forwardEvent(event: Event): void
 
 | Parameter | Type  | Description                                                                                                                                            |
 | --------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `event`   | Event | Required. An [event](/docs/sdks/analytics/browser/browser-sdk-2#track-an-event) object. It will trigger a guide or survey if its `event_type` matches. |
+| `event`   | Event | Required. An [event](/docs/sdks/analytics/browser/browser-sdk-2#track-an-event) object. It triggers a guide or survey if its `event_type` matches. |
 
 
 ## Close all
