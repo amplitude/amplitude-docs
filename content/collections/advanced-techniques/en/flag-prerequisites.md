@@ -72,13 +72,13 @@ Flag prerequisites are extremely flexible and have many use cases. That said, he
 
 ### Release groups
 
-Use flag prerequisites to build a primary feature with multiple sub-features. Sub-features require the primary feature to be `on`, unless a user is individually included as a tester in one of the sub-features. Targeting and bucketing applied to the primary feature are effectively applied to all sub-features which list the primary feature as a prerequisite.
+Use flag prerequisites to build a primary feature with multiple sub-features. Sub-features require the primary feature to be on, unless a user is individually included as a tester in one of the sub-features. Targeting and bucketing applied to the primary feature are also applied to all sub-features that list the primary feature as a prerequisite.
 
-Common use cases for release groups are:
+Common use cases for release groups include:
 
 - Actively developing large feature releases with many developers and teams.
 - Provisioning users to primary SKUs with add-ons.
-- Simplifying feature flag logic in code.
+- Simplifying feature flag logic in the code.
 
 ![Diagram of example release group.](/docs/output/img/experiment/release-group.drawio.svg)
 
