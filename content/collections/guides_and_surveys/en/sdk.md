@@ -55,7 +55,7 @@ But, instead of calling `amplitude.add(window.engagement.plugin())`, you need to
 
 #### Initialize SDK
 
-Calling `init` fully initializes the bundle and registers `engagement` on the global window object.
+Call `init` to  fully initialize the bundle and register `engagement` on the global window object.
 
 ```js
 engagement.init(apiKey: string, options: { serverZone: "US" | "EU", logger: Logger, logLevel: LogLevel }): void
