@@ -341,7 +341,7 @@ interface GuideOrSuvey {
 
 ## Show
 
-Display a specific guide or survey. This will ignore any targeting rules and limits except for page targeting.
+Display a specific guide or survey. This ignores any targeting rules and limits except for page targeting.
 
 ```js
 engagement.gs.show(key: string, stepIndex?: number): void
