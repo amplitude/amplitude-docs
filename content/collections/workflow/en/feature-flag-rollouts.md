@@ -11,17 +11,18 @@ updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724884966
 landing: true
 ---
-In Amplitude Experiment, a **flag** is a way for you to enable or disable a function or feature in your product, without having to deploy new code each time. Flags drive both experiments and feature rollouts: They're are ideal for launching experiments and ending them once you’ve collected enough data, or for rolling out new features (and rolling them back quickly, if you need to).
+In Amplitude Experiment, a flag is a way for you to enable or disable a function or feature in your product without having to deploy new code each time. Flags drive both experiments and feature rollouts: They’re ideal for launching experiments and ending them once you’ve collected enough data, or for rolling out new features (and rolling them back quickly if you need to).
 
-This article explains how to create a flag for a **feature rollout**. If you need information on how to use flags in your experiments, start with our article on [rolling out your experiment to your users](/docs/feature-experiment/workflow/experiment-test).
+This article explains how to create a flag for a feature rollout. If you need information on how to use flags in your experiments, start with our article on [rolling out your experiment to your users](/docs/feature-experiment/workflow/experiment-test).
 
 ### Feature availability
 
-This feature is available to users on **all Amplitude plans**. See the [pricing page](https://amplitude.com/pricing) for more details.
+This feature is available to users on all Amplitude plans. See the [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Create a new flag
 
-You can't create a new flag until you’ve created a deployment, and either installed the [SDK](/docs/sdks/experiment-sdks) or are set up to call the [evaluation REST API](/docs/apis/experiment/experiment-evaluation-api). Once you've done that, follow these steps:
+
+You can't create a new flag until you've created a deployment and either installed the [SDK](/docs/sdks/experiment-sdks) or set up to call the [evaluation REST API](/docs/apis/experiment/experiment-evaluation-api). Once you've done that, follow these steps:
 
 1. Navigate to *Experiment > Feature Flags* in the left-hand sidebar. Click *+ Create Feature Flag*.
 2. In the *Create Flag* modal, choose the project that includes this flag from the *Projects* drop-down menu. Then give your flag a name. Amplitude Experiment generates the flag key from the name you choose. The flag key is an identifier for the flag used in your codebase.
