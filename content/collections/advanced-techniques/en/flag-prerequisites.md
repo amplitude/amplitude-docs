@@ -82,23 +82,23 @@ Common use cases for release groups include:
 
 ![Diagram of example release group.](/docs/output/img/experiment/release-group.drawio.svg)
 
-This example contains a `primary-feature` flag and `sub-feature` flags which list the primary feature as a prerequisite.
+This example contains a primary-feature flag and sub-feature flags that list the primary feature as a prerequisite.
 
-The `primary-feature` flag targets all users where user property `premium` is `true` with 100% allocation. Therefore, sub-features only evaluate if the user has the required user property, and meet the sub-feature's criteria -- unless the user is individually included in the sub-feature's testers section.
+The primary-feature flag targets all users where the user property premium is true with 100% allocation. Therefore, sub-features are only evaluated if the user has the required user property and meets the sub-feature's criteria—unless the user is individually included in the sub-feature's testers section.
 
-- The `sub-feature-1` flag contains an extra targeting criteria for users where the user property `beta` is `true`. To be assigned `sub-feature-1` a user have the `premium` and `beta` user properties equal to `true`.
-- The `sub-feature-2` flag allocates 100% of users. All users where the `premium` user property is `true` is assigned.
-- The `sub-feature-3` flag allocates 0% of users. No users are assigned to `sub-feature-3`, even if the `premium` user property is `true`.
+- The sub-feature-1 flag includes additional targeting criteria for users where the user property beta is true. To be assigned sub-feature-1, a user must have both the premium and beta user properties set to true.
+- The sub-feature-2 flag allocates 100% of users. All users with the premium user property set to true are assigned.
+- The sub-feature-3 flag allocates 0% of users. No users are assigned to sub-feature-3, even if the premium user property is true.
 
 ### Chained mutual exclusion groups
 
-Use flag prerequisites to build complex hierarchies of mutually exclusive experiments which start at different times. Dependent experiments list a prerequisite on an existing active experiment evaluating to `off`. This effectively targets all users who weren't allocated to the existing experiment. Continue this chain to add more mutually exclusive experiments if the previous experiment doesn't all users.
+Use flag prerequisites to build complex hierarchies of mutually exclusive experiments that start at different times. Dependent experiments list a prerequisite on an existing active experiment evaluating to off. This effectively targets all users who weren’t allocated to the existing experiment. Continue this chain to add more mutually exclusive experiments if the previous experiment doesn't allow all users.
 
 ![Diagram of example mutual exclusion group](/docs/output/img/experiment/advanced-mutex-group.drawio.svg)
 
-In this example, `experiment-1` is running, and `experiment-2`, which is mutually exclusive to `experiment-1`, is set to run.
+In this example, experiment-1 is running, and experiment-2, which is mutually exclusive to experiment-1, is set to run.
 
-- The `experiment-1` experiment allocates 20% of users 50/50 control/treatment.
-- The `experiment-2` experiment lists `experiment-1` as a prerequisite, and allocates 100% of users 50/50 control/treatment.
+- The experiment-1 experiment allocates 20% of users to a 50/50 control/treatment split.
+- The experiment-2 experiment lists experiment-1 as a prerequisite and allocates 100% of users to a 50/50 control/treatment split.
 
-Experiment assigns 20% of users to `experiment-1` and the assigns the remaining 80% to `experiment-2`. Experiment assigns no users variants for both `experiment-1` and `experiment-2`, unless they're a tester.
+The experiment assigns 20% of users to experiment-1 and assigns the remaining 80% to experiment-2. The experiment assigns no users to variants for either experiment-1 or experiment-2, unless they're testers.
