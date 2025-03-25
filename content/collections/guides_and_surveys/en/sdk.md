@@ -103,7 +103,7 @@ await window.engagement.boot({
 });
 ```
 
-Finally, if you want to use *On event tracked* [triggers](/docs/guides-and-surveys/guides/guides/setup-and-target#triggers), you need to forward events from your third-party analytics provider to Guides and Surveys. These events are not sent to the server.
+To use *On event tracked* [triggers](/docs/guides-and-surveys/guides/guides/setup-and-target#triggers),  forward events from your third-party analytics provider to Guides and Surveys. The Guides and Surveys SDK doesn't send these events to the server.
 
 ```js
 analytics.on('track', (event, properties, options) => { // Example for Segment Analytics
