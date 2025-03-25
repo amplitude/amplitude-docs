@@ -7,6 +7,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1738949573
 landing_blurb: 'Ensure your site or application is ready for Guides and Surveys.'
 ---
+
 Amplitude's Guides and Surveys SDK enables you to deploy [Guides and Surveys](/docs/guides-and-surveys) on your website or application.
 
 ## Install the SDK
@@ -49,14 +50,15 @@ amplitude.add(engagementPlugin());
 
 ### Third-party analytics provider
 
-Using the Guides and Surveys standalone SDK with another analytics provider requires extra configuration to help map properties to Amplitude.
+If you don't use the Amplitude Analytics [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2), you can still use Guides and Surveys but you need to configure the SDK to work with your third-party analytics provider. First, add the SDK to your project using the script tag, or through npm or Yarn as outlined above.
+But, instead of calling `amplitude.add(window.engagement.plugin())`, you need to call `init` and `boot`.
 
-{{partial:collapse name="Usign NPM or Yarn"}}
+#### Initialize the SDK
 
-Calling `init` is only required when loading Guides and Surveys using NPM or Yarn. If you're using the script installation, skip straight to calling `boot`.
+Call `init` to  fully initialize the bundle and register `engagement` on the global window object.
 
 ```js
-engagement.init(apiKey: string, options: { serverZone: "US" | "EU" }): void
+engagement.init(apiKey: string, options: { serverZone: "US" | "EU", logger: Logger, logLevel: LogLevel }): void
 ```
 
 | Parameter                | Type                                                                                                                         | Description                                                                                                                                                                    |
@@ -68,24 +70,25 @@ engagement.init(apiKey: string, options: { serverZone: "US" | "EU" }): void
 
 After calling this function, you can access `window.engagement` and call the SDK functions. However, Guides and Surveys isn't fully functional until you call `boot`.
 
-{{/partial:collapse}}
+#### Boot user
 
-This initialization code accepts parameters that define the user and any integrations.
+The final step before guides and surveys can show to your end-users is to call `boot`. This method triggers targeting resolution of your live guides and surveys. It also establishes the connection from the Guides and Surveys SDK to your third-party analytics provider. This method should be called only once for a given session unless you want to change the active user.
+
 
 
 ```js
 engagement.boot(options: BootOptions): Promise<void>
 ```
 
-| Parameter              | Type                           | Description                                                             |
-| ---------------------- | ------------------------------ | ----------------------------------------------------------------------- |
-| `options.user`         | `EndUser` or `(() => EndUser)` | Required. User information or a function that returns user information. |
-| `options.integrations` | `Array<Integration>`           | Optional. An array of integrations for tracking events.                 |
+| Parameter              | Type                           | Description                                                                                                                               |
+| ---------------------- | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `options.user`         | `EndUser` or `(() => EndUser)` | Required. User information or a function that returns user information.                                                                   |
+| `options.integrations` | `Array<Integration>`           | Optional. An array of integrations for tracking events. Enables sending Guides and Surveys events to your third-party Analytics provider. |
 
 ```js
 await window.engagement.boot({
   user: {
-    // Guides and Surveys requires either user_id or device_id for user identification
+    // Guides and Surveys requires at least one of user_id or device_id for user identification
     user_id: 'USER_ID', //[tl! ~~:1]
     device_id: 'DEVICE_ID',
     user_properties: {},
@@ -100,6 +103,14 @@ await window.engagement.boot({
 });
 ```
 
+To use *On event tracked* [triggers](/docs/guides-and-surveys/guides/guides/setup-and-target#triggers),  forward events from your third-party analytics provider to Guides and Surveys. The Guides and Surveys SDK doesn't send these events to the server.
+
+```js
+analytics.on('track', (event, properties, options) => { // Example for Segment Analytics
+  window.engagement.forwardEvent({ event_type: event, event_properties: properties});
+});
+```
+
 
 {{partial:collapse name="Initialize with Segment analytics"}}
 Initializing the SDK and launching a guide or survey with third-party analytics requires a few more steps.
@@ -111,6 +122,8 @@ First, the initialization code requires you to map the `user_id` and `device_id`
 {{partial:tab name="script"}}
 Make sure you've added the Engagement script tag to your site before continuing.
 ```js
+window.engagement.init("API_KEY", { serverZone: "US" });
+
 analytics.ready(() => {
   await window.engagement.boot({
     user: {
@@ -237,18 +250,11 @@ If the response is `undefined`, Guides and Surveys isn't installed properly.
 
 #### Content Security Policy (CSP)
 
-If your organization has a strict Content Security Policy (CSP), Guides and Surveys requires some additions to ensure smooth operation.
-
-When you use the Amplitude Browser SDK 2 for analytics, add the following items to your CSP:
+If your organization has a strict Content Security Policy (CSP), Guides and Surveys requires some additions to ensure smooth operation. Add the following CSP directives to your policy:
 
 ```text
 script-src: https://*.amplitude.com;
 connect-src: https://*.amplitude.com;
-```
-
-Regardless of the analytics provider you use, Guides and Surveys requires the following additions:
-
-```text
 img-src: https://*.amplitude.com;
 media-src: https://*.amplitude.com;
 style-src: https://*.amplitude.com;
@@ -257,7 +263,7 @@ style-src: https://*.amplitude.com;
 
 ## Manage themes
 
-Configure the visual theme that displays to the user.
+Configure the visual theme mode if your app supports light and dark modes.
 
 ```js
 engagement.setThemeMode(mode: ThemeMode): void
@@ -288,7 +294,7 @@ engagement.setRouter(routerFn: (url: string) => void): void
 
 | Parameter  | Type                    | Description                                           |
 | ---------- | ----------------------- | ----------------------------------------------------- |
-| `routerRn` | `(url: string) => void` | Required. A function that handles changes to the URL. |
+| `routerFn` | `(url: string) => void` | Required. A function that handles changes to the URL. |
 
 ```js
 // React Router v6 implementation
@@ -318,7 +324,7 @@ engagement.gs.reset(key: string, stepIndex?: number)
 
 ## List
 
-Retrieve a list of visible guides or surveys
+Retrieve a list of all live guides and surveys along with their status.
 
 ```js
 engagement.gs.list(): Array<GuideOrSurvey>
@@ -335,7 +341,7 @@ interface GuideOrSuvey {
 
 ## Show
 
-Display a specific guide or survey.
+Display a specific guide or survey. This ignores any targeting rules and limits except for page targeting.
 
 ```js
 engagement.gs.show(key: string, stepIndex?: number): void
@@ -348,15 +354,15 @@ engagement.gs.show(key: string, stepIndex?: number): void
 
 ## Forward event
 
-Trigger Guides and Surveys programmatically.
+Forward third-party Analytics events to the Guides and Surveys SDK to trigger guides and surveys that use the `*On event tracked*` [trigger](/docs/guides-and-surveys/guides/setup-and-target#triggers).
 
 ```js
 engagement.forwardEvent(event: Event): void
 ```
 
-| Parameter | Type  | Description                                                                                                             |
-| --------- | ----- | ----------------------------------------------------------------------------------------------------------------------- |
-| `event`   | Event | Required. An [event](/docs/sdks/analytics/browser/browser-sdk-2#track-an-event) object that launches a guide or survey. |
+| Parameter | Type  | Description                                                                                                                                            |
+| --------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `event`   | Event | Required. An [event](/docs/sdks/analytics/browser/browser-sdk-2#track-an-event) object. It triggers a guide or survey if its `event_type` matches. |
 
 
 ## Close all
