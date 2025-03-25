@@ -53,7 +53,7 @@ amplitude.add(engagementPlugin());
 If you don't use the Amplitude Analytics [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2), you can still use Guides and Surveys but you need to configure the SDK to work with your third-party analytics provider. First, add the SDK to your project using the script tag, or through npm or Yarn as outlined above.
 But, instead of calling `amplitude.add(window.engagement.plugin())`, you need to call `init` and `boot`.
 
-#### Initialize SDK
+#### Initialize the SDK
 
 Call `init` to  fully initialize the bundle and register `engagement` on the global window object.
 
