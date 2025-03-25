@@ -24,12 +24,11 @@ This feature is available to users on all Amplitude plans. See the [pricing page
 
 You can't create a new flag until you've created a deployment and either installed the [SDK](/docs/sdks/experiment-sdks) or set up to call the [evaluation REST API](/docs/apis/experiment/experiment-evaluation-api). Once you've done that, follow these steps:
 
-1. Navigate to *Experiment > Feature Flags* in the left-hand sidebar. Click *+ Create Feature Flag*.
-2. In the *Create Flag* modal, choose the project that includes this flag from the *Projects* drop-down menu. Then give your flag a name. Amplitude Experiment generates the flag key from the name you choose. The flag key is an identifier for the flag used in your codebase.
-3. Specify the [evaluation mode](/docs/feature-experiment/local-evaluation) for your experiment, either *Remote* (for example, Amplitude evaluates it on Amplitudes servers) or *Local*. Then specify the **bucketing unit** you want to use for this experiment.  
-  
+1. Navigate to Experiment > Feature Flags in the left-hand sidebar. Select + Create Feature Flag.
+2. In the Create Flag modal, choose the project that includes this flag from the Projects drop-down menu. Then, give your flag a name. Amplitude Experiment generates the flag key from the name you choose. The flag key is an identifier for the flag used in your codebase.
+3. Specify the [evaluation mode](/docs/feature-experiment/local-evaluation) for your experiment: either Remote (for example, Amplitude evaluates it on Amplitude's servers) or Local. Then, specify the bucketing unit you want to use for this experiment.  
     {{partial:admonition type='tip'}}
-    The best bucketing unit is usually the user. However, in some B2B use cases, you might want to use company ID or city as the bucketing unit. For example, bucketing by company ID ensures that all users in a particular company have the same user experience. Be sure the [Stable Unit Treatment Value Assumption](https://blogs.iq.harvard.edu/violations_of_s#:~:text=Methods%20for%20causal%20inference%2C%20in,treatments%20of%20others%20around%20him) holds for whichever unit you choose.
+    The best bucketing unit is usually the user. However, in some B2B use cases, you might want to use the company ID or city as the bucketing unit. For example, bucketing by company ID ensures that all users in a particular company have the same user experience. Be sure that the [Stable Unit Treatment Value Assumption](https://blogs.iq.harvard.edu/violations_of_s#:~:text=Methods%20for%20causal%20inference%2C%20in,treatments%20of%20others%20around%20him) holds for whichever unit you choose.
     {{/partial:admonition}}
 
 4. When you’re done, click *Create*. Experiment opens a blank template for your flag.
