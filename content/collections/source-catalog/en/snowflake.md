@@ -99,26 +99,26 @@ The data type you select defines the strategies and settings available to you fo
 
 Select from the following strategies, depending on your data type selection. 
 
-| Strategy             | Description                                                                                                                                                                                                                                                              |
-|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Full Sync            | Ingests the entire dataset on a defined schedule. This option is useful for datasets that change over time, but can't show which rows are changed.                                                                                                                       |
-| Timestamp            | Ingests the most recent rows on a schedule, as determined by the Timestamp column.                                                                                                                                                                                       |
-| Ingestion Only Sync  | Ingests the most recent rows of data on a schedule, as determined by Snowflake's Change Data Capture feature. All of Amplitude's out-of-the-box enrichment services are supported.                                                                                       |
-| Mirror Sync          | Directly mirror the data in your warehouse with insert, update, and delete operations. This deactivates Amplitude's enrichment services ( user property syncing, group property syncing, taxonomy validation) for this data to remain in sync with your source of truth. |
+| Strategy         | Description                                                                                                                                                                                                                                                             |
+|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Full Sync        | Ingests the entire dataset on a defined schedule. This option is useful for datasets that change over time, but can't show which rows are changed.                                                                                                                      |
+| Timestamp        | Ingests the most recent rows on a schedule, as determined by the Timestamp column.                                                                                                                                                                                      |
+| Append Only Sync | Ingests the most recent rows of data on a schedule, as determined by Snowflake's Change Data Capture feature. All of Amplitude's out-of-the-box enrichment services are supported.                                                                                      |
+| Mirror Sync      | Directly mirror the data in your warehouse with insert, update, and delete operations. This deactivates Amplitude's enrichment services (user property syncing, group property syncing, taxonomy validation) for this data to remain in sync with your source of truth. |
 
 See the following table to understand which data types are compatible with which import strategies.
 
-| Data type        | Supported import strategies                 |
-|------------------|---------------------------------------------|
-| Event            | Mirror Sync, Ingestion Only Sync, Timestamp |
-| User properties  | Full Sync, Timestamp                        |
-| Group Properties | Full Sync, Timestamp                        |
-| Profiles         | Mirror Sync                                 |
+| Data type        | Supported import strategies              |
+|------------------|------------------------------------------|
+| Event            | Mirror Sync, Append Only Sync, Timestamp |
+| User properties  | Full Sync, Timestamp                     |
+| Group Properties | Full Sync, Timestamp                     |
+| Profiles         | Mirror Sync                              |
 
 {{partial:admonition type="note" heading="Change Data Capture options"}}
 For the `Event` data type, the Sync Strategies support configuration of the CDC feed type. 
 
-Select *Ingestion Only Sync* to ingest from your warehouse and include Amplitude's enrichment services like ID Resolution, property and attribution syncing, and location resolution.
+Select *Append Only Sync* to ingest from your warehouse and include Amplitude's enrichment services like ID Resolution, property and attribution syncing, and location resolution.
 
 Select *Mirror Sync* to mirror your Snowflake data with support for `insert`, `update`, and `delete` operations. This option deactivates Amplitude's enrichment services to ensure you remain in sync with your source-of-truth.
 
@@ -128,6 +128,8 @@ Select *Mirror Sync* to mirror your Snowflake data with support for `insert`, `u
 ### Map your data
 
 Depending on the import strategy you choose, either map your data with a SQL statement to transform the data (Timestamp, Full Sync) or use the data selection tool to map column names directly to Amplitude properties.
+
+For the `Event` data type and Append-Only or Timestamp Ingestion, optionally select *Sync User Properties* or *Sync Group Properties* to sync the corresponding properties **within** an event.
 
 ### Schedule your sync
 
@@ -141,7 +143,7 @@ When choosing an integration strategy, consider the following:
 
 - **Timestamp Import**: Choose this option if you can incrementally import data using a monotonically increasing timestamp column that indicates when records when Snowflake loads the records. This is efficient and works well when you append new data with timestamps.
 
-- **Ingestion Only Sync**: Choose this option to import data based on changes detected by Snowflake's CDC feature while still using Amplitude's enrichment services. This method only supports reading `INSERT` operations from the CDC
+- **Append Only Sync**: Choose this option to import data based on changes detected by Snowflake's CDC feature while still using Amplitude's enrichment services. This method only supports reading `INSERT` operations from the CDC
 
 - **Mirror Sync**: Choose this option to directly mirror the data in Snowflake with `INSERT`, `UPDATE`, and `DELETE` operations based on changes detected by Snowflake's CDC feature. This method disables enrichment services to maintain a mirror of Snowflake data in Amplitude. `UPDATE` and `DELETE` operations mutate data in Amplitude.
 
