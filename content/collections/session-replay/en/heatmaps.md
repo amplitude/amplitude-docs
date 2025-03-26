@@ -10,6 +10,10 @@ updated_at: 1742510992
 ---
 Heatmaps provide a visual representation of user engagement on your website or application over time. Analyze patterns of events to identify trends, anomalies, and areas of your product that drive the most engagement.
 
+{{partial:admonition type="note" heading="Heatmap retention"}}
+Heatmaps use an anonymized session replay that's decoupled from any user behavior and isn't subject to your Session Replay retention period.
+{{/partial:admonition}}
+
 ### Feature availability
 
 Heatmaps are available to customers on **Growth** and **Enterprise** plans who have the Session Replay addon.
