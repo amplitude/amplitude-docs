@@ -6,16 +6,11 @@ tree:
   -
     entry: 6f3e741c-87b3-4e68-ae6d-ce393bab69d1
   -
+    entry: 4cb8166f-a1a1-44dc-9b76-f2fb51db6b05
+  -
     entry: 3719e8a7-755b-4426-842b-a90fd0e62ad3
   -
     entry: 8255e7a7-7275-4629-8512-e42b0da92456
-  -
-    entry: 4cb8166f-a1a1-44dc-9b76-f2fb51db6b05
-    children:
-      -
-        entry: 7ba36066-3d54-4874-a407-504b27d83a26
-      -
-        entry: 427fa0c0-c489-48df-a147-cfe636b803b8
   -
     entry: 85887b6a-d1f9-4c10-91ea-23b12ad20534
   -
@@ -31,3 +26,7 @@ tree:
     entry: 166ef6f4-7f26-4e90-8979-f22cf57d52da
   -
     entry: b5a3e55a-262b-4a95-9a1e-deabe2e6d21e
+  -
+    entry: 7ba36066-3d54-4874-a407-504b27d83a26
+  -
+    entry: 427fa0c0-c489-48df-a147-cfe636b803b8
