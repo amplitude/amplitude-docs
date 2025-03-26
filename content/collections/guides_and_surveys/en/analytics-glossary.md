@@ -148,7 +148,7 @@ Amplitude prefixes guide-related events with `[Guides-Surveys] Guide` and survey
 
 
 {{glossary}}
-<h2>{{glossary_section_title}}</h2>
+<h2 id="{{glossary_section_title | slugify}}">{{glossary_section_title}}</h2>
 {{glossary_section_description | markdown}}
 {{if glossary_row}}
 <table>
