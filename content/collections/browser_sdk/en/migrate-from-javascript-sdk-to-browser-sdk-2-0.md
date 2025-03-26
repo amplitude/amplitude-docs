@@ -78,17 +78,17 @@ In both versions, attribution can occur during initialization.
 {{/partial:admonition}}
 
 {{partial:admonition type="warning" heading="Cookie migration"}}
-The Browser SDK can automatically migrate cookies from JS SDK >= 6.0.0:
+Browser SDK 2.0 automatically migrates cookies from the JavaScript SDK, version 6.0.0 or above:
 
-* Old cookie name `AMP_{first 6 digit of api key}` of JS SDK >= 6.0.0
-* New cookie name `AMP_{first 10 digit of api key}` of the Browser SDK
+* Old cookie name `AMP_{first 6 digit of api key}` from JavaScript SDK 6.0.0 and above
+* New cookie name `AMP_{first 10 digit of api key}` from Browser SDK 2
 
-The Browser SDK does **NOT** support automatic cookie migration for JS SDK < 6.0.0.
+Migrating from a JavaScript SDK version prior to 6.0.0 requires manual cookie migration.
 
-If automatic migration does not apply to your use case, you can manually migrate cookies by:
+To manually migrate cookies:
 
-1. Reading the values from the old cookie.
-2. Passing those values to `amplitude.init()` in configuration.
+1. Read the values from the old cookie.
+2. Pass those values to `amplitude.init()` in the SDK configuration.
 {{/partial:admonition}}
 
 ## Terminology
