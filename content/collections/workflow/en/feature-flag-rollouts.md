@@ -11,24 +11,24 @@ updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724884966
 landing: true
 ---
-In Amplitude Experiment, a **flag** is a way for you to enable or disable a function or feature in your product, without having to deploy new code each time. Flags drive both experiments and feature rollouts: They're are ideal for launching experiments and ending them once you’ve collected enough data, or for rolling out new features (and rolling them back quickly, if you need to).
+In Amplitude Experiment, a flag is a way for you to enable or disable a function or feature in your product without having to deploy new code each time. Flags drive both experiments and feature rollouts: They’re ideal for launching experiments and ending them once you’ve collected enough data, or for rolling out new features (and rolling them back quickly if you need to).
 
-This article explains how to create a flag for a **feature rollout**. If you need information on how to use flags in your experiments, start with our article on [rolling out your experiment to your users](/docs/feature-experiment/workflow/experiment-test).
+This article explains how to create a flag for a feature rollout. If you need information on how to use flags in your experiments, start with our article on [rolling out your experiment to your users](/docs/feature-experiment/workflow/experiment-test).
 
 ### Feature availability
 
-This feature is available to users on **all Amplitude plans**. See the [pricing page](https://amplitude.com/pricing) for more details.
+This feature is available to users on all Amplitude plans. See the [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Create a new flag
 
-You can't create a new flag until you’ve created a deployment, and either installed the [SDK](/docs/sdks/experiment-sdks) or are set up to call the [evaluation REST API](/docs/apis/experiment/experiment-evaluation-api). Once you've done that, follow these steps:
 
-1. Navigate to *Experiment > Feature Flags* in the left-hand sidebar. Click *+ Create Feature Flag*.
-2. In the *Create Flag* modal, choose the project that includes this flag from the *Projects* drop-down menu. Then give your flag a name. Amplitude Experiment generates the flag key from the name you choose. The flag key is an identifier for the flag used in your codebase.
-3. Specify the [evaluation mode](/docs/feature-experiment/local-evaluation) for your experiment, either *Remote* (for example, Amplitude evaluates it on Amplitudes servers) or *Local*. Then specify the **bucketing unit** you want to use for this experiment.  
-  
+You can't create a new flag until you've created a deployment and either installed the [SDK](/docs/sdks/experiment-sdks) or set up to call the [evaluation REST API](/docs/apis/experiment/experiment-evaluation-api). Once you've done that, follow these steps:
+
+1. Navigate to Experiment > Feature Flags in the left-hand sidebar. Select + Create Feature Flag.
+2. In the Create Flag modal, choose the project that includes this flag from the Projects drop-down menu. Then, give your flag a name. Amplitude Experiment generates the flag key from the name you choose. The flag key is an identifier for the flag used in your codebase.
+3. Specify the [evaluation mode](/docs/feature-experiment/local-evaluation) for your experiment: either Remote (for example, Amplitude evaluates it on Amplitude's servers) or Local. Then, specify the bucketing unit you want to use for this experiment.  
     {{partial:admonition type='tip'}}
-    The best bucketing unit is usually the user. However, in some B2B use cases, you might want to use company ID or city as the bucketing unit. For example, bucketing by company ID ensures that all users in a particular company have the same user experience. Be sure the [Stable Unit Treatment Value Assumption](https://blogs.iq.harvard.edu/violations_of_s#:~:text=Methods%20for%20causal%20inference%2C%20in,treatments%20of%20others%20around%20him) holds for whichever unit you choose.
+    The best bucketing unit is usually the user. However, in some B2B use cases, you might want to use the company ID or city as the bucketing unit. For example, bucketing by company ID ensures that all users in a particular company have the same user experience. Be sure that the [Stable Unit Treatment Value Assumption](https://blogs.iq.harvard.edu/violations_of_s#:~:text=Methods%20for%20causal%20inference%2C%20in,treatments%20of%20others%20around%20him) holds for whichever unit you choose.
     {{/partial:admonition}}
 
 4. When you’re done, click *Create*. Experiment opens a blank template for your flag.
