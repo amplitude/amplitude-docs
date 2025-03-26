@@ -89,6 +89,14 @@ If automatic migration does not apply to your use case, you can manually migrate
 
 1. Reading the values from the old cookie.
 2. Passing those values to `amplitude.init()` in configuration.
+
+```ts
+this.init('API_KEY', {
+  deviceId: 'device_id',
+  userId: 'user_id',
+});
+```
+
 {{/partial:admonition}}
 
 ## Terminology
