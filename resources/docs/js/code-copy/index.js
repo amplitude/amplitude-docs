@@ -42,7 +42,11 @@ export default function () {
     // Initialize ClipboardJS with a text callback to ensure we copy the code sample's text
     const clipboard = new ClipboardJS(button, {
       text: () => {
-        return code.querySelector('.torchlight-copy-target').textContent
+        const sample = code.innerText
+
+        const cleanSample = sample.replace(/\u00A0/g, '')
+
+        return cleanSample
       }
     })
 
