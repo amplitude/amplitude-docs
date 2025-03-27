@@ -22,6 +22,7 @@ return array(
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\ValidateSignature' => $baseDir . '/app/Http/Middleware/ValidateSignature.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Markdown\\Copy\\TorchlightWithCopyExtension' => $baseDir . '/app/Markdown/Copy/TorchlightWithCopyExtension.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Modifiers\\Toc' => $baseDir . '/app/Modifiers/Toc.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
