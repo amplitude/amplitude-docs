@@ -36,6 +36,23 @@
     [x-cloak] {
       display: none !important;
     }
+    .copy-btn {
+      height: 24px;
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      z-index: 10;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0.25rem;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+    
+    .copy-btn:hover {
+      opacity: 1;
+    }
   </style>
   {{partial:partials/_amplitude}}
   {{if environment == 'production' || environment=='test' }}
