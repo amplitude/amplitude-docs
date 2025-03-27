@@ -83,7 +83,7 @@ Here are the default Ads metrics available in Out-of-the-box Marketing Analytics
 | **Ad Spend**    | `PROPSUM(ad_metrics.cost)`              | Total amount spent on the ad campaign(s).                                                                              |
 | **CPC**         | `Ad Spend ÷ Clicks`                    | Cost per click. Shows how much you pay, on average, for each click on your ad.                                         |
 | **CAC**         | `Ad Spend ÷ Total Sign-Ups`            | Customer Acquisition Cost. Shows how much you pay, on average, to acquire a single new customer or user.               |
-| **ROAS**        | `(Revenue ÷ Ad Spend) × 100`            | Return on Ad Spend. Shows how much revenue you earn for every dollar spent on advertising (often shown as a multiple). |
+| **ROAS**        | `(Revenue ÷ Ad Spend) × 100`            | Return on Ad Spend. Shows how much revenue you earn for every dollar spent on advertising. |
 
 ## Modify settings and create goals
 
