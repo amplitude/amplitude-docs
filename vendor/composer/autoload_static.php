@@ -804,6 +804,7 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Markdown\\Copy\\TorchlightWithCopyExtension' => __DIR__ . '/../..' . '/app/Markdown/Copy/TorchlightWithCopyExtension.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Modifiers\\Toc' => __DIR__ . '/../..' . '/app/Modifiers/Toc.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',

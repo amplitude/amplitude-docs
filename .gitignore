@@ -74,11 +74,12 @@ users/
 
 public/hot
 public/storage
-public/css/*
+public/docs/css/*
 public/vendor/statamic
-public/js/*
+public/docs/js/*
 **/.DS_Store
 
 # Node modules
 **/node_modules
-public/css/site.css
+
+public/docs/js/site.js
