@@ -25,16 +25,7 @@ export default function () {
   `;
 
     // Determine the container for positioning:
-    // If the code block is inside a <pre>, use that; otherwise use the code element.
     const container = code.parentNode.parentNode 
-
-    // Ensure the container is relatively positioned for proper button placement
-    // container.style.position = 'relative'
-    // button.style.position = 'absolute'
-    // button.style.top = '0.5rem'
-    // button.style.right = '0.5rem'
-    // button.style.zIndex = '10'
-    // button.style.cursor = 'pointer'
 
     // Append the button to the container
     container.appendChild(button)
@@ -51,7 +42,6 @@ export default function () {
     // Initialize ClipboardJS with a text callback to ensure we copy the code sample's text
     const clipboard = new ClipboardJS(button, {
       text: () => {
-        console.log(code.parentNode)
         return code.querySelector('.torchlight-copy-target').textContent
       }
     })

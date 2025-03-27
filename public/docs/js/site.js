@@ -3940,6 +3940,78 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 
+/***/ "./resources/docs/js/code-copy/index.js":
+/*!**********************************************!*\
+  !*** ./resources/docs/js/code-copy/index.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var clipboard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! clipboard */ "./node_modules/clipboard/dist/clipboard.js");
+/* harmony import */ var clipboard__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(clipboard__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var tippy_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tippy.js */ "./node_modules/tippy.js/dist/tippy.esm.js");
+/* harmony import */ var tippy_js_dist_tippy_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tippy.js/dist/tippy.css */ "./node_modules/tippy.js/dist/tippy.css");
+
+
+
+var COMPONENT_SELECTOR = 'code.torchlight';
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__() {
+  var codeBlocks = document.querySelectorAll(COMPONENT_SELECTOR);
+  var _loop = function _loop() {
+    var code = codeBlocks[i];
+    // Ensure the code element has a unique ID
+    if (!code.id) {
+      code.id = "torchlight-code-".concat(i);
+    }
+
+    // Create the copy button
+    var button = document.createElement('span');
+    button.className = 'copy-btn';
+    //button.setAttribute('type', 'button')
+    // Although we're not relying on data-clipboard-target, we can still keep it for clarity:
+    button.setAttribute('data-clipboard-target', "#".concat(code.id));
+    button.innerHTML = "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"24px\" viewBox=\"0 -960 960 960\" width=\"24px\" fill=\"#B7B7B7\"><path d=\"M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z\"/></svg>\n  ";
+
+    // Determine the container for positioning:
+    var container = code.parentNode.parentNode;
+
+    // Append the button to the container
+    container.appendChild(button);
+
+    // Setup tooltip using tippy.js for feedback
+    var tooltip = (0,tippy_js__WEBPACK_IMPORTED_MODULE_2__["default"])(button, {
+      content: 'Copied!',
+      theme: 'translucent',
+      placement: 'top',
+      trigger: 'manual',
+      distance: 5
+    });
+
+    // Initialize ClipboardJS with a text callback to ensure we copy the code sample's text
+    var clipboard = new (clipboard__WEBPACK_IMPORTED_MODULE_0___default())(button, {
+      text: function text() {
+        return code.querySelector('.torchlight-copy-target').textContent;
+      }
+    });
+    clipboard.on('success', function (e) {
+      tooltip.show();
+      setTimeout(function () {
+        tooltip.hide();
+      }, 700);
+      e.clearSelection();
+    });
+  };
+  for (var i = 0; i < codeBlocks.length; i++) {
+    _loop();
+  }
+}
+
+/***/ }),
+
 /***/ "./resources/docs/js/heading-anchors/index.js":
 /*!****************************************************!*\
   !*** ./resources/docs/js/heading-anchors/index.js ***!
@@ -4009,8 +4081,11 @@ var HEADINGS_SELECTOR = 'h1, h2, h3, h4, h5, .def';
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _heading_anchors__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./heading-anchors */ "./resources/docs/js/heading-anchors/index.js");
+/* harmony import */ var _code_copy__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./code-copy */ "./resources/docs/js/code-copy/index.js");
+
 
 (0,_heading_anchors__WEBPACK_IMPORTED_MODULE_0__["default"])();
+(0,_code_copy__WEBPACK_IMPORTED_MODULE_1__["default"])();
 window.onload = function () {
   var element = document.querySelector('.active');
   if (element) {
