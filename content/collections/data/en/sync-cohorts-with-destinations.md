@@ -54,7 +54,6 @@ Real-time sync supports all cohort destinations except:
 * [S3 cohort sync](/docs/data/destination-catalog/amazon-s3-cohort)
 * [TikTok Ads](/docs/data/destination-catalog/tiktok-ads)
 * [Enterpret](/docs/data/destination-catalog/enterpret)
-* [Braze](/docs/data/destination-catalog/braze-cohort-sync)
 * [SFMC](/docs/data/destination-catalog/salesforce-marketing-cloud-v2)
 * [The Trade Desk](/docs/data/destination-catalog/thetradedesk)
 {{/partial:admonition}}
