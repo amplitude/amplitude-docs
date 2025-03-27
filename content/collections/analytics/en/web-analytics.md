@@ -79,11 +79,11 @@ Here are the default Ads metrics available in Out-of-the-box Marketing Analytics
 |---------------|-----------------------------------------|------------------------------------------------------------------------------------------------------------------------|
 | **Impressions** | `PROPSUM(ad_metrics.impressions)`       | Total number of times your ad is served (shown) to users.                                                              |
 | **Clicks**      | `PROPSUM(ad_metrics.clicks)`            | Total number of times users click on your ad.                                                                          |
-| **CTR**         | `(ad_metrics.clicks ÷ ad_metrics.impressions) × 100`          | Click-through rate. Shows the percentage of impressions that resulted in a click.                                      |
+| **CTR**         | `(Clicks ÷ Impressions) × 100`          | Click-through rate. Shows the percentage of impressions that resulted in a click.                                      |
 | **Ad Spend**    | `PROPSUM(ad_metrics.cost)`              | Total amount spent on the ad campaign(s).                                                                              |
-| **CPC**         | `ad_metrics.cost ÷ ad_metrics.clicks`                    | Cost per click. Shows how much you pay, on average, for each click on your ad.                                         |
-| **CAC**         | `ad_metrics.cost ÷ Total Sign-Ups`            | Customer Acquisition Cost. Shows how much you pay, on average, to acquire a single new customer or user.               |
-| **ROAS**        | `(Revenue ÷ ad_metrics.cost) × 100`            | Return on Ad Spend. Shows how much revenue you earn for every dollar spent on advertising (often shown as a multiple). |
+| **CPC**         | `Ad Spend ÷ Clicks`                    | Cost per click. Shows how much you pay, on average, for each click on your ad.                                         |
+| **CAC**         | `Ad Spend ÷ Total Sign-Ups`            | Customer Acquisition Cost. Shows how much you pay, on average, to acquire a single new customer or user.               |
+| **ROAS**        | `(Revenue ÷ Ad Spend) × 100`            | Return on Ad Spend. Shows how much revenue you earn for every dollar spent on advertising (often shown as a multiple). |
 
 ## Modify settings and create goals
 
