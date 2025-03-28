@@ -165,11 +165,19 @@ The APIs for setting user properties are the same, except for the removal of `in
 
 ### setUserId()
 
-`setUserId()` remains unchanged but doesn't receive `startNewSession`.
+`setUserId()` no longer receives `startNewSession` and now has a default minimum length of 5. This can be overridden by setting the `minIdLength` config option during initialization.
+
+{{partial:admonition type="warning" heading="Minimum identifier length"}}
+The maintenance SDK uses an old SDK endpoint (`api2.amplitude.com`) which enforces no length limit for `deviceId` and `userId`. The latest SDK uses Amplitude's HTTP V2 API (`api2.amplitude.com/2/httpapi`) and requires identifiers to be at least 5 characters by default. When you migrate to the latest SDK, set `config.minIdLength` to a smaller value if you allowed identifiers with fewer than 5 characters.
+{{/partial:admonition}}
 
 ### setDeviceId()
 
-`setDeviceId()` remains unchanged.
+`setDeviceId()` now has a default minimum length of 5. This can be overridden by setting the `minIdLength` config option during initialization.
+
+{{partial:admonition type="warning" heading="Minimum identifier length"}}
+The maintenance SDK uses an old SDK endpoint (`api2.amplitude.com`) which enforces no length limit for `deviceId` and `userId`. The latest SDK uses Amplitude's HTTP V2 API (`api2.amplitude.com/2/httpapi`) and requires identifiers to be at least 5 characters by default. When you migrate to the latest SDK, set `config.minIdLength` to a smaller value if you allowed identifiers with fewer than 5 characters.
+{{/partial:admonition}}
 
 ### regenerateDeviceId()
 
