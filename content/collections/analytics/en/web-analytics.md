@@ -75,15 +75,16 @@ For conversion insights, you can also:
 
 Here are the default Ads metrics available in Out-of-the-box Marketing Analytics, along with the high-level formulas and definitions:
 
-| **Metric**    | **Formula**                             | **Definition**                                                                                                         |
-|---------------|-----------------------------------------|------------------------------------------------------------------------------------------------------------------------|
-| **Impressions** | `PROPSUM(ad_metrics.impressions)`       | Total number of times your ad is served (shown) to users.                                                              |
-| **Clicks**      | `PROPSUM(ad_metrics.clicks)`            | Total number of times users click on your ad.                                                                          |
-| **CTR**         | `%: ad_metrics.clicks / ad_metrics.impressions`          | Click-through rate. Shows the percentage of impressions that resulted in a click.                                      |
-| **Ad Spend**    | `PROPSUM(ad_metrics.cost)`              | Total amount spent on the ad campaign(s).                                                                              |
-| **CPC**         | `ad_metrics.cost / ad_metrics.clicks`                    | Cost per click. Shows how much you pay, on average, for each click on your ad.                                         |
-| **CAC**         | `ad_metrics.cost / Total Sign-Ups`            | Customer Acquisition Cost. Shows how much you pay, on average, to acquire a single new customer or user.               |
-| **ROAS**        | `Revenue / ad_metrics.cost`            | Return on Ad Spend. Shows how much revenue you earn for every dollar spent on advertising. |
+| **Metric**     | **Formula**                                             | **Definition**                                                                                                                                                     |
+|----------------|---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Impressions**| `PROPSUM(ad_metrics.impressions)`                      | Total number of times your ad is served (shown) to users. **Derived from Daily Ad Metrics**.                                                                       |
+| **Clicks**     | `PROPSUM(ad_metrics.clicks)`                           | Total number of times users click your ad. **Derived from Daily Ad Metrics**.                                                                                      |
+| **CTR**        | `%: (ad_metrics.clicks / ad_metrics.impressions) * 100` | Click-through rate. Shows the percentage of impressions that result in a click. **Derived from Daily Ad Metrics**.                       |
+| **Ad Spend**   | `PROPSUM(ad_metrics.cost)`                             | Total amount spent on your ad campaign(s). **Derived from Daily Ad Metrics**.                                                                                      |
+| **CPC**        | `ad_metrics.cost / ad_metrics.clicks`                  | Cost per click. Shows how much you pay, on average, for each click on your ad. **Derived from Daily Ad Metrics**.                                     |
+| **CAC**        | `ad_metrics.cost / [Acquisition Event]`                | Customer Acquisition Cost. Shows how much you pay, on average, to acquire a single new user. **Cost from Daily Ad Metrics; acquisition event set in Settings**.   |
+| **ROAS**       | `[Revenue Property] / ad_metrics.cost`                            | Return on Ad Spend. Shows how much revenue you earn for every dollar spent on advertising. **Cost from Daily Ad Metrics; revenue property set in Settings**.      |
+
 
 ## Modify settings and create goals
 
