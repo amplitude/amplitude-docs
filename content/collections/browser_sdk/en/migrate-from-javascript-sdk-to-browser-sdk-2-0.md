@@ -77,6 +77,28 @@ When migrating to `@amplitude/analytics-browser@2+`, your implementation may exp
 In both versions, attribution can occur during initialization.
 {{/partial:admonition}}
 
+{{partial:admonition type="warning" heading="Cookie migration"}}
+Browser SDK 2.0 automatically migrates cookies from the JavaScript SDK, version 6.0.0 or above:
+
+* Old cookie name `AMP_{first 6 digit of api key}` from JavaScript SDK 6.0.0 and above
+* New cookie name `AMP_{first 10 digit of api key}` from Browser SDK 2
+
+Migrating from a JavaScript SDK version prior to 6.0.0 requires manual cookie migration.
+
+To manually migrate cookies:
+
+1. Read the values from the old cookie.
+2. Pass those values to `amplitude.init()` in the SDK configuration.
+
+```ts
+this.init('API_KEY', {
+  deviceId: 'device_id',
+  userId: 'user_id',
+});
+```
+
+{{/partial:admonition}}
+
 ## Terminology
 
 * `amplitude-js`: Maintenance Browser SDK
