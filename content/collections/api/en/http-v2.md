@@ -1593,7 +1593,7 @@ curl --location --request POST 'https://api.amplitude.com/2/httpapi' \
       "os_version": "4.2.2",
       "device_brand": "Verizon",
       "device_manufacturer": "Apple",
-      "device_mo del": "iPhone 9,1",
+      "device_model": "iPhone 9,1",
       "carrier": "Verizon",
       "country": "United States",
       "region": "California",
@@ -1612,6 +1612,7 @@ curl --location --request POST 'https://api.amplitude.com/2/httpapi' \
       "idfv": "BCCE52E7-03EE-321A-B3D4-E57123966239",
       "adid": "AEBE52E7-03EE-455A-B3C4-E57283966239",
       "android_id": "BCCE52E7-03EE-321A-B3D4-E57123966239",
+      "android_app_set_id": "087e666f-72f3-4d6c-8cce-e8bedce9304e",
       "event_id": 23,
       "session_id": 1396381378123,
       "insert_id": "5f0adeff-6668-4427-8d02-57d803a2b841"
@@ -1764,6 +1765,7 @@ curl --location --request POST 'https://api.amplitude.com/2/httpapi' \
       "idfv": "BCCE52E7-03EE-321A-B3D4-E57123966239",
       "adid": "AEBE52E7-03EE-455A-B3C4-E57283966239",
       "android_id": "BCCE52E7-03EE-321A-B3D4-E57123966239",
+      "android_app_set_id": "087e666f-72f3-4d6c-8cce-e8bedce9304e",
       "event_id": 23,
       "session_id": 1396381378123,
       "insert_id": "5f0adeff-6668-4427-8d02-57d803a2b841"
@@ -1839,6 +1841,7 @@ Content-Length: 1731
       "idfv": "BCCE52E7-03EE-321A-B3D4-E57123966239",
       "adid": "AEBE52E7-03EE-455A-B3C4-E57283966239",
       "android_id": "BCCE52E7-03EE-321A-B3D4-E57123966239",
+      "android_app_set_id": "087e666f-72f3-4d6c-8cce-e8bedce9304e",
       "event_id": 23,
       "session_id": 1396381378123,
       "insert_id": "5f0adeff-6668-4427-8d02-57d803a2b841"
@@ -1900,6 +1903,7 @@ You can send these keys in the JSON event object. Note that one of `user_id` or 
 | `ip`                               | <span class="optional">Optional</span>. String. The IP address of the user. Use `$remote` to use the IP address on the upload request. Amplitude uses the IP address to reverse lookup a user's location (city, country, region, and DMA). Amplitude can drop the location and IP address from events after they reach Amplitude servers. Contact the Support team to configure this.                                                           |
 | `idfa`                        | <span class="optional">Optional</span>. String. (iOS) Identifier for Advertiser.                                                                                                                                                                                                                                                                                                                                                                |
 | `idfv`                             | <span class="optional">Optional</span>. String. (iOS) Identifier for Vendor.                                                                                                                                                                                                                                                                                                                                                                    |
+| `android_app_set_id`             | <span class="optional">Optional</span>. String. (Android) Identifier for vendor+                                                                                                                                                                                                                                                                                                                                            |
 | `adid`                        | <span class="optional">Optional</span>. String. (Android) Google Play Services advertising ID                                                                                                                                                                                                                                                                                                                                                   |
 | `android_id`                       | <span class="optional">Optional</span>. String. (Android) Android ID (not the advertising ID)                                                                                                                                                                                                                                                                                                                                                   |
 | `event_id`                         | <span class="optional">Optional</span>. Integer. (Optional) An incrementing counter to distinguish events with the same `user_id` and timestamp from each other. Amplitude recommends you send an `event_id`, increasing over time, especially if you expect events to occur simultaneously.                                                                                                                                                    |
