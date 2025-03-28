@@ -16,7 +16,7 @@ summary: 'Send attribution campaign events (identified by `idfa`, `idfv`, or `ad
 ## Considerations
 
 - When Amplitude can't match attribution events to an existing user, they're held for up to 72 hours for potential user matching. If an event isn't logged for a matching user within 72 hours of receiving the attribution data, then Amplitude **drops the attribution data**.
-- For most of Amplitude's partners, Amplitude uses Advertising ID (IDFA or ADID) or vendor ID (IDFV or App Set ID) for attribution to users and events. Therefore, you must send these identifiers for attribution requests and you must set the `idfa`, `idfv`, `adid` and `app_set_id` fields in Amplitude as the Attribution ID. 
+- For most of Amplitude's partners, Amplitude uses Advertising ID (IDFA or ADID) or vendor ID (IDFV or App Set ID) for attribution to users and events. Therefore, you must send these identifiers for attribution requests and you must set the `idfa`, `idfv`, `adid` and `android_app_set_id` fields in Amplitude as the Attribution ID. 
 
 - If you are using the iOS SDK or Android SDK, you can enable tracking of the Advertising ID by following the instructions [here](/docs/sdks/analytics/ios/ios-swift-sdk#advertiser-id). If you are using a JavaScript SDK or React Native, these don't have the functionality to collect Advertising ID automatically due to Google's and Apple's privacy rules around advertising ID and web tracking. You have to send the Advertising ID through the HTTP API endpoint so that Amplitude can match attribution data/events. See keys in the [HTTP API V2](/docs/apis/analytics/http-v2) doc.
 
