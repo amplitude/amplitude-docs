@@ -88,7 +88,7 @@ Here are the default Ads metrics available in Out-of-the-box Marketing Analytics
 
 ## Modify settings and create goals
 
-Out-of-the-box Marketing Analytics uses default events and properties from the Browser SDK, but admins or managers can modify them in settings.
+Out-of-the-box Marketing Analytics uses default events and properties from the Browser SDK or Ad Networks, but admins or managers can modify them in settings.
 
 Follow these steps to manage settings, create goals, or customize tracked events:
 
@@ -97,8 +97,27 @@ Follow these steps to manage settings, create goals, or customize tracked events
    * If *Page View and Filter*, choose the event and property that you’d like to use. This will affect all page-related metrics.
    * For *Breakdown*, choose the default channels you want to display, as well as your campaign and page engagement properties.
    * Set *Conversion Funnel* settings by choosing the events that make up your funnel.
+   * For Ad Performance, select events and properties to calculate CAC and ROAS metrics, along with properties such as ad source, campaign, and content.
 
 If *Goals*, choose the key events or metrics you'd like to set up as additional metrics. Break down goals by  channels, campaigns, or pages.
+
+## Advertising Metrics and Properties
+
+To view insights on ad performance, you need to connect to an ad network (e.g., Google, Facebook). Learn more [here](/docs/data/source-catalog).
+
+Advertising metrics are associated with an Amplitude event called “Daily Ad Metrics.”
+
+The following user properties are set with the “Daily Ad Metrics” event and are displayed by default in the breakdown table on the Ads Performance tab:
+
+* UTM Campaign, UTM Content, UTM Medium, UTM Source, UTM Term
+
+The Daily Ad Metrics event also includes several important event properties:
+
+* Ad Impressions, Ad Clicks, Ad Cost, Ad Conversions, Ad Interactions
+
+* Ad Group ID, Ad Group Name, Ad Group Type, Ad ID, Ad Name, Ad Platform, Ad Segment Device, Campaign Advertising Channel Type, Campaign End Date, Campaign ID, Campaign Name, Campaign Start Date, Final URL, Tracking URL Template
+
+The first set of event properties includes numeric values that can be used to compute advertising metrics. The remaining event properties describe the advertising metrics in the same way as the ad network. (This example uses Google Ads, but the process is similar for other advertising networks, although property names may vary.)
 
 ## Create a web experiment for specific URLs
 
