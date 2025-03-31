@@ -121,7 +121,7 @@ The Daily Ad Metrics event also includes several important event properties:
 
 * Ad Group ID, Ad Group Name, Ad Group Type, Ad ID, Ad Name, Ad Platform, Ad Segment Device, Campaign Advertising Channel Type, Campaign End Date, Campaign ID, Campaign Name, Campaign Start Date, Final URL, Tracking URL Template
 
-The first set of event properties includes numeric values that can be used to compute advertising metrics. The remaining event properties describe the advertising metrics in the same way as the ad network. (This example uses Google Ads, but the process is similar for other advertising networks, although property names may vary.)
+The first set of event properties includes numeric values you can use to compute advertising metrics. The remaining event properties describe the advertising metrics in the same way as the ad network. (This example uses Google Ads, but the process is similar for other advertising networks, although property names may vary.)
 
 ## Create a web experiment for specific URLs
 
