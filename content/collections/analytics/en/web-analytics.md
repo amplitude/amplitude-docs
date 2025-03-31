@@ -35,7 +35,7 @@ Your ability to edit views in Marketing Analytics depends on your role within th
 
 If you haven’t already read up on the basics of building charts in Amplitude, you should do so before proceeding.
 
-{{partial:partials/web-product-analytics hub="Web"}}
+{{partial:partials/web-product-analytics hub="Marketing"}}
 
 
 ## Analyze industry-standard metrics
