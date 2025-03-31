@@ -20,7 +20,7 @@ You can configure flag prerequisites in the Dependencies card, located below the
 
 This card provides a summary of all flag dependencies, including prerequisite flags, experiments, mutual exclusions, and holdout groups, as well as a list of flags and experiments dependent on it.
 
-1. To configure new prerequisites, select the edit icon.
+1. To configure new prerequisites, click Edit.
 2. In the Dependencies edit drawer, click _Add Dependency_ to add a new prerequisite flag or experiment.
 3. Select the flag or experiment you want to create the dependency on.
 
