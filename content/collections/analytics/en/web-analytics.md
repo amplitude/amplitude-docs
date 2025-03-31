@@ -101,7 +101,7 @@ Follow these steps to manage settings, create goals, or customize tracked events
 
 If *Goals*, choose the key events or metrics you'd like to set up as additional metrics. Break down goals by  channels, campaigns, or pages.
 
-## Advertising Metrics and Properties
+## Advertising metrics and properties
 
 To view insights on ad performance, you need to connect to an ad network (e.g., Google, Facebook). Learn more [here](/docs/data/source-catalog).
 
