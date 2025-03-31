@@ -33,7 +33,7 @@ This card provides a summary of all flag dependencies, including prerequisite fl
 	You can’t add a prerequisite that would create a circular dependency loop.
 	{{/partial:admonition}}
 
-1. Then, select the variants that you want to be dependent on. Off is a special value that represents when users weren't included in the prerequisite flag or experiment.
+1. Select the variants that you want to be dependent on.`off` is a special value that represents when users weren't included in the prerequisite flag or experiment.
 2. To finish adding the dependency, select Save.
 
 ## Workflow considerations
