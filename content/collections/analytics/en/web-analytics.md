@@ -107,7 +107,7 @@ To view insights on ad performance, you need to connect to an ad network (for ex
 
 Amplitude associates advertising metrics with an event called `Daily Ad Metrics`.
 
-The following user properties are set with the “Daily Ad Metrics” event and are displayed by default in the breakdown table on the Ads Performance tab:
+The following user properties are set with the `Daily Ad Metrics` event and display by default in the breakdown table on the Ads Performance tab:
 
 * UTM Campaign, UTM Content, UTM Medium, UTM Source, UTM Term
 
