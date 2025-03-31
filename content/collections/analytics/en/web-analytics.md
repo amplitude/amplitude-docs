@@ -103,7 +103,7 @@ If *Goals*, choose the key events or metrics you'd like to set up as additional 
 
 ## Advertising metrics and properties
 
-To view insights on ad performance, you need to connect to an ad network (e.g., Google, Facebook). Learn more [here](/docs/data/source-catalog).
+To view insights on ad performance, you need to connect to an ad network (for example, Google or Facebook). For more information, see the [Source Catalog](/docs/data/source-catalog).
 
 Advertising metrics are associated with an Amplitude event called “Daily Ad Metrics.”
 
