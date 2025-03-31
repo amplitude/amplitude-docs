@@ -152,11 +152,13 @@ Session Replay supports remote sampling rate settings. This enables users in you
 
 By default, Session Replay blocks web views, and doesn't track them. If you want to track web views in your application, wrap the view in the `AmpMaskView` tag, and apply the `amp-unmask` mask property.
 
+{{noparse}}
 ```js
 <AmpMaskView mask="amp-unmask" style={{ flex: 1 }}>
     <WebView source={{ uri: 'https://reactnative.dev/' }} style={{ flex: 1 }} />
 </AmpMaskView>
 ```
+{{/noparse}}
 
 {{partial:partials/session-replay/sr-retention}}
 
