@@ -11,7 +11,7 @@ This article explains how to create a flag for a feature rollout. If you need in
 
 ### Feature availability
 
-This feature is available to users on all Amplitude plans. See the [pricing page](https://amplitude.com/pricing) for more details.
+This feature is available to users on all Amplitude plans. See the [pricing page](https://amplitude.com/pricing) for more details. 
 
 ## Create a new flag
 
