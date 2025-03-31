@@ -30,16 +30,16 @@ You can't create a new flag until you create a deployment and either install the
     The best bucketing unit is usually the user. However, in some B2B use cases, you might want to use the company ID or city as the bucketing unit. For example, bucketing by company ID ensures that all users in a particular company have the same user experience. Be sure that the [Stable Unit Treatment Value Assumption](https://blogs.iq.harvard.edu/violations_of_s#:~:text=Methods%20for%20causal%20inference%2C%20in,treatments%20of%20others%20around%20him) holds for whichever unit you choose.
     {{/partial:admonition}}
 
-4. When you’re done, select *Create*. Experiment opens a blank template for your flag.
+4. When you’re done, click *Create*. Experiment opens a blank template for your flag.
 5. Next, choose the **deployment** for your experiment from the *Deployment* drop-down menu. For more information about working with deployments, see [this article on configuring Amplitude Experiment](/docs/feature-experiment/workflow/configure).
 6. In *Advanced Settings*, you can change the **bucketing salt**. But if you do, users might switch between variants in your experiment. For that reason, Amplitude recommends not to change the bucketing unless you know what you're doing. For more information, see [How randomization works in Amplitude Experiment](/docs/feature-experiment/under-the-hood/experiment-randomization).
 7. The flag must have at least one **variant**. The variant is the new feature or product experience you want to roll out to your users.  
   
-You can add as many variants as you need to a feature flag. To add a variant to your flag, select *+ Create Variant*.
+You can add as many variants as you need to a feature flag. To add a variant to your flag, click *+ Create Variant*.
 
 ![createVariant.png](/docs/output/img/workflow/createvariant-png.png)
 
-The *Create Variant* modal appears. Type in a name, value, and a description for your variant in the appropriate fields. Amplitude Experiment generates the variant value from the name you enter. The variant value is a string that you’ll use as a flag in your codebase. When you’re done, select *Apply*.
+The *Create Variant* modal appears. Type in a name, value, and a description for your variant in the appropriate fields. Amplitude Experiment generates the variant value from the name you enter. The variant value is a string that you’ll use as a flag in your codebase. When you’re done, click *Apply*.
 
 {{partial:admonition type='note'}}
 Don't name your variants **OFF**. This is a reserved name for fallbacks in Amplitude Experiment (for example, the user segment not included in your experiments).
@@ -61,4 +61,4 @@ Continuing from the previous section, you can now use the flag you've created to
 3. You’ll need to tell Amplitude Experiment how many users sees each variant. The **weights** are relative values: for example, if you give variant A a weight of 1 and variant B a weight of 4, then four times as many users sees variant B than variant A.
 4. You can set separate rules for everyone not covered by any user segments you created. If, for example, you only want the feature rolled out to the specific cohorts you targeted earlier, scroll down to the *All Other Users* section and set the rollout percentage to zero.
 5. Next, save your flag, if you haven’t already, and QA it before setting it to Active. For more information, see the article on [Checking before launching an experiment](/docs/feature-experiment/workflow/experiment-test).
-6. When you’re ready, select *Activate*. Your feature is now live for the user segments you selected.
+6. When you’re ready, click *Activate*. Your feature is now live for the user segments you selected.
