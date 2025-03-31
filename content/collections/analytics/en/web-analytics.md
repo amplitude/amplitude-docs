@@ -105,7 +105,7 @@ If *Goals*, choose the key events or metrics you'd like to set up as additional 
 
 To view insights on ad performance, you need to connect to an ad network (for example, Google or Facebook). For more information, see the [Source Catalog](/docs/data/source-catalog).
 
-Advertising metrics are associated with an Amplitude event called “Daily Ad Metrics.”
+Amplitude associates advertising metrics with an event called `Daily Ad Metrics`.
 
 The following user properties are set with the “Daily Ad Metrics” event and are displayed by default in the breakdown table on the Ads Performance tab:
 
