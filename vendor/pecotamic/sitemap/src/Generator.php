@@ -45,6 +45,7 @@ class Generator extends Facade
 
         // filter by function
         if ($callback = config('pecotamic.sitemap.filter')) {
+            $callback = is_string($callback) && class_exists($callback) ? new $callback() : $callback;
             $entries = $entries->filter($callback);
         }
 

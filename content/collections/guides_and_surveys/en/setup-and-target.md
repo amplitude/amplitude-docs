@@ -31,6 +31,20 @@ Each segment can filter by property or cohort, and can have multiple filters. Fo
 When you add more than one segment to your targeting, Amplitude `OR`s each segment. This means that if a user belongs to *any* segment, Amplitude shows them the guide or survey.
 {{/partial:admonition}}
 
+### Send a link to a guide
+
+Send users a link to your guide to target them more directly. From the guide builder, expand the menu next to the Save button, and click Share link.
+
+In the resulting modal, copy the query parameter, and append it to a page on your site that's instrumented with Guides and Surveys.
+
+When the recipient clicks the link with the query parameter attached, the guide displays.
+
+{{partial:admonition type="note" heading="User and page targeting"}}
+When you send a direct link to a guide, Amplitude overrides any audience or user targeting you set on the guide.
+
+Amplitude doesn't override page targeting. To ensure your link works properly, ensure the page you send can display the guide.
+{{/partial:admonition}}
+
 ## Triggers
 
 Triggers control both when and where the experience appears.

@@ -28,7 +28,7 @@ This is the official documentation for the Amplitude Analytics iOS SDK.
 1. Add the dependency to your `Podfile`:
 
     ```bash
-    pod 'AmplitudeSwift', '~> 1.0.0'
+    pod 'AmplitudeSwift', '~> 1.0'
     ```
 2. Run `pod install` in the project directory.
 {{/partial:tab}}
@@ -42,7 +42,7 @@ This is the official documentation for the Amplitude Analytics iOS SDK.
 {{partial:tab name="Carthage"}}
 Add the following line to your `Cartfile`.
 ```bash
-github "amplitude/Amplitude-Swift" ~> 1.0.0
+github "amplitude/Amplitude-Swift" ~> 1.0
 ```
 Check out the [Carthage docs](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for more info.
 {{/partial:tab}}
@@ -80,7 +80,7 @@ Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 | `loggerProvider`               | Implements a custom `loggerProvider` class from the Logger, and pass it in the configuration during the initialization to help with collecting any error messages from the SDK in a production environment. | `ConsoleLogger`                          |
 | `flushIntervalMillis`          | The amount of time SDK will attempt to upload the unsent events to the server or reach `flushQueueSize` threshold.                                                                                          | `30000`                                  |
 | `flushQueueSize`               | SDK will attempt to upload once unsent event count exceeds the event upload threshold or reach `flushIntervalMillis` interval.                                                                              | `30`                                     |
-| `flushMaxRetries`              | Maximum retry times.                                                                                                                                                                                        | `5`                                      |
+| `flushMaxRetries`              | Maximum retry times.                                                                                                                                                                                        | `6`                                      |
 | `minIdLength`                  | The minimum length for user id or device id.                                                                                                                                                                | `5`                                      |
 | `partnerId`                    | The partner id for partner integration.                                                                                                                                                                     | `nil`                                    |
 | `identifyBatchIntervalMillis`  | The amount of time SDK will attempt to batch intercepted identify events.                                                                                                                                   | `30000`                                  |

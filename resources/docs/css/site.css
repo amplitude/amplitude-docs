@@ -10,6 +10,7 @@
         font-family: 'Gellix', sans-serif;
         font-weight: 400;
         letter-spacing: -.5px;
+        scroll-margin-top: 96px;
     }
 }
 @layer components {

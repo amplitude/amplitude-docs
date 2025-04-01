@@ -1,6 +1,9 @@
 import headingsAnchors from './heading-anchors'
+import codeCopy from './code-copy';
 
 headingsAnchors()
+codeCopy()
+
 
 window.onload = function() {
     const element = document.querySelector('.active');
@@ -22,3 +25,4 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+

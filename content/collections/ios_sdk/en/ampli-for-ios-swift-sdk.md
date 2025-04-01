@@ -27,7 +27,7 @@ Amplitude Data supports tracking analytics events from iOS apps written in Swift
 1. [Install the Amplitude SDK](#install-the-amplitude-sdk)
 
     ```bash
-    pod 'AmplitudeSwift', '~> 1.0.0'
+    pod 'AmplitudeSwift', '~> 1.0'
     ```
 
 2. [Install the Ampli CLI](#install-the-ampli-cli)
@@ -87,7 +87,7 @@ Install the Amplitude Analytics iOS SDK with CocoaPods, Carthage, or Swift Packa
 1. Add the dependency to your `Podfile`:
 
     ```bash
-    pod 'AmplitudeSwift', '~> 1.0.0'
+    pod 'AmplitudeSwift', '~> 1.0'
     ```
 2. Run `pod install` in the project directory.
 {{/partial:tab}}
@@ -101,7 +101,7 @@ Install the Amplitude Analytics iOS SDK with CocoaPods, Carthage, or Swift Packa
 {{partial:tab name="Carthage"}}
 Add the following line to your `Cartfile`.
 ```bash
-github "amplitude/Amplitude-Swift" ~> 1.0.0
+github "amplitude/Amplitude-Swift" ~> 1.0
 ```
 Check out the [Carthage docs](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for more info.
 {{/partial:tab}}

@@ -302,15 +302,15 @@ Select from the following strategies, depending on your data type selection.
 | Strategy            | Description                                                                                                                                                                                                                                                                  |
 | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Mirror Sync         | Directly mirrors the data in S3 with `INSERT`, `UPDATE`, and `DELETE` operations. To keep the data in sync with your source of truth, this strategy deactivates Amplitude's enrichment services like user property syncing, group property syncing, and taxonomy validation. |
-| Ingestion Only Sync | Imports new rows with Amplitude's standard enrichment services.                                                                                                                                                                                                              |
+| Append Only Sync | Imports new rows with Amplitude's standard enrichment services.                                                                                                                                                                                                              |
 
 See the following table to understand which data types are compatible with which import strategies.
 
 | Data type        | Supported import strategies |
-| ---------------- | --------------------------- |
-| Event            | Mirror and Ingestion        |
-| User properties  | Ingestion                   |
-| Group properties | Ingestion                   |
+| ---------------- |-----------------------------|
+| Event            | Mirror and Append Only      |
+| User properties  | Append Only                 |
+| Group properties | Append Only                 |
 | Profiles         | Mirror                      |
 
 
