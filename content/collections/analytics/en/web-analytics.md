@@ -71,9 +71,9 @@ For conversion insights, you can also:
 - View the data table fields by channel or campaign.
 - Display total conversions or conversion rate.
 
-### Ads metrics definitions
+### Ad metrics definitions
 
-Here are the default Ads metrics available in Out-of-the-box Marketing Analytics, along with the high-level formulas and definitions:
+Here are the default Ad metrics available in Out-of-the-box Marketing Analytics, along with the high-level formulas and definitions:
 
 | **Metric**     | **Formula**                                             | **Definition**                                                                                                                                                     |
 |----------------|---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -107,12 +107,12 @@ To view insights on ad performance, you need to connect to an ad network (for ex
 
 Amplitude associates advertising metrics with an event called `Daily Ad Metrics`.
 
-The following user properties are set with the `Daily Ad Metrics` event and display by default in the breakdown table on the Ads Performance tab:
+The following user properties are set with the `Daily Ad Metrics` event and display by default in the breakdown table on the Ad Performance tab:
 
 * UTM Campaign
 * UTM Content
-* UTM Medium 
-* UTM Source 
+* UTM Medium
+* UTM Source
 * UTM Term
 
 The Daily Ad Metrics event also includes several important event properties:
