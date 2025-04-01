@@ -7,9 +7,11 @@ this_article_will_help_you:
   - 'Understand the differences between a User Sessions chart and other Amplitude chart types'
   - 'Build a user sessions analysis'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717104670
+updated_at: 1743538768
 landing: true
 landing_blurb: 'Build a user sessions analysis'
+academy_course:
+  - 24571d68-a5a0-45de-990c-770f42c06073
 ---
 The User Sessions chart helps analyze your users through various session-based metrics. By showing you the distribution of session lengths, average session length, and average sessions per user, it can help you answer questions like:
 

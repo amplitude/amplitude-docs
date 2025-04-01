@@ -2,8 +2,10 @@
 id: a5dc1793-29f7-4c23-a656-459def9c6b3f
 blueprint: web_experiment
 title: 'Implement Web Experiment'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1729196004
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1743537960
+academy_course:
+  - f380a3b6-4f2f-4f90-834f-84009d44dc5a
 ---
 Amplitude's Web Experimentation requires a standalone script that you must add to your website. Paste the script into the `<head>` element of your site, as high as possible to avoid flickering.
 
