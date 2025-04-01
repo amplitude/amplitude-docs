@@ -8,9 +8,11 @@ this_article_will_help_you:
   - 'Learn the ways Amplitude records sessions'
   - 'Understand how filtering works in the User Sessions chart'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717104646
+updated_at: 1743538792
 landing: true
 landing_blurb: 'Interpret the results of your User Sessions chart'
+academy_course:
+  - 24571d68-a5a0-45de-990c-770f42c06073
 ---
 The [User Sessions chart](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) can help answer questions about your product's users: such as, user frequency, user engagement length, and the differences of those metrics based on user segments.
 

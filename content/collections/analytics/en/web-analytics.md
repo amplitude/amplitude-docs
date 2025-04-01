@@ -5,12 +5,13 @@ title: 'Out-of-the-box Marketing Analytics'
 this_article_will_help_you:
   - 'Track industry-standard marketing analytics in one place'
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1724883484
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1743538884
 source: 'https://help.amplitude.com/hc/en-us/articles/25181928085019-Gain-marketing-insights-with-web-analytics'
 landing: false
+academy_course:
+  - cafa90d0-f101-4234-bdf3-c9525c221850
 ---
-
 Amplitude’s Out-of-the-box Marketing Analytics acts as a centralized hub where you can track page engagement and session-based metrics using common KPIs, such as page views, session duration, and bounce rate. Custom settings are available to:
 
 - **Filter by domain**: Filter metrics by a specific domain to target a specific website for analysis.

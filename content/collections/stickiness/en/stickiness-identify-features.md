@@ -6,9 +6,11 @@ source: 'https://help.amplitude.com/hc/en-us/articles/230901928-Stickiness-Ident
 this_article_will_help_you:
   - 'Use events and properties to create a Stickiness chart'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717104135
+updated_at: 1743538698
 landing: true
 landing_blurb: 'Use events and properties to create a Stickiness chart'
+academy_course:
+  - 8bd6336d-8535-47ee-a708-c9f7f6fe909a
 ---
 To get the most of your product analytics, you need to understand what drives engagement and retention. What about your product that makes it so appealing to your most engaged users and what's causing other users to fall short? 
 
