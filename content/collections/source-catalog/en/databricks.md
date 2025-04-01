@@ -164,12 +164,10 @@ To add Databricks as a source in Amplitude, complete the following steps.
     - [User properties](/docs/get-started/what-is-amplitude#user-properties)
     - [Group properties](/docs/analytics/account-level-reporting)
     - [Profiles](/docs/data/profiles)
-   
-    For the `Event` data type, optionally select *Sync User Properties* or *Sync Group Properties* to sync the corresponding properties **within** an event.
 
 2. If you selected `Event` as the data type, choose the import strategy:
 
-- **Ingestion Only Sync**: Ingest data warehouse data with Amplitude's standard enrichment services like ID resolution, property and attribution syncing, and resolving location info.
+- **Append Only Sync**: Ingest data warehouse data with Amplitude's standard enrichment services like ID resolution, property and attribution syncing, and resolving location info.
 - **Mirror Sync**: Directly mirror the data in Snowflake with insert, update, and delete operations. This deactivates Amplitude's enrichment services to remain in sync with your source of truth.
 
 3. Configure the SQL command that transforms data in Databricks before Amplitude imports it.
@@ -188,14 +186,16 @@ To add Databricks as a source in Amplitude, complete the following steps.
         named_struct('group_property', "group_property_value")                 as group_properties
     from catalog.schema.table1;
     ```
+For the `Event` data type and Append-Only Ingestion, optionally select *Sync User Properties* or *Sync Group Properties* to sync the corresponding properties **within** an event.
 
-3. After you add the SQL, click *Test SQL*. Amplitude runs a test against your Databricks instance to ensure the SQL is valid. Click *Next*.
-4. Select the table version for initial import. The initial import brings everything the from table as of the selected version. Select *First* or *Latest*.
+4. After you add the SQL, click *Test SQL*. Amplitude runs a test against your Databricks instance to ensure the SQL is valid. Click *Next*.
+
+5. Select the table version for initial import. The initial import brings everything the from table as of the selected version. Select *First* or *Latest*.
     - `First` means first version, which is 0.  
     - `Latest` means latest version.
-5. Set the sync frequency. This frequency determines the interval at which Amplitude pulls data from Databricks.
-6. Enter a descriptive name for this instance of the source.
-7. The source appears in the Sources list for your workspace.
+6. Set the sync frequency. This frequency determines the interval at which Amplitude pulls data from Databricks.
+7. Enter a descriptive name for this instance of the source.
+8. The source appears in the Sources list for your workspace.
 
 ## Verify data import
 

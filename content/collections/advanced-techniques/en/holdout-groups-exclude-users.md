@@ -4,7 +4,7 @@ blueprint: advanced-technique
 title: 'Holdout groups'
 source: 'https://help.amplitude.com/hc/en-us/articles/13508918823835-Exclude-users-from-your-experiments-with-holdout-groups'
 this_article_will_help_you:
-  - 'Understand how holdout groups work in Amplitude Experiment'
+  - 'Understand how holdout groups work in Amplitude Feature Experiment'
   - 'Create, manage, and analyze a holdout group and the experiments in it'
   - 'Delve deeper into holdout groups with use case examples'
 exclude_from_sitemap: false
@@ -13,13 +13,13 @@ updated_at: 1730484258
 ---
 Sometimes it can be useful to keep a certain percentage of users from viewing an experiment. This is especially true when measuring the long-term, combined effects of multiple experiments. Statistical significance in one experiment may not reflect the true, cumulative impact of your experiments.
 
-Amplitude Experiment lets you easily exclude users from your experiments by creating a **holdout** group. Holdout groups are especially useful for measuring the **long term** impact of your rolled-out variants, and measuring the lift of your experimentation program as a whole.
+Amplitude Feature Experiment lets you easily exclude users from your experiments by creating a **holdout** group. Holdout groups are especially useful for measuring the **long term** impact of your rolled-out variants, and measuring the lift of your experimentation program as a whole.
 
 For more information, see the article on [Flag Dependencies](/docs/feature-experiment/under-the-hood/flag-dependencies#holdout-groups).
 
 ### Feature availability
 
-This feature is available to users on **Enterprise plans** who have **purchased Amplitude Experiment**. See the [pricing page](https://amplitude.com/pricing) for more details.
+This feature is available to users on **Enterprise plans** who have **purchased Amplitude Feature Experiment**. See the [pricing page](https://amplitude.com/pricing) for more details.
 
 ## Before you begin
 
@@ -34,7 +34,7 @@ When using holdout groups, there are a few things to keep in mind:
 
 To create a holdout group and add your experiments to it, follow these steps:
 
-1. In Amplitude Experiment, navigate to the *Mutex and Holdouts* tab in the Experiments page. Here, you can see all your holdout groups and be able to create new ones.
+1. In Amplitude Feature Experiment, navigate to the *Mutex and Holdouts* tab in the Experiments page. Here, you can see all your holdout groups and be able to create new ones.
 2. To add a new holdout group to your project, click *Add a new holdout group*. If you have existing groups, click *Create A New Group*, and then select *Holdout Group* in the drawer.
 
 3. In the *Holdout group settings* modal, enter the name, description, and holdout percentage for the group. You can also view and change advanced settings such as the evaluation mode and bucketing key of your group.

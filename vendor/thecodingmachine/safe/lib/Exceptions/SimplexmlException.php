@@ -1,4 +1,5 @@
 <?php
+
 namespace Safe\Exceptions;
 
 class SimplexmlException extends \ErrorException implements SafeExceptionInterface
@@ -6,6 +7,6 @@ class SimplexmlException extends \ErrorException implements SafeExceptionInterfa
     public static function createFromPhpError(): self
     {
         $error = \error_get_last();
-        return new self($error['message'] ?? 'An error occured', 0, $error['type'] ?? 1);
+        return new self($error['message'] ?? 'An error occurred', 0, $error['type'] ?? 1);
     }
 }

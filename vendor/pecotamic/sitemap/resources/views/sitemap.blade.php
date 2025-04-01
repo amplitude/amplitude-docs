@@ -5,7 +5,7 @@
 
 @foreach ($entries as $entry)
     <url>
-        <loc>https://amplitude.com/docs/{{ $entry->path }}</loc>
+        <loc>{{ $entry->loc }}</loc>
         <lastmod>{{ $entry->lastmod->format("c") }}</lastmod>
         @if ($entry->changefreq)
             <changefreq>{{ $entry->changefreq }}</changefreq>

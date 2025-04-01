@@ -1,6 +1,20 @@
 # Release Notes for 10.x
 
-## [Unreleased](https://github.com/laravel/framework/compare/v10.48.23...10.x)
+## [Unreleased](https://github.com/laravel/framework/compare/v10.48.28...10.x)
+
+## [v10.48.28](https://github.com/laravel/framework/compare/v10.48.26...v10.48.28) - 2025-01-31
+
+## [v10.48.26](https://github.com/laravel/framework/compare/v10.48.25...v10.48.26) - 2025-01-21
+
+* [10.x] Refine error messages for detecting lost connections (Debian bookworm compatibility) by [@mfn](https://github.com/mfn) in https://github.com/laravel/framework/pull/53794
+* [10.x] Bump minimum `league/commonmark` by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/framework/pull/53829
+* [10.x] Backport 11.x PHP 8.4 fix for str_getcsv deprecation by [@aka-tpayne](https://github.com/aka-tpayne) in https://github.com/laravel/framework/pull/54074
+
+## [v10.48.25](https://github.com/laravel/framework/compare/v10.48.24...v10.48.25) - 2024-11-26
+
+* [10.x] PHP 8.4 Code Compatibility by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/framework/pull/53612
+
+## [v10.48.24](https://github.com/laravel/framework/compare/v10.48.23...v10.48.24) - 2024-11-20
 
 ## [v10.48.23](https://github.com/laravel/framework/compare/v10.48.22...v10.48.23) - 2024-11-12
 

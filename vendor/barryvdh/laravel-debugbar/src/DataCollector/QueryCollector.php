@@ -203,7 +203,7 @@ class QueryCollector extends PDOCollector
         ];
 
         if ($this->timeCollector !== null) {
-            $this->timeCollector->addMeasure(Str::limit($sql, 100), $startTime, $endTime, [], 'db');
+            $this->timeCollector->addMeasure(Str::limit($sql, 100), $startTime, $endTime, [], 'db', 'Database Query');
         }
     }
 
@@ -577,14 +577,16 @@ class QueryCollector extends PDOCollector
             $this->infoStatements+= 2;
         } elseif ($this->softLimit && $this->queryCount > $this->softLimit) {
             array_unshift($statements, [
-                'sql' => '# Query soft limit for Debugbar is reached after ' . $this->softLimit . ' queries, additional ' . ($this->queryCount - $this->softLimit) . ' queries only show the query. Limit can be raised in the config. Limits can be raised in the config (debugbar.options.db.soft_limit)',
+                'sql' => '# Query soft limit for Debugbar is reached after ' . $this->softLimit . ' queries, additional ' . ($this->queryCount - $this->softLimit) . ' queries only show the query. Limits can be raised in the config (debugbar.options.db.soft_limit)',
                 'type' => 'info',
             ]);
             $this->infoStatements++;
         }
 
         $visibleStatements = count($statements) - $this->infoStatements;
+
         $data = [
+            'count' => $visibleStatements,
             'nb_statements' => $this->queryCount,
             'nb_visible_statements' => $visibleStatements,
             'nb_excluded_statements' => $this->queryCount + $this->transactionEventsCount - $visibleStatements,
