@@ -49,7 +49,7 @@ Here is how Amplitude determines each variable in the formula:
 Different chart types have different costs. For all endpoints not listed here, the cost is 1.
 Here are the limits for these endpoints, measured in the cost per query:
 
-- **Concurrent Limit**: Up to 1000 cost at the same time.
+- **Concurrent Limit**: Up to 1000 cost within a five minute period.
 - **Rate Limit**: Up to 108,000 cost per hour.
 
 - [Event Segmentation](#event-segmentation): Equal to the number of events you are looking at in the left module. If any event has a group by, add a cost of 4 per group by and event.

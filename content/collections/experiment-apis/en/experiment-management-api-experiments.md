@@ -157,7 +157,7 @@ Fetch the configuration details of an experiment.
 
 | Name | Description                        |
 | ---- | ---------------------------------- |
-| `id` | Required. String. Experiment's ID. |
+| `id` | Required. String. experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
 
 ### Response
 
@@ -260,7 +260,7 @@ Fetch a list of all versions for an experiment.
 
 | Name | Requirement | Type   | Description      |
 | ---- | ----------- | ------ | ---------------- |
-| `id` | Required    | string | Experiment's ID. |
+| `id` | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
 
 ### Response
 
@@ -418,7 +418,7 @@ Fetch details of a specific version of an experiment.
 
 | Name        | Requirement | Type   | Description       |
 | ----------- | ----------- | ------ | ----------------- |
-| `id`        | Required    | string | Experiment's ID.  |
+| `id`        | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.  |
 | `versionId` | Required    | string | The version's ID. |
 
 ### Response
@@ -509,7 +509,7 @@ Fetch a list of all variants for an experiment.
 
 | Name | Requirement | Type   | Description      |
 | ---- | ----------- | ------ | ---------------- |
-| `id` | Required    | string | Experiment's ID. |
+| `id` | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
 
 ### Response
 
@@ -562,7 +562,7 @@ Fetch details of a specific variant of an experiment.
 
 | Name         | Requirement | Type   | Description        |
 | ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | Experiment's ID.   |
+| `id`         | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.   |
 | `variantKey` | Required    | string | The variant's key. |
 
 ### Response
@@ -607,7 +607,7 @@ Fetch a list of inclusions for a specific variant of an experiment.
 
 | Name         | Requirement | Type   | Description        |
 | ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | Experiment's ID.   |
+| `id`         | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.   |
 | `variantKey` | Required    | string | The variant's key. |
 
 ### Response
@@ -649,7 +649,7 @@ Create a new variant for an experiment.
 
 | Name | Description                        |
 | ---- | ---------------------------------- |
-| `id` | Required. String. Experiment's ID. |
+| `id` | Required. String. experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
 
 ### Request body
 
@@ -704,7 +704,7 @@ Edit a variant for an experiment.
 
 | Name         | Requirement | Type   | Description        |
 | ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | Experiment's ID.   |
+| `id`         | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.   |
 | `variantKey` | Required    | string | The variant's key. |
 
 ### Request body
@@ -760,7 +760,7 @@ Remove a variant from an experiment.
 
 | Name         | Requirement | Type   | Description        |
 | ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | Experiment's ID.   |
+| `id`         | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.   |
 | `variantKey` | Required    | string | The variant's key. |
 
 ### Response
@@ -790,7 +790,7 @@ Add inclusions (users or devices) to experiment's variant.
 
 | Name         | Requirement | Type   | Description        |
 | ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | Experiment's ID.   |
+| `id`         | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.   |
 | `variantKey` | Required    | string | The variant's key. |
 
 {{partial:admonition type="example" heading="Example request"}}
@@ -838,7 +838,7 @@ Remove inclusions (users or devices) from experiment's variant.
 
 | Name         | Requirement | Type   | Description                                                                                                              |
 | ------------ | ----------- | ------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `id`         | Required    | string | Experiment's ID.                                                                                                         |
+| `id`         | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.                                                                                                         |
 | `variantKey` | Required    | string | The variant's key.                                                                                                       |
 | `userIndex`  | Required    | string | The user's index. Zero-indexed. Get an index-based array of users from [Get variant inclusions](#get-variant-inclusions) |
 
@@ -869,7 +869,7 @@ Remove all inclusions (users or devices) from experiment's variant.
 
 | Name         | Requirement | Type   | Description        |
 | ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | Experiment's ID.   |
+| `id`         | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.   |
 | `variantKey` | Required    | string | The variant's key. |
 
 ### Response
@@ -899,7 +899,7 @@ Bulk remove users or devices from experiment's variant. Limited to 100 per reque
 
 | Name         | Requirement | Type   | Description        |
 | ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | Experiment's ID.   |
+| `id`         | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.   |
 | `variantKey` | Required    | string | The variant's key. |
 
 ### Request body
@@ -937,7 +937,7 @@ List all deployments for an experiment.
 
 | Name | Requirement | Type   | Description      |
 | ---- | ----------- | ------ | ---------------- |
-| `id` | Required    | string | Experiment's ID. |
+| `id` | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
 
 ### Response
 
@@ -983,7 +983,7 @@ Add a deployment to an experiment.
 
 | Name | Description                        |
 | ---- | ---------------------------------- |
-| `id` | Required. String. Experiment's ID. |
+| `id` | Required. String. experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
 
 ### Request body
 
@@ -1030,7 +1030,7 @@ Remove a deployment from an experiment.
 
 | Name           | Requirement | Type   | Description          |
 | -------------- | ----------- | ------ | -------------------- |
-| `id`           | Required    | string | Experiment's ID.     |
+| `id`           | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app.     |
 | `deploymentId` | Required    | string | The deployment's ID. |
 
 ### Response
@@ -1064,7 +1064,7 @@ Edit an experiment.
 
 | Name | Requirement | Type   | Description      |
 | ---- | ----------- | ------ | ---------------- |
-| `id` | Required    | string | Experiment's ID. |
+| `id` | Required    | string | experiment's ID. Find the ID in the URL of the experiment in the Amplitude app. |
 
 ### Request body
 
