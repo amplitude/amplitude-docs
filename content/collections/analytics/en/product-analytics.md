@@ -5,7 +5,9 @@ title: 'Out-of-the-box Product Analytics'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1722362576
+updated_at: 1743538926
+academy_course:
+  - b5e40f1e-f91c-4398-97ee-b22fcaf05017
 ---
 Amplitude's Out-of-the-box Product Analytics provides a single location in Amplitude where you can track metrics that provide insight into how users engage with your product. Track metrics like new and active users, retention, conversion, engagement, and more.
 

@@ -8,8 +8,10 @@ this_article_will_help_you:
   - 'Organize the content you create in Amplitude'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1729181305
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1742328269
+academy_course:
+  - 46517037-8185-4438-afbd-4ba6f18249ea
 ---
 This article explains how to take advantage of the different features offered by [spaces](/docs/get-started/spaces) before continuing.
 

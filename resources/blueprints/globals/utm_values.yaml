@@ -1,0 +1,12 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: academy_utm
+            field:
+              type: text
+              display: 'Academy UTM'
+              localizable: false

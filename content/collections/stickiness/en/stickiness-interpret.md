@@ -7,9 +7,11 @@ this_article_will_help_you:
   - 'Draw conclusions about user behavior from your Stickiness chart'
   - 'Set up a behavioral cohort from your stickiness analysis'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1732569401
+updated_at: 1743538720
 landing: true
 landing_blurb: 'Draw conclusions about user behavior from your Stickiness chart'
+academy_course:
+  - 8bd6336d-8535-47ee-a708-c9f7f6fe909a
 ---
 Stickiness will help you dig into the details of your product's user engagement, specifically regarding users that have formed product usage habits.
 

@@ -8,9 +8,11 @@ this_article_will_help_you:
   - "Understand the Retention Analysis chart's retention view"
   - 'Understand the different ways to measure retention'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717103005
+updated_at: 1743538493
 landing: true
 landing_blurb: 'Understand the different ways to measure retention'
+academy_course:
+  - 04e8de22-8441-45b0-9a26-06e0a6f8a1b5
 ---
 Amplitude’s **Retention Analysis** chart helps you drive product adoption by showing you how often users return to your product after triggering an initial event. This article describes how the Retention Analysis chart works, and how you should interpret the data it contains.
 

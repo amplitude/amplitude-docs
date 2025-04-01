@@ -3,10 +3,12 @@ id: b8db5ecf-b7b0-432d-b1f3-19ae70d13291
 blueprint: web_experiment
 title: 'Set up a web experiment'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1740522217
+updated_at: 1743537935
 this_article_will_help_you:
   - 'Understand the difference between a Web Experiment and a feature experiment'
   - 'Build a Web Experiment using the Visual Editor'
+academy_course:
+  - f380a3b6-4f2f-4f90-834f-84009d44dc5a
 ---
 Amplitude **Web Experiment** lets you create an A/B or [multi-armed bandit experiment](/docs/feature-experiment/workflow/multi-armed-bandit-experiments) **without new code**. Open your site in the [Visual Editor](#the-visual-editor), choose the elements you’d like to experiment with, and make changes to their content or properties directly. This allows for less-technical users to easily create experiments without engineering resources.
 

@@ -1,11 +1,13 @@
 ---
 id: 062d89f1-1e39-4f90-8490-1ee34c5647f9
 blueprint: get-started
-title: Use Autocapture to get fast insights
+title: 'Use Autocapture to get fast insights'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1722531117
+updated_at: 1742491699
+academy_course:
+  - fcefbf26-273d-49a9-adbf-89440c8cb48b
 ---
 Amplitude's [Autocapture](/docs/data/autocapture) is the best option for getting up and running quickly. This document helps you enable Autocapture across your digital products for out of the box analytics with minimal engineering.
 
