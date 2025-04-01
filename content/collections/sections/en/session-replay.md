@@ -4,10 +4,12 @@ blueprint: section
 title: 'Session Replay'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1730929249
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1743537777
 nav_title: session_replay
 hide_toc: false
+academy_course:
+  - c21d8f17-d66b-4bd3-a340-b139dbb7a835
 ---
 Sometimes you need to go beyond a funnel analysis to understand the "why" behind your product metrics. Amplitude’s built-in Session Replay feature gives full visibility in the customer journey by uncovering qualitative insights from your quantitative data. It brings digital experiences to life, unlocking growth bottlenecks and giving you the confidence to take appropriate action.
 

@@ -6,10 +6,12 @@ this_article_will_help_you:
   - 'Run analyses from data in your own data warehouse'
 source: 'https://help.amplitude.com/hc/en-us/articles/26003996242203-Warehouse-native-Amplitude-Run-analyses-from-data-in-your-own-data-warehouse'
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1720732273
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1742328339
 landing: true
 landing_blurb: 'Your data warehouse stores critical data on every aspect of your business.'
+academy_course:
+  - 7e4cdb01-8c5f-403d-8553-93395c74ffa1
 ---
 Your data warehouse stores critical data on every aspect of your business. But some of that data never makes its way into Amplitude, making it inaccessible for Amplitude analyses you want to run.
 

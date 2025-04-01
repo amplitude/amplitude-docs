@@ -7,10 +7,12 @@ this_article_will_help_you:
   - 'Understand the purpose of the Retention Analysis chart and familiarize yourself with its interface'
   - 'Understand how Amplitude applies time to a retention analysis'
   - 'Build a Retention Analysis chart'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1728058578
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1743538471
 landing: true
 landing_blurb: 'Understand the purpose of the Retention Analysis chart and familiarize yourself with its interface'
+academy_course:
+  - 04e8de22-8441-45b0-9a26-06e0a6f8a1b5
 ---
 Amplitude’s **Retention Analysis** chart helps you drive product adoption by showing you how often users return to your product after taking a specific action (known as **triggering an event**). 
 

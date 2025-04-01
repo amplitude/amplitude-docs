@@ -1175,6 +1175,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'statamic/eloquent-driver' => array(
+            'pretty_version' => 'v4.18.0',
+            'version' => '4.18.0.0',
+            'reference' => 'b5ed5ba2b794b753449f5d2dfdd8c445fefdfb09',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../statamic/eloquent-driver',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'statamic/ssg' => array(
             'pretty_version' => '3.0.2',
             'version' => '3.0.2.0',
@@ -1187,7 +1196,11 @@
         'statamic/statamic' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
+<<<<<<< HEAD
+            'reference' => '28dcba1ddb7d5d7e3d0f7da81d747098bfd7d89b',
+=======
             'reference' => '7b80be4601f6783d10e7873526a2744ce96c12a9',
+>>>>>>> main
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -6,7 +6,9 @@ source: 'https://help.amplitude.com/hc/en-us/articles/16427848208539-Understand-
 landing: true
 landing_blurb: 'Learn the difference between the three different Journey visualizations'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717103599
+updated_at: 1743538600
+academy_course:
+  - bd75ea62-37df-4ba9-a32b-459a73933d9e
 ---
 Each Journeys chart consists of the Pathfinder and Journey Map visualizations. Both views tell you something different about the customer journey your users are experiencing. Navigate between them by selecting the appropriate tab along the top of the chart area.
 

@@ -50,6 +50,7 @@ return array(
     'Swiftmade\\StatamicClearAssets\\' => array($vendorDir . '/swiftmade/statamic-clear-assets/src'),
     'Stringy\\' => array($vendorDir . '/statamic/stringy/src'),
     'Statamic\\StaticSite\\' => array($vendorDir . '/statamic/ssg/src'),
+    'Statamic\\Eloquent\\' => array($vendorDir . '/statamic/eloquent-driver/src'),
     'Statamic\\' => array($vendorDir . '/statamic/cms/src'),
     'Spatie\\ShikiPhp\\' => array($vendorDir . '/spatie/shiki-php/src'),
     'Spatie\\LaravelIgnition\\' => array($vendorDir . '/spatie/error-solutions/legacy/laravel-ignition', $vendorDir . '/spatie/laravel-ignition/src'),
