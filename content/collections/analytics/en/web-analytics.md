@@ -71,11 +71,11 @@ For conversion insights, you can also:
 - View the data table fields by channel or campaign.
 - Display total conversions or conversion rate.
 
-### Ad metrics definitions
+### Ad metric definitions
 
 Here are the default Ad metrics available in Out-of-the-box Marketing Analytics, along with the high-level formulas and definitions:
 
-| **Metric**     | **Formula**                                             | **Definition**                                                                                                                                                     |
+| Metric     | Formula                                             | Definition                                                                                                                                                     |
 |----------------|---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Impressions**| `PROPSUM(ad_metrics.impressions)`                      | Total number of times your ad is served (shown) to users. **Derived from Daily Ad Metrics**.                                                                       |
 | **Clicks**     | `PROPSUM(ad_metrics.clicks)`                           | Total number of times users click your ad. **Derived from Daily Ad Metrics**.                                                                                      |
