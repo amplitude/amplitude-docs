@@ -168,7 +168,7 @@ To add Databricks as a source in Amplitude, complete the following steps.
 2. If you selected `Event` as the data type, choose the import strategy:
 
 - **Append Only Sync**: Ingest data warehouse data with Amplitude's standard enrichment services like ID resolution, property and attribution syncing, and resolving location info.
-- **Mirror Sync**: Directly mirror the data in Snowflake with insert, update, and delete operations. This deactivates Amplitude's enrichment services to remain in sync with your source of truth.
+- **Mirror Sync**: Directly mirror the data in Databricks with insert, update, and delete operations. This deactivates Amplitude's enrichment services to remain in sync with your source of truth.
 
 3. Configure the SQL command that transforms data in Databricks before Amplitude imports it.
     - Amplitude treats each record in the SQL execution output as an event to be import. See the Example body in the [Batch Event Upload API](/docs/apis/analytics/batch-event-upload) documentation to ensure each record you import complies.
