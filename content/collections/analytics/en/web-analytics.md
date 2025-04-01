@@ -71,9 +71,9 @@ For conversion insights, you can also:
 - View the data table fields by channel or campaign.
 - Display total conversions or conversion rate.
 
-### Ads metrics definitions
+### Ad metrics definitions
 
-Here are the default Ads metrics available in Out-of-the-box Marketing Analytics, along with the high-level formulas and definitions:
+Here are the default Ad metrics available in Out-of-the-box Marketing Analytics, along with the high-level formulas and definitions:
 
 | **Metric**     | **Formula**                                             | **Definition**                                                                                                                                                     |
 |----------------|---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -94,7 +94,7 @@ Follow these steps to manage settings, create goals, or customize tracked events
 
 1. Click *Customize*.
 2. Select the type of setting you’d like to modify:
-   * If *Page View and Filter*, choose the event and property that you’d like to use. This will affect all page-related metrics.
+   * If *Page View and Filter*, choose the event and property that you’d like to use. This affects all page-related metrics.
    * For *Breakdown*, choose the default channels you want to display, as well as your campaign and page engagement properties.
    * Set *Conversion Funnel* settings by choosing the events that make up your funnel.
    * For Ad Performance, select events and properties to calculate CAC and ROAS metrics, along with properties such as ad source, campaign, and content.
@@ -107,7 +107,7 @@ To view insights on ad performance, you need to connect to an ad network (for ex
 
 Amplitude associates advertising metrics with an event called `Daily Ad Metrics`.
 
-The following user properties are set with the `Daily Ad Metrics` event and display by default in the breakdown table on the Ads Performance tab:
+The following user properties are set with the `Daily Ad Metrics` event and display by default in the breakdown table on the Ad Performance tab:
 
 * UTM Campaign
 * UTM Content
