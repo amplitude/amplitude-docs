@@ -522,12 +522,9 @@ FROM your_table
 WHERE TO_DATE(event_timestamp) BETWEEN '2024-01-01' AND '2024-01-31'
 ```
 
-## Troubleshooting Snowflake Imports
+## Troubleshooting
 
-1. SQL compilation error: Invalid identifier INFORMATION_SCHEMA.QUERY_HISTORY_BY_SESSION. Results not generated.
+1. **Error: `SQL compilation error: Invalid identifier INFORMATION_SCHEMA.QUERY_HISTORY_BY_SESSION. Results not generated.`**
 
-This error commonly appears in situations where a Snowflake import source used to work but suddenly stopped.
-
-It indicates that the Snowflake role associated with your import no longer has permission to access the INFORMATION_SCHEMA of your Snowflake database. Access to the information schema is required for Amplitude to successfully query metadata and complete ingestion.
-
-This typically happens when the customer’s Snowflake role was changed or updated, unintentionally removing the necessary permissions. Ensure the role used for the integration has access to the database you specified.
+- **Cause**: This occurs when the Snowflake role used for the integration no longer has permission to access the `INFORMATION_SCHEMA` of the specified Snowflake database. Amplitude requires access to this schema to check the status of queries running on the customer's Snowflake instance.
+- **Solution**: Ensure that the role used for the integration has the necessary permissions to access the `INFORMATION_SCHEMA` in the target Snowflake database. This issue often arises if the role was recently changed or updated without the appropriate access being maintained.
