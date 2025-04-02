@@ -32,7 +32,7 @@ To bring up the Microscope menu, simply click on a data point in any supported c
 
 From here, you can:
 
-* **Zoom In** on a data point by going down to the next time interval granularity, for example when you click a dat point in a weekly chart and zoom in, the chart updates to daily granularity, and the time period in the date picker update to be the same as the time period of the original data point.
+* **Zoom In** on a data point by going down to the next time interval granularity, for example when you click a data point in a weekly chart and zoom in, the chart updates to daily granularity, and the time period in the date picker update to be the same as the time period of the original data point.
 * **Filter By** to quickly drill down and focus on the series.
 * **Exclude** or remove distracting or irrelevant series from the analysis.
 * **Create a cohort** of the users that make up the selected data point, which you can then further analyze by applying this [cohort](/docs/analytics/behavioral-cohorts) to other charts in Amplitude. When you apply a group in the Segmentation Module, you can also create a group cohort from here.
