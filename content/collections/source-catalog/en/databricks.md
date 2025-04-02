@@ -217,3 +217,43 @@ Depending on your company's network policy, you may need to add the following IP
     - 3.124.22.25
     - 18.157.59.125
     - 18.192.47.195
+
+## Troubleshooting
+1. ```
+   shaded.databricks.org.apache.hadoop.fs.s3a.AWSClientIOException: getFileStatus on s3a://com-amplitude-falcon/databricks_import/unloaded_data/source_destination_158631/batch_712300169/meta: com.amazonaws.SdkClientException: Unable to execute HTTP request: Remote host terminated the handshake: Unable to execute HTTP request: Remote host terminated the handshake
+   ---------------------------------------------------------------------------
+    Py4JJavaError                             Traceback (most recent call last)
+    File /databricks/spark/python/pyspark/errors/exceptions.py:228, in capture_sql_exception.<locals>.deco(*a, **kw)
+    227 try:
+    --> 228     return f(*a, **kw)
+    229 except Py4JJavaError as e:
+   ```
+    - **Root cause 1**: This error is caused by a limitation of clusters running in shared access mode due to their additional security hardening measures.
+    - **Solution 1**: Use a cluster configured with either single-user or no-isolation shared access mode.
+    - **Root cause 2**: For Azure Databricks, this issue could be caused by firewall settings where the Databricks cluster is not able to access the Amplitude s3 bucket.
+    - **Solution 2**: See if there is any network rules blocking databricks clusters from accessing Amplitude s3 bucket.
+
+2. ```
+   [Databricks][JDBCDriver](500593) Communication link failure. Failed to connect to server. Reason: HTTP Response code: 403, Error message: PERMISSION_DENIED: You do not have permission to autostart 0108-111840-mc2khhh6.. isCausedByCustomer=true,isAutomaticallyRecoverable=false,errorType=databricks-jdbc-connection-error.
+   ```
+    - **Root cause**: This error occurs when Amplitude attempts to establish a JDBC connection with your all-purpose cluster. If the cluster is terminated, Databricks automatically tries to restart it, resulting in a permission error if the PAT lacks sufficient privileges to start the cluster.
+    - **Solution**: Check out [doc](https://amplitude.com/docs/data/source-catalog/databricks#create-a-service-principal-personal-access-token-pat) here. You need to grant the Can Restart permission to the user on the cluster to allow access.
+
+3. ```
+   java.sql.SQLException: [Databricks][JDBCDriver](500593) Communication link failure. Failed to connect to server. Reason: HTTP Response code: 502, Error message: Unknown.
+    ```
+     - **Root cause**: could be because the Driver or executors might being unresponsive due to high memory usage. When the memory is full the driver/executors goes unresponsive for a few seconds during garbage collection to free memory. This can sometimes cause the communication link failure seen above.
+     - **Solution**: To avoid these sort of errors, the recommendation is to either 1) optimize the workloads and underlying tables to utilize less memory, 2) increase the memory of the driver or 3) increasing the limit of max workers so the cluster can add more workers during moments of heavy resource contention.
+
+4. ```
+   Caused by: java.sql.SQLException: [Databricks][JDBCDriver](500593) Communication link failure. Failed to connect to server. Reason: HTTP Response code: 554, Error message: Service is under maintenance..
+   ```
+    - **Root cause**: Issue on databricks’s Proxy API. 
+    - **Solution**: Escalate to databricks support to follow up.
+
+5. ```
+   Py4JJavaError: An error occurred while calling o450.isEmpty. 
+   : com.databricks.sql.transaction.tahoe.DeltaFileNotFoundException: [DELTA_EMPTY_DIRECTORY] No file found in the directory: s3
+   ```
+    - **Root cause**: That's because since delta log has been truncated and expired, so Amplitude service was not able to find delta log file to import.
+    - **Solution**: Reach out to Amplitude support to skip expired data and continue the import. By default, retention is 30 days, make sure to keep the data for at least 7 days.
