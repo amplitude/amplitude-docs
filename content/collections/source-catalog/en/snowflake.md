@@ -521,3 +521,10 @@ SELECT ...
 FROM your_table
 WHERE TO_DATE(event_timestamp) BETWEEN '2024-01-01' AND '2024-01-31'
 ```
+
+## Troubleshooting
+
+1. **Error: `SQL compilation error: Invalid identifier INFORMATION_SCHEMA.QUERY_HISTORY_BY_SESSION. Results not generated.`**
+
+- **Cause**: This occurs when the Snowflake role used for the integration no longer has permission to access the `INFORMATION_SCHEMA` of the specified Snowflake database. Amplitude requires access to this schema to check the status of queries running on the customer's Snowflake instance.
+- **Solution**: Ensure that the role used for the integration has the necessary permissions to access the `INFORMATION_SCHEMA` in the target Snowflake database. This issue often arises if the role was recently changed or updated without the appropriate access being maintained.
