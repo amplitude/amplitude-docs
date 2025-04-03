@@ -32,7 +32,7 @@ Session Replay captures changes to a page's Document Object Model (DOM), includi
 
 ## Before you begin
 
-Use the latest version of the Session Replay Plugin above version {{sdk_versions:session_replay_plugin}}. For more information, see the [change log](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/plugin-session-replay-browser/CHANGELOG.md) on GitHub.
+Use the latest version of the Session Replay Plugin above version {{sdk_versions:session_replay_plugin}}. For more information, see the [change log](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/session-replay-browser/CHANGELOG.md ) on GitHub.
 
 The Session Replay Plugin requires that:
 
@@ -143,7 +143,7 @@ const sessionReplayTracking = window.sessionReplay.plugin({
 
 ```
 
-Amplitude requires at least one event in any captured session to enable playback of the replay. Amplitude recommends that you leave Session Tracking enabled, as that triggers `[Amplitude] Session Start` at the beginning of the session. If you disable session tracking, configure another event to fire early in the session for best results.
+Amplitude requires at least one event in any captured session to enable playback of the replay.
 {{/partial:admonition}}
 
 ### Mask on-screen data
@@ -299,7 +299,7 @@ Keep the following limitations in mind as you implement Session Replay:
   - A known user begins on the marketing site, and logs in to the web application.
   - Amplitude captures both sessions.
   - The replay for each session is available for view in the host project.
-- Session Replay supports standard session definitions, and doesn't support [custom session definitions](/docs/data/sources/instrument-track-sessions).
+- Session Replay supports standard session definitions, and doesn't support time-based or [custom session definitions](/docs/data/sources/instrument-track-sessions).
 - Session Replay can't capture the following HTML elements:
   - Canvas
   - WebGL
@@ -345,7 +345,7 @@ The Session Replay Plugin enables session tracking by default. If you instrument
 
 If you use a method other than the Browser SDK to instrument your events, consider using the [Session Replay Standalone SDK](/docs/session-replay/session-replay-standalone-sdk/)
 
-{{partial:partials/session-replay/sr-web-mismatch}}
+{{partial:partials/session-replay/sr-web-mismatch type="plugin"}}
 
 ### Session Replay processing errors
 
@@ -353,6 +353,6 @@ In general, replays should be available within minutes of ingestion. Delays or e
 
 - Mismatching API keys or Device IDs. This can happen if Session Replay and standard event instrumentation use different API keys or Device IDs.
 - Session Replay references the wrong project.
-- Short sessions. If a users bounces within a few seconds of initialization, the SDK may not have time to upload replay data.
+- Short sessions. If a user bounces within a few seconds of initialization, the SDK may not have time to upload replay data.
 - Page instrumentation. If Session Replay isn't implemented on all pages a user visits, their session may not capture properly.
 - Replays older than the set [retention period](#retention-period) (defaults to 30 days, or 90 days if you purchase extra volume).
