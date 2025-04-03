@@ -91,14 +91,12 @@ Click *Play* to see the session view in the modal that appears. 
 
 To review your Session Replay quota and retention time frame, navigate to the Plans & Billing page for your organization.
 
-To see an approximation of the number of sessions that have associated replays, create a [User Sessions Chart](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) and configure it to include all sessions with any active event, where the first property value of `Session Replay ID` isn't equal to `"(none)"`. This includes all session replays with a value.
-
 ## Search for a replay
 
 Session replay gives you two options for searching replays: either by date, or with a filter.
 
 1. Navigate to *Session Replay* to see the complete list of session replays available for viewing.
-2. To narrow the list by date, click the calendar icon just above the list and select the starting and ending dates you'd like to use. You can also use a preset timeframe—seven days, 30 days, 60 days, or 90 days—by clicking on the appropriate button.
+2. To narrow the list by date, click the calendar icon just above the list and select the starting and ending dates you'd like to use. You can also use a preset time range: one day, seven days, or 30 days.
 
 Filtered results by date or time frame match the project's timezone.
 
@@ -137,7 +135,7 @@ With Session Replay, you can:
 
 There are some limitations when using Session Replay:
 
-* Session Replay supports standard session definitions only. [Custom session definitions](/docs/data/sources/instrument-track-sessions) aren't supported.
+* Session Replay supports standard session definitions only. [Custom session definitions](/docs/data/sources/instrument-track-sessions) and time-based session definitions aren't supported.
 * Session Replay can only be used to segment by users, and isn't available for [account-level reporting](/docs/analytics/account-level-reporting).
 * If you are in a portfolio view, you can see replays for different users under different projects. However, keep in mind that Session Replay doesn't stitch together replays from a single user across multiple projects. If a user begins a session in one project and then continues to a second project, Amplitude Analytics generates separate replays for that user for each project.
 * Session Replay doesn't capture these unsupported HTML elements:
