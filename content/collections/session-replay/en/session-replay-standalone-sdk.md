@@ -30,7 +30,7 @@ Session Replay captures changes to a page's Document Object Model (DOM), includi
 
 ## Before you begin
 
-Use the latest version of the Session Replay standalone SDK above version {{sdk_versions:session_replay_standalone}}. For more information, see the [change log](https://github.com/amplitude/Amplitude-TypeScript/blob/v1.x/packages/session-replay-browser/CHANGELOG.md) on GitHub.
+Use the latest version of the Session Replay standalone SDK above version {{sdk_versions:session_replay_standalone}}. For more information, see the [change log](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/session-replay-browser/CHANGELOG.md ) on GitHub.
 
 Session Replay Standalone SDK requires that:
 
@@ -79,7 +79,7 @@ await sessionReplay.init(AMPLITUDE_API_KEY, {
 }).promise;
 
 // Call whenever the session id changes
-sessionReplay.setSessionId(sessionId);
+await sessionReplay.setSessionId(sessionId).promise;
 
 // When you send events to Amplitude, call this event to get
 // the most up to date session replay properties for the event
@@ -94,7 +94,7 @@ Session Replay instrumentation happens in the context of an Amplitude Project. Y
 You can also use script tags to instrument Session Replay:
 
 ```js
-<script src="https://cdn.amplitude.com/libs/session-replay-browser-1.10.0-min.js.gz"></script>
+<script src="https://cdn.amplitude.com/libs/session-replay-browser-{{sdk_versions:session_replay_standalone}}-min.js.gz"></script>
 <script>
 window.sessionReplay.init(AMPLITUDE_API_KEY, {
     deviceId: "<string>",
@@ -213,12 +213,12 @@ import * as sessionReplay from "@amplitude/session-replay-browser";
 import 3rdPartyAnalytics from 'example'
 
 const AMPLITUDE_API_KEY = <...>
-sessionReplay.init(AMPLITUDE_API_KEY, {
+await sessionReplay.init(AMPLITUDE_API_KEY, {
  deviceId: <string>,
  sessionId: <number>,
  optOut: <boolean>,
  sampleRate: <number>
-})
+}).promise;
 
 if (nonEUCountryFlagEnabled) {
  const sessionReplayProperties = sessionReplay.getSessionReplayProperties();
@@ -293,19 +293,6 @@ Keep the following limitations in mind as you implement Session Replay:
   - Assets that require authentication, like fonts, CSS, or images
 - - Session Replay isn't compatible with ad blocking software.
 
-### Multiple Amplitude instances
-
-Session Replay supports attaching to a single instance of the Amplitude SDK. If you have more than one instance instrumented in your application, make sure to start Session Replay on the instance that most relates to your project.
-
-```html
-<script>
- const sessionReplayTracking = window.sessionReplay.plugin();
-  const instance = window.amplitude.createInstance();
-  instance.add(sessionReplayTracking);
-  instance.init(API_KEY);
-<script>
-```
-
 ## Troubleshooting
 
 For more information about individual statuses and errors, see the [Session Replay Ingestion Monitor](/docs/session-replay/ingestion-monitor).
@@ -323,7 +310,7 @@ To help resolve CSS loading issues:
 - Your CDN should keep track of old stylesheets for older replays. If the content of the same stylesheet changes over time, try to append a unique string or hash to the asset URL. For example, `stylesheet.css?93f8b89`.
 - Add `app.amplitude.com` or `app.eu.amplitude.com` to the list of domains that your server's CORS configuration permits.
 
-{{partial:partials/session-replay/sr-web-mismatch}}
+{{partial:partials/session-replay/sr-web-mismatch type="standalone"}}
 
 ### Session Replay processing errors
 
@@ -331,8 +318,8 @@ In general, replays should be available within minutes of ingestion. Delays or e
 
 - Mismatching API keys or Device IDs. This can happen if Session Replay and standard event instrumentation use different API keys or Device IDs.
 - Session Replay references the wrong project.
-- Short sessions. If a users bounces within a few seconds of initialization, the SDK may not have time to upload replay data.
+- Short sessions. If a user bounces within a few seconds of initialization, the SDK may not have time to upload replay data.
 - Page instrumentation. If Session Replay isn't implemented on all pages a user visits, their session may not capture properly.
-- Replays older than the set [retention period](#retention-period) (defaults to 90 days).
+- Replays older than the set [retention period](#retention-period) (defaults to 30 days, or 90 days if you purchase extra volume).
 
 
