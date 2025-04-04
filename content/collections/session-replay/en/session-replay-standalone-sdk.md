@@ -132,7 +132,6 @@ The Session Replay SDK outputs the Session Replay properties that you need to ad
 {{partial:admonition type="info" heading=""}}
 Amplitude links replays with a session replay ID.  To combine multiple sessions into a single replay, ensure each session references the same device ID and session ID.
 
-To combine multipe se
 {{/partial:admonition}}
 
 {{partial:admonition type="warning" heading="Important"}}
