@@ -67,7 +67,7 @@ If you have an experiment that you need to re-run, see [New Experiment Run](/doc
 Before running your web experiment, Amplitude recommends that you test and preview each variant. Once you're ready:
 
 1. Click *Test & Preview*. This puts your experiment in test instrumentation mode, but it **doesn't** start your experiment. Only users who open the page with the preview link can see your changes.
-2. In the modal, click the *Preview* button to open a new tab with the chnages you made for that variant applied. Click on the chain link icon to copy the link into the clipboard so you can share the link with others to view the experiment changes.
+2. In the modal, click *Preview* to open a new tab that applies the changes you made for that variant. Click chain link icon to copy the URL so you can share it with others.
 
 Test each variant at least once, and testing on more than one page if your experiment targets multiple pages.
 
