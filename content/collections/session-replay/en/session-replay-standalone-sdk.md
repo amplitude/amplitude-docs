@@ -130,7 +130,9 @@ The Session Replay SDK outputs the Session Replay properties that you need to ad
 `[Amplitude] Session Replay ID` is a unique identifier for the replay, and is different from `[Amplitude] Session ID`, which is the identifier for the user's session.
 
 {{partial:admonition type="info" heading=""}}
-Session replays are linked using a session replay ID. To combine multiple sessions into a single replay, ensure that the same device ID and session ID are consistently used across those sessions.
+Amplitude links replays with a session replay ID.  To combine multiple sessions into a single replay, ensure each session references the same device ID and session ID.
+
+To combine multipe se
 {{/partial:admonition}}
 
 {{partial:admonition type="warning" heading="Important"}}
