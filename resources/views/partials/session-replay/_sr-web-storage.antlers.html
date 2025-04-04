@@ -1,0 +1,21 @@
+{{markdown}}
+
+## Session Replay storage
+
+Session Replay doesn't set cookies on the user's browser. Instead, it relies on a browser storage option called [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) by default. This option enables continuous replay collection during a session in which the user navigates browser tabs or closes and reopens a tab. The SDK cleans up the data it stores in IndexedDB and shouldn't impact the user's disk space.
+
+If the environment does not support IndexedDB, Session Replay will fall back to an in-memory storage option. In-memory storage is less durable and data will be lost if the browser window is closed. You can explicitly choose not to use IndexedDB by configuring the `storeType` option to `'memory'`.
+
+If a user opts out of all cookies on your site, use the `optOut` configuration option to disable replay collection for that user.
+
+### IndexedDB best practices
+
+To ensure that IndexedDB is initialized and working properly:
+
+* Review CSP headers to ensure they're not overly restrictive. Ensure `default-src` and `script-src` directives allow necessary sources.
+
+* Perform IndexedDB operations within the same origin. Cross-origin restrictions can block IndexedDB operations.
+
+* Confirm that users use a modern browser that supports IndexedDB. Amplitude recommends the latest versions of Chrome, Firefox, Safari, Edge, or Opera.
+
+{{/markdown}}
