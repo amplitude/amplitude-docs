@@ -136,7 +136,7 @@ To combine multipe se
 {{/partial:admonition}}
 
 {{partial:admonition type="warning" heading="Important"}}
-For a replay to be visible in the Amplitude UI, you must tag at least one Amplitude event with the `[Amplitude] Session Replay ID` property. Without this, the replay won't appear in the interface.
+For a replay to be visible in the Amplitude UI, tag at least one Amplitude event with the `[Amplitude] Session Replay ID` property. Without this, the replay doesn't appear in the interface.
 {{/partial:admonition}}
 
 The [Session Replay Browser Plugin](/docs/session-replay/session-replay-plugin) handles this by default, since Amplitude manages event instrumentation. With the Standalone SDK, you need to instrument your application to add this property to any events that occur during capture. 
