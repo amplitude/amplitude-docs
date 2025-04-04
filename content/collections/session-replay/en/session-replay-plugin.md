@@ -268,27 +268,11 @@ When you delete the Amplitude project on which you use Session Replay, Amplitude
 
 Session Replay uses the same [block filter](/docs/data/block-bot-traffic) available in the Amplitude app. Session Replay doesn't block traffic based on event or user properties.
 
-## Session Replay storage
+{{partial:partials/session-replay/sr-web-storage}}
 
-Session Replay doesn't set cookies on the user's browser. Instead, it relies on a browser storage option called [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API). This option enables continuous replay collection during a session in which the user navigates browser tabs or closes and reopens a tab. The SDK cleans up the data it stores in IndexedDB and shouldn't impact the user's disk space.
+### Cookies
 
-If a user opts out of all cookies on your site, use the `optOut` configuration option to disable replay collection for that user.
-
-{{partial:admonition type="note" heading="Session Replay and cookie size"}}
-Session Replay doesn't use cookies directly, and has no impact on cookie size. 
-
-[Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) uses cookies for session management.
-{{/partial:admonition}}
-
-### IndexedDB best practices
-
-To ensure that IndexedDB is initialized and working properly:
-
-* Review CSP headers to ensure they're not overly restrictive. Ensure `default-src` and `script-src` directives allow necessary sources.
-
-* Perform IndexedDB operations are within the same origin. Cross-origin restrictions can block IndexedDB operations.
-
-* Confirm that users use a modern browser that supports IndexedDB. Amplitude recommends the latest versions of Chrome, Firefox, Safari, Edge, or Opera.
+Session Replay doesn't use cookies directly, and has no impact on cookie size. [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) uses cookies for session management.
 
 ## Known limitations
 
