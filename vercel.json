@@ -12,6 +12,11 @@
       "statusCode": 301
     },
     {
+      "source":"/docs/feature-experiment/troubleshooting/restart-an-experiment",
+      "destination": "/docs/feature-experiment/troubleshooting/new-experiment-run",
+      "statusCode": 301
+    },
+    {
       "source":"/docs/amplitude-experiment",
       "destination": "/docs/feature-experiment",
       "statusCode": 301
