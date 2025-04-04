@@ -63,9 +63,7 @@ To set up a web experiment, follow these steps:
 Before running your web experiment, Amplitude recommends that you test and preview each variant. Once you're ready:
 
 1. Click *Test & Preview*. This puts your experiment in test instrumentation mode, but it **doesn't** start your experiment. Only users who open the page with the preview link can see your changes.
-2. In the modal, select the variant you want to preview (usually the treatment) and select *Test in new window*.
-
-A new tab opens with the changes you made to the page applied.
+2. In the modal, click the *Preview* button to open a new tab with the chnages you made for that variant applied. Click on the chain link icon to copy the link into the clipboard so you can share the link with others to view the experiment changes.
 
 Test each variant at least once, and testing on more than one page if your experiment targets multiple pages.
 
