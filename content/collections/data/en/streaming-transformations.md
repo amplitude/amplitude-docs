@@ -44,6 +44,9 @@ There are some limitations when streaming transformations from Amplitude:
 * You can't stream **lookup properties** directly. Lookup properties allow you to upload a .csv file mapping an existing event or user property to a list of new properties, used to add more properties to already ingested events during query time based on the lookup property. However, these mapped properties aren't selectable when setting up the sync in either event filters or when sending more properties to the destination.
 * You can only stream **channel classifiers** directly by requesting it from Amplitude. Channels, which act like derived properties applied in real-time when querying within Amplitude, are mainly used by marketers to define their acquisition channels based on UTM and referrer data. Although they're used as a property where values map to specific rules on existing properties, these channel properties can't be selected when setting up the sync in either event filters, or when sending more properties to the destination, unless you've explicitly enabled this feature.
 * Streaming transformation is available for all streaming destinations except for Data Warehouse destinations.
+* Some custom events aren't selectable in event streaming if:
+  *  They use properties that Amplitude doesn't support
+  *  They use a set operation that Amplitude doesn't support
 
 ## FAQ
 
