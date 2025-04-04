@@ -38,7 +38,6 @@ Amplitude makes the following changes to your experiment configuration when you 
 | Property                          | How it changes after on a new run                                                                          |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | [Experiment Key](#experiment-key) | Updated to a new value                                                                                        |
-| Exposure Event                    | If your experiment is using a custom exposure event, it resets to the default Amplitude exposure event |
 | Start Date                        | Updated to the date of the restart                                                                            |
 | End Date                          | (Optional) Updated to your selected value                                                                     |
 | Bucketing Salt                    | (Optional) If selected, randomized to a new value                                                             |
@@ -47,7 +46,19 @@ Amplitude makes the following changes to your experiment configuration when you 
 
 ## Experiment Key
 
-Amplitude uses the experiment key property on exposure events to differentiate your new run from the previous run.
+By default, Amplitude delimits your experiment runs by time, but you can optionally differentiate runs with the experiment key property on the default exposure event. This helps ensure your new run doesn't include stale evaluated users. After you create your new experiment run, enable the setting under the exposure event control to use the experiment key.
+
+To use the experiment key: 
+
+1. Your experiment must use Amplitude's default exposure tracking.
+2. Your client SDK version must support experiment restarts.
+
+| SDK          | Minimum version |
+| ------------ | --------------- |
+| JavaScript   | v1.10.2          |
+| Android      | v1.10.0         |
+| iOS          | v1.11.0         |
+| React Native | v1.2.0          |
 
 If you use the [Evaluation API](/docs/apis/experiment/experiment-evaluation-api), the response body contains the experiment key of the currently running experiment.
 
@@ -67,11 +78,3 @@ Similarly this experiment key is available when using fetching variants using Ex
 For example, for the JavaScript SDK:
 
 The [Variant](/docs/sdks/experiment-sdks/experiment-javascript#variant) object contains the existing `value` and `payload` properties, along with a new `expKey` property.
-
-## After restarting
-
-When the new run begins, the exposure event updates to use the new experiment key.
-
-![A sample exposure event](statamic://asset::help_center_conversions::experiment-troubleshoot/exposure-event-with-exp-key.png)
-
-This new filter on the exposure event ensures that Amplitude doesn't include previously recorded exposure and metric data in the experiment analysis.
