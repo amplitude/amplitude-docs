@@ -58,6 +58,10 @@ To set up a web experiment, follow these steps:
 13. The *Advanced* tab provides several [additional options](/docs/feature-experiment/workflow/finalize-statistical-preferences) for your experiment.
 14. When you’re ready, click *Save and Close* to finish creating your Web Experiment.
 
+{{partial:admonition type="tip" heading="Create a new run of an existing experiment"}}
+If you have an experiment that you need to re-run, see [New Experiment Run](/docs/feature-experiment/troubleshooting/new-experiment-run)
+{{/partial:admonition}}
+
 ## Test and preview your web experiment
 
 Before running your web experiment, Amplitude recommends that you test and preview each variant. Once you're ready:
@@ -120,9 +124,6 @@ Keep the following in mind as you move elements on the page:
 * Ensure that JavaScript doesn't reset your changes after you apply them.
 * Moving an element ignores invisible elements in your DOM.
 
-
-
-
 ### Navigation mode
 
 Navigation Mode enables you to navigate between pages in your experiment without exiting the editor. 
@@ -142,3 +143,4 @@ To enter Navigation mode:
    * If you navigate to a page not included in your experiment and attempt to make edits, the Visual Editor automatically updates the page targeting rule to include the page URL and displays a message to let you know.
 4. When you land on the page you went to edit, click the pencil icon to toggle the Visual Editor back to *Edit mode*.
 5. Toggle between Edit and Navigation mode as needed to complete your experiment's configuration.
+
