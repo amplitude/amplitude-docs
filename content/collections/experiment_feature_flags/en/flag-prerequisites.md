@@ -29,7 +29,7 @@ This card provides a summary of all flag dependencies, including prerequisite fl
 	- They're in the same project.
 	- They've compatible evaluation modes. Local evaluation mode flags and experiments can only have local evaluation mode prerequisites, while remote evaluation mode flags and experiments can have both remote and local prerequisites.
 
-	You can’t add a prerequisite that would create a circular dependency loop.
+	You can’t add a prerequisite that are prerequisites of each other.
 	{{/partial:admonition}}
 
 1. Select the variants that you want to be dependent on.`off` is a special value that represents when users weren't included in the prerequisite flag or experiment.
@@ -49,7 +49,7 @@ For flags and experiments with dependents, Amplitude prevents the following acti
 
 This example provides more information about how evaluation works when there are prerequisite flags.
 
-Example scenario: I want to ensure that my new feature flag (Flag-B) rolls out to users who have seen another feature (Flag-A). In Flag-B, I’ve added a dependency for the on variant of Flag-A and activated both flags.
+Example scenario: You want to ensure that my new feature flag (Flag-B) rolls out to users who have seen another feature (Flag-A). In Flag-B, I’ve added a dependency for the `on` variant of Flag-A and activated both flags.
 
 When Amplitude evaluates users for Flag-B:
 
@@ -59,7 +59,7 @@ When Amplitude evaluates users for Flag-B:
  
 2. Evaluate the user for dependencies, in this case: Flag-A. 
 
-   - If the user doesn't receive the on variant for Flag-A, Amplitude excludes them from Flag-B.
+   - If the user doesn't receive the `on` variant for Flag-A, Amplitude excludes them from Flag-B.
 
 3. Evaluate the user for Flag-B.
 
@@ -71,7 +71,7 @@ Flag prerequisites are extremely flexible and have many use cases. That said, he
 
 ### Release groups
 
-Use flag prerequisites to build a primary feature with multiple sub-features. Sub-features require the primary feature to be on, unless a you include an individual user as a tester in one of the sub-features. Targeting and bucketing options that apply to the primary feature apply to all sub-features that list the primary feature as a prerequisite.
+Use flag prerequisites to build a primary feature with multiple sub-features. Sub-features require the primary feature to be `on`, unless a you include an individual user as a tester in one of the sub-features. Targeting and bucketing options that apply to the primary feature apply to all sub-features that list the primary feature as a prerequisite.
 
 Common use cases for release groups include:
 
@@ -81,13 +81,13 @@ Common use cases for release groups include:
 
 ![Diagram of example release group.](/docs/output/img/experiment/release-group.drawio.svg)
 
-This example contains a primary-feature flag and sub-feature flags that list the primary feature as a prerequisite.
+This example contains a `primary-feature` flag and `sub-feature` flags that list the primary feature as a prerequisite.
 
-The primary-feature flag targets all users where the user property premium is true with 100% allocation. Therefore, sub-features are only evaluated if the user has the required user property and meets the sub-feature's criteria—unless the user is individually included in the sub-feature's testers section.
+The `primary-feature` flag targets all users where the user property premium is true with 100% allocation. Therefore, `sub-features` are only evaluated if the user has the required user property and meets the sub-feature's criteria—unless the user is individually included in the sub-feature's testers section.
 
-- The sub-feature-1 flag includes additional targeting criteria for users where the user property beta is true. A user must have both the premium and beta user properties set to true before they can set to sub-feature-1.
-- The sub-feature-2 flag allocates 100% of users. All users with the premium user property set to true receive the flag.
-- The sub-feature-3 flag allocates 0% of users. No users have sub-feature-3, even if the premium user property is true.
+- The `sub-feature-1` flag includes additional targeting criteria for users where the user property `beta` is `true`. A user must have both the `premium` and `beta` user properties set to true before they can set to `sub-feature-1`.
+- The `sub-feature-2` flag allocates 100% of users. All users with the `premium` user property set to `true` receive the flag.
+- The `sub-feature-3` flag allocates 0% of users. No users have `sub-feature-3`, even if the `premium` user property is `true`.
 
 ### Chained mutual exclusion groups
 
@@ -97,7 +97,7 @@ Use flag prerequisites to build complex hierarchies of mutually exclusive experi
 
 In this example, experiment-1 is running, and experiment-2, which is mutually exclusive to experiment-1, is set to run.
 
-- The experiment-1 experiment allocates 20% of users to a 50/50 control/treatment split.
-- The experiment-2 experiment lists experiment-1 as a prerequisite and allocates 100% of users to a 50/50 control/treatment split.
+- The `experiment-1` experiment allocates 20% of users to a 50/50 control/treatment split.
+- The `experiment-2` experiment lists `experiment-1` as a prerequisite and allocates 100% of users to a 50/50 control/treatment split.
 
-The experiment assigns 20% of users to experiment-1 and assigns the remaining 80% to experiment-2. The experiment assigns no users to variants for either experiment-1 or experiment-2, unless they're testers.
+The experiment assigns 20% of users to `experiment-1` and assigns the remaining 80% to `experiment-2`. The experiment assigns no users to variants for either `experiment-1` or `experiment-2`, unless they're testers.
