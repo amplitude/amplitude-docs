@@ -129,6 +129,15 @@ The Session Replay SDK outputs the Session Replay properties that you need to ad
 
 `[Amplitude] Session Replay ID` is a unique identifier for the replay, and is different from `[Amplitude] Session ID`, which is the identifier for the user's session.
 
+{{partial:admonition type="info" heading=""}}
+Amplitude links replays with a session replay ID.  To combine multiple sessions into a single replay, ensure each session references the same device ID and session ID.
+
+{{/partial:admonition}}
+
+{{partial:admonition type="warning" heading="Important"}}
+For a replay to be visible in the Amplitude UI, tag at least one Amplitude event with the `[Amplitude] Session Replay ID` property. Without this, the replay doesn't appear in the interface.
+{{/partial:admonition}}
+
 The [Session Replay Browser Plugin](/docs/session-replay/session-replay-plugin) handles this by default, since Amplitude manages event instrumentation. With the Standalone SDK, you need to instrument your application to add this property to any events that occur during capture. 
 
 ## Configuration
