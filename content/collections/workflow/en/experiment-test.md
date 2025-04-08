@@ -19,7 +19,7 @@ When you test your instrumentation, Amplitude ignores target segments you config
 
 ## QA before rollout
 
-Before any users see your experiment, you’ll want to make sure that the variants you’ve developed look and function exactly the way you intended.
+Before any users see your experiment, make sure the variants you’ve developed look and function exactly the way you intended.
 
 Because Experiment allows you to assign specific variants by user ID, device ID, or cohort, you can quickly and easily ensure that Amplitude servers your test devices the relevant variants when they enter your experiment. 
 
