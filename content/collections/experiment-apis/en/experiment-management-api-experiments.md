@@ -1187,7 +1187,7 @@ Create a new feature experiment.
 | `bucketingKey`                         | Optional    | string       | The user property to bucket the user by.                                                                                                                                  |
 | `rolloutWeights`                       | Optional    | object       | Rollout weights for non-targeted users. The object should be a mapping from variant key to rollout weight as an integer. For example: `{ "control": 1, "treatment": 1 }`. |
 | `targetSegments`                       | Optional    | object       | See the [`targetSegments`](#targetsegments) table for more information.                                                                                                   |
-| `deployments`                          | Optional    | string array | Array of deployments that the experiment should be assigned to.                                                                                                           |
+| `deployments`                          | Optional    | string array | Array of deployment ids that the experiment should be assigned to.                                                                                                           |
 | `evaluationMode`                       | Optional    | string       | Experiment evaluation mode; options include `remote` or `local`.                                                                                                          |
 | `experimentType`                       | Optional    | string       | Experiment type; options include `a-b-test` or `multi-arm-bandit`.                                                                                                        |
 
