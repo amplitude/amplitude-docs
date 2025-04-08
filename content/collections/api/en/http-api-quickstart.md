@@ -88,7 +88,7 @@ async function sendAmplitudeEvent() {
             body: JSON.stringify(payload)
         });
 
-        if (response.code != 200)  {
+        if (response.status != 200)  {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
