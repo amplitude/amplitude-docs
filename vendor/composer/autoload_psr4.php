@@ -49,6 +49,7 @@ return array(
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
     'Swiftmade\\StatamicClearAssets\\' => array($vendorDir . '/swiftmade/statamic-clear-assets/src'),
     'Stringy\\' => array($vendorDir . '/statamic/stringy/src'),
+    'Stillat\\BladeParser\\' => array($vendorDir . '/stillat/blade-parser/src'),
     'Statamic\\StaticSite\\' => array($vendorDir . '/statamic/ssg/src'),
     'Statamic\\Eloquent\\' => array($vendorDir . '/statamic/eloquent-driver/src'),
     'Statamic\\' => array($vendorDir . '/statamic/cms/src'),
