@@ -460,7 +460,7 @@ Authorization: Api-Key 123456789
 
 ## Get single/multiple prediction propensity
 
-When you create a prediction in Amplitude Audiences, you can sync the prediction score to the Profile API. A prediction propensity is the probability that a user performs a predicted action.
+When you create a prediction in Amplitude Activation, you can sync the prediction score to the Profile API. A prediction propensity is the probability that a user performs a predicted action.
 
 To fetch a user's prediction propensity, send a request that includes a `prediction_id` and `propensity_type`. The propensity type can be either the raw score (`score`) or a percentile (`pct`).
 
