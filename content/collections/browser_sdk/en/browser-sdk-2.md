@@ -521,13 +521,15 @@ For example, you could configure Amplitude only to capture clicks on elements wi
 ```ts
 amplitude.init(API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
-    cssSelectorAllowlist: [
-      '.amp-tracking'
-    ],
-    pageUrlAllowlist: [
-      new RegExp('https://amplitude.com/blog/*')
-    ],
-  },
+    elementInteractions: {
+      cssSelectorAllowlist: [
+        '.amp-tracking'
+      ],
+      pageUrlAllowlist: [
+        new RegExp('https://amplitude.com/blog/*')
+      ]
+    }
+  }
 });
 ```
 

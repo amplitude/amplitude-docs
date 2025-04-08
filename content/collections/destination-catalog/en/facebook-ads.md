@@ -43,6 +43,11 @@ You need a [Facebook Business Manager account](https://business.facebook.com/).
 2. In the Cohort section, click **Facebook**.
 3. Click **Continue with Facebook** and log in to Facebook to accept the terms and conditions. You **must** accept Facebook's terms to set up the integration.
 4. Map your Facebook users to your Amplitude users. You can choose to map a wide range of Facebook keys, such as email or phone number, and the Amplitude Identifier can be a user ID, device ID, or a custom user property. You can use Facebook keys that aren't specific to an individual user, such as "country," but you must send at least one uniquely identifiable key (like email or device ID). The more key mappings you add, the better your match rate is.
+
+  {{partial:admonition type="note" heading="About using Device ID"}}
+  Device identifiers set as a random UUID aren't compatible with Facebook Ads. If you choose to use device ID, make sure the ID maps to IDFA (for iOS) or AAID (for Android).
+  {{/partial:admonition}}
+
 5. When finished, save your work. 
 
 ## Send a cohort
