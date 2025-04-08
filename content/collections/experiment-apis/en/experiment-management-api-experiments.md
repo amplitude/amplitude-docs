@@ -1098,7 +1098,7 @@ Edit an experiment.
 
 | <div class="med-big-column">Name</div> | Requirement | Type         | Description                                                                                                              |
 | -------------------------------------- | ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `group_type`                           | Optional    | string       | Group type of the filter; can be null. Can be `User` value or one of the group values, eg `org _id`, `org name`          |
+| `group_type`                           | Optional    | string       | Group type of the filter; can be null. Can be `User` value or one of the group values, like `org_id`, `org name`          |
 | `subprop_key`                          | Required    | string       | Filter's key; can be null.                                                                                               |
 | `subprop_op`                           | Required    | string       | The [operation](#subprop_op) to use in this filter.                                                                      |
 | `subprop_type`                         | Required    | string       | Either `event`, `user` or `group` indicating that the property is either an event, user or group property, respectively. |
@@ -1187,7 +1187,7 @@ Create a new feature experiment.
 | `bucketingKey`                         | Optional    | string       | The user property to bucket the user by.                                                                                                                                  |
 | `rolloutWeights`                       | Optional    | object       | Rollout weights for non-targeted users. The object should be a mapping from variant key to rollout weight as an integer. For example: `{ "control": 1, "treatment": 1 }`. |
 | `targetSegments`                       | Optional    | object       | See the [`targetSegments`](#targetsegments) table for more information.                                                                                                   |
-| `deployments`                          | Optional    | string array | Array of deployments that the experiment should be assigned to.                                                                                                           |
+| `deployments`                          | Optional    | string array | Array of deployment ids that the experiment should be assigned to.                                                                                                           |
 | `evaluationMode`                       | Optional    | string       | Experiment evaluation mode; options include `remote` or `local`.                                                                                                          |
 | `experimentType`                       | Optional    | string       | Experiment type; options include `a-b-test` or `multi-arm-bandit`.                                                                                                        |
 
