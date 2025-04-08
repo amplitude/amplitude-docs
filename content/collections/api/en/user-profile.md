@@ -13,6 +13,10 @@ lede: 'The User Profile API serves Amplitude user profiles, which include user p
 summary: 'Fetch a user profile, which include user properties, computed properties, a list of cohort IDs, and recommendations.'
 ---
 
+## Availability
+
+User Profile API requires an Activation plan. For more information, see the [pricing page](https://amplitude.com/pricing).
+
 ## Considerations
 
 {{partial:admonition type="warning" heading="Server-side API"}}
