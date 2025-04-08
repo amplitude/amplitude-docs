@@ -97,7 +97,7 @@ Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 | `enableCoppaControl`           | Whether to enable COPPA control for tracking options.                                                                                                                                                       | `false`                                  |
 | `migrateLegacyData`            | Available in `0.4.7`+. Whether to migrate [maintenance SDK](../ios) data (events, user/device ID).                                                                                                          | `true`                                   |
 | `offline`                      | Available in `1.2.0+`. Whether the SDK is connected to network. Learn more [here](./#offline-mode).                                                                                                         | `false`                                  |
-| `maxQueuedEventCount`          | Available in `1.9.1+`. Maximum number of events to retain in storage. When set to a positive number, the SDK removes oldest events at startup to maintain this limit. When set to -1 (the default), no cleanup occurs.    | `-1`                                     |
+| `maxQueuedEventCount`          | Available in `1.9.1+`. Maximum number of events to retain in storage. When set to a positive number, the SDK removes oldest events at startup to maintain this limit. When set to -1, no cleanup occurs.    | `-1`                                     |
 
 {{/partial:collapse}}
 
