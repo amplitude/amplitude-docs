@@ -12,7 +12,7 @@ landing: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715121054
 ---
-As part of Amplitude Audiences, **predictions** are a **workflow improvement feature** that helps you optimize targeting workflows to generate maximal lift. 
+As part of Amplitude Activation, **predictions** are a **workflow improvement feature** that helps you optimize targeting workflows to generate maximal lift. 
 
 Instead of using cohorts to segment your users based on their past behavior, predictions let you segment your users based on their likelihood to perform a specific action in the future. They're most useful in three types of workflow improvement: **communication frequency, dynamic pricing,** and **content personalization.** Use them to:
 
@@ -51,15 +51,15 @@ Conversely, your company is **less likely to benefit** from predictions if you:
 * Are in the B2B space, or
 * Lack a marketing team
 
-When you’re ready to get to work with predictive cohorts, be sure to read our articles on [building predictions](/docs/cdp/audiences/predictions-build) and [using your predictions in campaigns](/docs/cdp/audiences/predictions-use) first. Or have a look at the section below, which describes the process by which Amplitude Audiences builds predictions and how they work.
+When you’re ready to get to work with predictive cohorts, be sure to read our articles on [building predictions](/docs/cdp/audiences/predictions-build) and [using your predictions in campaigns](/docs/cdp/audiences/predictions-use) first. Or have a look at the section below, which describes the process by which Amplitude Activation builds predictions and how they work.
 
 ## How predictions work
 
-Predictions use past behavior to predict future behavior. When you build a prediction, Amplitude Audiences creates a deep learning model to distinguish between users who will perform the action you specify and users who will not.
+Predictions use past behavior to predict future behavior. When you build a prediction, Amplitude Activation creates a deep learning model to distinguish between users who will perform the action you specify and users who will not.
 
-Amplitude Audiences starts by looking at users who were in the starting cohort two periods ago, and will then identify which of those users did vs did not perform the action one period ago (a period can be set to seven, 30, 60, or 90 days).
+Amplitude Activation starts by looking at users who were in the starting cohort two periods ago, and will then identify which of those users did vs did not perform the action one period ago (a period can be set to seven, 30, 60, or 90 days).
 
-Next, Amplitude Audiences employs an advanced [transformer-based sequence model](https://en.wikipedia.org/wiki/Transformer_(machine_learning_model)) to compare those two groups of users along four sets of variables—events, event properties, user properties, and user activity sequences:
+Next, Amplitude Activation employs an advanced [transformer-based sequence model](https://en.wikipedia.org/wiki/Transformer_(machine_learning_model)) to compare those two groups of users along four sets of variables—events, event properties, user properties, and user activity sequences:
 
 * **Events**: How often each user triggers the top 25 events mostly related to the prediction target, every week for the last four periods
 * **Event properties**: How often each user triggers the most frequently queried event properties, every week for the last four periods

@@ -157,7 +157,7 @@ For more information, see the [Segment documentation.](https://segment.com/docs
 
 ## Export cohorts to Segment
 
-Amplitude Audiences lets you automatically send behavioral audiences to ad networks, marketing automation tools, and personalization engines so you can better tailor campaigns and product experiences.
+Amplitude Activation lets you automatically send behavioral audiences to ad networks, marketing automation tools, and personalization engines so you can better tailor campaigns and product experiences.
 
 See [Send Cohorts to Segment](/docs/data/destination-catalog/segment) for more information.
 
