@@ -125,7 +125,7 @@ Amplitude and Adobe Analytics use different terminology and structures for metri
 
 | Term                               | Definition                                                               | Amplitude Equivalent                                                                                                                                                                                                                                                                   |
 | ---------------------------------- | ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Page Views                         | The total number of times users view a page.                             | `PageView` event. Amplitude captures this by default, and you can pass it from any data source. See this [Community thread](https://community.amplitude.com/product-updates/default-event-tracking-as-part-of-our-browser-sdk-2-0-2462) for more information about auto-tracked events. |
+| Page Views                         | The total number of times users view a page.                             | `PageView` event. Amplitude captures this by default, and you can pass it from any data source. See this [Community thread](https://community.amplitude.com/product-updates/default-event-tracking-as-part-of-our-browser-sdk-2-0-2462) for more information about autotracked events. |
 | Unique Visitors                    | A count of the distinct visitors to a website or app.                    | Amplitude ID. Amplitude derives this from the User ID Count and Device ID Count.                                                                                                                                                                                                       |
 | Events                             | Custom interactions or actions tracked on a website or app.              | Custom Events                                                                                                                                                                                                                                                                          |
 | Conversion Rate                    | The percentage of visitors who complete a specified action.              | Conversion (tracked as a specific event). Build a [Funnel](/docs/analytics/charts/funnel-analysis/funnel-analysis-get-the-most), which is a series of steps a user takes as part of the experience.                                        |
@@ -228,7 +228,7 @@ Amplitude has pre-built integrations with all these tag management systems. Thes
 
 #### Adobe Launch
 
-If your organization uses Adobe Launch (Adobe’s tag management system) to populate Adobe Analytics data, Amplitude has an [Adobe Launch extension](https://exchange.adobe.com/apps/ec/108010)which you can use to send data to Amplitude. The Amplitude Adobe Launch extension is a wrapper for the Amplitude JavaScript SDK and allows your organization to use the existing data layer work that for Adobe Launch to send data to Amplitude.
+If your organization uses Adobe Launch (Adobe’s tag management system) to populate Adobe Analytics data, Amplitude has an [Adobe Launch extension](https://exchange.adobe.com/apps/ec/109447)which you can use to send data to Amplitude. The Amplitude Adobe Launch extension is a wrapper for the Amplitude JavaScript SDK and allows your organization to use the existing data layer work that for Adobe Launch to send data to Amplitude.
 
 
 {{partial:admonition type="note" heading="Adobe Launch availability"}}
@@ -290,7 +290,7 @@ Here are the steps to migrate your historical data from Adobe to Amplitude:
    1. Once your historical data is in a warehouse, you can use Amplitude’s [Data Warehouse sources](/docs/data/source-catalog#data-warehousedata-lake) or the [Batch Event Upload API](/docs/apis/analytics/batch-event-upload) to import the re-formatted data into Amplitude. See the [Data Backfill Guide](/docs/data/data-backfill) for detailed instructions on backfilling data into Amplitude using the Batch Event Upload API.
    2. If your historical data is in Amazon s3 bucket, use Amplitude’s [Amazon S3 import](/docs/data/source-catalog/amazon-s3) to backfill large amounts of data.
 2. If your historical data is in a CDP, check to see if the CDP has a historical import feature. For example, Segment’s Replay feature can backfill historical data depending if it’s part of your organization’s plan.
-3. If you need to migrate data directly from Adobe Analytics via Adobe’s [Data Feeds](https://experienceleague.adobe.com/docs/analytics/export/ftp-and-sftp/set-up-ftp-accounts/ftp-datafeeds.html?lang=en) feature, reach out to your Amplitude representative.
+3. If you need to migrate data directly from Adobe Analytics through Adobe’s [Data Feeds](https://experienceleague.adobe.com/docs/analytics/export/ftp-and-sftp/set-up-ftp-accounts/ftp-datafeeds.html?lang=en) feature, reach out to your Amplitude representative.
 
 ## Verify your data collection
 
