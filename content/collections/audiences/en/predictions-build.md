@@ -4,7 +4,7 @@ blueprint: audience
 title: 'Build a prediction'
 source: 'https://help.amplitude.com/hc/en-us/articles/360049164712-Build-a-prediction'
 this_article_will_help_you:
-  - 'Build a prediction in Amplitude Audiences'
+  - 'Build a prediction in Amplitude Activation'
   - 'Create a predictive cohort from your prediction'
   - 'Analyze your predictive cohort'
 exclude_from_sitemap: false
@@ -20,7 +20,7 @@ Be sure to check out our other articles on predictions: [Predictions: use Amplit
 
 ## Build a prediction
 
-To build a prediction in Amplitude Audiences, follow these steps:
+To build a prediction in Amplitude Activation, follow these steps:
 
 1. Navigate to *Cohorts & Audiences* and click *Predictions* in the left rail. Then click *+ Create Prediction*.
 2. Next, click *Start with All Users* to apply this prediction to all user who’ve been active in the last 90 days, or define your own starting cohort.
@@ -32,11 +32,11 @@ Another way to think about a prediction is as a **cohort transition**: you’re 
 {{/partial:admonition}}
 
 5. If desired, **you may choose to add optional settings** under *Advanced Model Configuration*. This section allows you to further define your starting cohort by either including or excluding specific user properties. Click *Add Feature* under *Include* or *Exclude* to search for user properties to further define your starting cohort. Click *Save*.
-6. Give your prediction a name and add a brief description. Then click *Save*. It takes about an hour for Amplitude Audiences to build your prediction. Amplitude sends you an email when the prediction is ready.
+6. Give your prediction a name and add a brief description. Then click *Save*. It takes about an hour for Amplitude Activation to build your prediction. Amplitude sends you an email when the prediction is ready.
 
 ## Analyze your prediction
 
-Once Amplitude Audiences has finished building your prediction, you’ll want to take a look at the results. Depending on what you see, you’ll either save the prediction as a cohort, or start over with a new prediction.
+Once Amplitude Activation has finished building your prediction, you’ll want to take a look at the results. Depending on what you see, you’ll either save the prediction as a cohort, or start over with a new prediction.
 
 1. To view the results of your prediction, click the *Predictions* tab from the Cohorts & Audiences page. This shows you a list of all the predictions created so far.
 2. Find your prediction and click it to open the prediction explorer's *Audience analysis* tab. Here, you’ll see the distribution of all users in your starting cohort:
@@ -100,7 +100,7 @@ While it can be tempting to just slice the starting cohort into two sections, fo
 * **Minimum detectable lift.** If you plan to target the selected users in a growth campaign, make sure the sample size is large enough to detect incremental lift. For example, if the top 20% of a prediction is 20,000 users, but the predicted conversion rate is 1%, you won’t be able to detect lift at statistically significant levels. Instead, you must increase the sample size to top 45% of users at 45,000 users.
 
 {{partial:admonition type='note'}}
-When a user’s probabilities change, Amplitude Audiences will automatically adjust their cohort membership if they fall into or out of the selected percentile range.
+When a user’s probabilities change, Amplitude Activation will automatically adjust their cohort membership if they fall into or out of the selected percentile range.
 {{/partial:admonition}}
 
 ## Analyze your predictive cohort

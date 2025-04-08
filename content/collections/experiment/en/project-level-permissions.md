@@ -1,8 +1,8 @@
 ---
 id: 52e1fdb9-b354-4012-b8de-d378c68cbf26
 blueprint: experiment
-title: 'Set app-level user permissions in Amplitude Experiment'
-source: 'https://help.amplitude.com/hc/en-us/articles/4416438117147-Set-app-level-user-permissions-in-Experiment'
+title: 'Set project-level user permissions in Amplitude Experiment'
+source: 'https://help.amplitude.com/hc/en-us/articles/4416438117147-Set-project-level-user-permissions-in-Experiment'
 this_article_will_help_you:
   - 'Set user permissions for Amplitude Experiment that are independent of and separate from those used in Amplitude Analytics'
 landing: false
@@ -10,17 +10,17 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1720719003
 ---
-Experiment app-level permissions enable Amplitude admins to manage access to Amplitude Experiment separately from [Amplitude Analytics permissions](/docs/admin/account-management/user-roles-permissions). Use this when you want to:
+Experiment project-level permissions enable Amplitude admins to manage access to Amplitude Experiment separately from [Amplitude Analytics permissions](/docs/admin/account-management/user-roles-permissions). Use this when you want to:
 
 * **Prevent** analytics team members from releasing features through Experiment, **and/or**
 * **Prevent** product development team members from affecting data taxonomy, or key dashboards and charts in Analytics, **while**
 * **Allowing** all team members to keep higher permission levels in their primary apps, enabling them to do their jobs efficiently and effectively.
 
 {{partial:admonition type='note'}}
-Setting app-level user permissions in Experiment is only available to Enterprise customers. 
+Setting project-level user permissions in Experiment is only available to Enterprise customers. 
 {{/partial:admonition}}
 
-To set app-level user permissions in Experiment, follow these steps:
+To set project-level user permissions in Experiment, follow these steps:
 
 1. In Experiment, click *Permissions* in the left-hand sidebar. The Experiment Permissions page displays, with the Joined Users tab open.
 2. In the *Search* field, type the name or email of the user you're looking for. Then click the checkbox next to their name. The actions above the table should now be selectable in blue.

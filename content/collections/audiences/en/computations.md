@@ -82,7 +82,7 @@ Computed properties are most often used in **personalization campaigns**. Just s
 For example, you can use a computed property to calculate the total number of orders a user has placed, and then use that information to trigger a different canvas in Braze if that number reaches a certain amount. You could also use computed properties to calculate users’ average order values, sync to the Profile API, and then show users different interstitials in the app, based on their average order values.
 
 {{partial:admonition type='note'}}
-Amplitude Audiences supports Braze, S3, and the Profile API as destinations for computed property syncs. The process of syncing to Braze accrues more data points in your Braze plan, which may result in an additional charge from Braze.
+Amplitude Activation supports Braze, S3, and the Profile API as destinations for computed property syncs. The process of syncing to Braze accrues more data points in your Braze plan, which may result in an additional charge from Braze.
 {{/partial:admonition}}
 
 To sync your computed property with a personalization tool, follow the instructions in our article on [syncing properties, recommendations, and cohorts to third-party destinations](/docs/cdp/audiences/third-party-syncs).

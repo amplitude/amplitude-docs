@@ -67,9 +67,9 @@ The Journeys chart allows you to inspect your users’ product journeys in two w
 
 ### Engagement Matrix
 
-![find](/docs/output/img/charts/find-the-right-chart-engagement-matrix.png)
+![interpret.png](/docs/output/img/engagement-matrix/interpret.png)
 
-The Engagement Matrix will enable you to identify features that aren't performing well, so you can either refactor or deprecate them, and the features that are performing best, so you can find ways to extend that engagement to other areas of your product.
+The Engagement Matrix enables you to identify features that aren't performing well, so you can either refactor or deprecate them, and the features that are performing best, so you can find ways to extend that engagement to other areas of your product.
 
 ### Impact Analysis
 
@@ -83,7 +83,7 @@ The Impact Analysis chart helps you discover how first-time engagement with one 
 
 ![find](/docs/output/img/charts/find-the-right-chart-retention.png)
 
-A Retention chart will show you how often users are returning to your product after firing an initial event. This information is essential to understanding if users are coming back to your product or not.
+A Retention chart shows you how often users are returning to your product after firing an initial event. This information is essential to understanding if users are coming back to your product or not.
 
 ### Stickiness
 
