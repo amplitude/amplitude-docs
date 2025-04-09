@@ -81,6 +81,19 @@ To set up a profile in Amplitude, follow these steps:
 6. When you're done, click *Test Mapping* to verify your mapping information. Then click *Next*.
 7. Name the source and set the frequency at which Amplitude should refresh your profiles from the data warehouse. The default frequency is 12 hours, but you can change it.
 
+## Set up a profile (S3 users)
+To set up a profile in Amplitude, follow the steps:
+1. In Amplitude Data, navigate to *Connections Overview*. Then in the *Sources* panel, click Add More. Scroll down until you find the Amazon S3 tile and click it.
+2. Connect Amplitude to your S3 bucket. More details on giving Amplitude access to your S3 bucket can be found [here](/docs/data/source-catalog/amazon-s3#limits). Additionally, have the following information ready for the *Verify Instrumentation* tab:
+    * Bucket Name and Prefix where your profiles are stored.
+    * AWS Role ARN, AWS External ID, and AWS Region
+
+    Click *Test Credentials* to confirm Amplitude can access your S3 bucket, then click *Next* and name your source.
+3. In the *Select File* tab, select your file type and click *See Preview* to confirm the files to be imported, then click *Next*.
+4. In the *Configure Converter* tab, select the *Profiles* data type. Fill out the source fields for `user_id` and `mutation_type`, and add additional properties if needed. The *Data Preview* section will show an example of what Amplitude will ingest.
+    * Note that `mutation_type` must be exactly one of the following strings: `INSERT`, `UPDATE`, or `DELETE`. `INSERT` should be used when creating new profiles, `UPDATE` should be used when syncing new values to profiles, and `DELETE` should be used to delete profiles. If `mutation_type` is not equal to one of the specified strings, the profile will not be ingested.
+5. When you're done, click *Save and Enable* to enable the import and refresh of profiles.
+
 ## Data specifications
 
 | Field                | Description                                                                                                              | Example |
