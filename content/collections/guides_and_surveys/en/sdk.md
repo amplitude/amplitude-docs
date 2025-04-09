@@ -248,6 +248,17 @@ window.engagement
 
 If the response is `undefined`, Guides and Surveys isn't installed properly.
 
+### Google Tag Manager
+
+If you haven't already, first update to our latest template.You can find the update icon in the Templates page in GTM.
+
+Next, on the Tags page, opt-in to Guides and Surveys via the Enable Guides and Surveys Plugin checkbox.
+
+![](https://share.cleanshot.com/pKSGH94k)
+
+{{partial:admonition type="info" heading=""}}
+Guides and Surveys is not enabled by default, so anyone who auto-updates will not accidentally start getting guides and surveys.
+
 #### Content Security Policy (CSP)
 
 If your organization has a strict Content Security Policy (CSP), Guides and Surveys requires some additions to ensure smooth operation. Add the following CSP directives to your policy:
