@@ -134,14 +134,11 @@ Your preferred notification settings allow you to receive experiment updates by 
 
 Click the check box next to the desired notification:
 
+* **Experiment about to start:** Amplitude sends this notification when your scheduled experiment is about to start.
 * **Experiment end reached:** Amplitude sends this notification when your experiment is complete.
 * **SRM detected:** Amplitude sends this notification if it identifies a [sample ratio mismatch](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch) issue.
 * **Long-running experiments:** Amplitude sends this notification when your long-running experiment is complete.
 * **Statsig for the recommendation metric is reached:** Amplitude sends this notification when your experiment's recommendation metric has reached stat sig.
-* **Experiment end reached:** You receive this notification when your experiment is complete.
-* **SRM detected:** You receive this notification if Amplitude identifies a [sample ratio mismatch](/docs/feature-experiment/troubleshooting/sample-ratio-mismatch) issue.
-* **Long-running experiments:** You receive this notification when your long-running experiment is complete.
-* **Statsig for the recommendation metric is reached:** You receive this notification when your experiment's recommendation metric has reached stat sig.
 
 Amplitude Experiment sends a notification to the editors of the experiment.
 
