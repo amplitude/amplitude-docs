@@ -270,7 +270,33 @@ img-src: https://*.amplitude.com;
 media-src: https://*.amplitude.com;
 style-src: https://*.amplitude.com;
 ```
+### Installation Troubleshooting
 
+#### How do I know if G&S is installed?
+First, try calling `window.engagement`. If it returns as `undefined`, then G&S has not been installed.
+
+If it has been installed, call `window.engagement._.user`. If that returns as `undefined`, then the plugin has not been set up properly.
+
+You can further debug by calling `window.engagement._debugStatus()`. The output should look like this:
+
+```json
+{
+    "user": {
+        "user_id": "test-base-user-1vxxkg",
+        "device_id": "62c5e45a-94ab-4090-b053-3f28e848763f",
+        "user_properties": {
+            "foo": "bar"
+        }
+    },
+    "apiKey": "6ae8d3d7d48eadfb0b2489db692e14c9",
+    "stateInitialized": true,
+    "decideSuccessful": true,
+    "num_guides_surveys": 2,
+    "analyticsIntegrations": 1
+}
+```
+
+Specifically, there should be a `user` object, `apiKey` needs to be set, `stateInitialized` needs to be true, `decideSuccessful` needs to be `true`, and there needs to be a non-zero `num_guides_surveys` if there are live guides or surveys in the config.
 
 ## Manage themes
 
