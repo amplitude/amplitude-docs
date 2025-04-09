@@ -298,6 +298,14 @@ You can further debug by calling `window.engagement._debugStatus()`. The output 
 
 Specifically, there should be a `user` object, `apiKey` needs to be set, `stateInitialized` needs to be true, `decideSuccessful` needs to be `true`, and there needs to be a non-zero `num_guides_surveys` if there are live guides or surveys in the config.
 
+#### What do I do if my plugin hasn’t been set up properly?
+
+If you are using our Browser SDK 2.0, first check the console for errors. If you don't see anything, verify that your code matches with the install instructions. In particular, double check that you have `amplitude.add(window.engagement.plugin())` in the code.
+
+If you see something like `amplitude is not defined` and `cannot read properties of undefined .add()`, this means that the G&S is trying to load before the amplitude SDK has been loaded. Please verify in your code that the Amplitude SDK is loaded before the G&S SDK. If you are having issues with this in Google Tag Manager, make sure that you have updated to our latest template.
+
+We do not support Amplitude's legacy Javascript SDK--please upgrade to the Browser SDK 2.0 and follow the install instructions above.
+
 ## Manage themes
 
 Configure the visual theme mode if your app supports light and dark modes.
