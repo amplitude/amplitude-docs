@@ -306,6 +306,19 @@ If you see something like `amplitude is not defined` and `cannot read properties
 
 We do not support Amplitude's legacy Javascript SDK--please upgrade to the Browser SDK 2.0 and follow the install instructions above.
 
+#### Common root causes
+
+##### `boot` being called multiple times
+
+This will result in unexpected behavior, especially for guides and surveys that should appear immediately.
+
+{{partial:admonition type="info" heading=""}}
+If you are implementing G&S with `amplitude.add(window.engagement.plugin())`, you should not be calling `boot` at all. This is because the `add()` method will already boot with a very specific set of parameters.
+
+##### Wrong project used
+
+Please make sure the API key belongs to the project that contains the guides and survey configurations and also belongs to the same project that the Analytics SDK is configured with.
+
 ## Manage themes
 
 Configure the visual theme mode if your app supports light and dark modes.
