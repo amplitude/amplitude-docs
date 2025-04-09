@@ -9,20 +9,6 @@ updated_at: 1717179968
 ---
 Creating a new run of an existing experiment can be useful if you had instrumentation issues that affected data quality, and you've since fixed them. When you create a new run, you exclude any previous user data from the monitoring and analysis of your experiment.
 
-## Prerequisites
-
-There are two primary requirements to be able to crate a new run of your experiment.
-
-1. Your experiment must use Amplitude's default exposure tracking.
-2. Your client SDK version must support experiment restarts.
-
-| SDK          | Minimum version |
-| ------------ | --------------- |
-| JavaScript   | v1.8.0          |
-| Android      | v1.10.0         |
-| iOS          | v1.11.0         |
-| React Native | v1.2.0          |
-
 ## Create a new run
 
 To create a new run of an existing experiment"
