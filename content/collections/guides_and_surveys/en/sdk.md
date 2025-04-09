@@ -238,6 +238,17 @@ analytics.ready(() => {
 {{/partial:tabs}}
 {{/partial:collapse}}
 
+### Google Tag Manager
+
+If you haven't already, first update to our latest template.You can find the update icon in the Templates page in GTM.
+
+Next, on the Tags page, opt-in to Guides and Surveys via the Enable Guides and Surveys Plugin checkbox.
+
+![](https://share.cleanshot.com/pKSGH94k)
+
+{{partial:admonition type="info" heading=""}}
+Guides and Surveys is not enabled by default, so anyone who auto-updates will not accidentally start getting guides and surveys.
+
 ### Verify installation and initialization
 
 To verify that the Guides and Surveys SDK is running on your site or dev environment, open your browser's Developer Tools, and enter the following in the console:
@@ -259,7 +270,54 @@ img-src: https://*.amplitude.com;
 media-src: https://*.amplitude.com;
 style-src: https://*.amplitude.com;
 ```
+### Installation Troubleshooting
 
+#### How do I know if G&S is installed?
+First, try calling `window.engagement`. If it returns as `undefined`, then G&S has not been installed.
+
+If it has been installed, call `window.engagement._.user`. If that returns as `undefined`, then the plugin has not been set up properly.
+
+You can further debug by calling `window.engagement._debugStatus()`. The output should look like this:
+
+```json
+{
+    "user": {
+        "user_id": "test-base-user-1vxxkg",
+        "device_id": "62c5e45a-94ab-4090-b053-3f28e848763f",
+        "user_properties": {
+            "foo": "bar"
+        }
+    },
+    "apiKey": "6ae8d3d7d48eadfb0b2489db692e14c9",
+    "stateInitialized": true,
+    "decideSuccessful": true,
+    "num_guides_surveys": 2,
+    "analyticsIntegrations": 1
+}
+```
+
+Specifically, there should be a `user` object, `apiKey` needs to be set, `stateInitialized` needs to be true, `decideSuccessful` needs to be `true`, and there needs to be a non-zero `num_guides_surveys` if there are live guides or surveys in the config.
+
+#### What do I do if my plugin hasn’t been set up properly?
+
+If you are using our Browser SDK 2.0, first check the console for errors. If you don't see anything, verify that your code matches with the install instructions. In particular, double check that you have `amplitude.add(window.engagement.plugin())` in the code.
+
+If you see something like `amplitude is not defined` and `cannot read properties of undefined .add()`, this means that the G&S is trying to load before the amplitude SDK has been loaded. Please verify in your code that the Amplitude SDK is loaded before the G&S SDK. If you are having issues with this in Google Tag Manager, make sure that you have updated to our latest template.
+
+We do not support Amplitude's legacy Javascript SDK--please upgrade to the Browser SDK 2.0 and follow the install instructions above.
+
+#### Common root causes
+
+##### `boot` being called multiple times
+
+This will result in unexpected behavior, especially for guides and surveys that should appear immediately.
+
+{{partial:admonition type="info" heading=""}}
+If you are implementing G&S with `amplitude.add(window.engagement.plugin())`, you should not be calling `boot` at all. This is because the `add()` method will already boot with a very specific set of parameters.
+
+##### Wrong project used
+
+Please make sure the API key belongs to the project that contains the guides and survey configurations and also belongs to the same project that the Analytics SDK is configured with.
 
 ## Manage themes
 
