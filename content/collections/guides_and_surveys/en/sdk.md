@@ -238,16 +238,6 @@ analytics.ready(() => {
 {{/partial:tabs}}
 {{/partial:collapse}}
 
-### Verify installation and initialization
-
-To verify that the Guides and Surveys SDK is running on your site or dev environment, open your browser's Developer Tools, and enter the following in the console:
-
-```js
-window.engagement
-```
-
-If the response is `undefined`, Guides and Surveys isn't installed properly.
-
 ### Google Tag Manager
 
 If you haven't already, first update to our latest template.You can find the update icon in the Templates page in GTM.
@@ -258,6 +248,16 @@ Next, on the Tags page, opt-in to Guides and Surveys via the Enable Guides and S
 
 {{partial:admonition type="info" heading=""}}
 Guides and Surveys is not enabled by default, so anyone who auto-updates will not accidentally start getting guides and surveys.
+
+### Verify installation and initialization
+
+To verify that the Guides and Surveys SDK is running on your site or dev environment, open your browser's Developer Tools, and enter the following in the console:
+
+```js
+window.engagement
+```
+
+If the response is `undefined`, Guides and Surveys isn't installed properly.
 
 #### Content Security Policy (CSP)
 
