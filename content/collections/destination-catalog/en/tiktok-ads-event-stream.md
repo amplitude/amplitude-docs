@@ -34,9 +34,11 @@ This powerful connection bridges the gap between product analytics and advertisi
 - TikTok Ads requires SHA256 encryption for identifiers (External ID, Email, Phone Number). If your Amplitude property isn't pre-encrypted, Amplitude applies SHA256 when it sends the property to TikTok Ads.
 - This connector use TikTok Ads event tracking API: https://business-api.tiktok.com/open_api/v1.3/event/track/
     - Documentation: [TikTok Events API](https://business-api.tiktok.com/portal/docs?id=1771101303285761)
-
-- Phone Number must be in the E.164 format (for example, `+14155552671`)
-- Currency values must use ISO 4217 currency codes (for example, `USD`, `EUR`, `JPY`).
+- Type requirements:
+    - Phone Number must be in E.164 format (e.g., +14155552671)
+    - Currency values must be provided using ISO 4217 currency codes (e.g., USD, EUR, JPY).
+    - Price and value must be in number format (e.g., 19.99)
+    - Quantity must be an integer (e.g., 2)
 
 ## Setup
 
@@ -45,10 +47,10 @@ This powerful connection bridges the gap between product analytics and advertisi
 1. In Amplitude Data, click **Catalog** and select the **Destinations** tab.
 2. In the Events section, click **TikTok Ads** to to configure a new event streaming sync.
 3. Fill in the required fields in the setup form:
-  - Pixel ID: You can find this in TikTok Ads Manager under Management > Events.
-  - Access Token: Get this from your TikTok developer account. It must have permissions for the TikTok Events API.
-  - Test Event Code (optional): Used to test and validate events before sending live traffic. You can find your Test Event Code in your TikTok Events Manager under the “Test Event” tab.
-  - Content Type: Use "Product" when the event relates to a specific item or SKU, and use "Product Group" when the event involves a broader category or collection of products (for example, a product listing page or variant group).
+    - Pixel ID: You can find this in TikTok Ads Manager under Management > Events.
+    - Access Token: Get this from your TikTok developer account. It must have permissions for the TikTok Events API.
+    - Test Event Code (optional): Used to test and validate events before sending live traffic. You can find your Test Event Code in your TikTok Events Manager under the “Test Event” tab.
+    - Content Type: Use "Product" when the event relates to a specific item or SKU, and use "Product Group" when the event involves a broader category or collection of products (for example, a product listing page or variant group).
 4. Under Mappings, define how Amplitude user properties should map to TikTok Ads identifiers. Supported TikTok Ads properties include: External ID, Email, Phone Number, TikTok Click ID, Cookie ID, IP Address, User Agent
 5. Under Select & filter events, choose the Amplitude events you want to stream and map them to TikTok Ads event names. You can select from TikTok Ads' predefined event names, such as:
     - AddPaymentInfo
