@@ -780,7 +780,8 @@ curl --request DELETE \
 
 ## Add users to variant
 
-{{partial:admonition type='note'}} You are only allowed to have 500 inclusions per variant. If you go over this limit, Amplitude will return a `400` error. {{/partial:admonition}}
+{{partial:admonition type='note'}} 
+You can have up to 500 inclusions per variant. If you go over this limit, Amplitude returns a `400` error. {{/partial:admonition}}
 
 ```bash
 POST https://experiment.amplitude.com/api/1/experiments/{id}/variants/{variantKey}/users
