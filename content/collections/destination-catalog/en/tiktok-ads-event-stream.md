@@ -36,7 +36,7 @@ This powerful connection bridges the gap between product analytics and advertisi
     - Documentation: [TikTok Events API](https://business-api.tiktok.com/portal/docs?id=1771101303285761)
 - Type requirements:
     - Phone Number must be in the E.164 format (for example, `+14155552671`)
-    - Currency values must be provided using ISO 4217 currency codes (e.g., USD, EUR, JPY).
+    - Currency values must use ISO 4217 currency codes (for example, `USD`, `EUR`, `JPY`).
     - Price and value must be in number format (e.g., 19.99)
     - Quantity must be an integer (e.g., 2)
 
