@@ -240,14 +240,14 @@ analytics.ready(() => {
 
 ### Google Tag Manager
 
-If you haven't already, first update to our latest template.You can find the update icon in the Templates page in GTM.
+If you haven't already, update to the latest version of the Amplitude template. Find the update icon on the Templates page in GTM.
 
-Next, on the Tags page, opt-in to Guides and Surveys via the Enable Guides and Surveys Plugin checkbox.
+Next, on the Tags page, enable Guides and Surveys.
 
 ![](https://share.cleanshot.com/pKSGH94k)
 
 {{partial:admonition type="info" heading=""}}
-Guides and Surveys is not enabled by default, so anyone who auto-updates will not accidentally start getting guides and surveys.
+The Amplitude template doesn't enable Guides and Surveys by default. This prevents organizations who enable automatic template updates from enabling Guides and Surveys accidentally.
 
 ### Verify installation and initialization
 
@@ -270,14 +270,14 @@ img-src: https://*.amplitude.com;
 media-src: https://*.amplitude.com;
 style-src: https://*.amplitude.com;
 ```
-### Installation Troubleshooting
+### Installation troubleshooting
 
-#### How do I know if G&S is installed?
-First, try calling `window.engagement`. If it returns as `undefined`, then G&S has not been installed.
+#### Verify Guides and Surveys is installed
+1. Open your browser's developer console, and enter `window.engagement`. If the return is `undefined`, Guides and Surveys installation wasn't successful.
 
-If it has been installed, call `window.engagement._.user`. If that returns as `undefined`, then the plugin has not been set up properly.
+2. If `window.engagement` returns a valid response, enter `window.engagement._.user`. A return of `undefined` indicates an issue with the plugin configuration.
 
-You can further debug by calling `window.engagement._debugStatus()`. The output should look like this:
+3. For additional debugging, enter `window.engagement._debugStatus()`. The output should be similar to:
 
 ```json
 {
@@ -296,13 +296,20 @@ You can further debug by calling `window.engagement._debugStatus()`. The output 
 }
 ```
 
-Specifically, there should be a `user` object, `apiKey` needs to be set, `stateInitialized` needs to be true, `decideSuccessful` needs to be `true`, and there needs to be a non-zero `num_guides_surveys` if there are live guides or surveys in the config.
+Verify that:
+- the `user` object is present
+- `apiKey` is set
+- `stateInitialized` is `true`
+- `decideSuccessful` is `true`
+- `num_guides_surveys` is a non-zero integer if a guide or survey should be display on the page.
 
-#### What do I do if my plugin hasn’t been set up properly?
+#### Verify plugin configuration
 
-If you are using our Browser SDK 2.0, first check the console for errors. If you don't see anything, verify that your code matches with the install instructions. In particular, double check that you have `amplitude.add(window.engagement.plugin())` in the code.
+If you use Amplitude Browser SDK 2.0, check the browser's console for errors. If there are none, verify that your code matches code provided in the installation instructions. In particular, ensure that  `amplitude.add(window.engagement.plugin())` is present in the code.
 
-If you see something like `amplitude is not defined` and `cannot read properties of undefined .add()`, this means that the G&S is trying to load before the amplitude SDK has been loaded. Please verify in your code that the Amplitude SDK is loaded before the G&S SDK. If you are having issues with this in Google Tag Manager, make sure that you have updated to our latest template.
+If you see something like `amplitude is not defined` and `cannot read properties of undefined .add()`, this means that the G&S is trying to load before the Amplitude SDK loads. Check your code to ensure that the Amplitude Browser SDK loads before the Guides and Surceys SDK. 
+
+If you use Google Tag Manager, ensure you update to the latest Amplitude template.
 
 We do not support Amplitude's legacy Javascript SDK--please upgrade to the Browser SDK 2.0 and follow the install instructions above.
 
@@ -310,14 +317,17 @@ We do not support Amplitude's legacy Javascript SDK--please upgrade to the Brows
 
 ##### `boot` being called multiple times
 
-This will result in unexpected behavior, especially for guides and surveys that should appear immediately.
+This results in unexpected behavior, especially for guides and surveys that should appear immediately.
 
 {{partial:admonition type="info" heading=""}}
-If you are implementing G&S with `amplitude.add(window.engagement.plugin())`, you should not be calling `boot` at all. This is because the `add()` method will already boot with a very specific set of parameters.
+If you implement Guides and Sureys with `amplitude.add(window.engagement.plugin())`, don't call `boot`. The `add()` method includes this call with a very specific set of parameters.
 
 ##### Wrong project used
 
-Please make sure the API key belongs to the project that contains the guides and survey configurations and also belongs to the same project that the Analytics SDK is configured with.
+Ensure the API key you provide:
+
+- is the same key you use to initialize the Browser SDK
+- belongs to the project that contains the Guides and Surveys configuration
 
 ## Manage themes
 
