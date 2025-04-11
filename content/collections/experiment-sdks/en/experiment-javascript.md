@@ -41,14 +41,12 @@ yarn add @amplitude/experiment-js-client
 {{/partial:tab}}
 {{partial:tab name="script"}}
 ```html
-<script src="https://unpkg.com/@amplitude/experiment-js-client@1.9.0/dist/experiment.umd.js"></script>
+<script src="https://unpkg.com/@amplitude/experiment-js-client@1.15.5/dist/experiment.umd.js"></script>
 <script>
     // TODO: Replace DEPLOYMENT_KEY with your own deployment key.
     // If you're using a 3rd party for analytics, configure an exposure
     // tracking provider.
-    window.experiment = Experiment.Experiment.initializeWithAmplitudeAnalytics(
-        'DEPLOYMENT_KEY'
-    );
+    window.experiment = Experiment.initializeWithAmplitudeAnalytics('DEPLOYMENT_KEY');
 </script>
 
 ```
