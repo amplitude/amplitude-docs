@@ -525,6 +525,9 @@ amplitude.init(API_KEY, OPTIONAL_USER_ID, {
       cssSelectorAllowlist: [
         '.amp-tracking'
       ],
+      // When you use `cssSelectorAllowlist` to target specific elements, set `actionClickAllowlist`  [tl! ~~:2]
+      // to ensure that Amplitude tracks interactions with non-standard clickable elements during page transitions or DOM updates.
+      actionClickAllowlist: [],
       pageUrlAllowlist: [
         new RegExp('https://amplitude.com/blog/*')
       ]
@@ -536,7 +539,7 @@ amplitude.init(API_KEY, OPTIONAL_USER_ID, {
 By default, if you don't use these settings, Amplitude tracks the default selectors on all page on which you enable the plugin.
 
 {{partial:admonition type="note" heading=""}}
-When specify the CSS selectors to track, your selection overrides the default. To retain the default selectors import the `DEFAULT_CSS_SELECTOR_ALLOWLIST` and include it in your code.
+When you specify the CSS selectors to track, your selection overrides the default. To retain the default selectors import the `DEFAULT_CSS_SELECTOR_ALLOWLIST` and include it in your code.
 
 ```js
 import { DEFAULT_CSS_SELECTOR_ALLOWLIST } from '@amplitude/plugin-autocapture-browser';
