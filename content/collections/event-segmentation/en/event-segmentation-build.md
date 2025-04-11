@@ -6,7 +6,7 @@ source: 'https://help.amplitude.com/hc/en-us/articles/360052274852-Build-an-even
 this_article_will_help_you:
   - 'Use events and properties to create an Event Segmentation analysis'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1744325149
+updated_at: 1744389533
 landing: true
 landing_blurb: 'Use events and properties to create an Event Segmentation analysis'
 academy_course:
@@ -81,6 +81,10 @@ If the data that comprises your chart doesn't fit the default scale, you can cus
 
 To customize the Y-axis, click it on the chart. The Custom Y-axis modal appears.
 
+{{partial:admonition type="note" heading="Applicable chart types"}}
+Y-axis customization is available for Event Segmentation charts.
+{{/partial:admonition}}
+
 ### Axis name and values
 
 By default, the Y-axis name comes from the measurement that's displayed. For example, if your chart displays event totals, the axis name is `Totals`. In cases where you need to share the chart or otherwise provide more context, enter a more descriptive name.
@@ -89,10 +93,23 @@ To help the data fit more cleanly on the chart, you can set minimum and maximum 
 
 In the examples below, the chart on the left uses the default axis values, and the chart on the right has the minimum set to `10000` and the maximum set to `15000`.
 
-Enable **Display data out of the min and max value** to ensure that if any data falls out of the range you set, it still appears on the chart. Otherwise
-
 ![](statamic://asset::help_center_conversions::event-segmentation/y-axis-scale.png)
 
-{{partial:admonition type="note" heading="Applicable chart types"}}
-Y-axis customization is available for Event Segmentation chart
-{{/partial:admonition}}
+Enable **Display data out of the min and max value** to ensure that if any data falls out of the range you set, it still appears on the chart. Otherwise, chart data extends 
+
+Customize the unit of measure that displays for a chart to ensure that the chart represents the data most accurately. Choose from:
+
+- Raw number
+- Percent
+- Currency (defaults to the [currency set at the project level](/docs/admin/account-management/currency-unit))
+- Custom (add a prefix or suffix)
+
+### Add a second Y-axis
+
+If the chart displays more than one event, add a second Y-axis to ensure best visibility. For example, on a chart that tracks Weekly Active Users, if you add a second event that measures new users, you add a second Y-axis to ensure best visibility for both.
+
+In this example, Weekly Active Users, measured by `Any Active Event` falls in the range of 12,000 - 13,500. Weekly New Users, has a range between 5500, and 6000. The addition of a second Y-axis ensures that both events display with enough granularity to observe increases and decreases over time.
+
+![](statamic://asset::help_center_conversions::event-segmentation/dual-y-axis.png)
+
+The second Y-axis supports the same customization options as the primary Y-axis.
