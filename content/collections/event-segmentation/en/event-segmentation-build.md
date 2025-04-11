@@ -113,3 +113,7 @@ In this example, Weekly Active Users, measured by `Any Active Event` falls in th
 ![](statamic://asset::help_center_conversions::event-segmentation/dual-y-axis.png)
 
 The second Y-axis supports the same customization options as the primary Y-axis.
+
+{{partial:admonition type="note" heading="Dual Y-axis availability"}}
+Dual-Y axis is available on event segmentation line charts.
+{{/partial:admonition}}
