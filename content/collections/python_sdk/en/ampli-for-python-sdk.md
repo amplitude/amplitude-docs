@@ -248,22 +248,21 @@ First you need to define your plugin. Destination Plugin example:
 from amplitude import DestinationPlugin, PluginType, BaseEvent, IdentifyEvent
 from analytics import Client as SegmentClient
 
-
 class SegmentPlugin(DestinationPlugin):
 
-    def __init__(self, write_key):
-        self.plugin_type = PluginType.DESTINATION
-        self.configuration = None
-        self.segment = SegmentClient(write_key)
+  def __init__(self, write_key):
+      self.plugin_type = PluginType.DESTINATION
+      self.configuration = None
+      self.segment = SegmentClient(write_key)
 
-    def setup(self, client):
-        self.configuration = client.configuration
+  def setup(self, client):
+      self.configuration = client.configuration
 
-    def execute(self, event: BaseEvent) -> None:
-        if isinstance(event, IdentifyEvent):
-            self.segment.identify(event.user_id, event.user_properties)
-        elif isinstance(event, BaseEvent):
-            self.segment.track(event.user_id, event.event_type, event.event_properties)
+  def execute(self, event: BaseEvent) -> None:
+      if isinstance(event, IdentifyEvent):
+          self.segment.identify(event.user_id, event.user_properties)
+      elif isinstance(event, BaseEvent):
+          self.segment.track(event.user_id, event.event_type, event.event_properties)
 ```
 
 Add your plugin after init Ampli:
