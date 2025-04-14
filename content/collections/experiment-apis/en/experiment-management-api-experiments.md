@@ -783,9 +783,6 @@ curl --request DELETE \
 {{partial:admonition type='note'}} 
 You can have up to 500 inclusions per variant. If you go over this limit, Amplitude returns a `400` error. {{/partial:admonition}}
 
-{{partial:admonition type='note'}} 
-Amplitude returns a `403 Not Modified` error if all the inclusions you are adding are already associated with the flag config {{/partial:admonition}}
-
 ```bash
 POST https://experiment.amplitude.com/api/1/experiments/{id}/variants/{variantKey}/users
 ```
