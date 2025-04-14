@@ -88,7 +88,7 @@ The events and event properties .CSV file requires a specific schema for a succe
     * `Inactive`. Marking an event as inactive applies retroactively and immediately, and excludes the event from the `Any Active Event` metric.
 * For events
 
-**Event hidden From dropdowns**
+**Event hidden from dropdowns**
 * Definition: Set event visibility in dropdowns
 * Values:
     * `True`: Event is hidden in event dropdowns
@@ -96,7 +96,7 @@ The events and event properties .CSV file requires a specific schema for a succe
     * `<blank>`: Retains the current value
 * For events
 
-**Event hidden From persona results**
+**Event hidden from persona results**
 * Definition: Set event visibility in persona results
 * Values:
     * `True`: Event is hidden from persona results
