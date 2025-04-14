@@ -49,27 +49,54 @@ To add your chart to a new or existing [dashboard](/docs/analytics/dashboard-cre
 You can edit the legend of your chart to make it more readable. This is useful if, for example, you have applied multiple group-bys to a chart, and want to make it easy for viewers to understand what each segment is referring to.
 Click the legend label you wish to change, then type in the description you want. The segment names in the breakdown data table below the chart doesn't change to reflect custom legend labels, however. 
 
-## Customize a chart's y-axis
+## Customize your chart's Y-axis
 
-You can set the minimum and maximum values displayed on your chart's y-axis (vertical). This enables you to avoid dramatic changes in y-axis values between subsequent chart views, as well as keep consistent y-axes across charts when adding them to dashboards.
+If the data that comprises your chart doesn't fit the default scale, you can customize the chart's Y-axis for better viewability.
 
-To do so, click the vertical axis on your chart, then enter the desired minimum and maximum values in the modal that appears.
+To customize the Y-axis, click it on the chart. The Custom Y-axis modal appears.
 
-![create](/docs/output/img/charts/create.gif)
+{{partial:admonition type="note" heading="Applicable chart types"}}
+Y-axis customization is available for Event Segmentation charts.
+{{/partial:admonition}}
+
+### Axis name and values
+
+By default, the Y-axis name comes from the measurement that's displayed. For example, if your chart displays event totals, the axis name is `Totals`. In cases where you need to share the chart or otherwise provide more context, enter a more descriptive name.
+
+To help the data fit more cleanly on the chart, you can set minimum and maximum values. By default, a chart's Y-axis starts at zero. Sometimes, your data might be in a small range, but with higher value.
+
+In the examples below, the chart on the left uses the default axis values, and the chart on the right has the minimum set to `10000` and the maximum set to `15000`.
+
+![](statamic://asset::help_center_conversions::event-segmentation/y-axis-scale.png)
+
+Enable **Display data out of the min and max value** to ensure that if any data falls out of the range you set, it still appears on the chart. Otherwise, chart data extends 
+
+Customize the unit of measure that displays for a chart to ensure that the chart represents the data most accurately. Choose from:
+
+- Raw number
+- Percent
+- Currency (defaults to the [currency set at the project level](/docs/admin/account-management/currency-unit))
+- Custom (add a prefix or suffix)
+
+### Add a second Y-axis
+
+If the chart displays more than one event, add a second Y-axis to ensure best visibility. For example, on a chart that tracks Weekly Active Users, if you add a second event that measures new users, you add a second Y-axis to ensure best visibility for both.
+
+In this example, Weekly Active Users, measured by `Any Active Event` falls in the range of 12,000 - 13,500. Weekly New Users, has a range between 5500, and 6000. The addition of a second Y-axis ensures that both events display with enough granularity to observe increases and decreases over time.
+
+![](statamic://asset::help_center_conversions::event-segmentation/dual-y-axis.png)
+
+The second Y-axis supports the same customization options as the primary Y-axis.
+
+{{partial:admonition type="note" heading="Dual Y-axis availability"}}
+Dual-Y axis is available on event segmentation line charts.
+{{/partial:admonition}}
 
 ## Switch projects or chart types
 
 To switch the project you are viewing, click the project name in the title of the chart and select a different project. Your chart reflects the data of the newly selected project. The new chart matches the controls of the original chart as closely as possible, and drops any events or properties not instrumented in the new project.
 
 You can also switch the chart type, by clicking the chart type name and selecting a different type. You can choose to preserve the events or segments you have already added to your current chart.
-
-## Change chart layout
-
-You can opt to view your charts in a top-down orientation, in line with earlier versions of Amplitude's chart controls UI. To do so, open a chart and click More Control Options at the top of the chart controls and select *Change Layout* from the menu that appears.  
-
-![](statamic://asset::help_center_conversions::charts/more-chart-options.png)
-
-To return to the standard side chart controls layout, repeat the process.
 
 ## Chart cache times
 
