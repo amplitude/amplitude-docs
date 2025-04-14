@@ -162,6 +162,10 @@ The events and event properties .CSV file requires a specific schema for a succe
 * Definition: Name of the event or property group
 * **Required** for events and property groups
 
+**Object owner**
+* Definition: Owner of the event or property group
+* Leaving this as `<blank>` removes the owner if one exists on the event or property group
+
 **Object description**
 * Definition: Description of the entity
 * For events and property groups
