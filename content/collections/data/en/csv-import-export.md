@@ -88,6 +88,38 @@ The events and event properties .CSV file requires a specific schema for a succe
     * `Inactive`. Marking an event as inactive applies retroactively and immediately, and excludes the event from the `Any Active Event` metric.
 * For events
 
+**Event hidden From dropdowns**
+* Definition: Set event visibility in dropdowns
+* Values:
+    * `True`: Event is hidden in event dropdowns
+    * `False`: Event is visible in event dropdowns
+    * `<blank>`: Retains the current value
+* For events
+
+**Event hidden From persona results**
+* Definition: Set event visibility in persona results
+* Values:
+    * `True`: Event is hidden from persona results
+    * `False`: Event is visible in persona results
+    * `<blank>`: Retains the current value
+* For events
+
+**Event hidden from pathfinder**
+* Definition: Set event visibility in pathfinder
+* Values:
+    * `True`: Event is hidden from pathfinder
+    * `False`: Event is visible in pathfinder
+    * `<blank>`: Retains the current value
+* For events
+
+**Event hidden from timeline**
+* Definition: Set event visibility in timeline
+* Values:
+    * `True`: Event is hidden from timelines
+    * `False`: Event is visible in timelines
+    * `<blank>`: Retains the current value
+* For events
+
 **Event category**
 * Definition: Category of an event
 * For events
@@ -166,6 +198,14 @@ The events and event properties .CSV file requires a specific schema for a succe
     * `True`: Property is required
     * `False` or `<blank>`: Property is optional
 * For event properties and property group properties
+
+**Property visibility**
+* Definition: Set property visibility in charts
+* Values:
+    * `VISIBLE`: Property is visible in charts
+    * `HIDDEN`: Property is hidden in charts
+    * `<blank>`: Retains the current value
+* For event properties only
 
 **Property is array**
 * Definition: Denotes if the property is an array
@@ -284,7 +324,7 @@ The list below highlights the required schema for the user properties .CSV file 
 
 **Number is integer**
 * Definition: Denotes if a property with number property value type is an integer
-* Values: 
+* Values:
     * `True`: Property is an integer
     * `False` or `<blank>`: Property isn't an integer
 
@@ -298,6 +338,13 @@ The list below highlights the required schema for the user properties .CSV file 
 
 **Property description**
 * Definition: Description of the user property
+
+**Property visibility**
+* Definition: Set property visibility in charts
+* Values:
+    * `VISIBLE`: Property is visible in charts
+    * `HIDDEN`: Property is hidden in charts
+    * `<blank>`: Retains the current value
 
 **Property value type**
 * Definition: The value type of a user property
@@ -315,7 +362,7 @@ The list below highlights the required schema for the user properties .CSV file 
     * `True`: Property is an array
     * `False` or `<blank>`: Property isn't an array
 
-**Property regex** 
+**Property regex**
 * Definition: Regular expression (Regex) values for properties with a string property value type
 
 **String property value min length**
