@@ -40,7 +40,15 @@ Once the experiment is running, the button changes to read *Complete Experiment*
 You can always revisit this decision after you've made it.
 
 {{partial:admonition type='note'}}
- You may receive the warning "Unable to analyze this metric, please check your metric definition or refresh this page" before launching an experiment or using a particular metric for the first time. This doesn't prevent you from running your experiment and testing your chosen parameters. 
+You may receive the warning "Unable to analyze this metric, check your metric definition or refresh this page" before launching an experiment or using a particular metric for the first time. This doesn't prevent you from running your experiment and testing your chosen parameters. 
+{{/partial:admonition}}
+
+### Schedule your experiment
+
+To schedule the experiment for launch at a later time, expand the **Start Experiment** menu, and click **Schedule start**. In the modal that appears, set the date and time that you want to begin the experiment. 
+
+{{partial:admonition type="note" heading="Experiment start and variant delivery"}}
+When a scheduled experiment reaches its start time, there may be up to a one hour delay before the experiment begins exposing users to variants.
 {{/partial:admonition}}
 
 ## QA after rollout
