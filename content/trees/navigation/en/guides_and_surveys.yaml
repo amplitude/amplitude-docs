@@ -53,8 +53,15 @@ tree:
     id: 4262a721-5861-4f52-b1aa-d0247a01ac4a
     entry: 7ef047c1-1a3c-4e94-a3c1-a69a81e0cc4e
   -
-    id: cd14e2f3-9100-4bf7-9b8c-9637f27709e4
-    entry: f422c82d-a9d7-404a-8f56-211e014453c6
+    id: 974a4b9e-3e00-438f-8c09-0a2e47329ee5
+    title: 'Instrument Guides and Surveys'
+    children:
+      -
+        id: cd14e2f3-9100-4bf7-9b8c-9637f27709e4
+        entry: f422c82d-a9d7-404a-8f56-211e014453c6
+      -
+        id: 6535e10e-2534-4d3e-8ef7-cbd72bf4f943
+        entry: 9efa3729-a771-4659-ab24-710758c53755
   -
     id: ef3f247a-faac-4803-97e8-a3c099d8e111
     entry: ba2e2bbb-396d-4f49-9c59-66fab5476120
