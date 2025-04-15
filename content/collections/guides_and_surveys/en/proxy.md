@@ -17,19 +17,19 @@ This setup uses **one CloudFront distribution** with **two origins** and **two c
 
 1. In AWS, go to **CloudFront** and click **Create distribution**.
 
-#### Default Origin (CDN)
+#### Default origin (CDN)
 
 2. Under **Origin settings**, configure the first origin:
 
    - **Origin domain**: `cdn.amplitude.com` for the US data center, or `cdn.eu.amplitude.com` for the EU data center
    - **Allowed HTTP methods**: `GET, HEAD, OPTIONS`
         - **Cache HTTP methods**: `OPTIONS`
-   - **Cache policy**: Choose a suitable caching policy for static assets (e.g., `CachingOptimized`)
+   - **Cache policy**: Choose a suitable caching policy for static assets (for example, `CachingOptimized`)
    - **Origin request policy**: `AllViewerExceptHostHeader`
    - **Response headers policy**: `CORS-with-preflight-and-SecurityHeadersPolicy`
-   - **Web Application Firewall (WAF)**: Do not enable security protections.
+   - **Web Application Firewall (WAF)**: Don't enable security protections.
 
-#### Adding a second Origin (G&S API)
+#### Adding a second origin (G&S API)
 
 3. Navigate to the 'Origins' tab and click **Create origin**:
 
@@ -51,7 +51,7 @@ This setup uses **one CloudFront distribution** with **two origins** and **two c
 
 ## Testing the proxy
 
-Once the distribution is deployed, test both the API and CDN paths to ensure requests are routed to the correct origins.
+After AWS deploys the distribution, test both the API and CDN paths to ensure that requests route to the correct origins.
 
 ### Test the G&S API
 
@@ -61,7 +61,7 @@ Replace `SUBDOMAIN` with the CloudFront domain name and `APIKEY` with your proje
 curl -i 'https://SUBDOMAIN.cloudfront.net/sdk/v1/decide' -H 'Authorization: Api-Key APIKEY'
 ```
 
-A successful response will return HTTP status 200 OK.
+A successful response returns HTTP status 200 OK.
 
 ### Test the CDN
 
@@ -69,7 +69,7 @@ A successful response will return HTTP status 200 OK.
 curl -I 'https://SUBDOMAIN.cloudfront.net/engagement-browser/prod/index.min.js.gz'
 ```
 
-A successful response will return HTTP status 200 OK.
+A successful response returns HTTP status 200 OK.
 
 ## Initialize the SDK with the proxy
 
