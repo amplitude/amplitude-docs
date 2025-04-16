@@ -68,10 +68,8 @@ After an S3 import source ingests a file, the same source doesn't process the fi
 
 ## Limits
 
-For each Amplitude project, AWS S3 import can ingest:
-
-- Up to 50 files per second.
-- Up to 30k events per second.
+For each Amplitude project, AWS S3 import can ingest up to a maximum of 30k events per second
+or one file per second.
 
 ### Deduplication with `insert_id`
 
