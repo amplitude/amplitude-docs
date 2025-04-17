@@ -745,7 +745,8 @@ POST https://experiment.amplitude.com/api/1/flags/{id}/variants/{variantKey}/use
 ```
 
 {{partial:admonition type='note'}} 
- You can have up to 500 inclusions per variant. If you go over this limit, Amplitude returns a `400` error. {{/partial:admonition}}
+You can have up to 500 inclusions per variant. If you go over this limit, Amplitude returns a `400` error.
+{{/partial:admonition}}
 
 Add inclusions (users or devices) to flag's variant.
 
