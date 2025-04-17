@@ -76,6 +76,7 @@ To migrate to `com.amplitude:analytics-android`, update your dependencies and in
 
 Update build.gradle to remove the maintenance Android SDK and add the latest Android SDK. Then sync project with Gradle files.
 
+
 ```java
 dependencies {
   implementation 'com.amplitude:android-sdk:2.+' //[tl! --]
@@ -148,6 +149,7 @@ The latest Android SDK configuration comes in a different shape. Some configurat
 
 The `logEvent()` API maps to `track()`. The `eventProperties` is `JSONObject` type in the maintenance SDK while it's `Map<String, Any?>` type in the latest SDK. 
 
+
 {{partial:tabs tabs="Kotlin, Java"}}
 {{partial:tab name="Kotlin"}}
 ```kotlin
@@ -183,9 +185,9 @@ try {
 }
 client.logEvent("Button Clicked", eventProperties);
 
-client.track("Button Clicked", new HashMap() {{ //[tl! ++:2]
+client.track("Button Clicked", new HashMap()  //[tl! ++:2]
     put("buttonColor", "primary");
-}});
+);
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -310,3 +312,6 @@ Amplitude amplitude = new Amplitude(configuration);
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
+
+
+
