@@ -244,7 +244,7 @@ If you haven't already, update to the latest version of the Amplitude template. 
 
 Next, on the Tags page, enable Guides and Surveys.
 
-![](https://share.cleanshot.com/pKSGH94k)
+![google_tag_manager.png](/docs/output/img/guides-surveys/google-tag-manager.png)
 
 {{partial:admonition type="info" heading=""}}
 The Amplitude template doesn't enable Guides and Surveys by default. This prevents organizations who enable automatic template updates from enabling Guides and Surveys accidentally.
