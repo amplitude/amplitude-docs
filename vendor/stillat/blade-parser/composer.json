@@ -1,0 +1,40 @@
+{
+    "name": "stillat/blade-parser",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Stillat\\BladeParser\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Stillat\\BladeParser\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.2.0",
+        "laravel/framework": "^10.0 || ^11.0 || ^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.14 || ^9.2 || ^10.0",
+        "laravel/pint": "^1.4",
+        "brianium/paratest": "*",
+        "pestphp/pest": "^3.7.3",
+        "mockery/mockery": ">=1.3.3"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Stillat\\BladeParser\\ServiceProvider",
+                "Stillat\\BladeParser\\Providers\\ValidatorServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}

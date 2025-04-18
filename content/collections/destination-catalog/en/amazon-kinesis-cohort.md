@@ -19,7 +19,7 @@ Amplitude Data's AWS Kinesis Cohort integration lets you stream your cohort memb
 
 - This integration is only available for customers who have paid plans with Amplitude.
 - You must enable this integration for each Amplitude project you want to use it in.
-- You should have an understanding of Amplitude Audiences and [Behavioral Cohorts](/docs/analytics/behavioral-cohorts) before setting up this integration.
+- You should have an understanding of Amplitude Activation and [Behavioral Cohorts](/docs/analytics/behavioral-cohorts) before setting up this integration.
 - Cohort updates can be sent via all the supported cadences (Daily, Hourly, Real Time).
 - All the existing Real Time Cohort Sync limits apply here.
 

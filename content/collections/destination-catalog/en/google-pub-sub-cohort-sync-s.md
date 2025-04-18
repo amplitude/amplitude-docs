@@ -23,7 +23,7 @@ Amplitude Data's Google Pub/Sub Cohort integration lets you stream your cohort m
 
 - This integration is only available for customers who have paid plans with Amplitude.
 - You must enable this integration for each Amplitude project you want to use it in.
-- You should have an understanding of [Amplitude Audiences](https://help.amplitude.com/hc/en-us/articles/360028552471-Amplitude-Engage) and [Behavioral Cohorts](https://help.amplitude.com/hc/en-us/articles/231881448) before setting up this integration.
+- You should have an understanding of [Amplitude Activation](https://help.amplitude.com/hc/en-us/articles/360028552471-Amplitude-Engage) and [Behavioral Cohorts](https://help.amplitude.com/hc/en-us/articles/231881448) before setting up this integration.
 - Cohort updates can be sent via all the supported cadences (Daily, Hourly, Real Time).
 - All the existing Real Time Cohort Sync limits apply here.
 

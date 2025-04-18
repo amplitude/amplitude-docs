@@ -43,9 +43,13 @@ Also, when measuring unique users, none of these models generate attribution gro
 * **Inverse J-Shaped**: Distributes credit for the selected metrics in a way that biases credit to the first values from the selected property. With two touch points, the last 20% is equally added to the first and middle touch points (70%, 30%). With four touch points, the last two touch points would share the 20% (60%, 20%, 10%, 10%).
 * **Data Driven:** With this model, Amplitude Analytics relies on a probabilistic algorithm based on [first-order Markov chains](https://rpubs.com/EelesCB/469421). Every customer journey—defined here as a sequence of channels or touch points—is represented as a chain in a directed Markov graph, where each node is a possible state (either a channel or a touch point), and the edges represent the probability of transition between states. Next, Amplitude Analytics removes the nodes one by one and estimates the impact of removing nodes on the conversion rate. Each channel gets credit in proportion to its removal effect. In general, you should use this model with properties that don't have a large number of unique values (those with 50 or fewer work best). Learn more about the algorithm [here](https://www.analyzecore.com/2016/08/03/attribution-model-r-part-1/).
 
-{{partial:admonition type='note'}}
-The data-driven attribution model executes in real time, and calculations may take longer than with other models.
-{{/partial:admonition}}
+
+    {{partial:admonition type='note' heading="About the Data Driven model"}}
+    * The data driven attribution model executes in real time, and calculations may take longer than with other models.
+    * The data driven model doesn't count `null` values.
+    {{/partial:admonition}}
+
+    
 
 ## Configure an attribution model
 

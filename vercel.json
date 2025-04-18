@@ -7,8 +7,18 @@
       "statusCode": 301
     },
     {
+      "source":"/docs/feature-experiment/app-level-permissions",
+      "destination": "/docs/feature-experiment/project-level-permissions",
+      "statusCode": 301
+    },
+    {
       "source":"/docs/data/ampli-sdk-overview",
       "destination": "/docs/sdks/ampli",
+      "statusCode": 301
+    },
+    {
+      "source":"/docs/feature-experiment/troubleshooting/restart-an-experiment",
+      "destination": "/docs/feature-experiment/troubleshooting/new-experiment-run",
       "statusCode": 301
     },
     {

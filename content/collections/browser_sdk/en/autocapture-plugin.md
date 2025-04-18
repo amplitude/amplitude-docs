@@ -26,7 +26,14 @@ If you used the Autocapture plugin, and updated the Browser SDK to version 2.10.
 
 Replace your referenced script with the following snippet:
 
-{{partial:partials/code/snippet autocapture="true"}}
+```html
+<script src="https://cdn.amplitude.com/libs/analytics-browser-{{sdk_versions.browser}}-min.js.gz"></script>
+<script>
+window.amplitude.init("AMPLITUDE_API_KEY", {
+    autocapture: { elementInteractions: true }
+});
+</script>
+```
 
 ### Npm or yarn
 

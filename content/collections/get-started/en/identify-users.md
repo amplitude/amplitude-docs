@@ -8,8 +8,10 @@ this_article_will_help_you:
   - 'Understand best practices for setting user IDs'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1716571480
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1742328540
+academy_course:
+  - f60c2808-d54b-484c-bad0-b346581d802c
 ---
 Amplitude uses a combination of three different methods to identify your users: device IDs, Amplitude ID, and **user IDs**. The first comes directly from your users' devices, while the second is an ID that Amplitude automatically creates once it has enough information to conclusively identify a unique user. The user ID, however, is something you'd set up.
 

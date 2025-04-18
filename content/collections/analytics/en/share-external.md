@@ -10,7 +10,7 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724882858
 ---
-Sometimes, you may need to share your Amplitude analyses with people who are not in your organization, or who should not have full access to your data. You can create **public links** to charts, dashboards, and notebooks and send them to **any** person, even if they are not registered under your Amplitude organization.
+Sometimes, you may need to share your Amplitude analyses with people who aren't in your organization, or who shouldn't have full access to your data. You can create **public links** to charts, dashboards, and notebooks and send them to **any** person, even if they're not registered under your Amplitude organization.
 
 ### Feature availability
 
@@ -18,10 +18,11 @@ This feature is available to users on **Growth** and **Enterprise plans** only.
 
 ## Before you begin
 
-* Remember, public links can be shared with anyone until you revoke the link. On the Enterprise plan, anyone with the password can access your links prior to their expiration.
-* Once you revoke a link, you will not be able to re-enable it. Users who click revoked links will be directed to a 404 page.
-* If you share a public link to a notebook or a dashboard that contains a [Journeys](/docs/analytics/charts/journeys/journeys-understand-paths) chart, that chart will not be visible to the recipient of that link. (Journeys charts can instead be viewed via direct public links to the chart itself.)
-* Charts are cached for ten minutes for everyone.
+* Remember, anyone can view a public link until you revoke it. On the Enterprise plan, anyone with the password can access your links prior to their expiration.
+* Once you revoke a link, you can't to re-enable it. Amplitude redirects users who click a revoked link to a 404 page.
+* If you share a public link to a notebook or a dashboard that contains a [Journeys](/docs/analytics/charts/journeys/journeys-understand-paths) chart, that chart isn't visible to the recipient of that link. Use the direct link to the journey chart to share it.
+* Amplitude caches charts for 10 minutes.
+* Experiment results charts don't support access by public link.
 
 ## Create a public link
 
@@ -32,15 +33,15 @@ To create a public link to a chart, dashboard, or notebook, follow these steps:
 
 ![create_public_link.gif](/docs/output/img/analytics/create_public_link.gif)
 
-3. Add a password, if desired, and enter the date the public link will expire. Then click *Create Link*.
+1. Add a password, if desired, and enter the date the public link expires. Then click *Create Link*.
 
-Amplitude will randomly generate a link to the content. Click *Copy Public Link* to copy the URL to your clipboard.
+Amplitude generates a link to the content. Click *Copy Public Link* to copy the URL to your clipboard.
 
 ![public_links_2.png](/docs/output/img/analytics/public_links_2.png)
 
 ## Generate embed code for your content
 
-Another way you can share your charts, notebooks, and dashboards with external stakeholders is by embedding your analysis into a document created outside of Amplitude Analytics. Simply paste the Amplitude-generated embed code into a tool that accepts embeds, like WordPress, Confluence, or wikis. Your Amplitude content will then be visible to unauthenticated users, in much the same way as public links.
+Another way you can share your charts, notebooks, and dashboards with external stakeholders is by embedding your analysis into a document created outside of Amplitude Analytics. Simply paste the Amplitude-generated embed code into a tool that accepts embeds, like WordPress, Confluence, or wikis. Your Amplitude content becomes visible to unauthenticated users, in much the same way as public links.
 
 To generate this embed code, follow these steps:
 
@@ -50,7 +51,7 @@ To generate this embed code, follow these steps:
 	![embed_modal.png](/docs/output/img/analytics/embed_modal.png)
 
 3. Click *Copy Embed Code*. You can now paste the embed code from your clipboard.
-4. To revoke external permissions to view the content, simply flip the toggle switch to Off. The embed code will no longer work in any of the documents where it appears.
+4. To revoke external permissions to view the content, simply flip the toggle switch to Off. The embed code no longer works in any of the documents where it appears.
 
 ## Copy, edit, or delete a public link
 
@@ -58,15 +59,15 @@ You can view and manage all your public links by navigating to *Settings > Organ
 
 ![public_links_3.png](/docs/output/img/analytics/public_links_3.png)
 
-Public links are not editable via the *Manage Content Access* page; however, you can remove them from there. Hover over the public link to bring up the *Remove* button. To edit the link's password or change its expiration date, click on the name of the chart to open it, then click *Share* to begin making those changes.
+Public links aren't editable from the *Manage Content Access* page; however, you can remove them from there. Hover over the public link to bring up the *Remove* button. To edit the link's password or change its expiration date, click on the name of the chart to open it, then click *Share* to begin making those changes.
 
 ## Set public link permissions
 
-Admins on Enterprise plan accounts can control whether members are required to set a password and/or expiration date when creating a public link. When setting an expiration, you can control how long public links are allowed to exist before expiring. 
+Admins on Enterprise plan accounts can control whether members are required to set a password and/or expiration date when creating a public link. When setting an expiration, you can control how long public links exist before they expire. 
 
-Even if your account does not require passwords or expirations, you may set either when creating a public link. See [Create a public link](#create-a-public-link) for details.
+Even if your account doesn't require passwords or expirations, you can set either when creating a public link. See [Create a public link](#create-a-public-link) for details.
 
-**Passwords are not recoverable**. If you forget your password, you can edit the link and choose a new one. If you choose to set an expiration date, any recipients will receive an error message when opening the link after your selected date. You can always edit your link and choose a new expiration date if you need to extend access.
+Passwords aren't recoverable. If you forget your password, you can edit the link and choose a new one. If you choose to set an expiration date, any recipients receive an error message when opening the link after your selected date. You can always edit your link and choose a new expiration date if you need to extend access.
 
 ## Visual links and unfurling public links on Slack
 

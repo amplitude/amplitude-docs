@@ -32,7 +32,7 @@ Session Replay captures changes to a page's Document Object Model (DOM), includi
 
 ## Before you begin
 
-Use the latest version of the Session Replay Plugin above version {{sdk_versions:session_replay_plugin}}. For more information, see the [change log](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/plugin-session-replay-browser/CHANGELOG.md) on GitHub.
+Use the latest version of the Session Replay Plugin above version {{sdk_versions:session_replay_plugin}}. For more information, see the [change log](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/session-replay-browser/CHANGELOG.md ) on GitHub.
 
 The Session Replay Plugin requires that:
 
@@ -143,7 +143,7 @@ const sessionReplayTracking = window.sessionReplay.plugin({
 
 ```
 
-Amplitude requires at least one event in any captured session to enable playback of the replay. Amplitude recommends that you leave Session Tracking enabled, as that triggers `[Amplitude] Session Start` at the beginning of the session. If you disable session tracking, configure another event to fire early in the session for best results.
+Amplitude requires at least one event in any captured session to enable playback of the replay.
 {{/partial:admonition}}
 
 ### Mask on-screen data
@@ -268,27 +268,11 @@ When you delete the Amplitude project on which you use Session Replay, Amplitude
 
 Session Replay uses the same [block filter](/docs/data/block-bot-traffic) available in the Amplitude app. Session Replay doesn't block traffic based on event or user properties.
 
-## Session Replay storage
+{{partial:partials/session-replay/sr-web-storage}}
 
-Session Replay doesn't set cookies on the user's browser. Instead, it relies on a browser storage option called [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API). This option enables continuous replay collection during a session in which the user navigates browser tabs or closes and reopens a tab. The SDK cleans up the data it stores in IndexedDB and shouldn't impact the user's disk space.
+### Cookies
 
-If a user opts out of all cookies on your site, use the `optOut` configuration option to disable replay collection for that user.
-
-{{partial:admonition type="note" heading="Session Replay and cookie size"}}
-Session Replay doesn't use cookies directly, and has no impact on cookie size. 
-
-[Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) uses cookies for session management.
-{{/partial:admonition}}
-
-### IndexedDB best practices
-
-To ensure that IndexedDB is initialized and working properly:
-
-* Review CSP headers to ensure they're not overly restrictive. Ensure `default-src` and `script-src` directives allow necessary sources.
-
-* Perform IndexedDB operations are within the same origin. Cross-origin restrictions can block IndexedDB operations.
-
-* Confirm that users use a modern browser that supports IndexedDB. Amplitude recommends the latest versions of Chrome, Firefox, Safari, Edge, or Opera.
+Session Replay doesn't use cookies directly, and has no impact on cookie size. [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) uses cookies for session management.
 
 ## Known limitations
 
@@ -299,7 +283,7 @@ Keep the following limitations in mind as you implement Session Replay:
   - A known user begins on the marketing site, and logs in to the web application.
   - Amplitude captures both sessions.
   - The replay for each session is available for view in the host project.
-- Session Replay supports standard session definitions, and doesn't support [custom session definitions](/docs/data/sources/instrument-track-sessions).
+- Session Replay supports standard session definitions, and doesn't support time-based or [custom session definitions](/docs/data/sources/instrument-track-sessions).
 - Session Replay can't capture the following HTML elements:
   - Canvas
   - WebGL
@@ -345,7 +329,7 @@ The Session Replay Plugin enables session tracking by default. If you instrument
 
 If you use a method other than the Browser SDK to instrument your events, consider using the [Session Replay Standalone SDK](/docs/session-replay/session-replay-standalone-sdk/)
 
-{{partial:partials/session-replay/sr-web-mismatch}}
+{{partial:partials/session-replay/sr-web-mismatch type="plugin"}}
 
 ### Session Replay processing errors
 
@@ -353,6 +337,6 @@ In general, replays should be available within minutes of ingestion. Delays or e
 
 - Mismatching API keys or Device IDs. This can happen if Session Replay and standard event instrumentation use different API keys or Device IDs.
 - Session Replay references the wrong project.
-- Short sessions. If a users bounces within a few seconds of initialization, the SDK may not have time to upload replay data.
+- Short sessions. If a user bounces within a few seconds of initialization, the SDK may not have time to upload replay data.
 - Page instrumentation. If Session Replay isn't implemented on all pages a user visits, their session may not capture properly.
 - Replays older than the set [retention period](#retention-period) (defaults to 30 days, or 90 days if you purchase extra volume).
