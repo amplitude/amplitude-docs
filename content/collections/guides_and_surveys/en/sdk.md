@@ -71,7 +71,7 @@ After calling this function, you can access `window.engagement` and call the SDK
 
 #### Boot user
 
-The final step before guides and surveys can show to your end-users is to call `boot`. This method triggers targeting resolution of your live guides and surveys. It also establishes the connection from the Guides and Surveys SDK to your third-party analytics provider. This method should be called only once for a given session unless you want to change the active user.
+The final step before guides and surveys can show to your end-users is to call `boot`. This method triggers targeting resolution of your live guides and surveys. It also establishes the connection from the Guides and Surveys SDK to your third-party analytics provider. Call this method only once for a given session unless you want to change the active user.
 
 
 
@@ -237,6 +237,18 @@ analytics.ready(() => {
 {{/partial:tabs}}
 {{/partial:collapse}}
 
+### Google Tag Manager
+
+If you haven't already, update to the latest version of the Amplitude template. Find the update icon on the Templates page in GTM.
+
+Next, on the Tags page, enable Guides and Surveys.
+
+![google_tag_manager.png](/docs/output/img/guides-surveys/google-tag-manager.png)
+
+{{partial:admonition type="info" heading=""}}
+The Amplitude template doesn't enable Guides and Surveys by default. This prevents organizations who enable automatic template updates from enabling Guides and Surveys accidentally.
+{{/partial:admonition}}
+
 ### Verify installation and initialization
 
 To verify that the Guides and Surveys SDK is running on your site or dev environment, open your browser's Developer Tools, and enter the following in the console:
@@ -371,3 +383,68 @@ Close all active guides and surveys.
 ```js
 engagement.gs.closeAll(): void
 ```
+
+## Troubleshoot your installation
+
+If your Guides and Surveys instrumentation doesn't work, verify the following topics.
+
+### Verify Guides and Surveys is installed
+
+1. Open your browser's developer console, and enter `window.engagement`. If the return is `undefined`, Guides and Surveys installation wasn't successful.
+
+2. If `window.engagement` returns a valid response, enter `window.engagement._.user`. A return of `undefined` indicates an issue with the plugin configuration.
+
+3. For additional debugging, enter `window.engagement._debugStatus()`. The output should look like:
+
+```json
+{
+    "user": {
+        "user_id": "test-base-user-1vxxkg",
+        "device_id": "62c5e45a-94ab-4090-b053-3f28e848763f",
+        "user_properties": {
+            "foo": "bar"
+        }
+    },
+    "apiKey": "6ae8d3d7d48eadfb0b2489db692e14c9",
+    "stateInitialized": true,
+    "decideSuccessful": true,
+    "num_guides_surveys": 2,
+    "analyticsIntegrations": 1
+}
+```
+
+Verify that:
+- the `user` object is present
+- `apiKey` is set
+- `stateInitialized` is `true`
+- `decideSuccessful` is `true`
+- `num_guides_surveys` is a non-zero integer if a guide or survey should be display on the page.
+
+### Verify plugin configuration
+
+If you use Amplitude Browser SDK 2.0, check the browser's console for errors. If there are none, verify that your code matches code provided in the installation instructions. In particular, ensure that  `amplitude.add(window.engagement.plugin())` is present in the code.
+
+If you see something like `amplitude is not defined` and `cannot read properties of undefined .add()`, this means that the G&S is trying to load before the Amplitude SDK loads. Check your code to ensure that the Amplitude Browser SDK loads before the Guides and Surveys SDK. 
+
+If you use Google Tag Manager, ensure you update to the latest Amplitude template.
+
+Guides and Surveys requires Browser SDK 2 and doesn't support the legacy Amplitude JavaScript SDK.
+
+### Common root causes
+
+This section contains some common errors that may prevent running Guides and Surveys.
+
+#### `boot` is called more than once
+
+This results in unexpected behavior, especially for guides and surveys that should appear immediately.
+
+{{partial:admonition type="info" heading=""}}
+If you implement Guides and Surveys with `amplitude.add(window.engagement.plugin())`, don't call `boot`. The `add()` method includes this call with a very specific set of parameters.
+{{/partial:admonition}}
+
+#### Wrong project used
+
+Ensure the API key you provide:
+
+- is the same key you use to initialize the Browser SDK
+- belongs to the project that contains the Guides and Surveys configuration
