@@ -307,7 +307,7 @@ Verify that:
 
 If you use Amplitude Browser SDK 2.0, check the browser's console for errors. If there are none, verify that your code matches code provided in the installation instructions. In particular, ensure that  `amplitude.add(window.engagement.plugin())` is present in the code.
 
-If you see something like `amplitude is not defined` and `cannot read properties of undefined .add()`, this means that the G&S is trying to load before the Amplitude SDK loads. Check your code to ensure that the Amplitude Browser SDK loads before the Guides and Surceys SDK. 
+If you see something like `amplitude is not defined` and `cannot read properties of undefined .add()`, this means that the G&S is trying to load before the Amplitude SDK loads. Check your code to ensure that the Amplitude Browser SDK loads before the Guides and Surveys SDK. 
 
 If you use Google Tag Manager, ensure you update to the latest Amplitude template.
 
@@ -320,7 +320,7 @@ We do not support Amplitude's legacy Javascript SDK--please upgrade to the Brows
 This results in unexpected behavior, especially for guides and surveys that should appear immediately.
 
 {{partial:admonition type="info" heading=""}}
-If you implement Guides and Sureys with `amplitude.add(window.engagement.plugin())`, don't call `boot`. The `add()` method includes this call with a very specific set of parameters.
+If you implement Guides and Surveys with `amplitude.add(window.engagement.plugin())`, don't call `boot`. The `add()` method includes this call with a very specific set of parameters.
 
 ##### Wrong project used
 
