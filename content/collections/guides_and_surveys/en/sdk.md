@@ -311,7 +311,7 @@ If you see something like `amplitude is not defined` and `cannot read properties
 
 If you use Google Tag Manager, ensure you update to the latest Amplitude template.
 
-We do not support Amplitude's legacy Javascript SDK--please upgrade to the Browser SDK 2.0 and follow the install instructions above.
+Guides and Surveys requires Browser SDK 2 and doesn't support the legacy Amplitude JavaScript SDK.
 
 #### Common root causes
 
