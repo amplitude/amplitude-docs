@@ -8,26 +8,19 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1729791421
 ---
 
-[Shopify](https://www.shopify.com/) is an all-in-one commerce platform that allows businesses of any size to create, customize, and manage online stores with ease. It offers tools for product listings, payments, shipping, and customer engagement, streamlining the selling process online, across social media, and in person. With built-in marketing features, analytics, and integrations with third-party apps, Shopify helps business owners track performance and drive sales.
+[Shopify](https://www.shopify.com/) is an all-in-one commerce platform that allows businesses of any size to create, customize, and manage online stores with ease. It offers tools for product listings, payments, shipping, and customer engagement, streamlining the selling process online, across social media, and in person.
 
-The [Amplitude Shopify Plugin](https://apps.shopify.com/amplitude) enables you to instrument your Shopify store with an Amplitude features including [Autocapture](/docs/data/autocapture) and [Session Replay](/docs/session-replay).
+The [Amplitude Shopify Plugin](https://apps.shopify.com/amplitude) enables you to bring data from your Shopify store into Amplitude, unlocking valuable insights from funnel analytics, user behavior trends and charts, ROI analysis, Session Replay and more.
 
-## Considerations
+## Overview
 
-* Performance: The packages Amplitude provides are roughly 167kb total size, but vary depending on which products you use. In testing, Shopify stores with Amplitude installed registered an average lighthouse score of 96, compared to an average score of 98 without Amplitude.
-
-## Plugin details
-
-The Shopify plugin installs a version of the [Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2), and adds the script before the `</head>` tag on each of your site's pages. This script also includes the following Amplitude features:
-
-* [Session Replay](/docs/session-replay)
-* [Web Experiment](/docs/web-experiment)
+The Shopify plugin installs a version of the [Amplitude Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) and adds the script before the `</head>` tag of your site's pages. The script includes [Session Replay](/docs/session-replay) and [Web Experiment](/docs/web-experiment).
 
 {{partial:admonition type="warning" heading="Shopify and flickering"}}
 The method Shopify uses to loads Amplitude's Shopify app causes flickering. To avoid this, add the [asynchronous web script with the anti-flicker snippet](#async-script-with-anti-flicker-snippet) to your `theme.liquid` file.
 {{/partial:admonition}}
 
-The Shopify plugin captures Amplitude's default events and Shopify's standard [events](https://shopify.dev/docs/api/web-pixels-api/standard-events).
+The Shopify plugin captures Amplitude's default events, including [marketing attribution](/docs/sdks/analytics/browser/browser-sdk-2#track-marketing-attribution) and Shopify's standard [events](https://shopify.dev/docs/api/web-pixels-api/standard-events).
 
 {{partial:collapse name="Shopify plugin events and event properties"}}
 
@@ -39,7 +32,7 @@ The Shopify plugin captures Amplitude's default events and Shopify's standard [e
 | Form started                     | Amplitude | Form destination, Session Replay ID (if enabled), [User properties](#user-properties).                                                                                                                                                                                    |
 | Form submitted                   | Amplitude | Form destination, Session Replay ID (if enabled), [User properties](#user-properties).                                                                                                                                                                                    |
 | File downloaded                  | Amplitude | File extension, File name, Link text, Link URL, Session Replay ID (if enabled),                                                                                                                                                                                           |
-| Element clicked                  | Amplitude | Element Aria Label, Element Class, Element Hierarchy, Element Href, Element ID, Element Parent Label, Element Position Left, Element Position Top, Element Selector, Element Tag, Element Text, Page Title, Page URL, Session Replay ID, Viewport Height, Viewport Width. |
+| Element clicked                  | Amplitude | Element Aria Label, Element Class, Element Hierarchy, Element href, Element ID, Element Parent Label, Element Position Left, Element Position Top, Element Selector, Element Tag, Element Text, Page Title, Page URL, Session Replay ID, Viewport Height, Viewport Width. |
 | Element changed                  | Amplitude | Element Class, Element Hierarchy, Element ID, Element Parent Label, Element Position Left, Element Position Top, Element Tag, Page Title, Page URL, Session Replay ID, Viewport Height, Viewport Width.                                                                   |
 | Collection viewed                | Shopify   | Collection title                                                                                                                                                                                                                                                          |
 | Product viewed                   | Shopify   | Quantity, SKU, Price, Currency Code, Type, Variant Title, Title, Vendor, Products                                                                                                                                                                                         |
@@ -55,25 +48,39 @@ The Shopify plugin captures Amplitude's default events and Shopify's standard [e
 
 {{/partial:collapse}}
 
-{{partial:admonition type="note" heading="Checkout completed vs Order created"}}
 In most scenarios, when a customer completes the checkout flow, Shopify fires the Checkout complete event, then the Order created event. If you create an order manually from your store's Admin page, only the Order created event fires. The Checkout complete event is specific to a customer completing the checkout flow.
+
+User ID is set using the email address or phone number the customer enters in the Contact section of the checkout.
+
+{{partial:admonition type="note" heading="Shopify checkout page"}}
+Shopify prevents third-party packages from loading on your store's checkout page. As a result, Amplitude doesn't receive events from the checkout page, and you can't run experiments on it.
 {{/partial:admonition}}
 
-User ID is set using the email address or phone number the customer enters in the Contact section of the checkout. 
+### Performance impact
+
+The packages that Amplitude adds to your Shopify pages weigh ~167kb. Internal testing showed Lighthouse performance reports averaging 98 without the plugin, and 96 with the plugin.
 
 ## Install the plugin
 
-To add the plugin to your Shopify store:
+The method you use to install the Shopify plugin depends on if you have an existing Amplitude organization. 
 
-1. Log in to your Shopify account and find the plugin in the [Shopify App Store](https://apps.shopify.com/amplitude). Click *Install*.
-2. Confirm the required plugin permissions and click *Install*.
-3. Locate your project's API key and add it to the Amplitude Settings page in Shopify.
-4. Select your Amplitude data region. Click *Connect*.
+### Install without an existing Amplitude organization
 
-    {{partial:admonition type="note" heading="Ad blocking software"}}
-    If any ad blocking software is running in your browser, disable it to ensure the plugin setup step can communicate with Amplitude.
+1. Find the [Amplitude Shopify plugin](https://apps.shopify.com/amplitude) in the Shopify App Store.
+2. Click **Install** and confirm access to add it to your Shopify store.
+3. Navigate to the [Amplitude Get Started page](https://analytics.amplitude.com/login?utm_source=shopify_app) and click to create your Amplitude account. Complete the form, agree to terms, and click **Continue**.
+
+    {{partial:admonition type="note" heading="Data Storage Locaiton"}}
+    Amplitude provides data storage in the US and EU. Choose the appropriate option based on your location.
     {{/partial:admonition}}
 
-A "Connection successful" message indicates the plugin is enabled and connected with Amplitude.
+4. After you create your account, from the Amplitude setup page, click **Shopify** in the *Other ways to install* section.
+5. In the resulting modal, copy your Amplitude project's API key.
+6. Return to the Amplitude Settings screen in Shopify, enter the API key, and click **Connect**.
 
-A successful connection enables Amplitude to stream events and properties from your Shopify store to Amplitude, where you can create charts, view session replays, define new events with [Visual Labeling](/docs/data/visual-labeling), and more.
+### Install into an existing Amplitude organization
+
+1. Log in to Amplitude, and navigate to your organization's settings.
+2. Select the project within your organization that you want to connect to Shopify.
+3. Find the Project's API key and copy it.
+4. Return to the Amplitude Settings screen in Shopify, enter the API key, and click **Connect**.

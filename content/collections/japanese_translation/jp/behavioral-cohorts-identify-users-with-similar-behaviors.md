@@ -202,7 +202,7 @@ Amplitudeにおいて**コホート**とは、共通の特徴があるユーザ�
 
 ## コホートを同期またはエクスポート
 
-[Amplitude Audiences](https://help.amplitude.com/hc/en-us/articles/360028552471)のお客様は、行動コホートをパートナー[統合](https://help.amplitude.com/hc/en-us/sections/201147128-Integrations)と同期させることができます。 エクスポートされるコホートのユーザー数は最大で100万人です。
+[Amplitude Activation](https://help.amplitude.com/hc/en-us/articles/360028552471)のお客様は、行動コホートをパートナー[統合](https://help.amplitude.com/hc/en-us/sections/201147128-Integrations)と同期させることができます。 エクスポートされるコホートのユーザー数は最大で100万人です。
 
 コホートをCSVファイルとしてエクスポートするには、*CSVをエクスポート*クリックします。...をダウンロードするリンクをメールで送信します。コホート内のすべてユーザーとその最新ユーザーのプロパティを含むCSVファイルです。
 

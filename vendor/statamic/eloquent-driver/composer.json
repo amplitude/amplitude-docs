@@ -1,0 +1,46 @@
+{
+    "name": "statamic/eloquent-driver",
+    "description": "Allows you to store Statamic data in a database.",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Statamic\\Eloquent\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Eloquent Driver",
+            "description": "Allows you to store Statamic data in a database."
+        },
+        "laravel": {
+            "providers": [
+                "Statamic\\Eloquent\\ServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": "^8.1",
+        "statamic/cms": "^5.41"
+    },
+    "require-dev": {
+        "doctrine/dbal": "^3.8",
+        "laravel/pint": "^1.0",
+        "orchestra/testbench": "^8.28 || ^9.6.1 || ^10.0",
+        "phpunit/phpunit": "^10.5.35 || ^11.0"
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

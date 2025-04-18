@@ -81,6 +81,23 @@ To set up a profile in Amplitude, follow these steps:
 6. When you're done, click *Test Mapping* to verify your mapping information. Then click *Next*.
 7. Name the source and set the frequency at which Amplitude should refresh your profiles from the data warehouse. The default frequency is 12 hours, but you can change it.
 
+## Set up a profile (S3 users)
+
+To set up a profile in Amplitude:
+1. In Amplitude, navigate to *Data > Sources* and click **+ Add Source**. Find and click Amazon S3.
+2. Connect Amplitude to your S3 bucket. For more information about granting Amplitude access to your S3 bucket, see [Amazon S3](/docs/data/source-catalog/amazon-s3#limits). Additionally, have the following information ready for the *Verify Instrumentation* tab:
+    * Bucket Name and Prefix where your profiles are stored.
+    * AWS Role ARN, AWS External ID, and AWS Region
+
+    Click *Test Credentials* to confirm Amplitude can access your S3 bucket, then click *Next* and name your source.
+3. In the *Select File* tab, select the file type and click *See Preview* to confirm the files to be imported, then click *Next*.
+4. On the *Configure Converter* tab, select the *Profiles* data type. Complete source fields for `user_id` and `mutation_type`, and add additional properties if needed. The *Data Preview* section shows an example of what Amplitude is set to ingest.
+    * `mutation_type` must be exactly one of the following strings, or Amplitude won't ingest the profile: 
+      * `INSERT` when creating new files
+      * `UPDATE` when syncing new values 
+      * `DELETE` to remove profiles.
+5. When you're done, click *Save and Enable* to enable the import and refresh of profiles.
+
 ## Data specifications
 
 | Field                | Description                                                                                                              | Example |

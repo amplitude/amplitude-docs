@@ -146,6 +146,43 @@ Control the level of logs the SDK prints to the console with the following `logL
 | `verbose` | Shows informative messages.                                                                                                                                  |
 | `debug`   | Shows all messages, including function context information for each public method the SDK invokes. Amplitude recommends this log level for development only. |
 
+Set the `logLevel` parameter.
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
+  logLevel: amplitude.Types.LogLevel.Warn,
+});
+```
+
+The default logger outputs log to the developer console. You can provide your own logger implementation based on the `Logger` interface for any customization purpose. For example, collecting any error messages from the SDK in a production environment.
+
+Set the logger by configuring the `loggerProvider` with your own implementation.
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
+  loggerProvider: new MyLogger(),
+});
+```
+
+#### Debug mode
+
+Enable the debug mode by setting the `logLevel` to "Debug", for example:
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, OPTIONAL_USER_ID, {
+  logLevel: amplitude.Types.LogLevel.Debug,
+});
+```
+
+With the default logger, extra function context information is output to the developer console when invoking any SDK public method, including:
+
+- `type`: Category of this context, for example "invoke public method".
+- `name`: Name of invoked function, for example "track".
+- `args`: Arguments of the invoked function.
+- `stacktrace`: Stacktrace of the invoked function.
+- `time`: Start and end timestamp of the function invocation.
+- `states`: Useful internal states snapshot before and after the function invocation.
+
 ## Autocapture <a id="tracking-default-events"></a>
 
 Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you enable it, and adds a configuration to control the collection of autocaptured events. Browser SDK can autocapture the following event types:
@@ -521,20 +558,25 @@ For example, you could configure Amplitude only to capture clicks on elements wi
 ```ts
 amplitude.init(API_KEY, OPTIONAL_USER_ID, {
   autocapture: {
-    cssSelectorAllowlist: [
-      '.amp-tracking'
-    ],
-    pageUrlAllowlist: [
-      new RegExp('https://amplitude.com/blog/*')
-    ],
-  },
+    elementInteractions: {
+      cssSelectorAllowlist: [
+        '.amp-tracking'
+      ],
+      // When you use `cssSelectorAllowlist` to target specific elements, set `actionClickAllowlist`  [tl! ~~:2]
+      // to ensure that Amplitude tracks interactions with non-standard clickable elements during page transitions or DOM updates.
+      actionClickAllowlist: [],
+      pageUrlAllowlist: [
+        new RegExp('https://amplitude.com/blog/*')
+      ]
+    }
+  }
 });
 ```
 
 By default, if you don't use these settings, Amplitude tracks the default selectors on all page on which you enable the plugin.
 
 {{partial:admonition type="note" heading=""}}
-When specify the CSS selectors to track, your selection overrides the default. To retain the default selectors import the `DEFAULT_CSS_SELECTOR_ALLOWLIST` and include it in your code.
+When you specify the CSS selectors to track, your selection overrides the default. To retain the default selectors import the `DEFAULT_CSS_SELECTOR_ALLOWLIST` and include it in your code.
 
 ```js
 import { DEFAULT_CSS_SELECTOR_ALLOWLIST } from '@amplitude/plugin-autocapture-browser';

@@ -142,7 +142,7 @@ Fetch the configuration details of a flag.
 
 | Name | Requirement | Type   | Description    |
 | ---- | ----------- | ------ | -------------- |
-| `id` | Required    | string | The flag's ID. |
+| `id` | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
 
 ### Response
 
@@ -230,7 +230,7 @@ Fetch a list of all versions for a flag.
 
 | Name | Requirement | Type   | Description    |
 | ---- | ----------- | ------ | -------------- |
-| `id` | Required    | string | The flag's ID. |
+| `id` | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
 
 ### Response
 
@@ -391,7 +391,7 @@ Fetch details of a specific version of a flag.
 
 | Name        | Requirement | Type   | Description       |
 | ----------- | ----------- | ------ | ----------------- |
-| `id`        | Required    | string | The flag's ID.    |
+| `id`        | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.    |
 | `versionId` | Required    | string | The version's ID. |
 
 ### Response
@@ -476,7 +476,7 @@ Fetch a list of all variants for a flag.
 
 | Name | Requirement | Type   | Description    |
 | ---- | ----------- | ------ | -------------- |
-| `id` | Required    | string | The flag's ID. |
+| `id` | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
 
 ### Response
 
@@ -522,7 +522,7 @@ Fetch details of a specific variant of a flag.
 
 | Name         | Requirement | Type   | Description        |
 | ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | The flag's ID.     |
+| `id`         | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.     |
 | `variantKey` | Required    | string | The variant's key. |
 
 ### Response
@@ -567,7 +567,7 @@ Fetch a list of inclusions for a specific variant of a flag.
 
 | Name         | Requirement | Type   | Description        |
 | ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | The flag's ID.     |
+| `id`         | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.     |
 | `variantKey` | Required    | string | The variant's key. |
 
 ### Response
@@ -609,7 +609,7 @@ Create a new variant for a flag
 
 | Name | Requirement | Type   | Description    |
 | ---- | ----------- | ------ | -------------- |
-| `id` | Required    | string | The flag's ID. |
+| `id` | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
 
 ### Request body
 
@@ -664,7 +664,7 @@ Edit a variant for a flag.
 
 | Name         | Requirement | Type   | Description        |
 | ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | The flag's ID.     |
+| `id`         | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.     |
 | `variantKey` | Required    | string | The variant's key. |
 
 {{partial:admonition type="example" heading="Example request"}}
@@ -720,7 +720,7 @@ Remove a variant from a flag.
 
 | Name         | Requirement | Type   | Description        |
 | ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | The flag's ID.     |
+| `id`         | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.     |
 | `variantKey` | Required    | string | The variant's key. |
 
 ### Response
@@ -744,13 +744,17 @@ curl --request DELETE \
 POST https://experiment.amplitude.com/api/1/flags/{id}/variants/{variantKey}/users
 ```
 
+{{partial:admonition type='note'}} 
+You can have up to 500 inclusions per variant. If you go over this limit, Amplitude returns a `400` error.
+{{/partial:admonition}}
+
 Add inclusions (users or devices) to flag's variant.
 
 ### Path variables
 
 | Name         | Requirement | Type   | Description        |
 | ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | The flag's ID.     |
+| `id`         | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.     |
 | `variantKey` | Required    | string | The variant's key. |
 
 ### Request body
@@ -800,7 +804,7 @@ Remove inclusions (users or devices) from flag's variant.
 
 | Name         | Requirement | Type   | Description                                                                                                              |
 | ------------ | ----------- | ------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `id`         | Required    | string | The flag's ID.                                                                                                           |
+| `id`         | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.                                                                                                           |
 | `variantKey` | Required    | string | The variant's key.                                                                                                       |
 | `userIndex`  | Required    | string | The user's index. Zero-indexed. Get an index-based array of users from [Get variant inclusions](#get-variant-inclusions) |
 
@@ -831,7 +835,7 @@ Remove all inclusions (users or devices) from flag's variant.
 
 | Name         | Requirement | Type   | Description        |
 | ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | The flag's ID.     |
+| `id`         | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.     |
 | `variantKey` | Required    | string | The variant's key. |
 
 ### Response
@@ -861,7 +865,7 @@ Bulk remove users or devices from flag's variant. Limited to 100 per request.
 
 | Name         | Requirement | Type   | Description        |
 | ------------ | ----------- | ------ | ------------------ |
-| `id`         | Required    | string | The flag's ID.     |
+| `id`         | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.     |
 | `variantKey` | Required    | string | The variant's key. |
 
 ### Request body
@@ -899,7 +903,7 @@ List all deployments for a flag.
 
 | Name | Requirement | Type   | Description    |
 | ---- | ----------- | ------ | -------------- |
-| `id` | Required    | string | The flag's ID. |
+| `id` | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
 
 ### Response
 
@@ -994,7 +998,7 @@ Remove a deployment from a flag.
 
 | Name           | Requirement | Type   | Description          |
 | -------------- | ----------- | ------ | -------------------- |
-| `id`           | Required    | string | The flag's ID.       |
+| `id`           | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app.       |
 | `deploymentID` | Required    | string | The deployment's ID. |
 
 ### Response
@@ -1024,7 +1028,7 @@ Edit a flag.
 
 | Name | Requirement | Type   | Description    |
 | ---- | ----------- | ------ | -------------- |
-| `id` | Required    | string | The flag's ID. |
+| `id` | Required    | string | The flag's ID. Find the ID in the URL of the flag in the Amplitude app. |
 
 ### Request body
 

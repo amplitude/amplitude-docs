@@ -147,7 +147,7 @@ The Profile API makes embedding recommendations into a customer’s digital work
 
 ## Analyze your results
 
-Once the Profile API is deployed into a customer’s app, website, or email channels, Amplitude Audiences will be able to measure performance of the recommendation. It does this by logging an Amplitude event ( `[Recs] Recommendation Event` ) every time the Profile API is called for that specific recommendation.
+Once the Profile API is deployed into a customer’s app, website, or email channels, Amplitude Activation will be able to measure performance of the recommendation. It does this by logging an Amplitude event ( `[Recs] Recommendation Event` ) every time the Profile API is called for that specific recommendation.
 
 {{partial:admonition type='note'}}
 This **will not count** against your event volume

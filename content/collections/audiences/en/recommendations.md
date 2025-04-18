@@ -14,7 +14,7 @@ updated_at: 1715121430
 ---
 Once you’ve identified a predictive goal for your users, the next step is making the **recommendations** that are most likely to drive users to reach it. Amplitude’s AutoML determines which items are most likely to maximize each user’s predictive goal, and then places those items in front of the user.
 
-Amplitude Audiences's machine learning algorithm clusters your selected users into groups of similar users. This similarity is determined by shared user properties and behaviors taken in the past. Next, it analyzes historical data to see which items are most likely to increase each cluster’s propensity to convert. Finally, it assigns a ranked list of items to each user, based on their respective assigned cluster.
+Amplitude Activation's machine learning algorithm clusters your selected users into groups of similar users. This similarity is determined by shared user properties and behaviors taken in the past. Next, it analyzes historical data to see which items are most likely to increase each cluster’s propensity to convert. Finally, it assigns a ranked list of items to each user, based on their respective assigned cluster.
 
 The algorithm re-trains every hour, so it’s always incorporating new information on properties and behaviors into its results.
 
@@ -24,13 +24,13 @@ Recommendations are available for standard event properties only. They are not a
 
 ## Who should use recommendations?
 
-Amplitude Audiences is optimized for **user-based personalization**, not account-based. As such, its recommendations will be most useful for companies that need to showcase an array of items—products, articles, shows—in some kind of product carousel, product list, or cart flow. In particular, ecommerce and marketplace companies, as well as B2C and subscription software companies, are the best fit for Amplitude Audiences.
+Amplitude Activation is optimized for **user-based personalization**, not account-based. As such, its recommendations will be most useful for companies that need to showcase an array of items—products, articles, shows—in some kind of product carousel, product list, or cart flow. In particular, ecommerce and marketplace companies, as well as B2C and subscription software companies, are the best fit for Amplitude Activation.
 
 Enterprise B2B companies, on the other hand, are unlikely to benefit from using recommendations.
 
 ## When should you use recommendations?
 
-It’s important to keep in mind that Amplitude Audiences is **not an analytics feature**; instead, it’s a personalization feature that helps you improve in-product / digital experiences to maximize lift. Its recommendations are optimized for user-based digital commerce use cases, and are most effective for three types of personalization: Assortment, next-best action, and cross sell.
+It’s important to keep in mind that Amplitude Activation is **not an analytics feature**; instead, it’s a personalization feature that helps you improve in-product / digital experiences to maximize lift. Its recommendations are optimized for user-based digital commerce use cases, and are most effective for three types of personalization: Assortment, next-best action, and cross sell.
 
 * **Assortment**: An assortment ranks items to be displayed on a homepage or within a category page. These items can be SKUs, articles, shows, etc. Assortments are appropriate for **increasing engagement**.
 * **Next-best action**: This scheme identifies a second item the user might be interested in and places it into the checkout or carousel flow, or in an email after purchase. Here, the objective is to **increase conversions**.
@@ -39,7 +39,7 @@ It’s important to keep in mind that Amplitude Audiences is **not an analytics 
 Support for other use cases—like in-session recommendations and new item recommendations—is currently in development.
 
 {{partial:admonition type='note'}}
-Recommendations are only available to Amplitude Audiences customers.
+Recommendations are only available to Amplitude Activation customers.
 {{/partial:admonition}}
 
 ## Data requirements for a recommendation

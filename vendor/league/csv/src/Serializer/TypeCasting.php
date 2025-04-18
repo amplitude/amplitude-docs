@@ -15,6 +15,8 @@ namespace League\Csv\Serializer;
 
 /**
  * @template TValue
+ *
+ * @method TypeCastingInfo info() the name of the property the value will be assigned to
  */
 interface TypeCasting
 {

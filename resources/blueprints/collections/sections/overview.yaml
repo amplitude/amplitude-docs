@@ -12,6 +12,7 @@ tabs:
               required: true
               validate:
                 - required
+              localizable: false
           -
             handle: goals
             field:
@@ -19,53 +20,26 @@ tabs:
               display: Goals
               instructions: 'Sets the content for the "This article will help you" section.'
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: related_articles
             field:
               max_items: 5
-              mode: default
               create: false
               type: entries
               display: 'Related Articles'
               width: 50
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
           -
             handle: content
             field:
               container: images
-              restrict: false
-              buttons:
-                - bold
-                - italic
-                - unorderedlist
-                - orderedlist
-                - quote
-                - link
-                - image
-                - table
-              automatic_line_breaks: true
-              automatic_links: false
-              escape_markup: false
               heading_anchors: true
               smartypants: true
-              table_of_contents: false
               antlers: true
               type: markdown
               display: Content
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
+              localizable: false
   sidebar:
     display: Sidebar
     sections:
@@ -86,3 +60,11 @@ tabs:
               max_items: 1
               listable: false
               localizable: true
+          -
+            handle: academy_course
+            field:
+              collections:
+                - academy_content
+              type: entries
+              display: 'Academy Course'
+              localizable: false

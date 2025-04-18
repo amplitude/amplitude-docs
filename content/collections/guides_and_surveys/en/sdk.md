@@ -4,10 +4,9 @@ blueprint: guides_and_survey
 title: 'Guides and Surveys SDK'
 landing: true
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1738949573
+updated_at: 1744921299
 landing_blurb: 'Ensure your site or application is ready for Guides and Surveys.'
 ---
-
 Amplitude's Guides and Surveys SDK enables you to deploy [Guides and Surveys](/docs/guides-and-surveys) on your website or application.
 
 ## Install the SDK
@@ -103,7 +102,7 @@ await window.engagement.boot({
 });
 ```
 
-To use *On event tracked* [triggers](/docs/guides-and-surveys/guides/guides/setup-and-target#triggers),  forward events from your third-party analytics provider to Guides and Surveys. The Guides and Surveys SDK doesn't send these events to the server.
+To use *On event tracked* [triggers](/docs/guides-and-surveys/guides/setup-and-target#triggers),  forward events from your third-party analytics provider to Guides and Surveys. The Guides and Surveys SDK doesn't send these events to the server.
 
 ```js
 analytics.on('track', (event, properties, options) => { // Example for Segment Analytics

@@ -4,7 +4,7 @@ blueprint: audience
 title: 'Sync to third-party destinations'
 source: 'https://help.amplitude.com/hc/en-us/articles/360060055531-Sync-to-third-party-destinations'
 this_article_will_help_you:
-  - 'Set up and manage syncs in Amplitude Audiences'
+  - 'Set up and manage syncs in Amplitude Activation'
 exclude_from_sitemap: false
 landing: true
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
@@ -13,7 +13,7 @@ landing_blurb: 'Send user and event data to third-party downstream tools.'
 ---
 Amplitude supports three types of syncs for cohorts, properties, computations and predictions: **on-demand syncs**, **automated syncs**, and **real-time syncs**. 
 
-On-demand syncs are useful for audience testing and one-off campaigns. Automated syncs are scheduled on a daily or hourly frequency—so as your cohort audience membership changes, or the underlying predicted probabilities of the user change, Amplitude Audiences will automatically adjust their cohort membership in connected destinations as well. Real-time syncs update each minute and are built for interactive use cases where a rapid update is required.
+On-demand syncs are useful for audience testing and one-off campaigns. Automated syncs are scheduled on a daily or hourly frequency—so as your cohort audience membership changes, or the underlying predicted probabilities of the user change, Amplitude Activation will automatically adjust their cohort membership in connected destinations as well. Real-time syncs update each minute and are built for interactive use cases where a rapid update is required.
 
 No more CSV downloads or manual syncs required—whenever your users take an action in your app, they’ll be automatically synced to your respective ad, email, or testing platform.
 
@@ -25,7 +25,7 @@ No more CSV downloads or manual syncs required—whenever your users take an act
 
 ## Real-time syncs
 
-With real-time syncs, Amplitude Audiences will send updates to a partner destination almost as soon as a user enters or exits a cohort. This in turn unlocks additional uses for cohort sync, such as just-in-time and contextual messaging to end users. When you create a real-time sync, Amplitude Audiences will first send the initial population to the destination (this can take several hours if the sync is large).  After this initial sync, updates are sent every minute as users enter and exit the cohort.
+With real-time syncs, Amplitude Activation will send updates to a partner destination almost as soon as a user enters or exits a cohort. This in turn unlocks additional uses for cohort sync, such as just-in-time and contextual messaging to end users. When you create a real-time sync, Amplitude Activation will first send the initial population to the destination (this can take several hours if the sync is large).  After this initial sync, updates are sent every minute as users enter and exit the cohort.
 
 Most destinations and cohorts support real-time cohort syncs. When partners fail or reject API requests, or when other network delays and errors are experienced, Amplitude Analytics will send any changes as soon as the issue is resolved. 
 

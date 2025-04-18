@@ -11,7 +11,7 @@ landing: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715121638
 ---
-Amplitude Audiences allows you to create recommendations to be used in your personalization campaigns. A recommendation to your users can increase engagement, reduce churn, and create cross-selling opportunities. Read more about the algorithm behind Amplitude's personalization feature in this [blog post](https://amplitude.com/blog/audiences-algorithm).
+Amplitude Activation allows you to create recommendations to be used in your personalization campaigns. A recommendation to your users can increase engagement, reduce churn, and create cross-selling opportunities. Read more about the algorithm behind Amplitude's personalization feature in this [blog post](https://amplitude.com/blog/audiences-algorithm).
 
 ## Build a new recommendation
 
@@ -30,7 +30,7 @@ To create a new recommendation, open Cohorts & Audiences and click *Recommenda
 2. The second step is defining your outcome. The outcome is the **goal you are trying to reach,**or the**metric you are trying to improve**. In the *Define starting cohort* section, choose the cohort this recommendation will train its algorithm on. By default, Amplitude selects all users active in the last 90 days, but for best results, you should use a more narrowly-tailored cohort. To do that, select the conditions you'd like to modify to further define your cohort; such as, events performed and filters. **If you're defining a Top Trending or Most Popular recommendation type, skip to step #6.**
 3. **If defining an AI Based recommendation type, your next step is** to create your item catalog, which is **choosing the items you want to recommend** in order to reach your desired outcome.  Under *Define items to be recommended* , click *Select event…* to choose the exposure event.
 4. Click *Select property...* to designate the item to be recommended to the user. You won’t select the item itself; instead, you’ll choose an event property associated with the exposure event. The recommendation will choose the recommended item from the values of this event property.
-5. **You'll then choose the items that will be recommended** in the *Current list of items that will be recommended* section. By default, Amplitude Audiences will choose from the 50 most-frequent (based on 30-day uniques) values of the event property you selected in the previous step.
+5. **You'll then choose the items that will be recommended** in the *Current list of items that will be recommended* section. By default, Amplitude Activation will choose from the 50 most-frequent (based on 30-day uniques) values of the event property you selected in the previous step.
 
 Amplitude also allows you to set your recommendation to work from a **static list** of property values. To do this, toggle the *Create with Static List* toggle and select the candidates from the list of options. You can **exclude** **specific values** from a dynamic recommendation, **and** choose to **exclude converted items**, as well. Click *Next >* to continue to the *Save* section. **Skip to step #11 to complete your new AI Based recommendation.** 
 
@@ -46,7 +46,7 @@ Amplitude also allows you to set your recommendation to work from a **static lis
 
 For example, a music app might want its users to buy concert tickets from within the app. It might show users who followed a playlist a concert popup, based on the genre of the playlist they followed. In this case, the event property selected here would be genre, and it would be attached to the follow\_playlist event. More generally, the event property will often be something like `SKU`, `ID`, `Name`, etc.
 
-10. **Next, specify the number of items to be recommended to each user.** By default, Amplitude Audiences will choose from the 50 most-frequent (based on 30-day uniques) values of the event property you selected in the previous step.  
+10. **Next, specify the number of items to be recommended to each user.** By default, Amplitude Activation will choose from the 50 most-frequent (based on 30-day uniques) values of the event property you selected in the previous step.  
   
 However, you can also set your recommendation to work from a **static list** of property values instead. To do this, toggle the *Create with Static List* toggle and select the candidates from the list of options. You can **exclude** specific values from a dynamic recommendation as well. Then click *Next >* to move to the next step.
 

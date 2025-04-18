@@ -5,10 +5,12 @@ title: 'Understand the paths users take, and why they convert'
 source: 'https://help.amplitude.com/hc/en-us/articles/16427637651995-Journeys-Understand-the-paths-users-take-in-your-product-and-why-they-convert'
 this_article_will_help_you:
   - 'Analyze conversions between the key transition points in your product'
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1723654564
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1743538616
 landing: true
 landing_blurb: 'Analyze conversions between the key transition points in your product'
+academy_course:
+  - bd75ea62-37df-4ba9-a32b-459a73933d9e
 ---
 Amplitude’s Journeys chart incorporates the power of the legacy Journeys, and Pathfinder Users charts to generate a complete, 360-degree analysis of how your users convert—or fail to convert—between key transitions in your product. It allows you to inspect your users’ product journeys in two ways: 
 - By the total number of unique users who took a particular path.

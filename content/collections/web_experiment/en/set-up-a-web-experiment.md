@@ -3,10 +3,12 @@ id: b8db5ecf-b7b0-432d-b1f3-19ae70d13291
 blueprint: web_experiment
 title: 'Set up a web experiment'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1740522217
+updated_at: 1743537935
 this_article_will_help_you:
   - 'Understand the difference between a Web Experiment and a feature experiment'
   - 'Build a Web Experiment using the Visual Editor'
+academy_course:
+  - f380a3b6-4f2f-4f90-834f-84009d44dc5a
 ---
 Amplitude **Web Experiment** lets you create an A/B or [multi-armed bandit experiment](/docs/feature-experiment/workflow/multi-armed-bandit-experiments) **without new code**. Open your site in the [Visual Editor](#the-visual-editor), choose the elements you’d like to experiment with, and make changes to their content or properties directly. This allows for less-technical users to easily create experiments without engineering resources.
 
@@ -55,6 +57,10 @@ To set up a web experiment, follow these steps:
 12. Next, target the users you want to include in this experiment. If you're familiar with feature experiment targeting, Web Experiment [audience targeting](/docs/web-experiment/targeting#audience-targeting) works differently.
 13. The *Advanced* tab provides several [additional options](/docs/feature-experiment/workflow/finalize-statistical-preferences) for your experiment.
 14. When you’re ready, click *Save and Close* to finish creating your Web Experiment.
+
+{{partial:admonition type="tip" heading="Create a new run of an existing experiment"}}
+If you have an experiment that you need to re-run, see [New Experiment Run](/docs/feature-experiment/troubleshooting/new-experiment-run)
+{{/partial:admonition}}
 
 ## Test and preview your web experiment
 
@@ -118,9 +124,6 @@ Keep the following in mind as you move elements on the page:
 * Ensure that JavaScript doesn't reset your changes after you apply them.
 * Moving an element ignores invisible elements in your DOM.
 
-
-
-
 ### Navigation mode
 
 Navigation Mode enables you to navigate between pages in your experiment without exiting the editor. 
@@ -140,3 +143,4 @@ To enter Navigation mode:
    * If you navigate to a page not included in your experiment and attempt to make edits, the Visual Editor automatically updates the page targeting rule to include the page URL and displays a message to let you know.
 4. When you land on the page you went to edit, click the pencil icon to toggle the Visual Editor back to *Edit mode*.
 5. Toggle between Edit and Navigation mode as needed to complete your experiment's configuration.
+
