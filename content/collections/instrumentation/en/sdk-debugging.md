@@ -54,3 +54,11 @@ Check this section if you're seeing `client_upload_time` appearing as a time in 
 A race condition might occur if there's no deviceId in the request or if it has not been sent through the batch API. We have partition logic in our backend. Not having the same deviceId or not sending through the [batch API](/docs/apis/analytics/batch-event-upload) could cause two different calls to fall into separate buckets. The processing time in different buckets within different queues cannot be ensured. Therefore, to maintain the order of `identify` calls and other `track` calls, make sure the calls have the same deviceId and have been sent to our batch API.
 
 To reduce the amount of requests made by the SDK, the latest mobile SDKs will queue and consolidate certain Identify updates and wait to send them along with the next non-Identify event sent via `track()`. If you need user properties to update immediately you can `flush()`.
+
+## Event times are very inaccurate
+
+If you notice that some sessions from certain users report inaccurate event times (for example, hundreds of years in the future, or hundreds of years in the past) the most likely cause may be:
+- the end user has an anomalous configuration that causes their device to an incorrect date 
+- they use a browser extension that causes inaccurate time reporting
+
+These issues don't indicate an error or mistake in your instrumentation.
