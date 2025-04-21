@@ -57,4 +57,8 @@ To reduce the amount of requests made by the SDK, the latest mobile SDKs will qu
 
 ## Event times are very inaccurate
 
-If you ever notice that some sessions from certain users are reporting wildly inaccurate event times (hundreds of years in the future, hundreds of years in the past, etc...) it's likely because the end user has an anomalous configuration where their machine is reporting an incorrect date (or they could be using a browser extension that meddles with the time), and it's not indicative of a bug.
+If you notice that some sessions from certain users report inaccurate event times (for example, hundreds of years in the future, or hundreds of years in the past) the most likely cause may be:
+- the end user has an anomalous configuration that causes their device to an incorrect date 
+- they use a browser extension that causes inaccurate time reporting
+
+These issues don't indicate an error or mistake in your instrumentation.
