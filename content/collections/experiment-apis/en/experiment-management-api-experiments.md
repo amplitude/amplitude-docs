@@ -241,7 +241,7 @@ curl --request GET \
     "experimentType": "a-b-test",
     "deleted": false,
     "tags": [],
-    "createdBy: "x@amplitude.com"
+    "createdBy": "x@amplitude.com"
 }
 ```
 
