@@ -34,6 +34,7 @@ To configure an Event Streaming integration from Amplitude to Aampe, you must fu
    - Toggle Status from **Disabled** to **Enabled**.
    - **Name**: Aampe - Data Integration
    - **REST API Key**: Obtain from your Aampe dashboard using the steps linked above.
+   - **user_identifier** Select the appropriate User ID mapping that connects to your other Aampe data (preferably a non-PII identifier). The user_id should be able to match the user_id in Aampe.
 5. Under **Create & Update users**, make sure the toggle is enabled if you want to send over users and their properties in real time whenever a user is created or user property is updated in Amplitude. This allows Aampe agents to action on the user in real-time
 6. Under **Send Events**, make sure the toggle is enabled. When enabled, events are automatically forwarded to Aampe when they're ingested in Amplitude.
 7. In **Select and Filter** events choose which events you want to send
