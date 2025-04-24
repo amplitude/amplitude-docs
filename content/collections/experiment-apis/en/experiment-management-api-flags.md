@@ -49,6 +49,7 @@ Fetch a list of flags including their configuration details. Results are ordered
 | `projectId` | Filter flags that belongs to this project.              |
 | `limit`     | The max number of flags to be returned. Capped at 1000. |
 | `cursor`    | The offset to start the "page" of results from.         |
+| `includeArchived` | Filter to include archived flags. Default is `false`. |
 
 ### Response
 
