@@ -103,7 +103,7 @@ curl --location --request POST 'https://amplitude.com/api/2/dsar/requests' \
 --header 'Content-Type: application/json' \
 -u '{org-api-key}:{org-secret_key}' \
 --data-raw '{
-"userId": 12345,
+"userId": "12345",
 "startDate": "2020-04-24",
 "endDate": "2022-02-20"
 }'
@@ -115,9 +115,9 @@ POST /api/2/dsar/requests HTTP/1.1
 Host: amplitude.com
 Accept: application/json
 Content-Type: application/json
-Authorization: Basic {org-api-key}:{org-secret_key} # credentials must be base64 encoded
+Authorization: Basic {org-api-key}:{org-secret-key} # credentials must be base64 encoded
 {
-    "userId": 12345,
+    "userId": "12345",
     "startDate": "2020-04-24",
     "endDate": "2022-02-20"
 }
@@ -134,9 +134,9 @@ This example creates a request by user ID `12345`, between the dates of April 24
 curl --location --request POST 'https://amplitude.com/api/2/dsar/requests' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Basic YWhhbWwsdG9uQGFwaWdlZS5jb206bClwYXNzdzByZAo' \
+-u '7f6e5d4c3b2a1e0f9d8c7b6a5e4d3c2b:c2b3a4d5e6f7c8d9a0b1c2d3e4f5a6b7' \
 --data-raw '{
-    "userId": 12345,
+    "userId": "12345",
     "startDate": "2020-04-24",
     "endDate": "2022-02-20"
 }'
@@ -148,11 +148,11 @@ POST /api/2/dsar/requests HTTP/1.1
 Host: amplitude.com
 Accept: application/json
 Content-Type: application/json
-Authorization: Basic YWhhbWwsdG9uQGFwaWdlZS5jb206bClwYXNzdzByZAo
+Authorization: Basic N2Y2ZTVkNGMzYjJhMWUwZjlkOGM3YjZhNWU0ZDNjMmI6YzJiM2E0ZDVlNmY3YzhkOWEwYjFjMmQzZTRmNWE2YjcK
 Content-Length: 83
 
 {
-    "userId": 12345,
+    "userId": "12345",
     "startDate": "2020-04-24",
     "endDate": "2022-02-20"
 }
@@ -170,7 +170,7 @@ This example creates a request by Amplitude ID `90102919293`, between the dates 
 curl --location --request POST 'https://amplitude.com/api/2/dsar/requests' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Basic YWhhbWwsdG9uQGFwaWdlZS5jb206bClwYXNzdzByZAo' \
+-u '7f6e5d4c3b2a1e0f9d8c7b6a5e4d3c2b:c2b3a4d5e6f7c8d9a0b1c2d3e4f5a6b7' \
 --data-raw '{
     "amplitudeId": 90102919293,
     "startDate": "2020-04-24",
@@ -184,7 +184,7 @@ POST /api/2/dsar/requests HTTP/1.1
 Host: amplitude.com
 Accept: application/json
 Content-Type: application/json
-Authorization: Basic YWhhbWwsdG9uQGFwaWdlZS5jb206bClwYXNzdzByZAo
+Authorization: Basic N2Y2ZTVkNGMzYjJhMWUwZjlkOGM3YjZhNWU0ZDNjMmI6YzJiM2E0ZDVlNmY3YzhkOWEwYjFjMmQzZTRmNWE2YjcK
 Content-Length: 83
 
 {
@@ -223,9 +223,9 @@ Poll the data request job to get its status.
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
-curl --location --request GET 'https://amplitude.com/api/2/dsar/requests/requestID' \
+curl --location --request GET 'https://amplitude.com/api/2/dsar/requests/{request-id}' \
 --header 'Accept: application/json' \
---header 'Authorization: Basic org-api-key}:{org-secret_key}' #credentials must be base64 encoded
+-u '{org-api-key}:{org-secret-key}'
 ```
 {{/partial:tab}}
 {{partial:tab name="HTTP"}}
@@ -233,7 +233,7 @@ curl --location --request GET 'https://amplitude.com/api/2/dsar/requests/request
 GET /api/2/dsar/requests/requestID HTTP/1.1
 Host: amplitude.com
 Accept: application/json
-Authorization: Basic {org-api-key}:{org-secret_key} #credentials must be base64 encoded
+Authorization: Basic {org-api-key}:{org-secret-key} #credentials must be base64 encoded
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -246,7 +246,7 @@ This example polls request `53367`.
 ```bash
 curl --location --request GET 'https://amplitude.com/api/2/dsar/requests/53367' \
 --header 'Accept: application/json' \
---header 'Authorization: Basic YWhhbWwsdG9uQGFwaWdlZS5jb206bClwYXNzdzByZAo'
+-u '7f6e5d4c3b2a1e0f9d8c7b6a5e4d3c2b:c2b3a4d5e6f7c8d9a0b1c2d3e4f5a6b7'
 ```
 {{/partial:tab}}
 {{partial:tab name="HTTP"}}
@@ -254,7 +254,7 @@ curl --location --request GET 'https://amplitude.com/api/2/dsar/requests/53367' 
 GET /api/2/dsar/requests/53367 HTTP/1.1
 Host: amplitude.com
 Accept: application/json
-Authorization: Basic YWhhbWwsdG9uQGFwaWdlZS5jb206bClwYXNzdzByZAo
+Authorization: Basic N2Y2ZTVkNGMzYjJhMWUwZjlkOGM3YjZhNWU0ZDNjMmI6YzJiM2E0ZDVlNmY3YzhkOWEwYjFjMmQzZTRmNWE2YjcK
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -299,7 +299,7 @@ curl --location --request GET 'https://analytics.amplitude.com/api/2/dsar/reques
 ```bash
 GET /api/2/dsar/requests/request_id/outputs/:output_id HTTP/1.1
 Host: analytics.amplitude.com
-Authorization: Basic {org-api-key}:{org-secret_key} # credentials must be base64 encoded
+Authorization: Basic {org-api-key}:{org-secret-key} # credentials must be base64 encoded
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -311,7 +311,7 @@ This example gets output with ID `0` for request `53367`.
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://analytics.amplitude.com/api/2/dsar/requests/53367/outputs/0' \
---header 'Authorization: Basic YWhhbWwsdG9uQGFwaWdlZS5jb206bClwYXNzdzByZAo'
+-u '7f6e5d4c3b2a1e0f9d8c7b6a5e4d3c2b:c2b3a4d5e6f7c8d9a0b1c2d3e4f5a6b7'
 ```
 {{/partial:tab}}
 {{partial:tab name="HTTP"}}
@@ -322,7 +322,7 @@ curl --location --request GET 'https://analytics.amplitude.com/api/2/dsar/reques
 GET /api/2/dsar/requests/53367/outputs/0 HTTP/1.1
 Host: amplitude.com
 Accept: application/json
-Authorization: Basic YWhhbWwsdG9uQGFwaWdlZS5jb206bClwYXNzdzByZAo
+Authorization: Basic N2Y2ZTVkNGMzYjJhMWUwZjlkOGM3YjZhNWU0ZDNjMmI6YzJiM2E0ZDVlNmY3YzhkOWEwYjFjMmQzZTRmNWE2YjcK
 ```
 {{/partial:collapse}}
 
