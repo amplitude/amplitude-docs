@@ -22,7 +22,6 @@ After TTL is enabled, Amplitude deletes data outside of the retention period.
 - Configure the retention period by number of months. Amplitude's default month is 30 days. For example, if you set your retention period to 4 months, Amplitude retains all event data for the last 120 days. 
 - Enabling TTL affects existing Amplitude reports. After you enable TTL, Amplitude zeros out charts that query data outside the set retention period. They appear as if the data for that period never existed within Amplitude.
 - The initial deletion may take longer than daily deletions. Depending on an organization’s historical event volume, it may take up to 30 days.
-- Amplitude Support can help you retrieve deleted data within **5 days** following the first time that you enable TTL. After the 5 days, your data is permanently deleted and irretrievable. To retrieve deleted data within the first 5 days after you enable TTL for the first time, [contact Amplitude Support](https://help.amplitude.com/hc/en-us/requests/new).
 
 ## Enable TTL 
 
