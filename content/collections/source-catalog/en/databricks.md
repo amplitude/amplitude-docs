@@ -261,11 +261,5 @@ Depending on your company's network policy, you may need to add the following IP
 6. ```
    Fail worker job since databricks job run finished with state MAXIMUM_CONCURRENT_RUNS_REACHED.
    ```
-   - **Root cause**: This means your Databricks job is configured to allow only one run at a time. If a new job is triggered while a previous run is still in progress, it will be skipped. This often happens when multiple Databricks import sources are set up to run at the same time and are using the same Databricks cluster.
+   - **Root cause**: This means your Databricks job is configured to allow only one run at a time. If a new job run is triggered while a previous run is still in progress, it will be skipped.
    - **Solution**: Update the Databricks job configuration to [increase the maximum concurrent runs](https://docs.databricks.com/aws/en/jobs/configure-job#configure-maximum-concurrent-runs).
-
-7. ```
-   [Databricks][JDBCDriver](700100) Connection timeout expired. Details: None.
-   ```
-   - **Root cause**: This means Amplitude was unable to establish a JDBC connection to the your databricks endpoint. This often happens because the cluster have been auto-terminated, not started yet or your databricks workspace may have hit limits (e.g., max concurrent SQL endpoints, cluster quota).
-   - **Solution**: Check the failed Databricks job run in your workspace. The job details should provide more specific information about the cause of the failure such as issues with cluster availability, query execution, or configuration settings. Once identified, you can address the issue accordingly.
