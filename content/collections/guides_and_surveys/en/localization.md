@@ -1,4 +1,5 @@
 ---
+id: 185ee92c-69ab-465b-84f1-35d4da01c2d7
 blueprint: guides_and_survey
 title: Localization
 landing: false
@@ -11,7 +12,15 @@ Localization enables you to serve guides and surveys in different languages with
 
 Localization can be enabled in the project settings. It is available on Growth and Enterprise plans.
 
-The default language is English and, for now, can only be changed by Amplitude support. Once you have enabled localization, add all the languages you want to support. Furthermore, the project settings let you configure what should happen if a translation is outdated or missing for a specific languages.
+The default language is English and, for now, can only be changed by Amplitude support. Once you have enabled localization, add all the languages you want to support. Furthermore, the project settings let you configure what should happen if a translation is outdated or missing for a specific languages:
+
+- When translation is unavailable: This means the language is configured to be supported but no translation has been set. Please note that once any translated string is set, the translation is considered available.
+    - Show in default language: The default language will be used.
+    - Don't show guide or survey: The guide or survey will not be shown.
+- When translation is outdated: This means the translation has been set but a copy string that is supported for translation has been updated after the translation has been edited.
+    - Show in default language: The default language will be used.
+    - Show outdated translation: The outdated translation will be shown.
+    - Don't show guide or survey: The guide or survey will not be shown.
 
 ## Specifying a user's language
 
