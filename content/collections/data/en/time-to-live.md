@@ -32,7 +32,7 @@ To have TTL controls enabled for your organization, reach out to your Account Ma
 
 Amplitude Admins can configure TTL. 
 
-1. Navigate to **Analytics Settings** and select the **Time-to-Live** tab.
+1. Navigate to **Organization Settings** and click the **Time to Live(TTL)** tab.
 2. Choose the retention period.
 3. Confirm your changes.
 
@@ -46,7 +46,7 @@ If you want to cancel TTL, an admin can rescind the request in the 24 hour perio
 
 Amplitude Admins can add overrides.
 
-1. Navigate to **Analytics Settings** and select the **Time-to-Live** tab.
+1.  Navigate to **Organization Settings** and click the **Time to Live(TTL)** tab.
 2. Click **Add Project TTL Override**.
 3. Search for and select the project, and set the retention period.
 4. Click **Save** to update the project's retention.
