@@ -337,7 +337,7 @@ await fetch({
 });
 ```
 
-If you want to pass in freeform grou properties, you can do something like this:
+To pass freeform group properties, see this example:
 
 ```js
 await fetch({
