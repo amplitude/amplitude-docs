@@ -10,9 +10,9 @@ Localization enables you to serve guides and surveys in different languages with
 
 ## Settings
 
-Localization can be enabled in the project settings. It is available on Growth and Enterprise plans.
+Localization can be enabled in the project settings. It's available on Growth and Enterprise plans.
 
-The default language is English and, for now, can only be changed by Amplitude support. Once you have enabled localization, add all the languages you want to support. Furthermore, the project settings let you configure what should happen if a translation is outdated or missing for a specific languages:
+The default language is English and, for now, only Amplitude support can change it. Once you have enabled localization, add all the languages you want to support. Furthermore, the project settings let you configure what happens when a translation is outdated or missing for a specific language:
 
 - When translation is unavailable: This means the language is configured to be supported but no translation has been set. Please note that once any translated string is set, the translation is considered available.
     - Show in default language: The default language will be used.
@@ -24,7 +24,7 @@ The default language is English and, for now, can only be changed by Amplitude s
 
 ## Specifying a user's language
 
-The user's language has to be specified through a locale code during the [SDK initialization](/docs/guides-and-surveys/sdk).
+The user's language you must specify through a locale code during the [SDK initialization](/docs/guides-and-surveys/sdk).
 
 ```javascript
 amplitude.add(window.engagement.plugin({locale: 'en'}))
@@ -32,7 +32,7 @@ amplitude.add(window.engagement.plugin({locale: 'en'}))
 engagement.init(<apiKey>,  { locale: 'en' }) // for use with third-party Analytics SDKs
 ```
 
-If you specify a language that is added to the supported languages in the project settings, the default language will be used.
+If you specify a language added to the supported languages in the project settings, the default language is used.
 
 ## Editing translations
 
