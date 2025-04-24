@@ -1,55 +1,51 @@
 ---
-title: Aampe Event Stream Sync
-description: Stream events and user properties from Amplitude to Aampe for personalized messaging and engagement.
+id: 86251fc3-ce13-402b-b026-96526c24eba3
+blueprint: destination-catalog
+title: 'Aampe Event Stream Sync'
+description: 'Stream events and user properties from Amplitude to Aampe for personalized messaging and engagement.'
+connection: destination
+integration_type:
+  - event-streaming
+integration_category:
+  - messaging
+partner_maintained: false
+integration_icon: partner-icons/aampe.png
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1745526698
 ---
-
 Aampe's event stream integration enables you to send user events and properties from Amplitude to Aampe in real-time. This data powers Aampe's AI agents to deliver personalized messaging across multiple channels.
 
 [Aampe](https://aampe.com/) deploys individual AI agents, one for each user, that analyze behavior and preferences to deliver hyper-personalized messages across SMS, email, push notifications, and in-app banners. 
 
+## Prerequisites
 
-## Setup
+This Amplitude to Aampe event streaming integration requires an Aampe account.
 
-### Prerequisites
+## Aampe setup
 
-To configure an Event Streaming integration from Amplitude to Aampe, you must fulfill the following prerequisites from Aampe:
+Retrieve your Aampe API key:
 
-- Aampe account
+2. Go to [https://compose.aampe.com/system-setup/integrations/events](https://compose.aampe.com/system-setup/integrations/events)
+3. Log in with your organization credentials
+4. Navigate to *System Setup > Integrations > Event data import*
+5. Click **Connect** next to "Aampe endpoint"
+6. Copy the API key
 
-### Aampe setup
-
-1. Log into your Aampe dashboard and copy your **API key** 
-    1. Go to [https://compose.aampe.com/system-setup/integrations/events](https://compose.aampe.com/system-setup/integrations/events)
-    2. Log in with your organization credentials
-    3. Go to System Setup -> Integrations -> Event data import (https://compose.aampe.com/system-setup/integrations/events)
-    4. Click **Connect** next to "Aampe endpoint"
-    5. Copy the API key
-
-### Official Aampe Destination
+### Amplitude setup
 
 1. Navigate to **Data > Destinations** in your Amplitude dashboard
 2. Search for "Aampe" and select **Aampe** with subtitle Events and User Properties
-3. Enter a sync name (**Aampe - Data**), then click **Create Sync**.
+3. Enter a sync name click **Create Sync**.
 4. Configure the destination with:
-   - Toggle Status from **Disabled** to **Enabled**.
-   - **Name**: Aampe - Data Integration
-   - **REST API Key**: Obtain from your Aampe dashboard using the steps linked above.
-   - **user_identifier** Select the appropriate User ID mapping that connects to your other Aampe data (preferably a non-PII identifier). The user_id should be able to match the user_id in Aampe.
-5. Under **Create & Update users**, make sure the toggle is enabled if you want to send over users and their properties in real time whenever a user is created or user property is updated in Amplitude. This allows Aampe agents to action on the user in real-time
-6. Under **Send Events**, make sure the toggle is enabled. When enabled, events are automatically forwarded to Aampe when they're ingested in Amplitude.
-7. In **Select and Filter** events choose which events you want to send
-   - Recommended: Select all **user events and event properties** for better signals to agents
-   - You can also select additional **user properties** to send with each event
-8. When finished, enable the destination and Save.
+   - **REST API Key**: Paste the Aampe API key you copied in [Aampe setup](#aampe-setup)
+   - **Mappings**: Select the Amplitude property that maps to the Aampe User ID. The property you choose should match the `user_id` in Aampe.
+   - **Send Events**: By default, Amplitude sends all events to Aampe. Optionally define filter criteria to limit the events that Amplitude sends. Optionally select any additional user properties to send with event information to Aampe.
+   - **Send users**: Enable the toggle to send users and associated user properties to Aampe. Optionally select additional user properties to send with users to Aampe.
+5. Enable the destination when you're ready and click **Save**.
 
 ## Data Security
 
 - All API communications use bearer token authentication
 - Data is transmitted securely over HTTPS
 - User identifiers should be non-PII where possible
-
-## Notes
-
-1. Verify your API key is correct and properly formatted
-2. Ensure your network allows outbound connections to the Aampe API endpoint
-3. Monitor your event streaming in the Aampe dashboard 
