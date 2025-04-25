@@ -19,15 +19,23 @@ Enabling localization on Guides or Surveys requires updates to your SDK implemen
 
 Specify the user's locale during [SDK initialization](/docs/guides-and-surveys/sdk).
 
+{{partial:tabs tabs="Amplitude SDK, Third-party analytics"}}
+{{partial:tab name="Amplitude SDK"}}
 ```js
 const currentLocale = getLocale() // "en" or "en-US"
 
-amplitude.add(window.engagement.plugin({locale: currentLocale})) // for use with the Amplitude SDK
+amplitude.add(window.engagement.plugin({locale: currentLocale})) 
+```
+{{/partial:tab}}
+{{partial:tab name="Third-party analytics"}}
+```js
+const currentLocale = getLocale() // "en" or "en-US"
 
 engagement.init(apiKey,  { locale: currentLocale }) // for use with third-party Analytics SDKs
 ```
+{{/partial:tab}}
+{{/partial:tabs}}
 
-If you specify a language added to the supported languages in the project settings, the default language is used.
 
 {{partial:admonition type="note" heading="Locale code"}}
 Amplitude considers only the language of a locale code. For example, `fr_FR` and `fr_CA` resolve to a single French translation.
@@ -48,13 +56,13 @@ On this tab, you can:
 English is the default language for all projects. To update your default language, contact [Amplitude Support](https://gethelp.amplitude.com)
 {{/partial:admonition}}
 
-The default language is English and, for now, only Amplitude support can change it. Once you have enabled localization, add all the languages you want to support. Furthermore, the project settings let you configure what happens when a translation is outdated or missing for a specific language:
+The default language is English and, for now, only Amplitude support can change it. Once you have enabled localization, add all the languages you want to support. Furthermore, the project settings let you configure what happens when a translation is outdated or missing for a specific language.
 
 ## Add translation to a guide or survey
 
 The languages you set in Project settings appear as languages in the *Localization* section on the *Setup* tab in your guide or survey.
 
-To add a localization:
+To add a translation:
 
 1. Complete the guide or survey's steps in the default language.
 2. Download the translation template. This template is a .xliff file that contains [translatable strings](#translatable-strings) from each step of your guide or survey.
