@@ -139,6 +139,43 @@ if variant.Value == "on" {
 }
 ```
 
+{{partial:collapse name="Account-level bucketing and analysis (v1.7.0+)"}}
+If your organization has purchased the [Accounts add-on](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users. Reach out to your representative to gain access to this beta feature.
+
+Groups must either be included in the user sent with the fetch request (recommended), or identified with the user via a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or via [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
+
+```go
+user := &experiment.User{
+    UserId:   "user@company.com",
+    DeviceId: "abcdefg",
+    UserProperties: map[string]interface{}{
+        "premium": true,
+    },
+    Groups: map[string]interface{}(
+      "org name": ["Amplitude"]
+    )
+}
+variants, err := client.Fetch(user)
+```
+
+To pass freeform group properties, see this example:
+
+```go
+user := &experiment.User{
+    UserId:   "user@company.com",
+    DeviceId: "abcdefg",
+    UserProperties: map[string]interface{}{
+        "premium": true,
+    },
+    GroupsProperties: map[string]interface{}(
+      "org name": ["Amplitude"]
+    )
+}
+variants, err := client.Fetch(user)
+```
+
+{{/partial:collapse}}
+
 ## Local evaluation
 
 Implements evaluating variants for a user via [local evaluation](/docs/feature-experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/feature-experiment/local-evaluation#targeting-capabilities).
