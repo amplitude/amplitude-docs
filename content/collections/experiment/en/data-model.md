@@ -100,7 +100,21 @@ If your organization has purchased the [Accounts add-on](/docs/analytics/account
 
 Groups must be included in the user sent with the fetch request (recommended), or identified with the user via a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or with [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
 
-This is supported on all Experiment SDKs.
+This is supported on all Experiment SDKs. The minimum versions are:
+
+client-side:
+android: 1.9.0+
+ios: 1.10.0+
+react-native: 1.1.0+
+javascript: 1.5.6+
+
+server-side:
+ruby: 1.4.0+
+go: 1.7.0+
+python: 1.3.0+
+jvm: 1.3.0+
+node: 1.5.0+
+php: 1.0.0+
 {{/partial:admonition}}
 
 ### Full user definition
