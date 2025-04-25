@@ -105,3 +105,14 @@ The top-most chart on the Insights tab is the Performance Overview. Here, Amplit
 | Guides / Surveys viewed    | The number of times the guide or survey was shown to users.                                   |
 | Guides / Surveys completed | The number of times the guide or survey was completed by users.                               |
 | Trend graph                | Tracks the view or completion count over the time range specified in the date range selector. |
+
+{{partial:admonition type="tip" heading="Experiment exposure events"}}
+Exposure events in Guides and Surveys experiments work similarly to a standard experiment, but there are cases that can cause a uneven split between between control and variant exposures. The way in which you set targets and limits impacts the frequency with which treatment exposures occur.
+
+Consider the following example:
+
+Amplitude assigns **User A** to the control, and **User B** to the treatment.
+
+- If Amplitude serves **User B** another guide or survey that blocks the display of the treatment, no exposure event fires, and won't fire until the user actually sees the treatment.
+- If the same scenario occurs for **User A**, in the control group, the exposure event fires because they don't see the relvant guide, as is expected for the control group.
+{{/partial:admonition}}
