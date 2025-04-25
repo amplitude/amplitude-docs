@@ -261,5 +261,5 @@ Depending on your company's network policy, you may need to add the following IP
 6. ```
    Fail worker job since databricks job run finished with state MAXIMUM_CONCURRENT_RUNS_REACHED.
    ```
-   - **Root cause**: This means your Databricks job is configured to allow only one run at a time. If a new job run is triggered while a previous run is still in progress, it will be skipped.
+   - **Root cause**: Your Databricks job allows only one run at a time. If you trigger a new job while a previous run is still in progress, Databricks skips it. 
    - **Solution**: Update the Databricks job configuration to [increase the maximum concurrent runs](https://docs.databricks.com/aws/en/jobs/configure-job#configure-maximum-concurrent-runs).
