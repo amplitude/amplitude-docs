@@ -100,9 +100,7 @@ If your organization has purchased the [Accounts add-on](/docs/analytics/account
 
 Groups must be included in the user sent with the fetch request (recommended), or identified with the user via a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or with [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
 
-Supported Experiment SDKs:
-
-* [JavaScript](/docs/sdks/experiment-sdks/experiment-javascript#fetch)
+This is supported on all Experiment SDKs.
 {{/partial:admonition}}
 
 ### Full user definition
