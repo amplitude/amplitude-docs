@@ -3,10 +3,9 @@ id: 427fa0c0-c489-48df-a147-cfe636b803b8
 blueprint: section
 title: 'Web Experiment'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-parent: 4cb8166f-a1a1-44dc-9b76-f2fb51db6b05
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1729013464
+updated_at: 1745620371
 nav_title: web_experiment
 template: landing-page-experiment
 landing_page_content:
@@ -30,16 +29,6 @@ landing_page_content:
     type: card
     enabled: true
     cta: 'Implement Web Experiment'
-  -
-    id: m2aphgsz
-    icon: brand-stickers/icon-compliance-purple.svg
-    card_title: 'Web Experiment Actions'
-    card_content: 'Learn about the actions and tools at your disposal as you build web experiments.'
-    cta: "See what's available"
-    external_link: false
-    entries_field: 3ef0ccc6-5e0f-435b-9184-edb809f19210
-    type: card
-    enabled: true
   -
     id: m2apix7i
     icon: brand-stickers/icon-community-purple.svg
@@ -68,6 +57,16 @@ landing_page_content:
     cta: 'Track Web Experiment Use'
     external_link: false
     entries_field: 23ff249c-45ab-488a-b8aa-ae8fde85249d
+    type: card
+    enabled: true
+  -
+    id: m2aphgsz
+    icon: brand-stickers/icon-compliance-purple.svg
+    card_title: 'After the experiment'
+    card_content: 'See the recommended next steps for after you complete your experiment.'
+    cta: "See what's next"
+    external_link: false
+    entries_field: 08a5b636-77d0-4671-bf40-3c42444400da
     type: card
     enabled: true
 ---
