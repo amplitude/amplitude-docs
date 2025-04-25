@@ -4,6 +4,7 @@ blueprint: api
 title: 'Data Subject Access Request API'
 source: 'https://www.docs.developers.amplitude.com/analytics/apis/ccpa-dsar-api/'
 auth_method: http_basic
+key: org
 standard_endpoint: 'https://amplitude.com/api/2/dsar/requests'
 eu_endpoint: 'https://analytics.eu.amplitude.com/api/2/dsar/requests'
 postman_link: 'https://www.postman.com/amplitude-dev-docs/workspace/amplitude-developers/folder/20044411-9debb5b3-8c58-4eed-b2e5-33f4717b9fc1?action=share&source=copy-link&creator=29131806&ctx=documentation'
@@ -259,8 +260,6 @@ Authorization: Basic N2Y2ZTVkNGMzYjJhMWUwZjlkOGM3YjZhNWU0ZDNjMmI6YzJiM2E0ZDVlNmY
 {{/partial:tab}}
 {{/partial:tabs}}
 {{/partial:collapse}}
-
-### Path variables
 
 ### Path variables
 
