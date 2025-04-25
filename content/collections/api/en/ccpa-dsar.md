@@ -101,7 +101,7 @@ for url in response.get('urls'):
 curl --location --request POST 'https://amplitude.com/api/2/dsar/requests' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
--u '{org-api-key}:{org-secret_key}' \
+-u '{org-api-key}:{org-secret-key}' \
 --data-raw '{
 "userId": "12345",
 "startDate": "2020-04-24",
@@ -292,7 +292,7 @@ The download link is valid for two days. Most clients used to send API requests 
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://analytics.amplitude.com/api/2/dsar/requests/:request_id/outputs/:output_id' \
--u '{org-api-key}:{org-secret_key}'
+-u '{org-api-key}:{org-secret-key}'
 ```
 {{/partial:tab}}
 {{partial:tab name="HTTP"}}
