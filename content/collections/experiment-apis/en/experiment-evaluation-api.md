@@ -9,9 +9,9 @@ The Amplitude Experiment Evaluation REST API lets you retrieve variant assignmen
 
 ## Regions
 
-| Region              | URL                                                                   |
-| ------------------- | -------------------------------------------------------------------------- |
-| Standard Server     | `https://api.lab.amplitude.com/v1/`       |
+| Region | URL |
+| ------ | --- |
+| Standard Server | `https://api.lab.amplitude.com/v1/` |
 | EU Residency Server | `https://api.lab.eu.amplitude.com/v1/` |
 
 ## Authorization
@@ -20,19 +20,18 @@ The REST API authenticates the request using your [deployment](/docs/feature-exp
 
 ## Query parameters
 
-| <div class="big-column">Name</div> | Description                                                                                                                                                                                                                      |
-|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `user_id`                          | The user's ID.                                                                                                                                                                                                                   |
-| `device_id`                        | The user's device ID.                                                                                                                                                                                                            |
-| `flag_keys`                        | Specific flag keys to get the variants of. Multiple flag keys should be separated by commas, e.g. `flag_keys=flag-A,flag-B`.  If empty/missing, Experiment evaluates all flags & experiments associated with the deployment key. |
-| `context`                          | JSON string consisting of a full user context. Set user properties in the `user_properties` field (for example: `{"user_properties":{"premium":true}}`). For more information about user context, see the definition in the [Data Model](/docs/feature-experiment/data-model#full-user-definition).                                                                         |
+| Name | Description |
+| ---- | ----------- |
+| `user_id` | The user's ID. |
+| `device_id` | The user's device ID. |
+| `flag_keys` | Specific flag keys to get the variants of. Multiple flag keys should be separated by commas, e.g. `flag_keys=flag-A,flag-B`. If empty/missing, Experiment evaluates all flags & experiments associated with the deployment key. |
+| `context` | JSON string consisting of a full user context. Set user properties in the `user_properties` field (for example: `{"user_properties":{"premium":true}}`). For more information about user context, see the definition in the [Data Model](/docs/feature-experiment/data-model#full-user-definition). |
 
 ## Headers
 
-| <div class="big-column">Name</div> | Description                                                            |
-|------------------------------|------------------------------------------------------------------------|
-| `X-Amp-Exp-Track`                           | Set to `no-track` to not track an assignment event for the evaluation. |
-
+| Name | Description |
+| ---- | ----------- |
+| `X-Amp-Exp-Track` | Set to `no-track` to not track an assignment event for the evaluation. |
 
 ## Responses
 
@@ -76,6 +75,4 @@ If the request doesn't include a valid API key, it returns a `401` response.
 
 Set the fields in the table, and press send to send the request in browser, or copy the curl to send the request yourself.
 
-
 {{partial:experiment/interactive-evaluation-table}}
-
