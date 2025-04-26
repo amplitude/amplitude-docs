@@ -514,3 +514,32 @@ ExperimentConfig config = ExperimentConfigBuilder()
     .build()
 let experiment = Experiment.initialize(apiKey: "<DEPLOYMENT_KEY>", config: config)
 ```
+
+## Bootstrapping
+
+You may want to bootstrap the experiment client with an initial set of flags or variants when variants are obtained from an external source (for example, not from calling `fetch()` on the SDK client). Use cases include [local evaluation](/docs/feature-experiment/local-evaluation) or integration testing on specific variants.
+
+### Bootstrapping variants
+
+To bootstrap the client with a predefined set of variants, set the flags and variants in the `initialVariants` [configuration](#configuration) object, then set the `source` to `Source.InitialVariants` so that the SDK client prefers the bootstrapped variants over any previously fetched & stored variants for the same flags.
+
+```swift
+let config = ExperimentConfigBuilder()
+    .initialVariants(["<FLAG_KEY>": Variant("<VARIANT>")])
+    .source(Source.InitialVariants)
+    .build()
+let experiment = Experiment.initialize(apiKey: "<DEPLOYMENT_KEY>", config: config)
+```
+
+### Bootstrapping flag configurations
+
+You may choose to bootstrap the SDK with an initial set of local evaluation flag configurations using the `initialFlags` configuration. These will be evaluated  when [variant](#variant) is called, unless an updated flag config or variant is loaded with [start](#start) or [fetch](#fetch).
+
+To download initial flags, use the [evaluation flags API](/docs/experiment-apis/experiment-evaluation-api#flags-api)
+
+```swift
+let config = ExperimentConfigBuilder()
+    .initialFlags("<FLAGS_JSON>")
+    .build()
+let experiment = Experiment.initialize(apiKey: "<DEPLOYMENT_KEY>", config: config)
+```
