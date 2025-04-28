@@ -55,6 +55,17 @@ Variant names stay in sync between your guide or survey and the experiment when 
 
 For more information about working with experiments, see [Feature Experiment](/docs/feature-experiment)
 
+{{partial:admonition type="tip" heading="Exposures and assignments"}}
+Exposure events in Guides and Surveys experiments work similarly to a standard experiment, but there are cases that can cause a uneven split between between control and variant exposures. The way in which you set targets and limits impacts the frequency with which treatment exposures occur.
+
+Consider the following example:
+
+Amplitude assigns **User A** to the control, and **User B** to the treatment.
+
+- If Amplitude serves **User B** another guide or survey that blocks the display of the treatment, no exposure event fires, and won't fire until the user actually sees the treatment.
+- If the same scenario occurs for **User A**, in the control group, the exposure event fires because they don't see the relvant guide, as is expected for the control group.
+{{/partial:admonition}}
+
 ### End the experiment
 
 If you're ready to conclude experiment, navigate to the experiment's configuration page, click *Stop Experiment*. and choose one of the following:
