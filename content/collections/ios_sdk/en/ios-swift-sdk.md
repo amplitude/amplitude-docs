@@ -350,7 +350,7 @@ When you enable this setting, Amplitude tracks the `[Amplitude] Screen Viewed` e
 You can enable Amplitude to start tracking network requests by including `AutocaptureOptions.networkTracking` in the `autocapture` configuration.
 
 {{partial:admonition type="warning" heading=""}}
-This feature does not work with requests sent by `URLConnection`. Also does not work on watchOS and iOS 13.
+This feature doesn't work with requests sent by `URLConnection` or on watchOS and iOS 13.
 {{/partial:admonition}}
 
 {{partial:tabs tabs="Swift, Obj-C"}}
@@ -371,7 +371,7 @@ Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 {{/partial:tab}}
 {{/partial:tabs}}
 
-With the default configuration, the SDK tracks network requests from all hosts (except `*.amplitude.com`) with status code `500` to `599`. If you want to customize the tracking behavior, you can set `Configuration.networkTrackingOptions` with `NetworkTrackingOptions`.
+With the default configuration, the SDK tracks network requests from all hosts (except `*.amplitude.com`) with status code `500` to `599`. To customize the tracking behavior,  set `Configuration.networkTrackingOptions` with `NetworkTrackingOptions`.
 
 {{partial:collapse name="NetworkTrackingOptions"}}
 | Name |  Description | Default Value |
@@ -419,7 +419,7 @@ The default configuration tracks all hosts except `*.amplitude.com` with status 
 
 {{/partial:collapse}}
 
-Example usage:
+Example use:
 
 {{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
