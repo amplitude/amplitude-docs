@@ -68,6 +68,12 @@ For example, if you wanted to track the number of daily active organizations and
 
 ![segmentby_grpids.png](/docs/output/img/analytics/segmentby_grpids.png)
 
+### Groups in Experiment
+
+{{partial:admonition type="beta" heading=""}}
+There are two usages of groups in experiment 1. what property do you want to randomize on 2. what unit you want to analyze on. For example, as a B2B company you may want to randomize by customer id and analyze by customer id. If you are analyzing an onboarding funnel, you might not care if one person does step 1 and another person does step 2 as long as they are part of the same company. See [this](/docs/feature-experiment/data-model#users) for how to evaluate groups and group properties. See [this](/docs/feature-experiment/overview) for how to set the bucketing unit.
+{{/partial:admonition}}
+
 ### Create group-level behavioral cohorts
 
 To create a group-level [behavioral cohort](/docs/analytics/behavioral-cohorts), use the dropdown on the left to specify if you want to create a cohort out of one of your groups.
