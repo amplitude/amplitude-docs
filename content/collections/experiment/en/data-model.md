@@ -94,7 +94,6 @@ Pass users to evaluation via `fetch` requests for [remote evaluation](/docs/feat
 | `groups`                                     | `object` | Beta. Optional object that lists groups associated with this user. Format is an object where the key is the group type, and the value is an array of group value strings (for example, `{"org name":["Amplitude"]}`)                                                                                                                                                          |
 | `group_properties`                           | `object` | Beta. Optional object listing group properties associated with this user. Format is an nested object where the key is the group type, and the value is an object where the key is a the group value, and the value is an object of properties (for example,`{"org name":{"Amplitude":{"plan":"enterprise"}}}`)                                                                |
 
-
 {{partial:admonition type="beta" heading=""}}
 
 If your organization has purchased the [Accounts add-on](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users. Reach out to your representative to gain access to this beta feature.
@@ -115,6 +114,7 @@ All Experiment SDKs support groups, with minimum versions described in the follo
 | [JVM](/docs/sdks/experiment-sdks/experiment-jvm)                   | 1.3.0           |
 | [Node](/docs/sdks/experiment-sdks/experiment-node-js)              | 1.5.0           |
 | [PHP](/docs/sdks/experiment-sdks/experiment-php)                   | 1.0.0           |
+
 {{/partial:admonition}}
 
 ### Full user definition
