@@ -66,7 +66,7 @@ To add Snowflake as a data source in your Amplitude project, follow these steps:
 2. In the Warehouse Sources section, click *Snowflake*.
 3. Enter the required credentials for the Snowflake instance you want to connect:
 
-    - **Account**: Snowflake account name. Case sensitive. This is the first part of your Snowflake URL, before `snowflakecomputing.com`. Don't include ".snowflakecomputing.com" in your account name.
+    - **Account**: Snowflake account identifier. Case sensitive. This is the first part of your Snowflake URL, before `snowflakecomputing.com`. Don't include ".snowflakecomputing.com" in your account name.
     - **Database**: Name of the database where Amplitude can find the data.
     - **Warehouse**: Used by Amplitude to execute SQL.
     - **Username**: Used by Amplitude for authentication.
@@ -144,14 +144,14 @@ When choosing an integration strategy, consider the following:
 
 - **Append Only Sync**: Choose this option to import data based on changes detected by Snowflake's CDC feature while still using Amplitude's enrichment services. This method only supports reading `INSERT` operations from the CDC
 
-- **Mirror Sync**: Choose this option to directly mirror the data in Snowflake with `INSERT`, `UPDATE`, and `DELETE` operations based on changes detected by Snowflake's CDC feature. This method disables enrichment services to maintain a mirror of Snowflake data in Amplitude. `UPDATE` and `DELETE` operations mutate data in Amplitude.
+- **Mirror Sync**: Choose this option to directly mirror the data in Snowflake with `INSERT`, `UPDATE`, and `DELETE` operations based on changes detected by Snowflake's CDC feature. This method disables enrichment services to keep a mirror of Snowflake data in Amplitude. `UPDATE` and `DELETE` operations mutate data in Amplitude.
 
 {{partial:partials/data/snowflake-strat-comp}}
 
 ## Prerequisites and considerations for CDC
 
 {{partial:admonition type="note" heading="CDC and event volume"}}
-By using CDC, Snowflake sends consolidated row `INSERT`, `UPDATE`, and `DELETE` operations to Amplitude based on your sync frequency. This means that multiple operations can be made to an event during the sync window and they only count as one event against your existing event volume. However, any operation made to an event outside of the sync window counts as an additional event against your existing event volume. This may impact the rate at which you use your existing event volume. Contact sales to purchase additional event volume, if needed.
+By using CDC, Snowflake sends consolidated row `INSERT`, `UPDATE`, and `DELETE` operations to Amplitude based on your sync frequency. This means that multiple operations made to an event during the sync window only count as one event against your existing event volume. However, any operation made to an event outside of the sync window counts as an additional event against your existing event volume. This may impact the rate at which you use your existing event volume. Contact sales to purchase additional event volume, if needed.
 {{/partial:admonition}}
 
 When using Mirror Sync Sync, keep the following things in mind:
