@@ -263,3 +263,14 @@ Depending on your company's network policy, you may need to add the following IP
    ```
    - **Root cause**: This means your Databricks job is configured to allow only one run at a time. If a new job run is triggered while a previous run is still in progress, it will be skipped.
    - **Solution**: Update the Databricks job configuration to [increase the maximum concurrent runs](https://docs.databricks.com/aws/en/jobs/configure-job#configure-maximum-concurrent-runs).
+
+7. ```
+   [Databricks][JDBCDriver](700100) Connection timeout expired. Details: None.
+   ```
+   - **Root cause**: This means Amplitude was unable to establish a JDBC connection to the Databricks endpoint. It often occurs because:
+      - The your Databricks cluster was terminated and is taking too long to restart, causing the connection attempt to time out.
+      - The Databricks workspace may have reached resource limits (for example, maximum concurrent SQL endpoints, cluster quota, etc).
+   - **Solution**:
+      - Check the Databricks workspace and cluster status to confirm whether the cluster was terminated or restarting during the connection attempt.
+      - Review cluster auto-start and auto-termination settings to ensure clusters can restart quickly when needed.
+      - Monitor for resource limits in Databricks (such as concurrent connection caps or cluster capacity issues) and adjust quotas if necessary.
