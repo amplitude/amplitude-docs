@@ -71,10 +71,10 @@ For example, if you wanted to track the number of daily active organizations and
 ### Groups in Experiment
 
 {{partial:admonition type="beta" heading=""}}
-There are two usages of groups in experiment:
+There are two usages of groups in experiment:  
 
-1. What property do you want to randomize on
-2. What unit you want to analyze on
+1. What property do you want to randomize on  
+2. What unit you want to analyze on  
 
 For example, as a B2B company you may want to randomize by customer id and analyze by customer id. If you are analyzing an onboarding funnel, you might not care if one person does step 1 and another person does step 2 as long as they are part of the same company. See [this](/docs/feature-experiment/data-model#users) for how to evaluate groups and group properties. See [this](/docs/feature-experiment/overview) for how to set the bucketing unit.
 {{/partial:admonition}}
