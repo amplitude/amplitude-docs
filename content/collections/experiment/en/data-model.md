@@ -115,6 +115,7 @@ All Experiment SDKs support groups, with minimum versions described in the follo
 | [JVM](/docs/sdks/experiment-sdks/experiment-jvm)                   | 1.3.0           |
 | [Node](/docs/sdks/experiment-sdks/experiment-node-js)              | 1.5.0           |
 | [PHP](/docs/sdks/experiment-sdks/experiment-php)                   | 1.0.0           |
+{{/partial:admonition}}
 
 ### Full user definition
 
