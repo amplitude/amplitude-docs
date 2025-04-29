@@ -406,6 +406,75 @@ In the case of **user properties**, Amplitude recommends passing new user proper
 
 If `fetch()` times out (default 10 seconds) or fails for any reason, the SDK client will return and retry in the background with back-off. You may configure the timeout or disable retries in the [configuration options](#configuration) when the SDK client is initialized.
 
+{{partial:collapse name="Account-level bucketing and analysis (v1.9.0+)"}}
+If your organization has purchased the [Accounts add-on](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users. Reach out to your representative to gain access to this beta feature.
+
+Groups must either be included in the user sent with the fetch request (recommended), or identified with the user via a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or via [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
+
+{{partial:tabs tabs="Java, Kotlin"}}
+{{partial:tab name="Java"}}
+```java
+try {
+    ExperimentUser user = ExperimentUser.builder()
+        .userId("user@company.com")
+        .userProperty("premium", true)
+        .group("org name", ["Amplitude"])
+        .build();
+    experiment.fetch(user).get();
+} catch (Exception e) {
+    e.printStackTrace();
+}
+```
+{{/partial:tab}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+try {
+    val user = ExperimentUser.builder()
+        .userId("user@company.com")
+        .userProperty("premium", true)
+        .group("org name", ["Amplitude"])
+        .build()
+    experiment.fetch(user).get()
+} catch (e: Exception) {
+    e.printStackTrace()
+}
+```
+{{/partial:tab}}
+
+To pass freeform group properties, see this example:
+
+{{partial:tabs tabs="Java, Kotlin"}}
+{{partial:tab name="Java"}}
+```java
+try {
+    ExperimentUser user = ExperimentUser.builder()
+        .userId("user@company.com")
+        .userProperty("premium", true)
+        .groupProperty("org name", ["Amplitude"])
+        .build();
+    experiment.fetch(user).get();
+} catch (Exception e) {
+    e.printStackTrace();
+}
+```
+{{/partial:tab}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+try {
+    val user = ExperimentUser.builder()
+        .userId("user@company.com")
+        .userProperty("premium", true)
+        .groupProperty("org name", ["Amplitude"])
+        .build()
+    experiment.fetch(user).get()
+} catch (e: Exception) {
+    e.printStackTrace()
+}
+```
+{{/partial:tab}}
+
+{{/partial:collapse}}
+
 ## Start
 
 {{partial:admonition type="info" heading="Fetch vs start"}}
