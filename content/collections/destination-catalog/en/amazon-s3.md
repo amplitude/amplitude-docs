@@ -38,7 +38,7 @@ The export works on a per-project basis, so you have the flexibility to set up d
 
 - You can't use portfolio projects as data sources for the Amazon S3 export.
 - You can't reuse bucket names across Amplitude organizations, but you can reuse bucket names across projects in the same organization. If you migrate organizations, disable or delete the Amazon S3 destination in the old organization before you create it in the new organization.
-- The export finishes within one hour after the currently exported hour. The export time is typically between one and 10 minutes.
+- Amplitude aims to export five million events per hour, though this rate can vary based on the total number of customers exporting data.
 - The only potential error is an accessibility error. This can happen if you have changed any configurations on the receiving end and Amplitude is unable to access to your bucket. 
 In this case, the export fails after several tries, and Amplitude notifies the administrator and user who created the export by email. 
 - The error email includes troubleshooting information. This information isn't available within the Amplitude UI. Because accessibility is the only error possible, the email includes information on which permission is missing.

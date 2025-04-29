@@ -4,6 +4,7 @@ blueprint: api
 title: 'Data Subject Access Request API'
 source: 'https://www.docs.developers.amplitude.com/analytics/apis/ccpa-dsar-api/'
 auth_method: http_basic
+key: org
 standard_endpoint: 'https://amplitude.com/api/2/dsar/requests'
 eu_endpoint: 'https://analytics.eu.amplitude.com/api/2/dsar/requests'
 postman_link: 'https://www.postman.com/amplitude-dev-docs/workspace/amplitude-developers/folder/20044411-9debb5b3-8c58-4eed-b2e5-33f4717b9fc1?action=share&source=copy-link&creator=29131806&ctx=documentation'
@@ -101,9 +102,9 @@ for url in response.get('urls'):
 curl --location --request POST 'https://amplitude.com/api/2/dsar/requests' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
--u '{org-api-key}:{org-secret_key}' \
+-u '{org-api-key}:{org-secret-key}' \
 --data-raw '{
-"userId": 12345,
+"userId": "12345",
 "startDate": "2020-04-24",
 "endDate": "2022-02-20"
 }'
@@ -115,9 +116,9 @@ POST /api/2/dsar/requests HTTP/1.1
 Host: amplitude.com
 Accept: application/json
 Content-Type: application/json
-Authorization: Basic {org-api-key}:{org-secret_key} # credentials must be base64 encoded
+Authorization: Basic {org-api-key}:{org-secret-key} # credentials must be base64 encoded
 {
-    "userId": 12345,
+    "userId": "12345",
     "startDate": "2020-04-24",
     "endDate": "2022-02-20"
 }
@@ -134,9 +135,9 @@ This example creates a request by user ID `12345`, between the dates of April 24
 curl --location --request POST 'https://amplitude.com/api/2/dsar/requests' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Basic YWhhbWwsdG9uQGFwaWdlZS5jb206bClwYXNzdzByZAo' \
+-u '7f6e5d4c3b2a1e0f9d8c7b6a5e4d3c2b:c2b3a4d5e6f7c8d9a0b1c2d3e4f5a6b7' \
 --data-raw '{
-    "userId": 12345,
+    "userId": "12345",
     "startDate": "2020-04-24",
     "endDate": "2022-02-20"
 }'
@@ -148,11 +149,11 @@ POST /api/2/dsar/requests HTTP/1.1
 Host: amplitude.com
 Accept: application/json
 Content-Type: application/json
-Authorization: Basic YWhhbWwsdG9uQGFwaWdlZS5jb206bClwYXNzdzByZAo
+Authorization: Basic N2Y2ZTVkNGMzYjJhMWUwZjlkOGM3YjZhNWU0ZDNjMmI6YzJiM2E0ZDVlNmY3YzhkOWEwYjFjMmQzZTRmNWE2YjcK
 Content-Length: 83
 
 {
-    "userId": 12345,
+    "userId": "12345",
     "startDate": "2020-04-24",
     "endDate": "2022-02-20"
 }
@@ -170,7 +171,7 @@ This example creates a request by Amplitude ID `90102919293`, between the dates 
 curl --location --request POST 'https://amplitude.com/api/2/dsar/requests' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Basic YWhhbWwsdG9uQGFwaWdlZS5jb206bClwYXNzdzByZAo' \
+-u '7f6e5d4c3b2a1e0f9d8c7b6a5e4d3c2b:c2b3a4d5e6f7c8d9a0b1c2d3e4f5a6b7' \
 --data-raw '{
     "amplitudeId": 90102919293,
     "startDate": "2020-04-24",
@@ -184,7 +185,7 @@ POST /api/2/dsar/requests HTTP/1.1
 Host: amplitude.com
 Accept: application/json
 Content-Type: application/json
-Authorization: Basic YWhhbWwsdG9uQGFwaWdlZS5jb206bClwYXNzdzByZAo
+Authorization: Basic N2Y2ZTVkNGMzYjJhMWUwZjlkOGM3YjZhNWU0ZDNjMmI6YzJiM2E0ZDVlNmY3YzhkOWEwYjFjMmQzZTRmNWE2YjcK
 Content-Length: 83
 
 {
@@ -223,9 +224,9 @@ Poll the data request job to get its status.
 {{partial:tabs tabs="cURL, HTTP"}}
 {{partial:tab name="cURL"}}
 ```bash
-curl --location --request GET 'https://amplitude.com/api/2/dsar/requests/requestID' \
+curl --location --request GET 'https://amplitude.com/api/2/dsar/requests/{request-id}' \
 --header 'Accept: application/json' \
---header 'Authorization: Basic org-api-key}:{org-secret_key}' #credentials must be base64 encoded
+-u '{org-api-key}:{org-secret-key}'
 ```
 {{/partial:tab}}
 {{partial:tab name="HTTP"}}
@@ -233,7 +234,7 @@ curl --location --request GET 'https://amplitude.com/api/2/dsar/requests/request
 GET /api/2/dsar/requests/requestID HTTP/1.1
 Host: amplitude.com
 Accept: application/json
-Authorization: Basic {org-api-key}:{org-secret_key} #credentials must be base64 encoded
+Authorization: Basic {org-api-key}:{org-secret-key} #credentials must be base64 encoded
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -246,7 +247,7 @@ This example polls request `53367`.
 ```bash
 curl --location --request GET 'https://amplitude.com/api/2/dsar/requests/53367' \
 --header 'Accept: application/json' \
---header 'Authorization: Basic YWhhbWwsdG9uQGFwaWdlZS5jb206bClwYXNzdzByZAo'
+-u '7f6e5d4c3b2a1e0f9d8c7b6a5e4d3c2b:c2b3a4d5e6f7c8d9a0b1c2d3e4f5a6b7'
 ```
 {{/partial:tab}}
 {{partial:tab name="HTTP"}}
@@ -254,13 +255,11 @@ curl --location --request GET 'https://amplitude.com/api/2/dsar/requests/53367' 
 GET /api/2/dsar/requests/53367 HTTP/1.1
 Host: amplitude.com
 Accept: application/json
-Authorization: Basic YWhhbWwsdG9uQGFwaWdlZS5jb206bClwYXNzdzByZAo
+Authorization: Basic N2Y2ZTVkNGMzYjJhMWUwZjlkOGM3YjZhNWU0ZDNjMmI6YzJiM2E0ZDVlNmY3YzhkOWEwYjFjMmQzZTRmNWE2YjcK
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
 {{/partial:collapse}}
-
-### Path variables
 
 ### Path variables
 
@@ -292,14 +291,14 @@ The download link is valid for two days. Most clients used to send API requests 
 {{partial:tab name="cURL"}}
 ```curl
 curl --location --request GET 'https://analytics.amplitude.com/api/2/dsar/requests/:request_id/outputs/:output_id' \
--u '{org-api-key}:{org-secret_key}'
+-u '{org-api-key}:{org-secret-key}'
 ```
 {{/partial:tab}}
 {{partial:tab name="HTTP"}}
 ```bash
 GET /api/2/dsar/requests/request_id/outputs/:output_id HTTP/1.1
 Host: analytics.amplitude.com
-Authorization: Basic {org-api-key}:{org-secret_key} # credentials must be base64 encoded
+Authorization: Basic {org-api-key}:{org-secret-key} # credentials must be base64 encoded
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -311,7 +310,7 @@ This example gets output with ID `0` for request `53367`.
 {{partial:tab name="cURL"}}
 ```bash
 curl --location --request GET 'https://analytics.amplitude.com/api/2/dsar/requests/53367/outputs/0' \
---header 'Authorization: Basic YWhhbWwsdG9uQGFwaWdlZS5jb206bClwYXNzdzByZAo'
+-u '7f6e5d4c3b2a1e0f9d8c7b6a5e4d3c2b:c2b3a4d5e6f7c8d9a0b1c2d3e4f5a6b7'
 ```
 {{/partial:tab}}
 {{partial:tab name="HTTP"}}
@@ -322,7 +321,7 @@ curl --location --request GET 'https://analytics.amplitude.com/api/2/dsar/reques
 GET /api/2/dsar/requests/53367/outputs/0 HTTP/1.1
 Host: amplitude.com
 Accept: application/json
-Authorization: Basic YWhhbWwsdG9uQGFwaWdlZS5jb206bClwYXNzdzByZAo
+Authorization: Basic N2Y2ZTVkNGMzYjJhMWUwZjlkOGM3YjZhNWU0ZDNjMmI6YzJiM2E0ZDVlNmY3YzhkOWEwYjFjMmQzZTRmNWE2YjcK
 ```
 {{/partial:collapse}}
 
