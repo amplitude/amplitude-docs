@@ -241,7 +241,7 @@ curl --request GET \
     "experimentType": "a-b-test",
     "deleted": false,
     "tags": [],
-    "createdBy: "x@amplitude.com"
+    "createdBy": "x@amplitude.com"
 }
 ```
 
@@ -779,6 +779,9 @@ curl --request DELETE \
 {{/partial:admonition}}
 
 ## Add users to variant
+
+{{partial:admonition type='note'}} 
+You can have up to 500 inclusions per variant. If you go over this limit, Amplitude returns a `400` error. {{/partial:admonition}}
 
 ```bash
 POST https://experiment.amplitude.com/api/1/experiments/{id}/variants/{variantKey}/users

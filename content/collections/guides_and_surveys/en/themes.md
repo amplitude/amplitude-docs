@@ -22,7 +22,11 @@ To create a new Guides and Surveys theme:
 2. Click **Create New**. The Theme editor appears.
 3. Customize your theme with the Brand and Component controls described below.
 4. Click **Save** at any time to save your progress.
-5. Click **Publish** to apply your theme to any guides or surveys you've already created.
+5. Click **Publish** to enable your theme for selection by a guide or survey.
+
+{{partial:admonition type="note" heading="Updating a theme"}}
+When you publish an update an existing theme, those updates apply to any guide or survey that uses that theme. 
+{{/partial:admonition}}
 
 ## Theme viewer
 

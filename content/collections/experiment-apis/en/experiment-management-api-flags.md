@@ -49,6 +49,7 @@ Fetch a list of flags including their configuration details. Results are ordered
 | `projectId` | Filter flags that belongs to this project.              |
 | `limit`     | The max number of flags to be returned. Capped at 1000. |
 | `cursor`    | The offset to start the "page" of results from.         |
+| `includeArchived` | Filter to include archived flags. Default is `false`. |
 
 ### Response
 
@@ -743,6 +744,10 @@ curl --request DELETE \
 ```bash
 POST https://experiment.amplitude.com/api/1/flags/{id}/variants/{variantKey}/users
 ```
+
+{{partial:admonition type='note'}} 
+You can have up to 500 inclusions per variant. If you go over this limit, Amplitude returns a `400` error.
+{{/partial:admonition}}
 
 Add inclusions (users or devices) to flag's variant.
 

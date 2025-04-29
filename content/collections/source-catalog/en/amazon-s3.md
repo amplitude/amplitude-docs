@@ -66,13 +66,6 @@ Amplitude processes files exactly once. You can’t edit files once you upload t
 After an S3 import source ingests a file, the same source doesn't process the file again, even if the file receives an update.
 {{/partial:admonition}}
 
-## Limits
-
-For each Amplitude project, AWS S3 import can ingest:
-
-- Up to 50 files per second.
-- Up to 30k events per second.
-
 ### Deduplication with `insert_id`
 
 For ingestion syncs only, Amplitude uses a unique identifier, `insert_id`, to match against incoming events and prevent duplicates. If within the same project, Amplitude receives an event with `insert_id` and `device_id` values that match the `insert_id` and `device_id` of a different event received within the last 7 days, Amplitude drops the most recent event.
