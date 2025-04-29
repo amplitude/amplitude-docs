@@ -182,7 +182,6 @@ Set literals ("apple", "orange") must appear on the right hand side of the opera
 | `==`     | `IF(product == ("apple","orange"), "true", "false")`<br />*product = "apple", Returns "true"*   |
 | `!=`     | `IF(product != ("apple","orange"), "true", "false")` <br />*product = "banana", Returns "true"* |
 
-
 ### Parallel operators
 
 Perform operations on arrays of data to help perform cart analysis.
@@ -191,8 +190,8 @@ Perform operations on arrays of data to help perform cart analysis.
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `PARALLEL_SUM`     | Sums the values of the component properties.                                                                                                                                                                              |
 | `PARALLEL_PRODUCT` | Multiplies the values of the component properties. Use this operator to calculate revenue per item in a cart. For example, `PARALLEL_PRODUCT(PROPERTY('Products.price', 'event'), PROPERTY('Products.quantity','event'))` |
-| `PARALLEL_MAX`     | Returns the maximum value from ...                                                                                                                                                                                        |
-| `PARALLEL_MIN`     | Returns the minimum value from ...                                                                                                                                                                                        |
+| `PARALLEL_MAX`     | Returns the maximum value from the component properties.                                                                                                                                                                                        |
+| `PARALLEL_MIN`     | Returns the minimum value from the component properties.                                                                                                                                                                                        |
 
 Parallel operators require at least one property to be a child cart property, and both properties be under the same parent property.
 
@@ -221,8 +220,7 @@ You have a purchase event with the following cart property:
 | Adidas | 24.99 | 1        |
 | Fossil | 24.99 | 2        |
 
-Use `PARALLEL_PRODUCT` to create a `Revenue` derived property.
-
+Use `PARALLEL_PRODUCT` to create a `Revenue` derived property:
 
 ```
 PARALLEL_PRODUCT(
@@ -231,8 +229,7 @@ PARALLEL_PRODUCT(
 )
 ```
 
-
-
+If you add this property to a chart, group by `Brand` to view revenue by brand.
 
 ## Common derived properties formulas
 
