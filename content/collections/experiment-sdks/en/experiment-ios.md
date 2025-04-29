@@ -319,6 +319,33 @@ In the case of **user properties**, Amplitude recommends passing new user proper
 
 If `fetch()` times out (default 10 seconds) or fails for any reason, the SDK client will return and retry in the background with back-off. You may configure the timeout or disable retries in the [configuration options](#configuration) when the SDK client is initialized.
 
+{{partial:collapse name="Account-level bucketing and analysis (v1.10.0+)"}}
+If your organization has purchased the [Accounts add-on](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users. Reach out to your representative to gain access to this beta feature.
+
+Groups must either be included in the user sent with the fetch request (recommended), or identified with the user via a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or via [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
+
+```swift
+let user = ExperimentUserBuilder()
+    .userId(userId)
+    .deviceId(deviceId)
+    .group("org name", ["Amplitude"])
+    .build()
+experiment.fetch(user: user, completion: nil)
+```
+
+To pass freeform group properties, see this example:
+
+```swift
+let user = ExperimentUserBuilder()
+    .userId(userId)
+    .deviceId(deviceId)
+    .groupProperty("org name", ["Amplitude"])
+    .build()
+experiment.fetch(user: user, completion: nil)
+```
+
+{{/partial:collapse}}
+
 ## Start
 
 {{partial:admonition type="info" heading="Fetch vs start"}}

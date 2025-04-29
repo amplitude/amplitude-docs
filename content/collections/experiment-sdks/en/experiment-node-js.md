@@ -209,6 +209,37 @@ const variants = experiment.evaluateV2(user);
 ```
 {{/partial:admonition}}
 
+{{partial:collapse name="Account-level bucketing and analysis (v1.5.0+)"}}
+If your organization has purchased the [Accounts add-on](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users. Reach out to your representative to gain access to this beta feature.
+
+Groups must either be included in the user sent with the fetch request (recommended), or identified with the user via a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or via [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
+
+```js
+await fetch({
+    user_id: 'user@company.com',
+    device_id: 'abcdefg',
+    user_properties: {
+        'premium': true,
+    },
+    groups: {'org name': ['Amplitude']}
+});
+```
+
+To pass freeform group properties, see this example:
+
+```js
+await fetch({
+    user_id: 'user@company.com',
+    device_id: 'abcdefg',
+    user_properties: {
+        'premium': true,
+    },
+    group_properties: {'org name': ['Amplitude']}
+});
+```
+
+{{/partial:collapse}}
+
 ### Initialize Local
 
 Initializes a [local evaluation](/docs/feature-experiment/local-evaluation) client.

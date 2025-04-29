@@ -181,6 +181,43 @@ experiment.fetch_async(user) do |_, variants|
 end
 ```
 
+{{partial:collapse name="Account-level bucketing and analysis (v1.4.0+)"}}
+If your organization has purchased the [Accounts add-on](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users. Reach out to your representative to gain access to this beta feature.
+
+Groups must either be included in the user sent with the fetch request (recommended), or identified with the user via a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or via [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
+
+```ruby
+user = AmplitudeExperiment::User.new(
+    user_id: 'user@company.com',
+    device_id: 'abcdefg',
+    user_properties: {
+        'premium' => true
+    },
+    groups: {
+      'org name' => ['Amplitude']
+    }
+)
+variants = experiment.fetch(user)
+```
+
+To pass freeform group properties, see this example:
+
+```ruby
+user = AmplitudeExperiment::User.new(
+    user_id: 'user@company.com',
+    device_id: 'abcdefg',
+    user_properties: {
+        'premium' => true
+    },
+    group_properties: {
+      'org name' => ['Amplitude']
+    }
+)
+variants = experiment.fetch(user)
+```
+
+{{/partial:collapse}}
+
 ## Local evaluation
 
 Implements evaluating variants for a user via [local evaluation](/docs/feature-experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/feature-experiment/local-evaluation#targeting-capabilities).
