@@ -21,7 +21,7 @@ You can:
 * Disable API access
 
 {{partial:admonition type='note'}}
-Once you revoke an API key, you can't undo it. However, you will still be able to see the key value.  {{/partial:admonition}}
+Once you revoke an API key, you can't undo it. However, you can still view the key value.  {{/partial:admonition}}
 
 ## Manage your keys
 
