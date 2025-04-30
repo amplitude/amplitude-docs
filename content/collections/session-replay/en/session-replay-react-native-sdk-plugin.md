@@ -53,6 +53,7 @@ await add(new SessionReplayPlugin(config)).promise;
 | --- | --- | --- | --- | --- |
 | `sampleRate` | `number` | No | `0` | Use this option to control how many sessions to select for replay collection. The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. This field isn't required because Session Replay supports [Remote Configuration](/docs/admin/account-management/account-settings#session-replay-settings) of settings including Sample Rate. | 
 | `enableRemoteConfing` | `boolean` | No | `true` | Use this option to enable [remote configuration](/docs/admin/account-management/account-settings#session-replay-settings). |
+| `logLevel` | `LogLevel` | No | `LogLevel.Warn` | Use this option to set the log level for the Session Replay plugin. |
 
 ### Mask onscreen data
 
@@ -101,6 +102,26 @@ import { AmpMaskView } from '@amplitude/plugin-session-replay-react-native';
 ### User opt-out
 
 The Session Replay plugin follows the [React Native SDK's `optOut` setting](/docs/sdks/analytics/react-native/react-native-sdk#opt-users-out-of-tracking), and doesn't support user opt-outs on its own.
+
+### Start and stop recording
+
+The Session Replay plugin provides `start()` and `stop()` methods to start and stop recording sessions. You can call these methods to control the recording of specific pages or features in your application.
+
+```js
+import { SessionReplayPlugin } from '@amplitude/plugin-session-replay-react-native';
+
+// ...
+
+await init('YOUR_API_KEY').promise;
+const sessionReplayPlugin = new SessionReplayPlugin();
+await add(sessionReplayPlugin).promise;
+
+// Stop recording
+await sessionReplayPlugin.stop();
+
+// Resume recording
+await sessionReplayPlugin.start();
+```
 
 ### EU data residency
 
