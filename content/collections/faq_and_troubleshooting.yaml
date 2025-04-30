@@ -1,0 +1,21 @@
+title: 'FAQ and Troubleshooting'
+sites:
+  - en
+propagate: false
+template: default
+layout: layout
+revisions: false
+route: '/faq/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: faq
+structure:
+  root: false
