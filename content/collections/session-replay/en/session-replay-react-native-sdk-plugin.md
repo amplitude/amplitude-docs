@@ -105,7 +105,7 @@ The Session Replay plugin follows the [React Native SDK's `optOut` setting](/doc
 
 ### Start and stop recording
 
-The Session Replay plugin provides `start()` and `stop()` methods to start and stop recording sessions. You can call these methods to control the recording of specific pages or features in your application.
+The Session Replay plugin provides `start()` and `stop()` methods to start and stop recording sessions. Call these methods to control the recording of specific pages or features in your application.
 
 ```js
 import { SessionReplayPlugin } from '@amplitude/plugin-session-replay-react-native';
