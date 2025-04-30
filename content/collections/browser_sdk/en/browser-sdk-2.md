@@ -206,6 +206,10 @@ Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you 
 
 {{/partial:collapse}}
 
+### Remote configuration
+
+Autocapture supports [remote configuration](#remote-configuration). For more information, see [Autocapture Settings](/docs/data/amplitude-data-settings#autocapture).
+
 ### Disable Autocapture
 
 To disable Autocapture, see the following code sample.
