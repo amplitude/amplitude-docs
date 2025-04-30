@@ -1,14 +1,14 @@
 # Summary
-This documentation page describes Amplitude Data's Google Ads integration, which imports daily ad spend, click, and impression data as "Daily Ad Metrics" events, detailing the setup process, prerequisites (Google Ads Customer ID and optional Manager ID), considerations (daily import frequency, per-ad level data), and common issues (permission requirements, data ingestion problems, and metric discrepancies).
+This documentation page describes Amplitude Data's Google Ads integration, which imports daily ad spend, click, and impression data from Google Ads accounts, creating a "Daily Ad Metrics" event with associated properties, requiring Google Ads Customer ID and optional Manager ID for setup, with considerations around data refresh frequency and permissions.
 
 # Keywords
 - Google Ads integration
 - Daily Ad Metrics
-- ad spend data import
 - Google Ads Customer ID
 - Manager ID
-- per-ad level data
-- advertising metrics
-- insufficient permissions
+- ad spend data
+- UTM properties
+- daily import
+- ad-network integration
+- permission requirements
 - data discrepancies
-- daily import frequency

@@ -2,116 +2,89 @@
 
 ## Product Overview
 
-Amplitude Source Catalog is a comprehensive collection of integrations that connect Amplitude's analytics platform with various third-party tools, data sources, and marketing platforms. It enables businesses to import data into Amplitude from external sources, export cohorts and analytics data to other platforms, and create bidirectional data flows that enhance the overall analytics ecosystem.
+Amplitude Source Catalog is a comprehensive collection of integrations that connects Amplitude's analytics platform with various third-party tools, data sources, and platforms. It enables users to import data into Amplitude from external sources, export data from Amplitude to other platforms, and create bidirectional data flows between Amplitude and partner systems.
 
-The Source Catalog supports multiple integration types including data ingestion from marketing platforms, attribution data from mobile measurement platforms, survey and feedback data collection, data warehouse integrations, cohort exports for targeted marketing, and event streaming for real-time analytics.
+The Source Catalog functions as a central hub for data integration, allowing businesses to consolidate user behavior data, marketing campaign metrics, subscription information, survey responses, and other valuable data points into Amplitude for unified analytics and insights.
 
 ## Product Relationships and Features
 
-The Source Catalog integrations are organized into functional categories:
+The Source Catalog offers three primary integration types:
 
-1. **Data Import Sources**:
-   - Cloud storage platforms (Amazon S3, Google Cloud Storage)
-   - Data warehouses (BigQuery, Snowflake, Databricks)
-   - CDP platforms (mParticle, RudderStack, Segment, Tealium)
-   - Reverse ETL tools (Census, Hightouch)
+1. **Data Import Integrations**
+   - Event Data Sources (Appsflyer, Branch, Braze)
+   - Data Warehouses (Snowflake, BigQuery, Databricks)
+   - Cloud Storage (Amazon S3, Google Cloud Storage)
+   - Marketing Platforms (Facebook Ads, Google Ads)
 
-2. **Marketing & Engagement Platforms**:
-   - Email marketing (Mailchimp, SendGrid, Braze, Iterable)
-   - Mobile measurement platforms (AppsFlyer, Branch, Adjust, Kochava, Singular)
-   - Ad platforms (Facebook Ads, Google Ads)
-   - Customer engagement (Intercom, MoEngage, OneSignal, CleverTap)
+2. **Data Export Integrations**
+   - Cohort Exports to marketing platforms (Braze, OneSignal)
+   - Event Streaming to other analytics or engagement platforms
 
-3. **Subscription & Revenue Tools**:
-   - Subscription management (RevenueCat, Adapty, Apphud, Nami)
-   - Payment processing (Stripe)
-   - Monetization platforms (Adapty)
+3. **Bidirectional Integrations**
+   - Two-way data flow with platforms like Braze, OneSignal, and HubSpot
 
-4. **User Experience & Feedback**:
-   - Survey platforms (Qualtrics, Survicate, Sprig, Blitzllama)
-   - User onboarding (Userflow, Userguiding, Bento, Candu, Chameleon)
-   - A/B testing (Optimizely, Split, Taplytics)
+These integrations are organized into functional categories:
 
-5. **Web Analytics & Tag Management**:
-   - Google Analytics 4
-   - Adobe Analytics
-   - Google Tag Manager (client-side, server-side, and legacy)
-
-Integration patterns include:
-- **One-way data import**: External platform sends data to Amplitude
-- **One-way data export**: Amplitude sends cohorts or data to external platform
-- **Bidirectional**: Data flows both ways between Amplitude and the external platform
+- **Attribution & Marketing**: Adjust, AppsFlyer, Branch, Facebook Ads, Google Ads
+- **Customer Engagement**: Braze, OneSignal, Intercom, SendGrid, Mailchimp
+- **Subscription & Revenue**: Adapty, RevenueCat, Stripe, Apphud
+- **User Feedback & Surveys**: Sprig, Survicate, Qualtrics, Blitzllama
+- **Product Experience**: Userflow, Userguiding, Candu, Bento
+- **Data Infrastructure**: Snowflake, BigQuery, Databricks, RudderStack, Segment
 
 ## Key Nomenclature and Definitions
 
-1. **API Key**: Authentication credential required by most integrations for data transmission.
+1. **API Key**: Authentication credential required for secure connections with Amplitude
 
-2. **Event**: The fundamental unit of data in Amplitude, representing a user action or occurrence.
+2. **User ID Mapping**: Process of matching identifiers between Amplitude and third-party platforms
+   - **user_id**: Primary identifier in Amplitude
+   - **device_id**: Device-specific identifier
+   - **amplitudeId/amplitudeDeviceId**: Amplitude-generated identifiers
 
-3. **User Properties**: Attributes associated with users that persist across sessions.
+3. **Event Properties**: Contextual metadata associated with events
 
-4. **Event Properties**: Metadata associated with specific events.
+4. **User Properties**: Persistent attributes associated with users across sessions
 
-5. **Group Properties**: Attributes associated with organizational units (accounts, companies).
+5. **Group Properties**: Attributes associated with organizational entities (accounts)
 
-6. **Cohort**: A segment of users defined by specific behaviors or attributes.
+6. **Cohorts**: User segments created in Amplitude based on behavior or attributes
 
-7. **User ID/Device ID**: Identifiers for tracking individual users:
-   - `user_id`: Unique identifier assigned by the customer
-   - `device_id`: Device-specific identifier
+7. **Attribution API**: Amplitude's API for receiving attribution data from marketing platforms
 
-8. **Data Source**: External system from which Amplitude imports data.
+8. **Raw Events**: Unprocessed event data sent to Amplitude
 
-9. **Sync Strategies**:
-   - **Mirror Sync**: Keeps Amplitude data in sync with source data
-   - **Append Only Sync**: Only adds new data without updating existing records
-   - **Full Sync**: Replaces all data during each import
-   - **Timestamp-based Sync**: Imports data based on time ranges
+9. **Mirror Sync**: Import strategy maintaining exact data parity between source and Amplitude
 
-10. **Webhook**: HTTP callback used by integrations to send real-time data to Amplitude.
-
-11. **Attribution**: Tracking which marketing channels and campaigns lead to user acquisition.
+10. **Append Only Sync**: Import strategy that only adds new data without updating existing records
 
 ## Product Ecosystem Integration
 
-Amplitude Source Catalog enables a comprehensive analytics ecosystem by:
+Amplitude Source Catalog integrations enable a comprehensive analytics ecosystem by:
 
-1. **Centralizing Data**: Bringing data from multiple sources into Amplitude for unified analysis.
+1. **Centralizing Data**: Consolidating behavioral data from multiple sources for unified analysis
 
-2. **Enriching User Profiles**: Combining behavioral data with demographic, subscription, and engagement data.
+2. **Activating Insights**: Enabling action on Amplitude insights through integrations with marketing and engagement platforms
 
-3. **Activating Insights**: Sending cohorts and segments to marketing platforms for targeted campaigns.
+3. **Enriching User Profiles**: Combining product usage data with marketing, survey, and subscription information
 
-4. **Closing the Loop**: Tracking the impact of marketing campaigns on user behavior and product metrics.
+4. **Closing the Analytics Loop**: Creating feedback loops between analytics and engagement platforms
 
-5. **Supporting Data Governance**: Providing controls for data residency and privacy compliance.
+5. **Supporting Cross-Platform Analysis**: Enabling unified analysis across web, mobile, and other platforms
 
-The integrations support various Amplitude products:
-- **Amplitude Analytics**: For analyzing user behavior and product metrics
-- **Amplitude Experiment**: For A/B testing and feature flagging
-- **Amplitude CDP**: For managing user data and cohorts
+The Source Catalog serves as a core component of Amplitude's value proposition, allowing businesses to create a comprehensive data infrastructure that connects product analytics with marketing, customer engagement, and business operations.
 
-## API Endpoints and Technical Implementation
+## Integration Methods and API Endpoints
 
-Key technical approaches include:
+### Integration Methods
+1. **Webhook Configurations**: Used by platforms like SendGrid, Mailchimp, and Stripe
+2. **SDK Implementations**: Direct code integration through platform-specific SDKs (JavaScript/Web, iOS, Android)
+3. **Server-Side Integrations**: Backend connections without client-side code
+4. **Tag Managers**: Implementation through Google Tag Manager or Adobe Launch
+5. **Data Warehouse Connections**: Direct connections to data storage platforms
 
-1. **Amplitude HTTP API V2**:
-   - Endpoint: `https://api2.amplitude.com/2/httpapi`
-   - EU Data Residency: `https://api.eu.amplitude.com/2/httpapi`
-
-2. **Amplitude Attribution API**:
-   - Endpoint: `https://api.amplitude.com/api/2/attribution`
-
-3. **Amplitude Identify API**:
-   - Endpoint: `https://api.amplitude.com/identify`
-
-4. **Cohort API**:
-   - Endpoint: `https://amplitude.com/api/2/cohorts`
-
-5. **Webhook Configurations**: For real-time data transmission
-
-6. **SDK Implementations**: Including Browser SDK, Marketing Analytics SDK, and Mobile SDKs
-
-7. **Data Import API**: For importing data from warehouses and storage platforms
-
-Common implementation patterns include OAuth authentication, API key exchange, webhook configuration, SQL query configuration for data warehouses, and SDK initialization with event mapping for client-side integrations.
+### API Endpoints
+1. **HTTP V2 API**: `https://api2.amplitude.com/2/httpapi` - For server-side event tracking
+2. **Attribution API**: `https://api.amplitude.com/api/2/attribution` - For attribution data
+3. **Identify API**: `https://api.amplitude.com/identify` - For updating user properties
+4. **Batch API**: `https://api.amplitude.com/batch` - For sending multiple events
+5. **EU Data Residency Endpoint**: `https://api.eu.amplitude.com` - For EU data processing
