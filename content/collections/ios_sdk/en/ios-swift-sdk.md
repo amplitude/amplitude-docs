@@ -56,13 +56,15 @@ You must initialize the SDK before you can instrument. The API key for your Ampl
 {{partial:tab name="Swift"}}
 ```swift
 let amplitude = Amplitude(configuration: Configuration(
-    apiKey: AMPLITUDE_API_KEY
+    apiKey: AMPLITUDE_API_KEY,
+    autocapture: .all
 ))
 ```
 {{/partial:tab}}
 {{partial:tab name="Obj-C"}}
 ```objc
 AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:AMPLITUDE_API_KEY];
+configuration.autocapture = AMPAutocaptureOptions.all;
 Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
