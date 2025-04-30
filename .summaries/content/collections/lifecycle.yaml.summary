@@ -1,0 +1,11 @@
+## Summary
+This YAML configuration defines the "Lifecycle" collection settings for analytics charts, specifying its template, layout, mounting point, routing pattern, and display behavior including sort direction and date visibility rules.
+
+## Keywords
+- analytics charts
+- lifecycle collection
+- mount point c4858ae8-0592-4ebd-87a5-144cdbb88f2f
+- date_behavior
+- preview_targets
+- route pattern
+- sort_dir ascending

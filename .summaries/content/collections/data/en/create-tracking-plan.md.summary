@@ -1,0 +1,16 @@
+## Summary
+Amplitude Data's tracking plan feature allows teams to define, document, and manage events, properties, and sources in a centralized location. The article explains how to create and update tracking plans, including creating events with metadata, defining properties with data types and rules, establishing sources for data origin, and collaborating with team members before implementation.
+
+## Keywords
+- tracking plan
+- event properties
+- user properties
+- group properties
+- data sources
+- Ampli Developer Tools
+- property groups
+- event metadata
+- data types
+- property rules
+- collaboration features
+- type-safe code generation

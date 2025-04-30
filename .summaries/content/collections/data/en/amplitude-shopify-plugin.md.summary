@@ -1,0 +1,14 @@
+# Summary
+The Amplitude Shopify Plugin integrates with Shopify stores to capture user behavior data, including default Amplitude events and Shopify standard events, enabling analytics features like funnels, user behavior trends, ROI analysis, and Session Replay, though it requires an anti-flicker snippet to prevent flickering and cannot track events on checkout pages due to Shopify restrictions.
+
+# Keywords
+- Shopify integration
+- Browser SDK implementation
+- Session Replay
+- Web Experiment
+- Marketing attribution
+- Event tracking
+- Checkout flow events
+- Anti-flicker snippet
+- Performance impact
+- API key configuration

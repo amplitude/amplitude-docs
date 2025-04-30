@@ -1,0 +1,14 @@
+# Summary
+This documentation page describes how to set up Google Cloud Storage (GCS) as a data source in Amplitude, including creating a service account with proper permissions, configuring the data source in Amplitude, and creating a converter configuration to map GCS data to Amplitude's format. It also details storage organization requirements for ongoing data imports.
+
+# Keywords
+- Google Cloud Storage (GCS) import
+- Service account permissions
+- Converter configuration
+- Data mapping
+- Storage organization requirements
+- Guided converter creation
+- Event properties
+- User properties
+- Group properties
+- Transformation rules

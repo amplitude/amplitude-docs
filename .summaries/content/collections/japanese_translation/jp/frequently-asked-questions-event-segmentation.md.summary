@@ -1,0 +1,16 @@
+## Summary
+This documentation page addresses frequently asked questions about Event Segmentation charts in Amplitude, covering topics such as analyzing events with user properties, viewing historical data, understanding metrics like active percentage and new users, creating custom formulas for ratios, segmenting users based on past behavior, downloading user lists, and troubleshooting common issues with data visualization.
+
+## Keywords
+- Event Segmentation charts
+- Group by/where clauses
+- Date range selection
+- Active percentage calculation
+- Property value averaging
+- Custom formulas
+- Inline cohorts
+- DAU/MAU analysis
+- ROLLWIN function
+- User/account filtering
+- Glob matching
+- Data completeness errors

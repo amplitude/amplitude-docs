@@ -1,0 +1,14 @@
+# Summary
+This documentation page describes the Cohort Webhooks feature in Amplitude, which allows customers to receive cohort updates to their own webhook endpoints for custom data processing and integration with marketing systems. The feature supports both default Amplitude payload format and customizable payloads using Apache FreeMarker templates.
+
+# Keywords
+- Cohort Webhooks
+- webhook endpoints
+- FreeMarker templating
+- cohort syncing
+- custom payload
+- webhook headers
+- cohort updates
+- message_id
+- in_cohort
+- webhook configuration

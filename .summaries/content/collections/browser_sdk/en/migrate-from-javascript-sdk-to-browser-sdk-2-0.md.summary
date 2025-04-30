@@ -1,0 +1,16 @@
+## Summary
+This documentation page provides a comprehensive migration guide from the legacy JavaScript SDK to Browser SDK 2.0, detailing API changes, configuration differences, and new features like plugin architecture, improved attribution tracking, and HTTP V2 API support.
+
+## Keywords
+- Browser SDK 2.0 migration
+- JavaScript SDK compatibility
+- cookie migration
+- configuration mapping
+- track() API
+- identify() API
+- plugin architecture
+- event tracking
+- user properties
+- web attribution
+- flush mechanism
+- promise-based callbacks

@@ -1,0 +1,14 @@
+# Summary
+Survicate integration sends survey responses as events to Amplitude, allowing businesses to connect qualitative feedback with quantitative data. The integration works at the workspace level, sending the "survicate_survey_answered" event with properties like survey_name, question_name, and answer, enabling cohort creation based on satisfaction scores and detailed analysis of user feedback.
+
+## Keywords
+- survicate_survey_answered event
+- customer feedback surveys
+- satisfaction cohorts
+- qualitative user insights
+- survey response properties
+- CSAT/NPS integration
+- feature request analysis
+- release performance measurement
+- workspace-level integration
+- survey answer tracking

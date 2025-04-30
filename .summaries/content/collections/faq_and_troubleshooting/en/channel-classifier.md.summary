@@ -1,0 +1,16 @@
+# Summary
+Amplitude's channel classifier allows Growth and Enterprise users with admin/manager permissions to define acquisition channels for tracking traffic sources, using any combination of event, user, or group properties, with retroactive application to existing charts and support for regex formulas.
+
+# Keywords
+- acquisition channels
+- traffic source tracking
+- channel classifier
+- utm parameters
+- referring domain
+- retroactive definition
+- property combinations
+- regex support
+- org admin permissions
+- (none) values
+- channel property configuration
+- Growth and Enterprise feature

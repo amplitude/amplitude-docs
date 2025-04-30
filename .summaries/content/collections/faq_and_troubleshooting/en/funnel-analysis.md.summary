@@ -1,0 +1,18 @@
+# Summary
+This documentation page covers frequently asked questions about Funnel Analysis charts in Amplitude, explaining metrics calculation (unique users vs event totals), conversion windows, revenue tracking, and the differences between funnel types (this order, any order, exact order), along with technical details about how filters are applied and data export options.
+
+# Keywords
+- funnel analysis
+- conversion windows
+- holding property constant
+- median time to convert
+- any order funnel
+- exact order funnel
+- event totals
+- unique users
+- funnel metrics
+- microscope cohorts
+- millisecond resolution
+- conversion over time
+- segment filters
+- funnel export

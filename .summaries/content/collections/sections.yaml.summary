@@ -1,0 +1,12 @@
+## Summary
+This YAML configuration defines a "Sections" collection with settings for template, layout, revisions, routing, sorting, date behavior, preview targets, structure, and UI display options, specifying how section entries should be handled and displayed in the Statamic CMS.
+
+## Keywords
+- sections collection
+- date_behavior
+- preview_targets
+- structure configuration
+- sort_dir
+- revisions disabled
+- permalink preview
+- hide_toc injection

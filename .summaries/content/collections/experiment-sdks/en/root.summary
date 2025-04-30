@@ -1,0 +1,163 @@
+# Amplitude Experiment: Feature Flag and Experimentation Platform
+
+Amplitude Experiment is a comprehensive feature flag and experimentation platform that enables developers to implement feature flags, run A/B tests, and manage experiments across various platforms and programming languages. The platform supports both remote and local evaluation methods for feature flags, allowing for flexible implementation based on performance and reliability requirements.
+
+## Key Features and Concepts
+
+1. **Feature Flag Management**: Create, manage, and deploy feature flags to control feature visibility and behavior.
+
+2. **Experimentation**: Run A/B/n tests to compare different variants of features.
+
+3. **Evaluation Methods**:
+   - **Remote Evaluation**: Server-side evaluation where the Experiment server determines which variant a user should receive.
+   - **Local Evaluation**: Client-side evaluation where the SDK evaluates which variant a user should receive based on downloaded flag configurations.
+
+4. **User Targeting**: Target specific users or user segments based on properties and behaviors.
+
+5. **Cohort Targeting**: Target users based on cohorts defined in Amplitude Analytics.
+
+6. **Exposure Tracking**: Automatically track when users are exposed to experiments for analytics.
+
+7. **Assignment Tracking**: Track and deduplicate user assignments to variants.
+
+8. **Account-Level Bucketing**: Ensure consistent variant assignment across users within the same account.
+
+## Product Ecosystem and Relationships
+
+Amplitude Experiment integrates with the broader Amplitude product ecosystem:
+
+1. **Amplitude Analytics Integration**: Seamless integration with Amplitude Analytics for tracking experiment exposures and analyzing results.
+
+2. **Evaluation Proxy**: A service that enables local evaluation within your infrastructure, supporting platforms without native SDKs.
+
+3. **SDK Ecosystem**: Multiple SDKs for different platforms and languages, all following similar patterns for initialization, variant fetching, and exposure tracking.
+
+4. **Third-Party Analytics Providers**: Support for integration with other analytics platforms like Segment.
+
+## Key Nomenclature and Definitions
+
+1. **Variant**: A specific version of a feature flag or experiment that a user may be assigned to.
+
+2. **ExperimentUser**: An object representing a user with properties used for targeting and bucketing.
+
+3. **Deployment Key**: A key used to authenticate SDK requests to the Experiment service.
+
+4. **Flag Configuration**: The rules and settings that determine how users are assigned to variants.
+
+5. **Exposure**: When a user encounters a feature flag or experiment variant.
+
+6. **Assignment**: The process of determining which variant a user should receive.
+
+7. **Bucketing**: The algorithm used to consistently assign users to variants.
+
+8. **Server Zone**: Geographic region for API requests (US or EU).
+
+## SDK Implementations
+
+Amplitude Experiment provides SDKs for multiple platforms:
+
+### Client-Side SDKs
+
+1. **JavaScript SDK**:
+   - Installation: `npm install @amplitude/experiment-js-client`
+   - Supports both remote and local evaluation
+   - Methods: `initialize()`, `fetch()`, `variant()`, `exposure()`
+   - Server-side rendering support
+
+2. **React Native SDK**:
+   - Installation: `npm install @amplitude/experiment-react-native-client`
+   - Supports integration with Amplitude Analytics
+   - Methods: `initialize()`, `fetch()`, `variant()`, `exposure()`
+
+3. **iOS SDK**:
+   - Installation via CocoaPods or Swift Package Manager
+   - Swift implementation
+   - Supports both remote and local evaluation
+   - Protocols: `ExperimentUserProvider`, `ExposureTrackingProvider`
+
+4. **Android SDK**:
+   - Installation via Gradle
+   - Supports both remote and local evaluation
+   - Automatic exposure tracking with Amplitude Analytics
+
+### Server-Side SDKs
+
+1. **Node.js SDK**:
+   - Installation: `npm install @amplitude/experiment-node-sdk`
+   - Methods: `fetchV2()`, `evaluateV2()`
+   - Support for cohort targeting and flag streaming
+
+2. **JVM SDK** (Java/Kotlin):
+   - Installation via Maven or Gradle
+   - Methods: `fetch()`, `evaluate()`
+   - Support for cohort targeting and flag streaming
+
+3. **Python SDK**:
+   - Installation: `pip install amplitude-experiment`
+   - Methods: `fetch()`, `evaluate()`
+   - Support for account-level bucketing and cohort targeting
+
+4. **Ruby SDK**:
+   - Installation: `gem install amplitude-experiment`
+   - Methods: `fetch()`, `evaluate()`
+   - Support for cohort targeting and automatic assignment tracking
+
+5. **PHP SDK**:
+   - Installation: `composer require amplitude/experiment-php-server`
+   - Methods: `fetch()`, `evaluate()`
+   - Support for PHP 7.4+
+
+6. **Go SDK**:
+   - Installation: `go get github.com/amplitude/experiment-go-client`
+   - Methods: `Fetch()`, `Evaluate()`
+   - Support for flag streaming and cohort targeting
+
+## Experiment Evaluation Proxy
+
+The Evaluation Proxy is a service that enables local evaluation within your infrastructure:
+
+- Supports platforms without native SDKs
+- Automatically tracks assignment events with 24-hour deduplication
+- Enhances evaluation with large cohort targeting through hourly syncs
+- Deployment options: Docker or Kubernetes
+- Storage: Redis recommended for persistent storage
+- Configuration: YAML or environment variables
+
+API Endpoints:
+- `/v1/variantss` - Fetch variants for a user
+- `/sdk/v2/variantss` - Fetch variants for a user (v2 API)
+- `/health` - Health check endpoint
+
+## Common Implementation Patterns
+
+Across all SDKs, the implementation follows a similar pattern:
+
+1. **Initialization**: Create a client with a deployment key and configuration options.
+2. **User Definition**: Define a user with properties for targeting.
+3. **Variant Fetching**: Fetch variants for the user (remote evaluation) or evaluate locally.
+4. **Variant Access**: Access the assigned variant to control application behavior.
+5. **Exposure Tracking**: Track when users are exposed to variants.
+
+Example (JavaScript):
+```javascript
+// Initialize client
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>');
+
+// Fetch variants
+await experiment.fetch({
+  user_id: 'user@example.com',
+  device_id: 'device_id',
+  user_properties: {
+    premium: true
+  }
+});
+
+// Access variant
+const variant = experiment.variant('my-flag');
+if (variant === 'on') {
+  // Show feature
+}
+
+// Track exposure
+experiment.exposure('my-flag');
+```

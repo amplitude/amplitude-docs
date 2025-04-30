@@ -1,0 +1,17 @@
+## Summary
+This documentation explains the Experiment Analysis view in Amplitude Experiment, detailing how to interpret key statistical measurements including significance, relative performance, absolute values, and confidence intervals that help determine experiment success. The page describes each column in the analysis table and explains how to interpret confidence intervals for making data-driven decisions.
+
+## Keywords
+- Experiment Analysis view
+- Statistical significance
+- Relative performance
+- Absolute values
+- Confidence intervals
+- Primary metrics
+- Secondary metrics
+- Variants
+- Control group
+- Treatment groups
+- User segmentation
+- Conversion rates
+- Lift measurement

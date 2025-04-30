@@ -1,0 +1,14 @@
+# Summary
+The User Profile API serves Amplitude user profiles, allowing developers to fetch user properties, computed properties, cohort IDs, and recommendations. It requires an Activation plan, is server-side only, and has rate limits of 600 requests per minute per organization.
+
+# Keywords
+- user-profile-api
+- recommendations
+- user-properties
+- computed-properties
+- cohort-ids
+- propensity-scores
+- prediction-propensity
+- authorization-with-secret-key
+- rate-limiting
+- profile-api.amplitude.com

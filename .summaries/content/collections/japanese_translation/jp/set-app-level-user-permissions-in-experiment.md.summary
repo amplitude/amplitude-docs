@@ -1,0 +1,14 @@
+## Summary
+This documentation explains how to set app-level user permissions in Amplitude Experiment independently from Amplitude Analytics, allowing admins to control access based on team roles. It details the permission matrix for different user levels (Viewer, Member, Manager, Admin) and the specific capabilities each role has regarding experiments, flags, environments, and user management.
+
+## Keywords
+- Amplitude Experiment permissions
+- app-level user access
+- permission matrix
+- role-based access control
+- experiment viewer/member/manager/admin roles
+- feature flag permissions
+- environment access settings
+- mutually exclusive groups
+- project access management
+- organization-level permissions

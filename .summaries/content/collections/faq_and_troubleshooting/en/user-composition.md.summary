@@ -1,0 +1,14 @@
+# Summary
+This documentation page addresses FAQs about the User Composition chart, explaining why user properties may not appear in the chart despite being in user profiles, particularly focusing on the requirement for "active" events after Identify API calls and the chart's display limitations of top 100 property values.
+
+# Keywords
+- User Composition chart
+- Identify API call
+- active events
+- user property values
+- none values
+- user profiles
+- breakdown table
+- CSV export
+- property visibility
+- account users

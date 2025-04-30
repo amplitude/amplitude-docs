@@ -1,0 +1,92 @@
+# Amplitude Experiment: Statistical Analysis and Experiment Design
+
+## Product Overview
+
+Amplitude Experiment is a platform for designing, running, and analyzing controlled experiments (A/B tests and Multi-Armed Bandit experiments) to make data-driven product decisions. The platform provides robust statistical tools and methodologies that help users accurately determine the impact of product changes on key metrics, ensuring statistical validity and proper experimental design throughout the process.
+
+## Key Features and Capabilities
+
+1. **Statistical Analysis Tools**
+   - Welch's T-test analysis for determining statistical significance between variants
+   - Confidence intervals to indicate the range of likely true values for metrics
+   - Duration estimator to calculate how long experiments need to run
+   - Cumulative exposure graph to visualize sample size accumulation over time
+
+2. **Experiment Design Framework**
+   - Minimum Detectable Effect (MDE) configuration
+   - Sample size calculation based on statistical parameters
+   - One-sided and two-sided test configuration options
+   - Primary and guardrail metrics definition
+
+3. **Experiment Types**
+   - A/B Tests with fixed sample sizes and T-test analysis
+   - Multi-Armed Bandit experiments with adaptive allocation methods
+
+## Relationships Between Features and Components
+
+The Amplitude Experiment platform demonstrates several key relationships between its components:
+
+1. **MDE and Sample Size Relationship**
+   - These parameters have an inverse relationship
+   - Smaller MDE values require larger sample sizes to detect with statistical confidence
+   - Users must balance sensitivity (low MDE) with practical experiment duration
+
+2. **Metrics Hierarchy System**
+   - Primary metrics: Core success metrics that determine experiment outcomes
+   - Guardrail metrics: Secondary metrics that ensure changes don't negatively impact critical product aspects
+   - This hierarchy helps prioritize decision-making when results are mixed
+
+3. **Statistical Configuration and Experiment Goals**
+   - One-sided tests: Used when only interested in improvements or degradations
+   - Two-sided tests: Used when any change (positive or negative) is of interest
+   - The choice affects sample size requirements and interpretation of results
+
+## Key Nomenclature and Definitions
+
+- **Welch's T-test**: A statistical test for determining significant differences between group means while accounting for potentially different variances
+- **Minimum Detectable Effect (MDE)**: The smallest meaningful change in a metric that an experiment aims to detect reliably
+- **Statistical Significance**: The probability that an observed difference between variants is not due to random chance
+- **Central Limit Theorem**: Statistical principle allowing normal distribution assumptions when sample sizes are sufficiently large
+- **Peeking Problem**: Statistical issue arising from analyzing results before reaching predetermined sample size
+- **Control Mean**: The baseline metric value for the control group against which variations are compared
+- **Statistical Power**: The probability of detecting an effect of a specified size when it actually exists
+- **Confidence Interval**: A range of values that likely contains the true effect size
+
+## Product Ecosystem Integration
+
+Amplitude Experiment appears to be part of a broader Amplitude analytics ecosystem. While specific integration details aren't fully described in the documentation, the following can be inferred:
+
+1. The experiment platform likely integrates with other Amplitude analytics tools to provide a comprehensive view of product performance
+2. Experiment results can probably be connected to user behavior analytics and broader product metrics
+3. The statistical rigor of the experiment platform complements Amplitude's analytics capabilities for data-driven decision-making
+
+## Statistical Methodology and Assumptions
+
+The platform's statistical approach is based on several key assumptions:
+
+1. Samples are independent (users in one variant don't affect users in another)
+2. Data follows a normal distribution or sample size is large enough for the Central Limit Theorem to apply
+3. Variances may be unequal between variants (hence the use of Welch's T-test)
+
+Users are advised to follow best practices:
+- Avoid analyzing results before reaching adequate sample size
+- Consider trade-offs between experiment duration and sensitivity
+- Choose appropriate test configurations based on their hypothesis
+
+## Risk Considerations and Best Practices
+
+The documentation emphasizes several important risk factors in experiment design:
+
+1. **MDE Configuration Risks**
+   - Setting MDE too low: Can lead to impractically long experiments
+   - Setting MDE too high: Might miss meaningful but smaller effects
+
+2. **Statistical Validity Concerns**
+   - Analyzing results too early can lead to invalid conclusions
+   - Multiple testing problems when examining many metrics
+   - Ensuring proper randomization of users to variants
+
+3. **Interpretation Guidelines**
+   - Understanding the difference between statistical and practical significance
+   - Considering confidence intervals alongside p-values
+   - Evaluating both primary and guardrail metrics before making decisions

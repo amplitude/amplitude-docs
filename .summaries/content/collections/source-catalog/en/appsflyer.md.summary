@@ -1,0 +1,14 @@
+# Summary
+This documentation details the AppsFlyer integration with Amplitude, enabling bidirectional data flow for enhanced analytics, attribution tracking, and cohort exports, while highlighting technical considerations such as the 72-hour attribution window, Advertising ID requirements, and SRN data restrictions.
+
+# Keywords
+- AppsFlyer attribution
+- Amplitude integration
+- Attribution API
+- Advertising ID (IDFA/IDFV/ADID)
+- 72-hour attribution window
+- Event streaming
+- Raw events
+- User cohorts
+- SRN restrictions
+- Data discrepancy

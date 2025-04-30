@@ -1,0 +1,3 @@
+**Summary:** This YAML configuration defines the structure for "Other Charts" collection in the analytics section, specifying template settings, routing patterns, and display behavior with a specific mount point (5b774bea-1967-4c73-84b9-34fc0a608a44) and ascending sort direction.
+
+**Keywords:** analytics charts collection, mount point 5b774bea, revisions disabled, ascending sort, date behavior configuration, preview targets, nav_title injection, structure root false

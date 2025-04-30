@@ -1,0 +1,12 @@
+# Summary
+This documentation explains how to change an event's category in Amplitude through three methods: using the checkbox and Categorize dropdown, directly from the Category column in the Events table, or via the event's Details panel, noting that this functionality only applies to active events included in the tracking plan, not custom events.
+
+# Keywords
+- event categorization
+- Events tab
+- Categorize dropdown
+- Category column
+- Details panel
+- tracking plan
+- active events
+- event type

@@ -1,0 +1,3 @@
+Summary: The Flutter SDK 4 documentation details how to integrate Amplitude Analytics into Flutter applications, covering installation, initialization, configuration options, and tracking capabilities including events, user identification, revenue, and sessions. The SDK supports iOS, Android, macOS, and web platforms with platform-specific configurations.
+
+Keywords: Flutter SDK, Amplitude Analytics, event tracking, user identification, revenue tracking, session tracking, cross-platform, device ID, user groups, identify API, configuration options, default events, batch processing, EU data residency

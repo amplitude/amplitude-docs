@@ -1,0 +1,142 @@
+# Amplitude SDK Catalog
+
+## Product Overview
+
+Amplitude provides a comprehensive suite of SDKs for tracking user events and properties across various platforms and environments. These SDKs enable developers to integrate Amplitude's analytics capabilities into their applications, allowing for detailed user behavior tracking, event logging, and analytics. The SDKs support both client-side and server-side implementations across web, mobile, and game development platforms.
+
+Key features of the Amplitude SDK suite include:
+- Event tracking with custom properties
+- User identification and user property management
+- Session management
+- Batch processing of events
+- Configurable flush intervals and queue sizes
+- Offline mode support
+- Cross-platform analytics consistency
+
+## Product Relationships and Architecture
+
+The Amplitude SDK ecosystem is organized by platform, with specialized implementations for:
+
+1. **Web Platforms**:
+   - Browser SDK (JavaScript)
+
+2. **Mobile Platforms**:
+   - Android SDK (Java/Kotlin)
+   - iOS SDK (Swift/Objective-C)
+   - React Native SDK (JavaScript/TypeScript)
+   - Flutter SDK (Dart)
+
+3. **Server-Side Platforms**:
+   - Node.js SDK (JavaScript/TypeScript)
+   - Python SDK
+   - Java SDK (for JRE environments)
+   - Go SDK
+
+4. **Game Development Platforms**:
+   - Unity SDK
+   - Unreal Engine SDK
+
+All SDKs share a common conceptual framework while providing platform-specific implementations. They connect to Amplitude's backend services for data processing and analytics, with configuration options for different server zones and API endpoints.
+
+## Key Nomenclature and Definitions
+
+1. **Event Tracking**: The core functionality to log user actions and behaviors.
+   - `logEvent`: Method used across SDKs to track events
+   - Event properties: Additional contextual data attached to events
+
+2. **User Identification**:
+   - `setUserId`: Method to identify a specific user
+   - `identify`: Method to set or update user properties
+   - `setGroup`: Method to associate users with groups (organizations, accounts)
+
+3. **Configuration Parameters**:
+   - `flushIntervalMillis`: Time between automatic event batch uploads
+   - `flushQueueSize`: Number of events to collect before triggering an upload
+   - `serverZone`: Geographic region for data processing (US, EU)
+
+4. **Session Management**:
+   - Session tracking: Grouping user activities into coherent sessions
+   - Session timeout: Duration of inactivity before starting a new session
+
+5. **Storage Providers**:
+   - Components that handle local storage of events before transmission
+   - Platform-specific implementations (e.g., SQLite for Android)
+
+6. **Batch Processing**:
+   - Collecting multiple events before sending to reduce network requests
+   - Configurable batch sizes and intervals
+
+## Integration with Amplitude Ecosystem
+
+The SDKs serve as data collection points within Amplitude's broader analytics platform. They:
+
+1. Capture user behavior data at the application level
+2. Process and batch events according to configuration
+3. Transmit data to Amplitude's HTTP API endpoints
+4. Support Amplitude's user and group identification system
+5. Integrate with Amplitude's dashboard and analytics tools
+
+The SDKs are designed to work with Amplitude's Analytics platform, providing the raw data that powers visualizations, user journey mapping, cohort analysis, and other analytics features in the Amplitude dashboard.
+
+## API Endpoints and Implementation Details
+
+### Common Implementation Patterns
+
+Most SDKs follow a similar implementation pattern:
+
+1. **Installation**:
+   - Browser: Via npm, yarn, or CDN
+   - Mobile: Through package managers (CocoaPods, Gradle)
+   - Server: Via language-specific package managers (pip, npm, go get)
+
+2. **Initialization**:
+   ```javascript
+   // Example (syntax varies by platform)
+   const amplitude = new Amplitude('API_KEY', {
+     // Configuration options
+   });
+   ```
+
+3. **Event Tracking**:
+   ```javascript
+   // Example (syntax varies by platform)
+   amplitude.logEvent('Button Clicked', {
+     buttonColor: 'blue',
+     location: 'header'
+   });
+   ```
+
+4. **User Identification**:
+   ```javascript
+   // Example (syntax varies by platform)
+   amplitude.setUserId('user@example.com');
+   amplitude.identify(new Identify().set('plan', 'premium'));
+   ```
+
+### Platform-Specific Details
+
+1. **Browser SDK**:
+   - Focuses on client-side tracking in web applications
+   - Handles browser-specific concerns like cookies and local storage
+
+2. **Android SDK**:
+   - Provides both Kotlin and Java implementations
+   - Includes Android-specific storage providers
+   - Handles background/foreground state transitions
+
+3. **iOS SDK**:
+   - Native implementation for iOS applications
+   - Integrates with Apple's development ecosystem
+
+4. **Flutter SDK**:
+   - Cross-platform implementation for iOS and Android via Flutter
+   - Uses the `amplitude_flutter` package
+
+5. **Server-Side SDKs** (Node.js, Python, Java, Go):
+   - Focus on high-throughput event processing
+   - Include features for server environments like middleware support
+   - Typically have more robust batching and error handling
+
+6. **Game Development SDKs** (Unity, Unreal):
+   - Specialized implementations for game engines
+   - Support for tracking in-game events and player behaviors

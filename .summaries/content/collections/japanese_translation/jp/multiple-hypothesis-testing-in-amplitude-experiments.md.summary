@@ -1,0 +1,14 @@
+## Summary
+This documentation explains multiple hypothesis testing in Amplitude Experiments, detailing how testing multiple variants or metrics increases false positive risks. It describes the Bonferroni correction method implemented by Amplitude to control family-wise error rates when conducting multiple comparisons, applying corrections to both primary and secondary metrics.
+
+## Keywords
+- Multiple hypothesis testing
+- Bonferroni correction
+- False positive rate
+- Family-wise error rate
+- Statistical significance
+- Multiple comparisons problem
+- Primary metrics
+- Secondary metrics
+- p-value adjustment
+- Experiment variants

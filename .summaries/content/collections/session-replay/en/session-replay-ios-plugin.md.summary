@@ -1,0 +1,14 @@
+## Summary
+This documentation covers the installation and configuration of Session Replay for iOS applications using either the iOS Swift SDK or legacy iOS SDK, explaining how to integrate the plugin, configure sampling rates, handle user opt-outs, and manage data masking, with details on supported iOS versions and known limitations.
+
+## Keywords
+- AmplitudeSessionReplay-iOS
+- iOS Swift SDK integration
+- sampleRate configuration
+- view tree capture
+- data masking
+- WebView support
+- MapView support
+- remote configuration
+- EU data residency
+- session sampling

@@ -1,0 +1,14 @@
+# Summary
+This documentation details the integration between Segment and Amplitude, covering setup options including client-side bundled integration and Segment destinations/sources configuration. It explains how to send event data from Segment to Amplitude, maps SDK functions between platforms, and describes cohort export capabilities, with specific implementation instructions for JavaScript, iOS, and Android.
+
+# Keywords
+- Segment-Amplitude integration
+- client-side bundled integration
+- Segment destinations
+- Segment sources
+- SDK function mappings
+- cohort export
+- session tracking
+- Analytics.js
+- iOS/Android implementation
+- user property tracking

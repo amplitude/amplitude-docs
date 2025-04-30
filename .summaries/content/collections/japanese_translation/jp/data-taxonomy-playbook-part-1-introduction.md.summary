@@ -1,0 +1,14 @@
+## Summary
+This document is Part 1 of the Data Taxonomy Playbook series, introducing the importance of well-planned instrumentation for event-based analytics platforms. It covers defining business goals, understanding user journeys, identifying critical paths, and establishing data governance rules before implementing an event taxonomy in Amplitude.
+
+## Keywords
+- data taxonomy
+- instrumentation
+- event naming conventions
+- data governance
+- critical path
+- KPIs
+- user journey
+- Amplitude projects
+- test vs production environments
+- business goals

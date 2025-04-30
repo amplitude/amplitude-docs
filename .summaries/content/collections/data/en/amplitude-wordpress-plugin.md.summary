@@ -1,0 +1,14 @@
+# Summary
+The Amplitude WordPress Plugin integrates the Browser SDK to enable advanced Autocapture functionality, tracking events like page views, form interactions, and element clicks, with optional Session Replay capabilities that can be configured through a simple settings interface in the WordPress dashboard.
+
+# Keywords
+- WordPress plugin
+- Autocapture
+- Browser SDK
+- Session Replay
+- Element clicked
+- Element changed
+- Form tracking
+- API key configuration
+- Sample rate
+- Event volume impact

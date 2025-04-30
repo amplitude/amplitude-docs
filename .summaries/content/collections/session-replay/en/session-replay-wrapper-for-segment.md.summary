@@ -1,0 +1,14 @@
+# Summary
+This documentation describes the Session Replay Wrapper for Segment, which enables one-line integration between Segment and Amplitude's Session Replay, supporting only Segment's Amplitude (Actions) destination and mapping Segment user IDs to Amplitude device IDs.
+
+# Keywords
+- segment-session-replay-wrapper
+- Amplitude Actions destination
+- Segment plugin architecture
+- user ID mapping
+- session replay ID
+- npm installation
+- setupAmpSRSegmentWrapper
+- ad blocker incompatibility
+- sessionReplayOptions
+- Segment integration

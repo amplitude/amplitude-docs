@@ -1,0 +1,16 @@
+## Summary
+The Amplitude Experiment Python SDK documentation provides comprehensive guidance for implementing both remote and local evaluation of feature flags and experiments in Python applications, including initialization, configuration, fetching variants, evaluating users, and supporting account-level bucketing and cohort targeting.
+
+## Keywords
+- Python SDK
+- Remote evaluation
+- Local evaluation
+- Fetch variants
+- User evaluation
+- Cohort targeting
+- Assignment tracking
+- Account-level bucketing
+- AmplitudeCookie
+- Deployment key
+- Server-side implementation
+- Flag configuration polling

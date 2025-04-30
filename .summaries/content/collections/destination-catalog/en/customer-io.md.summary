@@ -1,0 +1,14 @@
+# Summary
+This documentation details the Customer.io event streaming integration with Amplitude, allowing real-time forwarding of events and user data to Customer.io for enhanced marketing automation. It covers setup prerequisites, configuration steps for event and user forwarding, mapping requirements, and limitations such as the need for user IDs with all events.
+
+# Keywords
+- Customer.io event streaming
+- Tracking Site ID
+- Tracking API Key
+- User identifier mapping
+- Event forwarding configuration
+- User property forwarding
+- Marketing automation integration
+- Anonymous user limitations
+- HTTP V2 API
+- Identify API

@@ -1,0 +1,91 @@
+# Amplitude Analytics: Other Charts and Advanced Analysis Tools
+
+## Product Overview
+
+Amplitude Analytics offers specialized visualization and analysis tools beyond standard event analytics, including User Composition charts and Amplitude SQL. These features enable deeper user segmentation analysis and custom SQL querying capabilities against Amplitude data stored in Snowflake.
+
+## Key Features and Components
+
+### User Composition Chart
+
+The User Composition chart provides a non-event-driven analysis tool that breaks down active users based on user properties. This visualization helps understand:
+
+- Who your users are and what properties they share across defined segments
+- Distribution of users across different property values
+- Comparative analysis between user segments
+
+The chart offers three viewing options:
+1. **Most Recent Value**: Shows the latest value for each user property
+2. **All Values**: Displays all values a user has had for a property within the timeframe
+3. **Cross Property Values**: Analyzes relationships between multiple user properties
+
+### Amplitude SQL
+
+Amplitude SQL is an advanced feature of the Query product that allows users to write custom SQL queries directly against their Amplitude data stored in Snowflake. This feature is available to customers on Growth and Enterprise plans.
+
+Key capabilities include:
+- Writing custom SQL queries using standard SQL syntax
+- Visualizing query results within Amplitude
+- Sharing and exporting query results
+- Accessing comprehensive event and user data through the `$events` table
+
+## Key Nomenclature and Definitions
+
+### User Composition Terms
+- **User Property**: Attributes associated with users rather than events
+- **Segment**: A defined group of users based on specific criteria
+- **Active Users**: Users who have performed actions within a specified timeframe
+
+### Amplitude SQL Schema
+- **$events**: The main table containing all event data
+- **$date**: A special field shortcut for date-based queries
+- **$amplitude_id**: User identifier that accounts for merged users
+- **event_properties**: JSON object containing all properties associated with an event
+- **user_properties**: JSON object containing all properties associated with a user
+- **variant**: A special data type in Snowflake that stores JSON data
+
+## Schema Structure
+
+The `$events` table includes the following key columns:
+- `amplitude_id` (NUMBER): Unique identifier for each user
+- `user_id` (VARCHAR): Custom user identifier
+- `device_id` (VARCHAR): Unique device identifier
+- `event_type` (VARCHAR): Type of event recorded
+- `event_time` (TIMESTAMP_NTZ): Server-recorded event time
+- `client_event_time` (TIMESTAMP_NTZ): Client-recorded event time
+- `event_properties` (VARIANT): JSON object with event properties
+- `user_properties` (VARIANT): JSON object with user properties
+- `groups` (VARIANT): JSON object with group properties
+
+## Integration in Amplitude Ecosystem
+
+These tools complement Amplitude's core event analytics by providing:
+1. User-centric analysis through User Composition charts
+2. Advanced data exploration through custom SQL queries
+3. Integration with Amplitude's visualization and sharing capabilities
+
+The SQL feature specifically leverages Snowflake as the underlying data warehouse, allowing customers to access their raw event data while maintaining the ability to visualize results within the Amplitude interface.
+
+## API and Query Syntax
+
+### Amplitude SQL Syntax Examples
+
+To query the `$events` table:
+```sql
+SELECT * FROM $events LIMIT 10
+```
+
+To use the date shortcut:
+```sql
+SELECT $date, COUNT(*) FROM $events GROUP BY $date
+```
+
+To access event properties:
+```sql
+SELECT event_properties:property_name FROM $events
+```
+
+To access user properties:
+```sql
+SELECT user_properties:property_name FROM $events
+```

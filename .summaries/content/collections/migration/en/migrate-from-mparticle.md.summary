@@ -1,0 +1,14 @@
+# Summary
+This documentation page provides a comprehensive guide for migrating from mParticle to Amplitude, covering source/destination configuration, SDK implementation updates, and validation steps. It includes code examples for different platforms (Browser, iOS, Android) showing how to convert mParticle tracking code to Amplitude equivalents, with mappings between key concepts.
+
+# Keywords
+- mParticle migration
+- Amplitude CDP
+- SDK implementation conversion
+- event tracking migration
+- identify method conversion
+- source configuration
+- destination setup
+- data validation
+- group tracking
+- migration checklist

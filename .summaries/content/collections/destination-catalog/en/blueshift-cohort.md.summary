@@ -1,0 +1,14 @@
+## Summary
+This documentation details the Blueshift Cohort destination integration in Amplitude, which allows sending user cohorts to Blueshift for personalized marketing campaigns. The integration supports email and customer_id as identifiers and requires API credentials from Blueshift to establish the connection.
+
+## Keywords
+- Blueshift Cohort destination
+- API key authentication
+- User identifier mapping (email/customer_id)
+- Cohort synchronization
+- Behavior-based personalization
+- Omnichannel marketing
+- Customer segmentation
+- Personalized messaging
+- Partner-maintained integration
+- Cohort naming convention

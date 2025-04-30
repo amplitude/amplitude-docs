@@ -1,0 +1,14 @@
+## Summary
+This documentation explains the Pathfinder User Chart in Amplitude, which visualizes user paths through a product by showing the steps users take before or after a specified event. The chart helps identify natural user journeys and can display results by user count or session count, with options to filter by segments and expand events by properties.
+
+## Keywords
+- Pathfinder User Chart
+- user journey visualization
+- event paths
+- session tracking
+- path analysis
+- event sequence
+- property expansion
+- user segments
+- session_id requirement
+- path frequency ranking

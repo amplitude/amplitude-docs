@@ -1,0 +1,12 @@
+# Summary
+This documentation page details how to integrate Amplitude cohorts with Mailchimp for email marketing, including setup steps in both platforms, considerations (cohort names must be under 88 characters), and the process of syncing cohorts to create targeted Mailchimp audiences identifiable by tags.
+
+# Keywords
+- Amplitude cohort export
+- Mailchimp audience integration
+- Email marketing segmentation
+- Cohort-to-tag mapping
+- User property email mapping
+- Scheduled cohort sync
+- Mailchimp authorization
+- Audience ID configuration

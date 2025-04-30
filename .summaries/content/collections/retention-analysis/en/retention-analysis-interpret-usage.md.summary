@@ -1,0 +1,14 @@
+# Summary
+The Usage Interval view in Retention Analysis shows the percentage of active users who trigger selected events at specific frequencies (daily, weekly, monthly), requiring events to occur on at least two different days, helping product teams understand natural usage patterns and set appropriate retention expectations based on their product's intended usage frequency.
+
+# Keywords
+- usage interval
+- median frequency
+- retention analysis
+- return period
+- critical event
+- usage interval over time
+- active users
+- event frequency distribution
+- inflection point
+- user behavior patterns

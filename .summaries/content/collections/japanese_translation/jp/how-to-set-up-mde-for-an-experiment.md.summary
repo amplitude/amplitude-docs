@@ -1,0 +1,14 @@
+# Summary
+This documentation explains how to set up Minimum Detectable Effect (MDE) for experiments in Amplitude, covering how to determine appropriate MDE values based on experiment type (Hypothesis Testing vs. Do No Harm), primary metrics, and associated risks. It emphasizes that MDE should be carefully considered during the experiment design phase based on specific business needs.
+
+# Keywords
+- Minimum Detectable Effect (MDE)
+- Hypothesis Testing experiments
+- Do No Harm experiments
+- Sample size calculation
+- Statistical significance
+- Conversion rate optimization
+- T-test
+- Experiment duration estimation
+- Risk assessment
+- Control group metrics

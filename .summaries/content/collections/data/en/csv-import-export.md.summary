@@ -1,0 +1,17 @@
+## Summary
+This documentation explains how to use CSV import/export functionality in Amplitude Data to manage tracking plan schemas, including events, event properties, and user properties. It details the required file schema fields for each entity type, the import/export workflow through the UI, and how to handle bulk changes to tracking plans.
+
+## Keywords
+- CSV import/export
+- tracking plan schema
+- event properties
+- user properties
+- property groups
+- schema validation
+- bulk schema changes
+- property value types
+- import template
+- property visibility
+- property constraints
+- event categories
+- branching workflow

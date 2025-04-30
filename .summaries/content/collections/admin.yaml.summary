@@ -1,0 +1,12 @@
+## Summary
+This YAML configuration file defines the Admin collection settings, specifying its template, layout, routing pattern ('/admin/{slug}'), and behavior for date-based content visibility, with preview targets for entries and navigation injection.
+
+## Keywords
+- Admin collection
+- YAML configuration
+- route pattern
+- date_behavior
+- preview_targets
+- nav_title injection
+- structure root
+- sort_dir

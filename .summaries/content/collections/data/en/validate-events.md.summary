@@ -1,0 +1,14 @@
+# Summary
+Amplitude Data's Observe feature automatically monitors event tracking without code changes, comparing incoming events against your tracking plan to identify issues like unexpected events, invalid properties, or outdated schemas. It provides real-time validation across platforms, showing event statuses (Unexpected, Valid, Invalid, Out of Date) and allowing teams to update tracking plans directly from the interface.
+
+# Keywords
+- event validation
+- tracking plan monitoring
+- data quality
+- event statuses
+- property validation
+- SDK source detection
+- runtime validation
+- event stream overlay
+- environment-specific monitoring
+- unexpected events

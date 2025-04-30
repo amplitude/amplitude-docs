@@ -1,0 +1,11 @@
+## Summary
+This YAML configuration defines the "Experiment Results" collection, specifying its template, layout, routing pattern (/analytics/charts/experiment-results/{slug}), and visibility behavior based on dates, with navigation integration into the charts section.
+
+## Keywords
+- experiment-results collection
+- analytics charts routing
+- date_behavior visibility control
+- mount point configuration
+- preview targets
+- nav_title injection
+- structure root false

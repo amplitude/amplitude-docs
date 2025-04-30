@@ -1,0 +1,14 @@
+# Summary
+This documentation explains how filters work in Funnel Analysis charts, specifically that filters in the Segmentation Module apply only to the first event, while individual step filters can be added directly in the Events module. It also details how group-by filters function, including their application to the first event and the ability to group by event properties.
+
+# Keywords
+- funnel analysis filters
+- segmentation module
+- group-by filters
+- event property filtering
+- first event filtering
+- holding property constant
+- conversion distribution
+- unique users metric
+- multiple step completion
+- property value bucketing

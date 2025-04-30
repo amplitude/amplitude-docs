@@ -1,0 +1,15 @@
+## Summary
+The Guides and Surveys SDK documentation explains how to install and configure Amplitude's SDK for deploying guides and surveys on websites or applications, covering installation options for Amplitude Browser SDK, third-party analytics providers, and Google Tag Manager, along with methods for theme management, router configuration, and guide/survey manipulation.
+
+## Keywords
+- Guides and Surveys SDK
+- engagement-browser
+- boot method
+- forwardEvent
+- third-party analytics integration
+- setThemeMode
+- Content Security Policy (CSP)
+- reset/show/list methods
+- Segment integration
+- Google Tag Manager configuration
+- troubleshooting installation

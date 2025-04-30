@@ -1,0 +1,12 @@
+## Summary
+This documentation explains why Firefox's Tracking Protection feature blocks Amplitude SDK, preventing event ingestion when set to "strict" mode or in private browsing windows, and recommends implementing a proxy server as the solution to overcome this limitation.
+
+## Keywords
+- Firefox Tracking Protection
+- Cross-site tracking blockers
+- Amplitude SDK blocking
+- Network request failures
+- Proxy server implementation
+- Private browsing windows
+- POST request errors
+- Domain proxies

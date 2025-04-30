@@ -1,0 +1,12 @@
+## Summary
+This documentation page defines the structure and configuration for Experiment SDKs content collection, specifying how SDK documentation entries should be organized, displayed, and routed within the site at '/sdks/experiment-sdks/{slug}' with ascending sort order.
+
+## Keywords
+- experiment-sdks
+- content collection
+- structure configuration
+- route pattern
+- preview targets
+- sort_dir
+- date_behavior
+- nav_title injection

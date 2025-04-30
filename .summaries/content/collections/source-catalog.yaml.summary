@@ -1,0 +1,11 @@
+## Summary
+This YAML configuration file defines the structure for the "Source Catalog" collection in a content management system, specifying its routing pattern (/data/source-catalog/{slug}), template settings, and behavior for displaying entries based on dates.
+
+## Keywords
+- source-catalog
+- collection configuration
+- content routing
+- integration_category taxonomy
+- date_behavior
+- preview_targets
+- propagation settings

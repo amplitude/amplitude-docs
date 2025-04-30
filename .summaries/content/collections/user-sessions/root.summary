@@ -1,0 +1,37 @@
+# Amplitude User Sessions
+
+## Product Overview
+Amplitude User Sessions is an analytics feature that tracks and analyzes user engagement patterns through session-based metrics. It measures critical engagement indicators including session frequency, duration, and event distribution within sessions. The product provides specialized visualization tools to help product teams, marketers, and analysts understand how users interact with applications over time.
+
+## Key Features and Concepts
+- **Session Tracking Methods**: Server-side tracking, mobile client-side tracking (5-minute timeout), and web client-side tracking (30-minute timeout)
+- **Core Session Metrics**: Total sessions, average session length, sessions per user, time spent per user, event counts within sessions, and session length distribution
+- **Analysis Capabilities**: Session duration filters, length distribution histogram, custom metric formulas, breakdown tables for segmentation, and sequential filtering
+- **Marketing-Specific Metrics**: Bounce rate calculation, page views per session, entry/exit rates, and performance marketing metrics (CAC, ROAS)
+
+## Product Relationships
+User Sessions is integrated within Amplitude's broader analytics ecosystem:
+- Works alongside **Event Segmentation** charts to create comprehensive marketing metrics
+- Operates through a dedicated **Sessions Module** for analyzing session-based metrics
+- Supports **Custom Formula Metrics** for creating complex derived metrics
+- Compatible with **Group Segmentation** for analysis at both user and group levels
+
+## Key Nomenclature and Definitions
+- **Session**: A period of continuous user activity (mobile: <5-minute gaps; web: <30-minute gaps)
+- **Session ID**: Unique identifier assigned to each user session
+- **Bounce Rate**: Percentage of sessions where users leave after viewing only one page
+- **Customer Acquisition Cost (CAC)**: Cost spent to acquire a new customer
+- **Return on Ad Spending (ROAS)**: Revenue generated per dollar spent on advertising
+- **Entry/Exit Rates**: Metrics showing common application entry/exit pages
+- **Session Length Distribution**: Histogram showing distribution of session durations
+
+## Product Ecosystem Integration
+User Sessions functions as an analytical layer on top of Amplitude's core event tracking system. It processes raw event data to identify and group events into meaningful sessions based on platform-specific timeout rules. The feature integrates with Amplitude's visualization tools to present session metrics in charts and dashboards.
+
+## Use Cases
+1. **Marketing Performance Analysis**: Track bounce rates, calculate acquisition costs, measure ad spending ROI
+2. **User Engagement Analysis**: Measure session length across segments, identify power users, analyze event distribution
+3. **Product Optimization**: Identify high exit rate pages, analyze pre-conversion session patterns, track engagement metric changes
+
+## Implementation
+User Sessions charts are accessed through the Amplitude interface and configured with various metrics and segmentation options. The system applies property filters before session filters in the sequential filtering process. For marketing metrics, users can follow documentation recipes to create common metrics using Event Segmentation and User Sessions charts.

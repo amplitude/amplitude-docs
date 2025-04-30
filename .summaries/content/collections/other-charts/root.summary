@@ -1,0 +1,102 @@
+# Amplitude Analytics: Other Charts and Advanced Analysis Tools
+
+## Product Overview
+
+Amplitude Analytics extends beyond standard event analytics with specialized visualization and analysis tools including User Composition charts and Amplitude SQL. These advanced features enable deeper user segmentation analysis and custom SQL querying capabilities against Amplitude data stored in Snowflake.
+
+## Key Features and Capabilities
+
+### User Composition Chart
+
+The User Composition chart is a non-event-driven analysis tool that segments active users based on user properties. This visualization helps product teams understand:
+
+- User demographic and behavioral characteristics across defined segments
+- Distribution patterns of users across different property values
+- Comparative analysis between different user segments
+
+The chart provides three distinct viewing options:
+1. **Most Recent Value**: Displays the latest value for each user property
+2. **All Values**: Shows all values a user has had for a property within the selected timeframe
+3. **Cross Property Values**: Analyzes relationships and correlations between multiple user properties
+
+### Amplitude SQL
+
+Amplitude SQL is an advanced feature within the Query product that enables users to write custom SQL queries directly against their Amplitude data stored in Snowflake. This feature is available exclusively to customers on Growth and Enterprise plans.
+
+Key capabilities include:
+- Custom SQL query creation using standard SQL syntax
+- Integrated visualization of query results within the Amplitude interface
+- Sharing and exporting query results with team members
+- Comprehensive access to event and user data through the `$events` table
+
+## Relationship Between Products and Features
+
+The specialized charts and analysis tools complement Amplitude's core event analytics platform by providing:
+
+1. User Composition charts offer a user-centric perspective that complements the event-centric analysis in the main platform
+2. Amplitude SQL provides advanced data exploration capabilities for users who need to go beyond the standard analytics interface
+3. Both features integrate with Amplitude's visualization and sharing capabilities, allowing insights to be distributed across teams
+
+These tools represent the more advanced analytical capabilities within Amplitude's product suite, designed for users who need deeper insights beyond standard event tracking and analysis.
+
+## Key Nomenclature and Definitions
+
+### User Composition Terminology
+- **User Property**: Attributes associated with users rather than events (e.g., demographics, preferences)
+- **Segment**: A defined cohort of users based on specific criteria or behaviors
+- **Active Users**: Users who have performed actions within a specified timeframe
+
+### Amplitude SQL Schema Terms
+- **$events**: The primary table containing all event data
+- **$date**: A special field shortcut for date-based queries
+- **$amplitude_id**: User identifier that accounts for merged users
+- **event_properties**: JSON object containing all properties associated with an event
+- **user_properties**: JSON object containing all properties associated with a user
+- **variant**: A specialized data type in Snowflake that stores JSON data
+
+## Product Ecosystem Integration
+
+These advanced analysis tools fit into Amplitude's broader product ecosystem by:
+
+1. Extending the analytical capabilities beyond standard event tracking
+2. Providing specialized visualization options for different types of analysis
+3. Enabling SQL power users to leverage their skills within the Amplitude environment
+4. Creating a bridge between Amplitude's user-friendly interface and the raw data stored in Snowflake
+
+The SQL feature specifically positions Amplitude as both an analytics platform and a data access layer, allowing customers to benefit from both structured analytics and custom data exploration without leaving the platform.
+
+## API and Query Examples
+
+### Amplitude SQL Query Examples
+
+Basic query to explore event data:
+```sql
+SELECT * FROM $events LIMIT 10
+```
+
+Date-based aggregation using the date shortcut:
+```sql
+SELECT $date, COUNT(*) FROM $events GROUP BY $date
+```
+
+Accessing specific event properties:
+```sql
+SELECT event_properties:property_name FROM $events
+```
+
+Querying user properties:
+```sql
+SELECT user_properties:property_name FROM $events
+```
+
+Analyzing user behavior with complex conditions:
+```sql
+SELECT 
+  $amplitude_id,
+  COUNT(*) as event_count
+FROM $events
+WHERE event_type = 'specific_event'
+  AND $date BETWEEN '2023-01-01' AND '2023-01-31'
+GROUP BY $amplitude_id
+HAVING event_count > 5
+```

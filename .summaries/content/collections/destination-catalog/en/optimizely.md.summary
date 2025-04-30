@@ -1,0 +1,16 @@
+## Summary
+This documentation details the Amplitude-Optimizely integration that allows syncing Amplitude Behavioral Cohorts to Optimizely for web experimentation, feature experimentation, and CMS visitor groups, enabling personalized user experiences and targeted experiments based on behavioral data.
+
+## Keywords
+- Behavioral Cohorts
+- Optimizely integration
+- Web Experimentation
+- Feature Experimentation
+- CMS Visitor Groups
+- Audience targeting
+- Conversion Rate Optimization
+- User ID mapping
+- Bearer Token authentication
+- Cohort syncing
+- Personalization
+- Behavior-based experimentation

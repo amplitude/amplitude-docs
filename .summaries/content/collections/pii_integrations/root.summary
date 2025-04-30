@@ -1,0 +1,64 @@
+# Amplitude PII Integrations
+
+## Product Overview
+
+Amplitude PII Integrations provide organizations with tools to manage personal identifiable information (PII) within the Amplitude analytics platform. These integrations help companies comply with data privacy regulations such as GDPR and CCPA by automating the discovery, classification, retrieval, and deletion of personal data. The primary functionality includes fulfilling data subject access requests (DSARs), executing data deletion requests, maintaining regulatory compliance, and streamlining PII management workflows.
+
+## Product Relationships and Features
+
+Amplitude offers three distinct PII management integrations:
+
+1. **Osano Integration**
+   - Specializes in data discovery and classification within Amplitude
+   - Provides tools for GDPR and CCPA compliance
+   - Uses API key authentication to connect with Amplitude
+   - Helps organizations identify where personal data resides in their analytics
+
+2. **DataGrail Integration** (Beta)
+   - Focuses on identification, retrieval, and deletion of PII
+   - Streamlines data subject request (DSR) fulfillment
+   - Connects to Amplitude using API credentials
+   - Automates privacy request workflows
+
+3. **Transcend Integration**
+   - Offers programmatic access to user device activity data
+   - Provides robust data erasure capabilities
+   - Supports compliance with major privacy regulations
+   - Requires direct engagement with Transcend support for implementation
+
+While all three integrations address similar privacy management needs, they differ in their specific capabilities, implementation approaches, and maturity levels within the Amplitude ecosystem.
+
+## Key Nomenclature and Definitions
+
+- **PII (Personally Identifiable Information)**: Data elements that can identify an individual user
+- **GDPR (General Data Protection Regulation)**: EU privacy regulation establishing data subject rights
+- **CCPA (California Consumer Privacy Act)**: California's privacy legislation for consumer data rights
+- **DSR/DSAR (Data Subject Request/Access Request)**: Formal requests from individuals regarding their personal data
+- **Data Erasure**: The process of permanently removing personal data from systems
+- **API Key Authentication**: Security method used to connect privacy platforms to Amplitude
+- **Data Discovery**: The process of identifying where personal data resides within systems
+- **Data Classification**: Categorizing data based on sensitivity and privacy requirements
+- **Subject Rights Requests**: Requests from individuals to exercise their data privacy rights
+
+## Product Ecosystem Integration
+
+These PII integrations enhance Amplitude's core analytics platform by:
+
+1. Extending Amplitude's native data governance capabilities with specialized privacy management tools
+2. Enabling seamless compliance with global privacy regulations while preserving analytics functionality
+3. Providing automated workflows for handling privacy requests without manual intervention
+4. Creating a bridge between Amplitude's analytics platform and dedicated privacy management solutions
+
+The integrations operate by establishing API connections between Amplitude and the respective privacy platforms. This allows the privacy platforms to scan Amplitude data stores, process privacy requests against Amplitude data, and execute data operations (access, deletion) within the Amplitude environment.
+
+## Implementation Details
+
+All three integrations leverage Amplitude's API infrastructure:
+
+- **Authentication**: Each integration requires Amplitude API keys or credentials
+- **Implementation Process**:
+  - **Osano**: Configure Amplitude as a data store within Osano's platform using API keys
+  - **DataGrail**: Set up connection using Amplitude API credentials (currently in beta)
+  - **Transcend**: Contact Transcend's support team for implementation assistance
+
+These integrations utilize Amplitude's existing API framework for data access and manipulation, though specific API endpoints are not detailed in the documentation.

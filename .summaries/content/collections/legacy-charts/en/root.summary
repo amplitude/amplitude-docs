@@ -1,0 +1,71 @@
+# Legacy Charts in Amplitude: Product Overview
+
+## Product Overview
+
+Amplitude's Legacy Charts suite consists of advanced analytics tools designed to help product teams understand user behavior through path analysis and journey visualization. The suite includes Pathfinder, Pathfinder Users, and Journeys, which are being consolidated into a new Journeys experience. These tools enable teams to visualize and analyze how users navigate through products, identify conversion paths, understand drop-off points, and optimize the user experience.
+
+## Key Features and Concepts
+
+### Pathfinder
+- Visualizes user flows within a product as sequences of events (paths)
+- Analyzes both incoming and outgoing paths to specific events
+- Supports path analysis up to fifty steps deep
+- Displays results as a Sankey diagram showing node paths
+- Helps identify common conversion paths for funnel analysis
+- Includes path filtering options and "bucket below threshold" functionality
+
+### Pathfinder Users
+- Focuses on individual user navigation paths
+- Shows events users take before or after a specified event
+- Displays results in descending order of usage frequency
+- Limited to analyzing paths within individual sessions
+- Uses session_id to track user movement
+- Supports "expand by property" functionality
+
+### Legacy Journeys
+- Analyzes user conversion paths between two funnel steps
+- Provides 60-day timeframe analysis
+- Shows step-by-step breakdowns of paths taken by converted and dropped-off users
+- Identifies friction points and conversion accelerators
+- Features TF-IDF auto-filter to highlight significant patterns
+- Enables path comparison and cohort creation
+- Supports event filtering for detailed analysis
+
+## Relationship Between Products and Features
+
+The Legacy Charts suite represents Amplitude's earlier generation of path analysis tools that are being consolidated into a new, unified Journeys experience. The three tools offer complementary functionality:
+
+- **Pathfinder**: Focuses on aggregate event flows and path visualization
+- **Pathfinder Users**: Emphasizes individual user paths within sessions
+- **Legacy Journeys**: Specializes in conversion path analysis between funnel steps
+
+These tools work together to provide comprehensive path analysis capabilities, from high-level flow visualization to detailed user journey mapping and conversion optimization.
+
+## Key Nomenclature and Definitions
+
+- **Paths**: Sequences of events that users take when navigating through a product
+- **Sankey Diagram**: Visualization type used in Pathfinder to show flow quantities between nodes
+- **Session_id**: Identifier used to track user activity within a single session
+- **TF-IDF Auto-filter**: Term Frequency-Inverse Document Frequency algorithm that automatically highlights statistically significant patterns in user journeys
+- **Conversion Paths**: Routes users take that lead to successful completion of desired actions
+- **Drop-off Analysis**: Examination of where and why users abandon a process
+- **Node Paths**: Visual representation of connections between events in a user journey
+- **Bucket Below Threshold**: Feature that groups less common paths together for cleaner visualization
+
+## Product Ecosystem Integration
+
+The Legacy Charts suite fits into Amplitude's broader analytics ecosystem as specialized tools for path analysis and user journey mapping. These charts complement other Amplitude features like:
+
+- **Funnel Analysis**: Legacy Journeys directly enhances funnel analysis by showing paths between funnel steps
+- **Cohort Creation**: Insights from path analysis can be used to create targeted user cohorts
+- **User Segmentation**: Path data helps identify different user behavior patterns for segmentation
+
+The legacy status of these charts indicates they are being evolved into a more integrated Journeys experience within the Amplitude platform, suggesting a strategic move toward unified path analysis capabilities.
+
+## Availability and Access
+
+- Available on Plus, Growth, and Enterprise plans
+- Accessible as legacy features within the Amplitude platform
+- Being merged into the new Journeys experience
+
+The documentation does not specify direct API endpoints or command line invocations for these legacy chart features.

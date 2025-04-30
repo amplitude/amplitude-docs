@@ -1,0 +1,18 @@
+## Summary
+The Ampli Wrapper for Android-Kotlin SDK provides a strongly typed API for tracking analytics events based on Amplitude Data tracking plans, offering autocompletion for events and properties while enforcing event schemas to prevent bad instrumentation through methods for identifying users, tracking events, and managing event flushing.
+
+## Keywords
+- Ampli Wrapper
+- Android-Kotlin SDK
+- tracking plan
+- strongly typed API
+- event schema enforcement
+- identify
+- track
+- flush
+- groupIdentify
+- setGroup
+- plugins
+- ampli CLI
+- pull command
+- status command

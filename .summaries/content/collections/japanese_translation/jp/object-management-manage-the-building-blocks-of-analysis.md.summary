@@ -1,0 +1,15 @@
+## Summary
+This documentation page explains Amplitude's Object Management feature, which allows centralized management of analysis objects (custom events, metrics, segments) including creation, updating, deletion, viewing definitions, and bulk operations, with specific permissions where users can manage their own objects while admins can manage all objects.
+
+## Keywords
+- analysis objects
+- object management
+- custom events
+- metrics
+- segments
+- cohorts
+- duplicate detection
+- official designation
+- bulk deletion
+- object ownership
+- permissions

@@ -1,0 +1,13 @@
+# Summary
+This documentation explains how Amplitude Experiment tracks user exposures to feature flag variants, detailing both manual tracking via the Analytics REST API and automatic tracking through Experiment SDKs, which is essential for reliable experiment results but optional for feature flags not requiring analysis.
+
+# Keywords
+- exposure tracking
+- feature flag variants
+- Analytics REST API v2.0
+- exposure events
+- automatic exposure tracking
+- variant store
+- experiment results
+- client-side SDKs
+- Exposures chart

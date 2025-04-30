@@ -1,0 +1,14 @@
+# Summary
+This documentation page explains how to implement server-side rendering with Amplitude Experiment by using both JavaScript Server SDK and Client SDK together, including installation, server initialization, variant fetching on requests, client initialization during rendering, and accessing variants in components.
+
+# Keywords
+- server-side rendering
+- JavaScript Server SDK
+- JavaScript Client SDK
+- ExperimentServer
+- ExperimentClient
+- fetchV2
+- initialVariants
+- experiment-node-server
+- variant fetching
+- SSR implementation

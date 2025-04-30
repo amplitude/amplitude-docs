@@ -1,0 +1,14 @@
+# Summary
+This documentation explains Amplitude Experiment's deterministic randomization process, which uses a two-stage approach: first determining if a user is included in an experiment based on rollout rate (using a murmur3 hash of "bucketingSalt/id"), then assigning users to specific variants based on variant weights using the same hash value.
+
+# Keywords
+- deterministic randomization
+- murmur3 hash
+- bucketingSalt
+- variant assignment
+- rollout rate
+- two-stage randomization
+- amplitude_id
+- bucketing process
+- variant weights
+- fallback variant

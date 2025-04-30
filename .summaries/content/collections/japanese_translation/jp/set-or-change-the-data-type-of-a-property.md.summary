@@ -1,0 +1,11 @@
+# Summary
+This documentation explains how to set or change data types for event and user properties in Amplitude, which enables type checking to detect mismatches between received event data and specified data types. It provides step-by-step instructions for editing user property data types through the property details panel.
+
+# Keywords
+- property data type modification
+- type checking
+- user property editing
+- string/number/boolean/array/enum/const data types
+- property details panel
+- event data validation
+- data type conversion

@@ -1,0 +1,14 @@
+## Summary
+This documentation explains how to analyze A/B test results in Amplitude, covering how to set up experiments using user properties and view results through the AB Test View feature, with detailed guidance on implementation approaches and their respective advantages and limitations.
+
+## Keywords
+- A/B testing
+- Amplitude Analytics
+- User properties
+- Experiment groups
+- AB Test View
+- SDK integration
+- Identify API
+- Segmentation
+- Experiment variation tracking
+- User property implementation approaches

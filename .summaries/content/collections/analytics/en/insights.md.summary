@@ -1,0 +1,14 @@
+## Summary
+Amplitude's Insights feature uses Prophet machine learning to detect anomalies in product data through automatic, custom, and smart alerts that can be configured for Event Segmentation and Funnel Analysis charts with daily or hourly frequency, with notifications deliverable via email or Slack channels.
+
+## Keywords
+- Prophet anomaly detection
+- automatic monitors
+- custom alerts
+- smart alerts
+- confidence intervals
+- Slack integration
+- event monitoring
+- statistical significance
+- alert notifications
+- chart anomalies

@@ -1,0 +1,14 @@
+# Summary
+This documentation details the Facebook Ads destination integration for Amplitude, which enables creating custom audiences from behavioral cohorts for targeted ad campaigns across Facebook's network, with specific setup instructions, user mapping requirements, and troubleshooting for common errors like Terms of Service acceptance issues.
+
+# Keywords
+- custom audiences
+- behavioral cohorts
+- Facebook Business Manager
+- user mapping
+- hashed fields
+- cohort syncing
+- match rate
+- Terms of Service acceptance
+- audience permissions
+- IDFA/AAID device identifiers

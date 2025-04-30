@@ -1,0 +1,16 @@
+## Summary
+This documentation page explains how to use Amplitude's Experimental Results feature to analyze A/B tests from any feature flagging platform (third-party or homegrown), allowing customers to leverage Amplitude's analytics tools without requiring Amplitude Experiment's feature flagging system specifically.
+
+## Keywords
+- Experimental Results
+- A/B testing analysis
+- Exposure events
+- Variant comparison
+- Primary metrics
+- Secondary metrics
+- Statistical significance
+- T-test
+- Sequential test
+- Metric types (unique conversion, event totals, property values)
+- Confidence intervals
+- Cumulative exposure

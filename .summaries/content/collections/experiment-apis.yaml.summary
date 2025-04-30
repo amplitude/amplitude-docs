@@ -1,0 +1,12 @@
+## Summary
+This documentation page defines the structure and configuration for Experiment APIs content collection, specifying its template, layout, routing pattern (/apis/experiment/{slug}), and navigation settings, with content sorted in ascending order and configured to show past entries as public while keeping future entries private.
+
+## Keywords
+- experiment APIs
+- content collection
+- route pattern
+- preview targets
+- date_behavior
+- sort_dir
+- nav_title injection
+- structure configuration

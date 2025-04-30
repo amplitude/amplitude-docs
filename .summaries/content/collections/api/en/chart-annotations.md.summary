@@ -1,0 +1,17 @@
+# Summary
+The Chart Annotations API enables programmatic creation and retrieval of annotations for important dates (like feature releases and marketing campaigns) on Amplitude charts with calendar date axes, supporting both global project-wide annotations and chart-specific annotations.
+
+# Keywords
+- chart annotations
+- API endpoints
+- app_id
+- date formatting
+- label
+- chart_id
+- global annotations
+- GET annotations
+- POST annotations
+- annotation ID
+- project charts
+- horizontal axis
+- calendar dates

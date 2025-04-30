@@ -1,0 +1,14 @@
+## Summary
+This documentation explains mutual exclusion groups in Amplitude Experiment, which prevent users from interacting with multiple experiments simultaneously, including setup timing, allocation percentages, order of operations (individual qualification → mutual exclusion → sticky bucketing → target segment), and troubleshooting scenarios where users might still see multiple experiments despite mutual exclusion.
+
+## Keywords
+- mutual exclusion groups
+- experiment targeting
+- slot allocation percentages
+- local evaluation compatibility
+- order of operations
+- individual user qualification
+- sticky bucketing
+- variant jumping
+- user identification
+- traffic allocation

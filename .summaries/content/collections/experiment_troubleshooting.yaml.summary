@@ -1,0 +1,3 @@
+**Summary**: This documentation page defines the structure for experiment troubleshooting content, using a default template with ascending sort order and specific URL routing pattern (/feature-experiment/troubleshooting/{slug}). It configures date-based visibility (past entries public, future private) and includes experiment-specific navigation.
+
+**Keywords**: experiment troubleshooting, content collection, permalink structure, date_behavior, preview_targets, nav_title injection, feature-experiment route

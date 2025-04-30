@@ -1,0 +1,14 @@
+# Summary
+This documentation details Amplitude's Mailchimp event streaming integration, which allows forwarding Amplitude events and users to Mailchimp, including setup steps for authentication, mapping user properties to emails, configuring event forwarding with property selection, and setting up user forwarding with merge fields.
+
+# Keywords
+- Mailchimp integration
+- Event streaming
+- User property mapping
+- Audience ID
+- Merge fields
+- Anonymous user limitations
+- Event forwarding
+- User forwarding
+- Email mapping
+- Mailchimp authentication

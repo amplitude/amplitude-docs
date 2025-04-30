@@ -1,0 +1,14 @@
+## Summary
+This documentation explains how to track revenue in Amplitude, covering revenue properties ($revenue, $price, $quantity, etc.), methods for tracking both in-app and non-in-app purchases, revenue verification for IAPs, and potential causes for discrepancies between app store reports and Amplitude data.
+
+## Keywords
+- revenue tracking
+- revenue properties
+- in-app purchases
+- revenue verification
+- logRevenueV2
+- receipt validation
+- Revenue LTV chart
+- $revenue property
+- revenue discrepancies
+- revenue event types

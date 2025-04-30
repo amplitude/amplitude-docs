@@ -1,0 +1,16 @@
+# Summary
+This documentation page explains the process of testing and launching experiments in Amplitude, including pre-rollout QA, experiment activation, scheduling, post-rollout diagnostics, and end-of-experiment options (roll out winning variant, roll back, or continue).
+
+# Keywords
+- experiment testing
+- test instrumentation
+- experiment launch
+- variant assignment
+- QA procedures
+- experiment scheduling
+- diagnostics
+- root cause analysis
+- experiment rollout
+- experiment rollback
+- sticky bucketing
+- percentage rollouts

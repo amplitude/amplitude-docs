@@ -1,0 +1,14 @@
+# Summary
+This documentation page describes the Experiment Management API endpoints for managing holdout groups, including listing, editing, and creating holdouts with their configuration parameters such as holdout percentage, evaluation mode, bucketing keys, and experiment associations.
+
+# Keywords
+- holdout groups
+- experiment management API
+- holdoutPercentage
+- evaluationMode
+- bucketingKey
+- individualInclusion
+- individualExclusion
+- experiment association
+- PATCH/GET/POST endpoints
+- bucketingSalt

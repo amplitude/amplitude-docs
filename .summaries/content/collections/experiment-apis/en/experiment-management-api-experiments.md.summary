@@ -1,0 +1,18 @@
+# Summary
+This documentation page details the Experiment Management API endpoints for managing experiments in Amplitude Experiment, including creating, editing, listing, and managing variants, deployments, and user inclusions for experiments.
+
+# Keywords
+- experiment management API
+- experiment endpoints
+- variant management
+- user inclusions
+- experiment deployments
+- experiment versions
+- bucketing configuration
+- target segments
+- experiment creation
+- variant payloads
+- rollout weights
+- experiment evaluation modes
+- sticky bucketing
+- experiment archiving

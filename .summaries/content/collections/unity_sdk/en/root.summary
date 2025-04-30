@@ -1,0 +1,98 @@
+# Amplitude Unity SDK
+
+## Overview
+
+The Amplitude Unity SDK is a plugin that enables mobile app analytics by integrating Amplitude's native iOS and Android SDKs into Unity projects. The SDK allows developers to track user behavior, manage user properties, track revenue, and handle sessions in mobile applications built with Unity. It supports Unity version 2019.3.11 or higher and is designed specifically for mobile platforms (iOS and Android), with no support for pure desktop applications or the Unity Editor environment.
+
+## Key Features
+
+- **Event Tracking**: Capture user interactions and custom events within mobile applications
+- **User Property Management**: Set, unset, and manage user properties for segmentation
+- **Revenue Tracking**: Track in-app purchases and revenue events
+- **Session Handling**: Manage and track user sessions with configurable timeout periods
+- **Batch Event Uploading**: Efficiently upload multiple events in batches
+- **Dynamic Configuration**: Adjust SDK behavior through runtime configuration
+- **Privacy Compliance**: Support for IDFA collection and COPPA compliance
+- **EU Data Residency**: Option to store data in EU data centers
+
+## Installation Methods
+
+The Unity SDK can be installed through two primary methods:
+
+1. **Unity Package Manager (UPM)**: Add the package via Git URL in the Package Manager
+   ```
+   https://github.com/amplitude/unity-plugin.git
+   ```
+
+2. **Manual Download**: Download and import the Unity package directly from the GitHub repository
+
+## Key Nomenclature and Definitions
+
+- **Event**: A discrete user action or occurrence that can be tracked
+- **User Properties**: Attributes associated with a user that persist across sessions
+- **Instance**: A configured instance of the Amplitude SDK
+- **Session**: A period of user engagement with the app, defined by a configurable timeout
+- **IDFA**: Identifier for Advertisers, used for tracking on iOS devices
+- **COPPA**: Children's Online Privacy Protection Act compliance settings
+- **EU Data Residency**: Option to store data in European Union data centers
+
+## Integration with Amplitude Ecosystem
+
+The Unity SDK serves as a bridge between Unity mobile applications and Amplitude's analytics platform. It enables data collection from Unity-built mobile apps to flow into the broader Amplitude analytics ecosystem, where the data can be analyzed, visualized, and used for product decisions. The SDK is specifically designed to work with Amplitude's backend services while providing a Unity-friendly interface for developers.
+
+## API Usage Examples
+
+### Initialization
+```csharp
+Amplitude amplitude = Amplitude.getInstance();
+amplitude.init("YOUR_API_KEY");
+```
+
+### Tracking Events
+```csharp
+// Basic event tracking
+amplitude.logEvent("Button Clicked");
+
+// Event with properties
+Dictionary<string, object> eventProperties = new Dictionary<string, object>();
+eventProperties.Add("button_type", "sign_up");
+eventProperties.Add("color", "blue");
+amplitude.logEvent("Button Clicked", eventProperties);
+```
+
+### User Properties
+```csharp
+// Set user properties
+Dictionary<string, object> userProperties = new Dictionary<string, object>();
+userProperties.Add("gender", "female");
+userProperties.Add("age", 25);
+amplitude.setUserProperties(userProperties);
+
+// Set user ID
+amplitude.setUserId("user@example.com");
+```
+
+### Revenue Tracking
+```csharp
+// Track revenue
+amplitude.logRevenue("product_id", 1, 3.99);
+
+// Track revenue with properties
+Dictionary<string, object> revenueProperties = new Dictionary<string, object>();
+revenueProperties.Add("receipt", "12345");
+amplitude.logRevenue("product_id", 1, 3.99, "USD", revenueProperties);
+```
+
+### Configuration Options
+```csharp
+// Set session timeout
+amplitude.setSessionTimeoutMillis(30 * 60 * 1000); // 30 minutes
+
+// Enable COPPA compliance
+amplitude.enableCoppaControl();
+
+// Set EU data residency
+amplitude.setServerZone(AmplitudeServerZone.EU);
+```
+
+The Unity SDK is specifically tailored for mobile applications and does not support desktop platforms or the Unity Editor environment, focusing exclusively on providing analytics capabilities for iOS and Android deployments.

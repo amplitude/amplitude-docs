@@ -1,0 +1,3 @@
+**Summary:** This documentation page defines the configuration for the "Retention Analysis" section in the analytics charts area, specifying its template, layout, mounting point, routing pattern, and navigation behavior with technical parameters like sort direction and date visibility rules.
+
+**Keywords:** retention-analysis, analytics charts, mount point 48f5cae8-750d-4ba1-b99a-eae2e9aa403c, route configuration, preview targets, date_behavior, structure root false, nav_title charts

@@ -1,0 +1,14 @@
+# Summary
+This documentation page describes the integration between Taplytics (a mobile A/B testing platform) and Amplitude, explaining how experiment data is shared between platforms using the "TL_experiments" event with experiment-variation pairs as properties, and includes code examples for both Android and iOS implementations.
+
+# Keywords
+- Taplytics integration
+- mobile A/B testing
+- experiment data synchronization
+- TL_experiments event
+- experiment-variation properties
+- Attribution API endpoint
+- cross-platform testing
+- Android SDK integration
+- iOS SDK integration
+- real-time user data sharing

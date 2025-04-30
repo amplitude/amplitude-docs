@@ -1,0 +1,12 @@
+## Summary
+This documentation explains how to use mutual exclusion groups in Amplitude Experiments, which prevent users from participating in multiple experiments simultaneously, including details on allocation percentages, timing of group creation, and the specific order of operations Amplitude follows when assigning users to experiments.
+
+## Keywords
+- mutual exclusion groups (相互排反グループ)
+- experiment allocation percentages
+- local evaluation experiments
+- user assignment re-determination
+- evaluation order
+- sticky bucketing
+- individual user eligibility
+- target segments

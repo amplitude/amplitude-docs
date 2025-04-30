@@ -1,0 +1,3 @@
+**Summary:** This YAML configuration defines the structure and behavior for the Node.js SDK documentation section, specifying its template, layout, routing pattern (/sdks/analytics/node/{slug}), and display settings including sort direction and preview targets.
+
+**Keywords:** Node.js SDK, analytics_sdks, mount configuration, route pattern, preview targets, date_behavior, sort_dir, revisions disabled

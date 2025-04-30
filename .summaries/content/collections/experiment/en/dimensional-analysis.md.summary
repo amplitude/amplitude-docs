@@ -1,0 +1,14 @@
+## Summary
+This documentation explains Amplitude's Dimensional Analysis feature, which allows users to exclude test/QA users from experiment analysis to prevent skewed results, and enables filtering analysis by specific user segments to identify targeted impacts that might be hidden in aggregate data.
+
+## Keywords
+- Dimensional Analysis
+- experiment filtering
+- exclude testers
+- QA user exclusion
+- targeting segments
+- user segment analysis
+- experiment skew prevention
+- segment-specific impact
+- Feature Experiment
+- statistical significance by segment

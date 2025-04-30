@@ -1,0 +1,14 @@
+# Summary
+This documentation outlines Amplitude's data volume limitations, including monthly event volume caps (10M+ for Growth/Enterprise plans, 100K MTU for Starter plans), instrumentation limits (2000 event types, 2000 event properties, 1000 user properties per project), character limits (1024 characters for string values), chart visualization constraints, and CSV download limits of up to 10,000 rows for most chart types.
+
+# Keywords
+- event volume limits
+- instrumentation limits
+- monthly quota
+- property caps
+- blocked events
+- data truncation
+- chart visualization constraints
+- CSV export limitations
+- event type maximum
+- character count restrictions

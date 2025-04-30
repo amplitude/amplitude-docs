@@ -1,0 +1,17 @@
+## Summary
+This documentation explains the causes of data discrepancies between Amplitude and third-party analytics platforms (like Google Analytics), covering factors such as timezone differences, event tracking variations, session timeout windows, user identification methods, and specific differences in how Google Analytics handles sessions compared to Amplitude.
+
+## Keywords
+- data discrepancies
+- Amplitude analytics
+- third-party platforms
+- session tracking
+- user identification
+- timezone differences
+- Google Analytics comparison
+- session timeout windows
+- campaign source changes
+- session event limits
+- bot filtering
+- metric definitions
+- user merging

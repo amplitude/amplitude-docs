@@ -1,0 +1,14 @@
+# Summary
+This documentation page explains the differences between client-side sources (code running on user devices like mobile/web apps) and server-side sources (code running on servers), including available SDKs and APIs for each approach, while also covering third-party sources and providing guidance on choosing the appropriate instrumentation method.
+
+# Keywords
+- client-side SDKs
+- server-side SDKs
+- API endpoints
+- mobile instrumentation
+- web browser tracking
+- HTTP V2 API
+- Batch event upload
+- hybrid instrumentation approach
+- third-party data sources
+- source selection criteria

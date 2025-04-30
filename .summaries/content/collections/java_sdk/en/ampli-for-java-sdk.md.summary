@@ -1,0 +1,18 @@
+## Summary
+This documentation page describes Ampli for Java SDK, a strongly-typed wrapper for tracking analytics events in JRE programs. It covers installation, initialization, identifying users, tracking events, and flushing events, with code examples in both Java and Kotlin for implementing the Amplitude tracking plan through the Ampli CLI.
+
+## Keywords
+- Ampli wrapper
+- Java SDK
+- JRE
+- strongly-typed events
+- tracking plan
+- identify users
+- setGroup
+- flush events
+- Ampli CLI
+- LoadOptions
+- EventOptions
+- MiddlewareExtra
+- ampli pull
+- ampli status

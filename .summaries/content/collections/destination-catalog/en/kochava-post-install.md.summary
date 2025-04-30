@@ -1,0 +1,14 @@
+# Summary
+This documentation details the Kochava (Post-install) event streaming integration, which handles events occurring after app installation. It explains how to set up the connection between Amplitude and Kochava to link user identities with post-install actions using Kochava's IdentityLink feature, requiring configuration of App GUID and optional authentication credentials.
+
+# Keywords
+- Kochava Post-install integration
+- IdentityLink API
+- Event streaming attribution
+- User-attributes forwarding
+- App GUID configuration
+- Kochava Device ID mapping
+- Send User feature
+- Identity mapping requirements
+- Campaign ROI insights
+- Post-installation event tracking

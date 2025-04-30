@@ -1,0 +1,15 @@
+## Summary
+This documentation page describes the Amazon S3 Import feature in Amplitude, which allows importing event data, user/group properties from S3 buckets into Amplitude projects. It details the setup process including file requirements, IAM role configuration, converter configuration, and import strategies (Mirror Sync and Append Only Sync) for different data types.
+
+## Keywords
+- Amazon S3 Import
+- IAM role configuration
+- S3 bucket access
+- converter configuration
+- Mirror Sync
+- Append Only Sync
+- event data ingestion
+- file requirements
+- insert_id deduplication
+- S3 Event Notification
+- data mutation (INSERT, UPDATE, DELETE)

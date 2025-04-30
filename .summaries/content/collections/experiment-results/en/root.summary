@@ -1,0 +1,82 @@
+# Amplitude Experiment Results
+
+## Overview
+
+Amplitude Experiment Results is a feature within Amplitude Analytics that enables customers to analyze A/B test data from both Amplitude and non-Amplitude feature flagging platforms. The tool provides comprehensive statistical analysis capabilities for experiment data, allowing users to evaluate the performance of different variants across multiple metric types.
+
+Key features include:
+- Statistical analysis tools (sequential testing, confidence intervals)
+- Support for various metric types (conversions, event totals, funnels, formulas, retention)
+- Variant performance comparisons
+- Integration with non-Amplitude feature flagging platforms
+- Formula metrics with multiple supported functions
+
+## Product Relationships and Features
+
+Experiment Results integrates with the broader Amplitude Analytics ecosystem while also supporting external feature flagging platforms. The feature consists of:
+
+1. **Experiment Results Chart**: The primary interface for analyzing A/B test data, displaying variant performance and statistical significance.
+
+2. **Exposure Events**: The mechanism by which Amplitude tracks which users are exposed to which experiment variants.
+
+3. **Metric Types Support**: The ability to analyze different types of metrics:
+   - Conversion metrics
+   - Event total metrics
+   - Funnel metrics
+   - Formula metrics
+   - Retention metrics
+
+4. **Formula Metrics**: A specialized feature allowing users to create custom metrics using mathematical functions and operations.
+
+## Key Nomenclature and Definitions
+
+- **Exposure Events**: Events that indicate when a user has been exposed to a specific variant in an experiment.
+
+- **Cumulative Exposure**: Tracking of user exposure to variants over time.
+
+- **Statistical Significance**: The determination of whether observed differences between variants are likely due to the experimental changes rather than random chance.
+
+- **Sequential Testing**: A statistical approach that allows for continuous monitoring of experiment results without inflating false positive rates.
+
+- **Confidence Intervals**: Ranges that indicate the precision of the estimated effect of a variant.
+
+- **Formula Metrics**: Custom metrics created using mathematical functions and operations on existing metrics.
+
+- **Variants**: Different versions of a feature or experience being tested against each other.
+
+## Formula Metrics Functions
+
+Experiment Results supports the following functions for formula metrics:
+
+- **UNIQUES**: Counts unique users who performed an event
+- **TOTALS**: Counts total occurrences of an event
+- **PROPSUM**: Sums property values
+- **PROPAVG**: Calculates average of property values
+- **PROPCOUNT**: Counts events with a property
+- **PROPMAX**: Finds maximum property value
+- **PROPMIN**: Finds minimum property value
+- **CONVERSIONRATE**: Calculates conversion rate
+- **CONVERSIONAVG**: Calculates average conversions
+- **REVENUETOTAL**: Calculates total revenue
+
+Statistical significance for formula metrics is calculated through variance and mean calculations specific to each function type.
+
+## Integration with Amplitude Ecosystem
+
+Experiment Results appears to be a component of Amplitude Analytics that enhances the platform's experimentation capabilities. It allows users to:
+
+1. Import experiment data from non-Amplitude feature flagging platforms
+2. Analyze experiment results using Amplitude's analytics capabilities
+3. Create custom metrics to evaluate experiment performance
+4. Make data-driven decisions based on statistical analysis
+
+The product extends Amplitude's core analytics functionality by providing specialized tools for experimentation analysis, making it valuable for product teams conducting A/B tests.
+
+## API and Usage
+
+While specific API endpoints aren't explicitly mentioned in the documentation, the product is used through the Experiment Results chart interface within Amplitude Analytics. Users can:
+
+1. Create and configure formula metrics using supported functions
+2. Analyze experiment data through the chart interface
+3. Compare variant performance across different metrics
+4. Evaluate statistical significance of results

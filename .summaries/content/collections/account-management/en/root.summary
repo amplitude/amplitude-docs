@@ -1,0 +1,88 @@
+# Amplitude Account Management
+
+## Product Overview
+
+Amplitude is an analytics platform that helps organizations track and analyze user behavior across digital products. The account management features provide administrators and project managers with tools to configure settings, manage users and permissions, control data access, and optimize event volume usage.
+
+Key features include:
+- User and permission management
+- Project and organization configuration
+- API and secret key management
+- Data deletion capabilities
+- Currency display customization
+- Notification management
+- Cross-project analysis through Portfolio
+- Event volume management through sampling
+- Integration capabilities via webhooks and SCIM provisioning
+
+## Product Relationships and Features
+
+### Organization and Project Structure
+- **Organizations** are the top-level entities that contain multiple projects
+- **Projects** store specific product data and have their own settings, API keys, and user permissions
+- **Portfolio Views** (Enterprise feature) allow cross-project analysis by merging data from up to 5-10 projects
+
+### User Management and Permissions
+- **User Roles** follow a hierarchy: Viewer → Member → Manager → Admin
+- **Permission Groups** (Enterprise feature) allow efficient management of permissions at scale
+- **Project-level Permissions** provide granular access control to specific projects
+- **SCIM Provisioning** enables programmatic user and group management through API
+
+### Data Management
+- **Self-service Data Deletion** allows administrators to permanently remove specific events or properties
+- **API and Secret Keys** control programmatic access to project data
+- **Scale** (Enterprise feature) provides dynamic behavioral sampling to manage high event volumes
+
+### Integration and Notification
+- **Webhooks** allow automated messages to be sent when KPIs change
+- **User Privacy Notifications** help maintain GDPR compliance
+- **Session Replay Configuration** controls recording sample rates and settings
+
+## Key Nomenclature and Definitions
+
+- **API Key**: Unique identifier used to authenticate API requests to Amplitude
+- **Secret Key**: Secure credential used alongside API keys for sensitive operations
+- **Permission Groups**: Collections of users with the same access levels to specific projects
+- **Portfolio Views**: Merged data sets from multiple projects for cross-project analysis
+- **SCIM**: System for Cross-domain Identity Management, a standard for automating user provisioning
+- **Scale**: Amplitude's dynamic behavioral sampling feature for high-volume event management
+- **User Mapping API**: Method to reconcile different user IDs across projects in Portfolio
+- **Webhooks**: HTTP callbacks that deliver data to other applications when events occur in Amplitude
+
+## Product Ecosystem Integration
+
+Amplitude's account management features support the broader analytics platform by:
+
+1. **Enabling cross-product analysis**: Portfolio allows tracking user journeys across different products
+2. **Supporting enterprise-scale deployments**: Permission groups and SCIM provisioning facilitate management of large user bases
+3. **Integrating with identity providers**: SSO configuration and SCIM provisioning connect with systems like Okta
+4. **Optimizing for high-volume data**: Scale feature provides intelligent sampling to manage costs while maintaining analysis accuracy
+5. **Ensuring compliance**: Self-service data deletion and privacy notifications support GDPR requirements
+
+## API Endpoints and Technical Details
+
+### SCIM Provisioning API
+- Follows SCIM 2.0 standard
+- Base URL: `https://amplitude.com/api/2/scim/v2`
+- Endpoints for users and groups management
+- Requires SCIM API token for authentication
+
+### User Mapping API
+- Used with Portfolio to reconcile different user IDs across projects
+- Allows organizations to track users across different products
+
+### Webhooks
+- Configuration in Organization Settings → Projects → Webhooks
+- Supports custom monitors for KPI alerts
+- Delivers JSON payloads to specified endpoints
+- Includes testing functionality
+
+### Self-service Data Deletion
+- Supports up to five deletion clauses per task
+- Allows specification of time ranges and exact data to be deleted
+- Available to Growth and Enterprise plan administrators
+
+### API Key Management
+- Self-service interface for creating, disabling, and deleting keys
+- Maximum of 50 active keys per project
+- Keys are managed at the project level

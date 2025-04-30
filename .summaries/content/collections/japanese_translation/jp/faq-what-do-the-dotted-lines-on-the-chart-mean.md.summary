@@ -1,0 +1,14 @@
+# Summary
+This documentation explains that dotted lines in Amplitude charts indicate that Amplitude is still receiving events for that day or data point, which will become solid lines once all relevant data is collected. It provides an example of retention analysis with time-based calculations to illustrate why data points may appear as dotted lines when retention periods are still ongoing.
+
+# Keywords
+- dotted lines
+- incomplete data visualization
+- retention analysis
+- time-based calculations
+- 24-hour retention periods
+- data collection status
+- chart visualization indicators
+- pending events
+- retention time windows
+- data point status

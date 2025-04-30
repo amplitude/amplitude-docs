@@ -1,0 +1,16 @@
+## Summary
+This documentation explains Amplitude's Historical Count feature, which allows tracking user behavior based on the nth instance of specific actions (up to 5 times), helping identify friction points for first-time users and understand differences in retention and conversion rates between users who perform actions different numbers of times.
+
+## Keywords
+- Historical Count
+- User behavior tracking
+- N-th instance tracking
+- Event Segmentation
+- Funnel Analysis
+- Pathfinder
+- Retention Analysis
+- Conversion window
+- Behavioral cohorts
+- Filter application order
+- Event Historical Count
+- Critical user actions

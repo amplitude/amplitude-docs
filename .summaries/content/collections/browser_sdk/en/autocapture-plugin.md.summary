@@ -1,0 +1,12 @@
+# Summary
+This documentation page explains how to migrate from the deprecated Autocapture plugin to the built-in Autocapture functionality that was integrated into Browser SDK version 2.10.0 and higher, providing specific code examples for both script loader and npm/yarn implementation approaches.
+
+# Keywords
+- Autocapture plugin deprecation
+- Browser SDK 2.10.0
+- elementInteractions
+- migration instructions
+- script loader implementation
+- npm/yarn implementation
+- built-in Autocapture
+- autocapture configuration

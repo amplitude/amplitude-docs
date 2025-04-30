@@ -1,0 +1,14 @@
+# Summary
+This documentation outlines best practices for getting started with Amplitude Data, including establishing clear goals and metrics, maintaining consistent naming conventions, properly identifying users, choosing between server-side and client-side event collection, using properties effectively, separating development and production environments, implementing QA analysis in CI/CD, and designating an owner for the tracking plan.
+
+# Keywords
+- tracking plan
+- event naming conventions
+- user identification
+- server-side vs client-side collection
+- event properties
+- user properties
+- environment separation
+- Ampli
+- data taxonomy
+- analytics QA

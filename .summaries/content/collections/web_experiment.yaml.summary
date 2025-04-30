@@ -1,0 +1,3 @@
+**Summary:** The "Web experiment" collection configuration defines a structured content type for web experiments with specific routing (/web-experiment/{slug}), visibility rules based on dates, and custom preview functionality, mounted to a specific entry ID.
+
+**Keywords:** web_experiment, collection configuration, mount point, date_behavior, preview_targets, route pattern, propagation settings, sort_dir, revisions disabled

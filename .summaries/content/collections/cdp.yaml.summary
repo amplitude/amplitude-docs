@@ -1,0 +1,12 @@
+## Summary
+This configuration file defines a CDP collection with specific site, template, and routing settings, where entries are sorted in ascending order and have date-based visibility rules (past dates are public, future dates are private).
+
+## Keywords
+- CDP collection
+- data routing
+- date_behavior
+- preview_targets
+- sort_dir
+- propagate:false
+- layout configuration
+- entry preview

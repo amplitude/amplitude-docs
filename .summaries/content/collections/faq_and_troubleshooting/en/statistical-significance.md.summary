@@ -1,0 +1,14 @@
+## Summary
+This documentation explains how Amplitude calculates statistical significance in A/B tests for funnel charts, detailing the formulas for improvement over baseline, the use of unique conversions rather than totals, and the statistical methods employed (two-tailed T-test for Funnel Analysis vs. sequential testing for Experiment Results).
+
+## Keywords
+- A/B testing
+- statistical significance
+- funnel analysis
+- two-tailed T-test
+- sequential testing
+- improvement over baseline
+- unique conversions
+- false positive rate
+- minimum sample size
+- p-value

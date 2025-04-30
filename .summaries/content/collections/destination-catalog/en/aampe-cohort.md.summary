@@ -1,0 +1,14 @@
+# Summary
+This documentation page describes the Aampe Cohort Sync integration, which allows real-time syncing of Amplitude cohorts to Aampe for personalized messaging across channels (SMS, email, push, in-app), requiring an Aampe API key and proper user ID mapping configuration.
+
+# Keywords
+- Aampe Cohort Sync
+- real-time cohort syncing
+- personalized messaging
+- API key authentication
+- user ID mapping
+- bearer token authentication
+- multi-channel engagement
+- SMS/email/push notifications
+- cohort targeting
+- AI agents

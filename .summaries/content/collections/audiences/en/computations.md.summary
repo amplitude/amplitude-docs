@@ -1,0 +1,14 @@
+## Summary
+Computations in Amplitude transform events or event properties into computed user properties that can be used for segmentation and personalization, offering a more flexible alternative to cohorts by storing values as integers attached to individual users, with three types available: event count, aggregation, and first/last value.
+
+## Keywords
+- computed user properties
+- event count computation
+- aggregation computation
+- first/last value computation
+- personalization campaigns
+- external destination syncing
+- US region only
+- segmentation tool
+- property transformation
+- Braze integration

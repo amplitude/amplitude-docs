@@ -1,0 +1,15 @@
+# Summary
+This documentation page visually explains array operators in Amplitude charts, illustrating how different operators (equals, set contains, set equals) and their negative counterparts work with single values and combinations of values using Venn diagrams to help users select the appropriate operator for their analyses.
+
+# Keywords
+- array operators
+- equals operator
+- set contains
+- set equals
+- does not equal
+- set does not contain
+- set does not equal
+- Venn diagrams
+- chart filtering
+- logical operators
+- AND/OR combinations

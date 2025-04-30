@@ -1,0 +1,157 @@
+# Amplitude Product Overview
+
+Amplitude is a comprehensive digital analytics platform that helps organizations understand user behavior, optimize product experiences, and drive business growth through data-driven insights. The platform enables teams to track, analyze, and act on user interactions across digital products.
+
+## Key Features and Concepts
+
+1. **Event-Based Analytics**: Amplitude's core functionality revolves around tracking user events and behaviors across digital platforms.
+
+2. **User Identity Management**: The platform uses various identifiers (Device ID, User ID, Amplitude ID) to track users across sessions and devices.
+
+3. **Behavioral Cohorts**: Allows creation of user segments based on specific behaviors or properties for targeted analysis.
+
+4. **Experiment Analysis**: Built-in A/B testing capabilities with statistical significance calculations and duration estimates.
+
+5. **Data Visualization**: Various chart types including Event Segmentation, Funnel Analysis, Retention Analysis, User Composition, and Personas.
+
+6. **Data Governance**: Controls for hiding, blocking, or deleting events and properties to manage data visibility and collection.
+
+7. **Integration Capabilities**: Connects with third-party platforms like Segment and supports various data export options.
+
+## Product Relationships and Architecture
+
+### Data Collection and Management
+
+- **SDKs and APIs**: Amplitude offers multiple methods for data ingestion:
+  - Client-side SDKs (JavaScript, iOS, Android)
+  - Server-side APIs (HTTP V2 API, Batch Event Upload API)
+  - Third-party integrations (Segment)
+
+- **Data Processing Pipeline**:
+  1. Events are collected through SDKs or APIs
+  2. Data is processed and stored in pre-aggregated data sets
+  3. Historical data is generally immutable after ingestion
+
+- **Data Governance Tools**:
+  - Hide events/properties (still collect data but hide from UI)
+  - Block events/properties (stop collecting new data)
+  - Delete events/properties (completely remove from ingestion)
+
+### Analytics and Visualization
+
+- **Chart Types**:
+  - Event Segmentation: Analyze event patterns and properties
+  - Funnel Analysis: Track user conversion through defined steps
+  - Retention Analysis: Measure user return rates over time
+  - User Composition: Analyze user property distributions
+  - Personas: Cluster users based on behavioral patterns
+  - Data Tables: Tabular representation of analytics data
+
+- **Experiment Platform**:
+  - A/B testing with statistical significance calculations
+  - Sequential testing methodology
+  - Mutual exclusion groups to prevent experiment interference
+  - Duration estimates for experiment planning
+
+### User Management
+
+- **User Identification**:
+  - Device ID: Default identifier (IDFV on iOS)
+  - User ID: Custom identifier for logged-in users
+  - Amplitude ID: System-generated identifier
+  - User profile merging to connect anonymous and identified activity
+
+- **User Segmentation**:
+  - Behavioral Cohorts based on actions or properties
+  - Saved segments for reuse across analyses
+  - Dynamic vs. static cohort definitions
+
+## Key Nomenclature and Definitions
+
+1. **Events**: User actions tracked in Amplitude (e.g., page views, button clicks)
+   - Limited to 2000 event types per project
+
+2. **Properties**:
+   - **Event Properties**: Attributes attached to events (limited to 2000 per project)
+   - **User Properties**: Attributes attached to users (limited to 1000 per project)
+   - **Group Properties**: Attributes for account/organization level analysis
+
+3. **MTU (Monthly Tracked Users)**: Unique users tracked per month, a key billing metric
+
+4. **Sessions**: Series of user events grouped by time proximity
+   - Default timeout: 30 minutes of inactivity
+   - Customizable session definitions
+
+5. **Statistical Significance**: Confidence that observed differences aren't due to chance
+   - Uses two-tailed T-test for Funnel Analysis
+   - Uses sequential testing (mSPRT) for Experiment Results
+
+6. **Instrumentation Limits**:
+   - 2000 event types per project
+   - 2000 event properties per project
+   - 1000 user properties per project
+   - 1024 character limit for string values
+
+7. **Channel Classifier**: Feature to define acquisition channels for traffic source tracking
+
+## Product Ecosystem Integration
+
+Amplitude integrates with various components of the digital product stack:
+
+1. **Data Sources**:
+   - Direct SDK implementation
+   - Segment integration
+   - Server-side API implementations
+   - Third-party site builders (Wix, Squarespace)
+
+2. **Data Destinations**:
+   - Export API for JSON-formatted data
+   - Query Add-on (Amplitude SQL/Snowflake ETL)
+   - Amazon S3 Export for event data
+
+3. **Experiment Platform**:
+   - Integrates with the core analytics for experiment analysis
+   - Supports local and remote evaluation
+
+4. **Compliance and Security**:
+   - SOC2 Type 2 compliance
+   - GDPR, HIPAA, CCPA compliance
+   - Data Processing Addendum (DPA) available
+
+## API Endpoints and Technical Implementations
+
+1. **HTTP V2 API**:
+   - Optimal for real-time, low-volume data
+   - Throttling limit: 30 events/second
+   - Used for immediate event processing
+
+2. **Batch Event Upload API**:
+   - Designed for high-volume data transfers
+   - Used for backfills and migrations
+   - No immediate processing requirement
+
+3. **Cohort API**:
+   - Export cohorts with specific user properties
+   - Manage behavioral cohorts programmatically
+
+4. **Export API**:
+   - Export raw event data in JSON format
+   - Alternative to direct chart data export
+
+5. **Identify API**:
+   - Update user properties without sending events
+   - Note: requires subsequent "active" events to appear in User Composition
+
+## Subscription Plans
+
+Amplitude offers several subscription tiers:
+
+1. **Free Plan**: Basic analytics capabilities with limited features
+
+2. **Plus Plan**: Enhanced features with MTU guardrails and 1000 events per MTU limit
+
+3. **Growth Plan**: Advanced features including Behavioral Cohorts and Pathfinder
+
+4. **Enterprise Plan**: Full feature set with advanced capabilities
+
+5. **Startup Scholarship Plan**: One year of free access to Growth plan features for qualifying startups (less than $10M funding, fewer than 20 employees)

@@ -1,0 +1,14 @@
+# Summary
+This documentation details the WebEngage destination integration with Amplitude, allowing users to sync cohorts for omnichannel marketing campaigns across 12+ channels. The integration requires paid plans on both platforms and matches Amplitude's user_id with WebEngage's CUID field for proper user association.
+
+# Keywords
+- WebEngage integration
+- cohort synchronization
+- user_id to CUID mapping
+- omnichannel marketing
+- retention-led growth
+- REST API key
+- personalized messaging
+- push notifications
+- WhatsApp integration
+- user engagement platform

@@ -1,0 +1,15 @@
+## Summary
+The duration estimator in Amplitude Experiment calculates the sample size and run time needed to reach statistical significance, helping users determine experiment viability by considering factors like confidence level, control mean, standard deviation, power, test type, and minimum effect size (MDE).
+
+## Keywords
+- duration estimator
+- statistical significance
+- sample size calculation
+- T-test
+- confidence level
+- control mean
+- standard deviation
+- power
+- minimum effect size (MDE)
+- proxy exposure event
+- experiment run time optimization

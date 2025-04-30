@@ -1,0 +1,3 @@
+**Summary:** This YAML configuration defines the structure for a "Billing and Use" collection in the admin area, specifying its template, layout, routing pattern (/admin/billing-use/{slug}), and content visibility based on dates, with past content being public and future content private.
+
+**Keywords:** admin billing collection, date_behavior, preview_targets, route pattern, sort_dir, nav_title injection, revisions disabled, structure root false

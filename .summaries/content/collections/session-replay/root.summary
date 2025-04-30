@@ -1,0 +1,133 @@
+# Amplitude Session Replay
+
+## Product Overview
+
+Amplitude Session Replay is a visual analytics tool that captures and recreates user interactions with web and mobile applications in a video-like format. It records DOM changes, view tree modifications, and user interactions to help product teams, developers, and analysts visually understand user behavior. The tool enables teams to identify usability issues, debug problems, and gain deeper insights into how users navigate through applications.
+
+Key features include cross-platform support (web, iOS, Android, React Native), heatmaps for visualizing user engagement, configurable privacy controls, flexible integration options, sampling configuration, EU data residency support, and WebView recording capabilities.
+
+## Product Relationships and Architecture
+
+Amplitude Session Replay offers multiple implementation paths depending on platform and existing analytics setup:
+
+### Web Implementation
+- **Browser SDK Plugin**: For applications already using Amplitude Browser SDK 2
+- **Standalone SDK**: For applications using third-party analytics providers
+- **Google Tag Manager**: Alternative implementation method
+- **Integration with analytics platforms**: Segment (via wrapper or middleware) and RudderStack
+
+### Mobile Implementation
+- **iOS**: Plugin, Middleware, Standalone SDK, or Segment Integration options
+- **Android**: Plugin, Middleware, or Standalone SDK options
+- **React Native**: SDK Plugin for cross-platform implementation
+
+Session Replay works alongside analytics events, with recordings linked to specific user sessions. It integrates with Amplitude Analytics natively and can work with Segment, RudderStack, or other third-party analytics platforms using standalone SDKs.
+
+## Key Nomenclature and Definitions
+
+- **Session ID**: Unique identifier linking analytics events to session recordings
+- **Device ID**: Unique identifier for a user's device
+- **Sample Rate**: Configuration parameter (0-100) determining percentage of sessions to record
+- **Masking Levels**:
+  - **Conservative**: Highest privacy level
+  - **Light**: Intermediate privacy level
+  - **Medium**: Lower privacy level
+  - **Custom**: User-defined masking using CSS selectors
+
+- **Heatmap Types**:
+  - **Click Maps**: Visualize click frequency
+  - **Selectors View**: Show interaction with specific UI elements
+  - **Scrollmaps**: Display scroll depth
+
+- **Ingestion Monitor**: Tool for tracking implementation status and debugging
+
+## API and Implementation Details
+
+### Web SDK Implementation
+
+```javascript
+// Browser SDK Plugin implementation
+import * as amplitude from '@amplitude/analytics-browser';
+import { sessionReplayPlugin } from '@amplitude/plugin-session-replay-browser';
+
+amplitude.init('API_KEY', {
+  plugins: [
+    sessionReplayPlugin({
+      sampleRate: 100,
+      maskAllInputs: true,
+      maskAllText: false
+    })
+  ]
+});
+```
+
+### Standalone SDK Implementation
+
+```javascript
+import { AmplitudeSessionReplay } from '@amplitude/session-replay-browser';
+
+const sessionReplay = new AmplitudeSessionReplay({
+  apiKey: 'API_KEY',
+  deviceId: 'DEVICE_ID',
+  sessionId: 'SESSION_ID',
+  sampleRate: 100
+});
+
+// Get properties to add to analytics events
+const sessionReplayProperties = sessionReplay.getSessionReplayProperties();
+```
+
+### Mobile SDK Implementation Examples
+
+**iOS Plugin:**
+```swift
+import AmplitudeSwift
+import AmplitudeSessionReplay
+
+let sessionReplayPlugin = SessionReplayPlugin(options: SessionReplayPlugin.Options(
+    sampleRate: 100
+))
+
+let amplitude = Amplitude(
+    configuration: Configuration(
+        apiKey: "API_KEY",
+        defaultTracking: DefaultTrackingOptions(sessions: true)
+    )
+)
+amplitude.add(plugin: sessionReplayPlugin)
+```
+
+**Android Plugin:**
+```kotlin
+import com.amplitude.android.Amplitude
+import com.amplitude.android.plugins.sessionreplay.SessionReplayPlugin
+
+val sessionReplayPlugin = SessionReplayPlugin(
+    sampleRate = 100
+)
+
+val amplitude = Amplitude(
+    Configuration(
+        apiKey = "API_KEY",
+        context = applicationContext
+    )
+)
+amplitude.add(sessionReplayPlugin)
+```
+
+### Key Configuration Options
+- **sampleRate**: Integer (0-100) controlling percentage of sessions to record
+- **maskAllInputs**: Boolean to control masking of input fields
+- **maskAllText**: Boolean to control masking of text content
+- **enableRemoteConfig**: Boolean to enable server-side configuration
+- **euDataResidency**: Boolean to enable EU data storage
+
+## Product Ecosystem Integration
+
+Session Replay integrates with the broader Amplitude ecosystem by:
+1. Linking with analytics events through session IDs
+2. Complementing behavioral analytics with visual context
+3. Supporting privacy requirements through integration with Amplitude's DSAR API
+4. Providing monitoring tools like the Ingestion Monitor
+
+Available as an add-on to Amplitude's Growth and Enterprise plans, Session Replay completes the analytics picture by showing not just what users did (analytics events) but how they interacted with the interface (visual recordings), creating a comprehensive understanding of user behavior and experience.

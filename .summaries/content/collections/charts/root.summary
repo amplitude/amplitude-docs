@@ -1,0 +1,82 @@
+# Amplitude Analytics Platform
+
+Amplitude Analytics is a comprehensive product analytics platform that helps businesses understand user behavior, optimize product experiences, and drive growth through data-driven insights. The platform provides extensive visualization capabilities through various chart types designed to answer key questions about user engagement, conversion, retention, and monetization.
+
+## Key Features and Capabilities
+
+- **Diverse Chart Types**: Multiple visualization options organized by analysis goals (Know, Convert, Retain, Monetize)
+- **User Segmentation**: Advanced capabilities for analyzing user behaviors based on properties, cohorts, and filters
+- **Behavioral Analysis**: Tools like Compass and Impact Analysis to identify patterns correlating with retention and growth
+- **Real-time Monitoring**: Event Explorer for visualizing event streams as they occur
+- **Customization Options**: Extensive chart customization including colors, axes, and legends
+- **Performance Optimization**: Features like query time sampling to maintain performance with large datasets
+
+## Product Architecture and Relationships
+
+The Amplitude Analytics platform consists of interconnected components:
+
+1. **Charts Collection**: Core visualization tools categorized by purpose:
+   - **Event-based Charts**: Event Segmentation, Event Explorer, Data Tables
+   - **User Journey Charts**: Funnel Analysis, Journeys, User Sessions
+   - **Retention Charts**: Retention Analysis, Stickiness, Lifecycle
+   - **Behavioral Analysis Charts**: Compass, Impact Analysis, Personas
+   - **E-commerce Charts**: Cart Analysis, Revenue LTV
+   - **Experimental Charts**: Experiment Results
+
+2. **Segmentation Module**: Enables precise user targeting through:
+   - User categories (any users, active users, new users)
+   - Property-based filters with various operators
+   - Behavioral cohorts
+   - Custom groupings
+
+3. **Events Module**: Handles selection and manipulation of event data with:
+   - Event property filtering
+   - Group-by specifications
+   - Wildcard searches
+   - Custom event creation through grouping
+
+4. **Data Processing Layer**: Manages data pruning, ordering, and optimization for chart responsiveness
+
+5. **Snowflake Integration**: Amplitude SQL for direct querying of Snowflake data
+
+## Key Nomenclature and Definitions
+
+- **Events**: User actions tracked in the product (e.g., clicks, page views, purchases)
+- **Event Properties**: Attributes providing additional context for events
+- **User Segments**: Subsets of users defined by specific criteria or behaviors
+- **Behavioral Cohorts**: Groups of users who performed specific actions or sequences
+- **Array Operators**: Logical operators for filtering array properties:
+  - **Equals**: Exact match of values
+  - **Set Contains**: Array contains specified value(s)
+  - **Set Equals**: Array contains exactly the specified values
+  - Negative versions of each operator
+- **Group-by**: Functionality categorizing events by properties (limits: 100 values for single, 500 for double)
+- **User Lifecycle Categories**:
+  - **New Users**: First-time users in current time period
+  - **Current Users**: Active in both current and previous periods
+  - **Resurrected Users**: Active in current period after dormancy
+  - **Dormant Users**: Active in previous period but not current
+- **Query Time Sampling**: Performance technique analyzing 10% of users' events and extrapolating
+- **Object Arrays**: Data structures representing collections of items with properties
+- **Breakdown Table**: Tabular view of chart data for sorting, filtering, and exporting
+
+## Product Ecosystem Integration
+
+Amplitude Analytics integrates with the broader ecosystem through:
+
+1. **Dashboard Integration**: Charts can be added to dashboards for monitoring and sharing
+2. **Team Collaboration**: Segments, cohorts, and analyses can be saved and shared
+3. **Experiment Platform Connection**: Experiment Results chart connects with A/B testing platforms
+4. **Data Warehouse Integration**: Direct querying of Snowflake data warehouses
+5. **Plan Tiers**: Features vary across subscription plans (Growth, Enterprise)
+6. **Export Capabilities**: Data export via CSV or Dashboard REST API
+
+## Technical Interfaces
+
+The platform provides several technical interfaces:
+
+- **Dashboard REST API**: Programmatic access to chart data
+- **CSV Export**: Extraction of raw data from charts and breakdown tables
+- **Keyboard Shortcuts**: Efficient chart manipulation and navigation
+- **Event Explorer Targeting**: Targeting by IP address, user ID, or device ID
+- **Query Parameters**: Various filtering and segmentation options for chart queries

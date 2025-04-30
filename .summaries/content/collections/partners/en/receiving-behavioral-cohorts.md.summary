@@ -1,0 +1,16 @@
+## Summary
+This documentation details how Amplitude syncs behavioral cohorts to partner platforms through REST API calls, supporting both list-based integrations (creating/updating lists of users) and property-based integrations (setting user properties). It covers authentication, batch processing, sync scheduling, retry mechanisms, and API endpoints for both integration types.
+
+## Keywords
+- behavioral cohorts
+- REST API
+- basic authentication
+- list-based integration
+- property-based integration
+- batch processing
+- cohort sync
+- user identifiers
+- API endpoints
+- retry mechanism
+- user properties
+- cohort membership

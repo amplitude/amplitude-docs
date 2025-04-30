@@ -1,0 +1,17 @@
+# Summary
+This documentation page explains how to analyze experiment results in Amplitude Experiment, covering the Filter, Data Quality, Summary, Analysis, and Diagnostics cards that help users interpret statistical significance, view metrics by variant, and troubleshoot experiment delivery issues.
+
+# Keywords
+- experiment results analysis
+- statistical significance
+- p-values
+- confidence intervals
+- variant comparison
+- experiment filtering
+- data quality checks
+- experiment diagnostics
+- variant jumping
+- sample ratio mismatch
+- experiment notifications
+- sequential test
+- T-test

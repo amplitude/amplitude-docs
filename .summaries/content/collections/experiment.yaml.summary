@@ -1,0 +1,11 @@
+## Summary
+This YAML configuration defines an "Experiment" collection with specific routing, date behavior, and preview settings, where past entries are public and future entries are private, and includes a structure setting that disables root entries.
+
+## Keywords
+- Experiment collection
+- feature-experiment route
+- date_behavior
+- preview_targets
+- structure root false
+- sort_dir ascending
+- revisions disabled

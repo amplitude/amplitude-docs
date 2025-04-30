@@ -1,0 +1,14 @@
+# Summary
+This documentation page describes the deprecated Lookup Tables API, which allows users to augment properties by uploading CSV files containing property mappings, including endpoints for creating, retrieving, updating, deleting, and listing lookup tables with specific CSV formatting requirements and size limitations.
+
+# Keywords
+- lookup-table-api
+- property-augmentation
+- csv-mapping
+- multipart-form-data
+- column-headers
+- case-sensitive-matching
+- file-size-limitations
+- deprecated-api
+- property-mappings
+- lookup-table-crud

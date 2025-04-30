@@ -1,0 +1,14 @@
+# Summary
+This documentation page describes the Intercom (Cohort Sync) destination integration in Amplitude, which allows sending behavioral cohorts to Intercom for targeted user engagement based on product interactions and lifecycle timing, supporting real-time sync that updates each minute.
+
+# Keywords
+- Intercom cohort sync
+- behavioral cohorts
+- real-time sync
+- user ID matching
+- OAuth authentication
+- sync cadence
+- customer engagement
+- cohort export
+- Amplitude integration
+- user targeting

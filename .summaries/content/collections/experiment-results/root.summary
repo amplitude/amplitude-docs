@@ -1,0 +1,77 @@
+# Amplitude Experiment Results
+
+## Overview
+
+Amplitude Experiment Results is a powerful analytics feature within Amplitude Analytics that enables comprehensive analysis of A/B test data from both Amplitude's native experimentation platform and third-party feature flagging solutions. The tool provides robust statistical analysis capabilities to help product teams evaluate the impact of different variants across multiple metric types and make data-driven decisions.
+
+The solution offers statistical rigor through sequential testing and confidence intervals, supports diverse metric types (conversions, event totals, funnels, formulas, retention), enables variant performance comparisons, and integrates with external feature flagging platforms.
+
+## Product Relationships and Features
+
+Amplitude Experiment Results functions as an analytical layer within the Amplitude ecosystem, with the following key components:
+
+1. **Experiment Results Chart**: The central interface for analyzing experiment data, visualizing variant performance, and determining statistical significance.
+
+2. **Exposure Events**: The tracking mechanism that records which users are exposed to specific experiment variants, enabling accurate analysis of variant impact.
+
+3. **Metric Types Support**: Comprehensive analysis capabilities across:
+   - Conversion metrics (measuring user actions)
+   - Event total metrics (counting event occurrences)
+   - Funnel metrics (analyzing multi-step processes)
+   - Formula metrics (custom calculations)
+   - Retention metrics (measuring user return behavior)
+
+4. **Formula Metrics**: Advanced functionality allowing users to create custom metrics using mathematical operations and functions to measure complex business outcomes.
+
+## Key Nomenclature and Definitions
+
+- **Exposure Events**: Events that record when a user encounters a specific variant in an experiment, forming the foundation for accurate analysis.
+
+- **Cumulative Exposure**: The tracking of user exposure to variants over the duration of an experiment, accounting for changes in exposure over time.
+
+- **Statistical Significance**: The determination that observed differences between variants are likely due to the experimental changes rather than random variation.
+
+- **Sequential Testing**: A statistical methodology that enables continuous monitoring of experiment results without increasing false positive rates, allowing for earlier decision-making.
+
+- **Confidence Intervals**: Statistical ranges indicating the precision of the estimated effect of a variant, helping teams understand the reliability of results.
+
+- **Formula Metrics**: User-defined metrics created through mathematical operations on existing metrics, enabling custom analysis tailored to specific business questions.
+
+- **Variants**: The different versions of a feature or experience being tested against each other in an experiment.
+
+## Formula Metrics Functions
+
+Amplitude Experiment Results supports a robust set of functions for creating formula metrics:
+
+- **UNIQUES**: Counts distinct users who performed a specified event
+- **TOTALS**: Counts the total number of occurrences of an event
+- **PROPSUM**: Calculates the sum of property values
+- **PROPAVG**: Determines the average of property values
+- **PROPCOUNT**: Counts events with a specific property
+- **PROPMAX**: Identifies the maximum property value
+- **PROPMIN**: Identifies the minimum property value
+- **CONVERSIONRATE**: Calculates the rate of conversion for an event
+- **CONVERSIONAVG**: Determines the average number of conversions
+- **REVENUETOTAL**: Calculates total revenue
+
+Statistical significance for formula metrics involves specialized variance and mean calculations specific to each function type, ensuring accurate analysis of custom metrics.
+
+## Integration with Amplitude Ecosystem
+
+Experiment Results enhances Amplitude Analytics by providing specialized experimentation analysis capabilities. The product:
+
+1. Allows importing and analysis of experiment data from both Amplitude and non-Amplitude feature flagging platforms
+2. Leverages Amplitude's core analytics infrastructure for experiment analysis
+3. Enables creation of custom metrics to evaluate experiment performance against business-specific goals
+4. Provides statistical tools to make confident, data-driven decisions
+
+The product serves as a bridge between experimentation platforms and deep analytics, making it a valuable tool for product teams conducting A/B tests within the Amplitude ecosystem.
+
+## Usage
+
+Users interact with Experiment Results primarily through the Experiment Results chart interface within Amplitude Analytics. Key workflows include:
+
+1. Creating and configuring formula metrics using the supported mathematical functions
+2. Analyzing experiment data through the interactive chart interface
+3. Comparing performance across variants for different metric types
+4. Evaluating the statistical significance of results to determine winning variants

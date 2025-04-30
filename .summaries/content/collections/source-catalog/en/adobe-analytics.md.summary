@@ -1,0 +1,14 @@
+# Summary
+This documentation page describes the Adobe Analytics integration with Amplitude, which allows importing Adobe Analytics data directly into Amplitude without engineering work. The integration enables deeper analysis of cross-platform customer behavior, provides data governance control, and maps Adobe data fields to Amplitude's schema with specific considerations for event_type, user_id, and device_id mapping.
+
+# Keywords
+- Adobe Analytics integration
+- cross-platform customer behavior
+- data ingestion
+- event mapping
+- user_id mapping (postvisidhigh/postvisidlow)
+- device_id mapping (custvisid)
+- Enterprise/Growth/Scholarship plans
+- data governance
+- data taxonomy
+- display names for events

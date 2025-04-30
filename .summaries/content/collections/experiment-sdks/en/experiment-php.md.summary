@@ -1,0 +1,14 @@
+# Summary
+The Experiment PHP SDK documentation provides implementation details for both remote and local evaluation of feature flags in PHP applications, including client initialization, variant fetching, configuration options, and assignment tracking with support for PHP 7.4+.
+
+# Keywords
+- PHP Server SDK
+- Remote evaluation
+- Local evaluation
+- Flag variants
+- Assignment tracking
+- DefaultAssignmentTrackingProvider
+- GuzzleHTTPClient
+- AmplitudeCookie
+- refreshFlagConfigs
+- User properties

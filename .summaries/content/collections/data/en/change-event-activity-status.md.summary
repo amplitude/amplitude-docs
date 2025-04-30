@@ -1,0 +1,13 @@
+# Summary
+This documentation explains how to set an event's activity status in Amplitude as either active or inactive, where inactive events are excluded from dashboard metrics counting active users and events, though they still count towards event volume and new user definitions. The change is applied immediately and retroactively to historical data.
+
+# Keywords
+- event activity status
+- active vs inactive events
+- retroactive data changes
+- user engagement metrics
+- dashboard metrics exclusion
+- Edit Activity dropdown
+- event volume counting
+- new user definitions
+- tracking plan events

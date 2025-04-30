@@ -1,0 +1,14 @@
+# Summary
+This documentation page describes the integration between mParticle and Amplitude, explaining how mParticle's data aggregation capabilities can be used to send product data from multiple platforms (Android, iOS, Unity, JavaScript) to Amplitude for analytics processing, enabling businesses to gain consolidated customer insights.
+
+# Keywords
+- mParticle integration
+- CDP integration
+- raw-events
+- cross-platform data collection
+- customer data aggregation
+- analytics platform connection
+- multi-touchpoint data
+- mParticle API
+- customer behavior analytics
+- data forwarding

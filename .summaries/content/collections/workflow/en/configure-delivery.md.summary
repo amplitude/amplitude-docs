@@ -1,0 +1,14 @@
+## Summary
+This documentation page outlines the process for configuring experiment delivery in Amplitude, including setting evaluation mode (Remote or Local), specifying bucketing units, selecting deployments, reviewing variants, and adding QA tester IDs to verify implementation before launch.
+
+## Keywords
+- evaluation mode
+- bucketing unit
+- deployments
+- QA testing
+- experiment configuration
+- remote evaluation
+- local evaluation
+- variant verification
+- feature flag
+- Stable Unit Treatment Value Assumption

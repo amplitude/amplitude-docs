@@ -1,0 +1,14 @@
+## Summary
+This documentation page describes the Humanic.ai Cohort destination integration for Amplitude, detailing how to set up the connection between platforms using an API key and how to sync user cohorts from Amplitude to Humanic.ai's Agentic Marketing Platform, with support for email addresses and customer_id as identifiers.
+
+## Keywords
+- Humanic.ai
+- Agentic Marketing Platform
+- Cohort sync
+- API key
+- email identifier
+- customer_id
+- partner-maintained integration
+- user_id mapping
+- sync cadence
+- Amplitude Data Catalog

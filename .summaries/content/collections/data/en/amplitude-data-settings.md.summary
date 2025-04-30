@@ -1,0 +1,14 @@
+## Summary
+This documentation page details Amplitude Data settings management across five tabs: General (project naming, conventions, review requirements), Environments, Integrations, API Tokens, and Schema Settings, with specific information on roles/permissions and how to handle schema violations through configuration options.
+
+## Keywords
+- Amplitude Data settings
+- tracking plan management
+- naming conventions
+- team review requirements
+- schema violation handling
+- API token generation
+- data permissions restrictions
+- role-based access control
+- public tracking plan link
+- data management functions

@@ -1,0 +1,14 @@
+# Summary
+This documentation page details the integration between Amplitude and OneSignal, explaining how to sync cohorts from Amplitude to OneSignal for targeted messaging across multiple channels (push notifications, email, SMS, in-app), along with setup instructions, considerations, and the cohort export process.
+
+# Keywords
+- OneSignal integration
+- cohort syncing
+- multi-channel messaging
+- push notifications
+- user engagement
+- external ID mapping
+- API key configuration
+- targeted messaging
+- paid plans requirement
+- segment creation

@@ -1,0 +1,14 @@
+# Summary
+This documentation details the Adjust integration with Amplitude, which combines attribution tools with analytics to track user acquisition sources in real-time. The integration uses Amplitude's Attribution API, requiring advertising IDs (IDFA/IDFV/ADID) for user matching, with attribution events held for up to 72 hours for potential matching before being dropped.
+
+# Keywords
+- Attribution API
+- Advertising ID (IDFA/IDFV/ADID)
+- User segmentation
+- Real-time data transmission
+- Ad channel performance
+- 72-hour attribution window
+- User matching
+- Marketing analytics
+- Adjust integration
+- Event discrepancy

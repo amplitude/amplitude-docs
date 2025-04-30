@@ -1,0 +1,13 @@
+# Summary
+Amplitude Experiment uses sequential testing (specifically mSPRT) for statistical inference, allowing valid results at any point during an experiment without predetermined sample sizes, enabling faster experimentation and early termination compared to traditional T-tests.
+
+# Keywords
+- sequential testing
+- mSPRT (mixture sequential probability ratio test)
+- early experiment termination
+- hypothesis testing
+- null hypothesis
+- alternative hypothesis
+- randomized control trial
+- statistical inference
+- arithmetic means comparison

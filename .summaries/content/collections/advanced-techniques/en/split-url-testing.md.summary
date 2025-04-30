@@ -1,0 +1,14 @@
+# Summary
+Split URL testing in Amplitude allows marketers to conduct A/B tests by redirecting visitors to different URLs without extensive developer involvement, requiring only the Amplitude Experiment SDK script in the page's head section and the Analytics SDK for event tracking, with support for both standard A/B tests and multi-armed bandits.
+
+# Keywords
+- URL redirect testing
+- A/B testing
+- Amplitude Experiment SDK
+- variant URLs
+- local evaluation mode
+- deviceID bucketing
+- multi-armed bandits
+- CMS testing
+- preview functionality
+- configuration limits

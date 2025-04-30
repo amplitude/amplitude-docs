@@ -1,0 +1,14 @@
+## Summary
+This documentation page covers Single Sign-On (SSO) implementation in the admin panel, explaining how to configure SSO providers like SAML, OIDC, OAuth, and Google, with details on authentication flows, user provisioning, and role mapping.
+
+## Keywords
+- SSO configuration
+- SAML authentication
+- OIDC integration
+- OAuth providers
+- Google authentication
+- user provisioning
+- role mapping
+- authentication flows
+- admin panel authentication
+- identity providers

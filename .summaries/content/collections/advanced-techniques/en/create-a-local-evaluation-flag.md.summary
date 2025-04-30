@@ -1,0 +1,14 @@
+# Summary
+This documentation page explains how to create a local evaluation flag in Amplitude Experiment, including steps for creating a new flag with local evaluation mode and migrating an existing remote evaluation flag to local evaluation, with specific instructions on changing evaluation mode settings and updating bucketing keys.
+
+# Keywords
+- local evaluation flag
+- remote to local migration
+- evaluation mode settings
+- bucketing key
+- device ID
+- Amplitude Experiment
+- targeting rules
+- local evaluation SDK
+- flag activation
+- server-side deployment

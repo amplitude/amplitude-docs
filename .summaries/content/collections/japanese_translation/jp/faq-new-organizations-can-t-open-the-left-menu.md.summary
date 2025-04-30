@@ -1,0 +1,14 @@
+# Summary
+This documentation explains why new Amplitude organizations cannot access the left menu navigation - it remains unavailable until data is properly sent to Amplitude, as the system requires data to load charts before enabling full UI navigation functionality.
+
+# Keywords
+- left menu navigation
+- new organization setup
+- data source configuration
+- UI navigation restriction
+- event data requirement
+- Amplitude initialization
+- settings page limitation
+- chart loading dependency
+- SDK integration
+- API integration

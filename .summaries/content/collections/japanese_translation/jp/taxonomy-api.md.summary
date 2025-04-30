@@ -1,0 +1,13 @@
+# Summary
+The Taxonomy API allows creation, retrieval, updating, and deletion of categories, event types, event properties, and user properties in Amplitude, with the limitation that only planned events/properties can be edited, not those with existing data. Customers need to contact their Customer Service Manager or Amplitude Support to use this API.
+
+# Keywords
+- taxonomy-api
+- event-properties
+- user-properties
+- categories
+- event-types
+- CRUD operations
+- planned events
+- data management
+- Amplitude developer center

@@ -1,0 +1,12 @@
+## Summary
+This documentation page defines the configuration for the "Data Tables" collection, specifying its template, layout, mounting point, routing pattern, and display behavior, with specific settings for analytics charts data tables.
+
+## Keywords
+- data-tables
+- analytics/charts
+- collection configuration
+- mount point 0cbd21dd-8917-4c02-a2a0-8aad8d4a3bd0
+- revisions disabled
+- date_behavior
+- preview_targets
+- structure root false

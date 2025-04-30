@@ -1,0 +1,5 @@
+## Summary
+This documentation page covers the Amplitude Java SDK for JRE environments, detailing installation, initialization, tracking events, user properties, and configuration options for server-side Java applications.
+
+## Keywords
+Java SDK, JRE, server-side tracking, event tracking, user identification, batch events, flush interval, HTTP API, Maven dependency, Gradle dependency, setUserId, setUserProperties, logEvent, AmplitudeClient

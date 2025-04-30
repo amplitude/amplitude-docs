@@ -1,0 +1,101 @@
+# Amplitude Experiment Product Overview
+
+## High-Level Overview
+
+Amplitude Experiment is a comprehensive feature experimentation and feature flag management platform designed for product teams. It enables testing new features, controlling feature rollouts, and making data-driven decisions through both UI and API interfaces. The platform combines feature flagging capabilities with robust experimentation tools to help teams validate product changes with real user data.
+
+## Core Components and Features
+
+### Feature Management
+- **Feature Flags**: Toggle features on/off or serve different variants to different users
+- **Variants**: Different versions of a feature being tested in an experiment
+- **Deployments**: Environment configurations (development, staging, production) for both client-side and server-side implementations
+
+### Experimentation Capabilities
+- **Experiments**: Controlled tests comparing different variants to measure impact
+- **Holdout Groups**: Control groups excluded from experiments to measure long-term effects
+- **Mutex Groups**: Ensure users participate in only one experiment from a defined set
+- **Slots**: Divisions within mutex groups that control traffic allocation
+
+### Evaluation Methods
+- **Remote Evaluation**: Server-side variant assignment via API calls
+- **Local Evaluation**: Client-side evaluation using SDKs
+- **Sticky Bucketing**: Ensures consistent variant assignment for users
+- **CDN Caching**: Optimizes performance for common variant assignments
+
+### User Targeting
+- **Individual Inclusions/Exclusions**: Explicitly include or exclude specific users
+- **Target Segments**: Define user groups based on properties
+- **Rollout Percentages**: Control the percentage of users who receive a variant
+- **Rollout Weights**: Percentage distribution of traffic to different variants
+
+## Product Relationships and Ecosystem
+
+Amplitude Experiment integrates with the broader Amplitude ecosystem, particularly with Amplitude Analytics for tracking experiment results and analyzing impact. The platform architecture consists of:
+
+1. **Management Layer**: APIs for creating and configuring experiments, flags, and other components
+2. **Evaluation Layer**: APIs and SDKs for determining variant assignments
+3. **Analytics Integration**: Connects with Amplitude Analytics to measure experiment outcomes
+
+The system supports both client-side implementations (web, mobile) and server-side implementations through dedicated SDKs and APIs, allowing for flexible deployment across different technology stacks.
+
+## Key Nomenclature and Definitions
+
+- **Deployment Key**: Unique identifier for a deployment environment
+- **Flag Keys**: Identifiers for feature flags
+- **Bucketing Key**: Property used to determine variant assignment (e.g., user_id, device_id)
+- **Bucketingsalt**: Value that ensures consistent bucketing across experiments
+- **Evaluation Mode**: How variants are assigned (local or remote)
+- **Management API Key**: Authentication credential for the Management API
+- **X-Amp-Exp-Track**: Header that controls whether to track assignment events
+
+## API Structure and Endpoints
+
+### Experiment Management API
+
+Base endpoints with regional variations:
+- US: `https://management-api.experiment.amplitude.com`
+- EU: `https://management-api.experiment.eu.amplitude.com`
+
+Key endpoint groups:
+1. **Flag Endpoints**: `/flags` - Create, list, edit flags and manage variants
+2. **Experiment Endpoints**: `/experiments` - Manage experiments and their configurations
+3. **Deployment Endpoints**: `/deployments` - Manage deployment environments
+4. **Holdout Group Endpoints**: `/holdouts` - Configure control groups
+5. **Mutex Group Endpoints**: `/mutexs` - Manage mutual exclusion groups
+6. **Version Endpoints**: `/versions` - Retrieve version history
+
+### Experiment Evaluation API
+
+Endpoint: `https://api.lab.amplitude.com/v1/vardata`
+
+Parameters:
+- `deployment_key`: Identifies the deployment
+- `flag_keys`: Comma-separated list of flags to evaluate
+- `user_id` or `device_id`: User identifier
+- `context`: Additional user properties for targeting
+
+Headers:
+- `X-Amp-Exp-Track`: Controls whether to track assignment events (default: true)
+- `Authorization`: API key for authentication
+
+## Implementation Patterns
+
+1. **Remote Evaluation Flow**:
+   - Send user context to Evaluation API
+   - Receive variant assignments
+   - Apply variants in application
+   - Track exposure events
+
+2. **Local Evaluation Flow**:
+   - Download flag configurations to client
+   - Evaluate variants locally based on user properties
+   - Apply variants without server calls
+
+3. **Experiment Configuration Workflow**:
+   - Create deployments for different environments
+   - Configure experiments with variants and targeting rules
+   - Set up holdouts for measuring long-term effects
+   - Use mutex groups to prevent experiment interference
+
+The platform implements pagination through cursor-based mechanisms and enforces rate limiting to ensure API stability and performance.

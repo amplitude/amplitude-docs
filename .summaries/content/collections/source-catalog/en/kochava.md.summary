@@ -1,0 +1,5 @@
+# Summary and Keywords for Kochava Integration Documentation
+
+**Summary:** This documentation explains how to integrate Kochava with Amplitude for bi-directional data sharing, enabling marketers to track attribution data and user behavior in real-time between platforms using Kochava's postback mechanism and Amplitude's Attribution API.
+
+**Keywords:** Kochava integration, attribution tracking, event streaming, raw events ingestion, people-based marketing, postback configuration, Attribution API, mobile marketing attribution, user acquisition data, cross-platform analytics, real-time data solutions

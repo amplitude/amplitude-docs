@@ -1,0 +1,13 @@
+## Summary
+This documentation explains how to change an event's activity status in Amplitude between "active" (user-initiated actions) and "inactive" (passive events like receiving notifications), noting that inactive events are excluded from active user metrics and that status changes apply retroactively to historical data.
+
+## Keywords
+- event activity status
+- active events
+- inactive events
+- retroactive data changes
+- user metrics
+- event tracking
+- Amplitude dashboard metrics
+- event status modification
+- active user counting

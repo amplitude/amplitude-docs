@@ -1,0 +1,17 @@
+# Summary and Keywords
+
+**Summary:** This documentation explains how to analyze A/B test results in Amplitude by instrumenting experiments using user properties (either via SDKs/HTTP API or Identify API) and then comparing experiment groups using Amplitude's AB Test View, with detailed guidance on implementation approaches and their pros/cons.
+
+**Keywords:**
+- A/B testing
+- AB Test View
+- User properties instrumentation
+- Experiment variations
+- Split testing
+- Experiment groups
+- Identify API
+- User property per experiment
+- User property for all experiments
+- Experiment segmentation
+- Funnel analysis
+- Experiment instrumentation

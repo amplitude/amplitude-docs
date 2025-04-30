@@ -1,0 +1,16 @@
+# Summary
+This documentation details the HubSpot Event Stream destination integration in Amplitude, which allows forwarding Amplitude events and properties to HubSpot for personalized marketing, lead scoring, and customer retention use cases, with considerations around authentication, event mapping, property selection, and HubSpot's Enterprise subscription requirement for custom events.
+
+# Keywords
+- HubSpot Event Stream
+- custom events
+- event properties
+- API rate limits
+- event mapping
+- marketing automation
+- lead scoring
+- customer retention
+- HubSpot Enterprise
+- event definitions
+- contact timeline
+- workflows

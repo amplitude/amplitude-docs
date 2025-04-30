@@ -1,0 +1,14 @@
+# Summary
+This documentation explains how to set up webhooks for custom monitors in Amplitude, allowing automated messages to be sent to specified endpoints when KPIs change, enabling real-time integration with other applications for Enterprise customers and those with the Insights package.
+
+# Keywords
+- webhooks
+- custom monitors
+- KPI alerts
+- endpoint configuration
+- payload delivery
+- Organization settings
+- Projects
+- Enterprise feature
+- Insights package
+- webhook testing

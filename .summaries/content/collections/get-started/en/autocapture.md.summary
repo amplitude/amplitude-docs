@@ -1,0 +1,18 @@
+## Summary
+This documentation page explains Amplitude's Autocapture feature for web, iOS, and Android platforms, detailing how to install and initialize SDKs with Autocapture enabled to automatically track user interactions, page views, sessions, form submissions, and element clicks with minimal engineering effort.
+
+## Keywords
+- Autocapture
+- Browser SDK
+- iOS-Swift SDK
+- Android-Kotlin SDK
+- elementInteractions
+- visual labeling
+- marketing attribution
+- user properties
+- session tracking
+- element clicked
+- page viewed
+- form tracking
+- autocapturePlugin
+- content security policy

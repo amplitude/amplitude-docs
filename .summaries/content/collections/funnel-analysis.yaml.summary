@@ -1,0 +1,3 @@
+**Summary:** This documentation page configures the "Funnel Analysis" section in the analytics charts area, specifying its template, layout, mounting point, URL structure, and navigation behavior with disabled revisions and ascending sort direction.
+
+**Keywords:** funnel-analysis, analytics charts, mount point, preview targets, route configuration, date behavior, structure settings, nav_title injection

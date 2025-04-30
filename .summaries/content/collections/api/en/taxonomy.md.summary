@@ -1,0 +1,20 @@
+## Summary
+The Taxonomy API allows Enterprise users to programmatically manage their event schema in Amplitude, including creating, retrieving, updating, and deleting categories, event types, event properties, user properties, and group properties with various configuration options and visibility settings.
+
+## Keywords
+- taxonomy-api
+- event-schema
+- event-categories
+- event-types
+- event-properties
+- user-properties
+- group-properties
+- schema-management
+- property-classifications
+- property-visibility
+- property-overrides
+- data-types
+- PII-classification
+- property-restoration
+- API-rate-limits
+- schema-planning

@@ -1,0 +1,14 @@
+## Summary
+The SCIM API provides programmatic user and group provisioning for Amplitude organizations, implementing the SCIM 2.0 standard to enable integration with Identity Providers like Okta and JumpCloud, with endpoints for creating, reading, updating, and deleting users and permission groups.
+
+## Keywords
+- SCIM 2.0
+- User provisioning
+- Permission groups
+- Identity Provider integration
+- User management API
+- Cross-domain identity management
+- API rate limits (100 requests/minute)
+- User invitation
+- Group membership
+- Authentication with SCIM key

@@ -1,0 +1,16 @@
+## Summary
+This documentation page addresses frequently asked questions about User Sessions in Amplitude, covering issues like empty charts, zero-length sessions, session triggering mechanisms, unusual session durations, and how custom session definitions affect data retroactively without changing raw data.
+
+## Keywords
+- User Sessions chart
+- session IDs
+- zero-length sessions
+- out-of-session events
+- Start Session event
+- session timeout
+- custom session definition
+- HTTP API
+- mobile SDKs
+- Microscope feature
+- event streams
+- session calculation

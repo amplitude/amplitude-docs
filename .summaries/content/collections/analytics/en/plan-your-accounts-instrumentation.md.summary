@@ -1,0 +1,15 @@
+## Summary
+This documentation explains how to implement Amplitude Accounts for group-level analytics, covering event-level groups (temporary associations) and user-level groups (permanent associations), with guidance on instrumentation planning, limitations, best practices, and integration with Salesforce and Segment.
+
+## Keywords
+- Amplitude Accounts
+- group-level analytics
+- event-level groups
+- user-level groups
+- group identify API
+- dynamic group properties
+- instrumentation planning
+- Salesforce integration
+- Segment integration
+- group property limits
+- account-level reporting

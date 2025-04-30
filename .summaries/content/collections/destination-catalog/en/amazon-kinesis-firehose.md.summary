@@ -1,0 +1,14 @@
+# Summary
+This documentation details the Amazon Kinesis Firehose destination integration for Amplitude Data, explaining how to stream Amplitude event data to AWS Kinesis Firehose by creating the necessary AWS resources (stream, IAM role with proper trust relationships, and IAM policy) and configuring the connection in Amplitude's destination catalog.
+
+# Keywords
+- Kinesis Data Firehose
+- AWS IAM role configuration
+- Trust Relationships
+- event streaming
+- PutRecord permissions
+- role ARN
+- event filtering
+- Identify Forwarding
+- AWS account ID 358203115967
+- JSON event format

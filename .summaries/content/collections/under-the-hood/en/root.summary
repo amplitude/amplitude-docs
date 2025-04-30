@@ -1,0 +1,115 @@
+# Amplitude Experiment: Under the Hood
+
+## Product Overview
+
+Amplitude Experiment is a feature experimentation platform that enables organizations to run controlled experiments (A/B tests) with sophisticated statistical analysis capabilities. The platform combines robust experimentation infrastructure with Amplitude's analytics capabilities to deliver fast, reliable, and statistically sound experimentation.
+
+Key features include:
+- Sequential testing methodology (mSPRT) for faster experiment decision-making
+- Flexible flag dependencies for complex experiment scenarios
+- Deterministic randomization for consistent user experiences
+- Comprehensive event tracking integration with Amplitude Analytics
+- Performance-optimized architecture with CDN caching
+- Both local and remote evaluation options for feature flags and experiments
+
+Primary use cases include A/B testing, feature rollouts, mutual exclusion experiments, holdout groups for measuring combined experiment impact, and complex feature releases with dependencies.
+
+## Product and Feature Relationships
+
+### Core Components
+
+1. **Evaluation Modes**
+   - **Remote Evaluation**: Server-side evaluation with CDN caching (35.9ms average response with cache hits)
+   - **Local Evaluation**: Client-side evaluation with sub-millisecond performance
+
+2. **Flag System**
+   - **Flag Dependencies**: Controls relationships between flags
+     - Prerequisites: Ensures flags are evaluated in specific order
+     - Mutual Exclusion Groups: Ensures users only participate in one experiment at a time
+     - Holdout Groups: Withholds traffic to measure combined experiment impact
+
+3. **Statistical Engine**
+   - **Sequential Testing (mSPRT)**: Allows valid statistical inference at any point during an experiment
+   - **Experiment Analysis Charts**: Calculates metrics based on exposed users and event data
+
+4. **Event Tracking System**
+   - **Assignment Events**: Records when users are assigned to variants
+   - **Exposure Events**: Records when users are actually exposed to variants
+   - **Experiment User Properties**: Automatically attached to user profiles for analysis
+
+5. **Architecture Components**
+   - **Fastly CDN**: Caches evaluation results for performance
+   - **AWS Services**: Application Load Balancer, Relational Databases, DynamoDB
+   - **Identity Resolution System**: Manages consistent user identification
+
+## Key Nomenclature and Definitions
+
+- **Bucketing Key**: Identifier (typically Amplitude ID) used for randomization
+- **Bucketing Salt**: Value combined with ID to ensure unique randomization across experiments
+- **mSPRT (mixture Sequential Probability Ratio Test)**: Statistical method allowing valid inference at any time
+- **Flag Prerequisites**: Dependencies that ensure flags are evaluated in a specific order
+- **Mutual Exclusion Groups**: Ensure users only participate in one experiment at a time
+- **Holdout Groups**: Withhold traffic to measure combined experiment impact
+- **Assignment Events**: Track when users are assigned to variants
+- **Exposure Events**: Track when users actually see a variant
+- **Cache Hit/Miss**: Whether a request is served from CDN cache or requires backend processing
+- **Local Defaults**: Fallback values used when network requests fail
+- **Variant Weights**: Percentage allocation for different experiment variants
+
+## Product Ecosystem Integration
+
+Amplitude Experiment integrates deeply with the broader Amplitude product ecosystem:
+
+1. **Amplitude Analytics Integration**
+   - Experiment results are analyzed using Amplitude Analytics
+   - User properties from experiments are automatically attached to user profiles
+   - Assignment and exposure events flow into the analytics system
+
+2. **Behavioral Cohorts**
+   - Experiments can target users based on behavioral cohorts defined in Amplitude
+
+3. **Identity Resolution**
+   - Leverages Amplitude's identity resolution system for consistent user identification
+
+4. **SDK Integration**
+   - Client SDKs for web, mobile, and server environments
+   - Automatic tracking of assignment and exposure events
+
+## Technical Implementation Details
+
+### Randomization Algorithm
+```
+// Inclusion determination
+mod(murmur3_x86_32("bucketingSalt/id"), 100) < inclusionPercentage
+
+// Variant assignment
+floor(murmur3_x86_32("bucketingSalt/id"), 100) mapped to variant weights
+```
+
+### Performance Metrics
+- Remote evaluation with cache hit: 35.9ms global average
+- Remote evaluation with cache miss: 194.21ms global average
+- Local evaluation: sub-millisecond performance
+
+### Caching Mechanisms
+- CDN caching with configurable TTL
+- Client SDK caching for improved performance
+- Cache invalidation on flag updates
+
+### Event Tracking Implementation
+- Assignment events tracked automatically by SDKs
+- Exposure events tracked either automatically or manually depending on implementation
+- Server-side implementations require manual exposure tracking
+
+### Analysis Calculation Formulas
+- Unique conversions: `unique_users_with_metric_event / exposed_users`
+- Event totals: `sum_of_metric_events / exposed_users`
+- Property value metrics: `sum_of_property_values / exposed_users`
+- Funnel conversions: `users_who_completed_funnel / users_who_started_funnel`
+
+## Best Practices
+1. Use local defaults for critical features
+2. Implement client-side caching for optimal performance
+3. Use Amplitude-defined events for proper user property setting
+4. Consider geographical performance differences when setting up experiments
+5. Leverage flag dependencies for complex experiment scenarios

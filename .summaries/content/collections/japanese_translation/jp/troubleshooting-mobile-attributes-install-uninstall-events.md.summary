@@ -1,0 +1,14 @@
+## Summary
+This documentation explains how mobile attribution partners map install/uninstall events to Amplitude users using advertising IDs (IDFA/IDFV/ADID), detailing the 72-hour matching process and troubleshooting common issues where attribution events fail to appear in Amplitude due to missing user matches or timing constraints.
+
+## Keywords
+- mobile attribution events
+- advertising IDs (IDFA/IDFV/ADID)
+- attribution API
+- 72-hour event retention
+- amplitude_attribution_ids
+- user mapping
+- install/uninstall tracking
+- device_id matching
+- attribution partners
+- event mapping workflow

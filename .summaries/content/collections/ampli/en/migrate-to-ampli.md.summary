@@ -1,0 +1,17 @@
+# Summary
+This documentation page details the step-by-step process for migrating from Amplitude SDK to Ampli, explaining how to progressively replace SDK calls with type-safe Ampli equivalents while maintaining existing functionality, including code examples for mixed implementation and complete migration.
+
+# Keywords
+- Ampli migration
+- type safety
+- progressive migration
+- SDK replacement
+- ampli.load
+- ampli.track
+- strongly-typed events
+- code refactoring
+- amplitude.track conversion
+- client instance
+- side-by-side comparison
+- ampli pull
+- ampli status

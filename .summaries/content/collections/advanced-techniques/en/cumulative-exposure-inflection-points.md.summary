@@ -1,0 +1,16 @@
+# Summary and Keywords
+
+The documentation explains how to interpret inflection points and flattened slopes in cumulative exposure graphs for experiments, detailing causes such as traffic changes, targeting criteria modifications, and seasonality effects, while warning against mid-experiment setting changes that could introduce Simpson's paradox.
+
+## Keywords
+- cumulative exposures graph
+- inflection points
+- flattened slopes
+- Simpson's paradox
+- traffic allocation
+- targeting criteria
+- experiment traffic
+- statistical significance
+- seasonality effects
+- exposure events
+- experiment end date

@@ -1,0 +1,14 @@
+## Summary
+This documentation page explains how to use Amplitude Experiment with Guides and Surveys, detailing how to run A/B tests or Multi-armed Bandit experiments, configure variants, manage experiments, and analyze performance through the Insights dashboard with time-based metrics tracking views and completions.
+
+## Keywords
+- Amplitude Experiment integration
+- A/B testing
+- Multi-armed Bandit tests
+- variant configuration
+- experiment management
+- exposure events
+- insights dashboard
+- time-based analysis
+- performance metrics
+- guide/survey completion tracking

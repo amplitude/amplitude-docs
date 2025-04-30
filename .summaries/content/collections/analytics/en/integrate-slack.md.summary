@@ -1,0 +1,14 @@
+## Summary
+This documentation explains how to integrate Amplitude with Slack, allowing users to receive comment notifications, preview Amplitude charts in Slack, add charts to dashboards without leaving Slack, connect Team Spaces to Slack channels for notifications, and set up Amplitude Data projects to send tracking plan updates to specific Slack channels.
+
+## Keywords
+- Slack integration
+- chart unfurling
+- comment notifications
+- Team Spaces connection
+- Amplitude Data notifications
+- link previews
+- EU data center
+- tracking plan updates
+- branch notifications
+- workspace authentication

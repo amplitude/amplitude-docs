@@ -1,0 +1,18 @@
+## Summary
+This documentation page explains Amplitude's Persona Charts feature, which uses cluster analysis to group users based on similar event behaviors, helping product teams discover user personas without predefined rules. It details how to set up and interpret persona charts, including cluster generation, cluster count selection, and analyzing event patterns to identify meaningful user personas.
+
+## Keywords
+- Persona Charts
+- Cluster analysis
+- User personas
+- Behavioral cohorts
+- Cluster cards
+- Event patterns
+- Standard deviation
+- Cluster generation
+- Cluster count
+- Target cohort
+- Enterprise feature
+- Data mining
+- Event frequency
+- User segmentation

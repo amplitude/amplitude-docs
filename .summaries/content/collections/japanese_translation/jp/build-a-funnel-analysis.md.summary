@@ -1,0 +1,16 @@
+## Summary
+This documentation page explains how to build funnel analysis charts in Amplitude to track user progression through defined paths, identify drop-off points, and analyze conversion rates. It covers setting up funnel steps, ordering options (any order, this order, exact order), optional steps, comparing multiple events in a single step, and how Amplitude calculates conversions.
+
+## Keywords
+- funnel analysis
+- conversion tracking
+- event sequence
+- drop-off points
+- optional steps
+- event ordering
+- inline event combination
+- group-by comparison
+- conversion calculation
+- simultaneous events
+- segment properties
+- exclusion filters

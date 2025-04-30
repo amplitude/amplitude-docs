@@ -1,0 +1,14 @@
+## Summary
+This documentation explains how to interpret the Cumulative Exposure Graph in Amplitude Experiment, which shows the number of users exposed to an experiment over time. It covers various graph patterns including standard cumulative exposure, inflection points, decreasing slopes, flattened slopes, and diverging lines, along with their potential causes and implications for experiment validity.
+
+## Keywords
+- Cumulative Exposure Graph
+- Experiment exposure tracking
+- Variant traffic allocation
+- Inflection points
+- Static cohorts
+- Sticky bucketing
+- Seasonality patterns
+- Traffic distribution
+- Exposure events
+- Statistical significance timing

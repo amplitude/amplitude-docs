@@ -1,0 +1,12 @@
+# Summary
+This documentation explains how Amplitude determines user location properties using the MaxMind database to look up information from IP addresses, and clarifies that location data is still captured even when IP addresses are blocked or filtered out during data ingestion.
+
+# Keywords
+- MaxMind database
+- GeoIP location tracking
+- IP address filtering
+- location_lat and location_long
+- [Amplitude] City/DMA/Region/Country properties
+- HTTP API custom location values
+- IP address blocking
+- location property determination

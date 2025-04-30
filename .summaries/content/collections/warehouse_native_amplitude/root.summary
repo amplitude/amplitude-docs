@@ -1,0 +1,109 @@
+# Warehouse-native Amplitude (WNA)
+
+## Overview
+
+Warehouse-native Amplitude (WNA) is a solution that enables analytics on data residing directly in Snowflake data warehouses without requiring data ingestion into Amplitude's systems. This approach allows organizations to analyze time-sensitive datasets while maintaining full control over their data, create custom analyses using existing Snowflake data models, and execute optimized queries directly against warehouse data. WNA establishes a read-only connection to Snowflake, ensuring data governance and security requirements are met.
+
+## Product and Feature Relationships
+
+WNA consists of several interconnected components:
+
+1. **Data Model Architecture**: WNA supports multiple modeling approaches:
+   - Event Data Models (single event per table or multiple events in one table)
+   - Property Models (user, group, and event properties)
+   - Schema Formats (star schema and snowflake schema)
+
+2. **Connection Methods**:
+   - Direct Snowflake Connection using read-only credentials
+   - DBT Integration using manifest files for model definition
+   - Bulk Model Management via YAML configuration files
+
+3. **Performance Optimization Tools**:
+   - Clustering Keys for query performance optimization
+   - Partitioning Strategies for large datasets
+
+These components work together to create a seamless analytics experience while keeping data in Snowflake. The data models define the structure, connection methods establish access, and optimization tools ensure performance.
+
+## Key Nomenclature and Definitions
+
+- **Fact Table**: Central table containing event data with metrics and foreign keys
+- **Dimension Tables**: Supporting tables with descriptive attributes
+- **Clustering Keys**: Columns used to physically organize data for query optimization
+- **Identity Spaces**: Mechanisms for identifying users across different data sources
+- **Event Time**: Timestamp column indicating when an event occurred
+- **amplitude_meta**: Metadata structure used in DBT integration
+- **MultiEventConfig**: Configuration for models containing multiple event types
+- **RequiredFields**: Mandatory columns needed for specific model types
+- **AdditionalFields**: Optional columns that can be included in models
+- **Model Types**: Different data structures (EVENT, EVENT_PROPERTIES, CURRENT_USER_PROPERTIES, HISTORICAL_USER_PROPERTIES, GROUP_PROPERTIES)
+
+## Product Ecosystem Integration
+
+WNA integrates with three primary systems:
+
+1. **Snowflake Data Warehouse**:
+   - Establishes read-only connections
+   - Executes optimized queries directly against warehouse data
+   - Leverages Snowflake's performance capabilities
+
+2. **DBT (Data Build Tool)**:
+   - Uses existing DBT workflows for model management
+   - Leverages manifest files to define model metadata
+   - Supports metadata-driven model creation
+
+3. **Amplitude Analytics Platform**:
+   - Provides the same analytical capabilities as traditional Amplitude
+   - Supports charts, cohorts, and other analysis features
+
+WNA serves as a bridge between Snowflake and Amplitude, allowing organizations to maintain data in their warehouse while leveraging Amplitude's analytical capabilities. Some Amplitude features may have constraints when using warehouse-native models, particularly around formula calculations and certain advanced analytics functions.
+
+## Technical Specifications
+
+### Model Types and Required Fields
+
+1. **EVENT Models**:
+   - Required: event_type, user_id, event_time
+   - Optional: insert_id, session_id, group identifiers
+
+2. **EVENT_PROPERTIES Models**:
+   - Required: event_id, property_name, property_value
+
+3. **CURRENT_USER_PROPERTIES Models**:
+   - Required: user_id, property_name, property_value
+
+4. **HISTORICAL_USER_PROPERTIES Models**:
+   - Required: user_id, property_name, property_value, updated_time
+
+5. **GROUP_PROPERTIES Models**:
+   - Required: group_type, group_value, property_name, property_value
+
+### Configuration Formats
+
+DBT Integration Structure:
+```yaml
+meta:
+  amplitude_meta:
+    data_models:
+      - name: "model_name"
+        model_type: "EVENT"
+        special_columns:
+          event_type: "event_type_column"
+          user_id: "user_id_column"
+          event_time: "timestamp_column"
+```
+
+Bulk Management YAML Structure:
+```yaml
+models:
+  - name: "model_name"
+    type: "EVENT"
+    selection:
+      type: "TABLE" # or "SQL"
+      value: "table_name" # or SQL query
+    fields:
+      event_type: "event_type_column"
+      user_id: "user_id_column"
+      event_time: "timestamp_column"
+```
+
+WNA provides a flexible solution that balances performance, governance, and analytical power, allowing organizations to leverage Amplitude's capabilities while keeping data within their Snowflake environment.

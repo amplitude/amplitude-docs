@@ -1,0 +1,14 @@
+# Summary
+This documentation page describes the Fivetran destination integration for Amplitude, which allows forwarding events from Amplitude to other destinations using Fivetran's automated data integration connectors, with setup requiring an Amplitude API key and configuration in the Fivetran dashboard.
+
+# Keywords
+- Fivetran connector
+- Amplitude event forwarding
+- ETL integration
+- Data integration
+- API key
+- Sync frequency
+- Destination schema
+- Fivetran dashboard setup
+- Project configuration
+- Raw events streaming

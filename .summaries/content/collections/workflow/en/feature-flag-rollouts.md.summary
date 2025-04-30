@@ -1,0 +1,15 @@
+## Summary
+This documentation page explains how to create and roll out feature flags in Amplitude Experiment, detailing the step-by-step process from flag creation to activation, including setting up variants, defining user segments, and configuring rollout percentages to control feature availability without code deployments.
+
+## Keywords
+- feature flag rollout
+- Amplitude Experiment
+- bucketing unit
+- variants
+- user segments
+- rollout percentage
+- variant weights
+- deployment selection
+- evaluation mode
+- bucketing salt
+- feature activation

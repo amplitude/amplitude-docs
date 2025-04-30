@@ -1,0 +1,14 @@
+## Summary
+This documentation page provides a comprehensive migration guide from the maintenance JavaScript SDK (amplitude-js) to Browser SDK 1.0 (@amplitude/analytics-browser), detailing API changes, configuration differences, and implementation patterns including the plugin architecture, initialization process, and event tracking methods.
+
+## Keywords
+- Browser SDK migration
+- amplitude-js to analytics-browser
+- API changes
+- plugin architecture
+- event tracking
+- user properties
+- web attribution
+- configuration differences
+- flush methods
+- identity storage

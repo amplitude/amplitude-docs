@@ -1,0 +1,15 @@
+## Summary
+This documentation explains how to create custom SQL queries with Amplitude Query, a product add-on that allows users to search raw data through a Snowflake database. It details the Query schema, table naming conventions, column descriptions, and how to use the Amplitude SQL chart type to visualize query results within the Amplitude platform.
+
+## Keywords
+- Amplitude Query
+- Custom SQL
+- Snowflake database
+- $events table
+- Amplitude SQL chart type
+- Query schema
+- User properties
+- Event properties
+- Merged users
+- Data visualization
+- Self-service Snowflake export

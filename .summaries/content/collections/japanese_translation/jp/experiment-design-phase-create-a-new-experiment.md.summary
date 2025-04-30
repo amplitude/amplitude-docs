@@ -1,0 +1,13 @@
+# Summary
+This documentation page explains how to create a new experiment in Amplitude Experiment, including selecting a project, naming the experiment, choosing evaluation mode (Remote or Local), and specifying the bucketing unit (typically users, but sometimes company IDs for B2B use cases).
+
+# Keywords
+- Amplitude Experiment
+- experiment creation
+- flag key
+- bucketing unit
+- remote evaluation
+- local evaluation
+- experiment design phase
+- experiment initialization
+- treatment effect stability

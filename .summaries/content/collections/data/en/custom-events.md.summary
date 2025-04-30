@@ -1,0 +1,14 @@
+# Summary
+This documentation page explains how to create custom events in Amplitude, which combine multiple existing events with an OR clause to track related user activities as a single event, available in various chart types for users on Plus, Growth, and Enterprise plans.
+
+# Keywords
+- custom events
+- OR clause
+- event combination
+- event segmentation
+- feature availability
+- event properties
+- [Custom] prefix
+- Plus/Growth/Enterprise plans
+- event grouping
+- transformed events

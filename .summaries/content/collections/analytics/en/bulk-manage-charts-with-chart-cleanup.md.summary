@@ -1,0 +1,13 @@
+# Summary
+Chart Cleanup is an admin-only feature that allows bulk management of saved charts across all projects in an organization, providing metrics on chart usage and enabling admins to search, filter, and delete unneeded charts without affecting the underlying event data.
+
+# Keywords
+- chart cleanup
+- bulk chart deletion
+- admin chart management
+- organizational settings
+- chart usage metrics
+- chart filtering
+- inactive charts
+- cross-project chart management
+- chart ownership

@@ -1,0 +1,14 @@
+# Summary
+This documentation explains how filters function in funnel analysis charts in Amplitude, specifically detailing that filters applied through the segmentation module only affect the first event, while filters can be added directly to individual steps in the event module. It also explains how group-by filters work with property values across funnel steps.
+
+# Keywords
+- Funnel analysis charts
+- Segmentation module filters
+- Event module filters
+- Group-by filters
+- First event filtering
+- Property value bucketing
+- User conversion tracking
+- "Keep property constant" feature
+- Unique user metrics
+- Genre type example

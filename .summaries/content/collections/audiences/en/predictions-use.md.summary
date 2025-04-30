@@ -1,0 +1,16 @@
+# Summary
+This documentation explains how to use prediction-based cohorts in marketing campaigns, covering three campaign types (Inclusion Criteria, Dynamic Pricing, Content Personalization), the process for syncing cohorts to marketing platforms, setting up control groups, and analyzing campaign results to determine effectiveness across different user segments.
+
+# Keywords
+- prediction-based cohorts
+- campaign targeting
+- cohort syncing
+- inverse pricing
+- holdout groups
+- campaign measurement
+- relative lift
+- Braze integration
+- Facebook Custom Audience
+- incremental conversions
+- UTM parameters
+- multivariate testing

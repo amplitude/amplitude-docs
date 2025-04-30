@@ -1,0 +1,14 @@
+# Summary
+Adapty is an all-in-one subscription monetization platform that integrates with Amplitude to send user behavior data, enabling analysis of in-app purchases and subscriptions. The integration requires copying Amplitude's API key to Adapty and configuring the SDK to properly map user IDs between platforms.
+
+# Keywords
+- subscription monetization
+- in-app purchases
+- amplitudeDeviceId
+- amplitudeUserId
+- customerUserId
+- user behavior analysis
+- mobile app economy
+- subscription analytics
+- monetization experiments
+- API key integration

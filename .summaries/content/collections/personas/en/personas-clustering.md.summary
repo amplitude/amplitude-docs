@@ -1,0 +1,14 @@
+# Summary
+The Personas chart in Amplitude groups users into clusters based on event behavior similarities, helping identify user personas without pre-specified rules. It uses a unique interface with Cluster Generation, Cluster Count, and Target Cohort modules instead of the standard Event and Segmentation modules found in other Amplitude charts.
+
+# Keywords
+- behavioral clustering
+- user personas
+- cluster analysis
+- exploratory data mining
+- Growth/Enterprise feature
+- cluster generation module
+- cluster count module
+- target cohort module
+- user behavior patterns
+- cohort segmentation

@@ -1,0 +1,14 @@
+# Summary
+This documentation page details the Snapchat Ads integration with Amplitude, which allows users to sync audience cohorts from Amplitude to Snapchat Ads for targeted advertising campaigns, requiring specific user properties (Email, Phone Number, or Mobile Ad ID) with SHA256 encryption and having limitations such as a 1000 Customer List segments cap per Snapchat Ads Account.
+
+# Keywords
+- Snapchat Ads integration
+- Cohort syncing
+- SHA256 encryption
+- Mobile Ad ID
+- Customer List segments
+- OAuth authentication
+- User property mapping
+- Audience targeting
+- Recurring syncs
+- Match rates

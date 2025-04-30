@@ -1,0 +1,14 @@
+## Summary
+This documentation explains how to build retention analytics in Amplitude, detailing the step-by-step process for setting up both standard retention analysis and usage interval analysis charts to track user return behavior and measure time between critical events.
+
+## Keywords
+- retention analysis
+- usage interval analysis
+- start events
+- return events
+- user segmentation
+- critical events
+- event properties
+- retention chart configuration
+- breakdown table
+- segment comparison

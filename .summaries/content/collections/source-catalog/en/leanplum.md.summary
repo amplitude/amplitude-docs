@@ -1,0 +1,14 @@
+# Summary
+This documentation page describes the Leanplum integration with Amplitude, detailing how to set up bidirectional data flow between the platforms to enable analytics-driven marketing automation, including step-by-step configuration instructions for sending Leanplum events to Amplitude's data centers.
+
+# Keywords
+- Leanplum integration
+- multi-channel campaigns
+- marketing automation
+- cohort targeting
+- API key configuration
+- data center selection
+- event ingestion
+- user behavior analysis
+- customer engagement
+- bidirectional integration

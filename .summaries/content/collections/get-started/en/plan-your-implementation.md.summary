@@ -1,0 +1,14 @@
+# Summary
+This documentation page outlines how to plan an Amplitude implementation, focusing on data ingestion methods (importing existing data or tracking new data with SDKs/APIs), recommending starting with a few key events rather than tracking everything, and introducing tracking plans for more advanced implementations.
+
+# Keywords
+- event-based analytics
+- data ingestion
+- client-side vs server-side tracking
+- SDKs and APIs
+- tracking plan
+- Ampli Wrapper
+- event selection
+- data sources
+- user behavior tracking
+- implementation planning

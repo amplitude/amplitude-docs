@@ -1,0 +1,14 @@
+## Summary
+This documentation explains how to create custom events in Amplitude by grouping multiple events with an OR relationship, allowing users to analyze when users perform any of several specified events as a single step in analysis flows, with instructions on creating and using these custom events.
+
+## Keywords
+- Custom events
+- OR clause
+- Event grouping
+- Events module
+- Funnel analysis
+- Event Segmentation
+- Event property filtering
+- Data analysis
+- Custom event limitations
+- Event conversion

@@ -1,0 +1,17 @@
+## Summary
+The Anomaly + Forecast feature in Amplitude helps users identify statistically significant deviations in metrics by highlighting anomalies based on historical data and projecting future trends, available in Event Segmentation, Conversion over Time, User Sessions, Retention over Time, and Stickiness charts for Growth and Enterprise plan users.
+
+## Keywords
+- anomaly detection
+- statistical significance
+- Prophet forecasting
+- confidence intervals
+- time-series analysis
+- agile mode
+- robust mode
+- custom mode
+- seasonality detection
+- automated project alerts
+- training data duration
+- Growth/Enterprise plans
+- chart compatibility

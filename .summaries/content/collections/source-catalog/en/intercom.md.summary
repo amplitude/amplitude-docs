@@ -1,0 +1,14 @@
+## Summary
+This documentation page details the Intercom integration with Amplitude, explaining how to set up event data streaming from Intercom to Amplitude, including OAuth authentication, user property mapping options, supported event topics, and how to disconnect the integration.
+
+## Keywords
+- Intercom integration
+- event streaming
+- OAuth authentication
+- user property mapping
+- conversation topics
+- webhook events
+- user identification
+- event prefixing
+- disconnection process
+- customer engagement data

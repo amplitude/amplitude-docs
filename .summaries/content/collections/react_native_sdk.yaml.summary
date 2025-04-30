@@ -1,0 +1,12 @@
+## Summary
+This YAML configuration file defines the structure and behavior for the React Native SDK documentation section, specifying its route pattern (/sdks/analytics/react-native/{slug}), mounting point, and navigation settings within the analytics SDKs documentation.
+
+## Keywords
+- React Native SDK
+- documentation structure
+- route configuration
+- analytics SDK documentation
+- mount point
+- preview targets
+- navigation settings
+- content organization

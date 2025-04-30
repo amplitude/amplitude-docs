@@ -1,0 +1,14 @@
+# Summary
+Entry/Exit Analysis allows users to analyze data based on the first (entry) or last (exit) property value in a session, supporting metrics like uniques, event totals, session totals, and PROPSUM across all Amplitude plans, with a straightforward enabling process through the Data Table column options menu.
+
+# Keywords
+- entry/exit analysis
+- session dimensions
+- first/last property value
+- data table
+- uniques metrics
+- event totals
+- session totals
+- PROPSUM
+- column options
+- session-based metrics

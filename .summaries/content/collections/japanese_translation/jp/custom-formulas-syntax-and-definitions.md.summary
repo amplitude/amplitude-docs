@@ -1,0 +1,19 @@
+## Summary
+This documentation explains custom formulas in Amplitude's Event Segmentation charts, detailing syntax, available formulas, and usage examples. It covers three types of formulas: metric formulas (like ACTIVE, UNIQUES), aggregation formulas (like ROLLAVG, CUMSUM), and function formulas (like TRENDLINE, LOG). The page provides detailed syntax, parameters, and visualization examples for each formula type.
+
+## Keywords
+- Custom formulas
+- Event Segmentation
+- Metric formulas
+- Aggregation formulas
+- Function formulas
+- UNIQUES
+- TOTALS
+- ROLLAVG
+- CUMSUM
+- PROPSUM
+- ARPAU
+- Formula syntax
+- Data visualization
+- Percentile calculation
+- Rolling averages

@@ -1,0 +1,15 @@
+## Summary
+This documentation covers the installation and configuration of Session Replay using the Android SDK plugin for apps already instrumented with Amplitude. It explains how Session Replay captures view tree changes to create video-like replays, and provides implementation instructions for both the current Android-Kotlin SDK and the maintenance Android SDK.
+
+## Keywords
+- Android Session Replay Plugin
+- view tree capture
+- sampleRate configuration
+- maskLevel privacy settings
+- SessionReplayPlugin implementation
+- SessionReplayMiddleware
+- WebView/MapView support
+- EU data residency
+- Android SDK integration
+- replay troubleshooting
+- session sampling

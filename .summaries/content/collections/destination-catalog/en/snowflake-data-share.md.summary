@@ -1,0 +1,14 @@
+# Summary
+This documentation page describes Amplitude's Snowflake Data Share integration, which allows customers to access their event data stored in Amplitude through Snowflake's Data Share product, supporting Raw Events and Merged ID tables with 5-minute and hourly update intervals respectively, requiring specific region/cloud compatibility and admin privileges to set up.
+
+# Keywords
+- Snowflake Data Share
+- Raw Events table
+- Merged ID table
+- cross-region compatibility
+- data backfill
+- event table schema
+- 5-minute update interval
+- hourly update interval
+- event filtering
+- AWS US West (Oregon)

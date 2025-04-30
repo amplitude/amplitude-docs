@@ -1,0 +1,16 @@
+## Summary
+This documentation page covers troubleshooting for Segment-Amplitude integration issues, focusing on diagnosing missing events, missing properties, and session tracking problems, with detailed explanations for common issues like API key verification, instrumentation limits, and configuration requirements.
+
+## Keywords
+- Segment-Amplitude integration
+- Missing events troubleshooting
+- Event property limits
+- User properties
+- Session tracking
+- API key configuration
+- Event instrumentation errors
+- Deleted/blocked events
+- Device-mode vs cloud-mode
+- Segment debugger
+- Integration enablement
+- Session ID tracking

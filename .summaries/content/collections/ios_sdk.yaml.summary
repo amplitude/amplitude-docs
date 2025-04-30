@@ -1,0 +1,13 @@
+## Summary
+This YAML configuration file defines the structure and behavior for iOS SDK documentation pages, specifying the template, layout, routing pattern (/sdks/analytics/ios/{slug}), and navigation settings for the Analytics SDKs section.
+
+## Keywords
+- iOS SDK documentation
+- YAML configuration
+- content collection
+- route pattern
+- analytics_sdks navigation
+- preview targets
+- mount point
+- sort direction
+- date behavior

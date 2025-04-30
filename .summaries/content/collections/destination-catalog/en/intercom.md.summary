@@ -1,0 +1,14 @@
+## Summary
+This documentation details the Amplitude Activation's Intercom streaming integration, which allows forwarding Amplitude events and users to Intercom, covering setup prerequisites (creating an Intercom app, obtaining access token), configuration steps for event and user forwarding, and important limitations such as Intercom's 120 event types limit and requirement for user IDs on all events.
+
+## Keywords
+- Intercom event streaming
+- Amplitude Activation
+- Intercom Access Token
+- user ID mapping
+- event forwarding
+- user property forwarding
+- Intercom data events
+- Intercom contacts
+- custom attributes
+- event metadata limitations

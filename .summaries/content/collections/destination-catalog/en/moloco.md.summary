@@ -1,0 +1,14 @@
+## Summary
+This documentation details the Amplitude to Moloco Commerce Media (MCM) event streaming integration, explaining how to configure the connection to send user events and properties for advertising optimization. It covers setup requirements, event type mapping, field mappings, and implementation considerations including the need to match Amplitude user_id with Moloco Identity ID.
+
+## Keywords
+- Moloco Commerce Media (MCM)
+- event streaming
+- REST API Key
+- Platform ID
+- event type mapping
+- user identification
+- advertising optimization
+- behavioral retargeting
+- field mapping
+- machine learning

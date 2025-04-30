@@ -1,0 +1,17 @@
+## Summary
+This documentation page provides a comprehensive glossary of key terms used in Amplitude analytics, including definitions for user tracking concepts (Active Users, Amplitude ID, Device ID), event tracking terminology (Event Properties, Inactive Events), and measurement metrics (Retention, Stickiness, MTU). The page serves as a reference for understanding the technical terminology specific to Amplitude's analytics platform.
+
+## Keywords
+- Amplitude ID
+- Device ID
+- Event Properties
+- User Properties
+- Monthly Tracked Users (MTU)
+- Inactive Events
+- Session ID
+- Behavioral Cohorts
+- Retention
+- Stickiness
+- amplitude_logo.png prefixes
+- Unique Users
+- Funnel tracking

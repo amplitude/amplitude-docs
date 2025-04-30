@@ -1,0 +1,11 @@
+## Summary
+This configuration file defines the Pages collection with multi-site support (English and Japanese), disabled revisions, a dynamic route pattern using parent URI and slug, and a root-level structure.
+
+## Keywords
+- Pages collection
+- multi-site configuration
+- disabled revisions
+- dynamic route pattern
+- root structure
+- parent_uri routing
+- collection YAML configuration

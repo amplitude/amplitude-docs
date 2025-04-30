@@ -1,0 +1,14 @@
+# Summary
+This documentation explains performance and scaling in Amplitude Experiments, highlighting the three key components needed for effective experimentation: robust ID validation, user metadata access, and behavioral cohort access. It provides implementation recommendations including using local defaults and client-side caching, and describes the architecture built on Fastly CDN and AWS services.
+
+# Keywords
+- Amplitude Experiments
+- ID validation system
+- Local defaults
+- Client SDK caching
+- Fastly CDN
+- AWS services
+- Performance optimization
+- Experiment implementation
+- User variants
+- Network call reduction

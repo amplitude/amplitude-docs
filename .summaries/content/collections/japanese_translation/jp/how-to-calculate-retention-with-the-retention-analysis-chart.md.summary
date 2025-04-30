@@ -1,0 +1,16 @@
+# Summary
+This document explains how Amplitude calculates different types of retention (Return Later, Return On) in the Retention Analysis chart, detailing the calculation methods for specific cohort entry dates versus overall retention, and how to interpret retention trends over time including the differences in numerator and denominator calculations.
+
+# Keywords
+- Retention Analysis chart
+- Return Later retention
+- Return On retention
+- Cohort entry date
+- Overall retention
+- Retention calculation
+- Retention intervals
+- Incomplete data handling
+- Retention visualization
+- Retention trends
+- Numerator/denominator calculations
+- Retention percentage

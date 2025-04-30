@@ -1,0 +1,51 @@
+# Amplitude Lifecycle Analysis
+
+## Product Overview
+
+Amplitude's Lifecycle is an analytics tool that tracks and visualizes user engagement patterns over time. It helps product teams understand user base growth, retention, and activity by categorizing users into distinct segments based on their interaction patterns. The core of this feature is the Lifecycle chart, which visualizes how users move between different states of engagement across customizable time intervals (daily, weekly, or monthly).
+
+## Key Features and Concepts
+
+### User Categorization System
+Lifecycle segments users into four fundamental categories:
+- **New Users**: First-time users who performed the tracked event within the current time interval
+- **Current Users**: Returning users who were active in both the current and previous time intervals
+- **Resurrected Users**: Users who returned after a period of inactivity
+- **Dormant Users**: Previously active users who did not perform the tracked event in the current interval
+
+### Visualization Options
+The Lifecycle chart provides three distinct views:
+1. **Growth View** (default): Shows new, current, and resurrected users to visualize overall user base growth
+2. **Dormant View**: Focuses specifically on users who have become inactive
+3. **Pulse View**: Displays the ratio of active users (new, current, resurrected) to dormant users
+
+### Analysis Capabilities
+- Track engagement around specific critical events
+- Identify retention issues and patterns
+- Analyze user behavior across different time intervals
+- Segment data using event properties
+- Access detailed breakdown tables showing user distribution
+
+## Key Nomenclature and Definitions
+
+- **Critical Event**: The specific user action being tracked in the analysis
+- **Usage Interval**: The time period for analysis (daily, weekly, or monthly)
+- **Pulse Ratio**: The proportion of active users to dormant users
+- **Growth Chart**: Visualization showing the composition of active users
+- **Dormant Chart**: Visualization focusing on users who have become inactive
+- **Breakdown Table**: Detailed data view showing user distribution across categories
+- **Active Users**: The combined total of new, current, and resurrected users
+- **Inactive Users**: Users who were previously active but did not perform the tracked event in the current interval
+
+## Product Ecosystem Integration
+
+Lifecycle analysis is part of Amplitude's broader analytics platform, available to customers on Growth or Enterprise plans. It integrates with Amplitude's user analytics ecosystem by:
+
+- Providing structured insights into user engagement patterns
+- Complementing retention analysis with more granular user state tracking
+- Supporting product teams in understanding user behavior over time
+- Enabling data-driven decisions about product development and marketing strategies
+
+The Lifecycle feature works alongside other Amplitude tools to give teams a comprehensive view of user behavior, helping identify opportunities for improving user retention, reactivating dormant users, and optimizing the overall user experience.
+
+While the documentation doesn't explicitly mention API endpoints or command line interfaces, the Lifecycle feature is accessible through Amplitude's web interface, where users can configure their analysis parameters, visualize results, and export findings for further use.

@@ -1,0 +1,14 @@
+## Summary
+This documentation page explains Amplitude Sources in CDP, detailing how to connect external data sources to Amplitude through the Sources catalog, with specific instructions for setting up connections to platforms like Segment, Braze, and Salesforce.
+
+## Keywords
+- CDP Sources catalog
+- data source connections
+- Amplitude data ingestion
+- source authentication
+- event mapping
+- Segment integration
+- Braze integration
+- Salesforce integration
+- source configuration
+- data transformation

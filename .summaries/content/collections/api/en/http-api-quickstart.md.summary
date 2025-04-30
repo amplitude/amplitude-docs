@@ -1,0 +1,15 @@
+## Summary
+This documentation provides a quickstart guide for the Amplitude HTTP V2 API, showing how to send event data to Amplitude through POST requests with code examples in multiple languages (cURL, Wget, HTTP, JavaScript, NodeJS, Ruby, Python, Java, Go), including special instructions for EU data residency endpoints.
+
+## Keywords
+- HTTP V2 API
+- api2.amplitude.com
+- api.eu.amplitude.com
+- event tracking
+- POST request
+- device_id
+- user_id
+- event_type
+- EU data residency
+- multi-language examples
+- httpapi endpoint

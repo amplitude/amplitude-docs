@@ -1,0 +1,16 @@
+## Summary
+This documentation explains how Amplitude identifies users through device IDs, Amplitude IDs, and user IDs, emphasizing that user IDs are optional but recommended for cross-device tracking and event reconciliation, with important implementation guidelines including that user IDs cannot be changed once set and should not be assigned to anonymous users.
+
+## Keywords
+- user identification
+- device ID
+- Amplitude ID
+- user ID
+- cross-device tracking
+- event reconciliation
+- anonymous users
+- unique user identification
+- case-sensitive IDs
+- user profile merging
+- backend event merging
+- immutable user IDs

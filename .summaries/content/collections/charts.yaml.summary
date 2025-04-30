@@ -1,0 +1,10 @@
+## Summary
+This YAML configuration defines the "Charts" collection with settings for template, layout, mounting, routing, and preview behavior, specifically for analytics charts content located at '/analytics/charts/{slug}' with ascending sort direction.
+
+## Keywords
+- analytics charts collection
+- mount point 4f9db02a-f75c-470c-990d-31d6ffb5eebf
+- revisions disabled
+- date-based visibility control
+- structure root false
+- analytics nav injection

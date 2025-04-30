@@ -1,0 +1,13 @@
+## Summary
+This YAML configuration defines a "Workflow" collection with specific routing, preview settings, and date-based publishing behavior, where past-dated entries are public and future-dated entries are private, with a structure that is not rooted.
+
+## Keywords
+- collection configuration
+- workflow
+- date_behavior
+- preview_targets
+- feature-experiment
+- route configuration
+- propagation settings
+- structure root false
+- sort_dir ascending

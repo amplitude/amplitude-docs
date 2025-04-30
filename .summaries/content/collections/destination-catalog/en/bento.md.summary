@@ -1,0 +1,16 @@
+## Summary
+This documentation describes the Bento integration with Amplitude, which allows sending cohort data and events from Amplitude to Bento to create targeted product experiences like onboarding checklists and feature announcements without engineering support. The page details setup steps in both platforms and explains that Bento processes data only for existing accounts and users.
+
+## Keywords
+- Bento integration
+- cohort syncing
+- event streaming
+- product activation experiences
+- onboarding checklists
+- feature announcements
+- guide targeting
+- API key configuration
+- user experience customization
+- no-code product experiences
+- Amplitude paid plans
+- account mapping

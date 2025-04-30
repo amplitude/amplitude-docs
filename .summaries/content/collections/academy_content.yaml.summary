@@ -1,0 +1,11 @@
+## Summary
+This configuration file defines the "Academy Content" collection with site-specific settings for English language only, disables propagation and revisions, and implements date-based visibility rules where past content is public and future content is private.
+
+## Keywords
+- Academy Content collection
+- date_behavior
+- propagation disabled
+- revisions disabled
+- content visibility rules
+- past/future content handling
+- single-site collection

@@ -1,0 +1,12 @@
+## Summary
+This YAML configuration defines the structure and behavior for the "Session Replay" collection, specifying its URL route pattern, sorting direction, date visibility rules, and navigation title injection, while setting up preview functionality for content editors.
+
+## Keywords
+- session-replay collection
+- content structure
+- route pattern
+- date_behavior
+- preview_targets
+- nav_title injection
+- ascending sort
+- collection configuration

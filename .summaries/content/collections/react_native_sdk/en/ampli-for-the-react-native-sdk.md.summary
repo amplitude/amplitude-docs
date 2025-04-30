@@ -1,0 +1,18 @@
+## Summary
+This documentation page explains how to use the Ampli Wrapper with React Native SDK, which provides a strongly typed API for tracking analytics events based on your Amplitude Data tracking plan, offering autocompletion for events/properties and schema enforcement to prevent bad instrumentation in JavaScript and TypeScript React Native apps.
+
+## Keywords
+- Ampli Wrapper
+- React Native SDK
+- TypeScript
+- JavaScript
+- tracking plan
+- strongly typed API
+- event tracking
+- identify
+- setGroup
+- flush
+- plugins
+- ampli CLI
+- schema enforcement
+- tracking implementation

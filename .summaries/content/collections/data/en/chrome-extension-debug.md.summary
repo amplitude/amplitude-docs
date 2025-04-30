@@ -1,0 +1,15 @@
+# Summary
+The Amplitude Instrumentation Explorer Chrome extension helps developers debug Amplitude JS SDK instrumentation by capturing and displaying triggered events in real-time, showing event parameters (user_id, device_id, event_properties), configuration options, and allowing users to filter, hide, or copy event data without opening Amplitude Analytics.
+
+# Keywords
+- Amplitude Instrumentation Explorer
+- Chrome extension
+- JS SDK debugging
+- event_type display
+- event parameters
+- API Options
+- hidden events
+- real-time instrumentation
+- event properties
+- user properties
+- project switching

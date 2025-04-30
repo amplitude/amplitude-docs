@@ -1,0 +1,3 @@
+**Summary:** This documentation page defines the configuration for the "Legacy Charts" collection, specifying its template, layout, routing pattern (/analytics/charts/legacy-charts/{slug}), and navigation behavior, with entries sorted in ascending order and past-dated content set to public visibility.
+
+**Keywords:** legacy-charts, collection configuration, analytics charts, route pattern, date_behavior, sort_dir, nav_title, preview_targets

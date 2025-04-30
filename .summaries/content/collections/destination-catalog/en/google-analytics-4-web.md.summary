@@ -1,0 +1,14 @@
+# Summary
+This documentation details the Google Analytics 4 (Web) streaming integration for Amplitude Activation, which enables forwarding Amplitude events and user data to GA4 using gtag.js. The setup requires a GA4 Measurement ID and API Secret, with options to configure event and user property mappings, including required Client ID mapping and optional User ID mapping.
+
+# Keywords
+- Google Analytics 4 Web integration
+- gtag.js implementation
+- Measurement Protocol API Secret
+- Client ID mapping
+- User property forwarding
+- Event streaming configuration
+- GA4 Measurement ID
+- Delivery metrics validation
+- Non-personalized ads parameter
+- User ID mapping

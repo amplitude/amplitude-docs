@@ -1,0 +1,17 @@
+# Summary
+The document describes Ampli for Python SDK, a tracking library that enables strongly-typed analytics event tracking in Python applications, including installation, initialization, user identification, event tracking, and implementation verification through the Ampli CLI.
+
+# Keywords
+- Python SDK
+- Ampli wrapper
+- strongly-typed events
+- identify users
+- track events
+- LoadOptions
+- EventOptions
+- flush events
+- Ampli CLI
+- group_identify
+- set_group
+- plugins
+- implementation verification

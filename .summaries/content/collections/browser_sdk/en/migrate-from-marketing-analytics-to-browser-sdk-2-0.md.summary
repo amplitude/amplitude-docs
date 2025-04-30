@@ -1,0 +1,14 @@
+## Summary
+This documentation page explains how to migrate from Marketing Analytics Browser SDK to Browser SDK 2.0, covering changes to default event tracking, marketing attribution, page view tracking, cookie options, and plugin interfaces, with Browser SDK 2.0 offering consolidated functionality for both product and marketing analytics use cases.
+
+## Keywords
+- Browser SDK 2.0
+- Marketing Analytics migration
+- defaultTracking configuration
+- attribution tracking
+- pageViews tracking
+- identityStorage
+- cookieOptions
+- plugin interface
+- user-agent enrichment
+- web attribution

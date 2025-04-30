@@ -1,0 +1,14 @@
+# Summary
+Root Cause Analysis (RCA) is an Amplitude feature for Growth and Enterprise plans that helps identify why anomalies occur in Event Segmentation charts by analyzing event properties, comparing them to baselines, and providing contextual information like holidays and product releases to explain unusual data patterns.
+
+# Keywords
+- anomaly detection
+- event property analysis
+- statistical significance
+- data point investigation
+- Microscope tool
+- batch property scanning
+- holiday correlation
+- Growth/Enterprise feature
+- time-series comparison
+- property ranking algorithm

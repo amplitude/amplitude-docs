@@ -1,0 +1,14 @@
+## Summary
+This documentation page explains how to build charts in Amplitude by adding events to the Event Module, using event properties, and applying conditions to refine analysis. It details how to search for events using wildcards and how to use "Filter by" and "Group by" options to segment data based on event or user properties.
+
+## Keywords
+- Amplitude chart construction
+- Event Module
+- Event properties
+- Filter by conditions
+- Group by segmentation
+- Wildcard search
+- Default Amplitude events
+- Non-active events
+- Chart analysis modules
+- Event segmentation

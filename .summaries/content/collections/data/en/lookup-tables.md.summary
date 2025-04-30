@@ -1,0 +1,16 @@
+# Summary
+Lookup Tables in Amplitude allow users to enrich event and user properties by mapping ingested property values to additional data from imported CSV files (up to 100MB or 1M rows), enabling property enrichment, bulk value changes, and improved filtering capabilities for Growth and Enterprise plan users.
+
+# Keywords
+- property enrichment
+- CSV data mapping
+- case-sensitive matching
+- SKU to product name conversion
+- language code translation
+- regional filtering
+- 100MB file limit
+- 1 million row limit
+- Growth plan
+- Enterprise plan
+- exact matching
+- bulk property value changes

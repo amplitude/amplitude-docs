@@ -1,0 +1,12 @@
+## Summary
+This YAML configuration defines a "Guides and Surveys" collection with specific routing, mounting, and display settings, including a custom URL structure that incorporates section and slug parameters, and specialized date-based publishing behavior.
+
+## Keywords
+- collection configuration
+- guides_and_surveys
+- custom routing
+- date_behavior
+- mount point
+- preview_targets
+- structure settings
+- propagation control

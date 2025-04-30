@@ -1,0 +1,11 @@
+## Summary
+This documentation page serves as an index for Analytics APIs, displaying a table with links to individual API endpoints and their descriptions, generated dynamically using a collection tag that iterates through available API documentation.
+
+## Keywords
+- Analytics APIs
+- API index
+- collection:api tag
+- documentation table
+- API endpoints
+- dynamic content generation
+- API reference

@@ -1,0 +1,85 @@
+# Amplitude Event Segmentation
+
+## Product Overview
+
+Amplitude Event Segmentation is an analytics tool that enables users to analyze user behavior by tracking and visualizing event data. The product allows for detailed analysis of how users interact with applications or websites by breaking down events by various properties and segments. Event Segmentation provides multiple visualization options, measurement types, and advanced analytical features to help users understand patterns in their data and derive actionable insights.
+
+Key features include:
+- Multiple measurement options (Uniques, Event Totals, Active %, etc.)
+- Various chart visualization types (line, stacked area, bar charts)
+- Custom formulas for complex analyses
+- In-line custom event creation
+- Rolling averages and windows
+- Period-over-period comparisons
+- Real-time segmentation
+
+## Product Relationships and Features
+
+### Core Components
+
+1. **Event Selection and Filtering**
+   - Users can select specific events to analyze
+   - Events can be filtered by properties
+   - In-line custom events allow combining multiple events with OR logic
+
+2. **Measurement Options**
+   - Uniques: Counts unique users who performed an event
+   - Event Totals: Counts total occurrences of an event
+   - Active %: Percentage of active users who performed an event
+   - Average: Average number of times users performed an event
+   - Frequency: Distribution of event frequency across users
+   - Properties: Measurements based on event property values
+   - Formula: Custom calculations using events and mathematical operations
+
+3. **Visualization Types**
+   - Line charts
+   - Stacked area charts
+   - Bar charts (vertical and horizontal)
+   - Stacked bar charts
+   - Group-by visualizations for complex analyses
+   - Absolute totals vs. relative percentages
+
+4. **Advanced Analysis Features**
+   - Rolling Averages: Smooths cyclical data using unweighted means
+   - Rolling Windows: Aggregates data over specified periods
+   - Cumulative Sum: Displays running totals over time
+   - Real-time Segmentation: Analyzes data as it comes in
+   - Period-over-period comparison: Compares current data to historical periods
+
+5. **Custom Formulas**
+   - Metrics formulas: Basic arithmetic operations between events
+   - Aggregation formulas: UNIQUES, TOTALS, PROPSUM
+   - Function formulas: CUMSUM, ROLLAVG
+
+## Key Nomenclature and Definitions
+
+- **Event**: A specific user action or occurrence tracked in the system
+- **In-line Custom Events**: Temporary combinations of multiple events created within charts
+- **Segment**: A defined subset of users based on properties or behaviors
+- **Group-by**: A method to split analysis by specific user or event properties
+- **Breakdown Table**: Displays numerical data corresponding to chart visualizations
+- **Microscope Feature**: Allows drilling down into specific data points
+- **Rolling Average**: Statistical technique that smooths data by averaging over a moving time window
+- **Cumulative Sum (CUMSUM)**: Running total that accumulates values over time
+- **Measured As Module**: Component for selecting how event data is calculated and displayed
+- **Y-axis Configuration**: Settings to adjust how data is scaled and displayed vertically
+- **Dual Y-axis**: Feature allowing two different scales on the same chart
+
+## Product Ecosystem Integration
+
+Event Segmentation appears to be a core analytical tool within the broader Amplitude analytics platform. It integrates with:
+
+1. **Funnel Analysis**: In-line custom events created in Event Segmentation can be used in funnel charts
+2. **Custom Events**: Temporary in-line events can be saved as permanent custom events for reuse
+3. **Data Tables**: Custom formulas can be applied in both Event Segmentation and Data Table charts
+
+## API and Technical Implementation
+
+The documentation doesn't explicitly mention API endpoints or command line invocations. However, it does reference:
+
+- The ability to save custom events created in-line for future use
+- Formula syntax for creating custom calculations (e.g., A+B, A/B, etc.)
+- Letter designations (A, B, C) used to reference events in formulas
+- Beta feature status for in-line custom events
+
+The product appears to be primarily accessed through a web interface where users can build, customize, and save analytical charts through a point-and-click interface with options for more advanced customization through formulas and configuration settings.

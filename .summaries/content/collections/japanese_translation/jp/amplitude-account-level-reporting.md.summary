@@ -1,0 +1,17 @@
+## Summary
+This documentation explains Amplitude's Account-Level Reporting feature, which allows analysis at the group level (accounts, teams, etc.) rather than just individual users. It details how to set up group properties, search for accounts and users, and configure this functionality with integrations like Segment or Salesforce.
+
+## Keywords
+- Account-Level Reporting
+- Group-level analysis
+- Event-level groups
+- User-level groups
+- Group properties
+- Behavioral cohorts
+- Microscope functionality
+- Dynamic group properties
+- Account lookup
+- B2B analytics
+- Conversion funnels
+- Group segmentation
+- Salesforce integration

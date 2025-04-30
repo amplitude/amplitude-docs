@@ -1,0 +1,16 @@
+## Summary
+This documentation page explains how to set up and manage synchronizations from Amplitude to third-party destinations, covering both on-demand and automated sync types for cohorts, recommendations, user properties, and computed data. It provides step-by-step instructions for creating new syncs and viewing sync history details.
+
+## Keywords
+- third-party destinations
+- on-demand synchronization
+- automated synchronization
+- cohort sync
+- recommendation sync
+- user property sync
+- computed sync
+- sync creation workflow
+- sync history
+- sync error troubleshooting
+- destination integration
+- audience synchronization

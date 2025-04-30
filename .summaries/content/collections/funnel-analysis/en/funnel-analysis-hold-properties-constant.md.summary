@@ -1,0 +1,12 @@
+# Summary
+This documentation explains how to configure Funnel Analysis charts to count unique user and property pairs rather than just unique users, enabling tracking of multiple conversions by the same user with different property values (like Item_ID) or creating session-based funnels using [Amplitude]Session ID.
+
+# Keywords
+- hold properties constant
+- funnel analysis
+- unique user and property pairs
+- session-based funnels
+- [Amplitude]Session ID
+- multiple conversions tracking
+- event property instrumentation
+- funnel conversion counting

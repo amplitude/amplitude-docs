@@ -1,0 +1,62 @@
+# Statamic Admin Panel
+
+## Overview
+
+Statamic is a content management system (CMS) with a comprehensive admin panel that provides tools for website management, user authentication, and subscription services. The admin panel offers account management capabilities, billing and usage monitoring, and advanced authentication options including Single Sign-On (SSO).
+
+## Key Features and Concepts
+
+1. **Account Management** - A central hub for managing user accounts and related settings
+2. **Billing & Usage Monitoring** - Tools to track subscription status, payment methods, and site usage metrics
+3. **Single Sign-On (SSO)** - Enterprise-level authentication options supporting multiple identity providers
+
+## Product Relationships and Structure
+
+The Statamic admin panel is organized into distinct functional areas:
+
+- **Account Management** serves as a navigation hub connecting to various account-related features
+- **Billing & Use** section provides subscription management tools and usage metrics
+- **Single Sign-On** offers enterprise authentication options that integrate with the user management system
+
+These components work together to provide a complete administrative experience for Statamic site owners and administrators.
+
+## Key Nomenclature and Definitions
+
+- **Admin Blueprint**: Configuration structure that defines the layout and fields in the admin interface
+- **Landing Page Template**: A specific template type used for section introduction pages
+- **Subscription Status**: The current state of a user's Statamic subscription
+- **Identity Providers**: External services that authenticate users for SSO implementation
+- **User Provisioning**: The process of creating and configuring user accounts during authentication
+- **Role Mapping**: Assigning appropriate permissions to users based on attributes from identity providers
+
+## Product Ecosystem Integration
+
+Statamic's admin panel appears to be part of a larger CMS ecosystem:
+
+1. The account management system connects to subscription and billing services, suggesting a commercial product model
+2. SSO integration indicates enterprise-level deployment capabilities
+3. The documentation structure suggests a modular approach to the product, with distinct functional areas
+
+The admin panel likely serves as the central control point for managing Statamic websites, with connections to content management, user authentication, and commercial services.
+
+## Technical Implementation Details
+
+### Single Sign-On (SSO)
+
+The SSO implementation supports multiple authentication protocols:
+- SAML (Security Assertion Markup Language)
+- OIDC (OpenID Connect)
+- OAuth
+- Google authentication
+
+SSO configuration includes authentication flows, user provisioning, and role mapping to ensure proper access control.
+
+### Billing Portal
+
+The billing section provides interfaces for:
+- Viewing subscription details
+- Updating payment methods
+- Managing team members
+- Monitoring site usage metrics
+
+These features are accessible through the "Billing & Use" section of the Statamic admin panel.

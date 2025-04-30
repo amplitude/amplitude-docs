@@ -1,0 +1,108 @@
+# Amplitude Product Overview
+
+Amplitude is a comprehensive product analytics platform that helps businesses understand user behavior, optimize product experiences, and drive growth through data-driven insights. The platform consists of several integrated products that work together to provide a complete analytics and experimentation solution.
+
+## Key Features and Concepts
+
+### Analytics Core
+
+Amplitude Analytics is the foundation of the platform, allowing users to track, visualize, and analyze user behavior across digital products. Key features include:
+
+- **Event Segmentation**: Analyze specific user actions with detailed filtering and segmentation capabilities
+- **Funnel Analysis**: Track user progression through defined conversion paths and identify drop-off points
+- **Retention Analysis**: Measure how users return to products over time with flexible time intervals
+- **Pathfinder**: Visualize the paths users take through products to understand common journeys
+- **Journeys**: Discover why users convert or drop off by analyzing paths between funnel steps
+- **Lifecycle**: Track user base growth by categorizing users as new, current, returning, or dormant
+- **Compass**: Identify behaviors that predict retention by analyzing correlations between actions and long-term engagement
+- **Impact Analysis**: Track how initial feature engagement affects subsequent user behavior
+
+### Amplitude Data
+
+Amplitude Data provides centralized tracking plan management and data governance:
+
+- **Tracking Plans**: Define, validate, and enforce consistent event collection across teams and platforms
+- **Schema Management**: Control data types, descriptions, and validation rules for events and properties
+- **Branches and Environments**: Create parallel development workflows with separate environments
+- **Property Groups**: Define reusable property sets that can be applied across multiple events
+- **Derived Properties**: Create new properties retroactively from existing ones using transformations
+- **Data Filtering**: Block or drop invalid data through various filtering mechanisms
+
+### Amplitude Experiment
+
+A complete A/B testing and feature flagging platform:
+
+- **Experiment Design**: Create hypotheses, define metrics, and set up variants
+- **Feature Flags**: Control feature rollouts with targeted user segments
+- **Statistical Analysis**: Analyze results with robust statistical methods including sequential testing
+- **Sticky Buckets**: Ensure users see consistent experiences even when experiment parameters change
+- **Mutual Exclusion Groups**: Prevent users from participating in multiple experiments simultaneously
+
+### Amplitude Activation
+
+A self-service personalization platform:
+
+- **Behavioral Cohorts**: Create user segments based on actions and properties
+- **Predictions**: Use AI to forecast user behavior and create predictive cohorts
+- **Recommendations**: Generate personalized recommendations for users
+- **Third-party Synchronization**: Send audience data to external platforms
+
+## Key Nomenclature and Definitions
+
+- **Events**: User actions tracked in Amplitude (e.g., "Page Viewed", "Button Clicked")
+- **Event Properties**: Attributes of specific events (e.g., "page_name", "button_type")
+- **User Properties**: Attributes of users that persist across sessions (e.g., "country", "plan_type")
+- **Amplitude ID**: Unique identifier assigned to each user by Amplitude
+- **Device ID**: Identifier for a specific device or browser
+- **User ID**: Custom identifier assigned by the product to identify logged-in users
+- **Monthly Tracking Users (MTU)**: Unique users who trigger events within a calendar month (used for billing)
+- **Cohorts**: Groups of users who share common behaviors or attributes
+- **Spaces**: Organizational units for storing and sharing analytics content
+- **Projects**: Containers for organizing analytics by product or app section
+
+## Product Ecosystem Integration
+
+Amplitude's products are designed to work together in an integrated workflow:
+
+1. **Data Collection**: Implement tracking using SDKs, APIs, or integrations
+2. **Data Management**: Define and validate tracking plans in Amplitude Data
+3. **Analysis**: Explore user behavior in Amplitude Analytics
+4. **Experimentation**: Test hypotheses with Amplitude Experiment
+5. **Personalization**: Deploy targeted experiences with Amplitude Activation
+
+The platform also integrates with numerous third-party tools through:
+
+- **Data Sources**: Import data from platforms like Segment, Rudderstack, and custom sources
+- **Data Destinations**: Export data to tools like Snowflake, BigQuery, and marketing platforms
+- **Integrations**: Connect with tools like Slack, Jira, Miro, and Atlassian products
+
+## API Endpoints and Implementation
+
+### Key API Endpoints
+
+- **HTTP API**: `/2/httpapi` for sending events
+- **Identify API**: `/identify` for updating user properties
+- **Export API**: For exporting raw event data
+- **Cohort API**: For programmatically managing cohorts
+- **User Privacy API**: For handling data deletion requests
+- **SCIM API**: For user provisioning (Enterprise plan)
+- **Profile API**: For accessing user profiles and recommendations
+
+### SDK Implementation
+
+Amplitude provides SDKs for various platforms:
+
+- JavaScript/TypeScript for web applications
+- iOS and Android for mobile applications
+- Server-side SDKs for backend implementations
+- Ampli wrapper for type-safe tracking based on tracking plans
+
+### Implementation Best Practices
+
+- Separate production and development environments with different API keys
+- Implement proper user identification across platforms
+- Follow consistent naming conventions for events and properties
+- Use property groups for standardizing common properties
+- Validate implementation with instrumentation explorers and debuggers
+
+Amplitude's platform is designed to scale from small startups to enterprise organizations, with different plan tiers (Starter/Scholarship, Growth, Enterprise) offering varying levels of features, data volume limits, and support options.

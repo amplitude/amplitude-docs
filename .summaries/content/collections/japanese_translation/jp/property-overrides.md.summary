@@ -1,0 +1,13 @@
+## Summary
+This documentation explains property overrides in Amplitude Data, which allow customizing properties for specific events or property groups without affecting the original version. It provides step-by-step instructions for overriding properties in both events and property groups, noting that overrides apply only to the specific event or to all events using a modified property group.
+
+## Keywords
+- property overrides
+- Amplitude Data
+- event properties
+- property groups
+- override customization
+- property details panel
+- selective property modification
+- property inheritance
+- revert overrides

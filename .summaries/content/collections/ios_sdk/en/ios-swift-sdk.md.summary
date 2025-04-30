@@ -1,0 +1,20 @@
+## Summary
+The iOS Swift SDK documentation provides comprehensive guidance on implementing Amplitude Analytics in iOS applications, covering installation methods, initialization, event tracking, user identification, session management, and advanced features like autocapture, plugins, and offline mode.
+
+## Keywords
+- AmplitudeSwift
+- iOS SDK
+- Swift
+- Objective-C
+- event tracking
+- identify
+- autocapture
+- session tracking
+- user groups
+- revenue tracking
+- plugins
+- offline mode
+- element interactions
+- network tracking
+- device ID
+- privacy manifest

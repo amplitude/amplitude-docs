@@ -1,0 +1,96 @@
+# Amplitude Unity SDK
+
+## Product Overview
+
+The Amplitude Unity SDK is a specialized analytics plugin that integrates Amplitude's native iOS and Android SDKs into Unity projects. Designed for mobile applications, this SDK enables developers to track user behavior, manage user properties, monitor revenue, and handle user sessions. The SDK requires Unity version 2019.3.11 or higher and is exclusively for mobile platforms (iOS and Android), with no support for desktop applications or the Unity Editor environment.
+
+## Key Features and Capabilities
+
+- **Event Tracking**: Capture user interactions and custom events within mobile applications
+- **User Property Management**: Set, unset, and track user attributes for segmentation
+- **Revenue Tracking**: Monitor in-app purchases and revenue-generating events
+- **Session Handling**: Track user sessions with configurable timeout periods
+- **Batch Event Uploading**: Efficiently upload multiple events in batches
+- **Dynamic Configuration**: Customize SDK behavior through runtime configuration
+- **Privacy Compliance**: Support for IDFA collection and COPPA compliance
+- **EU Data Residency**: Option to store data in EU data centers
+
+## Product Relationships and Architecture
+
+The Unity SDK functions as a bridge layer between Unity-built mobile applications and Amplitude's analytics backend. It wraps the native iOS and Android SDKs to provide a unified interface for Unity developers. The SDK:
+
+1. Collects data from Unity mobile applications
+2. Formats and processes this data according to Amplitude's requirements
+3. Transmits the data to Amplitude's analytics platform
+4. Enables the data to be analyzed and visualized in Amplitude's dashboard
+
+The SDK is specifically designed to work within the mobile application context and integrates with Amplitude's broader analytics ecosystem while providing Unity-specific implementation patterns.
+
+## Key Nomenclature and Definitions
+
+- **Event**: A discrete user action or occurrence that can be tracked (e.g., button clicks, screen views)
+- **User Properties**: Persistent attributes associated with a user that remain across sessions
+- **Instance**: A configured instance of the Amplitude SDK, accessed via `getInstance()`
+- **Session**: A period of user engagement with the app, defined by a configurable timeout
+- **IDFA**: Identifier for Advertisers, used for tracking on iOS devices
+- **COPPA**: Children's Online Privacy Protection Act - compliance settings for applications targeting children
+- **EU Data Residency**: Configuration option to store data in European Union data centers
+- **Server Zone**: Setting that determines where data is stored (US or EU)
+- **API Key**: Unique identifier required to initialize the SDK and associate data with a specific Amplitude project
+
+## Integration with Amplitude Ecosystem
+
+The Unity SDK is part of Amplitude's broader cross-platform SDK strategy. It enables data from Unity-built mobile applications to flow into Amplitude's analytics platform where it can be:
+
+- Combined with data from other platforms and sources
+- Analyzed using Amplitude's analytics tools
+- Used for cohort analysis, funnel analysis, and user segmentation
+- Leveraged for product decisions and optimizations
+
+The SDK specifically targets the mobile deployment environment, focusing on iOS and Android platforms while maintaining a Unity-friendly developer experience.
+
+## API Usage and Implementation
+
+### Installation Methods
+
+```
+// Via Unity Package Manager (UPM)
+https://github.com/amplitude/unity-plugin.git
+
+// Or manual download from GitHub repository
+```
+
+### Core API Methods
+
+```csharp
+// Initialization
+Amplitude amplitude = Amplitude.getInstance();
+amplitude.init("YOUR_API_KEY");
+
+// Event Tracking
+amplitude.logEvent("Button Clicked");
+
+// Event with Properties
+Dictionary<string, object> eventProperties = new Dictionary<string, object>();
+eventProperties.Add("button_type", "sign_up");
+amplitude.logEvent("Button Clicked", eventProperties);
+
+// User Identification
+amplitude.setUserId("user@example.com");
+
+// User Properties
+Dictionary<string, object> userProperties = new Dictionary<string, object>();
+userProperties.Add("gender", "female");
+userProperties.Add("age", 25);
+amplitude.setUserProperties(userProperties);
+
+// Revenue Tracking
+amplitude.logRevenue("product_id", 1, 3.99);
+
+// Configuration Options
+amplitude.setSessionTimeoutMillis(30 * 60 * 1000); // 30 minutes
+amplitude.enableCoppaControl();
+amplitude.setServerZone(AmplitudeServerZone.EU);
+```
+
+The SDK is specifically designed for production mobile applications and does not function in the Unity Editor environment, focusing exclusively on providing analytics capabilities for iOS and Android deployments.

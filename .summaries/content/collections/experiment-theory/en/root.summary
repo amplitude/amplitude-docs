@@ -1,0 +1,62 @@
+# Amplitude Experiment: Statistical Analysis and Experiment Design
+
+## Product Overview
+
+Amplitude Experiment is a platform for designing, running, and analyzing controlled experiments (A/B tests and Multi-Armed Bandit experiments) to make data-driven product decisions. The platform provides statistical tools and methodologies to help users determine the impact of product changes on key metrics, with a focus on statistical validity and proper experimental design.
+
+## Key Features and Concepts
+
+### Experiment Analysis Tools
+- **T-test Analysis**: Amplitude Experiment uses Welch's T-test to analyze experiment results and determine statistical significance between variants.
+- **Confidence Intervals**: The platform provides confidence intervals to indicate the range of likely true values for metrics.
+- **Duration Estimator**: Helps users understand how long an experiment needs to run to reach statistical significance.
+- **Cumulative Exposure Graph**: Visualizes the accumulation of sample size over time.
+
+### Experiment Design Parameters
+- **Minimum Detectable Effect (MDE)**: A critical parameter that represents the smallest meaningful change in a metric that an experiment aims to detect.
+- **Sample Size Target**: Calculated based on the MDE, statistical power, and significance level to ensure experiments have adequate statistical power.
+- **One-sided vs. Two-sided Tests**: Configuration options for hypothesis testing based on experiment goals.
+
+## Relationships Between Features
+
+1. **MDE and Sample Size**: These have an inverse relationship - a smaller MDE requires a larger sample size to detect with statistical confidence.
+
+2. **Experiment Type and Analysis Method**:
+   - A/B Tests: Primarily analyzed using T-tests with fixed sample sizes
+   - Multi-Armed Bandit: Uses adaptive allocation methods with different statistical considerations
+
+3. **Metrics Hierarchy**:
+   - Primary Metrics: The main success metrics for an experiment
+   - Guardrail Metrics: Secondary metrics that ensure changes don't negatively impact critical aspects of the product
+
+## Key Nomenclature and Definitions
+
+- **Welch's T-test**: A statistical test used to determine if there is a significant difference between the means of two groups, accounting for potentially different variances.
+- **Minimum Detectable Effect (MDE)**: The smallest change in a metric that an experiment is designed to reliably detect.
+- **Statistical Significance**: The likelihood that an observed difference between variants is not due to random chance.
+- **Central Limit Theorem**: A statistical principle that allows for normal distribution assumptions when sample sizes are sufficiently large.
+- **Peeking Problem**: The statistical issue that arises when analyzing results before reaching the predetermined sample size.
+- **Control Mean**: The baseline metric value for the control group against which variations are compared.
+
+## Integration in Product Ecosystem
+
+Amplitude Experiment appears to be part of a broader Amplitude analytics ecosystem, where experiment results can likely be connected to user behavior analytics and product metrics. The experiment platform seems designed to work alongside other Amplitude tools for comprehensive product analytics and decision-making.
+
+## Statistical Assumptions and Methodology
+
+The platform relies on several statistical assumptions:
+1. Samples are independent
+2. Data follows a normal distribution (or sample size is large enough for the Central Limit Theorem to apply)
+3. Variances may be unequal (hence the use of Welch's T-test)
+
+Users are advised to:
+- Avoid analyzing results before reaching adequate sample size
+- Consider the trade-offs between experiment duration and sensitivity (MDE)
+- Choose appropriate test configurations based on their hypothesis
+
+## Risk Considerations
+
+The documentation emphasizes several risk factors in experiment design:
+- Setting MDE too low can lead to impractically long experiments
+- Setting MDE too high might miss meaningful but smaller effects
+- Analyzing results too early (before reaching sample size targets) can lead to invalid conclusions

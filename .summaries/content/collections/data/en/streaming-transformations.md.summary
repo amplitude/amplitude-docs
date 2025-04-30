@@ -1,0 +1,18 @@
+# Summary
+Amplitude's streaming transformations feature allows users on Plus, Growth, or Enterprise plans to stream pre-existing transformed events and properties (Custom Events, Derived Properties, Transformed Events, and Transformed Properties) to downstream destinations through a configurable sync process with a target p95 latency of 60s.
+
+# Keywords
+- streaming transformations
+- custom events
+- derived properties
+- transformed events
+- transformed properties
+- event streaming configuration
+- streaming destinations
+- sync filters
+- p95 latency
+- AppsFlyer integration
+- Braze integration
+- event volume limits
+- channel classifiers
+- lookup properties limitations

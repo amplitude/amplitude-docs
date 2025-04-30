@@ -1,0 +1,13 @@
+## Summary
+This documentation page describes the warehouse-native Amplitude integration in Hightouch, which allows users to sync data from their data warehouse to Amplitude without requiring an API key, instead using Amplitude's Data Warehouse Import feature with direct data loading via S3 or GCS.
+
+## Keywords
+- warehouse-native Amplitude
+- data warehouse import
+- S3 bucket
+- GCS bucket
+- direct data loading
+- keyless integration
+- Amplitude integration
+- data sync
+- cloud storage

@@ -1,0 +1,16 @@
+# Summary
+This documentation explains how time calculations affect retention analysis in Amplitude, comparing the default "rolling 24-hour window" method (which starts when a user triggers the starting event) with "strict calendar dates" (which follows calendar days based on project timezone), and details how daily, weekly, and monthly retention is calculated differently under each approach.
+
+# Keywords
+- rolling 24-hour window
+- strict calendar dates
+- daily retention calculation
+- weekly retention calculation
+- monthly retention calculation
+- retention types
+- return on or after
+- return on
+- hourly basis calculation
+- timezone impact
+- new user retention
+- cohort entry date

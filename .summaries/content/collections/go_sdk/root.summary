@@ -1,0 +1,118 @@
+# Amplitude Go SDK and Ampli for Go
+
+## High-Level Overview
+
+The Amplitude Go SDK is an analytics solution for tracking user behavior in Go applications. It consists of two main components: the core Go SDK (`amplitude/analytics-go`) which provides fundamental event tracking functionality, and Ampli for Go, a code-generated library that offers type-safe event tracking based on predefined tracking plans.
+
+Key features include event tracking, user identification, user properties management, user grouping, revenue tracking, batch processing, and flush control. The SDK supports both simple implementation through the core library and structured, type-safe implementation through the Ampli code generation approach.
+
+## Product and Feature Relationships
+
+### Core Go SDK (`amplitude/analytics-go`)
+- Serves as the foundation for all analytics functionality
+- Provides event tracking, user identification, and property management
+- Offers configuration options for customizing behavior (flush intervals, queue sizes)
+- Includes a plugin system for extending functionality
+- Can be used independently for flexible, manual implementation
+
+### Ampli for Go
+- Built on top of the core Go SDK
+- Generates code based on a tracking plan defined in Amplitude Data
+- Provides type-safe methods for tracking events
+- Ensures analytics implementation matches the tracking plan
+- Simplifies implementation with strongly typed event builders
+- Depends on the core SDK but adds structure and type safety
+
+The relationship is hierarchical - Ampli for Go uses the core SDK under the hood but provides a more structured interface for developers. While the core SDK offers flexibility, Ampli ensures consistency with a predefined tracking plan.
+
+## Key Nomenclature and Definitions
+
+- **Event**: A user action or occurrence tracked in the system (e.g., page view, button click)
+- **Identify**: Operations that associate properties with a specific user
+- **User Properties**: Attributes associated with a user (e.g., email, name, preferences)
+- **User Groups**: Collections of users that can be analyzed together
+- **GroupIdentify**: Operations that associate properties with a group
+- **Tracking Plan**: A schema that defines events, properties, and their types
+- **Flush**: The process of sending batched events to Amplitude servers
+- **FlushQueueSize**: Configuration parameter that determines when events are automatically sent
+- **Plugins**: Extensions that can modify events or send them to additional destinations
+  - **Enrichment Plugins**: Add or modify data in events
+  - **Destination Plugins**: Send events to additional destinations beyond Amplitude
+
+## Product Ecosystem Integration
+
+The Go SDK integrates with the broader Amplitude ecosystem in several ways:
+
+1. **Amplitude Analytics Backend**: Events tracked through the SDK are sent to Amplitude's analytics platform for processing and analysis.
+
+2. **Amplitude Data**: The tracking plan used by Ampli for Go is defined in Amplitude Data, ensuring consistency between implementation and analytics expectations.
+
+3. **Cross-Platform Compatibility**: The Go SDK follows similar patterns to other Amplitude SDKs, allowing for consistent implementation across different platforms.
+
+4. **Plugin System**: The SDK can be extended to integrate with other systems through custom plugins.
+
+## API and Implementation Details
+
+### Go SDK Installation and Initialization
+```go
+import "github.com/amplitude/analytics-go/amplitude"
+
+client := amplitude.NewClient(amplitude.NewConfig("API_KEY"))
+```
+
+### Configuration Options
+```go
+config := amplitude.NewConfig("API_KEY")
+config.FlushQueueSize = 200
+config.FlushInterval = 10 * time.Second
+client := amplitude.NewClient(config)
+```
+
+### Event Tracking
+```go
+client.Track(amplitude.Event{
+    EventType: "Button Clicked",
+    EventProperties: map[string]interface{}{
+        "buttonColor": "blue",
+    },
+    UserID: "user-id",
+})
+```
+
+### User Identification
+```go
+client.Identify(amplitude.Identify{
+    UserID: "user-id",
+    UserProperties: map[string]interface{}{
+        "$set": map[string]interface{}{
+            "email": "user@example.com",
+        },
+    },
+})
+```
+
+### Ampli for Go Usage
+```go
+// Initialize Ampli
+ampli.Instance.Load(ampli.LoadOptions{
+    Client: amplitude.NewClient(amplitude.NewConfig("API_KEY")),
+})
+
+// Track a strongly typed event
+ampli.Instance.Track("user-id", ampli.SongPlayed{
+    SongId: "song-1",
+    Title: "Song Title",
+})
+
+// Flush events
+ampli.Instance.Flush()
+```
+
+### Ampli CLI Commands
+```bash
+# Pull tracking plan from Amplitude
+ampli pull
+
+# Check implementation status
+ampli status
+```

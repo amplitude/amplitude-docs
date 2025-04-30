@@ -1,0 +1,15 @@
+# Summary
+This documentation page explains how to integrate Amplitude Data validation into CI workflows, detailing the process of creating API tokens, configuring environment variables, and running the Ampli CLI in various CI environments using Docker containers to verify analytics implementations against tracking plans.
+
+# Keywords
+- ampli status
+- CI integration
+- API token
+- AMPLI_TOKEN
+- Docker containers
+- amplitudeinc/ampli
+- amplitudeinc/ampli-all
+- GitHub Actions
+- Bitbucket Pipelines
+- tracking plan validation
+- analytics verification

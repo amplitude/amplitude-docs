@@ -1,0 +1,16 @@
+# Summary
+This documentation explains the differences between user properties (attributes of individual users like device type or location) and event properties (attributes of specific events at the time they occur) in Amplitude, detailing how they're updated, applied to events, and managed over time, including automatic deletion of user properties after 14 months of inactivity.
+
+# Keywords
+- user properties
+- event properties
+- property updates
+- property persistence
+- Identify API
+- property overlap
+- default properties
+- custom properties
+- property hiding
+- property deletion
+- property application methods
+- historical property values

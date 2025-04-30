@@ -1,0 +1,3 @@
+**Summary:** This documentation page defines the structure and configuration for the Unity SDK section, specifying its routing (/sdks/analytics/unity/{slug}), template settings, and navigation properties within the analytics_sdks section.
+
+**Keywords:** Unity SDK, analytics_sdks, mount point, route configuration, preview targets, sort direction, date behavior, propagation settings

@@ -1,0 +1,14 @@
+**Summary:**
+This documentation page explains how to instrument Amplitude analytics with Highlight, including setup instructions for both client-side (JavaScript/React) and server-side (Node.js) implementations, with code examples showing how to integrate Highlight's tracking with Amplitude events.
+
+**Keywords:**
+- Amplitude integration
+- analytics instrumentation
+- client-side tracking
+- server-side tracking
+- highlight.track
+- amplitude.track
+- event forwarding
+- JavaScript SDK
+- Node.js SDK
+- event correlation

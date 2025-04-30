@@ -1,0 +1,14 @@
+# Summary
+This documentation page explains how to configure an Amplitude Experiment by creating a deployment (client-side or server-side) associated with an Analytics project and installing the appropriate SDK, with details on how the User context is used for variant assignment and targeting.
+
+# Keywords
+- Amplitude Experiment
+- deployment configuration
+- client-side vs server-side deployments
+- deployment keys
+- Experiment SDK installation
+- user context
+- variant assignment
+- targeting rules
+- user identifiers
+- Analytics project integration

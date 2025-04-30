@@ -1,0 +1,17 @@
+## Summary
+This documentation page explains User Session Charts in Amplitude, which analyze user engagement patterns based on session metrics like session length distribution, average session duration, and sessions per user. It details how to build these charts, interpret results, and understand how Amplitude tracks sessions (server-side, mobile client-side, and web client-side).
+
+## Keywords
+- User Session Charts
+- session-based metrics
+- engagement frequency
+- session length distribution
+- average session duration
+- sessions per user
+- events per session
+- session tracking methods
+- session ID
+- client-side sessions
+- server-side sessions
+- session filtering
+- session measurement options

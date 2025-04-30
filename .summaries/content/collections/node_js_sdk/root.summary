@@ -1,0 +1,158 @@
+# Amplitude Node.js SDK
+
+## Overview
+
+The Amplitude Node.js SDK is a server-side analytics tracking solution for monitoring user behavior and events in Node.js applications. Available in two versions: the modern `@amplitude/analytics-node` and the legacy maintenance version `@amplitude/node`, the SDK enables comprehensive event tracking with features for batching, retry handling, user identification, and group analytics.
+
+The SDK provides robust capabilities including:
+- Event tracking with custom properties
+- User identification and property management
+- Group-based analytics
+- Revenue tracking
+- Configurable event batching and flush control
+- Extensible plugin architecture
+- EU data residency compliance
+- Full TypeScript support with type definitions
+
+A key differentiator is the Ampli Wrapper, which generates strongly-typed APIs from Amplitude Data tracking plans, providing type safety, autocompletion, and schema validation for both JavaScript and TypeScript applications.
+
+## Product Relationships and Features
+
+### Core Components
+
+1. **Modern SDK (`@amplitude/analytics-node`)**
+   - Primary implementation for server-side tracking
+   - Built-in event batching with configurable parameters
+   - Robust retry handling for failed network requests
+   - Plugin-based architecture for extensibility
+
+2. **Legacy SDK (`@amplitude/node`)**
+   - Maintenance version being phased out
+   - Uses middleware pattern instead of plugins
+   - Different API structure from the modern SDK
+
+3. **Ampli Wrapper**
+   - Generated from Amplitude Data tracking plans
+   - Provides type-safe event tracking APIs
+   - Enforces schema validation at development time
+   - Available for both JavaScript and TypeScript
+
+### Feature Details
+
+#### Event Tracking
+The SDK captures user actions through the `track()` method (or `logEvent()` in the legacy SDK), supporting custom event properties and automatic batching with configurable thresholds for batch size and upload frequency.
+
+#### User Management
+User identification is handled through the `identify()` method, with support for various user property operations (set, setOnce, add, append, prepend). The SDK supports both anonymous tracking via device IDs and identified user tracking with user IDs.
+
+#### Group Analytics
+The `setGroup()` method assigns users to specific groups, while `groupIdentify()` manages group-level properties, enabling analysis of user behavior within organizational contexts.
+
+#### Revenue Tracking
+Revenue events are tracked using the `revenue()` method, supporting product identifiers, quantities, pricing, and revenue categorization.
+
+#### Customization
+The modern SDK uses a plugin architecture for extending functionality, with built-in plugins for event enrichment and destination control. The legacy SDK uses middleware for similar purposes.
+
+#### Data Handling
+Events are buffered with configurable limits, with both automatic and manual flushing options. The SDK also provides opt-out functionality for privacy compliance.
+
+## Key Nomenclature
+
+- **Event**: A discrete user action tracked in the application
+- **User Properties**: Persistent attributes associated with a specific user
+- **Device ID**: Anonymous user identifier used before formal identification
+- **User ID**: Unique identifier for known users
+- **Group**: Collection of users analyzed as a cohort (e.g., organization, team)
+- **Tracking Plan**: Schema defining the structure of events and properties
+- **Ampli Wrapper**: Code-generated SDK providing type-safe event tracking
+- **Plugin**: Modular component for event processing in the SDK pipeline
+- **Middleware**: Legacy term for plugins in the maintenance SDK
+- **Flush**: Process of sending batched events to Amplitude servers
+- **Batch Size**: Event threshold before automatic transmission
+
+## Product Ecosystem Integration
+
+The Node.js SDK integrates with Amplitude's broader analytics ecosystem:
+
+1. **Amplitude Analytics Platform**
+   - Events appear in Analytics dashboards for analysis
+   - Supports comprehensive user and event property analysis
+   - Works with Amplitude's cohort and segmentation features
+
+2. **Amplitude Data**
+   - Ampli Wrapper generated from Data tracking plans
+   - Ensures consistency between planned and implemented tracking
+
+3. **Cross-Platform Capabilities**
+   - Complements client-side SDKs for full-stack tracking
+   - Server and client events can be correlated by user
+
+4. **Backend Integration**
+   - Designed for server applications, microservices, and APIs
+   - Integrates with other backend systems for comprehensive analytics
+
+## API Methods and Commands
+
+### Modern SDK (`@amplitude/analytics-node`)
+```javascript
+// Initialization
+const amplitude = new Amplitude('API_KEY', {
+  serverUrl: 'https://api.amplitude.com',
+  flushQueueSize: 200,
+  flushIntervalMillis: 10000
+});
+
+// Event tracking
+amplitude.track({
+  event_type: 'Button Clicked',
+  user_id: 'user@example.com',
+  event_properties: { buttonColor: 'blue' }
+});
+
+// User identification
+amplitude.identify({
+  user_id: 'user@example.com',
+  user_properties: {
+    $set: { name: 'John Doe' },
+    $add: { visits: 1 }
+  }
+});
+
+// Group assignment
+amplitude.setGroup('orgId', 'org-123');
+
+// Manual flush
+amplitude.flush();
+```
+
+### Ampli Wrapper
+```javascript
+// Initialization
+ampli.load({ client: { apiKey: 'API_KEY' } });
+
+// Strongly-typed event tracking
+ampli.track('Button Clicked', {
+  buttonColor: 'blue'
+});
+
+// User identification
+ampli.identify('user-id', {
+  userProp1: 'value1'
+});
+
+// Group assignment
+ampli.setGroup('orgId', 'org-123');
+
+// Manual flush
+ampli.flush();
+```
+
+### Ampli CLI Commands
+- `ampli pull`: Retrieves latest tracking plan and generates wrapper
+- `ampli status`: Compares local wrapper to remote tracking plan
+
+### HTTP Endpoints
+- Standard API: `https://api.amplitude.com`
+- EU data residency: `https://api.eu.amplitude.com`
+- Uses HTTP V2 API for event ingestion

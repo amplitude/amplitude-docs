@@ -1,0 +1,14 @@
+# Summary
+This documentation page provides technical best practices for instrumenting Amplitude analytics, covering data collection methods (SDKs, APIs), naming conventions, user property operations, session tracking, SDK configuration options, and backfilling considerations for accurate historical data representation.
+
+# Keywords
+- Amplitude instrumentation
+- SDK configuration
+- User property operations (set, setOnce, unset, add, append, prepend)
+- Event naming conventions
+- Session tracking
+- Group types
+- Data backfilling
+- batchEvents
+- eventUploadThreshold
+- User identification (user IDs, device IDs)

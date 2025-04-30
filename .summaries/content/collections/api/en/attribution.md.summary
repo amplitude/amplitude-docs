@@ -1,0 +1,14 @@
+# Summary
+The Attribution API enables sending attribution campaign events (identified by `idfa`, `idfv`, `adid`, or `android_app_set_id`) containing attribution information, with events held for up to 72 hours for user matching before being dropped if no match occurs.
+
+# Keywords
+- attribution campaign events
+- advertising ID matching
+- idfa
+- idfv
+- adid
+- android_app_set_id
+- user_properties
+- 72-hour retention window
+- iOS/Android platform identifiers
+- attribution data matching

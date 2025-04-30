@@ -1,0 +1,12 @@
+## Summary
+This documentation page defines the structure for the "Destination catalog" data collection, including metadata fields like ID, blueprint, title, author, and navigation settings, which is used to organize and display destination integrations in the Segment platform.
+
+## Keywords
+- destination-catalog
+- integration-catalog
+- data collection
+- blueprint
+- metadata
+- navigation settings
+- exclude_from_sitemap
+- template

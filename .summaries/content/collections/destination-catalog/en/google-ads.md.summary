@@ -1,0 +1,13 @@
+# Summary
+This documentation details the Google Ads Event Stream integration with Amplitude, which enables streaming event data to Google Ads for conversion tracking using the Upload Click Conversions API, requiring valid Google Click IDs (gclid) and proper service account configuration with domain-wide delegation for authentication.
+
+# Keywords
+- Google Ads integration
+- Upload Click Conversions API
+- gclid tracking
+- Google Cloud Service Account
+- domain-wide delegation
+- Conversion Action ID
+- offline conversion tracking
+- event streaming
+- conversion attribution

@@ -1,0 +1,14 @@
+# Summary
+Amplitude's Persona Chart clustering transitioned from K-means to Non-negative Matrix Factorization (NMF) to better handle outliers and high-dimensional data, enabling more effective identification of user behavior patterns by projecting data into a more interpretable "behavioral space" and normalizing event counts to reduce outlier influence.
+
+# Keywords
+- Non-negative Matrix Factorization (NMF)
+- K-means clustering
+- Persona Chart
+- Behavioral space
+- Dimension reduction
+- Outlier handling
+- Event normalization
+- Hierarchical clustering
+- User behavior patterns
+- High-dimensional data

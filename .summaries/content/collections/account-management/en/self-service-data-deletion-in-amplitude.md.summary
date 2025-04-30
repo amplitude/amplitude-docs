@@ -1,0 +1,15 @@
+# Summary
+This documentation explains how to use Amplitude's self-service data deletion feature, which allows Growth and Enterprise plan administrators to permanently remove specific events or properties from Amplitude projects by creating deletion tasks with up to five clauses, specifying time ranges, and selecting the exact data to be deleted.
+
+# Keywords
+- self-service data deletion
+- event deletion
+- property deletion
+- deletion task
+- scan limits
+- administrator privileges
+- deletion queue
+- deletion clauses
+- server upload time
+- Growth plan
+- Enterprise plan

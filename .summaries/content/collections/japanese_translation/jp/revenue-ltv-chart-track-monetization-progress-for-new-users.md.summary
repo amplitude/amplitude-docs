@@ -1,0 +1,14 @@
+## Summary
+This documentation page explains how to use Amplitude's Revenue LTV Chart to track monetization progress for new users over time (up to 12 months). It details the setup process, available metrics (Total Revenue, New Paying Users, ARPU, ARPPU), and configuration options for analyzing revenue data across different user segments.
+
+## Keywords
+- Revenue LTV Chart
+- monetization tracking
+- logRevenueV2()
+- revenue events
+- ARPU
+- ARPPU
+- user segmentation
+- cohort analysis
+- revenue properties
+- $revenue property

@@ -1,0 +1,18 @@
+## Summary
+This documentation explains methods to manage invalid or erroneous data in Amplitude Data, including drop filters (query-time exclusion), block filters (prevents data ingestion), blocking specific events/properties, and permanently deleting data, with detailed steps for implementing each approach and their key differences.
+
+## Keywords
+- drop filters
+- block filters
+- data deletion
+- event blocking
+- property blocking
+- IP address filtering
+- data recovery
+- event volume limits
+- query-side filtering
+- data ingestion control
+- Amplitude Data
+- data management
+- erroneous data removal
+- data filtering techniques

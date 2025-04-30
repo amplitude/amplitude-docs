@@ -1,0 +1,16 @@
+## Summary
+This documentation page explains how to create and interpret recommendations in Amplitude Activation for personalization campaigns, including defining target cohorts, selecting outcome events, creating item catalogs, and understanding confidence scores. It also highlights common mistakes to avoid when building recommendations.
+
+## Keywords
+- Amplitude Activation
+- personalization recommendations
+- outcome events
+- exposure events
+- item catalog
+- confidence score
+- holdout groups
+- cohort selection
+- event properties
+- recommendation building process
+- static item lists
+- recommendation metrics

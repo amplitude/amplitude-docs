@@ -1,0 +1,16 @@
+## Summary
+This documentation page covers the Android SDK for Amplitude, detailing configuration options for tracking events in Android applications, including batching behavior, device ID management, flush settings, session tracking, and storage providers with code examples in both Kotlin and Java.
+
+## Keywords
+- Android SDK
+- Kotlin
+- event tracking
+- flushIntervalMillis
+- flushQueueSize
+- deviceId
+- batch API
+- offline mode
+- StorageProvider
+- session tracking
+- COPPA control
+- serverZone

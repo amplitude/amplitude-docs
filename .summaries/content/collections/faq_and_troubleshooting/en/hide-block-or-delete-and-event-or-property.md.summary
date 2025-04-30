@@ -1,0 +1,15 @@
+## Summary
+This documentation explains the differences between hiding, blocking, and deleting events or properties in Amplitude, detailing how each option affects data collection, visibility in charts, and instrumentation limits. Hidden events still collect data but aren't visible in dropdowns, blocked events stop collecting new data while preserving historical data, and deleted events are completely removed from ingestion and dropdowns.
+
+## Keywords
+- event governance
+- property management
+- data visibility controls
+- instrumentation limits
+- event blocking
+- event hiding
+- event deletion
+- data ingestion controls
+- Amplitude Data
+- chart dropdowns
+- event volume limits

@@ -1,0 +1,13 @@
+## Summary
+This configuration file defines a Japanese translation collection with specific site targeting (jp), custom routing, and display settings, including a specialized navigation title and hidden helpful elements.
+
+## Keywords
+- japanese_translation
+- site targeting
+- propagate:false
+- date_behavior
+- preview_targets
+- nav_title injection
+- hide_helpful
+- sort_dir:asc
+- revisions:false

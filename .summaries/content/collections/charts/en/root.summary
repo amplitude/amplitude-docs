@@ -1,0 +1,109 @@
+# Amplitude Analytics Platform
+
+## Product Overview
+
+Amplitude Analytics is a comprehensive product analytics platform that helps businesses understand user behavior, optimize product experiences, and drive growth through data-driven insights. The platform offers a wide range of chart types and analytical tools designed to answer key questions about user engagement, conversion, retention, and monetization.
+
+### Key Features
+
+1. **Diverse Chart Types**: Amplitude provides numerous visualization options categorized by analysis goals (Know, Convert, Retain, Monetize), including Event Segmentation, Funnel Analysis, Retention Analysis, Lifecycle, and more.
+
+2. **User Segmentation**: Advanced segmentation capabilities allow for detailed analysis of user behaviors based on properties, cohorts, and custom filters.
+
+3. **Behavioral Analysis**: Tools like Compass and Impact Analysis help identify behavioral patterns that correlate with retention and growth.
+
+4. **Real-time Monitoring**: Event Explorer provides real-time visualization of event streams as they occur.
+
+5. **Customization Options**: Extensive chart customization including colors, axes, legends, and more.
+
+6. **Performance Optimization**: Features like query time sampling help maintain performance with large datasets.
+
+## Product Relationships and Architecture
+
+Amplitude's analytics platform consists of several interconnected components:
+
+1. **Charts Collection**: The core visualization tools that present data in meaningful ways:
+   - **Event-based Charts**: Event Segmentation, Event Explorer, Data Tables
+   - **User Journey Charts**: Funnel Analysis, Journeys, User Sessions
+   - **Retention Charts**: Retention Analysis, Stickiness, Lifecycle
+   - **Behavioral Analysis Charts**: Compass, Impact Analysis, Personas
+   - **E-commerce Charts**: Cart Analysis, Revenue LTV
+   - **Experimental Charts**: Experiment Results
+
+2. **Segmentation Module**: A powerful component that allows for precise user targeting through:
+   - User categories (any users, active users, new users)
+   - Property-based filters with various operators
+   - Behavioral cohorts
+   - Custom groupings
+
+3. **Events Module**: Enables selection and manipulation of event data with:
+   - Event property filtering
+   - Group-by specifications
+   - Wildcard searches
+   - Custom event creation through grouping
+
+4. **Data Processing Layer**: Handles data pruning, ordering, and performance optimization to maintain chart responsiveness.
+
+5. **Integration with Snowflake**: Amplitude SQL allows direct querying of Snowflake data.
+
+## Key Nomenclature and Definitions
+
+1. **Events**: User actions tracked in the product (e.g., button clicks, page views, purchases).
+
+2. **Event Properties**: Attributes associated with events that provide additional context.
+
+3. **User Segments**: Subsets of users defined by specific criteria, behaviors, or properties.
+
+4. **Behavioral Cohorts**: Groups of users who have performed specific actions or sequences of actions.
+
+5. **Array Operators**: Logical operators for filtering array-type properties:
+   - **Equals**: Exact match of values
+   - **Set Contains**: Array contains specified value(s)
+   - **Set Equals**: Array contains exactly the specified values
+   - Negative versions: "does not equal," "set does not contain," "set does not equal"
+
+6. **Group-by**: Functionality that categorizes events by specified properties, with limits of 100 values for single group-by and 500 for double group-by.
+
+7. **User Lifecycle Categories**:
+   - **New Users**: First-time users in the current time period
+   - **Current Users**: Active in both current and previous time periods
+   - **Resurrected Users**: Active in current period after being dormant
+   - **Dormant Users**: Active in previous period but not in current period
+
+8. **Query Time Sampling**: Performance optimization technique that analyzes a random 10% sample of users' events and extrapolates results.
+
+9. **Object Arrays**: Data structures used in cart analysis to represent collections of items with their own properties.
+
+10. **Breakdown Table**: Tabular view of chart data that allows for sorting, filtering, and exporting results.
+
+## Product Ecosystem Integration
+
+Amplitude Analytics integrates with the broader product ecosystem in several ways:
+
+1. **Dashboard Integration**: Charts can be added to dashboards for persistent monitoring and sharing.
+
+2. **Team Collaboration**: Segments, cohorts, and analyses can be saved and shared across teams.
+
+3. **Experiment Platform Connection**: The Experiment Results chart connects with A/B testing platforms to analyze test outcomes.
+
+4. **Data Warehouse Integration**: Amplitude SQL allows direct querying of Snowflake data warehouses.
+
+5. **Plan Tiers**: Different features are available across various subscription plans (Growth, Enterprise), with advanced features like custom color themes restricted to higher-tier plans.
+
+6. **Export Capabilities**: Data can be exported via CSV or accessed through the Dashboard REST API.
+
+## API and Technical Interfaces
+
+While specific API endpoints aren't detailed in the documentation, several technical interfaces are mentioned:
+
+1. **Dashboard REST API**: For programmatic access to chart data.
+
+2. **CSV Export**: For extracting raw data from charts and breakdown tables.
+
+3. **Keyboard Shortcuts**: For efficient chart manipulation and navigation.
+
+4. **Event Explorer Targeting**: Supports targeting by IP address, user ID, or device ID for real-time event monitoring.
+
+5. **Query Parameters**: Various filtering and segmentation options that can be applied to chart queries.
+
+The Amplitude Analytics platform provides a comprehensive suite of tools for understanding user behavior, optimizing product experiences, and driving growth through data-driven insights, with flexible visualization options and powerful segmentation capabilities.

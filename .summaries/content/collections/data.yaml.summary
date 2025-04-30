@@ -1,0 +1,12 @@
+## Summary
+This YAML configuration defines a "Data" collection with specific routing, sorting, date behavior, preview settings, and navigation injection, but without revision tracking or root structure.
+
+## Keywords
+- Data collection
+- YAML configuration
+- date_behavior
+- preview_targets
+- route pattern
+- sort_dir
+- nav_title injection
+- structure settings

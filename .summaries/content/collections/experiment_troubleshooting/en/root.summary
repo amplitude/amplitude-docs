@@ -1,0 +1,82 @@
+# Amplitude Experiment Troubleshooting Guide
+
+## Product Overview
+
+Amplitude Experiment is an experimentation platform that allows users to run controlled experiments (A/B tests) to measure the impact of product changes. The platform handles user assignment to experiment variants, tracks exposures, and provides diagnostic tools to ensure experiment integrity. Key features include sticky bucketing (consistent user assignment), variant management, exposure tracking, and comprehensive diagnostics for troubleshooting experiment issues.
+
+## Key Features and Concepts
+
+### Experiment Structure
+- **Experiments**: Controlled tests with multiple variants to measure impact
+- **Variants**: Different versions of a feature being tested
+- **Runs**: Iterations of an experiment, which can be restarted with new configurations
+- **Bucketing**: The process of assigning users to experiment variants
+- **Sticky Bucketing**: Ensures users consistently see the same variant
+
+### Tracking Mechanisms
+- **Assignment Events**: Record which variant a user is assigned to
+- **Exposure Events**: Track when a user actually sees/experiences a variant
+- **Fetch Variant Calls**: API calls to determine which variant to show a user
+
+### Diagnostic Tools
+- **Sample Ratio Mismatch (SRM)**: Detects when observed variant allocations differ from specified allocations
+- **Exposures without Assignments**: Identifies users who received experiment exposures without proper assignment events
+- **Variant Jumping**: Detects when users see multiple variants for a single experiment
+
+## Key Nomenclature and Definitions
+
+- **Bucketing Salt**: A value used to randomize user assignments in a deterministic way
+- **Experiment Key**: Unique identifier for an experiment, used to differentiate between runs
+- **Fallback Variant**: Default variant shown when targeting conditions aren't met or errors occur
+- **Inclusion List**: Predefined list of users assigned to specific variants
+- **Targeting**: Criteria that determine which users are eligible for an experiment
+- **Identity Mismatch**: When different user identifiers are used for assignment versus exposure
+- **Mutual Exclusivity**: Ensures users can only participate in one experiment from a group
+- **Analysis Window**: Time period used for evaluating experiment results
+
+## Product Ecosystem Integration
+
+Amplitude Experiment integrates with the broader Amplitude Analytics platform, allowing for:
+
+1. User behavior analysis based on experiment variants
+2. Cohort creation from experiment participants
+3. Tracking experiment impact on key metrics
+4. User timeline analysis for debugging experiment issues
+
+The SDK implementation is critical for proper experiment functionality, with different versions supporting various features. The platform requires proper identity management to ensure consistent user experiences across devices and sessions.
+
+## Technical Implementation Details
+
+### SDK Requirements
+- Specific SDK versions are required for certain features:
+  - Client-side experiment SDKs v1.0+ for experiment key support
+  - Server-side experiment SDKs v1.0+ for experiment key support
+
+### Troubleshooting Workflows
+
+1. **Creating a New Experiment Run**:
+   - Fix data quality issues in the original experiment
+   - Create a new experiment with the same configuration
+   - Change the experiment key to differentiate from previous runs
+   - Ensure SDK version compatibility for proper implementation
+
+2. **Diagnosing Sample Ratio Mismatch**:
+   - Check exposure event implementation
+   - Verify no mid-experiment variant distribution changes
+   - Ensure analysis window alignment with experiment timeline
+   - Investigate variant jumping issues
+   - Check for instrumentation bugs
+
+3. **Resolving Exposures without Assignments**:
+   - Investigate identity mismatches between assignment and exposure
+   - Check for account switching issues
+   - Verify proper exposure tracking for fallback variants
+   - Use user streams debugging to identify specific problem instances
+
+4. **Addressing Variant Jumping**:
+   - Determine if caused by normal factors (targeting changes, anonymous identity merging)
+   - Check for abnormal causes (identity mismatches)
+   - Analyze user timeline to identify when and why jumping occurred
+   - Implement consistent bucketing key usage across touchpoints
+
+The platform provides diagnostic charts and tools to help identify and resolve these issues, ensuring experiment integrity and reliable results.

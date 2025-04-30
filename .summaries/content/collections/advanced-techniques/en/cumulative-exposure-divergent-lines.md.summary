@@ -1,0 +1,14 @@
+# Summary
+This documentation explains causes of divergent lines in cumulative exposure graphs, including experiments starting before all variants are ready (similar slopes) and issues with custom exposure events or sticky bucketing (different slopes), emphasizing how these patterns can lead to misleading experiment results.
+
+## Keywords
+- cumulative exposures graph
+- divergent lines
+- sticky bucketing
+- novelty effect
+- traffic allocation
+- exposure event
+- assignment event
+- variant readiness
+- cached variants
+- weighted average allocation

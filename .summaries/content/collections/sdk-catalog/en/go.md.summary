@@ -1,0 +1,14 @@
+## Summary
+This documentation page covers the Amplitude Go SDK, detailing its installation via go get, configuration options including API keys and event uploading settings, and methods for tracking events with user properties in Go applications.
+
+## Keywords
+- Go SDK
+- amplitude-analytics-go
+- event tracking
+- user identification
+- event properties
+- API key configuration
+- batch uploading
+- flush interval
+- middleware
+- Go modules

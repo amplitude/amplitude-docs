@@ -1,0 +1,14 @@
+# Summary
+This documentation page details the Adjust destination integration in Amplitude, explaining how to set up event streaming from Amplitude to Adjust by configuring app tokens, security tokens, event mappings, and user property mappings, with specific instructions for tracking revenue events.
+
+# Keywords
+- Adjust integration
+- Event streaming
+- App Token
+- S2S Security Token
+- User property mapping
+- Revenue tracking
+- Mobile app attribution
+- Event forwarding
+- IDFA mapping
+- Advertising ID

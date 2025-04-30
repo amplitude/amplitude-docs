@@ -1,0 +1,17 @@
+## Summary
+This documentation page explains how to track revenue events in Amplitude, covering revenue properties, tracking methods for both in-app and external purchases, and revenue verification. It details the required properties ($revenue or $price/$quantity), explains the three types of revenue events (verified/unverified), and discusses how to enable receipt validation for iOS and Android purchases.
+
+## Keywords
+- revenue tracking
+- revenue verification
+- in-app purchases
+- $revenue property
+- $price property
+- logRevenueV2
+- receipt validation
+- revenue events
+- iTunes Connect
+- Google Play license
+- revenue discrepancies
+- currency conversion
+- revenue LTV charts

@@ -1,0 +1,14 @@
+# Summary
+This documentation page explains how to use CSV import and export functionality in Amplitude Data to manage tracking plan schemas, allowing users to download schema data, make bulk changes to events and properties, and upload modified schemas with updated statuses (approved, blocked, or deleted).
+
+# Keywords
+- CSV import/export
+- tracking plan schema
+- bulk approval/blocking
+- event schema status
+- property schema status
+- schema management
+- unexpected events
+- taxonomy CSV
+- schema download/upload
+- Amplitude Data

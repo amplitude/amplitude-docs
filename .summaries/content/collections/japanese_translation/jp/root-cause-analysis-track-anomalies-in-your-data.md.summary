@@ -1,0 +1,14 @@
+## Summary
+This documentation explains Amplitude's Root Cause Analysis (RCA) feature, which helps identify the underlying reasons for data anomalies by analyzing event properties and external context. The feature is exclusive to Enterprise plan customers and those with Insights add-on, working only in Event Segmentation charts to help quickly determine if anomalies are temporary or indicative of significant changes.
+
+## Keywords
+- Root Cause Analysis (RCA)
+- Data anomalies detection
+- Event property analysis
+- Enterprise plan feature
+- Anomaly+Forecast visualization
+- Microscope interface
+- Property scanning batches
+- Holiday correlation detection
+- Configuration options
+- Event Segmentation charts

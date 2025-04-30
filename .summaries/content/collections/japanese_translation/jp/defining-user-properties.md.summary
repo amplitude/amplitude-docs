@@ -1,0 +1,14 @@
+# Summary
+This documentation page details the default user properties automatically tracked by Amplitude SDKs, including location properties determined via MaxMind using IP addresses, and explains how these properties are defined, displayed, and used in Amplitude charts. It notes that server-side implementations must explicitly set these properties as they aren't automatically tracked.
+
+# Keywords
+- automatic user property tracking
+- Amplitude SDK properties
+- GeoIP location tracking
+- MaxMind database
+- device properties
+- platform identification
+- user identification
+- property prefixing
+- server-side implementation
+- property value definitions

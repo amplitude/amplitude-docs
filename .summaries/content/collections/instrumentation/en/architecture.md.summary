@@ -1,0 +1,14 @@
+## Summary
+This documentation details the architecture of Amplitude's Analytics SDK, explaining its modular design with core components (API, Storage, Transport) and plugins (Destination, Enrichment, Utilities), and how events flow through the system from creation to transmission to Amplitude's servers.
+
+## Keywords
+- Analytics SDK architecture
+- Core components (API, Storage, Transport)
+- Plugin system
+- Event flow
+- Destination plugins
+- Enrichment plugins
+- Utility plugins
+- Event processing pipeline
+- SDK configuration
+- Event batching

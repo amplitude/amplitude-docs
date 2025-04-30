@@ -1,0 +1,14 @@
+## Summary
+This documentation explains data discrepancies between Amplitude analytics platform, Snowflake/Redshift, and the Export API, primarily due to timezone differences (Amplitude uses project timezone while Snowflake and Export API use UTC) and different time references (Export API uses server_upload_time rather than event time).
+
+## Keywords
+- timezone differences
+- UTC vs project timezone
+- server_upload_time
+- Export API data discrepancies
+- Snowflake data comparison
+- event time handling
+- data export inconsistencies
+- cross-platform data analysis
+- Amplitude charts vs exported data
+- SQL in Amplitude

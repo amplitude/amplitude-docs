@@ -1,0 +1,14 @@
+# Summary
+This documentation details the HubSpot integration with Amplitude, which sends email campaign events from HubSpot to Amplitude for analysis, supporting 10 predefined email events (like EMAIL_SENT, EMAIL_OPEN) with user properties tracking and allowing marketers to analyze campaign performance through funnel charts and cohort creation.
+
+## Keywords
+- HubSpot email campaign tracking
+- Email event streaming
+- Marketing automation analytics
+- Email funnel analysis
+- EMAIL_SENT, EMAIL_OPEN events
+- HubSpot Portal ID
+- Email campaign cohorts
+- 1-hour API polling interval
+- Email subscription status tracking
+- Internal HubSpot ID filtering

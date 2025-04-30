@@ -1,0 +1,15 @@
+# Summary and Keywords
+
+The documentation details the Qualtrics cohort export integration, which allows exporting Amplitude user cohorts to Qualtrics mailing lists, requiring specific IDs from Qualtrics (Directory ID, Data Center ID, and Mailing List ID) and supporting only Email as a user_id mapping option.
+
+## Keywords
+- Qualtrics cohort export
+- XM directory
+- Mailing list integration
+- Directory ID
+- Data Center ID
+- Mailing List ID
+- Email user_id mapping
+- Amplitude user cohorts
+- Contact synchronization
+- Qualtrics authorization

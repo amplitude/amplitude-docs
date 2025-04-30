@@ -1,0 +1,14 @@
+# Summary
+This documentation page explains how to set up Amplitude Data, covering data ingestion methods (SDKs with client-side or server-side tracking, or connecting to existing data sources), guidance on creating tracking plans, and best practices including establishing naming conventions and using separate environments for testing.
+
+# Keywords
+- data ingestion methods
+- Amplitude SDKs
+- client-side tracking
+- server-side tracking
+- tracking plans
+- naming conventions
+- test environments
+- data taxonomy
+- Ampli
+- data management

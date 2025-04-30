@@ -1,0 +1,100 @@
+# Amplitude Data Tables: Comprehensive Product Overview
+
+## Product Overview
+
+Amplitude Data Tables is an advanced analytics feature that enables multi-dimensional analysis of user behavior data. It allows users to compare multiple metrics across different dimensions in a single view, providing powerful insights into user engagement, marketing attribution, and session-based metrics. Data Tables is primarily available on Amplitude's Growth and Enterprise plans and serves as a flexible tool for creating complex analyses that would otherwise require multiple separate charts.
+
+## Key Features and Capabilities
+
+### Multi-Dimensional Analysis
+- Compare multiple metrics across different dimensions in a single view
+- Apply group-by properties to organize data hierarchically
+- Support for nested group-by properties for deeper analysis
+- Transpose feature to switch rows and columns for different visualization perspectives
+
+### Metrics Creation and Management
+- Create reusable analysis objects (metrics) that can be shared project-wide
+- Support for various metric types:
+  - Event Segmentation metrics
+  - Revenue metrics
+  - Formula metrics
+  - Funnel metrics
+- Official metric designation capability for managers and administrators
+
+### Session-Based Analysis
+- Session metrics including bounce rate, exit rate, entry rate, entries, and exits
+- Entry/Exit Analysis to analyze first or last property values in sessions
+- Time Spent Analysis to measure duration between consecutive events
+- Support for metrics like uniques, event totals, session totals, and PROPSUM
+
+### Marketing Attribution
+- Multiple attribution models for crediting marketing touchpoints:
+  - First Touch: 100% credit to first touchpoint
+  - Last Touch: 100% credit to last touchpoint
+  - Linear: Equal credit across all touchpoints
+  - Participation: 100% credit to all touchpoints
+  - U-Shaped: 40% to first, 40% to last, 20% distributed among middle touchpoints
+  - J-Shaped: 20% to first, 60% to last, 20% distributed among middle touchpoints
+  - Inverse J-Shaped: 60% to first, 20% to last, 20% distributed among middle touchpoints
+  - Data-Driven: Uses Markov chains to determine influence
+- Custom attribution models with user-defined weighting distributions
+- Configurable lookback windows for attribution analysis
+
+## Key Nomenclature and Definitions
+
+### Metrics
+Reusable analysis objects that can be created by any member, manager, or admin. Only managers and administrators can designate metrics as "official." Metrics are shared project-wide.
+
+### Group-by Properties
+Dimensions used to segment data in Data Tables, allowing for hierarchical organization of results.
+
+### Session Metrics
+- **Bounce Rate**: Percentage of sessions with only one event for a given property value
+- **Exit Rate**: Percentage of sessions that end with a specific property value
+- **Entry Rate**: Percentage of sessions that begin with a specific property value
+- **Entries**: Count of sessions that begin with a specific property value
+- **Exits**: Count of sessions that end with a specific property value
+
+### Time Spent Analysis
+Measures duration between consecutive events with a 30-minute timeout. Resets when group-by property values change.
+
+### Entry/Exit Analysis
+Analyzes data based on the first (entry) or last (exit) property value in a session.
+
+### Attribution Models
+Methods for distributing credit across multiple marketing touchpoints that contribute to conversions.
+
+## Product Ecosystem Integration
+
+Data Tables integrates with the broader Amplitude Analytics platform, serving as an advanced analysis tool that complements other Amplitude features:
+
+- Uses the same event and user property data as other Amplitude charts
+- Metrics created in Data Tables can be reused across the Amplitude platform
+- Supports export to CSV for further analysis in external tools
+- Results can be accessed via the Amplitude REST API
+
+## Technical Specifications and Limitations
+
+### Data Display and Export Limits
+- Display limits: 100-500 rows for top-level group-bys
+- CSV export: Up to 10,000 rows
+- REST API: Limited to 1,000 rows
+
+### API and Export Capabilities
+- CSV export available for larger datasets
+- REST API access with query limits
+- Special handling for time properties in exports
+
+### Configuration Options
+- Time Spent Analysis requires Growth or Enterprise plan
+- Attribution models can be configured on individual metrics
+- Lookback windows can be customized for attribution analysis
+- Session metrics require proper event instrumentation with page-level properties
+
+## Usage Examples
+
+1. **Marketing Channel Analysis**: Compare conversion rates across different marketing channels using various attribution models
+2. **Content Engagement**: Analyze time spent on different pages to identify engaging content
+3. **User Journey Analysis**: Use entry/exit analysis to understand where users begin and end their sessions
+4. **Funnel Performance**: Compare conversion rates across different user segments or time periods
+5. **Page Performance**: Evaluate content paths using session metrics like bounce rate and exit rate

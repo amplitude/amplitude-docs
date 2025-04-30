@@ -1,0 +1,145 @@
+# Amplitude Web Experiment
+
+## Product Overview
+
+Amplitude Web Experiment is a visual A/B testing solution that enables non-technical users to create and run experiments on websites without requiring coding knowledge. The product allows users to visually modify website elements, create variants, target specific pages and audiences, and analyze results—all through a user-friendly interface.
+
+### Key Features
+
+1. **Visual Editor**: Modify website elements (text, visibility, background, position) without coding
+2. **Custom Code Actions**: Inject JavaScript, HTML, and CSS for advanced modifications
+3. **URL Redirects**: Send users to different URLs based on experiment variants
+4. **Targeting Capabilities**: Target experiments by page URL and audience segments
+5. **Anti-flicker Technology**: Prevent page flashing during experiment loading
+6. **Performance Optimization**: Minimal impact with two-layer caching and fast evaluation
+7. **Impression Tracking**: Automatic tracking of experiment impressions for analysis
+
+### Primary Use Cases
+
+- A/B testing website designs and content
+- Implementing personalized user experiences
+- Testing new features before full deployment
+- Optimizing conversion rates and user engagement
+- Creating targeted experiences for different audience segments
+
+## Product Relationships and Architecture
+
+Web Experiment is part of Amplitude's broader experimentation platform. The implementation consists of:
+
+1. **Web Experiment Script**: A JavaScript snippet added to the website's `<head>` element
+2. **Visual Editor**: Interface for creating and modifying variants
+3. **Experiment Dashboard**: For monitoring results and performance
+4. **Integration Options**: Connections with CDPs and content management systems
+
+Web Experiment works alongside Amplitude Analytics for data collection and analysis. Experiments create impression events that flow into Amplitude's analytics platform for evaluation and reporting.
+
+## Key Nomenclature and Definitions
+
+- **Variant**: A specific version of a webpage being tested against others
+- **Flag Key**: Unique identifier for a feature flag or experiment
+- **Experiment Key**: Identifier for a specific experiment
+- **Impression Event**: Tracking event (`[Experiment] Impression`) recorded when a user sees an experiment variant
+- **Anti-flicker Snippet**: Code that prevents visual flickering during experiment loading
+- **Page Targeting**: Rules that determine which URLs an experiment appears on
+- **Audience Targeting**: Rules that determine which users see an experiment
+- **Bucketing**: The process of assigning users to specific variants
+- **Actions**: Modifications applied to create experiment variants (element changes, redirects, custom code)
+- **Post-experiment Migration**: Process of implementing winning variants in production code
+
+## Product Ecosystem Integration
+
+Web Experiment integrates with:
+
+1. **Amplitude Analytics**: For tracking experiment performance and user behavior
+2. **Third-party CDPs**:
+   - Segment
+   - Tealium
+   - Custom integration options via IntegrationPlugin
+3. **Content Management Systems**:
+   - WordPress (via plugin)
+   - Shopify
+4. **Tag Management Systems**:
+   - Google Tag Manager
+
+The product fits into a typical experimentation workflow:
+1. Implementation of the Web Experiment script
+2. Creation of experiments using the Visual Editor
+3. Targeting and launching experiments
+4. Analysis of results
+5. Migration of winning variants to production code
+
+## Technical Implementation
+
+### Script Installation
+
+```html
+<!-- Synchronous implementation -->
+<script src="https://cdn.experiment.amplitude.com/experiment.js"></script>
+<script>
+  experiment.initialize('API_KEY');
+</script>
+
+<!-- Asynchronous implementation with anti-flicker -->
+<script>
+  !function(){var e=document.createElement("style");e.textContent=":root{opacity:0;transition:opacity 0.5s;}";document.head.appendChild(e);window.experimentAntiFlicker={showPage:function(){document.documentElement.style.opacity="1"},hidePage:function(){document.documentElement.style.opacity="0"}}}();
+</script>
+<script>
+  (function() {
+    var script = document.createElement('script');
+    script.src = 'https://cdn.experiment.amplitude.com/experiment.js';
+    script.async = true;
+    script.onload = function() {
+      experiment.initialize('API_KEY', {
+        onExperimentInitialized: function() {
+          experimentAntiFlicker.showPage();
+        }
+      });
+    };
+    document.head.appendChild(script);
+  })();
+</script>
+```
+
+### Custom Code Utilities
+
+```javascript
+// Wait for element to appear in DOM
+experiment.utils.waitForElement('.selector', function(element) {
+  // Manipulate the element
+});
+```
+
+## Performance Considerations
+
+- **Script Size**: 20KB compressed base size + ~100B per flag
+- **Caching**: Two-layer caching (CDN and browser)
+- **Evaluation Speed**: <1ms for local evaluation
+- **Cache Control Headers**: `max-age=300, stale-while-revalidate=86400`
+- **Limitations**: Some ad blockers may interfere with the script
+
+## Experiment Workflow
+
+1. **Setup**: Implement Web Experiment script on website
+2. **Creation**: Use Visual Editor to create variants
+3. **Targeting**: Configure page and audience targeting
+4. **Launch**: Activate the experiment
+5. **Analysis**: Monitor results in Amplitude
+6. **Conclusion**: Deactivate experiment and migrate winning variant to production
+
+### Post-Experiment Process
+
+1. Determine the winning variant based on statistical significance
+2. Implement the winning variant in production code
+3. Deactivate the experiment or set to 0% allocation
+4. Archive the experiment to reduce script size
+
+## Tracking and Analytics
+
+Impression events (`[Experiment] Impression`) are automatically tracked with properties:
+- `flag_key`
+- `variant`
+- `experiment_key`
+
+User properties are set with format: `[Experiment] flag_key = variant`
+
+Monthly impression volume can be estimated with: `Daily Active Users × Pages Per Session × % of Pages Targeted × 30`

@@ -1,0 +1,19 @@
+## Summary
+This documentation page covers frequently asked questions about Amplitude's Event Segmentation chart, including how to analyze properties, set date ranges, calculate metrics like averages and ratios, create custom formulas, understand result calculations, and troubleshoot common issues like incomplete data errors and export limitations.
+
+## Keywords
+- Event Segmentation chart
+- Group-by functionality
+- Custom date ranges
+- Average property values
+- Behavioral cohorts
+- Account filtering
+- Custom formulas
+- ROLLWIN formula
+- PROP() calculations
+- Active % metric
+- New User definition
+- Data point discrepancies
+- CSV export limitations
+- Glob match filtering
+- Microscope user download

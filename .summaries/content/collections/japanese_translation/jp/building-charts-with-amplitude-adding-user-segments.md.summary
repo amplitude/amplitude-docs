@@ -1,0 +1,16 @@
+## Summary
+This documentation page explains how to add user segments to Amplitude charts, detailing the process of creating, modifying, and saving user segments based on user properties. It covers segment operators (is, contains, set is, glob match), combining conditions with AND/OR logic, grouping by properties, and managing multiple segments for comparative analysis.
+
+## Keywords
+- User segmentation
+- Segment filters
+- User properties
+- Segment operators
+- AND/OR conditions
+- Group segments
+- Saved segments
+- Default segments
+- Set operators
+- Glob matching
+- Active users
+- New users

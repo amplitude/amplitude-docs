@@ -1,0 +1,14 @@
+## Summary
+This documentation explains how Amplitude calculates likelihood and statistical significance in A/B testing, detailing the Bayesian method for calculating probability of a variant outperforming baseline and the two-sided t-test with 5% false positive rate used for determining statistical significance.
+
+## Keywords
+- A/B testing
+- Bayesian method
+- Statistical significance
+- Baseline outperformance probability
+- Error function (erf)
+- Two-sided t-test
+- False positive rate
+- Minimum sample size requirements
+- Normal distribution
+- Cumulative distribution

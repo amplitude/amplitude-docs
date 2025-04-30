@@ -1,0 +1,12 @@
+## Summary
+This YAML configuration defines the structure and behavior of the Analytics API documentation section, specifying its template, layout, routing pattern (/apis/analytics/{slug}), and visibility rules for dated content.
+
+## Keywords
+- Analytics API
+- documentation structure
+- route configuration
+- content visibility rules
+- preview targets
+- mount point
+- date_behavior
+- sort_dir

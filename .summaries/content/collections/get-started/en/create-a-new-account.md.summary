@@ -1,0 +1,14 @@
+# Summary
+This documentation page explains how to create a new Amplitude account and implement the Amplitude snippet in your application, with options to enable Session Replay and Autocapture features. It covers snippet installation in the head tag, verification of data flow, and alternative installation methods including integrations, SDKs, and APIs.
+
+# Keywords
+- Amplitude snippet
+- Account creation
+- Session Replay
+- Autocapture
+- Browser SDK
+- API key
+- Data verification
+- Implementation methods
+- Sample data
+- Head tag installation

@@ -1,0 +1,14 @@
+## Summary
+This documentation explains the typical workflow for Amplitude Data, covering branch creation, event definition, instrumentation, review, and merging processes. It details how product and engineering teams can work collaboratively using branches in Amplitude Data that parallel Git branches for tracking plan development and implementation.
+
+## Keywords
+- Amplitude Data workflow
+- tracking plan branches
+- event definition
+- instrumentation
+- merge requests
+- Ampli CLI
+- version publishing
+- cross-team collaboration
+- Git branch synchronization
+- Japanese translation

@@ -1,0 +1,14 @@
+# Summary
+The Experiment Evaluation Proxy is a service that enables local evaluation within your infrastructure, supporting platforms without native SDKs, automatically tracking assignment events with 24-hour deduplication, and enhancing evaluation with large cohort targeting through hourly syncs. It can be configured via YAML or environment variables and deployed using Docker or Kubernetes with Redis recommended for persistent storage.
+
+# Keywords
+- local evaluation
+- evaluation proxy
+- cohort targeting
+- assignment event tracking
+- Redis integration
+- Kubernetes deployment
+- Docker deployment
+- API key configuration
+- deduplication
+- EU data residency

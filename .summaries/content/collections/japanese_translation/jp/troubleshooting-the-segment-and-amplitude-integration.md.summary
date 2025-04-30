@@ -1,0 +1,14 @@
+# Summary
+This documentation page explains troubleshooting steps for when new event types or properties aren't appearing in Amplitude from Segment integrations, covering both cloud mode and device mode data transmission methods, verification processes, and common issues like hitting instrumentation limits or events being blocked.
+
+# Keywords
+- Segment-Amplitude integration
+- Cloud mode troubleshooting
+- Device mode verification
+- Event transmission validation
+- HTTP API status codes
+- Instrumentation limits
+- Segment Debugger
+- Amplitude Instrumentation Debugger
+- Batch processing issues
+- Event validation workflow

@@ -1,0 +1,13 @@
+# Summary
+RudderStack is a customer data infrastructure platform that integrates with Amplitude, allowing users to send events from various sources (apps, websites, platforms) to Amplitude for analytics. The integration enables comprehensive customer journey tracking through event streaming, ETL pipelines, and Reverse ETL capabilities.
+
+# Keywords
+- RudderStack integration
+- Event streaming
+- ETL Pipelines
+- Reverse ETL
+- Customer data infrastructure
+- Customer journey tracking
+- Cross-platform data collection
+- 360-degree customer view
+- Data integration

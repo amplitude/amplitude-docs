@@ -1,0 +1,14 @@
+## Summary
+The Marketing Analytics Browser SDK extends the Browser SDK to track user attribution based on marketing channels, capturing UTM parameters, referrers, and click IDs for both first-touch and multi-touch attribution, with configurable page view tracking for both traditional and single-page applications.
+
+## Keywords
+- marketing-attribution
+- utm-parameters
+- click-id-tracking
+- referrer-tracking
+- page-view-tracking
+- first-touch-attribution
+- multi-touch-attribution
+- single-page-application-tracking
+- batch-event-processing
+- campaign-tracking

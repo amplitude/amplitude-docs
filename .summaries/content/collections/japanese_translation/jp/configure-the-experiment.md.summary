@@ -1,0 +1,14 @@
+## Summary
+This page explains how to configure Amplitude Experiment by creating deployments (environments for flags/experiments) and installing the appropriate SDK. It details the differences between client-side and server-side deployments, explains how to set up user context for variant assignment, and provides links to SDK installation documentation.
+
+## Keywords
+- Amplitude Experiment
+- deployment creation
+- client-side vs server-side deployments
+- deployment keys
+- SDK installation
+- user context
+- variant assignment
+- experiment configuration
+- targeting rules
+- user identification (user_id, device_id)

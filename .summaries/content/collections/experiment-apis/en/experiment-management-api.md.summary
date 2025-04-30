@@ -1,0 +1,17 @@
+# Summary
+The Experiment Management API documentation outlines endpoints for programmatically creating and controlling flags, experiments, mutex groups, holdouts, deployments, and versions, with details on authentication using management API keys, rate limiting restrictions, regional endpoints, status codes, and pagination through cursors.
+
+# Keywords
+- experiment-management-api
+- flag-apis
+- experiment-apis
+- mutex-apis
+- holdout-apis
+- deployment-apis
+- version-apis
+- management-api-key
+- authorization
+- rate-limiting
+- regional-endpoints
+- status-codes
+- cursor-pagination

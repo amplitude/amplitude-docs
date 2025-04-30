@@ -1,0 +1,14 @@
+# Summary
+This documentation page describes the Google Pub/Sub destination integration for Amplitude Data, which allows streaming event data directly to Google Cloud Pub/Sub for real-time messaging between applications, including setup instructions for both Google Cloud and Amplitude platforms, and details about the data format and requirements.
+
+# Keywords
+- Google Pub/Sub
+- event streaming
+- service account key
+- topic name
+- base64 encoding
+- Identify Forwarding
+- JSON export
+- IAM permissions
+- Pub/Sub Publisher role
+- event filtering

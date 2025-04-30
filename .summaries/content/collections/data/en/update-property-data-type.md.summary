@@ -1,0 +1,17 @@
+## Summary
+This documentation page explains how to set or change the data type of event and user properties in Amplitude, detailing the process to edit a property's type through the details panel and listing the available data types (String, Number, Boolean, Array, Enum, Const, and Any).
+
+## Keywords
+- property data types
+- type checking
+- event properties
+- user properties
+- String type
+- Number type
+- Boolean type
+- Array type
+- Enum type
+- Const type
+- Any type
+- property details panel
+- data type conversion

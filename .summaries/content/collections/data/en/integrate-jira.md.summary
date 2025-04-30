@@ -1,0 +1,14 @@
+## Summary
+This documentation explains how to integrate Jira with Amplitude Data, allowing users to create and link Jira issues to feature branch changes, with automatic comments added to Jira issues when changes are published.
+
+## Keywords
+- Jira integration
+- Amplitude Data
+- feature branch
+- issue creation
+- issue linking
+- authentication flow
+- Atlassian
+- automatic comments
+- source changes
+- unlink functionality

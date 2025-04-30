@@ -1,0 +1,18 @@
+## Summary
+This documentation page provides a comprehensive guide for migrating from Adobe Analytics to Amplitude, covering data model differences, mapping Adobe variables to Amplitude schema, implementation methods, historical data backfilling, data validation, and report replication strategies to ensure a smooth transition with minimal disruption.
+
+## Keywords
+- Adobe Analytics migration
+- Data model mapping
+- Event tracking differences
+- eVars to Event Properties
+- Backfill historical data
+- Ingestion Debugger
+- User Lookup validation
+- Tracking plan
+- Data continuity
+- Adobe variable mapping
+- Client-side sources
+- Server-side sources
+- Tag management integration
+- Data validation tools

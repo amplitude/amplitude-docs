@@ -1,0 +1,14 @@
+## Summary
+The Experiment Go SDK documentation provides implementation details for both remote and local evaluation of feature flags in Go applications, covering client initialization, variant fetching, user evaluation, configuration options, and cohort targeting capabilities with code examples for each method.
+
+## Keywords
+- Go SDK
+- remote evaluation
+- local evaluation
+- feature flags
+- variant fetching
+- flag streaming
+- cohort targeting
+- assignment tracking
+- flag configuration polling
+- user evaluation

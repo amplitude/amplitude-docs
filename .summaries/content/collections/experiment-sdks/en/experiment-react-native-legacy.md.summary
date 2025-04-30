@@ -1,0 +1,14 @@
+# Summary
+This documentation covers the legacy Experiment React Native SDK, which is in maintenance mode and will only receive bug fixes until deprecation. It details installation, core functions (initialize, fetch, variant, all, exposure), configuration options, and integrations with Amplitude Analytics, emphasizing that users should upgrade to v1.0.0+ for better features and platform support.
+
+# Keywords
+- experiment-react-native-client
+- legacy SDK
+- fetch variants
+- variant access
+- exposure tracking
+- Amplitude integration
+- automaticExposureTracking
+- React Native compatibility
+- deployment key
+- user provider

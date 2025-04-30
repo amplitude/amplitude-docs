@@ -1,0 +1,14 @@
+# Summary
+Portfolio is an Enterprise-level feature that enables cross-project analysis by creating Views that merge data from multiple Amplitude Projects (up to 5-10 projects), allowing organizations to track user behavior across different products while maintaining project-specific user properties and supporting user mapping via API for reconciling different user IDs.
+
+# Keywords
+- cross-project analysis
+- portfolio views
+- user mapping API
+- enterprise feature
+- multi-product tracking
+- user aliasing
+- project merging
+- user journey analysis
+- data source integration
+- user ID reconciliation

@@ -1,0 +1,15 @@
+## Summary
+This documentation describes the Refiner (Cohort) destination integration for Amplitude, which allows sending user cohorts from Amplitude to Refiner for targeted feedback collection. The page covers setup requirements in both platforms, step-by-step configuration instructions, and use cases including onboarding improvement, feature prioritization, and churn prevention.
+
+## Keywords
+- Refiner integration
+- cohort sync
+- user feedback
+- API Key
+- Segment ID
+- user onboarding
+- feature prioritization
+- churn prevention
+- SaaS feedback
+- customer surveys
+- user segmentation

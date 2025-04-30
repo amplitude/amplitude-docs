@@ -1,0 +1,14 @@
+## Summary
+This documentation page explains how to use Amplitude's User and Account Lookup feature to search for and analyze event data for specific users. It details how to search by user properties, view user profiles with detailed event streams, visualize selected events in charts, and understand the various timestamp fields in raw data.
+
+## Keywords
+- User and Account Lookup
+- Event stream analysis
+- User property search
+- Event visualization
+- Timestamp fields (client_event_time, server_received_time)
+- Live event updates
+- User profiles
+- Event debugging
+- Raw JSON data
+- UUID

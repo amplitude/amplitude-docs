@@ -1,0 +1,14 @@
+# Summary
+This documentation page explains how to add and configure variants in Amplitude Experiment's design phase, including creating control and test variants, configuring experiment settings (sticky bucketing, evaluation mode, bucket salt), and adding dynamic payloads to variants without code changes.
+
+# Keywords
+- experiment variants
+- control variant
+- sticky bucketing
+- evaluation mode
+- bucket salt
+- variant payload
+- JSON payload
+- experiment configuration
+- variant creation
+- traffic allocation

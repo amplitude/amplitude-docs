@@ -1,0 +1,18 @@
+## Summary
+This documentation explains how Amplitude's JavaScript SDK manages cookies, local storage, and user consent, including CNIL regulations for France. It details cookie structure, storage options, opt-in/opt-out mechanisms, and provides guidance on implementing consent management for privacy compliance.
+
+## Keywords
+- Amplitude cookies
+- Cookie consent management
+- LocalStorage data storage
+- deferInitialization
+- enableTracking
+- optOut functionality
+- CNIL compliance
+- GDPR cookie requirements
+- Cross-domain tracking
+- Cookie expiration settings
+- First-party cookies
+- deviceId persistence
+- SameSite cookie attributes
+- Consent Management Platform integration

@@ -1,0 +1,16 @@
+## Summary
+This documentation details Amplitude's Snowflake integration for importing data into Amplitude projects, covering four import strategies (Full Sync, Timestamp, Append Only Sync, and Mirror Sync) with specific configurations for different data types (Events, User Properties, Group Properties, and Profiles), including CDC functionality for real-time data mirroring.
+
+## Keywords
+- Snowflake data import
+- Change Data Capture (CDC)
+- Mirror Sync
+- Append Only Sync
+- Data mapping
+- SQL query examples
+- Event properties
+- User properties
+- Group properties
+- Data warehouse integration
+- Timestamp-based import
+- Data mutability

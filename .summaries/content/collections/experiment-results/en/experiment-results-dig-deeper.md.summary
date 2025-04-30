@@ -1,0 +1,16 @@
+# Summary
+Experiment Results is a feature that allows Amplitude Analytics customers to analyze A/B test data from non-Amplitude feature flagging platforms, providing statistical analysis tools including sequential testing, confidence intervals, and variant performance comparisons for various metric types (conversions, event totals, funnels, formulas, retention).
+
+# Keywords
+- A/B testing analysis
+- Experiment Results chart
+- Exposure events
+- Statistical significance
+- Variant comparison
+- Sequential testing
+- Confidence intervals
+- Custom metrics
+- Formula metrics
+- Retention metrics
+- Non-Amplitude feature flagging
+- Cumulative exposure

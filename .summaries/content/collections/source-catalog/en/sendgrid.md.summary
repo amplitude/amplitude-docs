@@ -1,0 +1,14 @@
+# Summary
+This documentation page details the integration between SendGrid and Amplitude, explaining how to send email event data from SendGrid to Amplitude for analyzing email engagement metrics, and how to use Amplitude cohorts for targeted email campaigns in SendGrid, with specific setup instructions including webhook configuration.
+
+# Keywords
+- SendGrid webhook integration
+- Email engagement tracking
+- Amplitude API key
+- Event webhook configuration
+- SendGrid message events
+- Email marketing analytics
+- User ID mapping
+- EU data processing
+- Cohort segmentation
+- Customer communication platform

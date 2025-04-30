@@ -1,0 +1,14 @@
+## Summary
+This documentation page explains how to create and use custom events in Amplitude, which combine multiple existing events with OR logic to support more complex analysis scenarios. Custom events allow users to track overall activity across related events and can be used in specific chart types with certain limitations.
+
+## Keywords
+- Custom events
+- OR clause
+- Event combination
+- Funnel analysis
+- Event properties
+- User properties
+- Chart compatibility
+- [Custom] prefix
+- Event segmentation
+- Permission requirements

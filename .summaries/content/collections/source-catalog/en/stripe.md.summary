@@ -1,0 +1,19 @@
+# Summary and Keywords for Stripe Integration Documentation
+
+**Summary:** This documentation details the Stripe integration for Amplitude, which imports revenue events from Stripe for financial data analysis, highlighting implementation considerations like webhook configuration, user ID mapping priorities, and limitations such as the inability to distinguish between multiple Stripe accounts or retroactively capture events.
+
+**Keywords:**
+- Stripe webhook configuration
+- Revenue event tracking
+- Payment_intent events
+- User ID deduplication
+- Metadata mapping
+- Currency normalization
+- Invoice payment tracking
+- Checkout session events
+- Revenue analytics
+- Payment transaction monitoring
+- Stripe event types
+- Financial data integration
+- Purchase frequency analysis
+- Revenue cohorts

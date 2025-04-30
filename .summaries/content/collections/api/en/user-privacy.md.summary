@@ -1,0 +1,18 @@
+## Summary
+This documentation details the User Privacy API, which enables programmatic deletion of user data across Amplitude projects to comply with privacy regulations like GDPR and CCPA, including features for batch deletion requests, organization-wide deletions, and job status monitoring with specific rate limits and scheduling considerations.
+
+## Keywords
+- User Privacy API
+- GDPR compliance
+- CCPA compliance
+- data deletion requests
+- Amplitude IDs
+- User IDs
+- deletion jobs
+- batch deletion
+- organization-wide deletion
+- ignore_invalid_ids
+- delete_from_org
+- job status monitoring
+- rate limits
+- user data removal

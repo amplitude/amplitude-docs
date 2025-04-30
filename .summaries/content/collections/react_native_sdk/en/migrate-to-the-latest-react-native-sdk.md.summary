@@ -1,0 +1,17 @@
+## Summary
+This documentation page details the migration process from the maintenance React Native SDK (@amplitude/react-native) to the latest React Native SDK (@amplitude/analytics-react-native), covering API changes, configuration differences, and data migration capabilities, with specific code examples for updating initialization, event tracking, user identification, and other key functionality.
+
+## Keywords
+- React Native SDK migration
+- @amplitude/analytics-react-native
+- plugin architecture
+- API differences
+- configuration object
+- track() vs logEvent()
+- identify() implementation
+- device ID handling
+- data migration
+- COPPA compliance
+- HTTP V2 API
+- initialization changes
+- flush() vs uploadEvents()

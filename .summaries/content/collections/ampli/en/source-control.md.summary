@@ -1,0 +1,17 @@
+## Summary
+This documentation explains how to use Ampli CLI with source control systems like Git, detailing a workflow for coordinating tracking plan changes across teams using branches in both Amplitude Data and Git repositories, with specific commands for branch management, status checking, and CI/CD integration.
+
+## Keywords
+- Ampli CLI
+- source control
+- branch coordination
+- ampli.json
+- ampli status
+- is-merged flag
+- is-latest flag
+- CI workflows
+- GitHub Actions
+- tracking plan implementation
+- branch synchronization
+- merge checks
+- implementation verification

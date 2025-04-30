@@ -1,0 +1,44 @@
+# Amplitude Unreal SDK
+
+## Overview
+The Amplitude Unreal SDK enables analytics tracking in Unreal Engine projects, allowing developers to capture user behavior, track events, and manage user properties within games and applications. It integrates with Unreal Engine's native systems to provide seamless analytics capabilities.
+
+## Key Features
+- Event tracking with custom properties
+- User identification and property management
+- Native integration with Unreal Engine's analytics provider interface
+- Session management
+- Plugin-based installation
+
+## Product Architecture
+The SDK is implemented as an Unreal Engine plugin called "AmplitudeUnreal" that conforms to Unreal's `IAnalyticsProvider` interface. This design allows the SDK to work within Unreal Engine's ecosystem while delivering Amplitude's analytics capabilities.
+
+## Key Nomenclature and Definitions
+- **AmplitudeUnreal**: The Unreal Engine plugin providing Amplitude analytics functionality
+- **IAnalyticsProvider**: Unreal Engine's interface for analytics providers that Amplitude implements
+- **RecordEvent**: Method for tracking events in the analytics system
+- **StartSession**: Method to begin a new analytics session
+- **SetUserID**: Method to identify users with a custom ID
+- **Event Properties**: Contextual data attached to analytics events
+- **User Properties**: Attributes associated with specific users
+
+## Integration with Product Ecosystem
+The Amplitude Unreal SDK is part of Amplitude's broader analytics platform. Data collected through the SDK is sent to Amplitude's analytics backend, where it can be analyzed using Amplitude's suite of analytics tools. The SDK specifically targets game developers and interactive application creators using Unreal Engine.
+
+## Implementation Details
+To implement the Amplitude Unreal SDK:
+
+1. Install the AmplitudeUnreal plugin in your Unreal Engine project
+2. Configure the SDK with appropriate API keys
+3. Initialize the analytics provider through Unreal's analytics system
+4. Track events using either:
+   - Unreal's `RecordEvent` method
+   - Direct calls to Amplitude-specific methods
+
+## API Usage
+Key methods for analytics tracking include:
+
+- `StartSession()`: Initializes an analytics session
+- `RecordEvent(EventName, EventProperties)`: Logs an event with optional properties
+- `SetUserID(UserID)`: Associates events with a specific user identifier
+- `SetUserProperty(PropertyName, PropertyValue)`: Sets properties for the current user

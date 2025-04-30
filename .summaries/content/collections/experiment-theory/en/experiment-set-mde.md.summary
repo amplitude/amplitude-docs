@@ -1,0 +1,18 @@
+## Summary
+This documentation explains how to set the Minimum Detectable Effect (MDE) for experiments in Amplitude, detailing how MDE represents the minimum change expected from an experiment, with considerations for experiment type (A/B test or Multi-Armed Bandit), recommendation metrics, and associated risks, emphasizing that MDE is inversely related to sample size requirements.
+
+## Keywords
+- Minimum Detectable Effect (MDE)
+- Amplitude Experiment
+- Statistical significance
+- Experiment design
+- Control mean
+- Sample size requirements
+- A/B testing
+- Multi-Armed Bandit
+- Success metrics
+- Guardrail metrics
+- Risk assessment
+- Hypothesis testing
+- Conversion rate
+- Experiment duration

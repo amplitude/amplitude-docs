@@ -1,0 +1,14 @@
+# Summary
+Amazon Kinesis Cohort integration enables streaming cohort membership updates from Amplitude Data to AWS Kinesis streams in JSON format, supporting daily, hourly, and real-time sync cadences for paid Amplitude plans. The integration requires creating a Kinesis stream and configuring IAM roles with specific permissions to allow Amplitude to write to the stream.
+
+# Keywords
+- AWS Kinesis Cohort integration
+- cohort membership streaming
+- IAM role configuration
+- JSON payload format
+- real-time cohort sync
+- message_id tracking
+- user_properties inclusion
+- in_cohort boolean flag
+- compute_time timestamp
+- Trust Relationships policy

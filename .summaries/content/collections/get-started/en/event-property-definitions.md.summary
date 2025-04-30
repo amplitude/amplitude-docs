@@ -1,0 +1,15 @@
+## Summary
+This documentation page details the default event properties that Amplitude automatically tracks for page-viewed events, including both client-side tracked properties (like Page Domain and Page URL) and Amplitude-generated properties (like Event Day of Week and Session Replay ID), with explanations of each property's value definition.
+
+## Keywords
+- automatic event properties
+- page-viewed events
+- Event Day of Week
+- Page Counter
+- Page Domain
+- Page Location
+- Page URL
+- Session Replay ID
+- Historical Count
+- client-side tracking
+- Amplitude-generated properties

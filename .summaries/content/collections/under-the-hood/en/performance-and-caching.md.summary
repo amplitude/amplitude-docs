@@ -1,0 +1,14 @@
+# Summary
+This documentation details performance metrics and caching mechanisms for Amplitude Experiment's evaluation modes (local and remote), explaining how CDN caching affects response times, with remote evaluation showing significant performance improvements for cache hits (35.9ms global average) versus misses (194.21ms), while local evaluation provides sub-millisecond performance without network requests.
+
+# Keywords
+- remote evaluation performance
+- local evaluation latency
+- CDN caching
+- cache time-to-live (TTL)
+- cache invalidation
+- Fastly integration
+- dynamic targeting
+- behavioral cohorts
+- cache hit/miss metrics
+- geographical performance differences

@@ -1,0 +1,15 @@
+## Summary
+The Amplitude Experiment Ruby SDK documentation covers both remote and local evaluation methods for feature flags, including initialization, configuration, fetching variants, and evaluating users, with support for cohort targeting, automatic assignment tracking, and integration with Amplitude cookies.
+
+## Keywords
+- Ruby SDK
+- Remote evaluation
+- Local evaluation
+- Fetch variants
+- Evaluate users
+- Cohort targeting
+- Assignment tracking
+- AmplitudeCookie
+- ServerZone configuration
+- Deployment key
+- Flag configuration polling

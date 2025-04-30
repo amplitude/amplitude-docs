@@ -1,0 +1,14 @@
+## Summary
+This documentation explains how to configure Single Sign-On (SSO) integration between Amplitude and G Suite for Scholarship, Growth, and Enterprise plan customers, detailing the step-by-step process of setting up SAML authentication through the G Suite Admin Console and Amplitude's organization settings.
+
+## Keywords
+- G Suite SSO integration
+- SAML application configuration
+- IDP metadata download
+- Amplitude organization admin
+- Entity ID
+- Assertion Consumer Service URL
+- Just-in-time (JIT) provisioning
+- G Suite Admin Console
+- SAML authentication
+- Enterprise SSO setup

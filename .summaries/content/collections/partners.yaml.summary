@@ -1,0 +1,12 @@
+## Summary
+This YAML configuration defines the "Partners" collection, specifying its routing pattern ('/partners/{slug}'), mounting point, visibility settings, and preview behavior, with entries sorted in ascending order and date-based publishing controls.
+
+## Keywords
+- collection configuration
+- partners routing
+- mount point
+- date_behavior
+- preview_targets
+- sort_dir
+- propagate settings
+- revisions disabled

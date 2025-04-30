@@ -1,0 +1,16 @@
+## Summary
+This documentation provides an overview of Amplitude's event streaming feature, which allows sharing behavioral data with external tools. It covers considerations like billing efficiency, latency targets, retry mechanisms, and limitations such as property formatting constraints, reserved keywords, and historical data handling.
+
+## Keywords
+- event streaming
+- data integration
+- behavioral data sharing
+- streaming latency
+- retry mechanism
+- payload monitoring
+- cohort syncing
+- webhook streaming
+- IP ranges
+- billing efficiency
+- property formatting
+- event volume tracking

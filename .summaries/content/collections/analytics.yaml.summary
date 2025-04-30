@@ -1,0 +1,12 @@
+## Summary
+This YAML configuration defines the "Analytics" collection with specific routing, sorting, date behavior, and preview settings, while injecting a nav_title of "analytics" and disabling revisions and root structure.
+
+## Keywords
+- analytics collection
+- date_behavior
+- preview_targets
+- route configuration
+- nav_title injection
+- sort_dir
+- revisions disabled
+- non-root structure

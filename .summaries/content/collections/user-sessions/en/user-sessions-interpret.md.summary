@@ -1,0 +1,14 @@
+# Summary
+This documentation explains how to interpret User Sessions charts in Amplitude, detailing how sessions are recorded (server-side, mobile client-side, and web client-side), how to analyze session metrics through charts and breakdown tables, and explaining the sequential filtering process where property filters are applied before session filters.
+
+# Keywords
+- User Sessions chart
+- Session tracking methods
+- Session metrics
+- Breakdown table
+- Property filtering
+- Session filtering
+- Session ID
+- Mobile sessions (5-minute timeout)
+- Web sessions (30-minute timeout)
+- Group segmentation

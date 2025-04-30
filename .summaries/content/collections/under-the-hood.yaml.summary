@@ -1,0 +1,12 @@
+## Summary
+This YAML configuration defines a "Under the Hood" collection with specific routing, display, and behavior settings for feature experiment documentation, including a custom route pattern `/feature-experiment/under-the-hood/{slug}` and ascending sort direction.
+
+## Keywords
+- collection configuration
+- feature-experiment
+- custom routing
+- preview targets
+- date behavior
+- structure settings
+- propagation control
+- sort direction

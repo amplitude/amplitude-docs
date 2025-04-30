@@ -1,0 +1,14 @@
+## Summary
+This documentation page explains how to add and manage variants in Amplitude Experiment, including creating variants with custom names and values, adding JSON payloads for dynamic experiences, distributing traffic between variants, and setting rollout percentages to control experiment exposure.
+
+## Keywords
+- experiment variants
+- control variant
+- variant payload
+- traffic distribution
+- stratified sampling
+- rollout percentage
+- variant values
+- experiment bucketing
+- JSON payload
+- variant customization

@@ -1,0 +1,14 @@
+## Summary
+This documentation page provides step-by-step instructions for setting up Single Sign-On (SSO) integration between Amplitude and Microsoft Azure Active Directory, including configuring the Enterprise application in Azure portal, setting identifier values, and uploading the metadata XML file to Amplitude's SSO settings.
+
+## Keywords
+- Azure Active Directory SSO
+- Enterprise applications
+- Metadata XML
+- Entity ID
+- Assertion Consumer Service URL
+- User identifier configuration
+- Amplitude organization settings
+- SSO integration steps
+- Azure portal configuration
+- user.mail identifier

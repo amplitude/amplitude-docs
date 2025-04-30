@@ -1,0 +1,14 @@
+# Summary
+This documentation details the Userlist event streaming destination in Amplitude, which allows syncing user behavior data to trigger automated emails and targeted onboarding campaigns, requiring a Userlist Push API Key for authentication and matching users via the user_id field.
+
+# Keywords
+- Userlist integration
+- event streaming
+- Push API Key
+- user_id matching
+- email automation
+- SaaS onboarding
+- marketing automation
+- user behavior tracking
+- company-level events
+- event properties filtering

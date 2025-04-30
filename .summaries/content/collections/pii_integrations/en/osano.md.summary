@@ -1,0 +1,14 @@
+# Summary
+This documentation describes the integration between Osano (a data privacy platform) and Amplitude, explaining how Osano discovers and classifies personal data in Amplitude to support compliance with privacy laws like GDPR and CCPA, and how to set up the connection using Amplitude API keys.
+
+# Keywords
+- Osano integration
+- PII management
+- GDPR compliance
+- CCPA compliance
+- Data discovery
+- Subject rights requests
+- API key authentication
+- Data store configuration
+- Personal data classification
+- Privacy compliance

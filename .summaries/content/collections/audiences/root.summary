@@ -1,0 +1,80 @@
+# Amplitude Activation Product Overview
+
+## High-Level Overview
+
+Amplitude Activation is a comprehensive platform that enables businesses to leverage user data for personalized marketing, targeted campaigns, and behavioral predictions. The product combines advanced AI capabilities with user segmentation tools to help companies optimize their marketing efforts and improve conversion rates. It serves as a bridge between data analytics and actionable marketing initiatives.
+
+## Product Relationships and Features
+
+Amplitude Activation consists of four primary components that work together to create a complete personalization ecosystem:
+
+1. **Predictions** - Uses AI and machine learning to forecast user behavior and create predictive cohorts based on likelihood scores. The system employs transformer-based sequence models to analyze user activity patterns and generate probability scores for future actions.
+
+2. **Recommendations** - Determines which items are most likely to drive users toward specific goals through three approaches:
+   - AI-Based personalization using machine learning
+   - Top Trending items gaining popularity
+   - Most Popular items with highest engagement
+
+3. **Computations** - Transforms events or event properties into computed user properties that can be used for segmentation. Unlike cohorts, these store specific values as integers attached to individual users through:
+   - Event Count calculations
+   - Aggregation operations
+   - First/Last Value captures
+
+4. **Third-Party Syncs** - Enables the transfer of user data from Amplitude to external marketing platforms through:
+   - On-demand manual syncs
+   - Automated scheduled syncs
+   - Real-time minute-by-minute updates
+
+These components are designed to work sequentially in a workflow that moves from data collection to campaign execution and measurement.
+
+## Key Nomenclature and Definitions
+
+- **Predictive cohorts**: User segments created based on likelihood to perform future actions
+- **Feature importance**: Metrics showing which user behaviors most influence prediction models
+- **AUC (Area Under Curve)**: Statistical measure of prediction model accuracy
+- **Lift**: Improvement in conversion rates compared to a baseline or control group
+- **Control group**: User segment that doesn't receive treatment, used for comparison
+- **Outcome event**: The target action a recommendation aims to drive
+- **Exposure event**: The moment when a user sees a recommendation
+- **Item catalog**: Collection of items that can be recommended to users
+- **Computed user properties**: Values derived from events and attached to user profiles
+- **Sync discrepancies**: Differences in user counts between Amplitude and destination platforms
+
+## Product Ecosystem Integration
+
+Amplitude Activation integrates with the broader Amplitude analytics ecosystem to create a closed-loop marketing and analytics platform:
+
+1. **Data Collection**: Behavioral data is gathered through Amplitude's analytics platform
+2. **Segment Creation**: Users are segmented through predictions, recommendations, or computations
+3. **Campaign Execution**: Segments are deployed through third-party syncs or direct API integration
+4. **Performance Measurement**: Results are analyzed within Amplitude to optimize future campaigns
+
+The platform supports integration with numerous marketing tools including Braze, Facebook Custom Audience, and other platforms through its sync capabilities. For direct implementation, Amplitude provides the Profile API for real-time personalization.
+
+## API and Implementation Details
+
+### Profile API
+The Profile API is the primary integration point for deploying recommendations:
+
+```
+GET https://profile-api.amplitude.com/v1/userprofile
+```
+
+Required parameters:
+- `api_key`: Your Amplitude API key
+- `user_id` or `device_id`: Identifier for the user
+- `recommendation_key`: Identifier for the recommendation model
+- `is_control`: Boolean indicating whether the user is in the control group
+
+The API returns ranked recommendations specific to the identified user, enabling real-time personalization in applications and websites.
+
+### Campaign Implementation
+
+Amplitude Activation supports three primary campaign types:
+1. **Inclusion Criteria**: Targeting specific user segments
+2. **Dynamic Pricing**: Adjusting pricing based on user behavior
+3. **Content Personalization**: Customizing content for different user segments
+
+For measurement, the platform provides tools for analyzing relative lift, statistical significance, funnel conversion, and treatment vs. control comparisons.
+
+Note: Computations are currently available only in the US region, which may affect implementation planning for global organizations.

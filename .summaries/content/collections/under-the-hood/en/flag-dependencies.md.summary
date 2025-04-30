@@ -1,0 +1,14 @@
+# Summary
+This documentation explains flag dependencies in Amplitude Experiment, which define relationships between flags to control evaluation order, implementing three key features: flag prerequisites (for complex feature releases), mutual exclusion groups (ensuring only one experiment runs per user), and holdout groups (withholding traffic to measure combined experiment impact).
+
+# Keywords
+- flag dependencies
+- evaluation order
+- flag prerequisites
+- mutual exclusion groups
+- holdout groups
+- local evaluation support
+- experiment hierarchies
+- traffic allocation
+- SDK version compatibility
+- variant assignment

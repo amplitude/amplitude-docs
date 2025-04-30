@@ -1,0 +1,14 @@
+## Summary
+This documentation explains methods to block or filter internal user data in Amplitude to maintain clean analytics, including IP-based blocking through Data Filters in the Govern page, segmentation using user properties, saving user segments as defaults, and managing internal user lists with behavioral cohorts that can be programmatically updated.
+
+## Keywords
+- internal user filtering
+- IP address blocking
+- data filters
+- user segmentation
+- behavioral cohorts
+- saved segments
+- default segments
+- Amplitude Govern
+- test data exclusion
+- cohort API

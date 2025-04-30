@@ -1,0 +1,58 @@
+# Amplitude Single Sign-On (SSO) Integration
+
+## Overview
+
+Amplitude Single Sign-On (SSO) Integration enables organizations to authenticate users through their existing identity providers using the SAML 2.0 protocol. Available for Growth and Enterprise plan customers, this feature streamlines user access management while enhancing security through centralized authentication. The solution supports both pre-configured integrations with popular identity providers and custom SAML 2.0 compliant providers.
+
+## Key Features
+
+- **SAML 2.0 Compatibility**: Implements industry-standard authentication protocol
+- **Multiple Identity Provider Support**: Pre-configured integrations with Auth0, G Suite, Azure AD, Okta, and OneLogin
+- **Custom Provider Integration**: Support for any SAML 2.0 compliant identity provider
+- **Just-in-time Provisioning**: Automatic user creation upon first successful SSO login
+- **Required SSO Enforcement**: Option to disable password-based login and require SSO exclusively
+- **Email Address Lookup**: Uses email addresses in SAML assertions for user identification
+
+## Product Relationships
+
+Amplitude SSO functions as the authentication gateway to the Amplitude Analytics platform. It establishes a secure connection between an organization's identity management system and Amplitude's user access controls. The SSO integration sits at the organizational level, affecting all users within that organization. When configured, it becomes the primary authentication method, potentially replacing standard username/password authentication if enforced as required.
+
+The SSO feature is positioned as an enterprise-grade security enhancement, available only on Growth and Enterprise plans, indicating its strategic importance in Amplitude's product hierarchy for larger organizations with more complex security requirements.
+
+## Key Nomenclature and Definitions
+
+- **SAML 2.0**: Security Assertion Markup Language, the XML-based protocol standard that enables secure exchange of authentication and authorization data
+- **Identity Provider (IdP)**: The external system (e.g., Okta, Azure AD) that authenticates users and sends identity information to Amplitude
+- **Service Provider (SP)**: Amplitude's role in the SAML relationship, receiving and processing authentication assertions
+- **Entity ID**: Unique identifier for Amplitude as a service provider (`https://analytics.amplitude.com/saml/metadata/{org_id}`)
+- **Assertion Consumer Service (ACS) URL**: Endpoint where identity providers send SAML assertions after authentication (`https://analytics.amplitude.com/saml/sso/{org_id}`)
+- **Metadata File**: XML document containing configuration details and certificates for establishing trust between Amplitude and the identity provider
+- **Just-in-time Provisioning**: Automatic user account creation in Amplitude when a user successfully authenticates via SSO for the first time
+- **Required SSO Enforcement**: Configuration option that restricts authentication to SSO only, disabling password-based login
+
+## Product Ecosystem Integration
+
+Amplitude SSO integrates with the broader Amplitude Analytics platform as the authentication layer controlling user access. It's configured through the Organization Settings interface, specifically in the Access & SSO Settings section. The feature enhances Amplitude's enterprise readiness by providing:
+
+1. Centralized user management through existing identity systems
+2. Enhanced security through elimination of password-based authentication
+3. Streamlined user onboarding through automatic provisioning
+4. Compliance with organizational security policies requiring SSO
+
+The SSO functionality complements Amplitude's role-based access controls and user management features, creating a comprehensive security framework for enterprise customers.
+
+## Configuration Parameters
+
+While there are no direct API endpoints for SSO configuration, the setup process involves specific URLs and parameters:
+
+- **Entity ID**: `https://analytics.amplitude.com/saml/metadata/{org_id}`
+- **ACS URL**: `https://analytics.amplitude.com/saml/sso/{org_id}`
+
+The configuration workflow involves:
+1. Setting up Amplitude as a service provider in the identity provider's system
+2. Configuring the appropriate attributes and mappings in the identity provider
+3. Obtaining the identity provider's metadata file
+4. Uploading the metadata file to Amplitude through Organization Settings
+5. Optionally enabling "Required SSO" to enforce SSO-only authentication
+
+Each supported identity provider (Auth0, G Suite, Azure AD, Okta, OneLogin) has specific configuration paths within their respective administration interfaces, but all follow the standard SAML 2.0 implementation pattern.

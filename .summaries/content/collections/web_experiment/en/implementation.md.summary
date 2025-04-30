@@ -1,0 +1,16 @@
+# Summary
+This documentation page explains how to implement Amplitude's Web Experiment by adding a script to your website's `<head>` element, providing both synchronous and asynchronous implementation options with anti-flicker snippets, integration methods with third-party CDPs, and specific guidance for content management systems like WordPress and Shopify.
+
+# Keywords
+- web_experiment script
+- anti-flicker snippet
+- third-party CDP integration
+- impression events
+- content security policies
+- async implementation
+- Segment integration
+- Tealium integration
+- custom IntegrationPlugin
+- Shopify implementation
+- WordPress plugin
+- Google Tag Manager

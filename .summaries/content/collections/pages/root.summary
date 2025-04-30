@@ -1,0 +1,78 @@
+# Amplitude Product Documentation Overview
+
+## Product Overview
+
+Amplitude is a comprehensive analytics and data platform designed to help businesses understand user behavior, optimize experiences, and drive growth. The platform consists of four main products:
+
+1. **Amplitude Analytics** - The flagship product for tracking and analyzing user behavior across digital products
+2. **Amplitude Data** - Tools for data integration, management, and governance
+3. **Amplitude Experiment** - A feature flagging and experimentation platform
+4. **Amplitude Session Replay** - A visual tool for capturing and analyzing user sessions
+
+The platform enables companies to track user interactions, analyze behavior patterns, create custom metrics, conduct experiments, and visualize user sessions to improve product experiences.
+
+## Product Relationships and Features
+
+Amplitude's ecosystem is designed for seamless integration between its components:
+
+- **Analytics** serves as the core platform, collecting and processing event data
+- **Data** provides the infrastructure for ingesting, processing, and managing this data
+- **Experiment** leverages user data from Analytics to target and measure experiments
+- **Session Replay** complements Analytics by providing visual context to quantitative data
+
+Key features across the platform include:
+- Event tracking for capturing user interactions
+- User properties for segmentation and analysis
+- Custom formulas for advanced metrics
+- User identification methods
+- Feature flags for controlled feature rollouts
+- Experimentation capabilities
+
+## Key Nomenclature and Definitions
+
+- **Event** - A discrete user action or occurrence tracked in Amplitude
+- **User Property** - Attributes associated with a user that persist across sessions
+- **Session** - A period of continuous user activity
+- **Feature Flag** - A toggle that enables/disables features for specific users
+- **Experiment** - A controlled test comparing different variations of a feature
+- **Data Integration** - The process of connecting external data sources to Amplitude
+- **Blueprint** - Templates used in the Statamic CMS for page structure
+- **Origin Reference** - Metadata field tracking original content source for localization
+
+## Product Ecosystem Integration
+
+Amplitude provides a multilingual documentation ecosystem with:
+
+1. A primary English documentation portal
+2. Localized versions, including a Japanese documentation portal
+3. A shared content management system (Statamic) that handles multilingual content
+
+The documentation is structured to maintain consistency across languages while allowing for localized navigation and content. The system tracks relationships between original content and translations through origin reference IDs.
+
+## Technical Implementation
+
+### APIs and SDKs
+
+Amplitude offers multiple integration points:
+
+**APIs:**
+- HTTP APIs - RESTful interfaces for programmatic access
+- SDK APIs - Interfaces for client-side implementation
+- SCIM APIs - Standards-based APIs for user management
+
+**SDKs:**
+- Mobile SDKs (iOS, Android)
+- Web SDKs (JavaScript)
+- Server-side SDKs
+- Cross-platform SDKs
+
+### Documentation Architecture
+
+The documentation is implemented using Statamic CMS, with:
+- Markdown files with YAML frontmatter for content
+- References to Statamic-specific concepts like blueprints
+- Unique ID generation for content items
+- Version-controlled repository management
+- Metadata tracking for content updates, authorship, and publication status
+
+The documentation uses specialized components including tabs for code examples, collapsible sections, and admonitions (note, info, warning, example, tip, alpha, beta, and deprecated) to organize information effectively.

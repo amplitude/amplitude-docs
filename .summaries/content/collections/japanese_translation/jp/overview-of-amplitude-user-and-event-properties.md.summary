@@ -1,0 +1,15 @@
+## Summary
+This documentation explains Amplitude's two types of properties: user properties (attributes of individual users that persist until changed) and event properties (attributes specific to events at the time they occur). It details how Amplitude updates and applies user properties, explains property visibility in charts, and describes methods for applying user properties to events.
+
+## Keywords
+- user properties
+- event properties
+- property updates
+- identify API
+- property application methods
+- property overlap
+- default user properties
+- custom user properties
+- property hiding
+- event-based tracking
+- property persistence
