@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/guides-and-surveys/guides/roles-and-permissions",
+      "destination": "/docs/guides-and-surveys/roles-and-permissions",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/analytics/web-analytics",
       "destination": "/docs/analytics/ootb-marketing-analytics",
       "statusCode": 301
