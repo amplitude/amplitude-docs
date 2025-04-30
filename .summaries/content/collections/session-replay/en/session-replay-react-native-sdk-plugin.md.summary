@@ -1,15 +1,14 @@
 ## Summary
-This documentation covers the installation and configuration of the Session Replay React Native SDK Plugin, including how to mask sensitive data, set sampling rates, handle user opt-out, and track web views. It details configuration options like sampleRate and enableRemoteConfig, and explains data privacy features including EU data residency support and DSAR API integration.
+This documentation covers the installation and configuration of the Session Replay React Native SDK Plugin, including setup instructions, masking sensitive data, user opt-out options, recording controls, EU data residency support, sampling rate configuration, web view tracking, and data privacy features.
 
 ## Keywords
 - React Native SDK Plugin
-- Session Replay
+- SessionReplayPlugin
 - AmpMaskView
-- sampling rate
-- remote configuration
+- sampleRate configuration
+- enableRemoteConfig
+- session recording start/stop
+- EU data residency
 - web view tracking
 - data masking
-- EU data residency
-- DSAR API
-- user opt-out
-- session quota
+- DSAR API integration
