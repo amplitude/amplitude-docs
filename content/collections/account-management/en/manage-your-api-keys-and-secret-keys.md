@@ -13,22 +13,22 @@ updated_at: 1721166679
 You should review the [keys and tokens documentation](https://amplitude.com/docs/apis/keys-and-tokens) before you make any changes to your keys.
 {{/partial:admonition}}
 
-Amplitude’s self-service key management page helps you create, disable, or delete both API keys and secret keys at the project level. Only users who received the feature flag from Amplitude can access this page. **All changes are permanent**.
+Amplitude’s self-service key management page helps you create, revoke, or delete both API keys and secret keys at the project level. **All changes are permanent**.
 
 You can: 
 * Create and name multiple API keys and secret keys
 * View a log of the creator, and the last action taken on the key
-* Revoke API access
+* Disable API access
 
 {{partial:admonition type='note'}}
-Once you revoke an API key, you can't undo it. However, you may still be able to see the key value.  {{/partial:admonition}}
+Once you revoke an API key, you can't undo it. However, you will still be able to see the key value.  {{/partial:admonition}}
 
 ## Manage your keys
 
 To manage your keys, follow these steps:
 
 1. Select *Organization settings* in the upper navigation.
-2. Select *API Keys*. In the *API Keys* tab, you can see the legacy API key. This key was created along with the project. You can't revoke this key.
+2. Select *API Keys*. In the *API Keys* tab, you can see the legacy API key. This key was created along with the project.
 
 ![api_secret_manage.png](/docs/output/img/account-management/api_secret_manage.png)
 
