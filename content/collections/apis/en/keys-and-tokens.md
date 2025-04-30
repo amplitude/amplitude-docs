@@ -16,14 +16,14 @@ This table gives a brief overview of each kind of key.
 
 | Product    | Key                          | Public | Can it be rotated? |
 | ---------- | ---------------------------- | ------ | ------------------ |
-| Analytics  | Project API Key              | ✅      | ❌                  |
-| Analytics  | Project Secret Key           | ❌      | Contact Support    |
-| Experiment | Deployment Key (client-side) | ✅      | ✅                  |
-| Experiment | Deployment Key (server-side) | ❌      | ✅                  |
-| Experiment | Management API Key           | ❌      | ✅                  |
-| Data       | API Token                    | ❌      | ✅                  |
-| Other      | SCIM Key                     | ❌      | ✅                  |
-| Other      | Org-level keys               | ❌      | Contact Support    |
+| Analytics  | Project API Key              | ✅     | ✅                 |
+| Analytics  | Project Secret Key           | ❌     | ✅                 |
+| Experiment | Deployment Key (client-side) | ✅     | ✅                 |
+| Experiment | Deployment Key (server-side) | ❌     | ✅                 |
+| Experiment | Management API Key           | ❌     | ✅                 |
+| Data       | API Token                    | ❌     | ✅                 |
+| Other      | SCIM Key                     | ❌     | ✅                 |
+| Other      | Org-level keys               | ❌     | Contact Support    |
 
 ## Analytics keys
 
@@ -33,22 +33,22 @@ To view your project's API Key and Secret Key, see [Authentication](/docs/apis/a
 
 ### API Key
 
-To ingest data from browsers and mobile applications, Amplitude must be able to identify which project the requests should go to. Amplitude does this with an *API Key* that's associated with a single project. 
+To ingest data from browsers and mobile applications, Amplitude must be able to identify which project the requests should go to. Amplitude does this with *API Keys* that's associated with a single project. 
 
-Files sent to a browser and code distributed as part of a mobile app are shared with end users, so the API Key can't be truly secret. 
+Files sent to a browser and code distributed as part of a mobile app are shared with end users, so the API Keys can't be truly secret. 
 
-Because there's no way to keep the API Key secret, the scope of what the key can be used for is limited to the bare minimum needed to ingest data into Amplitude. This isn't unique to Amplitude: all services that support ingesting data from browsers or mobile apps have a similar key, though what they call it may vary.
+Because there's no way to keep the API Keys secret, the scope of what the keys can be used for is limited to the bare minimum needed to ingest data into Amplitude. This isn't unique to Amplitude: all services that support ingesting data from browsers or mobile apps have a similar key, though what they call it may vary.
 
 {{partial:admonition type="note" heading="API keys are public"}}
-API Keys are public. They aren't vulnerable to leaks or compromises.
+API Keys are public. If an API key is abused, you should revoke or rotate the key.
 {{/partial:admonition}}
 
 ### Secret Key
 
-Projects also have a *Secret Key*. These are used in conjunction with the project API Key to manage your account.
+Projects can have multiple *Secret Keys*. These are used in conjunction with the project API Key to manage your account.
 
 {{partial:admonition type="warning" heading="Secret keys are private"}}
-Keep the Secret Key private. If your Secret Key is compromised, contact Amplitude Support.
+Keep the Secret Keys private. If your Secret Keys are compromised, delete the compromised key and generate a new one.
 {{/partial:admonition}}
 
 ## Data keys
