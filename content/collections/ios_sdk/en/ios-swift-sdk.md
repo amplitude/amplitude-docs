@@ -89,6 +89,7 @@ Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 | `optOut`                       | Opt the user out of tracking.                                                                                                                                                                               | `false`                                  |
 | ~`defaultTracking`~ (Deprecated. Use [`autocapture`](#autocapture) instead.)             | Enable tracking of default events for sessions, app lifecycles, screen views, and deep links.                                                                                    | `DefaultTrackingOptions(sessions: true)` |
 | `autocapture`             | Enable tracking of [Autocapture events](#autocapture) for sessions, app lifecycles, screen views, deep links, network requests, and element interactions.                                                                                    | `AutocaptureOptions.sessions` |
+| `enableAutoCaptureRemoteConfig` | Enable remote configuration for autocapture settings. When enabled, autocapture settings can be updated remotely after initialization.                                                                      | `true` |
 | `minTimeBetweenSessionsMillis` | The amount of time for session timeout.                                                                                                                                                                     | `300000`                                 |
 | `serverUrl`                    | The server url events upload to.                                                                                                                                                                            | `https://api2.amplitude.com/2/httpapi`   |
 | `serverZone`                   | The server zone to send to, will adjust server url based on this config.                                                                                                                                    | `US`                                     |
@@ -246,6 +247,60 @@ Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
+
+### Remote configuration for autocapture
+
+Starting from release v1.10.0, the SDK supports remote configuration for autocapture settings. This feature allows you to update autocapture settings after initialization without requiring an app update.
+
+By default, remote configuration for autocapture is enabled. You can disable it by setting `enableAutoCaptureRemoteConfig` to `false` in the configuration:
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+let amplitude = Amplitude(configuration: Configuration(
+    apiKey: "API_KEY",
+    autocapture: [.sessions, .appLifecycles, .screenViews],
+    enableAutoCaptureRemoteConfig: false
+))
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
+configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[
+    AMPAutocaptureOptions.sessions,
+    AMPAutocaptureOptions.appLifecycles,
+    AMPAutocaptureOptions.screenViews
+]];
+configuration.enableAutoCaptureRemoteConfig = NO;
+Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+When remote configuration is enabled, the SDK will check for updates to autocapture settings from the Amplitude servers. If updates are available, the SDK will apply them automatically. This allows you to:
+
+- Enable or disable specific autocapture features remotely
+- Change autocapture settings without requiring users to update the app
+
+The remote configuration uses the key `analyticsSDK.iosSDK.autocapture` with the following structure:
+
+```json
+{
+  "analyticsSDK": {
+    "iosSDK": {
+      "autocapture": {
+        "sessions": true,
+        "pageViews": true,
+        "elementInteractions": false,
+        "networkTracking": true
+      }
+    }
+  }
+}
+```
+
+Note that changes made through remote configuration will only affect future events and will not be applied to events that have already been tracked.
 
 ### Track sessions
 
