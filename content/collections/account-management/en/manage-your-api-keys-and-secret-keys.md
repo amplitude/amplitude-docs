@@ -13,7 +13,7 @@ updated_at: 1721166679
 You should review the [keys and tokens documentation](https://amplitude.com/docs/apis/keys-and-tokens) before you make any changes to your keys.
 {{/partial:admonition}}
 
-Amplitude’s self-service key management page helps you create, revoke, or delete both API keys and secret keys at the project level. **All changes are permanent**.
+Amplitude’s self-service key management page helps Managers & Admins create, revoke, or delete both API keys and secret keys. **All changes are permanent**.
 
 You can: 
 * Create and name multiple API keys and secret keys
