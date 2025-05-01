@@ -8,75 +8,69 @@ Key features include:
 - Organization and project management
 - User permission controls and role-based access
 - API and secret key management
-- Data privacy and deletion capabilities
+- Data management capabilities including sampling and deletion
 - Cross-project analysis through Portfolio views
-- Enterprise features like SCIM provisioning and permission groups
-- Notification management and webhooks for alerts
+- Integration capabilities via SCIM provisioning and webhooks
+- Notification management and privacy controls
 
 ## Product Relationships and Features
 
 ### Organization and Project Structure
 - **Organizations** are the top-level entities that contain projects and users
-- **Projects** store specific product data and have configurable settings including:
-  - API/secret keys for data ingestion
-  - Session definitions
-  - Time zone configuration
-  - Currency display settings
-  - Sampling rates for high-volume data
+- **Projects** represent individual data sources or products being tracked
+- **Portfolio Views** (Enterprise feature) allow cross-project analysis by merging data from up to 5-10 projects
 
 ### User Management and Permissions
-- **User Roles** follow a hierarchy (Viewer → Member → Manager → Admin)
+- **User Roles** follow a hierarchy: Viewer → Member → Manager → Admin
 - **Permission Groups** (Enterprise feature) allow efficient management of permissions at scale
 - **Project-level Permissions** provide granular access control
 - **SCIM Provisioning** enables programmatic user and group management via API
 
 ### Data Management
+- **Scale** (Enterprise feature) provides dynamic behavioral sampling for high event volumes
 - **Self-service Data Deletion** allows permanent removal of specific events or properties
-- **Scale Feature** provides dynamic behavioral sampling for high event volumes
+- **Currency Unit Configuration** allows customization of displayed currency values
 - **User Privacy Notifications** support GDPR compliance for data deletion requests
 
-### Integration and Extension
-- **API and Secret Keys** enable secure data ingestion and API access
-- **Webhooks** allow real-time integration with other applications when KPIs change
-- **Portfolio Views** enable cross-project analysis by merging data from multiple projects
+### Integration and Automation
+- **API Keys and Secret Keys** enable secure programmatic access
+- **Webhooks** allow real-time integration with other applications based on KPI changes
+- **User Mapping API** supports reconciling different user IDs across projects in Portfolio
 
 ## Key Nomenclature and Definitions
 
-- **API Key**: Unique identifier used for sending data to Amplitude
-- **Secret Key**: Credential used for secure API access to retrieve data
-- **Permission Groups**: Collections of users with the same access levels
-- **Portfolio Views**: Enterprise feature for cross-project analysis
+- **API Key**: Unique identifier used to authenticate API requests to Amplitude
+- **Secret Key**: Secure credential used alongside API keys for sensitive operations
+- **Permission Groups**: Collections of users with the same access levels across projects
+- **Portfolio Views**: Merged data sets from multiple projects for cross-project analysis
 - **SCIM**: System for Cross-domain Identity Management, a standard for automating user provisioning
-- **Scale**: Feature for dynamic behavioral sampling of high-volume event data
-- **Session Definition**: Configuration that determines how user sessions are tracked
-- **User Mapping API**: Method to reconcile different user IDs across projects in Portfolio
+- **Scale**: Amplitude's dynamic behavioral sampling feature for high-volume data
+- **Session Definition**: Configuration that determines how user sessions are tracked and measured
+- **User Mapping**: Process of reconciling different user identifiers across projects
+- **Webhooks**: HTTP callbacks that deliver data to other applications when events occur
 
 ## Product Ecosystem Integration
 
-Amplitude's account management features support the broader analytics platform by:
+Amplitude's account management features integrate with the broader Amplitude ecosystem:
 
-1. **Enabling Multi-product Analysis**: Portfolio views allow tracking user journeys across different products
-2. **Supporting Enterprise Workflows**: SCIM provisioning integrates with identity providers like Okta
-3. **Ensuring Data Privacy Compliance**: Self-service deletion and privacy notifications support GDPR requirements
-4. **Optimizing for Scale**: Features like dynamic behavioral sampling help manage high event volumes cost-effectively
-5. **Extending Platform Value**: Webhooks connect Amplitude insights to other business systems
+1. **Analytics Core**: All account settings directly impact how data is collected, processed, and accessed in the analytics platform
+2. **Session Replay**: Configuration options for sampling rates and project management
+3. **Team Spaces**: Integrated with permission groups for collaborative analysis
+4. **Insights Package**: Provides access to advanced features like webhooks
+5. **Enterprise Plan**: Unlocks advanced features like Portfolio, Scale, and permission groups
+
+The account management system serves as the administrative foundation that enables proper configuration and security for all other Amplitude products and features.
 
 ## API Endpoints and Commands
 
-The documentation references several API-related features:
+The documentation references several API endpoints and features:
 
-- **User Privacy API**: For managing data deletion requests
-- **SCIM 2.0 API**: For user and group provisioning (endpoint: `https://amplitude.com/api/2/scim/v2`)
-- **User Mapping API**: For reconciling user IDs across projects in Portfolio
-- **Webhooks Configuration**: Custom endpoints can be configured to receive alert payloads
+- **User Privacy API**: Used for managing GDPR compliance and data deletion requests
+- **SCIM 2.0 API**: Endpoint for user provisioning with the base URL format: `https://amplitude.com/api/2/scim/v2/`
+- **User Mapping API**: Used to reconcile different user IDs across projects in Portfolio
+- **Webhook Configuration**: Endpoints can be configured to receive payload deliveries when KPIs change
 
-Key management is handled through the self-service interface with a limit of 50 active keys per project.
-
-## Settings and Configuration Options
-
-- **Organization Settings**: Manage users, SSO, usage reports, and organization-wide configurations
-- **Project Settings**: Configure API keys, session definitions, time zones, and project-specific options
-- **Personal Settings**: Control profile information, site preferences, notifications, and theme selection
-- **Session Replay Settings**: Configure sample rates and project management for session recording
-- **Currency Display**: Change the default currency (US dollar) to any other currency for display purposes
-- **Sampling Configuration**: Set sampling rates and user property inclusion lists for high-volume projects
+Key management operations:
+- API key creation/revocation through the self-service interface
+- SCIM key generation for user provisioning
+- Secret key rotation for enhanced security
