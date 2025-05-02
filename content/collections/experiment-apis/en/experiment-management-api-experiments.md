@@ -1089,6 +1089,9 @@ Edit an experiment.
 | `endDate`                              | Optional    | string       | End date of the experiment in ISO 8601 format. End date can be null.                                                                                                                                       |
 | `exposureEvent`                        | Optional    | object       | See the [`exposureEvent`](#exposureevent) table for more information. If set to null, the Amplitude Exposure Event will be used.                                                                           |
 | `tags`                                 | Optional    | string array | A list of tags for the experiment. Tags are added and deleted by the same operation. If you would like to add new tags to the existing ones, you should fetch a list of all experiment tags first.         |
+| `decision`                             | Optional    | string       | Options include `rollout`, `rollback`, `continue-running`.                                                                                                                                                 |
+| `decisionReason`                       | Optional    | string       | The reason you made the decision you made.                                                                                                                                                              |
+| `rolledOutVariant`                     | Optional    | string       | The variant key or name that you rolled out.                                                                                                                                                             |
 
 #### exposureEvent
 
