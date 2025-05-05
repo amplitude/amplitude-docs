@@ -35,7 +35,7 @@ const segmentAnalytics = AnalyticsBrowser.load({
 
 const AMPLITUDE_API_KEY = 'api-key' // must match that saved with Segment
 const getStoredSessionId = () => {
- return cookie.get("amp_session_id") || 0;
+ return cookie.get("analytics_session_id") || 0;
 }
 
 const user = await segmentAnalytics.user();
@@ -52,7 +52,7 @@ segmentAnalytics.addSourceMiddleware(({ payload, next, integrations }) => {
   const storedSessionId = getStoredSessionId();
   const nextSessionId = payload.obj.integrations['Actions Amplitude'].session_id || 0
   if (storedSessionId < nextSessionId) {
-    cookie.set("amp_session_id", nextSessionId);
+    cookie.set("analytics_session_id", nextSessionId);
     sessionReplay.setSessionId(nextSessionId);
   }
   next(payload);
@@ -88,7 +88,7 @@ const segmentAnalytics = AnalyticsBrowser.load({
 const AMPLITUDE_API_KEY = 'api-key' // must match that saved with Segment
 const getAmpSessionId = () => {
   const sessionId = window.amplitude.getInstance().getSessionId();
-  cookie.set("amp_session_id", sessionId);
+  cookie.set("analytics_session_id", sessionId);
   return sessionId;
 };
 
@@ -106,9 +106,9 @@ window.amplitude.getInstance().onInit(() => {
 // and update the session replay instance
 SegmentAnalytics.addSourceMiddleware(({ payload, next, integrations }) => {
   const nextSessionId = window.amplitude.getInstance().getSessionId();
-  const storedSessionId = cookie.get("amp_session_id") || 0;
+  const storedSessionId = cookie.get("analytics_session_id") || 0;
   if (storedSessionId < nextSessionId) {
-    cookie.set("amp_session_id", nextSessionId);
+    cookie.set("analytics_session_id", nextSessionId);
     sessionReplay.setSessionId(nextSessionId);
   }
   next(payload);
