@@ -89,7 +89,7 @@ Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 | `optOut`                       | Opt the user out of tracking.                                                                                                                                                                               | `false`                                  |
 | ~`defaultTracking`~ (Deprecated. Use [`autocapture`](#autocapture) instead.)             | Enable tracking of default events for sessions, app lifecycles, screen views, and deep links.                                                                                    | `DefaultTrackingOptions(sessions: true)` |
 | `autocapture`             | Enable tracking of [Autocapture events](#autocapture) for sessions, app lifecycles, screen views, deep links, network requests, and element interactions.                                                                                    | `AutocaptureOptions.sessions` |
-| `enableAutoCaptureRemoteConfig` | Enable remote configuration for autocapture settings. When enabled, autocapture settings can be updated remotely after initialization.                                                                      | `true` |
+| `enableAutoCaptureRemoteConfig` | Enable remote configuration for autocapture settings. When enabled, Autocapture settings are updateable remotely after initialization.                                                                      | `true` |
 | `minTimeBetweenSessionsMillis` | The amount of time for session timeout.                                                                                                                                                                     | `300000`                                 |
 | `serverUrl`                    | The server url events upload to.                                                                                                                                                                            | `https://api2.amplitude.com/2/httpapi`   |
 | `serverZone`                   | The server zone to send to, will adjust server url based on this config.                                                                                                                                    | `US`                                     |
@@ -278,7 +278,7 @@ Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 {{/partial:tab}}
 {{/partial:tabs}}
 
-When remote configuration is enabled, the SDK will check for updates to autocapture settings from the Amplitude servers. If updates are available, the SDK will apply them automatically. This allows you to:
+When you enable remote configuration, the SDK checks for updates to Autocapture settings in your project. If updates are available, the SDK applies them automatically. This allows you to:
 
 - Enable or disable specific autocapture features remotely
 - Change autocapture settings without requiring users to update the app
@@ -300,7 +300,7 @@ The remote configuration uses the key `analyticsSDK.iosSDK.autocapture` with the
 }
 ```
 
-Note that changes made through remote configuration will only affect future events and will not be applied to events that have already been tracked.
+Changes made through remote configuration affect future events and don't apply to events that are already tracked.
 
 ### Track sessions
 
