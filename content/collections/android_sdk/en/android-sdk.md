@@ -1021,8 +1021,8 @@ client.setDeviceId("DEVICE-ID");
 
 Amplitude converts the IP of a user event into a location (GeoIP lookup) by default. This information may be overridden by an app's own tracking solution or user data.
 
-{{partial:admonition type="note" heading="Location tracking in version 1.20.7+"}}
-As of version 1.20.7, the SDK disables location tracking by default. Call `enableLocationListening()` to track location data. When enabled, Amplitude uses Android location services (if available) to add specific coordinates (longitude and latitude) to logged events. Call `disableLocationListening()` at any time to disable location tracking.
+{{partial:admonition type="note" heading="Location tracking in version v2.40.3+"}}
+As of version v2.40.3, the SDK disables location tracking by default. Call `enableLocationListening()` to track location data. When enabled, Amplitude uses Android location services (if available) to add specific coordinates (longitude and latitude) to logged events. Call `disableLocationListening()` at any time to disable location tracking.
 {{/partial:admonition}}
 
 ```java
