@@ -9,7 +9,6 @@ The Experiment Android SDK provides client-side feature flag and experiment mana
 - local evaluation
 - exposure tracking
 - user targeting
-- ExperimentUser
-- variant fetching
 - Amplitude integration
-- account-level bucketing
+- variant fetching
+- ExperimentConfig
