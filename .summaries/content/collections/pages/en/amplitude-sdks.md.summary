@@ -1,14 +1,10 @@
 ## Summary
-This documentation page serves as a central hub for Amplitude's SDK offerings, likely providing an overview of available SDKs for different platforms and their capabilities for tracking user events, analytics, and integrations with the Amplitude platform.
+This documentation page provides an overview of Amplitude SDKs, but is currently marked as unpublished (published: false), suggesting it's either a draft or deprecated page that isn't currently visible to users.
 
 ## Keywords
 - Amplitude SDKs
-- Analytics tracking
-- Event instrumentation
-- Cross-platform SDKs
-- Client-side integration
-- User behavior tracking
-- Data collection
-- Mobile SDKs
-- Web SDKs
-- Server-side SDKs
+- unpublished documentation
+- draft content
+- event tracking
+- analytics implementation
+- blueprint page
