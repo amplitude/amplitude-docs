@@ -69,7 +69,7 @@ To see a list of all existing alerts for a project, click *Manage Custom Alerts*
 
 ## Alert emails
 
-When an alert triggers, Amplitude sends an email to everyone subscribed to receive them by 8:00 AM in the project's timezone for daily metrics. For hourly metrics, the alert sends or the hour after it detects an anomaly.
+When an alert triggers, Amplitude sends an email to everyone subscribed to receive them by 8:00 AM in the project's timezone for daily metrics. For hourly metrics, the alert notification  sends in the hour period after Amplitude detects the anomaly. For example, if your metric dips significantly at 1:15 PM, Amplitude’s alerting service identifies that anomaly at 2:00 PM, and sends you a notification by 3:00 PM at the latest.
 
 Click a chart in the email to go directly to that chart in Amplitude. A side-panel that reiterates the issue Amplitude alerted you about.
 
