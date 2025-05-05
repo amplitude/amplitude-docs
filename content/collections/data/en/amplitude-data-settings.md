@@ -123,6 +123,8 @@ The Autocapture settings in Amplitude Data allow you to change the configuration
 
 Autocapture settings are enabled on projects that use version 2.10.0 or higher of the [Amplitude Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) where the SDK has `fetchRemoteConifg` enabled.
 
+To disable remote configuration, set `fetchRemoteConfig` to `false`. Disabling `fetchRemoteConfig` doesn't disable the remote configuration options in Data Settings. 
+
 {{partial:admonition type="note" heading="Remote configuration by default"}}
 Starting in SDK version 2.16.1, `fetchRemoteConfig` is enabled by default.
 {{/partial:admonition}}
@@ -141,16 +143,23 @@ On the Settings Page, each configuration category offers three options:
 * **On**: Overrides the local configuration and sets the category to true. All settings within the category (for example, Element Interactions) follow the configuration in the UI.  
 * **Off**: Overrides the local configuration and sets the category to false.
 
+{{partial:admonition type="note" heading="Disabling Session Tracking"}}
+If you use Session Replay, ensure your Session Replay SDK version is 1.12.1 or above.
+{{/partial:admonition}}
+
 Changes made through the UI take effect after 10 minutes.
 
 ### Element interactions
 
 When you enable Element Interactions, several options appear:
 
-| Option                 | Purpose                                                                                                                                |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| CSS Selector Allowlist | Specify the selectors of elements that Amplitude should always track.                                                                  |
-| Action Click Allowlist | Specify the selectors of elements that Amplitude should track when a user clicks them.                                                 |
-| Page URL Allowlist     | Specify URLs or URL patterns (using glob or regular expression) on which Amplitude tracks element click and change events.             |
-| Data Attribute Prefix  | Specify a prefix for data attributes, for example `data-amp-track`. Amplitude saves the value of these attributes as event properties. |
+| Option                 | Purpose                                                                                                                                                                                                             |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CSS Selector Allowlist | This list contains selectors for elements that users generally interact with. For example, links and form elements. If you have custom, or non-standard elements, that your users interact with, specify them here. |
+| Action Click Allowlist | Amplitude tracks the elements in this list only when a user clicks them, and they result in a page or DOM change.                                                                                               |
+| Page URL Allowlist     | Specify URLs or URL patterns (using glob or regular expression) on which Amplitude tracks element click and change events.                                                                                          |
+| Data Attribute Prefix  | Specify a prefix for data attributes, for example `data-amp-track`. Amplitude saves the value of these attributes as event properties.                                                                              |
  
+{{partial:admonition type="tip" heading="Lower event volume"}}
+These options can help you control event volume. By ignoring dead clicks, Action Click Allowlist is the most effecient method to reduce volume, while still tracking relevant interactions.
+{{/partial:admonition}}
