@@ -568,7 +568,7 @@ try {
 }
 ```
 {{/partial:tab}}
-
+{{/partial:tabs}}
 To pass freeform group properties, see this example:
 
 {{partial:tabs tabs="Java, Kotlin"}}
@@ -600,7 +600,7 @@ try {
 }
 ```
 {{/partial:tab}}
-
+{{/partial:tabs}}
 {{/partial:collapse}}
 
 ### Local evaluation cohort targeting
