@@ -1,14 +1,13 @@
 # Summary
-Localization in Amplitude Guides and Surveys allows content to be served in multiple languages by specifying user locale during SDK initialization and configuring project settings, with support for translating UI elements like titles, descriptions, and button text through .xliff template files.
+Localization in Amplitude Guides and Surveys allows serving content in multiple languages without creating duplicates, requiring SDK implementation updates to specify user locale and project settings configuration to define supported languages and fallback behaviors for missing translations.
 
 # Keywords
 - guides_and_surveys_localization
-- locale_code_implementation
-- xliff_translation_templates
-- SDK_initialization_locale
+- xliff_translation_files
+- locale_code_handling
 - translation_fallback_settings
-- multi-language_support
-- growth_enterprise_plans
-- translatable_UI_elements
-- preview_translation_issues
-- language_configuration
+- SDK_locale_initialization
+- translatable_strings
+- language_management
+- translation_preview
+- Growth_Enterprise_feature
