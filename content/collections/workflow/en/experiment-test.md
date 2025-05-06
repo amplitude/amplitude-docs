@@ -14,7 +14,7 @@ Once you’ve designed your experiment and configured its delivery, you’re rea
 On the Experiment Overview page, review the *Design* and *Delivery* cards. Make sure everything is set the way you planned it. Then click *Test Instrumentation* to send the experiment’s variants to the testers you designated when you [configured the experiment's delivery](/docs/feature-experiment/workflow/configure-delivery).
 
 {{partial:admonition type="note" heading="Test Instrumentation and targeting"}}
-When you test your instrumentation, Amplitude ignores target segments you configure in the experiment. Test instrumentation is sends variants to only the testers you designate in the experiment's delivery
+When you test your instrumentation, Amplitude ignores target segments you configure in the experiment. Test instrumentation sends variants to only the Testers you designate on the Testers tab the experiment's targeting section.
 {{/partial:admonition}}
 
 ## QA before rollout
