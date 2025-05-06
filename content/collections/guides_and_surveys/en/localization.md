@@ -67,7 +67,7 @@ To add a translation:
 1. Complete the guide or survey's steps in the default language.
 2. Download the translation template. This template is a .xliff file that contains [translatable strings](#translatable-strings) from each step of your guide or survey.
     {{partial:admonition type="tip" heading="Adding translations to the xliff files"}}
-    Our template files automatically provide the untranslated content inside `<source>` tags that shouldn't change. Instead, add the translations inside the `<target>` tags, like "Terminer" below:
+    Guides and Surveys template files add untranslated content to `<source>` tags in a .xliff file. The content in these tags shouldn't change. Add translations to the `<target>` tags, like "Terminer" below:
     ```xml
         <trans-unit id="done_label">
             <source>Finish</source>
