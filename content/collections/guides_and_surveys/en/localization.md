@@ -24,7 +24,7 @@ Specify the user's locale during [SDK initialization](/docs/guides-and-surveys/s
 ```js
 const currentLocale = getLocale() // "en" or "en-US"
 
-amplitude.add(window.engagement.plugin({locale: currentLocale})) 
+amplitude.add(window.engagement.plugin({locale: currentLocale}))
 ```
 {{/partial:tab}}
 {{partial:tab name="Third-party analytics"}}
@@ -66,6 +66,15 @@ To add a translation:
 
 1. Complete the guide or survey's steps in the default language.
 2. Download the translation template. This template is a .xliff file that contains [translatable strings](#translatable-strings) from each step of your guide or survey.
+    {{partial:admonition type="tip" heading="Adding translations to the xliff files"}}
+    Our template files automatically provide the orginal untranslated content inside `<source>` tags that should not be edited. Instead, you'll add translations inside the `<target>` tags, like "Terminer" has been added below:
+    ```xml
+        <trans-unit id="done_label">
+            <source>Finish</source>
+            <target>Terminer</target>
+        </trans-unit>
+    ```
+    {{/partial:admonition}}
 3. Create translations to your target languages with the template file, and upload a translated .xliff file for each language. If you don't upload a file for a language, Guides and Surveys follows the Project setting for a missing translation.
 4. After you upload a translation file, use the language picker on the canvas to toggle between available languages.
 
