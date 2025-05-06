@@ -35,7 +35,7 @@ This is the official documentation for the Amplitude Analytics iOS SDK.
 {{partial:tab name="Swift Package Manager"}}
 1. Navigate to `File` > `Swift Package Manager` > `Add Package Dependency`. This opens a dialog that allows you to add a package dependency. 
 2. Enter the URL `https://github.com/amplitude/Amplitude-Swift` in the search bar. 
-3. Xcode will automatically resolve to the latest version. Or you can select a specific version. 
+3. Xcode automatically resolves to the latest version. Or you can select a specific version. 
 4. Click the "Next" button to confirm the addition of the package as a dependency. 
 5. Build your project to make sure the package is properly integrated.
 {{/partial:tab}}
@@ -282,23 +282,6 @@ When you enable remote configuration, the SDK checks for updates to Autocapture 
 
 - Enable or disable specific autocapture features remotely
 - Change autocapture settings without requiring users to update the app
-
-The remote configuration uses the key `analyticsSDK.iosSDK.autocapture` with the following structure:
-
-```json
-{
-  "analyticsSDK": {
-    "iosSDK": {
-      "autocapture": {
-        "sessions": true,
-        "pageViews": true,
-        "elementInteractions": false,
-        "networkTracking": true
-      }
-    }
-  }
-}
-```
 
 Changes made through remote configuration affect future events and don't apply to events that are already tracked.
 
