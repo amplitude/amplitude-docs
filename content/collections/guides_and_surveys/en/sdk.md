@@ -283,17 +283,17 @@ engagement.setThemeMode(mode: ThemeMode): void
 
 | Parameter | Type                              | Description                          |
 | --------- | --------------------------------- | ------------------------------------ |
-| `mode`    | `light_mode`, `dark_mode`, `auto` | Required. Select the theme to apply. |
+| `mode`    | `lightMode`, `darkMode`, `auto` | Required. Select the theme to apply. |
 
 ```js
 // Automatically detect user's system preferences
 window.engagement.setThemeMode("auto");
 
 // Set dark mode explicitly
-window.engagement.setThemeMode("dark_mode");
+window.engagement.setThemeMode("darkMode");
 
 // Set light mode explicitly
-window.engagement.setThemeMode("light_mode");
+window.engagement.setThemeMode("lightMode");
 ```
 
 ## Router configuration
