@@ -759,6 +759,201 @@ new SegmentDestinationPlugin(this, SEGMENT_WRITE_KEY)
 
 ```
 
+### Network tracking plugin
+
+The Network Tracking Plugin allows you to automatically track network requests and responses in your application. This plugin works with OkHttp, capturing details about network calls including URLs, status codes, and timing information.
+
+#### Installation
+
+To use the Network Tracking Plugin, you need to add the OkHttp dependency to your project:
+
+{{partial:tabs tabs="Gradle"}}
+{{partial:tab name="Gradle"}}
+```groovy
+dependencies {
+    // OkHttp is required for the NetworkTrackingPlugin
+    compileOnly 'com.squareup.okhttp3:okhttp:4.12.0'
+}
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+#### Configuration
+
+The Network Tracking Plugin can be configured with various options to control which network requests are tracked:
+
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+import com.amplitude.android.Amplitude
+import com.amplitude.core.network.NetworkTrackingOptions
+import com.amplitude.core.network.NetworkTrackingPlugin
+import com.amplitude.core.network.NetworkTrackingOptions.CaptureRule
+
+// Create custom capture rules
+val options = NetworkTrackingOptions(
+    captureRules = listOf(
+        // Track all 5xx errors for any domain
+        CaptureRule(
+            hosts = listOf("*"),
+            statusCodeRange = (500..599).toList()
+        ),
+        // Track all responses from your API domain
+        CaptureRule(
+            hosts = listOf("api.example.com"),
+            statusCodeRange = (200..599).toList()
+        )
+    ),
+    // Ignore specific domains
+    ignoreHosts = listOf("analytics.example.com", "*.internal.com"),
+    // Whether to ignore Amplitude API requests
+    ignoreAmplitudeRequests = true
+)
+
+// Create the plugin with options
+val networkPlugin = NetworkTrackingPlugin(options)
+
+// Add the plugin to your Amplitude instance
+amplitude.add(networkPlugin)
+```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+import com.amplitude.android.Amplitude;
+import com.amplitude.core.network.NetworkTrackingOptions;
+import com.amplitude.core.network.NetworkTrackingPlugin;
+import com.amplitude.core.network.NetworkTrackingOptions.CaptureRule;
+
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
+
+// Create a list for status codes (500-599)
+List<Integer> serverErrorCodes = new ArrayList<>();
+for (int i = 500; i <= 599; i++) {
+    serverErrorCodes.add(i);
+}
+
+// Create a list for all status codes (200-599)
+List<Integer> allStatusCodes = new ArrayList<>();
+for (int i = 200; i <= 599; i++) {
+    allStatusCodes.add(i);
+}
+
+// Create custom capture rules
+NetworkTrackingOptions options = new NetworkTrackingOptions(
+    Arrays.asList(
+        // Track all 5xx errors for any domain
+        new CaptureRule(
+            Arrays.asList("*"),
+            serverErrorCodes
+        ),
+        // Track all responses from your API domain
+        new CaptureRule(
+            Arrays.asList("api.example.com"),
+            allStatusCodes
+        )
+    ),
+    // Ignore specific domains
+    Arrays.asList("analytics.example.com", "*.internal.com"),
+    // Whether to ignore Amplitude API requests
+    true
+);
+
+// Create the plugin with options
+NetworkTrackingPlugin networkPlugin = new NetworkTrackingPlugin(options);
+
+// Add the plugin to your Amplitude instance
+amplitude.add(networkPlugin);
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+You can also use the default configuration, which tracks all 5xx errors for any domain:
+
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+import com.amplitude.core.network.NetworkTrackingPlugin
+
+// Use default configuration (tracks all 5xx errors)
+val networkPlugin = NetworkTrackingPlugin()
+amplitude.add(networkPlugin)
+```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+import com.amplitude.core.network.NetworkTrackingPlugin;
+
+// Use default configuration (tracks all 5xx errors)
+NetworkTrackingPlugin networkPlugin = new NetworkTrackingPlugin();
+amplitude.add(networkPlugin);
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+#### OkHttp Integration
+
+To use the Network Tracking Plugin with OkHttp, you need to add it as an interceptor to your OkHttp client:
+
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+import com.amplitude.core.network.NetworkTrackingPlugin
+import okhttp3.OkHttpClient
+
+// Create the plugin
+val networkPlugin = NetworkTrackingPlugin()
+amplitude.add(networkPlugin)
+
+// Add the plugin as an interceptor to your OkHttp client
+val okHttpClient = OkHttpClient.Builder()
+    .addInterceptor(networkPlugin)
+    .build()
+```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+import com.amplitude.core.network.NetworkTrackingPlugin;
+import okhttp3.OkHttpClient;
+
+// Create the plugin
+NetworkTrackingPlugin networkPlugin = new NetworkTrackingPlugin();
+amplitude.add(networkPlugin);
+
+// Add the plugin as an interceptor to your OkHttp client
+OkHttpClient okHttpClient = new OkHttpClient.Builder()
+    .addInterceptor(networkPlugin)
+    .build();
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+#### Tracked Event Properties
+
+When a network request is tracked, the plugin sends an event with the type `[Amplitude] Network Tracking` and the following properties:
+
+| Property | Description |
+| --- | --- |
+| `[Amplitude] URL` | The full URL of the request (with sensitive parameters masked) |
+| `[Amplitude] URL Query` | The query string of the URL |
+| `[Amplitude] URL Fragment` | The fragment part of the URL |
+| `[Amplitude] Request Method` | The HTTP method (GET, POST, etc.) |
+| `[Amplitude] Status Code` | The HTTP status code of the response |
+| `[Amplitude] Error Message` | Error message if the request failed |
+| `[Amplitude] Start Time` | Timestamp when the request started |
+| `[Amplitude] Completion Time` | Timestamp when the request completed |
+| `[Amplitude] Duration` | Duration of the request in milliseconds |
+| `[Amplitude] Request Body Size` | Size of the request body in bytes |
+| `[Amplitude] Response Body Size` | Size of the response body in bytes |
+
+#### Privacy Considerations
+
+The Network Tracking Plugin automatically masks sensitive information:
+
+1. Authentication credentials in URLs (username:password@domain.com)
+2. Common sensitive query parameters (username, password, email, phone, etc.)
+
 ## Debugging
 
 Ensure that the configuration and payload are accurate and check for any unusual messages during the debugging process. If everything appears to be right, check the value of `flushQueueSize` or `flushIntervalMillis`. Events are queued and sent in batches by default, which means they don't dispatch to the server. Ensure that you have waited for the events to be sent to the server before checking for them in the charts.
