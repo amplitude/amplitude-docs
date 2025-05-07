@@ -8,11 +8,19 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1742510992
 ---
-Heatmaps provide a visual representation of user engagement on your website or application over time. Analyze patterns of events to identify trends, anomalies, and areas of your product that drive the most engagement.
+Heatmaps uses Session Replay to provide a visual representation of user engagement on your website or application over time. Analyze patterns of events to identify trends, anomalies, and areas of your product that drive the most engagement.
 
 {{partial:admonition type="note" heading="Heatmap retention"}}
 Heatmaps use an anonymized session replay that's decoupled from any user behavior and isn't subject to your Session Replay retention period.
 {{/partial:admonition}}
+
+Use the following map types, depending on your use case,
+
+| Map type                      | Use case                                                                                                                                                       |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Click map](#click-map)       | Displays the most clicked areas of your site by coordinates. This helps you identify high-traffic areas, optimize components, and improve the user experience. |
+| [Selector map](#selector-map) | Highlights the most interacted with elements on a page along with their rank.                                                                                  |
+| [Scroll map](#scroll-map)     | Displays the aggregate scroll activity on a given page. See the location of the average page fold, the number of users who scroll to a given depth.            |
 
 ### Feature availability
 
@@ -21,6 +29,49 @@ Heatmaps are available to customers on **Growth** and **Enterprise** plans who h
 {{partial:admonition type="note" heading="Client availiability"}}
 Heatmaps are available on web-based session replays only, and don't support mobile apps or SDKs.
 {{/partial:admonition}}
+
+## Prerequisites
+
+Before you create a heatmap, ensure your Amplitude instrumentation meets the following requirements.
+
+### Session Replay
+
+Heatmaps requires the following minimums:
+
+* [Session Replay Browser SDK Plugin](/docs/session-replay/session-replay-plugin): 1.7.0
+* [Session Replay Standalone SDK](/docs/session-replay/session-replay-standalone-sdk): 1.14.0
+
+{{partial:admonition type="note" heading="Session Replay sample rate"}}
+Heatmaps use Session Replay data to track interactions on your pages. If you use a sample rate limit the number of replays you generate, you also limit the events available to build heatmaps. This can lead to a less comprehensive view of user interactions on your site, and can limit the accuracy of heatmaps. 
+{{/partial:admonition}}
+
+### No server-side identifiers
+
+Heatmaps requires Amplitude's default device identifiers from the Browser SDK and doesn't support device identifiers from server-side SDKs or third party data sources.
+
+### Create a development project (optional)
+
+Amplitude recommends that you create a separate development project to test Heatmapping without impacting your production environment.
+
+{{partial:admonition type="note" heading="Event taxonomy impact"}}
+Heatmap events don't count toward your event taxonomy, and Amplitude doesn't bill you for them.
+{{/partial:admonition}}
+
+## Create a Heatmap
+
+To create a new Heatmap:
+
+1. Navigate to **Heatmaps** in the left navigation in Amplitude.
+2. Click **+ New Heatmap**.
+3. Choose a Heatmap type. You can update the map type after at any point.
+4. Select the URL to analyze. Use the following URL matching options to more easily target the pages you care about.
+   * **Exact match**: Matches the URL exactly as you specify it. Ideal for single URLs. For example, `https://amplitude.com`.
+   * **Pattern match**: Uses wild cards to match more than one URL with a similar patterns. Useful for targeting dynamic paths. For example, `https://amplistore/prodcuts/*` matches `/products/shoes` and `/product/accessories`.
+   * **Contains**: Matches URLs that contain a specific keyword or segment anywhere in the URL. Useful for common themes. For example `/search?q=` matches the search results page for any user query.
+   * **Starts with**: Matches all URLs that begin with a specific prefix. Useful for capturing sections of a site. For example, `https://amplitude.com/blog` captures the `/blog` page and all subpages.
+5. Select or create a **Segment** using user properties or cohorts to narrow the focus to a specific set of users.
+6. Optionally, select different device types to see how users interact on devices of different widths.
+7. Choose a background to select the background of your heatmap. Backgrounds are snapshots of a session replay, and represent the page's state during replay collection. Each heatmap generates eight backgrounds, based on the state of the page that generates the most actions during a session.
 
 ## Map types
 
@@ -32,15 +83,33 @@ Heatmaps provides three views that help you understand how users engage with a s
 
 Click maps provide a color-coded display of the clicks, or "heat" on your page. Areas with few clicks appear blue, while busier areas appear green, yellow, orange, and red in order of increasing clicks.
 
-Highlight an area on screen to watch Session Replays of those events, view the raw events, or create a cohort of users who engaged with the area you highlight.
+#### Microscope
 
-### Selectors
+Highlight an area of the click map to access Microscope. From there, you can:
+
+* View the events in the highlighted area for deeper visibilty into user actions or create a chart to further analyze trends and behaviors across your data.
+* View replays of user sessions that contain the events in your selection to combine the quantitative insights from Heatmaps to the qualitative context from Session Replay.
+* Create a cohort of users who interact with a specific area of a page. For more information, see [Behavioral Cohorts](/docs/analytics/behavioral-cohorts)
+
+### Selector map
 
 ![](statamic://asset::help_center_conversions::session-replay/hm2.png)
 
 The Selector view displays a wire frame of clickable elements on the page, ranked by number of clicks in descending order. Select an element on the map, or in the list to watch Session Replays of those events, view the raw events, or create a cohort of users who engaged with selector.
 
-### Scrollmap
+{{partial:admonition type="not" heading="Page length"}}
+Selector maps display the page up to the lowest interactive element recorded, plus a small buffer. For instance, if the lowest button on a page is 1,200px down, the map shows up to that point, even if the full page is longer.
+{{/partial:admonition}}
+
+#### Microscope
+
+Select a ranked element on the page to access Microscope. From there you can:
+
+* View the events associated with the element area for deeper visibilty into user actions or create a chart to further analyze trends and behaviors across your data.
+* View replays of user sessions that contain an interaction with the selected element to combine the quantitative insights from Heatmaps to the qualitative context from Session Replay.
+* Create a cohort of users who interact with a specific element. For more information, see [Behavioral Cohorts](/docs/analytics/behavioral-cohorts)
+
+### Scroll map
 
 ![](statamic://asset::help_center_conversions::session-replay/hm3.png)
 
@@ -50,18 +119,6 @@ This view also shows the average fold of your page. The amount of the page that 
 
 On the list to the right of the map, click Watch Replays to view Session Replays of users who saw *at least* that much of your page.
 
-## Create a Heatmap
-
-To create a new Heatmap:
-1. Click **Heatmaps** in the left nav.
-2. Click **+ New Heatmap**. The Heatmap viewer displays.
-3. Click **Untitled Heatmap** to rename the heatmap to something that describes the page you're viewing. For example, `Home page` or `Login page`.
-4. Select a page in your site or application. Define the URL with the following methods:
-   - **Matches exactly**: Enter the full URL to use. For example, `https://amplitude.com`.
-   - **Matches pattern**: Enter a partial URL and use wildcards (`*`). This method uses glob matching. For example, `https://bank.com/accounts/*/products/`. In this case, the `*` matches any account number that may appear in the URL. This is useful for applications where the URL may differ between users, but the experience is the same.
-   - **Contains**: Enter a string that the URL must contain. For example, `?promo=newUser` might return pages that contain a component (for example, [Guides and Surveys](/docs/guides-and-surveys)) that appears as a result a user landing on the page from an ad or other external resource.
-   - **Starts with**: Enter a string that matches pages that begin with a specific string.
-5. Optionally segment the users whose interactions you want to view.
-6. Select the [Map Type](#map-types).
-7. Select the Device to change the width of the heatmap, and automatically filter out users who were on other devices. For example, if you select **Mobile**, Amplitude shows a mobile rendition of the web page, and filters the engagements to only those that came from the selected device type.
-8. Optionally change the screenshot. Amplitude captures different background images of your page. Change the screenshot to show hidden UI elements. For example, if you have a search modal that appears instead of a traditional search box, if Amplitude captures a session where that element is present, it can display it on the screenshot.
+{{partial:admonition type="note" heading="Page length"}}
+Scroll maps reflect the farthest point users scrolled on the page, with no set limit. For example, if some users see a 1,000px version of a page and others see a 2,000px version, the heatmap combines scroll data from both versions. Choose from available background snapshots to align the heatmap with the version most relevant to your analysis.
+{{/partial:admonition}}
