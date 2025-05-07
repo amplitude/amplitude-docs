@@ -63,7 +63,7 @@ To create a new Heatmap:
 
 1. Navigate to **Heatmaps** in the left navigation in Amplitude.
 2. Click **+ New Heatmap**.
-3. Choose a Heatmap type. You can update the map type after at any point.
+3. Choose a [Heatmap type](#map-types). You can update the map type after at any point.
 4. Select the URL to analyze. Use the following URL matching options to more easily target the pages you care about.
    * **Exact match**: Matches the URL exactly as you specify it. Ideal for single URLs. For example, `https://amplitude.com`.
    * **Pattern match**: Uses wild cards to match more than one URL with a similar patterns. Useful for targeting dynamic paths. For example, `https://amplistore/prodcuts/*` matches `/products/shoes` and `/product/accessories`.
@@ -97,7 +97,7 @@ Highlight an area of the click map to access Microscope. From there, you can:
 
 The Selector view displays a wire frame of clickable elements on the page, ranked by number of clicks in descending order. Select an element on the map, or in the list to watch Session Replays of those events, view the raw events, or create a cohort of users who engaged with selector.
 
-{{partial:admonition type="not" heading="Page length"}}
+{{partial:admonition type="note" heading="Page length"}}
 Selector maps display the page up to the lowest interactive element recorded, plus a small buffer. For instance, if the lowest button on a page is 1,200px down, the map shows up to that point, even if the full page is longer.
 {{/partial:admonition}}
 
