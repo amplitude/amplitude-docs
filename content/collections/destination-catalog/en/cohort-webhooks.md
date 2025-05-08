@@ -224,3 +224,4 @@ Some webhook destinations would need a list of users as a batch. In the below ex
   - `message_id` string. The unique identifier of this update message. When a retry happens, you can use this value to de-duplicate.
   - `users` list of JSON objects. The actual user payload.
     - `user_id` string. The Amplitude `user_id` of the user.
+    - `user_properties` JSON object. The user properties selected for this user during this cohort sync.
