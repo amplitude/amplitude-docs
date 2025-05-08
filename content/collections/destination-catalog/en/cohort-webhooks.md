@@ -11,11 +11,7 @@ updated_at: 1721766883
 integration_type:
   - cohorts
 ---
-{{partial:admonition type="beta" heading=""}}
-This feature is in beta and is in active development. Features and functionality may change during the course of the beta period.
-{{/partial:admonition}}
-
-Amplitude Cohort webhooks enables customers to receive cohort updates to their own webhook endpoints. This allows for custom data enrichment, filtering, or aggregation based on the specific requirements of the webhook endpoint or internal systems. The transformed cohort data then integrates into marketing automation platforms or other systems, which enables personalized and targeted marketing campaigns with up-to-date cohort insights.
+Amplitude CDP’s cohort webhook allows you to receive cohort updates to your webhook endpoints. This allows for custom data enrichment, filtering, or aggregation based on the specific requirements of the webhook endpoint or internal systems. Integrate the transformed data into marketing automation platforms or other systems, enabling personalized and targeted marketing campaigns with up-to-date cohort insights.
 
 ## Considerations
 
@@ -50,7 +46,7 @@ Amplitude doesn't have a single IP address for forwarding events and users, so e
 
 5. Define the payload you want to receive in the webhook. You can choose to:
     1. Send the default Amplitude payload which follows the Amplitude cohort format. 
-    2. Customize the payload using an [Apache FreeMarker](https://freemarker.apache.org/) template. See more details below.
+    2. Customize the payload using an [Apache FreeMarker](https://freemarker.apache.org/) template. See [FreeMarker Templating Language](#freemarker-templating-language) for more information.
 
 6. When satisfied with your configuration, click **Save** to complete the setup process.
 
@@ -59,34 +55,36 @@ Amplitude doesn't have a single IP address for forwarding events and users, so e
 1. In Amplitude, open the cohort you want to export.
 2. Click **Sync**, and choose Webhook.
 3. Select the defined webhook destination.
-4. Select the sync cadence.
-5. Click **Sync** to begin the sync. 
+4. (Optional) Select up to 50 user properties to carry along with the user. Amplitude adds the selected properties to the user payload, and makes them accessible in the FreeMarker template.
+5. Select the sync cadence.
+6. Click **Sync** to begin the sync. 
 
 ## FreeMarker Templating Language
 
 See the FreeMarker [guide to creating templates](https://freemarker.apache.org/docs/dgui.html) for more help.
 
-### Example template to send cohort updates
+### Example template for sending user ID only cohort updates
 
-```text
+{{partial:tabs tabs="Template, Payload"}}
+{{partial:tab name="Template"}}
+```FreeMarker
 {
-    "cohort_name": "${input.cohort_name}",
-    "cohort_id": "${input.cohort_id}",
-    "in_cohort": ${input.in_cohort},
-    "computed_time": "${input.computed_time}",
-     "message_id": "${input.message_id}",
-    "users": [
-     <#list input.users as user>
-     {
-         "user_id": "${user.user_id}"
-      }<#sep>,
-     </#list>
-    ]
+   "cohort_name": "${input.cohort_name}",
+   "cohort_id": "${input.cohort_id}",
+   "in_cohort": ${input.in_cohort?c},
+   "computed_time": "${input.computed_time}",
+   "message_id": "${input.message_id}",
+   "users": [
+   <#list input.users as user>
+   {
+      "user_id": "${user.user_id}"
+   }<#sep>,
+   </#list>
+   ]
 }
 ```
-
-This template creates and sends this JSON payload to the Webhook endpoint:
-
+{{/partial:tab}}
+{{partial:tab name="Payload"}}
 ```json
 {
     "cohort_name": "My Test Cohort",
@@ -107,22 +105,95 @@ This template creates and sends this JSON payload to the Webhook endpoint:
     ]
 }
 ```
+{{/partial:tab}}
+{{/partial:tabs}}
 
-### Example template to send cohort updates per user
+### Example template for sending user with user properties cohort updates
 
-Some webhook destinations need a list of users as a batch. For these cases, you can update the template to match. The example below shows the cohort name and cohort id as a single boolean property which determines if the user is in the cohort or not.
-
-```text
-[ <#list input.users.iterator() as user > {
-        "user_id": "${user.user_id}",
-        "amplitude_${input.cohort_name}_${input.cohort_id}": ${input.in_cohort}
-} <#if user_has_next > , </#if></#list> ]
+{{partial:tabs tabs="Template, Payload"}}
+{{partial:tab name="Template"}}
+```FreeMarker
+{
+    "cohort_name": "${input.cohort_name}",
+    "cohort_id": "${input.cohort_id}",
+    "in_cohort": ${input.in_cohort?c},
+    "computed_time": "${input.computed_time}",
+     "message_id": "${input.message_id}",
+    "users": [
+     <#list input.users as user>
+     {
+         "user_id": "${user.user_id}",
+         "user_properties": {
+            <#list input.user_properties?keys as key>
+                <#assign value = input.user_properties[key]>
+                "${key}": <#if value?is_number || value?is_boolean>${value}<#else>${UtilClass.toJsonString(value)}</#if><#if key_has_next>,</#if>
+            </#list>
+        }
+      }<#sep>,
+     </#list>
+]
+}
 ```
-
-This template creates and sends this JSON payload to the Webhook endpoint:
-
+{{/partial:tab}}
+{{partial:tab name="Payload"}}
 ```json
 {
+ "cohort_name": "My Test Cohort",
+ "cohort_id": "7khm89cz",
+ "in_cohort": true,
+ "computed_time": "1692206763",
+ "message_id": "9baaa88f-9d46-4ee5-a946-be0c6aea0046::enter::0",
+ "users": [
+   {
+     "user_id": "user_one@example.com",
+     "user_properties": {
+       "name": "John Doe",
+       "country": "US",
+       "city": "San Francisco"
+     }
+   },
+   {
+     "user_id": "user_two@example.com",
+     "user_properties": {
+       "name": "Jane Smith",
+       "country": "US",
+       "city": "New York"
+     }
+   },
+   {
+     "user_id": "user_three@example.com",
+     "user_properties": {
+       "name": "Alice Johnson",
+       "country": "US",
+       "city": "Los Angeles"
+     }
+   }
+ ]
+}
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+
+### Example template for sending cohort updates per user
+
+Some webhook destinations would need a list of users as a batch. In the below example, set the cohort name and cohort id as a single boolean property determining whether the user is in the cohort or not.
+
+{{partial:tabs tabs="Template, Payload"}}
+{{partial:tab name="Template"}}
+```FreeMarker
+[ < #list input.users.iterator() as user > {
+	'user_id': '${user.user_id}',
+	'amplitude_${input.cohort_name}_${input.cohort_id}': $ {
+		input.in_cohort
+	}
+} < #if user_has_next > , < /#if></#list > ]
+```
+{{/partial:tab}}
+{{partial:tab name="Payload"}}
+```json
+{
+   [
       {
          "user_id": "user_one@example.com",
          "amplitude_My Test Cohort_7khm89cz": true
@@ -135,8 +206,11 @@ This template creates and sends this JSON payload to the Webhook endpoint:
          "user_id": "user_three@example.com"
          "amplitude_My Test Cohort_7khm89cz": true
       }
+    ]
 }
 ```
+{{/partial:tab}}
+{{/partial:tabs}}
 
 ### Other useful information for templates
 
