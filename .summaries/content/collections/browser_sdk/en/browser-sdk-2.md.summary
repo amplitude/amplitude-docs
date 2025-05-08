@@ -1,19 +1,20 @@
 ## Summary
-This documentation details the Amplitude Browser SDK 2, which enables tracking user events in web applications. It covers installation, initialization, configuration options, event tracking, user/group properties, revenue tracking, and advanced features like autocapture, offline mode, cross-domain tracking, and marketing attribution.
+This documentation covers the Amplitude Browser SDK 2, a JavaScript/TypeScript library for tracking user events in web applications. It details installation methods, initialization, configuration options, event tracking capabilities, user identification, session management, and advanced features like autocapture, marketing attribution tracking, and offline mode.
 
 ## Keywords
 - Browser SDK 2
 - event tracking
 - autocapture
+- marketing attribution
 - user identification
 - session management
-- marketing attribution
 - cross-domain tracking
 - plugins
-- revenue tracking
 - offline mode
 - sendBeacon
-- cookie management
-- remote configuration
+- revenue tracking
+- user properties
 - group properties
-- device ID
+- remote configuration
+- cookie management
+- content security policy
