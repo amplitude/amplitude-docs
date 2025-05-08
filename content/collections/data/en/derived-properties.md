@@ -153,22 +153,22 @@ These functions can only be used within another function.
 
 ### Conditional operators
 
-| Operator                                                                | Description                                                                                                                                | Example                                                              |
-| ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------- |
+| Operator                                                                | Description                                                                                                                                | Example                                                               |
+| ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------- |
 | `IF(logical_expression, value_if_true, value_if_false)`                 | Returns `value_if_true` if `logical_expression` is true, otherwise returns `value_if_false`.                                               | `IF(property == "(none)", "Property wasn't set", "Property was set")` |
-| `AND(logical_expression_1, logical_expression_2)`                       | Returns True if both logical expressions are true, false otherwise.                                                                        | `AND(is_subscribed == "true", has_valid_promo == "true")`              |
-| `OR(logical_expression_1, logical_expression_2)`                        | Returns True if any logical expression is true, false otherwise.                                                                           | `OR(has_email == "true", has_phone == "true")`                         |
-| `SWITCH(expression, case_1, value_1, [case_2, value_2 ...], [default])` | Evaluates an expression and returns values based on defined cases. Returns a default value if no cases are met if defined, otherwise null. | `SWITCH(tier, "gold", 2, "silver", 2, "bronze", 1, 0)`                 |
+| `AND(logical_expression_1, logical_expression_2)`                       | Returns True if both logical expressions are true, false otherwise.                                                                        | `AND(is_subscribed == "true", has_valid_promo == "true")`             |
+| `OR(logical_expression_1, logical_expression_2)`                        | Returns True if any logical expression is true, false otherwise.                                                                           | `OR(has_email == "true", has_phone == "true")`                        |
+| `SWITCH(expression, case_1, value_1, [case_2, value_2 ...], [default])` | Evaluates an expression and returns values based on defined cases. Returns a default value if no cases are met if defined, otherwise null. | `SWITCH(tier, "gold", 2, "silver", 2, "bronze", 1, 0)`                |
 
 ### String/numerical operators
 
-| Operator        | Example                                 |
-| ------------------- | --------------------------------------- |
+| Operator              | Example                                   |
+| --------------------- | ----------------------------------------- |
 | `==`                  | `action == "purchase" `                   |
 | `!=`                  | `item_count != 0 `                        |
 | `contains`            | `email contains "@gmail.com"`             |
 | `does not contain`    | `title does not contain "officer" `       |
-| `<`, `<=`, `>`, `>=`        | `duration >= 60`                          |
+| `<`, `<=`, `>`, `>=`  | `duration >= 60`                          |
 | `glob match`          | `url glob match "https://www.google.*/*"` |
 | `glob does not match` | `query glob does not match "*/query=*"`   |
 | `has prefix`          | `title has prefix "sir" `                 |
@@ -177,10 +177,59 @@ These functions can only be used within another function.
 
 Set literals ("apple", "orange") must appear on the right hand side of the operator.
 
-| Operator | Example                                                                                       |
-| ------------ | --------------------------------------------------------------------------------------------- |
-| `==`           | `IF(product == ("apple","orange"), "true", "false")`<br />*product = "apple", Returns "true"*   |
-| `!=`           | `IF(product != ("apple","orange"), "true", "false")` <br />*product = "banana", Returns "true"* |
+| Operator | Example                                                                                         |
+| -------- | ----------------------------------------------------------------------------------------------- |
+| `==`     | `IF(product == ("apple","orange"), "true", "false")`<br />*product = "apple", Returns "true"*   |
+| `!=`     | `IF(product != ("apple","orange"), "true", "false")` <br />*product = "banana", Returns "true"* |
+
+### Parallel operators
+
+Perform operations on arrays of data to help perform cart analysis.
+
+| Operator           | Description                                                                                                                                                                                                               |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `PARALLEL_SUM`     | Sums the values of the component properties.                                                                                                                                                                              |
+| `PARALLEL_PRODUCT` | Multiplies the values of the component properties. Use this operator to calculate revenue per item in a cart. For example, `PARALLEL_PRODUCT(PROPERTY('Products.price', 'event'), PROPERTY('Products.quantity','event'))` |
+| `PARALLEL_MAX`     | Returns the maximum value from the component properties.                                                                                                                                                                                        |
+| `PARALLEL_MIN`     | Returns the minimum value from the component properties.                                                                                                                                                                                        |
+
+Parallel operators require at least one property to be a child cart property, and both properties be under the same parent property.
+
+For example, `products.price` and `products.quantity` are compatible. `products.price` and `shoppinglist.quantity` aren't compatible due to the different parent properties.
+
+#### Parallel operator example
+
+You have a purchase event with the following cart property:
+
+```json
+"Products": [{
+    "brand": "Apple","categories": "Digital Content","department": "Electronics",
+    "price": 24.99,"quantity": 1
+}, {
+    "brand": "Adidas","categories": "Newsletter","department": "Electronics",
+    "price": 24.99,"quantity": 1
+}, {
+    "brand": "Fossil","categories": "Digital Content","department": "Women's Clothing",
+    "price": 24.99,"quantity": 2
+}]
+```
+
+| Brand  | Price | Quantity |
+| ------ | ----- | -------- |
+| Apple  | 24.99 | 1        |
+| Adidas | 24.99 | 1        |
+| Fossil | 24.99 | 2        |
+
+Use `PARALLEL_PRODUCT` to create a `Revenue` derived property:
+
+```
+PARALLEL_PRODUCT(
+    PROPERTY('Products.price', 'event'), 
+    PROPERTY('Products.quantity','event')
+)
+```
+
+If you add this property to a chart, group by `Brand` to view revenue by brand.
 
 ## Common derived properties formulas
 
