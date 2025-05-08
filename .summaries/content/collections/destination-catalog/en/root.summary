@@ -2,90 +2,147 @@
 
 ## Product Overview
 
-Amplitude Destination Catalog is a comprehensive suite of integrations that enables businesses to activate their product analytics data by connecting Amplitude with various marketing, customer engagement, and data platforms. The catalog offers two primary types of integrations: Event Streaming destinations that forward real-time event data from Amplitude to other platforms, and Cohort Sync destinations that export user segments based on behavioral data.
+Amplitude's Destination Catalog is a comprehensive collection of integrations that enables businesses to activate their product analytics data across various marketing, customer engagement, and business intelligence platforms. The catalog facilitates the seamless flow of user data, events, and cohorts from Amplitude to third-party tools, allowing organizations to operationalize their analytics insights without complex engineering work.
 
-### Key Features
+The Destination Catalog supports two primary types of data synchronization:
+1. **Event Streaming** - Real-time forwarding of Amplitude events and user properties to destination platforms
+2. **Cohort Syncing** - Exporting user segments created in Amplitude to destination platforms for targeted engagement
 
-1. **Event Streaming**: Real-time forwarding of user events and properties to third-party platforms
-2. **Cohort Syncing**: Export of behavioral user segments to marketing and engagement platforms
-3. **User Property Mapping**: Flexible configuration to map Amplitude user identifiers to destination platforms
-4. **Customizable Sync Cadences**: Options for one-time, scheduled, or real-time data synchronization
-5. **Filtering Capabilities**: Selective forwarding of specific events and properties
-6. **Authentication Methods**: Support for various authentication mechanisms (API keys, OAuth, etc.)
+These integrations enable various use cases including personalized marketing campaigns, targeted product experiences, advertising optimization, data warehousing, and cross-platform analytics.
 
-## Product Relationships and Architecture
+## Product Relationships and Features
 
-The Amplitude Destination Catalog sits within Amplitude's broader data activation ecosystem:
+### Core Integration Types
 
-1. **Amplitude Data**: The core analytics platform that collects and processes user behavioral data
-2. **Amplitude Catalog**: The interface for managing data connections, including destinations
-3. **Destination Integrations**: Partner-maintained or Amplitude-built connectors to third-party platforms
+1. **Event Streaming Destinations**
+   - Forward Amplitude events and user properties in real-time
+   - Configure user ID mapping between platforms
+   - Filter which events and properties are sent
+   - Examples: Google Analytics 4, Braze, HubSpot, Intercom
 
-The destinations are organized into several categories:
+2. **Cohort Sync Destinations**
+   - Export behavioral segments from Amplitude to other platforms
+   - Configure sync cadence (one-time, scheduled, real-time)
+   - Map user identifiers between systems
+   - Examples: Facebook Ads, Marketo, Salesforce Marketing Cloud, TikTok Ads
 
-1. **Marketing Automation**: Platforms like Braze, HubSpot, Iterable, and Mailchimp
-2. **Advertising**: Facebook Ads, Google Ads, TikTok Ads, Snapchat
-3. **Customer Engagement**: Intercom, OneSignal, Appcues, Bento
-4. **Data Warehousing**: Snowflake, BigQuery, Redshift, S3
-5. **Experimentation**: AB Smartly, Optimizely, VWO, LaunchDarkly
-6. **Product Experience**: CommandBar, Candu, Userflow, Plotline
+3. **Data Warehouse Destinations**
+   - Export raw event data and merged user IDs to data warehouses
+   - Configure recurring exports and historical backfills
+   - Examples: Amazon Redshift, Google BigQuery, Snowflake
+
+4. **Custom Webhook Destinations**
+   - Forward data to custom endpoints with configurable payloads
+   - Use FreeMarker templating for payload customization
+   - Configure custom headers and retry mechanisms
+
+### Integration Categories
+
+1. **Marketing Automation**
+   - Platforms: Braze, HubSpot, Iterable, Marketo, Salesforce Marketing Cloud
+   - Use cases: Targeted email campaigns, multi-channel messaging, lead scoring
+
+2. **Customer Engagement**
+   - Platforms: Intercom, MoEngage, OneSignal, Appcues, Chameleon
+   - Use cases: In-app messaging, onboarding flows, product tours
+
+3. **Advertising Platforms**
+   - Platforms: Facebook Ads, Google Ads, TikTok Ads, Snapchat, TheTradeDesk
+   - Use cases: Custom audience creation, retargeting campaigns
+
+4. **Product Experience**
+   - Platforms: LaunchDarkly, Split, CommandBar, Candu, Userflow
+   - Use cases: Feature flagging, personalized in-app experiences
+
+5. **Data Infrastructure**
+   - Platforms: Amazon S3, Google BigQuery, Snowflake, Amazon Kinesis
+   - Use cases: Data warehousing, event streaming, custom analytics
+
+6. **Customer Feedback**
+   - Platforms: Blitzllama, Enterpret, Unitq, Productboard
+   - Use cases: Survey targeting, feedback analysis, product prioritization
 
 ## Key Nomenclature and Definitions
 
-1. **Cohort**: A group of users who share common characteristics or behaviors identified in Amplitude
-2. **Event Streaming**: Real-time forwarding of user events and properties to destination platforms
-3. **Cohort Sync**: The process of exporting user segments from Amplitude to destination platforms
-4. **User ID Mapping**: Configuration that determines how user identifiers in Amplitude correspond to identifiers in destination platforms
-5. **Sync Cadence**: The frequency at which cohort data is synchronized (one-time, hourly, daily, real-time)
-6. **API Key/Secret**: Authentication credentials required to establish connections with destination platforms
-7. **OAuth**: Authentication method used by some destinations that requires user authorization
-8. **Destination Plugin**: Custom code implementation for browser-based destinations like Google Tag Manager
-9. **Webhook**: HTTP callback that delivers data to custom endpoints when events occur
-10. **FreeMarker Templates**: Templating system used to customize webhook payloads
+1. **Cohort** - A group of users who share common characteristics or behaviors, created in Amplitude based on user properties or event patterns
 
-## Integration with Broader Ecosystem
+2. **Sync Cadence** - The frequency at which data is synchronized between Amplitude and destination platforms (one-time, hourly, daily, real-time)
 
-Amplitude Destination Catalog serves as a critical component in the customer data infrastructure:
+3. **User ID Mapping** - The configuration that determines how user identities in Amplitude are matched to identities in destination platforms
 
-1. **Data Collection**: Amplitude SDKs and APIs collect user behavior data from applications
-2. **Data Analysis**: Amplitude Analytics processes and analyzes the collected data
-3. **Audience Creation**: Users create segments based on behavioral patterns
-4. **Data Activation**: Destination Catalog enables the activation of insights through integrations
-5. **Measurement**: Results from activation can be measured back in Amplitude
+4. **Event Filtering** - The ability to select which events from Amplitude are forwarded to destination platforms
 
-The catalog supports a bidirectional data flow with many platforms, allowing for:
-- Sending Amplitude data to other platforms for activation
-- In some cases, receiving data back from those platforms for unified analysis
+5. **User Property Forwarding** - The ability to select which user properties from Amplitude are sent to destination platforms
 
-## API Endpoints and Implementation
+6. **API Key/Secret** - Authentication credentials required to establish connections between Amplitude and destination platforms
 
-While specific API endpoints aren't detailed in the documentation, the implementation patterns include:
+7. **Identify Forwarding** - The capability to send user identification events from Amplitude to destination platforms
 
-1. **Authentication Configuration**:
-   - API keys, OAuth tokens, client IDs/secrets
-   - Service account credentials for cloud platforms
+8. **Backfill** - The process of exporting historical data from Amplitude to a destination platform
 
-2. **User Identifier Mapping**:
-   - Mapping Amplitude `user_id` to platform-specific identifiers
-   - Supporting email, device IDs, custom IDs, and hashed identifiers
+9. **Merged User IDs** - A table that maps multiple user identifiers to a single canonical user ID in Amplitude
 
-3. **Event Configuration**:
-   - Selecting which events to forward
-   - Mapping event properties to destination fields
+10. **Destination Plugin** - A JavaScript implementation that enables custom integrations with web-based platforms
 
-4. **Cohort Export Process**:
-   ```
-   POST /api/2/cohorts/sync
-   {
-     "cohort_id": "cohort_id",
-     "destination_id": "destination_id",
-     "sync_type": "one_time|scheduled"
-   }
-   ```
+## Product Ecosystem Integration
 
-5. **Webhook Implementation**:
-   - Custom HTTP endpoints
-   - FreeMarker templating for payload customization
-   - Configurable headers and retry mechanisms
+Amplitude's Destination Catalog is part of Amplitude's broader Customer Data Platform (CDP) offering, which includes:
 
-The Destination Catalog represents a robust ecosystem of integrations that enables businesses to activate their product analytics data across their entire tech stack, creating a unified approach to understanding and engaging users based on their actual behavior.
+1. **Amplitude Analytics** - The core analytics platform that collects and analyzes user behavior data
+
+2. **Amplitude Data** - The data management layer that processes, stores, and prepares data for activation
+
+3. **Amplitude Audiences** - The segmentation engine that creates and manages user cohorts
+
+The Destination Catalog serves as the activation layer of this ecosystem, enabling businesses to operationalize insights from Amplitude across their tech stack. Many integrations require paid Amplitude plans, particularly those involving cohort syncing.
+
+The catalog supports various authentication methods including API keys, OAuth, service account credentials, and custom tokens depending on the destination platform. Most integrations are maintained by Amplitude, while some are partner-maintained.
+
+## API Endpoints and Technical Implementation
+
+For custom implementations, Amplitude provides several key endpoints:
+
+1. **Cohort Webhooks**
+   - Endpoint: Custom webhook URL configured by the user
+   - Authentication: Custom headers
+   - Payload: Customizable using FreeMarker templates
+   - Example template:
+     ```
+     {
+       "cohort_id": ${cohort_id},
+       "cohort_name": "${cohort_name}",
+       "computed_at": "${computed_at}",
+       "users": [
+         <#list users as user>
+         {
+           "user_id": "${user.user_id}",
+           "in_cohort": ${user.in_cohort?string("true", "false")},
+           <#if user.user_properties??>
+           "user_properties": {
+             <#list user.user_properties as property, value>
+             "${property}": <#if value?is_string>"${value}"<#else>${value}</#if><#if property_has_next>,</#if>
+             </#list>
+           }
+           </#if>
+         }<#if user_has_next>,</#if>
+         </#list>
+       ]
+     }
+     ```
+
+2. **Event Streaming Webhooks**
+   - Endpoint: Custom webhook URL configured by the user
+   - Authentication: Custom headers
+   - Payload: Customizable using FreeMarker templates
+
+3. **Data Warehouse Exports**
+   - Authentication methods: Key pair, password, IAM roles
+   - IP allowlisting requirements for certain destinations
+   - Schemas provided for Event and Merged User tables
+
+4. **Cloud Storage Exports**
+   - Supported platforms: Amazon S3, Google Cloud Storage, Azure Blob Storage
+   - Authentication: IAM roles, service accounts, access keys
+   - File formats: JSON, CSV (for cohorts)
+
+The Destination Catalog also includes browser-based plugins for web integrations like FullStory, Google Tag Manager, and Hotjar, which require custom JavaScript implementation in the client application.
