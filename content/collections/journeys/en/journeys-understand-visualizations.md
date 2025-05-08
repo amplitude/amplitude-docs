@@ -6,7 +6,7 @@ source: 'https://help.amplitude.com/hc/en-us/articles/16427848208539-Understand-
 landing: true
 landing_blurb: 'Learn the difference between the three different Journey visualizations'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1743538600
+updated_at: 1746656476
 academy_course:
   - bd75ea62-37df-4ba9-a32b-459a73933d9e
 ---
@@ -70,15 +70,19 @@ You can't create cohorts for event paths that include `Dropped off` or `Did not 
 
 Both visualizations in any Journeys analysis are all measuring the same paths, just in slightly different ways. Let’s look at an example, starting with the Pathfinder.
 
+![](statamic://asset::help_center_conversions::journeys/j1.png)
+
 Our starting event is `charts: create new chart`. This is 100%, because users had to trigger this event to be included in the path. If a user didn’t trigger this event, they're not relevant to this analysis and aren't included in the charts.
 
 Of these users, 55.4% of them triggered `event explorer: hide event explorer` next. The vast majority of those users—55.2% of the total number of users included in this path, in fact—then triggered `navigation: new chart`.
 
-Note that each percentage on this chart refers to the percentage of all users included in the analysis, and not a percentage of users captured in the previous step.
+Each percentage on this chart refers to the percentage of all users included in the analysis, and not a percentage of users captured in the previous step.
 
 Next, 20.7% of all users triggered `taxonomy: view event detail panel`, followed by 17.5% triggering `open event dropdown`. This 17.5% represents 2,725 users.
 
 Notice the same progressions in the Journey Map. Those 2,725 users took an average of 1 hour and 48 minutes to progress all the way through the path.
+
+![](statamic://asset::help_center_conversions::journeys/j2.png)
 
 ## Differences from the legacy versions of these charts
 
