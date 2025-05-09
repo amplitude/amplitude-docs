@@ -1,5 +1,16 @@
 # Summary
-This documentation page details the five form factors available in Guides and Surveys (Modal, Popover, Pin, Tooltip, and Banner), explaining their use cases and customization properties including position settings, multi-step capabilities, and interactive blocks (buttons, images, and videos) with their associated actions.
+This documentation page details the five form factors available in Guides and Surveys (Modal, Popover, Pin, Tooltip, and Banner), explaining their use cases and customization properties including position settings, multi-step capabilities, and interactive blocks (buttons, images, and videos) that control user engagement and navigation.
 
 # Keywords
-form-factors, modal, popover, pin, tooltip, banner, guide-properties, position-settings, multi-step-guides, button-actions, layout-customization, media-elements, text-animation, sticky-banners, block-components
+- guide form factors
+- modal customization
+- popover positioning
+- pin interactions
+- tooltip placement
+- banner display styles
+- multi-step guides
+- button actions
+- callback functions
+- guide positioning properties
+- media blocks
+- guide layouts
