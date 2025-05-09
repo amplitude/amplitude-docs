@@ -1,5 +1,5 @@
 ## Summary
-This documentation explains how to sync user data from Amplitude to third-party destinations using three methods: on-demand syncs (one-off), automated syncs (scheduled), and real-time syncs (minute-by-minute updates), with detailed instructions on creating syncs, viewing sync details, troubleshooting discrepancies, and understanding sync history reports.
+This documentation explains how to sync user data from Amplitude to third-party destinations using three sync types: on-demand, automated, and real-time syncs. It details the process of creating syncs, troubleshooting discrepancies, viewing sync history, and understanding limitations across different Amplitude subscription plans.
 
 ## Keywords
 - cohort syncs
@@ -11,8 +11,6 @@ This documentation explains how to sync user data from Amplitude to third-party 
 - user property mapping
 - sync history
 - CSV exports
-- Amplitude Activation
 - skipped users
-- destination compatibility
-- sync frequency
-- cohort membership
+- Amplitude Activation
+- feature availability

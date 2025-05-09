@@ -1,98 +1,109 @@
 # Amplitude Activation Product Overview
 
-Amplitude Activation is a comprehensive platform that enables businesses to leverage user data for personalized marketing, targeted campaigns, and behavioral predictions. The product combines advanced AI capabilities with user segmentation tools to help companies optimize their marketing efforts and improve conversion rates.
+Amplitude Activation is a comprehensive user segmentation and personalization platform that helps businesses optimize their marketing campaigns and user experiences through data-driven insights and AI-powered features.
 
-## Key Features and Components
+## Key Features and Capabilities
 
-### Predictions
-Predictions use AI and machine learning to segment users based on their likelihood to perform future actions. The system employs a transformer-based sequence model that analyzes events, properties, and user activity sequences to forecast user behavior.
+### 1. Computations
+Computations transform events or event properties into computed user properties that can be used for segmentation and personalization. Unlike cohorts, computations store values as integers attached to individual users, making them more flexible for targeting and analysis. Three types of computations are available:
+- **Event Count Computation**: Counts occurrences of specific events
+- **Aggregation Computation**: Performs mathematical operations on event properties
+- **First/Last Value Computation**: Captures the first or last value of an event property
 
-Key capabilities:
-- Creation of predictive cohorts based on user likelihood scores
-- Daily/hourly recalculation of predictions
-- Model performance analysis through metrics like AUC (accuracy) and feature importance
-- Percentile ranking of users based on conversion probability
+Computations can be synced to external destinations like Braze for personalization campaigns and are currently available only in the US region.
 
-### Recommendations
-Recommendations determine which items are most likely to drive users toward a specific goal. The system uses AutoML to cluster users based on properties and behaviors, generating personalized item rankings that update hourly.
+### 2. Predictions
+Predictions use AI to segment users based on their likelihood to perform future actions. The system employs a transformer-based sequence model that analyzes events, properties, and user activity sequences to generate probability scores for each user. These predictions help optimize:
+- Communication frequency
+- Dynamic pricing strategies
+- Content personalization
 
-Three recommendation types:
-1. **AI-Based**: Uses machine learning to personalize recommendations
-2. **Top Trending**: Identifies items gaining popularity
-3. **Most Popular**: Recommends items with highest engagement
+Predictions are recalculated daily or hourly and can be used to create predictive cohorts for targeting campaigns. The system provides model performance metrics including AUC (accuracy), true/false positive rates, and feature importance analysis to help understand what factors influence user behavior.
 
-Recommendations are particularly effective for ecommerce, marketplace, and B2C companies focusing on user-based personalization.
+### 3. Recommendations
+Recommendations determine which items are most likely to drive users toward a predictive goal using AutoML. The system clusters users based on properties and behaviors to generate personalized item rankings that update hourly. Three types of recommendations are available:
+- **Top Trending**: Items gaining popularity in a recent timeframe
+- **Most Popular**: Items with highest engagement overall
+- **AI Based**: Personalized recommendations using machine learning
 
-### Computations
-Computations transform events or event properties into computed user properties that can be used for segmentation and personalization. Unlike cohorts, computations store values as integers attached to individual users.
+Recommendations are best suited for user-based personalization in ecommerce, marketplace, and B2C companies, supporting use cases like assortment personalization, next-best action suggestions, and cross-selling.
 
-Three computation types:
-1. **Event Count**: Counts occurrences of specific events
-2. **Aggregation**: Performs mathematical operations on event properties
-3. **First/Last Value**: Captures the first or last value of a property
+### 4. Third-Party Syncs
+Amplitude allows syncing user data to third-party destinations through three methods:
+- **On-demand syncs**: Manual, one-time syncs
+- **Automated syncs**: Scheduled recurring syncs
+- **Real-time syncs**: Immediate syncs when users enter or exit cohorts
 
-Computations are currently available only in the US region.
+These syncs enable the activation of audience segments across marketing platforms and analytics tools.
 
-### Third-Party Syncs
-This feature allows syncing user data from Amplitude to third-party destinations through three methods:
-1. **On-demand syncs**: One-off manual syncs
-2. **Automated syncs**: Scheduled recurring syncs
-3. **Real-time syncs**: Minute-by-minute updates
+## Product Relationships and Architecture
 
-## Product Relationships and Ecosystem
+Amplitude Activation sits within the broader Amplitude product ecosystem, serving as the activation layer that puts analytics insights into action. The key components work together as follows:
 
-Amplitude Activation integrates with the broader Amplitude analytics ecosystem, allowing businesses to:
-- Use behavioral data collected in Amplitude for targeting and personalization
-- Sync cohorts to external marketing platforms like Braze and Facebook Custom Audience
-- Deploy recommendations through the Profile API for real-time personalization
-- Analyze campaign performance with metrics like lift and statistical significance
+1. **Data Collection**: User events and properties are collected in Amplitude's analytics platform
+2. **Analysis & Segmentation**: Data is processed through computations, predictions, and recommendations
+3. **Activation**: Insights are deployed through third-party syncs to marketing platforms
 
-The platform supports a complete workflow from data collection to campaign execution:
-1. Data collection and analysis in Amplitude
-2. Segment creation through predictions, recommendations, or computations
-3. Sync to marketing platforms or direct deployment via API
-4. Performance measurement and optimization
+The platform uses a Profile API for deploying recommendations and predictions in real-time personalization scenarios. This API requires authentication and accepts parameters to retrieve personalized recommendations for specific users.
 
 ## Key Nomenclature and Definitions
 
-- **Predictive cohorts**: User segments based on likelihood to perform future actions
-- **Feature importance**: Metrics showing which user behaviors most influence predictions
-- **AUC (Area Under Curve)**: Accuracy measurement for prediction models
-- **Lift**: Improvement in conversion rates compared to a baseline or control group
-- **Control group**: User segment that doesn't receive treatment for comparison purposes
-- **Outcome event**: The target action a recommendation aims to drive
-- **Exposure event**: The moment when a user sees a recommendation
-- **Item catalog**: Collection of items that can be recommended to users
-- **Computed user properties**: Values derived from events and attached to user profiles
-- **Sync discrepancies**: Differences in user counts between Amplitude and destination platforms
+- **Cohort**: A group of users who share common characteristics or behaviors
+- **Predictive Cohort**: A segment of users based on their likelihood to perform a future action
+- **Feature Importance**: Metrics showing which user attributes most strongly influence prediction outcomes
+- **AUC (Area Under Curve)**: A measure of prediction model accuracy
+- **Lift**: The improvement in conversion rate for users exposed to personalized content versus a control group
+- **Item Catalog**: The collection of items (products, content, etc.) available for recommendation
+- **Outcome Event**: The target action that recommendations aim to encourage
+- **Exposure Event**: The event that tracks when a user sees a recommendation
+- **Control Group**: Users who don't receive personalized content, used for measuring effectiveness
 
-## API and Integration Points
+## API and Integration Details
 
 ### Profile API
-Used to deploy recommendations in personalization campaigns:
+Used to retrieve personalized recommendations:
 ```
-GET https://profile-api.amplitude.com/v1/userprofile
+GET https://profile-api.amplitude.com/v1/userprofile?user_id=USER_ID&api_key=API_KEY
 ```
 
 Required parameters:
+- `user_id`: The unique identifier for the user
 - `api_key`: Your Amplitude API key
-- `user_id` or `device_id`: Identifier for the user
-- `recommendation_key`: Identifier for the recommendation model
-- `is_control`: Boolean indicating whether the user is in the control group
 
-The API returns ranked recommendations specific to the identified user.
+Optional parameters:
+- `is_control`: Boolean flag to determine if user is in control group
 
-## Campaign Implementation
+The API returns a JSON response with personalized recommendations and confidence scores.
 
-Amplitude Activation supports three main campaign types:
-1. **Inclusion Criteria**: Targeting specific user segments
-2. **Dynamic Pricing**: Adjusting pricing based on user behavior
-3. **Content Personalization**: Customizing content for different user segments
+### Third-Party Integrations
+Amplitude Activation supports integrations with numerous platforms including:
+- Braze for campaign management
+- Facebook Custom Audiences for ad targeting
+- Various email marketing platforms
+- Customer data platforms (CDPs)
 
-Campaigns can be measured through:
-- Relative lift in conversion rates
-- Statistical significance testing
-- Funnel conversion analysis
-- Treatment vs. control segment comparison
+## Use Cases and Implementation
 
-For optimal results, the platform supports multivariate testing and UTM parameter tracking to attribute conversions to specific campaigns.
+1. **Predictive Campaign Targeting**:
+   - Create prediction-based cohorts
+   - Sync cohorts to marketing platforms
+   - Set up control groups for measurement
+   - Analyze campaign results using lift metrics
+
+2. **Personalized Recommendations**:
+   - Build recommendation models based on user behavior
+   - Deploy via Profile API in web/mobile applications
+   - Track exposure events when recommendations are shown
+   - Measure performance through conversion lift
+
+3. **Dynamic Pricing**:
+   - Use predictions to identify price-sensitive users
+   - Implement inverse pricing strategies
+   - Test different price points across segments
+
+4. **Content Personalization**:
+   - Recommend content based on user interests
+   - Optimize for engagement or conversion goals
+   - Measure effectiveness through A/B testing
+
+The platform supports multivariate testing and provides detailed analytics on campaign performance, allowing marketers to continuously refine their personalization strategies for maximum impact.
