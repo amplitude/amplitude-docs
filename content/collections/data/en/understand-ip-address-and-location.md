@@ -41,7 +41,7 @@ Amplitude automatically parses the user agent string from client-side SDKs to ex
 
 ### User agent parsing
 
-When events are sent from client-side SDKs (Browser, iOS, Android, etc.), Amplitude automatically captures and parses the user agent string to determine:
+When client-side SDKS (for example, Browser, iOS, Android) send events, Amplitude automatically captures and parses the user agent string to find:
 
 1. **Device model**: The specific device model (for example, `iPhone 13`, `Samsung Galaxy S21`)
 2. **Operating system**: The OS and its version (for example, `iOS 15.4`, `Android 12`")
@@ -53,23 +53,23 @@ When events are sent from client-side SDKs (Browser, iOS, Android, etc.), Amplit
 
 Amplitude automatically adds the following device-related properties to events:
 
-| Property | Description | Example Values |
-|----------|-------------|----------------|
-| `device_brand` | The manufacturer of the device | "Apple", "Samsung", "Google" |
-| `device_manufacturer` | Similar to device_brand, but may contain more specific information | "Apple Inc.", "Samsung Electronics" |
-| `device_model` | The specific model of the device | "iPhone13,2", "SM-G998U" |
-| `device_type` | The type of device | "iPhone", "Android" |
-| `os_name` | The name of the operating system | "iOS", "Android", "Windows" |
-| `os_version` | The version of the operating system | "15.4", "12.0", "11" |
-| `platform` | The platform category | "iOS", "Android", "Web" |
-| `browser` | For web traffic, the browser used | "Chrome", "Safari", "Firefox" |
-| `browser_version` | For web traffic, the browser version | "98.0.4758.102", "15.3" |
+| Property              | Description                                                        | Example Values                      |
+| --------------------- | ------------------------------------------------------------------ | ----------------------------------- |
+| `device_brand`        | The manufacturer of the device                                     | "Apple", "Samsung", "Google"        |
+| `device_manufacturer` | Like `device_brand`, but may contain more specific information | "Apple Inc.", "Samsung Electronics" |
+| `device_model`        | The specific model of the device                                   | "iPhone13,2", "SM-G998U"            |
+| `device_type`         | The type of device                                                 | "iPhone", "Android"                 |
+| `os_name`             | The name of the operating system                                   | "iOS", "Android", "Windows"         |
+| `os_version`          | The version of the operating system                                | "15.4", "12.0", "11"                |
+| `platform`            | The platform category                                              | "iOS", "Android", "Web"             |
+| `browser`             | For web traffic, the browser used                                  | "Chrome", "Safari", "Firefox"       |
+| `browser_version`     | For web traffic, the browser version                               | "98.0.4758.102", "15.3"             |
 
 ### How user agent parsing works
 
 1. **Client-side collection**: The SDK automatically collects the user agent string from the client device.
 2. **Server-side parsing**: When Amplitude receives the event, it parses the user agent string using a combination of regular expressions and user agent parsing libraries.
-3. **Property assignment**: The parsed information is added to the event as properties.
+3. **Property assignment**: Amplitude adds the parsed information to the event as properties.
 4. **Analysis availability**: These properties are then available for segmentation, filtering, and analysis in Amplitude.
 
 ### Controlling device property tracking
@@ -92,7 +92,7 @@ For mobile SDKs (iOS, Android), Amplitude collects additional device information
 1. **iOS**: Device model, OS version, and carrier information when available
 2. **Android**: Device model, manufacturer, OS version, carrier, and screen dimensions
 
-This information is particularly valuable for understanding how your app performs across different device types and OS versions, helping you prioritize development and optimization efforts.
+This information can help you understand how your app performs across different device types and OS versions.
 
 ### Custom device properties
 
@@ -106,5 +106,3 @@ amplitude.track('Button Clicked', {
   'battery_level': 85
 });
 ```
-
-By understanding how Amplitude parses and uses device information, you can better leverage these properties in your analytics to gain insights into user behavior across different platforms and devices.
