@@ -53,7 +53,7 @@ Amplitude automatically sends email alerts for cohort sync jobs:
 - **Success notifications**: Receive confirmation when your cohort sync completes successfully
 - **Failure notifications**: Get alerted when a sync job fails, allowing you to quickly address any issues
 
-These notifications help you monitor the status of your cohort syncs without having to manually check the platform. 
+These notifications help you monitor the status of your cohort syncs without having to manually check the platform. Email alerts are supported for partner integrations including Braze and other supported destinations.
 
 ## View sync details
 
