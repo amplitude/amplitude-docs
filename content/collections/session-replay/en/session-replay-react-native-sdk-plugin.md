@@ -42,6 +42,7 @@ import { SessionReplayPlugin } from '@amplitude/plugin-session-replay-react-nati
 const config: SessionReplayConfig = {
     enableRemoteConfig: true, // default true
     sampleRate: 1, // default 0
+    autoStart: true, // default true
 };
 await init('YOUR_API_KEY').promise;
 await add(new SessionReplayPlugin(config)).promise;
@@ -54,6 +55,7 @@ await add(new SessionReplayPlugin(config)).promise;
 | `sampleRate` | `number` | No | `0` | Use this option to control how many sessions to select for replay collection. The number should be a decimal between 0 and 1, for example `0.4`, representing the fraction of sessions to have randomly selected for replay collection. Over a large number of sessions, `0.4` would select `40%` of those sessions. This field isn't required because Session Replay supports [Remote Configuration](/docs/admin/account-management/account-settings#session-replay-settings) of settings including Sample Rate. | 
 | `enableRemoteConfing` | `boolean` | No | `true` | Use this option to enable [remote configuration](/docs/admin/account-management/account-settings#session-replay-settings). |
 | `logLevel` | `LogLevel` | No | `LogLevel.Warn` | Use this option to set the log level for the Session Replay plugin. |
+| `autoStart` | `boolean` | No | `true` | Use this option to control whether session replay starts automatically when initialized. If set to `false`, you need to manually call the `start()` method to begin recording. |
 
 ### Mask onscreen data
 
@@ -120,6 +122,26 @@ await add(sessionReplayPlugin).promise;
 await sessionReplayPlugin.stop();
 
 // Resume recording
+await sessionReplayPlugin.start();
+```
+
+If you want to initialize the plugin without automatically starting recording, you can set the `autoStart` configuration option to `false`:
+
+```js
+import { SessionReplayPlugin } from '@amplitude/plugin-session-replay-react-native';
+
+// ...
+
+const config: SessionReplayConfig = {
+    enableRemoteConfig: true,
+    sampleRate: 1,
+    autoStart: false, // Don't start recording automatically
+};
+await init('YOUR_API_KEY').promise;
+const sessionReplayPlugin = new SessionReplayPlugin(config);
+await add(sessionReplayPlugin).promise;
+
+// Later, when you want to start recording
 await sessionReplayPlugin.start();
 ```
 
