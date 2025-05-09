@@ -1,113 +1,106 @@
 # Amplitude Data: Product Overview
 
-Amplitude Data is a comprehensive data governance platform that helps organizations define, track, verify, and improve the quality of their analytics data. It provides tools for planning, instrumenting, managing, and monitoring data across the analytics lifecycle.
+## Core Product Overview
 
-## Key Features and Concepts
+Amplitude Data is a comprehensive data governance platform that helps organizations define, track, verify, and improve the quality of their analytics data. It serves as a central hub for managing data taxonomy, ensuring consistent tracking implementation, and maintaining data quality across products and teams.
 
-### Data Planning and Instrumentation
-- **Tracking Plans**: Central repository for defining and documenting events, properties, and data sources
-- **Ampli Developer Tools**: Type-safe code generation for implementing tracking plans with reduced errors
-- **Visual Labeling**: Allows non-technical users to create labeled events by clicking on website elements without code changes
-- **Branching Workflow**: Git-like branching system for collaborative tracking plan management
+Key features of Amplitude Data include:
 
-### Data Collection Methods
-- **Client-side Tracking**: Browser SDK and Mobile SDKs for capturing user interactions directly from applications
-- **Server-side Tracking**: Server SDKs and HTTP APIs for backend event tracking
-- **Autocapture**: Automatic collection of user interactions (clicks, page views, form submissions) with minimal setup
-- **Shopify/WordPress Plugins**: Pre-built integrations for common platforms
+1. **Data Planning and Instrumentation**: Tools for creating tracking plans, defining events and properties, and implementing consistent data collection
+2. **Data Management**: Capabilities for enriching metadata, cleaning up data, creating derived properties, and monitoring data quality
+3. **Data Validation**: Real-time monitoring of event tracking against defined plans to identify issues
+4. **Data Transformation**: Ability to retroactively modify event data without changing code
 
-### Data Management
-- **Metadata Enrichment**: Add descriptions, display names, and categories to events and properties
-- **Property Groups**: Collections of properties that can be applied to multiple events simultaneously
-- **Data Transformations**: Retroactive modifications to correct implementation mistakes without changing code
-- **Custom Events**: Combine multiple events with OR clauses to track related activities as a single event
-- **Derived Properties**: Create new properties using formulas applied to existing properties
-- **Lookup Tables**: Enrich events by mapping property values to additional data from imported CSV files
+## Product Ecosystem and Relationships
 
-### Data Quality and Governance
-- **Schema Validation**: Configure how to handle unexpected data (unplanned events, properties, values)
-- **Data Observe**: Real-time monitoring of events against tracking plans to identify issues
-- **AI Data Assistant**: Automatically generates suggestions for tracking plan improvements
-- **Data Access Control**: Restrict access to sensitive data through permission groups
-- **Time-to-Live (TTL)**: Control data retention periods at organization and project levels
+Amplitude Data integrates with several components within the broader Amplitude ecosystem:
 
-### Data Integration
-- **Event Streaming**: Share behavioral data with external tools and platforms
-- **Cohort Synchronization**: Export user segments to third-party destinations
-- **Cross-Project Analysis**: Combine multiple source projects into a single portfolio view
-- **Profiles**: Join customer profile data from data warehouses with behavioral product data
+1. **Amplitude Analytics**: Data collected and managed through Amplitude Data feeds into Analytics for user behavior analysis, funnel tracking, and other analytics functions
+2. **Amplitude SDKs**: Various SDKs (Browser, iOS Swift, Android-Kotlin) implement the tracking plans defined in Amplitude Data
+3. **Ampli Developer Tools**: A lightweight wrapper for Amplitude SDKs that generates type-safe code based on tracking plans
+4. **Destination Integrations**: Allows streaming of event data to third-party platforms
+5. **Session Replay**: Captures user sessions for visual playback, complementing event data
+
+Amplitude Data also offers integrations with external platforms:
+- Shopify and WordPress plugins for e-commerce and content management
+- Jira for issue tracking and development workflow
+- Data warehouses (Snowflake, Databricks, S3) for profile data integration
 
 ## Key Nomenclature and Definitions
 
-### Event Types
-- **Events**: User actions or system occurrences tracked in Amplitude
-- **Custom Events**: Virtual events that combine multiple existing events
-- **Transformed Events**: Modified versions of events with corrections or enhancements
-- **Unexpected Events**: Events not defined in the tracking plan
-
-### Property Types
-- **Event Properties**: Attributes specific to individual events
-- **User Properties**: Persistent attributes associated with users
-- **Group Properties**: Attributes associated with organizational groupings
-- **Derived Properties**: Computed properties created from existing properties
-- **Lookup Properties**: Properties enriched through lookup tables
-
-### Data Sources
-- **Client-side Sources**: Code running on user devices (mobile/web apps)
-- **Server-side Sources**: Code running on servers
-- **Third-party Sources**: External platforms integrated with Amplitude
+### Data Collection Concepts
+- **Events**: User actions or occurrences tracked in the system (e.g., page views, button clicks)
+- **Event Properties**: Attributes specific to an event occurrence (e.g., button color, page name)
+- **User Properties**: Attributes of users that persist across sessions (e.g., account type, language preference)
+- **Group Properties**: Attributes associated with organizational groupings of users
+- **Autocapture**: Automatic collection of standard events without manual instrumentation
+- **Visual Labeling**: Interface for non-technical users to define events by clicking on website elements
 
 ### Data Management Concepts
-- **Tracking Plan**: Specification of expected events and properties
-- **Schema Violations**: Deviations from the defined tracking plan
-- **Property Groups**: Reusable collections of properties
-- **Branches**: Isolated environments for tracking plan changes
-- **Environments**: Separate contexts (production/development) for testing
+- **Tracking Plan**: Specification of events, properties, and sources that defines the expected data structure
+- **Property Groups**: Collections of properties that can be applied to multiple events
+- **Custom Events**: Combinations of multiple events using OR logic
+- **Derived Properties**: Properties created retroactively using formulas applied to existing properties
+- **Lookup Tables**: Mappings that enrich event data with additional information from imported CSV files
+- **Transformations**: Query-time modifications to event data that don't alter raw data
+- **Channels**: Retroactive property classifications based on UTM parameters and referrer data
 
-## Product Ecosystem Integration
+### Data Governance Concepts
+- **Schema Violations**: Unexpected events, properties, or property values not defined in tracking plans
+- **Data Access Control (DAC)**: Enterprise feature for restricting access to sensitive data
+- **Time-to-Live (TTL)**: Controls for setting data retention periods at organization and project levels
+- **Block Filters**: Prevent specific data from being ingested (e.g., bot traffic)
+- **Drop Filters**: Query-time filtering that doesn't affect data ingestion
 
-Amplitude Data integrates with the broader Amplitude platform:
+## Implementation Approaches
 
-1. **Amplitude Analytics**: Data collected and managed through Amplitude Data powers analytics features like funnels, cohorts, and user behavior analysis
-2. **Amplitude Experiment**: Clean, well-structured data improves experiment analysis
-3. **Amplitude CDP**: Enables accurate audience targeting based on quality data
-4. **Session Replay**: Enhanced with properly tracked events for better context
+Amplitude Data supports multiple implementation approaches:
 
-Amplitude Data also connects with external tools:
-- **Data Warehouses**: Snowflake, Databricks, and S3 for Profiles integration
-- **Marketing Platforms**: Cohort synchronization with tools like Braze and AppsFlyer
-- **Development Tools**: Jira integration for tracking implementation tasks
-- **CMS Platforms**: WordPress and Shopify plugins
+1. **Client-side Tracking**:
+   - Browser SDK for web applications
+   - iOS Swift SDK for Apple devices
+   - Android-Kotlin SDK for Android devices
+   - Plugins for platforms like Shopify and WordPress
+
+2. **Server-side Tracking**:
+   - HTTP V2 API for server-to-server event transmission
+   - Batch Event Upload API for bulk data ingestion
+   - Server-side SDKs for various programming languages
+
+3. **Hybrid Approaches**:
+   - Combining client and server-side tracking for comprehensive coverage
+   - Using server-side for sensitive operations and client-side for user interactions
 
 ## API Endpoints and Technical Implementation
 
-### Taxonomy API
-Enables programmatic management of taxonomy elements:
-- `GET /api/2/taxonomy/categories`
-- `POST /api/2/taxonomy/categories`
-- `GET /api/2/taxonomy/event-types`
-- `POST /api/2/taxonomy/event-types`
-- `GET /api/2/taxonomy/properties`
-- `POST /api/2/taxonomy/properties`
+### Key API Endpoints
+- **HTTP V2 API**: `https://api2.amplitude.com/2/httpapi` for server-side event tracking
+- **Batch Event Upload API**: `https://api2.amplitude.com/batch` for historical data backfills
+- **Taxonomy API**: For programmatic management of taxonomy elements
 
-### Batch Event Upload API
-Used for data backfills with considerations:
-- Throttling limit: 300 events per second per device ID
-- Daily limit: 500K events
-- Use `$skip_user_properties_sync: true` for historical imports
+### SDK Configuration Options
+- `batchEvents`: Controls event batching for efficiency
+- `eventUploadThreshold`: Sets the number of events to batch before sending
+- `trackingOptions`: Configures privacy controls like IP address anonymization
+- `cssSelectorAllowlist`: Restricts Autocapture to specific elements
+- `pageUrlAllowlist`: Limits tracking to specific pages
 
-### SDK Implementation Options
-- **Browser SDK**: JavaScript/TypeScript implementation with Autocapture capabilities
-- **Mobile SDKs**: iOS Swift SDK and Android-Kotlin SDK
-- **Server SDKs**: Various language implementations for backend tracking
-- **Ampli CLI**: Command-line tool for tracking plan implementation
-  - `ampli pull`: Fetch latest tracking plan
-  - `ampli status`: Check implementation status
+### Implementation Best Practices
+1. Establish consistent naming conventions for events and properties
+2. Use separate environments for testing and production
+3. Implement proper user identification with user_id and device_id
+4. Configure session tracking appropriately for your application
+5. Use property operations (set, setOnce, unset, add, append, prepend) correctly
+6. Consider data volume impacts when implementing Autocapture
 
-### Chrome Extension
-The Amplitude Instrumentation Explorer helps debug SDK implementations by:
-- Capturing and displaying triggered events in real-time
-- Showing event parameters and configuration options
-- Allowing filtering and copying of event data
+## Collaborative Workflow Features
 
-Amplitude Data provides a comprehensive suite of tools for ensuring high-quality analytics data throughout the entire data lifecycle, from planning and collection to management and integration.
+Amplitude Data supports team collaboration through:
+
+1. **Branching**: Create isolated branches for tracking plan changes
+2. **Version Publishing**: Publish branch versions for review
+3. **Merge Requests**: Formalize the process of integrating changes
+4. **Environment Settings**: Map tracking plans to different environments
+5. **Team Reviews**: Require approvals before implementing changes
+6. **Jira Integration**: Link tracking plan changes to development tickets
+7. **AI Data Assistant**: Get automated suggestions for tracking plan improvements
