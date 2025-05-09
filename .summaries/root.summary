@@ -1,140 +1,116 @@
-# Amplitude Product Ecosystem Overview
+# Amplitude Product Ecosystem
 
-## High-Level Overview
+Amplitude is a comprehensive analytics and experimentation platform that helps businesses understand user behavior, optimize product performance, and make data-driven decisions. The platform consists of several integrated products that work together to provide a complete solution for product analytics, experimentation, and data management.
 
-Amplitude is a comprehensive analytics and customer data platform that helps businesses understand user behavior, optimize experiences, and drive growth through data-driven insights. The product suite encompasses analytics, experimentation, data management, and personalization capabilities designed to create a complete data-insight-action loop.
+## Key Products and Features
 
-## Product Relationships and Features
+### Amplitude Analytics
+The core analytics platform that enables businesses to analyze user behavior and product performance through:
+- **Event Segmentation**: Analyze specific user actions with customizable charts
+- **Funnel Analysis**: Track user conversion through defined event sequences
+- **Retention Analysis**: Measure ongoing user engagement over time
+- **User Sessions**: Analyze user journeys and session-based metrics
+- **Behavioral Cohorts**: Group users based on shared actions within specific timeframes
+- **Dashboards**: Create collections of charts for monitoring key metrics
+- **Notebooks**: Develop collaborative documents combining text, media, charts, and metrics
 
-### Analytics Platform
-The core analytics offering includes multiple visualization tools and analysis methods:
-- **Event Segmentation**: Analyzes specific user actions and behaviors over time
-- **Funnel Analysis**: Tracks conversion paths and identifies drop-off points in user journeys
-- **Retention Analysis**: Measures how users continue to engage with a product over time
-- **Revenue LTV**: Analyzes lifetime value and revenue metrics for different user segments
-- **User Sessions**: Provides insights into user journeys and session behavior patterns
-- **Journeys**: Visualizes the paths users take through a product
-- **Impact Analysis**: Measures the impact of feature releases on key metrics
-- **Personas**: Creates user segments based on behavioral patterns
-- **Stickiness**: Measures the frequency of user engagement with specific features
-- **Compass**: Discovers which behaviors correlate with retention and conversion
-- **Legacy Charts**: Previous generation visualization tools maintained for backward compatibility
+### Amplitude Experiment
+A feature experimentation platform that allows teams to:
+- Run A/B tests and feature flag experiments
+- Analyze experiment results with statistical rigor
+- Implement feature flags across different platforms
+- Connect experiment results directly to analytics data
 
-### Experimentation Platform
-Integrated with the analytics platform, the experimentation suite includes:
-- **Web Experiment**: Tools specifically designed for website experimentation
-- **Experiment Theory**: Educational content on experimentation methodology and best practices
-- **Advanced Techniques**: Sophisticated approaches for complex experimentation scenarios
-- **Experiment Results**: Tools for analyzing and interpreting experiment outcomes
-- **Workflow**: Processes and frameworks for managing the experimentation lifecycle
-- **Under the Hood**: Technical details explaining how the experimentation platform functions
-- **Experiment Troubleshooting**: Solutions for common issues encountered during experiments
+### Amplitude Data
+A data management layer that includes:
+- **Source Catalog**: Manage data sources and integrations
+- **Destination Catalog**: Configure data export destinations
+- **Audiences**: Create and manage user segments for targeting
+- **CDP (Customer Data Platform)**: Unify customer data across touchpoints
+- **PII Integrations**: Handle personally identifiable information securely
 
-### Data Management
-Tools for collecting, organizing, and activating user data:
-- **Sources**: Integration points for collecting data from various platforms
-- **Source Catalog**: Directory of available data sources and integration options
-- **Destination Catalog**: Directory of platforms where Amplitude data can be activated
-- **Audiences**: Capabilities for creating and managing user segments
-- **CDP**: Customer Data Platform functionality for unified user profiles
-- **PII Integrations**: Specialized tools for handling personally identifiable information
+### Amplitude SDKs
+Multiple SDK implementations for different platforms:
+- **Browser SDK**: For web applications
+- **iOS SDK**: For Apple mobile devices
+- **Android SDK**: For Android mobile devices
+- **React Native SDK**: For cross-platform mobile apps
+- **Flutter SDK**: For cross-platform mobile development
+- **Unity SDK**: For game development
+- **Unreal SDK**: For game development with Unreal Engine
+- **Node.js SDK**: For server-side implementations
+- **Python SDK**: For backend services and data science
+- **Java SDK**: For Java applications
+- **Go SDK**: For Go applications
+- **Ampli**: A code-generated data layer that provides type safety
 
-### SDKs and APIs
-Development tools for implementing Amplitude across platforms:
-- **Analytics SDKs**: Platform-specific libraries (Browser, iOS, Android, React Native, Flutter, Unity, Unreal)
-- **Experiment SDKs**: Libraries for implementing and managing experiments
-- **Ampli**: Amplitude's type-safe wrapper for analytics SDKs that provides code completion and validation
-- **Instrumentation**: Guidelines and best practices for implementing tracking
-- **API Documentation**: Comprehensive reference for Amplitude's programmatic interfaces
+## Product Relationships and Integration
 
-### Administration and Account Management
-Tools for managing Amplitude implementation:
-- **Account Management**: User permissions, organization settings, and workspace configuration
-- **Billing and Use**: Subscription management and usage monitoring
-- **Single Sign-On**: Authentication configuration for enterprise deployments
+The Amplitude ecosystem is designed for seamless integration between components:
+
+1. **Data Collection → Analytics**: Data collected through SDKs flows into Analytics for visualization and analysis
+2. **Analytics → Experiment**: Analytics insights inform experiment design, and experiment results appear in Analytics
+3. **Data Management → Analytics/Experiment**: The data layer ensures consistent data quality across products
+4. **SDKs → All Products**: SDKs provide the implementation layer for tracking, experimentation, and data collection
 
 ## Key Nomenclature and Definitions
 
-- **Event**: A discrete user action or system occurrence tracked in Amplitude (e.g., "Button Click", "Purchase Completed")
-- **User Property**: Attributes associated with users that persist across sessions (demographics, preferences, account settings)
-- **Cohort**: A defined group of users who share common characteristics or behaviors
-- **Session**: A period of continuous user activity, typically ending after a period of inactivity
-- **Funnel**: A sequence of events representing a conversion path or user journey
-- **Retention**: Measurement of how users continue to engage with a product over time
-- **Experiment**: A controlled test to measure the impact of changes to a product or experience
-- **Variant**: A specific version in an experiment (control or treatment)
-- **SDK (Software Development Kit)**: Libraries for implementing Amplitude tracking in applications
-- **API (Application Programming Interface)**: Programmatic interfaces for interacting with Amplitude services
-- **Instrumentation**: The process of implementing event tracking in an application
-- **Taxonomy**: The structured organization of events and properties in Amplitude
-- **Behavioral Cohort**: A group of users defined by their actions rather than attributes
-- **Amplitude Audiences**: Dynamically updated user segments that can be activated across tools
+### Data Structure
+- **Events**: Tracked user actions (page views, clicks, etc.)
+- **Properties**: Metadata associated with events or users
+- **Cohorts**: User groups sharing common behaviors or characteristics
+- **Sessions**: Groups of user events within a defined time period
 
-## Product Ecosystem Integration
+### Organization
+- **Spaces**: Organizational units with specific permission levels
+- **Templates**: Reusable dashboard configurations with parameters
+- **Charts**: Visual representations of analytics data
 
-Amplitude's products form an integrated ecosystem that supports a complete data lifecycle:
+### Account Management
+- **Single Sign-On**: Enterprise authentication integration
+- **Billing and Use**: Account billing management
+- **Account Management**: User permissions and settings
 
-1. **Data Collection**: Events and user properties are captured via SDKs, APIs, or data integrations from various sources
-2. **Data Management**: Raw data is processed, validated, and organized according to the defined taxonomy
-3. **Analysis**: Data is visualized and analyzed through various chart types to generate insights
-4. **Segmentation**: Users are grouped into meaningful cohorts based on behavior and attributes
-5. **Experimentation**: Hypotheses derived from analysis are tested through controlled experiments
-6. **Activation**: Insights and segments are deployed through integrations with marketing and product tools
-7. **Measurement**: The impact of actions is measured, creating a continuous improvement cycle
+## Technical Implementation
 
-The platform supports cross-product workflows where insights from analytics inform experiment design, experiment results refine user segmentation, and segments drive personalized experiences.
-
-## API Endpoints and Implementation
-
-### Analytics API
-```
-POST https://api.amplitude.com/2/httpapi
-```
-Used for sending events to Amplitude programmatically.
-
-### Experiment API
-```
-GET https://api.lab.amplitude.com/v1/vardata
-```
-Used for retrieving experiment variant assignments.
-
-### User Profile API
-```
-GET https://profile-api.amplitude.com/v1/userprofile
-```
-Used for accessing unified user profiles.
+### API Endpoints
+- Analytics API: `https://api2.amplitude.com/2/httpapi`
+- Experiment API: `https://experiment.amplitude.com/api/1/flags`
 
 ### SDK Implementation Examples
 
-**Browser SDK:**
 ```javascript
-amplitude.getInstance().logEvent("Button Clicked", {
-  buttonColor: "blue",
-  buttonText: "Sign Up"
-});
+// Browser SDK example
+import * as amplitude from '@amplitude/analytics-browser';
+
+amplitude.init('API_KEY');
+amplitude.track('Button Clicked', {buttonColor: 'blue'});
 ```
 
-**iOS SDK:**
-```swift
-Amplitude.instance().logEvent("Button Clicked", withEventProperties: [
-  "buttonColor": "blue",
-  "buttonText": "Sign Up"
-])
+```python
+# Python SDK example
+from amplitude import Amplitude
+
+amplitude = Amplitude('API_KEY')
+amplitude.track('user_id', 'Button Clicked', {'buttonColor': 'blue'})
 ```
 
-**Android SDK:**
-```java
-Amplitude.getInstance().logEvent("Button Clicked", new JSONObject().put("buttonColor", "blue").put("buttonText", "Sign Up"));
+### Command Line Usage
+
+```bash
+# Using Ampli CLI
+ampli init
+ampli pull
 ```
 
-**Experiment SDK (JavaScript):**
-```javascript
-const variant = amplitude.experiment.variant("experiment-key");
-if (variant === "control") {
-  // Show control experience
-} else if (variant === "treatment") {
-  // Show treatment experience
-}
-```
+## Ecosystem Integration
 
-The Amplitude platform is designed to serve multiple stakeholders within an organization, including product managers, analysts, developers, marketers, and executives, providing them with the tools to understand user behavior and make data-driven decisions.
+Amplitude integrates with the broader product analytics and data ecosystem through:
+
+1. **Data Sources**: Connections to various data collection platforms and tools
+2. **Data Destinations**: Export capabilities to data warehouses, BI tools, and other analytics platforms
+3. **API Integrations**: Programmatic access to Amplitude data and functionality
+4. **SDK Implementations**: Native tracking capabilities across multiple platforms
+5. **Experiment Integrations**: Feature flag systems that connect with analytics data
+
+The platform is designed to serve as a central hub for product analytics while connecting seamlessly with other tools in a company's tech stack, enabling a comprehensive view of user behavior and product performance.
