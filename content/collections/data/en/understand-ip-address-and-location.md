@@ -1,7 +1,7 @@
 ---
 id: 9771eb95-0cac-4de7-a34b-c65f7e157f67
 blueprint: data
-title: 'IP address, location, and device properties'
+title: 'IP address, location, user agent, and device properties'
 source: 'https://help.amplitude.com/hc/en-us/articles/17646803703323-Understand-IP-address-and-location-properties'
 this_article_will_help_you:
   - 'Understand how Amplitude defines and uses location properties to enhance your analyses'
