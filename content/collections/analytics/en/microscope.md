@@ -8,8 +8,8 @@ this_article_will_help_you:
 source: 'https://help.amplitude.com/hc/en-us/articles/236032527-Microscope-Explore-individual-data-points-in-your-charts'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1726005218
+updated_by: 1e99c1bd-1813-4b3d-a934-2cd98b423c0d
+updated_at: 1746812899
 ---
 Amplitude's **Microscope** feature enables you to dig deeper into a specific data point's users. Just hover over a data point in your chart, and a pop-up offers you several options (depending on your Amplitude plan) for further inspection.
 
@@ -29,17 +29,20 @@ This feature is available to users on **all Amplitude plans**. See the [pricing 
 
 To bring up the Microscope menu, simply click on a data point in any supported chart.
 
-![event_seg_microscope.png](/docs/output/img/analytics/microscope-1.png)
+![](statamic://asset::help_center_conversions::analytics/microscope.png)
 
-From here, you can:
+From here, depending on the chart type, you can:
 
 * **Zoom In** on a data point by going down to the next time interval granularity, for example when you click a data point in a weekly chart and zoom in, the chart updates to daily granularity, and the time period in the date picker update to be the same as the time period of the original data point.
 * **Filter By** to quickly drill down and focus on the series.
+* **Show User Journeys** to create a [Journeys](/docs/analytics/charts/journeys) chart based on the users in that data point.
+* **View User Streams** to view individual streams from users in that data point.
+* **Watch Session Replays** of those user sessions.
 * **Exclude** or remove distracting or irrelevant series from the analysis.
 * **Create a cohort** of the users that make up the selected data point, which you can then further analyze by applying this [cohort](/docs/analytics/behavioral-cohorts) to other charts in Amplitude. When you apply a group in the Segmentation Module, you can also create a group cohort from here.
 * **View a list of all the users** in the selected data point. Click a user ID to open that user's profile in the *User Activity* tab. If you are an Enterprise customer with [account-level reporting](/docs/analytics/account-level-reporting), you can also use Microscope to view the groups in a data point. Click any group to see a list of users in that group, in the *User Activity* tab.
 * **Download all the users** (up to 1 million) that make up the selected data point, in the form of a .CSV file. This file also contains each user's most-recently sent user property values.
-* **Add users to...** a Feature Flag, Feature Experiment, Web Experiment, Guide, or Survey.
+* **Add users to...** a [Feature Flag](/docs/feature-experiment/workflow/feature-flag-rollouts), [Feature Experiment](/docs/feature-experiment), [Web Experiment](/docs/web-experiment), [Guide, or Survey](/docs/guides-and-surveys).
 
 {{partial:admonition type="note" heading=""}}
 If you are conducting [account-level reporting](/docs/analytics/account-level-reporting) analysis, you can opt to download the groups included in a certain data point or bucket. The .CSV file includes the following four columns:
