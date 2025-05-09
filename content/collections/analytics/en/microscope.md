@@ -4,13 +4,14 @@ blueprint: analytic
 title: 'Microscope: Explore individual data points in your charts'
 this_article_will_help_you:
   - 'Inspect your data points in a high level of detail'
+  - 'Create cohorts, flags, and experiments directly from your chart data points'
 source: 'https://help.amplitude.com/hc/en-us/articles/236032527-Microscope-Explore-individual-data-points-in-your-charts'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1726005218
 ---
-Amplitude's **Microscope** feature enables you to dig deeper into a specific data point's users. Just hover over a data point in your chart, and a pop-up offers you up to six options (depending on your Amplitude plan) for further inspection.
+Amplitude's **Microscope** feature enables you to dig deeper into a specific data point's users. Just hover over a data point in your chart, and a pop-up offers you several options (depending on your Amplitude plan) for further inspection.
 
 This article explains how to use this feature and interpret the information provided in the *View User Streams* and *Show User Paths* sections. 
 
@@ -38,6 +39,7 @@ From here, you can:
 * **Create a cohort** of the users that make up the selected data point, which you can then further analyze by applying this [cohort](/docs/analytics/behavioral-cohorts) to other charts in Amplitude. When you apply a group in the Segmentation Module, you can also create a group cohort from here.
 * **View a list of all the users** in the selected data point. Click a user ID to open that user's profile in the *User Activity* tab. If you are an Enterprise customer with [account-level reporting](/docs/analytics/account-level-reporting), you can also use Microscope to view the groups in a data point. Click any group to see a list of users in that group, in the *User Activity* tab.
 * **Download all the users** (up to 1 million) that make up the selected data point, in the form of a .CSV file. This file also contains each user's most-recently sent user property values.
+* **Add users to...** a Feature Flag, Feature Experiment, Web Experiment, Guide, or Survey.
 
 {{partial:admonition type="note" heading=""}}
 If you are conducting [account-level reporting](/docs/analytics/account-level-reporting) analysis, you can opt to download the groups included in a certain data point or bucket. The .CSV file includes the following four columns:
@@ -49,6 +51,7 @@ If you are conducting [account-level reporting](/docs/analytics/account-level-re
 
 Additionally, you can **show user paths**, **view user streams**, and **explore conversion drivers**. Read more about them below.
 {{/partial:admonition}}
+
 
 ## Show user paths
 
