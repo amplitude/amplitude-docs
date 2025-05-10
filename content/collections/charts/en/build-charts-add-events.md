@@ -46,7 +46,7 @@ There are five default Amplitude events:
 * **Any Event:** Queries on **any** event over the time period selected. This includes [non-active](/docs/admin/account-management/account-settings) events.
 * **New User:** Queries on new users over the time period selected. For example, if you want to view daily new users, select *New User* and change the measurement in the Measured As module to *Uniques*. Amplitude considers a user to be "new" the moment they send their first event to Amplitude.
 
-When you use `![amplitude_logo.png](/docs/output/img/charts/amplitude-logo-png.png) New User` in a chart, the chart  looks at all events triggered by new users during the interval when they were new. For example, in an Event Segmentation chart, if you compare uniques to event totals, you may see a higher count of events than the number of new users. 
+When you use ![amplitude_logo.png](/docs/output/img/charts/amplitude-logo-png.png)`New User` in a chart, the chart looks at all events triggered by new users during the interval when they were new. For example, in an Event Segmentation chart, if you compare uniques to event totals, you may see a higher count of events than the number of new users. 
 
 ### Use wildcards to search for events
 
