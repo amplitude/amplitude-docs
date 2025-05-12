@@ -42,7 +42,7 @@ This section provides examples of when to enable sticky bucketing versus when no
 Remember that if you are targeting a dynamic cohort that users can flow in and out of the cohort. Users could see "treatment" and then "off" if sticky bucketing isn't enabled.
 {{/partial:admonition}}
 
-### When to enable stickyh bucketing
+### When to enable sticky bucketing
 
 * You want to **give the user a consistent experience**, even if the user property you’re targeting changes. For example, if you’re running an experiment only in the United States, enabling sticky bucketing would ensure your users would see the same variant if they happened to travel outside the country.
 * You want to **decrease the percentage rollout** of an experiment where the treatment group isn't performing well. But you **don’t** want to move users from either the treatment or the control to the group that never saw either variant (also known as the 'off' variant). Enabling sticky bucketing keeps users in their assigned groups even after you change the percentage rollout. Increasing or decreasing percentage rollout doesn't cause users to move between treatment and control.
