@@ -35,7 +35,7 @@ This is the official documentation for the Amplitude Analytics iOS SDK.
 {{partial:tab name="Swift Package Manager"}}
 1. Navigate to `File` > `Swift Package Manager` > `Add Package Dependency`. This opens a dialog that allows you to add a package dependency. 
 2. Enter the URL `https://github.com/amplitude/Amplitude-Swift` in the search bar. 
-3. Xcode will automatically resolve to the latest version. Or you can select a specific version. 
+3. Xcode automatically resolves to the latest version. Or you can select a specific version. 
 4. Click the "Next" button to confirm the addition of the package as a dependency. 
 5. Build your project to make sure the package is properly integrated.
 {{/partial:tab}}
@@ -56,13 +56,15 @@ You must initialize the SDK before you can instrument. The API key for your Ampl
 {{partial:tab name="Swift"}}
 ```swift
 let amplitude = Amplitude(configuration: Configuration(
-    apiKey: AMPLITUDE_API_KEY
+    apiKey: AMPLITUDE_API_KEY,
+    autocapture: .all
 ))
 ```
 {{/partial:tab}}
 {{partial:tab name="Obj-C"}}
 ```objc
 AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:AMPLITUDE_API_KEY];
+configuration.autocapture = AMPAutocaptureOptions.all;
 Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
@@ -89,6 +91,7 @@ Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 | `optOut`                       | Opt the user out of tracking.                                                                                                                                                                               | `false`                                  |
 | ~`defaultTracking`~ (Deprecated. Use [`autocapture`](#autocapture) instead.)             | Enable tracking of default events for sessions, app lifecycles, screen views, and deep links.                                                                                    | `DefaultTrackingOptions(sessions: true)` |
 | `autocapture`             | Enable tracking of [Autocapture events](#autocapture) for sessions, app lifecycles, screen views, deep links, network requests, and element interactions.                                                                                    | `AutocaptureOptions.sessions` |
+| `enableAutoCaptureRemoteConfig` | Enable remote configuration for autocapture settings. When enabled, Autocapture settings are updateable remotely after initialization.                                                                      | `true` |
 | `minTimeBetweenSessionsMillis` | The amount of time for session timeout.                                                                                                                                                                     | `300000`                                 |
 | `serverUrl`                    | The server url events upload to.                                                                                                                                                                            | `https://api2.amplitude.com/2/httpapi`   |
 | `serverZone`                   | The server zone to send to, will adjust server url based on this config.                                                                                                                                    | `US`                                     |
@@ -246,6 +249,43 @@ Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
+
+### Remote configuration for autocapture
+
+Starting from release v1.10.0, the SDK supports remote configuration for autocapture settings. This feature allows you to update autocapture settings after initialization without requiring an app update.
+
+By default, remote configuration for autocapture is enabled. You can disable it by setting `enableAutoCaptureRemoteConfig` to `false` in the configuration:
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+let amplitude = Amplitude(configuration: Configuration(
+    apiKey: "API_KEY",
+    autocapture: [.sessions, .appLifecycles, .screenViews],
+    enableAutoCaptureRemoteConfig: false
+))
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
+configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[
+    AMPAutocaptureOptions.sessions,
+    AMPAutocaptureOptions.appLifecycles,
+    AMPAutocaptureOptions.screenViews
+]];
+configuration.enableAutoCaptureRemoteConfig = NO;
+Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+When you enable remote configuration, the SDK checks for updates to Autocapture settings in your project. If updates are available, the SDK applies them automatically. This allows you to:
+
+- Enable or disable specific autocapture features remotely
+- Change autocapture settings without requiring users to update the app
+
+Changes made through remote configuration affect future events and don't apply to events that are already tracked.
 
 ### Track sessions
 
