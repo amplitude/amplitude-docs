@@ -50,7 +50,7 @@ Finally, in any Journeys visualization, you can remove an event, expand an event
 
 To create a new Journeys chart, follow these steps:
 
-1. *Click Create New > Analysis > Journeys*.
+1. *Click Create > Chart > Journeys*.
 2. In the Paths module, use the dropdown to specify whether you want to build a path **starting** with a specific event, **ending** with a specific event, or a path **between** two specific events.
 3. Click *+ Add Event* and add your desired event.
 4. In the *Filter by paths, expand by property* module, click:
