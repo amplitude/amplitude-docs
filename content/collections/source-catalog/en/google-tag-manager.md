@@ -392,6 +392,8 @@ For example, the HTML to add an event property to default page view events:
 </script>
 ```
 
+To add a plugin to a named instance, use `window.amplitudeGTM.createInstance('instanceName').add()`.
+
 GTM loads templates only when a tag based on that template fires. As a result, it's important to configure the sequencing of tags to ensure the plugin loads at the beginning, and applies to all following events. To do this, create a custom HTML tag that adds the plugin as the setup tag for the init tag. Then, configure a flush tag as the setup tag for the custom HTML tag. Be sure to sequence the tags in this order:
 
 * Flush
