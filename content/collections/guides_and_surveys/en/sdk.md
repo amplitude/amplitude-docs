@@ -296,6 +296,26 @@ window.engagement.setThemeMode("darkMode");
 window.engagement.setThemeMode("lightMode");
 ```
 
+## Register a callback
+
+Register a callback with the Guides and Surveys SDK. Set the Callback action on a guide or survey button to execute the callback.
+
+```js
+engagement.addCallback(name: string, callback: () => void): void
+```
+
+| Parameter  | Type         | Description                                                                                   |
+| ---------- | ------------ | --------------------------------------------------------------------------------------------- |
+| `name`     | `string`     | Required. Refer to this callback by name when setting a callback action on a guide or survey. |
+| `callback` | `() => void` | Required. The callback to execute.                                                        |
+
+```js
+window.engagement.addCallback("toggle_dark_mode", () => {
+  setTheme("darkMode");
+  window.engagement.setThemeMode("darkMode");
+});
+```
+
 ## Router configuration
 
 Configure how Guides and Surveys handles URLs in a single page application (SPA).
