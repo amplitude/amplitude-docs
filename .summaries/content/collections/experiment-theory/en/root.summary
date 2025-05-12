@@ -2,61 +2,70 @@
 
 ## Product Overview
 
-Amplitude Experiment is a platform for designing, running, and analyzing controlled experiments (A/B tests and Multi-Armed Bandit experiments) to make data-driven product decisions. The platform provides statistical tools and methodologies to help users determine the impact of product changes on key metrics, with a focus on statistical validity and proper experimental design.
+Amplitude Experiment is a platform for designing, running, and analyzing experiments to make data-driven product decisions. The product enables users to conduct statistical tests like A/B testing and Multi-Armed Bandit experiments to validate hypotheses about product changes. Key features include statistical analysis tools, experiment design capabilities, and duration estimation to ensure experiments are properly powered to detect meaningful effects.
 
 ## Key Features and Concepts
 
-### Experiment Analysis Tools
-- **T-test Analysis**: Amplitude Experiment uses Welch's T-test to analyze experiment results and determine statistical significance between variants.
-- **Confidence Intervals**: The platform provides confidence intervals to indicate the range of likely true values for metrics.
-- **Duration Estimator**: Helps users understand how long an experiment needs to run to reach statistical significance.
-- **Cumulative Exposure Graph**: Visualizes the accumulation of sample size over time.
+### Experiment Analysis
+- **Welch's T-test**: A statistical method used to compare means between two populations (variants) in an experiment
+- **Statistical Significance**: Determines whether observed differences between variants are likely due to chance or represent real effects
+- **Confidence Intervals**: Ranges that estimate the true value of a metric with a specified level of confidence
+- **Peeking**: The practice of checking experiment results before completion, which can lead to statistical errors if not accounted for
+- **Duration Estimator**: Tool that calculates how long an experiment needs to run to achieve statistical validity
 
-### Experiment Design Parameters
-- **Minimum Detectable Effect (MDE)**: A critical parameter that represents the smallest meaningful change in a metric that an experiment aims to detect.
-- **Sample Size Target**: Calculated based on the MDE, statistical power, and significance level to ensure experiments have adequate statistical power.
-- **One-sided vs. Two-sided Tests**: Configuration options for hypothesis testing based on experiment goals.
+### Experiment Design
+- **Minimum Detectable Effect (MDE)**: The smallest meaningful change in a metric that an experiment aims to detect
+- **Sample Size Requirements**: The number of users needed per variant to achieve statistical power
+- **A/B Testing**: Traditional hypothesis testing comparing a control group against one or more treatment groups
+- **Multi-Armed Bandit**: An adaptive experiment approach that automatically allocates more traffic to better-performing variants
+- **Success Metrics**: Primary metrics that an experiment aims to improve
+- **Guardrail Metrics**: Secondary metrics monitored to ensure changes don't negatively impact other important aspects
 
 ## Relationships Between Features
 
-1. **MDE and Sample Size**: These have an inverse relationship - a smaller MDE requires a larger sample size to detect with statistical confidence.
+The platform integrates experiment design and analysis in a cohesive workflow:
 
-2. **Experiment Type and Analysis Method**:
-   - A/B Tests: Primarily analyzed using T-tests with fixed sample sizes
-   - Multi-Armed Bandit: Uses adaptive allocation methods with different statistical considerations
+1. **Experiment Design Phase**:
+   - Users set the Minimum Detectable Effect (MDE) based on business goals
+   - The platform calculates required sample sizes and estimated experiment duration
+   - Users configure test parameters (one-sided vs. two-sided tests)
 
-3. **Metrics Hierarchy**:
-   - Primary Metrics: The main success metrics for an experiment
-   - Guardrail Metrics: Secondary metrics that ensure changes don't negatively impact critical aspects of the product
+2. **Experiment Running Phase**:
+   - The platform collects data as users interact with different variants
+   - "Cumulative Exposure" graphs track progress toward required sample sizes
+
+3. **Analysis Phase**:
+   - Welch's T-test analyzes the statistical significance of observed differences
+   - Results include confidence intervals and p-values
+   - The platform provides visualizations to interpret results
 
 ## Key Nomenclature and Definitions
 
-- **Welch's T-test**: A statistical test used to determine if there is a significant difference between the means of two groups, accounting for potentially different variances.
-- **Minimum Detectable Effect (MDE)**: The smallest change in a metric that an experiment is designed to reliably detect.
-- **Statistical Significance**: The likelihood that an observed difference between variants is not due to random chance.
-- **Central Limit Theorem**: A statistical principle that allows for normal distribution assumptions when sample sizes are sufficiently large.
-- **Peeking Problem**: The statistical issue that arises when analyzing results before reaching the predetermined sample size.
-- **Control Mean**: The baseline metric value for the control group against which variations are compared.
+- **Welch's T-test**: A statistical test that compares the means of two populations without assuming equal variances
+- **Minimum Detectable Effect (MDE)**: The smallest change in a metric that an experiment is designed to detect with statistical significance
+- **One-sided vs. Two-sided Tests**: 
+  - One-sided: Tests if a variant is specifically better or worse than control
+  - Two-sided: Tests if a variant is different from control in either direction
+- **Central Limit Theorem**: Statistical principle that allows normal distribution assumptions for sample means, even when individual data points aren't normally distributed
+- **Samples Per Variant Needed**: The number of users required in each experiment group to achieve statistical validity
+- **Control Mean**: The baseline metric value in the control group against which variants are compared
+- **Conversion Rate**: The percentage of users who complete a desired action
 
-## Integration in Product Ecosystem
+## Product Ecosystem Integration
 
-Amplitude Experiment appears to be part of a broader Amplitude analytics ecosystem, where experiment results can likely be connected to user behavior analytics and product metrics. The experiment platform seems designed to work alongside other Amplitude tools for comprehensive product analytics and decision-making.
+Amplitude Experiment appears to be part of the broader Amplitude analytics ecosystem, with:
 
-## Statistical Assumptions and Methodology
+- Integration with Amplitude's analytics capabilities for metric definition and measurement
+- Ability to track and analyze user behavior across experiment variants
+- Tools for both technical and non-technical users to design and interpret experiments
 
-The platform relies on several statistical assumptions:
-1. Samples are independent
-2. Data follows a normal distribution (or sample size is large enough for the Central Limit Theorem to apply)
-3. Variances may be unequal (hence the use of Welch's T-test)
+## Technical Implementation
 
-Users are advised to:
-- Avoid analyzing results before reaching adequate sample size
-- Consider the trade-offs between experiment duration and sensitivity (MDE)
-- Choose appropriate test configurations based on their hypothesis
+The documentation suggests that Amplitude Experiment provides:
 
-## Risk Considerations
+- A user interface for configuring experiment parameters (MDE, test type, etc.)
+- Statistical analysis tools that automatically apply appropriate tests
+- Visualization tools including "Cumulative Exposure" graphs to track experiment progress
+- Duration estimation capabilities to help plan experiment timelines
 
-The documentation emphasizes several risk factors in experiment design:
-- Setting MDE too low can lead to impractically long experiments
-- Setting MDE too high might miss meaningful but smaller effects
-- Analyzing results too early (before reaching sample size targets) can lead to invalid conclusions
+The platform balances statistical rigor with practical business considerations, helping users design experiments that can detect meaningful changes while managing resources efficiently.

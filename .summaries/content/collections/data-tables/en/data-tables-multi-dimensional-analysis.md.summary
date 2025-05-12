@@ -1,14 +1,14 @@
 ## Summary
-This documentation page explains how to use Data Tables in Amplitude for multi-dimensional analysis, allowing users to compare multiple metrics across different dimensions in a single view. It covers setup steps, grouping options, nested properties, filtering capabilities, and the transpose feature for flexible data visualization and analysis.
+This documentation page explains how to use Data Tables in Amplitude for multi-dimensional analysis, allowing users to compare multiple metrics across different dimensions in a single view. It covers setup steps, grouping options, nested properties, filtering capabilities, and the transpose feature, with specific guidance on use cases like marketing attribution, segment analysis, and experiment analysis.
 
 ## Keywords
-- multi-metric analysis
+- multi-dimensional analysis
+- data tables
 - group-by properties
 - nested group-by
-- data table transpose
-- attribution modeling
+- metric comparison
+- transpose rows and columns
+- attribution models
 - marketing attribution
-- segment comparison
-- time period comparison
-- data table filtering
-- column manipulation
+- segment analysis
+- experiment analysis

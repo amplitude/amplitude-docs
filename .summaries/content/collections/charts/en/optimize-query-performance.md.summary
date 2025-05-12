@@ -1,14 +1,14 @@
 ## Summary
-This documentation explains query time sampling in Amplitude Analytics, a performance optimization technique that analyzes a random 10% sample of users' events and extrapolates results to the full dataset, available on all Amplitude plans and toggled via the lightning bolt icon in Funnel Analysis charts.
+This documentation explains query time sampling in Amplitude Analytics, a technique that optimizes performance by analyzing a 10% random sample of users and extrapolating results, detailing how to enable it for individual funnel charts and set it as a project-wide default, while noting its limitations and incompatibilities.
 
 ## Keywords
 - query time sampling
 - performance optimization
-- up-sampling
 - funnel analysis
+- up-sampling
 - statistical extrapolation
-- inverse sampling
-- representative subset
-- large dataset optimization
-- lightning bolt toggle
 - 10% user sample
+- lightning bolt toggle
+- project settings
+- feature limitations
+- Amplitude Analytics

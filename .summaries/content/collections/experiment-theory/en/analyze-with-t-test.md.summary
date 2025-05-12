@@ -1,16 +1,16 @@
 ## Summary
-This documentation explains how to use the T-test in Amplitude Experiment to analyze experiment data, detailing the statistical assumptions, configuration options (one-sided vs. two-sided tests), and the importance of reaching adequate sample size before analysis to maintain statistical validity.
+This documentation explains how to use the Welch's T-test in Amplitude Experiment to analyze experiment data by comparing means between two populations, detailing the test assumptions, configuration options (one-sided vs. two-sided), and sample size requirements for statistical validity.
 
 ## Keywords
 - Welch's T-test
 - statistical significance
-- one-sided vs two-sided tests
+- one-sided vs. two-sided tests
 - sample size requirements
 - Central Limit Theorem
-- experiment analysis
 - confidence intervals
-- primary metric
+- Amplitude Experiment
+- experiment analysis
+- peeking
 - duration estimator
-- peeking problem
+- Samples Per Variant Needed
 - Cumulative Exposure graph
-- Sample Size Target
