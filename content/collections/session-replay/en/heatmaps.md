@@ -26,8 +26,8 @@ Use the following map types, depending on your use case,
 
 Heatmaps are available to customers on **Growth** and **Enterprise** plans who have the Session Replay addon.
 
-{{partial:admonition type="note" heading="Client availiability"}}
-Heatmaps are available on web-based session replays only, and don't support mobile apps or SDKs.
+{{partial:admonition type="note" heading="Legacy organizations"}}
+If you see a message that states **Heatmaps isn’t available for your organization**, contact [Amplitude Support](https://gethelp.amplitude.com) for assitance enabling Heatmaps. Legacy organizations require manual enablement, and may require an increase in property limit.
 {{/partial:admonition}}
 
 ## Prerequisites
@@ -35,6 +35,10 @@ Heatmaps are available on web-based session replays only, and don't support mobi
 Before you create a heatmap, ensure your Amplitude instrumentation meets the following requirements.
 
 ### Session Replay
+
+{{partial:admonition type="note" heading="Client availiability"}}
+Heatmaps are available on web-based session replays only, and don't support mobile apps or SDKs.
+{{/partial:admonition}}
 
 Heatmaps requires the following minimums:
 
@@ -54,7 +58,7 @@ Heatmaps requires Amplitude's default device identifiers from the Browser SDK an
 Amplitude recommends that you create a separate development project to test Heatmapping without impacting your production environment.
 
 {{partial:admonition type="note" heading="Event taxonomy impact"}}
-Heatmap events don't count toward your event taxonomy, and Amplitude doesn't bill you for them.
+Heatmap and Session Replay events don't count toward your alloted event volume, and Amplitude doesn't bill you for them.
 {{/partial:admonition}}
 
 ## Create a Heatmap
