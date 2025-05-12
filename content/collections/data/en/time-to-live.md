@@ -11,6 +11,10 @@ exclude_from_sitemap: false
 ---
 Amplitude Data's Time-to-Live (TTL) feature lets you have control over how long event data lives in your Amplitude instance. Set the retention period for event data at the organization level, and override it at the project level. When you enable TTL, a job runs daily to make sure that Amplitude retains your event data according to your TTL policy.
 
+## Feature availability
+
+This feature is available to organizations on an **Enterprise** plan. For more information, see the [pricing page](https://amplitude.com/pricing).
+
 ## Considerations
 
 {{partial:admonition type="warning" heading="TTL causes irreversable data loss"}}
@@ -19,7 +23,6 @@ After TTL is enabled, Amplitude deletes data outside of the retention period.
 
 - Amplitude uses the date the event data reaches the Amplitude server when determining the retention period. Therefore, any backfill or migration of event data may affect the retention period for that event data.
 - When you enable TTL and set a retention period, Amplitude deletes all event data sent to Amplitude outside of your retention period.
-- Configure the retention period by number of months. Amplitude's default month is 30 days. For example, if you set your retention period to 4 months, Amplitude retains all event data for the last 120 days. 
 - Enabling TTL affects existing Amplitude reports. After you enable TTL, Amplitude zeros out charts that query data outside the set retention period. They appear as if the data for that period never existed within Amplitude.
 - The initial deletion may take longer than daily deletions. Depending on an organization’s historical event volume, it may take up to 30 days.
 
