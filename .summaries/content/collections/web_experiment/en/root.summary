@@ -4,142 +4,150 @@
 
 Amplitude Web Experiment is a visual A/B testing solution that enables non-technical users to create and run experiments on websites without requiring coding knowledge. The product allows users to visually modify website elements, create variants, target specific pages and audiences, and analyze results—all through a user-friendly interface.
 
-### Key Features
+Key features include:
+- Visual Editor for creating website variants without code
+- Element manipulation (display, visibility, text, background, positioning)
+- URL redirects for testing entirely different pages
+- Custom code injection (JavaScript, HTML, CSS)
+- Precise targeting based on page URLs and user attributes
+- Performance optimization with minimal impact on page load times
+- Impression tracking for analysis and billing
 
-1. **Visual Editor**: Modify website elements (text, visibility, background, position) without coding
-2. **Custom Code Actions**: Inject JavaScript, HTML, and CSS for advanced modifications
-3. **URL Redirects**: Send users to different URLs based on experiment variants
-4. **Targeting Capabilities**: Target experiments by page URL and audience segments
-5. **Anti-flicker Technology**: Prevent page flashing during experiment loading
-6. **Performance Optimization**: Minimal impact with two-layer caching and fast evaluation
-7. **Impression Tracking**: Automatic tracking of experiment impressions for analysis
-
-### Primary Use Cases
-
+Primary use cases:
 - A/B testing website designs and content
-- Implementing personalized user experiences
-- Testing new features before full deployment
-- Optimizing conversion rates and user engagement
-- Creating targeted experiences for different audience segments
+- Validating UI/UX changes before full implementation
+- Personalizing user experiences based on audience segments
+- Testing new features with limited user groups
 
 ## Product Relationships and Architecture
 
-Web Experiment is part of Amplitude's broader experimentation platform. The implementation consists of:
+Web Experiment is part of Amplitude's broader experimentation platform. It specifically handles client-side web experiments through a JavaScript implementation. The product consists of:
 
-1. **Web Experiment Script**: A JavaScript snippet added to the website's `<head>` element
-2. **Visual Editor**: Interface for creating and modifying variants
-3. **Experiment Dashboard**: For monitoring results and performance
-4. **Integration Options**: Connections with CDPs and content management systems
+1. **Web Experiment Script**: A lightweight JavaScript file added to the website's `<head>` element that handles variant assignment, targeting, and modification application.
 
-Web Experiment works alongside Amplitude Analytics for data collection and analysis. Experiments create impression events that flow into Amplitude's analytics platform for evaluation and reporting.
+2. **Visual Editor**: A browser-based interface for creating and previewing variants without coding.
+
+3. **Experiment Management**: Configuration of targeting rules, audience segments, and variant distribution.
+
+4. **Analytics Integration**: Automatic tracking of impression events that feed into Amplitude Analytics for experiment analysis.
+
+Web Experiment works alongside other Amplitude products:
+- **Amplitude Analytics**: Receives impression events and provides analysis capabilities
+- **Amplitude Experiment**: The parent platform that includes Web Experiment as well as server-side experimentation capabilities
 
 ## Key Nomenclature and Definitions
 
-- **Variant**: A specific version of a webpage being tested against others
-- **Flag Key**: Unique identifier for a feature flag or experiment
-- **Experiment Key**: Identifier for a specific experiment
-- **Impression Event**: Tracking event (`[Experiment] Impression`) recorded when a user sees an experiment variant
-- **Anti-flicker Snippet**: Code that prevents visual flickering during experiment loading
-- **Page Targeting**: Rules that determine which URLs an experiment appears on
-- **Audience Targeting**: Rules that determine which users see an experiment
+- **Variant**: A modified version of a webpage created for testing against the original (control) version
+- **Actions**: Modifications applied to create variants (element changes, redirects, custom code)
+- **Page Targeting**: Rules that determine which URLs the experiment applies to
+- **Audience Targeting**: Rules that determine which users see the experiment
+- **Impression Event**: An `[Experiment] Impression` event sent to Amplitude when a user views an experiment
+- **Anti-flicker Snippet**: Code that prevents flickering during experiment loading
 - **Bucketing**: The process of assigning users to specific variants
-- **Actions**: Modifications applied to create experiment variants (element changes, redirects, custom code)
-- **Post-experiment Migration**: Process of implementing winning variants in production code
+- **Flag Key**: Unique identifier for an experiment
+- **Experiment Key**: Identifier used in analytics for experiment tracking
 
 ## Product Ecosystem Integration
 
 Web Experiment integrates with:
 
-1. **Amplitude Analytics**: For tracking experiment performance and user behavior
-2. **Third-party CDPs**:
-   - Segment
-   - Tealium
-   - Custom integration options via IntegrationPlugin
-3. **Content Management Systems**:
-   - WordPress (via plugin)
-   - Shopify
-4. **Tag Management Systems**:
-   - Google Tag Manager
+1. **Amplitude Analytics**: Impression events are automatically sent to Amplitude Analytics for analysis. During ingestion, these events are transformed to include experiment and variant information.
 
-The product fits into a typical experimentation workflow:
-1. Implementation of the Web Experiment script
-2. Creation of experiments using the Visual Editor
-3. Targeting and launching experiments
-4. Analysis of results
-5. Migration of winning variants to production code
+2. **Third-party CDPs**: The product can integrate with platforms like Segment and Tealium through custom IntegrationPlugins.
+
+3. **Content Management Systems**: Specific implementation options exist for WordPress (via plugin) and Shopify (via theme.liquid file).
+
+4. **Tag Management Systems**: Can be deployed through Google Tag Manager.
+
+5. **Production Codebase**: After experiments conclude, winning variants should be migrated to the production codebase rather than keeping experiments running at 100% allocation.
 
 ## Technical Implementation
 
-### Script Installation
+### Script Implementation
+
+The Web Experiment script must be added to the website's `<head>` element:
 
 ```html
-<!-- Synchronous implementation -->
-<script src="https://cdn.experiment.amplitude.com/experiment.js"></script>
 <script>
-  experiment.initialize('API_KEY');
+!function(){var t=window.amplitude||{};if(t._q=[],t._iq={},t.invoked)window.console&&console.error&&console.error("Amplitude snippet has already been included.");else{t.invoked=!0;var e=function(t,e){t.prototype[e]=function(){return this._q.push({name:e,args:Array.prototype.slice.call(arguments,0)}),this}},i=function(t,e,i){return function(){t._q.push({name:e,args:Array.prototype.slice.call(arguments,0),resolve:i})}},n=function(t,e,i){t[e]=function(){if(i)return{promise:new Promise(function(n){t._q.push({name:e,args:Array.prototype.slice.call(arguments,0),resolve:n})})}}},o=["init","add","remove","track","logEvent","identify","groupIdentify","setGroup","setUserProperties"];for(var r=0;r<o.length;r++)e(t,o[r]);var s=["getUserId","getDeviceId","getSessionId","getUserProperties"];for(r=0;r<s.length;r++)n(t,s[r],!1);var a=["getEventProperties"];for(r=0;r<a.length;r++)n(t,a[r],!0);var d=function(t){function e(e){t[e]=function(){return t._q.push({name:e,args:Array.prototype.slice.call(arguments,0)}),t}}for(var i=0;i<o.length;i++)e(o[i])},u=["Experiment","Standalone"],c=0;c<u.length;c++){var l=u[c],p=t[l]={_q:[]};d(p)}window.amplitude=t}}();
 </script>
-
-<!-- Asynchronous implementation with anti-flicker -->
+<script src="https://cdn.experiment.amplitude.com/experiment-js-sdk/0.5.0/experiment.umd.js"></script>
 <script>
-  !function(){var e=document.createElement("style");e.textContent=":root{opacity:0;transition:opacity 0.5s;}";document.head.appendChild(e);window.experimentAntiFlicker={showPage:function(){document.documentElement.style.opacity="1"},hidePage:function(){document.documentElement.style.opacity="0"}}}();
-</script>
-<script>
-  (function() {
-    var script = document.createElement('script');
-    script.src = 'https://cdn.experiment.amplitude.com/experiment.js';
-    script.async = true;
-    script.onload = function() {
-      experiment.initialize('API_KEY', {
-        onExperimentInitialized: function() {
-          experimentAntiFlicker.showPage();
-        }
-      });
-    };
-    document.head.appendChild(script);
-  })();
+amplitude.add(amplitude.Experiment);
 </script>
 ```
 
-### Custom Code Utilities
+An anti-flicker snippet can be added to prevent flickering during experiment loading:
+
+```html
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','amplitude',4000,
+{'experiment':true});</script>
+```
+
+### API Endpoints
+
+The Web Experiment JavaScript SDK provides several key methods:
 
 ```javascript
-// Wait for element to appear in DOM
-experiment.utils.waitForElement('.selector', function(element) {
-  // Manipulate the element
-});
+// Initialize the experiment client
+amplitude.experiment.init('API_KEY');
+
+// Fetch all flags for the current user
+amplitude.experiment.fetch();
+
+// Get a specific variant
+amplitude.experiment.variant('FLAG_KEY');
+
+// Track an exposure event
+amplitude.experiment.exposure('FLAG_KEY');
+```
+
+### Utility Functions
+
+The product provides utility functions for dynamic page modifications:
+
+```javascript
+// Wait for an element to appear in the DOM
+function waitForElement(selector, timeout = 5000) {
+  return new Promise((resolve, reject) => {
+    if (document.querySelector(selector)) {
+      return resolve(document.querySelector(selector));
+    }
+    
+    const observer = new MutationObserver(() => {
+      if (document.querySelector(selector)) {
+        resolve(document.querySelector(selector));
+        observer.disconnect();
+      }
+    });
+    
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+    
+    setTimeout(() => {
+      observer.disconnect();
+      reject(`Timed out waiting for selector: ${selector}`);
+    }, timeout);
+  });
+}
 ```
 
 ## Performance Considerations
 
-- **Script Size**: 20KB compressed base size + ~100B per flag
-- **Caching**: Two-layer caching (CDN and browser)
-- **Evaluation Speed**: <1ms for local evaluation
-- **Cache Control Headers**: `max-age=300, stale-while-revalidate=86400`
-- **Limitations**: Some ad blockers may interfere with the script
+Web Experiment is designed for minimal performance impact:
+- Base script size is 20KB compressed
+- Each flag adds approximately 100B
+- Two-layer caching (CDN and browser) reduces network requests
+- Local evaluation takes less than 1ms
+- Experiments should be properly concluded and migrated to production code to avoid technical debt and performance overhead
 
-## Experiment Workflow
-
-1. **Setup**: Implement Web Experiment script on website
-2. **Creation**: Use Visual Editor to create variants
-3. **Targeting**: Configure page and audience targeting
-4. **Launch**: Activate the experiment
-5. **Analysis**: Monitor results in Amplitude
-6. **Conclusion**: Deactivate experiment and migrate winning variant to production
-
-### Post-Experiment Process
-
-1. Determine the winning variant based on statistical significance
-2. Implement the winning variant in production code
-3. Deactivate the experiment or set to 0% allocation
-4. Archive the experiment to reduce script size
-
-## Tracking and Analytics
-
-Impression events (`[Experiment] Impression`) are automatically tracked with properties:
-- `flag_key`
-- `variant`
-- `experiment_key`
-
-User properties are set with format: `[Experiment] flag_key = variant`
-
-Monthly impression volume can be estimated with: `Daily Active Users × Pages Per Session × % of Pages Targeted × 30`
+Monthly impression volume can be estimated using the formula:
+```
+Monthly Page Views × Number of Experiments × Percentage of Traffic Allocated
+```
