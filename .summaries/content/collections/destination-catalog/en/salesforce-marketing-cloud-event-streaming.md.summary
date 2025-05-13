@@ -1,5 +1,5 @@
 # Summary
-This documentation details the Salesforce Marketing Cloud (Event Streaming) integration with Amplitude, covering setup requirements in both platforms, configuration steps for event and user property forwarding, and explaining how to map data between systems to enable behavioral data-driven marketing campaigns.
+This documentation details the Salesforce Marketing Cloud (Event Streaming) integration with Amplitude, covering setup requirements in both platforms, configuration steps for event and user property forwarding, and explaining how to create Data Extensions and Event Definitions in SFMC to properly receive Amplitude data.
 
 # Keywords
 - Salesforce Marketing Cloud
@@ -12,6 +12,6 @@ This documentation details the Salesforce Marketing Cloud (Event Streaming) inte
 - Contact Key
 - Journey Builder
 - API Integration
-- Marketing automation
 - User property mapping
-- Campaign personalization
+- TriggeredSendDataExtension
+- Marketing automation
