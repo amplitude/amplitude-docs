@@ -40,6 +40,8 @@ Keep these considerations in mind when using the User Privacy API.
 
 {{partial:admonition type="warning" heading="User tracking"}}
 Using this API doesn't prevent future user tracking for the deleted users. To learn about how to stop tracking users in your application, see the `setOptOut()` method in documentation for the Amplitude SDK you're using.
+
+If you're using warehouse CDC (Change Data Capture) sources or other data warehouse ingestion methods, be aware that if you delete a user's data in Amplitude but that data still exists in your data warehouse, it may be reingested into Amplitude during the next sync. To ensure complete deletion, you should also delete the user's data from your data warehouse or other ingestion sources.
 {{/partial:admonition}}
 
 ## Limits
