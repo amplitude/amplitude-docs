@@ -40,10 +40,14 @@ Before you create a heatmap, ensure your Amplitude instrumentation meets the fol
 Heatmaps are available on web-based session replays only, and don't support mobile apps or SDKs.
 {{/partial:admonition}}
 
-Heatmaps requires the following minimums:
+Heatmaps requires the following minimum versions:
 
 * [Session Replay Browser SDK Plugin](/docs/session-replay/session-replay-plugin): 1.7.0
 * [Session Replay Standalone SDK](/docs/session-replay/session-replay-standalone-sdk): 1.14.0
+
+If your instrumentation doesn't meet these minimums, you may see a "No heatmap available message."
+
+If you enable Session Replay at the same time you enable heatmaps, it may take time for enough replay and heatmap data to populate in Amplitude to generate the heatmap.
 
 {{partial:admonition type="note" heading="Session Replay sample rate"}}
 Heatmaps use Session Replay data to track interactions on your pages. If you use a sample rate limit the number of replays you generate, you also limit the events available to build heatmaps. This can lead to a less comprehensive view of user interactions on your site, and can limit the accuracy of heatmaps. 
