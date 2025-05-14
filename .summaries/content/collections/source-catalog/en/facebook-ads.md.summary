@@ -1,11 +1,15 @@
 # Summary
-This documentation page describes Amplitude Data's Facebook Ads integration, which allows users to import Facebook Ad spend, click, and impression data by logging into Facebook, granting permissions, entering a Facebook Ads Account ID, and optionally importing historical data.
+This documentation page describes Amplitude Data's Facebook Ads integration, which imports campaign-level metrics (impressions, clicks, spend) as Daily Ad Metrics events. The integration requires a Facebook Ads Account ID, imports data daily for the previous day, and relies on UTM parameters for proper attribution and calculating metrics like CAC and ROAS.
 
 # Keywords
-- Facebook Ads Account ID
-- Ad spend data
-- Click and impression data
-- Facebook authentication
-- Historical data import
-- Ad networks integration
-- Facebook consent form
+- Facebook Ads integration
+- Daily Ad Metrics event
+- UTM parameters
+- campaign-level metrics
+- ad_metrics.impressions
+- ad_metrics.clicks
+- CAC (Customer Acquisition Cost)
+- ROAS (Return on Ad Spend)
+- batch ingestion
+- Ad Performance dashboard
+- ad_account_id
