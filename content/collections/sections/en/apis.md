@@ -3,9 +3,8 @@ id: 48eb43c6-97fe-41ad-bf94-12e0f4f6ecfa
 blueprint: section
 title: APIs
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-parent: 8f99c8f9-2474-4ae9-858c-935823bab025
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718056068
+updated_at: 1747238673
 nav_title: apis
 exclude_from_sitemap: false
 ---
@@ -15,6 +14,7 @@ Use Amplitude APIs to send and receive information and extend Amplitude.
 
 - [Analytics and Data APIs](/docs/apis/analytics)
 - [Experiment APIs](/docs/apis/experiment)
+- [Guides and Surveys Translation API](/docs/apis/guides-and-surveys/guides-and-surveys-api-localization)
 
 ## More API resources
 
