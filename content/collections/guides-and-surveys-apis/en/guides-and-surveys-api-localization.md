@@ -1,5 +1,5 @@
 ---
-id: 4E08BF94-559B-42EE-A095-D5B0026298FE
+id: d55d1726-1779-4479-bd3d-063b71c49f52
 title: Localization API (Beta)
 ---
 
