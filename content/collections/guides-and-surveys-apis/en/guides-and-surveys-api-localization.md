@@ -42,11 +42,11 @@ The API uses XLIFF version 1.2. Key aspects of the XLIFF structure relevant to t
 
 *   **`<file>` element:** Represents translations for a Nudge or a Nudge variant.
     *   `original`: This attribute is crucial. It identifies the Nudge and optionally a specific variant.
-        *   Format: `<flag_key>` or `<flag_key>_<variant_key>`
-        *   `<flag_key>`: The unique key of your Nudge (typically a Feature Flag key).
-        *   `<variant_key>` (optional): The key of a specific variant within the Nudge.
-            *   For import, if `<variant_key>` is omitted, the API updates the first non-archived variant of the Nudge.
-            *   For export, if a Nudge has multiple active variants, each may be represented in a separate `<file>` element within the XLIFF document, with the `original` attribute formatted as `<flag_key>_<variant_key>` to distinguish them.
+        *   Format: `<key>` or `<key>_<variant>`
+        *   `<key>`: The unique key of your guide or survey.
+        *   `<variant>` (optional): The identifier of a specific variant within the guide or survey.
+            *   For import, if `<variant>` is omitted, the API updates the first variant of the guide or survey.
+            *   For export, if a guide or survey has multiple active variants, each may be represented in a separate `<file>` element within the XLIFF document, with the `original` attribute formatted as `<key>_<variant>` to distinguish them.
     *   `datatype="plaintext"`
     *   `source-language`: The source language code (e.g., "en").
     *   `target-language`: The target language code for the translations in this file (e.g., "de", "fr").
@@ -131,20 +131,20 @@ Exports translations for specified guides or survey (by `key`) into an XLIFF 1.2
 *   **Headers:**
     *   `Authorization: Basic <base64_encoded_app_id:app_secret_key>`
 *   **Query Parameters:**
-    *   `flag_key` (string, required): The flag key of the Nudge to export translations for. Provide this parameter multiple times for multiple guides or surveys, or provide a commae separated list (e.g., `?flag_key=key1&flag_key=key2` or `?flag_key=key1,key2`). At least one `flag_key` is required.
+    *   `key` (string, required): The flag key of the Nudge to export translations for. Provide this parameter multiple times for multiple guides or surveys, or provide a commae separated list (e.g., `?key=key1&key=key2` or `?key=key1,key2`). At least one `key` is required.
     *   `locale` (string, optional): The specific target language code(s) to export (e.g., "de", "fr"). Provide this parameter multiple times for multiple locales. If omitted, translations for all configured target locales (excluding the source language) for the app will be exported.
 *   **Example Request (curl):**
     To export translations for a single Nudge and a specific locale:
     ```bash
     curl -X GET \\
       -H "Authorization: Basic YOUR_BASE64_ENCODED_CREDENTIALS" \\
-      "https://app.amplitude.com/a/guides-surveys/api/v1/localization/export/?flag_key=nudge-translated-announcement-1&locale=de"
+      "https://app.amplitude.com/a/guides-surveys/api/v1/localization/export/?key=nudge-translated-announcement-1&locale=de"
     ```
     To export for multiple flag keys and locales:
     ```bash
     curl -X GET \\
       -H "Authorization: Basic YOUR_BASE64_ENCODED_CREDENTIALS" \\
-      "https://app.amplitude.com/a/guides-surveys/api/v1/localization/export/?flag_key=key-one&flag_key=key-two&locale=de&locale=fr"
+      "https://app.amplitude.com/a/guides-surveys/api/v1/localization/export/?key=key-one&key=key-two&locale=de&locale=fr"
     ```
     (Replace `YOUR_BASE64_ENCODED_CREDENTIALS` with your actual Base64 encoded App ID and Secret Key.)
 *   **Response:**
