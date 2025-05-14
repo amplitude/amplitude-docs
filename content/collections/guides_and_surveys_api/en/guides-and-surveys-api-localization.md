@@ -1,13 +1,11 @@
 ---
 id: d55d1726-1779-4479-bd3d-063b71c49f52
-blueprint: guides-and-survey
 title: Localization API (Beta)
 landing: false
 exclude_from_sitemap: false
 api_status: beta
+summary: Programmatically import and export translation files for your guides and surveys.
 ---
-
-# Guides and Surveys Localization API
 
 The Guides and Surveys Localization API allows you to programmatically import and export translation files for your guides and surveys in XLIFF 1.2 format. This enables integration with external translation management systems and workflows.
 
@@ -25,7 +23,7 @@ All API endpoints described here are relative to the following base URLs:
 | EU Residency Server | `https://app.eu.amplitude.com/a/` |
 
 {{partial:admonition type="note" heading="Beta URLs"}}
-The URLs above are for the Beta version of the Localization API. The production version will be hosted at a different URL.
+The URLs above are for the Beta version of the Localization API. This URL may change once the API reaches general availability.
 {{/partial:admonition}}
 
 
@@ -66,7 +64,7 @@ The API uses XLIFF version 1.2. Key aspects of the XLIFF structure relevant to t
 
 ### Import translations
 
-Imports an XLIFF file to add or update translations for one or more guides or surveys. Upon successful import of translations, the relevant cache for your application is purged to ensure the new translations are available.
+Imports an XLIFF file to add or update translations for one or more guides or surveys. Upon successful import of translations, Amplitude purges the relevant cache for your application to ensure the new translations are available.
 
 *   **HTTP Method:** `POST`
 *   **URL:** `/import/`
