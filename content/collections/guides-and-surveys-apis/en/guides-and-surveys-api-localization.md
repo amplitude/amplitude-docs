@@ -36,33 +36,33 @@ Construct the Basic Auth header by Base64 encoding the string `YOUR_APP_ID:YOUR_
 
 (Replace `<base64_encoded_app_id:app_secret_key>` with your actual Base64 encoded credentials.)
 
-## XLIFF File Structure
+## XLIFF file structure
 
 The API uses XLIFF version 1.2. Key aspects of the XLIFF structure relevant to this API:
 
-*   **`<file>` element:** Represents translations for a Nudge or a Nudge variant.
-    *   `original`: This attribute is crucial. It identifies the Nudge and optionally a specific variant.
+*   **`<file>` element:** Represents translations for a guide or survey.
+    *   `original`: This attribute is crucial. It identifies the guide or survey and optionally a specific variant.
         *   Format: `<key>` or `<key>_<variant>`
         *   `<key>`: The unique key of your guide or survey.
         *   `<variant>` (optional): The identifier of a specific variant within the guide or survey.
             *   For import, if `<variant>` is omitted, the API updates the first variant of the guide or survey.
             *   For export, if a guide or survey has multiple active variants, each may be represented in a separate `<file>` element within the XLIFF document, with the `original` attribute formatted as `<key>_<variant>` to distinguish them.
     *   `datatype="plaintext"`
-    *   `source-language`: The source language code (e.g., "en").
-    *   `target-language`: The target language code for the translations in this file (e.g., "de", "fr").
+    *   `source-language`: The source language code (for example, "en").
+    *   `target-language`: The target language code for the translations in this file (for example, "de", "fr").
 
 *   **`<body>` element:** Contains one or more `<trans-unit>` elements.
 
 *   **`<trans-unit>` element:** Represents a segment of text for translation.
-    *   `id`: A unique identifier for the text segment within the Nudge (e.g., `snooze_label`, `step_1_title`, `step_6_content.markdown`). These IDs correspond to the translatable fields of your Nudge content.
+    *   `id`: A unique identifier for the text segment within the guide or survey (for example, `snooze_label`, `step_1_title`, `step_6_content.markdown`). These IDs correspond to the translatable fields of your guide or survey content.
     *   `<source>`: The original text in the `source-language`.
-    *   `<target>`: The translated text in the `target-language`. For import, provide the translation here. For export, this will contain the existing translation. If empty, it means the text is not yet translated for that target language.
+    *   `<target>`: The translated text in the `target-language`. For import, provide the translation here. For export, this contains the existing translation. If empty, it means the text isn't yet translated for that target language.
 
 ## Endpoints
 
-### Import Translations
+### Import translations
 
-Imports an XLIFF file to add or update translations for one or more Nudges. Upon successful import of translations, the relevant cache for your application will be purged to ensure the new translations are served.
+Imports an XLIFF file to add or update translations for one or more guides or surveys. Upon successful import of translations, the relevant cache for your application is purged to ensure the new translations are available.
 
 *   **HTTP Method:** `POST`
 *   **URL:** `/import/`
@@ -109,7 +109,7 @@ Imports an XLIFF file to add or update translations for one or more Nudges. Upon
     ```
     (Replace `YOUR_BASE64_ENCODED_CREDENTIALS` with your actual Base64 encoded App ID and Secret Key.)
 *   **Response:**
-    *   **`200 OK`**: All translation units in the XLIFF file were processed successfully. The response body is a JSON object detailing the status for each file processed.
+    *   **`200 OK`**: All translation units in the XLIFF file processed successfully. The response body is a JSON object detailing the status for each file processed.
         Example:
         ```json
         {
@@ -122,7 +122,7 @@ Imports an XLIFF file to add or update translations for one or more Nudges. Upon
         }
         ```
 
-### Export Translations
+### Export translations
 
 Exports translations for specified guides or survey (by `key`) into an XLIFF 1.2 file.
 
@@ -131,16 +131,16 @@ Exports translations for specified guides or survey (by `key`) into an XLIFF 1.2
 *   **Headers:**
     *   `Authorization: Basic <base64_encoded_app_id:app_secret_key>`
 *   **Query Parameters:**
-    *   `key` (string, required): The flag key of the Nudge to export translations for. Provide this parameter multiple times for multiple guides or surveys, or provide a commae separated list (e.g., `?key=key1&key=key2` or `?key=key1,key2`). At least one `key` is required.
-    *   `locale` (string, optional): The specific target language code(s) to export (e.g., "de", "fr"). Provide this parameter multiple times for multiple locales. If omitted, translations for all configured target locales (excluding the source language) for the app will be exported.
+    *   `key` (string, required): The key of the guide or survey to export translations for. Provide this parameter multiple times for multiple guides or surveys, or provide a comma separated list (for example, `?key=key1&key=key2` or `?key=key1,key2`). At least one `key` is required.
+    *   `locale` (string, optional): The specific target language codes to export (for example, "de", "fr"). Provide this parameter multiple times for multiple locales. If omitted, translations for all configured target locales (excluding the source language) for the app are exported.
 *   **Example Request (curl):**
-    To export translations for a single Nudge and a specific locale:
+    To export translations for a single guide or survey and a specific locale:
     ```bash
     curl -X GET \\
       -H "Authorization: Basic YOUR_BASE64_ENCODED_CREDENTIALS" \\
       "https://app.amplitude.com/a/guides-surveys/api/v1/localization/export/?key=nudge-translated-announcement-1&locale=de"
     ```
-    To export for multiple flag keys and locales:
+    To export for multiple guide or survey keys and locales:
     ```bash
     curl -X GET \\
       -H "Authorization: Basic YOUR_BASE64_ENCODED_CREDENTIALS" \\
