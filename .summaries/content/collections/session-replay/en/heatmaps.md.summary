@@ -1,14 +1,14 @@
 # Summary
-Heatmaps in Session Replay provide visual representations of user engagement through Click maps, Selectors, and Scrollmaps, allowing developers to analyze interaction patterns on web pages with filtering capabilities by URL patterns and device types, available only for Growth and Enterprise plans with the Session Replay addon.
+Heatmaps in Session Replay provides visual representations of user engagement through Click maps (showing most clicked areas by coordinates), Selector maps (highlighting most interacted elements with rankings), and Scroll maps (displaying aggregate scroll activity and average page fold), available to Growth and Enterprise plans with Session Replay addon and requiring specific SDK versions.
 
 # Keywords
-- click maps
-- selectors view
-- scrollmaps
-- URL pattern matching
-- device filtering
-- user engagement visualization
-- average fold
-- session replay integration
-- web-only support
-- heatmap retention
+- click map
+- selector map
+- scroll map
+- web-based session replays
+- microscope feature
+- URL matching options
+- session replay retention
+- SDK version requirements
+- behavioral cohorts
+- page fold visualization
