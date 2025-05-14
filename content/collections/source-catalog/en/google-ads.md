@@ -11,8 +11,10 @@ integration_category:
 partner_maintained: false
 integration_icon: partner-icons/google-ads.svg
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718758033
+updated_by: 4870994b-20b1-4b89-b813-42091eaf6cb7
+updated_at: 1747259144
+academy_course:
+  - 5851e566-81eb-4447-96c8-25fe1babd34b
 ---
 Amplitude's Google Ads integration lets you import your Google Ads spend, click, and impression data for analysis in Amplitude.
 
