@@ -1,6 +1,10 @@
 ---
 id: d55d1726-1779-4479-bd3d-063b71c49f52
+blueprint: guides-and-surveys-api
 title: Localization API (Beta)
+landing: false
+exclude_from_sitemap: false
+api_status: beta
 ---
 
 # Guides and Surveys Localization API
