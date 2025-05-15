@@ -2847,7 +2847,7 @@
       "statusCode": 301
     },
     {
-      "destination": "/docs/faq/funnel-analysis",
+      "destination": "/docs/analytics/charts/funnel-analysis/funnel-analysis-how-filters-work#applying-group-by-filters",
       "source": "/docs/hc/en-us/articles/360054203872((?:-[a-zA-Z0-9-]+)?)",
       "statusCode": 301
     },
