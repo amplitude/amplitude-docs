@@ -18,5 +18,6 @@ preview_targets:
 inject:
   nav_title: experiment
   landing: true
+  blade: Amplitude Experiment
 structure:
   root: false
