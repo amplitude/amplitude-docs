@@ -1,17 +1,14 @@
-# Summary
-Out-of-the-box Marketing Analytics provides centralized tracking of page engagement and session-based metrics (page views, bounce rates, session duration) with customizable features including domain filtering, conversion tracking, and nested group-bys across four main insight categories: Traffic by Channel, Traffic by Campaign, Ad Performance, and Page Engagement.
+## Summary
+Out-of-the-box Marketing Analytics provides a centralized hub for tracking industry-standard metrics like page views, session duration, and bounce rate across four insight categories (Traffic by Channel/Campaign, Ad Performance, Page Engagement, and Conversion), with customizable settings for domain filtering, conversion tracking, and nested group-by analysis.
 
-# Keywords
-- marketing analytics
-- channel traffic
-- campaign tracking
-- ad performance metrics
-- page engagement
-- conversion funnels
-- CTR (Click-Through Rate)
-- CPC (Cost Per Click)
+## Keywords
+- marketing analytics hub
+- traffic channel metrics
+- ad performance tracking
+- page engagement metrics
+- conversion funnel
+- UTM parameter tracking
 - CAC (Customer Acquisition Cost)
 - ROAS (Return on Ad Spend)
-- Daily Ad Metrics
-- nested group-bys
+- Daily Ad Metrics event
 - web experiment integration
