@@ -1,3 +1,20 @@
-**Summary**: This documentation page defines the structure for experiment integrations content, specifying a route pattern of '/feature-experiment/{slug}', with ascending sort direction and conditional date-based visibility where past dates are public and future dates are private.
-
-**Keywords**: experiment integrations, feature-experiment route, date_behavior, preview_targets, propagate false, sort_dir asc, nav_title injection
+Full content: title: 'Experiment Integrations'
+sites:
+  - en
+propagate: false
+template: default
+layout: layout
+revisions: false
+route: '/feature-experiment/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: experiment
+  blade: Amplitude Experiment

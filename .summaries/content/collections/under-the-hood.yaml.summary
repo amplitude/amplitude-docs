@@ -1,12 +1,22 @@
-## Summary
-This YAML configuration defines a "Under the Hood" collection with specific routing, display, and behavior settings for feature experiment documentation, including a custom route pattern `/feature-experiment/under-the-hood/{slug}` and ascending sort direction.
-
-## Keywords
-- collection configuration
-- feature-experiment
-- custom routing
-- preview targets
-- date behavior
-- structure settings
-- propagation control
-- sort direction
+Full content: title: 'Under the Hood'
+sites:
+  - en
+propagate: false
+template: default
+layout: layout
+revisions: false
+route: '/feature-experiment/under-the-hood/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: experiment
+  blade: Amplitude Experiment
+structure:
+  root: false

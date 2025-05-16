@@ -1,10 +1,19 @@
-## Summary
-This documentation page defines the structure and configuration for the "Experiment Theory" collection, which appears to be part of a feature experimentation system with a specific URL route pattern, ascending sort direction, and date-based visibility controls.
-
-## Keywords
-- experiment-theory collection
-- feature-experiment route
-- date_behavior visibility
-- ascending sort direction
-- preview targets
-- experiment navigation
+Full content: title: 'Experiment Theory'
+template: default
+layout: layout
+revisions: false
+route: '/feature-experiment/experiment-theory/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: experiment
+  blade: Amplitude Experiment
+structure:
+  root: false

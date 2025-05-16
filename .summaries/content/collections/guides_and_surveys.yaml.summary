@@ -1,12 +1,23 @@
-## Summary
-This YAML configuration defines a "Guides and Surveys" collection with specific routing, mounting, and display settings, including a custom URL structure that incorporates section and slug parameters, and specialized date-based publishing behavior.
-
-## Keywords
-- collection configuration
-- guides_and_surveys
-- custom routing
-- date_behavior
-- mount point
-- preview_targets
-- structure settings
-- propagation control
+Full content: title: 'Guides and Surveys'
+sites:
+  - en
+propagate: false
+template: default
+layout: layout
+mount: 8255e7a7-7275-4629-8512-e42b0da92456
+revisions: false
+route: '/guides-and-surveys/{{section}}/{{slug}}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: guides_and_surveys
+  blade: Amplitude Guides and Surveys
+structure:
+  root: false

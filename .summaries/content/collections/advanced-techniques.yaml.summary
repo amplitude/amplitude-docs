@@ -1,12 +1,22 @@
-## Summary
-This YAML configuration defines a "Advanced Techniques" collection with custom routing under "/feature-experiment/advanced-techniques/{slug}", specifying visibility rules based on dates and disabling revision tracking while setting up a structure without a root.
-
-## Keywords
-- collection configuration
-- feature-experiment route
-- date_behavior
-- preview_targets
-- structure without root
-- propagate false
-- sort_dir ascending
-- custom permalink
+Full content: title: 'Advanced Techniques'
+sites:
+  - en
+propagate: false
+template: default
+layout: layout
+revisions: false
+route: '/feature-experiment/advanced-techniques/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: experiment
+  blade: Amplitude Experiment
+structure:
+  root: false
