@@ -1042,7 +1042,7 @@ for plugin in enrichmentPlugins {
 {{/partial:tab}}
 {{/partial:tabs}}
 
-This method returns an array of all plugins that match the specified type, allowing you to interact with more than one plugin of the same type.
+This method returns an array of all plugins that match the specified type, allowing you to interact with multiple plugins of the same type at once.
 
 ## Troubleshooting and debugging
 
