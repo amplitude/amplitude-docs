@@ -946,6 +946,104 @@ class TestDestinationPlugin: DestinationPlugin {
 {{/partial:tab}}
 {{/partial:tabs}}
 
+### Accessing plugins
+
+You can access plugins that have been added to the Amplitude instance by name or by type.
+
+#### Access a plugin by name
+
+To access a plugin by name, use the `plugin(name:)` method:
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+// Add a plugin with a name
+class MyPlugin: Plugin {
+    let name = "my-plugin"
+    let type = PluginType.enrichment
+    
+    func setup(amplitude: Amplitude) {
+        // Setup code
+    }
+    
+    func execute(event: BaseEvent?) -> BaseEvent? {
+        // Execute code
+        return event
+    }
+}
+
+amplitude.add(plugin: MyPlugin())
+
+// Later, access the plugin by name
+if let myPlugin = amplitude.plugin(name: "my-plugin") as? MyPlugin {
+    // Use the plugin
+}
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+// Add a plugin with a name
+AMPPlugin *plugin = [AMPPlugin initWithName:@"my-plugin" 
+                                       type:AMPPluginTypeEnrichment
+                                    execute:^AMPBaseEvent * _Nullable(AMPBaseEvent * _Nonnull event) {
+    // Execute code
+    return event;
+}];
+
+[amplitude add:plugin];
+
+// Later, access the plugin by name
+AMPPlugin *myPlugin = [amplitude plugin:@"my-plugin"];
+if (myPlugin != nil) {
+    // Use the plugin
+}
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+#### Access plugins by type
+
+To access all plugins of a specific type, use the `plugins(type:)` method:
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+// Define a custom plugin type
+class MyEnrichmentPlugin: Plugin {
+    let name = "my-enrichment-plugin"
+    let type = PluginType.enrichment
+    
+    func setup(amplitude: Amplitude) {
+        // Setup code
+    }
+    
+    func execute(event: BaseEvent?) -> BaseEvent? {
+        // Execute code
+        return event
+    }
+}
+
+// Add multiple plugins of the same type
+amplitude.add(plugin: MyEnrichmentPlugin())
+amplitude.add(plugin: AnotherEnrichmentPlugin())
+
+// Later, access all plugins of a specific type
+let enrichmentPlugins = amplitude.plugins(type: MyEnrichmentPlugin.self)
+for plugin in enrichmentPlugins {
+    // Use each plugin of the specified type
+}
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+// Objective-C doesn't support the plugins(type:) method directly
+// You would need to use the plugin(name:) method to access specific plugins
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+This method returns an array of all plugins that match the specified type, allowing you to interact with multiple plugins of the same type at once.
+
 ## Troubleshooting and debugging
 
 Ensure that the configuration and payload are accurate and check for any unusual messages during the debugging process. If everything appears to be right, check the value of `flushQueueSize` or `flushIntervalMillis`. Events are queued and sent in batches by default, which means they are not immediately dispatched to the server. Ensure that you have waited for the events to be sent to the server before checking for them in the charts.
