@@ -948,7 +948,7 @@ class TestDestinationPlugin: DestinationPlugin {
 
 ### Accessing plugins
 
-You can access plugins that have been added to the Amplitude instance by name or by type.
+Access plugins that are added to the Amplitude instance by name or by type.
 
 #### Access a plugin by name
 
@@ -1042,7 +1042,7 @@ for plugin in enrichmentPlugins {
 {{/partial:tab}}
 {{/partial:tabs}}
 
-This method returns an array of all plugins that match the specified type, allowing you to interact with multiple plugins of the same type at once.
+This method returns an array of all plugins that match the specified type, allowing you to interact with more than one plugin of the same type.
 
 ## Troubleshooting and debugging
 
