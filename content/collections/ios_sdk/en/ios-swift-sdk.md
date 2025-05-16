@@ -258,7 +258,7 @@ When you update the identity, the SDK:
 2. Notifies plugins about the identity change
 3. Automatically sends an identify event if user properties have changed
 
-### Legacy Identity Methods
+### Legacy identity methods
 
 The legacy methods for setting user and device IDs still work and update the identity object internally:
 
