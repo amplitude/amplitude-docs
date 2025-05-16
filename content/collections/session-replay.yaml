@@ -14,5 +14,6 @@ preview_targets:
     refresh: true
 inject:
   nav_title: session_replay
+  blade: Amplitude Session Replay
 structure:
   root: false
