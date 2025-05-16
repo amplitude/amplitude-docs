@@ -46,7 +46,15 @@ Out-of-the-box Marketing Analytics offers four sets of insights with default met
 - **Traffic by Campaign**: Provides an overview of the users visiting your product by campaign. Metrics include visitors, bounce rate, session totals, average session duration, sessions per user, and any defined goals.
 - **Ad Performance**: Provides an overview of your ad campaigns (for example, Google Ads and Facebook Ads) with key metrics like Impressions, Clicks, Click-Through Rate (CTR), Cost Per Click (CPC), Customer Acquisition Cost (CAC), and Return on Ad Spend (ROAS), plus flexible settings for acquisition and revenue tracking.
 - **Page Engagement**: Details user engagement by page. Metrics include visitors, page views, bounce rate, page views per session, entry rate, exit rate, and any defined goals.
-- **Conversion**: Provides over-time and aggregated analyses of user conversion based on your defined funnel. Metrics include overall conversion and step-by-step conversion.
+- **Conversion**: Provides over-time and aggregated analyses of user conversion based on your defined funnel. Metrics include total conversion and step-by-step conversion.
+
+{{partial:admonition type="note" heading="If your CAC and ROAS are 0"}}
+CAC and ROAS may display as `0` if your ads haven't led to conversions, or if the UTM parameters in your campaigns don't match those in your events. 
+
+For example, if `utm_content` in a Facebook add is `image_xyz`, but the value you set in Amplitude is `xyz`, Amplitude can't accurately track that campaign.
+
+To ensure accurate results, ensure the UTM properties you use in your campaigns match what you [configure in Amplitude](#configure-utm-properties). If you notice a discrepency, you can update the property definition in Amplitude. For more information, see [Fix your data with Transformations](/docs/data/transformations#rename-property-values)
+{{/partial:admonition}}
 
 Each insight displays a time series chart and an aggregated data table below it.
 
@@ -116,6 +124,10 @@ The following user properties are set with the `Daily Ad Metrics` event and disp
 * UTM Source 
 * UTM Term
 
+{{partial:admonition type="tip" heading="Use UTM properties as breakdowns"}}
+To gain insight on both ad metrics and product metrics, use UTM properties as the breakdown.
+{{/partial:admonition}}
+
 The Daily Ad Metrics event also includes several important event properties:
 
 * Ad Impressions, Ad Clicks, Ad Cost, Ad Conversions, Ad Interactions
@@ -123,6 +135,25 @@ The Daily Ad Metrics event also includes several important event properties:
 * Ad Group ID, Ad Group Name, Ad Group Type, Ad ID, Ad Name, Ad Platform, Ad Segment Device, Campaign Advertising Channel Type, Campaign End Date, Campaign ID, Campaign Name, Campaign Start Date, Final URL, Tracking URL Template
 
 The first set of event properties includes numeric values you can use to compute advertising metrics. The remaining event properties describe the advertising metrics in the same way as the ad network. (This example uses Google Ads, but the process is similar for other advertising networks, although property names may vary.)
+
+{{partial:admonition type="tip" heading="Amplitude recommends UTM properties"}}
+Amplitude recommends that you use UTM properties to track the full user journey from impression to in-product action.
+
+The Daily Ad Metric supports other properties, like `ad_platform` or `campaign_name`. Using these properties lets you measure ad-level metrics like impressions and clicks. They don't support values for CAC, ROAS, or any custom goals you define that tie to Amplitude events. Those require UTM-based matching within the Daily Ad Metric.
+{{/partial:admonition}}
+
+### Configure UTM properties
+
+To ensure your UTMs end up in Amplitude:
+
+1. Add UTM parameters to your ad campaign URLs.
+2. Instrument those UTMs as user properties in Amplitude.
+3. Ensure the UTM values match between your advertising URLs and the event data you see in Amplitude.
+
+If you don't see results, ensure the following:
+
+* You ran an ad campaign during the selected date range.
+* You added UTM parameters to your ad campaign URLs.
 
 ## Create a web experiment for specific URLs
 
