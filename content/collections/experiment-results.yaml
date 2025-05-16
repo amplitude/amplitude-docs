@@ -15,5 +15,6 @@ preview_targets:
     refresh: true
 inject:
   nav_title: charts
+  blade: Amplitude Experiment
 structure:
   root: false
