@@ -186,6 +186,169 @@ AMPIdentify *identify = [AMPIdentify new];
 {{/partial:tab}}
 {{/partial:tabs}}
 
+## Identity management
+
+The SDK provides a unified way to manage user identity through the `Identity` struct. This structure holds the user's identity information including `userId`, `deviceId`, and `userProperties`.
+
+### Accessing Identity
+
+Access the current identity through the `identity` property on the Amplitude instance:
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+// Get the current identity
+let currentIdentity = amplitude.identity
+
+// Access identity properties
+let userId = currentIdentity.userId
+let deviceId = currentIdentity.deviceId
+let userProperties = currentIdentity.userProperties
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+// Get the current identity
+Identity *currentIdentity = amplitude.identity;
+
+// Access identity properties
+NSString *userId = currentIdentity.userId;
+NSString *deviceId = currentIdentity.deviceId;
+NSDictionary *userProperties = currentIdentity.userProperties;
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+### Updating Identity
+
+To update the identity, set the entire identity object, or modify its individual properties:
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+// Method 1: Set the entire identity
+let newIdentity = Identity(userId: "user-123", deviceId: "device-456", userProperties: ["plan": "premium"])
+amplitude.identity = newIdentity
+
+// Method 2: Update individual properties
+amplitude.identity.userId = "user-123"
+amplitude.identity.deviceId = "device-456"
+amplitude.identity.userProperties = ["plan": "premium"]
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+// Method 1: Create and set a new identity
+Identity *newIdentity = [[Identity alloc] init];
+newIdentity.userId = @"user-123";
+newIdentity.deviceId = @"device-456";
+newIdentity.userProperties = @{@"plan": @"premium"};
+amplitude.identity = newIdentity;
+
+// Method 2: Update individual properties
+amplitude.identity.userId = @"user-123";
+amplitude.identity.deviceId = @"device-456";
+amplitude.identity.userProperties = @{@"plan": @"premium"};
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+When you update the identity, the SDK:
+1. Persists the changes to storage
+2. Notifies plugins about the identity change
+3. Automatically sends an identify event if user properties have changed
+
+### Legacy identity methods
+
+The legacy methods for setting user and device IDs still work and update the identity object internally:
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+// These methods update the identity object internally
+amplitude.setUserId(userId: "user-123")
+amplitude.setDeviceId(deviceId: "device-456")
+
+// These are equivalent to:
+amplitude.identity.userId = "user-123"
+amplitude.identity.deviceId = "device-456"
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+// These methods update the identity object internally
+[amplitude setUserId:@"user-123"];
+[amplitude setDeviceId:@"device-456"];
+
+// These are equivalent to:
+amplitude.identity.userId = @"user-123";
+amplitude.identity.deviceId = @"device-456";
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+### User properties in identity
+
+The `identity.userProperties` dictionary contains the cached state of user properties that have been set through identify operations. When you call `identify()`, these properties are automatically updated in the identity object:
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+// Set user properties with identify
+let identify = Identify()
+identify.set(property: "plan", value: "premium")
+identify.set(property: "status", value: "active")
+amplitude.identify(identify: identify)
+
+// The user properties are now available in the identity object
+let userProperties = amplitude.identity.userProperties
+// userProperties contains {"plan": "premium", "status": "active"}
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+// Set user properties with identify
+AMPIdentify *identify = [AMPIdentify new];
+[identify set:@"plan" value:@"premium"];
+[identify set:@"status" value:@"active"];
+[amplitude identify:identify];
+
+// The user properties are now available in the identity object
+NSDictionary *userProperties = amplitude.identity.userProperties;
+// userProperties contains {"plan": "premium", "status": "active"}
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+The SDK supports the following identify operations for updating user properties:
+- `SET`: Sets the property value
+- `UNSET`: Removes the property
+- `CLEAR_ALL`: Clears all user properties
+
+The SDK sends other operations like `SET_ONCE`, `ADD`, or `APPEND` to the server but doesn't cache in the identity object.
+
+### Reset Identity
+
+When you call `reset()`, the SDK:
+1. Sets `userId` to `nil`
+2. Clears all user properties
+3. Generates a new `deviceId`
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+amplitude.reset()
+// This clears userId and userProperties, and generates a new deviceId
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+[amplitude reset];
+// This clears userId and userProperties, and generates a new deviceId
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
 ## Autocapture <a id="track-default-events"></a>
 
 Starting from release v1.8.0, the SDK is able to track more events without manual instrumentation. It can be configured to track the following events automatically:
@@ -948,7 +1111,7 @@ class TestDestinationPlugin: DestinationPlugin {
 
 ### Accessing plugins
 
-Access plugins that are added to the Amplitude instance by name or by type.
+Access the plugins you add to the Amplitude instance by name or by type.
 
 #### Access a plugin by name
 
