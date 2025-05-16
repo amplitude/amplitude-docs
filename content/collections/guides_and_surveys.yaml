@@ -18,5 +18,6 @@ preview_targets:
     refresh: true
 inject:
   nav_title: guides_and_surveys
+  blade: Amplitude Guides and Surveys
 structure:
   root: false
