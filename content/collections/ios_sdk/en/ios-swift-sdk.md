@@ -186,7 +186,7 @@ AMPIdentify *identify = [AMPIdentify new];
 {{/partial:tab}}
 {{/partial:tabs}}
 
-## Identity Management
+## Identity management
 
 The SDK provides a unified way to manage user identity through the `Identity` struct. This structure holds the user's identity information including `userId`, `deviceId`, and `userProperties`.
 
@@ -258,7 +258,7 @@ When you update the identity, the SDK:
 2. Notifies plugins about the identity change
 3. Automatically sends an identify event if user properties have changed
 
-### Legacy Identity Methods
+### Legacy identity methods
 
 The legacy methods for setting user and device IDs still work and update the identity object internally:
 
@@ -287,7 +287,7 @@ amplitude.identity.deviceId = @"device-456";
 {{/partial:tab}}
 {{/partial:tabs}}
 
-### User Properties in Identity
+### User properties in identity
 
 The `identity.userProperties` dictionary contains the cached state of user properties that have been set through identify operations. When you call `identify()`, these properties are automatically updated in the identity object:
 
@@ -325,7 +325,7 @@ The SDK supports the following identify operations for updating user properties:
 - `UNSET`: Removes the property
 - `CLEAR_ALL`: Clears all user properties
 
-Other operations like `SET_ONCE`, `ADD`, `APPEND`, etc. are sent to the server but not cached in the identity object.
+The SDK sends other operations like `SET_ONCE`, `ADD`, or `APPEND` to the server but doesn't cache in the identity object.
 
 ### Reset Identity
 
