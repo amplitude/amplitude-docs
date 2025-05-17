@@ -78,7 +78,7 @@ If a user isn't in the target audience, the Evaluation API may return an empty o
 | 400 | If the request has invalid JSON in the context parameter, it returns a `400` status. |
 | 401 | If the request doesn't include a valid API key, it returns a `401` response. |
 
-### Evaluation Example
+### Evaluation example
 
 Set the fields in the table, and press send to send the request in browser, or copy the curl to send the request yourself.
 
