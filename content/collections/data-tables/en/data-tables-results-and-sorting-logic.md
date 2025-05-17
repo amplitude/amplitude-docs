@@ -40,7 +40,7 @@ Results exported to .CSV have row limits based on the metric type. If the data t
 
 ## Limits for Dashboard REST API queries
 
-With results queried from the Dashboard REST API, event segmentation metrics have a limit of 1000 rows. This is the only difference from the .CSV limits described in the previous section.
+With results queried from the [Dashboard REST API](/docs/apis/analytics/dashboard-rest), event segmentation metrics have a limit of 1000 rows. This is the only difference from the .CSV limits described in the previous section.
 
 ## How time properties work in Data Tables
 

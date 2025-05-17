@@ -86,15 +86,16 @@ Blocks enable you to make your guide more engaging and powerful. Add a Button CT
 
 When you add a Button, you can choose what happens when users click or tap that button.
 
-| Action        | Description                                                                                              |
-| ------------- | -------------------------------------------------------------------------------------------------------- |
-| Visit link    | A link to the specified website opens in a new tab.                                                      |
-| Click element | Specify an element on the page that receives a click event when the user clicks the button in the guide. |
-| Show guide    | Launch another guide.                                                                                    |
-| Show survey   | Launch a survey.                                                                                         |
-| Go back       | Go to the previous step in the guide.                                                                    |
-| Go forward    | Advance to the next step in the guide.                                                                   |
-| Go to step    | Go to the specified step in the guide.                                                                   |
+| Action        | Description                                                                                                                                                                       |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Visit link    | A link to the specified website opens in a new tab.                                                                                                                               |
+| Click element | Specify an element on the page that receives a click event when the user clicks the button in the guide.                                                                          |
+| Show guide    | Launch another guide.                                                                                                                                                             |
+| Show survey   | Launch a survey.                                                                                                                                                                  |
+| Go back       | Go to the previous step in the guide.                                                                                                                                             |
+| Go forward    | Advance to the next step in the guide.                                                                                                                                            |
+| Go to step    | Go to the specified step in the guide.                                                                                                                                            |
+| Run callback  | Trigger a callback function defined in your Guides and Surveys instrumentation. For more information, see [Register a callback](/docs/guides-and-surveys/sdk#register-a-callback) |
 
 #### Image
 

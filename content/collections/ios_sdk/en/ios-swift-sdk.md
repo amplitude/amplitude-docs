@@ -35,7 +35,7 @@ This is the official documentation for the Amplitude Analytics iOS SDK.
 {{partial:tab name="Swift Package Manager"}}
 1. Navigate to `File` > `Swift Package Manager` > `Add Package Dependency`. This opens a dialog that allows you to add a package dependency. 
 2. Enter the URL `https://github.com/amplitude/Amplitude-Swift` in the search bar. 
-3. Xcode will automatically resolve to the latest version. Or you can select a specific version. 
+3. Xcode automatically resolves to the latest version. Or you can select a specific version. 
 4. Click the "Next" button to confirm the addition of the package as a dependency. 
 5. Build your project to make sure the package is properly integrated.
 {{/partial:tab}}
@@ -52,18 +52,20 @@ Check out the [Carthage docs](https://github.com/Carthage/Carthage#adding-framew
 
 You must initialize the SDK before you can instrument. The API key for your Amplitude project is required.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 let amplitude = Amplitude(configuration: Configuration(
-    apiKey: AMPLITUDE_API_KEY
+    apiKey: AMPLITUDE_API_KEY,
+    autocapture: .all
 ))
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
-AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:AMPLITUDE_API_KEY];
-Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:AMPLITUDE_API_KEY];
+configuration.autocapture = AMPAutocaptureOptions.all;
+Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -88,7 +90,8 @@ Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 | `callback`                     | Callback function after event sent.                                                                                                                                                                         | `nil`                                    |
 | `optOut`                       | Opt the user out of tracking.                                                                                                                                                                               | `false`                                  |
 | ~`defaultTracking`~ (Deprecated. Use [`autocapture`](#autocapture) instead.)             | Enable tracking of default events for sessions, app lifecycles, screen views, and deep links.                                                                                    | `DefaultTrackingOptions(sessions: true)` |
-| `autocapture`             | Enable tracking of [Autocapture events](#autocapture) for sessions, app lifecycles, screen views, deep links, and element interactions.                                                                                    | `AutocaptureOptions.sessions` |
+| `autocapture`             | Enable tracking of [Autocapture events](#autocapture) for sessions, app lifecycles, screen views, deep links, network requests, and element interactions.                                                                                    | `AutocaptureOptions.sessions` |
+| `enableAutoCaptureRemoteConfig` | Enable remote configuration for autocapture settings. When enabled, Autocapture settings are updateable remotely after initialization.                                                                      | `true` |
 | `minTimeBetweenSessionsMillis` | The amount of time for session timeout.                                                                                                                                                                     | `300000`                                 |
 | `serverUrl`                    | The server url events upload to.                                                                                                                                                                            | `https://api2.amplitude.com/2/httpapi`   |
 | `serverZone`                   | The server zone to send to, will adjust server url based on this config.                                                                                                                                    | `US`                                     |
@@ -105,7 +108,7 @@ Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 
 Events represent how users interact with your application. For example, "Button Clicked" may be an action you want to note.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 
 ```swift
@@ -117,10 +120,10 @@ amplitude.track(event: event)
 ```
 
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 
 ```objc
-AMPBaseEvent* event = [AMPBaseEvent initWithEventType:@"Button Clicked"
+AMPBaseEvent *event = [AMPBaseEvent initWithEventType:@"Button Clicked"
     eventProperties:@{@"my event prop key": @"my event prop value"}];
 
 [amplitude track:event];
@@ -130,7 +133,7 @@ AMPBaseEvent* event = [AMPBaseEvent initWithEventType:@"Button Clicked"
 
 Another way to instrument basic tracking event.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 
 ```swift
@@ -141,7 +144,7 @@ amplitude.track(
 ```
 
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 
 ```objc
 [amplitude track:@"Button Clicked" eventProperties:@{
@@ -166,7 +169,7 @@ If the Identify call is sent after the event, the results of operations will be 
 
 You can handle the identity of a user using the identify methods. Proper use of these methods can connect events to the correct user as they move across devices, browsers, and other platforms. Send an identify call containing those user property operations to Amplitude server to tie a user's events with specific user properties.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 let identify = Identify()
@@ -174,11 +177,174 @@ identify.set(property: "color", value: "green")
 amplitude.identify(identify: identify)
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
-AMPIdentify* identify = [AMPIdentify new];
+AMPIdentify *identify = [AMPIdentify new];
 [identify set:@"color" value:@"green"];
 [amplitude identify:identify];
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+## Identity management
+
+The SDK provides a unified way to manage user identity through the `Identity` struct. This structure holds the user's identity information including `userId`, `deviceId`, and `userProperties`.
+
+### Accessing Identity
+
+Access the current identity through the `identity` property on the Amplitude instance:
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+// Get the current identity
+let currentIdentity = amplitude.identity
+
+// Access identity properties
+let userId = currentIdentity.userId
+let deviceId = currentIdentity.deviceId
+let userProperties = currentIdentity.userProperties
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+// Get the current identity
+Identity *currentIdentity = amplitude.identity;
+
+// Access identity properties
+NSString *userId = currentIdentity.userId;
+NSString *deviceId = currentIdentity.deviceId;
+NSDictionary *userProperties = currentIdentity.userProperties;
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+### Updating Identity
+
+To update the identity, set the entire identity object, or modify its individual properties:
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+// Method 1: Set the entire identity
+let newIdentity = Identity(userId: "user-123", deviceId: "device-456", userProperties: ["plan": "premium"])
+amplitude.identity = newIdentity
+
+// Method 2: Update individual properties
+amplitude.identity.userId = "user-123"
+amplitude.identity.deviceId = "device-456"
+amplitude.identity.userProperties = ["plan": "premium"]
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+// Method 1: Create and set a new identity
+Identity *newIdentity = [[Identity alloc] init];
+newIdentity.userId = @"user-123";
+newIdentity.deviceId = @"device-456";
+newIdentity.userProperties = @{@"plan": @"premium"};
+amplitude.identity = newIdentity;
+
+// Method 2: Update individual properties
+amplitude.identity.userId = @"user-123";
+amplitude.identity.deviceId = @"device-456";
+amplitude.identity.userProperties = @{@"plan": @"premium"};
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+When you update the identity, the SDK:
+1. Persists the changes to storage
+2. Notifies plugins about the identity change
+3. Automatically sends an identify event if user properties have changed
+
+### Legacy identity methods
+
+The legacy methods for setting user and device IDs still work and update the identity object internally:
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+// These methods update the identity object internally
+amplitude.setUserId(userId: "user-123")
+amplitude.setDeviceId(deviceId: "device-456")
+
+// These are equivalent to:
+amplitude.identity.userId = "user-123"
+amplitude.identity.deviceId = "device-456"
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+// These methods update the identity object internally
+[amplitude setUserId:@"user-123"];
+[amplitude setDeviceId:@"device-456"];
+
+// These are equivalent to:
+amplitude.identity.userId = @"user-123";
+amplitude.identity.deviceId = @"device-456";
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+### User properties in identity
+
+The `identity.userProperties` dictionary contains the cached state of user properties that have been set through identify operations. When you call `identify()`, these properties are automatically updated in the identity object:
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+// Set user properties with identify
+let identify = Identify()
+identify.set(property: "plan", value: "premium")
+identify.set(property: "status", value: "active")
+amplitude.identify(identify: identify)
+
+// The user properties are now available in the identity object
+let userProperties = amplitude.identity.userProperties
+// userProperties contains {"plan": "premium", "status": "active"}
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+// Set user properties with identify
+AMPIdentify *identify = [AMPIdentify new];
+[identify set:@"plan" value:@"premium"];
+[identify set:@"status" value:@"active"];
+[amplitude identify:identify];
+
+// The user properties are now available in the identity object
+NSDictionary *userProperties = amplitude.identity.userProperties;
+// userProperties contains {"plan": "premium", "status": "active"}
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+The SDK supports the following identify operations for updating user properties:
+- `SET`: Sets the property value
+- `UNSET`: Removes the property
+- `CLEAR_ALL`: Clears all user properties
+
+The SDK sends other operations like `SET_ONCE`, `ADD`, or `APPEND` to the server but doesn't cache in the identity object.
+
+### Reset Identity
+
+When you call `reset()`, the SDK:
+1. Sets `userId` to `nil`
+2. Clears all user properties
+3. Generates a new `deviceId`
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+amplitude.reset()
+// This clears userId and userProperties, and generates a new deviceId
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+[amplitude reset];
+// This clears userId and userProperties, and generates a new deviceId
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -199,18 +365,19 @@ Starting from release v1.8.0, the SDK is able to track more events without manua
 | `appLifecycles` | `AutocaptureOptions` | No | Enables application lifecycle events tracking. If the option is set, Amplitude tracks application installed, application updated, application opened, and application backgrounded events. Event properties tracked include: `[Amplitude] Version`, `[Amplitude] Build`, `[Amplitude] Previous Version`, `[Amplitude] Previous Build`, `[Amplitude] From Background`. See [Track application lifecycles](#track-application-lifecycles) for more information. |
 | `screenViews` | `AutocaptureOptions` | No | Enables screen views tracking. If the option is set, Amplitude tracks screen viewed events. Event properties tracked include: `[Amplitude] Screen Name`. See [Track screen views](#track-screen-views) for more information. |
 | `elementInteractions` | `AutocaptureOptions` | No | Enables element interaction tracking. If the option is set, Amplitude tracks user interactions with `UIControl` element and `UIGestureRecognizer`. Event properties tracked include: `[Amplitude] Action`, `[Amplitude] Target View Class`, `[Amplitude] Target Text`, `[Amplitude] Action Method`, `[Amplitude] Gesture Recognizer`, `[Amplitude] Hierarchy`, `[Amplitude] Accessibility Identifier`, `[Amplitude] Accessibility Label`, `[Amplitude] Screen Name`. See [Track element interactions](#track-element-interactions) for more information. |
+| `networkTracking` | `AutocaptureOptions` | No | Enables network tracking. If the option is set, Amplitude tracks network requests. Event properties tracked include: `[Amplitude] URL`, `[Amplitude] URL Query`, `[Amplitude] URL Fragment`, `[Amplitude] Request Method`, `[Amplitude] Status Code`, `[Amplitude] Error Code`, `[Amplitude] Error Message`, `[Amplitude] Start Time`, `[Amplitude] End Time`, `[Amplitude] Duration`, `[Amplitude] Request Body Size`, `[Amplitude] Response Body Size`. See [Track network requests](#track-network-requests) for more information. |
 
 {{/partial:collapse}}
 
 You can configure Amplitude to start tracking Autocapture events. Otherwise, you can omit the configuration to keep only session tracking enabled.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 The `autocapture` configuration accepts an [`OptionSet`](https://developer.apple.com/documentation/swift/optionset){:target="_blank"} with `AutocaptureOptions` values.
 ```swift
 let amplitude = Amplitude(configuration: Configuration(
     apiKey: "API_KEY",
-    autocapture: [.sessions, .appLifecycles, .screenViews]
+    autocapture: [.sessions, .appLifecycles, .screenViews, .networkTracking]
 ))
 ```
 By default, if the `autocapture` configuration isn't explicitly set during `Configuration` initialization, `configuration.autocapture` will automatically include `AutocaptureOptions.sessions`.
@@ -223,33 +390,71 @@ let amplitude = Amplitude(configuration: Configuration(
 ))
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 The `autocapture` configuration accepts an `Array` of `AutocaptureOptions` values.
 ```objc
-AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
 configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[
     AMPAutocaptureOptions.sessions,
     AMPAutocaptureOptions.appLifecycles,
-    AMPAutocaptureOptions.screenViews
+    AMPAutocaptureOptions.screenViews,
+    AMPAutocaptureOptions.networkTracking
 ]];
-Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
+Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 By default, if the `autocapture` configuration isn't explicitly set during `Configuration` initialization, `configuration.autocapture` will automatically include `AutocaptureOptions.sessions`.
 
 If you want to prevent automatic session events capture, set `autocapture` without the `AutocaptureOptions.sessions` option.
 ```objc
-AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
 configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[AMPAutocaptureOptions.appLifecycles]];   // or use an empty array to disable Autocapture.
-Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
+Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
+
+### Remote configuration for autocapture
+
+Starting from release v1.10.0, the SDK supports remote configuration for autocapture settings. This feature allows you to update autocapture settings after initialization without requiring an app update.
+
+By default, remote configuration for autocapture is enabled. You can disable it by setting `enableAutoCaptureRemoteConfig` to `false` in the configuration:
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+let amplitude = Amplitude(configuration: Configuration(
+    apiKey: "API_KEY",
+    autocapture: [.sessions, .appLifecycles, .screenViews],
+    enableAutoCaptureRemoteConfig: false
+))
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
+configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[
+    AMPAutocaptureOptions.sessions,
+    AMPAutocaptureOptions.appLifecycles,
+    AMPAutocaptureOptions.screenViews
+]];
+configuration.enableAutoCaptureRemoteConfig = NO;
+Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+When you enable remote configuration, the SDK checks for updates to Autocapture settings in your project. If updates are available, the SDK applies them automatically. This allows you to:
+
+- Enable or disable specific autocapture features remotely
+- Change autocapture settings without requiring users to update the app
+
+Changes made through remote configuration affect future events and don't apply to events that are already tracked.
 
 ### Track sessions
 
 Amplitude enables session tracking by default. Include `AutocaptureOptions.sessions` in the `autocapture` configuration to explicitly configure the SDK to track session events or to enable session event tracking along with other Autocapture configurations.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 let amplitude = Amplitude(configuration: Configuration(
@@ -258,11 +463,11 @@ let amplitude = Amplitude(configuration: Configuration(
 ))
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
-AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
 configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[AMPAutocaptureOptions.sessions]];
-Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
+Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -277,7 +482,7 @@ For more information about session tracking, see [User sessions](#user-sessions)
 
 You can enable Amplitude to start tracking application lifecycle events by including `AutocaptureOptions.appLifecycles` in the `autocapture` configuration.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 let amplitude = Amplitude(configuration: Configuration(
@@ -286,11 +491,11 @@ let amplitude = Amplitude(configuration: Configuration(
 ))
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
-AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
 configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[AMPAutocaptureOptions.appLifecycles]];
-Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
+Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -310,7 +515,7 @@ You can enable Amplitude to start tracking screen view events by including `Auto
 This feature is supported in UIKit. For SwiftUI, track the corresponding event manually.
 {{/partial:admonition}}
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 // UIKit
@@ -327,12 +532,12 @@ let amplitude = Amplitude(configuration: Configuration(
 amplitude.track(ScreenViewedEvent(screenName: "Screen Name"))
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
 // UIKit
-AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
 configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[AMPAutocaptureOptions.screenViews]];
-Amplitude* amplitude = [Amplitude initWithConfiguration:screenViews];
+Amplitude *amplitude = [Amplitude initWithConfiguration:screenViews];
 
 // Swift UI
 configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[]];
@@ -343,11 +548,167 @@ configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnio
 
 When you enable this setting, Amplitude tracks the `[Amplitude] Screen Viewed` event and sets the screen name property of this event to the name of the top-most view controller's class. Amplitude reads this value from the controller class metadata `viewDidAppear` method swizzling.
 
+### Track network requests
+
+You can enable Amplitude to start tracking network requests by including `AutocaptureOptions.networkTracking` in the `autocapture` configuration.
+
+{{partial:admonition type="warning" heading=""}}
+This feature doesn't work with requests sent by `URLConnection` or on watchOS and iOS 13.
+{{/partial:admonition}}
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+let amplitude = Amplitude(configuration: Configuration(
+    apiKey: "API_KEY",
+    autocapture: .networkTracking
+))
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
+configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[AMPAutocaptureOptions.networkTracking]];
+Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+With the default configuration, the SDK tracks network requests from all hosts (except `*.amplitude.com`) with status code `500` to `599`. To customize the tracking behavior,  set `Configuration.networkTrackingOptions` with `NetworkTrackingOptions`.
+
+{{partial:collapse name="NetworkTrackingOptions"}}
+| Name |  Description | Default Value |
+| --- | --- | --- |
+| `captureRules` | The rules for capturing network requests. You should always append rules with specific hosts to the bottom of the list. | `none` |
+| `ignoreHosts` | The hosts to ignore. Supports wildcard characters `*`. eg. `["*"]` to ignore all hosts, `["*.notmyapi.com", "notmyapi.com"]` to ignore `notmyapi.com` and all subdomains. | `[]` |
+| `ignoreAmplitudeRequests` | Whether to ignore Amplitude requests. | `true` |
+
+{{/partial:collapse}}
+
+{{partial:collapse name="NetworkTrackingOptions.CaptureRule"}}
+| Name |  Description | Default Value |
+| --- | --- | --- |
+| `hosts` | The hosts to capture. Supports wildcard characters `*`. eg. `["*"]` to match all hosts, `["*.example.com", "example.com"]` to match `example.com` and all subdomains. | `none` |
+| `statusCodeRange` | The status code range to capture. Supports comma-separated ranges or single status codes. eg. `"0,200-299,413,500-599"` | `"500-599"` |
+
+{{/partial:collapse}}
+
+{{partial:admonition type="note" heading=""}}
+- The `captureRules` and `ignoreHosts` properties are mutually exclusive. If both are set, `ignoreHosts` takes precedence.
+- Amplitude matches incoming requests against the `captureRules` **from bottom to top**. 
+For example, for the following configuration:
+```swift
+captureRules: [
+    .init(hosts: ["*"], statusCodeRange: "400-499,500-599"),
+    .init(hosts: ["*.example.com", "example.com"], statusCodeRange: "0,500-599"),
+]
+```
+With the above configuration, the SDK processes the following requests:
+- A request to `example.com` with response code 503: match with last rule's hosts -> match with statusCodeRange filter -> captured
+- A request to `example.com` with response code 401: match with last rule's hosts -> not match with statusCodeRange filter -> ignored
+- A request to `notmyapi.com` with response code 401: not match with last rule's hosts -> match with first rule's hosts -> match with statusCodeRange filter -> captured
+- A request to `notmyapi.com` with response code 200: not match with last rule's hosts -> match with first rule's hosts -> not match with statusCodeRange filter -> ignored
+
+{{/partial:admonition}}
+
+The default configuration tracks all hosts except `*.amplitude.com` with status code `500` to `599`.
+
+{{partial:collapse name="NetworkTrackingOptions.default"}}
+| Name | Description | Value |
+| --- | --- | --- |
+| `captureRules` | Captures all hosts (except *.amplitude.com) with status code 500 to 599. | `[AMPNetworkTrackingCaptureRule(hosts: ["*"], statusCodeRange: "500-599")]` |
+| `ignoreHosts` | Don't ignore any other hosts by default. | `[]` |
+| `ignoreAmplitudeRequests` | Don't capture Amplitude requests by default. | `true` |
+
+{{/partial:collapse}}
+
+Example use:
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+// Style 1: Use the default configuration and append a new rule
+let networkTrackingOptions = NetworkTrackingOptions.default // contain a rule for all hosts, statusCodeRange: "500-599"
+networkTrackingOptions.captureRules.append(
+    .init(hosts: ["*.example.com", "example.com"], statusCodeRange: "0,500-599")
+)
+networkTrackingOptions.ignoreHosts.append("notmyapi.com")
+
+let amplitude = Amplitude(configuration: Configuration(
+    apiKey: "API_KEY",
+    autocapture: .networkTracking,
+    networkTrackingOptions: networkTrackingOptions,
+))
+
+// Style 2: Create a new configuration with a custom rule
+let amplitude = Amplitude(configuration: Configuration(
+    apiKey: "API_KEY",
+    autocapture: .networkTracking,
+    networkTrackingOptions: .init(
+        captureRules: [
+            .init(hosts: ["*"]), // all hosts, statusCodeRange: "500-599"
+            .init(hosts: ["*.example.com", "example.com"], statusCodeRange: "0,400-599"),
+        ],
+        ignoreHosts: ["notmyapi.com"]
+    ),
+))
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+// Style 1: Use the default configuration and append a new rule
+AMPNetworkTrackingOptions *networkTrackingOptions = AMPNetworkTrackingOptions.defaultOptions;  // contain a rule for all hosts, statusCodeRange: "500-599"
+NSMutableArray<AMPNetworkTrackingCaptureRule *> *rules = [networkTrackingOptions.captureRules mutableCopy];
+[rules addObject:[[AMPNetworkTrackingCaptureRule alloc] initWithHosts:@[@"*.example.com", @"example.com"] statusCodeRange:@"0,400-599"]];
+networkTrackingOptions.captureRules = rules;
+
+// Style 2: Create a new configuration with a custom rule
+NSArray<AMPNetworkTrackingCaptureRule *> *rules = @[
+    [[AMPNetworkTrackingCaptureRule alloc] initWithHosts: @[@"*"] statusCodeRange:@"500-599"],
+    [[AMPNetworkTrackingCaptureRule alloc] initWithHosts: @[@"*.example.com", @"example.com"] statusCodeRange:@"0,400-599"]
+];
+AMPNetworkTrackingOptions *networkTrackingOptions = [[AMPNetworkTrackingOptions alloc] initWithCaptureRules:rules
+                                                                                                ignoreHosts:@[@"notmyapi.com"]
+                                                                                    ignoreAmplitudeRequests:true];
+
+// Then use the configuration to initialize the Amplitude instance
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
+configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[AMPAutocaptureOptions.networkTracking]];
+configuration.networkTrackingOptions = networkTrackingOptions;
+Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+When you enable this setting, Amplitude tracks the `[Amplitude] Network Request` event whenever the application makes a network request. The SDK swizzles URL loading system methods to instrument network activity.
+
+{{partial:collapse name="Event Properties Descriptions"}}
+| Event property | Description |
+| --- | --- |
+| `[Amplitude] URL` | The URL of the network request with sensitive information masked. |
+| `[Amplitude] URL Query` | The query parameters of the URL. |
+| `[Amplitude] URL Fragment` | The fragment identifier of the URL. |
+| `[Amplitude] Request Method` | The HTTP method used for the request (GET, POST, etc.). |
+| `[Amplitude] Status Code` | The HTTP status code of the response. |
+| `[Amplitude] Error Code` | The local error code if the request failed with out a status code. |
+| `[Amplitude] Error Message` | The local error message if the request failed with out a status code. |
+| `[Amplitude] Start Time` | The timestamp when the request started, in milliseconds since Unix epoch. |
+| `[Amplitude] Completion Time` | The timestamp when the request completed, in milliseconds since Unix epoch. |
+| `[Amplitude] Duration` | The duration of the request in milliseconds. |
+| `[Amplitude] Request Body Size` | The size of the request body in bytes. |
+| `[Amplitude] Response Body Size` | The size of the response body in bytes. |
+
+{{/partial:collapse}}
+
+{{partial:admonition type="info" heading=""}}
+For security purposes, the SDK automatically masks sensitive information in the URL, such as usernames and passwords.
+{{/partial:admonition}}
+
 ### Track deep links
 
 Deeplink tracking isn't automated. To track deeplinks, track the corresponding events.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 let amplitude = Amplitude(configuration: Configuration(
@@ -359,10 +720,10 @@ amplitude.track(DeepLinkOpenedEvent(url: "url", referrer:"referrer"))
 amplitude.track(DeepLinkOpenedEvent(activity: activity))
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
-AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
-Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
+Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 
 [amplitude track:[AMPDeepLinkOpenedEvent initWithUrl:@"url"]];
 [amplitude track:[AMPDeepLinkOpenedEvent initWithUrl:@"url" referrer:@"referrer"]];
@@ -381,7 +742,7 @@ Amplitude can track user interactions with `UIControl` elements and `UIGestureRe
 The `AutocaptureOptions.elementInteractions` option is available as a beta release for early feedback. Try it out and share your thoughts on our [GitHub](https://github.com/amplitude/Amplitude-Swift).
 {{/partial:admonition}}
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 let amplitude = Amplitude(configuration: Configuration(
@@ -390,16 +751,16 @@ let amplitude = Amplitude(configuration: Configuration(
 ))
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
-AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
 configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[AMPAutocaptureOptions.elementInteractions]];
-Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
+Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
 
-After enabling this setting, Amplitude will track the `[Amplitude] Element Interacted` event whenever a user interacts with an element in the application. The SDK swizzles the `UIApplication.sendAction(_:to:from:for:)` method and the `UIGestureRecognizer.state` property setter to instrument `UIControl` action methods and `UIGestureRecognizer` within the application, respectively.
+After enabling this setting, Amplitude tracks the `[Amplitude] Element Interacted` event whenever a user interacts with an element in the application. The SDK swizzles the `UIApplication.sendAction(_:to:from:for:)` method and the `UIGestureRecognizer.state` property setter to instrument `UIControl` action methods and `UIGestureRecognizer` within the application, respectively.
 
 {{partial:collapse name="Event Properties Descriptions"}}
 | Event property | Description |
@@ -433,14 +794,14 @@ When setting groups, define a `groupType` and `groupName`. In the previous examp
  {{partial:admonition type="example" heading=""}}
  If Joe is in 'orgId' '15', then the `groupName` would be '15'.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 // set group with a single group name
 amplitude.setGroup(groupType: "orgId", groupName: "15")
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
 // set group with a single group name
 [amplitude setGroup:@"orgId" groupName:@"15"];
@@ -450,14 +811,14 @@ amplitude.setGroup(groupType: "orgId", groupName: "15")
 
 If Joe is in 'orgId' 'sport', then the `groupName` would be '["tennis", "soccer"]'.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 // set group with multiple group names
 amplitude.setGroup(groupType: "sport", groupName: ["tennis", "soccer"])
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
 // set group with multiple group names
 [amplitude setGroup:@"sport" groupNames:@[@"tennis", @"soccer"]];
@@ -468,7 +829,7 @@ amplitude.setGroup(groupType: "sport", groupName: ["tennis", "soccer"])
 
 You can also set **event-level groups** by passing an `Event` Object with `groups` to `track`. With event-level groups, the group designation applies only to the specific event being logged, and doesn't persist on the user unless you explicitly set it with `setGroup`.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 amplitude.track(
@@ -482,9 +843,9 @@ amplitude.track(
 )
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
-AMPBaseEvent* event = [AMPBaseEvent initWithEventType:@"event type"
+AMPBaseEvent *event = [AMPBaseEvent initWithEventType:@"event type"
     eventProperties:@{@"eventPropertyKey": @"eventPropertyValue"}];
 [event.groups set:@"orgId" value:@"15"];
 [amplitude track:event];
@@ -501,7 +862,7 @@ Use the Group Identify API to set or update the properties of particular groups.
 
 The `groupIdentify` method accepts a group type string parameter and group name object parameter, and an Identify object that's applied to the group.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 let groupType = "plan"
@@ -510,11 +871,11 @@ let identify = Identify().set(property: "key", value: "value")
 amplitude.groupIdentify(groupType: groupType, groupName: groupProperty, identify: identify)
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
-NSString* groupType = @"plan";
-NSString* groupName = @"enterprise";
-AMPIdentify* identify = [AMPIdentify new];
+NSString *groupType = @"plan";
+NSString *groupName = @"enterprise";
+AMPIdentify *identify = [AMPIdentify new];
 [identify set:@"key" value:@"value"];
 [amplitude groupIdentify:groupType groupName:groupName identify:identify];
 ```
@@ -525,7 +886,7 @@ AMPIdentify* identify = [AMPIdentify new];
 
 Amplitude can track revenue generated by a user. Revenue is tracked through distinct revenue objects, which have special fields that are used in Amplitude's Event Segmentation and Revenue LTV charts. This allows Amplitude to automatically display data relevant to revenue in the platform. Revenue objects support the following special properties, as well as user-defined properties through the `eventProperties` field.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 let revenue = Revenue()
@@ -535,9 +896,9 @@ revenue.productId = "com.company.productId"
 amplitude.revenue(revenue: revenue)
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
-AMPRevenue* revenue = [AMPRevenue new];
+AMPRevenue *revenue = [AMPRevenue new];
 revenue.price = 3.99;
 revenue.quantity = 3;
 revenue.productId = @"com.company.productId";
@@ -549,8 +910,8 @@ revenue.productId = @"com.company.productId";
 | Name   | Description  |
 | --- | --- |
 | `productId` | Optional. String. An identifier for the product. Amplitude recommends something like the Google Play Store product ID. Defaults to `null`.|
-| `quantity `| Required. Integer. The quantity of products purchased. Note: revenue = quantity * price. Defaults to 1 |
-| `price `| Required. Double. The price of the products purchased, and this can be negative. Note: revenue = quantity * price. Defaults to `null`.|
+| `quantity`| Required. Integer. The quantity of products purchased. Note: revenue = quantity * price. Defaults to 1 |
+| `price`| Required. Double. The price of the products purchased, and this can be negative. Note: revenue = quantity * price. Defaults to `null`.|
 | `revenueType`| Optional, but required for revenue verification. String. The revenue type (for example, tax, refund, income). Defaults to `null`.|
 | `receipt`| Optional. String. The receipt identifier of the revenue. For example, "123456". Defaults to `null`. |
 | `receiptSignature`| Optional, but required for revenue verification. String. Defaults to `null`. |
@@ -559,13 +920,13 @@ revenue.productId = @"com.company.productId";
 
 If your app has its login system that you want to track users with, you can call `setUserId` at any time.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 amplitude.setUserId(userId: "user@amplitude.com")
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
 [amplitude setUserId:@"user@amplitude.com"];
 ```
@@ -576,13 +937,13 @@ amplitude.setUserId(userId: "user@amplitude.com")
 
 You can assign a new device ID using `deviceId`. When setting a custom device ID, make sure the value is sufficiently unique. Amplitude recommends using a UUID.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 amplitude.setDeviceId(NSUUID().uuidString)
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
 [amplitude setDeviceId:[[NSUUID UUID] UUIDString]];
 ```
@@ -617,13 +978,13 @@ Amplitude(
 
 With an empty `userId` and a completely new `deviceId`, the current user would appear as a brand new user in dashboard.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 amplitude.reset()
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
 [amplitude reset];
 ```
@@ -646,7 +1007,7 @@ This method contains the logic for processing events and has `event` instance as
 
 Here's an example of a plugin that modifies each event that's instrumented by adding extra event property.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 class EnrichmentPlugin: Plugin {
@@ -674,10 +1035,10 @@ class EnrichmentPlugin: Plugin {
 amplitude.add(plugin: EnrichmentPlugin())
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
 [amplitude add:[AMPPlugin initWithType:AMPPluginTypeEnrichment
-    execute:^AMPBaseEvent* _Nullable(AMPBaseEvent* _Nonnull event) {
+    execute:^AMPBaseEvent *_Nullable(AMPBaseEvent * _Nonnull event) {
     event.sessionId = -1;
     [event.eventProperties set:@"event prop key" value:@"event prop value"];
     return event;
@@ -694,7 +1055,7 @@ In destination plugins, you can overwrite the `track()`, `identify()`, `groupIde
 Objective-C supports `flush()` and general `execute()` functions.
 {{/partial:admonition}}
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 class TestDestinationPlugin: DestinationPlugin {
@@ -727,10 +1088,10 @@ class TestDestinationPlugin: DestinationPlugin {
 }
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
 [amplitude add:[AMPPlugin initWithType:AMPPluginTypeDestination
-    execute:^AMPBaseEvent* _Nullable(AMPBaseEvent* _Nonnull event) {
+    execute:^AMPBaseEvent * _Nullable(AMPBaseEvent * _Nonnull event) {
     if ([event.eventType isEqualToString:@"$identify"]) {
         // ...
     } else if ([event.eventType isEqualToString:@"$groupidentify"]) {
@@ -747,6 +1108,104 @@ class TestDestinationPlugin: DestinationPlugin {
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
+
+### Accessing plugins
+
+Access the plugins you add to the Amplitude instance by name or by type.
+
+#### Access a plugin by name
+
+To access a plugin by name, use the `plugin(name:)` method:
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+// Add a plugin with a name
+class MyPlugin: Plugin {
+    let name = "my-plugin"
+    let type = PluginType.enrichment
+    
+    func setup(amplitude: Amplitude) {
+        // Setup code
+    }
+    
+    func execute(event: BaseEvent?) -> BaseEvent? {
+        // Execute code
+        return event
+    }
+}
+
+amplitude.add(plugin: MyPlugin())
+
+// Later, access the plugin by name
+if let myPlugin = amplitude.plugin(name: "my-plugin") as? MyPlugin {
+    // Use the plugin
+}
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+// Add a plugin with a name
+AMPPlugin *plugin = [AMPPlugin initWithName:@"my-plugin" 
+                                       type:AMPPluginTypeEnrichment
+                                    execute:^AMPBaseEvent * _Nullable(AMPBaseEvent * _Nonnull event) {
+    // Execute code
+    return event;
+}];
+
+[amplitude add:plugin];
+
+// Later, access the plugin by name
+AMPPlugin *myPlugin = [amplitude plugin:@"my-plugin"];
+if (myPlugin != nil) {
+    // Use the plugin
+}
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+#### Access plugins by type
+
+To access all plugins of a specific type, use the `plugins(type:)` method:
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+// Define a custom plugin type
+class MyEnrichmentPlugin: Plugin {
+    let name = "my-enrichment-plugin"
+    let type = PluginType.enrichment
+    
+    func setup(amplitude: Amplitude) {
+        // Setup code
+    }
+    
+    func execute(event: BaseEvent?) -> BaseEvent? {
+        // Execute code
+        return event
+    }
+}
+
+// Add multiple plugins of the same type
+amplitude.add(plugin: MyEnrichmentPlugin())
+amplitude.add(plugin: AnotherEnrichmentPlugin())
+
+// Later, access all plugins of a specific type
+let enrichmentPlugins = amplitude.plugins(type: MyEnrichmentPlugin.self)
+for plugin in enrichmentPlugins {
+    // Use each plugin of the specified type
+}
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+// Objective-C doesn't support the plugins(type:) method directly
+// You would need to use the plugin(name:) method to access specific plugins
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+This method returns an array of all plugins that match the specified type, allowing you to interact with multiple plugins of the same type at once.
 
 ## Troubleshooting and debugging
 
@@ -787,7 +1246,7 @@ Amplitude groups events together by session. Events that are logged within the s
 
 You can adjust the time window for which sessions are extended. The default session expiration time is five minutes.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 let amplitude = Amplitude(
@@ -798,11 +1257,11 @@ let amplitude = Amplitude(
 )
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
-AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:AMPLITUDE_API_KEY];
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:AMPLITUDE_API_KEY];
 configuration.minTimeBetweenSessionsMillis = 1000;
-Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
+Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -822,7 +1281,7 @@ A potential use case is for events tracked from push notifications, which are us
 
 Set the `sessionId` to `-1` in `EventOptions` to mark an event as out-of-session  when you call `track(event, options)` or `identify(identify, options)`.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 let outOfSessionOptions = EventOptions(sessionId: -1)
@@ -838,16 +1297,16 @@ amplitude.track(
 )
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
-AMPEventOptions* outOfSessionOptions = [AMPEventOptions new];
+AMPEventOptions *outOfSessionOptions = [AMPEventOptions new];
 outOfSessionOptions.sessionId = -1;
 
-AMPIdentify* identify = [AMPIdentify new];
+AMPIdentify *identify = [AMPIdentify new];
 [identify set:@"user-prop" value:YES];
 [amplitude identify:identify options:outOfSessionOptions];
 
-AMPBaseEvent* event = [AMPBaseEvent initWithEventType:@"Button Clicked"];
+AMPBaseEvent *event = [AMPBaseEvent initWithEventType:@"Button Clicked"];
 [amplitude track:event options:outOfSessionOptions];
 ```
 {{/partial:tab}}
@@ -865,7 +1324,7 @@ control the level of logs that print to the developer console.
 
 Set the log level `logLevel` with the level you want.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 let amplitude = Amplitude(
@@ -876,11 +1335,11 @@ let amplitude = Amplitude(
 )
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
-AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:AMPLITUDE_API_KEY];
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:AMPLITUDE_API_KEY];
 configuration.logLevel = AMPLogLevelLOG;
-Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
+Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -895,13 +1354,13 @@ To log events to an anonymous user:
 
 Events coming from the current user or device appear as a new user in Amplitude. Note: If you do this, you can't see that the two users were using the same device.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 amplitude.reset()
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
 [amplitude reset];
 ```
@@ -914,7 +1373,7 @@ By default the iOS SDK tracks several user properties such as `carrier`, `city`,
 Use the provided `TrackingOptions` interface to customize and toggle individual fields.
 Before initializing the SDK with your apiKey, create a `TrackingOptions` instance with your configuration and set it on the SDK instance.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 let trackingOptions = TrackingOptions()
@@ -927,12 +1386,12 @@ let amplitude = Amplitude(
 )
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
-AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:AMPLITUDE_API_KEY];
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:AMPLITUDE_API_KEY];
 [configuration.trackingOptions disableTrackCity];
 [configuration.trackingOptions disableTrackIpAddress];
-Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
+Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -968,7 +1427,7 @@ Amplitude determines the user's mobile carrier using [`CTTelephonyNetworkInfo`](
 
 COPPA (Children's Online Privacy Protection Act) restrictions on IDFA, IDFV, city, IP address and location tracking can all be enabled or disabled at one time. Apps that ask for information from children under 13 years of age must comply with COPPA.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 let amplitude = Amplitude(
@@ -979,11 +1438,11 @@ let amplitude = Amplitude(
 )
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
-AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:AMPLITUDE_API_KEY];
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:AMPLITUDE_API_KEY];
 configuration.enableCoppaControl = true;
-Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
+Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -1016,15 +1475,15 @@ It's possible for multiple devices to have the same device ID when a user switch
 
 Use the helper method `getDeviceId()` to get the value of the current `deviceId`.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 let deviceId = amplitude.getDeviceId()
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
-NSString* deviceId = [amplitude getDeviceId];
+NSString *deviceId = [amplitude getDeviceId];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -1039,7 +1498,7 @@ Amplitude converts the IP of a user event into a location (GeoIP lookup) by defa
 
 Users may wish to opt out of tracking entirely, which means Amplitude doesn't track any of their events or browsing history. `OptOut` provides a way to fulfill a user's requests for privacy.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 let amplitude = Amplitude(
@@ -1050,11 +1509,11 @@ let amplitude = Amplitude(
 )
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
-AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:AMPLITUDE_API_KEY];
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:AMPLITUDE_API_KEY];
 configuration.optOut = true;
-Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
+Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -1063,7 +1522,7 @@ Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 
 Implements a customized `loggerProvider` class from the LoggerProvider, and pass it in the configuration during the initialization to help with collecting any error messages from the SDK in a production environment.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 class SampleLogger: Logger {
@@ -1100,10 +1559,10 @@ let amplitude = Amplitude(
 )
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
-AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:AMPLITUDE_API_KEY];
-configuration.loggerProvider = ^(NSInteger logLevel, NSString* _Nonnull message) {
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:AMPLITUDE_API_KEY];
+configuration.loggerProvider = ^(NSInteger logLevel, NSString * _Nonnull message) {
     switch(logLevel) {
     case AMPLogLevelERROR:
         // TODO: handle error message
@@ -1119,7 +1578,7 @@ configuration.loggerProvider = ^(NSInteger logLevel, NSString* _Nonnull message)
         break;
     }
 };
-Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
+Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -1130,7 +1589,7 @@ iOS automatically protects application data by storing each apps data in its own
 
 To prevent other apps from accessing your apps Amplitude data on a jailbroken device, Amplitude recommends setting a unique instance name for your SDK. This creates a unique database isolates it from other apps.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 let amplitude = Amplitude(
@@ -1141,11 +1600,11 @@ let amplitude = Amplitude(
 )
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```objc
-AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:@"API-KEY"
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:@"API-KEY"
                                                     instanceName:@"my-unqiue-instance-name"];
-Amplitude* amplitude = [Amplitude instanceWithConfiguration:configuration];
+Amplitude *amplitude = [Amplitude instanceWithConfiguration:configuration];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -1156,7 +1615,7 @@ Beginning with version 1.3.0, the Amplitude iOS Swift SDK supports offline mode.
 
 To disable offline mode, add `offline: NetworkConnectivityCheckerPlugin.Disabled` on initialization as shown below.
 
-{{partial:tabs tabs="Swift, Obj-c"}}
+{{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
 ```swift
 let amplitude = Amplitude(
@@ -1167,11 +1626,11 @@ let amplitude = Amplitude(
 )
 ```
 {{/partial:tab}}
-{{partial:tab name="Obj-c"}}
+{{partial:tab name="Obj-C"}}
 ```obj-c
-AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:AMPLITUDE_API_KEY];
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:AMPLITUDE_API_KEY];
 configuration.offline = AMPNetworkConnectivityCheckerPlugin.Disabled;
-Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
+Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}

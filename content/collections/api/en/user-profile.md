@@ -17,6 +17,10 @@ summary: 'Fetch a user profile, which include user properties, computed properti
 
 User Profile API requires an Activation plan. For more information, see the [pricing page](https://amplitude.com/pricing).
 
+{{partial:admonition type="warning" heading="Unavailable in EU Region"}}
+This API is unsupported for customers in Amplitude's EU data processing region.
+{{/partial:admonition}}
+
 ## Considerations
 
 {{partial:admonition type="warning" heading="Server-side API"}}

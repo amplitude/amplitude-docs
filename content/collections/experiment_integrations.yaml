@@ -17,3 +17,4 @@ preview_targets:
     refresh: true
 inject:
   nav_title: experiment
+  blade: Amplitude Experiment
