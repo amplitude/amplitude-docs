@@ -6,9 +6,7 @@ source: 'https://www.docs.developers.amplitude.com/experiment/apis/evaluation-ap
 summary:  Lets you retrieve variant assignment data for users with remote evaluation.
 ---
 
-Amplitude Experiment's evaluation APIs lets your re
-
-The Amplitude Experiment Evaluation APIs lets you retrieve variant assignment data for users via [remote evaluation](/docs/feature-experiment/remote-evaluation) using the evaluation API, or download local evaluation. User information passes as query parameters on the request to allow for [caching the response on the CDN](/docs/feature-experiment/under-the-hood/performance-and-caching#cdn-caching). When you call this API, Amplitude tracks an `[Experiment] Assignment` event.
+The Amplitude Experiment Evaluation APIs retrieve variant assignment data for users through [remote evaluation](/docs/feature-experiment/remote-evaluation) via the [evaluation API](#evaluation-api), or download local evaluation flags using the [flags API](#flags-api).
 
 ## Regions
 
@@ -19,19 +17,19 @@ The Amplitude Experiment Evaluation APIs lets you retrieve variant assignment da
 
 ## Authorization
 
-The REST API authenticates the request using your [deployment](/docs/feature-experiment/data-model#deployments) key set in the Authorization header with the prefix `Api-Key`. For example, `Authorization: Api-Key <deployment_key>`
+The evaluation APIs authenticates the request using your [deployment](/docs/feature-experiment/data-model#deployments) key set in the Authorization header with the prefix `Api-Key`. For example, `Authorization: Api-Key <deployment_key>`
 
 ---
 
-## Variants API
+## Evaluation API
 
 ```text
 GET /v1/vardata
 ```
 
-The Evaluation API lets you retrieve variant assignment data for users.
+The Evaluation API lets you retrieve variant assignment data for users. When you call this API, Amplitude tracks an `[Experiment] Assignment` event.
 
-### Query parameters
+### Evaluation query parameters
 
 | Name | Description |
 | ---- | ----------- |
@@ -40,7 +38,7 @@ The Evaluation API lets you retrieve variant assignment data for users.
 | `flag_keys` | Specific flag keys to get the variants of. If you have more than one flag key, separate them with commas, for example, `flag_keys=flag-A,flag-B`. If empty/missing, Experiment evaluates all flags & experiments associated with the deployment key. |
 | `context` | JSON string consisting of a full user context. Set user properties in the `user_properties` field (for example: `{"user_properties":{"premium":true}}`). For more information about user context, see the definition in the [Data Model](/docs/feature-experiment/data-model#full-user-definition). |
 
-### Headers
+### Evaluation headers
 
 | Name | Description |
 | ---- | ----------- |
