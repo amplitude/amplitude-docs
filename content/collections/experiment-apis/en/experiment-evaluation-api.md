@@ -100,7 +100,7 @@ The data model returned by this API is different from what you may see in the [m
 
 | Name | Description |
 | ---- | ----------- |
-| `flag_keys` | Specific flag keys to get the flag configurations for. Multiple flag keys should be separated by commas, e.g. `flag_keys=flag-A,flag-B`. If empty/missing, the API returns all flags & experiments associated with the deployment key. |
+| `flag_keys` | Specific flag keys to get the flag configurations for. If you have more than one flag key, separate them with commas, for example,  `flag_keys=flag-A,flag-B`. If empty/missing, the API returns all flags & experiments associated with the deployment key. |
 
 ### Flags headers
 
