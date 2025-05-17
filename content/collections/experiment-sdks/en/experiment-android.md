@@ -826,7 +826,7 @@ val experiment = Experiment.initialize(context, "<DEPLOYMENT_KEY>", config)
 
 ### Bootstrapping flag configurations
 
-You may choose to bootstrap the SDK with an initial set of local evaluation flag configurations using the `initialFlags` configuration. These will be evaluated  when [variant](#variant) is called, unless an updated flag config or variant is loaded with [start](#start) or [fetch](#fetch).
+You may choose to bootstrap the SDK with an initial set of local evaluation flag configurations using the `initialFlags` configuration. Experiment evaluates these when you call [variant](#variant), unless you load an updated flag config or variant with [start](#start) or [fetch](#fetch).
 
 To download initial flags, use the [evaluation flags API](/docs/experiment-apis/experiment-evaluation-api#flags-api)
 
