@@ -202,7 +202,7 @@ Configure the SDK client once during initialization.
 | `userProvider` | An interface used to provide the user object to `fetch()` when called. | `null` |
 | `exposureTrackingProvider` | Implement and configure this interface to track exposure events through the experiment SDK, either automatically or explicitly. | `null` |
 | `instanceName` | Custom instance name for experiment SDK instance. **The value of this field is case-sensitive.** | `null` |
-| `initialFlags` | A JSON string representing an initial set of flag configurations to use for local evaluation. | `undefined` |
+| `initialFlags` | A JSON string representing an initial array of flag configurations to use for local evaluation. | `undefined` |
 
 {{/partial:collapse}}
 
@@ -559,13 +559,33 @@ const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
 
 ## Bootstrapping
 
-You may want to bootstrap the experiment client with an initial set of flags and variants when variants are obtained from an external source (for example, not from calling `fetch()` on the SDK client). Use cases include [local evaluation](/docs/feature-experiment/local-evaluation), [server-side rendering](/docs/feature-experiment/advanced-techniques/server-side-rendering), or integration testing on specific variants.
+You may want to bootstrap the experiment client with an initial set of flags or variants when variants are obtained from an external source (for example, not from calling `fetch()` on the SDK client). Use cases include [local evaluation](/docs/feature-experiment/local-evaluation), [server-side rendering](/docs/feature-experiment/advanced-techniques/server-side-rendering), or integration testing on specific variants.
 
-To bootstrap the client, set the flags and variants in the `initialVariants` [configuration](#configuration) object, then set the `source` to `Source.InitialVariants` so that the SDK client prefers the bootstrapped variants over any previously fetched & stored variants for the same flags.
+### Bootstrapping variants
+
+To bootstrap the client with a predefined set of variants, set the flags and variants in the `initialVariants` [configuration](#configuration) object, then set the `source` to `Source.InitialVariants` so that the SDK client prefers the bootstrapped variants over any previously fetched & stored variants for the same flags.
 
 ```js
 const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
-    initialVariants: { /* Flags and variants */ },
+    // Map flag keys to variant objects. The variant object may either be
+    // pre-evaluation (SSR) or input manually in for testing.
+    initialVariants: {
+        "<FLAG_KEY>": {
+            "value": "<VARIANT>"
+         }
+    },
     source: Source.InitialVariants,
+});
+```
+
+### Bootstrapping flag configurations
+
+You may choose to bootstrap the SDK with an initial set of local evaluation flag configurations using the `initialFlags` configuration. These will be evaluated  when [variant](#variant) is called, unless an updated flag config or variant is loaded with [start](#start) or [fetch](#fetch).
+
+To download initial flags, use the [evaluation flags API](/docs/experiment-apis/experiment-evaluation-api#flags-api)
+
+```js
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+    initialFlags: "<FLAGS_JSON>",
 });
 ```
