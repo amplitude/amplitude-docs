@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/docs/guides-and-surveys/guides/roles-and-permissions",
+      "destination": "/docs/guides-and-surveys/roles-and-permissions",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/analytics/web-analytics",
       "destination": "/docs/analytics/ootb-marketing-analytics",
       "statusCode": 301
@@ -2842,7 +2847,7 @@
       "statusCode": 301
     },
     {
-      "destination": "/docs/faq/funnel-analysis",
+      "destination": "/docs/analytics/charts/funnel-analysis/funnel-analysis-how-filters-work#applying-group-by-filters",
       "source": "/docs/hc/en-us/articles/360054203872((?:-[a-zA-Z0-9-]+)?)",
       "statusCode": 301
     },

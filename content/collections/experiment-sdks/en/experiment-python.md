@@ -167,6 +167,39 @@ def fetch_callback(user, variants):
 experiment.fetch_async_v2(user, fetch_callback)
 ```
 
+{{partial:collapse name="Account-level bucketing and analysis (v1.3.0+)"}}
+If your organization has purchased the [Accounts add-on](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users. Reach out to your representative to gain access to this beta feature.
+
+Groups must either be included in the user sent with the fetch request (recommended), or identified with the user via a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or via [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
+
+```python
+user = User(
+    device_id="abcdefg",
+    user_id="user@company.com",
+    user_properties={
+        'premium': True
+    },
+    groups={"org name": ["Amplitude"]}
+)
+variants = experiment.fetch_v2(user)
+```
+
+To pass freeform group properties, see this example:
+
+```python
+user = User(
+    device_id="abcdefg",
+    user_id="user@company.com",
+    user_properties={
+        'premium': True
+    },
+    group_properties={"org name": ["Amplitude"]}
+)
+variants = experiment.fetch_v2(user)
+```
+
+{{/partial:collapse}}
+
 ## Local evaluation
 
 Implements evaluating variants for a user via [local evaluation](/docs/feature-experiment/local-evaluation). If you plan on using local evaluation, you should [understand the tradeoffs](/docs/feature-experiment/local-evaluation#targeting-capabilities).

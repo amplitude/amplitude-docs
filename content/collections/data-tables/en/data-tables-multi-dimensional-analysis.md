@@ -42,7 +42,7 @@ This feature is available to users on **all Amplitude plans**. See our [pricing 
 
 To set up and use a Data Table, follow these steps:
 
-1. Navigate to *Create New > Analysis > Data Table*.
+1. Navigate to *Create > Chart > Data Table*.
 2. In the empty Data Table panel, click *Add an event or metric* and select the event or metric you’re interested in. A new Data Table opens, with your chosen event or metric in the first column. Add more by clicking *+ Add Event or Metric* in the rightmost column in the Data Table.  
   
     You can [create a new metric](/docs/analytics/charts/data-tables/data-tables-create-metric) at this point, if you need to.
@@ -69,7 +69,7 @@ To set up and use a Data Table, follow these steps:
 When using a time dimension as a group-by property, the time dimension must be the last group-by you add: `group by: country`, then `group by: day of week`. Adding these group-bys in the reverse order doesn't generate correct results.
 {{/partial:admonition}}
 
-5. Next, add [user segments](/docs/analytics/charts/build-charts-add-events), if desired. Saved segments are accessible. Multiple segments show up in the table as separate columns within the same metric.
+5. Next, add [user segments](/docs/analytics/charts/build-charts-add-user-segments), if desired. Saved segments are accessible. Multiple segments show up in the table as separate columns within the same metric.
 
 Once set up, there are several options you can use to manage and manipulate your data.
 

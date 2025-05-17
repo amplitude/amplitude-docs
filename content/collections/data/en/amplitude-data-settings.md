@@ -42,7 +42,7 @@ If you disable the _Require team reviews to make changes to the main branch_ opt
 
 {{/partial:admonition}}
 
-## The General tab
+## General
 
 The General tab is where you’ll give your project a **name**, set the event and property **naming conventions**, set **team review requirements** for making changes on main, and **delete your project**. It’s also where you’ll find a **public link** to a read-only version of your tracking plan, so you can easily and safely share it with stakeholders across your organization.
 
@@ -73,11 +73,11 @@ If you ever want to share your tracking plan, you can do so using the public lin
 
 You can also enable or disable the public link, which changes the availability for the selected project. Just click _Create Public Link_ or _Delete Public Link_.
 
-## The Integrations tab
+## Integrations
 
 You can integrate Amplitude Data with your existing tools to streamline your analytics workflow. To integrate a platform, simply click _Connect_ or _Add_ next to its name.
 
-## The API Tokens tab
+## API Tokens
 
 Use API tokens to authenticate to Amplitude Data using credentials other than your email address and a password. Tokens authorize applications to enjoy the same roles and permissions granted to you when you log in personally.
 
@@ -85,7 +85,7 @@ To create an API token, click _Create Token_. Amplitude Data generates the token
 
 Be sure to click _Copy to clipboard_ now, as you won’t be able to retrieve the token later.
 
-## The Schema Settings tab
+## Schema Settings
 
 Sometimes, Amplitude Data might receive data from your app that it doesn't know what to do with. This is usually the result of a **schema violation,**and it means the received data isn't accounted for in your schema. This is usually the result of failing to plan for that particular data type or value when you first set up your schema.
 
@@ -114,3 +114,52 @@ Permission restrictions are available for Enterprise customers only and the Perm
 ### Copy to other projects
 
 Click _Copy to Other Projects_ to apply the current permission restriction settings to another project.
+
+## Autocapture 
+
+The Autocapture settings in Amplitude Data allow you to change the configuration of the Analytics Browser SDK directly from within Amplitude, enabling you to make changes without code changes or releases. These settings are merged with any configuration you've defined locally in your SDK initialization code on your website.
+
+### Availability
+
+Autocapture settings are enabled on projects that use version 2.10.0 or higher of the [Amplitude Browser SDK](/docs/sdks/analytics/browser/browser-sdk-2) where the SDK has `fetchRemoteConifg` enabled.
+
+To disable remote configuration, set `fetchRemoteConfig` to `false`. Disabling `fetchRemoteConfig` doesn't disable the remote configuration options in Data Settings. 
+
+{{partial:admonition type="note" heading="Remote configuration by default"}}
+Starting in SDK version 2.16.1, `fetchRemoteConfig` is enabled by default.
+{{/partial:admonition}}
+
+### How it works
+
+When the SDK initializes with `fetchRemoteConfig` enabled, it retrieves configuration settings from Amplitude's servers using the project's API key. These remote settings merge with any local configuration you define on your site. After merging, the SDK completes its initialization process along with any plugins using this combined configuration. Remote configuration doesn't impact the load time of pages on your site, but may impact SDK initialization time.
+
+{{partial:admonition type="note" heading="Configuration timeout"}}
+In the event it takes the configuration longer than 5 seconds to load from Amplitude's servers, the SDK falls back to the local configuration set during initialization.
+{{/partial:admonition}}
+
+On the Settings Page, each configuration category offers three options:
+
+* **Default**: Keeps the local configuration in the SDK as-is. Settings in the UI doesn't override it.  
+* **On**: Overrides the local configuration and sets the category to true. All settings within the category (for example, Element Interactions) follow the configuration in the UI.  
+* **Off**: Overrides the local configuration and sets the category to false.
+
+{{partial:admonition type="note" heading="Disabling Session Tracking"}}
+If you use Session Replay, ensure your Session Replay SDK version is 1.12.1 or above.
+{{/partial:admonition}}
+
+Changes made through the UI take effect after 10 minutes.
+
+### Element interactions
+
+When you enable Element Interactions, several options appear:
+
+| Option                 | Purpose                                                                                                                                                                                                             |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CSS Selector Allowlist | This list contains selectors for elements that users generally interact with. For example, links and form elements. If you have custom, or non-standard elements, that your users interact with, specify them here. |
+| Action Click Allowlist | Amplitude tracks the elements in this list only when a user clicks them, and they result in a page or DOM change.                                                                                               |
+| Page URL Allowlist     | Specify URLs or URL patterns (using glob or regular expression) on which Amplitude tracks element click and change events.                                                                                          |
+| Data Attribute Prefix  | Specify a prefix for data attributes, for example `data-amp-track`. Amplitude saves the value of these attributes as event properties.                                                                              |
+ 
+{{partial:admonition type="tip" heading="Lower event volume"}}
+These options can help you control event volume. By ignoring dead clicks, Action Click Allowlist is the most effecient method to reduce volume, while still tracking relevant interactions.
+{{/partial:admonition}}

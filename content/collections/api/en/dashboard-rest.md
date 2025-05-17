@@ -767,20 +767,20 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 
 ### Query parameters
 
-| <div class="big-column"> Name</div> | Description |
-| --- | --- |
-| `e` | <span class="required">Required</span>. Include up to two. A full event. [Full description](#shared-query-parameters). *Note: Currently, the Dashboard REST API supports segmentation by up to two events. If you wish to query on a second event, the parameter would be "e2".* |
-| `m` | <span class="optional">Optional</span>. Non-property metrics: `uniques`, `totals`, `pct_dau`, or `average`. Defaults to `uniques`. Property metrics: `histogram`, `sums`, or `value_avg`.  To use property metrics, you must include a valid group by value  in parameter `e`.  *For custom formulas: "formula" (Note: This metric only supports up to two events currently and the second event needs to have the parameter "e2").* |
-| `n`| <span class="optional">Optional</span>. User type, either `any` or `active`.|
-| `start` | <span class="required">Required</span>. First date included in data series, formatted YYYYMMDD. For example, "20221001". |
-| `end` | <span class="required">Required</span>. Last date included in data series, formatted YYYYMMDD. For example, "20221001". |
-| `i` | Set to -300000, -3600000, 1, 7, or 30 for real-time, hourly, daily, weekly, and monthly counts, respectively. Defaults to 1. Real-time segmentation displays up to 2 days of data, hourly segmentation displays up to 7 days of data, and daily displays up to 365 days of data. |
-| `s`  | <span class="optional">Optional</span>. Segment definitions (default: none). [Full description](#shared-query-parameters). |
-| `g` | <span class="optional">Optional</span>. Include up to two. The property to group by. Defaults to none. [Full description](#event-format). |
-| `limit` | <span class="optional">Optional</span>. The number of Group By values returned (default: 100). The limit is 1000. |
-| `formula` | Optional, but required if `m` is set to `formula`. If you are using the custom formula metric, you need to pass in the formula here (for example, `UNIQUES(A)/UNIQUES(B)`). |
-| `rollingWindow` | Required to use a rolling window. To include a rolling window, pass in the number of days/weeks/months with which to compute a rolling window over.  |
-| `rollingAverage` | Required to use a rolling average. To include a rolling average, pass in the number of days/weeks/months with which to compute a rolling average over.|
+| <div class="big-column"> Name</div> | Description                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `e`                                 | <span class="required">Required</span>. Include up to two. A full event. [Full description](#event-format). The Dashboard REST API supports segmentation by up to two events. If you wish to query on a second event, use the parameter `e2`.                                                                                                                                                        |
+| `m`                                 | <span class="optional">Optional</span>. Non-property metrics: `uniques`, `totals`, `pct_dau`, or `average`. Defaults to `uniques`. Property metrics: `histogram`, `sums`, or `value_avg`.  To use property metrics, you must include a valid group by value  in parameter `e`.  *For custom formulas: "formula" (This metric only supports up to two events currently and the second event needs to have the parameter "e2").* |
+| `n`                                 | <span class="optional">Optional</span>. User type, either `any` or `active`.                                                                                                                                                                                                                                                                                                                                                         |
+| `start`                             | <span class="required">Required</span>. First date included in data series, formatted YYYYMMDD. For example, "20221001".                                                                                                                                                                                                                                                                                                             |
+| `end`                               | <span class="required">Required</span>. Last date included in data series, formatted YYYYMMDD. For example, "20221001".                                                                                                                                                                                                                                                                                                              |
+| `i`                                 | Set to -300000, -3600000, 1, 7, or 30 for real-time, hourly, daily, weekly, and monthly counts, respectively. Defaults to 1. Real-time segmentation displays up to 2 days of data, hourly segmentation displays up to 7 days of data, and daily displays up to 365 days of data.                                                                                                                                                     |
+| `s`                                 | <span class="optional">Optional</span>. Segment definitions (default: none). [Full description](#shared-query-parameters).                                                                                                                                                                                                                                                                                                           |
+| `g`                                 | <span class="optional">Optional</span>. Include up to two. The name of the property to group by. Defaults to none. For non-Amplitude, custom user properties, prepend the user property name with `gp:`. For example, `country` or `gp:utm_campaign`. The Dashboard REST API supports grouping by up to two properties. To query on a second property, use the parameter `g2`.                                                                                                                                                                                                                                                                                            |
+| `limit`                             | <span class="optional">Optional</span>. The number of Group By values returned (default: 100). The limit is 1000.                                                                                                                                                                                                                                                                                                                    |
+| `formula`                           | Optional, but required if `m` is set to `formula`. If you are using the custom formula metric, you need to pass in the formula here (for example, `UNIQUES(A)/UNIQUES(B)`).                                                                                                                                                                                                                                                          |
+| `rollingWindow`                     | Required to use a rolling window. To include a rolling window, pass in the number of days/weeks/months with which to compute a rolling window over.                                                                                                                                                                                                                                                                                  |
+| `rollingAverage`                    | Required to use a rolling average. To include a rolling average, pass in the number of days/weeks/months with which to compute a rolling average over.                                                                                                                                                                                                                                                                               |
 
 ### Response
 
@@ -956,14 +956,14 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA==
 
 |Name|Description|
 |----|--------|
-|`e`| <span class="required">Required</span>. A full event for each step in the funnel. [Full description](#shared-query-parameters)
+|`e`| <span class="required">Required</span>. A full event for each step in the funnel. [Full description](#event-format)
 |`start`| <span class="required">Required</span>. First date included in data series, formatted YYYYMMDD. For example, `20221001`.|
 |`end`|<span class="required">Required</span>. Last date included in data series, formatted YYYYMMDD. For example, `20221001`.|
 |`mode`|<span class="optional">Optional</span>. What mode to run the funnel in: `ordered` for events in the given order, `unordered` for events in any order, and `sequential` for events in the given order with no other events between. Defaults to `ordered`.|
 |`n`| <span class="optional">Optional</span>. Either "new" or "active" to specify what set of users to consider in the funnel. Defaults to `active`.|
 | `i` | Set to -300000, -3600000, 1, 7, or 30 for real-time, hourly, daily, weekly, and monthly counts, respectively. Defaults to 1. Real-time segmentation displays up to 2 days of data, hourly segmentation displays up to 7 days of data, and daily displays up to 365 days of data. |
 |`s`| <span class="optional">Optional</span>. Segment definitions. Defaults to none. [Full description](#shared-query-parameters). |
-|`g`| <span class="optional">Optional</span>. The property to group by. Defaults to none. [Full description](#shared-query-parameters).|
+|`g`| <span class="optional">Optional</span>. Limit: one. The name of the property to group by. Defaults to none. For non-Amplitude, custom user properties, prepend the user property name with gp:. For example, `country` or `gp:utm_campaign`.|
 |`cs`| <span class="optional">Optional</span>. The conversion window in seconds. Defaults to 2,592,000 (30 days). Conversion windows are automatically rounded down to the nearest day in "unordered" mode.|
 |`limit`| <span class="optional">Optional</span>. The number of Group By values returned Defaults to 100. The maximum is 1000.|
 
@@ -1120,7 +1120,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 | `rb`  | Optional, but required if `rm` is set to bracket. The days within each bracket, formatted [[0,4]]. For example, if your bracket was Day 0 - Day 4, the parameter value would be [[0,5]]. |
 | `i` | <span class="optional">Optional</span>. Either 1, 7, or 30 for daily, weekly, and monthly counts, respectively. Defaults to 1. |
 | `s` | <span class="optional">Optional</span>. Segment definitions. Defaults to none. [Full description](#segment-definition). |
-| `g` | <span class="optional">Optional</span>. Limit: one. The property to group by. Defaults to none. [Full description](#event-format). |
+| `g` | <span class="optional">Optional</span>. Limit: one. The name of the property to group by. Defaults to none. For non-Amplitude, custom user properties, prepend the user property name with gp:. For example, `country` or `gp:utm_campaign`. |
 
 ### Response
 
@@ -1495,7 +1495,7 @@ Authorization: Basic MTIzNDU2NzgwMDoxMjM0NTY3MDA=
 | `end` | <span class="required">Required</span>. Last date included in data series, formatted YYYYMMDD. For example, "20221001".  |
 | `i`  | <span class="optional">Optional</span>. Either 1, 7, or 30 for daily, weekly, and monthly counts, respectively. Defaults to 1. |
 | `s` | <span class="optional">Optional</span>. Segment definitions. Defaults to none. [Full description](#segment-definition). |
-| `g` | <span class="optional">Optional</span>. Limit: one. The property to group by. Defaults to none. [Full description](#event-format). |
+| `g` | <span class="optional">Optional</span>. Limit: one. The name of the property to group by. Defaults to none. For non-Amplitude, custom user properties, prepend the user property name with `gp:`. For example, `country` or `gp:utm_campaign`. |
 
 ### Response
 

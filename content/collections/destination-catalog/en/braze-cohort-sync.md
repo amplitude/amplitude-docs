@@ -25,6 +25,7 @@ Amplitude Data's Braze integration lets you send your Amplitude cohorts to Braze
 - You need a paid Amplitude plan to enable this integration.
 - For more details on using this integration in Braze, see the [Braze documentation](https://www.braze.com/docs/partners/data_and_infrastructure_agility/analytics/amplitude/amplitude_audiences/).
 - You must have a Braze account. 
+- Amplitude sends email alerts for job success and failures, keeping you informed about the status of your cohort syncs.
 
 ## Prerequisites
 
@@ -71,6 +72,15 @@ To sync your first cohort, follow these steps:
 2. Click on **Create Segment** and name your Segment.
 3. Under Add Filter, select **Amplitude Cohorts** and choose the cohort you created and synced from Amplitude.
 4. When saved, you can reference this segment during Canvas or campaign creation in the targeting users step.
+
+## Email notifications
+
+Amplitude automatically sends email alerts for cohort sync jobs:
+
+- **Success notifications**: Receive confirmation when your cohort sync to Braze completes successfully
+- **Failure notifications**: Get alerted when a sync job fails, allowing you to quickly address any issues
+
+These notifications help you monitor the status of your cohort syncs without having to manually check the platform.
 
 ## Troubleshooting
 

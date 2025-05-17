@@ -57,7 +57,7 @@ But, instead of calling `amplitude.add(window.engagement.plugin())`, you need to
 Call `init` to  fully initialize the bundle and register `engagement` on the global window object.
 
 ```js
-engagement.init(apiKey: string, options: { serverZone: "US" | "EU", logger: Logger, logLevel: LogLevel }): void
+engagement.init(apiKey: string, options: { serverZone: "US" | "EU", logger: Logger, logLevel: LogLevel, locale: string }): void
 ```
 
 | Parameter                | Type                                                                                                                         | Description                                                                                                                                                                    |
@@ -66,6 +66,7 @@ engagement.init(apiKey: string, options: { serverZone: "US" | "EU", logger: Logg
 | `initOptions.serverZone` | `EU` or `US`                                                                                                                 | Optional. Sets the Amplitude server zone. Set this to EU for Amplitude projects created in EU data center. Default: `US`                                                       |
 | `initOptions.logger`     | [Logger interface](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-types/src/logger.ts#L1-L8) | Optional. Sets a custom logging provider class. Default: [Amplitude Logger](https://github.com/amplitude/Amplitude-TypeScript/blob/main/packages/analytics-core/src/logger.ts) |
 | `initOptions.logLevel`   | `LogLevel.None` or `LogLevel.Error` or `LogLevel.Warn` or `LogLevel.Verbose` or `LogLevel.Debug`.                            | Optional. Sets the log level. Default: `LogLevel.Warn`                                                                                                                         |
+| `initOptions.locale`     | `string`                                                                                                                     | Optional. Sets the locale for [localization](/docs/guides-and-surveys/sdk#localization). Default: `undefined`. Not setting a language means the default language is used.      |
 
 After calling this function, you can access `window.engagement` and call the SDK functions. However, Guides and Surveys isn't fully functional until you call `boot`.
 
@@ -282,17 +283,37 @@ engagement.setThemeMode(mode: ThemeMode): void
 
 | Parameter | Type                              | Description                          |
 | --------- | --------------------------------- | ------------------------------------ |
-| `mode`    | `light_mode`, `dark_mode`, `auto` | Required. Select the theme to apply. |
+| `mode`    | `lightMode`, `darkMode`, `auto` | Required. Select the theme to apply. |
 
 ```js
 // Automatically detect user's system preferences
 window.engagement.setThemeMode("auto");
 
 // Set dark mode explicitly
-window.engagement.setThemeMode("dark_mode");
+window.engagement.setThemeMode("darkMode");
 
 // Set light mode explicitly
-window.engagement.setThemeMode("light_mode");
+window.engagement.setThemeMode("lightMode");
+```
+
+## Register a callback
+
+Register a callback with the Guides and Surveys SDK. Set the Callback action on a guide or survey button to execute the callback.
+
+```js
+engagement.addCallback(name: string, callback: () => void): void
+```
+
+| Parameter  | Type         | Description                                                                                   |
+| ---------- | ------------ | --------------------------------------------------------------------------------------------- |
+| `name`     | `string`     | Required. Refer to this callback by name when setting a callback action on a guide or survey. |
+| `callback` | `() => void` | Required. The callback to execute.                                                        |
+
+```js
+window.engagement.addCallback("toggle_dark_mode", () => {
+  setTheme("darkMode");
+  window.engagement.setThemeMode("darkMode");
+});
 ```
 
 ## Router configuration
@@ -371,8 +392,8 @@ Forward third-party Analytics events to the Guides and Surveys SDK to trigger gu
 engagement.forwardEvent(event: Event): void
 ```
 
-| Parameter | Type  | Description                                                                                                                                            |
-| --------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Parameter | Type  | Description                                                                                                                                        |
+| --------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `event`   | Event | Required. An [event](/docs/sdks/analytics/browser/browser-sdk-2#track-an-event) object. It triggers a guide or survey if its `event_type` matches. |
 
 
@@ -424,7 +445,7 @@ Verify that:
 
 If you use Amplitude Browser SDK 2.0, check the browser's console for errors. If there are none, verify that your code matches code provided in the installation instructions. In particular, ensure that  `amplitude.add(window.engagement.plugin())` is present in the code.
 
-If you see something like `amplitude is not defined` and `cannot read properties of undefined .add()`, this means that the G&S is trying to load before the Amplitude SDK loads. Check your code to ensure that the Amplitude Browser SDK loads before the Guides and Surveys SDK. 
+If you see something like `amplitude is not defined` and `cannot read properties of undefined .add()`, this means that the G&S is trying to load before the Amplitude SDK loads. Check your code to ensure that the Amplitude Browser SDK loads before the Guides and Surveys SDK.
 
 If you use Google Tag Manager, ensure you update to the latest Amplitude template.
 

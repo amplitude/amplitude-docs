@@ -135,6 +135,37 @@ if ($variant) {
 }
 ```
 
+{{partial:collapse name="Account-level bucketing and analysis (v1.0.0+)"}}
+If your organization has purchased the [Accounts add-on](/docs/analytics/account-level-reporting) you may perform bucketing and analysis on groups rather than users. Reach out to your representative to gain access to this beta feature.
+
+Groups must either be included in the user sent with the fetch request (recommended), or identified with the user via a group identify call from the [Group Identify API](/docs/apis/analytics/group-identify) or via [`setGroup()` from an analytics SDK](/docs/sdks/analytics/browser/browser-sdk-2#user-groups).
+
+```php
+<?php
+$user = \AmplitudeExperiment\User::builder()
+    ->deviceId('abcdefg')
+    ->userId('user@company.com')
+    ->userProperties(['premium' => true])
+    ->group(['org name' => ['Amplitude']])
+    ->build();
+$variants = $client->fetch($user);
+```
+
+To pass freeform group properties, see this example:
+
+```php
+<?php
+$user = \AmplitudeExperiment\User::builder()
+    ->deviceId('abcdefg')
+    ->userId('user@company.com')
+    ->userProperties(['premium' => true])
+    ->groupProperties(['org name' => ['Amplitude']])
+    ->build();
+$variants = $client->fetch($user);
+```
+
+{{/partial:collapse}}
+
 ## Local evaluation
 
 Implements evaluation of variants for a user through [local evaluation](/docs/feature-experiment/local-evaluation). If you plan to use local evaluation, you should [understand the tradeoffs](/docs/feature-experiment/local-evaluation#targeting-capabilities).

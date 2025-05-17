@@ -13,9 +13,6 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1719356921
 ---
-{{partial:admonition type="beta" heading=""}}
-This feature is in Closed Beta and is in active development. Contact your Amplitude support team for support with this integration.
-{{/partial:admonition}}
 
 Salesforce Marketing Cloud provides marketing engagement automation that allows you to engage your users. Using this integration enables your marketing and growth teams to use behavioral data to better target campaigns and increase user engagement.
 

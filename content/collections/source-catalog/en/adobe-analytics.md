@@ -1,6 +1,7 @@
 ---
 id: 05cf1a4c-4c34-4519-874e-4c5335fe8dac
 blueprint: source-catalog
+published: false
 use_cases:
   - 'Utilize Adobe Analytics to connect and track customer behavior across different devices and channels, offering a unified view of the customer journey.'
   - "Leverage Adobe Analytics' advanced reporting capabilities within Amplitude to gain actionable insights, enabling data-driven decisions to optimize marketing campaigns, improve product features, and enhance overall business strategies."

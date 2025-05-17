@@ -66,7 +66,8 @@ node_modules/
 .env
 
 # users
-users/
+users/*
+!users/.gitkeep
 
 # jetbrains-based editors
 .idea/
@@ -83,3 +84,4 @@ public/docs/js/*
 **/node_modules
 
 public/docs/js/site.js
+
