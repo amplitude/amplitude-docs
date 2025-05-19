@@ -1,65 +1,73 @@
-# Amplitude API Platform
+# Amplitude API Platform Overview
 
-## Overview
+The Amplitude API Platform provides programmatic access to Amplitude's analytics, experimentation, and user engagement capabilities through a comprehensive suite of APIs organized into distinct categories.
 
-Amplitude is a comprehensive analytics and experimentation platform that enables businesses to track, analyze, and optimize user behavior across digital products. The platform consists of several integrated products that work together to provide a complete solution for data-driven decision making.
+## Key Features and Capabilities
 
-## Key Products and Features
+- **Analytics APIs**: Access user behavior data, metrics, and reporting capabilities
+- **Experiment APIs**: Control feature flags, A/B tests, and experimentation programmatically
+- **Guides and Surveys APIs**: Create and manage in-app user guides and feedback collection
+- **Secure Authentication**: Multiple authentication mechanisms using various keys and tokens
 
-### Amplitude Analytics
-A robust analytics platform for tracking and analyzing user behavior across digital products. The Analytics APIs allow programmatic access to user event data, metrics, and reporting capabilities, enabling integration with other systems and custom analytics implementations.
+## Product Relationships and Structure
 
-### Amplitude Experiment
-A feature experimentation and A/B testing platform that allows teams to test hypotheses and roll out features with confidence. The Experiment APIs provide programmatic access to create, manage, and analyze experiments, supporting automated experimentation workflows.
+The Amplitude API platform consists of several interconnected product areas:
 
-### Amplitude Data
-The data management foundation of the platform, handling data ingestion, transformation, and storage capabilities to ensure data quality and accessibility across the Amplitude ecosystem.
+1. **Amplitude Analytics**: Core analytics platform tracking user behavior and providing insights
+2. **Amplitude Experiment**: Feature flagging and experimentation platform for testing variations
+3. **Amplitude Guides and Surveys**: Tools for in-app user engagement and feedback collection
+4. **Amplitude Data**: APIs for data management and integration
 
-## Product Relationships and Integration
-
-The Amplitude platform is designed as an integrated ecosystem where:
-
-1. **Analytics** serves as the core data collection and analysis engine
-2. **Experiment** leverages the data from Analytics to power experiments and feature flags
-3. **Data** provides the underlying infrastructure for data management across all products
-
-This integration allows users to seamlessly move from analyzing user behavior to testing hypotheses and measuring outcomes, all within a unified data environment.
+While these products are interconnected, each has separate authentication mechanisms and API endpoints, with dedicated documentation sections for authentication, credential management, and specific API endpoints.
 
 ## Key Nomenclature and Definitions
 
 ### Authentication Credentials
-- **API Key**: Public identifier for an Analytics project, used primarily in client-side implementations
-- **Secret Key**: Private credential for server-side authentication that should never be exposed publicly
-- **Deployment Keys**: Credentials specifically for accessing and deploying Experiment features
-- **Management API Key**: Administrative credential for programmatically managing experiment configurations
-- **API Token**: Authentication token for accessing specific API endpoints, particularly for Data-related APIs
-- **SCIM Key**: Used for user provisioning and identity management integrations
-- **Org-level Keys**: Organization-wide authentication credentials that apply across projects
 
-### Security Concepts
-- **Key Rotation**: The security practice of periodically replacing authentication credentials to minimize risk
-- **Client-side vs. Server-side Implementation**: Different implementation approaches with distinct security considerations and authentication requirements
+- **API Key**: Public identifier for an Amplitude Analytics project (client-side implementations)
+- **Secret Key**: Private credential for server-side authentication with Analytics APIs
+- **Deployment Keys**: Used for Amplitude Experiment (separate keys for development/production)
+- **Management API Key**: For programmatic management of Experiment configurations
+- **Data API Token**: For authenticating with Amplitude Data APIs
+- **SCIM Key**: For user provisioning and management
+- **Org-level Keys**: Organization-wide authentication credentials
 
-## API Structure and Access
+### Public vs. Private Keys
 
-The Amplitude API platform is organized by product category:
+- **Public Keys**: Safe for client-side code (API Key, Experiment Deployment Keys)
+- **Private Keys**: Must be kept secure on servers (Secret Key, Management API Key, Data API Token)
 
-- **Analytics APIs**: Endpoints for tracking events, querying analytics data, and managing user properties
-- **Experiment APIs**: Endpoints for creating and managing experiments, feature flags, and analyzing results
+### Key Rotation
 
-Each API category contains multiple endpoints with specific functionality, presented in a structured format with titles, links, and summaries for navigation.
+Rotatable credentials:
+- Secret Key
+- Management API Key
+- Data API Token
+- SCIM Key
 
-## Credential Management
+Non-rotatable credentials:
+- API Key
+- Deployment Keys
 
-API credentials are managed through the Amplitude web application. Users can generate and access credentials by navigating to:
-- Settings > Projects > General tab
+## Product Ecosystem Integration
 
-The platform emphasizes security best practices including:
-- Keeping secret keys private and secure
-- Using appropriate keys based on implementation context (client-side vs. server-side)
-- Implementing proper access control through credential usage
-- Regularly rotating keys for enhanced security
+The Amplitude API platform serves as the programmatic interface to Amplitude's broader product ecosystem:
 
-## Integration with External Systems
+1. **Analytics** forms the foundation by collecting and processing user behavior data
+2. **Experiment** leverages this data for feature flagging and A/B testing
+3. **Guides and Surveys** uses insights to target and personalize user engagement
+4. **Data** APIs facilitate integration with external systems and data pipelines
 
-The API-first approach allows Amplitude to integrate with various external systems, data warehouses, business intelligence tools, and custom applications, creating a flexible analytics ecosystem that can adapt to diverse technical environments.
+Together, these components provide a complete platform for product analytics, experimentation, and user engagement, accessible both through the web application and programmatically via APIs.
+
+## API Access and Management
+
+To access the APIs:
+
+1. Navigate to the Amplitude web application
+2. Go to Settings > Projects to find the API Key and Secret Key for Analytics
+3. Access different keys in their respective product sections
+4. Use the appropriate authentication credentials for each API endpoint
+5. Follow security best practices by keeping private keys secure and using server-side authentication when appropriate
+
+The documentation includes detailed tables of available API endpoints for each product area, with links to specific API documentation containing endpoints, parameters, and usage examples.

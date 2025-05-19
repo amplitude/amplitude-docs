@@ -1,129 +1,79 @@
 # Amplitude Product Suite Overview
 
-Amplitude is a comprehensive digital analytics and product intelligence platform that helps businesses understand user behavior, optimize product experiences, and drive growth. The platform combines behavioral analytics, experimentation capabilities, customer data management, and engagement tools to provide a complete solution for data-driven product development.
+Amplitude is a comprehensive digital analytics and experimentation platform that helps businesses understand user behavior, optimize product experiences, and drive growth. The platform combines behavioral analytics, experimentation capabilities, customer data management, and engagement tools to provide a complete solution for product-led growth.
 
-## Key Products and Features
+## Key Features and Components
 
-### Amplitude Analytics
-The core analytics platform enables teams to answer growth questions without coding through:
-- No-code analytics for tracking user behavior
-- AI automation to surface insights
-- Data unification for comprehensive user interaction views
-- Product improvement tools based on behavioral data
+### Analytics Platform
+The core of Amplitude's offering is its analytics platform, providing behavioral analytics and AI automation to help users answer growth questions without coding. It unifies data to facilitate product improvement and offers no-code analytics capabilities for teams to gain insights without technical expertise.
 
-### Amplitude Data
-Provides data management and integration tools:
-- Data integration with existing tech stacks
-- Cross-device identity resolution
-- Customer data management
-- Product data control mechanisms
-- Data quality monitoring
+### Customer Data Platform (CDP)
+Amplitude's CDP integrates with analytics to improve data quality, discover audiences, and synchronize behavioral data across systems. It serves as a central hub for managing customer data, enabling teams to create a unified view of customers and their interactions across touchpoints.
 
-### Amplitude CDP (Customer Data Platform)
-Integrates with analytics to:
-- Improve data quality across systems
-- Discover and segment audiences based on behavior
-- Synchronize behavioral data across marketing and product systems
-- Connect with other tools in the data stack
-
-### Amplitude Experiment
-A comprehensive experimentation platform with two main components:
-
-**Feature Experiment:**
+### Experimentation
+The experimentation capabilities include:
 - Feature flagging for controlled rollouts
-- A/B testing for comparing variations
-- Multivariate experiments for testing multiple variables
-- Multi-armed Bandit experiments for optimization
+- A/B testing, multivariate experiments, and Multi-armed Bandit optimization
+- Web experimentation for codeless website testing
 - Remote configuration management
 
-**Web Experiment:**
-- Codeless A/B, multivariate, and Multi-armed Bandit testing
-- Targeting for specific user segments
-- Web performance optimization during experiments
-- Impression and conversion tracking
-- Post-experiment actions
+### Session Replay
+This qualitative research tool records and plays back user sessions, allowing teams to understand user behavior beyond quantitative metrics. It synchronizes with the event stream, offers search/filtering capabilities, and integrates with dashboards for contextual analysis.
 
-### Amplitude Guides and Surveys
-An in-app messaging platform that:
-- Creates guided product experiences
-- Collects user feedback within applications
-- Improves retention, activation, and engagement metrics
-- Targets product teams, growth teams, and marketing teams
+### Guides and Surveys
+An in-app messaging platform that provides alternatives to popup components, helping users learn products, share feedback, and improve key metrics like retention, activation, and engagement.
 
-### Amplitude Session Replay
-A qualitative analytics tool that:
-- Records and plays back user sessions
-- Synchronizes with event streams for context
-- Provides search and filtering capabilities
-- Integrates with dashboards and charts
-- Includes privacy controls like HTML element masking
+## Product Relationships and Integration
 
-## Product Relationships and Ecosystem Integration
+Amplitude's products are designed to work together as an integrated suite:
 
-Amplitude's products form an integrated ecosystem:
-1. **Data Collection Layer**: SDKs and APIs capture user interactions
-2. **Data Management Layer**: CDP and Data products ensure quality and identity resolution
-3. **Analysis Layer**: Analytics provides insights from collected data
-4. **Action Layer**: Experiment enables testing, Guides facilitates engagement, Session Replay provides qualitative context
+1. **Data Foundation**: The CDP forms the foundation, managing data collection, integration, and identity resolution.
 
-The platform is designed for a closed-loop workflow where insights drive experiments, experiments lead to optimizations, and the cycle continues with new data collection.
+2. **Analytics Layer**: Built on the data foundation, the analytics platform transforms raw data into actionable insights.
 
-## Developer Resources
+3. **Activation Layer**: Experimentation, guides, and surveys enable teams to act on insights by testing hypotheses and engaging users.
 
-### SDKs
-Multiple SDK categories are available:
-- Analytics SDKs for event data
-- Experiment SDKs for feature flagging and A/B testing
-- Session Replay SDKs for capturing user sessions
-- Guides and Surveys SDKs for in-app messaging
+4. **Cross-Product Integration**: Session Replay provides qualitative context to quantitative analytics data, while the CDP feeds clean, unified data into analytics and experimentation.
 
-Both client-side and server-side implementations are supported.
-
-The Ampli CLI and Wrapper provide type-safe event tracking based on Tracking Plans.
-
-### APIs
-Amplitude offers two main API categories:
-1. **Analytics/Data APIs**: For programmatic data access
-   - Endpoint examples include `/api/2/events` for sending events and `/api/2/export` for data export
-   
-2. **Experiment APIs**: For managing feature flags and experiments
-   - Endpoints include `/api/2/flags` for feature flag management
-
-Authentication uses API keys and tokens, with a Postman collection available for testing.
+This integrated approach allows for seamless workflows - for example, identifying an opportunity in analytics, creating an experiment to test a solution, and measuring the impact with the same analytics tools.
 
 ## Key Nomenclature and Definitions
 
-- **Behavioral analytics**: Analysis of user actions within a product
-- **Feature flagging**: Technique to enable/disable features for specific users
-- **A/B testing**: Comparing two versions to determine which performs better
-- **Multivariate testing**: Testing multiple variables simultaneously
-- **Multi-armed Bandit**: Experimentation approach that automatically optimizes for the best-performing variation
-- **Identity resolution**: Connecting multiple identifiers to a single user
-- **Session Replay**: Recording and playback of user interactions
-- **CDP (Customer Data Platform)**: System unifying customer data from multiple sources
-- **Tracking Plan**: Specification defining events and properties to collect
-- **Event**: A discrete user action or system occurrence tracked in Amplitude
-- **Property**: Metadata associated with events providing additional context
-- **Cohort**: A group of users who share common characteristics or behaviors
-- **Funnel Analysis**: Tracking user progression through a sequence of events
-- **Retention Analysis**: Measuring how users continue to engage over time
+- **Behavioral Analytics**: Analysis of user actions and interactions to understand patterns and drivers of engagement.
 
-## Administrative Features
+- **Feature Flagging**: Technique to enable or disable features for specific users without deploying new code.
 
-The Admin section provides tools for:
-- Account management
-- Billing administration
-- Single sign-on (SSO) configuration
-- User permissions and access control
-- Organization settings
+- **A/B Testing**: Comparing two or more versions of a feature to determine which performs better.
 
-## Integration with Broader Ecosystem
+- **Multivariate Testing**: Testing multiple variations of multiple elements simultaneously.
 
-Amplitude maintains a partner ecosystem for extending functionality, including:
-- Data warehouse integrations (Snowflake, BigQuery, Redshift)
-- Marketing platform connections (Braze, Marketo, HubSpot)
-- Customer support tools (Zendesk, Intercom)
-- Development tools (GitHub, Jira)
-- Business intelligence platforms (Tableau, Looker)
+- **Multi-armed Bandit**: An experimentation approach that automatically optimizes for the best-performing variation.
 
-The platform serves as a central hub for product data while connecting to specialized tools for specific functions.
+- **Ampli CLI and Wrapper**: Tools for type-safe event tracking based on Tracking Plans.
+
+- **Tracking Plan**: A structured definition of events and properties to be collected.
+
+## Technical Implementation
+
+### APIs
+Amplitude offers several API categories:
+- **Analytics and Data APIs**: For sending and retrieving analytics data
+- **Experiment APIs**: For managing experiments and feature flags
+- **Guides and Surveys Translation API**: For managing content translations
+
+Authentication is handled through API keys and tokens, and a Postman collection is available for testing API requests.
+
+### SDKs
+Amplitude provides SDKs in four main categories:
+1. **Analytics SDKs**: For sending event data to Amplitude
+2. **Experiment SDKs**: For implementing feature flags and experiments
+3. **Session Replay SDKs**: For capturing and sending session data
+4. **Guides and Surveys SDKs**: For implementing in-app messaging
+
+Implementation options include client-side (directly from user devices) and server-side (from backend services) approaches.
+
+The Ampli CLI and Wrapper provide type-safe event tracking based on Tracking Plans, ensuring data quality and consistency across implementations.
+
+## Administrative Capabilities
+
+The Admin section provides tools for account management, billing, and single sign-on (SSO) configuration. This centralized administrative interface allows organizations to manage users, permissions, and account settings across the Amplitude product suite.
