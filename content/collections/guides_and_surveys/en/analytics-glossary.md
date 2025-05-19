@@ -3,8 +3,8 @@ id: ba2e2bbb-396d-4f49-9c59-66fab5476120
 blueprint: guides_and_survey
 title: 'Analytics Glossary'
 landing: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1739222791
+updated_by: 4870994b-20b1-4b89-b813-42091eaf6cb7
+updated_at: 1747430252
 glossary:
   -
     id: m6zctaju
@@ -122,8 +122,20 @@ glossary:
     event_row:
       -
         id: m6zemhhp
-        event_name: 'Tooltip Market Viewed'
-        event_description: 'The tooltip marker was seen by a user.'
+        event_name: 'Guide completed'
+        event_description: 'The user made it through all steps of the guide.'
+      -
+        id: marap59c
+        event_name: 'Guide dismissed'
+        event_description: 'The user clicked to dismiss or close a guide'
+      -
+        id: maraomyn
+        event_name: 'Guide Engaged'
+        event_description: 'The user clicked or interacted with a guide.'
+      -
+        id: maraq2mj
+        event_name: 'Guide Step Completed'
+        event_description: 'The user completed a step or portion of the guide.'
     type: event_set
     enabled: true
   -
