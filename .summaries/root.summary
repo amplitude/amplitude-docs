@@ -1,143 +1,120 @@
-# Amplitude Product Ecosystem
+# Amplitude Documentation Platform
 
-## High-Level Overview
+## Product Overview
 
-Amplitude is a comprehensive product analytics platform that helps organizations understand user behavior, optimize product experiences, and drive business growth. The platform enables tracking user interactions, analyzing behavioral patterns, running experiments, managing customer data, and visualizing user sessions.
+The Amplitude Documentation Platform is a comprehensive content management system for Amplitude's product suite, covering analytics, experimentation, data management, and developer tools. The platform organizes documentation into collections representing different product areas and supports multiple content types including guides, references, SDK documentation, and troubleshooting resources.
 
-Key features include behavioral analytics with multiple visualization methods, experimentation capabilities, customer data management, session replay for qualitative analysis, cross-platform SDK support, and an extensive API ecosystem for integrations.
+Key features include:
+- Collection-based architecture for organizing related documentation
+- Multi-product coverage across Analytics, Experiment, Data, and Session Replay
+- Extensive SDK documentation for web, mobile, server-side, and game platforms
+- API reference documentation for various Amplitude services
+- Chart-specific guidance for analytics visualization
+- Educational resources and implementation guides
+- Multilingual support (primarily English and Japanese)
+- Administrative and account management documentation
 
-Core use cases span product optimization, user journey analysis, feature experimentation, conversion optimization, retention analysis, and revenue impact measurement.
+## Product Relationships and Structure
 
-## Product Relationships and Features
+### Analytics Platform
+The core analytics functionality includes:
+- Event segmentation, funnel analysis, and retention analysis
+- Data visualization tools (Compass, data tables)
+- User behavior analysis (sessions, journeys, lifecycle)
 
-The Amplitude ecosystem consists of several interconnected products:
+### Experiment Platform
+Amplitude's experimentation capabilities include:
+- Core experimentation features
+- Implementation guides for various platforms
+- API documentation
+- Theoretical foundations
+- Advanced topics and workflows
+- Troubleshooting resources
 
-### Analytics
-The core platform with analysis tools including:
-- **Event Segmentation** - Analyze specific user actions
-- **Funnel Analysis** - Track conversion paths
-- **Retention Analysis** - Measure user return patterns
-- **User Sessions** - Analyze session-level metrics
-- **Journeys** - Visualize user paths
-- **Impact Analysis** - Measure feature impact
-- **Engagement Matrix** - Analyze feature engagement patterns
-- **Personas** - User segmentation and profiling
-- **Compass** - Automated insights discovery
-- **Stickiness** - Measure feature adoption
-- **Revenue LTV** - Analyze user lifetime value
+### Data Management
+Data-related documentation covers:
+- Data sources configuration
+- Data destinations
+- Audience management
+- PII handling
+- Customer Data Platform functionality
 
-### Experiment
-A feature experimentation platform with:
-- **Experiment Workflow** - End-to-end experiment management
-- **Feature Flagging** - Toggle features for specific segments
-- **A/B Testing** - Compare feature variations
-- **Experiment Results** - Statistical analysis
-- **SDK Integration** - Client libraries
-- **API Access** - Programmatic control
+### Developer Resources
+SDK documentation spans multiple platforms:
+- Web: Browser SDK
+- Mobile: iOS, Android
+- Cross-platform: React Native, Flutter
+- Server-side: Node.js, Python, Java, Go
+- Game engines: Unity, Unreal
 
-### CDP (Customer Data Platform)
-Data management capabilities including:
-- **Data Tables** - Structured data storage
-- **Sources** - Data ingestion configurations
-- **Source Catalog** - Pre-built integrations
-- **Destination Catalog** - Export destinations
-- **Audiences** - User segmentation
-- **PII Management** - Handling sensitive information
+Additional developer resources include:
+- Ampli toolkit documentation
+- API references
+- Instrumentation guides
 
-### Session Replay
-Visual session recording with:
-- Video-like playback of user sessions
-- Heatmaps showing interaction patterns
-- Privacy controls with configurable masking
-- Integration with analytics events
+### Additional Products
+- Session Replay functionality
+- Guides and Surveys features
 
-### SDK Ecosystem
-Cross-platform coverage including:
-- **Browser SDK** - JavaScript library
-- **Mobile SDKs** - iOS and Android
-- **Cross-Platform SDKs** - React Native, Flutter
-- **Game Development SDKs** - Unity, Unreal
-- **Server-Side SDKs** - Node.js, Python, Java, Go
-- **Ampli** - Type-safe analytics code generation
+### Administrative Content
+- Account management
+- Billing information
+- Single sign-on configuration
 
 ## Key Nomenclature and Definitions
 
-- **Event** - Discrete user action or system occurrence
-- **User** - Individual identified by unique ID
-- **Session** - Period of continuous user activity
-- **Property** - Metadata attached to events or users
-- **Cohort** - Group of users with common characteristics
-- **Funnel** - Sequence of events in a conversion path
-- **Retention** - Measurement of returning users
-- **SDK** - Client libraries for tracking implementation
-- **API** - Programmatic access points
-- **Experiment** - Controlled test comparing feature variations
-- **Feature Flag** - Toggle for enabling/disabling features
-- **Session Replay** - Visual recording of user interactions
-- **Masking** - Privacy protection hiding sensitive content
-- **Data Source** - Origin point for imported data
-- **Destination** - Target system for exported data
+**Collections**: Content groupings organized by product area, feature, or content type, defined in YAML files.
+
+**Mount Points**: References to specific entry points that serve as the root for a collection's content structure.
+
+**Routes**: URL patterns defining how content is accessed, following patterns like:
+- `/analytics/{slug}` for analytics documentation
+- `/feature-experiment/{slug}` for experiment documentation
+- `/sdks/analytics/{platform}/{slug}` for SDK documentation
+- `/apis/{product}/{slug}` for API documentation
+- `/analytics/charts/{chart-type}/{slug}` for chart-specific documentation
+
+**Date Behavior**: Rules determining content visibility based on publication dates:
+```yaml
+date_behavior:
+  past: public
+  future: private
+```
+
+**Preview Targets**: Configuration for content preview functionality:
+```yaml
+preview_targets:
+  - label: Entry
+    url: '{permalink}'
+    refresh: true
+```
+
+**Nav Title Injection**: Custom navigation labels applied to content sections:
+```yaml
+inject:
+  nav_title: analytics
+```
+
+**Structure Root**: Boolean setting that determines if a collection appears at the root level of navigation.
 
 ## Product Ecosystem Integration
 
-Amplitude operates as an integrated ecosystem with a data-driven workflow:
+The documentation platform integrates with Amplitude's broader product ecosystem through:
 
-1. **Data Collection** - SDKs and APIs capture behavior across platforms
-2. **Data Processing** - Raw data is processed and enriched
-3. **Analysis** - Various tools analyze the processed data
-4. **Activation** - Insights drive actions through experiments
-5. **Optimization** - Results feed back into development
+1. **Analytics Integration**: Documentation for the full analytics workflow from data collection to visualization and analysis.
 
-Cross-product workflows include:
-- Identifying patterns in Analytics and testing improvements in Experiment
-- Using Session Replay to qualitatively understand Analytics findings
-- Creating audience segments in CDP and targeting them in Experiment
-- Correlating experiment results with long-term behavior in Analytics
+2. **Experiment Integration**: Comprehensive documentation for A/B testing and feature flag capabilities.
 
-The platform supports multi-site architecture with English and Japanese localization, and features data residency controls for compliance.
+3. **Data Platform Integration**: Documentation for the data infrastructure that powers Amplitude's products.
 
-## API Endpoints and Implementation Examples
+4. **Developer Tools Integration**: SDK documentation across multiple platforms.
 
-### Analytics SDK Implementation
-```javascript
-// Browser SDK with Session Replay
-import * as amplitude from '@amplitude/analytics-browser';
-import { sessionReplayPlugin } from '@amplitude/plugin-session-replay-browser';
+5. **Cross-Product Features**: Documentation for features that span multiple products.
 
-amplitude.init('API_KEY', {
-  plugins: [sessionReplayPlugin({
-    sampleRate: 1.0,
-    maskAllInputs: true
-  })]
-});
+The platform uses a consistent URL structure organized by product area:
+- Product documentation: `/[product]/{slug}`
+- SDK documentation: `/sdks/[product]/[platform]/{slug}`
+- API documentation: `/apis/[product]/{slug}`
+- Chart documentation: `/analytics/charts/[chart-type]/{slug}`
 
-// Event tracking
-amplitude.track('Button Clicked', {
-  buttonName: 'Submit',
-  pageLocation: 'Signup Form'
-});
-```
-
-### Experiment Implementation
-```javascript
-// Web experiment implementation
-import { Experiment } from '@amplitude/experiment-js-client';
-
-const experiment = Experiment.initialize({
-  apiKey: 'DEPLOYMENT_KEY',
-  user: {
-    user_id: 'user@example.com'
-  }
-});
-
-const variant = await experiment.fetch();
-const buttonColor = variant.buttonColor?.value || 'blue';
-```
-
-### HTTP API Endpoints
-RESTful APIs for programmatic access:
-- `/api/2/events` - Send events
-- `/api/2/usermap` - Map user IDs
-- `/api/2/export` - Export raw event data
-- `/api/2/behavioralhttps` - Access behavioral cohorts
-- `/api/2/taxonomy` - Manage event taxonomy
+This structure reflects the relationships between Amplitude's products and provides a coherent navigation experience for users.

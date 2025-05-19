@@ -1,152 +1,125 @@
-# Amplitude Product Ecosystem
+# Amplitude Documentation Platform
 
-## High-Level Overview
+## Product Overview
 
-Amplitude is a comprehensive product analytics platform that helps organizations understand user behavior, optimize product experiences, and drive business growth. The platform enables companies to track user interactions, analyze behavioral patterns, run experiments, manage customer data, and visualize user sessions.
+The Amplitude Documentation Platform is a comprehensive content management system designed to organize and deliver product documentation for Amplitude's suite of products. The platform covers analytics, experimentation, data management, and developer tools through a structured collection-based architecture.
 
-Key features of the Amplitude ecosystem include:
+Key features of the platform include:
+- Organized documentation collections representing different product areas
+- Support for multiple content types (guides, references, SDK docs, troubleshooting)
+- Multi-product coverage across Analytics, Experiment, Data, and Session Replay
+- Extensive SDK documentation for multiple platforms and languages
+- API reference documentation for various Amplitude services
+- Chart-specific guidance for analytics visualization
+- Educational resources and implementation guides
+- Multilingual support with primary focus on English and Japanese
+- Administrative and account management documentation
 
-- Behavioral analytics with multiple visualization and analysis methods
-- Experimentation and A/B testing capabilities
-- Customer data platform for audience management
-- Session replay for qualitative user experience analysis
-- Cross-platform SDK support for data collection
-- Extensive API ecosystem for integration with other tools
+## Product Relationships and Structure
 
-Core use cases include product optimization, user journey analysis, feature experimentation, conversion optimization, retention analysis, and revenue impact measurement.
+The documentation is organized into several major product areas that reflect Amplitude's product ecosystem:
 
-## Product Relationships and Features
+### Analytics Platform
+The core analytics functionality is documented in `analytics.yaml`, with specialized collections for different chart types and visualization tools:
+- Event segmentation, funnel analysis, and retention analysis
+- Data visualization tools like Compass and data tables
+- User behavior analysis including user sessions, journeys, and lifecycle
 
-The Amplitude ecosystem consists of several interconnected products:
+### Experiment Platform
+Amplitude's experimentation capabilities are documented across multiple collections:
+- Core experimentation features (`experiment.yaml`)
+- Implementation guides for various platforms (`experiment-sdks.yaml`)
+- API documentation (`experiment-apis.yaml`)
+- Theoretical foundations (`experiment-theory.yaml`)
+- Advanced topics and workflows (`under-the-hood.yaml`, `workflow.yaml`)
+- Troubleshooting resources (`experiment_troubleshooting.yaml`)
 
-### Analytics
-The core analytics platform provides various analysis tools:
-- **Event Segmentation** - Analyze specific user actions and behaviors
-- **Funnel Analysis** - Track conversion paths through sequential steps
-- **Retention Analysis** - Measure how users return to the product over time
-- **User Sessions** - Analyze session-level metrics and behaviors
-- **Journeys** - Visualize user paths through the product
-- **Impact Analysis** - Measure feature impact on key metrics
-- **Engagement Matrix** - Analyze user engagement patterns across features
-- **Personas** - User segmentation and behavioral profiling
-- **Compass** - Automated insights discovery
-- **Stickiness** - Measure feature adoption and recurring usage
-- **Revenue LTV** - Analyze lifetime value of users
+### Data Management
+Data-related documentation covers:
+- Data sources configuration (`sources.yaml`, `source-catalog.yaml`)
+- Data destinations (`destination-catalog.yaml`)
+- Audience management (`audiences.yaml`)
+- PII handling (`pii_integrations.yaml`)
+- Customer Data Platform functionality (`cdp.yaml`)
 
-### Experiment
-A feature experimentation platform that includes:
-- **Experiment Workflow** - End-to-end experiment management
-- **Feature Flagging** - Toggle features for specific user segments
-- **A/B Testing** - Compare variations of features or experiences
-- **Experiment Results** - Statistical analysis of experiment outcomes
-- **SDK Integration** - Client libraries for implementing experiments
-- **API Access** - Programmatic control of experiments
+### Developer Resources
+Extensive SDK documentation spans multiple platforms:
+- Web: Browser SDK (`browser_sdk.yaml`)
+- Mobile: iOS (`ios_sdk.yaml`), Android (`android_sdk.yaml`)
+- Cross-platform: React Native (`react_native_sdk.yaml`), Flutter (`flutter_sdk.yaml`)
+- Server-side: Node.js (`node_js_sdk.yaml`), Python (`python_sdk.yaml`), Java (`java_sdk.yaml`), Go (`go_sdk.yaml`)
+- Game engines: Unity (`unity_sdk.yaml`), Unreal (`unreal_sdk.yaml`)
 
-### CDP (Customer Data Platform)
-Data management capabilities including:
-- **Data Tables** - Structured data storage and management
-- **Sources** - Data ingestion configurations
-- **Source Catalog** - Pre-built data source integrations
-- **Destination Catalog** - Pre-built export destinations
-- **Audiences** - User segmentation and targeting capabilities
-- **PII Management** - Handling of personally identifiable information
+Additional developer resources include:
+- Ampli toolkit documentation (`ampli.yaml`)
+- API references (`api.yaml`, `apis.yaml`)
+- Instrumentation guides (`instrumentation.yaml`)
 
-### Session Replay
-Visual session recording tool that includes:
-- Video-like playback of user sessions
-- Heatmaps showing interaction patterns
-- Privacy controls with configurable masking options
-- Integration with analytics events via session IDs
+### Additional Products
+- Session Replay functionality (`session-replay.yaml`)
+- Guides and Surveys features (`guides_and_surveys.yaml`, `guides_and_surveys_api.yaml`)
 
-### SDK Ecosystem
-Comprehensive SDK coverage across platforms:
-- **Browser SDK** - JavaScript library for web applications
-- **Mobile SDKs** - Native iOS and Android implementations
-- **Cross-Platform SDKs** - React Native, Flutter support
-- **Game Development SDKs** - Unity, Unreal support
-- **Server-Side SDKs** - Node.js, Python, Java, Go
-- **Ampli** - Code generation tool for type-safe analytics
+### Administrative Content
+- Account management (`account-management.yaml`)
+- Billing information (`billing-use.yaml`)
+- Single sign-on configuration (`single-sign-on.yaml`)
 
 ## Key Nomenclature and Definitions
 
-- **Event** - A discrete user action or system occurrence tracked in Amplitude
-- **User** - An individual using the product, identified by a unique ID
-- **Session** - A period of continuous user activity
-- **Property** - Metadata attached to events or users
-- **Cohort** - A group of users who share common characteristics or behaviors
-- **Funnel** - A sequence of events representing a conversion path
-- **Retention** - Measurement of users returning to the product over time
-- **SDK** - Client libraries for implementing Amplitude tracking
-- **API** - Programmatic access points for data and functionality
-- **Experiment** - A controlled test comparing variations of a feature
-- **Feature Flag** - Toggle for enabling/disabling features for specific users
-- **Session Replay** - Visual recording of user interactions with a product
-- **Masking** - Privacy protection in Session Replay that hides sensitive content
-- **Data Source** - Origin point for data imported into Amplitude
-- **Destination** - Target system for data exported from Amplitude
+The documentation platform uses several key concepts:
+
+**Collections**: Content groupings organized by product area, feature, or content type. Each collection is defined in a YAML file that specifies its properties and behavior.
+
+**Mount Points**: References to specific entry points that serve as the root for a collection's content structure.
+
+**Routes**: URL patterns defining how content is accessed, following patterns like:
+- `/analytics/{slug}` for analytics documentation
+- `/feature-experiment/{slug}` for experiment documentation
+- `/sdks/analytics/{platform}/{slug}` for SDK documentation
+- `/apis/{product}/{slug}` for API documentation
+- `/analytics/charts/{chart-type}/{slug}` for chart-specific documentation
+
+**Date Behavior**: Rules determining content visibility based on publication dates:
+```yaml
+date_behavior:
+  past: public
+  future: private
+```
+
+**Preview Targets**: Configuration for content preview functionality:
+```yaml
+preview_targets:
+  - label: Entry
+    url: '{permalink}'
+    refresh: true
+```
+
+**Nav Title Injection**: Custom navigation labels applied to content sections:
+```yaml
+inject:
+  nav_title: analytics
+```
+
+**Structure Root**: Boolean setting that determines if a collection appears at the root level of navigation.
 
 ## Product Ecosystem Integration
 
-Amplitude's platform operates as an integrated ecosystem with a data-driven workflow:
+The documentation platform integrates with Amplitude's broader product ecosystem in several ways:
 
-1. **Data Collection** - SDKs and APIs capture user behavior across platforms
-2. **Data Processing** - Raw data is processed, enriched, and stored
-3. **Analysis** - Various chart types and tools analyze the processed data
-4. **Activation** - Insights drive actions through experiments and integrations
-5. **Optimization** - Results feed back into the product development cycle
+1. **Analytics Integration**: Documentation covers the full analytics workflow from data collection to visualization and analysis.
 
-The platform supports cross-product workflows such as:
-- Identifying behavioral patterns in Analytics and testing improvements in Experiment
-- Using Session Replay to qualitatively understand quantitative findings from Analytics
-- Creating audience segments in CDP and targeting them in Experiment
-- Correlating experiment results with long-term user behavior in Analytics
+2. **Experiment Integration**: Comprehensive documentation for A/B testing and feature flag capabilities, including implementation guides and theoretical foundations.
 
-The platform supports multi-site architecture with localization for English and Japanese, and features like data residency controls for regulatory compliance.
+3. **Data Platform Integration**: Documentation for the data infrastructure that powers Amplitude's products, including sources, destinations, and management tools.
 
-## API Endpoints and Implementation Examples
+4. **Developer Tools Integration**: SDK documentation across multiple platforms supports implementation in various technical environments.
 
-### Analytics SDK Implementation
-```javascript
-// Browser SDK with Session Replay
-import * as amplitude from '@amplitude/analytics-browser';
-import { sessionReplayPlugin } from '@amplitude/plugin-session-replay-browser';
+5. **Cross-Product Features**: Documentation for features that span multiple products, such as account management and single sign-on.
 
-amplitude.init('API_KEY', {
-  plugins: [sessionReplayPlugin({
-    sampleRate: 1.0,
-    maskAllInputs: true
-  })]
-});
+The platform uses a consistent URL structure to organize content by product area, with specialized routing patterns for different content types:
+- Product documentation: `/[product]/{slug}`
+- SDK documentation: `/sdks/[product]/[platform]/{slug}`
+- API documentation: `/apis/[product]/{slug}`
+- Chart documentation: `/analytics/charts/[chart-type]/{slug}`
 
-// Event tracking
-amplitude.track('Button Clicked', {
-  buttonName: 'Submit',
-  pageLocation: 'Signup Form'
-});
-```
-
-### Experiment Implementation
-```javascript
-// Web experiment implementation
-import { Experiment } from '@amplitude/experiment-js-client';
-
-const experiment = Experiment.initialize({
-  apiKey: 'DEPLOYMENT_KEY',
-  user: {
-    user_id: 'user@example.com'
-  }
-});
-
-const variant = await experiment.fetch();
-const buttonColor = variant.buttonColor?.value || 'blue';
-```
-
-### HTTP API Endpoints
-The platform provides RESTful APIs for programmatic access:
-- `/api/2/events` - Send events to Amplitude
-- `/api/2/usermap` - Map user IDs
-- `/api/2/export` - Export raw event data
-- `/api/2/behavioralhttps` - Access behavioral cohorts
-- `/api/2/taxonomy` - Manage event taxonomy
-
-The documentation is organized into collections that reflect this product structure, with specialized routing patterns for different product areas and consistent navigation patterns throughout the documentation site.
+This structure reflects the relationships between Amplitude's products and provides a coherent navigation experience for users seeking information about specific features or implementation approaches.
