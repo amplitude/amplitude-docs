@@ -765,7 +765,7 @@ The Network Tracking Plugin allows you to automatically track network requests a
 
 #### Installation
 
-To use the Network Tracking Plugin, you need to add the OkHttp dependency to your project:
+The Network Tracking Plugin requires the OkHttp dependency. To add it to your project:
 
 {{partial:tabs tabs="Gradle"}}
 {{partial:tab name="Gradle"}}
@@ -780,7 +780,7 @@ dependencies {
 
 #### Configuration
 
-The Network Tracking Plugin can be configured with various options to control which network requests are tracked:
+Configure the Network Tracking Plugin to control which network requests you track:
 
 {{partial:tabs tabs="Kotlin, Java"}}
 {{partial:tab name="Kotlin"}}
@@ -929,9 +929,9 @@ OkHttpClient okHttpClient = new OkHttpClient.Builder()
 {{/partial:tab}}
 {{/partial:tabs}}
 
-#### Tracked Event Properties
+#### Tracked event properties
 
-When a network request is tracked, the plugin sends an event with the type `[Amplitude] Network Tracking` and the following properties:
+When the plugin tracks a network request, it sends an event with the type `[Amplitude] Network Tracking` with the following properties:
 
 | Property | Description |
 | --- | --- |
@@ -947,7 +947,7 @@ When a network request is tracked, the plugin sends an event with the type `[Amp
 | `[Amplitude] Request Body Size` | Size of the request body in bytes |
 | `[Amplitude] Response Body Size` | Size of the response body in bytes |
 
-#### Privacy Considerations
+#### Privacy considerations
 
 The Network Tracking Plugin automatically masks sensitive information:
 
