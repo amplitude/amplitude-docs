@@ -929,7 +929,7 @@ OkHttpClient okHttpClient = new OkHttpClient.Builder()
 {{/partial:tab}}
 {{/partial:tabs}}
 
-#### Tracked Event Properties
+#### Tracked event properties
 
 When a network request is tracked, the plugin sends an event with the type `[Amplitude] Network Tracking` and the following properties:
 
