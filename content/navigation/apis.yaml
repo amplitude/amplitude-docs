@@ -3,3 +3,4 @@ collections:
   - api
   - experiment-apis
   - apis
+  - guides_and_surveys_api
