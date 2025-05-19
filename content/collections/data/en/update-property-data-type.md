@@ -18,7 +18,7 @@ To edit the data type of a user property, follow these steps:
       * `String`: A string value
       * `Number`: Numerical values (like 12345)
       * `Boolean`: Values representing Boolean states ("true"/ "false", "yes" / "no", "0" / "1")
-      * `Array`
+      * `Array`: A collection of values stored in a single property (for example, ["apple", "banana", "strawberry"] or [1, 2, 3])
       * `Enum`: One of a set of possible values. (for example, property fruit is one of [apple, banana, strawberry])
       * `Const`: Set as a constant
       * `Any`: Any value
