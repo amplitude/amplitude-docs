@@ -420,7 +420,6 @@ if variant.value == "on" {
 }
 ```
 
-???info "Accessing the variant's payload"
 {{partial:admonition type="info" heading="Access the variant's payload"}}
 A variant may also be configured with a dynamic [payload](/docs/feature-experiment/data-model#variants) of arbitrary data. Access the `payload` field from the variant object after checking the variant's `value`.
 
