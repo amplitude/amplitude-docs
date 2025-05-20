@@ -1,18 +1,19 @@
 ## Summary
-The Android-Kotlin SDK enables tracking events in Android applications with features for user identification, session management, and event batching. It supports autocapture options for sessions, app lifecycles, screen views, deep links, and element interactions, along with plugins for extending functionality.
+The Android-Kotlin SDK enables tracking events in Android applications with features for user identification, session management, and automatic event capture. It supports batching, EU data residency, plugins, and offline mode with comprehensive configuration options for customizing tracking behavior.
 
 ## Keywords
 - Android-Kotlin SDK
 - Event tracking
+- Autocapture
 - User identification
 - Session management
-- Autocapture
 - Device ID lifecycle
 - Network tracking plugin
+- Element interactions
 - Offline mode
 - Group identify
 - Revenue tracking
-- Element interactions
-- Plugins architecture
-- Location tracking
-- Multiple instances
+- Custom plugins
+- EU data residency
+- COPPA control
+- Advertiser ID
