@@ -151,8 +151,9 @@ The evaluation API returns a JSON array of objects where each object represents 
 | 200  | A successful request returns a `200` response with an array of flag configurations. Use the [example](#flags-example) below to try the API from your browser or copy a curl. |
 | 401 | If the request doesn't include a valid API key, it returns a `401` response. |
 
-### Flags example
+
+<!-- ### Flags example
 
 Set the fields in the table, and press send to send the request in browser, or copy the curl to send the request yourself.
 
-{{partial:experiment/interactive-flags-table}}
+{{#partial:experiment/interactive-flags-table#}} -->
