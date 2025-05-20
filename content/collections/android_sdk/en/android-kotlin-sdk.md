@@ -772,7 +772,7 @@ The Network Tracking Plugin requires the OkHttp dependency. To add it to your pr
 ```groovy
 dependencies {
     // OkHttp is required for the NetworkTrackingPlugin
-    compileOnly 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
 }
 ```
 {{/partial:tab}}
