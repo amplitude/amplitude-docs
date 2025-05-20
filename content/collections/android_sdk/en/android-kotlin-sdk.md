@@ -780,7 +780,7 @@ dependencies {
 
 #### Configuration
 
-You can use the default configuration and integrate with OkHttp by adding the plugin as an interceptor:
+Use the default configuration and add the plugin as an interceptor to integrate with OkHttp:
 
 {{partial:tabs tabs="Kotlin, Java"}}
 {{partial:tab name="Kotlin"}}
@@ -824,7 +824,7 @@ The default configuration tracks all hosts except `*.amplitude.com` with status 
 
 {{/partial:collapse}}
 
-To customize the tracking behavior, set `NetworkTrackingOptions` to control which network requests are tracked:
+Set `NetworkTrackingOptions` to customize the tracking behavior and control which requests you track:
 
 {{partial:tabs tabs="Kotlin, Java"}}
 {{partial:tab name="Kotlin"}}
@@ -897,7 +897,7 @@ amplitude.add(networkPlugin);
 | Name |  Description | Default Value |
 | --- | --- | --- |
 | `captureRules` | The rules for capturing network requests. You should always append rules with specific hosts to the bottom of the list. | `none` |
-| `ignoreHosts` | The hosts to ignore. Supports wildcard characters `*`. eg. `["*"]` to ignore all hosts, `["*.notmyapi.com", "notmyapi.com"]` to ignore `notmyapi.com` and all subdomains. | `[]` |
+| `ignoreHosts` | The hosts to ignore. Supports wildcard characters `*`. For example, `["*"]` ignores all hosts, `["*.notmyapi.com", "notmyapi.com"]` ignores `notmyapi.com` and all subdomains. | `[]` |
 | `ignoreAmplitudeRequests` | Whether to ignore Amplitude requests. | `true` |
 
 {{/partial:collapse}}
@@ -905,8 +905,8 @@ amplitude.add(networkPlugin);
 {{partial:collapse name="NetworkTrackingOptions.CaptureRule"}}
 | Name |  Description | Default Value |
 | --- | --- | --- |
-| `hosts` | The hosts to capture. Supports wildcard characters `*`. eg. `["*"]` to match all hosts, `["*.example.com", "example.com"]` to match `example.com` and all subdomains. | `none` |
-| `statusCodeRange` | The status code range to capture. eg. `(200..299) + 413 + (500..599)` | `"500-599"` |
+| `hosts` | The hosts to capture. Supports wildcard characters `*`. For example, `["*"]` matches all hosts, `["*.example.com", "example.com"]` matches `example.com` and all subdomains. | `none` |
+| `statusCodeRange` | The status code range to capture. For example, `(200..299) + 413 + (500..599)` | `"500-599"` |
 
 {{/partial:collapse}}
 
@@ -945,12 +945,12 @@ When the plugin tracks a network request, it sends an event with the type `[Ampl
 | `[Amplitude] Request Body Size` | The size of the request body in bytes. |
 | `[Amplitude] Response Body Size` | The size of the response body in bytes. |
 
-#### Privacy Considerations
+#### Privacy considerations
 
-The Network Tracking Plugin automatically masks sensitive information:
+The Network Tracking Plugin masks the following sensitive information by default:
 
 1. Authentication credentials in URLs (username:password@domain.com)
-2. Common sensitive query parameters (username, password, email, phone, etc.)
+2. Common sensitive query parameters (for example, username, password, email, phone)
 
 ## Debugging
 
