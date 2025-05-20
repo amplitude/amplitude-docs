@@ -873,9 +873,11 @@ NetworkTrackingOptions options = new NetworkTrackingOptions(
         new NetworkTrackingOptions.CaptureRule(
             // Track all responses from your API domain with status code from 400 to 599
             Arrays.asList("*.example.com", "example.com"),
-            new ArrayList<Integer>() {{
+            new ArrayList<Integer>() {
+              {
                 for (int i = 400; i <= 599; i++) add(i);
-            }}
+              }
+            }
         )
     ),
     // Ignore specific domains
