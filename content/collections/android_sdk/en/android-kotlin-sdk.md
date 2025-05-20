@@ -789,12 +789,14 @@ import com.amplitude.core.network.NetworkTrackingPlugin
 
 // Create the plugin with default configuration
 val networkPlugin = NetworkTrackingPlugin()
-amplitude.add(networkPlugin)
 
 // Add the plugin as an interceptor to your OkHttp client
 val okHttpClient = OkHttpClient.Builder()
     .addInterceptor(networkPlugin)
     .build()
+
+// Add the plugin to your Amplitude instance
+amplitude.add(networkPlugin)
 ```
 {{/partial:tab}}
 {{partial:tab name="Java"}}
@@ -803,12 +805,14 @@ import com.amplitude.core.network.NetworkTrackingPlugin;
 
 // Create the plugin with default configuration
 NetworkTrackingPlugin networkPlugin = new NetworkTrackingPlugin();
-amplitude.add(networkPlugin);
 
 // Add the plugin as an interceptor to your OkHttp client
 OkHttpClient okHttpClient = new OkHttpClient.Builder()
     .addInterceptor(networkPlugin)
     .build();
+
+// Add the plugin to your Amplitude instance
+amplitude.add(networkPlugin);
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -818,7 +822,7 @@ The default configuration tracks all hosts except `*.amplitude.com` with status 
 {{partial:collapse name="NetworkTrackingOptions.DEFAULT"}}
 | Name | Description | Value |
 | --- | --- | --- |
-| `captureRules` | Captures all hosts (except *.amplitude.com) with status code 500 to 599. | `NetworkTrackingOptions(captureRules = listOf(CaptureRule(hosts = listOf("*"), statusCodeRange = (500..599).toList())))` |
+| `captureRules` | Captures all hosts (except `*.amplitude.com`) with status code `500` to `599`. | `NetworkTrackingOptions(captureRules = listOf(CaptureRule(hosts = listOf("*"), statusCodeRange = (500..599).toList())))` |
 | `ignoreHosts` | Don't ignore any other hosts by default. | `[]` |
 | `ignoreAmplitudeRequests` | Don't capture Amplitude requests by default. | `true` |
 
@@ -874,9 +878,7 @@ NetworkTrackingOptions options = new NetworkTrackingOptions(
             // Track all responses from your API domain with status code from 400 to 599
             Arrays.asList("*.example.com", "example.com"),
             new ArrayList<Integer>() {
-              {
-                for (int i = 400; i <= 599; i++) add(i);
-              }
+              { for (int i = 400; i <= 599; i++) add(i); }
             }
         )
     ),
@@ -917,8 +919,14 @@ The `captureRules` and `ignoreHosts` properties are mutually exclusive. If both 
 
 ```kotlin
 captureRules = listOf(
-    CaptureRule(hosts = listOf("*"), statusCodeRange = (400..599).toList()),
-    CaptureRule(hosts = listOf("*.example.com", "example.com"), statusCodeRange = (500..599).toList())
+    CaptureRule(
+        hosts = listOf("\*"),
+        statusCodeRange = (400..599).toList()
+    ),
+    CaptureRule(
+        hosts = listOf("\*.example.com", "example.com"),
+        statusCodeRange = (500..599).toList()
+    )
 )
 ```
 
@@ -931,7 +939,7 @@ The SDK processes requests as follows:
 
 #### Tracked event properties
 
-When the plugin tracks a network request, it sends an event with the type `[Amplitude] Network Tracking` with the following properties:
+When the plugin tracks a network request, it sends an event with the type `[Amplitude] Network Request` with the following properties:
 
 | Property | Description |
 | --- | --- |
