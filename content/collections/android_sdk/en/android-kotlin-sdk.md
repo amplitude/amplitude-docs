@@ -780,7 +780,51 @@ dependencies {
 
 #### Configuration
 
-The Network Tracking Plugin can be configured with various options to control which network requests are tracked:
+You can use the default configuration and integrate with OkHttp by adding the plugin as an interceptor:
+
+{{partial:tabs tabs="Kotlin, Java"}}
+{{partial:tab name="Kotlin"}}
+```kotlin
+import com.amplitude.core.network.NetworkTrackingPlugin
+
+// Create the plugin with default configuration
+val networkPlugin = NetworkTrackingPlugin()
+amplitude.add(networkPlugin)
+
+// Add the plugin as an interceptor to your OkHttp client
+val okHttpClient = OkHttpClient.Builder()
+    .addInterceptor(networkPlugin)
+    .build()
+```
+{{/partial:tab}}
+{{partial:tab name="Java"}}
+```java
+import com.amplitude.core.network.NetworkTrackingPlugin;
+
+// Create the plugin with default configuration
+NetworkTrackingPlugin networkPlugin = new NetworkTrackingPlugin();
+amplitude.add(networkPlugin);
+
+// Add the plugin as an interceptor to your OkHttp client
+OkHttpClient okHttpClient = new OkHttpClient.Builder()
+    .addInterceptor(networkPlugin)
+    .build();
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+The default configuration tracks all hosts except `*.amplitude.com` with status code `500` to `599`.
+
+{{partial:collapse name="NetworkTrackingOptions.DEFAULT"}}
+| Name | Description | Value |
+| --- | --- | --- |
+| `captureRules` | Captures all hosts (except *.amplitude.com) with status code 500 to 599. | `NetworkTrackingOptions(captureRules = listOf(CaptureRule(hosts = listOf("*"), statusCodeRange = (500..599).toList())))` |
+| `ignoreHosts` | Don't ignore any other hosts by default. | `[]` |
+| `ignoreAmplitudeRequests` | Don't capture Amplitude requests by default. | `true` |
+
+{{/partial:collapse}}
+
+To customize the tracking behavior, set `NetworkTrackingOptions` to control which network requests are tracked:
 
 {{partial:tabs tabs="Kotlin, Java"}}
 {{partial:tab name="Kotlin"}}
@@ -793,15 +837,10 @@ import com.amplitude.core.network.NetworkTrackingOptions.CaptureRule
 // Create custom capture rules
 val options = NetworkTrackingOptions(
     captureRules = listOf(
-        // Track all 5xx errors for any domain
+        // Track all responses from your API domain with status code from 400 to 599
         CaptureRule(
-            hosts = listOf("*"),
-            statusCodeRange = (500..599).toList()
-        ),
-        // Track all responses from your API domain
-        CaptureRule(
-            hosts = listOf("api.example.com"),
-            statusCodeRange = (200..599).toList()
+            hosts = listOf("*.example.com", "example.com"),
+            statusCodeRange = (400..599).toList()
         )
     ),
     // Ignore specific domains
@@ -828,30 +867,15 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
-// Create a list for status codes (500-599)
-List<Integer> serverErrorCodes = new ArrayList<>();
-for (int i = 500; i <= 599; i++) {
-    serverErrorCodes.add(i);
-}
-
-// Create a list for all status codes (200-599)
-List<Integer> allStatusCodes = new ArrayList<>();
-for (int i = 200; i <= 599; i++) {
-    allStatusCodes.add(i);
-}
-
-// Create custom capture rules
 NetworkTrackingOptions options = new NetworkTrackingOptions(
-    Arrays.asList(
-        // Track all 5xx errors for any domain
-        new CaptureRule(
-            Arrays.asList("*"),
-            serverErrorCodes
-        ),
-        // Track all responses from your API domain
-        new CaptureRule(
-            Arrays.asList("api.example.com"),
-            allStatusCodes
+    // Create custom capture rules
+    Collections.singletonList(
+        new NetworkTrackingOptions.CaptureRule(
+            // Track all responses from your API domain with status code from 400 to 599
+            Arrays.asList("*.example.com", "example.com"),
+            new ArrayList<Integer>() {{
+                for (int i = 400; i <= 599; i++) add(i);
+            }}
         )
     ),
     // Ignore specific domains
@@ -869,65 +893,39 @@ amplitude.add(networkPlugin);
 {{/partial:tab}}
 {{/partial:tabs}}
 
-You can also use the default configuration, which tracks all 5xx errors for any domain:
+{{partial:collapse name="NetworkTrackingOptions"}}
+| Name |  Description | Default Value |
+| --- | --- | --- |
+| `captureRules` | The rules for capturing network requests. You should always append rules with specific hosts to the bottom of the list. | `none` |
+| `ignoreHosts` | The hosts to ignore. Supports wildcard characters `*`. eg. `["*"]` to ignore all hosts, `["*.notmyapi.com", "notmyapi.com"]` to ignore `notmyapi.com` and all subdomains. | `[]` |
+| `ignoreAmplitudeRequests` | Whether to ignore Amplitude requests. | `true` |
 
-{{partial:tabs tabs="Kotlin, Java"}}
-{{partial:tab name="Kotlin"}}
+{{/partial:collapse}}
+
+{{partial:collapse name="NetworkTrackingOptions.CaptureRule"}}
+| Name |  Description | Default Value |
+| --- | --- | --- |
+| `hosts` | The hosts to capture. Supports wildcard characters `*`. eg. `["*"]` to match all hosts, `["*.example.com", "example.com"]` to match `example.com` and all subdomains. | `none` |
+| `statusCodeRange` | The status code range to capture. eg. `(200..299) + 413 + (500..599)` | `"500-599"` |
+
+{{/partial:collapse}}
+
+{{partial:admonition type="note" heading=""}}
+The `captureRules` and `ignoreHosts` properties are mutually exclusive. If both are set, `ignoreHosts` takes precedence. Amplitude matches incoming requests against the `captureRules` from bottom to top. For example, with this configuration:
+
 ```kotlin
-import com.amplitude.core.network.NetworkTrackingPlugin
-
-// Use default configuration (tracks all 5xx errors)
-val networkPlugin = NetworkTrackingPlugin()
-amplitude.add(networkPlugin)
+captureRules = listOf(
+    CaptureRule(hosts = listOf("*"), statusCodeRange = (400..599).toList()),
+    CaptureRule(hosts = listOf("*.example.com", "example.com"), statusCodeRange = (500..599).toList())
+)
 ```
-{{/partial:tab}}
-{{partial:tab name="Java"}}
-```java
-import com.amplitude.core.network.NetworkTrackingPlugin;
 
-// Use default configuration (tracks all 5xx errors)
-NetworkTrackingPlugin networkPlugin = new NetworkTrackingPlugin();
-amplitude.add(networkPlugin);
-```
-{{/partial:tab}}
-{{/partial:tabs}}
-
-#### OkHttp Integration
-
-To use the Network Tracking Plugin with OkHttp, you need to add it as an interceptor to your OkHttp client:
-
-{{partial:tabs tabs="Kotlin, Java"}}
-{{partial:tab name="Kotlin"}}
-```kotlin
-import com.amplitude.core.network.NetworkTrackingPlugin
-import okhttp3.OkHttpClient
-
-// Create the plugin
-val networkPlugin = NetworkTrackingPlugin()
-amplitude.add(networkPlugin)
-
-// Add the plugin as an interceptor to your OkHttp client
-val okHttpClient = OkHttpClient.Builder()
-    .addInterceptor(networkPlugin)
-    .build()
-```
-{{/partial:tab}}
-{{partial:tab name="Java"}}
-```java
-import com.amplitude.core.network.NetworkTrackingPlugin;
-import okhttp3.OkHttpClient;
-
-// Create the plugin
-NetworkTrackingPlugin networkPlugin = new NetworkTrackingPlugin();
-amplitude.add(networkPlugin);
-
-// Add the plugin as an interceptor to your OkHttp client
-OkHttpClient okHttpClient = new OkHttpClient.Builder()
-    .addInterceptor(networkPlugin)
-    .build();
-```
-{{/partial:tab}}
-{{/partial:tabs}}
+The SDK processes requests as follows:
+- A request to `example.com` with status code 503: matches last rule's hosts → matches statusCodeRange → captured
+- A request to `example.com` with status code 401: matches last rule's hosts → doesn't match statusCodeRange → ignored
+- A request to `other.com` with status code 401: doesn't match last rule's hosts → matches first rule's hosts → matches statusCodeRange → captured
+- A request to `other.com` with status code 200: doesn't match last rule's hosts → matches first rule's hosts → doesn't match statusCodeRange → ignored
+{{/partial:admonition}}
 
 #### Tracked event properties
 
@@ -935,17 +933,17 @@ When the plugin tracks a network request, it sends an event with the type `[Ampl
 
 | Property | Description |
 | --- | --- |
-| `[Amplitude] URL` | The full URL of the request (with sensitive parameters masked) |
-| `[Amplitude] URL Query` | The query string of the URL |
-| `[Amplitude] URL Fragment` | The fragment part of the URL |
-| `[Amplitude] Request Method` | The HTTP method (GET, POST, etc.) |
-| `[Amplitude] Status Code` | The HTTP status code of the response |
-| `[Amplitude] Error Message` | Error message if the request failed |
-| `[Amplitude] Start Time` | Timestamp when the request started |
-| `[Amplitude] Completion Time` | Timestamp when the request completed |
-| `[Amplitude] Duration` | Duration of the request in milliseconds |
-| `[Amplitude] Request Body Size` | Size of the request body in bytes |
-| `[Amplitude] Response Body Size` | Size of the response body in bytes |
+| `[Amplitude] URL` | The URL of the network request with sensitive information masked. |
+| `[Amplitude] URL Query` | The query parameters of the URL. |
+| `[Amplitude] URL Fragment` | The fragment identifier of the URL. |
+| `[Amplitude] Request Method` | The HTTP method used for the request (GET, POST, etc.). |
+| `[Amplitude] Status Code` | The HTTP status code of the response. |
+| `[Amplitude] Error Message` | The local error message if the request failed with out a status code. |
+| `[Amplitude] Start Time` | The timestamp when the request started, in milliseconds since Unix epoch. |
+| `[Amplitude] Completion Time` | The timestamp when the request completed, in milliseconds since Unix epoch. |
+| `[Amplitude] Duration` | The duration of the request in milliseconds. |
+| `[Amplitude] Request Body Size` | The size of the request body in bytes. |
+| `[Amplitude] Response Body Size` | The size of the response body in bytes. |
 
 #### Privacy Considerations
 
