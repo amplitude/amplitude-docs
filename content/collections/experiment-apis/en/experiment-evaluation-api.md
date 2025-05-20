@@ -6,7 +6,7 @@ source: 'https://www.docs.developers.amplitude.com/experiment/apis/evaluation-ap
 summary:  Lets you retrieve variant assignment data for users with remote evaluation.
 ---
 
-The Amplitude Experiment Evaluation APIs retrieve variant assignment data for users through [remote evaluation](/docs/feature-experiment/remote-evaluation) via the [evaluation API](#evaluation-api), or download local evaluation flags using the [flags API](#flags-api).
+The Amplitude Experiment Evaluation APIs retrieve variant assignment data for users through [remote evaluation](/docs/feature-experiment/remote-evaluation) using the [evaluation API](#evaluation-api), or download local evaluation flags using the [flags API](#flags-api).
 
 ## Regions
 
@@ -92,7 +92,7 @@ GET /v1/flags
 
 The Flags API allows you to download flag configurations for local evaluations. This is useful for bootstrapping client-side local evaluation SDKs with `initialFlags` or running evaluation using external flag configuration storage like edge environments.
 
-The data model returned by this API is different from what you may see in the [management API](./experiment-management-api.md) for flags and experiments. This format is specifically used for evaluation purposes, which is more verbose and less human readable than the management API.
+The data model returned by this API is different from what you may see in the [management API](/docs/apis/experiment/experiment-management-api) for flags and experiments. This format is specifically used for evaluation purposes, which is more verbose and less human readable than the management API.
 
 ### Flags query parameters
 
