@@ -1,125 +1,109 @@
-# Amplitude Documentation Platform
+# Amplitude Product Documentation Overview
 
-## Product Overview
+## High-Level Overview
 
-The Amplitude Documentation Platform is a comprehensive content management system designed to organize and deliver product documentation for Amplitude's suite of products. The platform covers analytics, experimentation, data management, and developer tools through a structured collection-based architecture.
+Amplitude is a comprehensive product analytics and experimentation platform designed to help teams understand user behavior, make data-driven decisions, and optimize digital experiences. The platform offers a suite of integrated products that work together to provide end-to-end analytics and experimentation capabilities.
 
-Key features of the platform include:
-- Organized documentation collections representing different product areas
-- Support for multiple content types (guides, references, SDK docs, troubleshooting)
-- Multi-product coverage across Analytics, Experiment, Data, and Session Replay
-- Extensive SDK documentation for multiple platforms and languages
-- API reference documentation for various Amplitude services
-- Chart-specific guidance for analytics visualization
-- Educational resources and implementation guides
-- Multilingual support with primary focus on English and Japanese
-- Administrative and account management documentation
+Key features include behavioral analytics, user segmentation, funnel analysis, retention tracking, feature flagging, A/B testing, customer data management, session recording, and in-app messaging. Amplitude enables product teams to track user interactions, analyze patterns, test hypotheses, and deliver personalized experiences based on data-driven insights.
 
-## Product Relationships and Structure
+Primary use cases include product optimization, user experience improvement, feature experimentation, conversion rate optimization, retention analysis, and personalized engagement strategies.
 
-The documentation is organized into several major product areas that reflect Amplitude's product ecosystem:
+## Product and Feature Relationships
 
-### Analytics Platform
-The core analytics functionality is documented in `analytics.yaml`, with specialized collections for different chart types and visualization tools:
-- Event segmentation, funnel analysis, and retention analysis
-- Data visualization tools like Compass and data tables
-- User behavior analysis including user sessions, journeys, and lifecycle
+The Amplitude ecosystem consists of several interconnected products:
 
-### Experiment Platform
-Amplitude's experimentation capabilities are documented across multiple collections:
-- Core experimentation features (`experiment.yaml`)
-- Implementation guides for various platforms (`experiment-sdks.yaml`)
-- API documentation (`experiment-apis.yaml`)
-- Theoretical foundations (`experiment-theory.yaml`)
-- Advanced topics and workflows (`under-the-hood.yaml`, `workflow.yaml`)
-- Troubleshooting resources (`experiment_troubleshooting.yaml`)
+### Analytics
+- Core analytics platform for tracking and analyzing user behavior
+- Includes visualization tools like Event Segmentation, Funnel Analysis, Retention Analysis
+- Provides user journey mapping and cohort creation capabilities
+- Supports behavioral analytics across web and mobile platforms
 
-### Data Management
-Data-related documentation covers:
-- Data sources configuration (`sources.yaml`, `source-catalog.yaml`)
-- Data destinations (`destination-catalog.yaml`)
-- Audience management (`audiences.yaml`)
-- PII handling (`pii_integrations.yaml`)
-- Customer Data Platform functionality (`cdp.yaml`)
+### Experiment
+- Feature flag and A/B testing platform for controlled experimentation
+- Enables teams to test hypotheses and measure impact
+- Integrates with Analytics for results measurement
+- Supports both client-side and server-side implementation
+- Includes targeting capabilities for specific user segments
 
-### Developer Resources
-Extensive SDK documentation spans multiple platforms:
-- Web: Browser SDK (`browser_sdk.yaml`)
-- Mobile: iOS (`ios_sdk.yaml`), Android (`android_sdk.yaml`)
-- Cross-platform: React Native (`react_native_sdk.yaml`), Flutter (`flutter_sdk.yaml`)
-- Server-side: Node.js (`node_js_sdk.yaml`), Python (`python_sdk.yaml`), Java (`java_sdk.yaml`), Go (`go_sdk.yaml`)
-- Game engines: Unity (`unity_sdk.yaml`), Unreal (`unreal_sdk.yaml`)
+### CDP (Customer Data Platform)
+- Data management solution for unifying customer data
+- Connects data sources and destinations
+- Manages audience definitions and segmentation
+- Handles PII (Personally Identifiable Information) compliance
 
-Additional developer resources include:
-- Ampli toolkit documentation (`ampli.yaml`)
-- API references (`api.yaml`, `apis.yaml`)
-- Instrumentation guides (`instrumentation.yaml`)
+### Session Replay
+- Visual recording of user sessions for qualitative analysis
+- Complements quantitative analytics with visual context
+- Helps identify usability issues and user friction points
 
-### Additional Products
-- Session Replay functionality (`session-replay.yaml`)
-- Guides and Surveys features (`guides_and_surveys.yaml`, `guides_and_surveys_api.yaml`)
-
-### Administrative Content
-- Account management (`account-management.yaml`)
-- Billing information (`billing-use.yaml`)
-- Single sign-on configuration (`single-sign-on.yaml`)
+### Guides and Surveys
+- In-app messaging and feedback collection tools
+- Enables targeted communication based on user behavior
+- Collects qualitative feedback to complement analytics data
 
 ## Key Nomenclature and Definitions
 
-The documentation platform uses several key concepts:
-
-**Collections**: Content groupings organized by product area, feature, or content type. Each collection is defined in a YAML file that specifies its properties and behavior.
-
-**Mount Points**: References to specific entry points that serve as the root for a collection's content structure.
-
-**Routes**: URL patterns defining how content is accessed, following patterns like:
-- `/analytics/{slug}` for analytics documentation
-- `/feature-experiment/{slug}` for experiment documentation
-- `/sdks/analytics/{platform}/{slug}` for SDK documentation
-- `/apis/{product}/{slug}` for API documentation
-- `/analytics/charts/{chart-type}/{slug}` for chart-specific documentation
-
-**Date Behavior**: Rules determining content visibility based on publication dates:
-```yaml
-date_behavior:
-  past: public
-  future: private
-```
-
-**Preview Targets**: Configuration for content preview functionality:
-```yaml
-preview_targets:
-  - label: Entry
-    url: '{permalink}'
-    refresh: true
-```
-
-**Nav Title Injection**: Custom navigation labels applied to content sections:
-```yaml
-inject:
-  nav_title: analytics
-```
-
-**Structure Root**: Boolean setting that determines if a collection appears at the root level of navigation.
+- **Event**: A discrete user action or system occurrence tracked in Amplitude (e.g., button click, page view)
+- **User Properties**: Attributes associated with users for segmentation (e.g., demographics, subscription status)
+- **Cohort**: A defined group of users meeting specific criteria based on behavior or properties
+- **Variant**: A specific version of a feature in an experiment
+- **Flag**: A feature toggle that controls access to functionality
+- **Experiment**: A controlled test comparing different variants of a feature
+- **Deployment**: An environment configuration (e.g., production, staging, development)
+- **Bucketing**: The process of assigning users to experiment variants
+- **Exposure**: When a user encounters a feature flag or experiment
+- **SDK**: Software Development Kit for implementing Amplitude in applications
+- **API**: Application Programming Interface for programmatic interaction with Amplitude
+- **Mutex Group**: A group of flags where only one can be active at a time
+- **Holdout Group**: Users excluded from experiments for baseline comparison
 
 ## Product Ecosystem Integration
 
-The documentation platform integrates with Amplitude's broader product ecosystem in several ways:
+Amplitude's products form an integrated ecosystem that supports the full analytics and experimentation lifecycle:
 
-1. **Analytics Integration**: Documentation covers the full analytics workflow from data collection to visualization and analysis.
+1. **Data Collection**: SDKs for various platforms (Browser, iOS, Android, React Native, Flutter, Unity, Unreal, Node.js, Python, Java, Go) capture user behavior and send it to Amplitude.
 
-2. **Experiment Integration**: Comprehensive documentation for A/B testing and feature flag capabilities, including implementation guides and theoretical foundations.
+2. **Data Processing**: The CDP organizes, structures, and routes data to appropriate destinations, ensuring data quality and compliance.
 
-3. **Data Platform Integration**: Documentation for the data infrastructure that powers Amplitude's products, including sources, destinations, and management tools.
+3. **Analysis**: The Analytics platform processes data into meaningful visualizations and insights through charts, dashboards, and reports.
 
-4. **Developer Tools Integration**: SDK documentation across multiple platforms supports implementation in various technical environments.
+4. **Experimentation**: The Experiment platform uses insights from Analytics to form hypotheses, then tests them through feature flags and A/B tests.
 
-5. **Cross-Product Features**: Documentation for features that span multiple products, such as account management and single sign-on.
+5. **Engagement**: Guides and Surveys interact with users based on their behavior and segment membership.
 
-The platform uses a consistent URL structure to organize content by product area, with specialized routing patterns for different content types:
-- Product documentation: `/[product]/{slug}`
-- SDK documentation: `/sdks/[product]/[platform]/{slug}`
-- API documentation: `/apis/[product]/{slug}`
-- Chart documentation: `/analytics/charts/[chart-type]/{slug}`
+6. **Optimization**: Session Replay provides qualitative context for the quantitative data, helping teams understand the "why" behind the numbers.
 
-This structure reflects the relationships between Amplitude's products and provides a coherent navigation experience for users seeking information about specific features or implementation approaches.
+The platform supports both client-side and server-side implementations, with options for local or remote evaluation of experiments. Data can flow bidirectionally between Amplitude and other tools in a company's tech stack through the extensive integration catalog.
+
+## API Endpoints and Implementation
+
+### Analytics API
+- Supports querying analytics data and managing users
+- Enables programmatic access to charts, cohorts, and user data
+
+### Experiment Management API
+- Base URL: `https://management-api.experiment.amplitude.com`
+- EU Regional endpoint: `https://management-api.eu.experiment.amplitude.com`
+- Authentication: `Authorization: Bearer {management_api_key}`
+- Key endpoints:
+  - Flags: `/flags`, `/flags/{flag_id}`
+  - Experiments: `/experiments`, `/experiments/{experiment_id}`
+  - Deployments: `/deployments`, `/deployments/{deployment_id}`
+  - Mutex Groups: `/mutexGroups`, `/mutexGroups/{mutex_group_id}`
+  - Holdout Groups: `/holdoutGroups`, `/holdoutGroups/{holdout_group_id}`
+
+### Experiment Evaluation API
+- Endpoint: `GET /api/2/variantAssignments`
+- Parameters: flag_keys, user_id, device_id, user_properties, context
+- Headers: `Authorization: Api-Key {deployment_key}`
+- Used for retrieving variant assignments for users
+
+### SDK Implementation
+All SDKs implement similar core methods:
+- `initialize/init`: Configure the SDK with API keys and options
+- `logEvent/track`: Record user actions
+- `setUserId/identify`: Manage user identity and properties
+- `fetch/evaluate`: Retrieve experiment variants
+- `exposure/track`: Record experiment exposures
+
+The platform supports multiple deployment options including Docker containers, Kubernetes with Helm charts, and standard package managers for each supported language and platform.

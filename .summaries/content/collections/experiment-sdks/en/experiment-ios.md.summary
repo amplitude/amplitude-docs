@@ -1,5 +1,5 @@
 ## Summary
-The Experiment iOS SDK provides client-side feature flag and experiment management for iOS applications, supporting both remote and local evaluation with automatic exposure tracking and integration with Amplitude Analytics or third-party analytics providers.
+The Experiment iOS SDK provides client-side feature flag and experiment management for iOS applications, supporting remote and local evaluation, automatic exposure tracking, and integration with Amplitude Analytics or third-party analytics providers. It offers methods for fetching variants, accessing flag values, and tracking exposures.
 
 ## Keywords
 - iOS SDK
@@ -9,11 +9,9 @@ The Experiment iOS SDK provides client-side feature flag and experiment manageme
 - remote evaluation
 - local evaluation
 - exposure tracking
-- CocoaPods
-- Swift Package Manager
+- Amplitude integration
 - user targeting
 - variant fetching
+- CocoaPods
+- Swift Package Manager
 - account-level bucketing
-- payload access
-- ExperimentUserProvider
-- ExposureTrackingProvider

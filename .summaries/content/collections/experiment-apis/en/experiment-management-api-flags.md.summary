@@ -1,16 +1,16 @@
 ## Summary
-This documentation page details the Experiment Management API Flag Endpoints, which provide comprehensive functionality for managing feature flags in Amplitude Experiment, including creating, listing, editing, and managing variants, deployments, and user inclusions for flags.
+This documentation page details the Experiment Management API Flag Endpoints, which provide comprehensive functionality for managing feature flags in Amplitude Experiment, including creating, listing, editing flags and their variants, managing user inclusions, and configuring deployments.
 
 ## Keywords
 - feature flag management
 - flag variants
 - flag deployments
-- user inclusions
+- variant inclusions
 - targeting segments
 - flag versioning
 - bucketing configuration
 - rollout percentage
-- variant payloads
 - flag evaluation modes
-- REST API endpoints
-- flag archiving
+- user targeting
+- flag API endpoints
+- variant payload
