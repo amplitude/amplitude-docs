@@ -3,6 +3,10 @@ id: 4d2e02c1-9bf7-48ec-ab17-641fe208de23
 blueprint: page
 title: 'Site components'
 ---
+
+{{partial:experiment/interactive_table-test api="Evaluation"}}
+
+
 ## Tabs
 
 Uses two partials, `tabs` and `tab`. `tabs` provides the wrapper and sets the tab names. `tab` renders the individual tab content. 
