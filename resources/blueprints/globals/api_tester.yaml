@@ -1,0 +1,99 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: apis
+            field:
+              type: replicator
+              display: APIs
+              localizable: false
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    api:
+                      display: API
+                      fields:
+                        -
+                          handle: api_name
+                          field:
+                            type: text
+                            display: 'API Name'
+                            localizable: false
+                        -
+                          handle: us_url
+                          field:
+                            input_type: url
+                            type: text
+                            display: 'US URL'
+                            localizable: false
+                            width: 50
+                        -
+                          handle: eu_url
+                          field:
+                            input_type: url
+                            type: text
+                            display: 'EU URL'
+                            localizable: false
+                            width: 50
+                        -
+                          handle: method
+                          field:
+                            options:
+                              -
+                                key: POST
+                                value: null
+                              -
+                                key: GET
+                                value: null
+                            type: select
+                            display: Method
+                            localizable: false
+                        -
+                          handle: fields
+                          field:
+                            type: replicator
+                            display: Fields
+                            localizable: false
+                            sets:
+                              new_set_group:
+                                display: 'New Set Group'
+                                sets:
+                                  field:
+                                    display: Field
+                                    fields:
+                                      -
+                                        handle: name
+                                        field:
+                                          type: text
+                                          display: Name
+                                          localizable: false
+                                          width: 50
+                                      -
+                                        handle: input_type
+                                        field:
+                                          options:
+                                            -
+                                              key: text
+                                              value: null
+                                            -
+                                              key: boolean
+                                              value: null
+                                            -
+                                              key: select
+                                              value: null
+                                          type: select
+                                          display: 'Input type'
+                                          localizable: false
+                                          width: 50
+                                      -
+                                        handle: select_options
+                                        field:
+                                          type: list
+                                          display: 'Select options'
+                                          localizable: false
+                                          if:
+                                            input_type: 'equals select'

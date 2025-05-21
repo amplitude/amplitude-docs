@@ -1,0 +1,50 @@
+{{api_tester:apis}}
+{{ if api_name == "Evaulation"}}
+<div class="api-tester" 
+data-url="{{ us_url }}" 
+data-method="{{ method }}" 
+data-fields='{{ fields | to_json}}'
+data-auth="{{deployment_key}}">
+
+<table>
+<thead><tr><th>Field</th><th>Value</th></tr></thead>
+<tbody>
+{{ fields }}
+<tr>
+<td>{{ name }}</td>
+<td>
+{{if input_type == "select"}}
+<select 
+name="{{ name | slugify }}" 
+data-field="{{ name | slugify }}" >
+{{select_options}}
+<option value="{{ value }}">{{ value }}</option>
+{{/select_options}}
+</select>
+{{else}}
+<input 
+type="{{ input_type }}" 
+name="{{ name | slugify }}" 
+data-field="{{ name | slugify }}" 
+/>
+{{/if}}
+</td>
+</tr>
+{{ /fields }}
+</tbody>
+</table>
+
+<button class="api-tester__send">Send</button>
+
+<h4>cURL</h4>
+<pre class="api-tester__curl"></pre>
+
+<h4>Response</h4>
+<pre class="api-tester__response"></pre>
+</div>
+
+
+{{/if}}
+{{/api_tester:apis}}
+
+<script src="/docs/js/interactive-api-tester.js"></script>

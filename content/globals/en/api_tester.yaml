@@ -1,0 +1,58 @@
+apis:
+  -
+    id: maya8vft
+    api_name: Evaulation
+    us_url: 'https://api.lab.amplitude.com/v1/vardata?'
+    eu_url: 'https://api.lab.eu.amplitude.com/v1/vardata?'
+    method: GET
+    fields:
+      -
+        id: maya9gbw
+        name: 'Deployment Key'
+        input_type: text
+        type: field
+        enabled: true
+      -
+        id: maya9sjv
+        name: 'User ID'
+        input_type: text
+        type: field
+        enabled: true
+      -
+        id: mayaa0ol
+        name: 'Device ID'
+        input_type: text
+        type: field
+        enabled: true
+      -
+        id: mayaa5w0
+        name: 'Flag Keys'
+        input_type: text
+        type: field
+        enabled: true
+      -
+        id: mayaacgo
+        name: Context
+        input_type: text
+        type: field
+        enabled: true
+      -
+        id: mayaahre
+        name: 'Server Zone'
+        input_type: select
+        select_options:
+          - US
+          - EU
+        type: field
+        enabled: true
+      -
+        id: mayaau4f
+        name: 'Track assignment'
+        input_type: select
+        select_options:
+          - 'Yes'
+          - 'No'
+        type: field
+        enabled: true
+    type: api
+    enabled: true
