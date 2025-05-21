@@ -1,47 +1,47 @@
+<style>
+    .api-tester__curl code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+</style>
+{{api-name}}
 {{api_tester:apis}}
-{{ if api_name == "Evaulation"}}
+{{ if api_name === api-name}}
 <div class="api-tester" 
-data-url="{{ us_url }}" 
+data-url-us="{{ us_url }}"
+data-url-eu="{{ eu_url }}"  
 data-method="{{ method }}" 
 data-fields='{{ fields | to_json}}'
 data-auth="{{deployment_key}}">
+<pre class="min-w-[712px]"><code class="api-tester__curl language-bash"></code></pre>
 
-<table>
-<thead><tr><th>Field</th><th>Value</th></tr></thead>
-<tbody>
+<div class="mt-8 grid grid-cols-2 gap-4 max-w">
+
+
+
+
+<div class="grid grid-cols-1 gap-6 w-80">
 {{ fields }}
-<tr>
-<td>{{ name }}</td>
-<td>
+<label for="" class="block">
+<span class="text-xs text-mountain-mist-300">{{name}}</span>
 {{if input_type == "select"}}
-<select 
-name="{{ name | slugify }}" 
-data-field="{{ name | slugify }}" >
+<select class="mt-1 block w-full" name="{{ name | slugify }}" data-field="{{ name | slugify }}"  {{ if omit_from_curl }}data-omit-from-curl='true'{{ /if }} >
 {{select_options}}
 <option value="{{ value }}">{{ value }}</option>
 {{/select_options}}
 </select>
 {{else}}
-<input 
-type="{{ input_type }}" 
-name="{{ name | slugify }}" 
-data-field="{{ name | slugify }}" 
-/>
+<input class="mt-1 block w-full" type="{{ input_type }}" name="{{ name | slugify }}" data-field="{{ name | slugify }}"  {{ if omit_from_curl }}data-omit-from-curl='true'{{ /if }} />
 {{/if}}
-</td>
-</tr>
+</label>
 {{ /fields }}
-</tbody>
-</table>
-
-<button class="api-tester__send">Send</button>
-
-<h4>cURL</h4>
-<pre class="api-tester__curl"></pre>
-
-<h4>Response</h4>
-<pre class="api-tester__response"></pre>
+<button class="md-button w-1/2 border rounded py-1 hover:bg-amp-blue-900 transition-colors api-tester__send">Send</button>
 </div>
+<pre class="api-tester__response"></pre>
+
+</div>
+
+
 
 
 {{/if}}

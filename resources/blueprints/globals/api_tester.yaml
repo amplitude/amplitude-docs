@@ -97,3 +97,9 @@ tabs:
                                           localizable: false
                                           if:
                                             input_type: 'equals select'
+                                      -
+                                        handle: omit_from_curl
+                                        field:
+                                          type: toggle
+                                          display: 'Omit from cURL'
+                                          localizable: false
