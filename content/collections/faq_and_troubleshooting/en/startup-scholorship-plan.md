@@ -49,7 +49,7 @@ We’ll give you the option to decrease your MTU volume the following month or s
 
 
 {{partial:collapse name="What happens after our one year Amplitude Startup Scholarship?"}}
-At the end of one year, you’ll have the option to either upgrade to the Growth plan or go back to the Free plan. The Free plan includes 50,000 monthly events and our core analytics features. We’ll provide you with an extra 30 days to trial the Growth plan while you make your decision. A Sales representative should be reaching out to you around the 11th month for any questions you may have. If you want to proactively learn more about your plan options, contact to the Sales team at [global-sdr@amplitude.com](mailto:global-sdr@amplitude.com). 
+At the end of one year, you have the option to either upgrade to the Growth plan or go back to the Free plan. The Free plan includes 50,000 monthly tracked users (MTUs) and core analytics features. Amplitude provides you with an extra 30 days to trial the Growth plan while you make your decision. A Sales representative should reach out to you around the 11th month for any questions you may have. If you want to proactively learn more about your plan options, contact to the Sales team at [global-sdr@amplitude.com](mailto:global-sdr@amplitude.com). 
 
 Amplitude can't grant extensions past one year for the Amplitude Startup Scholarship.
 {{/partial:collapse}}
