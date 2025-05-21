@@ -9,7 +9,6 @@ function initTester(el) {
     const method = el.dataset.method.toUpperCase();
     const fieldsCfg = JSON.parse(el.dataset.fields);
     const authField = el.dataset.authField || null;
-    //const authPrefix = el.dataset.authPrefix || "";
 
     const inputs = Array.from(el.querySelectorAll("[data-field]"));
     const curlEl = el.querySelector(".api-tester__curl");
@@ -54,13 +53,11 @@ function initTester(el) {
                 .join("&");
             if (qs) requestUrl += `?${qs}`;
         }
-
         // 2) build lines
         const lines = [`curl -X ${method} "${requestUrl}"`];
         lines.push(`-H "Content-Type: application/json"`);
-        if (authField && fullPayload[authField]) {
-            lines.push(`-H "Authorization: Api-Key ${fullPayload[authField]}"`);
-        }
+        lines.push(`-H "Authorization: Api-Key ${fullPayload["deployment-key"]}"`);
+
 
         // 3) only non-GET/DELETE get a body
         if (!["GET", "DELETE"].includes(method)) {
