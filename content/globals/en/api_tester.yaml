@@ -1,10 +1,10 @@
 apis:
   -
     id: maya8vft
-    api_name: Evaulation
+    api_name: Evaluation
     us_url: 'https://api.lab.amplitude.com/v1/vardata?'
     eu_url: 'https://api.lab.eu.amplitude.com/v1/vardata?'
-    method: GET
+    method: POST
     fields:
       -
         id: maya9gbw
@@ -12,30 +12,35 @@ apis:
         input_type: text
         type: field
         enabled: true
+        omit_from_curl: true
       -
         id: maya9sjv
         name: 'User ID'
         input_type: text
         type: field
         enabled: true
+        omit_from_curl: false
       -
         id: mayaa0ol
         name: 'Device ID'
         input_type: text
         type: field
         enabled: true
+        omit_from_curl: false
       -
         id: mayaa5w0
         name: 'Flag Keys'
         input_type: text
         type: field
         enabled: true
+        omit_from_curl: false
       -
         id: mayaacgo
         name: Context
         input_type: text
         type: field
         enabled: true
+        omit_from_curl: false
       -
         id: mayaahre
         name: 'Server Zone'
@@ -45,6 +50,7 @@ apis:
           - EU
         type: field
         enabled: true
+        omit_from_curl: true
       -
         id: mayaau4f
         name: 'Track assignment'
@@ -54,5 +60,53 @@ apis:
           - 'No'
         type: field
         enabled: true
+        omit_from_curl: false
+    type: api
+    enabled: true
+  -
+    id: maygukud
+    api_name: 'Exposure Tracking'
+    us_url: 'https://api2.amplitude.com/2/httpapi'
+    eu_url: 'https://api.eu.amplitude.com/2/httpapi'
+    method: POST
+    fields:
+      -
+        id: maygwd67
+        name: 'Deployment key'
+        input_type: text
+        type: field
+        enabled: true
+        omit_from_curl: true
+      -
+        id: maygz87s
+        name: 'User ID'
+        input_type: text
+        type: field
+        enabled: true
+        omit_from_curl: false
+      -
+        id: maygzd1j
+        name: 'Flag key'
+        input_type: text
+        type: field
+        enabled: true
+        omit_from_curl: false
+      -
+        id: maygzmke
+        name: 'Variant key'
+        input_type: text
+        type: field
+        enabled: true
+        omit_from_curl: false
+      -
+        id: maygzw2i
+        name: 'Server zone'
+        input_type: select
+        select_options:
+          - US
+          - EU
+        type: field
+        enabled: true
+        omit_from_curl: true
     type: api
     enabled: true

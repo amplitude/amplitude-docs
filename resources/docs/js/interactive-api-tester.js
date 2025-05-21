@@ -1,80 +1,116 @@
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".api-tester").forEach(initTester);
+    document.querySelectorAll(".api-tester").forEach(initTester);
 });
 
 function initTester(el) {
-  const url        = el.dataset.url;
-  const method     = el.dataset.method.toUpperCase();
-  const fieldsCfg  = JSON.parse(el.dataset.fields);
-  const authField  = el.dataset.authField || null;
-  //const authPrefix = el.dataset.authPrefix || "";
 
-  const inputs = Array.from(el.querySelectorAll("[data-field]"));
-  const curlEl  = el.querySelector(".api-tester__curl");
-  const resEl   = el.querySelector(".api-tester__response");
-  const btn     = el.querySelector(".api-tester__send");
+    const urlUs = el.dataset.urlUs;
+    const urlEu = el.dataset.urlEu;
+    const method = el.dataset.method.toUpperCase();
+    const fieldsCfg = JSON.parse(el.dataset.fields);
+    const authField = el.dataset.authField || null;
+    //const authPrefix = el.dataset.authPrefix || "";
 
-  function getPayload() {
+    const inputs = Array.from(el.querySelectorAll("[data-field]"));
+    const curlEl = el.querySelector(".api-tester__curl");
+    const resEl = el.querySelector(".api-tester__response");
+    const btn = el.querySelector(".api-tester__send");
+
+  function getCurlPayload(fullPayload) {
     return inputs.reduce((obj, inp) => {
-      if (inp.type === "checkbox") {
-        obj[inp.dataset.field] = inp.checked;
-      } else {
-        obj[inp.dataset.field] = inp.value;
+      if (inp.dataset.omitFromCurl !== "true") {
+        const key = inp.dataset.field;
+        obj[key] = fullPayload[key];
       }
       return obj;
     }, {});
   }
 
-  function buildCurl(payload) {
-    // Always send JSON
-    const headers = [`-H "Content-Type: application/json"`];
-    if (authField && payload[authField]) {
-      headers.push(
-        `-H "Authorization: ${authPrefix + payload[authField]}"`
-      );
+    function getPayload() {
+        return inputs.reduce((obj, inp) => {
+            if (inp.type === "checkbox") {
+                obj[inp.dataset.field] = inp.checked;
+            } else {
+                obj[inp.dataset.field] = inp.value;
+            }
+            return obj;
+        }, {});
     }
-    const dataPart = ["GET","DELETE"].includes(method)
-      ? ""
-      : ` -d '${JSON.stringify(payload)}'`;
-    return `curl -X ${method} "${url}" ` + headers.join(" ") + dataPart;
-  }
 
-  function updateCurl() {
-    curlEl.textContent = buildCurl(getPayload());
-  }
+    function resolveBaseUrl(payload) {
+        return payload["server-zone"] === "EU" ? urlEu : urlUs;
+    }
 
-  async function send() {
+    function buildCurl(fullPayload) {
+        // pick only the fields we want in the JSON body
+        const payload = getCurlPayload(fullPayload);
+
+        // 1) handle GET query-string as before
+        let requestUrl = resolveBaseUrl(fullPayload);
+        if (method === "GET") {
+            const qs = Object.entries(fullPayload)
+                .filter(([k, v]) => v !== "" && !fieldsCfg[k]?.omitFromCurl) // also strip omitted from URL if you like
+                .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
+                .join("&");
+            if (qs) requestUrl += `?${qs}`;
+        }
+
+        // 2) build lines
+        const lines = [`curl -X ${method} "${requestUrl}"`];
+        lines.push(`-H "Content-Type: application/json"`);
+        if (authField && fullPayload[authField]) {
+            lines.push(`-H "Authorization: Api-Key ${fullPayload[authField]}"`);
+        }
+
+        // 3) only non-GET/DELETE get a body
+        if (!["GET", "DELETE"].includes(method)) {
+            const pretty = JSON.stringify(payload, null, 2);
+            lines.push(`-d '${pretty}'`);
+        }
+
+        // 4) join with backslashes
+        return lines
+            .map((line, idx) => idx === 0 ? line : `  ${line}`)
+            .join(" \\\n");
+    }
+
+    function updateCurl() {
+        const codeEl = el.querySelector(".api-tester__curl");
+        codeEl.textContent = buildCurl(getPayload());
+    }
+
+    async function send() {
+        updateCurl();
+        const payload = getPayload();
+        const baseUrl = resolveBaseUrl(payload);
+        const headers = {
+            "Content-Type": "application/json"
+        };
+        headers["Authorization"] = 'Api-Key ' + payload["deployment-key"];
+
+
+        try {
+            const opts = {
+                method,
+                headers,
+                body: ["GET", "DELETE"].includes(method) ? null : JSON.stringify(payload)
+            };
+            const response = await fetch(baseUrl, opts);
+            const json = await response.json();
+            resEl.textContent = JSON.stringify(json, null, 2);
+        } catch (err) {
+            resEl.textContent = `Error: ${err.message}`;
+        }
+    }
+
+    // Recompute cURL on every input/change
+    inputs.forEach(i => {
+        i.addEventListener("input", updateCurl);
+        i.addEventListener("change", updateCurl);
+    });
+
+    btn.addEventListener("click", send);
+
+    // Initial render
     updateCurl();
-    const payload = getPayload();
-    const headers = { "Content-Type": "application/json" };
-    console.log(payload)
-    
-      headers["Authorization"] = 'Api-Key ' +  payload["deployment-key"];
-    
-    console.log(headers);
-
-    try {
-      const opts = {
-        method,
-        headers,
-        body: ["GET","DELETE"].includes(method) ? null : JSON.stringify(payload)
-      };
-      const response = await fetch(url, opts);
-      const json     = await response.json();
-      resEl.textContent = JSON.stringify(json, null, 2);
-    } catch (err) {
-      resEl.textContent = `Error: ${err.message}`;
-    }
-  }
-
-  // Recompute cURL on every input/change
-  inputs.forEach(i => {
-    i.addEventListener("input",  updateCurl);
-    i.addEventListener("change", updateCurl);
-  });
-
-  btn.addEventListener("click", send);
-
-  // Initial render
-  updateCurl();
 }

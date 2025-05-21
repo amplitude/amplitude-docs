@@ -4,7 +4,7 @@ blueprint: page
 title: 'Site components'
 ---
 
-{{partial:experiment/interactive_table-test api="Evaluation"}}
+{{partial:experiment/interactive_table-test api-name="Evaluation"}}
 
 
 ## Tabs
