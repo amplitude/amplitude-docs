@@ -1,16 +1,17 @@
 ## Summary
-This documentation details the Amplitude Experiment JavaScript SDK, covering installation, initialization, fetching variants, accessing flag variants, and integrations with analytics platforms. It provides methods for remote and local evaluation, exposure tracking, and bootstrapping with initial variants.
+This documentation details the Amplitude Experiment JavaScript SDK, covering installation, initialization, fetching variants, accessing flag variants, and integrations with analytics platforms. It provides comprehensive guidance on client-side feature flag implementation including remote and local evaluation, exposure tracking, and bootstrapping options.
 
 ## Keywords
 - JavaScript SDK
-- Experiment client
-- Variant fetching
-- Exposure tracking
-- Remote evaluation
-- Local evaluation
-- User provider
-- Amplitude integration
-- Segment integration
-- Flag variants
-- Server-side rendering
-- Account-level bucketing
+- feature flags
+- experiment variants
+- remote evaluation
+- local evaluation
+- exposure tracking
+- user provider
+- analytics integration
+- variant fetching
+- bootstrapping
+- flag configuration
+- automatic exposure tracking
+- server-side rendering

@@ -1,17 +1,17 @@
 # Summary
-The Experiment Evaluation REST API allows retrieval of variant assignment data for users via remote evaluation, passing user information as query parameters to enable CDN caching, and tracks an assignment event by default unless disabled with a specific header.
+The Experiment Evaluation API documentation describes two key endpoints: the Evaluation API for retrieving variant assignments for users through remote evaluation (tracking assignment events), and the Flags API for downloading flag configurations for local evaluations, including details on authentication using deployment keys, request parameters, and response formats.
 
 # Keywords
 - remote evaluation
 - variant assignment
 - deployment key
 - flag_keys
+- user context
+- Authorization header
+- X-Amp-Exp-Track
+- Flags API
+- local evaluation
+- flag configurations
+- evaluation response
 - user_id
 - device_id
-- context
-- user_properties
-- X-Amp-Exp-Track
-- CDN caching
-- assignment event
-- API regions
-- authorization header
