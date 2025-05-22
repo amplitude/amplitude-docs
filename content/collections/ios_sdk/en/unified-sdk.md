@@ -25,9 +25,9 @@ This is the official documentation for the Amplitude Unified SDK for Swift.
 
 The Unified SDK is a wrapper around Amplitude's existing SDKs, providing a simplified interface to use multiple Amplitude products together. It currently includes:
 
-- [Analytics SDK (AmplitudeSwift)](./ios-swift-sdk)
-- [Experiment SDK](../experiment-sdks/experiment-ios)
-- [Session Replay SDK](../session-replay/session-replay-ios-plugin) (iOS only)
+- [Analytics SDK (AmplitudeSwift)](/docs/sdks/analytics/ios/ios-swift-sdk)
+- [Experiment SDK](/docs/sdks/experiment-sdks/experiment-ios)
+- [Session Replay SDK](/docs/session-replay/session-replay-ios-plugin) (iOS only)
 
 ## Install the SDK
 
