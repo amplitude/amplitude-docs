@@ -30,7 +30,7 @@ data-auth="{{deployment_key}}">
 {{/select_options}}
 </select>
 {{else}}
-<input class="mt-1 block w-full" type="{{ input_type }}" name="{{ name | slugify }}" data-field="{{ name | slugify }}"  {{ if omit_from_curl }}data-omit-from-curl='true'{{ /if }} />
+<input class="mt-1 block w-full" type="{{ input_type }}" name="{{ name | slugify }}" data-field="{{ name | slugify }}"  {{ if omit_from_curl }}data-omit-from-curl='true'{{ /if }} {{if auth_field}}data-auth-input="true" {{/if}}/>
 {{/if}}
 </label>
 {{ /fields }}
