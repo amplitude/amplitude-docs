@@ -1,153 +1,160 @@
 # Amplitude Guides and Surveys
 
-## Overview
+## Product Overview
 
-Amplitude Guides and Surveys is a comprehensive in-product messaging and feedback collection platform that helps product teams improve user experience, drive product adoption, and gather actionable insights. The platform serves as a sophisticated alternative to traditional popup components, enabling teams to deliver contextual assistance, collect targeted feedback, and improve key metrics like retention, activation, and engagement.
+Amplitude Guides and Surveys is an in-product messaging and feedback collection platform that helps product teams improve user experience, facilitate product learning, and gather user feedback. It serves as a sophisticated alternative to traditional popup components, enabling teams to enhance key metrics like retention, activation, and engagement.
 
-## Key Features and Concepts
+The platform consists of two primary components:
+- **Guides**: Behaviorally-triggered in-product messages that help users complete tasks or explore features
+- **Surveys**: Targeted feedback collection tools for gathering specific user insights
+
+## Key Features
 
 ### Guides
-Guides are in-product messages that help users navigate through product features and complete tasks. They use behavioral triggers and rate-limiting mechanisms to provide contextual assistance without disrupting the user experience. Five form factors are available:
-
+Guides offer five form factors:
 - **Modal**: Full-screen overlays for important announcements
-- **Popover**: Targeted messages pointing to specific UI elements
+- **Popover**: Contextual messages appearing near specific UI elements
 - **Pin**: Small indicators that expand when clicked
-- **Tooltip**: Contextual help tied to specific UI elements
+- **Tooltip**: Subtle hints providing contextual information
 - **Banner**: Persistent messages at the top or bottom of the screen
 
-### Guide Templates
-The platform offers five pre-built guide templates:
-
-1. **Tour**: Step-by-step instructions for product exploration
-2. **Announcement**: Single-step messages for important updates
-3. **Checklist**: Multi-step guides for completing complex tasks
-4. **Banner**: Persistent notifications
-5. **Tooltip**: Contextual help for specific UI elements
+These form factors are implemented through five template types:
+- **Tour**: Step-by-step product exploration instructions
+- **Announcement**: Updates or new feature notifications
+- **Checklist**: Task-oriented guides for multi-step processes
+- **Banner**: Persistent notifications
+- **Tooltip**: Contextual help for specific UI elements
 
 ### Surveys
-Surveys enable targeted feedback collection with three available templates:
+Surveys provide three template options:
+- **NPS (Net Promoter Score)**: Measures customer satisfaction and loyalty
+- **User Feedback**: Customizable questions for specific insights
+- **Rating**: Collects initial reactions to product experiences
 
-1. **NPS (Net Promoter Score)**: Measures customer satisfaction and loyalty
-2. **User Feedback**: Customizable questions for gathering specific insights
-3. **Rating**: Collects initial reactions to product experiences
+Survey blocks include various rating types (Stars, Rating labels, Emoji, NPS) and support conditional logic for creating dynamic response paths.
 
-### Survey Blocks
-Surveys can include various question types:
-- Rating blocks (Stars, Rating labels, Emoji, NPS)
-- Conditional logic for creating dynamic response paths based on user input
+### Analytics
+Both guides and surveys include analytics capabilities:
+- **Overview Tab**: Filter cards, performance metrics, and interaction tracking
+- **Insights Tab**: Aggregate survey data analysis
+- **Responses Tab**: Individual user feedback with sorting and filtering
+- **Microscope Integration**: Deep user behavior analysis
+
+### Experimentation
+Integration with Amplitude Experiment enables:
+- A/B testing
+- Multi-armed Bandit experiments
+- Variant configuration
+- Performance analysis
+
+### Customization
+- **Themes**: Control appearance elements (colors, typography, animations)
+- **Localization**: Support for multiple languages
+- **Properties**: Configuration and metadata management
 
 ## Product Relationships and Architecture
 
-The Guides and Surveys product integrates with other Amplitude products and third-party systems through its SDK (`engagement-browser`). The architecture consists of:
+Guides and Surveys integrates with:
+- **Amplitude Analytics**: For tracking user interactions
+- **Amplitude Experiment**: For testing different guide/survey variants
+- **Third-party analytics providers**: Through SDK integration
 
-1. **SDK Integration**: Can be implemented in three ways:
-   - With Amplitude Browser SDK
-   - With third-party analytics providers
-   - Via Google Tag Manager
+The implementation architecture consists of:
+- **Guides and Surveys SDK**: Client-side rendering component
+- **Amplitude Backend**: Manages targeting, analytics, and content delivery
+- **Optional Proxy Configuration**: For domain blocking environments
 
-2. **Analytics Integration**: Deep integration with Amplitude Analytics, tracking user interactions through:
-   - Common event properties (Lifecycle UUID, Guide/Survey ID)
-   - Generic events (Viewed, Dismissed, Completed)
-   - Guide-specific events (Guide Step Viewed, Guide Step Completed)
-   - Survey-specific events (Survey Submitted, Survey Abandoned)
-
-3. **Experimentation Integration**: Works with Amplitude Experiment to enable:
-   - A/B testing of different guide/survey variants
-   - Multi-armed Bandit experiments for optimization
-   - Performance analysis through the Insights dashboard
-
-## Key Nomenclature and Definitions
+## Key Nomenclature
 
 ### Guide-Related Terms
-- **Form Factors**: Visual presentation styles (Modal, Popover, Pin, Tooltip, Banner)
-- **Trigger Conditions**: Rules determining when and where guides appear
+- **Form Factors**: Visual presentation styles (Modal, Popover, etc.)
+- **Templates**: Pre-designed guide structures
+- **Trigger Conditions**: Rules determining when guides appear
 - **Display Limits**: Controls for guide frequency
-- **Smart Delay**: Automatic timing adjustment to prevent overwhelming users
-- **Tiebreaker Rules**: Logic for determining which guide to show when multiple are eligible
+- **Smart Delay**: Prevents guides from appearing immediately on page load
+- **Tiebreaker Rules**: Logic for selecting guides when multiple are eligible
 
 ### Survey-Related Terms
-- **Rating Blocks**: Question types for collecting numerical or categorical feedback
-- **Conditional Logic**: Rules that change survey flow based on previous answers
-- **NPS**: Net Promoter Score, categorizing users as Promoters, Passives, or Detractors
+- **NPS**: Net Promoter Score metric for customer loyalty
+- **Promoters/Passives/Detractors**: NPS respondent categories
+- **Conditional Logic**: Rules changing survey flow based on responses
+- **Survey Blocks**: Building components for surveys
 
 ### Analytics Terms
-- **Lifecycle UUID**: Unique identifier for a guide or survey instance
-- **Variant ID**: Identifier for experiment variants
-- **Rage Close**: When a user dismisses a guide or survey quickly, indicating frustration
+- **Lifecycle UUID**: Unique identifier for guide/survey instances
+- **Viewed/Dismissed/Completed Events**: User interaction tracking
+- **Survey Submitted/Abandoned**: Survey completion tracking
+- **Variant ID**: Identifier for experiment versions
 
-## Product Ecosystem Integration
+## Implementation and Integration
 
-Guides and Surveys integrates with the broader Amplitude ecosystem through:
+### SDK Installation Options
 
-1. **Analytics Integration**: All interactions are tracked in Amplitude Analytics
-2. **Experimentation**: Testing different guide and survey variants
-3. **User Profiles**: Targeting based on user properties and behaviors
-4. **Microscope Integration**: Drilling down into individual user interactions
-5. **Localization**: Enterprise customers can serve content in multiple languages
-
-## Technical Implementation
-
-### SDK Installation
+1. **Amplitude Browser SDK**:
 ```javascript
-// With npm
-npm install @amplitude/engagement-browser
+import * as amplitude from '@amplitude/analytics-browser';
+import * as engagement from '@amplitude/engagement-browser';
 
-// With script tag
-<script src="https://cdn.amplitude.com/libs/engagement-browser.umd.min.js"></script>
-```
-
-### SDK Initialization
-```javascript
-// With Amplitude Browser SDK
-amplitude.engagement.boot({
+amplitude.init('API_KEY');
+engagement.boot({
   client: amplitude,
-  serverUrl: 'https://gs.amplitude.com',
-  cdnUrl: 'https://cdn.amplitude.com'
-});
-
-// With third-party analytics
-amplitude.engagement.boot({
-  forwardEvent: function(event) {
-    // Forward to your analytics provider
-  },
-  serverUrl: 'https://gs.amplitude.com',
-  cdnUrl: 'https://cdn.amplitude.com'
+  // additional configuration
 });
 ```
+
+2. **Third-party analytics providers**:
+```javascript
+import * as engagement from '@amplitude/engagement-browser';
+
+engagement.boot({
+  forwardEvent: (event) => {
+    // Send to your analytics provider
+  }
+});
+```
+
+3. **Google Tag Manager** integration
 
 ### Key SDK Methods
 - `boot()`: Initializes the SDK
-- `forwardEvent()`: Sends events to trigger guides
-- `setThemeMode()`: Controls light/dark mode
-- `addCallback()`: Adds custom event handlers
-- `setRouter()`: Integrates with single-page applications
-- `show()/reset()/closeAll()`: Programmatically controls guides
+- `setThemeMode()`: Sets light or dark mode
+- `addCallback()`: Registers event callbacks
+- `reset()`: Clears user history
+- `show()`: Manually displays guides
+- `list()`: Returns available guides
 
 ### Proxy Configuration
-For organizations facing domain blocking, a CloudFront distribution can be configured to proxy both static assets and API traffic:
-- Origin 1: `cdn.amplitude.com` for static assets
-- Origin 2: `gs.amplitude.com` for API traffic
+For domain blocking environments, AWS CloudFront distribution can be configured to reverse proxy:
+- `cdn.amplitude.com` for static assets
+- `gs.amplitude.com` for API traffic
 
-### Permissions Management
-The product has its own permission system with five access levels:
-1. No Access
-2. Viewer (can view published guides/surveys)
-3. Member (can create and edit drafts)
-4. Manager (can publish guides/surveys)
-5. Administrator (full access including permissions management)
+## User Permissions
 
-## Analysis Capabilities
+Guides and Surveys has five access levels:
+1. **No Access**: Cannot view or edit
+2. **Viewer**: Can view published content
+3. **Member**: Can create/edit drafts, cannot publish
+4. **Manager**: Can create, edit, and publish
+5. **Administrator**: Full access including permission management
 
-### Survey Analysis
-Two main views for analyzing survey results:
-1. **Insights Tab**: Shows aggregate data including NPS breakdown, time-based analysis, and filtering options
-2. **Responses Tab**: Displays individual user feedback with sorting and filtering capabilities
+## Advanced Features
 
-### Guide Performance
-The Overview tab provides analytics on guide performance:
-- Views and completions charts
-- Filter cards for segmentation
-- Real-time interaction feed
-- Rage closes measurement
+### Localization
+Supports multiple languages requiring:
+- SDK locale specification
+- Project settings for supported languages
+- Translation fallback behaviors
 
-Through these capabilities, Amplitude Guides and Surveys offers a comprehensive solution for improving user experience, collecting feedback, and driving product adoption through contextual, in-product messaging.
+### Experimentation
+Supports testing with:
+- Variant configuration
+- Exposure event tracking
+- Performance analysis
+
+### Testing
+Provides Preview mode with:
+- Condition status indicators
+- Reset User History option
+- Ignore Throttle Limits option
+- Manual event triggering
+- Live testing with targeted cohorts
