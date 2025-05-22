@@ -13,6 +13,7 @@ apis:
         type: field
         enabled: true
         omit_from_curl: true
+        auth_field: true
       -
         id: maya9sjv
         name: 'User ID'
@@ -20,6 +21,7 @@ apis:
         type: field
         enabled: true
         omit_from_curl: false
+        auth_field: false
       -
         id: mayaa0ol
         name: 'Device ID'
@@ -27,6 +29,7 @@ apis:
         type: field
         enabled: true
         omit_from_curl: false
+        auth_field: false
       -
         id: mayaa5w0
         name: 'Flag Keys'
@@ -34,6 +37,7 @@ apis:
         type: field
         enabled: true
         omit_from_curl: false
+        auth_field: false
       -
         id: mayaacgo
         name: Context
@@ -41,6 +45,7 @@ apis:
         type: field
         enabled: true
         omit_from_curl: false
+        auth_field: false
       -
         id: mayaahre
         name: 'Server Zone'
@@ -51,6 +56,7 @@ apis:
         type: field
         enabled: true
         omit_from_curl: true
+        auth_field: false
       -
         id: mayaau4f
         name: 'Track assignment'
@@ -61,6 +67,7 @@ apis:
         type: field
         enabled: true
         omit_from_curl: false
+        auth_field: false
     type: api
     enabled: true
   -
@@ -72,11 +79,12 @@ apis:
     fields:
       -
         id: maygwd67
-        name: 'Deployment key'
+        name: 'Analytics API key (required)'
         input_type: text
         type: field
         enabled: true
         omit_from_curl: true
+        auth_field: true
       -
         id: maygz87s
         name: 'User ID'
@@ -84,6 +92,7 @@ apis:
         type: field
         enabled: true
         omit_from_curl: false
+        auth_field: false
       -
         id: maygzd1j
         name: 'Flag key'
@@ -91,6 +100,7 @@ apis:
         type: field
         enabled: true
         omit_from_curl: false
+        auth_field: false
       -
         id: maygzmke
         name: 'Variant key'
@@ -98,6 +108,7 @@ apis:
         type: field
         enabled: true
         omit_from_curl: false
+        auth_field: false
       -
         id: maygzw2i
         name: 'Server zone'
@@ -108,5 +119,6 @@ apis:
         type: field
         enabled: true
         omit_from_curl: true
+        auth_field: false
     type: api
     enabled: true

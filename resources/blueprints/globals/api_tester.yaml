@@ -10,6 +10,7 @@ tabs:
               type: replicator
               display: APIs
               localizable: false
+              collapse: true
               sets:
                 new_set_group:
                   display: 'New Set Group'
@@ -103,3 +104,12 @@ tabs:
                                           type: toggle
                                           display: 'Omit from cURL'
                                           localizable: false
+                                          width: 50
+                                      -
+                                        handle: auth_field
+                                        field:
+                                          type: toggle
+                                          display: 'Auth field'
+                                          localizable: false
+                                          width: 50
+                                          instructions: 'Use this field for authentication?'

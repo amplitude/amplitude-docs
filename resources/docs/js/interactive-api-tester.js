@@ -8,7 +8,8 @@ function initTester(el) {
     const urlEu = el.dataset.urlEu;
     const method = el.dataset.method.toUpperCase();
     const fieldsCfg = JSON.parse(el.dataset.fields);
-    const authField = el.dataset.authField || null;
+    const authInput = el.querySelector('[data-auth-input="true"]');
+    //const authField = authInput ? authInput.dataset.field : null;
 
     const inputs = Array.from(el.querySelectorAll("[data-field]"));
     const curlEl = el.querySelector(".api-tester__curl");

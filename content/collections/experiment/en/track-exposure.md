@@ -20,7 +20,7 @@ Exposure tracking is optional for feature flags that don't require analysis.
 
 In this example, the [Analytics REST API v2.0](/docs/apis/analytics/http-v2) sends an [exposure event](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events)  to Amplitude with `curl`.
 
-{{partial:partials/experiment/interactive-exposure-table}}
+{{partial:experiment/interactive_table-test api-name="Exposure Tracking"}}
 
 When the request succeeds, a user appears in the Exposures chart in Amplitude Experiment.
 
