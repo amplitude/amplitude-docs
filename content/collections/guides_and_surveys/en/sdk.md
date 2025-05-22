@@ -345,6 +345,7 @@ const MyComponent = () => {
     window.engagement.setRouter((newUrl) => navigate(newUrl));
   }, []);
 };
+```
 
 ## Localization
 
@@ -416,7 +417,7 @@ engagement.gs.show(key: string, stepIndex?: number): void
 
 ## Forward event
 
-Forward third-party Analytics events to the Guides and Surveys SDK to trigger guides and surveys that use the `*On event tracked*` [trigger](/docs/guides-and-surveys/guides/setup-and-target#triggers).
+Forward third-party Analytics events to the Guides and Surveys SDK to trigger guides and surveys that use the *On event tracked* [trigger](/docs/guides-and-surveys/guides/setup-and-target#triggers).
 
 ```js
 engagement.forwardEvent(event: Event): void
