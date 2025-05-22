@@ -348,7 +348,10 @@ const MyComponent = () => {
 
 ## Localization
 
-Guides and Surveys can be localized by setting the `locale` option during initialization. This option is available in the `InitOptions` when using the [Amplitude Browser SDK](#amplitude-browser-sdk) plugin, and in the `options` for the `engagement.init()` method if you're using a [Third-party analytics provider](#third-party-analytics-provider).
+Set the `locale` option during initialization to localize a guide or survey.
+
+* If you use the Amplitude Browser SDK](#amplitude-browser-sdk) plugin, set it in `InitOptions`.
+* If you use a  [third-party analytics provider](#third-party-analytics-provider), set it in `options` within the `engagement.init()` method.
 
 To dynamically update the language after the SDK initializes, use the `updateLanguage` method documented below. Calling `updateLanguage` re-fetches the configuration with the new locale.
 
