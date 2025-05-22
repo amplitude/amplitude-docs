@@ -48,7 +48,7 @@ amplitude.add(engagementPlugin());
 {{/partial:tabs}}
 
 
-For additional configuration, you can supply `InitOptions` to the `plugin` function. See [below](#initialize-the-sdk) for the available options.
+For additional configuration, supply `InitOptions` to the `plugin` function. See [Initialize the SDK](#initialize-the-sdk) below for the available options.
 
 
 
