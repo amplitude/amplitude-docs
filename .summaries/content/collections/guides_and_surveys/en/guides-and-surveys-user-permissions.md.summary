@@ -1,11 +1,14 @@
 ## Summary
-This documentation page describes the user roles and permissions for Amplitude's Guides and Surveys feature, detailing how administrators can override a user's base Amplitude role to grant specific access levels (Viewer, Member, Manager, Administrator) with varying capabilities for viewing, editing, publishing, and running experiments.
+This documentation page describes the user roles and permissions specific to Guides and Surveys in Amplitude, explaining how these permissions can override a user's base Amplitude role to grant different access levels specifically for the Guides and Surveys feature.
 
 ## Keywords
-- guides-and-surveys-permissions
-- user-role-override
-- amplitude-access-control
-- viewer-member-manager-roles
-- experiment-access-levels
-- publishing-permissions
-- draft-editing-capabilities
+- Guides and Surveys permissions
+- User role override
+- Viewer role
+- Member role
+- Manager role
+- Administrator role
+- Access control
+- Permission levels
+- Draft editing permissions
+- Publishing permissions

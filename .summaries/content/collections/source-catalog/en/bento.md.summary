@@ -7,9 +7,8 @@ This documentation details the Bento integration with Amplitude, enabling bidire
 - user activation
 - embedded checklists
 - contextual guides
-- empty states
-- guide completion events
-- user identification
+- bidirectional integration
 - onboarding analytics
-- API key integration
-- bidirectional event streaming
+- user identification
+- API key configuration
+- guide completion events

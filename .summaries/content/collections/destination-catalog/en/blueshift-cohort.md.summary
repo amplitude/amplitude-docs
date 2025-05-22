@@ -4,11 +4,11 @@ This documentation details the Blueshift Cohort destination integration in Ampli
 ## Keywords
 - Blueshift Cohort destination
 - API key authentication
-- User identifier mapping (email/customer_id)
+- User identifier mapping
 - Cohort synchronization
 - Behavior-based personalization
 - Onboarding activation
-- Segmented marketing campaigns
+- Segmented campaigns
 - Omnichannel orchestration
-- Cohort naming convention
 - Partner-maintained integration
+- Amplitude cohort export

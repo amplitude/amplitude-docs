@@ -9,6 +9,6 @@ This documentation page describes the HubSpot Cohort Sync destination in Amplitu
 - OAuth authentication
 - Sync cadence
 - Silent user dropping
-- User discrepancies
 - amplitude_ prefix
+- User discrepancies
 - Cohort uninstallation

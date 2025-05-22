@@ -1,16 +1,14 @@
 ## Summary
-This documentation page explains how to build Event Segment Analytics in Amplitude, detailing the step-by-step process of creating charts that identify specific events triggered by user groups, including event selection, segmentation options, and various measurement methods like unique counts, event totals, and property-based metrics.
+This documentation page explains how to build Event Segment Analytics in Amplitude, detailing the step-by-step process of creating charts that identify specific events triggered by user groups, including event selection, segmentation options, and various measurement methods like unique counts, event totals, and property distributions.
 
 ## Keywords
-- Event Segmentation Chart
-- User Segmentation
-- Measurement Methods
-- Unique Count
-- Event Count
-- Active Rate
-- Frequency Distribution
-- Property Values
-- Custom Formulas
-- Microscope Feature
-- Event Properties
-- User Properties
+- event segmentation charts
+- user segmentation
+- measurement metrics
+- unique counts
+- event totals
+- active percentage
+- property value distribution
+- custom formulas
+- frequency buckets
+- Amplitude analytics

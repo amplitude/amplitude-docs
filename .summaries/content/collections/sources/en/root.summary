@@ -2,109 +2,103 @@
 
 ## Overview
 
-Amplitude is an analytics platform that allows businesses to track and analyze user behavior across digital products. The platform enables the collection of data from various sources, tracking of user sessions, revenue, and unique users, and provides tools for data export and analysis.
+Amplitude is an analytics platform that enables organizations to track and analyze user behavior across digital products. The platform allows for the collection of data from various sources, tracking of user sessions, revenue, and unique users, and provides tools for data analysis and visualization. Key features include:
 
-Key features include:
-- Data source integration with third-party platforms
-- User identification and tracking across devices
-- Session tracking and customization
+- Data source integration from third-party platforms
+- User identification and tracking across devices and domains
+- Session tracking and management
 - Revenue tracking for in-app and non-app purchases
 - Data export capabilities
+- Ingestion debugging and monitoring
 
-## Product Relationships and Architecture
+## Product Relationships and Features
 
 ### Data Sources and Integration
 
 Amplitude Data allows connection to third-party platforms through the Sources interface, which consists of:
 
 1. **Sources List**: Displays all connected data sources with metrics on event volume and throttled users
-2. **Ingestion Debugger**: Helps troubleshoot data ingestion issues
+2. **Ingestion Debugger**: Provides tools to troubleshoot data ingestion issues
 
-New data sources can be added through the Catalog, which provides a step-by-step setup process for each integration.
+Users can add new data sources through the Catalog, which offers a variety of pre-built integrations. The platform supports both direct SDK instrumentation and third-party data imports, enabling cross-platform analytics.
 
-### Data Collection and Instrumentation
+### Tracking and Instrumentation
 
-Amplitude collects data through several instrumentation methods:
+Amplitude provides several core tracking capabilities:
 
-1. **User Identification System**: Uses three key identifiers:
-   - Device ID: Identifies unique devices
-   - User ID: Custom identifier for logged-in users
+1. **User Tracking**: Identifies unique users through a three-ID system:
+   - Device ID: Automatically generated for each device
+   - User ID: Custom identifier set by the application
    - Amplitude ID: Internal identifier that links Device IDs and User IDs
 
-2. **Session Tracking**: Defines user engagement periods with configurable parameters:
-   - Mobile sessions: Based on app foreground/background status
-   - Web sessions: Based on time intervals between events
-   - Custom session definitions: Can be based on properties, events, or timeout intervals
+2. **Session Tracking**: Defines and tracks user sessions differently for:
+   - Mobile applications: Based on app foreground/background status
+   - Web applications: Based on activity timeouts
+   
+   Sessions can be customized through SDK configuration or HTTP API calls.
 
-3. **Revenue Tracking**: Captures monetary transactions with specific properties:
-   - $revenue: Total revenue amount
-   - $price: Unit price
-   - $quantity: Number of items
-   - Additional properties for transaction details
+3. **Revenue Tracking**: Captures purchase data through:
+   - `logRevenueV2` method for in-app purchases
+   - Custom event tracking for non-app purchases
+   - Revenue properties ($revenue, $price, $quantity)
+   - Receipt validation for purchase verification
 
 ### Data Export and Analysis
 
-Amplitude provides data export capabilities through Export API, with some differences compared to the analytics platform:
-- Timezone differences: Amplitude uses project timezone while Export API uses UTC
-- Query time definitions: Export API uses server_upload_time
-- These differences can cause discrepancies when comparing data across platforms
+Amplitude offers data export capabilities with some important considerations:
+
+- Data exported via Export API or to Snowflake/Redshift may show discrepancies compared to Amplitude charts
+- Timezone differences exist between platforms (Amplitude uses project timezone while Export API uses UTC)
+- Different time references are used (Export API uses server_upload_time rather than event time)
 
 ## Key Nomenclature and Definitions
 
-### User Identification Terms
-- **Device ID**: Unique identifier for a device or browser
-- **User ID**: Custom identifier assigned to logged-in users
-- **Amplitude ID**: Internal identifier that links multiple Device IDs to a User ID
-- **User Merging**: Process of combining multiple Amplitude IDs when they're determined to belong to the same user
-
-### Session Terminology
-- **Session ID**: Unique identifier for a user session
-- **client_event_time**: Timestamp when an event occurs on the client device
-- **Session Length**: Calculated as the difference between maximum and minimum client_event_time within a session
-- **Out-of-session Events**: Events that occur outside the defined session boundaries
-
-### Revenue Properties
-- **$revenue**: Total revenue amount from a transaction
-- **$price**: Unit price of the item
-- **$quantity**: Number of items purchased
-- **logRevenueV2**: Method for tracking revenue events in Amplitude SDKs
+- **Amplitude ID**: Internal identifier used to track unique users across devices and sessions
+- **Device ID**: Identifier for a specific device (IDFA, IDFV, AdID, or custom)
+- **User ID**: Custom identifier set by the application to identify logged-in users
+- **Session ID**: Unique identifier for a user's session, generated as a Unix timestamp
+- **client_event_time**: Timestamp when an event occurred on the client device
+- **server_upload_time**: Timestamp when Amplitude servers received the event
+- **$revenue**: Property indicating the total revenue from a purchase
+- **$price**: Property indicating the price of a single item
+- **$quantity**: Property indicating the number of items purchased
+- **Sources List**: Interface showing connected data sources and their metrics
+- **Ingestion Debugger**: Tool for troubleshooting data ingestion issues
+- **User merging**: Process where Amplitude combines multiple Amplitude IDs that belong to the same user
 
 ## Product Ecosystem Integration
 
-Amplitude integrates with various data platforms and services:
+Amplitude's data sources functionality integrates with the broader Amplitude ecosystem in several ways:
 
-1. **Data Sources**: Third-party platforms that send data to Amplitude
-2. **Export Destinations**: Services like Snowflake and Redshift where Amplitude data can be exported
-3. **Mobile and Web SDKs**: Libraries for instrumenting applications to send data to Amplitude
-4. **HTTP API**: Direct API for sending events to Amplitude
+1. Data collected from various sources feeds into Amplitude's analytics platform for unified analysis
+2. Session and user tracking information enables cross-platform user journey analysis
+3. Revenue data can be visualized in specialized charts like Revenue LTV
+4. Exported data can be used in external data warehouses (Snowflake/Redshift) for custom analysis
+5. The platform supports both real-time analytics and historical data analysis
 
-## API and Implementation Details
+## API Endpoints and Technical Implementation
 
-### User Identification Implementation
-- Set Device ID and User ID through SDK methods or HTTP API
-- Cross-domain tracking requires additional configuration
-- User merging happens automatically when Amplitude detects the same User ID across different Device IDs
+### HTTP API
 
-### Session Tracking Implementation
-- Configure through SDK initialization or HTTP API
-- Start/End Session events can be manually triggered
-- Session timeout intervals are configurable (default: 30 minutes for web)
-- Session ID generation follows specific patterns based on platform
+- Amplitude provides an HTTP API for sending events, including session and revenue tracking
+- The Export API uses server_upload_time and UTC timezone for data retrieval
 
-### Revenue Tracking Implementation
-- Use `logRevenueV2()` method in SDKs
-- Include required properties ($revenue, $price, $quantity)
-- For IAPs, implement receipt validation
-- Revenue events appear in Revenue LTV charts
+### SDK Methods
 
-### Export API Usage
-- Data exported via API will be in UTC timezone
-- Use server_upload_time for query time definitions
-- Account for timezone differences when comparing with Amplitude analytics platform data
+- **logRevenueV2**: Preferred method for tracking revenue events
+- **setUserId**: Sets the User ID for identifying logged-in users
+- **regenerateDeviceId**: Creates a new Device ID for the current user
+- Session tracking methods:
+  - Start Session events
+  - End Session events
+  - Session timeout configuration
 
-## Troubleshooting and Verification
+### Implementation Considerations
 
-- **Ingestion Debugger**: Tool for troubleshooting data source issues
-- **Revenue Verification**: Methods to verify in-app purchases
-- **Session Calculation**: Understanding how session length is calculated and which events are excluded
-- **Data Discrepancies**: Explanations for differences between Amplitude charts and exported data
+- Session length is calculated as the difference between maximum and minimum client_event_time within a session
+- Hidden, inactive, or deleted events are excluded from session length calculations
+- Cross-domain tracking requires special configuration to maintain user identity
+- Receipt validation should be implemented for accurate revenue tracking
+- Time zone differences must be considered when comparing data across platforms
+
+The platform provides flexibility in implementation while maintaining data consistency across different tracking methods and data sources.

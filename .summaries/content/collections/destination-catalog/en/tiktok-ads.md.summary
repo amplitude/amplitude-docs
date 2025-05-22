@@ -1,14 +1,14 @@
 # Summary
-This documentation details the TikTok Ads integration with Amplitude, allowing businesses to send audience cohorts to TikTok for personalized ad campaigns, including setup steps, user mapping requirements (IDFA, GAID, email, phone), and sync limitations (24 API calls per day, 4.8 million user maximum).
+This documentation details the TikTok Ads integration with Amplitude, allowing businesses to send audience cohorts to TikTok for personalized ad campaigns, including setup steps, user mapping requirements (IDFA, GAID, email, phone), sync limitations (24 calls per day, 4.8M user maximum), and the process for sending cohorts from Amplitude to TikTok Ads Manager.
 
-# Keywords
+## Keywords
 - TikTok Ads integration
-- Audience cohort sync
+- Audience cohort syncing
 - SHA256 encryption
 - User property mapping
 - IDFA/GAID identifiers
 - API call limitations
 - Cohort sync cadence
 - TikTok for Business account
+- Amplitude user properties
 - Audience Management permissions
-- Cohort size requirements

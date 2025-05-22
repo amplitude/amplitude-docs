@@ -1,5 +1,5 @@
 ## Summary
-This documentation explains how to use Amplitude Experiment's duration estimator tool to plan experiment sample size and runtime needed to achieve statistical significance. It covers the tool's components (confidence level, control mean, standard deviation, power, test type, MDE), how to interpret results, strategies to reduce experiment runtime, and troubleshooting steps.
+This documentation explains how to use Amplitude Experiment's duration estimator tool to plan experiment sample size and runtime needed to achieve statistical significance. It covers the tool's components (confidence level, control mean, standard deviation, power, test type, and MDE), how to interpret results, and strategies for reducing experiment runtime when estimates are longer than desired.
 
 ## Keywords
 - duration estimator
@@ -14,4 +14,3 @@ This documentation explains how to use Amplitude Experiment's duration estimator
 - t-test
 - control mean
 - standard deviation
-- two-sided test

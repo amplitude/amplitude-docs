@@ -12,4 +12,4 @@ This documentation describes a legacy feature in Amplitude Data that allows mapp
 - cross-environment modifications
 - blocking events
 - transformations
-- branch settings
+- environment mapping

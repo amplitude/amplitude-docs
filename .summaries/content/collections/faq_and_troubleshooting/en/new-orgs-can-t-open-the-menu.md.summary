@@ -1,12 +1,13 @@
 ## Summary
-This documentation explains that new Amplitude organizations cannot access the left-hand menu navigation until they have successfully sent data to the platform, as Amplitude requires data to populate charts and enable full UI navigation functionality.
+This documentation explains that new Amplitude organizations cannot access the left-hand menu navigation until they have successfully sent data to the platform, as Amplitude requires data to populate charts and enable full UI navigation.
 
 ## Keywords
 - new organization limitations
 - left-hand menu access
 - data source setup
 - menu uncollapse
-- Amplitude Settings page
-- chart population
-- data ingestion requirement
-- UI navigation restriction
+- initial data requirement
+- Settings page restriction
+- Amplitude onboarding
+- navigation constraints
+- chart population dependency

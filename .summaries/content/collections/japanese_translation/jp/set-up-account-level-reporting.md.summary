@@ -1,5 +1,5 @@
 # Summary
-This documentation explains how to set up account-level reporting in Amplitude, including implementation methods via SDKs, APIs, and Segment integration, with specific instructions for instrumenting group types and properties (limited to 5 group types per project) to enable account-based analytics.
+This documentation explains how to set up account-level reporting in Amplitude, including implementation methods via SDKs, APIs, and Segment integration, with instructions for creating and managing group types and properties through code examples and configuration steps.
 
 # Keywords
 - account-level reporting
@@ -11,5 +11,5 @@ This documentation explains how to set up account-level reporting in Amplitude, 
 - Identify API
 - Segment integration
 - Group Identify API
-- event-level groups
-- user-level groups
+- group_type
+- group_value

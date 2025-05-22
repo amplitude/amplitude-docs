@@ -7,8 +7,8 @@ This documentation explains Amplitude's Portfolio addon, which enables cross-pro
 - Views (data source collections)
 - User mapping API
 - global_user_id
-- Cross-product user journey
 - Project integration
 - User property silos
+- Cross-platform user journey
 - Portfolio creation
 - API endpoint usermap

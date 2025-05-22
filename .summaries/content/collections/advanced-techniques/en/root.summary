@@ -2,138 +2,179 @@
 
 ## Product Overview
 
-Amplitude Experiment is a feature experimentation and flag management platform that enables teams to test new features, conduct A/B tests, and manage feature rollouts. The platform supports both local and remote evaluation modes, allowing for flexible implementation across client and server environments. Key capabilities include experiment creation, variant assignment, traffic allocation, user targeting, and results analysis.
+Amplitude Experiment is a feature experimentation and flag management platform that enables product teams to test hypotheses, roll out features safely, and make data-driven decisions. The platform supports both local and remote evaluation modes, allowing for flexible implementation across client and server environments. Key features include experiment creation, flag management, variant assignment, traffic allocation, and robust analytics integration.
 
-The advanced techniques documentation covers sophisticated use cases and methodologies for optimizing experiment design, implementation, and analysis, including specialized configurations like holdout groups, mutual exclusion groups, and flag prerequisites.
-
-## Product Relationships and Features
-
-### Core Components
+## Key Features and Concepts
 
 1. **Feature Flags and Experiments**
-   - **Local Evaluation Flags**: Client-side evaluation using device ID as the bucketing key
-   - **Remote Evaluation Flags**: Server-side evaluation with more complex targeting rules
-   - **Flag Prerequisites**: Dependencies between flags where one flag's evaluation depends on another's state
+   - **Feature Flags**: Toggle features on/off or control feature rollout
+   - **Experiments**: Test different variants of features to measure impact
+   - **Evaluation Modes**: Local evaluation (client-side) and remote evaluation (server-side)
 
-2. **User Targeting and Traffic Allocation**
-   - **Holdout Groups**: Exclude specific percentages of users from experiments
+2. **User Targeting and Traffic Management**
+   - **Targeting Rules**: Define which users see which variants
+   - **Traffic Allocation**: Control percentage of users in experiments
+   - **Holdout Groups**: Exclude users from experiments to measure long-term impact
    - **Mutual Exclusion Groups**: Prevent users from participating in multiple related experiments
-   - **Sticky Bucketing**: Ensure consistent variant assignment for users despite targeting changes
 
-3. **Implementation Methods**
-   - **Server-Side Rendering**: Combined use of JavaScript Server SDK and Client SDK
-   - **Split URL Testing**: No-code A/B testing through URL redirects
-   - **Proxy Configurations**: Using AWS CloudFront as a reverse proxy for evaluation servers
+3. **Analytics and Measurement**
+   - **Exposure Events**: Track when users are exposed to variants
+   - **Metrics**: Measure experiment impact on key performance indicators
+   - **Statistical Analysis**: Determine significance of experiment results
 
-4. **Analysis and Metrics**
-   - **Advanced Metric Use Cases**: Creating funnel analyses based on experiment metrics
-   - **Outlier Detection and Resolution**: Methods to identify and handle data outliers
-   - **Multiple Hypothesis Testing**: Statistical corrections for experiments with multiple variants or metrics
+4. **Advanced Implementation Techniques**
+   - **Sticky Bucketing**: Ensure consistent user experiences
+   - **Flag Prerequisites**: Create dependencies between flags
+   - **Server-Side Rendering**: Implement experiments in SSR environments
+   - **Split URL Testing**: Redirect users to different URLs for testing
 
-5. **Experiment Monitoring**
-   - **Cumulative Exposure Analysis**: Interpreting exposure graphs to identify issues
-   - **Sample Ratio Mismatch Detection**: Identifying discrepancies between expected and actual variant allocations
+## Product Relationships and Architecture
 
-### Integration with Amplitude Analytics
+Amplitude Experiment integrates closely with Amplitude Analytics, forming a comprehensive experimentation ecosystem:
 
-Amplitude Experiment integrates closely with Amplitude Analytics, allowing for:
-- Importing/exporting experiment chart settings between platforms
-- Creating user segments based on experiment variants for funnel analysis
-- Using Analytics data to inform experiment targeting and analysis
+1. **Amplitude Analytics Integration**
+   - Experiment results are analyzed in Amplitude Analytics
+   - Chart settings can be exported/imported between platforms
+   - User properties and events from Analytics can be used for targeting
+
+2. **SDK Ecosystem**
+   - **Client SDKs**: JavaScript, React, iOS, Android
+   - **Server SDKs**: Node.js, Java, Python, Go, Ruby
+   - **Evaluation Servers**: Remote evaluation endpoints
+
+3. **Deployment Models**
+   - **Local Evaluation**: Fast, client-side evaluation with limited targeting capabilities
+   - **Remote Evaluation**: Server-side evaluation with full targeting capabilities
+   - **Hybrid Approach**: Server-side rendering with both server and client SDKs
 
 ## Key Nomenclature and Definitions
 
-1. **Evaluation Modes**
-   - **Local Evaluation**: Client-side variant assignment using deterministic hashing
-   - **Remote Evaluation**: Server-side variant assignment with complex targeting rules
+1. **Experiment Terminology**
+   - **Flag**: Feature toggle that controls feature visibility
+   - **Variant**: A specific version of a feature being tested
+   - **Bucketing**: Process of assigning users to variants
+   - **Bucketing Key**: Identifier used to determine variant assignment (e.g., deviceID, userID)
+   - **Exposure Event**: Analytics event triggered when a user sees a variant
+   - **Assignment Event**: Event recording which variant a user was assigned
 
-2. **Bucketing Concepts**
-   - **Bucketing Key**: Identifier used to assign users to variants (typically device ID or user ID)
-   - **Sticky Bucketing**: Mechanism to maintain consistent variant assignment for users
-   - **Variant Jumping**: Undesirable situation where users see different variants during an experiment
+2. **Analysis Terminology**
+   - **Sample Ratio Mismatch (SRM)**: Discrepancy between intended and actual variant allocation
+   - **Variant Jumping**: When users see different variants across sessions
+   - **Multiple Hypothesis Testing**: Statistical challenge when testing multiple metrics or variants
+   - **Bonferroni Correction**: Method to adjust for multiple comparisons
+   - **Cumulative Exposures**: Graph showing experiment exposure over time
 
-3. **Experiment Analysis Terms**
-   - **Sample Ratio Mismatch (SRM)**: Statistically significant difference between observed and expected variant allocations
-   - **Multiple Hypothesis Testing**: Running multiple statistical tests that increase false positive risk
-   - **Bonferroni Correction**: Statistical method to adjust for multiple comparisons
+3. **Advanced Features**
+   - **Holdout Groups**: Enterprise feature to exclude users from experiments
+   - **Mutual Exclusion Groups**: Enterprise feature to prevent users from being in multiple experiments
+   - **Flag Prerequisites**: Enterprise feature creating dependencies between flags
 
-4. **Exposure and Assignment**
-   - **Exposure Event**: Tracks when a user actually sees a variant
-   - **Assignment Event**: Records which variant a user is assigned to
-   - **Cumulative Exposures Graph**: Visualization showing exposure accumulation over time
+## Implementation Details
 
-5. **Advanced Configuration Types**
-   - **Holdout Groups**: User segments excluded from experiments to measure long-term impacts
-   - **Mutual Exclusion Groups**: Configuration to prevent users from participating in multiple related experiments
-   - **Flag Prerequisites**: Dependencies between flags where one flag's evaluation depends on another's state
+### API Endpoints and SDK Usage
 
-## Product Ecosystem Integration
+1. **Remote Evaluation Endpoint**
+   - `https://api.lab.amplitude.com` - Primary evaluation endpoint
+   - Can be proxied through AWS CloudFront for regions with domain blocking
 
-Amplitude Experiment functions as part of the broader Amplitude product ecosystem:
-
-1. **Amplitude Analytics Integration**
-   - Experiment results can be analyzed in Analytics using shared chart settings
-   - User properties from experiments can be used for segmentation in Analytics
-   - Analytics events can trigger experiment exposure tracking
-
-2. **Development Workflow Integration**
-   - Server-side SDKs for various languages (JavaScript, etc.)
-   - Client-side SDKs for web and mobile platforms
-   - Integration with server-side rendering frameworks
-
-3. **Infrastructure Integration**
-   - AWS CloudFront can be configured as a reverse proxy for evaluation servers
-   - Support for CMS integration through split URL testing
-   - Enterprise features for large-scale deployment (holdout groups, mutual exclusion)
-
-## API Endpoints and Implementation Details
-
-1. **SDK Initialization**
+2. **JavaScript SDK Initialization**
    ```javascript
-   // Server SDK initialization
-   const experiment = new ExperimentServer({
+   // Client SDK
+   const experiment = new Experiment({
+     apiKey: 'API_KEY',
+     user: {
+       user_id: 'user@company.com',
+       device_id: 'device_id'
+     }
+   });
+   
+   // Server SDK
+   const experimentServer = new ExperimentServer({
      apiKey: 'SERVER_API_KEY',
      serverUrl: 'https://api.lab.amplitude.com'
    });
-
-   // Client SDK initialization
-   const experimentClient = new ExperimentClient({
-     apiKey: 'CLIENT_API_KEY',
-     user: { user_id: 'user-id' },
-     initialVariants: initialVariants // From server
-   });
    ```
 
-2. **Variant Fetching**
+3. **Variant Fetching**
    ```javascript
-   // Server-side variant fetching
-   const variants = await experiment.fetchV2({
-     user: { user_id: 'user-id' }
+   // Client-side
+   const variants = await experiment.fetch();
+   const variant = experiment.variant('flag-key');
+   
+   // Server-side
+   const variants = await experimentServer.fetchV2({
+     user: {
+       user_id: 'user@company.com',
+       device_id: 'device_id'
+     }
    });
-
-   // Client-side variant access
-   const variant = experimentClient.variant('flag-key').value;
    ```
 
-3. **Split URL Testing Implementation**
+4. **Server-Side Rendering Implementation**
+   ```javascript
+   // Server-side
+   const variants = await experimentServer.fetchV2({user});
+   
+   // Client-side hydration
+   const experiment = new Experiment({
+     apiKey: 'API_KEY',
+     user: user,
+     initialVariants: variants
+   });
+   ```
+
+5. **Split URL Testing**
    ```html
    <script src="https://cdn.amplitude.com/libs/experiment-js-client/1.0.0/experiment.umd.js"></script>
    <script>
-     const experiment = new amplitude.Experiment.ExperimentClient({
-       apiKey: 'CLIENT_API_KEY',
-       configuration: {
-         evaluationMode: 'local'
+     const experiment = new amplitude.Experiment({
+       apiKey: 'API_KEY',
+       defaultVariants: {
+         'flag-key': 'control'
+       }
+     });
+     experiment.fetch().then(() => {
+       const variant = experiment.variant('flag-key');
+       if (variant === 'treatment') {
+         window.location.href = 'https://treatment-page.com';
        }
      });
    </script>
    ```
 
-4. **Flag Prerequisites Configuration**
-   - Enterprise feature requiring specific configuration in the Amplitude Experiment UI
-   - Prevents circular dependencies and ensures proper evaluation order
+### Advanced Analysis Techniques
 
-5. **Holdout Group and Mutual Exclusion Configuration**
-   - Enterprise features configured through the Amplitude Experiment UI
-   - Require careful traffic allocation planning to ensure sufficient sample sizes
+1. **Outlier Detection and Handling**
+   - Standard deviation method: Values > 3 standard deviations from mean
+   - Percentile method: Values outside 1st and 99th percentiles
+   - Boxplot method: Values outside 1.5 * IQR from quartiles
+   - Mitigation: Winsorization, filtering, transformations (log, Box Cox)
 
-The platform provides comprehensive tools for advanced experimentation scenarios while maintaining integration with analytics for robust analysis of experiment results.
+2. **Multiple Hypothesis Testing**
+   - Bonferroni correction: Divide significance level by number of tests
+   - Focus on primary metrics to reduce false positives
+
+3. **Cumulative Exposure Analysis**
+   - Interpret slope changes, divergent lines, and inflection points
+   - Identify issues with experiment setup and targeting
+
+## Enterprise Features
+
+1. **Holdout Groups**
+   - Create via Experiment UI
+   - Set percentage of users to exclude from experiments
+   - Add experiments to holdout groups
+   - Analyze long-term cumulative impact
+
+2. **Mutual Exclusion Groups**
+   - Create via Experiment UI
+   - Configure slots and traffic allocation
+   - Add experiments to mutual exclusion groups
+   - Prevents interaction effects between experiments
+
+3. **Flag Prerequisites**
+   - Configure dependencies between flags
+   - Ensure proper feature hierarchy
+   - Use cases: release groups, chained mutual exclusion
+
+Amplitude Experiment provides a comprehensive platform for feature experimentation with robust analytics integration, flexible implementation options, and advanced capabilities for enterprise users.

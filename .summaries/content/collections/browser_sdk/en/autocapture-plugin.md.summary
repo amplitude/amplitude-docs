@@ -9,4 +9,4 @@ This documentation page explains how to migrate from the deprecated Autocapture 
 - script loader implementation
 - npm/yarn implementation
 - built-in Autocapture
-- autocapture configuration
+- plugin removal

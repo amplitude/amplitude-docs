@@ -1,14 +1,14 @@
 ## Summary
-This documentation explains Amplitude's Journey feature, which helps teams understand user conversion paths between funnel steps, showing both successful conversions and drop-offs in a single chart. The page details how to use Journey to identify friction points, discover unexpected paths, and analyze user behavior patterns between specific start and end events.
+This documentation explains Amplitude's Journey feature, which helps teams understand user conversion paths between funnel steps, showing detailed breakdowns of paths taken by users who converted or dropped off, identifying friction points, and revealing which experiences lead to faster conversions.
 
 ## Keywords
 - Journey feature
-- User conversion paths
+- Conversion paths
 - Drop-off analysis
 - Funnel steps visualization
 - Auto-filter settings
 - TF-IDF heuristic
 - Path comparison
+- User friction points
 - Conversion acceleration
-- Friction points identification
-- Journey vs. Pathfinder comparison
+- Path finder comparison

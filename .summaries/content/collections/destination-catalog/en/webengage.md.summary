@@ -6,9 +6,9 @@ This documentation details the WebEngage destination integration with Amplitude,
 - cohort synchronization
 - user_id to CUID mapping
 - omnichannel marketing
-- retention-led growth
 - REST API key
+- retention-led growth
 - personalized messaging
 - push notifications
 - WhatsApp integration
-- user engagement platform
+- user engagement

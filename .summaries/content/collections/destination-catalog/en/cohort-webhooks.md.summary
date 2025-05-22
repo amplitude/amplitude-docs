@@ -1,5 +1,5 @@
 # Summary
-This documentation details Amplitude CDP's Cohort Webhooks feature, which enables sending cohort updates to custom webhook endpoints, allowing for data enrichment and integration with marketing systems. It covers setup steps, configuration options, and provides examples of FreeMarker templates for customizing payload formats for different use cases.
+This documentation details Amplitude CDP's Cohort Webhooks feature, which enables sending cohort updates to custom webhook endpoints for data enrichment and integration with other systems. It covers setup steps, configuration options, and provides examples of FreeMarker templates for customizing payload formats for different use cases.
 
 ## Keywords
 - Cohort Webhooks

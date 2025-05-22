@@ -1,7 +1,7 @@
-## Summary
-This documentation explains Amplitude's Microscope feature, which allows users to deeply analyze specific data points in charts by providing up to six options (depending on plan) to examine user behavior, create annotations, build cohorts, view user streams, analyze user paths, and explore conversion drivers in funnel analysis.
+# Summary
+Amplitude's Microscope feature allows users to deeply analyze specific data points in charts by providing options to create annotations, releases, cohorts, view user lists, download user data, and explore user paths and streams. The feature is accessible in most Amplitude charts by clicking on data points and offers different capabilities based on the user's plan level.
 
-## Keywords
+# Keywords
 - Microscope feature
 - Data point analysis
 - User streams
@@ -9,8 +9,7 @@ This documentation explains Amplitude's Microscope feature, which allows users t
 - Annotations
 - Cohort creation
 - Conversion drivers
-- Funnel analysis
+- Account-level reporting
+- Group analysis
 - CSV download
-- Group-level reporting
-- Event segmentation
-- Release creation
+- Funnel analysis

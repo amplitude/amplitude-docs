@@ -12,5 +12,3 @@ This documentation page details the Experiment Management API Flag Endpoints, wh
 - rollout percentage
 - flag evaluation modes
 - REST API endpoints
-- flag configuration
-- user targeting

@@ -3,11 +3,11 @@ This documentation page describes the legacy Google Tag Manager Template for Amp
 
 # Keywords
 - Google Tag Manager legacy template
-- Amplitude Analytics Legacy
 - Maintenance Amplitude JavaScript SDK
 - Migration breaking changes
 - Web attribution tracking
-- Page view tracking
+- Page view tracking configuration
 - EU data residency
 - Template initialization differences
-- Marketing Analytics Browser SDK
+- Cookie migration logic
+- Marketing Analytics SDK

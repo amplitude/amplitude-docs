@@ -3,10 +3,10 @@ This documentation explains how to set up Single Sign-On (SSO) integration betwe
 
 # Keywords
 - OneLogin SSO integration
-- Amplitude organization admin
 - SAML 2.0 configuration
 - Organization ID
 - SAML metadata file
-- SSO setup process
+- Amplitude SSO setup
+- Identity Provider configuration
 - Enterprise authentication
-- Identity provider configuration
+- Access and SSO settings

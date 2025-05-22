@@ -9,6 +9,6 @@ Amplitude is an event-based analytics platform that tracks user behavior in prod
 - session tracking
 - product analytics platform
 - unique user tracking
-- real-time analytics
-- data trustworthiness
-- user engagement metrics
+- Amplitude ID
+- device ID
+- user ID

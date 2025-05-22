@@ -7,8 +7,8 @@ This documentation page details the Snapchat Ads integration with Amplitude, whi
 - Customer List segments
 - SHA256 encryption
 - User property mapping
-- OAuth authentication
 - Mobile Ad ID
+- OAuth authentication
 - Audience targeting
 - Sync cadence
-- Snapchat Ads Manager
+- Ads Manager

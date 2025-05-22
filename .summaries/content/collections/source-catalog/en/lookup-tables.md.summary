@@ -4,11 +4,11 @@ Amplitude's Lookup Table integration allows users to import CSV data to map and 
 # Keywords
 - CSV property mapping
 - Data enrichment
-- Lookup Table API
 - Case-sensitive matching
-- Property transformation
-- SKU mapping
 - Unique key column
+- Property transformation
+- Lookup Table API
 - Portfolio integration
-- Bulk property updates
+- SKU mapping
+- Language code conversion
 - Region filtering

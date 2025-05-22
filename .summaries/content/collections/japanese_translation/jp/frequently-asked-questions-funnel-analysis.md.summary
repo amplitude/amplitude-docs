@@ -1,14 +1,14 @@
-## Summary
-This documentation page addresses common questions about Funnel Analysis charts in Amplitude, explaining how funnels count users vs events, conversion window calculations, connecting revenue to funnel conversions, cohort creation behavior, and why conversion-over-time charts may show lower conversion rates than standard funnel charts.
+# Summary
+This documentation page explains frequently asked questions about Funnel Analysis charts in Amplitude, covering how funnels count users vs events, conversion window calculations, revenue tracking, cohort creation behavior, and why conversion-over-time charts may show lower conversion rates than standard funnel charts.
 
-## Keywords
-- Funnel Analysis
-- Unique users vs event totals
+# Keywords
+- funnel analysis
+- unique users vs event totals
 - 24-hour conversion window
-- Revenue property calculation
-- Property constant retention
-- Dynamic vs static cohorts
-- Conversion-over-time charts
-- Microscope cohort creation
-- Funnel conversion rates
-- Event property attribution
+- property constant retention
+- revenue calculation in funnels
+- static vs dynamic cohorts
+- conversion-over-time charts
+- microscope cohort creation
+- funnel conversion rates
+- session ID property constant

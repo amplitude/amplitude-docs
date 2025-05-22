@@ -1,105 +1,114 @@
 # Amplitude Product Overview
 
-Amplitude is a comprehensive product analytics platform that helps organizations understand user behavior, optimize product experiences, and drive business growth through data-driven insights. The platform enables teams to track, analyze, and act on user interactions across digital products.
+Amplitude is a comprehensive digital analytics platform that helps businesses understand user behavior, optimize product experiences, and drive growth through data-driven insights. The platform enables tracking, analyzing, and acting on user interactions across digital products and services.
 
 ## Key Features and Concepts
 
-1. **Event-Based Analytics**: Amplitude's core functionality revolves around tracking user events and properties to understand behavior patterns.
+### Event-Based Analytics
+Amplitude's core functionality revolves around tracking user events and behaviors across digital platforms. The architecture pre-aggregates data for efficient analysis, allowing businesses to understand how users interact with their products.
 
-2. **User Identity Management**: The platform uses device IDs, user IDs, and Amplitude IDs to track users across sessions and devices, with capabilities for merging anonymous and identified user profiles.
+### User Identity Management
+The platform uses multiple identifier types to track users across sessions and devices:
+- Device ID: Primary identifier for anonymous users
+- User ID: Identifier for logged-in users
+- Amplitude ID: Internal identifier that links user activities
+- Mobile identifiers: IDFA/IDFV/ADID for mobile advertising
 
-3. **Visualization Tools**: Various chart types including Event Segmentation, Funnel Analysis, Retention Analysis, User Sessions, User Composition, and Behavioral Cohorts.
+Amplitude provides capabilities for merging user profiles when identities are connected.
 
-4. **Experimentation**: A/B testing capabilities with statistical significance calculations and sequential testing methodology.
+### Visualization and Analysis Tools
+Amplitude offers various chart types for data analysis:
+- Event Segmentation: Analyzes event properties and user behaviors
+- Funnel Analysis: Tracks user conversion through defined event sequences
+- Retention Analysis: Measures user return rates over time
+- User Sessions: Analyzes session-based metrics
+- User Composition: Visualizes user property distributions
+- Behavioral Cohorts: Groups users based on behavior patterns
+- Personas: Uses Non-Negative Matrix Factorization to cluster similar users
+- Data Tables: Provides tabular views of analytics data
 
-5. **Data Governance**: Controls for hiding, blocking, or deleting events and properties, with instrumentation limits and data management features.
+### Experimentation
+Amplitude Experiment enables A/B testing with advanced statistical methodologies:
+- Sequential testing (mSPRT) for controlled false positive rates
+- Traditional T-tests for certain analyses
+- Confidence intervals and lift calculations
+- Mutual exclusion groups to prevent experiment interference
 
-6. **Integration Ecosystem**: Connections with third-party platforms like Segment, attribution partners, and export capabilities.
+### Data Management
+The platform provides tools for data governance:
+- Hide Events/Properties: Still collects data but hides from dropdowns
+- Block Events/Properties: Stops collecting new data while preserving historical data
+- Delete Events/Properties: Completely removes from ingestion and dropdowns
+- Self-service data deletion for Growth/Enterprise plans
+
+### Integration Ecosystem
+Amplitude integrates with various platforms:
+- Segment: Two-way integration for event tracking
+- Mobile Attribution Partners: For tracking campaign performance
+- Website Builders: Implementation support for Wix, Squarespace, etc.
 
 ## Product Relationships and Architecture
 
-### Core Analytics Platform
+### Analytics Core
+Events are the fundamental unit of data in Amplitude, with monthly event volume limits based on plan tier. Data is immutable after ingestion. Events can be sent via SDKs (JavaScript, iOS, Android) or server-side APIs.
 
-1. **Data Collection**:
-   - HTTP V2 API: For real-time, low-volume data ingestion (30 events/second limit)
-   - Batch Event Upload API: For high-volume data transfers, backfills, and migrations
-   - SDKs for various platforms (iOS, Android, JavaScript)
-   - Third-party integrations (Segment, etc.)
+### Data Export and Integration
+- Export API for JSON-formatted data
+- Amazon S3 Export for event data
+- Query Add-on (Amplitude SQL/Snowflake ETL) for SQL-like queries
+- CSV exports with varying limits by chart type (300-10,000 rows)
 
-2. **Data Analysis**:
-   - Event Segmentation: Analyze user behavior with property breakdowns
-   - Funnel Analysis: Track conversion paths with different ordering options
-   - Retention Analysis: Measure user return rates over time
-   - User Sessions: Analyze session-based metrics
-   - Behavioral Cohorts: Group users based on behavior patterns
-   - Personas: Cluster users based on behavior using Non-Negative Matrix Factorization
-
-3. **Data Export**:
-   - Export API: For JSON-formatted data
-   - Query Add-on (Amplitude SQL/Snowflake ETL): For SQL-like queries
-   - Amazon S3 Export: For exporting event data to S3 buckets
-
-### Amplitude Experiment
-
-A feature for running A/B tests with:
-- Sequential testing methodology
-- Mutual exclusion groups to prevent users from seeing multiple experiments
-- Duration estimates for statistical significance
-- Support for various metric types (Uniques, Average Totals, Average Sum of Property)
+### Instrumentation Limits
+- 2000 event types
+- 2000 event properties
+- 1000 user properties
+- 1024 character limit for strings
 
 ## Key Nomenclature and Definitions
 
-1. **Events**: User actions tracked in the system (limited to 2000 event types per project)
-   - **Event Properties**: Attributes of events (limited to 2000 per project)
-   - **User Properties**: Attributes of users (limited to 1000 per project)
+### Session Concepts
+- Session: A period of user activity, typically ended after 30 minutes of inactivity
+- Session ID: Unique identifier for a user session
+- Start Session Event: Explicit event to begin a new session
 
-2. **Identifiers**:
-   - **Device ID**: Unique identifier for a device (IDFV on iOS by default)
-   - **User ID**: Custom identifier for logged-in users
-   - **Amplitude ID**: Amplitude's internal user identifier
+### Analysis Terminology
+- (none) bucket: Represents null values in analytics
+- Dotted line: Indicates incomplete data still being collected
+- Return On vs Return On or After: Different retention calculation methodologies
+- Weighted average: Method used for retention calculations
 
-3. **Sessions**:
-   - Default timeout: 30 minutes of inactivity
-   - Can be customized with Start Session events or custom timeout windows
-   - Session ID: Timestamp of the first event in a session
+### Experiment Terminology
+- Sequential testing: Statistical methodology that allows checking results at any time
+- Mutual exclusion groups: Prevents users from participating in multiple experiments
+- Sticky bucketing: Ensures users remain in the same experiment variant
 
-4. **Cohorts**:
-   - **Dynamic Cohorts**: Update automatically as users meet criteria
-   - **Static Cohorts**: Fixed list of users at a point in time
+## Product Ecosystem Integration
 
-5. **Statistical Metrics**:
-   - **Sequential Testing**: Always-valid statistical methodology that allows continuous monitoring
-   - **Two-tailed T-test**: Traditional statistical test used in Funnel Analysis
+### Plan Tiers
+- Free: Basic analytics capabilities
+- Startup Scholarship: One-year access to Growth features for qualifying startups
+- Plus: Enhanced features with MTU guardrails
+- Growth: Advanced analytics with higher limits
+- Enterprise: Full-featured offering with highest limits and support
 
-6. **Data Visualization**:
-   - **Dotted Line**: Indicates incomplete data still being collected
-   - **(none) Value**: Represents null values in properties
-
-## Subscription Plans
-
-1. **Free Plan**: Basic analytics capabilities
-2. **Plus Plan**: Enhanced features with MTU guardrails and 1000 events per MTU limit
-3. **Growth Plan**: Advanced features including Behavioral Cohorts and Pathfinder
-4. **Enterprise Plan**: Full feature set with advanced security and support
-5. **Startup Scholarship Plan**: One year of free access to Growth plan features for qualifying startups
+### Security and Compliance
+- SOC2 Type 2 compliance
+- GDPR/HIPAA/CCPA compliance
+- Data Processing Addendum (DPA) available
+- Bug Bounty program for security research
 
 ## API Endpoints and Technical Implementation
 
-1. **Data Ingestion**:
-   - HTTP V2 API: `https://api2.amplitude.com/2/httpapi`
-   - Batch Event Upload API: For high-volume data transfers
+### Data Ingestion APIs
+- HTTP V2 API: For real-time, low-volume data (30 events/second limit)
+- Batch Event Upload API: For high-volume data transfers and backfills
+- Identify API: For updating user properties without sending events
 
-2. **Identity API**: For user identification and property updates
-3. **Export API**: For retrieving data in JSON format
-4. **Cohort API**: For programmatically accessing cohort data
-5. **Attribution API**: For connecting mobile attribution events
+### Data Export APIs
+- Export API: For retrieving raw event data
+- Behavioral Cohort API: For programmatically managing cohorts
 
-## Common Troubleshooting Areas
-
-1. **Access Issues**: Login errors, SSO authentication problems (500/403 errors)
-2. **Data Discrepancies**: Differences between Amplitude and other platforms due to time zones, event tracking, bot filtering, etc.
-3. **Missing Data**: Often related to instrumentation limits, hidden/blocked events, or ingestion delays
-4. **Browser Compatibility**: Firefox tracking protection can block Amplitude SDK, requiring proxy server implementation
-5. **Data Limitations**: Monthly event volume limits, instrumentation limits, and character limits for strings (1024 characters)
-
-Amplitude's architecture is designed to be immutable after data ingestion, with specific workarounds for modifying historical data when necessary. The platform emphasizes security and privacy compliance with SOC2, GDPR, HIPAA, and CCPA standards.
+### SDK Implementation
+- Configuration options like `flushIntervalMillis` and `eventUploadThreshold`
+- Session tracking parameters
+- User identification methods

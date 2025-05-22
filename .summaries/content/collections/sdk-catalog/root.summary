@@ -1,63 +1,65 @@
 # Amplitude SDK Catalog
 
-## Overview
+## Product Overview
 
-Amplitude's SDK Catalog provides cross-platform analytics and event tracking capabilities for applications. The SDKs enable developers to collect user behavior data for insights into engagement, retention, and conversion. Core capabilities include event tracking, user identification, session management, batch processing, and offline data collection.
+Amplitude's SDK Catalog provides a comprehensive suite of Software Development Kits that enable developers to integrate analytics capabilities into applications across multiple platforms. These SDKs facilitate the collection and analysis of user behavior data through event tracking, user identification, session management, and customizable data collection configurations.
 
 ## Product Relationships and Features
 
-The SDK ecosystem is organized by platform type:
+The SDK Catalog consists of platform-specific SDKs that share common core functionality while offering platform-specific implementations:
 
-### Mobile Platforms
-- **Android SDK**: Event tracking for Android with Kotlin/Java support
-- **iOS SDK**: Analytics integration for iOS using Swift
-- **React Native SDK**: Cross-platform solution for React Native
-- **Flutter SDK**: Cross-platform solution for Flutter
+1. **Mobile Platform SDKs**:
+   - Android (Java/Kotlin)
+   - iOS (Swift)
+   - React Native
+   - Flutter
 
-### Web Platforms
-- **Browser SDK**: JavaScript-based SDK for web applications
+2. **Web Platform SDKs**:
+   - Browser (JavaScript)
 
-### Backend/Server Platforms
-- **Node.js SDK**: For server-side JavaScript applications
-- **Python SDK**: For Python-based backend services
-- **Go SDK**: For Go-based backend services
-- **JRE Java SDK**: For Java-based backend services
+3. **Server-Side SDKs**:
+   - Node.js
+   - Python
+   - JRE Java
+   - Go
 
-### Game Development Platforms
-- **Unity SDK**: For Unity-built games and applications
-- **Unreal Engine SDK**: For Unreal Engine-built games and applications
+4. **Game Development SDKs**:
+   - Unity
+   - Unreal Engine
 
-All SDKs maintain consistent core functionality while providing platform-specific implementations.
+All SDKs provide consistent core capabilities with platform-specific implementations:
+- Event tracking for user interactions
+- User and device identification
+- Session management
+- Batch processing of events
+- Offline support with local storage
+- COPPA compliance controls
+- Server zone configuration for data residency
+- Customizable storage providers
+
+The Android SDK specifically offers detailed configuration for batching behavior, device ID management, session tracking, storage customization, and network settings.
 
 ## Key Nomenclature and Definitions
 
-- **Event Tracking**: Recording of user actions and behaviors
-- **Configuration Options**: Settings controlling SDK behavior
-- **Batch Processing**: Grouping multiple events before transmission
-  - **flushIntervalMillis**: Time interval between batch uploads
-  - **flushQueueSize**: Event count threshold for automatic upload
-- **Device ID Management**: Methods for unique device identification
-- **Session Tracking**: Monitoring of user engagement periods
-- **Offline Mode**: Local event storage when network is unavailable
-- **StorageProvider**: Interface for customizing local event storage
-- **ServerZone**: Geographic region configuration for data compliance
+- **Event**: A tracked user action or occurrence within an application
+- **User ID**: Unique identifier for tracking individual users across sessions
+- **Device ID**: Unique identifier for a specific device
+- **Session**: A defined period of user engagement with the application
+- **Batch API**: Method for sending multiple events in a single network request
+- **flushIntervalMillis**: Time interval configuration for automatically sending batched events
+- **flushQueueSize**: Maximum number of events to batch before sending
+- **StorageProvider**: Interface for customizing local event data storage
+- **serverZone**: Configuration parameter for specifying data residency (EU or US)
+- **COPPA**: Children's Online Privacy Protection Act - controls for regulatory compliance
 
 ## Product Ecosystem Integration
 
-The SDK catalog functions as the data collection layer within Amplitude's analytics platform. SDKs feed data into Amplitude's analytics dashboard and processing pipeline. The documentation structure indicates:
+The SDK Catalog functions as the data collection layer within Amplitude's broader analytics platform. The SDKs collect and transmit user event data to Amplitude's analytics backend, where it can be analyzed through Amplitude's dashboard and reporting tools.
 
-1. Platform-specific landing pages for each SDK
-2. Categorization by platform type
-3. Uniform connection to Amplitude backend services
+Key integration points include:
+- Connection to Amplitude's identity management system for cross-platform user tracking
+- Support for data residency options through server zone configuration
+- Compliance capabilities for regional data privacy regulations
+- Integration with Amplitude's analytics backend for data processing and visualization
 
-Game development SDKs (Unity and Unreal) have specialized documentation paths ("/docs/sdks/analytics/unity/unity-sdk" and "/docs/sdks/analytics/unreal/unreal-sdk"), suggesting they may be part of a specialized analytics offering within the broader ecosystem.
-
-## Implementation Details
-
-The Android SDK documentation highlights several configuration options:
-- Batch behavior controls (`flushIntervalMillis`, `flushQueueSize`)
-- Device ID management functionality
-- Session tracking configuration
-- Network settings including offline mode
-
-Each SDK maintains platform-specific implementations while ensuring consistent data collection across the entire ecosystem.
+Each SDK has dedicated documentation following a consistent template structure, with the exception of Unity and Unreal Engine SDKs which redirect to specific documentation paths. The catalog organization allows developers to easily locate the appropriate SDK for their development environment.

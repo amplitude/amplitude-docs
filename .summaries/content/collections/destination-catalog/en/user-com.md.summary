@@ -3,12 +3,12 @@ This documentation describes the User.com destination integration for Amplitude,
 
 ## Keywords
 - User.com integration
-- cohort export
-- marketing automation
-- customer communication platform
+- Amplitude cohort export
+- Marketing automation
+- Customer communication platform
 - API key configuration
-- behavioral triggers
-- audience synchronization
-- personalized campaigns
-- multi-channel messaging
-- segmentation
+- Cohort synchronization
+- Behavioral triggers
+- User segmentation
+- Multi-channel messaging
+- Personalized campaigns

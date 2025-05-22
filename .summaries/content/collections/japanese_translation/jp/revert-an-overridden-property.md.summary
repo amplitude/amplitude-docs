@@ -8,7 +8,7 @@ This documentation explains how to revert overridden properties in Amplitude Dat
 - tracking plan cleanup
 - event property consistency
 - property groups
-- bulk reversion
+- bulk revert
 - Compare To Original
 - Manage Override
 - Used By tab

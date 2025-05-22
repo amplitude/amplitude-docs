@@ -14,5 +14,4 @@ The Experiment Management API documentation outlines endpoints for programmatica
 - rate-limiting
 - regional-endpoints
 - status-codes
-- cursors
-- pagination
+- cursor-pagination

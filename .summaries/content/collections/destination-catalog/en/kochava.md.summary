@@ -6,10 +6,10 @@
 - Kochava Install integration
 - Event streaming attribution
 - IdentityLink API
-- App GUID configuration
+- Kochava Device ID
 - Mobile advertising identifiers
-- Device ID mapping
-- Install events forwarding
-- Kochava authentication
+- App GUID
+- Install events
 - Campaign ROI tracking
-- Post-installation event transmission
+- Authentication configuration
+- Event property mapping

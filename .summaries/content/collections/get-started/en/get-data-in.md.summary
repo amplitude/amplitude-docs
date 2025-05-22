@@ -1,8 +1,8 @@
 ## Summary
-This documentation page explains how to get data into Amplitude Analytics from your product or third-party sources, covering SDK implementation (particularly the Browser SDK), API key usage, and available integration methods, while also providing links to relevant APIs and resources for developers.
+This documentation page explains how to get data into Amplitude Analytics from your product or third-party sources, covering SDK implementation (particularly the Browser SDK), API key usage, and alternative data ingestion methods like HTTP API v2 and Batch API, while also listing key APIs and resources for developers.
 
 ## Keywords
-- data instrumentation
+- data ingestion
 - Browser SDK
 - API key
 - JavaScript snippet
@@ -12,6 +12,5 @@ This documentation page explains how to get data into Amplitude Analytics from y
 - Batch API
 - Dashboard REST API
 - Export API
-- Attribution API
-- Behavioral Cohorts API
 - data taxonomy
+- instrumentation

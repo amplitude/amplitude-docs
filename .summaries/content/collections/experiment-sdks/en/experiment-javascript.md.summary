@@ -7,12 +7,11 @@ This documentation details the Amplitude Experiment JavaScript SDK, covering ins
 - experiment variants
 - remote evaluation
 - exposure tracking
-- user provider
 - Amplitude integration
 - fetch variants
+- user provider
 - bootstrapping
 - local evaluation
-- client-side experimentation
-- flag configuration
-- automatic exposure tracking
-- account-level bucketing
+- server-side rendering
+- automaticExposureTracking
+- initializeWithAmplitudeAnalytics

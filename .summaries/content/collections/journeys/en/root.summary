@@ -6,50 +6,51 @@ Amplitude Journeys is a sophisticated path analysis tool that helps product team
 
 ### Key Features
 
-- **Multiple visualization types**: Pathfinder for flow diagrams and Journey Map for conversion patterns
-- **Flexible analysis options**: Analyze by unique users or total event occurrences
-- **Customizable conversion windows**: Define specific time periods for path analysis
-- **Path expansion by property**: Drill down into paths based on event properties
-- **Event filtering**: Include or exclude specific events from analysis
-- **Cohort generation**: Create user cohorts based on specific paths
-- **Conversion timing analysis**: Understand how long users take between steps
+- **Multiple visualization types**: Pathfinder for flow diagrams and Journey Map for detailed conversion analysis
+- **Flexible path analysis**: Track user journeys across events, properties, and sessions
+- **Conversion window customization**: Analyze paths within specific time frames
+- **Segmentation capabilities**: Filter and compare paths by user properties
+- **Measurement options**: View data by unique users or total occurrences
+- **Path expansion**: Drill down into specific paths by properties
+- **Cohort generation**: Create user segments based on specific paths
 
 ## Product Relationships and Architecture
 
 Journeys in Amplitude consists of two primary visualization components that work together:
 
-1. **Pathfinder Visualization**: A flow diagram showing how users navigate through a product, with nodes representing events and connections showing transitions between events. This visualization is ideal for high-level exploration of user paths.
+1. **Pathfinder Visualization**: A flow diagram showing how users navigate between events, with nodes representing events and connections showing transitions between them. This visualization is ideal for high-level exploration of user paths.
 
-2. **Journey Map Visualization**: A detailed view that reveals conversion patterns and timing between events, allowing for more precise comparison of different paths. This visualization excels at showing conversion rates and timing between specific steps.
+2. **Journey Map Visualization**: A detailed view that focuses on conversion patterns and timing between events, allowing for more precise comparison of different paths and their performance metrics.
 
-Both visualizations share the same underlying data and configuration settings, allowing users to switch between views to gain different perspectives on the same user journey data. They complement each other by providing both broad overview (Pathfinder) and detailed comparison capabilities (Journey Map).
+Both visualizations share the same underlying data and configuration settings, allowing users to switch between views to gain different perspectives on the same user journey data. The visualizations complement each other by providing both broad overview (Pathfinder) and detailed analysis (Journey Map) of user paths.
 
 ## Key Nomenclature and Definitions
 
-- **Conversion Window**: The time period within which a user must complete a path to be counted in the analysis.
-- **Bucket Threshold**: A setting that determines the minimum percentage of users required for a path to be displayed.
-- **Path Expansion**: The ability to break down a path further based on event properties.
-- **Unique vs. Total Counts**: Analysis can be based on either unique users (counting each user once) or total occurrences (counting every instance of an event).
-- **Dropped-off Users**: Users who did not complete the full conversion path being analyzed.
-- **Session Tracking**: Analysis of user paths within defined session boundaries.
-- **Path Percentages**: The proportion of users who follow a specific path relative to the total.
-- **Repeated Events**: Instances where the same event occurs multiple times in a user's journey.
+- **Conversion Window**: The time frame within which a user must complete a path to be counted in the analysis.
+- **Unique vs. Total Counts**: Measurement options where "unique" counts each user once regardless of how many times they complete a path, while "total" counts every occurrence.
+- **Path Expansion**: The ability to break down a path segment by a specific property to see more detailed user flows.
+- **Bucket Below Threshold**: A feature that groups less common paths together to simplify visualization.
+- **Dropped-off Users**: Users who started but did not complete a defined conversion path.
+- **Event Filtering**: The ability to include or exclude specific events from path analysis.
+- **Session Tracking**: Following user paths within the context of individual usage sessions.
+- **Path Percentages**: Metrics showing the proportion of users who follow specific paths.
 
 ## Integration with Amplitude Ecosystem
 
-Journeys appears to be a core analytical tool within the broader Amplitude analytics platform. It integrates with Amplitude's user tracking and event collection systems to provide path analysis based on the events and properties defined in the platform.
+Journeys appears to be a core analytical component within the broader Amplitude analytics platform. It integrates with Amplitude's event tracking and user identification systems to provide path analysis capabilities. The tool allows for cohort generation, suggesting integration with Amplitude's segmentation and targeting features.
 
-The tool supports cohort generation, allowing users to create segments based on specific paths for further analysis in other Amplitude tools. This suggests Journeys works as part of an integrated analytics workflow where insights from path analysis can inform other types of analysis and targeting within the Amplitude ecosystem.
+The ability to analyze paths by properties indicates integration with Amplitude's user property and event property tracking systems. The visualizations likely connect with other Amplitude features for further analysis and action on the insights discovered through path analysis.
 
 ## Usage Examples
 
-While specific API endpoints or command line invocations aren't explicitly mentioned in the documentation, the product appears to be primarily accessed through Amplitude's web interface. Users can:
+While specific API endpoints or command line invocations aren't explicitly mentioned in the documentation, the product is used through Amplitude's web interface where users can:
 
-- Switch between Pathfinder and Journey Map visualizations to analyze the same data from different perspectives
-- Filter events to include or exclude from path analysis
-- Expand paths based on event properties to gain deeper insights
-- Adjust conversion windows to analyze user behavior over different time periods
-- Toggle between unique user counts and total event occurrences
+- Configure path analysis by selecting start and end events
+- Filter paths by specific user properties or behaviors
+- Customize conversion windows to focus analysis on relevant timeframes
+- Switch between visualization types to gain different perspectives
+- Expand paths by properties to drill down into specific user segments
 - Generate cohorts based on users who follow specific paths
+- Compare different path segments to identify optimization opportunities
 
-The tool is designed to answer questions such as how users navigate through a product, where they drop off, which paths lead to the highest conversion rates, and how long users take between key steps in their journey.
+The Journeys tool enables product teams to answer questions about how users navigate through their products, where users drop off, which paths lead to the highest conversion rates, and how different user segments behave differently within the product.

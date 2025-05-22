@@ -1,5 +1,5 @@
 # Summary
-This documentation details the HubSpot event streaming v2 integration, which allows forwarding Amplitude events and properties to HubSpot for personalized marketing, lead scoring, and customer retention. The setup process involves authenticating with HubSpot, selecting events to send, mapping properties, and configuring additional settings, with considerations for API rate limits and the requirement of a HubSpot Enterprise subscription.
+This documentation details the HubSpot event streaming v2 integration, which allows forwarding Amplitude events and properties to HubSpot for personalized marketing, lead scoring, and customer retention use cases. The setup process involves authenticating with HubSpot, selecting events to send, mapping properties, and configuring additional settings, with considerations for API rate limits and the requirement of a HubSpot Enterprise subscription.
 
 # Keywords
 - HubSpot event streaming

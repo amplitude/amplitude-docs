@@ -1,5 +1,5 @@
 # Summary
-This documentation page visually explains array operators in Amplitude charts, illustrating how different operators (equals, set contains, set equals) work with single values and combinations using AND/OR logic through diagrams that show the resulting data selections.
+This documentation page visually explains array operators in Amplitude charts, illustrating how different operators (equals, set contains, set equals) work with single values and combinations using AND/OR logic through diagrams that show the resulting data selection patterns.
 
 # Keywords
 - array operators
@@ -11,5 +11,5 @@ This documentation page visually explains array operators in Amplitude charts, i
 - set does not equal
 - AND/OR logic
 - chart filtering
-- data visualization
-- Amplitude analytics
+- data selection patterns
+- visual diagrams

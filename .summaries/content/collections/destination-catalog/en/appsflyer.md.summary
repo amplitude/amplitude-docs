@@ -1,14 +1,14 @@
 # Summary
-This documentation page details the AppsFlyer destination integration in Amplitude, explaining how to configure event streaming to AppsFlyer by setting up credentials (S2S Key and App ID), mapping user properties to AppsFlyer identifiers, and selecting which events and properties to forward.
+This documentation page details the AppsFlyer destination integration in Amplitude, explaining how to configure event streaming from Amplitude to AppsFlyer, including required credentials (S2S Key and App ID), event filtering, property mapping (especially AppsFlyer ID and device identifiers), and supported AppsFlyer properties.
 
 # Keywords
 - AppsFlyer integration
-- Event streaming configuration
-- AppsFlyer S2S Key
-- AppsFlyer ID mapping
-- Device identifiers
-- User property mapping
-- Event forwarding
-- Attribution integration
-- Cohort export
-- AppsFlyer App ID
+- event streaming
+- cohort export
+- S2S Key
+- AppsFlyer ID
+- device identifiers
+- property mapping
+- attribution
+- user behavior analytics
+- marketing campaign effectiveness

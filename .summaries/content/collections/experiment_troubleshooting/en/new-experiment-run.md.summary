@@ -6,9 +6,9 @@ This documentation explains how to create a new run of an existing Amplitude exp
 - new experiment run
 - bucketing salt
 - experiment key
-- exposure event
-- SDK version requirements
-- re-randomize users
 - sticky bucketing
+- SDK version requirements
 - data quality issues
-- Evaluation API
+- exposure event tracking
+- variant evaluation
+- re-randomize users

@@ -1,5 +1,5 @@
 ## Summary
-Amplitude's object management feature allows Enterprise users to centrally create, update, and manage analysis objects (custom events, metrics, segments, cohorts) with capabilities to designate "official" objects, view usage in charts, prevent duplicates, and perform bulk operations.
+Amplitude's object management feature allows Enterprise users to centrally create, update, and manage analysis objects (custom events, metrics, segments, cohorts) with capabilities to designate official objects, prevent duplicates, track usage in charts, and perform bulk operations.
 
 ## Keywords
 - analysis objects
@@ -9,8 +9,8 @@ Amplitude's object management feature allows Enterprise users to centrally creat
 - segments
 - cohorts
 - official designation
-- Enterprise plan
 - duplicate prevention
+- Enterprise plan
 - bulk deletion
 - object ownership
 - usage tracking

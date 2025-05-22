@@ -1,5 +1,5 @@
 ## Summary
-This documentation page explains how to import historical data to Amplitude using the Batch Event Upload API, covering considerations, limits, best practices, and the data ingestion system. It details how to handle user properties during backfill, including the `$skip_user_properties_sync` option to prevent overwriting current values.
+This documentation page explains how to import historical data to Amplitude using the Batch Event Upload API, covering considerations, limits, best practices, and the data ingestion system. It details how to handle user properties during backfills, including the `$skip_user_properties_sync` option to prevent overwriting current values.
 
 ## Keywords
 - data backfill

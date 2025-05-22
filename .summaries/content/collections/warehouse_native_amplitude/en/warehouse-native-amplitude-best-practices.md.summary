@@ -12,5 +12,3 @@ This documentation outlines best practices for Warehouse-native Amplitude, focus
 - data modeling
 - warehouse-native
 - cardinality considerations
-- fact tables
-- dimension tables

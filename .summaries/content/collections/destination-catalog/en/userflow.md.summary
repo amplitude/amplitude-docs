@@ -1,15 +1,14 @@
 # Summary
-This documentation describes the Amplitude-Userflow integration that enables syncing user cohorts from Amplitude to Userflow for targeted in-app experiences (product tours, checklists, surveys) without coding, and includes step-by-step setup instructions for both platforms and the cohort export process.
+This documentation page describes the Userflow destination integration with Amplitude, which allows syncing user cohorts from Amplitude to Userflow for targeted in-app experiences (product tours, checklists, surveys) without coding, and enables bidirectional data flow where user interactions in Userflow can be streamed back to Amplitude.
 
 # Keywords
-- cohort-syncing
+- cohort syncing
 - no-code product tours
 - in-app onboarding
 - user segmentation
-- integration-secret
-- customer engagement
+- integration secret
 - behavioral analytics
-- product tours
 - checklists
 - surveys
 - resource center
+- bidirectional data flow

@@ -6,12 +6,12 @@ This documentation explains how to use Ampli CLI with source control systems lik
 - source control
 - branch coordination
 - ampli.json
+- ampli pull
+- ampli checkout
 - ampli status
-- is-merged flag
-- is-latest flag
-- CI workflows
+- is-merged
+- is-latest
 - GitHub Actions
+- CI workflows
 - tracking plan implementation
-- branch synchronization
 - merge verification
-- Amplitude Data

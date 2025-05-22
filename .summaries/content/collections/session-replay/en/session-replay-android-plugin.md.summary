@@ -11,5 +11,5 @@ This documentation covers the installation and configuration of Session Replay u
 - WebView/MapView support
 - EU data residency
 - Android SDK integration
-- replay troubleshooting
 - session sampling
+- troubleshooting replay issues

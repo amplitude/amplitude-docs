@@ -1,14 +1,14 @@
 ## Summary
-This documentation explains Amplitude's Prediction feature, which uses AI to segment users based on their likelihood to perform future actions rather than past behaviors. It helps optimize targeting workflows for maximum lift, particularly for communication frequency, dynamic pricing, and content personalization, by building mathematical models that predict user actions.
+This documentation explains Amplitude's Prediction feature, which uses AI to segment users based on their likelihood to perform future actions, helping optimize targeting workflows for maximum lift. It details when predictions are most effective (for products with unclear funnels, when seeking incremental lift, and with 100,000+ monthly users), how to determine which predictions to build, and explains the mathematical model that analyzes user behavior patterns.
 
 ## Keywords
 - Amplitude Activation
-- Predictive cohorts
-- User segmentation
-- Conversion probability
-- Targeting optimization
-- Logistic regression model
-- User journey mapping
-- Behavioral signals
-- Campaign targeting
-- Workflow improvement
+- predictive cohorts
+- targeting workflow optimization
+- user segmentation
+- conversion probability
+- logistic regression model
+- behavioral signals
+- user journey mapping
+- campaign targeting
+- lift optimization

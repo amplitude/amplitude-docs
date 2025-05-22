@@ -1,16 +1,17 @@
 ## Summary
-This documentation explains Amplitude's alert feature, which uses Prophet machine learning to automatically detect anomalies in product metrics. It covers three types of alerts (automatic, custom, and smart), how to configure them, and how alerts are delivered via email when metrics fall outside expected confidence intervals.
+This documentation explains Amplitude's alert feature, which uses Prophet machine learning to detect anomalies in product metrics. It covers three types of alerts (automatic, custom, and smart), how to configure them, and how alerts are delivered via email when metrics fall outside expected confidence intervals.
 
 ## Keywords
+- Amplitude alerts
 - Prophet machine learning
 - Anomaly detection
-- Automatic alerts
 - Custom alerts
 - Smart alerts
+- Automatic monitors
 - Confidence intervals (95%, 98%, 99%)
 - Event Segmentation charts
 - Funnel Analysis
 - Alert configuration
 - Statistical significance
-- Enterprise feature
-- Insights add-on
+- Alert notifications
+- Metric monitoring

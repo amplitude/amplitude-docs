@@ -1,14 +1,14 @@
-# Summary
-This documentation page explains how Amplitude identifies users through Device ID, Amplitude ID, and User ID, emphasizing best practices for setting User IDs including not assigning IDs to anonymous users, using permanent identifiers, maintaining case sensitivity, and understanding server-side assignment complexities.
+## Summary
+This documentation page explains how Amplitude identifies users through Device ID, Amplitude ID, and User ID, emphasizing best practices for setting User IDs. It recommends assigning User IDs only when users create accounts or log in, warns that User IDs cannot be changed once set, and explains how Amplitude merges event data across devices for the same user.
 
-# Keywords
+## Keywords
 - User identification
-- Amplitude ID
+- User ID
 - Device ID
-- User ID assignment
+- Amplitude ID
 - Cross-device tracking
 - User identity merging
-- User tracking best practices
 - Anonymous users
+- User ID best practices
 - Case sensitivity
-- User profile management
+- User tracking

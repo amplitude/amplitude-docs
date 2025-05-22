@@ -2,15 +2,14 @@
 This documentation explains how to use Amplitude's Data Tables for multidimensional analysis, allowing users to compare multiple metrics across different dimensions in a single view. It covers setup, configuration options, sorting logic, result limitations, and features like nested grouping, filtering, and transposing rows and columns.
 
 ## Keywords
-- data tables
-- multidimensional analysis
-- multi-metric analysis
-- group by properties
-- nested grouping
-- result limitations
-- sorting logic
+- Data Tables
+- Multidimensional analysis
+- Group By properties
+- Nested grouping
+- Metric filtering
+- Row/column transposing
+- Result limitations
 - CSV export limits
-- transpose functionality
-- attribution metrics
-- time properties
-- secondary group by
+- Sort logic
+- Attribution metrics
+- Time properties

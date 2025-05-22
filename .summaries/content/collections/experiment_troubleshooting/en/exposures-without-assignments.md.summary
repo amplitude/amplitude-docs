@@ -9,6 +9,7 @@ This documentation explains the "Exposures without Assignments" diagnostic chart
 - fallback variants
 - fetch() call
 - variant() method
-- experiment targeting
-- user streams debugging
-- exposure event tracking
+- experiment troubleshooting
+- user streams
+- rule-based targeting
+- mutually exclusive experiments

@@ -4,11 +4,11 @@ This documentation explains how to interpret the cumulative exposures graph in A
 # Keywords
 - cumulative exposures graph
 - experiment exposure tracking
-- increasing slope
-- decreasing slope
-- static cohorts
-- exposure rates
-- hourly vs daily visualization
+- increasing slope interpretation
+- decreasing slope analysis
+- static cohort limitations
+- exposure rate decline
+- hourly vs daily exposure patterns
 - sticky bucketing
 - experiment duration estimation
 - sample size calculation

@@ -4,9 +4,10 @@ This documentation page describes the Amplitude to Statsig event streaming integ
 # Keywords
 - Statsig event streaming
 - Server Secret Key
-- user_id matching
-- event metadata limits
 - feature management
 - product experimentation
+- user ID matching
+- event size limitations
 - event filtering
 - causal analysis
+- data insights

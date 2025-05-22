@@ -1,16 +1,18 @@
 ## Summary
-This documentation page describes the Amplitude Analytics Unity SDK, a plugin that integrates Amplitude iOS and Android SDKs into Unity projects (2019.3.11+). It covers installation methods, initialization, configuration options, event tracking, user properties management, revenue tracking, session handling, and advanced features like COPPA controls and dynamic configuration.
+This documentation page describes the Amplitude Analytics Unity SDK, a plugin that integrates Amplitude iOS and Android SDKs into Unity projects (2019.3.11+). It covers installation methods, initialization, configuration options, event tracking, user property management, revenue tracking, session handling, and advanced features like COPPA controls and dynamic configuration.
 
 ## Keywords
 - Unity SDK
-- Event tracking
-- User properties
-- Revenue tracking
+- event tracking
+- user properties
+- revenue tracking
 - setUserProperty
 - logEvent
+- user sessions
 - IDFA tracking
 - EU data residency
-- Session management
-- Dynamic configuration
+- dynamic configuration
 - COPPA control
 - Android/iOS integration
+- batch event upload
+- user groups

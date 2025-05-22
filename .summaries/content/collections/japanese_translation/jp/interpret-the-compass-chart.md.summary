@@ -8,7 +8,7 @@ This documentation explains how to interpret Amplitude's Compass chart, which sh
 - Heatmap interpretation
 - User events correlation
 - Predictive categories (highly/moderately/slightly predictive)
-- Contingency tables
+- Cohort creation
 - Statistical significance
 - Positive predictive value (PPV)
 - Negative predictive value (NPV)

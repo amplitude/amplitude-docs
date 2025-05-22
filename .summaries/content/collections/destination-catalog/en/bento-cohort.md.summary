@@ -1,15 +1,15 @@
-## Summary
-This documentation describes the Bento (Cohort) destination integration in Amplitude, which allows syncing user cohorts from Amplitude to Bento for targeted product experiences like onboarding checklists and feature announcements, enabling personalized user experiences without engineering support.
+# Summary
+This documentation describes the Bento (Cohort) destination integration in Amplitude, which allows syncing user cohorts from Amplitude to Bento for targeted product experiences like onboarding checklists and feature announcements, with considerations for paid plans and existing Bento users.
 
-## Keywords
-- Bento integration
+# Keywords
+- Bento cohort integration
+- product activation experiences
+- guide targeting
 - cohort syncing
-- user targeting
-- product activation
-- onboarding experiences
+- user onboarding
 - feature announcements
 - API key configuration
-- paid plans requirement
-- account mapping
+- targeted messaging
 - behavioral triggers
+- user segmentation
 - personalization

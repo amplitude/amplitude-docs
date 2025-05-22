@@ -1,14 +1,16 @@
 ## Summary
-This documentation page provides a comprehensive guide for migrating from Segment to Amplitude, covering source/destination configuration, SDK implementation updates, and validation steps. It includes detailed code examples for converting Segment SDK calls (identify, track, group) to Amplitude equivalents across Browser, iOS, and Android platforms.
+This documentation page provides a comprehensive guide for migrating from Segment to Amplitude, covering source/destination configuration, SDK implementation updates, and validation steps. It includes detailed code examples for converting Segment methods (identify, track, group) to Amplitude equivalents across Browser, iOS, and Android platforms.
 
 ## Keywords
 - Segment migration
 - Amplitude SDK implementation
-- source-destination configuration
-- identify/track/group method conversion
-- data validation
-- migration checklist
-- cross-platform SDK examples
-- API key mapping
-- group identification
-- event tracking conversion
+- API key conversion
+- Event tracking conversion
+- User identification
+- Group tracking
+- Source configuration
+- Destination setup
+- Data validation
+- Migration checklist
+- Cross-platform implementation
+- Browser/iOS/Android SDK examples

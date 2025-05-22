@@ -1,14 +1,14 @@
 # Summary
-Datazoom integration enables video publishers to send raw, standardized video events to Amplitude, allowing them to centralize and standardize video data for improved observability and optimization. Setup requires copying an Amplitude API key and configuring a Datazoom Connector with options for sampling rate and field redirection.
+Datazoom integration enables video publishers to send raw, standardized video events to Amplitude, allowing for centralized data management and improved observability of streaming video content. Setup requires copying an Amplitude API key and configuring a Datazoom Connector with options for sampling rate and field redirection.
 
-## Keywords
+# Keywords
 - video data pipeline
 - streaming analytics
 - Datazoom Connector
 - video event standardization
-- sampling rate configuration
+- sampling rate
 - field redirection
 - real-time video data
-- video publisher optimization
-- Data Pipe integration
-- video observability
+- video publisher observability
+- Data Pipe configuration
+- video content optimization

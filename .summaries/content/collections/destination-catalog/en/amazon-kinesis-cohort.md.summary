@@ -9,6 +9,6 @@ Amazon Kinesis Cohort integration enables streaming cohort membership updates fr
 - real-time cohort sync
 - Trust Relationships
 - IAM policy permissions
+- PutRecord/PutRecords actions
 - cohort sync frequency
-- message_id
-- user_properties
+- user_properties inclusion

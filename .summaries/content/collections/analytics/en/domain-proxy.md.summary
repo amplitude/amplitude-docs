@@ -5,11 +5,10 @@ This documentation explains how to set up a domain proxy to relay events to Ampl
 - domain proxy
 - event relay
 - HTTP V2 API
-- NGINX configuration
-- proxy_pass
+- NGINX proxy configuration
 - SDK endpoint configuration
 - api2.amplitude.com
-- serverUrl
-- apiEndpoint
+- proxy_pass
 - data anonymization
-- self-owned audit logging
+- event filtering
+- cloud provider proxy services

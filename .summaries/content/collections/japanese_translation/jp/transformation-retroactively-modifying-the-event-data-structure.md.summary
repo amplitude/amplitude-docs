@@ -5,10 +5,10 @@ This documentation explains Amplitude's transformation feature, which allows ret
 - retroactive data transformation
 - event merging
 - property consolidation
-- property value modification
-- property value hiding
+- property value renaming
+- value hiding
 - transformation management
 - query-time modifications
-- data structure correction
-- implementation error fixes
+- implementation error correction
+- data structure standardization
 - non-destructive data changes

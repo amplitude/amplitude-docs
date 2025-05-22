@@ -22,12 +22,11 @@ The Japanese documentation is integrated into the main Amplitude documentation p
 3. It appears to use a translation workflow where content can be derived from original English pages (as suggested by the "origin" field in the test page)
 
 ## Technical Details
-- The documentation is managed through a content collection system, likely using a static site generator
-- Content is stored in Markdown format with YAML frontmatter for metadata
-- Content IDs are used to reference and relate pages (e.g., the origin ID in the test page)
-- The documentation includes configuration options for:
-  - Excluding pages from sitemaps
-  - Hiding helpful widgets or components
-  - Publishing/unpublishing content
+- The documentation uses a blueprint-based content management system
+- Content is managed through markdown files with YAML frontmatter
+- Each page has a unique ID (UUID format)
+- Pages can be excluded from the sitemap if needed
+- Content appears to support translation workflows with origin references
+- The system tracks content updates with user IDs and timestamps
 
-The Japanese documentation section appears to be actively maintained, with recent updates to the home page (timestamp: 1718402690) and test page (timestamp: 1733261724).
+The Japanese documentation section is designed to provide the same comprehensive product information as the main documentation but tailored specifically for Japanese-speaking users.

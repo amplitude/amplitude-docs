@@ -1,14 +1,15 @@
 # Summary
-The Amplitude Activation Braze streaming integration enables real-time forwarding of Amplitude events and user data to Braze, requiring Braze API Endpoint, API Key, and App ID for setup. It supports bidirectional data flow, user identification via External ID/Braze ID/User Alias/Email, and selective event and user property forwarding.
+The Braze (Event Stream) destination integration enables real-time bidirectional data flow between Amplitude and Braze, allowing organizations to forward events and user data to Braze for personalized marketing campaigns and send engagement data back to Amplitude for comprehensive analytics.
 
 # Keywords
-- Event streaming
-- Braze integration
-- User identification mapping
-- API credentials
-- Custom event properties
-- User property forwarding
-- Marketing automation
-- Bidirectional data flow
+- Braze API Endpoint
+- Braze API Key
+- Braze App ID
 - User Alias
 - External ID
+- Event streaming
+- User forwarding
+- Custom event properties
+- Custom attributes
+- Update Users Only
+- Bidirectional data flow

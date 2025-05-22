@@ -1,13 +1,14 @@
 ## Summary
-Notivize is a code-free platform for product engagement notifications that integrates with Amplitude to receive cohort data. The integration requires generating an API key in Notivize and configuring the destination in Amplitude Data, allowing for scheduled cohort syncing.
+Notivize is a no-code platform for product engagement notifications that integrates with Amplitude for cohort syncing. The documentation outlines a two-part setup process requiring an API key from Notivize's settings and configuration in Amplitude Data's Catalog, followed by steps to export cohorts with customizable sync cadence.
 
 ## Keywords
 - product engagement notifications
+- no-code notifications
 - cohort syncing
 - API key authentication
-- no-code notifications
 - user onboarding touchpoints
 - re-activation flows
 - product event notifications
-- marketing automation
 - sync cadence
+- marketing automation
+- Amplitude Data Catalog

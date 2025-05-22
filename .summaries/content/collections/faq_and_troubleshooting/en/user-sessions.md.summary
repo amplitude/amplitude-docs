@@ -1,5 +1,5 @@
 ## Summary
-This documentation page addresses FAQs about User Sessions charts and session tracking in Amplitude, covering empty charts, zero-length sessions, session triggers, gaps in sessions, custom session definitions, and integration with Segment, with emphasis on how Amplitude defines, calculates, and troubleshoots session-related issues.
+This documentation page addresses FAQs about User Sessions charts and session tracking in Amplitude, covering empty charts, zero-length sessions, session triggering mechanisms, session timeouts, custom session definitions, and integration with Segment.
 
 ## Keywords
 - User Sessions chart
@@ -13,4 +13,4 @@ This documentation page addresses FAQs about User Sessions charts and session tr
 - HTTP API
 - mobile SDKs
 - event streams
-- session length calculation
+- epoch timestamp

@@ -15,4 +15,5 @@ This documentation explains how to set the Minimum Detectable Effect (MDE) for e
 - Risk assessment
 - Hypothesis testing
 - Conversion rate
-- Experiment duration
+- Duration estimator
+- T-test

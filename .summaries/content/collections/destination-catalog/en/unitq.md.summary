@@ -1,5 +1,5 @@
 ## Summary
-This documentation page describes the unitQ destination integration for Amplitude, which allows organizations to sync cohorts from Amplitude to unitQ to combine product analytics with AI-powered user feedback insights, enabling better product quality management and user experience optimization.
+This documentation page describes the unitQ destination integration for Amplitude, which allows organizations to sync cohorts from Amplitude to unitQ to combine product analytics with AI-powered user feedback insights, enabling better product quality management and user experience optimization through qualitative data analysis.
 
 ## Keywords
 - unitQ integration
@@ -11,5 +11,6 @@ This documentation page describes the unitQ destination integration for Amplitud
 - user type segmentation
 - onboarding optimization
 - A/B testing enhancement
-- API token authentication
 - feedback centralization
+- API key authentication
+- sync cadence configuration

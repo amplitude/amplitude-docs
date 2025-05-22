@@ -3,12 +3,12 @@ This documentation explains how to set app-level user permissions in Amplitude E
 
 ## Keywords
 - Amplitude Experiment permissions
-- app-level user access
-- permission matrix
-- role-based access control
-- experiment user roles
-- project access management
-- organization admin
-- project manager
-- experiment viewer
-- experiment member
+- App-level user access
+- Permission matrix
+- Role-based access control
+- Experiment user roles
+- Analytics-independent permissions
+- Project access management
+- Viewer/Member/Manager/Admin permissions
+- Feature flag access control
+- Experiment environment permissions

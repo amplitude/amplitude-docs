@@ -1,5 +1,5 @@
 ## Summary
-This documentation details the Stripe integration for Amplitude, which imports revenue events from Stripe for financial data analysis, highlighting setup steps through Stripe webhooks, user identification methods, and example analytics charts for tracking revenue metrics, with a comprehensive list of supported Stripe events that can be tracked in Amplitude.
+This documentation details the Stripe integration for Amplitude, which imports revenue events from Stripe for financial data analysis, highlighting setup steps through Stripe webhooks, user identification methods, and example analytics charts for tracking revenue metrics, with a comprehensive list of supported Stripe events.
 
 ## Keywords
 - Stripe webhook integration
@@ -8,7 +8,7 @@ This documentation details the Stripe integration for Amplitude, which imports r
 - User identification metadata
 - Financial data analysis
 - Transaction event ingestion
-- Revenue metrics
+- Revenue cohorts
 - Stripe event types
 - Payment analytics
-- User cohort analysis
+- Invoice tracking

@@ -1,111 +1,123 @@
-# Amplitude Analytics API Suite
+# Amplitude API Suite
 
 ## Product Overview
 
-Amplitude Analytics is a comprehensive product analytics platform that enables businesses to track, analyze, and optimize user behavior across digital products. The API suite provides programmatic access to Amplitude's core functionalities, allowing developers to integrate Amplitude's analytics capabilities into their workflows, applications, and data pipelines.
+Amplitude is a comprehensive analytics and data platform that helps businesses track user behavior, analyze product usage, and make data-driven decisions. The API suite provides programmatic access to Amplitude's core functionalities, enabling developers to integrate Amplitude's analytics capabilities into their workflows, applications, and data pipelines.
 
 Key features of the Amplitude API suite include:
 - Event ingestion and tracking via HTTP APIs
 - User identity management and property updates
 - Data export and retrieval capabilities
-- Cohort management and behavioral analysis
-- Privacy compliance tools for GDPR and CCPA
-- Schema management through taxonomy APIs
 - Dashboard and chart data access
-- Group-level analytics for B2B use cases
+- Cohort management and user segmentation
+- Privacy compliance tools for GDPR and CCPA
+- Schema and taxonomy management
 - Cross-project user mapping
 
 ## Product Relationships and Architecture
 
-The Amplitude API suite consists of several interconnected APIs that serve different purposes within the analytics ecosystem:
+The Amplitude API suite consists of several interconnected APIs that work together to provide a complete analytics solution:
 
 1. **Data Ingestion APIs**:
-   - HTTP V2 API: The primary endpoint for sending event data to Amplitude
+   - HTTP V2 API: The primary method for sending event data to Amplitude
    - Batch Event Upload API: For uploading large volumes of events
    - Identify API: For updating user properties without sending events
-   - Group Identify API: For updating group-level properties
+   - Group Identify API: For setting properties on groups of users
+   - Attribution API: For tracking marketing attribution data
 
 2. **Data Retrieval APIs**:
    - Export API: For extracting raw event data
-   - Dashboard REST API: For accessing analyzed data from dashboards
+   - Dashboard REST API: For accessing chart and dashboard data
    - User Profile API: For retrieving user properties and recommendations
    - Behavioral Cohorts API: For accessing user segments
 
 3. **Data Management APIs**:
    - Taxonomy API: For managing event schema
-   - Lookup Table API: For property augmentation and transformation
-   - User Mapping API: For cross-project identity resolution
-   - User Privacy API: For compliance with data privacy regulations
+   - Lookup Table API: For property mapping and augmentation
+   - User Mapping API: For cross-project user identification
+   - User Privacy API: For compliance with privacy regulations
+   - SCIM API: For user and permission management
 
 4. **Annotation and Metadata APIs**:
    - Chart Annotations API: For marking significant events on charts
-   - Releases API: For tracking product releases and changes
-
-5. **Administrative APIs**:
-   - SCIM API: For user provisioning and access management
-   - Event Streaming Metrics API: For monitoring data delivery
+   - Releases API: For tracking product releases
 
 ## Key Nomenclature and Definitions
 
-- **device_id**: A unique identifier for a device or browser instance
-- **user_id**: A unique identifier for a user, typically set when a user logs in
-- **event_type**: The name of the action being tracked (e.g., "Button Clicked")
-- **event_properties**: Key-value pairs providing context about an event
-- **user_properties**: Attributes associated with a user that persist across events
-- **group_type/group_value**: Identifiers for organizational structures like accounts or companies
-- **group_properties**: Attributes associated with groups rather than individual users
+- **device_id**: A unique identifier for a device or browser
+- **user_id**: A unique identifier for a user, typically from your authentication system
+- **event_type**: The name of the action being tracked
+- **event properties**: Metadata associated with a specific event
+- **user properties**: Attributes associated with a user that persist across events
+- **group properties**: Attributes associated with a group of users (requires Accounts add-on)
 - **insert_id**: A unique identifier for an event used for deduplication
 - **amplitude_id**: Amplitude's internal user identifier
+- **global_user_id**: An identifier used to map users across projects
 - **cohort**: A segment of users defined by behavioral criteria
-- **lookup table**: A mapping of existing property values to new values for data enrichment
-- **taxonomy**: The structured organization of event types, properties, and their metadata
+- **lookup table**: A mapping of existing properties to new properties for data enrichment
+- **taxonomy**: The schema definition for events, properties, and their metadata
 
 ## Product Ecosystem Integration
 
 Amplitude's API suite integrates with the broader Amplitude product ecosystem in several ways:
 
-1. **Cross-Project Analytics**: The User Mapping API enables connecting user identities across different Amplitude projects, supporting the Portfolio add-on for cross-project analysis.
+1. **Cross-Project Views**: The User Mapping API enables the Portfolio add-on functionality, allowing businesses to track users across multiple projects.
 
-2. **B2B Analytics**: The Group Identify API supports the Accounts add-on, allowing analysis at the account or organization level rather than just individual users.
+2. **Accounts Add-on**: The Group Identify API supports the Accounts add-on, enabling account-level reporting and analysis.
 
-3. **Data Activation**: The User Profile API connects with Amplitude's Activation capabilities, enabling personalization and targeted engagement based on user behavior.
+3. **Activation Plan**: The User Profile API requires an Activation plan and provides access to computed properties, cohort memberships, and recommendations.
 
-4. **Data Governance**: The Taxonomy API supports Enterprise-tier features for maintaining consistent data schemas across an organization.
+4. **Enterprise Features**: The Taxonomy API is available to Enterprise customers for programmatic schema management.
 
-5. **Privacy Compliance**: The User Privacy API and CCPA DSAR API enable compliance with global privacy regulations as part of Amplitude's privacy framework.
+5. **Data Residency**: The HTTP API supports EU data residency through different endpoints (api.eu.amplitude.com).
 
-6. **Visualization Integration**: The Dashboard REST API and Chart Annotations API connect with Amplitude's visualization and reporting capabilities.
+## Key API Endpoints and Usage
 
-## API Endpoints and Usage
+### Event Ingestion
 
-### Data Ingestion
+- **HTTP V2 API**: `POST https://api2.amplitude.com/2/httpapi`
+  - Used for sending individual or batched events
+  - Supports up to 1000 events per request with a 20MB payload limit
 
-- **HTTP V2 API**: `POST https://api2.amplitude.com/2/httpapi` (or `api.eu.amplitude.com` for EU data residency)
 - **Batch Event Upload**: `POST https://api2.amplitude.com/batch`
+  - For larger event volumes with the same 20MB limit
+  - Rate limited to 1000 events per second per device/user ID
+
 - **Identify API**: `POST https://api2.amplitude.com/identify`
+  - For updating user properties without sending events
+  - Supports operations like $set, $setOnce, $add, $append, $prepend, $unset
+
 - **Group Identify API**: `POST https://api2.amplitude.com/groupidentify`
+  - For setting properties on groups
+  - Requires the Accounts add-on
 
 ### Data Retrieval
 
 - **Export API**: `GET https://amplitude.com/api/2/export`
-- **Dashboard REST API**: Various endpoints under `https://amplitude.com/api/3/...`
+  - Returns raw event data in JSON format
+  - Limited to 365 days of data and 4GB response size
+
+- **Dashboard REST API**: Various endpoints under `https://amplitude.com/api/3/chart/...`
+  - Retrieves data displayed on Amplitude dashboard graphs
+  - Supports event segmentation, funnels, retention, and more
+
 - **Behavioral Cohorts API**: 
   - `GET https://amplitude.com/api/3/cohorts`
-  - `POST https://amplitude.com/api/3/cohorts/request-download/{cohortId}`
-  - `POST https://amplitude.com/api/3/cohorts/{cohortId}/members`
+  - `GET https://amplitude.com/api/3/cohorts/request`
+  - For listing, exporting, and uploading cohorts
 
 ### Data Management
 
-- **Taxonomy API**: Various endpoints under `https://amplitude.com/api/2/taxonomy/...`
-- **Lookup Table API**: Endpoints under `https://data-api.amplitude.com/...`
-- **User Mapping API**: `POST https://api.amplitude.com/usermap`
 - **User Privacy API**: `POST https://amplitude.com/api/2/deletions/users`
+  - For GDPR/CCPA compliance
+  - Supports batch deletion of up to 100 users per request
 
-### Annotations and Metadata
+- **Taxonomy API**: Various endpoints under `https://amplitude.com/api/2/taxonomy/...`
+  - For managing event schema, categories, and property definitions
+  - Enterprise feature with rate limits based on a cost model
 
-- **Chart Annotations API**: 
-  - `GET https://amplitude.com/api/2/annotations`
-  - `POST https://amplitude.com/api/2/annotations`
-- **Releases API**: `POST https://amplitude.com/api/2/releases`
+- **SCIM API**: Endpoints under `https://amplitude.com/api/2/scim/v2/...`
+  - Implements SCIM 2.0 standard for user and group provisioning
+  - Integrates with Identity Providers for user management
 
-Most APIs use HTTP Basic Authentication with API keys, have specific rate limits, and return standardized response codes. Many operations are asynchronous, requiring polling for completion status, particularly for data-intensive operations like exports and cohort downloads.
+The Amplitude API suite provides a comprehensive set of tools for integrating analytics capabilities into applications and workflows, enabling businesses to leverage their data for product improvement and user engagement optimization.

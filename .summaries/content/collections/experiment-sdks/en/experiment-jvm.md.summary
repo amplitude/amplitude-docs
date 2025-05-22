@@ -3,13 +3,16 @@ The Experiment JVM SDK is a server-side implementation for Amplitude Experiment 
 
 ## Keywords
 - JVM SDK
-- Remote evaluation
-- Local evaluation
-- Feature flags
-- Variant fetching
-- Cohort targeting
-- Flag streaming
+- remote evaluation
+- local evaluation
+- feature flags
+- variants
+- cohort targeting
+- flag streaming
 - ExperimentUser
-- Assignment tracking
-- Server deployment key
-- CohortSyncConfig
+- deployment key
+- assignment tracking
+- flag config polling
+- server-side implementation
+- Java
+- Kotlin

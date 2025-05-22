@@ -1,12 +1,13 @@
 # Summary
-The Group Identify API allows setting or updating properties of particular groups in Amplitude, supporting operations like $set, $setOnce, $add, $append/$prepend, and $unset, with limits of 1024 group identifies per request, 1024 properties per request, and 1MB maximum request size.
+The Group Identify API allows setting or updating properties of particular groups in Amplitude, supporting operations like $set, $setOnce, $add, $append/$prepend, and $unset, with limits of 1024 group identifies per request, 1024 properties per request, and a 1MB maximum request size.
 
 # Keywords
 - group_properties
 - group_type
 - group_value
-- identification parameter
 - Accounts add-on
+- identification parameter
 - property operations ($set, $setOnce, $add, $append, $prepend, $unset)
 - request limits
-- POST /groupidentify
+- account-level reporting
+- future events updating

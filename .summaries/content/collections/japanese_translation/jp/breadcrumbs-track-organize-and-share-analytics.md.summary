@@ -1,14 +1,14 @@
-## Summary
-This documentation explains Amplitude's Breadcrumbs feature, which allows users to track and organize complex analytics workflows in one place by saving analysis steps, bookmarking charts, and adding notes. The feature streamlines the process of creating interactive notebooks from chart views that can be shared with team members, maintaining the context and evolution of analysis.
+# Summary
+This documentation explains Amplitude's Breadcrumbs feature, which allows users to track all steps of complex analytics in one place, create an evolutionary history of analysis, and easily convert charts into interactive notebooks for sharing with teams without needing to retrace steps or manage multiple tabs.
 
-## Keywords
+# Keywords
 - Breadcrumbs feature
 - Analytics tracking
-- Notebook creation
-- Chart bookmarking
-- Analysis workflow
+- Notebook conversion
 - Analysis history
-- Chart sharing
-- Analysis context preservation
+- Chart bookmarking
 - Workflow simplification
-- Stakeholder communication
+- Stakeholder sharing
+- Interactive analytics
+- Evolution tracking
+- Chart documentation

@@ -2,144 +2,136 @@
 
 ## High-Level Overview
 
-The Amplitude Browser SDK is a JavaScript/TypeScript library for tracking user events and analytics in web applications. It enables developers to capture user interactions, identify users, track revenue events, and gather marketing attribution data. The SDK has evolved through multiple versions, with Browser SDK 2.0 being the current recommended version, while older versions (Browser SDK 1.0 and JavaScript SDK) are maintained but not actively developed.
+Amplitude's Browser SDK is a JavaScript/TypeScript library for tracking user events and analytics in web applications. The SDK has evolved through multiple versions, with Browser SDK 2.0 being the current recommended version, while Browser SDK 1.0 and the legacy JavaScript SDK are in maintenance mode. The SDK enables developers to track user interactions, identify users, manage sessions, track revenue, and capture marketing attribution data.
 
 Key features include:
-- Event tracking (both manual and automatic)
-- User identification and property management
+- Event tracking with customizable properties
+- User identification and user property management
+- Session management and cross-domain tracking
 - Revenue tracking
-- Marketing attribution capture
-- Session management
-- Cross-domain tracking
-- Offline support and event batching
+- Marketing attribution tracking (UTM parameters, referrers, click IDs)
+- Autocapture functionality for automatic event tracking
+- Offline mode support
 - Plugin architecture for extensibility
+- Strongly typed APIs through Ampli wrappers
 
 ## Product Relationships and Features
 
-### SDK Version Evolution
+### SDK Versions and Relationships
 
-The Browser SDK has evolved through several iterations:
+1. **JavaScript SDK (Legacy)**: The original SDK, now in maintenance mode. Users are encouraged to migrate to Browser SDK 2.0.
 
-1. **JavaScript SDK (Legacy)**: The original implementation, now in maintenance mode.
-2. **Browser SDK 1.0**: Introduced TypeScript support and plugin architecture, now in maintenance mode.
-3. **Browser SDK 2.0**: The current recommended version featuring a simplified API, enhanced functionality, and consolidated features from previous specialized SDKs.
-4. **Marketing Analytics Browser SDK**: A specialized version focused on attribution tracking that has now been consolidated into Browser SDK 2.0.
+2. **Browser SDK 1.0**: An intermediate version that improved upon the JavaScript SDK with a plugin architecture and promise-based callbacks. Also in maintenance mode.
 
-### Ampli Wrapper
+3. **Browser SDK 2.0**: The current recommended SDK version with enhanced features including built-in autocapture, consolidated marketing attribution tracking, and simplified configuration.
 
-The Ampli Wrapper sits on top of the Browser SDK, providing type safety and schema enforcement based on Amplitude Data tracking plans. It offers:
-- Type-safe event tracking with autocompletion
-- Validation against predefined schemas
-- Prevention of instrumentation errors
-- Support for both JavaScript and TypeScript
+4. **Marketing Analytics Browser SDK**: An extension of the Browser SDK specifically designed for marketing attribution tracking. Its functionality has been largely incorporated into Browser SDK 2.0.
 
-Ampli Wrapper versions exist for all three SDK generations (JavaScript SDK, Browser SDK 1.0, and Browser SDK 2.0).
+5. **Ampli Wrappers**: Strongly typed API wrappers that work with the Browser SDKs to provide type safety, autocompletion, and schema enforcement based on tracking plans defined in Amplitude Data.
 
-### Feature Categories
+### Feature Relationships
 
-#### Core Tracking
-- **Event Tracking**: Send custom events with properties
-- **User Identification**: Associate events with specific users via User ID
-- **User Properties**: Track and update user attributes
-- **Group Management**: Associate users with organizations or groups
-- **Revenue Tracking**: Capture purchase and monetization events
-
-#### Advanced Capabilities
-- **Autocapture**: Automatically track clicks, form submissions, and other interactions
-- **Marketing Attribution**: Track UTM parameters, referrers, and click IDs
-- **Session Management**: Configure session timeouts and track user sessions
-- **Cross-Domain Tracking**: Maintain user identity across different domains
-- **Offline Support**: Queue events when offline and send when connection is restored
-- **EU Data Residency**: Configure for compliance with EU data storage requirements
+- **Event Tracking**: Core functionality across all SDK versions, with Browser SDK 2.0 offering a more streamlined API.
+  
+- **Autocapture**: Originally a separate plugin, now built into Browser SDK 2.0 (since version 2.10.0).
+  
+- **Marketing Attribution**: Initially provided by the separate Marketing Analytics SDK, now consolidated into Browser SDK 2.0's default tracking capabilities.
+  
+- **User Identification**: Available across all SDK versions with consistent API patterns.
+  
+- **Plugin Architecture**: Introduced in Browser SDK 1.0 and refined in 2.0 for better extensibility.
 
 ## Key Nomenclature and Definitions
 
-- **Event**: A discrete user action or occurrence tracked in the system
-- **User Properties**: Attributes associated with a specific user (e.g., name, email, plan type)
-- **Device ID**: Automatically generated unique identifier for a device/browser
-- **User ID**: Custom identifier assigned to a specific user, typically from your authentication system
-- **Session**: A period of user activity, typically ending after a period of inactivity
-- **Tracking Plan**: Schema defining expected events and properties in Amplitude Data
-- **Autocapture**: Automatic tracking of user interactions without manual instrumentation
-- **Marketing Attribution**: Tracking which marketing channels and campaigns drive user acquisition
-- **Plugin**: Extension module that adds functionality to the SDK
-- **Flush**: Process of sending batched events to Amplitude servers
-- **Identity Storage**: Methods for storing user identity (cookies, localStorage, etc.)
-- **First-touch Attribution**: Crediting the first marketing touchpoint in a user's journey
-- **Multi-touch Attribution**: Tracking multiple marketing touchpoints throughout a user's journey
+- **Ampli Wrapper**: A strongly typed API wrapper generated from Amplitude Data tracking plans that provides autocompletion, type safety, and schema enforcement.
+
+- **Autocapture**: Functionality that automatically tracks user interactions like clicks, form submissions, and page views without manual instrumentation.
+
+- **Device ID**: A unique identifier for the user's device, typically stored in cookies or local storage.
+
+- **Event**: A user action or occurrence that is tracked for analytics purposes.
+
+- **Identify**: API method used to set or update user properties without sending an event.
+
+- **Plugin**: Modular components that extend SDK functionality, such as enrichment plugins that add data to events.
+
+- **Session**: A period of user activity, typically ending after a period of inactivity.
+
+- **Tracking Plan**: A schema defined in Amplitude Data that specifies the structure of events and properties.
+
+- **User Properties**: Attributes associated with a user that persist across sessions.
+
+- **UTM Parameters**: Marketing tracking parameters (source, medium, campaign, etc.) used for attribution.
 
 ## Product Ecosystem Integration
 
-The Browser SDK is a key component in Amplitude's broader product ecosystem:
+The Browser SDK integrates with the broader Amplitude ecosystem in several ways:
 
-1. **Amplitude Analytics**: The Browser SDK sends event data to Amplitude Analytics for processing, analysis, and visualization.
+1. **Amplitude Analytics**: The SDK sends event data to Amplitude's analytics platform for processing and visualization.
 
-2. **Amplitude Data**: The Ampli Wrapper connects with Amplitude Data tracking plans to enforce consistent event schemas across the organization.
+2. **Amplitude Data**: The Ampli wrapper connects with tracking plans defined in Amplitude Data to ensure consistent event tracking.
 
-3. **Cross-Platform Tracking**: Works alongside other Amplitude SDKs (Mobile, Server) to provide a complete view of the user journey across different platforms and touchpoints.
+3. **Cross-Platform Tracking**: The Browser SDK can be used alongside other Amplitude SDKs (iOS, Android, etc.) to track user journeys across platforms.
 
-4. **Plugin Ecosystem**: Supports extensions through plugins for additional functionality, such as specialized tracking or integration with other tools.
+4. **EU Data Residency**: The SDK supports sending data to EU data centers for compliance with European regulations.
+
+5. **Server-Side Integration**: Events tracked by the Browser SDK can be complemented by server-side tracking using Amplitude's server SDKs.
 
 ## API Endpoints and Commands
 
-### Browser SDK 2.0 Core API
+### SDK Initialization and Configuration
 
 ```javascript
-// Initialization
+// Browser SDK 2.0 initialization
 import { init } from '@amplitude/analytics-browser';
-init(API_KEY, USER_ID, {options});
 
-// Event Tracking
-track('Event Name', {eventProperties});
-
-// User Identification
-identify(USER_ID, {userProperties});
-
-// Group Management
-setGroup('groupType', 'groupName');
-
-// Event Flushing
-flush();
+init('API_KEY', {
+  defaultTracking: {
+    sessions: true,
+    pageViews: true,
+    formInteractions: true,
+    fileDownloads: true
+  }
+});
 ```
+
+### Core API Methods
+
+- `track(eventName, eventProperties)`: Track an event with optional properties
+- `identify(identifyObj)`: Set or update user properties
+- `setUserId(userId)`: Set the user ID for the current user
+- `setGroup(groupType, groupName)`: Associate a user with a group
+- `revenue(revenueObj)`: Track revenue events
+- `flush()`: Force send any unsent events
 
 ### Ampli CLI Commands
 
-```bash
-# Pull tracking plan from Amplitude Data
-ampli pull
+- `ampli pull`: Pull the latest tracking plan from Amplitude Data
+- `ampli status`: Check the status of the local tracking plan against the remote version
 
-# Check status of tracking plan implementation
-ampli status
-```
-
-### Ampli Wrapper API
+### Plugin Interface
 
 ```javascript
-// Initialization
-ampli.load({
-  client: {
-    apiKey: 'API_KEY',
-    configuration: {options}
+// Example plugin implementation
+const plugin = {
+  name: 'custom-plugin',
+  setup: (config) => {
+    // Plugin setup code
+  },
+  execute: (context) => {
+    // Plugin execution code
+    return context;
+  }
+};
+```
+
+### Marketing Attribution Tracking
+
+```javascript
+// Configure marketing attribution in Browser SDK 2.0
+init('API_KEY', {
+  defaultTracking: {
+    attribution: true
   }
 });
-
-// Event Tracking (with type safety)
-ampli.track('Predefined Event', {
-  property1: 'value',
-  property2: 123
-});
-
-// User Identification
-ampli.identify(USER_ID, {userProperties});
-```
-
-### Plugin Registration
-
-```javascript
-// Register a plugin
-import { init, add } from '@amplitude/analytics-browser';
-import { plugin } from 'plugin-package';
-
-init(API_KEY);
-add(plugin);
 ```

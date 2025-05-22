@@ -2,13 +2,13 @@
 This documentation page explains how to manage users and permissions in Amplitude, covering processes for inviting users, changing permissions, transferring content ownership, and requesting email domain changes. It details project-level permissions functionality and the steps for managing user access across an organization.
 
 # Keywords
-- user invitation process
-- project-level permissions
-- bulk transfer ownership
-- organization roles
-- email domain migration
-- user access management
-- permission levels
-- content ownership transfer
-- admin capabilities
-- team spaces
+- User invitation process
+- Project-level permissions
+- Role management
+- Content ownership transfer
+- Email domain migration
+- Organization settings
+- Bulk transfer edit access
+- User access requests
+- Permission levels
+- Admin capabilities

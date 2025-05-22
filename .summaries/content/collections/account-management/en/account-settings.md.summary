@@ -1,15 +1,14 @@
-## Summary
-This documentation page details the Settings page in Amplitude, covering organizational settings (including plan usage, user management, and Session Replay configuration) and personal settings (profile management, site preferences, notifications, and theme options). It explains how admins can configure organization-wide settings while all users can manage their individual preferences.
+# Summary
+The Settings page in Amplitude allows users to manage both organizational and personal settings, with organization admins controlling features like user permissions, SSO, Session Replay settings (including sample rates and project management), while personal settings include profile management, site preferences, notification controls, and theme selection (light/dark mode).
 
-## Keywords
-- Amplitude Settings page
-- Organization admin permissions
+# Keywords
+- organizational settings
 - Session Replay configuration
-- Usage tracking
-- User management
+- sample rate management
+- user permissions
 - SSO integration
-- Personal profile settings
-- Notification preferences
-- Light/Dark mode
-- Sample rate configuration
-- Slack integration
+- usage reports
+- personal profile settings
+- notification preferences
+- theme mode selection
+- billing information

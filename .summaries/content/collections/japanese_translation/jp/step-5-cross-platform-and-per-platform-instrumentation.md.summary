@@ -7,7 +7,7 @@ This documentation explains the decision between cross-platform instrumentation 
 - API key management
 - platform-specific tracking
 - user behavior analysis
-- instrumentation strategy
+- instrumentation approaches
 - platform differences
 - test vs production data
 - user crossover analysis

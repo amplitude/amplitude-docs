@@ -11,6 +11,9 @@ This documentation explains Amplitude's Cart Analytics feature, which allows ana
 - item match
 - collection match
 - nested properties
-- product performance analysis
 - behavioral insights
+- product performance analysis
 - shopping cart flows
+- parent properties
+- child properties
+- sibling properties

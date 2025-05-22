@@ -1,5 +1,5 @@
 ## Summary
-This documentation explains how to use T-tests in Amplitude Experiment to compare means between two data populations, detailing the process for configuring one-sided (increase/decrease) or two-sided tests, required sample size considerations, and how to interpret results through the Plan and Analyze tabs.
+This documentation explains how to use T-tests in Amplitude Experiment to compare means between two data populations, including how to select between one-sided (increase/decrease) and two-sided tests, required sample size considerations, and the process for configuring T-test analysis through the Plan or Analyze tabs.
 
 ## Keywords
 - T-test
@@ -11,5 +11,4 @@ This documentation explains how to use T-tests in Amplitude Experiment to compar
 - Sample size requirements
 - Experiment Results chart
 - Cumulative Exposure graph
-- Plan tab
-- Analyze tab
+- Statistical settings

@@ -1,14 +1,14 @@
 ## Summary
-This documentation explains how to set up SCIM provisioning in Amplitude, which allows programmatic user management through the SCIM 2.0 standard API. It details how to enable SCIM in Amplitude, configure integration with Okta, and includes supported user attributes, prerequisites, and troubleshooting steps.
+This documentation explains how to set up SCIM provisioning in Amplitude for enterprise customers, including enabling the feature, generating SCIM keys, and configuring integration with Okta. It details supported SCIM user attributes and troubleshooting steps for authentication issues.
 
 ## Keywords
 - SCIM provisioning
 - User Management API
-- Enterprise plan
+- Enterprise permissions
 - Okta integration
 - SCIM 2.0 standard
-- Permission groups
 - SCIM key generation
-- User attributes
+- User provisioning
+- Permission groups
+- API authentication
 - Identity provider integration
-- Provisioning actions

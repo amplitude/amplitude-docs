@@ -1,14 +1,14 @@
 # Summary
-This documentation page describes the Iterable Event Stream destination integration in Amplitude, which allows forwarding Amplitude events and users to Iterable. It details the setup process including prerequisites, configuration steps for event and user forwarding, mapping Amplitude properties to Iterable fields, and required credentials.
+This documentation page describes the Iterable Event Stream destination integration in Amplitude, which allows forwarding Amplitude events and users to Iterable. It details the setup process including prerequisites, configuration steps for mapping user properties, event forwarding, and user forwarding.
 
 # Keywords
 - Iterable API Key
 - event streaming
-- user forwarding
-- property mapping
-- cross-channel marketing
+- user property mapping
 - Iterable user ID
+- event forwarding
+- user forwarding
+- cross-channel marketing
+- Amplitude Activation
+- Iterable data fields
 - campaign metrics
-- data fields
-- event filtering
-- marketing automation

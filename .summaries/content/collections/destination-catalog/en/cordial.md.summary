@@ -1,14 +1,14 @@
 # Summary
-This documentation describes the Cordial destination integration with Amplitude, which enables syncing Amplitude cohorts to Cordial lists for targeted messaging and importing real-time customer data from Cordial to Amplitude for analysis. It details the setup process in both platforms and explains how cohort syncing works, including how list names are created and how contacts are added/removed.
+This documentation describes the Cordial destination integration with Amplitude, which enables syncing user cohorts from Amplitude to Cordial lists for targeted messaging across channels (email, SMS, mobile app), and details the setup process in both platforms along with how cohort syncing works.
 
 # Keywords
 - Cordial integration
 - cohort syncing
 - customer engagement platform
+- contact lists
 - API key setup
 - contact identifier mapping
-- list management
+- list synchronization
 - targeted messaging
-- real-time data unification
-- email/SMS/mobile app messaging
-- dynamic segments
+- email marketing
+- SMS messaging

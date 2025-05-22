@@ -1,5 +1,5 @@
 # Summary
-This documentation page details the HubSpot-Amplitude integration process, covering installation of Amplitude tracking code, cohort syncing to HubSpot, PQL scoring configuration, automated outreach setup, alert creation, and embedding Amplitude charts in HubSpot dashboards, with separate instructions for new and existing Amplitude users.
+This documentation page details the HubSpot-Amplitude integration process, covering installation of Amplitude tracking code, cohort syncing to HubSpot, PQL scoring configuration, automated outreach setup, alert creation, and embedding Amplitude charts in HubSpot dashboards, with specific instructions for both new and existing Amplitude users.
 
 # Keywords
 - HubSpot integration
@@ -7,8 +7,8 @@ This documentation page details the HubSpot-Amplitude integration process, cover
 - cohort syncing
 - Amplitude tracking code
 - HubSpot workflow automation
-- Amplitude charts embedding
 - lead scoring
+- Amplitude charts embedding
 - behavioral insights
-- personalized customer journeys
-- product-led growth (PLG)
+- product-led growth
+- HubSpot Enterprise plan

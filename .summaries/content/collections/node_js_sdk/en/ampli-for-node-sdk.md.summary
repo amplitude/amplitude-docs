@@ -13,6 +13,7 @@ This documentation page describes the Ampli Wrapper for Node.js SDK, a generated
 - track
 - flush
 - ampli CLI
-- event schema enforcement
-- middleware
+- event tracking
 - user properties
+- middleware
+- schema enforcement

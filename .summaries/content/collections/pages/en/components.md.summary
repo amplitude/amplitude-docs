@@ -1,14 +1,14 @@
 # Summary
-This documentation page describes site components available for content formatting, including Tabs, Collapse, and Admonition partials with their implementation examples and styling options.
+This documentation page describes site components available for use in content, including tabs for code examples in different languages, collapsible sections for detailed information, and various admonition types (note, info, warning, example, tip, alpha, beta, deprecated) for highlighting specific content.
 
 # Keywords
 - site components
 - tabs partial
 - collapse partial
-- admonition partial
+- admonition types
 - content formatting
-- code examples
-- note/warning/info styling
 - documentation components
-- content display options
-- interactive elements
+- code examples
+- collapsible sections
+- warning blocks
+- information blocks

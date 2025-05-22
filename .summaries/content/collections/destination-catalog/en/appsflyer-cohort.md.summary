@@ -3,12 +3,12 @@ This documentation page describes the AppsFlyer (Cohort) destination integration
 
 # Keywords
 - AppsFlyer Audiences
-- cohort synchronization
-- app ID
-- API token V2
-- user identifier mapping
+- cohort syncing
 - audience segmentation
+- AppsFlyer App ID
+- API Token V2
+- user identifier mapping
 - platform-specific setup
-- sync cadence
+- beta integration
 - first-party data
-- audience naming
+- audience synchronization

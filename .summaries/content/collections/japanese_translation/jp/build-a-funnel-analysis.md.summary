@@ -8,7 +8,7 @@ This documentation page explains how to build funnel analysis charts in Amplitud
 - drop-off points
 - optional steps
 - event ordering
-- inline event combination
+- inline event combining
 - group-by comparison
 - conversion calculation
 - simultaneous events

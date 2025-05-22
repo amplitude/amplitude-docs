@@ -9,10 +9,11 @@ This documentation explains how to identify and handle outliers in data analysis
 - derived properties
 - log transformation
 - Box Cox transformation
-- standard deviation
-- boxplots
-- Amplitude Experiment
 - histogram visualization
+- standard deviation
+- boxplot analysis
+- Amplitude Experiment
+- metric types
 - PROPSUM formula
 - outlier filtering
-- metric types
+- session replays

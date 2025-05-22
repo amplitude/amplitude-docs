@@ -1,14 +1,14 @@
 # Summary
-This documentation page explains Sample Ratio Mismatch (SRM) in Amplitude Experiment, which occurs when observed variant allocations significantly differ from specified allocations, indicating potential biases in experiment data. It provides a comprehensive troubleshooting guide covering common causes like variant distribution changes mid-experiment, exposure timing issues, variant jumping, and instrumentation problems.
+This documentation page explains Sample Ratio Mismatch (SRM) in Amplitude Experiment, where observed variant allocations differ significantly from specified allocations, indicating potential biases. It provides a comprehensive troubleshooting guide covering common causes including variant distribution changes, misaligned analysis windows, variant jumping, exposure tracking issues, and instrumentation problems.
 
 # Keywords
 - Sample Ratio Mismatch (SRM)
-- Amplitude Exposure events
+- Amplitude exposure events
 - Variant jumping
-- Sticky bucketing
 - Assignment-to-Exposure conversion
-- Variant distribution weights
+- Sticky bucketing
 - Analysis window alignment
+- Variant distribution weights
 - Individual allocation
+- Custom exposure events
 - Fallback variant exposures
-- Experiment diagnostics

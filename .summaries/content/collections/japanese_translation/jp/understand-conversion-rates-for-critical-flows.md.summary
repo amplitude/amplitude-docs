@@ -1,14 +1,14 @@
 ## Summary
-This documentation explains how to generate conversion reports using pre-made templates in Amplitude, focusing on the Conversion Activity Report Template which includes charts for analyzing conversion rates, user behavior patterns, and conversion paths. It details how to customize these templates by converting them to dashboards and replacing default events with specific project events.
+This documentation page explains how to use and customize the Conversion Report Template in Amplitude to analyze customer behavior through conversion rates and drop-offs in critical product flows, including how to convert templates to dashboards and replace default events with specific ones relevant to your business.
 
 ## Keywords
 - Conversion Report Template
 - Amplitude dashboards
 - Conversion rate analysis
+- Product flow analysis
 - Template customization
 - Event replacement
-- Funnel analysis
-- User behavior tracking
-- Conversion path visualization
-- Japanese localization
-- Product flow analysis
+- Funnel conversion
+- User activity tracking
+- Dashboard conversion
+- Japanese Amplitude documentation

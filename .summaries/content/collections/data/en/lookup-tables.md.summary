@@ -1,5 +1,5 @@
 # Summary
-Lookup Tables in Amplitude allow users to import custom data to map and enhance existing event and user properties, enabling property enrichment, bulk value changes, and improved filtering capabilities, with a limit of 100MB or 1 million rows per table.
+Lookup Tables in Amplitude allow users to import custom data to map and enhance existing event/user properties, enabling property enrichment, bulk value changes, and improved filtering capabilities, with a limit of 100MB or 1 million rows per table.
 
 # Keywords
 - property enrichment
@@ -9,6 +9,6 @@ Lookup Tables in Amplitude allow users to import custom data to map and enhance 
 - Growth/Enterprise plans
 - SKU mapping
 - bulk property value changes
-- 100MB/1M row limit
+- 100MB limit
+- 1 million rows limit
 - lookup property creation
-- property value transformation

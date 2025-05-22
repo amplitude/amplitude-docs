@@ -1,14 +1,14 @@
 ## Summary
-This documentation page explains Amplitude's Engagement Matrix chart, which helps assess product engagement by plotting events in a quadrant based on user adoption (width) and frequency of use, allowing teams to identify high and low-performing features and prioritize improvements.
+This documentation page explains the Engagement Matrix chart in Amplitude, which helps analyze product engagement patterns by categorizing events into quadrants based on usage width (percentage of active users) and frequency (number of times/days executed), allowing teams to identify high and low-performing features.
 
 ## Keywords
 - Engagement Matrix
 - Product feature assessment
 - User engagement patterns
 - Quadrant visualization
-- Event frequency analysis
 - DAU/WAU/MAU percentages
+- Event frequency analysis
 - Feature prioritization
-- Data clustering
 - Enterprise/Growth plan feature
-- Amplitude chart customization
+- Data point clustering
+- Logarithmic/linear scale

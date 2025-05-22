@@ -1,14 +1,14 @@
 # Summary
-This documentation page covers frequently asked questions about integrating Segment with Amplitude, explaining issues like missing data, location discrepancies, property differences, session tracking limitations, and accessing additional functionality when using Segment's device mode integration.
+This documentation page addresses common questions about integrating Segments with Amplitude, covering issues like data visibility, property differences, session tracking, and location data discrepancies between the two platforms, with specific guidance on how to properly send user properties and event data through Segment to Amplitude.
 
 # Keywords
 - Segment integration
-- Amplitude data tracking
-- track calls
-- identify calls
-- user properties
-- event properties
-- location discrepancies
+- Amplitude data visibility
+- Track calls
+- User properties
+- Event properties
+- Session tracking
 - sessionId
-- device mode
-- session tracking
+- Location data discrepancies
+- identify call
+- Client-side bundle integration

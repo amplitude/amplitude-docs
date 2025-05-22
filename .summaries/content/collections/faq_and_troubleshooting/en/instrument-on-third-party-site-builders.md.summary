@@ -7,8 +7,8 @@ This documentation page provides guidance on implementing Amplitude's JavaScript
 - Squarespace Code Injection
 - Squarespace Code Block
 - third-party website builders
-- webhooks integration
-- HTTP v2 endpoint
 - header code placement
-- custom code embedding
+- webhooks alternative
+- HTTP v2 endpoint
+- custom code integration
 - site-wide tracking

@@ -1,18 +1,17 @@
 ## Summary
-This documentation explains the three journey visualizations in Amplitude (Path Finder, Journey Map, and Top User Paths), detailing how each visualization presents user paths differently, their features for analyzing event sequences, and how they differ from legacy versions. The page covers filtering options, path analysis capabilities, and interpretation of path metrics across all three visualization types.
+This documentation explains the three journey visualizations in Amplitude (Pathfinder, Journey Map, and Top User Paths), detailing how each visualization presents user paths differently, their features, and how to interpret the data. It also covers the differences between these new journey charts and their legacy versions, including changes in conversion window logic and event representation.
 
 ## Keywords
 - journey visualizations
-- path finder
+- pathfinder
 - journey map
 - top user paths
-- event sequences
+- user paths
 - conversion windows
+- event sequences
 - path analysis
-- drop-off analysis
+- dropoff analysis
 - event filtering
-- path metrics
-- user friction
-- conversion patterns
-- legacy path finder differences
-- event folding/unfolding
+- cohort creation
+- path expansion
+- journey chart logic

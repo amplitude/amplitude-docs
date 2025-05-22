@@ -6,9 +6,9 @@ This documentation explains how to create custom events in Amplitude by grouping
 - OR clause
 - Event grouping
 - Events module
-- Funnel analysis
+- Amplitude analytics
 - Event Segmentation
+- Funnel Analysis
 - Event property filtering
-- [Custom] prefix
-- Data navigation
-- Event selection
+- Data analysis
+- Event conversion

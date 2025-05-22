@@ -1,5 +1,5 @@
 ## Summary
-The SCIM API documentation details Amplitude's implementation of the SCIM 2.0 standard for user and group provisioning, including authentication, endpoints for managing users and permission groups, and integration considerations with Identity Providers like Okta and JumpCloud.
+The SCIM API documentation details Amplitude's implementation of the SCIM 2.0 standard for user and group provisioning, including authentication, endpoints for managing users and permission groups, supported fields, and integration considerations with Identity Providers.
 
 ## Keywords
 - SCIM 2.0
@@ -11,4 +11,4 @@ The SCIM API documentation details Amplitude's implementation of the SCIM 2.0 st
 - User invitation
 - Group membership
 - API rate limits
-- User deactivation
+- PATCH/PUT operations

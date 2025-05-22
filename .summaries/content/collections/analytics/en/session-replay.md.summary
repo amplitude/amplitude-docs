@@ -3,14 +3,14 @@ Session Replay is a qualitative analytics feature available to Growth and Enterp
 
 # Keywords
 - session-replay
-- qualitative-analytics
-- user-experience-monitoring
+- user-experience-analysis
+- qualitative-insights
 - event-stream-synchronization
-- replay-filtering
+- web-application-monitoring
 - bug-troubleshooting
 - conversion-optimization
-- web-application-monitoring
-- user-journey-visualization
-- masked-HTML-elements
+- replay-filtering
+- user-lookup
 - 90-day-retention
-- replay-limitations
+- masked-HTML-elements
+- cursor-movement-tracking

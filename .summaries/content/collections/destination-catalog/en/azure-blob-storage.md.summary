@@ -10,5 +10,5 @@ This documentation details the Azure Blob Storage destination in Amplitude, whic
 - recurring sync
 - manual backfill
 - JSON export format
-- data partitioning
-- Azure IP allowlisting
+- storage account configuration
+- IP address allowlisting

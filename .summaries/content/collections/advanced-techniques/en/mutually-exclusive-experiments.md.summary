@@ -1,5 +1,5 @@
 ## Summary
-This documentation explains how to set up mutually exclusive experiments in Amplitude Experiment, where users in one experiment cannot participate in another related experiment simultaneously, preventing interaction effects and ensuring data integrity by adding experiments to mutual exclusion groups with configurable traffic allocation across slots.
+This documentation explains how to set up mutually exclusive experiments in Amplitude Experiment, where users in one experiment cannot be included in another related experiment simultaneously, preventing interaction effects and ensuring data integrity by adding experiments to mutual exclusion groups with configurable traffic allocation across slots.
 
 ## Keywords
 - Mutual exclusion groups

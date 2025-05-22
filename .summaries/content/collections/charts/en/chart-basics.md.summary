@@ -1,15 +1,16 @@
 ## Summary
-This documentation page covers chart customization in Amplitude, including starting from templates, sharing, adding to dashboards, customizing legends and Y-axis, switching projects/chart types, understanding cache times, working with annotations/releases, and using keyboard shortcuts for efficient chart manipulation.
+This documentation page covers the fundamental features of Amplitude charts, including starting from templates, sharing options, customization of legends and Y-axis, project/chart type switching, cache times for different query types, annotations/releases, and keyboard shortcuts for efficient chart manipulation.
 
 ## Keywords
 - chart templates
+- custom legend labels
 - Y-axis customization
 - dual Y-axis
-- legend labels
-- chart caching
-- keyboard shortcuts
+- chart caching times
 - annotations
 - releases
+- keyboard shortcuts
 - chart sharing
-- project switching
 - dashboard integration
+- project switching
+- chart type switching

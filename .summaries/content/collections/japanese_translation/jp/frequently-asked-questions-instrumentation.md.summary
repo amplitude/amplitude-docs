@@ -1,5 +1,5 @@
 ## Summary
-This documentation page answers common instrumentation questions for Amplitude, covering topics such as data immutability after ingestion, device ID configuration, event naming constraints, array property support, session management, subscription revenue tracking, and bot traffic filtering methods.
+This documentation page answers common instrumentation questions for Amplitude, covering topics such as data immutability after ingestion, device ID configuration, event naming constraints, array property support, session ID generation, subscription revenue tracking, and bot traffic filtering methods.
 
 ## Keywords
 - Amplitude instrumentation
@@ -8,7 +8,7 @@ This documentation page answers common instrumentation questions for Amplitude, 
 - event naming constraints
 - array properties
 - session ID generation
-- subscription revenue tracking
+- revenue subscription events
 - bot traffic filtering
 - null device information
 - user privacy API

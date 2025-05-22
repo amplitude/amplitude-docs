@@ -2,13 +2,13 @@
 This documentation details the Pushwoosh Cohort Sync integration with Amplitude, allowing users to sync cohorts from Amplitude to Pushwoosh for targeted push notifications and engagement campaigns, with specific setup steps in both platforms and requirements including paid plans and email-based user identification.
 
 # Keywords
-- Pushwoosh Cohort Sync
+- Pushwoosh cohort sync
 - customer engagement platform
 - push notification campaigns
 - user retention
 - A/B testing
 - email-based identification
-- API Key
-- AppCode
-- sync cadence
+- API key integration
+- cohort synchronization
 - re-engagement campaigns
+- multi-channel communication

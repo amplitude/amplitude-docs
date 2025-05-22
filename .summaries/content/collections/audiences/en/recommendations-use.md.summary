@@ -12,7 +12,5 @@ This documentation explains how to deploy recommendation models in personalizati
 - recommendation_source
 - treatment vs control segments
 - personalization campaigns
-- API integration
+- recommendation items array
 - performance analysis
-- lift metrics
-- funnel conversion

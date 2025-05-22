@@ -1,14 +1,14 @@
 ## Summary
-The AI Data Assistant in Amplitude helps users maintain organized tracking plans by automatically generating prioritized suggestions for modifications, which can be reviewed and applied directly to the tracking plan from the Data home page, making it easier to manage large numbers of events and properties.
+The AI Data Assistant in Amplitude helps users maintain organized tracking plans by automatically generating prioritized suggestions for modifications, allowing users to review and apply changes directly to their tracking plan from the Data home page, with suggestions ranked based on event volume and query counts.
 
 ## Keywords
 - AI Data Assistant
 - tracking plan maintenance
 - event organization
 - suggestion prioritization
-- data cleanup
 - event volume
 - query counts
-- suggestion implementation
+- Apply All/Reject All
+- selective implementation
 - tracking plan modifications
-- Amplitude Data
+- data organization

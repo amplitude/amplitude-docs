@@ -3,12 +3,12 @@ This documentation page explains how to build an Event Segmentation analysis in 
 
 # Keywords
 - Event Segmentation chart
-- Amplitude analytics
-- User segments
-- Event properties
-- Measurement types
+- Measured As Module
+- Segmentation Module
 - Y-axis customization
 - Dual Y-axis
-- Chart visualization
+- Event properties
+- User segments
+- Custom measurement
 - Event filtering
-- User behavior analysis
+- Chart visualization

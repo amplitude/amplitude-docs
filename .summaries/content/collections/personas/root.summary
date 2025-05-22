@@ -1,47 +1,35 @@
 # Amplitude Personas: Behavioral Clustering for User Segmentation
 
-Amplitude Personas is an advanced analytics feature that leverages machine learning to automatically group users into clusters based on their behavioral patterns. Unlike traditional segmentation methods that rely on predefined rules, Personas uses exploratory data mining to discover natural user groupings, revealing distinct user personas based on event behavior patterns.
+## Product Overview
 
-## Key Features and Capabilities
+Amplitude Personas is an advanced analytics feature that uses machine learning to automatically group users into clusters based on their behavioral similarities. Unlike traditional segmentation methods that rely on predefined rules, Personas employs exploratory data mining to discover natural user groupings based on actual behavior patterns. This approach helps product teams identify distinct user personas derived from real usage data rather than assumptions.
 
-- **Behavioral Clustering**: Automatically identifies and groups users with similar event behaviors without requiring manual rule configuration
-- **Cluster Analysis**: Reveals distinct user personas based on event frequency patterns that might not be apparent through manual analysis
-- **Exploratory Data Mining**: Discovers natural user groupings through algorithmic pattern recognition
-- **Cohort Segmentation**: Creates behavioral cohorts that can be used for targeted engagement strategies
-- **Data-Driven Persona Development**: Replaces assumption-based user personas with actual behavioral data
+## Key Features and Concepts
 
-## Product Architecture
-
-Personas employs a specialized interface distinct from standard Amplitude charts, consisting of three primary modules:
-
-1. **Cluster Generation Module**: Controls the parameters of the clustering algorithm
-2. **Cluster Count Module**: Determines the number of distinct clusters to generate
-3. **Target Cohort Module**: Specifies which subset of users to include in the clustering analysis
+- **Behavioral Clustering**: Automatically identifies and groups users who exhibit similar event behaviors without requiring manual rule creation
+- **Cluster Analysis**: Reveals distinct user personas based on actual behavioral patterns in your product
+- **Exploratory Data Mining**: Uncovers unexpected user segments that might remain hidden with traditional analysis methods
+- **Cohort Segmentation**: Enables creation of targetable cohorts from discovered personas for further analysis or marketing initiatives
 
 ## Key Nomenclature and Definitions
 
-- **Cluster Cards**: Visual representations of each identified user persona showing distinctive behavioral patterns
-- **Event Tables**: Detailed breakdowns of event frequencies that characterize each cluster
-- **Standard Deviation**: Metric indicating how much a cluster's event frequency differs from the average
-- **Behavioral Cohorts**: Groups of users exhibiting similar patterns of product interaction
-- **Cluster Sorting**: Functionality to arrange clusters based on size or distinctiveness
-- **Cluster Descriptions**: Automatically generated summaries of each cluster's key behavioral traits
+- **Cluster Cards**: Visual representations of each identified persona that display key metrics and behavioral patterns
+- **Event Table**: Data visualization showing event frequency for each cluster, highlighting behavioral differences between personas
+- **Standard Deviation**: Metric that measures how much a cluster's event frequency differs from the average across all users
+- **Hidden Events**: Events with minimal variation across clusters that can be hidden to focus analysis on distinguishing behaviors
+- **Cluster Generation Module**: Interface component that controls the clustering algorithm parameters
+- **Cluster Count Module**: Interface element displaying the number of users in each identified cluster
+- **Target Cohort Module**: Feature allowing selection of specific user groups for clustering analysis
 
-## Integration with Amplitude Ecosystem
+## Product Ecosystem Integration
 
-Personas is tightly integrated with the broader Amplitude analytics platform, enabling teams to:
+Personas is positioned as an advanced analytics capability within the broader Amplitude platform, available exclusively to customers on Growth and Enterprise plans. Within the Amplitude ecosystem, Personas:
 
-- Use identified personas to inform product development priorities
-- Create targeted marketing campaigns based on behavioral clusters
-- Track how product changes affect different user personas over time
-- Export behavioral cohorts for use in other Amplitude analyses
-- Incorporate persona insights into comprehensive user journey mapping
+- Provides input for more targeted cohort analysis in other Amplitude features
+- Informs product development decisions based on discovered user behaviors
+- Supports marketing segmentation with behaviorally-defined personas
+- Complements traditional segmentation by revealing natural user groupings that might not be apparent through rule-based approaches
 
-## Technical Requirements and Availability
+The feature uses a specialized interface that differs from standard Amplitude charts, with three main modules (Cluster Generation, Cluster Count, and Target Cohort) that work together to provide a comprehensive view of user behavior patterns.
 
-- Exclusive to Amplitude Growth and Enterprise plan customers
-- Requires sufficient user behavior data to generate meaningful clusters
-- Uses a specialized interface distinct from standard Amplitude chart components
-- Processes event frequency data to identify behavioral patterns
-
-Personas represents a significant advancement in user segmentation by moving beyond demographic or manually defined segments to algorithmically determined behavioral clusters, enabling product teams to develop more targeted features and marketing strategies based on actual user behavior rather than assumptions.
+Personas represents Amplitude's data-driven approach to user segmentation that moves beyond demographic or rule-based methods to discover authentic behavioral patterns within a product's user base, enabling more effective product development and marketing strategies.

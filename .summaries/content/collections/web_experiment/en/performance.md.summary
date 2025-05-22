@@ -10,5 +10,5 @@ Web Experiment is designed for minimal performance impact with a dynamic script 
 - ad_blocker_limitations
 - cache_control_headers
 - experiment_script_delivery
-- performance_optimization
-- dynamic_script_loading
+- performance_impact
+- flag_size_scaling

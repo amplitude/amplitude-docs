@@ -7,8 +7,8 @@ This documentation page describes the integration between Apphud and Amplitude, 
 - revenue data
 - user profile enrichment
 - mobile app analytics
-- in-app subscriptions
-- user ID matching
 - subscription management
 - API key configuration
-- beta status
+- user ID matching
+- in-app subscriptions
+- revenue tracking

@@ -9,9 +9,9 @@ This documentation page explains how to analyze experiment results in Amplitude 
 - variant comparison
 - experiment filtering
 - data quality checks
-- experiment diagnostics
-- variant jumping
 - sample ratio mismatch
+- variant jumping
 - experiment notifications
+- experiment diagnostics
 - sequential test
 - T-test

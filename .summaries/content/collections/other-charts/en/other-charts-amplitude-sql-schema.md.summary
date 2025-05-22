@@ -14,5 +14,4 @@ This documentation details Amplitude SQL's schema and field shortcuts, explainin
 - data types
 - query shortcuts
 - event tracking fields
-- device information columns
-- user identification
+- device identifiers

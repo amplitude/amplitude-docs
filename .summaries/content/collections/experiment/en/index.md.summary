@@ -1,14 +1,5 @@
-# Summary
-This documentation page demonstrates Amplitude initialization and configuration across multiple programming languages (TypeScript, HTML, Kotlin, Objective-C, Swift, Python), showing how to customize tracking options and send events with the Amplitude SDK.
+# Summary and Keywords
 
-# Keywords
-- Amplitude SDK
-- initialization
-- configuration
-- DefaultTrackingOptions
-- event tracking
-- multi-language examples
-- BaseEvent
-- apiKey
-- defaultTracking
-- code samples
+**Summary:** This documentation page provides code examples for initializing and configuring Amplitude across multiple programming languages (TypeScript, HTML, Kotlin, Objective-C, Swift, and Python), demonstrating how to set tracking options and send events with the Amplitude SDK.
+
+**Keywords:** Amplitude initialization, SDK configuration, DefaultTrackingOptions, event tracking, BaseEvent, multi-language examples, API key configuration, amplitude.init, Amplitude client, event_properties

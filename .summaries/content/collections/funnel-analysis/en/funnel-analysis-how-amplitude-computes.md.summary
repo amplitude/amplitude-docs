@@ -4,13 +4,13 @@ This documentation explains how Amplitude computes funnels based on event orderi
 # Keywords
 - funnel computation
 - event ordering
+- any order
+- this order
+- exact order
 - segmentation application
 - group-by filters
 - conversion paths
-- exact order
-- this order
-- any order
-- property constant
 - event repetition
+- property constant
 - filter application
 - multi-step conversion

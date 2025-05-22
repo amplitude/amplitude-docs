@@ -1,14 +1,14 @@
 # Summary
-This documentation explains how to interpret Personas charts in Amplitude, focusing on cluster cards and event tables that reveal user behavior patterns, allowing teams to identify distinct user personas based on event frequency and create behavioral cohorts for targeted engagement.
+This documentation explains how to interpret Personas charts in Amplitude, focusing on cluster cards and event tables that help identify user behavior patterns. It guides users in analyzing cluster metrics, sorting event data, and naming personas based on behavioral differences.
 
 # Keywords
 - Personas chart
 - Cluster cards
 - User personas
 - Behavioral cohorts
-- Event frequency
+- Event table
 - Standard deviation
 - Cluster sorting
-- Event table interpretation
-- User behavior patterns
-- Cluster descriptions
+- Event frequency
+- Behavioral patterns
+- Hidden events

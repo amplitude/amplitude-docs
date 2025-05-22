@@ -13,6 +13,5 @@ This reference document details the configuration options for Amazon S3 Import a
 - JSON transformation
 - event mapping
 - data ingestion
-- list operators
-- integer operators
-- user property operations
+- source description
+- conditional operators

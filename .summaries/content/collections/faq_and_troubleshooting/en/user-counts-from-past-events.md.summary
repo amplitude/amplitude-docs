@@ -1,14 +1,14 @@
 ## Summary
-This documentation explains why user counts for past events can fluctuate over time, detailing how counts can increase due to delayed event ingestion (from SDK batching, server-side delays, or connectivity issues) and decrease due to user profile merging when anonymous users are later identified.
+This documentation explains why user counts for past events can fluctuate over time, detailing how counts can increase due to delayed event ingestion (from SDK batching, server-side delays, or connectivity issues) and decrease due to user profile merging, with specific SDK configuration recommendations to minimize these fluctuations.
 
 ## Keywords
 - user count fluctuation
 - event batching
-- SDK upload frequency
+- SDK configuration
 - flushIntervalMillis
 - eventUploadThreshold
-- anonymous user merging
+- user profile merging
+- anonymous events
 - delayed event ingestion
-- user profile consolidation
-- Batch API delays
+- Amplitude IDs
 - unique user tracking

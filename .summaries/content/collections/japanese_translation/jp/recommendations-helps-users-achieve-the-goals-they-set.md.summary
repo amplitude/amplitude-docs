@@ -1,16 +1,17 @@
 ## Summary
-This documentation explains Amplitude's Recommendations feature, which uses AutoML to help users achieve their goals by clustering similar users and identifying items most likely to increase conversion tendencies, with hourly retraining to incorporate new behavioral data. It's optimized for user-based personalization in e-commerce, marketplaces, and B2C subscription software for assortment, next-best-action, and cross-sell use cases.
+This documentation explains Amplitude's Recommendations feature, which uses AutoML to help users achieve their predicted goals by clustering similar users and identifying items most likely to increase conversion tendencies, with the algorithm retraining hourly to incorporate new behavioral data.
 
 ## Keywords
 - Amplitude Activation
 - AutoML
-- User-based personalization
-- Recommendation algorithms
-- Assortment personalization
-- Next-best-action
-- Cross-sell
-- Result events
-- Exposure events
-- Event properties
-- Hourly retraining
-- User clustering
+- user-based personalization
+- recommendation algorithms
+- assortment personalization
+- next-best-action
+- cross-sell
+- exposure events
+- outcome events
+- event properties
+- personalization campaigns
+- hourly retraining
+- user clustering

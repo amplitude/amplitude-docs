@@ -1,14 +1,14 @@
 # Summary
-This documentation describes the Leanplum destination integration for Amplitude, which enables syncing user cohorts from Amplitude to Leanplum for targeted marketing campaigns, allowing businesses to leverage Amplitude's analytics capabilities with Leanplum's marketing automation tools for better audience engagement.
+This documentation describes the Amplitude-Leanplum integration that enables syncing user cohorts from Amplitude to Leanplum for targeted marketing campaigns, requiring a paid Amplitude plan, Leanplum account approval, and proper user ID configuration, with step-by-step setup instructions for both platforms and a cohort syncing process.
 
 # Keywords
 - cohort syncing
 - marketing automation
 - Leanplum integration
-- user segmentation
 - multi-channel campaigns
+- audience segmentation
 - Amplitude Secret
-- audience sync
-- App ID
 - anonymous users limitation
 - sync cadence
+- Amplitude user property mapping
+- Leanplum App ID

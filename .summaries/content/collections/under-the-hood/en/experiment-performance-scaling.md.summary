@@ -1,14 +1,14 @@
 # Summary
-Amplitude Experiment's architecture leverages Fastly CDN and AWS services (Application Load Balancer, Relational Databases, DynamoDB) to deliver fast, reliable experimentation capabilities with robust identity resolution, user metadata storage, and behavioral cohort access. Implementation best practices include using local defaults and client-side caching to optimize performance.
+Amplitude Experiment's architecture supports fast, reliable experimentation through robust identity resolution, user metadata storage, and behavioral cohort access, utilizing Fastly CDN and AWS services (ALB, RDS, DynamoDB) for high availability, with implementation recommendations including local defaults and client-side caching to optimize performance.
 
 # Keywords
-- Amplitude Experiment architecture
+- identity resolution system
+- user metadata storage
+- behavioral cohorts
 - Fastly CDN
-- AWS hosted services
-- Identity resolution system
-- Local defaults
-- Client SDK caching
-- DynamoDB
-- Performance optimization
-- Experimentation scaling
-- Behavioral cohorts
+- AWS services
+- local defaults
+- client-side caching
+- local storage
+- high availability
+- experiment variants

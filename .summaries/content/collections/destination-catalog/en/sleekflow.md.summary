@@ -2,13 +2,13 @@
 This documentation details the Sleekflow destination integration for Amplitude, which enables syncing user cohorts to Sleekflow's omni-channel messaging platform for targeted communications via WhatsApp, Facebook Messenger, and other channels, requiring an email address or phone number as the unique identifier.
 
 # Keywords
-- Cohort syncing
-- Sleekflow API integration
-- Omni-channel messaging
+- cohort syncing
+- omni-channel messaging
 - WhatsApp integration
-- Social engagement platform
-- User segmentation
-- Re-engagement campaigns
-- Contact identifier mapping
-- Personalized notifications
-- Cross-channel communication
+- social engagement platform
+- API key authentication
+- user segmentation
+- re-engagement campaigns
+- personalized notifications
+- email/phone identifiers
+- cart abandonment targeting

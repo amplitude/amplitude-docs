@@ -1,64 +1,66 @@
-# Amplitude Lifecycle Analysis
+# Amplitude Lifecycle Chart
 
-## Product Overview
-
-Amplitude Lifecycle Analysis is a powerful analytics tool that helps product teams understand user engagement patterns and track user base growth over time. It categorizes users into distinct segments based on their activity patterns and visualizes their movement between these segments across customizable time intervals. This enables teams to gain insights into user retention, churn, and reactivation.
-
-The Lifecycle chart provides a visual representation of how users interact with a product over time, allowing teams to identify trends, spot potential issues, and measure the impact of product changes or marketing campaigns on user engagement.
+## Overview
+The Lifecycle chart is an advanced analytics feature in Amplitude that visualizes user activity patterns over time. It categorizes users into distinct segments based on their engagement status, enabling product teams to track user engagement, retention, and growth. This feature is exclusively available to customers on Amplitude's Growth and Enterprise plans.
 
 ## Key Features and Concepts
 
-### Lifecycle Views
-- **Growth View (Default)**: Shows the composition of active users, categorizing them as new, current, or resurrected, while also tracking dormant users
-- **Dormant View**: Focuses specifically on users who have become inactive, helping identify churn patterns
-- **Pulse View**: Measures the ratio of users entering versus exiting the active user base, providing a quick health metric
+### Visualization Views
+The Lifecycle chart offers three specialized views for analyzing user behavior:
 
-### User Categorization
-- **New Users**: Users who performed the selected event for the first time during the current interval
-- **Current Users**: Users who performed the event in both the current and previous intervals, representing retained users
-- **Resurrected Users**: Users who performed the event in the current interval but not in the previous interval (and are not new users)
-- **Dormant Users**: Users who performed the event in the previous interval but not in the current one, representing potential churn
+1. **Growth View (Default)** - Focuses on active users, categorizing them into new, current, and resurrected segments to track user base growth.
+2. **Dormant View** - Highlights users who have become inactive, helping identify churn patterns.
+3. **Pulse View** - Provides a ratio of active users to dormant users, offering a quick health metric of user engagement.
 
-### Visualization Options
-- **Histogram Visualization**: Displays user counts across different categories over time
-- **Breakdown Table**: Provides detailed numerical data on user segments for more precise analysis
+### User Segmentation Categories
+Users are automatically classified into four distinct categories:
 
-## Key Nomenclature and Definitions
+- **New Users** - Users who performed the selected event for the first time during the current interval.
+- **Current Users** - Users who were active both in the current interval and the previous interval.
+- **Resurrected Users** - Users who were active in the current interval after being inactive for at least one previous interval.
+- **Dormant Users** - Users who were active in the previous interval but not in the current interval.
 
-- **Critical Event**: The specific user action being tracked in the Lifecycle analysis (e.g., app open, purchase, content creation)
-- **Usage Interval**: The time period for analyzing user activity (customizable: daily, weekly, monthly)
-- **Pulse Ratio**: A formula measuring the ratio of users entering (new + resurrected) vs. exiting (dormant) the active user base
-- **Active Users**: The combined total of new, current, and resurrected users within a given time interval
-- **Growth Rate**: The percentage change in active users between intervals
-- **Reactivation Rate**: The percentage of dormant users who become resurrected in a subsequent interval
+### Time Interval Options
+The chart supports multiple time granularities:
+- Daily
+- Weekly
+- Monthly
+
+These intervals determine how user activity is grouped and analyzed, allowing teams to examine patterns at different time scales.
+
+### Analysis Capabilities
+- **Critical Event Tracking** - Select specific events to analyze user engagement around key actions
+- **Event Property Filtering** - Apply filters based on specific properties for granular analysis
+- **Retention Analysis** - Identify patterns of user churn and re-engagement
+- **Activity Distribution** - Visualize user activity through histograms
+- **Breakdown Table Export** - Export detailed data for further analysis in other tools
+
+## Key Metrics and Formulas
+
+### Pulse Ratio
+The Pulse ratio is calculated as: 
+```
+(New + Current + Resurrected Users) ÷ Dormant Users
+```
+This ratio serves as a health metric for user engagement, with higher values indicating stronger growth and retention.
 
 ## Product Ecosystem Integration
+The Lifecycle chart is a component of Amplitude's broader analytics suite, complementing other retention and engagement analysis tools. It provides visual representations of user activity patterns that help teams understand how users interact with their product over time.
 
-Lifecycle Analysis is part of Amplitude's broader analytics platform, available in Growth and Enterprise plans. It integrates with other Amplitude features to provide comprehensive user behavior insights:
+The chart data can be exported for deeper analysis or integration with other business intelligence tools, allowing teams to incorporate lifecycle insights into broader analytics workflows.
 
-- **User Segmentation**: Allows filtering Lifecycle data by user properties to identify which segments most impact active user metrics
-- **Cohort Analysis**: Complements Lifecycle by providing deeper retention analysis for specific user groups
-- **Behavioral Analytics**: Connects user lifecycle stages with specific in-product behaviors
-- **Custom Events**: Enables tracking lifecycle patterns around any defined user action
-- **Dashboard Integration**: Lifecycle charts can be added to custom dashboards for ongoing monitoring
+## Use Cases
+- Tracking overall user base growth trends
+- Identifying retention issues and churn patterns
+- Analyzing engagement patterns around critical product events
+- Understanding seasonal or cyclical user behavior
+- Measuring the impact of product changes on user activity
+- Comparing engagement across different user segments
+- Monitoring the health of user acquisition and retention efforts
 
-The tool helps teams understand the effectiveness of acquisition channels, engagement strategies, and retention initiatives by visualizing how users move between activity states over time.
-
-## Usage
-
-The Lifecycle chart is accessed through Amplitude's web interface with the following workflow:
-
-1. Select a critical event to track (the event that defines an "active" user)
-2. Choose a usage interval for analysis (daily, weekly, monthly)
-3. Switch between Growth, Dormant, and Pulse views based on analytical needs
-4. Apply segmentation to analyze specific user groups
-5. Export or share the resulting visualizations and data
-
-Teams can use Lifecycle Analysis to answer key questions such as:
-- How is our active user base changing over time?
-- What percentage of our users are we retaining vs. losing?
-- How effective are our reactivation campaigns at bringing dormant users back?
-- Which user segments show the healthiest lifecycle patterns?
-- What impact did recent product changes have on user engagement?
-
-This tool is particularly valuable for product managers, marketers, and executives who need to understand user engagement trends and make data-driven decisions about product development and growth strategies.
+## Nomenclature and Definitions
+- **Interval**: The time period used for analysis (daily, weekly, monthly)
+- **Active Users**: Combined total of new, current, and resurrected users
+- **Churn**: The process of users becoming dormant
+- **Resurrection**: The process of dormant users becoming active again
+- **Pulse Ratio**: The health metric comparing active users to dormant users

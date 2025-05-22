@@ -7,8 +7,8 @@ This documentation explains that Amplitude does not support exporting raw event 
 - Amplitude SQL
 - Snowflake ETL
 - Amazon S3 export
-- event data limitations
+- event data extraction
 - JSON export
-- data extraction alternatives
+- data export limitations
 - chart data export
 - event property values

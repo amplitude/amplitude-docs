@@ -1,5 +1,5 @@
 ## Summary
-This documentation covers the installation and configuration of the Session Replay React Native SDK Plugin, including setup instructions, masking sensitive data, controlling recording sessions, sampling rate configuration, and handling web views. The plugin integrates with Amplitude's React Native SDK to capture user sessions for replay analysis.
+This documentation covers the installation and configuration of the Session Replay React Native SDK Plugin, including setup instructions, masking sensitive data, controlling recording sessions, sampling rate configuration, and EU data residency support. The plugin integrates with Amplitude's React Native SDK to capture user sessions for replay.
 
 ## Keywords
 - Session Replay React Native Plugin
@@ -7,8 +7,8 @@ This documentation covers the installation and configuration of the Session Repl
 - sampleRate configuration
 - enableRemoteConfig
 - autoStart recording
-- session masking
 - web view tracking
 - EU data residency
-- session quota management
+- session sampling
+- opt-out tracking
 - DSAR API integration

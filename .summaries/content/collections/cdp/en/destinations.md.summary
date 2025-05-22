@@ -1,5 +1,5 @@
 # Summary
-Amplitude Data allows users to set up third-party platforms as data export destinations, enabling data sharing across tools and stakeholders through a simple setup process that involves adding destinations via the Connections section's Destinations tab and configuring destination-specific parameters.
+Amplitude Data allows users to set up third-party platforms as data export destinations, enabling data sharing across tools and stakeholders. The feature is available on all Amplitude plans and can be configured through the Destinations tab in the Connections section by following a simple 4-step process.
 
 # Keywords
 - data export destinations
@@ -7,6 +7,6 @@ Amplitude Data allows users to set up third-party platforms as data export desti
 - Amplitude Data
 - Connections section
 - Destinations tab
-- cross-tool data sharing
+- data sharing
+- cross-tool integration
 - destination configuration
-- all Amplitude plans

@@ -1,5 +1,5 @@
 ## Summary
-This documentation page covers the Amplitude Analytics iOS SDK, detailing installation methods, initialization, configuration options, event tracking, user properties management, revenue tracking, and advanced features like session management, device ID handling, and middleware support. The SDK supports Swift and Objective-C, with installation via CocoaPods, Carthage, or Swift Package Manager.
+This documentation page covers the Amplitude Analytics iOS SDK, detailing installation methods, initialization, configuration options, event tracking, user properties management, revenue tracking, and advanced features like session tracking, device ID management, and middleware support. The SDK supports Swift and Objective-C, with installation via CocoaPods, Carthage, or Swift Package Manager.
 
 ## Keywords
 - iOS SDK
@@ -18,5 +18,4 @@ This documentation page covers the Amplitude Analytics iOS SDK, detailing instal
 - Dynamic configuration
 - EU data residency
 - App Clips
-- Offline mode
 - Privacy manifest

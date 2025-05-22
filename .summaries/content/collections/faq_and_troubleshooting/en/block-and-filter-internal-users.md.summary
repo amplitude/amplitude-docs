@@ -1,5 +1,5 @@
 ## Summary
-This documentation explains how to prevent internal user data from affecting metrics in Amplitude by either blocking events from specific IP addresses during ingestion or filtering out internal users in analytics charts using segmentation, saved segments, and behavioral cohorts.
+This documentation explains how to prevent internal user data from affecting metrics in Amplitude by using block filters for IP addresses, segmenting out specific users in charts, saving user segments as defaults, and maintaining lists of internal users through behavioral cohorts that can be updated programmatically.
 
 ## Keywords
 - IP address blocking
@@ -11,4 +11,4 @@ This documentation explains how to prevent internal user data from affecting met
 - Default segments
 - Cohort API
 - Data governance
-- Event ingestion
+- Test data isolation

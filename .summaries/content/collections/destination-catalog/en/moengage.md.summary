@@ -1,14 +1,17 @@
-# Summary
-This documentation details the MoEngage event streaming integration with Amplitude, allowing bidirectional data flow for personalized customer engagement. It covers setup steps in both platforms, authentication requirements using DATA API credentials, event filtering options, and use cases including personalization, segmentation, conversion tracking, and A/B testing.
+## Summary
+This documentation details the MoEngage event streaming integration with Amplitude, allowing bidirectional data flow for personalized customer engagement. It covers setup steps in both platforms, authentication requirements, event forwarding configuration, and use cases for leveraging user properties and events for personalization, segmentation, conversion tracking, and A/B testing.
 
-# Keywords
+## Keywords
 - MoEngage event streaming
+- Basic Auth Token
 - DATA API ID
 - DATA API KEY
-- Basic Auth Token
-- Data Center values
-- Customer engagement platform
+- Data Center configuration
+- User property forwarding
 - Event property filtering
-- User identify forwarding
+- Customer engagement platform
 - Personalization
+- Segmentation
 - Conversion tracking
+- A/B testing
+- Event forwarding limits

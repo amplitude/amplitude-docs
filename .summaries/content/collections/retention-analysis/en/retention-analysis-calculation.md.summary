@@ -1,5 +1,5 @@
 # Summary
-This documentation explains how Amplitude calculates retention in the Retention Analysis chart, detailing the differences between "Return On or After" and "Return On" retention types, including their specific calculation formulas, how they handle cohort entry dates, and how overall retention is calculated for all users.
+This documentation explains how Amplitude calculates retention in the Retention Analysis chart, detailing the differences between "Return On or After" and "Return On" retention types, including their specific calculation formulas for both specific cohort entry dates and overall user retention.
 
 # Keywords
 - retention calculation

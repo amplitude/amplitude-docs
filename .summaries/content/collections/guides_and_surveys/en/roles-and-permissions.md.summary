@@ -4,7 +4,8 @@ This documentation page explains the Guides and Surveys permission system in Amp
 # Keywords
 - Guides and Surveys permissions
 - Amplitude role override
-- Permission levels (No access, Viewer, Member, Manager, Administrator)
+- No access/Viewer/Member/Manager/Administrator roles
+- Permission management
 - Project-specific access
 - Manage Project Access
-- Permission management workflow
+- Permission levels

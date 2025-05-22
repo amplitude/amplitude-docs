@@ -5,12 +5,11 @@ This documentation page describes the Amazon S3 Import feature in Amplitude, whi
 - Amazon S3 Import
 - IAM role configuration
 - S3 bucket access
-- Converter configuration
+- converter configuration
 - Mirror Sync
 - Append Only Sync
-- Event notification
+- event data ingestion
+- file requirements
 - insert_id deduplication
-- File requirements
-- Data mutation (INSERT, UPDATE, DELETE)
-- User/Group properties import
-- Regional IP addresses
+- S3 Event Notification
+- data mutation (INSERT, UPDATE, DELETE)

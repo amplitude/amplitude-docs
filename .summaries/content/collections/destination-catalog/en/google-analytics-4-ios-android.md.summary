@@ -1,5 +1,5 @@
 ## Summary
-This documentation details the Google Analytics 4 (iOS/Android) streaming integration in Amplitude Activation, which forwards events and user data from Amplitude to GA4 for Firebase-instrumented mobile applications, requiring a Firebase App ID and Measurement Protocol API Secret for configuration.
+This documentation details the Google Analytics 4 (iOS/Android) streaming integration in Amplitude Activation, which forwards events and user data from Amplitude to GA4 for Firebase-instrumented mobile applications, requiring a Firebase App ID and Measurement Protocol API Secret for setup.
 
 ## Keywords
 - Google Analytics 4 iOS/Android
@@ -9,6 +9,6 @@ This documentation details the Google Analytics 4 (iOS/Android) streaming integr
 - Event streaming
 - User property mapping
 - Mobile analytics
-- Firebase integration
 - Non-personalized ads
 - GA4 parameters
+- Firebase integration

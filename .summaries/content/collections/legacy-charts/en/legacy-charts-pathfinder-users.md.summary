@@ -1,14 +1,15 @@
-## Summary
-The Pathfinder Users chart documentation explains how to analyze user navigation paths through a product, showing events users take before or after a specified event, with options to segment users, measure by users or sessions, and expand events by properties for deeper analysis.
+# Summary
+The Pathfinder Users chart visualizes user navigation paths through a product, showing the most common sequences of events before or after a specified event, with options to segment users, measure by users or sessions, and expand events by properties for deeper analysis.
 
-## Keywords
+# Keywords
 - legacy-charts
 - pathfinder-users
-- user-paths
-- event-sequences
-- session-tracking
-- path-analysis
-- event-flows
-- user-journey
-- navigation-patterns
-- event-expansion-by-property
+- user paths
+- event sequences
+- session tracking
+- path visualization
+- event expansion by property
+- navigation analysis
+- user journey
+- event paths
+- session_id

@@ -1,5 +1,5 @@
 ## Summary
-This documentation page explains how to build a usage interval analysis in Amplitude, which measures the time between occurrences of a product's critical event, differing from standard retention analysis by focusing only on return events rather than the relationship between start and return events.
+This documentation page explains how to build a usage interval analysis in Amplitude, which measures the time between occurrences of a critical event, unlike standard retention analysis which measures time between a starting event and return events.
 
 ## Keywords
 - usage interval analysis

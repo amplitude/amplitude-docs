@@ -1,14 +1,14 @@
 # Summary
-This documentation details the integration between Amplitude's User Profile API and Movable Ink, allowing marketers to generate personalized content based on Amplitude user profiles, including user properties, computed properties, cohort IDs, and recommendations for targeted customer engagement.
+This documentation details the integration between Amplitude's User Profile API and Movable Ink, enabling personalized content generation based on Amplitude user profiles, including user properties, computed properties, cohort IDs, and recommendations for targeted customer engagement.
 
 # Keywords
+- Movable Ink
 - User Profile API
-- Movable Ink integration
-- personalized content generation
+- personalized content
 - behavioral cohorts targeting
 - ML-driven data
-- API key configuration
+- API integration
 - customer engagement
-- profile-api
-- data source setup
-- recommendations targeting
+- paid plans requirement
+- project-specific enablement
+- PII considerations

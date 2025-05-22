@@ -11,4 +11,4 @@ This documentation explains Amplitude's group-by feature for categorizing events
 - group-by limits
 - event segmentation
 - query performance
-- group-by visualization
+- data aggregation

@@ -1,8 +1,9 @@
 # Summary
-This documentation outlines browser compatibility for Amplitude's product website, specifying supported browsers based on market share (>0.5% worldwide usage) and recent versions of major browsers (Firefox, Chrome, Edge, Safari), while explicitly excluding Internet Explorer and Op_mini.
+This documentation outlines browser compatibility for Amplitude's product website, specifying supported browsers based on market share (>0.5% worldwide usage) and recent versions of major browsers (Firefox, Chrome, Edge, Safari), while explicitly excluding unsupported browsers like Internet Explorer and Op_mini.
 
 # Keywords
 - browser compatibility
+- Amplitude product website
 - supported browsers
 - Firefox versions
 - Chrome versions
@@ -10,5 +11,5 @@ This documentation outlines browser compatibility for Amplitude's product websit
 - Safari versions
 - Internet Explorer exclusion
 - Op_mini exclusion
-- Amplitude product website
-- browser market share
+- market share criteria
+- browser support requirements

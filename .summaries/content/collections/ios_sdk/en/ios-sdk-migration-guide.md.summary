@@ -1,5 +1,5 @@
 ## Summary
-This page provides a comprehensive migration guide for transitioning from the maintenance iOS SDK (Amplitude-iOS) to the new iOS Swift SDK (Amplitude-Swift), detailing changes in initialization, configuration, event tracking, user properties, and data migration, with code examples in both Swift and Objective-C.
+This documentation page provides a comprehensive migration guide for transitioning from the maintenance iOS SDK (Amplitude-iOS) to the current iOS Swift SDK (Amplitude-Swift), detailing changes in initialization, configuration, event tracking, user properties, and data migration, with code examples in both Swift and Objective-C.
 
 ## Keywords
 - iOS SDK migration
@@ -8,10 +8,11 @@ This page provides a comprehensive migration guide for transitioning from the ma
 - Configuration object
 - track() API
 - identify() API
-- dependency updates
-- instrumentation changes
-- data migration
-- callback functions
+- revenue tracking
 - IDFA collection
-- device ID requirements
+- callback functions
+- data migration
+- PersistentStorage
 - HTTP V2 API
+- deviceId limitations
+- Batch API support

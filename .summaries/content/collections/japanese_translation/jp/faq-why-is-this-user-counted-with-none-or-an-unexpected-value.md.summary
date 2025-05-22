@@ -1,14 +1,14 @@
 ## Summary
-This documentation explains why users might be counted with "(none)" or unexpected values in Amplitude analytics, detailing how event and user properties are captured at event time rather than reflecting current values, and how location and device properties are determined through GeoIP mapping and device repositories.
+This documentation explains why users may be counted with "(none)" or unexpected values in Amplitude analytics, detailing how event and user properties are captured at event time and not retroactively updated. It covers null values in custom properties, location properties determined by GeoIP, and device properties that may appear as "(none)" due to implementation timing or missing mappings.
 
 ## Keywords
 - null values
 - event properties
 - user properties
+- (none) bucket
 - event-based analytics
-- GeoIP mapping
+- GeoIP location properties
 - MaxMind database
-- location properties
-- device properties
+- device properties mapping
 - property implementation timing
-- historical event data
+- server-side events

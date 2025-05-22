@@ -2,13 +2,13 @@
 This documentation explains Amplitude Data's transformations feature, which allows retroactive modification of event data to correct implementation mistakes without changing the underlying code base. It details how to merge events, event properties, and user properties, rename property values, hide property values, and manage transformations, noting that transformations occur at query time and don't affect raw data.
 
 # Keywords
-- retroactive data transformations
+- data transformations
 - merge events
 - merge properties
 - rename property values
 - hide property values
+- retroactive data modification
 - query-time transformations
-- event data correction
+- event data structure
+- implementation corrections
 - transformation management
-- distinguishing property
-- transformation reversibility

@@ -4,12 +4,12 @@ This documentation explains how to import and export experiment chart settings i
 ## Keywords
 - experiment chart settings
 - JSON export/import
-- clipboard integration
 - Amplitude Experiment
-- Analytics integration
-- variants configuration
-- bucketing group type
-- user property mapping
-- exposure event
-- metrics configuration
-- experiment date range
+- Amplitude Analytics
+- chart configuration transfer
+- variants
+- bucketingGroupType
+- userProperty
+- exposureEvent
+- experimentStartDate
+- experimentEndDate

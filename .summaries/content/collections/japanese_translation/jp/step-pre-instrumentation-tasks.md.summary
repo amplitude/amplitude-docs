@@ -1,5 +1,5 @@
 ## Summary
-This page outlines the pre-instrumentation tasks for Amplitude implementation, including defining business goals, understanding user identification, organizing events and properties in a spreadsheet, avoiding over-tracking data, and considering cross-platform instrumentation approaches. It also lists the five methods for sending data to Amplitude.
+This page outlines pre-instrumentation tasks for Amplitude implementation, including defining business goals, understanding user identification, organizing events and properties in a spreadsheet, avoiding over-tracking data, and considering cross-platform instrumentation approaches. It also lists five methods for sending data to Amplitude.
 
 ## Keywords
 - instrumentation prework
@@ -7,8 +7,9 @@ This page outlines the pre-instrumentation tasks for Amplitude implementation, i
 - user identification tracking
 - event taxonomy
 - property organization
-- data tracking limitations
-- cross-platform projects
-- data ingestion methods
+- data collection methods
 - Amplitude SDK
 - HTTP API
+- cross-platform projects
+- event naming conventions
+- data planning

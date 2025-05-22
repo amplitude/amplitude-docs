@@ -4,13 +4,15 @@ This documentation describes the Marketo Static List destination in Amplitude, w
 ## Keywords
 - Marketo Static List
 - cohort syncing
-- marketing automation
 - REST API integration
-- email mapping
+- email address mapping
 - static list export
+- marketing automation
+- user identification
 - folder/program ID
 - Client ID
 - Client Secret
-- user discrepancies
-- 3,000,000 user limit
-- case-sensitive email
+- silent user exclusion
+- cohort size limitations
+- Read-Write Person permissions
+- Read-write Assets permissions

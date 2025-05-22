@@ -1,5 +1,5 @@
 ## Summary
-This documentation explains how Amplitude identifies users through device IDs, Amplitude IDs, and user IDs, emphasizing that user IDs are optional but recommended for cross-device tracking and event reconciliation. It provides best practices for setting user IDs, including avoiding placeholder values, using permanent identifiers, maintaining case sensitivity, and being cautious with server-side implementation.
+This documentation explains how Amplitude identifies users through device IDs, Amplitude IDs, and user IDs, emphasizing that user IDs are optional but recommended for cross-device tracking and event reconciliation. It provides best practices for setting user IDs, including avoiding placeholder values, using permanent identifiers, maintaining case consistency, and being cautious with server-side implementation.
 
 ## Keywords
-user identification, device ID, Amplitude ID, user ID, cross-device tracking, event reconciliation, anonymous users, unique user identification, user ID best practices, case sensitivity, server-side implementation, user profile merging
+user identification, device ID, Amplitude ID, user ID, cross-device tracking, event reconciliation, anonymous users, unique user identification, case-sensitivity, user ID permanence, backend merging, identity resolution

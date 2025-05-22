@@ -1,12 +1,13 @@
 # Summary
-This documentation explains how to customize chart color themes in Amplitude, including applying themes to individual charts, creating/editing themes with 8-16 colors, and managing organization-level default themes - a feature available only to Growth or Enterprise plan customers.
+This documentation explains how to customize chart color themes in Amplitude, including applying themes to individual charts, creating/editing custom themes with 8-16 colors, and managing organization-level default themes for Growth or Enterprise plan customers.
 
 # Keywords
 - chart color themes
-- organization-level default theme
 - Growth/Enterprise plan feature
-- hex value color selection
-- theme customization
-- 8-16 color themes
-- brand color matching
-- Change Chart Color Theme panel
+- custom color palettes
+- organization-level default themes
+- hex color values
+- theme management
+- brand color customization
+- 8-16 color range
+- chart visualization customization

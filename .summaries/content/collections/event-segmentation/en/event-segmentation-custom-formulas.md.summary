@@ -13,6 +13,7 @@ This documentation page explains custom formulas in Amplitude's Event Segmentati
 - PROPSUM
 - CUMSUM
 - ROLLAVG
+- ROLLWIN
 - arithmetic operations
+- event comparison
 - cohort comparison
-- event analysis

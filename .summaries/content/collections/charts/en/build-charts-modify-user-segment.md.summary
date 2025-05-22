@@ -1,5 +1,5 @@
 # Summary
-This documentation page explains how to refine user segments in Amplitude charts by adding filters based on user properties or behavioral cohorts, detailing various operators (is, contains, set is, glob match) and how to create AND/OR logic between filters to precisely target specific user behaviors.
+This documentation page explains how to refine user segments in Amplitude charts by adding filters based on user properties or behavioral cohorts, detailing various operators (is, contains, set is, glob match, etc.) and how to create AND/OR logic between filters to precisely target specific user behaviors.
 
 # Keywords
 - User segment filters
@@ -8,7 +8,7 @@ This documentation page explains how to refine user segments in Amplitude charts
 - Set operators
 - Glob matching
 - Behavioral cohorts
+- Segmentation Module
 - Filter combinations
-- Segment refinement
 - Property value filtering
-- Segment definition
+- Segment definition refinement

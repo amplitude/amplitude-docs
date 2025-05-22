@@ -1,9 +1,10 @@
-# Summary
+## Summary
 This documentation explains how to create and manage feature flags in Amplitude Experiment for feature rollouts, including setting up variants, defining user segments, configuring rollout percentages, and activating flags to control feature availability without code changes.
 
-# Keywords
+## Keywords
 - feature flags
 - feature rollouts
+- Amplitude Experiment
 - variants
 - user segments
 - rollout percentage
@@ -11,5 +12,4 @@ This documentation explains how to create and manage feature flags in Amplitude 
 - deployment
 - evaluation mode
 - weight distribution
-- flag activation
-- Amplitude Experiment
+- active toggle

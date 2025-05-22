@@ -12,5 +12,5 @@ This documentation outlines Amplitude's data volume limitations, including month
 - limit warnings
 - data throttling
 - account blocking
-- event property maximum
-- user property maximum
+- event processing
+- segmentation limits

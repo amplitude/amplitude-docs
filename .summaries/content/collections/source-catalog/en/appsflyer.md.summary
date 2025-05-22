@@ -8,7 +8,7 @@ This documentation details the AppsFlyer integration with Amplitude, which combi
 - user cohort export
 - marketing campaign analytics
 - IDFA/IDFV/ADID tracking
-- data discrepancy considerations
+- 72-hour attribution window
 - SRN restrictions
+- data discrepancy considerations
 - real-time user data sharing
-- attribution event matching

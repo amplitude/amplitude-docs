@@ -2,64 +2,64 @@
 
 ## Product Overview
 
-The Engagement Matrix is an analytical chart feature within Amplitude that helps product teams evaluate and visualize feature engagement across their product. It plots events (representing product features or user actions) on a four-quadrant matrix based on two key dimensions:
+The Engagement Matrix is an analytical tool within Amplitude that helps product teams visualize and assess feature engagement across their applications. It plots events (representing features or user actions) on a four-quadrant matrix based on two key dimensions:
 
-1. **Breadth** (x-axis): The percentage of active users who perform the event (measured as %DAU/WAU/MAU)
-2. **Frequency** (y-axis): How often users perform the event, measured either as "Average Times Performed" or "Average Days Performed"
+1. **Breadth** - The percentage of active users performing an event (% of DAU/WAU/MAU)
+2. **Frequency** - How often users perform the event, measured as either:
+   - Average Times Performed
+   - Average Days Performed
 
-This visualization enables teams to quickly identify which features are performing well and which may need improvement, supporting data-driven product decisions.
+This visualization enables teams to quickly identify high and low-performing features, prioritize product development efforts, and make data-driven decisions about feature enhancement or deprecation.
 
 ## Key Features and Concepts
 
 ### Four-Quadrant Visualization
 
-The Engagement Matrix categorizes features/events into four distinct quadrants:
+The Engagement Matrix organizes events into four distinct quadrants, each representing different combinations of user adoption and usage frequency:
 
-- **Top Right (High Breadth, High Frequency)**: Core features that are widely adopted and frequently used
-- **Top Left (Low Breadth, High Frequency)**: Power user features used intensively by a small subset of users
-- **Bottom Right (High Breadth, Low Frequency)**: Features with wide adoption but infrequent use
-- **Bottom Left (Low Breadth, Low Frequency)**: Underperforming features that may need improvement or reconsideration
+1. **High Breadth, High Frequency (Top Right)** - Core features used frequently by many users
+2. **High Breadth, Low Frequency (Bottom Right)** - Widely adopted features used infrequently
+3. **Low Breadth, High Frequency (Top Left)** - Power features used heavily by a small subset of users
+4. **Low Breadth, Low Frequency (Bottom Left)** - Underutilized features that may need improvement or consideration for deprecation
 
-### Analysis Tools
+### Scaling Options
 
-- **Breakdown Table**: Provides detailed metrics for each plotted event
-- **Zooming Functionality**: Allows users to focus on specific data clusters for more detailed analysis
-- **Scale Options**: Supports both logarithmic and linear scales for better visualization of data with wide ranges
-- **Top and Bottom Events**: Ability to filter and focus on the highest or lowest performing events
+- **Log/Linear scale** - Users can toggle between logarithmic and linear scales to better visualize data with wide ranges
+- **Zoom functionality** - Allows users to focus on specific clusters of data points
 
-### Use Cases
+### Data Analysis Features
 
-- Identifying core product features that drive engagement
-- Discovering underutilized features that need promotion or improvement
-- Recognizing power user features for potential expansion
-- Prioritizing feature improvements based on engagement patterns
-- Comparing feature performance across different user segments
+- **Breakdown table** - Provides detailed metrics for each plotted event
+- **Top and Bottom Events** - Ability to highlight best and worst performing events
+- **Data point clusters** - Visual representation of event groupings based on performance
 
-## Key Nomenclature and Definitions
+## Use Cases
 
-- **Breadth**: The percentage of active users who perform a specific event
-- **%DAU/WAU/MAU**: Percentage of Daily/Weekly/Monthly Active Users who perform an event
-- **Frequency**: How often users perform an event
-- **Average Times Performed**: The average number of times users perform an event
-- **Average Days Performed**: The average number of days users perform an event
-- **Data Point Clusters**: Groups of events with similar engagement patterns
-- **Core Features**: Features with high breadth and high frequency
-- **Power User Features**: Features with low breadth but high frequency
+The Engagement Matrix is designed to help product teams:
+
+1. Identify core features that drive user engagement
+2. Discover power features used by specific user segments
+3. Detect underutilized features that need improvement
+4. Find candidates for feature deprecation
+5. Prioritize product development efforts based on actual usage data
+6. Track the impact of feature changes over time
 
 ## Product Ecosystem Integration
 
-The Engagement Matrix is available to users on Amplitude's Growth and Enterprise plans, indicating it's a more advanced analytical tool within the Amplitude product suite. It complements other Amplitude analytics features by providing a specialized view focused specifically on feature engagement patterns.
+The Engagement Matrix is available to users on Amplitude's Growth and Enterprise plans. It integrates with Amplitude's broader product analytics ecosystem, allowing teams to:
 
-The tool appears to be part of Amplitude's broader product analytics ecosystem, helping teams make strategic decisions about feature development, user experience improvements, and product roadmap prioritization based on actual usage data.
+1. Analyze feature engagement across their application
+2. Make data-driven decisions about product development
+3. Complement other Amplitude analytics tools for comprehensive product understanding
 
-## Technical Implementation
+## Key Nomenclature and Definitions
 
-The documentation doesn't specify API endpoints or command line invocations for the Engagement Matrix. It appears to be primarily accessed through Amplitude's web interface as an analytical chart type, where users can configure parameters such as:
+- **Breadth**: Percentage of active users performing an event (% DAU/WAU/MAU)
+- **Frequency**: How often users perform an event (Average Times/Days Performed)
+- **Core Features**: High breadth, high frequency events that are central to the product experience
+- **Power Features**: Low breadth, high frequency events used intensively by a subset of users
+- **Underutilized Features**: Low breadth, low frequency events that may need improvement
+- **Data Point Clusters**: Groupings of events with similar engagement patterns
+- **Breakdown Table**: Detailed metrics view for individual events plotted on the matrix
 
-- Selecting events to analyze
-- Choosing between breadth and frequency metrics
-- Setting scale types (logarithmic or linear)
-- Filtering for top or bottom events
-- Using zooming tools to focus on specific data clusters
-
-Users interact with the visualization and its accompanying breakdown table to derive insights about feature engagement patterns.
+The Engagement Matrix serves as a strategic tool for product teams to visualize, analyze, and optimize feature engagement, ultimately helping to create more engaging and effective products based on actual user behavior.

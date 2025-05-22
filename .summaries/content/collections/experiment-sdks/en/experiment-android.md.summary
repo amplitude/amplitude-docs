@@ -3,14 +3,14 @@ The Experiment Android SDK provides client-side feature flag and experiment mana
 
 ## Keywords
 - Android SDK
-- Experiment
-- Feature flags
-- Remote evaluation
-- Local evaluation
-- Variant fetching
-- Exposure tracking
-- User bucketing
+- feature flags
+- experiment variants
+- remote evaluation
+- local evaluation
+- exposure tracking
+- user targeting
 - Amplitude integration
+- fetch variants
 - ExperimentUser
 - ExperimentConfig
-- Bootstrapping
+- account-level bucketing

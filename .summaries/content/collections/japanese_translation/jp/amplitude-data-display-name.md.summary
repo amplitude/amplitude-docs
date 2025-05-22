@@ -1,14 +1,13 @@
-## Summary
-This documentation page explains how to set display names for events and user properties in Amplitude Data, which improves readability in the UI without changing the underlying data. The feature only applies to active events and user properties included in tracking plans, not custom events.
+# Summary
+This documentation explains how to set display names for events and user properties in Amplitude Data, which improves readability and understanding without changing the underlying data. The feature only applies to active events and user properties included in tracking plans, not custom events.
 
-## Keywords
+# Keywords
 - Amplitude Data display names
 - Event display name modification
 - User property display name
 - Tracking plan integration
-- UI readability
-- Data visualization naming
-- Property name customization
-- Event metadata management
-- Display name vs raw data
-- Amplitude UI customization
+- UI name customization
+- Data readability
+- Property details panel
+- Event management
+- Data visualization labels

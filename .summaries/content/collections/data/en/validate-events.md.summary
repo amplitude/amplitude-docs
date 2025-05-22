@@ -10,5 +10,5 @@ Amplitude Data's Observe feature automatically monitors event tracking without c
 - SDK source detection
 - runtime validation
 - event stream overlay
+- environment-specific monitoring
 - unexpected events
-- invalid properties

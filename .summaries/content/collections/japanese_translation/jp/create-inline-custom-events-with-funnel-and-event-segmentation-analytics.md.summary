@@ -1,5 +1,5 @@
 ## Summary
-This documentation explains how to create inline custom events in Amplitude by combining multiple existing events directly within funnel and event segmentation charts, without permanently saving them, and provides step-by-step instructions for creating, configuring, and optionally saving these combined events for reuse.
+This documentation explains how to create inline custom events in Amplitude by combining multiple existing events directly within funnel and event segmentation charts, without permanently saving them, and provides step-by-step instructions for creating, configuring, and optionally saving these combined events.
 
 ## Keywords
 - inline custom events
@@ -11,4 +11,3 @@ This documentation explains how to create inline custom events in Amplitude by c
 - closed beta feature
 - chart controls
 - custom event saving
-- event exploration

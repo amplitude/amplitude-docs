@@ -1,16 +1,17 @@
 ## Summary
-This documentation provides an overview of Amplitude's event streaming feature, which allows sharing behavioral data with downstream tools. It covers considerations like billing efficiency, latency targets, and retry mechanisms, along with limitations such as property formatting and reserved keywords, and includes FAQs comparing event streaming to cohort syncing.
+Amplitude's destination event streaming enables sharing behavioral data with external tools, offering configuration-based controls to filter data by user, group, and event properties, with monitoring capabilities for event volume, latency, and delivery status. The service maintains billing efficiency by counting distinct events once regardless of destination count, targets 60-second latency, and implements a robust retry mechanism for failed deliveries.
 
 ## Keywords
-- event streaming
-- amplitude data
-- behavioral data forwarding
+- event streaming destinations
+- behavioral data sharing
+- property-based filtering
+- streaming latency target
 - retry mechanism
-- latency target
 - billing efficiency
-- property formatting limitations
-- webhook streaming
-- cohort syncing
-- IP ranges
-- event filtering
-- streaming debugger UI
+- event volume tracking
+- webhook integration
+- cohort syncing comparison
+- IP address ranges
+- streaming limitations
+- reserved keywords
+- Event Streaming Debugger UI

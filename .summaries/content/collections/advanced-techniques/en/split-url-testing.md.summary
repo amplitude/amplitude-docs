@@ -3,12 +3,12 @@ Split URL testing in Amplitude allows marketers to conduct A/B tests by redirect
 
 # Keywords
 - URL redirect testing
-- A/B testing
+- A/B testing without developers
 - Amplitude Experiment SDK
-- CMS integration
+- CMS variant testing
 - Multi-armed bandits
 - Local evaluation mode
 - deviceID keys
-- Variant preview
-- No-code experimentation
-- Conversion optimization
+- Preview and test redirects
+- Configuration limitations
+- Head tag script implementation

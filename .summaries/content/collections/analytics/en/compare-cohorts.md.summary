@@ -1,5 +1,5 @@
 # Summary
-This documentation page explains how to compare behavioral cohorts in Amplitude Analytics, including viewing overlap, user properties, retention, and average events, as well as managing cohorts through discoverability settings, archiving, deletion, and ownership transfer.
+This documentation page explains how to compare behavioral cohorts in Amplitude Analytics, including viewing overlap and user properties, and how to manage cohorts through discoverability settings, archiving, deleting, and transferring ownership between users.
 
 # Keywords
-behavioral-cohorts, cohort-comparison, discoverable-cohorts, unlisted-cohorts, archive-cohort, delete-cohort, transfer-ownership, cohort-overlap, active-users, cohort-management
+behavioral-cohorts, cohort-comparison, cohort-management, discoverable-cohorts, unlisted-cohorts, archive-cohort, delete-cohort, transfer-ownership, cohort-overlap, user-properties, retention-analysis

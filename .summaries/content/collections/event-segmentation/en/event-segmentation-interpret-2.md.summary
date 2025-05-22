@@ -5,10 +5,10 @@ This documentation page explains advanced features in Event Segmentation analysi
 - Rolling Averages
 - Rolling Windows
 - Cumulative Sum
-- Real-time Segmentation
 - Period-over-period comparison
-- Measured As Module
+- Real-time segmentation
 - Unweighted mean
 - Data smoothing
 - CUMSUM
+- Advanced measurement features
 - Compare to past

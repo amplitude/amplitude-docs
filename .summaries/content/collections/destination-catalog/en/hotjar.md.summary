@@ -1,14 +1,14 @@
 # Summary
-This documentation page describes how to integrate Amplitude with Hotjar using a custom Destination Plugin that forwards Amplitude events to Hotjar's tracking system, enabling combined analytics and user experience insights by implementing the plugin in browser applications.
+This documentation page describes how to integrate Amplitude with Hotjar using a custom Destination Plugin that forwards Amplitude events to Hotjar's tracking system, enabling combined analytics and user experience insights by implementing the Hotjar browser tracking code within Amplitude's SDK plugin architecture.
 
 # Keywords
 - Hotjar integration
 - Destination Plugin
 - Event forwarding
 - Browser tracking code
+- SDK plugin
 - hj.identify
 - hj.event
-- Amplitude SDK plugin
 - User behavior analytics
-- Product experience insights
-- Custom plugin implementation
+- Amplitude events
+- HotjarPlugin implementation

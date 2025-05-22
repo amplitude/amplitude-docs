@@ -1,5 +1,5 @@
 ## Summary
-This documentation explains why mobile attribution events may be missing in Amplitude, primarily due to identifier mismatches between attribution partners (using IDFA/IDFV/ADID) and Amplitude (using user_id/device_id/amplitude_id), and outlines troubleshooting steps for when events aren't mapped within the 72-hour retention window.
+This documentation explains why mobile attribution events may be missing in Amplitude, primarily due to identifier mismatches between attribution partners (using IDFA/IDFV/ADID) and Amplitude (using user_id/device_id/amplitude_id), with events being dropped after 72 hours if no matching user is found.
 
 ## Keywords
 - mobile attribution events
@@ -9,7 +9,9 @@ This documentation explains why mobile attribution events may be missing in Ampl
 - ADID
 - amplitude_attribution_ids
 - Attribution API
-- 72-hour event retention
+- 72-hour holding period
 - user mapping
-- identifier mismatch
-- event ingestion troubleshooting
+- event dropping
+- instrumentation limits
+- iOS SDK
+- device_id matching

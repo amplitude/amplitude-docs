@@ -3,11 +3,10 @@ This documentation details the Adjust integration with Amplitude, which combines
 
 # Keywords
 - Attribution API
-- Advertising ID (IDFA/IDFV/ADID)
-- User segmentation
-- Real-time data transmission
-- Ad channel performance
+- Advertising ID matching (IDFA/IDFV/ADID)
+- User segmentation by ad parameters
 - 72-hour attribution window
-- User matching
-- Marketing attribution
-- Data discrepancy
+- Real-time data transmission
+- Marketing source tracking
+- Data discrepancy considerations
+- ADID privacy handling

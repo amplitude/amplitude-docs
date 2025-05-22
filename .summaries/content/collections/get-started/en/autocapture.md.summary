@@ -1,19 +1,18 @@
 ## Summary
-This documentation page explains how to implement Amplitude's Autocapture feature across web, iOS, and Android platforms to automatically collect analytics data with minimal engineering effort, including details on SDK installation, initialization with proper configuration options, and the specific events and properties captured on each platform.
+This documentation page explains Amplitude's Autocapture feature for web, iOS, and Android platforms, detailing how to install and initialize SDKs with Autocapture enabled to automatically collect user interactions, page views, sessions, form submissions, and other events with minimal engineering effort.
 
 ## Keywords
 - Autocapture
 - Browser SDK
 - iOS-Swift SDK
 - Android-Kotlin SDK
-- element interactions
+- elementInteractions
 - visual labeling
 - marketing attribution
 - session tracking
-- app lifecycles
-- screen views
 - element clicked
 - page viewed
 - form tracking
+- UTM parameters
 - content security policy
-- user properties
+- autocaptureOptions

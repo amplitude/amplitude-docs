@@ -1,14 +1,14 @@
 ## Summary
-This documentation explains Conversion Drivers in Amplitude's Funnel Analysis, a feature that automatically analyzes user events between funnel steps to identify behaviors most strongly correlated with conversion or drop-off, providing metrics like correlation score, behavior frequency, user engagement percentage, and conversion time to help understand what drives important outcomes in the customer journey.
+This documentation explains Conversion Drivers in Amplitude's Funnel Analysis, a feature that automatically analyzes events between funnel steps to identify which user behaviors most strongly correlate with conversion or drop-off. It provides metrics like correlation score, behavior frequency, user engagement percentage, and conversion time to help understand which actions drive important outcomes in the customer journey.
 
 ## Keywords
 - Conversion Drivers
 - Funnel Analysis
 - Correlation Score
-- Event Table
+- Event Properties
 - Conversion Metrics
 - User Behavior Analysis
-- Event Properties
 - Microview
-- Step Controller
+- Event Table
+- Matthews Correlation
 - Enterprise Feature

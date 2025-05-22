@@ -11,4 +11,4 @@ The User Composition chart displays a breakdown of active users based on a singl
 - user composition visualization
 - property distribution
 - segment filtering
-- non-event-driven analysis
+- mutually exclusive buckets

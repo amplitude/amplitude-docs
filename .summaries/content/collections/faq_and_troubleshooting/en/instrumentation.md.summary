@@ -8,7 +8,8 @@ This documentation page addresses common questions about Amplitude instrumentati
 - event name uniqueness
 - array properties
 - null device information
-- Session ID behavior
+- session timeout
 - subscription revenue events
 - bot traffic filtering
-- User Agent handling
+- User Agent
+- Data Filters

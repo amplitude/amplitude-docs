@@ -10,6 +10,6 @@ This documentation page covers SDK troubleshooting and debugging for Amplitude, 
 - User properties delay
 - Flush queue settings
 - Privacy IP handling
-- Batch API
 - Race conditions
+- Batch API
 - Event timestamp troubleshooting

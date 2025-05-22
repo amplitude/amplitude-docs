@@ -9,8 +9,9 @@ This page explains behavioral cohorts in Amplitude, which are groups of users wi
 - time-based filtering
 - microscope integration
 - cohort comparison
+- inline cohorts
 - interval cohorts
 - cohort management
-- cohort synchronization
+- cohort export
 - group-level cohorts
-- CSV import
+- user properties filtering

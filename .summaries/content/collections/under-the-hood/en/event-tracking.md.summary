@@ -2,14 +2,16 @@
 This documentation explains Amplitude Experiment's event tracking system, detailing how assignment and exposure events work together with experiment user properties to enable experiment analysis, monitoring, and debugging, with recommendations to use Amplitude-defined events to ensure proper user property setting.
 
 ## Keywords
-- assignment events
-- exposure events
-- experiment user properties
-- [Experiment] Assignment
-- [Experiment] Exposure
-- automatic assignment tracking
-- automatic exposure tracking
-- variant assignment
-- event transformation
-- server-side evaluation
-- client-side exposure
+- Assignment events
+- Exposure events
+- Experiment user properties
+- Remote evaluation
+- Local evaluation
+- Automatic assignment tracking
+- Exposure transformation
+- Event property inheritance
+- Server-side experiments
+- Client-side exposure tracking
+- Event volume billing
+- Variant assignment
+- SDK integrations

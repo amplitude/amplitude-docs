@@ -1,14 +1,15 @@
 ## Summary
-This documentation explains how Amplitude defines and tracks user sessions, including differences between mobile and web applications, session ID generation, and custom session definitions. It details how to implement session tracking through SDKs or HTTP API, configure Start/End Session events, and create custom session definitions using properties, events, or timeout intervals.
+This documentation explains how Amplitude defines and tracks user sessions, including differences between mobile and web applications, session ID generation, and custom session definitions. It details how to implement session tracking through SDKs or HTTP API, handle out-of-session events, and configure custom session properties for analysis.
 
 ## Keywords
-- session tracking
 - session ID
-- mobile vs web sessions
-- session timeout configuration
-- custom session definitions
+- mobile session timeout
+- web session timeout
+- Start Session events
+- End Session events
 - out-of-session events
-- Start/End Session events
-- session property customization
+- custom session definition
+- session property
+- session tracking
 - Unix timestamp
-- session grouping
+- HTTP API session handling

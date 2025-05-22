@@ -5,12 +5,10 @@ Ampli is a tool that generates a type-safe wrapper for Amplitude SDKs based on y
 - Ampli Wrapper
 - Amplitude SDK
 - tracking plan
-- type-safe analytics
-- instrumentation verification
-- Ampli CLI
-- event tracking
+- type-safe event tracking
 - data quality
-- ampli.load()
-- ampli status
+- Ampli CLI
+- instrumentation verification
 - code generation
-- multi-platform support
+- event validation
+- cross-platform support

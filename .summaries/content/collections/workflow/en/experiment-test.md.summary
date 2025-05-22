@@ -10,7 +10,7 @@ This documentation page explains the process of testing and launching experiment
 - experiment scheduling
 - diagnostics
 - root cause analysis
-- experiment rollout
-- experiment rollback
+- experiment completion
+- rollout options
 - sticky bucketing
 - percentage rollouts

@@ -7,8 +7,9 @@ The Experiment Go SDK documentation provides implementation details for both rem
 - local evaluation
 - feature flags
 - variant fetching
-- flag streaming
 - cohort targeting
+- flag streaming
 - assignment tracking
 - flag configuration polling
 - user evaluation
+- deployment key

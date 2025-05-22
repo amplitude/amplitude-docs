@@ -1,5 +1,5 @@
 # Summary
-Visual Labeling enables non-technical users to create labeled events by clicking elements on websites with Autocapture enabled, without requiring code changes. The feature allows users to define, edit, and repair event tracking definitions through a visual interface, with labeled events functioning as a virtual layer on top of raw Autocapture events.
+Visual Labeling enables non-technical users to create labeled events by clicking elements on websites with Autocapture enabled, without requiring code changes. The feature allows users to define, edit, and repair event tracking definitions through a visual interface, functioning as a layer on top of Autocapture events without increasing event volume.
 
 # Keywords
 - Autocapture
@@ -13,4 +13,4 @@ Visual Labeling enables non-technical users to create labeled events by clicking
 - Event repair
 - DOM changes
 - Cross-tab communication
-- Content Security Policy (CSP)
+- Content Security Policy limitations

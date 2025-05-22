@@ -1,14 +1,14 @@
-# Summary
-The Experiment Management API Mutex Group Endpoints documentation details REST endpoints for managing mutex groups in Amplitude Experiment, including listing, creating, editing mutex groups and their slots, with specific parameters for traffic allocation, experiment assignments, and configuration options.
+## Summary
+The Experiment Management API Mutex Group Endpoints documentation details the REST API endpoints for managing mutex groups in Amplitude Experiment, including listing, creating, editing mutex groups and their slots, with complete request/response examples for each operation.
 
-# Keywords
+## Keywords
 - mutex groups
 - experiment management API
-- slots allocation
-- traffic percentage
-- bucketingKey
-- evaluationMode
-- experiment assignments
+- slots configuration
+- bucketing
+- traffic allocation
+- experiment exclusion
 - holdout groups
-- PATCH/GET/POST endpoints
-- mutex configuration
+- evaluation modes
+- CRUD operations
+- traffic percentage

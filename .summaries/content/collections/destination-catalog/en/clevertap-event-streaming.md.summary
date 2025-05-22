@@ -1,16 +1,16 @@
 ## Summary
-This documentation details the CleverTap Event Stream integration with Amplitude, allowing event data to be ingested from Amplitude into CleverTap for engagement purposes. It covers setup requirements including CleverTap credentials (Account ID, Passcode, Region), configuration steps in both platforms, and explains how the integration enables advanced analytics, personalized campaigns, and customer retention strategies.
+This documentation details the Clevertap Event Streaming integration with Amplitude, allowing event data to be sent from Amplitude to CleverTap for enhanced user engagement and analytics. The setup requires CleverTap credentials (Account ID, Passcode, Region) and configuration in Amplitude's Data Destinations to map user identities and select which events to stream.
 
 ## Keywords
-- CleverTap Event Stream
+- CleverTap Event Streaming
 - Amplitude integration
-- user identity mapping
-- event streaming configuration
-- retention cloud
+- user retention
+- event data ingestion
 - CleverTap Account ID
 - CleverTap Passcode
 - CleverTap Region
+- identity mapping
 - real-time event forwarding
 - personalized engagement campaigns
-- customer retention
-- event filtering
+- churn prevention
+- user behavior analytics

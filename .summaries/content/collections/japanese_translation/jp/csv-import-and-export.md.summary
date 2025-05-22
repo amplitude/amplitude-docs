@@ -8,6 +8,7 @@ This Japanese documentation page explains how to use CSV import and export funct
 - event schema status
 - property schema status
 - schema management
-- taxonomy CSV
-- unexpected events
 - Amplitude Data
+- taxonomy CSV
+- event properties
+- user properties

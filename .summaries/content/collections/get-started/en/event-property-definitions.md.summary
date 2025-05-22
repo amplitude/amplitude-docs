@@ -8,8 +8,8 @@ This documentation page lists and explains the default event properties that Amp
 - Page Domain
 - Page Location
 - Page URL
-- Event Day of Week
 - Session Replay ID
+- Event Historical Count
 - Historical Count
-- client-side SDK properties
+- Server Upload Delay Time
 - Amplitude-generated properties

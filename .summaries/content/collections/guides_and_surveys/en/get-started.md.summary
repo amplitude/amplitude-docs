@@ -1,5 +1,5 @@
 ## Summary
-This documentation page introduces Guides and Surveys in Amplitude, detailing the Overview tab's analytics features including filter cards, performance metrics, and interaction tracking for monitoring guide views, survey completions, and user engagement patterns.
+This documentation page introduces Guides and Surveys in Amplitude, detailing the Overview tab's analytics features including filters, performance metrics, and interaction tracking for monitoring guide views, survey completions, and user engagement patterns.
 
 ## Keywords
 - Guides and Surveys SDK
@@ -10,5 +10,5 @@ This documentation page introduces Guides and Surveys in Amplitude, detailing th
 - Guide performance metrics
 - Survey response tracking
 - Rage closes
-- Interaction feed
-- In-product guidance analytics
+- Interactions feed
+- Real-time engagement monitoring

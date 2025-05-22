@@ -2,107 +2,109 @@
 
 ## Product Overview
 
-Amplitude Experiment is a feature flagging and experimentation platform that enables product teams to test hypotheses, safely roll out features, and make data-driven decisions. The platform combines deterministic randomization, statistical analysis, and performance optimization to deliver reliable experimentation capabilities.
+Amplitude Experiment is a feature flagging and experimentation platform that enables product teams to test new features and measure their impact. The platform provides two evaluation modes: remote evaluation (server-based) and local evaluation (client-side), allowing teams to choose the implementation that best fits their performance and functionality requirements.
 
-Key features include deterministic user randomization, sequential statistical testing, flag dependencies, comprehensive event tracking, high-performance evaluation through CDN caching and local evaluation, and detailed experiment analysis with various metric calculations.
+Key features include deterministic randomization to ensure consistent user experiences, sequential statistical testing for faster experiment analysis, flag dependencies for complex experiment scenarios, and comprehensive event tracking that integrates with Amplitude Analytics. The platform is built on AWS infrastructure with Fastly CDN integration to deliver high-performance flag evaluations globally.
 
-The platform supports A/B testing, feature rollouts, mutual exclusion testing, and holdout experiments to measure the combined impact of multiple experiments.
+## Product Relationships and Features
 
-## Product and Feature Relationships
+### Evaluation Modes
 
-Amplitude Experiment consists of five interconnected components:
+1. **Remote Evaluation**
+   - Server-based evaluation where flag rules are processed on Amplitude's servers
+   - Leverages Fastly CDN for response caching (35.9ms average for cache hits vs. 194.21ms for misses)
+   - Supports dynamic targeting and behavioral cohorts
+   - Recommended for client-side implementations where latency is less critical
 
-1. **Evaluation System** operates in two modes:
-   - Remote Evaluation: Server-side evaluation with CDN caching
-   - Local Evaluation: Client-side evaluation for sub-millisecond performance
+2. **Local Evaluation**
+   - Client-side evaluation where flag rules are processed within the application
+   - Delivers sub-millisecond performance across Node.js, Go, and JVM SDKs
+   - Requires downloading flag configurations to the client
+   - Ideal for server-side implementations where minimal latency is critical
 
-2. **Randomization Engine** uses deterministic two-stage randomization:
-   - First determines user inclusion in an experiment
-   - Then assigns variants to included users based on weights
+### Flag Dependencies System
 
-3. **Event Tracking System** captures:
-   - Assignment Events: When a user is assigned to an experiment variant
-   - Exposure Events: When a user actually sees the experiment
+Amplitude Experiment supports three types of flag dependencies:
 
-4. **Analysis Framework** calculates results using:
-   - Unique conversions, event totals, property values, and funnel conversions
-   - Sequential testing methodology (mSPRT) for statistical inference
+1. **Flag Prerequisites**: Allows flags to depend on the state of other flags
+2. **Mutual Exclusion Groups**: Ensures users only participate in one experiment at a time
+3. **Holdout Groups**: Withholds traffic from multiple experiments to measure combined impact
 
-5. **Flag Dependencies System** manages relationships between flags:
-   - Prerequisites: Controls feature release dependencies
-   - Mutual Exclusion Groups: Ensures users participate in only one experiment
-   - Holdout Groups: Measures combined experiment impact
+### Event Tracking System
+
+The platform uses two primary event types for experiment analysis:
+
+1. **Assignment Events**: Record when a user is assigned to an experiment variant
+   - Can be tracked automatically or manually depending on implementation
+   - Set experiment user properties for downstream analysis
+
+2. **Exposure Events**: Record when a user is actually exposed to an experiment
+   - Critical for accurate analysis as they distinguish assignment from actual exposure
+   - Can be transformed from assignment events in certain implementations
+
+### Statistical Analysis
+
+Amplitude uses sequential testing methodology (mSPRT - mixture Sequential Probability Ratio Test) which:
+- Allows valid statistical conclusions at any point during an experiment
+- Enables faster experimentation and early stopping when results are clear
+- Doesn't require predetermined sample sizes unlike traditional T-tests
 
 ## Key Nomenclature and Definitions
 
-- **Bucketing Key**: Unique identifier used for randomization (typically Amplitude ID)
-- **Bucketing Salt**: Value ensuring independent randomization across experiments
-- **Variant**: Specific version or treatment in an experiment
-- **Exposure**: When a user encounters an experiment variant
-- **Assignment**: When a user is allocated to an experiment variant
-- **mSPRT**: Mixture Sequential Probability Ratio Test - statistical method for sequential testing
-- **Flag Dependencies**: Relationships between flags controlling evaluation order
-- **Cache Hit/Miss**: Whether a request is served from cache or requires backend processing
-- **Fallback Variant**: Default variant served when a user doesn't qualify for an experiment
-- **Behavioral Cohorts**: User segments based on past behavior used for targeting
+- **Bucketing Key**: The unique identifier used to assign users to variants (typically Amplitude ID)
+- **Bucketing Salt**: A string used to ensure different experiments produce different assignments
+- **Deterministic Randomization**: Process ensuring users consistently receive the same variant
+- **Exposure Transformation**: Converting assignment events to exposure events automatically
+- **Flag Dependencies**: Relationships between flags that control evaluation order
+- **Local Defaults**: Fallback values used when flag evaluation fails
+- **mSPRT**: Mixture Sequential Probability Ratio Test, the statistical method used for experiment analysis
+- **Mutual Exclusion Groups**: Configuration ensuring users only participate in one experiment at a time
+- **Remote Evaluation**: Server-side processing of flag rules
+- **Local Evaluation**: Client-side processing of flag rules
+- **Variant**: A specific version or treatment in an experiment
 
 ## Product Ecosystem Integration
 
-Amplitude Experiment integrates with the broader Amplitude ecosystem through:
+Amplitude Experiment integrates with the broader Amplitude product ecosystem:
 
-1. **Amplitude Analytics**: Experiment events flow into Analytics for analysis
-   - Assignment and exposure events are automatically tracked
-   - Experiment user properties are set for segmentation
+1. **Amplitude Analytics**
+   - Provides user behavioral data for experiment targeting
+   - Receives and processes experiment assignment and exposure events
+   - Powers experiment analysis dashboards and reporting
 
-2. **Infrastructure**: Leverages AWS and Fastly CDN
-   - Uses AWS Application Load Balancer, Relational Databases, and DynamoDB
-   - Fastly CDN provides global caching for performance optimization
+2. **Amplitude SDKs**
+   - Available for multiple platforms (Node.js, Go, JVM, client-side JavaScript)
+   - Support both remote and local evaluation modes
+   - Handle event tracking and flag evaluation
 
-3. **Identity Resolution**: Connects with Amplitude's identity system
-   - Uses Amplitude ID as the primary bucketing key
-   - Supports consistent user identification across platforms
-
-4. **Behavioral Cohorts**: Accesses Amplitude's behavioral cohort system
-   - Enables targeting users based on past behaviors
-   - Integrates with dynamic targeting capabilities
+3. **Amplitude Cohorts**
+   - Used for targeting experiments to specific user segments
+   - Accessible in real-time for remote evaluation
 
 ## Technical Implementation Details
 
 ### Randomization Algorithm
 ```
 // Inclusion determination
-included = mod(murmur3_x86_32("bucketingSalt/id"), 100) < rolloutPercentage
+mod(murmur3_x86_32("bucketingSalt/id"), 100) < inclusionPercent
 
-// Variant assignment (if included)
-variantValue = floor(murmur3_x86_32("bucketingSalt/id"), 100)
+// Variant assignment
+variantIndex = floor(murmur3_x86_32("bucketingSalt/id") / MAX_HASH * 100)
 ```
 
 ### Performance Metrics
-- **Remote Evaluation**:
-  - Global average: 35.9ms (cache hit), 194.21ms (cache miss)
-  - Cache TTL: Typically 5 minutes
+- Remote evaluation with cache hit: ~35.9ms globally
+- Remote evaluation with cache miss: ~194.21ms globally
+- Local evaluation: sub-millisecond across all SDKs
 
-- **Local Evaluation**:
-  - Node.js SDK: 0.05ms
-  - Go SDK: 0.03ms
-  - JVM SDK: 0.08ms
+### Experiment Analysis Calculations
+- **Unique Conversions**: (Users who triggered metric event) ÷ (Users exposed to variant)
+- **Event Totals**: (Total metric events) ÷ (Users exposed to variant)
+- **Property Values**: (Sum of property values) ÷ (Users who triggered metric event)
+- **Funnel Conversions**: (Users who completed funnel) ÷ (Users who started funnel)
 
-### Event Tracking
-- **Assignment Event**: `[Experiment] Assignment`
-- **Exposure Event**: `[Experiment] Exposure`
-
-Both events include experiment metadata and variant information, with automatic tracking available in supported SDKs.
-
-### Flag Dependencies Implementation
-```json
-{
-  "prerequisites": [
-    {
-      "flag": "parent-flag",
-      "variants": ["on"]
-    }
-  ]
-}
-```
-
-This system requires SDK version compatibility for proper implementation, with specific version requirements for each dependency type.
+### Caching Mechanisms
+- CDN caching with configurable TTL (time-to-live)
+- Cache invalidation on flag updates
+- Client-side caching for improved performance
+- Local storage options for offline capabilities

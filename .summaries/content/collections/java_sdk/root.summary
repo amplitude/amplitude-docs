@@ -2,164 +2,108 @@
 
 ## Overview
 
-The Amplitude Java SDK is an analytics tracking solution designed for Java applications running on the Java Runtime Environment (JRE). It enables developers to track user behavior and application events in server-side Java applications, desktop applications, and other JRE-based environments. The SDK provides robust capabilities for identifying users, tracking events, managing user properties, and supporting group analytics.
+The Amplitude Java SDK is a server-side analytics tracking solution for Java applications running on the Java Runtime Environment (JRE). It enables developers to track user behavior, application events, and analytics data from Java applications. The SDK is available in two variants:
 
-## Product Architecture
+1. **JRE Java SDK** - The core SDK for tracking events in Java applications
+2. **Ampli for Java SDK** - A strongly-typed wrapper around the core SDK that provides type safety based on your tracking plan
 
-The Amplitude Java SDK ecosystem consists of two main components:
+## Key Features
 
-1. **JRE Java SDK**: The core SDK that provides fundamental event tracking capabilities for Java applications.
-2. **Ampli for Java SDK**: A strongly-typed wrapper around the core SDK that provides type safety and code completion for tracking events.
-
-These components work together to provide a comprehensive analytics solution for Java applications, with the core SDK handling the fundamental tracking functionality and the Ampli wrapper providing additional type safety and integration with Amplitude's data planning features.
-
-## Key Nomenclature and Definitions
-
-- **Event**: A discrete user action or occurrence tracked in the application
-- **User ID**: A unique identifier for a user
-- **Device ID**: A unique identifier for a device when user ID is not available
-- **Event Properties**: Additional data associated with an event
-- **User Properties**: Attributes associated with a user
-- **Group**: A collection of users that can be analyzed together
-- **Middleware**: Custom code that can transform events before they are sent
-- **Batch Mode**: Sending events in batches rather than individually
-- **Flush**: The process of sending queued events to Amplitude servers
-- **Identify**: Operations to set, update, or modify user properties
-- **Ampli**: The strongly-typed wrapper and associated CLI tools
-
-## JRE Java SDK Features
-
-The core JRE Java SDK provides the following key features:
-
-- Event tracking in Java applications
-- User identification and user property management
+- Event tracking with rich metadata
+- User identification and property management
 - Batch processing of events
+- Group analytics for user cohorts
+- Middleware support for customizing event processing
 - HTTP proxy configuration
-- Group analytics support
-- Middleware capabilities for event transformation
-- Callback support for event processing
-- Configurable event flushing and thread timeout
+- Configurable event batching and flushing
+- Thread management for asynchronous event processing
+- Type-safe event tracking (with Ampli wrapper)
 
-### Installation
+## Product Relationships
 
-The JRE Java SDK can be installed via Maven or Gradle:
+The Java SDK ecosystem consists of two main components:
 
-```gradle
-implementation 'com.amplitude:analytics-java:1.10.0'
+1. **JRE Java SDK (Core SDK)**: The foundation that handles event tracking, batching, and sending to Amplitude's servers.
+
+2. **Ampli for Java SDK**: A wrapper built on top of the core SDK that provides type safety and code generation based on your tracking plan defined in Amplitude.
+
+The Ampli wrapper depends on the core SDK but adds compile-time checking against your tracking plan, ensuring events and properties match what's defined in your Amplitude data plan.
+
+## Key Nomenclature
+
+- **Event**: An action performed by a user that you want to track
+- **Identify**: The process of associating analytics data with a specific user
+- **User Properties**: Attributes associated with a user (e.g., name, email, preferences)
+- **Event Properties**: Metadata associated with a specific event occurrence
+- **Group**: A collection of users that can be analyzed together
+- **Middleware**: Custom code that can intercept and modify events before they're sent to Amplitude
+- **Batch Mode**: Processing multiple events together to reduce network requests
+- **Flush**: The process of sending queued events to Amplitude's servers
+- **Tracking Plan**: A schema defining the expected events and properties in your analytics implementation
+- **Ampli CLI**: Command-line tool for managing the Ampli wrapper and syncing with your tracking plan
+
+## Product Ecosystem Integration
+
+The Java SDK integrates into Amplitude's broader analytics platform:
+
+1. Events tracked via the SDK appear in Amplitude's analytics dashboard
+2. The Ampli wrapper connects with Amplitude's Data planning features
+3. The SDK supports Amplitude's Group Analytics for B2B use cases
+4. Events can be processed through Amplitude's event processing pipelines
+
+The SDK is part of Amplitude's cross-platform tracking solution, allowing consistent event tracking across server-side Java applications and other client platforms.
+
+## API and Implementation
+
+### JRE Java SDK Installation
+```xml
+<dependency>
+    <groupId>com.amplitude</groupId>
+    <artifactId>analytics-java</artifactId>
+    <version>1.10.0</version>
+</dependency>
 ```
 
-### Initialization and Configuration
-
+### JRE Java SDK Initialization
 ```java
-Amplitude amplitude = Amplitude.getInstance()
-    .init("API_KEY")
-    .setServerUrl("https://api.amplitude.com")
-    .setServerZone(ServerZone.US)
-    .setUseBatch(true)
-    .setEventUploadThreshold(50)
-    .setEventUploadPeriodMillis(10000)
-    .setFlushQueueSize(200)
-    .setFlushMaxRetries(5)
-    .setUseBatch(true)
-    .setLogLevel(LogLevel.DEBUG)
-    .setMinIdLength(5);
+Amplitude amplitude = Amplitude.getInstance();
+amplitude.init("API_KEY");
 ```
 
-### Core API Methods
+### Ampli for Java SDK Installation
+```xml
+<dependency>
+    <groupId>com.amplitude</groupId>
+    <artifactId>analytics-java</artifactId>
+    <version>1.10.0</version>
+</dependency>
+```
 
-- `init(apiKey)`: Initialize the SDK
-- `track(event)`: Track an event
-- `identify(identify, options)`: Set user properties
-- `setGroup(groupType, groupName, options)`: Associate a user with a group
-- `flush()`: Manually send queued events
-- `shutdown()`: Properly close the SDK and send remaining events
-
-### Event Tracking Example
-
+### Ampli for Java SDK Initialization
 ```java
-amplitude.track(
-    BaseEvent.builder()
-        .eventType("EVENT_TYPE")
-        .userId("USER_ID")
-        .build()
-);
+Ampli ampli = new Ampli();
+ampli.load(new LoadOptions()
+    .setApiKey("API_KEY")
+    .setEnvironment(Environment.PRODUCTION));
 ```
 
-### User Properties Management
+### Core SDK Methods
+- `amplitude.init(apiKey)` - Initialize the SDK
+- `amplitude.track(event)` - Track an event
+- `amplitude.identify(identify)` - Set user properties
+- `amplitude.setGroup(groupType, groupName)` - Associate user with a group
+- `amplitude.flush()` - Send queued events immediately
+- `amplitude.shutdown()` - Flush events and shut down the SDK
 
-```java
-amplitude.identify(
-    Identify.builder()
-        .set("key", "value")
-        .setOnce("key", "value")
-        .add("key", 1)
-        .build(),
-    new EventOptions().setUserId("USER_ID")
-);
-```
+### Ampli Wrapper Methods
+- `ampli.load(options)` - Initialize the Ampli wrapper
+- `ampli.identify(userId, identifyEvent)` - Identify a user with properties
+- `ampli.track(event)` - Track a strongly-typed event
+- `ampli.setGroup(groupType, groupName)` - Associate user with a group
+- `ampli.flush()` - Send queued events immediately
 
-### Group Analytics
+### Ampli CLI Commands
+- `ampli pull` - Pull the latest tracking plan from Amplitude
+- `ampli status` - Check the status of the local tracking plan vs. Amplitude
 
-```java
-amplitude.setGroup("GROUP_TYPE", "GROUP_NAME", new EventOptions().setUserId("USER_ID"));
-```
-
-## Ampli for Java SDK Features
-
-The Ampli wrapper provides additional features on top of the core SDK:
-
-- Strongly-typed wrapper for the core Java SDK
-- Type-safe event tracking
-- Code completion for event properties
-- Integration with Amplitude's data planning features
-- CLI tools for tracking implementation status
-
-### Installation
-
-```gradle
-implementation 'com.amplitude:analytics-java:1.10.0'
-implementation 'com.amplitude:ampli-java:1.0.0'
-```
-
-### Initialization
-
-```java
-ampli.load(LoadOptions.builder()
-    .client(Amplitude.getInstance().init("API_KEY"))
-    .build());
-```
-
-### Ampli API Methods
-
-- `load(options)`: Initialize the Ampli wrapper
-- `identify(identify, options)`: Set user properties
-- `setGroup(groupType, groupName, options)`: Associate a user with a group
-- `track(event, options)`: Track a custom event
-- `flush()`: Manually send queued events
-
-### Strongly-Typed Event Tracking
-
-```java
-ampli.songPlayed(SongPlayed.builder()
-    .songId("song-1")
-    .songName("Bohemian Rhapsody")
-    .build());
-```
-
-### CLI Commands
-
-The Ampli CLI provides tools for managing the implementation:
-
-- `ampli pull`: Pull the latest tracking plan
-- `ampli status`: Check implementation status against the tracking plan
-
-## Integration with Amplitude Ecosystem
-
-The Java SDK integrates with the broader Amplitude product ecosystem:
-
-1. **Data Collection**: The SDK sends data to Amplitude's event collection endpoints
-2. **Data Planning**: The Ampli wrapper integrates with Amplitude's data planning features
-3. **Analytics**: Events tracked via the SDK appear in Amplitude's analytics dashboards
-4. **Cross-Platform Tracking**: Can be used alongside other Amplitude SDKs for comprehensive tracking
-
-The Java SDK is part of Amplitude's cross-platform tracking solution, allowing developers to track user behavior consistently across different platforms and environments. Events tracked via the Java SDK are sent to Amplitude's servers and can be analyzed alongside data from other sources in Amplitude's analytics dashboards.
+The SDK offers extensive configuration options including custom event upload intervals, event batching settings, HTTP proxy configuration, custom server URLs, thread timeout settings, custom HTTP headers, middleware for event processing, and environment specification.
