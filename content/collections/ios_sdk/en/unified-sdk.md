@@ -293,7 +293,7 @@ amplitude.experiment.fetch().onFetchCompleted { error in
 
 ### Session Replay
 
-The Session Replay SDK is automatically initialized and configured when you create an Amplitude instance with the Unified SDK on iOS platforms. Session Replay is not available on macOS, tvOS, watchOS, or visionOS.
+The Session Replay SDK is automatically initialized and configured when you create an Amplitude instance with the Unified SDK on iOS platforms. Session Replay isn't available on macOS, tvOS, watchOS, or visionOS.
 
 {{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
@@ -338,9 +338,11 @@ amplitude.sessionReplay?.resumeRecording()
 {{/partial:tab}}
 {{/partial:tabs}}
 
-## Advanced Topics
+## Advanced topics
 
-### Identity Management
+Follow instructions in this section to enable identity management and other features.
+
+### Identity management
 
 The Unified SDK provides a unified identity management system that synchronizes user identity across all Amplitude products. When you set a user ID or device ID using the Amplitude methods, the changes are automatically propagated to Experiment and Session Replay.
 
@@ -379,7 +381,7 @@ NSString *deviceId = amplitude.identity.deviceId;
 {{/partial:tab}}
 {{/partial:tabs}}
 
-### User Properties
+### User properties
 
 The Unified SDK maintains a cache of user properties that are set with identify operations. This allows you to access the current user properties state at any time.
 
@@ -424,9 +426,7 @@ AMPIdentify *clearIdentify = [AMPIdentify new];
 {{/partial:tab}}
 {{/partial:tabs}}
 
-## Troubleshooting
-
-### Debugging
+## Debugging
 
 To enable debug logging, set the log level to `DEBUG` in the Analytics configuration:
 
@@ -457,42 +457,42 @@ Amplitude *amplitude = [[Amplitude alloc] initWithApiKey:@"YOUR_API_KEY"
 {{/partial:tab}}
 {{/partial:tabs}}
 
-### Common Issues
+## Common Issues
 
-#### Session Replay not working on non-iOS platforms
+If your implementation of the Unified SDK doesn't work as you expect, make sure you account for the following common issues.
 
-Session Replay is only available on iOS platforms. It is not supported on macOS, tvOS, watchOS, or visionOS. The Unified SDK will automatically detect the platform and only initialize Session Replay on iOS.
+### Session Replay not working on non-iOS platforms
 
-#### Events not showing up in Amplitude
+Session Replay is only available on iOS platforms. It isn't available on macOS, tvOS, watchOS, or visionOS. The Unified SDK automatically detects the platform and only initialize Session Replay on iOS.
 
-If events are not appearing in Amplitude:
+### Events not showing up in Amplitude
+
+If events don't appear in Amplitude:
 
 1. Check that you're using the correct API key
 2. Verify that the device has an internet connection
-3. Make sure you've waited long enough for events to be flushed (default is 30 seconds)
+3. Make sure you wait long enough to ensure events flush (the default time is 30 seconds)
 4. Check the logs for any error messages
 
-#### Experiment flags not being fetched
+### Experiment flags aren't fetched
 
-If Experiment flags are not being fetched:
+If Experiment flags aren't fetched:
 
 1. Ensure you've called `amplitude.experiment.fetch()`
 2. Check that the user ID or device ID is set correctly
-3. Verify that the flags are configured correctly in the Amplitude Experiment dashboard
+3. Verify that you configure the flags correctly in the Amplitude Experiment dashboard
 4. Check the logs for any error messages from the Experiment SDK
 
-## Migration Guide
+## Migration guide
 
-### Migrating from Individual SDKs
-
-If you're currently using the individual Amplitude SDKs separately, follow these steps to migrate to the Unified SDK:
+If you use the individual Amplitude SDKs separately, follow these steps to migrate to the Unified SDK:
 
 1. Add the Unified SDK dependency to your project
 2. Remove the individual SDK dependencies (AmplitudeSwift, Experiment, AmplitudeSessionReplay)
 3. Replace your initialization code with the Unified SDK initialization
 4. Update your API calls to use the Unified SDK interface
 
-#### Before:
+### Before migration
 
 {{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
@@ -541,7 +541,7 @@ AMPSessionReplayPlugin *sessionReplay = [[AMPSessionReplayPlugin alloc] initWith
 {{/partial:tab}}
 {{/partial:tabs}}
 
-#### After:
+### After migration
 
 {{partial:tabs tabs="Swift, Obj-C"}}
 {{partial:tab name="Swift"}}
