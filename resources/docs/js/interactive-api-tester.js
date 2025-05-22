@@ -57,7 +57,7 @@ function initTester(el) {
         // 2) build lines
         const lines = [`curl -X ${method} "${requestUrl}"`];
         lines.push(`-H "Content-Type: application/json"`);
-        lines.push(`-H "Authorization: Api-Key ${fullPayload["deployment-key"]}"`);
+        lines.push(`-H "Authorization: Api-Key ${authInput.value}"`);
 
 
         // 3) only non-GET/DELETE get a body
@@ -84,7 +84,7 @@ function initTester(el) {
         const headers = {
             "Content-Type": "application/json"
         };
-        headers["Authorization"] = 'Api-Key ' + payload["deployment-key"];
+        headers["Authorization"] = 'Api-Key ' + authInput.value;
 
 
         try {
