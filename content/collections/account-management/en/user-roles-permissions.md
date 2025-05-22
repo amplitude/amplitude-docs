@@ -20,7 +20,9 @@ The person who sets user permissions is the **admin**. The admin is the first us
 
 ## User roles and permissions in Amplitude
 
-In Amplitude, user permissions exist at the **organization** level. Once assigned a permission level, a user in an organization has the same level of access to all projects within that organization. 
+By default, user permissions in Amplitude exist at the **organization** level. With the default configuration, once assigned a permission level, a user in an organization has the same level of access to all projects within that organization.
+
+Enterprise customers can enable **project-level permissions**, which allow users to have different roles for different projects within the same organization. For example, a user could be a Manager in one project but only a Viewer in another. To learn more about project-level permissions and how to enable them, see [Project-level permissions](/docs/admin/account-management/manage-users#project-level-permissions).
 
 [Learn more about how to create and manage organizations and projects](/docs/admin/account-management/manage-users).
 
@@ -40,7 +42,7 @@ Recommended role for third parties, if you don't want them creating content that
 * View Guides and Surveys
 
 Viewers:
-* Can't create anything that's discoverable, including saved segments
+* Can't create anything that's discoverable, including saved segments
 * Can't create shareable links
 * Can't export data to third-party integration partners
 * Can't create a guide or survey
@@ -73,7 +75,7 @@ Recommended for users who need access to all content created within Amplitude (d
 * Edit project settings
 * Mark content as "Official Content"
 * Add and edit data sources and data destinations
-* Transfer ownership of content they don’t own
+* Transfer ownership of content they don't own
 * Create, modify, delete derived properties
 * Full access to Guides and Surveys
 
@@ -93,4 +95,4 @@ The highest-level permissions set in an organization. Amplitude recommends limit
 * *Can't* change or reset password for other users
 * *Can't* change their own role in the organization
 * *Can't* remove themselves from the organization. To do so, request an admin or manager remove you from the organization.
-* *Can't* permanently delete another user’s content. Admins can archive users content but only owners can delete their content after archiving.
+* *Can't* permanently delete another user's content. Admins can archive users content but only owners can delete their content after archiving.
