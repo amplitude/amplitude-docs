@@ -2,7 +2,7 @@
 id: 9a4b3c2d-1e5f-4a7e-9c31-1c1571d6a73f
 blueprint: ios_sdk
 title: 'Unified SDK for Swift'
-sdk_status: current
+sdk_status: beta
 article_type: core
 supported_languages:
   - swift
@@ -16,6 +16,10 @@ package_name: AmplitudeUnified
 bundle_url: 'https://cocoapods.org/pods/AmplitudeUnified'
 platform: iOS
 ---
+
+{{partial:admonition type="beta" heading="Unifed SDK for Swift"}}
+The Unified SDK for Swift is in beta and undergoing testing.
+{{/partial:admonition}}
 
 This is the official documentation for the Amplitude Unified SDK for Swift.
 
