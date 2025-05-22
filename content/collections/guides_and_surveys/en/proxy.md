@@ -10,7 +10,7 @@ Set up a single AWS CloudFront distribution to reverse proxy both static assets 
 
 This setup uses one CloudFront distribution with two origins and two cache behaviors:
 
-- The **default origin** proxies `cdn.amplitude.com` for static SDK assets.
+- The **default origin** proxies `cdn.amplitude.com` or `cdn.eu.amplitude.com` for static SDK assets.
 - A **secondary origin** proxies `gs.amplitude.com` or `gs.eu.amplitude.com` for API requests prefixed with `/sdk/`.
 
 ### Step-by-step configuration
