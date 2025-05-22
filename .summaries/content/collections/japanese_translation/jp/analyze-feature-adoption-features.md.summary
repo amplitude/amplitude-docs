@@ -7,8 +7,8 @@ This documentation page explains how to generate and customize feature adoption 
 - active event metrics
 - user behavior analysis
 - template conversion
-- chart customization
-- unique user tracking
-- event frequency analysis
-- user retention measurement
-- dashboard parameter replacement
+- event replacement parameters
+- conversion tracking
+- unique user metrics
+- session analysis
+- retention visualization

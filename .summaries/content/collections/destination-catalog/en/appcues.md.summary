@@ -1,7 +1,7 @@
-# Summary
+## Summary
 This documentation details the Amplitude-Appcues integration that enables sending behavioral cohorts from Amplitude to Appcues for targeted in-app experiences, requiring an Appcues account and matching user IDs between platforms, with step-by-step setup instructions and cohort syncing procedures.
 
-# Keywords
+## Keywords
 - Appcues integration
 - cohort syncing
 - in-app onboarding

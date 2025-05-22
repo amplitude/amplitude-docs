@@ -1,14 +1,14 @@
-## Summary
-This documentation explains multi-armed bandit experiments in Amplitude Experiment, which automatically reallocate traffic to better-performing variants using Thompson sampling, unlike traditional A/B tests that wait for statistical significance before making decisions. The page details key differences in setup, metrics requirements, traffic allocation, and result displays compared to standard A/B tests.
+# Summary
+This documentation explains multi-armed bandit experiments in Amplitude Experiment, which automatically reallocate traffic to better-performing variants using Thompson sampling, unlike traditional A/B tests that wait for statistical significance before making decisions about variant implementation.
 
-## Keywords
+# Keywords
 - Thompson sampling
 - Traffic reallocation
 - Enterprise feature
-- Success metrics requirement
-- Uniform initial distribution
-- Confidence level acceleration
-- Bandit visualization card
+- Primary success metrics
+- Confidence level
+- Duration estimate
+- Minimum detectable effect (MDE)
+- Uniform distribution
+- Bandit card
 - Optimization experiments
-- Variant jumping
-- Automated notifications

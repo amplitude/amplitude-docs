@@ -5,10 +5,10 @@ This documentation describes the Salesforce V2 integration that allows importing
 - Salesforce V2 integration
 - group-level properties
 - account-level reporting
-- object-to-group mapping
-- sync cadence
+- SFDC object mapping
 - group name field
 - group property mapping
+- sync cadence
 - validation
-- SFDC objects
 - mapping configuration
+- Salesforce authentication

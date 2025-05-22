@@ -4,11 +4,11 @@ This documentation describes the Aampe Event Stream Sync destination that enable
 # Keywords
 - Aampe Event Stream
 - AI-powered messaging
-- event streaming integration
-- personalized notifications
-- REST API Key
-- user property mapping
-- event filtering
-- multi-channel messaging
-- bearer token authentication
-- Aampe AI agents
+- Event streaming integration
+- User property mapping
+- Multi-channel personalization
+- Bearer token authentication
+- REST API key
+- User ID mapping
+- Event filtering
+- Real-time data transmission

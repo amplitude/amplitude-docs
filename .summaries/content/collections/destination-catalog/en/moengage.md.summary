@@ -3,14 +3,12 @@ This documentation details the MoEngage event streaming integration with Amplitu
 
 # Keywords
 - MoEngage event streaming
-- customer engagement platform
 - DATA API ID
 - DATA API KEY
 - Basic Auth Token
-- Data Center configuration
-- event property filtering
-- user property forwarding
-- personalization
-- segmentation
-- conversion tracking
-- A/B testing
+- Data Center values
+- Customer engagement platform
+- Event property filtering
+- User identify forwarding
+- Personalization
+- Conversion tracking

@@ -1,14 +1,14 @@
 # Summary
-This documentation details the Appfit destination integration with Amplitude, which provides a mobile dashboard for metrics review with features like weekly reminders, metric flagging, and team discussion capabilities. The setup requires an Appfit Server Secret Key and configuring event streaming in Amplitude Data Catalog.
+This documentation details the Appfit destination integration with Amplitude, allowing users to stream events and cohorts to Appfit for mobile dashboard visualization, weekly metric reviews, and team collaboration features, requiring a Server Secret Key from Appfit and specific event selection during setup.
 
-## Keywords
-- Appfit mobile dashboard
+# Keywords
+- Appfit destination integration
 - Server Secret Key
-- Event streaming integration
-- Metrics review
-- Weekly reminders
-- Goal-setting
-- Data automation
-- Progress visualization
-- Team discussion
+- Event streaming configuration
+- Mobile metrics dashboard
+- Weekly metrics reviews
+- Team goal-setting
 - Event filtering
+- Data visualization
+- Metric flagging
+- Cross-team collaboration

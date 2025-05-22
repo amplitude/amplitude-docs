@@ -1,154 +1,104 @@
-# Amplitude Analytics Platform
+# Amplitude Instrumentation Suite
 
 ## Product Overview
 
-Amplitude is a comprehensive analytics platform that enables businesses to track, analyze, and optimize user behavior across digital products. The platform consists of several key components:
+Amplitude is a comprehensive analytics platform that provides tools for tracking, analyzing, and optimizing user behavior across digital products. The instrumentation suite consists of various SDKs, tools, and utilities designed to collect and process analytics data from different platforms and environments.
 
-1. **Analytics SDKs**: Cross-platform libraries for instrumenting applications to collect and send event data
-2. **Experiment SDKs**: Tools for implementing feature experimentation and A/B testing
-3. **Ampli**: A type-safe wrapper generator that enforces tracking plan compliance
-4. **SDK Plugins**: Extensibility mechanisms for customizing data collection and routing
+Key features of Amplitude's instrumentation suite include:
+- Cross-platform analytics SDKs for client-side and server-side implementations
+- Type-safe event tracking through the Ampli wrapper
+- Dynamic configuration for optimal server routing
+- SDK plugins and middleware for extending functionality
+- Experiment SDKs for A/B testing and feature flagging
+- Comprehensive debugging and troubleshooting tools
 
-Amplitude's core value proposition is providing robust, flexible instrumentation options across client-side and server-side environments, with strong emphasis on data quality, type safety, and extensibility.
+The primary use cases include tracking user behavior, analyzing product usage patterns, implementing A/B tests, and making data-driven product decisions.
 
 ## Product Relationships and Architecture
 
-### Core Components
+Amplitude's instrumentation suite consists of several interconnected components:
 
-The Amplitude Analytics SDK follows a modular architecture with three main components:
+1. **Analytics SDKs**: The core component available for multiple platforms (Browser, Node.js, Android, iOS, React Native, Flutter, Go, Unity, Unreal). These SDKs handle event tracking, user identification, and data transmission to Amplitude servers.
 
-1. **API Layer**: Provides the public interface for developers to track events, identify users, and configure the SDK
-2. **Storage Layer**: Manages event persistence, queuing, and retry mechanisms
-3. **Transport Layer**: Handles the transmission of events to Amplitude's servers
+2. **Ampli Wrapper**: A code generation tool that creates type-safe wrappers around Amplitude SDKs based on tracking plans defined in Amplitude Data. This ensures consistent event tracking across implementations.
 
-### Plugin System
+3. **SDK Plugins**: Extend SDK functionality through:
+   - Enrichment plugins: Modify event properties or filter events
+   - Destination plugins: Route events to third-party services (Segment, Hotjar, Google Analytics, FullStory)
 
-The SDK architecture is extended through plugins:
+4. **SDK Middleware** (Legacy): Similar to plugins but only available in Maintenance SDKs, allowing custom code execution on every event for enrichment, transformation, filtering, and routing.
 
-1. **Destination Plugins**: Route events to third-party services (Segment, Hotjar, Google Analytics, FullStory)
-2. **Enrichment Plugins**: Modify events by adding/removing properties or filtering events
-3. **Utility Plugins**: Provide additional functionality like logging or debugging
+5. **Experiment SDKs**: Specialized SDKs for implementing A/B tests and feature flags across different platforms.
 
-### SDK Ecosystem
-
-Amplitude offers SDKs across multiple platforms:
-
-1. **Client-side SDKs**: 
-   - Web: JavaScript/TypeScript
-   - Mobile: iOS (Swift/Objective-C), Android (Java/Kotlin)
-   - Cross-platform: React Native, Flutter, Unity, Unreal
-
-2. **Server-side SDKs**:
-   - Node.js, Python, Go, Java, Ruby, PHP
-
-3. **Experiment SDKs**:
-   - LaunchDarkly-powered SDKs for feature experimentation
-
-### Ampli Integration
-
-Ampli serves as a higher-level abstraction over the base SDKs, generating type-safe wrappers based on tracking plans defined in Amplitude Data. This ensures consistent event tracking across platforms and prevents data quality issues through compile-time checking.
+The architecture follows a modular approach where the core SDKs handle basic analytics functionality, while plugins, middleware, and the Ampli wrapper provide extensibility and type safety.
 
 ## Key Nomenclature and Definitions
 
-- **Event**: A discrete user action or occurrence tracked in Amplitude
-- **User Properties**: Attributes associated with a user that persist across sessions
-- **Event Properties**: Attributes associated with a specific event
-- **Identify**: Method to set or update user properties
-- **Tracking Plan**: A schema defining expected events and their properties
-- **Middleware**: Custom code that runs on every event for transformation or filtering
-- **Dynamic Configuration**: Feature that automatically selects optimal server endpoints
-- **SDK Lifecycle Phases**: Developer Preview, General Availability, Maintenance, End-of-Support
+- **Client-side Sources**: Code running on user devices (mobile apps, web browsers) that directly captures user interactions.
+- **Server-side Sources**: Code running on servers that captures events from backend systems or processes.
+- **Ampli Wrapper**: A type-safe wrapper generated from a tracking plan that enforces correct event names and properties.
+- **Dynamic Configuration**: Feature that automatically selects optimal server URLs based on user location.
+- **SDK Plugins**: Components that extend SDK functionality through standardized interfaces.
+- **SDK Middleware**: Legacy system for extending SDK functionality with custom code.
+- **SDK Lifecycle Phases**: Four phases defining support status - Developer Preview, General Availability, Maintenance, End-of-Support.
+- **MiddlewarePayload**: Object containing event data passed to middleware functions.
+- **MiddlewareNext**: Function called by middleware to pass control to the next middleware in the chain.
 
 ## Product Ecosystem Integration
 
-Amplitude's instrumentation layer integrates with:
+Amplitude's instrumentation suite integrates with the broader Amplitude ecosystem in several ways:
 
-1. **Amplitude Data**: For tracking plan definition and validation
-2. **Amplitude Analytics**: For event ingestion and analysis
-3. **Amplitude Experiment**: For feature flag and A/B testing capabilities
-4. **Third-party Tools**: Through destination plugins for data forwarding
+1. **Amplitude Data**: The Ampli wrapper connects with tracking plans defined in Amplitude Data to ensure type-safe event tracking.
 
-The platform supports hybrid instrumentation approaches, combining client-side and server-side tracking as needed. It also offers integration with Highlight for correlating analytics data with session replays.
+2. **Amplitude Analytics**: All SDKs send data to Amplitude's analytics platform for processing and visualization.
+
+3. **Amplitude Experiment**: Experiment SDKs integrate with Amplitude's experimentation platform for A/B testing and feature flagging.
+
+4. **Third-party Integrations**: Through destination plugins, Amplitude can forward data to other analytics and marketing platforms like Segment, Google Analytics, Hotjar, and FullStory.
+
+5. **Regional Data Centers**: Dynamic Configuration feature supports routing data to appropriate regional endpoints, including special handling for users in Mainland China.
 
 ## API Endpoints and Commands
 
-### Key SDK Methods
+### Ampli CLI Commands
+- `ampli status`: Check the status of the tracking plan implementation
+- `ampli pull`: Pull the latest tracking plan from Amplitude
+- `ampli generate`: Generate the Ampli wrapper code
 
+### SDK Initialization
 ```javascript
-// Initialization
-amplitude.init('API_KEY', {
+// Browser SDK example
+amplitude.init('YOUR_API_KEY', {
   serverUrl: 'https://api.eu.amplitude.com', // For EU data residency
-  useDynamicConfig: true // For optimal server selection
+  useDynamicConfig: true // Enable dynamic configuration
 });
+```
 
-// Event Tracking
+### Event Tracking
+```javascript
+// Standard event tracking
 amplitude.track('Button Clicked', {
   buttonColor: 'blue',
   buttonText: 'Submit'
 });
 
-// User Identification
-amplitude.identify(new Identify()
-  .set('user_type', 'premium')
-  .setOnce('initial_referrer', 'google')
-);
-
-// Group Identification
-amplitude.groupIdentify('account_id', '15', new Identify()
-  .set('plan', 'enterprise')
-);
-```
-
-### Ampli CLI Commands
-
-```bash
-# Install Ampli CLI
-npm install -g @amplitude/ampli
-
-# Pull tracking plan
-ampli pull
-
-# Generate SDK wrapper
-ampli status
-
-# Verify implementation
-ampli status --update
-```
-
-### SDK Plugin Integration
-
-```javascript
-amplitude.add(new SegmentPlugin({
-  writeKey: 'SEGMENT_WRITE_KEY'
-}));
-
-amplitude.add({
-  name: 'customPlugin',
-  type: 'enrichment',
-  setup: (config) => {
-    // Plugin setup code
-  },
-  execute: (payload) => {
-    // Event processing logic
-    return payload;
-  }
+// With Ampli wrapper (type-safe)
+ampli.track('Button Clicked', {
+  buttonColor: 'blue',
+  buttonText: 'Submit'
 });
 ```
 
-### Middleware Implementation
-
+### User Identification
 ```javascript
-amplitude.addEventMiddleware((payload) => {
-  // Filter out specific events
-  if (payload.event.event_type === 'sensitive_event') {
-    return null; // Drop the event
-  }
-  
-  // Enrich event with additional properties
-  payload.event.event_properties.app_version = '1.0.0';
-  
-  return payload;
-});
+amplitude.identify(new amplitude.Identify()
+  .set('userType', 'premium')
+  .set('age', 30));
 ```
 
-The platform emphasizes data quality, privacy compliance, and flexible instrumentation options to meet diverse implementation requirements across client and server environments.
+### Plugin Registration
+```javascript
+amplitude.add(new MyCustomPlugin());
+```
+
+The instrumentation suite supports both HTTP V2 API for server-side implementations and specialized SDKs for client-side implementations, with comprehensive options for configuration, event batching, and error handling across all supported platforms.

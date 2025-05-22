@@ -4,12 +4,11 @@ The Experiment Management API Mutex Group Endpoints documentation details REST e
 # Keywords
 - mutex groups
 - experiment management API
-- slots
-- traffic allocation
+- slots allocation
+- traffic percentage
 - bucketingKey
 - evaluationMode
 - experiment assignments
-- holdouts
+- holdout groups
 - PATCH/GET/POST endpoints
-- percentage distribution
 - mutex configuration

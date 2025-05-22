@@ -1,5 +1,5 @@
 # Summary
-This documentation explains how to set up single sign-on (SSO) integration between Amplitude and Auth0, detailing the step-by-step process of creating an Auth0 client, configuring SAML2 settings, and uploading the identity provider certificate metadata to Amplitude's organizational settings.
+This documentation explains how to set up single sign-on (SSO) integration between Amplitude and Auth0, detailing the step-by-step process of creating an Auth0 client, configuring SAML2 settings, and uploading the identity provider certificate metadata to Amplitude's SSO settings.
 
 # Keywords
 - Auth0 SSO integration

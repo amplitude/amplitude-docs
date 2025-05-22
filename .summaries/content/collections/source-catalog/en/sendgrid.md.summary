@@ -11,4 +11,4 @@ This documentation page details the integration between SendGrid and Amplitude, 
 - User ID mapping
 - EU data processing
 - Cohort segmentation
-- Customer communication platform
+- Event prefixing

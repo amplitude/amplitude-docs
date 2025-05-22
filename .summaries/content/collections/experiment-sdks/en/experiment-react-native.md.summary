@@ -1,17 +1,14 @@
 # Summary
-The Experiment React Native SDK provides client-side feature flag and experiment management for React Native applications, supporting integration with Amplitude Analytics or third-party analytics providers, with capabilities for remote and local evaluation, variant fetching, exposure tracking, and user identity management.
+The Experiment React Native SDK enables client-side feature flagging and experimentation in React Native apps, supporting integration with Amplitude Analytics or third-party providers, with capabilities for remote and local evaluation, exposure tracking, and variant management.
 
 # Keywords
 - React Native SDK
-- feature flags
+- feature flagging
 - experiment variants
 - exposure tracking
 - remote evaluation
 - local evaluation
-- user identity management
-- variant fetching
-- automatic exposure tracking
-- Amplitude integration
+- user provider
 - async storage
-- EU data center
-- account-level bucketing
+- variant fetching
+- Amplitude integration

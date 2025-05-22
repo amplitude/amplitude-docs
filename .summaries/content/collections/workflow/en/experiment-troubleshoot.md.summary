@@ -5,12 +5,11 @@ This documentation page provides a troubleshooting guide for Amplitude Experimen
 - experiment troubleshooting
 - device ID alignment
 - flag enablement
-- variant assignment
+- variant naming
 - assignment event
 - exposure event
 - targeting delays
 - CDN caching
 - variant jumping
-- ad blockers
-- offline campaigns
-- user property targeting
+- analytics blockers
+- backend assignment requests

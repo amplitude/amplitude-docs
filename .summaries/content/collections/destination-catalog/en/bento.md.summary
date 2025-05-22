@@ -12,5 +12,5 @@ This documentation describes the Bento integration with Amplitude, which allows 
 - API key configuration
 - user experience customization
 - no-code product experiences
-- Amplitude paid plans
-- account mapping
+- Amplitude user_id mapping
+- targeted messaging

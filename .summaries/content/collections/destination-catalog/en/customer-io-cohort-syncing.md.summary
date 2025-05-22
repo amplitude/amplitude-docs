@@ -1,16 +1,14 @@
 # Summary
-This documentation details the Customer.io Cohort Sync integration, which allows businesses to sync Amplitude cohorts to Customer.io for targeted messaging campaigns, requiring API credentials from Customer.io and proper configuration in Amplitude Data, with the limitation that users must already exist in Customer.io before syncing.
+This documentation details the Customer.io Cohort Sync integration, which allows businesses to export Amplitude cohorts to Customer.io for targeted messaging campaigns, including setup steps in both platforms, sync process, and considerations such as paid plan requirements and the need for users to exist in Customer.io before syncing.
 
 # Keywords
 - Customer.io cohort sync
-- Amplitude integration
+- Amplitude cohorts
 - Marketing automation
-- API credentials
 - Tracking API Key
 - Site ID
 - App API Key
 - Segments
 - Sync cadence
 - EU data centers
-- Paid plans requirement
-- User mapping
+- User ID mapping

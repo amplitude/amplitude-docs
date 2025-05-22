@@ -1,19 +1,18 @@
 ## Summary
-This documentation explains how to effectively use Amplitude's funnel analysis to track user flows, identify critical conversion paths, and improve conversion rates. It covers identifying appropriate funnel events, designing funnels with proper event ordering and conversion windows, building and comparing funnels across user cohorts, and taking action on insights through targeted messaging to users who drop off at key points.
+This documentation explains how to effectively use Amplitude's funnel analysis to track user flows, identify critical conversion paths, and improve conversion rates. It covers identifying appropriate funnel events, designing funnels with proper ordering and conversion windows, building and comparing funnels across user cohorts, and taking action on insights through targeted messaging.
 
 ## Keywords
 - funnel analysis
 - conversion rates
-- event ordering
-- conversion windows
-- user cohorts
+- user flow tracking
+- arbitrary order mode
+- exact order mode
+- conversion window
 - Pathfinder
 - Compass
 - Microscope
+- cohort comparison
+- event properties
 - push notifications
-- drop-off analysis
-- segmentation
 - retention loops
-- critical user paths
-- event triggers
-- conversion period
+- KPI correlation

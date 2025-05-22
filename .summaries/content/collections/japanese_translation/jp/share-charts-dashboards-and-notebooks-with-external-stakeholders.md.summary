@@ -1,10 +1,10 @@
 # Summary
-This documentation explains how to share Amplitude analytics with external stakeholders through public links and embedded code, including how to create, manage, and secure these links with passwords and expiration dates, as well as how to generate embed codes for displaying analytics in external documents.
+This documentation explains how to share Amplitude analytics with external stakeholders through public links and embedded code, including how to create, manage, and secure these links with passwords and expiration dates. It also covers permissions settings for Enterprise plan accounts and integration with Slack.
 
 # Keywords
 - public links
 - external stakeholders
-- embed code
+- embedded analytics
 - password protection
 - link expiration
 - content sharing
@@ -12,3 +12,5 @@ This documentation explains how to share Amplitude analytics with external stake
 - dashboard sharing
 - notebook sharing
 - link management
+- Enterprise plan permissions
+- Slack integration

@@ -6,9 +6,7 @@ This documentation page describes the Humanic.ai Cohort destination integration 
 - Agentic Marketing Platform
 - Cohort sync
 - API key
-- email identifier
-- customer_id
-- partner-maintained integration
-- user_id mapping
-- sync cadence
-- Amplitude Data Catalog
+- User identifier mapping
+- email/customer_id identifiers
+- Partner-maintained integration
+- Amplitude Data Destinations

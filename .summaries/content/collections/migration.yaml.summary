@@ -1,3 +1,18 @@
-**Summary:** This YAML configuration defines the "Migration" collection with specific routing, sorting, date behavior, and preview settings, designed to handle migration-related content with a custom URL structure of '/migration/{slug}' and ascending sort direction.
-
-**Keywords:** migration collection, date_behavior, preview_targets, sort_dir, route pattern, permalink, get_started nav_title, revisions disabled, structure root false
+Full content: title: Migration
+template: default
+layout: layout
+revisions: false
+route: '/migration/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: get_started
+structure:
+  root: false

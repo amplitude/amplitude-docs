@@ -1,16 +1,16 @@
 # Summary
-This documentation explains how Amplitude tracks and analyzes marketing data through sessions, channel classifiers, and attribution models, detailing how events are grouped into sessions, how channel classifiers categorize traffic sources at query time, and how first-touch and last-touch attribution models credit marketing channels for user conversions.
+This documentation explains how Amplitude tracks and analyzes marketing data through sessions, channel classifiers, and attribution models, detailing how events, users, and sessions are counted and distinguished, with examples showing how channel attribution works for first-touch and last-touch models across user journeys.
 
 # Keywords
-- sessions
+- marketing analytics
 - channel classifiers
 - attribution models
+- session metrics
 - session entries/exits
-- UTM parameters
-- referrer values
 - first-touch attribution
 - last-touch attribution
-- marketing analytics
-- user tracking
+- UTM parameters
+- referrer values
 - event tracking
+- user identification
 - query-time classification

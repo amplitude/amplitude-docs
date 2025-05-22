@@ -4,11 +4,10 @@ This documentation page explains how to create a local evaluation flag in Amplit
 # Keywords
 - local evaluation flag
 - remote to local migration
-- evaluation mode settings
+- evaluation mode setting
 - bucketing key
 - device ID
 - Amplitude Experiment
 - targeting rules
-- local evaluation SDK
-- flag activation
 - server-side deployment
+- local evaluation SDK

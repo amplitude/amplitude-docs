@@ -3,12 +3,12 @@ Entry/Exit Analysis allows users to analyze data based on the first (entry) or l
 
 # Keywords
 - entry/exit analysis
-- session dimensions
-- first/last property value
-- data table
-- uniques metrics
+- session-based metrics
+- first/last property values
+- data table column options
+- uniques
 - event totals
 - session totals
 - PROPSUM
-- column options
-- session-based metrics
+- session entries
+- session exits

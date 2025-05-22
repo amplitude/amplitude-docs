@@ -1,48 +1,58 @@
-# Amplitude Engagement Matrix
+# Engagement Matrix Product Overview
 
-## Overview
+## Product Overview
 
-The Engagement Matrix is an analytical visualization tool within Amplitude that helps product teams assess and optimize feature engagement. It plots product features or events on a four-quadrant matrix based on two key dimensions:
+The Engagement Matrix is an analytical chart feature within Amplitude that helps product teams evaluate and visualize feature engagement across their product. It plots events (representing product features or user actions) on a four-quadrant matrix based on two key dimensions:
 
-1. **Breadth** (x-axis): The percentage of active users engaging with a feature (measured as %DAU/WAU/MAU)
-2. **Frequency** (y-axis): How often users engage with a feature (measured as average times performed or average days performed)
+1. **Breadth** (x-axis): The percentage of active users who perform the event (measured as %DAU/WAU/MAU)
+2. **Frequency** (y-axis): How often users perform the event, measured either as "Average Times Performed" or "Average Days Performed"
 
-This visualization enables teams to quickly identify high-performing features, underutilized capabilities, and opportunities for optimization.
+This visualization enables teams to quickly identify which features are performing well and which may need improvement, supporting data-driven product decisions.
 
-## Product Structure and Relationships
+## Key Features and Concepts
 
-The Engagement Matrix sits within Amplitude's analytics suite as a specialized tool for feature-level engagement analysis. It complements other Amplitude analytics tools by providing a specific visualization focused on feature usage patterns. The matrix is available to users on Growth and Enterprise plans within the Amplitude platform.
+### Four-Quadrant Visualization
 
-The tool works by analyzing event data collected through Amplitude's tracking system, transforming raw usage data into actionable insights about feature performance. It integrates with Amplitude's broader event tracking and user segmentation capabilities.
+The Engagement Matrix categorizes features/events into four distinct quadrants:
+
+- **Top Right (High Breadth, High Frequency)**: Core features that are widely adopted and frequently used
+- **Top Left (Low Breadth, High Frequency)**: Power user features used intensively by a small subset of users
+- **Bottom Right (High Breadth, Low Frequency)**: Features with wide adoption but infrequent use
+- **Bottom Left (Low Breadth, Low Frequency)**: Underperforming features that may need improvement or reconsideration
+
+### Analysis Tools
+
+- **Breakdown Table**: Provides detailed metrics for each plotted event
+- **Zooming Functionality**: Allows users to focus on specific data clusters for more detailed analysis
+- **Scale Options**: Supports both logarithmic and linear scales for better visualization of data with wide ranges
+- **Top and Bottom Events**: Ability to filter and focus on the highest or lowest performing events
+
+## Product Relationships and Features
+
+The Engagement Matrix is available to users on Amplitude's Growth and Enterprise plans, positioning it as an advanced analytical tool within the Amplitude product suite. It serves as a complementary feature to Amplitude's core analytics capabilities, providing specialized visualization for feature engagement patterns.
+
+The matrix works by analyzing event data collected through Amplitude's tracking system, transforming raw usage data into actionable insights about feature performance. It integrates with Amplitude's broader event tracking and user segmentation capabilities to provide context-rich analysis.
 
 ## Key Nomenclature and Definitions
 
-- **Breadth**: The percentage of active users who use a feature, representing adoption
-- **Frequency**: How often users engage with a feature, representing intensity of use
-- **%DAU/WAU/MAU**: Percentage of Daily/Weekly/Monthly Active Users who engage with a feature
-- **Average Times Performed**: The average number of times a user performs an action
-- **Average Days Performed**: The average number of days a user performs an action
-- **Core Features**: Features with high breadth and high frequency (top right quadrant)
-- **Power Features**: Features with low breadth but high frequency (top left quadrant)
-- **Widely Adopted Features**: Features with high breadth but low frequency (bottom right quadrant)
-- **Underperforming Features**: Features with low breadth and low frequency (bottom left quadrant)
+- **Breadth**: The percentage of active users who perform a specific event
+- **%DAU/WAU/MAU**: Percentage of Daily/Weekly/Monthly Active Users who perform an event
+- **Frequency**: How often users perform an event
+- **Average Times Performed**: The average number of times users perform an event
+- **Average Days Performed**: The average number of days users perform an event
+- **Data Point Clusters**: Groups of events with similar engagement patterns
+- **Core Features**: Features with high breadth and high frequency
+- **Power User Features**: Features with low breadth but high frequency
 
 ## Product Ecosystem Integration
 
-The Engagement Matrix fits into Amplitude's broader product analytics ecosystem as a specialized visualization tool. It leverages the event data collected through Amplitude's tracking system and transforms it into a strategic view of feature performance.
+The Engagement Matrix fits into Amplitude's product analytics ecosystem as a specialized visualization tool focused on feature engagement analysis. It helps bridge the gap between raw usage data and strategic product decisions by providing clear visual patterns of user engagement.
 
-The matrix complements other Amplitude tools like Pathfinder, Retention Analysis, and Funnel Analysis by providing a specific lens on feature engagement. While other tools might focus on user journeys, retention metrics, or conversion funnels, the Engagement Matrix specifically helps teams understand which features are driving engagement and which might need improvement.
+Within the broader Amplitude platform, the Engagement Matrix likely works alongside:
 
-## Technical Implementation
+1. **Event Tracking**: Utilizing the same event data that powers other Amplitude analytics
+2. **User Segmentation**: Allowing analysis of feature engagement across different user segments
+3. **Product Analytics**: Complementing other visualization tools with its specific focus on feature engagement patterns
+4. **Strategic Decision Support**: Providing data-driven insights for product roadmap prioritization
 
-The Engagement Matrix offers several technical capabilities:
-
-- **Scale Options**: Toggle between log and linear scale for visualization optimization
-- **Metric Selection**: Choose between "Average Times Performed" or "Average Days Performed" for the frequency metric
-- **Zooming Functionality**: Zoom in on specific clusters of data points
-- **CSV Export**: Export matrix data for external analysis
-- **Breakdown Table**: Access detailed metrics for each feature/event with sorting capabilities
-
-While specific API endpoints aren't mentioned in the documentation, the matrix likely leverages Amplitude's broader analytics API infrastructure for data retrieval and processing.
-
-The tool serves as a strategic resource for product teams to understand feature performance, identify improvement opportunities, and make data-driven decisions about product development priorities.
+The tool appears to be accessed through Amplitude's web interface as an analytical chart type, where users configure parameters such as event selection, metric choices, scale types, and filtering options to generate insights about feature engagement patterns.

@@ -11,8 +11,7 @@ Amplitude's streaming transformations feature allows users on Plus, Growth, or E
 - streaming destinations
 - sync filters
 - p95 latency
-- AppsFlyer integration
-- Braze integration
-- event volume limits
+- event volume
 - channel classifiers
-- lookup properties limitations
+- lookup properties
+- taxonomy

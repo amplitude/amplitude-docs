@@ -1,5 +1,5 @@
 ## Summary
-This documentation page provides a comprehensive migration guide for transitioning from the maintenance Node.js SDK (@amplitude/node) to the latest Node.js SDK (@amplitude/analytics-node), detailing changes in initialization, configuration, API methods, and architecture, with specific code examples showing how to update dependencies and modify instrumentation.
+This documentation page provides a comprehensive migration guide for transitioning from the maintenance Node.js SDK (@amplitude/node) to the latest Node.js SDK (@amplitude/analytics-node), detailing changes in initialization, configuration, API methods, and architecture, with the latest SDK featuring a plugin architecture and built-in type definitions.
 
 ## Keywords
 - Node.js SDK migration
@@ -10,5 +10,5 @@ This documentation page provides a comprehensive migration guide for transitioni
 - track() vs logEvent()
 - identify() signature changes
 - middleware to plugins conversion
-- type definitions
+- TypeScript support
 - API method mapping

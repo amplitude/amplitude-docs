@@ -1,5 +1,5 @@
 ## Summary
-This documentation page explains how to use the Events module in Amplitude charts, detailing how to add events to analyses, use wildcards for event searches, and apply Filter by/Group-by specifications with event properties to refine analyses and segment data.
+This documentation page explains how to use the Events module in Amplitude charts, including adding events, using wildcards for event searches, and applying conditions through "Filter by" and "Group-by" specifications to refine analyses using event and user properties.
 
 ## Keywords
 - Events module
@@ -10,5 +10,5 @@ This documentation page explains how to use the Events module in Amplitude chart
 - Default Amplitude events
 - Event conditions
 - Chart building
-- User segments
-- Event instrumentation
+- Property filtering
+- Event segmentation

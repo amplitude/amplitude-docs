@@ -4,11 +4,12 @@ This documentation explains how Amplitude calculates Monthly Tracked Users (MTUs
 # Keywords
 - Monthly Tracked Users (MTUs)
 - Billing calculation
-- Anonymous user tracking
+- User identification
+- Anonymous users
 - User merging
 - Synthetic MTUs
-- Events per MTU limit
-- Backfilled events
-- MTU usage tracking
+- Events per MTU
 - Overage charges
+- Backfilled events
+- Usage tracking
 - Plan limits

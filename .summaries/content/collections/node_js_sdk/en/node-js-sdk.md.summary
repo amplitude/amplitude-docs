@@ -1,19 +1,19 @@
 ## Summary
-The Node.js SDK documentation provides comprehensive instructions for implementing Amplitude analytics in Node.js applications, covering installation, initialization, event tracking, user properties management, group tracking, revenue tracking, and plugin customization with code examples for each feature.
+The Node.js SDK enables sending events to Amplitude with features for tracking events, managing user properties, revenue tracking, and user grouping. It supports batching, EU data residency, custom plugins, and provides configuration options for logging, transport, and storage.
 
 ## Keywords
 - Node.js SDK
 - event tracking
 - user properties
-- group identification
+- Identify API
 - revenue tracking
+- user groups
 - batch processing
+- plugins
 - flush events
-- custom plugins
 - EU data residency
-- identify methods
+- custom HTTP client
 - event buffering
+- TypeScript support
 - opt-out functionality
-- transport customization
-- debugging options
-- multiple project tracking
+- group properties

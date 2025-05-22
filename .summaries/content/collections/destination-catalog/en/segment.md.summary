@@ -10,5 +10,5 @@ This documentation page describes how to integrate Amplitude with Segment to sen
 - User traits
 - True/False cohort values
 - Sync cadence
-- Amplitude source
 - Segment destination
+- Amplitude source

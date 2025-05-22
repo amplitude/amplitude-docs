@@ -6,9 +6,9 @@ This documentation page explains how to build a Funnel Analysis chart in Amplitu
 - conversion tracking
 - event sequence
 - drop-off analysis
-- funnel order (this order, any order, exact order)
+- funnel order types (this order, any order, exact order)
 - event exclusion
 - user segmentation
 - onboarding funnel
 - event properties
-- conversion path
+- conversion paths

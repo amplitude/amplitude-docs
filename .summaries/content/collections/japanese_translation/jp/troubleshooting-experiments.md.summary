@@ -4,8 +4,8 @@ This documentation page provides troubleshooting guidance for Amplitude Experime
 # Keywords
 - Amplitude Experiment troubleshooting
 - variant assignment
-- exposure events
 - device ID synchronization
+- exposure events
 - flag deployment
 - targeting limitations
 - CDN caching delays

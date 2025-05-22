@@ -1,14 +1,17 @@
 # Summary
-This documentation details the integration between Amplitude and Salesforce Marketing Cloud (SFMC) for event streaming, covering setup requirements in both platforms, API limits, identity mapping configuration, and optional event/identify forwarding setup processes that enable marketing teams to leverage behavioral data for targeted campaigns.
+This documentation details the integration between Amplitude and Salesforce Marketing Cloud (SFMC) for event streaming, covering setup requirements in both platforms, API limits, identity mapping configuration, and optional event/identify forwarding setup processes to enable behavioral data-driven marketing campaigns.
 
 # Keywords
-- Salesforce Marketing Cloud integration
-- Event streaming configuration
-- Client ID/Secret/Subdomain
+- Salesforce Marketing Cloud
+- Event streaming
+- Client ID
+- Client Secret
+- Subdomain
 - Event Definition Key
-- Data Extension setup
-- Contact Key mapping
-- API call limits
-- Journey Builder integration
-- User property forwarding
-- Marketing automation
+- Data Extension
+- Contact Key
+- API limits
+- Journey Builder
+- Identity mapping
+- Event forwarding
+- User properties

@@ -1,14 +1,14 @@
 ## Summary
-This documentation page details the Amazon Redshift destination integration for Amplitude, covering setup requirements, IP allowlisting, recurring and historical data export processes, table schemas for events and merged users, and common export errors with solutions.
+This documentation page details the Amazon RedShift destination integration for Amplitude, covering setup requirements, IP allowlisting, recurring and historical data export processes, table schemas for events and merged users, and common export errors with solutions.
 
 ## Keywords
-- Amazon Redshift data warehouse
-- Amplitude event export
+- Amazon RedShift data warehouse
+- Amplitude event streaming
 - IP allowlisting
-- Recurring data sync
-- Historical data backfill
 - Event table schema
 - Merged User table schema
+- Recurring data export
+- Historical data backfill
 - Security group configuration
 - Event filtering
 - String length DDL error

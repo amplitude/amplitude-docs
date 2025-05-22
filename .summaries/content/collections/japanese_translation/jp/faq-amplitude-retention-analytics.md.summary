@@ -1,14 +1,14 @@
 ## Summary
-This documentation page covers frequently asked questions about Amplitude's Retention Analytics, explaining how data points are calculated using weighted averages, why retention curves might increase, differences between "Return On" and "Return After" metrics, and clarifying discrepancies between breakdown table user counts and total user counts.
+This documentation page covers frequently asked questions about Amplitude's Retention Analytics, explaining how data points are calculated using weighted averages, why user counts may differ between breakdown tables and totals, retention curve behaviors, and the differences between "Return On" and "Return After" retention metrics.
 
 ## Keywords
 - Retention analytics
 - Weighted average calculation
 - Unique users counting
-- Return On vs Return After metrics
+- Return On retention
+- Return After retention
 - Retention curve behavior
 - Breakdown table discrepancies
 - Custom brackets
 - Incomplete data points
-- N-day retention
-- Retention measurement methodology
+- Retention measurement periods

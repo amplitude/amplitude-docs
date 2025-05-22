@@ -11,4 +11,4 @@ Amplitude Experiment's architecture leverages Fastly CDN and AWS services (Appli
 - DynamoDB
 - Performance optimization
 - Experimentation scaling
-- User variant storage
+- Behavioral cohorts

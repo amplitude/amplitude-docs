@@ -12,6 +12,6 @@ This documentation details the Google Analytics 4 (GA4) import integration with 
 - STRUCT type fields
 - event_properties
 - user_properties
-- JSON transformation
+- JSON formatting
 - BigQuery SQL tips
 - Properties reconstruction

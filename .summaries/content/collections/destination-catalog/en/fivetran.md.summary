@@ -6,9 +6,7 @@ This documentation page describes the Fivetran destination integration for Ampli
 - Amplitude event forwarding
 - ETL integration
 - Data integration
-- API key
+- API key configuration
 - Sync frequency
 - Destination schema
-- Fivetran dashboard setup
-- Project configuration
 - Raw events streaming

@@ -1,16 +1,16 @@
 ## Summary
-This documentation explains how to integrate Amplitude Session Replay with Segment, providing code examples for three different Segment-Amplitude integration methods: Amplitude Actions destination, Amplitude Classic in device-mode, and Amplitude Classic in cloud-mode, along with troubleshooting guidance for ensuring proper session ID tracking.
+This documentation explains how to integrate Amplitude Session Replay with Segment, providing code examples for three different Segment destination types: Amplitude Actions, Amplitude Classic (Device-mode), and Amplitude Classic (Cloud-mode), along with troubleshooting guidance for ensuring proper session ID tracking.
 
 ## Keywords
 - Session Replay integration
 - Segment middleware
 - Amplitude Actions destination
-- Amplitude Classic device-mode
-- Amplitude Classic cloud-mode
+- Amplitude Classic Device-mode
+- Amplitude Classic Cloud-mode
 - analytics_session_id
 - getSessionReplayProperties()
-- sessionReplayPlugin
-- deviceId synchronization
-- session ID tracking
-- Source Middleware
 - setSessionId
+- deviceId
+- sessionReplayPlugin
+- Source Middleware
+- session tracking

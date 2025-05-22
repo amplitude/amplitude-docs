@@ -3,12 +3,14 @@ This documentation page addresses FAQs about sending data to Amplitude, covering
 
 ## Keywords
 - monthly event volume limit
-- event type limit (2000 per project)
-- blocking vs deleting events
+- event type limit
+- blocking events
+- deleting events
 - hidden events
 - backfilled events
 - inactive events
-- event properties quota
-- user properties quota
+- event properties
+- user properties
 - instrumentation limits
-- event ingestion counting
+- quota management
+- data ingestion

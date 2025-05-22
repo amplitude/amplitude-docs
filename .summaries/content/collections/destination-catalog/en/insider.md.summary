@@ -1,14 +1,14 @@
-## Summary
-This documentation page describes the integration between Amplitude and Insider, detailing how to set up the connection for sending cohorts from Amplitude to Insider's Growth Management Platform, which enables marketers to extend segmentation capabilities and deliver personalized customer journeys across multiple channels using unified data.
+# Summary
+This documentation page details the integration between Amplitude and Insider, explaining how to set up the connection using an Insider API key and how to sync Amplitude cohorts to Insider's Growth Management Platform for cross-channel personalization and marketing automation.
 
-## Keywords
+# Keywords
 - Insider Growth Management Platform
 - Cohort integration
 - API key setup
 - Cross-channel personalization
-- Amplitude cohort export
+- User behavior insights
+- Amplitude cohort sync
 - Marketing automation
-- User segmentation
-- Sync cadence
 - UCD integration
-- Customer journey optimization
+- Segmentation capabilities
+- Sync cadence

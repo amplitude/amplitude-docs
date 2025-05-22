@@ -1,15 +1,14 @@
 # Summary
-Dynamic Configuration is a feature available in specific Amplitude SDK versions that automatically selects the optimal server URL based on user location, particularly beneficial for users in Mainland China, but should not be used with custom proxy servers and requires explicit enabling through the `useDynamicConfig` flag.
+Dynamic Configuration is a feature in Amplitude SDKs (iOS 5.3.0+, Android 2.28.0+, JavaScript 8.9.0+, React Native, Unity, Flutter) that automatically selects the optimal server URL based on user location, particularly beneficial for users in Mainland China and for handling server unavailability without app updates.
 
 # Keywords
 - dynamic configuration
 - server URL optimization
 - region-based routing
 - useDynamicConfig flag
+- China user support
 - SDK configuration
-- Mainland China users
+- server failover
 - ingestion endpoint
-- server availability
-- iOS 5.3.0+
-- Android 2.28.0+
-- JavaScript 8.9.0+
+- proxy server compatibility
+- cross-platform implementation

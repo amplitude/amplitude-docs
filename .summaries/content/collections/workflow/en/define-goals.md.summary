@@ -9,6 +9,6 @@ This documentation page explains how to define goals for an Amplitude Experiment
 - custom metrics
 - exposure event
 - duration estimator
-- metric types (unique conversions, event totals, formula, funnel conversions)
-- Amplitude exposure event
-- variant()
+- metric types
+- Amplitude exposure
+- experiment goals

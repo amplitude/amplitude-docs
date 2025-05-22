@@ -7,8 +7,8 @@ This documentation details the Customer.io event streaming integration with Ampl
 - Tracking API Key
 - User identifier mapping
 - Event forwarding configuration
-- User property forwarding
+- User property updates
 - Marketing automation integration
-- Anonymous user limitations
 - HTTP V2 API
 - Identify API
+- Anonymous user limitations

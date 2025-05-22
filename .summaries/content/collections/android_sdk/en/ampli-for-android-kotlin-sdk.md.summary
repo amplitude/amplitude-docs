@@ -13,6 +13,7 @@ The Ampli Wrapper for Android-Kotlin SDK provides a strongly typed API for track
 - groupIdentify
 - setGroup
 - plugins
-- ampli CLI
-- pull command
-- status command
+- LoadOptions
+- EventOptions
+- ampli pull
+- ampli status

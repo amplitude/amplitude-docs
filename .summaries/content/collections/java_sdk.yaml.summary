@@ -1,3 +1,17 @@
-**Summary**: The Java SDK documentation page serves as a configuration file for the Java SDK section within the analytics SDKs documentation, defining routing, layout, mounting, and navigation properties for content organization in a Statamic CMS.
-
-**Keywords**: Java SDK, analytics SDKs, Statamic configuration, content mounting, route configuration, preview targets, date behavior, navigation structure, content organization
+Full content: title: 'Java SDK'
+template: default
+layout: layout
+mount: 0906f7ef-96ae-4189-879d-ca81cafeebf8
+revisions: false
+route: '/sdks/analytics/java/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: analytics_sdks

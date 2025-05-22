@@ -1,7 +1,7 @@
 # Summary
-This documentation explains when to use cross-platform instrumentation (same API key across platforms) versus separate platform instrumentation, detailing the advantages of each approach based on whether analyzing user behavior across platforms or platform-specific engagement is the priority.
+This documentation explains when to use cross-platform instrumentation (same API key across platforms) versus separate platform instrumentation, detailing the advantages of each approach based on whether analyzing user behavior across platforms or understanding platform-specific engagement is the priority.
 
-## Keywords
+# Keywords
 - cross-platform instrumentation
 - separate platform instrumentation
 - API key

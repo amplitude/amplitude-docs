@@ -1,11 +1,21 @@
-## Summary
-This documentation page defines the configuration for the FAQ and Troubleshooting collection, specifying its routing pattern (/faq/{slug}), display settings, and structure properties, with content only appearing in English.
-
-## Keywords
-- FAQ collection configuration
-- content/collections/faq_and_troubleshooting.yaml
-- route pattern
-- sort_dir
-- date_behavior
-- preview_targets
-- nav_title injection
+Full content: title: 'FAQ and Troubleshooting'
+sites:
+  - en
+propagate: false
+template: default
+layout: layout
+revisions: false
+route: '/faq/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: faq
+structure:
+  root: false

@@ -1,14 +1,14 @@
-# Summary
-This documentation explains how to track product changes using Releases in Amplitude, which appear as markers on time-series charts. It covers automatic release creation based on version properties, manual release creation, editing releases, and using the Release Report to view adoption metrics and analytics for product updates.
+## Summary
+This documentation explains how to track product changes using Releases in Amplitude, which appear as markers on time-series charts. It covers automatic release creation based on version properties, manual release creation, editing releases, and using the Release Report to view adoption metrics and new events introduced in a release.
 
-# Keywords
+## Keywords
 - Amplitude releases
-- Version tracking
-- Release timeline
 - Semantic versioning
+- Release timeline
 - Release Report
-- Product change markers
+- Version user property
 - Automatic release detection
-- Manual release creation
-- Release API
 - Release adoption metrics
+- Release visibility
+- Release API
+- Product change tracking

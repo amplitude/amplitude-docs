@@ -1,13 +1,13 @@
 # Summary
-This documentation page describes the integration between Amplitude and Netcore Cloud, allowing users to sync cohorts from Amplitude to Netcore's Customer Engagement platform for personalized marketing campaigns, with specific setup instructions for both platforms and considerations about sync time for large cohorts.
+This documentation describes the Netcore Cloud destination integration for Amplitude, which allows syncing user cohorts from Amplitude to Netcore Cloud's Customer Engagement platform for personalized marketing campaigns, with setup instructions for both platforms and considerations about sync time for large cohorts.
 
 # Keywords
-- Netcore Cloud integration
-- Cohort syncing
-- Marketing automation
-- API key configuration
-- Customer Engagement platform
+- Netcore Cloud
+- cohort syncing
+- marketing automation
+- API key
+- Customer Engagement (CE) platform
+- AMPLITUDE_[Cohort name] list format
+- sync cadence
 - User_ID mapping
-- Sync cadence
-- AMPLITUDE_[Cohort name] format
 - 5-hour sync time for large cohorts

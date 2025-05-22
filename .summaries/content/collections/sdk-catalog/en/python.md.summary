@@ -1,18 +1,12 @@
-## Summary
-This documentation page covers the Amplitude Python SDK, providing information about installation, configuration, tracking events, user properties, and integration with the Amplitude platform for analytics and data collection in Python applications.
-
-## Keywords
-- Python SDK
-- Amplitude analytics
-- Event tracking
-- User identification
-- User properties
-- Batch events
-- HTTP API
-- pip installation
-- AmplitudeClient
-- track method
-- identify method
-- group_identify method
-- flush method
-- configuration options
+Full content: ---
+id: 8928035c-0b78-4b55-8610-ea7377ddde86
+blueprint: sdk-catalog
+title: Python
+source: 'https://www.docs.developers.amplitude.com/data/sdks/python/'
+author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1715798961
+logo: icons/python.svg
+exclude_from_sitemap: false
+template: sdk-landing
+---

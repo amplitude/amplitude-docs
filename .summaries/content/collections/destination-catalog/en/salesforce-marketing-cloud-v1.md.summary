@@ -1,14 +1,14 @@
-# Summary
-This documentation details the Salesforce Marketing Cloud V1 integration with Amplitude, allowing export of Behavioral Cohorts to SFMC for targeted marketing campaigns. It outlines specific requirements including creating an "Amplitude Engage" data extension, mapping Contact Key attributes, and explains the setup process in both platforms.
+## Summary
+This documentation details the Salesforce Marketing Cloud V1 destination integration, which allows exporting Amplitude Behavioral Cohorts to Salesforce Marketing Cloud for targeted marketing campaigns, with specific requirements for data extension naming ("Amplitude Engage"), attribute creation for each cohort, and Contact Key mapping between systems.
 
-# Keywords
+## Keywords
 - Behavioral Cohorts
-- Amplitude Engage data extension
+- Marketing Cloud data extension
 - Contact Key mapping
-- Marketing Cloud subdomain
-- Client ID/secret
-- Server-to-Server integration
+- Attribute group
+- Server-to-Server API integration
 - Cohort syncing
 - Marketing automation
-- Attribute groups
-- On-demand sync
+- Client ID
+- Client secret
+- Subdomain configuration

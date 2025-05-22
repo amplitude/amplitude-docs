@@ -1,14 +1,14 @@
-**Summary:**
+# Summary
 This documentation page explains how to create and use templates in Amplitude Analytics to efficiently reproduce common analyses. Templates allow users to standardize team reporting, save time on repetitive analyses, and make it easier for new team members to measure impact by reusing existing dashboards with updated parameters.
 
-**Keywords:**
-- Amplitude templates
-- Dashboard reuse
-- Template permissions
-- Search and replace parameters
-- Starter templates
-- A/B test methodology
-- Release performance measurement
-- Template use cases
+# Keywords
+- Dashboard templates
 - Template creation
-- Event/property/cohort swapping
+- Parameter substitution
+- Search and replace functionality
+- Starter templates
+- Template permissions
+- A/B testing templates
+- Release performance tracking
+- Template use cases
+- Growth/Enterprise plan feature

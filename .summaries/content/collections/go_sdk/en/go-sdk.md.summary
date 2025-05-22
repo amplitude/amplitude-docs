@@ -1,17 +1,16 @@
 ## Summary
-The Go SDK documentation provides a comprehensive guide for integrating Amplitude analytics into Go applications, covering installation, initialization, configuration options, event tracking, user properties management, user groups, revenue tracking, and plugin system for extending functionality.
+The Go SDK documentation provides comprehensive instructions for integrating Amplitude analytics into Go applications, covering installation, initialization, configuration options, event tracking, user properties management, user groups, revenue tracking, and plugin system for extending SDK functionality.
 
 ## Keywords
 - Go SDK
 - amplitude/analytics-go
 - event tracking
-- user properties
-- Identify operations
-- user groups
-- revenue tracking
 - batch processing
-- plugins
+- Identify operations
+- user properties
+- group identification
+- revenue tracking
+- plugin system
+- event enrichment
 - FlushQueueSize
-- GroupIdentify
-- enrichment plugins
-- destination plugins
+- FlushInterval

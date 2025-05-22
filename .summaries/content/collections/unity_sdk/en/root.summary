@@ -1,98 +1,71 @@
-# Amplitude Unity SDK
+# Amplitude Analytics Unity SDK
 
 ## Overview
 
-The Amplitude Unity SDK is a plugin that enables mobile app analytics by integrating Amplitude's native iOS and Android SDKs into Unity projects. The SDK allows developers to track user behavior, manage user properties, track revenue, and handle sessions in mobile applications built with Unity. It supports Unity version 2019.3.11 or higher and is designed specifically for mobile platforms (iOS and Android), with no support for pure desktop applications or the Unity Editor environment.
+The Amplitude Analytics Unity SDK is a plugin that integrates Amplitude's analytics capabilities into Unity projects (version 2019.3.11 or higher). It serves as a wrapper for the native Amplitude iOS and Android SDKs, enabling developers to track user behavior, manage user properties, and analyze app usage across mobile platforms from within their Unity projects.
 
 ## Key Features
 
-- **Event Tracking**: Capture user interactions and custom events within mobile applications
-- **User Property Management**: Set, unset, and manage user properties for segmentation
-- **Revenue Tracking**: Track in-app purchases and revenue events
-- **Session Handling**: Manage and track user sessions with configurable timeout periods
-- **Batch Event Uploading**: Efficiently upload multiple events in batches
-- **Dynamic Configuration**: Adjust SDK behavior through runtime configuration
-- **Privacy Compliance**: Support for IDFA collection and COPPA compliance
+- **Cross-Platform Analytics**: Seamlessly works across iOS and Android platforms
+- **Event Tracking**: Capture user interactions and custom events
+- **User Property Management**: Store and update attributes about users
+- **Revenue Tracking**: Monitor in-app purchases and revenue metrics
+- **Session Management**: Configure and track user sessions
+- **COPPA Compliance**: Controls for applications targeting children
 - **EU Data Residency**: Option to store data in EU data centers
+- **Dynamic Configuration**: Server-side configuration capabilities
 
 ## Installation Methods
 
-The Unity SDK can be installed through two primary methods:
+The SDK can be installed through multiple methods:
+1. **Unity Package Manager (UPM)**: Add the package via Git URL
+2. **Manual Installation**: Download and import the Unity package directly
+3. **CocoaPods/Gradle**: Configure native dependencies for iOS/Android
 
-1. **Unity Package Manager (UPM)**: Add the package via Git URL in the Package Manager
-   ```
-   https://github.com/amplitude/unity-plugin.git
-   ```
+## Core Concepts and Nomenclature
 
-2. **Manual Download**: Download and import the Unity package directly from the GitHub repository
+- **Events**: User actions or occurrences tracked in the application
+- **User Properties**: Attributes associated with users (demographics, preferences)
+- **Event Properties**: Additional context attached to specific events
+- **User ID**: Custom identifier for tracking unique users
+- **Device ID**: Automatically generated identifier for anonymous users
+- **Sessions**: Time periods of continuous user engagement
+- **Revenue**: Monetary transactions within the application
 
-## Key Nomenclature and Definitions
+## Key API Methods
 
-- **Event**: A discrete user action or occurrence that can be tracked
-- **User Properties**: Attributes associated with a user that persist across sessions
-- **Instance**: A configured instance of the Amplitude SDK
-- **Session**: A period of user engagement with the app, defined by a configurable timeout
-- **IDFA**: Identifier for Advertisers, used for tracking on iOS devices
-- **COPPA**: Children's Online Privacy Protection Act compliance settings
-- **EU Data Residency**: Option to store data in European Union data centers
+- `Amplitude.Instance.init(apiKey)`: Initialize the SDK with your Amplitude API key
+- `Amplitude.Instance.logEvent(eventType)`: Track a basic event
+- `Amplitude.Instance.logEvent(eventType, eventProperties)`: Track an event with properties
+- `Amplitude.Instance.setUserId(userId)`: Identify a user with a custom ID
+- `Amplitude.Instance.setUserProperty(property, value)`: Set a user property
+- `Amplitude.Instance.logRevenue(...)`: Track revenue events
+- `Amplitude.Instance.setOptOut(optOut)`: Enable/disable tracking for the user
+
+## Configuration Options
+
+- **Tracking Options**: Control which identifiers are tracked (IDFA, IDFV, etc.)
+- **Server Zone**: Set EU data residency with `setServerZone(AmplitudeServerZone.EU)`
+- **Flush Events**: Configure automatic or manual event uploading
+- **Session Timeout**: Customize session expiration time
+- **Batch Events**: Control event batching behavior
+- **Log Level**: Set SDK logging verbosity
+
+## Advanced Features
+
+- **COPPA Control**: Enable/disable for applications targeting children
+- **Dynamic Configuration**: Retrieve and apply server-side configurations
+- **Offline Mode**: Queue events when offline for later transmission
+- **User Groups**: Associate users with organizations or groups
+- **Identity Management**: Merge and manage user identities
 
 ## Integration with Amplitude Ecosystem
 
-The Unity SDK serves as a bridge between Unity mobile applications and Amplitude's analytics platform. It enables data collection from Unity-built mobile apps to flow into the broader Amplitude analytics ecosystem, where the data can be analyzed, visualized, and used for product decisions. The SDK is specifically designed to work with Amplitude's backend services while providing a Unity-friendly interface for developers.
+The Unity SDK connects to the broader Amplitude analytics platform, allowing developers to:
+- View event data in Amplitude's analytics dashboard
+- Create custom funnels and cohorts
+- Analyze user behavior and retention
+- Perform A/B testing
+- Generate custom reports and visualizations
 
-## API Usage Examples
-
-### Initialization
-```csharp
-Amplitude amplitude = Amplitude.getInstance();
-amplitude.init("YOUR_API_KEY");
-```
-
-### Tracking Events
-```csharp
-// Basic event tracking
-amplitude.logEvent("Button Clicked");
-
-// Event with properties
-Dictionary<string, object> eventProperties = new Dictionary<string, object>();
-eventProperties.Add("button_type", "sign_up");
-eventProperties.Add("color", "blue");
-amplitude.logEvent("Button Clicked", eventProperties);
-```
-
-### User Properties
-```csharp
-// Set user properties
-Dictionary<string, object> userProperties = new Dictionary<string, object>();
-userProperties.Add("gender", "female");
-userProperties.Add("age", 25);
-amplitude.setUserProperties(userProperties);
-
-// Set user ID
-amplitude.setUserId("user@example.com");
-```
-
-### Revenue Tracking
-```csharp
-// Track revenue
-amplitude.logRevenue("product_id", 1, 3.99);
-
-// Track revenue with properties
-Dictionary<string, object> revenueProperties = new Dictionary<string, object>();
-revenueProperties.Add("receipt", "12345");
-amplitude.logRevenue("product_id", 1, 3.99, "USD", revenueProperties);
-```
-
-### Configuration Options
-```csharp
-// Set session timeout
-amplitude.setSessionTimeoutMillis(30 * 60 * 1000); // 30 minutes
-
-// Enable COPPA compliance
-amplitude.enableCoppaControl();
-
-// Set EU data residency
-amplitude.setServerZone(AmplitudeServerZone.EU);
-```
-
-The Unity SDK is specifically tailored for mobile applications and does not support desktop platforms or the Unity Editor environment, focusing exclusively on providing analytics capabilities for iOS and Android deployments.
+The SDK serves as the data collection layer, capturing events and user properties that can then be analyzed through Amplitude's web interface or exported to other systems.

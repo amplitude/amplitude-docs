@@ -1,14 +1,14 @@
 ## Summary
-This documentation page covers frequently asked questions about Amplitude Behavioral Cohorts, including how to create cohorts based on specific property values, troubleshooting CSV uploads, understanding limitations of cohort definitions, and techniques for identifying users who lack certain properties or haven't performed specific events.
+This documentation page covers frequently asked questions about Amplitude Behavioral Cohorts, including how to create cohorts based on property values, troubleshooting CSV uploads, understanding cohort definition limitations, and techniques for identifying users with specific behavioral patterns or missing properties.
 
 ## Keywords
 - behavioral cohorts
 - latest property values
 - CSV upload formatting
 - cohort definition limitations
-- dynamic vs static cohorts
-- event count filtering
-- negative filtering ("did not" clause)
-- user property exclusion
-- cohort creation troubleshooting
-- time-based user segmentation
+- count functionality
+- did not clause
+- user property filtering
+- dynamic cohorts
+- static cohorts
+- user segmentation

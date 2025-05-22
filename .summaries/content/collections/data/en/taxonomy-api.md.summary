@@ -1,14 +1,14 @@
 ## Summary
-The Taxonomy API enables programmatic management of Amplitude's taxonomy elements (categories, event types, event properties, user properties), allowing creation, retrieval, updates, and deletion of planned elements that don't yet have data, with access requiring coordination with Amplitude's Customer Service Manager or Support team.
+The Taxonomy API enables programmatic management (create, get, update, delete) of categories, event types, event properties, and user properties in Amplitude, but only for planned items without existing data, requiring access through Customer Service Manager or Support team.
 
 ## Keywords
 - taxonomy-api
-- event-type-management
+- event-types-management
 - property-management
 - categories-management
 - planned-events
-- programmatic-taxonomy
 - amplitude-data-structure
-- metadata-management
-- schema-definition
-- data-classification
+- programmatic-taxonomy
+- schema-management
+- metadata-api
+- event-property-definitions

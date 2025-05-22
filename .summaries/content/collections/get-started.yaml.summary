@@ -1,12 +1,18 @@
-## Summary
-This configuration file defines a "Get Started" collection with a custom route pattern, ascending sort direction, date-based visibility rules, and a preview target for entries. It injects a navigation title and disables revisions.
-
-## Keywords
-- collections configuration
-- route pattern
-- sort_dir
-- date_behavior
-- preview_targets
-- nav_title injection
-- structure root
-- revisions disabled
+Full content: title: 'Get Started'
+template: default
+layout: layout
+revisions: false
+route: '/get-started/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: get_started
+structure:
+  root: false

@@ -1,5 +1,5 @@
 # Summary
-This documentation outlines best practices for getting started with Amplitude Data, including establishing clear goals and metrics, maintaining consistent naming conventions, properly identifying users, choosing between server-side and client-side event collection, using properties effectively, separating development and production environments, implementing QA analysis in CI/CD, and designating an owner for the tracking plan.
+This documentation outlines best practices for getting started with Amplitude Data, including starting with goals and metrics, maintaining simple naming conventions, properly identifying users, choosing between server-side and client-side event collection, using properties effectively, separating development and production environments, implementing QA analysis in CI/CD, and designating an owner for the tracking plan.
 
 # Keywords
 - tracking plan

@@ -1,5 +1,5 @@
 # Summary
-OneSignal integration with Amplitude enables bidirectional data flow: sending cohort data from Amplitude to OneSignal for targeted messaging across multiple channels (push, email, SMS, in-app), and ingesting OneSignal events (sent, clicked, viewed, confirmed delivery) into Amplitude for enhanced analytics.
+OneSignal integration with Amplitude enables bidirectional data flow: sending cohort data from Amplitude to OneSignal for targeted messaging across multiple channels (push, email, SMS, in-app), and ingesting OneSignal events (Sent, Clicked, Viewed, Confirmed Delivery) into Amplitude for enhanced analytics.
 
 # Keywords
 - customer-engagement

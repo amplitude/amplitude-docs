@@ -1,16 +1,16 @@
 ## Summary
-The Experiment Android SDK provides client-side feature flag and experiment management for Android applications, supporting both remote and local evaluation with automatic exposure tracking and integration with Amplitude Analytics or third-party analytics providers.
+The Experiment Android SDK provides client-side feature flag and experiment management for Android applications, supporting both remote and local evaluation with automatic exposure tracking when integrated with Amplitude Analytics or third-party providers.
 
 ## Keywords
 - Android SDK
-- feature flags
-- experiment variants
-- remote evaluation
-- local evaluation
-- exposure tracking
+- Experiment
+- Feature flags
+- Remote evaluation
+- Local evaluation
+- Variant fetching
+- Exposure tracking
+- User bucketing
 - Amplitude integration
 - ExperimentUser
-- fetch variants
-- automatic exposure tracking
-- user provider
-- bootstrapping
+- ExperimentConfig
+- Bootstrapping

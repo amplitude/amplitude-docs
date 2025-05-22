@@ -1,20 +1,22 @@
 ## Summary
-This documentation page guides users on selecting appropriate events to track in Amplitude, advising against tracking everything and instead focusing on key user actions that answer specific business questions, with industry-specific recommendations for ecommerce, B2B/SaaS, finance, media, healthcare, and gaming sectors.
+This documentation page guides users on selecting appropriate events to track in Amplitude, emphasizing quality over quantity and providing industry-specific recommendations (media, ecommerce, B2B/SaaS, finance, healthcare, gaming) with common questions, required events, and properties for effective analytics implementation.
 
 ## Keywords
 - event tracking
-- tracking plan
 - data taxonomy
-- industry-specific events
-- user properties
-- conversion events
-- retention analysis
-- funnel analysis
+- industry-specific analytics
+- tracking plan
+- event properties
+- conversion tracking
+- user retention
+- product analytics
 - event segmentation
-- data planning
-- ecommerce analytics
+- funnel analysis
+- revenue tracking
+- industry guides
 - B2B analytics
-- finance analytics
+- ecommerce analytics
 - media analytics
 - healthcare analytics
 - gaming analytics
+- finance analytics

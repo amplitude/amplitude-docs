@@ -2,46 +2,57 @@
 
 ## Overview
 
-The Guides and Surveys API is a programmatic interface that enables the management of guides and surveys, with a specific focus on localization capabilities. Currently in Beta, the API allows users to import and export translation files in XLIFF 1.2 format, facilitating integration with external translation management systems.
+The Guides and Surveys API is a set of endpoints that allows for programmatic management of guides, surveys, and their translations. The API is particularly focused on localization capabilities, enabling users to import and export translation files for guides and surveys in a standardized format.
 
 ## Key Features
 
-- **Localization Support**: Import and export translations for guides and surveys in XLIFF 1.2 format
-- **Multi-locale Support**: Handle translations for multiple locales simultaneously
-- **External Integration**: Connect with third-party translation management systems
-- **Authentication**: Secure access through Basic Authentication
-- **Cache Management**: Automatic cache purging upon successful translation imports
+- **Localization Support**: Import and export translations in XLIFF 1.2 format
+- **Integration with Translation Management Systems**: Seamless workflow with external translation tools
+- **Multi-guide/Multi-survey Support**: Process translations for multiple guides or surveys in a single request
+- **Multiple Locale Support**: Handle translations for multiple target languages
 
-## Key Concepts and Nomenclature
+## Localization API (Beta)
 
-- **XLIFF 1.2**: XML Localization Interchange File Format, the standard format used for translation exchange
-- **Source Language**: The original language of the content being translated
-- **Target Language**: The language into which content is being translated
-- **trans-unit elements**: Individual translation units within the XLIFF file that contain source and target text
-- **Variant support**: Capability to handle different variations of content for specific contexts or audiences
+The Localization API is a core component that enables programmatic management of translations for guides and surveys.
 
-## API Endpoints
+### Key Concepts
 
-### Import Translations
+- **XLIFF 1.2 Format**: The standard format used for translation files, which includes source text and translated content
+- **Source Language**: The original language of the content (specified in the XLIFF file)
+- **Target Language**: The language into which content is being translated (specified in the XLIFF file)
+- **Trans-unit Elements**: Individual translation units within the XLIFF file that contain source and target text
+- **Variants**: Support for different versions of the same text based on context
+
+### API Endpoints
+
+#### Import Translations
 - **Endpoint**: POST request (specific URL not provided in documentation)
 - **Authentication**: Basic Authentication
-- **Payload**: XLIFF 1.2 format translation files
-- **Functionality**: Imports translations for specified guides/surveys and locales
+- **Functionality**: Imports translations from XLIFF 1.2 files
+- **Request Body**: XLIFF 1.2 formatted file
 
-### Export Translations
+#### Export Translations
 - **Endpoint**: GET request (specific URL not provided in documentation)
 - **Authentication**: Basic Authentication
+- **Functionality**: Exports translations to XLIFF 1.2 files
 - **Parameters**: Support for multiple guides/surveys and locales
-- **Response**: XLIFF 1.2 format translation files
 
-## Integration with Product Ecosystem
+### File Structure Requirements
 
-The Guides and Surveys API appears to be part of a larger product ecosystem that includes content management for guides and surveys. The localization API specifically addresses the multilingual aspects of this content, allowing organizations to efficiently manage translations across multiple languages and regions.
+The XLIFF files used with the API must follow specific structural requirements:
+- Must be valid XLIFF 1.2 format
+- Must include proper source-language and target-language attributes
+- Trans-unit elements must contain both source and target text
+- Support for variant attributes to handle context-specific translations
 
-The API is designed to work with existing translation workflows and management systems, serving as a bridge between the product's content and external translation services or tools.
+### Integration Considerations
 
-## Technical Implementation Notes
+- **Cache Purging**: After importing translations, cache purging may be necessary for changes to take effect
+- **Authentication**: All API requests require Basic Authentication
+- **Error Handling**: The API provides error responses for invalid requests or file formats
 
-- Successful translation imports trigger automatic cache purging to ensure updated content is immediately available
-- The API supports structured translation file formats with specific requirements for source and target language identification
-- Translation units must be properly formatted within the XLIFF structure for successful processing
+## Product Ecosystem Integration
+
+The Guides and Surveys API appears to be part of a larger product ecosystem focused on customer engagement and experience management. The localization capabilities suggest that the product is designed for global businesses that need to provide localized content to their customers across different regions and languages.
+
+The API's focus on programmatic translation management indicates it's designed to integrate with enterprise-level workflows where content may be managed across multiple systems and requires efficient localization processes.

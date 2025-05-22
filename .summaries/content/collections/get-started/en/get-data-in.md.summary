@@ -1,5 +1,5 @@
 ## Summary
-This documentation page explains how to get data into Amplitude Analytics from your product or third-party sources, covering SDK implementation (particularly the Browser SDK), API key usage, and available integration methods, while also providing references to important APIs and resources for developers.
+This documentation page explains how to get data into Amplitude Analytics from your product or third-party sources, covering SDK implementation (particularly the Browser SDK), API key usage, and available integration methods, while also providing links to relevant APIs and resources for developers.
 
 ## Keywords
 - data instrumentation

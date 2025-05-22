@@ -1,12 +1,18 @@
-## Summary
-This documentation page defines the configuration for the Single Sign-on section in the admin area, specifying its route pattern ('/admin/single-sign-on/{slug}'), template settings, and navigation properties, with no revision history enabled.
-
-## Keywords
-- single sign-on
-- admin route configuration
-- permalink structure
-- preview targets
-- date_behavior
-- nav_title injection
-- sort_dir
-- template configuration
+Full content: title: 'Single Sign-on'
+template: default
+layout: layout
+revisions: false
+route: '/admin/single-sign-on/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: admin
+structure:
+  root: false

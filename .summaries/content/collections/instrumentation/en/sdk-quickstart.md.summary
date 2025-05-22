@@ -1,15 +1,15 @@
 # SDK Quickstart Summary
 
-This documentation page provides a comprehensive guide for integrating Amplitude Analytics SDKs across multiple platforms, including Browser, Node, Android, iOS, React Native, Flutter, Go, Unity, and Unreal. Each section includes installation instructions, initialization code, event tracking examples, and optional Ampli SDK integration for type-safe analytics.
+This documentation page provides installation and initialization instructions for Amplitude's analytics SDKs across multiple platforms including Browser, Node, Android, iOS, React Native, Flutter, Go, Unity, and Unreal. Each section includes code samples for installing the SDK, initializing it with an API key, tracking events, and using the Ampli wrapper for type-safe event tracking.
 
 ## Keywords
-- SDK initialization
+- SDK installation
+- API key initialization
 - event tracking
-- cross-platform integration
-- Amplitude API key
-- identify method
+- identify user properties
+- cross-platform analytics
 - EU data residency
-- platform-specific implementation
-- TypeScript/JavaScript/Kotlin/Swift/Java/Python/Dart/Go/C#
-- Ampli SDK
-- event properties
+- Ampli wrapper
+- TypeScript/JavaScript integration
+- mobile analytics
+- server-side tracking

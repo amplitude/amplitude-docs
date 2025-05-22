@@ -186,6 +186,169 @@ AMPIdentify *identify = [AMPIdentify new];
 {{/partial:tab}}
 {{/partial:tabs}}
 
+## Identity management
+
+The SDK provides a unified way to manage user identity through the `Identity` struct. This structure holds the user's identity information including `userId`, `deviceId`, and `userProperties`.
+
+### Accessing Identity
+
+Access the current identity through the `identity` property on the Amplitude instance:
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+// Get the current identity
+let currentIdentity = amplitude.identity
+
+// Access identity properties
+let userId = currentIdentity.userId
+let deviceId = currentIdentity.deviceId
+let userProperties = currentIdentity.userProperties
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+// Get the current identity
+Identity *currentIdentity = amplitude.identity;
+
+// Access identity properties
+NSString *userId = currentIdentity.userId;
+NSString *deviceId = currentIdentity.deviceId;
+NSDictionary *userProperties = currentIdentity.userProperties;
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+### Updating Identity
+
+To update the identity, set the entire identity object, or modify its individual properties:
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+// Method 1: Set the entire identity
+let newIdentity = Identity(userId: "user-123", deviceId: "device-456", userProperties: ["plan": "premium"])
+amplitude.identity = newIdentity
+
+// Method 2: Update individual properties
+amplitude.identity.userId = "user-123"
+amplitude.identity.deviceId = "device-456"
+amplitude.identity.userProperties = ["plan": "premium"]
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+// Method 1: Create and set a new identity
+Identity *newIdentity = [[Identity alloc] init];
+newIdentity.userId = @"user-123";
+newIdentity.deviceId = @"device-456";
+newIdentity.userProperties = @{@"plan": @"premium"};
+amplitude.identity = newIdentity;
+
+// Method 2: Update individual properties
+amplitude.identity.userId = @"user-123";
+amplitude.identity.deviceId = @"device-456";
+amplitude.identity.userProperties = @{@"plan": @"premium"};
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+When you update the identity, the SDK:
+1. Persists the changes to storage
+2. Notifies plugins about the identity change
+3. Automatically sends an identify event if user properties have changed
+
+### Legacy identity methods
+
+The legacy methods for setting user and device IDs still work and update the identity object internally:
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+// These methods update the identity object internally
+amplitude.setUserId(userId: "user-123")
+amplitude.setDeviceId(deviceId: "device-456")
+
+// These are equivalent to:
+amplitude.identity.userId = "user-123"
+amplitude.identity.deviceId = "device-456"
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+// These methods update the identity object internally
+[amplitude setUserId:@"user-123"];
+[amplitude setDeviceId:@"device-456"];
+
+// These are equivalent to:
+amplitude.identity.userId = @"user-123";
+amplitude.identity.deviceId = @"device-456";
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+### User properties in identity
+
+The `identity.userProperties` dictionary contains the cached state of user properties that have been set through identify operations. When you call `identify()`, these properties are automatically updated in the identity object:
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+// Set user properties with identify
+let identify = Identify()
+identify.set(property: "plan", value: "premium")
+identify.set(property: "status", value: "active")
+amplitude.identify(identify: identify)
+
+// The user properties are now available in the identity object
+let userProperties = amplitude.identity.userProperties
+// userProperties contains {"plan": "premium", "status": "active"}
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+// Set user properties with identify
+AMPIdentify *identify = [AMPIdentify new];
+[identify set:@"plan" value:@"premium"];
+[identify set:@"status" value:@"active"];
+[amplitude identify:identify];
+
+// The user properties are now available in the identity object
+NSDictionary *userProperties = amplitude.identity.userProperties;
+// userProperties contains {"plan": "premium", "status": "active"}
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+The SDK supports the following identify operations for updating user properties:
+- `SET`: Sets the property value
+- `UNSET`: Removes the property
+- `CLEAR_ALL`: Clears all user properties
+
+The SDK sends other operations like `SET_ONCE`, `ADD`, or `APPEND` to the server but doesn't cache in the identity object.
+
+### Reset Identity
+
+When you call `reset()`, the SDK:
+1. Sets `userId` to `nil`
+2. Clears all user properties
+3. Generates a new `deviceId`
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+amplitude.reset()
+// This clears userId and userProperties, and generates a new deviceId
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+[amplitude reset];
+// This clears userId and userProperties, and generates a new deviceId
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
 ## Autocapture <a id="track-default-events"></a>
 
 Starting from release v1.8.0, the SDK is able to track more events without manual instrumentation. It can be configured to track the following events automatically:
@@ -945,6 +1108,104 @@ class TestDestinationPlugin: DestinationPlugin {
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
+
+### Accessing plugins
+
+Access the plugins you add to the Amplitude instance by name or by type.
+
+#### Access a plugin by name
+
+To access a plugin by name, use the `plugin(name:)` method:
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+// Add a plugin with a name
+class MyPlugin: Plugin {
+    let name = "my-plugin"
+    let type = PluginType.enrichment
+    
+    func setup(amplitude: Amplitude) {
+        // Setup code
+    }
+    
+    func execute(event: BaseEvent?) -> BaseEvent? {
+        // Execute code
+        return event
+    }
+}
+
+amplitude.add(plugin: MyPlugin())
+
+// Later, access the plugin by name
+if let myPlugin = amplitude.plugin(name: "my-plugin") as? MyPlugin {
+    // Use the plugin
+}
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+// Add a plugin with a name
+AMPPlugin *plugin = [AMPPlugin initWithName:@"my-plugin" 
+                                       type:AMPPluginTypeEnrichment
+                                    execute:^AMPBaseEvent * _Nullable(AMPBaseEvent * _Nonnull event) {
+    // Execute code
+    return event;
+}];
+
+[amplitude add:plugin];
+
+// Later, access the plugin by name
+AMPPlugin *myPlugin = [amplitude plugin:@"my-plugin"];
+if (myPlugin != nil) {
+    // Use the plugin
+}
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+#### Access plugins by type
+
+To access all plugins of a specific type, use the `plugins(type:)` method:
+
+{{partial:tabs tabs="Swift, Obj-C"}}
+{{partial:tab name="Swift"}}
+```swift
+// Define a custom plugin type
+class MyEnrichmentPlugin: Plugin {
+    let name = "my-enrichment-plugin"
+    let type = PluginType.enrichment
+    
+    func setup(amplitude: Amplitude) {
+        // Setup code
+    }
+    
+    func execute(event: BaseEvent?) -> BaseEvent? {
+        // Execute code
+        return event
+    }
+}
+
+// Add multiple plugins of the same type
+amplitude.add(plugin: MyEnrichmentPlugin())
+amplitude.add(plugin: AnotherEnrichmentPlugin())
+
+// Later, access all plugins of a specific type
+let enrichmentPlugins = amplitude.plugins(type: MyEnrichmentPlugin.self)
+for plugin in enrichmentPlugins {
+    // Use each plugin of the specified type
+}
+```
+{{/partial:tab}}
+{{partial:tab name="Obj-C"}}
+```objc
+// Objective-C doesn't support the plugins(type:) method directly
+// You would need to use the plugin(name:) method to access specific plugins
+```
+{{/partial:tab}}
+{{/partial:tabs}}
+
+This method returns an array of all plugins that match the specified type, allowing you to interact with multiple plugins of the same type at once.
 
 ## Troubleshooting and debugging
 

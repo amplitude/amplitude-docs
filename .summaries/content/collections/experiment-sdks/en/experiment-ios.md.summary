@@ -10,9 +10,8 @@ The Experiment iOS SDK documentation provides comprehensive guidance for impleme
 - remote evaluation
 - local evaluation
 - user provider
-- ExperimentUser
-- flag bootstrapping
+- bootstrapping
+- flag configurations
 - CocoaPods
 - Swift Package Manager
-- EU data center
 - account-level bucketing

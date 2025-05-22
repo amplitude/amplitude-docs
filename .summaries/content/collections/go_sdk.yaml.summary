@@ -1,3 +1,17 @@
-**Summary:** This documentation page defines the configuration for the Go SDK section of the analytics documentation, specifying its template, layout, mounting point, routing pattern, and navigation settings.
-
-**Keywords:** Go SDK, analytics documentation, route configuration, mount point, preview targets, navigation settings, sort direction, date behavior, revisions disabled
+Full content: title: 'Go SDK'
+template: default
+layout: layout
+mount: 5d8e869f-a964-4cbe-a103-65ecd4c2c576
+revisions: false
+route: '/sdks/analytics/go/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: analytics_sdks

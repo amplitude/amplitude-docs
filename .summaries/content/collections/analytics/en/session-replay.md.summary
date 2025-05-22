@@ -1,5 +1,5 @@
 # Summary
-Session Replay is a qualitative analytics feature available to Growth and Enterprise plan users that allows viewing recorded user sessions to understand user behavior, troubleshoot issues, and improve conversions by providing visual context to quantitative data. Sessions can be accessed from user event streams, charts, or the homepage, with filtering capabilities and integration with other Amplitude analytics tools.
+Session Replay is a qualitative analytics feature available to Growth and Enterprise plan users that allows viewing recorded user sessions to understand user behavior, troubleshoot issues, and improve conversions by providing visual context to quantitative data. Sessions can be accessed from user event streams, charts, or the homepage, with filtering capabilities by date, cohorts, events, and properties.
 
 # Keywords
 - session-replay

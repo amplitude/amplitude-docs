@@ -1,11 +1,11 @@
-## Summary
-This documentation page covers survey templates in the platform, explaining how templates can be used to create standardized surveys with predefined questions and settings, though the page appears to be unpublished and contains minimal content.
-
-## Keywords
-- survey-templates
-- predefined-questions
-- standardized-surveys
-- survey-creation
-- blueprint-guides_and_survey
-- unpublished-documentation
-- section-surveys
+Full content: ---
+id: b2cad50c-8d63-4d2f-8b54-57f99e41a919
+published: false
+blueprint: guides_and_survey
+title: Templates
+author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1738876785
+section: surveys
+landing: false
+---

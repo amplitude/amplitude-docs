@@ -1,11 +1,10 @@
 # Summary
-This documentation page explains the Guides and Surveys permissions system in Amplitude, detailing the five access levels (No access, Viewer, Member, Manager, Administrator) and providing step-by-step instructions for updating user access through the Permissions interface.
+This documentation page explains the Guides and Surveys permission system in Amplitude, detailing the five access levels (No access, Viewer, Member, Manager, Administrator) and providing step-by-step instructions for updating user permissions through the Guides and Surveys > Permissions interface.
 
 # Keywords
 - Guides and Surveys permissions
 - Amplitude role override
-- No access/Viewer/Member/Manager/Administrator roles
-- Permission management
+- Permission levels (No access, Viewer, Member, Manager, Administrator)
 - Project-specific access
 - Manage Project Access
-- Permission levels
+- Permission management workflow

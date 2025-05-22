@@ -1,16 +1,16 @@
 # Summary
-This documentation explains why Amplitude's data metrics may differ from other platforms, providing a troubleshooting checklist covering time zones, event tracking, bot filtering, metric definitions, user merging, and session timeout settings, with specific comparisons to Google Analytics session handling differences.
+This documentation explains why data discrepancies occur between Amplitude and other platforms, providing a troubleshooting checklist covering time zones, event tracking differences, bot filtering, metric definitions, user merging, and session timeout windows, with specific comparison to Google Analytics session tracking behavior.
 
 # Keywords
-- data discrepancies
-- cross-platform comparison
-- time zone alignment
+- data discrepancy troubleshooting
+- platform comparison
 - session timeout windows
-- user merging
-- Google Analytics differences
+- user tracking differences
+- Google Analytics comparison
+- time zone alignment
 - bot filtering
-- event tracking consistency
+- user merging
 - session definition
-- midnight session handling
 - campaign source changes
-- session event limits
+- midnight session handling
+- event tracking differences

@@ -1,5 +1,5 @@
 # Summary
-This documentation explains how to subscribe to Amplitude dashboards to receive HTML-formatted email reports or Slack notifications, detailing the subscription process, frequency customization options, and subscription management through Organization Settings, available on all Amplitude plans.
+This documentation explains how to subscribe to Amplitude dashboards to receive HTML-formatted email reports or Slack notifications, detailing the subscription process, frequency customization options, and subscription management through Organization Settings.
 
 # Keywords
 - dashboard subscription
@@ -11,3 +11,4 @@ This documentation explains how to subscribe to Amplitude dashboards to receive 
 - subscription management
 - Organization Settings
 - Content Access
+- HTML-formatted reports

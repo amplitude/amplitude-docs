@@ -10,11 +10,11 @@ This documentation details the Dashboard REST API, which allows developers to re
 - user activity tracking
 - user search
 - session metrics
-- revenue lifetime value
+- revenue LTV
 - API rate limits
 - query cost model
-- JSON response formats
-- authentication methods
-- concurrent request limits
-- event filtering
+- real-time active users
 - user composition
+- event filtering
+- segment definition
+- JSON response formats

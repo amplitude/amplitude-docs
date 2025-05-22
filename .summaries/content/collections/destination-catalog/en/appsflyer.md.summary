@@ -4,11 +4,11 @@ This documentation page details the AppsFlyer destination integration in Amplitu
 # Keywords
 - AppsFlyer integration
 - Event streaming configuration
+- AppsFlyer S2S Key
 - AppsFlyer ID mapping
-- S2S Key authentication
 - Device identifiers
 - User property mapping
 - Event forwarding
-- Customer User ID
-- IDFA/GAID mapping
 - Attribution integration
+- Cohort export
+- AppsFlyer App ID

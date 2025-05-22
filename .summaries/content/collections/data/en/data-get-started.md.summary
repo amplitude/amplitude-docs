@@ -1,5 +1,5 @@
 # Summary
-This documentation page provides technical best practices for instrumenting Amplitude analytics, covering data collection methods (SDKs, APIs), naming conventions, user property operations, session tracking, SDK configuration options, and backfilling considerations for accurate historical data representation.
+This documentation page provides technical best practices for instrumenting Amplitude analytics, covering data collection methods (SDKs, APIs), naming conventions, user property operations, session tracking, SDK configuration options, and backfilling considerations for accurate analytics implementation.
 
 # Keywords
 - Amplitude instrumentation

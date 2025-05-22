@@ -1,11 +1,17 @@
-## Summary
-This configuration file defines a "PII Integrations" collection with specific routing to "/data/pii/{slug}", English-only site targeting, and visibility settings that make past entries public while future entries remain private.
-
-## Keywords
-- PII Integrations collection
-- data/pii route
-- date_behavior
-- preview_targets
-- sort_dir ascending
-- propagate false
-- revisions disabled
+Full content: title: 'PII Integrations'
+sites:
+  - en
+propagate: false
+template: default
+layout: layout
+revisions: false
+route: '/data/pii/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true

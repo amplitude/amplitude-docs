@@ -1,11 +1,8 @@
-## Summary
-This documentation page describes the AB Smartly destination for Amplitude, which enables streaming events from Amplitude to AB Smartly for experimentation and A/B testing, including setup instructions for configuring the integration with API key authentication.
-
-## Keywords
-- AB Smartly
-- event streaming
-- experimentation
-- A/B testing
-- API key authentication
-- Amplitude integration
-- destination configuration
+Full content: ---
+id: 6d41c8bc-a699-461e-9bfa-1dbd46e7ad3d
+published: false
+blueprint: destination-catalog
+title: 'AB Smartly'
+source: 'https://www.docs.developers.amplitude.com/data/destinations/absmartly-event-streaming'
+category: 'Event streaming'
+---

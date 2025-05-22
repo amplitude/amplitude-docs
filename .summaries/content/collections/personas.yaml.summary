@@ -1,3 +1,19 @@
-**Summary:** This YAML configuration defines the "Personas" collection with settings for template, layout, mounting, routing, and preview behavior, specifically for analytics charts with a path structure of '/analytics/charts/personas/{slug}'.
-
-**Keywords:** personas collection, analytics charts, mount point, revisions disabled, date behavior, preview targets, structure root false, sort direction ascending
+Full content: title: Personas
+template: default
+layout: layout
+mount: 54a52d56-66eb-4e70-9cae-7f15fd2b2ea6
+revisions: false
+route: '/analytics/charts/personas/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: charts
+structure:
+  root: false

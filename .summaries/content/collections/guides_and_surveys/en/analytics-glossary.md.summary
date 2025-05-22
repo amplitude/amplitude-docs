@@ -1,15 +1,16 @@
 ## Summary
-This documentation page provides a comprehensive glossary of analytics events and properties for Amplitude's Guides and Surveys feature, including common event properties, generic events that occur for both guides and surveys, and events specific to either guides or surveys, with detailed descriptions of their data types and purposes.
+This documentation page provides a comprehensive glossary of analytics events and properties for Amplitude's Guides and Surveys feature, including common event properties, generic events that apply to both guides and surveys, and events specific to either guides or surveys.
 
 ## Keywords
-- Guides-Surveys analytics
-- event properties
+- Analytics events
+- Guides and Surveys
+- Event properties
 - Lifecycle UUID
 - Viewed event
 - Dismissed event
 - Completed event
 - Survey Submitted
-- Survey Abandoned
+- Guide Engaged
 - Tooltip Marker
 - Variant ID
-- event tracking
+- Debug Mode filtering

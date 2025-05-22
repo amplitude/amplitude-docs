@@ -3,14 +3,13 @@ This documentation details how Amplitude syncs behavioral cohorts to partner pla
 
 ## Keywords
 - behavioral cohorts
-- REST API
+- REST API integration
 - basic authentication
-- list-based integration
-- property-based integration
+- list-based cohort sync
+- property-based cohort sync
 - batch processing
-- cohort sync
-- user identifiers
+- cohort membership
 - API endpoints
 - retry mechanism
-- user properties
-- cohort membership
+- user identifiers
+- custom user properties

@@ -1,15 +1,15 @@
-# Summary
-This documentation explains how Amplitude defines and tracks user sessions, including session identification methods, timeout settings for mobile and web applications, and custom session property configurations. It details how session length is calculated, how to handle out-of-session events, and how to implement session tracking through SDKs or HTTP API.
+## Summary
+This documentation explains how Amplitude defines and tracks user sessions, including session timeouts for mobile (5 minutes) and browser (30 minutes), session IDs, out-of-session events, and custom session properties. It details how to enable session tracking, calculate session length, and customize session definitions through project settings.
 
-# Keywords
-- session tracking
+## Keywords
 - session ID
-- mobile session timeout
-- browser session timeout
-- custom session properties
-- out-of-session events
-- session length calculation
+- session timeout
 - Start/End Session events
-- session definition configuration
+- out-of-session events
+- custom session properties
+- session length calculation
+- mobile session tracking
+- browser session tracking
+- session definition customization
 - epoch timestamp
-- session timeout windows
+- client_event_time

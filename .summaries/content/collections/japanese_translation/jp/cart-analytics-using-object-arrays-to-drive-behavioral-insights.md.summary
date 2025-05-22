@@ -1,5 +1,5 @@
 ## Summary
-This documentation explains Amplitude's Cart Analytics feature, which allows analysis of object arrays in e-commerce data to derive behavioral insights about shopping cart flows. It details how to set up property splitting, use object arrays in Event Segmentation and Funnel Analysis charts, and apply different filtering approaches (cross-property, parallel, item match, and collection match) to analyze product performance by attributes.
+This documentation explains Amplitude's Cart Analytics feature, which allows analysis of object arrays in e-commerce data to derive behavioral insights about shopping cart flows. It details how to set up property splitting, use object arrays in Event Segmentation and Funnel Analysis charts, and apply different filtering approaches (cross-property, parallel, item match, collection match) to analyze product performance by attributes.
 
 ## Keywords
 - object arrays
@@ -11,9 +11,6 @@ This documentation explains Amplitude's Cart Analytics feature, which allows ana
 - item match
 - collection match
 - nested properties
-- behavioral insights
 - product performance analysis
+- behavioral insights
 - shopping cart flows
-- parent properties
-- child properties
-- sibling properties

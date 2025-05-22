@@ -1,15 +1,14 @@
-## Summary
-This page documents the Event Explorer feature in Amplitude, which allows users to view event streams in real-time to identify appropriate events for analysis, verify implementation, and troubleshoot instrumentation issues by tracking events as they're triggered during product usage.
+# Summary
+This documentation explains the Event Explorer feature in Amplitude, which allows users to view event streams in real-time to identify appropriate events for analysis, verify instrumentation implementation, and troubleshoot data issues by searching for users via IP address, user ID, device ID, or user properties.
 
-## Keywords
+# Keywords
 - Event Explorer
 - real-time event stream
 - event taxonomy
 - instrumentation QA
-- event identification
-- user targeting
+- user identification
+- event properties
 - IP address search
 - device ID
-- user ID
-- event properties
-- implementation verification
+- user lookup
+- event verification

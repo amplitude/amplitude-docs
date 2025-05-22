@@ -1,7 +1,7 @@
-# Summary
-This documentation explains how to use Amplitude's lookup table feature to enrich event and user properties by importing external data and mapping it to ingested properties, allowing users to add meaningful context to property values, bulk modify values, or create filtered property lists.
+## Summary
+This documentation explains how to use Amplitude's lookup table feature to enrich event and user properties by mapping imported data to ingested properties, allowing users to add meaningful context to property values, make bulk changes to property values, and create filters based on mapped data.
 
-# Keywords
+## Keywords
 - lookup tables
 - data enrichment
 - property mapping
@@ -10,5 +10,7 @@ This documentation explains how to use Amplitude's lookup table feature to enric
 - user properties
 - Enterprise plan
 - Govern add-on
+- property value transformation
+- data source configuration
 - case-sensitive matching
 - 100MB/1 million row limit

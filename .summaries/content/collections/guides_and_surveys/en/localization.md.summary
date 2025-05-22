@@ -1,13 +1,14 @@
 # Summary
-Localization in Amplitude Guides and Surveys allows serving content in multiple languages without creating duplicates, requiring SDK implementation updates to specify user locale and project settings configuration to define supported languages and fallback behaviors for missing translations.
+Localization in Amplitude Guides and Surveys allows serving content in multiple languages without creating duplicate guides/surveys, requiring SDK implementation updates to specify user locale and project settings configuration to define supported languages and fallback behaviors.
 
 # Keywords
 - guides_and_surveys_localization
 - xliff_translation_files
 - locale_code_handling
-- translation_fallback_settings
+- translation_fallback
 - SDK_locale_initialization
 - translatable_strings
 - language_management
 - translation_preview
 - Growth_Enterprise_feature
+- translation_template

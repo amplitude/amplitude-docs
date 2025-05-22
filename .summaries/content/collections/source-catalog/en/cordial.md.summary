@@ -7,8 +7,8 @@ Cordial integration with Amplitude enables bidirectional data flow: sending Ampl
 - cohort synchronization
 - cross-channel messaging
 - 360-degree customer view
-- API key configuration
 - outbound data settings
-- marketplace integration
-- behavioral data
-- profile data
+- API key configuration
+- behavioral data integration
+- profile data transfer
+- email and SMS analytics

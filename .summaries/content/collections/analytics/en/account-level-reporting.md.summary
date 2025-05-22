@@ -1,5 +1,5 @@
 # Summary
-Account-level reporting in Amplitude enables analysis at the group level (accounts, teams, etc.) rather than individual users, allowing B2B companies to understand how specific accounts interact with their product through group-level metrics, properties, and behavioral cohorts.
+Account-level reporting in Amplitude enables analysis at the group level (accounts, teams, etc.) rather than individual users, allowing businesses to understand how specific accounts interact with their product through group-level metrics, behavioral cohorts, and dynamic group properties.
 
 # Keywords
 - Accounts add-on
@@ -12,3 +12,5 @@ Account-level reporting in Amplitude enables analysis at the group level (accoun
 - Account lookup
 - Dynamic group properties
 - B2B analytics
+- Funnel analysis by group
+- Group segmentation

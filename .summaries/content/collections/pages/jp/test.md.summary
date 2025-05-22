@@ -1,10 +1,7 @@
-## Summary
-This is a placeholder Japanese test page with minimal content, containing only metadata fields such as ID, origin reference, publication status (false), update information, and timestamps, without any actual content body.
-
-## Keywords
-- Japanese test page
-- placeholder content
-- unpublished page
-- metadata-only document
-- content origin reference
-- Statamic page ID
+Full content: ---
+id: 154c8a91-7d17-4e1f-8bc0-e1ef4da17144
+origin: 34cde5a0-0c7a-46b7-ac73-a0e306bb0b95
+published: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1733261724
+---

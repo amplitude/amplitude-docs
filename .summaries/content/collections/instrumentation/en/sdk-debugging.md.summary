@@ -9,7 +9,7 @@ This documentation page covers SDK troubleshooting and debugging for Amplitude, 
 - Device family mapping
 - User properties delay
 - Flush queue settings
-- Multiple SDK instances
 - Privacy IP handling
-- Race conditions
 - Batch API
+- Race conditions
+- Event timestamp troubleshooting

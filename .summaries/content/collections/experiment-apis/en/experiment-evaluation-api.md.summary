@@ -1,17 +1,17 @@
 # Summary
-The Experiment Evaluation API documentation describes two key endpoints: the Evaluation API for retrieving variant assignments for users through remote evaluation (tracking assignment events), and the Flags API for downloading flag configurations for local evaluations, including details on authentication using deployment keys, request parameters, and response formats.
+The Experiment Evaluation API documentation describes two key endpoints: the Evaluation API for retrieving variant assignments for users through remote evaluation (tracking assignment events), and the Flags API for downloading flag configurations for local evaluations, both requiring deployment key authentication and supporting various query parameters for user identification and flag selection.
 
 # Keywords
 - remote evaluation
 - variant assignment
 - deployment key
-- flag_keys
-- user context
-- Authorization header
-- X-Amp-Exp-Track
-- Flags API
-- local evaluation
-- flag configurations
-- evaluation response
 - user_id
 - device_id
+- flag_keys
+- context
+- X-Amp-Exp-Track
+- vardata endpoint
+- flags endpoint
+- local evaluation
+- authorization header
+- assignment event

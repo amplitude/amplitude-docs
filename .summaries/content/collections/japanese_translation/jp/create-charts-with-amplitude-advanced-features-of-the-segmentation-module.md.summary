@@ -9,6 +9,6 @@ This documentation page explains advanced features of Amplitude's segmentation m
 - repeat count
 - user segments
 - event segmentation
-- clipboard pasting
-- segment customization
-- chart visualization
+- custom property values
+- segment management
+- chart customization

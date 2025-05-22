@@ -1,13 +1,14 @@
-# Summary
-This documentation explains how to customize dashboard display preferences in Amplitude Analytics, including switching between chart, KPI, or table visualizations, enabling summary metrics for compatible chart types, adding target metrics with progress bars, and using full-screen TV mode for shared displays.
+## Summary
+This documentation explains how to customize dashboard display preferences in Amplitude Analytics, including switching between chart, KPI, or table visualizations, enabling summary metrics for compatible chart types, adding target metrics with optional progress bars, and using full-screen TV mode for shared displays.
 
-# Keywords
+## Keywords
 - dashboard visualization modes
 - summary metrics display
 - KPI visualization
 - target metrics configuration
+- progress bar tracking
 - TV mode
 - DAU/WAU/MAU metrics
 - chart display preferences
-- progress bar visualization
-- dashboard refresh settings
+- full-screen dashboard view
+- visualization options

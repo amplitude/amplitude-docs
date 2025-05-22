@@ -3,12 +3,12 @@ This documentation guides partners through creating an Event Streaming integrati
 
 # Keywords
 - event-streaming-integration
-- real-time-event-forwarding
 - freemarker-templates
-- integration-portal
-- payload-configuration
+- event-forwarding
+- payload-customization
 - user-property-mapping
-- event-filtering
-- destination-tile
+- integration-portal
+- destination-configuration
 - rate-limits
 - authentication-method
+- event-filtering

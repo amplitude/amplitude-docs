@@ -1,13 +1,13 @@
 # Summary
-This documentation explains how Historical Count filters are applied last in Amplitude's order of operations, meaning they only count instances that match all other applied filters, while Event Historical Count filters are applied first, before other filters. It also clarifies how Historical Count works with custom events, where the custom event logic is considered before the Historical Count filter.
+This documentation explains how Historical Count filters are applied last in Amplitude's order of operations, meaning they filter based on the Nth instance of an event after all other filters are applied, while Event Historical Count filters are applied first, before other filters, resulting in different analysis outcomes.
 
 # Keywords
-- Historical Count filter
+- Historical Count
 - Event Historical Count
 - order of operations
 - filter sequence
-- Nth instance tracking
+- Nth instance
 - custom events
+- event segmentation
 - filter application timing
-- event segmentation analysis
 - behavioral analysis

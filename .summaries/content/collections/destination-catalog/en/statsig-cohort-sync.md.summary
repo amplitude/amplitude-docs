@@ -1,5 +1,5 @@
 ## Summary
-This documentation page describes the integration between Amplitude and Statsig for cohort synchronization, allowing users to target Statsig experiments at specific cohorts created in Amplitude, with setup instructions for both platforms and steps to sync cohorts that appear as Segments in Statsig within 15 minutes.
+This documentation page describes the integration between Amplitude and Statsig for cohort synchronization, allowing users to target Statsig experiments at specific cohorts created in Amplitude, with setup instructions for both platforms and steps for sending cohorts that will appear under Segments in Statsig within 15 minutes.
 
 ## Keywords
 - Statsig cohort sync
@@ -7,8 +7,8 @@ This documentation page describes the integration between Amplitude and Statsig 
 - product experimentation
 - API key configuration
 - cohort targeting
-- Amplitude Data Catalog
+- experiment segments
 - sync cadence
-- Statsig Segments
-- experiment targeting
-- cross-platform cohort synchronization
+- Amplitude Data Catalog
+- cohort export
+- Statsig Console

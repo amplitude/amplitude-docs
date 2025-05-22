@@ -9,6 +9,6 @@ This documentation page describes how to integrate Amplitude with FullStory usin
 - browser SDK
 - user session replays
 - event streaming
-- FS.identify
-- FS.event
-- conversion funnels
+- FullstoryPlugin implementation
+- event tracking
+- user identification

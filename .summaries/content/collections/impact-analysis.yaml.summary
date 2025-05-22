@@ -1,3 +1,19 @@
-**Summary:** This documentation page configures the Impact Analysis section within the Analytics/Charts area, specifying its template, layout, routing pattern, and display behavior including revision settings, sorting direction, and date visibility rules.
-
-**Keywords:** impact-analysis, analytics charts, mount point, date_behavior, preview_targets, structure settings, route configuration, sort_dir, nav_title injection
+Full content: title: 'Impact Analysis'
+template: default
+layout: layout
+mount: 174c9363-dd7f-4e03-b7ea-b680633d4a61
+revisions: false
+route: '/analytics/charts/impact-analysis/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: charts
+structure:
+  root: false

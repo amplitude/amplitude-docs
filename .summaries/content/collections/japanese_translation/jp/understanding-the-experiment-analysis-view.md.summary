@@ -13,5 +13,5 @@ This documentation explains the Experiment Analysis view in Amplitude Experiment
 - Control group
 - Treatment groups
 - User segmentation
-- Conversion rates
-- Lift measurement
+- Unique conversions
+- Aggregation metrics

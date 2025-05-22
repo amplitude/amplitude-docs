@@ -1,3 +1,19 @@
-**Summary:** This documentation page defines the configuration for the Android SDK section of the analytics documentation, specifying its template, layout, routing pattern (/sdks/analytics/android/{slug}), sorting direction, and preview settings.
-
-**Keywords:** Android SDK, analytics documentation, mount point, route configuration, preview targets, date behavior, structure configuration, navigation title
+Full content: title: 'Android SDK'
+template: default
+layout: layout
+mount: c3197ac0-3df0-447b-b632-e1ec4b6e88c9
+revisions: false
+route: '/sdks/analytics/android/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: analytics_sdks
+structure:
+  root: false

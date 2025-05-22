@@ -1,5 +1,5 @@
 # Summary
-This documentation explains how to combine multiple events into a single event slot in Funnel Analysis charts by creating temporary inline event combinations, including steps to add, filter, and remove these custom events which are only available within the specific chart.
+This documentation explains how to combine multiple events into a single event slot in Funnel Analysis charts by using the "Combine events inline" feature, which allows for temporary event combinations without creating permanent custom events.
 
 # Keywords
 - funnel analysis
@@ -11,4 +11,3 @@ This documentation explains how to combine multiple events into a single event s
 - filter properties
 - microscope limitations
 - temporary event combinations
-- user journeys

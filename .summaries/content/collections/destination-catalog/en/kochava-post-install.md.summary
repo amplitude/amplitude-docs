@@ -9,6 +9,6 @@ This documentation details the Kochava (Post-install) event streaming integratio
 - App GUID configuration
 - Kochava Device ID mapping
 - Send User feature
-- Identity mapping requirements
+- Identity mapping
+- Post-installation events
 - Campaign ROI insights
-- Post-installation event tracking

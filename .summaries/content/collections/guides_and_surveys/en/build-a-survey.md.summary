@@ -1,14 +1,14 @@
 # Summary
-This documentation page details the process of building surveys in the platform, highlighting the unique survey blocks (Rating, with various types like Stars, Rating labels, Emoji, NPS), conditional logic capabilities for creating dynamic response paths based on user input, and noting that survey setup and targeting follows the same process as guides.
+This documentation page explains how to build surveys in the platform, detailing the unique survey blocks (particularly the Rating block with its various types and settings), conditional logic capabilities for creating dynamic survey paths based on user responses, and noting that survey setup and targeting follows the same process as guides.
 
 # Keywords
 - survey builder
-- rating blocks
+- rating block
 - conditional logic
+- stars rating
+- emoji rating
 - NPS (Net Promoter Score)
 - survey branching
 - form factors
-- stars rating
-- emoji rating
-- rating labels
-- dynamic survey paths
+- rating types
+- survey targeting

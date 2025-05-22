@@ -1,14 +1,14 @@
 ## Summary
-This documentation page compares cross-platform and platform-specific instrumentation approaches in Amplitude, explaining when to use each method based on user behavior patterns and analysis goals, while recommending separate API keys for production and test environments.
+This documentation explains the decision between cross-platform instrumentation (using the same API key across platforms) versus per-platform instrumentation (separate API keys) in Amplitude, outlining when each approach is appropriate based on user behavior patterns and analysis goals, while recommending separate keys for test and production environments.
 
 ## Keywords
 - cross-platform instrumentation
-- platform-specific instrumentation
+- per-platform instrumentation
 - API key management
-- user tracking across platforms
+- platform-specific tracking
+- user behavior analysis
 - instrumentation strategy
 - platform differences
-- update cycle differences
 - test vs production data
-- Amplitude SDK
-- HTTP API integration
+- user crossover analysis
+- platform-specific metrics

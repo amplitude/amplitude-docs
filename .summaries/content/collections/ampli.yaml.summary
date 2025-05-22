@@ -1,10 +1,17 @@
-## Summary
-This configuration file defines the Ampli collection in Statamic, setting up routing, mounting, template behavior, and preview options for the Ampli SDK documentation section with a path pattern of '/sdks/ampli/{slug}'.
-
-## Keywords
-- Ampli collection configuration
-- Statamic mount point
-- SDK documentation routing
-- preview targets
-- date_behavior
-- developers navigation
+Full content: title: Ampli
+template: default
+layout: layout
+mount: ba956cb4-9ae1-456a-b122-984b491048f6
+revisions: false
+route: '/sdks/ampli/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: developers

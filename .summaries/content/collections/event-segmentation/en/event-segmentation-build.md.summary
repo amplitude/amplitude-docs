@@ -1,14 +1,14 @@
 # Summary
-This documentation page explains how to build an Event Segmentation analysis in Amplitude, covering the step-by-step process of selecting events, applying properties, choosing measurement types, defining user segments, and customizing chart visualization including Y-axis configuration and dual Y-axis functionality.
+This documentation page explains how to build an Event Segmentation analysis in Amplitude, detailing the step-by-step process of selecting events, applying properties, choosing measurement types, and segmenting users, as well as customizing the Y-axis with options for dual axes, custom ranges, and unit display formats.
 
 # Keywords
 - Event Segmentation chart
 - Amplitude analytics
 - User segments
 - Event properties
-- Chart measurement types
+- Measurement types
 - Y-axis customization
 - Dual Y-axis
+- Chart visualization
 - Event filtering
 - User behavior analysis
-- Chart visualization

@@ -7,9 +7,8 @@ This documentation covers the installation and configuration of the Session Repl
 - sampleRate configuration
 - enableRemoteConfig
 - autoStart recording
-- start/stop recording methods
-- EU data residency
+- session masking
 - web view tracking
-- session sampling
-- data masking
-- user opt-out
+- EU data residency
+- session quota management
+- DSAR API integration

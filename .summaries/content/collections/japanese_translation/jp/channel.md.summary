@@ -1,5 +1,5 @@
 ## Summary
-This documentation explains Amplitude's "Channel" feature, which allows marketers to create retroactive property definitions based on UTM and referrer data. Available only for Growth and Enterprise plans, it enables users to define acquisition channels that can be updated over time without affecting raw data, and supports comparison of metrics across channels using data tables with attribution modeling.
+This documentation page explains Amplitude's "Channel" feature, which allows marketers to create retroactive property definitions based on UTM and referrer data. Available only for Growth and Enterprise plans, it enables users to define acquisition channels that can be updated over time without affecting raw data, and supports comparison of metrics across channels using data tables with attribution modeling.
 
 ## Keywords
 - acquisition channels

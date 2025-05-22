@@ -1,16 +1,14 @@
 ## Summary
-This documentation page details the Snowflake destination integration for Amplitude, covering how to set up recurring data exports, export historical data, reduce computation costs, and understand the event and merged user table schemas, with specific information on authentication methods, IP allowlisting requirements, and data sync processes.
+This documentation page details the Snowflake destination integration for Amplitude, covering how to set up recurring data exports, export historical data, reduce computation costs, and understand the event and merged user table schemas, with specific information on authentication methods, IP allowlisting, and data sync processes.
 
 ## Keywords
-- Snowflake destination integration
-- Event data export
+- Snowflake data warehouse integration
+- Amplitude event export
 - Merged user IDs
 - Key pair authentication
-- Password authentication
 - IP allowlisting
+- Event table schema
 - Micro-batch files
 - Historical data export
-- Warehouse optimization
-- Event table schema
-- Merged User table schema
-- Data sync configuration
+- Computation cost reduction
+- Warehouse sizing

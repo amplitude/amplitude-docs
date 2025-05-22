@@ -7,8 +7,8 @@ This documentation explains methods to block or filter internal user data in Amp
 - data filters
 - user segmentation
 - behavioral cohorts
-- saved segments
 - default segments
 - Amplitude Govern
 - test data exclusion
 - cohort API
+- analytics data cleansing

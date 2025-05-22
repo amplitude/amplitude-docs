@@ -1,5 +1,14 @@
 # Summary
-This documentation page describes the SendGrid destination integration for Amplitude, which enables sending user cohorts to SendGrid for email marketing campaigns and tracking email engagement metrics. The integration requires proper API key permissions, unique email addresses in cohorts, and mandatory field mappings for email, first name, and last name.
+This documentation details the SendGrid destination integration with Amplitude, allowing businesses to send audiences from Amplitude to SendGrid for personalized email campaigns, with specific requirements for API permissions, email uniqueness, and field mappings for successful cohort syncing.
 
 # Keywords
-SendGrid, email marketing, cohort syncing, API key, field mapping, contact creation, email engagement metrics, sync cadence, unique email addresses, marketing permissions, character limit, raw-events, customer-engagement
+- SendGrid integration
+- Cohort syncing
+- Email marketing
+- API key permissions
+- Field mapping
+- Unique email addresses
+- Contact creation
+- Sync cadence
+- Marketing campaigns
+- Amplitude audiences

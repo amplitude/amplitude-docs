@@ -8,7 +8,7 @@ This documentation page describes the Braze integration with Amplitude, enabling
 - event streaming
 - marketing automation
 - customer engagement
-- user traits
+- targeted campaigns
 - event volume quota
-- targeted marketing campaigns
-- personalized messaging
+- user traits
+- computations

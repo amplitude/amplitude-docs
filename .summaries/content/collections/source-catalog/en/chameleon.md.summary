@@ -1,14 +1,14 @@
 # Summary
-This documentation page describes the Chameleon integration with Amplitude, which allows sending product tour performance data to Amplitude for analysis alongside other product data, requiring the Amplitude browser SDK and specific setup steps in both platforms.
+This documentation describes the Chameleon integration with Amplitude, which allows sending product tour performance data to Amplitude for analysis alongside other product data, requiring the Amplitude browser SDK and configuration in both platforms to enable event tracking between systems.
 
 ## Keywords
 - Chameleon product tours
 - Product adoption platform
-- Client-side browser SDK
-- Event tracking
+- Event tracking integration
+- Browser SDK dependency
+- Product guidance analytics
+- Tour performance metrics
+- Client-side integration
+- API key configuration
 - User journey analysis
-- Integration configuration
-- API key authentication
-- Product guidance
-- Tour performance analytics
-- Web app integration
+- Behavioral cohorts

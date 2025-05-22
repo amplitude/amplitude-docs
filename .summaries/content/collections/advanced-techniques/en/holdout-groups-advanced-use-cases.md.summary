@@ -1,14 +1,14 @@
 ## Summary
-This documentation explains how to manage traffic allocation when using holdout groups in complex scenarios, specifically addressing the challenges of adding experiments to multiple holdout groups (which compounds traffic reduction) and combining holdout groups with mutual exclusion groups (which further limits experiment traffic).
+This documentation explains how to manage traffic allocation when using holdout groups in complex scenarios, specifically addressing the challenges of adding experiments to multiple holdout groups (which reduces available traffic) and combining holdout groups with mutual exclusion groups (which further limits experiment traffic).
 
 ## Keywords
 - holdout groups
 - traffic allocation
 - mutual exclusion
-- experiment traffic limitation
-- compound traffic reduction
+- experiment traffic limitations
 - multiple holdout groups
-- experiment streamlining
 - traffic distribution
 - experiment evaluation
 - holdout percentage
+- traffic reduction calculation
+- experiment streamlining

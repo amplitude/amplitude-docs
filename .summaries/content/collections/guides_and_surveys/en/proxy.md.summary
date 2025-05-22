@@ -1,15 +1,16 @@
 # Summary
-This documentation explains how to set up an AWS CloudFront distribution to reverse proxy both static assets and Guides and Surveys API traffic, helping to bypass domain blocking while minimizing latency by using edge-hosted solutions with a dual-origin configuration.
+This documentation explains how to set up an AWS CloudFront distribution to reverse proxy both static assets and Guides and Surveys API traffic, helping bypass domain blocking while minimizing latency by using a unified distribution with two origins and specific cache behaviors for each endpoint.
 
 # Keywords
-- CloudFront distribution
+- AWS CloudFront
 - reverse proxy
 - cdn.amplitude.com
 - gs.amplitude.com
 - cache behaviors
 - origin configuration
-- path pattern
+- domain blocking
+- CORS
 - serverUrl
 - cdnUrl
-- domain blocking
-- edge-hosted solutions
+- engagement SDK
+- proxy testing

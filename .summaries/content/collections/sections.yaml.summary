@@ -1,12 +1,18 @@
-## Summary
-This YAML configuration defines a "Sections" collection with settings for template, layout, revisions, routing, sorting, date behavior, preview targets, structure, and UI display options, specifying how section entries should be handled and displayed in the Statamic CMS.
-
-## Keywords
-- sections collection
-- date_behavior
-- preview_targets
-- structure configuration
-- sort_dir
-- revisions disabled
-- permalink preview
-- hide_toc injection
+Full content: title: Sections
+template: default
+layout: layout
+revisions: false
+route: '/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+structure:
+  root: false
+inject:
+  hide_toc: true

@@ -13,5 +13,5 @@ This documentation explains how to use Ampli CLI with source control systems lik
 - GitHub Actions
 - tracking plan implementation
 - branch synchronization
-- merge checks
-- implementation verification
+- merge verification
+- Amplitude Data

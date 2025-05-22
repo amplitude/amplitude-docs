@@ -1,16 +1,15 @@
-## Summary and Keywords
+# Summary and Keywords for Kochava (Install) Documentation
 
-This documentation details the Kochava (Install) destination integration, which streams events from Amplitude to Kochava for tracking user installations and initial app interactions. The integration requires a Kochava account, App GUID, and optional authentication credentials, with specific mapping requirements for device identifiers and considerations around the IdentityLink API functionality.
+**Summary:** This documentation details the Amplitude to Kochava (Install) event streaming integration, which transmits post-installation events to Kochava for attribution tracking. The setup requires a Kochava account, App GUID, and optional authentication credentials, with mandatory mapping of Kochava Device ID and IP Address plus at least one mobile advertising identifier.
 
 **Keywords:**
 - Kochava Install integration
-- Event streaming
+- Event streaming attribution
 - IdentityLink API
-- App GUID
+- App GUID configuration
+- Mobile advertising identifiers
 - Device ID mapping
-- Install events
-- Attribution tracking
-- Mobile marketing
-- Campaign ROI
-- User identity linking
-- Authentication configuration
+- Install events forwarding
+- Kochava authentication
+- Campaign ROI tracking
+- Post-installation event transmission

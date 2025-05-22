@@ -1,12 +1,18 @@
-## Summary
-This configuration file defines the "Sources" collection with settings for template, layout, routing, sorting, date behavior, preview targets, and navigation injection, specifically for managing data sources with a URL pattern of '/data/sources/{slug}'.
-
-## Keywords
-- Sources collection
-- data sources configuration
-- route pattern
-- date_behavior
-- preview_targets
-- nav_title injection
-- sort_dir
-- structure root
+Full content: title: Sources
+template: default
+layout: layout
+revisions: false
+route: '/data/sources/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: data
+structure:
+  root: false

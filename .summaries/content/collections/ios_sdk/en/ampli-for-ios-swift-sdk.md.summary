@@ -1,17 +1,17 @@
-# Summary
-This documentation page details the implementation of Ampli for iOS Swift SDK, providing a step-by-step guide for integrating Amplitude's strongly-typed event tracking in iOS apps, including installation, initialization, user identification, event tracking, and verification using the Ampli CLI.
+## Summary
+This documentation page details the Ampli wrapper for iOS Swift SDK, which provides strongly typed methods for tracking analytics events in iOS apps using Swift and Objective-C, including installation steps, initialization, user identification, event tracking, and implementation verification through the Ampli CLI.
 
-# Keywords
+## Keywords
+- Ampli wrapper
+- iOS Swift SDK
 - AmplitudeSwift
-- Ampli Wrapper
-- iOS SDK
-- Swift tracking
-- Objective-C
-- strongly-typed events
-- identify
-- track
-- flush
-- ampli pull
-- ampli status
-- LoadOptions
-- EventOptions
+- strongly typed events
+- tracking plan
+- identify users
+- event tracking
+- Ampli CLI
+- CocoaPods
+- Swift Package Manager
+- Carthage
+- flush events
+- implementation verification

@@ -1,5 +1,5 @@
 # Summary
-This documentation explains how Historical Count filters work in Funnel Analysis charts and behavioral cohorts, detailing the specific conditions for conversion counting when applying Historical Count filters to funnel steps and how Historical Count differs from but can be combined with behavioral cohorts.
+This documentation explains how Historical Count filters work in Funnel Analysis charts and behavioral cohorts, detailing the specific conditions for conversion counting when applying Historical Count filters to funnel steps and explaining the distinction between Historical Count and behavioral cohorts in Amplitude.
 
 # Keywords
 - Historical Count filters
@@ -8,7 +8,7 @@ This documentation explains how Historical Count filters work in Funnel Analysis
 - Behavioral cohorts
 - Event sequence tracking
 - Nth instance
-- User lifecycle milestones
-- Conversion counting
+- User milestone tracking
+- Funnel conversion criteria
+- User lifecycle analysis
 - Event frequency
-- Cohort population

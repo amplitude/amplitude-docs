@@ -1,14 +1,12 @@
 # Summary
 This documentation page describes the Chameleon (Cohort) destination integration with Amplitude, which allows tracking of Chameleon tour performance alongside other product data in Amplitude, requiring the Amplitude client-side browser SDK and specific setup steps in both platforms.
 
-## Keywords
+# Keywords
 - Chameleon cohort integration
 - product adoption platform
-- product guidance
-- tour performance tracking
-- client-side browser SDK requirement
-- partner-maintained integration
+- product tours
+- client-side browser SDK
 - Amplitude API key
-- event forwarding
-- web app integration
+- tour performance tracking
 - Chameleon dashboard configuration
+- event forwarding

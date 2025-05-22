@@ -1,6 +1,6 @@
 ## Summary and Keywords
 
-The Flutter SDK 4.0 Migration Guide details the transition from v3 to v4, covering dependency updates, API changes, and configuration differences, with specific focus on the new unified track API, immutable configuration object, and updated initialization process that wraps the latest iOS, Android, and Browser SDKs.
+The Flutter SDK 4.0 Migration Guide details the transition from v3 to v4, covering dependency updates, API changes, and configuration differences. The new version features default event tracking, simplified interfaces, and wraps the latest iOS, Android, and Browser SDKs, requiring updates to initialization patterns, event tracking methods, and user property management.
 
 **Keywords:**
 - Flutter SDK 4.0
@@ -8,10 +8,8 @@ The Flutter SDK 4.0 Migration Guide details the transition from v3 to v4, coveri
 - BaseEvent
 - Configuration object
 - track() API
-- identify()
-- setGroup()
-- minIdLength
-- flush()
-- DefaultTrackingOptions
+- identify() API
 - iOS 13 requirement
-- Browser SDK 2 snippet
+- DefaultTrackingOptions
+- minIdLength
+- flush() method

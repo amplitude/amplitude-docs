@@ -1,18 +1,19 @@
 ## Summary
-This documentation page provides a comprehensive guide for planning an effective data taxonomy in Amplitude, covering the fundamentals of users, events, and properties, and outlining a three-step process to define business objectives, break down key metrics, and optimize event tracking to ensure consistent, scalable data collection for analytics.
+This documentation provides a comprehensive guide for planning an effective data taxonomy in Amplitude, explaining how to define business objectives, break down key metrics, and optimize events and properties to create a consistent tracking plan that supports meaningful analytics and prevents future data issues.
 
 ## Keywords
-- data taxonomy
+- taxonomy planning
 - event naming conventions
 - user properties
 - event properties
+- data hierarchy
 - business objectives
 - conversion metrics
-- tracking plan
 - property consistency
 - funnel analysis
-- data planning
-- event optimization
-- critical user paths
+- tracking plan optimization
+- e-commerce analytics
 - property definition
-- holding constant
+- critical user paths
+- event categorization
+- data scalability

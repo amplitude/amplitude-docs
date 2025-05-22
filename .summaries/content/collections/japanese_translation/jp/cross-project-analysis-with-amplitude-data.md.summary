@@ -1,5 +1,5 @@
 ## Summary
-Amplitude Data's Portfolio feature enables cross-product analysis by combining multiple source projects into a single view, with key differences from legacy portfolios including schema prioritization and metadata visibility. The document details how to create portfolios in Amplitude Data and import existing Analytics-managed portfolios.
+Amplitude Data's Portfolio feature enables cross-product analysis by combining multiple source projects into a single view, with key differences from legacy portfolios including schema prioritization and metadata visibility. The document details how to create portfolios in Amplitude Data and import existing portfolios from Amplitude Analytics.
 
 ## Keywords
 - Portfolio feature
@@ -7,8 +7,8 @@ Amplitude Data's Portfolio feature enables cross-product analysis by combining m
 - Schema prioritization
 - Source project metadata
 - Portfolio creation workflow
-- Analytics-managed portfolios
-- Portfolio import
+- Analytics-to-Data import
 - Metadata overrides
 - Project selector
 - Cross-product analysis
+- Portfolio customization

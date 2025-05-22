@@ -10,5 +10,5 @@ This documentation page details the migration process from Browser SDK 1.0 to 2.
 - User agent enrichment
 - Plugin interface simplification
 - Web Attribution V2
+- TransportType literals
 - @amplitude/analytics-browser
-- Server-side parsing

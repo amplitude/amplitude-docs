@@ -1,5 +1,5 @@
 # Summary
-The Export API allows developers to retrieve event data from Amplitude projects with a GET request to `/api/2/export`, requiring start and end time parameters in YYYYMMDDTHH format. The API returns zipped JSON files with event data, has a 4GB size limit, and exports data based on server upload time with a minimum 2-hour delay.
+The Export API allows developers to retrieve event data from Amplitude projects with a GET request to `/api/2/export`, supporting time-based filtering with required start/end parameters in YYYYMMDDTHH format, and returning zipped JSON files with detailed event information, subject to a 4GB size limit and 2-hour data availability delay.
 
 # Keywords
 - event data export
@@ -7,8 +7,8 @@ The Export API allows developers to retrieve event data from Amplitude projects 
 - 4GB size limit
 - YYYYMMDDTHH time format
 - JSON event schema
-- export time delay
 - UTC timestamps
-- cross-project view limitations
+- export delay
+- cross-project limitations
 - 365-day maximum query period
 - HTTP basic authentication

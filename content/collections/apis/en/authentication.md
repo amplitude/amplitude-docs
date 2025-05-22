@@ -12,6 +12,6 @@ updated_at: 1718055996
 
 To find your Amplitude project's unique API key and secret key, follow these steps. 
 
-1. In the Amplitude Analytics web app, click [**Settings**](http://analytics.amplitude.com/amp-dev-docs/settings/projects) in the upper right navigation.
-2. Click **Projects**, then find your target project.
-3. On the **General** tab, copy your API key and secret key.
+1. In the Amplitude Analytics web app, click [**Organization Settings**](http://analytics.amplitude.com/amp-dev-docs/settings/projects) in the upper right navigation.
+2. In the left sidebar, click **API Keys**.
+3. Find your target project in the list and click it. Users assigned the Manager role on the project can copy the API key directly from the table. For security reasons, you can copy secret keys only after they're generated.

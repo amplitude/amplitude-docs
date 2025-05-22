@@ -1,5 +1,5 @@
 # Summary
-Amplitude calculates session length as the difference between the maximum and minimum client_event_time within a session, excluding any hidden, inactive, or deleted events from this calculation when using session ID as the session property.
+Amplitude calculates session length as the difference between the maximum and minimum client_event_time within a session, excluding hidden, inactive, or deleted events from this calculation when session ID is used as the session property.
 
 # Keywords
 - session length calculation

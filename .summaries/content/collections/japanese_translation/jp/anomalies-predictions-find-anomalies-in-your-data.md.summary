@@ -1,17 +1,17 @@
 ## Summary
-This documentation explains Amplitude's Anomaly + Forecast feature, which helps users distinguish meaningful variations in metrics from statistical noise by highlighting statistically significant deviations based on historical data, and allows projecting metrics into the future for setting realistic goals.
+This documentation explains Amplitude's Anomaly + Forecast feature, which helps distinguish meaningful variations in core metrics from statistical noise by highlighting statistically significant deviations based on historical data, and allows projecting metrics into the future for setting realistic goals.
 
 ## Keywords
 - anomaly detection
 - statistical significance
 - Prophet algorithm
 - confidence intervals
-- forecasting
-- time series data
-- training periods
+- time series forecasting
+- training data periods
 - agile mode
 - robust mode
 - custom mode
-- seasonality detection
+- seasonal trends
 - event segmentation
+- insights package
 - root cause analysis

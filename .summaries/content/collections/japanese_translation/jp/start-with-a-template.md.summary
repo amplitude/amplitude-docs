@@ -1,12 +1,24 @@
-### Summary
-This documentation page explains how to use pre-built templates in Amplitude Analytics to quickly reproduce common analyses and share best practices, with instructions on accessing the Template Gallery from the Amplitude homepage and the option to create custom templates.
+Full content: ---
+id: 03c1ec4e-d17c-4b16-983b-40fefc3b5139
+blueprint: japanese_translation
+title: テンプレートから始める
+title_en: 'Start with a template'
+source: 'https://help.amplitude.com/hc/ja/articles/16798886153883'
+---
+#### この記事のテーマ：
 
-### Keywords
-- Amplitude Analytics templates
-- Template Gallery
-- pre-built analysis templates
-- starter templates
-- custom template creation
-- analysis best practices
-- template access workflow
-- Japanese localization
+* 構築済みのテンプレートで分析を開始
+
+Amplitude Analyticsでは、**テンプレート**を使用することにより、数回のクリックで共通の分析を効率的に再現し、ベストプラクティスを共有することができます。
+
+独自に複数の分析を構築した場合、[独自のテンプレートを作成](/docs/analytics/templates)することも簡単にできます。独自テンプレート作成前でも、**テンプレートギャラリー**でAmplitudeのスターターテンプレートを使用して、ユーザーとその行動に関するインサイトを作成することができます。
+
+![テンプレート](/docs/output/img/jp/tenpureto.png)
+
+関心のあるテンプレートをクリックして開いてください。今後作成するテンプレートも全てこちらにあります。
+
+テンプレートギャラリーは、Amplitudeホームページの*テンプレートから「スタート」*をクリックすると表示されます。
+
+![スタート](/docs/output/img/jp/sutato.png)
+
+[次のセクション、Quick Winsではこれらのスターターテンプレートの使用方法](https://help.amplitude.com/hc/en-us/sections/16796463058587-4-Quick-wins-Get-value-from-Amplitude-right-now)について説明します。

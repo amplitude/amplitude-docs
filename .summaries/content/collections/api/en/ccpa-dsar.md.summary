@@ -1,5 +1,5 @@
 # Summary
-The Data Subject Access Request (DSAR) API enables retrieval of all user data to comply with CCPA requirements through an asynchronous three-step process: POST to create a request, GET to check status, and GET to download data files when complete, with rate limits of 14.4K "cost" per hour and SLAs including 3-day completion time.
+The Data Subject Access Request (DSAR) API enables retrieval of all user data to comply with CCPA requirements through an asynchronous three-step process: POST to create a request, GET to check status, and GET to download data files when complete, with rate limits of 14.4K "cost" per hour and a 3-day SLA for job completion.
 
 # Keywords
 - CCPA compliance

@@ -1,5 +1,5 @@
 ## Summary
-This documentation page details the process of setting up recurring syncs of Amplitude event data to Google BigQuery, including prerequisites (service account setup with specific roles), configuration steps, schema details for Event and Merged User tables, and considerations like table partitioning, integrity checks, and deduplication functions.
+This documentation page details the process of setting up recurring syncs of Amplitude event data to Google BigQuery, including prerequisites, configuration steps, table schemas, and considerations like partitioning, integrity checks, and deduplication to optimize data warehouse integration.
 
 ## Keywords
 - Google BigQuery integration
@@ -7,8 +7,8 @@ This documentation page details the process of setting up recurring syncs of Amp
 - Event table schema
 - Merged User table schema
 - Service account configuration
-- Data deduplication
-- Table partitioning
+- Data partitioning
+- Deduplication function
 - Recurring data sync
-- BigQuery destination setup
-- Event filtering
+- BigQuery warehouse destination
+- IP allowlisting

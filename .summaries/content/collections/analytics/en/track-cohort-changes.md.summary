@@ -1,14 +1,15 @@
 # Summary
-This documentation explains the "cohort population over time" chart in Amplitude Analytics, which displays how behavioral cohort sizes change daily, helping teams track user response to features and campaigns by visualizing membership trends in dynamic cohorts over a predefined timeframe.
+This documentation explains the "cohort population over time" chart in Amplitude Analytics, which displays how behavioral cohort sizes change daily, helping teams track user response to features and campaigns by showing the number of users meeting cohort criteria over a predefined timeframe.
 
 # Keywords
 - cohort population over time
 - behavioral cohorts
 - dynamic cohorts
 - user population trends
-- time series visualization
+- time series analysis
 - power users tracking
-- cohort membership changes
-- user activation analysis
-- cohort growth analysis
+- cohort definition
+- user metrics visualization
+- campaign effectiveness
+- feature response tracking
 - unsupported cohort types

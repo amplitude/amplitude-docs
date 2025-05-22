@@ -5,10 +5,10 @@ This documentation page explains troubleshooting steps for missing data in Ampli
 - instrumentation limit
 - hidden events
 - blocked properties
-- deleted data
 - unplanned data
 - schema configuration
 - data ingestion delay
 - event upload threshold
 - display names
-- Mobile SDK data transmission
+- Mobile SDK
+- Identity API

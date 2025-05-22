@@ -9,10 +9,9 @@ This documentation explains how Amplitude Experiment uses sequential testing (sp
 - False positive control
 - Hypothesis testing
 - Conversion rates
-- Unique metrics
-- Average sum metrics
-- Property sum metrics
 - Absolute lift
 - Relative lift
 - Confidence intervals
-- Statistical power
+- Unique metrics
+- Average sum metrics
+- Property sum metrics

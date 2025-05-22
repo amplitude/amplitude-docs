@@ -1,3 +1,6 @@
-**Summary:** This documentation page is a JSON-formatted layout page with minimal content, containing only metadata fields (id, blueprint, title, layout) where the title and layout are both set to "json", suggesting it's used for rendering JSON data or as a template for JSON responses.
-
-**Keywords:** json layout, blueprint home, JSON template, JSON rendering, metadata structure, minimal content page
+Full content: ---
+id: 4d118d62-2bee-48a6-b385-34226c034e5d
+blueprint: home
+title: json
+layout: json
+---

@@ -10,5 +10,5 @@ This documentation explains how to build retention analytics in Amplitude, detai
 - critical events
 - event properties
 - retention chart configuration
-- breakdown table
 - segment comparison
+- retention visualization

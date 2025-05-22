@@ -1,14 +1,14 @@
 ## Summary
-This documentation page describes the Experiment Management API endpoints for managing deployments, including listing, creating, and editing deployments that experiments or flags can be assigned to, with details on required parameters, request formats, and response structures.
+The Experiment Management API Deployment Endpoints documentation details three REST endpoints for managing deployments in Amplitude Experiment: listing deployments with pagination, creating new deployments with required parameters (projectId, label, type), and editing existing deployments to update labels or archive/restore them.
 
 ## Keywords
-- Experiment Management API
 - deployment endpoints
+- experiment management API
 - list deployments
 - create deployment
 - edit deployment
-- deployment types (client/server)
 - deployment archiving
-- projectId
-- deployment label
-- deployment key
+- client/server deployment types
+- deployment pagination
+- deployment labeling
+- REST API

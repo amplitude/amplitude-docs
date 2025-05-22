@@ -1,57 +1,86 @@
-# Amplitude Experiment: Statistical Analysis and Experiment Design
+# Amplitude Experiment: Product Overview
 
-Amplitude Experiment is a comprehensive experimentation platform that enables product teams to design, run, and analyze experiments for data-driven decision making. The platform combines statistical rigor with practical implementation tools to validate hypotheses about product changes.
+Amplitude Experiment is a statistical experimentation platform that enables users to design, run, and analyze experiments (A/B tests and Multi-Armed Bandits) to measure the impact of product changes. The platform provides robust statistical analysis tools to help users make data-driven decisions based on experiment results.
 
-## Key Features and Capabilities
+## Key Features and Concepts
 
-### Experiment Analysis
-- **Welch's T-test** methodology for comparing means between experiment variants without assuming equal variances
-- **Statistical significance** determination to differentiate real effects from random chance
-- **Confidence intervals** that estimate the true value of metrics with specified confidence levels
-- **Peeking protection** to prevent statistical errors when checking results before experiment completion
+### Experiment Types
+- **A/B Testing**: Traditional hypothesis testing comparing a control group against one or more variants
+- **Multi-Armed Bandit**: Adaptive experimentation that optimizes for performance during the experiment
 
-### Experiment Design
-- **Duration Estimator** that calculates required experiment runtime based on statistical parameters
-- **Sample size calculation** to ensure experiments have sufficient statistical power
-- **A/B Testing** for traditional hypothesis testing with control and treatment groups
-- **Multi-Armed Bandit** experiments that adaptively allocate traffic to better-performing variants
-- **Success and guardrail metrics** configuration to measure primary goals while monitoring for negative impacts
+### Statistical Analysis Tools
+- **Welch's T-test**: Statistical method for comparing means between two populations
+- **Minimum Detectable Effect (MDE)**: The smallest effect size that an experiment can reliably detect
+- **Cumulative Exposure Graph**: Visual tool for monitoring experiment progress and results over time
 
-## Product Relationships and Architecture
+### Experiment Configuration
+- **One-sided vs. Two-sided Tests**: Options for directional or non-directional hypothesis testing
+- **Sample Size Requirements**: Guidelines for ensuring statistical validity
+- **Duration Estimator**: Tool to predict required experiment duration based on metrics and MDE
 
-Amplitude Experiment integrates experiment design and analysis in a structured workflow:
+### Metrics Framework
+- **Success Metrics**: Primary metrics used to determine experiment success
+- **Guardrail Metrics**: Secondary metrics monitored to ensure no negative side effects
+- **Binary Metrics**: Yes/no outcomes (e.g., conversion rates)
+- **Continuous Metrics**: Numerical values with ranges (e.g., revenue, session duration)
 
-1. **Design Phase**: Users define experiment parameters including:
-   - Minimum Detectable Effect (MDE) based on business objectives
-   - Test configuration (one-sided vs. two-sided)
-   - Required sample sizes per variant
+## Product and Feature Relationships
 
-2. **Execution Phase**: 
-   - The platform tracks user interactions across variants
-   - "Cumulative Exposure" visualizations monitor progress toward required sample sizes
+Amplitude Experiment integrates experiment design, execution, and analysis into a cohesive workflow:
+
+1. **Experiment Design Phase**:
+   - Users set the Minimum Detectable Effect (MDE) based on business goals
+   - MDE directly influences sample size requirements and experiment duration
+   - Users select appropriate metrics (success and guardrail)
+
+2. **Experiment Execution Phase**:
+   - Platform allocates users to control and variant groups
+   - For Multi-Armed Bandit experiments, allocation may adjust dynamically
 
 3. **Analysis Phase**:
-   - Statistical tests automatically evaluate variant performance
-   - Results include significance levels, confidence intervals, and p-values
-   - Visualization tools help interpret and communicate findings
+   - Welch's T-test analyzes results for statistical significance
+   - Cumulative Exposure graph visualizes experiment progress over time
+   - Confidence interval bounds help interpret the reliability of results
 
 ## Key Nomenclature and Definitions
 
-- **Minimum Detectable Effect (MDE)**: The smallest meaningful change in a metric that an experiment aims to detect with statistical significance
-- **One-sided Test**: Evaluates if a variant is specifically better (or worse) than control
-- **Two-sided Test**: Evaluates if a variant differs from control in either direction
-- **Central Limit Theorem**: Statistical principle enabling normal distribution assumptions for sample means
-- **Samples Per Variant Needed**: Required user count in each experiment group for statistical validity
-- **Control Mean**: Baseline metric value in the control group used for comparison
-- **Conversion Rate**: Percentage of users completing a desired action
-- **Statistical Power**: Probability of detecting an effect of a given size if it exists (typically set at 80%)
+- **Minimum Detectable Effect (MDE)**: The smallest change in a metric that an experiment can reliably detect with statistical significance. Inversely related to sample size requirements.
 
-## Ecosystem Integration
+- **Welch's T-test**: A statistical test that compares the means of two populations without assuming equal variances, used to determine if differences between control and variant are statistically significant.
 
-Amplitude Experiment appears to be part of the broader Amplitude analytics ecosystem with:
+- **Statistical Significance**: The likelihood that an observed effect is not due to random chance. Typically set at 95% confidence level (p < 0.05).
 
-- Integration with Amplitude's core analytics for metric definition and measurement
-- Capabilities for tracking user behavior across experiment variants
-- Tools designed for both technical and non-technical stakeholders
+- **One-sided Test**: Tests for effects in only one direction (increase or decrease), providing more statistical power but only detecting changes in the specified direction.
 
-The platform bridges the gap between statistical theory and practical business application, enabling teams to design experiments that can detect meaningful changes while efficiently managing resources and timelines.
+- **Two-sided Test**: Tests for effects in either direction, requiring more data but detecting both positive and negative changes.
+
+- **Central Limit Theorem**: Statistical principle that allows for normal distribution assumptions when sample sizes are sufficiently large.
+
+- **Peeking**: The practice of checking experiment results before reaching the predetermined sample size, which can increase false positive rates.
+
+- **False Positive/Negative Rates**: The probability of incorrectly concluding an effect exists (false positive) or missing a real effect (false negative).
+
+- **Confidence Interval Bounds**: Range of values that likely contains the true effect size, indicating the precision of the estimate.
+
+- **Cumulative Exposure Graph**: Visualization showing how experiment metrics evolve over time as more users are exposed to the experiment.
+
+## Product Ecosystem Integration
+
+Amplitude Experiment appears to be part of the broader Amplitude analytics ecosystem, with integration points that allow:
+
+1. Using user behavior data from Amplitude Analytics to inform experiment design
+2. Feeding experiment results back into the analytics platform for deeper analysis
+3. Leveraging existing user segments and cohorts for targeted experimentation
+
+The platform emphasizes a data-driven approach to product development, where experiments are designed with clear hypotheses, appropriate statistical rigor, and business-relevant metrics.
+
+## API and Technical Implementation
+
+While specific API endpoints aren't detailed in the provided documentation, the platform likely includes:
+
+- APIs for creating and configuring experiments
+- Methods for setting MDE and other statistical parameters
+- Endpoints for retrieving experiment results and statistical analyses
+- Integration points with other Amplitude products and potentially third-party tools
+
+The documentation suggests a user-friendly interface for configuring statistical tests and interpreting results, with underlying statistical rigor to ensure valid conclusions.

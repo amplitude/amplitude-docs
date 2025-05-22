@@ -10,5 +10,5 @@ This documentation page explains how to migrate from Marketing Analytics Browser
 - identityStorage
 - cookieOptions
 - plugin interface
-- user-agent enrichment
+- user agent enrichment
 - web attribution

@@ -9,6 +9,6 @@ This documentation explains how to create custom events in Amplitude by grouping
 - Funnel analysis
 - Event Segmentation
 - Event property filtering
-- Data analysis
-- Custom event limitations
-- Event conversion
+- [Custom] prefix
+- Data navigation
+- Event selection

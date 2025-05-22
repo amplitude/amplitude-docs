@@ -1,12 +1,18 @@
-## Summary
-This configuration file defines the structure and behavior for SDK instrumentation documentation pages, specifying their routing pattern ('/sdks/{slug}'), sort direction, date visibility rules, and preview settings, while injecting a navigation title of "get_started".
-
-## Keywords
-- SDK instrumentation
-- documentation structure
-- route configuration
-- date_behavior
-- preview_targets
-- nav_title injection
-- content collection configuration
-- yaml configuration
+Full content: title: Instrumentation
+template: default
+layout: layout
+revisions: false
+route: '/sdks/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: get_started
+structure:
+  root: false

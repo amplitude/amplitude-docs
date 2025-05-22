@@ -1,15 +1,17 @@
 # Summary
-This documentation page introduces Amplitude SQL, a feature of the Query product that allows users on Growth and Enterprise plans to write custom SQL queries against their Amplitude data in Snowflake, explaining the setup process, syntax requirements, and how to visualize, share, and export query results.
+This documentation page introduces Amplitude SQL, a feature of the Query product that allows users on Growth and Enterprise plans to write custom SQL queries against their Amplitude data in Snowflake, with details on setup, syntax, visualization options, and limitations including 30-minute data loading intervals and 1,000-row export limits.
 
 # Keywords
 - Amplitude SQL
 - Snowflake database
 - Query add-on
-- custom SQL queries
+- custom SQL
 - event_properties
 - user_properties
 - variant data type
 - $events table
-- query visualization
-- data export
+- data visualization
+- SQL autocomplete
 - Growth/Enterprise plans
+- 30-minute data loading
+- 1000-row export limit

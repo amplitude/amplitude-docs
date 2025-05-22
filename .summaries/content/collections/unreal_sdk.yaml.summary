@@ -1,12 +1,20 @@
-## Summary
-Documentation for the Unreal SDK, which provides analytics functionality for Unreal Engine games, organized as a collection with a specific mount point and routing structure for analytics SDK content.
-
-## Keywords
-- Unreal SDK
-- analytics
-- mount point
-- route configuration
-- preview targets
-- date behavior
-- collection structure
-- analytics_sdks navigation
+Full content: title: 'Unreal SDK'
+sites:
+  - en
+propagate: false
+template: default
+layout: layout
+mount: 97dd7ffb-8cc4-4826-a344-c695de884a05
+revisions: false
+route: '/sdks/analytics/unreal/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: analytics_sdks

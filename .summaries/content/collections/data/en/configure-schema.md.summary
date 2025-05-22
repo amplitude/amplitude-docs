@@ -1,5 +1,5 @@
 # Summary
-This documentation explains how to configure schema settings in Amplitude to handle unexpected data through three violation types: unplanned event types, unplanned properties, and unplanned property values, with options to mark as unexpected or reject the data, and provides ways to view validation errors and manage email notifications.
+This documentation explains how to configure schema settings in Amplitude to handle unexpected data through three violation types: unplanned event types, unplanned properties, and unplanned property values, with options to mark as unexpected or reject the data, and provides ways to view validation errors and manage notification subscribers.
 
 # Keywords
 - schema violations
@@ -10,5 +10,5 @@ This documentation explains how to configure schema settings in Amplitude to han
 - reject data
 - validation errors
 - schema settings
-- email notifications
+- notification subscribers
 - data ingestion control

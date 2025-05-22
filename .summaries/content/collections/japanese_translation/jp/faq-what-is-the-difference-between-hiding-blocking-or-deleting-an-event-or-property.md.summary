@@ -9,6 +9,6 @@ This documentation explains the differences between hiding, blocking, and deleti
 - Data management
 - Instrumentation limits
 - Monthly event volume
-- Drop filters
-- Data visibility settings
-- Event processing
+- Dropdowns visibility
+- Data ingestion
+- Chart queries

@@ -1,12 +1,21 @@
-## Summary
-This YAML configuration defines the "Audiences" collection, specifying its routing pattern (/data/audiences/{slug}), display settings, and behavior properties including site availability (en), propagation settings (false), and date-based visibility rules.
-
-## Keywords
-- Audiences collection
-- data routing
-- collection configuration
-- date_behavior
-- preview_targets
-- structure settings
-- sort_dir
-- revisions disabled
+Full content: title: Audiences
+sites:
+  - en
+propagate: false
+template: default
+layout: layout
+revisions: false
+route: '/data/audiences/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: data
+structure:
+  root: false

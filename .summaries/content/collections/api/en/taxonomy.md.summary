@@ -3,18 +3,18 @@ The Taxonomy API allows Enterprise users to programmatically manage their event 
 
 ## Keywords
 - taxonomy-api
-- event-schema
+- event-schema-management
 - event-categories
 - event-types
 - event-properties
 - user-properties
 - group-properties
-- schema-management
 - property-classifications
-- property-visibility
-- property-overrides
-- data-types
-- PII-classification
-- property-restoration
-- API-rate-limits
 - schema-planning
+- property-overrides
+- property-visibility
+- data-types
+- property-restoration
+- enterprise-feature
+- rate-limits
+- concurrent-limits

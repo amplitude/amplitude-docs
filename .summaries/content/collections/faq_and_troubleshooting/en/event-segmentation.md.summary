@@ -10,10 +10,11 @@ This documentation page covers frequently asked questions about Amplitude's Even
 - Account filtering
 - Custom formulas
 - ROLLWIN formula
-- PROP() calculations
 - Active % metric
-- New User definition
+- PROP() calculations
 - Data point discrepancies
+- New User definition
+- Microscope user download
 - CSV export limitations
 - Glob match filtering
-- Microscope user download
+- Incomplete data errors

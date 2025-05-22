@@ -2,4 +2,4 @@
 This documentation page provides a comprehensive guide for migrating from Mixpanel to Amplitude, covering the implementation process, suggested use cases by industry, taxonomy mapping, instrumentation methods, historical data migration options, and data privacy considerations, including a specific Mixpanel import tool with troubleshooting tips.
 
 ## Keywords
-mixpanel-migration, data-taxonomy, implementation-process, instrumentation-methods, event-tracking, batch-event-upload, user-identification, historical-data-migration, industry-use-cases, mixpanel-import-tool, data-privacy, method-mapping, troubleshooting, GDPR-compliance
+mixpanel-migration, data-taxonomy, implementation-process, instrumentation-methods, event-tracking, batch-event-upload, historical-data-migration, industry-use-cases, method-mapping, mixpanel-import-tool, user-identification, data-privacy, GDPR-compliance, troubleshooting

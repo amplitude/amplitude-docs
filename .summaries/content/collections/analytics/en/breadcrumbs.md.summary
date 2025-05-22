@@ -1,14 +1,14 @@
 # Summary
-Breadcrumbs is an Amplitude feature that tracks and organizes analysis steps, allowing users to document their analytical journey, add notes, and easily convert charts into shareable Notebooks without opening multiple tabs, making complex analyses more manageable and providing context for stakeholders.
+Breadcrumbs is an Amplitude feature that tracks and organizes analysis steps, allowing users to document their analytical journey with notes and charts, which can be compiled into interactive Notebooks for sharing with stakeholders without opening multiple tabs.
 
 # Keywords
-- analysis tracking
-- chart evolution
-- notebook integration
-- analytical workflow
-- stakeholder context
-- chart documentation
-- analysis history
-- chart sharing
-- analysis bookmarking
-- chart annotations
+- Analysis tracking
+- Chart evolution history
+- Notebook integration
+- Analytical workflow documentation
+- Chart bookmarking
+- Analysis context preservation
+- Stakeholder sharing
+- Interactive analysis format
+- Chart thumbnails
+- Analysis notes

@@ -1,13 +1,13 @@
 ## Summary
-This documentation page titled "Surveys" contains a grid layout template for displaying survey-related content, using a responsive design that adjusts columns based on screen size and renders child items as clickable cards with title and blurb content.
+This documentation page defines the structure for the "Surveys" landing page, which displays a grid of child survey pages with titles and blurbs, each linking to their respective URLs and featuring hover effects.
 
 ## Keywords
-- surveys
+- surveys landing page
 - grid layout
-- responsive columns
-- card design
-- children template
-- hover effects
-- Gellix font
+- child page display
+- title rendering
 - landing_blurb
-- content collection
+- hover effects
+- responsive columns
+- Gellix font
+- markdown rendering

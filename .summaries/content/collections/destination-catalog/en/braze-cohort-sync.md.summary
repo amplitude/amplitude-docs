@@ -1,15 +1,16 @@
 # Summary
-This documentation page details the Braze Cohort Sync integration with Amplitude Data, explaining how to configure the connection using Braze credentials (Data Import Key, Endpoint, API Key), set up user property mapping, and sync Amplitude cohorts to Braze for targeted marketing campaigns.
+This documentation page details the Braze Cohort Sync integration with Amplitude Data, explaining how to configure the connection using Braze API credentials, sync Amplitude cohorts to Braze, and use these cohorts for targeted marketing campaigns in Braze, with automatic email notifications for sync job status.
 
 # Keywords
 - Braze cohort sync
 - Amplitude Data integration
 - Data Import Key
-- REST API endpoint
 - App Group REST API Key
+- Braze endpoint
 - User property mapping
 - Cohort synchronization
 - Marketing automation
-- User targeting
 - Segment creation
-- Real-time sync
+- Sync cadence options
+- Email notifications
+- User matching

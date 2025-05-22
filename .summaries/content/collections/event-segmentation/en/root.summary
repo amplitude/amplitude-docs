@@ -1,85 +1,99 @@
-# Amplitude Event Segmentation
+# Event Segmentation in Amplitude
 
-## Product Overview
+Event Segmentation is a core analytics capability in Amplitude that allows users to analyze and visualize user behavior data by tracking events and their properties over time. This feature enables product teams to understand how users interact with their products, identify patterns, and make data-driven decisions.
 
-Amplitude Event Segmentation is an analytics tool that enables users to analyze user behavior by tracking and visualizing event data. The product allows for detailed analysis of how users interact with applications or websites by breaking down events by various properties and segments. Event Segmentation provides multiple visualization options, measurement types, and advanced analytical features to help users understand patterns in their data and derive actionable insights.
+## Key Features and Concepts
 
-Key features include:
-- Multiple measurement options (Uniques, Event Totals, Active %, etc.)
-- Various chart visualization types (line, stacked area, bar charts)
-- Custom formulas for complex analyses
-- In-line custom event creation
-- Rolling averages and windows
-- Period-over-period comparisons
-- Real-time segmentation
+- **Event Analysis**: Track and analyze specific user actions (events) within your product
+- **Segmentation**: Break down user behavior by various properties and segments
+- **Multiple Measurement Types**: Analyze data using different metrics like uniques, totals, averages, etc.
+- **Customizable Visualizations**: View data through various chart types including line, bar, and stacked area charts
+- **Advanced Analysis Tools**: Apply rolling averages, cumulative sums, and period-over-period comparisons
+- **Custom Formulas**: Create complex calculations using mathematical operations on event data
+- **In-line Event Creation**: Combine multiple events on-the-fly without creating permanent custom events
 
-## Product Relationships and Features
+## Building Event Segmentation Charts
 
-### Core Components
+The Event Segmentation chart building process follows these steps:
 
-1. **Event Selection and Filtering**
-   - Users can select specific events to analyze
-   - Events can be filtered by properties
-   - In-line custom events allow combining multiple events with OR logic
+1. **Select Events**: Choose the specific user actions you want to analyze
+2. **Apply Properties**: Filter events based on their properties to focus on specific scenarios
+3. **Choose Measurement Type**: Select how to quantify the events (uniques, totals, etc.)
+4. **Segment Users**: Break down the analysis by user segments or properties
+5. **Customize Visualization**: Select chart type and adjust display options
 
-2. **Measurement Options**
-   - Uniques: Counts unique users who performed an event
-   - Event Totals: Counts total occurrences of an event
-   - Active %: Percentage of active users who performed an event
-   - Average: Average number of times users performed an event
-   - Frequency: Distribution of event frequency across users
-   - Properties: Measurements based on event property values
-   - Formula: Custom calculations using events and mathematical operations
+## Measurement Types
 
-3. **Visualization Types**
-   - Line charts
-   - Stacked area charts
-   - Bar charts (vertical and horizontal)
-   - Stacked bar charts
-   - Group-by visualizations for complex analyses
-   - Absolute totals vs. relative percentages
+Event Segmentation offers several measurement options:
 
-4. **Advanced Analysis Features**
-   - Rolling Averages: Smooths cyclical data using unweighted means
-   - Rolling Windows: Aggregates data over specified periods
-   - Cumulative Sum: Displays running totals over time
-   - Real-time Segmentation: Analyzes data as it comes in
-   - Period-over-period comparison: Compares current data to historical periods
+- **Uniques**: Count of unique users who performed an event (default)
+- **Event Totals**: Total number of times an event occurred
+- **Active %**: Percentage of users who performed an event out of total active users
+- **Average**: Average number of times users performed an event
+- **Frequency**: Distribution of users based on how many times they performed an event
+- **Properties**: Measurements based on event property values:
+  - Sum
+  - Average
+  - Minimum
+  - Maximum
+  - Percentiles
+  - Histogram
+- **Formula**: Custom calculations using mathematical operations
 
-5. **Custom Formulas**
-   - Metrics formulas: Basic arithmetic operations between events
-   - Aggregation formulas: UNIQUES, TOTALS, PROPSUM
-   - Function formulas: CUMSUM, ROLLAVG
+## Custom Formulas
 
-## Key Nomenclature and Definitions
+Custom formulas allow for complex analyses by combining events and applying mathematical operations:
 
-- **Event**: A specific user action or occurrence tracked in the system
-- **In-line Custom Events**: Temporary combinations of multiple events created within charts
-- **Segment**: A defined subset of users based on properties or behaviors
-- **Group-by**: A method to split analysis by specific user or event properties
-- **Breakdown Table**: Displays numerical data corresponding to chart visualizations
-- **Microscope Feature**: Allows drilling down into specific data points
-- **Rolling Average**: Statistical technique that smooths data by averaging over a moving time window
-- **Cumulative Sum (CUMSUM)**: Running total that accumulates values over time
-- **Measured As Module**: Component for selecting how event data is calculated and displayed
-- **Y-axis Configuration**: Settings to adjust how data is scaled and displayed vertically
-- **Dual Y-axis**: Feature allowing two different scales on the same chart
+- **Metrics Formulas**: Basic operations on event metrics (e.g., `A + B`, `A / B`)
+- **Aggregation Formulas**: Functions like `CUMSUM()` and `ROLLAVG()`
+- **Function Formulas**: Advanced operations like `PROPSUM()` and `UNIQUES()`
 
-## Product Ecosystem Integration
+Syntax example: `UNIQUES(A) / UNIQUES(B) * 100` to calculate conversion rate percentage.
 
-Event Segmentation appears to be a core analytical tool within the broader Amplitude analytics platform. It integrates with:
+## In-line Custom Events
 
-1. **Funnel Analysis**: In-line custom events created in Event Segmentation can be used in funnel charts
-2. **Custom Events**: Temporary in-line events can be saved as permanent custom events for reuse
-3. **Data Tables**: Custom formulas can be applied in both Event Segmentation and Data Table charts
+In-line custom events allow users to:
+- Combine multiple events using OR logic directly within charts
+- Apply event property filters to these combined events
+- Create temporary event combinations without creating permanent custom events
+- Save frequently used combinations for reuse
 
-## API and Technical Implementation
+## Visualization and Interpretation
 
-The documentation doesn't explicitly mention API endpoints or command line invocations. However, it does reference:
+Event Segmentation offers multiple visualization options:
 
-- The ability to save custom events created in-line for future use
-- Formula syntax for creating custom calculations (e.g., A+B, A/B, etc.)
-- Letter designations (A, B, C) used to reference events in formulas
-- Beta feature status for in-line custom events
+- **Line Charts**: Track trends over time
+- **Stacked Area Charts**: Show composition of total values
+- **Bar Charts**: Compare discrete values
+- **Stacked Bar Charts**: Compare composition across categories
+- **Group-by Visualizations**: Add additional dimensions to analysis
 
-The product appears to be primarily accessed through a web interface where users can build, customize, and save analytical charts through a point-and-click interface with options for more advanced customization through formulas and configuration settings.
+The breakdown table provides detailed metrics for each segment, and users can toggle between absolute values and relative percentages.
+
+## Advanced Analysis Features
+
+- **Rolling Averages**: Smooth data by averaging values over a specified number of periods
+- **Rolling Windows**: Aggregate data over custom time windows (days, weeks, months)
+- **Cumulative Sum**: Display running totals over time
+- **Real-time Segmentation**: View data as it comes in with minimal delay
+- **Period-over-period Comparison**: Compare current data with previous time periods
+
+## Integration in the Product Ecosystem
+
+Event Segmentation serves as a foundational analysis tool within Amplitude's analytics platform. It provides the data visualization capabilities that support other features like Funnels, Retention, and Pathfinder. Insights from Event Segmentation can be:
+
+- Saved to dashboards for ongoing monitoring
+- Shared with team members
+- Used to create cohorts for further analysis
+- Exported for use in other tools
+
+## Key Terminology
+
+- **Events**: Specific user actions tracked in your product
+- **Properties**: Attributes associated with events or users
+- **Segments**: Groups of users based on behavior or characteristics
+- **Measurement**: Method of quantifying event data
+- **Breakdown Table**: Detailed metrics for each segment in the analysis
+- **CUMSUM**: Cumulative sum function for running totals
+- **ROLLAVG**: Rolling average function for data smoothing
+- **Group-by**: Additional dimension for segmenting data

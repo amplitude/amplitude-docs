@@ -1,12 +1,19 @@
-## Summary
-This YAML configuration file defines the structure and behavior of the "APIs" collection, specifying its routing pattern ('/apis/{slug}'), sort direction (ascending), visibility rules for dated content, and preview target settings.
-
-## Keywords
-- collection configuration
-- APIs collection
-- route pattern
-- sort_dir
-- date_behavior
-- preview_targets
-- propagate settings
-- template definition
+Full content: title: APIs
+sites:
+  - en
+propagate: false
+template: default
+layout: layout
+revisions: false
+route: '/apis/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: apis

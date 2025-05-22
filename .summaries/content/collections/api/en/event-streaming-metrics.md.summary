@@ -14,5 +14,5 @@ The Event Streaming Metrics Summary API allows monitoring of delivery metrics fo
 - successAfterRetry
 - eventsExpired
 - eventsDiscarded
-- rate-limiting
 - 90-day retention
+- rate limits

@@ -6,10 +6,9 @@ This documentation explains how to use Amplitude's self-service data deletion fe
 - event deletion
 - property deletion
 - deletion task
-- scan limits
+- scan limits (1B/10B events)
 - administrator privileges
 - deletion queue
 - deletion clauses
 - server upload time
-- Growth plan
-- Enterprise plan
+- irreversible deletion

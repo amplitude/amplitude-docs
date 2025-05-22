@@ -5,10 +5,10 @@ This documentation explains how to set up SCIM provisioning in Amplitude, which 
 - SCIM provisioning
 - User Management API
 - Enterprise plan
-- Permission groups
 - Okta integration
 - SCIM 2.0 standard
+- Permission groups
 - SCIM key generation
-- User provisioning
+- User attributes
 - Identity provider integration
-- User attributes synchronization
+- Provisioning actions

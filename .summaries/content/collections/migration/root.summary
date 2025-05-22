@@ -1,75 +1,126 @@
-# Amplitude Migration Suite
+# Amplitude Migration Guide
 
 ## Product Overview
 
-Amplitude Migration Suite is a comprehensive set of tools, documentation, and methodologies designed to facilitate the transition from various analytics platforms to Amplitude's analytics ecosystem. The suite supports migrations from major analytics providers including Segment, mParticle, Adobe Analytics, Mixpanel, and Google Analytics (GA4). It enables organizations to maintain data continuity, preserve historical insights, and leverage Amplitude's advanced analytics capabilities with minimal disruption to existing workflows.
+Amplitude is an analytics platform for tracking and analyzing user behavior data. The migration documentation provides comprehensive guidance for transitioning from various analytics platforms to Amplitude, including Adobe Analytics, Google Analytics, Mixpanel, mParticle, and Segment. The guides focus on preserving data continuity, mapping existing tracking implementations, and ensuring proper validation of migrated data.
 
 ## Key Features and Concepts
 
-- **Platform-Specific Migration Paths**: Tailored migration approaches for each source platform (Segment, mParticle, Adobe Analytics, Mixpanel, GA4)
-- **Implementation Conversion**: Detailed code examples for converting tracking implementations across platforms
-- **Data Model Mapping**: Comprehensive guidance on mapping source platform concepts to Amplitude's data model
-- **Historical Data Migration**: Methods for backfilling historical data from previous platforms
-- **Validation Tools**: Processes and tools to verify successful migration
-- **Cross-Platform Support**: Migration paths for Browser, iOS, and Android implementations
-- **Low-Code Options**: Plugin-based approaches for simpler migrations (particularly for GA4)
+- **Cross-Platform Migration Support**: Detailed migration paths from major analytics platforms
+- **Multiple Migration Approaches**: Options for both low-code/no-code migrations and complete SDK replacements
+- **Historical Data Migration**: Methods to backfill historical data to maintain reporting continuity
+- **Data Validation Tools**: Built-in validation mechanisms like Ingestion Debugger and User Lookup
+- **SDK Implementation**: Cross-platform SDK support for Browser, iOS, and Android
+- **Data Taxonomy Mapping**: Guidance on mapping existing data models to Amplitude's event-based schema
 
 ## Product Relationships and Features
 
-The Migration Suite consists of several interconnected components:
+### Migration Pathways
 
-1. **Source Platform Connectors**: Platform-specific integration points that understand the data models and implementation patterns of source platforms
-2. **SDK Implementation Converters**: Tools and documentation to help convert existing tracking code to Amplitude equivalents
-3. **Data Validation Framework**: Methods to ensure data integrity during and after migration
-4. **Historical Data Import Tools**: Specialized tools like the Mixpanel Import Tool for historical data migration
+1. **Adobe Analytics to Amplitude**:
+   - Maps Adobe's variable system (eVars, props) to Amplitude's event properties
+   - Provides client-side and server-side implementation strategies
+   - Includes report replication guidance
 
-These components work together to provide a complete migration path from legacy analytics platforms to Amplitude's ecosystem.
+2. **Google Analytics (GA4) to Amplitude**:
+   - Offers a low-code Google Analytics event forwarding plugin
+   - Provides a BigQuery Import beta option
+   - Includes code replacement examples for converting gtag functions to Amplitude SDK calls
+
+3. **Mixpanel to Amplitude**:
+   - Features a dedicated Mixpanel import tool for historical data
+   - Provides industry-specific use case recommendations
+   - Includes detailed method mapping between platforms
+
+4. **mParticle to Amplitude**:
+   - Focuses on source/destination configuration
+   - Provides SDK implementation conversion examples
+   - Includes user identity mapping guidance
+
+5. **Segment to Amplitude**:
+   - Covers source/destination configuration
+   - Provides method conversion examples (identify, track, group)
+   - Includes cross-platform SDK implementation guidance
 
 ## Key Nomenclature and Definitions
 
-- **Source Platform**: The original analytics platform from which data is being migrated (Segment, mParticle, etc.)
-- **Destination Configuration**: Amplitude-specific settings that determine how data is received and processed
-- **Event Tracking**: The process of capturing user interactions as discrete events
-- **Identify Method**: Function used to associate user properties with a specific user ID
-- **Group Method**: Function used to associate users with organizational entities
-- **Data Model Mapping**: The process of translating concepts from source platforms to Amplitude equivalents
-- **Backfill**: The process of importing historical data from previous platforms
-- **Ingestion Debugger**: Tool for validating proper data flow into Amplitude
-- **User Lookup**: Tool for verifying user identification in Amplitude
-- **Tracking Plan**: Documentation of events, properties, and user attributes to be captured
+- **Event Properties**: Contextual data points equivalent to eVars in Adobe or custom dimensions in Google Analytics
+- **User Properties**: Persistent attributes associated with a user across sessions
+- **Identify Method**: Function to associate events with specific user identities
+- **Track Method**: Primary function to record events in Amplitude
+- **Group Method**: Function to associate users with organizational entities
+- **Ingestion Debugger**: Tool for validating proper event tracking implementation
+- **User Lookup**: Tool for verifying user identity and associated events
+- **Tracking Plan**: Documentation outlining events, properties, and user attributes to track
+- **Backfill**: Process of importing historical data from a previous analytics platform
+- **Data Taxonomy**: Organizational structure of events, properties, and user attributes
 
 ## Product Ecosystem Integration
 
-Amplitude Migration Suite integrates with the broader Amplitude product ecosystem in several ways:
+Amplitude integrates with the broader analytics ecosystem through:
 
-- **Amplitude CDP**: The migration tools feed data into Amplitude's Customer Data Platform for unified customer profiles
-- **Amplitude Analytics**: Migrated event data becomes available for analysis in Amplitude's core analytics platform
-- **Amplitude Browser/iOS/Android SDKs**: Migration paths provide implementation guidance for all major Amplitude SDKs
-- **Amplitude Data Import APIs**: Used for historical data migration and backfilling
+- **Direct SDK Implementation**: Native SDKs for Browser, iOS, and Android platforms
+- **CDP Integration**: Compatibility with Customer Data Platforms like Segment and mParticle
+- **Tag Management Systems**: Support for tag managers mentioned in the Adobe migration documentation
+- **Server-Side Sources**: Ability to receive data from server-side implementations
+- **Data Import Tools**: Specialized tools for importing historical data from other platforms
 
-The Migration Suite serves as an onboarding bridge to the full Amplitude platform, ensuring that organizations can transition smoothly while preserving their analytics history and insights.
+## API and Implementation Examples
 
-## Implementation Methods
+### Browser SDK Implementation
 
-The Migration Suite offers multiple implementation approaches:
+```javascript
+// Initializing Amplitude
+amplitude.init('YOUR_API_KEY');
 
-1. **SDK Replacement**: Complete replacement of source platform SDKs with Amplitude equivalents
-   - Browser: `amplitude.track("Event Name", {property: "value"})` replacing `analytics.track()`
-   - iOS: `Amplitude.instance().logEvent("Event Name", withEventProperties: ["property": "value"])` 
-   - Android: `Amplitude.getInstance().logEvent("Event Name", JSONObject properties)`
+// Tracking an event
+amplitude.track('Button Clicked', {
+  buttonColor: 'blue',
+  buttonText: 'Submit'
+});
 
-2. **Event Forwarding**: For platforms like GA4, a plugin-based approach that listens for events and forwards them to Amplitude
-   - Example: `amplitudeGoogleAnalytics.init({apiKey: "YOUR_AMPLITUDE_API_KEY"})`
+// Identifying a user
+amplitude.identify(new amplitude.Identify()
+  .set('email', 'user@example.com')
+  .set('plan', 'premium'));
+```
 
-3. **Server-Side Implementation**: Options for server-side tracking conversion
+### iOS SDK Implementation
 
-4. **Tag Management Integration**: Guidance for implementing through tag management systems
+```swift
+// Initializing Amplitude
+Amplitude.instance().initializeApiKey("YOUR_API_KEY")
 
-## Validation and Troubleshooting
+// Tracking an event
+Amplitude.instance().logEvent("Button Clicked", withEventProperties: [
+  "buttonColor": "blue",
+  "buttonText": "Submit"
+])
 
-The Migration Suite includes several validation methods:
+// Identifying a user
+let identify = AMPIdentify()
+identify.set("email", value: "user@example.com")
+identify.set("plan", value: "premium")
+Amplitude.instance().identify(identify)
+```
 
-- **Ingestion Debugger**: Verifies events are being properly received
-- **User Lookup**: Confirms user identification is working correctly
-- **Event Comparison**: Tools to compare event volumes between platforms
-- **Mixpanel Import Tool Troubleshooting**: Specific guidance for resolving issues with historical data imports
+### Android SDK Implementation
+
+```java
+// Initializing Amplitude
+Amplitude.getInstance().initialize(getApplicationContext(), "YOUR_API_KEY");
+
+// Tracking an event
+JSONObject eventProperties = new JSONObject();
+eventProperties.put("buttonColor", "blue");
+eventProperties.put("buttonText", "Submit");
+Amplitude.getInstance().logEvent("Button Clicked", eventProperties);
+
+// Identifying a user
+Identify identify = new Identify()
+  .set("email", "user@example.com")
+  .set("plan", "premium");
+Amplitude.getInstance().identify(identify);
+```
+
+Each migration guide provides platform-specific implementation details for converting from source platforms to Amplitude equivalents, ensuring smooth transitions while maintaining data integrity and reporting continuity.

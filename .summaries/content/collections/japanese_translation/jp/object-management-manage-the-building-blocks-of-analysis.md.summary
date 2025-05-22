@@ -13,3 +13,5 @@ This documentation page explains Amplitude's Object Management feature, which al
 - bulk deletion
 - object ownership
 - permissions
+- usage tracking
+- chart integration

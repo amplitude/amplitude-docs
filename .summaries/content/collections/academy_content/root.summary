@@ -1,64 +1,62 @@
 # Amplitude Analytics Platform Overview
 
-Amplitude is a comprehensive product analytics platform that helps businesses understand user behavior, optimize product experiences, and drive growth through data-driven insights. The platform consists of several integrated products that work together to provide a complete analytics and optimization solution.
+Amplitude is a comprehensive product analytics platform that helps businesses understand user behavior, optimize product experiences, and drive growth through data-driven insights. The platform offers an integrated suite of products for analytics, data management, experimentation, and user engagement.
 
-## Key Products and Features
+## Core Products and Capabilities
 
 ### Amplitude Analytics
-The core analytics platform for analyzing user behavior and product performance:
-- **Event Segmentation Chart**: Analyzes user behavior patterns, tracks metrics over time, and segments data by user properties
-- **Funnel and Path Analyses**: Diagnoses conversion issues by visualizing customer journeys and drop-off points
-- **Retention Analysis**: Measures and improves user retention to drive product adoption
-- **Stickiness Analysis**: Identifies power users by analyzing return frequency and engagement patterns
-- **User Sessions Chart**: Analyzes time spent in products with configurable session tracking
-- **Journeys Chart**: Visualizes user flows and transitions between events
-- **Data Tables**: Enables multi-dimensional analysis of multiple metrics across different segments
-- **Session Replay**: Provides video-like recordings of user interactions for qualitative insights
+The central analytics engine providing tools to understand user behavior:
+- **Event Segmentation Chart**: Tracks specific user actions and behaviors
+- **Funnel and Path Analysis**: Diagnoses conversion issues in user flows
+- **Retention Analysis**: Measures how users return to products over time
+- **Stickiness Analysis**: Identifies power users through regular usage patterns
+- **User Sessions**: Analyzes time spent and engagement patterns
+- **Journeys**: Maps and confirms user paths through products
+- **Data Tables**: Enables multi-dimensional analysis across metrics
+- **Session Replay**: Provides video recordings of actual user sessions
 
 ### Amplitude Data
-Handles data collection, management, and integration:
-- **Autocapture and Visual Labeling**: Automatically tracks website clicks without manual instrumentation
-- **Warehouse-Native Amplitude**: Enables direct querying of data warehouses for self-serve analytics
-- **Data Taxonomy Design**: Frameworks and best practices for creating effective data structures
+The foundation layer for data collection and management:
+- **Data Taxonomy Design**: Structured frameworks for organizing event data
+- **User Tracking**: Methods to identify and track unique users
+- **Warehouse-Native Amplitude**: Direct querying of data warehouses
 
 ### Amplitude Experiment
-Platform for running controlled experiments:
-- **Web Experimentation**: Tools for improving conversion rates in web experiences
-- **Feature Flags**: Management of feature releases with targeted rollouts and monitoring
+Platform for controlled testing and feature management:
+- **Web Experimentation**: Tools for testing and optimizing web experiences
+- **Feature Flags and Rollouts**: Controlled feature releases with targeting
 
 ### Amplitude Engage
-Tools for targeted user engagement:
-- **Guides and Surveys**: Delivers in-product messages to drive user adoption and engagement
+Tools for targeted user communication:
+- **Guides and Surveys**: In-product messaging to drive adoption and retention
 
-## Collaboration and Organization
+## Collaboration and Integration
 
-- **Spaces**: Organizational system for teams to collect, organize, and share analytics assets (charts, dashboards, notebooks) with permission management
-
-## Integrations
-
-- **HubSpot Integration**: Connects customer data to personalize journeys and improve lead scoring
-- **Google Ads Integration**: Analyzes marketing performance alongside product usage data
+- **Spaces**: Collaborative workspaces for sharing Amplitude assets
+- **Third-party Integrations**:
+  - **Google Ads**: Combines marketing and product usage data
+  - **HubSpot**: Enhances customer journey personalization
 
 ## Key Nomenclature and Definitions
 
-- **Events**: User actions tracked within a product (clicks, page views, transactions)
-- **Properties**: Additional context about events or users (location, device type, preferences)
-- **Cohorts**: Groups of users who share common characteristics or behaviors
-- **Sessions**: Periods of continuous user activity within a product
-- **Funnels**: Sequential series of steps users take toward a conversion goal
-- **Retention**: Measurement of how users return to a product over time
-- **Stickiness**: Frequency of user engagement with a product
-- **Data Taxonomy**: Structured organization of event and property definitions
-- **Unique User Tracking**: Identification of users across devices and sessions
+- **Events**: Trackable user actions within a product
+- **Cohorts**: User groups with shared characteristics or behaviors
+- **Sessions**: Periods of continuous user activity
+- **Retention**: Measurement of returning users over time
+- **Stickiness**: Frequency of user engagement
+- **Funnels**: Sequential conversion steps
+- **Paths**: User navigation routes through a product
+- **Data Taxonomy**: Structured organization of event data
+- **Feature Flags**: Controls for enabling/disabling features
+- **Autocapture**: Automatic tracking of website interactions
+- **Visual Labeling**: Visual method for categorizing tracked elements
 
 ## Product Ecosystem Integration
 
-Amplitude's products form a complete analytics and optimization workflow:
+The Amplitude platform operates as an integrated ecosystem:
+1. **Data Collection** (Amplitude Data): Gathers and organizes user behavior data
+2. **Analysis** (Amplitude Analytics): Provides tools to extract insights
+3. **Experimentation** (Amplitude Experiment): Tests new features based on insights
+4. **Engagement** (Amplitude Engage): Acts on insights through targeted messaging
 
-1. **Data Collection & Management**: Amplitude Data captures and organizes user behavior data
-2. **Analysis & Insights**: Amplitude Analytics provides tools to understand user behavior
-3. **Testing & Optimization**: Amplitude Experiment enables testing of new features
-4. **Engagement & Action**: Amplitude Engage helps target users with relevant messaging
-5. **Collaboration & Sharing**: Spaces facilitate team collaboration around insights
-
-This integrated ecosystem supports product-led growth strategies across marketing, product, and development teams by enabling a continuous cycle of data collection, analysis, experimentation, and engagement.
+This creates a complete cycle from data collection to action, with each product building upon the capabilities of the others. The Amplitude Academy provides learning resources for all aspects of the platform, with dedicated courses for different user roles and use cases.

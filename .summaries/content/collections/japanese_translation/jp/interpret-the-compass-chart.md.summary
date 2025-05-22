@@ -1,14 +1,14 @@
 ## Summary
-This documentation explains how to interpret Amplitude's Compass chart, which shows correlations between user events and retention, helping identify which events lead to sustainable product growth by displaying a heatmap of user events with correlation scores and providing detailed statistical breakdowns for analysis.
+This documentation explains how to interpret Amplitude's Compass chart, which shows correlations between user events and retention. It details how to read the heatmap, understand correlation scores, create cohorts from results, select different metrics, and view statistical significance, emphasizing that correlation does not imply causation.
 
 ## Keywords
 - Compass chart
 - Correlation scores
 - Retention analysis
-- Event frequency
-- Heatmap visualization
+- Heatmap interpretation
+- User events correlation
+- Predictive categories (highly/moderately/slightly predictive)
+- Contingency tables
 - Statistical significance
-- Cohort creation
-- Predictive metrics
-- Matthews correlation
-- True positive/negative ratios
+- Positive predictive value (PPV)
+- Negative predictive value (NPV)

@@ -3,11 +3,12 @@ This documentation explains how to use Atlassian Smart Links to embed Amplitude 
 
 ## Keywords
 - Atlassian Smart Links
-- Amplitude chart previews
+- Amplitude charts
 - Confluence integration
 - Jira integration
-- Trello integration
-- chart embedding
-- URL previews
+- chart previews
+- URL embedding
 - unsupported chart types
-- authentication permissions
+- Trello integration
+- authorization workflow
+- disconnection process

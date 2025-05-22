@@ -2,13 +2,13 @@
 This documentation page describes how to integrate Amplitude's Session Replay with Rudderstack using a wrapper that updates Rudderstack's track and page methods to include Session Replay properties, mapping Rudderstack's Anonymous ID to Amplitude's Device ID and Rudderstack's Session ID to Amplitude's Session ID.
 
 # Keywords
-- Rudderstack integration
 - Session Replay wrapper
+- Rudderstack integration
 - deviceId mapping
 - sessionId mapping
 - Cloud-mode support
-- rudderAnalytics.track override
-- rudderAnalytics.page override
+- rudderAnalytics.track
+- rudderAnalytics.page
 - getSessionReplayProperties
 - sampleRate configuration
 - ad blocker compatibility

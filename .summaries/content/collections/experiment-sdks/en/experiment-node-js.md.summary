@@ -12,6 +12,8 @@ The Amplitude Experiment Node.js SDK documentation provides implementation detai
 - AmplitudeCookie
 - deployment key
 - variant fetching
-- timeout configuration
-- flag configs
+- flag configuration
 - assignment tracking
+- serverZone
+- timeout configuration
+- retry configuration

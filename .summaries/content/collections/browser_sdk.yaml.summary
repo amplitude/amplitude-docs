@@ -1,12 +1,19 @@
-## Summary
-This configuration file defines the structure and behavior for the Browser SDK documentation section, specifying its template, layout, mounting point, routing pattern, and navigation settings for the Analytics SDKs documentation.
-
-## Keywords
-- Browser SDK
-- Analytics SDKs
-- documentation structure
-- mount point
-- routing configuration
-- preview targets
-- date behavior
-- navigation injection
+Full content: title: 'Browser SDK'
+template: default
+layout: layout
+mount: d97ddfe8-6b08-4dce-91dc-53d41ef7eb0a
+revisions: false
+route: '/sdks/analytics/browser/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: analytics_sdks
+structure:
+  root: false

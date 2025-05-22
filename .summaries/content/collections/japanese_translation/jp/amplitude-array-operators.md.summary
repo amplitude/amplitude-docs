@@ -1,16 +1,13 @@
 # Summary
-This documentation page explains Amplitude's array operators (is, is not, contains, does not contain, set is, set is not, set contains, set does not contain) with visual diagrams to help users understand the nuances of each operator when building charts in Amplitude.
+This documentation page explains Amplitude's array operators (`is`, `is not`, `contains`, `does not contain`, `set is`, `set is not`, `set contains`, `set does not contain`) with visual diagrams to help users understand the nuances of each operator when building charts in Amplitude.
 
 # Keywords
 - array operators
-- is/equals
-- is not/does not equal
-- contains
-- does not contain
-- set is/set equals
-- set is not/set does not equal
-- set contains
-- set does not contain
+- is/is not operators
+- contains/does not contain
+- set is/set is not
+- set contains/set does not contain
 - chart building
-- visual diagrams
+- data filtering
+- visual operator diagrams
 - Japanese translation

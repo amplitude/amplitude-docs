@@ -1,14 +1,14 @@
 ## Summary
-This documentation details the Airship destination integration with Amplitude, allowing users to sync cohorts from Amplitude to Airship for targeted messaging across channels. It covers prerequisites for linking identifiers between services, setup steps in both platforms, and the process for syncing behavioral cohorts as tags in Airship.
+This documentation details the Airship destination integration with Amplitude, enabling users to sync cohorts from Amplitude to Airship for targeted messaging across channels. It covers setup requirements in both platforms, code samples for linking identifiers, and the process for syncing behavioral cohorts as tags in Airship's messaging system.
 
 ## Keywords
 - Airship cohort syncing
 - UAChannelID mapping
-- customer engagement
-- push notifications
-- behavioral cohorts
-- tag groups
-- Amplitude integration
-- cross-channel messaging
-- user segmentation
-- identifier linking
+- Amplitude tag group
+- Customer engagement
+- Push notifications
+- Behavioral cohorts
+- Cross-platform identifier linking
+- Tag-based targeting
+- Amplitude Activation
+- Real-time data streaming

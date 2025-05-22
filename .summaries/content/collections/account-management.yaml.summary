@@ -1,3 +1,18 @@
-**Summary:** This YAML configuration defines the structure for an "Account Management" collection in the admin area, specifying its routing pattern (/admin/account-management/{slug}), sort direction, date visibility behavior, and preview settings, while injecting a nav_title of "admin" and disabling revisions.
-
-**Keywords:** account-management collection, admin route, date_behavior, preview_targets, nav_title injection, sort_dir, revisions disabled, collection configuration
+Full content: title: 'Account Management'
+template: default
+layout: layout
+revisions: false
+route: '/admin/account-management/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: admin
+structure:
+  root: false

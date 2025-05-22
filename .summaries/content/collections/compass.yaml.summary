@@ -1,3 +1,19 @@
-**Summary:** This YAML configuration defines the Compass collection in Statamic, specifying its template, layout, mount point, routing pattern for analytics charts, and behavior settings including sort direction, date visibility rules, and preview targets.
-
-**Keywords:** Compass collection, analytics charts, mount point ec246386-8753-4106-a8f7-5410c227fa23, revisions disabled, date_behavior, preview_targets, structure root false, nav_title injection
+Full content: title: Compass
+template: default
+layout: layout
+mount: ec246386-8753-4106-a8f7-5410c227fa23
+revisions: false
+route: '/analytics/charts/compass/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: charts
+structure:
+  root: false

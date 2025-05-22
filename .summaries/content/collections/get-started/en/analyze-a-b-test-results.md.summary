@@ -9,9 +9,9 @@
 - Experiment variations
 - Split testing
 - Experiment groups
+- Segmentation module
 - Identify API
-- User property per experiment
-- User property for all experiments
-- Experiment segmentation
-- Funnel analysis
-- Experiment instrumentation
+- Per-experiment properties
+- All-experiments property
+- Experiment analysis
+- Optimizely integration

@@ -2,129 +2,132 @@
 
 ## Product Overview
 
-Amplitude offers analytics tracking solutions for Android applications through two main SDK variants:
+Amplitude's Android SDK ecosystem consists of multiple libraries for tracking analytics events in Android applications. The ecosystem includes:
 
-1. **Android-Kotlin SDK** (`com.amplitude:analytics-android`) - The actively developed, modern SDK built for Kotlin-first development with full Java support.
-2. **Android SDK** (`com.amplitude:android-sdk`) - The legacy SDK in maintenance mode, not receiving new features.
+1. **Android-Kotlin SDK** (`com.amplitude:analytics-android`) - The current, actively developed SDK
+2. **Android SDK** (`com.amplitude:android-sdk`) - The legacy SDK in maintenance mode
+3. **Ampli Wrapper** - A code-generated, strongly-typed layer that enforces tracking plan schemas
 
-The SDKs enable developers to track user behavior, identify users, manage sessions, and capture events in Android applications. They support both automatic event capture and manual event tracking with customizable properties.
+The SDKs enable developers to track user behavior, identify users, manage sessions, and send analytics data to Amplitude's servers. They support both Java and Kotlin development environments.
 
 ## Product Relationships and Features
 
-### SDK Variants and Status
+### Android-Kotlin SDK
 
-- **Android-Kotlin SDK**: The current, actively developed SDK that uses a plugin architecture for extensibility. It's built with Kotlin but fully supports Java applications.
-- **Android SDK**: The legacy SDK in maintenance mode, still functional but not receiving new features. Developers are encouraged to migrate to the Android-Kotlin SDK.
-- **Ampli Wrapper**: A code-generated layer that sits on top of either SDK to provide type-safe analytics based on tracking plans defined in Amplitude Data.
+The Android-Kotlin SDK is the current recommended implementation for Android applications. Key features include:
 
-### Core Features Across SDKs
+- Modern plugin architecture for extensibility
+- Autocapture capabilities for sessions, app lifecycles, screen views, deep links, and element interactions
+- User identification and property management
+- Session tracking and management
+- Event batching and offline support
+- Privacy controls (COPPA compliance)
+- Device ID management
+- Revenue tracking
+- Group identification
 
-1. **Event Tracking**
-   - Manual event tracking with custom properties
-   - Automatic event capture (screen views, app lifecycle events)
-   - Revenue tracking for purchase events
+### Legacy Android SDK
 
-2. **User Management**
-   - User identification with unique IDs
-   - User property tracking and updates
-   - Cross-platform user identity management
+The legacy Android SDK is in maintenance mode and no longer receives feature updates. It provides:
 
-3. **Session Management**
-   - Automatic session tracking
-   - Configurable session timeouts
-   - Background/foreground transition handling
+- Basic event tracking
+- User identification
+- Revenue tracking
+- Session management
+- Middleware capabilities
+- Offline mode
+- Device ID management
 
-4. **Device Information**
-   - Device ID management
-   - Optional advertising ID tracking
-   - Device properties collection
+### Ampli Wrapper
 
-5. **Data Management**
-   - Offline event storage
-   - Batched event uploading
-   - Event filtering and transformation
+The Ampli Wrapper sits on top of either SDK and provides:
 
-6. **Privacy Controls**
-   - EU data residency support
-   - COPPA compliance options
-   - Opt-out mechanisms
-
-### Android-Kotlin SDK Specific Features
-
-- Plugin architecture for extensibility
-- Network tracking plugin for HTTP request monitoring
-- Element interaction tracking
-- Improved configuration API
-- Better type safety with Kotlin
+- Strongly typed API based on Amplitude Data tracking plans
+- Autocompletion for events and properties
+- Schema enforcement to prevent instrumentation errors
+- Methods that map to the underlying SDK functionality
 
 ## Key Nomenclature and Definitions
 
-- **Ampli Wrapper**: A code-generated SDK wrapper that provides type-safe analytics based on tracking plans.
-- **Tracking Plan**: A schema that defines expected events and their properties.
-- **Device ID**: A unique identifier for the device, persisted across app installations.
-- **User ID**: A custom identifier set by the application to identify a specific user.
-- **Event**: An action or occurrence tracked in the application.
-- **Identify**: Operations that update user properties without sending events.
-- **Group**: A collection of users that can be analyzed together.
-- **Session**: A period of continuous user engagement with the app.
-- **Middleware**: Components that can intercept and modify events before they're sent.
-- **Plugin**: Modular components that extend SDK functionality in the Android-Kotlin SDK.
-- **Flush**: The process of sending batched events to Amplitude servers.
+- **Track/LogEvent**: Methods to record user actions and events
+- **Identify**: API for setting user properties
+- **Device ID**: Unique identifier for a device, with configurable lifecycle management
+- **User ID**: Custom identifier for a user that persists across devices
+- **Session**: A period of user engagement with the app
+- **Event**: A discrete user action or occurrence to be tracked
+- **Plugins**: Modular components that extend SDK functionality in the Android-Kotlin SDK
+- **Middleware**: Extension points in the legacy Android SDK
+- **Tracking Plan**: Schema definition of events and properties in Amplitude Data
+- **GroupIdentify/SetGroup**: Methods for identifying and setting properties for groups of users
+- **Flush**: Method to immediately send queued events to Amplitude servers
+- **LoadOptions**: Configuration options for initializing the Ampli Wrapper
+- **EventOptions**: Per-event configuration options
 
 ## Product Ecosystem Integration
 
-The Android SDKs integrate with the broader Amplitude ecosystem:
+The Android SDKs are part of Amplitude's broader analytics platform:
 
-1. **Amplitude Analytics**: The SDKs send data to Amplitude Analytics for visualization and analysis.
-2. **Amplitude Data**: Provides tracking plans that can be used with the Ampli Wrapper for type-safe analytics.
-3. **Experiment**: Can be used alongside the SDKs for A/B testing and feature flagging.
-4. **Cross-Platform Identity**: The SDKs support Amplitude's cross-platform user identity system.
+1. They send data to Amplitude's analytics backend for processing and visualization
+2. The Ampli Wrapper integrates with Amplitude Data for tracking plan management
+3. The SDKs can be used alongside other Amplitude products like Experiment for A/B testing
 
-The Ampli Wrapper connects with Amplitude Data through the `ampli` CLI tool, which can pull tracking plan updates and check implementation status.
+The Android-Kotlin SDK's plugin architecture allows integration with other services and custom functionality.
 
 ## API Endpoints and Commands
 
-### Android-Kotlin SDK Key Methods
+### Android-Kotlin SDK
 
 ```kotlin
 // Initialization
-val amplitude = Amplitude(Configuration(
-    apiKey = "YOUR-API-KEY",
-    context = applicationContext
-))
+val amplitude = Amplitude(
+    Configuration(
+        apiKey = "YOUR-API-KEY",
+        context = applicationContext
+    )
+)
 
-// Event tracking
-amplitude.track("Event Name", mapOf("property" to "value"))
+// Track events
+amplitude.track("Button Clicked", mapOf("buttonColor" to "blue"))
 
-// User identification
-amplitude.setUserId("user@example.com")
-amplitude.identify(Identify().set("property", "value"))
-
-// Group operations
-amplitude.setGroup("groupType", "groupName")
-amplitude.groupIdentify("groupType", "groupName", Identify().set("property", "value"))
+// Identify users
+amplitude.identify(
+    Identify().set("email", "user@example.com")
+)
 
 // Flush events
 amplitude.flush()
+
+// Set user ID
+amplitude.setUserId("user-123")
 ```
 
-### Ampli CLI Commands
+### Ampli Wrapper
 
-```bash
-# Pull tracking plan updates
-ampli pull
+```kotlin
+// Initialization
+ampli.load(LoadOptions(client = amplitude))
 
-# Check implementation status
-ampli status
+// Track typed events
+ampli.songPlayed(
+    SongPlayed.Properties(songId = "song-123", songName = "Bohemian Rhapsody")
+)
+
+// Identify users
+ampli.identify("user-123", Identify().set("plan", "premium"))
+
+// Flush events
+ampli.flush()
+
+// CLI Commands
+// ampli pull - Pull tracking plan
+// ampli status - Check tracking plan status
 ```
 
-### Migration Path
+### Migration Commands
 
-When migrating from the legacy Android SDK to the Android-Kotlin SDK, developers need to:
+When migrating from the legacy SDK to the Android-Kotlin SDK:
 
-1. Update dependencies from `com.amplitude:android-sdk` to `com.amplitude:analytics-android`
-2. Replace initialization code with the new Configuration object
-3. Update method calls according to the new API (e.g., `logEvent()` to `track()`)
-4. Adapt to the new plugin architecture for custom functionality
-
-The migration documentation provides detailed mapping between old and new APIs to facilitate this transition.
+1. Update dependency from `com.amplitude:android-sdk` to `com.amplitude:analytics-android`
+2. Replace `Amplitude.getInstance().initialize()` with `Amplitude(Configuration())`
+3. Replace `logEvent()` with `track()`
+4. Replace `uploadEvents()` with `flush()`

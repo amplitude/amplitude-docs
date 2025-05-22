@@ -1,14 +1,14 @@
 # Summary
-The Split integration allows exporting Amplitude cohorts to use as segmentation and targeting criteria in Split for feature flags, requiring setup of API keys, workspace ID, environment ID, and traffic type ID in Split, followed by configuration in Amplitude Data Catalog and mapping of user identifiers between systems.
+This documentation page details the integration between Amplitude and Split, allowing users to export Amplitude cohorts to Split for use in feature flag targeting and segmentation. The setup process requires collecting API keys and IDs from Split, configuring the connection in Amplitude, and then syncing cohorts with a limit of 100,000 users.
 
 # Keywords
-- feature flags
-- cohort export
-- segmentation targeting
-- user identifier mapping
-- API key configuration
-- workspace ID
-- environment ID
-- traffic type ID
-- sync cadence
-- 100,000 user limit
+- Amplitude cohort export
+- Split feature flags
+- User segmentation
+- API integration
+- Traffic type ID
+- Workspace ID
+- Environment ID
+- Impact-Driven Development
+- Cohort sync cadence
+- User identifier mapping

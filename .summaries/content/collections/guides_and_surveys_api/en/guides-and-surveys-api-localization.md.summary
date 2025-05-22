@@ -3,13 +3,12 @@ The Guides and Surveys Localization API (Beta) enables programmatic import and e
 
 # Keywords
 - XLIFF 1.2
-- Guides and Surveys Localization API
-- Import Translations
-- Export Translations
+- translation import/export
+- guides and surveys localization
 - Basic Authentication
-- Translation file structure
-- Variant support
-- Target language
-- Source language
+- file structure
 - trans-unit elements
-- Cache purging
+- variant support
+- target-language
+- source-language
+- cache purging

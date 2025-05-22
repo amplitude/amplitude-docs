@@ -1,5 +1,5 @@
 # Summary
-This documentation explains how to configure Single Sign-On (SSO) for Amplitude using Microsoft Azure Active Directory, including step-by-step instructions for setting up the integration in Azure portal and uploading the metadata file to Amplitude's organization settings.
+This documentation page explains how to configure Single Sign-On (SSO) integration between Amplitude and Microsoft Azure Active Directory for Scholarship, Growth, and Enterprise plan customers, including step-by-step instructions for setting up the application in Azure portal and configuring the necessary metadata exchange.
 
 # Keywords
 - Microsoft Azure Active Directory

@@ -2,13 +2,13 @@
 This documentation explains the Behavioral Offset feature in Amplitude, which allows segmenting users based on behaviors across two different time periods. It provides implementation steps for creating inline cohorts with behavioral offsets, including how to set rolling windows and offsets to identify users who performed specific actions across different timeframes.
 
 ## Keywords
-- Behavioral offset
-- Inline cohorts
-- Rolling windows
-- Time period segmentation
-- Customer milestones
-- User behavior comparison
-- Enterprise feature
-- Segmentation module
-- Previous period events
-- Current period events
+- behavioral offset
+- inline cohorts
+- rolling windows
+- time period segmentation
+- user behavior comparison
+- customer milestones
+- cohort segmentation
+- enterprise feature
+- event segmentation
+- offset functionality

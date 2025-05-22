@@ -1,61 +1,64 @@
-# Amplitude Product Suite Overview
+# Amplitude Product Overview
 
-Amplitude is a comprehensive analytics and data platform designed to help businesses understand user behavior, optimize experiences, and drive growth through data-driven decisions. The platform consists of four integrated products that work together to provide end-to-end capabilities for collecting, analyzing, and acting on user data.
+Amplitude is a comprehensive digital analytics platform that helps businesses understand user behavior, optimize product experiences, and drive growth through data-driven insights. The platform consists of several integrated products designed to work together to provide a complete view of the customer journey.
 
-## Core Products
+## Core Products and Features
 
-### Amplitude Analytics
-A behavioral analytics platform that enables teams to understand user interactions and journeys. Key capabilities include tracking user events, creating custom analyses, and deriving insights from user behavior patterns. Analytics serves as the central insight engine of the Amplitude ecosystem.
+1. **Amplitude Analytics** - The flagship product for tracking and analyzing user behavior across digital products.
+2. **Amplitude Data** - A data management solution for integrating, processing, and preparing analytics data.
+3. **Amplitude Experiment** - A feature flagging and experimentation platform for testing product changes.
+4. **Amplitude Session Replay** - A tool for capturing and reviewing actual user sessions to understand behavior in context.
 
-### Amplitude Data
-The foundational data management solution that handles integration, processing, and governance of user data from multiple sources. It serves as the underlying infrastructure for all other Amplitude products, ensuring data quality and consistency across the platform.
+### Key Capabilities
+- Event tracking and user property management
+- SDK implementation across multiple platforms
+- Custom analysis features and formulas
+- User identification and cohort analysis
+- Feature flag management and A/B testing
+- Data integration with external systems
 
-### Amplitude Experiment
-A feature flagging and experimentation platform that allows teams to test hypotheses, roll out features gradually, and measure the impact of changes on user behavior and business metrics. It leverages insights from Analytics to enable data-driven experimentation.
+## Product Relationships and Ecosystem
 
-### Amplitude Session Replay
-A visual analytics tool that records and replays user sessions to provide qualitative context around quantitative data. This helps teams understand exactly how users interact with their products and complements the numerical insights from Analytics.
+The Amplitude platform is built around a central data infrastructure that connects all products:
 
-## Product Architecture and Relationships
+- **Analytics** serves as the core analysis engine, consuming data from various sources
+- **Data** provides the integration layer for bringing information into the Amplitude ecosystem
+- **Experiment** leverages user data from Analytics to target and measure experiments
+- **Session Replay** adds qualitative context to the quantitative data in Analytics
 
-The Amplitude platform follows an integrated architecture where:
-
-- **Amplitude Data** forms the foundation layer, handling all aspects of data collection, processing, and management
-- **Amplitude Analytics** builds upon this data layer to provide insights and visualization capabilities
-- **Amplitude Experiment** utilizes analytics insights to enable targeted experimentation and feature rollouts
-- **Session Replay** adds qualitative visual context to complement the quantitative data analysis
-
-Data flows seamlessly between these products, creating a continuous workflow from data collection to insight generation to action implementation. This integrated approach ensures consistency and enables teams to move quickly from observation to action.
+These products are designed to work together seamlessly while also functioning independently based on customer needs.
 
 ## Key Nomenclature and Definitions
 
-- **Events**: Discrete user actions or interactions tracked within a product (e.g., button clicks, page views)
-- **User Properties**: Attributes associated with users that provide context for analysis (e.g., demographics, subscription status)
-- **Custom Formulas**: User-defined calculations for specialized metrics tailored to specific business needs
-- **SDKs**: Libraries for different programming languages that enable integration with Amplitude
-- **Feature Flags**: Toggles that control feature availability for specific user segments during experimentation
-- **User Identification**: Methods for recognizing and tracking unique users across multiple sessions and devices
+- **Events** - User actions tracked within digital products
+- **User Properties** - Attributes associated with users that persist across sessions
+- **Cohorts** - Groups of users who share common behaviors or attributes
+- **Feature Flags** - Toggles that enable/disable features for specific users
+- **SDKs (Software Development Kits)** - Libraries for implementing Amplitude in various platforms
+- **APIs** - Programmatic interfaces for interacting with Amplitude services
 
-## Integration Capabilities
-
-Amplitude provides extensive integration options with external systems:
-
-### APIs
-The platform offers APIs for programmatic access to its capabilities, though specific endpoints are not detailed in the current documentation.
+## Technical Implementation
 
 ### SDKs
-Amplitude provides SDKs for various platforms and languages to facilitate data collection and integration. These SDKs enable:
-- Event tracking across different platforms
-- User identification and property management
-- Integration with native application environments
+Amplitude provides SDKs for various platforms to implement tracking in applications. These SDKs handle event batching, user identification, and data transmission to Amplitude servers.
 
-The platform supports multiple programming languages for implementation, as indicated by the tabs component used for displaying code examples in different languages.
+### APIs
+Amplitude offers several APIs for programmatic interaction with the platform:
+1. **Analytics API** - For sending events and querying analytics data
+2. **Experiment API** - For managing feature flags and experiments
+3. **Data API** - For data integration and management
 
-## Documentation Structure
+### Documentation Structure
+The documentation is organized into language-specific sections:
+- **English (en)** - The primary documentation containing comprehensive product information
+- **Japanese (jp)** - A localized version with translated content for Japanese-speaking users
 
-The documentation utilizes specialized components to enhance usability:
-- **Tabs**: For displaying code examples in different programming languages
-- **Collapsible sections**: For organizing detailed information
-- **Admonitions**: Various types (note, info, warning, example, tip, alpha, beta, deprecated) for highlighting different types of content
+The Japanese documentation maintains its own dedicated home page ("jp-home") while sharing the overall structure of the main documentation. It appears to use a translation workflow where content can be derived from original English pages.
 
-These components provide clear visual cues for different types of information and improve the overall documentation experience.
+### Content Components
+The documentation includes several formatting components:
+1. **Tabs Partial** - For organizing content into tabbed interfaces
+2. **Collapse Partial** - For creating expandable/collapsible sections
+3. **Admonition Partial** - For highlighting important information with styling options (Note, Warning, Info)
+
+The documentation is managed through a content collection system, likely using a static site generator with content stored in Markdown format with YAML frontmatter for metadata.

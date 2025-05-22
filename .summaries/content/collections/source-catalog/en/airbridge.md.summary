@@ -4,11 +4,11 @@ Airbridge is a mobile measurement platform that integrates with Amplitude to sen
 # Keywords
 - mobile measurement platform (MMP)
 - attribution data
-- multi-touch attribution
+- multi-touch attribution (MTA)
 - incrementality measurement
 - user behavior analysis
 - event properties
 - user properties
 - Airbridge dashboard configuration
 - data delivery rules
-- API key integration
+- Amplitude API key

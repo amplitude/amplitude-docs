@@ -1,13 +1,14 @@
 ## Summary
-This documentation explains that Amplitude does not support exporting raw data from specific charts or events, but offers alternatives including the Export API, Amplitude SQL/Snowflake ETL add-on (for Growth and Enterprise accounts), and Amazon S3 exports (for Scholarship, Growth, and Enterprise accounts).
+This documentation explains that Amplitude does not support exporting raw event data directly from charts, but offers alternatives including the Export API, Amplitude SQL/Snowflake ETL add-on (for Growth and Enterprise accounts), and Amazon S3 exports (for Scholarship, Growth, and Enterprise accounts).
 
 ## Keywords
-- raw data export limitations
+- raw data export
 - Export API
-- Amplitude SQL add-on
+- Amplitude SQL
 - Snowflake ETL
 - Amazon S3 export
-- JSON event export
-- data export alternatives
-- chart data extraction
-- event property export
+- event data limitations
+- JSON export
+- data extraction alternatives
+- chart data export
+- event property values

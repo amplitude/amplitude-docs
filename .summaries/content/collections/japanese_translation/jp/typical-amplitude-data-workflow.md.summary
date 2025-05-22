@@ -3,12 +3,12 @@ This documentation explains the typical workflow for Amplitude Data, covering br
 
 ## Keywords
 - Amplitude Data workflow
-- tracking plan branches
+- tracking plan
+- branch management
 - event definition
 - instrumentation
 - merge requests
 - Ampli CLI
 - version publishing
 - cross-team collaboration
-- Git branch synchronization
-- Japanese translation
+- Git integration

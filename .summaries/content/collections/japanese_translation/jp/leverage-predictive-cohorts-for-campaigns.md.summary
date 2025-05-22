@@ -1,5 +1,5 @@
 ## Summary
-This documentation explains how to use predictive cohorts in marketing campaigns, including setting up campaigns across different channels (Facebook, Google, Braze, Iterable), measuring campaign results, and taking action based on those results. It covers three campaign types: inclusion criteria, dynamic pricing, and content personalization, with detailed instructions for synchronizing cohorts and analyzing performance differences between high and low probability user segments.
+This documentation explains how to use predictive cohorts in marketing campaigns, including setting up campaigns across different channels (Facebook, Google, Braze, Iterable), measuring campaign results, and taking action based on those results. It covers three campaign types: inclusion criteria, dynamic pricing, and content personalization, with detailed steps for synchronizing cohorts and analyzing performance differences between high and low probability user segments.
 
 ## Keywords
 - predictive cohorts
@@ -9,11 +9,11 @@ This documentation explains how to use predictive cohorts in marketing campaigns
 - content personalization
 - cohort synchronization
 - campaign measurement
-- lift analysis
-- control groups
 - relative lift
-- Braze integration
-- Iterable integration
+- control groups
 - Facebook custom audiences
-- Google customer lists
+- Braze segments
+- Iterable user lists
 - UTM parameters
+- conversion probability
+- campaign optimization

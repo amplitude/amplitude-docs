@@ -1,17 +1,19 @@
 ## Summary
-This documentation explains the three Journeys visualizations in Amplitude (Pathfinder and Journey Map), detailing how they display user paths through a product, their key features, and how they differ from funnels and legacy versions. The page covers visualization-specific capabilities, path analysis options, and interpretation of path metrics.
+This documentation explains the three Journeys visualizations in Amplitude: Pathfinder (showing user paths through flow diagrams), Journey Map (revealing conversion patterns and timing), and how they complement each other to analyze user behavior through different perspectives while sharing the same underlying data and configuration settings.
 
 ## Keywords
 - Pathfinder visualization
-- Journey Map visualization
+- Journey Map
 - path analysis
 - conversion windows
 - event sequences
 - dropped-off users
-- path percentages
+- path expansion
 - event filtering
-- property expansion
+- property-based filtering
 - session tracking
-- path-to-funnel conversion
-- branching paths
-- event collapse
+- path percentages
+- conversion timing
+- cohort generation
+- event exclusion
+- repeated events

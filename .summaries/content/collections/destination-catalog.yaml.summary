@@ -1,11 +1,21 @@
-## Summary
-This YAML configuration file defines the structure and behavior of the "Destination Catalog" collection in a content management system, specifying its routing pattern (/data/destination-catalog/{slug}), template settings, and taxonomy integration with "integration_category".
-
-## Keywords
-- destination-catalog
-- collection configuration
-- integration_category taxonomy
-- content routing
-- preview targets
-- date_behavior
-- propagation settings
+Full content: title: 'Destination Catalog'
+sites:
+  - en
+propagate: false
+template: default
+layout: layout
+taxonomies:
+  - integration_category
+revisions: false
+route: '/data/destination-catalog/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: destination-catalog

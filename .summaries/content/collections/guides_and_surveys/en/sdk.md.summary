@@ -9,9 +9,8 @@ The Guides and Surveys SDK documentation explains how to integrate Amplitude's G
 - third-party analytics integration
 - setThemeMode
 - addCallback
+- setRouter
 - localization
 - Content Security Policy (CSP)
-- Google Tag Manager
-- router configuration
-- reset/show/list methods
-- troubleshooting
+- event triggers
+- initialization troubleshooting

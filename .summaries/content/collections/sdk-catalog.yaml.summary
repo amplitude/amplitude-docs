@@ -1,11 +1,19 @@
-## Summary
-This YAML configuration defines the structure and behavior for the SDK Catalog collection, specifying its template, layout, routing pattern (/sdks/analytics/{slug}), sorting direction, and preview settings for analytics SDKs documentation.
-
-## Keywords
-- SDK Catalog collection
-- analytics SDKs
-- content routing
-- preview targets
-- date behavior
-- collection configuration
-- mount point 3a6981ac-941a-41f4-b82e-3a660c59cf3a
+Full content: title: 'SDK Catalog'
+template: default
+layout: layout
+mount: 3a6981ac-941a-41f4-b82e-3a660c59cf3a
+revisions: false
+route: '/sdks/analytics/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: analytics_sdks
+structure:
+  root: false

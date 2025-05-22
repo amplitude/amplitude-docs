@@ -1,5 +1,5 @@
 ### Summary
-This documentation explains how to modify default statistical settings in Amplitude Experiment results, including CUPED, Bonferroni correction, custom exposure settings, test types (Sequential vs T-test), and confidence levels, with guidance on when to change these settings for more accurate experiment analysis.
+This documentation explains how to modify default statistical settings in Amplitude Experiment results, including CUPED, Bonferroni correction, custom exposure settings, test types (Sequential vs T-test), and confidence levels. It details when and why to adjust these settings to improve experiment analysis accuracy.
 
 ### Keywords
 - Amplitude Experiment

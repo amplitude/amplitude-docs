@@ -5,47 +5,50 @@ Impact Analysis is a powerful analytical feature in Amplitude that helps product
 ## Key Features and Concepts
 
 ### Core Functionality
-- Measures how first-time engagement with one feature affects the rate of other behaviors
-- Compares user actions before and after triggering a specific "treatment event"
-- Provides visual charts showing the impact of feature interactions on user behavior patterns
-- Available on Amplitude's Growth and Enterprise plans
+- **Causal Inference Visualization**: Impact Analysis charts show how triggering one event affects the frequency of other events
+- **Before-After Comparison**: Compares user behavior before and after their first interaction with a specific feature
+- **Relative n-day Basis**: Analyzes behavior changes on a day-by-day basis relative to when users first triggered the treatment event
+- **Feature Impact Discovery**: Helps teams understand how new features influence broader user behavior patterns
 
 ### Key Metrics
-Impact Analysis provides four primary metrics for analysis:
+1. **Average**: The average number of times users performed the outcome event on each day
+2. **Active %**: The percentage of users who performed the outcome event at least once on each day
+3. **Frequency**: For active users, the average number of times they performed the outcome event on each day
+4. **Properties**: Analyzes how property values change before and after the treatment event
 
-1. **Average**: Shows the average number of times users performed the outcome event before and after the treatment event
-2. **Active %**: Displays the percentage of users who performed the outcome event before and after the treatment event
-3. **Frequency**: Indicates how often users who were already active performed the outcome event
-4. **Properties**: Analyzes changes in event property values before and after the treatment event
+## Relationship Between Features
 
-### Analysis Framework
-- Uses a "relative n-day basis" to normalize time periods before and after the treatment event
-- Compares the same users' behavior before and after their first interaction with a feature
-- Provides segmentation capabilities to analyze impacts across different user groups
+Impact Analysis works in conjunction with other Amplitude features:
+- **Segmentation**: Can be applied to specific user segments for more targeted analysis
+- **Event Properties**: Allows analysis of how property values change after treatment events
+- **Correlation Analysis**: Complements broader correlation analysis by focusing on specific causal relationships
 
-## Nomenclature and Definitions
+## Key Nomenclature and Definitions
 
 - **Treatment Event**: The specific user action or feature interaction being analyzed as the potential cause
-- **Outcome Event**: The subsequent user behavior that might be affected by the treatment event
-- **Relative n-day basis**: A time normalization approach that aligns users based on when they first triggered the treatment event
-- **Causal Inference**: The analytical process of determining whether one event causes another
-- **Alternate Hypotheses**: Other potential explanations for observed behavior changes beyond the treatment event
+- **Outcome Event**: The subsequent user behavior being measured for impact
+- **First-time Engagement**: Analysis focuses on users' first interaction with a feature
+- **Relative n-day Basis**: Time measurement relative to when each user first triggered the treatment event
+- **Causal Inference**: Drawing conclusions about cause-effect relationships between events
+- **Alternate Hypotheses**: Other potential explanations for observed behavior changes
 
-## Integration in Product Ecosystem
+## Product Ecosystem Integration
 
-Impact Analysis serves as a bridge between basic analytics and formal experimentation in the product development workflow:
+Impact Analysis serves as a bridge between basic analytics and experimental validation:
+- Provides initial evidence of causal relationships that can guide formal experimentation
+- Complements A/B testing by identifying potential relationships to test
+- Helps prioritize product development by revealing which features drive desired outcomes
+- Supports data-driven decision making about feature investment
 
-1. Helps identify potential causal relationships between features and user behaviors
-2. Guides hypothesis formation for more rigorous A/B testing
-3. Complements other Amplitude analytics tools by focusing specifically on causal relationships
-4. Provides directional insights that inform experimentation strategy
+## Availability and Access
+
+- Available on Amplitude's Growth and Enterprise plans
+- No specific API endpoints are mentioned in the documentation
 
 ## Best Practices for Interpretation
 
-1. Consider alternate hypotheses for observed changes in behavior
-2. Pay attention to user counts when interpreting results
-3. Use Impact Analysis as guidance for experimentation rather than as a replacement
-4. Be cautious about drawing definitive causal conclusions without additional testing
-5. Consider the specific context and timing of the analysis when interpreting results
-
-Impact Analysis charts are designed to help product teams discover relationships between features and behaviors, providing valuable insights that can guide product development decisions and experimentation strategies.
+1. Consider alternate hypotheses for observed changes
+2. Use as guidance for experimentation rather than as a replacement
+3. Pay attention to user counts when interpreting results
+4. Look for consistent patterns rather than isolated spikes
+5. Consider the time interval appropriate for your specific product and user behavior

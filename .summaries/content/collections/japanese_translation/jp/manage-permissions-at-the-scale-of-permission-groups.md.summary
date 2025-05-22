@@ -12,4 +12,5 @@ This documentation explains how permission groups in Amplitude Enterprise stream
 - team spaces
 - permission management scale
 - permission hierarchy
-- hybrid permission model
+- group creation
+- user invitation

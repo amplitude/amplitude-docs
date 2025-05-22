@@ -1,5 +1,5 @@
 # Summary
-This documentation explains how Web Experiment tracks impression events (`[Experiment] Impression`) for analysis and billing, detailing how these events are transformed during ingestion and how user properties are set/unset based on flag key and variant information, with a formula for estimating monthly impression volume.
+Web Experiment tracks impression events (`[Experiment] Impression`) for analysis and billing, which contain flag key and variant information that sets user properties upon ingestion, with events being transformed from their original format (`$impression`) to Amplitude's standardized format during processing.
 
 # Keywords
 - impression events
@@ -7,8 +7,8 @@ This documentation explains how Web Experiment tracks impression events (`[Exper
 - flag_key
 - variant
 - experiment_key
-- impression estimation
-- MTU
-- event properties
 - user properties
-- $impression
+- MTU estimation
+- CDP integration
+- event tracking
+- billing metrics

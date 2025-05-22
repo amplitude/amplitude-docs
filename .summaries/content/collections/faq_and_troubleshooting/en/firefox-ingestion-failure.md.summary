@@ -9,4 +9,5 @@ This documentation explains why Firefox's tracking protection feature blocks Amp
 - Proxy server solution
 - Failed POST request
 - Firefox strict mode
-- Private browsing
+- Private browsing limitations
+- Domain proxy implementation

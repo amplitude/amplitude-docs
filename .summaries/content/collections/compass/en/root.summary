@@ -1,82 +1,77 @@
-# Amplitude Compass: Predictive User Behavior Analysis
+# Amplitude Compass: User Behavior Analysis for Retention Prediction
 
-Compass is a powerful analytics feature within Amplitude that helps product teams identify which user behaviors best predict retention and conversion. It uses correlation analysis to discover "a-ha moments" - key actions that new users take that significantly increase their likelihood of becoming active, retained users.
+## Product Overview
 
-## Key Features and Capabilities
+Amplitude Compass is an analytics tool that helps product teams identify which user behaviors best predict retention and conversion. The core functionality revolves around analyzing correlations between new user actions and their likelihood to become active, retained users. Compass presents these insights through heat map visualizations that show which events, and when they occur, best predict retention into a second week or beyond.
 
-1. **Correlation Analysis**: Compass analyzes the relationship between user actions and retention outcomes, calculating correlation coefficients (ranging from -1 to 1) to identify predictive behaviors.
+Key features of Compass include:
+- Correlation analysis between user behaviors and retention outcomes
+- Heat map visualization of predictive behaviors
+- Identification of "a-ha moments" that drive user retention
+- Statistical metrics to evaluate potential inflection points
+- Cohort creation based on identified behaviors for further analysis
+- Contingency tables for comparing retention rates
 
-2. **Heat Map Visualization**: Results are displayed in an intuitive heat map that shows which events and when they occur (within a user's first days/weeks) best predict retention.
+Compass is primarily designed for product teams seeking to understand which early user behaviors lead to long-term retention, helping them focus product development and onboarding efforts on the most impactful user actions.
 
-3. **Predictive Categorization**: Correlation scores are categorized as:
-   - Highly Predictive (≥0.4)
-   - Moderately Predictive (0.3-0.4)
-   - Slightly Predictive (0.2-0.3)
-   - Not Predictive (<0.2)
+## Product Relationships and Features
 
-4. **Statistical Significance**: Provides 95% confidence intervals to ensure findings are statistically valid.
+Compass is part of Amplitude's analytics suite and appears to be available to customers on Growth/Enterprise plans. The tool works by analyzing two key cohorts:
 
-5. **Inflection Metrics**: Identifies optimal thresholds for behaviors that maximize predictive power.
+1. **Base Cohort**: The initial user group being analyzed, typically new users
+2. **Target Cohort**: The outcome group, typically users who were retained or converted
 
-6. **Cohort Creation**: Enables creation of cohorts based on discovered behaviors for further analysis and targeting.
+The primary output is the Compass chart, which displays:
+- A heat map visualization showing correlation scores between user events and retention
+- Frequency buckets that segment users by how often they performed specific actions
+- Correlation scores categorized by predictive strength
+- Statistical significance indicators with 95% confidence intervals
 
-## Product Relationships and Architecture
-
-Compass is part of Amplitude's analytics suite, available to Growth and Enterprise plan customers. It integrates with other Amplitude features:
-
-1. **Cohort Analysis**: Compass findings can be used to create and compare cohorts based on specific behaviors.
-
-2. **Retention Analysis**: Works alongside retention charts to identify behaviors that drive long-term retention.
-
-3. **User Behavior Analysis**: Complements Pathfinder and other behavioral analysis tools by identifying which behaviors matter most.
+Compass integrates with Amplitude's cohort creation functionality, allowing users to create and analyze segments based on the behaviors identified as predictive of retention.
 
 ## Key Nomenclature and Definitions
 
-1. **Base Cohort**: The initial group of users being analyzed (typically new users).
-
-2. **Target Cohort**: The outcome group - users who exhibited the desired behavior (retention or conversion).
-
-3. **Range of First Use**: The time period during which user behaviors are analyzed (typically first days/weeks).
-
-4. **Correlation Coefficient**: Statistical measure (-1 to 1) of the relationship between user actions and retention.
-
-5. **Contingency Table/Matrix**: Shows the relationship between predicted and actual outcomes with:
-   - True Positives: Users who performed the action and were retained
-   - False Positives: Users who performed the action but weren't retained
-   - True Negatives: Users who didn't perform the action and weren't retained
-   - False Negatives: Users who didn't perform the action but were retained
-
-6. **Positive Predictive Value (PPV)**: Percentage of users who performed an action and were retained.
-
-7. **Negative Predictive Value (NPV)**: Percentage of users who didn't perform an action and weren't retained.
-
-8. **Sensitivity**: Proportion of retained users who performed the action.
-
-9. **Specificity**: Proportion of non-retained users who didn't perform the action.
-
-10. **Inflection Metrics**: Behaviors with optimal thresholds that maximize predictive power.
-
-11. **Performance Days**: The time period used to measure the target behavior (retention/conversion).
+- **A-ha moments**: Key user experiences that significantly correlate with long-term retention
+- **Correlation scores**: Values ranging from -1 to 1 that measure the relationship between user events and retention
+- **Predictive categorization**:
+  - Highly Predictive: ≥0.4
+  - Moderately Predictive: 0.3-0.4
+  - Slightly Predictive: 0.2-0.3
+  - Not Predictive: <0.2
+- **Inflection metrics**: Behavioral thresholds that predict user retention or conversion
+- **Range of first use**: The time period during which user behaviors are analyzed
+- **Performance days window**: The timeframe used to evaluate user outcomes
+- **Statistical metrics**:
+  - **Proportion above threshold**: Percentage of users who meet a specific behavioral threshold
+  - **Positive Predictive Value (PPV)**: Probability that users who perform an action will be retained
+  - **Sensitivity**: Percentage of retained users who performed the action
+  - **Negative Predictive Value (NPV)**: Probability that users who don't perform an action won't be retained
+  - **Specificity**: Percentage of non-retained users who didn't perform the action
+- **Contingency tables**: 2x2 tables showing the relationship between performing an action and retention outcomes
 
 ## Product Ecosystem Integration
 
-Compass fits into Amplitude's broader product analytics ecosystem by:
+Compass appears to be an analytical tool within Amplitude's broader product analytics ecosystem. It works alongside other Amplitude features:
 
-1. Providing actionable insights that inform product development priorities
-2. Identifying key behaviors to encourage during user onboarding
-3. Supporting growth initiatives by highlighting behaviors that drive retention
-4. Enabling more targeted user segmentation based on predictive behaviors
-5. Complementing other Amplitude tools like Pathfinder, Retention, and Segmentation
+1. It leverages Amplitude's event tracking capabilities to analyze user behaviors
+2. It connects with Amplitude's cohort functionality to create user segments based on identified behaviors
+3. It provides insights that can be used in conjunction with other Amplitude tools for further analysis
 
-## Usage and Implementation
+The workflow typically involves:
+1. Using Compass to identify key predictive behaviors
+2. Creating cohorts based on these behaviors
+3. Analyzing these cohorts further to understand retention differences
+4. Using these insights to inform product development and user onboarding strategies
 
-While specific API endpoints aren't detailed in the documentation, Compass appears to be accessed through the Amplitude web interface. Users can:
+## API and Usage
 
-1. Select a base cohort (typically new users)
-2. Define a target cohort (retained users)
-3. Specify the range of first use and performance days
-4. View the resulting heat map of correlations
-5. Create cohorts based on findings
-6. Export or share insights with team members
+While specific API endpoints aren't explicitly mentioned in the documentation, the Compass chart functionality appears to be accessed through Amplitude's user interface. Users can:
 
-Compass helps product teams answer critical questions like "What behaviors predict user retention?" and "How many times must users perform an action to become retained?" - enabling data-driven product development and growth strategies.
+1. Select base and target cohorts for analysis
+2. View the resulting heat map visualization
+3. Filter and sort results by correlation strength
+4. Create cohorts directly from the Compass chart results
+5. View detailed statistical metrics including PPV, NPV, sensitivity, and specificity
+6. Toggle between different statistical views including correlation scores and positive predictive values
+
+The tool is designed to help product teams answer questions like "What behaviors in the first week predict retention into the second week?" and "What is the minimum threshold of a specific action that predicts user retention?"

@@ -11,6 +11,6 @@ This documentation page explains how to analyze experiment results in Amplitude 
 - sequential test
 - t-test
 - experiment metrics
-- cumulative exposures graph
 - experiment rollback
+- cumulative exposures graph
 - significance badges

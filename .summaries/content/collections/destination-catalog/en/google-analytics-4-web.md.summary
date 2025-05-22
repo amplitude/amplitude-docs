@@ -6,9 +6,9 @@ This documentation details the Google Analytics 4 (Web) streaming integration fo
 - gtag.js implementation
 - Measurement Protocol API Secret
 - Client ID mapping
-- User property forwarding
-- Event streaming configuration
+- event forwarding configuration
+- user property streaming
 - GA4 Measurement ID
-- Delivery metrics validation
-- Non-personalized ads parameter
-- User ID mapping
+- delivery metrics validation
+- non_personalized_ads parameter
+- hybrid tracking method

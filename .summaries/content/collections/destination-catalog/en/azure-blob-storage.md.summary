@@ -1,14 +1,14 @@
 # Summary
-This documentation details the Azure Blob Storage destination in Amplitude, which enables exporting event data and merged user data to Azure containers with hourly recurring syncs, including the required Azure prerequisites (service principal setup with specific permissions), configuration steps, manual export process, and the JSON schema formats for exported data files.
+This documentation details the Azure Blob Storage destination in Amplitude, which enables exporting event data and merged user data to Azure containers with hourly recurring syncs, including the required Azure prerequisites (service principal setup, permissions), configuration steps, manual export process, and the exported data formats for both events and merged Amplitude IDs.
 
 # Keywords
 - Azure Blob Storage destination
-- service principal permissions
-- tenantId, clientId, clientSecret
+- service principal authentication
+- blob storage permissions
 - event data export
 - merged user data
-- backfill functionality
-- hourly data sync
+- recurring sync
+- manual backfill
 - JSON export format
-- Azure container policies
-- IP address allowlisting
+- data partitioning
+- Azure IP allowlisting

@@ -1,14 +1,14 @@
 # Summary
-The User Sessions chart in Amplitude enables analysis of session-based metrics like frequency, duration, and event counts within sessions, helping users understand engagement patterns through metrics such as total sessions, average length, time spent, and event distribution across different user segments.
+The User Sessions chart in Amplitude enables analysis of session-based metrics (frequency, duration, engagement) across user segments, offering various measurement options including total sessions, time spent, average length, length distribution, and event counts within sessions, with customizable filters and segmentation capabilities.
 
 # Keywords
 - Session-based metrics
 - Session length distribution
 - Average session length
 - Sessions per user
-- Event counts within sessions
-- Sessions Module
-- Time spent per user
+- Event counting within sessions
 - Session duration filters
-- Length distribution histogram
-- Custom metric formulas for sessions
+- Time spent per user
+- Session engagement analysis
+- Session measurement options
+- Session segmentation

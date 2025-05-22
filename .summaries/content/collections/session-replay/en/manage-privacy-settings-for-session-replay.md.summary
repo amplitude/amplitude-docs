@@ -1,13 +1,13 @@
 ## Summary
-This documentation explains Session Replay's privacy settings for masking sensitive user data, offering three preset masking levels (Conservative, Light, and Medium) plus custom CSS selector overrides to mask, unmask, or exclude specific elements. The UI settings take precedence over SDK configurations, ensuring organizations can comply with their specific data privacy requirements.
+This documentation explains how to configure privacy settings for Session Replay, allowing organizations to mask sensitive user data during session replays through three preset privacy levels (Conservative, Light, Medium) and custom CSS selector overrides, with UI settings taking precedence over SDK configurations.
 
 ## Keywords
 - Session Replay privacy settings
-- Data masking levels (Conservative, Light, Medium)
+- Data masking levels
 - CSS selector overrides
 - Mask/unmask/exclude elements
-- Privacy configuration precedence
 - Remote configuration
-- PII protection
+- Privacy compliance
+- UI vs SDK conflict resolution
+- Conservative/Light/Medium privacy presets
 - Data attribute selectors
-- Element masking hierarchy

@@ -1,5 +1,5 @@
 # Summary
-This documentation page explains how to synchronize Amplitude cohorts with third-party destinations using three sync methods: one-time sync (single export), scheduled sync (hourly/daily updates with automatic timing), and real-time sync (minute-by-minute updates with specific limitations on cohort size, types, and supported destinations).
+This documentation page explains how to synchronize Amplitude cohorts with third-party destinations using three sync methods: one-time sync (single export), scheduled sync (hourly/daily updates with automatic timing), and real-time sync (minute-by-minute updates with limitations on cohort size, types, and supported destinations).
 
 # Keywords
 - cohort synchronization
@@ -11,4 +11,5 @@ This documentation page explains how to synchronize Amplitude cohorts with third
 - cohort export
 - sync limitations
 - third-party platforms
-- user segment synchronization
+- sync frequency
+- cohort updates

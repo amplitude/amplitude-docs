@@ -1,55 +1,41 @@
 # Amplitude Flutter SDK
 
 ## Overview
+The Amplitude Flutter SDK is a cross-platform analytics solution for tracking user behavior in Flutter applications across iOS, Android, macOS, and web platforms. It provides a unified API for event tracking, user property management, revenue tracking, and session handling while leveraging platform-specific capabilities through its architecture that wraps native SDKs.
 
-The Amplitude Flutter SDK is a cross-platform analytics solution for tracking user behavior in Flutter applications across iOS, Android, macOS, and web platforms. It provides developers with tools for event tracking, user identification, revenue tracking, and session management to gain insights into user interactions and app performance.
+## Key Features
+- **Cross-Platform Support**: Works seamlessly across iOS, Android, macOS, and web
+- **Comprehensive Event Tracking**: Track user interactions and custom events with properties
+- **User Property Management**: Set, update, and manage user attributes
+- **Revenue Tracking**: Monitor purchase events and revenue metrics
+- **Session Management**: Configure and track user sessions
+- **User Grouping**: Associate users with specific groups for segmentation
+- **Batch Processing**: Configure event batching for network efficiency
+- **EU Data Residency**: Support for European data storage requirements
+- **Default Event Tracking**: Automatic tracking of common events (sessions, app lifecycles, deep links)
+- **Dynamic Configuration**: Runtime configuration options for flexibility
 
-The SDK is currently available in two major versions:
-- Flutter SDK 4 (current recommended version) - Features a unified API and improved architecture
-- Flutter SDK 3 (legacy version) - In maintenance mode
+## Product Architecture
+The Flutter SDK functions as a wrapper around platform-specific SDKs:
+- iOS SDK for iOS applications
+- Android SDK for Android applications
+- Browser SDK for web support
 
-Flutter SDK 4 represents a significant architectural improvement, wrapping the latest native SDKs (iOS, Android, and Browser) to provide consistent functionality across platforms.
-
-## Product Relationships and Architecture
-
-The Amplitude Flutter SDK serves as a cross-platform wrapper around platform-specific native SDKs:
-
-1. **Core SDK Layer**: The Flutter package that provides a unified Dart API
-2. **Platform Bridge Layer**: Handles communication between Flutter and native code
-3. **Native SDK Layer**: Platform-specific implementations (iOS, Android, Web)
-
-The SDK follows a modular architecture with these key components:
-- **Amplitude Instance**: The main entry point for all SDK operations
-- **Configuration**: Immutable object pattern for SDK setup
-- **Event Pipeline**: Handles event creation, enrichment, and transmission
-- **Storage Layer**: Manages persistence of events and user properties
+This architecture enables the Flutter SDK to provide consistent APIs while utilizing platform-specific capabilities. Version 4.0 wraps the latest versions of these underlying SDKs.
 
 ## Key Nomenclature and Definitions
+- **BaseEvent**: The fundamental event object in SDK 4.0 representing user actions
+- **DefaultTrackingOptions**: Configuration for automatic event tracking capabilities
+- **identify()**: Method for setting user properties
+- **track()**: Core method for sending events to Amplitude
+- **setGroup()**: Method for associating users with groups
+- **groupIdentify()**: Method for setting group properties
+- **Revenue**: Object for tracking revenue-related events
+- **flush()**: Method to immediately send events to Amplitude servers
+- **Configuration**: Object for configuring SDK behavior
+- **minIdLength**: Parameter for minimum user/device ID length validation
 
-- **BaseEvent**: The fundamental event object structure in SDK 4 that encapsulates all event data
-- **Identify**: Object used for user property operations (set, setOnce, add, etc.)
-- **Revenue**: Specialized event type for tracking monetary transactions
-- **Device ID**: Unique identifier for the device, can be customized or automatically generated
-- **User ID**: Custom identifier for logged-in users
-- **Event Properties**: Key-value pairs attached to events providing additional context
-- **User Properties**: Persistent attributes associated with a user
-- **Session**: A period of user engagement with the app, with configurable timeout
-- **Tracking Options**: Controls which events are automatically tracked by the SDK
-- **Flush**: Process of sending batched events to Amplitude servers
-
-## Integration with Amplitude Ecosystem
-
-The Flutter SDK integrates with the broader Amplitude Analytics platform by:
-
-1. Sending event data to Amplitude's servers for analysis and visualization
-2. Supporting EU data residency for compliance with European regulations
-3. Enabling server-side user property operations
-4. Providing consistent identity management across platforms
-5. Supporting Amplitude's dashboard and reporting tools
-
-The SDK acts as the data collection layer in the Amplitude stack, capturing user behavior that can then be analyzed through Amplitude's Analytics, Experiment, and CDP products.
-
-## API and Implementation
+## Integration and Usage
 
 ### Installation
 ```yaml
@@ -64,9 +50,11 @@ import 'package:amplitude_flutter/amplitude.dart';
 final amplitude = Amplitude.getInstance();
 amplitude.init('API_KEY', 
   Configuration(
-    serverZone: ServerZone.EU,
-    flushQueueSize: 30,
-    flushIntervalMillis: 10000
+    defaultTracking: DefaultTrackingOptions(
+      sessions: true,
+      appLifecycles: true,
+      deepLinks: true
+    )
   )
 );
 ```
@@ -77,66 +65,64 @@ amplitude.init('API_KEY',
 amplitude.track(BaseEvent('Button Clicked'));
 
 // Event with properties
-amplitude.track(BaseEvent('Product Viewed')
-  ..properties = {'productId': '123', 'price': 29.99});
+amplitude.track(BaseEvent('Product Purchased', 
+  eventProperties: {'price': 10.99, 'product_id': '123'}
+));
 ```
 
-### User Identification
+### User Properties
 ```dart
-// Set user ID
-amplitude.setUserId('user@example.com');
-
 // Set user properties
-final identify = Identify()
-  ..set('plan', 'premium')
-  ..add('loginCount', 1);
-amplitude.identify(identify);
+amplitude.identify(Identify()
+  .set('email', 'user@example.com')
+  .set('plan_type', 'premium'));
 
-// Group users
-amplitude.setGroup('organization', 'company_123');
+// Increment properties
+amplitude.identify(Identify()
+  .add('login_count', 1));
 ```
 
 ### Revenue Tracking
 ```dart
-final revenue = Revenue()
-  ..productId = 'product_1'
-  ..price = 3.99
-  ..quantity = 2;
-amplitude.revenue(revenue);
+amplitude.revenue(Revenue()
+  .setProductId('product_id')
+  .setPrice(3.99)
+  .setQuantity(3));
 ```
 
-### Session Management
-```dart
-// Configure session timeout
-amplitude.init('API_KEY', Configuration(
-  minTimeBetweenSessionsMillis: 30000
-));
+## Product Ecosystem Integration
+The Flutter SDK integrates with the broader Amplitude ecosystem, allowing data collected to be:
+- Analyzed in Amplitude Analytics dashboards
+- Used for user segmentation and cohort analysis
+- Connected to other Amplitude products like Experiment for A/B testing
+- Exported to third-party tools through Amplitude's data connections
 
-// Manually start a new session
-amplitude.startNewSession();
+## API Methods
 
-// End the current session
-amplitude.endSession();
-```
+### Core Methods
+- `getInstance()`: Get SDK instance
+- `init(String apiKey, Configuration config)`: Initialize the SDK
+- `track(BaseEvent event)`: Track an event
+- `identify(Identify identify)`: Set user properties
+- `setUserId(String userId)`: Set user ID
+- `setDeviceId(String deviceId)`: Set device ID
+- `logEvent(String eventType, Map<String, dynamic> eventProperties)`: Legacy method for tracking events
+- `uploadEvents()`: Force upload of events
+- `flush()`: Immediately send events to Amplitude
 
-### Flush Control
-```dart
-// Manually flush events
-amplitude.flush();
+### Configuration Options
+- `flushQueueSize`: Number of events to batch before sending
+- `flushIntervalMillis`: Time between event uploads
+- `minIdLength`: Minimum length for user/device IDs
+- `serverZone`: Server location (US or EU)
+- `useBatch`: Enable/disable batch processing
+- `trackingSessionEvents`: Enable/disable session tracking
 
-// Upload events even when offline
-amplitude.uploadEvents();
-```
+## Version Information
+- **Flutter SDK 4.0**: Current recommended version with simplified interfaces and improved functionality
+- **Flutter SDK 3.0**: In maintenance mode, still supported but not actively developed
 
-### Opt-out and Privacy
-```dart
-// Opt out of tracking
-amplitude.setOptOut(true);
-
-// COPPA compliance
-amplitude.init('API_KEY', Configuration(
-  enableCoppaControl: true
-));
-```
-
-The SDK provides platform-specific considerations for iOS (iOS 13.0+ required), Android (Gradle compatibility), and Web (integration with Browser SDK), along with a migration path from v3 to v4 that involves updating the dependency, initialization pattern, and API usage.
+## Platform Requirements
+- **iOS**: Requires iOS 13.0 or higher in SDK 4.0
+- **Android**: Supports Android API level requirements of the underlying Android SDK
+- **Web**: Requires additional configuration for proper initialization

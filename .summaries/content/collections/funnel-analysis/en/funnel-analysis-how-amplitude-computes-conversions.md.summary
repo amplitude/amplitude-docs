@@ -1,14 +1,15 @@
-# Summary
-This documentation explains how Amplitude computes funnel conversions, detailing first-touch attribution scenarios with "Hold property constant" and "Group conversions by" functions, unique user counting logic, and key differences between Funnel and Event Segmentation charts.
+## Summary
+This documentation explains how Amplitude computes funnel conversions, detailing first-touch attribution scenarios with "hold constant" and "group by" functions, unique user counting logic in funnels, and key differences between Funnel and Event Segmentation charts.
 
-# Keywords
-- funnel conversion computation
+## Keywords
+- funnel conversion attribution
 - first-touch attribution
 - hold property constant
 - group conversions by
 - session-based conversion
 - earliest/longest conversion logic
-- unique user counts
 - conversion window
+- unique user counts
+- event totals
 - funnel vs event segmentation
 - landing page attribution

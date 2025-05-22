@@ -9,8 +9,8 @@ This documentation page provides a comprehensive migration guide from the legacy
 - track() API
 - identify() API
 - plugin architecture
-- event tracking
-- user properties
 - web attribution
-- flush mechanism
-- promise-based callbacks
+- event batching
+- HTTP V2 API
+- deviceId requirements
+- flush() method

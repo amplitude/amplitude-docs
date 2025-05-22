@@ -1,16 +1,17 @@
 ## Summary
-Amplitude Data provides governance tools for defining, tracking, verifying, and improving data quality, including planning features to create specifications directly in Amplitude, developer toolkits for type-safe tracking, and data management capabilities for metadata enrichment, data cleanup, custom event creation, and real-time monitoring against defined plans.
+Amplitude Data provides governance tools for defining, tracking, verifying, and improving data quality, including planning features to create specifications directly in Amplitude, the Ampli developer toolkit for type-safe tracking, and data management capabilities for metadata enrichment, data cleanup, custom event creation, and real-time monitoring through observability.
 
 ## Keywords
 - data catalog
 - data governance
+- data planning
 - Ampli developer toolkit
 - type-safe tracking
-- data planning workflow
-- metadata enrichment
 - data observability
-- Data Assistant
+- metadata enrichment
+- data transformation
 - custom events
 - derived properties
+- Data Assistant
 - lookup properties
-- data transformation
+- data quality monitoring

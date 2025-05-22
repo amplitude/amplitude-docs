@@ -2,73 +2,63 @@
 
 ## Overview
 
-Amplitude offers integrations with several privacy management platforms to help organizations manage personal identifiable information (PII) and comply with data privacy regulations such as GDPR and CCPA. These integrations enable automated discovery, classification, retrieval, and deletion of personal data stored within Amplitude's analytics platform.
+Amplitude offers integrations with third-party privacy management platforms to help organizations comply with data privacy regulations such as GDPR and CCPA. These integrations enable automated handling of data subject requests (DSRs), including the identification, retrieval, and deletion of personally identifiable information (PII) stored within Amplitude's analytics platform.
 
-The primary use cases for these integrations include:
-- Fulfilling data subject access requests (DSARs)
-- Executing data deletion requests
-- Maintaining compliance with privacy regulations
-- Automating PII management workflows
-- Discovering and classifying personal data within Amplitude
+The primary use case for these integrations is to streamline compliance with privacy regulations by automating the process of responding to user requests regarding their personal data. This allows companies to efficiently manage data subject rights while maintaining their analytics capabilities.
 
 ## Product Relationships and Features
 
-Amplitude currently offers PII management integrations with three privacy platforms:
+Amplitude's PII integrations connect the analytics platform with specialized privacy management solutions:
 
-1. **Osano Integration**
-   - Focuses on data discovery and classification
-   - Supports compliance with GDPR and CCPA
-   - Connects to Amplitude via API keys
-   - Helps identify personal data stored in Amplitude
+1. **DataGrail Integration**: Connects Amplitude with DataGrail's privacy management platform to automate data subject request fulfillment.
 
-2. **DataGrail Integration**
-   - Enables identification, retrieval, and deletion of PII
-   - Facilitates data subject request (DSR) fulfillment
-   - Connects through Amplitude API credentials
-   - Currently in beta status
+2. **Osano Integration**: Links Amplitude with Osano's data privacy platform for automated PII discovery, classification, and subject rights request handling.
 
-3. **Transcend Integration**
-   - Provides programmatic access to user device activity
-   - Supports data erasure capabilities
-   - Helps with GDPR and CCPA compliance
-   - Requires contacting Transcend support for setup
+3. **Transcend Integration**: Enables programmatic access and erasure of user device activity in Amplitude through Transcend's privacy platform.
 
-All three integrations serve similar purposes but offer slightly different capabilities and implementation approaches for managing personal data within Amplitude.
+Each integration serves the same core purpose but operates through different third-party platforms. All integrations require authentication using Amplitude's API key and Secret Key, which must be configured in the respective privacy management platform.
 
 ## Key Nomenclature and Definitions
 
-- **PII (Personally Identifiable Information)**: Data that can be used to identify an individual user
-- **GDPR (General Data Protection Regulation)**: European Union privacy regulation
-- **CCPA (California Consumer Privacy Act)**: California's privacy law
-- **DSR/DSAR (Data Subject Request/Data Subject Access Request)**: Formal requests from individuals regarding their personal data
-- **Data Erasure**: The process of permanently removing personal data
-- **API Key Authentication**: Method used to connect privacy platforms to Amplitude
-- **Data Discovery**: Process of identifying where personal data resides
-- **Data Classification**: Categorizing data based on sensitivity and privacy requirements
-- **Subject Rights Requests**: Requests from individuals to exercise their data privacy rights
+- **PII (Personally Identifiable Information)**: Data that can be used to identify an individual user.
+
+- **Data Subject Request (DSR)**: A formal request made by an individual to exercise their data rights under privacy regulations.
+
+- **GDPR (General Data Protection Regulation)**: European Union privacy regulation that gives individuals control over their personal data.
+
+- **CCPA (California Consumer Privacy Act)**: California privacy law that provides residents with rights regarding their personal information.
+
+- **API Key**: Authentication credential required to access Amplitude's API.
+
+- **Secret Key**: Secondary authentication credential used in conjunction with the API Key for secure access to Amplitude's data.
+
+- **Data Store**: In the context of privacy platforms, this refers to the configuration that connects to external data sources (like Amplitude).
 
 ## Product Ecosystem Integration
 
-These PII integrations fit into Amplitude's broader ecosystem by:
+These PII integrations position Amplitude within a broader data privacy ecosystem:
 
-1. Extending Amplitude's native data management capabilities with specialized privacy tools
-2. Enabling compliance with global privacy regulations while maintaining analytics functionality
-3. Providing automated workflows for handling privacy requests without manual intervention
-4. Connecting Amplitude's analytics platform with dedicated privacy management solutions
+1. Amplitude serves as the analytics data repository containing user behavior data that may include PII.
 
-The integrations work by establishing API connections between Amplitude and the respective privacy platforms, allowing those platforms to:
-- Scan Amplitude data stores
-- Process privacy requests against Amplitude data
-- Execute data operations (access, deletion) within Amplitude
+2. The third-party privacy platforms (DataGrail, Osano, Transcend) act as centralized hubs for managing privacy compliance across multiple systems.
 
-## API and Implementation Details
+3. When a data subject submits a request through one of these platforms, the integration allows the platform to:
+   - Discover and classify PII within Amplitude
+   - Retrieve relevant user data from Amplitude
+   - Delete user data from Amplitude when required
 
-All three integrations utilize Amplitude's API infrastructure:
+This ecosystem approach allows organizations to maintain a comprehensive privacy compliance program across their entire tech stack, with Amplitude being one component of that ecosystem.
 
-- **Authentication**: All integrations require Amplitude API keys/credentials
-- **Implementation Process**:
-  - Osano: Configure Amplitude as a data store within Osano's platform using API keys
-  - DataGrail: Set up connection using Amplitude API credentials (beta integration)
-  - Transcend: Contact Transcend support team for implementation assistance
+## Authentication and Configuration
 
-While specific API endpoints aren't detailed in the documentation, these integrations leverage Amplitude's existing API infrastructure for data access and manipulation.
+All three integrations follow a similar authentication pattern:
+
+1. Obtain an API Key and Secret Key from Amplitude.
+2. Configure these credentials in the respective privacy platform:
+   - In DataGrail: Add them to the Amplitude integration setup
+   - In Osano: Enter them in the Data Stores section
+   - In Transcend: Use them for authentication during integration setup
+
+The Osano integration specifically notes that it requires an Enterprise plan.
+
+No specific API endpoints or command line invocations are detailed in the documentation, as these are handled internally by the privacy management platforms after configuration.

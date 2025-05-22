@@ -7,8 +7,8 @@ Property groups in Amplitude Data allow users to define collections of propertie
 - tracking plan management
 - event properties
 - property inheritance
-- cross-event property management
 - property standardization
 - property modification propagation
-- event property organization
+- event property management
 - property group creation
+- property group assignment

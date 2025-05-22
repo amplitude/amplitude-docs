@@ -1,5 +1,17 @@
-## Summary
-The Engagement Matrix chart visualizes feature usage by plotting breadth (percentage of users) against frequency (average usage per user), helping product teams identify which features are core, niche, underutilized, or candidates for removal.
-
-## Keywords
-engagement-matrix, feature-usage, breadth-vs-frequency, quadrant-analysis, core-features, niche-features, underutilized-features, feature-adoption, product-analytics, feature-prioritization
+Full content: ---
+id: 32f7baf3-cdad-485d-a0e4-10af0013c6dc
+blueprint: chart
+title: 'Engagement Matrix'
+landing: true
+sort: 13
+nav_title: charts
+author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+landing_blurb: 'Understand the overall engagement of features in your product by breadth and frequency'
+icon: icons/features/icon-engagement-matrix.svg
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1717090832
+template: landing-page
+current-collection: engagement-matrix
+hide_helpful: true
+---

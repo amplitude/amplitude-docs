@@ -1,5 +1,5 @@
 # Summary
-This documentation details performance metrics and caching mechanisms for Amplitude Experiment's evaluation modes (local and remote), explaining how CDN caching affects response times, with remote evaluation showing significant performance improvements for cache hits (35.9ms global average) versus misses (194.21ms), while local evaluation provides sub-millisecond performance without network requests.
+This documentation details performance metrics and caching mechanisms for Amplitude Experiment's evaluation modes (local and remote), explaining how CDN caching affects response times, with remote evaluation showing 35.9ms average for cache hits versus 194.21ms for misses globally, while local evaluation performs at sub-millisecond speeds across Node.js, Go, and JVM SDKs.
 
 # Keywords
 - remote evaluation performance
@@ -10,5 +10,5 @@ This documentation details performance metrics and caching mechanisms for Amplit
 - Fastly integration
 - dynamic targeting
 - behavioral cohorts
-- cache hit/miss metrics
-- geographical performance differences
+- regional performance metrics
+- cache hit/miss statistics

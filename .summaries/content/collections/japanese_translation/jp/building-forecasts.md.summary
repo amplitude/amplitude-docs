@@ -1,15 +1,14 @@
 ## Summary
-This documentation page explains how to build and analyze forecasts in Amplitude Activation, including creating prediction cohorts based on user behavior patterns and using these cohorts for targeted campaigns. It details the process of defining starting cohorts, specifying future outcomes, interpreting prediction results, and leveraging prediction-derived cohorts in analytics.
+This documentation explains how to build and analyze forecasts in Amplitude Activation, including creating prediction cohorts based on user behavior patterns and analyzing these cohorts to maximize conversion lift. It details the step-by-step process of creating forecasts, interpreting prediction results, understanding feature importance, and using prediction-derived cohorts for targeted campaigns.
 
 ## Keywords
-- Amplitude Activation
+- Amplitude Activation forecasts
 - prediction cohorts
-- forecast building
-- feature importance
 - conversion probability
-- percentile ranking
+- feature importance
+- percentile distribution
 - cohort migration
 - prediction accuracy metrics
-- prediction explorer
-- growth campaigns
-- incremental lift
+- forecast analysis
+- targeted campaigns
+- prediction-derived analytics

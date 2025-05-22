@@ -1,5 +1,5 @@
 ## Summary
-This documentation page explains how to create a new experiment in Amplitude, detailing the steps from clicking "Create > Experiment" through completing required fields like name, project, experiment type (A/B Test or Multi-Armed Bandit), and optional settings like evaluation mode and bucketing unit.
+This documentation page explains how to create a new experiment in Amplitude, detailing the steps to initialize an experiment, select experiment types (A/B Test or Multi-Armed Bandit), configure settings like evaluation mode and bucketing unit, and prepare for defining experiment goals.
 
 ## Keywords
 - experiment creation
@@ -10,6 +10,5 @@ This documentation page explains how to create a new experiment in Amplitude, de
 - bucketing unit
 - hypothesis testing
 - do-no-harm methodology
-- targeted page URL
-- local evaluation
-- remote evaluation
+- experiment SDK
+- evaluation REST API

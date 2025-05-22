@@ -4,11 +4,15 @@ This documentation explains how to deploy recommendation models in personalizati
 # Keywords
 - Profile API
 - recommendation deployment
-- personalization campaigns
-- API authentication
 - is_control parameter
 - recommendation performance
 - statistical significance
+- API authentication
+- Secret Key
+- recommendation_source
+- treatment vs control segments
+- personalization campaigns
+- API integration
+- performance analysis
 - lift metrics
 - funnel conversion
-- treatment vs control segments

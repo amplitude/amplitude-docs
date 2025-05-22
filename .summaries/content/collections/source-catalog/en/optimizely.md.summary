@@ -1,14 +1,15 @@
 ## Summary
-This documentation details the integration between Optimizely and Amplitude, allowing real-time user data sharing for experimentation. It covers the setup process including JSON configuration, settings customization, and how experiment data is sent to Amplitude as user properties and optional events.
+This documentation details the integration between Optimizely and Amplitude, allowing real-time user data sharing for experimentation. It covers the setup process including JSON configuration, settings customization, and how experiment data is sent to Amplitude as user properties and optional events for analysis.
 
 ## Keywords
 - Optimizely integration
 - Amplitude cohorts
-- Web experimentation
 - Custom Analytics Integration
-- User property prefix
+- User Property Prefix
 - Experiment tracking
-- SDK implementation
+- Web Experimentation
+- Feature Experimentation
+- CMS Visitor Groups
+- Behavior-based experimentation
 - JSON configuration
-- Behavioral experimentation
-- Conversion optimization
+- Amplitude Browser SDK

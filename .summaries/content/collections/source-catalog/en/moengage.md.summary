@@ -1,14 +1,14 @@
-# Summary
-This documentation page describes the MoEngage integration with Amplitude, which enables bidirectional data flow for campaign analysis, cohort targeting, and personalized messaging across channels, with setup instructions requiring an Amplitude API key and configuration in the MoEngage dashboard.
+## Summary
+This documentation page describes the MoEngage integration with Amplitude, which enables bidirectional data flow for campaign analysis, cohort targeting, and personalized messaging across channels, with specific setup instructions for connecting the two platforms using Amplitude's API key.
 
-# Keywords
+## Keywords
 - MoEngage integration
-- campaign data ingestion
-- customer engagement platform
-- cohort targeting
-- event streaming
-- API key configuration
-- marketing automation
-- personalized messaging
-- campaign analysis
-- bidirectional data flow
+- Campaign data ingestion
+- Customer engagement platform
+- Cohort targeting
+- API key setup
+- Bidirectional data flow
+- Marketing automation
+- Event streaming
+- User properties synchronization
+- Campaign effectiveness tracking

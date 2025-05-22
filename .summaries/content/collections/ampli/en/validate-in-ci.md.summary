@@ -4,7 +4,6 @@ This documentation page explains how to integrate Amplitude Data validation into
 # Keywords
 - ampli status
 - CI integration
-- API token
 - AMPLI_TOKEN
 - Docker containers
 - amplitudeinc/ampli

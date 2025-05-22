@@ -14,4 +14,4 @@ This documentation page explains Profiles in Amplitude, which allow joining cust
 - incremental modeling
 - data retention
 - change tracking
-- operation limits
+- profile synchronization

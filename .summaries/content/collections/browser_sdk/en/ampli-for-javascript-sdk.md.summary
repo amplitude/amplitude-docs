@@ -1,7 +1,7 @@
-# Summary
-The Ampli Wrapper for JavaScript SDK provides a strongly typed API for tracking analytics events based on your Amplitude Data Tracking Plan, offering autocompletion for events and properties while enforcing event schemas in code to prevent bad instrumentation for browser apps written in JavaScript and TypeScript.
+## Summary
+The Ampli Wrapper for JavaScript SDK provides a strongly typed API for tracking analytics events based on your Amplitude Data Tracking Plan, offering autocompletion for events and properties while enforcing event schemas to prevent bad instrumentation in browser apps written in JavaScript or TypeScript.
 
-# Keywords
+## Keywords
 - Ampli Wrapper
 - JavaScript SDK
 - TypeScript

@@ -1,16 +1,14 @@
 ## Summary
-This documentation details the Movable Ink integration with Amplitude, which enables marketers to create personalized content based on user behavior data from Amplitude's User Profile API. The integration allows for real-time personalization across customer engagement channels by streaming events and user properties to Movable Ink, with specific setup steps required in both platforms.
+This documentation details the Movable Ink Event Stream integration with Amplitude, which enables marketers to activate user data for personalized content across customer engagement channels by leveraging Amplitude's User Profile API and event streaming capabilities to dynamically generate content based on user behavior and preferences.
 
 ## Keywords
-- Movable Ink
-- Event Streaming
+- Movable Ink integration
+- Event streaming
 - User Profile API
-- Personalized content
+- Personalized content generation
+- Customer engagement
 - Tenant Token
 - Basic Authorization Header
-- Customer Data Endpoints
-- Event filtering
-- User property selection
-- Customer engagement
-- Content personalization
-- Amplitude integration
+- Event property filtering
+- User property forwarding
+- Identify API

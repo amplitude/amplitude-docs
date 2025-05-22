@@ -2,13 +2,13 @@
 The Experiment Management API Version Endpoints documentation details how to retrieve version history of experiments and flags using the GET /versions endpoint, including pagination parameters, response format, and version ordering by creation time descending.
 
 # Keywords
-- experiment management API
+- experiment versions
+- flag versions
 - version history
-- flag configurations
+- management API
 - pagination
-- ISO 8601 timestamps
-- version retrieval
 - cursor-based pagination
-- rollout configurations
-- target segments
-- bucketingKey
+- ISO 8601 timestamps
+- flagConfig
+- version retrieval
+- experiment configuration history

@@ -5,10 +5,10 @@ This documentation page describes the Google Pub/Sub destination integration for
 - Google Pub/Sub
 - event streaming
 - service account key
-- topic name
 - base64 encoding
-- Identify Forwarding
-- JSON export
-- IAM permissions
+- topic name
 - Pub/Sub Publisher role
+- Identify Forwarding
+- JSON data format
+- IAM permissions
 - event filtering

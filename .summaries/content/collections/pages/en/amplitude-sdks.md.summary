@@ -1,10 +1,9 @@
-## Summary
-This documentation page provides an overview of Amplitude SDKs, but is currently marked as unpublished (published: false), suggesting it's either a draft or deprecated page that isn't currently visible to users.
-
-## Keywords
-- Amplitude SDKs
-- unpublished documentation
-- draft content
-- event tracking
-- analytics implementation
-- blueprint page
+Full content: ---
+id: a1337894-19ea-4c9d-8749-1218e7203dab
+blueprint: page
+title: 'Amplitude SDKs'
+published: false
+author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1706298320
+---

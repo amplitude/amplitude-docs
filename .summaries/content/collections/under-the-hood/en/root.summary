@@ -2,114 +2,113 @@
 
 ## Product Overview
 
-Amplitude Experiment is a feature experimentation platform that enables organizations to run controlled experiments (A/B tests) with sophisticated statistical analysis capabilities. The platform combines robust experimentation infrastructure with Amplitude's analytics capabilities to deliver fast, reliable, and statistically sound experimentation.
+Amplitude Experiment is a feature flagging and experimentation platform that enables product teams to test hypotheses, roll out features safely, and make data-driven decisions. The platform combines robust randomization techniques, statistical analysis, and performance optimization to deliver reliable experimentation capabilities.
 
 Key features include:
-- Sequential testing methodology (mSPRT) for faster experiment decision-making
-- Flexible flag dependencies for complex experiment scenarios
-- Deterministic randomization for consistent user experiences
-- Comprehensive event tracking integration with Amplitude Analytics
-- Performance-optimized architecture with CDN caching
-- Both local and remote evaluation options for feature flags and experiments
+- Deterministic user randomization for consistent experiment assignment
+- Sequential statistical testing for faster decision-making
+- Flag dependencies for complex experiment scenarios
+- Comprehensive event tracking for accurate analysis
+- High-performance evaluation through CDN caching and local evaluation options
+- Detailed experiment analysis with various metric calculations
 
-Primary use cases include A/B testing, feature rollouts, mutual exclusion experiments, holdout groups for measuring combined experiment impact, and complex feature releases with dependencies.
+Primary use cases include A/B testing, feature rollouts, mutual exclusion testing, and holdout experiments to measure the combined impact of multiple experiments.
 
 ## Product and Feature Relationships
 
-### Core Components
+Amplitude Experiment consists of several interconnected components:
 
-1. **Evaluation Modes**
-   - **Remote Evaluation**: Server-side evaluation with CDN caching (35.9ms average response with cache hits)
-   - **Local Evaluation**: Client-side evaluation with sub-millisecond performance
+1. **Evaluation System**: Offers two modes:
+   - **Remote Evaluation**: Server-side evaluation with CDN caching for performance
+   - **Local Evaluation**: Client-side evaluation for sub-millisecond performance
 
-2. **Flag System**
-   - **Flag Dependencies**: Controls relationships between flags
-     - Prerequisites: Ensures flags are evaluated in specific order
-     - Mutual Exclusion Groups: Ensures users only participate in one experiment at a time
-     - Holdout Groups: Withholds traffic to measure combined experiment impact
+2. **Randomization Engine**: Uses deterministic two-stage randomization:
+   - First determines if a user is included in an experiment
+   - Then assigns variants to included users based on weights
 
-3. **Statistical Engine**
-   - **Sequential Testing (mSPRT)**: Allows valid statistical inference at any point during an experiment
-   - **Experiment Analysis Charts**: Calculates metrics based on exposed users and event data
+3. **Event Tracking System**: Captures two primary event types:
+   - **Assignment Events**: Record when a user is assigned to an experiment variant
+   - **Exposure Events**: Record when a user actually sees the experiment
 
-4. **Event Tracking System**
-   - **Assignment Events**: Records when users are assigned to variants
-   - **Exposure Events**: Records when users are actually exposed to variants
-   - **Experiment User Properties**: Automatically attached to user profiles for analysis
+4. **Analysis Framework**: Calculates experiment results using:
+   - Unique conversions, event totals, property values, and funnel conversions
+   - Sequential testing methodology (mSPRT) for statistical inference
 
-5. **Architecture Components**
-   - **Fastly CDN**: Caches evaluation results for performance
-   - **AWS Services**: Application Load Balancer, Relational Databases, DynamoDB
-   - **Identity Resolution System**: Manages consistent user identification
+5. **Flag Dependencies System**: Manages relationships between flags:
+   - **Prerequisites**: Controls feature release dependencies
+   - **Mutual Exclusion Groups**: Ensures users only participate in one experiment
+   - **Holdout Groups**: Measures combined experiment impact
 
 ## Key Nomenclature and Definitions
 
-- **Bucketing Key**: Identifier (typically Amplitude ID) used for randomization
-- **Bucketing Salt**: Value combined with ID to ensure unique randomization across experiments
-- **mSPRT (mixture Sequential Probability Ratio Test)**: Statistical method allowing valid inference at any time
-- **Flag Prerequisites**: Dependencies that ensure flags are evaluated in a specific order
-- **Mutual Exclusion Groups**: Ensure users only participate in one experiment at a time
-- **Holdout Groups**: Withhold traffic to measure combined experiment impact
-- **Assignment Events**: Track when users are assigned to variants
-- **Exposure Events**: Track when users actually see a variant
-- **Cache Hit/Miss**: Whether a request is served from CDN cache or requires backend processing
-- **Local Defaults**: Fallback values used when network requests fail
-- **Variant Weights**: Percentage allocation for different experiment variants
+- **Bucketing Key**: The unique identifier used for randomization, typically the Amplitude ID
+- **Bucketing Salt**: A value that ensures different experiments have independent randomization
+- **Variant**: A specific version or treatment in an experiment
+- **Exposure**: When a user actually encounters an experiment variant
+- **Assignment**: When a user is allocated to an experiment variant
+- **mSPRT (mixture Sequential Probability Ratio Test)**: The statistical method used for sequential testing
+- **Flag Dependencies**: Relationships between flags that control evaluation order
+- **Cache Hit/Miss**: Whether a request is served from cache (hit) or requires backend processing (miss)
+- **Fallback Variant**: The default variant served when a user doesn't qualify for an experiment
+- **Behavioral Cohorts**: User segments based on past behavior used for targeting
 
 ## Product Ecosystem Integration
 
-Amplitude Experiment integrates deeply with the broader Amplitude product ecosystem:
+Amplitude Experiment integrates with the broader Amplitude ecosystem:
 
-1. **Amplitude Analytics Integration**
-   - Experiment results are analyzed using Amplitude Analytics
-   - User properties from experiments are automatically attached to user profiles
-   - Assignment and exposure events flow into the analytics system
+1. **Amplitude Analytics**: Experiment events flow into Amplitude Analytics for analysis
+   - Assignment and exposure events are automatically tracked
+   - Experiment user properties are set for segmentation
 
-2. **Behavioral Cohorts**
-   - Experiments can target users based on behavioral cohorts defined in Amplitude
+2. **Infrastructure**: Leverages AWS and Fastly CDN
+   - Uses AWS Application Load Balancer, Relational Databases, and DynamoDB
+   - Fastly CDN provides global caching for performance optimization
 
-3. **Identity Resolution**
-   - Leverages Amplitude's identity resolution system for consistent user identification
+3. **Identity Resolution**: Connects with Amplitude's identity system
+   - Uses Amplitude ID as the primary bucketing key
+   - Supports consistent user identification across platforms
 
-4. **SDK Integration**
-   - Client SDKs for web, mobile, and server environments
-   - Automatic tracking of assignment and exposure events
+4. **Behavioral Cohorts**: Accesses Amplitude's behavioral cohort system
+   - Enables targeting users based on past behaviors
+   - Integrates with dynamic targeting capabilities
 
 ## Technical Implementation Details
 
 ### Randomization Algorithm
 ```
 // Inclusion determination
-mod(murmur3_x86_32("bucketingSalt/id"), 100) < inclusionPercentage
+included = mod(murmur3_x86_32("bucketingSalt/id"), 100) < rolloutPercentage
 
-// Variant assignment
-floor(murmur3_x86_32("bucketingSalt/id"), 100) mapped to variant weights
+// Variant assignment (if included)
+variantValue = floor(murmur3_x86_32("bucketingSalt/id"), 100)
 ```
 
 ### Performance Metrics
-- Remote evaluation with cache hit: 35.9ms global average
-- Remote evaluation with cache miss: 194.21ms global average
-- Local evaluation: sub-millisecond performance
+- **Remote Evaluation**:
+  - Global average: 35.9ms (cache hit), 194.21ms (cache miss)
+  - Cache TTL: Typically 5 minutes
 
-### Caching Mechanisms
-- CDN caching with configurable TTL
-- Client SDK caching for improved performance
-- Cache invalidation on flag updates
+- **Local Evaluation**:
+  - Node.js SDK: 0.05ms
+  - Go SDK: 0.03ms
+  - JVM SDK: 0.08ms
 
-### Event Tracking Implementation
-- Assignment events tracked automatically by SDKs
-- Exposure events tracked either automatically or manually depending on implementation
-- Server-side implementations require manual exposure tracking
+### Event Tracking
+- **Assignment Event**: `[Experiment] Assignment`
+- **Exposure Event**: `[Experiment] Exposure`
 
-### Analysis Calculation Formulas
-- Unique conversions: `unique_users_with_metric_event / exposed_users`
-- Event totals: `sum_of_metric_events / exposed_users`
-- Property value metrics: `sum_of_property_values / exposed_users`
-- Funnel conversions: `users_who_completed_funnel / users_who_started_funnel`
+Both events include experiment metadata and variant information, with automatic tracking available in supported SDKs.
 
-## Best Practices
-1. Use local defaults for critical features
-2. Implement client-side caching for optimal performance
-3. Use Amplitude-defined events for proper user property setting
-4. Consider geographical performance differences when setting up experiments
-5. Leverage flag dependencies for complex experiment scenarios
+### Flag Dependencies Implementation
+```json
+{
+  "prerequisites": [
+    {
+      "flag": "parent-flag",
+      "variants": ["on"]
+    }
+  ]
+}
+```
+
+This system requires SDK version compatibility for proper implementation, with specific version requirements for each dependency type.

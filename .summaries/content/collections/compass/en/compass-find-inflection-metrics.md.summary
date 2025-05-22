@@ -1,19 +1,19 @@
 # Summary
-Compass is a feature that identifies inflection metrics - behaviors that predict retention or conversion by analyzing the correlation between event frequencies and user outcomes, using metrics like proportion above threshold, PPV, sensitivity, NPV, and specificity to find the optimal thresholds that maximize true positives and true negatives.
+Compass helps identify inflection metrics that predict user retention or conversion by analyzing correlations between user behaviors and desired outcomes, using metrics like proportion above threshold, positive predictive value (PPV), sensitivity, negative predictive value (NPV), and specificity to evaluate potential inflection points in the user journey.
 
 # Keywords
 - inflection metrics
 - Compass chart
-- predictive behaviors
+- user retention prediction
 - proportion above threshold
 - positive predictive value (PPV)
 - sensitivity
 - negative predictive value (NPV)
 - specificity
-- contingency matrix
-- correlation analysis
+- true positive ratios
+- true negative ratios
 - base cohort
 - target cohort
-- performance days
-- true positive
-- true negative
+- correlation analysis
+- user behavior thresholds
+- performance days window

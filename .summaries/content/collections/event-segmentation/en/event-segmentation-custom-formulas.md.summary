@@ -1,5 +1,5 @@
 # Summary
-This documentation page explains custom formulas in Amplitude's Event Segmentation and Data Table charts, detailing the syntax, available formula types (Metrics, Aggregation, and Function), and providing examples of how to use them to create complex analyses by referencing events with letter designations and performing mathematical operations.
+This documentation page explains custom formulas in Amplitude's Event Segmentation and Data Table charts, detailing the syntax, available formula types (Metrics, Aggregation, and Function), and providing examples of how to use them to create complex analyses by referencing events with letter designations and applying mathematical operations.
 
 # Keywords
 - custom formulas

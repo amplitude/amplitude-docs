@@ -11,4 +11,4 @@ This documentation explains the impact of iOS 14's IDFA opt-in requirement on Am
 - Attribution events
 - Outbound integrations
 - App reinstallation
-- User tracking
+- Device ID matching

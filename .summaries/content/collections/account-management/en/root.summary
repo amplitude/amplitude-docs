@@ -1,91 +1,88 @@
-# Amplitude Account Management Product Overview
+# Amplitude Account Management
 
 ## Product Overview
 
-Amplitude is an analytics platform that helps organizations track and analyze user behavior across digital products. The account management component provides tools for managing organizations, projects, users, permissions, and various configuration settings to ensure proper data governance and operational efficiency.
+Amplitude is an analytics platform that helps organizations track and analyze user behavior across digital products. The account management features provide comprehensive tools for administering organizations, projects, users, permissions, and data within the Amplitude ecosystem. Key capabilities include organization and project management, user access control, data privacy compliance, cross-project analysis, and integration with external systems.
 
-Key features include:
-- Organization and project management
-- User permission controls and role-based access
-- API and secret key management
-- Data privacy and deletion capabilities
-- Cross-project analysis through Portfolio views
-- Enterprise features like SCIM provisioning and permission groups
-- Notification management and webhook integration
-- Currency display customization
-- Event volume management through sampling
+## Key Features and Concepts
 
-## Product Relationships and Architecture
+### Organization and Project Structure
+- **Organizations**: The top-level entity that contains projects and users
+- **Projects**: Individual data repositories that track specific products or applications
+- **Portfolio Views**: Enterprise-level feature allowing cross-project analysis by merging data from multiple projects (up to 5-10)
 
-### Organization and Project Hierarchy
-- **Organizations** are the top-level entities that contain multiple projects
-- **Projects** represent individual products or applications being tracked
-- Each project has its own settings, API keys, and configuration options
+### User Management and Permissions
+- **User Roles**: Hierarchical permission system with four levels:
+  - **Viewer**: Can access dashboards and create undiscoverable content
+  - **Member**: Can create discoverable content
+  - **Manager**: Can manage users and content
+  - **Admin**: Has full control over organization settings
+- **Permission Groups**: Enterprise feature for managing permissions at scale by assigning multiple users to groups with specific access levels
+- **SCIM Provisioning**: Enterprise feature for programmatic user and group management through SCIM 2.0 standard API
 
-### User Management Structure
-- **User Roles** follow a hierarchy: Viewer → Member → Manager → Admin
-- **Permission Groups** (Enterprise feature) allow bulk assignment of permissions
-- **Project-level Permissions** provide granular access control for Enterprise customers
-- **SCIM Provisioning** enables automated user management via API integration with identity providers
+### Data Management
+- **Dynamic Behavioral Sampling (Scale)**: Enterprise feature for managing high event volumes by sampling events based on user identity while preserving complete behavior streams
+- **Self-Service Data Deletion**: Allows Growth and Enterprise administrators to permanently remove specific events or properties from projects
+- **Currency Unit Configuration**: Ability to change the display currency for revenue metrics
 
-### Data Management Features
-- **Scale** provides dynamic behavioral sampling for high-volume Enterprise customers
-- **Self-service Data Deletion** allows removal of specific events or properties
-- **User Privacy Notifications** support GDPR compliance for data deletion requests
-
-### Integration Capabilities
-- **Webhooks** enable real-time integration with other applications based on KPI changes
-- **API Keys and Secret Keys** facilitate programmatic access to Amplitude data
-- **Portfolio Views** allow cross-project analysis by merging data from multiple projects
+### Integration and Automation
+- **API and Secret Keys**: Self-service management for generating and revoking authentication keys
+- **Webhooks**: Enterprise feature for sending automated messages to specified endpoints when KPIs change
+- **User Privacy Notifications**: Controls for managing GDPR-related email notifications
 
 ## Key Nomenclature and Definitions
 
-- **API Key**: Unique identifier used to authenticate API requests to Amplitude
-- **Secret Key**: Secure credential used alongside API keys for sensitive operations
-- **Permission Groups**: Collections of users with the same access levels (Enterprise feature)
-- **Portfolio Views**: Cross-project analysis tools that merge data from multiple projects
-- **SCIM Provisioning**: System for Cross-domain Identity Management, enabling automated user management
-- **Scale**: Dynamic behavioral sampling feature for high-volume Enterprise customers
-- **Session Definition**: Configuration that determines how user sessions are tracked and measured
-- **User Property Inclusion List**: List of user properties that are exempt from sampling in Scale
-- **Deletion Task**: Configuration for removing specific events or properties from Amplitude
-- **Webhook**: Integration point that sends automated messages when monitored KPIs change
+- **API Key**: Authentication credential used for sending data to Amplitude
+- **Secret Key**: Authentication credential used for accessing Amplitude APIs
+- **Session**: A period of user activity, configurable in project settings
+- **User Property**: Attributes associated with users that can be tracked across sessions
+- **Event**: A specific user action tracked in Amplitude
+- **Sampling Rate**: The percentage of events retained when using dynamic behavioral sampling
+- **Permission Group**: A collection of users with the same permission level for specific projects
+- **Portfolio View**: A merged view of data from multiple projects
+- **Webhook**: An HTTP callback that delivers data to external applications when triggered by specific events
 
 ## Product Ecosystem Integration
 
-Amplitude's account management functionality serves as the administrative foundation for the broader Amplitude product suite:
+Amplitude's account management features integrate with various components of the broader Amplitude ecosystem:
 
-1. **Amplitude Analytics**: The core product that uses the projects, permissions, and settings managed through account management
-2. **Session Replay**: Integrated with account management for configuration of sample rates and project settings
-3. **Team Spaces**: Works with permission groups and user management for collaborative analysis
-4. **Insights Package**: Provides additional features like webhooks for custom monitors
-5. **Enterprise Plan**: Unlocks advanced features like permission groups, SCIM provisioning, and project-level permissions
+1. **Amplitude Analytics**: The core analytics platform where projects store and analyze event data
+2. **Session Replay**: Configuration available in organization settings for capturing and reviewing user sessions
+3. **Team Spaces**: Integration with permission groups for organizing and sharing content
+4. **User Privacy API**: Backend system for processing data deletion requests
+5. **User Management API**: Programmatic interface for managing users and permissions
+6. **User Mapping API**: Used with Portfolio to reconcile different user IDs across projects
 
-## API Endpoints and Technical Details
+## API Endpoints and Command Line Features
 
-### User Management API Endpoints
-- SCIM 2.0 API for user provisioning (Enterprise only)
-- User Privacy API for handling data deletion requests
-
-### Key Management
-- Self-service key management interface for API and secret keys
+### API Key Management
+- Organization settings page provides self-service management for API and secret keys
 - Maximum of 50 active keys per organization
 - 6-hour deletion period for revoked keys
 
-### Data Deletion
-- Self-service data deletion supports up to five clauses per deletion task
-- Deletion tasks are processed in a queue system
+### SCIM Provisioning API
+- SCIM 2.0 standard API for user and group management
+- Requires Enterprise plan and SCIM key authentication
+- Example integration with Okta as an identity provider
 
-### Portfolio User Mapping
-- User Mapping API for reconciling different user IDs across projects
-- Support for 5-10 projects per Portfolio View
+### User Privacy API
+- Handles GDPR-related data deletion requests
+- Generates notifications configurable at the project level
+
+### User Mapping API
+- Used with Portfolio feature to reconcile different user IDs across projects
 
 ### Webhooks
-- Custom endpoint configuration for KPI alerts
-- Payload delivery for real-time integration with other applications
+- Configuration available in Organization settings
+- Supports custom HTTP endpoints for real-time notifications
+- Includes testing functionality to validate webhook configuration
 
-### Scale Configuration
-- Sampling rate configuration at the project level
-- User property inclusion list to exempt specific properties from sampling
+## Administrative Capabilities
 
-The account management functionality in Amplitude provides a comprehensive set of tools for organizations to effectively manage their analytics implementation, control access to data, ensure compliance with privacy regulations, and optimize their usage of the platform.
+- **Project Settings**: Configure API keys, session definitions, time zones, and usage metrics
+- **User Provisioning**: Invite users, set permissions, and manage access
+- **Data Privacy**: Self-service data deletion with up to five clauses per deletion task
+- **Event Volume Management**: Configure sampling rates and user property inclusion lists
+- **Notification Management**: Control which team members receive different types of GDPR-related emails
+- **Theme Settings**: Configure light/dark mode preferences
+- **Currency Display**: Change the default currency display from US dollars to any other currency

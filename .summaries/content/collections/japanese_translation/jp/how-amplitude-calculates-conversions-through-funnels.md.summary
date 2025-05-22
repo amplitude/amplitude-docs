@@ -6,9 +6,9 @@ This documentation explains how Amplitude calculates funnel conversions, detaili
 - first-touch attribution
 - holding constant function
 - group by function
-- session-based attribution
-- unique user count logic
-- earliest/longest conversion
+- session_id attribution
 - conversion window
+- unique user counting logic
+- earliest/longest conversion
 - funnel vs event segmentation
-- landing page attribution
+- user bucketing

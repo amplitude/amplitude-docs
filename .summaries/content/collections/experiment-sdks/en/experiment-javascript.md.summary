@@ -6,12 +6,13 @@ This documentation details the Amplitude Experiment JavaScript SDK, covering ins
 - feature flags
 - experiment variants
 - remote evaluation
-- local evaluation
 - exposure tracking
 - user provider
-- analytics integration
-- variant fetching
+- Amplitude integration
+- fetch variants
 - bootstrapping
+- local evaluation
+- client-side experimentation
 - flag configuration
 - automatic exposure tracking
-- server-side rendering
+- account-level bucketing

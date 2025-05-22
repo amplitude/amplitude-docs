@@ -1,5 +1,5 @@
 # Summary
-This documentation page describes the 1Flow destination integration with Amplitude, which allows syncing user cohorts from Amplitude to 1Flow to deploy targeted in-app surveys and messages, with setup instructions for both platforms and steps for sending cohorts.
+This documentation details the integration between Amplitude and 1Flow, allowing users to sync Amplitude cohorts to 1Flow for deploying targeted in-app surveys and messages, with setup instructions for both platforms and requirements including matching User IDs across both systems.
 
 # Keywords
 - 1Flow integration
@@ -7,8 +7,8 @@ This documentation page describes the 1Flow destination integration with Amplitu
 - In-app surveys
 - User feedback collection
 - API key configuration
-- Amplitude User ID mapping
+- User ID mapping
 - Product-led onboarding
-- Contextual guides
-- Churn reduction
+- Amplitude cohort export
+- Sync cadence
 - Paid plan requirement

@@ -1,3 +1,19 @@
-**Summary:** This documentation page configures the Event Segmentation collection in the analytics/charts section, specifying its template, layout, mounting point, routing pattern, and navigation behavior with specific settings for revision control, sorting, date visibility, and preview functionality.
-
-**Keywords:** event-segmentation, analytics/charts, mount point d0943b9a-8fef-42c5-98f9-063739a68867, collection configuration, revisions disabled, sort_dir asc, nav_title charts, structure root false
+Full content: title: 'Event Segmentation'
+template: default
+layout: layout
+mount: d0943b9a-8fef-42c5-98f9-063739a68867
+revisions: false
+route: '/analytics/charts/event-segmentation/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: charts
+structure:
+  root: false

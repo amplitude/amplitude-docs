@@ -1,5 +1,5 @@
 ## Summary
-This documentation explains Amplitude Experiment's duration estimate feature, which predicts how long an experiment needs to run to achieve statistical significance, including how it works, its limitations (40-day cap), criteria for visibility, differences from the duration estimator, and potential error types that affect accuracy.
+This documentation explains Amplitude Experiment's duration estimate feature, which predicts how long an experiment needs to run to achieve statistical significance, including how it works, its limitations (40-day cap), requirements for display, differences from the duration estimator, and potential error types that affect accuracy.
 
 ## Keywords
 - experiment duration estimate
@@ -12,6 +12,5 @@ This documentation explains Amplitude Experiment's duration estimate feature, wh
 - threshold reached
 - T-test
 - duration estimator
-- primary metric
-- simulation
 - 40-day cap
+- experiment simulation

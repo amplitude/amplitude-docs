@@ -1,41 +1,33 @@
-# Amplitude Japanese Documentation Portal
+# Amplitude Japanese Documentation
 
-## Product Overview
+## Overview
+Amplitude is a product analytics platform with a dedicated Japanese documentation section. The Japanese documentation provides localized content for Japanese-speaking users to understand and utilize Amplitude's analytics capabilities.
 
-Amplitude's Japanese documentation portal is a localized version of Amplitude's product documentation designed specifically for Japanese-speaking users. The portal provides access to translated documentation for Amplitude's analytics and product intelligence platform, allowing Japanese users to understand and utilize Amplitude's features in their native language.
+## Product Structure
+The Japanese documentation appears to be organized as a separate section within the broader Amplitude documentation ecosystem. It consists of:
 
-## Directory Structure and Relationship
+- A dedicated home page for Japanese documentation
+- Potentially translated versions of the main documentation content
 
-The Japanese documentation portal consists of:
+## Key Nomenclature
+- **jp-home**: The main landing page for Japanese documentation
+- **japanese_content**: Navigation title for the Japanese documentation section
+- **test**: A currently unpublished page that appears to be a translated version of content from another page (referenced by the origin ID)
 
-1. **Home Page (`jp-home.md`)**: The main entry point for Japanese users accessing Amplitude documentation
-2. **Test Page (`test.md`)**: A placeholder page that appears to be unpublished and used for testing purposes
+## Integration with Product Ecosystem
+The Japanese documentation is integrated into the main Amplitude documentation platform as follows:
 
-The directory structure follows Amplitude's content organization pattern, with localized content stored in a dedicated `/jp/` subdirectory within the main content collection. This separation allows for maintaining parallel content structures across different languages while keeping the same underlying architecture.
+1. It maintains its own dedicated home page while likely sharing the overall structure of the main documentation
+2. It uses the same content management system as the main documentation
+3. It appears to use a translation workflow where content can be derived from original English pages (as suggested by the "origin" field in the test page)
 
-## Key Nomenclature and Definitions
+## Technical Details
+- The documentation is managed through a content collection system, likely using a static site generator
+- Content is stored in Markdown format with YAML frontmatter for metadata
+- Content IDs are used to reference and relate pages (e.g., the origin ID in the test page)
+- The documentation includes configuration options for:
+  - Excluding pages from sitemaps
+  - Hiding helpful widgets or components
+  - Publishing/unpublishing content
 
-- **Blueprint**: References to "blueprint: home" in the metadata suggest the use of Statamic CMS templates/blueprints for page structure
-- **Origin Reference**: The metadata field tracking the original content source, likely used for synchronization between language versions
-- **Publication Status**: Boolean flag indicating whether content is publicly accessible
-- **Updated By/At**: Tracking metadata for content management purposes
-
-## Product Ecosystem Integration
-
-The Japanese documentation portal appears to be part of Amplitude's broader documentation ecosystem, which likely includes:
-
-1. A primary English documentation portal
-2. Multiple localized versions for different languages
-3. A shared content management system (Statamic) that handles multilingual content
-
-The documentation is structured to maintain consistency across languages while allowing for localized navigation and content. The system appears to track relationships between original content and translations through origin reference IDs.
-
-## Technical Implementation
-
-The documentation is implemented using Statamic CMS, as evidenced by:
-
-- The use of Markdown files with YAML frontmatter for content
-- References to Statamic-specific concepts like blueprints
-- Unique ID generation for content items (e.g., "a7f9d0c4-f5e8-4b9a-9eb0-97a1e7f28b27")
-
-Content appears to be managed through a version-controlled repository, with metadata tracking for content updates, authorship, and publication status.
+The Japanese documentation section appears to be actively maintained, with recent updates to the home page (timestamp: 1718402690) and test page (timestamp: 1733261724).

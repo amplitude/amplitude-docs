@@ -1,5 +1,16 @@
-# Summary and Keywords
+# Summary
+This documentation page serves as an introduction to Amplitude for new users, providing a structured pathway to set up an organization and projects, implement data tracking, create charts, and generate immediate insights through analyzing user activity, acquisition channels, feature adoption, and conversion rates.
 
-The document is a Japanese translation of a getting started guide for Amplitude, outlining the initial setup process including creating organizations and projects, implementing data tracking, and using basic analytics features like chart creation and sharing through spaces, with links to specific documentation for each step.
-
-**Keywords:** Amplitude setup, Japanese translation, organization creation, project creation, event tracking, chart creation, spaces, templates, user activity analysis, acquisition channels, feature adoption, conversion rates, implementation guidance
+# Keywords
+- Amplitude setup
+- Organization creation
+- Project creation
+- Event tracking
+- Chart creation
+- Spaces
+- Templates
+- User activity analysis
+- Acquisition channel analysis
+- Feature adoption analysis
+- Conversion rate understanding
+- Implementation guidance

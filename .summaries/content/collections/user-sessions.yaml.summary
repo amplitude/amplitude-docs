@@ -1,3 +1,19 @@
-**Summary:** This YAML configuration defines the "User Sessions" collection structure for analytics charts, specifying its template, layout, mounting point, routing pattern, and display behavior including sort direction and date visibility rules.
-
-**Keywords:** analytics charts, user-sessions collection, mount point c26659a0-6a19-4533-9fd2-36a4380671c1, preview targets, date_behavior, structure root false, nav_title injection
+Full content: title: 'User Sessions'
+template: default
+layout: layout
+mount: c26659a0-6a19-4533-9fd2-36a4380671c1
+revisions: false
+route: '/analytics/charts/user-sessions/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: charts
+structure:
+  root: false

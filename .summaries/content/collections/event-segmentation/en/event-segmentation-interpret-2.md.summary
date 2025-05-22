@@ -1,5 +1,5 @@
 # Summary
-This documentation page explains advanced features in Event Segmentation analysis, including Rolling Averages (for smoothing cyclical data), Rolling Windows (for aggregating data over periods), Cumulative Sum (for running totals), Real-time Segmentation, and Period-over-period comparison functionality with detailed examples of how each feature transforms data visualization.
+This documentation page explains advanced features in Event Segmentation analysis, including Rolling Averages (for smoothing data), Rolling Windows (for aggregating data over periods), Cumulative Sum (for running totals), Real-time Segmentation, and Period-over-period comparison functionality, with detailed explanations of how each feature processes and displays data.
 
 # Keywords
 - Rolling Averages
@@ -7,9 +7,8 @@ This documentation page explains advanced features in Event Segmentation analysi
 - Cumulative Sum
 - Real-time Segmentation
 - Period-over-period comparison
+- Measured As Module
 - Unweighted mean
 - Data smoothing
-- Running totals
-- CUMSUM formula
-- Measured As Module
+- CUMSUM
 - Compare to past

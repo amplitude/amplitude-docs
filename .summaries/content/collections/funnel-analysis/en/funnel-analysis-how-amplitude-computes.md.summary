@@ -1,14 +1,16 @@
-## Summary
-This documentation explains how Amplitude computes funnels based on three order types (Any order, This order, Exact order) and details the nuances of applying segmentation and filters in funnel analysis, including how group-by filters work across funnel steps.
+# Summary
+This documentation explains how Amplitude computes funnels based on event ordering options (Any order, This order, Exact order), and details the nuances of applying segmentation and filters in funnel analysis, including how group-by filters work across funnel steps.
 
-## Keywords
+# Keywords
 - funnel computation
-- event order types
+- event ordering
 - segmentation application
 - group-by filters
 - conversion paths
-- filter application
+- exact order
+- this order
+- any order
 - property constant
 - event repetition
-- drop-off calculation
+- filter application
 - multi-step conversion

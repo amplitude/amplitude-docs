@@ -1,51 +1,52 @@
 # Amplitude Python SDK Product Overview
 
-The Amplitude Python SDK is a comprehensive analytics tracking solution that enables developers to implement event tracking in Python applications. The SDK provides both a standard implementation and a strongly-typed approach through the Ampli wrapper, allowing for flexible and type-safe analytics integration.
+The Amplitude Python SDK is a comprehensive analytics tracking solution for Python applications (3.6+) that enables developers to capture and analyze user behavior data. The SDK consists of two main components: the core Python SDK and the Ampli wrapper, which provides strongly-typed event tracking based on a tracking plan.
 
 ## Key Features and Concepts
 
 - **Event Tracking**: Capture user interactions and custom events in Python applications
-- **User Identification**: Associate events with specific users through identity management
-- **User Properties**: Track and update user attributes and characteristics
-- **Group Analytics**: Associate users with organizations or other groupings
+- **User Identity Management**: Track individual users across sessions and platforms
+- **User Properties**: Store and update attributes about users
+- **Group Analytics**: Track and analyze user groups and their properties
 - **Revenue Tracking**: Monitor purchase events and revenue metrics
-- **Batching Configuration**: Control how and when events are sent to Amplitude
-- **Type Safety**: Ensure correct event tracking through strongly-typed interfaces (via Ampli)
-- **Implementation Verification**: Validate tracking implementation against specifications
+- **Strongly-typed Events**: Use the Ampli wrapper for type-safe event tracking
+- **Batching and Queuing**: Configure how events are buffered and sent to Amplitude
+- **Plugin Architecture**: Extend functionality through custom plugins
 
-## Product Relationship and Architecture
+## Product Relationships and Architecture
 
-The Python SDK consists of two main components:
+The Python SDK ecosystem consists of two main components that work together:
 
-1. **Core Python SDK (`amplitude-analytics`)**: The foundation library that provides all core functionality for tracking events, managing users, and configuring the SDK.
+1. **Core Python SDK (`amplitude-analytics`)**: The foundation library that handles event tracking, user management, and communication with Amplitude's servers.
 
-2. **Ampli for Python SDK**: A wrapper that sits on top of the core SDK, providing strongly-typed interfaces generated from your tracking plan, ensuring type safety and implementation correctness.
+2. **Ampli Wrapper**: A code-generated layer that sits on top of the core SDK, providing strongly-typed event tracking based on a tracking plan defined in Amplitude.
 
 The relationship between these components is hierarchical:
-- Ampli depends on and utilizes the core SDK
-- Ampli provides additional type safety and verification features
-- Both components ultimately send data to the Amplitude analytics backend
+- The Ampli wrapper depends on and utilizes the core SDK
+- Developers can use either the core SDK directly for flexible tracking or the Ampli wrapper for type-safe tracking
+- The Ampli wrapper is generated using the Ampli CLI, which pulls tracking plan definitions from Amplitude
 
 ## Key Nomenclature and Definitions
 
-- **BaseEvent**: The fundamental data structure representing an analytics event
-- **Identify**: Operations that update user properties without sending events
-- **EventOptions**: Configuration options applied to individual events
-- **LoadOptions**: Configuration options applied during SDK initialization
-- **Group**: A collection of users, such as an organization or team
-- **Plugins**: Extensions that modify or enhance the SDK's functionality
-- **Flush**: The process of sending batched events to Amplitude servers
-- **Storage Provider**: Component responsible for storing events before sending
-- **Server Zone**: Geographic region for data processing (US or EU)
+- **Event**: A discrete user action or occurrence tracked in the system
+- **Identify**: Operations that set or update user properties
+- **User Properties**: Attributes associated with a specific user
+- **Group**: A collection of users that can be analyzed together
+- **Group Properties**: Attributes associated with a specific group
+- **Tracking Plan**: A schema that defines expected events and their properties
+- **Ampli CLI**: Command-line tool for generating the Ampli wrapper from a tracking plan
+- **LoadOptions**: Configuration options when initializing the Ampli wrapper
+- **EventOptions**: Additional options when tracking events
+- **Plugins**: Extensions that can modify events or add functionality to the SDK
 
 ## Integration with Amplitude Ecosystem
 
 The Python SDK integrates with the broader Amplitude product ecosystem in several ways:
 
 1. **Amplitude Dashboard**: Events tracked via the SDK appear in the Amplitude analytics dashboard for analysis
-2. **Tracking Plan**: The Ampli wrapper is generated from tracking plans defined in Amplitude, ensuring consistency between specifications and implementation
-3. **Ampli CLI**: Command-line tool that generates the strongly-typed Ampli wrapper based on your tracking plan
-4. **Cross-Platform Consistency**: Works alongside other Amplitude SDKs (JavaScript, iOS, Android, etc.) to provide a unified analytics approach
+2. **Tracking Plan**: The Ampli wrapper connects to tracking plans defined in Amplitude Data
+3. **Cross-Platform Tracking**: Works alongside other Amplitude SDKs to provide a unified view of user behavior across platforms
+4. **Server-side Tracking**: Complements client-side SDKs by enabling server-side event tracking
 
 ## API and Usage Examples
 
@@ -62,69 +63,45 @@ amplitude.configuration.flush_interval_millis = 1000
 
 ### Event Tracking with Core SDK
 ```python
-from amplitude import BaseEvent, EventOptions
-
+# Track basic event
 amplitude.track(
-    BaseEvent(
-        event_type="Button Clicked",
-        user_id="user@example.com",
-        event_properties={"buttonColor": "blue"}
-    ),
-    EventOptions(user_properties={"premium": True})
+    "event_type",
+    user_id="user@example.com",
+    event_properties={"property1": "value1"}
 )
+
+# Set user properties
+identify = Identify()
+identify.set("key1", "value1")
+identify.add("counter", 1)
+amplitude.identify(identify, user_id="user@example.com")
 ```
 
-### Ampli Installation and Initialization
+### Ampli Wrapper Usage
 ```python
+# Install Ampli wrapper
 pip install amplitude-analytics
 
-from ampli import Ampli, LoadOptions
-
+# Initialize Ampli
+from ampli import Ampli
 ampli = Ampli()
-ampli.load(LoadOptions(api_key="API_KEY"))
-```
+ampli.load({"client_api_key": "API_KEY"})
 
-### Event Tracking with Ampli
-```python
-# Strongly-typed event tracking
+# Track typed events
 ampli.song_played(
-    song_id="song-1",
-    song_name="Bohemian Rhapsody",
-    options=EventOptions(user_id="user@example.com")
-)
-```
-
-### User Identification
-```python
-# Core SDK
-from amplitude import Identify
-amplitude.identify(
-    Identify(user_id="user@example.com"),
-    EventOptions(user_properties={"plan": "premium"})
-)
-
-# Ampli
-ampli.identify(
     user_id="user@example.com",
-    device_id="device-id",
-    user_properties={"plan": "premium"}
+    song_id="song-123",
+    song_name="Bohemian Rhapsody"
 )
 ```
 
-### Group Management
-```python
-# Set group
-amplitude.set_group("org_id", "org-1")
+### Ampli CLI Commands
+```bash
+# Check status of tracking plan
+ampli status
 
-# Group identify
-amplitude.group_identify("org_id", "org-1", Identify().set("plan", "enterprise"))
+# Pull latest tracking plan and generate wrapper
+ampli pull
 ```
 
-### Flushing Events
-```python
-# Manually send events to Amplitude
-amplitude.flush()
-ampli.flush()
-```
-
-The Python SDK provides a robust solution for tracking analytics in Python applications, with options for both simple implementation and strongly-typed tracking to ensure data quality and consistency.
+The Python SDK provides a flexible and powerful solution for tracking analytics in Python applications, with options for both type-safe and flexible event tracking depending on developer needs.

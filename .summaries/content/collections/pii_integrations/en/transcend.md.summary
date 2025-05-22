@@ -1,5 +1,5 @@
 # Summary
-This documentation page describes the Transcend integration with Amplitude, which enables programmatic access and erasure of user device activity in Amplitude to comply with data privacy regulations like GDPR and CCPA, noting that users should contact Transcend's support team for integration assistance.
+This documentation page describes the Transcend integration with Amplitude, which enables programmatic access and erasure of user device activity to comply with data privacy regulations like GDPR and CCPA, noting that this is not a partner-maintained integration despite the admonition suggesting otherwise.
 
 # Keywords
 - Transcend
@@ -7,7 +7,7 @@ This documentation page describes the Transcend integration with Amplitude, whic
 - data erasure
 - GDPR compliance
 - CCPA compliance
-- programmatic data access
+- programmatic access
 - user device activity
 - data transparency
 - consent management

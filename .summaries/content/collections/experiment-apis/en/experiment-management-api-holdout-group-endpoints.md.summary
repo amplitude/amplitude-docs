@@ -10,6 +10,5 @@ This documentation page details the Experiment Management API endpoints for hold
 - individualInclusion
 - individualExclusion
 - experiment association
-- PATCH /holdouts/{id}
-- POST /holdouts
-- GET /holdouts
+- CRUD operations
+- bucketing salt

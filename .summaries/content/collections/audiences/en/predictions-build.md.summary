@@ -1,14 +1,14 @@
 ## Summary
-This documentation explains how to build, analyze, and utilize predictions in Amplitude Activation to segment users based on their likelihood to perform future actions. It covers the prediction creation process, analyzing model performance through feature importance metrics, and creating predictive cohorts for targeting campaigns or further analysis.
+This documentation explains how to build, analyze, and utilize predictions in Amplitude Activation to segment users based on their likelihood to perform future actions. It covers creating predictions from starting cohorts, analyzing model performance through feature importance metrics, and converting predictions into actionable predictive cohorts for targeting and analysis.
 
 ## Keywords
 - Predictive cohorts
 - Feature importance
 - Model performance metrics
-- AUC (Accuracy)
-- True/False Positive Rate
+- AUC accuracy
 - Percentile ranking
+- Conversion likelihood
 - Cohort transition
+- True/False Positive Rate
 - Advanced Model Configuration
 - Audience analysis
-- Conversion probability

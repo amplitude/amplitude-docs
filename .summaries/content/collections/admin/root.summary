@@ -1,91 +1,46 @@
-# Statamic Admin Panel
+# Admin Product Overview
 
-## Overview
+The Admin product is a comprehensive management interface that provides administrative capabilities for account management, billing oversight, and authentication controls within a broader system or platform.
 
-Statamic is a content management system (CMS) with a powerful admin panel that serves as the control center for website management, user authentication, and subscription services. The admin interface provides comprehensive tools for account management, billing oversight, usage monitoring, and enterprise-level authentication options including Single Sign-On (SSO).
-
-## Key Features and Concepts
+## Key Features and Components
 
 ### Account Management
-The account management section serves as a central hub where administrators can manage user profiles, access settings, and navigate to other administrative functions. This area provides quick access to critical account information and serves as a gateway to more specialized administrative tools.
+The account management module enables administrators to oversee user accounts within the system, including:
+- User account creation and deletion
+- Permission management
+- User profile administration
+- Account settings configuration
 
-### Billing & Usage Monitoring
-Statamic includes robust subscription management capabilities that allow administrators to:
-- Track current subscription status
-- Manage payment methods
-- Monitor site usage metrics
-- Add or remove team members
-- View billing history and invoices
+### Billing and Use
+This component handles financial and usage aspects of the platform:
+- Subscription management
+- Usage tracking and reporting
+- Invoice generation and payment processing
+- Billing history and records
+- Resource allocation monitoring
 
 ### Single Sign-On (SSO)
-For enterprise users, Statamic offers advanced authentication options through SSO integration. This feature supports multiple identity providers and authentication protocols, streamlining the login process while maintaining security.
+The SSO functionality provides streamlined authentication capabilities:
+- Integration with identity providers
+- Centralized authentication management
+- Cross-application access control
+- Security policy enforcement for authentication
 
-## Product Relationships and Structure
+## Product Relationships and Architecture
 
-The Statamic admin panel is organized hierarchically:
+The Admin product is organized as a collection of related administrative tools that provide comprehensive management capabilities. The three main components (Account Management, Billing and Use, and Single Sign-On) are interconnected but serve distinct administrative functions.
 
-- **Admin Panel** (primary interface)
-  - **Account Management** (central navigation hub)
-    - User profile settings
-    - Access controls
-    - Navigation to specialized sections
-  - **Billing & Usage** (subscription management)
-    - Subscription status tracking
-    - Payment method management
-    - Team member administration
-    - Usage metrics and analytics
-  - **Single Sign-On** (enterprise authentication)
-    - Identity provider configuration
-    - Authentication protocol settings
-    - User provisioning rules
-    - Role mapping
+The product appears to have a hierarchical organization with a central interface that allows users to navigate between different administrative sections. The landing page structure serves as the entry point to these various administrative functions.
 
-Each component is designed to work seamlessly with the others, creating a cohesive administrative experience.
+## Key Nomenclature
 
-## Key Nomenclature and Definitions
-
-- **Admin Blueprint**: Configuration structure that defines the layout, fields, and functionality of the admin interface
-- **Landing Page Template**: Specialized template used for section introduction pages within the admin panel
-- **Subscription Status**: Current state of a user's Statamic subscription (active, expired, trial, etc.)
-- **Identity Provider**: External service that authenticates users for SSO implementation (e.g., Google, Okta, Azure AD)
-- **User Provisioning**: Automated process of creating and configuring user accounts during authentication
-- **Role Mapping**: System for assigning appropriate permissions to users based on attributes from identity providers
-- **Authentication Protocol**: Standard method for secure identity verification (SAML, OIDC, OAuth)
+- **Blueprint**: Template or schema definition for content pages
+- **Landing**: Boolean flag indicating whether a page serves as a landing page
+- **Current-collection**: Identifier for the active content collection being displayed
+- **Template**: Defines the visual layout or rendering approach for a page
 
 ## Product Ecosystem Integration
 
-The Statamic admin panel is a core component of the broader Statamic CMS ecosystem:
+The Admin product serves as the administrative backbone for a larger platform or service ecosystem. It provides the necessary tools for managing users, controlling access, and handling financial aspects of the platform.
 
-1. It integrates with Statamic's content management capabilities, providing administrative control over website content
-2. The subscription and billing features indicate a commercial product model with tiered service levels
-3. SSO integration demonstrates enterprise-level deployment capabilities, suggesting Statamic can scale from small sites to large organizational implementations
-4. The modular architecture allows for flexible implementation based on specific user needs
-
-The admin panel serves as the operational hub for Statamic websites, connecting content management, user authentication, and commercial services into a unified interface.
-
-## Technical Implementation Details
-
-### Single Sign-On Implementation
-
-Statamic's SSO functionality supports multiple authentication protocols:
-- SAML (Security Assertion Markup Language)
-- OIDC (OpenID Connect)
-- OAuth
-- Google authentication
-
-The SSO configuration process includes:
-- Setting up authentication flows
-- Configuring user provisioning rules
-- Establishing role mapping for access control
-- Managing identity provider connections
-
-### Billing Portal Functionality
-
-The billing section provides interfaces for:
-- Viewing and managing subscription details
-- Updating payment methods
-- Adding or removing team members
-- Monitoring site usage metrics against plan limits
-- Accessing billing history and invoice records
-
-These features are accessible through the "Billing & Use" section of the admin panel, providing comprehensive subscription management capabilities.
+The Single Sign-On component indicates integration with external identity systems and enables access to multiple applications or services through a unified authentication mechanism. The modular structure suggests that the Admin product is part of a larger suite of tools or services that share common authentication and user management capabilities.

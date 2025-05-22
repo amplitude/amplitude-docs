@@ -8,7 +8,7 @@ This documentation details Amplitude CDP's Cohort Webhooks feature, which enable
 - cohort syncing
 - webhook headers
 - user properties
+- cohort updates
 - message_id
-- cohort_id
-- payload templates
 - webhook endpoint configuration
+- payload templates

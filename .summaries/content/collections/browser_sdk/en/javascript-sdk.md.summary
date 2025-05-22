@@ -1,20 +1,21 @@
 ## Summary
-This documentation covers the maintenance-mode JavaScript SDK for Amplitude Analytics, detailing installation methods, core functionality (initialization, event tracking, user properties), configuration options, and advanced features like cross-domain tracking and web attribution. The SDK is in maintenance mode with users encouraged to migrate to Browser SDK 2.0.
+This documentation covers the maintenance-mode JavaScript SDK for Amplitude Analytics, detailing installation methods, core functionality (initialization, event tracking, user properties, revenue tracking), configuration options, and advanced features like cross-domain tracking and web attribution. The SDK is in maintenance mode with users encouraged to migrate to Browser SDK 2.0.
 
 ## Keywords
 - JavaScript SDK
 - maintenance mode
 - event tracking
-- user properties
 - user identification
+- user properties
 - revenue tracking
 - web attribution
 - UTM parameters
 - session tracking
-- device ID management
 - cross-domain tracking
+- device ID management
 - batch events
-- sendBeacon
 - EU data residency
-- user groups
-- opt-out functionality
+- sendBeacon
+- group identify
+- cookie management
+- Content Security Policy

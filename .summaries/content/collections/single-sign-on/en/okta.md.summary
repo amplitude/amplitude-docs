@@ -1,5 +1,5 @@
 ## Summary
-This documentation page provides step-by-step instructions for setting up Single Sign-On (SSO) integration between Amplitude and Okta, including configuring SAML 2.0 settings in Okta, obtaining IdP metadata, and uploading it to Amplitude's SSO settings.
+This documentation page provides step-by-step instructions for setting up single sign-on (SSO) integration between Amplitude and Okta, including configuring SAML 2.0 settings in Okta, obtaining IdP metadata, and uploading it to Amplitude's SSO settings.
 
 ## Keywords
 - Okta SSO integration

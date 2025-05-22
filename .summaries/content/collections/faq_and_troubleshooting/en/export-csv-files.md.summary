@@ -5,9 +5,8 @@ This documentation explains how Amplitude exports CSV files, covering the struct
 - CSV export structure
 - breakdown data table
 - property value differences
-- leading spaces removal
 - export value limits
+- leading spaces removal
 - Microscope user download
-- most recent property values
 - Personal settings configuration
-- Always Remove Leading Spaces from Export toggle
+- CSV export formatting

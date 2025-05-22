@@ -1,14 +1,14 @@
 # Summary
-This documentation page explains how to allocate traffic for experiments in Amplitude Experiment, including setting variant traffic percentages, targeting specific user segments using cohorts or user properties, and managing internal users in experiments to prevent data skewing.
+This documentation page explains how to allocate traffic for experiments in Amplitude Experiment, including setting variant traffic percentages, targeting specific user segments, and configuring rollout percentages. It details how to define user segments based on cohorts or user properties, and provides options for handling internal users in experiments without skewing results.
 
 # Keywords
-- traffic allocation
+- experiment traffic allocation
 - variant distribution
 - user segmentation
 - rollout percentage
 - stratified sampling
-- targeting criteria
-- cohort targeting
-- user properties
-- internal user management
+- targeting cohorts
+- user properties targeting
+- internal user allocation
 - experiment bias prevention
+- segment-specific rollout controls

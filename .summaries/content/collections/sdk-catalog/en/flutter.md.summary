@@ -1,5 +1,13 @@
-## Summary
-This documentation page covers the Amplitude Flutter SDK, which enables tracking user events and properties in Flutter applications, with details on installation, initialization, tracking methods, user identification, and configuration options.
-
-## Keywords
-Flutter SDK, event tracking, user identification, amplitude_flutter package, setUserId, logEvent, identify, setGroup, revenue tracking, session configuration, opt-out tracking, flush events, instance management, plugin installation
+Full content: ---
+id: 7cac036d-49d6-4fdc-8483-e8d11c75dbac
+blueprint: sdk-catalog
+title: Flutter
+source: 'https://www.docs.developers.amplitude.com/data/sdks/flutter/'
+nav_title: developers
+logo: icons/flutter.svg
+author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+exclude_from_sitemap: false
+updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
+updated_at: 1715798992
+template: sdk-landing
+---

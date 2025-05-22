@@ -6,12 +6,13 @@ This documentation page details the migration process from the maintenance React
 - @amplitude/analytics-react-native
 - plugin architecture
 - API differences
-- configuration object
+- initialization changes
 - track() vs logEvent()
 - identify() implementation
 - device ID handling
+- configuration object
 - data migration
 - COPPA compliance
 - HTTP V2 API
-- initialization changes
 - flush() vs uploadEvents()
+- revenue tracking

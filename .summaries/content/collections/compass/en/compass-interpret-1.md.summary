@@ -7,8 +7,8 @@ Compass chart in Amplitude visualizes how user events correlate with retention, 
 - correlation scores
 - statistical significance
 - 95% confidence interval
-- positive predictive value
-- user event frequency
+- frequency buckets
 - predictive categorization
-- cohort conversion
-- retention analysis
+- user events analysis
+- Positive Predictive Value
+- sustainable product growth

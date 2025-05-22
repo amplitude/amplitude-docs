@@ -1,18 +1,16 @@
 ## Summary
-The Node.js Ampli Wrapper documentation describes how to implement Amplitude's strongly-typed tracking library for Node.js applications written in JavaScript or TypeScript, providing a type-safe interface for tracking events according to a predefined tracking plan with features for user identification, event tracking, and plugin customization.
+The Node.js Ampli Wrapper documentation describes how to implement Amplitude's type-safe event tracking in Node.js applications using the Ampli CLI, providing a strongly-typed facade over the Amplitude SDK with support for JavaScript (ES6+) and TypeScript (2.1+).
 
 ## Keywords
-- Node.js SDK
-- Ampli Wrapper
-- TypeScript tracking
-- JavaScript tracking
-- event tracking
-- user identification
-- strongly-typed events
-- tracking plan
+- Node.js Ampli Wrapper
 - analytics-node
+- type-safe event tracking
+- ampli CLI
+- tracking plan
+- identify users
+- track events
 - flush events
-- Ampli CLI
-- plugin architecture
-- event properties
-- setGroup
+- plugins
+- strongly typed methods
+- JSDocs
+- middleware migration

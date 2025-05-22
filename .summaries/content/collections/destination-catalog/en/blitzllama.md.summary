@@ -1,5 +1,5 @@
 ## Summary
-This documentation page describes the Blitzllama integration with Amplitude, which allows streaming feedback data from Blitzllama's in-product surveys to Amplitude for deeper analysis alongside user attributes, with setup requiring only an Amplitude API key to be configured in the Blitzllama dashboard.
+This documentation page describes the Blitzllama integration with Amplitude, which allows streaming feedback data from Blitzllama's in-product surveys to Amplitude for deeper analysis alongside user attributes, with setup requiring only an Amplitude API key to establish the connection.
 
 ## Keywords
 - Blitzllama
@@ -10,6 +10,5 @@ This documentation page describes the Blitzllama integration with Amplitude, whi
 - Amplitude integration
 - feedback dashboards
 - API key
-- cohorts
-- raw-events
+- sentiment analysis
 - feedback streaming

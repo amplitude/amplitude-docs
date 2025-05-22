@@ -1,15 +1,16 @@
-# Summary
-This documentation page explains SDK Middleware in Amplitude, a feature that allows developers to extend functionality by running custom code on every event for enrichment, transformation, filtering, and routing. It details the middleware structure, function signature, payload customization, and provides examples for filtering events, removing PII, enriching properties, and forwarding data to other services.
+## Summary
+This documentation page explains SDK Middleware in Amplitude, a feature that allows developers to extend functionality by running custom code on every event for enrichment, transformation, filtering, and routing. It details the middleware structure, function signature, payload customization options, and provides practical examples for various use cases, noting that middleware is only supported in Maintenance SDKs and has been replaced by Plugins in newer versions.
 
-# Keywords
+## Keywords
 - SDK Middleware
 - event processing
+- payload customization
 - middleware function signature
-- MiddlewarePayload
-- event transformation
 - event filtering
 - PII removal
-- data forwarding
 - event enrichment
+- data forwarding
 - maintenance SDKs
-- middleware chain
+- MiddlewarePayload
+- MiddlewareNext
+- addEventMiddleware
