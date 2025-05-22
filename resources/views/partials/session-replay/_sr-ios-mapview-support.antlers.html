@@ -2,4 +2,12 @@
 ### Map View Support (Alpha)
 
 Session Replay supports capturing map views in iOS applications. To enable map view capture,  unmask the map view in your implementation.
+
+```swift
+// UIKit
+mapView.amp_isBlocked = false
+
+// SwiftUI
+Map().amp_setBlocked(false)
+```
 {{/markdown}}
