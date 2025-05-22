@@ -70,7 +70,7 @@ Amplitude measures event use by **queries**. Amplitude defines a query as the **
 
 ![Screenshot_2023-04-24_at_17.47.39.png](/docs/output/img/billing-use/screenshot-2023-04-24-at-17-47-39-png.png)
 
-Events queried in [cross-project views](/docs/analytics/user-data-lookup), or when an event appears in the path in a [pathfinder analysis](/docs/analytics/charts/journeys/journeys-understand-paths).
+Amplitude also tailliers queries for events queried in [cross-project views](/docs/analytics/user-data-lookup), or when an event appears in the path in a [pathfinder analysis](/docs/analytics/charts/journeys/journeys-understand-paths).
 
 {{partial:admonition type='note'}}
 If you don't have access to the query counts feature, contact Amplitude Support to enable it.
