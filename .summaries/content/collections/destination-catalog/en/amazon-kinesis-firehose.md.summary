@@ -5,13 +5,12 @@ This documentation details the Amazon Kinesis Firehose destination integration f
 - Amazon Kinesis Firehose
 - event streaming
 - IAM role configuration
-- Trust Relationships
+- trust relationships
 - AWS permissions
-- deliverystream
 - PutRecord
 - PutRecordBatch
 - event filtering
+- Amplitude Export API
 - Identify Forwarding
 - ETL service
-- AWS account integration
-- JSON event data
+- data lake integration

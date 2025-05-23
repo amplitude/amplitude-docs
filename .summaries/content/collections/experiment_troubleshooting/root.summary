@@ -1,68 +1,101 @@
-# Amplitude Experiment Product Overview
+# Amplitude Experiment: Troubleshooting Guide
 
-## High-Level Overview
+## Product Overview
 
-Amplitude Experiment is an experimentation platform for creating, managing, and analyzing A/B tests and feature flags. It enables product teams to make data-driven decisions by testing hypotheses and measuring the impact of changes on user behavior. The platform integrates with the broader Amplitude analytics ecosystem for comprehensive experiment analysis.
+Amplitude Experiment is an experimentation platform for creating, deploying, and analyzing A/B tests and feature flags. The platform uses a sophisticated bucketing system to assign users to different experiment variants and tracks user interactions through assignment and exposure events. Amplitude Experiment enables data-driven decision making by providing tools to test hypotheses, measure impact, and implement feature rollouts with confidence.
 
-## Product Relationships and Features
+## Key Features and Concepts
 
-Amplitude Experiment follows a structured experimentation workflow:
+### Experimentation Core Mechanics
 
-1. **Experiment Configuration**: Users set up experiments with variants, distribution weights, and targeting rules.
-2. **Variant Assignment**: Users are allocated to experiment variants using a bucketing mechanism with a unique bucketing salt.
-3. **Exposure Tracking**: When users encounter the experiment, exposure events are recorded.
-4. **Analysis**: The platform analyzes the relationship between assignments and exposures to ensure valid results.
+- **Variants**: Different versions of a feature or experience being tested in an experiment
+- **Bucketing**: The algorithmic process that deterministically assigns users to experiment variants
+- **Sticky Bucketing**: Ensures users consistently see the same variant across multiple sessions
+- **Bucketing Salt**: A parameter that determines the randomization pattern for user assignments
+- **Experiment Key**: A unique identifier for an experiment run that can be changed to create a new experiment run with different user assignments
 
-The platform supports both client-side and server-side implementations through dedicated SDKs that handle variant assignment and exposure tracking. Experiments can be configured as "runs" that can be restarted to exclude previous user data.
+### Event Tracking System
 
-Key features include:
-- Sticky bucketing to ensure consistent user experiences
-- Diagnostic charts for implementation validation
-- Fallback variant handling for error cases
-- Targeting and inclusion lists for precise user selection
+- **Assignment Events**: Records when a user is assigned to a specific variant
+- **Exposure Events**: Records when a user actually sees or experiences a variant
+- **Conversion Events**: User actions tracked to measure experiment outcomes
+
+### Diagnostic Capabilities
+
+- **Sample Ratio Mismatch (SRM)**: Detects when observed variant allocations differ from specified allocations
+- **Exposures without Assignments**: Identifies cases where users received experiment exposures without proper assignment events
+- **Variant Jumping**: Detects when users see multiple variants for a single experiment
+
+## Feature Relationships
+
+Amplitude Experiment implements a two-phase experimentation process:
+
+1. **Assignment Phase**: Users are assigned to variants based on targeting rules and allocation percentages. This happens when the experiment is evaluated for a user.
+
+2. **Exposure Phase**: Users experience the assigned variant when they encounter the feature in the application.
+
+The diagnostic tools monitor the relationship between these phases:
+- SRM analysis ensures the distribution of users matches the intended allocation percentages
+- Exposure tracking verifies that users are experiencing the variants they were assigned
+- Variant jumping detection identifies integrity issues where users experience inconsistent variants
+
+The platform supports both client-side and server-side implementation patterns, with different considerations for tracking exposure events in each case.
 
 ## Key Nomenclature and Definitions
 
-- **Experiment Runs**: Configurable test iterations that can be restarted to exclude previous data
-- **Variant Assignment**: The process of allocating users to different experiment variants
-- **Exposure Events**: Events tracking when users are shown a specific variant
-- **Assignment Events**: Events recording when users are assigned to a variant
-- **Bucketing Salt**: A unique identifier used to randomize user assignments
-- **Experiment Key**: Identifier for a specific experiment run
-- **Sample Ratio Mismatch (SRM)**: Statistical anomaly where observed distribution differs from configured allocation
-- **Variant Jumping**: When users see multiple variants of the same experiment
-- **Assignment-to-Exposure Conversion**: Rate at which assigned users experience a variant
-- **Inclusion List**: Predefined users who should receive a specific variant
-- **Targeting**: Rules determining experiment eligibility
+- **Experiment Run**: A specific instance of an experiment with its own bucketing salt and user assignments
+- **Fallback Variant**: The default variant shown when targeting conditions aren't met or assignment fails
+- **Rule-based Targeting**: Criteria that determine which users are eligible for an experiment
+- **Mutual Exclusivity**: Configuration that ensures users can only participate in one experiment from a defined group
+- **Identity Mismatch**: Occurs when different user identifiers are used for assignment and exposure events
+- **Variant Distribution Weights**: The percentage allocation of users to each variant (e.g., 50/50 split)
+- **Analysis Window**: The time period used for analyzing experiment results
+- **Assignment-to-Exposure Conversion**: The rate at which assigned users actually experience the variant
 
-## Product Ecosystem Integration
+## Integration with Amplitude Ecosystem
 
-Amplitude Experiment integrates with the broader Amplitude analytics platform to provide:
+Amplitude Experiment is tightly integrated with the broader Amplitude analytics platform:
 
-1. User behavior analysis based on experiment variants
-2. Cohort creation from experiment participants
-3. Diagnostic tools leveraging Amplitude's analytics capabilities
-4. Timeline analysis to track user interactions with experiments
+- Experiment results can be analyzed using Amplitude Analytics' full suite of tools
+- User properties and behaviors from Amplitude can be used for sophisticated experiment targeting
+- Diagnostic tools leverage Amplitude's event tracking infrastructure for accurate measurement
+- User timeline analysis in Amplitude helps debug variant jumping and other experiment issues
+- Experiment data can be used in Amplitude dashboards and reports for comprehensive analysis
 
-This integration allows teams to connect experimental results with broader user behavior patterns and business metrics tracked in Amplitude.
+## API and Implementation Details
 
-## Troubleshooting Features
+### SDK Methods
+- **fetch()**: Retrieves variant assignments for a user from the Experiment service
+- **variant()**: Returns the assigned variant for a specific experiment
 
-The platform includes several diagnostic tools:
+### Implementation Patterns
+- Client-side SDKs automatically track both assignment and exposure events
+- Server-side implementations typically require separate tracking of exposure events
+- Custom exposure events can be implemented for specific use cases or complex applications
 
-1. **Exposures without Assignments Chart**: Identifies users who received experiment exposures without proper assignment events, potentially indicating:
-   - Identity mismatches between assignment and exposure
-   - Account switching issues
-   - Improper tracking of fallback variants
+## Troubleshooting Workflows
 
-2. **Sample Ratio Mismatch Detection**: Identifies statistically significant deviations from expected variant distributions, which may be caused by:
-   - Changes to variant distribution weights
-   - Instrumentation issues
-   - Analysis window misalignment
-   - Traffic allocation changes
+### Sample Ratio Mismatch (SRM)
+1. Check if variant distribution weights were modified during the experiment
+2. Verify alignment of analysis window with experiment start/end dates
+3. Investigate variant jumping using diagnostic charts
+4. Check assignment-to-exposure conversion rates
+5. Review instrumentation for tracking issues
 
-3. **Variant Jumping Diagnostics**: Helps identify and resolve issues where users see multiple variants, distinguishing between normal causes (targeting changes, anonymous identity merging) and abnormal causes (identity mismatches).
+### Variant Jumping
+1. Determine if jumping is due to expected causes (targeting changes, anonymous identity merging)
+2. Check for identity mismatches between assignment and exposure events
+3. Analyze user timelines to identify patterns
+4. Implement consistent bucketing key usage across platforms
 
-4. **User Timeline Analysis**: Provides detailed debugging of individual user experiences within experiments.
+### Exposures without Assignments
+1. Check for identity mismatches between fetch() and variant() calls
+2. Investigate account switching scenarios
+3. Verify proper tracking of fallback variants
+4. Review implementation of rule-based targeting
 
-Implementation best practices include proper configuration of experiment keys, consistent identity management, careful targeting rule management, and regular monitoring of diagnostic charts to ensure experiment integrity.
+### Creating a New Experiment Run
+1. Use the experiment key property to differentiate runs
+2. Understand that a new run re-randomizes users to variants
+3. Ensure SDK compatibility with the new experiment key
+4. Configure proper exposure event tracking for the new run

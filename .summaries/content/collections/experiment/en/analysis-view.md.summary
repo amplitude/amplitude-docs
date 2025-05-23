@@ -1,5 +1,5 @@
 # Summary
-The Experiment Analysis view in Amplitude Experiment provides statistical measurements to evaluate experiment success, displaying metrics like relative performance, confidence intervals, significance, and absolute values for each variant compared to the control, helping users determine if their experiment achieved statistically significant results.
+The Experiment Analysis view in Amplitude Experiment provides statistical measurements to evaluate experiment success, displaying metrics like relative performance, confidence intervals, significance, and absolute values for each variant compared to the control, helping users determine if their experiment produced statistically significant results.
 
 # Keywords
 - Experiment Analysis view

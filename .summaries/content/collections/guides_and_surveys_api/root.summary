@@ -1,71 +1,68 @@
 # Guides and Surveys API
 
-## Product Overview
+## Overview
 
-The Guides and Surveys API is a specialized set of endpoints designed for programmatic management of guides, surveys, and their translations. This API primarily focuses on localization capabilities, allowing users to import and export translation files in a standardized format (XLIFF 1.2). The product enables organizations to efficiently manage multilingual content for customer engagement tools, supporting global business operations that require localized content delivery across different regions and languages.
+The Guides and Surveys API is a programmatic interface for managing and localizing guides and surveys content. It provides robust capabilities for translating content through integration with external translation management systems, making it ideal for global businesses that need to deliver content in multiple languages.
 
-## Key Features
+## Key Features and Capabilities
 
-- **Localization Management**: Programmatically export and import translations for guides and surveys
-- **XLIFF 1.2 Format Support**: Industry-standard translation file format compatibility
-- **Batch Processing**: Handle multiple guides or surveys in a single API request
-- **Multi-locale Support**: Process translations for multiple target languages simultaneously
-- **Translation Management System Integration**: Seamless workflow with external translation tools
-- **Automatic Cache Management**: System purges caches after translation imports to ensure content is updated
+- **Content Management**: Programmatically manage guides and surveys content
+- **Localization Support**: Import and export translation files in XLIFF 1.2 format
+- **External Integration**: Seamless connection with third-party translation management systems
+- **Multilingual Content**: Support for multiple languages and regional variants
+- **Automated Cache Management**: Automatic cache purging after translation imports
 
 ## Product Relationships and Architecture
 
-The Guides and Surveys API appears to be a component within a larger customer engagement platform. The API specifically handles the localization aspects of two primary content types:
+The Guides and Surveys API appears to be a component within a larger customer engagement platform. It specifically handles the content management and localization aspects of guides and surveys, which are likely customer-facing content types used for:
 
-1. **Guides**: Interactive content elements likely used for user onboarding, feature announcements, or contextual help
-2. **Surveys**: Feedback collection tools for gathering user input and measuring satisfaction
+1. User onboarding and education (guides)
+2. Feedback collection and user research (surveys)
 
-The API serves as the bridge between the core platform and external translation workflows, enabling content creators to develop materials in a source language and efficiently localize them into multiple target languages.
+The API serves as a bridge between the main content creation platform and external translation services, enabling a streamlined workflow for multilingual content delivery.
 
 ## Key Nomenclature and Definitions
 
-- **XLIFF (XML Localization Interchange File Format)**: The standardized XML-based format used for exchanging localization data
-- **Source Language**: The original language of the content (specified as `source-language` in XLIFF)
-- **Target Language**: The language into which content is being translated (specified as `target-language` in XLIFF)
-- **Trans-unit**: Individual translation unit within an XLIFF file containing source text and its corresponding translation
-- **Variants**: Different versions of text within the same translation unit, allowing for contextual variations
-- **Localization**: The process of adapting content for specific regions or languages
-- **Cache Purging**: Automatic clearing of stored content to ensure updated translations are displayed
+- **Guides**: Instructional content that helps users navigate and understand product features
+- **Surveys**: Interactive content for collecting user feedback and data
+- **Localization**: The process of adapting content for specific languages and regions
+- **XLIFF 1.2**: XML Localization Interchange File Format, the standard format for exchanging translation data
+- **Source Language**: The original language of content before translation
+- **Target Language**: The language into which content is being translated
+- **Trans-unit**: Individual translatable text units within the XLIFF format
+- **Language Variants**: Regional variations of languages (e.g., en-US, en-GB)
 
-## API Endpoints
+## API Endpoints and Authentication
 
-The API currently offers two primary endpoints:
+### Authentication
+The API uses Basic Authentication with:
+- **App ID** (used as username)
+- **App Secret Key** (used as password)
 
-### Export Translations
-- **Method**: GET
-- **Authentication**: Basic Authentication
-- **Purpose**: Retrieves translation files for specified guides/surveys and target locales
-- **Output**: XLIFF 1.2 formatted files containing source text and existing translations
+### Key Endpoints
+- **Import Translations**: `POST` request to import translated content
+- **Export Translations**: `GET` request to export content for translation
 
-### Import Translations
-- **Method**: POST
-- **Authentication**: Basic Authentication
-- **Purpose**: Uploads completed translations for guides/surveys
-- **Input**: XLIFF 1.2 formatted files with translated content
-- **Post-processing**: Automatic cache purging to reflect updated translations
+## Integration Ecosystem
 
-## Integration Workflow
+The Guides and Surveys API integrates with:
 
-The typical workflow for using the Guides and Surveys API involves:
+1. **Content Management Systems**: Where guides and surveys are initially created
+2. **Translation Management Systems**: External services that facilitate the translation process
+3. **Content Delivery Systems**: Where the translated content is ultimately presented to users
 
-1. **Content Creation**: Developing guides and surveys in the source language
-2. **Translation Export**: Using the API to export XLIFF files containing source content
-3. **Translation Process**: Processing the XLIFF files in external translation management systems
-4. **Translation Import**: Uploading the completed translations via the API
-5. **Content Delivery**: Automatically updated multilingual content delivery to end users
+The workflow typically follows these steps:
+1. Content is created in the primary system
+2. Content is exported via the API for translation
+3. Translated content is imported back via the API
+4. Cache is automatically purged to make new translations immediately available
+5. Multilingual content is delivered to end users
 
-## Product Ecosystem Context
+## Technical Requirements
 
-The Guides and Surveys API appears to be part of a broader customer experience or digital adoption platform. The localization capabilities suggest that the product serves global businesses needing to provide consistent user experiences across different languages and regions. The API's focus on guides and surveys indicates that the platform likely specializes in user onboarding, feature adoption, and feedback collection.
+- Support for XLIFF 1.2 format processing
+- Capability to make authenticated HTTP requests
+- Understanding of ISO language codes and regional variants
+- Integration capabilities with translation management systems
 
-## Technical Considerations
-
-- The API is currently in Beta status
-- Authentication is implemented via Basic Authentication
-- The system automatically handles cache management after translation imports
-- The API adheres to the XLIFF 1.2 standard for maximum compatibility with translation tools and workflows
+The API is currently in Beta status for its Localization features, suggesting ongoing development and potential for additional capabilities in future releases.

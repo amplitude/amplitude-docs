@@ -11,6 +11,6 @@ This documentation explains how to sync user data from Amplitude to third-party 
 - user property mapping
 - sync history
 - CSV exports
-- skipped users
+- skip_reason
+- unresolved mapping
 - Amplitude Activation
-- feature availability

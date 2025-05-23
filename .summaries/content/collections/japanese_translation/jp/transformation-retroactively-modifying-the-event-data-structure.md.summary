@@ -1,5 +1,5 @@
 ## Summary
-This documentation explains Amplitude's transformation feature, which allows retroactive modification of event data structures without changing the underlying codebase. It covers how to merge events, consolidate properties, modify property values, hide property values, and manage transformations, noting that transformations affect query results but not raw data exports.
+This documentation explains Amplitude's transformation feature, which allows retroactive modification of event data structures without changing the underlying codebase. It covers how to merge events, consolidate properties, modify property values, and hide property values, along with instructions for editing and deleting transformations.
 
 ## Keywords
 - Event data transformation
@@ -9,6 +9,6 @@ This documentation explains Amplitude's transformation feature, which allows ret
 - Property value renaming
 - Value hiding
 - Transformation management
-- Query-time application
+- Query-time transformations
 - Data structure correction
 - Implementation error fixes

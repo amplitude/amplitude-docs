@@ -1,5 +1,15 @@
 # Summary and Keywords
 
-The Ampli Wrapper provides a strongly typed API that matches tracking plan definitions, generating a tracking library that enables developers to track events with proper type checking and autocompletion instead of using error-prone JSON objects with manual property assignment.
+The Ampli Wrapper provides a strongly typed API that matches tracking plan definitions, generating code on-the-fly to enable developers to track events with proper type checking and autocompletion instead of using error-prone JSON objects with manual property assignment.
 
-**Keywords:** ampli pull, tracking library, strongly typed API, type checking, autocomplete analytics, tracking plan integration, event validation, code generation, ampli.productViewed
+## Keywords
+- ampli pull
+- tracking library
+- strongly typed API
+- type checking
+- tracking plan integration
+- event validation
+- code generation
+- autocomplete for analytics
+- event tracking
+- Amplitude Data

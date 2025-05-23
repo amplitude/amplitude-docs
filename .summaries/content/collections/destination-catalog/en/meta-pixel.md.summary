@@ -7,8 +7,8 @@ Amplitude Activation's Meta Pixel streaming integration enables forwarding Ampli
 - Event streaming
 - Customer Information Parameters
 - External ID mapping
+- Property mapping
 - Meta Pixel ID
 - Access Token
-- User property mapping
-- Custom Data Parameters
-- Event forwarding configuration
+- Event forwarding
+- Hashed parameters

@@ -1,18 +1,16 @@
 ## Summary
-The Amplitude Experiment Node.js SDK documentation provides implementation details for both remote and local evaluation of feature flags, including initialization, configuration options, fetching/evaluating variants, and cohort targeting capabilities. The SDK supports timeout configuration, retry mechanisms, flag streaming, and integration with Amplitude cookies.
+The Amplitude Experiment Node.js SDK documentation covers both remote and local evaluation implementations for feature flags and experiments, detailing installation, initialization, configuration options, and methods for fetching/evaluating variants with comprehensive timeout, retry, and streaming options.
 
 ## Keywords
 - Node.js SDK
-- remote evaluation
-- local evaluation
-- feature flags
-- variant fetching
-- cohort targeting
-- flag streaming
-- assignment tracking
+- Remote evaluation
+- Local evaluation
+- Variant fetching
+- Flag streaming
+- Cohort targeting
+- Assignment tracking
 - AmplitudeCookie
-- serverZone configuration
-- fetchTimeoutMillis
+- fetchV2
 - evaluateV2
-- initializeRemote
-- initializeLocal
+- Timeout configuration
+- Server deployment key

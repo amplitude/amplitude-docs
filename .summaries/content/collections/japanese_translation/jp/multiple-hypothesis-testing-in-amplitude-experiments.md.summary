@@ -9,6 +9,6 @@ This documentation explains multiple hypothesis testing in Amplitude Experiments
 - Statistical significance
 - Multiple comparisons problem
 - Primary and secondary metrics
-- P-value adjustment
+- p-value adjustment
 - Experiment variants
 - Type I error control

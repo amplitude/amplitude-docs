@@ -1,14 +1,14 @@
 # Summary
-This documentation explains Amplitude's group-by feature for categorizing events, including how results are limited (100 for single group-by, 500 for double group-by) and how different metrics determine the ordering of group-by results in the Breakdown Table, with specific ordering rules for formulas with and without group-bys.
+This documentation explains Amplitude's group-by feature for categorizing events, including how results are limited (100 for single group-by, 500 for double group-by) and how different metrics determine the ordering of group-by results in the Breakdown Table, with specific prioritization rules for formulas with and without group-bys.
 
 # Keywords
 - group-by truncation
 - result pruning
 - group ordering
-- breakdown table
-- metric prioritization
-- formula ordering
-- group-by limits
+- breakdown table prioritization
+- metric ordering rules
+- formula group ranking
+- performance limits
 - event segmentation
-- query performance
-- data aggregation
+- group-by visualization
+- query result limits

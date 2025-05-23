@@ -5,10 +5,10 @@ Amplitude's Insights feature provides anomaly detection alerts for metrics using
 - Prophet anomaly detection
 - Automatic/custom/smart alerts
 - Confidence intervals
-- Event Segmentation monitoring
-- Funnel Analysis monitoring
 - Slack integration
-- Daily/hourly metrics
+- Event Segmentation alerts
+- Funnel Analysis alerts
+- Daily/hourly metrics monitoring
 - Statistical significance thresholds
 - Alert management
 - Notification delivery

@@ -11,4 +11,4 @@ This documentation page explains Single Sign-On (SSO) integration with Amplitude
 - user authentication
 - SAML assertion
 - email claim attribute
-- default project access
+- default project permissions

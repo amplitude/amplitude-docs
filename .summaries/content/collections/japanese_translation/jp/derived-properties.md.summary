@@ -1,14 +1,17 @@
 ## Summary
-This documentation page explains derived properties in Amplitude Data, which allow users to create new event and user properties retroactively from existing properties using functions and operators. It details how to create derived properties, preview results, and provides comprehensive examples and reference tables for string, math, object, date/time, array, and conditional functions.
+This documentation explains derived properties in Amplitude Data, which allow users to create new event and user properties retroactively from existing properties using functions and operators. The page details the creation process, result previewing, and provides comprehensive reference tables for supported string, mathematical, object, date/time, array functions and conditional operators.
 
 ## Keywords
 - derived properties
 - Amplitude Data
-- property transformation
-- string functions
-- math operators
+- property functions
+- string manipulation
+- mathematical operations
 - conditional logic
-- array manipulation
-- date/time conversion
+- array operations
+- date/time formatting
+- property transformation
 - REGEXEXTRACT
+- SPLIT
+- IF statements
 - retroactive property creation

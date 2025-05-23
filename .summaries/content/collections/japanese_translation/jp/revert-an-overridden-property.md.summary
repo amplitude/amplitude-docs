@@ -1,14 +1,14 @@
 # Summary
-This documentation explains how to revert overridden properties in Amplitude Data, allowing for retroactive cleanup of tracking plans and maintaining consistency across event properties by restoring them to their original versions in the event property table.
+This documentation explains how to revert overridden properties in Amplitude Data, allowing for retroactive cleanup of tracking plans and maintaining consistency across event properties. It provides step-by-step instructions for reverting properties in specific events, property groups, or across multiple overrides at once.
 
 # Keywords
 - overridden properties
-- revert to original
-- property groups
-- event properties
-- tracking plan cleanup
+- property reversion
 - Amplitude Data
-- manage override
-- bulk revert
-- compare to original
-- property details panel
+- tracking plan cleanup
+- event property consistency
+- Manage Override functionality
+- property groups
+- bulk reversion
+- Compare To Original
+- Used By tab

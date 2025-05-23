@@ -1,5 +1,5 @@
 # Summary
-Amplitude is an event-based analytics platform that tracks user behavior in products, focusing on events (user actions), event properties (action details), users (individuals interacting with products), user properties (user details), and sessions (periods of product usage), enabling teams to gain insights into user engagement, retention, and revenue.
+Amplitude is an event-based analytics platform that tracks user behavior in products, allowing teams to analyze user engagement, retention, and revenue through events (user actions), event properties (action details), users (individuals interacting with products), user properties (user details), and sessions (periods of product usage).
 
 # Keywords
 - event-based analytics

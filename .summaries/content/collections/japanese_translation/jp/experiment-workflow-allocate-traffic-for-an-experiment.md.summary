@@ -11,4 +11,4 @@ This documentation page explains how to allocate traffic for experiments in Ampl
 - user properties targeting
 - internal user allocation
 - experiment bias prevention
-- segment-specific rollout controls
+- segment-specific rollout

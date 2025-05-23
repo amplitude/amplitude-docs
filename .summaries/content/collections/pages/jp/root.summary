@@ -1,28 +1,41 @@
 # Amplitude Japanese Documentation
 
-## Overview
-Amplitude is a product analytics platform that offers documentation in Japanese. The Japanese documentation section is a dedicated resource for Japanese-speaking users to understand and utilize Amplitude's features and capabilities.
+## Product Overview
+Amplitude is a product analytics platform that provides documentation in Japanese. The Japanese documentation section is a dedicated resource for Japanese-speaking users to understand and utilize Amplitude's analytics capabilities.
 
-## Product Structure
-The Japanese documentation appears to be organized as a separate section within the broader Amplitude documentation ecosystem. It consists of:
+## Directory Structure and Relationships
+The `/content/collections/pages/jp` directory contains Japanese language documentation files for Amplitude. Currently, the directory includes:
 
-- A dedicated home page for Japanese documentation
-- Potentially translated versions of the main documentation content
+1. `jp-home.md` - The main landing page for Japanese documentation
+2. `test.md` - A test page that is currently unpublished
 
-## Key Nomenclature
-- **jp-home**: The main landing page for Japanese documentation
-- **japanese_content**: Navigation title for the Japanese documentation section
-- **test**: A currently unpublished page that appears to be in development or testing
+The Japanese documentation appears to be a subset or translation of the main Amplitude documentation, organized in a separate directory to facilitate language-specific content management.
 
-## Integration with Product Ecosystem
-The Japanese documentation is integrated into the main Amplitude documentation platform, providing localized content for Japanese users. This suggests that Amplitude has a commitment to supporting international users with native language documentation.
+## Key Nomenclature and Definitions
+- **Blueprint: home** - Indicates that the file serves as a homepage template
+- **Nav_title: japanese_content** - Navigation title used for the Japanese content section
+- **hide_helpful** - A parameter set to true, likely disabling helpful feedback widgets on the Japanese pages
+- **exclude_from_sitemap** - Parameter controlling whether the page appears in site navigation
+- **origin** - References the original content ID that a translated page is based on
 
-## Technical Details
-- The documentation is built using a blueprint-based content management system
-- Content is managed through markdown files with YAML frontmatter
-- Each page has unique identifiers (e.g., `9bf6d854-cbcc-4db3-a3f9-3f291b2f02e9`)
-- Pages can be excluded from the sitemap if needed
-- Content can be marked as published or unpublished
-- The system supports content origin references, suggesting content may be translated or derived from other pages
+## Product Ecosystem Integration
+The Japanese documentation is integrated into the broader Amplitude documentation ecosystem as follows:
 
-The Japanese documentation section appears to be actively maintained, with recent updates to the home page (timestamp: 1718402690) and test page (timestamp: 1733261724).
+1. It maintains the same content management structure as the main documentation
+2. It uses the same blueprint system for page templates
+3. It appears to be managed through the same content management system
+4. The documentation likely covers the same product features and capabilities as the main documentation, but in Japanese
+
+The presence of an `origin` field in the test document suggests that the Japanese content may be translations of existing English documentation, with references maintained to the source material.
+
+## Technical Implementation
+The documentation is implemented using Markdown files with YAML front matter for metadata. Each file includes:
+
+- A unique ID
+- Blueprint designation
+- Title information
+- Publication status
+- Update tracking information
+- Display configuration parameters
+
+No specific API endpoints or command line invocations are mentioned in the provided files.

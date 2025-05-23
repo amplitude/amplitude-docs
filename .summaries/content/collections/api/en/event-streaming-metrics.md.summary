@@ -2,15 +2,17 @@
 The Event Streaming Metrics Summary API allows monitoring of delivery metrics for event streams, providing data on successful deliveries, failures, latency, and retry statistics for a specified time period (up to 90 days of history) with rate limits of 4 concurrent requests and 12 requests per minute per project.
 
 # Keywords
-- event streaming metrics
-- delivery rate
+- event-streaming-metrics
+- delivery-metrics-summary
 - sync_id
 - time_period
-- latency monitoring
-- events delivered
-- events discarded
-- retry statistics
-- p95 latency
-- event delivery monitoring
+- eventsDelivered
+- eventsNotDelivered
+- deliveryRate
+- latencyInSeconds
+- successOnFirstAttempt
+- successAfterRetry
+- eventsExpired
+- eventsDiscarded
 - 90-day retention
-- rate limiting
+- rate limits

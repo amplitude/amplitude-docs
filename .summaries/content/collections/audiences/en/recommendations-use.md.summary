@@ -1,16 +1,16 @@
 # Summary
-This documentation explains how to deploy recommendation models in personalization campaigns using Amplitude's Profile API, including authentication, request parameters, response interpretation, and integration steps, as well as how to analyze recommendation performance through the Performance tab with metrics like lift against baseline and statistical significance.
+This documentation explains how to deploy recommendation models in personalization campaigns using Amplitude's Profile API, including authentication, request parameters, response interpretation, and integration steps, along with guidance on analyzing recommendation performance through conversion metrics and statistical significance.
 
 # Keywords
 - Profile API
 - recommendation deployment
+- API authentication
 - is_control parameter
 - recommendation performance
-- API authentication
-- Secret Key
-- recommendation_source
 - statistical significance
+- user_id query
+- JSON response
+- recommendation integration
+- conversion metrics
 - treatment vs control segments
 - personalization campaigns
-- recommendation items array
-- performance metrics

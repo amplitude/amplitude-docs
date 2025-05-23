@@ -1,14 +1,14 @@
 # Summary
-This documentation page describes the AppsFlyer (Cohort) destination integration in Amplitude, which allows users to send Amplitude cohorts to AppsFlyer Audiences for personalized marketing initiatives. The setup requires obtaining an AppsFlyer App ID and API token, configuring a separate destination for each app platform, and mapping user identifiers before syncing cohorts.
+This documentation page describes the AppsFlyer (Cohort) destination integration that allows sending Amplitude cohorts to AppsFlyer Audiences for personalized marketing initiatives. It covers setup requirements including obtaining AppsFlyer App ID and API token, configuring the destination in Amplitude with proper user identifier mapping, and the step-by-step process for syncing cohorts.
 
 # Keywords
 - AppsFlyer Audiences
 - cohort syncing
-- app attribution
 - audience segmentation
 - AppsFlyer App ID
-- AppsFlyer API Token V2
+- API Token V2
 - user identifier mapping
-- iOS Advertiser ID
-- Google Advertiser ID
-- platform-specific destinations
+- platform-specific setup
+- beta integration
+- first-party data
+- audience synchronization

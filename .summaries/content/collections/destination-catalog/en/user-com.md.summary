@@ -8,7 +8,7 @@ This documentation describes the User.com destination integration for Amplitude,
 - customer communication platform
 - API key configuration
 - behavioral triggers
-- audience segmentation
-- personalized messaging
-- multi-channel communication
-- sync cadence
+- audience synchronization
+- multi-channel messaging
+- personalized campaigns
+- segmentation

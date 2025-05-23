@@ -2,86 +2,118 @@
 
 ## Overview
 
-Amplitude is an analytics platform that allows organizations to collect, analyze, and visualize user behavior data. The platform enables tracking of various user interactions, including sessions, revenue, and unique user identification. Amplitude Data provides capabilities to connect third-party platforms as data sources, track specific user behaviors, and export data for further analysis.
+Amplitude is an analytics platform that allows organizations to track and analyze user behavior across digital products. The platform enables the collection of data from various sources, tracking of user sessions, revenue, and unique users, and provides tools for data export and analysis.
 
-## Key Features and Concepts
+Key features include:
+- Data source integration with third-party platforms
+- User identification and tracking across devices
+- Session tracking and customization
+- Revenue tracking for in-app and non-app purchases
+- Data export capabilities
+
+## Product Relationships and Features
 
 ### Data Sources and Integration
 
-Amplitude Data allows connecting third-party platforms as data sources through the Sources interface, which consists of:
+Amplitude Data allows connection to third-party platforms through the Sources interface, which consists of:
 
-- **Sources List**: Displays all connected data sources with metrics on event volume and throttled users
-- **Ingestion Debugger**: Helps troubleshoot data ingestion issues
-- **Catalog**: Provides a collection of available source connectors for integration
+1. **Sources List**: Displays all connected data sources with information about:
+   - Source name and type
+   - Connection status
+   - Event volume
+   - Number of throttled users
 
-Users can add new data sources through a step-by-step process in the Catalog, enabling data import from various third-party platforms.
+2. **Ingestion Debugger**: Helps troubleshoot data ingestion issues
 
-### User Identification System
+3. **Catalog**: Provides a list of available source integrations that can be connected
 
-Amplitude uses a three-tiered identification system to track unique users:
+The connection process involves selecting a source from the Catalog, configuring authentication and data mapping, and monitoring the data flow through the Ingestion Debugger.
 
-1. **Device ID**: Automatically assigned to track a user on a specific device
-2. **User ID**: Optional identifier set by the implementation to track logged-in users
-3. **Amplitude ID**: Internally generated ID that Amplitude uses to link user activity
+### Tracking and Instrumentation
 
-The platform employs user merging logic to combine multiple Amplitude IDs when it determines they belong to the same user, ensuring consistent user tracking across devices and sessions.
+Amplitude provides several core tracking capabilities:
 
-### Session Tracking
+1. **User Tracking**:
+   - Uses a three-ID system: Device ID, User ID, and Amplitude ID
+   - Handles user identification across anonymous browsing, multi-device usage, and login states
+   - Performs automatic user merging when multiple Amplitude IDs are determined to belong to the same user
+   - Supports cross-domain tracking
 
-Amplitude defines sessions with the following characteristics:
+2. **Session Tracking**:
+   - Defines sessions differently for mobile and web applications
+   - Generates session IDs based on platform-specific rules
+   - Allows custom session definitions based on properties, events, or timeout intervals
+   - Supports Start/End Session events
+   - Calculates session length as the difference between maximum and minimum client_event_time within a session
 
-- **Default Timeout**: 5 minutes for mobile apps, 30 minutes for web applications
-- **Session ID**: Unique identifier for each session
-- **Out-of-Session Events**: Marked with session ID -1
-- **Session Length Calculation**: Difference between maximum and minimum client_event_time within a session
+3. **Revenue Tracking**:
+   - Tracks revenue through specific properties ($revenue, $price, $quantity)
+   - Supports both in-app and non-in-app purchase tracking
+   - Provides revenue verification for in-app purchases
+   - Displays revenue data in the Revenue LTV chart
 
-Custom session definitions can be implemented through explicit Start/End Session events or by modifying timeout behaviors.
+### Data Export and Analysis
 
-### Revenue Tracking
+Amplitude offers data export capabilities with some important considerations:
 
-Amplitude provides specialized methods for tracking revenue events with properties including:
-
-- **$revenue**: Total revenue amount
-- **$price**: Unit price of the item
-- **$quantity**: Number of items purchased
-- **$receipt**: Receipt data for verification (especially for in-app purchases)
-
-The platform supports tracking both in-app purchases (with receipt validation) and non-in-app purchases, with revenue data visualized in charts like Revenue LTV.
+- Data exported through the Export API or to Snowflake/Redshift may show discrepancies compared to the Amplitude analytics platform
+- These discrepancies are primarily due to:
+  - Timezone differences (Amplitude uses project timezone while Snowflake and Export API use UTC)
+  - Different time references (Export API uses server_upload_time rather than event time)
 
 ## Key Nomenclature and Definitions
 
-- **Amplitude ID**: Internal identifier used to track unique users across devices and sessions
-- **Device ID**: Identifier for a specific device or browser instance
-- **User ID**: Custom identifier set by the implementation for logged-in users
-- **Session ID**: Unique identifier for a user's continuous interaction period
-- **client_event_time**: Timestamp when an event occurred on the client device
-- **server_upload_time**: Timestamp when Amplitude servers received the event
-- **Sources List**: Interface showing all connected data sources
-- **Ingestion Debugger**: Tool for troubleshooting data ingestion issues
-- **Catalog**: Collection of available source connectors
-- **Revenue Properties**: Special properties ($revenue, $price, etc.) for tracking purchase events
+1. **Amplitude ID**: A unique identifier assigned by Amplitude to track users across devices and sessions
+
+2. **Device ID**: A unique identifier for a specific device or browser instance
+
+3. **User ID**: A custom identifier set by the application to identify logged-in users
+
+4. **Session ID**: A unique identifier for a user's session, generated based on platform-specific rules
+
+5. **client_event_time**: The timestamp when an event occurred on the client device (used for session length calculation)
+
+6. **server_upload_time**: The timestamp when an event was received by Amplitude servers (used in Export API)
+
+7. **Revenue Properties**:
+   - $revenue: Total revenue amount
+   - $price: Price of the item
+   - $quantity: Number of items purchased
+   - $receipt: Receipt data for verification
+   - $receipt_sig: Receipt signature for verification
+
+8. **Sources List**: Interface showing all connected data sources in Amplitude Data
+
+9. **Ingestion Debugger**: Tool for troubleshooting data ingestion issues
+
+10. **Catalog**: List of available source integrations that can be connected to Amplitude
 
 ## Product Ecosystem Integration
 
-Amplitude Data integrates with the broader Amplitude ecosystem in several ways:
+Amplitude appears to be part of a broader analytics ecosystem with several interconnected components:
 
-1. **Data Collection**: Sources interface allows importing data from third-party platforms
-2. **Data Export**: Export API enables exporting data to external systems like Snowflake/Redshift
-3. **Analytics Platform**: Collected data feeds into Amplitude's analytics capabilities for visualization and analysis
+1. **Amplitude Data**: The data collection and integration platform that connects to various sources
 
-There are important considerations when comparing data across the ecosystem:
+2. **Amplitude Analytics**: The core analytics platform that processes and visualizes the collected data
 
-- Timezone differences between Amplitude analytics (project timezone) and Export API/Snowflake (UTC)
-- Different time references (event time vs. server_upload_time) can cause discrepancies
-- Data filtering (hidden, inactive, or deleted events) affects metrics like session length
+3. **Export API**: Allows exporting data from Amplitude to other systems
 
-## API and Technical Details
+4. **Data Warehouse Integrations**: Connections to Snowflake and Redshift for advanced data analysis
 
-While specific API endpoints aren't fully detailed in the provided documentation, several technical implementation aspects are mentioned:
+The platform is designed to collect data from multiple sources, process it according to configured rules for user identification and session tracking, and make it available for analysis both within Amplitude and through exports to other systems.
 
-- **Revenue Tracking Methods**: `logRevenueV2` method for tracking revenue events
-- **Session Configuration**: Options to customize session timeout periods and definitions
-- **User Identification**: Methods to set Device ID and User ID for proper user tracking
-- **Export API**: Used to export data, with important differences in timezone handling compared to the main platform
+## API Endpoints and Commands
 
-The documentation suggests that Amplitude provides both client-side SDKs for direct instrumentation and server-side APIs for data export and integration with other systems.
+While specific API endpoints aren't fully detailed in the provided documentation, the following are mentioned:
+
+1. **Export API**: Used to export data from Amplitude, with data referenced by server_upload_time
+
+2. **SDK Methods**:
+   - `logRevenueV2`: Used for tracking revenue events
+   - `setOptOut`: Used to opt users out of tracking
+
+3. **HTTP API**: Can be used as an alternative to SDKs for implementing session tracking
+
+4. **Revenue Verification API**: Used for validating in-app purchases
+
+The documentation suggests that Amplitude provides both client-side SDKs and server-side APIs for data collection and management, allowing flexible implementation based on specific use cases.

@@ -1,5 +1,5 @@
 # Summary
-This documentation explains how to use formula metrics in experimental results in Amplitude, including supported formula functions (UNIQUES, TOTALS, PROPSUM, PROPAVG), formula syntax, and how Amplitude calculates statistical significance for formula metrics by computing variance and means for each component and applying mathematical operations.
+This documentation explains how to use formula metrics in experimental results in Amplitude, including creating formula metrics, supported formula functions (UNIQUES, TOTALS, PROPSUM, PROPAVG), formula syntax, and how Amplitude calculates statistical significance for formula metrics by computing variance and means for each component and applying mathematical operations.
 
 # Keywords
 - formula metrics

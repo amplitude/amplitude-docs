@@ -9,8 +9,7 @@ This documentation explains how to use holdout groups in Amplitude Experiment to
 - traffic allocation
 - experiment analysis
 - T-test
-- holdout percentage
 - experiment groups
 - user bucketing
+- multiple holdout groups
 - mutually exclusive groups
-- data integrity

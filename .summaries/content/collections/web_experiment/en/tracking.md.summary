@@ -1,5 +1,5 @@
 # Summary
-This documentation explains how Web Experiment tracks impression events (`[Experiment] Impression`) for analysis and billing, detailing how these events are transformed during ingestion and how user properties are set/unset based on flag key and variant information, with a formula for estimating monthly impression volume.
+This documentation explains how Web Experiment tracks impression events for analysis and billing, detailing how these events are transformed during ingestion (from `$impression` to `[Experiment] Impression`), how user properties are set/unset for experiment analysis, and provides a formula to estimate monthly impression volume.
 
 # Keywords
 - impression events
@@ -9,6 +9,6 @@ This documentation explains how Web Experiment tracks impression events (`[Exper
 - experiment_key
 - impression estimation
 - MTU
+- Web Experiment script
 - event properties
 - user properties
-- $impression

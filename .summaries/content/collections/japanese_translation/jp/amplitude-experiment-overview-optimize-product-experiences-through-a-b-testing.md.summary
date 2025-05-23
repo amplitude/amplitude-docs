@@ -1,16 +1,17 @@
 ## Summary
-This documentation provides an overview of Amplitude Experiment, a behavior-driven experimentation platform that enables product teams to optimize user experiences through A/B testing, progressive feature delivery, and dynamic in-product experiences using feature flags that can be modified without changing code, with integration via SDKs or REST API.
+This documentation provides an overview of Amplitude Experiment, a behavior-driven experimentation platform that enables product teams to optimize user experiences through A/B testing, progressive feature delivery, and dynamic in-product experiences using feature flags. It explains the workflow for creating experiments (including hypothesis formation, metric selection, and variant creation) and feature flags for controlled rollouts.
 
 ## Keywords
 - Amplitude Experiment
 - A/B testing
 - feature flags
-- hypothesis creation
-- sequential testing
-- experiment workflow
-- variant creation
 - progressive feature delivery
-- metrics selection
-- bucketing units
+- hypothesis creation
+- experiment metrics
+- variant creation
+- sequential testing
+- user assignment
 - statistical significance
-- experiment archiving
+- experiment workflow
+- bucket unit
+- SUTVA

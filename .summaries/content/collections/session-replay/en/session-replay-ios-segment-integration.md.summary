@@ -1,5 +1,5 @@
 ## Summary
-This documentation page covers the integration of Session Replay with iOS apps using Segment's Analytics-Swift library and Amplitude (Actions) destination, detailing installation steps, configuration options, data masking, user opt-out functionality, and known limitations of the iOS Session Replay implementation.
+This documentation page covers the integration of Session Replay with iOS apps using Segment's Analytics-Swift library and Amplitude (Actions) destination, detailing installation steps, configuration options, data masking, user opt-out mechanisms, and known limitations of the iOS Session Replay implementation.
 
 ## Keywords
 - AmplitudeSegmentSessionReplayPlugin

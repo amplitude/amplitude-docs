@@ -2,13 +2,13 @@
 This documentation describes the Userlist Cohort Sync integration for Amplitude, which allows users to sync cohorts from Amplitude to Userlist for targeted email campaigns based on user behavior data, requiring a paid Userlist plan and API key configuration in both platforms.
 
 # Keywords
-- Userlist
-- cohort sync
-- email automation
-- SaaS
-- API key
-- marketing automation
-- user behavior tracking
-- company-level data
-- sync cadence
-- Amplitude integration
+- Userlist cohort sync
+- Email automation
+- SaaS marketing
+- API key configuration
+- Cohort synchronization
+- Company-level tracking
+- Push API key
+- Sync cadence
+- Marketing automation
+- User behavior targeting

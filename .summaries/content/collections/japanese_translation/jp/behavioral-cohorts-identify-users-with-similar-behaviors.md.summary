@@ -1,17 +1,14 @@
 # Summary
-This page explains behavioral cohorts in Amplitude, which are groups of users with similar behaviors defined by actions taken within specific time periods. It covers how to create cohorts through the Cohort tab or Microscope, import cohorts from files, compare cohorts, and use them for segmentation across Amplitude charts and analyses.
+This documentation explains behavioral cohorts in Amplitude, which are groups of users with similar behaviors defined by actions taken within specific time periods. It covers how to create, import, compare, and manage cohorts, as well as how to use them for segmentation in analytics charts.
 
 # Keywords
 - behavioral cohorts
 - user segmentation
 - cohort definition
 - event frequency
-- time-based filtering
-- microscope integration
-- cohort comparison
-- inline cohorts
 - interval cohorts
-- cohort management
-- cohort export
+- cohort comparison
+- cohort import
 - group-level cohorts
-- user properties filtering
+- microscope cohort creation
+- cohort synchronization

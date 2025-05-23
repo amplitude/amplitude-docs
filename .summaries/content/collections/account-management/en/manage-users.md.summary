@@ -7,8 +7,8 @@ This documentation page explains how to manage users and permissions in Amplitud
 - Role management
 - Content ownership transfer
 - Email domain migration
-- Organization members management
-- Access request settings
-- User removal procedures
-- Bulk transfer ownership
-- Permission hierarchy
+- Organization settings
+- Bulk transfer edit access
+- User access requests
+- Permission levels
+- Admin capabilities

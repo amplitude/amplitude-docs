@@ -1,13 +1,14 @@
 # Summary
-The datepicker in Amplitude allows users to select analysis timeframes with several nuanced features: "Last" option includes the current incomplete interval, "Offset" excludes specific days, "Exclude" removes current day/week/month, and "Time Input" enables hour/minute/second granularity for Since/Between options in Event Segmentation and Funnel Analysis charts.
+This documentation explains the datepicker functionality in Amplitude, focusing on three key features: Offset (which excludes incomplete intervals), Exclude (which removes current day/week/month data), and Time Input (which allows hour/minute/second granularity for Since or Between date selections).
 
 # Keywords
-- datepicker timeframe selection
-- offset functionality
-- exclude today/week/month
+- datepicker offset
+- exclude today functionality
 - time input granularity
-- incomplete interval handling
-- dotted line representation
-- advanced settings
-- event segmentation compatibility
-- funnel analysis compatibility
+- incomplete data intervals
+- dotted line indicator
+- date range selection
+- advanced settings dropdown
+- event segmentation timeframe
+- funnel analysis timeframe
+- last x days/weeks/months

@@ -10,5 +10,7 @@ This documentation explains how to set display names for events and user propert
 - event types
 - visibility controls
 - event streams
-- event management
-- UI customization
+- default events
+- transformed events
+- live events
+- blocked events

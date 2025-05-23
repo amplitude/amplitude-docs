@@ -1,14 +1,14 @@
 # Summary
-Compass chart in Amplitude visualizes how user events correlate with retention, displaying correlation scores categorized as Highly Predictive (≥0.4), Moderately Predictive (0.3-0.4), Slightly Predictive (0.2-0.3), or Not Predictive (<0.2), with options to view statistical significance and alternative metrics like Positive Predictive Value.
+Compass chart in Amplitude visualizes how user events correlate with retention, displaying correlation scores categorized as Highly Predictive (≥0.4), Moderately Predictive (0.3-0.4), Slightly Predictive (0.2-0.3), or Not Predictive (<0.2), with options to view statistical significance and different metrics beyond the default correlation scores.
 
 # Keywords
 - retention correlation
-- heat map visualization
+- user event heatmap
 - correlation scores
 - statistical significance
 - 95% confidence interval
-- frequency buckets
-- positive predictive value
-- user event analysis
 - predictive categorization
-- cohort conversion
+- positive predictive value
+- event frequency buckets
+- second-week retention
+- base-to-target cohort conversion

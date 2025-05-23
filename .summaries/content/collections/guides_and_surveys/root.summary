@@ -1,150 +1,134 @@
 # Amplitude Guides and Surveys
 
-## Product Overview
+## High-Level Overview
 
-Amplitude Guides and Surveys is an in-product messaging and feedback collection solution that helps improve user experience, facilitate product learning, gather user feedback, and enhance key metrics like retention, activation, and engagement. It provides contextual and less disruptive alternatives to traditional popup components for engaging users within digital products.
+Amplitude Guides and Surveys is a comprehensive in-product messaging and feedback collection solution designed to enhance user experience within digital products. The platform enables product teams to deliver contextual guidance and gather user feedback without disrupting the user journey.
 
-The platform consists of two main components:
+The product consists of two primary components:
+- **Guides**: In-product messages with five template options (Tour, Announcement, Checklist, Banner, and Tooltip)
+- **Surveys**: Feedback collection tools with three template options (NPS, User Feedback, and Rating)
 
-1. **Guides**: In-product messages in various formats (Tours, Announcements, Checklists, Banners, Tooltips) that help users complete tasks or explore features.
-
-2. **Surveys**: Targeted feedback collection tools with templates for NPS (Net Promoter Score), User Feedback, and Rating surveys.
-
-The solution is designed for product teams, growth teams, and product marketing teams to optimize user journeys and improve product metrics.
+Key use cases include improving user onboarding, announcing new features, collecting product feedback, and enhancing key metrics like retention, activation, and engagement.
 
 ## Product Relationships and Features
 
-### Guides
+### Core Components
 
-Guides are in-product messages triggered by user behavior with these key features:
+1. **SDK Integration**
+   - Browser-based SDK (`engagement-browser`) for website and application implementation
+   - Compatible with Amplitude Browser SDK, third-party analytics, and Google Tag Manager
+   - API methods for theme management, callbacks, routing, and localization
 
-- **Templates**:
-  - Tour: Step-by-step product exploration
-  - Announcement: Important notifications
-  - Checklist: Task completion tracking
-  - Banner: Prominent notifications
-  - Tooltip: Contextual help
+2. **Form Factors**
+   - Modal: Full-screen overlay for important messages
+   - Popover: Contextual messages anchored to UI elements
+   - Pin: Small indicators that expand when clicked
+   - Tooltip: Contextual help tied to specific UI elements
+   - Banner: Persistent messages at screen edges
 
-- **Form Factors**:
-  - Modal: Center-screen overlay
-  - Popover: Positioned relative to elements
-  - Pin: Clickable markers
-  - Tooltip: Element-attached information
-  - Banner: Top/bottom screen notifications
+3. **Targeting and Triggering**
+   - Audience segmentation based on user properties
+   - Behavioral triggers based on user actions
+   - Location-based triggers using CSS selectors
+   - Priority settings and display limits
+   - Rate-limiting to prevent message fatigue
 
-- **Setup and Targeting**:
-  - Audience segmentation (All Users vs. Targeted Users)
-  - Behavioral triggers
-  - Page targeting
-  - Priority settings
-  - Display limits and cooldown periods
-  - Status management (Draft/Published/Schedule)
+4. **Analytics and Reporting**
+   - Performance dashboard with engagement metrics
+   - Guide and survey analytics (views, completions, responses)
+   - Integration with Amplitude Microscope for user-level insights
 
-### Surveys
+5. **Customization**
+   - Theme editor for brand alignment
+   - Conditional logic for dynamic survey paths
+   - Localization support via .xliff files
 
-Surveys collect targeted user feedback with these features:
-
-- **Templates**:
-  - NPS: Measuring customer satisfaction and loyalty
-  - User Feedback: Custom question formats
-  - Rating: Initial reaction collection
-
-- **Survey Builder**:
-  - Rating blocks (stars, labels, emoji, NPS)
-  - Conditional logic for dynamic survey paths
-  - Response-based branching
-
-### Shared Features
-
-Both Guides and Surveys share:
-
-- **Analytics**: Tracking of views, completions, and user interactions
-- **Experimentation**: A/B testing and Multi-armed Bandit experiments
-- **Theming**: Customizable appearance (colors, typography, animations)
-- **Localization**: Support for multiple languages via .xliff files
-- **Testing**: Preview mode for verification before launch
-- **Permissions**: Role-based access control with five permission levels
+6. **Experimentation**
+   - A/B testing through Amplitude Experiment
+   - Multi-armed Bandit optimization
+   - Variant performance analysis
 
 ## Key Nomenclature and Definitions
 
-- **Form Factors**: Visual presentation styles for guides (Modal, Popover, Pin, Tooltip, Banner)
+### General Terms
 - **Lifecycle UUID**: Unique identifier for tracking guide/survey instances
-- **Variant ID**: Identifier for experiment variations
-- **Throttle Limits**: Controls to prevent excessive guide displays
-- **Smart Delay**: Mechanism to avoid interrupting user flow
-- **Rage Close**: When users dismiss content without meaningful interaction
-- **Promoters/Passives/Detractors**: NPS survey respondent categories
-- **Conditional Logic**: Rules for creating dynamic survey paths based on responses
+- **Variant ID**: Identifier for experiment versions
+- **Debug Mode**: Testing environment for pre-launch validation
+- **Form Factor**: Visual presentation style (Modal, Popover, Pin, Tooltip, Banner)
+- **Throttle Limits**: Restrictions on guide frequency
+- **Smart Delay**: Automatic timing adjustment for guide display
+- **Preview Mode**: Testing environment before launch
+
+### Guide-Specific Terms
+- **Tour**: Step-by-step product exploration guide
+- **Announcement**: Single-step notification
+- **Checklist**: Multi-step guide with progress tracking
+- **Banner**: Persistent notification at screen edges
+- **Tooltip**: Contextual help for UI elements
+- **Guide Engaged**: Analytics event for user interaction
+- **Tooltip Marker**: Visual indicator for available tooltips
+
+### Survey-Specific Terms
+- **NPS (Net Promoter Score)**: Loyalty measurement (0-10 scale)
+- **Promoters/Passives/Detractors**: NPS respondent categories
+- **Rating Block**: Component for collecting scaled feedback
+- **Conditional Logic**: Rules for dynamic survey paths
+- **Survey Submitted**: Analytics event for survey completion
 
 ## Product Ecosystem Integration
 
 Amplitude Guides and Surveys integrates with:
 
-1. **Amplitude Analytics**: Automatic event tracking for guide/survey performance analysis
-2. **Amplitude Experiment**: A/B testing and Multi-armed Bandit experiments
-3. **Microscope**: Drill-down into individual user interactions
-4. **Amplitude SDK**: Delivered through the Amplitude Engagement SDK
+1. **Amplitude Analytics**
+   - Sends interaction data for analysis
+   - Uses user properties and events for targeting
+   - Enables cohort-based targeting
 
-The product can also integrate with third-party analytics providers and Google Tag Manager.
+2. **Amplitude Experiment**
+   - Runs A/B tests on guides and surveys
+   - Tracks experiment performance
+   - Supports optimization algorithms
 
-## Technical Implementation
+3. **Microscope**
+   - Provides user-level interaction insights
+   - Enables detailed journey analysis
 
-### SDK Implementation
+4. **Third-Party Analytics**
+   - Forwards events to non-Amplitude platforms
+   - Supports custom tracking implementations
 
+## API and Implementation Details
+
+### SDK Initialization
 ```javascript
-// Installation via npm
-npm install @amplitude/analytics-browser @amplitude/engagement-browser
-
-// Basic initialization
-import { boot } from '@amplitude/engagement-browser';
-
-boot({
+window.engagement.boot({
   client: {
     apiKey: 'YOUR_API_KEY',
     configuration: {
-      serverUrl: 'https://api.amplitude.com',
-    }
-  }
-});
-
-// Advanced configuration with callbacks
-boot({
-  client: {
-    apiKey: 'YOUR_API_KEY',
-    configuration: {
-      serverUrl: 'https://api.amplitude.com',
-    }
-  },
-  callbacks: {
-    onGuideStarted: (guide) => {
-      console.log('Guide started:', guide);
-    },
-    onGuideDismissed: (guide) => {
-      console.log('Guide dismissed:', guide);
+      serverUrl: 'https://gs.amplitude.com',
+      cdnUrl: 'https://cdn.amplitude.com'
     }
   }
 });
 ```
 
-### API Methods
-
-- `boot()`: Initialize the SDK
-- `forwardEvent()`: Send custom events to the SDK
-- `setThemeMode()`: Toggle between light/dark themes
-- `addCallback()`: Add event handlers
-- `setRouter()`: Configure SPA navigation tracking
-- `updateLanguage()`: Change the display language
+### Key API Methods
+- `window.engagement.boot()`: Initialize SDK
+- `window.engagement.setThemeMode()`: Set light/dark theme
+- `window.engagement.addCallback()`: Add event listeners
+- `window.engagement.setRouter()`: Configure SPA routing
+- `window.engagement.updateLanguage()`: Change localization
+- `window.engagement.forwardEvent()`: Send events to analytics
 
 ### Proxy Configuration
+For restricted environments, AWS CloudFront can reverse proxy:
+- Static assets from `cdn.amplitude.com`
+- API traffic from `gs.amplitude.com`
 
-For environments with domain blocking concerns, the documentation provides instructions for setting up an AWS CloudFront distribution to reverse proxy both static assets and API traffic.
-
-## Analytics Events
-
-The platform automatically tracks events including:
-
-- **Common Events**: Guide/Survey Viewed, Dismissed, Completed
-- **Guide-specific Events**: Guide Engaged, Guide Step Viewed
-- **Survey-specific Events**: Survey Submitted, Survey Question Answered
-
-Each event includes properties such as Lifecycle UUID, Guide/Survey ID, Template Type, and Variant ID for comprehensive analytics.
+### Permission Levels
+Five access tiers:
+1. **No Access**: Cannot view or edit
+2. **Viewer**: View-only access
+3. **Member**: Can edit drafts but not publish
+4. **Manager**: Can publish and edit
+5. **Administrator**: Full access including permissions management

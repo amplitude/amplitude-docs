@@ -11,4 +11,4 @@ This documentation explains how to set up Single Sign-On (SSO) integration betwe
 - Entity ID
 - Assertion consumer service URL
 - Enterprise authentication
-- SSO metadata exchange
+- Auth0 client setup

@@ -1,114 +1,101 @@
 # Amplitude Experiment Product Overview
 
-## High-Level Overview
+Amplitude Experiment is a comprehensive experimentation and feature flagging platform that enables product teams to test hypotheses, safely roll out features, and make data-driven decisions. The platform supports both traditional A/B testing and more advanced Multi-Armed Bandit experiments, allowing teams to optimize product experiences based on user behavior and performance metrics.
 
-Amplitude Experiment is a comprehensive experimentation and feature management platform that enables teams to test hypotheses, roll out features gradually, and make data-driven decisions. The platform supports both A/B testing and feature flag management with sophisticated statistical analysis capabilities.
+## Key Features and Capabilities
 
-Key features include:
-- A/B testing with control and treatment variants
-- Multi-Armed Bandit experiments using Thompson sampling for automated traffic allocation
-- Feature flag rollouts with targeted deployment to specific user segments
-- Advanced statistical analysis tools (CUPED, Bonferroni Correction, T-tests)
-- Experiment duration estimation and sample size calculation
+### Experiment Types
+- **A/B Testing**: Traditional hypothesis testing with static traffic allocation between variants
+- **Multi-Armed Bandit**: Advanced experimentation that automatically reallocates traffic to better-performing variants using Thompson sampling algorithms
+- **Feature Flag Rollouts**: Controlled feature releases without formal experimentation metrics
 
-## Product Relationships and Features
+### Core Components
+- **Deployments**: Server-side or client-side configurations that connect to an Amplitude Analytics project
+- **Variants**: Different versions of an experience being tested (including a control variant)
+- **Evaluation Modes**:
+  - Remote: Evaluation happens on Amplitude's servers
+  - Local: Evaluation happens within the client application
+- **Bucketing Units**: Determines how users are assigned to variants (user ID, device ID, etc.)
+- **Metrics**: Measurements used to evaluate experiment performance
+- **Audience Targeting**: Rules that determine which users are eligible for an experiment
 
-Amplitude Experiment is structured around two primary capabilities that work together:
+### Statistical Analysis Tools
+- **Duration Estimator**: Calculates required sample size and experiment runtime
+- **Statistical Preferences**: Configurable settings including CUPED, Bonferroni Correction, and test types
+- **Results Analysis**: Tools for interpreting statistical significance, p-values, and confidence intervals
 
-1. **Experimentation**: Enables statistical hypothesis testing through:
-   - Traditional A/B tests with fixed traffic allocation
-   - Multi-Armed Bandit experiments with dynamic traffic allocation
-   - Statistical rigor through built-in analysis tools
+## Product Relationships and Architecture
 
-2. **Feature Management**: Provides controlled feature rollouts through:
-   - Feature flags with segment targeting
-   - Percentage-based rollouts
-   - Gradual deployment strategies
+Amplitude Experiment integrates closely with Amplitude Analytics, using the same user identification system to ensure consistent tracking and analysis. The workflow consists of:
 
-These capabilities are supported by two evaluation modes:
-- **Remote Evaluation**: Server-side variant assignment via API calls
-- **Local Evaluation**: Client-side variant assignment within the application
+1. **Configuration**: Creating deployments linked to Analytics projects
+2. **Experiment Creation**: Setting up variants, goals, and targeting
+3. **Implementation**: Installing SDKs and instrumenting code
+4. **Testing**: QA procedures to verify correct implementation
+5. **Activation**: Launching the experiment to users
+6. **Analysis**: Monitoring results and making decisions
 
-The platform supports both client-side (JavaScript) and server-side implementations, with dedicated SDKs for each deployment type.
+The platform uses a client-server architecture where:
+- Server-side deployments evaluate variants on Amplitude's infrastructure
+- Client-side deployments use SDKs to evaluate locally on user devices
+- Both approaches use the same underlying bucketing algorithm to ensure consistent user experiences
 
 ## Key Nomenclature and Definitions
 
-### Experiment Components
-- **Variant**: A specific version in an experiment (including control)
-- **Variant Payload**: JSON configuration data for a specific variant
-- **Bucketing Unit**: Entity level for variant assignment (user ID, device ID)
-- **Bucketing Salt**: Value ensuring random but consistent variant assignment
-- **Exposure Event**: Event triggering user inclusion in an experiment
-- **Rollout Percentage**: Portion of eligible users included in an experiment
+- **Experiment Key**: Unique identifier for an experiment
+- **Deployment Keys**: Credentials that authenticate SDK requests
+- **Variants**: Different versions of a feature or experience being tested
+- **Variant Payload**: JSON data structure containing configuration for a variant
+- **Bucketing**: The process of assigning users to experiment variants
+- **Exposure Event**: The event that triggers a user to be included in an experiment
+- **Recommendation Metric**: The primary success metric for an experiment
+- **Guardrail/Secondary Metrics**: Additional metrics monitored to ensure changes don't harm the user experience
+- **Minimum Detectable Effect (MDE)**: The smallest meaningful change an experiment aims to detect
+- **Statistical Significance**: The likelihood that observed differences between variants are not due to chance
+- **CUPED**: Controlled-experiment Using Pre-Existing Data, a variance reduction technique
+- **Sticky Bucketing**: Ensuring users consistently see the same variant
 
-### Statistical Terms
-- **Recommendation Metric**: Primary success metric for an experiment
-- **Secondary/Guardrail Metrics**: Additional monitored metrics
-- **Minimum Detectable Effect (MDE)**: Smallest meaningful change to detect
-- **CUPED**: Controlled-experiment Using Pre-Existing Data (variance reduction)
-- **Sample Ratio Mismatch**: Diagnostic issue where actual user distribution differs from expected
+## Integration with Amplitude Ecosystem
 
-### Feature Flag Concepts
-- **Flag Enablement**: Active/inactive status of a feature flag
-- **Segment Targeting**: Directing features to specific user segments
-- **Rollout Percentage**: Control over percentage of users receiving a feature
+Amplitude Experiment is tightly integrated with other Amplitude products:
 
-## Product Ecosystem Integration
+1. **Amplitude Analytics**: Provides user data for targeting and metrics for analysis
+2. **Amplitude Cohorts**: Can be used to define experiment audiences
+3. **Amplitude SDKs**: Used to implement experiments and track user interactions
 
-Amplitude Experiment is tightly integrated with Amplitude Analytics, creating a cohesive data-driven decision platform:
+The platform leverages Amplitude's user identification system, allowing experiments to target users based on their behavior and properties tracked in Analytics.
 
-1. **Analytics Integration**: Each experiment deployment is associated with an Analytics project, allowing:
-   - Use of existing user data and cohorts for targeting
-   - Seamless tracking of experiment metrics
-   - Unified user identity across platforms
+## API Endpoints and SDK Usage
 
-2. **Deployment Architecture**:
-   - Experiments require a deployment configuration linked to an Analytics project
-   - The deployment provides keys that SDKs use to fetch experiment configurations
-   - User context ensures consistent variant assignment across sessions
+### REST API
+- Evaluation API: Used for server-side variant assignment
 
-3. **Data Flow**:
-   - User interactions generate events in Amplitude Analytics
-   - These events serve as metrics for experiment analysis
-   - Experiment results feed back into product development decisions
+### SDK Implementation
+- Client-side SDKs available for Web, iOS, Android, and React Native
+- Server-side SDKs for Node.js, Java, Python, Go, and Ruby
 
-## API and Implementation Details
+### Common SDK Methods
+```javascript
+// Initialize the SDK
+amplitude.experiment.initialize('<DEPLOYMENT_KEY>');
 
-### API Endpoints and SDK Integration
+// Fetch variants for a user
+const variants = await amplitude.experiment.fetch({
+  user_id: 'user@example.com'
+});
 
-1. **Remote Evaluation REST API**:
-   - Used for server-side evaluation with endpoint calls
-   - Requires API keys for authentication
+// Check if a user is in a specific variant
+const variant = amplitude.experiment.variant('<EXPERIMENT_KEY>');
+```
 
-2. **Local Evaluation SDKs**:
-   - Client-side evaluation within the application
-   - Available for various platforms and languages
+## Workflow Process
 
-### Implementation Workflow
-
-For experiments:
-1. Create an experiment with a unique key
-2. Configure evaluation mode and bucketing unit
-3. Define audience targeting
-4. Add variants with payloads and traffic distribution
-5. Define metrics (recommendation and secondary)
-6. Configure statistical preferences
-7. Test implementation with QA users
-8. Launch and monitor
-9. Analyze results and make decisions
-
-For feature flags:
-1. Create a flag with variants
-2. Define user segments
-3. Configure rollout percentages
-4. Activate the flag
-
-### Diagnostic Tools
-
-The platform provides several troubleshooting capabilities:
-- Sample Ratio Mismatch Detection
-- Variant Jumping Detection
-- Data Quality Checks
-- Root Cause Analysis tools
-
-Common implementation issues include misaligned user IDs between Analytics and Experiment, disabled flags, variant naming inconsistencies, and event configuration errors.
+1. **Create an experiment**: Define key, type, and basic configuration
+2. **Configure delivery**: Set evaluation mode and bucketing unit
+3. **Add variants**: Create variants with custom names, values, and traffic distribution
+4. **Define audience**: Target all users or specific segments
+5. **Define goals**: Set recommendation and secondary metrics
+6. **Finalize statistical preferences**: Configure analysis settings
+7. **Test the experiment**: Verify implementation with QA testers
+8. **Launch and monitor**: Activate the experiment and analyze results
+9. **Take action**: Roll out winning variant, roll back, or continue testing

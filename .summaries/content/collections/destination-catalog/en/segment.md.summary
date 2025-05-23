@@ -1,14 +1,14 @@
 # Summary
-This documentation page describes how to integrate Amplitude with Segment to send behavioral cohorts to Segment, allowing businesses to use cohort data with ad networks, marketing automation tools, and personalization engines for tailored campaigns and product experiences.
+This documentation page describes how to send Amplitude behavioral cohorts to Segment for use with marketing tools and personalization engines, detailing the setup process in both platforms and explaining how cohort data is transmitted as user traits with True/False values through Segment identify events.
 
 # Keywords
 - Behavioral cohorts
 - Segment integration
 - writeKey
-- Identify calls
 - Cohort syncing
+- Identify events
 - User traits
-- True/False cohort values
 - Sync cadence
-- Amplitude source
-- Segment destination
+- API target
+- Anonymous users limitation
+- True/False cohort membership

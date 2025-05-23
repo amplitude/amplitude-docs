@@ -5,12 +5,12 @@ This documentation page explains the process of testing and launching experiment
 - experiment testing
 - test instrumentation
 - experiment launch
-- QA procedures
 - variant assignment
+- QA procedures
 - experiment scheduling
 - diagnostics
 - root cause analysis
-- experiment completion
-- rollout options
+- experiment rollout
+- experiment rollback
 - sticky bucketing
 - percentage rollouts

@@ -1,5 +1,5 @@
 ## Summary
-This documentation explains how Amplitude handles events fired within the same second in funnel analysis, including the one-second window for simultaneous events, behavior with duplicate events, and how to enable millisecond resolution for more precise event tracking.
+This documentation explains how Amplitude handles events fired within the same second in funnel analysis, including the concept of simultaneous events, how same-event duplicates are handled, and how to enable millisecond resolution for more precise event tracking.
 
 ## Keywords
 - simultaneous events
@@ -11,4 +11,4 @@ This documentation explains how Amplitude handles events fired within the same s
 - Historical Count filters
 - same event types
 - event timing precision
-- Advanced dropdown
+- event deduplication

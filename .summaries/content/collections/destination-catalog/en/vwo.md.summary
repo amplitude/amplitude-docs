@@ -1,5 +1,5 @@
 # Summary
-This documentation details the VWO-Amplitude integration, allowing bidirectional data flow where VWO campaign and survey data can be sent to Amplitude for analysis, while Amplitude cohorts can be imported into VWO for targeted experimentation and personalization campaigns.
+This documentation details the VWO-Amplitude integration, allowing bidirectional data flow where VWO campaign and survey data can be sent to Amplitude for analysis, while Amplitude cohorts can be imported into VWO for targeted experimentation campaigns with a 24-hour sync cycle and specific configuration steps for each direction.
 
 # Keywords
 - VWO integration
@@ -8,11 +8,7 @@ This documentation details the VWO-Amplitude integration, allowing bidirectional
 - campaign targeting
 - visitor segmentation
 - survey data
-- API key configuration
 - cohort synchronization
-- A/B testing
-- personalization
+- API key configuration
+- bidirectional data flow
 - user targeting
-- event properties
-- data table reports
-- partner-maintained

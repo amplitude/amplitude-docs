@@ -8,7 +8,7 @@ This documentation details advanced features of Amplitude's Segmentation Module,
 - segment renaming
 - inline cohort creation
 - historical count
-- complex user segments
+- user segments
+- complex segmentation
 - clipboard pasting
 - segment definition
-- event segmentation

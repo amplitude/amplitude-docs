@@ -13,4 +13,3 @@ The duration estimator in Amplitude Experiment calculates the sample size and ru
 - minimum effect size (MDE)
 - proxy exposure event
 - experiment run time optimization
-- two-sided test

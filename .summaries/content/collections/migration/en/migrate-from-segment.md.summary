@@ -10,7 +10,7 @@ This documentation page provides a comprehensive guide for migrating from Segmen
 - Group tracking
 - Source configuration
 - Destination setup
-- Migration validation
-- Cross-platform code examples
-- Browser/iOS/Android implementation
 - Data validation
+- Migration checklist
+- Cross-platform implementation
+- Browser/iOS/Android SDK examples

@@ -1,14 +1,14 @@
 # Summary
-This documentation page addresses FAQs about the User Composition chart, explaining why user properties updated via Identify API calls aren't immediately reflected in the chart until a subsequent active event occurs, why properties visible in user profiles might not appear in the chart, reasons for high volumes of 'none' values, and limitations on displayed property values.
+This documentation page addresses FAQs about the User Composition chart, explaining why user properties may not appear in the chart despite being in user profiles, particularly focusing on the requirement for "active" events after Identify API calls and the chart's display limitations of top 100 property values.
 
 # Keywords
 - User Composition chart
-- Identify API calls
-- Active events
-- User property visibility
-- None values
-- Property value limitations
+- Identify API call
+- active events
+- user property values
+- none values
+- user profiles
+- breakdown table
 - CSV export
-- Top 100 property values
-- User profile vs chart data
-- Account property behavior
+- property visibility
+- account users

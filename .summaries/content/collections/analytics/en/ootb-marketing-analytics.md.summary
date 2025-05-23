@@ -2,13 +2,14 @@
 Out-of-the-box Marketing Analytics provides centralized tracking of page engagement and session-based metrics with customizable views for Traffic by Channel, Traffic by Campaign, Ad Performance, Page Engagement, and Conversion, offering industry-standard KPIs like bounce rate, session duration, CTR, CAC, and ROAS that can be filtered by domain and segmented for deeper analysis.
 
 # Keywords
-- marketing-analytics
-- utm-tracking
-- conversion-funnel
-- ad-performance-metrics
-- ctr-cpc-cac-roas
-- traffic-analysis
-- page-engagement
-- campaign-tracking
-- nested-group-bys
-- daily-ad-metrics
+- marketing analytics
+- UTM tracking
+- conversion funnel
+- ad performance metrics
+- CAC (Customer Acquisition Cost)
+- ROAS (Return on Ad Spend)
+- traffic channels
+- page engagement
+- bounce rate
+- Daily Ad Metrics event
+- web experiment

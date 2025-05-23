@@ -1,14 +1,14 @@
 # Summary
-This documentation details the Bento integration with Amplitude, enabling bidirectional data flow where Amplitude cohorts and events can target Bento guides while Bento sends guide interaction events back to Amplitude for analyzing onboarding effectiveness and user activation.
+This documentation details the Bento integration with Amplitude, enabling bidirectional data flow where Amplitude cohorts and events can target Bento guides, while Bento sends guide engagement data back to Amplitude for analyzing onboarding effectiveness and user activation.
 
 # Keywords
-- product-led onboarding
+- Bento onboarding
+- guide targeting
+- user activation
 - embedded checklists
 - contextual guides
-- user identification mapping
-- guide completion tracking
-- onboarding analytics
+- empty states
+- guide completion events
+- user identification
 - API key integration
-- bidirectional event streaming
-- customer everboarding
-- guide targeting
+- onboarding analytics

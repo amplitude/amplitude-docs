@@ -8,8 +8,7 @@ Ask Amplitude is a conversational interface that allows users to create charts, 
 - OpenAI integration
 - LLM
 - data taxonomy
-- content search
-- conversation threads
+- thread sharing
 - property values
 - filter selection
 - data governance

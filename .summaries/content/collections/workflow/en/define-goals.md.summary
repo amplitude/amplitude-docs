@@ -1,7 +1,7 @@
-## Summary
+# Summary
 This documentation page explains how to define goals for an Amplitude Experiment by setting up recommendation and secondary metrics, including how to create custom metrics and define exposure events that determine when users are bucketed into experiment variants.
 
-## Keywords
+# Keywords
 - recommendation metric
 - guardrail metrics
 - secondary metrics
@@ -12,4 +12,3 @@ This documentation page explains how to define goals for an Amplitude Experiment
 - metric types (unique conversions, event totals, formula, funnel conversions)
 - Amplitude exposure event
 - variant()
-- sample ratio mismatch

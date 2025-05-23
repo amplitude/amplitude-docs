@@ -12,4 +12,6 @@ The Chart Annotations API enables programmatic creation and retrieval of annotat
 - GET annotations
 - POST annotations
 - annotation ID
-- project-specific annotations
+- project charts
+- horizontal axis
+- calendar dates

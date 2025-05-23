@@ -12,3 +12,5 @@ The Ampli CLI is a command-line tool that works with Amplitude Data to help deve
 - monorepo support
 - analytics SDK generation
 - tracking library
+- ampli configure
+- ampli.json

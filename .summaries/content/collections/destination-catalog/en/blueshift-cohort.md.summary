@@ -3,12 +3,11 @@ This documentation describes the Blueshift Cohort destination integration in Amp
 
 ## Keywords
 - Blueshift Cohort destination
-- API key authentication
+- API key and secret authentication
 - User identifier mapping (email/customer_id)
 - Cohort synchronization
 - Behavior-based personalization
 - Onboarding activation
 - Segmented marketing campaigns
 - Omnichannel orchestration
-- Cohort naming convention
 - Partner-maintained integration

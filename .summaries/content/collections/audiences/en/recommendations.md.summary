@@ -1,17 +1,17 @@
 # Summary
-Amplitude Activation's Recommendations feature uses AutoML to determine which items are most likely to drive users toward a predictive goal by clustering users based on properties and behaviors, analyzing historical data, and generating personalized item rankings that update hourly, best suited for user-based personalization in ecommerce, marketplace, and B2C contexts.
+Amplitude Activation's Recommendations feature uses AutoML to determine which items are most likely to drive users toward a predictive goal by clustering users based on properties and behaviors, analyzing historical data, and generating personalized ranked item lists that update hourly, best suited for user-based personalization in ecommerce, marketplace, B2C, and subscription software companies.
 
 # Keywords
 - AutoML
 - user-based personalization
 - predictive goals
-- machine learning clustering
+- user clustering
+- assortment personalization
+- next-best action
+- cross-sell
 - outcome event
 - exposure event
 - event property
-- assortment personalization
-- next-best action
-- cross sell
-- standard event properties
-- hourly retraining
 - conversion funnel
+- hourly re-training
+- standard event properties

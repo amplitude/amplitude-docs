@@ -15,5 +15,6 @@ This documentation page covers the Amplitude Analytics Flutter SDK 3, which is i
 - Flutter web support
 - device ID
 - user ID
-- maintenance mode
+- batch events
+- EU data residency
 - Gradle compatibility

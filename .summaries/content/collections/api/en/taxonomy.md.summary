@@ -2,19 +2,19 @@
 The Taxonomy API allows Enterprise users to programmatically manage their event schema in Amplitude, including creating, retrieving, updating, and deleting categories, event types, event properties, user properties, and group properties. The API uses HTTP Basic authentication and has concurrent and rate limits based on a cost model.
 
 ## Keywords
-- Taxonomy API
-- Event schema management
-- Event categories
-- Event types
-- Event properties
-- User properties
-- Group properties
-- Schema planning
-- Property classifications
-- Override scopes
-- Hidden properties
-- Property data types
+- event schema management
+- taxonomy categories
+- event types CRUD
+- event properties
+- user properties
+- group properties
+- property classifications
+- property overrides
+- schema planning
+- property visibility
+- property data types
+- property restoration
 - API rate limits
 - HTTP Basic authentication
-- Property restoration
 - PII classification
+- property metadata

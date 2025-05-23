@@ -2,13 +2,13 @@
 This documentation page explains how to interpret retention analysis charts in Amplitude, covering different retention measurement methods (Return On or After, Return On, Return On Custom), how to read retention views, and how to analyze retention data over time. It details how each measurement method calculates user retention differently and explains the visualization options available for analyzing user return behavior.
 
 ## Keywords
-- Retention analysis
+- Retention analysis interpretation
 - Return On or After retention
 - Return On retention
-- Return On (Custom) retention
+- Return On Custom retention
 - Cohort entry date
-- Retention calculation
-- Retention brackets
-- Time-based analysis
-- Retention visualization
-- Amplitude Analytics
+- Retention calculation methods
+- Retention visualization options
+- Custom retention brackets
+- Retention over time analysis
+- Amplitude retention metrics

@@ -1,60 +1,61 @@
-# Amplitude Stickiness Analysis
+# Amplitude Stickiness Feature
 
-## Product Overview
+## Overview
 
-Amplitude Stickiness is an advanced analytics tool designed to measure and visualize user engagement patterns over time. It helps product teams understand how frequently users perform specific events within a defined time period, enabling them to identify which features drive engagement, differentiate between power users and casual users, and discover retention drivers. Stickiness analysis is particularly valuable for understanding habit formation and feature adoption within digital products.
+Amplitude's Stickiness feature is an analytics tool that measures user engagement patterns by analyzing how frequently users perform specific events over time. This feature helps product teams identify which features drive engagement, differentiate behaviors between power users and regular users, and track how user habits form and change over time.
 
-## Key Features and Capabilities
+## Key Features and Concepts
 
-- **Stickiness Visualization**: Charts that display the frequency of user interactions with specific features
-- **Dual Analysis Methods**: Both cumulative and non-cumulative stickiness measurement options
-- **Segmentation Integration**: Ability to filter and compare stickiness metrics across different user segments
-- **Microscope Feature**: Tool for inspecting specific data points within stickiness charts
-- **Behavioral Cohort Creation**: Functionality to create user groups based on engagement patterns
-- **Time Period Comparison**: Capability to analyze changes in stickiness metrics over different time periods
+### Stickiness Charts
+- **Cumulative Stickiness**: Visualizes the percentage of users who performed an event at least X days during a selected time period
+- **Non-cumulative Stickiness**: Shows the exact distribution of users who performed an event exactly X days
 
-## Product Relationships and Architecture
-
-Stickiness analysis is part of Amplitude's Metrics Module, which forms a core component of Amplitude's analytics platform. It works in conjunction with:
-
-1. **Segmentation Module**: Allows filtering of stickiness analysis by user properties and behaviors
-2. **Cohort Creation System**: Enables creation of user segments based on stickiness patterns
-3. **Data Table Breakdowns**: Provides detailed numerical data to complement visual charts
-4. **Retention Analysis**: Complements stickiness by providing different perspectives on user engagement
+### Analysis Capabilities
+- Identify features driving retention and engagement
+- Compare usage patterns between different user segments
+- Track changes in user engagement over time
+- Create behavioral cohorts based on usage frequency
+- Analyze day-based usage patterns to understand user habits
 
 ## Key Nomenclature and Definitions
 
-- **Stickiness**: Measurement of how frequently users perform specific events over a defined time period
-- **Cumulative Stickiness**: Analysis showing percentage of users who performed an event at least N days
-- **Non-Cumulative Stickiness**: Analysis showing percentage of users who performed an event exactly N days
-- **Microscope Feature**: Tool for detailed inspection of specific data points in stickiness charts
-- **Behavioral Cohorts**: User groups created based on specific engagement patterns
-- **Event Properties**: Attributes associated with events that can be used to filter analysis
-- **Power Users**: Highly engaged users who perform key events more frequently than average
+- **Stickiness**: Metric measuring how frequently users perform specific events over a time period
+- **Cumulative Stickiness**: Analysis showing users who performed an event at least X days
+- **Non-cumulative Stickiness**: Analysis showing users who performed an event exactly X days
+- **Segmentation Module**: Component for defining user segments in stickiness analysis
+- **Metrics Module**: Component for tracking changes in stickiness metrics over time
+- **Microscope Feature**: Tool for creating cohorts from stickiness analysis results
+- **Power Users**: Users who engage with the product more frequently than average
+- **Behavioral Cohorts**: User groups defined by specific usage patterns or frequencies
 
-## Product Ecosystem Integration
+## Integration in Amplitude Ecosystem
 
-Stickiness analysis serves as a critical component in Amplitude's broader analytics ecosystem:
+Stickiness analysis integrates with other Amplitude features:
 
-- It provides engagement metrics that complement retention analysis
-- Findings from stickiness analysis can be used to create targeted user segments
-- Stickiness metrics can be tracked over time to measure the impact of product changes
-- Results can be shared across teams to align product strategy with user behavior data
+1. **Segmentation Module**: Defines and compares different user segments within stickiness charts
+2. **Metrics Module**: Tracks stickiness metrics over time to identify trends
+3. **Microscope Feature**: Creates cohorts from stickiness analysis for further investigation
+4. **Retention Analysis**: Complements stickiness by providing another perspective on user engagement
+5. **Behavioral Cohorts**: Can be created from stickiness analysis and used across the Amplitude platform
 
 ## Usage Instructions
 
-To create a Stickiness chart:
+### Creating a Stickiness Chart
 1. Navigate to the Stickiness chart in Amplitude
 2. Select events to analyze
-3. Choose a time period
-4. Apply segmentation or filters
-5. Select either cumulative or non-cumulative analysis method
+3. Define the time period
+4. Choose between cumulative and non-cumulative analysis
+5. Apply user segments if needed
+6. Analyze the visualization and data table
 
-For interpretation:
-1. Examine user distribution across frequency levels
-2. Compare patterns between segments
-3. Track changes over time
-4. Use Microscope to inspect specific data points
-5. Create behavioral cohorts based on engagement patterns
+### Interpreting Stickiness Results
+- Use the data table to see percentages of users performing events on specific days
+- Compare stickiness between different user segments
+- Track changes in stickiness over time to measure product change impact
+- Create cohorts from stickiness analysis using the Microscope feature
 
-Advanced analysis options include comparing weekly vs. monthly patterns, analyzing stickiness trends over time, and using segmentation to identify differences between user groups.
+### Advanced Analysis Options
+- Segment users by properties to compare engagement across different groups
+- Analyze weekly or monthly frequency patterns for subscription-based products
+- Track stickiness metrics over time to measure product change impact
+- Create behavioral cohorts based on usage frequency for targeted marketing or product development

@@ -1,16 +1,15 @@
 ## Summary
-The Amplitude Analytics Java SDK documentation details how to install, initialize, configure, and use the SDK for tracking events in Java applications, including features like batching, custom HTTP proxies, event properties, user properties, groups, and middleware support.
+The Amplitude Analytics Java SDK documentation details how to install, initialize, configure, and use the SDK for tracking events in Java applications, including features like batching, custom HTTP proxies, event properties, user properties, groups, and middleware, with a focus on high-performance event tracking.
 
 ## Keywords
 - JRE Java SDK
-- Event tracking
-- Batch mode
-- HTTP proxy configuration
-- Event properties
-- User properties
-- Group analytics
-- Middleware
+- event batching
+- useBatchMode
+- setEventUploadThreshold
+- logEvent
 - AmplitudeCallbacks
-- Event flushing
-- Thread timeout
-- Custom logger
+- middleware
+- group analytics
+- custom HTTP proxy
+- flushEvents
+- setOptions

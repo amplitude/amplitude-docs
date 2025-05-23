@@ -9,10 +9,9 @@ The Experiment iOS SDK documentation provides comprehensive guidance for impleme
 - exposure tracking
 - remote evaluation
 - local evaluation
-- flag configuration
 - user provider
 - bootstrapping
+- flag configurations
 - CocoaPods
 - Swift Package Manager
-- Amplitude integration
-- EU data center
+- account-level bucketing

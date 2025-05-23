@@ -1,17 +1,17 @@
 ## Summary
-This documentation page covers the Amplitude Guides and Surveys SDK implementation, detailing installation options (via Browser SDK, third-party analytics providers, or Google Tag Manager), initialization methods, and API functions for managing guides and surveys in web applications.
+This documentation page explains how to install and configure the Amplitude Guides and Surveys SDK for websites and applications, covering integration methods with Amplitude Browser SDK, third-party analytics providers, and Google Tag Manager, along with API methods for theme management, callbacks, routing, localization, and guide/survey control.
 
 ## Keywords
 - Guides and Surveys SDK
 - engagement-browser
 - boot method
 - forwardEvent
+- third-party analytics integration
 - setThemeMode
 - addCallback
 - setRouter
 - updateLanguage
-- Content Security Policy
-- third-party analytics integration
-- Google Tag Manager
-- localization
-- troubleshooting
+- Content Security Policy (CSP)
+- guide targeting
+- survey initialization
+- window.engagement

@@ -6,12 +6,9 @@ This documentation outlines Amplitude's data volume limitations, including month
 - instrumentation limits
 - event type cap
 - property limitations
-- string character limits
-- chart visualization constraints
-- CSV download limits
-- limit warnings
 - data throttling
 - account blocking
-- event processing
-- segmentation limits
-- data export restrictions
+- string character limits
+- chart visualization constraints
+- CSV export limits
+- event counting methodology

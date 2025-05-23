@@ -1,5 +1,5 @@
 # Summary
-This documentation details the Iterable integration with Amplitude, which allows automatic ingestion of Iterable's campaign metrics into Amplitude projects to analyze cross-channel user engagement and its impact on product usage, with setup instructions for configuring webhooks to stream events between platforms.
+This documentation details the Iterable integration with Amplitude, which enables automatic ingestion of Iterable's campaign metrics into Amplitude projects to analyze cross-channel user engagement and its impact on product usage, with setup instructions for configuring webhooks to stream events between platforms.
 
 # Keywords
 - Iterable integration

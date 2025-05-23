@@ -5,8 +5,8 @@ This documentation describes the Session Replay Plugin for Segment, which enable
 - Session Replay Plugin for Segment
 - Amplitude (Actions) destination
 - createSegmentActionsPlugin
+- segment-session-replay-plugin
 - Segment plugin architecture
 - User ID to Device ID mapping
-- sessionReplayOptions
+- Session Replay ID event property
 - ad blockers compatibility
-- Segment integration

@@ -8,7 +8,10 @@ This FAQ page addresses common questions about Amplitude's Data Table chart, cov
 - attribution model
 - pruning message
 - formula metric
-- CSV export limits
-- row calculation discrepancies
-- horizontal scrolling limitations
-- 10,000 row limit
+- export limitations
+- row limits
+- sorting logic
+- CSV export
+- PDF/PNG export
+- horizontal scrolling
+- column headers

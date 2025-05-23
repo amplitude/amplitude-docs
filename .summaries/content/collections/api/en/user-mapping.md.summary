@@ -8,7 +8,8 @@ The User Mapping (Aliasing) API enables mapping different user IDs across projec
 - cross-project view
 - user remapping
 - user unmapping
-- batch limits
-- rate limits
 - portfolio add-on
+- batch limits
+- rate throttling
+- event streams
 - user property persistence

@@ -7,8 +7,11 @@ This documentation explains the Experiment Analysis view in Amplitude Experiment
 - Relative performance
 - Absolute values
 - Confidence intervals
-- Metrics interpretation
-- Control vs variant comparison
-- p-value
-- Unique conversions
+- Primary metrics
+- Secondary metrics
+- Variants
+- Control group
+- Treatment groups
 - User segmentation
+- Conversion rates
+- Aggregate metrics

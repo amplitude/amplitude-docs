@@ -1,16 +1,14 @@
 # Summary
-This documentation explains Amplitude's Data Access Control (DAC) feature for Enterprise customers, which allows administrators to restrict access to sensitive data (PII, revenue, sensitive information) through permission groups, preventing unauthorized users from viewing restricted data in charts, cohorts, dashboards, and exports.
+This documentation explains Amplitude's Data Access Control (DAC) feature for Enterprise customers, which allows administrators to restrict access to sensitive data (PII, revenue, sensitive information) by classifying properties and setting group-level permissions, with enforcement across charts, cohorts, dashboards, exports, and APIs.
 
 # Keywords
 - Data Access Control (DAC)
 - Enterprise plan
-- Permission groups
-- PII classification
-- Revenue data
-- Sensitive information
 - Property classification
+- PII protection
+- Revenue data restriction
+- Permission groups
+- Sensitive data management
 - Access restrictions
 - Taxonomy API
 - Restricted access message
-- Access request notifications
-- Export restrictions

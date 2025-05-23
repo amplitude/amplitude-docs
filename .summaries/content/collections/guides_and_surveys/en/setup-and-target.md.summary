@@ -1,5 +1,16 @@
-# Summary
-This documentation page details the setup and targeting options for guides in Amplitude, covering audience targeting (All Users vs Targeted Users), triggers (when and where guides appear), priority settings, display limits, guide statuses (Draft/Published/Schedule), and how the system handles active states and resolves conflicts when multiple guides are eligible for display.
+## Summary
+This documentation page explains the setup and targeting options for guides in Amplitude, including audience targeting, trigger conditions (when/where guides appear), priority settings, display limits, guide statuses, and active state behavior with tiebreaker rules for multiple eligible guides.
 
-# Keywords
-guide targeting, audience segments, trigger conditions, page targeting, guide priority, guide status, cooldown settings, active state, guide dismissal, smart delay, element triggers, guide tiebreakers, direct link sharing, snooze functionality
+## Keywords
+- guide targeting
+- trigger conditions
+- audience segmentation
+- guide priority
+- display limits
+- guide status (draft/published/scheduled)
+- active state
+- tiebreaker rules
+- smart delay
+- guide cooldown
+- direct link sharing
+- CSS selector triggers

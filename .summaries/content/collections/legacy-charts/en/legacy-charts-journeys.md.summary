@@ -1,17 +1,15 @@
 ## Summary
-Journeys is a legacy feature in Amplitude that helps teams understand user conversion paths between two funnel steps within a 60-day timeframe, showing step-by-step breakdowns of paths taken by converted and dropped-off users, identifying friction points, and revealing which experiences lead to faster or slower conversions.
+Legacy Journeys is a feature that helps teams understand user conversion paths between two funnel steps within a 60-day timeframe, showing step-by-step breakdowns of paths taken by converted and dropped-off users, with capabilities to identify friction points, conversion accelerators, and analyze user behavior patterns through auto-filtering and path exploration.
 
 ## Keywords
-- legacy-charts
-- user conversion paths
+- conversion paths
 - funnel analysis
 - drop-off analysis
-- TF-IDF auto-filter
-- conversion timeframe
-- path visualization
+- auto-filter
+- TF-IDF heuristic
+- path exploration
 - user friction
-- event paths
-- Journeys vs Pathfinder
+- conversion timeframe
 - Plus/Growth/Enterprise plans
-- path expansion by properties
-- cohort creation
+- legacy charts
+- Journeys vs Pathfinder

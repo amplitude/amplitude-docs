@@ -1,15 +1,14 @@
-# Summary
-The Pathfinder Users chart visualizes user navigation paths through a product, showing the most common sequences of events before or after a specified event, with options to segment users, measure by users or sessions, and expand events by properties for deeper analysis.
+## Summary
+The Pathfinder Users chart visualizes user navigation paths through a product, showing events users take before or after a specified event, with results displayed in descending order of usage frequency and limited to individual sessions, though this legacy chart is being merged into the new Journeys experience.
 
-# Keywords
-- legacy-charts
-- pathfinder-users
-- user paths
-- event sequences
-- session tracking
-- path visualization
-- event expansion by property
-- navigation analysis
-- user journey
-- event ordering
-- path frequency
+## Keywords
+- legacy-pathfinder-users
+- user-path-analysis
+- session-based-paths
+- event-sequence-visualization
+- starting-ending-events
+- path-frequency
+- event-property-expansion
+- user-journey-tracking
+- session-id-requirement
+- event-time-ordering

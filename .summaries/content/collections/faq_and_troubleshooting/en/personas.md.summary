@@ -4,7 +4,7 @@ The Personas chart in Amplitude uses Non-Negative Matrix Factorization (NMF) ins
 ## Keywords
 - Non-Negative Matrix Factorization (NMF)
 - Personas chart
-- Clustering algorithm
+- Clustering algorithms
 - Dimension reduction
 - Behavior space
 - K-Means limitations

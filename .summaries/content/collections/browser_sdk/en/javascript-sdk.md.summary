@@ -5,16 +5,17 @@ This documentation covers the maintenance-mode JavaScript SDK for Amplitude Anal
 - JavaScript SDK
 - maintenance mode
 - event tracking
-- user properties
+- user identification
 - revenue tracking
-- device ID management
-- session tracking
 - web attribution
 - UTM parameters
+- session tracking
+- device ID management
 - cross-domain tracking
 - batch events
+- user properties
+- group analytics
 - sendBeacon
-- group identify
-- EU data residency
 - cookie management
+- CORS
 - dynamic configuration

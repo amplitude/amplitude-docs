@@ -1,5 +1,5 @@
 ## Summary
-Amplitude Experiment uses deterministic randomization based on a two-stage process: first determining if a user is included in an experiment using `mod(murmur3_x86_32("bucketingSalt/id"), 100)`, then assigning variants to included users based on `floor(murmur3_x86_32("bucketingSalt/id"), 100)` and variant weights, with the Amplitude ID typically serving as the bucketing key.
+Amplitude Experiment uses deterministic randomization through a two-stage process: first determining if a user is included in an experiment using `mod(murmur3_x86_32("bucketingSalt/id"), 100)`, then assigning variants to included users based on `floor(murmur3_x86_32("bucketingSalt/id"), 100)` and variant weights, typically using Amplitude ID as the bucketing key.
 
 ## Keywords
 - deterministic randomization
@@ -7,8 +7,8 @@ Amplitude Experiment uses deterministic randomization based on a two-stage proce
 - bucketing key
 - bucketing salt
 - two-dimensional randomization
+- variant assignment
 - percentage rollout
-- variant weights
 - fallback variant
+- variant weights
 - Amplitude ID
-- mod(murmur3_x86_32)

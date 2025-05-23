@@ -1,5 +1,5 @@
 ## Summary
-This documentation explains the differences between hiding, blocking, and deleting events or properties in Amplitude's Govern feature, detailing how each action affects data collection, visibility in charts, and counting toward project instrumentation limits, with a comparison table of their specific impacts.
+This documentation explains the differences between hiding, blocking, and deleting events or properties in Amplitude's Govern feature, detailing how each action affects data collection, visibility in charts, and counting toward project instrumentation limits.
 
 ## Keywords
 - Amplitude Govern
@@ -12,4 +12,3 @@ This documentation explains the differences between hiding, blocking, and deleti
 - Dropdowns visibility
 - Data ingestion
 - Chart queries
-- Drop filters

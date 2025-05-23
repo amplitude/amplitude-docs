@@ -8,7 +8,7 @@ This documentation page describes how to set up Google Cloud Storage (GCS) as a 
 - Data mapping
 - Storage organization requirements
 - Guided converter creation
-- Event properties
-- User properties
-- Group properties
-- Transformation rules
+- Event/User/Group properties
+- Data transformation
+- Bucket permissions
+- File format patterns

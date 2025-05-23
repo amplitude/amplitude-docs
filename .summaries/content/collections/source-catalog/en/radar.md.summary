@@ -7,8 +7,8 @@ Radar's geofencing platform integrates with Amplitude to share real-time locatio
 - location tracking
 - location-triggered notifications
 - pickup and delivery tracking
-- location verification
 - store locators
 - address autocomplete
+- location verification
 - real-time user data
-- partner-maintained integration
+- partner integration

@@ -4,15 +4,14 @@ This documentation explains methods to manage invalid or erroneous data in Ampli
 ## Keywords
 - drop filters
 - block filters
-- data deletion
 - event blocking
 - property blocking
+- data deletion
 - IP address filtering
 - data recovery
-- query-side filtering
 - event volume limits
+- query-side filtering
 - data ingestion control
-- main branch
-- data purging
-- tracking plan
-- implementation limits
+- Amplitude Data
+- event purging
+- tracking plan management

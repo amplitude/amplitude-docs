@@ -4,9 +4,9 @@ This documentation explains how to configure Single Sign-On (SSO) integration be
 # Keywords
 - Okta SSO integration
 - SAML 2.0 configuration
+- IdP metadata
 - Amplitude organization admin
-- IdP metadata XML
 - ACS URL
 - Entity ID
-- Assertion Consumer Service
 - Enterprise authentication
+- Japanese localization

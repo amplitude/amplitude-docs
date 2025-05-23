@@ -8,9 +8,11 @@ This documentation page provides a comprehensive guide for migrating from Adobe 
 - eVars to Event Properties
 - Backfill historical data
 - Ingestion Debugger
-- User Lookup validation
-- Tracking plan creation
-- Implementation methods
-- Report replication
+- User Lookup
+- Tracking plan
 - Data continuity
 - Adobe variable mapping
+- Client-side sources
+- Server-side sources
+- Tag management integration
+- Data validation tools

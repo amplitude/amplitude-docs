@@ -1,62 +1,56 @@
-# Legacy Charts in Amplitude: Product Overview
+# Legacy Charts in Amplitude
 
-Legacy Charts in Amplitude provides visualization tools for analyzing user behavior and navigation patterns within applications. The suite consists of three main components: Pathfinder, Pathfinder Users, and Journeys.
+## Product Overview
 
-## Key Features and Use Cases
+Legacy Charts in Amplitude provides visualization tools for analyzing user behavior and conversion paths within applications. The suite consists of two main components: Pathfinder and Journeys, which help product teams understand how users navigate through their applications and identify key conversion paths between events. These tools enable teams to discover friction points, conversion accelerators, and common user behaviors through visual representations of event sequences.
 
-- Track user navigation through products
-- Identify common conversion and drop-off paths
-- Analyze user behavior patterns before and after key events
-- Discover friction points in the user experience
-- Compare navigation patterns across different user segments
-- Understand the time dimension of user conversions
+## Relationship Between Products and Features
 
-## Product Relationships and Features
+The Legacy Charts suite contains two primary products with distinct but complementary functionality:
 
-### Pathfinder
-- Visualizes user flows as a Sankey diagram
-- Shows sequences of events during specified time periods
-- Analyzes both incoming paths (events leading to a target) and outgoing paths (events following a target)
-- Supports path analysis up to fifty steps deep
-- Includes "Bucket below threshold" feature to group less common paths
-- Offers filtering capabilities to remove noisy events
-- Provides session-based tracking options
+1. **Pathfinder** - Visualizes user flows as sequences of events (paths) and comes in two variants:
+   - **Pathfinder Chart**: Shows general user flows across specified time periods, analyzing up to fifty steps deep in a user journey. It can display both incoming and outgoing paths to specific events.
+   - **Pathfinder Users Chart**: Focuses on individual user navigation paths, showing events users take before or after a specified event. Results are displayed in descending order of usage frequency, and paths can be limited to individual sessions when session_id is available.
 
-### Pathfinder Users
-- User-centric version of Pathfinder
-- Visualizes common event sequences before or after a specified event
-- Allows measurement by users or sessions
-- Supports user segmentation for comparative analysis
-- Enables event expansion by properties
-- Focuses on navigation analysis and user journey mapping
+2. **Journeys** - A more specialized tool that analyzes user conversion paths between two specific funnel steps within a 60-day timeframe. It provides:
+   - Step-by-step breakdowns of paths taken by both converted and dropped-off users
+   - Identification of friction points and conversion accelerators
+   - Auto-filtering using TF-IDF heuristic to highlight statistically significant paths
+   - Path exploration capabilities for analyzing user behavior patterns
 
-### Journeys
-- Specialized for understanding conversion paths between two funnel steps
-- Limited to 60-day timeframe analysis
-- Provides step-by-step breakdowns of paths for converted and dropped-off users
-- Features TF-IDF auto-filter to highlight statistically significant paths
-- Identifies friction points in conversion processes
-- Shows which experiences lead to faster or slower conversions
-- Supports path expansion by properties
-- Enables cohort creation from path analysis
+These legacy charts are being phased out and merged into a new, unified Journeys experience, though they remain available for existing users during the transition period.
 
 ## Key Nomenclature and Definitions
 
-- **Sankey Diagram**: Flow visualization format where arrow width represents user volume on a particular path
-- **Nodes**: Individual events or touchpoints in the user journey visualization
-- **Bucket Below Threshold**: Groups less common paths together to simplify visualization
-- **TF-IDF Auto-filter**: Statistical method highlighting significant paths by comparing converted vs. dropped-off users
-- **Conversion Timeframe**: Time period analyzed for user conversions (up to 60 days in Journeys)
-- **Path Expansion by Properties**: Breaking down events by properties for detailed analysis
-- **Microscope**: Feature in Pathfinder for detailed analysis
-- **Incoming/Outgoing Paths**: Directional analysis of events leading to or following a target event
+- **Paths**: Sequences of events that users perform in a product
+- **Nodes**: Individual events within a path visualization
+- **Sankey Diagram**: The flow diagram visualization used in Pathfinder
+- **TF-IDF heuristic**: An algorithm used in Journeys for auto-filtering to identify statistically significant paths
+- **Conversion paths**: Event sequences that lead to successful completion of a desired action
+- **Drop-off analysis**: Examination of paths where users abandon a process
+- **Session-based paths**: User journeys limited to a single session (requires session_id)
+- **Bucket below threshold**: A grouping mechanism for less common paths
+- **Path frequency**: How often a particular sequence of events occurs
 
 ## Product Ecosystem Integration
 
-- Legacy charts are part of Amplitude's analytics platform
-- Journeys is available on Plus, Growth, and Enterprise plans
-- Tools integrate with other Amplitude features, such as cohort creation
-- Journeys complements Pathfinder, with each serving different analytical needs
-- The "legacy" designation suggests these are older visualization tools that may have been superseded by newer features
+Legacy Charts are part of Amplitude's analytics platform and are available to users on Plus, Growth, and Enterprise plans. The charts integrate with Amplitude's broader event tracking and analytics capabilities:
 
-These visualization tools are accessed through the Amplitude analytics interface, where users can configure charts by selecting target events, setting time periods, configuring visualization parameters, applying filters, and expanding events by properties.
+- They rely on properly tracked and time-ordered event data within the Amplitude platform
+- They complement other Amplitude analytics tools by providing visual path analysis
+- The legacy charts are being consolidated into a new, unified Journeys experience that maintains core functionality while likely offering enhanced capabilities
+- They support custom events that can be incorporated into path analysis
+- The system allows filtering out "noisy events" to improve visualization clarity
+
+## Technical Implementation
+
+The Legacy Charts have specific technical parameters:
+
+- Path analysis can extend up to fifty steps deep
+- Journeys analysis is limited to a 60-day timeframe
+- Session-based analysis in Pathfinder Users requires session_id implementation
+- Visualizations are primarily presented through Sankey diagrams and other flow-based visualizations
+- The system supports filtering mechanisms to focus on relevant paths and exclude noise
+- Auto-filtering capabilities using TF-IDF heuristic help highlight statistically significant paths
+
+While specific API endpoints are not detailed in the documentation, these visualization tools are accessed through the Amplitude analytics platform interface and rely on properly instrumented event data.

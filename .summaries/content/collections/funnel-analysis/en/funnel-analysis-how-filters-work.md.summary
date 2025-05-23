@@ -11,4 +11,4 @@ This documentation explains how filters work in Funnel Analysis charts, specific
 - conversion distribution
 - unique users metric
 - multiple step completion
-- property value bucketing
+- did not reach step segment

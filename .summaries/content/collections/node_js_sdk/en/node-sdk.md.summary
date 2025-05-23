@@ -1,5 +1,5 @@
 ## Summary
-The Node.js SDK for Amplitude is a TypeScript-based backend SDK that provides event batching, retry handling, and debugging utilities for reliable server-side event tracking, with features for configuring batch behavior, EU data residency, and middleware support for event processing customization.
+The Node.js SDK for Amplitude is a TypeScript-based backend SDK that provides event batching, retry handling, and debugging utilities for reliably sending events from server-side applications, with features for configuring batch behavior, EU data residency, and middleware support for event processing.
 
 ## Keywords
 - Node.js SDK
@@ -11,5 +11,4 @@ The Node.js SDK for Amplitude is a TypeScript-based backend SDK that provides ev
 - middleware
 - EU data residency
 - server-side tracking
-- event filtering
 - HTTP V2 API

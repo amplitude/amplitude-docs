@@ -1,5 +1,5 @@
 # Summary
-This documentation explains Sample Ratio Mismatch (SRM) in Amplitude Experiment, which occurs when observed variant assignments significantly differ from specified allocations, potentially causing biased data. It covers causes (instrumentation errors, traffic allocation changes, variant jumping), diagnostic approaches using cumulative allocation charts, and how to view SRM issues in the Analysis tab.
+This documentation explains Sample Ratio Mismatch (SRM) in Amplitude Experiment, which occurs when observed variant assignments significantly differ from specified allocations, potentially causing biased data. It covers causes (instrumentation errors, traffic allocation changes, variant jumping), diagnostic approaches using cumulative allocation charts, and how to identify SRM issues in the Analysis tab.
 
 # Keywords
 - Sample Ratio Mismatch (SRM)

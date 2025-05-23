@@ -7,8 +7,8 @@ Amazon Kinesis Cohort integration enables streaming cohort membership updates fr
 - IAM role configuration
 - JSON payload format
 - real-time cohort sync
+- user_properties inclusion
+- in_cohort boolean flag
+- compute_time timestamp
+- message_id tracking
 - Amplitude Activation
-- cohort_id
-- in_cohort boolean
-- compute_time
-- user_properties mapping

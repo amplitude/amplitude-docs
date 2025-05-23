@@ -1,7 +1,7 @@
-## Summary
+# Summary
 This documentation page explains how to implement localization for Guides and Surveys in Amplitude, including SDK configuration requirements, project settings configuration, and the process for adding translations using .xliff files, with specific details on supported translatable content elements.
 
-## Keywords
+# Keywords
 - guides_and_surveys_localization
 - xliff_translation_files
 - locale_configuration
@@ -11,4 +11,4 @@ This documentation page explains how to implement localization for Guides and Su
 - translation_template
 - preview_localization
 - translatable_strings
-- Growth_Enterprise_feature
+- growth_enterprise_feature

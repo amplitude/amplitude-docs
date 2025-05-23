@@ -1,5 +1,5 @@
 # Summary
-This documentation page addresses common questions engineers might ask during Amplitude implementation, covering topics like data payload examples, property classification (user vs. event), user property update frequency, and how to determine which properties to track based on industry needs.
+This documentation page addresses common questions engineers might ask during Amplitude implementation, covering topics like data payload examples, property classification (user vs. event), user property update frequency, and how to determine which properties to track for specific industries.
 
 # Keywords
 - Amplitude instrumentation
@@ -9,6 +9,6 @@ This documentation page addresses common questions engineers might ask during Am
 - Data classification
 - Property update frequency
 - Industry-specific event tracking
-- User property persistence
+- Implementation questions
 - Data payload examples
-- Implementation guidance
+- User property persistence

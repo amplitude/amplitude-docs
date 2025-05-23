@@ -1,14 +1,14 @@
-## Summary
-This documentation page outlines essential pre-work steps for Amplitude instrumentation, including defining business goals, understanding user tracking, organizing events with clear naming conventions, avoiding over-instrumentation, and considering cross-platform project setup to ensure effective data collection and analysis.
+# Summary
+This documentation page outlines essential pre-work steps for Amplitude instrumentation, including defining business goals, understanding user tracking, organizing events with clear naming conventions, limiting initial data collection to essential metrics, and considering cross-platform project organization to ensure effective analytics implementation.
 
-## Keywords
+# Keywords
 - instrumentation pre-work
 - business goals definition
 - user identification tracking
 - event taxonomy
 - event naming conventions
 - event properties organization
-- cross-platform instrumentation
-- data minimalism
-- user property limits
-- platform consolidation
+- cross-platform projects
+- data collection strategy
+- event spreadsheet template
+- focused data tracking

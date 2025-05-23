@@ -2,89 +2,111 @@
 
 ## Product Overview
 
-Amplitude Charts is a comprehensive analytics platform that enables users to visualize, analyze, and derive insights from user behavior data. The platform offers a diverse set of chart types organized around key business goals: knowing your users, converting users, retaining users, and monetizing your product. Amplitude Charts provides powerful visualization tools that help product teams understand user engagement, conversion funnels, retention patterns, and revenue metrics.
+Amplitude Charts is a comprehensive analytics platform that enables users to analyze user behavior, track product performance, and derive actionable insights from event data. The platform offers a diverse set of chart types organized around key business goals: Know, Convert, Retain, and Monetize. These charts help product teams understand how users interact with their applications, identify conversion patterns, measure retention, and track monetization metrics.
 
-The platform supports various analysis methodologies through specialized chart types, including Event Segmentation for basic event counting and filtering, Funnel Analysis for conversion tracking, Retention Analysis for measuring user return rates, and more advanced analytics like Personas for behavioral clustering and Impact Analysis for feature adoption impact measurement.
+Key features of Amplitude Charts include:
+- Multiple chart types for different analysis needs
+- Robust segmentation capabilities
+- Customizable visualizations
+- Real-time event streaming
+- Advanced filtering and grouping options
+- Experiment analysis tools
+- User journey mapping
+- Behavioral cohort creation
 
 ## Product Relationships and Features
 
-Amplitude Charts is organized into several key chart types, each serving specific analytical needs:
+Amplitude Charts consists of several interconnected chart types, each serving specific analytical purposes:
 
-1. **Core Analysis Charts**:
+1. **Core Analysis Charts**
    - **Event Segmentation**: The fundamental chart type for counting and filtering events to understand user behavior
    - **Funnel Analysis**: Tracks conversion and drop-off rates between key events
    - **Retention Analysis**: Measures how often users return to the product
    - **Data Tables**: Compares and breaks down events and metrics in a single view
 
-2. **User Journey Charts**:
+2. **User Journey Charts**
    - **Journeys**: Analyzes sequences of steps taken by users
-   - **User Sessions**: Counts and filters sessions to understand user behavior patterns
+   - **Experiment Results**: Identifies statistically significant outcomes of A/B tests
+   - **Revenue LTV**: Measures how effectively users are being monetized
 
-3. **Advanced Analysis Charts**:
-   - **Revenue LTV**: Measures how well users are being monetized
-   - **Compass**: Identifies thresholds of user behavior that predict retention
-   - **Stickiness**: Measures how frequently users perform specific events
+3. **User Behavior Charts**
+   - **Compass**: Finds thresholds of user behavior that predict retention and lead to growth
+   - **Stickiness**: Measures how often users perform specific events
    - **Personas**: Determines clusters of users by grouping those with similar behaviors
-   - **Impact Analysis**: Shows how first-time engagement with one feature affects other behaviors
-   - **User Sessions**: Analyzes session-based metrics
+   - **Impact Analysis**: Understands how first-time engagement with one feature affects other behaviors
+   - **User Sessions**: Counts and filters sessions to understand user behavior
+
+4. **User Segmentation Tools**
+   - **Segmentation Module**: Allows creation of user segments based on properties and behaviors
+   - **Event Explorer**: Provides real-time visualization of event streams
+
+5. **Advanced Analysis Charts**
    - **Engagement Matrix**: Visualizes feature engagement by breadth and frequency
    - **Lifecycle**: Breaks down user base by New, Current, Resurrected, and Dormant Users
-
-4. **Experimental Analysis**:
-   - **Experiment Results**: Identifies statistically significant outcomes of A/B tests
-
-5. **Advanced Query Options**:
-   - **SQL-based Charts**: Direct querying of Snowflake for custom analytics
+   - **SQL-based Charts**: Enables direct querying of Snowflake for custom analyses
 
 ## Key Nomenclature and Definitions
 
-1. **Events Module**: Component for selecting and configuring events to analyze in charts
-2. **Segmentation Module**: Tool for defining and refining user segments based on properties or behaviors
-3. **Group-by**: Feature that categorizes events by specified properties, limited to 100 values for single group-by and 500 for double group-by
-4. **Filter by specification**: Conditions applied to events to refine analysis
-5. **Array operators**: Operators for analyzing array data (equals, set contains, set equals, etc.)
-6. **Behavioral cohorts**: User segments defined by specific behaviors or actions
-7. **Query time sampling**: Performance optimization technique that analyzes a 10% random sample of users
-8. **Object arrays**: Data structure for analyzing complex nested data like shopping carts
-9. **Property splitting**: Technique for analyzing child properties within parent properties
-10. **Breakdown table**: Interactive data table showing chart results with sorting and export capabilities
+1. **Events and Properties**
+   - **Events**: User actions tracked in the product (e.g., page views, button clicks)
+   - **Event Properties**: Attributes associated with events that provide context
+   - **User Properties**: Attributes associated with users (e.g., demographics, subscription status)
+   - **Group Properties**: Attributes associated with organizational groups
+
+2. **Segmentation Concepts**
+   - **User Segments**: Subsets of users defined by properties or behaviors
+   - **Behavioral Cohorts**: Groups of users who have performed specific actions
+   - **Filter by Specification**: Conditions that limit which events are included in analysis
+   - **Group-by Specification**: Dimensions used to segment data for comparison
+
+3. **Array Operators**
+   - **Equals Operator**: Exact matching of values
+   - **Set Contains**: Checks if an array contains specific values
+   - **Set Equals**: Checks if arrays match exactly
+   - **Glob Match**: Pattern matching using wildcards
+
+4. **Analysis Terms**
+   - **Query Time Sampling**: Performance optimization technique that analyzes a 10% random sample
+   - **Data Pruning**: Limiting results to maintain performance (100 values for single group-by, 500 for double)
+   - **Breakdown Table**: Tabular view of chart data with interactive features
+   - **Custom Events**: User-defined combinations of multiple events with OR conditions
 
 ## Product Ecosystem Integration
 
-Amplitude Charts integrates with the broader Amplitude Analytics ecosystem in several ways:
+Amplitude Charts integrates with the broader Amplitude product ecosystem in several ways:
 
-1. **Dashboard Integration**: Charts can be saved to dashboards for ongoing monitoring and sharing
-2. **Annotations and Releases**: Charts support annotations to mark significant events or releases
-3. **Experiment Integration**: Direct connection to experiment results for measuring impact
-4. **Data Export**: Results can be exported via CSV or accessed through the Dashboard REST API
-5. **Customization Options**: Organization-level chart theme customization for consistent branding
-6. **Event Explorer**: Real-time event stream visualization tool that helps identify appropriate events for analysis
+1. **Dashboard Integration**: Charts can be added to dashboards for regular monitoring and sharing
+2. **Experiment Platform**: Charts connect with Amplitude Experiment for A/B test analysis
+3. **Data Management**: Charts utilize data from Amplitude's event collection and processing system
+4. **Behavioral Cohorts**: Cohorts created in charts can be used across the Amplitude platform
+5. **Snowflake Integration**: SQL-based charts can directly query Snowflake data warehouses
 
-## Technical Specifications
+The platform supports different subscription tiers (Growth and Enterprise) with varying feature availability. Enterprise customers have access to additional features like organization-level default color themes.
 
-1. **Chart Customization**:
-   - Custom color themes with 8-16 colors
+## Technical Implementation Details
+
+1. **Chart Customization**
+   - Custom color themes can be created with 8-16 colors using hex values
    - Y-axis customization including dual Y-axis support
-   - Legend label customization
+   - Custom legend labels
 
-2. **Performance Optimization**:
-   - Query time sampling for faster funnel analysis (10% user sample)
-   - Data pruning to limit results (100 values for single group-by, 500 for double group-by)
-   - Different cache times based on query type (hourly/daily/weekly/monthly)
+2. **Performance Optimization**
+   - Query time sampling can be enabled for individual funnel charts or as a project-wide default
+   - Different caching times apply to different query types
+   - Group-by results are limited to maintain performance
 
-3. **Advanced Filtering Capabilities**:
-   - Property operators: is, contains, set is, glob match
-   - AND/OR logic between filters
-   - Cross-property and parallel filtering for object arrays
+3. **Data Export Options**
+   - CSV export of chart data
+   - Dashboard REST API access
 
-4. **Data Manipulation**:
-   - Custom event creation by grouping multiple events with OR relationships
-   - Pasting lists of property values for bulk filtering
-   - Inline behavioral cohort creation
+4. **Advanced Filtering Capabilities**
+   - Cross-property and parallel filtering for cart/object array analysis
+   - Support for AND/OR logic in filter combinations
+   - Ability to paste lists of property values for bulk filtering
 
-5. **Sharing and Collaboration**:
-   - Chart sharing via links
-   - Dashboard integration
-   - Saved segments for team reuse
+5. **User Identification Methods**
+   - User ID targeting
+   - IP address search
+   - Device ID filtering
 
-The Amplitude Charts platform offers different chart availability based on subscription plans (Growth, Enterprise), with the most comprehensive set of charts available to Enterprise customers.
+The platform includes keyboard shortcuts for efficient chart manipulation and supports annotations and releases for contextualizing data trends over time.

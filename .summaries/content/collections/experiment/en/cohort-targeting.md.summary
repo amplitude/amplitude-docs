@@ -1,17 +1,14 @@
 # Summary
-This documentation explains cohort targeting in Amplitude Experiment, detailing how static or dynamic user cohorts can be used for audience targeting in both remote and local evaluation modes, with important considerations about sync delays, real-time limitations, and server-side SDK configuration requirements for local evaluation.
+This documentation explains cohort targeting in Amplitude Experiment, detailing how static or dynamic user cohorts can be used for audience targeting in both remote and local evaluation modes, with important considerations about sync delays, user ID requirements, and server-side SDK support for local evaluation cohort targeting.
 
 # Keywords
 - cohort targeting
 - remote evaluation
 - local evaluation
-- user cohorts
-- cohort sync configuration
-- server-side SDKs
 - dynamic cohorts
 - hourly sync
+- server-side SDKs
 - user ID requirement
-- SDK initialization
-- CohortSyncConfig
-- targeting delay
+- cohort sync configuration
 - Experiment Local Evaluation destination
+- SDK version compatibility

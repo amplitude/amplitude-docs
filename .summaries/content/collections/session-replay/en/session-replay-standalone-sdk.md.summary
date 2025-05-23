@@ -1,17 +1,14 @@
-## Summary
-This documentation explains how to implement the Session Replay Standalone SDK for web applications that use analytics providers other than Amplitude. It covers installation, configuration options, privacy features, and integration with third-party analytics to ensure session replay data is properly linked to events via the Session Replay ID property.
+# Summary
+The Session Replay Standalone SDK documentation explains how to implement Amplitude's session recording functionality for web applications that use third-party analytics providers instead of Amplitude's Browser SDK. It covers installation, configuration options, privacy controls, and integration requirements, emphasizing that developers must manually add Session Replay IDs to their analytics events for proper functionality.
 
-## Keywords
-- Session Replay Standalone SDK
+# Keywords
+- standalone-sdk
+- session-replay-browser
 - deviceId
 - sessionId
 - sampleRate
 - getSessionReplayProperties
-- DOM capture
-- privacy masking
-- EU data residency
-- opt-out configuration
-- IndexedDB storage
-- CSS selectors
-- replay retention
-- web worker compression
+- privacy-masking
+- DOM-capture
+- data-retention
+- third-party-analytics-integration

@@ -1,5 +1,5 @@
 # Summary
-This documentation describes the Insider integration with Amplitude, which enables sending event data from Insider's Growth Management Platform to Amplitude for analytics, allowing businesses to track messaging channel events, create cohorts based on user interactions, and personalize customer experiences across multiple channels using unified data.
+This documentation describes the Insider integration with Amplitude, which enables sending event data from Insider's Growth Management Platform to Amplitude for analytics, allowing businesses to track messaging channel events, create cohorts based on user interactions, and personalize customer experiences across multiple channels.
 
 # Keywords
 - Insider Growth Management Platform
@@ -7,8 +7,8 @@ This documentation describes the Insider integration with Amplitude, which enabl
 - messaging channel events
 - cohort integration
 - user identification
-- personalized journeys
+- personalization
 - multi-channel tracking
+- customer journey analytics
 - API key configuration
-- customer success manager
-- marketing automation
+- user behavior insights

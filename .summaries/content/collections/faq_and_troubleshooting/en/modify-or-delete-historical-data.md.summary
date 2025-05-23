@@ -1,14 +1,14 @@
 ## Summary
-This documentation explains that Amplitude's architecture uses pre-aggregated data sets which makes historical data immutable, and outlines workarounds for modifying or deleting historical data including self-service data deletion for Growth/Enterprise plans, exporting/cleaning/re-uploading data to a new project, and understanding limitations of the Identify API for updating user properties.
+This documentation explains that Amplitude's architecture uses pre-aggregated data sets which makes historical data immutable, and outlines workarounds for modifying or deleting historical data including self-service data deletion for Growth/Enterprise plans, exporting/cleaning/re-uploading data to a new project, and handling user property updates.
 
 ## Keywords
 - immutable data
 - self-service data deletion
 - data export API
 - batch API
-- user properties
-- Identify API
-- event blocking
+- user property updates
+- event deletion
 - data backfill
 - pre-aggregated data sets
 - historical data modification
+- data governance

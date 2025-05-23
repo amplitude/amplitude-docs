@@ -11,4 +11,4 @@ This documentation explains the row limits and sorting logic in Data Tables char
 - attribution metrics
 - nested group-by behavior
 - multiple metrics sorting
-- segmentation display logic
+- period-over-period comparison

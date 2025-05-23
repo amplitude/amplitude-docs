@@ -1,14 +1,14 @@
 # Summary
-This documentation explains how to add descriptions to events and properties in Amplitude, detailing the process for adding descriptions to events, event properties (both global and event-specific), and user/group properties to help organization members understand what each represents.
+This documentation explains how to add descriptions to events and properties in Amplitude, detailing the process for adding descriptions to events, event properties (both globally and specific to an event), and user/group properties to help organization members understand what each represents.
 
 # Keywords
-- Event descriptions
-- Property descriptions
-- Tracking plan
-- Event property descriptions
-- Global event property
-- Event-specific property descriptions
-- User property descriptions
-- Group property descriptions
-- Active events
-- Details panel
+- event descriptions
+- property descriptions
+- tracking plan
+- event property details
+- global event property description
+- user property descriptions
+- group property descriptions
+- Amplitude data documentation
+- event metadata
+- property documentation

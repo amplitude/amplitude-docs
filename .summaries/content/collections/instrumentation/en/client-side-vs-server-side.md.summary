@@ -1,14 +1,5 @@
 # Summary
-This documentation page explains the differences between client-side sources (code running on user devices like mobile/web apps) and server-side sources (code running on servers) in Amplitude, detailing available SDKs for each approach and providing guidance on when to use each type or a hybrid approach.
+This documentation page explains the differences between client-side sources (code running on user devices like mobile/web apps) and server-side sources (code running on servers), including available SDKs for each approach, API endpoints, and guidance on choosing between them or implementing a hybrid approach.
 
 # Keywords
-- client-side SDKs
-- server-side SDKs
-- API endpoints
-- mobile instrumentation
-- web instrumentation
-- third-party sources
-- hybrid tracking approach
-- HTTP V2 API
-- Batch event upload
-- source selection criteria
+client-side SDKs, server-side SDKs, API endpoints, HTTP V2 API, Batch event upload, Evaluation API, mobile SDKs, web SDKs, Node.js SDK, Go SDK, Python SDK, Java SDK, third-party sources, hybrid instrumentation, source selection

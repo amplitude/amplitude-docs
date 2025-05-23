@@ -1,18 +1,19 @@
 ## Summary
-This documentation page provides a comprehensive glossary of key terms used in Amplitude Experiment, including definitions for experiment methodology concepts (hypothesis, audience, metrics), statistical terminology (confidence level, p-value, sample size), and Amplitude-specific implementation terms (payload, exposure events, allocation events).
+This documentation page provides a comprehensive glossary of key terms used in Amplitude Experiment, including statistical concepts like confidence intervals and p-values, experiment design elements like hypotheses and success metrics, and technical implementation details like payload and exposure events.
 
 ## Keywords
 - experiment terminology
 - statistical significance
-- primary success metrics
-- minimum detectable effect
 - baseline conversion rate
-- confidence interval
+- minimum detectable effect
+- sample size
+- confidence level
 - p-value
 - exposure events
 - allocation events
 - payload
-- continuous testing
-- type 1/type 2 errors
+- primary success metrics
 - counter metrics
-- sample size calculation
+- continuous testing
+- type 1 error
+- type 2 error

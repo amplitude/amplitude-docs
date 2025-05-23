@@ -1,5 +1,5 @@
 # Summary
-This documentation page explains how to find and access Amplitude project's API key and secret key through the Organization Settings in the Amplitude Analytics web app, detailing the specific navigation path and access requirements for users with Manager role permissions.
+This documentation page explains how to find and access Amplitude project's API key and secret key through the Organization Settings in the Amplitude Analytics web app, detailing the specific navigation path and permissions required to view or generate these credentials.
 
 # Keywords
 - Amplitude API key
@@ -8,5 +8,5 @@ This documentation page explains how to find and access Amplitude project's API 
 - API Keys section
 - Manager role permissions
 - Authentication credentials
-- Analytics API
 - Project-specific keys
+- Security credentials

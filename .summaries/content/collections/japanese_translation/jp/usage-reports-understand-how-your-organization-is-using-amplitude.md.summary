@@ -2,13 +2,16 @@
 This documentation page explains Amplitude's Usage Reports feature, which helps organizations track and analyze how their teams are using Amplitude through various metrics including active users, query counts, and event usage, with separate tabs for User Metrics and Event Usage that provide detailed insights for enterprise and growth plan customers.
 
 ## Keywords
-- usage reports
-- user metrics
-- event usage
-- weekly learning users
-- content usage
-- query counts
-- organization-level analytics
-- enterprise features
-- adoption metrics
-- engagement depth
+- Usage Reports
+- User Metrics
+- Event Usage
+- Weekly Learning Users
+- Content Usage
+- Query counts
+- Enterprise plan
+- Growth plan
+- Organization-level reporting
+- Amplitude adoption
+- Export functionality
+- Summary metrics
+- Detailed KPIs

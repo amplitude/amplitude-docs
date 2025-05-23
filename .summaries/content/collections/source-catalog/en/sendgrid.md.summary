@@ -4,11 +4,11 @@ This documentation page details the integration between SendGrid and Amplitude, 
 # Keywords
 - SendGrid webhook integration
 - Email engagement tracking
-- Amplitude API key configuration
-- Event webhook setup
-- User ID mapping
-- EU region configuration
+- Amplitude API key
+- Event webhook configuration
+- SendGrid message events
 - Email marketing analytics
-- SendGrid event prefixing
+- User ID mapping
+- EU data processing
+- Cohort segmentation
 - Customer communication platform
-- Cohort-based email segmentation

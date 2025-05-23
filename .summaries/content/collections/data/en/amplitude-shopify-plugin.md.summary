@@ -6,9 +6,9 @@ The Amplitude Shopify Plugin integrates with Shopify stores to capture user beha
 - Browser SDK implementation
 - Session Replay
 - Web Experiment
-- Marketing attribution
-- Event tracking
-- Checkout flow events
-- Anti-flicker snippet
-- Performance impact
-- API key configuration
+- marketing attribution
+- e-commerce analytics
+- checkout flow tracking
+- anti-flicker snippet
+- performance impact
+- Shopify standard events

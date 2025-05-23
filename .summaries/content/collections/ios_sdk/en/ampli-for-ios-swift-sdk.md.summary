@@ -9,8 +9,7 @@ This documentation page explains how to use Ampli for iOS Swift SDK, a strongly-
 - identify users
 - track events
 - AmplitudeSwift
-- Ampli CLI
+- ampli pull
+- ampli status
+- strongly typed methods
 - tracking plan
-- flush events
-- LoadOptions
-- EventOptions

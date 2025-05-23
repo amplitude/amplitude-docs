@@ -3,17 +3,14 @@ This documentation explains holdout groups in Amplitude Feature Experiment, whic
 
 ## Keywords
 - Holdout groups
-- Amplitude Feature Experiment
 - Enterprise feature
 - Experiment exclusion
-- Holdout percentage
-- Bucketing
-- Experiment analysis
-- Mutual exclusion
-- Traffic allocation
-- Long-term experiment impact
+- Long-term impact measurement
+- Holdout percentage (1-10%)
 - Experiment integrity
-- User exclusion
-- Cohort targeting
+- Bucketing
 - Experiment Results chart
 - T-test analysis
+- Multiple holdout groups
+- Mutual exclusion groups
+- Traffic distribution

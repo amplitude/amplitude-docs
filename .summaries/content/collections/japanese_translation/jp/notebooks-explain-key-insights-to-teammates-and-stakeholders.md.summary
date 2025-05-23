@@ -1,15 +1,14 @@
 ## Summary
-This documentation page explains how to create and edit Notebooks in Amplitude, which are documents that help explain insights to teammates using text blocks, images, videos, charts, and summary metrics, allowing teams to make better product decisions with proper context and analysis takeaways.
+This documentation page explains Amplitude Notebooks, a feature that allows users to create documents combining text, images, videos, charts, and metrics to explain insights to teammates, helping teams make better product decisions by providing context and takeaways from analytics data.
 
 ## Keywords
 - Amplitude Notebooks
 - insight sharing
-- chart embedding
-- text formatting
-- markdown support
+- chart annotations
 - metric trackers
-- content rearrangement
-- callout boxes
-- product performance reporting
-- behavioral insights
-- drag-and-drop functionality
+- rich text formatting
+- markdown support
+- content organization
+- data storytelling
+- product analytics documentation
+- collaborative analysis

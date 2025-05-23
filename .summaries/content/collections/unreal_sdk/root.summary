@@ -1,47 +1,33 @@
 # Amplitude Unreal SDK
 
 ## Overview
-The Amplitude Unreal SDK enables developers to implement Amplitude analytics tracking within Unreal Engine projects. It provides a comprehensive solution for capturing user behavior, tracking events, and managing user properties by leveraging Unreal Engine's native analytics provider interface.
+The Amplitude Unreal SDK enables developers to integrate Amplitude's analytics capabilities into Unreal Engine projects. This SDK allows tracking of user behavior, event data collection, and analysis of user interactions within Unreal Engine applications and games.
 
 ## Key Features and Capabilities
-- Seamless integration with Unreal Engine's analytics provider interface (IAnalyticsProvider)
-- Event tracking with customizable properties
+- Event tracking with custom properties
 - User identification and property management
-- Session tracking and management
-- Plugin-based installation for straightforward integration into Unreal Engine projects
+- Native integration with Unreal Engine's analytics provider interface
+- Session management for tracking user engagement
+- Plugin-based installation for seamless integration
 
 ## Product Relationships and Architecture
-The Amplitude Unreal SDK functions as a bridge between Unreal Engine applications and the Amplitude analytics platform. By implementing Unreal's IAnalyticsProvider interface, the SDK allows developers to:
-
-1. Collect analytics data within their Unreal Engine applications
-2. Transmit this data to Amplitude's backend systems
-3. Access Amplitude's analytics tools and dashboards for data analysis
-
-The SDK operates as a plugin within the Unreal Engine ecosystem, making it compatible with the engine's existing analytics infrastructure while extending functionality to connect with Amplitude's specialized analytics services.
+The Amplitude Unreal SDK functions as a plugin within the Unreal Engine ecosystem. It implements Unreal Engine's IAnalyticsProvider interface, allowing it to work within the engine's existing analytics framework. The SDK serves as a bridge between Unreal applications and Amplitude's analytics backend, sending collected data to Amplitude's servers for processing and visualization through Amplitude's dashboard.
 
 ## Key Nomenclature and Definitions
-- **AmplitudeUnreal**: The primary namespace/class for the SDK implementation
-- **IAnalyticsProvider**: The Unreal Engine interface that the SDK implements to provide analytics functionality
-- **Event Properties**: Key-value pairs that add contextual information to tracked events
-- **User Properties**: Attributes associated with specific users for segmentation and analysis
-- **Analytics Provider**: The implementation that conforms to Unreal's interface requirements for analytics tracking
-- **Session**: A period of user engagement with the application that is tracked as a cohesive unit
+- **AmplitudeUnreal**: The main implementation class providing analytics functionality within Unreal Engine projects
+- **IAnalyticsProvider**: Unreal Engine's interface for analytics providers that AmplitudeUnreal implements
+- **Events**: Data points representing user actions or occurrences within the application
+- **Event Properties**: Additional contextual data attached to events
+- **User Properties**: Persistent attributes associated with specific users
+- **Sessions**: Periods of user engagement with the application
 
-## Integration with Product Ecosystem
-The Amplitude Unreal SDK serves as a critical component in a larger analytics ecosystem:
+## Ecosystem Integration
+The Unreal SDK is part of Amplitude's broader analytics ecosystem, which includes SDKs for various platforms. This specific SDK targets game and application developers using Unreal Engine, allowing them to incorporate Amplitude's analytics while maintaining familiar Unreal development workflows. Data collected through the SDK can be analyzed through Amplitude's web dashboard and reporting tools.
 
-1. **Data Collection**: The SDK captures user interactions and events within Unreal Engine applications
-2. **Data Transmission**: Collected data is sent to Amplitude's analytics platform
-3. **Data Analysis**: Developers can use Amplitude's suite of analytics tools to analyze user behavior
-4. **Insights Application**: Analytics insights can inform game development decisions and improvements
+## Key Methods and Implementation
+- **StartSession**: Initializes an analytics session
+- **RecordEvent**: Logs events with optional properties
+- **SetUserID**: Associates analytics data with specific user identifiers
+- **SetUserProperty**: Sets persistent properties for the current user
 
-The SDK leverages Unreal Engine's native analytics interfaces while extending functionality to connect with Amplitude's specialized analytics platform, providing developers with powerful tools for understanding user behavior and improving their applications.
-
-## API Methods
-Key methods provided by the SDK include:
-- `RecordEvent`: Logs an event to Amplitude with optional event properties
-- `SetUserID`: Associates analytics data with a specific user identifier
-- `StartSession`: Initializes an analytics tracking session
-- User property management methods for attaching metadata to users
-
-These methods allow developers to implement comprehensive analytics tracking within their Unreal Engine projects while maintaining compatibility with Unreal's native systems.
+The SDK can be used either through Unreal's standard analytics interfaces or directly through the AmplitudeUnreal implementation, providing flexibility for different development approaches.

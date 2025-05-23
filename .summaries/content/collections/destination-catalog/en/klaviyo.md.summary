@@ -1,14 +1,14 @@
 # Summary
-This documentation page describes how to set up and use the Amplitude-Klaviyo integration for sending cohorts from Amplitude to Klaviyo for targeted messaging, including the setup process in both platforms and how to sync cohorts for email marketing campaigns.
+This documentation page describes the integration between Amplitude and Klaviyo, allowing users to export cohorts from Amplitude to Klaviyo for targeted email marketing campaigns, including setup steps in both platforms and how to send cohorts with proper user mapping where Klaviyo requires valid email format as user ID.
 
 # Keywords
 - Klaviyo integration
-- cohort syncing
+- Amplitude cohort export
 - email marketing
 - API key setup
-- user segmentation
+- user ID mapping
+- cohort synchronization
 - targeted messaging
-- Amplitude cohort export
-- marketing automation
-- list management
-- segment creation
+- list segmentation
+- isActive property
+- sync cadence

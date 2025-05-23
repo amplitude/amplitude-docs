@@ -9,7 +9,6 @@ This documentation page covers frequently asked questions about integrating Segm
 - user properties
 - event properties
 - location discrepancies
-- sessionId
+- sessionId issues
+- device mode limitations
 - session tracking
-- device mode integration
-- client-side bundle integration

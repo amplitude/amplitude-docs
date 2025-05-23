@@ -1,5 +1,5 @@
 # Summary
-The Guides and Surveys Localization API (Beta) enables programmatic import and export of translation files in XLIFF 1.2 format, allowing integration with external translation management systems through endpoints for importing translations via POST requests and exporting translations via GET requests with support for multiple guides/surveys and locales.
+The Guides and Surveys Localization API (Beta) enables programmatic import and export of translation files in XLIFF 1.2 format, allowing integration with external translation management systems. It provides endpoints for importing translations via POST requests and exporting translations via GET requests, with authentication using App ID and App Secret Key.
 
 # Keywords
 - XLIFF 1.2

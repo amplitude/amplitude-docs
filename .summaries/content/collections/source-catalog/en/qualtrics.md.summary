@@ -1,14 +1,14 @@
 # Summary
-This documentation page describes the Qualtrics event ingestion integration with Amplitude, which allows sending survey response data to Amplitude for creating data-driven charts and cohorts, with specific setup steps in both platforms and the limitation that email addresses are imported as User_ID.
+This documentation page describes the Qualtrics event ingestion integration with Amplitude, which enables sending survey response data to Amplitude for creating data-driven charts and cohorts, with specific setup instructions for both platforms and the limitation that email addresses are imported as User_ID.
 
 # Keywords
 - Qualtrics survey integration
 - event ingestion
 - survey response data
 - User_ID mapping
-- Amplitude cohorts
-- Qualtrics API key
-- workflow configuration
+- API key
 - JSON payload
+- Qualtrics workflow
 - Experience Management
+- cohort data
 - qualitative feedback

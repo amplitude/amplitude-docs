@@ -10,7 +10,7 @@ This documentation page details the Android SDK for Amplitude, focusing on confi
 - batch API
 - offline mode
 - StorageProvider
-- session tracking
+- ServerZone
 - COPPA control
-- ServerZone configuration
-- legacy data migration
+- session tracking
+- identity management

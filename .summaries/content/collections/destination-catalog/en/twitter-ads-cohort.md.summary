@@ -1,14 +1,14 @@
 # Summary
-This documentation page explains how to integrate Amplitude cohorts with Twitter Ads to create targeted audiences, including prerequisites (standard Twitter Ads access), setup steps in Amplitude, required user identifiers (Device ID, Email, Handle, X ID, Phone Number), and the cohort export process with notes on Twitter's processing time and privacy practices.
+This documentation page explains how to integrate Amplitude cohorts with Twitter Ads to create targeted audiences for campaigns, including prerequisites, setup steps in Amplitude, required user identifiers (Device ID, Email, Handle, X ID, Phone Number), and the process for sending cohorts to Twitter Ads.
 
 # Keywords
-- Twitter Ads cohort integration
-- Amplitude audience export
-- Device ID mapping
+- Twitter Ads integration
+- Amplitude cohorts
+- audience targeting
+- user identifiers
 - SHA256 hashing
-- X ID identification
-- Twitter audience manager
-- Cohort sync frequency
-- User identifiers
-- Standard Twitter Ads access
-- Audience list creation
+- cohort synchronization
+- X ID
+- device ID mapping
+- audience manager
+- standard access requirement

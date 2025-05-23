@@ -1,14 +1,14 @@
 # Summary
-This documentation page explains how to build a Retention Analysis chart in Amplitude, which tracks how often users return to a product after a specific action by comparing a starting event to return events, with options to segment users, filter by properties, and analyze usage intervals.
+This documentation page explains how to build a Retention Analysis chart in Amplitude, which tracks how often users return to a product after a specific starting event by comparing it to a return event, with options to segment users, filter by properties, and analyze usage intervals.
 
 # Keywords
 - Retention Analysis chart
 - Starting event
 - Return event
+- User segmentation
 - Usage interval
-- Event segmentation
-- User segments
-- Triggering events
-- Breakdown table
+- Event filtering
 - Property filtering
 - Retention measurement
+- Breakdown table
+- Event comparison

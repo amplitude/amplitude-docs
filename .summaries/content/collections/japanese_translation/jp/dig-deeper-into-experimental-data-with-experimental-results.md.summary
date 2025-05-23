@@ -11,7 +11,6 @@ This documentation page explains how to use Amplitude's Experimental Results fea
 - Statistical significance
 - T-test
 - Sequential test
-- Metric types
-- Feature flagging integration
+- Metric types (unique conversion, event totals, property values)
 - Confidence intervals
 - Cumulative exposure

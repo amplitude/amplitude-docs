@@ -1,16 +1,16 @@
-## Summary
-This documentation details the Pushwoosh Event Stream integration with Amplitude, allowing marketers to send user data and events to Pushwoosh for targeted push notifications, in-app messages, and email campaigns. The setup requires a Pushwoosh API Key and App Code, with options to configure which events and user properties are streamed in real-time.
+# Summary
+This documentation details the Pushwoosh Event Stream integration with Amplitude, allowing marketers to send user data and events to Pushwoosh for targeted push notifications, in-app messages, and cross-channel campaigns, requiring API Key and App Code configuration and supporting real-time event streaming with user property mapping.
 
-## Keywords
+# Keywords
 - Pushwoosh integration
 - Event streaming
 - API Key
 - App Code
+- User property mapping
 - Push notifications
 - In-app messaging
-- User property mapping
+- Cross-channel campaigns
 - Behavioral triggers
-- Customer engagement
 - Real-time event forwarding
-- 2MB request limit
+- Customer engagement
 - User_ID mapping

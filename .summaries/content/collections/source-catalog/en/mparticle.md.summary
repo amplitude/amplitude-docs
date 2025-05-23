@@ -4,11 +4,9 @@ This documentation page describes the integration between mParticle and Amplitud
 # Keywords
 - mParticle integration
 - CDP integration
-- raw-events
+- raw-events data source
 - cross-platform data collection
 - customer data aggregation
 - analytics platform connection
-- mParticle API
-- multi-platform instrumentation
-- customer behavior analytics
-- data forwarding
+- multi-touchpoint tracking
+- event forwarding

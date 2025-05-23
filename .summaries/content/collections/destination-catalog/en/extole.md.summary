@@ -1,14 +1,14 @@
 # Summary
-This documentation details the Extole destination integration with Amplitude, enabling businesses to stream user behavior data to power customer-led growth initiatives like referral programs and challenges, with specific setup instructions for mapping user identifiers and configuring event streaming between the platforms.
+This documentation details the Extole destination integration with Amplitude, enabling businesses to stream user behavior data to power customer-led growth initiatives like referral programs and challenges. The integration requires mapping Amplitude user_id to Extole email addresses, supports event filtering, and allows Extole to use Amplitude events for triggering emails, fulfilling rewards, and creating audiences.
 
 # Keywords
 - Customer-Led Growth platform
-- Refer-a-friend programs
 - Event streaming integration
+- Refer-a-friend programs
 - User identifier mapping
-- Extole access token
 - Event Live View
-- Customer advocacy campaigns
+- Access token authentication
+- Challenges
+- Friends & Family campaigns
 - First-party data collection
-- Challenges programs
-- Surprise-and-Delight
+- User acquisition

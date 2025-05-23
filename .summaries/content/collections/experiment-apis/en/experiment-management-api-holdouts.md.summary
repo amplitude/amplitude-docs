@@ -11,4 +11,4 @@ This documentation page describes the Experiment Management API endpoints for ma
 - individualExclusion
 - experiment association
 - PATCH/GET/POST endpoints
-- bucketingSalt
+- bucketing salt

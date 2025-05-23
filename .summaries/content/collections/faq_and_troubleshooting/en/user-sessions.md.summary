@@ -5,13 +5,13 @@ This documentation page addresses FAQs about User Sessions charts and session tr
 - User Sessions chart
 - session ID
 - zero-length sessions
-- out-of-session events
 - Start Session event
 - session timeout
 - custom session definition
+- HTTP API sessions
 - Microscope feature
-- HTTP API
-- mobile SDK
+- mobile SDK sessions
 - event streams
 - session length calculation
+- out-of-session events
 - epoch timestamp

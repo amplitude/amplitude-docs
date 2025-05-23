@@ -1,5 +1,5 @@
 ## Summary
-This documentation details the integration between Amplitude and TheTradeDesk, allowing advertisers to send user cohorts for targeted advertising campaigns with a 30-day TTL for users, supporting mapping to TheTradeDesk's GUID, raw device ID, or Unified ID 2.0, and requiring configuration in both platforms with advertiser credentials.
+This documentation details the integration between Amplitude and TheTradeDesk, allowing advertisers to send user cohorts for targeted advertising campaigns with support for various ID mapping options (GUID, device ID, or UID2) and a 30-day TTL for synced users that refreshes with each sync.
 
 ## Keywords
 - TheTradeDesk integration
@@ -7,11 +7,9 @@ This documentation details the integration between Amplitude and TheTradeDesk, a
 - Advertiser ID
 - Advertiser Secret Key
 - User ID mapping
-- GUID
-- Unified ID 2.0
-- TTL (Time-To-Live)
+- 30-day TTL
+- Unified ID 2.0 (UID2)
 - Audience targeting
-- Retargeting campaigns
+- Campaign optimization
+- Retargeting strategies
 - Data Center Region
-- iOS IDFA
-- Android AAID

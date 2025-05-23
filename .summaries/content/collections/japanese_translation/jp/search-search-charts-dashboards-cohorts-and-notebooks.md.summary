@@ -1,14 +1,14 @@
-# Summary
-This documentation explains how to use Amplitude's search functionality to find charts, dashboards, cohorts, and notebooks created by others in your organization, including filtering options, sorting results, and how administrators can access unlisted items using the "is:unlisted" search parameter.
+## Summary
+This documentation page explains how to use Amplitude's search functionality to find charts, dashboards, cohorts, and notebooks created by other users in the organization, including how to filter search results and view unlisted items (for managers/admins only).
 
-# Keywords
+## Keywords
 - Amplitude search
 - Advanced search filters
 - Official content
 - Unlisted items
-- Search sorting
+- Search sorting options
 - Project filtering
+- Space filtering
 - Content discovery
-- Administrator search capabilities
-- Real-time search results
-- Content visibility
+- Search by editor
+- Admin search capabilities

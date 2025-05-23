@@ -1,14 +1,14 @@
 ## Summary
-This documentation page explains how to compare up to three events within a single conversion step in a Funnel Analysis chart, detailing the process of selecting "Compare Event" from the Options menu after building a funnel, with limitations on metrics compatibility and persistence when switching between charts.
+This documentation page explains how to compare up to three events within a single conversion step in a Funnel Analysis chart, detailing the process to select multiple events from the Options menu and noting the feature's compatibility with different conversion metrics and order options.
 
 ## Keywords
 - funnel analysis
 - event comparison
 - conversion step
-- multiple events comparison
+- multiple events
 - Options flyout menu
 - conversion metrics
-- conversion over time
 - order options
-- dashboard filter limitations
-- chart switching
+- step comparison
+- funnel visualization
+- event selection

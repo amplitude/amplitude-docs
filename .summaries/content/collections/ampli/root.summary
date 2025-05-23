@@ -1,101 +1,111 @@
-# Ampli: Type-Safe Analytics Instrumentation for Amplitude
+# Ampli: Type-Safe Analytics Instrumentation for Amplitude Data
 
 ## Overview
 
-Ampli is a developer-focused solution that provides type-safe analytics instrumentation for applications, ensuring accurate event tracking according to predefined tracking plans in Amplitude Data. It bridges the gap between tracking plan specifications and implementation code, reducing errors and improving developer productivity through strong typing, code completion, and validation.
+Ampli is a comprehensive analytics instrumentation solution that bridges the gap between tracking plan definitions in Amplitude Data and code implementation. It provides developers with type-safe, validated analytics tracking capabilities that reduce errors and improve code quality when implementing analytics in applications.
 
 ## Key Features
 
-- **Type-safe analytics tracking**: Eliminates common instrumentation errors through strong typing and code completion
-- **Tracking plan integration**: Synchronizes with tracking plans defined in Amplitude Data
+- **Type-safe analytics tracking**: Generates strongly-typed code that matches tracking plan definitions
 - **Instrumentation verification**: Validates that implemented tracking code matches the tracking plan
-- **CI/CD integration**: Supports automated validation in continuous integration workflows
-- **Source control coordination**: Facilitates collaboration between tracking plan changes and code implementation
-- **Progressive migration path**: Enables gradual transition from traditional Amplitude SDK to Ampli
+- **Source control integration**: Coordinates tracking plan changes across development teams
+- **CI/CD validation**: Ensures analytics implementation correctness in continuous integration pipelines
+- **Progressive migration path**: Allows gradual transition from standard Amplitude SDK to Ampli
 
 ## Product Components and Relationships
 
 Ampli consists of two main components that work together:
 
-1. **Ampli CLI**: Command-line tool that fetches tracking plans from Amplitude Data and generates type-safe code
-2. **Ampli Wrapper**: Generated code library that provides a strongly typed API matching tracking plan definitions
+1. **Ampli CLI**: A command-line tool that serves as the primary interface for developers to interact with Amplitude Data tracking plans.
+2. **Ampli Wrapper**: A code-generated SDK that provides strongly-typed APIs matching tracking plan definitions.
 
-The workflow typically involves:
-- Product managers define tracking plans in Amplitude Data
-- Developers use Ampli CLI to pull these plans and generate type-safe code
-- Developers implement analytics using the generated Ampli Wrapper
-- Ampli CLI validates that implementation matches the tracking plan
-- The Ampli Wrapper sends events to Amplitude through the standard SDK
+The relationship between these components is sequential:
+- First, developers use the Ampli CLI to pull tracking plans from Amplitude Data
+- Then, the CLI generates the Ampli Wrapper code based on the tracking plan
+- Finally, developers use the generated Ampli Wrapper in their application code to implement analytics tracking
+
+This workflow ensures that the implementation in code always matches the tracking plan defined in Amplitude Data.
 
 ## Key Nomenclature and Definitions
 
-- **Tracking Plan**: A specification in Amplitude Data that defines events, properties, and their types
-- **Ampli Wrapper**: The generated type-safe code library that implements the tracking plan
-- **`ampli.json`**: Configuration file that stores settings for the Ampli CLI
-- **`ampli.load()`**: Method to initialize the Ampli wrapper with an Amplitude instance
-- **`ampli.track()`**: Method to send events through the Ampli wrapper
-- **`ampli pull`**: CLI command to generate the Ampli wrapper from a tracking plan
-- **`ampli status`**: CLI command to verify tracking implementation against the plan
-- **`is-merged` flag**: Indicates if a tracking plan branch has been merged to main
-- **`is-latest` flag**: Indicates if the local implementation matches the latest tracking plan
+- **Tracking Plan**: A schema that defines events, properties, and their types in Amplitude Data
+- **ampli.json**: Configuration file that stores project settings and tracking plan information
+- **Instrumentation**: The implementation of analytics tracking code in an application
+- **Type-safe**: Ensuring that events and properties conform to defined types at compile time
+- **Branch coordination**: Aligning branches in source control with branches in Amplitude Data
+- **Runtime validation**: Verification of events against the tracking plan during application execution
+- **Implementation verification**: Checking if code implementation matches the tracking plan specifications
 
-## Product Ecosystem Integration
+## Integration with Amplitude Ecosystem
 
-Ampli integrates with the broader Amplitude ecosystem by:
+Ampli is positioned as a bridge between planning and implementation in the Amplitude product ecosystem:
 
-1. **Amplitude Data Integration**: Directly connects to Amplitude Data to fetch tracking plan definitions
-2. **SDK Wrapping**: Encapsulates the standard Amplitude SDK for event transmission
-3. **Workflow Support**: Bridges the gap between tracking plan specification and implementation
-4. **Collaborative Development**: Enables collaboration between product managers and developers
+1. **Amplitude Data**: Where product/analytics teams define tracking plans and event schemas
+2. **Ampli**: Pulls these tracking plans and generates type-safe code for developers
+3. **Amplitude Analytics**: Receives the properly formatted events tracked through Ampli
+4. **Amplitude Visualization Tools**: Display analytics data that is consistent with the tracking plan
 
-Ampli can coexist with traditional Amplitude SDK implementations, allowing teams to gradually migrate to the type-safe approach.
+This integration ensures data quality throughout the analytics lifecycle, from planning to implementation to analysis.
 
 ## API and Command Line Usage
 
-### CLI Commands
+### Ampli CLI Commands
 
 ```bash
-# Generate type-safe wrapper from tracking plan
+# Configure Ampli for a project
+ampli configure --api-key <API_KEY> --org <ORG_NAME> --workspace <WORKSPACE_NAME>
+
+# Pull the latest tracking plan
 ampli pull
 
-# Check implementation status against tracking plan
-ampli status
+# Check implementation status
+ampli status [--update]
 
-# Switch to a different tracking plan branch
-ampli checkout <branch-name>
+# Branch-specific operations
+ampli pull --branch <BRANCH_NAME>
+ampli status --is-merged --is-latest
 ```
 
-### API Usage Examples
+### CI Integration Examples
 
-```javascript
-// Initialize Ampli with Amplitude instance
-ampli.load({ client: amplitude });
-
-// Track a strongly-typed event
-ampli.productViewed({
-  productId: "product-123",
-  price: 99.99
-});
-```
-
-### CI Integration
-
-The Ampli CLI can be run in Docker containers for CI environments:
-
+For GitHub Actions:
 ```yaml
-# GitHub Actions example
 steps:
   - uses: actions/checkout@v2
   - name: Verify analytics implementation
     run: |
       docker run --rm \
-        -e AMPLI_TOKEN=${{ secrets.AMPLI_TOKEN }} \
         -v $(pwd):/app \
+        -w /app \
+        -e AMPLI_TOKEN=${{ secrets.AMPLI_TOKEN }} \
         amplitudeinc/ampli status
 ```
 
-Two Docker images are available:
-- `amplitudeinc/ampli`: Basic image with Ampli CLI
-- `amplitudeinc/ampli-all`: Comprehensive image with additional dependencies
+For Bitbucket Pipelines:
+```yaml
+pipelines:
+  default:
+    - step:
+        script:
+          - docker run --rm -v $(pwd):/app -w /app -e AMPLI_TOKEN=$AMPLI_TOKEN amplitudeinc/ampli status
+```
 
-Authentication requires an API token stored in the `AMPLI_TOKEN` environment variable.
+### Code Implementation Pattern
+
+When using the Ampli Wrapper instead of the standard Amplitude SDK:
+
+```javascript
+// Before: Standard Amplitude SDK
+amplitude.getInstance().logEvent("Item Purchased", {
+  price: 10.99,
+  item_name: "Widget"
+});
+
+// After: Ampli Wrapper
+ampli.itemPurchased({
+  price: 10.99,
+  itemName: "Widget"
+});
+```
+
+The Ampli Wrapper provides type checking, autocompletion, and validation that the standard SDK cannot offer, ensuring that analytics implementation matches the tracking plan specifications.

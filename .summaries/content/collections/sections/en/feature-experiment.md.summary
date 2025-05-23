@@ -1,8 +1,8 @@
-## Summary
-This documentation page serves as a landing page for Amplitude's Feature Experiment product, organizing access to resources for feature flagging, experimentation (A/B, multivariate, Multi-armed Bandit), web experimentation, SDKs, APIs, and a demo environment.
+# Summary
+This documentation page serves as the landing page for Amplitude's Feature Experiment functionality, organizing content into six main categories: Feature Flagging, Feature Experimentation, Web Experimentation, SDKs, APIs, and a Demo environment, each with specific descriptions and navigation links to related documentation.
 
-## Keywords
-- feature flagging
+# Keywords
+- feature flags
 - A/B testing
 - multivariate experiments
 - Multi-armed Bandit

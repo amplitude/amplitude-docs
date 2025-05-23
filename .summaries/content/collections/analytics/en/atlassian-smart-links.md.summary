@@ -1,14 +1,15 @@
 ## Summary
-This documentation explains how to use Atlassian Smart Links to embed Amplitude chart previews in Confluence, Jira, and Trello by simply pasting chart URLs, noting that most chart types are supported except Personas, Pathfinder, Data Tables, and Experiment Results.
+This documentation explains how to use Atlassian Smart Links to embed Amplitude chart previews in Confluence documents, Jira tickets, and Trello cards by simply pasting chart URLs, with instructions for authorization and disconnection.
 
 ## Keywords
 - Atlassian Smart Links
 - Amplitude charts
+- Chart previews
 - Confluence integration
 - Jira integration
-- chart previews
-- URL embedding
-- unsupported chart types
 - Trello integration
-- authorization workflow
-- disconnection process
+- URL embedding
+- Chart sharing
+- Unsupported chart types (Personas, Pathfinder, Data Tables, Experiment Results)
+- Authorization process
+- Disconnection procedure

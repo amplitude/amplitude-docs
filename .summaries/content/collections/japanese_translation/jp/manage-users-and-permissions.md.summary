@@ -2,13 +2,13 @@
 This page explains how to manage users and permissions in Amplitude, including inviting new users, changing user roles, enabling access requests, transferring content ownership, and handling email address changes. It details the steps for administrators to control who has access to projects and what level of permissions they have.
 
 # Keywords
-- user management
-- permission roles
-- invite users
-- bulk transfer ownership
-- access requests
-- project permissions
-- organization roles
-- user deletion
-- email address change
-- team spaces
+- User invitation process
+- Permission management
+- Role assignment
+- Content ownership transfer
+- Access request configuration
+- Bulk ownership transfer
+- User removal procedure
+- Organization roles
+- Project-level permissions
+- Email address change workaround

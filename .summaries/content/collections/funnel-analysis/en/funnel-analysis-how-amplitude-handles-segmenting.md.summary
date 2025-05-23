@@ -1,12 +1,12 @@
-## Summary
-This documentation explains how Amplitude applies user property segmentation in Funnel Analysis charts, specifically that segmentation is based on the property value at the time of the first funnel step, not subsequent steps.
+# Summary
+This documentation explains how Amplitude applies user property segmentation in Funnel Analysis charts, specifically that segmentation is based on the property value at the time of the first funnel step, not subsequent steps, with an example showing country-based segmentation behavior.
 
-## Keywords
+# Keywords
 - funnel analysis segmentation
 - user property segmentation
 - first step segmentation
 - segment application logic
-- funnel data visualization
 - country property example
+- funnel data visualization
 - property value timing
-- funnel step properties
+- event sequence segmentation

@@ -1,14 +1,14 @@
 # Summary
-Web Experiment is designed for minimal performance impact with a dynamic script (20KB compressed base size plus ~100B per flag) that uses two-layer caching (CDN and browser) and fast local evaluation (<1ms). The feature includes considerations for script size management, caching configurations, and limitations with ad blockers.
+This documentation details Web Experiment's performance characteristics, including script size (20KB compressed base with ~100B per flag), caching mechanisms (CDN and browser with specific cache control headers), local evaluation performance (<1ms), and limitations with ad blockers preventing experiment participation.
 
 # Keywords
 - web_experiment_performance
 - script_size_optimization
 - cdn_caching
 - browser_caching
-- flag_evaluation_speed
-- ad_blocker_limitations
 - cache_control_headers
+- local_evaluation
+- ad_blocker_limitations
 - experiment_script_delivery
-- dynamic_script_scaling
-- performance_optimization
+- flag_size_scaling
+- performance_impact_minimization

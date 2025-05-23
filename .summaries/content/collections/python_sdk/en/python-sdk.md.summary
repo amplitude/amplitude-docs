@@ -7,10 +7,12 @@ The Python SDK documentation details how to install, initialize, and configure t
 - event tracking
 - user properties
 - Identify operations
-- group identification
+- user groups
 - revenue tracking
-- batching configuration
+- batch processing
 - flush methods
-- plugins architecture
-- event enrichment
-- destination plugins
+- plugins
+- EventOptions
+- BaseEvent
+- storage provider
+- callback function

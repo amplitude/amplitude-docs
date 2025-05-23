@@ -9,6 +9,7 @@ This documentation page explains behavioral cohorts in Amplitude, which are grou
 - chart segmentation
 - Plus plan restrictions
 - user traits
-- engagement analysis
-- cohort refresh
+- product engagement analysis
+- cohort computation
+- Accounts add-on
 - group-level cohorts

@@ -8,7 +8,7 @@ This documentation explains multiple hypothesis testing in Amplitude Experiment,
 - Family-wise error rate
 - Multiple comparisons problem
 - Statistical significance
-- P-value correction
+- P-values
+- Primary and secondary metrics
 - Experiment variants
-- Primary/secondary metrics
 - Multiplicity

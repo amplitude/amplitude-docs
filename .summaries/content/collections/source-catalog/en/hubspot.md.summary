@@ -4,11 +4,11 @@ This documentation details the HubSpot integration with Amplitude, which sends e
 # Keywords
 - HubSpot email events
 - Email campaign analytics
-- EMAIL_SENT
-- EMAIL_OPEN
-- EMAIL_CLICK
-- EMAIL_BOUNCE
-- Email funnel analysis
-- HubSpot Portal ID
+- EMAIL_SENT, EMAIL_OPEN, EMAIL_CLICK
+- Email performance tracking
+- Marketing automation integration
+- Event streaming
+- Cohort targeting
 - OAuth authentication
+- Funnel analysis
 - 1-hour data refresh interval

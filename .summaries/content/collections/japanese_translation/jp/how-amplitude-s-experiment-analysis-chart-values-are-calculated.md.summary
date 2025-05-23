@@ -10,5 +10,5 @@ This documentation explains how Amplitude's Experiment Analysis chart values are
 - Exposure counting logic
 - Metric event triggers
 - Experiment interpretation
-- User-based metrics
-- Event property aggregation
+- A/B test analytics
+- User conversion tracking

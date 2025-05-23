@@ -6,10 +6,10 @@ This documentation describes the Amplitude-Userflow integration that enables syn
 - no-code product tours
 - in-app onboarding
 - user segmentation
-- integration-secret
-- customer-engagement
-- behavioral-targeting
-- product walkthroughs
+- integration secret
+- customer engagement
+- behavioral analytics
+- product tours
 - checklists
 - surveys
 - resource center

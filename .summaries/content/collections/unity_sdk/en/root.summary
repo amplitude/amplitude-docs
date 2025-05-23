@@ -20,94 +20,104 @@ The Amplitude Analytics Unity SDK is a plugin that integrates Amplitude's analyt
 The SDK can be installed through multiple methods:
 1. **Unity Package Manager (UPM)**: Add the package via Git URL
 2. **Manual Installation**: Download and import the Unity package directly
-3. **CocoaPods/Gradle**: For platform-specific integrations
+3. **CocoaPods/Gradle**: Configure native dependencies for iOS/Android
 
-## Core Concepts and Nomenclature
+## Initialization and Configuration
 
-- **Events**: User actions or occurrences tracked in the application
-- **User Properties**: Attributes associated with users (demographics, preferences, etc.)
-- **Event Properties**: Additional context attached to specific events
-- **Sessions**: Time periods of user engagement with the application
-- **User ID**: Unique identifier for tracking individual users
-- **Device ID**: Fallback identifier when user is not logged in
-- **IDFA**: Identifier for Advertisers (iOS) - can be optionally tracked
-- **ADID**: Google Advertising ID (Android) - can be optionally tracked
+The SDK must be initialized with an API key:
 
-## Key API Methods
-
-### Initialization
 ```csharp
 Amplitude amplitude = Amplitude.getInstance();
-amplitude.init("API_KEY");
+amplitude.init("YOUR_API_KEY");
 ```
 
-### Event Tracking
+Configuration options include:
+- Setting log level
+- Enabling COPPA controls
+- Configuring EU data residency
+- Setting custom user IDs
+- Configuring session timeouts
+- Enabling IDFA tracking
+
+## Event Tracking
+
+Events are tracked using the `logEvent` method:
+
 ```csharp
 // Basic event
-amplitude.logEvent("EVENT_TYPE");
+amplitude.logEvent("Button Clicked");
 
 // Event with properties
-Dictionary<string, object> eventProps = new Dictionary<string, object>();
-eventProps.Add("property1", "value1");
-amplitude.logEvent("EVENT_TYPE", eventProps);
+Dictionary<string, object> eventProperties = new Dictionary<string, object>();
+eventProperties.Add("property1", "value1");
+amplitude.logEvent("Button Clicked", eventProperties);
 ```
 
-### User Properties
+## User Properties Management
+
+The SDK provides methods to set, unset, and manage user properties:
+
 ```csharp
-// Set user properties
+// Set a user property
+amplitude.setUserProperty("user_type", "premium");
+
+// Set multiple properties
 Dictionary<string, object> userProps = new Dictionary<string, object>();
+userProps.Add("age", 25);
 userProps.Add("gender", "female");
 amplitude.setUserProperties(userProps);
 
-// Individual property operations
-amplitude.setUserProperty("premium_user", true);
-amplitude.clearUserProperties();
+// Increment a property
+amplitude.add("login_count", 1);
 ```
 
-### User Identity
-```csharp
-amplitude.setUserId("user@example.com");
-amplitude.regenerateDeviceId();
-```
+## Revenue Tracking
 
-### Revenue Tracking
+In-app purchases can be tracked with the Revenue API:
+
 ```csharp
-// Track revenue with Revenue object
 Revenue revenue = new Revenue().setProductId("com.company.app.productid")
                               .setPrice(3.99)
                               .setQuantity(1);
 amplitude.logRevenueV2(revenue);
 ```
 
-## Configuration Options
+## Session Management
 
-- **EU Data Residency**: `amplitude.setServerUrl("https://api.eu.amplitude.com")`
-- **Session Timeout**: `amplitude.setSessionTimeoutMillis(30 * 60 * 1000)`
-- **Opt-Out Tracking**: `amplitude.setOptOut(true)`
-- **COPPA Control**: `amplitude.enableCoppaControl()`
-- **Advertising ID Tracking**: `amplitude.enableLocationListening()`
-- **Logging**: `amplitude.enableLogging(true)`
+The SDK automatically manages sessions with configurable timeout periods:
+
+```csharp
+// Set session timeout to 10 minutes (in milliseconds)
+amplitude.setSessionTimeoutMillis(10 * 60 * 1000);
+```
+
+## Advanced Features
+
+- **COPPA Controls**: Enable restrictions for child-directed apps
+- **Dynamic Configuration**: Fetch and apply server-side configurations
+- **Opt-out Tracking**: Allow users to opt out of analytics
+- **Identity Management**: Set device IDs and user IDs
+- **Offline Processing**: Queue events when offline for later transmission
 
 ## Integration with Amplitude Ecosystem
 
-The Unity SDK connects to the broader Amplitude analytics platform, allowing developers to:
-1. View analytics data in the Amplitude dashboard
-2. Create user segments based on behavior
-3. Analyze user journeys and conversion funnels
-4. Implement server-side dynamic configuration
-5. Export data to other systems in the Amplitude ecosystem
+The Unity SDK integrates with the broader Amplitude analytics platform, allowing developers to:
+- View event data in Amplitude dashboards
+- Perform cohort analysis
+- Track user journeys
+- Analyze retention metrics
+- Create custom reports and visualizations
 
-The SDK is designed to work with minimal configuration while providing advanced options for developers who need more control over analytics implementation.
+The SDK serves as the data collection layer, sending information to Amplitude's analytics backend where it can be analyzed through the Amplitude web interface.
 
-## Platform-Specific Considerations
+## Key API Methods
 
-The SDK handles platform-specific requirements automatically, including:
-- iOS App Tracking Transparency framework compliance
-- Android permissions management
-- Platform-specific identifier collection (IDFA/ADID)
-
-## Technical Requirements
-
-- Unity 2019.3.11 or higher
-- iOS 10+ for iOS deployments
-- Android API level 16+ for Android deployments
+- `getInstance()`: Get the Amplitude SDK instance
+- `init(string apiKey)`: Initialize the SDK
+- `logEvent(string eventType, Dictionary<string, object> eventProperties)`: Track events
+- `setUserId(string userId)`: Identify a user
+- `setUserProperties(Dictionary<string, object> userProperties)`: Set user attributes
+- `logRevenueV2(Revenue revenue)`: Track revenue events
+- `setSessionTimeoutMillis(long timeout)`: Configure session timeout
+- `enableCoppaControl()`: Enable COPPA compliance features
+- `setServerUrl(string serverUrl)`: Set custom server URL for EU data residency

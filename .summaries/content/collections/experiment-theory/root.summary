@@ -2,53 +2,66 @@
 
 ## Product Overview
 
-Amplitude Experiment is a comprehensive platform for designing, executing, and analyzing controlled experiments (A/B tests and Multi-Armed Bandits) to drive data-driven product decisions. The platform enables product teams to test hypotheses about changes by comparing metrics between different user groups and determining the statistical significance of observed differences.
+Amplitude Experiment is a statistical experimentation platform for designing, running, and analyzing A/B tests and Multi-Armed Bandit experiments to measure product change impacts. It provides statistical tools for determining experiment parameters, analyzing results, and making data-driven decisions based on empirical evidence.
 
-Amplitude Experiment provides robust statistical analysis tools, including Welch's T-test, experiment design capabilities with configurable parameters, sample size and duration estimation, real-time monitoring with Cumulative Exposure graphs, and support for both traditional A/B testing and more advanced Multi-Armed Bandit experiments. Users can configure Minimum Detectable Effect (MDE) settings to ensure experiments are properly powered to detect meaningful changes.
+## Key Features and Concepts
 
-## Product Relationships and Features
+### Experiment Types
+- **A/B Testing**: Traditional hypothesis testing comparing a control group against one or more variants
+- **Multi-Armed Bandit**: Adaptive experimentation that automatically allocates more traffic to better-performing variants
 
-Amplitude Experiment is part of the broader Amplitude analytics ecosystem, focusing specifically on experimentation capabilities. The platform consists of:
+### Statistical Analysis Tools
+- **Welch's T-test**: Statistical method for comparing means between two populations
+- **Minimum Detectable Effect (MDE)**: The smallest effect size an experiment is designed to detect
 
-1. **Experiment Design Tools**: Features for configuring experiments with proper controls, variants, and parameters
-2. **Statistical Analysis Engine**: Implementation of Welch's T-test and other statistical methods
-3. **Monitoring Dashboard**: Real-time analysis tools including Cumulative Exposure graphs
-4. **Duration Estimator**: Calculation of required sample sizes and experiment timeframes
-
-The platform integrates with other Amplitude products to provide a comprehensive analytics solution, though specific integration points aren't fully detailed in the documentation.
+### Experiment Design Components
+- **Sample Size Requirements**: Calculations to determine necessary users per variant
+- **Duration Estimator**: Tool to predict experiment runtime
+- **Exposure Tracking**: Monitoring of cumulative exposure throughout the experiment
 
 ## Key Nomenclature and Definitions
 
-- **Welch's T-test**: A statistical method for comparing means between two populations without assuming equal variances
-- **Minimum Detectable Effect (MDE)**: The smallest meaningful change in a metric that an experiment aims to detect
-- **One-sided vs. Two-sided Tests**: Configuration options where one-sided tests look for changes in a specific direction, while two-sided tests look for any change
-- **Central Limit Theorem**: Statistical principle enabling normal distribution assumptions with sufficiently large sample sizes
-- **Confidence Interval**: Range of values likely containing the true population parameter
-- **Peeking**: The practice of checking experiment results prematurely, before reaching adequate sample size
-- **Samples Per Variant Needed**: Required number of users in each experiment group for statistical validity
-- **Cumulative Exposure Graph**: Visualization tracking user exposure to an experiment over time
-- **Success Metrics**: Primary metrics an experiment aims to improve
-- **Guardrail Metrics**: Secondary metrics monitored to ensure no negative side effects
-- **Control Mean**: The baseline metric value in the control group
+### Statistical Terms
+- **Minimum Detectable Effect (MDE)**: Smallest meaningful change in a metric that an experiment should detect, expressed as a percentage change from control mean
+- **Statistical Significance**: Likelihood that an observed effect is not due to random chance
+- **Two-sided Test**: Tests for differences between variants in either direction
+- **One-sided Test**: Tests for differences in only one direction
+- **Central Limit Theorem**: Statistical principle allowing normal distribution assumptions with large enough sample sizes
+
+### Experiment Metrics
+- **Success Metrics**: Primary metrics determining experiment success
+- **Guardrail Metrics**: Secondary metrics monitored to ensure changes don't negatively impact important product aspects
+- **Control Mean**: Baseline metric value observed in the control group
+- **Conversion Rate**: Percentage of users completing a desired action
+
+### Experiment Monitoring
+- **Samples Per Variant Needed**: Required users in each variant for statistical validity
+- **Cumulative Exposure Graph**: Visual representation of user exposure over time
+- **Sample Size Target**: Total users required across all variants
+- **Exposure Remaining**: Additional user exposure needed for statistical validity
+
+## Feature Relationships
+
+The platform integrates several components working together throughout the experimentation process:
+
+1. **Experiment Design**:
+   - MDE settings directly impact required sample size (smaller MDE requires larger sample size)
+   - Experiment type (A/B vs Multi-Armed Bandit) affects how MDE is applied
+
+2. **Experiment Monitoring**:
+   - Duration estimator uses MDE and current traffic to predict completion
+   - Cumulative exposure graphs track progress toward required sample size
+
+3. **Analysis**:
+   - Welch's T-test analyzes results once sample size requirements are met
+   - Statistical significance is determined based on pre-defined MDE and test parameters
 
 ## Product Ecosystem Integration
 
-Amplitude Experiment functions as part of the larger Amplitude analytics and product optimization suite. The platform:
+Amplitude Experiment appears to be part of a broader Amplitude analytics ecosystem, leveraging user data and metrics from the core analytics product. Experiment results can likely be analyzed within the context of other Amplitude features, creating a comprehensive data-driven decision framework.
 
-1. Likely receives user behavior data from Amplitude Analytics
-2. Integrates with feature flag systems for experiment deployment
-3. Feeds results back into broader product analytics dashboards
-4. Supports data-driven decision-making processes for product teams
+## Best Practices
 
-Experiment results can be analyzed within the Amplitude platform, indicating tight integration with other Amplitude tools and services.
-
-## Technical Implementation
-
-The platform appears to have a web-based interface where configurations and analyses are performed. Key technical capabilities include:
-
-- Setting MDE values during experiment setup
-- Configuring one-sided or two-sided T-tests
-- Accessing Cumulative Exposure graphs for monitoring
-- Using the duration estimator to calculate required sample sizes
-
-Primary use cases include testing product changes before full deployment, measuring the impact of feature modifications on user behavior, optimizing conversion rates and other key metrics, and making data-driven product decisions based on statistically significant results.
+1. **Avoid Peeking**: Do not analyze results before reaching required sample size to prevent false positives
+2. **Ensure Adequate Samples**: Typically 355+ samples per variant to ensure Central Limit Theorem applies
+3. **Consider MDE Tradeoffs**: Balance between experiment duration and sensitivity when setting MDE values

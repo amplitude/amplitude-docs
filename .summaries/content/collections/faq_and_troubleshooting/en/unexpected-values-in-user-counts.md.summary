@@ -3,12 +3,12 @@ This documentation explains why user counts in Amplitude may show unexpected val
 
 ## Keywords
 - (none) bucket
-- null values
+- null property values
 - event-based analytics
-- property values at event time
-- historical event data
-- custom user properties
+- property value timing
 - GeoIP location properties
 - MaxMind database
-- device family mapping
+- device property mapping
+- historical event properties
 - server-side events
+- property instrumentation timing

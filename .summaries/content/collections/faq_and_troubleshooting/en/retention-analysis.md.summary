@@ -1,14 +1,13 @@
 # Summary
-This documentation page addresses frequently asked questions about Retention Analysis charts in Amplitude, explaining how data points are calculated using weighted averages, why recent periods have asterisks, how user counts are calculated in breakdown tables, and clarifying various retention calculation behaviors including custom brackets and upward retention curves.
+This documentation page addresses frequently asked questions about Retention Analysis charts in Amplitude, explaining how data points are calculated using weighted averages, why recent periods have asterisks, how user counts are calculated in breakdown tables, and various nuances of retention calculations including Return On and Return On or After metrics.
 
 # Keywords
 - weighted average retention calculation
+- unique user counting
 - Return On vs Return On or After retention
-- asterisked incomplete data points
-- user deduplication in retention
+- incomplete data asterisks
+- retention curve behavior
 - custom retention brackets
-- upward retention curves
-- retention denominator changes
-- unique user counting methodology
-- retention timeframe limitations
+- denominator changes
 - breakdown table user counts
+- retention timeframe limitations

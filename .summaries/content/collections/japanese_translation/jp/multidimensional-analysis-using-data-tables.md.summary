@@ -13,4 +13,4 @@ This documentation explains how to use Amplitude's Data Tables for multidimensio
 - transpose functionality
 - attribution metrics
 - time properties
-- dashboard REST API
+- secondary group by

@@ -1,14 +1,14 @@
-## Summary
-This documentation page explains how to test guides and surveys in Amplitude using Preview mode, which allows developers to verify conditions, settings, and behavior before launching. It covers entering preview mode, understanding condition statuses (trigger, limit, throttle), troubleshooting preview issues, and conducting live testing with targeted cohorts.
+# Summary
+This documentation page explains how to use Preview mode in Amplitude Guides and Surveys to test functionality before launch, including how to troubleshoot preview issues, understand condition statuses (trigger, limit, throttle), and conduct live testing with targeted cohorts.
 
-## Keywords
+# Keywords
 - Preview mode
 - Guides and Surveys SDK
-- Condition status indicators (green/yellow/blue)
+- Condition status indicators
 - Reset User History
 - Ignore Throttle Limits
 - Manually trigger event
 - Live testing
-- Targeting cohorts
 - Preview bar
-- Test & Preview functionality
+- Test & Preview
+- Targeting cohorts

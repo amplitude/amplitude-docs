@@ -6,13 +6,13 @@ This documentation page covers frequently asked questions about Event Segmentati
 - Group by clause
 - Where clause
 - Date range selection
-- Active percentage
-- Property value average
+- Active percentage calculation
+- Property value averages
 - Custom formulas
 - Inline cohorts
-- User list download
-- DAU/MAU calculation
-- ROLLWIN function
-- Incomplete data error
-- Glob match filtering
+- User list downloads
+- DAU/MAU charts
+- Microscope feature
+- Incomplete data errors
+- Glob matching filters
 - Account-level filtering

@@ -10,5 +10,5 @@ This documentation page describes the Google Tag Manager destination integration
 - containerId
 - PluginType.DESTINATION
 - GTMPlugin
-- event streaming
-- marketing analytics
+- setup method
+- execute method

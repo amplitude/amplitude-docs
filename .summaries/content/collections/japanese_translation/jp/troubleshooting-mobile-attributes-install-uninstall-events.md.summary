@@ -7,7 +7,8 @@ This documentation explains how mobile attribution partners use advertising IDs 
 - attribution API
 - 72-hour matching window
 - amplitude_attribution_ids
+- device_id mapping
 - install/uninstall tracking
-- user identification mapping
+- user identification
 - attribution troubleshooting
-- device_id matching
+- iOS SDK

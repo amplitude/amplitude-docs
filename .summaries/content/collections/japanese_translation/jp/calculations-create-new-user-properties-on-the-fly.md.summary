@@ -10,5 +10,5 @@ This documentation explains how to create and use Calculations in Amplitude, whi
 - personalization campaigns
 - external destination sync
 - Amplitude Analytics filters
-- user property creation
-- property synchronization
+- property creation workflow
+- user property deployment

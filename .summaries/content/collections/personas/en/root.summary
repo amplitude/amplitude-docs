@@ -2,58 +2,50 @@
 
 ## Product Overview
 
-Amplitude Personas is an advanced analytics feature that automatically groups users into clusters based on similarities in their event behaviors. Unlike traditional segmentation that requires predefined rules, Personas uses behavioral clustering to discover natural user groupings through exploratory data mining. This feature helps product teams identify distinct user personas within their user base by analyzing actual behavior patterns rather than relying on demographic information or assumptions.
+Amplitude Personas is an advanced analytics feature that automatically groups users into clusters based on their behavioral similarities. Unlike traditional segmentation that requires predefined rules, Personas uses machine learning to discover natural user groupings through exploratory data mining. This feature helps product teams identify distinct user personas based on actual behavior patterns rather than assumptions.
 
-## Key Features and Concepts
+The Personas feature is exclusively available to customers on Amplitude's Growth and Enterprise plans, positioning it as a premium analytics capability.
 
-1. **Behavioral Clustering** - Automatically groups users with similar event behaviors without requiring predefined rules
-2. **Cluster Cards** - Visual representations of each identified user cluster showing key behavioral patterns
-3. **Event Tables** - Detailed breakdowns of event frequencies that distinguish each cluster
-4. **Cohort Creation** - Ability to convert discovered clusters into behavioral cohorts for further analysis
-5. **Standard Deviation Analysis** - Statistical measurement showing how significantly event frequencies differ between clusters
+## Key Features and Components
 
-## Product Relationships and Architecture
+### Personas Chart Interface
 
-Personas is positioned as a premium analytics feature within the Amplitude platform:
-- Available exclusively on Growth and Enterprise plans
-- Uses a specialized interface distinct from standard Amplitude charts
-- Integrates with Amplitude's cohort system to enable further analysis of discovered personas
+The Personas chart uses a specialized interface that differs from standard Amplitude charts, consisting of three main modules:
 
-The Personas interface consists of three primary modules:
-1. **Cluster Generation Module** - Controls the clustering process parameters
-2. **Cluster Count Module** - Determines the number of clusters to generate
+1. **Cluster Generation Module** - Controls the parameters for generating behavioral clusters
+2. **Cluster Count Module** - Determines the number of clusters to create
 3. **Target Cohort Module** - Specifies which user cohort to analyze
+
+### Cluster Analysis Tools
+
+- **Cluster Cards** - Visual representations of each identified persona with key metrics
+- **Event Tables** - Detailed breakdowns of event frequencies within each cluster
+- **Standard Deviation Indicators** - Visual cues showing how significantly a behavior deviates from the average
+
+### Analytical Capabilities
+
+- Automatic identification of behavioral patterns without predefined rules
+- Comparison of event frequencies across different user clusters
+- Identification of distinguishing behaviors for each persona
+- Ability to name and save personas based on discovered behavioral patterns
+- Creation of behavioral cohorts for further analysis
 
 ## Key Nomenclature and Definitions
 
 - **Cluster**: A group of users who exhibit similar behavioral patterns
-- **Cluster Card**: Visual representation of a user cluster showing key behavioral characteristics
-- **Event Table**: Detailed breakdown of event frequencies that distinguish each cluster
-- **Standard Deviation**: Statistical measure showing how significantly event frequencies differ between clusters
-- **Hidden Events**: Events that don't significantly differentiate between clusters and can be hidden from view
-- **Behavioral Cohort**: A saved group of users defined by their behavioral patterns that can be used in other Amplitude analyses
+- **Persona**: A named cluster representing a distinct user type based on behavior
+- **Event Frequency**: How often users in a cluster perform specific actions
+- **Standard Deviation**: A measure of how much a cluster's behavior differs from the average
+- **Hidden Events**: Events that don't meet the threshold for display but may still be relevant
+- **Behavioral Cohort**: A saved group of users defined by their behavioral patterns
 
-## Integration with Amplitude Ecosystem
+## Product Ecosystem Integration
 
-Personas fits into the broader Amplitude analytics ecosystem by:
-1. Leveraging existing event data collected through Amplitude's tracking
-2. Enabling the creation of behavioral cohorts that can be used in other Amplitude charts and analyses
-3. Supporting data-driven user segmentation that complements other Amplitude features
-4. Providing insights that can inform product decisions and personalization strategies
+Personas integrates with the broader Amplitude analytics ecosystem by:
 
-The discovered personas can be used to:
-- Create targeted marketing campaigns
-- Develop personalized product experiences
-- Inform product roadmap decisions
-- Understand different user journeys and needs
+1. Enabling the creation of behavioral cohorts that can be used in other Amplitude charts and analyses
+2. Complementing traditional segmentation approaches with machine learning-driven insights
+3. Supporting product teams in creating more targeted experiences based on discovered user personas
+4. Providing input for personalization strategies and feature development
 
-## Technical Implementation
-
-While specific API endpoints aren't detailed in the provided documentation, the Personas feature appears to be accessed through the Amplitude web interface rather than programmatically. Users interact with the specialized Personas chart interface to:
-
-1. Select target cohorts for analysis
-2. Configure clustering parameters
-3. Generate and interpret cluster results
-4. Save discovered clusters as behavioral cohorts
-
-The feature employs statistical analysis to identify significant behavioral differences between user groups, with standard deviation being a key metric for determining which events most strongly differentiate clusters.
+The Personas feature represents Amplitude's advanced capabilities in behavioral analytics, moving beyond basic event tracking to automated pattern discovery and user segmentation.

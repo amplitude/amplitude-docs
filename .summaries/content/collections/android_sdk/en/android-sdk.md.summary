@@ -1,19 +1,19 @@
 ## Summary
-This documentation details the Amplitude Analytics Android SDK, a maintenance-mode SDK that supports tracking user events, user properties, revenue, and sessions in Android applications. It covers installation via Gradle, core functionality including initialization, event tracking, user identification, revenue tracking, and advanced features like middleware, offline mode, and dynamic configuration.
+This documentation details the Amplitude Analytics Android SDK, a maintenance-mode SDK that supports tracking user events, user properties, revenue, and sessions in Android applications. It covers installation via Gradle, core functionality including initialization, event tracking with properties, user identification, revenue tracking, and advanced features like middleware, offline mode, and dynamic configuration.
 
 ## Keywords
 - Android SDK
 - Amplitude Analytics
 - Event tracking
-- User identification
+- User properties
 - Revenue verification
 - Session management
 - Device ID
 - Identify API
 - Middleware
 - Offline mode
-- COPPA control
 - Dynamic configuration
-- SSL pinning
+- COPPA control
 - App Set ID
 - Advertiser ID
+- SSL pinning

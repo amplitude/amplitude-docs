@@ -3,15 +3,14 @@ This documentation page covers the fundamental features of Amplitude charts, inc
 
 ## Keywords
 - chart templates
+- custom legend labels
 - Y-axis customization
 - dual Y-axis
-- legend labels
-- chart caching
-- chart sharing
-- dashboard integration
+- chart caching times
 - annotations
 - releases
 - keyboard shortcuts
+- chart sharing
+- dashboard integration
 - project switching
-- cache times
-- hourly/daily/weekly/monthly queries
+- chart type switching

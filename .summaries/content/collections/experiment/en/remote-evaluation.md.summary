@@ -1,15 +1,16 @@
-# Summary
-Remote evaluation in Amplitude Experiment involves making requests to evaluation servers to fetch variants for users, supporting advanced targeting capabilities like Amplitude ID resolution, IP geolocation, property canonicalization, behavioral cohort targeting, and historical user properties that aren't available in local evaluation.
+## Summary
+Remote evaluation in Amplitude Experiment involves making requests to evaluation servers to fetch variants for users, supporting advanced targeting capabilities like Amplitude ID resolution, IP geolocation, property canonicalization, behavioral cohort targeting, and historical user properties that aren't available with local evaluation.
 
-# Keywords
+## Keywords
 - remote evaluation
 - Amplitude ID resolution
 - user enrichment
 - geolocation
 - property canonicalization
 - cohort membership
-- targeting capabilities
 - sticky bucketing
-- user property merge priority
+- user properties
+- targeting capabilities
 - client-side evaluation
 - server-side evaluation
+- identity resolution

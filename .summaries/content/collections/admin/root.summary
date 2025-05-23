@@ -1,44 +1,44 @@
 # Admin Product Overview
 
-The Admin product is a comprehensive management interface that provides administrative capabilities for account management, billing oversight, and authentication configuration. It serves as the central control panel for organizations to manage their resources, users, and service configurations.
+## Product Overview
 
-## Key Features and Concepts
+The Admin product is a management interface that provides administrative capabilities for a broader system or platform. It serves as a central control panel for account management, billing oversight, and authentication controls.
 
-- **Account Management**: Tools for managing user accounts, permissions, and organizational settings
-- **Billing and Usage Tracking**: Interfaces for monitoring service consumption, viewing invoices, and managing payment methods
-- **Single Sign-On (SSO) Integration**: Enterprise authentication capabilities that connect with identity providers
-- **Role-based Access Control**: Granular permission settings for different administrative functions
+## Key Features and Components
 
-## Product Relationships and Features
+### Account Management
+The account management module enables administrators to oversee user accounts within the system, including user creation/deletion, permission management, profile administration, and account settings configuration.
 
-The Admin product consists of three primary components:
+### Billing and Use
+This component handles financial and usage aspects of the platform, covering invoice management, payment processing, usage tracking and reporting, subscription management, and billing history.
 
-1. **Account Management Module**: Handles user provisioning, role assignments, and organizational hierarchy. This module likely interfaces with user directories and permission systems.
+### Single Sign-On (SSO)
+The SSO functionality provides streamlined authentication capabilities, offering integration with identity providers, centralized authentication management, user session control, security policy enforcement for logins, and cross-application authentication.
 
-2. **Billing and Use Module**: Provides visibility into resource consumption, cost allocation, and payment processing. This component connects to backend billing systems and potentially usage metrics collection services.
+## Nomenclature and Definitions
 
-3. **Single Sign-On (SSO) Module**: Enables enterprise authentication through integration with identity providers like Okta, Azure AD, and others. This module serves as the authentication gateway for the entire product ecosystem.
-
-These components work together to provide a unified administrative experience while addressing distinct operational needs.
-
-## Key Nomenclature and Definitions
-
-- **Blueprint**: Schema definition that structures content and documentation, defining available fields and relationships
-- **Landing**: Designation for pages that serve as entry points to specific documentation sections
-- **Current-collection**: Reference to the active documentation collection being viewed or modified
-- **Template**: Layout definition that controls how content is presented to users
-- **Exclude_from_sitemap**: Configuration flag to prevent specific pages from appearing in site navigation or search indexes
-- **Identity Provider (IdP)**: External authentication service that verifies user identities in SSO implementations
-- **Service Provider (SP)**: The application or service that relies on the IdP for authentication (in this context, the Admin product)
+- **Blueprint**: A structural template defining the content model for different sections of the admin interface
+- **Landing**: Boolean property determining whether a page serves as a landing page
+- **Current-collection**: Indicates the active collection of content being displayed or managed
+- **Template**: Defines the visual layout and structure for rendering content
 
 ## Product Ecosystem Integration
 
-The Admin product serves as the administrative backbone for a larger service ecosystem. It provides the governance layer that enables:
+The Admin product functions as the administrative control center within a larger ecosystem:
 
-1. User management across all connected services
-2. Centralized billing and resource allocation
-3. Unified authentication through SSO capabilities
+1. Integrates with user-facing applications requiring account management
+2. Connects to billing systems for financial operations
+3. Interfaces with identity management systems through SSO functionality
+4. May be part of a content management system, as suggested by blueprint and template references
 
-The documentation structure suggests a modular approach where the Admin product can be extended with additional administrative capabilities as needed. The presence of collection-based organization indicates that the product documentation is part of a larger knowledge base or developer portal.
+The product follows a modular architecture where administrative functions are organized into distinct collections, each with dedicated documentation.
 
-The SSO integration points to enterprise-grade capabilities designed for organizations with existing identity management systems, suggesting this product targets business or enterprise customers rather than individual users.
+## Technical Implementation
+
+The documentation uses Markdown files with YAML frontmatter for metadata. The implementation leverages:
+
+- Content collections for organizing related documentation
+- Blueprint-based content modeling
+- Template-driven rendering
+- Unique IDs for each content piece
+- User tracking for content updates

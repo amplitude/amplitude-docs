@@ -1,15 +1,14 @@
 # Summary
-This documentation outlines the complete Amplitude Data planning workflow, from defining events and properties in a branch, through instrumentation with developers using Ampli CLI, requesting stakeholder reviews via merge requests, to final merging of both Amplitude Data and Git branches to ensure high-quality analytics implementation.
+This documentation outlines the complete Amplitude Data planning workflow, covering the process from initial event planning through instrumentation, review, and merging, with emphasis on using branches to manage tracking plan changes collaboratively across teams before implementation in production.
 
 # Keywords
 - data planning workflow
 - Ampli CLI
-- branch management
+- tracking plan
+- branches
 - merge requests
 - event instrumentation
-- tracking plan
 - stakeholder reviews
 - ampli pull
 - ampli status
-- Git integration
-- analytics implementation
+- tracking library generation

@@ -1,14 +1,14 @@
 # Summary
-This documentation explains how to use permission groups in Amplitude Enterprise to efficiently manage user permissions at scale by assigning multiple users to groups with specific project access levels, rather than configuring permissions individually, with detailed instructions for creating and managing groups and examples of how permission inheritance works.
+This documentation explains how to use permission groups in Amplitude Enterprise to efficiently manage user permissions at scale by assigning multiple users to groups with specific project access levels, rather than configuring permissions individually. The system grants users the highest permission level when they belong to multiple groups or have individual permissions.
 
-## Keywords
+# Keywords
 - Permission groups
 - Enterprise plan feature
-- Project role inheritance
-- Group membership management
-- Permission scaling
+- Project roles
+- Group membership
+- Permission inheritance
+- User Management API
+- SCIM provisioning
 - Team Spaces integration
-- SCIM API
+- Permission scaling
 - Permission hierarchy
-- Group creation workflow
-- Permission assignment methods

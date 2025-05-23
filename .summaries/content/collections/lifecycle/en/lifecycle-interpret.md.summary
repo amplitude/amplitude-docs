@@ -1,5 +1,5 @@
 # Summary
-The Lifecycle chart in Amplitude helps analyze user activity patterns through three views: Growth (default), Dormant, and Pulse. It categorizes active users as new, current, or resurrected, and tracks dormant users, allowing teams to understand user retention and growth metrics across daily, weekly, or monthly intervals.
+The Lifecycle chart in Amplitude helps analyze user activity patterns through three views: Growth (default), Dormant, and Pulse. The Growth view categorizes active users as new, current, or resurrected, while tracking dormant users, allowing teams to understand which user segments most impact their active user metrics.
 
 # Keywords
 - lifecycle analysis
@@ -11,7 +11,8 @@ The Lifecycle chart in Amplitude helps analyze user activity patterns through th
 - current users
 - resurrected users
 - user retention
+- activity patterns
 - histogram visualization
-- activity intervals
+- usage intervals
 - breakdown table
-- user activity patterns
+- pulse formula

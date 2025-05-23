@@ -11,4 +11,4 @@ The Releases API documentation details how to programmatically create releases i
 - HTTP Basic authentication
 - release timestamps
 - platform specification
-- JSON payload
+- product changes documentation

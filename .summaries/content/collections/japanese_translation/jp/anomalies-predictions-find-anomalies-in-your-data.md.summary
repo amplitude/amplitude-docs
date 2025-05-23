@@ -6,12 +6,12 @@ This documentation explains Amplitude's Anomaly + Forecast feature, which helps 
 - statistical significance
 - Prophet algorithm
 - confidence intervals
-- forecasting
-- time series data
-- training periods
+- time series forecasting
+- training data periods
 - agile mode
 - robust mode
 - custom mode
-- seasonality detection
+- seasonal trends
 - event segmentation
+- insights package
 - root cause analysis

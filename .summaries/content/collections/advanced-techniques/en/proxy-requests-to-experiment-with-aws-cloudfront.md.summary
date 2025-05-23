@@ -7,10 +7,10 @@ This documentation explains how to set up an AWS CloudFront distribution as a re
 - Amplitude Experiment
 - domain blocking
 - edge hosting
+- latency sensitive
 - distribution configuration
-- api.lab.amplitude.com
+- CORS
 - cache policy
 - origin request policy
 - response headers policy
-- latency sensitive
-- CORS
+- API key authorization

@@ -1,13 +1,14 @@
 ## Summary
-This documentation covers the installation and configuration of Session Replay using Android SDK middleware for apps already instrumented with the maintenance Amplitude SDK (2.40.1+). It details initialization, configuration options like sampling rate, data masking, user opt-out, and methods to control recording during sensitive app sections.
+This documentation covers the installation and configuration of Session Replay using Android SDK middleware for apps already instrumented with the maintenance Amplitude SDK (2.40.1+). It details initialization, configuration options like sample rate, data masking, user opt-out, EU data residency, and methods to control recording during runtime.
 
 ## Keywords
 - Android SDK middleware
 - Session Replay Android
 - sampleRate configuration
 - stopRecording/startRecording
-- data masking
 - WebView/MapView support
 - Jetpack Compose compatibility
+- maintenance Amplitude SDK
+- data masking
 - EU data residency
-- maintenance Amplitude SDK integration
+- flush events

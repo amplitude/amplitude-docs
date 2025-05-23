@@ -1,14 +1,14 @@
 # Summary
-This documentation page explains how to create and save charts in Amplitude, including selecting chart types, adding events/properties/segments, saving options, and chart management features like exporting, archiving, and zooming, with notes on feature availability across different Amplitude plans.
+This documentation page explains how to create and save charts in Amplitude, including selecting chart types, adding events/properties/segments, and managing charts through options like exporting, archiving, and sharing, with notes on feature availability across different Amplitude plans.
 
 # Keywords
 - Chart creation
 - Amplitude analysis
-- Save chart options
-- Chart management
+- Save modal
+- Chart management options
 - Plan restrictions
-- Export formats
-- Archiving charts
-- Chart zooming
+- Chart export
 - Unlisted charts
-- Notebook integration
+- Chart archiving
+- Zoom functionality
+- Dashboard integration

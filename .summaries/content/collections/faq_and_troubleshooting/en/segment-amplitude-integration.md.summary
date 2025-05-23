@@ -6,11 +6,11 @@ This documentation page covers troubleshooting for Segment-Amplitude integration
 - Missing events troubleshooting
 - Event property limits
 - User properties configuration
-- Session tracking
+- Session tracking issues
 - API key verification
 - Instrumentation errors
 - Event deletion/blocking
-- Device-mode vs cloud-mode
+- Cloud-mode vs device-mode
 - Segment debugger
 - Property instrumentation limits
 - Location information discrepancies

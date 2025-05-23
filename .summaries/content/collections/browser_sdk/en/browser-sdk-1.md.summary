@@ -1,20 +1,20 @@
 ## Summary
-The Browser SDK 1.0 is a maintenance-mode TypeScript/JavaScript SDK for tracking events in web applications. It provides functionality for event tracking, user identification, session management, revenue tracking, and marketing attribution, with configuration options for batching, EU data residency, and custom plugins.
+The Browser SDK 1.0 is a TypeScript/JavaScript library for tracking events in web applications, featuring event batching, user identification, session management, and revenue tracking. It's now in maintenance mode, with Browser SDK 2.0 recommended as the replacement.
 
 ## Keywords
-- Browser SDK 1.0
-- maintenance mode
 - event tracking
-- user properties
-- identify methods
-- revenue tracking
+- user identification
 - session management
-- marketing attribution
-- sendBeacon
+- device ID management
+- revenue tracking
 - cookie management
-- device ID
-- user groups
-- plugins
+- marketing attribution
 - cross-domain tracking
-- content security policy
+- sendBeacon
+- plugins
 - batch processing
+- user properties
+- user groups
+- content security policy
+- TypeScript
+- JavaScript

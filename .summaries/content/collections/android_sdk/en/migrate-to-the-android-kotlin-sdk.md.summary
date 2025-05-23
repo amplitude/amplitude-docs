@@ -1,14 +1,14 @@
 ## Summary
-This documentation page guides developers on migrating from the maintenance Android SDK (`com.amplitude:android-sdk`) to the latest Android-Kotlin SDK (`com.amplitude:analytics-android`), covering dependency updates, initialization changes, configuration differences, and API mapping for tracking events, user properties, and revenue.
+This documentation page explains how to migrate from the maintenance Android SDK (`com.amplitude:android-sdk`) to the latest Android-Kotlin SDK (`com.amplitude:analytics-android`), covering dependency updates, initialization changes, configuration differences, and API mapping for tracking events, user properties, and revenue.
 
 ## Keywords
 - Android-Kotlin SDK migration
-- analytics-android
-- plugin architecture
+- com.amplitude:analytics-android
+- SDK initialization differences
 - track() vs logEvent()
 - flush() vs uploadEvents()
-- Configuration object
+- plugin architecture
+- configuration object
 - HTTP V2 API
 - data migration
-- minIdLength
-- storage provider
+- revenue tracking

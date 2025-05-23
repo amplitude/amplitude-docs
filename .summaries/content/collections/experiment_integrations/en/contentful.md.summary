@@ -1,5 +1,5 @@
 # Summary
-The Contentful plugin for Amplitude Experiment enables A/B testing by allowing content variations to be created in Contentful and controlled through Experiment, with detailed instructions for installation, configuration of variant containers, content creation, and front-end integration using JSON responses that contain experiment metadata.
+The Contentful plugin for Amplitude Experiment enables A/B testing by allowing content variations to be created in Contentful and controlled through Experiment, with integration requiring configuration of variant containers in content models and front-end implementation to render the appropriate variant based on experiment decisions.
 
 # Keywords
 - Contentful plugin
@@ -9,6 +9,8 @@ The Contentful plugin for Amplitude Experiment enables A/B testing by allowing c
 - JSON response structure
 - Front-end integration
 - Experiment metadata
-- Content variations
+- variationsCollection
+- meta object
+- experiment.variant()
 - Management API key
-- Amplitude Org URL
+- Content model configuration

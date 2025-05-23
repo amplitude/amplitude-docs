@@ -8,7 +8,7 @@ This documentation page details the BigQuery Data Import integration for Amplitu
 - GCS bucket requirements
 - Time-based import
 - SQL query configuration
-- STRUCT data type
-- JSON property formatting
-- Event/user/group properties
+- Event properties STRUCT formatting
+- JSON data handling
+- User/Group properties sync
 - Mandatory data fields

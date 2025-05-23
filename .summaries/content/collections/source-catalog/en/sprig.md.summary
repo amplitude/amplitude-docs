@@ -1,14 +1,14 @@
 ## Summary
-This documentation page describes the Sprig ingestion integration with Amplitude, which allows automatic sending of survey response data to Amplitude for use in analytics, with the requirement that user identification must match between platforms using the same ID values.
+This documentation page describes the Sprig ingestion integration with Amplitude, which allows automatically sending survey response data to Amplitude for use in analytics, with the requirement that user identification must match between platforms (Sprig Identity ID must equal Amplitude user_id).
 
 ## Keywords
 - Sprig integration
 - survey data ingestion
 - qualitative feedback
-- product development research
 - CSAT surveys
 - NPS surveys
 - user insights
+- product development research
 - user identification matching
-- Amplitude API key
-- in-product surveys
+- API key configuration
+- behavior-satisfaction correlation

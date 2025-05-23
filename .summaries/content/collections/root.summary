@@ -1,87 +1,80 @@
 # Amplitude Product Suite
 
-Amplitude is a comprehensive analytics and experimentation platform designed to help organizations understand user behavior, optimize product experiences, and drive growth through data-driven insights.
+Amplitude is a comprehensive product analytics platform that helps organizations understand user behavior, optimize digital experiences, and drive business growth through data-driven insights. The platform consists of several integrated products and features designed to collect, analyze, visualize, and activate user data across multiple channels.
 
-## Core Products Overview
+## Core Products and Features
 
 ### Analytics
-Amplitude Analytics is the foundation of the platform, providing behavioral analytics capabilities to track and analyze user interactions. It offers various visualization tools including Event Segmentation, Funnel Analysis, Retention Analysis, Pathfinder/Journey, Lifecycle, Stickiness, Revenue LTV, Compass, Personas, and Impact Analysis. The platform also includes collaboration features like Dashboards, Notebooks, Templates, and Breadcrumbs to help teams share insights.
+Amplitude Analytics is the foundation of the platform, providing tools to track and analyze user behavior across digital products. Key features include:
+- Event tracking and segmentation for analyzing specific user actions
+- Funnel analysis for tracking conversion paths and identifying drop-offs
+- Retention analysis for measuring how users continue to engage over time
+- Path analysis for understanding user navigation patterns
+- Behavioral cohorts for grouping users based on actions and properties
+- Custom dashboards and notebooks for sharing insights
+
+The platform offers various chart types organized around business goals (Know, Convert, Retain, Monetize), including event segmentation, funnel analysis, retention analysis, revenue LTV, user sessions, and engagement matrix.
 
 ### Data
-Amplitude Data serves as the data management layer, providing tools for:
-- Data collection through SDKs and APIs
-- Data governance with tracking plans and schema management
-- Data quality validation and transformations
-- Identity resolution across devices and sessions
-- Integration with data warehouses (Warehouse-native Amplitude)
-
-Key features include Tracking Plans, Ampli Developer Toolkit, Property Groups, Transformations, Custom Events, Derived Properties, and Lookup Tables.
+Amplitude Data provides tools for data collection, management, and governance:
+- Tracking plan creation and management for consistent analytics implementation
+- Data validation and quality monitoring
+- Ampli developer toolkit for type-safe implementation
+- Transformations and derived properties for data enrichment
+- Warehouse-native capabilities for direct data warehouse querying
+- Source and destination integrations for connecting with other platforms
 
 ### Experiment
-Amplitude Experiment enables teams to test hypotheses and optimize features through:
-- A/B testing with statistical rigor
-- Feature flag management
-- Progressive feature delivery
-- Local and remote evaluation modes
-- Holdout groups and mutual exclusion groups
-- Integration with analytics for results analysis
-
-The platform supports both client-side and server-side implementations with SDKs for various programming languages.
+Amplitude Experiment enables feature flagging and A/B testing:
+- Feature flag management for controlled rollouts
+- A/B testing with statistical analysis
+- Multi-armed bandit experiments for optimization
+- Local and remote evaluation options for performance flexibility
+- Bucketing algorithms for consistent user experiences
+- Sequential testing methodology for faster experiment results
 
 ### Session Replay
-This qualitative analytics tool records and plays back user sessions to provide visual context to quantitative data. It offers:
-- Video-like replays of user interactions
-- Heatmaps (click maps, selector maps, scroll maps)
-- Privacy controls with multiple masking levels
-- Cross-platform support (web, iOS, Android, React Native)
+Amplitude Session Replay provides visual recordings of user sessions:
+- Video-like playback of user interactions
+- Heatmaps showing click, scroll, and interaction patterns
+- Privacy controls with configurable masking levels
+- Cross-platform support (Web, iOS, Android, React Native)
+- Integration with analytics events for context
 
 ### Guides and Surveys
-An in-product messaging and feedback collection solution that helps improve user experience through:
-- Various templates (Tours, Announcements, Checklists, Banners, Tooltips)
+Amplitude Guides and Surveys enables in-product messaging and feedback collection:
 - Multiple form factors (Modal, Popover, Pin, Tooltip, Banner)
-- Audience segmentation and targeting
-- Survey capabilities (NPS, User Feedback, Rating)
+- Audience targeting based on user properties and behaviors
+- Customizable themes and localization
+- Performance analytics for engagement metrics
+- A/B testing capabilities for optimizing messaging
 
-## Key Nomenclature
+## Key Nomenclature and Definitions
 
-- **Events**: User actions tracked in Amplitude (page views, button clicks, etc.)
-- **Event Properties**: Metadata associated with events providing context
-- **User Properties**: Attributes associated with users that persist across sessions
-- **Cohorts**: Groups of users who share common behaviors or attributes
-- **Amplitude ID**: Internal identifier that links Device IDs and User IDs
-- **Variant**: A specific version in an experiment
-- **Feature Flag**: Toggle that enables/disables features for specific users
-- **Tracking Plan**: Schema defining events and properties to be collected
+- **Events**: User actions tracked in Amplitude (page views, clicks, purchases)
+- **Event Properties**: Contextual attributes associated with events
+- **User Properties**: Persistent attributes associated with users
+- **Cohorts**: Groups of users defined by specific behaviors or attributes
+- **Sessions**: Periods of continuous user activity
+- **Monthly Tracked Users (MTU)**: Unique users tracked per month (billing metric)
+- **Variants**: Different versions of a feature in experiments
 - **Bucketing**: Process of assigning users to experiment variants
-- **Exposure Event**: Analytics event recording when a user sees an experiment variant
-
-## Implementation Methods
-
-### SDKs
-Amplitude provides SDKs for various platforms:
-- **Browser/JavaScript**: For web applications
-- **iOS/Android**: For mobile applications
-- **Server-side**: Node.js, Python, Java, Go, etc.
-- **Game engines**: Unity, Unreal
-- **Cross-platform**: React Native, Flutter
-
-### APIs
-- **HTTP V2 API**: Primary endpoint for sending events
-- **Identify API**: Updates user properties without sending events
-- **Batch API**: Sends multiple events in a single request
-- **Export API**: Retrieves raw event data
-- **Experiment APIs**: Manages and evaluates experiments
-
-### Ampli
-The Ampli CLI and wrapper provide type-safe tracking implementation based on tracking plans defined in Amplitude Data, ensuring data quality and consistency.
+- **Tracking Plan**: Schema defining expected events and properties
+- **Ampli Wrapper**: Generated code providing type-safe analytics implementation
 
 ## Product Ecosystem Integration
 
-Amplitude's products are designed to work together in an integrated workflow:
-1. **Data** forms the foundation, ensuring quality information flows into the system
-2. **Analytics** builds on this data to provide actionable insights
-3. **Experiment** enables testing hypotheses derived from analytics
-4. **Session Replay** provides qualitative validation of quantitative findings
-5. **Guides and Surveys** facilitates direct user engagement based on insights
+Amplitude's products form an integrated ecosystem:
 
-This integrated approach creates a seamless workflow from data collection to insight generation to action, allowing teams to make informed product decisions based on user behavior data.
+1. **Data Collection**: SDKs for various platforms (Browser, iOS, Android, React Native, Unity, etc.) collect user behavior data
+2. **Data Processing**: Amplitude Data validates and processes incoming events
+3. **Analysis**: Analytics tools visualize and derive insights from the data
+4. **Experimentation**: Experiment uses analytics data to test hypotheses
+5. **Engagement**: Guides and Surveys activate insights through targeted messaging
+6. **Visualization**: Session Replay provides qualitative context to quantitative data
+
+The platform supports both client-side and server-side implementations, with SDKs available for all major development platforms. The Ampli CLI and wrapper provide type-safe implementation based on tracking plans defined in Amplitude Data.
+
+Amplitude integrates with various third-party platforms through source and destination catalogs, enabling data import from external sources and export of cohorts and events to activation platforms.
+
+The product is available in different tiers (Growth, Enterprise) with varying feature availability, and offers specialized add-ons for advanced capabilities like Session Replay and group-level analytics.

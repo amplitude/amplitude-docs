@@ -8,7 +8,7 @@ This documentation explains how to create a custom event in Amplitude that combi
 - Funnel analysis
 - Event module
 - Event properties
-- User permissions
-- Chart compatibility
-- Redshift limitations
-- Event filtering
+- User conversion
+- Permission requirements
+- Custom event limitations
+- Event combination

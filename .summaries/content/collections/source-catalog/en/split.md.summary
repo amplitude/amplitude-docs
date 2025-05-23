@@ -10,5 +10,5 @@ Split integration allows importing traffic impression data as events into Amplit
 - experimentation
 - identity mapping
 - traffic types
-- Split environments
+- environment configuration
 - impression data

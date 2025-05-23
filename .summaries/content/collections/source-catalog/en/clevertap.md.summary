@@ -1,5 +1,5 @@
 # Summary
-This documentation page describes the integration between CleverTap and Amplitude, allowing users to ingest event data from CleverTap into Amplitude, with setup instructions for both platforms and noting that this feature requires CleverTap's Enterprise plan and supports different regional deployments.
+This documentation page describes the integration between CleverTap and Amplitude, allowing users to ingest event data from CleverTap into Amplitude, with setup instructions for both platforms and noting that this feature requires CleverTap's Enterprise plan and proper data center region selection.
 
 # Keywords
 - CleverTap integration
@@ -11,4 +11,4 @@ This documentation page describes the integration between CleverTap and Amplitud
 - Enterprise plan requirement
 - Raw events
 - Messaging integration
-- Export setup
+- Retention cloud

@@ -1,18 +1,17 @@
 ## Summary
-This documentation page provides an overview of Amplitude Activation, a self-service personalization platform that enables true one-to-one personalization without requiring data science or engineering resources. It explains how the platform uses cohorts, computations, predictions, recommendations, and various delivery methods (synchronizations and APIs) to help marketers target the right users with the right messages at the right time.
+This documentation page provides an overview of Amplitude Activation, a self-service personalization platform that enables true one-to-one personalization without requiring data science or engineering resources. It explains how the platform uses cohorts, computations, predictions, recommendations, and various delivery methods (synchronizations and APIs) to help marketers deliver personalized experiences that can increase conversion rates from 15% to 30%.
 
 ## Keywords
 - Amplitude Activation
-- personalization platform
+- one-to-one personalization
 - behavioral cohorts
 - predictive cohorts
 - computations
 - recommendations
-- user segmentation
-- profile API
-- cohort API
+- AutoML
+- Profile API
+- Cohort API
 - third-party synchronization
 - conversion optimization
-- AutoML system
+- personalization workflow
 - real-time personalization
-- Japanese translation

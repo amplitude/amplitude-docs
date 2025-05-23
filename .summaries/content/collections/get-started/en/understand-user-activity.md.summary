@@ -1,5 +1,5 @@
 # Summary
-This documentation page explains the User Activity Report template in Amplitude Analytics, which provides insights into user engagement through pre-built charts showing metrics like daily active users, new vs. returning users, session length, and user breakdowns by device, country, and platform, with instructions for customizing the template by converting it to a dashboard.
+This documentation page explains the User Activity Report template in Amplitude Analytics, which provides insights into user engagement through pre-built charts showing metrics like daily active users, session length, and user breakdowns by device/country/platform, with instructions for customizing the template by converting it to a dashboard.
 
 # Keywords
 - User Activity Report template
@@ -7,8 +7,8 @@ This documentation page explains the User Activity Report template in Amplitude 
 - user engagement metrics
 - active users tracking
 - session length analysis
-- user segmentation
-- dashboard conversion
-- template customization
-- returning users
-- device breakdown
+- dashboard customization
+- returning users percentage
+- device family breakdown
+- country breakdown
+- platform breakdown

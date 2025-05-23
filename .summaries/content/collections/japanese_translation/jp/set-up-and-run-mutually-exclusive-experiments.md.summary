@@ -8,7 +8,7 @@ This documentation explains how to set up and run mutually exclusive experiments
 - slots
 - experiment isolation
 - cross-experiment interference
-- interaction effects
-- bucket key
+- bucket keys
+- evaluation mode
 - holdout groups
 - experiment traffic distribution

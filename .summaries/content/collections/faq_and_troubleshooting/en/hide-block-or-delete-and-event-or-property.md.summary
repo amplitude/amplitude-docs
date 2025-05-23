@@ -4,13 +4,12 @@ This documentation explains the differences between hiding, blocking, and deleti
 ## Keywords
 - event governance
 - property management
-- data instrumentation limits
-- hiding events
-- blocking events
-- deleting events
+- data visibility controls
+- instrumentation limits
+- event blocking
+- event hiding
+- event deletion
 - Amplitude Data
-- event visibility
-- data collection controls
-- monthly event volume
-- chart dropdowns
-- data exports
+- data structure organization
+- event volume limits
+- data ingestion controls

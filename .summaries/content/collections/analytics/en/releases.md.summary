@@ -1,14 +1,14 @@
 # Summary
-This documentation page explains Amplitude's "Releases" feature, which tracks product changes as markers on time-series charts, with automated release detection for Growth/Enterprise plans based on semantic versioning and manual creation options for Plus plans, along with detailed reporting capabilities to analyze user response to product changes.
+This documentation page explains Amplitude's "Releases" feature, which tracks product changes as markers on time-series charts, detailing how automated releases work for Growth/Enterprise plans using semantic versioning, manual release creation for Plus plans, and the functionality of the Release Report and Timeline for analyzing user response to product changes.
 
 # Keywords
 - release markers
 - semantic versioning
 - automated release detection
-- release timeline
-- release report
-- version user property
-- adoption metrics
 - manual release creation
-- releases API
+- release report
+- release timeline
+- version user property
+- release adoption metrics
 - new event detection
+- release visibility

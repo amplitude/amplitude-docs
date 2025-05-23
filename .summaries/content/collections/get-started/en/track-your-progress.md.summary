@@ -6,9 +6,9 @@ This documentation page explains how to verify Amplitude instrumentation by usin
 - User Activity tab
 - event limits
 - data deduplication
-- insert_id field
+- insert_id
 - event verification
 - SDK debugging
 - event stream monitoring
 - device ID tracking
-- HTTP API deduplication
+- client event time

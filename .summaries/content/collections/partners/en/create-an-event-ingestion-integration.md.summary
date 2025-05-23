@@ -1,14 +1,14 @@
 ## Summary
-This documentation page explains how to create an event ingestion integration with Amplitude, covering the process of configuring connection information, setting up integration tiles with user instructions, and testing the integration by sending events with a partner_id parameter before submitting for Amplitude's review.
+This documentation page explains how to create an event ingestion integration with Amplitude, covering the process of configuring connection information, setting up integration tiles with user instructions, testing the integration by sending events with a partner_id parameter, and submitting for Amplitude's review.
 
 ## Keywords
 - event ingestion integration
 - partner_id parameter
 - HTTP v2 API
 - Integration Portal
-- Sources page
 - integration tile configuration
-- setup instructions
-- test event validation
-- integration submission process
-- project API key
+- source setup instructions
+- integration testing
+- partner integration submission
+- Amplitude Developer Portal
+- event payload example

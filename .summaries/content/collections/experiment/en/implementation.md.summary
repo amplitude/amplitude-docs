@@ -1,17 +1,16 @@
 # Summary
-This documentation page explains the implementation of Amplitude Experiment's evaluation process, detailing how users are assigned to variants based on pre-targeting steps (activation, flag dependencies, inclusions, sticky bucketing), targeting segments, and consistent bucketing algorithms using murmur3 hashing for both allocation and variant assignment.
+This documentation explains Amplitude Experiment's evaluation process, detailing how users are assigned to variants based on flag configurations through pre-targeting steps (activation, dependencies, inclusions, sticky bucketing), targeting segments, and consistent bucketing algorithms that use murmur3 hashing to determine allocation and variant assignment.
 
 # Keywords
 - evaluation
 - variant bucketing
 - consistent bucketing
-- pre-targeting
+- targeting segments
 - flag dependencies
 - sticky bucketing
-- targeting segments
 - murmur3 hashing
-- allocation percentage
+- allocation bucketing
 - bucketing salt
-- bucketing key
-- mutual exclusion groups
-- holdout groups
+- pre-targeting
+- individual inclusions
+- all users segment

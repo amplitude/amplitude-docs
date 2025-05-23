@@ -4,11 +4,11 @@ This documentation page describes the Lookup Table API 2, which allows developer
 ## Keywords
 - lookup-table-api
 - property-mapping
-- CSV-upload
+- csv-upload
 - data-augmentation
 - multipart/form-data
 - incremental-updates
 - case-sensitive-matching
-- property-types
-- error-codes
-- CRUD-operations
+- property-transformation
+- data-api.amplitude.com
+- lookup-table-operations

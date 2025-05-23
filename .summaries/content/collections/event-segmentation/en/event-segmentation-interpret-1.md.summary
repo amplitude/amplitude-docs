@@ -2,12 +2,13 @@
 This documentation page explains how to interpret Event Segmentation charts in Amplitude, covering the breakdown table, different chart views (line, stacked area, bar, stacked bar), group-by visualizations for complex analyses, and switching between absolute totals and relative percentages to understand user behavior patterns.
 
 # Keywords
-- Event Segmentation interpretation
+- Event Segmentation chart
 - Breakdown table
 - Chart visualization types
 - Group-by conditions
 - Absolute vs relative percentages
-- Stacked area charts
-- Horizontal bar charts
 - User behavior analysis
-- Multiple segmentation properties
+- Stacked area charts
+- Horizontal bar chart
+- Multiple segmentation
+- Unique users counting

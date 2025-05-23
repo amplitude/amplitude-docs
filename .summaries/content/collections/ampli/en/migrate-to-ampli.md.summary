@@ -3,16 +3,12 @@ This documentation page details the step-by-step process for migrating from Ampl
 
 ## Keywords
 - Ampli migration
-- progressive migration
-- type safety
+- Progressive migration strategy
+- Type-safe analytics
 - SDK replacement
-- ampli.load
-- ampli.track
-- strongly-typed events
-- code refactoring
-- amplitude instance
-- side-by-side comparison
-- ampli pull
-- ampli status
-- client initialization
-- event tracking
+- ampli.load configuration
+- Amplitude SDK compatibility
+- ampli.track methods
+- Strongly-typed events
+- Migration code examples
+- Side-by-side comparison

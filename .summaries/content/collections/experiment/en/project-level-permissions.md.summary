@@ -5,10 +5,10 @@ This documentation explains how to set project-level user permissions in Amplitu
 - project-level permissions
 - flag-level access controls
 - experiment permissions matrix
-- user role management
-- restricted flag editors
-- permission levels
-- enterprise permissions
+- user role capabilities
 - manage project access
-- organization settings
+- restricted flag editors
+- enterprise permissions
+- permission levels (Viewer/Member/Manager/Admin)
+- default access settings
 - permission bypassing

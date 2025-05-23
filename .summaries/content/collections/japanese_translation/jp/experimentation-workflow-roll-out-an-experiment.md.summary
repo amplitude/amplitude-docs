@@ -1,14 +1,14 @@
 # Summary
-This documentation page explains how to roll out an experiment in Amplitude, detailing the process of activating experiments, the function of the toggle switch, and the three possible actions after experiment completion (rollout winning variant, rollback, or continue), along with the system changes that occur with each decision.
+This documentation page explains how to roll out an experiment in Amplitude, detailing the process of activating experiments, the function of the toggle switch, and the three possible actions after experiment completion (roll out winning variant, rollback, or continue), along with the system changes that occur with each decision.
 
 # Keywords
 - experiment activation
 - start experiment button
 - active/inactive toggle
 - experiment completion options
-- rollout winning variant
-- rollback experiment
+- rollout mechanics
 - percentage rollout
-- sticky bucket settings
-- variant weights
-- experiment termination
+- sticky bucket
+- rollout weights
+- experiment rollback
+- post-experiment actions

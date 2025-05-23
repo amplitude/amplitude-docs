@@ -3,12 +3,12 @@ Sticky bucketing in Amplitude Experiment ensures users consistently see the same
 
 # Keywords
 - variant jumping prevention
-- experiment targeting consistency
+- consistent user experience
+- experiment targeting persistence
+- feature experiments only
 - deterministic hashing
-- bucketing persistence
-- experiment delivery settings
+- bucketing delivery settings
 - user property evaluation
+- experiment assignment events
 - dynamic cohort targeting
-- experiment rollout control
-- experiment sunsetting
-- assignment verification
+- experiment rollout management

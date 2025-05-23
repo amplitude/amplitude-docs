@@ -1,6 +1,6 @@
 # Summary and Keywords
 
-The documentation describes how to integrate Amplitude with Hotjar using a destination plugin that forwards Amplitude events to Hotjar's tracking system. It provides code examples for creating a custom HotjarPlugin class that implements the DestinationPlugin interface and demonstrates how to initialize and use this plugin with Amplitude's browser SDK.
+The documentation describes how to integrate Amplitude with Hotjar using a destination plugin that forwards Amplitude events to Hotjar's tracking system. It provides code examples for creating a custom HotjarPlugin class that implements the DestinationPlugin interface and demonstrates how to initialize and use this plugin with the Amplitude SDK.
 
 ## Keywords
 - Hotjar integration

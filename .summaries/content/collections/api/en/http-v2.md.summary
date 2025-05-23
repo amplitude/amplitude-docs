@@ -1,19 +1,17 @@
-## Summary
-The HTTP V2 API documentation details how to send data directly from servers to Amplitude's HTTP V2 endpoint, replacing the deprecated HTTP API, with information on upload limits, event deduplication, and handling various response codes.
+# Summary
+The HTTP V2 API documentation details how to send data directly from servers to Amplitude's HTTP V2 endpoint, replacing the deprecated HTTP API. It covers request formatting, upload limits, event deduplication, and handling various response codes.
 
-## Keywords
+# Keywords
 - HTTP V2 API
-- event ingestion
-- upload limits
-- event deduplication
+- Event ingestion
+- Upload limits
+- Event deduplication
+- insert_id
 - device_id
 - user_id
-- insert_id
-- batch events
-- throttling
-- response codes
-- event properties
-- user properties
-- group properties
+- Batch events
+- Response codes
+- Throttling
 - min_id_length
-- retry logic
+- Event properties
+- User properties

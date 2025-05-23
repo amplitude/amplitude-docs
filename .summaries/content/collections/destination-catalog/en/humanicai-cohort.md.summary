@@ -7,7 +7,7 @@ This documentation page describes the Humanic.ai Cohort destination integration 
 - Cohort sync
 - API key
 - email identifier
-- customer_id
+- customer_id identifier
 - partner-maintained integration
 - user_id mapping
 - sync cadence

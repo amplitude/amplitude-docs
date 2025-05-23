@@ -1,14 +1,14 @@
 # Summary
-This documentation details the Google Pub/Sub Cohort Sync integration for Amplitude Data, which allows streaming cohort membership updates to a Pub/Sub topic with JSON payloads containing cohort information, user details, and optional user properties, requiring a Google IAM service account with publisher permissions.
+This documentation details the Google Pub/Sub Cohort Sync integration for Amplitude Data, which allows streaming cohort membership updates to a Pub/Sub topic with JSON payloads containing cohort information, user details, and optional user properties, requiring specific setup steps in both Google Cloud and Amplitude.
 
 # Keywords
 - Google Pub/Sub
 - Cohort Sync
 - JSON payload
-- IAM service account
-- Real-time cohort updates
-- Pub/Sub topic
-- Amplitude Data
-- Stream analytics
-- Cohort membership
 - Service account key
+- Topic permissions
+- Real-time cohort updates
+- Pub/Sub topic name
+- Amplitude Data integration
+- Cohort membership streaming
+- IAM service account

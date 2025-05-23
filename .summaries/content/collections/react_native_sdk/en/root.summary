@@ -2,167 +2,165 @@
 
 ## Overview
 
-The Amplitude React Native SDK is a client-side analytics solution that enables mobile application developers to track user behavior and events in React Native applications. The SDK supports both JavaScript and TypeScript applications, providing a comprehensive set of features for event tracking, user identification, revenue tracking, session management, and data synchronization with Amplitude's analytics platform.
-
-The SDK is available in two versions:
-1. The latest SDK (`@amplitude/analytics-react-native`) - The recommended version with a modern plugin architecture
-2. The maintenance SDK (`@amplitude/react-native`) - The legacy version that is still supported but not actively developed
+The Amplitude React Native SDK is a client-side analytics solution that enables developers to track user events, manage user properties, and analyze user behavior in React Native applications. The SDK provides a type-safe approach to event tracking, supports both JavaScript and TypeScript, and offers flexible configuration options to meet various analytics requirements.
 
 Key features include:
 - Event tracking with custom properties
-- User identification and property management
+- User identification and user property management
 - Revenue tracking
 - Session management
-- Batch event uploading
+- Plugin architecture for extensibility
+- Batch event processing
 - EU data residency support
 - COPPA compliance controls
-- Plugin architecture for extensibility
-- Strongly typed API through Ampli Wrapper
+- Strongly-typed tracking via Ampli Wrapper
 
-## Product Relationships and Features
+## Product Relationships and Architecture
 
-### Core SDK Components
+The React Native SDK ecosystem consists of several interconnected components:
 
-1. **Main SDK Package**
-   - Latest: `@amplitude/analytics-react-native`
-   - Maintenance: `@amplitude/react-native`
+1. **Core SDK Package**: `@amplitude/analytics-react-native` - The latest version of the SDK with a modern plugin architecture.
+2. **Maintenance SDK Package**: `@amplitude/react-native` - The legacy version that is still maintained but not actively developed.
+3. **Ampli Wrapper**: A code-generated layer that provides type-safe event tracking based on your Amplitude Data tracking plan.
 
-2. **Ampli Wrapper**
-   - A code-generated wrapper that provides type-safe event tracking based on your Amplitude Data tracking plan
-   - Supports both JavaScript and TypeScript applications
-
-3. **Plugins**
-   - The latest SDK uses a plugin architecture for extensibility
-   - Allows for custom functionality and integration with other services
-
-### Feature Comparison
-
-| Feature | Latest SDK | Maintenance SDK |
-|---------|------------|-----------------|
-| Event Tracking | `track()` | `logEvent()` |
-| User Identification | `identify()` | `identify()` |
-| Revenue Tracking | `revenue()` | `logRevenueV2()` |
-| Session Management | Automatic | Configurable |
-| Batch Processing | Supported | Supported |
-| EU Data Residency | Supported | Supported |
-| COPPA Compliance | Supported | Supported |
-| Plugin Architecture | Yes | No |
-| TypeScript Support | Full | Limited |
-| Flush Events | `flush()` | `uploadEvents()` |
+The SDK is designed to work within the broader Amplitude platform ecosystem, sending tracked events to Amplitude's analytics backend for processing and visualization. The plugin architecture allows for extensibility and integration with other services.
 
 ## Key Nomenclature and Definitions
 
-1. **Event** - A user action or occurrence that is tracked in the application
-   
-2. **User Properties** - Attributes associated with a user that persist across sessions
+- **Event**: An action that a user performs in your application that you want to track.
+- **User Properties**: Attributes associated with a user that persist across sessions.
+- **Identify**: The API used to set or modify user properties without sending an event.
+- **Group**: A collection of users that can have their own set of properties.
+- **Session**: A period of user engagement with your app, typically ending after a period of inactivity.
+- **Device ID**: A unique identifier for the device, used to track users across sessions.
+- **User ID**: A custom identifier you assign to users, typically after authentication.
+- **Tracking Plan**: A schema that defines the expected structure of events and properties.
+- **Ampli Wrapper**: A code-generated SDK wrapper that enforces your tracking plan schema.
+- **Plugin**: An extension point for the SDK that can modify or enhance its functionality.
 
-3. **Identify API** - Methods for setting, incrementing, appending, or otherwise modifying user properties
-
-4. **Session** - A period of user engagement with the application
-
-5. **Device ID** - A unique identifier for the device running the application
-
-6. **User ID** - A unique identifier for the user, typically set by the application
-
-7. **Tracking Plan** - A schema that defines the events and properties to be tracked
-
-8. **Ampli Wrapper** - A code-generated client that provides type-safe event tracking based on a tracking plan
-
-9. **Plugin** - An extension that adds functionality to the SDK
-
-10. **COPPA** - Children's Online Privacy Protection Act, which imposes requirements on operators of websites or online services directed to children under 13 years of age
-
-## Product Ecosystem Integration
+## Integration with Amplitude Ecosystem
 
 The React Native SDK integrates with the broader Amplitude ecosystem in several ways:
 
-1. **Amplitude Analytics Platform** - The SDK sends event data to Amplitude's analytics platform for processing and visualization
+1. **Amplitude Dashboard**: Events tracked via the SDK appear in the Amplitude analytics dashboard for analysis.
+2. **Amplitude Data**: The SDK can be used with Amplitude Data tracking plans via the Ampli Wrapper for type-safe event tracking.
+3. **EU Data Residency**: The SDK supports sending data to EU servers for compliance with European data regulations.
+4. **HTTP V2 API**: The SDK uses Amplitude's HTTP V2 API for sending events to the backend.
 
-2. **Amplitude Data** - The SDK can be used with Amplitude Data to implement tracking plans and ensure data quality
+## API and Usage
 
-3. **Ampli CLI** - A command-line tool that generates the Ampli Wrapper based on your tracking plan
+### Installation
 
-4. **Cross-Platform Support** - The SDK is part of Amplitude's cross-platform strategy, with similar SDKs available for other platforms
-
-5. **HTTP V2 API** - The SDK uses Amplitude's HTTP V2 API for sending events to the backend
-
-## API Endpoints and Commands
-
-### Latest SDK (`@amplitude/analytics-react-native`)
-
-#### Installation
 ```bash
 npm install @amplitude/analytics-react-native
+# or
+yarn add @amplitude/analytics-react-native
 ```
 
-#### Initialization
+### Initialization
+
 ```javascript
-import { createInstance } from '@amplitude/analytics-react-native';
+import { Amplitude } from '@amplitude/analytics-react-native';
 
-const amplitude = createInstance('API_KEY', {
-  // Configuration options
-});
-```
-
-#### Event Tracking
-```javascript
-amplitude.track('Event Name', {
-  property1: 'value1',
-  property2: 'value2'
-});
-```
-
-#### User Identification
-```javascript
-amplitude.setUserId('user_id');
-amplitude.identify(new Identify()
-  .set('property1', 'value1')
-  .add('property2', 5)
-  .append('property3', ['value']));
-```
-
-#### Flushing Events
-```javascript
-amplitude.flush();
-```
-
-### Ampli Wrapper
-
-#### Installation
-```bash
-npm install @amplitude/ampli
-```
-
-#### CLI Commands
-```bash
-ampli pull
-ampli status
-ampli generate
-```
-
-#### Initialization
-```javascript
-import { ampli } from './ampli';
-
-ampli.load({
-  client: {
-    apiKey: 'API_KEY',
-    // Additional configuration
+// Initialize with API key
+Amplitude.init('YOUR_API_KEY', {
+  // Optional configuration
+  logLevel: LogLevel.DEBUG,
+  defaultTracking: {
+    sessions: true,
+    pageViews: true,
+    formInteractions: true,
+    fileDownloads: true
   }
 });
 ```
 
-#### Event Tracking
+### Tracking Events
+
 ```javascript
-ampli.track('Event Name', {
-  property1: 'value1'
+// Basic event tracking
+Amplitude.track('Button Clicked');
+
+// Event with properties
+Amplitude.track('Product Purchased', {
+  productId: 'abc123',
+  price: 29.99,
+  quantity: 1
 });
 ```
 
-#### User Identification
+### User Identification
+
 ```javascript
-ampli.identify('user_id', new Identify()
-  .set('property1', 'value1'));
+// Set user ID
+Amplitude.setUserId('user@example.com');
+
+// Set user properties
+Amplitude.identify(
+  new Identify()
+    .set('plan', 'premium')
+    .setOnce('first_login_date', '2021-01-01')
+    .add('login_count', 1)
+);
 ```
 
-The React Native SDK provides a comprehensive solution for tracking user behavior in React Native applications, with strong TypeScript support, a plugin architecture for extensibility, and integration with Amplitude's broader analytics ecosystem.
+### Revenue Tracking
+
+```javascript
+// Track revenue
+Amplitude.revenue(
+  new Revenue()
+    .setProductId('product_1')
+    .setPrice(29.99)
+    .setQuantity(1)
+);
+```
+
+### Session Management
+
+```javascript
+// Start a new session
+Amplitude.startNewSession();
+
+// End the current session
+Amplitude.endSession();
+```
+
+### Ampli Wrapper Usage
+
+```typescript
+import { ampli } from './ampli';
+
+// Initialize Ampli
+ampli.load({
+  client: {
+    apiKey: 'YOUR_API_KEY'
+  }
+});
+
+// Track a typed event
+ampli.track('ProductPurchased', {
+  productId: 'abc123',
+  price: 29.99,
+  quantity: 1
+});
+
+// Identify a user with typed properties
+ampli.identify('user@example.com', {
+  userProp1: 'value1',
+  userProp2: true
+});
+```
+
+### Flushing Events
+
+```javascript
+// Manually flush events to the server
+await Amplitude.flush();
+```
+
+## Migration
+
+When migrating from the maintenance SDK (`@amplitude/react-native`) to the latest SDK (`@amplitude/analytics-react-native`), developers need to update their initialization, event tracking, and user identification code to match the new API patterns. The latest SDK uses a plugin architecture and has different configuration options, but provides equivalent functionality with improved performance and maintainability.
+
+The migration process preserves existing device IDs and user properties, ensuring continuity in user analytics data.

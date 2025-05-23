@@ -1,5 +1,5 @@
 # Summary
-This documentation page provides an overview of Amplitude's APIs, categorizing them into Analytics and Data APIs, Experiment APIs, and Guides and Surveys Translation API, while also offering resources on authentication, keys and tokens, and access to an official Postman collection for testing API requests.
+This documentation page provides an overview of Amplitude's APIs, including Analytics and Data APIs, Experiment APIs, and Guides and Surveys Translation API, along with resources for authentication, keys and tokens, and a Postman collection for testing API requests.
 
 # Keywords
 - Amplitude APIs
@@ -7,7 +7,6 @@ This documentation page provides an overview of Amplitude's APIs, categorizing t
 - Experiment APIs
 - Guides and Surveys Translation API
 - API authentication
-- Amplitude Keys and Tokens
+- Amplitude keys and tokens
 - Postman collection
 - API documentation
-- API testing

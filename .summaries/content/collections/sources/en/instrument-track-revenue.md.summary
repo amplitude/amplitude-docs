@@ -11,4 +11,4 @@ This documentation explains how to track revenue in Amplitude, covering revenue 
 - Revenue LTV chart
 - $revenue property
 - revenue discrepancies
-- revenue event types
+- setOptOut

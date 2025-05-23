@@ -2,13 +2,16 @@
 The Batch Event Upload API allows uploading large amounts of event data to Amplitude in JSON format, with a 20MB payload limit, supporting up to 1000 events per second per device/user ID, and requiring proper formatting of user/device IDs with minimum length requirements.
 
 # Keywords
-- batch-event-upload
-- 20MB-payload-limit
-- event-throttling
-- EPDS-EPUS-limits
-- device-id-user-id-requirements
-- 429-response-handling
-- daily-quota-limits
-- event-deduplication
-- insert-id
-- JSON-serialization
+- batch event upload
+- 20MB payload limit
+- event throttling
+- device_id
+- user_id
+- events per second (EPS)
+- 429 response
+- event_properties
+- user_properties
+- group_properties
+- min_id_length
+- event deduplication
+- insert_id
