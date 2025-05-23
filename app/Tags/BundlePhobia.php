@@ -24,8 +24,27 @@ class BundlePhobia extends Tags
 
         $data = $response->ok() ? $response->json() :[];
         $data['size_kb'] = round($data['size'] / 1024, 2);
-        $data['size_gzip_kb'] = round($data['assets'][0]['gzip'] / 1024, 2);
+        $data['size_gzip_kb'] = $this->getMainSizeKb($data['assets'] ?? []);
         return $data;
+    }
+
+     /**
+     * Find the asset named "main", convert its gzip → kB
+     *
+     * @param  array  $assets
+     * @return float|null  size in kB, or null if not found
+     */
+    protected function getMainSizeKb(array $assets): ?float
+    {
+        foreach ($assets as $asset) {
+            if (
+                isset($asset['name'], $asset['gzip'])
+                && $asset['name'] === 'main'
+            ) {
+                return round($asset['gzip'] / 1024, 2);
+            }
+        }
+        return null;
     }
 
     /**
