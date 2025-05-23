@@ -74,7 +74,7 @@ This table describes the various permissions included with each permission level
 
 |                       | Viewer | Member     | Manager (Project) | Admin (Org) |
 | --------------------- | ------ | ---------- | ----------------- | ----------- |
-| Targeted Environments | Read   | Read/Write | Read/Write        | Read/Write  |
+| Deployments | Read   | Read/Write | Read/Write        | Read/Write  |
 | Activate                | Read   | Read/Write | Read/Write        | Read/Write  |
 | Variants              | Read   | Read/Write | Read/Write        | Read/Write  |
 | Allocation            | Read   | Read/Write | Read/Write        | Read/Write  |
@@ -90,7 +90,7 @@ This table describes the various permissions included with each permission level
 | Delete                    |        | Y      | Y                 | Y           |
 
 
-| **Environments** | Viewer | Member | Manager (Project) | Admin (Org) |
+| **Deployments** | Viewer | Member | Manager (Project) | Admin (Org) |
 | ---------------- | ------ | ------ | ----------------- | ----------- |
 | Read             | Y      | Y      | Y                 | Y           |
 | Create           |        | Y      | Y                 | Y           |
