@@ -18,7 +18,8 @@ ampli_article: 5afa91b7-c12d-425a-b4b6-661061e5843a
 exclude_from_sitemap: false
 source: 'https://www.docs.developers.amplitude.com/data/sdks/browser-2/'
 package_name: '@amplitude/analytics-browser'
-platform: Browser
+platform: browser
+full_details: true
 migration_guide:
   - 9b155be9-bb32-428c-9f49-6e00f9630547
   - 57ba371b-f74f-4606-bc62-6405b4375f61
