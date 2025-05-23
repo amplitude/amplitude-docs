@@ -1025,10 +1025,18 @@ video {
   height: max-content;
 }.h-screen {
   height: 100vh;
+}.h-1\/4 {
+  height: 25%;
+}.h-36 {
+  height: 9rem;
 }.max-h-12 {
   max-height: 3rem;
 }.max-h-\[575px\] {
   max-height: 575px;
+}.max-h-screen {
+  max-height: 100vh;
+}.max-h-full {
+  max-height: 100%;
 }.w-1\/2 {
   width: 50%;
 }.w-1\/3 {

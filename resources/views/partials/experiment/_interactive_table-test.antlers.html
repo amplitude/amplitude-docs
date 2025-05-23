@@ -1,0 +1,49 @@
+<style>
+    .api-tester__curl code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+</style>
+{{api_tester:apis}}
+{{ if api_name === api-name}}
+<div class="api-tester" 
+data-url-us="{{ us_url }}"
+data-url-eu="{{ eu_url }}"  
+data-method="{{ method }}" 
+data-fields='{{ fields | to_json}}'
+data-auth="{{deployment_key}}">
+<pre class="min-w-[712px]"><code class="api-tester__curl language-bash"></code></pre>
+
+<div class="mt-8 grid grid-cols-2 gap-4 max-w">
+
+
+
+
+<div class="grid grid-cols-1 gap-6 w-80">
+{{ fields }}
+<label for="" class="block">
+<span class="text-xs text-mountain-mist-300">{{name}}</span>
+{{if input_type == "select"}}
+<select class="mt-1 block w-full" name="{{ name | slugify }}" data-field="{{ name | slugify }}"  {{ if omit_from_curl }}data-omit-from-curl='true'{{ /if }} >
+{{select_options}}
+<option value="{{ value }}">{{ value }}</option>
+{{/select_options}}
+</select>
+{{else}}
+<input class="mt-1 block w-full" type="{{ input_type }}" name="{{ name | slugify }}" data-field="{{ name | slugify }}"  {{ if omit_from_curl }}data-omit-from-curl='true'{{ /if }} {{if auth_field}}data-auth-input="true" {{/if}}/>
+{{/if}}
+</label>
+{{ /fields }}
+<button class="md-button w-1/2 border rounded py-1 hover:bg-amp-blue-900 transition-colors api-tester__send">Send</button>
+</div>
+<pre class="api-tester__response h-96"></pre>
+
+</div>
+</div>
+
+
+
+{{/if}}
+{{/api_tester:apis}}
+
+<script src="/docs/js/interactive-api-tester.js"></script>

@@ -80,7 +80,7 @@ If a user isn't in the target audience, the Evaluation API may return an empty o
 
 Set the fields in the table, and press send to send the request in browser, or copy the curl to send the request yourself.
 
-{{partial:experiment/interactive-evaluation-table}}
+{{partial:experiment/interactive_table-test api-name="Evaluation"}}
 
 ---
 
@@ -152,8 +152,8 @@ The evaluation API returns a JSON array of objects where each object represents 
 | 401 | If the request doesn't include a valid API key, it returns a `401` response. |
 
 
-<!-- ### Flags example
+### Flags example
 
 Set the fields in the table, and press send to send the request in browser, or copy the curl to send the request yourself.
 
-{{#partial:experiment/interactive-flags-table#}} -->
+{{partial:experiment/interactive_table-test api-name="Flags"}}
