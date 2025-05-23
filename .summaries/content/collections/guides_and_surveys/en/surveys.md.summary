@@ -5,9 +5,9 @@ This documentation page defines the structure for the "Surveys" landing page, wh
 - surveys landing page
 - grid layout
 - child page display
-- hover effects
-- page navigation
-- Gellix font
-- responsive columns
+- title rendering
 - landing_blurb
-- blueprint: guides_and_survey
+- hover effects
+- responsive columns
+- Gellix font
+- markdown rendering

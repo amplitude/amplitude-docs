@@ -1,11 +1,11 @@
 ## Summary
-This documentation page explains how to use Ampli for Go, a generated tracking library that provides strongly typed methods for tracking analytics events in Go applications according to an Amplitude Data tracking plan, including installation, initialization, identifying users, tracking events, and verifying implementation status.
+This documentation page explains how to use Ampli for Go, a generated tracking library that enables strongly-typed analytics event tracking in Go applications. It covers installation, initialization, tracking events, identifying users, and using the Ampli CLI to pull tracking plans and verify implementation status.
 
 ## Keywords
-- Ampli Go SDK
+- Ampli for Go
 - analytics-go
+- strongly-typed event tracking
 - tracking plan
-- strongly typed events
 - ampli pull
 - ampli status
 - Identify method

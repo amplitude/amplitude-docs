@@ -9,8 +9,7 @@ This documentation explains how to integrate Amplitude Session Replay with Segme
 - Amplitude Classic Cloud-mode
 - analytics_session_id
 - getSessionReplayProperties()
+- deviceId/sessionId format
 - setSessionId
-- deviceId
-- sessionReplayPlugin
 - Source Middleware
-- session tracking
+- sessionReplayPlugin

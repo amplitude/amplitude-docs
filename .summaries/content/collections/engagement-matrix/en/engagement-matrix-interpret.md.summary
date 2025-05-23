@@ -1,14 +1,14 @@
 # Summary
-The Engagement Matrix documentation explains how to analyze user engagement by interpreting the four quadrants of the matrix chart, where each quadrant represents different combinations of event frequency and user adoption, helping product teams identify core features, power features, underutilized features, and potential candidates for improvement or deprecation.
+The Engagement Matrix documentation explains how to interpret a chart that categorizes product features/events based on user frequency and adoption, with quadrants representing different levels of engagement, and includes guidance on using the breakdown table and zooming in on data clusters for detailed analysis.
 
 # Keywords
-- engagement matrix quadrants
-- feature performance analysis
-- high/low frequency events
-- user adoption metrics
-- data point clusters
-- breakdown table
-- chart interpretation
-- zoom functionality
-- event prioritization
-- product analytics
+- Engagement Matrix interpretation
+- Feature categorization quadrants
+- High/low frequency analysis
+- User adoption metrics
+- Data point clusters
+- Breakdown table
+- Chart zooming functionality
+- Product feature evaluation
+- Core features identification
+- Feature improvement prioritization

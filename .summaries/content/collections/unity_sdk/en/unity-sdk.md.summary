@@ -8,11 +8,9 @@ This documentation page describes the Amplitude Analytics Unity SDK, a plugin th
 - revenue tracking
 - setUserProperty
 - logEvent
-- user sessions
 - IDFA tracking
+- session management
 - EU data residency
 - dynamic configuration
 - COPPA control
 - Android/iOS integration
-- batch event upload
-- user groups

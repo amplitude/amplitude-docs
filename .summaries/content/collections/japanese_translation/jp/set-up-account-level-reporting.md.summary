@@ -1,5 +1,5 @@
 # Summary
-This documentation explains how to set up account-level reporting in Amplitude, including implementation methods via SDKs, APIs, and Segment integration, with instructions for creating and managing group types and properties through code examples and configuration steps.
+This documentation explains how to set up account-level reporting in Amplitude, including implementation methods via SDKs, APIs, and Segment integration, with instructions for creating and updating group properties using the Group Identify API.
 
 # Keywords
 - account-level reporting

@@ -4,13 +4,11 @@ This documentation explains why data discrepancies occur between Amplitude and o
 # Keywords
 - data discrepancy troubleshooting
 - platform comparison
-- session timeout windows
-- user tracking differences
-- Google Analytics comparison
 - time zone alignment
-- bot filtering
+- session timeout windows
 - user merging
+- Google Analytics differences
+- bot filtering
+- event tracking comparison
 - session definition
 - campaign source changes
-- midnight session handling
-- event limits

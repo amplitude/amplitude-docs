@@ -10,5 +10,5 @@ This documentation page outlines essential pre-work steps for Amplitude instrume
 - event properties organization
 - cross-platform instrumentation
 - data minimalism
-- event spreadsheet template
-- Data Taxonomy Playbook
+- user property limits
+- platform consolidation

@@ -1,5 +1,5 @@
 ## Summary
-This documentation details Amplitude's Webhook integration for forwarding events and users to custom endpoints. It covers setup steps including URL configuration, header customization, event/user payload formatting with FreeMarker templates, and explains Amplitude's retry mechanism for failed webhook calls.
+This documentation details Amplitude's Webhook Streaming integration, which allows forwarding events and user data to custom webhook endpoints with customizable payloads using Apache FreeMarker templates. It covers configuration steps, retry mechanisms, and provides examples for transforming data to match specific destination formats.
 
 ## Keywords
 - webhook streaming
@@ -7,8 +7,8 @@ This documentation details Amplitude's Webhook integration for forwarding events
 - user data streaming
 - FreeMarker templating
 - custom payload formatting
-- webhook retry mechanism
+- webhook headers
+- retry mechanism
 - event filtering
-- HTTP headers customization
 - workflow automation
-- real-time data exchange
+- data transformation

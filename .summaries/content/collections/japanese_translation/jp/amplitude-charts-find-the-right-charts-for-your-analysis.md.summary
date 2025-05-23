@@ -2,17 +2,18 @@
 Amplitude's documentation outlines various chart types for different analytical needs, categorized into four main areas: understanding users (Event Segmentation, Data Tables, User Composition, User Sessions, Personas, Experiment Results), converting users (Funnel Analysis, Engagement Matrix, Impact Analysis, Pathfinder, Pathfinder Users), retaining users (Retention, Stickiness, Compass, Lifecycle), and monetization (Revenue LTV).
 
 # Keywords
-- Amplitude charts
-- Event Segmentation
-- Data Tables
-- User Composition
-- Funnel Analysis
-- Pathfinder
-- Retention analysis
-- Stickiness metrics
-- Lifecycle analysis
-- Revenue LTV
-- Engagement Matrix
-- Impact Analysis
-- Personas clustering
-- Experiment Results
+- amplitude charts
+- event segmentation
+- data tables
+- user composition
+- funnel analysis
+- engagement matrix
+- pathfinder
+- retention analysis
+- stickiness metrics
+- lifecycle analysis
+- revenue LTV
+- experiment results
+- impact analysis
+- user sessions
+- personas clustering

@@ -12,5 +12,5 @@ This documentation page details the Android SDK for Amplitude, focusing on confi
 - StorageProvider
 - session tracking
 - COPPA control
-- serverZone configuration
-- identity management
+- ServerZone configuration
+- legacy data migration

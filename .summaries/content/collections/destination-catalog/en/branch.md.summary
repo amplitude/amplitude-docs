@@ -8,8 +8,8 @@ This documentation page describes Amplitude's Branch streaming integration, whic
 - user identification
 - custom events
 - property mapping
+- mobile attribution
 - deep linking
-- mobile measurement
 - Developer ID
 - IDFA/IDFV
 - Android ID/AAID

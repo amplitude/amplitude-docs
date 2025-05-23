@@ -10,5 +10,5 @@ This documentation explains how Amplitude Analytics selects and arranges chart r
 - Group selection criteria
 - Formula group ordering
 - Performance limitations
-- Multiple grouping behavior
+- Query result limits
 - Metric-based group ranking

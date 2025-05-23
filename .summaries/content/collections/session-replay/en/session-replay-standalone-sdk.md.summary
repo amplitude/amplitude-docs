@@ -12,6 +12,6 @@ This documentation explains how to implement the Session Replay Standalone SDK f
 - EU data residency
 - opt-out configuration
 - IndexedDB storage
-- CSS selector masking
+- CSS selectors
 - replay retention
-- performance optimization
+- web worker compression

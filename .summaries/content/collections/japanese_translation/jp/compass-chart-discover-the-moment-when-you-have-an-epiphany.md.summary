@@ -1,14 +1,14 @@
 ## Summary
-This documentation explains Amplitude's Compass Chart, a tool designed to identify user behaviors that predict retention by analyzing correlations between initial actions and long-term engagement, helping product teams discover their users' "aha moment" and optimize onboarding experiences accordingly.
+This documentation explains Amplitude's Compass Chart, a tool designed to identify user behaviors that predict retention by analyzing correlations between initial actions and long-term engagement. It provides step-by-step instructions for creating a Compass Chart, including selecting cohorts, events, properties, and setting time periods for analysis.
 
 ## Keywords
 - Compass Chart
 - user retention prediction
-- correlation analysis
 - epiphany moment
-- user behavior analysis
+- correlation analysis
+- cohort selection
+- event properties
 - heatmap visualization
-- base cohort
-- target cohort
 - retention metrics
+- user behavior analysis
 - Enterprise/Growth plan feature

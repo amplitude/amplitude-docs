@@ -53,7 +53,7 @@ All customers on an Amplitude Growth or Enterprise plan have access to unlimited
 
 For example, segmenting your users by the number of purchases they’ve made is possible with cohorts. However, you’d have to create a different cohort to correspond to each possible number of purchases. To streamline the process, you could use computations to create a new, computed property that stores this information as a single integer, for each user. Then segment your users based on their values for this property, taking one step to do what would have taken several before.
 
-All customers on an Amplitude Growth or Enterprise plan have access to 10 computed properties. You can upgrade your plan to include unlimited computed properties. Contact your Amplitude representative for more details.
+All customers on an Activation Growth or Activation Enterprise plan have access to unlimited computed properties.
 
 ## Personalization
 

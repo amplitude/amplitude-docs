@@ -1,5 +1,5 @@
 # Summary
-This documentation explains how to set up an AWS CloudFront distribution as a reverse proxy for Amplitude Experiment's evaluation servers to bypass regional domain blocking while minimizing latency, including specific configuration steps and testing instructions.
+This documentation explains how to set up an AWS CloudFront distribution as a reverse proxy for Amplitude Experiment's evaluation servers to bypass regional domain blocking while minimizing latency, including detailed configuration steps and testing instructions.
 
 # Keywords
 - AWS CloudFront

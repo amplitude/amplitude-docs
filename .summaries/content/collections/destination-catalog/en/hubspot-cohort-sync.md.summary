@@ -1,14 +1,14 @@
 # Summary
-This documentation page describes the HubSpot Cohort Sync destination in Amplitude, which allows users to sync Amplitude-built cohorts to HubSpot contact lists for targeting purposes, supporting both Email and Contact ID as user identification methods with specific setup instructions and considerations for syncing behavior.
+The HubSpot (Cohort Sync) destination enables syncing Amplitude-built cohorts to HubSpot contact lists for targeting, supporting both Email and Contact ID as user identifiers, with options for one-time or scheduled syncs that track additions and removals since the last sync.
 
 # Keywords
-- HubSpot cohort sync
-- Amplitude contact lists
-- Email identifier mapping
-- Contact ID mapping
+- cohort sync
+- HubSpot contacts lists
+- Email identifier
+- Contact ID identifier
 - OAuth authentication
-- Sync cadence
-- Silent user dropping
+- sync cadence
 - amplitude_ prefix
-- User discrepancies
-- Cohort uninstallation
+- silent user dropping
+- user discrepancies
+- contact creation

@@ -12,5 +12,3 @@ This documentation page provides a comprehensive migration guide from the mainte
 - identity storage
 - HTTP V2 API
 - batch processing
-- promise-based callbacks
-- event enrichment

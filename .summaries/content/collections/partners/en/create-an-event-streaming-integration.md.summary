@@ -1,14 +1,14 @@
 # Summary
-This documentation guides partners through creating an Event Streaming integration in Amplitude, detailing the configuration process, supported features (event forwarding, filtering, property mapping), limitations, and payload structure requirements for real-time event forwarding from Amplitude to third-party destinations.
+This documentation guides partners through creating an Event Streaming integration in Amplitude, detailing the configuration process, supported features (event forwarding, filtering, property mapping), limitations, and payload structure requirements for real-time event forwarding from Amplitude to partner destinations.
 
 # Keywords
-- event-streaming
-- integration-portal
+- event-streaming-integration
 - freemarker-templates
 - event-forwarding
-- payload-configuration
+- payload-customization
 - user-property-mapping
-- destination-setup
+- integration-portal
+- destination-configuration
 - rate-limits
 - authentication-method
-- identify-forwarding
+- event-filtering

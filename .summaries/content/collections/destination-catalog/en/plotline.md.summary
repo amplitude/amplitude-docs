@@ -1,14 +1,14 @@
 # Summary
-Plotline Event Stream integration enables sending Amplitude event data to Plotline's digital adoption platform, allowing product teams to configure targeted in-app nudges based on user behavior, with options to filter events and send user properties for personalized campaigns.
+Plotline Event Stream integration enables sending Amplitude event data to Plotline's digital adoption platform, allowing product teams to configure targeted in-app nudges based on user behavior, with options to filter events and send user properties in real-time to drive feature adoption and conversions.
 
-# Keywords
-- digital adoption platform
-- in-app nudges
-- event streaming
-- API key
-- behavioral triggers
-- personalized campaigns
-- feature adoption
-- user properties
-- real-time event forwarding
-- conversion optimization
+## Keywords
+- Digital adoption platform
+- In-app nudges
+- Event streaming
+- Behavioral triggers
+- Personalized campaigns
+- API Key authentication
+- User property synchronization
+- Real-time event forwarding
+- Feature adoption
+- Conversion optimization

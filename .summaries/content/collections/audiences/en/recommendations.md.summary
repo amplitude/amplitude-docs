@@ -1,5 +1,5 @@
 # Summary
-Amplitude Activation's Recommendations feature uses AutoML to determine which items are most likely to drive users toward a predictive goal by clustering users based on properties and behaviors, analyzing historical data, and generating personalized item rankings that update hourly, best suited for user-based personalization in ecommerce, marketplace, and B2C companies.
+Amplitude Activation's Recommendations feature uses AutoML to determine which items are most likely to drive users toward a predictive goal by clustering users based on properties and behaviors, analyzing historical data, and generating personalized item rankings that update hourly, best suited for user-based personalization in ecommerce, marketplace, and B2C contexts.
 
 # Keywords
 - AutoML

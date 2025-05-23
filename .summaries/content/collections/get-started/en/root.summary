@@ -1,138 +1,191 @@
-# Amplitude Analytics Platform Overview
+# Amplitude Analytics: Product Overview
 
-Amplitude is an event-based analytics platform designed to track and analyze user behavior within digital products. The platform enables teams to gain insights into user engagement, retention, and revenue by collecting and analyzing data about user actions (events), user characteristics, and product usage patterns.
+## Product Overview
 
-## Key Features and Concepts
+Amplitude is an event-based analytics platform designed to track and analyze user behavior within digital products. The platform focuses on capturing user interactions as "events" with associated properties, enabling organizations to gain actionable insights into user engagement, retention, and revenue generation.
 
-### Core Analytics Capabilities
-- **Event-based tracking**: Captures user actions within products as events
-- **Real-time event stream**: Displays user activity as it happens
-- **Chart creation and visualization**: Tools to build custom analytics views
-- **Template Gallery**: Pre-built analysis templates for common use cases
-- **Dashboard customization**: Ability to create and share custom dashboards
-- **A/B testing analysis**: Tools to compare experiment variations
-- **User identification**: Cross-device user tracking and identity resolution
-- **Session Replay**: Records user interactions for playback and analysis
-- **Autocapture**: Automatically collects user interactions with minimal coding
+Key features of Amplitude include:
 
-### Analysis Templates
-Amplitude offers several pre-built templates for common analytics needs:
-- **User Activity Report**: Tracks engagement metrics like DAU, session length, and user breakdowns
-- **Conversion Report**: Analyzes funnel conversion rates and drop-off points
-- **Feature Adoption Report**: Measures how users adopt and engage with features
-- **Ecommerce Report**: Analyzes acquisition channels and purchase behavior
-- **A/B Test View**: Compares metrics between experiment groups
+- **Event-based tracking**: Captures user actions (events) and their contextual details (event properties)
+- **User identification**: Tracks unique users across devices and sessions using Device IDs, Amplitude IDs, and custom User IDs
+- **Dashboards and visualizations**: Pre-built and customizable charts for analyzing user behavior patterns
+- **Template Gallery**: Ready-to-use analysis templates for common use cases like conversion, feature adoption, and user activity
+- **Spaces**: Organizational structure for sharing and managing analyses
+- **A/B test analysis**: Tools for comparing experiment groups and measuring impact
+- **Autocapture**: Automatic event collection with minimal engineering effort
+- **Cross-platform tracking**: Options for unified or separate tracking across web and mobile platforms
 
-## Product Architecture and Organization
+Primary use cases include:
+- Analyzing user conversion funnels
+- Tracking feature adoption and usage
+- Measuring user retention and engagement
+- Understanding acquisition channels
+- Optimizing product experiences through A/B testing
+- Identifying user personas and behavior patterns
 
-### Organization Structure
-- **Organizations**: Top-level entities that contain projects and users
-- **Projects**: Containers for data related to specific products or app sections
-  - Each project has its own API key for data transmission
-  - Projects can be set up for cross-platform or separate platform tracking
+## Product Relationships and Architecture
 
-### Content Organization
-- **Spaces**: Collaborative areas for teams to organize and share analyses
-  - **Personal workspace**: Private area for individual work
-  - **Shared spaces**: Team collaboration areas with permission controls
-  - Space limitations vary by plan (1 for Starter, 3 for Plus, unlimited for higher tiers)
-- **Folders**: Hierarchical organization within spaces
+Amplitude's product ecosystem consists of several interconnected components:
 
-### User Identification System
-- **Device ID**: Identifies unique devices
-- **Amplitude ID**: Amplitude's internal user identifier
-- **User ID**: Optional customer-provided identifier for cross-device tracking
-- Identity resolution merges user activity across devices when user IDs are provided
+1. **Data Collection Layer**:
+   - **SDKs**: Browser (JavaScript), iOS-Swift, Android-Kotlin SDKs for client-side tracking
+   - **APIs**: HTTP API v2, Batch API, Identify API for server-side tracking
+   - **Integrations**: Connections with third-party data sources
 
-## Key Terminology and Definitions
+2. **Data Organization Structure**:
+   - **Organizations**: Top-level container for all projects and users
+   - **Projects**: Containers for product-specific data with unique API keys
+   - **Spaces**: Collaborative workspaces for organizing analyses (Personal workspace and Shared spaces)
 
-### Analytics Concepts
-- **Events**: User actions tracked in the system (e.g., page views, clicks, purchases)
-- **Event properties**: Additional context about events (e.g., item price, page URL)
-- **User properties**: Attributes of users that persist across sessions (e.g., plan type, demographics)
-- **Sessions**: Periods of continuous user activity
-- **Behavioral cohort**: Group of users who performed specific actions
-- **Monthly tracked user (MTU)**: Unique user tracked within a month (billing metric)
-- **Retention**: Measure of users returning to the product over time
+3. **Analysis Tools**:
+   - **Charts**: Interactive visualizations for analyzing event data
+   - **Dashboards**: Collections of related charts
+   - **Templates**: Pre-built analyses for common use cases
+   - **Notebooks**: More advanced analysis capabilities
+
+4. **User Identification System**:
+   - **Device ID**: Identifies unique devices
+   - **Amplitude ID**: Amplitude's internal user identifier
+   - **User ID**: Optional custom identifier for cross-device tracking
+
+5. **Supporting Features**:
+   - **Session Replay**: Captures user sessions for visual playback
+   - **User Lookup**: Detailed view of individual user activity
+   - **Microscope**: Tool for drilling into specific data points
+
+## Key Nomenclature and Definitions
+
+### Core Analytics Concepts
+- **Event**: A discrete user action or occurrence tracked in Amplitude (e.g., "Page Viewed", "Button Clicked")
+- **Event Property**: Contextual information about an event (e.g., page URL, button name)
+- **User Property**: Attributes associated with a user that persist across events (e.g., country, device type)
+- **Session**: A period of continuous user activity, typically ending after inactivity
+- **Cohort**: A group of users who share common characteristics or behaviors
+
+### User Identification Terms
+- **Amplitude ID**: Amplitude's internal identifier for a unique user
+- **Device ID**: Identifier for a specific device or browser
+- **User ID**: Optional custom identifier set by the implementation to track users across devices
+
+### Metrics and Analysis Terms
+- **Active Users**: Users who performed at least one event in a given time period (DAU, WAU, MAU)
+- **Retention**: Percentage of users who return to the product after their first visit
 - **Stickiness**: Frequency of user engagement within a time period
-- **Funnel analysis**: Tracking user progression through a sequence of events
+- **Conversion Rate**: Percentage of users who complete a defined sequence of events
+- **Monthly Tracked Users (MTU)**: Unique users tracked in Amplitude per month (often tied to billing)
 
-### Automatically Tracked Properties
-- **Event properties**: Page domain, URL, location, referrer, session replay ID
-- **User properties**: Location (country, region, city), device type, platform, OS
-
-## Implementation and Setup
-
-### Implementation Process
-1. **Create an account and project**
-2. **Plan implementation**:
-   - Define business goals
-   - Determine user identification strategy
-   - Create event taxonomy with naming conventions
-   - Select key events to track (quality over quantity)
-3. **Implement data collection**:
-   - Install SDK (Browser, iOS-Swift, Android-Kotlin)
-   - Set up user identification
-   - Configure event tracking
-4. **Verify implementation**:
-   - Use User Activity tab to check tracked events
-   - Monitor event limits and deduplication
-
-### Implementation Team Roles
-- **Project Lead**: Coordinates with Amplitude and drives adoption
-- **Data Governor**: Designs tracking plans and maintains data quality
-- **Instrumentation Lead**: Handles technical implementation and troubleshooting
-
-### Data Collection Methods
-- **Client-side SDKs**: Browser, iOS, Android
-- **Server-side APIs**: HTTP API v2, Batch API
-- **Integrations**: Third-party data sources
-- **Autocapture**: Automatic collection of interactions, page views, and forms
-
-## Technical Details
-
-### SDK Implementation
-```html
-<!-- Basic Amplitude snippet -->
-<script type="text/javascript">
-  !function(){var e=window.amplitude||{_q:[],_iq:{}};/* initialization code */}();
-  amplitude.init("YOUR_API_KEY");
-</script>
-```
-
-### Key APIs
-- **Identify API**: Update user properties
-- **HTTP API v2**: Send events server-side
-- **Batch API**: Send multiple events in one request
-- **Dashboard REST API**: Programmatically access dashboards
-- **Export API**: Extract raw data
-
-### Browser Compatibility
-- Supports browsers with >0.5% worldwide usage
-- Recent versions of Firefox, Chrome, Edge, Safari
-- Excludes Internet Explorer and Op_mini
-
-### Cookies and Consent
-- Uses cookies or localStorage for user identification
-- Supports opt-in/opt-out mechanisms for consent management
-- Configurable cookie expiration and SameSite settings
-- Compliant with GDPR and CNIL (France) regulations
-
-## Workflow Optimization
-
-Amplitude recommends a six-step workflow for product optimization:
-1. Identify critical events and usage intervals
-2. Analyze retention patterns
-3. Map user lifecycle stages
-4. Identify user personas
-5. Create engagement matrices
-6. Conduct ongoing cohort analysis and A/B testing
+### Implementation Terms
+- **API Key**: Unique identifier for a project used when sending data to Amplitude
+- **Tracking Plan**: Documentation of events, properties, and implementation details
+- **Instrumentation**: Process of implementing analytics tracking in a product
+- **Autocapture**: Feature that automatically tracks common events without manual instrumentation
 
 ## Product Ecosystem Integration
 
-Amplitude Analytics integrates with:
-- **Session Replay**: Records user sessions for visual playback
-- **Experiment**: A/B testing platform with direct results analysis
-- Various third-party data sources and destinations through integrations
+Amplitude integrates with the broader product and data ecosystem in several ways:
 
-Amplitude's platform is designed to scale from simple analytics needs to complex, enterprise-wide implementations, with different plan tiers offering varying levels of features, data volume, and organizational capabilities.
+1. **Data Collection Integrations**:
+   - Direct SDK implementations for web and mobile platforms
+   - Server-side tracking via HTTP API and Batch API
+   - Integrations with third-party tools (mentioned but not detailed in the documentation)
+   - Optimizely integration for A/B testing
+
+2. **Data Management**:
+   - Cookie and consent management for privacy compliance (GDPR, CNIL)
+   - Cross-domain tracking capabilities
+   - Data deduplication using event ID, client event time, and device ID
+
+3. **Implementation Workflow**:
+   - Typically involves three key roles: Project Lead, Data Governor, and Instrumentation Lead
+   - Begins with business goals definition and tracking plan creation
+   - Supports both client-side and server-side tracking approaches
+   - Can use the Ampli Wrapper for more advanced implementations
+
+4. **Analysis and Reporting**:
+   - Export capabilities to various formats (CSV, Excel, PNG, PDF)
+   - Sharing and collaboration features through Spaces
+   - Template Gallery for standardized analyses across teams
+
+## API Endpoints and Technical Details
+
+### Key APIs
+- **HTTP API v2**: Primary API for sending events to Amplitude
+  - Endpoint: `https://api2.amplitude.com/2/httpapi`
+  
+- **Identify API**: For updating user properties without logging events
+  - Endpoint: `https://api2.amplitude.com/identify`
+
+- **Batch API**: For sending multiple events in a single request
+  - Endpoint: `https://api2.amplitude.com/batch`
+
+- **Dashboard REST API**: For programmatically accessing dashboard data
+- **Export API**: For exporting raw data from Amplitude
+- **Attribution API**: For tracking marketing attribution
+- **Behavioral Cohorts API**: For working with user cohorts
+
+### SDK Implementation
+
+**Browser SDK Installation**:
+```html
+<script type="text/javascript">
+  !function(){"use strict";!function(e,t){var r=e.amplitude||{_q:[],_iq:{}};if(r.invoked)e.console&&console.error&&console.error("Amplitude snippet has been loaded.");else{var n=function(e,t){e.prototype[t]=function(){return this._q.push({name:t,args:Array.prototype.slice.call(arguments,0)}),this}},s=function(e,t,r){return function(n){e._q.push({name:t,args:Array.prototype.slice.call(arguments,0),resolve:n}),r&&n({})}},o=function(e,t,r){e[t]=function(){if(r)return{promise:new Promise(s(e,t,!0))};for(var n=arguments.length,o=new Array(n),i=0;i<n;i++)o[i]=arguments[i];return e._q.push({name:t,args:o,resolve:null}),e}};r.invoked=!0;var i=t.createElement("script");i.type="text/javascript",i.integrity="sha384-TPZhJFM5SJAEyZXrfNEGVqBgd98L/hSbXD7U75k9MdKqOZ3xqQz+MQW5kYoQgTwE",i.crossOrigin="anonymous",i.async=!0,i.src="https://cdn.amplitude.com/libs/analytics-browser-1.9.1-min.js.gz",i.onload=function(){e.amplitude.runQueuedFunctions||console.log("[Amplitude] Error: could not load SDK")};var a=t.getElementsByTagName("script")[0];a.parentNode.insertBefore(i,a);for(var c=function(){return this._q=[],this},p=["add","append","clearAll","prepend","set","setOnce","unset","preInsert","postInsert","remove","getUserProperties"],u=0;u<p.length;u++)n(c,p[u]);r.Identify=c;for(var d=function(){return this._q=[],this},l=["getEventProperties","setProductId","setQuantity","setPrice","setRevenue","setRevenueType","setEventProperties"],v=0;v<l.length;v++)n(d,l[v]);r.Revenue=d;var f=["init","add","remove","track","logEvent","identify","groupIdentify","setGroup","revenue","flush"];o(r,f[0],!0);for(var m=1;m<f.length;m++)o(r,f[m]);e.amplitude=r}}(window,document)}();
+
+  amplitude.init("YOUR-API-KEY");
+</script>
+```
+
+**Autocapture Configuration**:
+```javascript
+amplitude.init("YOUR-API-KEY", null, {
+  defaultTracking: {
+    sessions: true,
+    pageViews: true,
+    formInteractions: true,
+    fileDownloads: true
+  }
+});
+```
+
+### Data Structure Examples
+
+**Event Payload Example**:
+```json
+{
+  "api_key": "YOUR-API-KEY",
+  "events": [
+    {
+      "user_id": "user@example.com",
+      "device_id": "C8F9E604-F01A-4BD9-95C6-8E5357DF265D",
+      "event_type": "Button Clicked",
+      "event_properties": {
+        "button_name": "Submit",
+        "page": "Checkout"
+      },
+      "user_properties": {
+        "plan": "Premium",
+        "account_type": "Business"
+      },
+      "time": 1396381378123
+    }
+  ]
+}
+```
+
+**User Property Update Example**:
+```json
+{
+  "api_key": "YOUR-API-KEY",
+  "identification": [
+    {
+      "user_id": "user@example.com",
+      "device_id": "C8F9E604-F01A-4BD9-95C6-8E5357DF265D",
+      "user_properties": {
+        "$set": {
+          "plan": "Enterprise",
+          "account_status": "Active"
+        }
+      }
+    }
+  ]
+}
+```

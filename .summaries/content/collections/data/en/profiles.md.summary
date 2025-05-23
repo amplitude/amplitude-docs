@@ -1,17 +1,15 @@
 ## Summary
-This documentation page explains Profiles in Amplitude, which allow joining customer profile data from data warehouses with behavioral product data, functioning as standalone properties associated with user profiles rather than specific events, and supporting integration with Snowflake, Databricks, and S3 with detailed setup instructions for each platform.
+This documentation page explains Profiles in Amplitude, which allow joining customer profile data from data warehouses with behavioral product data, functioning as standalone properties associated with user profiles rather than specific events, with instructions for setup in Snowflake, Databricks, and S3 environments.
 
 ## Keywords
 - Profiles
 - Data warehouse integration
 - Change Data Capture (CDC)
 - user_id
-- profile properties
-- Snowflake integration
-- Databricks integration
-- S3 integration
 - mutation_type
-- incremental modeling
-- data retention
-- change tracking
-- profile synchronization
+- Snowflake setup
+- Databricks setup
+- S3 setup
+- Profile properties
+- Data retention
+- Operation limits

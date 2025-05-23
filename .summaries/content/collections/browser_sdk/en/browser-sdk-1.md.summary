@@ -5,19 +5,16 @@ The Browser SDK 1.0 is a maintenance-mode TypeScript/JavaScript SDK for tracking
 - Browser SDK 1.0
 - maintenance mode
 - event tracking
-- user identification
-- session management
-- device ID management
-- revenue tracking
-- marketing attribution
-- cookie management
-- sendBeacon
-- cross-domain tracking
-- plugins
-- default event tracking
-- page views
-- form interactions
-- file downloads
 - user properties
+- identify methods
+- revenue tracking
+- session management
+- marketing attribution
+- sendBeacon
+- cookie management
+- device ID
 - user groups
+- plugins
+- cross-domain tracking
 - content security policy
+- batch processing

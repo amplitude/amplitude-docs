@@ -9,7 +9,7 @@ The Admin product appears to be a management interface or portal that provides a
 The Admin product is organized into several key functional areas:
 
 1. **Account Management** - A section dedicated to managing user accounts and related settings
-2. **Billing and Use** - A component for handling billing information and monitoring resource usage
+2. **Billing and Use** - A component for handling billing information and monitoring usage metrics
 3. **Single Sign-On (SSO)** - A feature that enables integration with identity providers for streamlined authentication
 
 These components appear to be organized as separate collections within the documentation structure, suggesting they are distinct but related modules within the Admin product.
@@ -17,14 +17,16 @@ These components appear to be organized as separate collections within the docum
 ## Key Nomenclature and Definitions
 
 - **Blueprint**: A schema or template definition used for content modeling in the documentation system
-- **Landing**: A boolean property that likely determines whether a page serves as a landing page for navigation
-- **Current-collection**: A reference to the collection of related documentation pages
-- **Template**: Defines the layout or presentation format for the documentation page
+- **Landing**: A boolean property that likely determines whether a page serves as a landing page
+- **Current-collection**: A reference to the collection that the current document belongs to
+- **Template**: Defines the presentation layout for the content
 
 ## Product Ecosystem Integration
 
-The Admin product appears to be part of a larger ecosystem, serving as the administrative interface for managing accounts, billing, and authentication. The Single Sign-On component suggests integration with external identity providers and authentication systems.
+The Admin product appears to be part of a larger ecosystem, serving as the administrative interface for managing accounts, billing, and authentication. The Single Sign-On feature suggests integration with external identity providers and authentication systems.
 
-The documentation is structured using a content management system with blueprints, templates, and collections, indicating a modular approach to both the product architecture and its documentation.
+The documentation is structured using a content management system that employs blueprints, templates, and collections to organize the content. The presence of properties like `exclude_from_sitemap` indicates that the documentation is part of a larger website with SEO considerations.
 
-While specific API endpoints or command-line invocations are not explicitly mentioned in the provided file summaries, the presence of SSO functionality suggests there may be authentication APIs or integration points with identity providers.
+## Technical Implementation
+
+While specific API endpoints or command-line invocations are not explicitly mentioned in the provided documentation files, the structure suggests a web-based administrative interface with distinct sections for different administrative functions. The Single Sign-On feature implies integration points with external authentication systems, though specific implementation details are not provided in the current documentation excerpts.

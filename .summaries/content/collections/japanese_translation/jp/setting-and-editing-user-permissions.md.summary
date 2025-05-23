@@ -1,5 +1,5 @@
 ## Summary
-This documentation page explains user permission settings in Amplitude, detailing the four role types (Viewer, Member, Manager, Admin), their specific permissions, and how to add users and modify their access levels. It also covers project-level permissions and permission groups available for Enterprise plan customers.
+This documentation page explains user permission settings in Amplitude, detailing the different role types (Viewer, Member, Manager, Admin), their specific permissions, and how to add users and modify their access levels, including project-level permissions and permission groups for Enterprise customers.
 
 ## Keywords
 - Amplitude user roles
@@ -8,7 +8,7 @@ This documentation page explains user permission settings in Amplitude, detailin
 - Project-level permissions
 - Permission groups
 - Admin privileges
-- Organization management
+- Organization-level access
 - User invitation process
+- Role modification
 - Enterprise security features
-- Role-based access control

@@ -6,9 +6,9 @@ This documentation explains how to interpret Stickiness charts in Amplitude, cov
 - cumulative stickiness
 - non-cumulative stickiness
 - user engagement metrics
-- day-based usage patterns
-- metrics module
-- change over time visualization
 - behavioral cohorts
-- product usage habits
-- microscope feature
+- Metrics Module
+- day-based usage patterns
+- change over time visualization
+- Microscope feature
+- data point inspection

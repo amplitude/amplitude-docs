@@ -10,10 +10,10 @@ Compass helps identify inflection metrics that predict user retention or convers
 - sensitivity
 - negative predictive value (NPV)
 - specificity
-- true positive ratios
-- true negative ratios
 - base cohort
 - target cohort
 - correlation analysis
-- user behavior thresholds
+- contingency matrix
+- true positive ratio
+- true negative ratio
 - performance days window

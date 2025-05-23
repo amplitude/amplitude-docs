@@ -11,5 +11,5 @@ The Pathfinder Users chart visualizes user navigation paths through a product, s
 - event expansion by property
 - navigation analysis
 - user journey
-- event paths
-- session_id
+- event ordering
+- path frequency

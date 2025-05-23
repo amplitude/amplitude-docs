@@ -1,14 +1,14 @@
 # Summary
-Split integration allows importing traffic impression data as events into Amplitude, enabling targeted feature flag treatments based on behavioral attributes and cohort analysis, with impressions appearing as "get_treatment" events that can be customized during setup.
+Split integration allows importing traffic impression data as events into Amplitude, enabling targeted feature flag treatments based on behavioral attributes and cohort analysis, with customizable event mapping and identity configuration between Split traffic types and Amplitude user identifiers.
 
 # Keywords
-- traffic impression data
 - feature flags
+- traffic impressions
 - get_treatment events
-- Split traffic types
-- identity mapping
-- Impact-Driven Development
+- impact-driven development
 - cohort targeting
-- experimentation analysis
-- environment configuration
-- API key authentication
+- experimentation
+- identity mapping
+- traffic types
+- Split environments
+- impression data

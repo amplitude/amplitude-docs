@@ -2,16 +2,13 @@
 This documentation details the Google Analytics 4 (GA4) import integration with Amplitude, explaining how to set up data ingestion from GA4 to Amplitude via BigQuery, including prerequisites (BigQuery Link, GCS bucket, service account permissions), the three-step import process, configuration steps, and BigQuery SQL tips for handling properties fields.
 
 ## Keywords
-- GA4 import
-- BigQuery Link
-- GCS bucket
-- Service Account permissions
-- Data ingestion process
-- Delay handling (72/24 hours)
-- Catch-up importing
-- STRUCT type fields
-- event_properties
-- user_properties
-- JSON formatting
-- BigQuery SQL tips
-- Properties reconstruction
+- GA4 BigQuery integration
+- Google Analytics 4 data import
+- BigQuery Link setup
+- GCS bucket configuration
+- Service account permissions
+- Data export delays
+- STRUCT type properties
+- Event_properties transformation
+- JSON formatting in BigQuery
+- Catch-up importing strategy

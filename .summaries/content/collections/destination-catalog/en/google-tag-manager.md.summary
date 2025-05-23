@@ -9,6 +9,6 @@ This documentation page describes the Google Tag Manager destination integration
 - browser snippet
 - containerId
 - PluginType.DESTINATION
-- setup method
-- execute method
-- amplitude.add
+- GTMPlugin
+- event streaming
+- marketing analytics

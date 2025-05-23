@@ -1,15 +1,15 @@
 # Summary
-Notebooks in Amplitude Analytics are collaborative documents that combine text, media, charts, and metrics to explain insights and context to teammates, enabling better-informed product decisions through performance reporting, ad-hoc analysis explanation, and data education.
+Notebooks in Amplitude Analytics are collaborative documents that combine text, media, charts, and metrics to explain insights and context beyond dashboards, enabling teams to report on performance, explain analyses, and share data knowledge with formatting options including rich text and markdown.
 
 # Keywords
 - Notebooks
 - Chart takeaways
 - Summary metrics
 - Performance reporting
+- Ad hoc analysis
 - Rich text formatting
 - Markdown support
 - Callout boxes
 - Metric trackers
-- Drag-and-drop content
-- Collaborative analysis
-- Insight communication
+- Content rearrangement
+- Collaborative documentation

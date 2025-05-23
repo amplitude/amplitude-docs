@@ -2,19 +2,17 @@
 This documentation page explains Amplitude Experiment's data model, detailing how organizations, projects, deployments, flags, experiments, variants, and users are structured and related to each other within the Amplitude ecosystem, with specific guidance on configuration requirements and best practices for implementation.
 
 ## Keywords
-- Amplitude Experiment
+- Amplitude Experiment data model
 - feature flags
 - experiments
 - deployments
 - variants
-- evaluation mode
+- evaluation modes
 - project structure
 - deployment keys
 - user properties
 - bucketing
 - client-side deployments
 - server-side deployments
-- flag keys
-- group properties
-- local evaluation
-- remote evaluation
+- group targeting
+- variant payload

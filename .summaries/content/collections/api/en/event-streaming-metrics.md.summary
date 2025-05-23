@@ -3,14 +3,14 @@ The Event Streaming Metrics Summary API allows monitoring of delivery metrics fo
 
 # Keywords
 - event streaming metrics
-- delivery rate monitoring
+- delivery rate
 - sync_id
-- time_period parameters
-- event delivery statistics
-- latency tracking
-- retry metrics
-- event expiration
-- event discarding
-- API rate limits
+- time_period
+- latency monitoring
+- events delivered
+- events discarded
+- retry statistics
+- p95 latency
+- event delivery monitoring
 - 90-day retention
-- event streaming monitoring
+- rate limiting

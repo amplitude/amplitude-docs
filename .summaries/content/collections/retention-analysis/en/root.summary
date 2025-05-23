@@ -2,98 +2,75 @@
 
 ## Product Overview
 
-Amplitude's Retention Analysis is a powerful analytics tool that helps product teams understand how often users return to their product after performing specific actions. The tool tracks user behavior over time by comparing a starting event to subsequent return events, allowing teams to measure user engagement and loyalty. Key features include multiple retention calculation methods, flexible time interval options, user segmentation capabilities, and usage interval analysis to understand natural product usage patterns.
+Amplitude's Retention Analysis is a powerful analytics tool that helps product teams understand how often users return to their product after performing specific actions. The tool tracks user behavior over time by comparing starting events to return events, allowing teams to measure user engagement, identify usage patterns, and optimize product experiences for better retention.
 
-## Key Features and Concepts
+Key features of Amplitude's Retention Analysis include:
+- Multiple retention measurement methods (Return On or After, Return On, Return On Custom)
+- Usage interval analysis to understand natural product usage patterns
+- Flexible time calculations (24-hour windows or strict calendar dates)
+- User segmentation and property filtering
+- Visualization options including charts and detailed data tables
 
-### Retention Analysis Chart
+## Product Relationships and Features
 
-The Retention Analysis chart is the core visualization that displays how many users return to a product after performing a specific action. It allows product teams to:
+Amplitude's Retention Analysis consists of several interconnected features:
 
-- Track user retention across daily, weekly, or monthly intervals
-- Compare different user segments
-- Filter by event properties
-- Analyze retention trends over time
-- Identify patterns in user behavior
+1. **Retention Analysis Chart Building**
+   - Configurable starting and return events
+   - User segmentation capabilities
+   - Property filtering
+   - Multiple retention measurement methods
 
-### Retention Calculation Methods
+2. **Retention Calculation Methods**
+   - Return On or After: Tracks if users return at any point after the specified interval
+   - Return On: Tracks if users return specifically during the specified interval
+   - Return On Custom: Allows custom return period definition
 
-Amplitude offers three distinct methods for calculating retention:
+3. **Usage Interval Analysis**
+   - Measures time between occurrences of a critical event
+   - Shows percentage of active users at specific frequencies (daily, weekly, monthly)
+   - Helps identify natural usage patterns and median frequency
 
-1. **Return On or After** - Counts users who return at any point during or after a specific interval (cumulative)
-2. **Return On** - Counts only users who return specifically during a given interval (non-cumulative)
-3. **Return On Custom** - Allows custom configuration of return periods
+4. **Time Calculation Options**
+   - Rolling 24-hour windows (default)
+   - Strict calendar dates
+   - Different calculations for daily, weekly, and monthly retention
 
-### Time Calculation Options
-
-Two approaches to time calculation affect how retention is measured:
-
-1. **Rolling 24-hour Window** (default) - Starts when a user triggers the starting event
-2. **Strict Calendar Dates** - Follows calendar days based on the project timezone
-
-### Usage Interval Analysis
-
-A specialized analysis that measures the time between occurrences of a critical event, helping teams understand natural usage patterns and set appropriate retention expectations based on product type.
-
-## Product Relationships and Architecture
-
-The Retention Analysis tool is part of Amplitude's broader analytics platform. It integrates with:
-
-- Event tracking system to capture user actions
-- Segmentation capabilities to analyze different user groups
-- Filtering functionality to focus on specific behaviors
-- Visualization components to present retention data
-
-The tool processes event data to calculate retention metrics and presents them through interactive charts and data tables.
+5. **Visualization and Interpretation Tools**
+   - Retention charts
+   - Breakdown tables
+   - Change over time view
+   - Retention brackets
 
 ## Key Nomenclature and Definitions
 
-- **Starting Event**: The initial action that places users in a cohort for retention analysis
-- **Return Event**: The action(s) that indicate a user has returned to the product
-- **Cohort Entry Date**: The date when users first perform the starting event
-- **Usage Interval**: The natural frequency at which users engage with a product (daily, weekly, monthly)
-- **Retention Brackets**: Visual indicators in the retention chart showing retention percentage ranges
-- **Median Frequency**: The middle value in the distribution of time intervals between events
-- **Inflection Point**: A significant change in usage pattern that may indicate optimal engagement frequency
-- **Day Zero Retention**: Retention measured on the same day as the starting event
+- **Starting Event**: The initial action that users perform to be included in a retention cohort.
+- **Return Event**: The action that users must perform to be considered "retained" in subsequent time periods.
+- **Cohort Entry Date**: The date when users first performed the starting event.
+- **Usage Interval**: The time between occurrences of a critical event, showing natural product usage patterns.
+- **Return On or After Retention**: Measures if users return at any point after the specified interval.
+- **Return On Retention**: Measures if users return specifically during the specified interval.
+- **Return On Custom Retention**: Allows custom definition of return periods.
+- **Retention Brackets**: Visual indicators showing retention performance ranges.
+- **Median Frequency**: The middle value in the distribution of time intervals between events.
+- **Inflection Point**: The point at which retention patterns significantly change.
 
-## Building a Retention Analysis Chart
+## Product Ecosystem Integration
 
-To build a Retention Analysis chart in Amplitude:
+Retention Analysis is part of Amplitude's broader analytics platform, working alongside other analytics tools to provide comprehensive user behavior insights. While the documentation doesn't explicitly detail all integrations, it's clear that Retention Analysis:
 
-1. Select the starting event that defines your cohort
-2. Choose the return event(s) that indicate user retention
-3. Set the usage interval (daily, weekly, monthly)
-4. Configure retention type (Return On or After, Return On, Return On Custom)
-5. Apply any segmentation or filtering as needed
-6. Select visualization options (retention view or change over time)
+- Connects with Amplitude's event tracking system to capture user actions
+- Integrates with user segmentation capabilities
+- Works with property filtering to refine analysis
+- Complements other Amplitude analytics tools for a complete view of user behavior
 
-## Interpreting Retention Analysis
+## API and Command Line Usage
 
-The Retention Analysis chart provides:
+The documentation doesn't specifically mention API endpoints or command line invocations for Retention Analysis. The tool appears to be primarily accessed through Amplitude's web interface, where users can:
 
-- A visual heatmap showing retention percentages over time
-- A breakdown table with detailed retention numbers
-- Options to view data as absolute retention or change over time
-- Ability to compare retention across different user segments
-- Insights into natural usage patterns through the Usage Interval view
+1. Build retention charts by selecting starting and return events
+2. Configure measurement methods and time calculations
+3. Apply segments and filters
+4. View and interpret results through the provided visualization tools
 
-## Usage Interval Analysis
-
-To build a usage interval analysis:
-
-1. Select a critical event in the Events Module
-2. Configure the Measured As module to analyze the time between events
-3. Apply segmentation or filtering as needed
-4. Interpret the distribution of time intervals to understand natural usage patterns
-
-The Usage Interval view requires events to occur on at least two different days and shows the percentage of active users who trigger selected events at specific frequencies.
-
-## Time Calculation Methods
-
-The choice between "rolling 24-hour window" and "strict calendar dates" affects how retention is calculated:
-
-- **Rolling 24-hour Window**: Calculates intervals based on exact hours since the starting event
-- **Strict Calendar Dates**: Uses calendar days based on the project timezone
-
-These methods impact daily, weekly, and monthly retention calculations differently, with implications for how retention metrics are interpreted.
+The interface includes modules for Events, Segmentation, and Measurement configuration, allowing users to customize their retention analysis to meet specific analytical needs.

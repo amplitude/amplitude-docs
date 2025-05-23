@@ -5,13 +5,13 @@ Event Explorer is a real-time event stream visualization tool that helps users i
 - real-time event stream
 - event taxonomy
 - instrumentation QA
-- user ID targeting
-- IP address search
+- user flow tracking
 - event properties
-- data verification
+- IP address targeting
+- user ID targeting
+- device ID targeting
 - event selection
-- event triggering
-- Amplitude charts integration
-- device ID
-- user property search
+- data verification
+- Amplitude charts
 - event visualization
+- self-serve taxonomy

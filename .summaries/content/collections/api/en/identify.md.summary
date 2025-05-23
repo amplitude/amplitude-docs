@@ -1,14 +1,17 @@
 ## Summary
-The Identify API allows setting User IDs for Device IDs or updating user properties without sending events, supporting operations like $set, $setOnce, $add, $append, $prepend, $unset, $preInsert, $postInsert, and $remove on user properties, with updates applying only to future events.
+The Identify API allows setting User IDs for Device IDs or updating user properties without sending events, supporting various operations like $set, $setOnce, $add, $append, and $unset, with throttling for requests exceeding thresholds and no impact on active user counts or monthly event quotas.
 
 ## Keywords
-- User ID mapping
-- Device ID association
-- User property operations
-- Non-event updates
-- Request throttling
-- Property modification
-- $set/$setOnce/$add operations
-- Form-data POST requests
-- Enterprise groups feature
-- User property arrays
+- user_properties
+- device_id
+- user_id
+- identification
+- property operations
+- $set
+- $setOnce
+- $add
+- $append
+- throttling
+- non-retroactive updates
+- groups
+- HTTP 429

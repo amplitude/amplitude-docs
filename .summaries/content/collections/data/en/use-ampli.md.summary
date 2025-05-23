@@ -1,5 +1,5 @@
 # Summary
-Ampli is a lightweight wrapper for the Amplitude SDK that dynamically generates code based on your analytics tracking plan in Amplitude Data, providing type-safe event tracking with autocompletion for events and properties, enforcing strict naming conventions to reduce errors during development.
+Ampli is a lightweight wrapper for the Amplitude SDK that dynamically generates code based on your analytics tracking plan in Amplitude Data, providing type-safe event tracking with autocompletion for events and properties, enforcing strict naming conventions to reduce errors during development and compile time.
 
 # Keywords
 - Ampli Wrapper
@@ -11,3 +11,4 @@ Ampli is a lightweight wrapper for the Amplitude SDK that dynamically generates 
 - Amplitude Data
 - error prevention
 - compile-time validation
+- developer tools

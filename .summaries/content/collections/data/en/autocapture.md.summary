@@ -1,5 +1,5 @@
 # Summary
-Amplitude's Autocapture enables automatic data collection on websites and mobile apps with minimal setup, capturing user interactions like clicks, page views, and sessions through the Browser SDK, iOS Swift SDK, and Android-Kotlin SDK. It complements precision tracking by providing standardized event collection while allowing configuration options to optimize event volume and maintain privacy/security controls.
+Amplitude's Autocapture enables automatic event collection on websites and mobile apps with minimal setup, capturing user interactions like clicks, page views, and form interactions through the Browser SDK, iOS Swift SDK, and Android-Kotlin SDK, while offering configuration options to optimize event volume, maintain taxonomy organization, and address privacy/security concerns.
 
 # Keywords
 - Browser SDK
@@ -7,8 +7,12 @@ Amplitude's Autocapture enables automatic data collection on websites and mobile
 - Android-Kotlin SDK
 - Element Clicked events
 - Element Changed events
-- visual labeling
-- event taxonomy
-- privacy controls
+- Visual labeling
+- Precision tracking
+- Event volume optimization
+- Privacy protections
 - cssSelectorAllowlist
 - pageUrlAllowlist
+- Data taxonomy
+- PII filtering
+- Autocapture configuration

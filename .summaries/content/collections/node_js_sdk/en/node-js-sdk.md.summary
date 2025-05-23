@@ -1,17 +1,19 @@
 ## Summary
-The Node.js SDK enables sending events to Amplitude from Node.js applications, supporting features like event tracking, user properties management, revenue tracking, user groups, and custom plugins for extending functionality. It offers batching capabilities, EU data residency options, and customizable logging levels.
+The Node.js SDK enables sending events to Amplitude with features for tracking events, managing user properties, revenue tracking, and user grouping. It supports batching, EU data residency, custom plugins, and provides configuration options for logging, transport, and storage.
 
 ## Keywords
 - Node.js SDK
 - event tracking
-- batch processing
 - user properties
 - Identify API
 - revenue tracking
 - user groups
+- batch processing
 - plugins
 - flush events
-- custom HTTP client
 - EU data residency
-- debugging options
-- multiple project tracking
+- custom HTTP client
+- event buffering
+- TypeScript support
+- group properties
+- opt-out functionality

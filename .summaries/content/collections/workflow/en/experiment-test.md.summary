@@ -5,8 +5,8 @@ This documentation page explains the process of testing and launching experiment
 - experiment testing
 - test instrumentation
 - experiment launch
-- variant assignment
 - QA procedures
+- variant assignment
 - experiment scheduling
 - diagnostics
 - root cause analysis

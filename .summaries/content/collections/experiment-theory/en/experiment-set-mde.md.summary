@@ -12,8 +12,7 @@ This documentation explains how to set the Minimum Detectable Effect (MDE) for e
 - Multi-Armed Bandit
 - Success metrics
 - Guardrail metrics
-- Risk assessment
 - Hypothesis testing
+- Risk assessment
 - Conversion rate
-- Duration estimator
-- T-test
+- Experiment duration

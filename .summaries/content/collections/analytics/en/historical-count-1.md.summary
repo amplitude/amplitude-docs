@@ -1,14 +1,15 @@
 # Summary
-This documentation explains Amplitude's Historical Count feature, which allows tracking user behavior for different instances (up to the 5th) of specific actions, helping identify differences in conversion and retention rates based on how many times users have performed critical actions, with availability across all Amplitude plans and support in Event Segmentation, Funnel Analysis, Pathfinder, and Retention Analysis charts.
+This documentation explains Amplitude's Historical Count feature, which allows tracking user behavior for different instances (up to the 5th) of specific actions, helping identify differences in conversion and retention rates based on how many times users have performed critical actions within a one-year lookback period.
 
 # Keywords
 - Historical Count
 - Nth instance tracking
 - User action frequency
+- Event property filter
 - Conversion rate analysis
-- Event property filtering
-- Time-limited tracking
-- North Star metric
-- Behavioral analysis
+- One-year lookback period
 - Event Segmentation
 - Funnel Analysis
+- Pathfinder
+- Retention Analysis
+- North Star metric

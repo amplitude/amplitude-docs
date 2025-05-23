@@ -7,9 +7,10 @@ This documentation page details the Experiment Management API endpoints for mana
 - variant management
 - user inclusions
 - experiment deployments
-- experiment versions
+- experiment versioning
+- targeting segments
 - bucketing configuration
-- target segments
 - experiment rollout
+- experiment variants
 - experiment creation
-- variant payload
+- experiment editing

@@ -1,12 +1,14 @@
 # Summary
-This documentation explains how to set up Single Sign-On (SSO) integration between Amplitude and OneLogin for Scholarship, Growth, and Enterprise plan customers, detailing the step-by-step configuration process including adding the Amplitude SAML 2.0 app in OneLogin, configuring organization ID, downloading SAML metadata, and uploading it to Amplitude.
+This documentation explains how to set up Single Sign-On (SSO) integration between OneLogin and Amplitude for Scholarship, Growth, and Enterprise plan customers, detailing the step-by-step process of configuring the SAML 2.0 application in OneLogin and uploading the metadata file to Amplitude.
 
 # Keywords
 - OneLogin SSO integration
+- Amplitude organization admin
 - SAML 2.0 configuration
 - Organization ID
-- SAML metadata file
-- Amplitude SSO setup
-- Identity Provider configuration
+- Metadata file upload
+- SSO setup process
 - Enterprise authentication
-- Access and SSO settings
+- Identity Provider configuration
+- ACS URL
+- SAML metadata

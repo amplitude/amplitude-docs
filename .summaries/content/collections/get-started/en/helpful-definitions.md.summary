@@ -1,10 +1,9 @@
 ## Summary
-This documentation page provides a comprehensive glossary of key Amplitude analytics terms, including user identification concepts (Amplitude ID, Device ID, User ID), event tracking terminology, session definitions, and metrics like retention and stickiness that are essential for understanding Amplitude's analytics platform.
+This documentation page provides a comprehensive glossary of key Amplitude analytics terms, defining concepts like active users, event properties, user IDs, cohorts, sessions, and retention metrics that are essential for understanding Amplitude's analytics platform functionality.
 
 ## Keywords
 - Amplitude ID
 - Device ID
-- User ID
 - Event properties
 - User properties
 - Behavioral cohort
@@ -12,7 +11,6 @@ This documentation page provides a comprehensive glossary of key Amplitude analy
 - Session
 - Retention
 - Stickiness
-- Active user
+- Unique user
 - Inactive event
 - Funnel analysis
-- Unique user identification

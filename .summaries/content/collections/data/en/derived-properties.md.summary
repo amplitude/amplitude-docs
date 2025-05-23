@@ -4,16 +4,15 @@ This documentation page explains Amplitude Data's derived properties feature, wh
 ## Keywords
 - derived properties
 - property formulas
-- retroactive property creation
+- Enterprise plan feature
 - string functions
 - math operators
 - conditional operators
-- parallel operators
 - array functions
 - date/time functions
-- property transformation
-- Enterprise plan feature
 - REGEXEXTRACT
-- SPLIT
 - PARALLEL_PRODUCT
+- property transformation
+- retroactive property creation
+- formula preview
 - cart analysis

@@ -6,11 +6,11 @@ This documentation explains how to deploy recommendation models in personalizati
 - recommendation deployment
 - is_control parameter
 - recommendation performance
-- statistical significance
 - API authentication
 - Secret Key
 - recommendation_source
+- statistical significance
 - treatment vs control segments
 - personalization campaigns
 - recommendation items array
-- performance analysis
+- performance metrics

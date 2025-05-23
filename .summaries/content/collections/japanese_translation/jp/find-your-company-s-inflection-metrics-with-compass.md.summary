@@ -1,5 +1,5 @@
 ## Summary
-This documentation explains how to use Amplitude Compass to identify inflection metrics - key behavioral thresholds that predict user retention or conversion. It details how to interpret Compass metrics including threshold-exceeding ratios, positive predictive value (PPV), sensitivity, negative predictive value (NPV), and specificity to find the optimal balance for identifying meaningful user behavior patterns.
+This documentation explains how to use Amplitude Compass to identify inflection metrics - key behavioral thresholds that predict user retention or conversion. It details how to interpret Compass metrics including threshold-exceeding ratios, positive predictive value (PPV), sensitivity, negative predictive value (NPV), and specificity to find the optimal balance for identifying meaningful inflection points.
 
 ## Keywords
 - Compass
@@ -12,7 +12,7 @@ This documentation explains how to use Amplitude Compass to identify inflection 
 - specificity
 - contingency matrix
 - correlation coefficient
-- base cohort
-- target cohort
+- performance window
 - true positive
 - true negative
+- Japanese translation

@@ -6,9 +6,9 @@ This documentation page explains how Amplitude Analytics customers can use Exper
 - A/B testing
 - exposure events
 - metric types (unique conversions, event totals, sum/average of property values, funnel conversion, formula, retention)
-- statistical significance
+- statistical settings
 - sequential testing
-- variant analysis
 - confidence interval
 - cumulative exposure
-- non-Amplitude feature flagging
+- performance by variant
+- mean over time

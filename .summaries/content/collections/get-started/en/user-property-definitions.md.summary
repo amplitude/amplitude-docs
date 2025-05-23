@@ -1,5 +1,5 @@
 # Summary
-This documentation page details the default user properties automatically tracked by Amplitude's client-side SDKs, including location properties derived from IP addresses using MaxMind. It explains how these properties are defined, their value formats, and notes that server-side implementations must set these properties explicitly.
+This documentation page details the default user properties automatically tracked by Amplitude's client-side SDKs, including location properties derived from IP addresses using MaxMind database. It explains how these properties are defined, their value formats, and notes that server-side implementations must set these properties explicitly.
 
 # Keywords
 - automatic user properties

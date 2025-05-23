@@ -9,6 +9,6 @@ This documentation details the Google Analytics 4 (iOS/Android) streaming integr
 - Event streaming
 - User property mapping
 - Mobile analytics
+- Firebase integration
 - Non-personalized ads
 - GA4 parameters
-- Firebase integration

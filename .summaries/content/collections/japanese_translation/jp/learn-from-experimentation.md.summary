@@ -1,5 +1,5 @@
 ## Summary
-This documentation page explains how to analyze experiment results in Amplitude Experiment, including how to interpret statistical significance, understand metrics across variants, and make decisions based on experiment outcomes. It covers the Analysis panel features, statistical calculations, and how to interpret various result badges.
+This documentation page explains how to analyze experiment results in Amplitude Experiment, including how to interpret statistical significance, understand metrics across variants, and make decisions based on experiment outcomes using the Analysis panel's features and visualizations.
 
 ## Keywords
 - statistical significance
@@ -7,12 +7,9 @@ This documentation page explains how to analyze experiment results in Amplitude 
 - p-value
 - confidence level
 - exposure definition
+- experiment variants
 - sequential test
 - t-test
-- experiment variants
-- result badges
+- experiment metrics
 - cumulative exposures graph
-- binary metrics
-- non-binary metrics
-- experiment rollout
 - experiment rollback

@@ -6,10 +6,9 @@ This documentation page explains how to build a Retention Analysis chart in Ampl
 - Starting event
 - Return event
 - Usage interval
-- User segmentation
-- Event filtering
-- Retention metrics
+- Event segmentation
+- User segments
 - Triggering events
-- Chart configuration
 - Breakdown table
-- Event properties
+- Property filtering
+- Retention measurement

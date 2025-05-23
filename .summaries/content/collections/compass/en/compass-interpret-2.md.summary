@@ -1,14 +1,14 @@
-## Summary
-This documentation explains how Compass uses correlation to identify predictive user behaviors, with values ranging from -1 to 1 and categorized from "Not Predictive" to "Highly Predictive," and demonstrates how to create cohorts from Compass results to compare retention metrics with detailed statistics.
+# Summary
+This documentation explains correlation in Compass charts, detailing how correlation scores (-1 to 1) measure relationships between user events and retention, and demonstrates how to create cohorts from Compass results to compare retention rates with automatic contingency tables and detailed statistics.
 
-## Keywords
+# Keywords
 - correlation coefficients
-- predictive metrics
+- predictive thresholds
 - cohort creation
-- contingency table
+- contingency tables
 - positive predictive value (PPV)
 - negative predictive value (NPV)
 - retention analysis
 - statistical variables
-- true/false positives/negatives
-- user behavior thresholds
+- user behavior metrics
+- inflection points

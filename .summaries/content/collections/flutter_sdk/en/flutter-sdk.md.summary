@@ -1,5 +1,5 @@
 ## Summary
-This documentation page describes the Amplitude Analytics Flutter SDK 3, which is in maintenance mode. It covers installation, initialization, configuration, event tracking, user properties, user groups, revenue tracking, sessions, and advanced features like COPPA control and dynamic configuration. The page notes that Flutter SDK 4.0 is now available and recommended for new implementations.
+This documentation page covers the Amplitude Analytics Flutter SDK 3, which is in maintenance mode. It details installation, initialization, configuration options, event tracking, user properties management, user groups, revenue tracking, session handling, and advanced features like COPPA control and dynamic configuration. The page notes that Flutter SDK 4.0 is now available and recommended.
 
 ## Keywords
 - Flutter SDK 3
@@ -12,7 +12,8 @@ This documentation page describes the Amplitude Analytics Flutter SDK 3, which i
 - session management
 - COPPA control
 - dynamic configuration
-- EU data residency
 - Flutter web support
+- device ID
+- user ID
 - maintenance mode
 - Gradle compatibility

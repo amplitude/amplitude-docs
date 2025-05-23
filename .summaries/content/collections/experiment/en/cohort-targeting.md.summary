@@ -10,7 +10,8 @@ This documentation explains cohort targeting in Amplitude Experiment, detailing 
 - server-side SDKs
 - dynamic cohorts
 - hourly sync
-- propagation delay
-- SDK support matrix
+- user ID requirement
+- SDK initialization
 - CohortSyncConfig
-- troubleshooting
+- targeting delay
+- Experiment Local Evaluation destination

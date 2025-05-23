@@ -1,15 +1,14 @@
 # Summary
-The User Mapping (Aliasing) API enables mapping different user IDs across projects to a global user ID, allowing for accurate cross-project user counting while maintaining separate user properties for each original ID and providing functionality to map, unmap, and retrieve existing user mappings.
+The User Mapping (Aliasing) API enables mapping different user IDs across projects to a global user ID, allowing accurate cross-project user counting while maintaining separate user properties for each original ID, with specific batch limits (2000 requests/batch, 1MB max) and rate limits (50 events/second).
 
 # Keywords
-- user_id
-- global_user_id
-- cross-project view
 - user mapping
-- aliasing
-- unmap
+- aliasing API
+- global user ID
+- cross-project view
+- user remapping
+- user unmapping
 - batch limits
 - rate limits
-- Portfolio add-on
-- user properties
-- mapping retrieval
+- portfolio add-on
+- user property persistence

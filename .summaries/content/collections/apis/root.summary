@@ -1,67 +1,70 @@
 # Amplitude Product Suite
 
 ## Overview
-Amplitude is a comprehensive analytics and experimentation platform designed to help organizations collect, analyze, and act on user behavior data. The platform enables data-driven decision making by providing insights into how users interact with applications and websites, allowing teams to improve product experiences through experimentation and user feedback.
 
-## Product Ecosystem
+Amplitude is a comprehensive analytics and experimentation platform designed to help organizations collect, analyze, and act on user behavior data to improve product experiences. The platform consists of several interconnected products that work together to provide a complete solution for understanding user behavior and optimizing digital products.
 
-### Core Products
-1. **Amplitude Analytics** - The foundation of the platform that tracks and analyzes user behavior data
-2. **Amplitude Experiment** - A feature experimentation platform for testing variations and measuring impact
-3. **Amplitude Guides and Surveys** - Tools for in-product guidance and user feedback collection
+## Product Relationships and Architecture
 
-These products form an integrated ecosystem with a closed feedback loop:
-- Analytics collects and processes behavioral data
-- Experiment uses this data to test hypotheses
-- Guides and Surveys engage users and collect qualitative feedback
+The Amplitude platform consists of three core products that work together in an integrated ecosystem:
 
-## API Structure
+1. **Amplitude Analytics** - The foundation of the platform that collects and processes user behavior data
+2. **Amplitude Experiment** - Leverages Analytics data to test hypotheses and measure impact through feature experimentation
+3. **Amplitude Guides and Surveys** - Provides mechanisms to engage users and collect qualitative feedback
 
-Amplitude organizes its APIs into three main categories:
-
-### 1. Analytics APIs
-For sending and retrieving analytics data about user behavior
-
-### 2. Experiment APIs
-For managing and evaluating feature experiments
-
-### 3. Guides and Surveys APIs
-For creating and managing in-product guides and collecting user feedback
-
-## Authentication System
-
-Amplitude implements a multi-tiered authentication system with different credentials for specific purposes:
-
-### Analytics Authentication
-- **API Key**: Project-specific public identifier for client-side implementations
-- **Secret Key**: Private key for secure server-side implementations
-
-### Experiment Authentication
-- **Deployment Keys**: Used to fetch experiment configurations
-- **Management API Key**: Used for programmatic experiment management
-
-### Data Authentication
-- **API Token**: Required for accessing Amplitude Data APIs
-
-### Additional Authentication Methods
-- **SCIM Key**: For user provisioning integrations
-- **Organization-level Keys**: For organization-wide operations
+Data flows between these products, creating a comprehensive system where:
+- User behavior data is collected in Analytics
+- This data informs experiment design in Experiment
+- Results from experiments can trigger targeted messaging through Guides
+- Qualitative feedback from Surveys complements quantitative Analytics data
 
 ## Key Nomenclature and Definitions
 
-- **API Key**: Public project identifier that can be safely exposed in client-side code
-- **Secret Key**: Private authentication credential that must never be exposed publicly
-- **Deployment Key**: Authentication credential for retrieving experiment configurations
-- **Management API Key**: Authentication credential for programmatic experiment management
-- **API Token**: Authentication token specifically for Data APIs
-- **SCIM Key**: Authentication credential for automated user provisioning
+- **Project**: A container for related data, typically corresponding to a single product or application
+- **Organization**: A top-level entity that can contain multiple projects
+- **API Key**: Public identifier for a specific project, used for client-side implementations
+- **Secret Key**: Private authentication credential for secure server-side operations
+- **Deployment Key**: Credential used specifically for Experiment feature flag retrieval
+- **Management API Key**: Credential for programmatic management of experiments
+- **API Token**: Used for accessing Amplitude Data APIs
+- **SCIM Key**: For user provisioning integrations
+- **Organization-level Keys**: For organization-wide operations
 
-The platform distinguishes between:
-- **Public keys**: Safe for client-side use (API Keys, Deployment Keys)
-- **Private keys**: For server-side use only (Secret Keys, Management API Keys)
+## Authentication and Security Framework
 
-Each key type has different security implications and rotation capabilities.
+Amplitude implements a multi-tiered authentication system across its product suite:
 
-## Access Management
+### Analytics Authentication
+- **API Key**: Used for client-side implementations
+- **Secret Key**: Used for server-side implementations and sensitive operations
 
-Authentication credentials can be accessed through the Organization Settings in the Amplitude Analytics web application. Users require Manager role permissions to access these credentials.
+### Experiment Authentication
+- **Deployment Keys**: For fetching experiment configurations
+- **Management API Key**: For managing experiments programmatically
+
+### Data Authentication
+- **API Token**: For accessing Amplitude Data APIs
+
+Authentication credentials can be accessed through the Organization Settings in the Amplitude Analytics web app, with Manager role permissions required to view and manage these credentials.
+
+## API Structure
+
+Amplitude's API architecture is organized into three main categories:
+
+1. **Analytics APIs**: For sending and retrieving analytics data
+2. **Experiment APIs**: For managing and evaluating experiments
+3. **Guides and Surveys APIs**: For programmatically creating and managing in-product guides and surveys
+
+Each API category has specific endpoints with dedicated authentication requirements, typically using the keys and tokens mentioned in the authentication framework.
+
+## Product Ecosystem Integration
+
+The Amplitude platform is designed as a cohesive ecosystem where:
+
+- Analytics serves as the data foundation for all other products
+- Experiment uses Analytics data to measure the impact of feature tests
+- Guides and Surveys complement quantitative data with qualitative user feedback
+- Authentication mechanisms are shared across products while maintaining appropriate security boundaries
+- Data flows between products to enable a comprehensive understanding of user behavior
+
+This integrated approach allows organizations to move from data collection to insight generation to action in a seamless workflow, all within the Amplitude ecosystem.

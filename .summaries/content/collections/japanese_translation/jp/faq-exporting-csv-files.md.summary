@@ -1,7 +1,7 @@
-## Summary
+### Summary
 This documentation page addresses frequently asked questions about exporting CSV files from Amplitude, including how CSV structure is determined, limitations on property values displayed, differences between chart and CSV data, and how to remove leading spaces from exported files.
 
-## Keywords
+### Keywords
 - CSV export
 - Event Segmentation chart
 - property value limitations
@@ -9,6 +9,6 @@ This documentation page addresses frequently asked questions about exporting CSV
 - user property differences
 - Microscope download
 - export structure
+- CSV formatting
 - site settings configuration
-- CSV data format
-- property value discrepancies
+- data representation discrepancies

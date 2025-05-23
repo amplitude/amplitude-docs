@@ -1,14 +1,14 @@
 ## Summary
-This documentation page details how to send Amplitude cohorts to Google Ads for creating targeted audience segments, including setup requirements, three upload key types (Contact Info, Mobile Advertising ID, and CRM ID), and the step-by-step process for syncing cohorts with considerations for processing time and privacy thresholds.
+This documentation page details how to send Amplitude cohorts to Google Ads for creating targeted audience segments, including setup requirements, three upload key types (Contact Info, Mobile Advertising ID, and CRM ID), and the step-by-step process for syncing cohorts with considerations for processing time and privacy requirements.
 
 ## Keywords
 - Google Ads cohort sync
 - Amplitude behavioral cohorts
-- Upload key types
-- Mobile Advertising ID
-- CRM ID matching
+- upload key types
 - Contact Info matching
-- Audience targeting
-- User property mapping
-- SHA-256 hashing
-- Sync frequency
+- Mobile Advertising ID
+- CRM ID integration
+- audience targeting
+- PII hashing
+- sync frequency
+- audience manager

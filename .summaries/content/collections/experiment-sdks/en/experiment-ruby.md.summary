@@ -11,5 +11,6 @@ The Amplitude Experiment Ruby SDK provides both remote and local evaluation capa
 - Variant fetching
 - User properties
 - Amplitude cookies
-- Server deployment key
+- Server-side evaluation
+- Deployment key
 - Flag configuration polling

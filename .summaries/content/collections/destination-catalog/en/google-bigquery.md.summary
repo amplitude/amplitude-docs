@@ -1,5 +1,5 @@
 ## Summary
-This documentation page details the process of setting up and configuring Google BigQuery as a destination for Amplitude event data, including prerequisites (service account setup with specific permissions), implementation steps, table schemas for events and merged users, and considerations like partitioning and deduplication functions to handle duplicate exports.
+This documentation page details the process of setting up and configuring Google BigQuery as a destination for Amplitude event data, including prerequisites, connection setup steps, table schemas for events and merged users, and considerations for data partitioning, integrity checks, and deduplication.
 
 ## Keywords
 - Google BigQuery integration
@@ -7,8 +7,8 @@ This documentation page details the process of setting up and configuring Google
 - service account permissions
 - event table schema
 - merged user table schema
+- data partitioning
 - deduplication function
-- partitioned tables
-- recurring data sync
-- BigQuery destination configuration
-- event export filtering
+- recurring data export
+- BigQuery Transfer service
+- event integrity check

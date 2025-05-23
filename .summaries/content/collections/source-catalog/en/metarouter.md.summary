@@ -9,6 +9,7 @@ This documentation page describes the MetaRouter integration with Amplitude, whi
 - API key
 - event parameters
 - global configs
+- page calls
+- identify events
+- e-commerce events
 - default parameters
-- data governance
-- event mapping

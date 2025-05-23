@@ -1,5 +1,5 @@
 ## Summary
-Amplitude Activation is a self-serve personalization platform that enables 1:1 personalization through segmentation (cohorts and computations), personalization (predictions and recommendations), and delivery mechanisms (syncs and APIs) to drive 15-30% lift in conversions without requiring data scientists or engineers.
+Amplitude Activation is a self-serve personalization platform that enables 1:1 personalization through segmentation (cohorts and computations), personalization (predictions and recommendations), and delivery mechanisms (APIs and syncs) to drive 15-30% lift in conversions without requiring data scientists or engineers.
 
 ## Keywords
 - Behavioral cohorts
@@ -14,6 +14,6 @@ Amplitude Activation is a self-serve personalization platform that enables 1:1 p
 - Automated syncs
 - On-demand syncs
 - User segmentation
-- Conversion lift
+- Activation Growth
+- Activation Enterprise
 - AutoML
-- Third-party destinations

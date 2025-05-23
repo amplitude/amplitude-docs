@@ -1,5 +1,5 @@
 ## Summary
-This documentation explains the impact of iOS 14's IDFA opt-in requirement on Amplitude tracking, clarifying that Amplitude uses IDFV by default, and detailing implications for logged-in users, anonymous users, attribution events, and outbound integrations when IDFA is unavailable.
+This documentation explains the impact of iOS 14's IDFA opt-in requirement on Amplitude tracking, noting that Amplitude uses IDFV by default, and detailing implications for logged-in users, anonymous users, attribution events, and outbound integrations when IDFA is used as a device identifier.
 
 ## Keywords
 - iOS 14 IDFA changes
@@ -8,7 +8,7 @@ This documentation explains the impact of iOS 14's IDFA opt-in requirement on Am
 - Anonymous user tracking
 - Attribution events
 - Device identifier
-- App reinstallation
 - Outbound integrations
+- App reinstallation
 - Match rate
 - WWDC 2020

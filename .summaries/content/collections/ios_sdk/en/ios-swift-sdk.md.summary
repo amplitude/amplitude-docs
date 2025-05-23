@@ -7,13 +7,13 @@ The iOS Swift SDK documentation provides comprehensive guidance on implementing 
 - Event tracking
 - Autocapture
 - User identification
-- Session tracking
-- Network tracking
-- Element interactions
+- Session management
 - Group identify
 - Revenue tracking
-- Offline mode
+- Plugins
+- Network tracking
+- Element interactions
 - Privacy manifest
-- Custom storage
-- Plugin system
-- Remote configuration
+- Offline mode
+- COPPA control
+- Device ID

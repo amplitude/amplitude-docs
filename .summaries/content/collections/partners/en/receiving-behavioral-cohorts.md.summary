@@ -12,6 +12,5 @@ This documentation details how Amplitude syncs behavioral cohorts to partner pla
 - cohort membership
 - user properties
 - API endpoints
-- sync scheduling
 - retry mechanism
-- testing payloads
+- sync scheduling

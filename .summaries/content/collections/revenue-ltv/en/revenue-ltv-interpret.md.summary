@@ -8,7 +8,7 @@ This documentation explains how to interpret Revenue LTV charts in Amplitude, wh
 - ARPU (Average Revenue Per User)
 - ARPPU (Average Revenue Per Paying User)
 - Cumulative revenue
-- Daily frequency breakdown
-- User acquisition timeframe
-- Data point calculation
+- Day Zero calculation
 - Breakdown table
+- Timeframe considerations
+- Data point interpretation

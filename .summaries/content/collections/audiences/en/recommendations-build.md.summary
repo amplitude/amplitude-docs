@@ -2,16 +2,13 @@
 This documentation page explains how to create and interpret recommendations in Amplitude Activation, covering three types (AI Based, Top Trending, Most Popular) and detailing the step-by-step process for building each type, configuring parameters, and understanding performance metrics like confidence score and lift against baseline.
 
 ## Keywords
-- Amplitude Activation
-- recommendation types (AI Based, Top Trending, Most Popular)
-- personalization campaigns
-- item catalog
-- exposure event
-- outcome event
-- confidence score
-- static list
-- control group
-- conversion rate
+- Amplitude Activation recommendations
+- AI Based recommendation
+- Top Trending recommendation
+- Most Popular recommendation
+- recommendation confidence score
+- item catalog configuration
 - recommendation performance metrics
-- cohort selection
-- event property selection
+- personalization campaigns
+- static list recommendations
+- recommendation control group

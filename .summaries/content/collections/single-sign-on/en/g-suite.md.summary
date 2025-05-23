@@ -3,12 +3,12 @@ This documentation page provides step-by-step instructions for setting up single
 
 # Keywords
 - G Suite SSO integration
-- SAML configuration
+- SAML app configuration
 - IDP metadata
 - ACS URL
 - Entity ID
-- G Suite admin console
 - Just-in-time (JIT) provisioning
 - Amplitude organizational settings
-- SAML app setup
+- G Suite admin console
+- SAML authentication
 - Enterprise authentication

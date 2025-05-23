@@ -5,11 +5,10 @@ This documentation page describes the Sprig ingestion integration with Amplitude
 - Sprig integration
 - survey data ingestion
 - qualitative feedback
-- user insights
+- product development research
 - CSAT surveys
 - NPS surveys
-- product development research
+- user insights
 - user identification matching
-- raw events integration
-- Sprig Identity ID
-- Amplitude user_id
+- Amplitude API key
+- in-product surveys

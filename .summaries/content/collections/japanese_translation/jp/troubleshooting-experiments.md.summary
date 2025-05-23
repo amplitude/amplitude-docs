@@ -1,14 +1,14 @@
 # Summary
-This documentation page provides troubleshooting guidance for Amplitude Experiment, covering common issues like device/user ID mismatches, flag deployment problems, variant naming restrictions, event assignment confusion, targeting limitations, and variant visibility issues. It explains technical causes for problems such as delayed property updates, platform mismatches, and situations where allocation events trigger without other analytics events.
+This documentation page provides troubleshooting guidance for Amplitude Experiment issues, covering common problems like device/user ID mismatches, flag deployment requirements, variant naming restrictions, event assignment concepts, targeting limitations, and variant visibility issues. It explains technical causes for unexpected behaviors and offers specific solutions for resolving them without contacting support.
 
 # Keywords
 - Amplitude Experiment troubleshooting
-- variant assignment issues
+- variant assignment
+- exposure events
 - device ID synchronization
-- flag deployment activation
-- allocation vs exposure events
-- targeting delay limitations
-- CDN caching effects
+- flag deployment
+- targeting limitations
+- CDN caching delays
 - ad blocker interference
 - variant jumping
-- platform value mismatches
+- platform-specific experiments

@@ -13,4 +13,4 @@ The Amplitude Analytics Java SDK documentation details how to install, initializ
 - AmplitudeCallbacks
 - Event flushing
 - Thread timeout
-- Custom headers
+- Custom logger

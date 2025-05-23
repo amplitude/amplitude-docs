@@ -9,10 +9,11 @@ This documentation page covers the React Native SDK for Amplitude, detailing how
 - Identify API
 - Group properties
 - Plugins
-- Batch event processing
+- Batch processing
 - EU data residency
 - Device ID management
-- Advertising identifiers (ADID, AppSetId, IDFV)
+- Advertising identifiers
 - Async storage
+- Event flushing
 - Optional tracking
-- Event enrichment
+- TypeScript support

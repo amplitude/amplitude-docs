@@ -10,6 +10,6 @@ This documentation page provides a comprehensive guide for integrating Amplitude
 - identify method
 - EU data residency
 - platform-specific implementation
-- TypeScript/JavaScript/Kotlin/Swift/Java/Python/Dart/Go/C# support
+- TypeScript/JavaScript/Kotlin/Swift/Java/Python/Dart/Go/C#
 - Ampli SDK
 - event properties

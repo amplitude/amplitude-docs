@@ -10,5 +10,5 @@ This documentation covers the legacy Experiment React Native SDK, which is in ma
 - variant access
 - ExperimentUser
 - remote evaluation
-- fallbackVariant
 - exposure events
+- React Native compatibility

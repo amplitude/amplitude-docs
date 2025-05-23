@@ -1,5 +1,5 @@
 ## Summary
-This documentation page covers the Amplitude Analytics React Native SDK, detailing installation, initialization, configuration options, event tracking, user properties management, revenue tracking, session handling, and advanced features like COPPA control and dynamic configuration, with specific compatibility requirements for different React Native versions.
+This documentation page covers the Amplitude Analytics React Native SDK, detailing installation, initialization, configuration options, event tracking, user properties management, revenue tracking, session handling, and advanced features like COPPA control and dynamic configuration, with compatibility information for different React Native versions.
 
 ## Keywords
 - React Native SDK
@@ -11,10 +11,6 @@ This documentation page covers the Amplitude Analytics React Native SDK, detaili
 - session management
 - COPPA control
 - dynamic configuration
+- compatibility matrix
 - batch event uploading
 - EU data residency
-- compatibility matrix
-- SDK initialization
-- setServerZone
-- logEvent
-- groupIdentify

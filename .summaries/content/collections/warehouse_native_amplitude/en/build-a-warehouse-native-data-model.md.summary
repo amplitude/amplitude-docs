@@ -1,5 +1,5 @@
 # Summary
-This documentation explains how to build a warehouse-native data model in Amplitude, detailing supported data types (events, user properties, group properties), modeling approaches, and the step-by-step process for creating data models by connecting to Snowflake tables or using SQL queries, with recommendations for optimizing performance.
+This documentation explains how to build a warehouse-native data model in Amplitude, detailing supported data types (events, user properties, group properties), modeling approaches (one event per table vs. many events in a single table), and the step-by-step process for creating a data model by connecting to Snowflake tables or using SQL queries.
 
 # Keywords
 - warehouse-native data model
@@ -11,6 +11,6 @@ This documentation explains how to build a warehouse-native data model in Amplit
 - Snowflake integration
 - identity spaces
 - SQL Query
+- Table Selection
 - data structure recommendations
 - model mapping
-- table selection

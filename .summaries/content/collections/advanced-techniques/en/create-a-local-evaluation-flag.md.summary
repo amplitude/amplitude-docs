@@ -11,3 +11,4 @@ This documentation page explains how to create a local evaluation flag in Amplit
 - targeting rules
 - server-side deployment
 - local evaluation SDK
+- flag activation

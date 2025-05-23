@@ -6,9 +6,9 @@ This documentation page describes the integration between Taplytics (a mobile A/
 - mobile A/B testing
 - experiment data synchronization
 - TL_experiments event
+- Attribution API endpoint
 - experiment-variation properties
 - cross-platform testing
-- Attribution API endpoint
 - Android SDK integration
 - iOS SDK integration
 - real-time user data sharing

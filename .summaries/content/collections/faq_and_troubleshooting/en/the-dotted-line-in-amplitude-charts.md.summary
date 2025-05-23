@@ -1,12 +1,14 @@
 ## Summary
-This documentation explains the dotted line in Amplitude charts, which indicates that Amplitude is still receiving events for that data point, and will become solid once all relevant data is collected. It demonstrates this concept using a retention chart example showing how 24-hour windows affect data completeness.
+This documentation explains the dotted line in Amplitude charts, which indicates that Amplitude is still receiving events for that data point, and will become solid once all relevant data is collected. It details how retention metrics are calculated in 24-hour windows relative to a user's first event.
 
 ## Keywords
-- dotted line
-- incomplete data
+- dotted line visualization
+- incomplete data indicator
 - 24-hour-windows
-- retention chart
-- data collection
+- retention period calculation
+- data collection status
+- chart visualization elements
+- retention metrics
 - Change Over Time metric
-- data point visualization
-- real-time data processing
+- event processing status
+- data point finalization

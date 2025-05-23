@@ -1,77 +1,106 @@
-# Amplitude Destination Catalog
+# Amplitude Destination Catalog: Integration Ecosystem
 
-## High-Level Overview
+## Product Overview
 
-Amplitude's Destination Catalog is an integration hub that connects Amplitude analytics data with third-party platforms. It enables organizations to activate their product analytics data through three primary integration types:
+The Amplitude Destination Catalog is a comprehensive integration hub that enables businesses to activate their product analytics data across various platforms including marketing, customer engagement, advertising, data warehousing, and product experience tools. The catalog provides two primary integration methods:
 
-1. **Event Streaming** - Real-time forwarding of Amplitude events to destination platforms
-2. **Cohort Syncing** - Exporting behavioral user segments to target platforms
-3. **Data Export** - Transferring raw event data and user information to data warehouses and storage solutions
+1. **Event Streaming** - Real-time forwarding of Amplitude events and user data to third-party platforms
+2. **Cohort Syncing** - Export of behavioral user segments from Amplitude to destination platforms
 
-These integrations create a unified data ecosystem where Amplitude's behavioral insights can trigger actions across a company's tech stack, from personalized marketing campaigns to targeted product experiences.
+These integrations allow organizations to operationalize their product analytics data and create personalized customer experiences without extensive engineering resources.
 
 ## Product Relationships and Features
 
-The Destination Catalog is a core component of Amplitude's data activation strategy, connecting analytics capabilities with execution tools across several categories:
+### Data Activation Methods
 
-### Integration Types
-- **Marketing & Advertising Platforms**: Facebook Ads, Google Ads, TikTok Ads, Snapchat
-- **Customer Engagement Tools**: Braze, Intercom, Customer.io, CleverTap
-- **Product Experience Platforms**: Appcues, CommandBar, Candu, Userflow
-- **Data Warehouses & Storage**: Amazon Redshift, Snowflake, Google BigQuery, cloud storage (S3, Azure Blob, GCS)
-- **Feature Management & Experimentation**: LaunchDarkly, Split, Statsig, Optimizely
+The Destination Catalog offers multiple ways to activate data:
 
-### Key Features
-- **Flexible Authentication Methods**: API keys, OAuth, service accounts
-- **User Identity Mapping**: Maps Amplitude user IDs to destination platform identifiers
-- **Event Filtering**: Selectively forwards events to destination platforms
-- **Property Mapping**: Maps Amplitude event/user properties to destination-specific fields
-- **Sync Cadence Options**: Real-time, hourly, daily, and manual sync frequencies
-- **Custom Payload Formatting**: FreeMarker templating for webhook destinations
-- **Historical Data Export**: Backfill capabilities for data warehouse destinations
+- **Real-time Event Streaming**: Forwards events as they occur to trigger immediate actions
+- **Scheduled Cohort Syncs**: Exports user segments on recurring schedules (daily, hourly)
+- **Real-time Cohort Updates**: Maintains continuously updated user segments
+- **One-time Exports**: Enables manual exports of cohorts or historical data
+
+### Integration Categories
+
+The catalog organizes destinations into functional categories:
+
+1. **Marketing & Engagement Platforms**: Braze, Intercom, HubSpot, Customer.io, Iterable
+2. **Advertising Networks**: Facebook Ads, Google Ads, TikTok Ads, Snapchat
+3. **Data Warehouses**: Snowflake, BigQuery, Redshift, Azure Blob Storage
+4. **Product Experience Tools**: Appcues, CommandBar, Candu, Userflow
+5. **Customer Feedback Systems**: Blitzllama, Enterpret, unitQ
+6. **Feature Management**: LaunchDarkly, Split, Statsig
+
+### Configuration Options
+
+Each integration offers customizable settings:
+
+- **User Identity Mapping**: Matches users across systems using various identifiers
+- **Property Selection**: Controls which event/user properties to forward
+- **Event Filtering**: Allows selective streaming of specific events
+- **Custom Transformations**: Formats data using templates (especially in Webhooks)
+- **Authentication Methods**: Supports API keys, OAuth, service accounts, etc.
 
 ## Key Nomenclature and Definitions
 
-- **Cohort**: A group of users defined by specific behaviors or characteristics
-- **Event Streaming**: Real-time forwarding of user events to destination platforms
-- **Identify Forwarding**: Sending user profile updates when properties change
-- **User Property**: Attributes associated with users that can be mapped to destinations
-- **Event Property**: Attributes associated with events that can be mapped to destinations
-- **Sync Cadence**: Frequency of cohort membership updates to destinations
-- **API Key/Secret**: Authentication credentials for destination connections
-- **User ID Mapping**: Matching user identifiers between Amplitude and destinations
-- **Backfill**: Exporting historical data to a destination platform
-- **Webhook**: Custom HTTP endpoint receiving event and user data from Amplitude
+- **Cohort**: A group of users defined by specific behaviors or attributes in Amplitude
+- **Destination**: A third-party platform that receives data from Amplitude
+- **Event Stream**: Real-time flow of user interactions and properties
+- **Sync Cadence**: Frequency of data synchronization (real-time, hourly, daily)
+- **User Property Mapping**: Configuration that matches user identifiers between systems
+- **API Key/Secret**: Authentication credentials required for secure data transfer
+- **Webhook**: Custom HTTP endpoint that receives formatted data payloads
+- **OAuth**: Authentication protocol used by some destinations for secure access
+- **Service Account**: Identity used for server-to-server authentication
+- **Identify Forwarding**: Sending user profile updates to destinations
 
 ## Product Ecosystem Integration
 
-The Destination Catalog is part of Amplitude's broader ecosystem:
+The Destination Catalog functions as a central hub in the customer data ecosystem with three key layers:
 
-- **Amplitude Analytics**: Core platform collecting and analyzing user behavior data
-- **Amplitude Data**: Data management layer processing data for activation
-- **Amplitude Activation**: Component enabling action on insights through integrations
-- **Amplitude CDP**: Unified profile system connecting user data across touchpoints
+1. **Data Collection Layer**: Amplitude SDKs and APIs collect user behavior data
+2. **Analytics Layer**: Amplitude processes and analyzes this data
+3. **Activation Layer**: Destination Catalog enables taking action on insights
 
-The Destination Catalog sits within Amplitude Activation, bridging behavioral insights and action. It closes the loop between understanding user behavior and taking targeted actions to improve engagement, conversion, and retention.
+This structure allows teams to:
+- Close the feedback loop between analysis and action
+- Democratize data access across departments
+- Reduce engineering dependencies for data activation
+- Create consistent customer experiences across touchpoints
 
-## API Endpoints and Technical Implementation
+## Technical Implementation
 
-Key API endpoints include:
-- **Cohort API**: `https://amplitude.com/api/2/cohorts`
-- **Export API**: `https://amplitude.com/api/2/export`
-- **User Profile API**: `https://profile-api.amplitude.com/v1/userprofile`
-- **Webhook Endpoints**: Custom HTTP endpoints for receiving data
+### API Endpoints and Authentication Methods
 
-For data warehouse integrations, Amplitude supports:
-- IP allowlisting for secure connections
-- Key pair authentication for Snowflake
-- IAM role-based authentication for AWS services
-- Service account authentication for Google Cloud services
+1. **REST API Keys**: Most destinations use API keys (e.g., Braze, Customer.io)
+2. **OAuth**: Some platforms use OAuth for authentication (e.g., HubSpot, Facebook)
+3. **Service Accounts**: Google services typically use service account credentials
+4. **IAM Roles**: AWS services use IAM roles with specific permissions
 
-Implementation typically involves:
-1. Obtaining authentication credentials from the destination platform
-2. Configuring the connection in Amplitude's Destination Catalog
-3. Mapping user identifiers between systems
-4. Selecting events, properties, or cohorts to send
-5. Setting sync frequencies and configuration options
-6. Testing and validating the integration
+### Data Warehouse Integration Requirements
+
+Data warehouse destinations typically require:
+- IP allowlisting
+- Specific permissions/roles
+- Schema understanding for events and merged users tables
+- Considerations for data volume and computation costs
+
+### Webhook Implementation
+
+The Webhooks destination supports:
+- FreeMarker templating for payload customization
+- Custom headers
+- Retry mechanisms for failed deliveries
+- Event filtering capabilities
+
+### Technical Limitations
+
+- **Rate Limits**: Many destinations impose API call limits
+- **User Matching**: Proper identifier mapping is critical for successful integration
+- **Data Size**: Some destinations limit payload size (e.g., Pushwoosh's 2MB limit)
+- **Processing Time**: Large cohorts may take hours to sync completely
+- **User Caps**: Some platforms limit the number of users in segments (e.g., Split's 100,000 user limit)
+- **Authentication Expiration**: OAuth tokens may require periodic renewal
+- **Privacy Compliance**: Many integrations handle PII and require proper data handling
+
+The Amplitude Destination Catalog serves as a critical component in the modern data stack, enabling organizations to activate their product analytics data across their technology ecosystem for more personalized and effective customer experiences.

@@ -2,91 +2,76 @@
 
 ## Product Overview
 
-Amplitude User Sessions is a specialized analytics feature that enables businesses to track, analyze, and optimize user engagement patterns through session-based metrics. The feature provides comprehensive visibility into how users interact with applications across web and mobile platforms, focusing on session duration, frequency, and quality metrics rather than just individual events.
+Amplitude User Sessions is an analytics feature that tracks, analyzes, and reveals user engagement patterns through session-based metrics. It provides comprehensive insights into how users interact with applications or websites over time, measuring session frequency, duration, event counts, and other engagement metrics.
 
 Key features include:
-- Session tracking across different platforms (server-side, mobile client-side, web client-side)
-- Detailed session metrics (total sessions, session length, time spent)
-- Marketing performance analysis capabilities
-- Custom formula metrics for advanced analysis
-- Breakdown tables for segmentation analysis
-- Sequential filtering for refined data analysis
+- Multi-platform session tracking (server-side, mobile client-side, web client-side)
+- Specialized charts for detailed session metrics analysis
+- Customizable filtering and segmentation options
+- Marketing metrics capabilities for campaign performance evaluation
+- Integration with the broader Amplitude analytics ecosystem
 
-Primary use cases include:
-- Analyzing user engagement patterns
-- Measuring marketing campaign effectiveness
-- Identifying bounce rates and exit points
-- Optimizing session quality and duration
-- Calculating customer acquisition costs and ROI
+User Sessions helps businesses analyze engagement patterns, evaluate marketing campaign effectiveness, understand user behavior flows, and optimize conversion funnels.
 
 ## Product Relationships and Features
 
-The User Sessions feature in Amplitude consists of several interconnected components:
+The User Sessions functionality consists of several interconnected components:
 
-1. **User Sessions Chart**: The core visualization tool that displays session-based metrics rather than event-based metrics. It uses a dedicated Sessions Module instead of the Events Module.
+1. **User Sessions Chart**: Core visualization tool displaying session-based metrics for analyzing user engagement patterns.
 
-2. **Measurement Options**:
-   - Total Sessions
-   - Time Spent
-   - Length Distribution
-   - Custom formulas
+2. **Event Segmentation**: Complements User Sessions by providing deeper insights into specific events within sessions.
 
-3. **Marketing Metrics Recipes**: Pre-configured analysis templates for common marketing use cases, including:
-   - Session totals and bounce rates
-   - Page views per session
-   - Entry and exit rates
-   - Performance marketing metrics (CAC, ROAS)
+3. **Sessions Module**: Specialized functionality for analyzing session-based metrics including frequency, duration, and event counts.
 
-4. **Filtering Capabilities**:
-   - Property filters (applied first)
-   - Session filters (applied after property filters)
-   - Group segmentation options
+4. **Marketing Metrics Recipes**: Pre-configured analysis templates for marketing use cases, leveraging both User Sessions and Event Segmentation charts.
 
-5. **Breakdown Tables**: Allow for detailed segmentation analysis of session data across different user groups or properties.
+5. **Custom Formula Metrics**: Allows creation of tailored metrics by combining different session measurements for specific business questions.
+
+User Sessions integrates with Amplitude's broader analytics capabilities, enabling seamless transitions between session-level analysis and other types of user behavior analysis.
 
 ## Key Nomenclature and Definitions
 
-- **Session**: A period of user activity with defined start and end boundaries. Sessions are tracked differently based on platform:
-  - Mobile client-side: Default 5-minute timeout
-  - Web client-side: Default 30-minute timeout
-  - Server-side: Custom implementation
+- **Session**: A period of user activity with defined start and end points:
+  - **Server-side sessions**: Defined by developers using Amplitude's HTTP API
+  - **Mobile client-side sessions**: Automatically tracked with configurable timeout periods
+  - **Web client-side sessions**: Automatically tracked with configurable timeout periods
 
-- **Session ID**: Unique identifier assigned to each user session for tracking purposes.
+- **Session ID**: Unique identifier assigned to each user session
 
-- **Bounce Rate**: Percentage of sessions where users leave after viewing only one page or taking minimal action.
+- **Session Metrics**:
+  - **Total Sessions**: Count of all sessions meeting filter criteria
+  - **Average Sessions per User**: Mean number of sessions per unique user
+  - **Time Spent**: Total time users spent in sessions
+  - **Average Session Length**: Mean duration of sessions
+  - **Session Length Distribution**: Breakdown of sessions by duration categories
 
-- **Entry/Exit Rates**: Metrics showing which pages users most commonly enter or exit the application from.
+- **Bounce Rate**: Percentage of sessions where users exit after viewing only one page
 
-- **Customer Acquisition Cost (CAC)**: The cost to acquire a new customer, calculated using session and conversion data.
+- **Entry/Exit Rates**: Metrics showing which pages users commonly enter or leave from
 
-- **Return on Ad Spending (ROAS)**: Metric showing revenue generated per dollar spent on advertising.
+- **Customer Acquisition Cost (CAC)**: Marketing spend divided by number of new users
 
-- **Sessions Module**: The analytical engine that processes session data, distinct from the Events Module.
+- **Return on Ad Spending (ROAS)**: Revenue generated divided by ad spend
 
-- **Sequential Filtering**: The process where property filters are applied before session filters in the analysis pipeline.
+- **Breakdown Table**: Detailed view showing session metrics segmented by user properties
 
-## Integration with Amplitude Ecosystem
+## Product Ecosystem Integration
 
-User Sessions integrates with the broader Amplitude analytics ecosystem in several ways:
+User Sessions is a specialized analysis module within the Amplitude analytics platform that works in conjunction with:
 
-1. It leverages the core Amplitude data collection infrastructure but processes the data through a specialized Sessions Module.
+1. **Event Segmentation**: Can be combined to create comprehensive marketing metrics and analyze specific user behaviors within sessions.
 
-2. It complements Event Segmentation charts by providing session-level insights rather than event-level analysis.
+2. **Amplitude's Tracking Infrastructure**: Relies on Amplitude's underlying tracking capabilities across server-side, mobile, and web platforms.
 
-3. The feature supports Group segmentation, aligning with Amplitude's account-based analytics capabilities.
+3. **Amplitude's Filtering System**: Implements a sequential filtering process where property filters are applied before session filters for precise cohort analysis.
 
-4. Custom formula metrics allow integration with other Amplitude metrics and dimensions for comprehensive analysis.
+4. **Group Segmentation**: Supports analysis at both user level and group level (e.g., account, organization).
 
-5. Marketing metrics recipes integrate with performance marketing data to provide ROI and effectiveness measurements.
+## Technical Implementation Details
 
-## Technical Implementation
+Session tracking implementation varies by platform:
+- Server-side: Uses Amplitude's HTTP API with developer-defined session IDs
+- Mobile client-side: Automatic tracking with configurable timeout periods
+- Web client-side: Automatic tracking with configurable timeout periods
 
-The implementation of User Sessions varies by platform:
-
-- **Mobile Client-Side Implementation**: Uses a 5-minute timeout by default to determine session boundaries.
-
-- **Web Client-Side Implementation**: Uses a 30-minute timeout by default to determine session boundaries.
-
-- **Server-Side Implementation**: Requires custom session tracking logic implemented by the development team.
-
-The documentation suggests that session data can be accessed and analyzed through Amplitude's standard chart interfaces, with special options available for session-specific metrics and filtering.
+The product supports various filtering mechanisms including property filters and session filters, which are applied sequentially in analysis. Marketing metrics recipes utilize both Event Segmentation and User Sessions charts with specific configurations to calculate metrics like bounce rate, page views per session, and customer acquisition cost.

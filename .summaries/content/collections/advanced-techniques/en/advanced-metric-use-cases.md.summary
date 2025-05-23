@@ -10,5 +10,5 @@ This documentation page explains advanced metric use cases in Amplitude Experime
 - Conversion rates
 - Flag key
 - Variant filters
-- Statistical significance
-- Amplitude Analytics metrics
+- Amplitude Analytics
+- Conversion time window

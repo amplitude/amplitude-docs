@@ -5,10 +5,10 @@ This documentation explains how to create and use Calculations in Amplitude, whi
 - calculation properties
 - user segmentation
 - event count
-- aggregation
-- first/last value
+- aggregation properties
+- first/last value properties
 - personalization campaigns
 - external destination sync
-- Amplitude Analytics
-- property filters
+- Amplitude Analytics filters
 - user property creation
+- property synchronization

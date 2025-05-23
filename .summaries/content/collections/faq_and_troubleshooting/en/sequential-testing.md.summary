@@ -1,5 +1,5 @@
 ## Summary
-This documentation page addresses frequently asked questions about sequential testing in Amplitude Experiment, explaining statistical concepts like power, confidence intervals, lift calculations, and measurement types (Uniques, Average Totals, Average Sum of Property), while demonstrating how sequential testing maintains controlled false positive rates compared to T-tests when analyzing experiment results at any time.
+This documentation page addresses frequently asked questions about sequential testing in Amplitude Experiment, covering statistical power, confidence intervals, metrics types (Uniques, Average Totals, Average Sum of Property), lift calculations, and how sequential testing compares to T-tests by allowing valid result checking at any time without inflating false positives.
 
 ## Keywords
 - sequential testing
@@ -7,13 +7,13 @@ This documentation page addresses frequently asked questions about sequential te
 - confidence intervals
 - p-values
 - conversion thresholds
-- absolute lift
-- relative lift
-- uniques measurement
+- uniques metrics
 - average totals
 - sum of property
+- absolute lift
+- relative lift
 - mSPRT
 - false positives
 - T-test comparison
 - always-valid results
-- novelty effect
+- Type 1 errors

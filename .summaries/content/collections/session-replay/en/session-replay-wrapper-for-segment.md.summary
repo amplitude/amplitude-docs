@@ -2,13 +2,11 @@
 This documentation describes the Session Replay Plugin for Segment, which enables one-line integration between Segment's Amplitude (Actions) destination and Amplitude's Session Replay, including installation instructions, configuration options, and how the plugin maps Segment user IDs to Amplitude device IDs.
 
 # Keywords
-- segment-session-replay-plugin
-- Segment Actions destination
+- Session Replay Plugin for Segment
+- Amplitude (Actions) destination
 - createSegmentActionsPlugin
-- sessionReplayOptions
-- user ID to device ID mapping
 - Segment plugin architecture
-- ad blocker compatibility
-- AnalyticsBrowser
-- Amplitude API key
-- Session Replay ID
+- User ID to Device ID mapping
+- sessionReplayOptions
+- ad blockers compatibility
+- Segment integration

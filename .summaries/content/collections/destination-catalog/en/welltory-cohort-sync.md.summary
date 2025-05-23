@@ -2,11 +2,11 @@
 This documentation describes the Welltory Cohort Sync integration for Amplitude, which allows users to send cohorts from Amplitude to Welltory for personalized in-app content experiences, including setup steps in both platforms and the process for syncing cohorts.
 
 # Keywords
-- Welltory Cohort Sync
-- Amplitude integration
-- API key configuration
+- Welltory
+- Cohort Sync
+- API key
 - User ID mapping
-- Cohort synchronization
 - In-app content personalization
-- Partner-maintained integration
 - Sync cadence
+- Partner-maintained integration
+- Amplitude properties

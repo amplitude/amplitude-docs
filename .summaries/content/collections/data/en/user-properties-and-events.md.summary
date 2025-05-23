@@ -7,10 +7,9 @@ This documentation explains the differences between user properties (attributes 
 - property updates
 - property persistence
 - Identify API
-- property overlap
-- default properties
-- custom properties
+- property value changes
+- default Amplitude properties
 - property hiding
 - property deletion
-- property application methods
-- historical property values
+- property overlap
+- event attribution

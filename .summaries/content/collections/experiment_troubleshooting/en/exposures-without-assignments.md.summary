@@ -2,14 +2,13 @@
 This documentation explains the "Exposures without Assignments" diagnostic chart in Amplitude Experiment, which tracks users who received experiment exposures without proper assignment events, potentially compromising experiment results due to identity mismatches, account switching, or improper tracking of fallback variants.
 
 # Keywords
-- Exposures without Assignments
-- experiment diagnostics
-- identity mismatch
-- account switching
-- fallback variants
-- fetch() call
-- variant() method
-- experiment troubleshooting
-- user streams
-- rule-based targeting
-- mutually exclusive experiments
+- exposures-without-assignments
+- experiment-diagnostics
+- identity-mismatch
+- account-switching
+- fallback-variants
+- fetch-variant-calls
+- experiment-troubleshooting
+- user-targeting
+- experiment-integrity
+- exposure-tracking

@@ -1,5 +1,5 @@
 ## Summary
-This documentation page explains how to configure and manage Amplitude Data settings across five tabs: General (naming conventions, team reviews), Environments (production/development setup), Integrations, API Tokens, and Schema Settings (handling unexpected data), with specific permissions for different user roles.
+This documentation page explains how to configure and manage Amplitude Data settings across five tabs: General (naming conventions, team reviews), Environments (mapping to Analytics projects), Integrations, API Tokens, and Schema Settings (handling unexpected data), with specific permissions for different user roles.
 
 ## Keywords
 - Amplitude Data settings
@@ -11,4 +11,4 @@ This documentation page explains how to configure and manage Amplitude Data sett
 - schema violation handling
 - data project management
 - public link sharing
-- user permissions
+- role-based permissions

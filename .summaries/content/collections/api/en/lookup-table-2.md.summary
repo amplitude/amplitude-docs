@@ -1,14 +1,14 @@
 ## Summary
-This documentation page details the Lookup Table API 2, which allows developers to create, retrieve, update, and delete lookup tables that map existing properties to new properties via CSV files, enabling property augmentation without formulas.
+This documentation page describes the Lookup Table API 2, which allows developers to create, retrieve, update, and delete lookup tables that map existing properties to new properties via CSV files, enabling property augmentation without formulas.
 
 ## Keywords
 - lookup-table-api
 - property-mapping
-- csv-upload
+- CSV-upload
 - data-augmentation
-- multipart-form-data
+- multipart/form-data
 - incremental-updates
 - case-sensitive-matching
-- property-transformation
-- lookup-table-operations
-- data-api-endpoints
+- property-types
+- error-codes
+- CRUD-operations

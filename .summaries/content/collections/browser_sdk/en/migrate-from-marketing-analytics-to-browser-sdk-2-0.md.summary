@@ -9,6 +9,6 @@ This documentation page explains how to migrate from Marketing Analytics Browser
 - pageViews tracking
 - identityStorage
 - cookieOptions
-- user-agent-enrichment-plugin
 - plugin interface
-- web attribution v2
+- user agent enrichment
+- web attribution

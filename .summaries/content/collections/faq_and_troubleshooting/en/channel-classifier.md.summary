@@ -7,9 +7,10 @@ Amplitude's channel classifier allows Growth and Enterprise users with admin/man
 - channel classifier
 - utm parameters
 - referring domain
+- property configuration
 - retroactive definition
 - regex formula
-- property combinations
+- Growth/Enterprise feature
+- admin permissions
 - (none) values
-- org admin permissions
-- Growth and Enterprise feature
+- property inheritance

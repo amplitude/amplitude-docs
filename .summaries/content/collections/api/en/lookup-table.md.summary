@@ -7,7 +7,7 @@ This documentation page describes the deprecated Lookup Tables API, which allows
 - csv-mapping
 - multipart-form-data
 - deprecated-api
-- property-enrichment
+- lookup-property
 - 100MB-file-limit
 - case-sensitive-matching
 - column-headers

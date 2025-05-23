@@ -3,14 +3,12 @@ This documentation page explains how to use and manipulate the breakdown table t
 
 ## Keywords
 - breakdown table
+- Amplitude Analytics
 - chart data visualization
-- data sorting
 - fixed columns
-- summary columns
 - row aggregates
 - series selection
 - CSV export
-- data filtering
-- Amplitude Analytics
-- breakdown configuration
-- data exploration
+- data sorting
+- breakdown filtering
+- table customization

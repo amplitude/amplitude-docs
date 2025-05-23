@@ -1,54 +1,54 @@
 # Amplitude Python SDK Product Overview
 
-The Amplitude Python SDK is a comprehensive analytics tracking solution for Python applications that enables developers to track user behavior, manage user properties, and analyze event data. The SDK consists of two main components: the core Python SDK and the Ampli wrapper, which provides strongly-typed event tracking based on a tracking plan.
+## Product Overview
 
-## Key Features and Concepts
+The Amplitude Python SDK is a comprehensive analytics tracking library that enables developers to implement event tracking in Python applications. The SDK provides two main components: the core Python SDK and the Ampli wrapper, which offers strongly-typed analytics event tracking.
 
-1. **Event Tracking**: Capture user interactions and custom events in Python applications
-2. **User Identification**: Associate events with specific users and manage user properties
-3. **User Groups**: Organize users into groups and track group-level properties
-4. **Revenue Tracking**: Monitor revenue-generating events and transactions
-5. **Strongly-Typed Analytics**: Use the Ampli wrapper for type-safe event tracking based on a defined tracking plan
-6. **Event Batching**: Configure how events are batched and sent to Amplitude servers
-7. **Plugins System**: Extend functionality through custom plugins
-8. **Multiple Server Zones**: Support for different geographic server deployments
+## Key Features and Capabilities
+
+### Core Python SDK
+- Event tracking with custom properties
+- User identification and property management
+- Group identification and property management
+- Revenue tracking
+- Configurable event batching and flushing
+- Plugin architecture for extending functionality
+- Event enrichment capabilities
+- Multiple destination support
+
+### Ampli Wrapper
+- Strongly-typed analytics event tracking
+- Type-safe implementation of tracking plans
+- Code generation through the Ampli CLI
+- Simplified event validation
 
 ## Product Relationships and Architecture
 
-The Python SDK ecosystem consists of two main components that work together:
+The Amplitude Python SDK ecosystem consists of two main components that work together:
 
-1. **Core Python SDK (`amplitude-analytics`)**: The foundation library that handles event tracking, user management, and communication with Amplitude servers.
+1. **Core Python SDK (`amplitude-analytics`)**: The foundation library that handles the core functionality of tracking events, managing user properties, and sending data to Amplitude's servers.
 
 2. **Ampli Wrapper**: A higher-level abstraction built on top of the core SDK that provides strongly-typed event tracking based on a tracking plan defined in Amplitude.
 
 The relationship between these components is hierarchical:
-- The Ampli wrapper depends on and uses the core SDK
-- The Ampli wrapper provides type safety and validation on top of the core SDK's functionality
-- Both components ultimately send data to Amplitude's analytics backend
+- The Ampli wrapper depends on and utilizes the core SDK
+- Ampli provides type safety and validation on top of the core SDK's functionality
+- Both components ultimately send data to Amplitude's analytics platform
 
 ## Key Nomenclature and Definitions
 
-- **Amplitude Client**: The main interface for interacting with the SDK, initialized with an API key
-- **Event**: A user action or occurrence that is tracked, containing properties and metadata
-- **Identify**: Operations that update user properties without sending an event
-- **User Properties**: Attributes associated with a specific user
-- **Group**: A collection of users, such as a company or organization
-- **Group Properties**: Attributes associated with a specific group
-- **Tracking Plan**: A schema that defines the structure of events and their properties
-- **Plugins**: Extensions that can modify events or add functionality to the SDK
-- **Flush**: The process of sending batched events to Amplitude servers
-- **Server Zone**: Geographic region where Amplitude servers are located (US or EU)
+- **Event**: An action that a user performs in an application
+- **User Properties**: Attributes associated with a user that persist across sessions
+- **Identify**: Operations that set or modify user properties without sending an event
+- **Group**: A collection of users that can have their own properties
+- **Tracking Plan**: A schema that defines the expected structure of events and properties
+- **Ampli**: The strongly-typed wrapper generated from a tracking plan
+- **Plugins**: Extensions that can modify events or send them to additional destinations
+- **Flush**: The process of sending batched events to Amplitude's servers
+- **LoadOptions**: Configuration options for initializing the Ampli wrapper
+- **EventOptions**: Additional options that can be passed when tracking events
 
-## Integration with Broader Amplitude Ecosystem
-
-The Python SDK integrates with several other Amplitude products and features:
-
-1. **Amplitude Dashboard**: Events tracked via the SDK appear in the Amplitude analytics dashboard for analysis
-2. **Tracking Plan**: The Ampli wrapper uses tracking plans defined in Amplitude to ensure consistent event tracking
-3. **Amplitude CLI**: Used to generate the Ampli wrapper code based on the tracking plan
-4. **Data Destinations**: Events can be forwarded to other tools in the Amplitude ecosystem
-
-## API and Implementation Details
+## Implementation Details
 
 ### Core SDK Installation and Initialization
 
@@ -67,52 +67,89 @@ amplitude.configuration.flush_interval_millis = 10000
 ```python
 # Track basic event
 amplitude.track(
-    "event_type", 
-    user_id="user_id", 
-    device_id="device_id", 
-    event_properties={"property": "value"}
+    "event_type",
+    event_properties={"property1": "value1"},
+    user_id="user_id"
 )
 
 # Identify user properties
 identify = amplitude.Identify()
-identify.set("key", "value")
-identify.add("counter", 1)
+identify.set("user_property", "value")
 amplitude.identify(identify, user_id="user_id")
+
+# Group identify
+group_identify = amplitude.Identify()
+group_identify.set("group_property", "value")
+amplitude.group_identify("group_type", "group_name", group_identify)
 
 # Track revenue
 revenue = amplitude.Revenue()
 revenue.price = 3.99
-revenue.quantity = 2
+revenue.quantity = 3
 amplitude.revenue(revenue, user_id="user_id")
 ```
 
-### Ampli Wrapper Installation and Usage
+### Ampli Wrapper Installation and Initialization
 
 ```python
 pip install amplitude-analytics
 
-# Initialize Ampli
 from ampli import Ampli
-ampli = Ampli()
-ampli.load(environment="production")
 
-# Track events with type safety
-ampli.song_played(
-    user_id="user_id",
-    song_id="song-1",
-    song_name="Bohemian Rhapsody"
+ampli = Ampli()
+ampli.load(LoadOptions(api_key="API_KEY"))
+```
+
+### Ampli Event Tracking
+
+```python
+# Identify a user
+ampli.identify("user_id", Identify().set("user_property", "value"))
+
+# Track an event (strongly-typed)
+ampli.song_played("user_id", 
+    SongPlayed(song_id="song-1", title="Song Title")
 )
 
-# Identify users
-ampli.identify(
-    user_id="user_id",
-    user_properties={
-        "plan_type": "premium"
-    }
+# Set a group
+ampli.set_group("user_id", "group_type", "group_name")
+
+# Group identify
+ampli.group_identify("group_type", "group_name", 
+    Identify().set("group_property", "value")
 )
 ```
 
-### Ampli CLI Commands
+### Event Flushing
+
+Both the core SDK and Ampli wrapper support manual and automatic event flushing:
+
+```python
+# Manual flush
+amplitude.flush()
+ampli.flush()
+
+# Shutdown (flushes events and stops background processes)
+amplitude.shutdown()
+ampli.shutdown()
+```
+
+## Plugin Architecture
+
+The Python SDK supports plugins for event enrichment and sending events to additional destinations:
+
+```python
+# Adding a plugin
+amplitude.add_plugin(plugin)
+```
+
+Types of plugins:
+- Event enrichment plugins: Modify events before they're sent
+- Destination plugins: Send events to additional destinations beyond Amplitude
+
+## CLI Commands for Ampli
+
+The Ampli CLI provides commands for generating the strongly-typed wrapper:
 
 ```bash
 ampli pull
@@ -120,4 +157,4 @@ ampli status
 ampli pull --update
 ```
 
-The Python SDK provides a flexible foundation for analytics in Python applications, with the Ampli wrapper adding type safety and validation for enterprise-grade analytics implementations.
+These commands fetch the tracking plan from Amplitude and generate the corresponding Python code for the Ampli wrapper.

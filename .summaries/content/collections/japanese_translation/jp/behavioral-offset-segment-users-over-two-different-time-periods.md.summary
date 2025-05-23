@@ -9,6 +9,6 @@ This documentation explains the Behavioral Offset feature in Amplitude, which al
 - Customer milestone tracking
 - User behavior comparison
 - Enterprise feature
-- Event segmentation
-- Cohort targeting
-- Conversion analysis
+- Segmentation module
+- Previous period events
+- Current period events

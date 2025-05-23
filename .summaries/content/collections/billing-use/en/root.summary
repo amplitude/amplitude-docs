@@ -2,67 +2,71 @@
 
 ## Product Overview
 
-Amplitude is an analytics platform that provides organizations with insights into user behavior and product usage. The billing and usage components of Amplitude focus on tracking user engagement, monitoring event consumption, and managing subscription costs through a Monthly Tracked Users (MTU) model.
+Amplitude is an analytics platform that provides organizations with insights into user behavior and product usage. The billing model is primarily based on Monthly Tracked Users (MTUs), with additional features for monitoring usage patterns across the organization. The platform offers different pricing plans with varying MTU limits and capabilities.
 
 ## Key Features and Concepts
 
 ### Monthly Tracked Users (MTUs)
 
-MTUs are the primary billing metric in Amplitude, representing the count of unique users who perform trackable actions within the platform each month. Key aspects include:
+MTUs are the primary metric used for billing in Amplitude. An MTU is a unique user who has generated at least one event within a calendar month. The system identifies unique users through:
 
-- **Cross-Project Counting**: A user is counted only once across all projects within an organization for billing purposes
-- **User Identification**: Users are identified through unique IDs, with mechanisms to handle anonymous users and user merging
-- **Synthetic MTUs**: Special user identifiers used for testing that don't count toward billing limits
+- User ID tracking
+- Device ID tracking for anonymous users
+- Cross-project user identification
+- User merging capabilities
 
 ### Usage Reports
 
-Comprehensive analytics dashboards that provide organization-level insights into:
+Available to Growth and Enterprise plan customers, Usage Reports provide comprehensive insights into:
 
-- **User Metrics**: Tracks active users, top teams, and content engagement
-- **Event Usage**: Monitors event queries and consumption across projects
-- **Adoption Patterns**: Helps administrators understand how teams use the platform
+- User metrics (active users, engagement depth, top users/teams)
+- Event usage data (query counts, event volumes)
+- Weekly learning users and broadcasted learnings
+- Content usage and KPI metrics
 
 ## Relationship Between Products and Features
 
-The billing and usage components work together to provide a complete view of platform utilization:
-
-1. **MTU Tracking System**: Forms the foundation of Amplitude's billing model, determining subscription costs
-2. **Usage Reports**: Provide visibility into how MTUs and events are being consumed across the organization
-3. **Plan Limits and Overages**: Different pricing plans have specific MTU and event volume allowances, with overage charges applying when limits are exceeded
+The billing system integrates with the core analytics platform to track user activity and calculate MTUs. Usage Reports complement the billing system by providing detailed analytics on how the organization utilizes Amplitude, helping customers maximize the value of their subscription.
 
 ## Key Nomenclature and Definitions
 
-- **Monthly Tracked User (MTU)**: A unique user who performs trackable actions within a calendar month
-- **Events per MTU**: The number of events that can be tracked for each user under a specific plan
-- **Anonymous Users**: Users without explicit identification who are assigned temporary IDs
-- **User Merging**: The process of consolidating multiple user identities into a single user profile
-- **Backfilled Events**: Historical events added to the platform after they occurred
-- **Weekly Learning Users**: Users who engage with learning content on a weekly basis
-- **Broadcasted Learnings**: Insights shared across the organization
-- **Depth of Engagement**: Measurement of how thoroughly users interact with the platform
+- **Monthly Tracked Users (MTUs)**: Unique users who generate at least one event in a calendar month
+- **Anonymous Users**: Users without a User ID who are tracked by Device ID
+- **User Merging**: The process of combining user profiles when a previously anonymous user is identified
+- **Synthetic MTUs**: Users created through the API without generating events
+- **Events per MTU**: The ratio of total events to MTUs, indicating user engagement intensity
+- **Weekly Learning Users**: Users who view dashboards, charts, or other analytics content
+- **Broadcasted Learnings**: Insights shared with other team members
+- **Depth of Engagement**: Measurement of how deeply users engage with the platform
 
 ## Product Ecosystem Integration
 
-The billing and usage components integrate with the broader Amplitude ecosystem by:
+The billing system and usage reports are integral components of Amplitude's overall analytics ecosystem:
 
-1. **Supporting Multi-Project Organizations**: Allowing enterprises to manage multiple projects while maintaining unified billing
-2. **Enabling Team-Based Analysis**: Providing insights into which teams are driving the most value from the platform
-3. **Facilitating Resource Allocation**: Helping organizations understand where to invest in additional capacity
-4. **Connecting to Growth/Enterprise Plans**: Different feature sets and limits based on subscription tier
+1. The core analytics platform tracks user behavior and events
+2. The billing system calculates MTUs based on this tracking data
+3. Usage reports provide meta-analytics on how teams utilize the platform
+4. Different pricing plans (Growth, Enterprise) offer varying levels of access to these features
 
-## Technical Implementation
+## Technical Details
 
-### Usage Reports Access
+### MTU Calculation Specifics
 
-Usage reports are available to administrators through the Amplitude interface, with export functionality for further analysis. These reports are specifically available to customers on Growth and Enterprise plans.
+- MTUs are calculated at the organization level, not the project level
+- A user who appears in multiple projects counts as a single MTU
+- Anonymous users are counted as unique MTUs based on their Device ID
+- When anonymous users are identified with a User ID, they are merged to avoid double-counting
+- Backfilled events count toward MTU calculations for the month they occurred in
 
-### MTU Calculation Logic
+### Usage Report Access
 
-The system employs specific logic to:
-- Count unique users across projects
-- Handle anonymous user identification
-- Process user identity merges
-- Exclude synthetic test users from billing calculations
-- Track event volume per user
+- Available through the Amplitude interface for Growth and Enterprise customers
+- Provides export functionality for further analysis
+- Updates on a regular basis to reflect current usage patterns
 
-The platform provides mechanisms to monitor current usage against plan limits and project potential overage charges based on current usage patterns.
+### Billing Mechanics
+
+- Plans include specific MTU limits
+- Overage charges apply when exceeding MTU limits
+- Different pricing tiers offer varying events-per-MTU allowances
+- Synthetic MTUs created through the API without events are not counted for billing

@@ -1,14 +1,15 @@
-# Summary
-Cordial integration with Amplitude enables bidirectional data flow: sending Amplitude cohorts to Cordial lists for targeted messaging, and streaming real-time customer behavior and profile data from Cordial to Amplitude for enhanced analysis across email, SMS, and mobile app touchpoints.
+# Cordial Integration Summary
 
-# Keywords
+Cordial integration enables bidirectional data flow between Amplitude and Cordial, allowing users to stream real-time customer behavior and profile data to Amplitude while syncing Amplitude cohorts to Cordial lists for personalized messaging across email, SMS, and mobile channels.
+
+## Keywords
 - customer engagement platform
 - real-time data streaming
 - cohort synchronization
 - cross-channel messaging
-- 360-degree customer view
+- behavioral data
+- profile data
 - outbound data settings
 - API key configuration
-- email marketing
-- SMS messaging
-- behavioral data
+- 360-degree customer view
+- Cordial marketplace

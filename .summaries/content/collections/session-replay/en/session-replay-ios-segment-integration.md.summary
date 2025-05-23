@@ -5,6 +5,7 @@ This documentation page covers the integration of Session Replay with iOS apps u
 - AmplitudeSegmentSessionReplayPlugin
 - iOS Session Replay
 - Segment integration
+- Analytics-Swift
 - sampleRate configuration
 - data masking
 - user opt-out

@@ -10,9 +10,7 @@ This documentation page provides a comprehensive guide for migrating from Adobe 
 - Ingestion Debugger
 - User Lookup validation
 - Tracking plan creation
-- Client-side sources
-- Server-side sources
-- Tag management integration
+- Implementation methods
+- Report replication
 - Data continuity
-- Metrics conversion
-- User adoption
+- Adobe variable mapping

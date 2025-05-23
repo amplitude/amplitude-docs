@@ -1,18 +1,18 @@
 ## Summary
-This documentation describes the Marketo Static List destination in Amplitude, which allows exporting user cohorts directly into Marketo as static lists within specified folders or programs, enabling targeted marketing campaigns and automated email workflows without requiring additional field creation in Marketo.
+This documentation describes the Marketo Static List destination in Amplitude, which allows exporting user cohorts directly into Marketo as static lists within specified folders or programs, enabling targeted marketing campaigns and automated email workflows based on Amplitude cohort data.
 
 ## Keywords
 - Marketo Static List
 - cohort syncing
-- REST API integration
-- email address mapping
 - static list export
-- marketing automation
-- user identification
-- folder/program ID
+- REST API integration
 - Client ID
 - Client Secret
-- silent user exclusion
-- cohort size limitations
+- email mapping
+- folder/program ID
+- marketing automation
+- user discrepancies
+- case-sensitive email
+- 3,000,000 user limit
 - Read-Write Person permissions
 - Read-write Assets permissions

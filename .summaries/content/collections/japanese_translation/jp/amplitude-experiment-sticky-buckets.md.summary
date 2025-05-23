@@ -1,5 +1,5 @@
 ## Summary
-This documentation explains Amplitude Experiment's sticky buckets feature, which ensures users continue to see the same variant even when experiment targeting criteria or rollout percentages change. It details how sticky buckets work, when they should be used or avoided, and how to verify if sticky buckets are active for specific users through the Event Stream.
+This documentation explains Amplitude Experiment's sticky buckets feature, which ensures users continue to see the same variant even when experiment targeting criteria or rollout percentages change. It details how sticky buckets work, when to use them, when to avoid them, and how to verify if they're active for specific users through the Event Stream.
 
 ## Keywords
 - sticky buckets
@@ -11,4 +11,4 @@ This documentation explains Amplitude Experiment's sticky buckets feature, which
 - rollout percentage modification
 - experiment targeting criteria
 - Experiment Assignment events
-- flag version debugging
+- flag version tracking

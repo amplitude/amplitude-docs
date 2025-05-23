@@ -8,7 +8,8 @@ Convizit is an AI-based Digital Experience Data Platform that automatically capt
 - 30-minute data delivery
 - event enrichment
 - source: "Convizit" identifier
+- raw event integration
 - event_properties
 - user_properties
-- raw-events integration
+- insert_id
 - zero manual effort deployment

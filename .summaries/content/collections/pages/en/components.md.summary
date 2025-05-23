@@ -1,14 +1,14 @@
 # Summary
-This documentation page describes site components available for use in content, including tabs for code examples in different languages, collapsible sections for detailed information, and various admonition types (note, info, warning, example, tip, alpha, beta, deprecated) for highlighting specific content.
+This documentation page describes site components available for use in content, including tabs for code examples in different languages, collapsible sections for detailed information, and various admonition types (note, info, warning, example, tip, alpha, beta, deprecated) for highlighting different types of content.
 
 # Keywords
-- site components
-- tabs partial
-- collapse partial
+- tabs component
+- collapse component
 - admonition types
-- content formatting
-- documentation components
+- content partials
 - code examples
-- collapsible sections
+- documentation UI elements
+- content formatting
+- interactive documentation
 - warning blocks
 - information blocks

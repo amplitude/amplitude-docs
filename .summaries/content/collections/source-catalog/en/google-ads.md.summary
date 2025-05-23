@@ -1,5 +1,5 @@
 ## Summary
-This documentation page describes Amplitude's Google Ads integration, which imports campaign-level metrics (impressions, clicks, spend) as "Daily Ad Metrics" events for marketing analytics. It details prerequisites, data collection considerations, UTM parameter requirements for proper attribution, and explains how the integration handles ad account data without user-level identifiers.
+This documentation page describes Amplitude's Google Ads integration, which imports campaign-level metrics (impressions, clicks, spend) as "Daily Ad Metrics" events for marketing analytics. It details prerequisites, data collection considerations, UTM parameter requirements for proper attribution, and explains how to analyze ad performance using Amplitude's dashboards.
 
 ## Keywords
 - Google Ads integration

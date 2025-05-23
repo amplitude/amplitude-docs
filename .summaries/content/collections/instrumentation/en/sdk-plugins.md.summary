@@ -1,19 +1,18 @@
 ## Summary
-The SDK Plugins documentation explains how to extend Amplitude's functionality through plugins, which can enrich, transform, filter, or route events to third-party destinations. It details the plugin interface with `setup()` and `execute()` methods, and provides implementation examples for both enrichment plugins (modifying events) and destination plugins (sending events to external services).
+This documentation page explains SDK Plugins in Amplitude, which extend SDK functionality through enrichment and destination plugins. Enrichment plugins modify event properties or filter events, while destination plugins route events to third-party services like Segment, Hotjar, Google Analytics, and FullStory.
 
 ## Keywords
-- SDK plugins
+- SDK Plugins
 - Enrichment plugins
 - Destination plugins
-- Event transformation
-- Event filtering
-- Third-party integrations
 - Plugin.setup
 - Plugin.execute
+- Event filtering
 - PII removal
-- Event routing
+- Event-level groups
+- Third-party integrations
 - Segment integration
 - Hotjar integration
 - Google Analytics integration
 - FullStory integration
-- Event-level groups
+- Cross-platform support

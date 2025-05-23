@@ -6,7 +6,7 @@ This documentation page describes the Intercom (Cohort Sync) destination integra
 - behavioral cohorts
 - real-time sync
 - OAuth authentication
-- user ID matching
+- user ID mapping
 - scheduled cohort syncs
 - customer engagement
 - cohort export

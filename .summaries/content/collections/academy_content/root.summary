@@ -1,84 +1,64 @@
 # Amplitude Analytics Platform Overview
 
-## High-Level Overview
+Amplitude is a comprehensive product analytics platform that helps businesses understand user behavior, optimize product experiences, and drive growth through data-driven insights. The platform provides end-to-end capabilities for collecting, analyzing, and acting on product data.
 
-Amplitude is a comprehensive product analytics platform that helps businesses understand user behavior, optimize product experiences, and drive growth through data-driven insights. The platform enables teams to collect, analyze, and act on user data to improve product adoption, engagement, and retention.
+## Key Products and Features
 
-Key features include behavioral analytics, user journey mapping, cohort analysis, experimentation capabilities, and targeted engagement tools. Amplitude serves product teams, marketers, data analysts, and executives who need to understand how users interact with digital products.
+### Amplitude Analytics
+The core analytics platform for understanding user behavior:
+- **Event Segmentation Chart**: Tracks specific events and user actions to analyze behavior drivers
+- **Funnel and Path Analysis**: Diagnoses conversion issues by mapping user journeys
+- **Retention Analysis**: Measures how users return to products over time
+- **Stickiness Analysis**: Identifies power users with regular usage patterns
+- **User Sessions**: Analyzes session duration and engagement metrics
+- **Journeys**: Discovers and confirms user paths within products
+- **Data Tables**: Enables multi-dimensional analysis with multiple metrics
+- **Session Replay**: Records and plays back user sessions for context
 
-## Product Relationships and Features
+### Amplitude Data
+The foundation for data collection, management, and governance:
+- **Data Taxonomy Design**: Frameworks for structuring event data
+- **Warehouse-Native Amplitude**: Direct querying of data warehouses
+- **Autocapture and Visual Labeling**: Automatic tracking of website interactions
+- **User Tracking**: Methods for tracking unique users across platforms
 
-The Amplitude platform consists of four core products that work together seamlessly:
+### Amplitude Experiment
+Platform for controlled experimentation:
+- **Web Experimentation**: Tools for testing web experiences
+- **Feature Flags**: Management of feature rollouts with targeting capabilities
 
-1. **Amplitude Analytics**: The central analytics engine that provides various analysis tools:
-   - Event Segmentation for analyzing specific user behaviors
-   - Funnel Analysis for tracking conversion paths
-   - Retention Analysis for measuring user return rates
-   - Stickiness Analysis for identifying power users
-   - Journeys for visualizing user paths
-   - User Sessions for analyzing engagement duration
-   - Data Tables for multi-dimensional analysis
+### Amplitude Engage
+Tools for targeted user engagement:
+- **Guides and Surveys**: In-product messaging to drive adoption and retention
 
-2. **Amplitude Data**: The foundation for data management:
-   - Data Taxonomy Design for structured data collection
-   - Warehouse-Native capabilities for direct data warehouse querying
-   - User Tracking across platforms and sessions
-   - Autocapture and Visual Labeling for simplified instrumentation
+### Collaboration Features
+- **Spaces**: Shared collections of Amplitude assets for team collaboration
 
-3. **Amplitude Experiment**: Tools for testing and optimization:
-   - Web Experimentation for A/B testing
-   - Feature Flags and Rollouts for controlled feature releases
-   - Structured experiment workflows for reliable results
+## Product Relationships
 
-4. **Amplitude Engage**: Targeted user engagement solutions:
-   - In-product Guides and Surveys
-   - Session Replay for visual context of user experiences
-
-These products form a closed loop where data collection feeds analytics, analytics inform experiments, and experiments drive engagement strategies, which generate new data to analyze.
+Amplitude's products form an integrated ecosystem where:
+- Data collected through Amplitude Data feeds into Analytics for insights
+- Analytics insights inform Experiment hypotheses and targeting criteria
+- Experiment results provide data back to Analytics for further analysis
+- Engage uses insights from Analytics to target the right users with the right messages
+- All products share the same user identification and data taxonomy
 
 ## Key Nomenclature and Definitions
 
-- **Events**: Discrete user actions tracked within a product (e.g., clicks, page views, purchases)
-- **Properties**: Additional contextual information attached to events
-- **User Properties**: Attributes that describe users (e.g., demographics, subscription status)
-- **Cohorts**: Groups of users who share common characteristics or behaviors
-- **Sessions**: Periods of continuous user activity within a product
-- **Taxonomy**: The structured organization of events, properties, and user attributes
-- **Feature Flags**: Controls that enable or disable features for specific users
-- **Funnels**: Sequences of events that represent desired user conversion paths
-- **Retention**: Measurement of how users return to a product over time
-- **Spaces**: Collaborative workspaces for organizing and sharing analytics assets
-- **Learning Paths**: Structured educational content in Amplitude Academy
+- **Events**: User actions or system occurrences tracked in the platform
+- **Cohorts**: Groups of users sharing common characteristics or behaviors
+- **Sessions**: Periods of continuous user activity
+- **Data Taxonomy**: Organizational structure of event data
+- **Feature Flags**: Controls to enable/disable features for specific users
+- **Retention**: Measurement of user return rates
+- **Conversion**: Completion rate of desired user actions
+- **Segmentation**: Analysis breakdown by user properties or behaviors
 
 ## Product Ecosystem Integration
 
-Amplitude integrates within a broader product ecosystem:
+Amplitude integrates with broader marketing and data ecosystems:
+- **Google Ads Integration**: Connects marketing performance with product usage
+- **HubSpot Integration**: Personalizes customer journeys and improves lead scoring
+- **Data Warehouse Connections**: Works with existing data infrastructure
 
-1. **Data Sources**: Amplitude collects data from websites, mobile apps, and other digital products through SDKs, APIs, and direct integrations with data warehouses.
-
-2. **Marketing and Customer Platforms**: Amplitude connects with tools like Google Ads and HubSpot to combine marketing performance data with product usage insights.
-
-3. **Development Workflow**: Through Amplitude Experiment, the platform integrates with development processes for feature testing and rollouts.
-
-4. **Team Collaboration**: Spaces functionality enables cross-functional teams to share insights and collaborate on analytics projects.
-
-5. **Data Governance**: Administrative tools provide control over data quality, access, and compliance.
-
-The platform follows a data-to-action workflow where raw user data is transformed into actionable insights that drive product decisions and user engagement strategies.
-
-## Access and Implementation
-
-Amplitude is primarily accessed through its web application. The Academy content is available at academy.amplitude.com with specific learning paths such as:
-
-- Getting Started with Amplitude Analytics Learning Path
-- Data Taxonomy Design Learning Path
-- Experiment Workflow Learning Path
-
-Implementation typically involves:
-1. Setting up data collection through SDKs or API integrations
-2. Configuring a data taxonomy
-3. Creating analysis charts and dashboards
-4. Setting up team spaces for collaboration
-5. Integrating with other tools in the product stack
-
-The platform is designed to scale from small product teams to enterprise organizations with complex analytics needs.
+The platform supports both traditional event-based analytics and warehouse-native approaches, allowing teams to implement Amplitude based on their existing data infrastructure. Amplitude Academy provides learning resources for all platform aspects, including courses, videos, and learning paths.

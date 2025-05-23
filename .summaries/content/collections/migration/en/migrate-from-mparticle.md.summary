@@ -7,8 +7,8 @@ This documentation page provides a comprehensive guide for migrating from mParti
 - SDK implementation conversion
 - event tracking migration
 - identify method conversion
-- source configuration
-- destination setup
+- source destination configuration
 - data validation
-- group tracking
 - migration checklist
+- cross-platform code examples
+- user identity mapping

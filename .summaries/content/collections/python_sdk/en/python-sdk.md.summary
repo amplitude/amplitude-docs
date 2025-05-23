@@ -1,5 +1,5 @@
 ## Summary
-The Python SDK documentation details how to install, initialize, and configure the Amplitude Python SDK for event tracking, including methods for tracking events, managing user properties, working with user groups, tracking revenue, and using plugins for extending functionality.
+The Python SDK documentation details how to install, initialize, and configure the Amplitude Python SDK for event tracking, including methods for tracking events, managing user properties, handling user groups, tracking revenue, and extending functionality through plugins.
 
 ## Keywords
 - amplitude-analytics
@@ -7,12 +7,10 @@ The Python SDK documentation details how to install, initialize, and configure t
 - event tracking
 - user properties
 - Identify operations
-- user groups
-- group properties
+- group identification
 - revenue tracking
 - batching configuration
-- plugins
-- flush_queue_size
-- event buffering
-- storage_provider
-- server_zone
+- flush methods
+- plugins architecture
+- event enrichment
+- destination plugins

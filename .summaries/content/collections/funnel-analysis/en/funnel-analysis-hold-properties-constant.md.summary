@@ -9,4 +9,4 @@ This documentation explains how to configure Funnel Analysis charts to count uni
 - [Amplitude]Session ID
 - multiple conversions tracking
 - event property instrumentation
-- conversion counting methodology
+- funnel conversion counting

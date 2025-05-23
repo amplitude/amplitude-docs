@@ -1,5 +1,5 @@
 # Summary
-The Settings page in Amplitude provides organization-wide and personal configuration options, accessible via the settings icon. While all users can view settings, only admins and managers can modify them. The page includes organization information, user management, usage reports, notification preferences, SSO configuration, and personal profile settings including Slack integration options.
+The Settings page in Amplitude provides organization-wide and personal configuration options, accessible via the settings icon. While viewable by all users, only admins and managers can modify settings. The page includes organization information, user management, usage reports, notification preferences, SSO configuration, and personal profile settings including Slack integration options.
 
 # Keywords
 - Amplitude settings page
@@ -7,8 +7,8 @@ The Settings page in Amplitude provides organization-wide and personal configura
 - User permissions
 - Usage reports
 - Notification preferences
-- Profile customization
-- Slack integration
 - SSO configuration
-- Annual review
+- Slack integration
+- Profile customization
 - Event volume tracking
+- Annual review

@@ -1,5 +1,5 @@
 ## Summary
-This documentation explains how to prevent internal user data from affecting metrics in Amplitude by using block filters for IP addresses, segmenting out specific users in charts, saving user segments as defaults, and maintaining lists of internal users through behavioral cohorts that can be updated programmatically.
+This documentation explains how to prevent internal user data from affecting metrics in Amplitude by using block filters for IP addresses, segmenting out specific users in charts, saving user segments as defaults, and maintaining user lists through behavioral cohorts that can be updated programmatically.
 
 ## Keywords
 - IP address blocking

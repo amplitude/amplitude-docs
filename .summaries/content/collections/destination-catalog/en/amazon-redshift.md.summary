@@ -5,10 +5,10 @@ This documentation page details the Amazon Redshift destination integration for 
 - Amazon Redshift data warehouse
 - Amplitude event export
 - IP allowlisting
-- Recurring data sync
-- Historical data backfill
+- Redshift credentials configuration
 - Event table schema
 - Merged User table schema
-- Security group configuration
+- Historical data backfills
 - Event filtering
+- Micro-batch export
 - String length DDL error

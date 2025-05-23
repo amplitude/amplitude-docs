@@ -7,8 +7,8 @@ This documentation page addresses common Amplitude access issues, including logi
 - SAML certificate
 - 500 internal server error
 - 403 error
-- browser compatibility
 - Google Workspace SSO
+- browser compatibility
 - password reset
 - incognito mode
 - ad blockers

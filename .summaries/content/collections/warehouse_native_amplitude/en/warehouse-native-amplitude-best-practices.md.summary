@@ -3,12 +3,13 @@ This documentation outlines best practices for Warehouse-native Amplitude, focus
 
 ## Keywords
 - clustering keys
+- composite clustering keys
 - LINEAR() function
 - star schema
 - snowflake schema
-- partition optimization
-- query performance
-- composite clustering keys
+- partitioning
+- query optimization
 - data modeling
-- warehouse-native
-- cardinality considerations
+- cardinality
+- fact tables
+- dimension tables

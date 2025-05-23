@@ -1,14 +1,14 @@
 # Summary
-The Anomaly + Forecast feature in Amplitude identifies statistically significant deviations in metrics based on historical data, using a Prophet-based algorithm with three modes (agile, robust, custom) and configurable confidence intervals, while also offering future metric projections and automated project alerts for Growth and Enterprise plan users.
+The Anomaly + Forecast feature in Amplitude identifies statistically significant deviations in metrics based on historical data, using Prophet forecasting methodology with three modes (agile, robust, custom) and configurable confidence intervals, helping teams distinguish meaningful fluctuations from noise and project future metric values.
 
 # Keywords
 - anomaly detection
 - time-series forecasting
 - Prophet algorithm
 - confidence intervals
-- seasonality detection
 - training data duration
-- agile/robust/custom modes
+- seasonality detection
 - automated project alerts
+- agile/robust/custom modes
+- metric projection
 - statistical significance
-- metric fluctuations

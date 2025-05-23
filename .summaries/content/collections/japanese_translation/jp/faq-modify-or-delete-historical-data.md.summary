@@ -1,7 +1,7 @@
-## Summary
-This FAQ page explains how to handle historical data in Amplitude, emphasizing that the platform's architecture makes data immutable once ingested. It covers approaches for updating user properties, dealing with incorrectly sent events, and methods for backfilling historical data, including using Export API and Batch API as workarounds.
+# Summary
+This FAQ page explains how to handle historical data in Amplitude, emphasizing that the platform's architecture makes data immutable once ingested. It covers approaches for updating user properties, dealing with incorrectly sent events, and methods for backfilling historical data, including using Export API and Batch API for data migration.
 
-## Keywords
+# Keywords
 - immutable data architecture
 - historical data modification
 - Identify API limitations
@@ -11,4 +11,4 @@ This FAQ page explains how to handle historical data in Amplitude, emphasizing t
 - Batch API
 - user property updates
 - event blocking
-- pre-aggregated data
+- data migration

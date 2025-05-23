@@ -4,12 +4,11 @@ This documentation explains the Pathfinder chart in Amplitude, which visualizes 
 ## Keywords
 - Pathfinder chart
 - User flow visualization
-- Session-based path analysis
 - Conversion paths
+- Session tracking
 - Sankey diagram
 - Event nodes
+- Path sequences
 - Zoom threshold
 - Custom events
-- Path filtering
 - Journey experience
-- Event sequence tracking

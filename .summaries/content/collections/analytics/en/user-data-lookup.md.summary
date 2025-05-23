@@ -1,5 +1,5 @@
 ## Summary
-This documentation explains how to use Amplitude's User Profiles feature to search for and analyze individual user data, including viewing user properties, event streams, session replays, cohort membership, experiments, and feature flags. It details how to search by user ID or properties, interpret timestamp data, and visualize user activity through various tabs and charts.
+This documentation explains how to use Amplitude's User Profiles feature to search for and analyze individual user data, including viewing user properties, event streams, session replays, cohort membership, experiments, and feature flags. It details how to search by user ID or properties, interpret timestamp data, and visualize user activity through various tabs and views.
 
 ## Keywords
-user profiles, event stream, user lookup, user history, client_event_time, server_received_time, raw data fields, session replays, cohort membership, feature flags, experiments, user properties, activity visualization, portfolio support, timestamp calculation
+user profiles, event stream, user lookup, user history, raw data fields, client_event_time, server_received_time, event_time, session replays, user properties, activity tab, insights tab, cohorts tab, experiments tab, flags tab, portfolio support, event visualization

@@ -2,16 +2,14 @@
 This documentation page explains how to define goals for experiments in Amplitude Experiment, including setting primary and secondary metrics, choosing experiment types (hypothesis testing or do-no-harm), and creating or editing metrics. It emphasizes the importance of selecting appropriate metrics that directly measure the user actions affected by the experiment variants.
 
 # Keywords
-- experiment goals
+- Amplitude Experiment
 - primary metrics
 - secondary metrics
 - exposure events
-- minimum detectable effect
+- minimum detectable effect (MDE)
 - hypothesis testing
-- do-no-harm experiments
+- do-no-harm (DNH) experiments
 - metric creation
+- experiment goals
 - variant performance
-- Amplitude Experiment
-- experiment design
-- metric types
 - statistical significance

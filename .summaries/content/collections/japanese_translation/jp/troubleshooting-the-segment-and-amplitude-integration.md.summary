@@ -10,5 +10,5 @@ This documentation page explains troubleshooting steps for when new event types 
 - Instrumentation limits
 - Segment Debugger
 - Amplitude Instrumentation Debugger
-- Event batching issues
-- Data transmission verification
+- Batch processing issues
+- Event validation workflow

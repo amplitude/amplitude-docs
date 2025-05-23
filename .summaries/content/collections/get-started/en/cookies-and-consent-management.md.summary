@@ -12,3 +12,6 @@ This documentation explains how Amplitude's JavaScript SDK handles cookies, loca
 - deviceId tracking
 - SameSite cookie settings
 - Cross-domain tracking
+- GDPR compliance
+- First-party cookies
+- Cookie storage options

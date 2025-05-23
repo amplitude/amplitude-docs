@@ -1,16 +1,14 @@
 # Summary
-This documentation describes the integration between Osano (a data privacy platform) and Amplitude, enabling automated PII discovery, classification, and subject rights request handling for GDPR/CCPA compliance, requiring only API key and Secret Key configuration in Osano's Data Stores section.
+This documentation describes the integration between Osano (a data privacy platform) and Amplitude, enabling automated PII discovery, classification, and subject rights request handling for GDPR/CCPA compliance. The setup requires an Osano Enterprise plan and involves connecting Amplitude's API key and Secret key in the Osano Portal.
 
 # Keywords
 - Osano integration
 - PII management
 - GDPR compliance
 - CCPA compliance
-- Data privacy platform
+- Data privacy
 - Subject rights requests
+- API key authentication
 - Data discovery
 - Data classification
-- API key authentication
-- Secret key authentication
 - Data store configuration
-- Enterprise plan requirement

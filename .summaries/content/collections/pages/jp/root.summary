@@ -1,7 +1,7 @@
 # Amplitude Japanese Documentation
 
 ## Overview
-Amplitude is a product analytics platform with a dedicated Japanese documentation section. The Japanese documentation provides localized content for Japanese-speaking users to understand and utilize Amplitude's analytics capabilities.
+Amplitude is a product analytics platform that offers documentation in Japanese. The Japanese documentation section is a dedicated resource for Japanese-speaking users to understand and utilize Amplitude's features and capabilities.
 
 ## Product Structure
 The Japanese documentation appears to be organized as a separate section within the broader Amplitude documentation ecosystem. It consists of:
@@ -12,21 +12,17 @@ The Japanese documentation appears to be organized as a separate section within 
 ## Key Nomenclature
 - **jp-home**: The main landing page for Japanese documentation
 - **japanese_content**: Navigation title for the Japanese documentation section
-- **test**: A currently unpublished page that appears to be a translated version of content from another page (referenced by the origin ID)
+- **test**: A currently unpublished page that appears to be in development or testing
 
 ## Integration with Product Ecosystem
-The Japanese documentation is integrated into the main Amplitude documentation platform as follows:
-
-1. It maintains its own dedicated home page while likely sharing the overall structure of the main documentation
-2. It uses the same content management system as the main documentation
-3. It appears to use a translation workflow where content can be derived from original English pages (as suggested by the "origin" field in the test page)
+The Japanese documentation is integrated into the main Amplitude documentation platform, providing localized content for Japanese users. This suggests that Amplitude has a commitment to supporting international users with native language documentation.
 
 ## Technical Details
-- The documentation uses a blueprint-based content management system
+- The documentation is built using a blueprint-based content management system
 - Content is managed through markdown files with YAML frontmatter
-- Each page has a unique ID (UUID format)
+- Each page has unique identifiers (e.g., `9bf6d854-cbcc-4db3-a3f9-3f291b2f02e9`)
 - Pages can be excluded from the sitemap if needed
-- Content appears to support translation workflows with origin references
-- The system tracks content updates with user IDs and timestamps
+- Content can be marked as published or unpublished
+- The system supports content origin references, suggesting content may be translated or derived from other pages
 
-The Japanese documentation section is designed to provide the same comprehensive product information as the main documentation but tailored specifically for Japanese-speaking users.
+The Japanese documentation section appears to be actively maintained, with recent updates to the home page (timestamp: 1718402690) and test page (timestamp: 1733261724).

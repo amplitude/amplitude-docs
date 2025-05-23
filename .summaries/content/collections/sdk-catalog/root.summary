@@ -2,64 +2,94 @@
 
 ## Product Overview
 
-Amplitude's SDK Catalog provides a comprehensive suite of Software Development Kits that enable developers to integrate analytics capabilities into applications across multiple platforms. These SDKs facilitate the collection and analysis of user behavior data through event tracking, user identification, session management, and customizable data collection configurations.
+Amplitude's SDK Catalog provides a comprehensive suite of development kits that enable analytics tracking across diverse platforms and programming languages. These SDKs facilitate the integration of Amplitude's analytics capabilities into applications, allowing developers to track user behavior, manage sessions, and log events with precision.
+
+The SDKs feature robust configuration options including event batching, device ID management, session tracking, customizable storage providers, and flexible network settings. They are designed to function seamlessly across mobile applications, web browsers, game engines, and server-side environments, providing a unified analytics solution regardless of platform.
 
 ## Product Relationships and Features
 
-The SDK Catalog consists of platform-specific SDKs that share common core functionality while offering platform-specific implementations:
+The SDK ecosystem is organized by platform type:
 
-1. **Mobile Platform SDKs**:
-   - Android (Java/Kotlin)
-   - iOS (Swift)
-   - React Native
-   - Flutter
+### Mobile Platforms
+- **Android SDK**: Native implementation for Android applications with extensive configuration options
+- **iOS SDK**: Native implementation for iOS/Swift applications
+- **React Native SDK**: Cross-platform solution for React Native mobile applications
+- **Flutter SDK**: Cross-platform solution for Flutter mobile applications
 
-2. **Web Platform SDKs**:
-   - Browser (JavaScript)
+### Web Platforms
+- **Browser SDK**: Implementation for web applications and websites
 
-3. **Server-Side SDKs**:
-   - Node.js
-   - Python
-   - JRE Java
-   - Go
+### Game Development
+- **Unity SDK**: Integration for Unity game engine applications
+- **Unreal Engine SDK**: Integration for Unreal Engine applications
 
-4. **Game Development SDKs**:
-   - Unity
-   - Unreal Engine
+### Server-Side/Backend
+- **Node.js SDK**: Implementation for JavaScript/TypeScript server applications
+- **Python SDK**: Implementation for Python applications
+- **JRE Java SDK**: Implementation for Java applications
+- **Go SDK**: Implementation for Go applications
 
-All SDKs provide consistent core capabilities with platform-specific implementations:
-- Event tracking for user interactions
-- User and device identification
-- Session management
-- Batch processing of events
-- Offline support with local storage
-- COPPA compliance controls
-- Server zone configuration for data residency
-- Customizable storage providers
-
-The Android SDK specifically offers detailed configuration for batching behavior, device ID management, session tracking, storage customization, and network settings.
+While each SDK provides platform-specific implementations, they share core functionality for event tracking and analytics. The Android SDK documentation is particularly detailed, offering comprehensive configuration options for event tracking behaviors, batching mechanisms, device identification, session management, and storage customization.
 
 ## Key Nomenclature and Definitions
 
-- **Event**: A tracked user action or occurrence within an application
-- **User ID**: Unique identifier for tracking individual users across sessions
-- **Device ID**: Unique identifier for a specific device
-- **Session**: A defined period of user engagement with the application
-- **Batch API**: Method for sending multiple events in a single network request
-- **flushIntervalMillis**: Time interval configuration for automatically sending batched events
-- **flushQueueSize**: Maximum number of events to batch before sending
-- **StorageProvider**: Interface for customizing local event data storage
-- **serverZone**: Configuration parameter for specifying data residency (EU or US)
-- **COPPA**: Children's Online Privacy Protection Act - controls for regulatory compliance
+Based on the documentation, key terminology includes:
+
+- **Event Tracking**: Core functionality for logging user actions and behaviors
+- **flushIntervalMillis**: Time interval (in milliseconds) for batching and sending events
+- **flushQueueSize**: Threshold number of events that triggers automatic sending
+- **deviceId**: Unique identifier for tracking individual devices or users
+- **Batch API**: System for sending multiple events in a single network request
+- **Offline Mode**: Capability to store events locally during network unavailability
+- **StorageProvider**: Interface for customizing local event storage implementation
+- **Session Tracking**: System for grouping events into logical user sessions
+- **COPPA Control**: Settings for compliance with Children's Online Privacy Protection Act
+- **ServerZone**: Configuration option for data residency (US or EU servers)
+- **Legacy Data Migration**: Process for transitioning data from previous SDK versions
 
 ## Product Ecosystem Integration
 
-The SDK Catalog functions as the data collection layer within Amplitude's broader analytics platform. The SDKs collect and transmit user event data to Amplitude's analytics backend, where it can be analyzed through Amplitude's dashboard and reporting tools.
+Amplitude's SDKs function as the data collection layer within Amplitude's broader analytics platform. They:
 
-Key integration points include:
-- Connection to Amplitude's identity management system for cross-platform user tracking
-- Support for data residency options through server zone configuration
-- Compliance capabilities for regional data privacy regulations
-- Integration with Amplitude's analytics backend for data processing and visualization
+1. Collect user event data across multiple platforms
+2. Process and optimize this data for efficient transmission
+3. Transmit data to Amplitude's analytics servers
+4. Support offline functionality with local storage
+5. Provide configuration options for regulatory compliance
 
-Each SDK has dedicated documentation following a consistent template structure, with the exception of Unity and Unreal Engine SDKs which redirect to specific documentation paths. The catalog organization allows developers to easily locate the appropriate SDK for their development environment.
+The collected data feeds into Amplitude's analytics dashboard and reporting tools, enabling businesses to analyze user behavior, track conversion metrics, and optimize their applications. The SDKs support core Amplitude features including user identification, event property tracking, and session management.
+
+## API Usage Examples
+
+The Android SDK documentation provides implementation examples in both Kotlin and Java:
+
+```kotlin
+// Kotlin configuration example
+val config = Configuration(
+    apiKey = AMPLITUDE_API_KEY,
+    flushIntervalMillis = 1000,
+    flushQueueSize = 10
+)
+Amplitude.init(context, config)
+
+// Event tracking
+Amplitude.track("Button Clicked", mapOf("button_type" to "sign_up"))
+```
+
+```java
+// Java configuration example
+Configuration configuration = new Configuration(
+    AMPLITUDE_API_KEY,
+    getApplicationContext()
+);
+configuration.setFlushIntervalMillis(1000);
+configuration.setFlushQueueSize(10);
+Amplitude.init(configuration);
+
+// Event tracking
+Map<String, String> eventProperties = new HashMap<>();
+eventProperties.put("button_type", "sign_up");
+Amplitude.track("Button Clicked", eventProperties);
+```
+
+The SDKs interact with Amplitude's servers through configuration options including server zone selection (US or EU), batch API implementation for efficient data transmission, and customizable flush mechanisms that control when events are sent to servers.

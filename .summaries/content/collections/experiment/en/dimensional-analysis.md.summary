@@ -4,11 +4,11 @@ This documentation explains Amplitude's Dimensional Analysis feature which allow
 ## Keywords
 - Dimensional Analysis
 - experiment filtering
-- exclude testers
+- test user exclusion
 - targeting segments
-- QA user exclusion
-- user segment analysis
+- QA user filtering
+- segment-specific analysis
 - experiment targeting settings
 - variant assignment
 - statistical significance
-- segment-specific experiment results
+- user segment analysis

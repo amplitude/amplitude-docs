@@ -1,16 +1,17 @@
 # Summary
-This documentation page describes Amplitude's Session Replay feature, which provides qualitative insights by recording and playing back user sessions, allowing teams to observe actual user interactions with their product, troubleshoot issues, and understand user behavior beyond quantitative metrics, with details on accessing replays, searching, filtering, and limitations.
+This documentation page describes Amplitude's Session Replay feature, which provides qualitative insights by recording and playing back user sessions, allowing teams to observe actual user interactions with their product, troubleshoot issues, and understand user behavior patterns through synchronized event streams and visual playback of user sessions.
 
 # Keywords
-- session-replay
-- user-journey-visualization
-- event-stream-sync
-- replay-search-filters
-- qualitative-insights
-- bug-troubleshooting
-- user-experience-analysis
-- replay-sharing
-- replay-retention
-- data-masking
-- ingestion-delay
-- replay-limitations
+- session replay
+- user journey visualization
+- event stream synchronization
+- replay search filters
+- qualitative insights
+- bug diagnosis
+- user experience analysis
+- replay sharing
+- replay retention
+- masked HTML elements
+- replay limitations
+- ingestion delay
+- throttling errors

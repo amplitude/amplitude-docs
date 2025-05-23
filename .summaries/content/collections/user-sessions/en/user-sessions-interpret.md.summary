@@ -9,6 +9,8 @@ This documentation explains how to interpret User Sessions charts in Amplitude, 
 - Property filtering
 - Session filtering
 - Session ID
-- Mobile sessions (5-minute timeout)
-- Web sessions (30-minute timeout)
+- Mobile sessions
+- Web sessions
+- Server-side sessions
 - Group segmentation
+- Session length calculation

@@ -9,8 +9,7 @@ This documentation explains how Amplitude identifies unique users through a syst
 - Cross-domain tracking
 - Anonymous users
 - IDFA
-- IDFV
 - AdID
 - User identification
-- User tracking
-- Unique user counting
+- Unique user tracking
+- User attribution

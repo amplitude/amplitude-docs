@@ -1,14 +1,14 @@
 ## Summary
-Nami is a platform for in-app purchases and subscriptions that integrates with Amplitude to send subscription-related events, requiring a paid Nami plan and matching user identifiers across both platforms for proper data merging. The integration enables monetization optimization, targeted conversion campaigns, and real-time revenue analytics.
+Nami is a platform for in-app purchases and subscriptions that integrates with Amplitude to send monetization data, offering no-code paywalls, targeted campaigns, and real-time revenue analytics. The integration requires a paid Nami plan and matching user identifiers between both platforms.
 
 ## Keywords
-- no-code paywalls
 - subscription management
+- no-code paywalls
 - in-app purchases
 - revenue analytics
 - monetization optimization
+- customer conversion campaigns
 - user segmentation
-- conversion campaigns
 - API key integration
-- mobile app monetization
-- cross-platform subscription
+- raw events
+- cross-platform (mobile, tablet, TV)

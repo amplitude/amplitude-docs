@@ -1,14 +1,14 @@
 # Summary
-This documentation explains how Amplitude calculates funnel conversions, detailing first-touch attribution scenarios with holding constants and group by functions, and clarifying the unique user count logic where Amplitude counts only the earliest and longest conversion path per user, with different behavior when counting event totals.
+This documentation explains how Amplitude calculates funnel conversions, focusing on first-touch attribution scenarios with holding constants and group by functions, and detailing the unique user count logic that prioritizes the earliest and most complete conversion paths for each user.
 
 # Keywords
 - funnel conversion calculation
 - first-touch attribution
 - holding constant function
 - group by function
-- session-based attribution
+- session-based conversion
 - unique user count logic
-- earliest/longest conversion path
 - conversion window
+- earliest/longest conversion
 - funnel vs event segmentation
-- Japanese translation
+- landing page attribution

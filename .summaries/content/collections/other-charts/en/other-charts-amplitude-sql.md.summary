@@ -5,13 +5,12 @@ This documentation page introduces Amplitude SQL, a feature of the Query product
 - Amplitude SQL
 - Snowflake database
 - Query add-on
-- custom SQL
+- custom SQL queries
 - event_properties
 - user_properties
 - variant data type
 - $events table
 - data visualization
 - SQL autocomplete
-- Growth/Enterprise plans
 - 30-minute data loading
-- 1000-row export limit
+- 1,000-row export limit

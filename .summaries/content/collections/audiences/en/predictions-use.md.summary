@@ -9,8 +9,8 @@ This documentation explains how to use prediction-based cohorts in marketing cam
 - holdout groups
 - campaign measurement
 - relative lift
+- incremental conversions
 - Braze integration
 - Facebook Custom Audience
-- incremental conversions
 - UTM parameters
-- multivariate testing
+- predictive model validation

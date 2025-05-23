@@ -2,170 +2,127 @@
 
 ## Product Overview
 
-The Amplitude iOS SDK is a comprehensive analytics solution for iOS applications that enables developers to track user behavior, manage user identities, and analyze app usage patterns. The SDK is available in multiple versions, including a maintenance version (Amplitude-iOS), a current Swift version (AmplitudeSwift), and specialized wrappers like Ampli and the Unified SDK that provide additional functionality.
+The Amplitude iOS SDK is a comprehensive analytics solution for iOS applications that enables developers to track user behavior, analyze engagement patterns, and make data-driven decisions. The SDK ecosystem consists of multiple components that work together to provide analytics, experimentation, and session replay capabilities for iOS applications written in Swift and Objective-C.
 
-Key features of the Amplitude iOS SDK include:
-- Event tracking with rich metadata
-- User identification and property management
-- Revenue tracking
-- Session management
-- Group analytics
-- Offline data collection
-- Autocapture capabilities for network calls and UI interactions
-- Plugin architecture for extensibility
-- Integration with other Amplitude products (Experiment, Session Replay)
+### Key Features
 
-The SDK supports both Swift and Objective-C applications and can be installed via CocoaPods, Carthage, or Swift Package Manager.
+- **Event Tracking**: Capture user interactions and custom events with rich metadata
+- **User Identification**: Associate events with specific users and track user properties
+- **Revenue Tracking**: Monitor in-app purchases and revenue metrics
+- **Session Management**: Track user sessions with configurable timeouts
+- **Autocapture**: Automatically track screen views, app lifecycle events, and user interactions
+- **Offline Support**: Queue events when offline and send when connectivity is restored
+- **Privacy Controls**: COPPA compliance, opt-out mechanisms, and privacy manifest support
+- **Type-Safe Event Tracking**: Through the Ampli wrapper, based on a tracking plan
+- **Experimentation**: A/B testing and feature flagging through Experiment SDK
+- **Session Replay**: Record and replay user sessions for debugging and UX analysis
 
 ## Product Relationships and Architecture
 
-The Amplitude iOS SDK ecosystem consists of several related products:
+The Amplitude iOS SDK ecosystem consists of several related components:
 
-1. **Amplitude-iOS** (Maintenance SDK): The legacy Objective-C based SDK that is still maintained but not actively developed.
+1. **Amplitude-iOS** (Maintenance SDK): The original Objective-C based SDK, now in maintenance mode
+2. **Amplitude-Swift** (iOS Swift SDK): The newer Swift-based SDK with a plugin architecture
+3. **Ampli Wrapper**: A type-safe wrapper generated from a tracking plan
+4. **Unified SDK**: A wrapper that combines Analytics, Experiment, and Session Replay SDKs
 
-2. **AmplitudeSwift** (Current SDK): The modern Swift-based SDK with enhanced features, plugin architecture, and improved performance.
+The relationship between these components is hierarchical:
 
-3. **Ampli Wrapper**: A code-generated, strongly-typed wrapper for the Amplitude SDK that provides type-safe event tracking based on a tracking plan defined in Amplitude.
-
-4. **Amplitude Unified SDK**: A wrapper that combines multiple Amplitude products (Analytics, Experiment, and Session Replay) into a single interface for easier integration.
-
-The architecture follows a plugin-based approach in the newer SDKs, allowing for extensibility and customization. The SDKs handle event batching, offline storage, and synchronization with Amplitude's servers.
+- The **Unified SDK** sits at the top level, providing a simplified interface to multiple Amplitude products
+- The **iOS Swift SDK** (Amplitude-Swift) is the core analytics implementation with a modern plugin architecture
+- The **Ampli Wrapper** is built on top of either SDK to provide type-safety based on a tracking plan
+- The **Maintenance SDK** (Amplitude-iOS) is the legacy implementation being phased out
 
 ## Key Nomenclature and Definitions
 
-- **Event**: An action that a user performs in the application, which can be tracked with properties.
-- **Identify**: The process of associating events with a specific user and updating user properties.
-- **User Properties**: Attributes associated with a user that persist across sessions.
-- **Group**: A collection of users that can be analyzed together.
-- **Session**: A period of user engagement with the app, defined by configurable timeout parameters.
-- **Device ID**: A unique identifier for the device, used for tracking users across sessions.
-- **User ID**: A custom identifier that you can set to identify a user across devices.
-- **Tracking Plan**: A schema that defines the expected events and properties for an application.
-- **Middleware**: Custom code that can intercept and modify events before they are processed.
-- **Plugin**: Modular components that extend the functionality of the SDK.
-- **Autocapture**: Automatic tracking of predefined events like network calls and UI interactions.
+- **AmplitudeSwift**: The main class for the Swift SDK that handles initialization and event tracking
+- **AmplitudeUnified**: The main class for the Unified SDK that combines multiple Amplitude products
+- **Ampli**: The generated wrapper class that provides type-safe event tracking
+- **Event**: A user action or occurrence that is tracked, containing properties and metadata
+- **Identify**: An operation to set or update user properties
+- **User Properties**: Attributes associated with a user (e.g., name, email, preferences)
+- **Group**: A collection of users that can have shared properties
+- **Session**: A period of user engagement with the app, defined by configurable timeout
+- **Device ID**: A unique identifier for the device, used for tracking
+- **User ID**: A custom identifier for the user, typically from your authentication system
+- **Tracking Plan**: A schema that defines events, their properties, and validation rules
+- **Plugin**: An extension point in the Swift SDK architecture for adding functionality
+- **Middleware**: Code that can intercept and modify events before they're sent to Amplitude
 
 ## Product Ecosystem Integration
 
-The Amplitude iOS SDK integrates with the broader Amplitude product ecosystem:
+The Amplitude iOS SDK integrates with the broader Amplitude product ecosystem in several ways:
 
-1. **Analytics**: The core functionality for tracking events and user properties, which feeds data to the Amplitude Analytics platform.
+1. **Analytics Platform**: Events tracked by the SDK are sent to Amplitude's analytics backend for processing, visualization, and analysis
+2. **Experiment**: The Unified SDK includes integration with Amplitude Experiment for A/B testing and feature flagging
+3. **Session Replay**: The Unified SDK includes integration with Session Replay for recording and replaying user sessions
+4. **Data Destinations**: Events collected can be forwarded to other tools in your stack through Amplitude's data routing capabilities
+5. **Tracking Plan**: The Ampli wrapper is generated from a tracking plan defined in Amplitude's Data management tools
 
-2. **Experiment**: A/B testing and feature flagging capabilities that can be integrated through the Unified SDK.
+## API Endpoints and Implementation Details
 
-3. **Session Replay**: Captures user sessions for playback and analysis, available through the Unified SDK.
+### Installation Options
 
-The SDK also supports integration with other systems through:
-- HTTP V2 API for sending events to Amplitude's servers
-- Batch API support for efficient data transmission
-- Custom storage options for persisting data locally
-- Identity management that can be shared across Amplitude products
+- **CocoaPods**: `pod 'AmplitudeSwift'` or `pod 'AmplitudeUnified'`
+- **Swift Package Manager**: Add the package URL `https://github.com/amplitude/Amplitude-Swift`
+- **Carthage**: `github "amplitude/Amplitude-Swift"` (for the Swift SDK)
 
-## API Endpoints and Usage Examples
+### Key API Methods
 
-### Initialization
+#### Swift SDK (AmplitudeSwift)
 
-**AmplitudeSwift:**
 ```swift
-import AmplitudeSwift
+// Initialization
+let amplitude = Amplitude(configuration: Configuration(apiKey: "API_KEY"))
 
-let amplitude = Amplitude(
-    configuration: Configuration(
-        apiKey: "YOUR-API-KEY",
-        defaultTracking: DefaultTrackingOptions(
-            sessions: true,
-            appLifecycles: true,
-            deepLinks: true
-        )
-    )
-)
+// Event Tracking
+amplitude.track(event: BaseEvent(eventType: "Button Clicked"))
+
+// User Identification
+amplitude.identify(identify: Identify().set(property: "user_type", value: "premium"))
+
+// Revenue Tracking
+amplitude.revenue(revenue: Revenue(price: 3.99, quantity: 1))
+
+// Flushing Events
+amplitude.flush()
 ```
 
-**Ampli Wrapper:**
-```swift
-import Amplitude
-import Ampli
+#### Ampli Wrapper
 
-// Initialize Ampli
+```swift
+// Initialization
 let ampli = Ampli()
-ampli.load(LoadOptions(
-    client: {
-        // Optional: Customize the underlying Amplitude client
-        let amplitude = Amplitude(configuration: Configuration(apiKey: "YOUR-API-KEY"))
-        return amplitude
-    }
-))
+ampli.load(LoadOptions(client: AmplitudeSwift(configuration: Configuration(apiKey: "API_KEY"))))
+
+// Type-safe Event Tracking
+ampli.songPlayed(name: "Song Name", duration: 240)
+
+// Status Verification
+ampli.getStatus() // Returns implementation status
 ```
 
-**Unified SDK:**
-```swift
-import AmplitudeUnified
+#### Unified SDK
 
-let unified = AmplitudeUnified.getInstance(
+```swift
+// Initialization
+let amplitude = AmplitudeUnified.getInstance(
     configuration: UnifiedConfiguration(
-        apiKey: "YOUR-API-KEY",
+        apiKey: "API_KEY",
         analyticsConfiguration: AnalyticsConfiguration(),
         experimentConfiguration: ExperimentConfiguration(),
         sessionReplayConfiguration: SessionReplayConfiguration()
     )
 )
+
+// Using Analytics
+amplitude.analytics.track(eventType: "Button Clicked")
+
+// Using Experiment
+let variant = amplitude.experiment.variant("flag-key")
+
+// Using Session Replay
+amplitude.sessionReplay.start()
 ```
 
-### Event Tracking
-
-**AmplitudeSwift:**
-```swift
-amplitude.track(
-    eventType: "Button Clicked",
-    eventProperties: ["buttonColor": "blue", "buttonText": "Sign Up"]
-)
-```
-
-**Ampli Wrapper:**
-```swift
-// Using a predefined event from the tracking plan
-ampli.songPlayed(
-    songId: "song-123",
-    songName: "Bohemian Rhapsody",
-    artist: "Queen"
-)
-```
-
-### User Identification
-
-```swift
-// Set user ID
-amplitude.setUserId("user@example.com")
-
-// Update user properties
-amplitude.identify(
-    Identify()
-        .set("plan", value: "premium")
-        .add("loginCount", value: 1)
-)
-```
-
-### Revenue Tracking
-
-```swift
-amplitude.revenue(
-    Revenue()
-        .setProductId("product-123")
-        .setPrice(9.99)
-        .setQuantity(1)
-)
-```
-
-### Session Management
-
-```swift
-// Configure session timeout
-let configuration = Configuration(
-    apiKey: "YOUR-API-KEY",
-    minTimeBetweenSessionsMillis: 30 * 60 * 1000 // 30 minutes
-)
-```
-
-The SDK provides many more APIs for advanced use cases, including group identification, offline mode configuration, middleware implementation, and plugin development.
-
-# Human: I need to understand the differences between the various iOS SDKs offered by Amplitude. Can you explain the key differences between the maintenance iOS SDK (Amplitude-iOS), the current iOS Swift SDK (AmplitudeSwift), the Ampli Wrapper, and the Unified SDK? When should I use each one?
+The iOS SDK uses Amplitude's HTTP V2 API endpoint for sending events, with automatic batching and retry logic built in.

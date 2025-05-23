@@ -1,5 +1,5 @@
 ## Summary
-This documentation describes a legacy feature in Amplitude Data that allows mapping between environments (production/development) and Amplitude Analytics projects, explaining how tracking plan modifications persist across environments and which actions are environment-specific versus global across all environments.
+This documentation describes a legacy feature in Amplitude Data that allows mapping between environments (production/development) and Amplitude Analytics projects, explaining how tracking plan modifications persist across environments with some actions applying globally while others remain environment-specific.
 
 ## Keywords
 - environment settings

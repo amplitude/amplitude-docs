@@ -6,9 +6,9 @@ This documentation page explains the differences between client-side sources (co
 - server-side SDKs
 - API endpoints
 - mobile instrumentation
-- web browser tracking
-- HTTP V2 API
-- source selection criteria
+- web instrumentation
+- third-party sources
 - hybrid tracking approach
-- third-party data sources
-- implementation considerations
+- HTTP V2 API
+- Batch event upload
+- source selection criteria

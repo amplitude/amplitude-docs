@@ -9,9 +9,9 @@ This documentation explains how to use Ampli CLI with source control systems lik
 - ampli pull
 - ampli checkout
 - ampli status
-- is-merged
-- is-latest
-- GitHub Actions
+- is-merged flag
+- is-latest flag
 - CI workflows
+- GitHub Actions
 - tracking plan implementation
 - merge verification

@@ -1,5 +1,5 @@
 # Summary
-Warehouse-native Amplitude (WNA) enables users to create custom analyses using data models directly from their Snowflake data warehouse without ingesting event data into Amplitude, providing faster access to time-sensitive datasets while maintaining Amplitude's analytical capabilities, though with some feature limitations compared to standard Amplitude.
+Warehouse-native Amplitude (WNA) enables users to create custom analyses using data models directly from their Snowflake data warehouse without ingesting event data into Amplitude, providing faster access to time-sensitive datasets while maintaining Amplitude's analytical capabilities.
 
 # Keywords
 - Warehouse-native Amplitude (WNA)
@@ -7,8 +7,8 @@ Warehouse-native Amplitude (WNA) enables users to create custom analyses using d
 - Data warehouse connection
 - Read-only credentials
 - Clustering keys optimization
-- Feature constraints
+- Formula constraints
+- Unsupported features
 - Custom data models
-- Direct query execution
+- Project creation workflow
 - Performance optimization
-- Unsupported formulas

@@ -3,17 +3,17 @@ This documentation details the Amplitude Analytics Android SDK, a maintenance-mo
 
 ## Keywords
 - Android SDK
-- AmplitudeClient
-- logEvent
-- identify
-- setUserProperties
-- revenue tracking
-- session management
-- deviceId
-- middleware
-- offline mode
-- dynamic configuration
-- user groups
+- Amplitude Analytics
+- Event tracking
+- User identification
+- Revenue verification
+- Session management
+- Device ID
+- Identify API
+- Middleware
+- Offline mode
 - COPPA control
-- App Set ID
+- Dynamic configuration
 - SSL pinning
+- App Set ID
+- Advertiser ID

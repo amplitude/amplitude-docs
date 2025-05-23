@@ -13,5 +13,4 @@ This documentation details Amplitude's Snowflake integration for importing data 
 - Group properties
 - Data warehouse integration
 - Timestamp-based import
-- Authentication methods
-- Performance optimization
+- Data mutability

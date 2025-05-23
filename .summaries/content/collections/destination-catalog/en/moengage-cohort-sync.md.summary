@@ -10,5 +10,5 @@ This documentation page describes the MoEngage Cohort Sync integration with Ampl
 - API Settings
 - sync cadence
 - marketing automation
-- App ID
-- Secret Key
+- Amplitude cohorts
+- targeted messaging

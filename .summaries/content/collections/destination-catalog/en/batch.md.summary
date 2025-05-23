@@ -8,7 +8,7 @@ This documentation details the Batch destination integration for syncing Amplitu
 - push notifications
 - Custom User ID
 - Installation ID
-- API Key
-- REST API Key
-- Batch (Profile) destination
-- audience targeting
+- API Key configuration
+- omnichannel targeting
+- re-engagement campaigns
+- audience segmentation

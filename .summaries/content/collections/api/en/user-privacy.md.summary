@@ -7,9 +7,9 @@ The User Privacy API enables programmatic deletion of user data across Amplitude
 - CCPA-compliance
 - amplitude_ids
 - user_ids
-- deletion-jobs
 - delete_from_org
 - ignore_invalid_ids
+- deletion-jobs
 - privacy-requests
 - data-removal
 - batch-deletion

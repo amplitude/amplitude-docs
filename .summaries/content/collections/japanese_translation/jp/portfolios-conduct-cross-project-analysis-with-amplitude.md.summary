@@ -1,14 +1,14 @@
-# Summary
-This documentation explains Amplitude's Portfolio addon, which enables cross-project analysis across multiple products by creating "views" that combine data sources while maintaining user identity across projects through user mapping (aliasing) via API endpoints.
+## Summary
+This documentation explains Amplitude's Portfolio addon, which enables cross-project analysis across multiple products by creating "views" that combine data sources while maintaining user identity across projects through user mapping (aliasing) functionality via API endpoints.
 
-# Keywords
+## Keywords
 - Portfolio addon
 - Cross-project analysis
 - Views (data source collections)
 - User mapping API
 - global_user_id
+- Cross-product user journey
 - Project integration
 - User property silos
-- Cross-platform user journey
-- Portfolio creation
-- API endpoint usermap
+- API endpoint /usermap
+- Cross-platform analytics

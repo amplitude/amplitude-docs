@@ -1,5 +1,5 @@
 ## Summary
-Zeda.io is a product discovery and strategy platform that integrates with Amplitude to sync cohorts, allowing product teams to analyze cohort-specific feedback and insights for prioritizing initiatives and understanding feature performance. The integration requires paid Amplitude plans, an active Zeda.io workspace, and involves copying an API key from Zeda.io to configure the connection in Amplitude.
+Zeda.io destination integration allows syncing cohorts from Amplitude to Zeda.io's product discovery platform, enabling teams to analyze cohort-specific feedback and insights for prioritizing product initiatives and understanding feature performance, requiring paid Amplitude plans and an active Zeda.io workspace.
 
 ## Keywords
 - product discovery platform
@@ -7,8 +7,8 @@ Zeda.io is a product discovery and strategy platform that integrates with Amplit
 - API key authentication
 - product intelligence
 - feature performance analysis
-- cohort-specific feedback
-- product prioritization
-- Amplitude integration
-- product strategy
 - customer feedback filtering
+- product strategy
+- cohort-specific insights
+- product prioritization
+- Amplitude properties mapping

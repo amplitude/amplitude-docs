@@ -1,16 +1,14 @@
 ## Summary
-This documentation page describes Web Experiment actions that modify site variants, including element changes (display, visibility, text, background, move), URL redirects, and custom code actions (JavaScript, HTML, CSS) with implementation examples and utility functions for dynamic page modifications.
+This documentation page describes Web Experiment actions that modify site variants, including element changes (display, visibility, text, background, move), URL redirects, and custom code actions (JavaScript, HTML, CSS) with implementation examples for inserting elements, banners, and modals.
 
 ## Keywords
-- web_experiment
-- variant actions
-- element changes
-- URL redirects
-- custom code
-- waitForElement
+- Web Experiment actions
+- Element changes
+- URL redirect
+- Custom code injection
+- waitForElement utility
 - DOM manipulation
-- visual editor
-- experiment evaluation
-- modal injection
-- banner implementation
-- utils.remove
+- Visual editor
+- Variant modification
+- Banner implementation
+- Modal implementation

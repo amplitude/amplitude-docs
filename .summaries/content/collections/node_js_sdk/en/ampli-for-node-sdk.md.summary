@@ -1,5 +1,5 @@
 ## Summary
-This documentation page describes the Ampli Wrapper for Node.js SDK, a generated, strongly typed API for tracking analytics events based on a tracking plan in Amplitude Data. It provides a complete implementation guide including installation, initialization, user identification, event tracking, and verification steps with code examples for both TypeScript and JavaScript.
+This documentation page describes the Ampli Wrapper for Node.js SDK, a generated, strongly typed API for tracking analytics events based on a tracking plan in Amplitude Data. It provides a complete implementation guide including installation, initialization, tracking events, identifying users, and verifying implementation status.
 
 ## Keywords
 - Ampli Wrapper
@@ -8,12 +8,12 @@ This documentation page describes the Ampli Wrapper for Node.js SDK, a generated
 - JavaScript
 - tracking plan
 - strongly typed API
-- identify
-- setGroup
-- track
-- flush
-- ampli CLI
+- ampli.load()
+- ampli.identify()
+- ampli.track()
+- ampli.flush()
+- ampli pull
+- ampli status
 - event tracking
 - user properties
 - middleware
-- schema enforcement

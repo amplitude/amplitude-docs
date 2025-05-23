@@ -1,84 +1,89 @@
-# Amplitude Experiment
+# Amplitude Experiment: Product Overview
 
-## Product Overview
-
-Amplitude Experiment is a behavioral experimentation platform that enables product teams to conduct A/B testing, implement progressive feature delivery, and create dynamic in-product experiences through feature flags. The platform supports two primary workflows:
-
-1. **Experimentation**: Creating controlled experiments with hypotheses, metrics, variants, and statistical analysis to make data-driven product decisions.
-2. **Feature Flagging**: Implementing controlled feature rollouts without metrics analysis, focusing on progressive delivery and risk mitigation.
-
-The platform offers sub-millisecond performance through local evaluation for latency-sensitive applications, while also providing advanced targeting capabilities through remote evaluation when needed.
+Amplitude Experiment is a behavioral experimentation platform that enables product teams to conduct A/B testing, implement progressive feature delivery, and create dynamic in-product experiences through feature flags. The platform integrates with the broader Amplitude analytics ecosystem to provide data-driven experimentation capabilities.
 
 ## Key Features and Concepts
 
+### Core Capabilities
+- **A/B Testing**: Run controlled experiments to test hypotheses about product changes
+- **Feature Flags**: Implement controlled feature rollouts without requiring metrics analysis
+- **Progressive Feature Delivery**: Gradually release features to users
+- **Dynamic In-Product Experiences**: Modify user experiences based on targeting criteria
+
 ### Evaluation Modes
+1. **Remote Evaluation**: Server-based evaluation with advanced targeting capabilities
+   - Amplitude ID resolution
+   - IP geolocation
+   - Property canonicalization
+   - Behavioral cohort targeting
+   - Historical user properties
 
-1. **Local Evaluation**: 
-   - Runs evaluation logic directly in the SDK without network requests
-   - Provides sub-millisecond performance for latency-sensitive systems
-   - Supports consistent bucketing and targeting segments
-   - Lacks Amplitude ID resolution and user enrichment capabilities
+2. **Local Evaluation**: In-SDK evaluation for latency-sensitive applications
+   - Sub-millisecond performance
+   - No network requests required
+   - Limited to basic targeting capabilities
+   - Available for both client-side and server-side SDKs
 
-2. **Remote Evaluation**:
-   - Makes requests to evaluation servers to fetch variants
-   - Supports advanced targeting capabilities:
-     - Amplitude ID resolution
-     - IP geolocation
-     - Property canonicalization
-     - Behavioral cohort targeting
-     - Historical user properties
+### Analysis Capabilities
+- **Experiment Analysis View**: Statistical measurements to evaluate experiment success
+- **Dimensional Analysis**: Filter experiment results by user segments
+- **Sequential Testing**: Continuously monitor experiment results
+- **Statistical Rigor**: p-values, confidence intervals, and significance testing
 
-### Experiment Analysis
+## Product Architecture and Relationships
 
-The Experiment Analysis view provides statistical measurements to evaluate experiment success, including:
-- Relative performance metrics
-- Confidence intervals
-- Statistical significance indicators (p-values)
-- Absolute values for each variant compared to the control
+### Data Model Hierarchy
+1. **Organizations**: Top-level container for all Amplitude resources
+2. **Projects**: Collection of flags, experiments, and deployments within an organization
+3. **Deployments**: Environment-specific configurations (e.g., development, production)
+4. **Flags**: Feature toggles that can be turned on/off or used for experiments
+5. **Experiments**: Structured tests with variants, metrics, and statistical analysis
+6. **Variants**: Different versions of a feature being tested
+7. **Users**: End-users who are assigned to variants based on targeting criteria
 
-### Targeting Capabilities
+### Integration with Amplitude Analytics
+- Experiment leverages user data from Amplitude Analytics for targeting
+- Exposure events are tracked in Amplitude Analytics for analysis
+- Cohorts created in Analytics can be used for experiment targeting
 
-- **Cohort Targeting**: Use static or dynamic user cohorts for audience targeting
-- **Dimensional Analysis**: 
-  - Exclude test users (QA or internal traffic) from experiment analysis
-  - Analyze experiment impacts on specific user segments
+## Key Nomenclature and Definitions
+
+### Experimentation Terms
+- **p-value**: Probability of observing results as extreme as the current results under the null hypothesis
+- **Confidence Interval**: Range of values that likely contains the true effect size
+- **CUPED (Controlled-experiment Using Pre-Experiment Data)**: Variance reduction technique
+- **Type 1 Error**: False positive (incorrectly rejecting null hypothesis)
+- **Type 2 Error**: False negative (incorrectly accepting null hypothesis)
+- **Minimum Detectable Effect**: Smallest effect size that can be reliably detected
+- **Bonferroni Correction**: Method to adjust for multiple comparisons
+
+### Platform-Specific Terms
+- **Bucketing**: Process of assigning users to variants
+- **Sticky Bucketing**: Ensuring users consistently receive the same variant
+- **Targeting Segments**: Criteria for including users in an experiment
+- **Exposure Event**: Analytics event recording when a user sees a variant
+- **Deployment Keys**: Environment-specific keys for SDK initialization
+- **Variant Payload**: Additional configuration data attached to a variant
+
+## Implementation Details
 
 ### Evaluation Process
+1. **Pre-targeting Steps**:
+   - Activation check
+   - Flag dependencies verification
+   - Inclusion/exclusion rules
+   - Sticky bucketing application
 
-The platform uses a sophisticated evaluation process that includes:
-1. Pre-targeting steps (activation, dependencies, inclusions, sticky bucketing)
-2. Targeting segments evaluation
-3. Consistent bucketing using murmur3 hashing
-4. Allocation and variant distribution calculations
+2. **Targeting Segments**: Evaluate if user matches targeting criteria
 
-## Data Model and Architecture
+3. **Bucketing Algorithm**:
+   - Uses murmur3 hashing for consistent assignment
+   - Applies allocation percentages
+   - Assigns specific variants based on hash value
 
-### Organizational Structure
+### SDK Integration
 
-- **Organizations**: Top-level container for all Amplitude products
-- **Projects**: Contain flags, experiments, and deployments
-- **Deployments**: Represent different environments (development, staging, production)
-  - Client-side deployments: For web/mobile applications
-  - Server-side deployments: For backend services
-
-### Core Components
-
-- **Flags**: Feature toggles that control functionality
-- **Experiments**: Structured tests with variants and metrics
-- **Variants**: Different versions of a feature being tested
-- **Users**: Identified by user IDs and properties for targeting and bucketing
-
-### Exposure Tracking
-
-- **Manual tracking**: Via the Analytics REST API v2.0
-- **Automatic tracking**: Through Experiment SDKs
-- Essential for reliable experiment results but optional for feature flags not requiring analysis
-
-## Implementation and Integration
-
-### SDK Support
-
-The platform provides SDKs for multiple programming languages:
+The platform provides SDKs for multiple languages:
 - TypeScript/JavaScript
 - HTML
 - Kotlin
@@ -86,10 +91,8 @@ The platform provides SDKs for multiple programming languages:
 - Swift
 - Python
 
-### SDK Initialization Examples
-
+Example SDK initialization (TypeScript):
 ```typescript
-// TypeScript example
 import * as amplitude from '@amplitude/analytics-browser';
 
 amplitude.init('API_KEY', {
@@ -102,60 +105,43 @@ amplitude.init('API_KEY', {
 });
 ```
 
-```python
-# Python example
-from amplitude import Amplitude
+### Exposure Tracking
 
-amplitude = Amplitude('API_KEY')
+Two methods for tracking user exposures:
+1. **Automatic Tracking**: Built into Experiment SDKs
+2. **Manual Tracking**: Using Analytics REST API v2.0
+
+Example manual exposure tracking:
+```
+POST https://api2.amplitude.com/2/httpapi
 ```
 
 ## Access Control and Permissions
 
 ### Project-Level Permissions
+- **Admin**: Full access to all features
+- **Manager**: Can create/edit flags and experiments but cannot manage users
+- **Member**: Can edit existing flags but cannot create new ones
+- **Viewer**: Read-only access
 
-- Admins can manage access separately from Analytics permissions
-- Enterprise customers have flag-level access controls
-- Permission levels include:
-  - **Viewer**: Read-only access
-  - **Member**: Can edit flags but not create new ones
-  - **Manager**: Can create and edit flags
-  - **Admin**: Full access including permission management
+### Enterprise Features
+- Flag-level access controls
+- Restricted flag editors
+- Permission bypassing capabilities
 
-## Statistical Methodology
+## Best Practices and Considerations
 
-Amplitude Experiment employs various statistical methods:
-- **Sequential Testing**: Allows for continuous monitoring of results
-- **Confidence Intervals**: Measure the precision of estimates
-- **CUPED** (Controlled-experiment Using Pre-Experiment Data): Reduces variance in metrics
-- **Bonferroni Correction**: Adjusts for multiple comparisons
-- **T-tests**: Determine if differences between variants are statistically significant
+### Cohort Targeting
+- Static and dynamic user cohorts can be used for audience targeting
+- Cohort sync configuration required for local evaluation
+- Hourly sync available for dynamic cohorts
+- User ID requirement for cohort targeting
 
-## Technical Considerations
+### Experiment Design
+- Formulate clear hypotheses
+- Define primary and secondary metrics
+- Consider statistical power and sample size
+- Avoid interference between experiments (SUTVA - Stable Unit Treatment Value Assumption)
+- Exclude test users from analysis to prevent skewed results
 
-- **Bucketing Salt**: Ensures consistent user assignment across experiments
-- **Sticky Bucketing**: Maintains user assignment to variants over time
-- **Cohort Sync Configuration**: Required for local evaluation with cohort targeting
-- **Propagation Delay**: Cohort membership updates may have hourly sync delays
-- **Server-Side SDK Configuration**: Specific requirements for local evaluation with cohort targeting
-
-## Integration with Amplitude Ecosystem
-
-Amplitude Experiment integrates with the broader Amplitude product suite:
-- Uses Amplitude Analytics for tracking exposure events
-- Leverages Amplitude's user identification system for consistent targeting
-- Utilizes Amplitude Cohorts for advanced targeting capabilities
-
-## API Endpoints
-
-The platform provides several key API endpoints:
-- Analytics REST API v2.0 for manual exposure tracking
-- Evaluation API endpoints for remote variant fetching
-
-## Command Line Invocations
-
-While not explicitly detailed in the documentation, the SDKs provide programmatic interfaces for:
-- Fetching flag variants
-- Tracking exposures
-- Managing experiment configurations
-
-This comprehensive platform enables product teams to make data-driven decisions through rigorous experimentation while also providing the flexibility of feature flagging for controlled rollouts and risk mitigation.
+Amplitude Experiment provides a comprehensive platform for product teams to implement data-driven experimentation and feature management, with flexible evaluation options and robust statistical analysis capabilities.

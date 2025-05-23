@@ -9,6 +9,6 @@ This documentation page guides developers on migrating from the maintenance Andr
 - flush() vs uploadEvents()
 - Configuration object
 - HTTP V2 API
-- legacy data migration
+- data migration
 - minIdLength
-- storage provider customization
+- storage provider

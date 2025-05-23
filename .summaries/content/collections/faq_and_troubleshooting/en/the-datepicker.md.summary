@@ -4,10 +4,10 @@ The datepicker in Amplitude allows users to select analysis timeframes with seve
 # Keywords
 - datepicker timeframe selection
 - offset functionality
-- exclude current day/week/month
+- exclude today/week/month
 - time input granularity
 - incomplete interval handling
 - dotted line representation
-- advanced settings options
+- advanced settings
 - event segmentation compatibility
 - funnel analysis compatibility

@@ -1,14 +1,14 @@
 ## Summary
-This documentation explains how Amplitude calculates time spent analysis, which measures duration between consecutive events with a 30-minute timeout, and details how to create and use time spent metrics in data tables, including supported event types and common use cases for measuring user engagement on pages.
+This documentation explains how Amplitude calculates time spent analysis between consecutive events with a 30-minute timeout, detailing supported event types (primitive page views, filtered events, custom events), available metrics (total time spent, time per user/page/session), and how to create time spent metrics in data tables.
 
 ## Keywords
 - time spent analysis
 - 30-minute timeout
 - group-by property reset
 - page view events
-- Growth/Enterprise plan feature
 - time spent metrics
 - TimeSpent(PV)
-- time spent per user/page/session
-- metric creation workflow
+- Growth/Enterprise plan feature
+- data tables
+- metric creation
 - consecutive events duration

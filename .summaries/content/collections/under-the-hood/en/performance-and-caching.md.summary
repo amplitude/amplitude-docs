@@ -11,4 +11,4 @@ This documentation details performance metrics and caching mechanisms for Amplit
 - dynamic targeting
 - behavioral cohorts
 - regional performance metrics
-- cache hit/miss statistics
+- evaluation response times

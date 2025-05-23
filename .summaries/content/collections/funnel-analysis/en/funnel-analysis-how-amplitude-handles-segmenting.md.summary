@@ -8,5 +8,5 @@ This documentation explains how Amplitude applies user property segmentation in 
 - segment application logic
 - funnel data visualization
 - country property example
-- event sequence segmentation
 - property value timing
+- funnel step properties

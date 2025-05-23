@@ -12,6 +12,7 @@ This documentation explains methods to manage invalid or erroneous data in Ampli
 - query-side filtering
 - event volume limits
 - data ingestion control
-- Amplitude Data
-- data management
-- erroneous data handling
+- main branch
+- data purging
+- tracking plan
+- implementation limits

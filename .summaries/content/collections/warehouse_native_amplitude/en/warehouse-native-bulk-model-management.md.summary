@@ -1,15 +1,14 @@
 # Summary
-Warehouse-native Bulk Model Management enables efficient batch creation and updating of multiple models using a YAML configuration file, supporting various model types (events, user/group properties) with either SQL or table-based selections, where models are identified by unique names for create/update operations.
+Warehouse-native Bulk Model Management enables efficient batch management of multiple models through a YAML configuration file, supporting create/update operations for events, user properties, group properties, and event properties models via either SQL queries or direct table references.
 
-## Keywords
-- YAML configuration file
-- Warehouse-native models
+# Keywords
+- YAML configuration
 - Bulk model management
+- Warehouse-native
 - Model types (events, user properties, group properties)
-- SQL-based models
-- Table-based models
-- Create/update operations
-- RequiredFields
+- TableConfig
+- SQLConfig
 - FieldMapping
-- MultiEventConfig
-- AdditionalFields
+- RequiredFields
+- Model creation/updating
+- Data modeling specification

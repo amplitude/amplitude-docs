@@ -11,4 +11,4 @@ Ampli is a tool that generates a type-safe wrapper for Amplitude SDKs based on y
 - instrumentation verification
 - code generation
 - event validation
-- cross-platform support
+- multi-platform support

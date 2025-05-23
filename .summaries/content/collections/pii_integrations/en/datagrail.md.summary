@@ -1,14 +1,15 @@
 # Summary
-This documentation describes the DataGrail integration with Amplitude, which enables privacy management by allowing companies to identify, retrieve, and delete PII in Amplitude through DataGrail's platform to support compliance with privacy regulations like GDPR and CCPA.
+This documentation describes the DataGrail integration with Amplitude, which enables privacy management by allowing companies to identify, retrieve, and delete PII in Amplitude through DataGrail's platform for automated data subject request fulfillment and compliance with privacy regulations.
 
 # Keywords
 - DataGrail
-- privacy management platform
-- data subject request (DSR) fulfillment
-- PII management
-- Amplitude API key
+- privacy management
+- data subject requests (DSR)
+- PII deletion
+- API key
 - Secret Key
-- GDPR compliance
-- CCPA compliance
+- GDPR
+- CCPA
+- CPRA
 - integration setup
-- privacy regulations
+- privacy compliance

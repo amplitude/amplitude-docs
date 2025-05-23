@@ -1,14 +1,14 @@
 # Summary
-This documentation explains how to create a new run of an existing Amplitude experiment when data quality issues have been fixed, detailing the process, configuration changes, and requirements for using experiment keys to differentiate runs, including SDK version requirements for proper implementation.
+This documentation explains how to create a new run of an existing Amplitude Experiment to exclude previous user data from monitoring and analysis, detailing the configuration changes that occur during this process and how to use the experiment key property to differentiate runs.
 
 # Keywords
 - experiment restart
 - new experiment run
 - bucketing salt
 - experiment key
-- sticky bucketing
-- SDK version requirements
-- data quality issues
-- exposure event tracking
-- variant evaluation
 - re-randomize users
+- sticky bucketing
+- SDK compatibility
+- exposure event tracking
+- data quality issues
+- analysis range

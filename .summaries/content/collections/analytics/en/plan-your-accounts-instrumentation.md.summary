@@ -11,5 +11,6 @@ This documentation explains how to implement Amplitude Accounts for group-level 
 - instrumentation planning
 - Salesforce integration
 - Segment integration
-- group property limits
+- group values
 - account-level reporting
+- group property limits

@@ -11,6 +11,6 @@ This documentation explains methods to manage invalid data in Amplitude, includi
 - data immutability
 - self-service data deletion
 - bot traffic blocking
-- User Privacy API
+- user privacy API
 - event volume limits
 - data recovery limitations

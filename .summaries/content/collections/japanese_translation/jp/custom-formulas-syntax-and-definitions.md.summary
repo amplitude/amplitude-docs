@@ -9,11 +9,11 @@ This documentation explains custom formulas in Amplitude's Event Segmentation ch
 - Function formulas
 - UNIQUES
 - TOTALS
-- ROLLAVG
 - PROPSUM
+- ROLLAVG
+- CUMSUM
 - TRENDLINE
 - Formula syntax
-- Data visualization
+- Property grouping
+- Percentile calculations
 - Rolling averages
-- Percentiles
-- Revenue metrics

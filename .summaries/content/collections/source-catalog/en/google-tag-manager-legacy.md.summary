@@ -1,13 +1,14 @@
 # Summary
-This documentation page describes the legacy Google Tag Manager Template for Amplitude Analytics, which uses the Maintenance Amplitude JavaScript SDK for data collection. It details migration guidance to the newer template, highlighting breaking changes in initialization, web attribution, and page view tracking, and includes instructions for EU data residency configuration.
+This documentation page describes the legacy Google Tag Manager Template for Amplitude Analytics which uses the Maintenance Amplitude JavaScript SDK, highlighting its deprecated status and providing a detailed migration guide to the latest template that uses the Marketing Analytics SDK, including breaking changes in initialization, web attribution, and page view tracking.
 
 # Keywords
 - Google Tag Manager legacy template
 - Maintenance Amplitude JavaScript SDK
-- Migration breaking changes
-- Web attribution tracking
-- Page view tracking configuration
+- Migration guide
+- Breaking changes
+- Web attribution
+- Page view tracking
 - EU data residency
-- Template initialization differences
-- Cookie migration logic
+- Cookie migration
+- Initialization differences
 - Marketing Analytics SDK

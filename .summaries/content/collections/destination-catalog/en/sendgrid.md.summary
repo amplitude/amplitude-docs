@@ -10,5 +10,5 @@ This documentation details the SendGrid destination integration with Amplitude, 
 - Unique email addresses
 - Contact creation
 - Sync cadence
-- Character limitations
-- Marketing permissions
+- Marketing campaigns
+- Amplitude audiences

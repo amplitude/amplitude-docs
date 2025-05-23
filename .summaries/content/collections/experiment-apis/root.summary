@@ -1,95 +1,113 @@
-# Amplitude Experiment: Product Overview
+# Amplitude Experiment
 
-Amplitude Experiment is a feature experimentation and feature flag management platform that enables product teams to test new features, control feature rollouts, and make data-driven decisions. The platform provides comprehensive APIs for managing and evaluating experiments and feature flags.
+Amplitude Experiment is a comprehensive experimentation and feature flagging platform that enables product teams to test hypotheses, safely roll out features, and make data-driven decisions. The platform combines feature flag management with robust experimentation capabilities through a set of evaluation and management APIs.
 
-## Key Features and Concepts
+## Key Features
 
-1. **Feature Flags**: Toggle features on/off or serve different variants to different users
-2. **Experiments**: Test different variants of features to measure their impact
-3. **Deployments**: Environments where experiments and flags can be deployed
-4. **Holdout Groups**: Control groups excluded from experiments
-5. **Mutex Groups**: Ensure users only participate in one experiment at a time
-6. **Remote and Local Evaluation**: Options for determining which variant a user receives
-7. **User Targeting**: Target specific user segments for experiments or flags
-8. **Version History**: Track changes to experiments and flags over time
+- **Feature Flags**: Control feature visibility and behavior in production environments
+- **Experiments**: Run controlled tests comparing feature variants to determine optimal performance
+- **Dual Evaluation Models**: Support for both remote (server-side) and local (client-side) evaluation
+- **Targeting and Segmentation**: Include or exclude specific users or segments in experiments
+- **Mutex Groups**: Ensure users are only assigned to one experiment within a group
+- **Holdout Groups**: Exclude users from experiments to measure overall experimentation impact
+- **Versioning**: Track changes to experiments and flags over time
 
-## Product Relationships and Architecture
+## Product Architecture
 
-Amplitude Experiment consists of two primary API categories:
+Amplitude Experiment is structured around two primary layers:
 
-1. **Experiment Management API**: Used to create and manage experiments, flags, deployments, and other configuration elements
-2. **Experiment Evaluation API**: Used to evaluate which variant a user should receive
+### Evaluation Layer
+- **Remote Evaluation API**: Server-side variant assignment service
+- **Flags API**: Delivers flag configurations for client-side evaluation
 
-The platform supports both server-side and client-side implementations through different deployment types. Experiments and flags can be assigned to specific deployments, allowing for environment-specific configurations.
+### Management Layer
+- **Experiment Management API**: Controls creation and configuration of:
+  - Flags
+  - Experiments
+  - Deployments
+  - Mutex Groups
+  - Holdout Groups
+  - Versions
 
-## Key Nomenclature and Definitions
+### Deployment Types
+- **Client-side**: For web and mobile applications
+- **Server-side**: For back-end services and applications
 
-- **Experiment**: A test comparing different variants of a feature
-- **Flag**: A feature toggle that can be turned on/off or serve different variants
-- **Variant**: A specific version or implementation of a feature
-- **Deployment**: An environment (client/server) where experiments or flags are active
-- **Holdout Group**: A control group excluded from experiments
-- **Mutex Group**: A mechanism to prevent users from being in multiple experiments simultaneously
-- **Slots**: Divisions within mutex groups for traffic allocation
-- **Bucketing**: The process of assigning users to variants based on user properties
-- **Evaluation Mode**: How variant assignments are determined (local or remote)
-- **User Context**: Information about the user for variant assignment decisions
+## Key Terminology
 
-## API Endpoints
+- **Variant**: A specific version of a feature being tested
+- **Deployment Key**: Authentication credential for evaluation APIs
+- **Management API Key**: Authentication credential for management APIs
+- **Bucketing**: Process of consistently assigning users to experiment variants
+- **Bucketing Key**: Identifier used to determine variant assignment
+- **Bucketing Salt**: Value ensuring random distribution of users across variants
+- **Evaluation Mode**: Method for assigning variants (e.g., key-based)
+- **Rollout Percentage**: Controls percentage of users included in an experiment
+- **User Context**: User information used for variant assignment
+- **Slot**: Traffic allocation portion within a mutex group
+- **Targeting Segments**: Criteria for including specific user segments
 
-### Experiment Evaluation API
+## Ecosystem Integration
 
-1. **Evaluation API** (`POST /sdk/<deploymentKey>/evaluate`):
-   - Retrieves variant assignments for users
-   - Tracks assignment events
-   - Requires deployment key authentication
+Amplitude Experiment integrates with the broader Amplitude analytics ecosystem:
+- Connects with Amplitude Analytics for tracking experiment results
+- Offers regional deployment options (US and EU) for compliance requirements
+- Provides API-first architecture for integration with development workflows
+- Supports both client and server-side implementation patterns
 
-2. **Flags API** (`GET /sdk/<deploymentKey>/flags`):
-   - Downloads flag configurations for local evaluations
-   - Supports filtering by flag keys
+## API Reference
 
-### Experiment Management API
+### Evaluation APIs
 
-1. **Experiment Endpoints**:
-   - `GET /experiments`: List experiments
-   - `GET /experiments/{id}`: Get experiment details
-   - `POST /experiments`: Create experiment
-   - `PATCH /experiments/{id}`: Edit experiment
-   - Additional endpoints for managing variants, deployments, and user inclusions
+#### Remote Evaluation API
+- `POST /v1/variantAssignments`: Get variant assignments for users
+  - Headers: `Authorization: Api-Key <deployment_key>`
+  - Optional: `X-Amp-Exp-Track` to control assignment tracking
 
-2. **Flag Endpoints**:
-   - `GET /flags`: List flags
-   - `GET /flags/{id}`: Get flag details
-   - `POST /flags`: Create flag
-   - `PATCH /flags/{id}`: Edit flag
-   - Additional endpoints for managing variants, deployments, and user inclusions
+#### Flags API
+- `GET /v1/flags`: Download flag configurations for local evaluation
+  - Headers: `Authorization: Api-Key <deployment_key>`
 
-3. **Deployment Endpoints**:
-   - `GET /deployments`: List deployments
-   - `POST /deployments`: Create deployment
-   - `PATCH /deployments/{id}`: Edit deployment
+### Management APIs
 
-4. **Holdout Group Endpoints**:
-   - `GET /holdouts`: List holdout groups
-   - `GET /holdouts/{id}`: Get holdout details
-   - `POST /holdouts`: Create holdout group
-   - `PATCH /holdouts/{id}`: Edit holdout group
+All Management API endpoints require:
+- Header: `Authorization: Bearer <management_api_key>`
 
-5. **Mutex Group Endpoints**:
-   - `GET /mutexes`: List mutex groups
-   - `GET /mutexes/{id}`: Get mutex details
-   - `POST /mutexes`: Create mutex group
-   - `PATCH /mutexes/{id}`: Edit mutex group
+#### Experiment Endpoints
+- `GET /experiments`: List experiments
+- `POST /experiments`: Create experiment
+- `PATCH /experiments/{experimentKey}`: Edit experiment
+- `GET /experiments/{experimentKey}/variants`: List variants
+- `POST /experiments/{experimentKey}/variants`: Create variant
+- `PATCH /experiments/{experimentKey}/variants/{variantKey}`: Edit variant
+- `GET /experiments/{experimentKey}/deployments`: List deployments
+- `POST /experiments/{experimentKey}/deployments`: Add deployment
+- `DELETE /experiments/{experimentKey}/deployments/{deploymentKey}`: Remove deployment
+- `GET /experiments/{experimentKey}/inclusions`: List user inclusions
+- `POST /experiments/{experimentKey}/inclusions`: Add user inclusion
+- `DELETE /experiments/{experimentKey}/inclusions/{userId}`: Remove user inclusion
 
-6. **Version Endpoints**:
-   - `GET /versions`: Retrieve version history of experiments and flags
+#### Flag Endpoints
+- Similar structure to experiment endpoints, with `/flags` as the base path
 
-## Authentication and Usage
+#### Deployment Endpoints
+- `GET /deployments`: List deployments
+- `POST /deployments`: Create deployment
+- `PATCH /deployments/{deploymentKey}`: Edit deployment
 
-- **Management API**: Uses API keys in the Authorization header
-- **Evaluation API**: Uses deployment keys for authentication
-- Regional endpoints are available for different data residency requirements
-- Rate limiting applies to API requests
-- Pagination is implemented using cursor-based navigation
+#### Mutex Group Endpoints
+- `GET /mutexes`: List mutex groups
+- `POST /mutexes`: Create mutex group
+- `PATCH /mutexes/{mutexKey}`: Edit mutex group
 
-The Amplitude Experiment platform integrates with the broader Amplitude Analytics ecosystem, allowing for data-driven experimentation and feature rollout decisions based on user behavior analytics.
+#### Holdout Group Endpoints
+- `GET /holdouts`: List holdout groups
+- `POST /holdouts`: Create holdout group
+- `PATCH /holdouts/{holdoutKey}`: Edit holdout group
+
+#### Version Endpoints
+- `GET /versions`: Retrieve version history
+
+Regional API endpoints are available at:
+- US: `https://api.experiment.amplitude.com`
+- EU: `https://api.eu.experiment.amplitude.com`

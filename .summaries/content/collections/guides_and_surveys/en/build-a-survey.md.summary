@@ -1,14 +1,14 @@
 # Summary
-This documentation page explains how to build surveys in the platform, detailing the unique survey blocks (particularly the Rating block with its various types and settings), conditional logic capabilities for creating dynamic survey paths based on user responses, and noting that survey setup and targeting follows the same process as guides.
+This documentation page explains how to build surveys in Posthog, detailing the unique survey blocks (particularly Rating blocks with stars, labels, emoji, and NPS options), conditional logic capabilities for creating dynamic survey paths based on user responses, and noting that survey setup and targeting functions similarly to guides.
 
 # Keywords
 - survey builder
-- rating block
+- rating blocks
 - conditional logic
-- stars rating
-- emoji rating
-- NPS (Net Promoter Score)
 - survey branching
+- NPS (Net Promoter Score)
 - form factors
 - survey targeting
-- rating conditions
+- emoji ratings
+- star ratings
+- survey response conditions

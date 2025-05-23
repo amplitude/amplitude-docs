@@ -9,6 +9,6 @@ This documentation explains how to revert an overridden property definition to i
 - bulk revert functionality
 - tracking plan maintenance
 - Compare To Original feature
-- Manage Override controls
+- Manage Override dropdown
+- Used By tab
 - property definition inheritance
-- retroactive property cleanup

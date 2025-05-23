@@ -1,5 +1,5 @@
 ## Summary
-This documentation page explains how to share dashboards within an organization in Amplitude Analytics, including directly sharing with specific permissions, creating public links, embedding dashboards in external platforms, and managing co-ownership permissions.
+This documentation page explains how to share dashboards within an organization in Amplitude Analytics, including directly sharing with specific permissions, creating public links, embedding dashboards in other platforms, and managing co-ownership permissions.
 
 ## Keywords
 - dashboard sharing
@@ -7,7 +7,8 @@ This documentation page explains how to share dashboards within an organization 
 - public links
 - embed dashboard
 - share URL
-- can edit/can view permissions
+- permission management
+- can edit/can view
 - remove co-owners
 - admin dashboard access
-- Amplitude Analytics sharing
+- Amplitude Analytics

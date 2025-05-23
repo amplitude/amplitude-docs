@@ -1,13 +1,14 @@
 # Summary
-This documentation page describes the Lantern event streaming destination in Amplitude, which allows syncing analytics events to Lantern's Customer Success Platform to predict customer behavior and increase Net Dollar Retention by connecting with customers at optimal times.
+This documentation page describes the Lantern event streaming destination in Amplitude, which allows syncing analytics events to Lantern's Customer Success Platform to predict customer behavior and increase Net Dollar Retention, with details on setup requirements, considerations, and configuration steps.
 
-# Keywords
+## Keywords
 - Lantern Customer Success Platform
 - event streaming destination
 - webhook ID
 - analytics_id matching
 - Net Dollar Retention
 - event properties filtering
-- B2B customer engagement
 - event size limits
-- customer expansion prediction
+- B2B customer engagement
+- AI-powered health scores
+- automated workflows

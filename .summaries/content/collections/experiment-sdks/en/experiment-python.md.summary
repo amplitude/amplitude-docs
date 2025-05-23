@@ -1,15 +1,17 @@
 ## Summary
-The Amplitude Experiment Python SDK documentation provides implementation details for both remote and local evaluation methods, including installation, initialization, fetching/evaluating variants, and configuration options for timeouts, retries, and cohort targeting.
+The Amplitude Experiment Python SDK documentation provides implementation details for both remote and local evaluation methods, including installation, initialization, fetching variants, and evaluating users against feature flags, with support for account-level bucketing, cohort targeting, and Amplitude cookie integration.
 
 ## Keywords
 - Python SDK
 - Remote evaluation
 - Local evaluation
-- Variant fetching
-- User evaluation
+- Fetch variants
+- Evaluate users
+- Deployment key
 - Cohort targeting
+- Account-level bucketing
 - Assignment tracking
 - AmplitudeCookie
 - ServerZone configuration
-- Flag polling
-- Account-level bucketing
+- Timeout and retry settings
+- Flag polling interval

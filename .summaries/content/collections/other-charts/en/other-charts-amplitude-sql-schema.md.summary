@@ -13,5 +13,4 @@ This documentation details Amplitude SQL's schema and field shortcuts, explainin
 - client_event_time
 - data types
 - query shortcuts
-- event tracking fields
-- device identifiers
+- event tracking columns
