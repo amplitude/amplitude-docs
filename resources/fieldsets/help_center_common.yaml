@@ -1,6 +1,12 @@
 title: 'Help Center Common'
 fields:
   -
+    handle: article_summary
+    field:
+      type: article_summary
+      display: 'Article Summary'
+      localizable: false
+  -
     handle: title
     field:
       type: text

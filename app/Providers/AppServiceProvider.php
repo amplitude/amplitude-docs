@@ -28,6 +28,9 @@ class AppServiceProvider extends ServiceProvider
         Markdown::addExtensions(function () {
             return [new TorchlightWithCopyExtension, new HeadingPermalinkExtension];
         });
+
+        Statamic::script('app', 'cp.js');
+        Statamic::style('app', 'cp.css');
     }
 }
 
