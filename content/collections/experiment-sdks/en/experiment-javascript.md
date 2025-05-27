@@ -28,15 +28,27 @@ Official documentation for Amplitude Experiment's Client-side JavaScript SDK imp
 
 Install the Experiment JavaScript Client SDK with one of the three following methods:
 
+{{partial:admonition type="info" heading="Unified SDK"}}
+You can also get access to Experiment SDK along with other Amplitude products (Analytics, Session Replay) by installing the [Browser Unified SDK](/docs/sdks/browser-unified-sdk). The Unified SDK provides a single entry point for all Amplitude features and simplifies the integration process by handling the initialization and configuration of all components.
+{{/partial:admonition}}
+
 {{partial:tabs tabs="npm, yarn, script"}}
 {{partial:tab name="npm"}}
 ```bash
+# Install Experiment SDK only
 npm install --save @amplitude/experiment-js-client
+
+# Or install Unified SDK to get access to all Amplitude products
+npm install @amplitude/unified
 ```
 {{/partial:tab}}
 {{partial:tab name="yarn"}}
 ```bash
+# Install Experiment SDK only
 yarn add @amplitude/experiment-js-client
+
+# Or install Unified SDK to get access to all Amplitude products
+yarn add @amplitude/unified
 ```
 {{/partial:tab}}
 {{partial:tab name="script"}}
@@ -48,7 +60,6 @@ yarn add @amplitude/experiment-js-client
     // tracking provider.
     window.experiment = Experiment.initializeWithAmplitudeAnalytics('DEPLOYMENT_KEY');
 </script>
-
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -56,7 +67,7 @@ yarn add @amplitude/experiment-js-client
 {{partial:admonition type="tip" heading="Quick start"}}
 The right way to initialize the Experiment SDK depends on whether you use an Amplitude SDK for analytics or a third party (for example, Segment).
 
-{{partial:tabs tabs="Amplitude, Third party"}}
+{{partial:tabs tabs="Amplitude, Unified SDK, Third party"}}
 {{partial:tab name="Amplitude"}}
 1. [Initialize the experiment client](#initialize)
 2. [Fetch variants](#fetch)
@@ -69,6 +80,35 @@ import { Experiment } from '@amplitude/experiment-js-client';
 const experiment = Experiment.initializeWithAmplitudeAnalytics(
     'DEPLOYMENT_KEY'
 );
+
+// (2) Fetch variants and await the promise result.
+await experiment.fetch();
+
+// (3) Lookup a flag's variant.
+const variant = experiment.variant('FLAG_KEY');
+if (variant.value === 'on') {
+    // Flag is on
+} else {
+    // Flag is off
+}
+```
+
+{{/partial:tab}}
+{{partial:tab name="Unified SDK"}}
+1. [Initialize the Unified SDK](#initialize)
+2. [Fetch variants](#fetch)
+3. [Access a flag's variant](#variant)
+
+```js
+import { initAll, experiment } from '@amplitude/unified';
+
+// (1) Initialize the Unified SDK with your API key
+// Note: if deploymentKey is not provided, it will fall back to the api key
+initAll('YOUR_API_KEY', {
+    experiment: {
+        deploymentKey: 'DEPLOYMENT_KEY'
+    }
+});
 
 // (2) Fetch variants and await the promise result.
 await experiment.fetch();
@@ -132,10 +172,15 @@ if (variant.value === 'on') {
 
 Initialize the SDK in your application on startup. The [deployment key](/docs/feature-experiment/data-model#deployments) argument you pass into the `apiKey` parameter must live in the same Amplitude project to which you send events.
 
-{{partial:tabs tabs="Amplitude, Third-party"}}
+{{partial:tabs tabs="Amplitude, Unified SDK, Third-party"}}
 {{partial:tab name="Amplitude"}}
 ```js
 initializeWithAmplitudeAnalytics(apiKey: string, config?: ExperimentConfig): ExperimentClient
+```
+{{/partial:tab}}
+{{partial:tab name="Unified SDK"}}
+```js
+initAll(apiKey: string, config?: UnifiedConfig): void
 ```
 {{/partial:tab}}
 {{partial:tab name="Third-party"}}
@@ -152,12 +197,24 @@ initialize(apiKey: string, config?: ExperimentConfig): ExperimentClient
 
 The initializer returens a singleton instance, so subsequent initializations for the same instance name always return the initial instance. To create multiple instances, use the `instanceName` configuration.
 
-{{partial:tabs tabs="Amplitude, Third-party"}}
+{{partial:tabs tabs="Amplitude, Unified SDK, Third-party"}}
 {{partial:tab name="Amplitude"}}
 ```js
 import { Experiment } from '@amplitude/experiment-js-client';
 
 const experiment = initializeWithAmplitudeAnalytics('DEPLOYMENT_KEY');
+```
+{{/partial:tab}}
+{{partial:tab name="Unified SDK"}}
+```js
+import { initAll, experiment } from '@amplitude/unified';
+
+// Note: if deploymentKey is not provided, it will fall back to the api key
+initAll('YOUR_API_KEY', {
+    experiment: {
+        deploymentKey: 'DEPLOYMENT_KEY'
+    }
+});
 ```
 {{/partial:tab}}
 {{partial:tab name="Third-party"}}
