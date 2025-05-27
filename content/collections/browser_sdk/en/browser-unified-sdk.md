@@ -20,17 +20,17 @@ platform: Browser
 The Unified SDK provides a single entry point for all Amplitude features, including Analytics, Experiment, and Session Replay. It simplifies the integration process by handling the initialization and configuration of all components.
 
 {{partial:admonition type="beta" heading="Beta Release"}}
-The Browser Unified SDK is currently in beta. While we encourage you to try it out, please be aware that there may be breaking changes before the stable release. We recommend testing thoroughly in a development environment before deploying to production.
+The Browser Unified SDK is currently in beta. There may be breaking changes before the stable release. Amplitude recommends testing thoroughly in a development environment before you deploy to production.
 {{/partial:admonition}}
 
 {{partial:admonition type="info" heading="Individual Product Installation"}}
-The Unified SDK installs Analytics, Experiment, and Session Replay all at once. If you're concerned about bundle size and only need specific products, you can install them individually:
+The Unified SDK installs Analytics, Experiment, and Session Replay. If you're concerned about bundle size and only need specific products, you can install them individually:
 
 - [Analytics](/docs/sdks/analytics/browser/browser-sdk-2) - For tracking user events and behavior
 - [Experiment](/docs/sdks/experiment-sdks/experiment-javascript) - For running A/B tests and feature flags
 - [Session Replay](/docs/session-replay/session-replay-standalone-sdk) - For capturing and replaying user sessions
 
-Note: Guides and Surveys is not currently supported in the Unified SDK. If you need Guides and Surveys functionality, please use the [Guides and Surveys SDK](/docs/guides-and-surveys/sdk) directly.
+The Unified SDK doesn't support Guides and Surveys. If you need Guides and Surveys functionality, use the [Guides and Surveys SDK](/docs/guides-and-surveys/sdk) directly.
 {{/partial:admonition}}
 
 ## Install the SDK
@@ -60,7 +60,7 @@ import { initAll } from '@amplitude/unified';
 initAll('YOUR_API_KEY');
 ```
 
-## Access SDK Features
+## Access SDK features
 
 The Unified SDK provides access to all Amplitude features through a single interface:
 
@@ -121,21 +121,21 @@ initAll('YOUR_API_KEY', {
 });
 ```
 
-### Shared Options
+### Shared options
 
 |Name|Type|Default|Description|
 |-|-|-|-|
 |`serverZone`|`'US'` or `'EU'`|`'US'`|The server zone to use for all SDKs.|
 |`instanceName`|`string`|`$default_instance`|A unique name for this instance of the SDK.|
 
-### Analytics Options
+### Analytics options
 
 All options from `@amplitude/analytics-browser` are supported. See the [Analytics Browser SDK documentation](/docs/sdks/analytics/browser/browser-sdk-2#initialize-the-sdk) for details.
 
-### Session Replay Options
+### Session Replay options
 
 All options from `@amplitude/plugin-session-replay-browser` are supported. See the [Session Replay documentation](/docs/session-replay/session-replay-standalone-sdk#configuration) for details.
 
-### Experiment Options
+### Experiment options
 
 All options from `@amplitude/plugin-experiment-browser` are supported. See the [Experiment documentation](/docs/sdks/experiment-sdks/experiment-javascript#configuration) for details.
