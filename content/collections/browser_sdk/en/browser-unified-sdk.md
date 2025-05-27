@@ -19,7 +19,7 @@ platform: Browser
 ---
 The Unified SDK provides a single entry point for all Amplitude features, including Analytics, Experiment, and Session Replay. It simplifies the integration process by handling the initialization and configuration of all components.
 
-{{partial:admonition type="warning" heading="Beta Release"}}
+{{partial:admonition type="beta" heading="Beta Release"}}
 The Browser Unified SDK is currently in beta. While we encourage you to try it out, please be aware that there may be breaking changes before the stable release. We recommend testing thoroughly in a development environment before deploying to production.
 {{/partial:admonition}}
 
