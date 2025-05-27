@@ -46,7 +46,7 @@ The Standalone SDK doesn't provide Session management capabilities. Your applica
 Install the plugin with npm or yarn.
 
 {{partial:admonition type="info" heading="Unified SDK"}}
-You can also get access to Session Replay along with other Amplitude products (Analytics, Experiment) by installing the [Browser Unified SDK](/docs/sdks/browser-unified-sdk). The Unified SDK provides a single entry point for all Amplitude features and simplifies the integration process by handling the initialization and configuration of all components.
+Install the [Browser Unified SDK](/docs/sdks/browser-unified-sdk) to access the Experiment SDK along with other Amplitude products (Analytics, Session Replay). The Unified SDK provides a single entry point for all Amplitude features and simplifies the integration process by handling the initialization and configuration of all components.
 {{/partial:admonition}}
 
 {{partial:tabs tabs="npm, yarn"}}
