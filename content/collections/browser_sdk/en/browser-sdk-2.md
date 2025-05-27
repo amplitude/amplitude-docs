@@ -36,20 +36,36 @@ When you use the script loader and enable Autocapture, Browser SDK track interac
 {{/partial:tab}}
 {{partial:tab name="npm"}}
 ```bash
+# Install Analytics SDK only
 npm install @amplitude/analytics-browser
+
+# Or install Unified SDK to get access to all Amplitude products
+npm install @amplitude/unified
 ```
 Import Amplitude into your project
 ```js
+// If using Analytics SDK only
 import * as amplitude from '@amplitude/analytics-browser';
+
+// If using Unified SDK
+import * as amplitude from '@amplitude/unified';
 ```
 {{/partial:tab}}
 {{partial:tab name="yarn"}}
 ```bash
+# Install Analytics SDK only
 yarn add @amplitude/analytics-browser
+
+# Or install Unified SDK to get access to all Amplitude products
+yarn add @amplitude/unified
 ```
 Import Amplitude into your project
 ```js
+// If using Analytics SDK only
 import * as amplitude from '@amplitude/analytics-browser';
+
+// If using Unified SDK
+import * as amplitude from '@amplitude/unified';
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
