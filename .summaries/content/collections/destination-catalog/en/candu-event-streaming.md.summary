@@ -1,12 +1,15 @@
-# Summary
-This documentation page describes the Candu Event Streaming integration with Amplitude, which allows streaming events and user updates from Amplitude to Candu for building personalized in-app content experiences, requiring a Candu API key and specific configuration steps in both platforms.
+**Summary:** This documentation describes the Candu Event Streaming destination integration that streams events and user updates from Amplitude to Candu's in-app content personalization platform, requiring a Candu API key and supporting real-time user property updates and selective event filtering.
 
-# Keywords
+**Keywords:**
 - Candu Event Streaming
-- API Key
-- in-app content experiences
-- user property updates
-- event streaming configuration
-- real-time event forwarding
-- customer engagement
-- event filtering
+- destination integration
+- event-streaming integration type
+- customer-engagement category
+- Candu API key
+- real-time user property updates
+- Create & Update users toggle
+- Send Events section
+- selective event filtering
+- in-app content personalization
+- partner-maintained: false
+- transformed events not supported

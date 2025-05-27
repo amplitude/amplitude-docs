@@ -1,11 +1,10 @@
-# Summary
-The Event Streaming Metrics Summary API allows monitoring of delivery metrics for event streams, providing data on successful deliveries, failures, latency, and retry statistics for a specified time period (up to 90 days of history) with rate limits of 4 concurrent requests and 12 requests per minute per project.
+**Summary:** Documents the Event Streaming Metrics Summary API that retrieves delivery metrics for Amplitude event streams using sync_id and time_period parameters, with data aggregation differences for recent vs. historical data and 90-day retention limits.
 
-# Keywords
-- event-streaming-metrics
-- delivery-metrics-summary
-- sync_id
-- time_period
+**Keywords:**
+- event-streaming-metrics-summary
+- sync_id parameter
+- delivery metrics
+- time_period aggregation
 - eventsDelivered
 - eventsNotDelivered
 - deliveryRate
@@ -14,5 +13,7 @@ The Event Streaming Metrics Summary API allows monitoring of delivery metrics fo
 - successAfterRetry
 - eventsExpired
 - eventsDiscarded
+- 4-hour minute-level accuracy
 - 90-day retention
-- rate limits
+- streaming destination monitoring
+- p95 latency

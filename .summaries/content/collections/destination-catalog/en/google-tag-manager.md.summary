@@ -1,14 +1,15 @@
-# Summary
-This documentation page describes the Google Tag Manager destination integration for Amplitude, providing a customizable Destination Plugin template that forwards tracked events from Amplitude's SDK to Google Tag Manager by creating an instance of the GTM browser snippet and pushing events to the dataLayer.
+**Summary:** This documentation describes implementing a custom Amplitude Destination Plugin for Google Tag Manager integration that forwards tracked events from Amplitude's SDK to GTM's dataLayer using the browser snippet, requiring a container ID for setup.
 
-# Keywords
-- Google Tag Manager
-- Destination Plugin
-- dataLayer
-- event forwarding
-- browser snippet
-- containerId
+**Keywords:**
+- Amplitude Destination Plugin
+- Google Tag Manager integration
+- GTMPlugin implementation
+- dataLayer event forwarding
+- browser snippet setup
+- container ID configuration
+- event-streaming destination
 - PluginType.DESTINATION
-- GTMPlugin
-- setup method
-- execute method
+- @amplitude/analytics-browser
+- window.dataLayer.push
+- gtm.js script injection
+- marketing-analytics integration

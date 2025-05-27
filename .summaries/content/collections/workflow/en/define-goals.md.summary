@@ -1,14 +1,18 @@
-# Summary
-This documentation page explains how to define goals for an Amplitude Experiment by setting up recommendation and secondary metrics, including how to create custom metrics and define exposure events that determine when users are bucketed into experiment variants.
+## Summary
+This documentation covers defining experiment goals in Amplitude Experiment, including setting up recommendation metrics, guardrail metrics, secondary metrics, minimum detectable effect (MDE), and exposure events through the Goals segment of the experiment design panel.
 
-# Keywords
-- recommendation metric
-- guardrail metrics
-- secondary metrics
+## Keywords
+- Amplitude Experiment goals configuration
+- recommendation metric selection
+- guardrail metrics setup
+- secondary metrics definition
 - minimum detectable effect (MDE)
-- custom metrics
-- exposure event
-- duration estimator
-- metric types (unique conversions, event totals, formula, funnel conversions)
+- exposure event configuration
+- custom metric creation (unique conversions, event totals, formula, funnel conversions, retention, property value)
 - Amplitude exposure event
-- variant()
+- sample ratio mismatch prevention
+- CUPED statistical method
+- experiment design panel Goals segment
+- variant success measurement
+- statistical significance notifications
+- duration estimator functionality

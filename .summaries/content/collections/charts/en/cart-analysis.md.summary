@@ -1,18 +1,24 @@
-## Summary
-Cart analysis in Amplitude enables the analysis of object arrays for e-commerce insights, allowing users to examine shopping cart data in aggregate or segmented by dimensions like brand, category, or price, with support for both cross-property and parallel filtering to drive behavioral insights into product performance and conversion rates.
+**Summary:** Amplitude's cart analysis feature enables behavioral insights by analyzing data sent as object arrays through property splitting, allowing analysis of e-commerce transactions and shopping cart flows in Event Segmentation and Funnel Analysis charts with cross-property, parallel, item match, and collection match filtering options.
 
-## Keywords
+**Keywords:**
+- cart analysis
 - object arrays
 - property splitting
-- cart analysis
 - parent property
 - child property
 - sibling property
+- item property
 - cross-property filters
 - parallel filters
 - item match
 - collection match
-- e-commerce analytics
-- product performance
-- conversion rates
-- basket analysis
+- Event Segmentation charts
+- Funnel Analysis charts
+- Identify API
+- set() method
+- append() method
+- e-commerce transaction analysis
+- shopping cart flows
+- behavioral insights
+- Growth and Enterprise plans
+- open beta feature

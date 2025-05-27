@@ -1,5 +1,31 @@
 ## Summary
-This documentation page provides a comprehensive glossary of key experimentation terms used in Amplitude Experiment, including statistical concepts (p-value, confidence interval, CUPED), experiment design elements (allocation, variants, metrics), and methodological approaches (sequential testing, T-test) that are essential for understanding and implementing experiments.
+This documentation page provides a comprehensive glossary of key experimentation and A/B testing terminology specific to Amplitude Experiment, including statistical concepts like CUPED variance reduction, sequential testing, Bonferroni correction, and experiment-specific terms like allocation, payload variables, exposure events, and guardrail metrics.
 
 ## Keywords
-experimentation terminology, statistical significance, confidence interval, CUPED, sample size, p-value, hypothesis testing, allocation, variants, success metrics, guardrail metrics, sequential testing, type 1 error, type 2 error, minimum detectable effect, exposure event, Bonferroni correction
+- Amplitude Experiment glossary
+- A/B testing terminology
+- CUPED variance reduction
+- Sequential testing
+- Bonferroni correction
+- Statistical power
+- Confidence interval
+- p-value
+- T-test
+- Type 1 error
+- Type 2 error
+- Allocation percentage
+- Payload variables
+- Exposure Event
+- Assignment Event
+- Enrollment event
+- Guardrail metrics
+- Primary success metric
+- Secondary success metric
+- Minimum detectable effect (MDE)
+- Target lift
+- Sample size calculation
+- Baseline conversion rate
+- Experiment audience targeting
+- Statistical significance
+- False positive rate
+- Multiple comparisons problem

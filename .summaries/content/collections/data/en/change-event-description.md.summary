@@ -1,12 +1,14 @@
-## Summary
-This documentation explains how to change descriptions for events and event properties in Amplitude, detailing the process for updating global event property descriptions and creating overridden descriptions specific to individual events.
+**Summary:** Documentation for modifying event and event property descriptions in Amplitude's data management interface, covering both global event property descriptions and event-specific overridden property descriptions through the Events table and Event Properties sections.
 
-## Keywords
+**Keywords:**
 - event description modification
-- event property descriptions
-- property overrides
-- Amplitude event metadata
-- event property documentation
-- event details panel
+- event property description
+- Amplitude data management
+- event property override
 - original event property
-- overridden event property
+- event details panel
+- Events table navigation
+- Event Properties section
+- property group override
+- fly-out panel interface
+- global vs specific property descriptions

@@ -1,14 +1,13 @@
-# Summary
-This documentation page describes the integration between Amplitude and Enterpret, allowing businesses to sync cohorts from Amplitude to Enterpret to combine quantitative behavioral data with qualitative customer feedback insights, helping organizations understand the "why" behind customer behavior through machine learning analysis of feedback from multiple sources.
+**Summary:** This documentation describes the Enterpret destination integration for Amplitude, which enables cohort syncing to combine quantitative Amplitude data with qualitative customer feedback analysis using machine learning for cross-source insights.
 
-# Keywords
+**Keywords:**
+- Enterpret destination integration
 - cohort syncing
 - qualitative feedback analysis
 - customer feedback taxonomy
 - machine learning insights
-- Enterpret API key
-- support conversations
-- App Store reviews
-- social media analysis
-- cross-source feedback integration
-- sync cadence
+- quantitative-qualitative data marriage
+- Enterpret API key configuration
+- user ID field mapping
+- sync cadence settings
+- cross-source feedback analysis

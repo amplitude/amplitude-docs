@@ -1,19 +1,21 @@
-# Summary
-Compass helps identify inflection metrics that predict user retention or conversion by analyzing correlations between user behaviors and desired outcomes, using metrics like proportion above threshold, positive predictive value (PPV), sensitivity, negative predictive value (NPV), and specificity to evaluate potential inflection points in the user journey.
+**Summary:** Compass is an Amplitude analytics feature that identifies inflection metrics by analyzing correlations between user behaviors and retention/conversion outcomes using statistical measures like PPV, sensitivity, NPV, and specificity to find critical behavioral thresholds that predict user growth.
 
-# Keywords
-- inflection metrics
+**Keywords:**
 - Compass chart
-- user retention prediction
+- inflection metrics
+- base cohort
+- target cohort
 - proportion above threshold
 - positive predictive value (PPV)
 - sensitivity
 - negative predictive value (NPV)
 - specificity
-- base cohort
-- target cohort
-- correlation analysis
+- true positive/negative
+- false positive/negative
 - contingency matrix
-- true positive ratio
-- true negative ratio
+- correlation analysis
+- retention prediction
+- behavioral thresholds
 - performance days window
+- Type I and Type II errors
+- 95% confidence interval

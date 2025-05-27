@@ -1,58 +1,48 @@
-# Amplitude Personas: Behavioral Clustering for User Segmentation
+## Personas Product Overview
 
-## Product Overview
+Personas is an advanced user analytics feature that employs clustering analysis to automatically group users based on behavioral similarities without requiring pre-defined segmentation rules. This exploratory data mining tool enables product teams to discover natural user personas by analyzing event behavior patterns across their user base.
 
-Amplitude Personas is an advanced analytics feature that automatically groups users into clusters based on their behavioral similarities. Unlike traditional segmentation that requires predefined rules, Personas uses machine learning to discover natural user groupings through exploratory data mining. This helps product teams identify distinct user personas based on actual behavior patterns rather than assumptions.
+## Product Features and Relationships
 
-Personas is exclusively available to customers on Amplitude's Growth and Enterprise plans, positioning it as a premium analytics capability.
+The Personas functionality centers around a specialized chart type that differs significantly from standard analytics modules. Instead of traditional Event/Segmentation modules, Personas utilizes three unique components:
 
-## Key Features and Concepts
+**Cluster Generation Module** - The core engine that performs the clustering analysis, automatically identifying behavioral patterns and grouping users with similar event interaction patterns.
 
-### Behavioral Clustering
-- Automatically identifies natural user groupings based on similar behaviors
-- Uses machine learning for exploratory data mining
-- Discovers patterns without requiring predefined segmentation rules
+**Cluster Count Module** - Manages the determination and optimization of cluster quantities, ensuring meaningful persona groupings without over-segmentation.
 
-### User Segmentation
-- Creates distinct personas based on actual usage patterns
-- Enables more targeted product development and marketing
-- Provides data-driven insights about different user types
+**Target Cohort Module** - Defines the user population for analysis, supporting both retention cohorts and behavioral cohorts, with options to analyze new users versus active users.
 
-### Cohort Analysis
-- Allows saving discovered personas as behavioral cohorts
-- Supports further analysis of specific user groups
-- Enables targeted feature development based on behavioral insights
-
-## Product Architecture and Components
-
-### Personas Chart Interface
-The Personas chart uses a specialized interface with three main modules:
-
-1. **Cluster Generation Module** - Controls parameters for generating behavioral clusters
-2. **Cluster Count Module** - Determines the number of clusters to create
-3. **Target Cohort Module** - Specifies which user cohort to analyze
-
-### Analysis Tools
-- **Cluster Cards** - Visual representations of each identified persona with key metrics
-- **Event Tables** - Detailed breakdowns of event frequencies within each cluster
-- **Standard Deviation Indicators** - Visual cues showing how significantly a behavior deviates from the average
+The system operates within a 30-day analysis timeframe and is available exclusively on Growth and Enterprise plans, indicating its position as a premium analytics capability.
 
 ## Key Nomenclature and Definitions
 
-- **Cluster**: A group of users who exhibit similar behavioral patterns
-- **Persona**: A named cluster representing a distinct user type based on behavior
-- **Event Frequency**: How often users in a cluster perform specific actions
-- **Standard Deviation**: A measure of how much a cluster's behavior differs from the average
-- **Hidden Events**: Events that don't meet the threshold for display but may still be relevant
-- **Behavioral Cohort**: A saved group of users defined by their behavioral patterns
+**Clustering Analysis** - Unsupervised machine learning technique that groups users based on behavioral similarities without predetermined categories.
+
+**Behavioral Clusters** - Automatically generated user groups based on event behavior patterns and interaction frequencies.
+
+**Target Cohort** - The specific user population selected for persona analysis, which can be filtered by user lifecycle stage or behavioral characteristics.
+
+**Cluster Cards** - Visual representations displaying individual persona groups with associated metrics and characteristics.
+
+**Bubble Chart Visualization** - Graphical display showing cluster relationships, sizes, and target cohort percentages.
+
+**Standard Deviation Metrics** - Statistical measures used to identify distinctive behavioral patterns within clusters for persona naming and characterization.
+
+**Event Frequency Patterns** - Analysis of how often users in each cluster perform specific events, used to distinguish persona characteristics.
 
 ## Product Ecosystem Integration
 
-Personas integrates with the broader Amplitude analytics ecosystem by:
+Personas integrates deeply with the broader analytics platform's event tracking infrastructure, leveraging existing tracking plans and event data. The feature connects with:
 
-1. Enabling the creation of behavioral cohorts that can be used in other Amplitude charts and analyses
-2. Complementing traditional segmentation approaches with machine learning-driven insights
-3. Supporting product teams in creating more targeted experiences based on discovered user personas
-4. Providing input for personalization strategies and feature development
+- **Cohort Analysis Systems** - Utilizes retention cohorts and behavioral cohorts as input populations
+- **Event Tracking Framework** - Analyzes all tracked events to identify behavioral patterns
+- **Segmentation Tools** - Enables export of discovered personas as behavioral cohorts for use in other analytics features
+- **Reporting Infrastructure** - Generates personas reports that can be integrated into broader analytics workflows
 
-Personas represents Amplitude's advanced capabilities in behavioral analytics, moving beyond basic event tracking to automated pattern discovery and user segmentation. It serves as a premium analytics tool for organizations seeking deeper insights into their user base through behavioral data.
+The system supports tracking plan event filtering, allowing teams to focus clustering analysis on specific event sets while hiding irrelevant events from the analysis.
+
+## Analysis and Export Capabilities
+
+The Personas feature provides comprehensive interpretation tools including cluster sorting capabilities, event table analysis showing average events per cluster, and detailed behavioral pattern identification. Users can export discovered personas as behavioral cohorts, enabling the application of persona insights across other platform features and external marketing/product tools.
+
+The exploratory nature of Personas positions it as a discovery tool that feeds into more targeted analytics and segmentation strategies, making it a foundational component for data-driven user understanding and product optimization efforts.

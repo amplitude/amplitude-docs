@@ -1,16 +1,14 @@
-# Summary
-This documentation explains how to set up an AWS CloudFront distribution as a reverse proxy for Amplitude Experiment's evaluation servers to bypass regional domain blocking while minimizing latency, including detailed configuration steps and testing instructions.
+**Summary:** Documents setting up AWS CloudFront as a reverse proxy for Amplitude Experiment evaluation servers to bypass domain blocking, including distribution creation with specific cache policies (CachingDisabled, AllViewExceptHostHeader, CORS-with-preflight-and-SecurityHeadersPolicy) and testing via the /v1/vardata endpoint.
 
-# Keywords
-- AWS CloudFront
-- reverse proxy
-- Amplitude Experiment
-- domain blocking
-- edge hosting
-- latency sensitive
-- distribution configuration
-- CORS
-- cache policy
-- origin request policy
-- response headers policy
-- API key authorization
+**Keywords:**
+- AWS CloudFront reverse proxy
+- Amplitude Experiment evaluation servers
+- api.lab.amplitude.com
+- api.lab.eu.amplitude.com
+- CachingDisabled cache policy
+- AllViewExceptHostHeader origin request policy
+- CORS-with-preflight-and-SecurityHeadersPolicy
+- /v1/vardata endpoint
+- domain blocking circumvention
+- experiment API latency
+- CloudFront distribution configuration

@@ -1,15 +1,19 @@
-## Summary
-The Integration Portal is Amplitude's gateway for partners to create and manage integrations, allowing them to self-define integration tiles for Event Ingestion, Cohorts, and Event Streaming capabilities, with access granted by invitation after identifying at least three potential customers.
+**Summary:** The Integration Portal is Amplitude's partner gateway for building and managing three types of integrations (Event Ingestion, Cohorts, Event Streaming) with self-service configuration tools, submission workflow, and Amplitude Engineering team review process for marketplace listing.
 
-## Keywords
+**Keywords:**
 - Integration Portal
-- partner integration
-- event ingestion integration
-- cohort syncing
-- event streaming
+- Event Ingestion integration
+- Cohorts syncing integration  
+- Event Streaming integration
+- Data Source tile
+- Data Destination tile
+- partner sandbox plan
+- Org ID
 - integration tile configuration
-- Amplitude marketplace
-- partner sandbox
-- integration submission process
-- integration validation
-- co-marketing opportunities
+- Amplitude Engineering team review
+- Integration Catalog
+- REST API calls
+- real-time event forwarding
+- cohort syncing
+- integration marketplace
+- partner onboarding workflow

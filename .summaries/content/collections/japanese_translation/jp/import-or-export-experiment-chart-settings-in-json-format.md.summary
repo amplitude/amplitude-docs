@@ -1,15 +1,20 @@
-# Summary
-This documentation explains how to import and export experiment chart settings in JSON format between Amplitude Experiment and Analytics, allowing users to copy complex chart configurations without manual recreation. The process involves copying settings as JSON from Experiment and importing them into Analytics, with details on the JSON schema structure.
+**Summary:** This documentation explains how to import and export experiment chart settings in JSON format between Amplitude Experiment and Analytics, including the process of copying flag settings as JSON from Experiment tabs and importing them into Analytics charts, along with the JSON schema structure containing variants, bucketingGroupType, userProperty, metrics, and exposure events.
 
-# Keywords
-- experiment chart settings
-- JSON import/export
-- clipboard copy
+**Keywords:**
 - Amplitude Experiment
 - Amplitude Analytics
-- variants configuration
+- JSON format export/import
+- experiment chart settings
+- Copy flag as JSON
+- Import from JSON
+- JSON schema
+- variants array
 - bucketingGroupType
 - userProperty
-- exposureEvent
+- exposure event
+- experiment metrics
 - experimentStartDate
 - experimentEndDate
+- exposure tracking
+- E2E experiments
+- Experiment Results chart

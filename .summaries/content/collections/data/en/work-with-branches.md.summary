@@ -1,14 +1,19 @@
 ## Summary
-This documentation explains how to use branches in Amplitude Data for collaborative tracking plan management, including creating branches from main, publishing versions, merging changes back to main, and copying branch changes to testing environments. It details the workflow for making isolated changes before integrating them into production.
+This documentation covers Amplitude Data's branch management system for tracking plans, including creating branches from main, publishing pending changes to create versioned tracking plans, merging branches back to main with prerequisites like published changes and team review approvals, and copying branch changes to testing environments with project restrictions.
 
 ## Keywords
-- tracking plan branches
-- pending changes
-- version publishing
-- branch merging
-- merge requests
-- branch copying
-- testing environments
-- branch permissions
-- branch refresh
-- branch deletion
+- Amplitude Data branches
+- tracking plan versioning
+- branch publishing workflow
+- pending changes staging
+- main branch merging
+- team review approvals
+- merge request process
+- branch copying to testing environments
+- project restriction settings
+- tracking plan instrumentation
+- Git-like branching model
+- version numbering system
+- stakeholder approval workflow
+- Manager Admin permissions
+- branch refresh functionality

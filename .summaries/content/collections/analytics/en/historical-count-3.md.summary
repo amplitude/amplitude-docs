@@ -1,14 +1,13 @@
-# Summary
-This documentation explains how Historical Count filters work in Funnel Analysis charts and behavioral cohorts, detailing the specific conditions for conversion counting when applying Historical Count filters to funnel steps and explaining the distinction between Historical Count and behavioral cohorts in Amplitude.
+**Summary:** This documentation explains how Historical Count filters work in Amplitude's funnel analyses and behavioral cohorts, detailing conversion criteria based on Nth instance timing within date ranges and conversion windows, plus distinguishing Historical Count from behavioral cohort frequency-based user grouping.
 
-# Keywords
+**Keywords:**
 - Historical Count filters
-- Funnel Analysis
-- Conversion window
-- Behavioral cohorts
-- Event sequence tracking
-- Nth instance
-- User milestone tracking
-- Funnel conversion criteria
-- User lifecycle analysis
-- Event frequency
+- funnel analyses conversion criteria
+- Nth instance timing
+- conversion window requirements
+- behavioral cohorts frequency
+- Amplitude funnel query
+- date picker dates
+- user lifecycle milestones
+- cohort population tracking
+- same-second event limitations

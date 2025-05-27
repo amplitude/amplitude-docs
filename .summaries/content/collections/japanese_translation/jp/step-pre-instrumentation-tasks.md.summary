@@ -1,14 +1,20 @@
-## Summary
-This page outlines pre-instrumentation tasks for Amplitude implementation, including defining business goals, understanding user identification, organizing events and properties in a spreadsheet, avoiding over-tracking data, and considering cross-platform instrumentation approaches. It also lists five methods for sending data to Amplitude.
+**Summary:** This Japanese documentation page covers pre-instrumentation tasks for Amplitude setup, including defining business goals, understanding user identification/tracking, organizing events and properties in spreadsheets, avoiding over-tracking, cross-platform project considerations, and data ingestion methods (SDK, HTTP API, Segment.io, mParticle, Shopify).
 
-## Keywords
-- instrumentation prework
-- business goals definition
-- user identification tracking
-- event taxonomy
-- property organization
-- data tracking limitations
-- cross-platform projects
-- data ingestion methods
-- Amplitude SDK
-- HTTP API
+**Keywords:**
+- Amplitude pre-instrumentation tasks
+- Japanese translation (jp)
+- Business goal definition
+- Event taxonomy planning
+- User identification and tracking
+- Event properties spreadsheet organization
+- Cross-platform instrumentation strategy
+- Amplitude SDK integration
+- HTTP API data ingestion
+- Segment.io integration
+- mParticle integration
+- Shopify plugin
+- Data planning playbook
+- Event naming conventions
+- Property limit recommendations (20 properties max)
+- Multi-platform project setup
+- Instrumentation best practices

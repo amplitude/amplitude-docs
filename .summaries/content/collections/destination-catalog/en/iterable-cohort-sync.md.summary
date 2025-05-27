@@ -1,14 +1,15 @@
-# Summary
-This documentation page describes how to set up and use the Iterable Cohort Sync destination in Amplitude, allowing users to send Amplitude cohorts to Iterable for customer engagement campaigns, with details on configuration options, user ID mapping, and the sync process.
+**Summary:** Documents the Iterable Cohort Sync destination integration that sends Amplitude behavioral cohorts to Iterable's user lists with `[Amplitude]` prefix, using API key authentication and configurable user ID mapping between Amplitude user_id/User Properties and Iterable's userId field.
 
-# Keywords
+**Keywords:**
 - Iterable Cohort Sync
-- Amplitude cohorts
-- API key integration
+- Amplitude cohorts export
+- Iterable API key authentication
 - user_id mapping
-- behavioral cohort export
-- marketing automation
-- cohort synchronization
-- user identification
-- sync cadence
-- customer engagement
+- Iterable userId field
+- Amplitude User Property mapping
+- behavioral cohort synchronization
+- Iterable user lists
+- [Amplitude] prefix
+- marketing automation destination
+- sync cadence configuration
+- per-project integration enablement

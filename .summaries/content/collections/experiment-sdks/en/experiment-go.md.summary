@@ -1,16 +1,22 @@
-## Summary
-The Experiment Go SDK documentation provides implementation details for both remote and local evaluation of feature flags in Go applications, covering client initialization, variant fetching, user evaluation, configuration options, and cohort targeting capabilities with code examples for each method.
+**Summary:** This documentation covers Amplitude Experiment's Go SDK implementation for both remote and local evaluation modes, including installation via `go get github.com/amplitude/experiment-go-server`, client initialization with deployment keys, fetching/evaluating variants for users, and configuration options for features like cohort targeting, flag streaming, and assignment tracking.
 
-## Keywords
-- Go SDK
+**Keywords:**
+- Amplitude Experiment Go SDK
 - remote evaluation
 - local evaluation
-- feature flags
-- variant fetching
-- cohort targeting
-- flag streaming
-- assignment tracking
-- flag configuration polling
-- user evaluation
 - deployment key
+- experiment-go-server
+- variant fetching
+- flag configuration polling
+- cohort sync configuration
+- assignment tracking
+- flag streaming
+- ServerZone configuration
 - EU data center
+- user evaluation
+- flag variants
+- experiment.User
+- CohortSyncConfig
+- AssignmentConfig
+- FlagConfigPollingInterval
+- StreamUpdates

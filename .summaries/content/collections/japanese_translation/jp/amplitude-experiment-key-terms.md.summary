@@ -1,19 +1,21 @@
-## Summary
-This documentation page provides a comprehensive glossary of key terms used in Amplitude Experiment, including statistical concepts like confidence intervals and p-values, experiment design elements like hypotheses and success metrics, and technical implementation details like payload and exposure events.
+**Summary:** This is a Japanese translation of Amplitude Experiment key terms documentation that defines essential A/B testing and experimentation terminology including statistical concepts (p-value, confidence intervals, MDE), experiment components (control/variant groups, payload, allocation), and Amplitude-specific events (enrollment events, exposure events).
 
-## Keywords
-- experiment terminology
+**Keywords:**
+- Amplitude Experiment
+- Japanese translation
+- A/B testing terminology
 - statistical significance
-- baseline conversion rate
-- minimum detectable effect
-- sample size
-- confidence level
+- confidence intervals
 - p-value
+- minimum detectable effect (MDE)
+- sample size calculation
+- control variant groups
+- payload variables
+- enrollment events
 - exposure events
-- allocation events
-- payload
-- primary success metrics
+- allocation percentage
+- Type 1 Type 2 errors
+- sequential testing
 - counter metrics
-- continuous testing
-- type 1 error
-- type 2 error
+- baseline conversion rate
+- statistical power

@@ -1,14 +1,15 @@
-# Summary
-Airbridge is a mobile measurement platform that integrates with Amplitude to send attribution data, events, and user properties for enhanced funnel analysis. The integration requires an Amplitude API key and configuration in the Airbridge dashboard to select events, properties, and delivery rules.
+**Summary:** This documentation describes the Airbridge integration for Amplitude, which sends attribution data, events, event properties, and user properties from Airbridge's mobile measurement platform (MMP) to Amplitude via raw-events integration for multi-touch attribution analysis and funnel behavior tracking.
 
-# Keywords
+**Keywords:**
+- Airbridge integration
 - mobile measurement platform (MMP)
-- attribution data
 - multi-touch attribution (MTA)
+- attribution data source
+- raw-events integration
 - incrementality measurement
-- user behavior analysis
-- event properties
-- user properties
-- Airbridge dashboard configuration
+- JavaScript SDK user matching
+- React Native SDK user matching
+- Amplitude V2 integration
+- Third-party Integrations dashboard
 - data delivery rules
-- Amplitude API key
+- funnel behavior analysis

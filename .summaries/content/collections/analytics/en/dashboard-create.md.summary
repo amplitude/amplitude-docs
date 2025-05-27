@@ -1,14 +1,18 @@
-# Summary
-This documentation explains how to create, edit, and manage Amplitude dashboards, including adding charts, cohorts, Session Replays, images, and videos, as well as designating dashboards as "official" sources of truth, commenting on dashboards, and performing administrative functions like refreshing, downloading, and archiving.
+**Summary:** This documentation covers creating, editing, and managing Amplitude analytics dashboards, including adding charts/cohorts/Session Replays, commenting functionality, official dashboard designation, and administrative operations like copying/downloading/archiving with specific plan-based feature restrictions.
 
-# Keywords
-- dashboard creation
-- behavioral cohorts
+**Keywords:**
+- Amplitude dashboards
+- dashboard creation workflow
+- behavioral cohorts dashboard integration
+- Session Replay dashboard embedding
 - official dashboard designation
-- dashboard commenting
-- dashboard content types
-- dashboard templates
+- dashboard commenting system
+- cross-project chart aggregation
 - dashboard cache times
-- dashboard administrative functions
-- enterprise dashboard features
-- dashboard permissions
+- Scholarship/Growth/Enterprise plan features
+- dashboard administrative operations
+- Pathfinder Users limitations
+- dashboard template creation
+- bulk filtering (date range, user segment)
+- target metrics dashboard
+- dashboard subscription limits

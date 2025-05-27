@@ -1,14 +1,19 @@
-# Summary
-Impact Analysis charts in Amplitude allow users to discover how first-time engagement with one feature affects the rate of another behavior by comparing user actions before and after triggering a "treatment event," helping product teams understand feature impact on user behavior patterns.
+**Summary:** Documents Amplitude's Impact Analysis chart feature that measures how first-time engagement with treatment events affects the frequency of outcome events, available only on Growth and Enterprise plans with specific lookback periods (90-360 days) based on selected time intervals.
 
-# Keywords
+**Keywords:**
 - Impact Analysis chart
 - treatment event
 - outcome event
-- user behavior change
-- feature engagement impact
-- first-time interaction
-- correlation analysis
-- Growth and Enterprise plans
-- segmentation
-- time interval analysis
+- first-time engagement
+- user behavior correlation
+- Growth Enterprise plans only
+- lookback periods
+- 90 calendar days daily
+- 91 calendar days weekly
+- 120 calendar days monthly
+- 360 calendar days quarterly
+- Events Module
+- Segmentation Module
+- correlation causation
+- feature discovery impact
+- user propensity analysis

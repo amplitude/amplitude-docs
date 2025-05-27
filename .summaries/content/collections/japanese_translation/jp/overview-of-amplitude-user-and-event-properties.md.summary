@@ -1,15 +1,19 @@
-## Summary
-This documentation explains Amplitude's two types of properties: user properties (attributes of individual users that persist until changed) and event properties (attributes specific to events at the time they occur). It details how Amplitude updates and applies these properties, including the timing considerations for property updates and how they appear in analytics charts.
+**Summary:**
+This Japanese documentation explains Amplitude's user properties and event properties, covering default SDK-tracked properties (platform, device type, country, etc.), custom property implementation, property update mechanisms, and how properties are applied to events through three methods (before, after, or with event transmission).
 
-## Keywords
-- user properties
-- event properties
-- property updates
-- identify API
-- property application timing
-- default user properties
-- custom user properties
-- property hiding
-- property overlap
-- event-based tracking
-- property value persistence
+**Keywords:**
+- Amplitude user properties
+- Amplitude event properties  
+- Japanese translation documentation
+- SDK default properties tracking
+- Custom user properties implementation
+- Property update mechanisms
+- Event property attributes
+- Identify API calls
+- Property value persistence
+- User property table updates
+- Event-based analytics platform
+- Property hiding functionality
+- User property definitions
+- Event property segmentation
+- Property value historical data

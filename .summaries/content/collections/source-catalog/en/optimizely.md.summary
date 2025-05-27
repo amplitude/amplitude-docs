@@ -1,15 +1,17 @@
-## Summary
-This documentation details the integration between Optimizely and Amplitude, allowing real-time user data sharing for experimentation. It covers the setup process including JSON configuration, settings customization, and how experiment data is sent to Amplitude as user properties and optional events for analysis.
+**Summary:** This documentation describes integrating Optimizely's experimentation platform with Amplitude Analytics using a custom JSON analytics integration that syncs behavioral cohorts and sends experiment data (campaign, experiment, variation info) to Amplitude via identify calls and optional events for web experimentation, feature experimentation, and CMS visitor groups.
 
-## Keywords
-- Optimizely integration
-- Amplitude cohorts
-- Custom Analytics Integration
-- User Property Prefix
-- Experiment tracking
-- Web Experimentation
-- Feature Experimentation
-- CMS Visitor Groups
-- Behavior-based experimentation
-- JSON configuration
-- Amplitude Browser SDK
+**Keywords:**
+- Optimizely experimentation integration
+- Amplitude behavioral cohorts sync
+- Custom Analytics Integration JSON configuration
+- track_layer_decision function
+- amplitude.getInstance() method calls
+- experiment variation bucketing
+- campaignId decision object
+- User Property Prefix configuration
+- Optimizely snippet placement order
+- Web Experimentation and Feature Experimentation
+- CMS Visitor Groups targeting
+- experiment settings panel integration toggle
+- identify calls with variation data
+- Amplitude Browser SDK dependency

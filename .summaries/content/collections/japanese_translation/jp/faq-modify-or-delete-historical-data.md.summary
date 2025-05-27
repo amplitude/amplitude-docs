@@ -1,14 +1,15 @@
-## Summary
-This FAQ page explains how to handle historical data in Amplitude, emphasizing that the platform's architecture makes data immutable once ingested. It covers approaches for updating user properties, dealing with incorrectly sent events, and methods for backfilling historical data, including using Export API and Batch API as workarounds.
+**Summary:** This Japanese FAQ documentation explains how to modify or delete historical data in Amplitude, covering immutable data architecture limitations, event modification workarounds using Export API and Batch API, Identify API behavior for user properties, event deletion restrictions with blocking options, and historical data backfill processes.
 
-## Keywords
+**Keywords:**
+- Japanese translation FAQ
+- Amplitude historical data modification
 - immutable data architecture
-- historical data modification
-- Identify API limitations
-- event deletion workarounds
-- data backfilling
-- Export API
-- Batch API
-- user property updates
-- event blocking
-- pre-aggregated data
+- Export API data export
+- Batch API data upload
+- Identify API user properties
+- event deletion blocking
+- data backfill guide
+- pre-aggregated user events
+- user event streams
+- project data migration
+- self-data backfill

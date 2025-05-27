@@ -1,14 +1,16 @@
-# Summary
-Amplitude Data's portfolio feature enables cross-product analysis by combining multiple source projects into a single view, allowing users to create charts with aggregated data across projects, prioritize schemas to resolve conflicts, and customize metadata through overrides.
+**Summary:** Documents Amplitude Data's portfolio feature for cross-project analysis, covering creation of portfolios that combine up to 5 source projects, schema ranking for conflict resolution, and importing Analytics-managed portfolios with automatic override creation.
 
-# Keywords
+**Keywords:**
+- Amplitude Data portfolio
 - cross-project analysis
-- data portfolio
-- schema prioritization
-- source project ranking
-- metadata overrides
-- portfolio creation
+- source projects aggregation
+- schema ranking
+- schema conflict resolution
+- Analytics-managed portfolios
+- Data-managed portfolios
 - portfolio import
-- project limits
-- schema conflicts
-- source of truth
+- metadata overrides
+- project selector
+- source of truth prioritization
+- legacy portfolios migration
+- 5-project limit

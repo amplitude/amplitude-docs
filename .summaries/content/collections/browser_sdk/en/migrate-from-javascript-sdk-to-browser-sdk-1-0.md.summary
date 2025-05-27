@@ -1,14 +1,19 @@
 ## Summary
-This documentation page provides a comprehensive migration guide from the maintenance JavaScript SDK (`amplitude-js`) to Browser SDK 1.0 (`@amplitude/analytics-browser`), detailing API changes, configuration differences, and new patterns including the plugin architecture, unified tracking methods, and promise-based callbacks.
+This documentation covers migrating from the legacy amplitude-js SDK to Browser SDK 1.0 (@amplitude/analytics-browser), detailing breaking changes in API methods, configuration options, and implementation patterns including the removal of getInstance(), updated event tracking APIs, and new plugin architecture.
 
 ## Keywords
-- Browser SDK migration
-- amplitude-js to analytics-browser
+- amplitude-js migration
+- @amplitude/analytics-browser
+- Browser SDK 1.0
+- getInstance() removal
+- logEvent to track API
 - plugin architecture
-- unified track API
-- web attribution
-- event tracking
-- configuration differences
-- identity storage
-- HTTP V2 API
-- batch processing
+- HTTP V2 API endpoint
+- web attribution configuration
+- identify API changes
+- revenue tracking migration
+- flush vs sendEvents
+- deferred initialization
+- tree shaking optimization
+- batch API support
+- minIdLength identifier requirements

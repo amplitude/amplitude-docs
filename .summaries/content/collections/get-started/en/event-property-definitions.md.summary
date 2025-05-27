@@ -1,14 +1,24 @@
-## Summary
-This documentation page lists and explains the default event properties that Amplitude automatically tracks for page-viewed events, including both client-side tracked properties (like Page Domain and Page URL) and Amplitude-generated properties (like Event Day of Week and Session Replay ID), with details on their value definitions.
+**Summary:** Documents Amplitude's automatically tracked event properties for page-viewed events, including both client-side SDK tracked properties (Page Domain, Page Location, Page Path, Page Title, Page URL, Page Counter) and Amplitude-generated properties (Event Day of Week, Event Historical Count, Session Replay ID, Server Upload Delay Time).
 
-## Keywords
-- automatic event properties
-- Amplitude tracking
-- Page Counter
+**Keywords:**
+- Amplitude event properties
+- automatic tracking
+- page-viewed events
+- client-side SDKs
 - Page Domain
 - Page Location
+- Page Path
+- Page Title
 - Page URL
+- Page Counter
+- Event Day of Week
 - Event Historical Count
 - Session Replay ID
-- client-side SDK properties
+- Server Upload Delay Time
+- Session Recorded
+- Historical Count
+- Event Hour of Day
 - Amplitude-generated properties
+- query string parameters
+- property aggregation metrics
+- landing page analysis

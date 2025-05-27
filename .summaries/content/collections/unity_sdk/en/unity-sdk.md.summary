@@ -1,16 +1,45 @@
-## Summary
-This documentation page describes the Amplitude Analytics Unity SDK, a plugin that integrates Amplitude iOS and Android SDKs into Unity projects (2019.3.11+). It covers installation methods, initialization, configuration options, event tracking, user properties management, revenue tracking, session handling, and advanced features like COPPA controls and dynamic configuration.
+**Summary:**
+This documentation covers the Amplitude Analytics Unity SDK, which is a plugin that wraps the Amplitude iOS and Android SDKs for Unity projects (2019.3.11+), supporting installation via Unity Package Manager or manual download, configuration options including EU data residency and COPPA compliance, event tracking with properties, user property management with Identify operations, revenue tracking with verification, session handling, and advanced features like IDFA/GPS setup for iOS and advertising ID configuration for Android.
 
-## Keywords
+**Keywords:**
 - Unity SDK
-- Event tracking
-- User properties
-- Revenue tracking
-- setUserProperty
-- logEvent
+- amplitude-unity.unitypackage
+- Unity Package Manager
+- Git URL installation
+- ProGuard obfuscation
+- unity-jar-resolver
+- OkHTTP dependency
+- Android API 21 compatibility
+- iOS XCode simulator
+- Device SDK vs Simulator SDK
+- AmplitudeServerZone.EU
+- setServerZone()
+- setEventUploadPeriodSeconds()
+- setMinTimeBetweenSessionsMillis()
+- useAdvertisingIdForDeviceId()
+- useAppSetIdForDeviceId()
+- enableCoppaControl()
+- setTrackingOptions()
+- Identify operations
+- setUserProperty()
+- setOnce()
+- addUserProperty()
+- appendUserProperty()
+- clearUserProperties()
+- setGroup()
+- logEventWithGroups()
+- logRevenue()
+- trackSessionEvents()
+- outOfSession events
 - IDFA tracking
-- EU data residency
-- Session management
-- Dynamic configuration
-- COPPA controls
-- Android/iOS integration
+- GPS location tracking
+- CustomIdfa.m
+- CustomGPS.m
+- DllImport
+- setIdfaBlock()
+- setLocationInfoBlock()
+- Info.plist configuration
+- Privacy - Tracking Usage Description
+- Location Usage Description
+- setUseDynamicConfig()
+- setOptOut()

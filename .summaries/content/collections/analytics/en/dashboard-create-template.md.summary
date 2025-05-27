@@ -1,14 +1,19 @@
-# Summary
-This documentation explains how to convert an Analytics dashboard into a template, allowing teams to efficiently recreate common analyses by following a simple process of tagging a dashboard as a template, setting discoverability preferences, and adding instructions, with the resulting template being identifiable by a template icon and accessible through Search or Spaces.
+**Summary:** Documents the process for converting Analytics dashboards into reusable templates through the "Tag as Template" feature, including discoverability settings, template instructions, and the "Save As New Dashboard" functionality for creating dashboard copies.
 
-# Keywords
+**Keywords:**
 - dashboard templates
-- templatize dashboard
-- template discoverability
-- template instructions
-- A/B testing templates
-- dashboard replication
-- template icon
+- Tag as Template
+- Templatize Dashboard modal
+- discoverability toggle
 - Save As New Dashboard
-- template use cases
-- template search filters
+- template icon
+- Template filter
+- dashboard copying
+- Analytics dashboards
+- template instructions
+- boilerplate instructions
+- A/B testing templates
+- release tracking templates
+- engagement dashboards
+- B2B dashboard templates
+- Amplitude onboarding

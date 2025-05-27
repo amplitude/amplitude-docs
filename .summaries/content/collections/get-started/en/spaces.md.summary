@@ -1,14 +1,13 @@
-# Summary
-Spaces in Amplitude help teams organize and collaborate on analyses, with content saved either to personal workspaces (private by default) or shared spaces. The feature is available on all plans but limited to one space for Starter plans and three spaces for Plus plans, with functionality for creating folders, moving content, and managing permissions.
+**Summary:** This documentation explains Amplitude's Spaces feature for organizing and collaborating on analytics content, covering personal workspaces, shared spaces, folder creation, and plan-based restrictions (Starter: 1 space, Plus: 3 spaces, all other plans: unlimited).
 
-# Keywords
-- Personal workspace
-- Shared spaces
-- Content organization
-- Folder creation
-- Space permissions
-- Discoverability settings
-- Space limitations
-- Team collaboration
-- Content management
-- Space creation process
+**Keywords:**
+- Amplitude Spaces
+- personal workspace
+- shared spaces collaboration
+- content organization folders
+- plan restrictions Starter Plus
+- discoverable content search
+- space creation permissions
+- analytics content management
+- shortcuts between spaces
+- team collaboration analytics

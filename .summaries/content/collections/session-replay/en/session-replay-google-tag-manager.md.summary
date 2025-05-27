@@ -1,12 +1,13 @@
-# Summary
-This documentation explains how to implement Amplitude Session Replay using Google Tag Manager (GTM), which requires a different procedure than the standard Browser SDK Plugin, including enabling the Session Replay toggle in the Amplitude Analytics Browser SDK template and configuring settings in Amplitude's organization settings.
+**Summary:** This documentation explains how to implement Amplitude Session Replay specifically through Google Tag Manager (GTM) for client-side browser implementations, covering the GTM Web Template configuration, Session Replay plugin enablement, and troubleshooting multiple SDK instantiation issues.
 
-# Keywords
+**Keywords:**
 - Google Tag Manager (GTM)
-- Session Replay Plugin
-- Amplitude Analytics Browser SDK template
+- Amplitude Session Replay
+- GTM Web Template
+- Browser SDK Plugin
 - client-side instrumentation
-- masking
-- sample rate
-- multiple instantiation
-- troubleshooting
+- Session Replay Plugin toggle
+- multiple SDK instantiation
+- GTM Init Tag
+- code injection frameworks
+- masking and sample rate configuration

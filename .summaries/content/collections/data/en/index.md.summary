@@ -1,17 +1,18 @@
-## Summary
-This documentation page provides an overview of Amplitude Data, a suite of governance tools for defining, tracking, verifying, and improving data quality across the platform, including planning tools to prevent issues upfront and management tools for ingested data such as metadata enrichment, data cleanup, data enrichment, and real-time monitoring.
+**Summary:** This documentation page provides an overview of Amplitude Data's governance tools for data catalog management, covering planning/instrumentation features (data plans, Ampli developer toolkit, type-safe tracking libraries) and data management capabilities (metadata enrichment, data transformation, custom events, derived properties, data observability, and Data Assistant automation).
 
-## Keywords
-- data catalog
-- data governance
-- data planning
+**Keywords:**
+- Amplitude Data
+- data catalog governance
+- data planning workflow
 - Ampli developer toolkit
-- type-safe tracking
+- type-safe tracking library
 - data observability
-- data management
 - metadata enrichment
 - data transformation
-- custom events
+- custom events creation
 - derived properties
 - lookup properties
-- Data Assistant
+- Data Assistant automation
+- taxonomy standards
+- data quality monitoring
+- real-time data comparison

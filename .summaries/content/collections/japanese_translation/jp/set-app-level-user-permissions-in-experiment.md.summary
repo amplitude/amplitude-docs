@@ -1,14 +1,16 @@
-## Summary
-This documentation explains how to set app-level user permissions in Amplitude Experiment independently from Amplitude Analytics, allowing admins to control access based on team roles. It details the permission matrix showing what actions (read, create, edit, delete) are available to different user roles (Viewer, Member, Manager, Admin) across experiments, flags, environments, and user management.
+**Summary:** This Japanese documentation explains how to configure app-level user permissions in Amplitude Experiment independently from Amplitude Analytics permissions, including step-by-step instructions for managing project access and a detailed permissions matrix covering viewer, member, manager, and admin roles for experiments, flags, environments, and mutual exclusion groups.
 
-## Keywords
-- Amplitude Experiment permissions
-- App-level user access
-- Permission matrix
-- Role-based access control
-- Experiment user roles
-- Analytics vs Experiment permissions
-- Project access management
-- Viewer/Member/Manager/Admin permissions
-- Feature flag access control
-- Mutually exclusive groups
+**Keywords:**
+- Amplitude Experiment
+- app-level user permissions
+- project access management
+- permissions matrix
+- viewer member manager admin roles
+- experiments flags environments
+- mutual exclusion groups
+- Japanese translation
+- プロジェクトアクセスの管理
+- 権限のマトリクス
+- ターゲット環境
+- バリアント割り当て
+- 相互排反グループ

@@ -1,14 +1,14 @@
-## Summary
-This documentation page explains the different measurement options available in Amplitude's Event Segmentation charts, including Uniques, Event Totals, Active %, Average, Frequency, Properties (with various sub-options), and Formula, detailing how each measurement calculates and displays event data differently.
+**Summary:** This documentation explains the different measurement options available in Amplitude's Event Segmentation charts, including Uniques, Event Totals, Active %, Average, Frequency with customizable buckets, property-based measurements (Sum/Distribution/Average/Distinct/Median of Property Value), and Formula options from the Advanced dropdown in the Measured As Module.
 
-## Keywords
-- event segmentation measurements
-- uniques count
-- event totals
-- active percentage
-- frequency buckets
-- property value measurements
-- custom formulas
-- data visualization options
-- microscope feature
-- measurement selection
+**Keywords:**
+- Event Segmentation chart measurements
+- Uniques vs Event Totals
+- Active percentage calculation
+- Frequency buckets customization
+- Property value measurements (Sum/Distribution/Average/Distinct/Median)
+- Measured As Module
+- Custom Formulas Advanced dropdown
+- Event segmentation analysis
+- Property value integers
+- User segment buckets
+- Microscope feature integration

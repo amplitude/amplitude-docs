@@ -1,15 +1,13 @@
-## Summary
-This documentation covers the installation and configuration of the Session Replay iOS Standalone SDK for apps using analytics providers other than Amplitude, detailing initialization requirements, configuration options, data masking, opt-out functionality, and integration with third-party analytics platforms.
+**Summary:** This documentation covers the Session Replay iOS Standalone SDK for developers using non-Amplitude analytics providers, requiring manual session/device ID management and integration with third-party analytics systems through `additionalEventProperties` and explicit ID synchronization.
 
-## Keywords
-- iOS Standalone SDK
-- deviceId
-- sessionId
-- sampleRate
-- optOut
-- additionalEventProperties
-- data masking
-- WebView support
-- MapView support
-- remote configuration
+**Keywords:**
+- Session Replay iOS Standalone SDK
 - third-party analytics integration
+- manual session ID management
+- device ID synchronization
+- additionalEventProperties
+- AmplitudeSessionReplay target
+- non-Amplitude analytics providers
+- standalone SDK configuration
+- session timestamp tracking
+- ThirdPartyAnalytics integration

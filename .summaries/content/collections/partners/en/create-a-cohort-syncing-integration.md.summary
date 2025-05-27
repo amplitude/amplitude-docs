@@ -1,19 +1,27 @@
-## Summary
-This documentation page provides a step-by-step guide for creating a cohort syncing integration with Amplitude, covering configuration of connection information, authentication methods, API endpoints (list creation, add users, remove users), error handling, and testing procedures for both list-based and property-based cohort integrations.
+**Summary:** This documentation provides a comprehensive guide for creating cohort syncing integrations with Amplitude, covering the setup of list-based and property-based cohort integrations through the Developer Portal, including authentication methods, custom fields, API endpoint configurations (list creation, add users, remove users), payload definitions, error handling, and testing procedures.
 
-## Keywords
+**Keywords:**
 - cohort syncing integration
-- list-based cohort
-- property-based cohort
-- integration portal
-- authentication methods
-- custom fields
-- field mapping
-- slugify cohort name
+- list-based cohort integration
+- property-based cohort integration
+- Developer Portal
+- Destinations page
 - list creation endpoint
 - add users endpoint
 - remove users endpoint
-- batch size
+- API payload configuration
+- $items variable
+- $list_id variable
+- $amplitude_cohort_name
+- batch size configuration
+- authentication methods (Bearer Token, Basic Authentication, Custom Headers)
+- custom fields mapping
+- slugify cohort names
 - error classifications
-- payload configuration
-- integration testing
+- status codes handling
+- Integration Catalog
+- user identifier mapping
+- API rate limiting
+- payload editor
+- endpoint testing
+- mock payload testing

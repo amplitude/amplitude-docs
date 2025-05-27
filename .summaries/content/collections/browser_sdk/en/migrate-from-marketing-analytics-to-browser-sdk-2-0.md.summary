@@ -1,14 +1,21 @@
 ## Summary
-This documentation page explains how to migrate from Marketing Analytics Browser SDK to Browser SDK 2.0, covering changes to default event tracking, marketing attribution, page view tracking, cookie options, user agent parsing, and plugin interfaces, with specific code examples showing the before and after syntax for each change.
+
+This documentation covers migrating from Marketing Analytics Browser SDK 1.0 to Browser SDK 2.0, detailing breaking changes including default event tracking enablement, consolidated marketing attribution options moved to `defaultTracking.attribution`, page view event type changes from "Page View" to "[Amplitude] Page Viewed", cookie configuration restructuring under `cookieOptions`, and the shift from client-side to server-side user agent parsing.
 
 ## Keywords
-- Browser SDK 2.0 migration
+
+- Marketing Analytics Browser SDK migration
+- Browser SDK 2.0 upgrade
+- @amplitude/marketing-analytics-browser to @amplitude/analytics-browser
 - defaultTracking configuration
-- marketing attribution tracking
-- page view tracking changes
-- identityStorage options
-- cookieOptions structure
-- user-agent-enrichment-browser plugin
+- marketing attribution tracking consolidation
+- options.attribution to options.defaultTracking.attribution
+- page view tracking migration
+- "[Amplitude] Page Viewed" event type
+- cookieOptions restructuring
+- identityStorage configuration
+- user agent client-side parsing deprecation
 - plugin interface simplification
-- web attribution v2
-- @amplitude/analytics-browser
+- web attribution v2 vs v1
+- TransportType enum removal
+- Session Replay compatibility

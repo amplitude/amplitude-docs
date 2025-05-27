@@ -1,18 +1,24 @@
-# Summary
-This documentation page covers frequently asked questions about Amplitude's Event Segmentation chart, including how to analyze properties, set date ranges, calculate metrics like averages and ratios, create custom formulas, understand result calculations, and troubleshoot common issues like incomplete data errors and export limitations.
+## Summary
+This FAQ documentation covers Event Segmentation chart functionality in Amplitude Analytics, including chart setup options (group-by, filter-by, date ranges), custom formulas (ROLLWIN, PROP(), percentage calculations), result interpretations (Active %, New User definitions, line vs bar chart differences), and data export capabilities with CSV limits.
 
-# Keywords
-- event segmentation chart
-- group-by functionality
-- custom date ranges
-- property averages
-- behavioral cohorts
+## Keywords
+- Event Segmentation chart
+- Amplitude Analytics
+- group-by filtering
 - custom formulas
-- ROLLWIN
-- Active% metric
-- data point calculations
-- user property filtering
+- ROLLWIN formula
+- PROP() calculations
+- Active % metric
+- New User definition
+- behavioral cohorts
+- date picker intervals
+- CSV export limits
+- microscope feature
 - glob match filtering
-- CSV export limitations
-- incomplete data errors
-- microscope functionality
+- incomplete data processing
+- line chart vs bar chart
+- user property segmentation
+- account-based analysis
+- percentage ratio formulas
+- DAU/MAU calculations
+- breakdown table limits

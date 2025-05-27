@@ -1,13 +1,13 @@
-# Summary
-This documentation explains how Amplitude exports CSV files, covering the structure determination based on breakdown data tables, value limits, differences between chart and CSV property values (showing most recent values in CSV vs. values at event time in charts), and how to remove leading spaces in exported CSV files through Personal settings.
+**Summary:** This FAQ documentation explains CSV export functionality in Amplitude, covering how Event Segmentation chart breakdown data tables determine CSV structure, user property value differences between charts and Microscope exports (event-time vs current values), and the "Always Remove Leading Spaces from Export" toggle in Personal Settings.
 
-# Keywords
-- CSV export structure
+**Keywords:**
+- CSV export
+- Event Segmentation chart
 - breakdown data table
-- property value differences
+- Microscope export
+- user property values
+- event-time property values
 - leading spaces removal
-- export value limits
-- Microscope user download
-- most recent property values
-- Personal settings configuration
-- Always Remove Leading Spaces from Export toggle
+- Personal Settings toggle
+- property value discrepancies
+- chart vs CSV differences

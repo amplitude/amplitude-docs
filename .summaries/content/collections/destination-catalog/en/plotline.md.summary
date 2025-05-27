@@ -1,14 +1,17 @@
-# Summary
-Plotline is a digital adoption platform that enables product and marketing teams to configure in-app nudges for improved feature adoption and conversions. This integration allows streaming event data from Amplitude to Plotline to create personalized in-app campaigns based on user behavior, with setup requiring a Plotline account and API key.
+**Summary:** This documentation describes the Amplitude to Plotline event streaming integration for sending user behavior data and events to enable personalized in-app campaigns and behavioral triggers, requiring a Plotline API key and supporting real-time user property updates with a 2MB request size limit.
 
-## Keywords
-- digital adoption platform
-- in-app nudges
-- event streaming
+**Keywords:**
+- Plotline event streaming integration
+- Amplitude Data Destinations
 - behavioral triggers
-- personalized campaigns
-- feature adoption
-- API key integration
-- user behavior data
-- real-time event forwarding
-- no-code configuration
+- in-app campaigns
+- digital adoption platform
+- customer engagement
+- API key authentication
+- real-time user property updates
+- event filtering and selection
+- 2MB request limit
+- 429 response handling
+- Live Stream data verification
+- personalized content generation
+- no-code campaign configuration

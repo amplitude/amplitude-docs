@@ -1,18 +1,22 @@
-## Summary
-Pathfinder is a legacy chart in Amplitude that visualizes user flows within a product, showing sequences of events (paths) users take during specified time periods, with capabilities to analyze both incoming and outgoing paths to specific events up to fifty steps deep, helping identify common conversion paths for funnel analysis.
+**Summary:** Pathfinder is a legacy Amplitude chart that visualizes aggregated user flows and event sequences within sessions using sankey diagrams and funnel visualizations, requiring session_id tracking and supporting up to 50 steps with configurable bucket thresholds for path analysis.
 
-## Keywords
-- legacy-pathfinder
-- user-flow-visualization
-- event-paths
-- conversion-sequences
-- sankey-diagram
-- node-paths
-- session-tracking
-- path-analysis
-- bucket-below-threshold
-- custom-events-in-paths
-- flow-diagram
-- funnel-visualization
-- event-sequences
-- noisy-events-filtering
+**Keywords:**
+- Pathfinder chart
+- legacy charts
+- user flows
+- event sequences
+- session tracking
+- session_id
+- sankey diagram
+- funnel visualization
+- nodes and paths
+- bucket below threshold
+- starting with/ending with events
+- client_event_time ordering
+- Hide Noisy Events
+- custom events
+- Journeys migration
+- 50 steps maximum
+- 45 days timeframe limit
+- conversion sequences
+- HTTP API session requirements

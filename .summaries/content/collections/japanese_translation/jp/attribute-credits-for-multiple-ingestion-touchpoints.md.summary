@@ -1,19 +1,18 @@
-## Summary
-This documentation explains multi-touch attribution models in Amplitude Analytics, allowing marketers to evaluate how different touchpoints contribute to conversions. It details built-in models (First Touch, Last Touch, Linear, Participation, U-shaped, J-shaped, Inverse J-shaped, Data-driven), how to configure custom attribution models, and provides calculation examples with use cases for marketing channel analysis.
+**Summary:** This documentation explains Amplitude's multi-touch attribution feature for analyzing marketing touchpoint effectiveness, covering built-in attribution models (first-touch, last-touch, linear, participation, U-shaped, J-shaped, inverse J-shaped, data-driven) and custom model creation with configurable weights and lookback windows in data tables.
 
-## Keywords
+**Keywords:**
 - multi-touch attribution
-- marketing attribution models
-- first-touch attribution
-- last-touch attribution
-- linear attribution
-- participation model
-- U-shaped attribution
-- J-shaped attribution
-- custom attribution weights
-- lookback window
+- attribution models
+- touchpoint analysis
 - UTM source attribution
-- marketing channel effectiveness
-- conversion attribution
-- data-driven attribution
-- Markov chain attribution
+- lookback window configuration
+- data-driven attribution model
+- Markov chain algorithm
+- custom attribution weights
+- first-touch last-touch attribution
+- linear participation attribution
+- U-shaped J-shaped models
+- marketing campaign credit analysis
+- conversion touchpoint evaluation
+- Growth Enterprise plan feature
+- data table metrics configuration

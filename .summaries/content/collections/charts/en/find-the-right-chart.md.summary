@@ -1,20 +1,22 @@
-## Summary
-This documentation page provides an overview of Amplitude's chart types categorized by user analysis goals (Know, Convert, Retain, Monetize), explaining each chart's purpose and including a comparison table of chart availability across different Amplitude subscription plans.
+**Summary:** This documentation provides an overview of all Amplitude chart types organized by use case categories (Know your users, Convert your users, Retain Your Users, Monetize), including Event Segmentation, Funnel Analysis, Retention, User Sessions, Personas, Journeys, and others, with a plan-based feature availability matrix showing which charts are accessible across Starter, Plus, Growth, and Enterprise tiers.
 
-## Keywords
-- Amplitude charts
+**Keywords:**
+- Amplitude chart types
 - Event Segmentation
-- Data Tables
-- User Composition
 - Funnel Analysis
-- Journeys
-- Retention
-- Stickiness
-- Personas
-- Experiment Results
+- Retention charts
+- User Sessions
+- Personas clustering
+- Experiment Results A/B testing
+- Journeys user paths
 - Engagement Matrix
 - Impact Analysis
-- Compass
-- Lifecycle
-- Revenue LTV
-- Chart plan availability
+- Stickiness analysis
+- Compass behavioral thresholds
+- Lifecycle user categories
+- Revenue LTV lifetime value
+- Data Tables multi-metric analysis
+- User Composition user properties
+- Plan-based chart access
+- Starter Plus Growth Enterprise tiers
+- Chart feature availability matrix

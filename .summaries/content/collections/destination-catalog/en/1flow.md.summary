@@ -1,14 +1,13 @@
-# Summary
-This documentation page describes the 1Flow destination integration with Amplitude, which enables syncing user cohorts from Amplitude to 1Flow for targeted in-app surveys, messages, and onboarding experiences, requiring paid plans with both platforms and matching User IDs across systems.
+**Summary:** This documentation describes the 1Flow destination integration for syncing Amplitude cohorts to deploy dynamic in-app surveys and messages, requiring paid plans for both services and matching User ID fields between platforms.
 
-# Keywords
-- cohort syncing
-- 1Flow integration
-- in-app surveys
-- product-led onboarding
-- user feedback collection
-- Amplitude User ID mapping
-- API key configuration
+**Keywords:**
+- 1Flow destination integration
+- Amplitude cohort syncing
+- in-app surveys and messages
+- User ID field mapping
+- qualitative feedback integration
+- product-led customer onboarding
+- cohort sync cadence
+- 1Flow API key configuration
+- embedded onboarding checklists
 - contextual guides
-- empty states
-- churn reduction

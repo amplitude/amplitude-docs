@@ -1,14 +1,16 @@
-# Summary
-This documentation explains how Amplitude calculates retention in the Retention Analysis chart, detailing the differences between "Return On or After" and "Return On" retention types, including their specific calculation formulas, how they handle cohort entry dates, and how overall retention is calculated for all users.
+## Summary
+This documentation explains how Amplitude calculates retention percentages for "Return On or After" and "Return On" retention types, covering the mathematical formulas for specific cohort entry dates versus overall retention calculations, and how incomplete data affects denominator values in the Microscope view.
 
-# Keywords
-- Retention calculation
-- Return On or After retention
-- Return On retention
-- Cohort entry date
-- Retention intervals
-- Numerator/denominator formulas
-- Incomplete data handling
-- Retention visualization
-- Microscope denominator
-- Retention percentage trends
+## Keywords
+- Return On or After retention calculation
+- Return On retention calculation
+- cohort entry date formulas
+- overall retention (all users) calculation
+- retention numerator denominator logic
+- incomplete data exclusion
+- Microscope denominator values
+- retention interval completion
+- cohort analysis mathematical formulas
+- retention percentage decrease over time
+- Amplitude retention chart calculations
+- retention analysis breakdown table

@@ -1,11 +1,13 @@
-## Summary
-This documentation page features a video walkthrough for developers and product managers on Amplitude implementation best practices, emphasizing the importance of good instrumentation to prevent errors and ensure successful data collection.
+**Summary:** This documentation page contains a video walkthrough explaining Amplitude instrumentation best practices and data structure guidelines for developers and product managers implementing event tracking.
 
-## Keywords
-- data structure
+**Keywords:**
+- Amplitude instrumentation
+- data structure video walkthrough
+- event tracking implementation
 - instrumentation best practices
-- Amplitude implementation
-- video walkthrough
-- instrumentation errors
-- developer guidance
-- product manager guidance
+- developer implementation guide
+- product manager instrumentation
+- Amplitude SDK setup
+- event tracking errors prevention
+- Loom embedded video
+- instrumentation guidelines

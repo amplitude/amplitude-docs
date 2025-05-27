@@ -1,14 +1,13 @@
-# Summary
-This documentation explains how to sync cohorts from Amplitude to InMobi via Amazon S3, where InMobi reads and ingests cohort data daily from a specified S3 bucket they manage, requiring configuration details from InMobi's CSM team and proper setup in Amplitude's Data Catalog.
+**Summary:** This documentation describes setting up cohort synchronization from Amplitude to InMobi using Amazon S3 as an intermediary, where cohorts are exported to an InMobi-managed S3 bucket for daily ingestion by InMobi's mobile marketing platform.
 
-## Keywords
+**Keywords:**
 - InMobi cohort sync
-- Amazon S3 integration
-- advertiser_id
-- bucket policy
-- custom user ID matching
-- targeted advertising
-- retargeting
-- cohort export
-- marketing automation
-- user property mapping
+- Amazon S3 cohort destination
+- Mobile marketing platform integration
+- Bucket policy configuration
+- InMobi Custom User ID matching
+- Daily cohort ingestion
+- S3 bucket routing key
+- Advertiser targeting cohorts
+- Non-native integration setup
+- InMobi CSM team coordination

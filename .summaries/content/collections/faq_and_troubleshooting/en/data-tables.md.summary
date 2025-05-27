@@ -1,17 +1,17 @@
-## Summary
-This FAQ page addresses common questions about Amplitude's Data Table chart, covering issues with result calculations, export limitations, and usability constraints, including explanations for discrepancies in row sums, pruning behavior, and the 10,000 row export limit.
+**Summary:** This FAQ documentation covers Data Tables chart troubleshooting including unique metric group-by aggregation discrepancies, caching issues with overall values, attribution model pruning behavior, CSV export row limits (10,000 groups per metric), formula metric null value handling, and UI limitations like horizontal scrolling and column header editing.
 
-## Keywords
-- data table chart
-- group-by clause
-- uniques metric
-- attribution model
-- pruning message
-- formula metric
-- export limitations
-- row limits
-- sorting logic
-- CSV export
-- PDF/PNG export
-- horizontal scrolling
-- column headers
+**Keywords:**
+- Data Tables chart
+- unique metric group-by aggregation
+- overall value sum discrepancy
+- attribution model pruning
+- caching inconsistencies
+- CSV export limits
+- 10,000 rows limit
+- formula metric null values
+- horizontal scrolling limitations
+- column header editing
+- PDF PNG export bounded box
+- multi-dimensional analysis
+- group-by clause behavior
+- metric column visibility

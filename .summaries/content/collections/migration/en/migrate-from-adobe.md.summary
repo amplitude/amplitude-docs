@@ -1,18 +1,24 @@
 ## Summary
-This documentation page provides a comprehensive guide for migrating from Adobe Analytics to Amplitude, covering data model differences, mapping Adobe variables to Amplitude schema, implementation methods, historical data backfilling, data validation, and report replication strategies to ensure a smooth transition with minimal disruption.
+This documentation provides a comprehensive guide for migrating from Adobe Analytics to Amplitude, covering data model differences, variable mapping between Adobe's eVars/props/success events and Amplitude's event-centric schema, implementation methods using SDKs/APIs/tag management systems, historical data backfill strategies, and data validation using Amplitude's debugging tools.
 
 ## Keywords
 - Adobe Analytics migration
-- Data model mapping
-- Event tracking differences
-- eVars to Event Properties
-- Backfill historical data
+- Adobe eVars props mapping
+- Amplitude event-centric data model
+- Adobe Launch extension
+- Solution Design Reference (SDR)
+- Adobe success events conversion
+- Tealium integration
+- Google Tag Manager templates
+- Segment mParticle CDP
+- Adobe Data Feeds backfill
+- Batch Event Upload API
 - Ingestion Debugger
-- User Lookup
-- Tracking plan
-- Data continuity
-- Adobe variable mapping
-- Client-side sources
-- Server-side sources
-- Tag management integration
-- Data validation tools
+- User Lookup validation
+- Event Explorer Chrome extension
+- Adobe visitor ID mapping
+- Amplitude tracking plan
+- Adobe Analysis Workspace replication
+- Component Manager tool
+- Adobe tag management systems
+- Historical data warehouse export

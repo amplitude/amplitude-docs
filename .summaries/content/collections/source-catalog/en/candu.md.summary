@@ -1,12 +1,13 @@
-# Summary
-This documentation page describes the integration between Candu (an in-app content experience platform) and Amplitude, explaining how to set up the connection by copying an Amplitude API key and configuring it in Candu's integration settings to enable sending events from Candu to Amplitude for analytics.
+**Summary:** Documents the Candu integration for sending in-app content experience events to Amplitude analytics, requiring API key configuration in Candu's Settings > Integrations section and per-project enablement in Amplitude.
 
-# Keywords
+**Keywords:**
 - Candu integration
 - in-app content experiences
-- event forwarding
 - Amplitude API key
-- cross-platform analytics
-- integration setup
-- user behavior insights
-- product experience analytics
+- source-catalog
+- Candu Settings Integrations
+- partner integration
+- event sending
+- analytics capabilities
+- per-project enablement
+- collaboration category

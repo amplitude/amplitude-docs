@@ -1,14 +1,21 @@
-# Summary
-This documentation explains three methods for creating cohorts in Amplitude: using Microscope to create static or behavioral cohorts from chart data points, importing cohorts from CSV files containing user/group IDs, and creating inline behavioral or interval cohorts directly within the Segmentation module of most chart types.
+**Summary:** This documentation explains three methods for creating cohorts in Amplitude: using Microscope to create static or behavioral cohorts from data points, importing static cohorts from CSV files containing user IDs or Amplitude IDs, and creating inline behavioral cohorts with interval filtering directly within the Segmentation module of chart types (excluding Compass).
 
-# Keywords
+**Keywords:**
 - Microscope cohort creation
 - CSV cohort import
-- Inline behavioral cohorts
-- Interval cohorts
-- Static vs behavioral cohorts
-- Group cohorts
-- Cohort file formatting
+- Amplitude IDs
+- user IDs
+- static cohorts
+- behavioral cohorts
+- inline cohorts
+- interval cohorts
 - Segmentation module
-- Cohort replacement
-- User ID filtering
+- group cohorts
+- Accounts add-on
+- retention analyses
+- funnel analyses
+- "in each" clause
+- time interval filtering
+- Cohorts & Audiences
+- 50MB file limit
+- Compass chart exclusion

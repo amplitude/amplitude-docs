@@ -1,18 +1,25 @@
-# Summary
-This documentation page explains how to attribute credit to multiple marketing touch points in Amplitude, detailing pre-built attribution models (First Touch, Last Touch, Linear, Participation, U-Shaped, J-Shaped, Inverse J-Shaped, and Data Driven), how to configure them on metrics, and how to create custom attribution models with specific weighting distributions.
+**Summary:** This documentation covers Amplitude's multi-touch attribution feature for data tables, which allows attributing credit to multiple acquisition touchpoints using pre-built models (First Touch, Last Touch, Linear, Participation, U-Shaped, J-Shaped, Inverse J-Shaped, Data Driven) and custom attribution models with configurable lookback windows and weighting.
 
-# Keywords
+**Keywords:**
 - multi-touch attribution
-- marketing attribution models
-- first touch attribution
-- last touch attribution
-- linear attribution
-- participation attribution
-- u-shaped attribution
-- j-shaped attribution
-- data-driven attribution
-- markov chain attribution
-- custom attribution model
+- attribution models
+- First Touch attribution
+- Last Touch attribution
+- Linear attribution
+- Participation attribution
+- U-Shaped attribution
+- J-Shaped attribution
+- Inverse J-Shaped attribution
+- Data Driven attribution
+- Markov chains attribution
+- custom attribution models
 - lookback window
-- acquisition channel credit
-- attribution example calculation
+- data tables attribution
+- acquisition touchpoints
+- UTM source attribution
+- attribution weighting
+- conversion attribution
+- event totals attribution
+- property sum attribution
+- attribution group by
+- marketing channel attribution

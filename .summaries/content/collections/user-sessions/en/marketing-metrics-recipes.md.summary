@@ -1,14 +1,23 @@
-# Summary
-This documentation page provides detailed recipes for creating common marketing metrics in Amplitude using Event Segmentation and User Sessions charts, including session totals, bounce rate, page views, and performance marketing metrics like ad network clicks, customer acquisition cost, and return on ad spending.
+**Summary:** Documentation for creating marketing metrics in Amplitude Analytics using Event Segmentation and User Sessions charts, including session totals, bounce rate, entry/exit rates, page views per session, and performance marketing metrics like ROAS and CAC with custom formulas and PROPSUM functions.
 
-# Keywords
+**Keywords:**
+- Event Segmentation charts
+- User Sessions charts
 - marketing metrics recipes
-- user sessions charts
-- event segmentation
 - bounce rate calculation
+- entry rate exit rate
 - page views per session
-- entry/exit rates
-- custom formula metrics
+- average session duration
+- sessions per user
+- custom formulas PROPSUM
+- SESSIONTOTALS formula
+- First Property Value Last Property Value
 - performance marketing metrics
-- ad network metrics
-- customer acquisition cost
+- ROAS return on ad spending
+- customer acquisition cost CAC
+- clickthrough rate CTR
+- ad network clicks impressions costs
+- Daily ad metric event
+- Page View event filtering
+- Page URL filtering
+- Contains Event filters

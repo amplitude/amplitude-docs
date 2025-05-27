@@ -1,16 +1,20 @@
-# Summary
-This documentation explains how to deploy recommendation models in personalization campaigns using Amplitude's Profile API, including authentication, request parameters, response interpretation, and integration steps, along with guidance on analyzing recommendation performance through conversion metrics and statistical significance.
+**Summary:** This documentation explains how to deploy Amplitude recommendations using the Profile API for personalization campaigns, including REST endpoint authentication with Secret Keys, JSON response handling with rec_id/is_control/items fields, and performance analysis through funnel conversion charts with statistical significance testing.
 
-# Keywords
+**Keywords:**
 - Profile API
-- recommendation deployment
-- API authentication
-- is_control parameter
-- recommendation performance
-- statistical significance
-- user_id query
-- JSON response
-- recommendation integration
-- conversion metrics
-- treatment vs control segments
+- recommendations deployment
 - personalization campaigns
+- REST endpoint authentication
+- Secret Key authorization
+- rec_id parameter
+- is_control field
+- JSON response handling
+- user_id and device_id queries
+- funnel conversion analysis
+- statistical significance testing
+- treatment vs control segments
+- [Recs] Recommendation Event
+- recommendations_model_v2
+- API integration workflows
+- Braze connected content
+- Movable Ink integration

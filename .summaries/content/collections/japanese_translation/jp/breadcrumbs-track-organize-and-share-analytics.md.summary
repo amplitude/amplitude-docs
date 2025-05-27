@@ -1,14 +1,16 @@
-# Summary
-This documentation explains Amplitude's Breadcrumbs feature, which allows users to track all steps of complex analytics in one place, create an evolutionary history of analysis, and easily convert charts into interactive notebooks for sharing with teams without needing to retrace steps or manage multiple tabs.
+**Summary:** This documentation explains Amplitude's breadcrumbs feature for Japanese users, which tracks analytical steps and converts charts into interactive notebooks for team sharing, including workflow for adding charts to notebooks and managing analytical evolution history.
 
-# Keywords
-- Breadcrumbs feature
-- Analytics tracking
-- Notebook conversion
-- Analysis history
-- Chart bookmarking
-- Workflow simplification
-- Stakeholder sharing
-- Interactive analytics
-- Chart evolution tracking
-- Amplitude chart types
+**Keywords:**
+- Amplitude breadcrumbs feature
+- Japanese translation documentation
+- analytical step tracking
+- interactive notebooks conversion
+- chart bookmarking workflow
+- ノートブックビューを開く (open notebook view)
+- チャートをノートブックに追加 (add chart to notebook)
+- Amplitude chart types integration
+- analytical evolution history
+- team sharing functionality
+- breadcrumb share icon
+- ノートを追加 (add notes)
+- タイトルの付いていないノートブック (untitled notebook)

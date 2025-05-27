@@ -1,14 +1,19 @@
-## Summary
-This documentation explains how to analyze A/B test results in Amplitude, covering how to set up experiments using user properties and how to view results using the AB Test View feature, with detailed guidance on implementation approaches and their pros and cons.
+**Summary:** This documentation explains how to set up and analyze A/B test results in Amplitude using user properties to segment experiment groups, covering two methods for updating user properties (SDK/HTTP API vs Identify API) and the AB Test View feature available in Growth and Enterprise plans.
 
-## Keywords
-- A/B testing
-- Amplitude AB Test View
-- User properties
-- Experiment segmentation
-- SDK integration
+**Keywords:**
+- A/B testing analysis
+- AB Test View
+- user properties segmentation
+- experiment groups
+- SDK HTTP API
 - Identify API
-- Experiment variation tracking
-- Funnel analysis
+- split testing
+- user property updates
+- inactive events
+- Growth Enterprise plans
+- segmentation module
+- experiment variations
+- monthly event volume
 - Optimizely integration
-- Experiment results comparison
+- funnel analysis
+- controlled randomized experiments

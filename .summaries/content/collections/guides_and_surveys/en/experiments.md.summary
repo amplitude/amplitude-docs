@@ -1,14 +1,23 @@
 ## Summary
-This documentation page explains how to use Amplitude Experiment with Guides and Surveys, detailing how to run A/B tests or Multi-armed Bandit experiments, configure variants, manage experiments, and analyze performance through the Insights dashboard with time-based metrics tracking views and completions.
+This documentation covers Amplitude Experiment integration with Guides and Surveys SDK, detailing how to run A/B tests and multi-armed bandit experiments on guides and surveys, including variant configuration, experiment management, exposure event handling, and insights dashboard analytics.
 
 ## Keywords
 - Amplitude Experiment integration
-- A/B testing
-- Multi-armed Bandit tests
+- Guides and Surveys SDK
+- A/B test variants
+- Multi-armed bandit experiments
+- Experiment exposure events
 - Variant configuration
-- Experiment management
-- Exposure events
+- Guide experimentation
+- Survey experimentation
 - Insights dashboard
-- Performance metrics
+- Performance overview metrics
 - Time-based analysis
-- Guide/Survey completion tracking
+- Experiment targeting
+- Variant exposure tracking
+- Guide completion rates
+- Survey completion rates
+- Experiment management workflow
+- Manager role permissions
+- Treatment vs control groups
+- Experiment rollout percentage

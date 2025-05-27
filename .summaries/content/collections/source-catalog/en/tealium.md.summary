@@ -1,16 +1,23 @@
-## Summary
-This documentation details the Tealium integration with Amplitude, explaining how to set up data flow from Tealium's CDP to Amplitude using either Tealium iQ (tag management) or AudienceStream, with step-by-step instructions for creating data layers, configuring tags, and implementing the JavaScript snippet in applications.
+**Summary:** This documentation covers the Tealium integration with Amplitude, detailing two integration methods: Tealium iQ Tag Management (TIQ) and Tealium AudienceStream Universal Data Hub for sending customer data from Tealium's CDP to Amplitude for behavioral analytics.
 
-## Keywords
-- Tealium iQ
-- AudienceStream
+**Keywords:**
+- Tealium iQ Tag Management (TIQ)
+- Tealium AudienceStream
+- Universal Data Hub (UDH)
+- Customer Data Platform (CDP)
 - Universal Data Object (UDO)
-- data layer
-- tag management
-- JavaScript integration
-- load rules
-- event tracking
-- device ID
-- utag.js
-- CDP integration
-- customer data infrastructure
+- utag_data
+- utag.js library
+- utag_main cookie
+- Data layer configuration
+- Load rules
+- JavaScript SDK integration
+- Raw events integration
+- Tag manager implementation
+- UDO variables
+- Querystring parameters
+- First-party cookies
+- Meta data elements
+- AudienceStream attributes
+- Device ID mapping
+- Partner-maintained integration

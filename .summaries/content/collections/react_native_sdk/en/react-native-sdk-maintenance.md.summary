@@ -1,16 +1,26 @@
-## Summary
-This documentation page covers the Amplitude Analytics React Native SDK, detailing installation, initialization, configuration options, event tracking, user properties management, revenue tracking, session handling, and advanced features like COPPA control and dynamic configuration, with compatibility information for different React Native versions.
+**Summary:**
+This documentation covers the Amplitude Analytics React Native SDK in maintenance mode, including installation via yarn/npm, initialization with API keys, configuration options for Android/iOS platforms, event logging with properties, user property management through the Identify class, revenue tracking, and advanced features like COPPA control and dynamic configuration.
 
-## Keywords
-- React Native SDK
+**Keywords:**
+- @amplitude/react-native
+- React Native SDK maintenance
 - Amplitude Analytics
-- event tracking
+- yarn installation
+- pod install iOS
+- Amplitude.getInstance()
+- logEvent
+- Identify class
 - user properties
-- identify API
 - revenue tracking
-- session management
 - COPPA control
 - dynamic configuration
-- compatibility matrix
-- batch event uploading
-- EU data residency
+- setServerZone EU
+- trackingSessionEvents
+- setOptOut
+- groupIdentify
+- setUserId
+- eventUploadThreshold
+- eventUploadPeriodMillis
+- Android Gradle compatibility
+- iOS bridging headers
+- maintenance SDK status

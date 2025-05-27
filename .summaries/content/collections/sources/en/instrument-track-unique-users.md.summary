@@ -1,16 +1,18 @@
-# Summary
-This documentation explains how Amplitude identifies unique users through a system of Device ID, User ID, and Amplitude ID, detailing how these IDs interact across different scenarios including anonymous browsing, multi-device usage, and user login states, as well as how Amplitude handles user merging when it determines multiple Amplitude IDs belong to the same user.
+**Summary:**
+This documentation explains Amplitude's unique user tracking system using device ID, user ID, and Amplitude ID, including how Amplitude assigns and merges IDs across anonymous sessions, multiple devices, and user login scenarios.
 
-# Keywords
-- Amplitude ID
-- Device ID
-- User ID
-- User merging
-- Cross-domain tracking
-- Anonymous users
-- IDFA
-- AdID
-- User identification
-- Unique user tracking
-- User attribution
-- Event tracking
+**Keywords:**
+- Amplitude ID generation
+- device ID tracking
+- user ID assignment
+- anonymous user tracking
+- user merging logic
+- cross-domain tracking
+- IDFV (Identifier for Vendors)
+- UUID device identification
+- advertising identifiers (IDFA, AdID)
+- merged users problem
+- event ID sequencing
+- user property overwriting
+- Redshift raw data limitations
+- Portfolio cross-project user matching

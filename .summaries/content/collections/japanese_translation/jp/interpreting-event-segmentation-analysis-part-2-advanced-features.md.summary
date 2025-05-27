@@ -1,13 +1,17 @@
-# Summary
-This documentation page explains advanced features of Event Segmentation Analysis in Amplitude, including Rolling Average, Rolling Window, Cumulative metrics, Real-time Segmentation, and Period Comparison functionality, with examples of how each feature modifies data visualization to reveal different insights.
+**Summary:** This documentation covers advanced features for Event Segmentation Analysis in Amplitude, including rolling averages, rolling windows, cumulative calculations, real-time segmentation, and period comparison functionality with custom formulas.
 
-# Keywords
-- Rolling Average (移動平均)
-- Rolling Window (移動期間)
-- Cumulative metrics (累計)
-- Real-time Segmentation (リアルタイムセグメンテーション)
-- Period Comparison (期間比較)
-- Custom Formula (カスタム数式)
-- Data smoothing
+**Keywords:**
 - Event Segmentation Analysis
-- Advanced visualization options
+- rolling average (移動平均)
+- rolling window (移動期間)
+- cumulative calculations (累計)
+- real-time segmentation
+- period comparison (期間比較)
+- custom formulas (カスタム数式)
+- CUMSUM function
+- weighted averages
+- data smoothing
+- unique user deduplication
+- time interval analysis
+- Amplitude analytics
+- Japanese translation documentation

@@ -1,16 +1,18 @@
 ## Summary
-This documentation page explains how to effectively use Amplitude's Funnel Analysis chart to track user conversion through sequential steps in a product, helping identify drop-off points and improve engagement. It covers funnel design considerations including event selection, ordering modes (This Order, Any Order, Exact Order), conversion windows, and how to leverage insights with features like Pathfinder, Compass, and Microscope.
+This documentation explains how to plan, design, and optimize Amplitude's Funnel Analysis chart, covering funnel event selection, conversion order modes (This Order, Any Order, Exact Order), conversion windows, and integration with features like Pathfinder, Compass, and Microscope for user drop-off analysis.
 
 ## Keywords
-- funnel analysis
-- conversion tracking
-- drop-off analysis
-- This Order/Any Order/Exact Order modes
-- conversion window
-- Pathfinder
-- Compass
-- Microscope
-- user journey mapping
-- event sequencing
-- retention loop
-- cohort creation
+- Funnel Analysis chart
+- conversion order modes
+- This Order vs Any Order vs Exact Order
+- conversion window settings
+- funnel drop-off analysis
+- Pathfinder feature
+- Compass correlation analysis
+- Microscope cohort creation
+- funnel event selection
+- user conversion tracking
+- behavioral cohorts
+- retention loop optimization
+- push notification integration
+- Airship and Kahuna partners

@@ -1,17 +1,22 @@
-## Summary
-This documentation page explains how to create and customize themes for Guides and Surveys in Amplitude, allowing users to control appearance elements like colors, typography, and animations to match their brand identity across all in-product messages.
+**Summary:** This documentation covers the Themes feature for Amplitude's Guides and Surveys, detailing how to create, customize, and publish themes using the Theme Editor with Brand controls (accent colors, typography, content colors, borders, backgrounds, form controls, cards, widget dimensions, animations) and Component editor for reusable elements.
 
-## Keywords
-- Guides and Surveys themes
-- Brand identity customization
-- Theme editor
-- Component controls
+**Keywords:**
+- Amplitude Guides and Surveys
+- Theme Editor
 - Brand controls
+- Component editor
+- Theme Viewer
 - Accent colors
 - Typography customization
+- Google font library
+- Form controls styling
 - Widget dimensions
-- Animation settings
-- Form control styling
-- Theme publishing
+- Modal popover tooltip checklist
 - CSS properties
-- Google font integration
+- Theme publishing
+- Light dark mode toggle
+- Animation duration
+- Corner radius padding
+- Focus ring color
+- Shadow customization
+- Card styling

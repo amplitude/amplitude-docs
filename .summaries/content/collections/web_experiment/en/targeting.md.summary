@@ -1,14 +1,18 @@
-# Summary
-This documentation details Web Experiment targeting capabilities, explaining how Amplitude evaluates page targeting (using URL matching operators) before audience targeting, with both evaluated locally in the browser at page load. It covers browser-based local targeting properties and remote user property targeting options, along with bucketing mechanics for variant assignment.
+**Summary:** This documentation covers Web Experiment targeting configuration including page targeting with URL matching operators (URL Matches, URL Matches Exactly, URL Matches Pattern, etc.) and audience targeting using browser properties (local evaluation) and user properties (remote evaluation with anti-flicker overlay), plus bucketing behavior for variant distribution and rollout percentages.
 
-# Keywords
-- page targeting
+**Keywords:**
+- Web Experiment targeting
+- page targeting rules
 - URL matching operators
+- URL Matches Pattern wildcards
 - audience targeting
-- browser properties
-- user properties
+- browser properties local evaluation
+- user properties remote evaluation
 - anti-flicker overlay
-- bucketing
-- variant distribution
-- rollout percentage
-- Device ID
+- bucketing variant distribution
+- rollout percentages
+- Device ID bucketing
+- IntegrationPlugin custom properties
+- Amplitude ID resolution
+- behavioral cohorts targeting
+- page display delay timeout

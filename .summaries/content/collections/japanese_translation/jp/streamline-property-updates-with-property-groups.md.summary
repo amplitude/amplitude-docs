@@ -1,14 +1,18 @@
 ## Summary
-This documentation explains how Property Groups in Amplitude Data allow users to define and manage sets of properties that can be applied across multiple events simultaneously, streamlining tracking plan management by enabling bulk property updates that automatically propagate to all associated events.
+This Japanese documentation explains Amplitude Data's property groups feature, which allows bulk management of event properties across multiple events in tracking plans, including creation workflows and automatic propagation of property updates to all associated events.
 
 ## Keywords
-- Property Groups
+- プロパティグループ (property groups)
 - Amplitude Data
-- tracking plan management
-- bulk property updates
-- event properties
-- property propagation
-- property group creation
-- property group application
-- tracking plan efficiency
-- property standardization
+- トラッキングプラン (tracking plan)
+- イベントプロパティ (event properties)
+- プロパティ更新 (property updates)
+- フライアウトウィンドウ (flyout window)
+- アクティブイベント (active events)
+- カスタムイベント (custom events)
+- プロパティ値 (property values)
+- グループプロパティ (group properties)
+- 音楽アプリ (music app)
+- recordLabel
+- albumName
+- artistName

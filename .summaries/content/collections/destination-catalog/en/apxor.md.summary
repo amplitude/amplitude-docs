@@ -1,14 +1,16 @@
-## Summary
-This documentation describes the Apxor destination integration with Amplitude, which allows syncing user cohorts from Amplitude to Apxor for creating personalized in-app nudges and messages based on user behavior data, with step-by-step setup instructions for both platforms and specific use cases for onboarding, feature adoption, and user activation.
+**Summary:** This documentation describes the Apxor destination integration for syncing Amplitude cohorts to Apxor's no-code in-app nudging platform, including setup steps for both platforms, API key configuration, and user ID field mapping for personalized user journey optimization.
 
-## Keywords
-- Apxor integration
+**Keywords:**
+- Apxor destination integration
 - cohort syncing
-- in-app nudging
-- personalized user journey
+- in-app nudging tool
+- no-code personalization
 - API key configuration
-- user segmentation
-- feature adoption
+- user ID field mapping
+- beta integration
+- paid plans requirement
 - onboarding optimization
-- user activation
-- behavioral targeting
+- feature adoption nudges
+- user activation campaigns
+- Amplitude Data Catalog
+- sync cadence configuration

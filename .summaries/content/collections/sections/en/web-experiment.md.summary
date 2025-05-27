@@ -1,5 +1,16 @@
-## Summary
-This documentation page describes LaunchDarkly's Web Experiment feature, which enables users to run A/B, multivariate, and Multi-armed bandit experiments on websites without coding, including implementation, targeting capabilities, performance considerations, usage tracking, and post-experiment actions.
+**Summary:** Documentation landing page for Web Experiment feature covering A/B testing, multivariate testing, and multi-armed bandit experiments with no-code implementation, one-line code installation, targeting capabilities, performance optimization, impression tracking, and post-experiment workflows.
 
-## Keywords
-web-experiment, A/B testing, multivariate testing, Multi-armed bandit, code-free experimentation, targeting capabilities, page performance, impression tracking, experiment implementation, post-experiment actions, landing page optimization, conversion optimization
+**Keywords:**
+- Web Experiment
+- A/B testing
+- multivariate experiments
+- multi-armed bandit
+- no-code experimentation
+- one-line code installation
+- experiment targeting
+- impression tracking
+- landing-page-experiment template
+- web performance optimization
+- conversion optimization
+- personalized messages
+- calls to action

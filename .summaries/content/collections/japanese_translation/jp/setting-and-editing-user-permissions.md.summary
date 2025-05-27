@@ -1,14 +1,20 @@
-## Summary
-This documentation page explains how to set and edit user permissions in Amplitude, detailing the different permission levels (Viewer, Member, Manager, Admin), their capabilities, and how to add users to an organization and modify their access rights, including project-level permissions and permission groups for Enterprise customers.
+**Summary:** This Japanese documentation explains Amplitude's user permission system, covering organization-level and project-level permissions, user roles (Viewer, Member, Manager, Admin), user invitation workflows, and enterprise features like permission groups for managing access control across Amplitude analytics projects.
 
-## Keywords
-- Amplitude user roles
-- Permission levels
-- User access management
-- Project-level permissions
-- Permission groups
-- Organization administration
-- User invitation process
-- Role-based access control
-- Enterprise security features
-- Admin capabilities
+**Keywords:**
+- Amplitude user permissions
+- Japanese translation documentation
+- organization-level permissions
+- project-level permissions
+- user roles (Viewer, Member, Manager, Admin)
+- user invitation workflow
+- permission groups
+- enterprise plan features
+- Amplitude analytics admin
+- access control management
+- team spaces
+- Govern functionality
+- discoverable vs non-discoverable content
+- custom events
+- data sources and destinations
+- sampling settings
+- project settings API keys

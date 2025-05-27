@@ -1,14 +1,16 @@
-# Summary
-This documentation page details the Snapchat Ads integration with Amplitude, which allows users to send audience cohorts from Amplitude to Snapchat Ads for targeted advertising campaigns, requiring specific user properties (Email, Phone Number, or Mobile Ad ID) with SHA256 encryption and explaining the setup process in both platforms.
+**Summary:** This documentation covers the Snapchat Ads destination integration for syncing Amplitude cohorts to Snapchat's advertising platform, supporting Email, Phone Number, and Mobile Ad ID matching keys with SHA256 encryption requirements and OAuth authentication.
 
-# Keywords
-- Snapchat Ads integration
-- Cohort syncing
-- Customer List segments
+**Keywords:**
+- Snapchat Ads destination integration
+- cohort syncing
+- ad-networks category
 - SHA256 encryption
-- User property mapping
 - OAuth authentication
-- Mobile Ad ID
-- Audience targeting
-- Sync cadence
+- Email Phone Number Mobile Ad ID matching keys
 - Snapchat Ads Manager
+- Customer List segments
+- audience targeting
+- retargeting suppression
+- Snap Ads campaigns
+- user property mapping
+- sync cadence configuration

@@ -1,17 +1,24 @@
-## Summary
-Ampli is a tool that generates a type-safe wrapper for Amplitude SDKs based on your tracking plan in Amplitude Data, providing strict enforcement of event names and properties to prevent data quality issues through compile-time type checking and enabling verification of complete event implementation across multiple supported platforms.
+**Summary:**
+This documentation covers Ampli, a code generation tool that creates type-safe wrappers for Amplitude SDK based on tracking plans in Amplitude Data, including the Ampli CLI for generating wrappers, verifying event instrumentation status, and managing tracking plan implementations across multiple platforms.
 
-## Keywords
-- Ampli Wrapper
+**Keywords:**
+- Ampli wrapper
 - Amplitude SDK
-- tracking plan
-- type safety
-- event validation
 - Ampli CLI
-- instrumentation verification
+- tracking plan
+- Amplitude Data
+- event instrumentation
+- type-safe analytics
 - code generation
-- data quality
-- compile-time checking
-- ampli.load()
-- ampli status
 - ampli pull
+- ampli status
+- SDK source
+- event tracking verification
+- static type checking
+- analytics wrapper
+- tracking plan schema
+- event properties validation
+- ampli.load()
+- ampli.track()
+- source code verification
+- platform support matrix

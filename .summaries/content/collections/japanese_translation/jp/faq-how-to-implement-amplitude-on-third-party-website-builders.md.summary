@@ -1,14 +1,14 @@
-## Summary
-This documentation explains how to implement Amplitude's JavaScript SDK on third-party website builders like Wix and Squarespace, detailing the specific steps for adding tracking code to headers and bodies through each platform's custom code integration features, with alternatives like HTTP API and webhooks for server-side tracking.
+**Summary:** This Japanese documentation explains how to implement Amplitude's JavaScript SDK and HTTP API on third-party website builders like Wix and Squarespace, providing step-by-step instructions for adding SDK snippets to headers, tracking code to body sections, and using webhooks for server-side data transmission.
 
-## Keywords
-- Third-party website builders
-- Wix implementation
-- Squarespace code injection
-- JavaScript SDK installation
-- Custom code integration
+**Keywords:**
+- Amplitude JavaScript SDK implementation
+- Third-party website builders (Wix, Squarespace, Shopify)
+- Custom code injection
 - Header script placement
-- Code blocks
-- Webhooks
-- HTTP API
-- Server-side tracking
+- HTTP v2 API endpoints
+- Webhook integration
+- Code block functionality
+- Site-wide tracking implementation
+- logEvent calls
+- User properties tracking
+- SDK installation snippets

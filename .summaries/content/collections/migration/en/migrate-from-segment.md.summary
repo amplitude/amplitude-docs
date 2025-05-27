@@ -1,16 +1,23 @@
-## Summary
-This documentation page provides a comprehensive guide for migrating from Segment to Amplitude, covering source/destination configuration, SDK implementation updates, and validation steps. It includes detailed code examples for converting Segment methods (identify, track, group) to Amplitude equivalents across Browser, iOS, and Android platforms.
+**Summary:** This migration guide provides step-by-step instructions for migrating from Segment to Amplitude's CDP platform, including source/destination configuration, SDK implementation updates with code examples for Browser, iOS, and Android platforms, and validation processes for successful data migration.
 
-## Keywords
+**Keywords:**
 - Segment migration
-- Amplitude SDK implementation
-- API key conversion
-- Event tracking conversion
-- User identification
-- Group tracking
-- Source configuration
-- Destination setup
-- Data validation
-- Migration checklist
-- Cross-platform implementation
-- Browser/iOS/Android SDK examples
+- Amplitude CDP
+- SDK implementation migration
+- Browser SDK 2.0
+- iOS Swift SDK
+- Android Kotlin SDK
+- identify() method
+- track() method
+- groupIdentify() method
+- setUserId()
+- source configuration
+- destination configuration
+- write_key to api_key mapping
+- event validation
+- data migration checklist
+- Segment Connections
+- Amplitude Sources and Destinations
+- first-party data tracking
+- user identification migration
+- group assignment migration

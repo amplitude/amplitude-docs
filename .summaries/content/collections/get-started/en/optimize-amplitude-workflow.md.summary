@@ -1,14 +1,19 @@
-## Summary
-This documentation outlines a six-step workflow for optimizing Amplitude usage to improve user engagement, starting with identifying critical events and usage intervals, then analyzing retention, user lifecycle, personas, and engagement patterns, culminating in ongoing cohort analysis and A/B testing to drive product improvements.
+**Summary:** This documentation outlines a 6-step Amplitude workflow for optimizing user engagement, covering critical event identification, usage interval determination, retention analysis, lifecycle graphing, persona mapping, and engagement matrix analysis, followed by ongoing cohort comparison and A/B testing.
 
-## Keywords
+**Keywords:**
 - critical event identification
 - product usage interval
-- retention analysis
-- user lifecycle tracking
-- persona clustering
+- retention analysis charts
+- lifecycle analysis
+- user personas clustering
 - engagement matrix
 - cohort comparison
-- A/B testing
-- feature engagement patterns
-- user journey optimization
+- A/B testing workflow
+- user engagement optimization
+- retention rates
+- dormant users
+- resurrected users
+- feature engagement breadth
+- user journey analysis
+- product adoption metrics
+- core value proposition alignment

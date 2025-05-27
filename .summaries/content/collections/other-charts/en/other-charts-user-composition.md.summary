@@ -1,14 +1,18 @@
-# Summary
-The User Composition chart displays a breakdown of active users based on a single user property, showing who users are and what properties they share across defined segments, with options to view most recent values, all values, or cross property values within a specified timeframe.
+**Summary:** The User Composition chart analyzes active users by user properties rather than events, showing breakdowns of user segments based on property values with options for Most Recent Value, All Values, or Cross Property Values measurement types.
 
-# Keywords
-- user property breakdown
-- user segments comparison
-- most recent value
-- all values
-- cross property values
+**Keywords:**
+- User Composition chart
+- user properties breakdown
 - active users analysis
-- user composition visualization
-- property distribution
-- segment filtering
+- user segments
+- Composition By Module
+- Segment By Module
+- Measured As Module
+- Most Recent Value
+- All Values
+- Cross Property Values
+- user property values
 - non-event-driven analysis
+- top 13 values
+- mutually exclusive buckets
+- user segments comparison

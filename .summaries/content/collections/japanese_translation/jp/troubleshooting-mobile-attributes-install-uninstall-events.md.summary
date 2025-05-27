@@ -1,14 +1,20 @@
-## Summary
-This documentation explains how mobile attribution partners use advertising IDs (IDFA/IDFV/ADID) to map install/uninstall events to Amplitude users through the Attribution API, detailing the 72-hour matching window and common troubleshooting scenarios when attribution events fail to appear in Amplitude.
+**Summary:**
+This documentation explains troubleshooting mobile attribution events (install/uninstall) in Amplitude, focusing on how the Attribution API maps events from mobile attribution partners using advertising IDs (IDFA/IDFV/ADID) to existing Amplitude users within a 72-hour retention window.
 
-## Keywords
+**Keywords:**
 - mobile attribution events
+- Attribution API
 - advertising IDs (IDFA/IDFV/ADID)
-- attribution API
-- 72-hour matching window
+- 72-hour retention window
 - amplitude_attribution_ids
+- mobile attribution partners (Appsflyer/Adjust/Branch/Singular)
 - device_id mapping
-- install/uninstall tracking
-- user identification
-- attribution troubleshooting
-- iOS SDK
+- user_id mapping
+- amplitude_id
+- install/uninstall events
+- advertising ID tracking
+- iOS SDK IDFV
+- HTTP API attribution
+- ID API profile creation
+- attribution event mapping
+- mobile SDK instrumentation

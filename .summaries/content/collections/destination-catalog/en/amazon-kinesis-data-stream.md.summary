@@ -1,14 +1,15 @@
-## Summary
-This documentation details the integration between Amplitude Data and Amazon Kinesis Data Stream, explaining how to set up event streaming from Amplitude to Kinesis by creating an AWS IAM role with specific permissions, configuring a Kinesis stream, and establishing the connection in Amplitude's destination catalog.
+**Summary:** Documents the Amazon Kinesis Data Stream destination integration that streams Amplitude event data to AWS Kinesis, including IAM role setup with specific account ID 358203115967, policy configuration for kinesis:PutRecord/PutRecords permissions, and Identify Forwarding support using Export API JSON format.
 
-## Keywords
+**Keywords:**
 - Amazon Kinesis Data Stream
-- event streaming
-- IAM role configuration
-- Trust Relationships
-- IAM policy
-- PutRecord permissions
-- role ARN
+- event streaming destination
+- AWS IAM role configuration
+- kinesis:PutRecord permissions
+- kinesis:PutRecords permissions
+- Amplitude account ID 358203115967
+- Export API JSON format
 - Identify Forwarding
-- JSON event data
-- event filtering
+- sts:AssumeRole
+- user_id event_name created_at
+- arn:aws:iam role format
+- iam:SimulatePrincipalPolicy

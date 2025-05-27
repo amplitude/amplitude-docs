@@ -1,14 +1,17 @@
-# Summary
-This documentation page describes site components available for use in content, including tabs for code examples in different languages, collapsible sections for detailed information, and various admonition types (note, info, warning, example, tip, alpha, beta, deprecated) for highlighting different types of content.
+**Summary:** Documentation page demonstrating reusable site components including tabs partial for multi-language code examples, collapse partial for configuration tables, and admonition partial with eight different types (note, info, warning, example, tip, alpha, beta, deprecated).
 
-# Keywords
-- tabs component
-- collapse component
-- admonition types
-- content partials
-- code examples
-- documentation UI elements
-- content formatting
-- interactive documentation
-- warning blocks
-- information blocks
+**Keywords:**
+- tabs partial
+- tab partial
+- collapse partial
+- admonition partial
+- site components
+- multi-language code examples
+- configuration parameters table
+- LogLevel enum
+- Transport interface
+- FetchTransport
+- serverZone EU/US
+- Amplitude API configuration
+- partial templates
+- content formatting components

@@ -1,14 +1,15 @@
-# Summary
-This documentation page describes how to integrate Amplitude with FullStory using a destination plugin that forwards Amplitude events to FullStory's digital experience intelligence platform, including code examples for creating and implementing the custom FullStory plugin in a browser application.
+**Summary:** Documents the FullStory destination integration using Amplitude's SDK plugin architecture for event streaming, including a TypeScript DestinationPlugin implementation that forwards Amplitude events to FullStory's browser SDK and handles user identification.
 
-## Keywords
-- FullStory integration
-- Amplitude Destination Plugin
+**Keywords:**
+- FullStory destination plugin
+- Amplitude SDK plugin architecture
+- DestinationPlugin TypeScript implementation
+- event-streaming integration
+- FullStory browser SDK
+- window.FS object
+- $identify event handling
 - event forwarding
 - digital experience intelligence
-- browser SDK
 - user session replays
-- event streaming
-- FS.identify
-- FS.event
-- conversion funnels
+- fsOrg configuration
+- amplitude.add() plugin registration

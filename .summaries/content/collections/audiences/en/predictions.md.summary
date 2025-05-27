@@ -1,14 +1,23 @@
-## Summary
-Predictions in Amplitude Activation use AI to segment users based on their likelihood to perform future actions, helping optimize targeting workflows for maximum lift in communication frequency, dynamic pricing, and content personalization by employing a transformer-based sequence model that analyzes events, properties, and user activity sequences to calculate probabilistic scores.
+**Summary:** This documentation explains Amplitude's AI-powered predictions feature within Amplitude Activation that uses transformer-based sequence models to forecast user likelihood of performing specific future actions, enabling workflow optimization for communication frequency, dynamic pricing, and content personalization with 5-20% lift over behavioral cohorts.
 
-## Keywords
+**Keywords:**
+- Amplitude Activation predictions
 - transformer-based sequence model
 - predictive cohorts
+- workflow improvement feature
+- communication frequency optimization
+- dynamic pricing
+- content personalization
 - probabilistic scoring
-- user journey optimization
-- behavioral forecasting
-- campaign targeting
-- incremental lift
-- AI-powered segmentation
+- user likelihood forecasting
+- behavioral cohorts comparison
+- deep learning model
+- event properties analysis
 - user activity sequences
-- conversion likelihood
+- 128 events processing
+- transformer encoder
+- seasonal data adaptation
+- incremental lift optimization
+- north star metrics
+- user journey mapping
+- monthly average users threshold

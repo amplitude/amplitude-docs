@@ -1,16 +1,18 @@
-## Summary
-This documentation outlines best practices for Warehouse-native Amplitude, focusing on optimizing data models through proper clustering key selection, schema format choices (star or snowflake schema), and effective partitioning strategies to improve query performance and data analysis efficiency.
+**Summary:** This documentation covers best practices for warehouse-native Amplitude implementations, focusing on clustering key selection (including LINEAR() function for event time), schema design patterns (star vs snowflake schemas), and table partitioning strategies for optimizing query performance and data storage efficiency.
 
-## Keywords
+**Keywords:**
+- warehouse-native Amplitude
 - clustering keys
 - LINEAR() function
+- event time clustering
 - star schema
 - snowflake schema
-- partition optimization
-- query performance
-- composite clustering keys
-- data modeling
-- warehouse-native
-- cardinality considerations
 - fact tables
 - dimension tables
+- table partitioning
+- high cardinality columns
+- composite clustering keys
+- join operations
+- query performance optimization
+- data storage efficiency
+- analytics workload

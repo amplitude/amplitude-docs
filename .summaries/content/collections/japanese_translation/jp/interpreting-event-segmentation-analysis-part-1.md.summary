@@ -1,14 +1,17 @@
-## Summary
-This documentation page explains how to interpret Event Segmentation analysis in Amplitude, covering the chart area, data table functionality, visualization options (line graphs, stacked area charts, bar graphs), and the Group By feature that helps organize complex multi-dimensional data for easier analysis.
+**Summary:** This Japanese documentation explains how to interpret Event Segmentation Analysis charts in Amplitude, covering chart area visualization, data table operations, chart display types (line graphs, stacked area charts, bar charts), grouping functionality, and switching between absolute values and relative percentages.
 
-## Keywords
-- event segmentation chart
-- data table interpretation
-- chart visualization types
-- group by functionality
-- stacked area graphs
-- absolute vs relative percentages
-- user behavior analysis
-- event comparison
-- data segmentation
-- chart area interpretation
+**Keywords:**
+- Event Segmentation Analysis (イベントセグメンテーション分析)
+- Amplitude charts
+- Chart area visualization
+- Data table operations
+- Line graphs (折れ線グラフ)
+- Stacked area charts (積み上げ面グラフ)
+- Bar charts (棒グラフ)
+- Stacked bar charts (積み上げ棒グラフ)
+- Horizontal bar charts
+- Grouping functionality (グループ化機能)
+- Absolute values vs relative percentages
+- CSV export
+- User behavior analysis
+- Japanese translation documentation

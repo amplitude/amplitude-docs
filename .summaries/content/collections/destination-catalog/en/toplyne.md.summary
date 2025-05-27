@@ -1,14 +1,13 @@
-# Summary
-Toplyne destination integration enables streaming events from Amplitude to help sales teams convert freemium users by creating opportunities in CRMs based on product usage data, without requiring engineering or data science resources.
+**Summary:** This documentation describes the Amplitude to Toplyne event-streaming destination integration that enables sales teams at product-led companies to convert freemium users by streaming product usage events from Amplitude to Toplyne's data science models for CRM opportunity creation.
 
-# Keywords
-- Toplyne
-- event-streaming
-- sales teams
+**Keywords:**
+- Toplyne destination integration
+- event-streaming destination
 - freemium user conversion
-- product-led companies
-- CRM integration
-- product usage data
-- opportunity creation
-- customer segmentation
-- data science models
+- product-led sales
+- CRM opportunity creation
+- product usage data streaming
+- sales pipeline generation
+- Amplitude to Toplyne integration
+- data science models for sales
+- partner-maintained destination

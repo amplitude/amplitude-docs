@@ -1,14 +1,25 @@
 ## Summary
-This documentation page explains how to create, edit, and manage dashboards in Amplitude, allowing users to collect related charts in a single view. It covers features like adding charts and cohorts, designating official dashboards, filtering, commenting, subscribing to dashboard reports, and creating dashboard templates for reuse.
+This documentation covers Amplitude dashboard functionality in Japanese, including creating, editing, and sharing dashboards that aggregate multiple charts into single views, with features like cross-project chart comparison, behavioral cohorts, bulk filtering by date ranges and user segments, target metrics, comments, subscriptions, and template creation.
 
 ## Keywords
-- Dashboard creation
-- Chart visualization options
-- Official dashboard designation
-- Target metrics
-- Dashboard filtering
-- Dashboard subscriptions
-- Dashboard templates
-- Dashboard sharing
-- Behavioral cohorts
-- Dashboard caching
+- Amplitude dashboard
+- Japanese translation (jp)
+- chart aggregation
+- cross-project charts
+- behavioral cohorts
+- bulk filtering
+- date range filtering
+- user segment filtering
+- target metrics
+- dashboard subscriptions
+- dashboard templates
+- KPI visualization
+- canonical dashboards
+- TV mode
+- dashboard comments
+- Slack integration
+- CSV export
+- PDF export
+- dashboard caching
+- Growth/Enterprise plans
+- Scholarship plan features

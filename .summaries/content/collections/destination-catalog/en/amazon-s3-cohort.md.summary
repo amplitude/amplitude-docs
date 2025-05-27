@@ -1,14 +1,17 @@
-# Summary
-This documentation details the Amazon S3 (Cohort) destination integration in Amplitude, which allows exporting user cohorts to S3 buckets. It covers the IAM role-based security model, setup process in both Amplitude and AWS, cohort syncing procedures, and explains the CSV file structure and naming convention used for exported cohorts.
+**Summary:** This documentation describes the Amazon S3 (Cohort) destination integration that enables syncing Amplitude user cohorts to S3 buckets as CSV files, featuring IAM role-based authentication, three-file sync output (entering/exiting/existing users), and configurable routing keys with scheduled sync cadences.
 
-# Keywords
-- Amazon S3 cohort export
-- IAM role-based access
-- Bucket policy configuration
-- Cohort sync cadence
-- CSV file naming convention
-- entering/exiting/existing cohort files
-- User property export
-- Routing key
-- Amplitude user identification
+**Keywords:**
+- Amazon S3 cohort destination
+- cohort sync CSV export
+- IAM role-based authentication
+- bucket policy configuration
+- entering/exiting/existing user files
+- routing key suffix
+- amplitudeID userID mapping
+- scheduled sync cadence
+- user property columns
+- cohort membership tracking
 - S3 bucket permissions
+- CSV naming convention timestamp
+- difftype parameter
+- portfolio projects source apps

@@ -1,16 +1,22 @@
 ## Summary
-This documentation explains how permission groups in Amplitude Enterprise streamline user management by allowing administrators to assign permissions to multiple users based on group membership rather than individually. The system grants users the highest permission level when they belong to multiple groups or have individual permissions, with detailed examples of how permission inheritance works across different scenarios.
+This Japanese documentation explains Amplitude's permission groups feature for Enterprise plan customers, covering group creation, editing, member management, and permission inheritance rules when users have multiple permission levels through different groups or individual assignments.
 
 ## Keywords
-- permission groups
-- enterprise plan
-- user provisioning
-- project roles
-- group membership
-- permission inheritance
+- permission groups (権限グループ)
+- Enterprise plan (エンタープライズプラン)
+- group membership (グループメンバーシップ)
+- project permissions (プロジェクト権限)
+- user roles permissions (ユーザー権限モデル)
 - SCIM API
-- team spaces
-- permission management scale
-- permission hierarchy
-- group creation
-- user invitation
+- team spaces (チームスペース)
+- permission inheritance (権限継承)
+- highest permission level (最高権限レベル)
+- organization admin (組織管理者)
+- project roles (プロジェクトロール)
+- user management (ユーザー管理)
+- permission assignment scenarios (権限割り当てシナリオ)
+- third-party identity management
+- group creation workflow
+- member addition/removal
+- permission level changes
+- hybrid permission management

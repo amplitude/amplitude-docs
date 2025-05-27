@@ -1,14 +1,15 @@
-# Summary
-This documentation page explains how to debug and validate analytics data in Amplitude, covering the Ingestion Debugger for monitoring requests and throttled users, User Lookup for examining event streams, and the Instrumentation Explorer Chrome extension for debugging Browser SDK implementations.
+**Summary:** This documentation covers debugging and validation tools for Amplitude analytics instrumentation, including the Ingestion Debugger for monitoring requests/events/throttled users, User Lookup for analyzing event streams in user profiles, and the Chrome Instrumentation Explorer extension for debugging Browser SDK events.
 
-# Keywords
+**Keywords:**
+- Amplitude analytics debugging
 - Ingestion Debugger
-- User Lookup
-- Event Stream
-- Instrumentation Explorer
-- Chrome Extension
-- Data Validation
-- Throttled Users
-- Raw Event Data
-- Browser SDK Debugging
-- User Profiles
+- event instrumentation validation
+- User Lookup event stream
+- throttled users and devices
+- Chrome Instrumentation Explorer extension
+- Browser SDK debugging
+- user profiles event history
+- event properties validation
+- device_id and user_id debugging
+- real-time event monitoring
+- Sources data validation

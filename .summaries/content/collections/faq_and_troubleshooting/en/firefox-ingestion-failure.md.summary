@@ -1,13 +1,13 @@
-# Summary
-This documentation explains why Firefox's tracking protection feature blocks Amplitude SDK, causing event ingestion failures, and recommends implementing a proxy server as the solution to bypass this limitation.
+**Summary:** This documentation explains Firefox tracking protection blocking Amplitude SDK network requests causing event ingestion failures, and recommends implementing a proxy server as the solution.
 
-# Keywords
+**Keywords:**
 - Firefox tracking protection
 - Amplitude SDK blocking
-- Event ingestion failure
-- Cross-site tracking prevention
-- Proxy server solution
-- Failed POST request
+- event ingestion failure
+- network requests blocked
+- cross-site tracking prevention
+- proxy server solution
+- JS SDK proxy configuration
 - Firefox strict mode
-- Private browsing limitations
-- Domain proxy implementation
+- private browser window
+- POST request failures

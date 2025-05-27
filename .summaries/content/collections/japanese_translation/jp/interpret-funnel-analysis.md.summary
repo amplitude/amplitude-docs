@@ -1,14 +1,20 @@
 ## Summary
-This documentation page explains how to interpret funnel analysis charts in Amplitude, covering conversion visualization, tracking conversion over time, A/B testing against baselines, and creating session-based funnels. It details how to analyze user progression through defined paths, identify drop-off points, and understand conversion metrics across different segments.
+This documentation explains how to interpret Amplitude's funnel analysis charts for tracking user conversion through defined product paths, including configuration of conversion windows, A/B testing with baseline comparisons, session-based funnels using session IDs, and property-constant retention for event/user property analysis.
 
 ## Keywords
-- Funnel analysis interpretation
-- Conversion window settings
-- Time-to-convert metrics
-- A/B test significance
-- Property constant retention
-- Session-based funnels
-- Conversion drivers
-- Frequency distribution
-- Millisecond resolution
-- Funnel step transitions
+- Amplitude funnel analysis
+- conversion window configuration
+- コンバージョンウィンドウ (conversion window)
+- A/B testing baseline comparison
+- session-based funnels
+- property constant retention
+- セッションID (session ID)
+- time-to-convert analysis
+- frequency distribution
+- conversion drivers
+- group by event properties
+- statistical significance testing
+- ファネル分析チャート (funnel analysis chart)
+- Japanese translation documentation
+- millisecond resolution
+- user/event property pairs

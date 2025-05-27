@@ -1,15 +1,17 @@
-# Summary
-Ask Amplitude is a conversational interface that allows users to create charts, search content, answer questions, navigate Amplitude, and create shareable threads using natural language. It leverages OpenAI's LLM to understand requests and generate responses, sending chart metadata, taxonomy information, dashboard names, and aggregated results to the OpenAI API.
+**Summary:** Ask Amplitude is a conversational AI interface that uses OpenAI's LLM API to help users create/edit charts, search content, and navigate Amplitude through natural language queries, with specific data sharing policies including chart metadata, taxonomy information, and aggregated results being sent to OpenAI.
 
-# Keywords
+**Keywords:**
+- Ask Amplitude
 - conversational interface
-- natural language analytics
-- chart creation
-- OpenAI integration
-- LLM
+- OpenAI API integration
+- Large Language Model (LLM)
+- natural language chart creation
 - data taxonomy
-- thread sharing
-- property values
-- filter selection
-- data governance
-- BAA limitations
+- chart definition metadata
+- property values filtering
+- conversation thread history
+- BAA compatibility restrictions
+- data governance integration
+- filter selection mechanics
+- suggestion generation
+- iterative analytics workflow

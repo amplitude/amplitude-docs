@@ -1,127 +1,79 @@
-# Amplitude Analytics Platform
+Amplitude Analytics is a comprehensive product analytics platform that enables organizations to track, analyze, and understand user behavior through event-based data collection and sophisticated analytical tools. The platform provides both individual user-level and account-level reporting capabilities, with advanced features for cohort analysis, anomaly detection, and collaborative analytics workflows.
 
-Amplitude Analytics is a comprehensive product analytics platform that enables businesses to track, analyze, and derive insights from user behavior data across digital products. The platform combines quantitative and qualitative analytics capabilities to help teams understand how users interact with their products and make data-driven decisions.
+## Core Product Architecture and Features
 
-## Key Features and Concepts
+### Analytics Foundation
+The platform centers around event-based analytics with multiple chart types including Event Segmentation, Funnel Analysis, User Sessions, Retention Analysis, Pathfinder, and Journeys. These charts support various visualization modes (charts, KPIs, tables) and can be organized into dashboards for comprehensive reporting. The system uses semantic versioning for release tracking and provides automated instrumentation through SDKs for Android, iOS, JavaScript, and server-side APIs.
 
-### Analytics Capabilities
+### Account-Level Reporting System
+Amplitude's Accounts add-on enables group-level analytics through a sophisticated group types system (limited to 5 per project). Organizations can implement either event-level or user-level groups using the Group Identify API, HTTP V2 API, Batch API, or Segment integration. This system supports dynamic group properties with Salesforce integration and allows for account-level behavioral cohorts and funnel analysis.
 
-1. **Charts and Visualizations**: Amplitude offers various chart types for analyzing user behavior, including Event Segmentation, Funnel Analysis, Retention Analysis, and Pathfinder.
+### Behavioral Cohorts and Segmentation
+The platform provides extensive user segmentation through behavioral cohorts that group users based on shared traits and actions within specific time periods. Cohorts can be created through multiple methods: Microscope data point analysis, CSV imports (supporting user IDs or Amplitude IDs up to 50MB), or inline creation within the Segmentation module. The system supports complex cohort definitions with event counting methods (count, relative count, total sum of property, distinct values, historical count), temporal parameters (during, since, within), and logical operators.
 
-2. **Behavioral Cohorts**: Groups of users defined by specific actions taken within a time period, allowing segmentation in analytics charts to analyze how product engagement affects business outcomes.
-
-3. **Account-Level Reporting**: Enables analysis at the group level (accounts, teams, organizations) rather than individual users, particularly valuable for B2B companies to understand how specific accounts interact with their products.
-
-4. **Anomaly Detection and Forecasting**: Identifies statistically significant deviations in metrics based on historical data using the Prophet forecasting methodology with three modes (agile, robust, custom) and configurable confidence intervals.
-
-5. **Session Replay**: A qualitative analytics feature that records and plays back user sessions to provide visual context to quantitative data, helping teams understand user behavior, troubleshoot issues, and improve conversions.
-
-6. **Root Cause Analysis (RCA)**: Helps identify why anomalies occur in Event Segmentation charts by analyzing event properties, comparing them to baselines, and providing contextual information.
-
-7. **Marketing Analytics**: Tracks and analyzes marketing data through sessions, channel classifiers, and attribution models, with support for first-touch and last-touch attribution across user journeys.
-
-8. **Out-of-the-Box Analytics**: Pre-configured dashboards for marketing and product analytics with industry-standard KPIs and metrics.
-
-### Collaboration and Sharing
-
-1. **Dashboards**: Collections of charts that can be shared, subscribed to, filtered, and customized with different visualization modes.
-
-2. **Notebooks**: Collaborative documents that combine text, media, charts, and metrics to explain insights and provide context to teammates.
-
-3. **Spaces**: Collaborative areas for organizing and sharing content with specific team members, with hierarchical permission systems.
-
-4. **Templates**: Reusable dashboard configurations that allow teams to efficiently recreate common analyses with customizable parameters.
-
-5. **Breadcrumbs**: Tracks and organizes analysis steps, allowing users to document their analytical journey with notes and easily convert charts into shareable Notebooks.
-
-6. **External Sharing**: Options to share content with external stakeholders through public links and embed codes, with password protection and expiration dates.
-
-7. **Integrations**: Connections with tools like Slack, Miro, Google Drive, Notion, and Atlassian products for seamless workflow integration.
-
-### User and Data Management
-
-1. **User Profiles**: Detailed views of individual user data, including properties, event streams, session replays, cohort membership, and experiment participation.
-
-2. **Historical Count**: Tracks user behavior for different instances of specific actions, helping identify differences in conversion and retention rates.
-
-3. **Releases**: Tracks product changes as markers on time-series charts, allowing teams to analyze user response to product updates.
-
-4. **Microscope**: Allows detailed inspection of specific data points in charts, providing options to view user streams, show user paths, create cohorts, and launch session replays.
-
-5. **Ask Amplitude**: A conversational interface that allows users to create charts, search content, answer questions, and navigate Amplitude using natural language.
-
-## Product Relationships and Architecture
-
-### Data Collection and Instrumentation
-
-1. **SDKs and APIs**: Amplitude provides SDKs for various platforms (Android, iOS, JavaScript) and APIs (Identify API, HTTP API, Group Identify API) for data collection.
-
-2. **Domain Proxy**: Organizations can set up a domain proxy to relay events to Amplitude, providing more control over data sent by routing requests through their own domain.
-
-3. **Instrumentation Planning**: Guidelines for implementing group-level analytics through event-level groups (temporary associations) and user-level groups (permanent associations).
-
-4. **Debugging Tools**: Ingestion Debugger for monitoring requests, User Lookup for examining event streams, and Instrumentation Explorer Chrome extension for debugging Browser SDK implementations.
-
-### Product Tiers and Licensing
-
-1. **Plan Levels**: Features are available across different plan tiers:
-   - Plus: Basic features with some limitations (e.g., limited to five behavioral cohorts)
-   - Growth: More advanced features like Templates, Session Replay, and Root Cause Analysis
-   - Enterprise: Full feature set with maximum capabilities
-
-2. **Add-ons**: Certain features like the Accounts add-on (for group-level reporting) are available as additional purchases.
-
-### Integration Ecosystem
-
-1. **Third-Party Integrations**:
-   - Slack: For notifications, chart previews, and Team Spaces connections
-   - Atlassian: Smart Links for embedding chart previews in Confluence, Jira, and Trello
-   - Miro: For adding Amplitude charts directly to Miro boards
-   - Google Drive: Sync to export chart data to Google Sheets and images to Google Slides
-   - Notion: Embedding Amplitude charts in Notion documents
-
-2. **Data Platform Connections**:
-   - Segment integration for account-level reporting
-   - Salesforce integration for B2B analytics
+### Advanced Analytics Capabilities
+Amplitude incorporates machine learning through its Anomaly + Forecast feature using Prophet-based algorithms for detecting statistical anomalies across time-series data. The platform offers Historical Count tracking for analyzing the Nth instance (up to 5th) of user actions with a one-year lookback period. Root Cause Analysis (RCA) automatically investigates anomalous data points by analyzing event properties and comparing them to baselines.
 
 ## Key Nomenclature and Definitions
 
-1. **Events**: User actions tracked in Amplitude (e.g., page views, button clicks, purchases)
+### Core Analytics Terms
+- **Event Segmentation**: Primary chart type for analyzing event frequency and user behavior patterns
+- **Funnel Analysis**: Conversion tracking through sequential user actions with conversion windows
+- **Behavioral Cohorts**: Dynamic user groups based on shared behaviors and traits within time periods
+- **Historical Count**: Feature tracking the Nth instance of user actions across various chart types
+- **Microscope**: Data inspection tool for drilling into chart data points and creating cohorts
+- **Session Replay**: Qualitative user session recordings synchronized with event streams (90-day retention)
 
-2. **Properties**: Additional metadata attached to events or users that provide context
+### Group and Account Analytics
+- **Group Types**: Categories for organizing account-level data (5 per project limit)
+- **Group Values**: Specific identifiers within group types for account classification
+- **Event-level Groups**: Groups associated with individual events for granular analysis
+- **User-level Groups**: Groups associated with user profiles for broader account tracking
+- **Dynamic Group Properties**: Real-time updating account attributes through Salesforce integration
 
-3. **Cohorts**: Groups of users defined by specific criteria, either static (fixed list) or behavioral (based on actions)
+### Collaboration and Sharing
+- **Spaces**: Collaborative workspaces for organizing and sharing analytics content
+- **Notebooks**: Mixed-content analytical reports combining charts, text, and metrics
+- **Templates**: Reusable dashboard configurations with Find & Replace functionality
+- **Breadcrumbs**: Analysis evolution tracking for creating Notebooks from chart views
 
-4. **Groups**: Collections of users that represent higher-level entities like accounts, organizations, or teams
+## Product Ecosystem Integration
 
-5. **Sessions**: Periods of continuous user activity, used for metrics like bounce rate and session duration
+### Data Infrastructure
+Amplitude integrates with multiple data sources through its HTTP V2 API, Batch API, and Identify API endpoints. The platform supports domain proxy configurations for routing events through custom domains instead of api2.amplitude.com. Data validation occurs through the Ingestion Debugger, User Lookup, and Chrome Instrumentation Explorer extension for Browser SDK debugging.
 
-6. **Attribution Models**: Methods for assigning credit for conversions to marketing channels:
-   - First-touch: Credits the first channel a user interacted with
-   - Last-touch: Credits the most recent channel before conversion
+### Third-Party Integrations
+The platform provides extensive integration capabilities including:
+- **Segment Integration**: Both Actions and Classic destinations with group calls and trait mapping
+- **Salesforce Integration**: Dynamic group properties synchronization for account-level reporting
+- **Slack Integration**: Link unfurling, comment notifications, and team space connections
+- **Google Workspace**: Sync to Drive and Sheets extension using Dashboard REST API
+- **Atlassian**: Smart Links for embedding chart previews in Confluence and Jira
+- **Notion**: Chart embedding through URL pasting with authentication flow
+- **Miro**: Direct chart embedding through marketplace plug-in
 
-7. **UTM Parameters**: Tracking parameters added to URLs for marketing campaign attribution
+### Marketing Analytics Suite
+The Out-of-the-box Marketing Analytics provides centralized tracking through four insight categories: Traffic by Channel, Traffic by Campaign, Ad Performance, Page Engagement, and Conversion. The system uses UTM parameters (utm_campaign, utm_content, utm_medium, utm_source, utm_term) and Daily Ad Metrics events for comprehensive marketing attribution using first-touch and last-touch models.
 
-8. **Microscope**: Feature for drilling down into specific data points on charts
+## API Endpoints and Technical Implementation
 
-9. **Spaces**: Organizational units for content management and collaboration
+### Core APIs
+- **HTTP V2 API**: Primary event ingestion endpoint for real-time data collection
+- **Batch API**: Bulk event processing for high-volume data ingestion
+- **Identify API**: User property updates with groups key for account-level reporting
+- **Group Identify API**: Account-level property management with operations ($set, $setOnce, $add, $append, $unset)
+- **Dashboard REST API**: Chart data export and external integration support
+- **Releases API**: Automated release tracking and version management
 
-10. **Templates**: Reusable dashboard configurations with customizable parameters
+### SDK Configuration
+Multiple SDKs support serverUrl configuration for domain proxy setups, with specific methods like setServerUrl() for JavaScript implementations and apiEndpoint options for various platform SDKs. The Browser SDK integrates with Autocapture events for Page Viewed and Element Clicked tracking.
 
-## API Endpoints and Technical Details
+## Plan-Based Feature Distribution
 
-1. **HTTP V2 API**: Used for sending events to Amplitude, can be accessed directly or through a domain proxy
+The platform operates on a tiered plan structure (Scholarship, Plus, Growth, Enterprise) with feature restrictions:
+- **Plus Plans**: Limited to 5 behavioral cohorts, manual release creation
+- **Growth/Enterprise**: Full feature access including automated release detection, enhanced space controls
+- **Insights Add-on**: Required for Anomaly + Forecast and Root Cause Analysis features
+- **Accounts Add-on**: Enables group-level reporting and account analytics capabilities
 
-2. **Identify API**: Used for updating user properties without sending events
-
-3. **Group Identify API**: Used for updating group properties
-
-4. **Dashboard REST API**: Used by integrations like Google Drive Sync to export chart data
-
-5. **Domain Proxy Configuration**: Example NGINX configuration for proxying requests to api2.amplitude.com
-
-## Command Line Invocations
-
-While not explicitly mentioned in the documentation, the platform appears to be primarily web-based with API access rather than command-line focused.
-
-The platform emphasizes a user-friendly interface with natural language capabilities (Ask Amplitude) and visual analytics tools rather than command-line operations.
+The system provides comprehensive administrative controls through Organization Settings for chart cleanup, subscription management, and content access permissions, with specific BAA compatibility restrictions for certain AI-powered features like Ask Amplitude.

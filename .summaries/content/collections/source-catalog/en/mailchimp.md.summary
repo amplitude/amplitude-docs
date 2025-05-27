@@ -1,13 +1,14 @@
-# Summary
-This documentation page details the Mailchimp integration with Amplitude, explaining how to import Mailchimp subscribe and unsubscribe events into Amplitude by creating a webhook connection between a specific Mailchimp audience and an Amplitude project, with step-by-step setup instructions for both platforms.
+**Summary:** Documents the Mailchimp source integration for importing subscribe and unsubscribe events into Amplitude, including OAuth authentication flow, webhook configuration, and audience ID requirements for paid plan customers.
 
-# Keywords
-- Mailchimp webhook
-- Email marketing events
-- Subscribe/unsubscribe tracking
-- Audience ID
-- Marketing automation integration
-- Event prefixing
-- Webhook configuration
-- Paid plan requirement
-- One webhook per audience limitation
+**Keywords:**
+- Mailchimp source integration
+- subscribe unsubscribe events
+- Mailchimp audience ID
+- webhook configuration
+- OAuth authentication flow
+- [Mailchimp] event prefix
+- marketing automation source
+- raw-events integration type
+- cohorts integration type
+- paid plans requirement
+- audience webhook limit

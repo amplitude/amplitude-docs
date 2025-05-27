@@ -1,18 +1,20 @@
-# Summary
-The Experiment Management API documentation outlines endpoints for programmatically creating and controlling flags, experiments, mutex groups, holdouts, deployments, and versions, with details on authentication using management API keys, rate limiting restrictions, regional endpoints, status codes, and pagination through cursors.
+## Summary
+Documents Amplitude's Experiment Management API for programmatically creating and controlling feature flags and experiments, including authentication with management API keys, rate limiting (100 req/sec, 100k daily), and CRUD operations across six endpoint categories (flags, experiments, mutex groups, holdouts, deployments, versions).
 
-# Keywords
-- experiment-management-api
-- flag-apis
-- experiment-apis
-- mutex-apis
-- holdout-apis
-- deployment-apis
-- version-apis
-- management-api-key
-- authorization
-- rate-limiting
-- regional-endpoints
-- status-codes
-- cursors
-- pagination
+## Keywords
+- Experiment Management API
+- feature flags programmatic control
+- management API key authentication
+- Bearer token authorization
+- flag CRUD operations
+- experiment CRUD operations
+- mutex groups API
+- holdout groups API
+- deployment assignments API
+- version endpoints API
+- rate limiting 100 requests per second
+- cursor-based pagination
+- nextCursor parameter
+- EU residency server endpoint
+- experiment.amplitude.com
+- HTTP status codes 200/400/401/403/429

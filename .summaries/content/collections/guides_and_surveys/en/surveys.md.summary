@@ -1,13 +1,13 @@
-## Summary
-This documentation page defines the structure for the "Surveys" landing page, which displays a grid of child survey pages with titles and blurbs, each linking to their respective URLs and featuring hover effects.
+**Summary:** This documentation page defines a Statamic collection entry for surveys using the "guides_and_survey" blueprint, featuring a responsive grid layout that displays child survey entries as clickable cards with titles and landing blurbs.
 
-## Keywords
-- surveys landing page
-- grid layout
-- child page display
-- hover effects
-- page navigation
-- Gellix font
-- responsive columns
-- landing_blurb
-- blueprint: guides_and_survey
+**Keywords:**
+- Statamic collection entry
+- guides_and_survey blueprint
+- children loop iteration
+- responsive grid layout (md:grid-cols-2, lg:grid-cols-3)
+- survey cards display
+- landing_blurb markdown rendering
+- hover shadow transitions
+- Gellix font family
+- amp-gray-600 color scheme
+- clickable survey navigation

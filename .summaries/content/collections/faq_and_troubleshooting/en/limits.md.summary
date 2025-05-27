@@ -1,14 +1,24 @@
-# Summary
-This documentation outlines Amplitude's data limits, including monthly event volume limits (which vary by contract), instrumentation limits (2000 event types, 2000 event properties, 1000 user properties), character limits for strings (1024 characters), chart-specific limits, and CSV download limits that vary by chart type (ranging from 300 to 10,000 rows).
+## Summary
+This documentation covers Amplitude's data ingestion and visualization limits including monthly event volume limits, instrumentation limits (2000 event types, 2000 event properties, 1000 user properties), chart-specific constraints for Event Segmentation and other analytics charts, and CSV export limitations with varying group-by limits across different chart types.
 
-# Keywords
-- event volume limits
+## Keywords
+- monthly event volume limits
 - instrumentation limits
-- property maximums
-- chart visualization limits
-- CSV export limits
-- data truncation
-- group-by limitations
-- account blocking
+- event types limit 2000
+- event properties limit 2000
+- user properties limit 1000
+- Event Segmentation chart limits
+- inline behavioral cohorts 3-year range
+- string character limit 1024
+- CSV export group-by limits
+- Funnel Analysis 300 limit
+- Retention Analysis 300 limit
+- Data Tables 10000 limit
 - overage fees
-- string character limits
+- account blocking
+- indexing limits
+- breakdown table segment selection
+- date picker range limits
+- Export API
+- User API
+- organization settings projects

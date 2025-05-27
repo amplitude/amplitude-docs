@@ -1,14 +1,16 @@
-# Summary
-Lookup Tables in Amplitude allow users to import custom data to map and enhance existing event and user properties, enabling property enrichment, bulk value changes, and improved filtering capabilities, with a limit of 100MB or 1 million rows per table.
+**Summary:** This documentation covers Amplitude's Lookup Tables feature for enriching event and user properties by importing CSV data sources and mapping them to ingested properties, with specific limits of 100MB/1M rows and case-sensitive exact matching requirements.
 
-# Keywords
-- property enrichment
-- data mapping
-- CSV import
-- case-sensitive matching
-- Growth/Enterprise plans
+**Keywords:**
+- Lookup Tables
+- CSV data import
+- event property mapping
+- user property enrichment
 - SKU mapping
-- bulk property value changes
-- 100MB/1M row limit
-- lookup property creation
 - property value transformation
+- case-sensitive matching
+- 100MB limit
+- 1 million rows limit
+- Sources configuration
+- Growth Enterprise plans
+- exact match requirements
+- bulk property filtering

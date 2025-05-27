@@ -1,14 +1,16 @@
-## Summary
-This documentation page explains how to use the Conversion Report template in Amplitude to analyze customer behaviors related to conversion and drop-off in product flows, including how to customize the template by converting it to a dashboard with specific events for tracking.
+**Summary:** This documentation explains how to use Amplitude's Conversion Report template to analyze customer conversion rates and drop-off behaviors in product flows, including customizing the template by converting it to a dashboard and configuring events like `Any Active Event` and `New User`.
 
-## Keywords
+**Keywords:**
 - Conversion Report template
-- funnel conversion rate
-- conversion time analysis
+- conversion rate analysis
+- funnel conversion
+- drop-off behavior
+- Any Active Event
+- New User event
+- template to dashboard conversion
+- Amplitude templates
+- customer flow analysis
+- conversion time tracking
 - user path analysis
 - dashboard customization
-- Amplitude templates
-- event selection
-- conversion metrics
-- drop-off analysis
-- template-to-dashboard conversion
+- active event configuration

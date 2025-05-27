@@ -1,14 +1,13 @@
-## Summary
-This documentation details how to integrate Amplitude cohorts with LiveRamp's data connectivity platform using three methods: SFTP, Amazon S3, and Snowflake, enabling businesses to transfer and activate audience cohorts for cross-channel marketing and analytics purposes.
+**Summary:** This documentation describes integrating Amplitude cohorts with LiveRamp's data connectivity platform through three methods: SFTP upload, Amazon S3 bucket sync, and Snowflake data warehouse with LiveRamp Native Application for identity resolution and RampID translation.
 
-## Keywords
+**Keywords:**
 - LiveRamp cohort integration
-- SFTP cohort transfer
-- Amazon S3 data connectivity
-- Snowflake identity resolution
-- RampID translation
-- cross-channel audience activation
-- cohort export methods
-- data connectivity platform
-- destination account activation
-- identity resolution native app
+- SFTP cohort upload
+- Amazon S3 cohort sync
+- Snowflake LiveRamp Native Application
+- RampID identity resolution
+- Behavioral Cohorts API
+- LiveRamp SFTP server
+- cohort activation
+- destination account configuration
+- identity transcoding

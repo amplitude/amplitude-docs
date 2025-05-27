@@ -1,14 +1,16 @@
-# Summary
-The Engagement Matrix documentation explains how to interpret a quadrant-based visualization that plots events by frequency and user count, helping product teams identify core features, power features, one-time events, and underperforming features to prioritize development efforts.
+**Summary:** This documentation explains how to interpret Amplitude's Engagement Matrix chart results by analyzing four quadrants that categorize events/features based on frequency and user count, plus describes the breakdown table functionality and zoom capabilities for cluster analysis.
 
-# Keywords
-- Engagement Matrix quadrants
-- Feature prioritization
-- User frequency analysis
+**Keywords:**
+- Engagement Matrix chart interpretation
+- Four quadrants analysis
+- High/low frequency events
+- High/low user count categorization
 - Core features identification
-- Power features
-- Breakdown table
-- Data point clusters
-- Chart interpretation
-- Event performance visualization
-- Zoom functionality
+- Power features analysis
+- Breakdown table operations
+- CSV export functionality
+- Cluster zoom analysis
+- Cross-sectional gray lines
+- Event deselection
+- Average/median column operations
+- Amplitude analytics charts

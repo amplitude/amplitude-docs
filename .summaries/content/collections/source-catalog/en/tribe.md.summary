@@ -1,14 +1,15 @@
-# Summary
-Tribe integration with Amplitude allows community admins to capture member properties and activities at a granular level, enabling segmentation, funnel analysis, and retention measurement; available only to Tribe Premium and Enterprise plan users requiring a simple setup with an Amplitude API key.
+**Summary:** Documents the Tribe community platform integration with Amplitude Analytics that captures member properties and activities as raw events, enabling community admins to analyze member segments, conversion funnels, retention, and stickiness metrics for customer communities.
 
-# Keywords
-- Tribe community platform
-- Member properties tracking
-- Community engagement analytics
-- Conversion funnels
-- Member retention measurement
-- Tribe Premium/Enterprise plans
-- Community segmentation
-- Customer relationship analytics
-- Amplitude API key integration
-- Community stickiness metrics
+**Keywords:**
+- Tribe community platform integration
+- raw-events integration type
+- member properties and activities tracking
+- community member segmentation
+- member retention and stickiness analysis
+- conversion funnel analysis
+- customer community analytics
+- collaboration integration category
+- Tribe Premium and Enterprise plans
+- Amplitude API key configuration
+- partner-maintained integration
+- customer lifetime value optimization

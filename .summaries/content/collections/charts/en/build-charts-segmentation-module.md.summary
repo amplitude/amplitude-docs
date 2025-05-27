@@ -1,14 +1,17 @@
-# Summary
-This documentation details advanced features of Amplitude's Segmentation Module, including pasting lists of property values, renaming segments, creating inline behavioral cohorts without leaving the module, and using historical count functionality for more complex user segmentation and analysis.
+**Summary:** This documentation covers advanced features of Amplitude's Segmentation Module for building complex user segments, including pasting comma-separated property values, renaming segments, creating inline behavioral cohorts with the "+ Performed" feature, and using historical count functionality in Event Segmentation charts.
 
-# Keywords
-- segmentation module
+**Keywords:**
+- Segmentation Module
 - behavioral cohorts
-- property value lists
+- inline cohorts
+- + Performed feature
+- comma-separated property values
 - segment renaming
-- inline cohort creation
+- Event Segmentation chart
 - historical count
+- user properties
+- property values dropdown
+- Save Segment functionality
+- freeform values
+- chart labels
 - user segments
-- complex segmentation
-- clipboard pasting
-- segment definition

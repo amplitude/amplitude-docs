@@ -1,14 +1,18 @@
-## Summary
-This documentation compares the HTTP V2 API and Batch Event Upload API for Amplitude data ingestion, explaining that HTTP V2 is optimal for real-time, low-volume data (with a 30 events/second throttling limit), while Batch API is designed for high-volume data transfers, backfills, and migrations where immediate processing isn't required.
+**Summary:** This FAQ documentation compares Amplitude's HTTP V2 API and Batch Event Upload API for data ingestion, explaining their throttling limits (30 events/second for HTTP V2), event ordering guarantees, real-time vs batch processing capabilities, and specific use cases for each API endpoint.
 
-## Keywords
+**Keywords:**
 - HTTP V2 API
 - Batch Event Upload API
+- event ingestion
 - throttling limits
-- events per second (EPS)
-- real-time data ingestion
+- 30 events per second
+- real-time data processing
+- batch processing
+- event ordering guarantees
+- EPUS (events per user per second)
+- EPDS (events per device per second)
 - data backfills
-- event ordering
-- data migration
-- EPUS/EPDS (events per user/device per second)
-- data processing pipeline
+- API endpoint comparison
+- event data volume
+- streaming data
+- bulk data upload

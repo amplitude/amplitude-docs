@@ -1,11 +1,13 @@
-# Summary
-Census is a reverse ETL platform that enables syncing data from cloud warehouses to business tools like Amplitude, allowing organizations to import Census event data into Amplitude for analysis and decision-making.
+**Summary:** This documentation page describes the Census integration for Amplitude, which enables reverse ETL functionality to sync cloud data warehouse data to Amplitude as raw events, with setup instructions referencing external Census documentation.
 
-## Keywords
-- reverse-etl
-- operational analytics
-- cloud data warehouse sync
-- raw-events integration
-- data synchronization
-- business tools integration
-- Census-to-Amplitude connection
+**Keywords:**
+- Census integration
+- reverse ETL
+- cloud data warehouses
+- raw events import
+- operational analytics platform
+- sync analytics data
+- partner integration
+- external setup documentation
+- getcensus.com
+- warehouse to Amplitude sync

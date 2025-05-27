@@ -1,14 +1,20 @@
-# Summary
-This documentation explains causes of divergent lines in cumulative exposure graphs, including experiments starting before all variants are ready (similar slopes) and issues with custom exposure events or sticky bucketing (different slopes), emphasizing how these patterns can lead to misleading experiment results.
+**Summary:** This documentation explains how to interpret divergent lines in Amplitude's cumulative exposures graph for A/B testing experiments, covering scenarios with similar slopes (caused by staggered variant launches and novelty effects) and different slopes (caused by custom exposure events, cached variants, and sticky bucketing interactions with traffic allocation changes).
 
-## Keywords
+**Keywords:**
 - cumulative exposures graph
 - divergent lines
-- sticky bucketing
+- similar slopes
+- different slopes
+- staggered variants
 - novelty effect
-- traffic allocation
-- exposure event
-- assignment event
-- variant readiness
+- custom exposure event
 - cached variants
+- assignment event
+- sticky bucketing
+- traffic allocation
 - weighted average allocation
+- variant rollout
+- feature flag removal
+- A/B testing interpretation
+- experiment conditions
+- unbounded time metric

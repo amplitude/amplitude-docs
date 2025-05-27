@@ -1,54 +1,61 @@
-# Guides and Surveys API
+## Guides and Surveys Localization API
 
-## Overview
+The Guides and Surveys Localization API is a beta REST API service designed to facilitate programmatic translation management for guides and surveys content. The API enables seamless integration with translation management systems through standardized XLIFF 1.2 file format support for importing and exporting translatable content.
 
-The Guides and Surveys API is a programmatic interface that enables the management of guides and surveys content, with a specific focus on localization capabilities. The API is designed to facilitate the translation and localization of content through integration with external translation management systems.
+## Core Features and Capabilities
 
-## Key Features
+The API provides comprehensive localization workflow support through:
 
-- **Localization Support**: Import and export translation files in XLIFF 1.2 format
-- **External Integration**: Connect with third-party translation management systems
-- **Authentication**: Secure access using App ID and App Secret Key via Basic Authentication
-- **Multilingual Content Management**: Support for multiple languages and variants
+- **XLIFF 1.2 Translation File Management**: Full support for industry-standard XLIFF 1.2 format for translation import/export operations
+- **Programmatic Translation Workflows**: Automated integration capabilities with external translation management systems
+- **Multi-language Content Support**: Handles source and target language mapping with proper language code identification
+- **Content Variant Management**: Supports multiple content variants through flag_key and variant identifier mapping
+- **Authentication Security**: Implements App ID and App Secret Key authentication using Basic Authentication protocol
 
-## Localization API (Beta)
+## Product Architecture and Relationships
 
-The Localization API component allows developers to programmatically manage translations for guides and surveys content.
+The Guides and Surveys Localization API operates as a specialized component within a broader content management ecosystem. The API serves as a bridge between internal guides/surveys content and external translation management systems, enabling:
 
-### Key Endpoints
+- **Content Extraction**: Retrieval of translatable content elements from guides and surveys
+- **Translation Integration**: Seamless workflow integration with third-party translation services
+- **Content Synchronization**: Bidirectional content flow between internal systems and translation platforms
+- **Cache Management**: Automatic cache purging mechanisms to ensure content freshness
 
-- **Import Translations**: `POST` request to import translated content
-- **Export Translations**: `GET` request to export content for translation
+## Key Nomenclature and Definitions
 
-### Authentication
+**flag_key**: Primary identifier parameter that maps to specific guide or survey content instances, serving as the core reference for content retrieval and management.
 
-The API uses Basic Authentication with:
-- App ID (username)
-- App Secret Key (password)
+**variant**: Secondary identifier that specifies particular versions or variations of content associated with a flag_key, enabling granular content management.
 
-### File Format
+**trans-unit elements**: XLIFF-standard translation units that contain the actual translatable content segments, structured with source and target language mappings.
 
-The API works with XLIFF 1.2 format files, which include:
-- `source-language`: Original language of the content
-- `target-language`: Language the content is being translated to
-- `trans-unit` elements: Individual translatable text units
+**nudge translations**: Specific type of translatable content related to user interface prompts and guidance messages within the guides and surveys system.
 
-### Language Variant Support
+**original attribute mapping**: XLIFF metadata that maintains traceability between translated content and its source material through structured attribute relationships.
 
-The API supports language variants (e.g., en-US, en-GB) for more precise localization targeting.
+**target-language codes**: ISO-standard language identifiers that specify the destination language for translation operations.
 
-### Cache Management
+**source-language codes**: ISO-standard language identifiers that specify the original language of content being translated.
 
-After importing translations, the system automatically purges relevant caches to ensure updated content is immediately available.
+## API Endpoints and Integration
 
-## Integration in Product Ecosystem
+The API operates through the base endpoint structure:
+- **Base Path**: `guides-surveys/api/v1/localization`
 
-The Guides and Surveys API appears to be part of a larger product ecosystem for customer engagement and content management. The localization capabilities suggest that the product is designed for global businesses needing to deliver content in multiple languages.
+**Authentication Method**: Basic Authentication using App ID and App Secret Key credentials for secure API access.
 
-The API enables a workflow where content created in the main application can be exported, translated through external systems, and then reimported with the translations, maintaining the connection between original and translated content.
+**Primary Operations**:
+- Translation file export for extracting translatable content
+- Translation file import for updating content with completed translations
+- Cache purging operations for content synchronization
 
-## Technical Requirements
+## Ecosystem Integration
 
-- Support for XLIFF 1.2 format
-- Ability to make authenticated HTTP requests
-- Understanding of language codes and variants according to ISO standards
+The Guides and Surveys Localization API functions as a critical component in a larger content delivery and management ecosystem. It enables organizations to:
+
+- Integrate guides and surveys content into existing translation workflows
+- Maintain consistency across multi-language content deployments
+- Automate translation processes through programmatic interfaces
+- Ensure content synchronization between development and localization teams
+
+The beta status indicates active development with potential for feature expansion and API refinement based on user feedback and integration requirements.

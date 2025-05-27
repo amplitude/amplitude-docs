@@ -1,14 +1,20 @@
 ## Summary
-This documentation page describes Amplitude's Databricks import source, which enables importing events, user properties, and group properties from Databricks to Amplitude using Databricks Change Data Feed (CDF). It covers configuration steps, authentication methods, limitations, and troubleshooting for the integration.
+This documentation covers Amplitude's Databricks import source integration that uses Databricks Change Data Feed (CDF) to import events, user properties, and group properties with delta sync capabilities, supporting both Append Only Sync and Mirror Sync strategies with personal access token authentication.
 
 ## Keywords
 - Databricks Change Data Feed (CDF)
-- Delta sync
+- delta sync
 - Mirror Sync
-- Personal Access Token (PAT)
-- Service Principal authentication
-- SQL input restrictions
-- All-purpose compute cluster
 - Append Only Sync
-- Workspace permissions
-- Troubleshooting connection errors
+- personal access token (PAT)
+- service principal authentication
+- all-purpose compute cluster
+- SQL transformation
+- User Privacy API
+- JDBC connection
+- event volume impact
+- CDF table versioning
+- workspace user authentication
+- Data Reader permissions
+- cluster access modes
+- unity catalog permissions

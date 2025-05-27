@@ -1,16 +1,16 @@
-## Summary
-This documentation explains the causes of data discrepancies between Amplitude and third-party analytics platforms (like Google Analytics), covering factors such as timezone differences, event tracking variations, bot filtering, metric definitions, user identification methods, and session timeout windows, with specific details on how Google Analytics handles sessions differently from Amplitude.
+**Summary:** This Japanese documentation explains data discrepancies between Amplitude and third-party analytics platforms (Google Analytics, Mixpanel), covering troubleshooting factors like timezone alignment, event tracking differences, bot filtering, metric definitions, user merging, and session timeout windows, with specific comparison of Amplitude vs Google Analytics session handling including midnight rollover and campaign source changes.
 
-## Keywords
-- data discrepancies
-- Amplitude analytics
-- third-party platforms
-- timezone differences
+**Keywords:**
+- Amplitude data discrepancies
+- Google Analytics session comparison
+- Mixpanel data differences
+- timezone alignment troubleshooting
 - session timeout windows
-- user identification
-- Google Analytics comparison
-- session tracking differences
-- campaign-based expiration
-- event tracking limitations
-- bot filtering
+- user merging differences
+- bot filtering discrepancies
+- campaign source session expiration
+- midnight session rollover
+- event tracking alignment
 - metric definition variations
+- Amplitude SDK session defaults
+- Japanese translation documentation

@@ -1,14 +1,18 @@
-# Summary
-This documentation page explains Single Sign-On (SSO) integration with Amplitude, detailing compatibility with SAML 2.0 providers (Auth0, G Suite, Azure AD, Okta, OneLogin), availability on Growth and Enterprise plans, required SSO enforcement options, just-in-time provisioning, and how Amplitude identifies users through email addresses in SAML assertions.
+**Summary:** This documentation covers Amplitude's Single Sign-On (SSO) implementation using SAML 2.0 authentication, including supported providers (Auth0, G Suite, Azure AD, Okta, OneLogin), just-in-time provisioning, and email address resolution from SAML assertions.
 
-# Keywords
-- SAML 2.0
-- just-in-time provisioning
-- SSO enforcement
-- identity provider integration
-- email address identification
+**Keywords:**
+- Single Sign-On (SSO)
+- SAML 2.0 authentication
+- Auth0 integration
+- G Suite SSO
+- Microsoft Azure Active Directory
+- Okta integration
+- OneLogin integration
+- Just-in-time provisioning (JIT)
+- SAML assertion email resolution
+- Identity provider authentication
+- Organization access control
 - Growth and Enterprise plans
-- user authentication
-- SAML assertion
-- email claim attribute
-- default project permissions
+- Project permissions
+- Email claim attributes
+- xmlsoap.org email claims

@@ -1,14 +1,17 @@
-# Summary
-This documentation explains how to set up a domain proxy to relay events to Amplitude, giving organizations more control over data sent to Amplitude by routing requests through their own domain instead of directly to Amplitude's API endpoints. It covers proxy setup using NGINX, validation, deployment, and SDK configuration for various platforms.
+**Summary:** This documentation explains how to set up a domain proxy service to relay Amplitude analytics events through your own domain instead of sending directly to api2.amplitude.com, including NGINX configuration examples and SDK endpoint configuration for various Amplitude SDKs.
 
-# Keywords
+**Keywords:**
 - domain proxy
-- event relay
-- HTTP V2 API
-- NGINX proxy configuration
-- SDK endpoint configuration
 - api2.amplitude.com
-- proxy_pass
-- data anonymization
-- event filtering
-- cloud provider proxy services
+- NGINX proxy configuration
+- HTTP V2 API
+- proxy_pass configuration
+- SDK serverUrl configuration
+- apiEndpoint option
+- setServerUrl function
+- amplitude analytics relay
+- self-owned proxy service
+- event flow control
+- JavaScript snippet bundling
+- cloud provider API gateways
+- reverse proxy setup

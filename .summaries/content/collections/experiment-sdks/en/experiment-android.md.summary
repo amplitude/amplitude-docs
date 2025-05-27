@@ -1,16 +1,34 @@
 ## Summary
-The Experiment Android SDK provides client-side feature flag and experiment management for Android applications, supporting both remote and local evaluation with automatic exposure tracking and integration with Amplitude Analytics or third-party analytics providers.
+
+This documentation covers Amplitude Experiment's client-side Android SDK implementation, including installation via Maven Central, initialization with Amplitude Analytics or third-party integrations, remote/local evaluation methods (fetch/start), variant access, exposure tracking, and configuration options for features like automatic exposure tracking, user providers, and bootstrapping with initial variants or flag configurations.
 
 ## Keywords
-- Android SDK
-- feature flags
-- experiment variants
+
+- Amplitude Experiment Android SDK
+- client-side evaluation
 - remote evaluation
 - local evaluation
-- exposure tracking
-- Amplitude integration
+- Maven Central installation
+- experiment-android-client
+- deployment key
+- ExperimentClient
 - ExperimentUser
-- fetch variants
-- automatic exposure tracking
+- ExperimentConfig
+- variant fetching
+- exposure tracking
+- flag configurations
+- Amplitude Analytics integration
+- Segment integration
+- ExposureTrackingProvider
 - user provider
-- bootstrapping
+- automatic exposure tracking
+- bootstrapping variants
+- initial flags
+- server-side rendering (SSR)
+- account-level bucketing
+- group properties
+- fallback variants
+- Source.INITIAL_VARIANTS
+- fetchOnStart
+- pollOnStart
+- automaticFetchOnAmplitudeIdentityChange

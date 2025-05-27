@@ -1,12 +1,13 @@
-# Summary
-This documentation explains how project managers and admins can change the default currency display (US dollar) to any other currency in Amplitude Analytics, noting that this change affects only the display and not the underlying data values.
+**Summary:** Documentation for changing currency display units in Amplitude Analytics projects through Organization settings, affecting Revenue LTV charts, Event Segmentation revenue metrics, and Data Tables without modifying underlying data values.
 
-# Keywords
-- currency display
-- project settings
-- revenue charts
-- currency unit modification
-- organization settings
-- revenue LTV charts
-- revenue metrics
-- display currency conversion
+**Keywords:**
+- currency display unit
+- Amplitude Analytics project settings
+- Organization settings Projects
+- Revenue LTV charts
+- Event Segmentation revenue metrics
+- Data Tables revenue display
+- currency conversion display
+- project-level currency configuration
+- dashboard currency formatting
+- notebook revenue visualization

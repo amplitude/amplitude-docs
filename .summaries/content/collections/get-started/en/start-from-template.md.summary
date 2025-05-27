@@ -1,12 +1,13 @@
-# Summary
-Amplitude Analytics offers pre-built templates in the Template Gallery to help teams quickly create common analyses, available on all Amplitude plans. Users can access these starter templates from the Amplitude Home page by clicking "Start from a template" and can later create their own custom templates.
+**Summary:** Documentation for Amplitude Analytics template feature that allows users to start analyses using pre-built templates from the Template Gallery, accessible via "Start from a template" on the Amplitude Home page, with guidance on funnel analysis usage.
 
-# Keywords
+**Keywords:**
+- Amplitude Analytics templates
 - Template Gallery
+- Start from a template
 - pre-built analysis templates
-- Amplitude Analytics
-- funnel analysis
-- user behavior insights
-- starter templates
-- custom templates
-- analysis sharing
+- funnel analysis charts
+- onboarding funnel
+- retention funnel
+- Amplitude Home page
+- template creation workflow
+- user behavior analysis templates

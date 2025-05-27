@@ -1,16 +1,21 @@
-## Summary
-This documentation page provides a comprehensive glossary of technical terms used in Amplitude analytics, including definitions for tracking mechanisms (Amplitude ID, Device ID, Event ID), user categorizations (Active Users, New Users, MTU), event types (inactive events), and measurement concepts (retention, stickiness, funnels).
+**Summary:** Japanese translation documentation page defining Amplitude analytics terminology including user identification (Amplitude ID, Device ID, User ID), event tracking concepts (active/inactive events, event properties), user metrics (MTU, retention, stickiness), and behavioral analysis terms (cohorts, funnels, sessions).
 
-## Keywords
+**Keywords:**
+- Japanese translation
+- Amplitude analytics terminology
+- アクティブユーザー (active users)
 - Amplitude ID
-- Device ID
-- Event properties
-- User properties
-- Monthly Tracked Users (MTU)
-- Session tracking
-- Behavioral cohorts
-- Inactive events
-- Unique user identification
-- Funnel analysis
-- Retention metrics
-- Stickiness measurement
+- デバイスID (Device ID)
+- イベントプロパティ (event properties)
+- 非アクティブイベント (inactive events)
+- 月次トラックユーザー (MTU)
+- リテンション (retention)
+- セッション (session)
+- ユニークユーザー (unique users)
+- ユーザープロパティ (user properties)
+- 行動コホート (behavioral cohorts)
+- ファネル (funnel)
+- スティッキネス (stickiness)
+- IDFV identifierForVendor
+- セッションID (session ID)
+- イベントID (event ID)

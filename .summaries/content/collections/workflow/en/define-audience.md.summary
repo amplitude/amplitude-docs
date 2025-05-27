@@ -1,14 +1,17 @@
-# Summary
-This documentation page explains how to define the audience for an Amplitude experiment by either targeting all users or specific user segments based on cohorts, user properties, or custom properties, with the note that users must still trigger the exposure event to enter the experiment regardless of audience settings.
+**Summary:** This documentation explains how to define audience targeting for Amplitude Experiments by configuring user segments based on cohorts, user properties, or custom properties, with specific details on bucketing eligibility, exposure event requirements, and caching behavior for different property types.
 
-# Keywords
-- experiment audience targeting
-- user segments
+**Keywords:**
+- Amplitude Experiment audience targeting
+- experiment bucketing eligibility
+- user segment targeting
+- exposure event triggering
 - cohort-based targeting
-- user property targeting
-- custom user property targeting
-- exposure event
-- segment matching
-- audience eligibility
-- bucketing criteria
-- Amplitude Experiment
+- user properties targeting
+- custom user properties
+- segment evaluation rules
+- caching expiration behavior
+- transformed properties limitation
+- real-time property evaluation
+- SDK context passing
+- REST API context
+- experiment variants setup

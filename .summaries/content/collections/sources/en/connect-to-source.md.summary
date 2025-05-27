@@ -1,14 +1,17 @@
-# Summary
-This documentation page explains how to connect third-party platforms as data sources in Amplitude Data, detailing the Sources interface (Sources List and Ingestion Debugger tabs) and providing step-by-step instructions for adding a new data source through the Catalog.
+**Summary:** This documentation covers Amplitude's Sources interface for connecting third-party data platforms, including the Sources List tab, Ingestion Debugger with throttled users/devices monitoring, and the step-by-step process for adding new data sources through the Catalog.
 
-# Keywords
-- data sources
-- third-party integration
-- Sources List
+**Keywords:**
+- Amplitude Data Sources
+- Sources List tab
 - Ingestion Debugger
-- throttled users
-- Catalog
-- source connection
-- event volume
-- data import
-- Amplitude Data
+- throttled users and devices
+- event volume tracking
+- third-party data integration
+- Catalog interface
+- Set Up Connection tab
+- successful requests monitoring
+- error requests tracking
+- silenced device IDs
+- Manager permissions
+- 30-day activity status
+- endpoint monitoring

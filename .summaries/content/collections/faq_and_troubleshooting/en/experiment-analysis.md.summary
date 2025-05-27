@@ -1,14 +1,17 @@
-# Summary
-This documentation page addresses common questions about Amplitude's Experiment Results chart, covering error states due to missing variants, factors affecting statistical significance timing, and the specific calculation methodology for Retention metrics using exposure and return events with time-based parameters.
+**Summary:** This FAQ documentation covers troubleshooting for Amplitude's Experiment Results chart, addressing common issues with variant comparison requirements, statistical significance timing with T-tests vs sequential testing, and detailed retention metric calculations using exposure events, return events, and nth day/week/month parameters.
 
-# Keywords
+**Keywords:**
 - Experiment Results chart
-- control and variant comparison
+- variant comparison
+- control group
 - statistical significance
 - T-test vs sequential testing
-- Retention metric calculation
+- p-value computation
+- confidence interval
+- retention metric calculation
 - exposure event
 - return event
 - nth day/week/month parameters
+- MDE (Minimum Detectable Effect)
+- sequential testing
 - sample size requirements
-- minimum detectable effect (MDE)

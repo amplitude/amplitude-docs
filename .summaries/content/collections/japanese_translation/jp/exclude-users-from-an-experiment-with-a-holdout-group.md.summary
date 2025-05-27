@@ -1,15 +1,16 @@
 ## Summary
-This documentation explains how to use holdout groups in Amplitude Experiment to exclude a percentage of users from experiments, particularly useful for measuring long-term cumulative effects of multiple experiments. It covers creating and managing holdout groups, best practices (5-10% holdout rate), and analyzing results through Experiment Results charts.
+This Japanese documentation explains how to create and manage holdout groups in Amplitude Experiment to exclude specific user percentages from experiments, particularly for measuring long-term cumulative effects of multiple experiments and preventing statistical significance issues.
 
 ## Keywords
-- holdout groups
-- Amplitude Experiment
-- experiment exclusion
-- long-term variant impact
-- traffic allocation
-- experiment analysis
-- T-test
-- experiment groups
-- user bucketing
-- multiple holdout groups
-- mutually exclusive groups
+- Amplitude Experiment holdout groups
+- Japanese translation documentation
+- experiment user exclusion
+- holdout percentage configuration
+- experiment traffic allocation
+- statistical significance measurement
+- experiment bucketing consistency
+- mutual exclusion groups interaction
+- experiment results chart analysis
+- long-term variant impact measurement
+- T-test statistical method
+- exposure event configuration

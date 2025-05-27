@@ -1,14 +1,16 @@
-# Summary
-This documentation page explains how to create a Stickiness chart in Amplitude to identify features driving user engagement by analyzing how frequently users perform specific events over time, helping differentiate behaviors between power users and regular users.
+**Summary:** This documentation explains how to create Amplitude Stickiness charts that analyze user engagement frequency by showing how often users fire specific events over time periods, with support for event properties, user segmentation, and grouping by user properties.
 
-# Keywords
-- Stickiness chart
-- User engagement analysis
-- Event frequency measurement
-- Power user segmentation
-- Retention drivers
-- Segmentation module
-- Event properties
-- User segment analysis
+**Keywords:**
+- Stickiness chart creation
+- Event frequency analysis
+- User engagement measurement
+- Event properties filtering
+- User segmentation module
+- Power user analysis
+- Any Event selection
+- Saved segments import
+- User property grouping
 - Weekly/monthly frequency
-- Feature availability
+- Event instrumentation
+- Product analytics retention
+- Chart segmentation analysis

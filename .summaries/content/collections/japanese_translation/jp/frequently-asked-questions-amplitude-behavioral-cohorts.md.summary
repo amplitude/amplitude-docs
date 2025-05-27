@@ -1,14 +1,15 @@
-## Summary
-This documentation page covers frequently asked questions about Amplitude Behavioral Cohorts, including how to create cohorts based on property values, troubleshooting CSV uploads, understanding cohort definition limitations, and techniques for identifying users with specific behavioral patterns or missing properties.
+**Summary:** This Japanese FAQ documentation covers troubleshooting and usage guidance for Amplitude behavioral cohorts, including CSV upload failures, cohort definition restrictions, dynamic vs static cohort limitations, and advanced querying techniques using "did not" clauses and count functions.
 
-## Keywords
-- behavioral cohorts
-- latest property values
-- CSV upload formatting
-- cohort definition limitations
-- count functionality
-- did not clause
-- user property filtering
-- dynamic cohorts
-- static cohorts
-- user segmentation
+**Keywords:**
+- Amplitude behavioral cohorts
+- Japanese translation FAQ
+- CSV upload cohort creation
+- Dynamic cohorts vs static cohorts
+- Cohort definition restrictions
+- "did not" clause querying
+- Count function segmentation
+- User property filtering
+- Event-based cohort creation
+- Funnel and retention chart cohorts
+- Population over time support
+- User ID vs Amplitude ID CSV format

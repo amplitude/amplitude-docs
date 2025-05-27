@@ -1,12 +1,13 @@
-# Summary
-This documentation page explains how to migrate from the deprecated Autocapture plugin to the built-in Autocapture functionality that was integrated into Browser SDK version 2.10.0 and higher, providing specific code examples for both script loader and npm/yarn implementation approaches.
+**Summary:** Documents the deprecated Autocapture Plugin for Amplitude's Browser SDK and provides migration instructions to upgrade from the standalone plugin to the built-in autocapture functionality available in Browser SDK version 2.10.0+, including code examples for both script loader and npm/yarn implementations.
 
-# Keywords
-- Autocapture plugin deprecation
+**Keywords:**
+- Autocapture Plugin
 - Browser SDK 2.10.0
+- plugin deprecation
+- @amplitude/plugin-autocapture-browser
 - elementInteractions
-- migration instructions
-- script loader implementation
-- npm/yarn implementation
-- built-in Autocapture
 - autocapture configuration
+- script loader migration
+- npm yarn package removal
+- amplitude.add() plugin method
+- built-in autocapture functionality

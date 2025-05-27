@@ -1,16 +1,16 @@
-## Summary
-This documentation explains how to use Amplitude's lookup table feature to enrich event and user properties by mapping imported data to ingested properties, allowing users to add meaningful context to property values, make bulk changes to property values, and create filters based on mapped data.
+**Summary:** This documentation covers Amplitude's lookup table feature for enriching events and user properties by mapping imported CSV data to ingested properties, including creation, updating, and deletion processes in Amplitude Data with specific limitations of 100MB/1M rows.
 
-## Keywords
-- lookup tables
-- data enrichment
-- property mapping
-- CSV import
-- event properties
-- user properties
-- Enterprise plan
-- Govern add-on
-- property value transformation
-- data source configuration
-- case-sensitive matching
-- 100MB/1 million row limit
+**Keywords:**
+- Amplitude lookup table
+- CSV data mapping
+- event property enrichment
+- user property mapping
+- SKU product name mapping
+- language code translation
+- bulk property modification
+- Amplitude Data source configuration
+- closed beta feature
+- Enterprise plan Govern addon
+- exact match case-sensitive mapping
+- 100MB 1M row limitations
+- Japanese translation documentation

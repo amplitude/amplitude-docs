@@ -1,18 +1,30 @@
 ## Summary
-This documentation explains how to identify and handle outliers in data analysis, covering methods like standard deviations, boxplots, and percentiles for detection, and techniques like winsorization, filtering, transformations, and visualization for mitigation across different metric types (totals, sum of property, average of property, funnels).
+This documentation covers outlier detection and resolution techniques in Amplitude Analytics and Experiment, including statistical methods (standard deviations, boxplots, percentiles), visualization approaches (frequency charts, histograms), and mitigation strategies like winsorization and log transforms for different metric types (totals, sum of property, average of property, funnel metrics).
 
 ## Keywords
 - outlier detection
 - winsorization
-- data skew
+- log transform
 - standard deviation
 - boxplots
-- percentile filtering
-- log transformation
-- derived properties
+- percentiles
+- FREQPERCENTILE formula
+- PROPSUM formula
+- TOTALS formula
+- PERCENTILE formula
+- frequency charts
 - histogram visualization
-- FREQPERCENTILE
-- PROPSUM
-- Amplitude Experiment
-- metric types
-- data distribution
+- derived properties
+- sum of property metrics
+- average of property metrics
+- funnel totals
+- prop min/prop max
+- Amplitude Experiment winsorization
+- Enterprise plan features
+- segmentation charts
+- computations
+- cohort filtering
+- session replays
+- Microscope tool
+- Box Cox transformation
+- Yeo-Johnson transformation

@@ -1,5 +1,32 @@
-## Summary
-This documentation outlines Amplitude's SDK maintenance policy, detailing the four lifecycle phases (Developer Preview, General Availability, Maintenance, End-of-Support), versioning approach, dependency support, and includes a comprehensive version support matrix for all Amplitude SDKs and tools with their current lifecycle status.
+**Summary:** This documentation defines the maintenance and support lifecycle policy for Amplitude SDKs and Tools, covering four phases (Developer Preview/Beta, GA, Maintenance, End-of-Support) with versioning using X.Y.Z format and includes a comprehensive version support matrix tracking SDK lifecycle phases, GA dates, and maintenance transitions.
 
-## Keywords
-SDK-lifecycle, version-support-matrix, maintenance-policy, end-of-support, general-availability, developer-preview, dependency-support, versioning-scheme, SDK-tools, maintenance-phases, EOL, GA, Beta
+**Keywords:**
+- SDK maintenance lifecycle
+- version support matrix
+- Developer Preview Beta phase
+- General Availability GA phase
+- Maintenance phase
+- End-of-Support EOL phase
+- X.Y.Z versioning format
+- dependency lifecycle policy
+- Amplitude-Kotlin
+- Amplitude-TypeScript
+- Amplitude-Swift
+- Amplitude-Android
+- Amplitude-JavaScript
+- Amplitude-Flutter
+- Amplitude-Python
+- Amplitude-Java
+- Amplitude-iOS
+- Amplitude-Node
+- Chrome Event Explorer
+- amplitude-browser-sdk-gtm-template
+- analytics-go
+- unity-plugin
+- Amplitude-Unreal
+- Amplitude-ReactNative
+- package managers npm CocoaPods Maven PyPI
+- GitHub repository archiving
+- operating system dependencies
+- language runtime dependencies
+- third party library dependencies

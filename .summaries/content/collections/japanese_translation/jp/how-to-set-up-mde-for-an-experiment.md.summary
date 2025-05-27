@@ -1,15 +1,19 @@
-# Summary
-This documentation explains how to set up Minimum Detectable Effect (MDE) for experiments in Amplitude, covering how to determine appropriate MDE values based on experiment type (Hypothesis Testing vs. Do No Harm), primary metrics, and associated risks. It emphasizes that MDE should be carefully considered during the experiment design phase based on specific business needs.
+## Summary
+This Japanese documentation explains how to configure MDE (Minimum Detectable Effect) for experiments in Amplitude Experiment, covering the relationship between MDE settings and experiment types (Hypothesis Testing vs Do No Harm), primary metrics, and associated risks including sample size calculations.
 
-# Keywords
-- Minimum Detectable Effect (MDE)
-- Hypothesis Testing experiments
-- Do No Harm experiments
-- Sample size calculation
-- Statistical significance
-- Conversion rate optimization
-- T-test
-- Experiment design phase
-- Risk assessment
-- Primary metrics
+## Keywords
+- MDE (Minimum Detectable Effect)
 - Amplitude Experiment
+- 実験設計 (experiment design)
+- 仮説検定 (Hypothesis Testing)
+- Do No Harm実験
+- コンバージョン率 (conversion rate)
+- サンプルサイズ計算
+- 統計的有意性 (statistical significance)
+- T検定 (T-test)
+- 期間推定ツール (duration estimation tool)
+- 主要指標 (primary metrics)
+- コントロール平均 (control average)
+- 実験タイプ選択
+- Plan タブ
+- チケット購入コンバージョン

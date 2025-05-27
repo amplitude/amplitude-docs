@@ -1,14 +1,13 @@
-# Summary
-Templates in Amplitude Analytics allow users to efficiently recreate common analyses by reusing saved dashboards with customizable parameters (events, properties, cohorts, dates, projects, titles), available exclusively to Growth and Enterprise plans. Users can create templates from existing dashboards, use starter templates for common use cases, and temporarily modify template data without affecting original charts.
+**Summary:** This documentation covers Amplitude Analytics templates feature that allows users to create reusable dashboard templates from saved dashboards, enabling teams to standardize analyses by templatizing events, properties, cohorts, dates, and projects with Find & Replace functionality for A/B testing, releases, and engagement tracking.
 
-# Keywords
-- dashboard templates
-- templatized parameters
-- find & replace functionality
-- A/B testing standardization
-- template permissions
-- starter templates
-- Growth/Enterprise feature
-- template sharing
-- template use cases
-- template gallery
+**Keywords:**
+- Amplitude Analytics templates
+- dashboard templatization
+- Find & Replace parameters
+- events properties cohorts templating
+- starter templates use case industry
+- A/B testing templates
+- Growth Enterprise plans feature
+- template permissions gallery publishing
+- Save onto Charts functionality
+- dashboard reuse standardization

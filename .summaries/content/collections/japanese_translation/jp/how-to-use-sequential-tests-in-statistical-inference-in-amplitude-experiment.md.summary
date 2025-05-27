@@ -1,18 +1,38 @@
-# Summary
-This documentation explains how Amplitude Experiment uses sequential testing (specifically mixed sequential probability ratio tests or mSPRT) for statistical inference in A/B testing, highlighting its advantages over t-tests by allowing valid results viewing at any time without increasing false positives, enabling earlier experiment completion with fewer observations.
+## Summary
+This documentation explains how Amplitude Experiment uses sequential testing (specifically mixed Sequential Probability Ratio Tests - mSPRT) for statistical inference in A/B testing, comparing it to traditional t-tests and covering implementation details for unique, sum, and property sum metrics with specific exposure and conversion thresholds.
 
-# Keywords
+## Keywords
 - sequential testing
-- mSPRT (mixed sequential probability ratio test)
+- mixed Sequential Probability Ratio Tests (mSPRT)
 - statistical inference
 - A/B testing
-- false positive control
 - hypothesis testing
-- p-values
-- confidence intervals
-- conversion rates
+- null hypothesis
+- alternative hypothesis
+- t-test comparison
+- false positive rates
+- alpha threshold 0.05
+- beta 0.2
+- exposure thresholds
+- conversion thresholds
+- 25 conversions minimum
+- 100 exposures minimum
+- unique metrics
+- sum metrics
+- property sum metrics
 - absolute lift
 - relative lift
-- unique metrics
-- average sum metrics
-- property sum metrics
+- confidence intervals
+- statistical power
+- type 1 error
+- randomized controlled trials
+- treatment variants
+- control variants
+- likelihood ratio
+- p-value calculations
+- early experiment termination
+- novelty effects
+- conversion lag analysis
+- funnel charts
+- variant allocation
+- symmetric temporal changes

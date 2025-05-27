@@ -1,14 +1,16 @@
-## Summary
-This documentation page explains how to use and customize conversion report templates in Amplitude to analyze customer behavior in critical product flows, detailing the included charts that track conversion rates, time to conversion, and user paths, with instructions for converting templates to customizable dashboards.
+**Summary:** This Japanese documentation explains how to generate conversion reports using pre-built templates in Amplitude, covering the conversion activity report template with specific charts for funnel analysis, conversion rates over time, and user path analysis, plus instructions for customizing templates by converting them to dashboards with event replacement parameters.
 
-## Keywords
-- conversion report templates
-- conversion rates
-- product flows
+**Keywords:**
+- Japanese translation documentation
+- Amplitude conversion reports
+- conversion activity report template
+- funnel conversion rates
+- template to dashboard conversion
+- event replacement parameters
+- 新規ユーザー (new user events)
+- アクティブイベント (active events)
+- user path analysis
+- conversion time analysis
 - dashboard customization
-- funnel analysis
-- user activity tracking
-- template conversion
-- event replacement
-- conversion metrics
-- Japanese translation
+- template カスタマイズ
+- コンバージョンレポートテンプレート

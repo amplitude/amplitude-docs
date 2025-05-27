@@ -1,15 +1,17 @@
-# Summary
-This documentation explains how time is calculated in Amplitude's retention analysis, comparing two methods: 24-hour continuous time frames (default) versus strict calendar dates, and detailing how daily, weekly, and monthly retention calculations differ between these approaches based on event timestamps.
+**Summary:** This documentation explains how Amplitude calculates time intervals in retention analysis, covering two approaches: 24-hour rolling time windows (default) versus strict calendar days, including how these methods affect daily, weekly, and monthly retention calculations with specific timestamp handling and cohort bucketing logic.
 
-# Keywords
-- retention analysis
-- 24-hour time frames
-- strict calendar dates
-- daily retention
-- weekly retention
-- monthly retention
-- timestamp rounding
-- cohort intervals
-- timezone settings
+**Keywords:**
+- retention analysis time calculation
+- 24-hour rolling time windows
+- strict calendar days
+- timestamp truncation
+- cohort bucketing
+- retention intervals
+- calendar view timezone
+- project settings timezone
 - return events
-- retention calculation methods
+- start events
+- daily weekly monthly retention
+- retention types
+- Japanese translation
+- Amplitude retention charts

@@ -1,19 +1,28 @@
-## Summary
-This documentation details the Amplitude Analytics Android SDK, a maintenance-mode SDK that supports tracking user events, user properties, revenue, and sessions in Android applications. It covers installation via Gradle, core functionality including initialization, event tracking with properties, user identification, revenue tracking, and advanced features like middleware, offline mode, and dynamic configuration.
+**Summary:**
+This documentation covers the Amplitude Analytics Android SDK (maintenance mode), which supports Java and Kotlin for tracking events, user properties, revenue, and sessions in Android applications. The SDK provides core functionality including event logging with properties, user identification, group tracking, revenue verification through Google Play Store, session management with foreground tracking, and various configuration options like EU data residency, offline mode, SSL pinning, and middleware support.
 
-## Keywords
-- Android SDK
-- Amplitude Analytics
-- Event tracking
-- User properties
-- Revenue verification
-- Session management
-- Device ID
-- Identify API
-- Middleware
-- Offline mode
-- Dynamic configuration
-- COPPA control
-- App Set ID
-- Advertiser ID
-- SSL pinning
+**Keywords:**
+- Amplitude Analytics Android SDK
+- maintenance SDK
+- Java Kotlin support
+- com.amplitude:android-sdk
+- Maven Central package
+- event logging JSONObject
+- user properties Identify operations
+- revenue tracking logRevenueV2
+- Google Play Store revenue verification
+- session management enableForegroundTracking
+- advertising ID ADID tracking
+- App Set ID deviceId
+- group identification groupType groupName
+- EU data residency setServerZone
+- TrackingOptions disable tracking
+- COPPA compliance enableCoppaControl
+- location tracking enableLocationListening
+- SSL pinning PinnedAmplitudeClient
+- middleware MiddlewarePayload
+- offline mode setOffline
+- dynamic configuration setUseDynamicConfig
+- OkHTTP dependency requirement
+- AndroidManifest.xml permissions
+- ProGuard obfuscation exceptions

@@ -1,14 +1,15 @@
-## Summary
-This documentation explains how to create a custom event in Amplitude that combines multiple events with an OR condition, allowing users to analyze when users perform any one of several events as a single step in a funnel or flow analysis, with specific limitations on where custom events can be used.
+**Summary:** This documentation explains how to create custom events in Amplitude's Events module to group multiple events with OR logic as a single step in funnel analysis, including prerequisites, limitations, and step-by-step instructions for combining existing events.
 
-## Keywords
-- Custom events
-- OR condition
-- Event grouping
-- Funnel analysis
-- Event module
-- Event properties
-- User conversion
-- Permission requirements
-- Custom event limitations
-- Event combination
+**Keywords:**
+- Amplitude Events module
+- custom events creation
+- OR logic grouping
+- funnel analysis steps
+- event properties filtering
+- カスタムイベント (custom events Japanese)
+- イベントモジュール (Events module Japanese)
+- conversion step analysis
+- event segmentation compatibility
+- Redshift query limitations
+- admin/manager/member permissions
+- chart type restrictions (funnel, retention, lifecycle, stickiness, impact, pathfinder, compass)

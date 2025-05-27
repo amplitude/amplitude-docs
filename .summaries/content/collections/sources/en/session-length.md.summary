@@ -1,12 +1,13 @@
-# Summary
-Amplitude calculates session length as the difference between the maximum and minimum client_event_time within a session, excluding any hidden, inactive, or deleted events from this calculation when using session ID as the session property.
+**Summary:** Documents Amplitude's session length calculation formula using max(client_event_time) - min(client_event_time) based on session ID property, excluding hidden/inactive/deleted events from the calculation.
 
-# Keywords
+**Keywords:**
 - session length calculation
 - client_event_time
-- max-min timestamp difference
-- hidden events exclusion
 - session ID property
-- UTC timestamps
-- event filtering
+- max/min timestamp formula
+- UTC local timestamp
+- hidden events exclusion
+- inactive events exclusion
+- deleted events exclusion
 - session tracking
+- device logged events

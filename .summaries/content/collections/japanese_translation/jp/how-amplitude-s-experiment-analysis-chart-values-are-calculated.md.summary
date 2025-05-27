@@ -1,14 +1,17 @@
-# Summary
-This documentation explains how Amplitude's Experiment Analysis chart values are calculated, detailing the input variables (exposed users, metric events, property values) and formulas used for different metrics (unique conversion, event totals, property values, funnel conversions), with practical examples demonstrating the counting logic.
+**Summary:** This Japanese documentation explains the mathematical formulas and input variables (E, M, T, S, A, FM, FT) used to calculate Amplitude's Experiment Analysis chart values, including unique conversion rates, event totals, property value sums/averages, and funnel conversion metrics with detailed calculation examples.
 
-# Keywords
-- Experiment Analysis calculations
-- Unique conversion formula
-- Event total metrics
-- Property value calculations
-- Funnel conversion metrics
-- Exposure counting logic
-- Metric event triggers
-- Experiment interpretation
-- A/B test analytics
-- User conversion tracking
+**Keywords:**
+- Amplitude Experiment Analysis
+- experiment chart calculations
+- conversion rate formulas
+- exposure events counting
+- metric event triggers
+- property value aggregation
+- funnel conversion metrics
+- unique user counting logic
+- event totals calculation
+- Japanese translation documentation
+- statistical experiment analysis
+- A/B testing metrics
+- user exposure tracking
+- sequential event analysis

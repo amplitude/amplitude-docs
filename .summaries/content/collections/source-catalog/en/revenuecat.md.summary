@@ -1,5 +1,14 @@
-# Summary
-This documentation page describes the RevenueCat integration with Amplitude, which allows developers to send subscription data from RevenueCat to Amplitude for cohort analysis and user journey tracking, including setup steps in both platforms and configuration options for event naming and revenue reporting.
+**Summary:** This documentation describes the RevenueCat source integration for Amplitude, which enables tracking of mobile app subscription events and customer behavioral analysis by connecting RevenueCat's subscription infrastructure with Amplitude's analytics platform through API key configuration.
 
-# Keywords
-RevenueCat, subscription infrastructure, mobile apps, behavioral cohort, API key, event naming, proceeds vs revenue, cross-platform subscriptions, user ID matching, subscription analytics
+**Keywords:**
+- RevenueCat source integration
+- mobile app subscriptions
+- subscription infrastructure
+- behavioral cohort analysis
+- cross-platform subscriptions
+- Amplitude API key setup
+- RevenueCat dashboard integration
+- subscription event tracking
+- proceeds vs revenue reporting
+- user ID matching
+- subscription management analytics

@@ -1,14 +1,20 @@
-# Summary
-This documentation page explains troubleshooting steps for missing data in Amplitude, covering issues like instrumentation limits, hidden/blocked/deleted data, schema configuration for unplanned data, and data ingestion delays that can prevent events or properties from appearing in analyses.
+**Summary:** This troubleshooting guide covers scenarios where events, event properties, or user properties are missing from Amplitude analytics despite successful data transmission, including instrumentation limits, hidden/blocked/deleted data, unplanned data schema conflicts, and ingestion delays.
 
-# Keywords
-- instrumentation limit
+**Keywords:**
+- instrumentation limits
 - hidden events
-- blocked properties
+- blocked data
+- deleted properties
 - unplanned data
-- schema configuration
-- data ingestion delay
-- event upload threshold
+- schema conflicts
+- tracking plan
+- data ingestion delays
+- Mobile SDK event upload threshold
+- Export API
+- Amplitude Data
 - display names
-- Mobile SDK
+- drop filters
 - Identity API
+- user properties
+- event properties
+- raw data export

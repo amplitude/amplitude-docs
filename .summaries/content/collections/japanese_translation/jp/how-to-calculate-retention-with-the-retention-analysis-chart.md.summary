@@ -1,16 +1,16 @@
-# Summary
-This documentation explains how Amplitude calculates different types of retention (Return Later, Return On) in the Retention Analysis chart, detailing the calculation methods for specific cohort entry dates versus overall retention, and how to interpret retention trends over time including the differences in numerator and denominator calculations.
+**Summary:** This Japanese documentation explains how Amplitude calculates retention rates using the Retention Analysis chart, covering two main retention types: "Return On or After" (リターン以降) and "Return On" (リターン時点) with detailed formulas for cohort-specific and overall retention calculations.
 
-# Keywords
-- retention analysis chart
-- return later retention
-- return on retention
-- cohort entry date
-- overall retention
-- retention calculation
-- retention intervals
-- incomplete data handling
+**Keywords:**
+- Amplitude retention analysis chart
+- リターン以降リテンション (Return On or After retention)
+- リターン時点リテンション (Return On retention)
+- cohort retention calculation
+- retention rate formulas
+- コホート参加日 (cohort entry date)
+- retention interval
+- numerator denominator retention calculation
+- incomplete data exclusion
 - retention visualization
-- retention trends
-- numerator/denominator methodology
-- time-based retention metrics
+- Japanese Amplitude documentation
+- retention analysis chart nuances
+- overall retention vs specific cohort retention

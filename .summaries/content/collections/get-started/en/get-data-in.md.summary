@@ -1,17 +1,18 @@
-## Summary
-This documentation page explains how to get data into Amplitude Analytics from your product or third-party sources, covering SDK implementation (particularly the Browser SDK), API key usage, and alternative data import methods, while also providing references to important APIs and resources for developers.
+**Summary:** This getting started guide explains how to send data to Amplitude Analytics using SDKs (particularly Browser SDK), third-party integrations, and various APIs, with emphasis on project-level API key initialization and JavaScript snippet implementation for web tracking.
 
-## Keywords
-- data instrumentation
-- Browser SDK
-- API key
-- JavaScript snippet
-- third-party data sources
-- Identify API
-- HTTP API v2
-- Batch API
+**Keywords:**
+- Amplitude Analytics data ingestion
+- Browser SDK implementation
+- API key initialization
+- JavaScript snippet integration
+- Project-level data tracking
+- Third-party data sources
+- Identify API user properties
 - Dashboard REST API
-- Export API
-- Attribution API
+- Export API JSON files
+- Attribution API campaigns
+- HTTP API v2 server endpoint
 - Behavioral Cohorts API
-- data taxonomy
+- Data taxonomy planning
+- SDK instrumentation
+- amplitude.init() statements

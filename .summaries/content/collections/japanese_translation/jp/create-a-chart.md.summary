@@ -1,14 +1,18 @@
-## Summary
-This documentation page explains how to create and manage charts in Amplitude Analytics, including saving charts, adding them to notebooks/dashboards, and using various chart management options like exporting, archiving, and zooming functionality.
+**Summary:** This Japanese documentation explains how to create and manage charts in Amplitude Analytics, covering chart creation workflow, saving process with modal dialogs, and chart management options including visibility settings, export formats (PNG, PDF, CSV), archiving, and zoom functionality.
 
-## Keywords
-- Amplitude charts
-- Chart creation workflow
-- Chart management options
-- Save chart functionality
-- Chart export options
-- Chart archiving
-- Chart zoom functionality
-- Notebook integration
-- Chart visibility settings
-- Chart sharing
+**Keywords:**
+- Amplitude Analytics charts
+- Japanese translation documentation
+- chart creation workflow
+- save modal dialog
+- chart management options
+- visibility settings (リスト非表示)
+- export formats PNG PDF CSV
+- shared links (共有リンク)
+- notebook integration
+- chart archiving
+- zoom functionality
+- dashboard integration
+- chart flyout selection
+- 詳細 dropdown menu
+- ノートブックビュー

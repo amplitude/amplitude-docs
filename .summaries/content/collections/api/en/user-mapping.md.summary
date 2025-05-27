@@ -1,15 +1,17 @@
-# Summary
-The User Mapping (Aliasing) API enables mapping different user IDs across projects to a global user ID, allowing accurate cross-project user counting while maintaining separate user properties for each original ID, with specific batch limits (2000 requests/batch, 1MB max) and rate limits (50 events/second).
+**Summary:** Documents the User Mapping (Aliasing) API that maps different user IDs to a global user ID across projects in Amplitude's Portfolio add-on, using the `/usermap` endpoint with mapping parameters for user_id, global_user_id, and unmap operations.
 
-# Keywords
-- user mapping
-- aliasing API
-- global user ID
-- cross-project view
-- user remapping
-- user unmapping
-- portfolio add-on
-- batch limits
-- rate throttling
-- event streams
-- user property persistence
+**Keywords:**
+- User Mapping API
+- Aliasing API
+- global_user_id
+- /usermap endpoint
+- Portfolio add-on
+- cross-project user mapping
+- user_id mapping
+- unmap parameter
+- amplitude_id
+- mapped_from mapped_to
+- api.amplitude.com/usermap
+- batch limits 2000 requests
+- rate limits 50 events per second
+- JSON mapping object

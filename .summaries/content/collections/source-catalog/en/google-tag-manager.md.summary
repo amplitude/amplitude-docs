@@ -1,18 +1,34 @@
-## Summary
-This documentation page describes the Google Tag Manager (GTM) client-side template for Amplitude Analytics, which uses the Amplitude Browser SDK 2.0 for data collection. It provides detailed instructions for implementing and configuring the template, including initialization options, event tracking, user properties, and various autocapture features.
+**Summary:**
+This documentation covers the Google Tag Manager (GTM) template for Amplitude Analytics Browser SDK 2.0, detailing client-side implementation including container setup, tag configuration, autocapture options, event tracking, user properties management, and breaking changes from the legacy Marketing Analytics SDK.
 
-## Keywords
+**Keywords:**
 - Google Tag Manager template
-- Amplitude Browser SDK 2.0
-- event tracking
-- autocapture
-- user properties
-- session tracking
+- Amplitude Analytics Browser SDK 2.0
+- client-side tracking
+- GTM container configuration
+- autocapture events
 - page view tracking
-- cross-domain tracking
-- marketing attribution
-- initialization options
-- breaking changes
+- session tracking
 - form interaction tracking
+- file downloads tracking
+- marketing attribution tracking
+- event streaming
+- raw events integration
+- user properties identification
+- group properties management
+- revenue tracking
+- device ID management
+- session ID management
+- cross-domain tracking
 - EU data residency
-- custom plugins
+- breaking changes checklist
+- legacy page view properties
+- subdomain attribution tracking
+- user agent parser
+- instance name configuration
+- tag sequencing
+- plugin integration
+- flush events
+- opt-out tracking
+- cookie management
+- deferred initialization

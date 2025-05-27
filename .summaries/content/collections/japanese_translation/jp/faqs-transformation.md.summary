@@ -1,14 +1,15 @@
 ## Summary
-This documentation page covers FAQs about Amplitude's Transformation feature, explaining how event and property transformations affect saved charts, the behavior of merged events, prioritization of property values during integration, and limitations such as the inability to create transformations from existing transformations or view source events separately after transformation.
+This Japanese FAQ documentation covers Amplitude's event and property transformation features, specifically addressing how saved charts behave when events are merged, bulk updating procedures, property consolidation priority rules, and transformation reversal processes.
 
 ## Keywords
-- Event transformation
-- Property integration
-- Chart behavior after transformation
-- Merged events
-- Transformation limitations
-- Bulk chart updates
-- Event property prioritization
-- Retroactive transformations
-- Source event visibility
-- Transformation unbundling
+- Amplitude transformation
+- event merging (イベント統合)
+- property consolidation (プロパティ統合)
+- saved charts behavior
+- bulk chart updates
+- transformation reversal
+- retroactive transformations
+- Japanese FAQ
+- event querying
+- chart dropdown behavior
+- property value priority

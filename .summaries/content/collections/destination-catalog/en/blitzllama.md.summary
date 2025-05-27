@@ -1,14 +1,14 @@
-## Summary
-This documentation page describes the Blitzllama integration with Amplitude, which allows streaming feedback data from Blitzllama's in-product surveys to Amplitude for deeper analysis alongside user attributes, with setup requiring only an Amplitude API key to establish the connection.
+**Summary:** This documentation describes the Blitzllama destination integration that enables streaming qualitative feedback data from Blitzllama's GPT-powered in-product surveys to Amplitude for analysis with user attributes and dashboard creation.
 
-## Keywords
-- Blitzllama
+**Keywords:**
+- Blitzllama destination integration
+- GPT-powered feedback analytics
 - in-product surveys
-- feedback analytics
-- GPT-powered categorization
-- qualitative feedback
-- Amplitude integration
+- qualitative feedback collection
+- survey response categorization
+- feedback data streaming
+- Amplitude project API key
+- Blitzllama dashboard Destinations
 - feedback dashboards
-- API key
 - sentiment analysis
-- feedback segmentation
+- survey responses topics

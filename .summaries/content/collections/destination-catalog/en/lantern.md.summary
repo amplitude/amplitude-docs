@@ -1,13 +1,14 @@
-# Summary
-This documentation page describes the Lantern event streaming destination in Amplitude, which allows syncing analytics events to Lantern's Customer Success Platform to predict customer behavior and increase Net Dollar Retention by connecting with customers at optimal times.
+**Summary:** This documentation describes the Amplitude to Lantern event streaming integration that syncs analytics events to Lantern's Customer Success Platform using webhook ID authentication, with specific data size limits (64 bytes max event size, 4.25MB max event data) and user_id to analytics_id matching for customer success workflows.
 
-# Keywords
+**Keywords:**
 - Lantern Customer Success Platform
-- event streaming destination
-- webhook ID
-- analytics_id matching
+- event-streaming integration
+- webhook ID authentication
+- user_id to analytics_id matching
+- 64 bytes maximum event size
+- 4.25MB maximum event data
 - Net Dollar Retention
+- B2B customer success
 - event properties filtering
-- B2B customer engagement
-- event size limits
-- customer expansion prediction
+- partner-maintained integration
+- paid Lantern plan requirement

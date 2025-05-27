@@ -1,14 +1,16 @@
-## Summary
-This documentation explains how to configure schema settings in Amplitude to handle schema violations (unplanned event types, properties, or property values), with options to accept, trigger warnings, or reject data. It also describes how to view validation errors for schema violations through the Data Management interface.
+**Summary:** This Japanese documentation explains how to configure Amplitude's schema settings to handle three types of schema violations: unplanned event types, unplanned event/user properties, and unplanned property values, with options to accept/auto-add to schema, trigger warnings, or reject data, plus viewing validation errors in the validation panel.
 
-## Keywords
-- schema violations
-- unplanned event types
-- unplanned properties
-- property value type mismatch
-- schema settings configuration
-- validation errors
-- data governance
-- data management addon
-- accept/reject data
-- schema validation
+**Keywords:**
+- schema violations (スキーマ違反)
+- unplanned event types (計画外のイベントタイプ)
+- unplanned event/user properties (計画外のイベント/ユーザープロパティ)
+- unplanned property values (計画外のプロパティ値)
+- schema settings configuration (スキーマ設定構成)
+- validation errors panel (検証エラーパネル)
+- data management addon (データ管理アドオン)
+- auto-add to schema (スキーマ自動追加)
+- reject data ingestion (データ取り込み拒否)
+- trigger warnings (警告トリガー)
+- Govern menu navigation
+- Japanese translation
+- Amplitude schema validation

@@ -1,19 +1,30 @@
-## Summary
-The Android-Kotlin SDK enables tracking events in Android applications with features for user identification, session management, and event batching. It supports autocapture options for sessions, app lifecycles, screen views, deep links, and element interactions, with extensive configuration options for privacy controls and offline tracking.
+**Summary:** This documentation covers the Android-Kotlin SDK for Amplitude analytics, including installation via Gradle/Maven, configuration options (batching, EU data residency, autocapture), event tracking methods (track, identify, revenue), user management (sessions, groups, device/user IDs), and advanced features like plugins, offline mode, and privacy controls.
 
-## Keywords
+**Keywords:**
 - Android-Kotlin SDK
-- Event tracking
-- Autocapture
-- User identification
-- Session management
-- Group identify
-- Revenue tracking
+- Amplitude analytics
+- com.amplitude:analytics-android
+- Gradle Maven installation
+- Configuration options
+- flushQueueSize flushIntervalMillis
+- ServerZone.EU data residency
+- Autocapture AutocaptureOption
+- SESSIONS APP_LIFECYCLES SCREEN_VIEWS DEEP_LINKS ELEMENT_INTERACTIONS
+- track() identify() revenue() methods
+- BaseEvent eventProperties
+- User sessions sessionId
+- minTimeBetweenSessionsMillis
 - Device ID lifecycle
-- Network tracking plugin
-- Offline mode
-- Element interactions
-- Location tracking
-- COPPA control
-- Advertiser ID
-- App Set ID
+- ADID useAdvertisingIdForDeviceId
+- App Set ID useAppSetIdForDeviceId
+- TrackingOptions COPPA control
+- Plugins enrichment destination
+- NetworkTrackingPlugin OkHttp
+- Offline mode ACCESS_NETWORK_STATE
+- Multiple instances instanceName
+- Location tracking locationListening
+- optOut privacy
+- Logger LoggerProvider
+- EventCallback
+- Group identify groupType groupName
+- Revenue productId price quantity

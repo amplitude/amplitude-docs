@@ -1,16 +1,18 @@
-## Summary
-This documentation page addresses FAQs about sending data to Amplitude, covering how events count toward monthly volume limits, strategies for reducing event volume, and the impact of blocking, deleting, or hiding events on quota usage, with clarification that only blocked or deleted events don't count toward monthly limits.
+**Summary:** This FAQ documentation covers Amplitude's data ingestion limits and event volume management, including monthly event volume calculations, the 2000 event type per project limit, and strategies for reducing usage through blocking/deleting events and properties.
 
-## Keywords
+**Keywords:**
 - monthly event volume limit
-- event type limit
+- 2000 event type per project limit
+- Amplitude ingestion system
 - blocking events
 - deleting events
-- hidden events
+- event properties limits
+- user properties limits
 - backfilled events
 - inactive events
-- event properties
-- user properties
+- hidden events
+- computed revenue events
+- Export API
+- Amplitude Data
+- calendar month basis
 - per-project limits
-- instrumentation limit
-- quota management

@@ -1,14 +1,15 @@
-# Summary
-This documentation page serves as the landing page for Amplitude's Feature Experiment functionality, organizing content into six main categories: Feature Flagging, Feature Experimentation, Web Experimentation, SDKs, APIs, and a Demo environment, each with specific descriptions and navigation links to related documentation.
+**Summary:** Landing page for Amplitude Experiment documentation covering feature flagging, A/B testing, multivariate experiments, Multi-armed Bandit experiments, web experimentation, SDKs, and APIs with navigation to specific documentation sections.
 
-# Keywords
-- feature flags
+**Keywords:**
+- Amplitude Experiment
+- feature flagging
 - A/B testing
 - multivariate experiments
 - Multi-armed Bandit
-- remote configuration
 - web experimentation
-- Experiment SDKs
-- Experiment APIs
+- experiment SDKs
+- experiment APIs
+- landing-page-experiment template
+- remote configuration
 - product optimization
-- codeless experimentation
+- experimentation solution

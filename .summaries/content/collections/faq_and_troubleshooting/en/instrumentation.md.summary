@@ -1,14 +1,22 @@
-## Summary
-This documentation page addresses common questions about Amplitude instrumentation, covering topics such as data immutability after ingestion, Device ID assignment across SDKs and server-side implementations, event naming uniqueness, handling array values, troubleshooting null device information, session ID behavior, subscription revenue tracking, and filtering bot traffic.
+**Summary:** This FAQ documentation covers Amplitude instrumentation topics including data immutability after ingestion, Device ID configuration differences between SDKs and HTTP API, event naming uniqueness requirements, array property support, device information parsing, Session ID behavior, subscription revenue events, and bot traffic filtering methods.
 
-## Keywords
+**Keywords:**
+- Amplitude instrumentation
 - data immutability
-- Device ID assignment
-- IDFV/IDFA
-- event name uniqueness
+- User Privacy API
+- GDPR compliance
+- Device ID configuration
+- SDK vs HTTP API
+- Android UUID
+- iOS IDFV/IDFA
+- server-side events
+- event naming uniqueness
 - array properties
-- null device information
+- device information parsing
 - Session ID behavior
+- session timeout
 - subscription revenue events
 - bot traffic filtering
-- User Agent handling
+- User Agent
+- Data Filters
+- IP address blocking

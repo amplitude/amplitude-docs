@@ -1,16 +1,19 @@
-## Summary
-The Ampli CLI is a command-line tool that works with Amplitude Data to help developers correctly instrument tracking code in their applications, providing features for generating type-safe analytics SDKs, verifying instrumentation, and syncing with tracking plans defined in Amplitude Data.
+**Summary:** This documentation covers the Ampli CLI tool for Amplitude's analytics tracking, including installation via Homebrew/npm, initialization with `ampli pull`, generating type-safe analytics SDKs from tracking plans, and verification commands like `ampli status` for linting source code instrumentation.
 
-## Keywords
-- ampli pull
-- ampli status
-- tracking plan
-- instrumentation verification
-- type-safe analytics
+**Keywords:**
+- Ampli CLI
+- @amplitude/ampli package
+- ampli pull command
+- ampli status command
+- tracking plan generation
+- type-safe analytics SDK
+- Amplitude Data integration
+- ampli.json configuration
 - source code linting
-- CI integration
+- instrumentation verification
+- CI pipeline integration
 - monorepo support
-- analytics SDK generation
-- tracking library
 - ampli configure
-- ampli.json
+- ampli init
+- branch-based tracking plans
+- implementation status updates

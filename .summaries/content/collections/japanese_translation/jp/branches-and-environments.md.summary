@@ -1,14 +1,18 @@
 ## Summary
-This documentation explains how to use branches and environments in Amplitude Data for tracking plans, including creating branches for parallel work, publishing versions, and merging changes back to the main branch. It details how certain actions persist across all environments while others are environment-specific, and outlines the workflow for branch creation, updates, and integration.
+This Japanese documentation page explains Amplitude Data's branch and environment system for tracking plans, covering branch creation, version publishing, environment-specific actions, and merging workflows back to the main branch.
 
 ## Keywords
+- Amplitude Data
 - tracking plan branches
+- Japanese translation
 - version publishing
+- environment filtering
+- branch merging
+- main branch integration
+- staging area
+- pending changes
+- team collaboration workflow
+- branch creation and deletion
 - environment-specific actions
-- branch integration
-- main branch
-- staging changes
-- branch creation
-- branch deletion
-- cross-environment persistence
-- approval workflow
+- approval process
+- instrumentation status

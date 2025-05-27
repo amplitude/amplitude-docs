@@ -1,17 +1,21 @@
-## Summary
-This documentation explains the warehouse-native DBT integration for Amplitude, which allows users to create and update multiple data models simultaneously using a DBT manifest file by annotating metadata with specific `amplitude_meta` configurations for different model types (EVENT, EVENT_PROPERTIES, USER_PROPERTIES, GROUP_PROPERTIES).
+**Summary:** Documents the warehouse-native DBT integration for Amplitude that enables bulk management of data models through DBT manifest file annotations, supporting create/update operations for six data model types (EVENT, EVENT_PROPERTIES, CURRENT_USER_PROPERTIES, HISTORICAL_USER_PROPERTIES, CURRENT_GROUP_PROPERTIES, HISTORICAL_GROUP_PROPERTIES) using `amplitude_meta` metadata configuration.
 
-## Keywords
+**Keywords:**
 - warehouse-native DBT integration
-- amplitude_meta
-- data_models
-- manifest file
-- special_columns
-- EVENT model
-- EVENT_PROPERTIES model
-- CURRENT_USER_PROPERTIES
-- HISTORICAL_USER_PROPERTIES
-- CURRENT_GROUP_PROPERTIES
-- HISTORICAL_GROUP_PROPERTIES
-- unique_id
-- event_time
+- DBT manifest file
+- amplitude_meta metadata
+- data_models configuration
+- special_columns mapping
+- EVENT data model type
+- EVENT_PROPERTIES data model type
+- CURRENT_USER_PROPERTIES data model type
+- HISTORICAL_USER_PROPERTIES data model type
+- CURRENT_GROUP_PROPERTIES data model type
+- HISTORICAL_GROUP_PROPERTIES data model type
+- unique_id column
+- event_time column
+- start_time column
+- end_time column
+- event_type column
+- bulk model management
+- warehouse-native Amplitude

@@ -1,14 +1,17 @@
 ## Summary
-This documentation explains how to interpret the Cumulative Exposure Graph in Amplitude Experiment, which shows the number of users exposed to an experiment over time. It covers various graph patterns including standard cumulative exposure, inflection points, decreasing slopes, flattened slopes, and diverging lines, along with their potential causes and implications for experiment validity.
+This documentation explains how to interpret cumulative exposure graphs in Amplitude Experiment, covering graph components (x-axis showing first exposure dates, y-axis showing cumulative exposed users), common patterns like inflection points from traffic allocation changes, declining slopes from static cohorts, flattened slopes from seasonal usage, and diverging variant lines from staggered rollouts or sticky bucketing issues.
 
 ## Keywords
-- Cumulative Exposure Graph
-- Experiment exposure tracking
-- Variant traffic allocation
-- Inflection points
-- Static cohorts
-- Sticky bucketing
-- Seasonality patterns
-- Traffic distribution
-- Exposure events
-- Statistical significance timing
+- Amplitude Experiment
+- cumulative exposure graph
+- exposure events vs assignment events
+- variant traffic allocation
+- inflection points
+- static cohorts vs dynamic cohorts
+- sticky bucketing
+- Simpson's paradox
+- novelty effects
+- seasonal traffic patterns
+- targeting criteria changes
+- sample size calculations
+- weighted averages in traffic allocation

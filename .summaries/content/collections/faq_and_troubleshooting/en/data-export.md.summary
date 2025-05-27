@@ -1,14 +1,13 @@
-## Summary
-This documentation page addresses FAQs about exporting data from Amplitude, explaining that while direct export of selected raw data for charts or events isn't supported, alternatives include using the Export API for JSON-formatted data, the Query Add-on for SQL-like queries in Snowflake, and Amazon S3 Export for transferring event data to S3 buckets.
+**Summary:** This FAQ documentation explains that Amplitude does not support exporting raw event data for specific charts or events in a SQL-like manner, and provides three alternative solutions: Export API for JSON format exports, Query add-on for Snowflake SQL queries, and Amazon S3 Export integration.
 
-## Keywords
-- Export API
-- raw event data
-- Amazon S3 Export
-- Query Add-on
-- Snowflake ETL
+**Keywords:**
 - data export limitations
-- JSON format
-- event properties
-- data governance
-- export alternatives
+- raw event data export
+- Export API JSON format
+- Query add-on Snowflake SQL
+- Amazon S3 Export integration
+- chart data extraction
+- event property values export
+- SQL-like queries restriction
+- Amplitude data governance
+- event data isolation

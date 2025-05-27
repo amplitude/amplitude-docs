@@ -1,14 +1,20 @@
-## Summary
-This documentation page explains how to use the Events module in Amplitude charts, detailing how to add events to analyses, use wildcards for event searches, and apply Filter by/Group-by specifications with event properties to refine analyses and segment data.
+**Summary:** This documentation explains how to use the Events module in Amplitude chart building, covering event selection, default Amplitude events (Top Global Events, Any Active Event, New User, etc.), wildcard search functionality with glob operators, and event filtering/grouping using event properties and user properties.
 
-## Keywords
+**Keywords:**
 - Events module
-- Chart building
-- Event properties
+- Amplitude chart building
+- Add Event or Metric
+- Top Global Events
+- Any Active Event
+- New User event
+- wildcard search
+- glob match operator
 - Filter by specification
 - Group-by specification
-- Wildcards search
-- Default Amplitude events
-- Event conditions
-- Property segmentation
-- Chart analysis refinement
+- event properties
+- user properties
+- Measured As module
+- Segment By module
+- User Composition charts
+- active events vs non-active events
+- event instrumentation

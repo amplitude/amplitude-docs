@@ -1,15 +1,24 @@
-# SDK Quickstart Summary
+## Summary
 
-This documentation page provides a comprehensive guide for integrating Amplitude Analytics SDKs across multiple platforms including Browser, Node, Android, iOS, React Native, Flutter, Go, Unity, and Unreal. Each section includes installation instructions, initialization code, event tracking examples, and optional Ampli SDK integration for type-safe analytics.
+This SDK quickstart documentation provides installation, initialization, and basic usage instructions for Amplitude Analytics SDKs across 12 platforms: Browser (JavaScript/TypeScript), Node.js, Android (Kotlin/Java), iOS (Swift/Objective-C), JRE (Java/Kotlin), Python, React Native, Flutter, Go, Unity, and Unreal Engine. Each platform section includes package manager installation commands, API key initialization with optional EU data residency configuration, event tracking with properties, and Ampli code generation examples.
 
 ## Keywords
-- SDK initialization
-- event tracking
-- cross-platform integration
-- Amplitude API key
-- identify method
-- EU data residency
-- platform-specific implementation
-- TypeScript/JavaScript/Kotlin/Swift/Java/Python/Dart/Go/C# support
-- Ampli SDK
-- event properties
+
+- Amplitude Analytics SDK
+- Browser JavaScript TypeScript npm yarn CDN script loader
+- Node.js analytics-node package
+- Android Kotlin Java Gradle Maven analytics-android
+- iOS Swift Objective-C CocoaPods SPM Carthage AmplitudeSwift
+- JRE Java Kotlin analytics JSONObject
+- Python amplitude-analytics pip BaseEvent
+- React Native analytics-react-native async-storage
+- Flutter amplitude_flutter Dart
+- Go analytics-go amplitude package
+- Unity unitypackage amplitude-unity plugin
+- Unreal Engine AmplitudeUnreal plugin
+- init() track() identify() Identify class
+- event properties user properties
+- API key initialization
+- EU data residency serverZone configuration
+- Ampli code generation
+- package installation npm yarn pip gradle maven cocoapods

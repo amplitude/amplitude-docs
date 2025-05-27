@@ -1,14 +1,17 @@
-## Summary
-This documentation explains Amplitude's transformation feature, which allows retroactive modification of event data structures without changing the underlying codebase. It covers how to merge events, consolidate properties, modify property values, and hide property values, along with instructions for editing and deleting transformations.
+**Summary:** This documentation covers Amplitude Data's transformation feature for retroactively modifying event data structures, including merging events/properties, renaming property values, hiding values, and managing transformations without affecting raw Snowflake/Redshift data.
 
-## Keywords
-- Event data transformation
-- Retroactive data modification
-- Event merging
-- Property consolidation
-- Property value renaming
-- Value hiding
-- Transformation management
-- Query-time transformations
-- Data structure correction
-- Implementation error fixes
+**Keywords:**
+- Amplitude Data transformations
+- retroactive event data modification
+- merge events functionality
+- event property consolidation
+- user property consolidation
+- property value renaming
+- hide property values
+- transformation management
+- query-time data transformation
+- Snowflake Redshift raw data preservation
+- main branch transformations
+- event structure modification
+- property value reassignment
+- transformation editing deletion

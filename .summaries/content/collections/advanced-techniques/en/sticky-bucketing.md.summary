@@ -1,14 +1,23 @@
-# Summary
-Sticky bucketing in Amplitude Experiment ensures users consistently see the same variant even when experiment targeting criteria or rollout percentages change, helping prevent variant jumping. It's only available for feature experiments (not flags) and works by checking if a user already has a value for the experiment's user property before re-evaluating them.
+## Summary
+This documentation explains Amplitude Experiment's sticky bucketing feature for feature experiments, which maintains consistent variant assignments for users even when experiment targeting criteria, percentage rollout, or rollout weights change, and includes configuration steps, use cases, and debugging methods using Experiment Assignment events.
 
-# Keywords
-- variant jumping prevention
-- consistent user experience
-- experiment targeting persistence
-- feature experiments only
-- deterministic hashing
+## Keywords
+- sticky bucketing
+- Amplitude Experiment
+- variant jumping
+- feature experiments
+- consistent bucketing
+- deterministic hashing algorithm
+- user property assignment
+- percentage rollout
+- targeting criteria
+- rollout weights
+- Experiment Assignment events
+- event stream debugging
+- flag evaluation
+- treatment variant
+- control variant
+- off variant
 - bucketing delivery settings
-- user property evaluation
-- experiment assignment events
 - dynamic cohort targeting
-- experiment rollout management
+- flag version tracking

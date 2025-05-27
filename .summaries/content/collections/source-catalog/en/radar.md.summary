@@ -1,14 +1,14 @@
-# Summary
-Radar's geofencing platform integrates with Amplitude to share real-time location-based user data, enabling product and marketing teams to analyze how location factors influence user behavior without requiring technical expertise.
+**Summary:** This documentation describes the Radar-to-Amplitude integration for ingesting geofencing and location tracking events as raw events, enabling analysis of location-based user behavior without requiring Amplitude-side configuration.
 
-## Keywords
-- geofencing
-- location-based analytics
-- location tracking
-- location-triggered notifications
+**Keywords:**
+- Radar geofencing platform
+- location-based events ingestion
+- raw-events integration type
+- geofencing analytics
+- location tracking data
+- partner-maintained integration
+- real-time location data
+- location-triggered user behavior
+- geofencing SDKs and APIs
 - pickup and delivery tracking
-- store locators
-- address autocomplete
-- location verification
-- real-time user data
-- partner integration
+- location verification events

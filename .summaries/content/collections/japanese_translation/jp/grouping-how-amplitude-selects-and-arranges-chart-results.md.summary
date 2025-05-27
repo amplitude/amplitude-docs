@@ -1,14 +1,15 @@
-# Summary
-This documentation explains how Amplitude Analytics selects and arranges chart results when using the grouping feature, including how results are truncated (limited to 100 groups for single grouping and 500 for double grouping) and the specific ordering logic used for different metrics when displaying breakdown tables.
+**Summary:** This Japanese documentation explains Amplitude Analytics' grouping functionality for chart results, including performance limits (100 groups for single grouping, 500 for dual grouping), result truncation logic, and the specific ordering criteria used for different metrics like unique counts, totals, property distributions, and formula calculations in breakdown tables.
 
-# Keywords
-- Grouping truncation
-- Chart result prioritization
-- Event classification
-- Metric ordering rules
-- Group limit thresholds
-- Formula grouping behavior
-- Breakdown tables
-- Performance optimization
-- Query result selection
-- Metric-specific sorting
+**Keywords:**
+- Amplitude Analytics grouping
+- chart result selection
+- group truncation limits
+- breakdown table ordering
+- Japanese translation
+- event segmentation charts
+- performance constraints
+- metric prioritization
+- formula grouping
+- property value distribution
+- unique user counts
+- event totals

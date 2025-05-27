@@ -1,61 +1,48 @@
-# Impact Analysis in Amplitude
+## Amplitude Impact Analysis
 
-Impact Analysis is a powerful analytical tool in Amplitude that helps product teams understand how user engagement with one feature affects other behaviors in the product. This causal inference tool visualizes the relationship between a "treatment event" (a user's first interaction with a feature) and subsequent "outcome events" (other user behaviors).
+Impact Analysis is a behavioral analytics feature within Amplitude that measures how first-time engagement with specific events (treatment events) influences the frequency of subsequent user behaviors (outcome events). This correlation analysis tool helps product teams understand the downstream effects of user actions and validate behavioral hypotheses through data-driven insights.
 
-## Key Features and Concepts
+## Product Relationships and Feature Integration
 
-### Core Functionality
-- Measures how triggering one event for the first time affects the frequency of other events
-- Compares user behavior before and after the treatment event
-- Provides visualization of behavioral changes on a relative n-day basis
-- Available on Amplitude's Growth and Enterprise plans
+Impact Analysis operates as a specialized chart type within Amplitude's broader analytics ecosystem, specifically integrated with:
 
-### Key Metrics
-1. **Average**: Shows the average number of times users performed the outcome event per day
-2. **Active %**: Displays the percentage of users who performed the outcome event at least once per day
-3. **Frequency**: Indicates how many times active users performed the outcome event per day
-4. **Properties**: Analyzes how user properties change after the treatment event
+- **Events Module**: Sources treatment and outcome events from tracked user interactions
+- **Segmentation Module**: Provides user segmentation capabilities for refined analysis
+- **Growth and Enterprise Plans**: Exclusive availability tier with enhanced analytical capabilities
 
-### Analysis Framework
-- **Treatment Event**: The first-time interaction that serves as the intervention point
-- **Outcome Event**: The behavior being measured for impact
-- **Time Interval**: Analysis period before and after the treatment event (typically 7, 14, or 28 days)
-
-## Relationship Between Components
-
-The Impact Analysis tool connects feature adoption with broader user behavior patterns by:
-1. Identifying users who performed a treatment event for the first time
-2. Measuring their behavior before this event (baseline)
-3. Comparing post-treatment behavior to the baseline
-4. Visualizing the relative change in behavior
-
-This creates a clear relationship between product features and user outcomes, helping teams understand which features drive desired behaviors.
+The feature bridges the gap between basic event tracking and advanced causal inference, offering a middle ground between simple correlation metrics and full randomized experimentation frameworks.
 
 ## Key Nomenclature and Definitions
 
-- **Treatment Event**: The first-time interaction with a feature that serves as the intervention point
-- **Outcome Event**: The behavior being measured for impact after the treatment
-- **Relative n-day Basis**: The time-based framework for comparing pre- and post-treatment behavior
-- **Causal Inference**: The process of determining whether one event causes another
-- **Alternate Hypotheses**: Other potential explanations for observed behavior changes
-- **User Counts**: The number of users included in each day of the analysis
+**Treatment Event**: The initial user action or engagement being analyzed for its downstream impact on user behavior. Impact Analysis specifically tracks first-time engagement with these events.
 
-## Integration in Amplitude's Ecosystem
+**Outcome Event**: The subsequent user behavior or action that may be influenced by the treatment event. The analysis measures changes in frequency and patterns of these events.
 
-Impact Analysis fits into Amplitude's broader analytics ecosystem by:
-- Complementing standard event tracking and cohort analysis
-- Providing deeper insights than basic correlation analysis
-- Supporting product experimentation decisions
-- Helping teams prioritize feature development based on behavioral impact
-- Serving as a preliminary step before formal A/B testing
+**Relative N-Day Timeline**: The temporal framework used to measure impact, tracking how outcome event frequency changes over specified time periods following the treatment event.
 
-## Best Practices for Interpretation
+**Lookback Periods**: Time-bound analysis windows that vary based on selected intervals:
+- Daily analysis: 90 calendar days
+- Weekly analysis: 91 calendar days  
+- Monthly analysis: 120 calendar days
+- Quarterly analysis: 360 calendar days
 
-1. **Consider alternate hypotheses** for observed changes
-2. **Check user counts** to ensure statistical significance
-3. **Use as guidance for experimentation** rather than as a replacement
-4. **Look for sustained changes** rather than temporary spikes
-5. **Combine with other analysis tools** for comprehensive understanding
-6. **Segment users** to identify different impact patterns across user groups
+**Four Core Metrics**:
+- **Average Metric**: Mean number of outcome event triggers per user
+- **Active Percentage**: Proportion of users who perform the outcome event
+- **Frequency Distribution**: Pattern analysis of how often users engage with outcome events
+- **Event Properties**: Quantitative analysis (average/sum) of specific event attributes
 
-Impact Analysis serves as a bridge between basic analytics and formal experimentation, helping product teams develop hypotheses about feature impact that can be further validated through controlled experiments.
+## Broader Product Ecosystem Integration
+
+Impact Analysis serves as a bridge between descriptive analytics and predictive insights within Amplitude's product intelligence platform. It complements:
+
+- **Basic event tracking** by adding causal inference capabilities
+- **Segmentation analysis** by revealing behavioral correlations across user groups
+- **Experimentation frameworks** by providing preliminary insights before implementing full A/B tests
+- **Feature discovery processes** by quantifying the impact of new feature adoption on user engagement
+
+The feature supports hypothesis-driven product development by enabling teams to validate assumptions about user behavior patterns and feature effectiveness through statistical correlation analysis, while maintaining awareness of the distinction between correlation and causation.
+
+## Analysis and Validation Framework
+
+Impact Analysis incorporates causal inference best practices, encouraging users to validate findings through multiple approaches including alternate hypothesis testing, user count volatility analysis, and comparison with randomized experimentation results. This methodology helps product teams make more informed decisions about feature development and user experience optimization based on behavioral data patterns.

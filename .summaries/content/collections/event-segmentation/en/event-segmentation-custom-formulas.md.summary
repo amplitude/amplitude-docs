@@ -1,19 +1,29 @@
-# Summary
-This documentation page explains custom formulas in Amplitude's Event Segmentation and Data Table charts, detailing the syntax, available formula types (Metrics, Aggregation, and Function), and providing examples of how to use them to create complex analyses by referencing events with letter designations and performing mathematical operations.
+## Summary
+This documentation explains custom formulas syntax and definitions for Amplitude's Event Segmentation and Data Table charts, covering 20+ formula types including metrics (UNIQUES, TOTALS, PROPSUM), aggregation (ROLLAVG, CUMSUM), and function formulas (LOG, POWER, TRENDLINE) with specific syntax requirements and event letter references.
 
-# Keywords
+## Keywords
 - custom formulas
-- event segmentation
+- Event Segmentation chart
+- Data Table chart
 - formula syntax
-- metrics formulas
-- aggregation formulas
-- function formulas
-- UNIQUES
-- TOTALS
-- PROPSUM
-- CUMSUM
-- ROLLAVG
-- ROLLWIN
+- UNIQUES formula
+- TOTALS formula
+- PROPSUM formula
+- ROLLAVG aggregation
+- CUMSUM aggregation
+- ROLLWIN aggregation
+- TRENDLINE function
+- PERCENTILE formula
+- ARPAU formula
+- HIST formula
+- event letter references
 - arithmetic operations
-- event comparison
+- User Sessions chart
+- formula metrics
+- property grouping
 - cohort comparison
+- revenue formulas
+- HyperLogLog algorithm
+- rolling window
+- natural logarithm
+- ordinary least-squares regression

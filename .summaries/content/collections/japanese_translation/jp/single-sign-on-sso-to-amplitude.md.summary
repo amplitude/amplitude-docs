@@ -1,11 +1,20 @@
-# Summary
-Amplitude supports Single Sign-On (SSO) with SAML 2.0 providers including Auth0, G Suite, Microsoft Azure AD, Okta, and OneLogin. Available only on Scholarship, Growth, and Enterprise plans, SSO can be enforced for organization members and supports just-in-time provisioning for automatically adding new users.
+**Summary:** This Japanese documentation explains Amplitude's Single Sign-On (SSO) implementation using SAML 2.0, covering supported identity providers (Auth0, G Suite, Azure AD, Okta, OneLogin), just-in-time provisioning, email address identification from SAML assertions, and plan availability restrictions.
 
-# Keywords
-- SAML 2.0 SSO providers
+**Keywords:**
+- Amplitude SSO
+- SAML 2.0
+- シングルサインオン (Japanese SSO)
+- Auth0 integration
+- G Suite integration
+- Azure Active Directory
+- Okta integration
+- OneLogin integration
 - Just-in-time provisioning
-- Email address identification
-- SSO enforcement
-- Enterprise default project access
-- Auth0, G Suite, Azure AD, Okta, OneLogin
-- User authentication scheme
+- SAML assertion email identification
+- emailaddress attribute
+- スカラシップ plan (Scholarship plan)
+- グロース plan (Growth plan)
+- エンタープライズ plan (Enterprise plan)
+- Japanese translation documentation
+- Identity provider configuration
+- User roles permissions

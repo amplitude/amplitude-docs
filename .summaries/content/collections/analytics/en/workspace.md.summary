@@ -1,11 +1,13 @@
-# Summary
-The Workspace feature in Amplitude provides a personal space for users to quickly access their saved analyses and draft content, accessible via "Spaces > Personal Space", with filtering capabilities to locate specific content types.
+**Summary:** This documentation describes Amplitude's personal workspace feature accessible via Spaces > Personal Space, which displays user-specific saved analyses and draft content with filtering capabilities for content discovery.
 
-# Keywords
-- Personal Space
-- Amplitude analytics
-- Workspace navigation
-- Content filtering
-- Draft mode
-- Saved analyses
-- User-specific content
+**Keywords:**
+- Amplitude workspace
+- Personal Space navigation
+- Spaces menu
+- saved analyses
+- draft mode content
+- Filter drop-down
+- personal analytics dashboard
+- user-specific content
+- chart organization
+- workspace filtering

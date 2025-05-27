@@ -1,14 +1,20 @@
-# Summary
-This documentation page details the AppsFlyer destination integration in Amplitude, explaining how to configure event streaming from Amplitude to AppsFlyer, including required credentials (S2S Key and App ID), event filtering, property mapping (especially AppsFlyer ID and device identifiers), and supported AppsFlyer properties.
+**Summary:** Documents Amplitude's AppsFlyer streaming integration for forwarding events and cohorts to AppsFlyer, requiring AppsFlyer S2S Key and App ID authentication, with mandatory AppsFlyer ID mapping and support for device identifiers like GAID, IDFA, IDFV, and Customer User ID properties.
 
-# Keywords
-- AppsFlyer integration
-- event streaming
+**Keywords:**
+- AppsFlyer streaming integration
+- AppsFlyer S2S Key authentication
+- AppsFlyer App ID
+- AppsFlyer ID mapping
+- Customer User ID
+- GAID (Google Advertising ID)
+- IDFA (Identifier for Advertisers)
+- IDFV (Identifier for Vendors)
+- Amazon Advertising ID
+- OAID
+- IMEI
+- event streaming destination
 - cohort export
-- S2S Key
-- AppsFlyer ID
-- device identifiers
-- property mapping
-- attribution
-- user behavior analytics
-- marketing campaign effectiveness
+- attribution integration
+- device identifier mapping
+- AppsFlyer event values
+- S2S (Server-to-Server) integration

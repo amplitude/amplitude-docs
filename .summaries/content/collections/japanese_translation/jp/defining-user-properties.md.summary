@@ -1,14 +1,18 @@
-# Summary
-This documentation page details the default user properties automatically tracked by Amplitude SDKs, including location properties determined via MaxMind using IP addresses, and explains how these properties are represented in Amplitude charts. It notes that server-side implementations must explicitly set these properties as they aren't automatically tracked.
+**Summary:** This Japanese documentation page explains how Amplitude automatically tracks user properties through SDKs, including geolocation data derived from IP addresses using MaxMind database, device information, and behavioral cohorts, with specific limitations for server-side data transmission and segmentation capabilities.
 
-# Keywords
-- automatic user property tracking
-- Amplitude SDK properties
-- GeoIP location tracking
-- MaxMind integration
-- device properties
-- platform identification
-- user identification
-- property prefixing
-- server-side implementation requirements
-- property segmentation limitations
+**Keywords:**
+- Amplitude SDK user properties
+- Japanese translation documentation
+- MaxMind GeoIP location tracking
+- 自動トラッキング (automatic tracking)
+- server-side data transmission limitations
+- behavioral cohorts (行動コホート)
+- device ID and user ID properties
+- revenue event tracking
+- Identify API manual configuration
+- JavaScript SDK device family tracking
+- IP address geolocation mapping
+- DMA (designated market area)
+- carrier and platform detection
+- application version tracking
+- amplitude logo prefix properties

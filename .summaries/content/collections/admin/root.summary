@@ -1,44 +1,33 @@
-# Admin Product Overview
-
 ## Product Overview
 
-The Admin product is a management interface that provides administrative capabilities for a broader system or platform. It serves as a central control panel for account management, billing oversight, and authentication controls.
+This administrative platform provides enterprise-level user management capabilities through three integrated modules: comprehensive account management, billing and usage tracking, and Single Sign-On authentication services. The system is designed for organizations requiring centralized control over user access, resource consumption monitoring, and enterprise authentication workflows.
 
-## Key Features and Components
+## Product Relationships and Features
 
-### Account Management
-The account management module enables administrators to oversee user accounts within the system, including user creation/deletion, permission management, profile administration, and account settings configuration.
+The administrative module operates through three interconnected core components:
 
-### Billing and Use
-This component handles financial and usage aspects of the platform, covering invoice management, payment processing, usage tracking and reporting, subscription management, and billing history.
+**Account Management** functions as the central orchestration hub, providing administrative interfaces for user account lifecycle management, permission assignment, and organizational hierarchy configuration. This component serves as the primary control plane for all user-related operations within the platform.
 
-### Single Sign-On (SSO)
-The SSO functionality provides streamlined authentication capabilities, offering integration with identity providers, centralized authentication management, user session control, security policy enforcement for logins, and cross-application authentication.
+**Billing and Usage** handles financial operations and resource analytics, implementing metered service tracking, subscription plan management, and comprehensive billing oversight for organizational accounts. This module provides visibility into resource consumption patterns and cost management tools.
 
-## Nomenclature and Definitions
+**Single Sign-On** delivers enterprise authentication services, enabling seamless integration with existing identity providers and centralized authentication systems. This component facilitates user access through established corporate identity infrastructure.
 
-- **Blueprint**: A structural template defining the content model for different sections of the admin interface
-- **Landing**: Boolean property determining whether a page serves as a landing page
-- **Current-collection**: Indicates the active collection of content being displayed or managed
-- **Template**: Defines the visual layout and structure for rendering content
+## Key Nomenclature and Definitions
+
+- **Blueprint**: `admin` - Designates administrative-level documentation with elevated permissions and enterprise functionality
+- **Landing Page Template** - Applied to Account Management and Single Sign-On sections, indicating primary navigation entry points with hierarchical sub-feature access
+- **Current Collection** - References the active administrative domain context (account-management, single-sign-on)
+- **Collection Structure** - Organized under `/collections/admin/` indicating administrative privilege level and functional grouping
+- **UUID Identifiers** - Each component maintains unique identifiers for content tracking and system integration
 
 ## Product Ecosystem Integration
 
-The Admin product functions as the administrative control center within a larger ecosystem:
+The administrative module operates as a foundational infrastructure layer within the broader platform ecosystem. SSO functionality indicates deep integration capabilities with external identity providers including Active Directory, LDAP, SAML, and OAuth providers. The billing component suggests a SaaS architecture with usage-based pricing models and metered service consumption tracking.
 
-1. Integrates with user-facing applications requiring account management
-2. Connects to billing systems for financial operations
-3. Interfaces with identity management systems through SSO functionality
-4. May be part of a content management system, as suggested by blueprint and template references
-
-The product follows a modular architecture where administrative functions are organized into distinct collections, each with dedicated documentation.
+Account management serves as the central coordination layer, orchestrating interactions between authentication systems, authorization frameworks, and billing infrastructure. The collection-based organization and blueprint architecture indicates integration with a headless CMS platform supporting structured content types and hierarchical data organization.
 
 ## Technical Implementation
 
-The documentation uses Markdown files with YAML frontmatter for metadata. The implementation leverages:
+The system implements YAML frontmatter configuration with UUID-based content identification for each administrative component. Content versioning includes user attribution and timestamp tracking, providing comprehensive audit trails for administrative modifications. The template architecture differentiates between landing page templates for major feature navigation and standard page templates for detailed functionality documentation.
 
-- Content collections for organizing related documentation
-- Blueprint-based content modeling
-- Template-driven rendering
-- Unique IDs for each content piece
-- User tracking for content updates
+The documentation structure supports enterprise-scale information architecture with hierarchical organization designed for complex administrative workflows. The exclude-from-sitemap configuration (set to false across all components) ensures full visibility in documentation navigation systems, supporting comprehensive administrative guidance and user onboarding processes.
