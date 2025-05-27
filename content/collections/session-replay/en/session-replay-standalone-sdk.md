@@ -45,15 +45,27 @@ The Standalone SDK doesn't provide Session management capabilities. Your applica
 
 Install the plugin with npm or yarn.
 
+{{partial:admonition type="info" heading="Unified SDK"}}
+You can also get access to Session Replay along with other Amplitude products (Analytics, Experiment) by installing the [Browser Unified SDK](/docs/sdks/browser-unified-sdk). The Unified SDK provides a single entry point for all Amplitude features and simplifies the integration process by handling the initialization and configuration of all components.
+{{/partial:admonition}}
+
 {{partial:tabs tabs="npm, yarn"}}
 {{partial:tab name="npm"}}
 ```bash
+# Install Session Replay SDK only
 npm install @amplitude/session-replay-browser --save
+
+# Or install Unified SDK to get access to all Amplitude products
+npm install @amplitude/unified
 ```
 {{/partial:tab}}
 {{partial:tab name="yarn"}}
 ```bash
+# Install Session Replay SDK only
 yarn add @amplitude/session-replay-browser
+
+# Or install Unified SDK to get access to all Amplitude products
+yarn add @amplitude/unified
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -64,6 +76,8 @@ Configure your application code.
 2. When the session identifier changes, pass the new value to Amplitude with `sessionReplay.setSessionId`.
 3. Collect Session Replay properties to send with other event properties with `sessionReplay.getSessionReplayProperties`. See [Add Session Replay ID to your events](#add-session-replay-id-to-your-events) for more information.
 
+{{partial:tabs tabs="Standalone SDK, Unified SDK"}}
+{{partial:tab name="Standalone SDK"}}
 ```js
 import * as sessionReplay from "@amplitude/session-replay-browser";
 import 3rdPartyAnalytics from 'example'
@@ -86,6 +100,27 @@ await sessionReplay.setSessionId(sessionId).promise;
 const sessionReplayProperties = sessionReplay.getSessionReplayProperties();
 3rdPartyAnalytics.track('event', {...eventProperties, ...sessionReplayProperties})
 ```
+{{/partial:tab}}
+{{partial:tab name="Unified SDK"}}
+```js
+import { initAll, sessionReplay } from '@amplitude/unified';
+
+// Initialize the Unified SDK with your API key
+// The Unified SDK automatically handles:
+// - Device ID and Session ID management
+// - Session ID changes
+// - Event property collection and tracking
+initAll('YOUR_API_KEY', {
+    sessionReplay: {
+        sampleRate: "<number>"
+    }
+});
+
+// Call session replay APIs
+sessionReplay.shutdown();
+```
+{{/partial:tab}}
+{{/partial:tabs}}
 
 {{partial:admonition type="info" heading=""}}
 Session Replay instrumentation happens in the context of an Amplitude Project. Your replay quota is defined on the Organization level. As a result, you may have multiple Session Replay implementations, across multiple projects each with their own sample rate, that pull from the same quota.
