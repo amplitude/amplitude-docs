@@ -1,12 +1,13 @@
-**Summary:** Documents the process for locating Amplitude Analytics API keys and secret keys through the Organization Settings interface, including role-based access restrictions for Manager users and security requirements for secret key generation.
+**Summary:** Documents the process for locating Amplitude Analytics API keys and secret keys through the Organization Settings > Projects interface, including role-based access restrictions for secret key generation and copying.
 
 **Keywords:**
 - Amplitude Analytics API key
-- secret key generation
-- Organization Settings interface
+- secret key authentication
+- Organization Settings navigation
+- Projects interface
 - Manager role permissions
-- API Keys sidebar navigation
-- project-specific credentials
+- API credentials location
 - analytics.amplitude.com
-- API authentication workflow
-- security key copying restrictions
+- project-specific authentication
+- security restrictions secret keys
+- API key copying process
