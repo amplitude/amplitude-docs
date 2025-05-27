@@ -1,16 +1,18 @@
-# Summary
-Local evaluation in Amplitude Experiment runs evaluation logic directly in the SDK without network requests, providing sub-millisecond performance for latency-sensitive systems, supporting consistent bucketing and targeting segments but lacking Amplitude ID resolution and user enrichment capabilities that remote evaluation offers.
+**Summary:** This documentation covers local evaluation for Amplitude Experiment, which runs evaluation logic in SDKs rather than making network requests, achieving sub-millisecond performance but with limited targeting capabilities compared to remote evaluation (no Amplitude ID resolution, user enrichment, or sticky bucketing).
 
-# Keywords
+**Keywords:**
 - local evaluation
-- sub-millisecond evaluation
+- SDK evaluation logic
+- sub-millisecond performance
 - consistent bucketing
 - targeting segments
-- cohort targeting
-- server-side SDKs
-- client-side SDKs
-- exposure tracking
-- assignment events
-- performance benchmarks
-- flag configuration
-- evaluation logic
+- individual inclusions
+- cohort targeting server-side
+- exposure events client-side
+- assignment events server-side
+- flag configuration polling
+- Amplitude ID resolution limitations
+- user enrichment restrictions
+- sticky bucketing unavailable
+- edge evaluation Node.js
+- client-side data leakage warning

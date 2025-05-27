@@ -1,14 +1,15 @@
-# Summary
-This documentation page explains how to verify Amplitude instrumentation by using the User Activity tab to check if tracked events appear correctly, outlines how event limits work (excess data is ingested but inaccessible without upgrading), and describes Amplitude's event deduplication process which uses event ID, client event time, and device ID to prevent duplicate logging.
+**Summary:** This documentation explains QA processes for Amplitude instrumentation implementation, including real-time event verification through the User Activity tab, monthly event limit handling with data accessibility restrictions, and Amplitude's deduplication logic using event ID/client event time/device ID matching with 7-day insert_id retention for HTTP API.
 
-# Keywords
-- instrumentation QA
-- User Activity tab
-- event limits
-- data deduplication
-- insert_id
-- event verification
-- SDK debugging
-- event stream monitoring
-- device ID tracking
-- client event time
+**Keywords:**
+- Amplitude instrumentation QA
+- User Activity tab debugging
+- real-time event verification
+- device ID event stream
+- monthly event limits
+- data accessibility restrictions
+- event deduplication logic
+- insert_id field
+- HTTP API deduplication
+- client event time matching
+- 7-day event retention
+- duplicate event handling

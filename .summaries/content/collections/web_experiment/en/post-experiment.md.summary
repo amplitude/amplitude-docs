@@ -1,14 +1,18 @@
-## Summary
-This documentation page outlines the recommended post-experiment steps for Amplitude Experiment, emphasizing the importance of migrating winning variants to production code rather than keeping experiments running at 100% allocation. It details a four-step conclusion process and explains the performance, technical debt, and cost benefits of proper experiment closure.
+**Summary:** Documents the recommended post-experiment workflow for Amplitude Experiment web experiments, emphasizing migration of winning variants to production code rather than running experiments at 100% traffic allocation, including steps for analysis, implementation, deactivation, and the performance/cost benefits of removing experiment logic.
 
-## Keywords
-- post-experiment steps
+**Keywords:**
+- Amplitude Experiment
+- web experiments
+- post-experiment workflow
 - winning variant migration
-- experiment deactivation
-- performance overhead
-- technical debt reduction
-- impression volume optimization
-- feature flag activation
+- production code base
 - statistical significance
-- experiment documentation
+- experiment deactivation
+- feature flag rollback
 - clientside overhead
+- page load execution time
+- impression volume
+- experiment evaluation
+- technical debt
+- 100% traffic allocation
+- experiment archiving

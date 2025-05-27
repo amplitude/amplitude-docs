@@ -1,14 +1,18 @@
-# Summary
-Notebooks in Amplitude Analytics are collaborative documents that combine text, media, charts, and metrics to explain insights and context to teammates, enabling better-informed product decisions through performance reporting, ad-hoc analysis explanation, and data education.
+**Summary:** This documentation covers Amplitude Notebooks functionality for creating analytical reports with mixed content including text blocks, charts, videos, and metrics to communicate data insights and analysis context to teams, with features for drag-and-drop editing, markdown formatting, and chart integration.
 
-# Keywords
-- Notebooks
-- Chart takeaways
-- Summary metrics
-- Performance reporting
-- Rich text formatting
-- Markdown support
-- Callout boxes
-- Metric trackers
-- Content rearrangement
-- Collaborative analysis
+**Keywords:**
+- Amplitude Notebooks
+- analytical reports
+- chart takeaways
+- summary metrics
+- text blocks formatting
+- markdown support
+- drag-and-drop content
+- metric trackers
+- callout boxes
+- cohort integration
+- BMP image format limitation
+- Personas charts
+- Pathfinder Users charts
+- rich text editor
+- hosted images clipboard

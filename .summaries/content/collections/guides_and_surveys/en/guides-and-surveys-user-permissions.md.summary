@@ -1,14 +1,11 @@
-## Summary
-This documentation page describes the user roles and permissions specific to Guides and Surveys in Amplitude, explaining how these permissions can override a user's base Amplitude role to grant different access levels specifically for the Guides and Surveys feature.
+**Summary:** Documents the three-tier permission system for Amplitude's Guides and Surveys feature, which overrides base user roles to provide granular access control for viewing, editing drafts, publishing, and running experiments within the Guides and Surveys module.
 
-## Keywords
+**Keywords:**
 - Guides and Surveys permissions
-- User role override
-- Viewer role
-- Member role
-- Manager role
-- Administrator role
-- Access control
-- Permission levels
-- Draft editing permissions
-- Publishing permissions
+- Amplitude user roles override
+- Viewer Member Manager Administrator roles
+- draft editing permissions
+- publishing permissions
+- experiment running access
+- granular access control
+- Guides and Surveys module permissions

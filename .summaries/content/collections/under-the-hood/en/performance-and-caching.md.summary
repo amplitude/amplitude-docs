@@ -1,14 +1,17 @@
-# Summary
-This documentation details performance metrics and caching mechanisms for Amplitude Experiment's evaluation modes (local and remote), explaining how CDN caching affects response times, with remote evaluation showing 35.9ms average for cache hits versus 194.21ms for misses globally, while local evaluation performs at sub-millisecond speeds across Node.js, Go, and JVM SDKs.
+**Summary:** This documentation covers Amplitude Experiment's performance metrics and CDN caching behavior for both remote and local evaluation modes, including latency benchmarks across geographic regions, cache TTL of 60 minutes, cache invalidation on deployment changes, and dynamic targeting considerations for user properties and behavioral cohorts.
 
-# Keywords
+**Keywords:**
+- Amplitude Experiment evaluation modes
 - remote evaluation performance
-- local evaluation latency
-- CDN caching
-- cache time-to-live (TTL)
-- cache invalidation
-- Fastly integration
-- dynamic targeting
-- behavioral cohorts
-- regional performance metrics
-- evaluation response times
+- local evaluation benchmarks
+- Fastly CDN caching
+- cache TTL 60 minutes
+- cache invalidation deployment
+- us-west-2 eu-central-1 data centers
+- dynamic targeting cache considerations
+- behavioral cohorts hourly computation
+- Node.js Go JVM SDK performance
+- cache hit miss latency
+- user properties caching
+- deployment flag updates
+- geographic latency metrics

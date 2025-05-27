@@ -1,17 +1,31 @@
-## Summary
-This documentation page explains how to install and configure the Amplitude Guides and Surveys SDK for websites and applications, covering integration methods with Amplitude Browser SDK, third-party analytics providers, and Google Tag Manager, along with API methods for theme management, callbacks, routing, localization, and guide/survey control.
+**Summary:** This documentation covers the Amplitude Guides and Surveys SDK installation and configuration, including integration with Amplitude Browser SDK, third-party analytics providers (like Segment), and Google Tag Manager, plus SDK methods for theme management, callbacks, routing, localization, and guide/survey control.
 
-## Keywords
-- Guides and Surveys SDK
-- engagement-browser
-- boot method
-- forwardEvent
-- third-party analytics integration
-- setThemeMode
-- addCallback
-- setRouter
-- updateLanguage
-- Content Security Policy (CSP)
-- guide targeting
-- survey initialization
+**Keywords:**
+- Amplitude Guides and Surveys SDK
+- @amplitude/engagement-browser
+- engagement.init()
+- engagement.boot()
 - window.engagement
+- BootOptions
+- InitOptions
+- EndUser
+- third-party analytics integration
+- Segment analytics integration
+- Google Tag Manager template
+- engagement.gs.show()
+- engagement.gs.reset()
+- engagement.gs.list()
+- engagement.gs.closeAll()
+- engagement.forwardEvent()
+- engagement.addCallback()
+- engagement.setRouter()
+- engagement.setThemeMode()
+- engagement.updateLanguage()
+- Content Security Policy CSP
+- serverZone EU US
+- user_id device_id
+- event-based triggers
+- single page application SPA
+- localization locale
+- ThemeMode lightMode darkMode
+- Browser SDK 2.0 plugin

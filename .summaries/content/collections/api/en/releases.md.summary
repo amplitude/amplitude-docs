@@ -1,14 +1,18 @@
-# Summary
-The Releases API documentation details how to programmatically create releases in Amplitude by sending POST requests with parameters like version, timestamps, title, and platforms, enabling integration with deployment workflows to document product changes.
+**Summary:** Documents the Releases API for programmatically creating product releases in Amplitude using POST requests to `/api/2/release` endpoint with HTTP basic authentication, supporting both query parameters and JSON payload formats for deployment workflow integration.
 
-# Keywords
+**Keywords:**
 - Releases API
+- POST /api/2/release
+- HTTP basic authentication
+- deployment workflows
 - release creation
-- deployment integration
-- version tracking
 - chart annotations
-- release parameters
-- HTTP Basic authentication
-- release timestamps
-- platform specification
-- product changes documentation
+- version tracking
+- release_start timestamp
+- release_end timestamp
+- chart_visibility parameter
+- platforms parameter
+- JSON payload
+- query parameters
+- UTC timestamp format
+- product release documentation

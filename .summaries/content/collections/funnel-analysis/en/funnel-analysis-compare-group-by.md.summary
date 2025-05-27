@@ -1,14 +1,17 @@
-## Summary
-This documentation explains how to compare group-by values in Funnel Analysis charts by selecting a baseline property for comparison, showing conversion percentage differences in the microscope hover view and breakdown table, with specific limitations on when this feature can be used.
+**Summary:** Documents the compare functionality in Amplitude's Funnel Analysis charts that allows comparing group-by segment property values to baseline properties, showing conversion percentage differences in hover tooltips and breakdown tables with specific limitations for Conversion and Conversion Over Time chart types.
 
-## Keywords
-- funnel analysis
-- group-by comparison
-- baseline property
+**Keywords:**
+- Funnel Analysis charts
+- group-by segment property comparison
+- baseline property comparison
 - conversion percentage difference
-- segment property
+- Compare dropdown
+- microscope hover tooltips
 - breakdown table
-- microscope hover
-- compare dropdown
-- conversion over time
-- feature limitations
+- absolute percent difference
+- Conversion chart type
+- Conversion Over Time
+- Compare to Property Value
+- Compare to Past
+- two Segment group-bys maximum
+- Amplitude analytics

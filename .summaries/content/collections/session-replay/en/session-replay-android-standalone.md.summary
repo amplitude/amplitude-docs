@@ -1,18 +1,18 @@
-## Summary
-This documentation covers the installation and configuration of Session Replay Android Standalone SDK for apps using third-party analytics providers, detailing initialization, session/device ID management, configuration options, privacy controls, and integration with WebViews and Jetpack Compose.
+**Summary:** Documents the Session Replay Android Standalone SDK for developers using third-party analytics providers instead of Amplitude's Android SDK, covering initialization with manual session/device ID management, configuration options including sampleRate and maskLevel, and integration requirements for tracking session replay properties.
 
-## Keywords
-- Android Standalone SDK
-- Session Replay
-- Third-party analytics integration
-- deviceId
-- sessionId
-- sampleRate
-- optOut
-- maskLevel
-- WebView integration
-- Jetpack Compose
-- flush
-- getSessionReplayProperties
-- EU data residency
-- privacy masking
+**Keywords:**
+- Session Replay Android Standalone SDK
+- third-party analytics provider integration
+- manual session ID management
+- device ID synchronization
+- getSessionReplayProperties method
+- setSessionId and setDeviceId methods
+- flush method for data transmission
+- sampleRate configuration
+- maskLevel privacy settings
+- ServerZone EU data residency
+- optOut user consent
+- AmplitudeSessionReplay-Android repository
+- Maven Central session-replay-android artifact
+- SessionReplay class initialization
+- remote configuration enableRemoteConfig

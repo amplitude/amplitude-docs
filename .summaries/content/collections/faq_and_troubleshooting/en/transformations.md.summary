@@ -1,14 +1,17 @@
-## Summary
-This documentation page addresses frequently asked questions about transformations in Amplitude, covering the effects of merging events and properties on existing charts, unmerging events, transformation limitations, and property value priority in merges.
+**Summary:** This FAQ documentation covers Amplitude transformations functionality, specifically addressing event merging, property merging, chart behavior after merges/unmerges, bulk chart updates using Find & Replace, transformation limitations, and property value priority handling in merged events.
 
-## Keywords
+**Keywords:**
+- Amplitude transformations
 - event merging
 - property merging
-- chart updates
-- transformation retroactivity
-- unmerging events
-- merged property priority
-- transformation limitations
-- chart query behavior
-- event property precedence
-- dashboard find and replace
+- chart behavior after merge
+- unmerge events
+- Find & Replace charts
+- bulk update charts
+- Save onto Charts
+- Update existing charts
+- transformations on transformations
+- retroactive transformations
+- property merge priority
+- chart dropdown population
+- merged event queries

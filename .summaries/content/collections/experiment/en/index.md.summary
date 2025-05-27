@@ -1,5 +1,16 @@
-# Summary and Keywords
+**Summary:** This documentation page provides multi-platform SDK initialization code examples for Amplitude Experiment, showing configuration options like defaultTracking settings, session management, and event tracking across TypeScript, Kotlin, Objective-C, Swift, and Python implementations.
 
-**Summary:** This documentation page provides code examples for initializing and configuring Amplitude across multiple programming languages (TypeScript, HTML, Kotlin, Objective-C, Swift, and Python), demonstrating how to set tracking options and send events with the Amplitude SDK.
-
-**Keywords:** Amplitude initialization, SDK configuration, DefaultTrackingOptions, event tracking, BaseEvent, multi-language examples, API key configuration, amplitude.init, Amplitude client, tracking configuration
+**Keywords:**
+- Amplitude Experiment SDK
+- Multi-platform initialization
+- defaultTracking configuration
+- fileDownloads tracking
+- session management
+- minTimeBetweenSessionsMillis
+- DefaultTrackingOptions
+- BaseEvent tracking
+- event_properties
+- user_id device_id
+- AMPLITUDE_API_KEY
+- Configuration object
+- TypeScript Kotlin Objective-C Swift Python

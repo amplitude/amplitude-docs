@@ -1,14 +1,11 @@
-## Summary
-This documentation page describes a course on managing feature flags in Amplitude, covering creation, targeted rollouts, monitoring, and rollback processes, with a focus on using Amplitude's platform for controlled feature releases.
+**Summary:** This academy course documentation covers Amplitude's feature flag management system, including creation, targeted rollouts, monitoring, and rollback capabilities for product features.
 
-## Keywords
-- feature flags
-- Amplitude
-- targeted rollouts
-- feature monitoring
-- rollback process
-- controlled releases
-- feature management
-- audience targeting
-- feature experimentation
+**Keywords:**
+- Amplitude feature flags
+- feature rollouts
+- targeted audiences
+- feature rollback
+- product feature management
+- academy course
+- feature flag monitoring
 - release management

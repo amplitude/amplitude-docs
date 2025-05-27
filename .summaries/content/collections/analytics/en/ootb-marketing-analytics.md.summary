@@ -1,15 +1,25 @@
-# Summary
-Out-of-the-box Marketing Analytics provides centralized tracking of page engagement and session-based metrics with customizable views for Traffic by Channel, Traffic by Campaign, Ad Performance, Page Engagement, and Conversion, offering industry-standard KPIs like bounce rate, session duration, CTR, CAC, and ROAS that can be filtered by domain and segmented for deeper analysis.
+**Summary:** This documentation covers Amplitude's Out-of-the-box Marketing Analytics feature that provides centralized tracking of page engagement and session-based metrics through four insight categories (Traffic by Channel, Traffic by Campaign, Ad Performance, Page Engagement, and Conversion) with configurable UTM parameters, Daily Ad Metrics events, and web experiment creation capabilities.
 
-# Keywords
-- marketing analytics
-- UTM tracking
-- conversion funnel
-- ad performance metrics
+**Keywords:**
+- Out-of-the-box Marketing Analytics
+- Daily Ad Metrics event
+- UTM parameters (utm_campaign, utm_content, utm_medium, utm_source, utm_term)
+- Traffic by Channel insights
+- Traffic by Campaign insights
+- Ad Performance metrics
+- Page Engagement analytics
+- Conversion funnel tracking
 - CAC (Customer Acquisition Cost)
 - ROAS (Return on Ad Spend)
-- traffic channels
-- page engagement
-- bounce rate
-- Daily Ad Metrics event
-- web experiment
+- CTR (Click-Through Rate)
+- CPC (Cost Per Click)
+- Browser SDK integration
+- Ad network connections
+- Web experiment creation
+- Marketing Analytics permissions
+- Session duration metrics
+- Bounce rate tracking
+- Page views analysis
+- Nested group-bys
+- Domain filtering
+- Marketing metrics recipes

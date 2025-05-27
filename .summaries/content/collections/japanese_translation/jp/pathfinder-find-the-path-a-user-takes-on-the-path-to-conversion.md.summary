@@ -1,19 +1,20 @@
-## Summary
-This documentation explains the Pathfinder chart in Amplitude, which visualizes user flows through a product by displaying event sequences (paths) users take toward conversion. It shows how to configure the chart with starting/ending events, filters, segmentation options, and how to interpret the resulting Sankey diagram and funnel visualization to understand user behavior patterns.
+**Summary:** This documentation describes Amplitude's legacy Pathfinder chart functionality for analyzing aggregated user flows and event sequences within sessions, including configuration of start/end events, session filtering, zoom thresholds, and interpretation of Sankey diagrams with funnel visualizations for conversion path analysis.
 
-## Keywords
+**Keywords:**
 - Pathfinder chart
-- User flow visualization
-- Conversion paths
+- Amplitude analytics
+- user flow analysis
+- event sequences
+- session tracking
+- session_id
 - Sankey diagram
-- Event nodes
-- Session tracking
-- Zoom threshold
-- Custom events
-- Path filtering
-- Event sequencing
-- Flow diagram
-- Funnel visualization
-- Microscope integration
-- Event exclusion
+- funnel visualization
+- conversion paths
+- zoom threshold
+- event nodes
+- client_event_time
+- custom events
+- noisy events filtering
 - Japanese translation
+- legacy chart migration
+- journey experience

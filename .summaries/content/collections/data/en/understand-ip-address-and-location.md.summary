@@ -1,14 +1,17 @@
 ## Summary
-This documentation explains how Amplitude tracks and processes location, IP address, user agent, and device properties. It details how MaxMind database is used for geolocation, how location data is preserved even when IP addresses are blocked, and how user agent strings are parsed to extract device information like model, OS, browser, and platform.
+This documentation explains how Amplitude automatically tracks and processes IP addresses, location properties, user agent strings, and device information, including the use of MaxMind database for GeoIP lookups, server-side location property overrides via HTTP API, IP address filtering while preserving location data, and automatic user agent parsing for device/platform properties.
 
 ## Keywords
-- MaxMind geolocation
-- IP address filtering
-- User agent parsing
-- Device properties
-- Location tracking
+- MaxMind database
 - GeoIP lookup
-- Browser detection
-- Platform identification
-- Device model extraction
-- Operating system detection
+- location_lat location_long
+- HTTP API location overrides
+- [Amplitude] City Country Region DMA
+- IP address filtering
+- user agent parsing
+- device_brand device_model os_name platform
+- trackingOptions configuration
+- client-side SDK automatic collection
+- server-side property assignment
+- browser_version device_manufacturer
+- mobile device information iOS Android

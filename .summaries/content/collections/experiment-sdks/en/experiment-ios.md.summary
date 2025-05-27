@@ -1,17 +1,31 @@
 ## Summary
-The Experiment iOS SDK documentation provides comprehensive guidance for implementing client-side feature flags and experiments in iOS applications, covering installation via CocoaPods or Swift Package Manager, initialization with Amplitude Analytics or third-party providers, variant fetching, exposure tracking, and local/remote evaluation capabilities.
+
+This documentation covers the Amplitude Experiment iOS SDK for client-side feature flag evaluation, including installation via CocoaPods/SPM, initialization with Amplitude Analytics or third-party integrations, remote evaluation via fetch(), local evaluation via start(), variant access, and exposure tracking with ExposureTrackingProvider.
 
 ## Keywords
-- iOS SDK
-- Swift
-- ExperimentClient
-- variant fetching
-- exposure tracking
-- remote evaluation
-- local evaluation
-- user provider
-- bootstrapping
-- flag configurations
-- CocoaPods
+
+- Amplitude Experiment iOS SDK
+- client-side feature flags
+- CocoaPods AmplitudeExperiment
 - Swift Package Manager
-- account-level bucketing
+- ExperimentClient initialization
+- remote evaluation fetch()
+- local evaluation start()
+- variant() method
+- ExposureTrackingProvider
+- ExperimentUserProvider
+- deployment key
+- flag key
+- exposure tracking
+- Amplitude Analytics integration
+- Segment integration
+- ExperimentConfigBuilder
+- automaticExposureTracking
+- fetchOnStart
+- pollOnStart
+- serverZone EU
+- initialVariants bootstrapping
+- initialFlags configuration
+- ExperimentUser
+- fallback variants
+- payload access

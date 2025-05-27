@@ -1,15 +1,13 @@
-## Summary
-This documentation describes a legacy feature in Amplitude Data that allows mapping between environments (production/development) and Amplitude Analytics projects, explaining how tracking plan modifications persist across environments with some actions applying globally while others remain environment-specific.
+**Summary:** Documents the legacy environment settings feature in Amplitude Data that maps up to two environments (production/development) to specific Amplitude Analytics projects, including tracking plan modifications and environment-specific vs. global actions like blocking, transformations, and CRUD operations on events/properties.
 
-## Keywords
-- environment settings
-- legacy feature
-- tracking plan
-- production/development environments
-- Amplitude Data
-- Amplitude Analytics projects
-- environment-specific actions
-- cross-environment modifications
-- blocking events
-- transformations
-- environment mapping
+**Keywords:**
+- Amplitude Data environment settings
+- legacy tracking plan environments
+- Amplitude Analytics project mapping
+- environment-specific blocking filters
+- tracking plan CRUD operations
+- production development environment mapping
+- schema syncing environments
+- branch-specific tracking plan changes
+- derived properties transformations
+- lookup properties environment scope

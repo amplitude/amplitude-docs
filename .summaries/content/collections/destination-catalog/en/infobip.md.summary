@@ -1,14 +1,16 @@
-## Summary
-This documentation details the Infobip destination integration for Amplitude, which enables syncing user cohorts from Amplitude to Infobip's omnichannel messaging platform for targeted communication campaigns, including setup instructions for both platforms and API endpoint statuses for list operations.
+**Summary:** Documentation for Amplitude's Infobip cohort syncing destination that enables sending targeted messaging campaigns by syncing Amplitude cohorts to Infobip's omnichannel engagement platform via API key authentication and list management operations.
 
-## Keywords
-- Infobip integration
-- Cohort syncing
-- Omnichannel messaging
-- API key authentication
-- List management API
-- Customer engagement
-- Amplitude cohorts
-- API endpoints
-- Rate limiting
-- Error handling
+**Keywords:**
+- Infobip cohort syncing
+- Amplitude destination catalog
+- omnichannel engagement platform
+- cohort-to-messaging integration
+- Infobip Portal API Keys
+- customer engagement destination
+- list creation and management
+- targeted messaging campaigns
+- Infobip API endpoints
+- cohort synchronization
+- messaging channel integration
+- authentication and security
+- partner destination integration

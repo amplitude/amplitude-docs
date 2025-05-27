@@ -1,14 +1,13 @@
-# Summary
-The Maze integration enables sending Amplitude audiences to Maze for personalized campaigns, requiring an Amplitude user property that maps to a Maze key (only supports Amplitude user_ID), and must be enabled per-project with setup in both platforms using Maze's API key.
+**Summary:** This documentation describes the Maze destination integration for Amplitude, which enables cohort syncing to send Amplitude audiences to Maze for personalized user research campaigns, requiring user_ID mapping and per-project enablement.
 
-# Keywords
-- Maze integration
-- Audience syncing
-- Cohort export
-- User insights
-- API key mapping
-- User_ID support
-- Team settings
-- Sync cadence
-- Qualitative feedback
-- Product research
+**Keywords:**
+- Maze destination integration
+- cohort syncing
+- Amplitude audiences
+- user research campaigns
+- qualitative feedback integration
+- user_ID mapping requirement
+- Maze API key configuration
+- participant recruitment
+- product research platform
+- per-project basis enablement

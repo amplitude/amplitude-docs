@@ -1,14 +1,18 @@
-## Summary
-This documentation describes the User.com destination integration for Amplitude, which allows sending audience cohorts from Amplitude to User.com for targeted marketing campaigns across multiple channels (email, SMS, push notifications, etc.). The integration requires a paid Amplitude plan and includes steps for setup, configuration, and cohort synchronization.
+**Summary:** This documentation describes the Amplitude to User.com destination integration for syncing behavioral analytics cohorts to enable targeted marketing automation campaigns across email, SMS, push notifications, and live chat channels.
 
-## Keywords
-- User.com integration
-- cohort export
-- marketing automation
+**Keywords:**
+- User.com destination integration
+- Amplitude cohort sync
+- behavioral analytics cohorts
+- marketing automation platform
 - customer communication platform
-- API key configuration
+- API key authentication
+- User ID property mapping
+- sync cadence configuration
+- targeted messaging campaigns
 - behavioral triggers
-- audience synchronization
-- multi-channel messaging
+- cart abandonment automation
+- multi-channel communication
 - personalized campaigns
-- segmentation
+- audience segmentation
+- paid plan requirement

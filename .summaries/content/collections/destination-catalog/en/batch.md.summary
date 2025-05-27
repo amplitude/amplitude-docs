@@ -1,14 +1,16 @@
-# Summary
-This documentation details the Batch destination integration for syncing Amplitude cohorts to Batch's customer engagement platform, allowing targeted push notifications and emails. The setup requires paid plans for both services, API keys from Batch, and proper identifier mapping between platforms, with options for syncing to either Batch Omnichannel projects or specific apps/websites.
+**Summary:** This documentation describes the Batch destination integration for syncing Amplitude cohorts to Batch's customer engagement platform, supporting both Batch (Profile) for omnichannel projects and standard Batch destination for specific mobile/web apps, with setup requiring API keys and user ID mapping between platforms.
 
-# Keywords
+**Keywords:**
+- Batch destination integration
 - cohort syncing
-- Batch integration
-- customer engagement platform
-- push notifications
-- Custom User ID
-- Installation ID
-- API Key
-- REST API Key
-- Batch (Profile) destination
-- audience targeting
+- Batch Profile omnichannel
+- Custom User ID mapping
+- Installation ID field
+- REST API Key configuration
+- Live API Key
+- SDK API Key
+- Project key
+- push notification targeting
+- audience segmentation
+- campaign editor integration
+- third-party connections requirement

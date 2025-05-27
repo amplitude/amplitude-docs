@@ -1,14 +1,17 @@
-# Summary
-This documentation explains how to set up account-level reporting in Amplitude, which enables aggregated group-level analyses by instrumenting groups through various methods including SDKs (Android, iOS, JavaScript), Identify API, HTTP API, Segment integration, and the Group Identify API.
+**Summary:** This documentation explains how to instrument account-level reporting in Amplitude using various methods including SDKs (Android, iOS, JavaScript), server-side APIs (Identify API with `groups` key, HTTP API with event-level groups), Segment integration with Group Type/Value Traits, and the Group Identify API for creating/updating groups with property operations.
 
-# Keywords
-- account-level reporting
-- group-level analyses
-- group instrumentation
-- Amplitude SDKs
-- Identify API
-- HTTP API
-- Segment integration
+**Keywords:**
+- account-level reporting instrumentation
+- group types (5 per project limit)
+- groups key identification
+- event-level groups
+- Group Type Trait
+- Group Value Trait
+- Segment group calls
 - Group Identify API
-- group property operations
-- group types
+- group property operations ($set, $setOnce, $add, $append, $unset)
+- server-side group implementation
+- SDK group setup
+- Identify API groups
+- HTTP API groups
+- aggregated group-level analyses

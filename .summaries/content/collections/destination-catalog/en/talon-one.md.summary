@@ -1,14 +1,15 @@
-# Summary
-This documentation page describes the Talon.One integration with Amplitude, which enables sending user cohorts from Amplitude to Talon.One for creating personalized promotional campaigns with features like discounts, coupons, and loyalty rewards, including setup instructions for both platforms and cohort syncing process.
+**Summary:** This documentation describes the Amplitude-Talon.One cohort syncing integration that enables sending user audiences from Amplitude to Talon.One's promotion engine for personalized marketing campaigns with dynamic coupon codes, discounts, and loyalty rewards, including setup procedures for both platforms and cohort synchronization process.
 
-# Keywords
+**Keywords:**
 - Talon.One integration
-- Cohort syncing
-- Promotional campaigns
+- Amplitude cohort syncing
+- promotion engine
+- customer engagement destination
+- API key authentication
 - Customer Profile ID mapping
-- API Key configuration
-- User update rate
-- Personalized marketing
-- Discount management
-- Campaign Manager
-- Sync cadence
+- user update rate limits
+- dynamic coupon codes
+- loyalty rewards
+- personalized promotional campaigns
+- audience segmentation
+- sync cadence configuration

@@ -1,20 +1,26 @@
-# Dashboard REST API Summary
+## Summary
 
-This documentation details the Dashboard REST API, which allows developers to retrieve data displayed on Amplitude dashboard graphs in JSON format. The API provides endpoints for event segmentation, funnel analysis, retention analysis, user activity, and more, with specific rate limits and cost calculations based on query complexity.
+This documentation covers the Dashboard REST API for retrieving Amplitude analytics data in JSON format, including endpoints for user metrics, event segmentation, funnel analysis, retention analysis, session data, user activity, and revenue analytics with HTTP basic authentication and rate limiting.
 
 ## Keywords
-- dashboard data retrieval
-- event segmentation
-- funnel analysis
-- retention analysis
-- user activity tracking
-- user search
-- session metrics
-- revenue LTV
-- API rate limits
-- query cost model
-- real-time active users
-- user composition
-- event filtering
-- segment definition
-- JSON response formats
+
+- Dashboard REST API
+- Amplitude analytics data
+- JSON format retrieval
+- Event segmentation endpoint
+- Funnel analysis API
+- Retention analysis queries
+- User activity tracking
+- Session length distribution
+- Revenue LTV metrics
+- HTTP basic authentication
+- Rate limiting 429 errors
+- Concurrent request limits
+- Cost per query model
+- Event format parameters
+- Segment definitions
+- User composition analysis
+- Real-time active users
+- Revenue lifetime value
+- Query parameter validation
+- URL encoding requirements

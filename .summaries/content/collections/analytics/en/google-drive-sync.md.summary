@@ -1,5 +1,13 @@
-## Summary
-This documentation explains how to use the "Sync to Drive and Sheets extension" to export Amplitude chart data to Google Sheets and chart images to Google Slides, including step-by-step instructions for authentication, selecting charts, and managing exported content through the Google Workspace Marketplace extension.
+**Summary:** Documents the Amplitude Sync to Drive and Sheets Google Workspace extension that exports Amplitude chart data to Google Sheets and chart images to Google Slides, using the Dashboard REST API with OAuth authentication requiring matching email addresses between Google and Amplitude accounts.
 
-## Keywords
-Google Drive sync, Google Sheets export, Google Slides export, Amplitude chart data, Dashboard REST API, chart image export, Google Workspace Marketplace, data refresh, chart management, cross-platform sharing
+**Keywords:**
+- Amplitude Sync to Drive and Sheets extension
+- Google Workspace Marketplace integration
+- Dashboard REST API export
+- Google Sheets chart data sync
+- Google Slides chart images
+- OAuth Google authentication
+- Amplitude organization selection
+- Chart refresh and delete management
+- Email address matching requirement
+- Amplitude [DO NOT EDIT] tab

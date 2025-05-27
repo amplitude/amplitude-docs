@@ -1,14 +1,13 @@
-# Summary
-This documentation page describes the Statsig Event Stream destination integration with Amplitude, which allows users to send Amplitude events to Statsig for feature management and experimentation, including setup steps in both platforms and important considerations like user ID matching and event size limitations.
+**Summary:** This documentation describes the Amplitude to Statsig event streaming destination integration, which sends Amplitude events to Statsig's experimentation platform using a Server Secret Key, with specific considerations for user_id matching and event size limits.
 
-# Keywords
-- Statsig
-- Event streaming
-- Feature management
-- Product experimentation
-- Server Secret Key
-- User ID matching
-- Event size limitations
-- Metadata limits
-- Event filtering
-- Causal analysis
+**Keywords:**
+- Statsig event streaming destination
+- Amplitude to Statsig integration
+- Server Secret Key authentication
+- user_id matching between platforms
+- experimentation platform integration
+- feature management destination
+- event streaming size limits
+- Statsig metadata 2048 bytes limit
+- causal analysis integration
+- product experimentation workflow

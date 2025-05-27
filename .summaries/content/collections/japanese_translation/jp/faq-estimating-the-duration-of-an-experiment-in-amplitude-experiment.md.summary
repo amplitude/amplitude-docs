@@ -1,17 +1,19 @@
-# Summary and Keywords
+## Summary
+This documentation explains duration estimation functionality in Amplitude Experiment for predicting statistically significant results using control/variant means, variance, and exposure data with sequential testing on primary metrics only (not supported in Experiment Results).
 
-**Summary:** This documentation explains how Amplitude Experiment estimates experiment duration to achieve statistical significance, detailing how the feature works, why estimates might not appear, the meaning of best/average/worst case scenarios, and potential errors in the estimation process. The feature is only available for primary metrics and sequential testing.
-
-**Keywords:**
-- experiment duration estimation
-- statistical significance
-- best/average/worst case scenarios
-- exposure calculation
-- estimation errors
-- irreducible errors
-- drift errors
-- 40-day estimation cap
-- sequential testing
-- hypothesis testing
-- confidence intervals
-- variance calculation
+## Keywords
+- Amplitude Experiment duration estimation
+- statistical significance prediction
+- sequential testing primary metrics
+- control variant means variance exposure
+- confidence interval inversion
+- rollout rollback experiment phases
+- best case average case worst case scenarios
+- 40-day estimation cap limitation
+- daily exposure calculation cumulative
+- irreducible estimation errors
+- drift seasonal statistics
+- simulation-based hypothesis testing
+- conversion rate bounds validation
+- analysis window end date
+- statistical hypothesis criteria

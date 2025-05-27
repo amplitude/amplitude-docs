@@ -1,14 +1,16 @@
-# Summary
-This documentation page outlines essential pre-work steps for Amplitude instrumentation, including defining business goals, understanding user tracking, organizing events with clear naming conventions, limiting initial data collection to essential metrics, and considering cross-platform project organization to ensure effective analytics implementation.
+**Summary:** This documentation covers pre-instrumentation planning for Amplitude analytics implementation, including defining business goals, understanding user identification/tracking, organizing events with properties using spreadsheet templates, event naming conventions (verb+noun syntax), limiting events to 20 properties maximum, and deciding between cross-platform versus separate-platform project structures.
 
-# Keywords
-- instrumentation pre-work
+**Keywords:**
+- Amplitude instrumentation pre-work
 - business goals definition
-- user identification tracking
-- event taxonomy
-- event naming conventions
+- user identification and tracking
+- event taxonomy planning
 - event properties organization
-- cross-platform projects
-- data collection strategy
-- event spreadsheet template
-- focused data tracking
+- spreadsheet templates (Excel/Google Sheets)
+- event naming conventions
+- verb+noun syntax
+- 20 properties limit
+- cross-platform project structure
+- Data Taxonomy Playbook
+- instrument-track-unique-users
+- event planning methodology

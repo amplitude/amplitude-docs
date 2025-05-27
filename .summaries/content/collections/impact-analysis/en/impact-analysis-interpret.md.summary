@@ -1,16 +1,15 @@
-## Summary
-This documentation explains how to interpret Impact Analysis charts in Amplitude, which visualize how triggering one event affects other event frequencies. It details four metrics (Average, Active %, Frequency, and Properties) for analysis and provides best practices for causal inference interpretation, emphasizing that this analysis should guide experimentation rather than replace it.
+**Summary:** Documents how to interpret Impact Analysis charts in Amplitude, which track how triggering one event affects the frequency of other events using relative n-day timelines, including four metrics (average, active percentage, frequency, properties) and causal inference best practices for validating behavioral hypotheses.
 
-## Keywords
-- impact analysis chart
-- causal inference
-- relative n-day basis
-- average metric
+**Keywords:**
+- Impact Analysis chart interpretation
+- relative n-day timeline
+- treatment event vs outcome event
+- average metric (mean triggers)
 - active percentage metric
-- frequency metric
-- properties metric
-- treatment event
-- outcome event
-- alternate hypotheses
-- user counts
-- visualization interpretation
+- frequency distribution metric
+- event properties metric (average/sum)
+- causal inference validation
+- behavioral hypothesis testing
+- user count volatility
+- alternate hypotheses analysis
+- randomized experimentation comparison

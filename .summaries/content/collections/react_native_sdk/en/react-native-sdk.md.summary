@@ -1,17 +1,41 @@
 ## Summary
-This documentation page covers the React Native SDK for Amplitude, detailing how to install, initialize, and use the SDK to track events, manage user properties, and implement advanced features like plugins. It includes compatibility information, configuration options, and code examples for tracking events, user identification, revenue tracking, and session management.
+
+This documentation covers the React Native SDK for Amplitude analytics, including installation via npm/yarn/expo with @amplitude/analytics-react-native package, initialization with API keys, event tracking, user properties management, revenue tracking, and advanced features like plugins, custom HTTP clients, and advertising identifiers (ADID, IDFV, IDFA, AppSetId).
 
 ## Keywords
+
+- @amplitude/analytics-react-native
 - React Native SDK
-- Amplitude event tracking
-- User identification
-- Revenue tracking
-- Identify API
-- Group properties
-- Plugins
-- Batch event processing
-- EU data residency
-- Device ID management
-- Advertising identifiers (ADID, AppSetId, IDFV)
-- Optional tracking configuration
-- Async/await support
+- @react-native-async-storage/async-storage
+- TypeScript analytics
+- event tracking
+- user properties
+- Identify operations
+- revenue tracking
+- Revenue interface
+- group properties
+- groupIdentify
+- setUserId
+- setDeviceId
+- setSessionId
+- flush events
+- trackingOptions
+- plugins
+- EnrichmentPlugin
+- DestinationPlugin
+- HTTP V2 API
+- batch API
+- serverZone EU
+- advertising identifiers
+- ADID
+- IDFV
+- IDFA
+- AppSetId
+- OTA updates
+- Expo compatibility
+- React Native CLI
+- pod install
+- Gradle compatibility
+- migrateLegacyData
+- transportProvider
+- logLevel debugging

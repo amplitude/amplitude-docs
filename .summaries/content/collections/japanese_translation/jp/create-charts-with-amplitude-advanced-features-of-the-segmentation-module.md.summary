@@ -1,14 +1,14 @@
-## Summary
-This documentation page explains advanced features of Amplitude's segmentation module, including adding property value lists, renaming segments, creating behavioral cohorts inline, and using repeat count functionality to build more complex user segments for analytics charts.
+**Summary:** This documentation covers advanced features of Amplitude's segmentation module, including creating complex user segments with custom property value lists, renaming segments, creating inline behavioral cohorts using the "+ Performed" feature, and applying repeat count functionality to event segmentation charts.
 
-## Keywords
+**Keywords:**
 - Amplitude segmentation module
-- Property value lists
-- Segment renaming
-- Inline behavioral cohorts
-- Repeat count functionality
-- User segment management
-- Chart customization
-- Event segmentation
-- Japanese translation
-- Amplitude analytics
+- custom property value lists
+- comma-separated values pasting
+- segment renaming
+- inline behavioral cohorts
+- "+ Performed" feature
+- event segmentation charts
+- repeat count functionality
+- user property implementation
+- behavioral cohort creation
+- Japanese translation documentation

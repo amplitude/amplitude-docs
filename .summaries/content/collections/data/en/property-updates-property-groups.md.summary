@@ -1,14 +1,17 @@
-# Summary
-Property groups in Amplitude Data allow users to define collections of properties that can be applied to multiple events simultaneously, streamlining tracking plan management by enabling bulk property updates across all associated events without having to modify each event individually.
+**Summary:** Documents Amplitude Data's property groups feature that allows grouping event properties for bulk application to multiple events, with automatic propagation of property updates across all associated events in tracking plans.
 
-# Keywords
+**Keywords:**
 - property groups
-- bulk property updates
-- tracking plan management
+- Amplitude Data
 - event properties
-- property inheritance
-- cross-event property management
-- property standardization
-- property iteration
-- property modification propagation
-- event property organization
+- tracking plans
+- bulk property management
+- property updates propagation
+- event property grouping
+- tracking plan management
+- property group creation
+- property group modification
+- event property association
+- property iterations
+- active events only
+- custom events exclusion

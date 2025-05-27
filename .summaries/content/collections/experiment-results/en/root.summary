@@ -1,96 +1,52 @@
-# Amplitude Experiment Results: Comprehensive Product Overview
+## Amplitude Experiment Results
 
-## Product Overview
+Amplitude's Experiment Results is a comprehensive A/B testing analysis platform that enables teams to analyze experiments from external feature flagging platforms through sophisticated statistical charting and metric evaluation capabilities. The product provides deep analytical insights into experiment performance through configurable metrics, statistical significance testing, and advanced formula-based calculations.
 
-Amplitude Experiment Results is an analytics tool that enables customers to analyze A/B tests and experiments from both Amplitude's native experimentation platform and third-party feature flagging platforms. The product allows users to create detailed experiment analyses, track various metric types, and visualize results through multiple chart types to make data-driven decisions about feature releases and optimizations.
+## Product Relationships and Features
 
-## Key Features and Capabilities
+The Experiment Results functionality centers around the **Experiment Results chart**, which serves as the primary interface for A/B test analysis. This chart integrates with external feature flagging platforms to provide unified experiment analysis capabilities within Amplitude's analytics ecosystem.
 
-1. **Cross-Platform Experiment Analysis**: Analyze A/B tests from non-Amplitude feature flagging platforms
-2. **Multiple Metric Types Support**:
-   - Unique conversions
-   - Event totals
-   - Sum/average of property values
-   - Funnel conversion
-   - Formula metrics
-   - Retention metrics
-3. **Advanced Statistical Analysis**:
-   - Sequential testing
-   - Confidence interval calculations
-   - P-value determinations
-4. **Visualization Tools**:
-   - Confidence interval charts
-   - Cumulative exposure charts
-   - Performance by variant charts
-   - Mean over time charts
-5. **Formula Metrics Engine**: Create custom metrics using mathematical operations and specialized functions
+The product consists of two main analytical components:
 
-## Product Relationships and Architecture
+**Core Analysis Engine**: Handles standard metric types including unique conversions, event totals, sum/average property values, funnel conversions, retention metrics, and basic formula calculations. This engine manages exposure event tracking, variant definition, and statistical significance calculations using both T-test and Sequential testing methodologies.
 
-Experiment Results appears to be a component within Amplitude Analytics that specifically focuses on experiment analysis. It integrates with:
-
-1. **Amplitude Analytics**: The parent platform providing the user interface and data infrastructure
-2. **Third-party Feature Flagging Platforms**: Accepts experiment data from external sources
-3. **Amplitude Metrics System**: Leverages existing metrics definitions and capabilities
+**Formula Metrics Engine**: Provides advanced custom metric creation through a comprehensive function library, enabling complex calculations that combine multiple data sources and apply sophisticated statistical methods including the HyperLogLog algorithm for unique count estimations.
 
 ## Key Nomenclature and Definitions
 
-1. **Exposure Events**: Events that indicate when a user has been exposed to a specific experiment variant
-2. **Variants**: Different versions of a feature or experience being tested (e.g., control vs. treatment)
-3. **Metric Types**:
-   - **Unique Conversions**: Count of unique users who performed a specific action
-   - **Event Totals**: Total count of specific events
-   - **Property Values**: Sum or average of numeric properties associated with events
-   - **Funnel Conversion**: Percentage of users who complete a defined sequence of events
-   - **Formula Metrics**: Custom metrics created using mathematical operations and functions
-   - **Retention**: Measurement of users returning to perform actions over time
-4. **Statistical Settings**:
-   - **Sequential Testing**: Statistical approach that allows for continuous monitoring of results
-   - **Confidence Interval**: Range of values that likely contains the true value of a metric
-   - **P-value**: Probability measure used to determine statistical significance
+**Exposure Events**: The foundational tracking mechanism that defines when users are exposed to experiment variants, serving as the basis for all subsequent metric calculations and statistical analysis.
 
-## Formula Metrics Functions
+**Variant Definition**: The configuration system that categorizes experiment participants into different test groups (control, treatment variants) based on feature flag assignments from external platforms.
 
-Experiment Results supports the following specialized functions for formula metrics:
+**Sequential Testing**: An advanced statistical methodology that allows for continuous monitoring of experiment results with controlled false positive rates, contrasting with traditional T-test approaches that require predetermined sample sizes.
 
-1. **UNIQUES(event_name)**: Counts unique users who performed a specific event
-2. **TOTALS(event_name)**: Counts total occurrences of a specific event
-3. **PROPSUM(event_name, property_name)**: Sums values of a property across events
-4. **PROPAVG(event_name, property_name)**: Calculates average value of a property across events
-5. **PROPCOUNT(event_name, property_name)**: Counts occurrences of a property with specific values
-6. **PROPMAX(event_name, property_name)**: Returns maximum value of a property
-7. **PROPMIN(event_name, property_name)**: Returns minimum value of a property
-8. **CONVERSIONRATE(funnel_name)**: Returns conversion rate for a funnel
-9. **CONVERSIONAVG(funnel_name)**: Returns average conversion time for a funnel
-10. **REVENUETOTAL(event_name)**: Calculates total revenue from an event
+**CUPED (Controlled-experiment Using Pre-Experiment Data)**: A variance reduction technique that improves statistical power by incorporating pre-experiment user behavior data into the analysis.
 
-## Workflow and Usage
+**Cumulative Exposure Tracking**: The system for monitoring user exposure patterns over time, enabling proper attribution of user actions to experiment variants.
 
-1. **Creating an Experiment Analysis**:
-   - Define exposure events that identify experiment participants
-   - Select metrics to track
-   - Configure statistical settings
-   - Define experiment variants
+**Formula Functions**: A comprehensive library of analytical functions including:
+- **UNIQUES**: Counts distinct users using HyperLogLog approximation
+- **TOTALS**: Aggregates event counts
+- **PROPSUM/PROPAVG/PROPCOUNT/PROPMAX/PROPMIN**: Property-based calculations
+- **CONVERSIONRATE/CONVERSIONAVG**: Conversion-focused metrics
+- **REVENUETOTAL**: Revenue aggregation functions
 
-2. **Analyzing Results** through four chart types:
-   - **Confidence Interval Chart**: Shows statistical significance of results
-   - **Cumulative Exposure Chart**: Tracks experiment participation over time
-   - **Performance by Variant Chart**: Compares metric performance across variants
-   - **Mean Over Time Chart**: Shows how metrics evolve throughout the experiment
+**Conversion Window**: The time period after exposure during which user actions are attributed to the experiment variant.
 
-3. **Using Formula Metrics**:
-   - Create custom metrics using mathematical operations
-   - Combine multiple metrics into a single formula
-   - Apply specialized functions for specific analytical needs
-   - Amplitude automatically calculates statistical significance for formula metrics
+**Latency Offset**: A timing adjustment mechanism that accounts for data processing delays in experiment attribution.
 
-## Statistical Methodology
+## Product Ecosystem Integration
 
-Amplitude Experiment Results calculates statistical significance for metrics, including formula metrics, through:
+Experiment Results operates as a bridge between external feature flagging platforms and Amplitude's broader analytics ecosystem. The product ingests experiment data from third-party feature flag providers and applies Amplitude's advanced statistical and analytical capabilities to generate insights.
 
-1. **Variance Calculation**: Determines the spread of data points
-2. **Mean Calculation**: Determines the average value
-3. **Confidence Interval Determination**: Establishes the range of likely true values
-4. **P-value Calculation**: Determines the probability that observed differences occurred by chance
+The platform integrates with Amplitude's core event tracking infrastructure, leveraging existing user behavior data to enhance experiment analysis through techniques like CUPED. The formula metrics system connects to Amplitude's broader metric calculation engine, allowing experiment results to be incorporated into dashboards, alerts, and other analytical workflows.
 
-These calculations are automatically applied to all metrics, including custom formula metrics, ensuring statistical rigor in experiment analysis.
+The statistical engine supports both real-time analysis through sequential testing and traditional fixed-horizon analysis, making it suitable for various experimental methodologies and organizational preferences.
+
+## Technical Implementation
+
+The product processes experiment data through exposure event configuration, where teams define the events that trigger experiment exposure tracking. Variant assignment is handled through integration with external feature flagging platforms, with Amplitude providing the analytical layer for result interpretation.
+
+Statistical calculations include confidence interval analysis, p-value computation, variance and covariance calculations for formula metrics, and support for both primary and secondary metric evaluation. The system handles complex scenarios including user re-exposure, variant switching, and time-based attribution windows.
+
+The formula metrics system supports arithmetic operations and nested function calls, enabling sophisticated custom metric creation that can combine multiple event types, user properties, and conversion patterns into single analytical measures.

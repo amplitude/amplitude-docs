@@ -1,14 +1,16 @@
-# Summary
-This documentation page explains how to integrate Amplitude Data validation into CI workflows, detailing the process of creating API tokens, configuring environment variables, and running `ampli status` commands using Docker containers in CI systems like GitHub Actions and Bitbucket Pipelines to verify analytics implementations against tracking plans.
+**Summary:** This documentation explains how to integrate Amplitude Data's Ampli CLI into continuous integration workflows to validate analytics implementations against tracking plans, covering API token creation, AMPLI_TOKEN environment variable configuration, and Docker container usage (amplitudeinc/ampli and amplitudeinc/ampli-all) for GitHub Actions and Bitbucket Pipelines.
 
-# Keywords
-- ampli status
-- CI integration
-- AMPLI_TOKEN
-- Docker containers
-- amplitudeinc/ampli
-- amplitudeinc/ampli-all
-- GitHub Actions
-- Bitbucket Pipelines
+**Keywords:**
+- Ampli CLI
+- ampli status command
+- AMPLI_TOKEN environment variable
+- amplitudeinc/ampli Docker container
+- amplitudeinc/ampli-all Docker container
 - tracking plan validation
-- analytics verification
+- ampli pull command
+- ampli.json configuration file
+- GitHub Actions container integration
+- Bitbucket Pipelines YAML
+- Amplitude Data API token
+- analytics implementation verification
+- CI/CD workflow integration

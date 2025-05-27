@@ -1,18 +1,21 @@
-# Summary
-Amplitude Experiment is a behavioral experimentation platform that enables product teams to modify experiences through A/B testing, progressive feature delivery, and dynamic in-product experiences using flags that control product behavior without code changes. The documentation outlines two main workflows: creating experiments (which require hypotheses, metrics, variants, and statistical analysis) and implementing feature flags (which focus on controlled feature rollouts without metrics).
+**Summary:** This documentation provides an overview of Amplitude Experiment's workflow-driven behavioral experimentation platform, covering the complete process for creating A/B tests and feature flags, including hypothesis creation, variant configuration, user allocation with bucketing units, statistical significance analysis using sequential testing or T-test models, and integration via Experiment SDK or REST API.
 
-# Keywords
-- behavioral experimentation
-- A/B testing
+**Keywords:**
+- Amplitude Experiment
+- A/B testing workflow
 - feature flags
-- progressive feature delivery
-- sequential testing
-- hypothesis creation
-- variant allocation
+- sequential testing statistical model
+- T-test analysis
 - bucketing units
+- SUTVA (Stable Unit Treatment Value Assumption)
+- treatment variants
+- control groups
 - statistical significance
-- experiment workflow
-- SUTVA
-- experiment metrics
-- treatment variant
-- control variant
+- hypothesis creation
+- Experiment SDK
+- REST API integration
+- user allocation
+- progressive feature delivery
+- Accounts add-on bucketing
+- experiment briefs
+- variant configuration

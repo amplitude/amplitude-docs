@@ -1,14 +1,17 @@
-## Summary
-This documentation page explains Amplitude Notebooks, a feature that allows users to create documents combining text, images, videos, charts, and metrics to explain insights to teammates, helping teams make better product decisions by providing context and takeaways from analytics data.
+**Summary:** This Japanese documentation explains how to create and edit Amplitude Notebooks for sharing analytical insights with teammates and stakeholders, covering content addition (charts, cohorts, headers, text blocks, images, videos), chart editing with callout boxes and metric trackers, drag-and-drop content reordering, and rich text formatting with markdown support.
 
-## Keywords
+**Keywords:**
 - Amplitude Notebooks
-- insight sharing
-- chart annotations
+- Japanese translation (jp)
+- chart editing
+- callout boxes
 - metric trackers
+- drag-and-drop reordering
+- markdown formatting
 - rich text formatting
-- markdown support
-- content organization
-- data storytelling
-- product analytics documentation
-- collaborative analysis
+- cohorts integration
+- content blocks
+- analytical insights sharing
+- stakeholder reporting
+- BMP image format limitations
+- persona and pathfinder chart restrictions

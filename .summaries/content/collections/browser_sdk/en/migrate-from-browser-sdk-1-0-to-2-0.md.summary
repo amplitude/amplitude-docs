@@ -1,14 +1,21 @@
-## Summary
-This documentation page details the migration process from Browser SDK 1.0 to 2.0, highlighting key changes including default Autocapture functionality, consolidated marketing attribution tracking, simplified cookie management, server-side user agent parsing, removal of enums, and a streamlined plugin interface.
+**Summary:** This documentation covers migrating from Amplitude Browser SDK 1.0 to 2.0 (`@amplitude/analytics-browser`), detailing breaking changes including Autocapture enablement by default, consolidated marketing attribution tracking with Web Attribution V1, simplified cookie options configuration, server-side user agent parsing replacement, enum deprecation for TransportType/ServerZone/PluginType, and streamlined plugin interface with optional properties.
 
-## Keywords
-- Browser SDK migration
-- Autocapture configuration
-- Marketing attribution tracking
-- Cookie management options
-- identityStorage
-- User agent enrichment
-- Plugin interface simplification
-- Web Attribution V2
+**Keywords:**
 - @amplitude/analytics-browser
-- Server-side parsing
+- Browser SDK 2.0 migration
+- Autocapture default enablement
+- Web Attribution V1 vs V2
+- marketing attribution tracking
+- cookieOptions configuration
+- identityStorage replacement
+- disableCookies deprecation
+- user agent client-side parsing
+- server-side enrichment
+- TransportType enum deprecation
+- ServerZone literal values
+- plugin interface simplification
+- trackNewCampaigns deprecation
+- trackPageViews replacement
+- defaultTracking configuration
+- Session Replay compatibility
+- Ampli v2 compatibility

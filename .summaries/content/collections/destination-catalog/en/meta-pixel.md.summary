@@ -1,14 +1,17 @@
-# Summary
-Amplitude Activation's Meta Pixel streaming integration enables forwarding Amplitude events to Meta Pixel, requiring Meta Pixel ID and Conversions API Access Token for setup. The integration supports mapping Amplitude user properties to Meta Pixel Customer Information Parameters and sending additional properties as Custom Data Parameters.
+**Summary:** Documents Amplitude Activation's Meta Pixel streaming integration for forwarding Amplitude events and users to Meta Pixel using Conversions API, including setup with Pixel ID and access token, event filtering, property mapping to Customer Information Parameters and Custom Data Parameters, and supported Meta Pixel properties with hashing requirements.
 
-# Keywords
-- Meta Pixel integration
+**Keywords:**
+- Meta Pixel streaming integration
+- Amplitude Activation
 - Conversions API
-- Event streaming
-- Customer Information Parameters
-- External ID mapping
-- Property mapping
 - Meta Pixel ID
-- Access Token
+- Meta Pixel Conversions API Access Token
+- Customer Information Parameters
+- Custom Data Parameters
+- External ID mapping
 - Event forwarding
-- Hashed parameters
+- Property hashing
+- Ad networks destination
+- Event streaming
+- Meta developer account
+- Rate limiting

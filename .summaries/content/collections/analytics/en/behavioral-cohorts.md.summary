@@ -1,15 +1,13 @@
-# Summary
-This documentation page explains behavioral cohorts in Amplitude, which are groups of users defined by actions taken within a specific time period, allowing segmentation in analytics charts to analyze how product engagement affects business outcomes. The feature is available on Plus, Growth, and Enterprise plans, with Plus plans limited to five behavioral cohorts.
+**Summary:** This documentation explains Amplitude's behavioral cohorts feature, which groups users based on shared traits and actions within specific time periods, available on Plus, Growth, and Enterprise plans with a five-cohort limit for Plus users.
 
-# Keywords
+**Keywords:**
 - behavioral cohorts
+- Amplitude cohorts
 - user segmentation
-- action-based grouping
-- cohort definition
-- chart segmentation
-- Plus plan restrictions
-- user traits
-- product engagement analysis
-- cohort computation
+- Segmentation Module
+- cohort recomputation
+- Plus Growth Enterprise plans
 - Accounts add-on
 - group-level cohorts
+- user actions time period
+- cohort chart integration

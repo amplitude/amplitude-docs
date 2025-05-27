@@ -1,14 +1,14 @@
-# Summary
-Cordial integration with Amplitude enables bidirectional data flow: sending Amplitude cohorts to Cordial lists for targeted messaging, and streaming real-time customer behavior and profile data from Cordial to Amplitude for enhanced analysis across email, SMS, and mobile app touchpoints.
+**Summary:** This documentation describes the Cordial source integration that streams real-time customer behavior and profile data from Cordial's customer engagement platform to Amplitude, requiring API key configuration in Cordial's Marketplace and Outbound Data Settings.
 
-# Keywords
+**Keywords:**
+- Cordial source integration
+- real-time customer behavior streaming
+- profile data import
 - customer engagement platform
-- real-time data streaming
-- cohort synchronization
-- cross-channel messaging
+- Cordial Marketplace configuration
+- Outbound Data Settings
+- Outbound Contact Settings
+- email SMS mobile app channels
 - 360-degree customer view
-- outbound data settings
-- API key configuration
-- behavioral data integration
-- email marketing
-- SMS messaging
+- brand engagement touchpoints
+- Cordial CSM feature enablement

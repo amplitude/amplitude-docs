@@ -1,17 +1,28 @@
 ## Summary
-This documentation page explains how to use Ampli Wrapper with React Native SDK, providing a strongly typed API for tracking analytics events based on Amplitude Data tracking plans, with code examples for initialization, identifying users, tracking events, and managing event flushing in JavaScript/TypeScript applications.
+This documentation covers the Ampli Wrapper for React Native SDK, which generates strongly typed APIs for tracking analytics events based on Amplitude Data tracking plans, supporting JavaScript and TypeScript with CJS module packaging and requiring @amplitude/analytics-react-native and @react-native-async-storage/async-storage dependencies.
 
 ## Keywords
 - Ampli Wrapper
 - React Native SDK
-- TypeScript tracking
-- JavaScript tracking
-- strongly typed analytics
-- event tracking
-- identify users
-- ampli.load
-- ampli.track
-- ampli.flush
-- tracking plan integration
-- event schema enforcement
-- Ampli CLI
+- @amplitude/analytics-react-native
+- @react-native-async-storage/async-storage
+- strongly typed API
+- tracking plan
+- Amplitude Data
+- CJS module
+- ampli.load()
+- ampli.identify()
+- ampli.track()
+- ampli.flush()
+- ampli pull command
+- ampli status command
+- EnrichmentPlugin
+- JavaScript ES6
+- TypeScript 2.1
+- event schemas
+- user properties
+- setGroup()
+- AmplitudeClient
+- API Key configuration
+- deviceId
+- event properties validation

@@ -1,14 +1,13 @@
-## Summary
-This documentation page describes the MoEngage Cohort Sync integration with Amplitude, which enables sending behavioral audiences from Amplitude to MoEngage for targeted messaging campaigns across email, SMS, push, and in-product channels, requiring matching user IDs between both platforms and proper configuration of App ID and Secret Key.
+**Summary:** This documentation describes the MoEngage Cohort Sync destination integration that enables sending Amplitude behavioral cohorts to MoEngage for targeted marketing campaigns, requiring App ID and Secret Key authentication and user/device ID mapping between platforms.
 
-## Keywords
+**Keywords:**
 - MoEngage cohort sync
-- behavioral audiences
-- user ID mapping
-- device ID mapping
-- custom segments
-- API Settings
-- sync cadence
-- marketing automation
-- Amplitude cohorts
-- targeted messaging
+- behavioral audiences export
+- App ID Secret Key authentication
+- user ID device ID mapping
+- custom segment creation
+- sync cadence configuration
+- marketing automation destination
+- hyper-targeted messaging
+- anonymous user mapping
+- Amplitude cohort export

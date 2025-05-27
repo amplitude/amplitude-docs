@@ -1,14 +1,15 @@
-# Summary
-This documentation details the Marketo destination integration for Amplitude, which enables syncing behavioral cohorts from Amplitude to Marketo for targeted marketing campaigns. The setup process requires Marketo API credentials, creating custom Boolean fields in Marketo for each cohort, and configuring the connection in Amplitude's Catalog with proper user property mapping.
+**Summary:** This documentation describes the Amplitude-Marketo integration for syncing behavioral cohorts from Amplitude to Marketo's marketing automation platform, enabling personalized campaigns based on user segmentation and lifecycle timing through custom Boolean fields and API configuration.
 
-# Keywords
-- Marketo cohort syncing
-- behavioral cohorts
+**Keywords:**
+- Amplitude-Marketo integration
+- behavioral cohorts syncing
 - marketing automation
 - custom Boolean fields
-- API integration
-- user property mapping
-- upsert leads
 - REST API endpoint
-- sync cadence
+- Client ID and Client Secret
+- Amplitude user property mapping
+- cohort export
+- upsert leads
 - email case-sensitivity
+- sync cadence
+- API name configuration

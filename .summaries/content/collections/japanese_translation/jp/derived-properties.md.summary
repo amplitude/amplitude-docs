@@ -1,17 +1,16 @@
-## Summary
-This documentation explains derived properties in Amplitude Data, which allow users to create new event and user properties retroactively from existing properties using functions and operators. The page details the creation process, result previewing, and provides comprehensive reference tables for supported string, mathematical, object, date/time, array functions and conditional operators.
+**Summary:** This documentation covers Amplitude Data's derived properties feature for creating new event and user properties retroactively from existing properties using functions and operators, including string manipulation (REGEXEXTRACT, SPLIT), mathematical operations (SUM, DIVIDE), date/time conversions (DATE_TO_LONG, LONG_TO_TIME), array functions (ITEM_COUNT, GREATEST), and conditional logic (IF, SWITCH) within the Amplitude Data interface.
 
-## Keywords
-- derived properties
-- Amplitude Data
-- property functions
-- string manipulation
-- mathematical operations
-- conditional logic
-- array operations
-- date/time formatting
-- property transformation
-- REGEXEXTRACT
-- SPLIT
-- IF statements
+**Keywords:**
+- Amplitude Data derived properties
+- REGEXEXTRACT REGEXREPLACE SPLIT functions
+- DATE_TO_LONG TIME_TO_LONG LONG_TO_TIME conversions
+- ITEM_COUNT GREATEST LEAST array functions
+- IF SWITCH AND OR conditional operators
+- SUM DIVIDE MULTIPLY mathematical functions
+- EVENT_HOUR_OF_DAY EVENT_DAY_OF_WEEK
+- EXTRACT_FROM_DICT dictionary parsing
+- glob match string operators
 - retroactive property creation
+- formula editor preview
+- main branch requirement
+- Unix timestamp milliseconds

@@ -1,14 +1,13 @@
-## Summary
-This documentation explains how to integrate Miro with Amplitude, allowing users to search for and add Amplitude charts directly onto Miro boards without switching between platforms, by installing the Amplitude plug-in from the Miro Marketplace and authenticating it.
+**Summary:** This documentation explains how to integrate Miro with Amplitude by installing the Amplitude plug-in from the Miro Marketplace, enabling users to search for and embed Amplitude charts directly onto Miro boards through authentication and the "Manage Amplitude Charts" modal.
 
-## Keywords
+**Keywords:**
 - Miro integration
-- Amplitude charts
-- Miro boards
 - Amplitude plug-in
 - Miro Marketplace
-- chart search
-- authentication
-- cross-platform visualization
-- all Amplitude plans
 - Manage Amplitude Charts modal
+- chart embedding
+- Miro boards
+- authentication process
+- chart search functionality
+- Amplitude icon
+- left rail navigation

@@ -1,5 +1,19 @@
-## Summary
-This is the homepage for Amplitude Documentation, showcasing four main products (Analytics, Data, Experiment, and Session Replay) with descriptions and links to popular content articles covering SDK implementation, feature flags, event tracking, and user identification.
+**Summary:** This is the main Amplitude Documentation homepage (test.md) that showcases four core products (Analytics, Data, Experiment, Session Replay) with product descriptions, icons, section links, and a curated list of popular content articles covering topics like data warehouse analysis, Browser SDK 2, feature flags, event properties, and user tracking.
 
-## Keywords
-amplitude-products, analytics-documentation, data-integration, experiment-solution, session-replay, browser-sdk, feature-flags, event-properties, user-identification, custom-formulas, data-warehouse-integration
+**Keywords:**
+- Amplitude Documentation homepage
+- product showcase page
+- Amplitude Analytics product
+- Amplitude Data product  
+- Amplitude Experiment product
+- Amplitude Session Replay product
+- popular content curation
+- Browser SDK 2
+- feature flags
+- data warehouse analysis
+- event properties
+- user properties
+- product icons
+- section links
+- home blueprint template
+- hide_toc and hide_side-nav configuration

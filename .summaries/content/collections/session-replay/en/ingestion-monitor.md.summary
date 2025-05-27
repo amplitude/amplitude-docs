@@ -1,13 +1,13 @@
-# Summary
-The Ingestion Monitor tool in Amplitude Session Replay tracks implementation status over time, displaying charts for successful requests, throttling errors, quota exceeded errors, and invalid session IDs to help debug unavailable session replays and monitor implementation health.
+**Summary:** Documents the Session Replay Ingestion Monitor tool that tracks session replay ingestion status over time, displaying charts for HTTP status codes (200, 429, 402) and invalid session IDs to help debug replay implementation issues.
 
-# Keywords
-- session-replay
-- ingestion-monitor
-- implementation debugging
-- status tracking
-- throttling errors
-- quota exceeded errors
+**Keywords:**
+- Session Replay Ingestion Monitor
+- session replay status tracking
+- HTTP status 200 successful requests
+- HTTP status 429 throttling errors
+- HTTP status 402 quota exceeded
 - invalid session IDs
-- implementation health monitoring
-- status 200/429/402
+- Users & Sessions tab
+- session replay debugging
+- ingestion health monitoring
+- replay implementation troubleshooting

@@ -1,16 +1,18 @@
 ## Summary
-This document explains Monthly Tracking Users (MTU) billing in Amplitude, detailing how MTUs are calculated (unique users triggering events within a calendar month), available plan limits (up to 1M MTUs), usage tracking methods, and common scenarios affecting MTU counts like anonymous users, cross-project tracking, and data backfills.
+This Japanese documentation explains Monthly Tracking User (MTU) billing for Amplitude, covering MTU calculation methodology, plan limits (100K-1M MTU), user identification and merging logic, cross-project counting, and backfill data impact on billing calculations.
 
 ## Keywords
-- Monthly Tracking Users (MTU)
-- Amplitude billing
-- Anonymous user tracking
-- User identification
-- MTU calculation
-- Usage limits
-- Cross-project tracking
-- Data backfills
-- MTU monitoring
-- Growth plan
-- Enterprise plan
-- Billing alternatives
+- Monthly Tracking User (MTU)
+- MTU billing
+- user identification merging
+- anonymous user tracking
+- device ID tracking
+- user ID consolidation
+- project-level MTU counting
+- backfill data billing
+- MTU calculation methodology
+- Growth plan Enterprise plan
+- MTU overage charges
+- user deduplication logic
+- calendar month billing cycle
+- delayed event processing

@@ -1,14 +1,18 @@
 ## Summary
-This documentation details the Stripe integration for Amplitude, which imports revenue events from Stripe for financial data analysis, highlighting setup steps through Stripe webhooks, user identification methods, and example analytics charts for tracking revenue metrics, with a comprehensive list of supported Stripe events.
+This documentation covers the Stripe integration for Amplitude that imports revenue events from Stripe via webhooks, including setup instructions for webhook configuration, user ID mapping priority, and supported revenue-related events like payment_intent.succeeded, charge.succeeded, and invoice.payment_succeeded.
 
 ## Keywords
-- Stripe webhook integration
-- Revenue event tracking
-- Payment_intent.succeeded
-- User identification metadata
-- Financial data analysis
-- Transaction event ingestion
-- Revenue cohorts
-- Stripe event types
-- Payment analytics
-- Invoice tracking
+- Stripe integration
+- revenue events import
+- webhook configuration
+- payment_intent.succeeded
+- charge.succeeded
+- invoice.payment_succeeded
+- user ID mapping
+- amplitude_id metadata
+- currency normalization
+- revenue tracking
+- financial transaction events
+- Stripe API version 2024-06-20
+- beta integration
+- raw-events integration type

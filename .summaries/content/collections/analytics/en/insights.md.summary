@@ -1,14 +1,15 @@
-## Summary
-Amplitude's Insights feature provides anomaly detection alerts for metrics using Prophet machine learning, allowing users to set up automatic, custom, and smart alerts that can be delivered via email or Slack, with specific conditions for triggering notifications based on confidence intervals (95%, 98%, or 99%) or custom thresholds.
+**Summary:** This documentation covers Amplitude's Insights alerts feature that uses Prophet machine learning to detect anomalies in product metrics, including automatic alerts for instrumented events, custom alerts with confidence intervals, and smart alerts for Event Segmentation and Funnel Analysis charts with daily/hourly frequencies.
 
-## Keywords
-- Prophet anomaly detection
-- Automatic/custom/smart alerts
-- Confidence intervals
-- Slack integration
+**Keywords:**
+- Amplitude Insights alerts
+- Prophet machine learning anomaly detection
 - Event Segmentation alerts
 - Funnel Analysis alerts
-- Daily/hourly metrics monitoring
-- Statistical significance thresholds
-- Alert management
-- Notification delivery
+- automatic alerts instrumented events
+- custom alerts confidence intervals
+- smart alerts 99% confidence interval
+- daily hourly frequency charts
+- alert notifications Slack integration
+- server_upload_time filter
+- 120 training days automatic monitors
+- chart ownership alert permissions

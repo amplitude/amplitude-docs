@@ -1,91 +1,50 @@
-# Amplitude Partner Integration Platform
+## Amplitude Partner Integration Platform
 
-## Overview
+Amplitude provides a comprehensive Partner Integration Platform through its Integration Portal, enabling third-party partners to build and manage integrations that connect with Amplitude's analytics ecosystem. The platform supports bidirectional data flow and cohort syncing capabilities across three primary integration types.
 
-Amplitude's Partner Integration Platform enables third-party services to build integrations with Amplitude's analytics ecosystem. The platform supports three primary integration types:
+## Integration Types and Relationships
 
-1. **Event Ingestion Integrations**: Allow partners to send event data into Amplitude
-2. **Cohort Syncing Integrations**: Enable the export of Amplitude behavioral cohorts to partner platforms
-3. **Event Streaming Integrations**: Facilitate real-time forwarding of Amplitude events to partner destinations
+The platform supports three distinct integration patterns that work together to create a complete data ecosystem:
 
-The Integration Portal serves as the central hub where partners can configure, test, and submit these integrations for inclusion in Amplitude's marketplace.
+**Event Ingestion Integrations** enable partners to send behavioral event data into Amplitude's analytics platform. These integrations appear as Data Source tiles in Amplitude's Sources page and utilize the HTTP v2 API with partner_id parameters for proper attribution and tracking.
 
-## Product Relationships and Architecture
+**Event Streaming Integrations** provide real-time event forwarding from Amplitude to partner platforms using Freemarker templates for payload customization. These appear as Data Destination tiles and support sophisticated event filtering, user property mapping, and custom authentication methods.
 
-### Integration Portal
-
-The Integration Portal is the gateway for partners to create and manage integrations with Amplitude. Key aspects include:
-
-- Access is granted by invitation after identifying at least three potential customers
-- Partners can self-define integration tiles that appear in Amplitude's marketplace
-- Provides a sandbox environment for testing integrations before submission
-- Supports configuration of connection details, authentication methods, and user instructions
-- Facilitates the submission and validation process for integrations
-
-### Integration Types and Relationships
-
-1. **Event Ingestion Integration**
-   - Allows partners to send event data into Amplitude
-   - Requires a unique `partner_id` parameter in event payloads
-   - Uses Amplitude's HTTP v2 API for data transmission
-   - Partners configure connection information and user setup instructions
-
-2. **Cohort Syncing Integration**
-   - Enables export of Amplitude behavioral cohorts to partner platforms
-   - Supports two implementation models:
-     - **List-based**: Creates and updates lists of users in partner systems
-     - **Property-based**: Sets user properties in partner systems to indicate cohort membership
-   - Requires implementation of specific API endpoints for cohort management
-
-3. **Event Streaming Integration**
-   - Forwards Amplitude events to partner destinations in real-time
-   - Supports customizable payloads using Freemarker templates
-   - Allows event filtering and property mapping
-   - Partners define authentication methods and destination configuration
+**Cohort Syncing Integrations** export Amplitude's behavioral cohorts to partner platforms through two distinct patterns: list-based integrations that create and manage user lists, and property-based integrations that set user traits and properties on individual user profiles.
 
 ## Key Nomenclature and Definitions
 
-- **Integration Portal**: Amplitude's platform for partners to create and manage integrations
-- **Partner ID**: Unique identifier assigned to partners for tracking event sources
-- **Behavioral Cohort**: A group of users defined by their actions or behaviors in Amplitude
-- **List-based Cohort Integration**: Integration that creates and manages lists of users in partner systems
-- **Property-based Cohort Integration**: Integration that sets user properties to indicate cohort membership
-- **Freemarker Templates**: Templating system used to customize event streaming payloads
-- **Integration Tile**: The visual representation and configuration of an integration in Amplitude's marketplace
+**Integration Portal**: Amplitude's partner gateway and self-service platform for building, configuring, and managing integrations before submission to the Integration Catalog.
+
+**Integration Catalog**: Amplitude's marketplace where approved partner integrations are listed and made available to customers.
+
+**Cohort Syncing Patterns**:
+- **List-based cohort integration**: Creates and manages user lists on partner platforms using list creation, add users, and remove users API endpoints
+- **Property-based cohort integration**: Sets user traits or properties on individual user profiles to indicate cohort membership
+
+**Freemarker Templates**: Template engine used in Event Streaming integrations for dynamic payload customization and event body configuration.
+
+**MappedProperties/MappedFields**: Configuration objects that define how Amplitude user properties and event fields map to partner platform schemas.
+
+**Partner_id Parameter**: Special identifier included in HTTP v2 API payloads to properly attribute events to specific partner integrations.
 
 ## API Endpoints and Technical Implementation
 
-### Event Ingestion Integration
-- Uses Amplitude's HTTP v2 API
-- Requires `partner_id` parameter in event payloads
-- Example payload structure provided in documentation
+**Event Ingestion**: Utilizes Amplitude's HTTP v2 API with partner_id parameters embedded in event payloads for proper source attribution.
 
-### Cohort Syncing Integration
-For list-based integrations, partners must implement:
-- List creation endpoint
-- Add users endpoint
-- Remove users endpoint
+**Cohort Syncing APIs** include three primary endpoint types:
+- List creation endpoints for establishing new cohort lists
+- Add users endpoints for bulk user additions with configurable batch sizes
+- Remove users endpoints for user removal from cohorts
 
-For property-based integrations:
-- User property update endpoint
+**Event Streaming**: Supports REST API calls with customizable headers, authentication methods (Bearer Token, Basic Authentication, Custom Headers), and Freemarker-templated request bodies.
 
-Authentication typically uses Basic Authentication or API keys
+**Authentication Methods**: The platform supports multiple authentication patterns including basic authentication with api_key, bearer tokens, and custom header configurations.
 
-### Event Streaming Integration
-- Partners define destination endpoints to receive forwarded events
-- Supports customizable payloads using Freemarker templates
-- Includes rate limiting considerations
-- Allows filtering of events based on event types
+## Broader Product Ecosystem Integration
 
-## Integration Ecosystem
+The Partner Integration Platform serves as Amplitude's extensibility layer, enabling the analytics platform to integrate with the broader marketing technology and customer data ecosystem. Event Ingestion integrations expand Amplitude's data collection capabilities beyond its native SDKs, while Event Streaming integrations enable real-time activation of Amplitude insights across partner platforms.
 
-The Amplitude Partner Integration Platform fits into a broader ecosystem where:
+Cohort syncing creates a bridge between Amplitude's behavioral analytics and partner platforms' activation capabilities, supporting both bulk list management workflows and individual user property enrichment patterns. The platform includes sophisticated error handling, retry mechanisms with exponential backoff, and comprehensive testing tools including mock payload validation.
 
-1. Partners gain visibility through Amplitude's marketplace
-2. Amplitude users benefit from seamless data flow between platforms
-3. Co-marketing opportunities exist for featured integrations
-4. The platform enables bidirectional data flow:
-   - Data into Amplitude (Event Ingestion)
-   - Data out of Amplitude (Cohort Syncing and Event Streaming)
-
-Partners must go through a validation process before integrations are published to the marketplace, ensuring quality and reliability for Amplitude's customers.
+The Integration Portal provides a complete partner onboarding workflow, from initial configuration through Amplitude Engineering team review and final marketplace listing, creating a scalable ecosystem for third-party integrations while maintaining quality and security standards.

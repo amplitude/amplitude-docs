@@ -1,14 +1,17 @@
-## Summary
-This documentation page describes the Experiment Management API endpoints for mutex groups, including operations to list, get details, edit, and create mutex groups with their slots, which allow for managing experiment traffic allocation and preventing users from being in multiple experiments simultaneously.
+**Summary:** Documents the Experiment Management API mutex group endpoints for managing experiment traffic allocation, including operations to list, get details, edit mutex groups and slots, and create new mutex groups with bucketing configuration and slot-based experiment assignment.
 
-## Keywords
-- mutex groups
+**Keywords:**
+- mutex group endpoints
 - experiment traffic allocation
+- bucketing configuration
 - slot management
-- bucketing
-- experiment exclusivity
-- API endpoints
-- experiment management
-- traffic distribution
-- experiment coordination
-- mutex slots configuration
+- evaluation mode (local/remote)
+- bucketing key and salt
+- experiment assignment
+- holdout groups
+- percentage-based traffic splitting
+- mutex group slots
+- experiment management API
+- traffic bucketing
+- experiment dependencies
+- slot index operations

@@ -1,16 +1,21 @@
-## Summary
-This documentation page explains how to build funnel analysis charts in Amplitude to track user progression through defined paths, identify drop-off points, and analyze conversion rates. It covers setting up funnel steps, ordering options (any order, this order, exact order), optional steps, comparing multiple events in a single step, and how Amplitude calculates conversions.
+**Summary:**
+This Japanese documentation explains how to build funnel analysis charts in Amplitude, covering event module configuration, segmentation options, ordering types (any order, this order, exact order), and advanced features like optional steps, inline event combinations, and multi-event comparisons within single conversion steps.
 
-## Keywords
-- funnel analysis
-- conversion tracking
-- event sequence
-- drop-off points
-- optional steps
-- event ordering
-- inline event combining
-- group-by comparison
-- conversion calculation
-- simultaneous events
-- segment properties
-- exclusion filters
+**Keywords:**
+- ファネル分析 (funnel analysis)
+- Amplitude
+- イベントモジュール (event module)
+- セグメンテーションモジュール (segmentation module)
+- コンバージョン (conversion)
+- 任意の順序 (any order)
+- この順序 (this order)
+- 正確な順序 (exact order)
+- オプションステップ (optional step)
+- インラインイベント (inline events)
+- グループバイ (group by)
+- 除外ユーザー (exclude users)
+- 同時イベント (simultaneous events)
+- ユーザープロパティ (user properties)
+- 複数イベント比較 (multiple event comparison)
+- Japanese translation
+- jp locale

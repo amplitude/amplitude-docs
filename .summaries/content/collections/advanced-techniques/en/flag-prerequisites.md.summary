@@ -1,16 +1,20 @@
-# Summary
-This documentation explains how to configure and use flag prerequisites in Amplitude Experiment, allowing developers to create dependencies between feature flags where one flag's evaluation depends on another flag's result, with specific details on configuration workflow, evaluation process, and common use cases like release groups and chained mutual exclusion groups.
+**Summary:** This documentation covers Amplitude Experiment's flag prerequisites feature for Enterprise plans, which allows creating dependencies between feature flags and experiments where evaluation of dependent flags requires prerequisite flags to have specific variant values, including configuration through the Dependencies card and evaluation workflow details.
 
-## Keywords
+**Keywords:**
 - flag prerequisites
-- feature dependencies
 - Amplitude Experiment
-- Enterprise plans
-- dependency configuration
-- evaluation modes
-- circular dependency prevention
-- release groups
-- chained mutual exclusion
-- sub-features
-- prerequisite evaluation
+- flag dependencies
+- prerequisite flags
+- Dependencies card
 - variant assignment
+- evaluation modes
+- local evaluation mode
+- remote evaluation mode
+- circular dependency
+- release groups
+- mutual exclusion groups
+- chained experiments
+- prerequisite evaluation workflow
+- Enterprise plans
+- flag variants
+- experiment dependencies

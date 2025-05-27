@@ -1,14 +1,18 @@
-## Summary
-This documentation explains why user counts in Amplitude may show unexpected values, particularly the `(none)` bucket, which represents null values. It clarifies that Amplitude is event-based and displays property values as they existed at the time of the event, not current values, and explains common scenarios for null values in event properties, user properties, location data, and device information.
+**Summary:** This FAQ documentation explains why event and user properties in Amplitude analytics show `(none)` values, covering event-level querying behavior, property value timing, null value causes for location/device properties, and GeoIP/device mapping limitations.
 
-## Keywords
-- (none) bucket
-- null property values
-- event-based analytics
-- property value timing
-- GeoIP location properties
+**Keywords:**
+- `(none)` bucket grouping
+- event property null values
+- user property timing
+- event-level querying
+- property instrumentation timing
+- GeoIP location mapping
 - MaxMind database
 - device property mapping
-- historical event properties
-- server-side events
-- property instrumentation timing
+- server-side event properties
+- HTTP API custom location fields
+- device_brand device_manufacturer device_model
+- Account_Type custom properties
+- Amplitude City Region Country DMA
+- property value historical events
+- event-based analytics platform

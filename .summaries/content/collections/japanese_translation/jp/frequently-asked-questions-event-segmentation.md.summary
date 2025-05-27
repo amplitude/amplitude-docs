@@ -1,18 +1,24 @@
-## Summary
-This documentation page covers frequently asked questions about Event Segmentation charts in Amplitude, explaining how to analyze events with user properties, view historical data, understand metrics like active percentage, calculate averages and ratios, segment users based on past behavior, download user lists, create DAU/MAU charts, and troubleshoot common issues with data visualization.
+**Summary:**
+This Japanese FAQ documentation covers common questions about Event Segmentation charts in Amplitude Analytics, including user property analysis, date range selection, chart type differences (line vs bar), new user definitions, Active% calculations, property averages, custom formulas, DAU/MAU ratios, data export methods, and troubleshooting issues like incomplete data and glob matching filters.
 
-## Keywords
-- Event Segmentation
-- Group by clause
-- Where clause
-- Date range selection
-- Active percentage calculation
-- Property value averages
-- Custom formulas
-- Inline cohorts
-- User list downloads
-- DAU/MAU charts
-- Microscope feature
-- Incomplete data errors
-- Glob matching filters
-- Account-level filtering
+**Keywords:**
+- Event Segmentation charts
+- Japanese translation documentation
+- user properties analysis
+- group by and where clauses
+- line chart vs bar chart differences
+- new user definitions
+- Active% calculations
+- property value averages
+- custom formulas and ratios
+- DAU/MAU calculations
+- ROLLWIN custom formulas
+- inline cohorts
+- microscope user downloads
+- CSV export functionality
+- incomplete data errors
+- glob match filtering
+- account-based filtering
+- breakdown table limitations
+- data processing delays
+- property value restrictions

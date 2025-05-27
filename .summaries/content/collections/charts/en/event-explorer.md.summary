@@ -1,17 +1,15 @@
-## Summary
-Event Explorer is a real-time event stream visualization tool that helps users identify and select appropriate events for analysis by displaying events as they're triggered during product usage, enabling better understanding of data taxonomy and QA of instrumentation issues.
+**Summary:** Event Explorer is a real-time event stream visualization tool that allows users to view events and properties as they are triggered by specific users (identified by IP address, user ID, device ID, or user properties), enabling taxonomy exploration, instrumentation QA, and direct event addition to Amplitude charts.
 
-## Keywords
-- real-time event stream
-- event taxonomy
+**Keywords:**
+- Event Explorer
+- real-time event streams
+- event taxonomy exploration
 - instrumentation QA
-- user ID targeting
-- IP address search
-- event properties
-- data verification
-- event selection
-- event triggering
-- Amplitude charts integration
-- device ID
-- user property search
-- event visualization
+- user targeting by IP address
+- user ID and device ID lookup
+- event properties visualization
+- Add Event to Chart functionality
+- User Lookup integration
+- Instrumentation Explorer Chrome plugin
+- batched events processing
+- Identify events exclusion

@@ -1,14 +1,18 @@
-## Summary
-This documentation explains Amplitude's dynamic behavioral sampling feature (Scale) for Enterprise customers with high event volumes, detailing how it samples events based on user identity while preserving complete user behavior streams and upsampling metrics to maintain accuracy, with configurable sampling rates and user property inclusion lists.
+**Summary:** Documents Amplitude's Scale feature for dynamic behavioral sampling on Enterprise plans, which samples events based on user identity to manage costs for ultra-high volume customers while maintaining analysis accuracy through upsampling metrics and preserving complete user event streams.
 
-## Keywords
+**Keywords:**
 - dynamic behavioral sampling
-- event volume management
-- user-level sampling
+- Scale feature
+- Enterprise plans
+- user identity sampling
 - upsampling metrics
 - sampling rate configuration
 - user property inclusion list
-- Enterprise plan feature
+- anonymous users sampling
+- Amplitude ID sampling
+- PROPCOUNT exclusion
 - sampling accuracy benchmarks
-- cost management
-- anonymous user sampling limitations
+- DAU volume sampling
+- event volume management
+- Admin permissions sampling
+- algorithmic sampling framework

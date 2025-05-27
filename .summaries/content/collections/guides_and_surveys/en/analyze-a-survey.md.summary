@@ -1,14 +1,17 @@
-## Summary
-This documentation page details how to analyze survey results in Amplitude, covering the Insights tab for aggregate data (including type-specific insights for NPS and List surveys, filtering options, and time-based analysis) and the Responses tab for viewing individual user feedback with sorting and filtering capabilities.
+**Summary:** This documentation covers Amplitude's survey analysis features, including the Insights tab for aggregate data with type-specific insights (NPS scoring, list breakdowns), filtering capabilities, time-based engagement charts with Microscope integration, and the Responses tab for individual user response analysis with sorting and filtering options.
 
-## Keywords
-- survey analysis
-- NPS breakdown
-- filter card
-- time-based analysis
-- survey responses
-- Microscope integration
-- promoters/passives/detractors
-- date range selection
-- response filtering
-- user-level feedback
+**Keywords:**
+- Amplitude survey analysis
+- Insights tab aggregate data
+- NPS promoters detractors passives scoring
+- survey type-specific insights
+- Filter card date range segment property
+- views completions time charts
+- Microscope integration session replays
+- time-based analysis hourly daily weekly monthly quarterly
+- rolling window date offset
+- Responses tab individual user data
+- response sorting filtering pinning columns
+- survey engagement trends
+- user feedback analysis
+- cohort creation survey targeting

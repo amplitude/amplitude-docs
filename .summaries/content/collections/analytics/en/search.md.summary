@@ -1,14 +1,12 @@
-## Summary
-Amplitude's Search feature allows users to find charts, dashboards, cohorts, and notebooks created by others in their organization, with real-time results based on recent activity and trending content. The search functionality supports various filters including content type, space, editor, project, and edit date, with special visibility rules for non-discoverable items.
+**Summary:** Documents Amplitude's Search feature for finding charts, dashboards, cohorts, and notebooks with real-time results, filtering options (archived, official content, templates, space, type, editor, project, last edited date), and non-discoverable item restrictions for non-managers.
 
-## Keywords
-- Real-time search results
-- Content discovery
-- Search filters
-- Non-discoverable items
-- Official content filtering
-- Project-specific search
-- Content type filtering
-- Space-based filtering
-- Archived items
-- Templates filtering
+**Keywords:**
+- Amplitude Search feature
+- charts dashboards cohorts notebooks discovery
+- real-time search results
+- search filters (archived, official content, templates, space, type, editor, project, last edited date)
+- non-discoverable items visibility restrictions
+- manager admin search permissions
+- trending content organization activity
+- search bar navigation
+- experiment flag search types

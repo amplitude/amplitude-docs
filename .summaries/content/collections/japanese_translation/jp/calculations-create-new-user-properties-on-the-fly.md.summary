@@ -1,14 +1,24 @@
-## Summary
-This documentation explains how to create and use Calculations in Amplitude, which transform events or event properties into user properties for segmentation. It details the three types of calculation properties (Event Count, Aggregation, First/Last Value), how to create and delete them, and how to use them in campaigns and analytics as filters or for external destination syncing.
+**Summary:** This Japanese documentation explains Amplitude's calculations feature for creating computed user properties from events and event properties, covering three types (event count, aggregation, first/last value) and their usage in personalization campaigns and analytics charts.
 
-## Keywords
-- calculation properties
-- user segmentation
-- event count
-- aggregation properties
-- first/last value properties
+**Keywords:**
+- Amplitude calculations
+- computed user properties
+- event count calculations
+- aggregation calculations
+- first/last value calculations
+- Japanese translation
+- segmentation tools
 - personalization campaigns
-- external destination sync
-- Amplitude Analytics filters
-- property creation workflow
-- user property deployment
+- external destinations sync
+- Braze integration
+- Profile API sync
+- S3 sync
+- cohorts vs calculations
+- event properties aggregation
+- user property filters
+- Analytics charts integration
+- calculation deletion process
+- 365-day date range limit
+- integer event property values
+- funnel conversion analysis
+- retention analysis

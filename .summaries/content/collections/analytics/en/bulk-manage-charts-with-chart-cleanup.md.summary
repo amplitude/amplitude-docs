@@ -1,13 +1,13 @@
-# Summary
-Chart Cleanup is an admin-only feature that allows bulk management of saved charts across all projects in an organization, providing metrics on chart usage and enabling admins to search, filter, and delete unneeded charts without affecting the underlying event data.
+**Summary:** This documentation describes the Chart Cleanup feature in Amplitude's organizational settings that allows admins to bulk manage, search, filter, and delete saved charts across all projects, with metrics showing total charts, charts not viewed in 60 days, and admin-owned charts.
 
-# Keywords
-- chart cleanup
-- bulk chart deletion
+**Keywords:**
+- Chart Cleanup feature
 - organizational settings
-- admin chart management
-- chart usage metrics
-- chart filtering
-- inactive charts
-- cross-project chart management
-- chart ownership
+- bulk chart management
+- saved charts deletion
+- admin chart permissions
+- 60-day chart viewing metrics
+- cross-project chart visibility
+- chart filtering by owner/space/project
+- Amplitude admin tools
+- chart lifecycle management

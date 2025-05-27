@@ -1,14 +1,15 @@
-## Summary
-This documentation page explains how to generate and customize feature adoption reports using pre-built templates in Amplitude. It details the included charts that track user behavior, conversion, and drop-off patterns, and provides step-by-step instructions for converting templates into customizable dashboards.
+**Summary:** This Japanese documentation explains how to generate feature adoption reports using Amplitude's pre-built template, which includes 8 specific charts analyzing active events, user behavior, and conversion metrics, and provides steps to customize the template by converting it to a dashboard with event replacement options.
 
-## Keywords
-- feature adoption report template
-- active event tracking
-- template customization
-- dashboard conversion
-- user behavior analysis
-- event replacement parameters
-- unique user metrics
-- conversion tracking
-- Japanese translation
-- Amplitude analytics
+**Keywords:**
+- feature adoption report template (機能採用レポートテンプレート)
+- active events (アクティブイベント)
+- template to dashboard conversion
+- event replacement dropdown
+- unique users analysis
+- session-based metrics
+- 30-day user behavior tracking
+- Amplitude project customization
+- Japanese translation documentation
+- conversion and drop-off analysis
+- user retention measurement
+- daily active user percentage

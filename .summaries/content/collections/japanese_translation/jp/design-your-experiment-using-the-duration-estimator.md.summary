@@ -1,17 +1,19 @@
-## Summary
-This documentation explains how to use Amplitude Experiment's duration estimator tool to plan experiment sample size and runtime needed to achieve statistical significance. It covers the tool's components (confidence level, control mean, standard deviation, power, test type, MDE), how to interpret results, strategies to reduce experiment runtime, and troubleshooting steps.
+**Summary:**
+This Japanese documentation explains Amplitude Experiment's duration estimator tool for calculating required sample sizes and experiment runtime to achieve statistical significance, covering configuration parameters like confidence level, control mean, standard deviation, power, test type, and MDE (Minimum Detectable Effect).
 
-## Keywords
-- duration estimator
-- statistical significance
-- experiment planning
-- sample size calculation
-- minimum detectable effect (MDE)
-- confidence level
-- statistical power
-- proxy exposure event
-- experiment runtime optimization
-- t-test
-- control mean
-- standard deviation
-- two-sided test
+**Keywords:**
+- Amplitude Experiment duration estimator
+- statistical significance calculation
+- sample size determination
+- T-test support (not sequential testing)
+- proxy exposure events
+- confidence level configuration
+- control mean calculation
+- standard deviation metrics
+- statistical power settings
+- MDE (Minimum Detectable Effect)
+- two-tailed vs one-tailed testing
+- experiment runtime estimation
+- Japanese translation documentation
+- rollout percentage settings
+- primary metrics selection

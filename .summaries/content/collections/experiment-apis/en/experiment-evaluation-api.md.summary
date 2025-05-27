@@ -1,17 +1,24 @@
-# Summary
-The Experiment Evaluation API documentation describes two key endpoints: the Evaluation API (/v1/vardata) for retrieving variant assignments for users through remote evaluation, and the Flags API (/v1/flags) for downloading flag configurations for local evaluations, both requiring deployment key authentication.
+**Summary:** Documents the Amplitude Experiment Evaluation API endpoints for remote evaluation, including the `/v1/vardata` endpoint for retrieving variant assignments and the `/v1/flags` endpoint for downloading flag configurations for local evaluation, with deployment key authentication and regional server support.
 
-# Keywords
+**Keywords:**
+- Amplitude Experiment Evaluation API
+- /v1/vardata endpoint
+- /v1/flags endpoint
+- variant assignment data
 - remote evaluation
-- variant assignment
-- deployment key
-- flag_keys
-- user context
-- authorization headers
-- X-Amp-Exp-Track
-- evaluation response
-- local evaluation
-- flag configurations
-- segments
-- variants
-- payload
+- local evaluation flags
+- deployment key authentication
+- Api-Key authorization header
+- flag_keys parameter
+- user_id and device_id parameters
+- context parameter with user_properties
+- X-Amp-Exp-Track header
+- [Experiment] Assignment event tracking
+- flag configurations download
+- initialFlags bootstrapping
+- evaluation API regions
+- api.lab.amplitude.com
+- api.lab.eu.amplitude.com
+- variant payload JSON
+- segments and variants response structure
+- evaluationMode and flagType metadata

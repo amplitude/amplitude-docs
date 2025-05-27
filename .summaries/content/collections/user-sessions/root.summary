@@ -1,78 +1,102 @@
-# Amplitude User Sessions: Product Overview
+# Amplitude User Sessions Analytics
 
-## Product Overview
+Amplitude User Sessions is a specialized analytics module within the Amplitude Analytics platform that provides comprehensive session-based behavioral analysis capabilities. This feature enables organizations to analyze user engagement patterns, marketing performance, and behavioral metrics through a session-centric approach rather than traditional individual event tracking.
 
-Amplitude User Sessions is an analytics feature that helps businesses track, analyze, and optimize user engagement patterns through session-based metrics. It enables organizations to understand how users interact with their applications by measuring session frequency, duration, and engagement levels across different user segments. The product provides comprehensive visualization and analysis capabilities for session data, supporting both standard metrics and custom formulas for specialized use cases.
+## Product Architecture and Feature Relationships
 
-## Key Features and Concepts
+User Sessions operates as a distinct module within Amplitude Analytics, functioning alongside but separate from the standard Events Module. The architecture consists of several interconnected components:
 
-### Session Tracking Methods
-- **Server-side sessions**: Tracked through backend implementations
-- **Mobile client-side sessions**: Native SDK implementations for mobile applications
-- **Web client-side sessions**: Browser-based tracking for websites
+**Core Analytics Engine:**
+- **Sessions Module** - Primary analytical engine that replaces the Events Module for session-based analysis
+- **User Sessions Charts** - Dedicated visualization component for session metrics
+- **Event Segmentation Charts** - Complementary tool used for creating marketing performance metrics
 
-### Core Metrics and Analysis Capabilities
-- **Total sessions**: Count of all user sessions
-- **Time spent**: Total duration of sessions
-- **Average session length**: Mean duration of sessions
-- **Session length distribution**: Histogram visualization of session durations
-- **Events per session**: Count of specific events occurring within sessions
-- **Sessions per user**: Frequency of user engagement
-- **Entry/exit rates**: Analysis of first and last pages in sessions
-- **Bounce rate**: Percentage of single-page sessions
+**Data Visualization Layer:**
+- Interactive chart interfaces with property-based segmentation capabilities (Country, Carrier, device properties)
+- Breakdown tables featuring CSV export functionality for granular data analysis
+- Distribution bucket analysis for session length and frequency patterns
+- Real-time chart updates with configurable measurement parameters
 
-### Advanced Features
-- **Custom formula metrics**: Create specialized calculations using session data
-- **Breakdown tables**: Segment session data by user properties
-- **Filtering capabilities**: Apply property filters before session grouping
-- **Session properties**: Group and filter by session-specific attributes
+**Integration Points:**
+- Seamless integration with Amplitude's broader analytics ecosystem
+- Marketing analytics pipeline for performance metrics
+- Event filtering and segmentation systems
+- Custom formula engine for advanced calculations
 
-## Product Relationships and Ecosystem Integration
+## Key Nomenclature and Technical Definitions
 
-User Sessions integrates with Amplitude's broader analytics ecosystem:
+**Session Tracking Methodologies:**
+- **Server-side Sessions** - Implemented through HTTP API v2 using explicit session_id field assignment
+- **Client-side Mobile Sessions** - Automatic session boundary detection with 5-minute inactivity timeout threshold
+- **Client-side Web Sessions** - Automatic session boundary detection with 30-minute inactivity timeout threshold
+- **Out-of-session Events** - Events occurring outside defined session boundaries, assigned session ID -1
 
-1. **Event Segmentation**: User Sessions complements Event Segmentation charts:
-   - Event Segmentation focuses on individual events
-   - User Sessions focuses on groups of events within session boundaries
+**Core Session Metrics:**
+- **Session Duration/Length** - Total time span of continuous user activity within a session
+- **Events per Session** - Aggregate count of events performed within individual session boundaries
+- **Sessions per User** - Frequency measurement of session initiation by individual users
+- **Bounce Rate** - Percentage calculation of sessions containing only a single event
+- **Entry/Exit Rates** - Analysis of session initiation and termination behavioral patterns
 
-2. **Marketing Analytics**: User Sessions provides essential metrics for marketing performance analysis:
-   - Performance marketing metrics (CAC, ROAS)
-   - Ad network metrics integration
-   - Conversion tracking across sessions
+**Advanced Formula Functions:**
+- **SESSIONTOTALS** - Aggregates and summarizes session-level data across user cohorts
+- **EVENTTOTALS** - Calculates comprehensive event counts within session boundaries
+- **PROPSUM** - Performs summation of property values across session datasets
+- **HIST** - Generates distribution histograms for session metrics
+- **UNIQUES** - Counts unique values within session property sets
+- **First/Last Property Value** - Captures property states at session boundary points
 
-3. **Sessions Module**: A specialized component for in-depth session analysis, offering:
-   - Session length histograms
-   - Engagement frequency analysis
-   - Custom metric formulas specific to sessions
+**Marketing Performance Metrics:**
+- **ROAS (Return on Ad Spending)** - Revenue attribution per advertising dollar spent
+- **CAC (Customer Acquisition Cost)** - Cost calculation for acquiring new customers
+- **CTR (Click-Through Rate)** - Engagement rate measurement for advertising campaigns
 
-## Key Nomenclature and Definitions
+## Broader Product Ecosystem Integration
 
-- **Session**: A group of user events occurring within a defined time boundary
-- **Session ID**: Unique identifier assigned to each session
-- **Bounce Rate**: Percentage of sessions with only a single page view
-- **Customer Acquisition Cost (CAC)**: Cost to acquire a new customer, calculated using session data
-- **Return on Ad Spending (ROAS)**: Revenue generated relative to advertising costs
-- **Entry Rate**: Percentage of sessions beginning with a specific page
-- **Exit Rate**: Percentage of sessions ending with a specific page
-- **Session Length**: Duration from first to last event in a session
-- **Sessions Per User**: Average number of sessions initiated by each user
+User Sessions integrates comprehensively within Amplitude's analytics ecosystem through multiple touchpoints:
 
-## Implementation and Usage
+**Marketing Analytics Pipeline:**
+- Deep integration with ad network data sources for clicks, impressions, and cost analysis
+- Daily ad metric event tracking with automated data ingestion
+- Performance marketing dashboard integration for real-time campaign monitoring
+- Cross-platform attribution modeling capabilities
 
-The User Sessions chart can be accessed and configured through the Amplitude interface. Key implementation considerations include:
+**Event Processing and Segmentation:**
+- Advanced Page View event filtering with URL-based segmentation logic
+- Contains Event filters for sophisticated session qualification criteria
+- Property-based filtering applied before session-level analytical processing
+- Custom session property creation and real-time analysis capabilities
 
-1. **Session Configuration**:
-   - Define session timeout parameters
-   - Configure tracking methods (server-side vs. client-side)
-   - Set up session property tracking
+**Data Export and External Integration:**
+- CSV export functionality for breakdown tables and detailed analysis
+- API-based data extraction for external business intelligence tools
+- Custom formula integration for advanced mathematical calculations
+- Marketing metrics recipe system for standardized performance measurement
 
-2. **Chart Creation**:
-   - Select User Sessions chart type
-   - Choose desired metrics (total sessions, average length, etc.)
-   - Apply relevant filters and breakdowns
-   - Group by user segments or properties
+## API Endpoints and Implementation Methods
 
-3. **Marketing Metrics Implementation**:
-   - Use custom formulas for specialized marketing metrics
-   - Integrate ad network data for performance analysis
-   - Configure conversion tracking across sessions
+**HTTP API v2 Integration:**
+```
+POST /2/httpapi
+```
+- Server-side session tracking via session_id field in event payloads
+- Custom session property definition and real-time tracking
+- Bulk event ingestion with session boundary management
+
+**Chart Configuration Parameters:**
+- **Count Dropdown Options:** Event Count, Session Duration, Session Frequency, Time-based metrics
+- **Segment By Module:** Property-based analysis with multi-dimensional segmentation
+- **Measurement Types:** Total Sessions, Time Spent per User, Average Length, Length Distribution, Average Per User, Average Events per Sessions, Total Events Across Sessions
+
+**Filter Implementation:**
+- **Session Duration Filters** - Time-based session qualification with customizable thresholds
+- **Contains Event Filters** - Session qualification based on specific event presence
+- **Page URL Filtering** - URL pattern matching with contains operators
+- **Conversion Event Filtering** - Add to Cart, Purchase, and custom conversion event tracking
+
+**Command Line and Configuration:**
+- Session timeout configuration for mobile (5 minutes) and web (30 minutes) platforms
+- Custom session property mapping and event assignment rules
+- Automated session boundary detection algorithm configuration
+
+The User Sessions module represents a sophisticated behavioral analytics solution that transforms traditional event-based analysis into comprehensive session-centric insights, enabling organizations to understand user engagement patterns while maintaining seamless integration with Amplitude's comprehensive analytics platform architecture.

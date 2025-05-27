@@ -1,14 +1,16 @@
-## Summary
-This documentation explains the differences between hiding, blocking, and deleting events or properties in Amplitude's Govern feature, detailing how each action affects data collection, visibility in charts, and counting toward project instrumentation limits.
+**Summary:** This Japanese FAQ documentation explains the differences between hiding, blocking, and deleting events and properties in Amplitude's Govern data management feature, covering how each action affects data ingestion, chart dropdowns, historical data access, and project instrumentation limits.
 
-## Keywords
-- Amplitude Govern
-- Event hiding
-- Event blocking
-- Event deletion
-- Data management
-- Instrumentation limits
-- Monthly event volume
-- Dropdowns visibility
-- Data ingestion
-- Chart queries
+**Keywords:**
+- Amplitude Govern data management
+- Japanese translation documentation
+- Event property visibility controls
+- Hide block delete events properties
+- Data ingestion blocking
+- Chart dropdown availability
+- Monthly event volume limits
+- Project instrumentation limits
+- Historical data retention
+- Pathfinder Persona chart filtering
+- Drop filters creation
+- Data export availability
+- 2000 event type limit

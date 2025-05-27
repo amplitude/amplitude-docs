@@ -1,14 +1,20 @@
-## Summary
-This documentation page explains how to build charts in Amplitude by adding events to the Event Module, using event properties to refine analysis, and applying conditions through filtering and grouping. It details the three main modules of Amplitude charts (Event, Measured As, and Segment By), explains default events, wildcard search functionality, and how to use Filter By and Group By specifications.
+**Summary:**
+This Japanese documentation explains how to use the Events Module in Amplitude charts, covering event addition (up to 10 events), default Amplitude events (Top Global Event, Any Active Event, New Users), wildcard search functionality with asterisk/question mark/brackets, and event filtering using Filter by and Group by with event properties and user properties.
 
-## Keywords
-- Amplitude chart construction
-- Event Module
-- Event properties
-- Wildcard search
-- Filter By specification
-- Group By specification
-- Default Amplitude events
-- Non-active events
-- Chart segmentation
-- Event conditions
+**Keywords:**
+- Amplitude Events Module
+- Japanese translation documentation
+- event properties filtering
+- wildcard search patterns
+- Filter by conditions
+- Group by segmentation
+- default Amplitude events
+- Top Global Event
+- Any Active Event
+- New Users event
+- inactive events tracking
+- event instrumentation
+- user properties analysis
+- chart building workflow
+- maximum 10 events limit
+- event property conditioning

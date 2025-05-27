@@ -1,14 +1,17 @@
-# Summary
-This documentation page covers frequently asked questions about Amplitude's Retention Analytics, explaining how data points are calculated using weighted averages, why user counts may differ between breakdown tables and totals, reasons for unexpected retention percentages, and clarifying the differences between "Return On" and "Return After" retention measurements.
+**Summary:** This Japanese FAQ documentation explains Amplitude retention analytics calculations, covering weighted averages for data points, "Return On" vs "Return On or Later" measurement types, breakdown table discrepancies, incomplete data handling with asterisks, custom bracket functionality for extending beyond 12-month limits, and upward retention curve behavior.
 
-# Keywords
+**Keywords:**
+- Amplitude retention analytics
 - weighted average calculation
-- unique user counting
-- retention data points
+- Return On (リターン時点)
+- Return On or Later (リターン時点またはそれ以降)
 - breakdown table discrepancies
-- incomplete data points
-- custom brackets
-- retention curve anomalies
-- return on vs return after
-- n-day retention
-- retention measurement methodology
+- unique user deduplication
+- incomplete data points asterisks
+- custom bracket feature
+- 12-month data limit
+- upward retention curve
+- Japanese FAQ documentation
+- retention measurement types
+- data point calculations
+- user cohort analysis

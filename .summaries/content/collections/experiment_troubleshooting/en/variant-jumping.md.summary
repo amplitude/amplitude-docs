@@ -1,15 +1,24 @@
-# Summary
-This documentation explains variant jumping in Amplitude Experiment, where users see multiple variants for a single flag/experiment. It details normal causes (targeting changes, anonymous identity merging, inclusion list issues) and abnormal causes (identity mismatches between assignment and exposure), along with debugging steps and mitigation strategies.
+## Summary
+This documentation explains variant jumping in Amplitude Experiment, where users are exposed to multiple variants for a single flag or experiment, covering debugging techniques using user timelines and Assignment events, normal causes (targeting changes, anonymous identity merging, inclusion lists), and abnormal causes (identity mismatches between assignment and exposure tracking).
 
-# Keywords
+## Keywords
 - variant jumping
-- experiment diagnostics
+- Amplitude Experiment
+- Assignment event
+- exposure event
+- user timeline debugging
+- targeting changes
 - sticky bucketing
 - anonymous identity merging
-- targeting changes
-- bucketing key
 - inclusion list
+- bucketing key
 - identity mismatch
-- assignment events
-- exposure events
-- user timeline analysis
+- sample ratio mismatch (SRM)
+- remote evaluation
+- variant distribution weights
+- mutual exclusion
+- device ID
+- user ID
+- Amplitude ID
+- experiment analysis filtering
+- experiment segments

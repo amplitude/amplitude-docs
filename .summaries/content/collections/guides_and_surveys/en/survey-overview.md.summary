@@ -1,12 +1,13 @@
-## Summary
-Surveys in the platform provide targeted user feedback collection with three template options: NPS for measuring customer satisfaction and loyalty, User feedback for custom questions, and Rating for gathering initial reactions to product experiences.
+**Summary:** Documentation overview for survey functionality that explains survey templates (NPS, User feedback, Rating) and their use cases for collecting targeted user feedback, positioned as an alternative to guides with different template options.
 
-## Keywords
+**Keywords:**
 - survey templates
-- NPS (Net Promoter Score)
+- NPS survey
 - user feedback collection
-- rating surveys
-- customer satisfaction measurement
-- product experience evaluation
-- targeted feedback
+- rating survey
 - survey creation
+- customer satisfaction measurement
+- survey vs guides
+- blueprint guides_and_survey
+- survey overview documentation
+- targeted feedback collection

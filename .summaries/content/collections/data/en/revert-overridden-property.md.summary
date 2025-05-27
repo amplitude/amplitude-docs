@@ -1,14 +1,13 @@
-## Summary
-This documentation explains how to revert an overridden property definition to its original version in Amplitude Data, detailing the process for reverting properties on specific events, property groups, and bulk reverting multiple overrides to maintain tracking plan consistency.
+**Summary:** This documentation explains how to revert overridden property definitions in Amplitude Data back to their original versions, covering the process for specific events, property groups, and bulk operations through the Events table and Properties interface.
 
-## Keywords
+**Keywords:**
 - overridden property reversion
-- property definition management
-- event property consistency
-- property group overrides
-- bulk revert functionality
-- tracking plan maintenance
-- Compare To Original feature
-- Manage Override dropdown
-- Used By tab
-- property definition inheritance
+- Amplitude Data tracking plan
+- event properties table
+- property groups override management
+- "Revert To Original" functionality
+- "Manage Override" dropdown
+- bulk revert operations
+- "Used By" tab overrides
+- event property details panel
+- "Compare To Original" feature

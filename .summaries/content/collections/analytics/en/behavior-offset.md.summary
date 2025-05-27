@@ -1,14 +1,18 @@
-# Summary
-This documentation explains the behavior offset feature in Amplitude Analytics, which allows users to segment audiences based on behaviors across two distinct time periods, with examples including identifying repeat purchasers, targeting non-converting users, and detecting potential subscription churn by comparing user actions across different timeframes.
+**Summary:** Documents Amplitude's behavior offset feature for segmenting users based on behaviors across two distinct time periods within behavioral cohorts, including rolling windows, offset configuration, and in-line cohort creation with specific event frequency requirements.
 
-# Keywords
+**Keywords:**
 - behavior offset
 - behavioral cohorts
 - rolling windows
-- time-period segmentation
-- in-line cohort
-- offset function
-- customer milestone tracking
-- user segmentation
-- Growth plan feature
-- Enterprise plan feature
+- in-line cohorts
+- offset field
+- rolling over field
+- previous period event
+- current period event
+- Event Segmentation charts
+- during cohorts
+- in each cohorts
+- Segmentation Module
+- event frequency
+- daily offsets
+- Growth and Enterprise plans

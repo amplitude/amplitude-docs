@@ -1,14 +1,17 @@
-# Summary
-This documentation explains how to create a block filter in Amplitude Data to prevent bot web traffic (crawlers, scrapers) from being ingested, using the IAB/ABC International Spiders and Bots List to identify bots via User-Agent, with the warning that filtered data cannot be recovered.
+**Summary:** Documents how to create block filters in Amplitude Data to prevent bot web traffic ingestion based on IAB/ABC International Spiders and Bots List User-Agent detection, with support for legacy JavaScript SDK, TypeScript Browser SDK (v1.10.0+), and HTTP/Batch API implementations.
 
-# Keywords
+**Keywords:**
 - block filter
 - bot web traffic
-- User-Agent identification
+- User-Agent filtering
 - IAB/ABC International Spiders and Bots List
-- JavaScript SDK
+- legacy JavaScript SDK
 - TypeScript Browser SDK
-- data ingestion prevention
-- unrecoverable filtering
-- public unauthenticated websites
-- crawler traffic
+- HTTP API user_agent field
+- Batch API user_agent field
+- data ingestion blocking
+- crawler traffic filtering
+- scraper traffic blocking
+- unauthenticated website tracking
+- Filter Configuration panel
+- Block Filters tab

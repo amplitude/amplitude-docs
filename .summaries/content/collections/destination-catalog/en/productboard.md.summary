@@ -1,13 +1,13 @@
-# Summary
-This documentation page describes the Productboard destination integration with Amplitude, which allows product managers to filter customer feedback based on Amplitude cohorts and categorize insights into themes for product roadmap decisions, using User_ID, Email, or both as identifiers for cross-platform user matching.
+**Summary:** This documentation describes the Amplitude-Productboard destination integration for syncing cohorts to filter customer feedback and inform product roadmaps, with setup requiring Productboard API tokens and mapping of User ID, Email, and External ID properties.
 
-# Keywords
-- Productboard integration
+**Keywords:**
+- Productboard destination integration
 - cohort syncing
 - customer feedback filtering
-- product roadmap
-- user identifier mapping
-- access token
-- external ID management
-- automated sync cadence
-- one-time sync
+- product roadmap insights
+- Productboard API token
+- User ID mapping
+- External ID deduplication
+- collaboration integration
+- behavioral data combination
+- sync cadence configuration

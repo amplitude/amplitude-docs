@@ -1,19 +1,23 @@
-## Summary
-This documentation page addresses frequently asked questions about sequential testing in Amplitude Experiment, covering statistical power, confidence intervals, metrics types (Uniques, Average Totals, Average Sum of Property), lift calculations, and how sequential testing compares to T-tests by allowing valid result checking at any time without inflating false positives.
+**Summary:** This FAQ documentation covers Amplitude Experiment's sequential testing methodology, explaining statistical thresholds (25 conversions + 100 exposures for uniques, 100 exposures for totals), metric types (uniques, average totals, sum of property), lift calculations, and comparing sequential testing's always-valid p-values against T-test false positive inflation when peeking at results.
 
-## Keywords
+**Keywords:**
 - sequential testing
+- Amplitude Experiment
 - statistical power
-- confidence intervals
 - p-values
+- confidence intervals
+- exposure thresholds
 - conversion thresholds
-- uniques metrics
+- uniques metric
 - average totals
 - sum of property
 - absolute lift
 - relative lift
 - mSPRT
-- false positives
-- T-test comparison
 - always-valid results
-- Type 1 errors
+- T-test comparison
+- false positive inflation
+- Type 1 error
+- alpha threshold
+- treatment control allocation
+- symmetric time variation

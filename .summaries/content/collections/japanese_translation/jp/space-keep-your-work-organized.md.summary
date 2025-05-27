@@ -1,14 +1,18 @@
-# Summary
-This documentation explains how to organize analytics work in Amplitude using Spaces, covering personal workspaces, shared spaces, folder creation, and space management. It details how content is stored, shared, and organized within the platform to facilitate team collaboration.
+**Summary:** This Japanese documentation explains Amplitude's Spaces feature for organizing analytics work, covering personal workspaces, shared spaces, folder creation, space creation workflows, and content management including charts, notebooks, and dashboards.
 
-# Keywords
+**Keywords:**
 - Amplitude Spaces
-- Personal workspace
-- Shared analytics
-- Folder organization
-- Content discoverability
-- Space creation
-- Collaboration permissions
-- Content management
-- Workspace navigation
-- Analytics organization
+- Japanese translation documentation
+- personal workspace
+- shared spaces
+- analytics organization
+- content management
+- folder creation
+- space creation workflow
+- charts notebooks dashboards
+- team collaboration
+- content shortcuts
+- discoverable content
+- user permissions (admin, manager, member)
+- project folders
+- space naming conventions

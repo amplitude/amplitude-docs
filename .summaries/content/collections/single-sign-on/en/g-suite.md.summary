@@ -1,14 +1,15 @@
-# Summary
-This documentation page provides step-by-step instructions for setting up single sign-on (SSO) integration between Amplitude and G Suite, including downloading IDP metadata from G Suite admin console, uploading it to Amplitude, configuring ACS URL and Entity ID, and enabling the SAML app in G Suite.
+**Summary:** This documentation provides step-by-step instructions for configuring SAML-based single sign-on integration between Amplitude and G Suite, including downloading IDP metadata from G Suite admin console, uploading it to Amplitude's organizational settings, and configuring ACS URL and Entity ID parameters.
 
-# Keywords
+**Keywords:**
 - G Suite SSO integration
-- SAML configuration
-- IDP metadata
-- ACS URL
+- SAML apps configuration
+- IDP metadata download
+- ACS URL (Assertion Consumer Service URL)
 - Entity ID
 - G Suite admin console
-- Just-in-time (JIT) provisioning
 - Amplitude organizational settings
-- SAML app setup
-- Enterprise authentication
+- Access & SSO Settings
+- JIT provisioning (just-in-time)
+- SAML authentication
+- Service Provider details
+- Google Admin SAML setup

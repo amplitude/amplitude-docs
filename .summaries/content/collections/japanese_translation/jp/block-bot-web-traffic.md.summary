@@ -1,14 +1,18 @@
-## Summary
-This documentation explains how to create block filters in Amplitude Data to prevent bot web traffic from being captured in analytics, particularly for public unauthenticated websites. It details how bot traffic is identified using the IAB/ABC International Spider & Bot List and provides step-by-step instructions for implementing these filters.
+**Summary:** This Japanese documentation explains how to create block filters in Amplitude Data to exclude bot web traffic from third-party websites using IAB/ABC International Spiders & Bots List user agents, with specific implementation details for Legacy JavaScript SDK and TypeScript Browser SDK (v1.10.0+).
 
-## Keywords
-- Bot traffic blocking
-- Amplitude Data block filters
-- IAB/ABC International Spider & Bot List
-- User agent filtering
-- JavaScript SDK
+**Keywords:**
+- ボットWebトラフィック (bot web traffic)
+- ブロックフィルター (block filters)
+- Amplitude Data
+- IAB/ABC International Spiders & Bots List
+- ユーザーエージェント (user agents)
+- Legacy JavaScript SDK
 - TypeScript Browser SDK
-- Data exclusion
-- Web analytics data quality
-- Bot detection
-- Traffic filtering
+- HTTP API
+- Batch API
+- クローラー (crawlers)
+- スクレーパー (scrapers)
+- 未認証Webサイト (unauthenticated websites)
+- データ取り込み除外 (data ingestion exclusion)
+- メインブランチ (main branch)
+- フィルター設定フライアウトパネル (filter settings flyout panel)

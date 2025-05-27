@@ -1,86 +1,53 @@
-# Amplitude Experiment Integrations: Contentful
+## Amplitude Experiment Contentful Integration
 
-## Overview
+Amplitude Experiment offers a specialized integration with Contentful CMS that transforms content management into an experimentation platform. This integration enables content-driven A/B testing workflows where marketing teams, content creators, and product managers can test different content variants directly within their CMS while leveraging Amplitude's robust experimentation infrastructure for traffic allocation, user targeting, and performance analytics.
 
-Amplitude Experiment is a platform that enables A/B testing and feature flagging capabilities across content management systems. The Contentful integration allows content creators to define and manage experiment variations directly within Contentful while using Amplitude Experiment to control which variations are shown to users.
+## Product Architecture and Feature Relationships
 
-## Key Features and Use Cases
+The integration establishes a sophisticated bridge between Amplitude Experiment's feature flagging system and Contentful's content management capabilities through several interconnected components:
 
-- **Content-driven A/B testing**: Create multiple content variations within Contentful and test their performance
-- **Centralized experiment control**: Manage experiment rules, targeting, and rollout percentages through Amplitude Experiment
-- **Seamless content management**: Maintain all content variations in Contentful's structured content models
-- **Dynamic content delivery**: Serve different content variations to users based on experiment assignments
+**Variant Container Content Model** serves as the foundational architecture, acting as a wrapper that organizes and houses multiple content variations for experimental testing. This model creates a structured approach to content variation management within Contentful's native interface.
 
-## Product Relationships and Architecture
+**Flag Keys** function as the critical linking mechanism, creating a direct mapping between experiment configurations in Amplitude and corresponding Variant Containers in Contentful. This mapping enables seamless content variant delivery based on real-time experiment allocation decisions.
 
-The integration consists of two main components:
+**Authentication Layer** utilizes Contentful Management API keys to establish secure, persistent communication channels between the platforms, providing necessary permissions for content retrieval and metadata access.
 
-1. **Contentful Plugin**: A custom extension installed in Contentful that adds experiment-specific fields and functionality to content models
-2. **Front-end Implementation**: Code in the application that fetches experiment decisions and renders the appropriate content variant
-
-The workflow follows these steps:
-1. Content creators define variations in Contentful using the Variant Container structure
-2. Amplitude Experiment controls which variation is shown to which users
-3. The front-end application queries Amplitude Experiment for decisions
-4. Based on the decision, the appropriate content variant is rendered to the user
+**Content Delivery Engine** operates through a variationsCollection object that dynamically serves different content options based on user experiment assignments, with real-time updates occurring every 5 seconds to ensure content changes are immediately reflected in live experiments.
 
 ## Key Nomenclature and Definitions
 
-- **Variant Container**: A specialized content type in Contentful that holds different variations of content for an experiment
-- **Flag Key**: A unique identifier for an experiment in Amplitude Experiment
-- **Reference Field**: A Contentful field type that links to other content entries, used to connect variants to their container
-- **Experiment Metadata**: Information about the experiment stored in the Contentful content model
-- **variationsCollection**: The collection of content variations available for an experiment
-- **meta object**: Contains experiment-related metadata including the flag key
+**Variant Container**: The primary content model that wraps and organizes experimental content variations within Contentful's structure
 
-## Integration with Broader Ecosystem
+**Flag Keys**: Unique identifiers that create bidirectional mapping between Amplitude experiments and Contentful content containers
 
-The Contentful integration is part of Amplitude Experiment's broader strategy to enable experimentation across different platforms and content management systems. It allows teams using Contentful as their CMS to leverage Amplitude's experimentation capabilities without switching platforms.
+**Management API Keys**: Contentful authentication credentials that enable secure platform-to-platform communication
 
-The integration works with:
-- Contentful's content modeling and delivery APIs
-- Amplitude Experiment's evaluation and targeting capabilities
-- Front-end applications that consume content from Contentful
+**variationsCollection Object**: The data structure containing all available content variants for a specific experiment
 
-## Implementation Details
+**bucketingKey amplitude_id**: User identification mechanism ensuring consistent experiment allocation across sessions
 
-### Contentful Configuration
+**rolloutWeights**: Configuration parameters controlling traffic distribution percentages across content variants
 
-1. Configure content models to include variant containers
-2. Add reference fields to link variants to their containers
-3. Set up the experiment metadata including flag keys
+**ExperimentId Mapping**: The connection system linking Amplitude's tracking infrastructure with Contentful's content delivery
 
-### API and Code Implementation
+**Meta Object Variant Matching**: The algorithmic process comparing user characteristics against available content variants
 
-Front-end implementation example:
-```javascript
-// Get experiment decision
-const variant = await experiment.variant("flag-key");
+**Reference Field Configuration**: Contentful's relationship structure connecting main content with experimental variants
 
-// Query Contentful with GraphQL
-const query = `{
-  variantContainer(id: "container-id") {
-    variationsCollection {
-      items {
-        sys {
-          id
-        }
-        meta {
-          flagKey
-          value
-        }
-        // other fields
-      }
-    }
-  }
-}`;
+## Broader Product Ecosystem Integration
 
-// Find the matching variant
-const matchingVariant = data.variantContainer.variationsCollection.items
-  .find(item => item.meta.flagKey === "flag-key" && item.meta.value === variant);
-```
+Within Amplitude's experimentation ecosystem, the Contentful integration represents a strategic expansion beyond traditional feature flagging into content management workflows. This positions Amplitude Experiment as a comprehensive experimentation platform capable of supporting both technical feature experiments and marketing-driven content tests.
 
-### Required Credentials
+The integration supports modern headless CMS architectures and contemporary content delivery patterns, making it compatible with web applications, mobile apps, and diverse digital experiences that depend on Contentful for content management while requiring sophisticated experimentation capabilities.
 
-- Contentful Management API key for plugin configuration
-- Amplitude API keys for experiment evaluation
+This integration eliminates the traditional barrier between content teams and experimentation programs, enabling non-technical stakeholders to design, launch, and iterate on content experiments without requiring engineering intervention for each test cycle.
+
+## Technical Implementation Details
+
+**API Integration**: The system utilizes the `@amplitude/experiment-js-client` library, specifically leveraging the `experiment.variant()` method for real-time variant determination and content delivery.
+
+**Refresh Mechanism**: Automated 5-second refresh intervals ensure property updates and content changes propagate from Contentful to live experiments without manual intervention or application restarts.
+
+**User Targeting**: The integration employs amplitude_id as the primary bucketingKey for consistent user identification and experiment allocation across sessions and touchpoints.
+
+**Content Synchronization**: Real-time synchronization between Contentful content updates and Amplitude experiment configurations ensures content variants remain current and properly attributed for analytics collection.

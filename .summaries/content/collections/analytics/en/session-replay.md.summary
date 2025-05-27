@@ -1,14 +1,21 @@
-# Summary
-Session Replay is a qualitative analytics feature available to Growth and Enterprise plan users that allows viewing recorded user sessions to understand user behavior, troubleshoot issues, and improve conversions by providing visual context to quantitative data. Sessions can be accessed from user event streams, charts, or the homepage, with filtering capabilities by date, cohorts, events, and properties.
+**Summary:** This documentation covers Amplitude's Session Replay feature for web applications, which provides qualitative user session recordings that sync with event streams and can be accessed through charts (Event Segmentation, Funnel Analysis, Journeys, User Sessions), User Lookup, or the homepage widget, with 90-day default retention and limitations including no support for custom session definitions, canvas elements, or mobile native apps.
 
-# Keywords
-- session-replay
-- qualitative-analytics
-- user-experience-monitoring
-- event-stream-synchronization
-- replay-filtering
-- bug-troubleshooting
-- conversion-optimization
-- web-application-monitoring
-- user-journey-visualization
-- 90-day-retention
+**Keywords:**
+- Session Replay
+- Amplitude Analytics
+- User Lookup
+- Event stream synchronization
+- Microscope view
+- Funnel Analysis conversion measure
+- Event Segmentation charts
+- Journeys Pathfinder
+- User Sessions charts
+- Session Replay ID property
+- Web applications only
+- Custom session definitions unsupported
+- Canvas WebGL limitations
+- 90-day retention period
+- Growth Enterprise plans
+- Autocapture events
+- Page Viewed Element Clicked
+- Account-level reporting excluded

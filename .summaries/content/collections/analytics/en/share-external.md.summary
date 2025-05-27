@@ -1,16 +1,20 @@
-# Summary
-This documentation explains how to share Amplitude analytics content (charts, dashboards, notebooks) with external stakeholders through public links and embed codes, including password protection, expiration dates, and management options for Growth and Enterprise plan users.
+**Summary:** This documentation covers Amplitude's external sharing functionality for creating public links and embed codes to share charts, dashboards, and notebooks with stakeholders outside the organization, including password protection, expiration settings, and admin controls for Growth and Enterprise plans.
 
-# Keywords
+**Keywords:**
 - public links
 - external sharing
 - embed code
+- stakeholder sharing
+- Growth Enterprise plans
 - password protection
-- link expiration
-- content access management
-- Growth plan
-- Enterprise plan
-- chart sharing
-- dashboard sharing
-- notebook sharing
+- expiration dates
+- Content Access settings
+- unauthenticated users
+- Journeys chart limitations
+- experiment results restrictions
+- chart caching
+- Organization Settings
+- admin permissions
 - Slack unfurling
+- revoke links
+- 404 redirect

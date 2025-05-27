@@ -1,14 +1,16 @@
-# Summary
-This documentation page explains how to add variants to an experiment in Amplitude Experiment, including creating control and variant groups, configuring experiment settings (sticky bucketing, evaluation mode, bucket salt), and adding dynamic payloads to variants to modify user experiences without code changes.
+**Summary:** This documentation covers the experiment design phase in Amplitude Experiment, specifically adding variants with control comparisons, configuring deployment settings, exclusion groups, sticky bucketing, evaluation modes, bucket salt, and JSON payload implementation for dynamic user experiences without code changes.
 
-# Keywords
-- Experiment variants
-- Control group
-- Sticky bucketing
-- Variant payloads
-- Deployment settings
-- Exclusion groups
-- Evaluation mode
-- Bucket salt
-- JSON payload
-- Variant configuration
+**Keywords:**
+- Amplitude Experiment variants
+- control baseline comparison
+- sticky bucketing toggle
+- evaluation mode (remote/local)
+- bucket salt randomization
+- exclusion groups
+- variant payload JSON
+- deployment configuration
+- statistical significance
+- variant values as flags
+- multiple hypothesis testing
+- traffic allocation
+- dynamic user experience

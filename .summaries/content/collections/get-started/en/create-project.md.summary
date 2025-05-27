@@ -1,12 +1,13 @@
-# Summary
-This documentation page explains how to create a project in Amplitude, which serves as a way to organize analyses by product or app section, with each project having its own API key for data transmission, and outlines the 5-step process for creating a new project through the Organization settings.
+**Summary:** Documents the process of creating projects in Amplitude organizations, including project setup through Settings > Organization settings > Projects, user assignment with roles, and API key generation for data collection from different platforms like iOS and Android.
 
-# Keywords
-- Amplitude projects
-- API key
-- Organization settings
-- Project creation
-- User access roles
-- Test environment
-- Project subdivision
-- Data organization
+**Keywords:**
+- Amplitude project creation
+- Organization settings > Projects
+- API key generation
+- Project user roles assignment
+- Create New Project modal
+- Test project setup
+- Dev environment configuration
+- Project-specific data segregation
+- iOS Android project separation
+- Production project testing

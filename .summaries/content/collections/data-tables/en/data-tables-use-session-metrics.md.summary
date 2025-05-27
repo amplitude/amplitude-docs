@@ -1,16 +1,19 @@
 ## Summary
-This documentation explains how to use session metrics (bounce rate, exit rate, entry rate, entries, exits) in Amplitude Analytics Data Tables charts to evaluate content paths, detailing how these metrics are calculated based on group-by properties and providing examples of how different session patterns affect metric calculations.
+This documentation explains how to use session metrics (bounce rate, exit rate, entry rate, entries, exits) in Amplitude Analytics Data Tables charts to analyze content paths and campaign performance, with detailed calculations based on group-by properties and Page View events for Growth and Enterprise plan users.
 
 ## Keywords
 - session metrics
-- bounce rate
+- Data Tables charts
+- bounce rate calculation
 - exit rate
 - entry rate
-- Data Tables charts
 - group-by properties
-- page-level properties
+- Page View events
 - single-page sessions
-- session entries
-- session exits
-- Growth and Enterprise plans
 - session totals vs PROPCOUNT
+- Growth Enterprise plans
+- active events computation
+- Browser SDK
+- Marketing Space
+- custom session definitions
+- Event Segmentation comparison

@@ -1,14 +1,17 @@
-# Summary
-This documentation describes the Aampe Event Stream Sync destination that enables real-time streaming of user events and properties from Amplitude to Aampe, powering Aampe's AI agents for personalized multi-channel messaging, with setup instructions for both platforms including API key configuration and data mapping.
+**Summary:** Documents the Aampe Event Stream Sync destination integration that streams user events and properties from Amplitude to Aampe in real-time for AI-powered personalized messaging across SMS, email, push notifications, and in-app banners.
 
-# Keywords
-- Aampe Event Stream
-- AI-powered messaging
-- Event streaming integration
-- User property mapping
-- Multi-channel personalization
-- Bearer token authentication
-- REST API key
-- User ID mapping
-- Event filtering
-- Real-time data transmission
+**Keywords:**
+- Aampe Event Stream Sync
+- event-streaming destination
+- real-time user events
+- AI agents personalized messaging
+- SMS email push notifications in-app banners
+- Aampe API key authentication
+- user properties mapping
+- Aampe User ID mapping
+- bearer token authentication
+- compose.aampe.com integration
+- messaging category destination
+- hyper-personalized messages
+- event filtering criteria
+- user properties transmission

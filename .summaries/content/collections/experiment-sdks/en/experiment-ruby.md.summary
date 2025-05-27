@@ -1,16 +1,22 @@
-## Summary
-The Amplitude Experiment Ruby SDK provides both remote and local evaluation capabilities for feature flags, with support for user targeting, cohort targeting, and automatic assignment tracking. It includes configuration options for timeouts, retries, and EU data center compliance, along with utilities for handling Amplitude cookies.
+**Summary:** This documentation covers Amplitude Experiment's Ruby SDK for both remote and local evaluation modes, including installation via gem/bundler, client initialization with deployment keys, fetching/evaluating variants for users, configuration options for timeouts/retries/polling intervals, cohort sync for local evaluation targeting, automatic assignment tracking, and Amplitude cookie parsing utilities.
 
-## Keywords
-- Ruby SDK
-- Remote evaluation
-- Local evaluation
-- Feature flags
-- Cohort targeting
-- Assignment tracking
-- Variant fetching
-- User properties
-- Amplitude cookies
-- Server-side evaluation
-- Deployment key
-- Flag configuration polling
+**Keywords:**
+- amplitude-experiment Ruby gem
+- remote evaluation fetch variants
+- local evaluation client
+- deployment key initialization
+- AmplitudeExperiment::User object
+- fetch_async callback method
+- LocalEvaluationConfig cohort_sync_config
+- AssignmentConfig automatic tracking
+- CohortSyncConfig api_key secret_key
+- flag_config_polling_interval_millis
+- AmplitudeCookie parse device_id
+- ServerZone::US ServerZone::EU
+- fetch_timeout_millis fetch_retries
+- bootstrap flag configuration
+- group_properties account-level bucketing
+- start() evaluate() methods
+- variant.value flag access
+- Ruby 2.0+ compatibility
+- darwin/amd64 linux/arm64 architecture support

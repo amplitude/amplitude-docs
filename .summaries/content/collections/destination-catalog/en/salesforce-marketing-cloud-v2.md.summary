@@ -1,17 +1,14 @@
-## Summary
-This documentation details the Salesforce Marketing Cloud V2 integration with Amplitude, which allows exporting behavioral cohorts from Amplitude to Salesforce Marketing Cloud for targeted marketing campaigns, with significant improvements over V1 by automating data extension creation and eliminating manual setup requirements.
+**Summary:** This documentation covers the Salesforce Marketing Cloud V2 destination integration for syncing Amplitude Behavioral Cohorts to Salesforce Marketing Cloud Data Extensions, featuring automatic data extension creation and server-to-server API integration with Client ID/Client Secret authentication.
 
-## Keywords
-- Behavioral Cohorts
-- Marketing Cloud V2
-- Cohort syncing
+**Keywords:**
+- Salesforce Marketing Cloud V2
+- Behavioral Cohorts sync
 - Data Extensions
 - Server-to-Server API integration
-- Client ID
-- Client Secret
-- Subdomain
-- Contact key mapping
-- Automated data extension creation
-- Marketing automation
-- User engagement
-- Sync cadence
+- Client ID Client Secret authentication
+- Subdomain configuration
+- Contact Builder
+- Audience Builder
+- Marketing Cloud contact key mapping
+- Installed Packages setup
+- API Target sync cadence

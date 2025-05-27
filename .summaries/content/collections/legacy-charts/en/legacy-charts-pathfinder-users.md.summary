@@ -1,14 +1,18 @@
 ## Summary
-The Pathfinder Users chart visualizes user navigation paths through a product, showing events users take before or after a specified event, with results displayed in descending order of usage frequency and limited to individual sessions, though this legacy chart is being merged into the new Journeys experience.
+This documentation describes Amplitude's legacy Pathfinder Users chart, which analyzes user paths through products by tracking event sequences within sessions, including configuration options for starting/ending events, session-based path tracking, and property-based event expansion.
 
 ## Keywords
-- legacy-pathfinder-users
-- user-path-analysis
-- session-based-paths
-- event-sequence-visualization
-- starting-ending-events
-- path-frequency
-- event-property-expansion
-- user-journey-tracking
-- session-id-requirement
-- event-time-ordering
+- Pathfinder Users chart
+- legacy chart type
+- user path analysis
+- event sequences
+- session-based tracking
+- session_id requirement
+- starting/ending events
+- path visualization
+- event properties expansion
+- HTTP API session tracking
+- Journeys migration
+- 30-day analysis limit
+- event_time ordering
+- custom events unsupported

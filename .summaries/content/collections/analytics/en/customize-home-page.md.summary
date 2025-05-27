@@ -1,14 +1,13 @@
-# Summary
-This documentation explains how project admins and managers can customize the Home page layout in Amplitude Analytics on a per-project basis, allowing them to distribute important insights to team members and ensure new users see relevant charts, with personal customizations taking precedence over admin-set defaults.
+**Summary:** This documentation explains how Amplitude admins and managers can customize the Home page layout on a per-project basis, including adding/removing charts and organizing the layout, with personal user customizations taking precedence over admin defaults.
 
-# Keywords
-- Home page customization
-- project admin permissions
-- manager permissions
-- custom chart layout
-- default dashboard
-- project-specific layout
-- team insights distribution
-- Home page precedence
-- Set Custom Homepage
-- reset layout
+**Keywords:**
+- Amplitude Home page customization
+- per-project basis layout
+- admin manager permissions
+- custom charts organization
+- Set Custom Homepage button
+- personal homepage precedence
+- project-specific defaults
+- blue bar navigation
+- Organization Settings Project
+- newly-invited teammates onboarding

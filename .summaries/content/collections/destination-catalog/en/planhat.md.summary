@@ -1,14 +1,17 @@
-# Summary
-This documentation details the Amplitude Data integration with Planhat, allowing real-time streaming of events as User Activities to Planhat's customer platform. The integration matches Amplitude user_id to Planhat's externalId, requires admin access to a paid Planhat plan, and supports sending all user, event, and group properties with configurable filters.
+**Summary:** This documentation describes Amplitude's event streaming integration with Planhat, a customer success platform, enabling real-time streaming of user activities with specific requirements for user_id to externalId matching and Tenant Token authentication.
 
-# Keywords
-- Planhat integration
-- Event streaming
-- Tenant Token
-- externalId matching
-- Customer health scores
-- User Activities
-- companyExternalId
-- Workflow triggers
-- Event property filters
-- Customer lifecycle management
+**Keywords:**
+- Planhat event streaming integration
+- Tenant Token authentication
+- user_id to externalId matching
+- User Activities streaming
+- End User Asset Project level events
+- customer health scores
+- sales opportunities automation
+- workflow triggers
+- email campaign automation
+- custom dashboards
+- customer success platform
+- real-time event stream
+- Event Properties filter
+- companyExternalId mapping

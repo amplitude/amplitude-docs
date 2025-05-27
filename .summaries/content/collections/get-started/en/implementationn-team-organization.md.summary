@@ -1,14 +1,15 @@
-## Summary
-This documentation outlines three critical roles for Amplitude implementation: Project Lead (coordinates with Amplitude and drives adoption), Data Governor (designs tracking plans and maintains data quality), and Instrumentation Lead (handles technical implementation of events and troubleshoots data issues).
+**Summary:** This documentation outlines three critical team roles for Amplitude implementation: Project Lead (coordinates with Success Manager and drives adoption), Data Governor (designs tracking plans and maintains data quality), and Instrumentation Lead (implements SDK events and validates data sources).
 
-## Keywords
-- implementation team roles
-- project lead
-- data governor
-- instrumentation lead
-- tracking plan
-- taxonomy
-- data quality
-- event instrumentation
-- amplitude adoption
-- cross-team coordination
+**Keywords:**
+- Amplitude implementation team roles
+- Project Lead adoption responsibilities
+- Data Governor tracking plan taxonomy
+- Instrumentation Lead SDK events
+- Success Manager coordination
+- tracking plan data quality
+- client-side SDKs instrumentation
+- back-end data sources validation
+- duplicate events troubleshooting
+- privacy policy data compliance
+- naming convention taxonomy design
+- real-time data constraints

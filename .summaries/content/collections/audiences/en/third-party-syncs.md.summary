@@ -1,16 +1,25 @@
-## Summary
-This documentation explains how to sync user data from Amplitude to third-party destinations using three sync types: on-demand, automated, and real-time syncs. It details the process of creating syncs, troubleshooting discrepancies, viewing sync history, and understanding limitations across different Amplitude subscription plans.
+**Summary:** This documentation covers Amplitude Activation's third-party sync functionality, detailing three sync types (on-demand, automated, real-time) for cohorts, properties, computations and predictions, including sync creation workflows, email notifications, cohort sync discrepancies, user mapping issues, and CSV export capabilities for sync history analysis.
 
-## Keywords
-- cohort syncs
-- third-party destinations
-- real-time syncs
-- automated syncs
-- on-demand syncs
-- sync discrepancies
-- user property mapping
-- sync history
-- CSV exports
-- skip_reason
-- unresolved mapping
+**Keywords:**
 - Amplitude Activation
+- third-party syncs
+- cohort sync
+- on-demand syncs
+- automated syncs
+- real-time syncs
+- user property mapping
+- sync discrepancies
+- unresolved mapping
+- CSV export
+- sync history
+- destination catalog
+- user identifiers
+- cohort membership
+- skip_reason
+- rejected by partner
+- amplitude_id
+- mapped properties
+- sync notifications
+- RTS (Real-Time Sync)
+- incremental changes
+- full sync

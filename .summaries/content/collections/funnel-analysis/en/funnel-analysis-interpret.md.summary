@@ -1,14 +1,17 @@
-# Summary
-This documentation explains how to interpret Funnel Analysis charts in Amplitude, covering conversion visualization, time-based analysis options, and different measurement views including Conversion, Conversion Over Time, Time to Convert, and Frequency charts to track user progression through defined paths.
+**Summary:** This documentation explains how to interpret Amplitude's Funnel Analysis chart data, covering conversion visualization, time-based analysis, and chart configuration options including conversion windows, takeaway metrics (total conversion, largest drop-off step, slowest conversion step), and different view modes (conversion over time, time to convert histogram, frequency analysis).
 
-# Keywords
-- funnel conversion rates
-- drop-off analysis
-- conversion window
-- millisecond resolution
+**Keywords:**
+- Amplitude Funnel Analysis chart interpretation
+- conversion window configuration
+- funnel drop-off visualization
+- takeaway metrics (total conversion, largest drop-off, slowest conversion)
+- conversion over time analysis
 - time to convert histogram
-- conversion over time
-- frequency analysis
-- funnel interpretation
-- step transition metrics
-- median conversion time
+- frequency chart analysis
+- millisecond resolution setting
+- funnel step transitions
+- median time to convert
+- custom bucket configuration
+- new user funnels
+- event totals vs unique users
+- striped bar drop-off visualization

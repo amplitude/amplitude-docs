@@ -1,14 +1,15 @@
-# Summary
-Convizit is an AI-based Digital Experience Data Platform that automatically captures website user behavior and sends structured, named, and enriched events to Amplitude approximately every 30 minutes, with events identified by "source": "Convizit" in the JSON data.
+**Summary:** Documents the Convizit source integration that automatically captures website user behavior data and sends it to Amplitude as raw events with pre-structured event names and properties, including setup via account manager coordination and data delivery every 30 minutes.
 
-# Keywords
+**Keywords:**
+- Convizit source integration
 - AI-based Digital Experience Data Platform
-- website user behavior tracking
-- automatic event naming
-- 30-minute data delivery
-- event enrichment
-- source: "Convizit" identifier
-- event_properties
-- user_properties
-- insert_id
-- raw-events integration
+- automatic user behavior data collection
+- raw-events integration type
+- website integration category
+- 30-minute data delivery interval
+- pre-structured event naming
+- insert_id field mapping
+- plan.source field identification
+- partner-maintained integration
+- account manager setup process
+- User Look-Up event verification

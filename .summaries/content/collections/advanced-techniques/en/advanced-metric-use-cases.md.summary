@@ -1,14 +1,13 @@
-## Summary
-This documentation page explains advanced metric use cases in Amplitude Experiment, specifically focusing on how to create funnel analyses based on experiment metrics by creating user segments for each variant and adding appropriate filters to analyze conversion rates across experiment variants.
+**Summary:** This documentation covers advanced metric analysis techniques in Amplitude Experiment, specifically creating funnel analyses with experiment metrics where exposure events occur mid-funnel, and implementing threshold metrics using funnel counting for multi-event conversions.
 
-## Keywords
-- Funnel analysis
-- Experiment metrics
-- Variant jumping
-- Exposure event
-- User segments
-- Conversion rates
-- Flag key
-- Variant filters
-- Amplitude Analytics
-- Threshold metrics
+**Keywords:**
+- Amplitude Experiment metrics
+- funnel analysis with exposure events
+- experiment conversion funnel
+- variant jumping handling
+- threshold metrics
+- multi-event conversions
+- experiment flag key filtering
+- statistical significance noise reduction
+- funnel counting by uniques
+- post-exposure metric events

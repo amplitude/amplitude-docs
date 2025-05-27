@@ -1,14 +1,17 @@
-# Summary
-This documentation explains when to use cross-platform instrumentation (same API key across platforms) versus separate platform instrumentation, detailing the advantages of each approach based on whether analyzing user behavior across platforms or platform-specific engagement is the priority.
+**Summary:** This documentation explains when to use cross-platform instrumentation (same API key across iOS, Android, web) versus separate platform instrumentation for Amplitude analytics, covering decision factors like user crossover analysis, platform-specific behaviors, and update cycle management.
 
-# Keywords
+**Keywords:**
 - cross-platform instrumentation
 - separate platform instrumentation
-- API key
+- API key strategy
+- iOS Android web analytics
 - user crossover analysis
-- platform differences
-- update cycles
-- instrumentation errors
-- web vs mobile tracking
-- user behavior analysis
-- platform-specific engagement
+- platform-specific tracking
+- unified analytics view
+- cross-platform funnels
+- cross-platform retention charts
+- instrumentation changes
+- app update cycles
+- user ID collection
+- platform differences tracking
+- analytics dashboard separation

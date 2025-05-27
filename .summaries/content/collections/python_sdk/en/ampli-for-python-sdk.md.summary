@@ -1,18 +1,17 @@
-## Summary
-This documentation page covers the Ampli for Python SDK, which provides a strongly-typed wrapper for tracking analytics events in Python applications (3.6+). It details the complete implementation workflow from installation through initialization, user identification, event tracking, and verification using the Ampli CLI.
+**Summary:** This documentation covers the Ampli wrapper for Python SDK, which provides strongly-typed event tracking for Python 3.6+ applications through code generation from Amplitude Data tracking plans, including installation via pip/npm, CLI commands (pull, status), initialization with LoadOptions, and methods for identify(), group_identify(), set_group(), track(), and flush() operations.
 
-## Keywords
-- Ampli wrapper
-- Python SDK
-- strongly-typed tracking
-- identify users
-- track events
-- LoadOptions
-- EventOptions
-- flush events
-- group_identify
-- set_group
-- Ampli CLI
-- ampli pull
-- ampli status
-- plugin integration
+**Keywords:**
+- Ampli wrapper Python SDK
+- amplitude-analytics pip package
+- @amplitude/ampli CLI
+- LoadOptions LoadClientOptions
+- strongly typed event tracking
+- ampli pull command
+- ampli status verification
+- SongPlayed event classes
+- identify() group_identify() set_group()
+- EventOptions device_id
+- DestinationPlugin enrichment
+- Python 3.6+ tracking plan
+- flush() queue management
+- Amplitude Data code generation

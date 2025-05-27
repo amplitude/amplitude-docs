@@ -1,16 +1,16 @@
-## Summary
-This documentation details the CommandBar (Cohort) destination integration, which allows syncing Amplitude cohorts to CommandBar's AI-powered user assistance platform to create personalized in-product experiences like Copilot chat and proactive nudges, requiring a paid CommandBar plan and specific setup steps in both platforms.
+**Summary:** This documentation describes the CommandBar (Cohort) destination integration that syncs Amplitude cohorts to CommandBar's AI-powered user assistance platform for creating personalized in-product experiences like Copilot chat, nudges, and onboarding flows.
 
-## Keywords
-- CommandBar cohort integration
-- AI-powered user assistance
-- Copilot chat
-- proactive nudges
-- cohort synchronization
-- personalized in-product experiences
-- audience targeting
-- feature adoption
-- user onboarding
-- retention campaigns
-- API key configuration
-- CommandBar Audiences
+**Keywords:**
+- CommandBar cohort destination
+- AI-powered user assistance platform
+- Copilot chat integration
+- Amplitude cohort sync
+- In-product personalization
+- CommandBar API key configuration
+- Nudges targeting
+- Audiences condition mapping
+- Partner-maintained integration
+- Feature adoption workflows
+- User onboarding segmentation
+- Retention campaigns
+- Freemium conversion flows

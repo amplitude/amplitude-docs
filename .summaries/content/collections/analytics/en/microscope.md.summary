@@ -1,18 +1,20 @@
-# Summary
-Microscope is a feature in Amplitude that allows users to analyze specific data points in charts by hovering over them, providing options like viewing user streams, showing user paths, creating cohorts, and launching session replays. It enables detailed inspection of individual user behaviors and supports creating targeted guides, surveys, and experiments directly from chart data points.
+**Summary:** Amplitude's Microscope feature enables detailed inspection of chart data points by hovering/clicking to access options like View User Streams, Show User Paths, creating cohorts, launching Session Replays, and exploring conversion drivers in Event Segmentation, Funnel Analysis, and Journeys charts.
 
-# Keywords
+**Keywords:**
+- Microscope feature
+- View User Streams
+- Show User Paths
 - data point inspection
-- user streams
-- user paths
-- cohort creation
-- session replay
+- Event Segmentation charts
+- Funnel Analysis charts
+- Journeys charts
+- Pathfinder Users report
+- Session Replay integration
 - conversion drivers
-- microscope menu
-- chart interaction
-- feature flag targeting
-- experiment creation
+- cohort creation from data points
+- user activity streams
+- chart data point drilling
+- Autocapture events
+- account-level reporting groups
+- Feature Flag targeting
 - user journey analysis
-- behavioral analysis
-- drop-off analysis
-- funnel exploration

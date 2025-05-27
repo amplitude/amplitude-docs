@@ -1,14 +1,15 @@
-# Summary
-This documentation explains how to use Spaces in Amplitude for collaboration on analytics, including joining existing spaces, moving content between spaces, creating shortcuts, managing space members with different permission levels (can add, can edit, can view), and integrating with Slack to receive notifications about new content.
+**Summary:** This Japanese documentation explains Amplitude Spaces collaboration features including joining existing spaces, moving content between spaces, creating shortcuts for multi-space content sharing, managing space member permissions (add/edit/view levels), Slack channel integration for automatic notifications, and role-based access controls for admins/managers/members.
 
-# Keywords
-- Amplitude Spaces
-- analytics collaboration
-- space permissions
-- content organization
-- space membership management
-- Slack integration
-- content shortcuts
-- space navigation
-- permission levels
-- team collaboration
+**Keywords:**
+- Amplitude Spaces collaboration
+- Japanese translation documentation
+- Space membership management
+- Content migration between spaces
+- Shortcut creation multi-space sharing
+- Permission levels (追加できます/編集できます/表示できます)
+- Slack integration automatic notifications
+- Role-based access controls
+- Space archiving permissions
+- Team analytics collaboration
+- Content organization workflows
+- Member invitation management

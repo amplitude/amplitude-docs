@@ -1,16 +1,22 @@
-# Summary
-This documentation explains Amplitude's Impact Analysis chart, which tracks how a user's first engagement with a feature affects the frequency of other behaviors. The tool helps product teams understand causal relationships between initial feature discovery and subsequent user actions by comparing behavior before and after first engagement with a feature.
+**Summary:**
+This documentation explains Amplitude's Impact Analysis chart feature for tracking how initial user engagement with specific features affects the frequency of other user behaviors, using causal inference to measure behavioral changes before and after first-time feature discovery.
 
-# Keywords
-- impact analysis
-- causal inference
+**Keywords:**
+- Impact Analysis chart
+- Amplitude analytics
 - treatment event
 - outcome event
-- user behavior change
-- feature discovery impact
-- average event count
-- active rate
-- event count distribution
-- property metrics
-- time-based analysis
-- enterprise feature
+- causal inference
+- initial engagement tracking
+- user behavior frequency
+- first-time feature discovery
+- relative timeline alignment
+- behavioral pattern analysis
+- Enterprise/Growth/Scholarship plans
+- event implementation
+- user segmentation
+- property filtering
+- average execution count
+- active rate metrics
+- execution count distribution
+- randomized experimentation alternative

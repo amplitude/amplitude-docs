@@ -1,14 +1,17 @@
-# Summary
-This documentation page explains how to roll out an experiment in Amplitude, detailing the process of activating experiments, the function of the toggle switch, and the three possible actions after experiment completion (roll out winning variant, rollback, or continue), along with the system changes that occur with each decision.
+**Summary:** This documentation covers the Japanese translation of Amplitude's experimentation workflow for rolling out experiments, including the experiment launch process using the "実験を開始" button, toggle switch functionality for flag testing without launching, and post-experiment options (rollout, rollback, continue) with their specific configuration changes like percentage rollout settings and sticky bucket behavior.
 
-# Keywords
-- experiment activation
-- start experiment button
-- active/inactive toggle
-- experiment completion options
-- rollout mechanics
-- percentage rollout
-- sticky bucket
-- rollout weights
-- experiment rollback
-- post-experiment actions
+**Keywords:**
+- 実験ワークフロー (experimentation workflow)
+- 実験を開始 button
+- バリアント (variants)
+- トラフィック割り当て (traffic allocation)
+- パーセンテージロールアウト
+- スティッキーバケット (sticky bucket)
+- fetch() function
+- 自動露出イベント (auto exposure events)
+- 統計的有意性 (statistical significance)
+- 勝利バリアント (winning variant)
+- ロールアウト/ロールバック
+- フラグ検定 (flag testing)
+- Amplitude experimentation
+- Japanese translation documentation

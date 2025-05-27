@@ -1,15 +1,14 @@
-# Summary and Keywords
+**Summary:** This documentation covers the Kochava-Amplitude integration for attribution data, supporting bidirectional data flow through raw events ingestion and event streaming, utilizing Amplitude's Attribution API for real-time user attribution and marketing performance tracking.
 
-The Kochava integration with Amplitude enables bidirectional data flow, allowing marketers to share user data in real-time between platforms for attribution tracking and audience targeting, with implementation requiring the creation of a Kochava-Certified Postback that connects to Amplitude's Attribution API.
-
-## Keywords
-- attribution tracking
-- people-based marketing
-- real-time data solutions
-- Kochava-Certified Postback
-- bidirectional event streaming
+**Keywords:**
+- Kochava integration
 - Attribution API
-- user acquisition data
-- mobile marketing optimization
-- audience targeting
-- cross-device identity
+- raw-events ingestion
+- event-streaming
+- people-based marketing
+- mobile marketing attribution
+- Kochava-Certified Postback
+- real-time data synchronization
+- user cohort targeting
+- attribution tracking
+- marketing ROI optimization

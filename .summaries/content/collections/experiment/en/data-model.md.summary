@@ -1,18 +1,17 @@
-## Summary
-This documentation page explains Amplitude Experiment's data model, detailing how organizations, projects, deployments, flags, experiments, variants, and users are structured and related to each other within the Amplitude ecosystem, with specific guidance on configuration requirements and best practices for implementation.
+**Summary:** This documentation describes Amplitude Experiment's hierarchical data model structure, covering organizations, projects, deployments (with client/server types and deployment keys), flags/experiments (with local/remote evaluation modes), variants (with value/payload properties), and users (with user_id/device_id requirements and group support for Accounts add-on).
 
-## Keywords
+**Keywords:**
 - Amplitude Experiment data model
-- feature flags
-- experiments
-- deployments
-- variants
-- evaluation modes
-- project structure
 - deployment keys
-- user properties
-- bucketing
 - client-side deployments
 - server-side deployments
-- group targeting
-- variant payload
+- evaluation mode (local/remote)
+- flag key
+- variant value and payload
+- user_id and device_id requirements
+- group properties and group_properties
+- Accounts add-on groups
+- kebab-case and snake_case formatting
+- Amplitude Analytics project structure
+- remote evaluation and local evaluation
+- bucketing key and Amplitude ID resolution

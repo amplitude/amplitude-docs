@@ -1,13 +1,14 @@
-## Summary
-This documentation explains how to manage traffic allocation when using holdout groups in complex scenarios, specifically addressing the challenges of adding experiments to multiple holdout groups (which compounds traffic reduction) and combining holdout groups with mutual exclusion groups (which further limits experiment traffic).
+**Summary:** This documentation covers advanced holdout group scenarios in Amplitude Experiment, specifically addressing traffic distribution issues when experiments belong to multiple holdout groups (resulting in multiplicative traffic reduction like 0.95 * 0.95 = 90.25%) and the interaction between holdout groups and mutual exclusion groups that can further limit experiment traffic allocation.
 
-## Keywords
+**Keywords:**
 - holdout groups
-- traffic allocation
-- mutual exclusion
-- experiment traffic limitation
-- compound traffic reduction
-- streamlining experiments
+- multiple holdout groups
+- mutual exclusion groups
 - traffic distribution
+- experiment traffic allocation
 - holdout percentage
+- traffic limits
+- Amplitude Experiment
 - experiment evaluation
+- multiplicative traffic reduction
+- slot-based traffic splitting

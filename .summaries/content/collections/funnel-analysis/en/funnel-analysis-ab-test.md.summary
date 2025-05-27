@@ -1,13 +1,17 @@
-## Summary
-This documentation explains how to use A/B testing in Funnel Analysis charts to compare conversion performance between user segments, with options to view results as improvement over baseline or statistical significance, available only on Growth and Enterprise plans.
+**Summary:** Documents A/B testing functionality within Amplitude's Funnel Analysis charts, covering improvement over baseline and statistical significance views for comparing funnel conversion performance across user segments, including breakdown table metrics and statistical significance calculations.
 
-## Keywords
-- Funnel Analysis A/B testing
-- Improvement over baseline
-- Statistical significance calculation
-- Baseline segment selection
-- Conversion rate comparison
-- Significance threshold (95%)
-- Breakdown table metrics
-- Sample size requirements
-- Enterprise feature availability
+**Keywords:**
+- A/B testing funnel analysis
+- funnel conversion performance
+- improvement over baseline
+- statistical significance calculation
+- baseline segment selection
+- conversion rate comparison
+- significance threshold 95%
+- sample size requirements
+- breakdown table metrics
+- p-value calculation
+- Growth Enterprise plans
+- user segment comparison
+- funnel steps completion
+- CSV data export

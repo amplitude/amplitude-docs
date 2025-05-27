@@ -1,14 +1,18 @@
-## Summary
-This documentation explains how session metrics (bounce rate, exit rate, etc.) work in Amplitude Analytics, detailing how they're calculated based on grouping properties and providing examples of how bounce rates are determined when grouping by different event properties.
+**Summary:** This documentation explains how to use session metrics (legacy metrics) like bounce rate and exit rate in Amplitude Analytics to evaluate content paths, specifically focusing on how grouping properties determine session metric calculations for active events only, with detailed examples of bounce classification logic.
 
-## Keywords
-- Session metrics
-- Bounce rate
-- Exit rate
-- Entry rate
-- Grouping properties
-- Data table chart
-- Growth/Enterprise plan
-- Event properties
-- Channel reports
-- Page-level properties
+**Keywords:**
+- session metrics
+- legacy metrics
+- bounce rate (直帰率)
+- exit rate (離脱率)
+- grouping properties
+- active events
+- Amplitude Analytics
+- data table chart
+- Growth/Enterprise plans
+- channel reports
+- page-level properties
+- screen-level properties
+- session classification
+- entrance events
+- exit events

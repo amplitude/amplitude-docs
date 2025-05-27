@@ -1,14 +1,17 @@
-# Summary
-The Unreal SDK documentation provides installation instructions and usage examples for integrating Amplitude analytics into Unreal Engine projects, including how to log events with properties, set user properties, and implement custom user IDs through the Unreal Engine analytics provider interface.
+**Summary:** This documentation covers the Amplitude Unreal SDK (Beta) installation and implementation, including downloading AmplitudeUnreal.zip, enabling the plugin in UE4 editor analytics settings, and using the IAnalyticsProvider interface for event tracking with RecordEvent, user properties, and session management.
 
-# Keywords
-- AmplitudeUnreal
+**Keywords:**
+- AmplitudeUnreal SDK
 - Unreal Engine analytics
-- IAnalyticsProvider
-- RecordEvent
-- SetUserID
-- event properties
-- user properties
-- plugin installation
-- analytics provider
-- StartSession
+- IAnalyticsProvider interface
+- AmplitudeUnreal.zip installation
+- UE4 editor plugin configuration
+- RecordEvent method
+- FAnalyticsEventAttribute
+- StartSession/EndSession
+- SetUserID custom tracking
+- Project Settings Analytics Amplitude
+- FAnalytics::Get().GetDefaultConfiguredProvider()
+- Plugins directory setup
+- C++ analytics headers
+- Beta SDK status

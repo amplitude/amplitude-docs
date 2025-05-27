@@ -1,12 +1,13 @@
-# Summary
-This documentation page describes the Candu (Cohort) integration for Amplitude, which allows users to send cohorts from Amplitude to Candu for personalizing in-app content experiences, including setup steps in both platforms and the process for syncing cohorts.
+**Summary:** This documentation describes the Candu (Cohort) destination integration that enables syncing user cohorts from Amplitude to Candu's in-app content personalization platform, including setup steps for API key configuration and cohort sync cadence settings.
 
-# Keywords
-- Candu integration
-- Cohort synchronization
-- In-app content personalization
+**Keywords:**
+- Candu cohort destination
+- Amplitude to Candu integration
+- cohort syncing
+- in-app content personalization
+- customer engagement destination
 - API key configuration
 - User ID mapping
-- Sync cadence
-- Customer engagement
-- Partner-maintained integration
+- sync cadence
+- partner-maintained integration
+- Candu support team

@@ -1,15 +1,18 @@
-## Summary
-This documentation page details the various keys and tokens used across Amplitude products, including Analytics (API Key, Secret Key), Experiment (Deployment Keys, Management API Key), Data (API Token), and other keys (SCIM, Org-level). It explains which keys are public vs private, rotation capabilities, and where to find/manage each key type.
+**Summary:** This documentation page provides a comprehensive guide to Amplitude's authentication keys and tokens across Analytics, Experiment, Data, and SCIM products, detailing their public/private nature, rotation capabilities, use cases, and security considerations for API Keys, Secret Keys, Deployment Keys, Management API Keys, Data API Tokens, and SCIM Keys.
 
-## Keywords
-- Amplitude authentication
-- API Key
-- Secret Key
-- Deployment Key
+**Keywords:**
+- Amplitude API authentication
+- Project API Key
+- Project Secret Key
+- Deployment Key client-side server-side
 - Management API Key
 - Data API Token
-- SCIM Key
-- key rotation
-- client-side vs server-side keys
-- project authentication
-- security credentials
+- SCIM Key provisioning
+- Experiment deployment authentication
+- Analytics project keys
+- Key rotation capabilities
+- Org-level API Key
+- Public vs private keys
+- Authentication scope permissions
+- Browser mobile app ingestion
+- Feature experiment data model

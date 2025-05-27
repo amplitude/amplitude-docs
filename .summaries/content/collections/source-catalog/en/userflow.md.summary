@@ -1,14 +1,16 @@
-# Summary
-This documentation details the Userflow integration with Amplitude, which enables streaming user onboarding events (like flow starts and checklist completions) to Amplitude for behavioral analytics, while also allowing Amplitude cohorts to be used for creating personalized in-app experiences in Userflow without requiring code.
+**Summary:** Documents the Userflow integration for streaming in-app product tour events (Flow Started, Checklist Task Completed) to Amplitude for onboarding behavior analysis, supporting both raw-events and cohorts integration types with bidirectional data flow for user segmentation and behavioral analytics.
 
-# Keywords
-- product tours
-- user onboarding
-- checklists
-- surveys
-- no-code
-- event streaming
-- cohort targeting
-- flow started events
-- checklist task completed
-- environment separation
+**Keywords:**
+- Userflow integration
+- in-app product tours
+- Flow Started events
+- Checklist Task Completed events
+- onboarding behavior analysis
+- raw-events integration type
+- cohorts integration type
+- behavioral analytics
+- user segmentation
+- customer-engagement category
+- bidirectional data flow
+- staging/production environment separation
+- partner-maintained integration

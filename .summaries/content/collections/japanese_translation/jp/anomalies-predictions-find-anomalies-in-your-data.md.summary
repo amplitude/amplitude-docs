@@ -1,17 +1,23 @@
-## Summary
-This documentation explains Amplitude's Anomaly + Forecast feature, which helps users distinguish meaningful variations in metrics from statistical noise by highlighting statistically significant deviations based on historical data, and allows projecting metrics into the future for setting realistic goals.
+**Summary:** This documentation covers Amplitude's Anomaly + Forecast feature for detecting statistically significant deviations in time-series metrics using Prophet algorithm, with configuration options for Agile/Robust/Custom modes, confidence intervals, training periods, and forecasting capabilities for event segmentation, funnels, user sessions, retention, and stickiness charts.
 
-## Keywords
-- anomaly detection
-- statistical significance
+**Keywords:**
+- Anomaly + Forecast feature
 - Prophet algorithm
-- confidence intervals
-- time series forecasting
-- training data periods
-- agile mode
-- robust mode
-- custom mode
-- seasonal trends
-- event segmentation
-- insights package
-- root cause analysis
+- Statistical significance detection
+- Time-series data analysis
+- Event segmentation anomalies
+- Confidence interval configuration
+- Agile/Robust/Custom modes
+- Training data periods
+- Seasonality detection (daily, weekly, monthly, yearly)
+- Funnel conversion anomalies
+- User session anomalies
+- Retention anomaly detection
+- Stickiness metrics
+- Rolling window analysis
+- Growth/Enterprise/Scholarship plans
+- Root cause analysis integration
+- Insights package alerts
+- Japanese translation (jp)
+- 95% confidence intervals
+- 120-day training periods

@@ -1,14 +1,17 @@
-# Summary
-This documentation page explains how to build surveys in Posthog, detailing the unique survey blocks (particularly Rating blocks with stars, labels, emoji, and NPS options), conditional logic capabilities for creating dynamic survey paths based on user responses, and noting that survey setup and targeting functions similarly to guides.
+**Summary:** This documentation covers building surveys in a platform that shares features with guide builders, focusing on four unique survey block types (Rating with Stars/Labels/Emoji/NPS variants), conditional logic for dynamic response branching, and survey-specific form factors (modal, popover, pin).
 
-# Keywords
-- survey builder
-- rating blocks
+**Keywords:**
+- survey blocks
+- rating block types
+- stars rating
+- emoji rating
+- NPS (Net Promoter Score)
+- rating labels
 - conditional logic
 - survey branching
-- NPS (Net Promoter Score)
-- form factors
+- form factors (modal, popover, pin)
+- required rating settings
 - survey targeting
-- emoji ratings
-- star ratings
-- survey response conditions
+- dynamic responses
+- followup questions
+- survey builder

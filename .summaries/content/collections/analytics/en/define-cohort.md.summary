@@ -1,17 +1,23 @@
-## Summary
-This documentation page explains how to define a new behavioral cohort in Amplitude Analytics, detailing the process of creating cohort definitions using various conditions like event performance, user properties, and time parameters, with options for combining conditions using AND/OR logic and including/excluding specific user segments.
+**Summary:** This documentation explains how to define behavioral cohorts in Amplitude Analytics, covering event-based conditions (count, relative count, total sum of property, distinct values, historical count, count in interval), temporal parameters (during, since, within), logical operators (and/or clauses), user property conditions (most recently, any time), and group-level cohort creation.
 
-## Keywords
+**Keywords:**
 - behavioral cohorts
 - cohort definition
-- event conditions
-- user property filters
-- count operators
+- event counting methods
 - relative count
-- time parameters
-- inclusion/exclusion logic
-- group-level cohorts
-- AND/OR clauses
+- total sum of property
+- distinct values of property
 - historical count
 - count in interval
-- propensity filtering
+- temporal parameters
+- during/since/within clauses
+- user property conditions
+- group-level cohorts
+- inclusion/exclusion conditions
+- and/or logical operators
+- stickiness analysis
+- cohort parameters
+- event frequency comparison
+- numerical property values
+- group types instrumentation
+- cohort detail page

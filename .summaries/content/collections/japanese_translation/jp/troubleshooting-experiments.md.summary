@@ -1,14 +1,24 @@
-# Summary
-This documentation page provides troubleshooting guidance for Amplitude Experiment, covering common issues like device/user ID mismatches, flag deployment problems, variant naming restrictions, event assignment confusion, targeting limitations, and variant visibility issues. It explains technical causes for unexpected behaviors and offers specific solutions for resolving these problems without contacting support.
+## Summary
+This Japanese documentation page covers troubleshooting common issues with Amplitude Experiment feature flags and A/B testing, including device/user ID mismatches, variant assignment problems, targeting delays, and platform-specific assignment issues.
 
-# Keywords
-- Amplitude Experiment troubleshooting
-- variant assignment issues
-- device ID synchronization
-- flag deployment activation
-- exposure events vs assignment events
-- targeting limitations
-- CDN caching delays
-- ad blocker interference
-- variant jumping
-- offline campaign implementation
+## Keywords
+- Amplitude Experiment
+- フラグ (flags)
+- バリアント (variants)
+- 割り当てイベント (assignment events)
+- エクスポージャーイベント (exposure events)
+- デバイスID (device ID)
+- ユーザーID (user ID)
+- ターゲティング (targeting)
+- コホート (cohort)
+- バケッティング (bucketing)
+- デプロイメント (deployment)
+- OFF/FALLBACK バケット
+- CDN遅延
+- プラットフォーム値
+- 広告ブロッカー
+- Experiment SDK
+- Analytics SDK
+- 匿名モード
+- Japanese translation
+- troubleshooting

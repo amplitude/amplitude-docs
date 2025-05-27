@@ -1,14 +1,19 @@
-## Summary
-This documentation explains how to track revenue in Amplitude, covering revenue properties ($revenue, $price, $quantity, etc.), methods for tracking both in-app and non-in-app purchases, revenue verification for IAPs, and potential causes for discrepancies between app store reports and Amplitude data.
+**Summary:** This documentation explains how to track revenue events in Amplitude using SDKs and HTTP API, covering revenue properties ($revenue, $price, $quantity), in-app purchase verification with iTunes Connect/Google Play receipt validation, and the distinction between Revenue, Revenue (Verified), and Revenue (Unverified) events.
 
-## Keywords
+**Keywords:**
 - revenue tracking
-- revenue properties
-- in-app purchases
+- $revenue property
+- $price property
+- $quantity property
+- logRevenueV2 function
+- in-app purchases (IAPs)
 - revenue verification
-- logRevenueV2
+- iTunes Connect In App Purchase Shared Secret
+- Google Play License Public Key
+- Revenue (Verified) events
+- Revenue (Unverified) events
 - receipt validation
 - Revenue LTV chart
-- $revenue property
-- revenue discrepancies
-- setOptOut
+- currency conversion
+- setOptOut method
+- logRevenue deprecated

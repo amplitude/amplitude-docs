@@ -1,14 +1,24 @@
-### Summary
-This documentation explains how to deploy and analyze recommendations in personalization campaigns using Amplitude's Profile API. It details the API integration process, including authentication, request parameters, response interpretation, and implementation steps, as well as how to analyze recommendation performance through the Performance tab metrics like lift, conversion rates, and statistical significance.
+**Summary:**
+This documentation explains how to deploy and analyze machine learning recommendations in personalization campaigns using Amplitude's Profile API, covering REST endpoint integration, JSON response handling with rec_id/is_control/items fields, and performance measurement through funnel conversion analysis.
 
-### Keywords
+**Keywords:**
 - Profile API
-- Recommendation deployment
-- Personalization campaigns
-- API authentication
-- is_control parameter
-- recommendation performance analysis
-- statistical significance
-- conversion lift
-- real-time API integration
-- recommendation payload
+- recommendations deployment
+- personalization campaigns
+- REST endpoint integration
+- rec_id parameter
+- is_control field
+- JSON response handling
+- funnel conversion analysis
+- statistical significance testing
+- control vs treatment segments
+- recommendation performance metrics
+- API authentication with secret key
+- user_id and device_id queries
+- recommendation_source field
+- cohort memberships
+- predictions integration
+- Braze connected content
+- Movable Ink integration
+- exposure events
+- baseline lift measurement

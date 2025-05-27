@@ -1,14 +1,24 @@
 ## Summary
-This documentation details the Amazon S3 integration with Amplitude, explaining how to export raw event data, merged user IDs, and cohorts to S3 buckets, including setup instructions, data format specifications, and a migration process for implementing KMS encryption for enhanced security.
+This documentation covers the Amazon S3 destination integration for Amplitude, detailing setup procedures, bucket policy configuration, data export formats (raw events, merged Amplitude IDs, cohorts), manual backfill processes, KMS encryption migration, and exported JSON schema with hourly partitioned file naming conventions.
 
 ## Keywords
-- Amazon S3 export
-- Raw event data schema
-- Bucket policy configuration
+- Amazon S3 destination integration
+- Amplitude Data catalog
+- bucket policy configuration
+- raw events export
+- merged Amplitude IDs
+- cohorts synchronization
+- hourly data exports
+- JSON schema event table
+- manual backfill functionality
 - KMS encryption migration
-- Hourly data exports
-- Backfill functionality
-- Event JSON format
-- Merged Amplitude IDs
-- Export troubleshooting
-- S3 bucket permissions
+- server_upload_time partitioning
+- amplitude_id field
+- event_properties dictionary
+- user_properties dictionary
+- zipped archive JSON files
+- projectID file naming
+- AWS IAM Role principal
+- complete files labeling
+- portfolio projects limitation
+- organization bucket restrictions

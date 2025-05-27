@@ -1,14 +1,16 @@
-# Summary
-The Settings page in Amplitude provides organization-wide and personal configuration options, accessible to all users but with administrative changes restricted to admins and managers. It includes features for managing organizations, projects, users, permissions, usage reports, notifications, SSO, and content access controls, along with personal profile settings and integration options.
+**Summary:** This documentation covers Amplitude's settings page interface in Japanese, detailing organization-level configurations, personal profile settings, notification management for Slack/email, event volume limits and alerts, CSV export options, and annual activity review features accessible through the settings icon.
 
-# Keywords
+**Keywords:**
 - Amplitude settings page
-- Organization management
-- User permissions
-- Usage reports
-- Notification preferences
-- SSO configuration
-- Slack integration
-- Profile customization
-- Event volume tracking
-- Annual review dashboard
+- Japanese translation documentation
+- Organization admin permissions
+- Event volume limits and alerts
+- Slack integration settings
+- CSV export leading whitespace removal
+- Personal profile configuration
+- Notification management
+- Annual activity review
+- Organization ID and URL settings
+- SSO and identity provider management
+- User privacy notifications
+- Content access control

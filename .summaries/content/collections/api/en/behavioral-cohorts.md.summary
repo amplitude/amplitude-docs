@@ -1,14 +1,25 @@
 ## Summary
-This documentation details the Behavioral Cohorts API which allows developers to list, export, and upload cohorts in Amplitude, with specific endpoints for getting all cohorts, retrieving a single cohort (through a three-step asynchronous process), and updating cohort membership by adding or removing IDs.
+
+This documentation covers the Behavioral Cohorts API which provides endpoints for listing, exporting, downloading, uploading, and updating user cohorts in Amplitude using HTTP basic authentication with asynchronous download operations requiring three-step process (request, poll status, download file).
 
 ## Keywords
-- behavioral-cohorts-api
-- cohort-download
-- cohort-upload
-- cohort-membership
-- asynchronous-api
-- user-identification
-- amplitude-ids
-- request-polling
-- cohort-size-limits
-- incremental-updates
+
+- Behavioral Cohorts API
+- cohort export download
+- asynchronous API polling
+- HTTP basic authentication
+- cohort upload BY_AMP_ID BY_USER_ID
+- cohort membership ADD REMOVE operations
+- Amazon S3 pre-signed URLs
+- request_id status polling
+- cohort sync metadata
+- Growth Enterprise plan limits
+- 500 requests per month limit
+- 2 million user cohort size limit
+- concurrency limit 5 requests
+- user properties propKeys parameter
+- cohort definition schema
+- incremental membership updates
+- skip_invalid_ids parameter
+- count_group User ID types
+- discoverable published cohorts

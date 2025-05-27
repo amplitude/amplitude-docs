@@ -1,14 +1,18 @@
-# Summary
-This documentation explains how to create a new run of an existing Amplitude Experiment to exclude previous user data from monitoring and analysis, detailing the configuration changes that occur during this process and how to use the experiment key property to differentiate runs.
+**Summary:** Documents the process for creating new experiment runs in Amplitude Experiment, including configuration changes like experiment key updates, bucketing salt randomization, and sticky bucketing behavior, with specific SDK version requirements for experiment restart support.
 
-# Keywords
-- experiment restart
-- new experiment run
-- bucketing salt
-- experiment key
-- re-randomize users
-- sticky bucketing
-- SDK compatibility
+**Keywords:**
+- experiment run restart
+- experiment key property
+- bucketing salt randomization
+- sticky bucketing disable
 - exposure event tracking
-- data quality issues
-- analysis range
+- Evaluation API experiment_key
+- SDK experiment restart support
+- variant expKey property
+- stale evaluated users
+- experiment configuration changes
+- analysis range selection
+- JavaScript SDK v1.10.2
+- Android SDK v1.10.0
+- iOS SDK v1.11.0
+- React Native SDK v1.2.0

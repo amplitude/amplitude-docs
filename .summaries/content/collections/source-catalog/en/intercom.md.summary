@@ -1,14 +1,17 @@
-## Summary
-This documentation details the Intercom integration with Amplitude, allowing users to sync Intercom event data to Amplitude for better user engagement analysis, with setup instructions for connecting via OAuth, mapping user properties, and receiving automatic event streaming with "[Intercom]" prefixed event names.
+**Summary:** This documentation covers the Intercom source integration for Amplitude, which syncs Intercom conversational and user event data to Amplitude using OAuth authentication, with configurable user ID mapping between Intercom User ID or email properties and Amplitude User ID, supporting conversation topics, contact topics, user topics, visitor topics, and event topics with "[Intercom]" event name prefixes.
 
-## Keywords
-- Intercom-Amplitude integration
-- OAuth authentication
-- User ID mapping
-- Event streaming
+**Keywords:**
+- Intercom source integration
+- OAuth authentication setup
+- User ID mapping configuration
+- Email property fallback
 - Conversation topics
-- Webhook events
-- User property matching
-- Event prefixing
-- Disconnection process
-- Customer engagement analysis
+- Contact topics
+- User topics
+- Visitor topics
+- Event topics
+- "[Intercom]" event prefix
+- Conversational Relationship Platform
+- Intercom webhook topics
+- Per-project basis integration
+- Intercom app store disconnection

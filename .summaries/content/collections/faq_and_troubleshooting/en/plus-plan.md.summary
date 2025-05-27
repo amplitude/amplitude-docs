@@ -1,14 +1,25 @@
-# Summary
-This documentation page addresses frequently asked questions about Amplitude's Plus plan, covering differences from Growth plan, subscription renewal, overage fees, MTU guardrails, cancellation policy, turning off automatic renewal, applicable terms, and billing support contact information.
+**Summary:** FAQ documentation for Amplitude's Plus plan covering billing, subscription management, MTU quotas, overage fees (1.2x rate), MTU guardrails (1,000 events per MTU limit), plan differences with Growth tier, and cancellation policies.
 
-# Keywords
+**Keywords:**
 - Plus plan
 - Growth plan comparison
+- MTU (Monthly Tracked Users)
 - MTU guardrails
 - Overage fees
+- 1.2x pricing
 - Subscription renewal
+- Automatic renewal
+- Cart Analytics
+- Conversion drivers
+- Forecasting anomaly detection
+- Impact Analysis
+- Engagement Matrix
+- Personas
+- SSO
+- Custom data retention
+- Plans & Billing
+- plusbilling@amplitude.com
+- Plus Plan terms
 - Cancellation policy
-- Automatic renewal management
-- Billing support
-- 1000 events per MTU limit
-- Terms of Service
+- Event limits
+- 1,000 events per MTU

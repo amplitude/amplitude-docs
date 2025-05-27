@@ -1,14 +1,17 @@
-# Summary
-The breakdown table in Amplitude Analytics allows users to review, interact with, and export chart data through features like column sorting, summary column customization, series display control, and CSV export, with the table dynamically interacting with the associated chart visualization.
+**Summary:** This documentation explains how to use Amplitude Analytics' breakdown table feature to review, sort, filter, and export the underlying data from charts, including functionality for column sorting, summary aggregation, series selection, and CSV export capabilities.
 
-# Keywords
+**Keywords:**
 - breakdown table
+- Amplitude Analytics charts
 - fixed columns
 - row aggregates
 - summary column
-- series display
-- table breakdown
+- series selection
 - CSV export
-- search functionality
-- chart data interaction
+- chart data analysis
+- Segmentation charts
+- User Sessions charts
+- breakdown by filtering
 - column sorting
+- data visualization
+- chart interaction

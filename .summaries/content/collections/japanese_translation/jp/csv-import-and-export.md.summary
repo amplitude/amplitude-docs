@@ -1,13 +1,18 @@
-# Summary
-This Japanese documentation page explains how to use CSV import and export functionality in Amplitude Data to manage tracking plans, allowing users to download schema, make bulk changes to events and properties, and quickly approve or block unexpected events through CSV uploads and downloads.
+**Summary:** This documentation covers CSV import and export functionality for Amplitude Data tracking plan schemas, including bulk operations for downloading/uploading event types, event properties, and user properties, with specific workflows for bulk approval/blocking of schema elements using status columns.
 
-# Keywords
-- CSV import/export
-- tracking plan schema
-- bulk approval/blocking
-- event schema status
-- property schema status
-- schema management
-- taxonomy CSV
-- unexpected events
+**Keywords:**
 - Amplitude Data
+- CSV import export
+- tracking plan schema
+- bulk schema operations
+- event types
+- event properties  
+- user properties
+- schema status columns
+- bulk approval blocking
+- taxonomy CSV
+- イベントスキーマステータス (event schema status)
+- プロパティスキーマステータス (property schema status)
+- Japanese translation documentation
+- schema download upload
+- unexpected events approval

@@ -1,15 +1,18 @@
-## Summary
-Legacy Journeys is a feature that helps teams understand user conversion paths between two funnel steps within a 60-day timeframe, showing step-by-step breakdowns of paths taken by converted and dropped-off users, with capabilities to identify friction points, conversion accelerators, and analyze user behavior patterns through auto-filtering and path exploration.
+**Summary:** Legacy Journeys feature documentation for analyzing user conversion paths between two funnel steps within a 60-day timeframe, featuring TF-IDF auto-filtering, conversion/drop-off path analysis, and individual user stream drilling capabilities that will be merged into the new Journeys experience.
 
-## Keywords
-- conversion paths
-- funnel analysis
-- drop-off analysis
-- auto-filter
-- TF-IDF heuristic
-- path exploration
-- user friction
-- conversion timeframe
+**Keywords:**
+- Legacy Journeys charts
+- Funnel conversion paths
+- TF-IDF auto-filter heuristic
+- 60-day conversion timeframe
+- Drop-off path analysis
+- User stream drilling
+- Microscope integration
+- "in this order" funnel requirement
+- Pathfinder comparison
+- Cohort saving from paths
+- Event property expansion
+- Signal filtering slider
+- Custom filter overrides
 - Plus/Growth/Enterprise plans
-- legacy charts
-- Journeys vs Pathfinder
+- Starting and ending events

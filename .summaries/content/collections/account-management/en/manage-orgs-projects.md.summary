@@ -1,17 +1,18 @@
-# Summary
-This documentation page explains how to manage Amplitude organizations and projects, including approving new users, viewing/editing project information, deleting projects, changing organization details, and rotating API/secret keys, with detailed explanations of project settings like API keys, session definitions, time zones, and usage metrics.
+**Summary:** This documentation covers organization and project management in Amplitude, including user approval workflows, project settings configuration (API keys, secret keys, session definitions, time zones), project deletion, organization name/URL changes, and API/secret key rotation processes.
 
-# Keywords
-- organization management
-- project settings
-- API key
-- secret key
-- session definition
-- time zone configuration
-- project deletion
-- user provisioning
-- organization URL change
+**Keywords:**
+- Amplitude organization management
+- project settings configuration
+- API key secret key rotation
+- session definition configuration
 - query time sampling
-- project metrics
-- annotations
-- currency display
+- project deletion workflow
+- user approval provisioning
+- organization URL name change
+- time zone project settings
+- Dashboard Rest API HTTP API
+- project ID API key secret key
+- admin manager permissions
+- CSM support requests
+- event types properties counts
+- currency display revenue metrics

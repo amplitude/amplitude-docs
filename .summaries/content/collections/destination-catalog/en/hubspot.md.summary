@@ -1,14 +1,19 @@
 ## Summary
-This documentation details the HubSpot Event Stream destination in Amplitude, which enables forwarding Amplitude events and properties to HubSpot for personalized marketing, lead scoring, and customer retention use cases, with considerations around authentication, event limitations (50 custom properties per event), and a p95 latency target of 60 seconds.
+This documentation covers Amplitude's HubSpot Event Stream destination integration that forwards Amplitude events and properties to HubSpot as custom events, requiring HubSpot Enterprise subscription and supporting up to 50 custom properties per event with p95 latency target of 60 seconds.
 
 ## Keywords
-- HubSpot Event Stream
-- custom behavioral events
-- event properties mapping
-- API rate limits
-- event definitions
-- contact timeline
-- workflow automation
-- Enterprise subscription requirement
-- authentication permissions
+- HubSpot Event Stream destination
+- Amplitude events forwarding
+- HubSpot custom events
 - event streaming integration
+- HubSpot Enterprise subscription requirement
+- 50 custom properties limit
+- p95 latency 60 seconds
+- HubSpot API rate limits
+- event properties mapping
+- User Token Email Object ID identifiers
+- HubSpot workflows custom events
+- contact timeline event completions
+- marketing automation CRM
+- lead scoring nurturing
+- custom behavioral events analysis

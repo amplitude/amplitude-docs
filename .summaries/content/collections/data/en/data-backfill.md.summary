@@ -1,14 +1,24 @@
 ## Summary
-This documentation page explains how to backfill historical data into Amplitude using the Batch Event Upload API, covering considerations, limits, best practices, and the impact on user properties. It details how to handle large data volumes, avoid overwriting current user properties with `$skip_user_properties_sync`, and manage throttling limits of 500K events per device ID daily.
+This documentation covers Amplitude's data backfill process using the Batch Event Upload API, including ingestion limits (500K events per device ID daily, 100 batches/1000 events per second), user property sync behavior with `$skip_user_properties_sync` flag, and best practices for importing historical data while maintaining data integrity.
 
 ## Keywords
-- Batch Event Upload API
 - data backfill
+- Batch Event Upload API
 - historical data import
+- ingestion limits
+- daily quota (500K events per device ID)
+- batch limits (100 batches/second, 1000 events/second)
 - user property sync
+- `$skip_user_properties_sync` flag
 - insert_id deduplication
-- throttling limits
-- backfill best practices
-- skip_user_properties_sync
+- device_id throttling
+- 429 response code
+- user properties table
 - ingestion workers
-- daily quota limits
+- event timestamp ordering
+- preexisting users
+- new user definition
+- Amplitude ID computation
+- event volume limits
+- data partitioning by device_id
+- retry logic with timeouts

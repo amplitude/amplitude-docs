@@ -1,14 +1,14 @@
-## Summary
-The Personas chart in Amplitude uses Non-Negative Matrix Factorization (NMF) instead of K-Means for clustering user behaviors, providing better handling of outliers and high-dimensional data by performing dimension reduction to create a more comprehensible "behavior space" where similar users cluster together.
+**Summary:** This FAQ documentation explains how Amplitude's Personas chart calculates user clusters, detailing the transition from K-Means clustering algorithm to Non-Negative Matrix Factorization (NMF) for better handling of outliers and high-dimensional event data in behavioral clustering.
 
-## Keywords
+**Keywords:**
+- Personas chart clustering
+- K-Means algorithm limitations
 - Non-Negative Matrix Factorization (NMF)
-- Personas chart
-- Clustering algorithms
-- Dimension reduction
-- Behavior space
-- K-Means limitations
-- Outlier handling
-- High-dimensional data
-- User behavior patterns
-- Hierarchical clusters
+- high-dimensional event data
+- outlier handling
+- behavioral clustering
+- dimension reduction
+- behavior space
+- user event frequencies
+- hierarchical clusters
+- event types clustering

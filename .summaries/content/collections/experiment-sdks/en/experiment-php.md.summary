@@ -1,16 +1,23 @@
-# Summary
-The Experiment PHP SDK documentation provides implementation details for both remote and local evaluation of feature flags in PHP applications. It covers installation, client initialization, fetching variants, evaluating users, and tracking assignments, with support for custom logging, HTTP clients, and Amplitude cookie integration.
+**Summary:** This documentation covers Amplitude Experiment's server-side PHP SDK (v7.4+) for both remote and local evaluation, including initialization with deployment keys, user fetching/evaluation, assignment tracking with DefaultAssignmentTrackingProvider, and Amplitude cookie integration for device ID synchronization.
 
-# Keywords
-- PHP Server SDK
-- Remote evaluation
-- Local evaluation
-- Feature flags
-- Variant fetching
-- Assignment tracking
+**Keywords:**
+- Amplitude Experiment PHP SDK
+- remote evaluation client
+- local evaluation client
+- deployment key initialization
+- fetch variants
+- evaluate user
+- refreshFlagConfigs
+- assignment tracking
 - DefaultAssignmentTrackingProvider
-- GuzzleHTTPClient
-- AmplitudeCookie
-- User evaluation
-- Flag configurations
-- Account-level bucketing
+- AmplitudeCookie parsing
+- GuzzleHTTPClient configuration
+- PSR logger interface
+- server-side flag evaluation
+- device ID synchronization
+- composer installation
+- RemoteEvaluationConfig
+- LocalEvaluationConfig
+- bootstrap flag configurations
+- account-level bucketing
+- group properties

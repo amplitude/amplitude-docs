@@ -1,14 +1,15 @@
-# Summary
-This documentation explains how to update an event type's category in Amplitude through three methods: using the Categorize dropdown after selecting events, changing it directly from the Category column in event tables, or updating it from the event's Details panel, with a note that this only applies to active events included in the tracking plan.
+**Summary:** This documentation explains how to change event categories in Amplitude through the Events, Custom Events, or Labeled Events tabs using checkboxes, dropdown menus, or the Details panel, with restrictions applying only to active events in tracking plans.
 
-# Keywords
+**Keywords:**
 - event categorization
-- Amplitude events
-- custom events
-- labeled events
+- Events tab
+- Custom Events tab
+- Labeled Events tab
+- Categorize dropdown
 - tracking plan
-- event details panel
-- event category management
-- event type classification
-- event tables
+- active events
+- Category column
+- Details panel
 - fly-out panel
+- event type category
+- Amplitude events

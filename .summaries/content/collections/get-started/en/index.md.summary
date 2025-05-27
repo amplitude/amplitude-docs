@@ -1,14 +1,19 @@
-# Summary
-This documentation page serves as a starting guide for Amplitude, outlining the setup process from account creation through data instrumentation to analysis creation, with links to detailed resources for each step including organization/project setup, data implementation, chart creation, and quick-win analysis strategies.
+**Summary:** This is the main getting started guide for Amplitude that provides a structured onboarding flow covering account creation, project setup, data instrumentation, event tracking, user identification, chart creation, and initial analytics use cases like acquisition channel analysis and feature adoption tracking.
 
-# Keywords
-- Amplitude setup
-- Organization and project creation
-- Data instrumentation
-- User identification
-- Chart creation
-- Spaces
-- Analysis templates
-- Conversion tracking
-- Feature adoption analysis
-- Acquisition channel analysis
+**Keywords:**
+- Amplitude onboarding
+- account creation workflow
+- project setup
+- data instrumentation
+- event tracking strategy
+- user identification methods
+- cross-platform instrumentation
+- chart creation
+- Amplitude Home page
+- Spaces functionality
+- template usage
+- acquisition channel analysis
+- feature adoption analytics
+- conversion rate analysis
+- demo environment
+- Free Plan setup

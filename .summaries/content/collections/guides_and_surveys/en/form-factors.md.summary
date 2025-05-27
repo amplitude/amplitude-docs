@@ -1,15 +1,18 @@
-## Summary
-This documentation page details the five form factors available in Guides and Surveys (Modal, Popover, Pin, Tooltip, and Banner), explaining their use cases and customization properties including position settings, multi-step capabilities, and interactive blocks (buttons, images, and videos).
+**Summary:** This documentation page describes the five form factors available for Amplitude Guides and Surveys (Modal, Popover, Pin, Tooltip, Banner) and their customization properties including position controls, multi-step functionality, and interactive blocks (buttons, images, videos) with specific layout options and button actions.
 
-## Keywords
-- guide form factors
-- modal customization
-- popover positioning
-- pin interactions
-- tooltip implementation
-- banner display styles
+**Keywords:**
+- Amplitude Guides and Surveys
+- form factors
+- Modal (classic, horizontal split, vertical split layouts)
+- Popover
+- Pin (persistent marker, overlay highlighting)
+- Tooltip (hover/click reveal)
+- Banner (top/bottom positioning, sticky option)
+- position property
 - multi-step guides
-- button actions
-- callback functions
-- guide positioning properties
-- media blocks
+- blocks (Button CTA, image, video)
+- button actions (visit link, click element, show guide, show survey, run callback)
+- layout alignment
+- text animation
+- target element positioning
+- inline vs overlay display styles

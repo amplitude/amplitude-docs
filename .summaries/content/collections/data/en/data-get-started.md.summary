@@ -1,14 +1,18 @@
-# Summary
-This documentation page provides technical best practices for instrumenting Amplitude analytics, covering data collection methods (SDKs, APIs), naming conventions, user property operations, session tracking, SDK configuration options, and backfilling considerations, with emphasis on proper testing and project setup to ensure data integrity.
+## Summary
+This documentation covers Amplitude analytics platform setup including instrumentation best practices, data ingestion through SDKs and third-party integrations, user properties operations (set, setOnce, unset, add, append, prepend), group types for account-level reporting, session tracking, and SDK configuration options like batchEvents and sessionTimeout.
 
-# Keywords
+## Keywords
 - Amplitude instrumentation
-- SDK configuration
-- User property operations (set, setOnce, unset, add, append, prepend)
-- Event naming conventions
-- Session tracking
-- Group types
+- SDK configuration options
+- User properties operations
+- Group types account-level reporting
+- Session tracking sessionTimeout
+- Event naming conventions case-sensitive
 - Data backfilling
-- batchEvents
-- eventUploadThreshold
-- User ID tracking
+- batchEvents eventUploadThreshold
+- minTimeBetweenSessions
+- session_id insert_id HTTP API
+- Identify API
+- optOut offline saveEvents
+- savedMaxCount
+- Third-party integrations Segment mParticle Tealium

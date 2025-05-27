@@ -1,14 +1,18 @@
-## Summary
-This documentation page explains how to migrate from the maintenance Android SDK (`com.amplitude:android-sdk`) to the latest Android-Kotlin SDK (`com.amplitude:analytics-android`), covering dependency updates, initialization changes, configuration differences, and API mapping for tracking events, user properties, and revenue.
+**Summary:** Documentation for migrating from Amplitude's maintenance Android SDK (`com.amplitude:android-sdk`) to the latest Kotlin-based Android SDK (`com.amplitude:analytics-android`), covering dependency updates, API changes from `logEvent()` to `track()`, configuration mapping, and data migration with `migrateLegacyData` setting.
 
-## Keywords
-- Android-Kotlin SDK migration
+**Keywords:**
+- amplitude-android-sdk-migration
+- com.amplitude:android-sdk
 - com.amplitude:analytics-android
-- SDK initialization differences
-- track() vs logEvent()
-- flush() vs uploadEvents()
-- plugin architecture
-- configuration object
-- HTTP V2 API
-- data migration
-- revenue tracking
+- logEvent-to-track-migration
+- amplitude-kotlin-sdk
+- migrateLegacyData-configuration
+- amplitude-http-v2-api
+- android-sdk-plugin-architecture
+- amplitude-maintenance-sdk
+- flushIntervalMillis-flushQueueSize
+- amplitude-revenue-verification
+- minIdLength-configuration
+- RemnantDataMigration
+- amplitude-identify-groupIdentify
+- sessionTimeoutMillis-migration

@@ -1,14 +1,18 @@
-# Summary
-This documentation page explains how to interpret viscosity (stickiness) analysis in Amplitude, covering cumulative vs. non-cumulative stickiness measurements, how to analyze user engagement patterns over time, and how to create behavioral cohorts from stickiness charts. It details how to understand the metrics module and interpret the data visualization to identify habitual product usage.
+**Summary:**
+This Japanese documentation explains how to interpret viscosity (stickiness) analysis charts in Amplitude, covering cumulative vs non-cumulative measurement modes, breakdown data tables, change-over-time visualization, and creating behavioral cohorts from stickiness data points via microscope functionality.
 
-# Keywords
-- stickiness analysis
-- cumulative stickiness
-- non-cumulative stickiness
-- user engagement metrics
+**Keywords:**
+- viscosity analysis (粘性分析)
+- stickiness charts
+- cumulative vs non-cumulative measurement
+- Japanese translation documentation
+- Amplitude analytics
 - behavioral cohorts
-- microscope feature
-- engagement frequency
-- daily usage patterns
-- stickiness data table
-- change over time visualization
+- microscope functionality
+- engagement metrics
+- user retention analysis
+- breakdown data tables
+- change-over-time visualization
+- stickiness calculation methods
+- user behavior patterns
+- event frequency analysis

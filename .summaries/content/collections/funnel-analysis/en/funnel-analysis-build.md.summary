@@ -1,14 +1,18 @@
-# Summary
-This documentation page explains how to build a Funnel Analysis chart in Amplitude to track user navigation through defined paths, including selecting events in sequence, applying filters, setting conversion order requirements, excluding specific user behaviors, and segmenting users for more targeted analysis.
+**Summary:** This documentation explains how to build funnel analysis charts in Amplitude Analytics using the Events Module and Segmentation Module, covering event selection, property filtering, conversion order options (this order, any order, exact order), user exclusions, and segment configuration.
 
-# Keywords
-- funnel analysis
-- conversion tracking
-- event sequence
-- drop-off analysis
-- funnel order types (this order, any order, exact order)
-- event exclusion
-- user segmentation
+**Keywords:**
+- Amplitude funnel analysis
+- Events Module
+- Segmentation Module
+- starting event
+- conversion order
+- this order vs any order vs exact order
+- event properties filtering
+- user exclusions
+- exclude users who did
+- saved segments
+- user segment filtering
 - funnel steps
-- onboarding funnel
-- event properties
+- event sequences
+- conversion tracking
+- drop-off analysis

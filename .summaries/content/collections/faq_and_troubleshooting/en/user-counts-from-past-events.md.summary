@@ -1,14 +1,16 @@
-## Summary
-This documentation explains why user counts for past events can fluctuate over time, detailing how counts can increase due to delayed event ingestion (from SDK batching, server-side delays, or connectivity issues) and decrease due to user profile merging, with specific SDK configuration recommendations to minimize these fluctuations.
+**Summary:** This documentation explains why user counts for past events in Amplitude can fluctuate over time, covering causes like mobile SDK event batching (30 seconds/30 events threshold), Batch API delays, connectivity issues, and user profile merging between anonymous and known users, with specific configuration solutions for Android Kotlin SDK (flushIntervalMillis/flushQueueSize) and iOS SDK (eventUploadPeriodSeconds/eventUploadThreshold).
 
-## Keywords
+**Keywords:**
 - user count fluctuation
-- event batching
-- SDK configuration
-- flushIntervalMillis
-- eventUploadThreshold
+- past events ingestion delays
+- mobile SDK event batching
+- 30 second 30 event threshold
+- flushIntervalMillis flushQueueSize
+- eventUploadPeriodSeconds eventUploadThreshold
+- Android Kotlin SDK iOS SDK configuration
+- Batch API server-side integration delays
 - user profile merging
-- anonymous events
-- delayed event ingestion
-- Amplitude IDs
-- unique user tracking
+- anonymous profile known profile
+- user ID device ID Amplitude ID
+- event upload frequency
+- cellular WiFi connection delays

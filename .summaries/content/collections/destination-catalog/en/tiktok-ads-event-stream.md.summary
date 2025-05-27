@@ -1,16 +1,20 @@
-# TikTok Ads Event Streaming Integration Summary
+**Summary:** This documentation covers the TikTok Ads Event Streaming Integration that streams event data from Amplitude to TikTok Ads using the TikTok Events API, including setup requirements for SHA256 encryption of identifiers, mapping Amplitude user properties to TikTok Ads identifiers, and configuring predefined TikTok event names like AddToCart and CompletePayment.
 
-This documentation details how to set up real-time event streaming from Amplitude to TikTok Ads using the TikTok Events API, enabling marketers to sync first-party behavioral data (like sign-ups, purchases, and engagement events) to improve ad targeting, conversion tracking, and campaign optimization.
-
-## Keywords
+**Keywords:**
+- TikTok Ads Event Streaming Integration
 - TikTok Events API
 - SHA256 encryption
-- Pixel ID
-- Event mapping
-- User property mapping
-- Conversion tracking
-- First-party data
+- Amplitude to TikTok data streaming
+- Pixel ID configuration
+- Access Token setup
+- Test Event Code
+- TikTok Ads identifiers mapping
+- External ID, Email, Phone Number mapping
+- TikTok Click ID, Cookie ID
+- AddPaymentInfo, AddToCart, CompletePayment events
+- InitiateCheckout, ViewContent, CompleteRegistration
 - E.164 phone format
 - ISO 4217 currency codes
-- Test Event Code
-- Content Type (Product/Product Group)
+- Content ID, Content Category mapping
+- Price, Quantity, Value properties
+- business-api.tiktok.com/open_api/v1.3/event/track/

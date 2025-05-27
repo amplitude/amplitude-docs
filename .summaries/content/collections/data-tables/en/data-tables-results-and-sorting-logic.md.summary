@@ -1,14 +1,15 @@
-# Summary
-This documentation explains the row limits and sorting logic in Data Tables charts, detailing how Amplitude displays results (100-500 rows for top-level group-bys), applies sorting only to displayed results, and enforces different export limits based on metric types (10,000 for event segmentation, 300 for funnels, 100 for sessions, and 20 for attribution metrics).
+**Summary:** Documents Data Tables chart result limits (100-500 rows for display, 20-10,000 for CSV exports based on metric type), sorting logic that only reorders existing results without fetching new data, and special handling for time properties as group-bys that can multiply row limits.
 
-# Keywords
-- data-table row limits
+**Keywords:**
+- Data Tables chart limits
 - group-by result limits
-- sorting behavior
-- CSV export limits
-- dashboard REST API limits
-- time property grouping
-- attribution metrics
-- nested group-by behavior
-- multiple metrics sorting
-- period-over-period comparison
+- sorting logic behavior
+- CSV export row limits
+- Dashboard REST API limits
+- event segmentation metrics
+- funnel metrics attribution
+- session metrics limits
+- time properties group-by
+- nested group-by limits
+- metric type row restrictions
+- period over period comparison sorting

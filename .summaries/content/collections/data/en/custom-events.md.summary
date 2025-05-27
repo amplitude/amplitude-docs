@@ -1,14 +1,22 @@
-# Summary
-This documentation page explains how to create custom events in Amplitude, which combine multiple existing events with an OR clause to track related user activities as a single event, available in various chart types for users on Plus, Growth, and Enterprise plans.
+**Summary:** This documentation explains how to create and use custom events in Amplitude Analytics, which combine multiple existing events with OR clauses to track related user activities across Event Segmentation, Funnel Analysis, and other chart types, with specific limitations around Redshift querying and event property requirements.
 
-# Keywords
+**Keywords:**
 - custom events
 - OR clause
-- event combination
-- event segmentation
-- feature availability
-- event properties
+- Events Module
+- in-line events
+- Event Segmentation
+- Funnel Analysis
+- Retention Analysis
+- Lifecycle charts
+- Stickiness charts
+- Impact Analysis
+- Pathfinder
+- Experiment Results
+- Compass charts
 - [Custom] prefix
-- Plus/Growth/Enterprise plans
+- Redshift querying limitations
+- event property instrumentation
 - transformed events
-- event analysis
+- Plus Growth Enterprise plans
+- admin manager member permissions

@@ -1,13 +1,12 @@
-# Summary
-This documentation explains how to set up SAML 2.0-based single sign-on (SSO) in Amplitude with custom or unlisted SSO providers by uploading a metadata file and configuring entity ID and assertion consumer service URL through the Organization Settings > Access & SSO Settings menu.
+**Summary:** Documents how to configure single sign-on (SSO) in Amplitude using custom or unlisted SAML 2.0 compliant identity providers through the "Other" option in Organization Settings > Access & SSO Settings, requiring metadata file upload and manual entry of entity ID and assertion consumer service URL.
 
-# Keywords
-- SAML 2.0 compliance
-- custom SSO provider
-- metadata file
-- entity ID
+**Keywords:**
+- SAML 2.0 compliant SSO provider
+- Other identity provider option
+- metadata file upload
+- entity ID configuration
 - assertion consumer service URL
-- unlisted SSO provider
-- Organization Settings
-- Access & SSO Settings
-- Identity Provider dropdown
+- Organization Settings Access & SSO Settings
+- custom SSO provider setup
+- unlisted identity provider
+- Identity Provider dropdown Other selection

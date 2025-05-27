@@ -1,153 +1,63 @@
-# Amplitude React Native SDK
+The React Native SDK for Amplitude is a comprehensive mobile analytics tracking solution that provides JavaScript and TypeScript support for event tracking, user analytics, and revenue measurement in React Native applications. The SDK offers flexible implementation approaches ranging from basic event tracking to strongly typed APIs with compile-time validation through the Ampli Wrapper integration.
 
-## Overview
-The Amplitude React Native SDK is a client-side analytics solution for tracking user events, managing user properties, and analyzing user behavior in React Native applications. It provides type-safe event tracking, supports JavaScript and TypeScript, and offers flexible configuration options for various analytics requirements.
+## Product Architecture and Relationships
 
-Key features:
-- Event tracking with custom properties
-- User identification and property management
-- Revenue tracking
-- Session management
-- Plugin architecture for extensibility
-- Batch event processing
-- EU data residency support
-- COPPA compliance controls
-- Strongly-typed tracking via Ampli Wrapper
+The React Native SDK ecosystem consists of three interconnected components that represent an evolutionary product strategy:
 
-## Product Relationships and Architecture
+**Current SDK (`@amplitude/analytics-react-native`)** serves as the primary analytics solution with modern API design, plugin architecture, and comprehensive tracking capabilities. This actively maintained SDK provides the foundation for all new implementations and feature development.
 
-The React Native SDK ecosystem consists of:
+**Maintenance SDK (`@amplitude/react-native`)** represents the legacy solution that continues receiving critical updates but no new features. This SDK maintains backward compatibility for existing implementations while organizations transition to the current SDK.
 
-1. **Core SDK Package**: `@amplitude/analytics-react-native` - The latest version with modern plugin architecture
-2. **Maintenance SDK Package**: `@amplitude/react-native` - Legacy version that's maintained but not actively developed
-3. **Ampli Wrapper**: Code-generated layer providing type-safe event tracking based on Amplitude Data tracking plans
+**Ampli Wrapper** functions as an enhancement layer built on the current SDK, generating strongly typed APIs from Amplitude Data tracking plans. This wrapper provides compile-time validation and structured event schemas for teams requiring strict data governance.
 
-The SDK integrates with Amplitude's analytics backend, sending tracked events for processing and visualization. The plugin architecture enables extensibility and integration with other services.
+The relationship follows a clear migration path: maintenance SDK → current SDK → Ampli-enhanced SDK, with automatic data migration capabilities starting in v1.3.4 ensuring seamless transitions between versions.
 
 ## Key Nomenclature and Definitions
 
-- **Event**: A user action tracked in your application
-- **User Properties**: Persistent attributes associated with a user across sessions
-- **Identify**: API for setting/modifying user properties without sending an event
-- **Group**: Collection of users with their own set of properties
-- **Session**: Period of user engagement, typically ending after inactivity
-- **Device ID**: Unique device identifier for tracking users across sessions
-- **User ID**: Custom identifier assigned to users, typically after authentication
-- **Tracking Plan**: Schema defining the expected structure of events and properties
-- **Ampli Wrapper**: Code-generated SDK wrapper enforcing tracking plan schema
-- **Plugin**: Extension point for modifying or enhancing SDK functionality
+**Core Tracking Interface:**
+- `init()`: SDK initialization requiring API key and configuration parameters
+- `track()`: Primary event logging method with properties and validation
+- `identify()`: User property management using Identify operation objects
+- `flush()`: Forces immediate event upload bypassing batching thresholds
+- `revenue()`: Specialized revenue event tracking with Revenue interface
 
-## Integration with Amplitude Ecosystem
+**Configuration Management:**
+- `trackingOptions`: Controls automatic data collection including IP addresses, device information, and location data
+- `serverZone`: Geographic data residency control supporting US and EU regions
+- `migrateLegacyData`: Enables automatic data migration from maintenance SDK versions
+- `transportProvider`: Custom HTTP client configuration for network request handling
 
-The React Native SDK integrates with the broader Amplitude ecosystem:
+**User and Session Management:**
+- `setUserId()`: Associates events with specific user identifiers
+- `setDeviceId()`: Manages device-specific tracking identifiers
+- `setSessionId()`: Provides manual session management override capabilities
+- `groupIdentify()`: Handles group-level property management for B2B analytics use cases
 
-1. **Amplitude Dashboard**: Tracked events appear in the analytics dashboard for analysis
-2. **Amplitude Data**: Works with tracking plans via the Ampli Wrapper for type-safe event tracking
-3. **EU Data Residency**: Supports sending data to EU servers for regulatory compliance
-4. **HTTP V2 API**: Uses Amplitude's HTTP V2 API for sending events to the backend
+**Advanced Analytics Features:**
+- `EnrichmentPlugin`: Enables event data enhancement and transformation
+- `DestinationPlugin`: Provides custom event routing and processing capabilities
+- Advertising identifiers: ADID, IDFV, IDFA, AppSetId for attribution tracking and marketing analytics
 
-## API and Usage
+## Ecosystem Integration and Technical Implementation
 
-### Installation
-```bash
-npm install @amplitude/analytics-react-native
-# or
-yarn add @amplitude/analytics-react-native
-```
+The SDK integrates with Amplitude's analytics ecosystem through multiple API endpoints and platform services:
 
-### Initialization
-```javascript
-import { Amplitude } from '@amplitude/analytics-react-native';
+**HTTP V2 API** serves as the primary event ingestion endpoint, supporting batch uploads with configurable parameters including `eventUploadThreshold` and `eventUploadPeriodMillis` for optimizing network performance.
 
-Amplitude.init('YOUR_API_KEY', {
-  logLevel: LogLevel.DEBUG,
-  defaultTracking: {
-    sessions: true,
-    pageViews: true,
-    formInteractions: true,
-    fileDownloads: true
-  }
-});
-```
+**Amplitude Data Integration** connects through the Ampli Wrapper using CLI commands:
+- `ampli pull`: Downloads latest tracking plan schemas from Amplitude Data
+- `ampli status`: Validates current implementation against defined tracking plans
 
-### Tracking Events
-```javascript
-// Basic event tracking
-Amplitude.track('Button Clicked');
+**Platform Dependencies and Requirements:**
+- `@react-native-async-storage/async-storage`: Required dependency for local data persistence
+- iOS integration requires `pod install` for native module linking
+- Android integration requires Gradle compatibility configuration
+- TypeScript 2.1+ support with comprehensive type definitions
 
-// Event with properties
-Amplitude.track('Product Purchased', {
-  productId: 'abc123',
-  price: 29.99,
-  quantity: 1
-});
-```
+**Development Environment Support:**
+- Expo compatibility for managed workflow applications
+- React Native CLI support for bare workflow projects  
+- OTA update compatibility enabling dynamic configuration changes
+- COPPA compliance controls for applications serving users under 13 years of age
 
-### User Identification
-```javascript
-// Set user ID
-Amplitude.setUserId('user@example.com');
-
-// Set user properties
-Amplitude.identify(
-  new Identify()
-    .set('plan', 'premium')
-    .setOnce('first_login_date', '2021-01-01')
-    .add('login_count', 1)
-);
-```
-
-### Revenue Tracking
-```javascript
-Amplitude.revenue(
-  new Revenue()
-    .setProductId('product_1')
-    .setPrice(29.99)
-    .setQuantity(1)
-);
-```
-
-### Session Management
-```javascript
-// Start a new session
-Amplitude.startNewSession();
-
-// End the current session
-Amplitude.endSession();
-```
-
-### Ampli Wrapper Usage
-```typescript
-import { ampli } from './ampli';
-
-// Initialize Ampli
-ampli.load({
-  client: {
-    apiKey: 'YOUR_API_KEY'
-  }
-});
-
-// Track a typed event
-ampli.track('ProductPurchased', {
-  productId: 'abc123',
-  price: 29.99,
-  quantity: 1
-});
-
-// Identify a user with typed properties
-ampli.identify('user@example.com', {
-  userProp1: 'value1',
-  userProp2: true
-});
-```
-
-### Flushing Events
-```javascript
-// Manually flush events to the server
-await Amplitude.flush();
-```
-
-## Migration
-When migrating from the maintenance SDK (`@amplitude/react-native`) to the latest SDK (`@amplitude/analytics-react-native`), developers need to update initialization, event tracking, and user identification code to match the new API patterns. The latest SDK uses a plugin architecture with different configuration options but provides equivalent functionality with improved performance and maintainability.
-
-The migration process preserves existing device IDs and user properties, ensuring continuity in user analytics data.
+The plugin architecture enables extensibility for custom analytics requirements while maintaining compatibility with Amplitude's core analytics platform. The SDK supports both development and production environments with configurable logging levels, debug modes, and network optimization settings that integrate seamlessly with Amplitude's data pipeline and real-time analytics processing infrastructure.

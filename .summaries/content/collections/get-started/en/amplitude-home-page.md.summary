@@ -1,14 +1,14 @@
-## Summary
-The Amplitude Home page serves as a dashboard providing an immediate overview of product metrics, featuring a real-time event stream, quick access to recently visited items, options to create new charts, and a template gallery for building customized dashboards.
+**Summary:** This documentation describes Amplitude's Home page interface, which serves as a dashboard providing product overview metrics, real-time event stream, quick chart creation via Event Segmentation, and access to the template gallery for dashboard templates.
 
-## Keywords
+**Keywords:**
+- Amplitude Home page
 - real-time event stream
-- dashboard overview
-- quick actions
+- Event Segmentation chart
 - template gallery
-- event segmentation chart
-- product metrics visualization
-- user activity monitoring
-- customizable home page
-- navigation hub
-- instant chart generation
+- dashboard templates
+- Quick Actions section
+- user metrics overview
+- chart creation workflow
+- product analytics dashboard
+- event triggering
+- user data lookup

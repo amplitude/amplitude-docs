@@ -1,18 +1,28 @@
-## Summary
-This documentation explains how to create and use formula metrics in Experiment Results charts, detailing supported functions (UNIQUES, TOTALS, PROPSUM, PROPAVG, PROPCOUNT, PROPMAX, PROPMIN, CONVERSIONRATE, CONVERSIONAVG, REVENUETOTAL) and how Amplitude calculates statistical significance for these metrics through variance and mean calculations.
+**Summary:** This documentation explains how to create and use formula metrics in Amplitude's Experiment Results charts, covering supported formula functions (UNIQUES, TOTALS, PROPSUM, PROPAVG, PROPCOUNT, PROPMAX, PROPMIN, CONVERSIONRATE, CONVERSIONAVG, REVENUETOTAL) and the statistical calculations for variance, mean, and p-values in A/B testing contexts.
 
-## Keywords
+**Keywords:**
 - formula metrics
-- experiment results
-- statistical significance
+- Experiment Results chart
 - UNIQUES function
 - TOTALS function
 - PROPSUM function
 - PROPAVG function
 - PROPCOUNT function
+- PROPMAX function
+- PROPMIN function
 - CONVERSIONRATE function
+- CONVERSIONAVG function
+- REVENUETOTAL function
+- HyperLogLog algorithm
+- statistical significance calculation
 - variance calculation
+- covariance
 - confidence interval
 - p-values
-- arithmetic operations
+- A/B testing metrics
 - custom formulas
+- arithmetic operations
+- conversion window
+- latency offset
+- numerical properties
+- event grouping

@@ -1,14 +1,16 @@
-## Summary
-This documentation page explains how to use and customize the User Activity Report template in Amplitude Analytics, which provides insights into user engagement frequency and duration through various charts like active user counts, session times, and user demographics by device, country, and platform.
+**Summary:** This documentation explains how to create and customize user activity reports in Amplitude Analytics using Japanese translation templates, covering the conversion process from templates to dashboards and event replacement configurations for tracking user engagement metrics.
 
-## Keywords
-- User Activity Report template
+**Keywords:**
 - Amplitude Analytics
-- engagement metrics
-- template customization
-- dashboard conversion
-- active users
-- session time
-- user demographics
-- event replacement
-- chart visualization
+- Japanese translation (jp)
+- User activity reports
+- Template customization
+- Dashboard conversion
+- Event replacement dropdown
+- Active user metrics
+- Session time tracking
+- New user events
+- User engagement frequency
+- Template-to-dashboard workflow
+- Project replacement dropdown
+- Blueprint: japanese_translation

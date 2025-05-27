@@ -1,14 +1,20 @@
-## Summary
-This documentation describes the server-side Google Tag Manager (GTM) template for Amplitude Analytics, which uses the HTTP V2 API for data collection. It provides detailed instructions for container setup, template configuration, event mapping, user property tracking, and explains how to properly configure API keys, EU data residency, and event/user property mappings.
+**Summary:** Documentation for the server-side Google Tag Manager template for Amplitude Analytics that uses the HTTP V2 API, covering container setup, client configuration, tag creation with API key management, event/user property mapping, UTM parameter tracking, and trigger configuration for server-side data collection.
 
-## Keywords
+**Keywords:**
 - Google Tag Manager server-side template
-- Amplitude HTTP V2 API
-- event mapping
-- user property configuration
-- EU data residency
+- Amplitude Analytics GTM template
+- HTTP V2 API integration
+- Server container setup
+- GTM client configuration
+- Event property mapping
+- User property configuration
 - UTM parameter tracking
-- server container setup
-- API key configuration
-- event property mapping
-- custom triggers
+- EU data residency
+- IP address forwarding
+- Event Data object mapping
+- Custom triggers
+- Page view triggers
+- Insert ID deduplication
+- Session ID tracking
+- Device ID mapping
+- S-GTM library identifier

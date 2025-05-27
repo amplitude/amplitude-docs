@@ -1,15 +1,13 @@
-# Summary
-This documentation page addresses common Amplitude access issues, including login errors with passwords and SSO authentication problems (500/403 errors), providing troubleshooting steps for resolving certificate issues, browser compatibility problems, and Google Workspace SSO configuration errors.
+**Summary:** This FAQ documentation covers troubleshooting steps for Amplitude login and access issues, including password-based authentication problems and SSO-related errors (500/403 errors, SAML certificate issues, Google Workspace SSO configuration problems).
 
-# Keywords
-- login errors
-- SSO authentication
-- SAML certificate
+**Keywords:**
+- Amplitude login troubleshooting
+- SSO authentication errors
+- SAML certificate configuration
 - 500 internal server error
-- 403 error
-- browser compatibility
-- Google Workspace SSO
-- password reset
-- incognito mode
-- ad blockers
-- VPN interference
+- 403 app_not_enabled_for_user error
+- Google Workspace SSO integration
+- Password reset procedures
+- Browser compatibility issues
+- Authentication access problems
+- SSO disable procedures

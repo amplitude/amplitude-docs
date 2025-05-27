@@ -1,14 +1,16 @@
-# Summary
-This documentation page covers the installation and configuration of Session Replay using iOS SDK middleware for apps already instrumented with the maintenance Amplitude iOS SDK, including options for sampling rate, data masking, user opt-out, and handling restricted app areas.
+**Summary:** This documentation covers Session Replay iOS Middleware integration for apps using the maintenance Amplitude iOS SDK (version 8.21.0+), including installation via SPM/CocoaPods, AmplitudeiOSSessionReplayMiddleware configuration, and middleware-specific features like addEventMiddleware/removeEventMiddleware methods.
 
-# Keywords
-- iOS SDK middleware
+**Keywords:**
+- Session Replay iOS Middleware
 - AmplitudeiOSSessionReplayMiddleware
-- sampleRate configuration
-- user opt-out
-- EU data residency
-- WebView support
-- MapView support
-- replay collection disabling
-- data masking
-- storage limitations
+- maintenance Amplitude iOS SDK
+- addEventMiddleware
+- removeEventMiddleware
+- iOS SDK middleware
+- AmplitudeiOSSessionReplayMiddleware target
+- amplitude.addEventMiddleware()
+- middleware sampleRate configuration
+- SPM CocoaPods installation
+- iOS SDK version 8.21.0
+- middleware initialization
+- session replay middleware reference

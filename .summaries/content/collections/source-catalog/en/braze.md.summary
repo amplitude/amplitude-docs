@@ -1,14 +1,15 @@
-# Summary
-This documentation page describes the Braze integration with Amplitude, enabling bidirectional data flow including sending cohorts to Braze for targeted marketing, streaming events from Amplitude to Braze in real-time, and sending Braze events back to Amplitude via Braze Currents for comprehensive analytics.
+**Summary:** This documentation covers the Braze source integration that imports Braze events into Amplitude using Braze Currents, supporting bidirectional data flow including cohort transfers to Braze, event streaming to Braze, and importing Braze events back to Amplitude for comprehensive customer engagement analytics.
 
-# Keywords
+**Keywords:**
 - Braze Currents
+- Braze source integration
 - bidirectional data flow
-- cohort synchronization
-- event streaming
-- marketing automation
-- customer engagement
-- targeted campaigns
+- cohort transfers to Braze
+- event streaming to Braze
+- Braze events import
+- customer engagement platform
+- marketing automation integration
 - event volume quota
-- user traits
-- computations
+- Amplitude for Currents
+- raw-events integration type
+- partner-maintained integration

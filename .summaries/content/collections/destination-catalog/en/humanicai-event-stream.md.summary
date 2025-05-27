@@ -1,12 +1,14 @@
-## Summary
-This documentation page describes the event streaming integration between Amplitude and Humanic.ai, detailing the setup process in both platforms, including obtaining an API key from Humanic.ai and configuring event filters in Amplitude to send selected user, event, and group properties.
+**Summary:** Documents the Humanic.ai event streaming destination integration for Amplitude, covering setup procedures for both platforms including API key configuration, event filtering, and property selection for the partner-maintained Agentic Marketing Platform integration.
 
-## Keywords
-- Humanic.ai event streaming
-- Agentic Marketing Platform
-- API key configuration
-- Partner-maintained integration
-- Event properties filter
+**Keywords:**
+- Humanic.ai event streaming destination
+- Agentic Marketing Platform integration
+- partner-maintained destination
+- API key authentication
+- event filtering configuration
+- event properties selection
+- Amplitude Data Destinations
 - Send events filter
-- Amplitude destination setup
+- Event Properties filter
 - care@humanic.ai support
+- dashboard.humanic.ai setup

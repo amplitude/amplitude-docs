@@ -1,14 +1,18 @@
-# Summary
-This documentation outlines the three key roles needed for successful Amplitude implementation: Project Lead (main contact point who promotes adoption), Data Governor (responsible for tracking design and data quality), and Instrumentation Lead (handles technical implementation of Amplitude events and troubleshooting).
+**Summary:** This Japanese documentation explains how to assemble an Amplitude implementation team by defining three critical roles: project lead (プロジェクトリード), data governor (データガバナー), and instrumentation lead (計測リード), detailing their specific responsibilities for successful Amplitude analytics deployment.
 
-# Keywords
-- implementation team roles
-- project lead responsibilities
-- data governor
-- instrumentation lead
-- tracking plan
-- data quality maintenance
-- Amplitude adoption
-- measurement implementation
-- data validation
-- event instrumentation
+**Keywords:**
+- Amplitude implementation team
+- Japanese translation documentation
+- プロジェクトリード (project lead)
+- データガバナー (data governor) 
+- 計測リード (instrumentation lead)
+- トラッキングプラン (tracking plan)
+- 分類体系 (taxonomy)
+- Amplitude SDK instrumentation
+- データ品質 (data quality)
+- サクセスマネージャー (success manager)
+- エンタープライズプラン (enterprise plan)
+- クライアント側SDK (client-side SDK)
+- バックエンドデータ (backend data)
+- team role responsibilities
+- analytics implementation strategy

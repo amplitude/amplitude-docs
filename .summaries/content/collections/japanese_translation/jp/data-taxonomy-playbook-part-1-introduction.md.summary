@@ -1,14 +1,18 @@
-## Summary
-This document is Part 1 of the Data Taxonomy Playbook, introducing the importance of well-planned instrumentation for event-based analytics platforms. It covers defining business goals, understanding user journeys, identifying critical paths, and establishing data governance rules before implementing an event taxonomy in Amplitude.
+**Summary:** This Japanese translation documentation covers Part 1 of Amplitude's Data Taxonomy Playbook, focusing on pre-implementation planning including data governance rules, business goal definition, user journey mapping, critical path identification, and Amplitude project structure with separate test/production environments.
 
-## Keywords
-- data taxonomy
-- instrumentation
-- event naming conventions
-- data governance
-- critical path
-- KPIs
-- user journey
-- Amplitude projects
-- test vs production environments
-- event tracking
+**Keywords:**
+- データタクソノミー (data taxonomy)
+- Amplitude インストルメンテーション
+- イベントベースアナリティクス
+- データガバナンスルール
+- クリティカルパス
+- ユーザージャーニー
+- KPI重要業績評価指標
+- テスト本番プロジェクト分離
+- イベント命名規則
+- ファネルコンバージョン
+- japanese_translation blueprint
+- プロダクト戦略
+- オンボーディングプロセス
+- クロスプロジェクト分析
+- ポートフォリオアドオン

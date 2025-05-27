@@ -1,14 +1,20 @@
-## Summary
-This documentation page details the step-by-step process for migrating from Amplitude SDK to Ampli, explaining how to progressively replace SDK calls with type-safe Ampli equivalents while maintaining existing functionality, including code examples for each migration phase and side-by-side comparisons of common operations.
+**Summary:** This documentation explains the progressive migration process from Amplitude SDK to Ampli, covering three phases: SDK-only, SDK+Ampli hybrid using `ampli.load({ client: { instance: amplitude }})`, and Ampli-only implementation with strongly typed event tracking methods like `ampli.songPlayed()` and `ampli.track(new SongPlayed())`.
 
-## Keywords
+**Keywords:**
 - Ampli migration
-- Progressive migration strategy
-- Type-safe analytics
-- SDK replacement
-- ampli.load configuration
-- Amplitude SDK compatibility
-- ampli.track methods
-- Strongly-typed events
-- Migration code examples
-- Side-by-side comparison
+- Amplitude SDK replacement
+- Progressive migration
+- `ampli.load()`
+- `ampli.pull`
+- `ampli.track()`
+- `ampli.client`
+- Strongly typed events
+- Type safety
+- Data validation
+- Event tracking plan
+- `@amplitude/analytics-browser`
+- `ampli.songPlayed()`
+- `SongPlayed` class
+- Hybrid implementation
+- `ampli status`
+- Source configuration
