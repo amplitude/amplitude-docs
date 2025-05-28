@@ -11,7 +11,7 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1726162729
 ---
-In Amplitude, sessions are a useful metric for understanding the frequency and duration of your users' engagement with your product. The most direct way to build a session-based analysis is with the [User Sessions chart](/docs/data/user-properties-and-events). 
+In Amplitude, sessions are a useful metric for understanding the frequency and duration of your users' engagement with your product. The most direct way to build a session-based analysis is with the [User Sessions chart](/docs/data/user-properties-and-events). 
 
 {{partial:admonition type='note'}}
 You may also find [this video](https://academy.amplitude.com/how-long-do-users-spend-in-my-product/1091393) on User Sessions helpful.
@@ -75,9 +75,11 @@ amplitude.init(API_KEY, OPTIONAL_USER_ID, {
 **Important Notes:**
 
 * This only applies to Amplitude's [Android](/docs/sdks/analytics/android/android-kotlin-sdk), [iOS](/docs/sdks/analytics/ios/ios-swift-sdk), and [Browser](/docs/sdks/analytics/browser/browser-sdk-2) SDKs.
-* Start/End Session events count towards your monthly [event volume limit](/docs/faq/limits).
+* Start/End Session events count towards your monthly [event volume limit](/docs/faq/limits).
 * The `End Session` event is sent at the start of the user's next session.
-* You can't add extra event properties to these Start Session and End Session events. If you would like to send event properties for session start/end events, try implementing your own custom `Open App` and `Close App` events.
+* By default, you can't add extra event properties to these Start Session and End Session events. To send event properties for session start/end events, you have two options:
+  * Implement your own custom `Open App` and `Close App` events.
+  * Use an [Enrichment Plugin](/docs/sdks/sdk-plugins#enrichment-plugins) to add properties to these events. Enrichment plugins allow you to modify properties in Event objects, including the automatically generated session events.
 
 ### Out-of-session events
 
@@ -118,12 +120,12 @@ You can define one condition or multiple conditions, but be aware that **all** c
 Changing the session definition applies to **all User Session, Funnel Analysis, Journeys charts, as well as the session metric, in your project**. Be sure you understand what the impacts might be before setting or changing a custom session definition.
 {{/partial:admonition}}
 
-Be aware that Amplitude treats combinations of conditions as **and** logic, meaning all conditions must be met for the session to count. For example, if you want to guarantee that all events in sessions are from the same source, you can do this by using session property and timeout window in tandem: 
+Be aware that Amplitude treats combinations of conditions as **and** logic, meaning all conditions must be met for the session to count. For example, if you want to guarantee that all events in sessions are from the same source, you can do this by using session property and timeout window in tandem: 
 
 * Session property = `device ID`
 * Session timeout = `30 min`
 
-Alternatively, to define sessions based on in-app usage, you can use starting event and timeout window:
+Alternatively, to define sessions based on in-app usage, you can use starting event and timeout window:
 
 * Start event = `app open`
 * Session timeout = `5 min`
