@@ -9,6 +9,8 @@ updated_at: 1742315906
 instrumentation_guide: true
 platform: 'third-party integration'
 public: true
+package_name: '@amplitude/session-replay-browser'
+full_details: true
 description: "Choose this option if you use Rudderstack for your site's analytics."
 ---
 Amplitude provides a wrapper for integrating Rudderstack and Amplitude's Session Replay.

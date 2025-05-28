@@ -9,6 +9,8 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1742315957
 platform: mobile
 public: true
+package_name: '@amplitude/plugin-session-replay-react-native'
+full_details: true
 description: 'Use this plugin if you instrument your application with the Amplitude React Native SDK.'
 ---
 This article covers the installation of Session Replay using the [React Native SDK](/docs/sdks/analytics/react-native/react-native-sdk) plugin. If your application uses the React Native SDK, use this option.
