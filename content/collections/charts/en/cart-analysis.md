@@ -61,6 +61,8 @@ Here's a brief overview of the more important ideas that make cart analysis work
 Child properties count toward your property volume counts.
 {{/partial:admonition}}
 
+For advanced cart analysis operations on arrays of data, you can also use [parallel operators in derived properties](/docs/data/derived-properties#parallel-operators). These operators allow you to perform calculations like sums, products, and comparisons across sibling properties within the same parent array.
+
 ## Set up property splitting
 
 Property splitting must be enabled before you can use object arrays for cart analysis. You can complete the process in Amplitude Data.
