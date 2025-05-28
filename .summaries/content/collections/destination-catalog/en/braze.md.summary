@@ -1,4 +1,4 @@
-**Summary:** This documentation covers the Amplitude Activation Braze streaming integration for bidirectional event streaming between Amplitude and Braze, including setup with Braze API endpoints, user ID mapping configurations (External ID, Braze ID, User Alias, Email), event forwarding filters, and user property synchronization via HTTP V2 API and Identify API.
+**Summary:** This documentation covers the Amplitude Activation Braze streaming integration for bidirectional event streaming between Amplitude and Braze, including setup with Braze API endpoints, user ID mapping configurations (External ID, Braze ID, User Alias, Email), event forwarding with custom properties, and user profile synchronization using HTTP V2 API or Identify API.
 
 **Keywords:**
 - Amplitude Activation Braze streaming integration
@@ -6,13 +6,13 @@
 - Braze API key authentication
 - Braze App ID setup
 - User ID mapping (External ID, Braze ID, User Alias, Email)
-- Event forwarding filters
+- Event forwarding to Braze
+- User profile synchronization
 - Braze custom event properties
 - Braze custom attributes
-- HTTP V2 API user updates
-- Identify API synchronization
+- HTTP V2 API integration
+- Identify API integration
+- Bidirectional event streaming
 - Update Users Only option
 - Braze User Alias Label
-- Bidirectional event streaming
-- Real-time event transmission
-- Anonymous user identifier requirements
+- Anonymous user event filtering

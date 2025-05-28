@@ -1,35 +1,41 @@
 ## Summary
 
-This documentation covers the React Native SDK for Amplitude analytics, detailing installation via npm/yarn/expo with required @react-native-async-storage/async-storage dependency, initialization with API keys, configuration options including EU data residency and batching behavior, event tracking with HTTP V2 API constraints, user properties management through Identify operations, revenue tracking with Revenue interface, and advanced features like plugins, custom HTTP clients, advertising identifiers (ADID, AppSetId, IDFV, IDFA), and over-the-air update considerations.
+This documentation covers the React Native SDK for Amplitude analytics, including installation via npm/yarn/expo with @amplitude/analytics-react-native package, initialization with API keys, event tracking, user properties management, revenue tracking, and advanced features like plugins, custom HTTP clients, and advertising identifiers (ADID, IDFV, IDFA, AppSetId).
 
 ## Keywords
 
 - @amplitude/analytics-react-native
 - React Native SDK
 - @react-native-async-storage/async-storage
-- HTTP V2 API
+- TypeScript analytics
+- event tracking
+- user properties
 - Identify operations
+- revenue tracking
 - Revenue interface
-- TypeScript support
-- EU data residency
-- serverZone configuration
-- flushQueueSize batching
-- flushIntervalMillis
+- group properties
+- groupIdentify
+- setUserId
+- setDeviceId
+- setSessionId
+- flush events
 - trackingOptions
-- ADID AppSetId IDFV IDFA
+- plugins
+- EnrichmentPlugin
+- DestinationPlugin
+- HTTP V2 API
+- batch API
+- serverZone EU
 - advertising identifiers
-- EnrichmentPlugin DestinationPlugin
-- play-services-appset
-- play-services-ads-identifier
-- Expo OTA updates
-- pod install iOS
-- Gradle compatibility matrix
+- ADID
+- IDFV
+- IDFA
+- AppSetId
+- OTA updates
+- Expo compatibility
+- React Native CLI
+- pod install
+- gradle compatibility
 - migrateLegacyData
-- trackingSessionEvents
-- useBatch mode
-- setUserId setDeviceId
-- groupIdentify operations
-- transportProvider customization
-- location_lat location_lng
-- carrier support limitations
-- CTCarrier deprecated iOS 16
+- transportProvider
+- logLevel debugging

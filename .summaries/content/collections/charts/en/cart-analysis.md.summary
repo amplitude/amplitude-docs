@@ -7,19 +7,17 @@
 - parent property
 - child property
 - sibling property
-- item property
 - cross-property filters
 - parallel filters
 - item match
 - collection match
-- Event Segmentation charts
-- Funnel Analysis charts
+- Event Segmentation
+- Funnel Analysis
 - Amplitude Data
-- e-commerce transaction flows
-- shopping cart flows
+- e-commerce analytics
 - behavioral insights
 - nested attributes
-- array splitting
+- parallel operators
+- derived properties
 - Identify API
-- append() method
-- set() method
+- shopping cart flows

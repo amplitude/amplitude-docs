@@ -11,7 +11,7 @@
 - flushQueueSize
 - serverZone EU/US
 - transportProvider
-- LogLevel configuration
+- logLevel configuration
 - instanceName parameter
 - serverUrl configuration
 - useBatch API setting

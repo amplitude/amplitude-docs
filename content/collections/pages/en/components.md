@@ -2,7 +2,11 @@
 id: 4d2e02c1-9bf7-48ec-ab17-641fe208de23
 blueprint: page
 title: 'Site components'
+package: "@amplitude/session-replay-browser"
 ---
+{{partial:bundle-size :package_name="package"}}
+
+
 ## Tabs
 
 Uses two partials, `tabs` and `tab`. `tabs` provides the wrapper and sets the tab names. `tab` renders the individual tab content. 
