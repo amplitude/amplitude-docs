@@ -90,6 +90,10 @@ Additionally, an orange warning bar appears at the top of the page when you're w
 
 ## CSV download limits
 
+{{partial:admonition type='note'}}
+This is the CSV download limit for the breakdown table. The CSV download limit for *Download users* from the [microscope](/docs/analytics/microscope) is 1 million rows.
+{{/partial:admonition}}
+
 The breakdown data table in the UI will only list the top 100 property values (for when you perform a [group-by](/docs/analytics/charts/group-by)). You can export roughly 10,000 rows as a .CSV file. This is specifically a limitation on the number of group-by values you can export.
 
 The group-by limits vary from chart to chart:
