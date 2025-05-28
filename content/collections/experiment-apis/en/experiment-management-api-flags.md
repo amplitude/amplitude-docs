@@ -968,8 +968,6 @@ Add a deployment for a flag.
 
 {{/partial:admonition}}
 
-???example "Example request (click to open)"
-
 ### Response
 
 A successful request returns a `200 OK` response and `OK` text.

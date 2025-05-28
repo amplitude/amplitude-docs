@@ -497,13 +497,13 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
         ),
         'Spatie\\LaravelIgnition\\' => 
         array (
-            0 => __DIR__ . '/..' . '/spatie/error-solutions/legacy/laravel-ignition',
-            1 => __DIR__ . '/..' . '/spatie/laravel-ignition/src',
+            0 => __DIR__ . '/..' . '/spatie/laravel-ignition/src',
+            1 => __DIR__ . '/..' . '/spatie/error-solutions/legacy/laravel-ignition',
         ),
         'Spatie\\Ignition\\' => 
         array (
-            0 => __DIR__ . '/..' . '/spatie/error-solutions/legacy/ignition',
-            1 => __DIR__ . '/..' . '/spatie/ignition/src',
+            0 => __DIR__ . '/..' . '/spatie/ignition/src',
+            1 => __DIR__ . '/..' . '/spatie/error-solutions/legacy/ignition',
         ),
         'Spatie\\Fork\\' => 
         array (
@@ -7674,7 +7674,6 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
         'Statamic\\Http\\Controllers\\CP\\Updater\\UpdateProductController' => __DIR__ . '/..' . '/statamic/cms/src/Http/Controllers/CP/Updater/UpdateProductController.php',
         'Statamic\\Http\\Controllers\\CP\\Updater\\UpdaterController' => __DIR__ . '/..' . '/statamic/cms/src/Http/Controllers/CP/Updater/UpdaterController.php',
         'Statamic\\Http\\Controllers\\CP\\Users\\AccountController' => __DIR__ . '/..' . '/statamic/cms/src/Http/Controllers/CP/Users/AccountController.php',
-        'Statamic\\Http\\Controllers\\CP\\Users\\ExtractsFromUserFields' => __DIR__ . '/..' . '/statamic/cms/src/Http/Controllers/CP/Users/ExtractsFromUserFields.php',
         'Statamic\\Http\\Controllers\\CP\\Users\\PasswordController' => __DIR__ . '/..' . '/statamic/cms/src/Http/Controllers/CP/Users/PasswordController.php',
         'Statamic\\Http\\Controllers\\CP\\Users\\RolesController' => __DIR__ . '/..' . '/statamic/cms/src/Http/Controllers/CP/Users/RolesController.php',
         'Statamic\\Http\\Controllers\\CP\\Users\\UserActionController' => __DIR__ . '/..' . '/statamic/cms/src/Http/Controllers/CP/Users/UserActionController.php',
