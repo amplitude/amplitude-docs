@@ -22,7 +22,7 @@ This feature is available to users on **all Amplitude plans**. See the [pricing 
 ## Before you begin
 
 * Microscope streams only highlight events selected in the chart's [Events Module](/docs/analytics/charts/build-charts-add-events) that occur during the date range selected.
-* *View Groups* and *Download Groups* are only available to customers who have purchased [Accounts add on](docs/analytics/account-level-reporting).
+* *View Groups* and *Download Groups* are only available to customers who have the [Accounts add on](docs/analytics/account-level-reporting).
 
 ## Use Microscope
 
