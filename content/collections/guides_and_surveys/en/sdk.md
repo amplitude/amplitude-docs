@@ -47,6 +47,12 @@ amplitude.add(engagementPlugin());
 {{/partial:tab}}
 {{/partial:tabs}}
 
+
+For additional configuration, supply `InitOptions` to the `plugin` function. See [Initialize the SDK](#initialize-the-sdk) below for the available options.
+
+
+
+
 ### Third-party analytics provider
 
 If you don't use the Amplitude Analytics [Browser SDK 2](/docs/sdks/analytics/browser/browser-sdk-2), you can still use Guides and Surveys but you need to configure the SDK to work with your third-party analytics provider. First, add the SDK to your project using the script tag, or through npm or Yarn as outlined above.
@@ -281,8 +287,8 @@ Configure the visual theme mode if your app supports light and dark modes.
 engagement.setThemeMode(mode: ThemeMode): void
 ```
 
-| Parameter | Type                              | Description                          |
-| --------- | --------------------------------- | ------------------------------------ |
+| Parameter | Type                            | Description                          |
+| --------- | ------------------------------- | ------------------------------------ |
 | `mode`    | `lightMode`, `darkMode`, `auto` | Required. Select the theme to apply. |
 
 ```js
@@ -307,7 +313,7 @@ engagement.addCallback(name: string, callback: () => void): void
 | Parameter  | Type         | Description                                                                                   |
 | ---------- | ------------ | --------------------------------------------------------------------------------------------- |
 | `name`     | `string`     | Required. Refer to this callback by name when setting a callback action on a guide or survey. |
-| `callback` | `() => void` | Required. The callback to execute.                                                        |
+| `callback` | `() => void` | Required. The callback to execute.                                                            |
 
 ```js
 window.engagement.addCallback("toggle_dark_mode", () => {
@@ -339,6 +345,31 @@ const MyComponent = () => {
     window.engagement.setRouter((newUrl) => navigate(newUrl));
   }, []);
 };
+```
+
+## Localization
+
+Set the `locale` option during initialization to localize a guide or survey.
+
+* If you use the [Amplitude Browser SDK](#amplitude-browser-sdk) plugin, set it in `InitOptions`.
+* If you use a  [third-party analytics provider](#third-party-analytics-provider), set it in `options` within the `engagement.init()` method.
+
+To dynamically update the language after the SDK initializes, use the `updateLanguage` method documented below. Calling `updateLanguage` re-fetches the configuration with the new locale.
+
+```js
+engagement.updateLanguage(locale: string): Promise<void>
+```
+
+| Parameter | Type     | Description                                                                              |
+| --------- | -------- | ---------------------------------------------------------------------------------------- |
+| `locale`  | `string` | Required. The new language code (for example, `en`, `es`, `fr`) to set for localization. |
+
+```js
+// Example: Update language to French
+await window.engagement.updateLanguage("fr");
+
+// Example: Update language to English
+await window.engagement.updateLanguage("en");
 ```
 
 ## Reset
@@ -386,7 +417,7 @@ engagement.gs.show(key: string, stepIndex?: number): void
 
 ## Forward event
 
-Forward third-party Analytics events to the Guides and Surveys SDK to trigger guides and surveys that use the `*On event tracked*` [trigger](/docs/guides-and-surveys/guides/setup-and-target#triggers).
+Forward third-party Analytics events to the Guides and Surveys SDK to trigger guides and surveys that use the *On event tracked* [trigger](/docs/guides-and-surveys/guides/setup-and-target#triggers).
 
 ```js
 engagement.forwardEvent(event: Event): void
