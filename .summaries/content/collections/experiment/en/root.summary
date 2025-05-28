@@ -8,43 +8,41 @@ Amplitude Experiment operates on two primary evaluation paradigms:
 
 **Local Evaluation** runs evaluation logic directly within SDKs, achieving sub-millisecond performance by eliminating network requests. However, this approach has limitations including no Amplitude ID resolution, restricted user enrichment, and unavailable sticky bucketing. Local evaluation is particularly suited for edge computing scenarios and high-performance requirements.
 
-## Data Model and Hierarchy
+## Data Model and Organizational Structure
 
-The platform follows a hierarchical structure: Organizations contain Projects, which house Deployments (client-side or server-side with deployment keys), Flags/Experiments (supporting local/remote evaluation modes), Variants (with value/payload properties), and Users (requiring user_id/device_id with optional group support via Accounts add-on).
+The platform follows a hierarchical data model: Organizations contain Projects, which house Deployments (client-side or server-side with deployment keys), Flags/Experiments (supporting local/remote evaluation modes), Variants (with value/payload properties), and Users (requiring user_id/device_id with optional group support via Accounts add-on).
 
-## Targeting and Bucketing Implementation
+## Statistical Framework and Analysis
 
-Experiment evaluation follows a sophisticated multi-step process involving pre-targeting steps (activation, flag dependencies, individual inclusions, sticky bucketing), targeting segments, and consistent bucketing using murmur3 hashing algorithms with bucketing salts and allocation percentages. The system supports cohort targeting with both static and dynamic user cohorts, synchronized hourly to either Amplitude Experiment destination (remote evaluation) or Experiment Local Evaluation destination (local evaluation, server-side SDKs only).
+Amplitude Experiment employs robust statistical methodologies including sequential testing and T-test models for determining statistical significance. The Analysis view provides comprehensive metrics including relative performance lift calculations, confidence intervals, p-value significance testing, and both recommendation and secondary metrics evaluation. The platform incorporates advanced statistical concepts like CUPED variance reduction, Bonferroni correction for multiple comparisons, and sample ratio mismatch (SRM) detection.
 
-## Statistical Analysis Framework
+## Implementation and Bucketing System
 
-The Analysis view provides comprehensive statistical measurements including relative performance lift calculations, confidence intervals, significance testing with p-values, and both absolute and percentage-based metrics. The platform supports sequential testing and T-test statistical models, with features like CUPED variance reduction, Bonferroni correction for multiple comparisons, and guardrail metrics monitoring.
-
-**Dimensional Analysis** enables filtering of QA users and internal traffic through the "Exclude testers" functionality, allowing teams to analyze experiment results without contamination from testing activities.
+The evaluation implementation follows a systematic process through pre-targeting steps (activation, flag dependencies, individual inclusions, sticky bucketing), targeting segments, and consistent bucketing using the murmur3 hashing algorithm with bucketing salts and allocation percentages. This ensures SUTVA (Stable Unit Treatment Value Assumption) compliance and prevents variant jumping.
 
 ## Key Nomenclature and Definitions
 
-- **Allocation**: Percentage of users bucketed into experiment variants
+- **Allocation**: Percentage of users exposed to experiment variants
 - **Payload Variables**: Configuration data passed with variant assignments
-- **Exposure Events**: Tracked when users are exposed to feature flag variants
+- **Exposure Events**: Tracked when users encounter feature flag variants
 - **Assignment Events**: Server-side tracking of variant assignments
-- **Bucketing Units**: User identifiers used for consistent assignment (supports SUTVA compliance)
-- **Guardrail Metrics**: Secondary metrics monitored to ensure experiment safety
-- **MDE (Minimum Detectable Effect)**: Smallest effect size the experiment can reliably detect
+- **Guardrail Metrics**: Secondary metrics monitoring for negative impacts
+- **Bucketing Units**: User identification method (user_id, device_id, or groups)
+- **Targeting Segments**: User criteria for experiment inclusion
+- **Mutual Exclusion Groups**: Preventing user overlap between experiments
 
-## Integration and Implementation
+## Advanced Features and Capabilities
 
-The platform provides multi-platform SDK support across TypeScript, Kotlin, Objective-C, Swift, and Python with configuration options for defaultTracking settings, session management, and automatic event tracking. Integration options include:
+**Cohort Targeting** enables sophisticated audience segmentation using both static and dynamic cohorts. Remote evaluation supports hourly sync to Amplitude Experiment destination, while local evaluation requires server-side SDKs and syncs to Experiment Local Evaluation destination.
 
-- **Experiment SDK**: Full-featured client and server-side SDKs with automatic exposure tracking
-- **REST API**: Direct API access for custom implementations
-- **Analytics REST API v2.0**: For manual exposure tracking via curl requests
-- **Management API**: Enterprise-level programmatic control with permissions bypass capabilities
+**Dimensional Analysis** provides filtering capabilities to exclude QA users and internal traffic from experiment analysis using targeting settings and the "Exclude testers" option.
 
-## Permissions and Access Control
+**Project-Level Permissions** operate independently from Analytics permissions, offering role-based access controls (Viewer, Member, Manager, Admin) and Enterprise-level flag-specific access restrictions managed through the Experiment UI and Management API.
 
-Amplitude Experiment implements project-level permissions independent from Analytics permissions, featuring user roles (Viewer, Member, Manager, Admin) and flag-level access controls. Enterprise customers can leverage Management API bypass capabilities for programmatic experiment management.
+## Integration and API Access
+
+The platform provides comprehensive integration options through multi-platform SDKs (TypeScript, Kotlin, Objective-C, Swift, Python) with configurable options for session management, event tracking, and defaultTracking settings. Exposure tracking utilizes the Analytics REST API v2.0 with automatic exposure tracking capabilities in client-side SDKs.
 
 ## Ecosystem Integration
 
-The platform integrates deeply with Amplitude Analytics for user data enrichment, cohort targeting, and behavioral analysis. Exposure tracking feeds into Amplitude's analytics pipeline, enabling comprehensive user journey analysis and experiment impact measurement through the Exposures chart and user exposure analysis tools.
+Amplitude Experiment integrates seamlessly with the broader Amplitude Analytics ecosystem, leveraging existing user data, behavioral cohorts, and project structures. The platform supports both the Experiment SDK and REST API integration patterns, enabling flexible implementation across various technical architectures while maintaining consistent bucketing and statistical rigor across all evaluation modes.
