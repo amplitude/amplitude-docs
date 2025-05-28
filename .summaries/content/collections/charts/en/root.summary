@@ -1,61 +1,61 @@
-Amplitude Analytics is a comprehensive product analytics platform that enables organizations to understand user behavior through event tracking, segmentation, and advanced analytics. The platform provides a suite of chart types and analytical tools designed to help teams make data-driven decisions across the entire user lifecycle.
+Amplitude Analytics is a comprehensive product analytics platform that provides a suite of chart types and analysis tools for understanding user behavior, conversion, retention, and monetization. The platform enables organizations to track events, analyze user journeys, and derive actionable insights from user data through various specialized chart types and analytical modules.
 
-## Core Chart Types and Analytics Capabilities
+## Core Chart Types and Features
 
-The platform offers 16+ distinct chart types organized around four primary use cases:
+The platform offers 17+ distinct chart types organized into four primary use case categories:
 
-**Know Your Users**: Event Segmentation for counting and filtering events, Data Tables for multi-metric comparisons, User Sessions for session-based analysis, and Event Explorer for real-time event stream visualization.
+**Know Your Users**: Event Segmentation (event counting and filtering), User Sessions (session-based analysis), Data Tables (multi-metric comparison), User Composition (user property analysis), and Event Explorer (real-time event streams)
 
-**Convert Your Users**: Funnel Analysis for conversion tracking, Journeys for user path analysis, and Experiment Results for A/B testing statistical analysis.
+**Convert Your Users**: Funnel Analysis (conversion tracking), Journeys (user path analysis), and Experiment Results (A/B testing outcomes)
 
-**Retain Your Users**: Retention Analysis for return behavior tracking, Lifecycle charts for user categorization (New, Current, Resurrected, Dormant), Stickiness analysis for event frequency measurement, and Compass for identifying behavioral thresholds that predict retention.
+**Retain Your Users**: Retention Analysis (return behavior), Lifecycle (user categorization as New/Current/Resurrected/Dormant), Stickiness (event frequency measurement), and Impact Analysis (feature engagement correlation)
 
-**Monetize**: Revenue LTV for lifetime value analysis, Impact Analysis for feature engagement correlation, Engagement Matrix for feature breadth and frequency analysis, and Personas for behavioral clustering.
+**Monetize**: Revenue LTV (lifetime value analysis), Personas (behavioral clustering), Engagement Matrix (feature breadth vs frequency), and Compass (behavioral threshold identification)
 
-## Key Platform Components and Modules
+## Key Analytical Modules and Components
 
-**Events Module**: Central component for event selection and configuration, supporting default Amplitude events (Top Global Events, Any Active Event, New User), wildcard search with glob operators, custom event grouping with OR logic, and event property filtering. Events can be added to charts through the "Add Event or Metric" interface.
+**Events Module**: Central component for event selection supporting default Amplitude events (Top Global Events, Any Active Event, New User), wildcard search with glob operators, event filtering, and grouping using event and user properties. Includes custom event creation through OR logic grouping.
 
-**Segmentation Module**: Advanced user targeting system supporting multiple user categories (any users, active users, new users), complex filtering with user properties and behavioral cohorts, inline cohort creation with the "+ Performed" feature, and segment saving/reuse functionality.
+**Segmentation Module**: Advanced user segment creation supporting multiple user categories (any users, active users, new users), complex filtering with user properties and behavioral cohorts, inline cohort creation with "+ Performed" feature, and segment saving/reuse functionality.
 
-**Measured As Module**: Provides different measurement options for events and metrics within charts.
+**Measured As Module**: Provides various measurement options for quantifying events and user behavior across different chart types.
 
-## Core Nomenclature and Definitions
+## Advanced Filtering and Operators
 
-**Array Operators**: Comprehensive set of filtering operators including basic operators (is, is not, contains, does not contain) and set operators (set is, set is not, set contains, set does not contain) for event and property filtering.
+The platform employs sophisticated array operators including:
+- Basic operators: is, is not, contains, does not contain
+- Set operators: set is, set is not, set contains, set does not contain
+- Advanced matching: glob match (wildcard), starts with, exact values, substring matching
+- Logical operators: OR/AND clause combinations for complex filtering
 
-**Filter Operators**: Extended operator set including exact matching (is), substring matching (contains), prefix matching (starts with), array set operations, and wildcard matching (glob match) with support for OR/AND clause logic.
+## Performance Optimization and Data Management
 
-**User Properties vs Event Properties**: Distinction between attributes associated with users versus attributes associated with specific events, both usable for filtering and segmentation.
+**Query Performance**: Implements query time sampling using 10% random user samples with up-sampling via inverse sampling methods. Includes automatic data pruning with limits of 100 values for single group-by and 500 for dual group-by operations.
 
-**Behavioral Cohorts**: User groups defined by specific behavioral patterns, can be created inline within charts or saved for reuse across analyses.
+**Caching System**: Employs tiered caching based on query intervals (real-time, hourly, daily, weekly, monthly) to optimize performance while maintaining data freshness.
 
-**Group-by Functionality**: Feature for breaking down results by property values with specific limits (100 values for single group-by, 500 for dual group-by) and automatic pruning when limits are exceeded.
+**Data Limits**: Enforces various limits including CSV export (10,000 rows), Dashboard REST API (20,000 rows), and breakdown table restrictions to maintain system performance.
 
-## Advanced Features and Capabilities
+## Specialized Analysis Capabilities
 
-**Cart Analysis**: Specialized feature for e-commerce analysis supporting object arrays through property splitting, enabling analysis of shopping cart flows with cross-property, parallel, item match, and collection match filtering options (available in Growth and Enterprise plans).
+**Cart Analysis**: Supports behavioral insights through object array analysis, particularly valuable for e-commerce analytics. Requires property splitting setup in Amplitude Data and supports cross-property, parallel, item match, and collection match filtering.
 
-**Query Performance Optimization**: Built-in sampling feature that analyzes 10% random user samples and up-samples results using inverse sampling methods, configurable at chart and project levels.
+**Real-time Analysis**: Event Explorer provides real-time event stream visualization, enabling users to view events as they're triggered by specific users (identified by IP address, user ID, device ID, or user properties).
 
-**Real-time Capabilities**: Event Explorer provides real-time event stream visualization with user targeting by IP address, user ID, device ID, or user properties for instrumentation QA and taxonomy exploration.
+**Behavioral Cohorts**: Advanced segmentation allowing creation of user groups based on specific behavioral patterns and event sequences.
 
-**Data Export and Integration**: CSV export functionality, Dashboard REST API with 20,000 limit, breakdown tables for data review and analysis, and integration with dashboards and notebooks.
+## Customization and Enterprise Features
 
-## Chart Customization and Management
+**Color Themes**: Chart color customization with organization-level default themes (Growth/Enterprise plans), supporting 8-16 colors per theme using hex values or color picker.
 
-**Visual Customization**: Chart color theme system supporting custom themes with 8-16 colors using hex values, organization-level default themes for Growth/Enterprise plans, Y-axis customization including dual Y-axis support for event segmentation.
+**Annotations and Releases**: Chart annotation system for marking significant events and product releases.
 
-**Chart Operations**: Comprehensive sharing capabilities, custom legend labels, annotations and releases functionality, keyboard shortcuts for workflow optimization, and chart caching with different intervals (real-time, hourly, daily, weekly, monthly) based on query types.
+**Plan-based Access**: Feature availability varies across Starter, Plus, Growth, and Enterprise tiers, with advanced features like Personas, Compass, and Revenue LTV typically requiring higher-tier plans.
 
-**Data Management**: Automatic data pruning and ordering by top activity within timeframes, breakdown table functionality for sorting, filtering, and data review, and series selection capabilities.
+## Integration and Export Capabilities
 
-## Platform Architecture and Access Control
+The platform supports various integration methods including dashboard integration, notebook integration, CSV downloads, and REST API access. Charts can be shared across teams and embedded in external systems. The platform also includes keyboard shortcuts for efficient chart creation workflows and template systems for standardized analysis patterns.
 
-**Plan-based Feature Access**: Tiered availability across Starter, Plus, Growth, and Enterprise plans with advanced features like cart analysis, custom color themes, and organization-level settings restricted to higher tiers.
+## Data Processing and API Integration
 
-**User Permissions**: Role-based access control with admin/manager/member permissions affecting chart creation and data access capabilities.
-
-**Performance Limits**: Built-in query limits and result restrictions to maintain platform performance, including group-by limits, CSV export limits (10,000), and API limits (20,000).
-
-The platform integrates with external tools through APIs and supports advanced SQL querying capabilities for direct Snowflake access, positioning it as an enterprise-grade analytics solution for comprehensive user behavior analysis and product optimization.
+Supports integration with external data sources and includes specialized tools like the Instrumentation Explorer Chrome plugin for development and QA workflows. The platform processes both real-time and batched events, with specific handling for different event types and exclusion rules for system events like Identify events.

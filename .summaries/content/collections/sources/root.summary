@@ -1,78 +1,66 @@
-# Amplitude Sources: Data Instrumentation and Ingestion Platform
+# Amplitude Sources Data Instrumentation Platform
 
-Amplitude Sources is a comprehensive data collection and instrumentation platform that enables organizations to track user behavior, connect third-party data sources, and manage data flow into Amplitude's analytics ecosystem. The platform combines automated data collection capabilities with manual instrumentation tools, providing real-time debugging and monitoring features for enterprise-scale analytics implementations.
+Amplitude Sources is a comprehensive data ingestion and instrumentation platform that enables organizations to connect third-party data sources, track user behavior, and manage data flow into Amplitude's analytics ecosystem. The platform provides automated data collection capabilities alongside manual instrumentation tools for tracking user actions and business metrics across web, mobile, and server environments.
 
 ## Product Architecture and Feature Relationships
 
-The Sources platform operates through three primary interconnected layers:
+The Sources platform operates through several interconnected layers that work together to provide end-to-end data management:
 
-**Sources Management Interface** functions as the central control hub, featuring a Sources List tab for monitoring active integrations and connection health, paired with an Ingestion Debugger for real-time data flow troubleshooting. The Catalog interface enables discovery and configuration of new data sources through a guided Set Up Connection workflow, requiring Manager-level permissions for implementation.
+**Sources Management Interface**: The primary operational hub centers around the Sources List tab, providing visibility into all connected data sources with 30-day activity monitoring and health status tracking. The Catalog interface manages new integrations through a Set Up Connection workflow, while the Ingestion Debugger serves as the real-time monitoring layer for tracking throttled users/devices, event volumes, request success/error rates, and silenced device management.
 
-**Data Instrumentation Layer** provides SDKs and HTTP API endpoints for granular user behavior tracking, including revenue events, session management, and user identification workflows. This layer integrates directly with the Sources interface to ensure data validation and consistent flow patterns across all connected platforms.
+**Multi-Modal Data Instrumentation**: The platform supports diverse instrumentation approaches including native SDKs for mobile and web platforms, HTTP API for server-side tracking, and third-party integrations. Specialized tracking capabilities include revenue instrumentation using the `logRevenueV2()` function with properties like `$revenue`, `$price`, and `$quantity`, and session management with automatic session ID generation using Unix timestamps and configurable timeout intervals.
 
-**Data Export and Synchronization Layer** maintains data consistency across multiple destinations including Snowflake and Redshift data warehouses, while managing the Export API. This layer handles timezone conversions and timestamp standardization, though with specific handling differences that impact cross-platform data analysis workflows.
+**Identity Resolution System**: A sophisticated user tracking mechanism combines Device ID, User ID, and Amplitude ID to create unified user profiles that persist across anonymous sessions, multiple devices, and authenticated states. This enables cross-platform user journey analysis and portfolio-level user matching across projects.
 
 ## Core Nomenclature and Technical Definitions
 
-**User Identity Architecture:**
-- **Amplitude ID**: Automatically generated persistent unique identifier that maintains continuity across sessions, devices, and platforms
-- **Device ID**: Platform-specific identifier utilizing IDFV for iOS, UUID for web browsers, and advertising identifiers for mobile platforms
-- **User ID**: Custom identifier assigned during user authentication or registration processes, enabling cross-device user journey tracking
+**Identity Management**:
+- **Amplitude ID**: Primary system-generated user identifier for tracking across sessions and devices
+- **Device ID**: Platform-specific identifier (IDFV for iOS, UUID for web, advertising identifiers IDFA/AdID)
+- **User ID**: Application-defined identifier for authenticated users
+- **Session ID**: Unix timestamp-based identifier with automatic generation and configurable timeout thresholds
 
-**Session Management Framework:**
-- **Session ID**: Automatically generated identifier that groups related user actions within defined time boundaries
-- **Session Length**: Calculated as max(client_event_time) - min(client_event_time) for all events sharing a session ID
-- **Session Timeout**: Configurable duration (setMinTimeBetweenSessionsMillis) that determines when new sessions begin after periods of inactivity
-- **Out-of-session Events**: Events assigned session ID -1, excluded from standard session analysis but retained for custom analytics
-
-**Revenue Tracking Taxonomy:**
-- **$revenue**: Primary monetary transaction property for tracking revenue events
-- **$price and $quantity**: Granular transaction properties enabling detailed product-level revenue analysis
+**Revenue Tracking Classifications**:
 - **Revenue (Verified)**: In-app purchases validated through iTunes Connect or Google Play receipt verification
 - **Revenue (Unverified)**: Revenue events without platform receipt validation
-- **logRevenueV2**: Current SDK function for revenue tracking (logRevenue marked as deprecated)
+- **logRevenueV2**: Current revenue tracking implementation (supersedes deprecated logRevenue)
 
-**Data Processing Timestamps:**
-- **server_upload_time**: UTC timestamp marking when Amplitude servers receive events
-- **client_event_time**: Local device timestamp when events occur on user devices
-- **event_time**: Processed timestamp used in Amplitude visualizations, adjusted for project timezone settings
-- **Throttled Users/Devices**: Accounts exceeding configured rate limits, monitored through Ingestion Debugger alerts
+**Session Management Concepts**:
+- **Mobile Session Timeout**: 5-minute default inactivity threshold
+- **Web Session Timeout**: 30-minute default inactivity threshold  
+- **Out-of-session Events**: Events with session ID -1 indicating activity outside defined session boundaries
+- **Session Length Calculation**: Computed as max(client_event_time) - min(client_event_time) within session scope
+
+**Temporal Data Processing**:
+- **server_upload_time**: Server-side timestamp used by Export API for date range filtering
+- **client_event_time**: Client-side timestamp for session length calculations
+- **event_time**: Event occurrence timestamp used in Amplitude visualization charts
+- **Throttled Users/Devices**: Rate-limited entities monitored through Ingestion Debugger
 
 ## Ecosystem Integration and Data Flow
 
-Amplitude Sources integrates across multiple components of the broader Amplitude analytics ecosystem:
+Amplitude Sources integrates deeply with the broader Amplitude analytics ecosystem through multiple touchpoints:
 
-**Analytics and Visualization Layer**: Data flows into Event Segmentation charts, User Sessions charts, Revenue LTV charts, and Pathfinder user journey visualizations. Session definitions remain configurable through dedicated modals for custom analysis requirements.
+**Data Destinations and Export**: The platform connects with enterprise data warehouses including Snowflake and Redshift, handling timezone differences between UTC exports and project timezone chart displays. The Export API provides programmatic access to event data with server_upload_time-based filtering for downstream data processing.
 
-**Data Warehouse Integration**: Seamless connectivity with Snowflake and Redshift data warehouses, though timezone handling differs from core Amplitude charts (UTC standardization vs. project timezone localization).
+**Analytics and Visualization Layer**: Sources data feeds directly into Amplitude's chart ecosystem including Event Segmentation charts, Revenue LTV analysis, User Sessions charts, and Pathfinder user journey visualization. The User Sessions chart supports custom session property definitions for flexible behavioral analysis.
 
-**Cross-Project Analytics**: Portfolio functionality enables user identity matching across multiple Amplitude projects, with limitations in Redshift raw data access for security and performance optimization.
+**Cross-Platform and Portfolio Capabilities**: Portfolio functionality enables user matching across multiple projects, while cross-domain tracking maintains user identity across different web properties. The system handles merged user scenarios and provides event ID sequencing for data integrity and deduplication.
 
-**Third-Party Platform Connections**: Catalog interface supports automated connections to external platforms, with 30-day activity status tracking and health monitoring for all active integrations.
+**Third-Party Platform Integrations**: Native integrations include iTunes Connect for iOS in-app purchase verification, Google Play for Android receipt validation, and Segment cloud-mode connections for additional data routing. The platform also supports custom integrations through the Catalog interface.
 
 ## API Endpoints and Technical Implementation
 
-**Revenue Tracking Implementation**: 
-- `logRevenueV2()` function with iTunes Connect In App Purchase Shared Secret and Google Play License Public Key for receipt validation
-- Revenue event validation and verification workflows
+**Core Functions and Methods**:
+- `logRevenueV2()`: Primary revenue tracking function with receipt verification capabilities
+- `setMinTimeBetweenSessionsMillis()`: Configure custom session timeout intervals beyond platform defaults
+- `setOptOut()`: Revenue tracking opt-out functionality for privacy compliance
+- `trackingSessionEvents` and `defaultTracking.sessions`: Browser SDK session configuration parameters
 
-**Session Management APIs**:
-- `trackingSessionEvents` and `defaultTracking` configurations for automated Start/End Session event generation
-- Configurable session timeout and boundary detection
+**Configuration and Access Control**:
+- iTunes Connect In App Purchase Shared Secret for iOS receipt validation
+- Google Play License Public Key for Android verification workflows
+- Manager-level permissions required for Sources interface access and configuration
+- Session timeout configuration supporting mobile (5min default) and web (30min default) platforms
 
-**User Identity Management**:
-- `setOptOut()` method for privacy compliance and GDPR/CCPA adherence
-- Cross-domain tracking capabilities for unified user journey analysis
-- User merging and property overwriting during identity resolution
-
-**Data Export and Monitoring**:
-- Export API with UTC timezone standardization and server_upload_time-based date range filtering
-- Real-time endpoint monitoring through Ingestion Debugger with successful/error request tracking
-- Silenced device ID management for debugging workflow optimization
-
-**Data Integrity Features**:
-- Event ID sequencing for proper chronological data ordering
-- User property handling during user merging scenarios
-- Rate limiting and throttling management for high-volume implementations
-
-The platform maintains comprehensive event validation and ensures data integrity across complex user journey tracking implementations, supporting enterprise-scale analytics requirements with real-time monitoring and debugging capabilities.
+**Operational Monitoring**: The Ingestion Debugger provides real-time visibility into data quality metrics, excluding hidden, inactive, and deleted events from session calculations while monitoring throttling, error rates, and overall data flow health across all connected sources.

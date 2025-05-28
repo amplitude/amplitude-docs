@@ -8,40 +8,33 @@ This documentation covers Amplitude's Browser SDK 2, which enables event trackin
 - @amplitude/analytics-browser
 - HTTP V2 API
 - autocapture
+- script loader installation
+- npm/yarn installation
+- amplitude.init()
+- amplitude.track()
+- deviceId/userId validation
+- minIdLength configuration
+- flushIntervalMillis/flushQueueSize
+- EU data residency serverZone
 - marketing attribution tracking
 - UTM parameters
-- click ID parameters
+- click ID parameters (gclid, fbclid, etc.)
 - page view tracking
 - session tracking
 - form interaction tracking
 - file download tracking
 - element interaction tracking
 - visual labeling
+- user properties Identify API
+- group properties groupIdentify
+- revenue tracking Revenue interface
 - cross-domain tracking
 - sendBeacon transport
-- cookie management
+- Content Security Policy CSP
+- cookie management AMP prefix
 - offline mode
 - remote configuration
-- Content Security Policy (CSP)
-- flushIntervalMillis
-- flushQueueSize
-- deviceId
-- userId
-- sessionId
-- revenue tracking
-- user properties
-- group properties
-- plugins
-- enrichment plugin
-- destination plugin
+- plugins enrichment/destination
 - trackingOptions
-- identityStorage
-- serverZone EU
-- ampDeviceId URL parameter
-- ampSessionId URL parameter
-- excludeReferrers
-- resetSessionOnNewCampaign
-- trackHistoryChanges
-- cssSelectorAllowlist
-- actionClickAllowlist
-- pageUrlAllowlist
+- identityStorage localStorage/cookie
+- excludeReferrers configuration

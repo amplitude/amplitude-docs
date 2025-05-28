@@ -1,31 +1,27 @@
 **Summary:**
-This documentation covers the Session Replay Standalone SDK for browser applications that use non-Amplitude analytics providers, including installation via npm/yarn, initialization with API key/deviceId/sessionId, session management requirements, and configuration options like sampleRate, privacyConfig, and serverZone.
+This documentation covers the Session Replay Standalone SDK for browser applications that use non-Amplitude analytics providers, including installation via npm/yarn or CDN, configuration options like sampleRate and deviceId, session management requirements, and integration with third-party analytics through getSessionReplayProperties() to capture the [Amplitude] Session Replay ID event property.
 
 **Keywords:**
 - Session Replay Standalone SDK
 - @amplitude/session-replay-browser
-- sessionReplay.init
-- sessionReplay.setSessionId
-- sessionReplay.getSessionReplayProperties
+- sessionReplay.init()
+- sessionReplay.setSessionId()
+- sessionReplay.getSessionReplayProperties()
 - [Amplitude] Session Replay ID
+- third-party analytics integration
 - deviceId configuration
 - sessionId timestamp
-- sampleRate sampling
-- DOM capture
-- third-party analytics integration
-- npm yarn installation
-- script tag implementation
-- privacyConfig masking
-- serverZone EU data residency
+- sampleRate configuration
+- DOM capture and diff processing
 - optOut configuration
-- flushMaxRetries
+- serverZone EU data residency
+- privacyConfig masking
 - storeType IndexedDB
-- performanceConfig
+- performanceConfig idle compression
 - experimental.useWebWorker
-- session management
-- DSAR API
-- User Privacy API
-- bot filter
-- CSS styling issues
-- processing errors
-- retention period
+- session management requirements
+- CDN script tag implementation
+- DSAR API metadata
+- User Privacy API deletion
+- CSS stylesheet inlining
+- bot filter integration
