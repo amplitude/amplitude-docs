@@ -9,9 +9,12 @@ updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1731621403
 instrumentation_guide: true
 platform: browser
+package_name: "@amplitude/session-replay-browser"
 public: true
+full_details: true
 description: 'If you use a provider other than Amplitude for in-product analytics, choose this option.'
 ---
+
 {{partial:admonition type="note" heading="Session Replay instrumentation"}}
 Session Replay isn't enabled by default, and requires setup beyond the standard Amplitude instrumentation.
 {{/partial:admonition}}
@@ -25,6 +28,8 @@ Amplitude built Session Replay to minimize impact on the performance of web page
 - Using batching and lightweight compression to reduce the number of network connections and bandwidth.
 - Optimizing DOM processing.
 {{/partial:admonition}}
+
+
 
 Session Replay captures changes to a page's Document Object Model (DOM), including elements in the shadow DOM, then replays these changes to build a video-like replay. For example, at the start of a session, Session Replay captures a full snapshot of the page's DOM. As the user interacts with the page, Session Replay captures each change to the DOM as a diff. When you watch the replay of a session, Session Replay applies each diff back to the original DOM in sequential order, to construct the replay. Session replays have no maximum length.
 
