@@ -16,6 +16,10 @@ For best practices, including tips on instrumentation, see the [How to Analyze A
 
 In Amplitude, A/B testing lets you compare the funnel conversion performance of two or more user segments against each other. You can view results as **improvement**, which describes the performance of a segment compared to the baseline—or as **statistical significance**, which show you the probability of observing a difference as extreme as what you saw, assuming the control and treatment have the same mean.
 
+{{partial:admonition type='note'}}
+If you are interested in statistical signifance calculations for continuous metrics, consider using the [experiment results chart](/docs/analytics/charts/experiment-results/experiment-results-dig-deeper) or the [Experiment end-to-end product](/docs/feature-experiment/overview).
+{{/partial:admonition}}
+
 ### Feature availability
 
 This feature is available to users on **Growth** and **Enterprise plans** only. See our [pricing page](https://amplitude.com/pricing) for more details.
