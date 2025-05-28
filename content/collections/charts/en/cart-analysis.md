@@ -23,7 +23,7 @@ Cart Analysis is available for Amplitude's Event Segmentation and Funnel Analysi
 
 ### Feature availability
 
-This feature is in an open beta and only available to users on Growth and Enterprise plans. See [Set up property splitting](#set-up-property-splitting) to get started. 
+This feature is available to users on Growth and Enterprise plans. See [Set up property splitting](#set-up-property-splitting) to get started. 
 
 ## Terms and concepts
 
