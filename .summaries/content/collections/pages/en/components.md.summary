@@ -1,17 +1,17 @@
-**Summary:** Documentation page demonstrating reusable site components including tabs partial for multi-language code examples, collapse partial for configuration tables, and admonition partial with eight different types (note, info, warning, example, tip, alpha, beta, deprecated).
+**Summary:** Documentation page demonstrating reusable UI components and partials for the Amplitude session-replay-browser package, including tabs, collapse sections, and admonition blocks with configuration examples for instanceName, flushIntervalMillis, serverZone, and other SDK parameters.
 
 **Keywords:**
+- partial components
 - tabs partial
-- tab partial
 - collapse partial
 - admonition partial
-- site components
-- multi-language code examples
-- configuration parameters table
-- LogLevel enum
-- Transport interface
-- FetchTransport
+- session-replay-browser
+- bundle-size partial
+- flushIntervalMillis
+- flushQueueSize
 - serverZone EU/US
-- Amplitude API configuration
-- partial templates
-- content formatting components
+- transportProvider
+- LogLevel configuration
+- instanceName parameter
+- serverUrl configuration
+- useBatch API setting
