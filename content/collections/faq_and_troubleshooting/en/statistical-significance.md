@@ -39,7 +39,7 @@ Amplitude uses standardized statistical methods to calculate statistical signifi
 
 **Interpreting stat sig results**
 
-For both sequential testing and the T-test, Amplitude uses a false positive rate of 5% to judge results, and it only looks at the best-performing variant. By default, Amplitude uses a 5% false positive rate, the threshold for significance is (1- p value) > 95%. You can set a different false positive rate in [Amplitude Experiment](docs/feature-experiment/workflow/finalize-statistical-preferences). You cannot change the false positive rate in the Funnel Analysis chart.
+For both sequential testing and the T-test, Amplitude uses a false positive rate of 5% to judge results, and it only looks at the best-performing variant. By default, Amplitude uses a 5% false positive rate, the threshold for significance is (1- p value) > 95%. You can set a different false positive rate in [Amplitude Experiment](/docs/feature-experiment/workflow/finalize-statistical-preferences). You cannot change the false positive rate in the Funnel Analysis chart.
 
 To help reduce false positives, Amplitude sets a minimum sample size before it declares significance. Currently, this minimum is set to 30 samples, five conversions, and five non-conversions, for each variant. Tests that do not meet these minimums are automatically considered not statistically significant.
 
