@@ -22,8 +22,7 @@ This feature is available to users on **all Amplitude plans**. See the [pricing 
 ## Before you begin
 
 * Microscope streams only highlight events selected in the chart's [Events Module](/docs/analytics/charts/build-charts-add-events) that occur during the date range selected.
-* *View Groups* and *Download Groups* are only available to Enterprise customers.
-* Microscope isn't available in the [Pathfinder](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas) section of the Event Segmentation chart.
+* *View Groups* and *Download Groups* are only available to customers who have purchased [Accounts add on](docs/analytics/account-level-reporting).
 
 ## Use Microscope
 
@@ -40,7 +39,7 @@ From here, depending on the chart type, you can:
 * **Watch Session Replays** of those user sessions.
 * **Exclude** or remove distracting or irrelevant series from the analysis.
 * **Create a cohort** of the users that make up the selected data point, which you can then further analyze by applying this [cohort](/docs/analytics/behavioral-cohorts) to other charts in Amplitude. When you apply a group in the Segmentation Module, you can also create a group cohort from here.
-* **View a list of all the users** in the selected data point. Click a user ID to open that user's profile in the *User Activity* tab. If you are an Enterprise customer with [account-level reporting](/docs/analytics/account-level-reporting), you can also use Microscope to view the groups in a data point. Click any group to see a list of users in that group, in the *User Activity* tab.
+* **View a list of all the users** in the selected data point. Click a user ID to open that user's profile in the *User Activity* tab. If you are a customer with [account-level reporting](/docs/analytics/account-level-reporting), you can also use Microscope to view the groups in a data point. Click any group to see a list of users in that group, in the *User Activity* tab.
 * **Download all the users** (up to 1 million) that make up the selected data point, in the form of a .CSV file. This file also contains each user's most-recently sent user property values.
 * **Add users to...** a [Feature Flag](/docs/feature-experiment/workflow/feature-flag-rollouts), [Feature Experiment](/docs/feature-experiment), [Web Experiment](/docs/web-experiment), [Guide, or Survey](/docs/guides-and-surveys).
 
@@ -90,9 +89,9 @@ Event names with a *sparkle* icon indicate that Amplitude has generated a name t
 
 ### View Session Replay from a user's event stream
 
-If you are a Growth or an Enterprise customer with the Session Replay add-on, you can launch a session replay from Microscope in the following Amplitude charts: Event Segmentation, Funnel Analysis, Journeys, and User Sessions.
+If you are a Growth or an Enterprise customer with the Session Replay add-on, you can launch a session replay from Microscope in the following Amplitude charts: Event Segmentation, Funnel Analysis, Journeys, Experiment, and User Sessions.
 
-While using Microscope in a supported chart, click on *View User Streams*. Check the *Streams with session replays* box in the modal that appears. Then click *Play Session* in the event stream to play the events directly below it. Check out more about the Session Replay feature, and learn about restrictions in the supported charts, in this help center article.
+While using Microscope in a supported chart, click on *View User Streams*. Check the *Streams with session replays* box in the modal that appears. Then click *Play Session* in the event stream to play the events directly below it. Check out more about the Session Replay feature, and learn about restrictions in the supported charts, in this help center article. Alternatively, you can click *Watch Session Replay*.
 
 ## Explore conversion drivers
 
