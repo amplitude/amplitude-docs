@@ -19,6 +19,7 @@ migration_guide:
   - 0d5a2d8a-7266-4442-807c-2f2f84fe1ae5
 package_name: '@amplitude/analytics-react-native'
 platform: 'React Native'
+full_details: true
 ---
 The React Native SDK lets you send events to Amplitude.
 

@@ -66,10 +66,10 @@ Under **Send Events**, make sure the toggle is enabled ("Events are sent to Braz
 
 
 {{partial:admonition type="warning" title="Events for anonymous users"}}
-Braze requires that all events have a user ID present. If you have selected any events to send to Braze that may not have a user ID, add a filter to send only events where the user ID is present. Otherwise, your delivery metrics may be affected.
+Braze requires that all events have an identifier present. If you selected any events to send to Braze that may not have an identifier, add a filter to send only events where the identifier is present. Otherwise, your delivery metrics may be affected.
 {{/partial:admonition}}
 
-2. (optional) In **Select additional properties**, select any more event and user properties you want to send to Braze. If you don't select any properties here, Amplitude doesn't send any. These properties are sent to Braze as [Braze custom event properties](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events/#custom-event-properties). _Transformed event properties and transformed user properties aren't supported._
+1. (optional) In **Select additional properties**, select any more event and user properties you want to send to Braze. If you don't select any properties here, Amplitude doesn't send any. These properties are sent to Braze as [Braze custom event properties](https://www.braze.com/docs/user_guide/data_and_analytics/custom_data/custom_events/#custom-event-properties). _Transformed event properties and transformed user properties aren't supported._
 
 ### Configure user forwarding
 

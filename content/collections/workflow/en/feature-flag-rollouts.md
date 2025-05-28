@@ -23,6 +23,10 @@ This feature is available to users on **all Amplitude plans**. See the [pricing 
 
 ## Create a new flag
 
+{{partial:admonition type="tip" heading="Migrate your flags from Optimizely"}}
+Migrate your flags from Optimizely into Amplitude. Contact your Amplitude representative or [Amplitude Support](https://gethelp.amplitude.com) to start the process.
+{{/partial:admonition}}
+
 You can't create a new flag until you’ve created a deployment, and either installed the [SDK](/docs/sdks/experiment-sdks) or are set up to call the [evaluation REST API](/docs/apis/experiment/experiment-evaluation-api). Once you've done that, follow these steps:
 
 1. Navigate to *Experiment > Feature Flags* in the left-hand sidebar. Click *+ Create Feature Flag*.

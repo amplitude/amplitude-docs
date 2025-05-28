@@ -3,16 +3,17 @@ This documentation explains how to create and deploy feature flags in Amplitude 
 
 ## Keywords
 - Amplitude Experiment feature flags
-- feature rollout deployment
-- flag variants and weights
-- bucketing unit configuration
-- bucketing salt randomization
+- feature rollouts
+- flag creation workflow
+- deployment configuration
+- bucketing unit selection
+- remote vs local evaluation mode
+- variant creation and weights
 - user segment targeting
 - rollout percentage controls
-- evaluation mode (Remote/Local)
-- deployment configuration
-- variant value strings
+- bucketing salt
+- flag activation process
 - Rule Based User Segments
-- flag activation workflow
+- Optimizely flag migration
 - experiment SDK integration
 - evaluation REST API

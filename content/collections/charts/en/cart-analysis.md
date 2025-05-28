@@ -23,7 +23,7 @@ Cart Analysis is available for Amplitude's Event Segmentation and Funnel Analysi
 
 ### Feature availability
 
-This feature is in an open beta and only available to users on Growth and Enterprise plans. See [Set up property splitting](#set-up-property-splitting) to get started. 
+This feature is available to users on Growth and Enterprise plans. See [Set up property splitting](#set-up-property-splitting) to get started. 
 
 ## Terms and concepts
 
@@ -60,6 +60,8 @@ Here's a brief overview of the more important ideas that make cart analysis work
 {{partial:admonition type='note'}}
 Child properties count toward your property volume counts.
 {{/partial:admonition}}
+
+For advanced cart analysis operations on arrays of data, you can also use [parallel operators in derived properties](/docs/data/derived-properties#parallel-operators). These operators allow you to perform calculations like sums, products, and comparisons across sibling properties within the same parent array.
 
 ## Set up property splitting
 
