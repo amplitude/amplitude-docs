@@ -1,4 +1,4 @@
-**Summary:** Documents Amplitude Analytics' query time sampling feature that optimizes performance by analyzing a 10% random user sample and up-sampling results using inverse sampling methods, with configuration options for funnel charts and project-level defaults.
+**Summary:** Documents Amplitude Analytics' query time sampling feature that optimizes chart performance by analyzing a 10% random user sample and up-sampling results using inverse sampling methods, with configuration options for individual funnel charts, project-wide defaults, and dashboard-level sampling controls.
 
 **Keywords:**
 - query time sampling
@@ -7,10 +7,9 @@
 - 10% user sample
 - up-sampling
 - inverse sampling
-- performance optimization
-- lightning bolt toggle
+- lightning bolt icon
 - project administrator settings
-- cohort creation limitations
-- account analysis restrictions
+- dashboard sampling toggle
+- sampled data limitations
+- cohort creation restrictions
 - statistical extrapolation
-- dataset querying
