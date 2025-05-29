@@ -30,6 +30,10 @@ Amplitude's Browser SDK 2 lets you send events to Amplitude.
 
 Install the dependency with npm, yarn, or the script loader.
 
+{{partial:admonition type="info" heading="Unified SDK"}}
+Install the [Browser Unified SDK](/docs/sdks/browser-unified-sdk) to access the Experiment SDK along with other Amplitude products (Analytics, Session Replay). The Unified SDK provides a single entry point for all Amplitude features and simplifies the integration process by handling the initialization and configuration of all components.
+{{/partial:admonition}}
+
 {{partial:tabs tabs="Script loader, npm, yarn"}}
 {{partial:tab name="Script loader"}}
 When you use the script loader and enable Autocapture, Browser SDK track interactions on your site automatically. For more information, see [Autocapture](#autocapture).
@@ -37,20 +41,36 @@ When you use the script loader and enable Autocapture, Browser SDK track interac
 {{/partial:tab}}
 {{partial:tab name="npm"}}
 ```bash
+# Install Analytics SDK only
 npm install @amplitude/analytics-browser
+
+# Or install Unified SDK to get access to all Amplitude products
+npm install @amplitude/unified
 ```
 Import Amplitude into your project
 ```js
+// If using Analytics SDK only
 import * as amplitude from '@amplitude/analytics-browser';
+
+// If using Unified SDK
+import * as amplitude from '@amplitude/unified';
 ```
 {{/partial:tab}}
 {{partial:tab name="yarn"}}
 ```bash
+# Install Analytics SDK only
 yarn add @amplitude/analytics-browser
+
+# Or install Unified SDK to get access to all Amplitude products
+yarn add @amplitude/unified
 ```
 Import Amplitude into your project
 ```js
+// If using Analytics SDK only
 import * as amplitude from '@amplitude/analytics-browser';
+
+// If using Unified SDK
+import * as amplitude from '@amplitude/unified';
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
