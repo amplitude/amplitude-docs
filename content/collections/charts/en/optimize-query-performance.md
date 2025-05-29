@@ -39,12 +39,12 @@ To enable query time sampling in a chart:
 
 Project administrators can set query time sampling as the default for all new charts in a project.
 
-1. Navigate to you project's settings.
+1. Navigate to your project's settings.
 2. Enable the toggle for **Query Time Sampling**.
 
 ## Dashboard query time sampling
 
-Enable query time sampling for a dashboard that contains more than one chart. In the dashboard toolbar, click Sampling to toggle sampling on or off for the dashboard.
+To enable query time sampling for a dashboard that contains more than one chart, go the dashboard toolbar, and click Sampling to toggle sampling on or off for the dashboard.
 
 After you enable it, the dashboard shows that query time sampling is enabled. Each chart also displays a lightning bolt icon:
 
