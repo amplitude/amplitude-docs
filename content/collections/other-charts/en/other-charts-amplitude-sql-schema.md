@@ -6,8 +6,8 @@ source: 'https://help.amplitude.com/hc/en-us/articles/20460581705243-Amplitude-S
 this_article_will_help_you:
   - 'Use field shortcuts to query your Snowflake database in Amplitude SQL'
   - 'Understand the schema of the $events table'
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717104948
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1748562078
 landing: true
 landing_blurb: 'Use field shortcuts to query your Snowflake database in Amplitude SQL'
 ---

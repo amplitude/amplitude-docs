@@ -1,19 +1,15 @@
-**Summary:** Documents Amplitude SQL's table schema for the $events table and merged users table in Snowflake, including special field shortcuts ($date, $events, $amplitude_id) that integrate with Amplitude's datepicker and automatically handle merged user mappings.
+**Summary:** Documents Amplitude SQL's table schema and field shortcuts for querying Snowflake databases, including the $events table structure with detailed column specifications and special shortcuts ($date, $events, $amplitude_id) that integrate with Amplitude's datepicker and handle merged user mappings automatically.
 
 **Keywords:**
 - Amplitude SQL
-- $events table schema
-- Snowflake database
-- field shortcuts
-- $date datepicker integration
-- $amplitude_id merged users
+- Snowflake database schema
+- $events table
+- field shortcuts ($date, $events, $amplitude_id)
 - merged users table
-- event_time timestamp
-- client_event_time
-- server_received_time
-- amplitude_id mapping
-- one-table schema
-- VARIANT data type
-- UTC timezone handling
-- device_id tracking
-- session_id milliseconds epoch
+- datepicker integration
+- amplitude_id column mapping
+- event_time timestamp calculation
+- client_event_time vs server_received_time
+- one-table schema design
+- VARIANT data type columns
+- merged_amplitude_id handling

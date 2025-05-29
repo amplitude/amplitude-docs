@@ -1,19 +1,18 @@
-**Summary:** This documentation covers Amplitude SQL, a chart type that enables custom SQL queries against Amplitude data stored in Snowflake databases, including setup, syntax using the $events table shorthand, and visualization features with data table results and time series charts.
+**Summary:** This documentation covers Amplitude SQL, a chart type that enables custom SQL queries against Amplitude data stored in Snowflake databases, including setup, syntax with $events table shorthand, custom properties querying with user_properties and event_properties prefixes, and visualization features.
 
 **Keywords:**
 - Amplitude SQL
 - Snowflake database
 - Query add-on
 - $events table
-- custom SQL queries
 - user_properties prefix
 - event_properties prefix
 - variant data types
 - $amplitude_id
 - $date field
-- time series visualization
 - Growth Enterprise plans
 - 30-minute data loading
 - simplified table schema
-- autocomplete columns
-- CSV export 1000 row limit
+- time series visualization
+- custom SQL queries
+- Portfolio Views incompatibility

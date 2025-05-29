@@ -1,52 +1,48 @@
-## Amplitude Analytics Platform - Other Charts Collection
+## Amplitude SQL and User Composition Analytics
 
-This documentation covers specialized chart types within Amplitude's analytics platform, focusing on advanced analysis capabilities that extend beyond standard event-based analytics. The collection encompasses custom SQL querying, user property analysis, and database integration features designed for enterprise-level data exploration.
+Amplitude SQL is a specialized chart type that enables direct SQL querying against Amplitude event data stored in Snowflake databases. This feature is available as a Query add-on for Growth Enterprise plans and provides a simplified one-table schema design for custom analytics beyond standard Amplitude charts.
+
+The core functionality centers around the `$events` table, which consolidates all event data into a single queryable structure. This table uses Snowflake's VARIANT data types to handle flexible event and user properties, with data refreshed every 30 minutes for near real-time analysis.
 
 ## Product Relationships and Features
 
-The "other-charts" collection represents advanced analytical tools that complement Amplitude's core event tracking and analysis capabilities:
+**Amplitude SQL** serves as the primary custom querying interface, working alongside the **User Composition chart** to provide comprehensive user analytics. While Amplitude SQL focuses on event-driven queries with full SQL flexibility, User Composition analyzes users based on their properties rather than their events, creating complementary analytical approaches.
 
-**Amplitude SQL** serves as the primary custom querying interface, enabling direct SQL access to event data stored in Snowflake databases. This feature bridges the gap between Amplitude's guided analytics interface and raw data exploration needs.
-
-**User Composition charts** provide user-centric analysis capabilities that focus on user properties rather than event behaviors, offering a complementary perspective to event-driven analytics.
-
-Both chart types integrate with Amplitude's broader visualization and export ecosystem, supporting time series charts, data tables, and CSV exports with consistent UI patterns across the platform.
+The User Composition chart operates through three key modules:
+- **Composition By Module**: Defines which user property to analyze
+- **Segment By Module**: Applies filtering criteria to user segments  
+- **Measured As Module**: Determines how property values are calculated (Most Recent Value, All Values, or Cross Property Values)
 
 ## Key Nomenclature and Definitions
 
-**$events table**: A simplified, one-table schema representation of Amplitude event data in Snowflake, featuring flattened user and event properties with standardized field naming conventions.
+**Core Schema Elements:**
+- `$events`: Shorthand reference for the main events table containing all Amplitude data
+- `$amplitude_id`: Special field that automatically handles user identity mapping and merged user scenarios
+- `$date`: Integrated field that works with Amplitude's datepicker for time-based filtering
+- `merged_amplitude_id`: Handles user identity consolidation when users are merged
 
-**Field shortcuts**: Special prefixed fields ($date, $events, $amplitude_id) that provide automatic integration with Amplitude's UI components like datepickers and handle complex data relationships transparently.
+**Query Syntax:**
+- `user_properties.property_name`: Prefix for accessing user-level attributes
+- `event_properties.property_name`: Prefix for accessing event-specific attributes
+- `event_time`: Calculated timestamp field derived from client_event_time or server_received_time
+- VARIANT data types: Snowflake's flexible column format for storing JSON-like property data
 
-**Merged users table**: A mapping system that handles user identity resolution, automatically connecting device_id and user_id relationships through amplitude_id mappings.
-
-**User Composition analysis**: A methodology for analyzing active users based on property values rather than event occurrences, supporting three measurement approaches:
+**User Composition Terminology:**
 - **Most Recent Value**: Uses the latest property value for each user
-- **All Values**: Includes all historical property values
-- **Cross Property Values**: Analyzes relationships between multiple properties
-
-**VARIANT data type**: Snowflake's JSON-like data structure used for storing flexible event and user property data, accessed through dot notation in SQL queries.
+- **All Values**: Includes all historical values a user has had for a property
+- **Cross Property Values**: Analyzes combinations across multiple user properties
+- **Mutually Exclusive Buckets**: Users are categorized into distinct, non-overlapping segments
 
 ## Ecosystem Integration
 
-These chart types operate within Amplitude's Growth and Enterprise tier offerings, requiring the Query add-on for SQL functionality. The integration points include:
+Amplitude SQL integrates directly with Snowflake's data warehouse infrastructure, requiring the Query add-on and Growth Enterprise plan access. The system maintains a simplified schema that abstracts Amplitude's complex internal data structure into a single queryable table.
 
-**Data Pipeline**: Events flow from Amplitude's collection system into Snowflake databases with approximately 30-minute latency, maintaining UTC timezone standardization and millisecond epoch timestamp precision.
+The `merged_amplitude_id` functionality demonstrates deep integration with Amplitude's user identity resolution system, automatically handling cases where user profiles have been consolidated. The `$date` field integration with Amplitude's datepicker ensures consistent time-based filtering across custom SQL queries and standard Amplitude charts.
 
-**Visualization Layer**: Results integrate with Amplitude's standard charting infrastructure, supporting both tabular data display and time series visualizations with consistent export capabilities.
+**Limitations and Compatibility:**
+- Portfolio Views are incompatible with Amplitude SQL charts
+- User Composition displays top 13 property values maximum
+- 30-minute data latency for SQL queries
+- Time series visualization available for SQL results
 
-**Schema Management**: The simplified table schema abstracts complex data relationships while maintaining compatibility with Amplitude's user identity resolution and property management systems.
-
-## Technical Implementation
-
-**SQL Query Interface**: Supports standard SQL syntax with Amplitude-specific enhancements including autocomplete for column names, automatic user merging through $amplitude_id, and integrated date filtering through $date field shortcuts.
-
-**Data Access Patterns**: 
-- Direct table access via `$events` shorthand
-- Property access using `user_properties.property_name` and `event_properties.property_name` prefixes
-- Automatic handling of VARIANT data type conversions
-- Built-in support for device_id, session_id, and timestamp field relationships
-
-**Export Limitations**: CSV exports are capped at 1000 rows, encouraging focused analysis and integration with external data processing tools for larger datasets.
-
-The platform maintains separation between guided analytics (standard Amplitude charts) and flexible exploration (SQL charts), while ensuring consistent data governance and user identity management across both approaches.
+The system supports both event-driven analysis (through Amplitude SQL) and user-centric analysis (through User Composition), providing flexibility for different analytical use cases while maintaining integration with Amplitude's broader analytics platform.
