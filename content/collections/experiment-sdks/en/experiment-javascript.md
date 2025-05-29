@@ -150,7 +150,7 @@ initialize(apiKey: string, config?: ExperimentConfig): ExperimentClient
 | `apikey`  | *Required*. The deployment key which authorizes fetch requests and determines which flags to evaluate for the user |
 | `config`  | The client configuration to customize SDK client behavior.                                                         |
 
-The initializer returens a singleton instance, so subsequent initializations for the same instance name always return the initial instance. To create multiple instances, use the `instanceName` configuration.
+The initializer returns a singleton instance, so subsequent initializations for the same instance name always return the initial instance. To create multiple instances, use the `instanceName` configuration.
 
 {{partial:tabs tabs="Amplitude, Third-party"}}
 {{partial:tab name="Amplitude"}}
