@@ -96,7 +96,7 @@ import 'package:amplitude_flutter/events/base_event.dart';
 class YourClass {
   Future<void> exampleForAmplitude() async {
     // Create and initailize the instance
-    final Amplitude analytics = Amplitude(Configuration(
+    final Amplitude amplitude = Amplitude(Configuration(
         apiKey: 'YOUR-API-KEY',
     ));
 
