@@ -8,6 +8,9 @@ tree:
     title: Browser
     children:
       -
+        id: 3d548ca6-1411-43a6-9b9d-7e244092c4bd
+        entry: 9d42e657-b743-4cb3-8e32-1c75c1e8f580
+      -
         id: 6b9b7260-5144-413f-85e9-06ed3bebd350
         entry: 00d74a7b-23bd-4a24-86a1-92c046e7e1b5
       -
