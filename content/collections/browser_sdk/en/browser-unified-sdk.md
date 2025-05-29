@@ -112,6 +112,7 @@ initAll('YOUR_API_KEY', {
   // Session Replay options
   sessionReplay: {
     // Session Replay configuration options
+    sampleRate: 1 // To enable session replay
   },
   
   // Experiment options
@@ -134,7 +135,10 @@ All options from `@amplitude/analytics-browser` are supported. See the [Analytic
 
 ### Session Replay options
 
-All options from `@amplitude/plugin-session-replay-browser` are supported. See the [Session Replay documentation](/docs/session-replay/session-replay-standalone-sdk#configuration) for details.
+The Unified Browser SDK supports all options from `@amplitude/plugin-session-replay-browser`. See the [Session Replay Plugin documentation](/docs/session-replay/session-replay-plugin#configuration) for more information. Set `config.sessionReplay.sampleRate` to a non-zero value to enable session replay. 
+
+Sample Rate controls the rate at which Amplitude captures session replays. For example, if you set `config.sessionReplay.sampleRate` to `0.5`, Session Replay captures roughly half of all sessions.
+
 
 ### Experiment options
 
