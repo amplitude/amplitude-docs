@@ -31,11 +31,12 @@ When using multiple metrics, sorting by a particular column displays data for al
 
 ## Limits for .CSV exports
 
-Results exported to .CSV have row limits based on the metric type. If the data table contains multiple metrics of different kinds, the smallest row limit applies. Amplitude Analytics prunes rows exceeding the limit, and they don't appear in the exported .CSV.
+When you export results to CSV, the maximum row count depends on the column type: event columns have one limit, while metric columns have limits that vary by metric type. If the data table contains multiple columns with different limits, the smallest limit applies. Amplitude prunes rows exceeding the limit, and they don't appear in the exported CSV.
 
-* Event segmentation metrics **without** attribution have a limit of 10,000 rows.
-* Funnel metrics **without** attribution have a limit of 300 rows.
-* Session metrics have a limit of 100 rows.
+* Event columns have a limit of 10,000 rows.
+* Event Segmentation metrics **without** attribution have a limit of 10,000 rows.
+* Funnel Analysis metrics **without** attribution have a limit of 300 rows.
+* Sessions metrics have a limit of 100 rows.
 * Any metric **with** attribution has a  limit of 20 rows.
 
 ## Limits for Dashboard REST API queries
