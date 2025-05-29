@@ -55,25 +55,25 @@ Session Replay supports Shadow DOM, but there may be exceptions depending on the
 Install the plugin with npm or yarn.
 
 {{partial:admonition type="info" heading="Unified SDK"}}
-Install the [Browser Unified SDK](/docs/sdks/browser-unified-sdk) to access the Experiment SDK along with other Amplitude products (Analytics, Session Replay). The Unified SDK provides a single entry point for all Amplitude features and simplifies the integration process by handling the initialization and configuration of all components.
+If you haven't installed the Browser SDK yet, consider using the [Browser Unified SDK](/docs/sdks/browser-unified-sdk) instead. The Unified SDK provides a single entry point for all Amplitude features (Analytics, Session Replay, Experiment) and simplifies the integration process by handling the initialization and configuration of all components.
 {{/partial:admonition}}
 
 {{partial:tabs tabs="npm, yarn"}}
 {{partial:tab name="npm"}}
 ```bash
-# Install Session Replay Plugin only
+# If you already have Browser SDK installed, install the Session Replay Plugin
 npm install @amplitude/plugin-session-replay-browser --save
 
-# Or install Unified SDK to get access to all Amplitude products
+# OR if you haven't installed Browser SDK yet, use the Unified SDK instead
 npm install @amplitude/unified
 ```
 {{/partial:tab}}
 {{partial:tab name="yarn"}}
 ```bash
-# Install Session Replay Plugin only
+# If you already have Browser SDK installed, install the Session Replay Plugin
 yarn add @amplitude/plugin-session-replay-browser
 
-# Or install Unified SDK to get access to all Amplitude products
+# OR if you haven't installed Browser SDK yet, use the Unified SDK instead
 yarn add @amplitude/unified
 ```
 {{/partial:tab}}
