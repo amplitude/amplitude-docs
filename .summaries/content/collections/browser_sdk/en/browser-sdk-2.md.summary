@@ -1,40 +1,33 @@
-## Summary
+**Summary:**
+This documentation covers Amplitude's Browser SDK 2 for JavaScript/TypeScript, which provides analytics tracking capabilities including autocapture features, event tracking, user/group management, revenue tracking, and advanced configurations like cross-domain tracking, offline mode, and remote configuration.
 
-This documentation covers Amplitude's Browser SDK 2, which enables event tracking to Amplitude with installation via script loader, npm, or yarn, initialization with API keys and configuration options, and comprehensive autocapture functionality for attribution, page views, sessions, form interactions, file downloads, and element interactions.
-
-## Keywords
-
+**Keywords:**
 - Browser SDK 2
 - @amplitude/analytics-browser
-- HTTP V2 API
-- autocapture
-- script loader installation
-- npm/yarn installation
-- amplitude.init()
-- amplitude.track()
-- deviceId/userId validation
-- minIdLength configuration
-- flushIntervalMillis/flushQueueSize
-- EU data residency serverZone
-- marketing attribution tracking
+- @amplitude/unified
+- JavaScript TypeScript analytics
+- autocapture tracking
+- attribution tracking
 - UTM parameters
-- click ID parameters (gclid, fbclid, etc.)
 - page view tracking
 - session tracking
-- form interaction tracking
-- file download tracking
-- element interaction tracking
-- visual labeling
-- user properties Identify API
-- group properties groupIdentify
-- revenue tracking Revenue interface
+- form interactions tracking
+- file downloads tracking
+- element interactions tracking
 - cross-domain tracking
 - sendBeacon transport
-- Content Security Policy CSP
-- cookie management AMP prefix
 - offline mode
 - remote configuration
-- plugins enrichment/destination
-- trackingOptions
-- identityStorage localStorage/cookie
-- excludeReferrers configuration
+- cookie management
+- CSP Content Security Policy
+- revenue tracking
+- user properties identification
+- group properties
+- plugins enrichment destination
+- HTTP V2 API
+- flushIntervalMillis flushQueueSize
+- deviceId userId sessionId
+- marketing attribution
+- visual labeling
+- AMP cookies prefix
+- localStorage identityStorage

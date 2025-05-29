@@ -1,0 +1,15 @@
+**Summary:** Documents the Browser Unified SDK (@amplitude/unified) which provides a single entry point for initializing and accessing Analytics, Experiment, and Session Replay features through the `initAll()` method, with shared configuration options like serverZone and instanceName.
+
+**Keywords:**
+- Browser Unified SDK
+- @amplitude/unified
+- initAll method
+- Analytics Experiment Session Replay integration
+- unified initialization
+- shared configuration options
+- serverZone instanceName
+- track identify experiment sessionReplay functions
+- beta release
+- TypeScript JavaScript support
+- bundle size optimization
+- individual product installation
