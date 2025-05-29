@@ -14,20 +14,18 @@ This documentation covers the Amplitude Experiment JavaScript SDK for client-sid
 - initializeWithAmplitudeAnalytics
 - deployment key
 - ExperimentClient
-- variant() method
 - fetch() method
+- variant() method
 - start() method
-- ExperimentUserProvider
+- ExperimentUser
 - ExposureTrackingProvider
+- UserProvider
 - automaticExposureTracking
 - initialVariants bootstrapping
 - Source.InitialVariants
-- flag configurations
-- user bucketing
-- Amplitude Analytics integration
-- Segment integration
+- fetchOnStart configuration
+- pollOnStart configuration
 - server-side rendering (SSR)
-- account-level bucketing
-- group properties
-- fallback variants
-- payload access
+- Unified SDK integration
+- Segment integration
+- mParticle integration
