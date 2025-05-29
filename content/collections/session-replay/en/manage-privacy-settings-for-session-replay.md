@@ -29,7 +29,7 @@ There are three out-of-the-box privacy levels for Session Replay. You can also i
 Any changes you make to these privacy levels take precedence over privacy definitions set in the SDK.
 
 {{partial:admonition type="warning" heading="React Native remote masking limitations"}}
-React Native remote masking is currently unstable and might not work as expected. For React Native applications, it's recommended to implement masking manually using the `AmpMaskView` component. For more information, see [Mask onscreen data](/docs/session-replay/session-replay-react-native-sdk-plugin#mask-onscreen-data) in the React Native Session Replay documentation.
+React Native remote masking may be unstable and not work as expected. For React Native applications, Amplitude recommends that you implement masking manually using the `AmpMaskView` component. For more information, see [Mask onscreen data](/docs/session-replay/session-replay-react-native-sdk-plugin#mask-onscreen-data) in the React Native Session Replay documentation.
 {{/partial:admonition}}
 
 ## Set your privacy level
