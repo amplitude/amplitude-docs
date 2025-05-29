@@ -54,21 +54,35 @@ Session Replay supports Shadow DOM, but there may be exceptions depending on the
 
 Install the plugin with npm or yarn.
 
+{{partial:admonition type="info" heading="Unified SDK"}}
+Install the [Browser Unified SDK](/docs/sdks/browser-unified-sdk) to access the Experiment SDK along with other Amplitude products (Analytics, Session Replay). The Unified SDK provides a single entry point for all Amplitude features and simplifies the integration process by handling the initialization and configuration of all components.
+{{/partial:admonition}}
+
 {{partial:tabs tabs="npm, yarn"}}
 {{partial:tab name="npm"}}
 ```bash
+# Install Session Replay Plugin only
 npm install @amplitude/plugin-session-replay-browser --save
+
+# Or install Unified SDK to get access to all Amplitude products
+npm install @amplitude/unified
 ```
 {{/partial:tab}}
 {{partial:tab name="yarn"}}
 ```bash
+# Install Session Replay Plugin only
 yarn add @amplitude/plugin-session-replay-browser
+
+# Or install Unified SDK to get access to all Amplitude products
+yarn add @amplitude/unified
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
 
 Configure your application code.
 
+{{partial:tabs tabs="Plugin configuration, Unified SDK"}}
+{{partial:tab name="Plugin configuration"}}
 ```js
 import * as amplitude from '@amplitude/analytics-browser';
 import { sessionReplayPlugin } from '@amplitude/plugin-session-replay-browser';
@@ -80,6 +94,20 @@ amplitude.add(sessionReplayTracking);
 // Your existing initialization logic with Browser SDK
 amplitude.init(API_KEY);
 ```
+{{/partial:tab}}
+{{partial:tab name="Unified SDK"}}
+```js
+import { initAll } from '@amplitude/unified';
+
+// Initialize Unified SDK with Session Replay configuration
+initAll('YOUR_API_KEY', {
+    sessionReplay: {
+        sampleRate: "<number>"
+    }
+});
+```
+{{/partial:tab}}
+{{/partial:tabs}}
 
 You can also add the code directly to the `<head>` of your site. With this method, be sure that the Browser SDK isn't initialized elsewhere in your application. If you initialize the Browser SDK more than once, you may see mismatches in Device ID or Session ID.
 
