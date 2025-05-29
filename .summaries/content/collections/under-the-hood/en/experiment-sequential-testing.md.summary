@@ -1,20 +1,18 @@
-**Summary:** This documentation explains how Amplitude Experiment uses sequential testing (specifically mixture sequential probability ratio test - mSPRT) for statistical inference in A/B testing, allowing early experiment termination and faster experimentation compared to traditional T-tests through hypothesis testing of null vs alternative hypotheses.
+**Summary:** This documentation explains how Amplitude Experiment uses mixture sequential probability ratio test (mSPRT) for statistical inference in A/B testing, allowing early experiment termination without predetermined sample sizes and providing valid results at any viewing time, contrasting with traditional T-tests.
 
 **Keywords:**
 - sequential testing
-- mSPRT (mixture sequential probability ratio test)
-- statistical inference
+- mixture sequential probability ratio test (mSPRT)
 - hypothesis testing
 - null hypothesis
 - alternative hypothesis
 - early experiment termination
-- T-tests comparison
+- statistical inference
+- A/B testing
 - randomized control trial
 - treatment variants
-- arithmetic means comparison
-- uniques metrics
-- average totals
-- sum of property
+- binary metrics
+- continuous metrics
+- Central Limit Theorem
+- outliers
 - conversion rate testing
-- mixture sequential probability ratio
-- likelihood ratios
