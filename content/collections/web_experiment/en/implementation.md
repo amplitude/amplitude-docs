@@ -32,12 +32,25 @@ Replace `API_KEY` with your project's API key in one of the synchronous scripts 
 {{/partial:tab}}
 {{/partial:tabs}}
 
-{{partial:admonition type="note" heading="Content security policies"}}
-If your site defines the `script-src` content policy directive, add `*.amplitude.com` and `unsafe-inline` to the policy values. These additions enable loading the Web Experiment script and visual editor on your site.
+{{partial:admonition type="note" heading="Security headers"}}
+Your site may need the following security header adjustments to work with Web Experiment.
+
+{{partial:tabs tabs="Content Security Policy, Cross-Origin-Opener-Policy"}}
+{{partial:tab name="Content Security Policy"}}
+If your site defines the `script-src` content policy directive, add `*.amplitude.com` and `unsafe-inline` to the policy values. These changes enable loading the Web Experiment script and visual editor on your site.
 
 ```text
 Content-Security-Policy: script-src *.amplitude.com unsafe-inline;
 ```
+{{/partial:tab}}
+{{partial:tab name="Cross-Origin-Opener-Policy"}}
+If your site sets the `Cross-Origin-Opener-Policy` header, you can either remove it or set it to `unsafe-none`. This allows the visual editor to load on your site.
+
+```text
+Cross-Origin-Opener-Policy: unsafe-none
+```
+{{/partial:tab}}
+{{/partial:tabs}}
 {{/partial:admonition}}
 
 ### Async script with anti-flicker snippet
