@@ -1,6 +1,13 @@
+https://amplitude.com/docs/hc/en-us/articles/115000959052-For-Developers-Getting-Started
+
 {
   "trailingSlash": false,
   "redirects": [
+        {
+      "source": "/docs/hc/en-us/articles/115000959052((?:-[a-zA-Z0-9-]+)?)",
+      "destination": "/docs/data/data-get-started",
+      "statusCode": 301
+    },
     {
       "source": "/docs/guides-and-surveys/guides/roles-and-permissions",
       "destination": "/docs/guides-and-surveys/roles-and-permissions",
