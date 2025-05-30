@@ -37,7 +37,7 @@ When you export results to CSV, the maximum row count depends on the column type
 * Event Segmentation metrics **without** attribution have a limit of 10,000 rows.
 * Funnel Analysis metrics **without** attribution have a limit of 300 rows.
 * Sessions metrics have a limit of 100 rows.
-* Any metric **with** attribution has a  limit of 20 rows.
+* Any metric **with** attribution has a limit of 20 rows.
 
 ## Limits for Dashboard REST API queries
 
