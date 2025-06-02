@@ -8,8 +8,9 @@ this_article_will_help_you:
   - 'Fix those issues quickly'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1725399692
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1748904690
+ai_summary: "Amplitude's AI Data Assistant provides suggestions for improving tracking plans by prioritizing modifications based on event volume and query counts. Users can easily implement these suggestions directly on the Data home page, streamlining the process of managing messy data. This feature is available to all Amplitude users."
 ---
 Maintaining a clean and organized tracking plan is key to maximizing the value you get from Amplitude Data. But when you have hundreds or even thousands of events and properties, doing so can be a daunting task. This is particularly true for identifying what you have to do to improve messy data.
 
