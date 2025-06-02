@@ -8,9 +8,10 @@ this_article_will_help_you:
   - 'Understand how Amplitude calculates statistical significance for formula metrics'
 landing: true
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1731622844
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1748904578
 landing_blurb: 'Understand the different kinds of formula metrics supported by the Experiment Results chart'
+ai_summary: 'A formula metric in Experiment Results chart allows flexibility in analysis by combining events through mathematical operations. To create one, select a formula, define metrics, choose events, input a formula, name the metric, and apply. Supported functions include UNIQUES, TOTALS, PROPSUM, and more. Amplitude calculates formula metric results for experiment data.'
 ---
 In an Experiment Results chart, using a **formula metric** offers you greater flexibility when performing analyses. A formula metric is a metric that consists of:
 

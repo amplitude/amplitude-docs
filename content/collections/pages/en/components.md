@@ -3,8 +3,9 @@ id: 4d2e02c1-9bf7-48ec-ab17-641fe208de23
 blueprint: page
 title: 'Site components'
 package: "@amplitude/session-replay-browser"
+ai_summary: "A formula metric in Experiment Results chart allows flexibility in analysis by combining events through mathematical operations. To create one, select a formula, define metrics, choose events, input a formula, name the metric, and apply. Supported functions include UNIQUES, TOTALS, PROPSUM, and more. Amplitude calculates formula metric results for experiment data."
 ---
-{{partial:bundle-size :package_name="package"}}
+{{partial:summary}}
 
 
 ## Tabs

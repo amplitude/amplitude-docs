@@ -8,8 +8,9 @@ this_article_will_help_you:
   - 'Review the functions and operators that can be used when creating your derived properties'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1718733210
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1748904723
+ai_summary: "Amplitude Data's derived properties allow retroactive creation of new event and user properties based on existing ones using functions and operators. These derived properties are computed on the fly, offering flexibility in data analysis. Enterprise plan users can access this feature to create and preview derived properties with various functions and operators."
 ---
 You may want to run analyses based on properties that weren't sent to Amplitude. Amplitude Data’s **derived properties** allow you to create new event and user properties retroactively, based on functions and operators that you can apply across multiple existing properties. These don't affect your raw data and Amplitude computes them on the fly.
 
