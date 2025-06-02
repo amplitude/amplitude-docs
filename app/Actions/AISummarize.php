@@ -142,7 +142,7 @@ class AISummarize extends Action
 
             // Consider making the model and prompt details configurable
             $model = 'gpt-3.5-turbo'; // Or 'gpt-4', 'gpt-4o', etc.
-            $prompt = "Provide a concise summary of 75 words or less of the following text. Do not provide instructions or formatting. This summary is for a SEO and to help a human understand the content. Provide responses in active voice and present tense. The text is:\n\n\"" . mb_strimwidth($text, 0, 15000, "...") . "\"\n\nSummary:"; // Truncate input if too long for the model's context window
+            $prompt = "Provide a concise summary of 50 words or less of the following text. Do not provide instructions or formatting. This summary is for a SEO and to help a human understand the content. Provide responses in active voice and present tense. The text is:\n\n\"" . mb_strimwidth($text, 0, 15000, "...") . "\"\n\nSummary:"; // Truncate input if too long for the model's context window
 
             Log::info("[OpenAISummarizer] Sending text to OpenAI (model: {$model}). Text length: " . strlen($text));
 
