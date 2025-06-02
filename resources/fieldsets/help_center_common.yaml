@@ -7,6 +7,12 @@ fields:
       display: Title
       localizable: false
   -
+    handle: ai_summary
+    field:
+      type: textarea
+      display: 'AI Summary'
+      localizable: false
+  -
     handle: this_article_will_help_you
     field:
       type: list
