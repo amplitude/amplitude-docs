@@ -11,6 +11,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718056137
+ai_summary: "Amplitude's chart-building modules include Events, Measured As, and Segment By. You select events and metrics in the Events module, define subsets of users in the Segment By module, and focus on specific chart types for the Measured As module. Events are key actions in your product, and you can add up to 10 to an analysis. Use wildcards to search for events, add conditions, and group results. Understand how event properties and user properties affect your analysis. After mastering the Events module, learn to add user segments to your charts."
 ---
 Amplitude builds charts using three modules located along the left side of your chart. Their specific function can change from chart to chart, they follow some general guidelines:
 

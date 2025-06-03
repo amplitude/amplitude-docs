@@ -1,9 +1,11 @@
 ---
-title: "Cart analysis: Use object arrays to drive behavioral insights"
-source: "https://help.amplitude.com/hc/en-us/articles/9623000954907-Cart-analysis-Use-object-arrays-to-drive-behavioral-insights"
 id: a80bb339-97b8-4d0e-955a-7bb2c2972ace
+blueprint: chart
+title: 'Cart analysis: Use object arrays to drive behavioral insights'
+source: 'https://help.amplitude.com/hc/en-us/articles/9623000954907-Cart-analysis-Use-object-arrays-to-drive-behavioral-insights'
 this_article_will_help_you:
   - 'Unlock new insights by analyzing Amplitude data as object arrays'
+ai_summary: "Amplitude's cart analysis feature allows you to analyze object arrays for insights into e-commerce transactions. You can analyze data in aggregate or segment it by dimensions like brand, category, or price. This feature is available on Growth and Enterprise plans. To use it, set up property splitting in Amplitude Data. You can send the cart object array using the Identify API or event properties. Once set up, access and analyze the arrays in your Event Segmentation and Funnel Analysis charts. Apply filters like cross-property and parallel filters for detailed analysis. Object arrays enable complex queries for cart analysis."
 ---
 Amplitude's **cart analysis** feature enables you to analyze data sent as object arrays. This can be particularly useful for behavioral insights into e-commerce transaction and shopping cart flows. You can analyze search results or cart events in the aggregate (for example, total order volume or co-occurrence), or you can segment your analyses by dimensions such as brand, category, price, or SKU, among others.
 
