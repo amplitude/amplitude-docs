@@ -1,6 +1,13 @@
 title: 'Help Center Common'
 fields:
   -
+    handle: ai_summary
+    field:
+      type: textarea
+      display: 'AI Summary'
+      localizable: false
+      replicator_preview: false
+  -
     handle: title
     field:
       type: text
