@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1726001179
+ai_summary: 'In Amplitude Analytics, you can use **templates** to efficiently recreate common analyses and share best practices with your team. Templates save time by allowing you to standardize reporting, create new dashboards easily, and replicate key measurements. This feature is available for **Growth** and **Enterprise plans**. You can create templates from saved dashboards and customize them with different events, properties, cohorts, and more. You can also use pre-built **starter templates** for quick insights. Modify your templates, share them with colleagues, and use them for A/B testing, releases, engagement dashboards, and more.'
 ---
 At some point, you've probably wanted to reuse an analysis you'd already created instead of building an identical version from scratch. In Amplitude Analytics, **templates** help teams efficiently recreate common analyses and share best practices with just a few clicks. 
 

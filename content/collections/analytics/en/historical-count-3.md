@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717692188
+ai_summary: 'You can use Historical Count in Funnel Analysis to track specific user behavior instances within date ranges and conversion windows. This feature helps you analyze user interactions accurately. In addition, Historical Count and behavioral cohorts in Amplitude are distinct concepts. Behavioral cohorts define user groups based on action frequency, while Historical Count pinpoints specific user actions. By combining both functionalities, you can gain valuable insights into user behavior patterns and milestones. This allows you to understand user engagement levels and potential long-term retention.'
 ---
 This article is third in a series about Historical Counts. If you haven't done so already, read parts [one](/docs/analytics/historical-count-1) and [two](/docs/analytics/historical-count-2).
 

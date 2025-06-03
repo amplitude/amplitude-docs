@@ -8,6 +8,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718901114
+ai_summary: "You can deepen your understanding of user session activity with Amplitude's Session Replay feature. This tool allows you to gain qualitative insights, improve conversions, diagnose product issues faster, and identify significant UX behaviors. Session Replay is available on Growth and Enterprise plans, and it helps you analyze user behavior, troubleshoot bugs, and understand the customer journey better. You can view replays from a user's event stream, charts, or homepage, and search for replays by date or filters. Keep in mind the limitations, such as the support for web-based applications only and standard session definitions."
 ---
 #### This article will help you:
 

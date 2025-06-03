@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717624206
+ai_summary: "Amplitude's cohort population over time chart in Behavioral Cohorts helps you track changes in user numbers based on defined behaviors. It shows daily counts within a specified period, aiding in assessing campaign and feature effectiveness. You can monitor power users, activated users, paying users, stickiness, churn, and more. The feature is useful for evaluating user milestones and personas. Note that cohort population is available for dynamic cohorts only, not static ones or certain specific cohort types. The chart provides valuable insights for optimizing strategies and understanding user behavior trends."
 ---
 Amplitude's **cohort population over time** chart shows you how the size of your behavioral cohorts are changing. As you release new features and launch new campaigns, understanding how your customers respond to them is a critical part of the iteration process. Cohort population over time gives you a simple, intuitive display of these trends.
 

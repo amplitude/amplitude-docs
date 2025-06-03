@@ -11,6 +11,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724365937
+ai_summary: "Amplitude's Search feature helps you find charts, dashboards, and cohorts within your organization quickly. You can search for specific items and apply filters to refine your results. The search results update in real-time based on your recent activity and popular content in your organization. Just type in the search bar, select a result, or view a full list. Filters help narrow down results by type, editor, project, and more. Remember, some items may not appear in search results if they're set as non-discoverable by the content owner."
 ---
 Amplitude's Search feature is a handy and simple way to locate charts, dashboard, and cohorts created by other members of your organization.
 

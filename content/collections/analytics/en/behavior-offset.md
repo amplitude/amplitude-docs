@@ -12,6 +12,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1729182351
+ai_summary: "With Amplitude's behavioral cohorts, you can group users based on behavior patterns. The behavior offset feature lets you further segment users based on behaviors exhibited in different time periods. This enables you to identify specific user groups for various purposes like customer satisfaction, re-engagement campaigns, and churn prevention. Behavior offsets are available on Growth and Enterprise plans. Before using them, familiarize yourself with behavioral cohorts and rolling windows. By adding a behavior offset to an in-line cohort, you can analyze user behaviors across different time frames, helping you make informed decisions to enhance user engagement and retention."
 ---
 With Amplitude's [behavioral cohorts](/docs/analytics/behavioral-cohorts), you can create groups of users who share a pattern of behavior. The **behavior offset** feature gives you the power to further segment these users based on behaviors they've displayed in two distinct time periods.
 

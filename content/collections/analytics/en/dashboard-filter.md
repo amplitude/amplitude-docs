@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717692712
+ai_summary: 'You can filter charts on your Amplitude dashboard by date range, interval, or property. Follow these steps on the dashboard: select interval from the *Daily* dropdown, choose date range from presets or manually, and add property filters. After applying a filter, you can copy a link to share with others, opening the dashboard with the filter applied.'
 ---
 With filtering, you can temporarily or permanently filter all the charts in your dashboard to an alternate date range, interval, or property.
 

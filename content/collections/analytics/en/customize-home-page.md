@@ -11,6 +11,7 @@ landing_blurb: 'Admins and managers can customize the Home page for each project
 exclude_from_sitemap: false
 this_article_will_help_you:
   - 'Create a custom Home page layout for other users who are members of a specific project'
+ai_summary: "You can customize the Home page layout for Amplitude users on a per-project basis as an admin or manager. This allows you to distribute important insights effectively to team members and ensure new teammates see relevant charts upon joining. To customize, open the project, click *Set Custom Homepage*, edit the layout by adding or removing charts, and save changes. This new layout becomes the default for all project users unless they've customized their homepage. Personal user customizations always override admin or manager defaults."
 ---
 Admins and managers can customize the Home page layout for Amplitude users on a per-project basis. This will allow project managers and project admins to more effectively distribute important insights to their team members, and to ensure newly-invited teammates receive the most relevant and important charts once they join.
 

@@ -7,6 +7,7 @@ source: /analytics/domain-proxy/
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718923429
+ai_summary: 'You can set up a domain proxy to have better control over the data you send to Amplitude. This guide explains how to build a self-owned proxy service and use it with Amplitude SDKs. By setting up a proxy, you can toggle event flow, have audit logging, easier debugging, and anonymize end-users. Cloud providers offer tools for easy setup. You can use NGINX to build a proxy server. Once set up, you can test the proxy, deploy it, and configure SDKs to send events through your proxy to Amplitude.'
 ---
 Get total control over the data that you send to Amplitude by using a domain proxy to relay requests. This guide explains the basics of setting up a self-owned proxy service and using it with Amplitude SDKs.
 

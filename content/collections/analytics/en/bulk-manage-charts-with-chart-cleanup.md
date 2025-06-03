@@ -9,6 +9,7 @@ this_article_will_help_you:
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718658637
+ai_summary: 'You can use the Chart Cleanup feature in Amplitude to search for and delete unnecessary charts across all projects. This feature is available on specific Amplitude plans only. In the Chart Cleanup section of Organization Settings, you can see all saved charts, filter by metrics, search for specific charts, and delete them individually or in bulk. Deleting a chart removes it from access for everyone in the organization, but the underlying data remains unaffected.'
 ---
 Admins may need to identify and delete unneeded charts from various projects. The organizational settings Chart Cleanup feature allows admins to search for and view saved charts from all projects to determine what can be deleted.
 

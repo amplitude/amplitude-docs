@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1726163151
+ai_summary: 'In Amplitude, a **release** signifies a change in your product, displayed as a marker in time-series charts. Users on different plans can create automated or manual releases. Automated releases follow semantic versioning and can be configured in the *Release Timeline*. Manual releases allow more customization. The *Release Report* provides insights on user exposure and adoption of releases. You can link analyses to a release for better understanding. The *Release Timeline* tracks all product updates. Use releases to share context and outcomes within your team effectively.'
 ---
 In Amplitude, a **release** represents a change in your product. It can be a major update like the launch of a new feature, a minor patch to fix a small bug, or the launch of an experiment. Releases display as a marker in your time-series charts when they occur.
 

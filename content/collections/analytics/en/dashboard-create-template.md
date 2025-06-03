@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1725397215
+ai_summary: 'You can turn your dashboards into templates in Amplitude to save time and share best practices with your team easily. Designate a dashboard as a template by adding instructions and making it discoverable. Once templatized, the dashboard will have a template icon, your added instructions, and a *Save As New Dashboard* button. You can find templates using Search or Spaces and filter for them. Common use cases for templates in Amplitude include A/B testing, tracking releases, analyzing usage or engagement, B2B or partner cases, and onboarding new users. For more details, refer to [this article in the Help Center.](/docs/analytics/templates)'
 ---
 You can easily turn your dashboards into templates, which allow teams to efficiently and confidently recreate their common analyses and share best practices with just a few clicks. Save time when repeating common analyses and make it simpler for new team members to measure impact.
 

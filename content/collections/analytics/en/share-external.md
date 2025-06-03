@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724882858
+ai_summary: 'You can create public links to Amplitude charts, dashboards, and notebooks to share with anyone, even outside your organization. This feature is available on Growth and Enterprise plans. Remember that public links can be viewed until you revoke them, and passwords can be added for security. You can also generate embed codes to share your analysis externally. Manage your public links in Settings or directly from the content. Admins on Enterprise plans can set permissions for public links, including passwords and expiration dates. Remember that passwords are not recoverable, and recipients receive an error if they access after the expiration date.'
 ---
 Sometimes, you may need to share your Amplitude analyses with people who aren't in your organization, or who shouldn't have full access to your data. You can create **public links** to charts, dashboards, and notebooks and send them to **any** person, even if they're not registered under your Amplitude organization.
 

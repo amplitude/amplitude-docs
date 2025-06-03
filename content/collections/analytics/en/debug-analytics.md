@@ -7,6 +7,7 @@ source: 'https://www.docs.developers.amplitude.com/data/debugger/'
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724882199
+ai_summary: "Data validation is crucial in the Amplitude instrumentation process. Before debugging, you should instrument your events so Amplitude's servers receive data. The Ingestion Debugger helps you check requests, events, and identify counts, as well as throttled users or devices. The User Lookup feature lets you find yourself by user or device ID and analyze your event stream. The Instrumentation Explorer Chrome extension helps debug your Amplitude Browser SDK interactions by capturing and displaying triggered events."
 ---
 Data validation is a critical step in the instrumentation process. 
 

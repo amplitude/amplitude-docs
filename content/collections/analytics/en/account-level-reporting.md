@@ -11,6 +11,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1731619126
+ai_summary: "In Amplitude, you can analyze data at the group level using the Accounts add-on, available on Plus, Growth, and Enterprise plans. By setting up groups, you can analyze specific accounts' interactions with your product, track conversion rates, and create group-level behavioral cohorts. This functionality allows for more detailed analysis beyond individual user data, enabling insights into how different user groups engage with your product. Additionally, you can set properties at the group level, create dynamic group properties, and integrate with Salesforce to enhance your analytics capabilities."
 ---
 In Amplitude, the default level of reporting is the **individual user**, meaning your charts and analyses rely on data drawn from individual users. Sometimes, you may need reports built around an **aggregated** unit of measurement—say, accounts, order IDs, or charts.
 

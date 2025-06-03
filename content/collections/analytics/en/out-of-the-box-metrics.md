@@ -6,6 +6,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1738269005
+ai_summary: "Amplitude's Out-of-the-Box (OOTB) metrics offer consistent, shared definitions for common performance indicators across your projects. Editing once updates everywhere, saving time and ensuring alignment. Advantages include consistency, speed, and scalability. Available metrics cover marketing analytics like Visitors, Page Views, and more. These metrics can be used in Data Tables, Event Segmentation charts, or OOTB Marketing Analytics with the same definitions. You can edit these metrics easily by adding them to a chart, updating the definition, and saving changes. Editing OOTB metrics requires a Manager role or higher."
 ---
 Amplitude’s Out-of-the-Box (OOTB) metrics provide consistent, validated definitions for common performance indicators. OOTB metrics share one synced definition across all your Amplitude projects. When you edit an OOTB metric once, it updates everywhere within a project—saving you time, reducing errors, and aligning teams around a single source of truth.
 

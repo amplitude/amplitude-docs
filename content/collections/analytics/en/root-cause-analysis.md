@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717697547
+ai_summary: "When working with Amplitude's product analytics, understanding why something is happening is crucial. Amplitude's Root Cause Analysis (RCA) feature helps you determine if anomalies in your data are significant shifts or random blips. It analyzes anomalous events and external context to explain or rule out anomalies. This feature is available for Growth and Enterprise plans, with the Insights add-on required for Growth plans. To use RCA, you need an analysis showing anomalous data. RCA scans event properties in batches, generates time-series graphs, and allows for user feedback. It helps you quickly understand changes and identify key user groups."
 ---
 When working with product analytics, understanding **why** something is happening is arguably more important than understanding **what** is happening in the first place. This is especially true when Amplitude is showing **anomalous data**—i.e., events and properties that are out of the ordinary, and to a significant extent. With anomalous data, you need to be able to determine if what you're seeing is just a random blip, or the beginning of a shift in the way your users interact with your product.
 

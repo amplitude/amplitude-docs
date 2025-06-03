@@ -7,6 +7,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1725397336
+ai_summary: "Your Amplitude workspace helps you access your analyses efficiently. It's a private space for saved and draft content. Navigate to *Spaces > Personal Space* to find it. Click on an item to open it. Use the *Filter* drop-down to find specific content types easily."
 ---
 Your workspace allows you to find your Amplitude analyses quickly and reliably, so you can get back to work. This page is only visible to you and includes content you have saved, as well as content you were working on but is still in draft mode.
 

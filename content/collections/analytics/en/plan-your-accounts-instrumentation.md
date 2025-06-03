@@ -6,6 +6,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1719596364
+ai_summary: 'In Amplitude, reporting is default to individual users. You can use the Amplitude Accounts add-on to create reports based on groups like accounts or orders. You can plan your Accounts instrumentation and use event or user level groups. Considerations include limits on group types and properties. Best practices involve testing and ensuring group values are unique. You can integrate with Salesforce or Segment to set and update group properties. The documentation provides detailed instructions on setting up Amplitude groups through Segment for both Actions and Classic modes.'
 ---
 In Amplitude, the default level of reporting is the individual user. What this means is that, unless you specify otherwise, your Amplitude charts and analyses are all based on data drawn from individual users.
 

@@ -12,6 +12,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1739571302
+ai_summary: "Amplitude's Breadcrumbs feature stores every step of your analysis in one place, allowing you to trace your path, take notes, and easily share your analysis with your team. Breadcrumbs simplifies workflow, helps trace analysis evolution, and can be used with any Amplitude chart type. You can add charts to Notebooks using Breadcrumbs by following simple steps. This feature enhances collaboration and efficiency in analyzing and sharing insights within your team."
 ---
 The more complex your analysis, the more difficult it can be to keep track of everything that’s gone into it. 
 

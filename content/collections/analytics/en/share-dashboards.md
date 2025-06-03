@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724883172
+ai_summary: 'You can directly share your Amplitude dashboard by copying the URL and sending it via email or Slack. You can also share it with specific users and set permissions for them. Public links are available for selected plans. To embed your dashboard, toggle the public embed switch on and copy the embed code. You can remove co-owners by changing permissions in the Share tab. Admins have the ability to modify ownership of dashboards not belonging to them.'
 ---
 Once you've got your dashboard built out the way you want it, you'll need a way to share it with others in your organization.
 

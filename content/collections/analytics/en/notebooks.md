@@ -7,6 +7,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1725919166
+ai_summary: 'You can use Amplitude Notebooks to explain insights to teammates, provide context, and share analysis takeaways. Notebooks are composed of text, images, videos, charts, and metrics. They help report on product performance, analyze trends, and share data insights. You can create new notebooks by clicking *Create > Notebook* or adding content to existing ones. Edit notebooks by adding charts, text blocks, images, or videos. Use drag-and-drop to rearrange content. Format text using rich text or markdown. Notebooks are a versatile tool for communicating data-driven insights effectively within your team.'
 ---
 Notebooks help you explain insights to teammates. While [dashboards](/docs/analytics/dashboard-create) are great for monitoring metrics, **notebooks** enable you to communicate context and takeaways from analysis that help your team make better-informed product decisions.
 

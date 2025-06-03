@@ -8,6 +8,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1743538926
 academy_course:
   - b5e40f1e-f91c-4398-97ee-b22fcaf05017
+ai_summary: "Amplitude's Product Analytics lets you track user engagement with your product. You can monitor metrics like new users, retention, and conversion. This feature is available on all Amplitude plans. You can customize views based on your role and organization's plan. Set up active events, retention intervals, and breakdown properties. Analyze onboarding funnels, feature engagement, and retention. The tool provides four views: product overview, onboarding, feature engagement, and retention. Each view includes filtering and segmentation controls. Track metrics like active users, session duration, and new user retention. Visualize conversion funnels and compare feature engagement. Review user retention over time."
 ---
 Amplitude's Out-of-the-box Product Analytics provides a single location in Amplitude where you can track metrics that provide insight into how users engage with your product. Track metrics like new and active users, retention, conversion, engagement, and more.
 

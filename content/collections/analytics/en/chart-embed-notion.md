@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717695734
+ai_summary: "You can embed Amplitude charts into your Notion workspace by pasting the chart's URL into a Notion document. This feature is available to all Amplitude users. You can choose how the Amplitude URL appears in your document - as a preview, mention, or link. If it's your first time using this integration, you may need to connect to Amplitude for authentication. Make sure you have the right permissions to view the chart. Only charts from your Amplitude organization will be accessible. For more information on Notion, visit their Help Center."
 ---
 Notion is an all-in-one workspace that combines essential work tools like notes, docs, wikis, and project management into one collaborative and customizable place. Teams use Notion to collaborate on user research, feature releases, experimentation, and more.
 

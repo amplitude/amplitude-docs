@@ -11,6 +11,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717624136
+ai_summary: 'You can compare cohorts, manage them by marking as discoverable or unlisted, archive, delete, or transfer ownership. Comparing cohorts involves analyzing various metrics like actives, retention, and average events. You can make cohorts discoverable for others in your organization or keep them unlisted. Archiving and deleting cohorts are actions only the owner can perform. Transferring ownership is possible for cohorts you own, and admins/managers can also transfer ownership or add additional owners to cohorts.'
 ---
 ## Compare your cohorts
 

@@ -10,6 +10,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717692139
+ai_summary: "With Historical Count in Amplitude, you can track users' actions like in-app purchases or song plays, up to the fifth instance. Identify friction points for first-time users and analyze best customers based on actions. This feature is available on all Amplitude plans. Historical Count is different from behavioral cohorts but can be used in them. It's a property in various charts like Event Segmentation and Retention Analysis. Historical Count helps you filter user actions by the number of times they've occurred. It's time-limited to one year and must be applied to events in specific ways. Apply a Historical Count filter by selecting the event and setting the N-value."
 ---
 Have you ever noticed that conversion and retention rates can sometimes be very different for a user who has, for example, made one in-app purchase versus those who have made two or three?
 
