@@ -9,7 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724883932
-
+ai_summary: 'You can define a new cohort in Amplitude by setting parameters like event counts, relative counts, property sums, distinct property values, historical counts, and counts in intervals. Specify operators, values, and timeframes for events. You can add multiple events with *...then* and *+ Add* options. Use *Or* for inclusion and *+ Add* for an *And* condition. Exclude items with *did not* or *not part* options. You can also define cohorts based on user properties and create group-level cohorts. This functionality helps you analyze user behavior and create targeted cohorts for analysis.'
 ---
 ## Define the cohort
 

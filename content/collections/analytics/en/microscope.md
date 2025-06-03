@@ -10,6 +10,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 1e99c1bd-1813-4b3d-a934-2cd98b423c0d
 updated_at: 1746812899
+ai_summary: "Amplitude's **Microscope** feature lets you dive deep into specific data points. By hovering over a data point in your chart, you can access various options for further analysis. This functionality is available to all Amplitude plan users. With Microscope, you can zoom in on data points, filter by series, view user journeys, watch session replays, create cohorts, and more. You can also analyze user paths and view individual user streams. Additionally, you can explore conversion drivers in funnel charts and create guides or surveys targeted at specific user groups."
 ---
 Amplitude's **Microscope** feature enables you to dig deeper into a specific data point's users. Just hover over a data point in your chart, and a pop-up offers you several options (depending on your Amplitude plan) for further inspection.
 

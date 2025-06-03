@@ -14,6 +14,7 @@ updated_at: 1731444719
 academy_link: 'https://academy.amplitude.com/use-dashboards-and-starter-templates-to-monitor-important-metrics/1372313/scorm/w84tdkh3z11p'
 academy_title: 'Use Dashboards and Starter Templates to Monitor Important Metrics'
 academy_description: "Learn how Dashboards can be used to monitor important metrics at a glance, as well as how to use Amplitude's pre-built Dashboard Starter Templates."
+ai_summary: "With Amplitude's dashboard functionality, you can create a centralized view of all your important charts, compare different projects, and add behavioral cohorts. You can add charts, cohorts, videos, images, and comments to your dashboard, and designate it as official. Only customers on certain plans can access advanced features. You can also copy, download, export, refresh, or archive your dashboard. Remember to refresh the dashboard manually to update chart results."
 ---
 With dashboards, you can collect all your relevant charts into a single, convenient view. You can save multiple reports into a single page view, rather than viewing each individual report in isolation. You can even save cross-project charts into the same dashboard, for side-by-side comparisons.  
 

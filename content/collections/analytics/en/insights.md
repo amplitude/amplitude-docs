@@ -10,6 +10,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1726094509
+ai_summary: "Amplitude's alerts feature uses Prophet, a data mining technique to detect anomalies in your data. You can set alerts for multiple events and user segments. There are three types of alerts: automatic, custom, and smart. Automatic alerts monitor events for anomalies automatically. Custom and smart alerts allow you to set specific conditions for receiving alerts. You can view and manage alerts in the Notifications tab. Alert emails are sent when an anomaly is detected. You can also set up alerts to post in Slack channels."
 ---
 Amplitude's alerts feature uses [Prophet](https://facebook.github.io/prophet/), an advanced data mining and machine learning technique that automatically detects any anomalies in your product data, and instantly brings these hidden trends to your attention. It does this by first identifying expected values, and the confidence intervals around them, and then analyzing the trend of the data and combining it with the weekly trend of the data. 
 

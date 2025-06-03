@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717695761
+ai_summary: "With Amplitude's Miro integration, you can easily search for and add Amplitude charts directly onto your Miro boards without switching platforms. You need to install the Amplitude plug-in from the Miro Marketplace. This feature is available to all Amplitude users. Once installed, you can authenticate the plug-in and manage your Amplitude charts within Miro. Simply search for the chart you want and add it to your Miro board."
 ---
 With Amplitude’s Miro integration, you can easily search for and add Amplitude charts directly onto your Miro boards without switching back and forth between the two platforms.
 
