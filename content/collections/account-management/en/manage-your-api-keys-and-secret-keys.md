@@ -7,8 +7,8 @@ this_article_will_help_you:
 landing: false
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
-updated_at: 1748971670
-ai_summary: "Amplitude's key management page allows Managers & Admins to create, revoke, or delete API keys and secret keys permanently. Users can name keys, view logs, and disable API access. Revoking an API key is irreversible. The process involves generating, revoking, and deleting keys, with limitations on active keys and deletion time."
+updated_at: 1748983875
+ai_summary: "Amplitude's key management page allows Managers & Admins to create, revoke, and delete API keys and secret keys permanently. Users can view a log of actions, disable API access, generate and name keys, and manage them easily. Revoking an API key is irreversible, but the key value can still be viewed. Limits include a maximum of 50 active keys, instant key creation, and up to 6 hours to delete a key. It's important to review keys and tokens documentation before making changes."
 ---
 {{partial:admonition type='note'}}
 You should review the [keys and tokens documentation](https://amplitude.com/docs/apis/keys-and-tokens) before you make any changes to your keys.
