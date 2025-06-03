@@ -10,6 +10,7 @@ exclude_from_sitemap: false
 landing: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715120541
+ai_summary: "Amplitude's technical documentation explains how you can use prediction-based cohorts to optimize your campaigns. By targeting users based on their likelihood to convert, you can enhance the effectiveness of your email, advertising, and content personalization efforts. The documentation details different campaign types like Inclusion Criteria, Dynamic Pricing, and Content Personalization, and guides you on setting up and measuring your campaigns. It also provides insights on analyzing campaign results in Amplitude to improve future strategies. By following these steps, you can enhance your targeting strategies and optimize your marketing efforts for better results."
 ---
 A cohort based on a prediction can tell you which of your users are most likely to convert, but if you don’t target them via an email or advertising campaign, or personalize an experience to them, you won’t see the benefits. So once you save a cohort from a prediction, the next step is to plug it into a targeting campaign. 
 

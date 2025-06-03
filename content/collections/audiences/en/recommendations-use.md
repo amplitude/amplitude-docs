@@ -10,6 +10,7 @@ exclude_from_sitemap: false
 landing: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715121195
+ai_summary: "You can deploy recommendations using Amplitude's Profile API, accessing user info via a real-time REST endpoint. Authenticate with a Secret Key, then retrieve recommendations, user properties, predictions, and cohort memberships. Decide on the recommended experience based on the `is_control` value and integrate the API with your delivery system. Analyze recommendation performance through Amplitude Activation, comparing control and treatment segments to measure impact. Check lift against baseline, conversion rates, and significance to understand the impact of each recommendation on your bottom line."
 ---
 Once you've created a new recommendation, you'll need to integrate it into your personalization campaigns. This article describes the process, using the Profile API.
 

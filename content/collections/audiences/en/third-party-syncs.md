@@ -10,6 +10,7 @@ landing: true
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718122078
 landing_blurb: 'Send user and event data to third-party downstream tools.'
+ai_summary: 'Amplitude provides three types of syncs: on-demand, automated, and real-time. On-demand syncs are for testing and one-off campaigns. Automated syncs adjust cohort membership as users change. Real-time syncs update every minute for interactive use cases. You can sync user actions to different platforms automatically. Real-time syncs send updates quickly to partner destinations. You can create new syncs by selecting the type, item, and destination. Amplitude sends email alerts for sync jobs. You can view sync details and history, customize mapping, and export sync data. Be cautious when modifying properties to avoid data discrepancies.'
 ---
 Amplitude supports three types of syncs for cohorts, properties, computations and predictions: **on-demand syncs**, **automated syncs**, and **real-time syncs**. 
 

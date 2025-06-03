@@ -11,6 +11,7 @@ exclude_from_sitemap: false
 landing: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715121054
+ai_summary: "Amplitude's predictions feature optimizes targeting workflows by segmenting users based on future actions. It helps adjust communication frequency, pricing, and content personalization. Predictions create a model to forecast user actions, grouping them by likelihood. Identify steps in the user journey and build predictions for each. Predictions are beneficial for products with unclear outcomes or aiming for incremental lift. They analyze past behavior to predict future actions using a deep learning model. The feature recalculates user probability scores regularly. To start, read about building and using predictions in campaigns."
 ---
 As part of Amplitude Activation, **predictions** are a **workflow improvement feature** that helps you optimize targeting workflows to generate maximal lift. 
 

@@ -10,6 +10,7 @@ exclude_from_sitemap: false
 landing: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715121638
+ai_summary: "Amplitude Activation enables you to create recommendations for personalization campaigns, boosting engagement and reducing churn. You can choose from different recommendation types like Top Trending, Most Popular, or AI-Based to tailor content to users' preferences. By following simple steps to build and define your recommendations, you can fine-tune outcomes, select items, and set control groups. Understanding your recommendation's confidence score and performance metrics helps you assess its effectiveness. Avoid common mistakes like selecting the wrong cohort or outcome event to ensure accurate and effective recommendations."
 ---
 Amplitude Activation allows you to create recommendations to be used in your personalization campaigns. A recommendation to your users can increase engagement, reduce churn, and create cross-selling opportunities. Read more about the algorithm behind Amplitude's personalization feature in this [blog post](https://amplitude.com/blog/audiences-algorithm).
 
