@@ -526,14 +526,16 @@ WHERE TO_DATE(event_timestamp) BETWEEN '2024-01-01' AND '2024-01-31'
 1. **Error: `SQL compilation error: Invalid identifier INFORMATION_SCHEMA.QUERY_HISTORY_BY_SESSION. Results not generated.`**
 
 - **Cause**: This occurs when the Snowflake role used for the integration no longer has permission to access the `INFORMATION_SCHEMA` of the specified Snowflake database. Amplitude requires access to this schema to check the status of queries running on the customer's Snowflake instance.
-- **Solution**: Ensure that the role used for the integration has the necessary permissions to access the `INFORMATION_SCHEMA` in the target Snowflake database. This issue often arises if the role was recently changed or updated without the appropriate access being maintained.
+- **Solution**: Ensure that the role used for the integration has the necessary permissions to access the `INFORMATION_SCHEMA` in the target Snowflake database. This issue often arises if the role was recently changed or updated without maintaining the appropriate access.
 
-2. Error: `JWT token is invalid.`
+1. Error: `JWT token is invalid.`
 
 - **Cause**: This error appears when there is a mismatch between the public key attached to the given user and the private key Amplitude generates for key pair authentication.
-- **Solution**: Ensure that the public key is properly set on the given user, and that the account is provided in the format `ORGNAME-ACCOUNTNAME`. If the account has an account locator at the end, key pair authentication may not succeed, even if the public key is set properly. To get the account identifier in the correct format, run `SELECT CURRENT_ORGANIZATION_NAME() || '-' || CURRENT_ACCOUNT_NAME();` in your Snowflake instance.
+- **Solution**: Ensure that the public key is properly set on the given user, and that you provide the account in the format `ORGNAME-ACCOUNTNAME`. If the account has an account locator at the end, key pair authentication may not succeed, even if the public key is set properly. To get the account identifier in the correct format, run `SELECT CURRENT_ORGANIZATION_NAME() || '-' || CURRENT_ACCOUNT_NAME();` in your Snowflake instance.
 
-## FAQ
+## Frequently asked questions
+
+Review the list topics below if you encounter issues with your Snowflake integration.
 
 ### What happens when a Snowflake query times out?
 
