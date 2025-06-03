@@ -18,6 +18,6 @@
             <div class="flex items-center h-4 gap-1 text-amp-gray-500" ><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span class="text-xs">{{ content | read_time(180) }} min</span></div>
         </div>
     </summary>
-    <div class="p-4 overflow-x-scroll detail text-sm">{{ai_summary}}</div>
+    <div class="p-4 pt-2 overflow-x-scroll detail text-sm leading-6 ai-summary">{{ai_summary | markdown}}</div>
 </details>
 {{/if}}
