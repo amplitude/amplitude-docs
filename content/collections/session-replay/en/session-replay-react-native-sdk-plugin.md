@@ -12,6 +12,7 @@ public: true
 package_name: '@amplitude/plugin-session-replay-react-native'
 full_details: true
 description: 'Use this plugin if you instrument your application with the Amplitude React Native SDK.'
+ai_summary: "This documentation guides you through installing and configuring Session Replay using the React Native SDK plugin. You can control session replay settings, mask sensitive data, start and stop recording, set EU data residency, adjust sampling rate, and track web views. The Session Replay plugin follows the React Native SDK's opt-out setting and supports remote configuration. It includes features for DSAR API, data deletion, and bot filters. Follow the guide to leverage Session Replay effectively in your application."
 ---
 This article covers the installation of Session Replay using the [React Native SDK](/docs/sdks/analytics/react-native/react-native-sdk) plugin. If your application uses the React Native SDK, use this option.
 

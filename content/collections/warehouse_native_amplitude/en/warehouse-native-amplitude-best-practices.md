@@ -6,6 +6,13 @@ source: 'https://help.amplitude.com/hc/en-us/articles/26004084762011-Warehouse-n
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717541658
+ai_summary: |-
+  Amplitude's warehouse-native functionality lets you use your own models for analysis. To maximize your data quickly, consider these best practices: 
+  - Choose appropriate columns for clustering keys based on query patterns and filtering conditions.
+  - Avoid high cardinality columns as clustering keys.
+  - Use composite clustering keys for join operations.
+  - Optimize query performance and simplify analysis by using star or Snowflake schema.
+  - Partition large tables to reduce data scanned and improve query performance.
 ---
 Warehouse-native Amplitude enables you to bring your own models to your analyses. However, to get the most out of your data as quickly as possible, you should consider these best practices:
 

@@ -9,12 +9,12 @@ updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1731621403
 instrumentation_guide: true
 platform: browser
-package_name: "@amplitude/session-replay-browser"
+package_name: '@amplitude/session-replay-browser'
 public: true
 full_details: true
 description: 'If you use a provider other than Amplitude for in-product analytics, choose this option.'
+ai_summary: "This documentation explains how to set up and use Amplitude's Session Replay feature. You can install the Session Replay SDK, configure your application, and add Session Replay properties to your events. The SDK allows you to capture and replay changes to a web page's DOM for better user experience analysis. Remember to configure options like device ID, session ID, and sample rate. Additionally, you can use the Unified SDK for easier integration with other Amplitude products. Ensure your events include the necessary Session Replay ID property for replays to appear in the Amplitude UI."
 ---
-
 {{partial:admonition type="note" heading="Session Replay instrumentation"}}
 Session Replay isn't enabled by default, and requires setup beyond the standard Amplitude instrumentation.
 {{/partial:admonition}}

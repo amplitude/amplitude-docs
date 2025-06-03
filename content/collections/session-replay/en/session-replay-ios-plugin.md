@@ -10,6 +10,7 @@ instrumentation_guide: true
 platform: mobile
 public: true
 description: 'Choose this option if you use an Amplitude iOS SDK to instrument your iOS application.'
+ai_summary: "This documentation explains how you can install Session Replay using the iOS plugin. Depending on your setup, you can choose between using the Amplitude iOS Swift SDK, Segment integration, or a standalone implementation. Session Replay captures changes in your app's view tree to create a video-like replay of user interactions. You can configure options like sample rate and remote configuration. To disable replay collection, remove the session replay plugin. Additionally, you can use feature flags to control when replay collection is enabled based on criteria like location."
 ---
 This article covers the installation of Session Replay using the iOS plugin. If your app is already instrumented with the the Amplitude [iOS Swift SDK](/docs/sdks/analytics/ios/ios-swift-sdk) or legacy Amplitude [iOS SDK](/docs/sdks/analytics/ios/ios-sdk), use this option.
 

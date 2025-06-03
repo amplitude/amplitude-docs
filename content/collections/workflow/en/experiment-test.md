@@ -8,6 +8,7 @@ this_article_will_help_you:
   - 'Launch your experiment to your users'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714517033
+ai_summary: 'You design, test, and launch experiments in Amplitude. Review design and delivery, test instrumentation, and ensure variants work as intended before launching. Start experiments and schedule them for later. Monitor user exposure to variants and investigate any unexpected enrollments. Roll out winning variants, roll back, or continue the experiment. After the experiment ends, make necessary changes based on the outcome. Use Root Cause Analysis to investigate anomalies. Learn from the experiment to improve.'
 ---
 Once you’ve designed your experiment and configured its delivery, you’re ready to test your experiment. Then, if all goes well, it’s time to launch it.
 

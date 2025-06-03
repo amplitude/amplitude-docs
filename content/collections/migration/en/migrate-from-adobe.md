@@ -3,6 +3,7 @@ id: 785c609b-7277-401c-9ea6-6c591f6c81c0
 blueprint: migration
 title: 'Migrate From Adobe'
 source: 'https://www.docs.developers.amplitude.com/guides/adobe-migration-guide/'
+ai_summary: 'Amplitude offers features for data-driven decisions. The guide explains migration planning, configuration, and user training. It covers documentation, compliance, and integration aspects. Understand data model differences and key metrics. Align top metrics and business use cases for efficient reporting. Map Adobe variables to Amplitude for successful migration. Ensure stakeholders agree on data goals. Use external tools to understand workspace usage. Collaborate with users for critical metrics. Check industry-specific guides for best practices. Map variables carefully for a smooth transition.'
 ---
 Amplitude offers a set of features, customization options, and scalability that provides a solid foundation for data-driven decision making. This guide explains the process, best practices, and key factors to consider as you transition your product analytics stack.
 

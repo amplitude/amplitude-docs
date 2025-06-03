@@ -9,6 +9,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1732570433
 landing: true
 landing_blurb: 'Identify the strengths and weaknesses of your approach to new-user monetization'
+ai_summary: "The Revenue LTV analysis in Amplitude focuses on new users only. Ensure you're clear on this to avoid misinterpreting data. The chart treats all new users within a specific timeframe as a single cohort. It shows revenue collected at different time points since their first event. The tool allows you to set up and interpret Revenue LTV charts easily, displaying revenue events per user daily. You can interact with the chart to view specific data points. Remember to check the breakdown table below the chart to see data by user cohorts starting on the same day."
 ---
 It's important to keep in mind that Revenue LTV is a monetization analysis focusing on **new users only**. Forgetting this could easily lead to some off-base interpretations of your data.
 

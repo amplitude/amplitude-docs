@@ -10,6 +10,7 @@ updated_at: 1727384112
 landing: true
 landing_blurb: "Integrate Amplitude with your business's SSO service."
 exclude_from_sitemap: false
+ai_summary: 'You can enable Single Sign-On (SSO) in Amplitude using SAML 2.0-compliant providers like Auth0, G Suite, Microsoft Azure AD, Okta, OneLogin, or others. This feature is available for Growth and Enterprise plans. With SSO, you can require organization members to log in with SSO, automatically grant access to new users, and configure user roles. Amplitude identifies users using their email address in the SAML assertion. Make sure the SSO system is set up correctly before enabling it in Amplitude to prevent login issues.'
 ---
 **Single sign-on** (SSO) is an authentication scheme that enables users to use a single ID and password combination to log into multiple platforms, services, or systems. Amplitude supports SSO and is compatible with any SAML 2.0-compliant SSO provider, including:
 

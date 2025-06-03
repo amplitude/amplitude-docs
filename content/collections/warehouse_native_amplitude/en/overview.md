@@ -12,6 +12,7 @@ landing: true
 landing_blurb: 'Your data warehouse stores critical data on every aspect of your business.'
 academy_course:
   - 7e4cdb01-8c5f-403d-8553-93395c74ffa1
+ai_summary: 'With Warehouse-native Amplitude (WNA), you can create custom analyses using data models directly from your data warehouse, allowing quick access to time-sensitive datasets. By connecting to Snowflake, WNA generates queries in your warehouse, providing insights into user behavior and trends. You can create a WNA project by setting up a direct connection to Snowflake in Amplitude. WNA supports a single connection per project and recommends using clustering keys for performance optimization. Note that WNA has constraints on certain formulas and features compared to standard Amplitude projects, particularly in event segmentation, funnel analysis, retention, cohorts, and journeys.'
 ---
 Your data warehouse stores critical data on every aspect of your business. But some of that data never makes its way into Amplitude, making it inaccessible for Amplitude analyses you want to run.
 

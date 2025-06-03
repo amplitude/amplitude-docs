@@ -10,6 +10,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717103033
 landing: true
 landing_blurb: 'Understand the different ways time can affect your Retention Analysis chart'
+ai_summary: "In Amplitude, you can analyze retention using either a rolling 24-hour window or strict calendar dates. The choice impacts how your results are calculated. With the rolling 24-hour window, each user's day is unique and consistent in length. If you opt for strict calendar dates, days start and end based on the calendar day. Amplitude calculates daily, weekly, and monthly retention rates differently based on your chosen method. The system tracks user activity and categorizes them as retained based on specific time frames. You can also measure new user retention, adjusting filter conditions accordingly. Understanding these retention types helps you analyze user engagement effectively."
 ---
 In a Retention Analysis chart, there are two ways to define a day: a rolling **24-hour window** or a **strict calendar date**. The method you choose can affect your results.
 

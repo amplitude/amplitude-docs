@@ -12,6 +12,7 @@ landing: true
 landing_blurb: 'Draw conclusions about user behavior from your Stickiness chart'
 academy_course:
   - 8bd6336d-8535-47ee-a708-c9f7f6fe909a
+ai_summary: 'The Stickiness feature in Amplitude helps you analyze user engagement and habits. The Metrics Module of the Stickiness chart lets you interpret stickiness analysis, showing cumulative and non-cumulative user event triggers. You can track changes in stickiness over time and create user cohorts. This functionality allows you to dive deep into user engagement data and understand how users interact with your product.'
 ---
 Stickiness will help you dig into the details of your product's user engagement, specifically regarding users that have formed product usage habits.
 

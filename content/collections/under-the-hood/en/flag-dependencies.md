@@ -6,6 +6,7 @@ landing: false
 source: 'https://www.docs.developers.amplitude.com/experiment/general/flag-dependencies/'
 updated_by: 924ab613-3300-4c23-b6d6-2030761a8ea7
 updated_at: 1718742410
+ai_summary: 'Flag dependencies in Amplitude allow you to set up relationships between flags for proper evaluation order. You can use them for flag prerequisites, mutual exclusion groups, and holdout groups in your experiments. Flag prerequisites help manage dependencies between flags or experiments, while mutual exclusion groups ensure only one experiment in a group is assigned. Holdout groups withhold a percentage of traffic for long-term analysis. Make sure your SDK version supports these features. Check the documentation for specific SDK versions that support flag dependencies.'
 ---
 Flag dependencies define relationships between flags to ensure evaluation order. The result of each flag's evaluation is then passed to all subsequent evaluations to decide if dependent flags should [evaluate](/docs/feature-experiment/implementation#flag-dependencies) based on the result of the dependency.
 

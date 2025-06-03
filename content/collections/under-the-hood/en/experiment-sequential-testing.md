@@ -8,6 +8,7 @@ this_article_will_help_you:
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1721759869
 landing: false
+ai_summary: 'Amplitude Experiment uses sequential testing for hypothesis testing in A/B tests. It allows you to make valid decisions as soon as observations are made, letting you end experiments early and make faster decisions, compared to traditional T-tests. Sequential testing is beneficial for binary and continuous metrics and can help you experiment more efficiently. Amplitude Experiment employs a mixture sequential probability ratio test (mSPRT) for sequential testing. This method enables you to detect any differences between treatment variants and the control group. The process is explained in detail in the technical documentation, helping you understand and apply sequential testing effectively.'
 ---
 Amplitude Experiment uses a **sequential testing** method of statistical inference. Sequential testing has several advantages over **T-tests**, another widely used method, chief among them being that you don’t need to know the number of observations necessary to achieve significance before you start the experiment. You can use both Sequential testing and T-tests can for binary metrics and continuous metrics. If you have concerns related to long tailed distributions affecting the Central Limit Theorem assumption, read this article about [outliers](docs/feature-experiment/advanced-techniques/find-and-resolve-outliers-in-your-data). 
 

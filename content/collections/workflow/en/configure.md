@@ -8,6 +8,7 @@ this_article_will_help_you:
   - 'Install the SDK you wish to use for your experiment'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714514522
+ai_summary: 'You create an experiment in Amplitude by configuring a deployment and installing the SDK. A deployment serves flags or experiments for code execution, and each deployment is attached to an Analytics project in Amplitude. There are client-side and server-side deployments with specific characteristics. The SDK sends requests to Amplitude to determine flag configurations for users. The user context object is crucial for assigning variants based on targeting rules. Ensure consistency in user identifiers between Amplitude Experiment and Analytics for accurate data association.'
 ---
 The first step in creating an experiment is to configure it. Configuring is a brief, two-stage process: first you’ll create a deployment, then you’ll install the SDK you want to use.
 

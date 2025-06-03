@@ -9,6 +9,7 @@ this_article_will_help_you:
   - 'Build a Web Experiment using the Visual Editor'
 academy_course:
   - f380a3b6-4f2f-4f90-834f-84009d44dc5a
+ai_summary: 'You can use Amplitude Web Experiment to create A/B or multi-armed bandit experiments without writing new code. Simply open your site in the Visual Editor, choose elements to experiment with, and make direct changes. This allows non-technical users to create experiments easily. Before starting, implement the Web Experiment script. Follow steps like setting up the experiment, changing elements, defining goals, and testing variants. The Visual Editor lets you modify site elements without affecting the live site. Test and preview each variant before launching. You can also use Navigation Mode to move between pages within your experiment seamlessly.'
 ---
 Amplitude **Web Experiment** lets you create an A/B or [multi-armed bandit experiment](/docs/feature-experiment/workflow/multi-armed-bandit-experiments) **without new code**. Open your site in the [Visual Editor](#the-visual-editor), choose the elements you’d like to experiment with, and make changes to their content or properties directly. This allows for less-technical users to easily create experiments without engineering resources.
 

@@ -9,6 +9,7 @@ this_article_will_help_you:
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1720718556
 landing: false
+ai_summary: 'You can use the duration estimator in Amplitude to calculate the sample size and experiment run time needed for statistical significance. It helps you decide if an experiment is worthwhile. By understanding its components like confidence level, control mean, standard deviation, power, test type, and minimum effect, you can interpret the results it provides. The duration estimator suggests adjustments if the experiment takes more than 30 days. You can reduce experiment run time by modifying error rates, metrics, user targeting, and standard deviation. Ultimately, it helps align your experiment with your business goals and risk tolerance.'
 ---
 The duration estimator can help you calculate the sample size and experiment run time needed to reach [statistical significance](https://en.wikipedia.org/wiki/Statistical_significance) in your Amplitude experiment, and to help you decide if an experiment would be worthwhile.
 

@@ -10,6 +10,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717104252
 landing: true
 landing_blurb: 'Interpret your cluster cards and identify and name your personas'
+ai_summary: 'The Personas chart helps you identify and name user clusters to enhance engagement and retention. Cluster cards display bubble charts, user counts, cohort percentages, and allow exporting as a behavioral cohort. The event table reveals behaviors defining each cluster, aiding in creating user personas. Sort events by cluster to analyze patterns. Adjust cluster quantities as needed. Describe clusters and save your report. Hide events in tracking plans if needed. Ensure a good cluster selection for effective persona grouping.'
 ---
 The [Personas chart](/docs/analytics/charts/personas/personas-clustering) will help you identify and name user clusters, which can then be used to drive engagement and retention.
 

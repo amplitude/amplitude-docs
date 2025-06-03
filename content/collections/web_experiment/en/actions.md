@@ -4,6 +4,7 @@ blueprint: web_experiment
 title: 'Web Experiment actions'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1729195880
+ai_summary: "Actions in Amplitude define how variants modify your site. Element changes can modify existing elements, URL redirects load a new URL for targeted users, and custom code actions are available for Growth and Enterprise plans. You can use custom JavaScript, CSS, and HTML to add elements or customize your site. Examples include inserting elements, adding banners, and creating modals using custom code in Amplitude's Web Experiment feature."
 ---
 Actions define how variants modify your site. Actions relate to variants rather than a specific page, and apply to all pages that you target in your experiment.
 

@@ -6,6 +6,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1743537960
 academy_course:
   - f380a3b6-4f2f-4f90-834f-84009d44dc5a
+ai_summary: "Amplitude's Web Experimentation requires adding a script to your website to track events. You can integrate with a third-party CDP or use Amplitude Browser SDK. Ensure proper security headers for Web Experiment to function. The script can be added synchronously for the best user experience or asynchronously with an anti-flicker snippet. Integrate with Segment or Tealium easily. Amplitude supports Wordpress and Shopify plugins. Avoid using tag managers for production as they may cause flickering. You can contact support for custom CDP integrations."
 ---
 Amplitude's Web Experimentation requires a standalone script that you must add to your website. Paste the script into the `<head>` element of your site, as high as possible to avoid flickering.
 

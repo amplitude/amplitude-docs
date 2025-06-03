@@ -4,6 +4,7 @@ blueprint: web_experiment
 title: 'Web Experiment performance'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1729195974
+ai_summary: "The Web Experiment feature in Amplitude helps you minimize page performance impact. The script is dynamic and includes all experiment configurations to prevent multiple downloads. Script size starts with a base size and scales with each experiment. Deactivate or archive completed experiments to avoid increasing script sizes. Amplitude uses CDN and Browser caching for reliable script delivery. Evaluation runs locally in the browser and is CPU bound, taking less than 1ms. Users with ad blockers enabled won't be identified, affecting logging and experiment experience."
 ---
 Web Experiment is built to minimize impact on page performance.
 

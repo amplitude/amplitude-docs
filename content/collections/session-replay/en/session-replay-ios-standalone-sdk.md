@@ -11,6 +11,7 @@ instrumentation_guide: true
 platform: mobile
 public: true
 description: 'Choose this option if you use an iOS analytics provider other than Amplitude.'
+ai_summary: "This documentation explains how to install Session Replay for iOS using the standalone SDK. If you're using a different analytics provider, you can choose this option. You'll need to have your app running on iOS or iPadOS and track sessions with timestamps. The Standalone SDK doesn't manage sessions, so you or a third-party integration must handle session updates. You can configure the SDK with various options like API key, device ID, session ID, and more. Once enabled, Session Replay runs until you stop it or the user leaves the app. You can also disable replay collection in restricted areas."
 ---
 This article covers the installation of Session Replay for iOS using the standalone SDK. If you use a provider other than Amplitude for in-product analytics, choose this option. 
 

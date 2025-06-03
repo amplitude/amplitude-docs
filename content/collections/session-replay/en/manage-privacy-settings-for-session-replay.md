@@ -9,6 +9,7 @@ updated_at: 1720719132
 source: 'https://help.amplitude.com/hc/en-us/articles/26605783882779-Manage-privacy-settings-for-Session-Replay'
 this_article_will_help_you:
   - 'Ensure your use of Session Replay complies with data privacy requirements'
+ai_summary: "Amplitude's Session Replay feature lets you control the display of user data during replays to meet your legal and security needs. You can choose from three privacy levels - Conservative, Light, and Medium - or set custom overrides as needed. These settings mask sensitive information in replays without removing it from your data. You can adjust privacy levels and override settings for individual elements using CSS selectors. The Session Replay settings page takes precedence over SDK settings in conflicts. Remember, if remote configuration fails, Session Replay won't capture any sessions to protect your privacy settings."
 ---
 For many organizations, data privacy, security, and PII are more pressing concerns than they’ve ever been before. Because the potential for legal exposure varies from jurisdiction to jurisdiction, and because specific business needs vary considerably, no one-size-fits-all solution works for everyone.
 

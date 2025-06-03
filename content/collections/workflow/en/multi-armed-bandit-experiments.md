@@ -5,6 +5,7 @@ title: 'Multi-armed bandit experiments'
 landing: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1729185255
+ai_summary: 'Amplitude Experiment allows you to run A/B tests and multi-armed bandit experiments to optimize various aspects like UI elements, layouts, and ad performance. Multi-armed bandits differ from A/B tests in metrics, traffic allocation, confidence levels, and duration estimates. You can create and monitor multi-armed bandit experiments, adjust traffic allocation, and receive notifications about experiment progress. The feature is available to Enterprise plan users with Amplitude Experiment. To start, ensure each variant has at least 100 exposures, set up primary success metrics, and decide on traffic reallocation frequency. Notifications are sent at key traffic allocation milestones and experiment terminations.'
 ---
 In a traditional A/B test, Amplitude Experiment assesses all the variants in your experiment until it reaches a statistically significant result. From there, you can choose to roll out the winning variant, or roll all users back to the control variant instead. Your decisions depend on why a particular variant outperformed the others.
 

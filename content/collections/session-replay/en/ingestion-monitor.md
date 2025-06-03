@@ -6,7 +6,8 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1714506320
-source: https://www.docs.developers.amplitude.com/session-replay/ingestion-monitor/
+source: 'https://www.docs.developers.amplitude.com/session-replay/ingestion-monitor/'
+ai_summary: "Amplitude offers an Ingestion Monitor tool to help you debug Session Replay issues. It tracks status over time and displays charts of successful requests, errors, and invalid session IDs. You can access it from the top-right of the Session Replay section or any replay with errors. The tool helps you identify problems with session replays and monitor your implementation's health."
 ---
 To help debug issues with your Session Replay implementation, Amplitude provides an Ingestion Monitor tool that tracks Session Replay status over time.
 

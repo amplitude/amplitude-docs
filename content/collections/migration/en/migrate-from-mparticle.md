@@ -3,6 +3,7 @@ id: ca7e0544-2e99-4552-89d5-649a34c1956f
 blueprint: migration
 title: 'Migrate From mParticle'
 source: 'https://www.docs.developers.amplitude.com/guides/mparticle-migration-guide'
+ai_summary: 'This document guides you on migrating your Source and Destination configurations, updating SDK implementation, and validating the migration in Amplitude. It compares features with mParticle, covers best practices, and provides instructions on adding sources and updating SDKs. You can also validate events, add destinations, and check a migration checklist. The document includes FAQs, such as migration duration, requesting integrations, and handling existing CDP contracts. It aims to help you seamlessly transition to Amplitude for your Analytics and CDP needs.'
 ---
 Looking to combine on Amplitude for both your [Analytics](https://amplitude.com/amplitude-analytics) and [CDP](https://amplitude.com/customer-data-platform) needs? 
 

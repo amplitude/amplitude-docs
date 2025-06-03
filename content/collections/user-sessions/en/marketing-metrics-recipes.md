@@ -8,6 +8,7 @@ landing: false
 source: /hc/en-us/articles/23990255180443-Marketing-metrics-recipes
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1726161979
+ai_summary: "Amplitude Analytics helps you track your product's marketing success. The article explains how to create common marketing metrics using Event Segmentation or User Sessions charts. It includes setup instructions and examples for metrics like session totals, visitors, bounce rate, and more. You can learn to analyze data, set up filters, and refine results. The document also covers performance marketing metrics such as ad network clicks, impressions, costs, return on ad spending, customer acquisition cost, and clickthrough rate. By following these recipes, you can gain valuable insights into your marketing efforts."
 ---
 Amplitude Analytics provides a multitude of insights into the success of your product's marketing efforts. This article highlights the ingredients needed to recreate common marketing metrics using [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) or [User Sessions](/docs/analytics/charts/user-sessions/user-sessions-track-engagement-frequency) charts.
 

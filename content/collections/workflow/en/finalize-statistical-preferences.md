@@ -8,6 +8,7 @@ this_article_will_help_you:
   - 'Understand when to modify the default settings'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714517514
+ai_summary: 'Amplitude Experiment has default statistical settings for analyses, like toggling CUPED off and Bonferroni Correction on. You can modify these settings at any point during your experiment. CUPED helps reduce variance by considering different user segments, while Bonferroni Correction addresses multiple hypothesis testing. Custom Exposure Settings allow you to set a conversion event timeframe. You can choose between Sequential and T-test for analysis, with Sequential usually being the better option. The Confidence Level measures the certainty of your experiment results, with a default of 95%. Adjusting it can impact statistical significance.'
 ---
 Amplitude Experiment uses default statistical settings for experiment analyses: 
 

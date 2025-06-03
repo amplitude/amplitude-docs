@@ -13,6 +13,7 @@ landing: true
 landing_blurb: 'Understand the purpose of the Retention Analysis chart and familiarize yourself with its interface'
 academy_course:
   - 04e8de22-8441-45b0-9a26-06e0a6f8a1b5
+ai_summary: "Amplitude's Retention Analysis chart helps you understand how often users come back after an action. You can select starting and return events, track up to two return events, and analyze user segments. This feature is available on all plans. Before starting, make sure you've completed the instrumentation process. To set up a Retention Analysis chart, select events, filter properties, build user segments, and view results. The chart shows usage intervals and helps you measure user engagement. Check out the article for more details on using Retention Analysis effectively."
 ---
 Amplitude’s **Retention Analysis** chart helps you drive product adoption by showing you how often users return to your product after taking a specific action (known as **triggering an event**). 
 

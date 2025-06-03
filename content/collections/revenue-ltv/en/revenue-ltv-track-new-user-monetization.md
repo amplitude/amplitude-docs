@@ -7,6 +7,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1732570506
 landing: true
 landing_blurb: 'Analyze new-user monetization with a time horizon of as much as twelve months into the past'
+ai_summary: "With Amplitude's Revenue Long-Term Value (LTV) chart, you can analyze how well your company is monetizing new users, track segments transitioning to paying users, and set goals for future monetization. This functionality is available to users on Growth and Enterprise plans. To set up a Revenue LTV chart, select your revenue event, add properties, identify user segments, and choose a measure like Total Revenue, New Paying Users, ARPU, or ARPPU. This tool helps you understand and improve your revenue analysis."
 ---
 Successfully acquiring, engaging, and retaining new users doesn't help your company grow if you can't monetize them. 
 

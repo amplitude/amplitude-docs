@@ -7,6 +7,7 @@ this_article_will_help_you:
   - 'Ensure your experiment is ready for testing'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714514372
+ai_summary: "You design your experiment, then prepare it for testing and launch by setting evaluation mode and bucketing unit, choosing deployments, verifying variants, and assigning team members for QA testing. Your engineering team should oversee this stage. If you're launching a feature flag, follow the same steps. Configure your experiment's delivery: specify evaluation mode and bucketing unit, select deployments, check variants, and add QA testers. Assign each tester to a variant. Click *Save and Close* when finished to launch your experiment."
 ---
 Now that you've designed your experiment, the next step is making sure it's ready to be tested and launched. You'll specify the evaluation mode and bucketing unit (if you haven't already), specify the deployments that will house this experiment, double-check your variants, and identify members of your team who will participate in QA testing.
 

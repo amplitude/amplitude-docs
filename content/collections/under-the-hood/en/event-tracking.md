@@ -6,6 +6,7 @@ landing: false
 source: 'https://www.docs.developers.amplitude.com/experiment/general/experiment-event-tracking/'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716917513
+ai_summary: "Amplitude Experiment uses assignment and exposure events, along with experiment user properties, to analyze, monitor, and debug experiments. It's recommended to use Amplitude-defined exposure or assignment events to ensure correct user property settings. Experiment supports up to 1500 user properties per project. Assignment events track user assignments, while exposure events track user exposure to variants. Amplitude provides automatic assignment tracking and exposure tracking through SDK integrations. Exposure events inform Amplitude Experiment about user exposure to experiment variants, setting user properties for accurate analysis."
 ---
 Amplitude Experiment's *end-to-end* platform relies on two events, [assignment](#assignment-events) and [exposure](#exposure-events), and an [experiment user property](#experiment-user-properties) per experiment, to enable experiment analysis, monitoring, and debugging.
 

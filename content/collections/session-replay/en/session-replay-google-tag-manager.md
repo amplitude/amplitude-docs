@@ -12,6 +12,15 @@ platform: browser
 parent: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
 public: true
 description: 'Choose this option if you use Google Tag Manager to instrument Amplitude on your site.'
+ai_summary: |-
+  To enable Amplitude Session Replay with Google Tag Manager, follow these steps:
+
+  1. Add the Amplitude Google Tag Manager Web Template.
+  2. Create or edit a tag in Google Tag Manager using the Amplitude template.
+  3. Enable Session Replay Plugin in the tag's Initialization section.
+  4. Adjust Session Replay settings in Amplitude if needed.
+
+  If you encounter issues like multiple Amplitude SDK instantiations, ensure the initialization logic runs only once in your app. This documentation focuses on client-side GTM setups and troubleshooting potential problems with multiple SDKs.
 ---
 Instrumenting Amplitude Session Replay with Google Tag Manager requires a different procedure than with the standard [Browser SDK Plugin](/docs/session-replay/session-replay-plugin). 
 
