@@ -11,6 +11,7 @@ landing: true
 landing_blurb: 'Build a custom analysis using multiple metrics in several different dimensions'
 academy_course:
   - 61b3a9e8-5868-4ec3-8753-4c15b05c71a4
+ai_summary: "Amplitude's Data Tables allow you to analyze multiple metrics and dimensions simultaneously, creating custom analyses easily. You can compare various user behaviors, attributes, and metrics in one view. Data Tables are beneficial for marketing attribution, market segment analysis, experiment analysis, trend investigation, and comparing time periods across metrics. You can sort columns, manipulate data, and perform various actions within the Data Table interface. This functionality is available on all Amplitude plans. By setting up a Data Table, adding events or metrics, and utilizing properties, you can conduct in-depth analyses efficiently."
 ---
 When analyzing a rich dataset, analysts often need to compare multiple metrics at once, and slice and dice that data by different dimensions to generate a custom analysis. Amplitude’s Data Tables enable multi-metric, multi-dimensional analyses in a single view. It's an extremely flexible chart, allowing you to quickly analyze any combination of user behavior, user attributes, and metrics. 
 

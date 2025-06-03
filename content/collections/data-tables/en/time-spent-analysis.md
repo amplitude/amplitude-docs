@@ -5,6 +5,7 @@ title: 'Time spent analysis'
 landing: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1737484059
+ai_summary: "Amplitude calculates time spent on an event based on consecutive event durations with a 30-minute timeout. This feature is available for Growth or Enterprise plans. When you specify a group-by property, the time spent window resets with any value change. Page view events are commonly used for time spent analysis. You can define these events as primitive, active, or custom. Time spent metrics can be used in data tables to analyze user behavior. Results are returned in specified time units. Amplitude doesn't support direct calculation of certain metrics. You can create a new time spent metric in a Data Table by defining the metric type and applying filters."
 ---
 Amplitude calculates the time spent on an event as the duration between consecutive events of the specified type. To prevent long periods of inactivity from skewing the analysis, Amplitude applies a 30 minute timeout. If no events of the specified type occur within a 30 minute window, Amplitude closes the current time spent window, and begins a new window with the next event.
 
