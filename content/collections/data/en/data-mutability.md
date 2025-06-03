@@ -6,9 +6,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1735574400
 ---
-Amplitude's Data Mutability features enable you to maintain data consistency between your warehouse and Amplitude by supporting `INSERT`, `UPDATE`, and `DELETE` operations on your event data. This capability is available through Mirror Sync strategies across multiple warehouse integrations, allowing you to keep your Amplitude data synchronized with your source of truth.
-
-## Overview
+Amplitude's Data Mutability features enable you to keep data consistent between your warehouse and Amplitude by supporting `INSERT`, `UPDATE`, and `DELETE` operations on your event data. This capability is available through Mirror Sync strategies across multiple warehouse integrations, allowing you to keep your Amplitude data synchronized with your source of truth.
 
 Data Mutability allows you to:
 
@@ -45,9 +43,7 @@ Data Mutability is available through the following warehouse integrations:
 - Requires structured mutation metadata in your data files
 - [Learn more about Amazon S3 integration →](/docs/data/source-catalog/amazon-s3)
 
-## How Data Mutability Works
-
-### Mirror Sync Strategy
+## Mirror sync strategy
 
 When you enable Mirror Sync with data mutability:
 
@@ -58,9 +54,9 @@ When you enable Mirror Sync with data mutability:
    - `UPDATE`: Modifies existing events in Amplitude
    - `DELETE`: Removes events from Amplitude
 
-3. **Data Synchronization**: Changes are applied to maintain consistency between your warehouse and Amplitude
+3. **Data Synchronization**: Changes apply to keep consistency between your warehouse and Amplitude
 
-### Enrichment Services
+## Enrichment services
 
 {{partial:admonition type="warning" heading="Enrichment Services Disabled"}}
 When using Mirror Sync with data mutability, Amplitude disables enrichment services including:
@@ -72,15 +68,13 @@ When using Mirror Sync with data mutability, Amplitude disables enrichment servi
 This ensures your data remains exactly as it exists in your source of truth.
 {{/partial:admonition}}
 
-## Key Requirements and Limitations
+## General requirements
 
-### General Requirements
-
-- **User ID Required**: All events must contain a user ID. Anonymous events are not supported with Mirror Sync
+- **User ID Required**: All events must contain a user ID. Anonymous events aren't supported with Mirror Sync
 - **Unique Insert ID**: Each event should have a unique and immutable `insert_id` to prevent duplication
-- **Chronological Order**: Events should be processed in chronological order when possible
+- **Chronological Order**: Process events in chronological order when possible
 
-### Event Volume Considerations
+## Event volume considerations
 
 {{partial:admonition type="note" heading="Event Volume Impact"}}
 Data mutations count toward your event volume:
@@ -91,43 +85,45 @@ Data mutations count toward your event volume:
 Monitor your usage and contact sales if you need additional event volume.
 {{/partial:admonition}}
 
-### Data Retention
+### Data retention
 
 - **Snowflake**: `DATA_RETENTION_TIME_IN_DAYS` must be ≥ 1 (recommended: ≥ 7 days)
 - **Databricks**: Change Data Feed retention must cover your sync frequency
-- **S3**: Files must remain accessible for the duration of processing
+- **S3**: Files must remain accessible throughout processing
 
 ## Best Practices
 
-### Planning Your Implementation
+Keep the following best practices in mind as you enable data mutability.
+
+### Plan your implementation
 
 1. **Start with a Test Project**: Create a dedicated test environment to validate your mutation logic before implementing in production
 
 2. **Design for Idempotency**: Ensure your mutation operations can be safely retried without causing data inconsistencies
 
-3. **Monitor Data Quality**: Implement validation checks to ensure mutations are applied correctly
+3. **Monitor Data Quality**: Implement validation checks to ensure mutations apply correctly
 
-### Data Privacy Compliance
+### Data privacy compliance
 
 When using data mutability for privacy compliance:
 
-1. **Stop Data Flow First**: Before deleting user data, ensure no new data about that user is being sent to Amplitude
+1. **Stop Data Flow First**: Before you delete user data, ensure you send no new data about that user to Amplitude.
 
 2. **Use User Privacy API**: For complete user deletion, use the [User Privacy API](/docs/apis/analytics/user-privacy) in addition to warehouse deletions
 
 3. **Verify Deletion**: Confirm that deleted data no longer appears in your analytics
 
-### Performance Optimization
+### Performance optimization
 
 - **Batch Operations**: Group related mutations together when possible
 - **Optimize Sync Frequency**: Balance data freshness needs with processing overhead
 - **Monitor Resource Usage**: Track warehouse compute costs associated with change tracking
 
-## Migration to Data Mutability
+## Migration to data mutability
 
 If you're migrating from a standard ingestion strategy to Mirror Sync:
 
-### Recommended Migration Steps
+### Recommended migration steps
 
 1. **Create Cutoff Strategy**: 
    - Modify existing connection with a time filter (e.g., `WHERE time < {cutOffDate}`)
@@ -141,11 +137,9 @@ If you're migrating from a standard ingestion strategy to Mirror Sync:
 
 4. **Clean Up**: Remove the old source connection after verifying the new one works correctly
 
-## Troubleshooting
+## Common Issues
 
-### Common Issues
-
-**Events Not Updating**
+**Events Don't Update**
 - Verify change tracking is enabled on source tables
 - Check that events contain required user IDs
 - Confirm sync frequency settings
@@ -157,21 +151,5 @@ If you're migrating from a standard ingestion strategy to Mirror Sync:
 
 **Data Inconsistencies**
 - Review mutation operation ordering
-- Verify that enrichment services are disabled as expected
+- Verify that you disabled enrichment services as expected
 - Check for timing issues between warehouse changes and sync execution
-
-### Getting Help
-
-For additional support with Data Mutability features:
-
-- Review integration-specific documentation for detailed setup instructions
-- Contact your Customer Success Manager for implementation guidance
-- Reach out to Amplitude Support for technical troubleshooting
-
-## Related Resources
-
-- [Snowflake Data Import](/docs/data/source-catalog/snowflake)
-- [Databricks Integration](/docs/data/source-catalog/databricks)  
-- [Amazon S3 Import](/docs/data/source-catalog/amazon-s3)
-- [User Privacy API](/docs/apis/analytics/user-privacy)
-- [Data Planning Workflow](/docs/data/data-planning-workflow)
