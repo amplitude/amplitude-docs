@@ -9,6 +9,7 @@ this_article_will_help_you:
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716329348
+ai_summary: 'In an experiment, each variant or metric represents a hypothesis. Adding more variants introduces potential changes, testing their impact on results. Single-hypothesis tests offer insights, but multiple hypotheses can be more revealing. However, testing multiple hypotheses can lead to errors due to the multiple comparisons problem. Amplitude uses the Bonferroni correction to address this issue. This method divides the false positive rate by the number of hypothesis tests, controlling the family-wise error rate. Amplitude applies Bonferroni corrections to both treatments and primary/secondary metrics, indicating when correction is made in the significance column.'
 ---
 In an experiment, think of each variant or metric you include as its own hypothesis. For example, by adding a new variant, you’re putting forth the hypothesis that whatever potential changes are included in that variant will have a detectable impact on the experiment’s results. 
 

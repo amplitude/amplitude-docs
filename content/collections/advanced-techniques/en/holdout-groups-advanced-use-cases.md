@@ -9,6 +9,7 @@ this_article_will_help_you:
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714079443
+ai_summary: 'This article discusses advanced use cases of holdout groups in Amplitude Experiment. It covers how adding an experiment to multiple holdout groups can affect traffic distribution, and it advises creating a single group for better traffic balance. It also explains how adding an experiment to both a holdout group and a mutual exclusion group can further limit traffic to the experiment. The article highlights potential traffic limits and suggests caution when using holdout groups with mutual exclusion. You can optimize traffic distribution by following the recommendations provided.'
 ---
 This article reviews advanced use cases you may run into while using [holdout groups](/docs/feature-experiment/advanced-techniques/holdout-groups-exclude-users) in Amplitude Experiment. 
 

@@ -8,6 +8,7 @@ this_article_will_help_you:
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1728509681
+ai_summary: 'Outliers are data points far from the mean that can skew analysis. You can identify outliers by examining histograms or using standard deviations. Boxplots and percentiles are other methods. Outliers can distort analysis, affecting statistical significance. To handle outliers, consider winsorization, removing outliers, or non-parametric tests. Different metrics may require different approaches. Visualization, segmentation charts, and session replays can help understand outliers. Winsorization and log transforms can mitigate the impact of outliers. Amplitude Experiment supports winsorization and log transforms for various metric types. Avoid winsorizing more than 5% of data.'
 ---
 Outliers are data points that occur on the far fringes of a dataset. These data points typically rest far from measurements of central tendency like the mean, and can easily skew an analysis. 
 

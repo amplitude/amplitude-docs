@@ -9,6 +9,7 @@ this_article_will_help_you:
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1730930146
+ai_summary: "The Amplitude technical documentation explains how you can view the cumulative exposures graph to track the number of users exposed to your experiment over time. Each user is counted only once, except if they see multiple experiment variants. This graph helps you interpret exposure results, whether with increasing or decreasing slopes. By understanding the graph's patterns and nuances, you can gain insights into user behavior and experiment performance. Adjusting settings, such as viewing data hourly instead of daily, can offer additional perspectives. Monitoring the cumulative exposures graph can guide decisions on experiment duration and cohort selection for accurate analysis."
 ---
 The cumulative exposures graph details the number of users who are **exposed to your experiment over time**. The x-axis displays the date when the user was first exposed to your experiment; the y-axis displays a cumulative, running total of the number of users exposed to the experiment. 
 

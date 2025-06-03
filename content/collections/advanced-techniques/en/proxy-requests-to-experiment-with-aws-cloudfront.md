@@ -6,6 +6,7 @@ source: 'https://www.docs.developers.amplitude.com/experiment/guides/aws-cloudfr
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717178910
+ai_summary: "You can set up a reverse proxy to bypass domain blocking and reduce latency for Amplitude experiment APIs. Create a CloudFront distribution in AWS, specify the origin domain, configure cache behavior, key, and requests, and test the distribution using a `curl` request. This process helps optimize the round trip time for requests to Amplitude's servers."
 ---
 Set up a reverse proxy to circumvent domain blocking in particular regions or by certain extensions and DNS servers. Because experiment APIs are latency sensitive, Amplitude recommends approach using an edge hosted solution to minimize the round trip time from the proxy to Amplitude.
 
