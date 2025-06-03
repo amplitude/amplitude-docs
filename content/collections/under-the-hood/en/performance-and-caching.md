@@ -6,6 +6,7 @@ landing: false
 source: 'https://www.docs.developers.amplitude.com/experiment/general/performance-and-caching/'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716917482
+ai_summary: 'Amplitude Experiment has local and remote evaluation modes with different performance metrics. Remote evaluation uses Fastly for caching, improving performance. Local evaluation pre-fetches flag configurations to speed up evaluation. CDN caching handles caching for both evaluation modes. Cache TTL is 60 minutes, and cache key includes user information. Cache is invalidated when flags change. Dynamic targeting allows for targeting based on user properties and behavioral cohorts synced from Amplitude Analytics. Stale results may occur due to caching, especially with dynamic properties. Use dynamic cohort targeting carefully for time-sensitive scenarios.'
 ---
 Amplitude Experiment [evaluation](/docs/feature-experiment/implementation) supports two modes, [local](/docs/feature-experiment/local-evaluation) and [remote](/docs/feature-experiment/remote-evaluation), each with different performance metrics and tradeoffs.
 

@@ -3,8 +3,8 @@ id: abf952ae-fdc9-4f51-8691-c0f4ed6a73f4
 blueprint: migration
 title: 'Migrate From Segment'
 source: 'https://www.docs.developers.amplitude.com/guides/segment-migration-guide'
+ai_summary: "The Amplitude technical documentation covers migrating source and destination configurations, updating SDK implementation, and validating the migration's success. It compares Segment and Amplitude offerings, detailing concepts like tracking, identifying users, and grouping. You can add sources and destinations, validate events, and follow a migration checklist. The documentation also addresses frequently asked questions about migration timelines, integration requests, and existing CDP contracts. By following the steps outlined, you can effectively manage your analytics and CDP needs with Amplitude."
 ---
-
 If you're looking for a platform that can handle both your [Analytics](https://amplitude.com/amplitude-analytics) and [CDP](https://amplitude.com/customer-data-platform) needs, Amplitude can.
 
 This document covers the necessary steps to:

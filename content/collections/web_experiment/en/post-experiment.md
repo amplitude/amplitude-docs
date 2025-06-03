@@ -4,6 +4,7 @@ blueprint: web_experiment
 title: 'Post-experiment steps'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1745618874
+ai_summary: "You can run web experiments with Amplitude Experiment to test ideas and make data-driven product decisions. Once you identify a winning variant, it's recommended to move it to your production code base. Analyze results, implement the winner in your code, deactivate the experiment in Amplitude, and document the outcome. If needed, you can use feature flags for incremental rollouts. Migrating the winning variant to production improves performance, reduces technical debt, and optimizes platform costs and impression volume."
 ---
 Running web experiments through Amplitude Experiment helps test hypotheses, validate ideas, and drive data-informed product decisions. However, once you have a clearly winning variant, Amplitude recommends moving the winning variant to your production code base rather than keeping the experiment live with 100% traffic allocation to the winning variant.
 

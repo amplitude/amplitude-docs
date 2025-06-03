@@ -7,6 +7,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1741112613
+ai_summary: 'The documentation explains how you can integrate Session Replay with Amplitude on a Segment-instrumented site. It provides instructions for setting up Session Replay with Amplitude (Actions), Amplitude Classic in Device-mode, and Amplitude Classic in Cloud-mode. It also includes troubleshooting tips for the Segment integration. By following these steps, you can enhance your analytics tracking and improve user session monitoring on your website.'
 ---
 Session Replay supports other analytics providers. Follow the information below to add Session Replay to an existing Segment-instrumented site.
 

@@ -9,6 +9,7 @@ this_article_will_help_you:
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1726005676
 landing: false
+ai_summary: "You define events for your experiment and choose who can participate. In the Audience section, you can open eligibility to all users or target specific groups based on location, demographics, or usage. To target, create user segments using cohorts or user properties. You can add multiple segments, with users assigned to the first matching segment. User properties are updated hourly, and cohorts sync every hour. Remember, Amplitude Experiment doesn't support using transformed properties for targeting. There's no limit to the number of user segments you can create. Next step: set up your experiment's variants."
 ---
 Now that you’ve defined the events that make up your experiment, you’ll need to define who's eligible for bucketing into the experiment. In the Audience section of the experiment design panel, you can choose to open eligibility up to all users, or you can target specific groups of users.
 

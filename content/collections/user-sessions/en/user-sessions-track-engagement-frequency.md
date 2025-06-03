@@ -12,6 +12,7 @@ landing: true
 landing_blurb: 'Build a user sessions analysis'
 academy_course:
   - 24571d68-a5a0-45de-990c-770f42c06073
+ai_summary: 'The User Sessions chart in Amplitude helps you analyze user engagement by showing session lengths, average session length, and sessions per user. It allows you to understand how often users interact with your product, how long they engage, and how metrics compare across user segments. This feature is available on all Amplitude plans. You can build a user sessions chart by specifying sessions or events, setting properties and groupings, and selecting metrics like total sessions, time spent, average length, and more. The chart helps you track user behavior and engagement.'
 ---
 The User Sessions chart helps analyze your users through various session-based metrics. By showing you the distribution of session lengths, average session length, and average sessions per user, it can help you answer questions like:
 

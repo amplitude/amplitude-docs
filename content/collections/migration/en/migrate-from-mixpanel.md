@@ -3,8 +3,8 @@ id: 6aa2684c-8d4c-4cd6-8281-10204eb956d3
 blueprint: migration
 title: 'Migrate From Mixpanel'
 source: 'https://www.docs.developers.amplitude.com/guides/mixpanel-migration-guide'
+ai_summary: "The Amplitude Professional Services team created the Mixpanel to Amplitude Implementation Guide to help you implement Amplitude and gain insights quickly. The guide offers use cases, business questions, a data taxonomy, and example charts for your implementation. You can set product metrics, design a data taxonomy, and instrument your taxonomy. Amplitude also provides suggested use cases by industry and a taxonomy for tracking events and properties. You can send live event data to Amplitude, map Mixpanel methods to Amplitude, and migrate historical data. Additionally, there's information on data privacy considerations, the Mixpanel import tool, troubleshooting tips, GDPR compliance, and a feedback submission link."
 ---
-
 The Amplitude Professional Services team has compiled this Mixpanel to Amplitude Implementation Guide to help you implement Amplitude and start getting insights right out of the gate.
 
 With the goal of driving tangible conversion, retention, and product outcomes, this guide provides you with recommended use cases and business questions, a proposed taxonomy, and example charts that can be used for your implementation.

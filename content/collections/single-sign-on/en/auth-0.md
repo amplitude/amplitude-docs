@@ -7,6 +7,7 @@ this_article_will_help_you:
   - 'Set up single-sign on using Auth0'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715363264
+ai_summary: 'Amplitude offers single sign-on integration with Auth0 for certain plan levels. To set this up, you need to be an org admin and have Auth0 configuration permissions. Steps involve creating a client in Auth0, enabling the SAML2 plugin, adding URLs, and uploading a metadata file in Amplitude settings. Once saved, single sign-on will be enabled for your organization. This integration streamlines access management for Amplitude users.'
 ---
 Amplitude provides a single sign-on integration with Auth0 for customers on Scholarship, Growth, or Enterprise plans.
 

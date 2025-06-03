@@ -8,6 +8,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1727367735
+ai_summary: 'You can set up single sign-on (SSO) in Amplitude with any SAML 2.0 compliant provider not explicitly named in the app. Read the introductory article on SSO in Amplitude for basic requirements. To set up SSO with an unlisted provider, go to *Organization Settings > Access & SSO Settings*, select *Other* from the *Identity Provider* dropdown, upload your metadata file, and enter the entity ID and assertion consumer service URL. Make sure to have this information handy. Click *Save* when you finish setting up your SSO.'
 ---
 You may want to set up single sign-on (SSO) using a custom-built SSO provider, or one not explicitly named in the Amplitude app. Amplitude is compatible with any SAML 2.0 compliant SSO provider, so as long as the one you want to use meets that description, you can do so.
 
