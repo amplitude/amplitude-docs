@@ -6,8 +6,9 @@ this_article_will_help_you:
   - 'Manage your API keys and secret keys'
 landing: false
 exclude_from_sitemap: false
-updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
-updated_at: 1721166679
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1748971670
+ai_summary: "Amplitude's key management page allows Managers & Admins to create, revoke, or delete API keys and secret keys permanently. Users can name keys, view logs, and disable API access. Revoking an API key is irreversible. The process involves generating, revoking, and deleting keys, with limitations on active keys and deletion time."
 ---
 {{partial:admonition type='note'}}
 You should review the [keys and tokens documentation](https://amplitude.com/docs/apis/keys-and-tokens) before you make any changes to your keys.
