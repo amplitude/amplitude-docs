@@ -9,6 +9,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717103943
 landing: true
 landing_blurb: 'Use the Compass chart to identify the moments in the user journey that are critical to driving growth'
+ai_summary: 'Compass in Amplitude helps you find key user behaviors for retention or conversion. It identifies inflection metrics indicating critical moments in user engagement. You can customize base and target cohorts for analysis. Proportion above threshold shows user behavior impact, and true positive ratios (PPV and sensitivity) reveal correlation with retention. True negative ratios (NPV and specificity) help predict churn. Compass aims to find event frequencies that optimize user retention. Use this data to test and improve your product or marketing strategies. Remember, correlation does not equal causation; run A/B tests for conclusive results.'
 ---
 [Compass](/docs/analytics/charts/compass/compass-aha-moment) is a powerful feature that can help you identify behaviors that are predictive of retention or conversion. It identifies **inflection metrics**, or those that capture the moments when a user has reached a critical threshold in your product—which are instrumental in driving user growth.
 
