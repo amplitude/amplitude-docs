@@ -251,6 +251,7 @@ version_support_matrix:
     enabled: true
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1733356647
+ai_summary: "This document outlines Amplitude's maintenance policy for SDKs and Tools, including Browser and Mobile SDKs. It emphasizes staying up-to-date with SDK releases to access new features, security updates, and dependencies. The SDK versioning follows `X.Y.Z` format, with major versions indicating significant changes. The life-cycle includes Developer Preview, General Availability, Maintenance, and End-of-Support phases. Amplitude recommends upgrading to new major versions. Dependencies have a separate life-cycle, with support continuing after the community or vendor ends it. The document includes a matrix showing major versions and their maintenance status."
 ---
 ## Overview
 

@@ -4,6 +4,7 @@ blueprint: instrumentation
 title: 'SDK Plugins'
 source: 'https://www.docs.developers.amplitude.com/data/sdk-plugins/'
 nav_title: developers
+ai_summary: 'Plugins in Amplitude extend its behavior by supporting event enrichment, transformation, filtering, and routing to third-party destinations. You can add enrichment plugins to modify event properties, drop events, or set universal user properties. Destination plugins enable sending events to third-party APIs like Segment, Hotjar, or Google Analytics. Each plugin has `setup()` and `execute()` methods for initialization and event processing. By adding plugins through `amplitude.add()`, you can customize event handling in Amplitude to meet your specific analytics needs.'
 ---
 Plugins allow you to extend the Amplitude behavior. This pattern is flexible and you can use it to support event enrichment, transformation, filtering, routing to third-party destinations, and more. 
 

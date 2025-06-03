@@ -8,6 +8,7 @@ author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1726085730
+ai_summary: 'Ampli simplifies event tracking in Amplitude Data by generating a wrapper for the Amplitude SDK. It enforces event names and property values to prevent errors. The Ampli CLI creates and verifies the wrapper, ensuring all events are tracked correctly. The wrapper provides convenience methods and classes for tracking events. By using Ampli, you can easily track events with accuracy and confidence, improving data quality and analysis. The Ampli CLI helps you manage the Ampli Wrapper in your project, making event tracking efficient and error-free.'
 ---
 **Ampli** dynamically generates a light-weight wrapper for the **Amplitude SDK** based on your analytics tracking plan in **Amplitude Data** making event tracking easier and less error-prone.
 

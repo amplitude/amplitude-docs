@@ -9,6 +9,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1746656476
 academy_course:
   - bd75ea62-37df-4ba9-a32b-459a73933d9e
+ai_summary: 'The Amplitude Journeys chart offers two visualizations: Pathfinder and Journey Map. Pathfinder shows user paths based on specific events, while the Journey Map highlights conversion patterns. In both views, you can analyze, filter, and customize events. The Pathfinder allows property selection and funnel creation. The Journey Map helps identify user friction and conversion insights. The charts align to track the same paths in different ways. Notably, the new Journeys chart enhances event handling and visualization options compared to legacy versions. You can gain valuable insights and optimize user journeys using these functionalities.'
 ---
 Each Journeys chart consists of the Pathfinder and Journey Map visualizations. Both views tell you something different about the customer journey your users are experiencing. Navigate between them by selecting the appropriate tab along the top of the chart area.
 

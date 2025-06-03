@@ -4,8 +4,8 @@ blueprint: instrumentation
 title: 'SDK Troubleshooting and Debugging'
 source: 'https://www.docs.developers.amplitude.com/data/sdk-troubleshooting-and-debugging/'
 nav_title: developers
+ai_summary: "Amplitude's technical documentation covers data validation, debugging tools, common issues, and solutions. It helps you ensure events are ingested correctly, manage data residency, and troubleshoot issues like events not showing up, privacy concerns, unexpected timestamps, device family inaccuracies, delayed user properties, and inaccurate event times. The documentation provides explanations and solutions for each scenario. It's a resource to help you effectively implement and operate your projects using Amplitude."
 ---
-
 Data validation is a critical step in the instrumentation process. To streamline this process and enhance your debugging efforts, Amplitude provides some tools to convenience your debugging process. These resources facilitate the smooth implementation and operation of your projects.
 
 The following sections outline common issues that you may encounter, along with their respective solutions or explanations to aid in resolving these problems. 
