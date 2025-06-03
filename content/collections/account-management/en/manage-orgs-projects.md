@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715292596
+ai_summary: "You can manage and update your Amplitude account and projects, view and edit project information, add annotations, manage monitors with Insights, delete projects, change organization details, and request changes from Amplitude Support. Admins and managers can edit project settings, while viewers and members have limited access. You can't rotate API keys, but you can request a new secret key with admin approval. For organization changes, contact your CSM or follow the process outlined in the documentation."
 ---
 Once you've created your [account](/docs/get-started/create-a-new-account) and your [first project](/docs/get-started/create-project), you will from time to time need to manage and update them. This article explains how to perform common tasks related to organization and project management in Amplitude.
 

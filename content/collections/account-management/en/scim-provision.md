@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1721758941
+ai_summary: 'In Amplitude, the User Management API allows you to provision and manage groups programmatically, following the SCIM 2.0 Standard. It enables creating, updating, and deleting user and group calls. This feature is available on Enterprise plans. You can integrate SCIM provisioning with identity providers like Okta for user and group management. Configure SCIM provisioning in Amplitude settings, generate a SCIM Key, and integrate with Okta for user provisioning actions. Troubleshooting tips include handling pending users and regenerating the SCIM Key for authentication issues.'
 ---
 In Amplitude, the User Management API provides a programmatic solution to provisioning and group management through a public API. With it, you can quickly and easily manage your organizations at scale and integrate the provisioning process with other tools, including identity providers.
 

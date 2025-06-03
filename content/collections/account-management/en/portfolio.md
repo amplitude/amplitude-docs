@@ -10,6 +10,7 @@ updated_at: 1715362483
 this_article_will_help_you:
   - 'View and understand the behavior of your users across multiple products'
   - 'Reconcile users with multiple user IDs across your products'
+ai_summary: "With Amplitude's Portfolio feature, you can gain insights into how users interact with your entire product range. It lets you analyze users' journeys across multiple platforms or product lines. The Portfolio feature is available on Enterprise plans and supports up to five projects. Views merge data from different projects, allowing cross-product analyses. You can create Portfolio views by connecting projects and managing user permissions. User Mapping API helps merge user IDs across projects for a unified view. This functionality provides a comprehensive understanding of user behavior and interactions within your product portfolio."
 ---
 With Portfolio, you can build a holistic view of how your users interact with your entire product portfolio. If you've instrumented multiple platforms or product lines, Portfolio can give you unparalleled insight into your users’ complete journey.
 

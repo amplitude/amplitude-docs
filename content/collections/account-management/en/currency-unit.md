@@ -9,7 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724884797
-
+ai_summary: 'You can modify the currency display in Amplitude Analytics for a specific project without changing the underlying data. Navigate to *Settings > Organization settings > Projects*, select the project, and change the currency display in the *General* section. The updated currency will show in Revenue LTV charts, Revenue metrics in Event Segmentation and Data Tables charts, dashboards, and notebooks. This allows you to quickly understand your data in the preferred currency format.'
 ---
 Displaying an accurate currency in your charts is often necessary to quickly grasp what your data is telling you. Amplitude Analytics displays the United States dollar ($) by default, but managers and admins can modify the unit of currency displayed for a particular project. 
 

@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5343a026-383e-4b6a-ad4d-df18684b6384
 updated_at: 1724965850
+ai_summary: 'Webhooks are automated messages your application sends when something happens. They allow real-time information delivery between applications without waiting for your API. Custom alerts notify you of significant KPI changes. With webhooks for custom monitors, you send triggered monitors to an endpoint whenever user behavior affects your KPIs. This feature is for Enterprise customers and those with the Insights package. To create and configure a webhook, go to Organization settings > Projects, select a project, navigate to the Webhooks tab, create a new webhook, name it, add the endpoint URL, select custom monitors, and test the endpoint with a test message.'
 ---
 Webhooks are automated messages your application sends when something happens. They include a message (or **payload**) and are sent to a unique endpoint. They're an efficient way for one application to deliver real-time information to other applications, without having to wait for your API to poll data.
 

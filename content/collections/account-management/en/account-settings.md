@@ -9,6 +9,7 @@ updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1730929932
 this_article_will_help_you:
   - 'Manage organizational and project-level settings'
+ai_summary: "You can access and manage organizational settings, billing, user permissions, privacy controls, and more on Amplitude's Settings page. Organizational settings include managing organizations, projects, users, and viewing usage reports. Admins can also control Session Replay settings. Personal settings allow you to manage your profile, site settings, and notifications. You can customize your Amplitude experience and set preferences. The Year in Review feature provides a summary of your activity. You can also switch between Light Mode, Dark Mode, or set Amplitude to match your system's theme."
 ---
 Any user within your organization can access the Settings page, but only organization admins and managers can edit it. Here, you can navigate between organization-level settings, your own personal Amplitude settings, and more.
 
