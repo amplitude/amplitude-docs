@@ -9,6 +9,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717101890
 landing: true
 landing_blurb: 'Understand what your Event Segmentation analysis is telling you'
+ai_summary: "Amplitude's Event Segmentation chart helps you understand specific user groups' actions in your product. You can identify top events, compare event totals, and see which users trigger certain events. The chart is simple to create and provides quick insights into user behavior. You can customize the chart view with line, stacked area, bar, or stacked bar charts. Group-by conditions help clarify complex data. You can switch between absolute totals and relative percentages for analysis. Explore advanced segmentation features for averages, windows, and cumulative totals."
 ---
 Amplitude's **Event Segmentation** chart helps you understand what specific groups of users are doing in your product. For example, in an event segmentation analysis, you can:
 
