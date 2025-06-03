@@ -11,6 +11,7 @@ this_article_will_help_you:
   - 'Understand how Amplitude handles duplicative events'
 landing: false
 exclude_from_sitemap: false
+ai_summary: 'Implement Amplitude carefully to track events, users, and actions for valuable insights. Verify your instrumentation by firing test events to see if the data appears correctly in the real-time feed. Be mindful of your monthly event limit as exceeding it restricts access to excess data. Amplitude de-duplicates events based on event ID, client event time, and device ID. Use the insert_id field in the HTTP API to avoid duplication within seven days.'
 ---
 As you implement Amplitude for the first time, take care to QA your data during each step the process. This helps ensure that you're tracking the events, users, and actions that provide valuable insights for your product or service.
 

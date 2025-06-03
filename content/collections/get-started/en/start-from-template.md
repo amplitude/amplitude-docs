@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1725400214
+ai_summary: 'In Amplitude Analytics, **templates** make it easy for you to recreate common analyses and share best practices quickly. This feature is available on all Amplitude plans. You can create your own templates or use starter templates in the Template Gallery to gain insights into user behavior. Just click on a template to open it, and any templates you create will appear there too. If your process can be represented as a funnel, track it using a Funnel Analysis chart. Contact your Success Manager or Amplitude Support for help with event tracking. Access the Template Gallery by clicking *Start from a template* on the Amplitude Home page.'
 ---
 In Amplitude Analytics, **templates** help teams efficiently recreate common analyses and share best practices with just a few clicks.
 

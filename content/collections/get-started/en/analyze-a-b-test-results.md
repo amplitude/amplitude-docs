@@ -10,6 +10,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1720718906
+ai_summary: "With Amplitude's A/B Test View, you can measure the impact of experiments on your website or app metrics. Instrument your experiments by updating user properties through SDKs, HTTP API, or the Identify API. Send user properties to track experiment variations. Choose to use one user property per experiment or for all experiments. Amplitude integrates with Optimizely for automatic user property updates. Analyze experiment results using the AB Test View to compare activity between experiment groups. Segment user data for detailed analysis in the chart control panel."
 ---
 A/B testing is a method of conducting controlled, randomized experiments with the goal of improving a website or application metric. With Amplitude's [AB Test View](/docs/analytics/charts/funnel-analysis/funnel-analysis-interpret), you can measure the impact of your experiments by comparing how each experiment group behaves in your application.
 

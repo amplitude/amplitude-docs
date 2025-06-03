@@ -11,6 +11,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1742328240
 academy_course:
   - 46517037-8185-4438-afbd-4ba6f18249ea
+ai_summary: "In Amplitude, **Spaces** help you subscribe to and organize shared analyses. You save content into your personal workspace by default, but can move it to a shared space. Each piece of content can only be saved in one location, but you can create shortcuts to it in other spaces. This feature is available on all Amplitude plans but has restrictions for Starter and Plus plans. Your personal space is where you save content; it's not visible to others, but they can find discoverable content through search. You can create folders to group related content and create new spaces for collaboration."
 ---
 Some of the most valuable analyses are the result of collaborations among teammates. **Spaces** help product teams subscribe to and organize analyses shared in Amplitude.
 

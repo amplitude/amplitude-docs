@@ -12,6 +12,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1742328540
 academy_course:
   - f60c2808-d54b-484c-bad0-b346581d802c
+ai_summary: "Amplitude uses three methods to identify your users: device IDs, Amplitude ID, and user IDs. You can set up a user ID to uniquely identify individual users. Amplitude recommends setting a user ID once a user account is created or logged in. User IDs help reconcile events across devices and merge event data on the backend. It's important not to set user IDs for anonymous users. Once a user ID is set, it can't be changed. Follow best practices when setting user IDs to ensure accurate tracking. If you encounter issues, contact Amplitude Support."
 ---
 Amplitude uses a combination of three different methods to identify your users: device IDs, Amplitude ID, and **user IDs**. The first comes directly from your users' devices, while the second is an ID that Amplitude automatically creates once it has enough information to conclusively identify a unique user. The user ID, however, is something you'd set up.
 

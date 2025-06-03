@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1716571264
+ai_summary: 'Amplitude''s SDKs support various browsers including the latest versions of Firefox, Chrome, Edge, and Safari, along with browsers having over 0.5% worldwide usage. It doesn''t support "Undead" browsers, Internet Explorer 10, Internet Explorer 11, and Opera Mini. This information helps you ensure compatibility and functionality when integrating Amplitude into your web applications.'
 ---
 Amplitude's SDKs support a much wider range of browsers. Amplitude supports browsers that match any of these requirements:
 

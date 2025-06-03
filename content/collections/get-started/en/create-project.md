@@ -11,6 +11,7 @@ updated_at: 1724879660
 exclude_from_sitemap: false
 this_article_will_help_you:
   - 'Create a project in Amplitude'
+ai_summary: "In Amplitude, you can create projects to organize your analyses. Each project has its own API key for data tracking. To create a project, go to Settings > Organization settings > Projects, click Create Project, add a name and description, select users and roles, then submit. Projects help group related analyses together. Remember to create a test project before production. Once data is recorded, it can't be changed. Now that you have a project, you can start working with data in Amplitude."
 ---
 Once your organization is set up and users have joined it, you can begin adding **projects**. Each analysis you create belongs to a specific project. In Amplitude, a project is a way to subdivide your Amplitude organization into distinct territories—for example, you might want to create individual projects for different products, or for different areas or sections of your app. It’s a useful way to keep related analyses grouped together.
 

@@ -11,6 +11,7 @@ this_article_will_help_you:
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1716572509
+ai_summary: 'Events and properties form the foundation of Amplitude analytics. When deciding what to track, consider the complexity of your product. Focus on actions crucial for user engagement and conversion. Prioritize events that help answer key business questions. Different industries have specific event and property requirements. Amplitude offers industry-specific guides tailored to e-commerce, fintech, print media, and streaming media sectors. By tracking the right events and properties, you can gain valuable insights and optimize your product effectively.'
 ---
 Events and properties are the backbone of every analysis in Amplitude. [Deciding which ones to track](/docs/data/create-tracking-plan) can be daunting, especially if you're new to product analytics.
 

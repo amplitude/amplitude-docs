@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724881524
+ai_summary: 'The Feature Adoption Report template in Amplitude provides charts to understand customer behaviors related to conversion and drop-off without setup. You can customize the template and its charts. The charts show unique users, event occurrences, user percentages, average event occurrences per user, and more. You can click on a chart for a detailed view. You can turn the template into a dashboard to share insights with others by selecting events of interest and saving it. This helps track project data and customize dashboards for specific needs.'
 ---
 The charts included on the **Feature Adoption Report template** help you gain a deeper understanding of the customer behaviors linked to conversion and drop-off. There’s no setup required, though you can easily customize the template itself and the individual charts included with it if you need to.
 

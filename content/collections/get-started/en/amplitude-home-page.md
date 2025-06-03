@@ -9,7 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724879794
-
+ai_summary: "In Amplitude, the Home page provides a quick view of your product's activity. It acts as a dashboard displaying user data and real-time event stream. You can create custom charts, visit the template gallery, and access recent items. The real-time event stream shows user actions, and you can instantly generate Event Segmentation charts. Customize charts or start from templates in the gallery. Explore and modify templates to suit your needs. Click on links for more information. You can create charts and tailor analyses to your organization's needs."
 ---
 In Amplitude, the Home page is where you can get a quick overview on what’s happening with your product. You can also find links to the last five items you visited in Amplitude, quickly create a new chart, or visit the template gallery.
 
