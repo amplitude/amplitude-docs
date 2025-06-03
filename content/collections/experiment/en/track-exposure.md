@@ -9,6 +9,7 @@ updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724885595
 this_article_will_help_you:
   - 'Learn how Amplitude Experiment tracks user exposures'
+ai_summary: "When running an experiment, tracking which users were exposed to your feature flag's variable experience is crucial for reliable results. You can use the Analytics REST API to send exposure events to Amplitude and see users in the Exposures chart. The Experiment SDK simplifies exposure tracking by automatically tracking exposures through your analytics SDK. This functionality ensures that your experiment accurately evaluates users and displays the variant to them."
 ---
 When running an experiment, tracking which users were [exposed](/docs/feature-experiment/under-the-hood/event-tracking#exposure-events) to your feature flag's variable experience is essential. Without it, you can't count on reliable results.
 

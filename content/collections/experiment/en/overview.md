@@ -14,6 +14,7 @@ sourxe: 'https://help.amplitude.com/hc/en-us/articles/360061270232-Amplitude-Exp
 landing_blurb: 'Learn the value of experimentation in your product.'
 academy_course:
   - efd79a40-83e3-4c3d-a343-c0f81a41cdab
+ai_summary: 'Amplitude Experiment is a platform that accelerates your product development by allowing you to run experiments and A/B tests, stage new features, and deploy custom experiences. You can modify product experiences with flags without changing code. You start by creating a strong mission statement for your experiment, configuring it, and creating a hypothesis, metric, and variants. Then, you decide who will see the variants, allocate users, activate the experiment, and analyze the results. For phased feature rollouts, you create feature flags instead. You can easily delete old experiments and flags when you no longer need them.'
 ---
 For decades, product teams have relied on **experimentation** as a way to prioritize and implement product adjustments. But it’s never been easy. Because of that, these experiments often just tweak peripheral issues around the margins, instead of driving the big-picture changes that optimize the overall product experience. 
 

@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1720719003
+ai_summary: 'Project-level permissions in Amplitude Experiment allow you to control access separately from Analytics. You can prevent teams from releasing features or affecting data while enabling efficient work. Enterprise customers can set project-level user permissions to manage access. Flag-level access controls restrict users from making changes to specific flags or experiments unless designated as editors. Default access for new flags/experiments can be set organization-wide, editable by all users or restricted to editors. Admins can bypass access restrictions. A permissions matrix outlines permissions for different roles across various functionalities like Deployments, Experiments, and Users.'
 ---
 Experiment project-level permissions enable Amplitude admins to manage access to Amplitude Experiment separately from [Amplitude Analytics permissions](/docs/admin/account-management/user-roles-permissions). Use this when you want to:
 

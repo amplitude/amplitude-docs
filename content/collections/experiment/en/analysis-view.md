@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1740166938
+ai_summary: 'In Amplitude Experiment, the **Experiment Analysis** view provides a detailed overview of your experiment, helping you determine its success. You can see key statistical measurements like relative performance, confidence interval, significance, and absolute value. The view displays metrics, variants, and their performance differences. You can analyze data for different segments of users and track the impact of variants compared to control. Understanding these metrics allows you to make informed decisions based on the experiment results.'
 ---
 Within Amplitude Experiment, the **Experiment Analysis** view is where you’ll find the details of your experiment. Visible on the *Analysis* card under the *Activity* tab, it gives you a convenient way to quickly take in the most important, high-level statistical measurements that help you decide if your experiment was a success.
 

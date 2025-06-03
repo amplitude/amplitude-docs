@@ -7,6 +7,7 @@ sourxe: 'https://www.docs.developers.amplitude.com/experiment/general/evaluation
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716333767
+ai_summary: "Local evaluation in Amplitude SDK allows you to run evaluation logic locally, improving performance by avoiding network requests per user. It provides sub-millisecond evaluation ideal for latency-sensitive systems. While it doesn't support advanced targeting and identity resolution, it enables consistent bucketing with target segments. The SDK loads flag configurations from the server and polls for updates. You can track exposure events client-side and assignment events server-side. Different SDKs have varying performance metrics for flag evaluation. Server-side SDKs can target cohorts using User IDs."
 ---
 Local evaluation runs [evaluation logic](/docs/feature-experiment/implementation) in the SDK, saving you the overhead incurred by making a network request per user evaluation. The [sub-millisecond evaluation](/docs/feature-experiment/under-the-hood/performance-and-caching) is perfect for latency-minded systems which need to be performant at scale.
 

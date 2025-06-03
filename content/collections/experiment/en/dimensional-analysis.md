@@ -6,6 +6,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1740515903
+ai_summary: "Amplitude's Dimensional Analysis feature allows you to exclude specific user groups, like QA testers, from your data analysis. By defining and filtering test users in your experiments, you can ensure more accurate and representative results. This functionality helps you analyze the impact of your experiments on different user segments and avoid skewed data from internal traffic. You can easily manage and filter out test users to get clearer insights into your customer base."
 ---
 Sometimes, you might want to remove QA users or other internal traffic from your analyses because they're not representative of your customer base, and may skew results.
 

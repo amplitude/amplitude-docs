@@ -8,6 +8,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717435427
 landing_blurb: 'See how Amplitude Experiment is structured.'
+ai_summary: "In Amplitude Experiment, you organize your projects and deployments. Projects are used for flags and experiments. Flags are for feature flagging, while experiments are for user experimentation. Variants within flags or experiments offer different user experiences. Users can be mapped to Amplitude Analytics for evaluation, using user IDs or device IDs. Groups can also be used for evaluation. It's important to include user or device IDs for successful evaluation. Experiment SDKs support groups, with minimum versions specified. You can define a full user with various properties for evaluation."
 ---
 At the top level in Amplitude is your **organization**. Within an organization, Amplitude Experiment follows the **project** structure defined by Amplitude Analytics. In short, all Experiment data must be associated with an Amplitude Analytics project.
 
