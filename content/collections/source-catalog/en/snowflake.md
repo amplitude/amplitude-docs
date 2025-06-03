@@ -526,9 +526,50 @@ WHERE TO_DATE(event_timestamp) BETWEEN '2024-01-01' AND '2024-01-31'
 1. **Error: `SQL compilation error: Invalid identifier INFORMATION_SCHEMA.QUERY_HISTORY_BY_SESSION. Results not generated.`**
 
 - **Cause**: This occurs when the Snowflake role used for the integration no longer has permission to access the `INFORMATION_SCHEMA` of the specified Snowflake database. Amplitude requires access to this schema to check the status of queries running on the customer's Snowflake instance.
-- **Solution**: Ensure that the role used for the integration has the necessary permissions to access the `INFORMATION_SCHEMA` in the target Snowflake database. This issue often arises if the role was recently changed or updated without the appropriate access being maintained.
+- **Solution**: Ensure that the role used for the integration has the necessary permissions to access the `INFORMATION_SCHEMA` in the target Snowflake database. This issue often arises if the role was recently changed or updated without maintaining the appropriate access.
 
-2. Error: `JWT token is invalid.`
+1. Error: `JWT token is invalid.`
 
 - **Cause**: This error appears when there is a mismatch between the public key attached to the given user and the private key Amplitude generates for key pair authentication.
-- **Solution**: Ensure that the public key is properly set on the given user, and that the account is provided in the format `ORGNAME-ACCOUNTNAME`. If the account has an account locator at the end, key pair authentication may not succeed, even if the public key is set properly. To get the account identifier in the correct format, run `SELECT CURRENT_ORGANIZATION_NAME() || '-' || CURRENT_ACCOUNT_NAME();` in your Snowflake instance.
+- **Solution**: Ensure that the public key is properly set on the given user, and that you provide the account in the format `ORGNAME-ACCOUNTNAME`. If the account has an account locator at the end, key pair authentication may not succeed, even if the public key is set properly. To get the account identifier in the correct format, run `SELECT CURRENT_ORGANIZATION_NAME() || '-' || CURRENT_ACCOUNT_NAME();` in your Snowflake instance.
+
+## Frequently asked questions
+
+Review the list topics below if you encounter issues with your Snowflake integration.
+
+### What happens when a Snowflake query times out?
+
+When a Snowflake query times out, Amplitude automatically retries the query using an exponential backoff strategy. Each retry attempt waits progressively longer than the previous one, giving Snowflake more time to process the request successfully.
+
+### How many times does Amplitude retry failed queries?
+
+Amplitude attempts up to 8 retries (9 total attempts including the initial query) before marking an import job as failed. Each retry attempt starts fresh, ensuring a consistent approach to retrieving your data.
+
+### Why should I set ABORT_DETACHED_QUERY to FALSE?
+
+Setting `ABORT_DETACHED_QUERY = FALSE` at the account level prevents Snowflake from silently canceling import queries that run longer than 5 minutes. Without this setting:
+
+- Snowflake cancels long-running queries without notification
+- Amplitude interprets this as a temporary failure and retries
+- This can lead to duplicate events and inflated event counts
+
+While this setting doesn't change Amplitude's retry mechanism, it prevents unnecessary retries caused by Snowflake's automatic query cancellation.
+
+### How can I prevent duplicate data during imports?
+
+To prevent duplicate data during retries and overlapping imports:
+
+- **Include an `insert_id`**: This unique identifier allows Amplitude to detect and ignore duplicate events
+- **Set proper retry settings**: Configure `ABORT_DETACHED_QUERY = FALSE` to prevent unnecessary retries
+
+Without an `insert_id`, Amplitude treats every incoming event as new, potentially leading to duplicate data, inflated event counts, and inaccurate analytics.
+
+### Is there any risk of data loss during query timeouts?
+
+No, there is no risk of data loss when Amplitude import jobs time out. Here's why:
+
+- **Read-only operations**: Amplitude only reads data from your Snowflake instance—it never modifies, deletes, or writes to your tables
+- **Source data protection**: Timeouts occur during data transfer, not during any operation that could affect your source data  
+- **Automatic retries**: Failed imports are automatically retried up to 8 times, giving your data multiple opportunities to be successfully imported
+
+Your Snowflake data remains completely safe and unchanged regardless of import job outcomes.
