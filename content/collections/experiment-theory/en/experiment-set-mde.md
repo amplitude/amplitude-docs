@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715102912
+ai_summary: "Before running an experiment in Amplitude, you should set a Minimum Detectable Effect (MDE) to measure success. The default MDE in Amplitude is 2%, but it's important to customize it based on your business needs. You can choose between A/B test or Multi-Armed Bandit experiment types. Consider your goals, success metrics, and associated risks when setting the MDE. The MDE is relative to the control mean of the recommendation metric. When analyzing experiment results, you can also adjust the MDE. Keep in mind that experiments involve risks and costs, so assess these factors carefully."
 ---
 Before you run a experiment, set an MDE (minimum detectable effect) to estimate how you'll measure success. Think of MDE as the **minimum** change you're hoping to see by running your experiment. Without a fail-safe calculation available for the MDE, it can be tricky to set one. With Amplitude Experiment, the default MDE is 2%; however, as the MDE is strictly linked to your unique business needs, be thoughtful during each experiment's [design phase](/docs/feature-experiment/workflow/define-goals). Considerations for setting the MDE should include the recommendation metric and any associated risks.
 

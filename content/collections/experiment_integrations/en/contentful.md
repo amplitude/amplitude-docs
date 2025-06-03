@@ -6,6 +6,7 @@ author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718575288
+ai_summary: 'The Amplitude Experiment plugin for Contentful allows you to run A/B tests on Amplitude Experiment and manage content variations in Contentful. By integrating the plugin, you can control which variant users see and track their performance. To use this functionality, ensure you have access to an Amplitude plan with Experiment enabled, and follow the installation steps outlined in the documentation. By setting up variant containers, adding content, and integrating with your front end, you can effectively manage experiments and deliver tailored content to your users based on their interactions.'
 ---
 The Contentful plugin for Amplitude Experiment enables businesses to create variations of content in Contentful, and use Experiment to control which variant users see, and track performance of those variants.
 

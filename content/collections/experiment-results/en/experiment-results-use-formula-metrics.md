@@ -11,6 +11,7 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1731622844
 landing_blurb: 'Understand the different kinds of formula metrics supported by the Experiment Results chart'
+ai_summary: 'In Amplitude, you can create formula metrics in Experiment Results charts for more flexible analyses. These metrics combine events with mathematical operations. You can add formula metrics by selecting a formula, defining events, entering a calculation formula, and naming the metric. Supported functions include UNIQUES, TOTALS, PROPSUM, PROPAVG, PROPCOUNT, PROPMAX, PROPMIN, CONVERSIONRATE, CONVERSIONAVG, and REVENUETOTAL. Formulas can include arithmetic operations like addition, subtraction, multiplication, and division. Amplitude calculates variance, mean, confidence intervals, and p-values for these formula metrics based on the selected functions and operations.'
 ---
 In an Experiment Results chart, using a **formula metric** offers you greater flexibility when performing analyses. A formula metric is a metric that consists of:
 
