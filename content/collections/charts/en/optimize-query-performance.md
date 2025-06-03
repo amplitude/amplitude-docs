@@ -10,6 +10,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1726689668
+ai_summary: "Amplitude's query engine can optimize performance and reduce execution time by using query time sampling. This technique selects a 10% sample of user data for analysis and extrapolates the results to the entire population. You can enable query time sampling in charts and set it as the default for new charts. Project administrators can enable it project-wide. Enabling query time sampling for dashboards allows you to toggle sampling on or off. Keep in mind that it may not be suitable for all types of analyses, and some features are unavailable when it's enabled."
 ---
 At times, querying large datasets can be time consuming, resource-heavy, and difficult to execute. Amplitude's query engine can use a technique called **query time sampling** to optimize performance and reduce execution time.
 

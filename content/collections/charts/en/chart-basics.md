@@ -11,6 +11,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717690752
+ai_summary: 'Before you start creating a chart in Amplitude, you may need to read the article on how to do it. Some features may require specific subscriptions. You can start from a template, share your chart with stakeholders, add it to a dashboard or notebook, customize legend labels and the Y-axis, and add a second Y-axis for better visibility. You can switch projects or chart types, manage chart cache times, add annotations, create releases, and use keyboard shortcuts for various actions like event selection, saving, copying, and more.'
 ---
 ## Before you begin
 

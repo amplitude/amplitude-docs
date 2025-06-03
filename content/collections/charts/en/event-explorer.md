@@ -10,6 +10,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717691104
+ai_summary: "Amplitude's Event Explorer helps you see real-time events and properties to analyze relevant data. You can find and add events to charts as you trigger them. This feature is available on all Amplitude plans. Event Explorer is useful for choosing events, QA on instrumentation, and verifying event implementation. You can view events in real-time, search for users, and add events to charts. The tool helps you understand data taxonomy and identify gaps in events. Use Event Explorer to improve analysis accuracy and verify event implementation."
 ---
 Even with clean data, knowing which data to use in an analysis isn't always as straightforward as we would like: taxonomies can sometimes be unclear or counterintuitive; out-of-date events can persist well after the point when they should have been deprecated; events can sometimes break unexpectedly.
 

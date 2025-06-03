@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724345761
+ai_summary: 'This documentation explains different Amplitude chart types and their purposes. You can use Event Segmentation to compare events, Data Tables for multi-metric analyses, and User Composition to see user breakdowns. User Sessions help analyze user behavior, Personas group similar users, and Experiment Results aid in A/B testing. Funnel Analysis tracks user navigation, Retention shows user return rates, and Stickiness measures event frequency. Use charts like Engagement Matrix to improve features, and Revenue LTV for user lifetime value. Access to charts varies by Amplitude plan.'
 ---
 Any Amplitude analysis begins with selecting the right chart for the job. This article provides a short summary explanation of all Amplitude's chart types and the types of analysis they're best suited for.
 

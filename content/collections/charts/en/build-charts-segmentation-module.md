@@ -1,9 +1,10 @@
 ---
-title: "Build charts in Amplitude: the Segmentation Module's advanced features"
-source: "https://help.amplitude.com/hc/en-us/articles/360035354552-Build-charts-in-Amplitude-the-Segmentation-Module-s-advanced-features"
 id: b953c7f6-0f2c-4772-ae8f-7b4d2c8a8eb5
+blueprint: chart
+title: "Build charts in Amplitude: the Segmentation Module's advanced features"
+source: 'https://help.amplitude.com/hc/en-us/articles/360035354552-Build-charts-in-Amplitude-the-Segmentation-Module-s-advanced-features'
+ai_summary: "This documentation helps you build and manage complex user segments and create behavioral cohorts within the Segmentation Module in Amplitude. It expands on adding events and user segments to Amplitude charts. Before starting, ensure instrumentation is complete. You can customize property values, rename segments, and create inline behavioral cohorts. The historical count feature applies to all events in the Event Segmentation chart. It's a comprehensive guide for effectively utilizing Amplitude's segmentation capabilities."
 ---
-
 #### This article will help you:
 
 * Build and manage more complex user segments within the Segmentation Module

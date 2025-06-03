@@ -11,6 +11,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717690871
+ai_summary: 'You can create user segments in Amplitude to analyze specific groups of users based on their behavior. Choose from any users, active users, or new users to focus your analysis. Use filters to refine your segments and compare multiple user segments. Group segments by user properties and save them for future use. Your saved user segments are available globally for your team. Set a default segment that Amplitude will automatically load when you create a new chart.'
 ---
 {{partial:admonition type='note'}}
 If you haven't done so already, read the Help Center article on [adding events to your Amplitude charts](/docs/analytics/charts/build-charts-add-events) before continuing with this one.
