@@ -7,7 +7,8 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1738796196
 section: guides
 landing: false
-landing_blurb: "See how you can use guides, and the templates available to you."
+landing_blurb: 'See how you can use guides, and the templates available to you.'
+ai_summary: 'The Amplitude technical documentation provides guidance on targeting and triggering options for guides. You can define specific user segments to show guides to and choose when and where guides appear based on user interactions. You can send direct links to target users more directly and control triggers like page load or specific user actions. Additionally, you can set priorities, limits to avoid overwhelming users, manage guide statuses, and customize guide settings. Active guides remain visible until completed or dismissed, with tiebreakers to determine which guide takes precedence when multiple are eligible for display.'
 ---
 Guides offer targeting and triggering options to ensure your guide appears when it should, to who it should.
 

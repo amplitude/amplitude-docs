@@ -8,6 +8,7 @@ updated_at: 1738949006
 section: guides
 landing: true
 landing_blurb: 'Learn about the form factors available to guides, and the customization properties they contain.'
+ai_summary: 'You can choose from five form factors in Amplitude: Modal, Popover, Pin, Tooltip, and Banner. Each form factor offers customization options to engage users in different ways. Modals are for important messages, Popovers give quick tips, Pins highlight key features, Tooltips reveal details on interaction, and Banners are for announcements. You can control the position of each form factor on the screen and create multi-step guides with different actions like visiting links, showing guides or surveys, or triggering callbacks. Blocks like buttons, images, and videos enhance the user experience based on the form factor and alignment you choose.'
 ---
 Guides and Surveys include five form factors you can chose from. Each form factor has a set of properties that control how it behaves to the end user.
 

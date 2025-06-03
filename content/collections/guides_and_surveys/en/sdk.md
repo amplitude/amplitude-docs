@@ -6,6 +6,7 @@ landing: true
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1744921299
 landing_blurb: 'Ensure your site or application is ready for Guides and Surveys.'
+ai_summary: "Amplitude's Guides and Surveys SDK allows you to deploy interactive guides and surveys on your website or application. You can install the SDK using different options based on your existing Amplitude setup. Additionally, the SDK enables you to initialize, boot, manage themes, register callbacks, configure routers, and localize content for a more tailored user experience. Verify installation and initialization, and make necessary adjustments if your organization has a strict Content Security Policy. The SDK also provides functionality to work with third-party analytics providers and Google Tag Manager for seamless integration."
 ---
 Amplitude's Guides and Surveys SDK enables you to deploy [Guides and Surveys](/docs/guides-and-surveys) on your website or application.
 

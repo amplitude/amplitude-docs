@@ -6,7 +6,8 @@ author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1738273389
 section: surveys
-landing_blurb: See what goes in to building a survey, and how they differ from guides.
+landing_blurb: 'See what goes in to building a survey, and how they differ from guides.'
+ai_summary: 'In Amplitude, you can create surveys with different types of feedback blocks like Ratings. These blocks let users give structured feedback using scales like Stars, Numbers, Emoji, or NPS. You can set conditions based on user responses to trigger actions, branch paths, or create personalized experiences. Customize your survey setup and targeting following the same steps as for guides.'
 ---
 The survey build experience contains many of the same features at the guide builder, and uses a subset of the available [form factors](/docs/guides-and-surveys/guides/form-factors#form-factors) (modal, popover, pin) and [properties](/docs/guides-and-surveys/guides/form-factors#properties).
 

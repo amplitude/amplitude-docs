@@ -1,9 +1,10 @@
 ---
 id: 9efa3729-a771-4659-ab24-710758c53755
+blueprint: guides_and_survey
 title: 'Proxy requests to Guides and Surveys'
 exclude_from_sitemap: false
+ai_summary: 'You can set up a single AWS CloudFront distribution to reverse proxy both static assets and Guides and Surveys API traffic. This helps avoid domain blocking and reduces latency. The setup involves creating a CloudFront distribution with two origins and configuring cache behaviors. After creating the distribution, test both the API and CDN paths. Finally, initialize the SDK by pointing `serverUrl` and `cdnUrl` to the CloudFront domain.'
 ---
-
 Set up a single AWS CloudFront distribution to reverse proxy both static assets and Guides and Surveys API traffic. This may help circumvent domain blocking in certain regions or by specific extensions and DNS servers. Guides and Surveys APIs and static assets are latency-sensitive, as a result Amplitude recommends using edge-hosted solutions to minimize round-trip time.
 
 ## Create a unified CloudFront distribution

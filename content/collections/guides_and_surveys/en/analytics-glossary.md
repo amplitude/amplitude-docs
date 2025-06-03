@@ -155,6 +155,7 @@ glossary:
         event_specific_properties: '`Survey Response` string. The user’s draft response'
     type: event_set
     enabled: true
+ai_summary: 'The Amplitude technical documentation explains how to categorize guide-related events with `[Guides-Surveys] Guide` and survey-related events with `[Guides-Surveys] Survey`. It provides a glossary of properties, types, and descriptions for events. This documentation helps you understand how to structure and differentiate guide and survey-related events in Amplitude for effective data analysis.'
 ---
 Amplitude prefixes guide-related events with `[Guides-Surveys] Guide` and survey-related events with `[Guides-Surveys] Survey`. 
 
