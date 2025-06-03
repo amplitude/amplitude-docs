@@ -1,32 +1,30 @@
 ## Summary
 
-This documentation covers Amplitude's Snowflake data warehouse integration that supports bidirectional data sync with four import strategies (Full Sync, Timestamp, Append Only Sync, Mirror Sync) for different data types (events, user properties, group properties, profiles), including Change Data Capture (CDC) functionality and comprehensive SQL query configuration for data transformation.
+This documentation covers Amplitude's Snowflake data warehouse integration that supports bidirectional data sync with four import strategies (Full Sync, Timestamp, Append Only Sync, Mirror Sync) and handles multiple data types (events, user properties, group properties, profiles) using Change Data Capture (CDC) functionality.
 
 ## Keywords
 
 - Snowflake data warehouse integration
-- Amplitude data import strategies
 - Change Data Capture (CDC)
-- Mirror Sync with insert/update/delete operations
+- Mirror Sync strategy
 - Append Only Sync
-- Timestamp-based import
+- Timestamp import strategy
 - Full Sync strategy
-- Event data ingestion
+- OBJECT_CONSTRUCT SQL function
+- DATA_RETENTION_TIME_IN_DAYS
+- ABORT_DETACHED_QUERY setting
+- Key pair authentication
+- Regional IP allowlist
+- VARIANT JSON data type
+- TIMESTAMP_NTZ format
+- insert_id deduplication
+- User Privacy API
+- Enrichment services
+- INFORMATION_SCHEMA permissions
+- JWT token authentication
+- Query timeout handling
+- Exponential backoff retry
+- Event properties mapping
 - User properties sync
 - Group properties sync
-- Profile data import
-- SQL query configuration
-- OBJECT_CONSTRUCT JSON transformation
-- Snowflake authentication (password/key pair)
-- Data warehouse IP allowlist
-- Snowflake streams and change tracking
-- DATA_RETENTION_TIME_IN_DAYS
-- ABORT_DETACHED_QUERY configuration
-- Event deduplication insert_id
-- Snowflake VARIANT data type
-- EPOCH_MILLISECOND timestamp conversion
-- Enrichment services (ID resolution, location resolution)
-- User Privacy API integration
-- Snowflake clustering keys optimization
-- INFORMATION_SCHEMA permissions
-- JWT token authentication errors
+- Materialized views optimization
