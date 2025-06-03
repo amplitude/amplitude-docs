@@ -8,6 +8,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1733257548
 landing_blurb: 'Learn how to implement Amplitude Experiment in your product.'
+ai_summary: "Evaluation in Amplitude determines the variant a user is assigned based on flag configurations. Pre-targeting, flag dependencies, individual inclusions, and sticky bucketing influence variant assignment. Targeting segments and consistent bucketing ensure users are allocated into variants. Consistent hashing and allocation determine variant assignment. Updating bucketing salt may be necessary for re-randomizing users or aligning experiment evaluations. The process involves consistent hashing with the murmur3 algorithm and allocation based on configured percentages and variant weights. Overall, Amplitude's bucketing logic ensures stable variant allocation for users."
 ---
 Evaluation refers to the act of determining which variant, if any, a user is bucketed into given a flag configuration. In short, evaluation is a function of a [user](/docs/feature-experiment/data-model#users) and a [flag](/docs/feature-experiment/data-model#flags-and-experiments) configuration which outputs a [variant](/docs/feature-experiment/data-model#variants).
 
