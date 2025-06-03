@@ -640,7 +640,7 @@ const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
 
 You may choose to bootstrap the SDK with an initial set of local evaluation flag configurations using the `initialFlags` configuration. These will be evaluated  when [variant](#variant) is called, unless an updated flag config or variant is loaded with [start](#start) or [fetch](#fetch).
 
-To download initial flags, use the [evaluation flags API](/docs/experiment-apis/experiment-evaluation-api#flags-api)
+To download initial flags, use the [evaluation flags API](/docs/apis/experiment/experiment-evaluation-api#flags-api)
 
 ```js
 const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
