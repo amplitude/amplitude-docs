@@ -8,6 +8,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718572745
 nav_title: developers
+ai_summary: 'You can extend Amplitude using middleware to customize event handling, such as enriching, transforming, filtering, or routing events. Middleware functions take event data and an optional extra object. Update to the latest Ampli version for better access. Add middleware using `amplitude.addEventMiddleware()`. Examples include filtering events, removing PII, enriching properties, and sending data to other services. Middleware runs in the order added. Middleware can access and modify event properties based on platform. Check supported SDKs for platform-specific implementation.'
 ---
 Middleware lets you extend Amplitude by running a sequence of custom code on every event. This pattern is flexible and you can use it to support event enrichment, transformation, filtering, routing to third-party destinations, and more.
 

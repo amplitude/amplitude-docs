@@ -6,8 +6,9 @@ author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718731093
-source: https://www.docs.developers.amplitude.com/data/sources/client-side-vs-server-side/
+source: 'https://www.docs.developers.amplitude.com/data/sources/client-side-vs-server-side/'
 nav_title: developers
+ai_summary: "Amplitude offers client-side and server-side sources for your app's code to run on users' devices or servers. Client-side sources are for apps on users' devices, while server-side sources are for web servers. Amplitude provides SDKs and APIs for both, like Web, Mobile, and Game Engine SDKs for client-side, and Node.js, Go, Python, and Java SDKs for server-side. You can also use third-party sources to import data. Choose client-side for simple setup, server-side for server events, or a hybrid for both benefits. Third-party sources are for existing data layers like ad networks or marketing tools."
 ---
 Client-side and server-side are terms that describe where an app's code runs: either on the user's device (client-side), or on a server (server-side). Amplitude has several types of sources to cover each of your needs. This doc primarily describes the differences between client-side and server-side sources, and gives a brief overview of third-party sources. 
 
