@@ -10,6 +10,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717104774
 landing: true
 landing_blurb: 'Assess the overall level of engagement of features in your product'
+ai_summary: "With Amplitude's Engagement Matrix chart, you can analyze feature engagement patterns in your product. It helps you identify poorly performing features for improvement or removal and highlights successful features for expansion. This tool is available to users on Growth and Enterprise plans. To set up the Engagement Matrix chart, select events, define user segments, and customize metrics. The chart displays event breadth and frequency, allowing you to make data-driven decisions to enhance your product's performance. Explore the Engagement Matrix to optimize user engagement and product success."
 ---
 With Amplitude's **Engagement Matrix** chart, you can develop a better understanding of the high-level pattern of feature engagement in your product, by breadth and frequency. By breaking out the top and bottom events for engagement into a four-quadrant matrix view, the Engagement Matrix will enable you to identify features that aren't performing well, so you can either refactor or deprecate them, and the features that are performing best, so you can find ways to extend that engagement to other areas of your product.
 
