@@ -9,8 +9,18 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1716571758
----
+ai_summary: |-
+  To get the most value out of Amplitude, follow these steps:
 
+  1. Identify your product's critical event.
+  2. Determine your product's usage interval.
+  3. Create retention graphs to understand user retention rates.
+  4. Plot a user lifecycle graph.
+  5. Map your user personas.
+  6. Compare engagement across personas with the Engagement Matrix.
+
+  Ongoing tasks include creating cohorts, comparing data, A/B testing, and making improvements. Use Amplitude to explore your product and user data, develop hypotheses, and test changes to enhance user engagement.
+---
 To gain the most value out of Amplitude, follow this workflow. This sequence of steps, adopted by Amplitude's most successful customers, lays the groundwork for the most important metrics, and also demonstrates how specific charts connect to each other:
 
 ## Step 1: Identify your product's critical event

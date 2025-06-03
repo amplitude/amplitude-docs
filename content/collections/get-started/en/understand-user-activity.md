@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724880797
+ai_summary: "The User Activity Report template in Amplitude provides insights into your users' engagement. You can see data such as daily active users, new vs. returning users, average session length, user activity by device, country, and platform. Click on a chart title for more details. You can customize the template into a dashboard to share insights with others. Select an event, save it as a dashboard, and it's ready to use. Learn more about dashboards and templates in Amplitude for further customization options."
 ---
 The charts included on the User Activity Report template deliver insights into the frequency and duration of your users' engagement with your product. There’s no setup required, though you can easily customize the template itself and the individual charts included with it if you need to.
 

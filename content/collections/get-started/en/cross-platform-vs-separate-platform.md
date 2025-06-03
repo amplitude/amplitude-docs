@@ -10,6 +10,7 @@ this_article_will_help_you:
   - "Understand the differences between cross-platform instrumentation and separate platform instrumentation, and when it's best to implement one over the other"
 landing: false
 exclude_from_sitemap: false
+ai_summary: "Amplitude lets you decide if you want to use the same API Key for iOS and Android or separate them, depending on your app's behavior and analysis goals. Cross-platform instrumentation is useful for analyzing user behavior across platforms and creating unified views and analyses. Separate platform instrumentation is better when user crossover isn't crucial or you want to focus on platform-specific engagement. Consider platform differences, update cycles, error spotting, and differences between web and mobile experiences when making your decision."
 ---
 Amplitude customers often ask if they should use the same API Key for the iOS and Android versions of the same app, or if they should tie web and mobile data together. The answer depends on the kind of apps you have and the kind of analyses you want to do.
 

@@ -7,6 +7,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1719952775
 source: 'https://docs.developers.amplitude.com/guides/cookies-consent-mgmt-guide/'
+ai_summary: 'The Amplitude technical documentation explains how Amplitude works with cookies, local storage, opt-in/opt-out options, and consent management. It covers the creation and customization of cookies, cookie size, expiration time, removal of cookies, deprecated cookies, and managing cookie consent. You can disable cookies using local storage, disable cookies and local storage/session storage, opt-out of tracking, and manage cookie consent based on legal requirements. The documentation also provides guidance on how to get the SDK initialization options per project.'
 ---
 This guide covers functional and technical information on how Amplitude works with cookies, local storage, opt-in/opt-out options and consent management (including CNIL regulations for France).  
 
