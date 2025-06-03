@@ -142,14 +142,14 @@ class AISummarize extends Action
 
             // Consider making the model and prompt details configurable
             $model = 'gpt-3.5-turbo'; // Or 'gpt-4', 'gpt-4o', etc.
-            $prompt = "Summarize the following Amplitude technical documentation in no more than 100 words. Use direct, active voice and present tense. Write for both human readers and search engines by including the most important keywords and a clear description of the content's purpose. Avoid terms like 'the documentation', or 'the article'. Use 'this article' instead. The full text is:\n\n\"" . mb_strimwidth($text, 0, 15000, "...") . "\"\n\nSummary:"; // Truncate input if too long for the model's context window
+            $prompt = "Summarize the following Amplitude technical documentation in no more than 100 words. Use direct, active voice, present tense, and simple, direct language. Avoid instructions. Frame the response directly to the reader. Use the word 'you' instead of 'users'. Write for both human readers and search engines by including the most important keywords and a clear description of the content's purpose. The full text is:\n\n\"" . mb_strimwidth($text, 0, 15000, "...") . "\"\n\nSummary:"; // Truncate input if too long for the model's context window
 
             Log::info("[OpenAISummarizer] Sending text to OpenAI (model: {$model}). Text length: " . strlen($text));
 
             $response = $client->chat()->create([
                 'model' => $model,
                 'messages' => [
-                    ['role' => 'system', 'content' => 'You are an expert at summarizing content. You speak in active voice and present tense.'],
+                    ['role' => 'system', 'content' => "Respond in direct, simple communication. Use contractions wherever possible. Use the present tense. Frame the response around the user and what they can do with functionality. Don't provide instructions, just summarize the content of the article, and what it enables for them. Avoid weasel words like utilize."],
                     ['role' => 'user', 'content' => $prompt],
                 ],
                 'max_tokens' => 150,  // Adjust based on desired summary length
