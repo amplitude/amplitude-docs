@@ -10,6 +10,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1732570172
 landing: true
 landing_blurb: 'Effectively and appropriately use causal inference to interpret your Impact Analysis'
+ai_summary: 'The Impact Analysis chart in Amplitude helps you understand how one user action can influence the frequency of other actions. It shows the relationship between events over time and offers four metrics: Average, Active %, Frequency, and Properties. This tool is useful for validating hypotheses and focusing your experimentation efforts to improve user engagement. Consider alternative hypotheses and user counts when interpreting the results to ensure accurate conclusions. Remember, while Impact Analysis is valuable, randomized experimentation remains the best method for determining causal effects in user behaviors.'
 ---
 The [Impact Analysis chart](/docs/analytics/charts/impact-analysis/impact-analysis-track) can help you discover how triggering one event can effect the frequency at which your users fire other events.
 

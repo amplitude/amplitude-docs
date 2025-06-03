@@ -10,6 +10,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1732570213
 landing: true
 landing_blurb: 'Understand the benefits of an Impact Analysis chart'
+ai_summary: "With Amplitude's Impact Analysis chart, you can assess how the first-time use of a feature influences subsequent user behaviors. This tool helps you understand if engaging with a new feature affects specific actions and if users interact more with certain features post-change. This feature is available on Growth and Enterprise plans. Before using it, ensure your events are instrumented. To set up an Impact Analysis chart, select treatment and outcome events, segment users, and set the timeframe. Remember, correlation doesn't imply causation; use Amplitude Experiment to establish causality."
 ---
 With Amplitude's **Impact Analysis** chart, you can discover how first-time engagement with one feature affects the rate of another behavior. 
 
