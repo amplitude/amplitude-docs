@@ -8,6 +8,7 @@ source: 'https://www.docs.developers.amplitude.com/data/ampli/cli/'
 updated_at: 1719605192
 package_name: '@amplitude/ampli'
 package_link: 'https://www.npmjs.com/package/@amplitude/ampli'
+ai_summary: "Ampli is Amplitude's command line app that helps you instrument tracking code in your apps. You can install Ampli using Homebrew or npm. Once installed, you can initialize Ampli in your project's root folder, generate a type-safe analytics SDK, and verify your tracking implementation. Ampli provides commands like pull, status, configure, init, help, and whoami. It's recommended to run Ampli in single-source projects from the root directory and in monorepos, run it in each source's folder. Ampli ensures consistent event tracking and helps you keep your analytics up-to-date."
 ---
 Ampli is Amplitude's command line app. It works hand-in-hand with the Amplitude Data web app and enables developers to correctly instrument tracking code in their apps.
 

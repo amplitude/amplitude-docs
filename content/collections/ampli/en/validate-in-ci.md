@@ -1,11 +1,12 @@
 ---
-source: https://www.docs.developers.amplitude.com/data/ampli/integrating-with-ci/
 id: ba4cfecb-940d-42de-b2f2-b2eb5d523bfa
 blueprint: ampli
+source: 'https://www.docs.developers.amplitude.com/data/ampli/integrating-with-ci/'
 title: 'Validate in CI'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1715382632
+ai_summary: 'Amplitude Data integrates with CI workflows, verifying analytics in each build. You create an API token, configure it as an environment variable, and run `ampli status` in CI. For JavaScript/TypeScript projects, install Ampli locally. Use Docker containers for Ampli CLI. GitHub Actions and Bitbucket Pipelines integrate easily with Ampli. Check Ampli implementation in CI using the provided YAML configurations. Use Ampli in any CI system supporting containers. You can now have Ampli running in your CI system.'
 ---
 Amplitude Data works best when integrated into your continuous integration (CI) workflow, running continuously alongside your test suite. Amplitude Data integrates with all common CI providers, and you can configure it for custom environments.
 
@@ -85,17 +86,17 @@ name: Ampli Implementation Check
 on: pull_request
 
 jobs:
-    build:
-    runs-on: ubuntu-latest
-    container:
-        image: amplitudeinc/ampli
+build:
+runs-on: ubuntu-latest
+container:
+image: amplitudeinc/ampli
 
-    steps:
-        - name: Checkout repo
-        uses: actions/checkout@v3
-    
-        - name: Verify analytics implementation and update status in Data
-        run: ampli status -t ${{secrets.AMPLI_TOKEN}} [--update]
+steps:
+- name: Checkout repo
+uses: actions/checkout@v3
+
+- name: Verify analytics implementation and update status in Data
+run: ampli status -t ${{secrets.AMPLI_TOKEN}} [--update]
 ```
 {{/partial:tab}}
 {{partial:tab name="ampli-all"}}
@@ -104,17 +105,17 @@ name: Ampli Implementation Check
 on: pull_request
 
 jobs:
-    build:
-    runs-on: ubuntu-latest
-    container:
-        image: amplitudeinc/ampli-all
+build:
+runs-on: ubuntu-latest
+container:
+image: amplitudeinc/ampli-all
 
-    steps:
-        - name: Checkout repo
-        uses: actions/checkout@v3
-    
-        - name: Verify analytics implementation and update status in Data
-        run: ampli status -t ${{secrets.AMPLI_TOKEN}} [--update]
+steps:
+- name: Checkout repo
+uses: actions/checkout@v3
+
+- name: Verify analytics implementation and update status in Data
+run: ampli status -t ${{secrets.AMPLI_TOKEN}} [--update]
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
