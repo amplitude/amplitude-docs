@@ -7,6 +7,7 @@ source: 'https://www.docs.developers.amplitude.com/data/converter-configuration-
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1721925973
+ai_summary: 'The Amplitude technical documentation includes examples and operators for configuring Amazon S3 Imports and GCS converters. You can control the syncing of user properties for historical data using `$skip_user_properties_sync`. The `convertToAmplitudeFunc` function instructs the ingestion service on constructing events in Amplitude. Operators like `path`, `any`, `value`, and more help manipulate data during conversion. By understanding and applying these configurations and operators, you can effectively manage and optimize data ingestion and conversion processes in Amplitude.'
 ---
 This reference covers examples and operators for the Amazon S3 Import and GCS converter configuration. Read the [S3 guide](/docs/data/source-catalog/amazon-s3) or the [GCS guide](/docs/data/source-catalog/google-cloud-storage) for more information.
 

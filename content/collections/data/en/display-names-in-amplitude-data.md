@@ -10,6 +10,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1722895571
+ai_summary: 'You can change event and user property display names in Amplitude for easier analysis. Only active events and user properties in your tracking plan can be modified. You can update display names directly from the *Events* or *User Properties* tabs. Additionally, you can control event visibility to hide noisy data from specific areas within Amplitude. The process varies based on event type, with options to edit visibility for certain event types. This functionality allows you to customize how data is displayed and optimize your analysis experience.'
 ---
 By default, an event's display name in Amplitude data is the same as the ingested name. However, these can be difficult to read, understand, and incorporate directly into your analyses. For this reason, you can give your events and user properties new display names that offer an easy-to-read description of their purpose and content.
 

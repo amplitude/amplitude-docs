@@ -7,8 +7,8 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1721926346
+ai_summary: 'You can find technical best practices for instrumenting Amplitude, send data through SDKs or third parties, use Amplitude APIs, understand the Amplitude schema, instrument user properties and group types, track unique users and sessions, and configure popular SDK options like session timeout and event batching. You may also consider backfilling data for historical analysis and accurately reflecting existing user data in Amplitude.'
 ---
-
 In this article, find technical best practices for getting up and running with Amplitude.
 
 ## Instrumentation best practices

@@ -11,6 +11,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1722895310
+ai_summary: "Amplitude Data's **Observe** feature allows you to inspect, analyze, and monitor your event tracking effortlessly. It automatically detects issues in your data collection, ensuring your code aligns with your tracking plan. With an intuitive workflow, you can collaborate to fix any problems quickly. The feature is available on **Plus**, **Growth**, and **Enterprise** plans. You can view and update event statuses, overlay your tracking plan with observed events, and act on insights provided by Observe. It's a practical tool to maintain the quality and accuracy of your data collection effortlessly."
 ---
 A big challenge for data, product, and growth teams is a lack of visibility into the state of their data collection. Often, teams rely on manual testing, broken charts, and gut feel to continually validate their product analytics.
 

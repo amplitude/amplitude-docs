@@ -10,6 +10,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717622389
+ai_summary: "Amplitude's channels feature lets you define acquisition channels based on UTM and referrer data. You can create new properties retroactively without affecting raw data. Different plans offer different capabilities for creating classifiers. Admins or Managers can create channels by defining channel properties and values. Data Tables enable you to compare metrics between channels. Use cases include blended views, high-level channels, channels with campaigns, and attribution evaluation. Special values like ANY, (none), and blank capture specific property values."
 ---
 Marketers often want to define their acquisition channels based on [UTM](/docs/get-started/analyze-acquisition-channels) and referrer data. Amplitude’s **channels** allow you to create new properties retroactively, based on functions and operators you can apply across multiple existing properties. These don't affect your raw data and Amplitude computes them on the fly.
 

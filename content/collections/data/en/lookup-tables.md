@@ -10,6 +10,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1725398247
+ai_summary: "With Amplitude's Lookup Table feature, you can import and map data to enhance event and user properties. It's available to Growth or Enterprise plan users. Benefits include enriching data, bulk changing property values, and filtering lists. Lookup Tables must not exceed 100MB or 1 million rows. To create one, you need a property to map from and a .CSV file. Exact matches are case-sensitive. Admin or Manager rights are needed to manage sources. You can update a lookup table by editing its configuration and delete unnecessary tables by following simple steps in Amplitude."
 ---
 With Amplitude's Lookup Table feature, you can import your own data and map it to ingested properties to create an enhanced set of event and user properties.
 

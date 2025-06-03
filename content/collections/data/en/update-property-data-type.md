@@ -7,6 +7,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1722895665
+ai_summary: "Amplitude's type checking feature helps you ensure the accuracy of event and user property data. You can easily adjust the data type of properties as needed, like changing from a string to a Boolean. This flexibility is valuable as your data analysis requirements evolve. Simply click on a property's name, choose a new data type from the drop-down menu, and select from options like String, Number, Boolean, Array, Enum, Const, or Any. This functionality allows you to adapt and improve your data management over time."
 ---
 Because it uses type checking for event and user property values, Amplitude can detect when event data it receives doesn’t match the specified type. You can set and edit the data type of an event or user property — for example, from a string to a Boolean. This can be useful as your data and analysis needs shift and expand over time.
 

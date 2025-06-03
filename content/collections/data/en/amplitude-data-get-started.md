@@ -12,6 +12,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717612640
+ai_summary: 'Amplitude Data offers tools for your data lifecycle, including planning, maintenance, and deprecation. You can get data into Amplitude through SDKs or by connecting to existing sources. Choose between client-side tracking for easy implementation or server-side tracking for precision. Identify events and properties to track using resources provided. Establish a naming convention and use separate environments for testing to ensure data quality. By following best practices like these, you can achieve good results and scale effectively with Amplitude Data.'
 ---
 Amplitude Data provides you with a complete set of tools for the entire lifecycle of your data, from planning and instrumentation, maintenance, and deprecation. We've designed the product to be flexible enough to accomodate various workflows, so you can choose which tools you need.
 

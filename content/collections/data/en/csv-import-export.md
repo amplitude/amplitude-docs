@@ -10,6 +10,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1718824177
+ai_summary: "In Amplitude Data, you can manage event types, event properties, and user properties. You have the ability to import and export your schema with .CSV files, make bulk changes, and update descriptions and categories. You can follow specific steps to import or export events and event properties, as well as user properties. The .CSV file structure for both types of properties is detailed, including required fields and values. By utilizing the import and export features, you can efficiently handle and update your tracking plan's schema in Amplitude."
 ---
 In Amplitude Data, you can view and manage event types, event properties, and user properties piece by piece, but you may want to see a holistic view of your entire tracking plan's schema and make bulk changes to the schema instead.
 

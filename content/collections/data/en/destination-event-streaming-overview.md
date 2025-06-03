@@ -7,6 +7,7 @@ source: 'https://www.docs.developers.amplitude.com/data/destination-event-stream
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1721926206
+ai_summary: "Event streaming in Amplitude allows you to share behavioral data across your system, enhancing customer profiles and sending data to various tools. You can filter data, monitor key metrics, and gain precise control over the information you send. Considerations include billing efficiency, latency targets, and retry mechanisms. Limitations involve user property formats, reserved keywords, and exclusion of historical data. Event streaming differs from cohort syncing by offering more control and real-time conversion events. Customers use it for personalized campaigns. If a destination isn't in the catalog, you can use webhook streaming, switch vendors, or build integrations."
 ---
 Event streaming lets you share your Amplitude data throughout your entire system. Use the valuable behavioral data in Amplitude to enhance customer profiles and send data to your marketing, sales, and infrastructure tools.
 

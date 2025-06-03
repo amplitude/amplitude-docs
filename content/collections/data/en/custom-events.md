@@ -11,6 +11,7 @@ this_article_will_help_you:
   - 'Understand how creating a custom event can support your analysis'
   - 'Learn how to create a custom event'
 landing: false
+ai_summary: 'You can create custom events in Amplitude by combining two separate events with an `OR` clause to track related user activities. Custom events are available in various charts and are useful for grouping events or analyzing user behavior. Custom events are created in the Events panel and can only be accessed in specific charts. This feature is available for Plus, Growth, and Enterprise plans. Remember, only admins, managers, and members can create custom events. Custom events are labeled with the prefix `[Custom]` in your charts.'
 ---
 Sometimes, you may need to create an analysis in which a particular step of the process can be any of a selection of specific events. 
 

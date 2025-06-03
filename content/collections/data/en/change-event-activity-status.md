@@ -10,6 +10,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1725397693
+ai_summary: 'You can specify whether an event in Amplitude is active or inactive. Active events are those users engage with, like clicking a button, while inactive events are passive, like notifications. Changing an event to inactive removes it from active user metrics but still counts in new user definitions. Changes apply immediately and retroactively. Follow steps to update event status. This functionality only applies to active events in your tracking plan and not custom events. You can also update the status from the Events table or Details flyout.'
 ---
 You can specify whether Amplitude should consider an event to be **active** or **inactive**. A good way to think about the difference is that an active event is one the user actively engaged with, like clicking the Add to Cart button. An **inactive** event is one that happened to the user, without any specific action on their part. Some good examples of this would be events like `Push Notification Sent` or `Message Received`.
 

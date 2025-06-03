@@ -9,6 +9,7 @@ updated_at: 1742328571
 landing_blurb: 'Autocapture is the fastest way to capture information about your website or app with minimal setup.'
 academy_course:
   - fcefbf26-273d-49a9-adbf-89440c8cb48b
+ai_summary: "Amplitude's Autocapture feature allows you to quickly capture user interactions on your website or app without extensive setup. Autocapture provides out-of-the-box analytics by automatically collecting predefined events and properties. You can use Autocapture alongside precision tracking for deeper analysis. The feature offers configuration options to adjust event volume and taxonomy organization. Autocapture includes privacy and security protections, allowing you to control the information collected and comply with your company's policies. You can refine Autocapture settings to meet specific needs or turn it off and rely on precision tracking."
 ---
 Amplitude's Autocapture is the fastest way to capture information about your website or app with minimal setup. Once enabled via our Browser SDK, Autocapture captures user interactions on your digital products with a single code snippet. It's a great way to get started and uncover insights quickly.
 

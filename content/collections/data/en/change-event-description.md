@@ -1,7 +1,9 @@
 ---
-title: "Change the description of an event or property"
-source: "https://help.amplitude.com/hc/en-us/articles/17050416767003-Change-the-description-of-an-event-or-property"
 id: acd3a1dc-ad94-4730-b859-280c46747eb7
+blueprint: data
+title: 'Change the description of an event or property'
+source: 'https://help.amplitude.com/hc/en-us/articles/17050416767003-Change-the-description-of-an-event-or-property'
+ai_summary: 'You can change event and event property descriptions in Amplitude to help your team understand them better. For events, click the event name, then the *Description* field, and type in a description. For event properties, you can add descriptions for the original property or an overridden one. To change an overridden event property specific to an event, click the event name, go to *Details > Properties*, and update the property description. To change the original event property description, go to *Event Properties* and update the description there.'
 ---
 You can change the description for an **event** to help other members of your organization understand what an event represents. To do so, follow these steps:
 

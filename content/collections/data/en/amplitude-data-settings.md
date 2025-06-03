@@ -1,16 +1,16 @@
 ---
 id: 9fbd24d0-c90c-497c-8cca-5b345f1058d6
 blueprint: data
-title: "Manage your Amplitude Data settings"
-source: "https://help.amplitude.com/hc/en-us/articles/5078848559259-Configure-and-manage-your-Amplitude-Data-settings"
+title: 'Manage your Amplitude Data settings'
+source: 'https://help.amplitude.com/hc/en-us/articles/5078848559259-Configure-and-manage-your-Amplitude-Data-settings'
 this_article_will_help_you:
-  - "Understand and manage all settings related to your Amplitude Data projects"
+  - 'Understand and manage all settings related to your Amplitude Data projects'
 landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1725397992
+ai_summary: "In Amplitude's Settings, you can name your project, set naming conventions, require team reviews for changes, manage projects for different environments, add integrations, generate API tokens, and delete projects. There are tabs for General, Environments, Integrations, API Tokens, and Schema Settings. You can set roles and permissions, restrict data management access, and configure Autocapture settings for the Analytics Browser SDK. The Permissions tab lets you restrict data management access for different roles. Autocapture settings allow you to configure the SDK without code changes. Element Interactions settings help control event volume by tracking specific user interactions."
 ---
-
 In the Settings page, you can:
 
 - Name your project, and specify the naming conventions you’ll use for events and properties

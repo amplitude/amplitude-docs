@@ -7,6 +7,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1741388007
+ai_summary: 'Amplitude''s object management feature allows you to centrally manage analysis objects like custom events, metrics, and segments. With this functionality, you can create, update, and remove analysis objects, view their definitions and usage, and bulk delete them. Object management is available for Enterprise plan accounts. Common use cases include finding existing objects to avoid duplicates, identifying underutilized objects, and filtering by owner. You can access Object Management from the left nav, create new objects, designate them as "official," edit them, view usage in charts, and delete them individually or in bulk. Only administrators can delete objects created by others.'
 ---
 Amplitude's object management feature lets you centrally manage analysis objects. Analysis objects are the reusable building blocks of your analyses, including [custom events](/docs/data/custom-events), [metrics](#metrics), [segments](/docs/analytics/behavioral-cohorts). 
 

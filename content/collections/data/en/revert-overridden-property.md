@@ -10,6 +10,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1722895781
+ai_summary: 'You can revert overridden properties in Amplitude to maintain consistency in your tracking plan. Reverting updates the property to its original version, affecting all events or property groups using it. To revert a specific event property, go to the event details, click the property, and select "Revert To Original." For property groups, access the property group details, click the property, and follow the same steps. To review and revert any overrides for a specific property, go to the event properties table, click the property, and select "Revert To Original." You can also bulk revert all overrides from the "Used By" tab.'
 ---
 Reverting an [overridden property](/docs/data/override-property) to its original version is a quick way to retroactively clean up your tracking plan and maintain consistency across your event properties. Doing so tells Amplitude Data to update the property to match the latest state of the **original** version listed in the event properties table. Once reverted, any changes to the property will **also** apply to any events or property groups that use the **original** version of that property.
 

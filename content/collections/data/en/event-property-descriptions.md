@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1725398124
+ai_summary: 'You can add descriptions to events, event properties, user properties, and group properties in Amplitude. This helps your organization understand what each represents. Descriptions are only for active events and properties in your tracking plan, excluding custom events. To add a description, go to the specific event or property, type in a description, and click Apply to save. For event properties, you can have global descriptions or specific descriptions for individual events. Simply navigate to the event or property, add a description, and save it.'
 ---
 You can change the description for an **event** or **property** to help other members of your organization understand what an event or property represents. 
 

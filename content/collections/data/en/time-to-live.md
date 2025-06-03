@@ -8,6 +8,7 @@ updated_at: 1722896162
 source: 'https://www.docs.developers.amplitude.com/data/ttl-configuration/'
 landing: false
 exclude_from_sitemap: false
+ai_summary: "Amplitude's TTL feature lets you control how long event data lives in your instance. You can set the retention period at the organization level and override it at the project level. Enabling TTL triggers daily data retention checks. This feature is available on the Enterprise plan. Remember, enabling TTL permanently deletes data. Admins can configure TTL settings. To enable TTL, contact your Account Manager or submit a support request. Admins can also add project-level TTL overrides. Remember, once TTL deletion starts, it is irreversible."
 ---
 Amplitude Data's Time-to-Live (TTL) feature lets you have control over how long event data lives in your Amplitude instance. Set the retention period for event data at the organization level, and override it at the project level. When you enable TTL, a job runs daily to make sure that Amplitude retains your event data according to your TTL policy.
 

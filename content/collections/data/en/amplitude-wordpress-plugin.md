@@ -7,6 +7,7 @@ source: /guides/wordpress-plugin-guide/
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1721925985
+ai_summary: 'The Amplitude Wordpress Plugin lets you enhance your site with an advanced Autocapture feature. It captures various events like page views, form submissions, and more. You can also enable Session Replay for a more detailed view of user interactions. The plugin requires you to install it on your Wordpress site and configure it with your Amplitude Project API key. Autocapture increases event volume by tracking more interactions. If you need assistance, contact plugins@amplitude.com.'
 ---
 The [Amplitude Wordpress Plugin](https://wordpress.org/plugins/amplitude/) enables you to instrument your Wordpress site with an advanced version of Autocapture.
 

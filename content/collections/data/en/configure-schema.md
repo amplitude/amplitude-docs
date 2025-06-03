@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1722895369
+ai_summary: "Amplitude's schema settings help you handle unexpected data scenarios. If Amplitude encounters data not in your schema, like unplanned event types, properties, or values, you can configure responses like marking as unexpected or rejecting. You can manage these settings in Amplitude Data under Schema Settings. Validation errors show up here, and you can set email alerts for them. Designate users to receive notifications by managing subscribers. This feature's availability depends on your Amplitude plan."
 ---
 Sometimes, Amplitude might receive data from your app that it doesn't know what to do with. This is usually the result of a **schema violation,** and it means the data Amplitude has just received isn't accounted for in your schema. If you see a schema violation, you've probably neglected to plan for that particular data type or value when you first set up your schema.
 

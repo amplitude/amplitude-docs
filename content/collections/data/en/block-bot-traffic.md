@@ -10,6 +10,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717620431
+ai_summary: 'Amplitude Data offers a block filter to prevent bot web traffic from affecting your metrics. This filter blocks bot traffic based on User-Agent, following the IAB/ABC International Spiders and Bots List. By using this feature, you can ensure that data from bots is not ingested at all. Remember, once data is filtered out by the block filter, it cannot be recovered. You can create a block filter for bot web traffic by following specific steps outlined in the documentation.'
 ---
 If you're tracking events on public, unauthenticated websites, your metrics may be affected by bot web traffic from crawlers, scrapers, and other similar tools. Amplitude Data allows you use a **block filter** to prevent that data from being ingested at all.
 
