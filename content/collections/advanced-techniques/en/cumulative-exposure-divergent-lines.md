@@ -8,6 +8,7 @@ this_article_will_help_you:
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716329410
+ai_summary: "This article explains divergent lines in cumulative exposure graphs. Divergent lines with similar slopes can occur if variants start at different times. This can affect the experiment's accuracy. Divergent lines with different slopes may result from users triggering old variants or sticky bucketing. Sticky bucketing can impact traffic allocation. To correct this, consider removing feature flags or code deployments. Be mindful of maintaining consistent conditions for accurate experimental results."
 ---
 This article will review divergent lines with similar slopes versus divergent lines with varying slopes. Divergent lines refer to lines that start from a common point but slowly spread apart from each other. 
 

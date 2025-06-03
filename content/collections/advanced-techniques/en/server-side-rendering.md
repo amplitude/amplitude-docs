@@ -6,6 +6,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716927210
 source: 'https://www.docs.developers.amplitude.com/experiment/guides/server-side-rendering/'
+ai_summary: "You can use Amplitude's JavaScript Server SDK and JavaScript Client SDK together to create a seamless server-side rendered experience. Install both SDKs, initialize the Server SDK on server startup, fetch variants on request, and initialize the Client SDK on render. Then, you can get variants on render by fetching the flag status in any component using the ExperimentClient instance. This process helps you manage and utilize feature flags effectively in your application."
 ---
 Use the JavaScript Server SDK and JavaScript Client SDK together to create a seamless server-side rendered experience.
 
