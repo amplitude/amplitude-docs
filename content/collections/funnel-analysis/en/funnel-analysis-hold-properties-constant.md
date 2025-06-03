@@ -7,6 +7,7 @@ this_article_will_help_you:
   - 'Set up your Funnel Analysis charts to display the unique count of user and property pairs that have completed the funnel, instead of just the unique count of users who have completed it at least once'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717015220
+ai_summary: "By default, Amplitude counts unique users in a funnel chart. If a user repeats the funnel, they're only counted once. You can choose to hold event properties constant, counting user-event property pairs in the funnel. This enables tracking users with different event property values. Constant event properties must be sent for every event in the funnel. This functionality is useful for building session-based funnels. Holding the session ID constant ensures users complete the funnel in the same session. This setup does not show unique users, allowing multiple completions in different sessions."
 ---
 By default, Amplitude doesn't hold properties constant in a funnel analysis. This means the funnel chart displays the **unique count of users** who have gone through the funnel **once or more** if, for example, the user goes through the entire funnel multiple times, they're only counted once.
 

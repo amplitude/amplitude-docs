@@ -9,6 +9,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717102463
 landing: true
 landing_blurb: 'View your Funnel Analysis charts in terms of either improvement over baseline or statistical significance'
+ai_summary: "In Amplitude, you can use A/B testing to compare user segments' funnel conversion performance. The results can be viewed as improvement or statistical significance. Statistical significance calculations are available for continuous metrics. This feature is accessible on Growth and Enterprise plans. You can change the baseline segment in the funnel analysis. The A/B Test - Improvement chart shows conversion rates for each segment, while the A/B Test - Significance chart helps determine if a variant performs better. The breakdown table provides detailed data, including conversion percentages and significance levels. You can export this data as a CSV file."
 ---
 {{partial:admonition type='note'}}
 For best practices, including tips on instrumentation, see the [How to Analyze A/B Tests Results in Amplitude](/docs/get-started/analyze-a-b-test-results) article.  
