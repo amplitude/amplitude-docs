@@ -10,6 +10,7 @@ updated_at: 1726001553
 landing: true
 landing_blurb: 'Understand and use custom formulas in Amplitude to create exactly the analysis you need'
 exclude_from_sitemap: false
+ai_summary: "In Amplitude's Event Segmentation or Data Table charts, the *Formula* option in the Measured As module's *Advanced* drop-down provides flexibility for analyses. You can use over 20 custom formulas to plot metrics and compare analyses. The article explains custom formula mechanics and provides examples. The feature is available on Plus, Growth, and Enterprise plans. Formulas can include arithmetic operations and group properties. You can compare metrics between cohorts and view metrics in percentages or dollars. Different types of formulas are available: Metric, Aggregation, and Function. Each formula has specific syntax and parameters for querying on events and metrics."
 ---
 In an [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) or [Data Table](/docs/analytics/charts/data-tables/data-tables-multi-dimensional-analysis) chart, the *Formula* option in the Measured As module's *Advanced* drop down offers you greater flexibility when performing analyses. Custom formulas are also useful for comparing various analyses on the same chart.
 
