@@ -11,6 +11,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1728428110
+ai_summary: 'The Amplitude technical documentation explains how you can manage your data effectively within the platform. You have the ability to create drop filters to remove specific event data from your analyses, create block filters to stop data ingestion based on criteria you define, and delete events or properties from your plan. These features help you maintain data accuracy and manage your data effectively within Amplitude. Additionally, you can use the self-service data deletion feature for permanent data deletion. Remember to consider the differences between drop filters, block filters, and data deletion when managing your data in Amplitude.'
 ---
 Data on Amplitude is immutable once ingested. Amplitude Data provides you with several methods to prevent invalid or incorrect data from appearing in your Amplitude analyses. You can create a drop filter, create a block filter, block events and properties, or delete events and properties. This article describes each technique, as well as the differences between them.
 

@@ -10,6 +10,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1725399462
+ai_summary: "Amplitude Data's transformations feature lets you correct implementation mistakes in your event data without touching your code. Transformations are retroactive, applying changes to all historical data. You can merge events, event properties, and user properties, rename property values, and hide values. This feature is available with select Amplitude plans. Transformations are reversible, and you can edit or delete them anytime. Transformations don't affect raw data on Snowflake or Redshift. Remember, you can't transform default user properties."
 ---
 Amplitude Data’s **transformations** feature allows you to transform event data to correct common implementation mistakes. Transformations are retroactive: you can create them whenever you want, and apply them to all historical data. This means you can make changes to your event data without having to touch your underlying code base. No matter when you recognize a mistake or want to make a change, you can use a transformation to correct all affected data, both historically and moving forward.
 
