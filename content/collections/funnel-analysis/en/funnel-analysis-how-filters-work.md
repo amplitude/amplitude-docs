@@ -7,6 +7,7 @@ this_article_will_help_you:
   - 'Understand how Amplitude interprets different filters in a Funnel Analysis chart'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717015478
+ai_summary: 'You can apply filters in the Segmentation Module for your funnel analysis in Amplitude. Filters only affect the first event. Group-by filters can be applied to the first event for up to two properties. This helps you analyze how users with specific property values convert through the funnel. You can also use group-by filters for specific events to understand their impact on conversion. Viewing the Funnel Analysis chart will show you how users convert based on different property values. Grouping by a specific event property allows you to see the conversion distribution of users for that property value.'
 ---
 There are certain nuances to applying filters in a funnel analysis: 
 

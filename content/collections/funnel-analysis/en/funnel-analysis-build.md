@@ -9,6 +9,7 @@ landing: true
 landing_blurb: "Build your funnel analysis following Amplitude's best practices"
 academy_course:
   - 7d137320-f0f2-4b00-8f77-2f2adb07de68
+ai_summary: "Amplitude's Funnel Analysis chart helps you track user paths in your product to find drop-off points. You can set up a funnel analysis in Amplitude by selecting starting events, adding properties, defining event order, excluding users, and segmenting users. This chart shows how users move through specific event sequences. Make sure to understand how charts work in Amplitude before you begin. Once you've built your funnel analysis, you can interpret the results to optimize your product experience."
 ---
 Amplitude’s **Funnel Analysis** chart helps you understand how users are navigating defined paths ("funnels") within your product, and identify potential problem areas where users tend to drop off. 
 

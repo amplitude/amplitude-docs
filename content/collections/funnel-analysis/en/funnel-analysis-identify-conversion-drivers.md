@@ -9,6 +9,7 @@ this_article_will_help_you:
   - 'Discover common experiences that lead to repeat consumers'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717015533
+ai_summary: "With Amplitude's conversion drivers feature, you can analyze user behaviors leading to conversions. This helps you understand key outcomes in your customer journey. The feature provides metrics like correlation score, behavior frequency, percentage of users engaging, and time to convert. It's available for Growth and Enterprise plans. You can set up a conversion drivers analysis by defining a two-step funnel and exploring events between these steps. The feature allows you to delve deeper into user actions influencing conversions or drop-offs. Remember, correlation doesn't imply causation. Use this insight to optimize your product experience effectively."
 ---
 Knowing which events lead to conversions and which events don’t is a crucial part of any analytics program. With Amplitude, you also have the ability to conduct deeper analyses and learn **why** users convert or churn after a specific event, with **conversion drivers**.
 

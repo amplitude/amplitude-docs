@@ -8,6 +8,7 @@ this_article_will_help_you:
   - 'Learn how to more precisely track events with millisecond resolution'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717015451
+ai_summary: 'Amplitude rounds all time to the nearest second, maintaining a one-second window for simultaneous events. If a user fires two different events within one second, Amplitude will consider either order correct for your funnel. Even if events of the same type occur simultaneously, Amplitude counts only one. To track events by the millisecond, you can turn on millisecond resolution in the Funnel Analysis settings. This option allows you to observe the precise order of events when multiple events occur at the same time.'
 ---
 Amplitude rounds all time to the nearest second. For that reason, it maintains a one-second window to account for **simultaneous events**. If a user fires two different events within one second, Amplitude will not try to make a determination of which one came first. Instead, it will consider **either** order correct and apply that to your funnel.
 

@@ -9,6 +9,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717102445
 landing: true
 landing_blurb: 'Understand how Amplitude computes funnels based on of the order of events, segmentation, and filters'
+ai_summary: "Amplitude's Funnel Analysis feature lets you define the order of events in your analysis: 'Any order', 'This order', or 'Exact order'. You can segment data based on user properties, apply filters in the Segmentation Module, and use group-by filters to analyze how different user properties impact conversion rates. Grouping users by specific event properties allows you to understand how those properties affect conversion through the funnel steps. This functionality provides detailed insights into user behavior and conversion pathways in your data analysis."
 ---
 ## Order of events
 

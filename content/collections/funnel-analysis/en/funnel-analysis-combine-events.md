@@ -7,6 +7,7 @@ this_article_will_help_you:
   - 'Combine multiple events into a single event slot in your Funnel Analysis chart'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717014959
+ai_summary: 'You can combine events directly in chart controls without creating permanent custom events. Follow these steps to add a custom event for inline comparison: Click **More Options** and select *Combine events inline*. Then, click *Add event inline* to add custom events. Hover on events to add filters. You can remove properties and in-line events as needed. Note that in-line events are specific to each chart. Custom events cannot include other custom events. Some functions like *Show User Journeys* are not available for in-line event steps in funnels.'
 ---
 Explore event combinations directly in the chart controls without creating and saving a permanent custom event. Follow these steps to add a custom event for inline comparison:
 
