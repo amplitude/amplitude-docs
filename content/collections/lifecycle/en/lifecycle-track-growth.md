@@ -10,6 +10,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1732570270
 landing: true
 landing_blurb: 'Understand the benefits of a lifecycle analysis'
+ai_summary: "Amplitude's Lifecycle chart provides a clear overview of your product's user growth by categorizing them as new, current, or resurrected users. Understanding your product's critical event is key to analyzing user engagement. You can track engagement and retention trends, focusing on keeping users engaged or reactivating dormant ones. This feature is available on Growth and Enterprise plans. To set up a Lifecycle chart, select a starting event, segment users, and set a usage interval. Analyze the data to improve user engagement and retention."
 ---
 Amplitude's **Lifecycle** chart gives you a quick, easy-to-understand overview of the growth of your product's user base over time. It does this by breaking out your active users into subgroups: new, current, and resurrected (formerly inactive) users. All your total active users will fall into one of these categories. It will also show you a count of your inactive, dormant users.
 
