@@ -1,10 +1,12 @@
 ---
-title: "How Amplitude computes conversions through funnels"
-source: "https://help.amplitude.com/hc/en-us/articles/4448893756315-How-Amplitude-computes-conversions-through-funnels"
 id: 4eda9c61-73d1-425a-a28a-5f15b8fb0356
+blueprint: funnel-analysi
+title: 'How Amplitude computes conversions through funnels'
+source: 'https://help.amplitude.com/hc/en-us/articles/4448893756315-How-Amplitude-computes-conversions-through-funnels'
 this_article_will_help_you:
   - 'Familiarize yourself with conversion computations using funnels'
   - 'Identify key differences between Funnel and Event Segmentation charts'
+ai_summary: 'Amplitude distinguishes Funnel and Event Segmentation charts based on conversion calculation methods and user grouping. Funnel analysis requires users to complete steps in the same session for conversion. Event Segmentation analyzes user events without the funnel concept. Unique user counts consider the earliest and most complete conversions.'
 ---
 Identify key differences between Funnel and Event Segmentation charts
 
