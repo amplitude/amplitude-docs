@@ -1,6 +1,6 @@
 ## Summary
 
-This documentation covers the Amplitude Experiment JavaScript SDK for client-side feature flag evaluation, including installation via npm/yarn/script, initialization with Amplitude Analytics or third-party providers, remote and local evaluation methods, variant fetching and caching, exposure tracking, and bootstrapping configurations.
+This documentation covers the Amplitude Experiment JavaScript SDK for client-side feature flag evaluation, including installation via npm/yarn/script, initialization with Amplitude Analytics or third-party providers, remote and local evaluation methods, variant fetching and caching, automatic exposure tracking, and integrations with analytics SDKs.
 
 ## Keywords
 
@@ -12,20 +12,21 @@ This documentation covers the Amplitude Experiment JavaScript SDK for client-sid
 - variant fetching
 - exposure tracking
 - initializeWithAmplitudeAnalytics
-- deployment key
-- ExperimentClient
-- fetch() method
+- fetch() variants
 - variant() method
-- start() method
-- ExperimentUser
+- ExperimentUserProvider
 - ExposureTrackingProvider
-- UserProvider
-- automaticExposureTracking
-- initialVariants bootstrapping
+- deployment key
+- flag configurations
+- bootstrapping variants
+- initialVariants configuration
 - Source.InitialVariants
-- fetchOnStart configuration
-- pollOnStart configuration
-- server-side rendering (SSR)
-- Unified SDK integration
+- automaticExposureTracking
 - Segment integration
 - mParticle integration
+- server-side rendering (SSR)
+- unified SDK integration
+- user bucketing
+- account-level bucketing
+- start() method
+- pollOnStart configuration
