@@ -7,7 +7,8 @@ parent: 2c2f82c7-16e5-42b6-8d4e-0068f9bb0066
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1738273719
 section: surveys
-landing_blurb: "Learn how surveys can improve the feedback you get from your users, and preview the available templates."
+landing_blurb: 'Learn how surveys can improve the feedback you get from your users, and preview the available templates.'
+ai_summary: 'You can use surveys in Amplitude to gather targeted feedback from users. Surveys provide different templates like NPS, User Feedback, and Rating to capture specific types of user input. The NPS template measures customer satisfaction, User Feedback allows custom questions, and Rating collects initial reactions for product evaluation. Utilize these survey templates to enhance your understanding of user thoughts and experiences.'
 ---
 Surveys are a source of user feedback. Like [guides](/docs/guides-and-surveys/guides), they feature a more targeted way to collect thoughts from your users, and increase the percentage of those thoughts that you capture.
 

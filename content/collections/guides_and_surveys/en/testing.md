@@ -5,6 +5,7 @@ title: Testing
 landing: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1739220209
+ai_summary: 'Preview mode in Amplitude allows you to test how your guides and surveys will appear and function before launching them. You can confirm that your settings work as intended on your site or application. The preview bar shows the status of conditions that determine when the guide or survey will be displayed. If you encounter issues, you can troubleshoot by checking user history, throttle limits, and trigger events. For live testing, you can target specific users or cohorts. Amplitude recommends thorough testing before publishing to ensure a smooth user experience.'
 ---
 Preview mode helps make sure that your guides and surveys are set up as you want them. You can always see how a guide or survey looks just by opening it in Amplitude, but if you want to ensure that it behaves as expected, test it in preview mode. 
 

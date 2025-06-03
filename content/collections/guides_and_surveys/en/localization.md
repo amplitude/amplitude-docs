@@ -3,8 +3,8 @@ id: 185ee92c-69ab-465b-84f1-35d4da01c2d7
 blueprint: guides_and_survey
 title: Localization
 landing: false
+ai_summary: 'Localization in Amplitude allows you to present guides and surveys in different languages without creating new ones. To enable this feature, you need to update your SDK implementation and Project settings. In the Project settings, you can manage localization settings and add translations for different languages. After adding translations, you can preview and update them directly within your guides and surveys. This functionality supports translating various elements like guide steps, survey questions, buttons, and more.'
 ---
-
 Localization enables you to serve guides and surveys in different languages without creating a new guide or survey for each language.
 
 ## Feature availability

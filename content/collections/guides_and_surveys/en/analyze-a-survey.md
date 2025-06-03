@@ -6,7 +6,8 @@ author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1738273400
 section: surveys
-landing_blurb: Explore the options available to you as you analyze survey results.
+landing_blurb: 'Explore the options available to you as you analyze survey results.'
+ai_summary: 'Amplitude provides you with detailed insights into your survey performance and individual responses. The Insights tab tracks responses, trends, and data filters to help you make decisions based on user feedback. You can analyze NPS scores, response breakdowns, and view completion trends over time. The Filter card lets you narrow down your analysis by date range or user segments. The Responses tab allows you to view individual responses, sort and filter data, and analyze feedback details. This functionality helps you understand user sentiments and make informed decisions based on their feedback.'
 ---
 Amplitude provides you with both high level data in the form of aggregate use and engagement of your surveys, and response level information about individual responses and who left them. This analysis is available in the survey itself.
 
