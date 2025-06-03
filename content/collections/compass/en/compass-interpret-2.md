@@ -10,6 +10,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717104023
 landing: true
 landing_blurb: 'Create a cohort from your Compass chart results'
+ai_summary: "This documentation explains how correlation works in Amplitude's Compass chart and how to create a cohort based on the results. Correlation measures the relationship between two statistical variables, with values ranging from -1 to 1. A score of zero means no relationship, 1 shows perfect positive correlation, and -1 is perfect negative correlation. Amplitude categorizes correlation scores as Highly Predictive if |correlation| >= 0.4 and Moderately Predictive if 0.3. Understanding this can help you interpret and leverage insights from your data effectively."
 ---
 This article will further explain correlation and how it is applies to your Compass chart, and how to create a cohort from its results. See [Interpret your Compass chart, part 1](/docs/analytics/charts/compass/compass-interpret-1) for a breakdown of how to read and interpret a Compass chart.
 
