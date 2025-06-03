@@ -9,6 +9,7 @@ updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715291365
 this_article_will_help_you:
   - 'Interpret the different charts within usage reports'
+ai_summary: "Amplitude's usage reports help you understand trends and patterns in your organization's analytics practices. Available on Growth and Enterprise plans, these reports offer insights into user metrics and event usage. You can access usage reports in your settings to view charts on user metrics, detailed KPIs, content usage, and export reports as PDF or PNG. The Event Usage tab provides downloadable reports on event usage across all projects. It includes fields like event volume, query counts, and user IDs. Use this information to optimize your organization's use of Amplitude and maximize its value."
 ---
 Amplitude's **usage reports** help you identify trends and patterns of Amplitude usage within your organization. Use it to better understand where your company’s analytics practice is strongest, as well as opportunities to further maximize the value your organization gets from Amplitude. 
 
