@@ -8,17 +8,16 @@
 - remote evaluation
 - local evaluation flags
 - deployment key authentication
-- Api-Key authorization header
+- Api-Key authorization
 - flag_keys parameter
-- user_id and device_id parameters
-- context parameter with user_properties
+- user_id and device_id
+- context parameter
 - X-Amp-Exp-Track header
-- [Experiment] Assignment event tracking
-- flag configurations download
-- initialFlags bootstrapping
-- evaluation API regions
+- [Experiment] Assignment event
+- flag configurations
+- variant payload
+- evaluationMode local
+- flagType release
+- segments metadata
 - api.lab.amplitude.com
 - api.lab.eu.amplitude.com
-- variant payload JSON
-- segments and variants response structure
-- evaluationMode and flagType metadata
