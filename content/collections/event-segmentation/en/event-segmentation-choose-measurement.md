@@ -52,6 +52,6 @@ Depending on the details of your analysis, you may also be able to generate an e
 
 ## Formula
 
-This option is accessible from the *Advanced* drop-down menu in the Measured As Module. In an Event Segmentation chart, you can write formulas that Amplitude will apply to the events you've included in your analysis. To read more about each formula and see some examples of use cases, see our [Custom Formulas](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas) article.
+In an Event Segmentation chart, you can write formulas for Amplitude to apply to the events you include in your analysis. To read more about each formula and see some examples of use cases, see [Custom Formulas](/docs/analytics/charts/event-segmentation/event-segmentation-custom-formulas).
 
 [Read this article to learn about how to interpret your Event Segmentation chart.](/docs/analytics/charts/event-segmentation/event-segmentation-interpret-1)
