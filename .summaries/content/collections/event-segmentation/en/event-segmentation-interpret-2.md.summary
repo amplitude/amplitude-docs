@@ -1,18 +1,18 @@
-**Summary:** This documentation covers advanced features in Amplitude's event segmentation analysis, specifically focusing on the Measured As Module capabilities including rolling averages (unweighted mean smoothing), rolling windows (aggregate summing), cumulative sum (running totals), real-time segmentation with 5-minute caching, and period-over-period comparisons with configurable intervals.
+**Summary:** This documentation covers advanced features in Amplitude's Event Segmentation analysis, specifically focusing on the Measured As Module capabilities including rolling averages (unweighted mean smoothing), rolling windows (aggregate sums), cumulative sum (running totals), real-time segmentation with 5-minute caching, and period-over-period comparisons with custom formulas.
 
 **Keywords:**
-- event segmentation analysis
+- Event Segmentation advanced features
 - Measured As Module
-- rolling averages unweighted mean
-- rolling windows aggregate summing
-- cumulative sum running totals
+- Rolling averages unweighted mean
+- Rolling windows aggregate sums
+- Cumulative sum running totals
 - CUMSUM formula
-- real-time segmentation 5-minute caching
-- period-over-period comparison
-- Compare to past feature
-- custom formulas integration
-- Microscope tool
-- daily uniques deduplication
-- Advanced dropdown menu
-- dotted line current day indicator
-- percentage change toggle
+- Real-time segmentation 5-minute caching
+- Period-over-period comparison
+- Compare to past functionality
+- Custom formulas integration
+- Data smoothing techniques
+- Cyclical user patterns
+- Daily uniques rolling window
+- Revenue tracking cumulative
+- Amplitude chart interpretation
