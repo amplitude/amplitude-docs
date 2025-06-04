@@ -4,8 +4,8 @@ blueprint: session-replay
 title: 'Instrument Session Replay'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1726762448
-ai_summary: "You can use Amplitude to capture user interactions on your website or app by setting up session replay. This feature allows you to record user sessions, replay them, and analyze user behavior to improve your product's user experience. By implementing session replay instrumentation, you can gain valuable insights into how users interact with your platform in real-time, helping you make data-driven decisions to optimize performance and enhance user engagement."
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1749058455
+instrumentation_guide: false
 ---
 {{partial:partials/session-replay/sr-instrumentation-landing}}
