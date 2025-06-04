@@ -15,7 +15,7 @@ lede: |-
 
   For help integrating the SCIM API with an Identity Provider like Okta or JumpCloud, or help enabling the SCIM API for an Amplitude organization, see [Set up SCIM provisioning in Amplitude](/docs/admin/account-management/scim-provision).
 updated_by: 6ca93b88-2d10-44dd-9995-d5f1b5d9151a
-updated_at: 1749075038
+updated_at: 1749075625
 summary: 'Provision and manage users and groups. This API uses the System for Cross-domain Identity Management (SCIM) 2.0 Standard.'
 eu_endpoint: 'https://core.eu.amplitude.com/scim/1/'
 ---
@@ -24,7 +24,7 @@ Keep the following in mind as you configure the SCIM API integration.
 
 ### Base URL
 
-Please refer to the **Endpoints** table above to determine the correct base URL to use given your organization's choice of data residency. All routes against this URL can be formed according to the SCIM Standard. This URL doesn't change between organizations, as the SCIM key used in authentication is used to determine which organization the requests are directed toward.
+See the **Endpoints** table above to find the correct base URL to use given your organization's choice of data residency. All routes against this URL can be formed according to the SCIM Standard. This URL doesn't change between organizations, as the SCIM key used in authentication is used to determine which organization the requests are directed toward.
 
 Although the route includes "1", this doesn't mean that Amplitude implements the SCIM 1.1 Standard. This is to denote the Amplitude version of this implementation, future-proofing for new iterations of the API that introduce breaking changes without disrupting service for current consumers.
 
