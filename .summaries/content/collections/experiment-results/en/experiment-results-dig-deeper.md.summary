@@ -1,17 +1,18 @@
-**Summary:** This documentation explains how to use Amplitude's Experiment Results chart to analyze A/B tests from external feature flagging platforms, covering metric configuration (unique conversions, event totals, funnel conversion, retention, formula), exposure event setup, variant definition, and interpretation of statistical results including confidence intervals and sequential testing.
+**Summary:** This documentation explains Amplitude's Experiment Results feature, which allows Analytics customers using non-Amplitude feature flagging platforms to leverage Amplitude's A/B test analysis tools by creating charts with exposure events, variants, and multiple metric types (conversions, funnels, retention, formulas) while interpreting results through confidence intervals, cumulative exposure, and performance visualization charts.
 
 **Keywords:**
 - Experiment Results chart
 - A/B test analysis
-- external feature flagging platforms
+- feature flagging platform integration
 - exposure events
-- variant definition
-- metric types (unique conversions, event totals, sum/average property value, funnel conversion, formula, retention)
-- sequential testing
-- confidence interval analysis
-- CUPED statistical method
-- cumulative exposure tracking
-- statistical significance calculation
-- T-test vs Sequential test
+- experiment variants
+- metric types (unique conversions, event totals, funnel conversion, retention, formula metrics)
+- statistical significance
+- confidence interval charts
+- cumulative exposure visualization
+- sequential testing vs T-test
+- CUPED statistical preferences
+- exposure attribution settings
 - primary and secondary metrics
-- experiment variant configuration
+- performance by variant analysis
+- mean over time charts
