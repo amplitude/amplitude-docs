@@ -208,6 +208,7 @@ SDK client configuration occurs during initialization.
 | `exposureTrackingProvider` | Implement and configure this interface to track exposure events through the experiment SDK, either automatically or explicitly. | `null` |
 | `instanceName` | Custom instance name for experiment SDK instance. **The value of this field is case-sensitive.** | `null` |
 | `initialFlags` | A JSON string representing an initial set of flag configurations to use for local evaluation. | `undefined` |
+| `httpClient` | (Advanced) Use your own HTTP client implementation to handle network requests made by the SDK. | `null` |
 
 {{partial:admonition type="info" heading="EU data center"}}
 If you're using Amplitude's EU data center, configure the `serverZone` option on initialization to `eu`.
@@ -526,3 +527,33 @@ const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
     source: Source.InitialVariants,
 });
 ```
+
+## HTTP client
+
+You can provide a custom HTTP client implementation to handle network requests made by the SDK. This is useful for environments with specific networking requirements or when you need to customize request handling.
+
+```js title="HttpClient"
+export interface SimpleResponse {
+  status: number;
+  body: string;
+}
+
+export interface HttpClient {
+  request(
+    requestUrl: string,
+    method: string,
+    headers: Record<string, string>,
+    data: string,
+    timeoutMillis?: number,
+  ): Promise<SimpleResponse>;
+}
+```
+
+To use your custom HTTP client, set the `httpClient` [configuration](#configuration) option with an instance of your implementation on SDK initialization.
+
+```js
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+    httpClient: new CustomHttpClient(),
+});
+```
+
