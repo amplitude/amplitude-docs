@@ -11,4 +11,5 @@
 - userId to deviceId mapping
 - anonymousId fallback
 - sessionReplayOptions configuration
-- Segment third-party integration
+- segmentInstance parameter
+- amplitudeApiKey integration
