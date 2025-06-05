@@ -1,6 +1,6 @@
 ## Summary
 
-This documentation covers the Amplitude Experiment React Native SDK for client-side feature flag evaluation, including installation with @react-native-async-storage/async-storage dependency, initialization methods for Amplitude Analytics integration vs third-party analytics, remote evaluation via fetch(), local evaluation via start(), variant access with automatic exposure tracking, and provider interfaces for user management and exposure tracking.
+This documentation covers the Amplitude Experiment React Native SDK for client-side feature flag evaluation, including installation with @react-native-async-storage/async-storage dependency, initialization methods for Amplitude Analytics integration vs third-party analytics, remote evaluation via fetch(), local evaluation via start(), variant access with automatic exposure tracking, and configuration options for server zones, bootstrapping, and custom providers.
 
 ## Keywords
 
@@ -8,31 +8,27 @@ This documentation covers the Amplitude Experiment React Native SDK for client-s
 - @amplitude/experiment-react-native-client
 - @react-native-async-storage/async-storage
 - initializeWithAmplitudeAnalytics
-- client-side evaluation
 - remote evaluation
 - local evaluation
-- fetch() variants
+- fetch() method
 - start() method
-- variant() access
+- variant() method
 - exposure tracking
 - ExperimentUser
 - deployment key
-- flag key
-- ExperimentConfig
 - automaticExposureTracking
 - fetchOnStart
 - pollOnStart
-- userProvider interface
-- exposureTrackingProvider interface
+- serverZone configuration
+- initialVariants bootstrapping
 - Source.InitialVariants
-- bootstrapping
+- ExperimentUserProvider
+- ExposureTrackingProvider
+- HttpClient interface
 - Expo support
-- pod install iOS
-- serverZone EU
+- iOS pod install
+- automaticFetchOnAmplitudeIdentityChange
 - account-level bucketing
 - group properties
 - fallbackVariant
-- initialVariants
-- cacheReady()
-- clear() method
-- exposure() manual tracking
+- instanceName configuration

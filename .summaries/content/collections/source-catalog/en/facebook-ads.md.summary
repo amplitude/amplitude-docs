@@ -1,5 +1,5 @@
 ## Summary
-This documentation describes Amplitude Data's Facebook Ads source integration that imports campaign-level ad spend, click, and impression data as Daily Ad Metrics events with properties like ad_metrics.impressions, ad_metrics.clicks, ad_group_id, and campaign_id for marketing analytics and CAC/ROAS calculations.
+This documentation describes Amplitude Data's Facebook Ads source integration that imports campaign-level ad spend, click, and impression data as Daily Ad Metrics events with properties like ad_metrics.impressions, ad_group_id, and UTM parameters for CAC/ROAS calculations, using batch ingestion without user-level identity mapping.
 
 ## Keywords
 - Facebook Ads source integration
@@ -8,16 +8,12 @@ This documentation describes Amplitude Data's Facebook Ads source integration th
 - ad_metrics.clicks
 - ad_group_id
 - campaign_id
-- UTM parameters
-- CAC (Customer Acquisition Cost)
-- ROAS (Return on Ad Spend)
+- UTM parameters mapping
+- CAC ROAS calculations
 - Facebook Ads Account ID
 - batch ingestion process
 - campaign-level metrics
 - Ad Performance dashboard
 - synthetic user identifiers
-- Schema enforcement
-- URL Parameters
-- Facebook Ads Manager
-- ad-networks integration category
-- Marketing Analytics
+- Schema enforcement compatibility
+- URL Parameters Facebook Ads Manager
