@@ -1,16 +1,16 @@
-**Summary:** Documents Amplitude's SCIM 2.0 API implementation for programmatic user provisioning and group management, including user CRUD operations, group management, authentication via SCIM keys, and integration with Identity Providers like Okta and JumpCloud.
+**Summary:** Documents Amplitude's SCIM 2.0 API implementation for programmatic user provisioning and group management, including authentication with scim_key, rate limits of 100 requests/minute, and CRUD operations for users (identified by email) and permission groups with specific field mappings.
 
 **Keywords:**
 - SCIM 2.0 Standard
 - User provisioning API
-- Group management
+- Group management API
+- scim_key authentication
 - Identity Provider integration
-- SCIM key authentication
-- User CRUD operations
+- User invitation workflow
 - Permission groups
-- Email invitation workflow
-- Okta JumpCloud integration
-- Organization-level user management
-- Active/pending user states
+- Email-based user identification
 - SCIM filter syntax
+- Rate limiting 100 requests/minute
+- PATCH operations
+- Active/inactive user states
 - Cross-domain Identity Management
