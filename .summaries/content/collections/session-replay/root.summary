@@ -1,36 +1,70 @@
 ## Amplitude Session Replay
 
-Amplitude Session Replay is a comprehensive user behavior analytics platform that captures, reconstructs, and visualizes user interactions across web, mobile, and React Native applications. The product enables teams to understand user engagement patterns through session recordings, heatmaps, and behavioral analytics to optimize digital experiences and identify friction points in user journeys.
+Amplitude Session Replay is a comprehensive user behavior analytics solution that captures and reconstructs user interactions across web, mobile, and React Native applications. The product provides visual session recordings, heatmaps, and behavioral insights to help teams understand user engagement patterns and optimize digital experiences.
 
-## Core Product Architecture
+## Core Features and Capabilities
 
-**Multi-Modal Analytics Engine**: Session Replay operates through three primary visualization modes - session recordings that capture DOM interactions and user navigation patterns through view tree capture and diff-based replay construction, click/selector heatmaps showing interaction hotspots and element engagement rankings, and scroll maps displaying viewport depth patterns. Sessions utilize configurable retention periods with filtering capabilities across device identifiers, behavioral cohorts, and URL patterns.
+**Session Recording and Playback**: Captures DOM interactions, user clicks, scrolls, and form inputs with diff-based replay construction for efficient storage and transmission. Supports shadow DOM capture, CSS stylesheet inlining, and WebView tracking across platforms.
 
-**Privacy-First Data Collection**: The platform implements a three-tier masking system (Conservative, Light, Medium) with granular override controls through CSS selectors, data attributes (data-amp-mask, data-amp-unmask), and .amp-block class exclusions. GDPR compliance is maintained through consent management platform integration and user opt-out mechanisms, with DSAR API integration for data subject rights management.
+**Heatmaps Visualization**: Provides click maps, selector maps, and scroll maps for web-based applications, offering visual representations of user engagement patterns with viewport scroll depth analysis and interactive element ranking.
 
-**Cross-Platform SDK Ecosystem**: Session Replay supports flexible integration patterns including Plugin Architecture for existing Amplitude SDK implementations (Browser SDK 2, Android-Kotlin, iOS Swift), Middleware Integration for maintenance SDKs (Android SDK 2.40.1+, iOS SDK 8.21.0+), and Standalone Implementation for third-party analytics environments requiring manual session/device ID synchronization.
+**Privacy and Compliance Controls**: Implements comprehensive masking capabilities with three levels (Conservative, Light, Medium), CSS selector-based overrides, and GDPR-compliant consent management integration with Cookie Management Platforms (CMPs).
 
-## Integration and Data Flow
+**Cross-Platform Support**: Native SDKs and plugins for Browser, Android, iOS, React Native, with specialized integrations for third-party analytics providers including Segment and Rudderstack.
 
-**Third-Party Analytics Compatibility**: The platform provides wrapper SDKs and plugins for Segment (Analytics-Swift, AnalyticsBrowser), Rudderstack, and Google Tag Manager, enabling session replay functionality without analytics platform migration. Data synchronization maintains session continuity through sessionId and deviceId management with automatic Session Replay ID injection via getSessionReplayProperties() method.
+## Product Architecture and Integration Patterns
 
-**Configuration Management**: Core parameters include sampleRate for recording percentage control (0.0-1.0), privacyConfig/maskLevel for data masking strictness, serverZone for EU data residency compliance, enableRemoteConfig for server-side configuration management, and optOut for user consent controls.
+The Session Replay ecosystem follows a modular architecture with three primary integration approaches:
 
-**Storage and Performance Optimization**: Browser implementations utilize IndexedDB storage (storeType) with configurable flush policies and retry mechanisms. Performance optimization includes WebWorker support (experimental.useWebWorker) and idle compression through performanceConfig settings.
+**Plugin Architecture**: For applications already using Amplitude SDKs, Session Replay integrates as plugins (`SessionReplayPlugin`, `AmplitudeSwiftSessionReplayPlugin`) that extend existing analytics implementations without requiring separate initialization.
 
-## Key Technical Interfaces
+**Middleware Integration**: For legacy Amplitude SDK implementations, middleware components (`SessionReplayMiddleware`, `AmplitudeiOSSessionReplayMiddleware`) provide session replay capabilities through event middleware patterns using `addEventMiddleware()` methods.
 
-**Primary API Methods**:
-- `amplitude.add(sessionReplayPlugin())` - Plugin installation and initialization
-- `sessionReplay.start()`/`sessionReplay.stop()` - Recording lifecycle control
-- `sessionReplay.setSessionId()`/`sessionReplay.setDeviceId()` - Identity management
-- `getSessionReplayProperties()` - Session metadata and replay URL retrieval
-- `addEventMiddleware()`/`removeEventMiddleware()` - Middleware pipeline management
+**Standalone SDK Implementation**: For applications using non-Amplitude analytics providers, standalone SDKs require manual session and device ID management with explicit synchronization through methods like `setSessionId()`, `setDeviceId()`, and `getSessionReplayProperties()`.
 
-**Monitoring and Diagnostics**: The Ingestion Monitor provides real-time session replay ingestion tracking with HTTP status code monitoring (200 success, 429 throttling, 402 quota exceeded) and invalid session ID detection for implementation troubleshooting and data quality assurance.
+## Key Nomenclature and Technical Definitions
 
-## Platform Constraints and Enterprise Features
+**Session Replay ID**: Unique identifier (`[Amplitude] Session Replay ID`) automatically injected as an event property to correlate analytics events with replay sessions.
 
-**Technical Limitations**: Browser implementations face Canvas/WebGL content capture limitations, Shadow DOM support requirements, CSS stylesheet inlining dependencies, and multiple Amplitude instance handling complexities. Mobile platforms encounter WebView tracking constraints on React Native, Jetpack Compose support limitations on Android, and view tree capture restrictions on iOS/iPadOS.
+**Sample Rate Configuration**: Controls recording frequency through `sampleRate` parameters, determining what percentage of user sessions are captured for replay analysis.
 
-**Enterprise Capabilities**: Advanced features include remote configuration management for centralized control, EU data residency options for regulatory compliance, bot filtering for data quality, and configurable retention periods for organizational governance requirements. The platform integrates with User Privacy API for comprehensive data protection regulation compliance.
+**Masking Levels**: Privacy protection tiers including Conservative (maximum masking), Light (minimal masking), and Medium (balanced approach) with CSS selector overrides using `data-amp-mask`, `data-amp-unmask`, and `.amp-block` class attributes.
+
+**Device and Session ID Management**: Critical synchronization between analytics providers and Session Replay through `deviceId` and `sessionId` parameters, with automatic mapping from third-party identifiers like Segment's `anonymousId` and Rudderstack's Anonymous ID.
+
+**Remote Configuration**: Server-side control mechanism (`enableRemoteConfig`) allowing dynamic adjustment of recording parameters without client-side code changes.
+
+## Ecosystem Integration and Third-Party Compatibility
+
+Session Replay integrates extensively with major analytics and tag management platforms:
+
+**Segment Integration**: Multiple implementation paths including Amplitude Actions destination with Source Middleware, Classic Device-mode using amplitude-js SDK 5.2.2, and Cloud-mode implementations with Browser SDK shells.
+
+**Google Tag Manager**: Dedicated GTM Web Template for client-side browser implementations with Session Replay Plugin toggle configuration and multiple SDK instantiation troubleshooting.
+
+**Rudderstack Integration**: Wrapper implementation with Cloud-mode support, method overrides for `rudderAnalytics.track()` and `rudderAnalytics.page()` events, and automatic ID mapping from Rudderstack session management.
+
+## API Endpoints and Technical Implementation
+
+**Core SDK Methods**:
+- `sessionReplay.init()` - Standalone SDK initialization
+- `amplitude.add(plugin)` / `amplitude.remove(plugin)` - Plugin management
+- `startRecording()` / `stopRecording()` - Recording control
+- `getSessionReplayProperties()` - Third-party integration property extraction
+
+**Configuration Parameters**:
+- `serverZone: 'EU'` - European data residency compliance
+- `storeType: 'IndexedDB'` - Browser storage mechanism selection
+- `optOut` - User consent and privacy control
+- `flushEventsOnClose` - Data transmission on session termination
+
+**Privacy and Compliance APIs**:
+- DSAR API integration for data subject access requests
+- User Privacy API for data deletion compliance
+- Consent Management Platform (CMP) integration for cookie banner management
+
+## Monitoring and Debugging Tools
+
+**Session Replay Ingestion Monitor**: Dedicated monitoring interface tracking ingestion status with HTTP status code analysis (200 successful, 429 throttling, 402 quota exceeded) and invalid session ID debugging capabilities accessible through the Users & Sessions tab.
+
+The product supports Growth and Enterprise plan tiers with specific version requirements including Browser SDK Plugin 1.7.0+, Session Replay Standalone SDK 1.14.0+, and maintenance SDK versions (Android 2.40.1+, iOS 8.21.0+) for optimal functionality and feature access.
