@@ -189,26 +189,26 @@ const experiment = Experiment.initialize(
 
 SDK client configuration occurs during initialization.
 
-| <div class="big-column">Name</div> | Description | Default Value |
-| --- | --- | --- |
-| `debug` | Enable additional debug logging within the SDK. Should be set to false in production builds. | `false` |
-| `fallbackVariant` | The default variant to fall back if a variant for the provided key doesn't exist. | `{}` |
-| `initialVariants` | An initial set of variants to access. This field is valuable for bootstrapping the client SDK with values rendered by the server using server-side rendering (SSR). | `{}` |
-| `source` | The primary source of variants. Set the value to `Source.InitialVariants` and configured `initialVariants` to bootstrap the SDK for SSR or testing purposes. | `Source.LocalStorage` |
-| `serverZone` | Select the Amplitude data center to get flags and variants from, `us` or `eu`. | `us` |
+| <div class="big-column">Name</div> | Description | Default Value                |
+| --- | --- |------------------------------|
+| `debug` | Enable additional debug logging within the SDK. Should be set to false in production builds. | `false`                      |
+| `fallbackVariant` | The default variant to fall back if a variant for the provided key doesn't exist. | `{}`                         |
+| `initialVariants` | An initial set of variants to access. This field is valuable for bootstrapping the client SDK with values rendered by the server using server-side rendering (SSR). | `{}`                         |
+| `source` | The primary source of variants. Set the value to `Source.InitialVariants` and configured `initialVariants` to bootstrap the SDK for SSR or testing purposes. | `Source.LocalStorage`        |
+| `serverZone` | Select the Amplitude data center to get flags and variants from, `us` or `eu`. | `us`                         |
 | `serverUrl` | The host to fetch remote evaluation variants from. For hitting the EU data center, use `serverZone`. | `https://api.lab.amplitude.com` |
 | `flagsServerUrl` | The host to fetch local evaluation flags from. For hitting the EU data center, use `serverZone`. | `https://flag.lab.amplitude.com` |
-| `fetchTimeoutMillis` | The timeout for fetching variants in milliseconds. | `10000` |
-| `retryFetchOnFailure` | Whether to retry variant fetches in the background if the request doesn't succeed. | `true` |
-| `automaticExposureTracking` | If true, calling [`variant()`](#variant) tracks an exposure event through the configured `exposureTrackingProvider`. If no exposure tracking provider is set, this configuration option does nothing.  | `true` |
-| `fetchOnStart` | If true or undefined, always [fetch](#fetch) remote evaluation variants on [start](#start). If false, never fetch on start. | `true` |
-| `pollOnStart` | Poll for local evaluation flag configuration updates once per minute on [start](#start). | `true` |
-| `automaticFetchOnAmplitudeIdentityChange` | Only matters if you use the `initializeWithAmplitudeAnalytics` initialization function to seamlessly integrate with the Amplitude Analytics SDK. If `true` any change to the user ID, device ID or user properties from analytics triggers the experiment SDK to fetch variants and update it's cache. | `false` |
-| `userProvider` | An interface used to provide the user object to `fetch()` when called. | `null` |
-| `exposureTrackingProvider` | Implement and configure this interface to track exposure events through the experiment SDK, either automatically or explicitly. | `null` |
-| `instanceName` | Custom instance name for experiment SDK instance. **The value of this field is case-sensitive.** | `null` |
-| `initialFlags` | A JSON string representing an initial set of flag configurations to use for local evaluation. | `undefined` |
-| `httpClient` | (Advanced) Use your own HTTP client implementation to handle network requests made by the SDK. | `null` |
+| `fetchTimeoutMillis` | The timeout for fetching variants in milliseconds. | `10000`                      |
+| `retryFetchOnFailure` | Whether to retry variant fetches in the background if the request doesn't succeed. | `true`                       |
+| `automaticExposureTracking` | If true, calling [`variant()`](#variant) tracks an exposure event through the configured `exposureTrackingProvider`. If no exposure tracking provider is set, this configuration option does nothing.  | `true`                       |
+| `fetchOnStart` | If true or undefined, always [fetch](#fetch) remote evaluation variants on [start](#start). If false, never fetch on start. | `true`                       |
+| `pollOnStart` | Poll for local evaluation flag configuration updates once per minute on [start](#start). | `true`                       |
+| `automaticFetchOnAmplitudeIdentityChange` | Only matters if you use the `initializeWithAmplitudeAnalytics` initialization function to seamlessly integrate with the Amplitude Analytics SDK. If `true` any change to the user ID, device ID or user properties from analytics triggers the experiment SDK to fetch variants and update it's cache. | `false`                      |
+| `userProvider` | An interface used to provide the user object to `fetch()` when called. | `null`                       |
+| `exposureTrackingProvider` | Implement and configure this interface to track exposure events through the experiment SDK, either automatically or explicitly. | `null`                       |
+| `instanceName` | Custom instance name for experiment SDK instance. **The value of this field is case-sensitive.** | `null`                       |
+| `initialFlags` | A JSON string representing an initial set of flag configurations to use for local evaluation. | `undefined`                  |
+| `httpClient` | (Advanced) Use your own HTTP client implementation to handle network requests made by the SDK. | Default HTTP client                     |
 
 {{partial:admonition type="info" heading="EU data center"}}
 If you're using Amplitude's EU data center, configure the `serverZone` option on initialization to `eu`.

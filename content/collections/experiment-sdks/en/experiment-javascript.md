@@ -261,7 +261,7 @@ Configure the SDK client once during initialization.
 | `exposureTrackingProvider` | Implement and configure this interface to track exposure events through the experiment SDK, either automatically or explicitly. | `null` |
 | `instanceName` | Custom instance name for experiment SDK instance. **The value of this field is case-sensitive.** | `null` |
 | `initialFlags` | A JSON string representing an initial array of flag configurations to use for local evaluation. | `undefined` |
-| `httpClient` | (Advanced) Use your own HTTP client implementation to handle network requests made by the SDK. | `null` |
+| `httpClient` | (Advanced) Use your own HTTP client implementation to handle network requests made by the SDK. | Default HTTP client |
 
 {{/partial:collapse}}
 
