@@ -1,18 +1,23 @@
-**Summary:** Amplitude's Microscope feature enables detailed inspection of chart data points by hovering/clicking to access options like creating cohorts, viewing user streams, showing user paths via Pathfinder Users reports, launching session replays, exploring conversion drivers in funnel charts, and creating feature flags/experiments directly from data points.
+**Summary:** Amplitude's Microscope feature allows users to drill down into specific data points in charts by hovering/clicking to access options like viewing user streams, creating cohorts, launching session replays, exploring conversion drivers in funnels, and generating user paths through Pathfinder Users reports.
 
 **Keywords:**
 - Microscope feature
 - data point inspection
-- user streams analysis
-- Pathfinder Users reports
-- session replay integration
-- conversion drivers exploration
-- funnel chart analysis
+- user streams
+- Pathfinder Users
+- conversion drivers
+- funnel drop-off analysis
 - cohort creation from data points
-- feature flag targeting
-- user journey analysis
+- session replay integration
 - Event Segmentation charts
+- Funnel Analysis charts
+- Journeys charts
 - account-level reporting groups
+- custom formulas limitation
+- user activity streams
+- group cohorts
 - CSV user download
-- sparkle icon Autocapture events
-- 30-day date range limit
+- feature flag targeting
+- guide and survey creation
+- zoom in granularity
+- autocapture events
