@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1725399801
+ai_summary: 'With property groups in Amplitude Data, you can group properties together for quick application to events. This simplifies tracking plans by avoiding repetitive property additions. Updates made to a property group automatically reflect in all associated events. By creating and using property groups, you streamline event creation and ensure consistent property usage. To create a property group, navigate to Event Properties, create the group, add properties, and save. To add a property group to an event, select the event, add properties, and save. You can also modify property groups by accessing them in Properties and making changes that apply across events.'
 ---
 With **property groups**, you can define groups of properties so Amplitude Data can apply them to events quickly.
 

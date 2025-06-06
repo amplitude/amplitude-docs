@@ -9,6 +9,7 @@ this_article_will_help_you:
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714079731
+ai_summary: "When you run multiple experiments, you can keep users from being part of more than one experiment at a time using Amplitude Experiment's mutual exclusion feature. This ensures users only see one experiment, avoiding confusion and maintaining data accuracy. You can set up mutual exclusion groups easily in Amplitude Experiment, preventing users from being exposed to multiple experiments simultaneously. This feature is available to users on Enterprise plans with Amplitude Experiment. By creating mutual exclusion groups, you can manage experiment interactions and ensure a smoother testing process."
 ---
 When running several experiments at once, you may want to keep users who are included in one experiment from being exposed to a second, related experiment at the same time. Perhaps these experiments are working on solving the same problem in different ways, and you worry that your users will be confused if they’re exposed to both, or that your experiment results might be tainted by the **interaction effect**. 
 

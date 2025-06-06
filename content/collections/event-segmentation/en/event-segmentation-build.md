@@ -11,6 +11,7 @@ landing: true
 landing_blurb: 'Use events and properties to create an Event Segmentation analysis'
 academy_course:
   - 49a7ec41-cae7-4f77-8f8f-e0a5101ce1df
+ai_summary: "The Event Segmentation chart in Amplitude lets you analyze top events, user event triggers, unique users, and user event tendencies. You can combine events, properties, and user segments to build detailed analyses. The feature is available on all Amplitude plans. To set up an event segmentation analysis, select events, add properties, measure results, and define user segments. Customize your chart's Y-axis for better viewability by setting axis values, unit of measure, and adding a second Y-axis if needed. Dual Y-axis is available on event segmentation line charts for improved visibility."
 ---
 For most users, Event Segmentation is the foundational Amplitude chart. It shows what your users are doing in your product. With the **Event Segmentation chart**, you can build analyses that:
 

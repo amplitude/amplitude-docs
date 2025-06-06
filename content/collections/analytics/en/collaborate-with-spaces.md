@@ -12,6 +12,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1742328269
 academy_course:
   - 46517037-8185-4438-afbd-4ba6f18249ea
+ai_summary: "You can use Amplitude's Spaces feature to organize content. Join existing spaces, move content, create shortcuts, and manage members. Permissions vary from editing to viewing. Connect spaces to Slack for notifications. Growth and Enterprise plans offer enhanced controls. Admins and managers can manage permissions. Project-level permissions override space-level permissions."
 ---
 This article explains how to take advantage of the different features offered by [spaces](/docs/get-started/spaces) before continuing.
 

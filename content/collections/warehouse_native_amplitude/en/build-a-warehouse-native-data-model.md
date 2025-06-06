@@ -4,8 +4,10 @@ blueprint: warehouse_native_amplitude
 title: 'Build a warehouse-native data model'
 source: 'https://help.amplitude.com/hc/en-us/articles/26004068419995-Build-a-warehouse-native-data-model'
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1717541636
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1748991246
+ai_summary: 'Understanding data modeling in Warehouse-native Amplitude is crucial for performance and insights. Data types like events, user properties, and group properties are supported. You can create warehouse-native data models for events, users, and groups, and join them based on unique IDs. Flexibility exists in data types, but Amplitude recommends specific structures for better performance. Considerations include model choice, accurate insights, and performance improvements. To create a data model, navigate to Amplitude Data in your project, add models, select the base table option, map columns, and save your model.'
+landing: false
 ---
 Data models are the foundation for creating analyses within Warehouse-native Amplitude. Understanding how to structure your data is crucial for optimal performance and accurate insights.
 

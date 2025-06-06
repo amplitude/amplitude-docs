@@ -2,12 +2,12 @@
 id: ef88cdd5-db31-4fea-add4-0b29cfcb8734
 blueprint: ampli
 title: 'Source Control'
-source: https://www.docs.developers.amplitude.com/data/ampli/git-workflow/
+source: 'https://www.docs.developers.amplitude.com/data/ampli/git-workflow/'
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1715382642
+ai_summary: "Manage changes to your tracking plan and analytics using branches in Ampli with Git. You can create branches in Amplitude Data and Git, pull generated code, implement changes, and check the status using commands like `ampli pull`, `ampli status`, and `ampli checkout`. The `ampli.json` file stores configuration information. The Ampli CLI helps coordinate development across branches with commands like `ampli status --is-merged` and `ampli status --is-latest`. It's recommended to merge Git branches after Data branches and add status checks to CI workflows for enforcement."
 ---
-
 {{partial:admonition type="info" heading=""}}
 This workflow requires [Ampli CLI 1.9.0+](/docs/sdks/ampli/ampli-cli)
 {{/partial:admonition}}
@@ -269,42 +269,42 @@ If you run `ampli pull` on a merged version it will update the `ampli.json` and 
 <!-- vale Vale.Spelling = NO-->
 1. Add `ampli-implementation-check.yml` and `ampli-merge-check.yml` to your `.github/workflows` directory.
 
-    ```yaml
-    name: Ampli Implementation Check
-    on: pull_request
+```yaml
+name: Ampli Implementation Check
+on: pull_request
 
-    jobs:
-      build:
-        runs-on: ubuntu-latest
-        container:
-          image: amplitudeinc/ampli
+jobs:
+build:
+runs-on: ubuntu-latest
+container:
+image: amplitudeinc/ampli
 
-        steps:
-          - name: Checkout repo
-            uses: actions/checkout@v2
+steps:
+- name: Checkout repo
+  uses: actions/checkout@v2
 
-          - name: Verify analytics implementation and update status in Data
-            run: ampli status -u --skip-update-on-default-branch -t ${{secrets.AMPLI_TOKEN}}
-    ```
+- name: Verify analytics implementation and update status in Data
+  run: ampli status -u --skip-update-on-default-branch -t ${secrets.AMPLI_TOKEN}
+```
 
-    ```yaml title="ampli-merge-check.yml"
-    name: Ampli Merge Check
-    on: pull_request
+```yaml title="ampli-merge-check.yml"
+name: Ampli Merge Check
+on: pull_request
 
-    jobs:
-      build:
-        runs-on: ubuntu-latest
-        container:
-          image: amplitudeinc/ampli
+jobs:
+build:
+runs-on: ubuntu-latest
+container:
+image: amplitudeinc/ampli
 
-        steps:
-          - name: Checkout repo
-            uses: actions/checkout@v2
+steps:
+- name: Checkout repo
+  uses: actions/checkout@v2
 
-          - name: Check the Data branch is merged before merging the Git branch
-            run: ampli status --is-merged -t ${{secrets.AMPLI_TOKEN}}
-    ```
-    <!-- vale Vale.Spelling = YES-->
+- name: Check the Data branch is merged before merging the Git branch
+  run: ampli status --is-merged -t ${secrets.AMPLI_TOKEN}
+```
+
 2. If your Ampli project is in a subdirectory, you may need to set the correct working-directory in your Actions. See GitHub documentation [here](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun).
 
 3. Create a API token in Data. Do this from `Settings => API Tokens => Create Token`.
@@ -312,7 +312,7 @@ If you run `ampli pull` on a merged version it will update the `ampli.json` and 
 4. Add the API token to your Repository secrets as `AMPLI_TOKEN`. You can do this from
 `Settings => Secrets => Actions => New repository secret`
 
-5. Commit the workflows to your repo and you're all set. On each PR Ampli checks both the implementation status and merge status of the current branch in your tracking plan.
+1. Commit the workflows to your repo and you're all set. On each PR Ampli checks both the implementation status and merge status of the current branch in your tracking plan.
 
 ### PR workflow
 

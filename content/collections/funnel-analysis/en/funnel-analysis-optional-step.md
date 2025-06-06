@@ -7,6 +7,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717015624
 this_article_will_help_you:
   - 'Add an optional step to your Funnel Analysis charts, and compare conversion rates between the two versions'
+ai_summary: 'You can define conversions with optional steps in Amplitude. By marking a step as optional, you can create two funnel views - one with the step and one without it. The conversion insights and breakdown table will reflect these scenarios. Note that there are limitations: optional steps are available for Conversion and Conversion Over Time, only one step can be optional at a time, and only middle steps can be marked as optional. Additionally, optional events cannot be reordered, have group-bys, or compare multiple events. You can also create in-line custom events in Funnel and Event Segmentation charts.'
 ---
 At times you will need to define a conversion where some of the steps are optional. For example, a funnel has steps A, B, C, and D, where B is optional. If a user performs steps A, C, and D, they would still convert.
 

@@ -9,8 +9,8 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1716571567
+ai_summary: 'In Amplitude, you can create organizations and projects for your analyses. Learn how to get your product data into Amplitude and track specific events and user identification. Create and share charts, start from templates, and track your progress. Generate quick wins by understanding user activity, analyzing acquisition channels, feature adoption, and conversion rates. To get started, create an Amplitude account, verify your email, and explore the demo environment to see what Amplitude offers. If you have questions about instrumentation, refer to the provided article.'
 ---
-
 Start by learning about organizations and projects in Amplitude (your analyses live in projects, and all your projects live in your organization): 
 
 * [Create a new aCCOUNT](/docs/get-started/create-a-new-account)

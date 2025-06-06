@@ -6,6 +6,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718138213
+ai_summary: 'With Amplitude Data, you can easily set up third-party platforms as data export destinations. This allows you to share Amplitude-generated data with other tools and stakeholders. The feature is available on all Amplitude plans. To add a new data destination, go to the Destinations tab in the Connections section, click +Add Destination, find your desired destination, provide the required information, and click Save.'
 ---
 Amplitude Data makes it easy for you to set up third-party platforms as data export destinations. This enables you to share data generated in Amplitude with other tools and stakeholders in a variety of contexts. 
 

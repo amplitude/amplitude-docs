@@ -11,6 +11,7 @@ updated_at: 1717104268
 partner_maintained: false
 landing: true
 landing_blurb: "Build a cluster analysis of your product's users"
+ai_summary: "Amplitude's **Personas** chart groups your users based on similar event behavior, allowing you to explore how users interact with your product. This feature is available for Growth and Enterprise plans. Unlike other Amplitude charts, Personas uses the Cluster Generation, Cluster Count, and Target Cohort modules. You can set up a Personas chart by selecting a user cohort, filtering users by properties, specifying user actions, choosing the number of clusters, and selecting a target cohort. The Personas chart helps you identify user similarities and create user personas to enhance engagement and retention. Remember to complete instrumentation before analyzing data in Amplitude."
 ---
 Amplitude's **Personas** chart groups your users into **clusters** based on the similarities of their event behavior. Users who behave the same way will be placed into the same cluster. It's similar to a behavioral cohort, except there's no explicit, pre-specified rule that defines a cluster.
 

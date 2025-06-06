@@ -6,8 +6,8 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1736374369
+ai_summary: 'You can sync cohorts from Amplitude with third-party destinations like ad networks and marketing platforms. Choose between one-time, scheduled, or real-time syncs based on your needs. One-time syncs export cohorts once, scheduled syncs send updates hourly or daily, and real-time syncs ensure up-to-date info every minute. Real-time sync has limitations on cohort size and types, and some destinations are not supported. Syncing timing is automated by Amplitude. Select the best sync option for your use case and destination compatibility.'
 ---
-
 You can synchronize the cohorts your create in Amplitude, with third-party [destinations](/docs/data/destination-catalog) like ad networks, attribution providers, and marketing automation platforms.
 
 The sync cadence you define impacts both the frequency with which Amplitude sends cohort or cohort updates to the destination, and the destinations that are available.

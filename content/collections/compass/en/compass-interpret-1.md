@@ -7,6 +7,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1732569684
 landing: true
 landing_blurb: 'Learn how to derive insights from Compass, and track user retention'
+ai_summary: "Amplitude's Compass chart helps you understand which user events drive retention, crucial for sustainable product growth. The chart provides a heat map of user events and correlations, helping you identify which events are most correlated with user retention. You can sort the data and view detailed breakdowns to analyze correlations between events and retention. Remember, correlation doesn't imply causation. Use this tool to make informed decisions about improving user retention and product growth."
 ---
 Amplitude's **Compass** chart shows how a new user firing an event correlates with that user retaining that user. Understanding which user events lead to retention is a critical tool in driving sustainable product growth.
 

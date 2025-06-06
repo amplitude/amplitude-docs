@@ -7,6 +7,7 @@ this_article_will_help_you:
   - "Discover how long it takes users to trigger your product's critical event"
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717015719
+ai_summary: "A usage interval analysis focuses on how long users go between triggering your product's critical event. It shows the time between return events, helping you understand user behavior. To create one, select the critical event, define user segments, and view your results. You can add properties, filter by events, and segment users. Check our Help Center for more details on interpreting and understanding your usage interval analysis."
 ---
 A usage interval analysis is related to a [retention analysis](/docs/analytics/charts/retention-analysis/retention-analysis-build), but it works a little differently. While a simple retention analysis measures the amount of time between a starting event and a return event, a usage interval analysis considers return events only. It’s intended to show you how long users go between triggering your product’s most important event—its **critical event**.
 

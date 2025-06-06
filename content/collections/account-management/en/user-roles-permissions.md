@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1720214133
+ai_summary: "User permissions in Amplitude determine access levels based on roles like Viewer, Member, Manager, and Admin. Admins can set permissions, designate other admins, and manage users. Enterprise customers can enable project-level permissions for different roles in various projects. Viewers can view and share content, but not create discoverable items. Members can create dashboards and custom events. Managers can add users, edit roles, create annotations, and more. Admins have the highest permissions, including managing Admins and changing organization details. All users have limitations like not changing roles or deleting others' content."
 ---
 User permissions define the level of Amplitude access a user in your organization has. Usually, Amplitude bases permissions on a user's role, though [project-level permissions](/docs/admin/account-management/manage-users) and [permission groups](/docs/admin/account-management/manage-permission-groups) are available for Enterprise customers who need the ability to better target levels of security. For more information about permissions in Amplitude Experiment, see [App-level user permissions](/docs/feature-experiment/app-level-permissions).
 

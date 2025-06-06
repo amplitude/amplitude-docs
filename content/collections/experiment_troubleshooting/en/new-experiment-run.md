@@ -6,6 +6,7 @@ author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 source: 'https://www.docs.developers.amplitude.com/experiment/guides/troubleshooting/restarting-experiments/'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717179968
+ai_summary: 'You can create a new run of an existing experiment in Amplitude to exclude previous user data affected by instrumentation issues. When creating a new run, you update the experiment key, start date, end date (optional), bucketing salt (optional), and decision. You can differentiate runs using the experiment key property and enable it under the exposure event control. Ensure your SDK version supports experiment restarts. The Evaluation API provides the experiment key for the current running experiment. This functionality is available for JavaScript, Android, iOS, and React Native SDKs.'
 ---
 Creating a new run of an existing experiment can be useful if you had instrumentation issues that affected data quality, and you've since fixed them. When you create a new run, you exclude any previous user data from the monitoring and analysis of your experiment.
 

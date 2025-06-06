@@ -9,6 +9,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717103382
 landing: true
 landing_blurb: 'Use legacy metrics to enhance your analyses'
+ai_summary: "In Amplitude Analytics, you can find session metrics like bounce rate and exit rate in the Data Tables charts under the Metrics tab. These metrics aren't standalone but are calculated based on the group-by you select. You need to be on Growth or Enterprise plans to access this feature. By selecting the right group-by property, you can analyze session metrics and understand user interactions on your app or site. Session metrics such as bounce, entry, and exit rates are crucial for evaluating user engagement. Remember, these metrics are calculated based on the group-by property you choose."
 ---
 Sometimes considered "legacy metrics," **session metrics**, like bounce rate or exit rate—are helpful diagnostic tools for obtaining a deeper understanding of the performance of campaigns or content items. 
 

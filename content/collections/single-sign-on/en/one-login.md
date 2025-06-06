@@ -7,6 +7,7 @@ this_article_will_help_you:
   - 'Set up single sign-on using OneLogin'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715363551
+ai_summary: "Amplitude offers single sign-on integration with OneLogin for customers on specific plans. To set it up, you need org admin access in Amplitude and the ability to configure OneLogin. Follow steps to add Amplitude as an app in OneLogin, configure it with your org ID, and upload the SAML metadata file in Amplitude settings. Choose OneLogin as the Identity Provider, save your changes, and you'll have SSO enabled for smoother access."
 ---
 Amplitude provides a single sign-on integration with OneLogin for customers on Scholarship, Growth, or Enterprise plans.
 

@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1722895919
+ai_summary: "Amplitude Data's portfolio feature allows you to combine data from multiple projects for cross-product analysis. You can create and manage portfolios in Analytics, customize metadata, and import existing portfolios. Portfolios can include up to five projects, with the option to unlock more. By creating portfolios, you can view aggregated data from different projects in one place, rank source projects, and manage event and property metadata. This feature helps you analyze data across various projects efficiently and effectively."
 ---
 Amplitude Data's **portfolio** feature lets you create cross-product analyses by combining multiple source projects into a single view. 
 

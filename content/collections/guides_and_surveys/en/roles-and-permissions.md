@@ -2,6 +2,7 @@
 id: b0118c93-d3b3-41eb-80fd-f37a53b03340
 blueprint: guides_and_survey
 title: 'Roles and Permissions'
+ai_summary: "You can adjust user access levels for Guides and Surveys in Amplitude. There are different roles like No Access, Viewer, Member, Manager, and Administrator with varying levels of access. To update a user's access, go to Guides and Surveys > Permissions, select users, manage project access, choose projects, and update roles."
 ---
 Guides and Surveys permissions enable you to override a user's base level Amplitude [role](/docs/admin/account-management/user-roles-permissions) to grant a different level of access specifically for Guides and Surveys.
 

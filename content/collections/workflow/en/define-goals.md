@@ -8,6 +8,7 @@ this_article_will_help_you:
   - 'Create new metrics from scratch, and edit existing metrics'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1714515123
+ai_summary: 'You tell Amplitude Experiment what metric you want to track in the Goals section. Your recommendation metric decides if your experiment is a success. Choose a metric that reflects the user behavior you aim to affect. Avoid defaulting to revenue metrics. You can set multiple metrics for an experiment, including non-recommended ones. Use the Enable Recommendation option for recommendations. Define your metrics in the experiment panel. Create custom metrics if needed. Choose the exposure event to track user interactions accurately. Use the Amplitude exposure event for reliable data. Follow these steps to set up metrics for your experiment.'
 ---
 An experiment can’t tell you anything without events to track. Adding metrics to your experiment occurs in the Goals segment of the experiment design panel. Here, you’ll tell Amplitude Experiment what you want your **recommendation metric** to be, as well as define any **secondary metrics**. The recommendation metric determines whether your hypothesis is accepted or rejected, and therefore, whether your experiment has succeeded or failed.
 

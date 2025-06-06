@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724884920
+ai_summary: 'This documentation provides a glossary of key experimentation terms in Amplitude. You can learn about terms like Allocation, Audience, Confidence interval, Hypothesis, Primary success metric, and more. Understanding these terms will help you effectively set up and analyze experiments in Amplitude, improving your ability to measure and optimize the impact of changes on your product or service.'
 ---
 ## Glossary of key experimentation terms
 

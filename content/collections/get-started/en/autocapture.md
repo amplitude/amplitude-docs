@@ -8,6 +8,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1742491699
 academy_course:
   - fcefbf26-273d-49a9-adbf-89440c8cb48b
+ai_summary: "Amplitude's Autocapture simplifies setting up analytics quickly. You can enable Autocapture for web using the Browser SDK, initialize the SDK, adjust Content Security Policy, and capture various events. Autocapture also supports marketing attribution and user properties. For iOS, install the iOS SDK and initialize it with Autocapture enabled. Similarly, for Android, install the Android SDK and initialize it with Autocapture. Both platforms enable capturing events like session start/end, application actions, screen views, and user interactions. Autocapture automatically attaches user properties to events unless disabled."
 ---
 Amplitude's [Autocapture](/docs/data/autocapture) is the best option for getting up and running quickly. This document helps you enable Autocapture across your digital products for out of the box analytics with minimal engineering.
 

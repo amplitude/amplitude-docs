@@ -7,7 +7,8 @@ parent: 2ce5d590-00c1-46a4-aad9-39465ed1eacf
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1738273703
 section: guides
-landing_blurb: "See how you can use guides, and the templates available to you."
+landing_blurb: 'See how you can use guides, and the templates available to you.'
+ai_summary: 'Guides in Amplitude are in-product messages that guide you to complete tasks or explore new features. They are helpful and timely, using triggers to avoid being annoying. You can create guides from templates like Tour, Announcement, Checklists, Banners, and Tooltips, each serving different purposes such as exploration, updates, task completion, message highlighting, and providing quick tips.'
 ---
 Guides are versatile, in-product messages that gently nudge your users toward completing specific tasks, exploring new features, or learning more about your product. Unlike traditional popups that can feel interruptive, guides focus on being helpful and timely. Guides use behavioral triggers, strike detection, and rate-limiting mechanisms to avoid annoying users.
 

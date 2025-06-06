@@ -9,6 +9,7 @@ this_article_will_help_you:
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1720544857
+ai_summary: "Amplitude's technical documentation discusses inflection points, settings changes during live experiments, and flattened slopes in data analysis. It explains reasons for inflection points, advises against altering settings mid-experiment, and suggests adjusting end dates. It also highlights potential causes of flattened slopes, such as user depletion or seasonal effects. The documentation emphasizes the importance of maintaining consistency in experiment conditions to ensure accurate results and avoid misinterpretations that could impact product decisions."
 ---
 ## Inflection point
 

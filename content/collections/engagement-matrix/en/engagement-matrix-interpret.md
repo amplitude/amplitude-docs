@@ -10,6 +10,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717104782
 landing: true
 landing_blurb: 'Interpret the results of your Engagement Matrix chart'
+ai_summary: 'You can create an engagement matrix chart to categorize features and events based on performance. The chart helps you focus on core features, power features, less-used features, and features needing improvement. You can interpret the chart using the quadrants and adjust your product strategy accordingly. A breakdown table provides a summary of the data for further analysis. You can export data as a CSV file and customize the display. Additionally, you can zoom in on clusters of data points for more detailed evaluation.'
 ---
 Before you begin, see [Engagement Matrix: see how users feel about your product](/docs/analytics/charts/engagement-matrix/engagement-matrix-discover) to learn how to create an engagement matrix chart.
 

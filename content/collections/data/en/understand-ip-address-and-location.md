@@ -11,6 +11,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1722895713
+ai_summary: 'Amplitude tracks user location properties like city and country to show regional differences in user behavior. It uses MaxMind data for accuracy. You can define how Amplitude tracks location properties and manage IP address blocking. Amplitude also parses user agent info for device details like model, OS, and browser. Device-related properties are added to events for analysis. You can control what device info is tracked and add custom properties if needed. This functionality helps you optimize your product based on user behavior across different devices and platforms.'
 ---
 Data that highlights user location properties, such as a user's city and country, are crucial for generating insights related to the geographical distribution of your users. They can show you how user preferences and behaviors differ from region to region, and help you better optimize your product. Similarly, device and platform information helps you understand which devices and operating systems your users are using.
 

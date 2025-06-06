@@ -10,6 +10,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1722895748
+ai_summary: 'You can override property details in Amplitude to customize a property for a specific event or property group without affecting the original version. This allows changes to apply only to the event or group you specify. To override a property for an event, go to the event details and select the property to override. For a property group, access the property group details and choose the property to override. Any changes made will only affect the selected event or group. Remember, you can revert an overridden property when needed.'
 ---
 Overriding property details is helpful when you want to customize the property for a specific event or property group, without updating the **original** version or creating an entirely new event property. 
 

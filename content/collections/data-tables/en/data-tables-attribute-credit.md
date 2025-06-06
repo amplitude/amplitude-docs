@@ -9,6 +9,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1738271039
 landing: true
 landing_blurb: 'Understand how specific touch points are contributing to your marketing outcomes'
+ai_summary: "You can attribute success to different marketing activities using Amplitude's multi-touch attribution feature. This helps you understand which activities drive user engagement and plan future marketing strategies. You have access to pre-built attribution models like First Touch, Last Touch, Linear, and more. Additionally, you can create custom attribution models to suit your specific needs. By applying these models to your data, you can analyze acquisition channels, compare attribution models, evaluate content impact, assess internal campaigns, and optimize paid channels based on user behavior. This functionality is available on all Amplitude plans."
 ---
 It can be challenging to attribute success of marketing activities without being able to clearly pinpoint which activities led your users to the desired outcome. For example, let's say a user visited your website after exposure to a Google ad, then interacting with a Facebook post, and finally watching a TikTok video. There are many ways you can attribute credit to one or more of the activities that led to the user's visit to your website. Attributing success to various property values, often referred to as [**multi-touch attribution**](https://amplitude.com/blog/amplitude-attribution), can provide more context for and drive the future of your marketing plans. 
 

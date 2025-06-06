@@ -7,6 +7,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1748626249
+ai_summary: 'You must inform users and get their consent when using Session Replay. Update your privacy policy to explain your use of Session Replay, the data collected, reasons for collection, data storage, and user opt-out options. In regions like the EU, include Session Replay in your cookie consent banner. Amplitude provides tools for privacy controls, custom masking, and data retention. Customize your banners under "analytics" or "functional" cookies, allowing users to enable or disable Session Replay. For further legal guidance, consult your legal team.'
 ---
 As privacy laws and regulations continue to evolve, transparency in how companies collect and process user data is more important than ever. If you use Session Replay, it's critical for you to inform your users and get their consent, when necessary.
 

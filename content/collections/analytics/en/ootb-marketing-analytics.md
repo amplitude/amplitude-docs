@@ -11,6 +11,7 @@ source: 'https://help.amplitude.com/hc/en-us/articles/25181928085019-Gain-market
 landing: false
 academy_course:
   - cafa90d0-f101-4234-bdf3-c9525c221850
+ai_summary: "In Amplitude's Marketing Analytics, you can track page engagement and session-based metrics using common KPIs like page views, session duration, and bounce rate. You can filter metrics by domain, track conversions, and add more detail with nested group-bys. The feature is available to all Amplitude users. The tool offers insights on traffic by channel, campaign, ad performance, page engagement, and conversions. You can manage settings, create goals, and connect to ad networks to analyze ad performance. Customize tracked events and modify settings to tailor your analysis."
 ---
 Amplitude’s Out-of-the-box Marketing Analytics acts as a centralized hub where you can track page engagement and session-based metrics using common KPIs, such as page views, session duration, and bounce rate. Custom settings are available to:
 

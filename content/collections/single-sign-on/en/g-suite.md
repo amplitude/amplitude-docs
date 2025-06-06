@@ -7,6 +7,7 @@ this_article_will_help_you:
   - 'Set up single sign-on using G Suite'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715363400
+ai_summary: "Amplitude offers single sign-on integration with G Suite for users on specific plans. To set it up, you need to be an org admin for both Amplitude and G Suite. Follow the steps in the G Suite admin console to add a SAML app, download the IDP metadata, and upload it in Amplitude settings. Complete the app creation process in G Suite by entering necessary details like ACS URL and Entity ID. Click 'Finish' in Google Admin to save the app and activate SSO. Note: There might be a short delay in setup, and if users encounter 403 errors, wait a day before trying again."
 ---
 Amplitude provides a single sign-on integration with G Suite for customers on Scholarship, Growth, or Enterprise plans.
 

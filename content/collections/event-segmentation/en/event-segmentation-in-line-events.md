@@ -8,6 +8,7 @@ this_article_will_help_you:
 landing: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724884451
+ai_summary: "You can combine multiple events directly in Amplitude charts using in-line OR logic. This feature allows you to explore event combinations without creating permanent custom events. To add custom events, click *More Options* and select *Combine events inline*. Then, click *Add event inline* to create custom events specific to that chart. Add event properties as needed by clicking *Filter*. Save in-line events as custom events to use in other charts. Remember, custom events can't contain other custom events. Contact your Customer Success Manager to access this closed beta feature."
 ---
 Sometimes an analysis calls for combining multiple events, but you might not know which events you need. You can explore event combinations directly in the chart controls without needing to create and save a permanent custom event. Amplitude offers in-line OR logic to combine events for funnels and event segmentation charts.
 

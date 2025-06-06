@@ -12,6 +12,7 @@ updated_at: 1742323697
 landing_blurb: "Manage your project's users and permissions."
 academy_course:
   - aa8cb42c-8302-4c76-b28d-0cb1a579fe46
+ai_summary: 'You can manage user access in Amplitude by adding them to your organization, inviting new users, allowing team members to request access, changing user roles and permissions, transferring ownership of content, and requesting an email domain change. Admins and managers control these functions through the Members page in the organization settings. Remember that user email addresses are unique identifiers and cannot be changed. Project-level permissions enable different roles for each project, allowing teams to operate autonomously. To request an email domain change, submit a ticket including your org ID and old/new email domains.'
 ---
 Before a user can gain access to any Amplitude projects, you will have to add them to your Amplitude organization. You should do this immediately after creating an organization. Additionally, you’ll probably need to add new team members on a case-by-case basis as your organization changes and grows.
 

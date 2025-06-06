@@ -1,17 +1,17 @@
 title: 'Help Center Common'
 fields:
   -
+    handle: ai_summary
+    field:
+      type: textarea
+      display: 'AI Summary'
+      localizable: false
+      replicator_preview: false
+  -
     handle: title
     field:
       type: text
       display: Title
-      localizable: false
-  -
-    handle: this_article_will_help_you
-    field:
-      type: list
-      display: 'This article will help you...'
-      instructions: 'Add items that a reader will learn in this article.'
       localizable: false
   -
     handle: content

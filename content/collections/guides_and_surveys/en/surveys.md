@@ -5,6 +5,7 @@ title: Surveys
 author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1738273332
+ai_summary: 'This Amplitude technical documentation provides information on how you can access and utilize different features and functions of the platform. It includes details on accessing specific sections and understanding the purpose of each feature. By exploring this documentation, you can gain insights into how to effectively use Amplitude for your analytics needs.'
 ---
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
 {{ children}}

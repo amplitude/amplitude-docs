@@ -10,6 +10,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1720212375
+ai_summary: "Amplitude's **group-by** feature categorizes events for aggregation, useful for counting events by country. There are limits on result numbers based on group-bys. The tool prioritizes group-bys for display in the Breakdown Table, with different ordering for metrics like Uniques, Totals, % Active, and more. Formulas without a group-by use a default ordering unless all metrics use the same ordering. With a group-by, Amplitude ranks groups by overall values per group. If group-by pruning happens with multiple formula terms, loading may take longer due to additional queries."
 ---
 In its basic form, Amplitude's **group-by** feature is a tool for categorizing events for aggregation. 
 

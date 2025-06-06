@@ -6,6 +6,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1727805387
+ai_summary: 'Profiles in Amplitude let you merge customer data with product behavior, enabling comprehensive analysis. Profiles are standalone properties linked to user profiles, always showing the latest data from your warehouse. Snowflake and Databricks users have specific setup steps for integrating data. Snowflake users must set data retention and change tracking, while Databricks users need to enable change tracking and configure data retention. You can map columns, set import strategies, and refresh data at specified intervals. Clearing profile values in your warehouse syncs them to Amplitude. Sample SQL queries are provided for analysis purposes.'
 ---
 Profiles enable you to join customer profile data from your data warehouse with existing behavioral product data already in Amplitude.
 

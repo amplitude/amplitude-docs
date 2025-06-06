@@ -14,6 +14,7 @@ package_name: '@amplitude/plugin-session-replay-browser'
 full_details: true
 public: true
 description: 'Use the Session Replay plugin if you instrument your site with Amplitude Browser SDK 2.'
+ai_summary: "The article explains how to set up Session Replay using Amplitude's Browser SDK plugin. It covers minimizing performance impact, capturing DOM changes for replays, installation steps, supported browsers, and configurations like sample rate, privacy settings, and debugging. You can install the plugin with npm or yarn, and configure it using the Unified SDK or Plugin configuration. It also mentions session tracking, masking data, EU data residency settings, and sampling rates. Be aware of compatibility issues with Google Tag Manager and ensure proper initialization to avoid mismatches in Device ID or Session ID."
 ---
 {{partial:admonition type="note" heading="Session Replay instrumentation"}}
 Session Replay isn't enabled by default, and requires setup beyond the standard Amplitude instrumentation.

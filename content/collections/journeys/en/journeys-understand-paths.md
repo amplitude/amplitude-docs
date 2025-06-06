@@ -11,6 +11,7 @@ landing: true
 landing_blurb: 'Analyze conversions between the key transition points in your product'
 academy_course:
   - bd75ea62-37df-4ba9-a32b-459a73933d9e
+ai_summary: "Amplitude's Journeys chart combines legacy Journeys and Pathfinder Users to analyze user conversions. You can view unique users and total conversions, use Pathfinder for a general view or Journey Map for in-depth analysis, comparing paths and understanding user behavior. This helps bridge the gap between your ideal and actual customer journeys. The feature is available on all Amplitude plans. You can create Journeys charts to analyze paths, apply filters, measure conversions, and segment users. The conversion window in Journeys charts can be based on clock time or sessions. Any changes you make apply to all three Journeys visualizations."
 ---
 Amplitude’s Journeys chart incorporates the power of the legacy Journeys, and Pathfinder Users charts to generate a complete, 360-degree analysis of how your users convert—or fail to convert—between key transitions in your product. It allows you to inspect your users’ product journeys in two ways: 
 - By the total number of unique users who took a particular path.

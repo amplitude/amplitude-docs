@@ -7,6 +7,7 @@ this_article_will_help_you:
   - 'Set up single sign-on using Microsoft Azure Active Directory'
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1715363416
+ai_summary: 'Amplitude offers a single sign-on integration with Microsoft Azure Active Directory for customers on specific plans. To set up this integration, you need to be an org admin and configure Azure AD in Microsoft Azure. Follow these steps: Navigate to Azure AD, add Amplitude as a new application, configure SSO settings, download the metadata file, and upload it in Amplitude settings to enable SSO with Microsoft Azure AD as the Identity Provider. This functionality streamlines user access and enhances security for organizations using Amplitude.'
 ---
 Amplitude provides a single sign-on integration with Microsoft Azure Active Directory for customers on Scholarship, Growth, or Enterprise plans.
 

@@ -10,6 +10,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717103051
 landing: true
 landing_blurb: "Understand the Retention Analysis chart's usage interval view"
+ai_summary: "In Amplitude, the usage interval measures how often users trigger specific events over time. It's crucial for understanding user retention and product health. You can find your product's usage interval by analyzing event frequency on different days. This data helps create retention and lifecycle charts. By selecting a critical event, like 'Purchase Song or Video,' you can see how often users perform that action. The 'Usage Interval Over Time' view tracks how event frequency changes. Understanding your usage interval is key to evaluating user behavior and product performance."
 ---
 In a retention analysis, the **usage interval** shows the percentage of active users who’ve triggered the selected events with a specified daily, weekly, or monthly median frequency. These events must be triggered on **at least two different days** in order for the users to be included. 
 

@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717611472
+ai_summary: 'Amplitude automatically tracks user properties like country, city, region, and more. It uses IP addresses for location data. You can configure the SDKs to stop tracking certain properties. When creating charts, you need to provide specific values for some segments. If you send data server-side, you must set properties explicitly. The table lists various user properties like platform, device, and language. "Paying" changes to "true" after a revenue event. Remember, you can''t group by certain properties in charts. Make sure to manage unique identifiers like user ID yourself.'
 ---
 By default, Amplitude tracks the user properties listed in the table below automatically, via client-side [SDKs](https://www.docs.developers.amplitude.com/data/sdks/sdk-overview/#analytics-sdks). All these properties will be prefixed with the Amplitude logo whenever you encounter them in Amplitude. If you prefer, configure Amplitude's SDKs to disable automatic tracking of these properties:
 

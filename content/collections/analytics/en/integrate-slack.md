@@ -10,6 +10,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724882676
+ai_summary: 'With Amplitude''s Slack app, you can get updates on new comments, unfurl chart links, add charts to dashboards, and connect Team Spaces for notifications. To integrate, go to Settings > Personal Settings, click Profile, then Connect to Slack. Once connected, you''ll receive notifications in Slack for @mentions and comments in Amplitude. You can also link Amplitude Data projects for real-time notifications in Slack channels. Easily access Amplitude content directly from Slack messages. Connect Team Spaces to Slack channels for new analysis notifications. Disconnect by clicking "Disconnect Slack" in your Team Space.'
 ---
 With Amplitude's app for [Slack](https://www.slack.com/), you can:
 
