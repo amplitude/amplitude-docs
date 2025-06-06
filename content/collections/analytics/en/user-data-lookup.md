@@ -87,7 +87,7 @@ Daily exported files use `server_upload_time` and all dashboards use `event_time
 
 ### Insights
 
-The *Insights* tab provides a series of customizable charts to help visualize the user's activity in your application. Click *Customize* to select or update the charts shown. Click a replay to open it in a new tab.
+The *Insights* tab provides a series of customizable charts to help visualize the user's activity in your application. Click a chart title to open the chart and customize it. Click a replay to open it in a new tab.
 
 ### Session replays
 
