@@ -6,11 +6,13 @@ This documentation explains how to configure privacy settings for Amplitude's Se
 - masking levels (Conservative, Light, Medium)
 - CSS selector overrides
 - mask/unmask/exclude elements
-- SDK vs UI precedence
+- SDK vs UI precedence rules
 - remote configuration
-- data attributes (data-amp-mask, data-amp-unmask)
+- data attribute selectors
+- PII masking
+- form field masking
+- text input masking
 - .amp-block class
 - organizational settings configuration
-- PII data protection
-- form fields masking
-- text input masking
+- privacy compliance
+- sensitive data protection
