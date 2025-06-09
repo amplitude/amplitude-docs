@@ -268,9 +268,9 @@ Depending on your company's network policy, you may need to add the following IP
    [Databricks][JDBCDriver](700100) Connection timeout expired. Details: None.
    ```
    - **Root cause**: This means Amplitude was unable to establish a JDBC connection to the Databricks endpoint. It often occurs because:
-      - The your Databricks cluster was terminated and is taking too long to restart, causing the connection attempt to time out.
+      - The Databricks cluster was terminated and is taking too long to restart, causing the connection attempt to time out.
       - The Databricks workspace may have reached resource limits (for example, maximum concurrent SQL endpoints, cluster quota, etc).
    - **Solution**:
-      - Check the Databricks workspace and cluster status to confirm whether the cluster was terminated or restarting during the connection attempt.
+      - Check the Databricks workspace and cluster status to confirm whether the cluster was terminated or is restarting during the connection attempt.
       - Review cluster auto-start and auto-termination settings to ensure clusters can restart quickly when needed.
       - Monitor for resource limits in Databricks (such as concurrent connection caps or cluster capacity issues) and adjust quotas if necessary.
