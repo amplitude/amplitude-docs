@@ -12,10 +12,8 @@
 - official designation
 - duplicate detection
 - L30D query volume
-- object owner filtering
-- custom metric
-- event-and-measurement pairing
-- Member role permissions
-- administrator permissions
+- Organization-level permissions
+- Member role
 - chart usage tracking
-- object drawer interface
+- object drawer
+- similar objects modal
