@@ -1,33 +1,41 @@
-**Summary:**
-This documentation covers Amplitude's Browser SDK 2 for JavaScript/TypeScript, which provides analytics tracking capabilities including autocapture features, event tracking, user/group management, revenue tracking, and advanced configurations like cross-domain tracking, offline mode, and remote configuration.
+## Summary
 
-**Keywords:**
+This documentation covers Amplitude's Browser SDK 2, which enables event tracking to Amplitude with support for both standalone analytics and unified SDK installations, featuring comprehensive autocapture capabilities, marketing attribution tracking, and advanced configuration options for browser-based JavaScript/TypeScript applications.
+
+## Keywords
+
 - Browser SDK 2
 - @amplitude/analytics-browser
 - @amplitude/unified
-- JavaScript TypeScript analytics
-- autocapture tracking
-- attribution tracking
-- UTM parameters
-- page view tracking
-- session tracking
-- form interactions tracking
-- file downloads tracking
-- element interactions tracking
-- cross-domain tracking
-- sendBeacon transport
-- offline mode
-- remote configuration
-- cookie management
-- CSP Content Security Policy
-- revenue tracking
-- user properties identification
-- group properties
-- plugins enrichment destination
 - HTTP V2 API
-- flushIntervalMillis flushQueueSize
-- deviceId userId sessionId
-- marketing attribution
-- visual labeling
-- AMP cookies prefix
-- localStorage identityStorage
+- Autocapture tracking
+- Marketing attribution
+- UTM parameters
+- Click ID tracking
+- Page view tracking
+- Session tracking
+- Form interaction tracking
+- File download tracking
+- Element interaction tracking
+- Visual labeling
+- Cross-domain tracking
+- sendBeacon transport
+- Cookie management
+- Content Security Policy (CSP)
+- Remote configuration
+- Offline mode
+- Revenue tracking
+- User properties
+- Group properties
+- Device ID
+- Session ID
+- Plugins system
+- Enrichment plugins
+- Destination plugins
+- EU data residency
+- flushIntervalMillis
+- flushQueueSize
+- identityStorage
+- trackingOptions
+- excludeReferrers
+- resetSessionOnNewCampaign
