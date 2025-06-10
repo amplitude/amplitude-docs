@@ -320,11 +320,11 @@ if (typeof OneTrust !== 'undefined') {
 {{partial:collapse name="Can I use OneTrust with Amplitude to stay GDPR compliant?"}}
 Yes, you can use Amplitude with a CMP, like OneTrust, in a GDPR-compliant manner. Amplitude can't direct you on how to classify the Amplitude SDK/cookies. Instead, your privacy and legal teams should make this assessment based on the data you're collecting. However, most customers, including in the EU, classify Amplitude cookies as Performance/Analytics cookies.
 
-Customers may also choose to implement via a server side integration, therefore bypassing Amplitude's cookies from the SDK. However, customers who integrate via a server side integration are still responsible for ensuring that they get any necessary consents and make any necessary disclosures for the personal data they collect and send to Amplitude. 
+Customers may also choose to implement through a server side integration, therefore bypassing Amplitude's cookies from the SDK. However, customers who integrate through a server side integration are still responsible for ensuring that they get any necessary consents and make any necessary disclosures for the personal data they collect and send to Amplitude. 
 {{/partial:collapse}}
 
 {{partial:collapse name="When a user opts out, how can I opt them in again?"}}
-Once a user is opted out, you can opt them in programmatically by calling:
+Once a user opts out, you can opt them in programmatically by calling:
 
 ```ts
 amplitude.setOptOut(false);
@@ -346,7 +346,7 @@ FAQs related to CNIL aren't intended as legal or regulatory advice and don't con
 {{partial:collapse name="CNIL France - What does the CNIL cookie exemption really mean?"}}
 The CNIL maintains a list of services which can be used under the exemption. However, any use of an analytics service under the CNIL exemption is subject to the following limitations:
 
-1. **Analytics cookies can ONLY** be placed without asking for user consent if they **only collect anonymous statistical data for audience measurement** (overall traffic, page views). 
+1. **Analytics cookies can ONLY** be placed without asking for user consent if they **only collect anonymous statistical data for audience measurement** (total traffic, page views). 
 2. **This doesn't mean a customer can collect ALL data** about a user for analysis.
 3. Under the exemption, **customers can't use or create "user" analyses**.
 {{/partial:collapse}}
@@ -354,19 +354,19 @@ The CNIL maintains a list of services which can be used under the exemption. How
 {{partial:collapse name="CNIL France - What does the CNIL exemption mean for Amplitude and our cookies?"}}
 As discussed, the CNIL allows for a limited exemption for the requirement that companies obtain user consent for any non-essential cookies. In general, this exemption applies to analytics cookies for the limited purpose of audience measurement of an app or a site, and it's limited to the use of anonymous tracers.
 
-**Therefore, a customer's use of an analytics service under the exemption will be very limited**. Without the CNIL cookie exemption, customers might only collect and measure part of their traffic. The power of the limited data set (for example, the data set with just the users that opt-in/consent) in Amplitude is much more valuable than the very limited data that can be collected under the exemption. This is because:
+**Therefore, a customer's use of an analytics service under the exemption is very limited**. Without the CNIL cookie exemption, customers might only collect and measure part of their traffic. The power of the limited data set (for example, the data set with just the users that opt-in/consent) in Amplitude is much more valuable than the very limited data that can be collected under the exemption. This is because:
 
-Audience measurement (page views, overall sessions) doesn't help customers make better decisions; behavioral analytics guide actions and learning.
+Audience measurement (page views, total sessions) doesn't help customers make better decisions; behavioral analytics guide actions and learning.
 
 Amplitude doesn't need 100% of traffic to derive meaningful insights.
 
 Most of the exempted tools don't have the powerful analytics capabilities of Amplitude.
 
-Besides using the SDKs, customers can still send data to Amplitude server-side. This doesn't require customers to obtain consent for a separate Amplitude SDK cookie. However, as mentioned above, customers who integrate via a server side integration will still be responsible for ensuring that they obtain any necessary consents and make any necessary disclosures for the personal data they collect and send to Amplitude. 
+Besides using the SDKs, customers can still send data to Amplitude server-side. This doesn't require customers to obtain consent for a separate Amplitude SDK cookie. However, as mentioned above, customers who integrate through a server side integration are responsible for ensuring that they obtain any necessary consents and make any necessary disclosures for the personal data they collect and send to Amplitude. 
 {{/partial:collapse}}
 
 {{partial:collapse name="CNIL France - 13-month cookie limit"}}
-Amplitude Browser SDK 2 has a `cookieOptions.expiration` option to allow customers to set the number of days a cookie will live. It defaults to 1 year (365 days) as of the current version. However, most browsers will by default limit the lifetime of cookies set using document.cookie from 1 to 7 days.
+Amplitude Browser SDK 2 has a `cookieOptions.expiration` option to allow customers to set the number of days a cookie lives. It defaults to 1 year (365 days) as of the current version. However, most browsers limit the lifetime of cookies set using document.cookie from 1 to 7 days.
 
 ```ts
 amplitude.init("API_KEY", {
