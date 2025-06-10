@@ -23,6 +23,10 @@ Your MTU count doesn't increase due to user mapping, identify calls, or group id
 
 MTU-based pricing is available for all Amplitude plans. Customers who use sampling aren't eligible for MTU-based pricing.
 
+{{partial:admonition type="note" heading="Events that don't count toward MTUs"}}
+`[Experiment] Exposure` and `[Experiment] Assignment` events don't count toward your organization's MTU count. Amplitude uses hese events for experiment analysis and monitoring but they don't affect your billing.
+{{/partial:admonition}}
+
 ## Track your MTUs
 
 The first step in setting up MTU tracking is to understand [how Amplitude tracks unique users](/docs/data/sources/instrument-track-unique-users). The best way to ensure accurate counting of MTUs is to support a one-to-one correlation between user IDs and actual users.
