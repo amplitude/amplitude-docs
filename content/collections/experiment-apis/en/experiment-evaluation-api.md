@@ -80,7 +80,7 @@ If a user isn't in the target audience, the Evaluation API may return an empty o
 
 Set the fields in the table, and press send to send the request in browser, or copy the curl to send the request yourself.
 
-
+{{partial:experiment/interactive-evaluation-table}}
 
 ---
 
