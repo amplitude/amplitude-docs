@@ -29,7 +29,7 @@ Official documentation for Amplitude Experiment's Client-side JavaScript SDK imp
 Install the Experiment JavaScript Client SDK with one of the three following methods:
 
 {{partial:admonition type="info" heading="Unified SDK"}}
-Install the [Browser Unified SDK](/docs/sdks/browser-unified-sdk) to access the Experiment SDK along with other Amplitude products (Analytics, Session Replay). The Unified SDK provides a single entry point for all Amplitude features and simplifies the integration process by handling the initialization and configuration of all components.
+Install the [Browser Unified SDK](/docs/sdks/analytics/browser/browser-unified-sdk) to access the Experiment SDK along with other Amplitude products (Analytics, Session Replay). The Unified SDK provides a single entry point for all Amplitude features and simplifies the integration process by handling the initialization and configuration of all components.
 
 {{/partial:admonition}}
 
@@ -253,14 +253,15 @@ Configure the SDK client once during initialization.
 | `flagsServerUrl` | The host to fetch local evaluation flags from. For hitting the EU data center, use `serverZone`. | `https://flag.lab.amplitude.com` |
 | `fetchTimeoutMillis` | The timeout for fetching variants in milliseconds. | `10000` |
 | `retryFetchOnFailure` | Whether to retry variant fetches in the background if the request doesn't succeed. | `true` |
-| `automaticExposureTracking` | If true, calling [`variant()`](#variant) will track an exposure event through the configured `exposureTrackingProvider`. If no exposure tracking provider is set, this configuration option does nothing.  | `true` |
+| `automaticExposureTracking` | If true, calling [`variant()`](#variant) will track an exposure event through the configured `exposureTrackingProvider`. If no exposure tracking provider is set, this configuration option does nothing.  | `true` |
 | `fetchOnStart` | If true or undefined, always [fetch](#fetch) remote evaluation variants on [start](#start). If false, never fetch on start. | `true` |
 | `pollOnStart` | Poll for local evaluation flag configuration updates once per minute on [start](#start). | `true` |
-| `automaticFetchOnAmplitudeIdentityChange` | Only matters if you use the `initializeWithAmplitudeAnalytics` initialization function to seamlessly integrate with the Amplitude Analytics SDK. If `true` any change to the user ID, device ID or user properties from analytics will trigger the experiment SDK to fetch variants and update it's cache. | `false` |
-| `userProvider` | An interface used to provide the user object to `fetch()` when called. | `null` |
+| `automaticFetchOnAmplitudeIdentityChange` | Only matters if you use the `initializeWithAmplitudeAnalytics` initialization function to seamlessly integrate with the Amplitude Analytics SDK. If `true` any change to the user ID, device ID or user properties from analytics will trigger the experiment SDK to fetch variants and update it's cache. | `false` |
+| `userProvider` | An interface used to provide the user object to `fetch()` when called. | `null` |
 | `exposureTrackingProvider` | Implement and configure this interface to track exposure events through the experiment SDK, either automatically or explicitly. | `null` |
 | `instanceName` | Custom instance name for experiment SDK instance. **The value of this field is case-sensitive.** | `null` |
 | `initialFlags` | A JSON string representing an initial array of flag configurations to use for local evaluation. | `undefined` |
+| `httpClient` | (Advanced) Use your own HTTP client implementation to handle network requests made by the SDK. | Default HTTP client |
 
 {{/partial:collapse}}
 
@@ -640,10 +641,39 @@ const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
 
 You may choose to bootstrap the SDK with an initial set of local evaluation flag configurations using the `initialFlags` configuration. These will be evaluated  when [variant](#variant) is called, unless an updated flag config or variant is loaded with [start](#start) or [fetch](#fetch).
 
-To download initial flags, use the [evaluation flags API](/docs/experiment-apis/experiment-evaluation-api#flags-api)
+To download initial flags, use the [evaluation flags API](/docs/apis/experiment/experiment-evaluation-api#flags-api)
 
 ```js
 const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
     initialFlags: "<FLAGS_JSON>",
+});
+```
+
+## HTTP client
+
+You can provide a custom HTTP client implementation to handle network requests made by the SDK. This is useful for environments with specific networking requirements or when you need to customize request handling.
+
+```js title="HttpClient"
+export interface SimpleResponse {
+  status: number;
+  body: string;
+}
+
+export interface HttpClient {
+  request(
+    requestUrl: string,
+    method: string,
+    headers: Record<string, string>,
+    data: string,
+    timeoutMillis?: number,
+  ): Promise<SimpleResponse>;
+}
+```
+
+To use your custom HTTP client, set the `httpClient` [configuration](#configuration) option with an instance of your implementation on SDK initialization.
+
+```js
+const experiment = Experiment.initialize('<DEPLOYMENT_KEY>', {
+    httpClient: new CustomHttpClient(),
 });
 ```
