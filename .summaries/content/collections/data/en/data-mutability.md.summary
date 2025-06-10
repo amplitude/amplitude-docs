@@ -1,0 +1,22 @@
+## Summary
+This documentation covers Amplitude's Data Mutability features that enable INSERT, UPDATE, and DELETE operations on event data through Mirror Sync strategies across Snowflake (CDC), Databricks (CDF), and Amazon S3 warehouse integrations, with specific requirements like mandatory user IDs, disabled enrichment services, and change tracking configuration.
+
+## Keywords
+- Data Mutability
+- Mirror Sync strategy
+- INSERT UPDATE DELETE operations
+- Change Data Capture (CDC)
+- Change Data Feed (CDF)
+- Snowflake Databricks Amazon S3 integrations
+- warehouse synchronization
+- enrichment services disabled
+- user ID required
+- insert_id unique identifier
+- change tracking configuration
+- event volume counting
+- User Privacy API
+- GDPR CCPA compliance
+- cutoff migration strategy
+- chronological order processing
+- idempotency design
+- DATA_RETENTION_TIME_IN_DAYS
