@@ -1,51 +1,45 @@
-## Amplitude Billing and Usage Management
+## Amplitude Billing and Usage Analytics Platform
 
-Amplitude provides comprehensive billing and usage management capabilities designed to help organizations monitor, understand, and optimize their platform consumption across different subscription tiers.
+Amplitude provides a comprehensive billing and usage analytics platform designed to help organizations monitor their platform adoption and manage costs effectively. The platform serves Growth and Enterprise customers with sophisticated tracking capabilities for both user engagement and billing optimization.
 
-## Product Relationship and Features
+## Product Relationships and Features
 
-The billing and usage management system consists of two primary components that work together to provide complete visibility into platform utilization:
+The billing and usage ecosystem consists of two primary components that work in tandem:
 
-**MTU Billing System** - The core billing mechanism for Scholarship, Starter, and Plus plans based on Monthly Tracked Users (MTU) calculations. This system tracks both anonymous users (via device IDs) and identified users (via user IDs), implementing sophisticated user profile merging and synthetic MTU calculations to determine billing charges.
+**Usage Reports** serve as the analytics layer, providing organization-level insights into platform adoption patterns. These reports track user engagement through weekly learning users metrics, content consumption via broadcasted learnings, and technical usage through query counts and event ingestion tracking.
 
-**Usage Reports** - An analytics layer available exclusively to Growth and Enterprise plan administrators that provides organization-level insights into platform adoption, user engagement, and content utilization patterns across all projects.
-
-These systems integrate through the Settings > Organization Settings > Plans & Billing interface, where administrators can monitor both MTU consumption and detailed usage analytics in a unified dashboard.
+**Monthly Tracked Users (MTU) Billing** functions as the cost management layer, implementing a usage-based pricing model that calculates charges based on unique user tracking across calendar months. This system includes sophisticated user identity resolution and synthetic MTU calculations for handling event volume overages.
 
 ## Key Nomenclature and Definitions
 
-**Monthly Tracked Users (MTU)** - The primary billing unit representing unique users tracked within a calendar month, calculated using UTC time zones and encompassing both anonymous device IDs and identified user IDs after profile merging.
+**Monthly Tracked Users (MTU)**: The core billing unit representing unique users tracked within a calendar month, calculated using UTC time boundaries. MTUs form the foundation of Amplitude's pricing model for Scholarship, Starter, and Plus plans.
 
-**Synthetic MTU Calculation** - An overage protection mechanism that estimates MTU based on event volume when organizations exceed their plan limits, using a ratio of 1000 events per MTU.
+**User ID Merging**: The process of consolidating multiple user identities (anonymous users, device IDs) into single trackable entities, directly impacting MTU calculations and billing accuracy.
 
-**Weekly Learning Users** - A usage metric tracking users who actively engage with Amplitude's analytics features, including chart creation, dashboard interaction, and notebook usage.
+**Synthetic MTUs**: Additional billing units generated when event volume exceeds the standard 1,000 events per MTU threshold, ensuring cost alignment with actual platform usage intensity.
 
-**Broadcasted Learnings** - Shared insights and discoveries distributed across the organization, measured as part of platform adoption metrics.
+**Weekly Learning Users**: A engagement metric tracking users who actively consume insights and analytics within the platform on a weekly basis.
 
-**User Profile Merging** - The process of consolidating anonymous and identified user data through user mapping and identify calls, which directly impacts MTU calculations and billing.
+**Broadcasted Learnings**: Content distribution metrics measuring how insights and discoveries are shared across the organization.
 
-**Drop Filters** - Data processing rules that can create billing discrepancies by filtering events after MTU calculations have been performed.
+**Drop Filters**: Data processing rules that can create billing discrepancies by filtering events post-ingestion, potentially affecting MTU calculations.
 
 ## Product Ecosystem Integration
 
-The billing and usage system operates as a foundational layer within Amplitude's broader analytics platform, interfacing with multiple ecosystem components:
+The billing and usage system integrates deeply with Amplitude's broader analytics platform through several key touchpoints:
 
-**Data Ingestion Layer** - Monitors event ingestion rates and applies MTU calculations in real-time, with special handling for backfilled events that can impact historical billing periods.
+**Cross-Project Analytics**: Usage reports aggregate data across multiple projects within an organization, providing unified visibility into platform adoption patterns and enabling portfolio-level optimization decisions.
 
-**User Identity Management** - Integrates with Amplitude's user identification system to track anonymous-to-identified user transitions and implement proper profile merging for accurate MTU calculations.
+**Administrative Controls**: The system enforces role-based access through admin and manager permissions, ensuring billing insights and usage analytics remain accessible only to authorized Growth and Enterprise plan stakeholders.
 
-**Analytics Platform** - Usage reports provide deep visibility into how teams utilize Amplitude's core analytics features, including Pathfinder analysis, query execution, and cross-project views.
+**Data Export Capabilities**: Both usage reports and billing data support CSV and JSON export formats, enabling integration with external business intelligence tools and financial systems.
 
-**Administrative Controls** - The system enforces plan-based access controls, ensuring usage reports are restricted to Growth and Enterprise plan administrators while providing MTU visibility across all plan tiers.
+**Event Processing Pipeline**: The MTU billing system integrates with Amplitude's core event ingestion pipeline, handling complex scenarios including backfilled events, late-arriving data, and experimental event exclusions ([Experiment] Exposure and Assignment events).
 
-## API and Interface Access
+## Technical Implementation Details
 
-**Settings Interface** - Primary access through Settings > Organization Settings > Plans & Billing for MTU monitoring and billing management.
+**Usage Reports Access**: Available through organization settings for Growth and Enterprise plan administrators and managers, providing dashboard, chart, and notebook usage analytics with depth of engagement metrics.
 
-**Export Capabilities** - Usage reports support CSV and JSON export formats for external analysis and reporting.
+**MTU Calculation Engine**: Processes user identification calls, manages anonymous user tracking, and implements sophisticated user mapping logic to ensure accurate billing calculations while handling edge cases like timezone boundaries and data processing delays.
 
-**Cross-Project Views** - Administrative interfaces provide organization-wide visibility across all projects and teams.
-
-**Real-time Monitoring** - Dashboard interfaces for tracking current MTU consumption, overage status, and usage patterns with depth of engagement metrics.
-
-The system maintains sampling ineligibility for organizations approaching or exceeding MTU limits, ensuring accurate billing calculations while providing comprehensive usage analytics for platform optimization.
+**Billing Edge Case Handling**: The system manages complex scenarios including backfilled events that can retroactively affect MTU counts, drop filter impacts on billing accuracy, and synthetic MTU generation for high-volume usage patterns.
