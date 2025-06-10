@@ -1,18 +1,17 @@
-## Summary
-This documentation explains how to configure privacy settings for Amplitude's Session Replay feature, including three masking levels (Conservative, Light, Medium) and CSS selector-based overrides that take precedence over SDK settings to ensure compliance with data privacy requirements.
+**Summary:** This documentation covers Amplitude Session Replay privacy settings configuration, including three masking levels (Conservative, Light, Medium) for data privacy compliance, CSS selector-based masking overrides, and conflict resolution between SDK and UI settings with remote configuration precedence rules.
 
-## Keywords
+**Keywords:**
 - Session Replay privacy settings
-- masking levels (Conservative, Light, Medium)
-- CSS selector overrides
-- mask/unmask/exclude elements
-- SDK vs UI precedence rules
-- remote configuration
-- data attribute selectors
-- PII masking
-- form field masking
-- text input masking
-- .amp-block class
-- organizational settings configuration
-- privacy compliance
-- sensitive data protection
+- Data masking levels (Conservative, Light, Medium)
+- CSS selector masking overrides
+- Remote configuration precedence
+- PII masking compliance
+- Form field masking
+- Text input masking
+- SDK vs UI conflict resolution
+- AmpMaskView component
+- React Native masking limitations
+- .amp-block class exclusion
+- Data attribute selectors
+- Organizational Settings configuration
+- Session capture privacy controls
