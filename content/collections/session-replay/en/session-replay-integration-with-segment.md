@@ -60,7 +60,7 @@ segmentAnalytics.addSourceMiddleware(({ payload, next, integrations }) => {
 });
 
 // Add middleware to always add session replay properties to track calls
-SegmentAnalytics.addSourceMiddleware(({ payload, next, integrations }) => {
+segmentAnalytics.addSourceMiddleware(({ payload, next, integrations }) => {
   const sessionReplayProperties = sessionReplay.getSessionReplayProperties();
   if (payload.type() === "track") {
     payload.obj.properties = {
@@ -105,7 +105,7 @@ window.amplitude.getInstance().onInit(() => {
 
 // Add middleware to check if the session id has changed, 
 // and update the session replay instance
-SegmentAnalytics.addSourceMiddleware(({ payload, next, integrations }) => {
+segmentAnalytics.addSourceMiddleware(({ payload, next, integrations }) => {
   const nextSessionId = window.amplitude.getInstance().getSessionId();
   const storedSessionId = cookie.get("analytics_session_id") || 0;
   if (storedSessionId < nextSessionId) {
@@ -116,7 +116,7 @@ SegmentAnalytics.addSourceMiddleware(({ payload, next, integrations }) => {
 });
 
 // Add middleware to always add session replay properties to track calls
-SegmentAnalytics.addSourceMiddleware(({ payload, next, integrations }) => {
+segmentAnalytics.addSourceMiddleware(({ payload, next, integrations }) => {
   const sessionReplayProperties = sessionReplay.getSessionReplayProperties();
   if (payload.type() === "track") {
     payload.obj.properties = {
@@ -193,7 +193,7 @@ The value provided by `getSessionReplayProperties()` represents the concatenatio
 If the instance returns empty, your Segment middleware may not have populated the values for the Amplitude integration field `payload.obj.integrations['Actions Amplitude']`. If this happens, add the following `setTimeout` wrapper to ensure this field populate with a valid value.
 
 ```js
-SegmentAnalytics.addSourceMiddleware(({ payload, next, integrations }) => {
+segmentAnalytics.addSourceMiddleware(({ payload, next, integrations }) => {
     const storedSessionId = getStoredSessionId()
     setTimeout(() => { //[tl! ~~:2]
       ... // Rest of the Segment integrations code

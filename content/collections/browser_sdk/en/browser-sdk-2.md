@@ -31,7 +31,7 @@ Amplitude's Browser SDK 2 lets you send events to Amplitude.
 Install the dependency with npm, yarn, or the script loader.
 
 {{partial:admonition type="info" heading="Unified SDK"}}
-Install the [Browser Unified SDK](/docs/sdks/browser-unified-sdk) to access the Experiment SDK along with other Amplitude products (Analytics, Session Replay). The Unified SDK provides a single entry point for all Amplitude features and simplifies the integration process by handling the initialization and configuration of all components.
+Install the [Browser Unified SDK](/docs/sdks/analytics/browser/browser-unified-sdk) to access the Experiment SDK along with other Amplitude products (Analytics, Session Replay). The Unified SDK provides a single entry point for all Amplitude features and simplifies the integration process by handling the initialization and configuration of all components.
 {{/partial:admonition}}
 
 {{partial:tabs tabs="Script loader, npm, yarn"}}

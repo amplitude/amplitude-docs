@@ -49,12 +49,12 @@ For information about the `sessionReplayOptions`, see the [Session Replay Standa
 import { AnalyticsBrowser } from '@segment/analytics-next';
 import { createSegmentActionsPlugin } from '@amplitude/segment-session-replay-plugin';
 
-export const SegmentAnalytics = AnalyticsBrowser.load({
+export const segmentAnalytics = AnalyticsBrowser.load({
   writeKey: SEGMENT_API_KEY,
 });
 
 const segmentActionsPlugin = createSegmentActionsPlugin({
-  segmentInstance: SegmentAnalytics,
+  segmentInstance: segmentAnalytics,
   amplitudeApiKey: AMPLITUDE_API_KEY,
   sessionReplayOptions: {
     logLevel: 4,
@@ -63,7 +63,7 @@ const segmentActionsPlugin = createSegmentActionsPlugin({
   },
 });
 
-SegmentAnalytics.register(segmentActionsPlugin);
+segmentAnalytics.register(segmentActionsPlugin);
 ```
 
 ## Segment plugin architecture
