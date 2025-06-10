@@ -66,7 +66,7 @@ The marketing campaign cookie stores attribution data including:
 
 ### Cookie size
 
-The cookie size can vary from approximately 60 bytes to 120 bytes per cookie. With both user session and marketing campaign cookies, you can expect around 240 bytes total for Amplitude cookies **per project API key**.
+The cookie size can vary from around 60 bytes to 120 bytes per cookie. With both user session and marketing campaign cookies, you can expect around 240 bytes total for Amplitude cookies **per project API key**.
 
 ### Expiration time
 
@@ -110,7 +110,7 @@ When using localStorage, the SDK stores the same user session information that w
 - **Unsent events**: Events that haven't been successfully uploaded to Amplitude
 - **Failed events**: Events that failed to send and are queued for retry
 
-The data is stored in localStorage with keys that include your project API key:
+Amplitude stores the data in in localStorage with keys that include your project API key:
 - `AMP_unsent_[API_KEY]`: Stores unsent events
 - `AMP_unsent_identify_[API_KEY]`: Stores unsent identify calls
 
@@ -162,7 +162,7 @@ Some browsers have a setting "Do not track" that's intended to block all trackin
 
 ## Managing cookie consent
 
-Certain jurisdictions require that users consent to non-essential cookies before any data can be collected. You are ultimately responsible for ensuring that you get any necessary consents and make any necessary disclosures for the personal data you collect and send to Amplitude. You're also responsible for determining how you classify the Amplitude cookies in your cookie policy based on your specific use case and the jurisdictions in which you use them.
+Certain jurisdictions require that users consent to non-essential cookies before you collect any data. You are ultimately responsible for ensuring that you get any necessary consents and make any necessary disclosures for the personal data you collect and send to Amplitude. You're also responsible for determining how you classify the Amplitude cookies in your cookie policy based on your specific use case and the jurisdictions in which you use them.
 
 ![](statamic://asset::help_center_conversions::get-started/consentscreen.png)
 
@@ -184,7 +184,7 @@ amplitude.setOptOut(false);
 
 ### Alternative: Conditional initialization
 
-Alternatively, you can delay SDK initialization entirely until consent is obtained:
+You can also delay SDK initialization entirely until you get consent from the user:
 
 ```ts
 // Only initialize after user consent
@@ -199,9 +199,9 @@ For users who already have Amplitude cookies from previous visits:
 
 1. If you manually define `cookieOptions.expiration` to be a short lifespan, you may need to re-enable tracking when the Amplitude cookies expire, or when the user logs in.
 
-2. If the user removes all cookies, they should see the consent banner again the next time they visit your app. Since there won't be any Amplitude cookies yet set, the flow will go as described earlier.
+2. If the user removes all cookies, they should see the consent banner again the next time they visit your app. Since there aren't any Amplitude cookies set, the flow proceeds as described earlier.
 
-3. If the user consented to Amplitude cookies at some point in the past, and that consent has expired for any reason (website cookie deletion, consent tracking expired), you must explicitly remove the Amplitude cookies if the user declines consent. Otherwise, the SDK will continue to collect the user's information.
+3. If the user consented to Amplitude cookies at some point in the past, and that consent has expired for any reason (website cookie deletion, consent tracking expired), you must explicitly remove the Amplitude cookies if the user declines consent. Otherwise, the SDK continues to collect the user's information.
 
 To remove existing cookies when consent is withdrawn:
 
@@ -243,7 +243,7 @@ The abstraction layer for storage and available options as well as the metadata 
 ## Frequently asked questions
 
 {{partial:collapse name="Are Amplitude's cookies first-party or third-party cookies?"}}
-**Amplitude uses first-party cookies**. From a technical standpoint, there's no difference between first-party and third-party cookies. The distinction is related to:
+**Amplitude uses first-party cookies**. From a technical standpoint, there's no difference between first-party and third-party cookies. The distinction relates to:
 
 1. The context of a particular visit.
 2. Who creates the cookie.
@@ -253,13 +253,13 @@ Every cookie has an owner, which is the domain defined in the cookie:
 - **First-party cookies** are issued by a website that a user views directly. If a user lands on a website–for example, fit.amplitude.com–this site creates a cookie which is then saved on the user's computer. 
 This is how Amplitude works. When a customer decides to add the Amplitude Browser SDK 2 to their website, the customer (through their website) is the one who directly creates the cookie stored in the visitor's computer. 
 
-- **Third-party cookies** are not created by the website being visited, but by someone else. Imagine you're visiting fit.amplitude.com, and the site uses YouTube videos for virtual non-live classes. In this case, it's YouTube who's setting the cookie that is saved on the user's computer.
+- **Third-party cookies** aren't created by the website the user vists, but by someone else. Imagine you're visiting fit.amplitude.com, and the site uses YouTube videos for virtual non-live classes. In this case, it's YouTube who's setting the cookie that's saved on the user's computer.
 
 What's happening in this case is that the website owner embeds pieces of code, provided by YouTube, for the videos to play directly in fit.amplitude.com. When that YouTube code executes in the browser, or the video loads, YouTube can track the player and put data in its cookies. This is why the cookie qualifies as a third-party cookie-because it's created by a different domain than fit.amplitude.com / amplitude.com
 {{/partial:collapse}}
 
 {{partial:collapse name="Will Google Chrome's plan to remove third party cookies affect Amplitude?"}}
-**No**-as stated above, **Amplitude is not a third-party cookie**. Amplitude customers add Amplitude to their website/bundle themselves and Amplitude sets it in their own bundled code through document.cookie, so Amplitude has the privileges of a first-party cookie.
+**No**-as stated above, **Amplitude isn't a third-party cookie**. Amplitude customers add Amplitude to their website/bundle themselves and Amplitude sets it in their own bundled code through document.cookie, so Amplitude has the privileges of a first-party cookie.
 {{/partial:collapse}}
 
 {{partial:collapse name="Why aren't Amplitude cookies marked as `HttpOnly`?"}}
@@ -285,13 +285,13 @@ amplitude.init("API_KEY", {
 {{/partial:collapse}}
 
 {{partial:collapse name="Will cookies cause unsent events to send to a project with a different API key?"}}
-No-the Browser SDK 2 scopes all stored events with the API key, so if a product changes the project (or its API key) it's sending events to, those old events won't reach the new project. The events are stored in localStorage with keys that include the API key, ensuring proper isolation between different projects.
+No-the Browser SDK 2 scopes all stored events with the API key, so if a product changes the project (or its API key) it's sending events to, those old events don't reach the new project. Amplitude stores the events in localStorage with keys that include the API key, ensuring proper isolation between different projects.
 {{/partial:collapse}}
 
 {{partial:collapse name="How do you integrate with third-party Consent Management Platforms?"}}
 Websites and applications can use a consent management platform (CMP) to manage legal consent from users around collecting and processing their personal data through any cookies and other trackers operating on the domain, as may be required by applicable privacy laws, such as GDPR, CCPA and ePrivacy. Some examples of these tools are OneTrust, Axeptio or Responsum.
 
-At the time of this writing, Amplitude doesn't have a default integration with any of these tools. You must configure your CMP to pass the outcome of the consent to the Amplitude SDK, so that any end user who hasn't provided consent or who has revoked consent (depending on the end user's jurisdiction) is opted out of tracking by the Amplitude SDK. 
+Amplitude doesn't have a default integration with any of these tools. You must configure your CMP to pass the outcome of the consent to the Amplitude SDK, so that any end user who hasn't provided consent or who has revoked consent (depending on the end user's jurisdiction) opts out of tracking by the Amplitude SDK. 
 
 Here's an example integration pattern:
 
@@ -320,11 +320,11 @@ if (typeof OneTrust !== 'undefined') {
 {{partial:collapse name="Can I use OneTrust with Amplitude to stay GDPR compliant?"}}
 Yes, you can use Amplitude with a CMP, like OneTrust, in a GDPR-compliant manner. Amplitude can't direct you on how to classify the Amplitude SDK/cookies. Instead, your privacy and legal teams should make this assessment based on the data you're collecting. However, most customers, including in the EU, classify Amplitude cookies as Performance/Analytics cookies.
 
-Customers may also choose to implement via a server side integration, therefore bypassing Amplitude's cookies from the SDK. However, customers who integrate via a server side integration are still responsible for ensuring that they get any necessary consents and make any necessary disclosures for the personal data they collect and send to Amplitude. 
+Customers may also choose to implement through a server side integration, therefore bypassing Amplitude's cookies from the SDK. However, customers who integrate through a server side integration are still responsible for ensuring that they get any necessary consents and make any necessary disclosures for the personal data they collect and send to Amplitude. 
 {{/partial:collapse}}
 
 {{partial:collapse name="When a user opts out, how can I opt them in again?"}}
-Once a user is opted out, you can opt them in programmatically by calling:
+Once a user opts out, you can opt them in programmatically by calling:
 
 ```ts
 amplitude.setOptOut(false);
