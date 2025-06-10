@@ -91,7 +91,7 @@ Monitor your usage and contact sales if you need additional event volume.
 - **Databricks**: Change Data Feed retention must cover your sync frequency
 - **S3**: Files must remain accessible throughout processing
 
-## Best Practices
+## Best practices
 
 Keep the following best practices in mind as you enable data mutability.
 
@@ -109,7 +109,7 @@ When using data mutability for privacy compliance:
 
 1. **Stop Data Flow First**: Before you delete user data, ensure you send no new data about that user to Amplitude.
 
-2. **Use User Privacy API**: For complete user deletion, use the [User Privacy API](/docs/apis/analytics/user-privacy) in addition to warehouse deletions
+2. **Use User Privacy API**: For complete user deletion, use the [User Privacy API](/docs/apis/analytics/user-privacy) with warehouse deletions
 
 3. **Verify Deletion**: Confirm that deleted data no longer appears in your analytics
 
@@ -126,13 +126,13 @@ If you're migrating from a standard ingestion strategy to Mirror Sync:
 ### Recommended migration steps
 
 1. **Create Cutoff Strategy**: 
-   - Modify existing connection with a time filter (e.g., `WHERE time < {cutOffDate}`)
+   - Modify existing connection with a time filter (for example, `WHERE time < {cutOffDate}`)
    - Set cutoff date to tomorrow in milliseconds since epoch
 
 2. **Wait for Cutoff**: Allow the cutoff date to pass and verify no new data flows through the old connection
 
 3. **Create New Mirror Sync Source**: 
-   - Configure new source with complementary filter (e.g., `WHERE time >= {cutOffDate}`)
+   - Configure new source with complementary filter (for example, `WHERE time >= {cutOffDate}`)
    - Enable Mirror Sync with desired mutation settings
 
 4. **Clean Up**: Remove the old source connection after verifying the new one works correctly
