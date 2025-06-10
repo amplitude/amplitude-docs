@@ -17,11 +17,11 @@ Data Mutability allows you to:
 This functionality is particularly valuable for organizations that need to:
 
 - Correct historical data errors
-- Comply with data privacy regulations (GDPR, CCPA)
+- Adhere to data privacy regulations (GDPR, CCPA)
 - Maintain data consistency across systems
 - Handle late-arriving or corrected data
 
-## Supported Integrations
+## Supported data sources
 
 Data Mutability is available through the following warehouse integrations:
 
