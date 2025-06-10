@@ -1,43 +1,70 @@
-Amplitude Analytics is a comprehensive product analytics platform that enables organizations to understand user behavior through sophisticated event tracking, segmentation, and visualization capabilities. The platform provides a rich ecosystem of chart types and analytical tools designed to help teams make data-driven decisions across the entire user lifecycle.
+Amplitude Analytics is a comprehensive product analytics platform that enables organizations to understand user behavior through advanced event tracking, segmentation, and visualization capabilities. The platform provides a suite of specialized chart types and analytical tools designed to help businesses optimize user acquisition, conversion, retention, and monetization strategies.
 
-## Core Chart Types and Analytical Framework
+## Core Chart Types and Analytical Capabilities
 
-The platform organizes its analytical capabilities around four primary use cases: Know Your Users, Convert Your Users, Retain Your Users, and Monetize. The foundational chart types include:
+The platform centers around 16 primary chart types organized into four strategic categories:
 
-**Event Segmentation** serves as the primary tool for counting and filtering events to understand user behavior patterns. **Funnel Analysis** focuses on conversion optimization by tracking user progression through key event sequences and identifying drop-off points. **Retention Analysis** measures how frequently users return to the product over time, while **User Sessions** provides session-based behavioral insights.
+**User Understanding Charts:**
+- **Event Segmentation**: The foundational chart type for counting and filtering events to understand user behavior patterns
+- **Data Tables**: Multi-metric comparison and breakdown analysis in tabular format
+- **User Sessions**: Session-based analysis for understanding user engagement patterns
+- **Event Explorer**: Real-time event stream visualization for taxonomy exploration and instrumentation QA
 
-Advanced analytical capabilities include **Personas** for clustering users based on behavioral similarities, **Journeys** for analyzing user path sequences, **Engagement Matrix** for understanding feature engagement by breadth and frequency, and **Impact Analysis** for measuring how first-time feature engagement affects subsequent behaviors. Specialized charts like **Stickiness** measure event frequency within intervals, **Lifecycle** categorizes users as New, Current, Resurrected, or Dormant, and **Compass** identifies behavioral thresholds that predict retention.
+**Conversion Analysis Charts:**
+- **Funnel Analysis**: Multi-step conversion analysis with drop-off identification
+- **Journeys**: Sequential user path analysis and behavior flow mapping
+- **Experiment Results**: A/B testing statistical significance analysis
 
-## Event and User Segmentation Architecture
+**Retention and Engagement Charts:**
+- **Retention Analysis**: User return behavior and cohort-based retention tracking
+- **Lifecycle**: User categorization into New, Current, Resurrected, and Dormant segments
+- **Stickiness**: Event frequency analysis within specified intervals
+- **Engagement Matrix**: Feature engagement analysis by breadth and frequency
 
-The platform's segmentation capabilities center around the **Events Module** and **Segmentation Module**. The Events Module supports event selection including default Amplitude events (Top Global Events, Any Active Event, New User), wildcard search functionality with glob operators, and custom event creation through OR logic grouping. Users can filter and group events using event properties and user properties.
+**Advanced Analytics Charts:**
+- **Personas**: Machine learning-based user clustering and behavioral segmentation
+- **Impact Analysis**: Feature interaction and cross-behavior influence measurement
+- **Compass**: Behavioral threshold identification for retention prediction
+- **Revenue LTV**: Lifetime value and monetization analysis
 
-The Segmentation Module enables sophisticated user categorization through multiple user types (any users, active users, new users), complex filtering with user properties and behavioral cohorts, and segment grouping capabilities. The system supports **inline behavioral cohorts** through the "+ Performed" feature and allows saving segments for reuse across charts.
+## Key Platform Components and Architecture
 
-## Filtering and Operator System
+**Events Module**: The core data input system supporting default Amplitude events (Top Global Events, Any Active Event, New User), custom event creation with OR logic grouping, and wildcard search functionality using glob operators. Events can be filtered and grouped using event properties and user properties.
 
-Amplitude employs a comprehensive operator system for data filtering. **Array operators** include is/is not, contains/does not contain, and set-based operators (set is, set is not, set contains, set does not contain). The platform supports complex logical operations through OR/AND clause combinations and provides specialized operators like glob match for wildcard pattern matching.
+**Segmentation Module**: Advanced user targeting system supporting multiple user categories (any users, active users, new users), complex filtering with behavioral cohorts, and inline cohort creation through the "+ Performed" feature. Supports saving and reusing segments across charts.
 
-**Cart analysis** functionality enables behavioral insights through object array analysis, particularly valuable for e-commerce applications. This requires property splitting setup in Amplitude Data and supports cross-property, parallel, item match, and collection match filtering capabilities.
+**Property System**: Comprehensive property management including user properties, event properties, and specialized cart analysis capabilities for object arrays. Supports property splitting in Amplitude Data for e-commerce analytics with cross-property, parallel, item match, and collection match filtering.
 
-## Data Management and Performance Optimization
+## Advanced Filtering and Operator System
 
-The platform implements sophisticated **query time sampling** using 10% random user samples with up-sampling through inverse sampling methods to optimize performance. **Data pruning** automatically limits results to 100 values for single group-by operations and 500 for dual group-by operations, ordering results by top activity within specified timeframes.
+The platform employs sophisticated filtering capabilities through multiple operator types:
 
-**Chart caching** operates on different intervals based on query types: real-time, hourly, daily, weekly, and monthly queries each have specific cache durations. The system supports CSV exports with 10,000 row limits and Dashboard REST API access with 20,000 row limits.
+**Array Operators**: is, is not, contains, does not contain, set is, set is not, set contains, set does not contain for precise event and property filtering.
 
-## Key Nomenclature and Definitions
+**Filter Logic**: Complex AND/OR clause combinations for building nuanced user segments and event filters.
 
-**Active Events** refer to events that have been triggered within the selected time range, while **behavioral cohorts** are user groups defined by specific action sequences. **Property splitting** enables analysis of nested object arrays by creating parent, child, and sibling property relationships. **Group-by clauses** allow data breakdown by property values with automatic pruning when limits are exceeded.
+**Specialized Operators**: glob match for wildcard pattern matching, starts with for prefix matching, and various set operators for array-based property analysis.
 
-**User properties** define user characteristics, while **event properties** capture specific event attributes. **Segments** represent filtered user groups that can be saved and reused across charts. **Inline cohorts** are behavioral segments created directly within chart building workflows.
+## Performance Optimization and Data Management
 
-## Integration and Ecosystem
+**Query Time Sampling**: Automatic performance optimization using 10% random user sampling with inverse sampling up-scaling, configurable at chart, project, and dashboard levels.
 
-The platform integrates with **Amplitude Data** for property splitting configuration and supports the **Identify API** for user property management. **Event Explorer** provides real-time event stream visualization for taxonomy exploration and instrumentation QA. The **Instrumentation Explorer Chrome plugin** extends debugging capabilities.
+**Data Pruning**: Automatic dataset limitation to 100 values for single group-by operations and 500 for dual group-by operations, with intelligent ordering by top activity within specified timeframes.
 
-Chart customization includes **color theme management** at organization and chart levels, **dual Y-axis** support for event segmentation, custom legend labels, and annotation capabilities. The platform supports **keyboard shortcuts** for efficient chart creation workflows and provides **breakdown tables** for detailed data analysis with sorting, filtering, and export capabilities.
+**Caching System**: Tiered caching based on query intervals (real-time, hourly, daily, weekly, monthly) to optimize performance while maintaining data freshness.
 
-Revenue analysis capabilities through **Revenue LTV** charts enable lifetime value calculations and monetization insights. **Experiment Results** charts provide A/B testing analysis with statistical significance testing. **Data Tables** offer multi-metric comparison capabilities in unified views.
+## Integration and Workflow Features
 
-The platform operates on a tiered access model with Starter, Plus, Growth, and Enterprise plans providing different levels of chart type access and advanced features like organization-level theme management and enhanced sampling controls.
+**Chart Customization**: Comprehensive theming system with organization-level defaults, custom color themes (8-16 colors), dual Y-axis support for event segmentation, and custom legend labeling.
+
+**Data Export**: CSV export capabilities with limits (10,000 for standard export, 20,000 for Dashboard REST API), breakdown table functionality for data review and analysis.
+
+**Collaboration Tools**: Chart sharing, dashboard integration, notebook integration, annotations and releases functionality, and keyboard shortcuts for efficient workflow management.
+
+**Real-time Capabilities**: Event Explorer provides real-time event stream visualization with user targeting by IP address, user ID, device ID, or user properties, enabling immediate instrumentation validation and taxonomy exploration.
+
+## Enterprise and Plan-Based Features
+
+The platform operates on a tiered access model (Starter, Plus, Growth, Enterprise) with advanced features like organization-level theme management, enhanced sampling controls, and specialized analytics capabilities distributed across plan levels. Growth and Enterprise plans include advanced customization options and administrative controls for large-scale deployments.
+
+The platform integrates with external systems through APIs, supports Chrome plugin integration for instrumentation exploration, and provides comprehensive data management through Amplitude Data for property splitting and advanced e-commerce analytics workflows.
