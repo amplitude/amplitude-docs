@@ -29,7 +29,7 @@ Official documentation for Amplitude Experiment's Client-side JavaScript SDK imp
 Install the Experiment JavaScript Client SDK with one of the three following methods:
 
 {{partial:admonition type="info" heading="Unified SDK"}}
-Install the [Browser Unified SDK](/docs/sdks/browser-unified-sdk) to access the Experiment SDK along with other Amplitude products (Analytics, Session Replay). The Unified SDK provides a single entry point for all Amplitude features and simplifies the integration process by handling the initialization and configuration of all components.
+Install the [Browser Unified SDK](/docs/sdks/analytics/browser/browser-unified-sdk) to access the Experiment SDK along with other Amplitude products (Analytics, Session Replay). The Unified SDK provides a single entry point for all Amplitude features and simplifies the integration process by handling the initialization and configuration of all components.
 
 {{/partial:admonition}}
 
