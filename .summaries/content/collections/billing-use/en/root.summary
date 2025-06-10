@@ -1,51 +1,44 @@
-## Amplitude Billing and Usage Management
+## Amplitude Billing and Usage Analytics Platform
 
-Amplitude provides comprehensive billing and usage management capabilities designed to help organizations monitor, understand, and optimize their platform consumption across different subscription tiers.
+Amplitude provides a comprehensive billing and usage analytics platform designed for organizations on Growth and Enterprise plans to monitor platform adoption and optimize their analytics investment. The platform centers around two core billing models and usage tracking mechanisms that help administrators understand both user engagement and cost implications.
 
-## Product Relationship and Features
+## Product Relationships and Feature Integration
 
-The billing and usage management system consists of two primary components that work together to provide complete visibility into platform utilization:
+The billing-use collection encompasses two interconnected product areas:
 
-**MTU Billing System** - The core billing mechanism for Scholarship, Starter, and Plus plans based on Monthly Tracked Users (MTU) calculations. This system tracks both anonymous users (via device IDs) and identified users (via user IDs), implementing sophisticated user profile merging and synthetic MTU calculations to determine billing charges.
+**Usage Reports** serve as the primary analytics dashboard for organization-level insights, providing administrators with visibility into platform adoption patterns, user engagement metrics, and content utilization across projects. This feature integrates with Amplitude's broader analytics ecosystem by tracking interactions with charts, dashboards, notebooks, and pathfinder analyses.
 
-**Usage Reports** - An analytics layer available exclusively to Growth and Enterprise plan administrators that provides organization-level insights into platform adoption, user engagement, and content utilization patterns across all projects.
+**MTU Billing System** operates as the foundational cost calculation engine for Scholarship, Starter, and Plus plan tiers, working in conjunction with event ingestion tracking to determine monthly charges based on unique user identification and event volume thresholds.
 
-These systems integrate through the Settings > Organization Settings > Plans & Billing interface, where administrators can monitor both MTU consumption and detailed usage analytics in a unified dashboard.
+These systems work together to provide both operational insights (through usage reports) and financial transparency (through MTU calculations), enabling organizations to optimize their Amplitude investment.
 
 ## Key Nomenclature and Definitions
 
-**Monthly Tracked Users (MTU)** - The primary billing unit representing unique users tracked within a calendar month, calculated using UTC time zones and encompassing both anonymous device IDs and identified user IDs after profile merging.
+**Monthly Tracked Users (MTU)**: The primary billing metric representing unique users tracked within a calendar month, calculated using UTC time boundaries and serving as the foundation for plan pricing.
 
-**Synthetic MTU Calculation** - An overage protection mechanism that estimates MTU based on event volume when organizations exceed their plan limits, using a ratio of 1000 events per MTU.
+**Synthetic MTUs**: Additional billing units generated when event volume exceeds the standard 1,000 events per MTU threshold, calculated by dividing excess events by 1,000 to determine additional MTU charges.
 
-**Weekly Learning Users** - A usage metric tracking users who actively engage with Amplitude's analytics features, including chart creation, dashboard interaction, and notebook usage.
+**User ID Merging**: The process by which Amplitude consolidates anonymous device IDs with identified user IDs through mapping and identify calls, affecting MTU calculations by potentially reducing total unique user counts.
 
-**Broadcasted Learnings** - Shared insights and discoveries distributed across the organization, measured as part of platform adoption metrics.
+**Weekly Learning Users**: A usage report metric tracking users who actively engage with Amplitude's learning and discovery features on a weekly basis.
 
-**User Profile Merging** - The process of consolidating anonymous and identified user data through user mapping and identify calls, which directly impacts MTU calculations and billing.
+**Broadcasted Learnings**: Content sharing metrics within usage reports that track knowledge distribution across organization members.
 
-**Drop Filters** - Data processing rules that can create billing discrepancies by filtering events after MTU calculations have been performed.
+**Drop Filters**: Data processing rules that can create billing discrepancies by filtering events post-ingestion, potentially affecting MTU calculations.
 
-## Product Ecosystem Integration
+## Broader Product Ecosystem Integration
 
-The billing and usage system operates as a foundational layer within Amplitude's broader analytics platform, interfacing with multiple ecosystem components:
+The billing and usage system integrates deeply with Amplitude's analytics platform architecture:
 
-**Data Ingestion Layer** - Monitors event ingestion rates and applies MTU calculations in real-time, with special handling for backfilled events that can impact historical billing periods.
+- **Cross-Project Analytics**: Usage reports aggregate data across multiple projects within an organization, providing unified visibility into platform adoption
+- **Event Ingestion Pipeline**: MTU calculations tie directly into Amplitude's event processing system, with real-time tracking of user identification and event volume
+- **Access Control Integration**: Usage reports respect Amplitude's permission system, restricting access to admins and managers on Growth/Enterprise plans
+- **Export Capabilities**: Both systems support data export in CSV and JSON formats for external analysis and reporting
 
-**User Identity Management** - Integrates with Amplitude's user identification system to track anonymous-to-identified user transitions and implement proper profile merging for accurate MTU calculations.
+## API Endpoints and Access Methods
 
-**Analytics Platform** - Usage reports provide deep visibility into how teams utilize Amplitude's core analytics features, including Pathfinder analysis, query execution, and cross-project views.
+**Usage Reports Access**: Available through organization settings interface, restricted to admin and manager roles on Growth/Enterprise plans, with export functionality for CSV and JSON formats.
 
-**Administrative Controls** - The system enforces plan-based access controls, ensuring usage reports are restricted to Growth and Enterprise plan administrators while providing MTU visibility across all plan tiers.
+**MTU Monitoring**: Accessible through billing dashboards with real-time MTU tracking, overage alerts, and historical usage patterns.
 
-## API and Interface Access
-
-**Settings Interface** - Primary access through Settings > Organization Settings > Plans & Billing for MTU monitoring and billing management.
-
-**Export Capabilities** - Usage reports support CSV and JSON export formats for external analysis and reporting.
-
-**Cross-Project Views** - Administrative interfaces provide organization-wide visibility across all projects and teams.
-
-**Real-time Monitoring** - Dashboard interfaces for tracking current MTU consumption, overage status, and usage patterns with depth of engagement metrics.
-
-The system maintains sampling ineligibility for organizations approaching or exceeding MTU limits, ensuring accurate billing calculations while providing comprehensive usage analytics for platform optimization.
+The platform operates primarily through web-based interfaces within Amplitude's main application, with usage reports accessible via the organization settings panel and MTU information available through billing management interfaces. Export capabilities enable programmatic access to usage data for external analysis and integration with organizational reporting systems.

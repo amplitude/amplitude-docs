@@ -1,18 +1,18 @@
-**Summary:** This documentation explains Amplitude's Monthly Tracked Users (MTU) billing model for Scholarship, Starter, and Plus plans, covering MTU calculation methodology, tracking implementation, usage monitoring through Settings > Organization Settings > Plans & Billing, overage limits with synthetic MTU calculations, and billing impacts of backfilled events and drop filters.
+**Summary:** This documentation explains Amplitude's Monthly Tracked Users (MTU) billing model for Scholarship, Starter, and Plus plans, covering MTU calculation methodology, user ID merging behavior, synthetic MTU calculations for event overages, and billing edge cases including backfilled events and drop filters.
 
 **Keywords:**
 - Monthly tracked users (MTU)
 - MTU billing calculation
-- Scholarship Starter Plus plans
-- anonymous user device ID tracking
-- identified user ID tracking
-- user profile merging
-- synthetic MTU calculation
-- 1000 events per MTU limit
-- backfilled events MTU impact
-- drop filters billing discrepancy
-- Plans & Billing settings
-- overage charges
+- User ID merging
+- Anonymous user tracking
+- Device ID tracking
+- Synthetic MTUs
+- Events per MTU limit
+- 1,000 events per MTU threshold
+- Backfilled events MTU impact
+- Drop filters billing discrepancy
 - UTC time billing
-- user mapping identify calls
-- sampling ineligibility
+- User mapping identify calls
+- [Experiment] Exposure events exclusion
+- MTU overage charges
+- Unique MTU vs total MTU count
