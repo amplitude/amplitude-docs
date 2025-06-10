@@ -16,6 +16,7 @@ exclude_from_sitemap: false
 source: 'https://www.docs.developers.amplitude.com/data/sdks/unified/'
 package_name: '@amplitude/unified'
 platform: Browser
+full_details: true
 ---
 The Unified SDK provides a single entry point for all Amplitude features, including Analytics, Experiment, and Session Replay. It simplifies the integration process by handling the initialization and configuration of all components.
 
