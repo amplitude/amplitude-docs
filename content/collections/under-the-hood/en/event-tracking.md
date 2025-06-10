@@ -39,9 +39,9 @@ Amplitude recommends you to use **Amplitude defined exposure or assignment event
 </table>
 
 {{partial:admonition type="note" heading="Event volume billing and property limits"}}
-Exposure (`[Experiment] Exposure`) and assignment (`[Experiment] Assignment`) events don't count toward your organization's event volume.
+Exposure (`[Experiment] Exposure`) and assignment (`[Experiment] Assignment`) events don't count toward your organization's event volume or Monthly Tracked Users (MTU).
 
-If you use other events in place of `[Experiment] Exposure` or `[Experiment] Assignment`, those events do count toward your event volume.
+If you use other events in place of `[Experiment] Exposure` or `[Experiment] Assignment`, those events do count toward your event volume and MTU.
 {{/partial:admonition}}
 
 ## Experiment user properties

@@ -1,29 +1,27 @@
-**Summary:** This documentation covers Amplitude Experiment's event tracking system using assignment events (`[Experiment] Assignment`) and exposure events (`$exposure`/`[Experiment] Exposure`) for experiment analysis, including automatic tracking via remote evaluation (`fetch()`) and local evaluation (`evaluate()`), experiment user properties format (`[Experiment] <flag_key>`), and SDK integrations for client-side exposure tracking.
+**Summary:** This documentation explains Amplitude Experiment's event tracking system using assignment events (triggered by fetch() or evaluate() calls) and exposure events (triggered by variant() access), along with experiment user properties in the format `[Experiment] <flag_key>` for experiment analysis and monitoring.
 
 **Keywords:**
 - assignment events
 - exposure events
-- `[Experiment] Assignment`
-- `$exposure`
-- `[Experiment] Exposure`
 - experiment user properties
-- `[Experiment] <flag_key>`
 - remote evaluation
 - local evaluation
-- `fetch()`
-- `evaluate()`
-- `variant()`
+- fetch() method
+- evaluate() method
+- variant() method
 - automatic assignment tracking
 - automatic exposure tracking
-- flag_key
-- variant key
-- experiment analysis
-- exposure transformation
+- $exposure event type
+- [Experiment] Assignment event
+- [Experiment] Exposure event
+- flag_key property
+- variant property
+- experiment_key property
 - server-side experiments
 - client-side experiments
-- SDK integrations
-- exposure tracking provider
+- exposure transformation
 - event volume billing
-- user property inheritance
-- deduplication
-- insert_id
+- Monthly Tracked Users (MTU)
+- exposure tracking provider
+- insert_id deduplication
+- experiment analysis queries
