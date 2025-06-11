@@ -30,7 +30,6 @@ return array(
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
-    'App\\Tags\\BundlePhobia' => $baseDir . '/app/Tags/BundlePhobia.php',
     'App\\Tags\\GithubEditUrl' => $baseDir . '/app/Tags/GithubEditUrl.php',
     'Archetype\\Commands\\ErrorsCommand' => $vendorDir . '/ajthinking/archetype/src/Commands/ErrorsCommand.php',
     'Archetype\\Drivers\\FileInput' => $vendorDir . '/ajthinking/archetype/src/Drivers/FileInput.php',

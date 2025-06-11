@@ -823,7 +823,6 @@ class ComposerStaticInit9cbea597e589339dcaab293cd99e76c0
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
-        'App\\Tags\\BundlePhobia' => __DIR__ . '/../..' . '/app/Tags/BundlePhobia.php',
         'App\\Tags\\GithubEditUrl' => __DIR__ . '/../..' . '/app/Tags/GithubEditUrl.php',
         'Archetype\\Commands\\ErrorsCommand' => __DIR__ . '/..' . '/ajthinking/archetype/src/Commands/ErrorsCommand.php',
         'Archetype\\Drivers\\FileInput' => __DIR__ . '/..' . '/ajthinking/archetype/src/Drivers/FileInput.php',
