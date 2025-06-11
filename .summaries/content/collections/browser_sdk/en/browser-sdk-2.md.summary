@@ -1,15 +1,14 @@
 ## Summary
 
-This documentation covers Amplitude's Browser SDK 2, which enables event tracking to Amplitude with support for both standalone analytics and unified SDK installations, featuring comprehensive autocapture capabilities, marketing attribution tracking, and advanced configuration options for browser-based JavaScript/TypeScript applications.
+This documentation covers Amplitude's Browser SDK 2, which enables event tracking to Amplitude with support for both standalone analytics and unified SDK installations. The SDK provides comprehensive autocapture functionality including attribution tracking, page views, sessions, form interactions, file downloads, element interactions, and network request tracking, with extensive configuration options for each feature.
 
 ## Keywords
 
 - Browser SDK 2
 - @amplitude/analytics-browser
 - @amplitude/unified
-- HTTP V2 API
-- Autocapture tracking
-- Marketing attribution
+- Autocapture
+- Attribution tracking
 - UTM parameters
 - Click ID tracking
 - Page view tracking
@@ -17,25 +16,39 @@ This documentation covers Amplitude's Browser SDK 2, which enables event trackin
 - Form interaction tracking
 - File download tracking
 - Element interaction tracking
-- Visual labeling
+- Network request tracking
 - Cross-domain tracking
 - sendBeacon transport
 - Cookie management
-- Content Security Policy (CSP)
+- AMP cookie prefix
 - Remote configuration
+- Content Security Policy (CSP)
 - Offline mode
 - Revenue tracking
 - User properties
 - Group properties
+- Identify operations
+- Plugin system
+- Marketing attribution
+- Visual labeling
+- HTTP V2 API
 - Device ID
 - Session ID
-- Plugins system
-- Enrichment plugins
-- Destination plugins
+- User ID
+- Flush behavior
+- Batch API
 - EU data residency
+- Debug logging
+- Callback promises
+- Opt-out tracking
+- Single page application (SPA)
+- LocalStorage
+- SessionStorage
+- Referrer exclusion
+- Campaign tracking
 - flushIntervalMillis
 - flushQueueSize
-- identityStorage
 - trackingOptions
-- excludeReferrers
-- resetSessionOnNewCampaign
+- instanceName
+- serverZone
+- minIdLength
