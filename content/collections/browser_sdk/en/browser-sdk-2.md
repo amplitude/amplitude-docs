@@ -214,6 +214,8 @@ Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you 
 - Form interactions
 - File downloads
 - Element interactions
+- Network tracking
+
 
 {{partial:collapse name="Autocapture options"}}
 | Name                                     | Value               | Description                                                                                                                                                                                                                                                                                                                                                                 |
@@ -224,6 +226,7 @@ Starting in SDK version 2.10.0, the Browser SDK can autocapture events when you 
 | `config.autocapture.formInteractions`    | Optional. `boolean` | Enables/disables form interaction tracking. If `true`, Amplitude tracks form start and form submit events. Event properties tracked includes: `[Amplitude]  Form ID`, `[Amplitude] Form Name`, `[Amplitude] Form Destination`. Default value is `true`. See [Track form interactions](#track-form-interactions) for more information.                                       |
 | `config.autocapture.fileDownloads`       | Optional. `boolean` | Enables/disables file download tracking. If `true`, Amplitude tracks file download events otherwise. Event properties tracked includes: `[Amplitude] File Extension`, `[Amplitude] File Name`, `[Amplitude] Link ID`, `[Amplitude] Link Text`, `[Amplitude] Link URL`. Default value is `true`. See [Track file downloads](#track-file-downloads) for more information.     |
 | `config.autocapture.elementInteractions` | Optional. `boolean` | Enables/disables element interaction tracking. If `true`, Amplitude tracks clicks and form field interactions. Default value is `false`. See [Track element interactions](#track-element-interactions) for more information and configuration options.                                                                                                                      |
+| `config.autocapture.networkTracking` | Optional. `boolean` | Enables/disables network tracking. If `true`, Amplitude tracks failed network requests. To configure what gets captured, set this as a network tracking options object. Default value is `false`. See [Track network interactions](#track-network-requests) for more information and configuration options.                                                                                                                      |
 
 {{/partial:collapse}}
 
@@ -641,6 +644,42 @@ These two events capture properties that describe the corresponding element and 
 <!-- vale on-->
 {{/partial:collapse}}
 
+### Track network requests
+
+Track when network requests fail (supports XHR and fetch). By default, tracks network requests with a response code in the range `500-599`, excluding requests made to any `amplitude.com` domain.
+
+Set `config.autocapture.networkTracking` to `true` to enable network request tracking
+
+```ts
+amplitude.init(AMPLITUDE_API_KEY, {
+  autocapture: {
+    networkTracking: true, //[tl! highlight]
+  },
+});
+```
+
+#### Advanced configuration for network tracking
+
+Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to configure which network requests get tracked.
+
+{{partial:collapse name="NetworkTrackingOptions"}}
+
+| Name                                                          | Description                          | Value                                                                                                                                                                                                                                                                            |
+| ------------------------------------------------------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `captureRules` | The rules for capturing network requests. You should always append rules with specific hosts to the bottom of the list. | `undefined` |
+| `ignoreHosts` | The hosts to ignore. Supports wildcard characters `*`. For example, `["*"]` to ignore all hosts, `["*.notmyapi.com", "notmyapi.com"]` to ignore `notmyapi.com` and all subdomains. | `[]` |
+| `ignoreAmplitudeRequests` | Whether to ignore Amplitude requests. | `true` |
+
+{{/partial:collapse}}
+
+{{partial:collapse name="NetworkTrackingOptions.NetworkCaptureRule"}}
+
+| Name |  Description | Default Value |
+| --- | --- | --- |
+| `hosts` | The hosts to capture. Supports wildcard characters `*`. eg. `["*"]` to match all hosts, `["*.example.com", "example.com"]` to match `example.com` and all subdomains. | `none` |
+| `statusCodeRange` | The status code range to capture. Supports comma-separated ranges or single status codes. For example, `"0,200-299,413,500-599"` | `"500-599"` |
+
+{{/partial:collapse}}
 
 ## Track an event
 
