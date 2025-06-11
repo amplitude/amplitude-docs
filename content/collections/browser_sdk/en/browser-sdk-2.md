@@ -667,7 +667,7 @@ Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to config
 | Name                                                          | Description                          | Value                                                                                                                                                                                                                                                                            |
 | ------------------------------------------------------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `captureRules` | The rules for capturing network requests. You should always append rules with specific hosts to the bottom of the list. | `undefined` |
-| `ignoreHosts` | The hosts to ignore. Supports wildcard characters `*`. eg. `["*"]` to ignore all hosts, `["*.notmyapi.com", "notmyapi.com"]` to ignore `notmyapi.com` and all subdomains. | `[]` |
+| `ignoreHosts` | The hosts to ignore. Supports wildcard characters `*`. For example, `["*"]` to ignore all hosts, `["*.notmyapi.com", "notmyapi.com"]` to ignore `notmyapi.com` and all subdomains. | `[]` |
 | `ignoreAmplitudeRequests` | Whether to ignore Amplitude requests. | `true` |
 
 {{/partial:collapse}}
