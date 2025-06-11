@@ -1,30 +1,29 @@
 ## Summary
 
-This documentation covers Amplitude's Snowflake data warehouse integration that supports bidirectional data sync with four import strategies (Full Sync, Timestamp, Append Only Sync, Mirror Sync) and handles multiple data types (events, user properties, group properties, profiles) using Change Data Capture (CDC) functionality.
+This documentation covers Amplitude's Snowflake data warehouse integration for importing events, user properties, group properties, and profiles into Amplitude projects, supporting four import strategies (Full Sync, Timestamp, Append Only Sync, Mirror Sync) with Change Data Capture (CDC) capabilities and specific SQL query requirements for data mapping.
 
 ## Keywords
 
 - Snowflake data warehouse integration
 - Change Data Capture (CDC)
-- Mirror Sync strategy
+- Mirror Sync import strategy
 - Append Only Sync
 - Timestamp import strategy
 - Full Sync strategy
-- OBJECT_CONSTRUCT SQL function
-- DATA_RETENTION_TIME_IN_DAYS
-- ABORT_DETACHED_QUERY setting
-- Key pair authentication
-- Regional IP allowlist
-- VARIANT JSON data type
-- TIMESTAMP_NTZ format
+- SQL query mapping
+- event_properties VARIANT JSON
+- user_properties VARIANT JSON
+- group_properties VARIANT JSON
+- EXTRACT EPOCH_MILLISECOND timestamp conversion
+- OBJECT_CONSTRUCT JSON creation
+- DATA_RETENTION_TIME_IN_DAYS CDC requirement
 - insert_id deduplication
-- User Privacy API
-- Enrichment services
+- ABORT_DETACHED_QUERY configuration
+- Snowflake storage integration
+- key pair authentication
+- IP allowlist configuration
+- 12-hour query timeout limit
+- 1B events batch size limit
 - INFORMATION_SCHEMA permissions
 - JWT token authentication
-- Query timeout handling
-- Exponential backoff retry
-- Event properties mapping
-- User properties sync
-- Group properties sync
-- Materialized views optimization
+- exponential backoff retry mechanism
