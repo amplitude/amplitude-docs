@@ -646,7 +646,7 @@ These two events capture properties that describe the corresponding element and 
 
 ### Track network requests
 
-Track when a network request fails (only for requests made using `window.fetch`). By default, tracks failed requests in the `500-599` status code range, except for requests made to `*.amplitude.com` or `amplitude.com`.
+Track when network requests fail (supports XHR and fetch). By default, tracks network requests with a response code in the range `500-599`, excluding requests made to any `amplitude.com` domain.
 
 Set `config.autocapture.networkTracking` to `true` to enable network request tracking
 
@@ -660,24 +660,26 @@ amplitude.init(AMPLITUDE_API_KEY, {
 
 #### Advanced configuration for network tracking
 
-Set `config.autocapture.networkTracking` to configure what gets tracked.
+Set `config.autocapture.networkTracking` to a `NetworkTrackingOptions` to configure which network requests get tracked.
 
-{{partial:collapse name="Tracking element interaction options"}}
+{{partial:collapse name="NetworkTrackingOptions"}}
 
-| Name                                                          | Value                          | Description                                                                                                                                                                                                                                                                            |
+| Name                                                          | Description                          | Value                                                                                                                                                                                                                                                                            |
 | ------------------------------------------------------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `config.autocapture.networkTracking.ignoreHosts` | Optional. `(string)[]`         | A list of hosts that you do not wish to track network requests for. For example `["datadoghq.com", "analyticsdata.googleapis.com"]`. By default this empty `[]`. |
-| `config.autocapture.networkTracking.ignoreAmplitudeRequests` | Optional. `boolean`         | Set to `false` if you wish to capture network requests from "amplitude.com". By default this is `true`. |
-| `config.autocapture.networkTracking.captureRules` | Optional. `(CaptureRule)[]`         | Set a list of Capture Rules (see table below) that decides which network requests should be captured. By default this is `[{ hosts: ['*'], statusCodeRange: '500-599' }]`. The rules are evaluated in reverse order. If the host matches a pattern defined in `hosts`, but does not match `statusCodeRange`, than it returns `false` and no other rules are evaluated. |
-
+| `captureRules` | The rules for capturing network requests. You should always append rules with specific hosts to the bottom of the list. | `undefined` |
+| `ignoreHosts` | The hosts to ignore. Supports wildcard characters `*`. eg. `["*"]` to ignore all hosts, `["*.notmyapi.com", "notmyapi.com"]` to ignore `notmyapi.com` and all subdomains. | `[]` |
+| `ignoreAmplitudeRequests` | Whether to ignore Amplitude requests. | `true` |
 
 {{/partial:collapse}}
 
-Set `config.autocapture.networkTracking.captureRules[]` to configure rules for what gets captured
+{{partial:collapse name="NetworkTrackingOptions.NetworkCaptureRule"}}
 
-| ------------------------------------------------------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `hosts` | Optional. `(string)[]`         | A list of hosts that you wish to track requests for. |
-| `statusCodeRange` | Optional. `string`         | A range of HTTP Status Codes that you wish to track requests for (examples: `400-599`, `403,500-599`) . By default this is `500-599`. |
+| Name |  Description | Default Value |
+| --- | --- | --- |
+| `hosts` | The hosts to capture. Supports wildcard characters `*`. eg. `["*"]` to match all hosts, `["*.example.com", "example.com"]` to match `example.com` and all subdomains. | `none` |
+| `statusCodeRange` | The status code range to capture. Supports comma-separated ranges or single status codes. eg. `"0,200-299,413,500-599"` | `"500-599"` |
+
+{{/partial:collapse}}
 
 ## Track an event
 
