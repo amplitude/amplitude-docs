@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1731620993
+ai_summary: "Amplitude's Anomaly + Forecast feature helps you detect significant deviations in your metrics, allowing you to determine if changes are meaningful, catch errors, analyze trends, and monitor product impacts. You can set up anomaly detection by selecting Agile, Robust, or Custom modes, and add a forecast to project future metrics. The feature works with various time-series charts, providing confidence intervals and anomaly alerts. You can also receive automated project alerts for anomalies. Understanding anomalies and forecasting results can help you make data-driven decisions and identify the causes behind unexpected changes."
 ---
 When core metrics fluctuate, it can be hard to know if those movements are meaningful and worthy of investigation, or just random noise. Amplitude's **Anomaly + Forecast** feature highlights statistically significant deviations from expected values for your metrics, based on historical data. 
 

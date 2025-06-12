@@ -7,6 +7,7 @@ source: 'https://www.docs.developers.amplitude.com/experiment/guides/troubleshoo
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718233372
 exclude_from_sitemap: false
+ai_summary: 'The Amplitude technical documentation addresses sample ratio mismatches (SRM) in experiments. It explains troubleshooting steps for SRMs, recommends using Amplitude exposure events, warns against changing variant distribution weights during an experiment, and highlights issues like variant jumping and missing exposures. The document also covers scenarios like users logging out, individual user allocation, and handling fallback variants. By following the guidelines provided, you can effectively identify and resolve SRMs in your experiments to ensure accurate data analysis and reliable results.'
 ---
 In Amplitude Experiment, a sample ratio mismatch occurs when the observed allocation for variants significantly differs from the specified allocation. For example, you allocated 50% of your Experiment traffic to the control and 50% to the treatment variant, but you are seeing a ratio of 55% control to 45% treatment.
 

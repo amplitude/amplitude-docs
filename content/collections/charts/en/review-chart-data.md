@@ -10,6 +10,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717691303
+ai_summary: "In Amplitude Analytics, you can interact with and export data from your charts using the breakdown table. The table's columns depend on your analysis factors and can be sorted by clicking on column names. You can change the summary column and set the number of series to display, which interacts with your charts. Modify the breakdown table's display, export it as a .CSV file, and search for values using the search bar. Your breakdown table settings will persist through sorting and refreshing, and exported .CSV files include all rows and values."
 ---
 Sometimes just visualizing data in a chart is not sufficient for all analyses. To review, interact with, and export the data that makes up your charts in Amplitude Analytics, use the **breakdown table**, which you'll find below your chart.
 

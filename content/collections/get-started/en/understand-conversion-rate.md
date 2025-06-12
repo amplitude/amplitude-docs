@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724881675
+ai_summary: "The **Conversion Report template** in Amplitude helps you understand customer behaviors related to conversion and drop-off. You can use it in any in-product flow without setup. The template offers charts on conversion rate, user behavior, and paths to conversion. You can customize the template and its charts easily. Additionally, you can transform the template into a dashboard to share insights with project stakeholders. Just select the project, choose an active event, save the dashboard, and it's ready for use. For more information on dashboards and templates in Amplitude, check out the provided links."
 ---
 The charts included on the **Conversion Report template** give you a deeper understanding of the customer behaviors linked to conversion and drop-off. You can easily apply it to any important in-product flow. There’s no setup required, though you can easily customize the template itself and the individual charts included with it if you need to.
 

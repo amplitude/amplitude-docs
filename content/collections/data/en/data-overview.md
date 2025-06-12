@@ -9,6 +9,7 @@ landing: true
 landing_blurb: 'Get up to speed with Amplitude Data.'
 academy_course:
   - dac76bfe-1d9f-49a5-bc64-7e2f45fb9719
+ai_summary: 'Amplitude Data helps you build a data catalog your team trusts. Plan and define events, properties, taxonomy in Amplitude. Use the Ampli developer toolkit for proper tracking. Manage data with tools for discoverability, cleaning up, enriching, and monitoring. Data Assistant offers recommendations and automation to enhance data quality.'
 ---
 To get the most out of Amplitude, building a data catalog your team understands and trusts is critical. Amplitude Data provides governance tools to help you define, track, verify, and improve your data across the platform.
 

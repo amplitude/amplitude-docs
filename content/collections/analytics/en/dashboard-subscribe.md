@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717692886
+ai_summary: "When you subscribe to an Amplitude dashboard, you receive an email report with optional .CSV files. This feature is available on all Amplitude plans. You can subscribe to your own or others' dashboards. Owners can add subscribers, set update frequency, and customize email reports. Subscriptions can include Slack notifications. Manage subscriptions in *Settings > Organization Settings > Content Access > Dashboard Subscriptions*. Admins can view and delete all subscriptions in their organization. You have control over who gets reports, how often, and what's included, making it easy to stay updated on dashboard data."
 ---
 When you subscribe to a dashboard, you receive an HTML-formatted email report with optional .CSV files. Amplitude can send dashboard subscription emails to anyone, including people who aren't members of your Amplitude organization. 
 

@@ -10,6 +10,7 @@ exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1726094463
 landing_blurb: 'Learn about how Amplitude bills with Monthly Tracked Users.'
+ai_summary: "Amplitude tracks unique users called monthly tracked users (MTUs) who trigger events each month. An MTU can be anonymous or identified by user ID. The MTU count is calculated daily and finalized at the end of the month. Your MTU count doesn't increase due to user mapping or identify calls. MTU-based pricing is available for all plans except those using sampling. You can estimate and view your MTU usage in your account settings. Exceeding MTU limits may result in overage charges. Unexpected usage spikes can be caused by marketing campaigns or new event sources. Backfilled events and drop filters affect MTU counts."
 ---
 Amplitude customers on Scholarship, Starter, and Plus plans bill according to **monthly tracked user (MTU)** count. This option is also available to customers on Growth and Enterprise plans. 
 

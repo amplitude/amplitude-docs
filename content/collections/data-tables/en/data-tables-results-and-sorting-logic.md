@@ -10,6 +10,7 @@ landing_blurb: 'Learn how Amplitude decides what results to display in a Data Ta
 this_article_will_help_you:
   - 'Use the sorting logic behind Data Tables to create elegant and accurate charts'
   - 'Understand when, why, and how Data Tables limit the amount of data you export'
+ai_summary: "Amplitude Analytics sets limits on the number of results displayed based on your group-bys and metrics. Sorting applies only to the displayed results and doesn't fetch new ones. .CSV exports have row limits depending on the metric type. The Dashboard REST API queries have different row limits for event segmentation metrics. When time properties are used in group-bys, the limits apply to each property value. Remember that time properties affect the row limits."
 ---
 For more complex analyses, it's important to understand how Amplitude Analytics decides what results to display, as well as what happens when you sort on a given column.
 

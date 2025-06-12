@@ -4,6 +4,7 @@ blueprint: data
 title: 'Streaming transformations'
 landing: false
 exclude_from_sitemap: false
+ai_summary: 'Amplitude allows you to stream pre-existing transformed events and event properties, including Custom Events, Derived Properties, Transformed Events, and Transformed Properties. You can set up this feature in the Amplitude Data section by selecting specific transformations and configurations. Examples include renaming events for AppsFlyer and sending derived properties to Braze. Remember, there are limitations to consider, like updating sync configs when changing event names. This feature aims for a 60s latency target. You can request to enable channel classifiers for your event stream.'
 ---
 Amplitude supports streaming pre-existing transformed events and event properties. This includes support for Custom Events, Derived Properties, Transformed Events, and Transformed Properties. With this feature, you can select any existing transformations you made in Amplitude taxonomy when setting up your streaming configuration.
 

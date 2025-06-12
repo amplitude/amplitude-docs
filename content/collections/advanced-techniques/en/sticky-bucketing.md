@@ -9,6 +9,7 @@ this_article_will_help_you:
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716329324
+ai_summary: "Sticky bucketing ensures users see the same variant even if targeting criteria change. It's not foolproof, especially for logged-in/logged-out experiences. You can enable/disable it in experiment settings. Sticky bucketing keeps users in their assigned groups when changing rollout percentages. Use it for consistent user experiences, maintaining original assignments, or sunsetting failed experiments. Don't use it if you want user experiences to change with targeted properties or need to enforce specific behaviors. Verify sticky bucketing status for users through Experiment Assignment events in the user's event stream."
 ---
 Sticky bucketing ensures that a user continues to see the same variant even when your experiment’s targeting criteria, percentage rollout, or rollout weights change. 
 

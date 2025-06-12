@@ -6,6 +6,9 @@ this_article_will_help_you:
   - 'Efficiently manage multiple models with a DBT integration'
 landing: false
 exclude_from_sitemap: false
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1748991406
+ai_summary: "Manage multiple warehouse native models using the DBT manifest file. You can create or edit data models by annotating the manifest file's metadata. The supported operations include creating and updating data models for tables specified in the manifest file. By adding `amplitude_meta` to the table metadata, you can define data model descriptions with unique names, types, and special columns. Models not configured in the manifest file are ignored by Amplitude. Tables without the `amplitude_meta` key are also ignored."
 ---
 The warehouse-native DBT integration helps you manage your warehouse native models.
 Instead of managing one model at a time, create or edit multiple models with the DBT manifest file.

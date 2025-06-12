@@ -8,6 +8,7 @@ updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1719874098
 this_article_will_help_you:
   - 'Understand what variant jumping is, and what you can do about it'
+ai_summary: 'Variant jumping in Amplitude occurs when a user is exposed to multiple variants for an experiment, potentially affecting analysis results. Debugging involves identifying users who jumped variants and analyzing their timelines. Normal variant jumping can result from targeting changes or anonymous identity merging. Abnormal jumping, caused by identity mismatches, can be challenging to track. To avoid bias, understand the cause before removing variant jumping users from analysis. Amplitude offers tools to help you identify and manage variant jumping, ensuring accurate experiment results.'
 ---
 **Variant jumping** occurs when a user is exposed to two or more variants for a single flag or experiment. Variant jumping above a certain threshold may be cause for concern around the trustworthiness of an analysis.
 

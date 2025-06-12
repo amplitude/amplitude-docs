@@ -5,6 +5,7 @@ title: 'Flag Prerequisites'
 exclude_from_sitemap: false
 updated_by: 04dfbed9-a0fd-4d6a-bf64-d31bebb05bdc
 updated_at: 1719252081
+ai_summary: 'Amplitude Experiment allows you to create dependencies for your flags and experiments on prerequisite flags or experiments. You can configure flag prerequisites by adding dependencies and selecting variants. Before activating a flag or starting an experiment, ensure that prerequisite flags are active. Amplitude prevents certain actions for flags and experiments with dependents. An example demonstrates how evaluation works with prerequisite flags. Common use cases include release groups and chained mutual exclusion groups. The feature is available to users on Enterprise plans who have purchased Amplitude Experiment.'
 ---
 As you run new experiments or roll out new feature flags, you may have features that are only relevant to users if another feature has been enabled for them. You may want to evaluate those dependencies first and then use those results in the evaluation of your flag or experiment.
 

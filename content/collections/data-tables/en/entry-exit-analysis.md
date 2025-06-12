@@ -5,6 +5,7 @@ title: 'Entry / Exit Analysis'
 landing: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1739560537
+ai_summary: 'Entry / Exit Analysis in Amplitude allows you to analyze first or last session dimensions. You can apply this analysis to metrics like unique users, event totals, session totals, and PROPSUM. To enable Entry / Exit Analysis, go to the Data Table, select a column, and apply the analysis from the Options menu. Amplitude calculates session-based metrics based on the first or last property value of an active event in a session. The calculations are done using specific formulas for each metric type. This feature is available on all Amplitude plans.'
 ---
 Entry / Exit Analysis enables you to use the entry (first) or exit (last) in session dimensions across different types of analysis.
 

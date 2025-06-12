@@ -7,6 +7,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1738949395
 landing: true
 landing_blurb: 'Discover how themes can enforce your brand identity in the guides and surveys you create.'
+ai_summary: "Themes in Amplitude allow you to customize the appearance of your Guides and Surveys to match your brand's colors, typography, and aesthetic. You can control elements like buttons, borders, animations, and background colors. With Themes, you can create new themes, customize brand elements like accent colors and typography, define supplementary colors, adjust borders and background colors, customize form controls, specify card display settings, set widget dimensions, select animations, and use reusable components across your guides and surveys. The Theme Viewer updates as you make changes, providing a real-time representation of your theme."
 ---
 Guides and Surveys should match your branding and feel like part of your product. Themes gives you control over your Guides and Survey's appearance.
 

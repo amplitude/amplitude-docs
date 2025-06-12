@@ -6,8 +6,8 @@ author: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 source: 'https://www.docs.developers.amplitude.com/experiment/guides/troubleshooting/exposures-without-assignments/'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717179459
+ai_summary: "The Exposures without Assignments chart in Amplitude shows unique users exposed to an experiment without an assignment. Large numbers may affect experiment results, so investigate issues like bad experiences or users seeing the wrong content. This can impact future experiments. The chart won't show if you selected the assignment event as exposure or use local evaluation. Causes include identity mismatches, account switching, and tracking exposure for fallback variants. Debug by checking user streams for issues like identity mismatches or exposure without assignment events. Be cautious of users being exposed incorrectly due to rule-based targeting or multiple experiments."
 ---
-
 The Exposures without Assignments chart appears in the **Diagnostics** card and queries for the cumulative number of unique users who have performed an exposure event without a corresponding assignment event within each day. 
 
 If you see a large number or percentage of users in the chart, be careful when interpreting the results of your experiment. Investigate what happens if someone gets exposed to the experiment that shouldn't: 

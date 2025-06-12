@@ -9,6 +9,7 @@ landing: true
 landing_blurb: 'Learn about Guides and Surveys overview and available charts'
 academy_course:
   - 498134e3-190a-4b58-b148-2a94ef5bc069
+ai_summary: "You can install the SDK on your website or application to get started with Amplitude's Guides and Surveys. The Overview tab offers insights into engagement, interactions, and user behavior. You can filter analysis based on date range, segment, or property condition. Track views and completions over time, total guide views, recent guides performance, total survey responses, recent survey performance, rage closes, and interactions to optimize user engagement. The data helps you understand how users interact with your Guides and Surveys in real time."
 ---
 Before you get started with Guides and Surveys, install the [SDK](/docs/guides-and-surveys/sdk) on your website or application.
 

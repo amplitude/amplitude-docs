@@ -9,6 +9,7 @@ updated_at: 1742328299
 source: /docs/analytics/plan-your-set-up
 academy_course:
   - 5bdab705-c0c7-40c3-b19d-5d2e28f28b59
+ai_summary: 'This Amplitude technical documentation explains how to set up and use Amplitude for tracking user behaviors in real-time. You can send data to Amplitude client-side, server-side, or through a third party. There are two ways to send data: import existing data or track product data using Amplitude SDKs and APIs. Start by setting up your data source, then track important events in your product. As you progress, create a tracking plan outlining events and properties to track. Amplitude offers tools like Ampli Wrapper and Ampli CLI to enhance tracking capabilities.'
 ---
 This article describes how to successfully set up and get familiar with Amplitude basics.
 

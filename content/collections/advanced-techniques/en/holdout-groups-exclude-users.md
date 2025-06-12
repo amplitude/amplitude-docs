@@ -10,6 +10,7 @@ this_article_will_help_you:
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1730484258
+ai_summary: 'Amplitude Feature Experiment allows you to exclude users from experiments by creating holdout groups. Holdout groups are useful for measuring the long-term impact of your experiments. Remember to set the holdout percentage between 1% and 10% and not to remove running experiments from holdout groups. To create a holdout group, navigate to the Experiments page in Amplitude Feature Experiment. You can add experiments to holdout groups and manage them easily. Analyze holdout groups using Experiment Results charts. Consider streamlining experiments and holdout groups for better traffic distribution. Be cautious when using holdout groups with mutual exclusion.'
 ---
 Sometimes it can be useful to keep a certain percentage of users from viewing an experiment. This is especially true when measuring the long-term, combined effects of multiple experiments. Statistical significance in one experiment may not reflect the true, cumulative impact of your experiments.
 

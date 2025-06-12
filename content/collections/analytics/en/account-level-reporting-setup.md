@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717697093
+ai_summary: "With account-level reporting in Amplitude, you can analyze data at a group level by setting up aggregated analyses. You need to instrument account-level reporting before using it. Once you've done that, you can see a new dropdown in the chart module for specific charts. Amplitude allows up to five group types per project. You can set up account-level reporting in Amplitude's SDKs (Android, iOS, JavaScript), via Segment, or using the Identify API and HTTP API for server-side data. The Group Identify API lets you create or update group properties and supports various operations like $set and $add."
 ---
 With [account-level reporting](/docs/analytics/account-level-reporting), you can set up aggregated, group-level analyses. This article will review the specific steps involved in the process depending on how you're sending data to Amplitude. 
 

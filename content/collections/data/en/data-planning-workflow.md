@@ -10,6 +10,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1722895150
 landing_blurb: 'Learn the end-to-end Amplitude data planning process.'
+ai_summary: 'This Amplitude technical documentation explains how you can plan, create, and implement tracking events using Amplitude Data to ensure high-quality data. You can plan events, create branches for changes, invite developers to review plans, request feedback from stakeholders, and merge changes into the main branch once approved. By following this workflow, you can effectively manage and implement tracking plans for your projects in Amplitude Data.'
 ---
 Using Amplitude Data for planning helps ensure high-quality data from the start and reduces the need for clean-up later. This article will give you a sense of the complete workflow in Amplitude Data.
 

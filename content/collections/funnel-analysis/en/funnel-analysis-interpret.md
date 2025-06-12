@@ -12,6 +12,7 @@ landing: true
 landing_blurb: 'Interpret and track your conversions over time'
 academy_course:
   - 7d137320-f0f2-4b00-8f77-2f2adb07de68
+ai_summary: "Amplitude's Funnel Analysis chart helps you understand how users move through specific paths in your product. It identifies where users tend to drop off, allowing you to analyze data and interpret it easily. You can customize time frames, view conversion rates, track user behavior over time, and analyze the time users take to move through each step. The chart offers insights into user behavior, drop-off points, and conversion rates. By utilizing the various options available, you can gain valuable insights into user interactions and optimize your product accordingly."
 ---
 Amplitude’s Funnel Analysis chart helps you understand how users are navigating defined paths ("funnels") within your product, and identify potential problem areas where users tend to drop off.
 

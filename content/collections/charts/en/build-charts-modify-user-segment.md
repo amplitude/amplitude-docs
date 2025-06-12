@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717691081
+ai_summary: 'The Amplitude Segmentation Module lets you define precise user segments based on specific property combinations. You can add filters to your segments to include or exclude exact or substring property values. Operators like "contains" and "set contains" help you tailor segment definitions. You can also use array operators for more complex filtering. Changing segment names and using OR and AND clauses further refine your segment definitions. This functionality allows you to analyze user behavior with a high level of detail and specificity.'
 ---
 The segment you created in the [Add user segments](/docs/analytics/charts/build-charts-add-user-segments) article is perfectly functional. Depending on the breadth of your analysis, it may be all you need. But many Amplitude users prefer to drill down more and create user segments based on specific combinations of **properties**. The Segmentation Module gives you all the tools you need to define user segments with a high level of precision.
 

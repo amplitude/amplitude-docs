@@ -10,6 +10,7 @@ updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724963398
 landing: true
 landing_blurb: 'Understand how Amplitude calculates retention for different cohorts'
+ai_summary: "Amplitude's Retention Analysis functionality helps you understand user behavior over time. It calculates retention based on when users return after an event. You can analyze specific cohort entry dates or overall retention. The retention percentage decreases over time. The Return On calculation focuses on exact days, while Return On or After includes users returning on and after a specific day. The tool helps you track and visualize user retention trends accurately as your analysis progresses."
 ---
 Amplitude's methods for calculating retention are straightforward. However, you should familiarize yourself with them, and understand the differences that do exist. This helps you develop a nuanced understanding of the Retention Analysis chart.
 

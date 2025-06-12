@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1724879558
+ai_summary: "Amplitude's onboarding process is designed to help you quickly integrate data into your new organization. By adding the Amplitude snippet provided after signing up, you can connect your applications and enable features like Session Replay and Autocapture. Insert the snippet into the `head` tag of your web pages to track user behavior, create feature flags, or build cohorts. After installation, browse your site to verify data flow. Amplitude also offers other installation methods, integrations, SDKs, and APIs for sending data. Additionally, you can send sample data using methods like CSV upload, Chrome extension, or a web bookmarklet."
 ---
 Amplitude's onboarding helps you to get data into your new organization as quickly as possible.
 

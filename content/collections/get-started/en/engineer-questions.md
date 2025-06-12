@@ -5,10 +5,11 @@ title: 'Questions your engineer might ask you'
 landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-source: https://help.amplitude.com/hc/en-us/articles/16798497073947-Questions-your-engineer-may-ask-you
+source: 'https://help.amplitude.com/hc/en-us/articles/16798497073947-Questions-your-engineer-may-ask-you'
 updated_at: 1718660315
 this_article_will_help_you:
   - 'Supply your engineering team with information they may require during the instrumentation and implementation process '
+ai_summary: 'In Amplitude, you can provide sample data for troubleshooting, identify necessary user properties, manage user property updates, and distinguish between event and user properties. This documentation guides you on handling data inquiries from your engineer and ensuring accurate data classification in Amplitude.'
 ---
 Sometimes, your engineer may have questions for you about how you want to use and classify data in Amplitude. Here are some common ones, along with some resources to help you answer them.
 

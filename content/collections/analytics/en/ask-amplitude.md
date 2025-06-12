@@ -2,6 +2,7 @@
 id: 10d36278-7030-497c-acce-46469b415a93
 blueprint: analytic
 title: 'Ask Amplitude'
+ai_summary: "Ask Amplitude is a conversational interface within Amplitude that helps you interact with data using natural language. You can create or edit charts, search content, answer questions, navigate within Amplitude, and share threads. It uses OpenAI to understand and respond to your requests. Your data is sent to OpenAI for processing, but it's deleted within 30 days. Ask Amplitude improves chart creation by analyzing popular queries and saved charts. It may send property values to OpenAI for filter selection and suggestion generation. To get more accurate responses, maintain good data quality and use specific terminology."
 ---
 Ask Amplitude is a conversational interface for using Amplitude. Intended primarily for Amplitude users with minimal experience using analytics tools, or with limited understanding of the data taxonomy, Ask Amplitude helps you express Amplitude-related concepts and questions in natural language.
 

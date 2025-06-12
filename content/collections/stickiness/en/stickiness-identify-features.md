@@ -11,6 +11,7 @@ landing: true
 landing_blurb: 'Use events and properties to create a Stickiness chart'
 academy_course:
   - 8bd6336d-8535-47ee-a708-c9f7f6fe909a
+ai_summary: "Amplitude's Stickiness chart helps you understand user engagement and retention by analyzing how often users perform specific events. By creating a Stickiness chart, you can identify what actions engage your power users and redirect your product interactions for regular users. This feature is available on all Amplitude plans. Remember to complete instrumentations for events to appear in charts. Follow steps to build a Stickiness analysis, selecting events, creating user segments, and setting time frames. The chart displays your Stickiness analysis results for interpretation."
 ---
 To get the most of your product analytics, you need to understand what drives engagement and retention. What about your product that makes it so appealing to your most engaged users and what's causing other users to fall short? 
 

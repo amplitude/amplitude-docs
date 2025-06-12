@@ -9,6 +9,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717101776
 landing: true
 landing_blurb: 'Choose the most appropriate way to measure and display the results of your event segmentation analysis'
+ai_summary: "Amplitude's event segmentation offers different ways to analyze your data. You can view unique users, event totals, active percentages, averages, and frequencies. The tool also allows you to group users by property values and create custom formulas. By clicking on data points, you can explore more details about your analysis. Customize bucket sizes and distributions to tailor your view. With Amplitude's event segmentation, you gain insights into user behavior and event triggers, helping you make informed decisions based on your data."
 ---
 Amplitude offers you several different ways of looking at your [event segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) results. In this section, we'll explain the differences between them.
 

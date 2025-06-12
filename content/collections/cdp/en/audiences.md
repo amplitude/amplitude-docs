@@ -10,6 +10,7 @@ updated_at: 1740517840
 source: 'https://help.amplitude.com/hc/en-us/articles/360028552471-Amplitude-Audiences-overview-Drive-conversions-with-true-one-to-one-personalization'
 this_article_will_help_you:
   - 'Find the right resources to plan and execute an effective personalization campaign'
+ai_summary: 'Amplitude Activation is a self-serve platform that enables you to achieve true 1:1 personalization by combining demographic, behavioral, and algorithmic data. It transforms static content into dynamic experiences, boosting conversions by 15% to 30%. You can segment users using cohorts or computations, make personalized predictions, and deliver tailored recommendations. Amplitude Activation also offers syncs and APIs for seamless data integration. By leveraging predictive cohorts and recommendations, you can drive user engagement and maximize revenue gains. Personalize your digital experience efficiently and effectively with Amplitude Activation.'
 ---
 Personalization in the style of Netflix and Amazon—optimizing the digital experience for the right user with the right message at the right time is the dream of every marketer. 
 

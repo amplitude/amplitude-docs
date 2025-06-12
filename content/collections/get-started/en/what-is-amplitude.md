@@ -6,7 +6,8 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1718902608
-source: "/docs/analytics/what-is-amplitude/"
+source: /docs/analytics/what-is-amplitude/
+ai_summary: 'Amplitude is a product analytics platform that helps you understand user behavior, engagement, and revenue. It tracks user data accurately and securely, providing insights into what happened, why, and what actions to take. You can share work easily across teams for collaboration and growth. Key concepts include event-based analytics, tracking user interactions, and sessions. You can define events, track event properties, identify users effectively, and analyze user properties. Sessions help understand user engagement. Amplitude offers courses for beginners and helpful definitions for learning more.'
 ---
 Amplitude is a powerful product analytics platform that enables you to build better products by tracking and understanding user behavior. 
 

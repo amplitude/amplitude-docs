@@ -9,6 +9,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 5817a4fa-a771-417a-aa94-a0b1e7f55eae
 updated_at: 1723652404
+ai_summary: "Amplitude's Historical Count feature helps you understand user behavior by tracking specific actions over time. The Historical Count filter is applied last, capturing the Nth instance of an action. Event Historical Count works similarly but is applied first. Custom event logic is considered before Historical Count, counting all related events triggered by the user. This functionality allows for detailed analysis of user behavior patterns and trends. You can explore more in the next article in the series on Funnels and behavioral cohorts."
 ---
 Amplitude's Historical Count feature helps you achieve a deeper level of understanding when you're investigating why your users are retaining, converting, or engaging—or why they're failing to do that.
 

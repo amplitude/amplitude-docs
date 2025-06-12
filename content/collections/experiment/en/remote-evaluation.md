@@ -7,6 +7,7 @@ exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717439192
 source: 'https://www.docs.developers.amplitude.com/experiment/general/evaluation/remote-evaluation/'
+ai_summary: "Remote evaluation in Amplitude Experiment fetches variants for users. It's the default way for client-side apps and can also be used on the server-side. It enables features like Amplitude ID resolution, IP geolocation, and targeting by user properties. Remote evaluation provides consistent bucketing, individual inclusions, and targeting segments. It enriches user data with details like geolocation, canonicalizes properties for easy segmentation, and merges user properties for evaluation. It helps identify cohorts for targeting and provides warnings on user property updates and cohort sync timing."
 ---
 Remote evaluation involves making a request to Amplitude Experiment's evaluation servers to fetch variants for a [user](/docs/feature-experiment/data-model#users). Remote evaluation is the default way to evaluate users on client-side apps, but may also be used from a server-side environment.
 

@@ -10,6 +10,7 @@ updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1732570352
 landing: true
 landing_blurb: 'Interpret the results of your Lifecycle chart'
+ai_summary: 'You can interpret your Lifecycle chart to understand active and dormant users. The Growth chart displays active users in blue and dormant users in red. Active users are categorized as new, current, or resurrected. The chart helps you see which user group impacts your active user counts. You can switch between views like Dormant and Pulse to analyze user behavior further. The Pulse chart shows the ratio of incoming to outgoing users, indicating if your product is growing. The breakdown table provides detailed lifecycle data that you can export as a .CSV file.'
 ---
 This article will review how to interpret your Lifecycle analysis. Make sure you've read the previous Help Center article on [setting up the Lifecycle chart](/docs/analytics/charts/lifecycle/lifecycle-track-growth) before proceeding.
 

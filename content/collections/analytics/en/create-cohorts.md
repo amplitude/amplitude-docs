@@ -11,6 +11,7 @@ landing: false
 exclude_from_sitemap: false
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1717624175
+ai_summary: 'You can create cohorts with Microscope, either static or behavioral, and also create group cohorts. Import static cohorts from a file by uploading a .CSV or text file of user or Amplitude IDs. Replace uploaded cohorts as needed. Inline behavioral cohorts can be created directly within the Segmentation module of most Amplitude chart types. This allows you to filter charts for users who triggered specific events. Use inline cohorts to measure cohort populations over time and track specific behaviors.'
 ---
 ## Create cohorts with Microscope
 

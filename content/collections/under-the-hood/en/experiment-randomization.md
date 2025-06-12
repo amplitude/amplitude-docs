@@ -7,6 +7,7 @@ this_article_will_help_you:
   - 'Understand the process Amplitude Experiment uses to randomly assign users to experiment variants'
 updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
 updated_at: 1716329227
+ai_summary: 'Amplitude Experiment uses deterministic randomization for assigning users to variants based on a bucketing key and salt. The process involves hashing the key and ID to determine if a user should be in the experiment and which variant they get. Users are first divided into 100 buckets for initial assignment, then assigned a variant based on another hash for variation assignment. Variants are associated with values between 0 and 42949672, depending on their weights. This method ensures fair and consistent variant assignment for experiments.'
 ---
 Amplitude Experiment uses **deterministic randomization** of variations. This randomization uses the bucketing key selected in the UI, as well as the bucketing salt of the flag. In most cases, the Amplitude ID is used as the bucketing key.
 
