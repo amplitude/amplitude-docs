@@ -1,15 +1,15 @@
-**Summary:** This documentation covers Amplitude dashboard subscription functionality, allowing users to receive HTML-formatted email reports with optional CSV files and Slack notifications for dashboard updates, including subscription management through Organization Settings and admin controls for viewing/deleting subscriptions.
+**Summary:** This documentation covers Amplitude dashboard subscription functionality, allowing users to receive HTML-formatted email reports with optional CSV files and Slack notifications with PDF attachments, including subscriber management through the Subscribe modal and Organization Settings.
 
 **Keywords:**
 - dashboard subscription
 - HTML-formatted email reports
 - CSV file attachments
 - Slack channel notifications
-- subscription frequency settings
-- dashboard owners permissions
-- Organization Settings dashboard subscriptions
-- Content Access subscription management
-- admin subscription controls
-- automated recurring dashboard PDFs
-- subscriber management modal
-- update frequency configuration
+- PDF dashboard reports
+- Subscribe modal
+- dashboard owners
+- subscriber management
+- update frequency settings
+- Organization Settings > Content Access > Dashboard Subscriptions
+- non-organization member subscriptions
+- automated recurring reports
