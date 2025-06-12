@@ -11,7 +11,7 @@ instrumentation_guide: true
 platform: browser
 parent: 467a0fe0-6ad9-4375-96a2-eea5b04a7bcf
 package_name: '@amplitude/plugin-session-replay-browser'
-full_details: true
+full_details: false
 public: true
 description: 'Use the Session Replay plugin if you instrument your site with Amplitude Browser SDK 2.'
 ---
