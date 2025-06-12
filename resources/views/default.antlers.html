@@ -7,7 +7,11 @@
         {{if environment == 'local'}} <span class="ml-4 text-xs text-gray-300 align-middle"><a
             href="{{ environment == 'local' ? edit_url : {github_edit_url} }}"
             target="_blank">{{ svg src="/docs/assets/general/pencil.svg" class="fill-amp-gray-500 h-4 hover:h-6 transition-all" }}</a></span> {{/if}}
+            <button id="copy-md" data-md-url="/docs/md/{{ collection:handle }}/en/{{ slug }}.md" class="group flex items-center space-x-2 px-3 py-2 text-sm rounded-md hover:border-amp-gray-300 hover:bg-amp-gray-50 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-200" aria-label="Copy page" title="Copy page"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy text-amp-gray-500 group-hover:text-amp-gray-700"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg><span class="text-amp-gray-600 group-hover:text-amp-gray-800">Copy page</span></button>
+
       </div>
+
+
       <div
         class="prose prose-a:text-amp-blue prose-ol:list-decimal prose-ol:list-outside prose-pre:bg-[#fafafa] max-w-prose" data-headings-anchors>
         {{partial:sdk-comparison}}
