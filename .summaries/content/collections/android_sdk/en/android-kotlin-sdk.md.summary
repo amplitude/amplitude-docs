@@ -1,30 +1,26 @@
-**Summary:** This documentation covers the Android-Kotlin SDK for Amplitude analytics, including installation via Gradle/Maven, configuration options (batching, EU data residency, autocapture), event tracking methods (track, identify, revenue), user management (sessions, groups, device/user IDs), and advanced features like plugins, offline mode, and privacy controls.
+**Summary:**
+This documentation covers the Android-Kotlin SDK for Amplitude analytics, including installation via Gradle/Maven with `com.amplitude:analytics-android` dependency, configuration options like `flushIntervalMillis`, `flushQueueSize`, and `autocapture` settings, event tracking with `track()` and `identify()` methods, autocapture features for sessions/app lifecycles/screen views/deep links/element interactions, user groups, revenue tracking, plugins system, and advanced features like COPPA control, advertising ID/app set ID usage, location tracking, and offline mode with network connectivity checking.
 
 **Keywords:**
 - Android-Kotlin SDK
-- Amplitude analytics
 - com.amplitude:analytics-android
 - Gradle Maven installation
-- Configuration options
-- flushQueueSize flushIntervalMillis
-- ServerZone.EU data residency
-- Autocapture AutocaptureOption
-- SESSIONS APP_LIFECYCLES SCREEN_VIEWS DEEP_LINKS ELEMENT_INTERACTIONS
-- track() identify() revenue() methods
-- BaseEvent eventProperties
-- User sessions sessionId
-- minTimeBetweenSessionsMillis
-- Device ID lifecycle
-- ADID useAdvertisingIdForDeviceId
-- App Set ID useAppSetIdForDeviceId
-- TrackingOptions COPPA control
-- Plugins enrichment destination
+- flushIntervalMillis flushQueueSize
+- autocapture AutocaptureOption
+- track() identify() methods
+- sessions app lifecycles screen views deep links element interactions
+- BaseEvent Revenue Identify classes
+- plugins enrichment destination
 - NetworkTrackingPlugin OkHttp
-- Offline mode ACCESS_NETWORK_STATE
-- Multiple instances instanceName
-- Location tracking locationListening
-- optOut privacy
-- Logger LoggerProvider
-- EventCallback
-- Group identify groupType groupName
-- Revenue productId price quantity
+- COPPA control
+- advertising ID ADID app set ID
+- useAdvertisingIdForDeviceId useAppSetIdForDeviceId
+- TrackingOptions locationListening
+- offline mode ACCESS_NETWORK_STATE
+- AndroidNetworkConnectivityCheckerPlugin
+- ServerZone EU data residency
+- deviceId userId sessionId
+- groupIdentify setGroup
+- EventOptions EventCallBack
+- minTimeBetweenSessionsMillis
+- TelephonyManager networkOperatorName
