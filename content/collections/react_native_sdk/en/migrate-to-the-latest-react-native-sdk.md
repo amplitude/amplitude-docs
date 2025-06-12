@@ -171,7 +171,7 @@ Amplitude.getInstance().setUserProperties({ //[tl! --:3]
     membership, "paid",
     payment, "bank",
 })
-const identifyObj = new amplitude.Identify() //[tl! ++:4]
+const identifyObj = new Identify() //[tl! ++:4]
 identifyObj
     .set("membership", "paid")
     .set("payment", "bank")
@@ -187,7 +187,7 @@ import { Amplitude } from '@amplitude/react-native'; //[tl! --]
 import { Identify, identify } from '@amplitude/analytics-react-native'; //[tl! ++]
 
 Amplitude.getInstance().clearUserProperties(); //[tl! --]
-const identifyObj = new amplitude.Identify() //[tl! ++:3]
+const identifyObj = new Identify() //[tl! ++:3]
 identifyObj.clearAll()
 amplitude.identify(identifyObj)
 ```
