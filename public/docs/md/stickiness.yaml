@@ -1,0 +1,19 @@
+title: Stickiness
+template: default
+layout: layout
+mount: f5763b49-98e0-4cbd-be73-e3d4a4742052
+revisions: false
+route: '/analytics/charts/stickiness/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+inject:
+  nav_title: charts
+structure:
+  root: false
