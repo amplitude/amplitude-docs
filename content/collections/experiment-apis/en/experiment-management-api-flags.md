@@ -1216,7 +1216,7 @@ curl --request POST \
 ```json
 {
   "id": "<id>",
-  "url": "http://experiment.amplitude.com/amplitude/<projectId>/config/<id>"
+  "url": "https://experiment.amplitude.com/amplitude/<projectId>/config/<id>"
 }
 ```
 

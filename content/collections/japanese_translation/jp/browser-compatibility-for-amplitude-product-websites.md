@@ -5,7 +5,7 @@ title: AmplitudeのプロダクトWebサイトのブラウザ互換性
 title_en: 'Browser Compatibility for Amplitude Product Websites'
 source: 'https://help.amplitude.com/hc/ja/articles/360024709711'
 ---
-これは、[AmplitudeプロダクトWebサイト](http://analytics.amplitude.com)でサポートされているブラウザの説明です。AmplitudeのSDKは、はるかに広い範囲のブラウザをサポートしています。
+これは、[AmplitudeプロダクトWebサイト](https://analytics.amplitude.com)でサポートされているブラウザの説明です。AmplitudeのSDKは、はるかに広い範囲のブラウザをサポートしています。
 
 ## サポートされているブラウザタイプとサポートされていないブラウザタイプ
 

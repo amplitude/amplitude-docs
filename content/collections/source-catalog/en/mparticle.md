@@ -30,4 +30,4 @@ After mParticle sends the data to Amplitude's servers, it's processed and displa
 
 ## Set up and use the integration
 
-You can find detailed instructions on setting up this integration in [mParticle's documentation](http://docs.mparticle.com/integrations/amplitude/event/).
+You can find detailed instructions on setting up this integration in [mParticle's documentation](https://docs.mparticle.com/integrations/amplitude/event/).

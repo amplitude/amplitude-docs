@@ -258,7 +258,7 @@ For more information, see [Migrating from Segment to Amplitude](/docs/migration/
 
 #### mParticle
 
-Learn more about mParticle’s integration with Amplitude [here](http://docs.mparticle.com/integrations/amplitude/event/).
+Learn more about mParticle’s integration with Amplitude [here](https://docs.mparticle.com/integrations/amplitude/event/).
 
 ## Send data downstream to destinations
 

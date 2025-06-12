@@ -29,7 +29,7 @@ For other security and privacy information (GDPR, CCPA, HIPPA, etc.), review Amp
 
 
 {{partial:collapse name="What is the SOC2 report?"}}
-The SOC2 is a report on Amplitude’s Description of its Digital Optimization System and on the Suitability of the Design and Operating Effectiveness of Controls Relevant to Security, Availability, and Confidentiality. This is available in Amplitude's [Customer Trust Portal](http://trust.amplitude.com). 
+The SOC2 is a report on Amplitude’s Description of its Digital Optimization System and on the Suitability of the Design and Operating Effectiveness of Controls Relevant to Security, Availability, and Confidentiality. This is available in Amplitude's [Customer Trust Portal](https://trust.amplitude.com). 
 
 There you will find the following and more:
 
@@ -42,7 +42,7 @@ There you will find the following and more:
 
 
 {{partial:collapse name="What is the DPA for paying and non-paying customers?"}}
-The Data Processing Addendum for Terms of Service (TOS DPA) is incorporated into and forms part of the [Amplitude Terms of Service](https://amplitude.com/terms), or other written or electronic agreement between customer and Amplitude, Inc. which governs customer’s use of the Amplitude Services (as applicable, the in the **Terms**). Visit the [Customer Trust Portal](http://trust.amplitude.com) for more information.
+The Data Processing Addendum for Terms of Service (TOS DPA) is incorporated into and forms part of the [Amplitude Terms of Service](https://amplitude.com/terms), or other written or electronic agreement between customer and Amplitude, Inc. which governs customer’s use of the Amplitude Services (as applicable, the in the **Terms**). Visit the [Customer Trust Portal](https://trust.amplitude.com) for more information.
 
 There you will find the following:
 

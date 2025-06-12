@@ -7,7 +7,7 @@ source: 'https://help.amplitude.com/hc/ja/articles/360058399851'
 ---
 Amplitudeでは、「ユーザー管理API」は公開APIを介して、プロビジョニングとグループ管理にプログラム的なソリューションを提供します。これにより、組織を迅速かつ簡単にスケールで管理し、プロビジョニングプロセスを識別プロバイダを含む他のツールと統合できます。
 
-ユーザー管理APIは、[SCIM 2.0標準](http://www.simplecloud.info/#Specification)に従います。 ユーザー（保留中のユーザーを含む）と権限グループの作成、取得、更新、削除コールが可能です。 
+ユーザー管理APIは、[SCIM 2.0標準](https://www.simplecloud.info/#Specification)に従います。 ユーザー（保留中のユーザーを含む）と権限グループの作成、取得、更新、削除コールが可能です。 
 
 ## 開始する前に
 

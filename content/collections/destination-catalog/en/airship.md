@@ -38,7 +38,7 @@ You can also send events from Airship to Amplitude if your Airship plan include
 If you use Amplitude's SDKs, integrate both the Airship and [Amplitude SDKs](/docs/sdks/analytics) in your app. Then follow the instructions in these articles link key identifiers: 
 
 - Amplitude: [SDKs](/docs/sdks/analytics) and [APIs](/docs/apis/analytics)
-- Airship: [Getting Started Guide](http://docs.urbanairship.com/dev-resources.html#getting-started) 
+- Airship: [Getting Started Guide](https://docs.urbanairship.com/dev-resources.html#getting-started)
 
 If you use Amplitude's HTTP API to send server-side events, you can send these key identifiers as user properties via Identify API.
 
