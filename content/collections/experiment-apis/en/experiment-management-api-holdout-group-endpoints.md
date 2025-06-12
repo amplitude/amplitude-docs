@@ -238,7 +238,7 @@ curl --request POST \
 ```json
 {
     "id": "<id>",
-    "url": "http://experiment.amplitude.com/amplitude/experiments/grouped-experiments"
+    "url": "https://experiment.amplitude.com/amplitude/experiments/grouped-experiments"
 }
 ```
 {{/partial:tab}}

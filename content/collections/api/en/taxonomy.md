@@ -19,7 +19,7 @@ summary: 'Create, get, update, and delete categories, event types, event propert
 ## Considerations
 
 * You may have to URL encode special characters in the names of event types, event properties, and user properties.
- For example, encode `Play Song` as `Play%20Song`. Use the [W3Schools](http://www.w3schools.com/tags/ref_urlencode.asp) encoding reference.
+ For example, encode `Play Song` as `Play%20Song`. Use the [W3Schools](https://www.w3schools.com/tags/ref_urlencode.asp) encoding reference.
 * In responses, custom user properties have a `gp:` prefix. For example, `gp:my_custom_property`.
 * You must plan events or properties in the schema before you can delete them via this API.
 

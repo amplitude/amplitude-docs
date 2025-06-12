@@ -56,7 +56,7 @@ import com.amplitude.api.Amplitude;
 import com.amplitude.api.AmplitudeClient;
 /*
 Import any more files that are needed, use the SDK reference
-http://amplitude.github.io/Amplitude-Android/
+https://amplitude.github.io/Amplitude-Android/
 */
 
 ```

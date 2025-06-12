@@ -769,7 +769,7 @@ You can't change the default names given to these client-side revenue events in 
 Amplitude doesn't support currency conversion. Normalize all revenue data to your currency of choice before being sent.
 {{/partial:admonition}}
 
-Each revenue event has fields available, and each field has a corresponding set method (such as `price` and `setPrice`). See the [API docs for `AMPRevenue`](http://amplitude.github.io/Amplitude-iOS/Classes/AMPRevenue.html#//api/name/productId) for a full list of fields.
+Each revenue event has fields available, and each field has a corresponding set method (such as `price` and `setPrice`). See the [API docs for `AMPRevenue`](https://amplitude.github.io/Amplitude-iOS/Classes/AMPRevenue.html#//api/name/productId) for a full list of fields.
 
 Like `logEvent`, you can attach event properties for each call to `logRevenueV2` . However, these event properties only appear in the [Event Segmentation](/docs/analytics/charts/event-segmentation/event-segmentation-build) chart and not in the Revenue charts.
 
@@ -1038,7 +1038,7 @@ Remember to add `AdSupport.framework` to your project.
 
 ### Set IDFA as device ID
 
-Amplitude uses the IDFV as the device ID by default, but you can change this behavior. After you set up the logic to fetch IDFA, you can also call this [useAdvertisingIdForDeviceId](http://amplitude.github.io/Amplitude-iOS/Classes/Amplitude.html#//api/name/useAdvertisingIdForDeviceId) API to set the IDFA as your `deviceId`. 
+Amplitude uses the IDFV as the device ID by default, but you can change this behavior. After you set up the logic to fetch IDFA, you can also call this [useAdvertisingIdForDeviceId](https://amplitude.github.io/Amplitude-iOS/Classes/Amplitude.html#//api/name/useAdvertisingIdForDeviceId) API to set the IDFA as your `deviceId`. 
 
 ### Device ID lifecycle
 

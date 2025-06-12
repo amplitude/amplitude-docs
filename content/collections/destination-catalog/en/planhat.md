@@ -42,7 +42,7 @@ Keep these things in mind when sending events to [Planhat](https://support.planh
 
 ## Setup
 
-See the [Planhat documentation](https://www.google.com/url?q=http://support.planhat.com/en/articles/7181975-setting-up-the-amplitude-integration%23h_87f475e94b&sa=D&source=docs&ust=1681362614710965&usg=AOvVaw2y7G6XhmQHzvEoK8v9w8fU) for more details.
+See the [Planhat documentation](https://support.planhat.com/en/articles/7181975-setting-up-the-amplitude-integration#h_87f475e94b) for more details.
 
 ### Prerequisites
 
