@@ -1,12 +1,18 @@
 ---
 id: 2f8e4c9a-7b3d-4e2f-9a1c-8d5f6e7a8b9c
 blueprint: browser_sdk
-title: 'Cookies and consent management'
+title: 'Cookies and consent management (Browser SDK)'
 landing: false
 exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1733428775
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1749751760
 source: 'https://docs.developers.amplitude.com/guides/cookies-consent-mgmt-guide/'
+sdk_status: current
+article_type: privacy
+platform: Browser
+supported_languages:
+  - js
+  - ts
 ---
 This guide covers functional and technical information on how Amplitude Browser SDK 2 works with cookies, local storage, opt-in/opt-out options, and consent management (including CNIL regulations for France).
 
