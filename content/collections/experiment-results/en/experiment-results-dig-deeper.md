@@ -43,7 +43,7 @@ To create an A/B test and see the results, follow these steps:
 
 	The first four are available for individual event metric analyses, while funnel conversion allows you to define a multi-step journey that users must complete for the conversion to count. The Formula metric allows you to [define a formula](/docs/analytics/charts/experiment-results/experiment-results-use-formula-metrics) centered around a selected event or events. 
 
-	The last option, Retention, allows you to measure the percentage of users who return to perform the selected event on a specific day (Return on nth day) after being exposed to the experiment. By default, the Retention metric doesn't support [CUPED](/docs/feature-experiment/workflow/finalize-statistical-preferences), exposure attribution settings, nor calendar day windows. Instead, the metric calculates exposure attribution settings using any exposure and the nth day value based on 24-hour window increments.
+	The last option, Retention, allows you to measure the percentage of users who return to perform the selected event on a specific day (Return on nth day) after being exposed to the experiment. By default, the Retention metric doesn't support [CUPED](/docs/feature-experiment/workflow/finalize-statistical-preferences), exposure attribution settings, nor calendar day windows. Instead, the metric calculates exposure attribution settings using any exposure and the nth day value based on 24-hour window increments, for up to two months.
 
 	{{partial:admonition type='note'}}
 	Any of the above metrics can be used as a [custom metric during the design phase in Amplitude Experiment](/docs/feature-experiment/workflow/define-goals). 
