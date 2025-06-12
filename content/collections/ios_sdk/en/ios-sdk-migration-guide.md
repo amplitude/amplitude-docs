@@ -107,10 +107,8 @@ import AmplitudeSwift //[tl! ++]
 Amplitude.instance().trackingSessionEvents = true //[tl! --:1]
 Amplitude.instance().initializeApiKey("YOUR-API-KEY")
 let amplitude = Amplitude(configuration: Configuration( //[tl! ++:5]
-    apiKey: "YOUR-API-KEY",
-    defaultTracking: DefaultTrackingOptions(
-        sessions: true
-    )
+    apiKey: "API_KEY",
+    autocapture: [.sessions, .appLifecycles, .screenViews, .networkTracking]
 ))
 ```
 
@@ -122,9 +120,14 @@ let amplitude = Amplitude(configuration: Configuration( //[tl! ++:5]
 
 [Amplitude instance].trackingSessionEvents = true; //[tl! --:1]
 [[Amplitude instance] initializeApiKey:@"YOUR-API-KEY"];
-AMPConfiguration* configuration = [AMPConfiguration initWithApiKey:@"YOUR-API-KEY"]; //[tl! ++:2]
-configuration.defaultTracking.sessions = true;
-Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
+AMPConfiguration *configuration = [AMPConfiguration initWithApiKey:@"API_KEY"];
+configuration.autocapture = [[AMPAutocaptureOptions alloc] initWithOptionsToUnion:@[
+    AMPAutocaptureOptions.sessions,
+    AMPAutocaptureOptions.appLifecycles,
+    AMPAutocaptureOptions.screenViews,
+    AMPAutocaptureOptions.networkTracking
+]];
+Amplitude *amplitude = [Amplitude initWithConfiguration:configuration];
 ```
 {{/partial:tab}}
 {{/partial:tabs}}
@@ -138,7 +141,7 @@ Amplitude* amplitude = [Amplitude initWithConfiguration:configuration];
 |`amplitude.setServerUrl("YOUR-SERVER-URL")`|`config.serverUrl`|
 |`amplitude.setServerZone("AMPServerZone.EU or AMPServerZone.US")`|`config.serverZone`|
 |`amplitude.trackingOptions`|`config.trackingOptions`|
-|`amplitude.trackingSessionEvents`|`config.defaultTracking.sessions`|
+|`amplitude.trackingSessionEvents`|`config.autocapture.sessions`|
 |`amplitude.minTimeBetweenSessionsMillis`|`config.minTimeBetweenSessionsMillis`|
 |`amplitude.eventUploadMaxBatchSize`|`config.flushQueueSize`|
 |`amplitude.eventUploadThreshold`|`config.flushQueueSize`|
@@ -383,7 +386,7 @@ The `setUserProperties` API has been removed, but you can now use the unified `i
 
 {{partial:tabs tabs="Swift, Obj-c"}}
 {{partial:tab name="Swift"}}
-```diff
+```swift
 Amplitude.instance().setUserProperties([ //[tl! --:3]
   "membership": "paid",
   "payment": "bank",
@@ -395,7 +398,7 @@ amplitude.identify(userProperties: [ //[tl! ++:3]
 ```
 {{/partial:tab}}
 {{partial:tab name="Obj-c"}}
-```diff
+```objc
 [[Amplitude instance] setUserProperties:@{ //[tl! --:3]
     @"membership": @"paid",
     @"payment": @"bank"
