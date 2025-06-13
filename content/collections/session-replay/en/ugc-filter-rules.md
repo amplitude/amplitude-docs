@@ -7,8 +7,9 @@ landing: false
 exclude_from_sitemap: false
 updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
 updated_at: 1749848246
+hide_from_search: true
 ---
-The `ugcFilterRules` feature in Amplitude's Session Replay SDK enables you to detect and sanitize sensitive user-generated content (UGC) in URLs before it is recorded in session replays and heatmaps. This helps ensure that personally identifiable or sensitive information is not inadvertently captured.
+The `ugcFilterRules` feature in Amplitude's Session Replay SDK enables you to detect and sanitize sensitive user-generated content (UGC) in URLs before it's recorded in session replays and heatmaps. This helps ensure that personally identifiable or sensitive information isn't inadvertently captured.
 
 ## What are UGC Filter Rules?
 
@@ -76,9 +77,9 @@ The `selector` field uses basic glob patterns for URL matching. The current impl
 | `*` | Matches any sequence of characters | `https://example.com/*` matches `https://example.com/anything` |
 
 **Key Features:**
-- **Multiple wildcards**: You can use multiple `*` in a single pattern (e.g., `https://*.domain.com/*/*`)
-- **Domain wildcards**: `*` works in domain names (e.g., `*.projecttool.com`)  
-- **Path wildcards**: Multiple `*` can be used in URL paths (e.g., `/projects/*/boards/*`)
+- **Multiple wildcards**: You can use multiple `*` in a single pattern (for example,, `https://*.domain.com/*/*`)
+- **Domain wildcards**: `*` works in domain names (for example,, `*.projecttool.com`)  
+- **Path wildcards**: Multiple `*` can be used in URL paths (for example,, `/projects/*/boards/*`)
 
 **Note**: Advanced glob features like `**`, `[abc]`, `{option1,option2}`, and others are not currently supported.
 
