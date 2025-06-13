@@ -1,1 +1,120 @@
-Directory containing 19 documentation files
+## Amplitude Session Replay
+
+Amplitude Session Replay is a comprehensive user experience analytics tool that captures and reconstructs user interactions on web and mobile applications. The product enables organizations to visually replay user sessions, analyze behavioral patterns through heatmaps, and gain insights into user experience issues by recording DOM interactions, user clicks, scrolls, and navigation patterns.
+
+## Product Architecture and Platform Coverage
+
+Session Replay operates across multiple platforms with distinct implementation approaches:
+
+**Browser/Web Implementation:**
+- **Session Replay Browser SDK Plugin** (`@amplitude/plugin-session-replay-browser`) - Primary integration for sites using Amplitude Browser SDK 2
+- **Session Replay Standalone SDK** (`@amplitude/session-replay-browser`) - For applications using third-party analytics providers
+- **Google Tag Manager Integration** - GTM Web Template for client-side browser implementations
+- **Segment Integration Wrapper** (`@amplitude/segment-session-replay-plugin`) - One-line integration with Segment Analytics
+
+**Mobile Platform Coverage:**
+- **Android Plugin/Middleware** - Supports both Android-Kotlin SDK and maintenance Android SDK with view tree capture
+- **iOS Plugin/Middleware** - Compatible with iOS Swift SDK and legacy iOS SDK versions
+- **React Native SDK Plugin** (`@amplitude/plugin-session-replay-react-native`) - Cross-platform mobile implementation
+- **Standalone Mobile SDKs** - For applications using non-Amplitude analytics providers
+
+**Third-Party Analytics Integrations:**
+- Segment (multiple destination modes: Amplitude Actions, Classic Device-mode, Classic Cloud-mode)
+- Rudderstack Cloud-mode integration
+- Generic third-party provider support through standalone SDKs
+
+## Core Technical Components
+
+**Data Capture Mechanism:**
+Session Replay uses DOM capture and diff processing for web applications, and view tree capture for mobile platforms. The system records user interactions, captures visual changes, and constructs replay sessions through differential updates rather than full-frame recording.
+
+**Storage and Processing:**
+- IndexedDB storage for browser implementations (`storeType` configuration)
+- Compression algorithms for performance optimization (`performanceConfig` idle compression)
+- Optional WebWorker support for background processing (`experimental.useWebWorker`)
+
+**Session Management:**
+- Automatic session tracking with `forceSessionTracking`
+- Manual session ID management for standalone implementations
+- Device ID synchronization across analytics providers
+- Session Start/End event generation
+
+## Key Features and Capabilities
+
+**Heatmaps Functionality:**
+The platform provides three types of behavioral visualization:
+- **Click Maps** - Visual representation of user click interactions
+- **Selector Maps** - Element-specific engagement tracking
+- **Scroll Maps** - Viewport scroll depth analysis and ranking of interactive elements
+
+Heatmaps require Session Replay Browser SDK Plugin 1.7.0+ or Standalone SDK 1.14.0+ and are available for Growth/Enterprise plans only.
+
+**Privacy and Compliance Framework:**
+Session Replay implements a comprehensive privacy management system with three masking levels:
+- **Conservative Masking** - Maximum privacy protection
+- **Light Masking** - Minimal data masking
+- **Medium Masking** - Balanced privacy approach
+
+**Privacy Controls:**
+- CSS selector-based masking overrides
+- `AmpMaskView` component for React Native
+- `.amp-block` class exclusion
+- Data attribute selectors for granular control
+- Remote configuration precedence over SDK settings
+
+**Consent Management:**
+- GDPR compliance support
+- Cookie banner integration with Consent Management Platforms (CMPs)
+- First-party cookie categorization
+- User opt-out mechanisms (`optOut` configuration)
+- Privacy policy disclosure templates
+
+## Configuration and Sampling
+
+**Sample Rate Management:**
+All implementations support `sampleRate` configuration to control the percentage of sessions recorded, enabling cost management and performance optimization.
+
+**Remote Configuration:**
+- `enableRemoteConfig` parameter for centralized control
+- Organizational Settings override SDK configurations
+- EU data residency support through `serverZone` configuration
+
+## Monitoring and Debugging
+
+**Session Replay Ingestion Monitor:**
+A dedicated monitoring tool tracks session replay ingestion status with:
+- HTTP status code tracking (200 successful, 429 throttling, 402 quota exceeded)
+- Invalid session ID detection
+- Users & Sessions tab for implementation troubleshooting
+- Ingestion health monitoring charts
+
+## API Integration and Event Properties
+
+**Session Replay Properties:**
+All implementations provide `getSessionReplayProperties()` method to retrieve:
+- `[Amplitude] Session Replay ID` - Unique identifier for linking events to replay sessions
+- Session metadata for event tagging
+- Device ID and session ID correlation
+
+**Key API Methods:**
+- `sessionReplay.init()` - SDK initialization
+- `sessionReplay.setSessionId()` - Manual session management
+- `start()` / `stop()` methods - Recording control
+- `amplitude.add()` / `amplitude.remove()` - Plugin management
+- `flush()` - Force data transmission
+
+## Data Residency and Compliance
+
+**EU Data Residency:**
+All SDKs support EU data residency through `serverZone` configuration, ensuring data remains within European boundaries for GDPR compliance.
+
+**DSAR API Support:**
+Session Replay integrates with Amplitude's Data Subject Access Request (DSAR) API and User Privacy API for data deletion requests, providing comprehensive privacy rights management.
+
+**Limitations and Considerations:**
+- Canvas/WebGL capture limitations in browser implementations
+- WebView limitations in mobile applications
+- Jetpack Compose support variations in Android
+- Shadow DOM support requirements for complex web applications
+
+The Session Replay product ecosystem provides comprehensive coverage across web and mobile platforms while maintaining strong privacy controls and compliance capabilities, making it suitable for enterprise-grade user experience analytics implementations.
