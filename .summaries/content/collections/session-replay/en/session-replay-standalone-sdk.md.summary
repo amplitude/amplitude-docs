@@ -4,23 +4,21 @@ This documentation covers the Session Replay Standalone SDK for browser applicat
 **Keywords:**
 - Session Replay Standalone SDK
 - @amplitude/session-replay-browser
+- getSessionReplayProperties()
 - sessionReplay.init()
 - sessionReplay.setSessionId()
-- getSessionReplayProperties()
-- [Amplitude] Session Replay ID
 - deviceId configuration
 - sessionId management
 - sampleRate configuration
 - DOM capture and replay
+- [Amplitude] Session Replay ID
 - third-party analytics integration
 - manual session management
 - browser-based implementation
 - CDN script tag installation
-- optOut configuration
-- serverZone EU data residency
 - privacyConfig masking
-- debugMode configuration
-- storeType IndexedDB
-- performanceConfig idle compression
-- experimental.useWebWorker
-- unified SDK alternative
+- serverZone EU configuration
+- optOut configuration
+- unified SDK integration
+- IndexedDB storage
+- DSAR API support
