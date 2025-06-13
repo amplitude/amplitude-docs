@@ -1,0 +1,18 @@
+## Summary
+This documentation covers the `ugcFilterRules` feature in Amplitude's Session Replay SDK, which uses glob patterns with wildcards to detect and sanitize sensitive user-generated content in URLs during session replay and heatmap recording. The feature is configured within `interactionConfig` and applies URL pattern matching rules with `selector` (glob pattern) and `replacement` (sanitized text) properties to anonymize user IDs, company names, and sensitive query parameters.
+
+## Keywords
+- ugcFilterRules
+- Amplitude Session Replay SDK
+- URL sanitization
+- glob patterns
+- interactionConfig
+- selector replacement
+- session replay heatmaps
+- user-generated content filtering
+- wildcard URL matching
+- PII anonymization
+- @amplitude/session-replay-browser
+- UGCFilterRule type
+- URL pattern validation
+- first matching rule precedence
