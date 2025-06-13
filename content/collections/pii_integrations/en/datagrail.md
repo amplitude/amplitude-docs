@@ -13,7 +13,7 @@ nav_title: data
 This integration is in beta and in active development. If you have any feedback to improve or suggestions around this documentation or integration, contact [support@datagrail.io](mailto:support@datagrail.io). 
 {{/partial:admonition}}
 
-[DataGrail](http://www.datagrail.io) is the leading privacy management platform for building consumer trust and eliminating risky business. With continuous system detection and automated data subject request (DSR) fulfillment, DataGrail powers privacy programs. Companies like Salesforce, Overstock, Okta, and DataBricks use DataGrail to support compliance with evolving privacy laws and regulations, like GDPR, CCPA, and CPRA.
+[DataGrail](https://www.datagrail.io) is the leading privacy management platform for building consumer trust and eliminating risky business. With continuous system detection and automated data subject request (DSR) fulfillment, DataGrail powers privacy programs. Companies like Salesforce, Overstock, Okta, and DataBricks use DataGrail to support compliance with evolving privacy laws and regulations, like GDPR, CCPA, and CPRA.
 
 Through an integration-first approach, companies no longer have to involve large cross-functional teams to respond to data subject requests and reduce regulatory risk manually. The Amplitude integration enables privacy owners to identify, retrieve, and delete PII in a centralized manner.
 

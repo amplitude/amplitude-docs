@@ -39,7 +39,7 @@ MTUの使用状況を表示するには、*設定 > 一般*に移動してくだ
 
 また、ユーザーの操作によってMTUカウントが減少する場合もあります。ユーザーがアプリを匿名で操作し、その後同じデバイスで自分のアカウントにログインした場合、匿名での使用はログインしてからの使用に統合され、1つのMTUとしてカウントされます。
 
-MTUカウントに誤りがあると思われる場合は、[Amplitudeサポート](http://support.amplitude.com)までご連絡ください。
+MTUカウントに誤りがあると思われる場合は、[Amplitudeサポート](https://support.amplitude.com)までご連絡ください。
 
 ## 月次トラッキングユーザーに関するFAQ
 
@@ -55,7 +55,7 @@ MTUはまた、新しいイベントソースを追加してユーザー数が�
 
 過去の月に日付を遡ってイベントが追加された場合、Amplitudeは別個のユーザーが出現した各月のMTUを1つ追加します。
 
-MTUの急上昇が誤りであると思われる場合は、この[Amplitudeコミュニティの投稿](https://community.amplitude.com/building-and-sharing-your-analysis-58/learn-how-to-investigate-your-org-s-monthly-tracked-users-mtus-2163%C2%A0)で、組織の月次トラッキングユーザー（MTU）を調査する方法をご確認ください。他にも問題がある場合は、[Amplitudeサポート](http://support.amplitude.com)までご連絡ください。
+MTUの急上昇が誤りであると思われる場合は、この[Amplitudeコミュニティの投稿](https://community.amplitude.com/building-and-sharing-your-analysis-58/learn-how-to-investigate-your-org-s-monthly-tracked-users-mtus-2163%C2%A0)で、組織の月次トラッキングユーザー（MTU）を調査する方法をご確認ください。他にも問題がある場合は、[Amplitudeサポート](https://support.amplitude.com)までご連絡ください。
 
 ### MTUカウントが他のツールで提供されるものと異なるのはなぜですか？
 

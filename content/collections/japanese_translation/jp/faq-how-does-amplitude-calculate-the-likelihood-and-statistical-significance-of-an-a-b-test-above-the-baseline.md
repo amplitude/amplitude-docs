@@ -35,7 +35,7 @@ AがBを上回る可能性を見つけるために、Amplitudeはゼロより右
 
 ![chance_better.png](/docs/output/img/jp/chance-better-png.png)
 
-*（出典：O'Connell, Aaron. [“The Math of Split Testing Part 2: Chance of Being Better”](http://204nocontent.me/the-math-of-split-testing-part-2-chance-of-being-better)（「分割テストの数学パート2：上回る可能性」））*
+*（出典：O'Connell, Aaron. [“The Math of Split Testing Part 2: Chance of Being Better”](https://204nocontent.me/the-math-of-split-testing-part-2-chance-of-being-better)（「分割テストの数学パート2：上回る可能性」））*
 
 ## 統計的意義
 
