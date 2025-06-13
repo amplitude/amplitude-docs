@@ -118,6 +118,7 @@ When using localStorage, the SDK stores the same user session information that w
 
 The SDK stores data in localStorage with keys that include your project API key:
 - `AMP_unsent_[API_KEY]`: Stores unsent events
+- `AMP_unsent_identify_[API_KEY]`: Stores unsent identify calls
 
 {{partial:admonition type="warning" heading="Local storage limitations"}}
 Local Storage restricts access by subdomain. For example, if you track non-identified users across subdomains like `www.amplitude.com` and `analytics.amplitude.com`, their `device_id` value for each subdomain isn't available while browsing the other.
@@ -175,15 +176,52 @@ If you use the Amplitude SDK in one of these jurisdictions, don't initialize the
 
 ### Deferred initialization approach
 
-For consent management, you can track events before cookie consent and initialize the SDK later:
+For consent management, you can initialize the SDK with tracking disabled and enable it later:
 
 ```ts
-// Track events 
-amplitude.track('Button Clicked');
+// Initialize with tracking disabled
+amplitude.init("API_KEY", {
+  optOut: true,
+});
 
-// Later, when user provides consent, 
-// intialize the SDK
-amplitude.init("API_KEY");
+// Later, when user provides consent
+amplitude.setOptOut(false);
+```
+
+### Alternative: Conditional initialization
+
+Alternatively, you can delay SDK initialization entirely until consent is obtained:
+
+```ts
+// Only initialize after user consent
+if (userHasConsented) {
+  amplitude.init("API_KEY");
+}
+```
+
+### Handling existing users with cookies
+
+For users who already have Amplitude cookies from previous visits:
+
+1. If you manually define `cookieOptions.expiration` to be a short lifespan, you may need to re-enable tracking when the Amplitude cookies expire, or when the user logs in.
+
+2. If the user removes all cookies, they should see the consent banner again the next time they visit your app. Since there won't be any Amplitude cookies yet set, the flow will go as described earlier.
+
+3. If the user consented to Amplitude cookies at some point in the past, and that consent has expired for any reason (website cookie deletion, consent tracking expired), you must explicitly remove the Amplitude cookies if the user declines consent. Otherwise, the SDK will continue to collect the user's information.
+
+To remove existing cookies when consent is withdrawn:
+
+```ts
+amplitude.reset(); // This clears all Amplitude data including cookies
+```
+
+## Getting the SDK configuration
+
+From any site that uses Amplitude Browser SDK 2, you can inspect the current configuration. Run the following command from the JavaScript console:
+
+```js
+// Get the default instance configuration
+amplitude.getConfig();
 ```
 
 ### Configuration options related to storage
@@ -197,6 +235,7 @@ This table gives a brief overview of each option related to storage in Browser S
 | `cookieOptions.secure`           | `false`       | If `true`, the Amplitude cookie is set with the Secure flag. The secure flag lets the browser send this cookie only when on encrypted HTTPS transmissions.                                                                                                                                                                                                                                                                |
 | `cookieOptions.sameSite`         | `Lax`         | Sets the SameSite flag on the amplitude cookie. Decides cookie privacy policy.                                                                                                                                                                                                                                                                                                                                              |
 | `identityStorage`                | `cookie`      | Sets storage API for user identity. Options include `cookie` for `document.cookie`, `localStorage` for `localStorage`, `sessionStorage` for `sessionStorage`, or `none` to opt-out of persisting user identity.                                                                                                                                                                                                           |
+| `optOut`                         | `false`       | Disable tracking for the current user.                                                                                                                                                                                                                                                                                                                                                                                      |
 | `storageProvider`                | `LocalStorage`| Sets a custom implementation of `Storage<Event[]>` to persist unsent events.                                                                                                                                                                                                                                                                                                                                                |
 
 ## Abstraction layer for storage
@@ -263,11 +302,24 @@ At the time of this writing, Amplitude doesn't have a default integration with a
 Here's an example integration pattern:
 
 ```ts
-// Track events
-amplitude.track("Button Clicked");
+// Initialize with tracking disabled
+amplitude.init("API_KEY", {
+  optOut: true,
+});
 
-// Initialize when CMP provides consent status
-amplitude.init("API_KEY");
+// When CMP provides consent status
+function handleConsentChange(hasConsent) {
+  amplitude.setOptOut(!hasConsent);
+}
+
+// Example with OneTrust
+if (typeof OneTrust !== 'undefined') {
+  OneTrust.OnConsentChanged(function() {
+    const hasConsent = OneTrust.IsAlertBoxClosed() && 
+                      OneTrust.getGeolocationData().country !== 'GB'; // Example logic
+    handleConsentChange(hasConsent);
+  });
+}
 ```
 {{/partial:collapse}}
 
