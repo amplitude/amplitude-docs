@@ -1,29 +1,31 @@
 ## Summary
 
-This documentation covers Amplitude's Snowflake data warehouse integration for importing events, user properties, group properties, and profiles into Amplitude projects, supporting four import strategies (Full Sync, Timestamp, Append Only Sync, Mirror Sync) with Change Data Capture (CDC) capabilities and specific SQL query requirements for data mapping.
+This documentation covers Amplitude's Snowflake data warehouse integration that supports bidirectional data sync with four import strategies (Full Sync, Timestamp, Append Only Sync, Mirror Sync) for different data types (events, user properties, group properties, profiles), including Change Data Capture (CDC) functionality and authentication methods (password-based and key pair).
 
 ## Keywords
 
 - Snowflake data warehouse integration
 - Change Data Capture (CDC)
-- Mirror Sync import strategy
-- Append Only Sync
+- Mirror Sync strategy
+- Append Only Sync strategy
 - Timestamp import strategy
 - Full Sync strategy
-- SQL query mapping
-- event_properties VARIANT JSON
-- user_properties VARIANT JSON
-- group_properties VARIANT JSON
-- EXTRACT EPOCH_MILLISECOND timestamp conversion
-- OBJECT_CONSTRUCT JSON creation
-- DATA_RETENTION_TIME_IN_DAYS CDC requirement
+- Key pair authentication
+- Password authentication
+- S3 Storage Integration
+- ABORT_DETACHED_QUERY setting
+- DATA_RETENTION_TIME_IN_DAYS
 - insert_id deduplication
-- ABORT_DETACHED_QUERY configuration
-- Snowflake storage integration
-- key pair authentication
-- IP allowlist configuration
-- 12-hour query timeout limit
-- 1B events batch size limit
-- INFORMATION_SCHEMA permissions
-- JWT token authentication
-- exponential backoff retry mechanism
+- VARIANT JSON data type
+- OBJECT_CONSTRUCT function
+- EPOCH_MILLISECOND extraction
+- User Privacy API
+- Event enrichment services
+- ID resolution
+- Group properties sync
+- User properties sync
+- TIMESTAMP_NTZ format
+- Snowflake streams
+- Regional IP addresses allowlist
+- 12-hour query timeout
+- 1B events batch limit
