@@ -40,6 +40,16 @@ landing_page_content:
     type: card
     enabled: true
   -
+    id: m2apjx8k
+    icon: brand-stickers/icon-targeting-purple.svg
+    card_title: 'Pages in Web Experiments'
+    card_content: 'Precisely control where your experiment variants apply on your website with Pages.'
+    cta: 'Learn about Pages'
+    external_link: false
+    entries_field: 8f2a1b3c-4d5e-6f7a-8b9c-0d1e2f3a4b5c
+    type: card
+    enabled: true
+  -
     id: m2apku3g
     icon: brand-stickers/icon-instant-purple.svg
     card_title: 'Web experimentation and performance'
