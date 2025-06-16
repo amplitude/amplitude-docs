@@ -1,7 +1,12 @@
 {
   "trailingSlash": false,
   "redirects": [
-        {
+    {
+      "source": "/docs/get-started/cookies-and-consent-management",
+      "destination": "/docs/sdks/analytics/browser/cookies-and-consent-management",
+      "statusCode": 301
+    },
+    {
       "source": "/docs/hc/en-us/articles/115000959052((?:-[a-zA-Z0-9-]+)?)",
       "destination": "/docs/data/data-get-started",
       "statusCode": 301
