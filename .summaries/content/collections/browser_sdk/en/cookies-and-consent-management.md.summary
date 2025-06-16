@@ -1,0 +1,31 @@
+## Summary
+This documentation covers Amplitude Browser SDK 2's cookie implementation, consent management, and GDPR/CNIL compliance, detailing cookie naming conventions (AMP_ prefix with API key), storage options (cookies, localStorage, sessionStorage, none), configuration parameters like cookieOptions.expiration and identityStorage, and deferred initialization patterns for consent workflows.
+
+## Keywords
+- Browser SDK 2
+- TypeScript SDK
+- AMP_ cookie prefix
+- AMP_MKTG_ marketing cookies
+- cookieOptions.expiration
+- identityStorage configuration
+- localStorage storage
+- sessionStorage storage
+- deviceId persistence
+- userId Base64 encoding
+- sessionId generation
+- UTM parameters storage
+- consent management
+- deferred initialization
+- GDPR compliance
+- CNIL France exemption
+- first-party cookies
+- cross-domain tracking
+- amplitude.reset() method
+- cookieOptions.secure flag
+- cookieOptions.sameSite
+- storageProvider abstraction
+- API key scoping
+- 365-day expiration
+- autocapture configuration
+- User Privacy API
+- DSAR API

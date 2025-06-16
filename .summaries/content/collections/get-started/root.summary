@@ -1,80 +1,57 @@
-Amplitude is a comprehensive event-based product analytics platform that enables businesses to understand user behavior, optimize engagement, and drive growth through data-driven insights. The platform provides real-time tracking, analysis, and visualization of user interactions across web, mobile, and cross-platform applications.
+Amplitude is a comprehensive event-based product analytics platform designed to help businesses understand user behavior, optimize engagement, and drive growth through data-driven insights. The platform centers around tracking discrete user actions (events) with associated metadata (event properties) and user characteristics (user properties) to provide deep behavioral analytics.
 
 ## Core Product Architecture and Features
 
-Amplitude's analytics platform centers around several interconnected components that work together to provide comprehensive user behavior analysis:
+Amplitude's analytics ecosystem is built around several key components:
 
-**Analytics Dashboard and Home Page**: The Amplitude Home page serves as the central hub, providing product overview metrics, real-time event streams, quick chart creation via Event Segmentation, and access to the template gallery for pre-built dashboard templates.
+**Analytics Dashboard and Visualization**: The Amplitude Home page serves as the central hub, providing real-time event streams, quick chart creation via Event Segmentation, template galleries, and product overview metrics. Users can create unlimited charts (with Starter plan limitations of 10 charts and 1-year data queries) through the Create > Chart workflow, with export capabilities to PNG, PDF, and CSV formats.
 
-**Data Collection and SDKs**: The platform supports multiple data ingestion methods including Browser SDK (2.10.0+), iOS Swift SDK, Android Kotlin SDK, HTTP API v2, and various third-party integrations. The Browser SDK includes advanced features like Autocapture for automatic event tracking, Session Replay capabilities, and comprehensive marketing attribution through UTM parameters.
+**Spaces and Content Organization**: Amplitude provides Spaces for organizing analytics content, with personal workspaces and shared collaboration spaces. Plan restrictions apply (Starter: 1 space, Plus: 3 spaces, unlimited for other plans), enabling team-based analytics workflows.
 
-**Chart Creation and Visualization**: Users can create unlimited charts (Starter plans limited to 10) through the Create > Chart menu, with support for Event Segmentation, Funnel Analysis, Retention Analysis, and User Sessions analytics. Charts can be exported in PNG, PDF, or CSV formats and integrated into dashboards or notebooks.
+**Template System**: Pre-built analysis templates are available through the Template Gallery, including specialized reports for Feature Adoption, User Activity, Conversion Rate analysis, Ecommerce, and Acquisition Channel analysis. Templates can be converted to customizable dashboards for ongoing use.
 
-**Template System**: Amplitude provides pre-built templates including Ecommerce Report, Feature Adoption Report, Conversion Report, and User Activity Report templates that can be converted to customizable dashboards for specific business use cases.
+## Data Collection and Instrumentation
 
-## Product Relationships and Feature Integration
+**SDK Implementation**: Amplitude supports cross-platform data collection through Browser SDK (2.10.0+), iOS Swift SDK, and Android Kotlin SDK. The Browser SDK requires JavaScript snippet installation with configurable Session Replay and Autocapture features, initialized with project-specific API keys.
 
-The platform's features are designed to work cohesively within a unified analytics workflow. The data collection layer (SDKs and APIs) feeds into the visualization layer (charts and dashboards), which connects to the template system for rapid deployment of common analytics use cases. The Spaces feature enables content organization and collaboration with plan-based restrictions (Starter: 1 space, Plus: 3 spaces, unlimited for other plans), supporting both personal workspaces and shared team environments.
+**Autocapture Functionality**: Automatic event tracking includes page views, element clicks, form interactions (started/submitted), session management, and marketing attribution via UTM parameters. The elementInteractions configuration enables visual labeling and comprehensive user interaction tracking.
 
-Cross-platform tracking capabilities allow organizations to choose between unified instrumentation (single API key across iOS, Android, web) or separate platform instrumentation depending on user crossover analysis needs and platform-specific tracking requirements.
+**Data Ingestion Methods**: Multiple ingestion pathways include client-side SDKs, HTTP API v2, Identify API for user properties, third-party integrations, and various specialized APIs (Dashboard REST API, Export API, Attribution API, Behavioral Cohorts API).
+
+## User Identification and Session Management
+
+**Multi-layered User Tracking**: Amplitude employs a sophisticated user identification system using Device IDs, Amplitude IDs, and User IDs. Device IDs utilize platform-specific identifiers (IDFV for iOS, Advertising Identifier), while User IDs enable cross-device event reconciliation through backend data merging.
+
+**Session Handling**: Sessions have platform-specific timeout intervals (5 minutes for mobile, 30 minutes for web) with Session IDs generated as milliseconds since epoch UTC. The platform handles anonymous-to-identified user transitions through event reconciliation.
 
 ## Key Nomenclature and Definitions
 
-**User Identification System**:
-- **Amplitude ID**: Platform-generated unique identifier for user tracking
-- **Device ID**: Platform-specific identifiers (IDFV for iOS, Advertising Identifier)
-- **User ID**: Custom identifier assigned by developers for cross-device tracking
+**Events and Properties**: Events represent discrete user actions following verb+noun naming conventions, limited to 20 properties maximum. Event properties provide contextual metadata, while user properties define user characteristics. The platform distinguishes between active events and inactive events for analysis purposes.
 
-**Event Tracking Framework**:
-- **Events**: User actions tracked with verb+noun naming conventions (limited to 20 properties maximum)
-- **Event Properties**: Contextual data attached to specific events
-- **User Properties**: Persistent characteristics associated with users
-- **Inactive Events**: Events that haven't occurred recently but remain in the system
+**User Metrics**: Core metrics include Monthly Tracked Users (MTU), active users, retention rates, and stickiness measurements. The platform automatically tracks properties like Event Day of Week, Event Historical Count, and Session Replay ID.
 
-**Session Management**:
-- **Session Timeout**: 5 minutes for mobile platforms, 30 minutes for web
-- **Session ID**: Milliseconds since epoch UTC timestamp
-- **Monthly Tracked Users (MTU)**: Billing metric for unique users per month
+**Behavioral Analysis**: Key concepts include behavioral cohorts, funnels, retention analysis, lifecycle tracking, and engagement matrices for comprehensive user journey analysis.
 
-**Analytics Concepts**:
-- **Active Users**: Users who performed any tracked event in a given timeframe
-- **Retention**: Percentage of users returning after initial engagement
-- **Stickiness**: Frequency of user engagement within time periods
-- **Behavioral Cohorts**: User groups based on shared behaviors or characteristics
+## Analytics Capabilities and Use Cases
 
-## Broader Product Ecosystem Integration
+**Industry-Specific Templates**: Specialized event taxonomies and templates for ecommerce (Page View, Viewing Item, Adding to Cart, Completing Purchase), B2B/SaaS (trial conversion, revenue LTV tracking), gaming, healthcare, finance, and media sectors.
 
-Amplitude operates within a comprehensive product ecosystem through multiple integration points:
+**A/B Testing Integration**: Built-in AB Test View for analyzing experiment results using user properties to associate users with variations, supporting both per-experiment and unified property strategies with integration capabilities for platforms like Optimizely.
 
-**Data Sources**: The platform integrates with client-side SDKs, server-side APIs, third-party tools, and supports CSV uploads. The Identify API handles user property updates, while the HTTP API v2 manages server-side event tracking.
+**Conversion and Retention Analysis**: Comprehensive funnel analysis, conversion rate tracking, drop-off behavior identification, and retention measurement across user cohorts and time periods.
 
-**Privacy and Compliance**: Built-in GDPR/CNIL compliance features include consent management through `deferInitialization` and `enableTracking()` methods, cookie management with AMP_ prefixed cookies, and opt-out mechanisms via `setOptOut()` functionality.
+## Technical Implementation and APIs
 
-**Organizational Structure**: Amplitude supports multi-project organizations through Settings > Organization settings > Projects, with project-specific API keys, user role assignments, and data segregation for different environments (dev, test, production).
+**API Endpoints**: The platform provides HTTP API v2 for server-side data ingestion, Identify API for user property updates, and specialized endpoints for dashboard management, data export, and behavioral cohort analysis.
 
-The platform follows a structured 6-step optimization workflow: critical event identification, usage interval determination, retention analysis, lifecycle graphing, persona mapping, and engagement matrix analysis, followed by ongoing cohort comparison and A/B testing.
+**Data Quality and Deduplication**: Amplitude implements deduplication logic using event ID, client event time, and device ID matching, with 7-day insert_id retention for HTTP API submissions to prevent duplicate event processing.
 
-## API Endpoints and Technical Implementation
+**Privacy and Compliance**: Built-in consent management features including deferInitialization options, GDPR/CNIL compliance capabilities, opt-out mechanisms (setOptOut()), and configurable cookie management with AMP_ prefixed first-party cookies.
 
-**Key API Methods**:
-- `amplitude.init()`: SDK initialization with API key
-- `amplitude.getInstance().init()`: Instance-based initialization
-- `enableTracking()`: Consent management activation
-- `setOptOut()`: User privacy control
-- `clearStorage()`: Data cleanup functionality
+## Workflow Optimization
 
-**Configuration Options**:
-- `elementInteractions`: Autocapture configuration
-- `deferInitialization`: GDPR compliance setup
-- `disableCookies`: Local storage alternative
-- `cookieExpiration`: Cookie lifecycle management
-- `sessionTimeout`: Custom session duration settings
+**Six-Step Analytics Workflow**: Amplitude promotes a structured approach including critical event identification, usage interval determination, retention analysis, lifecycle graphing, persona mapping, engagement matrix analysis, followed by cohort comparison and A/B testing.
 
-**Data Endpoints**:
-- HTTP API v2 for server-side event ingestion
-- Identify API for user property updates
-- Export API for JSON data extraction
-- Attribution API for campaign tracking
-- Behavioral Cohorts API for segment management
+**Implementation Team Structure**: Recommended team organization includes Project Lead (adoption coordination), Data Governor (tracking plan design), and Instrumentation Lead (SDK implementation and validation), supported by Success Manager coordination.
 
-Implementation requires three key team roles: Project Lead (coordinates adoption), Data Governor (designs tracking plans and taxonomy), and Instrumentation Lead (implements SDK events and validates data sources). The platform supports browser compatibility based on 0.5% market share thresholds while explicitly excluding Internet Explorer 11.
+The platform integrates seamlessly into broader product development workflows, supporting both cross-platform unified tracking and separate platform instrumentation strategies depending on user crossover analysis needs and platform-specific behavioral requirements.

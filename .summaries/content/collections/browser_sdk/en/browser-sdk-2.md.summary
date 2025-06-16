@@ -1,54 +1,38 @@
-## Summary
+**Summary:**
+This documentation covers Amplitude's Browser SDK 2 for JavaScript/TypeScript, which sends analytics events to Amplitude using the HTTP V2 API. It includes installation via npm/yarn/script loader, SDK initialization with API keys and configuration options, autocapture features for tracking page views/sessions/forms/downloads/element interactions, event tracking methods, user properties management, revenue tracking, and advanced features like cross-domain tracking, offline mode, and remote configuration.
 
-This documentation covers Amplitude's Browser SDK 2, which enables event tracking to Amplitude with support for both standalone analytics and unified SDK installations. The SDK provides comprehensive autocapture functionality including attribution tracking, page views, sessions, form interactions, file downloads, element interactions, and network request tracking, with extensive configuration options for each feature.
-
-## Keywords
-
-- Browser SDK 2
+**Keywords:**
 - @amplitude/analytics-browser
-- @amplitude/unified
-- Autocapture
-- Attribution tracking
-- UTM parameters
-- Click ID tracking
-- Page view tracking
-- Session tracking
-- Form interaction tracking
-- File download tracking
-- Element interaction tracking
-- Network request tracking
-- Cross-domain tracking
-- sendBeacon transport
-- Cookie management
-- AMP cookie prefix
-- Remote configuration
-- Content Security Policy (CSP)
-- Offline mode
-- Revenue tracking
-- User properties
-- Group properties
-- Identify operations
-- Plugin system
-- Marketing attribution
-- Visual labeling
+- Browser SDK 2
 - HTTP V2 API
-- Device ID
-- Session ID
-- User ID
-- Flush behavior
-- Batch API
-- EU data residency
-- Debug logging
-- Callback promises
-- Opt-out tracking
-- Single page application (SPA)
-- LocalStorage
-- SessionStorage
-- Referrer exclusion
-- Campaign tracking
+- autocapture
+- page views tracking
+- session tracking
+- form interactions
+- file downloads
+- element interactions
+- network tracking
+- marketing attribution
+- UTM parameters
+- click IDs
+- cross-domain tracking
+- sendBeacon
+- cookie management
+- offline mode
+- remote configuration
+- revenue tracking
+- user properties
+- group properties
+- plugins
+- CSP (Content Security Policy)
+- deviceId
+- sessionId
+- userId
 - flushIntervalMillis
 - flushQueueSize
+- identityStorage
 - trackingOptions
-- instanceName
 - serverZone
-- minIdLength
+- EU data residency
+- visual labeling
+- unified SDK

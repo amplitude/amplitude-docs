@@ -1,6 +1,6 @@
 ## Summary
 
-This documentation covers the Amplitude Analytics JavaScript SDK (maintenance mode), which provides event tracking, user identification, and analytics capabilities for web browsers. The SDK supports initialization with API keys, event logging with properties, user property management via Identify objects, revenue tracking, group analytics, and web attribution (UTM parameters, referrers, gclid/fbclid). It includes advanced features like cross-domain tracking, multiple project instances, session management, cookie handling, and sendBeacon transport for reliable event delivery.
+This documentation covers the Amplitude Analytics JavaScript SDK (maintenance mode), which provides event tracking, user identification, and analytics capabilities for web browsers, including installation via snippet/npm/yarn, initialization with API keys, event logging with properties, user property management through Identify objects, revenue tracking, and advanced features like cross-domain tracking, UTM parameter capture, and sendBeacon transport.
 
 ## Keywords
 
@@ -8,26 +8,19 @@ This documentation covers the Amplitude Analytics JavaScript SDK (maintenance mo
 - JavaScript SDK maintenance mode
 - Browser SDK 2.0 migration
 - amplitude.getInstance() initialization
-- logEvent with event properties
+- logEvent() method
 - Identify object user properties
-- setOnce, add, append, prepend operations
-- Revenue tracking logRevenueV2
-- Group identify groupType groupName
+- Revenue tracking logRevenueV2()
+- Cross-domain tracking deviceId
 - UTM parameters includeUtm
-- referrer tracking includeReferrer
-- gclid fbclid attribution
-- cross-domain deviceId tracking
 - sendBeacon transport
-- cookieForceUpgrade legacy cookies
-- sessionTimeout configuration
+- amp_ cookie prefix
+- trackingOptions configuration
+- sessionTimeout 30 minutes
 - eventUploadThreshold batching
 - serverZone EU data residency
-- trackingOptions disable fields
-- onExitPage callback
-- RequireJS integration
+- CORS policy issues
+- requireJS integration
 - Content Security Policy CSP
 - deviceIdFromUrlParam
 - saveParamsReferrerOncePerSession
-- amp_ cookie prefix
-- localStorage fallback
-- dynamic configuration useDynamicConfig
