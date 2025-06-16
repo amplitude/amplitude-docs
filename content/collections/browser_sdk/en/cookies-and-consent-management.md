@@ -57,7 +57,6 @@ The user session cookie contains metadata necessary for the SDK to function corr
 
 - `deviceId`: A randomly generated string that persists across sessions
 - `userId`: When users log in, if your app sends this value to Amplitude, the SDK stores it in the cookie. Set this to uniquely identify users. Amplitude encodes this value as Base64 before storing it.
-- `optOut`: A flag to opt this device out of Amplitude tracking. When this flag is set, Amplitude stores no additional information about the user.
 - `sessionId`: A randomly generated string for each session
 - `lastEventTime`: Time of the last event, used to decide when to expire and create a new session ID
 - `lastEventId`: An incrementing sequence of identifiers used to distinguish events
@@ -88,16 +87,35 @@ amplitude.init("API_KEY", {
 
 ### Remove Amplitude cookies
 
-To programmatically remove Amplitude cookies, reset the SDK, which clears all stored data:
+To programmatically remove Amplitude cookies, run the following snippet.
+
+```ts
+const API_KEY = '1234567890abcdefghijklmnopqrstuv'; // Replace it with your API KEY
+const cookieName = `AMP_${API_KEY.substring(0,10)}`;
+const cookieNameMktg = `AMP_MKTG_${API_KEY.substring(0,10)}`;
+const cookies = document.cookie.split(";");
+
+cookies.forEach(cookie => {
+  const [name] = cookie.trim().split("=");
+
+  if (name === cookieName || name === cookieNameMktg) {
+    document.cookie = `${name}=; Max-Age=0; path=/; SameSite=Lax`;
+  }
+});
+```
+
+To anonymize users after they log out. 
 
 ```ts
 amplitude.reset();
 ```
 
-This method:
+`reset` does the following:
+
 1. Sets `userId` to `undefined`
 2. Sets `deviceId` to a new UUID value
-3. Clears all cookies and local storage data
+
+With an undefined userId and a new deviceId, the user appears to Amplitude as a new user.
 
 ## Disable cookies using localStorage
 
@@ -137,37 +155,11 @@ amplitude.init("API_KEY", {
 
 When you disable all storage, Amplitude creates a new `device_id` for that user every time they visit your site because the SDK can't find an existing ID. If the user logs in or provides other identifying information, Amplitude's identity resolution system ties the various `device_id` values together with that user ID.
 
-## Disabling tracking (opt out tracking)
-
-Users may wish to opt out of tracking completely, which means that Amplitude doesn't store events or records of their browsing history. The Amplitude SDK provides several ways to handle opt-out:
-
-### Set opt-out during initialization
-
-```ts
-amplitude.init("API_KEY", {
-  optOut: true,
-});
-```
-
-### Set opt-out after initialization
-
-```ts
-amplitude.setOptOut(true);
-```
-
-To re-enable tracking:
-
-```ts
-amplitude.setOptOut(false);
-```
-
-### "Do not track" setting on browsers (DNT flag)
-
-Some browsers have a "Do not track" setting that's intended to block all tracking. Amplitude doesn't adhere to this setting by default. The DNT standard isn't widely supported and it isn't clear what it's meant to disable. If you want to consider that setting, write your own code to test for the DNT flag and then set the `optOut` option in the SDK.
-
 ## Managing cookie consent
 
 Certain jurisdictions require that users consent to non-essential cookies before any data can be collected. You are ultimately responsible for ensuring that you get any necessary consents and make any necessary disclosures for the personal data you collect and send to Amplitude. You're also responsible for determining how you classify the Amplitude cookies in your cookie policy based on your specific use case and the jurisdictions in which you use them.
+
+> **Note:** Amplitude cookies may be created as soon as the SDK is initialized, regardless of the user's opt-out status. If you require that no cookies are created before consent, you must defer SDK initialization until after consent is obtained.
 
 ![](statamic://asset::help_center_conversions::get-started/consentscreen.png)
 
@@ -275,16 +267,6 @@ amplitude.init("API_KEY");
 Yes, you can use Amplitude with a CMP, like OneTrust, in a GDPR-compliant manner. Amplitude can't direct you on how to classify the Amplitude SDK/cookies. Instead, your privacy and legal teams should make this assessment based on the data you're collecting. However, most customers, including in the EU, classify Amplitude cookies as Performance/Analytics cookies.
 
 Customers may also choose to implement through a server side integration, therefore bypassing Amplitude's cookies from the SDK. However, customers who integrate through a server side integration are still responsible for ensuring that they get any necessary consents and make any necessary disclosures for the personal data they collect and send to Amplitude. 
-{{/partial:collapse}}
-
-{{partial:collapse name="When a user opts out, how can I opt them in again?"}}
-Once a user opts out, you can opt them in programmatically by calling:
-
-```ts
-amplitude.setOptOut(false);
-```
-
-This sets the option `optOut` to `false`, updates the cookie with the new options and enables tracking.
 {{/partial:collapse}}
 
 ## CNIL France - Frequently asked questions
