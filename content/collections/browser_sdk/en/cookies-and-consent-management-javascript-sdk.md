@@ -1,14 +1,15 @@
 ---
-# Moved to SDK Section
-id: 1b0ba36a-6b55-40cb-98f8-13931435966d
-blueprint: get-started
-title: 'Cookies and consent management (Legacy JavaScript SDK)'
-landing: false
-published: false
-exclude_from_sitemap: false
-updated_by: 0c3a318b-936a-4cbd-8fdf-771a90c297f0
-updated_at: 1733428775
-source: 'https://docs.developers.amplitude.com/guides/cookies-consent-mgmt-guide/'
+id: 7146ba61-2991-417a-acef-a570a7d1105c
+blueprint: browser_sdk
+title: 'Cookies and Consent Management (JavaScript SDK)'
+sdk_status: maintenance
+article_type: privacy
+platform: Browser
+supported_languages:
+  - js
+parent: e6b6889d-9d39-4f04-89a1-87f78db80f49
+updated_by: b6c6019f-27db-41a7-98bb-07c9b90f212b
+updated_at: 1749751817
 ---
 {{partial:admonition type="warning" heading="Legacy JavaScript SDK"}}
 This guide covers the behavior with the legacy JavaScript SDK. **For new implementations, use [Browser SDK 2 cookies and consent management guide](/docs/sdks/analytics/browser/cookies-and-consent-management)** which covers the current TypeScript SDK.
