@@ -115,11 +115,11 @@ amplitude.reset();
 1. Sets `userId` to `undefined`
 2. Sets `deviceId` to a new UUID value
 
-With an undefined userId and a new deviceId, the user appears to Amplitude as a new user.
+With an undefined `userId` and a new `deviceId`, the user appears to Amplitude as a new user.
 
 ## Disable cookies using localStorage
 
-You can configure the SDK to use localStorage instead of cookies by setting the `identityStorage` option:
+Set the `identityStorage` option to configure the SDK to use localStorage rather than cookies.
 
 ```ts
 amplitude.init("API_KEY", {
