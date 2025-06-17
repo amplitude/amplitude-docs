@@ -18,18 +18,14 @@
             if (!currUserId) {
                 // Iterate through all amplitude cookies within amplitude domain
                 const amplitudeCookies = getCookies(AMP_PREFIX);
-                console.log(amplitudeCookies);
 
                 for (let [cookieName, cookieValue] of amplitudeCookies.map((cookies) => cookies.split('='))) {
                     const [deviceId, userId] = cookieValue.split('.');
     
                     try {
                         const userSession = JSON.parse(decodeURIComponent(atob(cookieValue)))
-                        console.log(userSession);
-
                         if (userSession && userSession.userId) {
                             amplitude.setUserId(userSession.userId);
-                            console.log('User authenticated: ', userSession.userId)
                             break;
                         }
                     } catch {}
