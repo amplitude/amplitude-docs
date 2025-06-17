@@ -51,7 +51,6 @@ return array(
     'Stringy\\' => array($vendorDir . '/statamic/stringy/src'),
     'Stillat\\BladeParser\\' => array($vendorDir . '/stillat/blade-parser/src'),
     'Statamic\\StaticSite\\' => array($vendorDir . '/statamic/ssg/src'),
-    'Statamic\\Eloquent\\' => array($vendorDir . '/statamic/eloquent-driver/src'),
     'Statamic\\' => array($vendorDir . '/statamic/cms/src'),
     'Spatie\\ShikiPhp\\' => array($vendorDir . '/spatie/shiki-php/src'),
     'Spatie\\LaravelIgnition\\' => array($vendorDir . '/spatie/laravel-ignition/src', $vendorDir . '/spatie/error-solutions/legacy/laravel-ignition'),

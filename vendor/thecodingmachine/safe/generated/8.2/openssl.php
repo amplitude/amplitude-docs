@@ -969,6 +969,35 @@ function openssl_pkey_export($key, ?string &$output, ?string $passphrase = null,
 
 
 /**
+ * This function returns the key details (bits, key, type).
+ *
+ * @param \OpenSSLAsymmetricKey $key Resource holding the key.
+ * @return array Returns an array with the key details in success or FALSE in failure.
+ * Returned array has indexes bits (number of bits),
+ * key (string representation of the public key) and
+ * type (type of the key which is one of
+ * OPENSSL_KEYTYPE_RSA,
+ * OPENSSL_KEYTYPE_DSA,
+ * OPENSSL_KEYTYPE_DH,
+ * OPENSSL_KEYTYPE_EC or -1 meaning unknown).
+ *
+ * Depending on the key type used, additional details may be returned. Note that
+ * some elements may not always be available.
+ * @throws OpensslException
+ *
+ */
+function openssl_pkey_get_details(\OpenSSLAsymmetricKey $key): array
+{
+    error_clear_last();
+    $safeResult = \openssl_pkey_get_details($key);
+    if ($safeResult === false) {
+        throw OpensslException::createFromPhpError();
+    }
+    return $safeResult;
+}
+
+
+/**
  * openssl_pkey_get_private parses
  * private_key and prepares it for use by other functions.
  *
@@ -1191,10 +1220,10 @@ function openssl_public_encrypt(string $data, ?string &$encrypted_data, $public_
  * @param bool|null $strong_result If passed into the function, this will hold a bool value that determines
  * if the algorithm used was "cryptographically strong", e.g., safe for usage with GPG,
  * passwords, etc. TRUE if it did, otherwise FALSE
- * @return false|string Returns the generated string of bytes.
+ * @return string Returns the generated string of bytes.
  *
  */
-function openssl_random_pseudo_bytes(int $length, ?bool &$strong_result = null)
+function openssl_random_pseudo_bytes(int $length, ?bool &$strong_result = null): string
 {
     error_clear_last();
     $safeResult = \openssl_random_pseudo_bytes($length, $strong_result);
